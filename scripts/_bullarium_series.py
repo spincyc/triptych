@@ -819,11 +819,24 @@ def _review_recorded_rescript(raw: list[str], item: dict, bounds: list[list[int]
             raise ValueError("native audience evidence differs from the exact source page/leaf")
 
 
+def _render_options(unit: dict) -> dict:
+    options = unit.get("typeset_overrides", {})
+    if not isinstance(options, dict) or set(options) - {"allow_long_token_breaks", "source_note_append"}:
+        raise ValueError("unsupported explicit series typesetting override")
+    if "allow_long_token_breaks" in options and type(options["allow_long_token_breaks"]) is not bool:
+        raise ValueError("long-token wrapping override must be a literal boolean")
+    if "source_note_append" in options:
+        _text(options["source_note_append"], "explicit reader layout qualification")
+    return options
+
+
 def admit(root: Path, config: dict, review_paths: list[Path], when: str) -> dict:
     revision(when)
     paths = paths_for(config["series_id"])
     catalog = read_json(root / paths["catalog"])
     units = {item["id"]: item for item in catalog["documents"]}
+    for unit in units.values():
+        _render_options(unit)
     volumes = {item["key"]: item for item in catalog["volumes"]}
     configs = {item["key"]: item for item in config["volumes"]}
     staged, seen = [], set()
@@ -976,6 +989,11 @@ def admit(root: Path, config: dict, review_paths: list[Path], when: str) -> dict
         if recorded:
             manifests[fragment][-1]["pope_context"] = item["papal_context"]
             manifests[fragment][-1]["source_note"] += " A papal audience response recorded by " + item["recording_official"] + "; papal context: " + item["papal_context"] + "."
+        options = _render_options(unit)
+        if "allow_long_token_breaks" in options:
+            manifests[fragment][-1]["allow_long_token_breaks"] = options["allow_long_token_breaks"]
+        if options.get("source_note_append"):
+            manifests[fragment][-1]["source_note"] = manifests[fragment][-1]["source_note"].rstrip() + " " + options["source_note_append"]
     for fragment, rows in manifests.items():
         legacy.write(root / paths["fragments" if fragment else "manifest"], legacy.json_bytes({"schema": TYPESET_SCHEMA, "revision": when, "documents": rows}))
     return {"status": "ok", **catalog["coverage"]}
@@ -1021,9 +1039,14 @@ def check(root: Path, config: dict) -> dict:
             expected = {"artifact_id": unit["artifact_id"], "sha256": unit["artifact_sha256"],
                         "segment_id": unit["segment_id"], "segment_path": unit["segment_path"],
                         "physical_line_ranges": unit["review"]["physical_line_ranges"],
-                        "language": unit["review"]["language"], "text_path": sources[unit["artifact_id"]]["path"]}
+                        "language": unit["review"]["language"], "text_path": sources[unit["artifact_id"]]["path"],
+                        "revision": unit["render_revision"]}
             if any(row.get(key) != value for key, value in expected.items()):
                 raise ValueError("active series reader disagrees with its admitted catalog source")
+            options = _render_options(unit)
+            if (row.get("allow_long_token_breaks") != options.get("allow_long_token_breaks")
+                    or options.get("source_note_append") and not row.get("source_note", "").endswith(options["source_note_append"])):
+                raise ValueError("active series reader differs from its explicit layout correction")
     return {"status": "ok", **catalog["coverage"]}
 
 

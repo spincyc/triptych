@@ -18966,7 +18966,7 @@
         ]
       ],
       "protocol": null,
-      "render_revision": "2026-10-26T13:36:12Z",
+      "render_revision": "2026-10-26T15:32:55Z",
       "review": {
         "artifact_sha256": "99f8d35580f2291f69b43ea840d8d0f98efa4a772924772cddc51315b923838d",
         "boundary_review": "Complete own papal act body, independent protocol or constitutive opening, own substantive conclusion and closing inspected. Complete Italian motuproprio with Latin title/editorial apparatus and5November1761 final dating57230–57232. Own detached date56908–56909 and first-part summary56912–56919 were omitted; summary continues at57068–57072 inside selection. Own final legal summary57235–57240 is also omitted. Mainbody reads in order without inline substantive fusion.",
@@ -19017,6 +19017,10 @@
       "source_heading_raw": "Dai.die 5.Nav. ",
       "status": "admitted-complete",
       "title_raw": "Dai.die 5.Nav. ",
+      "typeset_overrides": {
+        "allow_long_token_breaks": true,
+        "source_note_append": "Literal long OCR runs may wrap without inserted characters."
+      },
       "volume_key": "volume-02",
       "work_id": "work.bullarium-continuatio.volume-02.line-00056225.part-03"
     },
@@ -473692,7 +473696,96 @@
     }
   ],
   "method": "configured-papal-series-raw-lines-v1",
-  "revision": "2026-10-26T13:41:00Z",
+  "render_corrections": [
+    {
+      "artifact_id": "artifact.bullarium-continuatio.volume-02.1837-rome-mul.ocr-99f8d35580f2",
+      "artifact_sha256": "99f8d35580f2291f69b43ea840d8d0f98efa4a772924772cddc51315b923838d",
+      "corrected_row_sha256": "33c8a81527b024ac1e08153bcf664e9098154a2433b01de315bcb60ac3d92600",
+      "document_id": "bullarium-continuatio.volume-02.line-00056225.part-03",
+      "independent_probe_receipt_sha256": "6f9bfd5ffe0056ec3bf4a9c9e54d91259a8a31910babe0c159cb465834906bcb",
+      "initial_failed_receipt_sha256": "b953a43ef7d5baaceddfa9df9238535c48509028d89ee63be7dc514144b8931a",
+      "kind": "same-source-layout-correction",
+      "new_row": {
+        "allow_long_token_breaks": true,
+        "artifact_id": "artifact.bullarium-continuatio.volume-02.1837-rome-mul.ocr-99f8d35580f2",
+        "date": null,
+        "document_type": "motu-proprio",
+        "extent_kind": "printed-act",
+        "id": "bullarium-continuatio.volume-02.line-00056225.part-03",
+        "language": "mul",
+        "language_label": "Latin and Italian",
+        "physical_line_ranges": [
+          [
+            56908,
+            56919
+          ],
+          [
+            56938,
+            57240
+          ]
+        ],
+        "pope": "Clemens PP. XIII.",
+        "revision": "2026-10-26T15:32:55Z",
+        "rights_basis": "United States: this exact historical printing is Rome 1837, identified from its acquired title-page image. The historical Latin and Italian wording, translations and contemporary editorial matter have expired publication terms under the recorded papal-documents-rights-v1.toml assessment (17 U.S.C. 104A, 304, 305). Mechanical OCR, scanning and factual page/leaf data supply no new original authorship under Compendium 313.4(A). Incidental digitizer/library marks retain their separate status. No worldwide public-domain status, general provider licence or Triptych licence over source wording is asserted.",
+        "rights_notice": "Historical source wording is public domain in the United States; project typesetting does not relicense it.",
+        "rights_status": "public-domain",
+        "segment_id": "segment.bullarium-continuatio.volume-02.line-00056225.part-03.1837-bullarium-continuatio-volume-02-mul.source-ocr",
+        "segment_path": "src/sources/works/bullarium-continuatio/volume-02-line-00056225-part-03/editions/1837-bullarium-continuatio-volume-02-mul/segments/source-ocr.toml",
+        "sha256": "99f8d35580f2291f69b43ea840d8d0f98efa4a772924772cddc51315b923838d",
+        "source_note": "Bullarii Romani continuatio, tome II. Rome: Typographia Reverendae Camerae Apostolicae, 1837. Uncorrected, uncollated OCR transcription of the identified constituent. Historical synopsis, source notes, dating and subscriptions are retained as this witness gives them; literal abbreviations are not expanded. Literal long OCR runs may wrap without inserted characters.",
+        "source_url": "https://archive.org/download/BRC-Tomo-02/BRC%2002_djvu.txt",
+        "text_path": "src/sources/works/bullarium-continuatio/volume-02/editions/1837-rome-mul/artifacts/ocr-99f8d35580f2/ocr.txt",
+        "title": "Derogatio ordinationis Benedicti XIV de appellationibus super taxis viarum"
+      },
+      "old_row": {
+        "artifact_id": "artifact.bullarium-continuatio.volume-02.1837-rome-mul.ocr-99f8d35580f2",
+        "date": null,
+        "document_type": "motu-proprio",
+        "extent_kind": "printed-act",
+        "id": "bullarium-continuatio.volume-02.line-00056225.part-03",
+        "language": "mul",
+        "language_label": "Latin and Italian",
+        "physical_line_ranges": [
+          [
+            56908,
+            56919
+          ],
+          [
+            56938,
+            57240
+          ]
+        ],
+        "pope": "Clemens PP. XIII.",
+        "revision": "2026-10-26T13:36:12Z",
+        "rights_basis": "United States: this exact historical printing is Rome 1837, identified from its acquired title-page image. The historical Latin and Italian wording, translations and contemporary editorial matter have expired publication terms under the recorded papal-documents-rights-v1.toml assessment (17 U.S.C. 104A, 304, 305). Mechanical OCR, scanning and factual page/leaf data supply no new original authorship under Compendium 313.4(A). Incidental digitizer/library marks retain their separate status. No worldwide public-domain status, general provider licence or Triptych licence over source wording is asserted.",
+        "rights_notice": "Historical source wording is public domain in the United States; project typesetting does not relicense it.",
+        "rights_status": "public-domain",
+        "segment_id": "segment.bullarium-continuatio.volume-02.line-00056225.part-03.1837-bullarium-continuatio-volume-02-mul.source-ocr",
+        "segment_path": "src/sources/works/bullarium-continuatio/volume-02-line-00056225-part-03/editions/1837-bullarium-continuatio-volume-02-mul/segments/source-ocr.toml",
+        "sha256": "99f8d35580f2291f69b43ea840d8d0f98efa4a772924772cddc51315b923838d",
+        "source_note": "Bullarii Romani continuatio, tome II. Rome: Typographia Reverendae Camerae Apostolicae, 1837. Uncorrected, uncollated OCR transcription of the identified constituent. Historical synopsis, source notes, dating and subscriptions are retained as this witness gives them; literal abbreviations are not expanded. ",
+        "source_url": "https://archive.org/download/BRC-Tomo-02/BRC%2002_djvu.txt",
+        "text_path": "src/sources/works/bullarium-continuatio/volume-02/editions/1837-rome-mul/artifacts/ocr-99f8d35580f2/ocr.txt",
+        "title": "Derogatio ordinationis Benedicti XIV de appellationibus super taxis viarum"
+      },
+      "physical_line_ranges": [
+        [
+          56908,
+          56919
+        ],
+        [
+          56938,
+          57240
+        ]
+      ],
+      "prior_revision": "2026-10-26T13:36:12Z",
+      "prior_row_sha256": "09df35b306d41a06e8f58dd11c1799ffc3780b409f8b4ffd086ddfade35f01c9",
+      "reason": "An exact retained unbroken OCR token exceeded the column width. Optional character break opportunities preserve every source character without inserting hyphens, letters or spaces.",
+      "revision": "2026-10-26T15:32:55Z",
+      "segment_id": "segment.bullarium-continuatio.volume-02.line-00056225.part-03.1837-bullarium-continuatio-volume-02-mul.source-ocr"
+    }
+  ],
+  "revision": "2026-10-26T15:32:55Z",
   "schema": "triptych-papal-series-catalog/v1",
   "scope": "Configured historical source containers and proposed constituents; no complete historical papal-act census or authenticity determination.",
   "series_id": "bullarium-continuatio",

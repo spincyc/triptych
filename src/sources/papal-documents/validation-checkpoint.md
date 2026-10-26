@@ -72,6 +72,8 @@ records printing, extent, language and access gaps.
 
 ## Recovery integration checkpoint
 
+The build figures below describe checkpoint `150a86200` and its frozen inputs.
+
 The later source snapshot has 9,489 works, 12,362 editions, 10,025 artifacts,
 8,761 segments and 8,793 passages. Its 49,435 canonical manifests retain the
 same before/after byte fingerprint
@@ -109,3 +111,25 @@ the other 526 projection files are unchanged. The subsequent aggregate used
 separately, and stopped at the then-stale 1,753 reader projections. Those
 projections are now repaired and checked independently. Later aggregate gates
 were not reached; this checkpoint does not claim a complete aggregate pass.
+
+## Containment and current-selection follow-up
+
+The subsequent aggregate reached one missing containment edge for the new
+historical English *Divini illius Magistri* witness. That exact constituent is
+now registered under its existing journal container, with the 1930 issue,
+printed pages, segment and source hash pinned. Two newly confirmed Bullarium
+source-order failures are also explicit research holdings. All 192 container
+pins and other entries remain unchanged. Containment now passes with 6,348
+constituents; source-library and family checks pass without changing review
+states.
+
+All 507 earlier withdrawals are unchanged, and the negative inventory now has
+509 exact current-reader withdrawals. The final long-token selection compiles
+successfully with its own revision and full-source fidelity. The new plan has
+5,825 successful PDFs across 11,696 pages, no missing or failed current builds,
+and 712 exclusions. Page review and source-boundary corrections remain open.
+
+After these repairs, `make -o check-act-history check-sources` passes.
+Act-history freshness remains independently established by its exact owning
+generator output comparison. This reports the source aggregate precisely;
+it does not claim a full repository or deployment check.

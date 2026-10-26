@@ -28932,8 +28932,8 @@ title = "Fragment: Sequi  tur  declaratio  circa  [acuita  leni  affi- cialibus 
 work_id = "work.bullarium-romanum.volume-07.unit-0023.part-02"
 whole = false
 locator = "LF 12767–12861 of artifact.bullarium-romanum.volume-07.1862-turin-latin.ocr-b4e46f2d1795"
-basis = "Registered segment segment.bullarium-romanum.volume-07.unit-0023.part-02.1862-turin-latin.source-ocr: Historical fragment; source omissions and surviving bounds remain qualified in the catalog/work review. Prior selection/PDF/controller evidence remains in this catalog unit."
-extent_unresolved = "The identified printing omits substantive source content; missing wording remains unexpanded."
+basis = "Registered segment segment.bullarium-romanum.volume-07.unit-0023.part-02.1862-turin-latin.source-ocr: source-order hold. Confirmed selected-source body/margin or column fusion prevents a complete ordered reader; the exact historical source, controller and segment bounds remain registered. Current null delivery supersession and native evidence are recorded in bullarium-active-withdrawals.json."
+extent_unresolved = "Source-order hold at source LF 12773–12774, 12794–12795, 12839–12840, 12845–12846, 12851–12852. No complete ordered act is claimed from this selection. The identified printing omits substantive source content; missing wording remains unexpanded."
 
 [[containers.constituents]]
 author = "Plus  episcopus  servus  servoram  Dei, ad  perpetuam  rei  memoriam."
@@ -36747,9 +36747,10 @@ basis = "Registered segment segment.bullarium-romanum.volume-15.unit-0177.1868-t
 author = "Innocentius   Papa   X."
 title = "FacuUas  episcopo    Oxomensi  inhibendi regularibus ,   ne  absque   sua  licenlid confcssiones  andiant,  minusque  ver- bum  Dei  jyraedicent  '."
 work_id = "work.bullarium-romanum.volume-15.unit-0178"
-whole = true
+whole = false
 locator = "LF 51238–51369 of artifact.bullarium-romanum.volume-15.1868-turin-latin.ocr-3a315264019c"
-basis = "Registered segment segment.bullarium-romanum.volume-15.unit-0178.1868-turin-latin.source-ocr: Current admitted complete papal witness at the reviewed bounds; literal source abbreviations and OCR defects remain. Extent inspection is not image collation or authentication."
+basis = "Registered segment segment.bullarium-romanum.volume-15.unit-0178.1868-turin-latin.source-ocr: source-order hold. Confirmed selected-source body/margin or column fusion prevents a complete ordered reader; the exact historical source, controller and segment bounds remain registered. Current null delivery supersession and native evidence are recorded in bullarium-active-withdrawals.json."
+extent_unresolved = "Source-order hold at source LF 51280–51292, 51322–51324. No complete ordered act is claimed from this selection."
 
 [[containers.constituents]]
 author = "Innocentius Papa X."
@@ -52510,6 +52511,14 @@ work_id = "work.papal.pius-xi.hf-p-xi-enc-19291223-quinquagesimo-ante-anno"
 whole = true
 locator = "LF 1–131 of artifact.journals.catholic-mind.1930-03-08-volume-28-issue-5.bounded-english-2e8f95fb87ff"
 basis = "Registered segment segment.papal.pius-xi.hf-p-xi-enc-19291223-quinquagesimo-ante-anno.1930-03-08-catholic-mind-english.complete-english-text: complete printed English papal witness at the reviewed source bounds; inherited OCR/printing defects remain."
+
+[[containers.constituents]]
+author = "Pius XI"
+title = "Divini Illius Magistri"
+work_id = "work.papal.pius-xi.hf-p-xi-enc-31121929-divini-illius-magistri"
+whole = true
+locator = "LF 1–371 of artifact.journals.catholic-mind.1930-02-22-volume-28-issue-4.bounded-english-8d44b2c03213; The Catholic Mind 28, no. 4 (1930-02-22), printed pp. 61–91"
+basis = "Registered segment segment.papal.pius-xi.hf-p-xi-enc-31121929-divini-illius-magistri.1930-02-22-catholic-mind-english.complete-english-text pins the complete identified English printed witness in edition edition.papal.pius-xi.hf-p-xi-enc-31121929-divini-illius-magistri.1930-02-22-catholic-mind-english and controller SHA-256 8d44b2c03213449a25f5e4af3b4b5daed51dffb24ee9bf9f1dd63b3e61f8cafa. All 31 selected native pages and the complete selected text were reviewed for extent. Papal dating is 1929-12-31; the separate editorial outline on printed p. 92 is excluded and retained in the whole issue. The translator is unnamed; inherited OCR defects remain, without complete English-versus-Latin collation."
 
 [[containers]]
 id = "work.papal-collections.dogmatic-canons-decrees-1912"

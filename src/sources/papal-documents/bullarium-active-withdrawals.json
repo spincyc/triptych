@@ -101384,6 +101384,2300 @@
     {
       "active_disposition": "source-order-hold",
       "artifact_id": "artifact.bullarium-romanum.volume-07.1862-turin-latin.ocr-b4e46f2d1795",
+      "current_document_id": "bullarium.volume-07.unit-0023.part-02.fragment.apparatus-v2",
+      "physical_line_ranges": [
+        [
+          12767,
+          12861
+        ]
+      ],
+      "segment_id": "segment.bullarium-romanum.volume-07.unit-0023.part-02.1862-turin-latin.source-ocr",
+      "source_order_evidence": {
+        "affected_physical_line_ranges": [
+          [
+            12773,
+            12774
+          ],
+          [
+            12794,
+            12795
+          ],
+          [
+            12839,
+            12840
+          ],
+          [
+            12845,
+            12846
+          ],
+          [
+            12851,
+            12852
+          ]
+        ],
+        "artifact_id": "artifact.bullarium-romanum.volume-07.1862-turin-latin.ocr-b4e46f2d1795",
+        "artifact_sha256": "b4e46f2d179592823b417f259bb86fa909680bf7bd9b91041aa86f8e0d02c3b8",
+        "classification": "confirmed-fusion",
+        "current_document_id": "bullarium.volume-07.unit-0023.part-02.fragment.apparatus-v2",
+        "full_selected_source_and20context_read": true,
+        "identified_marginal_WORD_ids": [
+          57295,
+          57367,
+          57368,
+          57431,
+          57607,
+          57608,
+          57633,
+          57634,
+          57662,
+          57663
+        ],
+        "known_correction_ids": [
+          "bullarium.volume-07.unit-0023.part-02.fragment.apparatus-v2"
+        ],
+        "minimum_confirmed_repair_pages": [
+          {
+            "dimensions": [
+              2237,
+              3100
+            ],
+            "source_lf_range_1": [
+              12668,
+              12775
+            ],
+            "xml_object_ordinal_1": 121,
+            "xml_usemap_leaf": 139
+          },
+          {
+            "dimensions": [
+              2237,
+              3100
+            ],
+            "source_lf_range_1": [
+              12778,
+              12887
+            ],
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          }
+        ],
+        "native_word_evidence": [
+          {
+            "coords": "1107,2630,1237,2585",
+            "source_attrs": {
+              "coords": "1107,2630,1237,2585",
+              "x-confidence": "42"
+            },
+            "source_bbox": [
+              1107,
+              2585,
+              1237,
+              2630
+            ],
+            "source_line_global_1": 10413,
+            "source_line_page_1": 90,
+            "source_txt_physical_lines": [
+              12773
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                475418,
+                475423
+              ]
+            ],
+            "source_word_global_1": 57289,
+            "source_word_page_1": 487,
+            "source_xml_byte_range_0": [
+              4721145,
+              4721211
+            ],
+            "value": "Nuper ",
+            "xml_object_ordinal_1": 121,
+            "xml_usemap_leaf": 139
+          },
+          {
+            "coords": "1237,2629,1413,2585",
+            "source_attrs": {
+              "coords": "1237,2629,1413,2585",
+              "x-confidence": "65"
+            },
+            "source_bbox": [
+              1237,
+              2585,
+              1413,
+              2629
+            ],
+            "source_line_global_1": 10413,
+            "source_line_page_1": 90,
+            "source_txt_physical_lines": [
+              12773
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                475425,
+                475433
+              ]
+            ],
+            "source_word_global_1": 57290,
+            "source_word_page_1": 488,
+            "source_xml_byte_range_0": [
+              4721220,
+              4721289
+            ],
+            "value": "siquidem ",
+            "xml_object_ordinal_1": 121,
+            "xml_usemap_leaf": 139
+          },
+          {
+            "coords": "1413,2622,1509,2596",
+            "source_attrs": {
+              "coords": "1413,2622,1509,2596",
+              "x-confidence": "34"
+            },
+            "source_bbox": [
+              1413,
+              2596,
+              1509,
+              2622
+            ],
+            "source_line_global_1": 10413,
+            "source_line_page_1": 90,
+            "source_txt_physical_lines": [
+              12773
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                475435,
+                475438
+              ]
+            ],
+            "source_word_global_1": 57291,
+            "source_word_page_1": 489,
+            "source_xml_byte_range_0": [
+              4721298,
+              4721362
+            ],
+            "value": "cum ",
+            "xml_object_ordinal_1": 121,
+            "xml_usemap_leaf": 139
+          },
+          {
+            "coords": "1509,2622,1587,2596",
+            "source_attrs": {
+              "coords": "1509,2622,1587,2596",
+              "x-confidence": "40"
+            },
+            "source_bbox": [
+              1509,
+              2596,
+              1587,
+              2622
+            ],
+            "source_line_global_1": 10413,
+            "source_line_page_1": 90,
+            "source_txt_physical_lines": [
+              12773
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                475440,
+                475443
+              ]
+            ],
+            "source_word_global_1": 57292,
+            "source_word_page_1": 490,
+            "source_xml_byte_range_0": [
+              4721371,
+              4721435
+            ],
+            "value": "nos ",
+            "xml_object_ordinal_1": 121,
+            "xml_usemap_leaf": 139
+          },
+          {
+            "coords": "1587,2630,1674,2592",
+            "source_attrs": {
+              "coords": "1587,2630,1674,2592",
+              "x-confidence": "11"
+            },
+            "source_bbox": [
+              1587,
+              2592,
+              1674,
+              2630
+            ],
+            "source_line_global_1": 10413,
+            "source_line_page_1": 90,
+            "source_txt_physical_lines": [
+              12773
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                475445,
+                475449
+              ]
+            ],
+            "source_word_global_1": 57293,
+            "source_word_page_1": 491,
+            "source_xml_byte_range_0": [
+              4721444,
+              4721509
+            ],
+            "value": "post ",
+            "xml_object_ordinal_1": 121,
+            "xml_usemap_leaf": 139
+          },
+          {
+            "coords": "1674,2622,1861,2592",
+            "source_attrs": {
+              "coords": "1674,2622,1861,2592",
+              "x-confidence": "24"
+            },
+            "source_bbox": [
+              1674,
+              2592,
+              1861,
+              2622
+            ],
+            "source_line_global_1": 10413,
+            "source_line_page_1": 90,
+            "source_txt_physical_lines": [
+              12773
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                475451,
+                475458
+              ]
+            ],
+            "source_word_global_1": 57294,
+            "source_word_page_1": 492,
+            "source_xml_byte_range_0": [
+              4721518,
+              4721588
+            ],
+            "value": "nostram   ",
+            "xml_object_ordinal_1": 121,
+            "xml_usemap_leaf": 139
+          },
+          {
+            "coords": "1861,2628,1978,2604",
+            "source_attrs": {
+              "coords": "1861,2628,1978,2604",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              1861,
+              2604,
+              1978,
+              2628
+            ],
+            "source_line_global_1": 10413,
+            "source_line_page_1": 90,
+            "source_txt_physical_lines": [
+              12773
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                475462,
+                475471
+              ]
+            ],
+            "source_word_global_1": 57295,
+            "source_word_page_1": 493,
+            "source_xml_byte_range_0": [
+              4721597,
+              4721665
+            ],
+            "value": "Eiordium.",
+            "xml_object_ordinal_1": 121,
+            "xml_usemap_leaf": 139
+          },
+          {
+            "coords": "1063,2674,1123,2640",
+            "source_attrs": {
+              "coords": "1063,2674,1123,2640",
+              "x-confidence": "44"
+            },
+            "source_bbox": [
+              1063,
+              2640,
+              1123,
+              2674
+            ],
+            "source_line_global_1": 10414,
+            "source_line_page_1": 91,
+            "source_txt_physical_lines": [
+              12774
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                475473,
+                475475
+              ]
+            ],
+            "source_word_global_1": 57296,
+            "source_word_page_1": 494,
+            "source_xml_byte_range_0": [
+              4721703,
+              4721766
+            ],
+            "value": "ad ",
+            "xml_object_ordinal_1": 121,
+            "xml_usemap_leaf": 139
+          },
+          {
+            "coords": "1123,2674,1261,2639",
+            "source_attrs": {
+              "coords": "1123,2674,1261,2639",
+              "x-confidence": "11"
+            },
+            "source_bbox": [
+              1123,
+              2639,
+              1261,
+              2674
+            ],
+            "source_line_global_1": 10414,
+            "source_line_page_1": 91,
+            "source_txt_physical_lines": [
+              12774
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                475477,
+                475483
+              ]
+            ],
+            "source_word_global_1": 57297,
+            "source_word_page_1": 495,
+            "source_xml_byte_range_0": [
+              4721775,
+              4721842
+            ],
+            "value": "sumnii ",
+            "xml_object_ordinal_1": 121,
+            "xml_usemap_leaf": 139
+          },
+          {
+            "coords": "1261,2684,1475,2640",
+            "source_attrs": {
+              "coords": "1261,2684,1475,2640",
+              "x-confidence": "73"
+            },
+            "source_bbox": [
+              1261,
+              2640,
+              1475,
+              2684
+            ],
+            "source_line_global_1": 10414,
+            "source_line_page_1": 91,
+            "source_txt_physical_lines": [
+              12774
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                475485,
+                475496
+              ]
+            ],
+            "source_word_global_1": 57298,
+            "source_word_page_1": 496,
+            "source_xml_byte_range_0": [
+              4721851,
+              4721923
+            ],
+            "value": "apostolatus ",
+            "xml_object_ordinal_1": 121,
+            "xml_usemap_leaf": 139
+          },
+          {
+            "coords": "1475,2685,1622,2640",
+            "source_attrs": {
+              "coords": "1475,2685,1622,2640",
+              "x-confidence": "33"
+            },
+            "source_bbox": [
+              1475,
+              2640,
+              1622,
+              2685
+            ],
+            "source_line_global_1": 10414,
+            "source_line_page_1": 91,
+            "source_txt_physical_lines": [
+              12774
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                475498,
+                475505
+              ]
+            ],
+            "source_word_global_1": 57299,
+            "source_word_page_1": 497,
+            "source_xml_byte_range_0": [
+              4721932,
+              4722000
+            ],
+            "value": "apiceni ",
+            "xml_object_ordinal_1": 121,
+            "xml_usemap_leaf": 139
+          },
+          {
+            "coords": "1622,2687,1816,2643",
+            "source_attrs": {
+              "coords": "1622,2687,1816,2643",
+              "x-confidence": "86"
+            },
+            "source_bbox": [
+              1622,
+              2643,
+              1816,
+              2687
+            ],
+            "source_line_global_1": 10414,
+            "source_line_page_1": 91,
+            "source_txt_physical_lines": [
+              12774
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                475507,
+                475517
+              ]
+            ],
+            "source_word_global_1": 57300,
+            "source_word_page_1": 498,
+            "source_xml_byte_range_0": [
+              4722009,
+              4722079
+            ],
+            "value": "assumptio-",
+            "xml_object_ordinal_1": 121,
+            "xml_usemap_leaf": 139
+          },
+          {
+            "coords": "443,744,477,699",
+            "source_attrs": {
+              "coords": "443,744,477,699",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              443,
+              699,
+              477,
+              744
+            ],
+            "source_line_global_1": 10426,
+            "source_line_page_1": 11,
+            "source_txt_physical_lines": [
+              12794
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                475972,
+                475974
+              ]
+            ],
+            "source_word_global_1": 57361,
+            "source_word_page_1": 55,
+            "source_xml_byte_range_0": [
+              4727554,
+              4727612
+            ],
+            "value": "§ ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "477,735,532,699",
+            "source_attrs": {
+              "coords": "477,735,532,699",
+              "x-confidence": "13"
+            },
+            "source_bbox": [
+              477,
+              699,
+              532,
+              735
+            ],
+            "source_line_global_1": 10426,
+            "source_line_page_1": 11,
+            "source_txt_physical_lines": [
+              12794
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                475976,
+                475978
+              ]
+            ],
+            "source_word_global_1": 57362,
+            "source_word_page_1": 56,
+            "source_xml_byte_range_0": [
+              4727621,
+              4727680
+            ],
+            "value": "i. ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "532,735,628,700",
+            "source_attrs": {
+              "coords": "532,735,628,700",
+              "x-confidence": "15"
+            },
+            "source_bbox": [
+              532,
+              700,
+              628,
+              735
+            ],
+            "source_line_global_1": 10426,
+            "source_line_page_1": 11,
+            "source_txt_physical_lines": [
+              12794
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                475980,
+                475983
+              ]
+            ],
+            "source_word_global_1": 57363,
+            "source_word_page_1": 57,
+            "source_xml_byte_range_0": [
+              4727689,
+              4727749
+            ],
+            "value": "Cum ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "628,740,763,704",
+            "source_attrs": {
+              "coords": "628,740,763,704",
+              "x-confidence": "34"
+            },
+            "source_bbox": [
+              628,
+              704,
+              763,
+              740
+            ],
+            "source_line_global_1": 10426,
+            "source_line_page_1": 11,
+            "source_txt_physical_lines": [
+              12794
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                475985,
+                475991
+              ]
+            ],
+            "source_word_global_1": 57364,
+            "source_word_page_1": 58,
+            "source_xml_byte_range_0": [
+              4727758,
+              4727821
+            ],
+            "value": "autem, ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "763,745,1074,700",
+            "source_attrs": {
+              "coords": "763,745,1074,700",
+              "x-confidence": "26"
+            },
+            "source_bbox": [
+              763,
+              700,
+              1074,
+              745
+            ],
+            "source_line_global_1": 10426,
+            "source_line_page_1": 11,
+            "source_txt_physical_lines": [
+              12794
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                475993,
+                476009
+              ]
+            ],
+            "source_word_global_1": 57365,
+            "source_word_page_1": 59,
+            "source_xml_byte_range_0": [
+              4727830,
+              4727904
+            ],
+            "value": "sicutaccepimiis, ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1074,737,1152,714",
+            "source_attrs": {
+              "coords": "1074,737,1152,714",
+              "x-confidence": "64"
+            },
+            "source_bbox": [
+              1074,
+              714,
+              1152,
+              737
+            ],
+            "source_line_global_1": 10426,
+            "source_line_page_1": 11,
+            "source_txt_physical_lines": [
+              12794
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                476011,
+                476015
+              ]
+            ],
+            "source_word_global_1": 57366,
+            "source_word_page_1": 60,
+            "source_xml_byte_range_0": [
+              4727913,
+              4727975
+            ],
+            "value": "non-",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "226,784,311,753",
+            "source_attrs": {
+              "coords": "226,784,311,753",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              226,
+              753,
+              311,
+              784
+            ],
+            "source_line_global_1": 10427,
+            "source_line_page_1": 12,
+            "source_txt_physical_lines": [
+              12795
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                476017,
+                476022
+              ]
+            ],
+            "source_word_global_1": 57367,
+            "source_word_page_1": 61,
+            "source_xml_byte_range_0": [
+              4728013,
+              4728074
+            ],
+            "value": "cousa ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "311,784,398,754",
+            "source_attrs": {
+              "coords": "311,784,398,754",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              311,
+              754,
+              398,
+              784
+            ],
+            "source_line_global_1": 10427,
+            "source_line_page_1": 12,
+            "source_txt_physical_lines": [
+              12795
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                476024,
+                476029
+              ]
+            ],
+            "source_word_global_1": 57368,
+            "source_word_page_1": 62,
+            "source_xml_byte_range_0": [
+              4728083,
+              4728144
+            ],
+            "value": "deda- ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "398,785,499,753",
+            "source_attrs": {
+              "coords": "398,785,499,753",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              398,
+              753,
+              499,
+              785
+            ],
+            "source_line_global_1": 10427,
+            "source_line_page_1": 12,
+            "source_txt_physical_lines": [
+              12795
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                476031,
+                476036
+              ]
+            ],
+            "source_word_global_1": 57369,
+            "source_word_page_1": 63,
+            "source_xml_byte_range_0": [
+              4728153,
+              4728214
+            ],
+            "value": "jjnHi ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "499,786,552,763",
+            "source_attrs": {
+              "coords": "499,786,552,763",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              499,
+              763,
+              552,
+              786
+            ],
+            "source_line_global_1": 10427,
+            "source_line_page_1": 12,
+            "source_txt_physical_lines": [
+              12795
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                476038,
+                476040
+              ]
+            ],
+            "source_word_global_1": 57370,
+            "source_word_page_1": 64,
+            "source_xml_byte_range_0": [
+              4728223,
+              4728281
+            ],
+            "value": "gx ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "552,786,841,753",
+            "source_attrs": {
+              "coords": "552,786,841,753",
+              "x-confidence": "19"
+            },
+            "source_bbox": [
+              552,
+              753,
+              841,
+              786
+            ],
+            "source_line_global_1": 10427,
+            "source_line_page_1": 12,
+            "source_txt_physical_lines": [
+              12795
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                476042,
+                476056
+              ]
+            ],
+            "source_word_global_1": 57371,
+            "source_word_page_1": 65,
+            "source_xml_byte_range_0": [
+              4728290,
+              4728361
+            ],
+            "value": "subernatoribus ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "841,787,887,759",
+            "source_attrs": {
+              "coords": "841,787,887,759",
+              "x-confidence": "30"
+            },
+            "source_bbox": [
+              841,
+              759,
+              887,
+              787
+            ],
+            "source_line_global_1": 10427,
+            "source_line_page_1": 12,
+            "source_txt_physical_lines": [
+              12795
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                476058,
+                476060
+              ]
+            ],
+            "source_word_global_1": 57372,
+            "source_word_page_1": 66,
+            "source_xml_byte_range_0": [
+              4728370,
+              4728429
+            ],
+            "value": "et ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "887,790,1095,755",
+            "source_attrs": {
+              "coords": "887,790,1095,755",
+              "x-confidence": "18"
+            },
+            "source_bbox": [
+              887,
+              755,
+              1095,
+              790
+            ],
+            "source_line_global_1": 10427,
+            "source_line_page_1": 12,
+            "source_txt_physical_lines": [
+              12795
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                476062,
+                476074
+              ]
+            ],
+            "source_word_global_1": 57373,
+            "source_word_page_1": 67,
+            "source_xml_byte_range_0": [
+              4728438,
+              4728508
+            ],
+            "value": "officialibus ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1095,793,1153,769",
+            "source_attrs": {
+              "coords": "1095,793,1153,769",
+              "x-confidence": "22"
+            },
+            "source_bbox": [
+              1095,
+              769,
+              1153,
+              793
+            ],
+            "source_line_global_1": 10427,
+            "source_line_page_1": 12,
+            "source_txt_physical_lines": [
+              12795
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                476076,
+                476079
+              ]
+            ],
+            "source_word_global_1": 57374,
+            "source_word_page_1": 68,
+            "source_xml_byte_range_0": [
+              4728517,
+              4728578
+            ],
+            "value": "per",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1240,479,1274,435",
+            "source_attrs": {
+              "coords": "1240,479,1274,435",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              1240,
+              435,
+              1274,
+              479
+            ],
+            "source_line_global_1": 10467,
+            "source_line_page_1": 52,
+            "source_txt_physical_lines": [
+              12839
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                477926,
+                477928
+              ]
+            ],
+            "source_word_global_1": 57599,
+            "source_word_page_1": 293,
+            "source_xml_byte_range_0": [
+              4746570,
+              4746630
+            ],
+            "value": "§ ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1274,469,1328,435",
+            "source_attrs": {
+              "coords": "1274,469,1328,435",
+              "x-confidence": "13"
+            },
+            "source_bbox": [
+              1274,
+              435,
+              1328,
+              469
+            ],
+            "source_line_global_1": 10467,
+            "source_line_page_1": 52,
+            "source_txt_physical_lines": [
+              12839
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                477930,
+                477932
+              ]
+            ],
+            "source_word_global_1": 57600,
+            "source_word_page_1": 294,
+            "source_xml_byte_range_0": [
+              4746639,
+              4746700
+            ],
+            "value": "3. ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1328,468,1390,435",
+            "source_attrs": {
+              "coords": "1328,468,1390,435",
+              "x-confidence": "44"
+            },
+            "source_bbox": [
+              1328,
+              435,
+              1390,
+              468
+            ],
+            "source_line_global_1": 10467,
+            "source_line_page_1": 52,
+            "source_txt_physical_lines": [
+              12839
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                477934,
+                477936
+              ]
+            ],
+            "source_word_global_1": 57601,
+            "source_word_page_1": 295,
+            "source_xml_byte_range_0": [
+              4746709,
+              4746770
+            ],
+            "value": "Et ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1390,467,1452,435",
+            "source_attrs": {
+              "coords": "1390,467,1452,435",
+              "x-confidence": "34"
+            },
+            "source_bbox": [
+              1390,
+              435,
+              1452,
+              467
+            ],
+            "source_line_global_1": 10467,
+            "source_line_page_1": 52,
+            "source_txt_physical_lines": [
+              12839
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                477938,
+                477941
+              ]
+            ],
+            "source_word_global_1": 57602,
+            "source_word_page_1": 296,
+            "source_xml_byte_range_0": [
+              4746779,
+              4746841
+            ],
+            "value": "ita ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1452,479,1535,445",
+            "source_attrs": {
+              "coords": "1452,479,1535,445",
+              "x-confidence": "32"
+            },
+            "source_bbox": [
+              1452,
+              445,
+              1535,
+              479
+            ],
+            "source_line_global_1": 10467,
+            "source_line_page_1": 52,
+            "source_txt_physical_lines": [
+              12839
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                477943,
+                477946
+              ]
+            ],
+            "source_word_global_1": 57603,
+            "source_word_page_1": 297,
+            "source_xml_byte_range_0": [
+              4746850,
+              4746912
+            ],
+            "value": "per ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1535,479,1779,435",
+            "source_attrs": {
+              "coords": "1535,479,1779,435",
+              "x-confidence": "33"
+            },
+            "source_bbox": [
+              1535,
+              435,
+              1779,
+              479
+            ],
+            "source_line_global_1": 10467,
+            "source_line_page_1": 52,
+            "source_txt_physical_lines": [
+              12839
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                477948,
+                477958
+              ]
+            ],
+            "source_word_global_1": 57604,
+            "source_word_page_1": 298,
+            "source_xml_byte_range_0": [
+              4746921,
+              4746990
+            ],
+            "value": "quoscumque ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1779,468,1921,435",
+            "source_attrs": {
+              "coords": "1779,468,1921,435",
+              "x-confidence": "38"
+            },
+            "source_bbox": [
+              1779,
+              435,
+              1921,
+              468
+            ],
+            "source_line_global_1": 10467,
+            "source_line_page_1": 52,
+            "source_txt_physical_lines": [
+              12839
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                477960,
+                477967
+              ]
+            ],
+            "source_word_global_1": 57605,
+            "source_word_page_1": 299,
+            "source_xml_byte_range_0": [
+              4746999,
+              4747065
+            ],
+            "value": "iudiccs ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1921,468,1993,440",
+            "source_attrs": {
+              "coords": "1921,468,1993,440",
+              "x-confidence": "9"
+            },
+            "source_bbox": [
+              1921,
+              440,
+              1993,
+              468
+            ],
+            "source_line_global_1": 10467,
+            "source_line_page_1": 52,
+            "source_txt_physical_lines": [
+              12839
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                477969,
+                477971
+              ]
+            ],
+            "source_word_global_1": 57606,
+            "source_word_page_1": 300,
+            "source_xml_byte_range_0": [
+              4747074,
+              4747136
+            ],
+            "value": "et   ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1993,466,2119,441",
+            "source_attrs": {
+              "coords": "1993,466,2119,441",
+              "x-confidence": "13"
+            },
+            "source_bbox": [
+              1993,
+              441,
+              2119,
+              466
+            ],
+            "source_line_global_1": 10467,
+            "source_line_page_1": 52,
+            "source_txt_physical_lines": [
+              12839
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                477975,
+                477983
+              ]
+            ],
+            "source_word_global_1": 57607,
+            "source_word_page_1": 301,
+            "source_xml_byte_range_0": [
+              4747145,
+              4747212
+            ],
+            "value": "Decreium ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "2119,465,2151,443",
+            "source_attrs": {
+              "coords": "2119,465,2151,443",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              2119,
+              443,
+              2151,
+              465
+            ],
+            "source_line_global_1": 10467,
+            "source_line_page_1": 52,
+            "source_txt_physical_lines": [
+              12839
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                477985,
+                477987
+              ]
+            ],
+            "source_word_global_1": 57608,
+            "source_word_page_1": 302,
+            "source_xml_byte_range_0": [
+              4747221,
+              4747280
+            ],
+            "value": "u-",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1196,532,1772,488",
+            "source_attrs": {
+              "coords": "1196,532,1772,488",
+              "x-confidence": "34"
+            },
+            "source_bbox": [
+              1196,
+              488,
+              1772,
+              532
+            ],
+            "source_line_global_1": 10468,
+            "source_line_page_1": 53,
+            "source_txt_physical_lines": [
+              12840
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                477989,
+                478019
+              ]
+            ],
+            "source_word_global_1": 57609,
+            "source_word_page_1": 303,
+            "source_xml_byte_range_0": [
+              4747318,
+              4747407
+            ],
+            "value": "commissarios,quavisauctoritale ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1772,531,1950,490",
+            "source_attrs": {
+              "coords": "1772,531,1950,490",
+              "x-confidence": "51"
+            },
+            "source_bbox": [
+              1772,
+              490,
+              1950,
+              531
+            ],
+            "source_line_global_1": 10468,
+            "source_line_page_1": 53,
+            "source_txt_physical_lines": [
+              12840
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478021,
+                478031
+              ]
+            ],
+            "source_word_global_1": 57610,
+            "source_word_page_1": 304,
+            "source_xml_byte_range_0": [
+              4747416,
+              4747484
+            ],
+            "value": "fungente?,",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1238,746,1267,703",
+            "source_attrs": {
+              "coords": "1238,746,1267,703",
+              "x-confidence": "4"
+            },
+            "source_bbox": [
+              1238,
+              703,
+              1267,
+              746
+            ],
+            "source_line_global_1": 10472,
+            "source_line_page_1": 57,
+            "source_txt_physical_lines": [
+              12845
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478154,
+                478156
+              ]
+            ],
+            "source_word_global_1": 57627,
+            "source_word_page_1": 321,
+            "source_xml_byte_range_0": [
+              4748819,
+              4748879
+            ],
+            "value": "§ ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1267,738,1313,703",
+            "source_attrs": {
+              "coords": "1267,738,1313,703",
+              "x-confidence": "17"
+            },
+            "source_bbox": [
+              1267,
+              703,
+              1313,
+              738
+            ],
+            "source_line_global_1": 10472,
+            "source_line_page_1": 57,
+            "source_txt_physical_lines": [
+              12845
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478158,
+                478160
+              ]
+            ],
+            "source_word_global_1": 57628,
+            "source_word_page_1": 322,
+            "source_xml_byte_range_0": [
+              4748888,
+              4748949
+            ],
+            "value": "4. ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1313,738,1393,703",
+            "source_attrs": {
+              "coords": "1313,738,1393,703",
+              "x-confidence": "32"
+            },
+            "source_bbox": [
+              1313,
+              703,
+              1393,
+              738
+            ],
+            "source_line_global_1": 10472,
+            "source_line_page_1": 57,
+            "source_txt_physical_lines": [
+              12845
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478162,
+                478165
+              ]
+            ],
+            "source_word_global_1": 57629,
+            "source_word_page_1": 323,
+            "source_xml_byte_range_0": [
+              4748958,
+              4749020
+            ],
+            "value": "Non ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1393,738,1602,701",
+            "source_attrs": {
+              "coords": "1393,738,1602,701",
+              "x-confidence": "56"
+            },
+            "source_bbox": [
+              1393,
+              701,
+              1602,
+              738
+            ],
+            "source_line_global_1": 10472,
+            "source_line_page_1": 57,
+            "source_txt_physical_lines": [
+              12845
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478167,
+                478178
+              ]
+            ],
+            "source_word_global_1": 57630,
+            "source_word_page_1": 324,
+            "source_xml_byte_range_0": [
+              4749029,
+              4749099
+            ],
+            "value": "obstantibus ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1602,747,1875,703",
+            "source_attrs": {
+              "coords": "1602,747,1875,703",
+              "x-confidence": "70"
+            },
+            "source_bbox": [
+              1602,
+              703,
+              1875,
+              747
+            ],
+            "source_line_global_1": 10472,
+            "source_line_page_1": 57,
+            "source_txt_physical_lines": [
+              12845
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478180,
+                478192
+              ]
+            ],
+            "source_word_global_1": 57631,
+            "source_word_page_1": 325,
+            "source_xml_byte_range_0": [
+              4749108,
+              4749179
+            ],
+            "value": "quibuscumque ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1875,738,1990,713",
+            "source_attrs": {
+              "coords": "1875,738,1990,713",
+              "x-confidence": "29"
+            },
+            "source_bbox": [
+              1875,
+              713,
+              1990,
+              738
+            ],
+            "source_line_global_1": 10472,
+            "source_line_page_1": 57,
+            "source_txt_physical_lines": [
+              12845
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478194,
+                478198
+              ]
+            ],
+            "source_word_global_1": 57632,
+            "source_word_page_1": 326,
+            "source_xml_byte_range_0": [
+              4749188,
+              4749253
+            ],
+            "value": "con-   ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1990,745,2112,716",
+            "source_attrs": {
+              "coords": "1990,745,2112,716",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              1990,
+              716,
+              2112,
+              745
+            ],
+            "source_line_global_1": 10472,
+            "source_line_page_1": 57,
+            "source_txt_physical_lines": [
+              12845
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478202,
+                478209
+              ]
+            ],
+            "source_word_global_1": 57633,
+            "source_word_page_1": 327,
+            "source_xml_byte_range_0": [
+              4749262,
+              4749327
+            ],
+            "value": "chusuUe ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "2112,746,2150,725",
+            "source_attrs": {
+              "coords": "2112,746,2150,725",
+              "x-confidence": "4"
+            },
+            "source_bbox": [
+              2112,
+              725,
+              2150,
+              746
+            ],
+            "source_line_global_1": 10472,
+            "source_line_page_1": 57,
+            "source_txt_physical_lines": [
+              12845
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478211,
+                478214
+              ]
+            ],
+            "source_word_global_1": 57634,
+            "source_word_page_1": 328,
+            "source_xml_byte_range_0": [
+              4749336,
+              4749396
+            ],
+            "value": "de-",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1194,790,1431,756",
+            "source_attrs": {
+              "coords": "1194,790,1431,756",
+              "x-confidence": "65"
+            },
+            "source_bbox": [
+              1194,
+              756,
+              1431,
+              790
+            ],
+            "source_line_global_1": 10473,
+            "source_line_page_1": 58,
+            "source_txt_physical_lines": [
+              12846
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478216,
+                478229
+              ]
+            ],
+            "source_word_global_1": 57635,
+            "source_word_page_1": 329,
+            "source_xml_byte_range_0": [
+              4749434,
+              4749506
+            ],
+            "value": "stilutionibus ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1431,789,1481,761",
+            "source_attrs": {
+              "coords": "1431,789,1481,761",
+              "x-confidence": "21"
+            },
+            "source_bbox": [
+              1431,
+              761,
+              1481,
+              789
+            ],
+            "source_line_global_1": 10473,
+            "source_line_page_1": 58,
+            "source_txt_physical_lines": [
+              12846
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478231,
+                478233
+              ]
+            ],
+            "source_word_global_1": 57636,
+            "source_word_page_1": 330,
+            "source_xml_byte_range_0": [
+              4749515,
+              4749576
+            ],
+            "value": "et ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1481,789,1754,755",
+            "source_attrs": {
+              "coords": "1481,789,1754,755",
+              "x-confidence": "64"
+            },
+            "source_bbox": [
+              1481,
+              755,
+              1754,
+              789
+            ],
+            "source_line_global_1": 10473,
+            "source_line_page_1": 58,
+            "source_txt_physical_lines": [
+              12846
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478235,
+                478249
+              ]
+            ],
+            "source_word_global_1": 57637,
+            "source_word_page_1": 331,
+            "source_xml_byte_range_0": [
+              4749585,
+              4749658
+            ],
+            "value": "ordinationibus ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1754,800,1963,755",
+            "source_attrs": {
+              "coords": "1754,800,1963,755",
+              "x-confidence": "70"
+            },
+            "source_bbox": [
+              1754,
+              755,
+              1963,
+              800
+            ],
+            "source_line_global_1": 10473,
+            "source_line_page_1": 58,
+            "source_txt_physical_lines": [
+              12846
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478251,
+                478263
+              ]
+            ],
+            "source_word_global_1": 57638,
+            "source_word_page_1": 332,
+            "source_xml_byte_range_0": [
+              4749667,
+              4749738
+            ],
+            "value": "apostolicis, ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1963,781,2091,757",
+            "source_attrs": {
+              "coords": "1963,781,2091,757",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              1963,
+              757,
+              2091,
+              781
+            ],
+            "source_line_global_1": 10473,
+            "source_line_page_1": 58,
+            "source_txt_physical_lines": [
+              12846
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478265,
+                478277
+              ]
+            ],
+            "source_word_global_1": 57639,
+            "source_word_page_1": 333,
+            "source_xml_byte_range_0": [
+              4749747,
+              4749834
+            ],
+            "value": "\">i'^'\"'\"'^-",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1237,1013,1276,970",
+            "source_attrs": {
+              "coords": "1237,1013,1276,970",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              1237,
+              970,
+              1276,
+              1013
+            ],
+            "source_line_global_1": 10477,
+            "source_line_page_1": 62,
+            "source_txt_physical_lines": [
+              12851
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478407,
+                478409
+              ]
+            ],
+            "source_word_global_1": 57656,
+            "source_word_page_1": 350,
+            "source_xml_byte_range_0": [
+              4751176,
+              4751237
+            ],
+            "value": "§ ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1276,1004,1339,970",
+            "source_attrs": {
+              "coords": "1276,1004,1339,970",
+              "x-confidence": "20"
+            },
+            "source_bbox": [
+              1276,
+              970,
+              1339,
+              1004
+            ],
+            "source_line_global_1": 10477,
+            "source_line_page_1": 62,
+            "source_txt_physical_lines": [
+              12851
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478411,
+                478413
+              ]
+            ],
+            "source_word_global_1": 57657,
+            "source_word_page_1": 351,
+            "source_xml_byte_range_0": [
+              4751246,
+              4751309
+            ],
+            "value": "5.  ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1339,1003,1528,970",
+            "source_attrs": {
+              "coords": "1339,1003,1528,970",
+              "x-confidence": "21"
+            },
+            "source_bbox": [
+              1339,
+              970,
+              1528,
+              1003
+            ],
+            "source_line_global_1": 10477,
+            "source_line_page_1": 62,
+            "source_txt_physical_lines": [
+              12851
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478416,
+                478423
+              ]
+            ],
+            "source_word_global_1": 57658,
+            "source_word_page_1": 352,
+            "source_xml_byte_range_0": [
+              4751318,
+              4751386
+            ],
+            "value": "Volumus  ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1528,1002,1660,975",
+            "source_attrs": {
+              "coords": "1528,1002,1660,975",
+              "x-confidence": "53"
+            },
+            "source_bbox": [
+              1528,
+              975,
+              1660,
+              1002
+            ],
+            "source_line_global_1": 10477,
+            "source_line_page_1": 62,
+            "source_txt_physical_lines": [
+              12851
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478426,
+                478431
+              ]
+            ],
+            "source_word_global_1": 57659,
+            "source_word_page_1": 353,
+            "source_xml_byte_range_0": [
+              4751395,
+              4751460
+            ],
+            "value": "autem ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1660,1013,1772,970",
+            "source_attrs": {
+              "coords": "1660,1013,1772,970",
+              "x-confidence": "31"
+            },
+            "source_bbox": [
+              1660,
+              970,
+              1772,
+              1013
+            ],
+            "source_line_global_1": 10477,
+            "source_line_page_1": 62,
+            "source_txt_physical_lines": [
+              12851
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478433,
+                478437
+              ]
+            ],
+            "source_word_global_1": 57660,
+            "source_word_page_1": 354,
+            "source_xml_byte_range_0": [
+              4751469,
+              4751533
+            ],
+            "value": "quod ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1772,1013,1976,969",
+            "source_attrs": {
+              "coords": "1772,1013,1976,969",
+              "x-confidence": "53"
+            },
+            "source_bbox": [
+              1772,
+              969,
+              1976,
+              1013
+            ],
+            "source_line_global_1": 10477,
+            "source_line_page_1": 62,
+            "source_txt_physical_lines": [
+              12851
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478439,
+                478449
+              ]
+            ],
+            "source_word_global_1": 57661,
+            "source_word_page_1": 355,
+            "source_xml_byte_range_0": [
+              4751542,
+              4751612
+            ],
+            "value": "praesentis ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1976,1014,2040,980",
+            "source_attrs": {
+              "coords": "1976,1014,2040,980",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              1976,
+              980,
+              2040,
+              1014
+            ],
+            "source_line_global_1": 10477,
+            "source_line_page_1": 62,
+            "source_txt_physical_lines": [
+              12851
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478451,
+                478457
+              ]
+            ],
+            "source_word_global_1": 57662,
+            "source_word_page_1": 356,
+            "source_xml_byte_range_0": [
+              4751621,
+              4751686
+            ],
+            "value": "s„,, ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "2040,1021,2147,995",
+            "source_attrs": {
+              "coords": "2040,1021,2147,995",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              2040,
+              995,
+              2147,
+              1021
+            ],
+            "source_line_global_1": 10477,
+            "source_line_page_1": 62,
+            "source_txt_physical_lines": [
+              12851
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478459,
+                478468
+              ]
+            ],
+            "source_word_global_1": 57663,
+            "source_word_page_1": 357,
+            "source_xml_byte_range_0": [
+              4751695,
+              4751762
+            ],
+            "value": "^i^^^.^,,",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1192,1057,1309,1023",
+            "source_attrs": {
+              "coords": "1192,1057,1309,1023",
+              "x-confidence": "47"
+            },
+            "source_bbox": [
+              1192,
+              1023,
+              1309,
+              1057
+            ],
+            "source_line_global_1": 10478,
+            "source_line_page_1": 63,
+            "source_txt_physical_lines": [
+              12852
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478470,
+                478476
+              ]
+            ],
+            "source_word_global_1": 57664,
+            "source_word_page_1": 358,
+            "source_xml_byte_range_0": [
+              4751800,
+              4751867
+            ],
+            "value": "nostri ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1309,1056,1432,1029",
+            "source_attrs": {
+              "coords": "1309,1056,1432,1029",
+              "x-confidence": "69"
+            },
+            "source_bbox": [
+              1309,
+              1029,
+              1432,
+              1056
+            ],
+            "source_line_global_1": 10478,
+            "source_line_page_1": 63,
+            "source_txt_physical_lines": [
+              12852
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478478,
+                478483
+              ]
+            ],
+            "source_word_global_1": 57665,
+            "source_word_page_1": 359,
+            "source_xml_byte_range_0": [
+              4751876,
+              4751942
+            ],
+            "value": "motus ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1432,1067,1578,1023",
+            "source_attrs": {
+              "coords": "1432,1067,1578,1023",
+              "x-confidence": "46"
+            },
+            "source_bbox": [
+              1432,
+              1023,
+              1578,
+              1067
+            ],
+            "source_line_global_1": 10478,
+            "source_line_page_1": 63,
+            "source_txt_physical_lines": [
+              12852
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478485,
+                478492
+              ]
+            ],
+            "source_word_global_1": 57666,
+            "source_word_page_1": 360,
+            "source_xml_byte_range_0": [
+              4751951,
+              4752019
+            ],
+            "value": "proprii ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1578,1056,1660,1023",
+            "source_attrs": {
+              "coords": "1578,1056,1660,1023",
+              "x-confidence": "10"
+            },
+            "source_bbox": [
+              1578,
+              1023,
+              1660,
+              1056
+            ],
+            "source_line_global_1": 10478,
+            "source_line_page_1": 63,
+            "source_txt_physical_lines": [
+              12852
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478494,
+                478498
+              ]
+            ],
+            "source_word_global_1": 57667,
+            "source_word_page_1": 361,
+            "source_xml_byte_range_0": [
+              4752028,
+              4752093
+            ],
+            "value": "sola ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1660,1066,1850,1023",
+            "source_attrs": {
+              "coords": "1660,1066,1850,1023",
+              "x-confidence": "70"
+            },
+            "source_bbox": [
+              1660,
+              1023,
+              1850,
+              1066
+            ],
+            "source_line_global_1": 10478,
+            "source_line_page_1": 63,
+            "source_txt_physical_lines": [
+              12852
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478500,
+                478510
+              ]
+            ],
+            "source_word_global_1": 57668,
+            "source_word_page_1": 362,
+            "source_xml_byte_range_0": [
+              4752102,
+              4752173
+            ],
+            "value": "signatura, ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1850,1056,1962,1023",
+            "source_attrs": {
+              "coords": "1850,1056,1962,1023",
+              "x-confidence": "32"
+            },
+            "source_bbox": [
+              1850,
+              1023,
+              1962,
+              1056
+            ],
+            "source_line_global_1": 10478,
+            "source_line_page_1": 63,
+            "source_txt_physical_lines": [
+              12852
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478512,
+                478517
+              ]
+            ],
+            "source_word_global_1": 57669,
+            "source_word_page_1": 363,
+            "source_xml_byte_range_0": [
+              4752182,
+              4752248
+            ],
+            "value": "etiam ",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          },
+          {
+            "coords": "1962,1047,2045,1025",
+            "source_attrs": {
+              "coords": "1962,1047,2045,1025",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              1962,
+              1025,
+              2045,
+              1047
+            ],
+            "source_line_global_1": 10478,
+            "source_line_page_1": 63,
+            "source_txt_physical_lines": [
+              12852
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                478519,
+                478528
+              ]
+            ],
+            "source_word_global_1": 57670,
+            "source_word_page_1": 364,
+            "source_xml_byte_range_0": [
+              4752257,
+              4752340
+            ],
+            "value": "'\"\"'\"'■",
+            "xml_object_ordinal_1": 122,
+            "xml_usemap_leaf": 140
+          }
+        ],
+        "original_document_id": "bullarium.volume-07.unit-0023.part-02.fragment",
+        "physical_line_ranges": [
+          [
+            12767,
+            12861
+          ]
+        ],
+        "prior_pdf": {
+          "pages": 1,
+          "pdf_bytes": 18331,
+          "pdf_sha256": "253bed96c524797ff0cd55fd6dd1c9c3b533a2b24f3e7e96552ae3b406aa32c3",
+          "receipt_revision": "2026-10-26T11:42:27Z",
+          "receipt_sha256": "be529f9c675fabb4f31f7c134f5c319e2b10b5cfc6004a9fe113106365d84766"
+        },
+        "scope": "Whole active selected OCR and20LF context read; exact whole TXT/XML expanded-token correspondence and native WORD positions checked. No new acquisition, source correction or image collation. A positive local proof is not a complete repair recipe.",
+        "segment_id": "segment.bullarium-romanum.volume-07.unit-0023.part-02.1862-turin-latin.source-ocr",
+        "source_grounded_reason": "The active fragment OCR interleaves own marginal captions inside the substantive body: marginal WORDs57633–57634 (chusuUe de-, x1990–2150) interrupt con- WORD57632 at LF12845 before stilutionibus WORD57635 at12846. Further caption injection is proved at12773,12795,12839 and12851. Withdraw the fragment reading edition pending source-order repair; correcting the reader note from sections1–3 to1–5 does not repair this body order.",
+        "source_xml_artifact_id": "artifact.bullarium-romanum.volume-07.1862-turin-latin.xml-9e3af5951b2f",
+        "source_xml_sha256": "9e3af5951b2f6d3d14ba7cce77e2348aedef09f14eced9b04780bc1e7f643645",
+        "unit_id": "bullarium.volume-07.unit-0023.part-02"
+      },
+      "source_sha256": "b4e46f2d179592823b417f259bb86fa909680bf7bd9b91041aa86f8e0d02c3b8",
+      "unit_id": "bullarium.volume-07.unit-0023.part-02",
+      "withdrawn_documents": [
+        {
+          "artifact_id": "artifact.bullarium-romanum.volume-07.1862-turin-latin.ocr-b4e46f2d1795",
+          "id": "bullarium.volume-07.unit-0023.part-02.fragment.apparatus-v2",
+          "language": "la",
+          "pdf_sha256": "253bed96c524797ff0cd55fd6dd1c9c3b533a2b24f3e7e96552ae3b406aa32c3",
+          "segment_id": "segment.bullarium-romanum.volume-07.unit-0023.part-02.1862-turin-latin.source-ocr",
+          "source_sha256": "b4e46f2d179592823b417f259bb86fa909680bf7bd9b91041aa86f8e0d02c3b8"
+        }
+      ]
+    },
+    {
+      "active_disposition": "source-order-hold",
+      "artifact_id": "artifact.bullarium-romanum.volume-07.1862-turin-latin.ocr-b4e46f2d1795",
       "current_document_id": "bullarium.volume-07.unit-0026.part-01",
       "physical_line_ranges": [
         [
@@ -306918,6 +309212,2308 @@
     {
       "active_disposition": "source-order-hold",
       "artifact_id": "artifact.bullarium-romanum.volume-15.1868-turin-latin.ocr-3a315264019c",
+      "current_document_id": "bullarium.volume-15.unit-0178",
+      "physical_line_ranges": [
+        [
+          51238,
+          51369
+        ]
+      ],
+      "segment_id": "segment.bullarium-romanum.volume-15.unit-0178.1868-turin-latin.source-ocr",
+      "source_order_evidence": {
+        "affected_physical_line_ranges": [
+          [
+            51280,
+            51292
+          ],
+          [
+            51322,
+            51324
+          ]
+        ],
+        "artifact_id": "artifact.bullarium-romanum.volume-15.1868-turin-latin.ocr-3a315264019c",
+        "artifact_sha256": "3a315264019ce5f0a4eaf49c6e372aea48737ed6456cedc18109380e3951ec2a",
+        "classification": "confirmed-fusion",
+        "current_document_id": "bullarium.volume-15.unit-0178",
+        "full_selected_source_and20context_read": true,
+        "identified_marginal_WORD_ids": [
+          207080,
+          207081,
+          207096,
+          207097,
+          207098,
+          207112,
+          207113,
+          207126,
+          207127,
+          207276,
+          207277
+        ],
+        "known_correction_ids": [],
+        "minimum_confirmed_repair_pages": [
+          {
+            "dimensions": [
+              2107,
+              3142
+            ],
+            "source_lf_range_1": [
+              51244,
+              51360
+            ],
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          }
+        ],
+        "native_word_evidence": [
+          {
+            "coords": "169,1583,245,1559",
+            "source_attrs": {
+              "coords": "169,1583,245,1559",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              169,
+              1559,
+              245,
+              1583
+            ],
+            "source_line_global_1": 39221,
+            "source_line_page_1": 28,
+            "source_txt_physical_lines": [
+              51280
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675336,
+                1675340
+              ]
+            ],
+            "source_word_global_1": 207080,
+            "source_word_page_1": 141,
+            "source_xml_byte_range_0": [
+              17124681,
+              17124743
+            ],
+            "value": "Qaod ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "245,1585,391,1549",
+            "source_attrs": {
+              "coords": "245,1585,391,1549",
+              "x-confidence": "10"
+            },
+            "source_bbox": [
+              245,
+              1549,
+              391,
+              1585
+            ],
+            "source_line_global_1": 39221,
+            "source_line_page_1": 28,
+            "source_txt_physical_lines": [
+              51280
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675342,
+                1675349
+              ]
+            ],
+            "source_word_global_1": 207081,
+            "source_word_page_1": 142,
+            "source_xml_byte_range_0": [
+              17124752,
+              17124822
+            ],
+            "value": "reguia-     ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "391,1581,429,1547",
+            "source_attrs": {
+              "coords": "391,1581,429,1547",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              391,
+              1547,
+              429,
+              1581
+            ],
+            "source_line_global_1": 39221,
+            "source_line_page_1": 28,
+            "source_txt_physical_lines": [
+              51280
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675355,
+                1675356
+              ]
+            ],
+            "source_word_global_1": 207082,
+            "source_word_page_1": 143,
+            "source_xml_byte_range_0": [
+              17124831,
+              17124890
+            ],
+            "value": "S ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "429,1581,492,1547",
+            "source_attrs": {
+              "coords": "429,1581,492,1547",
+              "x-confidence": "1"
+            },
+            "source_bbox": [
+              429,
+              1547,
+              492,
+              1581
+            ],
+            "source_line_global_1": 39221,
+            "source_line_page_1": 28,
+            "source_txt_physical_lines": [
+              51280
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675358,
+                1675360
+              ]
+            ],
+            "source_word_global_1": 207083,
+            "source_word_page_1": 144,
+            "source_xml_byte_range_0": [
+              17124899,
+              17124960
+            ],
+            "value": "^.  ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "492,1589,587,1549",
+            "source_attrs": {
+              "coords": "492,1589,587,1549",
+              "x-confidence": "15"
+            },
+            "source_bbox": [
+              492,
+              1549,
+              587,
+              1589
+            ],
+            "source_line_global_1": 39221,
+            "source_line_page_1": 28,
+            "source_txt_physical_lines": [
+              51280
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675363,
+                1675367
+              ]
+            ],
+            "source_word_global_1": 207084,
+            "source_word_page_1": 145,
+            "source_xml_byte_range_0": [
+              17124969,
+              17125032
+            ],
+            "value": "Xos, ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "587,1582,901,1549",
+            "source_attrs": {
+              "coords": "587,1582,901,1549",
+              "x-confidence": "52"
+            },
+            "source_bbox": [
+              587,
+              1549,
+              901,
+              1582
+            ],
+            "source_line_global_1": 39221,
+            "source_line_page_1": 28,
+            "source_txt_physical_lines": [
+              51280
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675369,
+                1675385
+              ]
+            ],
+            "source_word_global_1": 207085,
+            "source_word_page_1": 146,
+            "source_xml_byte_range_0": [
+              17125041,
+              17125116
+            ],
+            "value": "incouvenientibus ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "901,1592,1095,1550",
+            "source_attrs": {
+              "coords": "901,1592,1095,1550",
+              "x-confidence": "55"
+            },
+            "source_bbox": [
+              901,
+              1550,
+              1095,
+              1592
+            ],
+            "source_line_global_1": 39221,
+            "source_line_page_1": 28,
+            "source_txt_physical_lines": [
+              51280
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675387,
+                1675397
+              ]
+            ],
+            "source_word_global_1": 207086,
+            "source_word_page_1": 147,
+            "source_xml_byte_range_0": [
+              17125125,
+              17125194
+            ],
+            "value": "huiusmodi,",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "143,1607,192,1591",
+            "source_attrs": {
+              "coords": "143,1607,192,1591",
+              "x-confidence": "21"
+            },
+            "source_bbox": [
+              143,
+              1591,
+              192,
+              1607
+            ],
+            "source_line_global_1": 39222,
+            "source_line_page_1": 29,
+            "source_txt_physical_lines": [
+              51282
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675400,
+                1675403
+              ]
+            ],
+            "source_word_global_1": 207087,
+            "source_word_page_1": 148,
+            "source_xml_byte_range_0": [
+              17125269,
+              17125331
+            ],
+            "value": "res ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "192,1612,284,1586",
+            "source_attrs": {
+              "coords": "192,1612,284,1586",
+              "x-confidence": "6"
+            },
+            "source_bbox": [
+              192,
+              1586,
+              284,
+              1612
+            ],
+            "source_line_global_1": 39222,
+            "source_line_page_1": 29,
+            "source_txt_physical_lines": [
+              51282
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675405,
+                1675412
+              ]
+            ],
+            "source_word_global_1": 207088,
+            "source_word_page_1": 149,
+            "source_xml_byte_range_0": [
+              17125340,
+              17125405
+            ],
+            "value": "possiut ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "284,1607,347,1588",
+            "source_attrs": {
+              "coords": "284,1607,347,1588",
+              "x-confidence": "20"
+            },
+            "source_bbox": [
+              284,
+              1588,
+              347,
+              1607
+            ],
+            "source_line_global_1": 39222,
+            "source_line_page_1": 29,
+            "source_txt_physical_lines": [
+              51282
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675414,
+                1675418
+              ]
+            ],
+            "source_word_global_1": 207089,
+            "source_word_page_1": 150,
+            "source_xml_byte_range_0": [
+              17125414,
+              17125477
+            ],
+            "value": "tan- ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "347,1607,522,1593",
+            "source_attrs": {
+              "coords": "347,1607,522,1593",
+              "x-confidence": "9"
+            },
+            "source_bbox": [
+              347,
+              1593,
+              522,
+              1607
+            ],
+            "source_line_global_1": 39222,
+            "source_line_page_1": 29,
+            "source_txt_physical_lines": [
+              51282
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675420,
+                1675421
+              ]
+            ],
+            "source_word_global_1": 207090,
+            "source_word_page_1": 151,
+            "source_xml_byte_range_0": [
+              17125486,
+              17125545
+            ],
+            "value": ". ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "522,1614,682,1593",
+            "source_attrs": {
+              "coords": "522,1614,682,1593",
+              "x-confidence": "6"
+            },
+            "source_bbox": [
+              522,
+              1593,
+              682,
+              1614
+            ],
+            "source_line_global_1": 39222,
+            "source_line_page_1": 29,
+            "source_txt_physical_lines": [
+              51282
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675423,
+                1675425
+              ]
+            ],
+            "source_word_global_1": 207091,
+            "source_word_page_1": 152,
+            "source_xml_byte_range_0": [
+              17125554,
+              17125614
+            ],
+            "value": ",. ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "682,1614,706,1593",
+            "source_attrs": {
+              "coords": "682,1614,706,1593",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              682,
+              1593,
+              706,
+              1614
+            ],
+            "source_line_global_1": 39222,
+            "source_line_page_1": 29,
+            "source_txt_physical_lines": [
+              51282
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675427,
+                1675428
+              ]
+            ],
+            "source_word_global_1": 207092,
+            "source_word_page_1": 153,
+            "source_xml_byte_range_0": [
+              17125623,
+              17125682
+            ],
+            "value": "i ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "706,1607,756,1593",
+            "source_attrs": {
+              "coords": "706,1607,756,1593",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              706,
+              1593,
+              756,
+              1607
+            ],
+            "source_line_global_1": 39222,
+            "source_line_page_1": 29,
+            "source_txt_physical_lines": [
+              51282
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675430,
+                1675433
+              ]
+            ],
+            "source_word_global_1": 207093,
+            "source_word_page_1": 154,
+            "source_xml_byte_range_0": [
+              17125691,
+              17125757
+            ],
+            "value": "•      ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "756,1614,1016,1593",
+            "source_attrs": {
+              "coords": "756,1614,1016,1593",
+              "x-confidence": "2"
+            },
+            "source_bbox": [
+              756,
+              1593,
+              1016,
+              1614
+            ],
+            "source_line_global_1": 39222,
+            "source_line_page_1": 29,
+            "source_txt_physical_lines": [
+              51282
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675440,
+                1675441
+              ]
+            ],
+            "source_word_global_1": 207094,
+            "source_word_page_1": 155,
+            "source_xml_byte_range_0": [
+              17125766,
+              17125826
+            ],
+            "value": "i ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "1016,1614,1036,1603",
+            "source_attrs": {
+              "coords": "1016,1614,1036,1603",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              1016,
+              1603,
+              1036,
+              1614
+            ],
+            "source_line_global_1": 39222,
+            "source_line_page_1": 29,
+            "source_txt_physical_lines": [
+              51282
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675443,
+                1675444
+              ]
+            ],
+            "source_word_global_1": 207095,
+            "source_word_page_1": 156,
+            "source_xml_byte_range_0": [
+              17125835,
+              17125895
+            ],
+            "value": "t",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "142,1634,202,1612",
+            "source_attrs": {
+              "coords": "142,1634,202,1612",
+              "x-confidence": "1"
+            },
+            "source_bbox": [
+              142,
+              1612,
+              202,
+              1634
+            ],
+            "source_line_global_1": 39223,
+            "source_line_page_1": 30,
+            "source_txt_physical_lines": [
+              51284
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675447,
+                1675451
+              ]
+            ],
+            "source_word_global_1": 207096,
+            "source_word_page_1": 157,
+            "source_xml_byte_range_0": [
+              17125970,
+              17126032
+            ],
+            "value": "tura ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "202,1634,264,1612",
+            "source_attrs": {
+              "coords": "202,1634,264,1612",
+              "x-confidence": "1"
+            },
+            "source_bbox": [
+              202,
+              1612,
+              264,
+              1634
+            ],
+            "source_line_global_1": 39223,
+            "source_line_page_1": 30,
+            "source_txt_physical_lines": [
+              51284
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675453,
+                1675457
+              ]
+            ],
+            "source_word_global_1": 207097,
+            "source_word_page_1": 158,
+            "source_xml_byte_range_0": [
+              17126041,
+              17126103
+            ],
+            "value": "cura ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "264,1634,344,1612",
+            "source_attrs": {
+              "coords": "264,1634,344,1612",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              264,
+              1612,
+              344,
+              1634
+            ],
+            "source_line_global_1": 39223,
+            "source_line_page_1": 30,
+            "source_txt_physical_lines": [
+              51284
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675459,
+                1675465
+              ]
+            ],
+            "source_word_global_1": 207098,
+            "source_word_page_1": 159,
+            "source_xml_byte_range_0": [
+              17126112,
+              17126176
+            ],
+            "value": "licen- ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "344,1634,457,1607",
+            "source_attrs": {
+              "coords": "344,1634,457,1607",
+              "x-confidence": "13"
+            },
+            "source_bbox": [
+              344,
+              1607,
+              457,
+              1634
+            ],
+            "source_line_global_1": 39223,
+            "source_line_page_1": 30,
+            "source_txt_physical_lines": [
+              51284
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675467,
+                1675472
+              ]
+            ],
+            "source_word_global_1": 207099,
+            "source_word_page_1": 160,
+            "source_xml_byte_range_0": [
+              17126185,
+              17126249
+            ],
+            "value": "luxta ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "457,1635,638,1607",
+            "source_attrs": {
+              "coords": "457,1635,638,1607",
+              "x-confidence": "27"
+            },
+            "source_bbox": [
+              457,
+              1607,
+              638,
+              1635
+            ],
+            "source_line_global_1": 39223,
+            "source_line_page_1": 30,
+            "source_txt_physical_lines": [
+              51284
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675474,
+                1675482
+              ]
+            ],
+            "source_word_global_1": 207100,
+            "source_word_page_1": 161,
+            "source_xml_byte_range_0": [
+              17126258,
+              17126325
+            ],
+            "value": "creuitum ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "638,1635,747,1606",
+            "source_attrs": {
+              "coords": "638,1635,747,1606",
+              "x-confidence": "25"
+            },
+            "source_bbox": [
+              638,
+              1606,
+              747,
+              1635
+            ],
+            "source_line_global_1": 39223,
+            "source_line_page_1": 30,
+            "source_txt_physical_lines": [
+              51284
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675484,
+                1675489
+              ]
+            ],
+            "source_word_global_1": 207101,
+            "source_word_page_1": 162,
+            "source_xml_byte_range_0": [
+              17126334,
+              17126398
+            ],
+            "value": "nobis ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "747,1644,903,1606",
+            "source_attrs": {
+              "coords": "747,1644,903,1606",
+              "x-confidence": "60"
+            },
+            "source_bbox": [
+              747,
+              1606,
+              903,
+              1644
+            ],
+            "source_line_global_1": 39223,
+            "source_line_page_1": 30,
+            "source_txt_physical_lines": [
+              51284
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675491,
+                1675498
+              ]
+            ],
+            "source_word_global_1": 207102,
+            "source_word_page_1": 163,
+            "source_xml_byte_range_0": [
+              17126407,
+              17126473
+            ],
+            "value": "desuper ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "903,1644,1096,1606",
+            "source_attrs": {
+              "coords": "903,1644,1096,1606",
+              "x-confidence": "44"
+            },
+            "source_bbox": [
+              903,
+              1606,
+              1096,
+              1644
+            ],
+            "source_line_global_1": 39223,
+            "source_line_page_1": 30,
+            "source_txt_physical_lines": [
+              51284
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675500,
+                1675511
+              ]
+            ],
+            "source_word_global_1": 207103,
+            "source_word_page_1": 164,
+            "source_xml_byte_range_0": [
+              17126482,
+              17126552
+            ],
+            "value": "apostolicae",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "142,1660,223,1639",
+            "source_attrs": {
+              "coords": "142,1660,223,1639",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              142,
+              1639,
+              223,
+              1660
+            ],
+            "source_line_global_1": 39224,
+            "source_line_page_1": 31,
+            "source_txt_physical_lines": [
+              51286
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675514,
+                1675518
+              ]
+            ],
+            "source_word_global_1": 207104,
+            "source_word_page_1": 165,
+            "source_xml_byte_range_0": [
+              17126627,
+              17126694
+            ],
+            "value": "tià      ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "223,1660,421,1639",
+            "source_attrs": {
+              "coords": "223,1660,421,1639",
+              "x-confidence": "12"
+            },
+            "source_bbox": [
+              223,
+              1639,
+              421,
+              1660
+            ],
+            "source_line_global_1": 39224,
+            "source_line_page_1": 31,
+            "source_txt_physical_lines": [
+              51286
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675525,
+                1675534
+              ]
+            ],
+            "source_word_global_1": 207105,
+            "source_word_page_1": 166,
+            "source_xml_byte_range_0": [
+              17126703,
+              17126771
+            ],
+            "value": "Ordinarli ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "421,1660,482,1646",
+            "source_attrs": {
+              "coords": "421,1660,482,1646",
+              "x-confidence": "1"
+            },
+            "source_bbox": [
+              421,
+              1646,
+              482,
+              1660
+            ],
+            "source_line_global_1": 39224,
+            "source_line_page_1": 31,
+            "source_txt_physical_lines": [
+              51286
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675536,
+                1675537
+              ]
+            ],
+            "source_word_global_1": 207106,
+            "source_word_page_1": 167,
+            "source_xml_byte_range_0": [
+              17126780,
+              17126845
+            ],
+            "value": ".       ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "482,1660,552,1646",
+            "source_attrs": {
+              "coords": "482,1660,552,1646",
+              "x-confidence": "1"
+            },
+            "source_bbox": [
+              482,
+              1646,
+              552,
+              1660
+            ],
+            "source_line_global_1": 39224,
+            "source_line_page_1": 31,
+            "source_txt_physical_lines": [
+              51286
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675545,
+                1675546
+              ]
+            ],
+            "source_word_global_1": 207107,
+            "source_word_page_1": 168,
+            "source_xml_byte_range_0": [
+              17126854,
+              17126920
+            ],
+            "value": ".        ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "552,1667,607,1646",
+            "source_attrs": {
+              "coords": "552,1667,607,1646",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              552,
+              1646,
+              607,
+              1667
+            ],
+            "source_line_global_1": 39224,
+            "source_line_page_1": 31,
+            "source_txt_physical_lines": [
+              51286
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675555,
+                1675557
+              ]
+            ],
+            "source_word_global_1": 207108,
+            "source_word_page_1": 169,
+            "source_xml_byte_range_0": [
+              17126929,
+              17126991
+            ],
+            "value": "^^   ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "607,1660,960,1646",
+            "source_attrs": {
+              "coords": "607,1660,960,1646",
+              "x-confidence": "25"
+            },
+            "source_bbox": [
+              607,
+              1646,
+              960,
+              1660
+            ],
+            "source_line_global_1": 39224,
+            "source_line_page_1": 31,
+            "source_txt_physical_lines": [
+              51286
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675561,
+                1675562
+              ]
+            ],
+            "source_word_global_1": 207109,
+            "source_word_page_1": 170,
+            "source_xml_byte_range_0": [
+              17127000,
+              17127060
+            ],
+            "value": ". ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "960,1667,1045,1646",
+            "source_attrs": {
+              "coords": "960,1667,1045,1646",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              960,
+              1646,
+              1045,
+              1667
+            ],
+            "source_line_global_1": 39224,
+            "source_line_page_1": 31,
+            "source_txt_physical_lines": [
+              51286
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675564,
+                1675566
+              ]
+            ],
+            "source_word_global_1": 207110,
+            "source_word_page_1": 171,
+            "source_xml_byte_range_0": [
+              17127069,
+              17127137
+            ],
+            "value": "t\\        ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "1045,1660,1050,1657",
+            "source_attrs": {
+              "coords": "1045,1660,1050,1657",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              1045,
+              1657,
+              1050,
+              1660
+            ],
+            "source_line_global_1": 39224,
+            "source_line_page_1": 31,
+            "source_txt_physical_lines": [
+              51286
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675575,
+                1675578
+              ]
+            ],
+            "source_word_global_1": 207111,
+            "source_word_page_1": 172,
+            "source_xml_byte_range_0": [
+              17127146,
+              17127208
+            ],
+            "value": "■",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "142,1686,287,1665",
+            "source_attrs": {
+              "coords": "142,1686,287,1665",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              142,
+              1665,
+              287,
+              1686
+            ],
+            "source_line_global_1": 39225,
+            "source_line_page_1": 32,
+            "source_txt_physical_lines": [
+              51288
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675581,
+                1675593
+              ]
+            ],
+            "source_word_global_1": 207112,
+            "source_word_page_1": 173,
+            "source_xml_byte_range_0": [
+              17127283,
+              17127352
+            ],
+            "value": "confessiones",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "293,1687,345,1665",
+            "source_attrs": {
+              "coords": "293,1687,345,1665",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              293,
+              1665,
+              345,
+              1687
+            ],
+            "source_line_global_1": 39225,
+            "source_line_page_1": 32,
+            "source_txt_physical_lines": [
+              51288
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675594,
+                1675597
+              ]
+            ],
+            "source_word_global_1": 207113,
+            "source_word_page_1": 174,
+            "source_xml_byte_range_0": [
+              17127361,
+              17127422
+            ],
+            "value": "au- ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "345,1688,530,1660",
+            "source_attrs": {
+              "coords": "345,1688,530,1660",
+              "x-confidence": "32"
+            },
+            "source_bbox": [
+              345,
+              1660,
+              530,
+              1688
+            ],
+            "source_line_global_1": 39225,
+            "source_line_page_1": 32,
+            "source_txt_physical_lines": [
+              51288
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675599,
+                1675609
+              ]
+            ],
+            "source_word_global_1": 207114,
+            "source_word_page_1": 175,
+            "source_xml_byte_range_0": [
+              17127431,
+              17127500
+            ],
+            "value": "scrvitutis ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "530,1696,699,1659",
+            "source_attrs": {
+              "coords": "530,1696,699,1659",
+              "x-confidence": "21"
+            },
+            "source_bbox": [
+              530,
+              1659,
+              699,
+              1696
+            ],
+            "source_line_global_1": 39225,
+            "source_line_page_1": 32,
+            "source_txt_physical_lines": [
+              51288
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675611,
+                1675620
+              ]
+            ],
+            "source_word_global_1": 207115,
+            "source_word_page_1": 176,
+            "source_xml_byte_range_0": [
+              17127509,
+              17127577
+            ],
+            "value": "oliicium, ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "699,1697,872,1660",
+            "source_attrs": {
+              "coords": "699,1697,872,1660",
+              "x-confidence": "35"
+            },
+            "source_bbox": [
+              699,
+              1660,
+              872,
+              1697
+            ],
+            "source_line_global_1": 39225,
+            "source_line_page_1": 32,
+            "source_txt_physical_lines": [
+              51288
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675622,
+                1675629
+              ]
+            ],
+            "source_word_global_1": 207116,
+            "source_word_page_1": 177,
+            "source_xml_byte_range_0": [
+              17127586,
+              17127652
+            ],
+            "value": "quantum ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "872,1688,961,1659",
+            "source_attrs": {
+              "coords": "872,1688,961,1659",
+              "x-confidence": "45"
+            },
+            "source_bbox": [
+              872,
+              1659,
+              961,
+              1688
+            ],
+            "source_line_global_1": 39225,
+            "source_line_page_1": 32,
+            "source_txt_physical_lines": [
+              51288
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675631,
+                1675634
+              ]
+            ],
+            "source_word_global_1": 207117,
+            "source_word_page_1": 178,
+            "source_xml_byte_range_0": [
+              17127661,
+              17127723
+            ],
+            "value": "cum ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "961,1689,1096,1659",
+            "source_attrs": {
+              "coords": "961,1689,1096,1659",
+              "x-confidence": "55"
+            },
+            "source_bbox": [
+              961,
+              1659,
+              1096,
+              1689
+            ],
+            "source_line_global_1": 39225,
+            "source_line_page_1": 32,
+            "source_txt_physical_lines": [
+              51288
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675636,
+                1675642
+              ]
+            ],
+            "source_word_global_1": 207118,
+            "source_word_page_1": 179,
+            "source_xml_byte_range_0": [
+              17127732,
+              17127797
+            ],
+            "value": "Domino",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "143,1713,206,1691",
+            "source_attrs": {
+              "coords": "143,1713,206,1691",
+              "x-confidence": "8"
+            },
+            "source_bbox": [
+              143,
+              1691,
+              206,
+              1713
+            ],
+            "source_line_global_1": 39226,
+            "source_line_page_1": 33,
+            "source_txt_physical_lines": [
+              51290
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675645,
+                1675649
+              ]
+            ],
+            "source_word_global_1": 207119,
+            "source_word_page_1": 180,
+            "source_xml_byte_range_0": [
+              17127872,
+              17127934
+            ],
+            "value": "dire ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "206,1713,242,1693",
+            "source_attrs": {
+              "coords": "206,1713,242,1693",
+              "x-confidence": "2"
+            },
+            "source_bbox": [
+              206,
+              1693,
+              242,
+              1713
+            ],
+            "source_line_global_1": 39226,
+            "source_line_page_1": 33,
+            "source_txt_physical_lines": [
+              51290
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675651,
+                1675653
+              ]
+            ],
+            "source_word_global_1": 207120,
+            "source_word_page_1": 181,
+            "source_xml_byte_range_0": [
+              17127943,
+              17128003
+            ],
+            "value": "et ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "242,1713,564,1691",
+            "source_attrs": {
+              "coords": "242,1713,564,1691",
+              "x-confidence": "6"
+            },
+            "source_bbox": [
+              242,
+              1691,
+              564,
+              1713
+            ],
+            "source_line_global_1": 39226,
+            "source_line_page_1": 33,
+            "source_txt_physical_lines": [
+              51290
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675655,
+                1675661
+              ]
+            ],
+            "source_word_global_1": 207121,
+            "source_word_page_1": 182,
+            "source_xml_byte_range_0": [
+              17128012,
+              17128076
+            ],
+            "value": "yerbum ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "564,1719,608,1699",
+            "source_attrs": {
+              "coords": "564,1719,608,1699",
+              "x-confidence": "1"
+            },
+            "source_bbox": [
+              564,
+              1699,
+              608,
+              1719
+            ],
+            "source_line_global_1": 39226,
+            "source_line_page_1": 33,
+            "source_txt_physical_lines": [
+              51290
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675663,
+                1675664
+              ]
+            ],
+            "source_word_global_1": 207122,
+            "source_word_page_1": 183,
+            "source_xml_byte_range_0": [
+              17128085,
+              17128148
+            ],
+            "value": ",     ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "608,1713,915,1699",
+            "source_attrs": {
+              "coords": "608,1713,915,1699",
+              "x-confidence": "16"
+            },
+            "source_bbox": [
+              608,
+              1699,
+              915,
+              1713
+            ],
+            "source_line_global_1": 39226,
+            "source_line_page_1": 33,
+            "source_txt_physical_lines": [
+              51290
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675670,
+                1675671
+              ]
+            ],
+            "source_word_global_1": 207123,
+            "source_word_page_1": 184,
+            "source_xml_byte_range_0": [
+              17128157,
+              17128217
+            ],
+            "value": ". ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "915,1714,944,1699",
+            "source_attrs": {
+              "coords": "915,1714,944,1699",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              915,
+              1699,
+              944,
+              1714
+            ],
+            "source_line_global_1": 39226,
+            "source_line_page_1": 33,
+            "source_txt_physical_lines": [
+              51290
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675673,
+                1675676
+              ]
+            ],
+            "source_word_global_1": 207124,
+            "source_word_page_1": 185,
+            "source_xml_byte_range_0": [
+              17128226,
+              17128289
+            ],
+            "value": "•   ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "944,1719,975,1709",
+            "source_attrs": {
+              "coords": "944,1719,975,1709",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              944,
+              1709,
+              975,
+              1719
+            ],
+            "source_line_global_1": 39226,
+            "source_line_page_1": 33,
+            "source_txt_physical_lines": [
+              51290
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675680,
+                1675683
+              ]
+            ],
+            "source_word_global_1": 207125,
+            "source_word_page_1": 186,
+            "source_xml_byte_range_0": [
+              17128298,
+              17128358
+            ],
+            "value": "i-.",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "143,1740,192,1717",
+            "source_attrs": {
+              "coords": "143,1740,192,1717",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              143,
+              1717,
+              192,
+              1740
+            ],
+            "source_line_global_1": 39227,
+            "source_line_page_1": 34,
+            "source_txt_physical_lines": [
+              51292
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675686,
+                1675689
+              ]
+            ],
+            "source_word_global_1": 207126,
+            "source_word_page_1": 187,
+            "source_xml_byte_range_0": [
+              17128433,
+              17128494
+            ],
+            "value": "Dei ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "192,1745,346,1718",
+            "source_attrs": {
+              "coords": "192,1745,346,1718",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              192,
+              1718,
+              346,
+              1745
+            ],
+            "source_line_global_1": 39227,
+            "source_line_page_1": 34,
+            "source_txt_physical_lines": [
+              51292
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675691,
+                1675702
+              ]
+            ],
+            "source_word_global_1": 207127,
+            "source_word_page_1": 188,
+            "source_xml_byte_range_0": [
+              17128503,
+              17128572
+            ],
+            "value": "praedicare. ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "346,1752,543,1718",
+            "source_attrs": {
+              "coords": "346,1752,543,1718",
+              "x-confidence": "52"
+            },
+            "source_bbox": [
+              346,
+              1718,
+              543,
+              1752
+            ],
+            "source_line_global_1": 39227,
+            "source_line_page_1": 34,
+            "source_txt_physical_lines": [
+              51292
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675704,
+                1675712
+              ]
+            ],
+            "source_word_global_1": 207128,
+            "source_word_page_1": 189,
+            "source_xml_byte_range_0": [
+              17128581,
+              17128648
+            ],
+            "value": "possumus ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "543,1741,672,1710",
+            "source_attrs": {
+              "coords": "543,1741,672,1710",
+              "x-confidence": "24"
+            },
+            "source_bbox": [
+              543,
+              1710,
+              672,
+              1741
+            ],
+            "source_line_global_1": 39227,
+            "source_line_page_1": 34,
+            "source_txt_physical_lines": [
+              51292
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675714,
+                1675721
+              ]
+            ],
+            "source_word_global_1": 207129,
+            "source_word_page_1": 190,
+            "source_xml_byte_range_0": [
+              17128657,
+              17128722
+            ],
+            "value": "obviarc",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "686,1749,719,1714",
+            "source_attrs": {
+              "coords": "686,1749,719,1714",
+              "x-confidence": "7"
+            },
+            "source_bbox": [
+              686,
+              1714,
+              719,
+              1749
+            ],
+            "source_line_global_1": 39227,
+            "source_line_page_1": 34,
+            "source_txt_physical_lines": [
+              51292
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675722,
+                1675723
+              ]
+            ],
+            "source_word_global_1": 207130,
+            "source_word_page_1": 191,
+            "source_xml_byte_range_0": [
+              17128731,
+              17128790
+            ],
+            "value": ", ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "719,1752,838,1714",
+            "source_attrs": {
+              "coords": "719,1752,838,1714",
+              "x-confidence": "8"
+            },
+            "source_bbox": [
+              719,
+              1714,
+              838,
+              1752
+            ],
+            "source_line_global_1": 39227,
+            "source_line_page_1": 34,
+            "source_txt_physical_lines": [
+              51292
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675725,
+                1675730
+              ]
+            ],
+            "source_word_global_1": 207131,
+            "source_word_page_1": 192,
+            "source_xml_byte_range_0": [
+              17128799,
+              17128862
+            ],
+            "value": "tcquc ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "838,1752,1052,1710",
+            "source_attrs": {
+              "coords": "838,1752,1052,1710",
+              "x-confidence": "31"
+            },
+            "source_bbox": [
+              838,
+              1710,
+              1052,
+              1752
+            ],
+            "source_line_global_1": 39227,
+            "source_line_page_1": 34,
+            "source_txt_physical_lines": [
+              51292
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675732,
+                1675743
+              ]
+            ],
+            "source_word_global_1": 207132,
+            "source_word_page_1": 193,
+            "source_xml_byte_range_0": [
+              17128871,
+              17128942
+            ],
+            "value": "spccialibus ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "1052,1741,1096,1710",
+            "source_attrs": {
+              "coords": "1052,1741,1096,1710",
+              "x-confidence": "30"
+            },
+            "source_bbox": [
+              1052,
+              1710,
+              1096,
+              1741
+            ],
+            "source_line_global_1": 39227,
+            "source_line_page_1": 34,
+            "source_txt_physical_lines": [
+              51292
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1675745,
+                1675748
+              ]
+            ],
+            "source_word_global_1": 207133,
+            "source_word_page_1": 194,
+            "source_xml_byte_range_0": [
+              17128951,
+              17129014
+            ],
+            "value": "fa-",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "1167,691,1205,648",
+            "source_attrs": {
+              "coords": "1167,691,1205,648",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              1167,
+              648,
+              1205,
+              691
+            ],
+            "source_line_global_1": 39253,
+            "source_line_page_1": 60,
+            "source_txt_physical_lines": [
+              51322
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1676877,
+                1676879
+              ]
+            ],
+            "source_word_global_1": 207270,
+            "source_word_page_1": 331,
+            "source_xml_byte_range_0": [
+              17140061,
+              17140123
+            ],
+            "value": "§   ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "1205,681,1261,648",
+            "source_attrs": {
+              "coords": "1205,681,1261,648",
+              "x-confidence": "6"
+            },
+            "source_bbox": [
+              1205,
+              648,
+              1261,
+              681
+            ],
+            "source_line_global_1": 39253,
+            "source_line_page_1": 60,
+            "source_txt_physical_lines": [
+              51322
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1676883,
+                1676885
+              ]
+            ],
+            "source_word_global_1": 207271,
+            "source_word_page_1": 332,
+            "source_xml_byte_range_0": [
+              17140132,
+              17140194
+            ],
+            "value": "3.   ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "1261,682,1355,650",
+            "source_attrs": {
+              "coords": "1261,682,1355,650",
+              "x-confidence": "2"
+            },
+            "source_bbox": [
+              1261,
+              650,
+              1355,
+              682
+            ],
+            "source_line_global_1": 39253,
+            "source_line_page_1": 60,
+            "source_txt_physical_lines": [
+              51322
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1676889,
+                1676892
+              ]
+            ],
+            "source_word_global_1": 207272,
+            "source_word_page_1": 333,
+            "source_xml_byte_range_0": [
+              17140203,
+              17140266
+            ],
+            "value": "Non   ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "1355,682,1568,649",
+            "source_attrs": {
+              "coords": "1355,682,1568,649",
+              "x-confidence": "0"
+            },
+            "source_bbox": [
+              1355,
+              649,
+              1568,
+              682
+            ],
+            "source_line_global_1": 39253,
+            "source_line_page_1": 60,
+            "source_txt_physical_lines": [
+              51322
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1676896,
+                1676907
+              ]
+            ],
+            "source_word_global_1": 207273,
+            "source_word_page_1": 334,
+            "source_xml_byte_range_0": [
+              17140275,
+              17140344
+            ],
+            "value": "Obslanlibus ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "1568,691,1755,649",
+            "source_attrs": {
+              "coords": "1568,691,1755,649",
+              "x-confidence": "47"
+            },
+            "source_bbox": [
+              1568,
+              649,
+              1755,
+              691
+            ],
+            "source_line_global_1": 39253,
+            "source_line_page_1": 60,
+            "source_txt_physical_lines": [
+              51322
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1676909,
+                1676918
+              ]
+            ],
+            "source_word_global_1": 207274,
+            "source_word_page_1": 335,
+            "source_xml_byte_range_0": [
+              17140353,
+              17140423
+            ],
+            "value": "quibusvis   ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "1755,681,1910,649",
+            "source_attrs": {
+              "coords": "1755,681,1910,649",
+              "x-confidence": "3"
+            },
+            "source_bbox": [
+              1755,
+              649,
+              1910,
+              681
+            ],
+            "source_line_global_1": 39253,
+            "source_line_page_1": 60,
+            "source_txt_physical_lines": [
+              51322
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1676922,
+                1676929
+              ]
+            ],
+            "source_word_global_1": 207275,
+            "source_word_page_1": 336,
+            "source_xml_byte_range_0": [
+              17140432,
+              17140501
+            ],
+            "value": "consti-     ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "1910,680,2036,660",
+            "source_attrs": {
+              "coords": "1910,680,2036,660",
+              "x-confidence": "5"
+            },
+            "source_bbox": [
+              1910,
+              660,
+              2036,
+              680
+            ],
+            "source_line_global_1": 39253,
+            "source_line_page_1": 60,
+            "source_txt_physical_lines": [
+              51322
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1676935,
+                1676944
+              ]
+            ],
+            "source_word_global_1": 207276,
+            "source_word_page_1": 337,
+            "source_xml_byte_range_0": [
+              17140510,
+              17140577
+            ],
+            "value": "contraria ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "2036,680,2068,659",
+            "source_attrs": {
+              "coords": "2036,680,2068,659",
+              "x-confidence": "62"
+            },
+            "source_bbox": [
+              2036,
+              659,
+              2068,
+              680
+            ],
+            "source_line_global_1": 39253,
+            "source_line_page_1": 60,
+            "source_txt_physical_lines": [
+              51322
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1676946,
+                1676949
+              ]
+            ],
+            "source_word_global_1": 207277,
+            "source_word_page_1": 338,
+            "source_xml_byte_range_0": [
+              17140586,
+              17140647
+            ],
+            "value": "di-",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "1122,734,1326,701",
+            "source_attrs": {
+              "coords": "1122,734,1326,701",
+              "x-confidence": "48"
+            },
+            "source_bbox": [
+              1122,
+              701,
+              1326,
+              734
+            ],
+            "source_line_global_1": 39254,
+            "source_line_page_1": 61,
+            "source_txt_physical_lines": [
+              51324
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1676952,
+                1676962
+              ]
+            ],
+            "source_word_global_1": 207278,
+            "source_word_page_1": 339,
+            "source_xml_byte_range_0": [
+              17140722,
+              17140791
+            ],
+            "value": "tutionibus ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "1326,734,1391,707",
+            "source_attrs": {
+              "coords": "1326,734,1391,707",
+              "x-confidence": "7"
+            },
+            "source_bbox": [
+              1326,
+              707,
+              1391,
+              734
+            ],
+            "source_line_global_1": 39254,
+            "source_line_page_1": 61,
+            "source_txt_physical_lines": [
+              51324
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1676964,
+                1676966
+              ]
+            ],
+            "source_word_global_1": 207279,
+            "source_word_page_1": 340,
+            "source_xml_byte_range_0": [
+              17140800,
+              17140860
+            ],
+            "value": "et ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "1391,734,1667,702",
+            "source_attrs": {
+              "coords": "1391,734,1667,702",
+              "x-confidence": "55"
+            },
+            "source_bbox": [
+              1391,
+              702,
+              1667,
+              734
+            ],
+            "source_line_global_1": 39254,
+            "source_line_page_1": 61,
+            "source_txt_physical_lines": [
+              51324
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1676968,
+                1676982
+              ]
+            ],
+            "source_word_global_1": 207280,
+            "source_word_page_1": 341,
+            "source_xml_byte_range_0": [
+              17140869,
+              17140942
+            ],
+            "value": "ordinalionibus ",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "1667,744,1847,701",
+            "source_attrs": {
+              "coords": "1667,744,1847,701",
+              "x-confidence": "61"
+            },
+            "source_bbox": [
+              1667,
+              701,
+              1847,
+              744
+            ],
+            "source_line_global_1": 39254,
+            "source_line_page_1": 61,
+            "source_txt_physical_lines": [
+              51324
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1676984,
+                1676995
+              ]
+            ],
+            "source_word_global_1": 207281,
+            "source_word_page_1": 342,
+            "source_xml_byte_range_0": [
+              17140951,
+              17141020
+            ],
+            "value": "apostolicis",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          },
+          {
+            "coords": "1861,741,1868,729",
+            "source_attrs": {
+              "coords": "1861,741,1868,729",
+              "x-confidence": "57"
+            },
+            "source_bbox": [
+              1861,
+              729,
+              1868,
+              741
+            ],
+            "source_line_global_1": 39254,
+            "source_line_page_1": 61,
+            "source_txt_physical_lines": [
+              51324
+            ],
+            "source_txt_token_byte_ranges_0": [
+              [
+                1676996,
+                1676997
+              ]
+            ],
+            "source_word_global_1": 207282,
+            "source_word_page_1": 343,
+            "source_xml_byte_range_0": [
+              17141029,
+              17141088
+            ],
+            "value": ",",
+            "xml_object_ordinal_1": 412,
+            "xml_usemap_leaf": 412
+          }
+        ],
+        "original_document_id": "bullarium.volume-15.unit-0178",
+        "physical_line_ranges": [
+          [
+            51238,
+            51369
+          ]
+        ],
+        "prior_pdf": {
+          "pages": 2,
+          "pdf_bytes": 19428,
+          "pdf_sha256": "c6614a346ceeb19fd90ee2d312a662d46640bc09004d00d1ad4a6a34400201bb",
+          "receipt_revision": "2026-10-26T05:00:51Z",
+          "receipt_sha256": "7b987ba5c631098869c8d1e6cfac14fb9bff2498e81b906c8100432e17f4f5c6"
+        },
+        "scope": "Whole active selected OCR and20LF context read; exact whole TXT/XML expanded-token correspondence and native WORD positions checked. No new acquisition, source correction or image collation. A positive local proof is not a complete repair recipe.",
+        "segment_id": "segment.bullarium-romanum.volume-15.unit-0178.1868-turin-latin.source-ocr",
+        "source_grounded_reason": "The active raw OCR interleaves its own marginal caption with substantive body order: at LF51322 marginal WORDs207276–207277 (contraria di-, x1910–2068) follow body consti- WORD207275 before tutionibus WORD207278 at LF51324. Further own-caption/body mixing occurs at51259 and51280–51292. Withdraw this reading edition pending source-order repair; a terminal furniture grouping alone cannot establish source-order readiness.",
+        "source_xml_artifact_id": "artifact.bullarium-romanum.volume-15.1868-turin-latin.xml-9ebde33dbb87",
+        "source_xml_sha256": "9ebde33dbb875a7b22426b65bc02bbc56bb202dd302ad3544b7d609ad932ed08",
+        "unit_id": "bullarium.volume-15.unit-0178"
+      },
+      "source_sha256": "3a315264019ce5f0a4eaf49c6e372aea48737ed6456cedc18109380e3951ec2a",
+      "unit_id": "bullarium.volume-15.unit-0178",
+      "withdrawn_documents": [
+        {
+          "artifact_id": "artifact.bullarium-romanum.volume-15.1868-turin-latin.ocr-3a315264019c",
+          "id": "bullarium.volume-15.unit-0178",
+          "language": "la",
+          "pdf_sha256": "c6614a346ceeb19fd90ee2d312a662d46640bc09004d00d1ad4a6a34400201bb",
+          "segment_id": "segment.bullarium-romanum.volume-15.unit-0178.1868-turin-latin.source-ocr",
+          "source_sha256": "3a315264019ce5f0a4eaf49c6e372aea48737ed6456cedc18109380e3951ec2a"
+        }
+      ]
+    },
+    {
+      "active_disposition": "source-order-hold",
+      "artifact_id": "artifact.bullarium-romanum.volume-15.1868-turin-latin.ocr-3a315264019c",
       "current_document_id": "bullarium.volume-15.unit-0222",
       "physical_line_ranges": [
         [
@@ -390146,9 +394742,526 @@
       "revision": "2026-10-26T13:25:49Z",
       "sha256": "2945e5d7d0cd48a314dda19b12eb578f811c61394b0a1d8dc651311d41f1316a",
       "supersession_count": 4
+    },
+    {
+      "affected_unit_ids": [
+        "bullarium.volume-01.unit-0087",
+        "bullarium.volume-01.unit-0092",
+        "bullarium.volume-01.unit-0125",
+        "bullarium.volume-01.unit-0166",
+        "bullarium.volume-01.unit-0167",
+        "bullarium.volume-02.unit-0028",
+        "bullarium.volume-02.unit-0049",
+        "bullarium.volume-02.unit-0111",
+        "bullarium.volume-02.unit-0117",
+        "bullarium.volume-02.unit-0165",
+        "bullarium.volume-02.unit-0217",
+        "bullarium.volume-02.unit-0300",
+        "bullarium.volume-02.unit-0303",
+        "bullarium.volume-02.unit-0328",
+        "bullarium.volume-02.unit-0331",
+        "bullarium.volume-02.unit-0332",
+        "bullarium.volume-02.unit-0361",
+        "bullarium.volume-02.unit-0370",
+        "bullarium.volume-03.unit-0019",
+        "bullarium.volume-03.unit-0026",
+        "bullarium.volume-03.unit-0053",
+        "bullarium.volume-03.unit-0056",
+        "bullarium.volume-03.unit-0074",
+        "bullarium.volume-03.unit-0075",
+        "bullarium.volume-03.unit-0078",
+        "bullarium.volume-03.unit-0090",
+        "bullarium.volume-03.unit-0095",
+        "bullarium.volume-03.unit-0106",
+        "bullarium.volume-03.unit-0120",
+        "bullarium.volume-03.unit-0147",
+        "bullarium.volume-03.unit-0153",
+        "bullarium.volume-03.unit-0160",
+        "bullarium.volume-03.unit-0163",
+        "bullarium.volume-03.unit-0165",
+        "bullarium.volume-03.unit-0182",
+        "bullarium.volume-03.unit-0183",
+        "bullarium.volume-03.unit-0195",
+        "bullarium.volume-03.unit-0196",
+        "bullarium.volume-03.unit-0206",
+        "bullarium.volume-03.unit-0225",
+        "bullarium.volume-03.unit-0228",
+        "bullarium.volume-03.unit-0268",
+        "bullarium.volume-03.unit-0274",
+        "bullarium.volume-03.unit-0285",
+        "bullarium.volume-03.unit-0288",
+        "bullarium.volume-03.unit-0291",
+        "bullarium.volume-03.unit-0303",
+        "bullarium.volume-03.unit-0304",
+        "bullarium.volume-03.unit-0324",
+        "bullarium.volume-03.unit-0345",
+        "bullarium.volume-03.unit-0350",
+        "bullarium.volume-04.unit-0001",
+        "bullarium.volume-04.unit-0002",
+        "bullarium.volume-04.unit-0007",
+        "bullarium.volume-04.unit-0009.part-01",
+        "bullarium.volume-04.unit-0016",
+        "bullarium.volume-04.unit-0017.part-02",
+        "bullarium.volume-04.unit-0022",
+        "bullarium.volume-04.unit-0031",
+        "bullarium.volume-04.unit-0040",
+        "bullarium.volume-04.unit-0043",
+        "bullarium.volume-04.unit-0044",
+        "bullarium.volume-04.unit-0045",
+        "bullarium.volume-04.unit-0052",
+        "bullarium.volume-04.unit-0084",
+        "bullarium.volume-04.unit-0101",
+        "bullarium.volume-04.unit-0151",
+        "bullarium.volume-04.unit-0167",
+        "bullarium.volume-04.unit-0169",
+        "bullarium.volume-04.unit-0171",
+        "bullarium.volume-04.unit-0200",
+        "bullarium.volume-04.unit-0206",
+        "bullarium.volume-04.unit-0209",
+        "bullarium.volume-04.unit-0213",
+        "bullarium.volume-04.unit-0215",
+        "bullarium.volume-04.unit-0216",
+        "bullarium.volume-04.unit-0217",
+        "bullarium.volume-04.unit-0218.part-01",
+        "bullarium.volume-04.unit-0219",
+        "bullarium.volume-05.unit-0056",
+        "bullarium.volume-05.unit-0068",
+        "bullarium.volume-05.unit-0070",
+        "bullarium.volume-05.unit-0106",
+        "bullarium.volume-05.unit-0107",
+        "bullarium.volume-06.unit-0003",
+        "bullarium.volume-06.unit-0008",
+        "bullarium.volume-06.unit-0009",
+        "bullarium.volume-06.unit-0019",
+        "bullarium.volume-06.unit-0037",
+        "bullarium.volume-06.unit-0039",
+        "bullarium.volume-06.unit-0049",
+        "bullarium.volume-06.unit-0063",
+        "bullarium.volume-06.unit-0064",
+        "bullarium.volume-06.unit-0074",
+        "bullarium.volume-06.unit-0080",
+        "bullarium.volume-06.unit-0084",
+        "bullarium.volume-06.unit-0087.part-02",
+        "bullarium.volume-06.unit-0099",
+        "bullarium.volume-06.unit-0118",
+        "bullarium.volume-07.identified-cxxxix",
+        "bullarium.volume-07.unit-0026.part-01",
+        "bullarium.volume-07.unit-0038.part-01",
+        "bullarium.volume-07.unit-0041",
+        "bullarium.volume-07.unit-0050",
+        "bullarium.volume-07.unit-0052",
+        "bullarium.volume-07.unit-0056",
+        "bullarium.volume-07.unit-0063",
+        "bullarium.volume-07.unit-0065",
+        "bullarium.volume-07.unit-0081",
+        "bullarium.volume-07.unit-0100.part-02",
+        "bullarium.volume-07.unit-0101.part-02",
+        "bullarium.volume-07.unit-0108",
+        "bullarium.volume-07.unit-0120",
+        "bullarium.volume-07.unit-0129.part-01",
+        "bullarium.volume-07.unit-0129.part-02",
+        "bullarium.volume-07.unit-0135",
+        "bullarium.volume-07.unit-0143",
+        "bullarium.volume-07.unit-0153",
+        "bullarium.volume-07.unit-0176",
+        "bullarium.volume-07.unit-0189",
+        "bullarium.volume-07.unit-0205.part-02",
+        "bullarium.volume-07.unit-0205.part-03",
+        "bullarium.volume-07.unit-0207",
+        "bullarium.volume-07.unit-0210",
+        "bullarium.volume-08.unit-0014",
+        "bullarium.volume-08.unit-0026",
+        "bullarium.volume-08.unit-0066.part-01",
+        "bullarium.volume-08.unit-0067.part-01",
+        "bullarium.volume-08.unit-0104",
+        "bullarium.volume-08.unit-0105",
+        "bullarium.volume-08.unit-0116",
+        "bullarium.volume-08.unit-0121",
+        "bullarium.volume-08.unit-0134",
+        "bullarium.volume-08.unit-0138",
+        "bullarium.volume-08.unit-0139",
+        "bullarium.volume-08.unit-0142",
+        "bullarium.volume-08.unit-0143",
+        "bullarium.volume-08.unit-0149",
+        "bullarium.volume-08.unit-0151",
+        "bullarium.volume-08.unit-0155.part-01",
+        "bullarium.volume-08.unit-0157",
+        "bullarium.volume-08.unit-0168",
+        "bullarium.volume-08.unit-0176",
+        "bullarium.volume-08.unit-0178",
+        "bullarium.volume-08.unit-0185",
+        "bullarium.volume-08.unit-0187",
+        "bullarium.volume-08.unit-0188",
+        "bullarium.volume-08.unit-0189",
+        "bullarium.volume-08.unit-0191",
+        "bullarium.volume-08.unit-0192",
+        "bullarium.volume-08.unit-0197",
+        "bullarium.volume-08.unit-0216",
+        "bullarium.volume-08.unit-0235",
+        "bullarium.volume-09.unit-0001",
+        "bullarium.volume-09.unit-0002",
+        "bullarium.volume-09.unit-0005.part-01",
+        "bullarium.volume-09.unit-0005.part-02",
+        "bullarium.volume-09.unit-0007",
+        "bullarium.volume-09.unit-0017",
+        "bullarium.volume-09.unit-0023",
+        "bullarium.volume-09.unit-0025",
+        "bullarium.volume-09.unit-0026",
+        "bullarium.volume-09.unit-0029",
+        "bullarium.volume-09.unit-0030",
+        "bullarium.volume-09.unit-0031",
+        "bullarium.volume-09.unit-0034",
+        "bullarium.volume-09.unit-0037",
+        "bullarium.volume-09.unit-0039",
+        "bullarium.volume-09.unit-0040",
+        "bullarium.volume-09.unit-0043",
+        "bullarium.volume-09.unit-0052",
+        "bullarium.volume-09.unit-0064",
+        "bullarium.volume-09.unit-0065",
+        "bullarium.volume-09.unit-0066",
+        "bullarium.volume-09.unit-0067",
+        "bullarium.volume-09.unit-0069",
+        "bullarium.volume-09.unit-0070",
+        "bullarium.volume-09.unit-0071",
+        "bullarium.volume-09.unit-0073",
+        "bullarium.volume-09.unit-0074",
+        "bullarium.volume-09.unit-0075",
+        "bullarium.volume-09.unit-0078",
+        "bullarium.volume-09.unit-0079",
+        "bullarium.volume-09.unit-0089",
+        "bullarium.volume-09.unit-0090",
+        "bullarium.volume-09.unit-0092",
+        "bullarium.volume-09.unit-0097",
+        "bullarium.volume-09.unit-0098",
+        "bullarium.volume-09.unit-0106",
+        "bullarium.volume-09.unit-0107",
+        "bullarium.volume-09.unit-0108",
+        "bullarium.volume-09.unit-0111",
+        "bullarium.volume-09.unit-0124",
+        "bullarium.volume-09.unit-0130",
+        "bullarium.volume-09.unit-0138",
+        "bullarium.volume-09.unit-0140",
+        "bullarium.volume-09.unit-0142",
+        "bullarium.volume-09.unit-0146",
+        "bullarium.volume-09.unit-0147",
+        "bullarium.volume-09.unit-0156",
+        "bullarium.volume-09.unit-0159",
+        "bullarium.volume-09.unit-0160",
+        "bullarium.volume-09.unit-0161",
+        "bullarium.volume-09.unit-0169",
+        "bullarium.volume-10.unit-0009",
+        "bullarium.volume-10.unit-0018",
+        "bullarium.volume-10.unit-0025",
+        "bullarium.volume-10.unit-0034.part-02",
+        "bullarium.volume-10.unit-0044",
+        "bullarium.volume-10.unit-0061",
+        "bullarium.volume-10.unit-0078",
+        "bullarium.volume-10.unit-0105",
+        "bullarium.volume-10.unit-0140",
+        "bullarium.volume-10.unit-0148",
+        "bullarium.volume-10.unit-0149.part-02",
+        "bullarium.volume-10.unit-0157",
+        "bullarium.volume-10.unit-0194.part-01",
+        "bullarium.volume-10.unit-0194.part-02",
+        "bullarium.volume-11.unit-0017",
+        "bullarium.volume-11.unit-0042",
+        "bullarium.volume-11.unit-0052",
+        "bullarium.volume-11.unit-0056",
+        "bullarium.volume-11.unit-0080",
+        "bullarium.volume-11.unit-0118",
+        "bullarium.volume-11.unit-0136.part-01",
+        "bullarium.volume-11.unit-0143",
+        "bullarium.volume-11.unit-0144",
+        "bullarium.volume-11.unit-0154",
+        "bullarium.volume-11.unit-0155",
+        "bullarium.volume-11.unit-0165",
+        "bullarium.volume-11.unit-0171",
+        "bullarium.volume-11.unit-0182",
+        "bullarium.volume-11.unit-0186",
+        "bullarium.volume-12.unit-0035",
+        "bullarium.volume-12.unit-0036",
+        "bullarium.volume-12.unit-0046",
+        "bullarium.volume-12.unit-0058",
+        "bullarium.volume-12.unit-0084",
+        "bullarium.volume-12.unit-0098.part-01",
+        "bullarium.volume-12.unit-0103",
+        "bullarium.volume-12.unit-0107.part-01",
+        "bullarium.volume-12.unit-0121",
+        "bullarium.volume-12.unit-0141",
+        "bullarium.volume-12.unit-0145",
+        "bullarium.volume-12.unit-0159",
+        "bullarium.volume-12.unit-0164",
+        "bullarium.volume-12.unit-0165",
+        "bullarium.volume-12.unit-0166",
+        "bullarium.volume-12.unit-0167",
+        "bullarium.volume-12.unit-0170",
+        "bullarium.volume-12.unit-0171",
+        "bullarium.volume-12.unit-0183",
+        "bullarium.volume-12.unit-0184",
+        "bullarium.volume-12.unit-0185",
+        "bullarium.volume-12.unit-0199",
+        "bullarium.volume-12.unit-0200",
+        "bullarium.volume-12.unit-0204",
+        "bullarium.volume-13.unit-0010",
+        "bullarium.volume-13.unit-0019",
+        "bullarium.volume-13.unit-0020",
+        "bullarium.volume-13.unit-0022",
+        "bullarium.volume-13.unit-0031",
+        "bullarium.volume-13.unit-0032",
+        "bullarium.volume-13.unit-0033",
+        "bullarium.volume-13.unit-0035",
+        "bullarium.volume-13.unit-0053",
+        "bullarium.volume-13.unit-0067",
+        "bullarium.volume-13.unit-0068.part-01",
+        "bullarium.volume-13.unit-0073",
+        "bullarium.volume-13.unit-0074",
+        "bullarium.volume-13.unit-0075",
+        "bullarium.volume-13.unit-0085",
+        "bullarium.volume-13.unit-0086",
+        "bullarium.volume-13.unit-0096",
+        "bullarium.volume-13.unit-0106",
+        "bullarium.volume-13.unit-0107",
+        "bullarium.volume-13.unit-0108",
+        "bullarium.volume-13.unit-0116",
+        "bullarium.volume-13.unit-0119",
+        "bullarium.volume-13.unit-0121",
+        "bullarium.volume-13.unit-0125",
+        "bullarium.volume-13.unit-0128",
+        "bullarium.volume-13.unit-0143",
+        "bullarium.volume-13.unit-0153",
+        "bullarium.volume-13.unit-0166",
+        "bullarium.volume-13.unit-0171",
+        "bullarium.volume-13.unit-0181",
+        "bullarium.volume-13.unit-0183",
+        "bullarium.volume-13.unit-0184",
+        "bullarium.volume-13.unit-0190",
+        "bullarium.volume-13.unit-0191",
+        "bullarium.volume-13.unit-0202",
+        "bullarium.volume-13.unit-0210",
+        "bullarium.volume-13.unit-0211",
+        "bullarium.volume-13.unit-0219",
+        "bullarium.volume-13.unit-0227",
+        "bullarium.volume-13.unit-0230",
+        "bullarium.volume-13.unit-0235",
+        "bullarium.volume-13.unit-0238",
+        "bullarium.volume-14.unit-0006",
+        "bullarium.volume-14.unit-0017",
+        "bullarium.volume-14.unit-0024",
+        "bullarium.volume-14.unit-0027",
+        "bullarium.volume-14.unit-0038",
+        "bullarium.volume-14.unit-0039",
+        "bullarium.volume-14.unit-0084",
+        "bullarium.volume-14.unit-0094",
+        "bullarium.volume-14.unit-0113",
+        "bullarium.volume-14.unit-0114",
+        "bullarium.volume-14.unit-0118",
+        "bullarium.volume-14.unit-0124",
+        "bullarium.volume-14.unit-0141",
+        "bullarium.volume-14.unit-0159",
+        "bullarium.volume-14.unit-0165",
+        "bullarium.volume-14.unit-0169",
+        "bullarium.volume-14.unit-0182",
+        "bullarium.volume-14.unit-0191",
+        "bullarium.volume-14.unit-0192",
+        "bullarium.volume-14.unit-0193",
+        "bullarium.volume-14.unit-0205",
+        "bullarium.volume-14.unit-0216",
+        "bullarium.volume-14.unit-0217",
+        "bullarium.volume-14.unit-0220",
+        "bullarium.volume-14.unit-0235",
+        "bullarium.volume-14.unit-0237",
+        "bullarium.volume-14.unit-0238",
+        "bullarium.volume-14.unit-0248",
+        "bullarium.volume-14.unit-0251",
+        "bullarium.volume-14.unit-0255",
+        "bullarium.volume-14.unit-0278",
+        "bullarium.volume-14.unit-0282",
+        "bullarium.volume-14.unit-0293",
+        "bullarium.volume-15.unit-0004",
+        "bullarium.volume-15.unit-0067",
+        "bullarium.volume-15.unit-0075",
+        "bullarium.volume-15.unit-0129",
+        "bullarium.volume-15.unit-0131",
+        "bullarium.volume-15.unit-0139",
+        "bullarium.volume-15.unit-0155",
+        "bullarium.volume-15.unit-0156",
+        "bullarium.volume-15.unit-0172",
+        "bullarium.volume-15.unit-0173",
+        "bullarium.volume-15.unit-0176",
+        "bullarium.volume-15.unit-0222",
+        "bullarium.volume-15.unit-0238",
+        "bullarium.volume-15.unit-0269",
+        "bullarium.volume-15.unit-0295",
+        "bullarium.volume-15.unit-0296",
+        "bullarium.volume-15.unit-0315",
+        "bullarium.volume-15.unit-0323",
+        "bullarium.volume-16.unit-0007",
+        "bullarium.volume-16.unit-0017",
+        "bullarium.volume-16.unit-0032",
+        "bullarium.volume-16.unit-0033",
+        "bullarium.volume-16.unit-0054",
+        "bullarium.volume-16.unit-0058",
+        "bullarium.volume-16.unit-0059",
+        "bullarium.volume-16.unit-0088",
+        "bullarium.volume-16.unit-0133",
+        "bullarium.volume-16.unit-0192",
+        "bullarium.volume-16.unit-0195",
+        "bullarium.volume-16.unit-0220",
+        "bullarium.volume-16.unit-0231",
+        "bullarium.volume-16.unit-0237",
+        "bullarium.volume-16.unit-0239",
+        "bullarium.volume-16.unit-0256",
+        "bullarium.volume-16.unit-0282",
+        "bullarium.volume-16.unit-0308",
+        "bullarium.volume-16.unit-0332",
+        "bullarium.volume-17.unit-0018",
+        "bullarium.volume-17.unit-0025",
+        "bullarium.volume-17.unit-0042",
+        "bullarium.volume-17.unit-0047",
+        "bullarium.volume-17.unit-0056",
+        "bullarium.volume-17.unit-0062",
+        "bullarium.volume-17.unit-0065",
+        "bullarium.volume-17.unit-0070",
+        "bullarium.volume-17.unit-0076",
+        "bullarium.volume-17.unit-0085",
+        "bullarium.volume-17.unit-0086",
+        "bullarium.volume-17.unit-0096",
+        "bullarium.volume-17.unit-0097",
+        "bullarium.volume-17.unit-0098",
+        "bullarium.volume-17.unit-0117",
+        "bullarium.volume-17.unit-0120",
+        "bullarium.volume-17.unit-0121",
+        "bullarium.volume-17.unit-0156",
+        "bullarium.volume-17.unit-0175",
+        "bullarium.volume-17.unit-0201",
+        "bullarium.volume-17.unit-0210",
+        "bullarium.volume-17.unit-0225",
+        "bullarium.volume-17.unit-0241",
+        "bullarium.volume-17.unit-0245",
+        "bullarium.volume-17.unit-0254",
+        "bullarium.volume-18.unit-0012",
+        "bullarium.volume-18.unit-0031",
+        "bullarium.volume-18.unit-0037",
+        "bullarium.volume-18.unit-0062",
+        "bullarium.volume-18.unit-0064",
+        "bullarium.volume-18.unit-0067",
+        "bullarium.volume-18.unit-0074",
+        "bullarium.volume-18.unit-0075",
+        "bullarium.volume-18.unit-0078",
+        "bullarium.volume-18.unit-0081",
+        "bullarium.volume-18.unit-0082",
+        "bullarium.volume-18.unit-0087",
+        "bullarium.volume-18.unit-0113",
+        "bullarium.volume-18.unit-0115",
+        "bullarium.volume-18.unit-0123",
+        "bullarium.volume-18.unit-0141",
+        "bullarium.volume-18.unit-0155",
+        "bullarium.volume-19.unit-0007",
+        "bullarium.volume-19.unit-0020",
+        "bullarium.volume-19.unit-0027",
+        "bullarium.volume-19.unit-0028",
+        "bullarium.volume-19.unit-0040",
+        "bullarium.volume-19.unit-0041",
+        "bullarium.volume-19.unit-0066",
+        "bullarium.volume-19.unit-0096",
+        "bullarium.volume-19.unit-0138",
+        "bullarium.volume-19.unit-0139",
+        "bullarium.volume-19.unit-0153",
+        "bullarium.volume-19.unit-0164",
+        "bullarium.volume-20.unit-0011",
+        "bullarium.volume-20.unit-0014",
+        "bullarium.volume-20.unit-0015",
+        "bullarium.volume-20.unit-0018",
+        "bullarium.volume-20.unit-0030",
+        "bullarium.volume-20.unit-0031",
+        "bullarium.volume-20.unit-0032",
+        "bullarium.volume-20.unit-0077",
+        "bullarium.volume-20.unit-0093",
+        "bullarium.volume-20.unit-0103",
+        "bullarium.volume-20.unit-0106",
+        "bullarium.volume-20.unit-0112",
+        "bullarium.volume-20.unit-0118",
+        "bullarium.volume-20.unit-0120",
+        "bullarium.volume-20.unit-0125",
+        "bullarium.volume-20.unit-0126",
+        "bullarium.volume-20.unit-0127",
+        "bullarium.volume-20.unit-0128",
+        "bullarium.volume-20.unit-0132",
+        "bullarium.volume-20.unit-0137",
+        "bullarium.volume-20.unit-0143",
+        "bullarium.volume-20.unit-0148",
+        "bullarium.volume-20.unit-0151",
+        "bullarium.volume-20.unit-0152",
+        "bullarium.volume-20.unit-0159",
+        "bullarium.volume-20.unit-0169",
+        "bullarium.volume-20.unit-0171",
+        "bullarium.volume-21.unit-0006",
+        "bullarium.volume-21.unit-0007",
+        "bullarium.volume-21.unit-0038",
+        "bullarium.volume-21.unit-0041",
+        "bullarium.volume-21.unit-0042",
+        "bullarium.volume-21.unit-0043",
+        "bullarium.volume-21.unit-0044",
+        "bullarium.volume-21.unit-0048",
+        "bullarium.volume-21.unit-0057",
+        "bullarium.volume-21.unit-0065",
+        "bullarium.volume-21.unit-0070",
+        "bullarium.volume-21.unit-0109",
+        "bullarium.volume-21.unit-0130",
+        "bullarium.volume-21.unit-0138",
+        "bullarium.volume-21.unit-0141",
+        "bullarium.volume-21.unit-0157",
+        "bullarium.volume-21.unit-0159",
+        "bullarium.volume-21.unit-0160",
+        "bullarium.volume-21.unit-0161",
+        "bullarium.volume-21.unit-0163",
+        "bullarium.volume-21.unit-0186",
+        "bullarium.volume-21.unit-0187",
+        "bullarium.volume-21.unit-0207.part-02",
+        "bullarium.volume-21.unit-0213",
+        "bullarium.volume-21.unit-0218",
+        "bullarium.volume-21.unit-0219",
+        "bullarium.volume-21.unit-0240",
+        "bullarium.volume-21.unit-0250",
+        "bullarium.volume-22.unit-0005",
+        "bullarium.volume-22.unit-0019",
+        "bullarium.volume-22.unit-0037",
+        "bullarium.volume-22.unit-0052",
+        "bullarium.volume-22.unit-0108",
+        "bullarium.volume-22.unit-0115",
+        "bullarium.volume-22.unit-0179",
+        "bullarium.volume-22.unit-0229",
+        "bullarium.volume-22.unit-0240",
+        "bullarium.volume-23.unit-0005",
+        "bullarium.volume-23.unit-0012",
+        "bullarium.volume-23.unit-0014",
+        "bullarium.volume-23.unit-0017",
+        "bullarium.volume-23.unit-0019",
+        "bullarium.volume-23.unit-0025",
+        "bullarium.volume-23.unit-0040",
+        "bullarium.volume-23.unit-0041",
+        "bullarium.volume-23.unit-0042",
+        "bullarium.volume-23.unit-0072",
+        "bullarium.volume-23.unit-0092",
+        "bullarium.volume-23.unit-0103",
+        "bullarium.volume-24.unit-0016",
+        "bullarium.volume-24.unit-0058",
+        "bullarium.volume-24.unit-0066",
+        "bullarium.volume-24.unit-0067",
+        "bullarium.volume-24.unit-0069",
+        "bullarium.volume-24.unit-0078",
+        "bullarium.volume-24.unit-0089",
+        "bullarium.volume-24.unit-0093"
+      ],
+      "archive_git_commit": "150a8620051e10f131cc7540f63695d375aa12c5",
+      "archive_git_path": "src/sources/papal-documents/bullarium-active-withdrawals.json",
+      "archive_key": "sha256:a3e66221ed8afbd73c6cfab3e41d7d2be8ef7dce597a1bf2d41773b8a1faacbc",
+      "revision": "2026-10-26T13:53:37Z",
+      "sha256": "a3e66221ed8afbd73c6cfab3e41d7d2be8ef7dce597a1bf2d41773b8a1faacbc",
+      "supersession_count": 507
     }
   ],
-  "revision": "2026-10-26T13:53:37Z",
+  "revision": "2026-10-26T15:42:13Z",
   "schema": "triptych-papal-typeset/v1",
   "supersessions": [
     {
@@ -391349,6 +396462,18 @@
         "source_sha256": "b4e46f2d179592823b417f259bb86fa909680bf7bd9b91041aa86f8e0d02c3b8"
       },
       "reason": "Confirmed inline body/margin word interleaving at source LF [[95942, 95946]]. The historical source and prior PDF remain preserved; active reader eligibility is held until a separately identified ordered witness is reviewed.",
+      "replacement": null
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.bullarium-romanum.volume-07.1862-turin-latin.ocr-b4e46f2d1795",
+        "id": "bullarium.volume-07.unit-0023.part-02.fragment.apparatus-v2",
+        "language": "la",
+        "pdf_sha256": "253bed96c524797ff0cd55fd6dd1c9c3b533a2b24f3e7e96552ae3b406aa32c3",
+        "segment_id": "segment.bullarium-romanum.volume-07.unit-0023.part-02.1862-turin-latin.source-ocr",
+        "source_sha256": "b4e46f2d179592823b417f259bb86fa909680bf7bd9b91041aa86f8e0d02c3b8"
+      },
+      "reason": "The active fragment OCR interleaves own marginal captions inside the substantive body: marginal WORDs57633–57634 (chusuUe de-, x1990–2150) interrupt con- WORD57632 at LF12845 before stilutionibus WORD57635 at12846. Further caption injection is proved at12773,12795,12839 and12851. Withdraw the fragment reading edition pending source-order repair; correcting the reader note from sections1–3 to1–5 does not repair this body order.",
       "replacement": null
     },
     {
@@ -394265,6 +399390,18 @@
         "source_sha256": "3a315264019ce5f0a4eaf49c6e372aea48737ed6456cedc18109380e3951ec2a"
       },
       "reason": "Confirmed inline body/margin word interleaving at source LF [[51062, 51070]]. The historical source and prior PDF remain preserved; active reader eligibility is held until a separately identified ordered witness is reviewed.",
+      "replacement": null
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.bullarium-romanum.volume-15.1868-turin-latin.ocr-3a315264019c",
+        "id": "bullarium.volume-15.unit-0178",
+        "language": "la",
+        "pdf_sha256": "c6614a346ceeb19fd90ee2d312a662d46640bc09004d00d1ad4a6a34400201bb",
+        "segment_id": "segment.bullarium-romanum.volume-15.unit-0178.1868-turin-latin.source-ocr",
+        "source_sha256": "3a315264019ce5f0a4eaf49c6e372aea48737ed6456cedc18109380e3951ec2a"
+      },
+      "reason": "The active raw OCR interleaves its own marginal caption with substantive body order: at LF51322 marginal WORDs207276–207277 (contraria di-, x1910–2068) follow body consti- WORD207275 before tutionibus WORD207278 at LF51324. Further own-caption/body mixing occurs at51259 and51280–51292. Withdraw this reading edition pending source-order repair; a terminal furniture grouping alone cannot establish source-order readiness.",
       "replacement": null
     },
     {

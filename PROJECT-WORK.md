@@ -104,6 +104,15 @@ Its first installation remains pending current evidence reconciliation.
 Additional sealed source admissions and the remaining PDF reviews remain
 active work; source-family review states are not promoted by these operations.
 
+The follow-up current plan has 5,825 successful PDFs and 11,696 pages, with no
+missing or failed builds and 509 source-order withdrawals excluded. The new
+long-token reader preserves all source characters. Containment passes with
+6,348 constituents after adding the newly registered historical English
+Divini witness and qualifying two further source-order holds. The source
+aggregate passes with act-history freshness established separately. Complete
+page review, source-wrapper corrections, further sealed admissions and first
+installation remain open.
+
 ## GPT Last Things and next Sunday propers, 2026-10-25
 
 <!-- promised-deliverable: gpt-flt-and-sunday-2026-10-25 -->

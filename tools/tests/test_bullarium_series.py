@@ -514,6 +514,36 @@ class HistoricalSeriesTests(unittest.TestCase):
         self.assertEqual(later, manifest["revision"])
         self.assertEqual([self.when, later], [row["revision"] for row in manifest["documents"]])
 
+    def test_explicit_same_source_layout_correction_survives_later_admission(self):
+        catalog = self.prepare()
+        first, second = self.review(catalog), self.review(catalog, index=1, language="it")
+        s.admit(self.root, self.config, [self.packet([first])], self.when)
+        paths = s.paths_for(self.config["series_id"])
+        catalog = s.read_json(self.root / paths["catalog"])
+        unit = next(row for row in catalog["documents"] if row["id"] == first["document_id"])
+        later = "2026-10-26T06:00:00Z"
+        unit.update(render_revision=later, typeset_overrides={"allow_long_token_breaks": True,
+            "source_note_append": "Literal long OCR runs may wrap without inserted characters."})
+        s.legacy.write(self.root / paths["catalog"], s.legacy.json_bytes(catalog))
+        s.admit(self.root, self.config, [self.packet([second])], later)
+        row = next(row for row in s.read_json(self.root / paths["manifest"])["documents"] if row["id"] == unit["id"])
+        self.assertEqual(later, row["revision"])
+        self.assertTrue(row["allow_long_token_breaks"])
+        self.assertTrue(row["source_note"].endswith(unit["typeset_overrides"]["source_note_append"]))
+        self.assertEqual(unit["artifact_sha256"], row["sha256"])
+        self.assertEqual(unit["review"]["physical_line_ranges"], row["physical_line_ranges"])
+        self.assertEqual("ok", s.check(self.root, self.config)["status"])
+
+    def test_invalid_layout_override_refuses_before_any_admission_write(self):
+        catalog = self.prepare()
+        catalog["documents"][0]["typeset_overrides"] = {"allow_long_token_breaks": "true"}
+        s.legacy.write(self.root / s.paths_for(self.config["series_id"])["catalog"], s.legacy.json_bytes(catalog))
+        packet = self.packet([self.review(catalog)])
+        with patch.object(s.legacy, "write") as write:
+            with self.assertRaisesRegex(ValueError, "literal boolean"):
+                s.admit(self.root, self.config, [packet], self.when)
+            write.assert_not_called()
+
     def test_recorded_rescript_requires_actual_audience_response_date_and_official(self):
         raw = ["Ex audientia SSmi.", "Sanctissimus benigne annuit pro gratia.", "Die 13 Iunii 1781.", "P. H. Massei, armorum praeses."]
         item = {"document_form": "recorded-audience-rescript", "recording_official": raw[3], "papal_context": "Pius VI",
