@@ -283,3 +283,48 @@ comparison. A corrected read-only audit, retained in `release-scope-recheck.json
 and the independent final reviewer both prove the exact 547-path scope. Other
 authorization fields are preserved apart from the generated rights-record
 digest already identified above. No release bytes changed during this recheck.
+
+## Concurrent main integration
+
+The repaired complete source aggregate subsequently passed, exiting 0 in
+279.834 seconds; the current Pages artifact verifier also passed. Before push,
+fresh fetch found main advanced to
+`f3f59d483358128e1b78d7a12aaeb4f3feab4a8a`, the reviewed missal-source and
+RG110 assembly integration. The premerge acceptance through `844cdc6d6` remains
+historical evidence. The workspace integrates the new main by ordinary merge,
+preserving both parents and all of its source corrections, tests and work records.
+
+The 498 index conflicts comprised 496 shared generated/inventory/release paths,
+the work register and the Ordinary test module. Owning tools regenerated combined
+Source and Proper projections; calendar, rubric, Catena and paragraph data were
+already current. The shared family and release files began from exact incoming
+main bytes, then refreshed against the combined sources. The exact 545 eligible
+site-input updates are retained in `main-release-adoption-scope.txt`; upstream
+authorization fields are preserved apart from the derived rights-record digest.
+`main-shared-reconciliation.json`, `main-preservation-audit.json` and
+`main-shared-paths.json` retain actual checks and all 543 shared postimage hashes.
+All focused source/projection/inventory/family/catalogue/release/web/publication
+checks pass, with no source or render mutation remaining.
+
+Incoming main solves John Damascene's seating defect through exact canonical
+`Offertory` occurrences 1 and 2. That supersedes the temporary alias repair;
+both Ordinary tables and their generated JSON now equal incoming main. Both
+test suites remain: all 81 upstream methods/helpers and the entire module AST
+are preserved, with only two adapted regressions and their import added. The
+author's 89 tests and five Node guard groups pass. Fresh independent review
+accepts the resolution after 21 focused tests, five guard groups and the complete
+1,629-form Ordinary check. `merge-test-resolution.md` and `merge-test-cold.md`
+record this successor state without rewriting the earlier repair's acceptance.
+
+Fresh target-specific review in `main-reconciliation-cold.md` accepts the merged
+All Saints context. Four historical global research-seal file hashes have changed;
+the archive is not restamped or described as wholly current. The other 1,775
+research pins, all accepted local-stage pins, 25 render inputs and 55 archive
+files match. Both complete target Mass dictionaries, seven Latin and seven
+English inventory rows, 72 bindings and all 136 bound source ancestors are
+unchanged. Independent Missal page reinspection and current publication,
+chronology, occurrence and scoped public-alpha checks pass. RG110's three
+Peter/Paul pairs do not include All Saints or its privileged Sunday commemoration.
+All seven PDFs and five canonical Markdown editions remain byte-identical to
+their accepted artifacts. Complete merged source/site verification and outgoing
+review follow the merge commit before any main push.

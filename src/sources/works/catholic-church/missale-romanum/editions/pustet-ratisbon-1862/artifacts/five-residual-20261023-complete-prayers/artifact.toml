@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.five-residual-20261023-complete-prayers"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The independently dated underlying historical Latin has an expired United States published-work term. This faithful transcription adds no prayer words and is excluded from the project license."
+provenance = "Complete named prayers independently read from actual full page images at 200 and 400 dpi on 2026-10-23. OCR used only to find pages."
+retrieved = "2026-10-23"
+sha256 = "287354af03854357855eafc19b2b22e2779ac4c3ebed99ca26fbcc256dec1ceb"
+byte_size = 607
+path = "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/five-residual-20261023-complete-prayers/latin-only.txt"
+derived_from = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.five-residual-20261023-control-pages"
+transformation = "Join line wraps and line-end hyphens, remove stress, expand ae/oe ligatures and decorative initial capitalization. Retain each historical printing spelling, pointing and actual conclusion length. No conclusion cue expanded in this transcription."
+encoding = "utf-8"
+indexable = true
+notes = "One complete prayer per physical line: s-antonii-padua-confessoris-ecclesiae-doctoris Secret, s-ioannae-franciscae-fremiot-chantal-viduae Secret, s-ioannae-franciscae-fremiot-chantal-viduae Postcommunion."

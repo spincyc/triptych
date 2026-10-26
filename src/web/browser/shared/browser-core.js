@@ -1487,6 +1487,9 @@ window.Triptych = (function () {
         return;
       }
       if (event.kind !== 'proper' || !event.selected || event.selected.kind === 'absent') return;
+      (event.orationGroups || []).forEach(function (group) {
+        (group.members || []).forEach(function (member) { if (member.id !== event.id) visit(member); });
+      });
       const hook = (event.sourceHooks || []).find(function (row) { return row.kind === 'proper-structure'; });
       if (!hook) return;
       const mass = (structure.masses || []).find(function (row) {
@@ -2872,7 +2875,60 @@ window.Triptych = (function () {
       section.appendChild(notice('this proper carries neither a citation nor a text.'));
     }
 
+    if (held.orationGroups && held.orationGroups.length) {
+      appendOrationGroups(section, held.orationGroups, held.eventId, held.structure,
+        bible, fragments, held);
+    }
+    if (held.orationContext) {
+      const context = el('p', 'composed-note unit-absence inseparable-oration-context',
+        orationContextText(held.orationContext));
+      context.setAttribute('role', 'note');
+      context.dataset.unitAbsence = 'unresolved:inseparable-oration-assembly';
+      section.appendChild(context);
+    }
     return section;
+  }
+
+  function orationContextText(context) {
+    if (!context || context.kind !== 'inseparable-use-context-unresolved') {
+      throw new Error('invalid inseparable oration use context');
+    }
+    return 'RG 110 joins these prayers under one conclusion in the Mass of the Office. ' +
+      'This date-independent formulary does not establish Office or votive use, and the paired assembly remains unresolved. ' +
+      'Open Day to resolve the dated Mass of the Office.';
+  }
+
+  /** Render exact separately attributed bodies, never a synthesized prayer. */
+  function appendOrationGroups(section, groups, eventId, structure, bible, fragments, options) {
+    (groups || []).forEach(function (group) {
+      if (group.kind !== 'inseparable' || group.count !== 1 ||
+          !Array.isArray(group.members) || group.members.length !== 2) {
+        throw new Error('invalid inseparable oration presentation');
+      }
+      const wrapper = el('div', 'inseparable-oration-group');
+      wrapper.dataset.orationCount = '1';
+      wrapper.dataset.orationBasis = group.locus;
+      group.members.forEach(function (member) {
+        if (member.id === eventId) return;
+        const hook = (member.sourceHooks || []).find(function (one) { return one.kind === 'proper-structure'; });
+        const owner = hook && structure && (structure.masses || []).find(function (one) {
+          return hook.id.slice(0, hook.id.lastIndexOf('/')) === structure.calendar + '/' + one.key;
+        });
+        const proper = owner && owner.propers[Number(hook.id.slice(hook.id.lastIndexOf('/') + 1)) - 1];
+        if (!proper) throw new Error('inseparable prayer has no exact production owner: ' + member.id);
+        const level = Number(String(options.heading || 'h3').slice(1)) || 3;
+        const rendered = renderProper(proper, bible, fragments, Object.assign({}, options, {
+          orationGroups: null, heading: 'h' + Math.min(6, level + 1)
+        }));
+        const title = rendered.querySelector('.proper-name');
+        if (title && member.of_name) title.textContent = proper.name + ' — ' + member.of_name;
+        wrapper.appendChild(rendered);
+      });
+      wrapper.appendChild(el('p', 'composed-note inseparable-oration-note',
+        'These two prayers count as one and are said under ' + group.conclusion +
+        '.'));
+      section.appendChild(wrapper);
+    });
   }
 
   /**
@@ -2963,6 +3019,7 @@ window.Triptych = (function () {
     composedBody: composedBody,
     textSide: textSide,
     renderProper: renderProper,
+    orationContextText: orationContextText,
     uncompiledNote: uncompiledNote,
 
     // rendering

@@ -973,26 +973,23 @@ commemoration:
       or Mass of either, the other's prayer is added under a single conclusion,
       and "duae orationes adeo in unam coalescere censentur ut, in numero
       orationum computando, pro unica habeantur". Two prayers counting as one.
-    applied: false
-    unapplied:
-      scope: oration-owner
-      what: the inseparable Peter-Paul prayer group in this dated formulary
-      why: >-
-        RG 110 requires the other Apostle's prayer to remain attached, under one
-        conclusion and counted as one prayer. This assembly does not implement
-        that group, including its order when the host is commemorated. It cannot
-        state the day's oration series or a separate omission of the companion.
-        The exact formularies remain readable without a claim of completed assembly.
-      pairs:
-      - host: conversione-s-pauli-apostoli
-        companion: comm-s-petri-apostoli
-        locus: 'RG 110 b-c; Missale Romanum 1962, 25 January, printed pp. 454-456, artifact pp. 535-537, nos. 2013-2014, 2021-2022, 2024-2025'
-      - host: cathedrae-s-petri-apostoli
-        companion: comm-s-pauli-apostoli
-        locus: 'RG 110 b-c; Missale Romanum 1962, 22 February, printed pp. 477-479, artifact pp. 558-560, nos. 2198-2199, 2207-2208, 2210-2211'
-      - host: commemoratione-s-pauli-apostoli
-        companion: comm-s-petri-apostoli-2
-        locus: 'RG 110 b-c; Missale Romanum 1962, 30 June, printed pp. 571-572, artifact pp. 652-653, nos. 2923-2924, 2932-2933, 2935-2936'
+    applied: true
+    execution:
+      scope: dated-mass-of-office
+      count: 1
+      conclusion: single
+      commemorated_order: before-other-commemorations
+      slots: [Collect, Secret, Postcommunion]
+    pairs:
+    - host: conversione-s-pauli-apostoli
+      companion: comm-s-petri-apostoli
+      locus: 'RG 110 b-c; Missale Romanum 1962, 25 January, printed pp. 454-456, artifact pp. 535-537, nos. 2013-2014, 2021-2022, 2024-2025'
+    - host: cathedrae-s-petri-apostoli
+      companion: comm-s-pauli-apostoli
+      locus: 'RG 110 b-c; Missale Romanum 1962, 22 February, printed pp. 477-479, artifact pp. 558-560, nos. 2198-2199, 2207-2208, 2210-2211'
+    - host: commemoratione-s-pauli-apostoli
+      companion: comm-s-petri-apostoli-2
+      locus: 'RG 110 b-c; Missale Romanum 1962, 30 June, printed pp. 571-572, artifact pp. 652-653, nos. 2923-2924, 2932-2933, 2935-2936'
   order:
     locus: RG 113
     gloss: The season first, then the table order.

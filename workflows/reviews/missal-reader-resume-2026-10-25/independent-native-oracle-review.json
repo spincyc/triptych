@@ -1,0 +1,186 @@
+{
+  "schema": "triptych-independent-native-oracle-review/v1",
+  "review_date": "2026-10-25",
+  "decision": "ACCEPT_EXACT_TWO_TEST_ONLY_POSTIMAGES_FOR_ROOT_H2_INSTALL",
+  "proposal_seal_sha256": "f4d0f5d9106c8b1eb0acfd350b03c8c8d7eb3435448bc6383aa6103adc6a22ce",
+  "install_manifest_sha256": "deca4d8ac46f503ca1577512c0778c8f20f2baa0be92082029632a4b1018f791",
+  "reviewed_patch_sha256": "133183006bc9c21fb6d1ce9ebee34bbe808e62a08056c21b1ff77a0bc4493aac",
+  "files": [
+    {
+      "path": "tools/tests/day_reader_integration_browser.mjs",
+      "mode": 420,
+      "pre_sha256": "27cdf627a56a87a5390b9d21ce6a3389df7725d580cc1a1b8a66a7f44b710036",
+      "post_sha256": "7b94ad5764ae5109d7a711b0e77645e9c95fd68df420ab91674f9d0e1ea23d35"
+    },
+    {
+      "path": "tools/tests/propers_reader_integration_browser.mjs",
+      "mode": 420,
+      "pre_sha256": "94c36e40ab70ecc18f7893aef7d72532bf922e5a1fe352c2f16c8ad64f238080",
+      "post_sha256": "249270ea94459a2827ec282b19e39236a1a2d188b8b3542ed6ccc492fed60134"
+    }
+  ],
+  "native_contract_preservation": {
+    "tools/tests/day_reader_integration_browser.mjs": {
+      "named_contracts_before": 57,
+      "named_contracts_after": 57,
+      "ordered_names_identical": true
+    },
+    "tools/tests/propers_reader_integration_browser.mjs": {
+      "named_contracts_before": 69,
+      "named_contracts_after": 69,
+      "ordered_names_identical": true
+    }
+  },
+  "source_basis": {
+    "frozen_H1_input_manifest_sha256": "5b4c48bb37ca95317ca7ef3ed9b28e29c95ce5c64f0ca60aaa164473cb36abf9",
+    "negative_owner": [
+      "lent-1",
+      "main",
+      "Collect",
+      "all",
+      1
+    ],
+    "source_type": "seasonal",
+    "Latin_sha256": "e502266b76c9681da27c6416b0e8e67580c34c655c0e743c98732eeb2aecada3",
+    "Latin_provenance_status": "collated",
+    "Latin_publication_status": "permitted",
+    "English_positive_bindings": 0,
+    "English_gap_kind": "no-exemplar",
+    "actual_owning_mass_propers_show_exit": 0,
+    "actual_owning_render_sha256": "e53d45d2fb3e4bde9edc154618f94a6a5035e8e2213ec7461548a8ba507e77a9",
+    "fresh_source_image_review_claimed": false,
+    "new_source_admission": false
+  },
+  "independent_actual_probes": {
+    "production_H1_comparison": [
+      {
+        "mass": "lent-1",
+        "type": "seasonal",
+        "unit_count": 10,
+        "collect_statuses": [
+          "text-held",
+          "text-unavailable"
+        ],
+        "Latin_sha256": "e502266b76c9681da27c6416b0e8e67580c34c655c0e743c98732eeb2aecada3",
+        "English_sha256": null,
+        "English_reason": "ledgered-untranslated",
+        "no_English_fallback": true,
+        "date_free": true
+      },
+      {
+        "mass": "s-ignatii-confessoris",
+        "type": "sanctoral",
+        "unit_count": 10,
+        "collect_statuses": [
+          "text-held",
+          "text-held"
+        ],
+        "Latin_sha256": "d1987b19852a14d8b6c552b1a74c0c1f83822a347991d0766c28b25b23f65d05",
+        "English_sha256": "155b76124b50d2d12439f33bf7ed29f0d2969a459fcbd5857cf308a96deb0c6b",
+        "English_reason": null,
+        "no_English_fallback": true,
+        "date_free": true
+      },
+      {
+        "mass": "trinity",
+        "type": "seasonal",
+        "unit_count": 10,
+        "collect_statuses": [
+          "text-held",
+          "text-held"
+        ],
+        "Latin_sha256": "cab28fc984dfbeb39c8c9e8baac38e7d6bb066083793af52bef2aa392ec640aa",
+        "English_sha256": "57a84aba1f0f5b207467ab9a1d7aef637ac544ef70ac7e677cc5888077628803",
+        "English_reason": null,
+        "no_English_fallback": true,
+        "date_free": true
+      }
+    ],
+    "new_seasonal_route_normalizes_and_old_sanctoral_type_rejects": true,
+    "comparison_English_unavailable_text_is_null_without_fallback": true,
+    "production_Day_mode_binder_capture_navigation_and_serializer": [
+      {
+        "mode": "missal",
+        "hash": "#date=2026-11-29&missal=postconciliar&bible=douay-rheims&orations=la&mode=missal&location=proper%2Fpostconciliar%2Fadvent-1%2F007&why=0&ordinary-lang=en&rubrics=0&mass=advent-1&eucharistic-prayer=ep-ii",
+        "pendingLocation": {
+          "kind": "event",
+          "id": "proper/postconciliar/advent-1/007"
+        }
+      },
+      {
+        "mode": "read",
+        "hash": "#date=2026-11-29&missal=postconciliar&bible=douay-rheims&orations=la&mode=read&location=proper%2Fpostconciliar%2Fadvent-1%2F007&why=0&ordinary-lang=en&rubrics=0&mass=advent-1&eucharistic-prayer=ep-ii",
+        "pendingLocation": {
+          "kind": "event",
+          "id": "proper/postconciliar/advent-1/007"
+        }
+      }
+    ],
+    "explicit_switchSemanticId": "proper/postconciliar/advent-1/007",
+    "strict_readiness_guard_byte_identical_sha256": "c46e4c0d74dc0d29d3b80e934997de6d9c0e084b9867b412e5bc5c7e620e088a",
+    "five_frame_semantic_visual_settlement_byte_identical_sha256": "49040e56be45a2702bf4aa7db923fe75a9b434be69bbf4f53a3a3b16e0767475",
+    "strict_positive_guard_passed": true,
+    "strict_corruption_controls": [
+      {
+        "case": "wrong live hash",
+        "rejected": true
+      },
+      {
+        "case": "not ready",
+        "rejected": true
+      },
+      {
+        "case": "generation not advanced",
+        "rejected": true
+      },
+      {
+        "case": "committed generation differs",
+        "rejected": true
+      },
+      {
+        "case": "committed generation stale",
+        "rejected": true
+      },
+      {
+        "case": "wrong document token",
+        "rejected": true
+      },
+      {
+        "case": "wrong committed hash",
+        "rejected": true
+      },
+      {
+        "case": "wrong committed href",
+        "rejected": true
+      },
+      {
+        "case": "missing retained semantic location",
+        "rejected": true
+      }
+    ]
+  },
+  "diff_rationale": [
+    "The sole Propers C5 negative owner changes from recovered Ignatius to Lent I Collect, with its correct seasonal type and exact source anchor. Trinity parity, date-free two-language selection, semantic statuses, DOM statuses and the remaining 69 named contracts remain.",
+    "Only the two Day captureMatrix expected mode-transition hashes gain the retained semantic location. All 57 functional contracts, exact URL/readiness/generation/document-token/committed-hash/href guards, explicit semantic target and visual-settlement requirements remain."
+  ],
+  "checks": {
+    "both_proposed_MJS_syntax": 0,
+    "git_apply_check": 0,
+    "canonical_and_H1_consumed_files_rejoined_at_seal": 25
+  },
+  "evidence_hashes": {
+    "source-probe.json": "352098e9df48b999de39c6e7a18aaa2c94097bdbb79951dc6d4833992b757dbc",
+    "comparison-probe.json": "54eb3c3d12325c16d7adb3adcd7f990b63430b3277117ec21c4c3bf4c7c243ca",
+    "day-guard-probe.json": "fe44725da0c869d078719b6c3487f35b24c9500777fa63ee6ba87641d8c6b28a",
+    "probe-source.py": "5e1cba71ca83af1f2f0c9384641ee26c1b8d91d7b9bf7c7fca0e30e1f5c59624",
+    "probe-comparison.mjs": "9833d3d23918d467a14f09db0ab8bad1c74b43996ef266a0106b50dd406ed6a9",
+    "probe-day-guards.mjs": "566da6d843dc089777fb781bb4d99b9e66190ffc334b207bd8a4f9a45f04b760"
+  },
+  "findings": [],
+  "scope": "Bounded independent review of these two native-test postimages only. Root installation and a fresh complete H2 native257 suite remain required; no native257 acceptance is inferred.",
+  "canonical_writes": false,
+  "H1_frozen_writes": false,
+  "runtime_source_data_changes": false,
+  "native_runs": false,
+  "public_safe": true
+}

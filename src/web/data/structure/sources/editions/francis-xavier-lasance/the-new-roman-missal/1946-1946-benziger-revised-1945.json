@@ -60,6 +60,21 @@
   },
   {
    "artifact_type": "normalized-text",
+   "byte_size": 1004,
+   "edition_owned": true,
+   "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.resume-lexical-resume-20261025-lexical46-894a5072",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "notes": "This bounded historical witness is not official English of the1962Missal. The exact physical printing and its own conclusion table remain distinct. The original-expression publication basis does not clear mixed whole-scan bytes, framing or unexamined inserts. No annual textual completeness or human-terminal acceptance is claimed.",
+   "page_count": null,
+   "retrieved": "2026-10-25",
+   "rights": "public-domain",
+   "rights_basis": "Printed ordinary p.819 belongs to the registered revised-1945 expression, here identified in the title-dated1946 printing. United States public domain by nonrenewal of A110108/A192159 under the existing rights audit. Only the underlying table words are retained; Google framing and scan bytes excluded.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "normalized-text",
    "byte_size": 321,
    "edition_owned": true,
    "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.resume-orations-holyweek6-oratio1946-1-2f3842da",
@@ -110,6 +125,94 @@
  },
  "passages": [
   {
+   "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.resume-lexical-resume-20261025-lexical46-894a5072",
+   "artifact_type": "normalized-text",
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.resume-lexical-resume-20261025-lexical46-publish-annuntiatio-beatae-mariae-virginis--main--postcommunion--all--1",
+   "locus": "1946 printing, Annunciation own Postcommunion starts foot p958, finishes top p959 before March27 Damascene heading. Actual English has no comma after Thee before O Lord.; printed pp. 955-959; PDF 965,966,967,968,969",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-25",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d",
+   "artifact_type": "facsimile-pdf",
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.resume-lexical-resume-20261025-lexical46-verify-annuntiatio-beatae-mariae-virginis--main--postcommunion--all--1",
+   "locus": "1946 printing, Annunciation own Postcommunion starts foot p958, finishes top p959 before March27 Damascene heading. Actual English has no comma after Thee before O Lord.; printed pp. 955-959; PDF 965,966,967,968,969",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "The rights position for this artifact has not been settled, and an unsettled question is not a permission.",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/the-new-roman-missal/The%20New%20Roman%20Missal%20%281945%29_text.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-10-25",
+   "withheld": "rights"
+  },
+  {
+   "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.resume-lexical-resume-20261025-lexical46-894a5072",
+   "artifact_type": "normalized-text",
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.resume-lexical-resume-20261025-lexical46-publish-annuntiatio-beatae-mariae-virginis--main--collect--all--1",
+   "locus": "1946 printing, March25 Annunciation own heading and own Prayer p955. Prior6cf PDF953/954 gap is retained separately.; printed p. 955; PDF 965",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-25",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d",
+   "artifact_type": "facsimile-pdf",
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.resume-lexical-resume-20261025-lexical46-verify-annuntiatio-beatae-mariae-virginis--main--collect--all--1",
+   "locus": "1946 printing, March25 Annunciation own heading and own Prayer p955. Prior6cf PDF953/954 gap is retained separately.; printed p. 955; PDF 965",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "The rights position for this artifact has not been settled, and an unsettled question is not a permission.",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/the-new-roman-missal/The%20New%20Roman%20Missal%20%281945%29_text.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-10-25",
+   "withheld": "rights"
+  },
+  {
    "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.resume-orthography-remaining-orth1946-1-c80ee109",
    "artifact_type": "normalized-text",
    "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.resume-orthography-remaining-orth1946-1-publish-s-ioannis-damasceni-confessoris-ecclesiae-doctoris--main--collect--all--1",
@@ -151,6 +254,50 @@
    ],
    "storage": "remote",
    "verified_on": "2026-10-23",
+   "withheld": "rights"
+  },
+  {
+   "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.resume-lexical-resume-20261025-lexical46-894a5072",
+   "artifact_type": "normalized-text",
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.resume-lexical-resume-20261025-lexical46-publish-annuntiatio-beatae-mariae-virginis--main--secret--all--1",
+   "locus": "1946 printing, own Annunciation heading p955 and continuous context through own Secret p958.; printed pp. 955-958; PDF 965,966,967,968",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-25",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d",
+   "artifact_type": "facsimile-pdf",
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.resume-lexical-resume-20261025-lexical46-verify-annuntiatio-beatae-mariae-virginis--main--secret--all--1",
+   "locus": "1946 printing, own Annunciation heading p955 and continuous context through own Secret p958.; printed pp. 955-958; PDF 965,966,967,968",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "The rights position for this artifact has not been settled, and an unsettled question is not a permission.",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/the-new-roman-missal/The%20New%20Roman%20Missal%20%281945%29_text.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-10-25",
    "withheld": "rights"
   },
   {

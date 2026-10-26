@@ -1,0 +1,107 @@
+{
+  "schema": "triptych-source-review-receipt/v1",
+  "status": "accepted",
+  "scope": "missal-source-batch",
+  "reviewed_on": "2026-10-25",
+  "source_baseline": "2e030b564f4413b735ddbea3061082ebe981b11a",
+  "source_parent_commit": "6a1fe6e3361fec6d1f011a0ae03a0e47d12fa6cf",
+  "source_postimage_manifest": {
+    "path": "workflows/reviews/missal-reader-resume-2026-10-25/source-postimages-integrated.json",
+    "sha256": "86cecf9d28b755e5b4f73b194df1f320e20ee942ca165f45d0b5dee5c4c4a8b8",
+    "paths": 1650
+  },
+  "source_input_manifest_path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+  "source_input_manifest_sha256": "c11851b81351d001415cfdb11c41fa513381d8381199e5273673aaf6a366ff92",
+  "source_input_manifest_paths": 1661,
+  "independent_source_union_review": {
+    "path": "workflows/reviews/missal-reader-resume-2026-10-25/independent-source-review.json",
+    "sha256": "ddd1fa4ab87939cd5d496274f54c8fd3d6eb0d64f82a215e301023d7cab9b77a"
+  },
+  "installation_manifest": {
+    "path": "workflows/reviews/missal-reader-resume-2026-10-25/source-installation-integrated.json",
+    "sha256": "94ce1956174e0b27af1fdbeabfc0b919570d28e5979079bc95d20c1cf9e2577b",
+    "paths": 260
+  },
+  "checkpoint_counts": {
+    "roman1962": {
+      "represented": 1439,
+      "with_english": 1118,
+      "untranslated": 321
+    },
+    "postconciliar": {
+      "represented": 561,
+      "with_english": 116,
+      "untranslated": 445
+    },
+    "pre1955": {
+      "represented": 1382,
+      "with_english": 1098,
+      "untranslated": 284
+    },
+    "new_english_owners": 63,
+    "new_latin_bodies": 9
+  },
+  "component_acceptances": [
+    {
+      "path": ".scratch/resume-20261025-lexical-review/full46-v1/acceptance46.json",
+      "sha256": "dc6e12339ab8cea5f38f0e23101cbe9b3ae7e0b8e10e9d89c9f1820cea166230",
+      "disposition": "ACCEPT_EXACT46_SOURCE_ASSEMBLY_PUBLIC_PROOF_AND_PRODUCTION_ENGLISH"
+    },
+    {
+      "path": ".scratch/resume-20261025-postrepair-review/receipt.json",
+      "sha256": "457e0560e27296cf60dd0627530dc96820db9e2816f8671d1c7f26fb39b3ed15",
+      "disposition": "ACCEPT_EXACT12_SOURCE_PUBLICATION_ASSEMBLY_AGAINST_PINNED_CURRENT1055_PARENT"
+    },
+    {
+      "path": ".scratch/resume-20261025-dolors-source-review/assembled-latin9-receipt.json",
+      "sha256": "0a87bea5b5a8978a53da8a4c683ddd28508af99a683c3ae6a8d299cedc2bf521",
+      "disposition": "ACCEPT_EXACT_LATIN9_SOURCE_ASSEMBLY_FOR_COORDINATOR_INSTALL"
+    },
+    {
+      "path": ".scratch/resume-20261025-genitrice-extra/GENITRICE-SOURCE-REVIEW.json",
+      "sha256": "372711024d32f2af3aa7581913a79662f8d69b43925065354f3ce255d5ea428d",
+      "disposition": "ACCEPT_SOURCE_EVIDENCE_ONLY_EXACT_TEN_POSTIMAGES"
+    },
+    {
+      "path": ".scratch/resume-20261025-english-extra2-assembly-review/ASSEMBLY-REVIEW.json",
+      "sha256": "4050a93663cf1eb9fc117317c3f8405888858bcee67ea37b664df3977465abc0",
+      "disposition": "ACCEPT_EXACT_ENGLISH2_ASSEMBLED_POSTIMAGES_CONDITIONAL_EXACT_ACCEPTED_LATIN9_PARENT"
+    },
+    {
+      "path": ".scratch/resume-20261025-easter3-assembly-review/ASSEMBLY-REVIEW.json",
+      "sha256": "46b8b0e327f02fc938d97973a78cd0a9bcc7241280554d185531146fdffb8d5c",
+      "disposition": "ACCEPT_EXACT_EASTER_ASCENSION3_ASSEMBLED_SOURCE_POSTIMAGES"
+    },
+    {
+      "path": ".scratch/resume-20261025-source-union-review/finite-method-review.json",
+      "sha256": "6fa316b46a24e2d91857a04bdfc18b8aa26304af26e9335e00ba32b46728e263",
+      "disposition": "accepted-public-durable-method-transport"
+    },
+    {
+      "path": ".scratch/resume-20261025-cold-review/damascene-review.json",
+      "sha256": "22ce6f62e8f626a57802138e01946d4a5dc0ae7d0f39b039654a6cf9eeb94ba1",
+      "disposition": "accepted-bounded-candidate"
+    },
+    {
+      "path": ".scratch/resume-20261025-rg110-review/code-review.json",
+      "sha256": "5507ff117c9c8e5e79b566b6a8cab6d0108b93872d12acfc1588f2164a43f213",
+      "disposition": "accepted-bounded-candidate"
+    }
+  ],
+  "scope_boundaries": [
+    "This review accepts exact source composition and transport only; RG110 code semantics remain the separately pinned5507 review.",
+    "No new source-image reading, wider lexical method, inferred conclusion, source rights grant or whole-scan clearance.",
+    "Source guards/compiler implementation and final accepted guard fixture need their separate independent review and actual accepted receipt binding.",
+    "No complete annual content, generated Propers/Sources/Catena currentness, broad combined tests, native/TUI/public/preview/deployment/live or maintainer product acceptance follows.",
+    "Root atomic installation and canonical postinstallation verification remain coordinator work; no canonical writes or Git mutations by this reviewer."
+  ],
+  "unadmitted_holds": [
+    "January1 Postcommunion English",
+    "Chantal Postcommunion English",
+    "Lent1 Collect English source-image barrier",
+    "Anthony Postcommunion Latin",
+    "PhilipJames Collect occurrence2 Latin"
+  ],
+  "canonical_installation": "This receipt accepts exact source composition before coordinator installation; later installation and validation observations belong in RECORD.md.",
+  "historical_checkpoint": "The 23 October 1055 receipt and all prior method/refusal history remain unchanged."
+}

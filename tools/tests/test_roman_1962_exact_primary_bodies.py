@@ -14,6 +14,20 @@ import unicodedata
 import unittest
 
 import yaml
+from tools.tests import _source_batch_guards as source_batch
+from tools.tests._source_recovery_assertions import assert_current_english_owner
+from tools.tests.test_roman_1962_english_recovery_append209_strict165_20261023 import (
+    ARTIFACT as STRICT_ARTIFACT, ARTIFACT_SHA as STRICT_ARTIFACT_SHA,
+    ORACLES as STRICT_ENGLISH,
+)
+from tools.tests.test_roman_1962_english_recovery_append209_orth43_20261023 import (
+    ARTIFACT as ORTH_ARTIFACT, ARTIFACT_SHA as ORTH_ARTIFACT_SHA,
+    ORACLES as ORTH_ENGLISH,
+)
+from tools.tests.test_roman_1962_english_recovery_core193_20261023 import (
+    ARTIFACT as CORE_ARTIFACT, ARTIFACT_SHA as CORE_ARTIFACT_SHA,
+    ORACLES as CORE_ENGLISH,
+)
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -25,6 +39,13 @@ from _proper_latin import (
 
 FIXTURE = ROOT / "tools/tests/fixtures/roman-1962-exact-primary-bodies.json"
 CALENDARS = ROOT / "src/sources/calendars"
+ENGLISH_LEDGER = ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml"
+HISTORICAL_ABSENCES_SHA256 = "18bde347038bf4d3d1d946dc63e3419c83c68d41157138bc4495f4c6cadcface"
+ENGLISH_RECOVERIES = (
+    (STRICT_ENGLISH, STRICT_ARTIFACT, STRICT_ARTIFACT_SHA),
+    (ORTH_ENGLISH, ORTH_ARTIFACT, ORTH_ARTIFACT_SHA),
+    (CORE_ENGLISH, CORE_ARTIFACT, CORE_ARTIFACT_SHA),
+)
 
 
 def record(identifier):
@@ -64,6 +85,10 @@ class ExactPrimaryBodiesTests(unittest.TestCase):
         if result.returncode:
             raise AssertionError(result.stderr or result.stdout)
         cls.payloads = {p["mass"]["key"]: p for p in json.loads(result.stdout)["masses"]}
+        cls.english_ledger = tomllib.loads(ENGLISH_LEDGER.read_text())
+        cls.english_overlay, _, stale, cls.witnesses = cls.propers.translation_overlay("roman-1962", CALENDARS)
+        if stale:
+            raise AssertionError(stale)
 
     def node(self, row):
         mass = self.masses[row["mass"]]
@@ -176,31 +201,95 @@ class ExactPrimaryBodiesTests(unittest.TestCase):
                 changed["text"] = bible
                 self.assertIsNone(sanitize_proper(changed, key, self.records, SURFACES).get("text"))
 
+    def english_key(self, row):
+        return (row["mass"], row["form_id"], row["proper"], "all", row["occurrence"])
+
+    def historical_absence(self, row):
+        scope = self.fixture["historical_english_absence_scope"]
+        self.assertEqual("d648c842acf03fb345c22d6e5b54b7645e3c35b0", scope["source_revision"])
+        self.assertEqual("f8dfe360c4af0dd7af40044d6979af5ad80449ad140b1fad0864bc93d8a38130", scope["source_ledger_sha256"])
+        self.assertEqual(HISTORICAL_ABSENCES_SHA256, source_batch.digest(source_batch.canonical(scope["rows"])))
+        return scope["rows"][source_batch.canonical(self.english_key(row))]
+
+    def assert_english_owner(self, row, ledger):
+        key = self.english_key(row)
+        owned = assert_current_english_owner(
+            self, key, ledger, self.propers, self.english_overlay, self.witnesses,
+            latin_sha256=row["text_sha256"], independent_oracles=ENGLISH_RECOVERIES)
+        if key == ("advent-1", "main", "Epistle", "all", 1):
+            self.assertEqual(("untranslated", self.historical_absence(row)), owned)
+        return owned
+
     def test_exact_english_absences_and_coverage_do_not_borrow_bible_english(self):
-        ledger = tomllib.loads((ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml").read_text())
+        # These ten recoveries are bound to accepted source bytes and independent
+        # literal Latin/English oracles. Advent I remains an exact, explicit gap.
+        source_batch.assert_current_english_entries(self.english_overlay)
         child = tomllib.loads((ROOT / "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml").read_text())
         identity = lambda r: (r["mass"], r.get("form_id", "main"), r["proper"], r.get("cycle", "all"), r.get("occurrence",1), r.get("lang","en"), r.get("extent","body"))
         for row in self.fixture["rows"]:
             with self.subTest(mass=row["mass"]):
                 address = (row["mass"],row["form_id"],row["proper"],"all",row["occurrence"],"en","body")
-                owned = [(g,r) for g in ("entries","untranslated") for r in ledger.get(g,[]) if identity(r)==address]
-                self.assertEqual(1,len(owned))
-                self.assertEqual("untranslated",owned[0][0])
-                self.assertEqual({"kind":"no-exemplar"},owned[0][1]["reason"])
+                group, entry = self.assert_english_owner(row, self.english_ledger)
                 self.assertFalse([r for g in ("entries","untranslated") for r in child.get(g,[]) if identity(r)==address])
                 proper = self.appointed(row)["proper"]
-                self.assertFalse(proper.get("translations"))
-                self.assertTrue(proper.get("untranslated"))
+                if group == "entries":
+                    published = [r for r in proper.get("translations", []) if r["lang"] == "en"]
+                    self.assertEqual(1, len(published))
+                    self.assertEqual(entry["translations"][0]["text"], published[0]["text"])
+                    self.assertTrue(published[0].get("caution"))
+                    self.assertFalse(proper.get("untranslated"))
+                else:
+                    self.assertFalse(proper.get("translations"))
+                    self.assertTrue(proper.get("untranslated"))
                 owner = dict(proper, citations=[{"ref":v["ref"]} for v in proper["verses"]])
                 unit = _missal_coverage.unit(owner,target_id="target",occurrence_id="occurrence",
-                    absence_kinds=self.propers.body_absence_kinds([owned[0][1]],"all"))
+                    witnesses=self.witnesses,
+                    absence_kinds=self.propers.body_absence_kinds([entry] if group == "untranslated" else [],"all"))
                 languages = {r["lang"]:r for r in unit["languages"]}
                 self.assertEqual(("available","collated","exact-target","public-domain"),tuple(languages["la"][k] for k in ("availability","collation","relationship","publication_basis")))
-                self.assertEqual("not-sourced",languages["en"]["availability"])
+                self.assertEqual("available" if group == "entries" else "not-sourced",languages["en"]["availability"])
                 self.assertEqual("bible-reconstruction",unit["scripture_component"]["relationship"])
+                # The original absence assertions concern their pinned 2026-10-20
+                # source scope, rather than contradicting later source admission.
+                historical = self.historical_absence(row)
+                self.assertEqual({"kind": "no-exemplar"}, historical["reason"])
+                old_owner = dict(owner, translations=[], untranslated=self.propers.public_untranslated_records([historical]))
+                old_unit = _missal_coverage.unit(old_owner,target_id="target",occurrence_id="occurrence",
+                    absence_kinds=self.propers.body_absence_kinds([historical], "all"))
+                self.assertEqual("not-sourced", next(r for r in old_unit["languages"] if r["lang"] == "en")["availability"])
         for calendar in ("roman-1962","roman-pre-1955"):
             report = self.propers.english_coverage(CALENDARS,calendar)
             self.assertEqual((0,0,0,0),tuple(report[k] for k in ("unaccounted","unmatched_records","stale_translation_records","outside_the_ledger")))
+
+    def test_recovered_english_rejects_changed_body_and_publication_proof(self):
+        for row in self.fixture["rows"]:
+            if row["mass"] == "advent-1":
+                continue
+            _, entry = self.assert_english_owner(row, self.english_ledger)
+            for defect in ("body", "proof"):
+                broken = copy.deepcopy(entry)
+                if defect == "body":
+                    broken["translations"][0]["text"] += " Amen."
+                else:
+                    broken["publication_passage_id"] += "-unproved"
+                with self.subTest(mass=row["mass"], defect=defect):
+                    with self.assertRaises(ValueError):
+                        self.propers.validate_translation_publication_binding(broken, CALENDARS, ENGLISH_LEDGER, self.witnesses)
+
+    def test_original_gap_and_recovered_owners_cannot_exchange_states(self):
+        for row in self.fixture["rows"]:
+            group, entry = self.assert_english_owner(row, self.english_ledger)
+            broken = copy.deepcopy(self.english_ledger)
+            broken[group].remove(entry)
+            if group == "entries":
+                broken["untranslated"].append(self.historical_absence(row))
+            else:
+                changed = copy.deepcopy(entry)
+                changed["reason"] = {"kind": "witness-gap"}
+                broken[group].append(changed)
+            with self.subTest(mass=row["mass"]):
+                with self.assertRaises(AssertionError):
+                    self.assert_english_owner(row, broken)
 
     def test_english_reading_view_labels_the_full_bible_expansion_separately(self):
         result = subprocess.run(

@@ -100,7 +100,8 @@
         ? T.SOURCE_LANGUAGE : state.languages.orations,
       textDisplay: state.textDisplay,
       translationWitness: state.languages.translationWitness || null,
-      heading: heading || 'h2', cycle: selectedCycle
+      heading: heading || 'h2', cycle: selectedCycle,
+      orationGroups: event.orationGroups || null, orationContext: event.orationContext || null, eventId: event.id, structure: runtime.structure
     });
     if (translationChoice) {
       section.appendChild(T.el('p', 'composed-note',

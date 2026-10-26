@@ -1,0 +1,123 @@
+{
+  "schema": "triptych-bounded-visual-inspection/v1",
+  "status": "accepted-bounded-technical-presentation",
+  "images_inspected": [
+    {
+      "name": "day-reader-missal-roman-read-1440x900.png",
+      "sha256": "6fafbb217be732d9564f0fcc27748d53371bee79c15731295aad913fd321feb2",
+      "bytes": 115960,
+      "set": "general reader"
+    },
+    {
+      "name": "day-reader-missal-roman-read-393x852.png",
+      "sha256": "6726c148a1789c84731466297d7aa24f206cc2af98fea0cfe2e3de2a59ce61e5",
+      "bytes": 81736,
+      "set": "general reader"
+    },
+    {
+      "name": "day-reader-missal-roman-missal-1440x900.png",
+      "sha256": "84fbc2bd29061859ac78c2deec66a64303e5a3d4931c59be825bac3c846a006d",
+      "bytes": 118213,
+      "set": "general reader"
+    },
+    {
+      "name": "day-reader-missal-roman-missal-393x852.png",
+      "sha256": "9cc9ba6aa9fbb96bbdcee3da43b70d8fdd144423409c8dfdd6dbac52e09bbf82",
+      "bytes": 76338,
+      "set": "general reader"
+    },
+    {
+      "name": "propers-reader-valid-1440x900.png",
+      "sha256": "d398345403128b699b36f24a6980f3e4b52548568821098b34d6bcbfac4b0c41",
+      "bytes": 119878,
+      "set": "general reader"
+    },
+    {
+      "name": "propers-reader-valid-393x852.png",
+      "sha256": "aec0cb209f76f9d6d4df57d33f82f643d6a898d2e03a497703483e668b1084ef",
+      "bytes": 82190,
+      "set": "general reader"
+    },
+    {
+      "name": "propers-reader-partial-unavailable-393x852.png",
+      "sha256": "08a71745f67c20008b18b64b5048faee092a3c513c44d9e3f30dc4fc8285da1f",
+      "bytes": 79998,
+      "set": "general reader"
+    },
+    {
+      "name": "propers-reader-public-translation-witness-393x852.png",
+      "sha256": "74d18be624fa50ef4927f3b25cd7d0f4e5a563888c6152e8ed2dc02b9f6e34c4",
+      "bytes": 81277,
+      "set": "general reader"
+    },
+    {
+      "name": "before--day--june30-read-explicit-host-collect--1440x900.png",
+      "sha256": "66ab34927de6ba60c3339b3cb890b730586fb462d22d222dd335b5e37f2dd690",
+      "bytes": 151053,
+      "set": "RG110 before/after"
+    },
+    {
+      "name": "before--day--june30-read-explicit-host-collect--393x852.png",
+      "sha256": "ebfb104bbc27938b4a415272d13b87832d60862be1538017db3650471017727c",
+      "bytes": 92831,
+      "set": "RG110 before/after"
+    },
+    {
+      "name": "before--propers--june30-read-raw-formulary-collect--1440x900.png",
+      "sha256": "6c2c5b727847c4d0e0142e439cda755a46406ffd165a81b704fe3040d910edcb",
+      "bytes": 153843,
+      "set": "RG110 before/after"
+    },
+    {
+      "name": "before--propers--june30-read-raw-formulary-collect--393x852.png",
+      "sha256": "8a60bb03826afd34fc63689ce7b48018c5d59e9edcf130bce3521efe16ba72a2",
+      "bytes": 94162,
+      "set": "RG110 before/after"
+    },
+    {
+      "name": "after--day--june30-read-explicit-host-collect--1440x900.png",
+      "sha256": "b2ba327cc8920d247d100ed9f53ef5dafc31ac8866bd62b755abbc3d52d38839",
+      "bytes": 116579,
+      "set": "RG110 before/after"
+    },
+    {
+      "name": "after--day--june30-read-explicit-host-collect--393x852.png",
+      "sha256": "0d33921c9c6d1c09e2797bb937b915186315985c83bef74845048f95ffafa201",
+      "bytes": 74494,
+      "set": "RG110 before/after"
+    },
+    {
+      "name": "after--propers--june30-read-raw-formulary-collect--1440x900.png",
+      "sha256": "2d6b815786f45c42c2bc05628d6325dd72779b92aa54cb12c86274ee676e2dcf",
+      "bytes": 149905,
+      "set": "RG110 before/after"
+    },
+    {
+      "name": "after--propers--june30-read-raw-formulary-collect--393x852.png",
+      "sha256": "444e2a79948c41336fea96f8eaca72f2bccf68947e7469832a74272da4795636",
+      "bytes": 89380,
+      "set": "RG110 before/after"
+    }
+  ],
+  "viewports": [
+    [
+      1440,
+      900
+    ],
+    [
+      393,
+      852
+    ]
+  ],
+  "observations": [
+    "Dated RG110 groups show the ordered host and companion with an explicit one-count/one-conclusion relation.",
+    "Direct Propers preserves raw bodies and explains the unresolved date-dependent Office/votive use without attaching a companion.",
+    "Day Read and Missal show source and reconstruction distinctions, declared gaps, separately cued responses and readable desktop/mobile flow.",
+    "Selected Caswall remains partial and retains unavailable source/Bible passages rather than borrowing another witness."
+  ],
+  "limits": [
+    "These screenshots and automated browser checks do not establish full annual text or appointment correctness.",
+    "Maintainer interactive-terminal and broader product acceptance remain separate."
+  ],
+  "source_frozen_manifest_sha256": "5b4c48bb37ca95317ca7ef3ed9b28e29c95ce5c64f0ca60aaa164473cb36abf9"
+}

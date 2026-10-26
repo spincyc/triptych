@@ -23,6 +23,11 @@
     if (branch.settled !== true || !branch.winner || said.length !== 1 ||
         !said[0].key || said[0].key !== branch.winner.key ||
         branch.winner.formulary && branch.winner.formulary.kind !== 'own') return null;
+    // A counted group owns text in more than the selected Mass. The bounded
+    // one-Mass envelope cannot provide its companion; use the complete owner.
+    if (Object.values(branch.orations || {}).some(function (series) {
+      return (series || []).some(function (oration) { return Boolean(oration.members); });
+    })) return null;
     if (framed && ((branch.readable || []).some(function (one) {
       return one.state !== 'said' && one.state !== 'displaced';
     }) || Object.values(branch.orations || {}).some(function (series) {

@@ -1,0 +1,284 @@
+{
+  "schema": "triptych-independent-final-integrated-h2-review/v1",
+  "status": "accepted",
+  "scope": "Exact bounded technical source/code/generated-data/guard and local public-artifact integration at frozen H2; subsequent operational metadata and remote publication remain separately reviewable.",
+  "priority_findings": [],
+  "accepted_epoch": {
+    "h1_manifest_sha256": "5b4c48bb37ca95317ca7ef3ed9b28e29c95ce5c64f0ca60aaa164473cb36abf9",
+    "h2_manifest_sha256": "967dba045652619829f18433f2870315abf713e0483f7b9e07f0a54d41e7bf86",
+    "h2_freeze_sha256": "8e9feda45f2a305847e05c82b5d598af344db60cccad25eac843c25dd27dde28",
+    "h2_files": 51221,
+    "h2_bytes": 5591889533,
+    "source_epoch1671_sha256": "7eb3e2b5acd21ac37d9132b8a4bc2b3e6465ee4194a61d79d319c87d80b237a2",
+    "normalized_source_input1682_sha256": "2a9f93dc6edd6005f5ddf91ded3021db6b4401aa39418528b65e070df6036cc1",
+    "artifact_reuse_manifest_sha256": "41ba333095f907a4c8214282e5bd546fc73967b0893f03fdc538b3971e6ccc9c"
+  },
+  "independent_actual_checks": {
+    "whole_frozen_h2_files": 51221,
+    "whole_frozen_h2_hash_size_mode_mismatches": 0,
+    "source_epoch_rows_exact_between_h1_and_h2": 1671,
+    "unchanged_existing_h1_h2_regular_file_identities": 51208,
+    "changed_existing_paths": 7,
+    "new_review_metadata_paths": 6,
+    "removed_paths": 0,
+    "h2_delta": "Exactly four independently accepted test postimages, one unchanged-owner commentary research worklist and two operational documents; six new review JSONs. No runtime/source body/served-data/release change.",
+    "served_artifact_input_paths_unchanged": 23956,
+    "actual_strict_H2_guard_accepted": true,
+    "actual_all17_original_before_byte_histories_replayed": true,
+    "strict_guard_helper_exact_HEAD_bytes": true,
+    "artifact_files_independently_hashed": 48845,
+    "artifact_bytes_independently_hashed": 1712118397,
+    "artifact_hash_size_mode_mismatches": 0,
+    "artifact_private_single_link_files": 48845,
+    "all8_actual_comparison_images_byte_identical_to_H1_visual_receipt": true,
+    "actual_new_Day_mode_switch_images_visually_inspected": 3,
+    "new_image_outcomes": [
+      "ready",
+      "unresolved",
+      "ready"
+    ],
+    "new_image_modes": [
+      "read",
+      "missal",
+      "read"
+    ],
+    "new_image_semantic_target": "proper/postconciliar/advent-1/007",
+    "new_image_committed_generations": [
+      1,
+      2,
+      3
+    ],
+    "both_switched_hashes_retain_target": true,
+    "new_image_focus_five_frame_settlement_no_overflow_and_diagnostics_pass": true
+  },
+  "fresh_h2_gates": {
+    "code_regression": {
+      "tests": 240,
+      "exit_status": 0,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "all51221_hashes_modes_unchanged": true,
+      "composite_sha256": "832d70a7e6dd7c05d9154bb33a1696c3ee5520558db113bc7896da3b20dff37e",
+      "test_log_sha256": "dc2b73fbc7839ed2e9c559c236384f09f8bdb337f236d75217614638b54fb5bc"
+    },
+    "normal_source_aggregate": {
+      "command": "make --jobs=4 check-sources with the existing Python owner",
+      "actual_canonical_git_context": true,
+      "exit_status": 0,
+      "all51221_canonical_inputs_match_before_and_after": true,
+      "receipt": {
+        "sha256": "5d72534ef13fe82b686201507d00462011aad91c2ba82698eeac19dfb0c926fd",
+        "bytes": 887
+      },
+      "log_sha256": "bb2d44adef4a135fc63156465da0ef6e27421e61cb48736d755df03943deae2d"
+    },
+    "public_artifact_verifiers": {
+      "github_pages_exit": 0,
+      "preview_exit": 0,
+      "rebuilt_for_h2": false,
+      "unchanged_h1_built_bytes_reused": true,
+      "normal_guards_unchanged": true
+    },
+    "native": {
+      "full_tests": 7,
+      "full_harnesses": 12,
+      "full_assertions_passed": 257,
+      "full_assertions_total": 257,
+      "exit_status": 0,
+      "skips": 0,
+      "fresh_complete_suite_runs": 1,
+      "diagnostics": 0,
+      "Day_actual_capture_owner_assertions": 57,
+      "Propers_actual_capture_owner_assertions": 69,
+      "capture_owner_exit_each": 0,
+      "composite_sha256": "4d0139651cb47e65c7187817f6370784ee4781f4756df6215f21cec30cc28f5f",
+      "postpin_sha256": "a1650c7dddfab582b1af5a066b72a20ab73dad58246e5eba872bbeb4258ac090"
+    }
+  },
+  "reused_actual_h1_gates": {
+    "basis": "Independent H1/H2 manifest comparison, exact runtime/source/served-data groups and unchanged declared/transitive test dependencies; these gates were not rerun at H2.",
+    "annual": {
+      "tests": 7,
+      "renderings": 5856,
+      "exit_status": 0,
+      "scope": "structural renderability only"
+    },
+    "terminal": {
+      "tests": 120,
+      "passed": 119,
+      "complementary_dependency_branch_skips": 1,
+      "exit_status": 0
+    },
+    "source_regressions": {
+      "tests": 145,
+      "actual_recovery_child_exit": 0,
+      "original_wrapper143_not_relabelled": true
+    },
+    "rg110_unit": {
+      "tests": 32,
+      "exit_status": 0
+    },
+    "dialogue": {
+      "tests": 2,
+      "native_checks": 44,
+      "exit_status": 0,
+      "actual_accessibility_tree_and_clipboard": true
+    }
+  },
+  "source_and_method_limits_preserved": {
+    "roman_english": {
+      "with_english": 1123,
+      "represented": 1439,
+      "gaps": 316
+    },
+    "pre1955_english": {
+      "with_english": 1103,
+      "represented": 1382,
+      "gaps": 279
+    },
+    "postconciliar_english": {
+      "with_english": 116,
+      "represented": 561,
+      "gaps": 445
+    },
+    "new_Latin_bodies": 9,
+    "finite_Genitrice_method_unchanged_closed_two_contexts": true,
+    "Saturday_reuse_separate_exact_one_pair_grant_only": true,
+    "historical_positive_proof_audit_refusal_and17_replay_scopes_preserved": true,
+    "new_primary_source_reading_by_this_final_lane": false,
+    "raw_commentary_worklist": "779 chapters/234 pending, adding only unharvested1Samuel25 andJob14; prior232 pending rows and224-work global union exact; no commentary or source admission."
+  },
+  "original_failures_preserved": {
+    "h1_code": "39 failure entries plus one error across seven methods; exact reviewed test-only repairs and fresh H2 code pass remain separate.",
+    "h1_native": "255/257; direct unchanged Day57/57 had no retained detail establishing the original cause; no cause invented.",
+    "h1_source_aggregate": "exit2 stale research worklist; exact owner-derived refresh followed by normal full H2 source aggregate exit0.",
+    "h2_first_artifact_verifier": "exit1 refused hardlinked output inodes; all48845 outputs copied to private inodes with exact bytes/modes, followed by normal verifiers exit0.",
+    "earlier_source_wrapper": "143 without observed numeric unit completion; retained separately from successful exact-command145-test recovery exit0."
+  },
+  "operational_truthfulness_review": {
+    "reviewed_frozen_metadata": [
+      {
+        "path": "PROJECT-WORK.md",
+        "sha256": "1664b9393c02e13d00a2ffb4b4df771b4dcbf0cefa7e106224208b9d0aea487c",
+        "bytes": 689866
+      },
+      {
+        "path": "promised-deliverables.toml",
+        "sha256": "0f6a163bd464b03ba811a092571d25a4df7250213d4a76cff57a89f05967e0fc",
+        "bytes": 350870
+      },
+      {
+        "path": "workflows/reviews/missal-reader-resume-2026-10-25/RECORD.md",
+        "sha256": "1d13cf45a9e5a62e235a2a926c9547876ab7ce7cb6e48998ef9667c605f3c4cc",
+        "bytes": 14297
+      }
+    ],
+    "frozen_claims_are_historical_observations": true,
+    "original_failures_not_rewritten": true,
+    "remaining_backlog_annual_content_and_maintainer_terminal_requirements_still_open": true,
+    "post_gate_document_or_ledger_updates_require_separate_bounded_addendum": true
+  },
+  "component_acceptances_bound": [
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-10-25/independent-source-review-final1123.json",
+      "sha256": "f0775933d3ff13db8d61e0def26d58c443fb8eb7574c27eeac078d69b9c5ce87",
+      "bytes": 9224
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-10-25/independent-guard-review-final1123.json",
+      "sha256": "02b0ddf55fe994140ca36a6cc8efb9f34f880b048a7e931cc58d6806d4f2846c",
+      "bytes": 4099
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-10-25/independent-publication-guard-review.json",
+      "sha256": "e8e1dae852870e94142236362950dd6815672e371eb73e0b9daec6b38fa6fa2d",
+      "bytes": 5694
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-10-25/independent-browser-fixture-review.json",
+      "sha256": "7961c030abd30e4dfcf6fc83ee8ff2cd7382c29b9d02be9c54acb712ec4b89fa",
+      "bytes": 6433
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-10-25/independent-ordinary-oracle-review.json",
+      "sha256": "4421b8d22b86c6cc6d41d47d6df734b4417ffba0fef610bf4e0dadf5491c55f5",
+      "bytes": 15488
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-10-25/independent-reader-state-oracle-review.json",
+      "sha256": "75cad9b4d4fe40f003f94744208103bea54869c7e67cc7ccf4f9fd42fd7e3488",
+      "bytes": 4318
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-10-25/independent-native-oracle-review.json",
+      "sha256": "6d1f5b62dadfd0ee05f6cf31c288361899d47d6b99b522c32d7115e56e13a3e2",
+      "bytes": 7422
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-10-25/commentary-corpus-currency-review.json",
+      "sha256": "e5811ed00c5a3de4dfba32d941006e26f92abfcf90b7e4e35f868ef202b40835",
+      "bytes": 8744
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-10-25/finite-genitrice-method.json",
+      "sha256": "3966b121b7dd7255d92b2e1a9fc69d6b4e8288caf2758e440fee6f5dc2cbb583",
+      "bytes": 27918
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-10-25/saturday2-exact-reuse-approval.json",
+      "sha256": "c8973bf6e515b18554dfc8cb95d990603dee471a719c8f032d1bbf1e6afb157b",
+      "bytes": 28063
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-10-25/source-review-final1123.json",
+      "sha256": "3ebdde006403a03457f27170c4120a67610ae082b8bfc07c6654a93c533c1cde",
+      "bytes": 9027
+    }
+  ],
+  "review_evidence": [
+    {
+      "id": "manifest-delta.json",
+      "sha256": "ecb262a2594e698f65aa82bd75afe7d24a1a1a8775b8b586d830bd1384e2e9ad",
+      "bytes": 4049
+    },
+    {
+      "id": "h1-h2-equivalence.json",
+      "sha256": "b96db24c8927eb880f6c9d25b1fe8fa06f092d87c0abd5c716e2c887408ed170",
+      "bytes": 6520
+    },
+    {
+      "id": "whole-h2-postcheck.json",
+      "sha256": "04fa098f8723070820c8c7d13034f1fe8aa5a8b7e671b3702a0307e4a68c4d55",
+      "bytes": 319
+    },
+    {
+      "id": "artifact-byte-equivalence.json",
+      "sha256": "d7bfa4fc5a9f038e224b3fe55f75e230c333df00f3aec0e3f8fdd32c773b4d29",
+      "bytes": 453
+    },
+    {
+      "id": "mode-switch-visual-review.json",
+      "sha256": "bda56b3b344dfdbf3638a73eadefe27d9dffd0becb018c53821f06412a21445e",
+      "bytes": 2024
+    },
+    {
+      "id": "final-gate-joins.json",
+      "sha256": "b8744a4e807fc368e17ac8dfefb4ef0def46ff8ca4256ebee00a7958fba72d4b",
+      "bytes": 1275
+    },
+    {
+      "id": "h1-actual-gate-receipt-joins.json",
+      "sha256": "45f1360bd733a37507a25d1a9ba52eab15faf47237de2979cdae7062406fc2ac",
+      "bytes": 1505
+    }
+  ],
+  "not_accepted": [
+    "Full annual appointment correctness or text/language/rights completeness; typed gaps and unsupported contexts remain.",
+    "Maintainer interactive-terminal or broader product approval.",
+    "Any further source inference, normalized donor lookup, cross-owner fanout, or comparator expansion.",
+    "Remote publication, ancestry merge, force update, history rewrite, branch exception, deployment, or live-site acceptance.",
+    "Unreviewed later operational metadata; frozen H1/H2 evidence must retain its original exact meaning."
+  ],
+  "canonical_frozen_or_git_writes_by_reviewer": 0
+}

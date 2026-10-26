@@ -1,0 +1,24 @@
+{
+  "release_scope_exact": 545,
+  "upstream_authorization_metadata_preserved": true,
+  "upstream_source_files_byte_exact": {
+    "src/sources/calendars/roman-1962/rubrics.yaml": "f12674aa5e1541ef1f55f761ef6ce5b48d46ac94c8c165f5c4e2fd443509a4d6",
+    "src/sources/inventories/roman-1962-proper-translations-v1.toml": "a8140456e71ed2a1a94589740de62ca2dc2619abe7f7adfbcf5a1a5c3f4d88ea",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml": "aafe43ebf3c4a7c5a7a7ab974c19472fe331b936c6d671b110be94f1bad81eb2",
+    "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml": "b3fddd2aaf16c2f52ec3ee96d8d2bac087ba6fb4dfc2a329615db9e097a34b44",
+    "src/sources/inventories/roman-1962-ordo-missae-v1.toml": "52940d1ab72eb486aa0f4add24be9ba8e5b24a7985351ac5dd3eade38764916d",
+    "src/sources/inventories/roman-pre-1955-ordo-missae-v1.toml": "ae7b84f346e53ae27e789251033b749b791cb47e6e3deb7b0f92d56573859c88"
+  },
+  "upstream_prop_all_changes": [
+    [
+      "/sections/sanctoral/masses/259/registry",
+      "1962-11-01",
+      "F02"
+    ]
+  ],
+  "accepted_artifacts_exact": 12,
+  "f02_render_sources_exact": 25,
+  "additional_build_snapshot_exact": 5,
+  "old_temporary_ordinary_hashes_superseded": true,
+  "old_workflow_global_input_hashes": "Preserved as authentic historical records; no claim that changed upstream globals match the old review epoch."
+}

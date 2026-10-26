@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.damascene-offertory-base-english-20261023-104ae135"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Original Lasance/Walsh revised1945 English on ordinary printed p.962, under the existing United States nonrenewal of A110108/A192159 in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. The unchanged insert-excluded expression anchor is artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.new-roman-missal-text-80b34759, SHA25680b34759fb18ec60f6205460c2ac24dc9e4a861938a94ef1f8e04a08a398ac9a. Excluded inserts1298a-1298n and1302a-1302d are outside this source locus. No whole mixed-scan, image, artwork or Latin publication authority is claimed."
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+provenance = "One complete actual human English Offertory body read from the held registered facsimile artifact955/printed962 at200and400dpi on2026-10-23. Complete adjacent historical Latin was independently retyped and compared word-for-word with the installed non-Paschal Latin base; no Bible reconstruction or Common supplies wording."
+transformation = "Join the three printed English lines with ordinary spaces only; preserve all17 words, punctuation and final stop. No translation, modernization, ending, response, name, Alleluia or other word is supplied. Bind this one own non-Paschal appointment only, with no cross-owner fanout."
+retrieved = "2026-10-23"
+sha256 = "104ae135e64d3c9a0ab0a48f29c627c87af68271d1c8e99ecb31aef097d71c58"
+byte_size = 215
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/damascene-offertory-base-english-20261023-104ae135/english.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "Exactly one historical English body for John Damascene non-Paschal Offertory. No official1962 English, complete target unit, Paschal body/English, calendar eligibility, new Latin proof or annual completeness. The source full PDF and rasters remain private."

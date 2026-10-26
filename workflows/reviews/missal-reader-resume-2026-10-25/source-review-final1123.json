@@ -1,0 +1,170 @@
+{
+  "accepted_parent_receipt": {
+    "path": "workflows/reviews/missal-reader-resume-2026-10-25/source-review-final1119.json",
+    "sha256": "8deb4b56f18f4e1f93f553b4bdc05bbef50a0d719727ee074526fe544dfc6e2a"
+  },
+  "canonical_installation": "This receipt accepts exact source composition before coordinator installation; later installation and validation observations belong in RECORD.md.",
+  "checkpoint_counts": {
+    "last_four_english_owners": {
+      "historical_bodies": 1,
+      "legacy_counter_semantics": "new_source_bodies counts distinct verification IDs, not newly discovered historical wording",
+      "new_publication_proofs": 4,
+      "new_receiving_verifications": 3,
+      "receiving_owners": 4,
+      "reused_historical_bodies": 3
+    },
+    "new_english_owners": 68,
+    "new_latin_bodies": 9,
+    "postconciliar": {
+      "represented": 561,
+      "untranslated": 445,
+      "with_english": 116
+    },
+    "pre1955": {
+      "represented": 1382,
+      "untranslated": 279,
+      "with_english": 1103
+    },
+    "roman1962": {
+      "represented": 1439,
+      "untranslated": 316,
+      "with_english": 1123
+    }
+  },
+  "component_acceptances": [
+    {
+      "disposition": "ACCEPT_EXACT46_SOURCE_ASSEMBLY_PUBLIC_PROOF_AND_PRODUCTION_ENGLISH",
+      "path": ".scratch/resume-20261025-lexical-review/full46-v1/acceptance46.json",
+      "sha256": "dc6e12339ab8cea5f38f0e23101cbe9b3ae7e0b8e10e9d89c9f1820cea166230"
+    },
+    {
+      "disposition": "ACCEPT_EXACT12_SOURCE_PUBLICATION_ASSEMBLY_AGAINST_PINNED_CURRENT1055_PARENT",
+      "path": ".scratch/resume-20261025-postrepair-review/receipt.json",
+      "sha256": "457e0560e27296cf60dd0627530dc96820db9e2816f8671d1c7f26fb39b3ed15"
+    },
+    {
+      "disposition": "ACCEPT_EXACT_LATIN9_SOURCE_ASSEMBLY_FOR_COORDINATOR_INSTALL",
+      "path": ".scratch/resume-20261025-dolors-source-review/assembled-latin9-receipt.json",
+      "sha256": "0a87bea5b5a8978a53da8a4c683ddd28508af99a683c3ae6a8d299cedc2bf521"
+    },
+    {
+      "disposition": "ACCEPT_SOURCE_EVIDENCE_ONLY_EXACT_TEN_POSTIMAGES",
+      "path": ".scratch/resume-20261025-genitrice-extra/GENITRICE-SOURCE-REVIEW.json",
+      "sha256": "372711024d32f2af3aa7581913a79662f8d69b43925065354f3ce255d5ea428d"
+    },
+    {
+      "disposition": "ACCEPT_EXACT_ENGLISH2_ASSEMBLED_POSTIMAGES_CONDITIONAL_EXACT_ACCEPTED_LATIN9_PARENT",
+      "path": ".scratch/resume-20261025-english-extra2-assembly-review/ASSEMBLY-REVIEW.json",
+      "sha256": "4050a93663cf1eb9fc117317c3f8405888858bcee67ea37b664df3977465abc0"
+    },
+    {
+      "disposition": "ACCEPT_EXACT_EASTER_ASCENSION3_ASSEMBLED_SOURCE_POSTIMAGES",
+      "path": ".scratch/resume-20261025-easter3-assembly-review/ASSEMBLY-REVIEW.json",
+      "sha256": "46b8b0e327f02fc938d97973a78cd0a9bcc7241280554d185531146fdffb8d5c"
+    },
+    {
+      "disposition": "accepted-public-durable-method-transport",
+      "path": ".scratch/resume-20261025-source-union-review/finite-method-review.json",
+      "sha256": "6fa316b46a24e2d91857a04bdfc18b8aa26304af26e9335e00ba32b46728e263"
+    },
+    {
+      "disposition": "accepted-bounded-candidate",
+      "path": ".scratch/resume-20261025-cold-review/damascene-review.json",
+      "sha256": "22ce6f62e8f626a57802138e01946d4a5dc0ae7d0f39b039654a6cf9eeb94ba1"
+    },
+    {
+      "disposition": "accepted-bounded-candidate",
+      "path": ".scratch/resume-20261025-rg110-review/code-review.json",
+      "sha256": "5507ff117c9c8e5e79b566b6a8cab6d0108b93872d12acfc1588f2164a43f213"
+    },
+    {
+      "disposition": "exact private context comparison only; raw/public nulls unchanged",
+      "path": "workflows/reviews/missal-reader-resume-2026-10-25/jan1-context-approval.json",
+      "sha256": "37eb49a0536c1b13ca400b5aefed1a45a34867b0f1617d5914b1cd34a4fd7872"
+    },
+    {
+      "disposition": "exact source and private-context evidence only",
+      "path": "workflows/reviews/missal-reader-resume-2026-10-25/jan1-source-review.json",
+      "sha256": "c9d46ff7716f25f35e6345fa6aa129cfefbf736a1410605094289f3252ef856e"
+    },
+    {
+      "disposition": "accepted exact Jan1 seven-file assembled source delta",
+      "path": ".scratch/resume-20261025-jan1-assembly-review/ASSEMBLY-REVIEW.json",
+      "sha256": "83b992d12cb6e6f5e8df9371d21aa30689aad636d42a3719da8cfb14dc724487"
+    },
+    {
+      "disposition": "accepted exact Dolors3 source and explicit referral reading",
+      "path": ".scratch/resume-20261025-dolors-English-source-review/SOURCE-REVIEW.json",
+      "sha256": "3d78784eae6605f80a4cf9eab794c8e9c17978f77768ea04762019d14c6db842"
+    },
+    {
+      "disposition": "accepted exact Dolors3 twelve-file assembly",
+      "path": ".scratch/resume-20261025-dolors3-assembly-review/ASSEMBLY-REVIEW.json",
+      "sha256": "d11aebeaae67da6c7816f8092e2d29ad9ff51b1b249f64bd9b5636f1ee78abc9"
+    },
+    {
+      "disposition": "separate exact one-pair reuse grant; finite method unchanged",
+      "path": "workflows/reviews/missal-reader-resume-2026-10-25/saturday2-exact-reuse-approval.json",
+      "sha256": "c8973bf6e515b18554dfc8cb95d990603dee471a719c8f032d1bbf1e6afb157b"
+    },
+    {
+      "disposition": "accepted exact Saturday2 five-file receiving assembly",
+      "path": ".scratch/resume-20261025-saturday2-assembly-review/ASSEMBLY-REVIEW.json",
+      "sha256": "5be69d1ed967e757b7765d86b8e41fe15fcdcef3926d895dd94ee171c31c4b53"
+    },
+    {
+      "disposition": "accepted exact strict RG110 publication-transport guard and regressions",
+      "path": ".scratch/resume-20261025-rg110-publication-review/publication-review.json",
+      "sha256": "e8e1dae852870e94142236362950dd6815672e371eb73e0b9daec6b38fa6fa2d"
+    },
+    {
+      "disposition": "one outer EOF LF removed; all parsed Latin proofs and bodies exact; only current audit hash/size rows refreshed",
+      "path": ".scratch/resume-20261025-integration/union68-final4-v2/FORMAT-ONLY-PROOF.json",
+      "sha256": "d00aee85e343b0954e4239aeff2e7ee0fe7e9fcbb6452b1a827abe7f0a62e7fd"
+    }
+  ],
+  "historical_checkpoint": "The 1118, 1119 and 23 October1055 receipts remain immutable historical acceptances. This successor adopts only separately accepted bounded additions and the exact outer-ledger EOF normalization.",
+  "incremental_installation_manifest": {
+    "path": "workflows/reviews/missal-reader-resume-2026-10-25/source-installation-increment-final1123.json",
+    "paths": 19,
+    "sha256": "63b7fe8a12eb1db59074bcecf797e7f4744bcd7e58d9a09fa7312f7c5c2bf966"
+  },
+  "independent_source_union_review": {
+    "path": "workflows/reviews/missal-reader-resume-2026-10-25/independent-source-review-final1123.json",
+    "sha256": "f0775933d3ff13db8d61e0def26d58c443fb8eb7574c27eeac078d69b9c5ce87"
+  },
+  "installation_manifest": {
+    "path": "workflows/reviews/missal-reader-resume-2026-10-25/source-installation-final1123.json",
+    "paths": 281,
+    "sha256": "dc17b4714a6e3c6e1f7333797bec45e1b5afbe2b7e1b4af7052886a6524d4080"
+  },
+  "repository_relative_evidence_handles": "Scratch paths identify preserved handoff evidence without machine paths or private payloads; the public decision and exact source/proof hashes are self-contained.",
+  "reviewed_on": "2026-10-25",
+  "schema": "triptych-source-review-receipt/v1",
+  "scope": "missal-source-batch",
+  "scope_boundaries": [
+    "Exact source composition/transport only; RG110 execution semantics retain independent5507 review and the new strict publication guard retains independente8e1 review.",
+    "No new source-image reading, wider lexical method, inferred conclusion, source rights grant or whole-scan clearance.",
+    "Source guards/compiler implementation and final accepted guard fixture need their separate independent review and actual accepted receipt binding.",
+    "No complete annual content, generated Propers/Sources/Catena currentness, broad combined tests, native/TUI/public/preview/deployment/live or maintainer product acceptance follows.",
+    "Root atomic installation and canonical postinstallation verification remain coordinator work; no canonical writes or Git mutations by this reviewer."
+  ],
+  "source_baseline": "2e030b564f4413b735ddbea3061082ebe981b11a",
+  "source_input_manifest_path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+  "source_input_manifest_paths": 1682,
+  "source_input_manifest_sha256": "2a9f93dc6edd6005f5ddf91ded3021db6b4401aa39418528b65e070df6036cc1",
+  "source_parent_commit": "6a1fe6e3361fec6d1f011a0ae03a0e47d12fa6cf",
+  "source_postimage_manifest": {
+    "path": "workflows/reviews/missal-reader-resume-2026-10-25/source-postimages-final1123.json",
+    "paths": 1671,
+    "sha256": "7eb3e2b5acd21ac37d9132b8a4bc2b3e6465ee4194a61d79d319c87d80b237a2"
+  },
+  "status": "accepted",
+  "unadmitted_holds": [
+    "Paul June30 three English prayers lack individual target ending cues",
+    "Chantal Postcommunion English conclusion-family hold",
+    "Lent1 Collect English clipped-source-image hold; larger original remains unexamined",
+    "Anthony Postcommunion Latin",
+    "PhilipJames Collect occurrence2 Latin"
+  ]
+}

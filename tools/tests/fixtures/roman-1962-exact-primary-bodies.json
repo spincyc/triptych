@@ -45,7 +45,8 @@
         "Offertory",
         "Secret",
         "Communion",
-        "Postcommunion"
+        "Postcommunion",
+        "Oratio super populum"
       ]
     },
     {
@@ -110,7 +111,8 @@
         "Offertory",
         "Secret",
         "Communion",
-        "Postcommunion"
+        "Postcommunion",
+        "Oratio super populum"
       ]
     },
     {
@@ -155,7 +157,8 @@
         "Offertory",
         "Secret",
         "Communion",
-        "Postcommunion"
+        "Postcommunion",
+        "Oratio super populum"
       ]
     },
     {
@@ -200,7 +203,8 @@
         "Offertory",
         "Secret",
         "Communion",
-        "Postcommunion"
+        "Postcommunion",
+        "Oratio super populum"
       ]
     },
     {
@@ -244,7 +248,8 @@
         "Offertory",
         "Secret",
         "Communion",
-        "Postcommunion"
+        "Postcommunion",
+        "Oratio super populum"
       ]
     },
     {
@@ -284,13 +289,19 @@
         "Collect",
         "First Lesson",
         "First Alleluia",
+        "Oratio",
         "Second Lesson",
         "Second Alleluia",
+        "Oratio",
         "Third Lesson",
         "Third Alleluia",
+        "Oratio",
         "Fourth Lesson",
+        "Fourth Alleluia",
+        "Oratio",
         "Fifth Lesson",
         "Fifth Alleluia",
+        "Oratio",
         "Epistle",
         "Tract",
         "Sequence",
@@ -542,5 +553,166 @@
         "Postcommunion"
       ]
     }
-  ]
+  ],
+  "historical_english_absence_scope": {
+    "source_revision": "d648c842acf03fb345c22d6e5b54b7645e3c35b0",
+    "source_ledger": "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+    "source_ledger_sha256": "f8dfe360c4af0dd7af40044d6979af5ad80449ad140b1fad0864bc93d8a38130",
+    "rows": {
+      "[\"friday-after-ash-wednesday\",\"main\",\"Lesson\",\"all\",1]": {
+        "mass": "friday-after-ash-wednesday",
+        "form_id": "main",
+        "proper": "Lesson",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English rendering of this complete source-owned adapted Missal reading is currently recorded. The bounded Mame 1922 proof establishes Latin words only. A selected Bible expands the printed appointments as separate Scripture apparatus; it does not render this liturgical incipit, internal cuts, cento order and terminal clause as an exact whole English Missal body. No English translation is generated or inherited from that Bible expansion."
+      },
+      "[\"lent-3-friday\",\"main\",\"Lesson\",\"all\",1]": {
+        "mass": "lent-3-friday",
+        "form_id": "main",
+        "proper": "Lesson",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English rendering of this complete source-owned adapted Missal reading is currently recorded. The bounded Mame 1922 proof establishes Latin words only. A selected Bible expands the printed appointments as separate Scripture apparatus; it does not render this liturgical incipit, internal cuts, cento order and terminal clause as an exact whole English Missal body. No English translation is generated or inherited from that Bible expansion."
+      },
+      "[\"lent-3-monday\",\"main\",\"Lesson\",\"all\",1]": {
+        "mass": "lent-3-monday",
+        "form_id": "main",
+        "proper": "Lesson",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English rendering of this complete source-owned adapted Missal reading is currently recorded. The bounded Mame 1922 proof establishes Latin words only. A selected Bible expands the printed appointments as separate Scripture apparatus; it does not render this liturgical incipit, internal cuts, cento order and terminal clause as an exact whole English Missal body. No English translation is generated or inherited from that Bible expansion."
+      },
+      "[\"lent-3-wednesday\",\"main\",\"Lesson\",\"all\",1]": {
+        "mass": "lent-3-wednesday",
+        "form_id": "main",
+        "proper": "Lesson",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English rendering of this complete source-owned adapted Missal reading is currently recorded. The bounded Mame 1922 proof establishes Latin words only. A selected Bible expands the printed appointments as separate Scripture apparatus; it does not render this liturgical incipit, internal cuts, cento order and terminal clause as an exact whole English Missal body. No English translation is generated or inherited from that Bible expansion."
+      },
+      "[\"saturday-after-ash-wednesday\",\"main\",\"Lesson\",\"all\",1]": {
+        "mass": "saturday-after-ash-wednesday",
+        "form_id": "main",
+        "proper": "Lesson",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English rendering of this complete source-owned adapted Missal reading is currently recorded. The bounded Mame 1922 proof establishes Latin words only. A selected Bible expands the printed appointments as separate Scripture apparatus; it does not render this liturgical incipit, internal cuts, cento order and terminal clause as an exact whole English Missal body. No English translation is generated or inherited from that Bible expansion."
+      },
+      "[\"pentecost-ember-saturday\",\"longer\",\"Third Lesson\",\"all\",1]": {
+        "mass": "pentecost-ember-saturday",
+        "form_id": "longer",
+        "proper": "Third Lesson",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English rendering of this complete source-owned adapted Missal reading is currently recorded. The bounded Mame 1922 proof establishes Latin words only. A selected Bible expands the printed appointments as separate Scripture apparatus; it does not render this liturgical incipit, internal cuts, cento order and terminal clause as an exact whole English Missal body. No English translation is generated or inherited from that Bible expansion."
+      },
+      "[\"s-gregorii-thaumaturgi-episcopi-confessoris\",\"main\",\"Lesson\",\"all\",1]": {
+        "mass": "s-gregorii-thaumaturgi-episcopi-confessoris",
+        "form_id": "main",
+        "proper": "Lesson",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English rendering of this complete source-owned adapted Missal reading is currently recorded. The bounded Mame 1922 proof establishes Latin words only. A selected Bible expands the printed appointments as separate Scripture apparatus; it does not render this liturgical incipit, internal cuts, cento order and terminal clause as an exact whole English Missal body. No English translation is generated or inherited from that Bible expansion."
+      },
+      "[\"epiphany-2\",\"main\",\"Epistle\",\"all\",1]": {
+        "mass": "epiphany-2",
+        "form_id": "main",
+        "proper": "Epistle",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English rendering of this complete source-owned adapted Missal reading is currently recorded. The bounded Mame 1922 proof establishes Latin words only. A selected Bible expands the printed appointments as separate Scripture apparatus; it does not render this liturgical incipit, internal cuts, cento order and terminal clause as an exact whole English Missal body. No English translation is generated or inherited from that Bible expansion."
+      },
+      "[\"epiphany-3\",\"main\",\"Epistle\",\"all\",1]": {
+        "mass": "epiphany-3",
+        "form_id": "main",
+        "proper": "Epistle",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English rendering of this complete source-owned adapted Missal reading is currently recorded. The bounded Mame 1922 proof establishes Latin words only. A selected Bible expands the printed appointments as separate Scripture apparatus; it does not render this liturgical incipit, internal cuts, cento order and terminal clause as an exact whole English Missal body. No English translation is generated or inherited from that Bible expansion."
+      },
+      "[\"advent-1\",\"main\",\"Epistle\",\"all\",1]": {
+        "mass": "advent-1",
+        "form_id": "main",
+        "proper": "Epistle",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English rendering of this complete source-owned adapted Missal reading is currently recorded. The bounded Mame 1922 proof establishes Latin words only. A selected Bible expands the printed appointments as separate Scripture apparatus; it does not render this liturgical incipit, internal cuts, cento order and terminal clause as an exact whole English Missal body. No English translation is generated or inherited from that Bible expansion."
+      },
+      "[\"s-nicolai-episcopi-confessoris\",\"main\",\"Epistle\",\"all\",1]": {
+        "mass": "s-nicolai-episcopi-confessoris",
+        "form_id": "main",
+        "proper": "Epistle",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English rendering of this complete source-owned adapted Missal reading is currently recorded. The bounded Mame 1922 proof establishes Latin words only. A selected Bible expands the printed appointments as separate Scripture apparatus; it does not render this liturgical incipit, internal cuts, cento order and terminal clause as an exact whole English Missal body. No English translation is generated or inherited from that Bible expansion."
+      }
+    }
+  }
 }

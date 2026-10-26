@@ -198,6 +198,7 @@ module.exports = function liturgy(realm) {
       translationWitness: state.witness || null,
       heading: 'h3',
       cycle: event.selected && event.selected.cycle || null,
+      orationGroups: event.orationGroups || null, orationContext: event.orationContext || null, eventId: event.id, structure: owner,
     });
     return { blocks: realm.dom.read(section) };
   }

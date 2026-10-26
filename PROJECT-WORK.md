@@ -48,6 +48,13 @@ source/site checks, outgoing integration review, main push and live verification
 remain outstanding. The global chronology and source-family audits remain open;
 this target's qualified dates have their own accepted source-fidelity review.
 
+Prepush main advanced to `f3f59d483` with reviewed missal-source/RG110 work.
+Ordinary integration preserves both lines; shared projections are regenerated
+and both guard suites pass. Fresh source review accepts the unchanged F02
+facts and artifacts in the merged context, explicitly retaining the historical
+meaning of four changed global research seals. Full merged validation and
+outgoing review precede publication.
+
 ## GPT proper-study register revision, 2026-10-23
 
 <!-- promised-deliverable: gpt-propers-register-2026-10-23 -->
@@ -87,6 +94,57 @@ review record preserves exact artifact hashes and public run links. This
 receipt describes the verified publication commit, not its own deployment.
 
 ## Reader and corpus recovery, 2026-10-23
+
+### Resumed cold review and execution, 2026-10-25
+
+The maintainer requests recovery of the handoff, independent cold review,
+execution with parallel agents, and completion. This supersedes the reboot
+stop for the bounded deferred work recorded in the handoff. Recovery starts
+from clean `6a1fe6e3361fec6d1f011a0ae03a0e47d12fa6cf` on
+`feature/missal-reader`. Current workspace instructions retain that branch and
+permit only its named publication; earlier main-publication instructions do
+not override this boundary. Any remote ancestry conflict must be resolved
+without reconnecting the rejected history or rewriting a published ref.
+
+Independent lanes recheck the installed checkpoint, the lexical English
+packet, the postrepair English packet, nine Latin candidates, the finite
+Genitrice evidence and extra English pair, and the unapplied RG110 assembly.
+Candidate preparation, source acceptance, installation, generation and
+publication remain separate. Historical whole-ledger postimages cannot
+replace the current 1,055-owner ledger. Fresh integrated checks and exact
+publication observations are required; prior phase passes remain historical.
+Annual textual completeness and maintainer terminal acceptance remain open
+unless their own criteria are met. The continuation receipt will be recorded
+under `workflows/reviews/missal-reader-resume-2026-10-25/`.
+
+The accepted continuation installs 1,123 Roman English owners with 316 explicit
+gaps, nine further Latin bodies, bounded RG110 execution, its strict publication
+transport correction and the Damascene alternative-seat correction. The January
+1 context, Dolors3 and separately authorized Saturday Postcommunion reuse are
+independently accepted and installed. New historical bodies, reused wording and
+recipient verifications are counted separately. All 1,671 source postimages and
+the accepted 1,682-input guard pass after atomic installation. The residual
+closure preserves every earlier positive and refusal and finds no further exact
+canonical-body donor pair. Sources and Propers generation, source-family
+refresh preserving all 162 pending units, scoped release refresh and tool-registry
+validation pass. Release bindings are exact. Fresh annual structural validation passes all
+5,856 renderings; terminal120 (one complementary dependency skip), source145,
+RG110 unit32, public/preview builds/verifiers and native dialogue44 pass. The
+first broader code and native runs expose stale test oracles; independent clean
+baseline replay and exact source proofs support four test-only successor files.
+Root installs those, plus a deterministic research-worklist refresh to 779
+chapters/234 pending, without changing runtime/source bodies or served data.
+Fresh H2 complete source, full240 code and native12-harness/257-assertion
+checks all pass; both artifact verifiers and complete capture owners pass. Every
+51,221 input and 48,845 artifact byte/mode pin remains exact. Independent
+integrated review accepts the bounded local checkpoint. Annual structural5856,
+terminal120 (one expected branch skip), source145, RG11032 and dialogue44 retain
+their exact H1 scopes through unchanged-dependency proofs. The final
+[validation](workflows/reviews/missal-reader-resume-2026-10-25/validation-final.json)
+records every original failure and operational correction. Safe publication
+still needs the explicit workspace-ref disposition; no push is claimed. Annual
+textual completeness, maintainer real-terminal approval and the broader corpus
+backlog remain open.
 
 ### Urgent reboot checkpoint, 2026-10-23
 

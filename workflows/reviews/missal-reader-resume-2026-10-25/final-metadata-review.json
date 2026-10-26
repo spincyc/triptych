@@ -1,0 +1,107 @@
+{
+  "schema": "triptych-independent-final-metadata-addendum/v1",
+  "status": "accepted",
+  "scope": "Exactly three existing operational documents and two new public validation/acceptance JSON files after frozen H2; no source/runtime/test/model/generated-data/release change.",
+  "priority_findings": [],
+  "parent_integrated_acceptance": {
+    "path": "workflows/reviews/missal-reader-resume-2026-10-25/independent-integrated-review.json",
+    "sha256": "8890b3e89f991e837bc2fd3a0b05fc4b3a955f0f022852c2ec9e5c6252eb27e3",
+    "unchanged": true
+  },
+  "frozen_H2_manifest_sha256": "967dba045652619829f18433f2870315abf713e0483f7b9e07f0a54d41e7bf86",
+  "final_exact_metadata_files": [
+    {
+      "path": "PROJECT-WORK.md",
+      "sha256": "aa58b3cb914d12411ccd385f1e8a7f737b46a1eda24a6712f6e9be4c8f4ed79f",
+      "bytes": 690394
+    },
+    {
+      "path": "promised-deliverables.toml",
+      "sha256": "42e69fabee36060453be92e503ff81736a7497abd61871992d3f6d81fbbb8cb5",
+      "bytes": 351033
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-10-25/RECORD.md",
+      "sha256": "83108da8c9e8a18e147a77729e6a08350180815a1f118b4f1e5040a308ed4392",
+      "bytes": 16251
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-10-25/validation-final.json",
+      "sha256": "9203a17b45c642630d719ac57d31ce64cfc635bebcba88bc7d908f3a3a843c15",
+      "bytes": 9261
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-10-25/independent-integrated-review.json",
+      "sha256": "8890b3e89f991e837bc2fd3a0b05fc4b3a955f0f022852c2ec9e5c6252eb27e3",
+      "bytes": 11830
+    }
+  ],
+  "three_prior_H2_file_hashes": [
+    {
+      "path": "PROJECT-WORK.md",
+      "sha256": "1664b9393c02e13d00a2ffb4b4df771b4dcbf0cefa7e106224208b9d0aea487c"
+    },
+    {
+      "path": "promised-deliverables.toml",
+      "sha256": "0f6a163bd464b03ba811a092571d25a4df7250213d4a76cff57a89f05967e0fc"
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-10-25/RECORD.md",
+      "sha256": "1d13cf45a9e5a62e235a2a926c9547876ab7ce7cb6e48998ef9667c605f3c4cc"
+    }
+  ],
+  "mechanical_scope_check": {
+    "canonical_nonmetadata_H2_files_independently_rehashed": 51218,
+    "hash_size_mode_mismatches": 0,
+    "only_existing_changed_paths": 3,
+    "only_new_metadata_paths": 2,
+    "source_runtime_test_model_generated_data_changes": 0,
+    "no_gate_rerun_needed_for_this_metadata_only_delta": true
+  },
+  "truthfulness_checks": {
+    "local_validation_only_no_new_continuation_commit_push_deployment_or_live_success_claim": true,
+    "publication_and_exact_revision_remote_observations_pending": true,
+    "resumed_checkpoint_requirement_stays_open": true,
+    "recovery_parent_stays_in_progress": true,
+    "all_prior_deliverable_states_requirement_statuses_and_criteria_preserved": true,
+    "only_promised_ledger_evidence_changed": true,
+    "annual_appointment_text_language_rights_completeness_stays_open": true,
+    "maintainer_interactive_terminal_and_product_acceptance_stay_open": true,
+    "remaining_English_commentary_backlog_and_material_source_holds_explicit": true,
+    "H1_reuse_not_reattributed_as_fresh_H2_runs": true,
+    "original_H1_failures_wrapper143_and_first_H2_hardlink_refusal_retained": true,
+    "output_COW_only_byte_mode_equivalence_and_unchanged_normal_guards_disclosed": true,
+    "fresh_actual_H2_code240_source_aggregate_native257_and_both_artifact_verifiers_match_raw_receipts": true,
+    "all_input51221_and_artifact48845_postpins_have_zero_errors": true,
+    "exact_eight_module_code_command_and_Python3_14_8_match_actual_receipts": true,
+    "annual_and_native_live_activation_environment_matches_actual_receipts": true,
+    "source_make_PYTHON_override_matches_actual_interpreter": true,
+    "source_owner_counts_and_Catena1404_in19books_match_actual_outputs": true,
+    "release_517updated_18adopted_0retired_and_exact_manifest_rights_hashes_match_receipt": true,
+    "bounded_visual_16H1_plus3actualH2_and8identical_comparison_images_preserve_technical_scope": true,
+    "Read_Missal_Read_outcomes_ready_unresolved_ready_preserved": true
+  },
+  "later_frozen_H1_native32_evidence": {
+    "raw_report_sha256": "ef543f89c6afa7a4f8a265089a2e97ee8704ebc482e71ef20b768ab394dd575e",
+    "scope_receipt_sha256": "e19e353fa31afaa165d6b86cfd2216ba07a6c60929d8ac2a6c26a5b809c926d1",
+    "unchanged_owner_sha256": "e04b30fecb8fc46dcf11e55d666fe94899ccb6a089bc6b7fe6cfeec80c10cce8",
+    "states": 32,
+    "Day": 13,
+    "Propers": 19,
+    "actual_H1_manifest_bound": true,
+    "all53_requested_asset_pins_exact_H1_H2": true,
+    "English_hold_and_zero_diagnostics": true,
+    "earlier_component_report_not_substituted": true
+  },
+  "resolved_review_notes": [
+    "Added required live annual and browser activation environment beside command summaries; no rerun or changed result.",
+    "The source command now records the actual repository-relative pinned interpreter override.",
+    "Later frozen-H1 RG110 browser32 evidence is explicitly distinguished from the earlier component report."
+  ],
+  "not_accepted": [
+    "Any remote publication, history/branch exception, force update, deployment or live-site outcome.",
+    "Full annual textual completeness or maintainer terminal/product approval.",
+    "Any later change to these exact files without its own bounded review."
+  ],
+  "reviewer_canonical_frozen_and_Git_writes": 0
+}

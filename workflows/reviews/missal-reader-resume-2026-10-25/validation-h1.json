@@ -1,0 +1,74 @@
+{
+  "schema": "triptych-frozen-validation-observation/v1",
+  "scope": "H1 observations before independently reviewed test-oracle and research-worklist successors",
+  "input_manifest_sha256": "5b4c48bb37ca95317ca7ef3ed9b28e29c95ce5c64f0ca60aaa164473cb36abf9",
+  "input_files": 51215,
+  "input_bytes": 5591833519,
+  "source_receipt": "source-review-final1123.json",
+  "source_epoch_sha256": "7eb3e2b5acd21ac37d9132b8a4bc2b3e6465ee4194a61d79d319c87d80b237a2",
+  "observations": {
+    "annual": {
+      "exit_status": 0,
+      "tests": 7,
+      "renderings": 5856,
+      "workers": 16,
+      "skipped": 0,
+      "elapsed_seconds": 636.5399841449998,
+      "log_sha256": "9e5894891cc34b7dead40fcbab4273b6f3efe6e264283631dcff1c59b1025df4",
+      "all_frozen_input_hashes_and_modes_unchanged": true,
+      "qualification": "Structural renderability only; annual appointment/text/language/rights completeness remains open."
+    },
+    "terminal": {
+      "exit_status": 0,
+      "tests": 120,
+      "passed": 119,
+      "skipped": 1,
+      "qualification": "One complementary optional-Markdown dependency branch skip; no maintainer interactive-terminal acceptance."
+    },
+    "rg110_unit": {
+      "exit_status": 0,
+      "tests": 32
+    },
+    "source_regressions": {
+      "exit_status": 0,
+      "tests": 145,
+      "qualification": "Original test log reported OK145 but its wrapper ended143 before recording numeric child completion. Original teardown was proved; a separate unchanged recovery run records child exit0, all145 tests and unchanged inputs. Both observations are retained."
+    },
+    "code_regressions_initial": {
+      "exit_status": 1,
+      "tests": 240,
+      "failure_entries": 39,
+      "errors": 1,
+      "affected_methods": 7,
+      "qualification": "38 Ordinary failures reproduce identically at clean6a and H1; SacredHeart and restored-Vianney oracle drift also predates the continuation. Exact test-only successors are independently accepted; H2 execution remains separate."
+    },
+    "public_and_preview": {
+      "public_build_exit": 0,
+      "github_pages_verify_exit": 0,
+      "preview_build_exit": 0,
+      "preview_verify_exit": 0,
+      "qualification": "Plain snapshot make prerequisite first failed because Git discovered the enclosing repository at a scratch prefix. The unchanged six-test curriculum owner passes in the actual checkout with every frozen input byte/mode equal before/after; exact unchanged build/verify recipes then pass in the snapshot. No prerequisite was waived."
+    },
+    "dialogue": {
+      "exit_status": 0,
+      "tests": 2,
+      "checks": 44,
+      "real_accessibility_tree": true,
+      "native_clipboard": true,
+      "qualification": "Initial Chromium startup failed before assertions because the long scratch TMPDIR exceeded Unix socket-path length. A live directory-descriptor pathname alias points to the same physical repository scratch; no outside files, source edits or browser flags were added."
+    },
+    "native_initial": {
+      "tests": 7,
+      "harnesses": 12,
+      "passed_assertions": 255,
+      "assertions": 257,
+      "qualification": "Propers unavailable-side fixture incorrectly retained recovered Ignatius English as unavailable. One Day failure did not reproduce in an unchanged direct57/57 run; original child detail was not retained by the aggregate. Full H2 execution is required."
+    },
+    "source_aggregate_initial": {
+      "exit_status": 2,
+      "qualification": "Current research corpus worklist was stale. The unchanged owner now regenerates it; the complete source aggregate must run again."
+    }
+  },
+  "immutable_H1_preserved": true,
+  "H2_limits": "Test-only oracle fixes and one research-worklist derivation do not change runtime/source-body/generated-data/release inputs; fresh H2 affected checks and explicit equivalence proof are required."
+}

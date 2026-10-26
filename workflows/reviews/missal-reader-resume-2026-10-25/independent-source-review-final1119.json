@@ -1,0 +1,107 @@
+{
+  "schema": "triptych-independent-source-union-successor-review/v1",
+  "status": "accepted",
+  "scope": "missal-source-batch",
+  "decision": "ACCEPT_EXACT1119_SOURCE_SUCCESSOR_OVER_ACCEPTED1118",
+  "reviewed_on": "2026-10-25",
+  "target": [
+    "octava-nativitatis-domini",
+    "main",
+    "Postcommunion",
+    "all",
+    1
+  ],
+  "accepted_parent": {
+    "independent_receipt_path": ".scratch/resume-20261025-source-union-review/FINAL-SOURCE-UNION-ACCEPTANCE.json",
+    "independent_receipt_sha256": "ddd1fa4ab87939cd5d496274f54c8fd3d6eb0d64f82a215e301023d7cab9b77a",
+    "root_receipt_path": "workflows/reviews/missal-reader-resume-2026-10-25/source-review-integrated.json",
+    "root_receipt_sha256": "6727e795d5100bd7ea33250a294c12ad7ec77f8705e35a9362cc24336a2a0a6d",
+    "source_epoch_sha256": "86cecf9d28b755e5b4f73b194df1f320e20ee942ca165f45d0b5dee5c4c4a8b8",
+    "installation_manifest_sha256": "94ce1956174e0b27af1fdbeabfc0b919570d28e5979079bc95d20c1cf9e2577b"
+  },
+  "approved_source_epoch_sha256": "8e7c1d71925704e35c3e873ff742c9fca6ea44858aa3128ca13a4a31fc613c2d",
+  "source_epoch_paths": 1655,
+  "source_input_manifest_sha256": "9afec42a11d1495ff18258cb08f83dc9a0915a7ccce25df65a7575d7bdc9f2fc",
+  "source_input_manifest_paths": 1666,
+  "source_epoch": {
+    "path": ".scratch/resume-20261025-integration/union64-jan1-v1/source-epoch.json",
+    "sha256": "8e7c1d71925704e35c3e873ff742c9fca6ea44858aa3128ca13a4a31fc613c2d"
+  },
+  "installation_manifest": {
+    "path": ".scratch/resume-20261025-integration/union64-jan1-v1/install-manifest.json",
+    "sha256": "e6c07f677d89704d99908b54725fd48fce9e1d197e5a652134c5cd4e6bebe6b4",
+    "paths": 265
+  },
+  "source_increment_manifest": {
+    "path": ".scratch/resume-20261025-integration/union64-jan1-v1/Jan1-increment-manifest.json",
+    "sha256": "2e3bbb046914ccb070d4b6011f570fda711073c63055165256ba9e5cb6e83fd0",
+    "paths": 7
+  },
+  "component_acceptances": [
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-10-25/jan1-context-approval.json",
+      "sha256": "37eb49a0536c1b13ca400b5aefed1a45a34867b0f1617d5914b1cd34a4fd7872",
+      "scope": "Only exact one-row private POS class materialization and existing same-family source/person evidence; no automatic English admission."
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-10-25/jan1-source-review.json",
+      "sha256": "c9d46ff7716f25f35e6345fa6aa129cfefbf736a1410605094289f3252ef856e",
+      "scope": "Independent Jan1 primary source/context/own-book table same-family prefix evidence."
+    },
+    {
+      "path": ".scratch/resume-20261025-jan1-assembly-review/ASSEMBLY-REVIEW.json",
+      "sha256": "83b992d12cb6e6f5e8df9371d21aa30689aad636d42a3719da8cfb14dc724487",
+      "scope": "Exact seven source postimages over accepted1118 parent; seven actual negatives, source graph and owning English read pass."
+    }
+  ],
+  "mechanical_evidence": {
+    "path": ".scratch/resume-20261025-union64-review/mechanical-successor-review.json",
+    "sha256": "67461533ee13526f8c3030f54700dbabc356dc659bf3d16501405d21749f5243"
+  },
+  "preservation": {
+    "all1118_prior_positive_dictionaries_exact": true,
+    "all320_unselected_absence_dictionaries_exact": true,
+    "all899_prior_accepted_and283_refused_audit_rows_exact": true,
+    "all_runtime_code_Latin_proofs_and_bodies_rubric_source_generated_carriers_and_existing_methods_exact": true,
+    "non_delta_prefix_paths_preserved_by_exact_shared_immutable_inodes_or_symlink_targets": 50809,
+    "five_new_source_paths_and_only_two_existing_inventories_changed": true,
+    "all265_modes_preserved_and_verified": true,
+    "raw_and_public_idem_POS_nulls_unchanged": true,
+    "only_private_comparison_copy_receives_approved_class_label": true,
+    "literal_English_and_actual_short_Through_the_same_cue_unchanged": true,
+    "source_specific_person_proof_exact_under_canonical_JSON_value_hash767e9d": true,
+    "all_four_source_aggregate_counters_independently_derived": {
+      "new_source_bodies": 873,
+      "new_source_prayers": 823,
+      "new_terminal_owners": 900,
+      "new_effective_appointments": 1031
+    },
+    "normalized1666_manifest_equals1655_epoch_plus_same11_auxiliary_reads": true
+  },
+  "source_frontier": {
+    "Roman1962_English": {
+      "represented": 1439,
+      "with_English": 1119,
+      "explicit_gaps": 320
+    },
+    "this_successor_new_English_owners": 1,
+    "this_successor_new_Latin_bodies": 0
+  },
+  "supersession": "The exact Jan1 private-context/conclusion materialization hold in prior1118 records is resolved only by root37eb approval, independent sourcec9d46 evidence and exact seven-file assembled83b992 successor. Older refusal/hold records remain historical and unchanged; all other source holds and finite method bounds remain.",
+  "mode_manifest": {
+    "path": ".scratch/resume-20261025-integration/union64-jan1-v1/MODE-PRESERVATION.json",
+    "sha256": "71995708e6021ca3c89a9164d7edefe7b065205318f0941c2cb37831f1ddf482"
+  },
+  "limits": [
+    "Reuses prior full4.79GB source-prefix verification; hashes only the new delta, necessary inventories and control manifests, with unchanged inode identity protecting retained prefix bytes.",
+    "Ignored reproducible build caches in the private snapshot differ after validation; they are excluded from source/runtime payload identity and never admitted.",
+    "This source successor approval does not create a new general spelling/part-of-speech inference, case closure, ending formula, English expansion, response, name substitution or donor reuse.",
+    "Final accepted guard fixture/compiler disposition, root atomic installation, owner generation/currentness, full annual/native/TUI/publication/deployment/live and maintainer product gates remain separate.",
+    "No canonical writes, Git mutations, new primary-image reading, rights grant or source-body rewrite by this review lane."
+  ],
+  "reviewer_setup_qualifications": [
+    "One syntax error corrected before successful verification.",
+    "An initial overly broad snapshot-file assertion included ignored build caches; corrected to the source/runtime payload scope after inspecting every difference.",
+    "Mode-manifest field names and canonical-JSON person-proof hash convention were corrected before the successful complete run; no source defect was found."
+  ]
+}

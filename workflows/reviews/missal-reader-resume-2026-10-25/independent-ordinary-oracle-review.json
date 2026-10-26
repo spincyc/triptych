@@ -1,0 +1,373 @@
+{
+  "schema": "triptych-ordinary-test-oracle-independent-review/v1",
+  "reviewed_at_utc": "2026-10-25T23:14:30.495384+00:00",
+  "status": "accepted-test-only-candidate",
+  "blocking_findings": [],
+  "canonical_writes": 0,
+  "H1_writes": 0,
+  "git_writes": 0,
+  "candidate": {
+    "seal": ".scratch/resume-20261025-ordinary-oracle-repair/SEALED-PROPOSAL.json",
+    "seal_sha256": "81f87eaaefe4d4b7e60dce69c5eada31c53f01c5233b95a927b2330a17028192",
+    "path": "tools/tests/test_mass_ordinary.py",
+    "preimage_sha256": "ecf0608eb76dbdfe5534fed58d2bdc0ae9ecb6b978efe9f8ba2654890cd3ae86",
+    "postimage_sha256": "0dd4cf67f3b6fa3162376ece9412558e871ad4039a9f582516f66f4a8b73ae7b",
+    "postimage_bytes": 216802,
+    "canonical_mode": "0644",
+    "evidence_pins_exact": 7
+  },
+  "H1_epoch": {
+    "manifest": ".scratch/resume-20261025-root/snapshot-inputs.json",
+    "sha256": "5b4c48bb37ca95317ca7ef3ed9b28e29c95ce5c64f0ca60aaa164473cb36abf9",
+    "all_9_reviewed_runtime_and_data_inputs_rehashed_after_execution": true,
+    "input_pins": {
+      "src/web/browser/liturgy/ordinary-seating.js": "093bbd565d62814d8e2634e4073cc688927f4ad4470d4fee3e08bce87fef5e0f",
+      "src/web/browser/liturgy/day.js": "df84f15e8b3d291762c3a14de4f359d09edc9c67a90df86f51e283c676914c38",
+      "src/web/browser/shared/browser-core.js": "1bd170f131c6ff4a08bbb9daa0e1cbfafaac9af602c46b0ea7da5b980a63ac68",
+      "src/web/data/structure/calendar/postconciliar/2026.json": "fec7b2a537b7eb2204b35b306d73d02cb1030c2789177880a50f264de1e675f0",
+      "src/web/data/structure/calendar/roman-1962/2026.json": "20fa28fa12c8234544660de8bbb0c47cae74a9ca54d9622a09b67361d2068466",
+      "src/web/data/structure/ordinary/postconciliar.json": "9b94a5ea6b83fa56c558e3f2293a0d3b8ae93f83e7e79324e6d8ae7984096807",
+      "src/web/data/structure/ordinary/roman-1962.json": "6a131ccc5603941bc76b20159d03197315f2f2575b9bc4313e91c642faf7cf43",
+      "src/web/data/structure/propers/postconciliar.json": "a9f325b083d1df4d08ac5ede34d7ed1cc4c0cdb723a41aa5a49c7785df80e9d1",
+      "src/web/data/structure/propers/roman-1962.json": "bf885d25a6e6e186e493f28fb730a16f932941df39323871930a5d088263559c"
+    }
+  },
+  "diagnosis": {
+    "original_tests": 5,
+    "base6a_failures": 38,
+    "H1_failures": 38,
+    "errors": 0,
+    "failure_entries_identical": true,
+    "cue_copy_owner_chunk_base_equals_H1": true,
+    "cue_copy_owner_chunk_sha256": "5c2137800656b9328227c5748975c6865f584970a8e5680d720205c6f663927f",
+    "complete_text_and_event_streams": {
+      "pentecost_10_text": {
+        "count": 178,
+        "sha256": "1edc606286d8f909b86af9fa6f2de2c54ade781f731dcf0fed1044d657b19384",
+        "base_equals_H1": true
+      },
+      "ot_18_text": {
+        "count": 67,
+        "sha256": "f59b35a245b8078c33787bd79148c88d260e27a84a8decc9487842f016bf0b15",
+        "base_equals_H1": true
+      },
+      "pentecost_10_sequence": {
+        "count": 178,
+        "sha256": "6946cf74b2cbf867cb89304e47784ba7fff0bbed3611c81d799e4567b9f2348f",
+        "base_equals_H1": true
+      },
+      "ot_18_sequence": {
+        "count": 67,
+        "sha256": "ea501e6d426d345d30e217f61395d54801d69f339f2fa1c24927cf6ef1325abd",
+        "base_equals_H1": true
+      }
+    },
+    "cause": "Stale test oracles omitted the existing checked printed-marker cue fallback and expected prior DOM/actor-only presentation. No runtime or source regression was found in these five methods."
+  },
+  "accepted_scope": [
+    "Exactly one existing test file. Only the five declared existing OrdinaryPage methods change, plus their shared lightweight DOM HARNESS. All other method ASTs, both Damascene guards and all nonclass module contracts except HARNESS remain equal.",
+    "Retain full text-stream count/hash checks and unchanged complete event-order pins; the new text hashes reproduce both exact 6a and H1 arrays, with the revised fake DOM producing identical arrays.",
+    "Assert one visible sign, one accessible English name, decorative aria-hidden glyph, exact source speaker and target dialogue role, own body language, declared printed-marker/source-row reconstruction and exact received words.",
+    "Invoke the real existing shared copy listener for source V./R. serialization and Ordinary native-selection deferral. A printed sign retains its typography without manufacturing a target role or actor.",
+    "No renderer, source body, ending, language selection, CSS, generated data or model changes."
+  ],
+  "resolved_review_findings": [
+    {
+      "finding": "An early draft replaced the exact raw rendered-word assertion with source-only equality.",
+      "resolution": "Final candidate retains exact raw_vr.received words/glyph/label projection, source equality, role descriptors and actual copy-owner output; both independent report and actual in-memory opaque-word corruptions reject."
+    },
+    {
+      "finding": "Structured cue English language was not explicitly projected.",
+      "resolution": "Final candidate adds cue_langs and asserts English on every cued row across all 72 real source dialogues, plus synthetic rows; wrong-language counterfactuals reject."
+    },
+    {
+      "finding": "Old text-stream docstring implied all role signs were excluded from its digest.",
+      "resolution": "Final candidate distinguishes presentation-only structured cues, opaque source-sign DOM projection, source reconstruction and separate copy semantics."
+    }
+  ],
+  "verification": {
+    "fresh_final_candidate_base6a_OrdinaryPage": {
+      "tests": 16,
+      "failures": 0,
+      "errors": 0
+    },
+    "fresh_final_candidate_H1_OrdinaryPage_and_unchanged_Damascene_guards": {
+      "tests": 18,
+      "failures": 0,
+      "errors": 0
+    },
+    "replayed_actual_in_memory_owner_mutations": {
+      "controls": 11,
+      "all_rejected_with_zero_errors": true,
+      "results": [
+        {
+          "name": "printed-sign-disappears",
+          "tests": 5,
+          "failures": 36,
+          "errors": 0,
+          "rejected": true
+        },
+        {
+          "name": "duplicate-visible-cue",
+          "tests": 5,
+          "failures": 73,
+          "errors": 0,
+          "rejected": true
+        },
+        {
+          "name": "decorative-cue-announced",
+          "tests": 5,
+          "failures": 73,
+          "errors": 0,
+          "rejected": true
+        },
+        {
+          "name": "role-label-lost",
+          "tests": 5,
+          "failures": 69,
+          "errors": 0,
+          "rejected": true
+        },
+        {
+          "name": "cue-label-wrong-language",
+          "tests": 5,
+          "failures": 73,
+          "errors": 0,
+          "rejected": true
+        },
+        {
+          "name": "hidden-label-copied",
+          "tests": 5,
+          "failures": 1,
+          "errors": 0,
+          "rejected": true
+        },
+        {
+          "name": "literal-role-glyph-lost",
+          "tests": 5,
+          "failures": 3,
+          "errors": 0,
+          "rejected": true
+        },
+        {
+          "name": "spoken-word-truncated",
+          "tests": 5,
+          "failures": 3,
+          "errors": 0,
+          "rejected": true
+        },
+        {
+          "name": "printed-sign-invents-target-role",
+          "tests": 5,
+          "failures": 35,
+          "errors": 0,
+          "rejected": true
+        },
+        {
+          "name": "synthetic-opaque-words-altered",
+          "tests": 5,
+          "failures": 1,
+          "errors": 0,
+          "rejected": true
+        },
+        {
+          "name": "printed-sign-invents-actor",
+          "tests": 5,
+          "failures": 5,
+          "errors": 0,
+          "rejected": true
+        }
+      ]
+    },
+    "independent_report_projection_counterfactuals": {
+      "controls": 22,
+      "all_rejected_with_zero_errors": true,
+      "qualification": "Independent counterfactuals corrupt actual owner-produced report projections, then run the unchanged sealed candidate assertion methods; these are test-oracle strength checks, not claims of production-data mutation or native AX.",
+      "results": [
+        {
+          "name": "wrong-visible-sign",
+          "method": "test_each_verified_turn_sets_exactly_one_visible_cue",
+          "failures": 1,
+          "errors": 0
+        },
+        {
+          "name": "duplicate-visible-sign",
+          "method": "test_each_verified_turn_sets_exactly_one_visible_cue",
+          "failures": 1,
+          "errors": 0
+        },
+        {
+          "name": "decorative-sign-announced",
+          "method": "test_each_verified_turn_sets_exactly_one_visible_cue",
+          "failures": 1,
+          "errors": 0
+        },
+        {
+          "name": "missing-accessible-name",
+          "method": "test_each_verified_turn_sets_exactly_one_visible_cue",
+          "failures": 1,
+          "errors": 0
+        },
+        {
+          "name": "duplicate-accessible-name",
+          "method": "test_each_verified_turn_sets_exactly_one_visible_cue",
+          "failures": 1,
+          "errors": 0
+        },
+        {
+          "name": "wrong-cue-language",
+          "method": "test_each_verified_turn_sets_exactly_one_visible_cue",
+          "failures": 1,
+          "errors": 0
+        },
+        {
+          "name": "invented-actor",
+          "method": "test_each_verified_turn_sets_exactly_one_visible_cue",
+          "failures": 1,
+          "errors": 0
+        },
+        {
+          "name": "invented-target-role",
+          "method": "test_each_verified_turn_sets_exactly_one_visible_cue",
+          "failures": 1,
+          "errors": 0
+        },
+        {
+          "name": "spoken-word-loss",
+          "method": "test_each_verified_turn_sets_exactly_one_visible_cue",
+          "failures": 1,
+          "errors": 0
+        },
+        {
+          "name": "wrong-body-language",
+          "method": "test_each_verified_turn_sets_exactly_one_visible_cue",
+          "failures": 1,
+          "errors": 0
+        },
+        {
+          "name": "lost-printed-marker",
+          "method": "test_each_verified_turn_sets_exactly_one_visible_cue",
+          "failures": 1,
+          "errors": 0
+        },
+        {
+          "name": "hidden-name-leaks-into-received",
+          "method": "test_each_verified_turn_sets_exactly_one_visible_cue",
+          "failures": 1,
+          "errors": 0
+        },
+        {
+          "name": "crossed-role-inherits-actor",
+          "method": "test_explicit_turns_keep_role_speaker_accessibility_and_language_apart",
+          "failures": 1,
+          "errors": 0
+        },
+        {
+          "name": "action-acquires-cue",
+          "method": "test_explicit_turns_keep_role_speaker_accessibility_and_language_apart",
+          "failures": 1,
+          "errors": 0
+        },
+        {
+          "name": "raw-rendered-word-loss",
+          "method": "test_the_speaker_is_named_and_a_name_is_not_a_mark",
+          "failures": 1,
+          "errors": 0
+        },
+        {
+          "name": "copy-leaks-hidden-label",
+          "method": "test_the_speaker_is_named_and_a_name_is_not_a_mark",
+          "failures": 1,
+          "errors": 0
+        },
+        {
+          "name": "copy-loses-source-word",
+          "method": "test_the_speaker_is_named_and_a_name_is_not_a_mark",
+          "failures": 1,
+          "errors": 0
+        },
+        {
+          "name": "ordinary-copy-intercepted",
+          "method": "test_explicit_turns_keep_role_speaker_accessibility_and_language_apart",
+          "failures": 1,
+          "errors": 0
+        },
+        {
+          "name": "opaque-opening-attribution-loss",
+          "method": "test_opaque_all_dialogue_keeps_its_opening_attribution",
+          "failures": 1,
+          "errors": 0
+        },
+        {
+          "name": "text-stream-content-drift",
+          "method": "test_ordered_mass_text_contract_for_both_missals",
+          "failures": 1,
+          "errors": 0
+        },
+        {
+          "name": "text-stream-order-drift",
+          "method": "test_ordered_mass_text_contract_for_both_missals",
+          "failures": 1,
+          "errors": 0
+        },
+        {
+          "name": "semantic-event-order-drift",
+          "method": "test_reading_first_hierarchy_and_event_sequence",
+          "failures": 1,
+          "errors": 0
+        }
+      ]
+    },
+    "independent_original_replay": "Five original methods independently reproduced the same 38 failure entries at exact retained 6a and H1, with zero errors.",
+    "source_preservation": "All nine retained baseline runtime/data files were independently compared to Git 6a; all nine H1 inputs were rehashed against the frozen manifest after execution. Complete 178/67 text and event streams and the existing cue/copy owner chunk agree across base/H1.",
+    "producer_evidence_pins_rehashed": 7
+  },
+  "installation_requirement": "Coordinator owns COW installation of the exact accepted postimage into canonical/H2 and normal owning failed-method reruns. Preserve H1 and this prior proof epoch.",
+  "limitations": [
+    "This is acceptance of the bounded test-oracle repair, not a new runtime/source admission.",
+    "Lightweight DOM/copy-listener probes do not claim real native accessibility-tree, clipboard, terminal or human interaction. Existing separate native evidence is not re-run or expanded by this review.",
+    "The independent 22 report counterfactuals test oracle strength; the separate 11 replayed controls mutate owner source only in memory."
+  ],
+  "artifacts": {
+    "independent.py": {
+      "path": ".scratch/resume-20261025-ordinary-oracle-review/independent.py",
+      "sha256": "19a8d44c615401aca7e99a2f06f42cb011e755b977655e3806e61d164603b1fa"
+    },
+    "independent-review-results.json": {
+      "path": ".scratch/resume-20261025-ordinary-oracle-review/independent-review-results.json",
+      "sha256": "ca9b730d6c92fdef72bd37f9513cd10dc5bdf0aab9e900a9f6dbe58db41752c8"
+    },
+    "independent-summary.json": {
+      "path": ".scratch/resume-20261025-ordinary-oracle-review/independent-summary.json",
+      "sha256": "c8131363dace2e810be2e59f37e79044e978ee52d60c7b2e75a77810379e8e27"
+    },
+    "original-base6a.log": {
+      "path": ".scratch/resume-20261025-ordinary-oracle-review/original-base6a.log",
+      "sha256": "4fe5cf449c97dabac698c3e5035248d29dabd4add7404815a5ca744a116510a1"
+    },
+    "original-H1.log": {
+      "path": ".scratch/resume-20261025-ordinary-oracle-review/original-H1.log",
+      "sha256": "369d355b69ac7cc44e6ae5f6dc6c679ac9a6cc66f8c32ca37435c12cde6eb80e"
+    },
+    "candidate-five.log": {
+      "path": ".scratch/resume-20261025-ordinary-oracle-review/candidate-five.log",
+      "sha256": "3cfce51fa80f855efa418b49c60f68b3964822ad1b976c78cde02a226b42756f"
+    },
+    "final-H1/results.json": {
+      "path": ".scratch/resume-20261025-ordinary-oracle-review/final-H1/results.json",
+      "sha256": "6f18c707031f6af9eeea4864c8aa09ba4d0b0ad16443443fd127323717434405"
+    },
+    "final-H1/clean.log": {
+      "path": ".scratch/resume-20261025-ordinary-oracle-review/final-H1/clean.log",
+      "sha256": "f0b343319dadeec9a5fa37c84416f3260aba9023e1705e0472ea57abf4270f6f"
+    },
+    "final-base6a/results.json": {
+      "path": ".scratch/resume-20261025-ordinary-oracle-review/final-base6a/results.json",
+      "sha256": "0777b40c22cf78909ea35f4a3a769790d4c8a74e8caad50a96354930902e4ee5"
+    },
+    "final-base6a/clean.log": {
+      "path": ".scratch/resume-20261025-ordinary-oracle-review/final-base6a/clean.log",
+      "sha256": "3ffc00f0ddb1a79a0a2e08b425bff8540b132b995929b0847cc8baa0856612af"
+    }
+  }
+}

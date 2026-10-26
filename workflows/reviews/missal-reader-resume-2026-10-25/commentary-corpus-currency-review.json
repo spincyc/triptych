@@ -1,0 +1,208 @@
+{
+  "schema": "triptych-bounded-derived-currency-review/v1",
+  "reviewer": "independent cold review",
+  "decision": "RECOMMEND_EXACT_OWNER_DERIVED_CORPUS_REFRESH_AFTER_PARENT_HASH_POSTCHECK_AND_INDEPENDENT_REVIEW",
+  "scope": "Only src/sources/commentary/mass-commentary-corpus.yaml; deterministic research-worklist derivation from already installed calendar citations and unchanged discovery index.",
+  "canonical_writes_by_lane": 0,
+  "owner": {
+    "path": "tools/commentary-work-index",
+    "sha256": "a4f43b8e40719b3e04658d4538ccaea8de4ab4ee4dfce0373ece71b289902a18",
+    "bytes": 102328
+  },
+  "preimage": {
+    "path": "src/sources/commentary/mass-commentary-corpus.yaml",
+    "sha256": "780402acfe420b904bd346564c8a15bcb94cd9ba380a31fc49add1d0d1b2d06f",
+    "bytes": 6680549
+  },
+  "candidate": {
+    "path": ".scratch/resume-20261025-commentary-currency/mass-commentary-corpus.yaml",
+    "sha256": "5e5bc2f351381bb58b00a3fa79ef8ebe4a06e0b4ce26834c9459876e58ecf36c",
+    "bytes": 6683085
+  },
+  "canonical_owner_and_preimage_still_match_initial_pins": true,
+  "command": ".scratch/public-preview-venv/bin/python -B tools/tpt commentary-work-index build-corpus --output .scratch/resume-20261025-commentary-currency/mass-commentary-corpus.yaml --json",
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "TRIPTYCH_SOURCE_LIBRARY_CACHE": "0",
+    "TRIPTYCH_YAML_CACHE": "0",
+    "TRIPTYCH_CORPUS_CACHE": "0",
+    "TRIPTYCH_CONTAINMENT_CACHE": "0",
+    "TRIPTYCH_LIBRARY_CACHE": "0",
+    "TRIPTYCH_LIBRARY_CACHE_DIR": ".scratch/resume-20261025-commentary-currency/library-cache",
+    "TMPDIR": ".scratch/resume-20261025-commentary-currency/tmp"
+  },
+  "delta": {
+    "classification": "Research worklist content refresh, not a snapshot-hash-only refresh.",
+    "changed_top_level_fields": [
+      "unresolved_passage_count",
+      "chapter_matched_passage_count",
+      "chapter_matched_passages",
+      "passages",
+      "masses"
+    ],
+    "distinct_references": [
+      3594,
+      3598
+    ],
+    "unresolved_references": [
+      351,
+      353
+    ],
+    "chapter_matched_references": [
+      3237,
+      3239
+    ],
+    "mass_rows": [
+      1096,
+      1096
+    ],
+    "covered_mass_rows": [
+      1095,
+      1095
+    ],
+    "unchanged_mass_dictionaries": 1093,
+    "changed_mass_keys": [
+      "roman-1962::s-francisci-paula-confessoris",
+      "roman-1962::s-ioannis-a-deo-confessoris",
+      "roman-1962::s-ioannis-damasceni-confessoris-ecclesiae-doctoris"
+    ],
+    "new_reference_strings": [
+      "1 Samuel 25:26; 25:28",
+      "Job 14:7",
+      "Psalms 143:1",
+      "Psalms 17:38-17:39; 17:50"
+    ],
+    "existing_reference_rows_with_new_mass_memberships": [
+      "Hosea 14:6",
+      "Psalms 111:1",
+      "Psalms 111:1-111:3"
+    ],
+    "added_mass_reference_memberships": 8,
+    "removed_mass_reference_memberships": 0,
+    "harvest_chapter_total": [
+      777,
+      779
+    ],
+    "harvest_pending": [
+      232,
+      234
+    ],
+    "new_pending_chapters": [
+      {
+        "passage": "1 Samuel 25",
+        "runs": 0
+      },
+      {
+        "passage": "Job 14",
+        "runs": 0
+      }
+    ],
+    "all_232_old_pending_rows_and_order_exact": true,
+    "global_union_all_224_work_dictionaries_exact": true,
+    "all_common_mass_work_identity_confidence_metadata_exact": true,
+    "discovery_sha256": "539468bbb1457e84231ac9575a13fef59ddde2061b7f89614c7531898ae44372",
+    "unconvertible_references_refusals_and_misrouted_citations_exact": true
+  },
+  "checks": [
+    {
+      "command": "build-corpus --output <scratch candidate> --check --json",
+      "exit_code": 0,
+      "fresh_derivation_matches_candidate": true
+    },
+    {
+      "command": "harvest promote --check --json",
+      "exit_code": 0,
+      "status": "current",
+      "passages": 562,
+      "works": 9077,
+      "distinct_works": 577,
+      "runs": 16
+    },
+    {
+      "command": "harvest plan --corpus <canonical/candidate> --by-chapter --json",
+      "exit_code_each": 0,
+      "observed_delta": "Two new runs=0 chapters; prior pending rows exact."
+    },
+    {
+      "command": "python -B -m unittest tools.tests.test_harvest_work_identity tools.tests.test_commentary_mass_inheritance",
+      "exit_code": 0,
+      "tests": 23
+    }
+  ],
+  "consumer_review": {
+    "direct_literal_raw_corpus_callers": "tools/commentary-work-index default generation/check and tools/harvest examples; harvest plan/ask accept the corpus explicitly. Makefile check-commentary-corpus owns currency.",
+    "catena": "scripts/_catena.py reads fragment-loci.yaml, work-aliases.yaml, passage-commentary-index.yaml, translation-absences.yaml and source-library records. It does not read mass-commentary-corpus.yaml. Web and terminal readers use its generated data.",
+    "site_release": "tools/public-alpha serves selected src/web/data JSON and eligible Bible/source-library artifacts; raw commentary worklist is not copied or interpreted as an admitted fragment.",
+    "cache_effect": "source-library and source-reader tree-fingerprint caches may invalidate when the raw YAML changes; their record-derived contents do not gain a record from it.",
+    "annual_runtime": "No raw-corpus read or runtime/code/generated-data change in this isolated patch; no new annual run warranted solely by this refresh. Prior annual evidence keeps its original unchanged input scope.",
+    "source_guard_epoch": "Raw corpus is absent from the accepted 1682 normalized source guard input manifest; source-body/proof/English/code acceptance remains unchanged."
+  },
+  "limits": [
+    "No harvest ask/model call, ledger mutation, new commentary acquisition, source inspection, fragment admission, identity reconciliation, or rights/composition-date assertion.",
+    "This review proposes one generated YAML replacement; it does not approve canonical installation before the parent completes active H1/hash postchecks.",
+    "No fresh annual/site/live/deployment test result is claimed."
+  ],
+  "required_parent_followup": [
+    "Independently review exact candidate/preimage/dependency and diff pins.",
+    "Complete initial source aggregate canonical hash postcheck before replacing this one file; preserve historical H1 evidence.",
+    "After exact install, run make check-commentary-corpus or equivalent canonical-output build-corpus --check plus existing targeted gates, and complete the interrupted normal make check-sources aggregate.",
+    "Record worklist counts as 779 total/234 pending rather than old 777/232; do not call the research worklist unchanged."
+  ],
+  "evidence": [
+    {
+      "path": ".scratch/resume-20261025-commentary-currency/dependencies.json",
+      "sha256": "a653ec857b4668c912f2a8cf42c7da53b21fff12b7f5db0dec9f04bfbd9b08aa",
+      "bytes": 3352
+    },
+    {
+      "path": ".scratch/resume-20261025-commentary-currency/stable-key-diff.json",
+      "sha256": "5bf23527fc85951134637e11d1b35b24a79c9a308834c1c3915209a231978eb9",
+      "bytes": 20785
+    },
+    {
+      "path": ".scratch/resume-20261025-commentary-currency/candidate.diff",
+      "sha256": "5bbadb4959799631d29bb3b15d39b643bacd412856ad69127144c3f60ad1410c",
+      "bytes": 26364
+    },
+    {
+      "path": ".scratch/resume-20261025-commentary-currency/exact-invariants.json",
+      "sha256": "a9e40d11dfeb2cb4caa57b04dd2d417d4c5385b1bac4216bb0da2f1c7f614a29",
+      "bytes": 1295
+    },
+    {
+      "path": ".scratch/resume-20261025-commentary-currency/plan-and-citation-delta.json",
+      "sha256": "ae52dcfa7c20270e26e3dfa2cb40286be6f5283111c1bab85678e62bc201332c",
+      "bytes": 4814
+    },
+    {
+      "path": ".scratch/resume-20261025-commentary-currency/plan-before.json",
+      "sha256": "3759e44c39fa07d0f4c938a1e99b910672f3eaf98aafb911dd9e7eff0e856a2c",
+      "bytes": 8152
+    },
+    {
+      "path": ".scratch/resume-20261025-commentary-currency/plan-after.json",
+      "sha256": "b8b04bea37a72d45973a69ff95b04674718a1798bb488bf7bca1a1f3517890b1",
+      "bytes": 8217
+    },
+    {
+      "path": ".scratch/resume-20261025-commentary-currency/build-report.json",
+      "sha256": "86295b7d469910c85420f5893f8c84af5488af39c1da810b09cba98164229adb",
+      "bytes": 6090396
+    },
+    {
+      "path": ".scratch/resume-20261025-commentary-currency/check-report.json",
+      "sha256": "86295b7d469910c85420f5893f8c84af5488af39c1da810b09cba98164229adb",
+      "bytes": 6090396
+    },
+    {
+      "path": ".scratch/resume-20261025-commentary-currency/promote-check.json",
+      "sha256": "8b3c92a27b9ff66445059b5a19a182840dd5cb66648f9cd39a2eb9b33a3f1fc5",
+      "bytes": 260
+    },
+    {
+      "path": ".scratch/resume-20261025-commentary-currency/regressions.log",
+      "sha256": "fc015b5a60a733e35e858723dd63afdc77608b22f9cdb1601ddef9d485dabd68",
+      "bytes": 281
+    }
+  ]
+}

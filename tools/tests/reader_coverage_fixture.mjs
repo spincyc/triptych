@@ -114,18 +114,52 @@ export function verifyRealWitnesses(structure, root) {
   const caswall = 'edition.edward-caswall.lyra-catholica.london-1849';
   const alias = 'artifact.edward-caswall.lyra-catholica.london-1849.missal-sequences-en';
   const cummiskey = 'edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861';
+  const lasance = 'edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945';
   const sept15 = structure.masses.find(row => row.key === 'septem-dolorum-beatae-mariae-virginis');
   const sequence = sept15.propers.find(row => row.name === 'Sequence');
   assert.equal(sequence.translations.filter(row => row.lang === 'en').length, 2);
-  assert.deepEqual(T.coverageWitnesses(sept15.coverage, 'en').map(row => row.id), [caswall]);
-  for (const witness of [null, caswall, alias]) {
+  const dolorsWitnesses = T.coverageWitnesses(sept15.coverage, 'en');
+  assert.deepEqual(dolorsWitnesses.map(row => [row.id, row.available]),
+    [[caswall, 1], [lasance, 3]]);
+  const orations = ['Collect', 'Secret', 'Postcommunion'];
+  for (const witness of [null, caswall, alias, lasance]) {
     const request = fixtureRequest(structure, sept15, {
       languages: { orations: 'en', ...(witness ? { translationWitness: witness } : {}) }
     });
     const result = A.adaptPropers({ request, structure });
     assert.ok(!result.unresolvedChoices.some(row => row.id.startsWith('translation-witness:')));
-    assert.equal(T.orationFor(sequence, 'en', witness).missing, false);
+    const selectedSequence = result.events.find(row => row.editionSlotLabel === 'Sequence').selected;
+    const sequenceBody = T.orationFor(sequence, 'en', witness);
+    if (witness === lasance) {
+      assert.equal(selectedSequence.reason, 'absent-in-witness');
+      assert.equal(selectedSequence.text, null);
+      assert.ok(sequenceBody.missing && !sequenceBody.fallback);
+      assert.equal(sequenceBody.text, null);
+    } else {
+      assert.ok([caswall, alias].includes(selectedSequence.sourceId));
+      assert.equal(selectedSequence.text, sequence.translations[0].text);
+      assert.equal(sequenceBody.missing, false);
+    }
+    for (const name of orations) {
+      const proper = sept15.propers.find(row => row.name === name);
+      const selected = result.events.find(row => row.editionSlotLabel === name).selected;
+      const body = T.orationFor(proper, 'en', witness);
+      if (witness === caswall || witness === alias) {
+        assert.equal(selected.reason, 'absent-in-witness');
+        assert.equal(selected.text, null);
+        assert.ok(body.missing && !body.fallback);
+        assert.equal(body.text, null);
+      } else {
+        const source = proper.translations.find(row => row.lang === 'en' && row.source_id === lasance);
+        assert.ok(source);
+        assert.equal(selected.sourceId, lasance);
+        assert.equal(selected.text, source.text);
+        assert.equal(body.text, source.text);
+      }
+    }
   }
+  assert.throws(() => A.adaptPropers({ structure, request: fixtureRequest(structure, sept15,
+    { languages: { orations: 'en', translationWitness: 'not-held' } }) }), /selected no appointed text/);
   const mass = structure.masses.find(row => row.key === 'commemoratione-omnium-fidelium-defunctorum');
   const base = fixtureRequest(structure, mass, { form: 'first' });
   const pending = A.adaptPropers({ request: base, structure });

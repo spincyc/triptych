@@ -17,6 +17,7 @@ SOURCE_ROOT = Path(os.environ.get("TRIPTYCH_COMMON_SOURCE_ROOT", ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(MODULE_ROOT / "scripts"))
 import _calendars as C
+from tools.tests._source_recovery_assertions import assert_current_latin_body_or_gap
 
 SOURCE = C.read_yaml(SOURCE_ROOT / "src/sources/calendars/roman-1962/propers.yaml")
 INDEX = C.mass_index(SOURCE)
@@ -63,19 +64,33 @@ class CommonAppointments(unittest.TestCase):
                 self.assertEqual(paschal["ordinary_disposition"]["option"], "paschal")
                 self.assertEqual(regular["ordinary_disposition"]["anchor"], paschal["ordinary_disposition"]["anchor"])
 
-    def test_uncited_and_partial_chants_keep_typed_whole_body_gaps(self):
+    def test_uncited_and_partial_chants_keep_reviewed_whole_body_states(self):
         for key in ("commune-unius-martyris-2", "commune-plurimorum-martyrum-3"):
             row = proper(key, "Alleluia")
             self.assertEqual(row["source"], "composed")
             self.assertNotIn("verses", row)
-            self.assertNotIn("text", row)
-            self.assertEqual(row["text_status"]["state"], "unavailable")
+            assert_current_latin_body_or_gap(self, key, "Alleluia", row)
         for key in ("commune-confessoris-pontificis-1", "commune-non-virginum-1", "commune-non-virginum-2"):
             row = proper(key, "Alleluia (Tempore paschali)")
             self.assertEqual(row["source"], "mixed")
-            self.assertNotIn("text", row)
             self.assertTrue(row["verses"])
-            self.assertEqual(row["text_status"]["scope"], "proper-body")
+            assert_current_latin_body_or_gap(self, key, "Alleluia (Tempore paschali)", row)
+
+    def test_reviewed_body_and_typed_gap_reject_state_or_wording_corruption(self):
+        key = "commune-unius-martyris-2"
+        body = proper(key, "Alleluia")
+        for corrupt in ({**body, "text": body["text"] + "Amen.\n"},
+                        {k: v for k, v in body.items() if k != "text"}):
+            with self.assertRaises(AssertionError):
+                assert_current_latin_body_or_gap(self, key, "Alleluia", corrupt)
+        key = "commune-confessoris-pontificis-1"
+        gap = proper(key, "Alleluia (Tempore paschali)")
+        self.assertEqual("unavailable", assert_current_latin_body_or_gap(
+            self, key, "Alleluia (Tempore paschali)", gap))
+        for corrupt in ({**gap, "text": "Invented source body."},
+                        {**gap, "text_status": {**gap["text_status"], "reasons": []}}):
+            with self.assertRaises(AssertionError):
+                assert_current_latin_body_or_gap(self, key, "Alleluia (Tempore paschali)", corrupt)
 
     def test_virgin_two_borrows_exact_whole_chants_with_independent_appointment(self):
         key = "commune-virginum-2"

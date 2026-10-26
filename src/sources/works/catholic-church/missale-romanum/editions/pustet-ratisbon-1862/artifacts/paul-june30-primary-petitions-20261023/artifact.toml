@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.paul-june30-primary-petitions-20261023"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+sha256 = "98e336fafd1b8ae660697a187c88bb2429ee31b2878a4a63b915b95e9a373f13"
+byte_size = 501
+path = "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/paul-june30-primary-petitions-20261023/latin-only.txt"
+encoding = "utf-8"
+retrieved = "2026-10-23"
+indexable = true
+rights_basis = "The underlying Pustet Ratisbon1862 Latin printing is public domain in the United States by publication date. Faithful mechanical images add no authorship; this bounded transcription adds no prayer wording and is excluded from the project license."
+derived_from = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+provenance = "Complete June30 own primary Collect, Secret and Postcommunion independently read on originalPustet PDF562-563, printed476-477, full page images atscale-to3000 on2026-10-23. Entire held parent was rehashed as363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474. OCR supplied locations only."
+transformation = "Join wraps and line-end division hyphens, remove stress accents, expand ae/oe ligatures and decorative initial typography. Preserve Pustet natalitia, its own pointing and actual Per Dominum. conclusions. Paragraph order Collect,Secret,Postcommunion. No conclusion is expanded or removed from this historical transcription."
+notes = "Primary June30 own prayers only, not February22 Paul, January25, precedingJune29 or the following Pro S.Petro commemoration. Target no-ending extent is carried only in the separate projection."
