@@ -2013,6 +2013,79 @@ def _owned_history_inventory(library: Library, entry: Path, relative: Path) -> b
     return True
 
 
+def _owned_papal_inventory(library: Library, entry: Path, relative: Path) -> bool:
+    """Recognize collection metadata while keeping source payloads manifested."""
+    if len(relative.parts) != 2 or relative.parts[0] != "papal-documents":
+        return False
+    if entry.suffix == ".md":
+        return True
+    envelopes = {
+        "catalog.json": ("triptych-papal-documents/v1", {"documents": list, "coverage": list, "scope": dict}),
+        "archives.json": ("triptych-papal-archives/v1", {"volumes": list, "index_receipts": list, "coverage": dict}),
+        "source-links.json": ("triptych-papal-source-links/v1", {"documents": list}),
+        "publication-approvals.json": ("triptych-papal-publication-approvals/v1", {"documents": dict}),
+        "overrides.json": ("triptych-papal-overrides/v1", {"aliases": list, "records": dict}),
+        "typeset-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
+        "vatican-corrections-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str, "supersessions": list}),
+        "historical-english-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
+        "historical-english-supplement-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
+        "english-encoding-raster-comparison.json": ("triptych-english-page-raster-comparison/v1", {"documents": list, "source_receipt_sha256": str, "total_documents": int, "total_pages": int}),
+        "vatican-visual-review.json": ("triptych-papal-visual-review/v1", {"documents": list, "frozen_receipt_sha256": str}),
+        "bullarium-visual-review.json": ("triptych-papal-visual-review/v1", {"documents": list, "frozen_receipt_sha256": str}),
+        "english-visual-review.json": ("triptych-papal-visual-review/v1", {"documents": list, "frozen_receipt_sha256": str}),
+        "acta-visual-review.json": ("triptych-papal-visual-review/v1", {"documents": list, "frozen_receipt_sha256": str}),
+        "quanta-syllabus-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
+        "bullarium-catalog.json": ("triptych-bullarium-catalog/v1", {"volumes": list, "units": list, "coverage": dict}),
+        "bullarium-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
+        "bullarium-fragment-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
+        "bullarium-rescue-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
+        "bullarium-rescue-fragment-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
+        "bullarium-corrections-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str, "supersessions": list}),
+        "acta-catalog.json": ("triptych-papal-acta-catalog/v1", {"volumes": list, "documents": list}),
+        "acta-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
+        "bullarium-continuatio-config.json": ("triptych-papal-series-config/v1", {"series_id": str, "title": str, "revision": str, "volumes": list}),
+        "bullarium-continuatio-catalog.json": ("triptych-papal-series-catalog/v1", {"series_id": str, "revision": str, "volumes": list, "documents": list, "coverage": dict}),
+        "bullarium-continuatio-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
+        "bullarium-continuatio-fragment-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
+        "benedict-xiv-bullarium-config.json": ("triptych-papal-series-config/v1", {"series_id": str, "title": str, "revision": str, "volumes": list}),
+        "benedict-xiv-bullarium-catalog.json": ("triptych-papal-series-catalog/v1", {"series_id": str, "revision": str, "volumes": list, "documents": list, "coverage": dict}),
+        "benedict-xiv-bullarium-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
+        "benedict-xiv-bullarium-fragment-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
+        "gregory-xvi-acta-config.json": ("triptych-papal-series-config/v1", {"series_id": str, "title": str, "revision": str, "volumes": list}),
+        "gregory-xvi-acta-catalog.json": ("triptych-papal-series-catalog/v1", {"series_id": str, "revision": str, "volumes": list, "documents": list, "coverage": dict}),
+        "gregory-xvi-acta-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
+        "gregory-xvi-acta-fragment-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
+        "pius-ix-acta-config.json": ("triptych-papal-series-config/v1", {"series_id": str, "title": str, "revision": str, "volumes": list}),
+        "pius-ix-acta-catalog.json": ("triptych-papal-series-catalog/v1", {"series_id": str, "revision": str, "volumes": list, "documents": list, "coverage": dict}),
+        "pius-ix-acta-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
+        "pius-ix-acta-fragment-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
+    }
+    if entry.name not in envelopes:
+        return False
+
+    def unique_object(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError(f"duplicate JSON key {key!r}")
+            result[key] = value
+        return result
+
+    def invalid_constant(value):
+        raise ValueError(f"invalid JSON number {value}")
+
+    schema, fields = envelopes[entry.name]
+    try:
+        data = json.loads(entry.read_text(encoding="utf-8"),
+                          object_pairs_hook=unique_object, parse_constant=invalid_constant)
+        if (not isinstance(data, dict) or data.get("schema") != schema
+                or any(not isinstance(data.get(key), kind) for key, kind in fields.items())):
+            raise ValueError(f"expected {schema} ownership envelope")
+    except (OSError, ValueError) as error:
+        library.error(entry, f"invalid papal inventory: {error}")
+    return True
+
+
 def _validate_source_tree(library: Library) -> None:
     """Reject files that evade a manifest, schema, or inventory owner."""
 
@@ -2043,6 +2116,8 @@ def _validate_source_tree(library: Library) -> None:
         if relative.parts[0] == "inventories" and entry.suffix in {".md", ".toml"}:
             continue
         if _owned_history_inventory(library, entry, relative):
+            continue
+        if _owned_papal_inventory(library, entry, relative):
             continue
         # Bible, calendar and commentary records are tracked sources with their
         # own validators (index-bible, check-calendar-masses, citations); the

@@ -1,0 +1,87 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "complete-volume-image-facsimile",
+   "byte_size": 21256700,
+   "edition_owned": true,
+   "id": "artifact.papal-collections.pii-ix-acta-pars-prima-volume-3.1864-rome.google-facsimile-7ce7f56c91df",
+   "media_type": "application/pdf",
+   "page_count": 764,
+   "retrieved": "2026-10-26",
+   "rights": "restricted",
+   "rights_jurisdiction": null,
+   "source_url": "http://www.documentacatholicaomnia.eu/01p/1846-1878,_SS_Pius_IX,_Pontificis_Maximi_acta_Pars_I_Vol_03,_LT.pdf",
+   "storage": "restricted"
+  },
+  {
+   "artifact_type": "bounded-historical-page-image-facsimile",
+   "byte_size": 4036178,
+   "edition_owned": true,
+   "id": "artifact.papal-collections.pii-ix-acta-pars-prima-volume-3.1864-rome.historical-pages-687-717-29394b6ec926",
+   "media_type": "application/pdf",
+   "notes": "All 31 retained pages were visually inspected for ordering, legibility, completeness of the historical image area, polarity and absence of modern Google marks. Quanta occupies derivative pages 1–14, Syllabus 15–31. Native 600-dpi, 1-bit images are preserved; the 4,036,178-byte size was reviewed and retained to avoid lossy resampling. There is no searchable text layer and no full verbal collation claim.",
+   "page_count": 31,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "Historical image content of the Rome printing independently cataloged as 1864, printed pages 687–717 only. United States expired-term basis under 17 U.S.C. 304/305; this retains the old printed page images alone, with no modern wrapper pages, Google watermark image/mask objects, OCR text, or creative modern additions. The minimal PDF container is mechanically project-created. This is not a worldwide rights assertion.",
+   "rights_jurisdiction": "United States",
+   "source_url": "http://www.documentacatholicaomnia.eu/01p/1846-1878,_SS_Pius_IX,_Pontificis_Maximi_acta_Pars_I_Vol_03,_LT.pdf",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "project-created-extraction-receipt",
+   "byte_size": 6740,
+   "edition_owned": true,
+   "id": "artifact.papal-collections.pii-ix-acta-pars-prima-volume-3.1864-rome.native-page-extraction-receipt",
+   "media_type": "application/json",
+   "notes": "Recipe artifact.papal-collections.pii-ix-acta-pars-prima-volume-3.1864-rome.native-page-extraction-recipe, SHA-256 85105941ec7bfd4afdc69894045a86e17e99ab473dd4d113583167c7974bc025. Pixel verification was performed on 26 October 2026.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "project-created",
+   "rights_basis": "Project-created factual extraction receipt; no source text is reproduced.",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "project-created-extraction-recipe",
+   "byte_size": 6091,
+   "edition_owned": true,
+   "id": "artifact.papal-collections.pii-ix-acta-pars-prima-volume-3.1864-rome.native-page-extraction-recipe",
+   "media_type": "text/x-python",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "project-created",
+   "rights_basis": "Project-created mechanical extraction code, MIT license; the script does not grant rights in input source material.",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": "Historical collected papal acts; image facsimile of the identified printing",
+  "date": "1864",
+  "editors": [],
+  "id": "edition.papal-collections.pii-ix-acta-pars-prima-volume-3.1864-rome",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Romae: Ex Typographia Bonarum Artium; pars prima, volume III. The inspected title page is undated. The matching Google Books bibliographic record LENDAAAAcAAJ gives 1864, independently of the dates of the individual acts.",
+  "title": "Rome printing cataloged 1864 — Google facsimile witness",
+  "translators": [],
+  "year": 1864
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Pius IX; collected papal acts",
+  "category": "papal-acta-volume",
+  "description": "Collected volume containing many distinct acts. Only the Quanta cura and Syllabus loci, printed pages 687–717, have retained offline facsimile coverage here. The remainder is identified by the exact full-volume delivery, not declared segmented or fully reviewed.",
+  "id": "work.papal-collections.pii-ix-acta-pars-prima-volume-3",
+  "languages": [
+   "la"
+  ],
+  "title": "Pii IX Pontificis Maximi Acta, pars prima, volume III"
+ }
+}

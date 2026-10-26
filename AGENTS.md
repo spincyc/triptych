@@ -21,6 +21,10 @@ Read `guidance/sources.md` before adding, migrating, storing, or reusing a
 repository-wide external source, corpus, edition, artifact, passage record, or
 publication binding.
 
+Papal-document catalogues and mechanical source reading editions additionally
+follow `guidance/papal-documents.md`. These provider-neutral external editions
+remain distinct from AI-authored studies and their provider publications.
+
 The documents above govern publications. A second family governs the tracked
 data and the apparatus over it, and nothing else routes to them — read the one
 that owns what you are about to touch, **before** touching it, because each is

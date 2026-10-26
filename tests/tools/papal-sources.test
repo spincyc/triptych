@@ -1,0 +1,8 @@
+#!/bin/sh
+set -eu
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+"$repo/tools/papal-sources" --help >/dev/null
+for verb in plan register acquire manifest; do
+    "$repo/tools/papal-sources" "$verb" --help >/dev/null
+done
+python3 -m unittest discover -s "$repo/tools/tests" -p test_papal_sources.py -q

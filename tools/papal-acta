@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+"""Acquire archival witnesses and register bounded, source-supported papal acts."""
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+from _tooling import Example
+from _papal_acta import main
+
+EXAMPLES = {
+    "acquire": (
+        Example("tools/papal-acta check --json", (), "Read-only source and boundary validation."),
+        Example("tools/papal-acta list --series ASS --summary --json", (), "Read-only historical catalog inspection."),
+    ),
+    "index": (
+        Example("tools/papal-acta check --json", (), "Read-only source and boundary validation."),
+        Example("tools/papal-acta list --series ASS --summary --json", (), "Read-only historical catalog inspection."),
+    ),
+    "register": (
+        Example("tools/papal-acta check --json", (), "Read-only source and boundary validation."),
+        Example("tools/papal-acta list --series ASS --summary --json", (), "Read-only historical catalog inspection."),
+    ),
+    "manifest": (
+        Example("tools/papal-acta check --json", (), "Read-only source and boundary validation."),
+        Example("tools/papal-acta list --series ASS --summary --json", (), "Read-only historical catalog inspection."),
+    ),
+    "check": (
+        Example("tools/papal-acta check --json", (), "Read-only source and boundary validation."),
+        Example("tools/papal-acta list --series ASS --summary --json", (), "Read-only historical catalog inspection."),
+    ),
+    "list": (
+        Example("tools/papal-acta check --json", (), "Read-only source and boundary validation."),
+        Example("tools/papal-acta list --series ASS --summary --json", (), "Read-only historical catalog inspection."),
+    ),
+}
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(examples=EXAMPLES))

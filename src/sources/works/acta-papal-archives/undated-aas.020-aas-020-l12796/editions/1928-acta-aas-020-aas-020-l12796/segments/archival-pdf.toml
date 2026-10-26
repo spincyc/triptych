@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.aas.020.aas-020-l12796.pdf"
+edition_id = "edition.acta-papal-archives.aas.020.aas-020-l12796"
+artifact_id = "artifact.acta-papal-archives.aas.020.vatican-pdf-91fb66fb"
+artifact_sha256 = "91fb66fb21c61d26009a58157d47ad6c6956651de1259455f43608c518c053d6"
+segment_type = "archival-act-locator"
+states = ["cataloged", "acquired", "inspected"]
+artifact_page_ranges = [[297, 300]]
+context = "{\"closing\": \"Source final papal signature, cardinal countersignature, or chancery registration retained, together with the dating clause when present.\", \"closing_line_ranges\": [[12932, 12939]], \"omitted_page_heads_line_ranges\": [[12834, 12834], [12919, 12919]], \"opening\": \"Source act heading and addressee or subject precede the papal issuer/greeting; no incipit supplied by conjecture.\", \"reviewed_exclusions\": [{\"physical_line_ranges\": [[12940, 12946]], \"reason\": \"This papal act ends at its chancery registration. Following erratum targets the earlier Rhodiensis constitution, not this Benedict XV act.\"}, {\"physical_line_ranges\": [[12877, 12877]], \"reason\": \"Independent review identified a source running head or nonsemantic formfeed garbage, not act body.\"}]}"
+notes = "Artifact-page locators are distinct from the printed page labels Unknown. Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

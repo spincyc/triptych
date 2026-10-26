@@ -1,0 +1,90 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "automated-pagination-map",
+   "byte_size": 146853,
+   "edition_owned": true,
+   "id": "artifact.bullarium-romanum.volume-14.1868-turin-latin.labels-f6d88c11db6f",
+   "media_type": "application/json",
+   "notes": "Complete uncorrected response. Token identity and physical bounds do not establish column reading order or verified printed pagination.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "United States: the identified Turin 1868 printing, Volume XIV, was published before 1931. Its historical Latin and contemporary editorial apparatus have an expired-term basis under the repository papal-documents-rights-v1.toml assessment (17 USC 104A, 304, 305). Mechanical OCR and generated page data add no original authorship (Compendium 313.4(A)); factual digitization/library marks introduce no modern creative introduction or translation. No worldwide public-domain claim or Triptych license over source wording is asserted.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/bullarumdiplomat14cath/bullarumdiplomat14cath_page_numbers.json",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "mechanical-line-leaf-map",
+   "byte_size": 283880,
+   "edition_owned": true,
+   "id": "artifact.bullarium-romanum.volume-14.1868-turin-latin.line-map-d6383e774b67",
+   "media_type": "application/json",
+   "notes": "Identity/locators only. Geometry screen flags some reading-order defects and never certifies their absence; automated printed-page labels remain unverified.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "United States: the identified Turin 1868 printing, Volume XIV, was published before 1931. Its historical Latin and contemporary editorial apparatus have an expired-term basis under the repository papal-documents-rights-v1.toml assessment (17 USC 104A, 304, 305). Mechanical OCR and generated page data add no original authorship (Compendium 313.4(A)); factual digitization/library marks introduce no modern creative introduction or translation. No worldwide public-domain claim or Triptych license over source wording is asserted.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "uncorrected-ocr",
+   "byte_size": 3542946,
+   "edition_owned": true,
+   "id": "artifact.bullarium-romanum.volume-14.1868-turin-latin.ocr-89cd2ae44084",
+   "media_type": "text/plain",
+   "notes": "Complete uncorrected response. Token identity and physical bounds do not establish column reading order or verified printed pagination.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "United States: the identified Turin 1868 printing, Volume XIV, was published before 1931. Its historical Latin and contemporary editorial apparatus have an expired-term basis under the repository papal-documents-rights-v1.toml assessment (17 USC 104A, 304, 305). Mechanical OCR and generated page data add no original authorship (Compendium 313.4(A)); factual digitization/library marks introduce no modern creative introduction or translation. No worldwide public-domain claim or Triptych license over source wording is asserted.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/bullarumdiplomat14cath/bullarumdiplomat14cath_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "ocr-layout-xml",
+   "byte_size": 36034989,
+   "edition_owned": true,
+   "id": "artifact.bullarium-romanum.volume-14.1868-turin-latin.xml-4857396c8935",
+   "media_type": "application/xml",
+   "notes": "The exact 36,034,989-byte verbose XML is remote because of measured size and source-machine attributes. Offline alternatives: complete raw OCR and compact exact token/line/leaf map retained in this edition. Token identity and physical bounds do not establish column reading order or verified printed pagination.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "United States: the identified Turin 1868 printing, Volume XIV, was published before 1931. Its historical Latin and contemporary editorial apparatus have an expired-term basis under the repository papal-documents-rights-v1.toml assessment (17 USC 104A, 304, 305). Mechanical OCR and generated page data add no original authorship (Compendium 313.4(A)); factual digitization/library marks introduce no modern creative introduction or translation. No worldwide public-domain claim or Triptych license over source wording is asserted.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/bullarumdiplomat14cath/bullarumdiplomat14cath_djvu.xml",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1868",
+  "editors": [],
+  "id": "edition.bullarium-romanum.volume-14.1868-turin-latin",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Bullarum diplomatum et privilegiorum sanctorum Romanorum pontificum, Volume XIV; Turin, 1868.",
+  "title": "Volume XIV — Turin 1868",
+  "translators": [],
+  "year": 1868
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Historical Bullarium editors and the act authors attributed within the printing",
+  "category": "historical-document-container",
+  "description": "A separately owned historical container: papal/curial acts, inserted instruments, biographies and editorial apparatus. Possession establishes no census or authentication of its attributed acts.",
+  "id": "work.bullarium-romanum.volume-14",
+  "languages": [
+   "la",
+   "it"
+  ],
+  "title": "Bullarium Romanum — Volume XIV"
+ }
+}

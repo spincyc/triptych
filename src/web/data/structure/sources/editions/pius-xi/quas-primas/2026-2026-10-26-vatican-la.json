@@ -1,0 +1,72 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "official-html",
+   "byte_size": 72138,
+   "edition_owned": true,
+   "id": "artifact.pius-xi.quas-primas.2026-10-26-vatican-la.html",
+   "media_type": "text/html",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "restricted",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.vatican.va/content/pius-xi/la/encyclicals/documents/hf_p-xi_enc_11121925_quas-primas.html",
+   "storage": "restricted"
+  },
+  {
+   "artifact_type": "normalized-transcription",
+   "byte_size": 36130,
+   "edition_owned": true,
+   "id": "artifact.pius-xi.quas-primas.2026-10-26-vatican-la.latin-text-2564bfc8f013",
+   "media_type": "text/plain",
+   "notes": "Normalized transcription, not a facsimile or critical edition. Historical Latin wording is public domain in the United States; portal markup and translations have separate rights. This preserved derivative retains the source HTML paragraph split inside Christo (C / hristo). The corrected reading derivative is artifact.pius-xi.quas-primas.2026-10-26-vatican-la.latin-text-549b7a6e70f9, following AAS 17 (1925), pp. 608-609. Its payload remains unchanged.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "Original Latin text identified in Acta Apostolicae Sedis 17 (1925), no. 15, pp. 593-610, published no later than 1930. United States expired-term assessment under 17 U.S.C. 304 and 305; any qualifying foreign restoration under 104A(a)(1)(B) receives only the remainder of that term. This clearance covers preexisting historical wording under 103(b), not Vatican HTML, modern translation, creative revision, or scan/reprint wrapper. See src/sources/inventories/papal-documents-rights-v1.toml for the primary authorities and jurisdictional limits.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://www.vatican.va/content/pius-xi/la/encyclicals/documents/hf_p-xi_enc_11121925_quas-primas.html",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "normalized-transcription",
+   "byte_size": 36128,
+   "edition_owned": true,
+   "id": "artifact.pius-xi.quas-primas.2026-10-26-vatican-la.latin-text-549b7a6e70f9",
+   "media_type": "text/plain",
+   "notes": "Normalized transcription, not a facsimile or critical edition. Historical Latin wording is public domain in the United States; portal markup and translations have separate rights. Historical witness: Acta Apostolicae Sedis 17 (1925), no. 15, pp. 593-610. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions. Declared source paragraph boundaries are joined without supplying or changing letters.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "Original Latin text identified in Acta Apostolicae Sedis 17 (1925), no. 15, pp. 593-610, published no later than 1930. United States expired-term assessment under 17 U.S.C. 304 and 305; any qualifying foreign restoration under 104A(a)(1)(B) receives only the remainder of that term. This clearance covers preexisting historical wording under 103(b), not Vatican HTML, modern translation, creative revision, or scan/reprint wrapper. See src/sources/inventories/papal-documents-rights-v1.toml for the primary authorities and jurisdictional limits.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://www.vatican.va/content/pius-xi/la/encyclicals/documents/hf_p-xi_enc_11121925_quas-primas.html",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": "Holy See web presentation",
+  "date": "2026-10-26",
+  "editors": [],
+  "id": "edition.pius-xi.quas-primas.2026-10-26-vatican-la",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Holy See web delivery identified from its official index on 2026-10-26",
+  "title": "Quas Primas — Holy See la web delivery",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Pius XI",
+  "category": "encyclical",
+  "description": "Encyclical instituting the feast of Christ the King and explaining its doctrinal and social purposes.",
+  "id": "work.pius-xi.quas-primas",
+  "languages": [
+   "la"
+  ],
+  "title": "Quas primas"
+ }
+}

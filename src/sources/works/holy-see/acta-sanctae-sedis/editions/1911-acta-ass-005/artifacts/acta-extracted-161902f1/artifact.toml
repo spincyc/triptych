@@ -1,0 +1,15 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.acta-papal-archives.ass.005.extracted-text-161902f1"
+edition_id = "edition.acta-papal-archives.ass.005.1911-acta-ass-005"
+artifact_type = "mechanical-pdf-text-extraction"
+media_type = "text/plain"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "Exact extraction may contain protected text or modern wrappers and remains transient. Separately manifested historical text excludes uncleared material."
+retrieved = "2026-10-26"
+sha256 = "161902f184b5a3050a95607df5e78c788cdc055d0a877e00767bf9595d1b2339"
+byte_size = 4111
+derived_from = "artifact.acta-papal-archives.ass.005.extracted-text-96d9529b"
+transformation = "[\"python\", \"<transient-path>\"]; Concatenate the listed inclusive 1-based physical LF ranges in listed order. Preserve each selected line byte-for-byte and append its original terminating LF; no words added, corrected, or rewritten. No extra inter-range separator inserted. FF/header/decorative/curial ranges are omitted explicitly.; concatenate source LF ranges in this declared order: [[11013,11034],[11058,11091],[11035,11055]]; join with LF and one terminal LF; Concatenate the listed inclusive 1-based physical LF ranges in listed order. Preserve each selected line byte-for-byte and append its original terminating LF; no words added, corrected, or rewritten. No extra inter-range separator inserted. FF/header/decorative/curial ranges are omitted explicitly."
+notes = "Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

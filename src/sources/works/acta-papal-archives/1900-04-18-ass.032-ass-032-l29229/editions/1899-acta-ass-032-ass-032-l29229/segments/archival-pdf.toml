@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.ass.032.ass-032-l29229.pdf"
+edition_id = "edition.acta-papal-archives.ass.032.ass-032-l29229"
+artifact_id = "artifact.acta-papal-archives.ass.032.vatican-pdf-072891d7"
+artifact_sha256 = "072891d7cb651685353d1ed5dc56aa63de69923130f766e3ed958f0b85368157"
+segment_type = "archival-act-locator"
+states = ["cataloged", "acquired", "inspected"]
+artifact_page_ranges = [[752, 755]]
+context = "{\"closing_physical_lines\": [29388, 29393], \"closing_text\": \"ficationi hisce litteris ostensis haberetur. Datum Romae apud.\\nS. Petrum sub annulo Piscatoris die xvni Aprilis M C M , Ponti-\\ncatus Nostri Anno Vigesimotertio.\\n\\nL. * S.\\n                                         ALOIS. CARD. MACCHI.\", \"end_line\": 29393, \"removed\": \"Running header/page-number lines carrying formfeed and Acta volume/fascicle footers are omitted via disjoint ranges; all remaining source text and notes in selected extent retained.\", \"retained_historical_note_ranges\": [], \"start_line\": 29229}"
+notes = "Artifact-page locators are distinct from the printed page labels [{\"artifact_page\": 752, \"printed_page\": \"752\", \"running_head_text\": \"752\"}, {\"artifact_page\": 753, \"printed_page\": \"753\", \"running_head_text\": \"EX S. C. RITUUM                      753\"}, {\"artifact_page\": 754, \"printed_page\": \"754\", \"running_head_text\": \"754                       EX S. C. RITUUM\"}, {\"artifact_page\": 755, \"printed_page\": \"755\", \"running_head_text\": \"E X s . c . RITUUM                    755\"}]. Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

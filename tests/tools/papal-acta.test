@@ -1,0 +1,9 @@
+#!/bin/sh
+# Exercise source retention, registration, and CLI contracts without network access.
+set -eu
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+"$repo/tools/papal-acta" --help >/dev/null
+for verb in acquire index register manifest check list; do
+    "$repo/tools/papal-acta" "$verb" --help >/dev/null
+done
+python3 -B -m unittest discover -s "$repo/tools/tests" -p test_papal_acta.py -q

@@ -1982,3 +1982,109 @@ clean:
 	rm -rf build
 
 distclean: clean
+
+PAPAL_OUT ?= .scratch/papal-pdfs
+PAPAL_JOBS ?= 4
+PAPAL_MANIFEST_ROOT ?= src/sources/papal-documents
+# Separate output namespaces preserve the identity and extent of each source batch.
+PAPAL_MANIFESTS ?= latin=typeset-manifest.json \
+	english=historical-english-manifest.json \
+	quanta-syllabus=quanta-syllabus-manifest.json \
+	bullarium=bullarium-manifest.json \
+	bullarium-fragments=bullarium-fragment-manifest.json \
+	acta=acta-manifest.json \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/vatican-corrections-manifest.json),vatican-corrections=vatican-corrections-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-rescue-manifest.json),bullarium-rescue=bullarium-rescue-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-rescue-fragment-manifest.json),bullarium-rescue-fragments=bullarium-rescue-fragment-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-corrections-manifest.json),bullarium-corrections=bullarium-corrections-manifest.json)
+PAPAL_COLLECTION_OUT ?= $(PAPAL_OUT)/collection
+PAPAL_COLLECTION_BATCHES ?= $(foreach batch,$(PAPAL_MANIFESTS),$(word 1,$(subst =, ,$(batch))))
+PAPAL_SUPERSESSION_MANIFESTS ?= $(wildcard $(PAPAL_OUT)/vatican-corrections/frozen-manifest.json \
+	$(PAPAL_OUT)/bullarium-corrections/frozen-manifest.json)
+PAPAL_REVIEW_MANIFESTS ?= $(wildcard $(PAPAL_MANIFEST_ROOT)/vatican-visual-review.json \
+	$(PAPAL_MANIFEST_ROOT)/bullarium-visual-review.json \
+	$(PAPAL_MANIFEST_ROOT)/english-visual-review.json)
+# The typesetter refuses an empty selection. Validate the outer contract first
+# so an honestly empty batch is skipped while malformed JSON still fails.
+PAPAL_MANIFEST_COUNT = $(PYTHON) -c 'import datetime,json,re,sys; \
+	d=json.load(open(sys.argv[1],encoding="utf-8"),object_pairs_hook=lambda p: dict(p) if len(dict(p)) == len(p) else sys.exit("duplicate JSON key"),parse_constant=lambda s: sys.exit("non-finite JSON number")); \
+	(isinstance(d,dict) and d.get("schema") == "triptych-papal-typeset/v1") or sys.exit("invalid papal manifest schema"); \
+	r=d.get("revision"); \
+	(isinstance(r,str) and re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z",r)) or sys.exit("invalid papal manifest revision"); \
+	datetime.datetime.strptime(r,"%Y-%m-%dT%H:%M:%SZ"); \
+	isinstance(d.get("documents"),list) or sys.exit("papal manifest requires a documents array"); \
+	print(len(d["documents"]))'
+
+.PHONY: check-papal check-papal-manifests papal-catalog papal-pdfs papal-collection
+
+check-papal: check-papal-manifests
+	@$(PYTHON) tools/tpt papal-documents check --json
+	@$(PYTHON) tools/tpt bullarium check --json
+	@$(PYTHON) tools/tpt papal-acta check --json
+	@$(PYTHON) -m unittest discover -s tools/tests -p 'test_papal_*.py'
+	@$(PYTHON) -m unittest discover -s tools/tests -p 'test_bullarium.py'
+	@$(PYTHON) -m unittest discover -s tools/tests -p 'test_typeset_papal.py'
+
+check-papal-manifests:
+	@set -eu; \
+	for batch in $(PAPAL_MANIFESTS); do \
+		name=$${batch%%=*}; \
+		manifest='$(PAPAL_MANIFEST_ROOT)'/$${batch#*=}; \
+		count=$$($(PAPAL_MANIFEST_COUNT) "$$manifest"); \
+		if [ "$$count" -eq 0 ]; then \
+			printf '%s: 0 admitted editions; skipped\n' "$$name"; \
+		else \
+			printf '%s: %s admitted editions\n' "$$name" "$$count"; \
+			$(PYTHON) tools/tpt typeset-papal check --manifest "$$manifest" --json; \
+		fi; \
+	done
+
+papal-catalog:
+	@$(PYTHON) tools/tpt papal-documents export --format json --out '$(PAPAL_OUT)/catalog.json'
+	@$(PYTHON) tools/tpt papal-documents export --format csv --out '$(PAPAL_OUT)/catalog.csv'
+	@$(PYTHON) tools/tpt papal-documents export --format biblatex --out '$(PAPAL_OUT)/papal.bib'
+	@cp -- '$(PAPAL_MANIFEST_ROOT)/archives.json' '$(PAPAL_OUT)/archives.json'
+	@cp -- '$(PAPAL_MANIFEST_ROOT)/bullarium-catalog.json' '$(PAPAL_OUT)/bullarium-catalog.json'
+	@cp -- '$(PAPAL_MANIFEST_ROOT)/acta-catalog.json' '$(PAPAL_OUT)/acta-catalog.json'
+
+papal-pdfs: check-papal-manifests papal-catalog
+	@set -eu; \
+	for batch in $(PAPAL_MANIFESTS); do \
+		name=$${batch%%=*}; \
+		manifest='$(PAPAL_MANIFEST_ROOT)'/$${batch#*=}; \
+		count=$$($(PAPAL_MANIFEST_COUNT) "$$manifest"); \
+		if [ "$$count" -eq 0 ]; then \
+			printf '%s: 0 admitted editions; skipped\n' "$$name"; \
+		else \
+			$(PYTHON) tools/tpt typeset-papal render --manifest "$$manifest" \
+				--out '$(PAPAL_OUT)'/"$$name" --compile --jobs '$(PAPAL_JOBS)' --json; \
+		fi; \
+	done
+
+# Collection reads existing outputs only; it never starts a render or installs PDFs.
+papal-collection:
+	@set -eu; set --; \
+	for name in $(PAPAL_COLLECTION_BATCHES); do \
+		receipt='$(PAPAL_OUT)'/"$$name"/receipt.json; \
+		manifest='$(PAPAL_OUT)'/"$$name"/frozen-manifest.json; \
+		if [ ! -f "$$receipt" ]; then \
+			printf '%s: no batch receipt; skipped\n' "$$name"; \
+			continue; \
+		fi; \
+		if [ ! -f "$$manifest" ]; then \
+			printf '%s: missing retained frozen-manifest.json\n' "$$name" >&2; \
+			exit 1; \
+		fi; \
+		set -- "$$@" --batch "$$name" "$$receipt" "$$manifest"; \
+	done; \
+	if [ "$$#" -eq 0 ]; then \
+		printf '%s\n' 'No existing batch receipts selected for papal-collection.' >&2; \
+		exit 1; \
+	fi; \
+	for manifest in $(PAPAL_SUPERSESSION_MANIFESTS); do \
+		set -- "$$@" --supersessions "$$manifest"; \
+	done; \
+	for manifest in $(PAPAL_REVIEW_MANIFESTS); do \
+		set -- "$$@" --review "$$manifest"; \
+	done; \
+	$(PYTHON) tools/tpt typeset-papal collect "$$@" --out '$(PAPAL_COLLECTION_OUT)' --json

@@ -1,0 +1,5 @@
+#!/bin/sh
+# The canonical smoke test is shared with the repository tool-test suite.
+set -eu
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+exec "$repo/tests/tools/papal-documents.test"

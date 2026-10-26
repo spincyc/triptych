@@ -1,0 +1,50 @@
+{
+  "schema": "triptych-encoding-repair-source-package/v1",
+  "revision": "2026-10-26T05:10:28Z",
+  "description": "Project-created dependency package for the bounded 205-span encoding-only repair of the 1903 English transcription. Prior source artifacts and segment controllers remain available.",
+  "inputs": [
+    {
+      "filename": "original-reading-text.txt",
+      "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-reading-text-fc16a357",
+      "sha256": "fc16a357008f7f2e1b0f331dceecc6ae76138b370a19665208fb064677cf6573"
+    },
+    {
+      "filename": "independent-complete-ocr.txt",
+      "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ia-raw-ocr-2b7c730b",
+      "sha256": "2b7c730b6267e731f5929631575b3cfca0dd0b58db65fbbc233517c24f19a99d"
+    },
+    {
+      "filename": "encoding-investigation.json",
+      "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.encoding-audit-63e640f6",
+      "sha256": "63e640f643fe8eee0189b9815f945ac8052cfaa9d74ebbc057b3a50ac31c37d1"
+    },
+    {
+      "filename": "encoding-repair.py",
+      "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.encoding-repair-recipe-b8daa71f",
+      "sha256": "b8daa71f46704ab26207dad8dd08e0f007ce06b9c66e6c16961b3f0c7b4f9c71"
+    }
+  ],
+  "command": [
+    "python",
+    "encoding-repair.py",
+    "--source",
+    "original-reading-text.txt",
+    "--ocr",
+    "independent-complete-ocr.txt",
+    "--audit",
+    "encoding-investigation.json",
+    "--out",
+    "great-encyclical-letters-encoding-repaired.txt"
+  ],
+  "output_artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-encoding-repaired-ed8e5a40",
+  "output_sha256": "ed8e5a405701a51eec9124f0e63a4db7740ded35545fe5d99874ac9581541879",
+  "encoding_spans": 205,
+  "intact_reversals": 193,
+  "corroborated_partial_marker_repairs": 12,
+  "limitations": [
+    "All ASCII characters, whitespace, physical lines and source dates are unchanged.",
+    "Residual OCR word errors and source-heading date discrepancies remain.",
+    "Independent OCR context corroboration is not whole-text print collation.",
+    "The separate fresh Tesseract pilot is excluded."
+  ]
+}

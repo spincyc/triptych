@@ -1,5 +1,16 @@
 # Source Schema Changelog
 
+## Papal collection inventory ownership — added 2026-10-26
+
+The source-tree validator recognizes the exact catalog, archive, source-link,
+publication-approval, typesetting-manifest, and page-review comparison JSON names documented in
+`papal-documents/README.md`, with their versioned ownership envelopes, and
+immediate collection Markdown records. The catalog/acquisition/typesetting
+tools own semantic checks. Unknown names, nested files, malformed JSON,
+duplicate keys, incorrect envelopes and unmanifested payloads remain rejected.
+These project-created inventories do not add source record types or change
+manifest, fingerprint, binding, search, or rights semantics.
+
 ## Eucharistic stage inventory ownership — added 2026-10-16
 
 The source-tree validator recognizes immediate

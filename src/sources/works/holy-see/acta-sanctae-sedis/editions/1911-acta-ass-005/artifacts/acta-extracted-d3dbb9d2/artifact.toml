@@ -1,0 +1,15 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.acta-papal-archives.ass.005.extracted-text-d3dbb9d2"
+edition_id = "edition.acta-papal-archives.ass.005.1911-acta-ass-005"
+artifact_type = "mechanical-pdf-text-extraction"
+media_type = "text/plain"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "Exact extraction may contain protected text or modern wrappers and remains transient. Separately manifested historical text excludes uncleared material."
+retrieved = "2026-10-26"
+sha256 = "d3dbb9d28e1e1281619a8f896eb201f6b1f60d5c373b21e395693a2229e74962"
+byte_size = 13827
+derived_from = "artifact.acta-papal-archives.ass.005.extracted-text-d1904eb1"
+transformation = "[\"python\", \"<transient-path>\"]; Select inclusive1-based LF ranges in listed order; Unicode column slices are0-based half-open. Whole body first; then historical source notes, left column before right. Cuts43 at LF25515–25520 and34 at LF25682–25684 lie in the inspected gutter. Preserve every selected character including spaces; append one LF per source line/slice. No source words rewritten.; select inclusive 1-based LF ranges and 0-based half-open Unicode columns in this declared order: [{\"physical_line_range\":[25491,25514],\"unicode_columns\":null},{\"physical_line_range\":[25522,25560],\"unicode_columns\":null},{\"physical_line_range\":[25563,25602],\"unicode_columns\":null},{\"physical_line_range\":[25604,25643],\"unicode_columns\":null},{\"physical_line_range\":[25645,25681],\"unicode_columns\":null},{\"physical_line_range\":[25688,25727],\"unicode_columns\":null},{\"physical_line_range\":[25729,25741],\"unicode_columns\":null},{\"physical_line_range\":[25515,25520],\"unicode_columns\":[0,43]},{\"physical_line_range\":[25515,25520],\"unicode_columns\":[43,null]},{\"physical_line_range\":[25561,25561],\"unicode_columns\":null},{\"physical_line_range\":[25682,25684],\"unicode_columns\":[0,34]},{\"physical_line_range\":[25682,25684],\"unicode_columns\":[34,null]}]; join_previous concatenates consecutive fragments of the same source LF line before its LF; otherwise append LF after each selected source line/slice, preserving all selected characters; Select inclusive1-based LF ranges in listed order; Unicode column slices are0-based half-open. Whole body first; then historical source notes, left column before right. Cuts43 at LF25515–25520 and34 at LF25682–25684 lie in the inspected gutter. Preserve every selected character including spaces; append one LF per source line/slice. No source words rewritten."
+notes = "Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

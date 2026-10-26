@@ -1,0 +1,71 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "mechanical-pdf-text-extraction",
+   "byte_size": 1707898,
+   "edition_owned": true,
+   "id": "artifact.acta-papal-archives.ass.027.extracted-text-c6c47e96",
+   "media_type": "text/plain",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "restricted"
+  },
+  {
+   "artifact_type": "historical-text-derivative",
+   "byte_size": 1707436,
+   "edition_owned": true,
+   "id": "artifact.acta-papal-archives.ass.027.historical-text-76fd18c3",
+   "media_type": "text/plain",
+   "notes": "Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations. [\"Vatican OCR PDF text reconstruction; source wording has not been collated against a historical facsimile.\", \"Complete reused PDF hashed; fresh pdftotext -layout -enc UTF-8 -eol unix derivative retains LF and formfeeds. Physical lines count only LF, not formfeeds.\", \"Front matter identifies a 1969 Johnson reprint of the historical ASS volume; publication_year follows historical archive inventory, not reprint date.\", \"Discovery screened volume index, formal genre headings, papal name/salutation and closing dating clauses; OCR damage and embedded historical quotations can still conceal candidates. No claim to all acts of the pontificate.\"]",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. The historical title identifies Romae, Typographia Polyglotta, S. Congregationis de Propaganda Fide, 1894-95, at exact source LF line 40. The separately printed 1969 Johnson reprint wrapper at LF 42–46 is excluded. This identifies the reproduced historical printing; the Vatican OCR reconstruction is not image-collated. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "archival-ocr-pdf",
+   "byte_size": 3273989,
+   "edition_owned": true,
+   "id": "artifact.acta-papal-archives.ass.027.vatican-pdf-cef47d12",
+   "media_type": "application/pdf",
+   "page_count": 768,
+   "retrieved": "2026-10-26",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.vatican.va/archive/ass/documents/ASS-27-1894-95-ocr.pdf",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1894",
+  "editors": [],
+  "id": "edition.acta-papal-archives.ass.027.1894-acta-ass-027",
+  "jurisdiction": null,
+  "language": "mul",
+  "publication": "The historical title identifies Romae, Typographia Polyglotta, S. Congregationis de Propaganda Fide, 1894-95, at exact source LF line 40. The separately printed 1969 Johnson reprint wrapper at LF 42–46 is excluded. This identifies the reproduced historical printing; the Vatican OCR reconstruction is not image-collated.",
+  "title": "Acta Sanctae Sedis — source witness ass.027",
+  "translators": [],
+  "year": 1894
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "ASS",
+   "Acta Sanctae Sedis in compendium opportune redacta"
+  ],
+  "author": "Holy See",
+  "category": "official-periodical",
+  "description": "The Holy See periodical that preceded Acta Apostolicae Sedis. Volume editions and exact delivery artifacts remain container identities distinct from the papal acts and other documents printed within them.",
+  "id": "work.holy-see.acta-sanctae-sedis",
+  "languages": [],
+  "title": "Acta Sanctae Sedis"
+ }
+}

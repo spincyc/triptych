@@ -392,8 +392,8 @@ class ListingGroupTests(unittest.TestCase):
 class ReachTests(unittest.TestCase):
     """What a tool reaches is declared, and the declaration is checked.
 
-    One registered tool retrieves from the external network, one uses local
-    browser services and one calls a model.
+    The named acquisition tools retrieve from the external network; one tool
+    uses local browser services and one calls a model.
     That is the property a reader is being asked to trust before running
     anything, and a convention alone would not keep it: a tool that grows a
     `urlopen` and forgets its declaration has to fail here, or the listing
@@ -445,8 +445,16 @@ class ReachTests(unittest.TestCase):
         network read as a network call.
         """
         text = (TOOLS / name).read_text(encoding="utf-8", errors="replace")
-        if name == "history-browser-acceptance":
-            text += "\n" + (ROOT / "scripts/_history_browser_acceptance.py").read_text(encoding="utf-8")
+        implementation = {
+            "bullarium": "_bullarium.py",
+            "history-browser-acceptance": "_history_browser_acceptance.py",
+            "papal-acta": "_papal_acta.py",
+            "papal-documents": "_papal_documents.py",
+            "papal-sources": "_papal_sources.py",
+            "typeset-papal": "_typeset_papal.py",
+        }.get(name)
+        if implementation:
+            text += "\n" + (ROOT / "scripts" / implementation).read_text(encoding="utf-8")
         head, marker, tail = text.partition("\nEXAMPLES = {")
         if marker:
             text = head + tail.partition("\n}\n")[2]
@@ -493,23 +501,22 @@ class ReachTests(unittest.TestCase):
                         "but does not declare it; set REACHES in scripts/_tooling.py",
                     )
 
-    def test_exactly_two_tools_reach_outside_and_the_listing_says_so(self) -> None:
+    def test_the_exact_outward_tools_and_listing_agree(self) -> None:
         """The measured fact, and the sentence a reader is shown, must agree.
 
-        Two, and which two, is the whole claim: `harvest ask` calls a model and
-        `knox-bible` retrieves from the external network. A third name
-        appearing here is a tool that started spending outside this machine, and
-        it should have to be added deliberately rather than noticed later.
+        Any additional outward tool requires a deliberate update to this list,
+        including its reach and the warning shown before an operator runs it.
         """
         declared = self.declarations()
-        outward = sorted(n for n, r in declared.items() if r in ("network", "model"))
-        self.assertEqual(outward, ["harvest", "knox-bible"], "the reach story has changed")
-        self.assertEqual(declared["harvest"], "model")
-        self.assertEqual(declared["knox-bible"], "network")
+        network = sorted(n for n, r in declared.items() if r == "network")
+        self.assertEqual(network, [
+            "bullarium", "knox-bible", "papal-acta", "papal-documents", "papal-sources",
+        ], "the network reach story has changed")
+        self.assertEqual(sorted(n for n, r in declared.items() if r == "model"), ["harvest"])
         listing = subprocess.run(
             [str(LAUNCHER), "--list"], capture_output=True, text=True, cwd=ROOT,
         ).stdout
-        self.assertIn("reaches the external network: knox-bible", listing)
+        self.assertIn("reaches the external network: " + ", ".join(network), listing)
         self.assertIn("calls a model: harvest", listing)
         self.assertIn(
             "No other registered tool reaches the external network, calls a model or uses local browser services", listing

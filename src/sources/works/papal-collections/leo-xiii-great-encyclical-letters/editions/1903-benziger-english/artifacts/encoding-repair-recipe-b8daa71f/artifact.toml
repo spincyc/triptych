@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.encoding-repair-recipe-b8daa71f"
+edition_id = "edition.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english"
+artifact_type = "project-transformation-recipe"
+media_type = "text/x-python; charset=utf-8"
+storage = "tracked"
+rights_status = "licensed"
+license = "CC-BY-4.0"
+rights_basis = "Project-created transformation recipe, distributed under the repository content license, CC BY 4.0. External source wording is read from its separately identified input artifacts and is not authored by this recipe."
+provenance = "Deterministic project-created replay recipe for the 205 individually audited encoding spans; source bytes never pass through a language model."
+retrieved = "2026-10-26"
+encoding = "utf-8"
+indexable = false
+notes = "Replays the recorded patches only after validating both complete input hashes, all exact IA context matches, the 193 intact reversal and 12 partial marker classifications, preserved ASCII and line breaks, and exact reverse reconstruction. No fresh OCR output is used."
+sha256 = "b8daa71f46704ab26207dad8dd08e0f007ce06b9c66e6c16961b3f0c7b4f9c71"
+byte_size = 4241
+path = "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/encoding-repair-recipe-b8daa71f/encoding-repair.py"

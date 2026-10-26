@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.ass.028.ass-028-l08019.pdf"
+edition_id = "edition.acta-papal-archives.ass.028.ass-028-l08019"
+artifact_id = "artifact.acta-papal-archives.ass.028.vatican-pdf-82baca9e"
+artifact_sha256 = "82baca9eff7bd498c8b567272706f4cec5662a30869e217883aa9cf24500dac0"
+segment_type = "archival-act-locator"
+states = ["cataloged", "acquired", "inspected"]
+artifact_page_ranges = [[204, 205]]
+context = "{\"closing_physical_lines\": [8063, 8066], \"closing_text\": \"     Datum R o m a e apud Sanctum Petrum sub annulo Pisca-\\ntoris die x x i v Septembris MDCCCXCV, Pontificatus Nostri anno\\ndecimo octavo.\\n                         LEO PP. XIII.\", \"end_line\": 8066, \"removed\": \"Running header/page-number lines carrying formfeed and Acta volume/fascicle footers are omitted via disjoint ranges; all remaining source text and notes in selected extent retained.\", \"retained_historical_note_ranges\": [], \"start_line\": 8019}"
+notes = "Artifact-page locators are distinct from the printed page labels [{\"artifact_page\": 204, \"printed_page\": \"204\", \"running_head_text\": \"204                                LITTERAE\"}, {\"artifact_page\": 205, \"printed_page\": \"205\", \"running_head_text\": \"LITTERAE                                205\"}]. Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

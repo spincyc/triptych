@@ -7,6 +7,85 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-10-25.
 
+## Papal document source corpus, 2026-10-25
+
+<!-- promised-deliverable: papal-documents-2026-10-25 -->
+
+**In progress.** Source and organize papal encyclicals, bulls, and related
+formal documents; catalogue their editions; produce two-column TeX/PDF source
+editions; and make the sources reusable by larger presentation projects.
+The workspace target is `feature/encyclicals`; this work does not change
+`main` or deploy the reader site.
+
+The first acquisition boundary is the Vatican's mixed historical collections
+and modern document-category indexes, supplemented by the printed Bullarium,
+ASS/AAS volume inventories, and identified historical English editions.
+An index's coverage is recorded independently from the universe of historical
+papal acts. Historical volume acquisition does not count as individual-document
+segmentation. Modern translation rights, missing original-language witnesses,
+unresolved dates, index errors, and unsegmented volumes remain explicit gaps.
+
+The canonical ownership remains the provider-neutral source library. Exact
+source bytes, original works, translations, and generated source editions stay
+distinct. Publicly retained text needs its own affirmative rights basis;
+public accessibility and an act's date alone do not establish it. Full-text
+retrieval, normalized text, typesetting, visual review, installation, and public
+distribution are separately recorded states. The owning collection records are
+under `src/sources/papal-documents/`; the profile is
+`guidance/papal-documents.md`.
+
+On 2026-10-26 the maintainer confirmed both coverage layers: English and Latin
+where available, the linked Vatican formal-document collections, and
+reconstruction of individual acts from the historical volumes. Volume
+acquisition alone does not fulfill that expansion. The Bullarium and ASS/AAS
+programs therefore retain exact containers and independently reviewed act
+boundaries, with explicit holds for interleaved columns, displaced notes,
+uncertain issuers, duplicate scans and unavailable material. Later protected
+bodies remain metadata-only. Printed attribution does not authenticate an early
+or disputed act.
+
+The Vatican index snapshot contains 2,814 source-index records across 237
+pages, including six absent historical Latin interfaces, reviewed aliases,
+source-date conflicts and composite/constituent distinctions. The first source
+program retained historical Latin readings and 31 bounded English translation
+entries from the 1903 Benziger collection. The English transcriptions retain
+substantial source OCR errors; 205 separately audited character-encoding spans
+in 11 selections have been repaired without rewriting words. Successful layout
+review is not image collation. Quanta cura and the Syllabus have separate constituent identities
+within one controlling delivery.
+
+Publication-date review reopened Casti connubii: its nominal 31 December 1930
+date and AAS volume label do not establish publication before 1931. A
+contemporary report identifies 8 January 1931. Its full text and generated
+readers are withheld while its factual metadata and evidence remain. Earlier
+1930 fascicles are not blanket-dated by the annual 1931 colophon.
+
+Required aggregate validation, final source projections, complete PDF review,
+coherent commits and feature publication remain in progress. No main
+deployment or complete historical corpus is claimed.
+
+The presentation reuse requirement is met by executed tabular, bibliographic
+and Beamer exports, a four-page individually inspected role-aware source-card
+example, and documented source-fragment/PDF-appendix imports. The exact review
+copy is recorded in
+`src/sources/papal-documents/presentation-integration-review.md`.
+
+The historical coverage audit identified separate post-1740 continuations,
+Benedict XIV's Bullarium, and Gregory XVI/Pius IX Acta as additional source
+families. Their complete available input witnesses and printing identities are
+being established independently of the initial Turin and journal batches.
+Current visual findings also require explicit supersessions for missing source
+notes, mixed-language identification, stranded headings, erroneous index
+metadata and retained modern portal apparatus. A compiled batch is not a final
+reviewed selection; the combined reader index must apply exact exclusions.
+
+The recovered initial corpus and Acta source checkpoint passes source-library,
+containment, source-inventory, family-catalog and reader-projection checks.
+Its scope, initial compilation counts, baseline comparison and open corrections
+are recorded in `src/sources/papal-documents/validation-checkpoint.md`.
+Source reconstruction, all-page review, final selection and feature publication
+remain open.
+
 ## GPT Last Things and next Sunday propers, 2026-10-25
 
 <!-- promised-deliverable: gpt-flt-and-sunday-2026-10-25 -->

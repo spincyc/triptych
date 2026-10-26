@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.papal-collections.pius-ix-quanta-cura-syllabus.2026-10-26-vatican-latin.html-c173d95c19b6"
+edition_id = "edition.papal-collections.pius-ix-quanta-cura-syllabus.2026-10-26-vatican-latin"
+artifact_type = "official-html-compound-delivery"
+media_type = "text/html"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "Vatican portal Legal Notes §§ 4 and 7 do not establish redistribution permission for the HTML delivery. Its underlying historical Latin wording has a separate derivative basis. https://www.vatican.va/content/vatican/en/legal-notes.html"
+source_url = "https://www.vatican.va/content/pius-ix/la/documents/encyclica-quanta-cura-8-decembris-1864.html"
+retrieved = "2026-10-26"
+sha256 = "c173d95c19b6960c79e06b2177af52e55125b6428d136534a261648a8750c252"
+byte_size = 78744
+indexable = false
+provenance = "Complete response acquired directly over HTTPS and hashed before parsing. The response contains both Quanta cura and the Syllabus; this container owns the whole delivery."
+notes = "Exact response bytes remain outside Git under the portal wrapper restriction. A reader without network can read the separate retained historical-text derivative; the wrapper is unnecessary to that wording."

@@ -1,0 +1,15 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.acta-papal-archives.ass.004.extracted-text-97a4ff73"
+edition_id = "edition.acta-papal-archives.ass.004.1868-acta-ass-004"
+artifact_type = "mechanical-pdf-text-extraction"
+media_type = "text/plain"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "Exact extraction may contain protected text or modern wrappers and remains transient. Separately manifested historical text excludes uncleared material."
+retrieved = "2026-10-26"
+sha256 = "97a4ff7351c3b0e73d5eae7d4e2d68e13a44cae7baa797c6f5580d8225318ec1"
+byte_size = 5105
+derived_from = "artifact.acta-papal-archives.ass.004.extracted-text-767d8ffd"
+transformation = "[\"python\", \"<transient-path>\"]; Select inclusive 1-based LF ranges in listed order; Unicode column slices are 0-based half-open. Whole body first; source note on p129 next; then left-column and right-column notes on p130 (cut at Unicode column 43, inside the inspected gutter). Preserve all selected characters including spaces; append one LF per selected source line/slice. No source words rewritten.; select inclusive 1-based LF ranges and 0-based half-open Unicode columns in this declared order: [{\"physical_line_range\":[5206,5234],\"unicode_columns\":null},{\"physical_line_range\":[5238,5271],\"unicode_columns\":null},{\"physical_line_range\":[5278,5297],\"unicode_columns\":null},{\"physical_line_range\":[5235,5235],\"unicode_columns\":null},{\"physical_line_range\":[5272,5276],\"unicode_columns\":[0,43]},{\"physical_line_range\":[5272,5276],\"unicode_columns\":[43,null]}]; join_previous concatenates consecutive fragments of the same source LF line before its LF; otherwise append LF after each selected source line/slice, preserving all selected characters; Select inclusive 1-based LF ranges in listed order; Unicode column slices are 0-based half-open. Whole body first; source note on p129 next; then left-column and right-column notes on p130 (cut at Unicode column 43, inside the inspected gutter). Preserve all selected characters including spaces; append one LF per selected source line/slice. No source words rewritten."
+notes = "Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

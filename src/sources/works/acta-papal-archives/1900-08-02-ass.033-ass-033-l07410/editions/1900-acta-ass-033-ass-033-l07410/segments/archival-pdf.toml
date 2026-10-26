@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.ass.033.ass-033-l07410.pdf"
+edition_id = "edition.acta-papal-archives.ass.033.ass-033-l07410"
+artifact_id = "artifact.acta-papal-archives.ass.033.vatican-pdf-18fd550d"
+artifact_sha256 = "18fd550d59a2de5ac9f7e283c407c43ee5d1f004032b9109c4cdc733fcb021d6"
+segment_type = "archival-act-locator"
+states = ["cataloged", "acquired", "inspected"]
+artifact_page_ranges = [[193, 194]]
+context = "{\"closing_physical_lines\": [7475, 7477], \"closing_text\": \"    Datum R o m a e apud S. Petrum die I I augusti anno MDCCCC,\\nPontificatus Nostri vigesimo tertio.\\n                                                    L E O PP. X I I I .\", \"end_line\": 7477, \"removed\": \"Running header/page-number lines carrying formfeed and Acta volume/fascicle footers are omitted via disjoint ranges; all remaining source text and notes in selected extent retained.\", \"retained_historical_note_ranges\": [], \"start_line\": 7410}"
+notes = "Artifact-page locators are distinct from the printed page labels [{\"artifact_page\": 193, \"printed_page\": \"193\", \"running_head_text\": \"193\"}, {\"artifact_page\": 194, \"printed_page\": \"194\", \"running_head_text\": \"194                               LITTERAE\"}]. Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

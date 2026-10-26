@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.ass.024.ass-024-015.pdf"
+edition_id = "edition.acta-papal-archives.ass.024.ass-024-015"
+artifact_id = "artifact.acta-papal-archives.ass.024.vatican-pdf-82946251"
+artifact_sha256 = "82946251fed109b469f90a22ec02cd6b6f9fed1ff657b743e093afab3fbfc6b4"
+segment_type = "archival-act-locator"
+states = ["cataloged", "acquired", "inspected"]
+artifact_page_ranges = [[741, 742]]
+context = "{\"ending_context_physical_lines\": [29029, 29049], \"first_physical_line\": 29000, \"last_physical_line\": 29041, \"method\": \"Heading through source dating/subscription and attached historical notes; next source section/act boundary inspected. Page-top running heads and Acta fascicle footers excluded where they occupy whole LF lines.\"}"
+notes = "Artifact-page locators are distinct from the printed page labels [{\"artifact_page\": 741, \"printed_page_header_ocr\": \"741\"}, {\"artifact_page\": 742, \"printed_page_header_ocr\": \"742\"}]. Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.bullarium-romanum.volume-07.unit-0044.1862-turin-latin.source-ocr"
+edition_id = "edition.bullarium-romanum.volume-07.unit-0044.1862-turin-latin"
+artifact_id = "artifact.bullarium-romanum.volume-07.1862-turin-latin.ocr-b4e46f2d1795"
+artifact_sha256 = "b4e46f2d179592823b417f259bb86fa909680bf7bd9b91041aa86f8e0d02c3b8"
+segment_type = "constituent-work"
+physical_line_ranges = [[21637, 22020]]
+states = ["cataloged", "acquired", "inspected"]
+context = "The exact selected raw OCR extent and surrounding boundary context were inspected. Printed attribution is preserved; this is not modern authentication, critical dating or image-collated text. LXI independent synopsis and Pius Papa IV motu proprio protocol21646; promulgating paragraph leads to Placet Motu proprio21681 and explicitly attached tariff table21682–22020. Read every tariff item and both notes21757–21759(currency),21833(publica reading). Last tariff item ends22020 before LXII22026; trailing year header22023 excluded. No genuine act date is printed in selected extent: date_raw21804 is ordinary datum in a tariff item, not a dating clause; retain date null. Signature/table closure and next independent act support exact OCR boundary. Printed conventional formula abbreviations at physical lines21646,21691 retained literally without expansion."
+notes = "Review extent: entire selected OCR range plus20lines either side; no image collation Source text remains uncorrected OCR, with historical synopsis, dating/signatures and apparatus in the selected extent. No image collation or historical authentication is claimed."

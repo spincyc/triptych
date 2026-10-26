@@ -1,0 +1,71 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "mechanical-pdf-text-extraction",
+   "byte_size": 1652831,
+   "edition_owned": true,
+   "id": "artifact.acta-papal-archives.aas.013.extracted-text-49705e18",
+   "media_type": "text/plain",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "restricted"
+  },
+  {
+   "artifact_type": "historical-text-derivative",
+   "byte_size": 1652832,
+   "edition_owned": true,
+   "id": "artifact.acta-papal-archives.aas.013.historical-text-9bf27994",
+   "media_type": "text/plain",
+   "notes": "Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations. [\"Vatican OCR PDF is a text reconstruction; mechanical extraction is not facsimile collation.\", \"Physical lines are 1-based LF-delimited UTF-8 lines; formfeed page delimiters are retained.\", \"Dates are supplied only where a legible terminal dating clause or explicit historical appendix heading supports them; unresolved OCR dates remain null.\", \"Source title headings, OCR spelling and historical notes are retained mechanically; no reconstruction of missing initial letters or corrections to OCR is supplied.\", \"Canonical work joins have not been asserted by this lane.\", \"Dates are supplied only where a legible terminal dating clause or explicit historical appendix heading supports them; unresolved OCR dates remain null.\", \"Source title headings, OCR spelling and historical notes are retained mechanically; no reconstruction of missing initial letters or corrections to OCR is supplied.\", \"Canonical work joins have not been asserted by this lane.\", \"Dates are supplied only where a legible terminal dating clause or explicit historical appendix heading supports them; unresolved OCR dates remain null.\", \"Source title headings, OCR spelling and historical notes are retained mechanically; no reconstruction of missing initial letters or corrections to OCR is supplied.\", \"Canonical work joins have not been asserted by this lane.\", \"No modern prose wrapper was identified in the acquired PDF; no separate original-print facsimile has been collated.\", \"Dates are supplied only where a legible terminal dating clause or explicit historical appendix heading supports them; unresolved OCR dates remain null.\", \"Source title headings, OCR spelling and historical notes are retained mechanically; no reconstruction of missing initial letters or corrections to OCR is supplied.\", \"Canonical work joins have not been asserted by this lane.\"]",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"artifact_page_ranges\": [[1, 1]], \"completion_colophon_line_ranges\": [[27234, 27234]], \"completion_colophon_raw\": \"          ABSOLVITUR   DIE   29   DEC.   1921.   -   TYPIS   POLYGLOTTIS      VATICANIS\", \"evidence\": \"Title and imprint in the acquired Vatican OCR PDF identify Acta Apostolicae Sedis, the annual volume, ROMAE / TYPIS POLYGLOTTIS VATICANIS and its Roman-numeral publication year. This is edition provenance, not facsimile collation.\", \"physical_line_ranges\": [[1, 17]], \"publication_year\": 1921} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "archival-ocr-pdf",
+   "byte_size": 2731780,
+   "edition_owned": true,
+   "id": "artifact.acta-papal-archives.aas.013.vatican-pdf-f3bb05e8",
+   "media_type": "application/pdf",
+   "page_count": 631,
+   "retrieved": "2026-10-26",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.vatican.va/archive/aas/documents/AAS-13-1921-ocr.pdf",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1921",
+  "editors": [],
+  "id": "edition.acta-papal-archives.aas.013.1921-acta-aas-013",
+  "jurisdiction": null,
+  "language": "mul",
+  "publication": "{\"artifact_page_ranges\": [[1, 1]], \"completion_colophon_line_ranges\": [[27234, 27234]], \"completion_colophon_raw\": \"          ABSOLVITUR   DIE   29   DEC.   1921.   -   TYPIS   POLYGLOTTIS      VATICANIS\", \"evidence\": \"Title and imprint in the acquired Vatican OCR PDF identify Acta Apostolicae Sedis, the annual volume, ROMAE / TYPIS POLYGLOTTIS VATICANIS and its Roman-numeral publication year. This is edition provenance, not facsimile collation.\", \"physical_line_ranges\": [[1, 17]], \"publication_year\": 1921}",
+  "title": "Acta Apostolicae Sedis — source witness aas.013",
+  "translators": [],
+  "year": 1921
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "AAS",
+   "Acta Apostolicae Sedis: Commentarium Officiale"
+  ],
+  "author": "Holy See",
+  "category": "official-gazette",
+  "description": "The official gazette of the Holy See. Annual-volume editions and exact delivery artifacts remain container identities distinct from the constitutions, decrees, notifications, rescripts, and other acts printed within them.",
+  "id": "work.holy-see.acta-apostolicae-sedis",
+  "languages": [],
+  "title": "Acta Apostolicae Sedis"
+ }
+}

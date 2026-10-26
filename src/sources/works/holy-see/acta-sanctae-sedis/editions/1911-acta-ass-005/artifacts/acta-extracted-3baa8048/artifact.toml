@@ -1,0 +1,15 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.acta-papal-archives.ass.005.extracted-text-3baa8048"
+edition_id = "edition.acta-papal-archives.ass.005.1911-acta-ass-005"
+artifact_type = "mechanical-pdf-text-extraction"
+media_type = "text/plain"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "Exact extraction may contain protected text or modern wrappers and remains transient. Separately manifested historical text excludes uncleared material."
+retrieved = "2026-10-26"
+sha256 = "3baa8048d9ab0c95f84636072439b07d4313627c642abd223cfa1858406e4328"
+byte_size = 21406
+derived_from = "artifact.acta-papal-archives.ass.005.extracted-text-96d9529b"
+transformation = "[\"python\", \"<transient-path>\"]; Concatenate the listed inclusive 1-based physical LF ranges in listed order. Preserve each selected line byte-for-byte and append its original terminating LF; no words added, corrected, or rewritten. No extra inter-range separator inserted. FF/header/decorative/curial ranges are omitted explicitly.; concatenate source LF ranges in this declared order: [[12724,12737],[12741,12772],[12781,12813],[12819,12853],[12856,12888],[12892,12926],[12929,12964],[12967,13003],[13006,13044],[13048,13084],[13087,13118],[13122,13127],[12738,12738],[12773,12778],[12814,12816],[12889,12889],[13119,13119]]; join with LF and one terminal LF; Concatenate the listed inclusive 1-based physical LF ranges in listed order. Preserve each selected line byte-for-byte and append its original terminating LF; no words added, corrected, or rewritten. No extra inter-range separator inserted. FF/header/decorative/curial ranges are omitted explicitly."
+notes = "Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

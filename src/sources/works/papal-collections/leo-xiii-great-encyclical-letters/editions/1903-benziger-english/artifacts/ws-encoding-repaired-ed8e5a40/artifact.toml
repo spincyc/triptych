@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-encoding-repaired-ed8e5a40"
+edition_id = "edition.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english"
+artifact_type = "encoding-repaired-web-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Only the wording of the English translation collection printed in the United States by Benziger Brothers in 1903 is retained. Its historical translation/notes are public domain in the United States on the publication-term basis verified on the printed copyright leaf. Modern Wikisource navigation, contributor markup, links, styles, parsing reports and page-number controls are removed; no creative modern revision or independent commentary is intentionally retained. The derivative is a transcription with residual recognition errors, not a critical or corrected edition."
+rights_jurisdiction = "United States"
+provenance = "Mechanically replayed from the retained Wikisource-derived 1903 English container using the newly manifested source package, exact IA corroboration audit and deterministic recipe. All 30 historical chapters remain in source order; no source wording was generated or rewritten by a language model."
+retrieved = "2026-10-26"
+derived_from = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.encoding-source-package-613ca345"
+transformation = "Apply exactly 205 declared non-ASCII spans from the retained audit: 193 intact Windows-1252 display/UTF-8 reversals and 12 independently OCR-corroborated partial black-square marker repairs. Require unique exact case-sensitive IA context after whitespace-only folding. Preserve every ASCII character, all whitespace, every physical line and source date; verify exact original reconstruction by reversing patches. No dictionary, lexical rewriting, dehyphenation, fresh OCR substitution or whole-print collation."
+encoding = "utf-8"
+indexable = true
+notes = "Encoding-only derivative of the separately retained original transcription. Contains 1,111,469 bytes and 3,602 physical lines. All 205 spans occur in 11 document selections; the other 20 selections keep their prior controllers. Genuine OCR word errors, annotation noise and documented source-heading date discrepancies remain. The complete unchanged audit distinguishes intact reversals from corroborated partial marker repairs; no verified evidence state is asserted."
+sha256 = "ed8e5a405701a51eec9124f0e63a4db7740ded35545fe5d99874ac9581541879"
+byte_size = 1111469
+path = "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/ws-encoding-repaired-ed8e5a40/great-encyclical-letters-encoding-repaired.txt"

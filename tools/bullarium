@@ -1,0 +1,33 @@
+#!/usr/bin/env python3
+"""Acquire Bullarium witnesses and audit source-bounded historical units."""
+from pathlib import Path
+import sys
+sys.dont_write_bytecode = True
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+from _bullarium import main
+from _tooling import Example
+
+EXAMPLES = {
+    'acquire': (
+        Example('tools/bullarium acquire --volume 0 --json', ('{"code":"input","error":"volume must be 1-24 or appendix","status":"error","v":1}',), 'An invalid selection is refused before network access or source mutation.'),
+        Example('tools/bullarium acquire --volume 0', ('bullarium: volume must be 1-24 or appendix',), 'The same refusal in ordinary text.'),
+    ),
+    'reconstruct': (
+        Example('tools/bullarium reconstruct --volume 0 --revision 2026-10-26T00:00:00Z --json', ('{"code":"input","error":"volume must be 1-24 or appendix","status":"error","v":1}',), 'An invalid selection cannot overwrite the canonical reconstruction.'),
+        Example('tools/bullarium reconstruct --volume 0 --revision 2026-10-26T00:00:00Z', ('bullarium: volume must be 1-24 or appendix',), 'The same refusal in ordinary text.'),
+    ),
+    'admit': (
+        Example('tools/bullarium admit --volume 0 --review .scratch/bullarium_reconstruction/absent.json --revision 2026-10-26T00:00:00Z --json', ('{"code":"input","error":"volume must be 1-24 or appendix","status":"error","v":1}',), 'Invalid admission selection is refused before any constituent is registered.'),
+        Example('tools/bullarium admit --volume 0 --review .scratch/bullarium_reconstruction/absent.json --revision 2026-10-26T00:00:00Z', ('bullarium: volume must be 1-24 or appendix',), 'The same refusal in ordinary text.'),
+    ),
+    'check': (
+        Example('tools/bullarium check --volume 0 --json', ('{"code":"input","error":"volume must be 1-24 or appendix","status":"error","v":1}',), 'Invalid source selections are rejected explicitly.'),
+        Example('tools/bullarium check --volume 0', ('bullarium: volume must be 1-24 or appendix',), 'The same refusal in ordinary text.'),
+    ),
+    'status': (
+        Example('tools/bullarium status --volume 0 --json', ('{"code":"input","error":"volume must be 1-24 or appendix","status":"error","v":1}',), 'Invalid scope is not silently reported as the full collection.'),
+        Example('tools/bullarium status --volume 0', ('bullarium: volume must be 1-24 or appendix',), 'The same refusal in ordinary text.'),
+    ),
+}
+if __name__ == "__main__":
+    raise SystemExit(main(examples=EXAMPLES))

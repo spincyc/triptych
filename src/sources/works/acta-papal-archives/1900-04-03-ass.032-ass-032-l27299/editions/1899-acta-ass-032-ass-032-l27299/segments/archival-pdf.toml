@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.ass.032.ass-032-l27299.pdf"
+edition_id = "edition.acta-papal-archives.ass.032.ass-032-l27299"
+artifact_id = "artifact.acta-papal-archives.ass.032.vatican-pdf-072891d7"
+artifact_sha256 = "072891d7cb651685353d1ed5dc56aa63de69923130f766e3ed958f0b85368157"
+segment_type = "archival-act-locator"
+states = ["cataloged", "acquired", "inspected"]
+artifact_page_ranges = [[700, 701]]
+context = "{\"closing_physical_lines\": [27333, 27339], \"closing_text\": \"pensione indulgentiarum hoc anno Iubilaei. Datum Romae apud\\nS. Petrum sub Annulo Piscatoris die III Aprilis MDCCCC , Pon-\\ntificatus Nostri Anno Vigesimo tertio.\\n\\n                               Pro Dno Card. MACCHI\\n\\n                                   NICOLAUS MARINI,     Substitutus.\", \"end_line\": 27339, \"removed\": \"Running header/page-number lines carrying formfeed and Acta volume/fascicle footers are omitted via disjoint ranges; all remaining source text and notes in selected extent retained.\", \"retained_historical_note_ranges\": [], \"start_line\": 27299}"
+notes = "Artifact-page locators are distinct from the printed page labels [{\"artifact_page\": 700, \"printed_page\": \"700\", \"running_head_text\": \"700          EX S. G. NEG. ECCL. EXTRA ORD. PRAEPOSITA\"}, {\"artifact_page\": 701, \"printed_page\": \"701\", \"running_head_text\": \"EX S. C. NEG. ECCL. EXTRAORD. PRAEPOSITA            701\"}]. Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

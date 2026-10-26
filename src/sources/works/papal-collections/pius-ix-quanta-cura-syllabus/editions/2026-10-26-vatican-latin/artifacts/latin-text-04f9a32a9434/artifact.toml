@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.papal-collections.pius-ix-quanta-cura-syllabus.2026-10-26-vatican-latin.latin-text-04f9a32a9434"
+edition_id = "edition.papal-collections.pius-ix-quanta-cura-syllabus.2026-10-26-vatican-latin"
+artifact_type = "normalized-compound-transcription"
+media_type = "text/plain"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Original Latin wording of Quanta cura and the Syllabus errorum identified in Pii IX Pontificis Maximi Acta, pars prima, volume III (Romae, 1864), pp. 687–700 and 701–717. The corresponding complete pre-1931 facsimile was inspected for work identity, full opening/ending bounds, Quanta terminal clauses, note apparatus, and all ten Syllabus sections. United States expired-term assessment under 17 U.S.C. 304/305, with 104A limited to remaining term and 103(b) preserving the status of preexisting wording. This basis excludes modern Vatican HTML, Denzinger bibliography, Google marks, scan wrappers, and creative modern additions; it does not assert complete verbal collation. See src/sources/inventories/papal-documents-rights-v1.toml."
+rights_jurisdiction = "United States"
+source_url = "https://www.vatican.va/content/pius-ix/la/documents/encyclica-quanta-cura-8-decembris-1864.html"
+retrieved = "2026-10-26"
+sha256 = "04f9a32a9434f0a63fee57b2c58d51c629525a3c084888fd5a6cdb68fce7f0ea"
+byte_size = 41220
+path = "src/sources/works/papal-collections/pius-ix-quanta-cura-syllabus/editions/2026-10-26-vatican-latin/artifacts/latin-text-04f9a32a9434/text.txt"
+encoding = "utf-8"
+indexable = true
+derived_from = "artifact.papal-collections.pius-ix-quanta-cura-syllabus.2026-10-26-vatican-latin.html-c173d95c19b6"
+transformation = "Mechanically extract the complete Vatican rich-text body with vatican-richtext-plain-v1; remove navigation/markup, decode entities, normalize intra-block whitespace, and join blocks with blank LF lines. Exclude the exact modern separator, the erroneous bibliographic block beginning *AAS 3 (1867), and the Denzinger 2012 bibliographic block; remove the single source-title asterisk after QUANTA CURA. Preserve all papal wording, fourteen Quanta notes, Syllabus ten sections/eighty propositions, references, and source defects."
+provenance = "Full facsimile http://www.documentacatholicaomnia.eu/01p/1846-1878,_SS_Pius_IX,_Pontificis_Maximi_acta_Pars_I_Vol_03,_LT.pdf, SHA-256 7ce7f56c91dfeea894474e2bb30be573eab1aab355cced00db5a3d4906f3123d, 21256700 bytes. Quanta printed 687–700 equals PDF 697–710; Syllabus printed 701–717 equals PDF 711–727. Matching Google Books record https://books.google.com/books?id=LENDAAAAcAAJ dates volume III to 1864. ASS 3 (1867) 160–167 explicitly abbreviates Quanta’s terminal Jubilee section; it cannot establish complete terminal wording. The full Acta witness supplies it. Offline historical witness: artifact.papal-collections.pii-ix-acta-pars-prima-volume-3.1864-rome.historical-pages-687-717-29394b6ec926, SHA-256 29394b6ec926106eb754b04c0ec443a8a9db9ef350fbf84b366ba06a7dd5826d, retained under the full-volume owner; derivative pages 1–14 witness Quanta and 15–31 the Syllabus."
+notes = "One payload contains both constituent works. Its Quanta portion preserves the complete terminal prayer, blessing, date, signature and 14 historical notes. Its Syllabus portion preserves sections I–X and propositions I–LXXX with references. Known transcription defects include the final Syllabus reference Multis gravibusque 17 December 1860 where the 1864 Acta printing reads Iamdudum cernimus 18 March 1861. No full-wording collation or correction claimed."
