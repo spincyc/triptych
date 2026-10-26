@@ -1,0 +1,193 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-body.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "homily-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
+      "element_keys": [
+        "introit",
+        "collect",
+        "commemoration-collect",
+        "lesson",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "commemoration-secret",
+        "preface",
+        "communion",
+        "postcommunion",
+        "commemoration-postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Bede",
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Alfredo Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Bede",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "communion-of-saints"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "communion-of-saints",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Bede",
+            "Thomas Aquinas",
+            "Gregory the Great",
+            "Alfredo Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "purification-and-rest"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "purification-and-rest",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
+    "files": {
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/homily.tex": "c3a834162cbdbf64465e6746ceb290db366eccaaa458b4476c5fac649a31d360",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/interpretations.md": "a2c3d969d4bd190b420942e4d346c83e98b66222f6c59babdbba4e11593a2de2",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/scope.md": "bfba609a58e751b44de767ea0ca62a6005bc79293cdcb084b50654b9b16575a7",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/source-bindings.toml": "39c3420421dfc2014689000c10d2b19e1cd8df4a05e151dfba41a3e7192caba8",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/10-body.tex": "fcc2dfd1e332fb1171e7b0fbbc62e5663e0dc645ae4305c75d35bd20ea7d99d1",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/90-apparatus.tex": "e6b11acb0ec8179170618a1546ca643c4f114508df8b389faaade47fbf93f33d"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "15",
+            "4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83",
+            "fb0417d471635250",
+            "24c1b7ce1781f79937f57b66c221b0ed82e219d9",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "PASS: independently read All Saints: The Rest Christ Gives (homily.tex and both homily components) continuously as speech, compared its argument with the reviewed purification-and-rest study and concise commentary, and checked Chrysostom Matthew XXXVIII.3\u20135/XV.7, Augustine Sermon on the Mount I.1.3/I.2.5\u20139/I.3.10, Bede on Apocalypse 7:9,12 against Marshall 1878 pp. 52\u201353 images, the registered Douay\u2013Rheims loci, and MR 1962 pp. 702\u2013703/416\u2013417 images; the argument makes Christ's rest intelligible within costly obedience, depends materially on these appointments, meaningfully uses the Mass's petitions, and earns its concrete response to an insult and concluding hope without a recurring rhetorical device, false attribution, or invented experience. The separate note accurately distinguishes contextual yoke verses and editorial connections, all nine sealed file hashes match, and the independently reproduced 1,236-word count yields 10.3\u201311.2 minutes at the stated 110\u2013120 words per minute; this is a source-and-speech review of historical English and appointed Latin, with no original-language patristic collation, audible rehearsal, timed human delivery, or later visual/publication acceptance claimed."
+}

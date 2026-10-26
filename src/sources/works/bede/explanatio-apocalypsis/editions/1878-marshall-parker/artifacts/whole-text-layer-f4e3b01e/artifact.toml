@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.bede.explanatio-apocalypsis.1878-marshall-parker.whole-text-layer-f4e3b01e"
+edition_id = "edition.bede.explanatio-apocalypsis.1878-marshall-parker"
+artifact_type = "extracted-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Machine extraction of the historical 1878 English and mechanical scan under the same United States basis as the parent. Uncorrected OCR and text-layer segmentation add no human authorship."
+retrieved = "2026-10-25"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.bede.explanatio-apocalypsis.1878-marshall-parker.whole-scan-65cb5fc5"
+transformation = "Complete pdftotext -layout extraction of all 192 parent PDF pages. Preserve page separators, source OCR errors and headers; no corrected reading is implied."
+provenance = "Whole preparatory extraction reused and rehashed at registration; source was acquired without a model in the retrieval path."
+notes = "Complete offered PDF extraction, not a verified transcription. Research read the chapter VII context; only separately checked excerpts may be used as exact quotations."
+sha256 = "f4e3b01e338c418d92fa408b4cdd326bc9daf0a0bce86103ea4c451d1a232493"
+byte_size = 334202
+path = "src/sources/works/bede/explanatio-apocalypsis/editions/1878-marshall-parker/artifacts/whole-text-layer-f4e3b01e/source.txt"

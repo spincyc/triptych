@@ -264,7 +264,7 @@ NOT_A_READING = str.maketrans(
     {"‘": "'", "’": "'", "“": '"', "”": '"', "–": "-", "—": "-"}
 )
 # The fixed-calendar spine and the Advent-first temporal catalog normally use
-# the same registry string.  These five 1962 celebrations are the complete,
+# the same registry string.  These 1962 celebrations are the complete,
 # measured exception: they are fixed dated rows in the former and numbered
 # temporal formularies in the latter.  Keeping the bounded crosswalk here
 # preserves that namespace distinction without turning every unique registry
@@ -280,6 +280,7 @@ SPINE_REGISTRY_CROSSWALK = frozenset(
         ),
         ("vigil-nativity-lord", "1962-12-24", "05"),
         ("nativitate-domini-octave", "1962-12-25", "06"),
+        ("omnium-sanctorum", "1962-11-01", "F02"),
     }
 )
 # The companion beside a mass index that states which rubric governs what. A
@@ -3108,7 +3109,7 @@ def _spine_identity_problems(entry: dict, mass: dict, section_kind: str) -> list
         problems.append(
             f"{registry} ({title}) identifies registry {registry!r}, but mass "
             f"{actual['key']!r} carries {mass_registry!r}; this is not one of the "
-            "five recorded fixed-row/temporal-catalog crosswalks"
+            "recorded fixed-row/temporal-catalog crosswalks"
         )
     if section_kind != entry.get("kind"):
         problems.append(

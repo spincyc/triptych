@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-scriptural-propers-la-checked-415a1d46"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Bounded Latin printed in Tours Mame 1922, under the parent’s United States publication-term and mechanical-reproduction basis."
+retrieved = "2026-10-25"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Retain six full image-checked bodies in order Lesson, Gradual, Alleluia, Gospel, Offertory, Communion; join line/page wraps and divided words, normalize spacing and expand ornamental initials. Remove printed stress accents, expand ae/oe ligatures and retain historical consonantal j; render the versicle sign as V. Keep source text and internal selections, not complete Bible verses."
+provenance = "Research independently read the exact same-witness images at 200 and 400 dpi on 25 October 2026. Registration reread pages carrying the words and boundaries; all original whole-byte receipts were rehashed. Full Lesson begins before the page break; all source page ranges are stated by the individual passages."
+notes = "One complete proper body per physical line. Biblical citations, headings, Creed direction, octave directions, neighbouring prayers and independent English Bible-study strings are excluded. These six are additional to the existing four-own-proper bodies; no duplicate full-book payload is created."
+sha256 = "415a1d46247319454acba448e3611deaf16453a01560085850c27dea2f22fe4f"
+byte_size = 2843
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/all-saints-scriptural-propers-la-checked-415a1d46/propers.txt"

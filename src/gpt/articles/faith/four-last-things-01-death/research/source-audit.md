@@ -1,5 +1,13 @@
 # Death — Source Audit
 
+## Voice revision — 2026-10-25
+
+This revision changes expression and explanatory connections under the current editorial voice guidance. It preserves the argument's doctrinal conclusions, material uncertainties, source roles, and medical and sacramental qualifications. The references and all thirteen source bindings are byte-identical to the preceding publication. Romans 14:8 remains the only direct biblical quotation, with exactly the same wording. Every original body parenthetical is preserved except the division of Luke 23:39–46 into the contiguous 23:39–43 and 23:44–46 at their respective claims. The unchanged terminal scope retains the edition, rights, and reliance boundaries.
+
+Two retained primary loci were reopened during the prose pass: Dods, *City of God* XIII.3–6, physical lines 20813–20970, including the complete XIII.4–5 argument; and the retained Roberts–Donaldson *Martyrdom of Polycarp* XIV with its nearby apparatus, physical lines 3930–3995. These bounded checks support the revised explanations of the baptized person's remaining mortality and Polycarp's thanksgiving with bodily resurrection hope. They are readings of the existing electronic witnesses, with no new acquisition, image collation, original-language collation, or source-state promotion. The October 13 encounters and currentness dates below remain the evidence for the other source claims; this prose pass does not claim fresh verification of mutable medical or sacramental guidance.
+
+Exact conservation and targeted-build results are in [revision-2026-10-25.md](revision-2026-10-25.md). Independent source review, all-page visual review, web conversion and review, source-inventory reconciliation, release reconciliation, installation, and publication belong to the coordinating task. The earlier acceptances below remain historical, tied to their recorded artifacts.
+
 ## Current extended draft — 2026-10-13
 
 This audit supersedes the short contemplative candidate's audit as a description of the current text. The new commission is approximately 25 pages **per essay**. The first extension contained 9,857 body words and received independent content acceptance, but its established 11-point, one-inch-margin build produced only 19 pages. The physical-page requirement therefore superseded the initial word estimate. This recalibrated draft contains approximately **13,360 body words**, excluding section headings, preamble, terminal scope, references, and metadata. Neither the earlier five-page PDF nor the accepted 9,857-word baseline validates this new expansion.

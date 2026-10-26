@@ -7,6 +7,65 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-10-25.
 
+## GPT Last Things and next Sunday propers, 2026-10-25
+
+<!-- promised-deliverable: gpt-flt-and-sunday-2026-10-25 -->
+
+**Complete.** Apply the recent Catholic voice and plain-drafting guidance
+to the four GPT Four Last Things essays, preserving their substantive
+source-based spiritual reading and approximate existing extent. Complete the
+GPT 1962 proper-study workflow for next Sunday, 1 November 2026, after verifying
+the appointed Mass and its permanent identity. Use independent cold review,
+resolve material findings, review every affected rendered page and web edition,
+and publish the validated result to `main` with deployment verification.
+The Claude publications are outside this provider's revision scope.
+
+Work begins from clean `6a1fe6e33`, fast-forwarded from `origin/main`, on
+workspace branch `feature/propers/codex`. Commits stay on that branch;
+validated publication to `main` uses a genuine fast-forward ref update,
+without changing the local branch or rewriting history. The owning record is
+`workflows/reviews/gpt-flt-and-sunday-2026-10-25/RECORD.md`.
+
+The four essays pass independent content/source and separate artifact/web
+reviews, with all material findings resolved. Their 96 pages (24/24/25/23)
+and four web editions are installed at their accepted hashes; references,
+bindings and the preceding production receipt remain preserved. All Saints,
+F02, reaches native **ACCEPTED** in version-15 run `fb0417d471635250`.
+Its 22-page study, ten-page synthesis and three-page, 1,236-word homily pass
+independent content review, all 35 rendered pages and desktop/phone web review.
+The native archive preserves 25 results and 25 packets across 55 files and
+matches an independently reproduced archive exactly. One nonblocking advisory
+about a process sentence remains recorded for the next revision.
+
+All seven PDFs and five canonical Markdown files match accepted bytes. The
+source checkpoint has 72 bindings, five admitted Bede passages and reviewed
+Source/Catena/Proper projections. Focused publication, catalogue, web-currentness,
+inventory/family and scoped release checks pass. An inherited main deployment
+failure was independently repaired through two exact Ordinary role declarations;
+its current check passes across 1,629 forms with strict applicability guards
+preserved. Post-archive inventory/family refresh is complete. Final aggregate
+source/site checks, outgoing integration review, main push and live verification
+remain outstanding. The global chronology and source-family audits remain open;
+this target's qualified dates have their own accepted source-fidelity review.
+
+Prepush main advanced to `f3f59d483` with reviewed missal-source/RG110 work.
+Ordinary integration preserves both lines; shared projections are regenerated
+and both guard suites pass. Fresh source review accepts the unchanged F02
+facts and artifacts in the merged context, explicitly retaining the historical
+meaning of four changed global research seals. Full merged source, site,
+Pages-verifier, release/ledger and tool-registry checks now pass. Final cold
+review accepts the eight-commit outgoing range with all 1,285 new blobs checked;
+the built site preserves the exact reviewed artifact and HTML bytes.
+
+Commit `d67e2259c3ee87cdd78608330b86e2c300443da6` is published to the workspace
+feature ref and to `main` by genuine fast-forward. Pages run `40259179418` and
+hygiene run `40259179414` both succeed for that exact commit. At 02:48 UTC on
+26 October, all 23 normal live routes return 200 and match the reviewed/local
+bytes: seven canonical PDFs, seven provider aliases, five web editions, both
+owning library pages, catalogue data and the publication manifest. The owning
+record retains the exact hashes and run links. This completion receipt records
+that verified source publication; its own changes are closure records only.
+
 ## GPT proper-study register revision, 2026-10-23
 
 <!-- promised-deliverable: gpt-propers-register-2026-10-23 -->

@@ -1,0 +1,15 @@
+{
+  "name": "source-aggregate",
+  "command": [
+    "make",
+    "PYTHON=.scratch/publication-prep/venv/bin/python",
+    "check-sources"
+  ],
+  "path_prepend": ".scratch/publication-prep/venv/bin",
+  "started_at_utc": "2026-10-26T01:07:31.215193+00:00",
+  "finished_at_utc": "2026-10-26T01:11:50.071049+00:00",
+  "elapsed_seconds": 258.856,
+  "exit": 2,
+  "log": ".scratch/root-publication/source-check.log",
+  "log_sha256": "6d998daddec7b8cbf14188fc54137037e731cd2cb91b2ad82534bf5c4d99f316"
+}

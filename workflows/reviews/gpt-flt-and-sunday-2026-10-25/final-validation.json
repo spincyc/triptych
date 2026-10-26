@@ -1,0 +1,134 @@
+{
+  "schema": 1,
+  "scope": "Completed local publication validation; hosted deployment is recorded separately",
+  "candidate_commit": "f69a5eb67aa5ec5f44a6544cc616bd44b03aca30",
+  "verified_at_utc": "2026-10-26T02:21:50.287050+00:00",
+  "python": "3.14.8",
+  "python_markdown": "3.10.3",
+  "pyyaml": "6.0.3",
+  "command_home_prefix_normalized": true,
+  "all_required_local_checks_pass": true,
+  "checks": [
+    {
+      "name": "merged-source-aggregate",
+      "command": [
+        "make",
+        "PYTHON=.scratch/publication-prep/venv/bin/python",
+        "check-sources"
+      ],
+      "path_prepend": ".scratch/publication-prep/venv/bin",
+      "started_at_utc": "2026-10-26T02:07:31.541739+00:00",
+      "finished_at_utc": "2026-10-26T02:12:00.346274+00:00",
+      "elapsed_seconds": 268.805,
+      "exit": 0,
+      "log": ".scratch/root-publication/merged-source-check.log",
+      "log_sha256": "03624263c5ef549fcc9c507003ad776a5887e60363faed9f25785c6a9ddfbc6b"
+    },
+    {
+      "name": "merged-site-build",
+      "command": [
+        "make",
+        "PYTHON=.scratch/publication-prep/venv/bin/python",
+        "public-site"
+      ],
+      "path_prepend": ".scratch/publication-prep/venv/bin",
+      "started_at_utc": "2026-10-26T02:07:31.536487+00:00",
+      "finished_at_utc": "2026-10-26T02:07:53.040781+00:00",
+      "elapsed_seconds": 21.504,
+      "exit": 0,
+      "log": ".scratch/root-publication/merged-site-build.log",
+      "log_sha256": "a4a64240735b35a9d2657ec36bd4348c9685cb98b4b957a4ad707a8eb0b49f3f"
+    },
+    {
+      "name": "merged-github-pages-verification",
+      "command": [
+        ".scratch/publication-prep/venv/bin/python",
+        "tools/tpt",
+        "public-alpha",
+        "verify",
+        "--deployment-target",
+        "github-pages"
+      ],
+      "path_prepend": ".scratch/publication-prep/venv/bin",
+      "started_at_utc": "2026-10-26T02:10:26.591588+00:00",
+      "finished_at_utc": "2026-10-26T02:10:48.304062+00:00",
+      "elapsed_seconds": 21.712,
+      "exit": 0,
+      "log": ".scratch/root-publication/merged-site-verify.log",
+      "log_sha256": "b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14"
+    },
+    {
+      "name": "merged-release-promises-tooling",
+      "command": [
+        "make",
+        "PYTHON=.scratch/publication-prep/venv/bin/python",
+        "check-release-bindings",
+        "check-promised-deliverables"
+      ],
+      "path_prepend": ".scratch/publication-prep/venv/bin",
+      "started_at_utc": "2026-10-26T02:07:31.537036+00:00",
+      "finished_at_utc": "2026-10-26T02:07:41.882087+00:00",
+      "elapsed_seconds": 10.345,
+      "exit": 0,
+      "log": ".scratch/root-publication/merged-release-promises.log",
+      "log_sha256": "43c7be1fd17cd369a90e7b88a1a0304e9879d75af8f3d19f9c2eb7caa921b649"
+    },
+    {
+      "name": "merged-tool-registry",
+      "command": [
+        "$HOME/.local/bin/tmt",
+        "check"
+      ],
+      "path_prepend": ".scratch/publication-prep/venv/bin",
+      "started_at_utc": "2026-10-26T02:07:59.318043+00:00",
+      "finished_at_utc": "2026-10-26T02:08:02.820247+00:00",
+      "elapsed_seconds": 3.502,
+      "exit": 0,
+      "log": ".scratch/root-publication/merged-tool-registry.log",
+      "log_sha256": "dc51b8c96c2d745df3bd5590d990230a482fd247123599548e0632fdbf97fc22"
+    }
+  ],
+  "source_input_git_objects": {
+    ".gitattributes": "d955bffa0bc87bf0ecdbe3e7739fc2636a6160a3",
+    ".github": "c3ac44065e1a5a5150da82a2b142036a02b7d26d",
+    ".gitignore": "48d8804e984bf8f1743505ce11f6852f6cdf5da5",
+    "ABOUT.md": "c0eecb799647360d3dcbddcd00f09d5a894a24de",
+    "AGENTS.md": "a8397c2076f59577165e0f8e7be4030daccd95d7",
+    "CONTRIBUTING.md": "ef55e1679c7f849a392e23ce538a3591e5d9efa6",
+    "LICENSE": "a351b9d0bd02ca2710a6b375cdd39ff4147a26e9",
+    "LICENSES": "3e3ebed261a28883f50e3a84251a8ff7ac66c64a",
+    "Makefile": "b91b27bf35eb446d4ad9a09dd343c806116940f7",
+    "README.md": "d712a97384667e93571a51c081367f983021d8ad",
+    "THIRD_PARTY.md": "7fd6c18caf7c847c116fd726964fccf033dda474",
+    "build": "3060edba992797389120c2b4aea7238a080d85fd",
+    "docs": "cfdbfd7449b20846e6cd52e74bdf52b0f7988ac4",
+    "guidance": "e6629c93a4cb65aa7821cc60f3eb0c531e1ce449",
+    "library": "1a9986b8883ee95c0420771d80fcac2c243084a3",
+    "pdf": "0cd529ae0597bdd2dc77c88603f056ebc6c44796",
+    "release": "05ce9533740ea022a2c562b26ba1c9f760aea5db",
+    "requirements-public-alpha.txt": "5cd195ce957cd391691809101a8670fd525efad5",
+    "requirements-tools.txt": "f62ce0c56db2b5d134cff98f7fb1625023cd2874",
+    "requirements-tui.txt": "0fa02d7d2259089f57be8638e5583bbc5cef788f",
+    "scripts": "1bd3959f36e0deddfa958d95363635fe55cfa028",
+    "src": "e70c174cc0a0ca97cd7d0fe6eff3c1339fad0e5b",
+    "tests": "707d71bccc7e168ad3ef3e0f9f9fe293c9cd9e50",
+    "tmt.json": "8d795c61d5c8d88b9a4c49e604188ef391db18a4",
+    "tools": "ed66c869ac99bbd2867a2bdcef6bac6247ea1ae4",
+    "web": "9ffe1857c2595b2a5138241950486fd4e73e93fb",
+    "workflows/ARCHITECTURE.md": "c4e0a7000f338f06ad4d563546e0f082892f3f28",
+    "workflows/OPERATOR.md": "9d32c872ba0366c561d72c45c6822525c2f0b58a",
+    "workflows/fragments": "be43d2ea84c94e5d0710811a0f31708bfb2a1486",
+    "workflows/pipelines": "15435599c865600db8fe4986db609a201b968ca8",
+    "workflows/schema": "b742d12e339a7bcbb2852efbd4ea702d78f028fa",
+    "workflows/reviews/gpt-1962-all-saints-production-2026-10-25/CYCLES.md": "f0c79683f200a75c61b726470c46e2ac36c98a9b"
+  },
+  "publication_delta_sha256": "ffd75d2a64aa061eb20bef6aa5667687605945c8a4f934a5dcd94ee41b7508a3",
+  "installed_artifacts_sha256": "696fec8601a266ab3155ba53560b032f40ac8fb0b7dbbffde4035f7ded82a125",
+  "native_terminal_result_sha256": "87e27f47187bceefeff0205ab007611fe381e50491f82a337afa2b2f1cdd7d2a",
+  "final_cold_review_sha256": "be8e77d8b4b268b6d297ea29552fcb396ac7ce1cec4f0530ef88d58bbc9ffa46",
+  "known_nonblocking": [
+    "WEB-REGISTER-001 retained for next revision",
+    "Accepted appointed-text component retains one EOF blank; its sealed bytes are preserved"
+  ],
+  "historical_research_global_seals": "Four whole-file hashes changed on main integration; fresh scoped review accepts unchanged target facts and documents historical boundary in main-reconciliation-cold.md"
+}

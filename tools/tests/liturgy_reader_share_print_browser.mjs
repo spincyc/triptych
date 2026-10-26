@@ -700,7 +700,7 @@ try {
     await new Promise((done) => chrome.once('exit', done));
   }
   await instance.close();
-  await rm(profile, { recursive: true, force: true });
+  await rm(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
 }
 const unexpectedFailedRequests = failedRequests.filter((one) => !one.canceled);
 const clean = failures.length === 0 && consoleProblems.length === 0 &&

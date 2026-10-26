@@ -1,0 +1,88 @@
+{
+  "phase": "final-postarchive-publication-source-refresh",
+  "complete_for_this_boundary": true,
+  "full_source_site_and_deployment_gates_not_run": true,
+  "terminal_run": "fb0417d471635250",
+  "archive": {
+    "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/fb0417d471635250",
+    "files": 55,
+    "suffix_counts": {
+      ".json": 29,
+      ".md": 1,
+      ".txt": 25
+    },
+    "additional_inventory_text_surfaces": 26
+  },
+  "commands": [
+    {
+      "command": "python tools/tpt source-inventory refresh --audited-on 2026-10-25",
+      "exit": 0,
+      "log": ".scratch/publication-integration/final-postarchive-inventory-refresh.log"
+    },
+    {
+      "command": "python tools/tpt source-family-migration refresh --audited-on 2026-10-25",
+      "exit": 0,
+      "log": ".scratch/publication-integration/final-postarchive-family-refresh.log"
+    },
+    {
+      "command": "python tools/tpt source-inventory check",
+      "exit": 0,
+      "log": ".scratch/publication-integration/final-postarchive-inventory-check.log"
+    },
+    {
+      "command": "python tools/tpt source-family-migration check",
+      "exit": 0,
+      "log": ".scratch/publication-integration/final-postarchive-family-check.log"
+    },
+    {
+      "command": "python tools/tpt release-bindings status",
+      "exit": 0,
+      "log": ".scratch/publication-integration/final-postarchive-release-check.log"
+    },
+    {
+      "command": "git diff --check -- src/sources/inventories/publications-v1.toml src/sources/inventories/source-family-migration-v1.toml",
+      "exit": 0
+    }
+  ],
+  "changed_paths": {
+    "src/sources/inventories/publications-v1.toml": "e96f5c0ea324ac7bfd72b3c8f4901c87253bcb094f706af562f197d4233b8253",
+    "src/sources/inventories/source-family-migration-v1.toml": "200e00c45f6746a63437aa6d5c7d544245ba538187e38ae97fee01702266ebf6"
+  },
+  "classification_unchanged_sha256": "84508e6a958f6c97744cac20e5d5cfa704c5f39472d0f20a4baf00f4c53d0b2e",
+  "source_categories_unchanged": true,
+  "inventory": {
+    "publications": 151,
+    "source_surface_files": 2809,
+    "owners": 12,
+    "snapshot": "sha256:2c7d11c1e9b4e56128a5d5d158a01cf818000f11e3bfc5b30d8e6ce30e05ed7a"
+  },
+  "family": {
+    "review_units": 163,
+    "states": {
+      "pending": 163
+    },
+    "families": 0,
+    "atomic_citation_coverage": false,
+    "snapshot": "sha256:d6d3397a427bbb8faa9065ac59a191911653f0c7d86a6646ab9fd013ff6381f7",
+    "canonical_catalog_snapshot": "sha256:1bca13f2d05c7aec788b4f5593eea9b06f666507f78a8f1e9adb834eabc5f5b4"
+  },
+  "other_shared_outputs_unchanged": {
+    "src/web/data/structure/documents/corpus.json": "add96456fb2d26aedb60f5f339b30693aaac8069e415ff8bc829a20062c2651f",
+    "release/public-alpha.json": "bfb9a188a87110f508e880a3d6ce0587e2b55a587739e30bf4bf515bba51b3cb",
+    "release/rights/public-alpha-2026-07-15.md": "bf49b28dc3b082914093fc3761e193688961a7732e3814f683f6c5b9ec842b19"
+  },
+  "release_stale_bindings": 0,
+  "protection": {
+    "all_12_accepted_artifacts_match": true,
+    "all_25_f02_render_source_paths_match": true,
+    "all_5_additional_build_snapshot_paths_match": true,
+    "f02_frozen_production_review_matches": true,
+    "three_cold_repair_hashes_match": true,
+    "claude_live_pdf_count_matching": 89,
+    "tracked_claude_sources_web_and_inventories_unchanged": true,
+    "tracked_reading_plans_unchanged": true,
+    "prior_receipt": ".scratch/publication-integration/preterminal-protection-check.json"
+  },
+  "no_index_commit_push": true,
+  "all_lane_mutations_now_frozen": true
+}

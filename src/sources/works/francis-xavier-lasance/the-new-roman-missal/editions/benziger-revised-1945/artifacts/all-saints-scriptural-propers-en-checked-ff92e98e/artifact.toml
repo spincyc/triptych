@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.all-saints-scriptural-propers-en-checked-ff92e98e"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Bounded received English on ordinary numbered Lasance/Walsh 1945-edition pages 1265-1268, under the registration-specific United States nonrenewal basis in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. Excludes every later lettered insert; no contemporary approved-English status is asserted."
+retrieved = "2026-10-25"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+transformation = "Retain six full image-checked bodies in order Lesson, Gradual, Alleluia, Gospel, Offertory, Communion; join line/page wraps and divided words, normalize spacing and expand ornamental initials. Keep received English spelling, capitalization, punctuation and actual liturgical incipits; render the versicle sign as V. Do not substitute DR wording, modernize or translate."
+provenance = "Research independently read the exact same-witness images at 200 and 400 dpi on 25 October 2026. Registration reread pages carrying the words and boundaries; all original whole-byte receipts were rehashed. Full Lesson begins before the page break; all source page ranges are stated by the individual passages."
+notes = "One complete proper body per physical line. Biblical citations, headings, Creed direction, octave directions, neighbouring prayers and independent English Bible-study strings are excluded. These six are additional to the existing four-own-proper bodies; no duplicate full-book payload is created."
+sha256 = "ff92e98e66cb35d45e0903ee5f07fae3ca40e5e2c24bf8a521d4821e367f88c8"
+byte_size = 3245
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/all-saints-scriptural-propers-en-checked-ff92e98e/propers.txt"

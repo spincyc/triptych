@@ -1,5 +1,13 @@
 # Death — Research Scope
 
+## Voice revision — 2026-10-25
+
+The current revision applies `guidance/editorial.md`, especially “Speaking from within the tradition” and “Say what the texts say, plainly,” together with `guidance/articles.md`. The Catholic reader, annual preparation, governing question, substantive doctrine, source boundaries, and seventeen-section argument described below remain the scope. Revisions replace repeated maxims, abstract transitions, unsupported contrasts, and assertions of significance with direct explanation of the sources and their spiritual consequences. Sustained exposition of Augustine, Cyprian, Polycarp, and Monica's death remains; the essay has not become a catalogue of authorities.
+
+The frozen body contains approximately 13,020 whitespace-delimited words, excluding headings and terminal apparatus, compared with 13,328 by the same count before revision. The targeted build is 24 naturally typeset pages, within the commission's approximately 25-page extent; shared type, margins, and spacing are unchanged. No source, quotation, doctrinal conclusion, medical principle, or material uncertainty was added or removed. The one citation change divides Luke 23:39–46 into 23:39–43 and 23:44–46 at the corresponding sentences. The revision record identifies exact source and build hashes, bounded source rereading, authorial checks, and the independent review boundary: [revision-2026-10-25.md](revision-2026-10-25.md).
+
+The dated sections below preserve the commission and research history. Earlier content and production acceptances describe their named snapshots; they do not validate the present revision.
+
 ## Current commission — 2026-10-13
 
 This recalibrated extended draft supersedes both the five-page contemplative candidate and the initial 9,857-word extension. The maintainer requires **each** essay to be on the order of 25 naturally typeset pages, approximately 100 pages in the series. The first extension produced 19 pages at the established 11-point type and one-inch margins: its 9,500–11,000-word working estimate was insufficient. The physical-page requirement controls. This revision therefore targets 13,300–13,700 body words and contains approximately 13,360, with 17 substantive sections. The accepted 9,857-word core is preserved except for a short Hebrews paragraph replaced by its developed treatment. Prior review acceptance covers the earlier baseline only; the new depth and integration have received a fresh independent review.

@@ -1,0 +1,41 @@
+{
+  "document": "liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
+  "pagination_evidence": {
+    "build/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis.aux": "7c40628dbb6f7e206275cccd3017d65f16d23d708ce34efc533fbf91abde70ba",
+    "build/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.aux": "0c43a96a022b466332f5bfdb0f4259e282115bf5ab58c47363efefd67dcf19dd"
+  },
+  "pdfs": {
+    "build/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily.pdf": "4adaca1195f3e3b7e06f92069a1e59b808c08b1d841e32dbdb0fddbbc0f4f2e5",
+    "build/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis.pdf": "921dfd64e8585cb5a8864f00211c790591d1658f6283aecfa137143c291bc25b",
+    "build/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.pdf": "0e357f23576aeb6bad9e70b970b391c0a33b33f6ec80c3ca8cd66e4d6f5be8bd"
+  },
+  "provider": "gpt",
+  "render_inputs": {
+    "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+    "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+    "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/generation-metadata.tex": "e496a0a6003e6c42d0bd61786c4095e7b74c9bf4ba140b758d5585eae09c374b",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/homily.tex": "c3a834162cbdbf64465e6746ceb290db366eccaaa458b4476c5fac649a31d360",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/main.tex": "caa9e1ed429b64b5923f64d4589fb62d8f50cf8c9e13e2eae9135cfdbba3db5d",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/proper-components.toml": "0b3a2418e6fd70e4dbc9d599336dc0f66e83c2f79d07f26fea816945d5550596",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/chronology-annotations.tex": "d396816f55517a7918ac3d74bed09420c977a11f524ec904a923668d7bbf3c51",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/00-opening.tex": "979a291a6117eaa2ad1d12059613baef733a6ed9d44a677732d12da05f7b8941",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/10-appointed-text.tex": "b94b77bb5267d806d0d72e679a3e02814f583489b78e020d321154e2dcd7be7e",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/20-commentary.tex": "a133f358277d931bf3404001a600336e10d73feb90b82fb041f961267e23d9ae",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/30-communion-of-saints.tex": "374dd38eefd4c8dd5435e178242769c7d55f192c2922f787e0eae67545abc79a",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/40-purification-and-rest.tex": "31d2fe5703f5438c3031c4e5a2b4d1e8c4d567718fccd30e68fcaa347ef3aa5a",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/50-comparison.tex": "5c660f21c8e42102af6de41140eae8814eb68c33c2974fd6f5a47b86d583b716",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/70-date-location.tex": "3749915700cc72f119d3c2e06dee00dc41007fa099d79942d08d99e74c039ba1",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/90-study-apparatus.tex": "ca816f37ffe4258e5df3f027fd5c1b5263741307d2b51efcf273ec85fdf5dd94",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/01-inventory.tex": "503895e1609156a4d48b773990b5d247f8860620906a3b09183f88ce581d654a",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/02-overview.tex": "938369f405fbfd9e0b78d043f9ad7c1ac595d476f5fff5432a54e848b1ca192b",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/03-chronology.tex": "e2067deb5b00bc981da8b2d19909684dee499f1ece66c498edbf01522628dfe5",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/04-themes.tex": "4c55e3cc204735b4c7d09e3e753add274b808d81abd0c56bb03d922c8c83d9be",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/10-commentary.tex": "491d401d02d5a91c2d5af067c5d9f65e2eedc3876c1061175b5c919cc3c0a78e",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/90-apparatus.tex": "8f5c0d549842a670ca3edec237f106f403267fc6c46d6f737f8203bba2d45726",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/10-body.tex": "fcc2dfd1e332fb1171e7b0fbbc62e5663e0dc645ae4305c75d35bd20ea7d99d1",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/90-apparatus.tex": "e6b11acb0ec8179170618a1546ca643c4f114508df8b389faaade47fbf93f33d",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/synthesis.tex": "75ce756b2026b8f0a023b44977e901f259d22fb7c1db42f04fd3ad0da5f217b8"
+  },
+  "schema": 2
+}

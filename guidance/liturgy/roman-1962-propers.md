@@ -33,7 +33,7 @@ has actually published.
   independently authoritative: it is not a second identity, a guide path is never *derived* from
   it, and where the two disagree the disagreement is a defect to repair here, in the profile.
 - `64` through `67` identify the resumed Third through Sixth Sundays after the Epiphany. Each is a complete, separately sourced formulary—combining the relevant Epiphany orations, Epistle, and Gospel with the chants appointed for resumed use after Pentecost—and therefore a full identity, not a variant under a shared ordinal. [Calendar computation](calendar-computation.md) owns the arithmetic that decides how many are resumed in a given year; the Missal's own rubric decides which and in what order.
-- `F` identifies a general-calendar feast assigned to Sunday without a stable temporal ordinal. `F01` is Our Lord Jesus Christ the King, which the Missal prints in the Sanctorale. Verify its printed place and occurrence rule; do not invent a permanent Sunday number for a fixed-date, movable, or local feast.
+- `F` identifies a general-calendar feast that can occupy a Sunday without a stable temporal ordinal. `F01` is Our Lord Jesus Christ the King and `F02` is All Saints, both printed in the Sanctorale. Verify the printed place and occurrence rule; do not invent a permanent Sunday number for a fixed-date, movable, or local feast.
 - `M` identifies a ritual, votive, or other non-Sunday guide. The prefix does not state rank, permission, or authority to replace an occurring Mass.
 - Identify every work by the 1962 edition, printed formulary heading and rank, place in the book, and governing occurrence or use rule—not by filename or a modern civil date. Do not merge distinct formularies. Record seasonal substitutions, ritual additions, blessings, or alternate conclusions wherever they govern the guide.
 
@@ -74,8 +74,13 @@ Each is a complete, separately sourced formulary that combines the relevant
 Epiphany orations, Epistle, and Gospel with the chants appointed for resumed
 use after Pentecost. Fixed or movable universal feasts that can replace a
 temporal Sunday remain in the `F` series and never renumber this registry.
-`F01` is Our Lord Jesus Christ the King. `M01` and later `M` identities remain
-a separate non-Sunday series.
+`F01` is Our Lord Jesus Christ the King. `F02` is All Saints, the Missal's
+*In Festo Omnium Sanctorum*, I classis, printed pp. 702–703 (CMAA facsimile
+artifact pages 783–784). On 2026-10-25 the maintainer authorized its permanent
+identity and the GPT study for Sunday, 1 November 2026. The fixed-date feast
+keeps this identity in every year; the dated study records the Sunday
+commemoration required by the governing rubrics. `M01` and later `M`
+identities remain a separate non-Sunday series.
 
 The Sacred Triduum entries `27` through `29` (Mass of the Lord's Supper,
 Solemn Liturgical Action of the Passion and Death of the Lord, Easter Vigil)

@@ -1,6 +1,36 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gpt-flt-and-sunday-2026-10-25"
+owner = "PROJECT-WORK.md"
+promise = "Apply the recent voice and drafting guidance to the four GPT Four Last Things essays; complete the next-Sunday 1962 proper-study workflow for 1 November 2026; cold-review and validate the resulting publications; publish to main and verify deployment."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "four-essays"
+  criterion = "All four GPT essays meet the current Catholic voice and plain-drafting guidance, preserve material source claims and qualifications and their intended extent, and pass independent content and fidelity review with material findings resolved."
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-flt-and-sunday-2026-10-25/RECORD.md", "src/gpt/articles/faith/four-last-things-shared/production-review.json"]
+
+  [[deliverables.requirements]]
+  id = "sunday-workflow"
+  criterion = "The next Sunday's 1962 Mass, identity and occurrence are verified; its GPT proper-study workflow reaches accepted terminal completion with every mandated research, content, artifact and independent review gate."
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-flt-and-sunday-2026-10-25/RECORD.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/fb0417d471635250/record.md"]
+
+  [[deliverables.requirements]]
+  id = "reviewed-artifacts"
+  criterion = "All affected PDFs and canonical web editions are built, reviewed and installed; metadata, source records, inventories, catalogue and release bindings are current and required publication checks pass or have an exact inherited-failure comparison."
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-flt-and-sunday-2026-10-25/RECORD.md", "workflows/reviews/gpt-flt-and-sunday-2026-10-25/final-validation.json", "workflows/reviews/gpt-flt-and-sunday-2026-10-25/publication-delta.json"]
+
+  [[deliverables.requirements]]
+  id = "published-and-live"
+  criterion = "The reviewed public outgoing range reaches main by fast-forward without history rewriting, deployment succeeds for the published commit, and the affected live publications match the reviewed artifacts."
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-flt-and-sunday-2026-10-25/RECORD.md", "workflows/reviews/gpt-flt-and-sunday-2026-10-25/published-runs.json", "workflows/reviews/gpt-flt-and-sunday-2026-10-25/live-verification.json"]
+
+[[deliverables]]
 id = "gpt-propers-register-2026-10-23"
 owner = "PROJECT-WORK.md"
 promise = "Amend the recent GPT proper studies under the 21 October voice guidance as the Claude documents were amended, cold-review that guidance independently, verify the revised documents and canonical web edition, and publish the reviewed result to main with deployment verification."

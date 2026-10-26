@@ -166,6 +166,8 @@ and an identity with no line here is closed.
 
 - Authorized 2026-10-19: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king`.
 
+- Authorized 2026-10-25: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/f02-all-saints`.
+
 ### Reference-only publication scope
 
 An additional authorization here replaces full appointed-text reproduction

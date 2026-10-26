@@ -343,5 +343,5 @@ try {
   chrome.kill('SIGTERM');
   await new Promise((done) => chrome.once('exit', done));
   await new Promise((done) => instance.close(done));
-  await rm(profile, { recursive: true, force: true });
+  await rm(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
 }

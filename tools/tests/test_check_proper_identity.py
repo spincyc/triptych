@@ -67,14 +67,15 @@ class IdentityFixture(unittest.TestCase):
 
 class RegisteredIdentityTests(IdentityFixture):
     def test_the_calendar_registers_the_catalog_series_and_nothing_else(self) -> None:
-        """01-68 and F01: the synthetic registry ids are not identities."""
+        """01-68, F01 and F02: the synthetic registry ids are not identities."""
         self.assertEqual(
             list(self.registered),
-            [f"{number:02d}" for number in range(1, 69)] + ["f01"],
+            [f"{number:02d}" for number in range(1, 69)] + ["f01", "f02"],
         )
 
     def test_a_registered_temporal_identity_passes(self) -> None:
-        for slug in ("54-fourteenth-after-pentecost", "51-eleventh-after-pentecost"):
+        for slug in ("54-fourteenth-after-pentecost", "51-eleventh-after-pentecost",
+                     "f02-all-saints"):
             with self.subTest(slug=slug):
                 line = self.verified(leaf("temporal", slug))
                 self.assertIn("is registered in the roman-1962 calendar", line)
@@ -223,10 +224,10 @@ class ExitStatusTests(unittest.TestCase):
         result = self.run_tool("--list")
         self.assertEqual(result.returncode, 0, result.stderr)
         printed = result.stdout.strip().split("\n")
-        self.assertEqual(len(printed), 69)
+        self.assertEqual(len(printed), 70)
         self.assertEqual(printed, sorted(printed), "the listing must be byte-stable")
         self.assertEqual(printed[0], "01")
-        self.assertEqual(printed[-1], "f01")
+        self.assertEqual(printed[-1], "f02")
 
 
 if __name__ == "__main__":

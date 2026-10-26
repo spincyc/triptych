@@ -1,0 +1,210 @@
+{
+  "scope": "Shared data,inventory and authorization resolution for ordinary merge of upstream f3f59d483 into the accepted GPT publication branch",
+  "ours_parent": "844cdc6d62908cfc92cf655a3cd9b9478896b5bf",
+  "incoming_parent": "f3f59d483358128e1b78d7a12aaeb4f3feab4a8a",
+  "complete_for_this_lane": true,
+  "tracked_mutations_frozen": true,
+  "commands": [
+    {
+      "command": "python tools/tpt source-library validate",
+      "exit": 0,
+      "log": ".scratch/publication-integration/main-reconcile/source-library.log"
+    },
+    {
+      "command": "python tools/tpt source-reader structure --strict",
+      "exit": 0,
+      "log": ".scratch/publication-integration/main-reconcile/source-generate.log"
+    },
+    {
+      "command": "python tools/tpt mass-propers structure",
+      "exit": 0,
+      "log": ".scratch/publication-integration/main-reconcile/propers-generate.log"
+    },
+    {
+      "command": "python tools/tpt mass-ordinary structure",
+      "exit": 0,
+      "log": ".scratch/publication-integration/main-reconcile/ordinary-generate.log"
+    },
+    {
+      "command": "python tools/tpt calendar-days check",
+      "exit": 0,
+      "log": ".scratch/publication-integration/main-reconcile/calendar-before-check.log"
+    },
+    {
+      "command": "python tools/tpt calendar-rubrics check",
+      "exit": 0,
+      "log": ".scratch/publication-integration/main-reconcile/rubrics-before-check.log"
+    },
+    {
+      "command": "python scripts/_catena.py structure --check",
+      "exit": 0,
+      "log": ".scratch/publication-integration/main-reconcile/catena-current.log"
+    },
+    {
+      "command": "python scripts/_catena.py paragraphs --check",
+      "exit": 0,
+      "log": ".scratch/publication-integration/main-reconcile/paragraphs-current.log"
+    },
+    {
+      "command": "python tools/tpt source-inventory refresh --audited-on 2026-10-25",
+      "exit": 0,
+      "log": ".scratch/publication-integration/main-reconcile/inventory-refresh.log"
+    },
+    {
+      "command": "python tools/tpt source-family-migration refresh --audited-on 2026-10-25 --accept-canonical-catalog",
+      "exit": 0,
+      "log": ".scratch/publication-integration/main-reconcile/family-refresh.log"
+    },
+    {
+      "command": "python tools/tpt document-library structure",
+      "exit": 0,
+      "log": ".scratch/publication-integration/main-reconcile/catalogue-generate.log"
+    },
+    {
+      "command": "python tools/tpt release-bindings refresh --adopt-new-site-sources [--only each exact545-path entry]",
+      "exit": 0,
+      "log": ".scratch/publication-integration/main-reconcile/release-refresh.log"
+    },
+    {
+      "command": "python tools/tpt source-reader check",
+      "exit": 0,
+      "log": ".scratch/publication-integration/main-reconcile/source-check.log"
+    },
+    {
+      "command": "python tools/tpt source-reader structure --check --strict",
+      "exit": 0,
+      "log": ".scratch/publication-integration/main-reconcile/source-current.log"
+    },
+    {
+      "command": "python tools/tpt mass-propers structure --check",
+      "exit": 0,
+      "log": ".scratch/publication-integration/main-reconcile/propers-current.log"
+    },
+    {
+      "command": "python tools/tpt mass-ordinary check --json",
+      "exit": 0,
+      "log": ".scratch/publication-integration/main-reconcile/ordinary-current.json"
+    },
+    {
+      "command": "python tools/tpt source-inventory check",
+      "exit": 0,
+      "log": ".scratch/publication-integration/main-reconcile/inventory-check.log"
+    },
+    {
+      "command": "python tools/tpt source-inventory check src/sources/inventories/claude-publications-v1.toml --review src/sources/inventories/claude-classification-review-v1.toml",
+      "exit": 0,
+      "log": ".scratch/publication-integration/main-reconcile/claude-inventory-check.log"
+    },
+    {
+      "command": "python tools/tpt source-family-migration check",
+      "exit": 0,
+      "log": ".scratch/publication-integration/main-reconcile/family-check.log"
+    },
+    {
+      "command": "make check-document-catalogue PYTHON=.scratch/publication-prep/venv/bin/python",
+      "exit": 0,
+      "log": ".scratch/publication-integration/main-reconcile/catalogue-check.log"
+    },
+    {
+      "command": "python tools/tpt release-bindings status",
+      "exit": 0,
+      "log": ".scratch/publication-integration/main-reconcile/release-check.log"
+    },
+    {
+      "command": "python scripts/_proper_study.py check --provider gpt --document liturgy/roman-rite/1962/propers/temporal/f02-all-saints --date 2026-11-01 --phase publication --require-presentation --require-format --require-authority --require-orientation --require-orientation-v2",
+      "exit": 0,
+      "log": ".scratch/publication-integration/main-reconcile/proper-publication-check.log"
+    },
+    {
+      "command": "python tools/tpt public-alpha check --provider gpt --document liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
+      "exit": 0,
+      "log": ".scratch/publication-integration/main-reconcile/public-alpha-check.log"
+    },
+    {
+      "command": "make check-web-editions-current PYTHON=.scratch/publication-prep/venv/bin/python",
+      "exit": 0,
+      "log": ".scratch/publication-integration/main-reconcile/web-current.log"
+    }
+  ],
+  "expected_intermediate_failures": [
+    {
+      "command": "python tools/tpt mass-ordinary check --json",
+      "exit": 1,
+      "log": ".scratch/publication-integration/main-reconcile/ordinary-before-check.json",
+      "disposition": "Pre-generation check found stale Ordinary projections; root then finalized upstream canonical tables and owning generator produced current output. Final check exits0."
+    },
+    {
+      "command": "python tools/tpt release-bindings status",
+      "exit": 1,
+      "log": ".scratch/publication-integration/main-reconcile/release-before.log",
+      "disposition": "Expected upstream-baseline authorization lacked ours545 changed/new eligible inputs; exact scoped refresh and final status0 completed."
+    }
+  ],
+  "baseline_resolution": "Family ledger and release/rights files began byte-exact at f3f59d483. Owning tools then refreshed the combined sources; no hand selection of generated conflict bodies.",
+  "source_counts": {
+    "works": 1070,
+    "editions": 1283,
+    "artifacts": 3839,
+    "passages": 8773,
+    "segments": 124,
+    "corpora": 5,
+    "bindings": 4231,
+    "readable_passages": 3919
+  },
+  "projection_counts": {
+    "source_files": 5203,
+    "proper_files": 499,
+    "catena_files": 2048,
+    "paragraph_files": 5548
+  },
+  "regenerated": [
+    "Source",
+    "Proper",
+    "Ordinary",
+    "Document catalogue"
+  ],
+  "already_current_without_regeneration": [
+    "Calendar days",
+    "Calendar rubrics",
+    "Catena",
+    "Paragraphs"
+  ],
+  "gpt_inventory": {
+    "publications": 151,
+    "surface_files": 2809,
+    "owners": 12
+  },
+  "family": {
+    "units": 163,
+    "states": {
+      "pending": 163
+    },
+    "families": [],
+    "atomic_citation_coverage": false
+  },
+  "classifications": "All150 upstream rows preserved; only oursF02 nine-family row added; no review closure inferred.",
+  "preservation_audit": ".scratch/publication-integration/main-reconcile/preservation-audit.json",
+  "upstream_claude_catalogue_editions_exact": 63,
+  "native_preservation": "All7 accepted PDFs,5 canonical Markdown editions,25 render-source paths and5 additional build snapshot paths remain exact. Old archived global source hashes retain their original historical meaning; no renewed research seal is claimed. Fresh merge cold review is coordinator-owned.",
+  "superseded_repair": "Incoming canonical John Damascene roles are Offertory occurrences1/2. The2 Ordinary inventories now equal f3f59d483 exactly. Prior compatibility alias and its3 frozen repair hashes are historical; merged tests are SHA63f6a32ffa312abd17502803183d5e46305fa8ad79ffb7cfa914ff979fc212cf.",
+  "release_scope": {
+    "exact_eligible_changed_inputs": 545,
+    "path_manifest": ".scratch/publication-integration/main-reconcile/release-scope.txt",
+    "upstream_authority_metadata_preserved_except_derived_rights_digest": true,
+    "stale_bindings": 0
+  },
+  "original_shared_conflicts_resolved": 496,
+  "resolved_conflict_paths": ".scratch/publication-integration/main-reconcile/resolved-shared-conflicts.txt",
+  "resolved_conflict_hashes": ".scratch/publication-integration/main-reconcile/resolved-shared-conflict-hashes.json",
+  "owned_candidate_delta_count": 543,
+  "owned_candidate_delta_paths": ".scratch/publication-integration/main-reconcile/owned-candidate-delta-paths.txt",
+  "owned_candidate_delta_hashes": ".scratch/publication-integration/main-reconcile/owned-candidate-delta-hashes.json",
+  "working_tree_vs_index": "Coordinator staged all postimages while this lane ran; delegate made no index changes.",
+  "not_run": [
+    "Full source aggregate",
+    "Public site build and artifact verification",
+    "Commit or push"
+  ],
+  "whitespace_check_exit": 0,
+  "remaining_merge_conflicts": 0
+}

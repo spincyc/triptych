@@ -1,7 +1,7 @@
 {
   "acceptance": {
-    "receipt_path": "workflows/reviews/missal-reader-completion-2026-10-26/source-review-combined-v4.json",
-    "receipt_sha256": "a110d57cd20aff5c2ddf0c07af007dd4fe4852b5245762b998b67b429b710222",
+    "receipt_path": "workflows/reviews/missal-reader-completion-2026-10-26/source-review-combined-merged-v1.json",
+    "receipt_sha256": "ecbb482e752941c8419a14411135389fecca27bedde8d8ad5224bd6761806e9b",
     "status": "accepted"
   },
   "baseline_revision": "2e030b564f4413b735ddbea3061082ebe981b11a",
@@ -299,7 +299,7 @@
       "supplement_edition_id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
     }
   },
-  "current_roman_document_sha256": "1b3ef5e9fed406293b6c5efa429cf3012339a1dfd97cd3a76dbddaac61738410",
+  "current_roman_document_sha256": "7a858f79acecdd7bb8e78c267c8fbd04886286a36a9fbeb76b2808890326cdeb",
   "english_219_keys": {
     "[\"advent-1\",\"main\",\"Collect\",\"all\",1]": "5ca978f22f6183935d3fe3bb4c23bba381b87fb731263b3047a6ec820fc45e67",
     "[\"advent-1\",\"main\",\"Postcommunion\",\"all\",1]": "afb75062fc8fcc3e46fa1d69d672b44cc622b8ba35342e38aaa800f8a0addb13",
@@ -2796,7 +2796,7 @@
       "hunks": []
     },
     "src/sources/calendars/roman-1962/propers.yaml": {
-      "after_sha256": "b730894b03b8e883efd438a029affdfff77b0f2263bfbe8245235ca7ce6750d6",
+      "after_sha256": "da814d1a099ab386ab48d1e31e7b395f964e253aa5303a4cff9bfaa68f555a96",
       "before_sha256": "018642eee26d09e3bb014fa60baa0f820ab3637c9d6e349378c696a7b79d6877",
       "hunks": [
         {
@@ -3505,6 +3505,14 @@
         },
         {
           "after_lines": [
+            56205,
+            56206
+          ],
+          "after_slice_sha256": "c9c617109f66043894a74c2a61aa18e8d557aeca9e7600ed032b38f1634cfe4c",
+          "before_utf8": "      registry: '1962-11-01'\n"
+        },
+        {
+          "after_lines": [
             58558,
             58565
           ],
@@ -3597,7 +3605,7 @@
       ]
     },
     "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml": {
-      "after_sha256": "f3444d776454b445daf46ef892a0628cecd827bb2f630d1fdd070e32ceb36e2b",
+      "after_sha256": "b6e29c3ae2b6cfd27d101614cad13d02b51e62c09606ddc4e2e02b8f662cc70e",
       "before_sha256": "c2bf07d5551fbe7ae2748ce7390c37b0d707df7cf275d400126b04cacd8600f0",
       "hunks": [
         {
@@ -3661,7 +3669,7 @@
             248,
             249
           ],
-          "after_slice_sha256": "4b49894ff601879d675abd42c402822485a171cf17259b4172bb60df3b79b990",
+          "after_slice_sha256": "29bbc7173fa833e83616619e6c1c872732948d029da30e83cb84ef9d1659035c",
           "before_utf8": "after_sha256 = \"018642eee26d09e3bb014fa60baa0f820ab3637c9d6e349378c696a7b79d6877\"\n"
         },
         {
@@ -3685,7 +3693,7 @@
             3504,
             12009
           ],
-          "after_slice_sha256": "2b3bc2993eaf3aae1618aa67237ff9aaddff0f29c0f7bf4950bdd985e52f7192",
+          "after_slice_sha256": "0f67e250486fc04fc7f3ba855b4b5d64ffe9685c5e9f285799e18e7f2dd0499f",
           "before_utf8": ""
         },
         {
@@ -29915,6 +29923,6 @@
   ],
   "schema": "triptych-test-source-batch/v1",
   "source_input_manifest_path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
-  "source_input_manifest_sha256": "872eb4bdb20d788d3417b6fd399260b4fd6a8fa601d18294440667b9b087f04b",
-  "state": "2026-10-26 integrated reader source epoch; source-only acceptance"
+  "source_input_manifest_sha256": "ba7bf32d33bdc2312d90fae48864d1ab36a0cb812957a73c95f0bdecedd4f9ef",
+  "state": "2026-10-26 reviewed merged source epoch; prayer dictionaries and bounded rights conserved"
 }

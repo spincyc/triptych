@@ -19,6 +19,7 @@ against the real generated files, for the reason `calendar-rubrics check` runs
 page.
 """
 
+from argparse import Namespace
 from collections import Counter
 from copy import deepcopy
 
@@ -881,6 +882,80 @@ class OrdinaryTool(unittest.TestCase):
                     with self.assertRaisesRegex(tool.SourceError, message):
                         tool.check_appointment_seating(ordinary, [bad], facts)
 
+    def test_john_damascene_paschal_offertory_has_an_exact_declared_seat(self) -> None:
+        tool = self.tool_module
+        ordinary = tool.build(Namespace(root=str(ROOT / "src/sources"),
+                                        calendar="roman-1962"))[0]
+        payload = json.loads((PROPERS / "roman-1962.json").read_text(encoding="utf-8"))
+        mass = next(row for row in payload["masses"]
+                    if row["key"] == "s-ioannis-damasceni-confessoris-ecclesiae-doctoris")
+        form = {"mass": mass["key"], "form_id": "main",
+                "where": "roman-1962/" + mass["key"] + "/main",
+                "full": True, "propers": mass["propers"]}
+        slot = next(row for row in ordinary["slots"] if row["key"] == "offertorium")
+        self.assertEqual(slot["propers"], ["Offertory"])
+        self.assertFalse(slot["qualified"], "the native seat must not admit arbitrary qualifiers")
+        summary = {"mass": mass["key"], "form_id": "main", "candidates": 12,
+                   "conditional_rows": 1, "choice_groups": 2, "diagnostics": []}
+        self.assertEqual(tool.check_appointment_seating(
+            ordinary, [form], payload["proper_appointment_facts"]), [summary])
+        branches = [row for row in mass["propers"]
+                    if (row.get("ordinary_disposition") or {}).get("group")
+                    == "john-damascene-offertory"]
+        self.assertEqual([row["name"] for row in branches], ["Offertory", "Offertory"])
+        self.assertEqual([row["appointment_identity"]["occurrence"] for row in branches], [1, 2])
+        self.assertEqual([row["ordinary_disposition"]["option"] for row in branches],
+                         ["non-paschal-base", "paschal-body-gap"])
+        self.assertEqual(branches[1]["text_status"]["state"], "unavailable")
+        self.assertIsNone(branches[1]["text"], "the seat does not supply a missing body")
+        self.assertEqual([row["ordinary_disposition"]["when"]["in"] for row in branches],
+                         [["tract"], ["paschal"]])
+
+    def test_john_damascene_foreign_offertory_seat_does_not_authorize_execution(self) -> None:
+        tool = self.tool_module
+        ordinary = tool.build(Namespace(root=str(ROOT / "src/sources"),
+                                        calendar="roman-pre-1955"))[0]
+        payload = json.loads((PROPERS / "roman-pre-1955.json").read_text(encoding="utf-8"))
+        mass = next(row for row in payload["masses"]
+                    if row["key"] == "s-ioannis-damasceni-confessoris-ecclesiae-doctoris")
+        form = {"mass": mass["key"], "form_id": "main",
+                "where": "roman-pre-1955/" + mass["key"] + "/main",
+                "full": True, "propers": mass["propers"]}
+        before = deepcopy(mass)
+        summary = tool.check_appointment_seating(
+            ordinary, [form], payload.get("proper_appointment_facts", {}))[0]
+        self.assertEqual((summary["candidates"], summary["choice_groups"]), (12, 2))
+        notices = {row["sourceIndex"]: row for row in summary["diagnostics"]}
+        for index in [7, 8]:
+            self.assertEqual(notices[index], {
+                "kind": "unsupported-foreign-source-applicability", "sourceIndex": index,
+                "source_edition": "roman-1962", "target_edition": "roman-pre-1955"})
+        self.assertEqual(mass, before)
+        harness = r"""
+const assert = require('node:assert/strict');
+const S = require(process.argv[1]);
+let text = '';
+process.stdin.on('data', chunk => { text += chunk; });
+process.stdin.on('end', () => {
+  const p = JSON.parse(text);
+  const shown = p.ordinary.sections.flatMap(section =>
+    section.elements.map(element => ({section, element})));
+  const seating = S.seats(p.ordinary, shown);
+  for (const row of p.rows) {
+    assert.equal(row.appointment_applicability.state, 'unresolved');
+    assert(S.usableSlotOf(seating, row.name) >= 0);
+    assert.throws(() => S.prepareProperAppointments([row], {
+      calendar: 'roman-pre-1955', entrance: 'propers'}), /foreign-source/);
+    assert.throws(() => S.unframedEvents([row]), /foreign-source/);
+    assert.throws(() => S.properUnits([row], seating), /foreign-source/);
+  }
+});
+"""
+        checked = subprocess.run(["node", "-e", harness, str(tool.SEATING_MODEL)],
+                                 input=json.dumps({"ordinary": ordinary,
+                                                   "rows": mass["propers"][7:9]}),
+                                 text=True, capture_output=True, timeout=20, check=False)
+        self.assertEqual(checked.returncode, 0, checked.stdout + checked.stderr)
     def damascene_seating_case(self):
         ordinary = load("roman-1962")
         payload = json.loads((PROPERS / "roman-1962.json").read_text(encoding="utf-8"))

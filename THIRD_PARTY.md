@@ -1076,3 +1076,25 @@ implied.
 Five additional normal Roman 1962 Oratio bodies (Advent Ember Wednesday, Wednesday of Lent 4, Holy Wednesday, Pentecost Ember Wednesday and September Ember Wednesday) are independently collated to Alfred Mame's Tours 1922 editio quarta commercial printing conformed to the Vatican typical edition. The exact Internet Archive source is item `missaleromanum0000unse`, whole-PDF SHA-256 `9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005`. Two bounded historical extracts preserve complete prayer, identity and conclusion-support pages, original image streams and source marks; their native SourceLibrary records retain the source URL, parent hash, page maps and transformations. Historical source words and faithful reproductions are public domain in the United States by current elapsed publication-date term and excluded from the project CC BY 4.0 grant. The separate project editorial projection offers only its layout and disclosed normalization under CC BY 4.0: actual historical short cues and `eumdem` remain in the historical artifact, while the exact target conclusion prefixes and received `eundem` spelling are recorded in the projection. Publication rests on independent public-domain historical witnesses with 17 U.S.C. 103(b), without claiming public-domain status or a distribution licence for the modern 1962 book, target scans or layout; the modern whole PDF and target rasters remain remote or private research controls. No English translation or repeated-reading Ordinary frame is supplied.
 
 Dated 2026-10-26 nine source-established oration receiving batch: the own Collect, Secret and Postcommunion of Ss. Gordian and Epimachus, the Vigil of Ss. Peter and Paul, and St. Cecilia are registered separately from the previously represented owner domain. Their Latin editorial projections rest on the complete Pustet Ratisbon 1862 historical prayers and separately controlled actual conclusion cues; the restricted 1962 facsimile serves only as the normative verification witness. The exact six-page Pustet extract retains disclosed Google footer marks and the original devotional illustration on original PDF559/printed473, under the registered exact whole-artifact 1862 publication and faithful mechanical-reproduction basis; no platform rights label or license is asserted. The text derivatives exclude digitization marks. Nine bounded literal historical English bodies are separately sourced: seven from the registered c1955–56 Lasance printing, one from its 1946 printing, and the Vigil Collect from the already registered early Lefebvre expression. That Collect is on consecutive ordinary folios PDF1487–1489/printed1451–1453; its early-expression membership is the independently reviewed bounded setting inference under the existing title, imprint, catalogue and January1927 acquisition chain. This adds no whole-PDF, Google wrapper, OCR, page-image, illustration, or translator-attribution permission for Lefebvre. Historical English words and the printed Through our Lord. cues remain literal and unexpanded. The existing single Lefebvre source alias and all earlier source-rights decisions remain in force.
+
+
+### All Saints reusable source evidence (25 October 2026)
+
+Bede’s *The Explanation of the Apocalypse*, translated by Edward Marshall
+(Oxford and London: James Parker and Co.,1878), is retained as its complete
+192-page facsimile, a distinct uncorrected text extraction and five separately
+checked verse-comment transcriptions. The historical translation and mechanical
+page reproduction have the recorded United States public-domain basis. Original
+Google digitizer attribution remains intact under
+`src/sources/inventories/google-usage-guidelines-rights-v1.toml`; it is separate
+from Bede’s text and is not offered under Triptych’s CC BY4.0 license. The
+transcription records declare their treatment of line breaks, catchwords and
+translator footnotes; they supply no new translation or original-Latin collation.
+
+The same registration retains bounded original-page evidence from Mame1922,
+Pustet1862, Cummiskey1861, ordinary numbered Lasance/Walsh1945 pages, and
+Schuster’s1927/1930 English volumes. Each artifact names its exact parent,
+selected pages and individual United States rights basis. Lasance’s later
+lettered inserts are excluded. These historical words and images remain outside
+the project license; the restricted1962 whole facsimile, modern CT response,
+dated Ordo HTML and modern Haydock delivery are not distributed by this addition.
