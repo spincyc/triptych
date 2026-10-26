@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "scope": "Exact normal public routes after combined local validation; hosted verification pending",
+  "scope": "Exact reviewed normal public routes, verified live byte-for-byte",
   "reviewed_commit": "13e247bc1ff1e91cd01310711d8f4ac2675df8ab",
   "handoff": {
     "directory": "build/agent-handoffs/20261026T150549Z-pc-r07-integrated",
@@ -222,5 +222,7 @@
       "bytes": 87097,
       "live_url": "https://mystago.gy/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.html"
     }
-  ]
+  ],
+  "published_commit": "e910f3c76ef03fa825d2eb6da227914e01a1d509",
+  "live_verification": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/live-verification.json"
 }

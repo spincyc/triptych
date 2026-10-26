@@ -2,7 +2,7 @@
 
 ## Scope and current state
 
-In progress. The maintainer requests the next Sunday's postconciliar proper
+Complete. The maintainer requests the next Sunday's postconciliar proper
 workflow, independent cold review and publication to main. The target is
 `PC-R07-ABC`, under the United States Roman Missal, Third Edition (2011):
 `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc`.
@@ -333,18 +333,22 @@ final aggregate and site checks remain outstanding.
 
 ## Completion evidence
 
-Official dated occurrence verification, source registration and dispositions,
-all native content/visual/web/publication reviews, three exact installed PDFs,
-the canonical web edition and terminal native acceptance/archive reproduction
-are complete. Post-archive bookkeeping is refreshed. The complete final source
-aggregate passes at tested commit `a141a9185e5389ea0172f33fe9355045230d37e1`,
-as do the production site build, GitHub Pages compatibility verifier, release
-and promised-deliverable checks, and tool-registry check. The pinned runtime
-uses Markdown 3.10.3. `final-validation.json` records every actual command,
-numeric exit, timing and log hash; all five required checks pass. The broader
-164-unit source-family audit remains pending, as it was before this target.
-Outgoing integration/disclosure cold reviews, main publication and live
-deployment verification remain open. No main deployment is claimed.
+All native stages and final independent integration/disclosure reviews pass.
+Native run `0af32a5cd3635b06` is ACCEPTED with 37 results and its reproduced
+80-file explicit derivative archive. The 20/10/3-page installed PDFs and sole
+canonical web retain exact reviewed bytes. Source qualifications remain explicit.
+
+Initial local gates pass at `a141a9185` (`premerge-validation.json`); all merged
+source/site/Pages/release/ledger/tool checks then pass at `b68df8feb`
+(`final-validation.json`). The published receipt-only integration preserves all
+31 tested product input objects. Final postmerge cold reviews approve `13e247bc1`
+without findings, and the final operator additions pass disclosure checks.
+
+Main publication at `e910f3c76` and both hosted workflows succeed. All 35 normal
+live routes return HTTP 200 with exact reviewed bytes, without cache busting.
+Published-run, job and live receipts retain the actual evidence below. This
+promised deliverable is complete; the broader 164-unit source-family audit and
+corpus chronology audit remain separate open work.
 
 The local candidate staging audit admits 195 intended UTF-8 text files and no
 binary acquisition, ignored build/scratch/PDF output, other-provider file or
@@ -404,3 +408,28 @@ outputs, canonical web, catalog/manifest/corpus and preserved eight incoming
 article outputs. Only final operator/report records are added after the pinned
 review; their public-data boundary and tested-input equality are checked before
 push. Main publication and actual hosted verification remain outstanding.
+
+## Verified publication
+
+The intended outgoing range and final operator/report additions pass disclosure
+and tested-input checks. Workspace branch and main are pushed without force;
+main advances by genuine fast-forward to
+`e910f3c76ef03fa825d2eb6da227914e01a1d509`. The local branch remains
+`feature/propers/codex`. Both push-triggered workflows succeed: Repository hygiene
+run `40347749708` and Pages run `40347749826`; the latter's deploy step and all
+required hosted gates succeed.
+
+All 35 normal live URLs return HTTP 200 and exact local reviewed SHA-256 bytes,
+without cache-busting URLs. They cover the three new All Saints PDFs and their
+public aliases, canonical web, Novus Ordo catalog, corpus/manifest, and the
+preserved eight incoming article PDFs/aliases/web and Faith catalog.
+`published-runs.json`, `pages-deployment-job.json` and `live-verification.json`
+retain the actual evidence. The promised deliverable is complete.
+
+Final integrated review transport: directory
+`build/agent-handoffs/20261026T150549Z-pc-r07-integrated/` created successfully;
+its sibling ZIP is created and byte/CRC/inventory verified, SHA-256
+`1f7b0dd7279ec03451a7c3622adc308ba37f10105aa6cdfd2db92afaeef34159`.
+All eleven native review transports are also created and verified, and none is
+tracked. This final receipt adds operator evidence only; no product input,
+accepted source, native result, artifact or CYCLES is changed.

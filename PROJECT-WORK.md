@@ -88,7 +88,7 @@ artifact and does not claim its own subsequent deployment.
 
 <!-- promised-deliverable: gpt-postconciliar-all-saints-2026-11-01 -->
 
-**In progress.** Complete the GPT postconciliar proper-study workflow for Sunday,
+**Complete.** Complete the GPT postconciliar proper-study workflow for Sunday,
 1 November 2026, All Saints, under the United States Roman Missal, Third Edition
 (2011), with independent cold reviews and publication to main. The permanent
 target is `PC-R07-ABC`,
@@ -131,11 +131,17 @@ unintended provider work or retained restricted acquisition bodies.
 Complete post-archive source, production-site, Pages compatibility, release,
 ledger and tool-registry gates pass. The two sealed EOF-only advisories remain
 explicitly qualified. Pinned outgoing cold/disclosure reviews approve without blockers. Main then
-advances with published article-layout work. Its eight PDFs reproduce all196
+advances with published article-layout work. Its eight PDFs reproduce all 196
 recorded reviewed pages byte-for-byte; combined metadata and all merged local
 gates pass. Scoped postmerge integration and public-object cold rechecks both approve
-without findings. Main publication and exact live deployment verification remain
-outstanding.
+without findings. Main publication and exact live deployment verification are complete.
+
+The reviewed result reaches main at `e910f3c76` by genuine fast-forward.
+Repository hygiene and Pages deployment both succeed. All 35 normal live
+routes on `mystago.gy`, including the new three PDF/canonical-alias pairs,
+canonical web, catalog/corpus/manifest and preserved incoming articles, return
+HTTP 200 with exact reviewed bytes. The owning published-runs and live receipts
+record the evidence. This completion receipt changes operator records only.
 
 ## GPT Last Things and next Sunday propers, 2026-10-25
 

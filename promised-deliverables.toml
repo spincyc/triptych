@@ -25,7 +25,7 @@ state = "complete"
 id = "gpt-postconciliar-all-saints-2026-11-01"
 owner = "PROJECT-WORK.md"
 promise = "Complete the GPT postconciliar All Saints proper-study workflow for Sunday 1 November 2026, with independent cold review, three reviewed PDFs and canonical web edition, main publication and verified deployment."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "identity-and-workflow"
@@ -48,8 +48,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "published-and-live"
   criterion = "The exact intended public outgoing range receives final cold review and reaches main without force or history rewriting; the resulting deployment succeeds and live publication artifacts match reviewed bytes."
-  status = "open"
-  evidence = ["workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/RECORD.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/RECORD.md", "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/main-reconciliation-cold-review.json", "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/main-reconciliation-disclosure.json", "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/published-runs.json", "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/live-verification.json"]
 
 [[deliverables]]
 id = "gpt-flt-and-sunday-2026-10-25"
