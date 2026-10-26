@@ -4,8 +4,8 @@ provider = "claude"
 audited_on = "2026-10-26"
 discovery_rule = "src/claude/**/main.tex"
 publication_count = 63
-source_surface_file_count = 2017
-snapshot = "sha256:8bddd0b6582c485278547ecda2051fb6d88120c7ffd9999a41cc49949ddb8e31"
+source_surface_file_count = 2022
+snapshot = "sha256:7f914c95524969ea7183d266bb48735abf92885254553e421c39986e90af986f"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -1373,8 +1373,14 @@ kind = "publication-main"
 owners = ["articles/faith/four-last-things-01-death"]
 
 [[files]]
+path = "src/claude/articles/faith/four-last-things-01-death/research/revision-2026-10-26.md"
+sha256 = "bf7619de1f65da80f1a1b9ae06cb9aa26bb412c37b94d9b789a725d72eaf3d85"
+kind = "research-record"
+owners = ["articles/faith/four-last-things-01-death"]
+
+[[files]]
 path = "src/claude/articles/faith/four-last-things-01-death/research/scope.md"
-sha256 = "a838406489397c426c92b3158b0e7915cbaa1546addff4826894bafc126ea5bd"
+sha256 = "bd1bf20ea815f5d9e4b709d358bf468497ce62c6d309ff977c561cef20e07bfd"
 kind = "research-scope"
 owners = ["articles/faith/four-last-things-01-death"]
 
@@ -1404,67 +1410,67 @@ owners = ["articles/faith/four-last-things-01-death"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-01-death/sections/00-remember-thy-last-end.tex"
-sha256 = "b66f747ac53a30ed39871962c3173ec7a0ee56dafc34db67d0b2fe12c38c34ec"
+sha256 = "c66292c7e812c470d5c92e14a3d5790efbc9a36dffbacea60eed0915110cc75f"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-01-death"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-01-death/sections/10-the-debt-of-nature.tex"
-sha256 = "b6db73967e49d20b6c60acb32efc031c746842d810f646818bedf936d577057c"
+sha256 = "226087c3c0b027e08542c2ae193db7682e94f366e0de091f8f9d0f8cd16c0525"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-01-death"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-01-death/sections/20-through-death-he-destroyed-death.tex"
-sha256 = "35005ffde19493049371db6d1ba3142ab6edf21404d306bfb0872279ef6b2423"
+sha256 = "ea153e558e45391a74da4e623df237e5fad6338b87e17c0c489f577489748588"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-01-death"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-01-death/sections/30-at-what-hour.tex"
-sha256 = "322f2f1a4d6a1770948b8c678ac8dd7574bcdcddc1d0c19bc5716db9c3a48e37"
+sha256 = "21e79a9fd665a178cf3bbdfb4db36586689bf58f0200d724c8ca5ce1ab63d140"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-01-death"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-01-death/sections/40-not-lost-but-sent-before.tex"
-sha256 = "c68d55e314354fe18775e68beb7b7f4ecf90b8db914175848b8034aa8fe61e3f"
+sha256 = "b7d21c663bb715c62a7577e0e2875c2fe269737c62c9071b53f784da8a90dd73"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-01-death"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-01-death/sections/50-at-the-lords-altar.tex"
-sha256 = "60a7b0ccfbb505f81e6136d043bac5b7ef314633ecf37e9cba464f97d5e665bb"
+sha256 = "50168b54bbf5209ff618f2b77f9fec2d253e0e5da62ae8fecb6afab3566ea73f"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-01-death"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-01-death/sections/60-the-craft-of-dying.tex"
-sha256 = "6b1b725029916444a07c6382af869a880c5d2794bba37caea9a701635f0d01b9"
+sha256 = "3dba7f768750f166281c0cc3b7fd724338a156c706b519dfefec722c5a177705"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-01-death"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-01-death/sections/70-the-sacraments-of-the-departing.tex"
-sha256 = "53582264c4122e1f5994b28bea3b004753c5ccc2ce41445678f608c125f53528"
+sha256 = "90069e8fdaed7a02aec20e2e91e1014df2cb00a0a62a7885d9899fdb76378637"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-01-death"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-01-death/sections/75-the-churchs-last-words.tex"
-sha256 = "7d4c380e2ddb26065990b57b64d03d0d42993a87b1a9cb30458598f2c3597cd7"
+sha256 = "36c9df74158fec04b54fba78b741dc28bd883f6cd15d4a49b6d98692c8df9735"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-01-death"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-01-death/sections/80-a-day-each-month.tex"
-sha256 = "ea94a7258e506110250eca76bfb42270a84319399c6079238933cb0dcbff7377"
+sha256 = "cfac0fb6c6f9ddb22cba9435ba9fc9f0c39421c95f954c7c89ea69cc1ead729b"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-01-death"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-01-death/sections/82-the-commendation-of-a-soul.tex"
-sha256 = "4eed6dcfbb877170a7f84167de904b2cefeeb3fcb1666473b18f2e3b1e795e77"
+sha256 = "2d2e377cbd2d44147302389d42104584c53f72e6e7918c836a3b20e5fc33e709"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-01-death"]
 
@@ -1488,7 +1494,7 @@ owners = ["articles/faith/four-last-things-01-death"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-01-death/web-edition.toml"
-sha256 = "05627f664e8d5b3d01860c8504c1aad9c93be6642873d682c1942e6ca8a02dfb"
+sha256 = "9f389333b14619b83dd42436c707bb15235eee42d6885c144746f702134793f0"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-01-death"]
 
@@ -1499,8 +1505,14 @@ kind = "publication-main"
 owners = ["articles/faith/four-last-things-02-judgment"]
 
 [[files]]
+path = "src/claude/articles/faith/four-last-things-02-judgment/research/revision-2026-10-26.md"
+sha256 = "e0127f3dfeecf012a6ab3745ad0b4bed7bfa35fae521a4f94418499352e530fd"
+kind = "research-record"
+owners = ["articles/faith/four-last-things-02-judgment"]
+
+[[files]]
 path = "src/claude/articles/faith/four-last-things-02-judgment/research/scope.md"
-sha256 = "1d6adb3b330130b98b9fb325cfda24d9d682b7b3620f3845d6c257f74fee953a"
+sha256 = "d2cf9294a69e0f486e2b9692959a836a72355ed60fb9d8575e745df0586230b9"
 kind = "research-scope"
 owners = ["articles/faith/four-last-things-02-judgment"]
 
@@ -1530,55 +1542,55 @@ owners = ["articles/faith/four-last-things-02-judgment"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-02-judgment/sections/00-the-son-of-man-in-his-majesty.tex"
-sha256 = "f952b075d008c109120c9605aa7573e74ccf454e2ba501bf693a0709bd174a5f"
+sha256 = "f83df5bf55dfdb2a07ccc00a1b681914b6040f28c2e399f20696a4a1cfa099be"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-02-judgment"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-02-judgment/sections/10-at-the-evening-of-life.tex"
-sha256 = "15cabd862fbcc22e545a6d82392fb018f0e2457f048f65aabdc85b193f92cca6"
+sha256 = "3e2b5a96d8b118680fe4c2ecf0e6754fa8c0fa44f6575905c22ff0d02756faff"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-02-judgment"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-02-judgment/sections/20-nonetheless-on-the-day-of-judgment.tex"
-sha256 = "36c59add5b83902ef5fd48553f95086f5d17ee7d1dc1a9978d11e563b636f8b6"
+sha256 = "bcfe5e011ce1b5ba7938555d35721a1f8254198976d242eead97cd79d198f788"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-02-judgment"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-02-judgment/sections/30-the-judge-who-was-judged.tex"
-sha256 = "7d2d5c3400a5d79b969a72cdce002631f8c61a3d64abc4fc8af1e3128c7b178b"
+sha256 = "4fa81e288e9d5688d5b5e61093cb0a40a7383b506ed3de384855fc6ce78e7fba"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-02-judgment"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-02-judgment/sections/40-the-books-were-opened.tex"
-sha256 = "ba433a3ab67d3a62f9f7e0b0fb6522431a7efa0fad5fb1ee2a7d166b2888b450"
+sha256 = "d3fce00bc85edcd74d3ed165132cb54606ad706b3eed23cfa3f0ea6639f531cf"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-02-judgment"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-02-judgment/sections/50-a-mercy-shown-to-the-saved.tex"
-sha256 = "a80654394795610aab39330e47ca0c3eaacf04eb735e4ad5731cc3a7f96d3c4c"
+sha256 = "ff010af31842491bdfe3823db3d9b8a7316abc3a7f94b1c61e22e95de71071af"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-02-judgment"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-02-judgment/sections/60-remember-me-at-the-altar.tex"
-sha256 = "98b9ecffc709c850332e5703e95de006090715e77931f14a3432b749116e2c73"
+sha256 = "5e02d4e9de333fdecfff3dae9d7efb95dc721d6482d9c1728793437f728a0229"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-02-judgment"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-02-judgment/sections/70-the-fear-of-that-day.tex"
-sha256 = "de0a6a64e7bc33d93fc0f5200ddc23924e75e02850147b3b42b3e9ab6af39dd1"
+sha256 = "0f21d9109922033c238516caa5dea0330672b37f9171ddb74359a74b5be43ebd"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-02-judgment"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-02-judgment/sections/80-the-sequence-for-the-dead.tex"
-sha256 = "b431850d97664867a384d29b95130da505c6e3b7ab6a8255732ba747e42babaf"
+sha256 = "8b71cfc84021fec089f571f859e4d8710de762d28cb9f9cd0543e65f4fcdc072"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-02-judgment"]
 
@@ -1602,7 +1614,7 @@ owners = ["articles/faith/four-last-things-02-judgment"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-02-judgment/web-edition.toml"
-sha256 = "bad3c6fd0d4998e9e15164b31e533983e78e1411cc4ff87110cdb55074b7eeaf"
+sha256 = "d5f86ce1e662a72d447d520fd4ab47525f8a1861f876afba207e6e17dd1aee3a"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-02-judgment"]
 
@@ -1613,8 +1625,14 @@ kind = "publication-main"
 owners = ["articles/faith/four-last-things-03-hell"]
 
 [[files]]
+path = "src/claude/articles/faith/four-last-things-03-hell/research/revision-2026-10-26.md"
+sha256 = "152343076a644dbb77091ac0988b48705a624c06b6c59143db2611c6ae12d88f"
+kind = "research-record"
+owners = ["articles/faith/four-last-things-03-hell"]
+
+[[files]]
 path = "src/claude/articles/faith/four-last-things-03-hell/research/scope.md"
-sha256 = "7f11d925a66b0bd2ffff166f77f0b915860126d78b76fce3dcb6c4c0f22fad8d"
+sha256 = "ee7b7e92ab7a46b2caa7d4c26298eeece7a70c1d677550723ccafda1f179ceb6"
 kind = "research-scope"
 owners = ["articles/faith/four-last-things-03-hell"]
 
@@ -1638,73 +1656,73 @@ owners = ["articles/faith/four-last-things-03-hell"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-03-hell/sections/00-depart-from-me.tex"
-sha256 = "070fee2513e9907ffff6094be170fc88c862041759ec5c368041d823003e5432"
+sha256 = "c11d81dac3bb67531ea96419c554f57c5af873fb64efb046beee9aaf05da221b"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-03-hell"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-03-hell/sections/10-the-loss-of-god.tex"
-sha256 = "9188d06dcf242c9dfdc718ebbfe48d74825ba594c6fbd1f0a50caa0eca58a663"
+sha256 = "78e7d3d4fdd241432ace69ac64fc368b67309803e52f44a7ed7a6d20087b8112"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-03-hell"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-03-hell/sections/20-the-fire.tex"
-sha256 = "40b6bc8ce059cb30222f9993cbfc14aa08633c8ebfa80a3f43338850484411f1"
+sha256 = "32d53778498677e46bf5d5e0a50adb52a5a7c544143aa1a4b742323a055d2153"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-03-hell"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-03-hell/sections/30-the-worm-and-the-darkness.tex"
-sha256 = "541b4f8ec89747183f1edfec2f1ebe70b48e23faeaaa60625dc7f590354c3633"
+sha256 = "9c3281dc8088bdc122134095e89f10435a81c2db8dba2c24ab26e8463cf01c1f"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-03-hell"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-03-hell/sections/40-for-ever.tex"
-sha256 = "741456d423c86b441cff017fb12904bf94237268852cfc39d9d0cee5ff976882"
+sha256 = "a02d1c4456e3aafdb27f75889c9c229c31543ef479e3779522e20134e81c030e"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-03-hell"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-03-hell/sections/50-with-their-own-bodies.tex"
-sha256 = "f0702f132402fac84fbb68509aa63dd20a46359c38029940e398888ce339f250"
+sha256 = "0e4401db226980bdca27816a843d84a855e13aecf6d869801c3b6c0140042dce"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-03-hell"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-03-hell/sections/60-the-martyrs-fear.tex"
-sha256 = "7ae7f81adf3bd637a5b58e09ece448d83c8fc0e066fad8a0e3ab1cce82702009"
+sha256 = "58d0057ac9625ec7a74cc4f3f4f097b8740879a0a23ec9ad12f48387553cfbfc"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-03-hell"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-03-hell/sections/65-the-narrow-gate.tex"
-sha256 = "c873d933c39c0d2aa797c634c65c9fa4066dbe0ab02dce83dbb03b5d4d52c49e"
+sha256 = "b85339c542c20950517a6b0e32d08ab59b758d2c5d4b4983f1303ece4332d427"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-03-hell"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-03-hell/sections/70-the-saints-who-saw.tex"
-sha256 = "312dfc7e5b9eef436e55893857467dfc8c4b0ab4b2407dd4bf77f474ab9d1fee"
+sha256 = "36669ddcc748f6d9100841c794f7cf6aab690ef08c19b070616afdc985061e4b"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-03-hell"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-03-hell/sections/75-the-fear-that-saves.tex"
-sha256 = "bc6ab34c6c3930ce7011bd64182284c038077e820281347bd57ce39dcbf0db7a"
+sha256 = "cf8bfb74fe88dfcb004a1d2c5da9ed3e56db6f7166e113e20690da92cc559ec8"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-03-hell"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-03-hell/sections/78-deliver-us.tex"
-sha256 = "f3c87680098d5c7a8aab5d3a42bb9743d9dcf0e532ede29320bf8796026f05f5"
+sha256 = "4bbee4cce7fcf1b7a6ccec4ec12e2e29303862fac5b20498b5799100b5523922"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-03-hell"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-03-hell/sections/80-affections-of-saint-alphonsus.tex"
-sha256 = "2d7d2da972d1fba0ced49ccbcd6806cc5adb1a1cc27ae282029ac8349a7285ec"
+sha256 = "bd24330bf5e9016b5960b2be20b69f72fbb6a2a521421c3230496a98b76643e6"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-03-hell"]
 
@@ -1728,7 +1746,7 @@ owners = ["articles/faith/four-last-things-03-hell"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-03-hell/web-edition.toml"
-sha256 = "8f5a6e3c784dc1e9af2b3041d2ab990336e35e6d4617d882cdbfb9df5bebe210"
+sha256 = "29816efd0e8dcf6033b5e52c21bace230406062e6d4ea72d475dcea375d9f3d8"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-03-hell"]
 
@@ -1739,8 +1757,14 @@ kind = "publication-main"
 owners = ["articles/faith/four-last-things-04-heaven"]
 
 [[files]]
+path = "src/claude/articles/faith/four-last-things-04-heaven/research/revision-2026-10-26.md"
+sha256 = "1047ab8f1901b6d7d28c711f391d6a55519a8972c7f496cf7562ab4d86b2bb44"
+kind = "research-record"
+owners = ["articles/faith/four-last-things-04-heaven"]
+
+[[files]]
 path = "src/claude/articles/faith/four-last-things-04-heaven/research/scope.md"
-sha256 = "e5c7772d99a7c220f1d9bbe6f6954f26b3b68607fc8eb12733640ef244a11ecf"
+sha256 = "39029285e00b0609ff1b95be09dd24c6600cb6081aaebe00b306ecd092bde180"
 kind = "research-scope"
 owners = ["articles/faith/four-last-things-04-heaven"]
 
@@ -1764,49 +1788,49 @@ owners = ["articles/faith/four-last-things-04-heaven"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-04-heaven/sections/00-they-shall-see-his-face.tex"
-sha256 = "f47a173b9bdbf36e8689a3aae6a05f31216b1d8855f8a5074e152ae2b07f5cc6"
+sha256 = "bb2f90c3d2ef96c67bab75effa0960feb274babce28be926a205fe5e4af62d5e"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-04-heaven"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-04-heaven/sections/10-the-vision-of-god.tex"
-sha256 = "862b6b1ce024988d533e70b5ad642042d03563cb86fab2f9f2a059a1820f30b0"
+sha256 = "298b791f63011a329bd5fe1bae9cb51df756b4727d57b75f5662d733fcd0ba50"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-04-heaven"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-04-heaven/sections/20-the-restless-heart.tex"
-sha256 = "033bcf7e753566aa73aaf001e7701f1afd6b1c82d1225b9a743e9d6b1bb3cb3e"
+sha256 = "43c898f0334784abf6a41b37e497d7f24b648ff1754749358e70f10020d0af0a"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-04-heaven"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-04-heaven/sections/30-star-differeth-from-star.tex"
-sha256 = "3a451e546172078a07caaffdc56fac9d17561b03ca3c0c168dba5deff227915c"
+sha256 = "6f2cb0b264fde3cc58a40cb29cc3ff245b973e711407a7e5a03fcd12ae2e9593"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-04-heaven"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-04-heaven/sections/40-the-body-of-glory.tex"
-sha256 = "a7d6c01b994193193f18cce2320148ba398b17015cfcbe11df7ba953d70a6787"
+sha256 = "6abcaae242a4066f3a192c69d1d7172cd01b5f10ebaef194bf71dca12292307a"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-04-heaven"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-04-heaven/sections/50-those-we-love.tex"
-sha256 = "3735b6fbf53e108dc76d15c9e5ac9f66eb4e2a9d951aee5e9284c53c571e6311"
+sha256 = "fe9d25c6e3ce8d63360a3a43730cf1091013b99b84da32c527c9252d2de214dc"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-04-heaven"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-04-heaven/sections/60-without-which-no-man-shall-see-god.tex"
-sha256 = "297a8966ebeccb49a8d80521c01244fbca60dadbb7e53285ab5cadda2c0cbc92"
+sha256 = "d81addcc1bf2921caea69764ca478bbaa22bf7489ea13ab153540bedc2ab621a"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-04-heaven"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-04-heaven/sections/70-the-last-of-the-last-things.tex"
-sha256 = "17a5127bccc64f1f7118baad82d4e7394901d2b474e00d32cf915e6b6303f427"
+sha256 = "7e86727d9366672fbe412688569cd348f147aec80c4814ba91552df787104911"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-04-heaven"]
 
@@ -1836,7 +1860,7 @@ owners = ["articles/faith/four-last-things-04-heaven"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-04-heaven/web-edition.toml"
-sha256 = "5bbc297dd21a047eedef26c66a903dd684527d285476d545dc4936346f189752"
+sha256 = "e59f324407a5ff713decdcf731ec40f54208c1fbd46fdb359e270f761594702a"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-04-heaven"]
 
@@ -1849,6 +1873,12 @@ owners = ["owner.articles.faith.four-last-things"]
 [[files]]
 path = "src/claude/articles/faith/four-last-things-shared/format.tex"
 sha256 = "825cd5ac273cfc0944ffd503a9e07590af7b72c9c10679af6b7226e4a230295e"
+kind = "rendered-content"
+owners = ["owner.articles.faith.four-last-things"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-shared/register-revision-2026-10-26.md"
+sha256 = "6bad37f589a60c27f076592cf617f3cfa04533edf6dc04ccc16c573278d7dfad"
 kind = "rendered-content"
 owners = ["owner.articles.faith.four-last-things"]
 

@@ -27,15 +27,37 @@ Work starts at clean `47c7df92d`, equal to `origin/main`. Commits stay on
 
 <!-- promised-deliverable: claude-flt-register-2026-10-26 -->
 
-**In progress.** On 2026-10-26 the maintainer asked that the new voice and
-drafting guidance be applied to the four Claude Four Last Things essays and
-published to `main`. The governing rules are the Catholic voice rule and
-"Say what the texts say, plainly" in `guidance/editorial.md`. The revision
-changes prose only: quotations, references, bindings, heading order and the
-two-column layout stay as accepted on 2026-10-26, and each essay keeps
-approximately its present extent. Each essay receives an independent cold
-register and fidelity review and every-page visual review before its PDF and
-web edition are reinstalled.
+**Reviewed and installed; publication to `main` pending.** On 2026-10-26
+the maintainer asked that the new voice and drafting guidance be applied to
+the four Claude Four Last Things essays and published to `main`. The
+governing rules are the Catholic voice rule and "Say what the texts say,
+plainly" in `guidance/editorial.md`. The revision changes prose only:
+quotations, references, bindings, heading order and the two-column layout
+stay as accepted on 2026-10-26, and each essay keeps approximately its
+present extent.
+
+All four essays are revised. A mechanical conservation check against
+`c7dfb84c7` passes for each: quotations, `\latin` spans, endnotes,
+headings, appendices and `main.tex` are unchanged, and body prose is
+90-93% of its starting length. Each essay passed an independent cold
+register and fidelity review (Death and Heaven at round 2, Judgment and Hell
+at round 1) and an independent every-page visual review; three print-only
+space and column adjustments changed no word. The series record is
+`src/claude/articles/faith/four-last-things-shared/register-revision-2026-10-26.md`,
+with each leaf's `research/revision-2026-10-26.md` and `research/scope.md`.
+
+| Essay | Pages | PDF SHA-256 |
+| --- | ---: | --- |
+| I Death | 23 | `c0ce7de359ea8da84599bd1dcdbf883457ad3d99a9acb89c720313eb7bd196e6` |
+| II Judgment | 25 | `07227cae27258bcaf5af90fe188a93d373ed32e03a35026040a467dcf52f7731` |
+| III Hell | 30 | `e4f164a8b5122cfad75bb2efce11b8263efa3148c6065ab12f04372b7794507d` |
+| IV Heaven | 22 | `1c2fb4e8e6a664609b3b31afb61e239d2c3d2edd6a54384a6614d8913714effa` |
+
+The reviewed PDFs and regenerated web editions are installed. The Claude
+publication inventory, document catalogue and scoped release bindings are
+refreshed; source classifications and the family ledger are unchanged.
+`make check-sources`, `check-web-editions-current`,
+`check-release-bindings` and the promise ledger pass.
 
 ## Four Last Things PDF layout, 2026-10-26
 

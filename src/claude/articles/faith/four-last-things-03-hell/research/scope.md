@@ -1,5 +1,12 @@
 # Hell — Research Scope (Claude edition)
 
+## Register revision — 2026-10-26
+
+The maintainer asked that the 21 October guidance ("Say what the texts say,
+plainly") and the Catholic voice rule be applied to this essay. Only the
+body prose was revised. Quotations, notes, headings, appendices, references
+and bindings are unchanged. The record is `research/revision-2026-10-26.md`.
+
 ## PDF layout revision — 2026-10-26
 
 The maintainer requested a standalone title page, following contents, and a

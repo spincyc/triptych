@@ -42,14 +42,15 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-flt-register-revised"
   criterion = "All four Claude essays meet the Catholic voice rule and 'Say what the texts say, plainly', preserve quotations byte for byte and every material claim and qualification, and pass an independent cold register and fidelity review with material findings resolved."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "src/claude/articles/faith/four-last-things-shared/register-revision-2026-10-26.md", "src/claude/articles/faith/four-last-things-01-death/research/revision-2026-10-26.md", "src/claude/articles/faith/four-last-things-02-judgment/research/revision-2026-10-26.md", "src/claude/articles/faith/four-last-things-03-hell/research/revision-2026-10-26.md", "src/claude/articles/faith/four-last-things-04-heaven/research/revision-2026-10-26.md"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "claude-flt-register-installed"
   criterion = "All four PDFs build with settled references, pass every-page visual review and metadata, anchor and font checks, and are installed with the reviewed bytes; the web editions, catalogue and release bindings are current."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "src/claude/articles/faith/four-last-things-shared/register-revision-2026-10-26.md"]
 
   [[deliverables.requirements]]
   id = "claude-flt-register-published"
