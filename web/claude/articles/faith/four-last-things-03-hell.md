@@ -499,7 +499,7 @@ The doctrinal history of the eternity of punishment, the debates of the schools,
 
 - Alphonsus Liguori, *Preparation for Death; or, Considerations on the Eternal Maxims* (Dublin: James Duffy, 1843). Public domain.
 
-**Last revised (UTC):** 2026-10-16T17:56:47Z
+**Last revised (UTC):** 2026-10-26T14:07:36Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

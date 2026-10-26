@@ -1,6 +1,24 @@
 schema_version = 1
 
 [[deliverables]]
+id = "four-last-things-pdf-layout-2026-10-26"
+owner = "PROJECT-WORK.md"
+promise = "Give all eight GPT and Claude Four Last Things PDFs two-column article bodies, a clean standalone title page and following contents, preserve their substantive text, review and install the PDFs, and publish to main with deployment verification."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "flt-layout-reviewed"
+  criterion = "All eight PDFs build with settled references and pass every-page visual review, metadata, anchor, font and text checks; reviewed bytes are installed and web/catalogue projections are current."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "flt-layout-published"
+  criterion = "The validated source change reaches origin/main by ordinary push, the Pages workflow succeeds, and live affected PDF routes match reviewed bytes."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "gpt-postconciliar-all-saints-2026-11-01"
 owner = "PROJECT-WORK.md"
 promise = "Complete the GPT postconciliar All Saints proper-study workflow for Sunday 1 November 2026, with independent cold review, three reviewed PDFs and canonical web edition, main publication and verified deployment."

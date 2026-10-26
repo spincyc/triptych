@@ -370,3 +370,14 @@ regeneration, while PROJECT and promises retain both work streams. Eight
 article PDFs have recorded reviewed hashes across 196 pages; they will be
 rebuilt from the exact incoming sources and compared to those hashes. The
 merged source/site and new outgoing objects require their own final rechecks.
+
+The ordinary integration preserves all 39 nonconflicting incoming input files
+exactly. All eight article PDFs reproduce their recorded reviewed bytes across
+196 pages through normal Make build/install targets, without a new visual
+review claim. Combined inventory, family and document catalog are regenerated;
+the incoming Claude inventory validates with its own classification review and
+remains byte-identical to main. Scoped release refresh covers exactly 31 union
+paths. Rights narrative, authorization policy and unrelated rows remain exact.
+All Saints installed PDFs, canonical Markdown, all 80 archive file hashes and
+frozen CYCLES remain unchanged. Merged aggregate/site checks and cold rechecks
+remain required before publication.

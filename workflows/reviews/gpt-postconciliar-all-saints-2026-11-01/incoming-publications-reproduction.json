@@ -1,0 +1,518 @@
+{
+  "schema": 1,
+  "incoming_commit": "82b8c71dadca1dbbc1d0d9280167e261294af2d1",
+  "verified_at_utc": "2026-10-26T14:39:58.211789+00:00",
+  "scope": "Preserve published incoming source bytes and reproduce its eight recorded reviewed PDF hashes; no new visual or content acceptance claim",
+  "all_match": true,
+  "pages": 196,
+  "preserved_incoming_inputs": [
+    {
+      "path": "src/claude/articles/faith/four-last-things-01-death/generation-metadata.tex",
+      "sha256": "18d820e6f3065bc849b432488389cab9938f3d73483802c2563ba4d36b2d61fa"
+    },
+    {
+      "path": "src/claude/articles/faith/four-last-things-01-death/main.tex",
+      "sha256": "b571420b7d8e057669927a6f2c6b6b4ab03e02e32dba84459eacca4c8fccd3d2"
+    },
+    {
+      "path": "src/claude/articles/faith/four-last-things-01-death/research/scope.md",
+      "sha256": "a838406489397c426c92b3158b0e7915cbaa1546addff4826894bafc126ea5bd"
+    },
+    {
+      "path": "src/claude/articles/faith/four-last-things-02-judgment/generation-metadata.tex",
+      "sha256": "9c41bda159eff3cc8624999bcef76c186d89d6fc1e3914821cd3f2697d4ff4ff"
+    },
+    {
+      "path": "src/claude/articles/faith/four-last-things-02-judgment/main.tex",
+      "sha256": "6242882263e7230e15289224da7539479dd00e9135ddb9e907f869236e7331fc"
+    },
+    {
+      "path": "src/claude/articles/faith/four-last-things-02-judgment/research/scope.md",
+      "sha256": "1d6adb3b330130b98b9fb325cfda24d9d682b7b3620f3845d6c257f74fee953a"
+    },
+    {
+      "path": "src/claude/articles/faith/four-last-things-02-judgment/sections/30-the-judge-who-was-judged.tex",
+      "sha256": "7d2d5c3400a5d79b969a72cdce002631f8c61a3d64abc4fc8af1e3128c7b178b"
+    },
+    {
+      "path": "src/claude/articles/faith/four-last-things-03-hell/generation-metadata.tex",
+      "sha256": "ef44e35ddf4a79afd7bc529463a70911d8cfe4b77abe61352fd48a0e2bed3a8e"
+    },
+    {
+      "path": "src/claude/articles/faith/four-last-things-03-hell/main.tex",
+      "sha256": "a8e6343c9a383e2a77efff72a2e9b82edc6711f1d71fc4ddc89a53dde9c3783c"
+    },
+    {
+      "path": "src/claude/articles/faith/four-last-things-03-hell/research/scope.md",
+      "sha256": "7f11d925a66b0bd2ffff166f77f0b915860126d78b76fce3dcb6c4c0f22fad8d"
+    },
+    {
+      "path": "src/claude/articles/faith/four-last-things-03-hell/sections/99-references.tex",
+      "sha256": "3965ed1e450c9f4ca810c3216ca8c21c795aa82764b171d0be61709d573c58b8"
+    },
+    {
+      "path": "src/claude/articles/faith/four-last-things-04-heaven/generation-metadata.tex",
+      "sha256": "f4290f8e476d0df30a932246d2e808af346983170ba79fad86ffea6a9efda56f"
+    },
+    {
+      "path": "src/claude/articles/faith/four-last-things-04-heaven/main.tex",
+      "sha256": "26f7e39c65daee1527bbd7efc624e4751ceb04cec5b9c82e8058e02cc8159971"
+    },
+    {
+      "path": "src/claude/articles/faith/four-last-things-04-heaven/research/scope.md",
+      "sha256": "e5c7772d99a7c220f1d9bbe6f6954f26b3b68607fc8eb12733640ef244a11ecf"
+    },
+    {
+      "path": "src/claude/articles/faith/four-last-things-04-heaven/sections/99-references.tex",
+      "sha256": "93610d4f2ac8f3e8a053fb2458192fef20d406edb7149bbf3bdacfde8015bf39"
+    },
+    {
+      "path": "src/claude/articles/faith/four-last-things-shared/format.tex",
+      "sha256": "825cd5ac273cfc0944ffd503a9e07590af7b72c9c10679af6b7226e4a230295e"
+    },
+    {
+      "path": "src/gpt/articles/faith/four-last-things-01-death/generation-metadata.tex",
+      "sha256": "54b58a7030ad50eca0cbec315b2d1168b3ab0485efa9a3f88580feb2e7b9e954"
+    },
+    {
+      "path": "src/gpt/articles/faith/four-last-things-01-death/main.tex",
+      "sha256": "869703df90f1c0a6433cdb07b07040f36b381cefbfcc288b020dd8473ef19522"
+    },
+    {
+      "path": "src/gpt/articles/faith/four-last-things-01-death/research/scope.md",
+      "sha256": "f3d7c2b337c41bf3deac8dfdf84828e31dae886f3c871256a3bc30b80cf81638"
+    },
+    {
+      "path": "src/gpt/articles/faith/four-last-things-02-judgment/generation-metadata.tex",
+      "sha256": "85713394bc500d7593ccb068c87c3e1e67c357095c80f4bbc57d118aeb0c4deb"
+    },
+    {
+      "path": "src/gpt/articles/faith/four-last-things-02-judgment/main.tex",
+      "sha256": "badf8f0b48562d9537945da69437e733740573ea9e2ffd42c11eb4d88fa9e0fc"
+    },
+    {
+      "path": "src/gpt/articles/faith/four-last-things-02-judgment/research/scope.md",
+      "sha256": "cf0b058bf81d30c131e2ae9883f4c4a6f120f92e94256d2ee332412405faa1f3"
+    },
+    {
+      "path": "src/gpt/articles/faith/four-last-things-03-hell/generation-metadata.tex",
+      "sha256": "0d0e18e470e787defaa43d35ec66c1e87943353a06a0a779ff87c34bb9290851"
+    },
+    {
+      "path": "src/gpt/articles/faith/four-last-things-03-hell/main.tex",
+      "sha256": "d916305ff0756bdde87f0aa72270a769d035a4b34e6dcffc40620ba873a8b355"
+    },
+    {
+      "path": "src/gpt/articles/faith/four-last-things-03-hell/research/scope.md",
+      "sha256": "d6d61b4401c6449e806ebd6c840974802f8c03c9ed6b214c7744af9e1e5687d5"
+    },
+    {
+      "path": "src/gpt/articles/faith/four-last-things-04-heaven/generation-metadata.tex",
+      "sha256": "0bcc68299a263800a795bf0eba78b6431a6affe8a19f7bb3273e2b264bd8b4e5"
+    },
+    {
+      "path": "src/gpt/articles/faith/four-last-things-04-heaven/main.tex",
+      "sha256": "1394d6ba21bf940fb9f08a2c1df72bb9170fd18b6c3e85424baf8cfa120bce8f"
+    },
+    {
+      "path": "src/gpt/articles/faith/four-last-things-04-heaven/references.tex",
+      "sha256": "5cdeb4861e3a1dcf03b7b754a350f0694b3bf5ec86ce598bb95e5e901a68cefd"
+    },
+    {
+      "path": "src/gpt/articles/faith/four-last-things-04-heaven/research/scope.md",
+      "sha256": "3202976d3d686111c98ebdc113147694dab546cd1c24ff31c51d0f137ca0cd7d"
+    },
+    {
+      "path": "src/gpt/articles/faith/four-last-things-shared/format.tex",
+      "sha256": "b75205fceeed19cda267d289679ed0bf63113979a9f33b1822e09f526e601225"
+    },
+    {
+      "path": "src/sources/inventories/claude-publications-v1.toml",
+      "sha256": "890edc85cc5abbcb49514ba48f65c364aa34579ddc6a7758e28289a16d913d54"
+    },
+    {
+      "path": "web/claude/articles/faith/four-last-things-01-death.md",
+      "sha256": "c38e2afd0a96cfdeba45834b79dcd175c15db72aa14aa32c3b29f3aab1f42b02"
+    },
+    {
+      "path": "web/claude/articles/faith/four-last-things-02-judgment.md",
+      "sha256": "d72e99fd506d7731ce1b3bd633ac9f7009175777e7d0306ae2bf4b3997a2c1c4"
+    },
+    {
+      "path": "web/claude/articles/faith/four-last-things-03-hell.md",
+      "sha256": "8bb87bc4ca272b7ede816d806ee5ec7359c5f45d18ebd3df87902a6cbaadef8f"
+    },
+    {
+      "path": "web/claude/articles/faith/four-last-things-04-heaven.md",
+      "sha256": "c44bd349c79ec3ef6c6bbfca85cb0264497acadab8f1ba116fecf1940bc037ae"
+    },
+    {
+      "path": "web/gpt/articles/faith/four-last-things-01-death.md",
+      "sha256": "b8eddfc398f185a40d6204086073755df7d3bd196229b33c800f2e3f31858d61"
+    },
+    {
+      "path": "web/gpt/articles/faith/four-last-things-02-judgment.md",
+      "sha256": "a0016d2095cabdc4014236ad232373867cb36b82dab122d7decd12dda6da043a"
+    },
+    {
+      "path": "web/gpt/articles/faith/four-last-things-03-hell.md",
+      "sha256": "a9734ee0b75a82591b482625f6605805336c843994777c373548ae15159751ec"
+    },
+    {
+      "path": "web/gpt/articles/faith/four-last-things-04-heaven.md",
+      "sha256": "5254c7419ac7ce1b460e5fbdba4a3b4f31e4b5e15d677f5e55a98f842c06c26c"
+    }
+  ],
+  "results": [
+    {
+      "provider": "claude",
+      "document": "articles/faith/four-last-things-01-death",
+      "commands": [
+        {
+          "command": [
+            "make",
+            "PYTHON=.scratch/pc-r07-production/runtime/bin/python3",
+            "PROVIDER=claude",
+            "DOC=articles/faith/four-last-things-01-death",
+            "doc"
+          ],
+          "exit": 0
+        },
+        {
+          "command": [
+            "make",
+            "PYTHON=.scratch/pc-r07-production/runtime/bin/python3",
+            "PROVIDER=claude",
+            "DOC=articles/faith/four-last-things-01-death",
+            "install-doc"
+          ],
+          "exit": 0
+        }
+      ],
+      "expected_pages": 24,
+      "actual_pages": 24,
+      "expected_sha256": "55fb41f699ead340c283c938260783b835aa09bca2fd4849a8c4da7a5d5fe1c7",
+      "build_sha256": "55fb41f699ead340c283c938260783b835aa09bca2fd4849a8c4da7a5d5fe1c7",
+      "installed_sha256": "55fb41f699ead340c283c938260783b835aa09bca2fd4849a8c4da7a5d5fe1c7",
+      "pass": true,
+      "elapsed_seconds": 3.87,
+      "log": ".scratch/pc-r07-integration/incoming-rebuild/claude-death.log",
+      "log_sha256": "829e6617d78a2baa140a92f1d2fbddf7a4d020fa37754d6db08884b08ee25aac"
+    },
+    {
+      "provider": "claude",
+      "document": "articles/faith/four-last-things-02-judgment",
+      "commands": [
+        {
+          "command": [
+            "make",
+            "PYTHON=.scratch/pc-r07-production/runtime/bin/python3",
+            "PROVIDER=claude",
+            "DOC=articles/faith/four-last-things-02-judgment",
+            "doc"
+          ],
+          "exit": 0
+        },
+        {
+          "command": [
+            "make",
+            "PYTHON=.scratch/pc-r07-production/runtime/bin/python3",
+            "PROVIDER=claude",
+            "DOC=articles/faith/four-last-things-02-judgment",
+            "install-doc"
+          ],
+          "exit": 0
+        }
+      ],
+      "expected_pages": 27,
+      "actual_pages": 27,
+      "expected_sha256": "537e7efdee6bb887e92951a9bb1c14269c8f8ecdbb5566f283a48317438757fc",
+      "build_sha256": "537e7efdee6bb887e92951a9bb1c14269c8f8ecdbb5566f283a48317438757fc",
+      "installed_sha256": "537e7efdee6bb887e92951a9bb1c14269c8f8ecdbb5566f283a48317438757fc",
+      "pass": true,
+      "elapsed_seconds": 3.87,
+      "log": ".scratch/pc-r07-integration/incoming-rebuild/claude-judgment.log",
+      "log_sha256": "277cb6deb5353763036bf060704199e634c89b3a05823312de4671041ef33da2"
+    },
+    {
+      "provider": "claude",
+      "document": "articles/faith/four-last-things-03-hell",
+      "commands": [
+        {
+          "command": [
+            "make",
+            "PYTHON=.scratch/pc-r07-production/runtime/bin/python3",
+            "PROVIDER=claude",
+            "DOC=articles/faith/four-last-things-03-hell",
+            "doc"
+          ],
+          "exit": 0
+        },
+        {
+          "command": [
+            "make",
+            "PYTHON=.scratch/pc-r07-production/runtime/bin/python3",
+            "PROVIDER=claude",
+            "DOC=articles/faith/four-last-things-03-hell",
+            "install-doc"
+          ],
+          "exit": 0
+        }
+      ],
+      "expected_pages": 31,
+      "actual_pages": 31,
+      "expected_sha256": "4cecbc1241297594e2c648005e58936f430102c652d1d690d408b33a953f23d6",
+      "build_sha256": "4cecbc1241297594e2c648005e58936f430102c652d1d690d408b33a953f23d6",
+      "installed_sha256": "4cecbc1241297594e2c648005e58936f430102c652d1d690d408b33a953f23d6",
+      "pass": true,
+      "elapsed_seconds": 3.885,
+      "log": ".scratch/pc-r07-integration/incoming-rebuild/claude-hell.log",
+      "log_sha256": "c059cedcc086933cfc21cb683672ca6dab2521a2cff29cdcc5d6b60217db7be1"
+    },
+    {
+      "provider": "claude",
+      "document": "articles/faith/four-last-things-04-heaven",
+      "commands": [
+        {
+          "command": [
+            "make",
+            "PYTHON=.scratch/pc-r07-production/runtime/bin/python3",
+            "PROVIDER=claude",
+            "DOC=articles/faith/four-last-things-04-heaven",
+            "doc"
+          ],
+          "exit": 0
+        },
+        {
+          "command": [
+            "make",
+            "PYTHON=.scratch/pc-r07-production/runtime/bin/python3",
+            "PROVIDER=claude",
+            "DOC=articles/faith/four-last-things-04-heaven",
+            "install-doc"
+          ],
+          "exit": 0
+        }
+      ],
+      "expected_pages": 23,
+      "actual_pages": 23,
+      "expected_sha256": "bf54df5b0f615a1527bda88c04bed8902b809d9c149ae2aed0048ab1a0037c89",
+      "build_sha256": "bf54df5b0f615a1527bda88c04bed8902b809d9c149ae2aed0048ab1a0037c89",
+      "installed_sha256": "bf54df5b0f615a1527bda88c04bed8902b809d9c149ae2aed0048ab1a0037c89",
+      "pass": true,
+      "elapsed_seconds": 3.869,
+      "log": ".scratch/pc-r07-integration/incoming-rebuild/claude-heaven.log",
+      "log_sha256": "65db09828701a2c29705bcc11ee640908f3093a3090164b985ee76cdea50ce8b"
+    },
+    {
+      "provider": "gpt",
+      "document": "articles/faith/four-last-things-01-death",
+      "commands": [
+        {
+          "command": [
+            "make",
+            "PYTHON=.scratch/pc-r07-production/runtime/bin/python3",
+            "PROVIDER=gpt",
+            "DOC=articles/faith/four-last-things-01-death",
+            "doc"
+          ],
+          "exit": 0
+        },
+        {
+          "command": [
+            "make",
+            "PYTHON=.scratch/pc-r07-production/runtime/bin/python3",
+            "PROVIDER=gpt",
+            "DOC=articles/faith/four-last-things-01-death",
+            "install-doc"
+          ],
+          "exit": 0
+        }
+      ],
+      "expected_pages": 23,
+      "actual_pages": 23,
+      "expected_sha256": "bc4b414fcb623c9490c8dc3d62d1acaa767229c4f2e350b100ccdaf21bec3aba",
+      "build_sha256": "bc4b414fcb623c9490c8dc3d62d1acaa767229c4f2e350b100ccdaf21bec3aba",
+      "installed_sha256": "bc4b414fcb623c9490c8dc3d62d1acaa767229c4f2e350b100ccdaf21bec3aba",
+      "pass": true,
+      "elapsed_seconds": 4.285,
+      "log": ".scratch/pc-r07-integration/incoming-rebuild/gpt-death.log",
+      "log_sha256": "6d8130a148a347e455b5393dc13f70e9e343415f10dcf0e9c37510b58e8d9375"
+    },
+    {
+      "provider": "gpt",
+      "document": "articles/faith/four-last-things-02-judgment",
+      "commands": [
+        {
+          "command": [
+            "make",
+            "PYTHON=.scratch/pc-r07-production/runtime/bin/python3",
+            "PROVIDER=gpt",
+            "DOC=articles/faith/four-last-things-02-judgment",
+            "doc"
+          ],
+          "exit": 0
+        },
+        {
+          "command": [
+            "make",
+            "PYTHON=.scratch/pc-r07-production/runtime/bin/python3",
+            "PROVIDER=gpt",
+            "DOC=articles/faith/four-last-things-02-judgment",
+            "install-doc"
+          ],
+          "exit": 0
+        }
+      ],
+      "expected_pages": 23,
+      "actual_pages": 23,
+      "expected_sha256": "77658094f0abcb5bc6a7a14055f9e2f2a775aefc227e7403542aba1f3aa2b0bd",
+      "build_sha256": "77658094f0abcb5bc6a7a14055f9e2f2a775aefc227e7403542aba1f3aa2b0bd",
+      "installed_sha256": "77658094f0abcb5bc6a7a14055f9e2f2a775aefc227e7403542aba1f3aa2b0bd",
+      "pass": true,
+      "elapsed_seconds": 4.277,
+      "log": ".scratch/pc-r07-integration/incoming-rebuild/gpt-judgment.log",
+      "log_sha256": "25b32ed196c8a2a4b5a90a4b4946dc2f6eecfdb5e2b9797710a19dea0bfb8fef"
+    },
+    {
+      "provider": "gpt",
+      "document": "articles/faith/four-last-things-03-hell",
+      "commands": [
+        {
+          "command": [
+            "make",
+            "PYTHON=.scratch/pc-r07-production/runtime/bin/python3",
+            "PROVIDER=gpt",
+            "DOC=articles/faith/four-last-things-03-hell",
+            "doc"
+          ],
+          "exit": 0
+        },
+        {
+          "command": [
+            "make",
+            "PYTHON=.scratch/pc-r07-production/runtime/bin/python3",
+            "PROVIDER=gpt",
+            "DOC=articles/faith/four-last-things-03-hell",
+            "install-doc"
+          ],
+          "exit": 0
+        }
+      ],
+      "expected_pages": 24,
+      "actual_pages": 24,
+      "expected_sha256": "0d90272295974fbe904985cd2ec838692b7d664364500b219698bfe799452fe2",
+      "build_sha256": "0d90272295974fbe904985cd2ec838692b7d664364500b219698bfe799452fe2",
+      "installed_sha256": "0d90272295974fbe904985cd2ec838692b7d664364500b219698bfe799452fe2",
+      "pass": true,
+      "elapsed_seconds": 4.284,
+      "log": ".scratch/pc-r07-integration/incoming-rebuild/gpt-hell.log",
+      "log_sha256": "22e83ad509f2b10a81989e25813573496cfafc6c1214a6954aaab6132382a4e4"
+    },
+    {
+      "provider": "gpt",
+      "document": "articles/faith/four-last-things-04-heaven",
+      "commands": [
+        {
+          "command": [
+            "make",
+            "PYTHON=.scratch/pc-r07-production/runtime/bin/python3",
+            "PROVIDER=gpt",
+            "DOC=articles/faith/four-last-things-04-heaven",
+            "doc"
+          ],
+          "exit": 0
+        },
+        {
+          "command": [
+            "make",
+            "PYTHON=.scratch/pc-r07-production/runtime/bin/python3",
+            "PROVIDER=gpt",
+            "DOC=articles/faith/four-last-things-04-heaven",
+            "install-doc"
+          ],
+          "exit": 0
+        }
+      ],
+      "expected_pages": 21,
+      "actual_pages": 21,
+      "expected_sha256": "12e6fbe74f19dd27d03603de5060749e2f35df0fb30b28145e3c59a4369f3873",
+      "build_sha256": "12e6fbe74f19dd27d03603de5060749e2f35df0fb30b28145e3c59a4369f3873",
+      "installed_sha256": "12e6fbe74f19dd27d03603de5060749e2f35df0fb30b28145e3c59a4369f3873",
+      "pass": true,
+      "elapsed_seconds": 4.269,
+      "log": ".scratch/pc-r07-integration/incoming-rebuild/gpt-heaven.log",
+      "log_sha256": "2a92b6f818dcb87f70f9f0ddb470edcd9d86332d5a7a5eeac66b2a0a0effe67b"
+    }
+  ],
+  "pc_r07_source_seal_intersections": {
+    "run_id": "0af32a5cd3635b06",
+    "native_disposition": "ACCEPTED",
+    "seed": "e1ed2ba5d4cdf3a5199f3bcf78a0d2b3069683bb",
+    "workflow_digest": "4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83",
+    "latest_passed_review_inputs": {
+      "research-review": {
+        "accepted_iteration": 0,
+        "packet": "build/tpt-runs/0af32a5cd3635b06/packets/research-review-0000.txt",
+        "packet_sha256": "069b31b3159b2872b6512c65ec0300842a921494b9985f50e6d39157c54bb4a1",
+        "pinned_path_count": 2240,
+        "incoming_intersection": [],
+        "incoming_path_mentions_in_entire_review_inputs": []
+      },
+      "study-review": {
+        "accepted_iteration": 2,
+        "packet": "build/tpt-runs/0af32a5cd3635b06/packets/study-review-0002.txt",
+        "packet_sha256": "e84a1bee45d90b482d198ae53bcdcb7d519a9ab84d8a2e0b428513897505fae0",
+        "pinned_path_count": 17,
+        "incoming_intersection": [],
+        "incoming_path_mentions_in_entire_review_inputs": []
+      },
+      "synthesis-review": {
+        "accepted_iteration": 1,
+        "packet": "build/tpt-runs/0af32a5cd3635b06/packets/synthesis-review-0001.txt",
+        "packet_sha256": "e2deb71550d3da3f56cff888a1240bed6d45a59efc6daf542d642c1aa255369f",
+        "pinned_path_count": 11,
+        "incoming_intersection": [],
+        "incoming_path_mentions_in_entire_review_inputs": []
+      },
+      "homily-review": {
+        "accepted_iteration": 1,
+        "packet": "build/tpt-runs/0af32a5cd3635b06/packets/homily-review-0001.txt",
+        "packet_sha256": "995037ca077ece8c0196c4bc07cd0abf057a64d187f2a80598814c0691671bbd",
+        "pinned_path_count": 7,
+        "incoming_intersection": [],
+        "incoming_path_mentions_in_entire_review_inputs": []
+      },
+      "visual-review": {
+        "accepted_iteration": 1,
+        "packet": "build/tpt-runs/0af32a5cd3635b06/packets/visual-review-0001.txt",
+        "packet_sha256": "9cf389676fcaa5b8fade2fc5b0684f3dbc75a6d3bc2e96353d1c7ec20dfd9e4c",
+        "pinned_path_count": 31,
+        "incoming_intersection": [],
+        "incoming_path_mentions_in_entire_review_inputs": []
+      },
+      "web-review": {
+        "accepted_iteration": 0,
+        "packet": "build/tpt-runs/0af32a5cd3635b06/packets/web-review-0000.txt",
+        "packet_sha256": "3caa0c29dfd74cc741d63bbbd45e0ac254fa09bc344dd29b939978ff44cbedfb",
+        "pinned_path_count": 1,
+        "incoming_intersection": [],
+        "incoming_path_mentions_in_entire_review_inputs": []
+      }
+    },
+    "render_snapshot": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/research/artifacts.json",
+    "render_snapshot_pinned_path_count": 31,
+    "render_snapshot_incoming_intersection": [],
+    "stage_scope_baseline_intersections": {
+      "homily-review": [],
+      "research-review": [],
+      "study-review": [],
+      "synthesis-review": [],
+      "visual-review": [],
+      "web-review": []
+    },
+    "all_pinned_incoming_intersection": [],
+    "limit": "Exact path-set intersection only; not an assertion of combined gate/review validity.",
+    "method": "Unique SHA-256 path-map keys/path+hash entries recursively collected from each latest PASS packet review_inputs; all 46 incoming paths also independently searched as exact strings throughout complete review_inputs payloads, plus current stage-scope baselines and render snapshot."
+  }
+}

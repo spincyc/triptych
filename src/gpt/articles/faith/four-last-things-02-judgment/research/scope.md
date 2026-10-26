@@ -1,5 +1,15 @@
 # Judgment — Research Scope
 
+## PDF layout revision — 2026-10-26
+
+The maintainer requested a standalone title page, following contents, and a
+two-column article body in both provider editions. The 11-point body uses
+0.85-inch margins and a 0.3-inch column gap; contents, notes and appendices
+remain full width. All substantive text, citations and received prayers are
+preserved. This commission supersedes earlier single-column physical-page
+targets for this layout revision; it does not shorten the essay. Production
+evidence is recorded in `PROJECT-WORK.md` under the 26 October PDF layout.
+
 - **Publication:** `articles/faith/four-last-things-02-judgment`, GPT provider; discursive-articles profile.
 - **Audience and purpose:** substantial Catholic spiritual reading for annual preparation for death, especially the close of the liturgical year, All Souls, and Advent. The essay assumes Catholic faith and seeks examination, repentance, charity, and persevering hope. It is neither secular apologetics nor a workbook.
 - **Promised extent:** each Four Last Things essay is to be on the order of 25 naturally typeset pages, approximately 100 pages in the series. After a 20-page calibration of the first extended draft, this leaf targets approximately 13,300–13,700 body words; the physical page promise controls the estimate. The short contemplative revision's acceptance does not satisfy that later instruction; current pagination and fresh independent review remain production gates.

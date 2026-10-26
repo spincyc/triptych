@@ -1,20 +1,32 @@
 % GPT Four Last Things only; load after common/preamble.
-\geometry{margin=1in}
+\usepackage{titlesec}
+\geometry{margin=0.85in}
+\setlength{\columnsep}{0.3in}
+\raggedbottom
 \linespread{1.04}
 \setlength{\parskip}{0.45em}
 \setlength{\emergencystretch}{2em}
+\tolerance=2000
 \widowpenalty=10000
 \clubpenalty=10000
+\titleformat{\section}{\large\bfseries\raggedright}{\thesection}{0.6em}{}
 \def\TriptychPrintEdition{}
 
 \newcommand{\FourLastThingsTitle}[2]{%
-  \begin{center}
+  \hypersetup{pageanchor=false}
+  \begin{titlepage}
+  \thispagestyle{empty}
+  \centering
+  \vspace*{0.18\textheight}
   {\small\scshape The Four Last Things\par}
-  \vspace{0.35em}
-  {\LARGE\bfseries #1\par}
-  \vspace{0.3em}
-  {\normalsize #2\par}
-  \end{center}
+  \vspace{1.8em}
+  {\Huge\bfseries #1\par}
+  \vspace{0.9em}
+  {\Large\itshape #2\par}
+  \vfill
+  \end{titlepage}
+  \hypersetup{pageanchor=true}
+  \pagenumbering{roman}
 }
 
 \ifdefined\TriptychPrintEdition
@@ -38,7 +50,8 @@
   \setlength{\parskip}{0pt}
   \tableofcontents
   \endgroup
-  \clearpage
+  \twocolumn
+  \pagenumbering{arabic}
   \else
   \fi
 }

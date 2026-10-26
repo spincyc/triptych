@@ -356,6 +356,6 @@ This essay is Catholic spiritual reading for annual preparation for death. Scrip
 
 - Benedict XVI, [*Spe salvi*](https://www.vatican.va/content/benedict-xvi/en/encyclicals/documents/hf_ben-xvi_enc_20071130_spe-salvi.html) (2007), nos. 47–48. Official English text: the theological proposal of purifying encounter and the communion expressed in intercession for the dead.
 
-**Last revised (UTC):** 2026-10-25T20:37:59Z
+**Last revised (UTC):** 2026-10-26T13:53:17Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
