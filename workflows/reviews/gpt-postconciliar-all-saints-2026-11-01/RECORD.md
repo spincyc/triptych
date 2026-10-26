@@ -389,3 +389,18 @@ contains actual numeric exits and merged input objects, with the EOF wording
 corrected to two file-level diagnostics. Main subsequently adds only PROJECT
 and promises receipt updates in `57aa30629fff0a05395b1b7449d5e66bd9d073ac`;
 those records will be preserved without changing tested product inputs.
+
+Scoped postmerge integration and disclosure rechecks both approve exact commit
+`13e247bc1ff1e91cd01310711d8f4ac2675df8ab` over published baseline
+`57aa30629fff0a05395b1b7449d5e66bd9d073ac`, with no findings. The new
+70-file handoff and ZIP are byte-verified. Integration checks all 35 production
+routes, accepted seals, incoming identities and unchanged tested inputs; the EOF
+bookkeeping correction resolves INT-N01. Disclosure checks all 446 outgoing
+objects, including the 55 additions since its initial 391-object audit, and all
+native/archive/CYCLES identities. Review processes are stopped.
+
+`publication-artifacts.json` pins normal-route bytes for the three All Saints
+outputs, canonical web, catalog/manifest/corpus and preserved eight incoming
+article outputs. Only final operator/report records are added after the pinned
+review; their public-data boundary and tested-input equality are checked before
+push. Main publication and actual hosted verification remain outstanding.

@@ -1,0 +1,296 @@
+{
+  "schema": 1,
+  "review": "Independent scoped postmerge publication-integration cold recheck",
+  "assigned_effort": "xhigh",
+  "verified_at_utc": "2026-10-26T15:11:51.727203+00:00",
+  "verdict": "APPROVE",
+  "scope": {
+    "published_outgoing_baseline": "57aa30629fff0a05395b1b7449d5e66bd9d073ac",
+    "reviewed_commit": "13e247bc1ff1e91cd01310711d8f4ac2675df8ab",
+    "tested_publication_commit": "b68df8feb75f3fe8c7cbc60646df2951caf046a7",
+    "incoming_product_commit": "82b8c71dadca1dbbc1d0d9280167e261294af2d1",
+    "prior_reviewed_commit": "d4e3150248899ea569692b5ae922ac269b91d536",
+    "identity": "gpt:liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc",
+    "questions": [
+      "Merged INT-001 preservation and publication wiring",
+      "EOF-001 correction"
+    ],
+    "boundary": "Ordinary incoming-main integration, conflict reconciliation, exact accepted-artifact preservation and actual combined production artifact. Main publication and hosted deployment remain pending; disclosure and substantive archive-derivative judgments belong to the separate lane."
+  },
+  "handoff": {
+    "directory": "build/agent-handoffs/20261026T150549Z-pc-r07-integrated",
+    "directory_exists": true,
+    "zip": "build/agent-handoffs/20261026T150549Z-pc-r07-integrated.zip",
+    "zip_sha256": "1f7b0dd7279ec03451a7c3622adc308ba37f10105aa6cdfd2db92afaeef34159",
+    "zip_files": 70,
+    "zip_test_and_every_entry_byte_comparison_pass": true,
+    "source_map": "build/agent-handoffs/20261026T150549Z-pc-r07-integrated/source-map.json",
+    "source_map_sha256": "769c5e77e571325c7aa09552738af2e9534736db97dc82ca298ee57a47a02bae",
+    "changes_patch_sha256": "8b7fe086decc347a50e90c3769308a6e22626206f8f662bd6ebb87b851256053",
+    "changes_patch_matches_exact_outgoing_git_range": true,
+    "prior_zip_unchanged_sha256": "67633d24bb74ea26bc1877d4f8ec0e1fe182a6a929a5b646f58c0da519a64890"
+  },
+  "conclusions": [
+    {
+      "subject": "Merge and conflict reconciliation",
+      "result": "PASS",
+      "evidence": "Independently derived all 46 incoming paths from the common base: the exact seven shared conflicts are the two operational records and five derived records. Every one of the other 39 files equals its incoming Git blob and recorded SHA-256, including the complete Claude source inventory. Both operational work streams survive; the published article receipt remains complete while All Saints remains in_progress with published-and-live open."
+    },
+    {
+      "subject": "Derived records and release union",
+      "result": "PASS",
+      "evidence": "The current catalogue equals incoming main for all four Four Last Things work records and the premerge catalogue for every other work, including the one All Saints edition. The GPT source inventory changes only ten incoming article surface hashes and its aggregate snapshot; ownership/classification metadata is unchanged. Family evidence snapshots refresh while review states and judgments remain unchanged. Exactly 31 paths form the union of the two independently derived release deltas. Their current hashes match; authorization policy structure, rights narrative and all unrelated rights rows remain exact."
+    },
+    {
+      "subject": "Accepted All Saints evidence and artifact preservation",
+      "result": "PASS",
+      "evidence": "No accepted leaf file changes across the merge and no incoming path occurs in any of the six latest complete review_inputs payloads. Independently rehashed 2,222 research files, 16 chronology and 8 source-admission computation inputs, 17/11/7 content-review files, all 26 render inputs, 3 reviewed PDFs, 2 pagination auxiliaries, canonical Markdown, all 80 archived files and frozen CYCLES. Every hash remains accepted. Thus the prior identity, appointment, source-role, interpretation, edition/exemplar, rights and estimated-delivery findings carry forward through exact evidence preservation."
+    },
+    {
+      "subject": "Incoming reviewed publication preservation",
+      "result": "PASS",
+      "evidence": "All eight current build and installed PDFs match the hashes recorded by published main, with independently checked 24/27/31/23 Claude pages and 23/23/24/21 GPT pages, 196 total. Current canonical and provider-qualified public aliases match those same hashes, and the eight rebuild-log hashes match the reproduction record. This is exact-byte preservation of main-reviewed material, with no new 196-page visual or theological acceptance claim.",
+      "artifacts": [
+        {
+          "provider": "claude",
+          "document": "articles/faith/four-last-things-01-death",
+          "pages": 24,
+          "sha256": "55fb41f699ead340c283c938260783b835aa09bca2fd4849a8c4da7a5d5fe1c7"
+        },
+        {
+          "provider": "claude",
+          "document": "articles/faith/four-last-things-02-judgment",
+          "pages": 27,
+          "sha256": "537e7efdee6bb887e92951a9bb1c14269c8f8ecdbb5566f283a48317438757fc"
+        },
+        {
+          "provider": "claude",
+          "document": "articles/faith/four-last-things-03-hell",
+          "pages": 31,
+          "sha256": "4cecbc1241297594e2c648005e58936f430102c652d1d690d408b33a953f23d6"
+        },
+        {
+          "provider": "claude",
+          "document": "articles/faith/four-last-things-04-heaven",
+          "pages": 23,
+          "sha256": "bf54df5b0f615a1527bda88c04bed8902b809d9c149ae2aed0048ab1a0037c89"
+        },
+        {
+          "provider": "gpt",
+          "document": "articles/faith/four-last-things-01-death",
+          "pages": 23,
+          "sha256": "bc4b414fcb623c9490c8dc3d62d1acaa767229c4f2e350b100ccdaf21bec3aba"
+        },
+        {
+          "provider": "gpt",
+          "document": "articles/faith/four-last-things-02-judgment",
+          "pages": 23,
+          "sha256": "77658094f0abcb5bc6a7a14055f9e2f2a775aefc227e7403542aba1f3aa2b0bd"
+        },
+        {
+          "provider": "gpt",
+          "document": "articles/faith/four-last-things-03-hell",
+          "pages": 24,
+          "sha256": "0d90272295974fbe904985cd2ec838692b7d664364500b219698bfe799452fe2"
+        },
+        {
+          "provider": "gpt",
+          "document": "articles/faith/four-last-things-04-heaven",
+          "pages": 21,
+          "sha256": "12e6fbe74f19dd27d03603de5060749e2f35df0fb30b28145e3c59a4369f3873"
+        }
+      ]
+    },
+    {
+      "subject": "Actual combined production artifact",
+      "result": "PASS",
+      "evidence": "All 35 pinned production routes match source-map hashes and byte counts, including the three All Saints canonical/alias pairs, eight incoming canonical/alias pairs, nine web editions, both catalogs, document data and publication manifest. All Saints remains the sole canonical web owner; its three release records and manifest identities agree. The GPT catalog cell retains exactly Research PDF, Synthesis PDF, Homily PDF and Read, one primary marker, and Claude Planned. Canonical HTML retains 12 unique appointed anchors, 8 sense entries, 47 notes, 113 resolved local links/fragments and one revision timestamp. Actual isolated Chromium checks at 1280x960 and 390x844 cover All Saints, its catalog, Faith and representative incoming GPT/Claude normal web routes: ten states, no browser errors, unresolved fragments or preview banners. Contents/note returns and all four horizontally accessible phone catalog links work."
+    },
+    {
+      "subject": "Tested-input equality and receipt-only second merge",
+      "result": "PASS",
+      "evidence": "Published baseline is an ancestor of the exact reviewed HEAD. The incoming deployment receipt differs from its product commit only in PROJECT-WORK.md and promised-deliverables.toml. All 31 publication/build Git objects in final-validation.json equal both the tested b68 commit and reviewed HEAD. Every one of the five merged gate logs independently rehashes correctly. Post-test changes are limited to the two operational files and three owning validation/reconciliation records; no product input changes."
+    },
+    {
+      "subject": "EOF-001 and prior INT-N01",
+      "result": "PASS",
+      "evidence": "The validation record now correctly states two file-level EOF-only diagnostics. Source bytes remain sealed: 00-opening.tex ends in three LF bytes, representing two trailing empty lines; 20-texts.tex ends in two LF bytes, representing one. Exact-range git diff --check exits 2 only for these two file-level diagnostics. No material defect or unmet release condition is concealed.",
+      "prior_finding_disposition": "INT-N01 resolved in operational records without changing accepted sources."
+    }
+  ],
+  "findings": [],
+  "artifact_pins": {
+    "prior_review": {
+      "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/final-integration-review.json",
+      "sha256": "801f2fb52decb3515a6e29f538aeb874ff6c9d5bfeb96ff29c6f2edf2328dd46",
+      "preserved": true
+    },
+    "premerge_validation": {
+      "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/premerge-validation.json",
+      "sha256": "85307b6753784ebc87813bfbade797e39ab689457640c00b6512c828bc7ce91a",
+      "equals_prior_validation_bytes": true
+    },
+    "merged_validation": {
+      "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/final-validation.json",
+      "sha256": "3bf26738ebd6bc7a3e2a27891d84b66f1de049202eece2ce90e8db464d39783f"
+    },
+    "reconciliation": {
+      "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/main-reconciliation.json",
+      "sha256": "96082c711c25e5a07f43d84ba15272f67ad092758e4b74042e986182a9b1d42b"
+    },
+    "incoming_reproduction": {
+      "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/incoming-publications-reproduction.json",
+      "sha256": "cec927359d26cd54afb9f35049ba6ea1a15cd3ac9dca9a41df4625c1385d22b5"
+    },
+    "native_acceptance": {
+      "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/native-acceptance.json",
+      "sha256": "e88e793ec2c670edd131b1f7f1692d503e0b8b85eea59eeb8158e617841d0eb2",
+      "run_id": "0af32a5cd3635b06",
+      "disposition": "ACCEPTED",
+      "results": 37,
+      "packets": 37
+    },
+    "all_saints_pdfs": [
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.pdf",
+        "pages": 20,
+        "sha256": "ddebff78fcd57d0cc5a2d1f2b561a3676ad39252d518bd65f49f996e6864e0cd",
+        "bytes": 474624
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-synthesis.pdf",
+        "pages": 10,
+        "sha256": "df39c8e92d420eb74a6a3bf569c6b38e3ed5f291cc809b091badd3a0ae2cfec4",
+        "bytes": 409183
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-homily.pdf",
+        "pages": 3,
+        "sha256": "a197407d552a2f13c3965dc6dfc5aca70c41f2108496f88fe97919436f05a300",
+        "bytes": 246580
+      }
+    ],
+    "canonical_markdown": {
+      "path": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.md",
+      "sha256": "bef3dd560d840e155e406d53aba214f9c77ff9c8604b374d61a8c7e6ad7d988a",
+      "bytes": 66705
+    },
+    "cycles": {
+      "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/CYCLES.md",
+      "sha256": "0f294d924f2b18d11410116aa67f28ee3e03eaab444fc8bfff71a5befe48238d",
+      "frozen": true
+    },
+    "production_manifest_sha256": "1bc6794da0154dabdf6d24af5fee18cfc2540c7660bc9690abde302152fcbf48",
+    "production_document_catalogue_sha256": "c9f466bd30dc066ec0c085ca4201458b087ad775739b8cea3ff23e9f150ed154"
+  },
+  "verification": {
+    "focused_commands": [
+      {
+        "command": ".scratch/pc-r07-production/runtime/bin/python3 .scratch/pc-r07-final-integration-review/postmerge/check.py",
+        "exit": 0,
+        "receipt": ".scratch/pc-r07-final-integration-review/postmerge/checks.json",
+        "sha256": "2bb8fef80c3ddb4a03775ed4a992bfeb3e79e8b079b934476c73d846297793bb",
+        "result": "ZIP/directory identity, exact patch/range, all latest seals, PDFs/metadata, 35 routes, canonical aliases, catalog/anchors, 28 preexisting proper PDFs, final gate logs and all 31 tested input objects match."
+      },
+      {
+        "command": ".scratch/pc-r07-production/runtime/bin/python3 .scratch/pc-r07-final-integration-review/postmerge/reconciliation.py",
+        "exit": 0,
+        "receipt": ".scratch/pc-r07-final-integration-review/postmerge/reconciliation-checks.json",
+        "sha256": "63838a8a3ed43fe761d89f4667f11a99bbde626d1d9a20fd0017a07c854dae4c",
+        "result": "Independent three-way path, conflict, union, inventory, policy, catalogue, eight incoming PDF, operational and EOF preservation checks pass."
+      },
+      {
+        "command": "node .scratch/pc-r07-final-integration-review/postmerge/browser.mjs",
+        "exit": 0,
+        "receipt": ".scratch/pc-r07-final-integration-review/postmerge/production-browser.json",
+        "sha256": "5cea876b6019516957e612e2fde0216c09f7e46384b42f336fe891bbd8f68474",
+        "result": "Ten actual-production browser states and scoped interactions pass; own server and browser stopped."
+      },
+      {
+        "command": "git diff --check 57aa30629fff0a05395b1b7449d5e66bd9d073ac 13e247bc1ff1e91cd01310711d8f4ac2675df8ab",
+        "exit": 2,
+        "result": "Only the two accepted EOF-only file-level diagnostics."
+      }
+    ],
+    "probe_correction": {
+      "command": "Initial postmerge reconciliation.py",
+      "exit": 1,
+      "result": "The test assumed a separate provider field in manifest entries. The existing schema identifies providers through canonical paths/provider-qualified IDs. The probe was corrected to compare canonical PDF identity and rerun successfully; no repository defect or repair resulted."
+    },
+    "inherited_merged_gate_commands_bound_to_unchanged_inputs": [
+      {
+        "command": [
+          "make",
+          "PYTHON=.scratch/pc-r07-production/runtime/bin/python3",
+          "check-sources"
+        ],
+        "exit": 0,
+        "log": ".scratch/pc-r07-integration/merged-source-aggregate.log",
+        "log_sha256": "4960cb512cd51d2acfcd7adbe82e91c41d298f398b742372c8de3ff10d9f4e59"
+      },
+      {
+        "command": [
+          "make",
+          "PYTHON=.scratch/pc-r07-production/runtime/bin/python3",
+          "public-site"
+        ],
+        "exit": 0,
+        "log": ".scratch/pc-r07-integration/merged-site-build.log",
+        "log_sha256": "daf95302b2bbc4500dde6cbd9c6f428769e8d12651379ef7aab91d7fa04e95b5"
+      },
+      {
+        "command": [
+          "make",
+          "PYTHON=.scratch/pc-r07-production/runtime/bin/python3",
+          "check-release-bindings",
+          "check-promised-deliverables"
+        ],
+        "exit": 0,
+        "log": ".scratch/pc-r07-integration/merged-release-ledger.log",
+        "log_sha256": "3c9b283e13220a923d0f413b3929a87c7aa4d861d9b01954cecaf8f00ce08c43"
+      },
+      {
+        "command": [
+          "$HOME/.local/bin/tmt",
+          "check"
+        ],
+        "exit": 0,
+        "log": ".scratch/pc-r07-integration/merged-tool-registry.log",
+        "log_sha256": "dc51b8c96c2d745df3bd5590d990230a482fd247123599548e0632fdbf97fc22"
+      },
+      {
+        "command": [
+          ".scratch/pc-r07-production/runtime/bin/python3",
+          "tools/tpt",
+          "public-alpha",
+          "verify",
+          "--deployment-target",
+          "github-pages"
+        ],
+        "exit": 0,
+        "log": ".scratch/pc-r07-integration/merged-pages-verifier.log",
+        "log_sha256": "b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14"
+      }
+    ],
+    "broad_suites_rerun": false,
+    "reason": "No concrete concern required repeating broad passing merged suites; their exact logs and all 31 tested input objects were independently checked.",
+    "stopped_processes": {
+      "own_chromium_stopped": true,
+      "own_local_http_server_stopped": true,
+      "temporary_browser_profile_removed": true,
+      "pending_operations": []
+    }
+  },
+  "limitations": [
+    "This verdict covers only the exact reviewed merge and local production artifact. Main publication, automatic deployment and exact hosted live-byte verification remain separate and pending.",
+    "DISC-001 and substantive ARCH-001 remain owned by the disclosure/archive reviewer; this report verifies evidence identity rather than supplying those separate judgments.",
+    "No fresh visual review of the incoming 196 PDF pages is claimed. Their accepted main artifact hashes reproduce exactly, and their source files are unchanged.",
+    "Earlier All Saints cold conclusions are reused only where current source, installed, Markdown, HTML or supporting seal bytes remain identical. Its authenticated 2008 Latin/current U.S. publisher-exemplar limits, historical-source roles, rights-limited mode and estimated homily timing remain explicit.",
+    "Broader chronology and source-family completion audits remain open. The published article deployment receipt is preserved as main evidence, without independently rechecking that older live event."
+  ],
+  "files_written": [
+    "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/main-reconciliation-cold-review.json",
+    ".scratch/pc-r07-final-integration-review/postmerge/"
+  ],
+  "mutation_boundary": "Historical final-integration-review.json and both handoffs remain unchanged. Only this new report and own scratch files were written; no source, native, metadata, Git, publication or external service mutation occurred."
+}

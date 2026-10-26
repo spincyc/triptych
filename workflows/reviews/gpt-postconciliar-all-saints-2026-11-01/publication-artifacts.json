@@ -1,0 +1,226 @@
+{
+  "schema": 1,
+  "scope": "Exact normal public routes after combined local validation; hosted verification pending",
+  "reviewed_commit": "13e247bc1ff1e91cd01310711d8f4ac2675df8ab",
+  "handoff": {
+    "directory": "build/agent-handoffs/20261026T150549Z-pc-r07-integrated",
+    "directory_created": true,
+    "zip": "build/agent-handoffs/20261026T150549Z-pc-r07-integrated.zip",
+    "zip_created_and_verified": true,
+    "zip_sha256": "1f7b0dd7279ec03451a7c3622adc308ba37f10105aa6cdfd2db92afaeef34159",
+    "files": 70,
+    "reviewed_commit": "13e247bc1ff1e91cd01310711d8f4ac2675df8ab"
+  },
+  "routes": [
+    {
+      "path": "PUBLICATION-MANIFEST.json",
+      "sha256": "1bc6794da0154dabdf6d24af5fee18cfc2540c7660bc9690abde302152fcbf48",
+      "bytes": 4125122,
+      "live_url": "https://mystago.gy/PUBLICATION-MANIFEST.json"
+    },
+    {
+      "path": "browse/structure/documents/corpus.json",
+      "sha256": "c9f466bd30dc066ec0c085ca4201458b087ad775739b8cea3ff23e9f150ed154",
+      "bytes": 1022862,
+      "live_url": "https://mystago.gy/browse/structure/documents/corpus.json"
+    },
+    {
+      "path": "library/faith.html",
+      "sha256": "0ec6df6615443ecabab1218a1c460193c576c1c2461fd9963a17779cdb403f3b",
+      "bytes": 14080,
+      "live_url": "https://mystago.gy/library/faith.html"
+    },
+    {
+      "path": "library/novus-ordo-liturgy.html",
+      "sha256": "8633c6533c81062fdba69d27a4342d6dbed13244d4258151650cd7c5ea310902",
+      "bytes": 29923,
+      "live_url": "https://mystago.gy/library/novus-ordo-liturgy.html"
+    },
+    {
+      "path": "pdf/claude/articles/faith/four-last-things-01-death-claude-3f831433e1406991.pdf",
+      "sha256": "55fb41f699ead340c283c938260783b835aa09bca2fd4849a8c4da7a5d5fe1c7",
+      "bytes": 486999,
+      "live_url": "https://mystago.gy/pdf/claude/articles/faith/four-last-things-01-death-claude-3f831433e1406991.pdf"
+    },
+    {
+      "path": "pdf/claude/articles/faith/four-last-things-01-death.pdf",
+      "sha256": "55fb41f699ead340c283c938260783b835aa09bca2fd4849a8c4da7a5d5fe1c7",
+      "bytes": 486999,
+      "live_url": "https://mystago.gy/pdf/claude/articles/faith/four-last-things-01-death.pdf"
+    },
+    {
+      "path": "pdf/claude/articles/faith/four-last-things-02-judgment-claude-5a4edbd3bd841b62.pdf",
+      "sha256": "537e7efdee6bb887e92951a9bb1c14269c8f8ecdbb5566f283a48317438757fc",
+      "bytes": 519258,
+      "live_url": "https://mystago.gy/pdf/claude/articles/faith/four-last-things-02-judgment-claude-5a4edbd3bd841b62.pdf"
+    },
+    {
+      "path": "pdf/claude/articles/faith/four-last-things-02-judgment.pdf",
+      "sha256": "537e7efdee6bb887e92951a9bb1c14269c8f8ecdbb5566f283a48317438757fc",
+      "bytes": 519258,
+      "live_url": "https://mystago.gy/pdf/claude/articles/faith/four-last-things-02-judgment.pdf"
+    },
+    {
+      "path": "pdf/claude/articles/faith/four-last-things-03-hell-claude-e5b7ecb79e7ce8f2.pdf",
+      "sha256": "4cecbc1241297594e2c648005e58936f430102c652d1d690d408b33a953f23d6",
+      "bytes": 505129,
+      "live_url": "https://mystago.gy/pdf/claude/articles/faith/four-last-things-03-hell-claude-e5b7ecb79e7ce8f2.pdf"
+    },
+    {
+      "path": "pdf/claude/articles/faith/four-last-things-03-hell.pdf",
+      "sha256": "4cecbc1241297594e2c648005e58936f430102c652d1d690d408b33a953f23d6",
+      "bytes": 505129,
+      "live_url": "https://mystago.gy/pdf/claude/articles/faith/four-last-things-03-hell.pdf"
+    },
+    {
+      "path": "pdf/claude/articles/faith/four-last-things-04-heaven-claude-75f71643ce2e66ed.pdf",
+      "sha256": "bf54df5b0f615a1527bda88c04bed8902b809d9c149ae2aed0048ab1a0037c89",
+      "bytes": 482835,
+      "live_url": "https://mystago.gy/pdf/claude/articles/faith/four-last-things-04-heaven-claude-75f71643ce2e66ed.pdf"
+    },
+    {
+      "path": "pdf/claude/articles/faith/four-last-things-04-heaven.pdf",
+      "sha256": "bf54df5b0f615a1527bda88c04bed8902b809d9c149ae2aed0048ab1a0037c89",
+      "bytes": 482835,
+      "live_url": "https://mystago.gy/pdf/claude/articles/faith/four-last-things-04-heaven.pdf"
+    },
+    {
+      "path": "pdf/gpt/articles/faith/four-last-things-01-death-gpt-58bc024a3b2da9ae.pdf",
+      "sha256": "bc4b414fcb623c9490c8dc3d62d1acaa767229c4f2e350b100ccdaf21bec3aba",
+      "bytes": 379967,
+      "live_url": "https://mystago.gy/pdf/gpt/articles/faith/four-last-things-01-death-gpt-58bc024a3b2da9ae.pdf"
+    },
+    {
+      "path": "pdf/gpt/articles/faith/four-last-things-01-death.pdf",
+      "sha256": "bc4b414fcb623c9490c8dc3d62d1acaa767229c4f2e350b100ccdaf21bec3aba",
+      "bytes": 379967,
+      "live_url": "https://mystago.gy/pdf/gpt/articles/faith/four-last-things-01-death.pdf"
+    },
+    {
+      "path": "pdf/gpt/articles/faith/four-last-things-02-judgment-gpt-d54534ed26a69256.pdf",
+      "sha256": "77658094f0abcb5bc6a7a14055f9e2f2a775aefc227e7403542aba1f3aa2b0bd",
+      "bytes": 377748,
+      "live_url": "https://mystago.gy/pdf/gpt/articles/faith/four-last-things-02-judgment-gpt-d54534ed26a69256.pdf"
+    },
+    {
+      "path": "pdf/gpt/articles/faith/four-last-things-02-judgment.pdf",
+      "sha256": "77658094f0abcb5bc6a7a14055f9e2f2a775aefc227e7403542aba1f3aa2b0bd",
+      "bytes": 377748,
+      "live_url": "https://mystago.gy/pdf/gpt/articles/faith/four-last-things-02-judgment.pdf"
+    },
+    {
+      "path": "pdf/gpt/articles/faith/four-last-things-03-hell-gpt-3b9cfcb13abb4f3d.pdf",
+      "sha256": "0d90272295974fbe904985cd2ec838692b7d664364500b219698bfe799452fe2",
+      "bytes": 385047,
+      "live_url": "https://mystago.gy/pdf/gpt/articles/faith/four-last-things-03-hell-gpt-3b9cfcb13abb4f3d.pdf"
+    },
+    {
+      "path": "pdf/gpt/articles/faith/four-last-things-03-hell.pdf",
+      "sha256": "0d90272295974fbe904985cd2ec838692b7d664364500b219698bfe799452fe2",
+      "bytes": 385047,
+      "live_url": "https://mystago.gy/pdf/gpt/articles/faith/four-last-things-03-hell.pdf"
+    },
+    {
+      "path": "pdf/gpt/articles/faith/four-last-things-04-heaven-gpt-f10d5151bde959ef.pdf",
+      "sha256": "12e6fbe74f19dd27d03603de5060749e2f35df0fb30b28145e3c59a4369f3873",
+      "bytes": 369993,
+      "live_url": "https://mystago.gy/pdf/gpt/articles/faith/four-last-things-04-heaven-gpt-f10d5151bde959ef.pdf"
+    },
+    {
+      "path": "pdf/gpt/articles/faith/four-last-things-04-heaven.pdf",
+      "sha256": "12e6fbe74f19dd27d03603de5060749e2f35df0fb30b28145e3c59a4369f3873",
+      "bytes": 369993,
+      "live_url": "https://mystago.gy/pdf/gpt/articles/faith/four-last-things-04-heaven.pdf"
+    },
+    {
+      "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-gpt-7fa6823929c56309.pdf",
+      "sha256": "ddebff78fcd57d0cc5a2d1f2b561a3676ad39252d518bd65f49f996e6864e0cd",
+      "bytes": 474624,
+      "live_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-gpt-7fa6823929c56309.pdf"
+    },
+    {
+      "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-homily-gpt-b955232f95a3f97a.pdf",
+      "sha256": "a197407d552a2f13c3965dc6dfc5aca70c41f2108496f88fe97919436f05a300",
+      "bytes": 246580,
+      "live_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-homily-gpt-b955232f95a3f97a.pdf"
+    },
+    {
+      "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-homily.pdf",
+      "sha256": "a197407d552a2f13c3965dc6dfc5aca70c41f2108496f88fe97919436f05a300",
+      "bytes": 246580,
+      "live_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-homily.pdf"
+    },
+    {
+      "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-synthesis-gpt-09347a0ff13d09da.pdf",
+      "sha256": "df39c8e92d420eb74a6a3bf569c6b38e3ed5f291cc809b091badd3a0ae2cfec4",
+      "bytes": 409183,
+      "live_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-synthesis-gpt-09347a0ff13d09da.pdf"
+    },
+    {
+      "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-synthesis.pdf",
+      "sha256": "df39c8e92d420eb74a6a3bf569c6b38e3ed5f291cc809b091badd3a0ae2cfec4",
+      "bytes": 409183,
+      "live_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-synthesis.pdf"
+    },
+    {
+      "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.pdf",
+      "sha256": "ddebff78fcd57d0cc5a2d1f2b561a3676ad39252d518bd65f49f996e6864e0cd",
+      "bytes": 474624,
+      "live_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.pdf"
+    },
+    {
+      "path": "web/claude/articles/faith/four-last-things-01-death.html",
+      "sha256": "8314ee803cf8e1a4a70271c1ac2497ce2ed025835f24428d6e0ff2f21fe50680",
+      "bytes": 116497,
+      "live_url": "https://mystago.gy/web/claude/articles/faith/four-last-things-01-death.html"
+    },
+    {
+      "path": "web/claude/articles/faith/four-last-things-02-judgment.html",
+      "sha256": "63a53c532db6154a24dea6715b63d2680ccdd412b0894483494b5aaf8af920cc",
+      "bytes": 118219,
+      "live_url": "https://mystago.gy/web/claude/articles/faith/four-last-things-02-judgment.html"
+    },
+    {
+      "path": "web/claude/articles/faith/four-last-things-03-hell.html",
+      "sha256": "b4839506516c35ab440419c84a8038fc4cc5a1e8f9381d01d11f8f655207c453",
+      "bytes": 149047,
+      "live_url": "https://mystago.gy/web/claude/articles/faith/four-last-things-03-hell.html"
+    },
+    {
+      "path": "web/claude/articles/faith/four-last-things-04-heaven.html",
+      "sha256": "29b54934f3096c122340f19c93088fc1d291d6a654b56e8d403f9cd1d63955e3",
+      "bytes": 113753,
+      "live_url": "https://mystago.gy/web/claude/articles/faith/four-last-things-04-heaven.html"
+    },
+    {
+      "path": "web/gpt/articles/faith/four-last-things-01-death.html",
+      "sha256": "14880240aa8d72b09cf6760169de420e5cf27773a9b0770702d4379c2d92452b",
+      "bytes": 92559,
+      "live_url": "https://mystago.gy/web/gpt/articles/faith/four-last-things-01-death.html"
+    },
+    {
+      "path": "web/gpt/articles/faith/four-last-things-02-judgment.html",
+      "sha256": "33b38f4bbb11dec8e245fbe5994858dcf7fd8c7c59492a99c02af7836ebd7c7d",
+      "bytes": 91063,
+      "live_url": "https://mystago.gy/web/gpt/articles/faith/four-last-things-02-judgment.html"
+    },
+    {
+      "path": "web/gpt/articles/faith/four-last-things-03-hell.html",
+      "sha256": "929930733c49565fdec6fe3d9be060bca7229978844506fad38afacf13a2bbf3",
+      "bytes": 95531,
+      "live_url": "https://mystago.gy/web/gpt/articles/faith/four-last-things-03-hell.html"
+    },
+    {
+      "path": "web/gpt/articles/faith/four-last-things-04-heaven.html",
+      "sha256": "b4e207725f0a4cfb8cdf48d6b9a9ebee165ca22f73c657e4f04adff4682919cd",
+      "bytes": 87366,
+      "live_url": "https://mystago.gy/web/gpt/articles/faith/four-last-things-04-heaven.html"
+    },
+    {
+      "path": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.html",
+      "sha256": "91be7ebfbe12506b7026dfb4ef5fdcb9bbc53e3a0482fa19bd420ea945b78ea3",
+      "bytes": 87097,
+      "live_url": "https://mystago.gy/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.html"
+    }
+  ]
+}

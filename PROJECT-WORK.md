@@ -133,8 +133,9 @@ ledger and tool-registry gates pass. The two sealed EOF-only advisories remain
 explicitly qualified. Pinned outgoing cold/disclosure reviews approve without blockers. Main then
 advances with published article-layout work. Its eight PDFs reproduce all196
 recorded reviewed pages byte-for-byte; combined metadata and all merged local
-gates pass. Scoped postmerge cold rechecks, main publication and exact live
-deployment verification remain outstanding.
+gates pass. Scoped postmerge integration and public-object cold rechecks both approve
+without findings. Main publication and exact live deployment verification remain
+outstanding.
 
 ## GPT Last Things and next Sunday propers, 2026-10-25
 
