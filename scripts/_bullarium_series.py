@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import ast
+import copy
 import datetime as dt
 import hashlib
 import io
@@ -244,8 +245,10 @@ def _toml_value(value):
 
 def new_record(path: Path, record: dict):
     payload = ("\n".join(f"{key} = {_toml_value(value)}" for key, value in record.items()) + "\n").encode()
-    if path.exists() and tomllib.loads(path.read_text(encoding="utf-8")) != record:
-        raise ValueError("existing source record would change: " + str(path))
+    if path.exists():
+        if tomllib.loads(path.read_text(encoding="utf-8")) != record:
+            raise ValueError("existing source record would change: " + str(path))
+        return
     legacy.write(path, payload)
 
 
@@ -830,10 +833,279 @@ def _render_options(unit: dict) -> dict:
     return options
 
 
+def _reader_publication(publication: str) -> str:
+    """Omit the importer's unknown-publisher sentinel in reader metadata."""
+    return publication.replace("Rome: None,", "Rome,")
+
+
+def _constituent_note(item):
+    note = item["review_note"] + " Exact source extent and surrounding boundaries were inspected as uncorrected OCR; no complete print-image collation or historical authentication is claimed."
+    if item.get("document_form") == "recorded-audience-rescript":
+        note += " A formally recorded papal response, attributed to its recording official or office; papal context: " + item["papal_context"] + "."
+    return note
+
+
+def _constituent_edition(path, record, source_title, *, write=True):
+    if path.exists():
+        existing = tomllib.loads(path.read_text())
+        publication = existing.get("publication")
+        if not isinstance(publication, str) or existing.get("title") not in {
+                source_title + " — " + publication, source_title + " — " + _reader_publication(publication)}:
+            raise ValueError("existing constituent printing metadata would change")
+        normalized = {**existing, "publication": _reader_publication(publication),
+                      "title": source_title + " — " + _reader_publication(publication)}
+        if normalized != record:
+            raise ValueError("existing constituent printing metadata would change")
+        # The exact old bytes remain the immutable printing witness, including
+        # a prior project placeholder. New reader metadata can correct it only
+        # under its explicit revision; source records are never rewritten.
+        return
+    if write:
+        new_record(path, record)
+
+
+def _constituent_identity(root, config, unit, item, volume):
+    work_id = item.get("canonical_work_id", "work." + unit["id"])
+    base = (source_paths(root, work_id, "work.toml")[0].parent if item.get("canonical_work_id") else
+            root / "src/sources/works" / config["series_id"] / unit["id"].removeprefix(config["series_id"] + ".").replace(".", "-"))
+    key = f"{volume['publication_year']}-{config['series_id']}-{unit['volume_key']}-{item['language']}"
+    edition_id = "edition." + work_id.removeprefix("work.") + "." + key
+    parent = base / "editions" / key
+    segment_id = "segment." + work_id.removeprefix("work.") + "." + key + ".source-ocr"
+    return work_id, base, edition_id, parent, segment_id, parent / "segments/source-ocr.toml"
+
+
+def _prior_reader_rows(root, paths):
+    rows = {}
+    for kind in ("manifest", "fragments"):
+        path = root / paths[kind]
+        if not path.exists():
+            continue
+        manifest = read_json(path)
+        if manifest.get("schema") != TYPESET_SCHEMA or not isinstance(manifest.get("documents"), list):
+            raise ValueError("prior series manifest has the wrong schema")
+        revision(manifest.get("revision"))
+        for row in manifest["documents"]:
+            if not isinstance(row, dict) or not isinstance(row.get("id"), str) or row["id"] in rows:
+                raise ValueError("prior series reader identity is missing or repeated")
+            if "revision" not in row:
+                raise ValueError("prior series reader must pin its own render revision before incremental admission")
+            stamp = revision(row["revision"])
+            rows[row["id"]] = copy.deepcopy(row), stamp, kind
+    return rows
+
+
+def _reader_artifact(root, unit, volume, artifacts):
+    if unit["volume_key"] not in artifacts:
+        declaration = volume["container"]["artifacts"]["ocr"]
+        artifact = tomllib.loads(local(root, declaration["manifest"]).read_text())
+        if artifact["id"] != declaration["id"] or artifact["sha256"] != declaration["sha256"]:
+            raise ValueError("series reader controller differs from its registered container")
+        artifacts[unit["volume_key"]] = artifact
+    artifact = artifacts[unit["volume_key"]]
+    if unit["artifact_id"] != artifact["id"] or unit["artifact_sha256"] != artifact["sha256"]:
+        raise ValueError("series reader source differs from its reviewed controller")
+    return artifact
+
+
+def _reader_row(root, unit, volume, config_volume, artifacts):
+    artifact = _reader_artifact(root, unit, volume, artifacts)
+    item = unit["review"]
+    revision(unit["render_revision"])
+    fragment = unit["status"] == "admitted-fragment"
+    recorded = item.get("document_form") == "recorded-audience-rescript"
+    responsible = item.get("source_responsible", item["recording_official"]) if recorded else item["printed_attribution"]
+    row = {"id": unit["id"], "title": item["title"], "pope": responsible,
+        "revision": unit["render_revision"], "date": item.get("date"), "document_type": item["genre"], "language": item["language"],
+        "source_url": artifact["source_url"], "text_path": artifact["path"], "artifact_id": artifact["id"],
+        "sha256": artifact["sha256"], "segment_id": unit["segment_id"], "segment_path": unit["segment_path"],
+        "physical_line_ranges": item["physical_line_ranges"], "rights_status": artifact["rights_status"],
+        "rights_basis": artifact["rights_basis"], "extent_kind": "fragment" if fragment else "printed-act",
+        "source_note": _reader_publication(config_volume["publication"]) + " Uncorrected, uncollated OCR transcription of the identified constituent. " +
+            ("Complete papal body; editorial caption or non-substantive publishing furniture omitted as separately identified in the source review. " if item.get("editorial_omission_review")
+             else "Historical synopsis, source notes, dating and subscriptions are retained as this witness gives them; literal abbreviations are not expanded. ") +
+            item.get("reader_source_note", "") + (" Missing content: " + item["missing_content"] if fragment else ""),
+        "rights_notice": "Historical source wording is public domain in the United States; project typesetting does not relicense it."}
+    if item.get("language_label"):
+        row["language_label"] = item["language_label"]
+    if recorded:
+        row["pope_context"] = item["papal_context"]
+        row["source_note"] += " A papal audience response recorded by " + item["recording_official"] + "; papal context: " + item["papal_context"] + "."
+    options = _render_options(unit)
+    if "allow_long_token_breaks" in options:
+        row["allow_long_token_breaks"] = options["allow_long_token_breaks"]
+    if options.get("source_note_append"):
+        row["source_note"] = row["source_note"].rstrip() + " " + options["source_note_append"]
+    return row
+
+
+def _preserve_reader_row(prior, unit, row):
+    if prior is None:
+        return row
+    old, stamp, _ = prior
+    current = revision(unit["render_revision"])
+    if current < stamp:
+        raise ValueError("series reader render revision cannot move backwards")
+    if current == stamp:
+        source_fields = ("artifact_id", "sha256", "segment_id", "segment_path", "physical_line_ranges",
+                         "text_path", "language", "source_url", "rights_status", "rights_basis", "extent_kind")
+        if any(legacy.json_bytes(old.get(key)) != legacy.json_bytes(row.get(key)) for key in source_fields):
+            raise ValueError("series reader source changed without a newer render revision")
+        options = _render_options(unit)
+        if (old.get("allow_long_token_breaks") != options.get("allow_long_token_breaks")
+                or options.get("source_note_append") and not old.get("source_note", "").endswith(options["source_note_append"])):
+            raise ValueError("series reader layout correction requires a newer render revision")
+        # Keep every frozen title, qualification and project layout field. A
+        # formatter improvement affects new/revised readers, never old PDFs.
+        return copy.deepcopy(old)
+    return row
+
+
+def _checked_segment(root, unit):
+    path = local(root, unit["segment_path"])
+    works = (root / "src/sources/works").resolve()
+    if not path.is_relative_to(works) or path.parent.name != "segments" or path.suffix != ".toml":
+        raise ValueError("series selection must use a source-owned segment")
+    edition_dir = path.parents[1]
+    parts = edition_dir.relative_to(works).parts
+    if len(parts) != 4 or parts[2] != "editions":
+        raise ValueError("series segment has no canonical edition owner")
+    segment = tomllib.loads(path.read_text())
+    expected = {"schema": 2, "record_type": "segment", "id": unit["segment_id"],
+                "edition_id": unit["edition_id"], "artifact_id": unit["artifact_id"],
+                "artifact_sha256": unit["artifact_sha256"], "physical_line_ranges": unit["review"]["physical_line_ranges"]}
+    if any(legacy.json_bytes(segment.get(key)) != legacy.json_bytes(value) for key, value in expected.items()):
+        raise ValueError("reviewed constituent differs from its source pin")
+    ranges(segment["physical_line_ranges"])
+    edition = tomllib.loads((edition_dir / "edition.toml").read_text())
+    work = tomllib.loads((edition_dir.parents[1] / "work.toml").read_text())
+    if (edition.get("record_type") != "edition" or edition.get("id") != unit["edition_id"]
+            or edition.get("work_id") != unit["work_id"] or work.get("record_type") != "work"
+            or work.get("id") != unit["work_id"] or edition.get("language") != unit["review"]["language"]):
+        raise ValueError("series segment differs from its historical work/edition owner")
+    return segment
+
+
+def _check_reader_row(unit, row, sources, stamp):
+    artifact = sources[unit["artifact_id"]]
+    expected = {"artifact_id": unit["artifact_id"], "sha256": unit["artifact_sha256"],
+                "segment_id": unit["segment_id"], "segment_path": unit["segment_path"],
+                "physical_line_ranges": unit["review"]["physical_line_ranges"],
+                "language": unit["review"]["language"], "text_path": artifact["path"],
+                "source_url": artifact["source_url"], "rights_status": artifact["rights_status"], "rights_basis": artifact["rights_basis"]}
+    if (any(legacy.json_bytes(row.get(key)) != legacy.json_bytes(value) for key, value in expected.items())
+            or revision(row.get("revision", stamp)) != revision(unit["render_revision"])):
+        raise ValueError("active series reader disagrees with its admitted catalog source")
+    for key in ("work_id", "edition_id"):
+        if key in row and row[key] != unit[key]:
+            raise ValueError("reader variant differs from its historical owner")
+    options = _render_options(unit)
+    if (row.get("allow_long_token_breaks") != options.get("allow_long_token_breaks")
+            or options.get("source_note_append") and not row.get("source_note", "").endswith(options["source_note_append"])):
+        raise ValueError("active series reader differs from its explicit layout correction")
+
+
+def _check_reader_variants(root, units, sources):
+    shared_path = root / "src/sources/papal-documents/historical-series-corrections-manifest.json"
+    shared = read_json(shared_path) if shared_path.exists() else None
+    variants = [unit for unit in units.values() if unit["status"] == "reader-selection-variant"]
+    if shared is not None and variants:
+        if (shared.get("schema") != TYPESET_SCHEMA or not isinstance(shared.get("documents"), list)
+                or not isinstance(shared.get("supersessions"), list)):
+            raise ValueError("shared historical reader corrections have the wrong schema")
+        revision(shared.get("revision"))
+    for unit in variants:
+        parent = units.get(unit.get("parent_id"))
+        if (parent is None or parent["status"] not in {"admitted-complete", "admitted-fragment"}
+                or unit.get("selection_variant_of") != parent["id"] or not unit["id"].startswith(parent["id"] + ".")):
+            raise ValueError("reader variant must identify an admitted historical parent")
+        for key in ("volume_key", "work_id", "edition_id", "artifact_id", "artifact_sha256"):
+            if unit.get(key) != parent.get(key):
+                raise ValueError("reader variant must reuse its parent's historical work, edition and controller")
+        if unit["segment_id"] == parent["segment_id"] or unit["segment_path"] == parent["segment_path"]:
+            raise ValueError("reader variant requires a distinct registered selection")
+        segment = _checked_segment(root, unit)
+        parent_ranges = ranges(parent["review"]["physical_line_ranges"])
+        if any(not any(a <= start <= end <= z for a, z in parent_ranges)
+               for start, end in segment["physical_line_ranges"]):
+            raise ValueError("reader variant selection escapes its historical parent")
+        revision(unit["render_revision"])
+        if shared is None:
+            continue
+        rows = [row for row in shared["documents"] if isinstance(row, dict) and row.get("id") == unit["id"]]
+        if len(rows) > 1:
+            raise ValueError("reader variant is repeated in shared corrections")
+        if not rows:
+            continue
+        _check_reader_row(unit, rows[0], sources, shared["revision"])
+        if rows[0].get("extent_kind") != ("fragment" if parent["status"] == "admitted-fragment" else "printed-act"):
+            raise ValueError("reader variant changed its parent's historical extent kind")
+        actions = [action for action in shared["supersessions"] if isinstance(action, dict)
+                   and isinstance(action.get("replacement"), dict) and action["replacement"].get("id") == unit["id"]]
+        if not actions:
+            raise ValueError("published reader variant requires an exact prior PDF/source supersession")
+        for action in actions:
+            prior, replacement = action.get("prior", {}), action["replacement"]
+            _text(action.get("reason"), "reader supersession reason")
+            if not SHA256.fullmatch(str(prior.get("pdf_sha256", ""))):
+                raise ValueError("reader variant supersession requires the exact prior PDF SHA-256")
+            for pin, owner in ((prior, parent), (replacement, unit)):
+                expected = {"id": owner["id"], "language": owner["review"]["language"],
+                            "artifact_id": owner["artifact_id"], "source_sha256": owner["artifact_sha256"],
+                            "segment_id": owner["segment_id"]}
+                if any(pin.get(key) != value for key, value in expected.items()):
+                    raise ValueError("reader variant supersession disagrees with its source selection")
+                if "physical_line_ranges" in pin and legacy.json_bytes(pin["physical_line_ranges"]) != legacy.json_bytes(owner["review"]["physical_line_ranges"]):
+                    raise ValueError("reader variant supersession bounds disagree with its source selection")
+
+
+def _check_reader_withdrawal(root, unit, row, sources, stamp):
+    """Retain a frozen prior component only under an exact active null directive."""
+    withdrawal = unit.get("reader_withdrawal")
+    if (unit["status"] != "specifically-held" or not isinstance(withdrawal, dict)
+            or not isinstance(withdrawal.get("prior"), dict) or withdrawal.get("replacement", "missing") is not None):
+        raise ValueError("inactive reader requires an explicit prior-to-null withdrawal")
+    _text(withdrawal.get("reason"), "reader withdrawal reason")
+    prior = withdrawal["prior"]
+    expected = {"id": unit["id"], "language": row.get("language"), "artifact_id": unit["artifact_id"],
+                "source_sha256": unit["artifact_sha256"], "segment_id": unit["segment_id"],
+                "physical_line_ranges": row.get("physical_line_ranges")}
+    if (any(legacy.json_bytes(prior.get(key)) != legacy.json_bytes(value) for key, value in expected.items())
+            or not SHA256.fullmatch(str(prior.get("pdf_sha256", "")))):
+        raise ValueError("reader withdrawal disagrees with its frozen PDF/source selection")
+    ranges(prior["physical_line_ranges"])
+    history = unit.get("review_history", [])
+    old_reviews = [review for review in history if isinstance(review, dict)
+                   and review.get("decision") in {"admit", "fragment"} and review.get("document_id") == unit["id"]
+                   and review.get("artifact_sha256") == unit["artifact_sha256"]
+                   and review.get("language") == prior["language"]
+                   and legacy.json_bytes(review.get("physical_line_ranges")) == legacy.json_bytes(prior["physical_line_ranges"])]
+    if not old_reviews:
+        raise ValueError("withdrawn reader requires its archived historical admission review")
+    if row.get("extent_kind") != ("fragment" if old_reviews[-1]["decision"] == "fragment" else "printed-act"):
+        raise ValueError("withdrawn reader changed its historical extent kind")
+    _text(unit.get("review", {}).get("review_note"), "current reader withdrawal review")
+    historical = {**unit, "review": old_reviews[-1]}
+    _checked_segment(root, historical)
+    _check_reader_row(historical, row, sources, stamp)
+    path = root / "src/sources/papal-documents/historical-series-corrections-manifest.json"
+    shared = read_json(path) if path.exists() else {}
+    if (shared.get("schema") != TYPESET_SCHEMA or not isinstance(shared.get("supersessions"), list)
+            or not isinstance(shared.get("documents"), list)):
+        raise ValueError("reader withdrawal requires shared historical correction directives")
+    revision(shared.get("revision"))
+    matches = [action for action in shared["supersessions"] if isinstance(action, dict)
+               and legacy.json_bytes(action) == legacy.json_bytes(withdrawal)]
+    if len(matches) != 1 or any(isinstance(candidate, dict) and candidate.get("id") == unit["id"] for candidate in shared["documents"]):
+        raise ValueError("reader withdrawal lacks one identical shared null supersession")
+    return historical
+
+
 def admit(root: Path, config: dict, review_paths: list[Path], when: str) -> dict:
     revision(when)
     paths = paths_for(config["series_id"])
     catalog = read_json(root / paths["catalog"])
+    prior_rows = _prior_reader_rows(root, paths)
     units = {item["id"]: item for item in catalog["documents"]}
     for unit in units.values():
         _render_options(unit)
@@ -865,6 +1137,8 @@ def admit(root: Path, config: dict, review_paths: list[Path], when: str) -> dict
                 raise ValueError("review document ID is missing or repeated")
             seen.add(identifier)
             unit, decision = units[identifier], item.get("decision")
+            if unit.get("status") == "reader-selection-variant" or unit.get("reader_withdrawal"):
+                raise ValueError("reader variants or withdrawn readers cannot be admitted as independent acts")
             if decision not in DECISIONS:
                 raise ValueError("unknown reviewed disposition")
             if item.get("artifact_sha256") != unit["artifact_sha256"]:
@@ -924,6 +1198,51 @@ def admit(root: Path, config: dict, review_paths: list[Path], when: str) -> dict
         for prior in active.values():
             if prior["artifact_id"] == artifact["id"] and any(max(a, c) <= min(b, d) for a, b in bounds for c, d in prior["review"]["physical_line_ranges"]):
                 raise ValueError("new admission overlaps an existing admitted constituent")
+    # Build and compare every prospective reader before any source/catalog
+    # write. Frozen source pins cannot change under their old row revision.
+    planned = copy.deepcopy(units)
+    identities, edition_records = {}, {}
+    dispositions = {"hold": "specifically-held", "duplicate": "duplicate-witness", "non-papal": "non-papal-source-unit",
+                    "non-act": "not-an-independent-act", "split": "split-into-constituents"}
+    for unit, item, artifact, bounds in staged:
+        proposed = planned[unit["id"]]
+        proposed["review"] = legacy.durable_review(item)
+        if bounds is None:
+            proposed["status"] = dispositions[item["decision"]]
+            continue
+        identity = _constituent_identity(root, config, unit, item, configs[unit["volume_key"]])
+        identities[unit["id"]] = identity
+        work_id, _, edition_id, parent, segment_id, segment_path = identity
+        config_volume = configs[unit["volume_key"]]
+        publication = _reader_publication(config_volume["publication"])
+        edition_records[unit["id"]] = {"schema": 1, "record_type": "edition", "id": edition_id,
+            "work_id": work_id, "title": item["title"] + " — " + publication, "language": item["language"],
+            "date": str(config_volume["publication_year"]), "publication": publication, "notes": _constituent_note(item)}
+        _constituent_edition(parent / "edition.toml", edition_records[unit["id"]], item["title"], write=False)
+        proposed.update(status="admitted-fragment" if item["decision"] == "fragment" else "admitted-complete",
+                        work_id=work_id, edition_id=edition_id, segment_id=segment_id,
+                        segment_path=str(segment_path.relative_to(root)), render_revision=unit.get("render_revision", when))
+    manifests, artifacts, emitted = {False: [], True: []}, {}, set()
+    for unit in sorted(planned.values(), key=lambda value: value["id"]):
+        if unit.get("reader_withdrawal"):
+            if unit["id"] not in prior_rows:
+                raise ValueError("withdrawn reader is missing its pinned prior component")
+            old, stamp, kind = prior_rows[unit["id"]]
+            artifact = _reader_artifact(root, unit, volumes[unit["volume_key"]], artifacts)
+            _check_reader_withdrawal(root, unit, old, {artifact["id"]: artifact}, stamp)
+            manifests[kind == "fragments"].append(copy.deepcopy(old))
+            emitted.add(unit["id"])
+            continue
+        if unit["status"] not in {"admitted-complete", "admitted-fragment"}:
+            continue
+        row = _reader_row(root, unit, volumes[unit["volume_key"]], configs[unit["volume_key"]], artifacts)
+        kept = _preserve_reader_row(prior_rows.get(unit["id"]), unit, row)
+        if local(root, unit["segment_path"]).exists() or unit["id"] not in identities:
+            _checked_segment(root, unit)
+        manifests[unit["status"] == "admitted-fragment"].append(kept)
+        emitted.add(unit["id"])
+    if set(prior_rows) - emitted:
+        raise ValueError("an existing base reader would disappear without explicit source reconciliation")
     for unit, item, artifact, bounds in staged:
         unit["review"] = legacy.durable_review(item)
         if bounds is None:
@@ -931,27 +1250,16 @@ def admit(root: Path, config: dict, review_paths: list[Path], when: str) -> dict
             continue
         volume, config_volume = volumes[unit["volume_key"]], configs[unit["volume_key"]]
         fragment = item["decision"] == "fragment"
-        work_id = item.get("canonical_work_id", "work." + unit["id"])
-        base = source_paths(root, work_id, "work.toml")[0].parent if item.get("canonical_work_id") else root / "src/sources/works" / config["series_id"] / unit["id"].removeprefix(config["series_id"] + ".").replace(".", "-")
-        edition_key = f"{config_volume['publication_year']}-{config['series_id']}-{unit['volume_key']}-{item['language']}"
-        edition_id = "edition." + work_id.removeprefix("work.") + "." + edition_key
-        parent = base / "editions" / edition_key
-        note = item["review_note"] + " Exact source extent and surrounding boundaries were inspected as uncorrected OCR; no complete print-image collation or historical authentication is claimed."
+        work_id, base, edition_id, parent, segment_id, segment_path = identities[unit["id"]]
+        note = edition_records[unit["id"]]["notes"]
         recorded = item.get("document_form") == "recorded-audience-rescript"
         responsible = item.get("source_responsible", item["recording_official"]) if recorded else item["printed_attribution"]
-        if recorded:
-            note += " A formally recorded papal response, attributed to its recording official or office; papal context: " + item["papal_context"] + "."
         if not item.get("canonical_work_id"):
             new_record(base / "work.toml", {"schema": 1, "record_type": "work", "id": work_id,
                 "title": item["title"], "responsible": responsible,
                 "work_type": "historical-papal-act-fragment" if fragment else "recorded-papal-response" if recorded else "historically-attributed-papal-act",
                 "languages": item.get("languages", [item["language"]]), "description": note, "relations": [volume["container"]["work_id"]]})
-        new_record(parent / "edition.toml", {"schema": 1, "record_type": "edition", "id": edition_id,
-            "work_id": work_id, "title": item["title"] + " — " + config_volume["publication"],
-            "language": item["language"], "date": str(config_volume["publication_year"]),
-            "publication": config_volume["publication"], "notes": note})
-        segment_id = "segment." + work_id.removeprefix("work.") + "." + edition_key + ".source-ocr"
-        segment_path = parent / "segments/source-ocr.toml"
+        _constituent_edition(parent / "edition.toml", edition_records[unit["id"]], item["title"])
         new_record(segment_path, {"schema": 2, "record_type": "segment", "id": segment_id,
             "edition_id": edition_id, "artifact_id": artifact["id"], "artifact_sha256": artifact["sha256"],
             "segment_type": "constituent-fragment" if fragment else "constituent-work", "physical_line_ranges": bounds,
@@ -963,37 +1271,6 @@ def admit(root: Path, config: dict, review_paths: list[Path], when: str) -> dict
     catalog["documents"] = sorted(units.values(), key=lambda item: item["id"])
     catalog["revision"], catalog["coverage"] = when, coverage(catalog)
     legacy.write(root / paths["catalog"], legacy.json_bytes(catalog))
-    manifests = {False: [], True: []}
-    for unit in catalog["documents"]:
-        if unit["status"] not in {"admitted-complete", "admitted-fragment"}:
-            continue
-        item, volume = unit["review"], volumes[unit["volume_key"]]
-        artifact = tomllib.loads(local(root, volume["container"]["artifacts"]["ocr"]["manifest"]).read_text())
-        fragment = unit["status"] == "admitted-fragment"
-        recorded = item.get("document_form") == "recorded-audience-rescript"
-        responsible = item.get("source_responsible", item["recording_official"]) if recorded else item["printed_attribution"]
-        manifests[fragment].append({"id": unit["id"], "title": item["title"], "pope": responsible,
-            "revision": unit["render_revision"],
-            "date": item.get("date"), "document_type": item["genre"], "language": item["language"],
-            "source_url": artifact["source_url"], "text_path": artifact["path"], "artifact_id": artifact["id"],
-            "sha256": artifact["sha256"], "segment_id": unit["segment_id"], "segment_path": unit["segment_path"],
-            "physical_line_ranges": item["physical_line_ranges"], "rights_status": artifact["rights_status"],
-            "rights_basis": artifact["rights_basis"], "extent_kind": "fragment" if fragment else "printed-act",
-            "source_note": configs[unit["volume_key"]]["publication"] + " Uncorrected, uncollated OCR transcription of the identified constituent. " +
-                ("Complete papal body; editorial caption or non-substantive publishing furniture omitted as separately identified in the source review. " if item.get("editorial_omission_review")
-                 else "Historical synopsis, source notes, dating and subscriptions are retained as this witness gives them; literal abbreviations are not expanded. ") +
-                item.get("reader_source_note", "") + (" Missing content: " + item["missing_content"] if fragment else ""),
-            "rights_notice": "Historical source wording is public domain in the United States; project typesetting does not relicense it."})
-        if item.get("language_label"):
-            manifests[fragment][-1]["language_label"] = item["language_label"]
-        if recorded:
-            manifests[fragment][-1]["pope_context"] = item["papal_context"]
-            manifests[fragment][-1]["source_note"] += " A papal audience response recorded by " + item["recording_official"] + "; papal context: " + item["papal_context"] + "."
-        options = _render_options(unit)
-        if "allow_long_token_breaks" in options:
-            manifests[fragment][-1]["allow_long_token_breaks"] = options["allow_long_token_breaks"]
-        if options.get("source_note_append"):
-            manifests[fragment][-1]["source_note"] = manifests[fragment][-1]["source_note"].rstrip() + " " + options["source_note_append"]
     for fragment, rows in manifests.items():
         legacy.write(root / paths["fragments" if fragment else "manifest"], legacy.json_bytes({"schema": TYPESET_SCHEMA, "revision": when, "documents": rows}))
     return {"status": "ok", **catalog["coverage"]}
@@ -1019,12 +1296,11 @@ def check(root: Path, config: dict) -> dict:
         if item["status"] != "held" and not item.get("review"):
             raise ValueError("source candidate was promoted without review")
         if item["status"] in {"admitted-complete", "admitted-fragment"}:
-            segment = tomllib.loads(local(root, item["segment_path"]).read_text())
-            if segment["id"] != item["segment_id"] or segment["artifact_sha256"] != item["artifact_sha256"] or segment["physical_line_ranges"] != item["review"]["physical_line_ranges"]:
-                raise ValueError("reviewed constituent differs from its source pin")
+            _checked_segment(root, item)
     if catalog["coverage"] != coverage(catalog):
         raise ValueError("catalog coverage counters are stale")
     units = {item["id"]: item for item in catalog["documents"]}
+    all_readers = set()
     for kind, status in (("manifest", "admitted-complete"), ("fragments", "admitted-fragment")):
         manifest = read_json(root / paths_for(config["series_id"])[kind])
         if manifest.get("schema") != TYPESET_SCHEMA or not isinstance(manifest.get("documents"), list):
@@ -1033,20 +1309,21 @@ def check(root: Path, config: dict) -> dict:
         for row in manifest["documents"]:
             identifier = row.get("id")
             unit = units.get(identifier)
-            if unit is None or unit.get("status") != status or identifier in selected:
+            if unit is None or identifier in selected or identifier in all_readers:
                 raise ValueError("active series reader lacks one matching admitted catalog entry")
             selected.add(identifier)
-            expected = {"artifact_id": unit["artifact_id"], "sha256": unit["artifact_sha256"],
-                        "segment_id": unit["segment_id"], "segment_path": unit["segment_path"],
-                        "physical_line_ranges": unit["review"]["physical_line_ranges"],
-                        "language": unit["review"]["language"], "text_path": sources[unit["artifact_id"]]["path"],
-                        "revision": unit["render_revision"]}
-            if any(row.get(key) != value for key, value in expected.items()):
-                raise ValueError("active series reader disagrees with its admitted catalog source")
-            options = _render_options(unit)
-            if (row.get("allow_long_token_breaks") != options.get("allow_long_token_breaks")
-                    or options.get("source_note_append") and not row.get("source_note", "").endswith(options["source_note_append"])):
-                raise ValueError("active series reader differs from its explicit layout correction")
+            all_readers.add(identifier)
+            if unit.get("reader_withdrawal"):
+                historical = _check_reader_withdrawal(root, unit, row, sources, manifest["revision"])
+                if (historical["review"]["decision"] == "fragment") != (kind == "fragments"):
+                    raise ValueError("withdrawn reader changed its historical component kind")
+            else:
+                if unit.get("status") != status:
+                    raise ValueError("active series reader lacks one matching admitted catalog entry")
+                _check_reader_row(unit, row, sources, manifest["revision"])
+    if any(unit.get("reader_withdrawal") and unit["id"] not in all_readers for unit in units.values()):
+        raise ValueError("withdrawn reader is missing its pinned prior component")
+    _check_reader_variants(root, units, sources)
     return {"status": "ok", **catalog["coverage"]}
 
 

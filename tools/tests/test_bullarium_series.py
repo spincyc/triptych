@@ -544,6 +544,275 @@ class HistoricalSeriesTests(unittest.TestCase):
                 s.admit(self.root, self.config, [packet], self.when)
             write.assert_not_called()
 
+    def test_unknown_publisher_new_rows_are_truthful_and_old_rows_remain_exact(self):
+        self.config["volumes"][0]["publication"] = "Synthetic volume. Rome: None, 1900."
+        catalog = self.prepare()
+        with patch.object(s, "_reader_publication", side_effect=lambda value: value):
+            s.admit(self.root, self.config, [self.packet([self.review(catalog)])], self.when)
+        path = self.root / s.paths_for(self.config["series_id"])["manifest"]
+        old = s.read_json(path)["documents"][0]
+        old_bytes = s.legacy.json_bytes(old)
+        # Existing immutable TOML may have a different harmless serialization.
+        current = s.read_json(self.root / s.paths_for(self.config["series_id"])["catalog"])["documents"][0]
+        segment = self.root / current["segment_path"]
+        for source in (segment, segment.parents[1] / "edition.toml", segment.parents[3] / "work.toml"):
+            source.write_bytes(b"# Existing immutable source record.\n" + source.read_bytes())
+        source_bytes = {p: p.read_bytes() for p in (self.root / "src/sources/works").rglob("*") if p.is_file()}
+        later = "2026-10-26T06:00:00Z"
+        s.admit(self.root, self.config, [self.packet([self.review(catalog), self.review(catalog, 1, "it")])], later)
+        rows = s.read_json(path)["documents"]
+        self.assertEqual(old_bytes, s.legacy.json_bytes(rows[0]))
+        self.assertIn("Rome: None,", rows[0]["source_note"])
+        self.assertIn("Rome, 1900.", rows[1]["source_note"])
+        self.assertNotIn("None", rows[1]["source_note"])
+        self.assertEqual(self.when, rows[0]["revision"])
+        self.assertEqual(later, rows[1]["revision"])
+        self.assertTrue(all(p.read_bytes() == data for p, data in source_bytes.items()))
+        current = s.read_json(self.root / s.paths_for(self.config["series_id"])["catalog"])["documents"]
+        second_edition = (self.root / current[1]["segment_path"]).parents[1] / "edition.toml"
+        self.assertEqual("Synthetic volume. Rome, 1900.", tomllib.loads(second_edition.read_text())["publication"])
+        self.assertIn("Rome: None,", tomllib.loads((segment.parents[1] / "edition.toml").read_text())["publication"])
+
+    def test_changed_constituent_printing_refuses_before_earlier_new_records_are_written(self):
+        catalog = self.prepare()
+        s.admit(self.root, self.config, [self.packet([self.review(catalog)])], self.when)
+        self.config["volumes"][0]["publication"] = "A different printing cannot replace an existing edition."
+        packet = self.packet([self.review(catalog, 1, "it"), self.review(catalog)])
+        with patch.object(s.legacy, "write") as write, patch.object(s, "new_record") as record:
+            with self.assertRaisesRegex(ValueError, "existing constituent printing metadata would change"):
+                s.admit(self.root, self.config, [packet], "2026-10-26T06:00:00Z")
+            write.assert_not_called()
+            record.assert_not_called()
+
+    def test_same_revision_source_change_refuses_before_any_write(self):
+        catalog = self.prepare()
+        s.admit(self.root, self.config, [self.packet([self.review(catalog)])], self.when)
+        path = self.root / s.paths_for(self.config["series_id"])["catalog"]
+        changed = s.read_json(path)
+        changed["documents"][0]["review"]["physical_line_ranges"] = [[2, 5]]
+        s.legacy.write(path, s.legacy.json_bytes(changed))
+        packet = self.packet([])
+        with patch.object(s.legacy, "write") as write, patch.object(s, "new_record") as record:
+            with self.assertRaisesRegex(ValueError, "source changed without a newer render revision"):
+                s.admit(self.root, self.config, [packet], "2026-10-26T06:00:00Z")
+            write.assert_not_called()
+            record.assert_not_called()
+
+    def test_implicit_prior_row_revision_cannot_follow_a_new_manifest_header(self):
+        catalog = self.prepare()
+        s.admit(self.root, self.config, [self.packet([self.review(catalog)])], self.when)
+        path = self.root / s.paths_for(self.config["series_id"])["manifest"]
+        manifest = s.read_json(path)
+        manifest["documents"][0].pop("revision")
+        s.legacy.write(path, s.legacy.json_bytes(manifest))
+        packet = self.packet([self.review(catalog, 1, "it")])
+        with patch.object(s.legacy, "write") as write, patch.object(s, "new_record") as record:
+            with self.assertRaisesRegex(ValueError, "pin its own render revision"):
+                s.admit(self.root, self.config, [packet], "2026-10-26T06:00:00Z")
+            write.assert_not_called()
+            record.assert_not_called()
+
+    def test_source_pinned_format_and_options_correction_requires_new_row_revision(self):
+        self.config["volumes"][0]["publication"] = "Synthetic volume. Rome: None, 1900."
+        catalog = self.prepare()
+        with patch.object(s, "_reader_publication", side_effect=lambda value: value):
+            s.admit(self.root, self.config, [self.packet([self.review(catalog)])], self.when)
+        paths = s.paths_for(self.config["series_id"])
+        manifest = self.root / paths["manifest"]
+        old = s.read_json(manifest)["documents"][0]
+        catalog = s.read_json(self.root / paths["catalog"])
+        unit = catalog["documents"][0]
+        unit["typeset_overrides"] = {"allow_long_token_breaks": True,
+            "source_note_append": "Literal project-owned fixture runs may wrap without added characters."}
+        s.legacy.write(self.root / paths["catalog"], s.legacy.json_bytes(catalog))
+        packet = self.packet([])
+        with patch.object(s.legacy, "write") as write, patch.object(s, "new_record") as record:
+            with self.assertRaisesRegex(ValueError, "requires a newer render revision"):
+                s.admit(self.root, self.config, [packet], "2026-10-26T06:00:00Z")
+            write.assert_not_called()
+            record.assert_not_called()
+        unit["render_revision"] = "2026-10-26T06:00:00Z"
+        s.legacy.write(self.root / paths["catalog"], s.legacy.json_bytes(catalog))
+        s.admit(self.root, self.config, [packet], unit["render_revision"])
+        row = s.read_json(manifest)["documents"][0]
+        self.assertNotIn("None", row["source_note"])
+        self.assertTrue(row["allow_long_token_breaks"])
+        self.assertEqual(unit["render_revision"], row["revision"])
+        for key in ("artifact_id", "sha256", "segment_id", "segment_path", "physical_line_ranges", "text_path"):
+            self.assertEqual(old[key], row[key])
+
+    def reader_variant_fixture(self):
+        catalog = self.prepare()
+        s.admit(self.root, self.config, [self.packet([self.review(catalog)])], self.when)
+        paths = s.paths_for(self.config["series_id"])
+        catalog = s.read_json(self.root / paths["catalog"])
+        parent = catalog["documents"][0]
+        variant = copy.deepcopy(parent)
+        variant.update(id=parent["id"] + ".provider-marks-omitted-v2", parent_id=parent["id"],
+            selection_variant_of=parent["id"], status="reader-selection-variant", render_revision="2026-10-26T06:00:00Z",
+            segment_id=parent["segment_id"] + ".provider-marks-omitted-v2", physical_line_ranges=[[3, 6]])
+        variant["review"].update(document_id=variant["id"], physical_line_ranges=[[3, 6]],
+            review_note="Project-owned fixture: a separate project reader selection, not another historical act.")
+        old_segment = self.root / parent["segment_path"]
+        segment = tomllib.loads(old_segment.read_text())
+        segment.update(id=variant["segment_id"], physical_line_ranges=[[3, 6]])
+        new_segment = old_segment.with_name("provider-marks-omitted-v2.toml")
+        s.new_record(new_segment, segment)
+        variant["segment_path"] = str(new_segment.relative_to(self.root))
+        catalog["documents"].append(variant)
+        catalog["coverage"] = s.coverage(catalog)
+        s.legacy.write(self.root / paths["catalog"], s.legacy.json_bytes(catalog))
+        old_row = s.read_json(self.root / paths["manifest"])["documents"][0]
+        row = {**old_row, "id": variant["id"], "revision": variant["render_revision"],
+               "segment_id": variant["segment_id"], "segment_path": variant["segment_path"], "physical_line_ranges": [[3, 6]]}
+        def pin(owner):
+            return {"id": owner["id"], "language": owner["review"]["language"], "artifact_id": owner["artifact_id"],
+                    "source_sha256": owner["artifact_sha256"], "segment_id": owner["segment_id"],
+                    "physical_line_ranges": owner["review"]["physical_line_ranges"]}
+        action = {"prior": {**pin(parent), "pdf_sha256": "1" * 64}, "replacement": pin(variant),
+                  "reason": "A separate source-pinned project selection omits the synthetic caption."}
+        shared = {"schema": s.TYPESET_SCHEMA, "revision": variant["render_revision"], "documents": [row], "supersessions": [action]}
+        shared_path = self.root / "src/sources/papal-documents/historical-series-corrections-manifest.json"
+        s.legacy.write(shared_path, s.legacy.json_bytes(shared))
+        return catalog, parent, variant, shared_path, shared
+
+    def test_reader_variants_keep_historical_identity_counts_and_base_rows(self):
+        catalog, parent, variant, _, _ = self.reader_variant_fixture()
+        paths = s.paths_for(self.config["series_id"])
+        self.assertEqual(1, catalog["coverage"]["complete_printed_witnesses"])
+        self.assertEqual("ok", s.check(self.root, self.config)["status"])
+        old_row = s.read_json(self.root / paths["manifest"])["documents"][0]
+        second = self.review({"documents": catalog["documents"]}, 1, "it")
+        s.admit(self.root, self.config, [self.packet([second])], "2026-10-26T07:00:00Z")
+        current = s.read_json(self.root / paths["catalog"])
+        rows = s.read_json(self.root / paths["manifest"])["documents"]
+        self.assertEqual(2, current["coverage"]["complete_printed_witnesses"])
+        self.assertEqual(2, len(rows))
+        self.assertNotIn(variant["id"], [row["id"] for row in rows])
+        self.assertEqual(old_row, next(row for row in rows if row["id"] == parent["id"]))
+        packet = self.packet([variant["review"]])
+        with patch.object(s.legacy, "write") as write:
+            with self.assertRaisesRegex(ValueError, "cannot be admitted as independent acts"):
+                s.admit(self.root, self.config, [packet], "2026-10-26T08:00:00Z")
+            write.assert_not_called()
+
+    def test_reader_variant_segment_and_shared_correction_pins_are_checked(self):
+        _, _, variant, shared_path, shared = self.reader_variant_fixture()
+        segment_path = self.root / variant["segment_path"]
+        segment = tomllib.loads(segment_path.read_text())
+        bad = {**segment, "artifact_sha256": "0" * 64}
+        segment_path.write_text("\n".join(f"{key} = {s._toml_value(value)}" for key, value in bad.items()) + "\n")
+        with self.assertRaisesRegex(ValueError, "source pin"):
+            s.check(self.root, self.config)
+        segment_path.write_text("\n".join(f"{key} = {s._toml_value(value)}" for key, value in segment.items()) + "\n")
+        mutations = [(lambda data: data["documents"][0].update(physical_line_ranges=[[2, 6]]), "catalog source"),
+                     (lambda data: data["supersessions"][0]["prior"].pop("pdf_sha256"), "prior PDF"),
+                     (lambda data: data.update(supersessions=[]), "exact prior PDF/source")]
+        for mutate, message in mutations:
+            with self.subTest(message=message):
+                bad = copy.deepcopy(shared)
+                mutate(bad)
+                s.legacy.write(shared_path, s.legacy.json_bytes(bad))
+                with self.assertRaisesRegex(ValueError, message):
+                    s.check(self.root, self.config)
+
+    def test_metadata_only_variant_still_uses_a_distinct_segment_without_another_act(self):
+        catalog, parent, variant, shared_path, shared = self.reader_variant_fixture()
+        variant["physical_line_ranges"] = copy.deepcopy(parent["review"]["physical_line_ranges"])
+        variant["review"]["physical_line_ranges"] = copy.deepcopy(variant["physical_line_ranges"])
+        path = self.root / variant["segment_path"]
+        segment = tomllib.loads(path.read_text())
+        segment["physical_line_ranges"] = variant["physical_line_ranges"]
+        path.write_text("\n".join(f"{key} = {s._toml_value(value)}" for key, value in segment.items()) + "\n")
+        shared["documents"][0]["physical_line_ranges"] = variant["physical_line_ranges"]
+        shared["supersessions"][0]["replacement"]["physical_line_ranges"] = variant["physical_line_ranges"]
+        s.legacy.write(shared_path, s.legacy.json_bytes(shared))
+        s.legacy.write(self.root / s.paths_for(self.config["series_id"])["catalog"], s.legacy.json_bytes(catalog))
+        self.assertEqual("ok", s.check(self.root, self.config)["status"])
+        self.assertEqual(1, s.coverage(catalog)["complete_printed_witnesses"])
+        variant["selection_variant_of"] = "unrelated.parent"
+        s.legacy.write(self.root / s.paths_for(self.config["series_id"])["catalog"], s.legacy.json_bytes(catalog))
+        with self.assertRaisesRegex(ValueError, "admitted historical parent"):
+            s.check(self.root, self.config)
+
+    def reader_withdrawal_fixture(self):
+        catalog = self.prepare()
+        s.admit(self.root, self.config, [self.packet([self.review(catalog)])], self.when)
+        paths = s.paths_for(self.config["series_id"])
+        catalog = s.read_json(self.root / paths["catalog"])
+        unit = catalog["documents"][0]
+        old_row = s.read_json(self.root / paths["manifest"])["documents"][0]
+        action = {"prior": {"id": unit["id"], "language": old_row["language"], "artifact_id": unit["artifact_id"],
+            "source_sha256": unit["artifact_sha256"], "segment_id": unit["segment_id"],
+            "physical_line_ranges": old_row["physical_line_ranges"], "pdf_sha256": "1" * 64},
+            "replacement": None, "reason": "Project-owned fixture: missing substantive body cells prevent a complete reader."}
+        unit.update(status="specifically-held", reader_withdrawal=copy.deepcopy(action), review_history=[copy.deepcopy(unit["review"])],
+            review={"document_id": unit["id"], "artifact_sha256": unit["artifact_sha256"], "decision": "hold", "review_note": action["reason"]})
+        catalog["coverage"] = s.coverage(catalog)
+        s.legacy.write(self.root / paths["catalog"], s.legacy.json_bytes(catalog))
+        shared = {"schema": s.TYPESET_SCHEMA, "revision": "2026-10-26T06:00:00Z", "documents": [], "supersessions": [action]}
+        shared_path = self.root / "src/sources/papal-documents/historical-series-corrections-manifest.json"
+        s.legacy.write(shared_path, s.legacy.json_bytes(shared))
+        return catalog, unit, old_row, shared_path, shared
+
+    def test_explicit_withdrawal_retains_prior_row_and_generic_planner_excludes_it(self):
+        catalog, unit, old_row, shared_path, _ = self.reader_withdrawal_fixture()
+        self.assertEqual(0, catalog["coverage"]["complete_printed_witnesses"])
+        self.assertEqual("ok", s.check(self.root, self.config)["status"])
+        paths = s.paths_for(self.config["series_id"])
+        source_bytes = {p: p.read_bytes() for p in (self.root / "src/sources/works").rglob("*") if p.is_file()}
+        s.admit(self.root, self.config, [self.packet([self.review(catalog, 1, "it")])], "2026-10-26T07:00:00Z")
+        manifest_path = self.root / paths["manifest"]
+        rows = s.read_json(manifest_path)["documents"]
+        self.assertEqual(s.legacy.json_bytes(old_row), s.legacy.json_bytes(next(row for row in rows if row["id"] == unit["id"])))
+        self.assertTrue(all(p.read_bytes() == data for p, data in source_bytes.items()))
+        import _papal_collection as collection
+        result = collection.plan_sources([{"name": "series", "path": manifest_path}],
+            [{"name": "corrections", "path": shared_path}], self.root / ".scratch/current.json")
+        self.assertNotIn(unit["id"], [row["id"] for row in result["documents"]])
+        self.assertEqual(1, len(result["documents"]))
+
+    def test_withdrawal_requires_exact_shared_assertion_and_archived_review(self):
+        catalog, unit, _, shared_path, shared = self.reader_withdrawal_fixture()
+        bad = copy.deepcopy(shared)
+        bad["supersessions"][0]["reason"] = "A different assertion does not authorize removal."
+        s.legacy.write(shared_path, s.legacy.json_bytes(bad))
+        with self.assertRaisesRegex(ValueError, "identical shared null"):
+            s.check(self.root, self.config)
+        s.legacy.write(shared_path, s.legacy.json_bytes(shared))
+        unit["review_history"] = []
+        s.legacy.write(self.root / s.paths_for(self.config["series_id"])["catalog"], s.legacy.json_bytes(catalog))
+        with self.assertRaisesRegex(ValueError, "archived historical"):
+            s.check(self.root, self.config)
+
+    def test_withdrawn_base_row_cannot_disappear_or_be_readmitted(self):
+        _, unit, _, _, _ = self.reader_withdrawal_fixture()
+        packet = self.packet([unit["review_history"][0]])
+        with patch.object(s.legacy, "write") as write, patch.object(s, "new_record") as record:
+            with self.assertRaisesRegex(ValueError, "cannot be admitted as independent acts"):
+                s.admit(self.root, self.config, [packet], "2026-10-26T07:00:00Z")
+            write.assert_not_called()
+            record.assert_not_called()
+        path = self.root / s.paths_for(self.config["series_id"])["manifest"]
+        manifest = s.read_json(path)
+        manifest["documents"] = []
+        s.legacy.write(path, s.legacy.json_bytes(manifest))
+        with self.assertRaisesRegex(ValueError, "missing its pinned prior component"):
+            s.check(self.root, self.config)
+
+    def test_held_row_without_explicit_withdrawal_is_not_silently_retired(self):
+        catalog, unit, _, _, _ = self.reader_withdrawal_fixture()
+        unit.pop("reader_withdrawal")
+        s.legacy.write(self.root / s.paths_for(self.config["series_id"])["catalog"], s.legacy.json_bytes(catalog))
+        with self.assertRaisesRegex(ValueError, "matching admitted catalog entry"):
+            s.check(self.root, self.config)
+        packet = self.packet([])
+        with patch.object(s.legacy, "write") as write, patch.object(s, "new_record") as record:
+            with self.assertRaisesRegex(ValueError, "existing base reader would disappear"):
+                s.admit(self.root, self.config, [packet], "2026-10-26T07:00:00Z")
+            write.assert_not_called()
+            record.assert_not_called()
+
     def test_recorded_rescript_requires_actual_audience_response_date_and_official(self):
         raw = ["Ex audientia SSmi.", "Sanctissimus benigne annuit pro gratia.", "Die 13 Iunii 1781.", "P. H. Massei, armorum praeses."]
         item = {"document_form": "recorded-audience-rescript", "recording_official": raw[3], "papal_context": "Pius VI",
