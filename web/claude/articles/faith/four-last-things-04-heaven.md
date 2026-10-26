@@ -426,7 +426,7 @@ Every quotation was read at its locus in the identified witness; the record of t
 
 - Thérèse of Lisieux, *Soeur Thérèse of Lisieux*, ed. T. N. Taylor (London: Burns, Oates & Washbourne, 1912), ch. 2 and Epilogue, [Project Gutenberg eBook 16772](https://www.gutenberg.org/ebooks/16772). Public domain in the United States; quoted briefly.
 
-**Last revised (UTC):** 2026-10-16T17:56:47Z
+**Last revised (UTC):** 2026-10-26T14:07:36Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

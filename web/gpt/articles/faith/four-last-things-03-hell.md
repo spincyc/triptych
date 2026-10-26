@@ -396,6 +396,6 @@ This essay is Catholic spiritual reading for annual preparation for death. Scrip
 
 - St. Teresa of Avila, *Life* 32.1–11, especially 6–11; David Lewis translation, third enlarged edition, edited by Benedict Zimmerman (London: Thomas Baker; New York: Benziger Bros., 1904), pp. 286–290, [scanned printing](https://archive.org/details/lifeofteresajesu00tereuoft) and complete text.
 
-**Last revised (UTC):** 2026-10-25T20:42:32Z
+**Last revised (UTC):** 2026-10-26T13:53:17Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

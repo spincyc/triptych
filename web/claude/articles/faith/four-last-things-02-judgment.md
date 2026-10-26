@@ -512,7 +512,7 @@ The texts named above are in the public domain in the United States. The *Catech
 
 - John of the Cross, *Dichos* 64, as quoted in the *Catechism*, 1022.
 
-**Last revised (UTC):** 2026-10-16T17:56:47Z
+**Last revised (UTC):** 2026-10-26T13:53:17Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

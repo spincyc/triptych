@@ -3,7 +3,7 @@
  "counted": {
   "documents": 214,
   "issues": 274,
-  "pages": 7207,
+  "pages": 7179,
   "titles_unrecorded": 0,
   "works": 153
  },
@@ -33,7 +33,7 @@
    "id": "GPT-6"
   },
   {
-   "documents": 9,
+   "documents": 13,
    "id": "GPT-6-based Codex agent"
   },
   {
@@ -569,21 +569,27 @@
        "model": "claude-opus-5-5[1m]",
        "qualifiers": "unexposed: reasoning-effort and sampling configuration",
        "runtime": "Anthropic Claude Code agent, coordinating session (cold review of 16 October 2026; series brief and shared format; integration, typesetting, web edition and production review of the rewrite); Claude Code CLI 2.1.300; unexposed: server revision"
+      },
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier and model qualifiers",
+       "runtime": "OpenAI Codex agent (PDF layout revision and production review); API workspace; unexposed: client version and server revision"
       }
      ],
      "eligibility": "eligible",
      "models": [
       "claude-opus-5[1m]",
-      "claude-opus-5-5[1m]"
+      "claude-opus-5-5[1m]",
+      "GPT-6-based Codex agent"
      ],
-     "pages": 29,
+     "pages": 24,
      "pdf": "pdf/claude/articles/faith/four-last-things-01-death.pdf",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
      "provider": "claude",
      "reviewed": "2026-10-16",
-     "revised": "2026-10-16T17:56:47Z",
+     "revised": "2026-10-26T13:53:17Z",
      "status": "alpha",
      "subject": "On Death and the Preparation for It. The Four Last Things, I",
      "title": "The Debt of Nature",
@@ -602,6 +608,11 @@
        "model": "GPT-6-based Codex agent",
        "qualifiers": "unexposed: exact model identifier and model qualifiers",
        "runtime": "OpenAI Codex agent (source research, theological synthesis, editorial revision, independent content review, typesetting, and production review); API workspace; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier and model qualifiers",
+       "runtime": "OpenAI Codex agent (PDF layout revision and production review); API workspace; unexposed: client version and server revision"
       }
      ],
      "eligibility": "eligible",
@@ -609,11 +620,11 @@
       "GPT-5-based Codex agent",
       "GPT-6-based Codex agent"
      ],
-     "pages": 24,
+     "pages": 23,
      "pdf": "pdf/gpt/articles/faith/four-last-things-01-death.pdf",
      "provider": "gpt",
      "reviewed": "2026-10-25",
-     "revised": "2026-10-25T20:34:12Z",
+     "revised": "2026-10-26T13:53:17Z",
      "status": "alpha",
      "subject": "Death: a Catholic study of mortality, Christian preparation, and resurrection",
      "title": "The Four Last Things: The Hour That Cannot Be Delegated",
@@ -650,21 +661,27 @@
        "model": "claude-opus-5-5[1m]",
        "qualifiers": "unexposed: reasoning-effort and sampling configuration",
        "runtime": "Anthropic Claude Code agent, coordinating session (cold review of 16 October 2026; series brief and shared format; integration, typesetting, web edition and production review of the rewrite); Claude Code CLI 2.1.300; unexposed: server revision"
+      },
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier and model qualifiers",
+       "runtime": "OpenAI Codex agent (PDF layout revision and production review); API workspace; unexposed: client version and server revision"
       }
      ],
      "eligibility": "eligible",
      "models": [
       "claude-opus-5[1m]",
-      "claude-opus-5-5[1m]"
+      "claude-opus-5-5[1m]",
+      "GPT-6-based Codex agent"
      ],
-     "pages": 33,
+     "pages": 27,
      "pdf": "pdf/claude/articles/faith/four-last-things-02-judgment.pdf",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
      "provider": "claude",
      "reviewed": "2026-10-16",
-     "revised": "2026-10-16T17:56:47Z",
+     "revised": "2026-10-26T13:53:17Z",
      "status": "alpha",
      "subject": "On the Particular and the General Judgment. The Four Last Things, II",
      "title": "What Death Does Not Finish",
@@ -688,6 +705,11 @@
        "model": "GPT-6-based Codex agent",
        "qualifiers": "unexposed: exact model identifier and model qualifiers",
        "runtime": "OpenAI Codex agent (Judgment essay plain-drafting revision and claim and citation preservation audit); API workspace; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier and model qualifiers",
+       "runtime": "OpenAI Codex agent (PDF layout revision and production review); API workspace; unexposed: client version and server revision"
       }
      ],
      "eligibility": "eligible",
@@ -695,11 +717,11 @@
       "GPT-5-based Codex agent",
       "GPT-6-based Codex agent"
      ],
-     "pages": 24,
+     "pages": 23,
      "pdf": "pdf/gpt/articles/faith/four-last-things-02-judgment.pdf",
      "provider": "gpt",
      "reviewed": "2026-10-25",
-     "revised": "2026-10-25T20:37:59Z",
+     "revised": "2026-10-26T13:53:17Z",
      "status": "alpha",
      "subject": "Judgment: a Catholic study of particular and final judgment, grace, works, mercy, and justice",
      "title": "The Four Last Things: The Truth of a Life",
@@ -741,21 +763,27 @@
        "model": "claude-opus-5-5[1m]",
        "qualifiers": "unexposed: reasoning-effort and sampling configuration",
        "runtime": "Anthropic Claude Code agent, coordinating session (cold review of 16 October 2026; series brief and shared format; integration, typesetting, web edition and production review of the rewrite); Claude Code CLI 2.1.300; unexposed: server revision"
+      },
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier and model qualifiers",
+       "runtime": "OpenAI Codex agent (PDF layout revision and production review); API workspace; unexposed: client version and server revision"
       }
      ],
      "eligibility": "eligible",
      "models": [
       "claude-opus-5[1m]",
-      "claude-opus-5-5[1m]"
+      "claude-opus-5-5[1m]",
+      "GPT-6-based Codex agent"
      ],
-     "pages": 37,
+     "pages": 31,
      "pdf": "pdf/claude/articles/faith/four-last-things-03-hell.pdf",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
      "provider": "claude",
      "reviewed": "2026-10-16",
-     "revised": "2026-10-16T17:56:47Z",
+     "revised": "2026-10-26T14:07:36Z",
      "status": "alpha",
      "subject": "On Hell, Its Pains, and Its Eternity. The Four Last Things, III",
      "title": "The Fire That Is Not Extinguished",
@@ -779,6 +807,11 @@
        "model": "GPT-6-based Codex agent",
        "qualifiers": "unexposed: exact model identifier and model qualifiers",
        "runtime": "OpenAI Codex agent (Catholic voice and plain-prose revision, source-preservation comparison, and targeted build); API workspace; unexposed: reasoning-effort setting, client version, and server revision"
+      },
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier and model qualifiers",
+       "runtime": "OpenAI Codex agent (PDF layout revision and production review); API workspace; unexposed: client version and server revision"
       }
      ],
      "eligibility": "eligible",
@@ -786,11 +819,11 @@
       "GPT-5-based Codex agent",
       "GPT-6-based Codex agent"
      ],
-     "pages": 25,
+     "pages": 24,
      "pdf": "pdf/gpt/articles/faith/four-last-things-03-hell.pdf",
      "provider": "gpt",
      "reviewed": "2026-10-25",
-     "revised": "2026-10-25T20:42:32Z",
+     "revised": "2026-10-26T13:53:17Z",
      "status": "alpha",
      "subject": "Eternal Punishment and the Call to Conversion",
      "title": "The Four Last Things: Hell",
@@ -827,21 +860,27 @@
        "model": "claude-opus-5-5[1m]",
        "qualifiers": "unexposed: reasoning-effort and sampling configuration",
        "runtime": "Anthropic Claude Code agent, coordinating session (cold review of 16 October 2026; series brief and shared format; integration, typesetting, web edition and production review of the rewrite); Claude Code CLI 2.1.300; unexposed: server revision"
+      },
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier and model qualifiers",
+       "runtime": "OpenAI Codex agent (PDF layout revision and production review); API workspace; unexposed: client version and server revision"
       }
      ],
      "eligibility": "eligible",
      "models": [
       "claude-opus-5[1m]",
-      "claude-opus-5-5[1m]"
+      "claude-opus-5-5[1m]",
+      "GPT-6-based Codex agent"
      ],
-     "pages": 29,
+     "pages": 23,
      "pdf": "pdf/claude/articles/faith/four-last-things-04-heaven.pdf",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
      "provider": "claude",
      "reviewed": "2026-10-16",
-     "revised": "2026-10-16T17:56:47Z",
+     "revised": "2026-10-26T14:07:36Z",
      "status": "alpha",
      "subject": "On Heaven and the Vision of God. The Four Last Things, IV",
      "title": "Then Face to Face",
@@ -860,6 +899,11 @@
        "model": "GPT-6-based Codex agent",
        "qualifiers": "unexposed: exact model identifier and model qualifiers",
        "runtime": "OpenAI Codex agent (source research, theological synthesis, editorial revision, independent content review, typesetting, and production review); API workspace; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier and model qualifiers",
+       "runtime": "OpenAI Codex agent (PDF layout revision and production review); API workspace; unexposed: client version and server revision"
       }
      ],
      "eligibility": "eligible",
@@ -867,11 +911,11 @@
       "GPT-5-based Codex agent",
       "GPT-6-based Codex agent"
      ],
-     "pages": 23,
+     "pages": 21,
      "pdf": "pdf/gpt/articles/faith/four-last-things-04-heaven.pdf",
      "provider": "gpt",
      "reviewed": "2026-10-25",
-     "revised": "2026-10-25T20:38:01Z",
+     "revised": "2026-10-26T14:07:36Z",
      "status": "alpha",
      "subject": "Heaven: a Catholic study of the beatific vision, communion of saints, resurrection, and the new creation",
      "title": "The Four Last Things: The End for Which We Were Made",
