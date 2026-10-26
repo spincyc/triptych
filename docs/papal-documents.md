@@ -205,6 +205,7 @@ Choose a manifest by its source edition:
 | `acta-title-corrections-manifest.json` | Reviewed display-title replacements with exact prior-PDF supersessions. |
 | `acta-layout-corrections-manifest.json` | Layout repairs for initial failed Acta renders. |
 | `acta-visual-corrections-manifest.json` | Source-pinned metadata or layout replacements arising from page review. |
+| `historical-series-corrections-manifest.json` | Cumulative source-boundary and reader corrections for the continuation and pontificate-specific series. |
 
 A manifest can be empty while identification or boundary review is unfinished.
 Its count describes selected source editions, not the number of all papal acts.

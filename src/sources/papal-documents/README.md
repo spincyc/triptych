@@ -35,6 +35,7 @@ passages belong to the [source library](../README.md), under the
 | `acta-title-corrections-manifest.json` | Explicit replacement reader selections and exact prior-PDF supersessions. |
 | `acta-layout-corrections-manifest.json` | Separately identified layout repairs for initial failed renders. |
 | `acta-visual-corrections-manifest.json` | Cumulative source-pinned metadata/layout repairs arising from page review, with exact supersessions. |
+| `historical-series-corrections-manifest.json` | Cumulative source-boundary and reader repairs for the continuation and pontificate-specific historical series, with exact supersessions. |
 | `bullarium-geometry-manifest.json` | Individually reviewed complete witnesses recovered through exact source-coordinate mappings. |
 | `bullarium-geometry-fragment-manifest.json` | Identified historical fragments recovered through the same checked mappings. |
 | `bullarium-active-withdrawals.json` | Empty reader selection with exact active-source withdrawals, affected units and confirmed source-order holds. |

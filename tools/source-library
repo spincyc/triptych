@@ -2057,6 +2057,7 @@ def _owned_papal_inventory(library: Library, entry: Path, relative: Path) -> boo
         "acta-title-corrections-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str, "supersessions": list}),
         "acta-layout-corrections-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
         "acta-visual-corrections-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str, "supersessions": list}),
+        "historical-series-corrections-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str, "supersessions": list}),
         "bullarium-continuatio-config.json": ("triptych-papal-series-config/v1", {"series_id": str, "title": str, "revision": str, "volumes": list}),
         "bullarium-continuatio-catalog.json": ("triptych-papal-series-catalog/v1", {"series_id": str, "revision": str, "volumes": list, "documents": list, "coverage": dict}),
         "bullarium-continuatio-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),

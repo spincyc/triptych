@@ -2009,6 +2009,7 @@ PAPAL_CORRECTION_MANIFESTS ?= \
 	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/acta-title-corrections-manifest.json),acta-title-corrections=acta-title-corrections-manifest.json) \
 	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/acta-layout-corrections-manifest.json),acta-layout-corrections=acta-layout-corrections-manifest.json) \
 	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/acta-visual-corrections-manifest.json),acta-visual-corrections=acta-visual-corrections-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/historical-series-corrections-manifest.json),historical-series-corrections=historical-series-corrections-manifest.json) \
 	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-active-withdrawals.json),bullarium-active-withdrawals=bullarium-active-withdrawals.json)
 PAPAL_CURRENT_MANIFEST ?= $(PAPAL_OUT)/current-manifest.json
 PAPAL_CURRENT_BATCH ?= $(PAPAL_OUT)/current
