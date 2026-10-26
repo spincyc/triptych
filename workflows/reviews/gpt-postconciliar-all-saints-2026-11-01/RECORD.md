@@ -73,7 +73,7 @@ limitations to resolve or explicitly qualify through the governing profile.
 Run `0af32a5cd3635b06` is seeded from
 `e1ed2ba5d4cdf3a5199f3bcf78a0d2b3069683bb`, `proper-study` version 15,
 digest `4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83`.
-Its scope gate passes and a fresh author is resolving context. `CYCLES.md`
+Its scope, context and research workers pass; source registration is active. `CYCLES.md`
 owns the factual stage receipts. The preliminary source handoff is a lead
 package; its findings confer no native research acceptance.
 
@@ -90,6 +90,45 @@ are outside this migration; none exists for the new target. The handoff is
 `build/agent-handoffs/20261026T041147Z-pc-r07-inventory/`, with verified sibling
 ZIP. No shared inventory or source payload was changed by the code lane or its
 review. Native source registration must perform its own reviewed refresh.
+
+The additive edition-registry records are build dependencies of existing GPT
+postconciliar guides. `existing-publications.json` records all 28 existing
+consumer PDFs, 335 pages, rebuilt through their strict individual targets and
+reproduced byte-identically to the prior installed artifacts. Installed bytes
+and old authored sources remain untouched. An initial aggregate build correctly
+refused the new unpublished scaffold's missing generation metadata; the scoped
+retry validates the existing consumers without claiming that future metadata
+or any final global gate has passed. Registry input hashes bind this proof;
+later registry changes require reassessment.
+
+## Archive privacy boundary
+
+The accepted research worker result contains five current-repository absolute
+path prefixes in its optional `/notes` string. The coordinator detected these
+after native acceptance. The original result remains immutable in ignored run
+storage, SHA-256
+`977ba5692fe4596b800a328a9ca60c61edd06f87d75c1a60d4ee5c30aa4387f9`.
+Its private path values have not entered tracked files or a public ref.
+
+A narrowly scoped archive export correction verifies original native hashes
+before deriving any public copy, normalizes only the repository prefix in
+allowed free-form notes, preserves every substantive decision, seal and
+artifact field, records original and exported hashes plus a deterministic
+redaction receipt, and refuses remaining private paths. The default exact-byte
+archive remains the historical contract for safe input. No native state,
+accepted result or packet is edited.
+
+Initial cold review identifies two real defects: repeated leading separators
+could evade the path scan, and PID-named staging could include unaudited stale
+files. Both are repaired. The final snapshot passes 41 tests with one honestly
+skipped historical-native-run reproduction. Independent re-review accepts the
+correction, reproduces both refusals and staging isolation, compares safe
+default output byte-for-byte with the base tool, and confirms the five-note
+native transformation without mutation. Historical `archive-code-review.json`
+and `archive-code-review-recheck.json` preserve both events. The final handoff is
+`build/agent-handoffs/20261026T050158Z-pc-r07-archive/`, with verified sibling ZIP.
+Actual terminal export and independent reproduction remain required; code
+approval is not native publication acceptance.
 
 ## Completion evidence
 

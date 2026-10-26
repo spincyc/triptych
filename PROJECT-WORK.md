@@ -39,13 +39,28 @@ acceptance gap; the correction and full-dossier regressions pass 85 tests,
 and focused independent re-review finds no remaining code blocker. The
 preproduction deployment-source baseline also passes. The official-source
 dossier and pinned isolated build runtime are ready. Native version-15 run
-`0af32a5cd3635b06` is seeded at `e1ed2ba5d`, passes scope, and is resolving
-context. A parallel publication-path audit identifies an omitted
+`0af32a5cd3635b06` is seeded at `e1ed2ba5d`, passes scope, context and research,
+and is registering sources. A parallel publication-path audit identifies an omitted
 general-calendar shared-owner root and PC-R mixed-owner edge in source-inventory;
 its correction passes 57 regressions and independent cold review. The corrected
 tool preserves existing provider inventories and requires the normal reviewed
 refresh before registration is complete. Native acceptance, publication
 acceptance and deployment remain outstanding.
+
+The 28 existing GPT postconciliar proper PDFs, 335 pages, rebuild through their
+strict individual targets and match the previously installed reviewed bytes
+exactly. The owning receipt pins the additive registry records used for this
+preservation proof. Global source and metadata checks remain pending until the
+new publication is authored; their initial scaffold-state refusals are retained.
+
+One accepted research result's optional notes contain local absolute paths in
+ignored native storage. The native evidence remains immutable and unpublished;
+a reviewed, explicit archive derivative with original/exported hashes is ready
+to keep private path values out of the public archive. Cold review catches and
+resolves repeated-separator and stale-staging defects; 41 tests pass, one
+historical-native-run reproduction is explicitly skipped, and independent
+re-review approves the corrected code. Actual terminal export and reproduction
+remain pending; no native acceptance or source verdict is manufactured.
 
 ## GPT Last Things and next Sunday propers, 2026-10-25
 
