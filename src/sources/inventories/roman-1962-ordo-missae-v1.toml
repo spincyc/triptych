@@ -28,8 +28,8 @@ spelling, its j and its ae and oe ligatures are its own. Where the book sets a \
 block across the full measure in English and prints no facing Latin at all, \
 that silence is the witness's own and the element says so. Where the 1962 \
 Missal appoints a text the 1861 book does not print, or prints differently, \
-the element names its own witness: the proper Communicantes and Hanc igitur of \
-Pentecost and Easter and the continuation the 1962 Canon prints for every \
+the element names its own witness: the proper Communicantes heads of Christmas, Epiphany, Easter, Ascension and Pentecost, \
+the proper Hanc igitur of Easter and Pentecost and the continuation the 1962 Canon prints for every \
 Communicantes come from a project editorial projection over public-domain \
 printings, and the Hanc igitur's English from the Lasance hand missal. Three Gospel-adjacent \
 Latin prayers absent from Cummiskey's facing column are supplied separately from \
@@ -147,6 +147,7 @@ rights = "project-created"
 caution = "A project-created projection, not an edition of any missal and never an altar book. Its words are the 1922 Tours Mame's, read with the 1862 Pustet and the 1861 Cummiskey, in the calendar's declared orthography and the 1962 printing's pointing; collated word for word with the 1962 typical edition. The one clause no public-domain printing carries, naming Saint Joseph, is the 1962 book's, published as a short phrase on the basis recorded at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml [the_joseph_clause]."
 artifacts = [
   "artifact.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19.canon-proper-forms-651e3482",
+  "artifact.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19.proper-communicantes-four-heads-20261026-1e80c25b",
 ]
 
 [[witnesses]]
@@ -157,6 +158,7 @@ rights = "public-domain"
 caution = "A publisher's hand missal, not an approved liturgical translation and never an altar book; nothing here may be used for recitation. Supplies checked historical English for the opening, selected Oblatio, Canon, Communion and conclusion prayers, and the proper Hanc igitur of Easter and Pentecost. Historical renderings are not exact 1962 witnesses; the Hanc igitur alone was read against 1962 Latin clause by clause and prints no rubric for the joining of the hands."
 artifacts = [
   "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.hanc-igitur-easter-pentecost-checked-english",
+  "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.proper-communicantes-heads-en-20261026-57552729",
   "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-praeparatio-checked-english-v1",
   "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-oblatio-checked-english-v1",
   "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-canon-checked-english-v1",
@@ -169,12 +171,20 @@ artifacts = [
 [[witnesses]]
 id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
 lang = "la"
-label = "Missale Romanum, editio quarta juxta typicam (Tours: Alfred Mame, 1922), three Gospel-adjacent Latin prayers"
+label = "Missale Romanum, editio quarta juxta typicam (Tours: Alfred Mame, 1922), Gospel-adjacent prayers and Accendat Latin"
 rights = "public-domain"
-caution = "Three checked prayer bodies from a 1922 altar missal, retained in that printing's own spelling and pointing. This is an antecedent witness, not the 1962 typical edition, and the reader is never a book to celebrate from. The Munda cor meum priest cue is limited to the source's express reuse at Mass without deacon and subdeacon; its fully printed solemn-Mass occurrence belongs to the deacon. Cummiskey's English source and actor assignments remain separate."
-artifacts = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordo-gospel-preparation-la-checked-03c65abd"]
+caution = "Checked Gospel-adjacent prayer bodies and Accendat from a 1922 altar missal, retained in that printing's own spelling and pointing. This is an antecedent witness, not the 1962 typical edition, and the reader is never a book to celebrate from. The Munda cor meum priest cue is limited to the source's express reuse at Mass without deacon and subdeacon; its fully printed solemn-Mass occurrence belongs to the deacon. Cummiskey's English source and actor assignments remain separate."
+artifacts = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordo-gospel-preparation-la-checked-03c65abd", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-proper-canon-la-20261026-34961eae"]
 
 # ---------------------------------------------------------------- absences
+
+[[witnesses]]
+id = "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925"
+lang = "en"
+label = "The Daily Missal with Vespers, Lefebvre; early Saint-Andre/Lohmann English expression identified before 1931"
+rights = "public-domain"
+caution = "Checked historical English of two proper Communicantes heads, not approved 1962 English or a book for celebration. No local P/R actor cue is asserted. The separate English continuation with the modern Joseph clause remains unavailable."
+artifacts = ["artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.proper-communicantes-heads-en-20261026-72e750ab"]
 
 [[absences]]
 key = "no-facing-latin"
@@ -1407,6 +1417,21 @@ dominus-sit-in-corde-meo = "no-facing-latin"
 per-evangelica-dicta = "no-facing-latin"
 accendat-in-nobis = "no-facing-latin"
 secreta-ii = "not-in-the-1962-ordo"
+
+[[sections.additional_texts]]
+element = "accendat-in-nobis"
+turns_basis = "The complete Mame prayer follows Dum reddit thuribulum Diacono, dicit at printed p. 277 / artifact p. 391; the same celebrant is then explicitly Sacerdos incensed by the deacon. One whole priest prayer includes its printed Amen; no response is added. Target n.1038 at printed p. 221 / artifact p. 302 confirms the same placement and words."
+latin_turns = [{ key = "priest-prayer", seq = [5], speaker = "priest" }]
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-proper-canon-la-20261026-34961eae"
+element = "accendat-in-nobis"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-proper-canon-20261026; passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium"
+target_wording = "word-exact"
+note = "Complete Mame 1922 Latin body including Amen; its words agree with 1962 n. 1038 under declared orthography. The Mame comma after amoris remains as its own pointing. No Latin is inserted into the Cummiskey source bytes or attributed to its English-only block."
 
 [[sections.additional_texts]]
 element = "munda-cor-meum"
@@ -2666,9 +2691,27 @@ before = "communicantes"
 kind = "prayer"
 speaker = "priest"
 name = "Communicantes — the proper form of the Nativity"
-absent_english = "proper-canon-form-not-held"
-absent_latin = "proper-canon-form-not-held"
 conditions = [{ kind = "appointed", variable = "communicantes", options = ["nativitate"], basis = "Stands where the day appoints this proper Communicantes, in place of the common form." }]
+
+[sections.inserted.latin]
+witness = "edition.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19"
+artifact = "artifact.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19.proper-communicantes-four-heads-20261026-1e80c25b"
+element = "communicantes-nativitate"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-proper-canon-20261026; passage.catholic-church.missale-romanum.vatican-typica-1962.canon-communicantes"
+target_wording = "word-exact"
+note = "PUBLIC-DOMAIN WORDS, COLLATED IN EACH SOURCE-DECLARED ALTERNATIVE. Complete proper head before the target dagger. The shared continuation and its English Joseph-clause hold remain unchanged."
+
+[sections.inserted.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.proper-communicantes-heads-en-20261026-57552729"
+element = "communicantes-nativitate"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL HUMAN ENGLISH, NOT APPROVED 1962 ENGLISH. Retains the source words and punctuation at the head cut; no local P/R actor cue is asserted. Source itself supplies both day and night;italic instruction at the Christmas midnight Mass only is nonspoken and retained in notes/raw_source_text. Presentation candidate removes only that instruction, retaining the printed alternative night. Source facing Latin has a mismatched adjective ending in its parenthetic night reading;Mame independently supplies the grammatical night form. No English is translated or supplied."
 
 [[sections.inserted]]
 key = "communicantes-epiphania"
@@ -2676,9 +2719,27 @@ before = "communicantes"
 kind = "prayer"
 speaker = "priest"
 name = "Communicantes — the proper form of the Epiphany"
-absent_english = "proper-canon-form-not-held"
-absent_latin = "proper-canon-form-not-held"
 conditions = [{ kind = "appointed", variable = "communicantes", options = ["epiphania"], basis = "Stands where the day appoints this proper Communicantes, in place of the common form." }]
+
+[sections.inserted.latin]
+witness = "edition.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19"
+artifact = "artifact.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19.proper-communicantes-four-heads-20261026-1e80c25b"
+element = "communicantes-epiphania"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-proper-canon-20261026; passage.catholic-church.missale-romanum.vatican-typica-1962.canon-communicantes"
+target_wording = "word-exact"
+note = "PUBLIC-DOMAIN WORDS, COLLATED IN EACH SOURCE-DECLARED ALTERNATIVE. Complete proper head before the target dagger. The shared continuation and its English Joseph-clause hold remain unchanged."
+
+[sections.inserted.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.proper-communicantes-heads-en-20261026-57552729"
+element = "communicantes-epiphania"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL HUMAN ENGLISH, NOT APPROVED 1962 ENGLISH. Retains the source words and punctuation at the head cut; no local P/R actor cue is asserted. Source heading and facing Latin identify the exact Epiphany head. The comma after Lord is the actual source punctuation at the target head cut;no period or Amen is supplied."
 
 [[sections.inserted]]
 key = "communicantes-pascha"
@@ -2686,9 +2747,27 @@ before = "communicantes"
 kind = "prayer"
 speaker = "priest"
 name = "Communicantes — the proper form of Easter"
-absent_english = "proper-canon-form-not-held"
-absent_latin = "proper-canon-form-not-held"
 conditions = [{ kind = "appointed", variable = "communicantes", options = ["pascha"], basis = "Stands where the day appoints this proper Communicantes, in place of the common form." }]
+
+[sections.inserted.latin]
+witness = "edition.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19"
+artifact = "artifact.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19.proper-communicantes-four-heads-20261026-1e80c25b"
+element = "communicantes-pascha"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-proper-canon-20261026; passage.catholic-church.missale-romanum.vatican-typica-1962.canon-communicantes"
+target_wording = "word-exact"
+note = "PUBLIC-DOMAIN WORDS, COLLATED IN EACH SOURCE-DECLARED ALTERNATIVE. Complete proper head before the target dagger. The shared continuation and its English Joseph-clause hold remain unchanged."
+
+[sections.inserted.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.proper-communicantes-heads-en-20261026-57552729"
+element = "communicantes-pascha"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL HUMAN ENGLISH, NOT APPROVED 1962 ENGLISH. Retains the source words and punctuation at the head cut; no local P/R actor cue is asserted. DAY FORM ONLY. No night alternative is printed in this English head or the inspected Lefebvre English head. Do not replace day with night by translation/inference. The actual source colon at Lord is retained. This is the complete historical day head, not a whole alternative-universe claim."
 
 [[sections.inserted]]
 key = "communicantes-ascensione"
@@ -2696,9 +2775,27 @@ before = "communicantes"
 kind = "prayer"
 speaker = "priest"
 name = "Communicantes — the proper form of the Ascension"
-absent_english = "proper-canon-form-not-held"
-absent_latin = "proper-canon-form-not-held"
 conditions = [{ kind = "appointed", variable = "communicantes", options = ["ascensione"], basis = "Stands where the day appoints this proper Communicantes, in place of the common form." }]
+
+[sections.inserted.latin]
+witness = "edition.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19"
+artifact = "artifact.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19.proper-communicantes-four-heads-20261026-1e80c25b"
+element = "communicantes-ascensione"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-proper-canon-20261026; passage.catholic-church.missale-romanum.vatican-typica-1962.canon-communicantes"
+target_wording = "word-exact"
+note = "PUBLIC-DOMAIN WORDS, COLLATED IN EACH SOURCE-DECLARED ALTERNATIVE. Complete proper head before the target dagger. The shared continuation and its English Joseph-clause hold remain unchanged."
+
+[sections.inserted.english]
+witness = "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925"
+artifact = "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.proper-communicantes-heads-en-20261026-72e750ab"
+element = "communicantes-ascensione"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL HUMAN ENGLISH, NOT APPROVED 1962 ENGLISH. Retains the source words and punctuation at the head cut; no local P/R actor cue is asserted. Lefebvre facing Latin retains ejusdem,matching the target. The inspected Lasance Ascension Latin omits that word,so its otherwise available English is retained as a lead only rather than substituting a source with a facing-Latin variant. Preserve literal same our and source semicolon;do not add a comma or normalize grammar."
 
 [[sections.inserted]]
 key = "communicantes-pentecoste"
@@ -2706,7 +2803,6 @@ before = "communicantes"
 kind = "prayer"
 speaker = "priest"
 name = "Communicantes — the proper form of Pentecost"
-absent_english = "proper-communicantes-english-variant"
 conditions = [{ kind = "appointed", variable = "communicantes", options = ["pentecoste"], basis = "Stands where the day appoints this proper Communicantes, in place of the common form." }]
 [sections.inserted.latin]
 witness = "edition.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19"
@@ -2718,6 +2814,15 @@ collation = "collated"
 collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-communicantes; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.pentecost-preface-and-canon-proper-forms"
 target_wording = "word-exact"
 note = "PROJECTED FROM PUBLIC-DOMAIN WITNESSES, COLLATED WORD-EXACT. The head of the proper Communicantes of Pentecost as far as the 1962 printing's dagger (n. 1097, printed p. 304), in the words of the 1922 Mame (printed p. 334) and the 1862 Pustet (printed p. 251), written in the calendar's declared orthography with the 1962 pointing. The Pustet's chanted-Preface printing (p. 229) adds a word and is not used."
+
+[sections.inserted.english]
+witness = "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925"
+artifact = "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.proper-communicantes-heads-en-20261026-72e750ab"
+element = "communicantes-pentecoste"
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL HUMAN ENGLISH, NOT APPROVED 1962 ENGLISH. Retains the source words and punctuation at the head cut; no local P/R actor cue is asserted. No same appears here;Lefebvre facing Latin and the1962target omit ejusdem. Lasance adds the same in its English and remains refused for this head. Literal source semicolon is retained;likewise and the source referral asterisk begin the continuation and are outside the head."
 
 [[sections.inserted]]
 key = "communicantes-continuatio"

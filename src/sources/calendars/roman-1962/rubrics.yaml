@@ -151,6 +151,14 @@ precedence:
 # Overrides. Rules that defeat a straight comparison of row numbers.
 # ---------------------------------------------------------------------------
 overrides:
+- id: baptism-is-omitted-when-holy-family-occurs
+  key: commemoratione-baptismatis-domini-nostri-iesu-christi
+  omitted_when_with: holy-family
+  locus: Missale Romanum 1962, 13 January, printed p. 42, artifact p. 123
+  why: >-
+    The printed rubric at 13 January appoints the Holy Family when the First
+    Sunday after the Epiphany falls on that date, with no commemoration of
+    either the Baptism of the Lord or the Sunday.
 - id: all-souls-yields-to-a-sunday
   key: commemoratione-omnium-fidelium-defunctorum
   yields_to: sunday
@@ -294,6 +302,7 @@ bases:
 - id: row-14-second-class-feast-of-the-lord
   label: a second-class feast of the Lord
   of_the_lord: true
+  sunday_privileges: true
   row: 14
   nature: feast
   commemoration: ordinary
@@ -391,7 +400,11 @@ bases:
   label: the Office of Our Lady on Saturday
   row: 27
   nature: office
-  commemoration: ordinary
+  # RG 78 constitutes this Office only on a Saturday whose Office would
+  # otherwise be a fourth-class feria. When a feast occurs, that condition
+  # does not hold: the Saturday Office supplies no additional commemoration.
+  commemoration: none
+  commemoration_locus: RG 78
   why: the Office of Our Lady on Saturday, kept on a Saturday that carries a fourth-class
     feria. It is an Office and not a feast, and any occurring feast displaces it
   locus: RG 78; RG 79; RG 91 row 27
@@ -500,6 +513,10 @@ assignment:
   note: 'the Missal''s own rubric at 2 February holds the Purification "tamquam festum
     Domini", which is why it sits at row 14 and not at row 16; RGMR 484 a and 495 follow
     it'}
+- {basis: row-14-second-class-feast-of-the-lord, keys: [dedicatione-archibasilicae-mi-salvatoris],
+  note: 'The controlling 1962 Missal alphabetical index lists the Lateran dedication
+    under Festa Domini (artifact p. 1083). RG 16 a and RG 91 row 14 therefore put
+    it above a second-class Sunday, without commemorating that Sunday.'}
 - {basis: row-15-sunday, keys: [sunday-within-octave-of-nativity, last-sunday-after-pentecost]}
 - {basis: row-15-sunday, key_matches: '^(epiphany|easter|pentecost|resumed-epiphany)-\d+$'}
 - {basis: row-15-sunday, keys: [septuagesima, sexagesima, quinquagesima, sunday-after-ascension]}
@@ -1011,6 +1028,16 @@ commemoration:
 # named in `not_decided_here`.
 # ---------------------------------------------------------------------------
 orations:
+  execution:
+    scope: dated-mass-of-office
+    locus: RGMR 436-437; 442-443; 480; 505
+    conclusions: {principal: 1, commemorations: 2}
+    multiple_lessons:
+      locus: RGMR 442-443
+      reading_names: [Lesson, First Lesson, Second Lesson, Third Lesson, Fourth Lesson, Fifth Lesson, Epistle]
+      prayer_names: [Collect, Oratio]
+      insertion: after-last-prayer-before-final-reading
+      commemorated_source: first-prayer
   what_counts:
     locus: RGMR 433
     what: the oration of the Mass being celebrated; the orations of a commemorated
@@ -1311,6 +1338,69 @@ worked_cases:
     winner: commemoratione-omnium-fidelium-defunctorum
     arrived: true
     settled: true
+- id: lateran-dedication-replaces-a-second-class-sunday
+  source: RG 16 a; RG 91 rows 14-15; controlling 1962 Missal, alphabetical index
+    Festa Domini, artifact p. 1083, page images inspected 2026-10-26
+  date: '2025-11-09'
+  why: >-
+    The Missal lists the Lateran dedication as a feast of the Lord. Its
+    second-class feast replaces this second-class Sunday, which receives no
+    commemoration. The nominal Sunday remains in its computed slot rather
+    than being shifted to another date.
+  expect:
+    winner: dedicatione-archibasilicae-mi-salvatoris
+    winner_row: 14
+    omitted: [pentecost-22, comm-s-theodori-martyris]
+    orations_low_mass: 1
+    orations_sung_non_conventual: 1
+    settled: true
+- id: a-lord-feast-retains-the-sundays-commemoration-limit
+  source: RG 16 a; RG 111 b, controlling 1962 Missal, printed pp. XII and XVIII,
+    artifact pp. 10 and 16, page images inspected 2026-10-26
+  date: '2025-01-05'
+  why: >-
+    A second-class feast of the Lord occurring on a second-class Sunday takes
+    that Sunday's rights and privileges. Saint Telesphorus is an ordinary
+    commemoration, so he is omitted under the Sunday's limit rather than
+    admitted under the limit for another second-class day.
+  expect:
+    winner: most-holy-name-of-jesus
+    winner_row: 14
+    omitted: [comm-s-telesphori-papae-martyris]
+    commemorated: []
+    orations_low_mass: 1
+    orations_sung_non_conventual: 1
+    settled: true
+- id: lateran-dedication-on-a-weekday-keeps-the-ordinary-commemoration
+  source: RG 111 c; Missale Romanum 1962, 9 November, printed p. 713,
+    artifact p. 794
+  date: '2026-11-09'
+  why: >-
+    The Sunday privilege has no effect on a Monday. Saint Theodore's ordinary
+    commemoration remains in Low Mass under the second-class weekday's limit.
+  expect:
+    winner: dedicatione-archibasilicae-mi-salvatoris
+    winner_row: 14
+    commemorated: [comm-s-theodori-martyris]
+    orations_low_mass: 2
+    orations_sung_non_conventual: 1
+    settled: true
+- id: holy-family-omits-the-baptism-on-13-january
+  source: Missale Romanum 1962, 13 January, printed p. 42, artifact p. 123,
+    page image inspected 2026-10-26
+  date: '2030-01-13'
+  why: >-
+    The date's printed rubric appoints the Holy Family without a Baptism or
+    Sunday commemoration. The two second-class feasts therefore do not remain
+    an unresolved tie and the Baptism supplies no additional oration.
+  expect:
+    winner: holy-family
+    winner_row: 14
+    omitted: [commemoratione-baptismatis-domini-nostri-iesu-christi]
+    commemorated: []
+    orations_low_mass: 1
+    orations_sung_non_conventual: 1
+    settled: true
 - id: case-5-a-resumed-sunday-after-the-epiphany
   source: worked-cases.md Case 5
   date: '2026-11-08'
@@ -1319,6 +1409,23 @@ worked_cases:
   expect:
     winner: resumed-epiphany-5
     winner_row: 15
+    settled: true
+- id: saturday-office-is-not-commemorated-under-an-occurring-feast
+  source: RG 78; RG 91 rows 24 and 27, controlling 1962 Missal, printed pp. XVI-XVII,
+    artifact pp. 14-15, page images inspected 2026-10-26
+  date: '2026-01-17'
+  why: >-
+    RG 78 constitutes the Saturday Office of Our Lady only where the Office
+    would otherwise be of a fourth-class feria. The feast of Saint Anthony
+    occupies this Saturday, so the Saturday Office is not an ordinary
+    commemoration added to the feast's Mass.
+  expect:
+    winner: s-antonii-abbatis
+    winner_row: 24
+    omitted: ['implied:epiphanytide-feria']
+    commemorated: []
+    orations_low_mass: 1
+    orations_sung_non_conventual: 1
     settled: true
 - id: the-office-of-our-lady-on-saturday-and-the-mass-it-takes
   source: RG 78; RG 91 rows 27-28; RGMR 270; RGMR 299; RG 111 d, read off the controlling

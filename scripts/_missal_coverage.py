@@ -56,6 +56,26 @@ LATIN_COLLATIONS = {"collated": "collated", "identified": "uncollated",
                     "unresolved": "unresolved"}
 
 
+def is_witness_state_body(latin: object) -> bool:
+    """A source-validated, permitted body with an explicitly bounded witness claim.
+
+    This maps the owning publication decision; it does not grant permission or
+    verify a source record itself. Unknown/uncollated context stays inherited.
+    """
+    if not isinstance(latin, dict):
+        return False
+    context = latin.get("target_context") or {}
+    provenance = latin.get("provenance") or {}
+    publication = latin.get("publication") or {}
+    from _proper_target_overrides import is_public_context
+    return (is_public_context(context)
+            and latin.get("withheld") is False
+            and publication.get("status") == "permitted"
+            and publication.get("basis") in {"public-domain", "project-created", "permission", "licensed"}
+            and provenance.get("status") == "collated"
+            and provenance.get("relationship") in LATIN_TARGET_RELATIONSHIPS)
+
+
 def latin_evidence(latin: object, *, inherited: bool = False) -> dict:
     """Map one public Latin record to coverage terms without reading the text.
 
@@ -67,6 +87,11 @@ def latin_evidence(latin: object, *, inherited: bool = False) -> dict:
     provenance = latin.get("provenance") if isinstance(latin.get("provenance"), dict) else {}
     publication = latin.get("publication") if isinstance(latin.get("publication"), dict) else {}
     basis = str(publication.get("basis") or "unresolved")
+    if is_witness_state_body(latin):
+        # Exact to the identified Bonn witness, without upgrading generic
+        # pre-1955 dates or the nominal 1920 target to exact-target wording.
+        return {"relationship": "unresolved", "collation": "collated",
+                "publication_basis": basis}
     if inherited:
         return {"relationship": "unresolved", "collation": "uncollated",
                 "publication_basis": basis}

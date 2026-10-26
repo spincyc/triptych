@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.ebible-usfm-439d1789"
+edition_id = "edition.catholic-church.vulgata-clementina.ebible-latvuc"
+artifact_type = "downloadable-data"
+media_type = "application/zip"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "Underlying Bible text has its separately verified public-domain basis; this whole container also includes modern publisher support files whose exact redistribution basis is unresolved. No package-wide public-domain claim is made and no archive bytes are retained in public source storage."
+rights_jurisdiction = "United States"
+source_url = "https://eBible.org/Scriptures/latVUC_usfm.zip"
+provenance = "Complete official publisher USFM ZIP acquired and hashed on 2026-10-26 as finite native-marker evidence. It is a distinct source identity from historical parent packages. Only separately manifested complete unchanged USFM book members are retained; the complete archive remains a remote hashed parent."
+retrieved = "2026-10-26"
+sha256 = "439d1789e021e3209125270dd2e3476f9ff7e99fea2a0349778655e4e40b7826"
+byte_size = 3554559
+indexable = false
+notes = "ACCESS LIMITATION: the complete 3554559-byte archive has 77 members (73 USFM files). Its modern support members are excluded from retained public payloads: copr.htm SHA256 27402bd8388b93213e4320725365b6d0ca32c0fff221013dadc2dca56c028b48; keys.asc SHA256 8659487be35d9a79b8bb41eb68db1e96e9a1933792f683b88e0de50cd3841942; signature.txt.asc SHA256 3b980b58cefe9e886501c32d49fe419ff90c1714d64fd5a3bec5acdcf9b9e943; gentium.css SHA256 45550a2bb1b17f5ab08886ffec444b3db27fef38ea9b0455f774a6aa97323e66. Their stylesheets differ from Haiola upstream material and this record does not assert a package-wide redistribution grant. The underlying Bible text permission is separate. Parent archive URL/hash/extent describe the acquired bytes, not an identity claim about earlier deliveries. No CSS, HTML wrapper, public-key file or signature is copied into the retained USFM children."

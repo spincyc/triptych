@@ -1,14 +1,14 @@
 migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
-audited_on = "2026-10-25"
+audited_on = "2026-10-26"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:1fedf26dc582197fa8526c55448519f7b48bf7d6db03470aee355d98208436a8"
+inventory_snapshot = "sha256:167208846d5c67f9962ccd3e2dc9f842e453f1c67c161ce8752ba3d342bca65b"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:6ed335d8da72bef42e08cfe75d6d126d301cac9be075e0a5976736ec938cb94f"
-canonical_catalog_snapshot = "sha256:fe502cf30891d19373fa7f79eced8af865f361edee0de07a9692a5dff8f86576"
+canonical_catalog_snapshot = "sha256:8aba9506d7065e453a183532c72a7d6d421bd8c818593a4089a5aa8a25f50377"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:db746897d1a414e85355a423360928bb1b1c7f03dbc998348d8f98d333d7b414"
+snapshot = "sha256:8580c66928c75e8043f121c4c0b3f0e02c504aa966f86d565276ceec7378d8e5"
 families = []
 
 [[review_units]]
@@ -473,7 +473,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost"
-surface_snapshot = "sha256:53c23a9001de4b8ceecb60b80f8ddcf49a4a0faf1425753448aaba80d98ed74e"
+surface_snapshot = "sha256:dc152512d4abd18c15ffd61b44cc3f9930c711fc11189ba9ebc005dd4522ad75"
 review_state = "pending"
 
 [[review_units]]
@@ -493,12 +493,12 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost"
-surface_snapshot = "sha256:48e622d0a17172b4993e2c6e0ff9f5390d868e5a85410a2f3a9b9da3b8d08dea"
+surface_snapshot = "sha256:ff6a2dd64f4c0b16a54e13a46e01e9b4d74617566e48b8a87913fa30e0764bcf"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
-surface_snapshot = "sha256:5f812b9adea8f5d4ff18364ffd22b069ea5f7bfc664cfdc231190d5e3190e5ba"
+surface_snapshot = "sha256:2146abb47d973c34cb3a5d7f894dd90cf23dff5997b5ece89a9dbb7fddcb4000"
 review_state = "pending"
 
 [[review_units]]

@@ -134138,6 +134138,11 @@ source_locus = "Bonn reimpressio Proprium de Tempore, artifact p. 497, printed p
 identity_state = "established"
 slice_id = "roman-pre-1955-temporal-easter-to-last-sunday"
 
+calendar_mass_key = "pentecost"
+form_id = "main"
+calendar_proper_name = "Collect"
+calendar_proper_occurrence = 1
+
 [[targets]]
 id = "roman-pre-1955:temporal:slot:dominica-pentecostes:reading"
 kind = "text-slot"
@@ -134198,6 +134203,11 @@ source_locus = "Bonn reimpressio Proprium de Tempore, artifact p. 498, printed p
 identity_state = "established"
 slice_id = "roman-pre-1955-temporal-easter-to-last-sunday"
 
+calendar_mass_key = "pentecost"
+form_id = "main"
+calendar_proper_name = "Secret"
+calendar_proper_occurrence = 1
+
 [[targets]]
 id = "roman-pre-1955:temporal:slot:dominica-pentecostes:communion"
 kind = "text-slot"
@@ -134217,6 +134227,11 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/2004
 source_locus = "Bonn reimpressio Proprium de Tempore, artifact p. 499, printed p. 395"
 identity_state = "established"
 slice_id = "roman-pre-1955-temporal-easter-to-last-sunday"
+
+calendar_mass_key = "pentecost"
+form_id = "main"
+calendar_proper_name = "Postcommunion"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-pre-1955:temporal:slot:dominica-pentecostes:direction-credo"

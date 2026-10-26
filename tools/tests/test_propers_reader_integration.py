@@ -331,8 +331,6 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         source = text(JS)
         for token in (
             "function formRow(mass, id)",
-            "sourceForm && sourceForm.name",
-            "'Available forms: ' + labels.join('; ') + '.'",
             "selectedForm && 'Form: '",
             "function translationWitnessRow(structure, id)",
             "'Translation witness: '",
@@ -342,6 +340,12 @@ class PropersReaderIntegrationTests(unittest.TestCase):
             "['Translation rights', witness",
         ):
             self.assertIn(token, source)
+        self.assertIn("ProperEvents.renderFormChoice(result, mass)", source)
+        for token in (
+            "sourceForm && sourceForm.name",
+            "'Available forms: ' + labels.join('; ') + '.'",
+        ):
+            self.assertIn(token, text(EVENTS_JS))
         for page in (HTML, INDEX_HTML):
             markup = text(page)
             self.assertIn('id="formulary-source" class="entry-meta" hidden', markup)

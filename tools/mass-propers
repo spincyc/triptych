@@ -7,6 +7,7 @@ mass list is not duplicated elsewhere.
 from __future__ import annotations
 
 import argparse
+import copy
 import csv
 import hashlib
 import json
@@ -23,6 +24,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import _calendars  # noqa: E402
 import _missal_coverage  # noqa: E402
+import _oration_execution  # noqa: E402
 from _psalms import (  # noqa: E402
     PSALMS,
     SYSTEMS,
@@ -45,9 +47,11 @@ from _proper_latin import (  # noqa: E402
     CLI_SURFACES,
     STRUCTURE_SURFACES,
     LatinKey,
+    body_owners,
     publication_records,
     sanitize_mass,
     sanitize_proper,
+    target_document,
     _source_library_records,
 )
 from _tooling import (  # noqa: E402
@@ -221,6 +225,7 @@ def load_calendar(root: Path, calendar: str, effective: bool = True) -> dict:
     document = _calendars.load_document(root, calendar, effective=effective)
     if effective and document.get(_calendars.RECENSION_BASE):
         document = recension_appointments(document)
+        document = target_document(root, calendar, document)
     return document
 
 
@@ -431,7 +436,9 @@ def find_mass(root: Path, calendar: str, key: str) -> dict:
                 _calendars.RECENSION_COVERAGE,
             ):
                 if field in document:
-                    payload[field] = document[field]
+                    payload[field] = (public_recension_coverage(document[field])
+                                      if field == _calendars.RECENSION_COVERAGE
+                                      else document[field])
             return payload
     raise KeyError(f"{calendar}: no mass with key {key!r}")
 
@@ -537,7 +544,8 @@ def rights_safe_copy(value):
         return [rights_safe_copy(item) for item in value]
     if not isinstance(value, dict):
         return value
-    copied = {key: rights_safe_copy(item) for key, item in value.items()}
+    copied = {key: rights_safe_copy(item) for key, item in value.items()
+              if key != "_target_witness_context"}
     if isinstance(value.get("translations"), list):
         copied["translations"] = publishable_translations(value)
         unavailable = unavailable_translation_states(value)
@@ -551,7 +559,11 @@ def rights_safe_copy(value):
         copied["common_from"] = public_common_from(value["common_from"])
     if isinstance(value.get("latin"), dict):
         copied["latin"] = public_latin_state(
-            value["latin"], str(value.get("name") or "Proper")
+            copied["latin"], str(value.get("name") or "Proper")
+        )
+    if _calendars.RECENSION_COVERAGE in value:
+        copied[_calendars.RECENSION_COVERAGE] = public_recension_coverage(
+            value[_calendars.RECENSION_COVERAGE]
         )
     if _calendars.ORDINARY_DISPOSITION in value:
         copied[_calendars.ORDINARY_DISPOSITION] = public_ordinary_disposition(
@@ -850,6 +862,19 @@ def public_ordinary_frame(value: object) -> dict:
     projected = {"applicability": applicability}
     if "basis" in value:
         projected["basis"] = basis
+    return projected
+
+
+def public_recension_coverage(value: dict) -> dict:
+    """Retain coverage evidence while naming the bounded witness publicly."""
+    from _proper_target_overrides import PUBLIC_CONTEXT, WITNESS_EDITION
+    projected = copy.deepcopy(value)
+    for evidence in projected.get("evidence") or []:
+        if isinstance(evidence, dict) and isinstance(evidence.get("witnesses"), list):
+            evidence["witnesses"] = [
+                PUBLIC_CONTEXT["label"] if witness == WITNESS_EDITION else witness
+                for witness in evidence["witnesses"]
+            ]
     return projected
 
 
@@ -2737,6 +2762,49 @@ def source_slot_identity(
     return owner_key, form_id, owner_name, occurrence
 
 
+def sanitize_source_proper(
+    document: dict,
+    key: tuple[str, str, str],
+    identity: tuple[str, str, str, int],
+    proper: dict,
+    records: dict,
+    surfaces,
+) -> dict:
+    """Use the exact source-owned Latin ordinal, including repeated bodies.
+
+    English occurrences include Scripture-owned rows; Latin occurrences count
+    only the present/removed bodies enumerated by ``body_owners``. Derive that
+    ordinal from the identified source prefix rather than choosing a same-word
+    record by hash or using an English ordinal in the Latin ledger.
+    """
+    source_mass = _calendars.mass_index(document)[key[0]]
+    rows, trouble = _calendars._form_propers(source_mass, key[1])
+    if trouble:
+        raise ValueError(f"mass {key[0]}: {trouble}")
+    matching = [row for row in rows
+                if not row.get(_calendars.TAKES_FROM)
+                and str(row.get("name") or "") == key[2]]
+    if not 1 <= identity[3] <= len(matching):
+        raise ValueError("resolved Proper has no exact source occurrence")
+    source_owner = matching[identity[3] - 1]
+    stop = next(index for index, row in enumerate(rows) if row is source_owner)
+    prefix = {"sections": {"source": {"masses": [
+        {"key": key[0], "propers": rows[:stop + 1]},
+    ]}}}
+    source_keys = {
+        (owner.course, owner.cycle): LatinKey(
+            owner.mass, key[1], owner.proper, owner.course, owner.cycle,
+            owner.occurrence,
+        )
+        for owner, _, _ in body_owners(prefix)
+        if owner.proper == key[2]
+    }
+    return sanitize_proper(
+        proper, source_keys.get(("", ""), LatinKey(*key)), records, surfaces,
+        cycle_keys=source_keys,
+    )
+
+
 def untranslated_key(
     identity: tuple[str, str, str, int] | tuple[str, str, str, str, int]
 ) -> tuple[str, str, str]:
@@ -3069,6 +3137,7 @@ def oration_relations(root: Path, calendar: str) -> dict[str, dict]:
 
 def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dict:
     document = load_calendar(root, calendar)
+    execution_sources = _oration_execution.load_sources(root, calendar, sys.modules.get(__name__) or __import__("types").SimpleNamespace(**globals()))
     joined_orations = oration_relations(root, calendar)
     overlay, untranslated, stale, witnesses = translation_overlay(calendar, root)
     latin_records, _ = publication_records(root, calendar)
@@ -3125,10 +3194,8 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
             carried = carry_translations(
                 calendar, key, proper, overlay, stale, identity, witnesses
             )
-            carried = sanitize_proper(
-                carried,
-                LatinKey(str(key[0] or ""), str(key[1] or ""), str(key[2] or "")),
-                latin_records,
+            carried = sanitize_source_proper(
+                document, key, identity, carried, latin_records,
                 STRUCTURE_SURFACES,
             )
 
@@ -3308,6 +3375,9 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
                 built_proper["appointment_replacement"] = _calendars.validate_appointment_replacement(carried["appointment_replacement"])
             if _calendars.APPOINTMENT_APPLICABILITY in carried:
                 built_proper[_calendars.APPOINTMENT_APPLICABILITY] = _calendars.validate_appointment_applicability(carried[_calendars.APPOINTMENT_APPLICABILITY], calendar)
+            execution_key = identity[:3] + (CYCLE_ALL, identity[3])
+            if execution_key in execution_sources:
+                built_proper["execution_sources"] = [execution_sources[execution_key]]
             built_proper["languages"] = proper_language_capabilities(built_proper)
             # Source identity and appointed occurrence are deliberately different.
             # Only this source-owning pass knows the owner of a borrowed Proper.
@@ -3346,7 +3416,7 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
                     occurrence_id=_missal_coverage.identity(occurrence_key, family or "all", cycle),
                     witnesses=witnesses, cycle_family=family, cycle=cycle,
                     translation_relation=relation,
-                    latin_inherited=latin_inherited,
+                    latin_inherited=latin_inherited and not _missal_coverage.is_witness_state_body(owner.get("latin")),
                     absence_kinds=absence_kinds,
                 )
             propers.append(built_proper)
@@ -3482,6 +3552,7 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
         # These counts do not make a provenance or edition-attestation claim.
         "languages": language_capability(masses),
         "masses": masses,
+        **({"execution_source_coverage": {"schema": "triptych-execution-source-coverage/v1", "language": "en", "count_basis": "distinct-source-targets", "sources": len(execution_sources), "whole_body_translations_added": 0, "group_completeness": "context-dependent"}} if execution_sources else {}),
         "coverage": _missal_coverage.summarize(
             [unit for mass in masses for unit in _missal_coverage.proper_units(mass)],
             "calendar",
@@ -3505,7 +3576,9 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
         _calendars.RECENSION_COVERAGE,
     ):
         if field in document:
-            structure[field] = document[field]
+            structure[field] = (public_recension_coverage(document[field])
+                                if field == _calendars.RECENSION_COVERAGE
+                                else document[field])
     return structure
 
 
@@ -4901,11 +4974,8 @@ def run_show_one(arguments: argparse.Namespace) -> dict:
             identity,
             witnesses,
         )
-        carried = sanitize_proper(
-            carried,
-            LatinKey(str(key[0] or ""), str(key[1] or ""), str(key[2] or "")),
-            latin_records,
-            CLI_SURFACES,
+        carried = sanitize_source_proper(
+            document, key, identity, carried, latin_records, CLI_SURFACES,
         )
         # Distinguishes a proper nobody has looked at from one deliberately
         # left without English, which is the distinction the `untranslated`
@@ -5265,6 +5335,10 @@ def select_texts(
     ) or proper_body_unavailable(proper)
     if lang == "la" and latin_unavailable:
         return [("", "", "Latin text unavailable")]
+    context = latin.get("target_context") if isinstance(latin, dict) else None
+    if lang == "la" and _missal_coverage.is_witness_state_body(latin):
+        return [(str(proper.get("text") or ""), str(context["label"]),
+                 "Checked wording of this witness state; no civil-date-specific pre-1955 attribution is established.")]
     available = [
         translation
         for translation in proper.get("translations") or []
@@ -5353,22 +5427,31 @@ def render_listing(payload: dict) -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
-    shared = argparse.ArgumentParser(add_help=False)
-    shared.add_argument("--root", default=str(DEFAULT_ROOT), help="calendar root directory")
+    masses: list[str] = []
+
+    class AppendMass(argparse.Action):
+        def __call__(self, parser, namespace, value, option_string=None):
+            # Parent and child parsers use separate namespaces. Keep every
+            # explicit selection in argv order across that boundary.
+            masses.append(value)
+            setattr(namespace, self.dest, list(masses))
+
+    shared = argparse.ArgumentParser(add_help=False, argument_default=argparse.SUPPRESS)
+    shared.add_argument("--root", help="calendar root directory")
     shared.add_argument("--calendar", help="calendar directory name, e.g. roman-1962")
     shared.add_argument(
         "--mass",
-        action="append",
+        action=AppendMass,
         help="mass key, e.g. advent-1; repeat to resolve several in one process",
     )
     shared.add_argument(
-        "--format", choices=("text", "yaml", "json"), default="text", help="output form"
+        "--format", choices=("text", "yaml", "json"), help="output form"
     )
     shared.add_argument(
         "--bible", help="indexed bible to resolve scripture refs against, e.g. douay-rheims"
     )
     shared.add_argument(
-        "--lang", default="la", help="language for composed propers (default: la)"
+        "--lang", help="language for composed propers (default: la)"
     )
     shared.add_argument(
         "--witness",
@@ -5377,16 +5460,14 @@ def main(argv: list[str] | None = None) -> int:
     )
     shared.add_argument(
         "--bible-root",
-        default=str(BIBLE_ROOT),
         help="where indexed bibles live; point outside the repo to keep a "
         "licensed text unpublished",
     )
     shared.add_argument(
-        "--out", default="src/web/data", help="where `structure` writes its files"
+        "--out", help="where `structure` writes its files"
     )
     shared.add_argument(
         "--doc-root",
-        default=str(ROOT),
         help="repository root holding the documents `census` writes into",
     )
     shared.add_argument(
@@ -5407,26 +5488,35 @@ def main(argv: list[str] | None = None) -> int:
     shared.add_argument(
         "--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)"
     )
+    # A subparser parses into a fresh namespace, then merges it into the parent.
+    # Its defaults must not replace explicit options already read before the verb.
+    sub_shared = copy.deepcopy(shared)
     parser = argparse.ArgumentParser(
         prog="mass-propers",
         description="Print one mass's propers as YAML, JSON, or a reading view.",
         parents=[shared],
     )
+    parser.set_defaults(
+        root=str(DEFAULT_ROOT), calendar=None, mass=None, format="text",
+        bible=None, lang="la", witness=None, bible_root=str(BIBLE_ROOT),
+        out="src/web/data", doc_root=str(ROOT), write=False, check=False,
+        verbose=False, json=False,
+    )
     examples_live_on_the_verbs(parser, "mass-propers")
     sub = parser.add_subparsers(dest="command")
     with_examples(
-        sub.add_parser("show", help="print one mass's propers", parents=[shared]),
+        sub.add_parser("show", help="print one mass's propers", parents=[sub_shared]),
         EXAMPLES["show"],
     )
     with_examples(
-        sub.add_parser("list", help="list the masses a calendar carries", parents=[shared]),
+        sub.add_parser("list", help="list the masses a calendar carries", parents=[sub_shared]),
         EXAMPLES["list"],
     )
     with_examples(
         sub.add_parser(
             "structure",
             help="write the browser's structure files, citations resolved to loci",
-            parents=[shared],
+            parents=[sub_shared],
         ),
         EXAMPLES["structure"],
     )
@@ -5434,7 +5524,7 @@ def main(argv: list[str] | None = None) -> int:
         sub.add_parser(
             "census",
             help="derive the count of both calendars, and write it into the documents",
-            parents=[shared],
+            parents=[sub_shared],
         ),
         EXAMPLES["census"],
     )

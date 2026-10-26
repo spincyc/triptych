@@ -264,6 +264,10 @@
       (one) => !(one.basis && one.basis.nature === 'commemoration')
     );
     if (holdsAMass) return [];
+    return indexedFerialFormularies(year, rubrics, isoDate);
+  }
+
+  function indexedFerialFormularies(year, rubrics, isoDate) {
     return ((year.ferial_formulary || {})[isoDate] || []).map(function (row) {
       const found = classify(rubrics, row.key);
       return {
@@ -872,6 +876,17 @@
         continue;
       }
 
+      // A printed disposition may omit one named celebration entirely when
+      // another named celebration occurs. It resolves the contest and the
+      // commemoration separately; no generic same-Person identity is inferred.
+      if (override.omitted_when_with) {
+        const companion = contest.find((one) => one !== target && one.key === override.omitted_when_with);
+        if (!companion) continue;
+        target.defeatedBy = { override: override, by: companion.id };
+        defeated.push(target);
+        continue;
+      }
+
       if (override.yields_to) {
         const beats = contest.find((one) => one !== target && one.basis.nature === override.yields_to);
         if (!beats) continue;
@@ -1022,15 +1037,19 @@
     return found ? found.class || null : null;
   }
 
-  function ceilingFor(rubrics, winner, sung) {
+  function ceilingFor(rubrics, winner, sung, isoDate) {
     const block = (rubrics.commemoration && rubrics.commemoration.ceilings) || null;
     if (!block) return null;
     if (sung && block.sung_non_conventual) return block.sung_non_conventual;
     const winnerClass = winner ? (winner.basis.class || classOfRow(rubrics, winner.row)) : null;
+    // RG 16 a is carried by the source basis: an eligible feast of the Lord
+    // takes the occurring Sunday's rights, including its commemoration limit.
+    const winnerNature = winner && winner.basis.sunday_privileges && weekdayOf(isoDate) === 'sunday'
+      ? 'sunday' : winner && winner.basis.nature;
     for (const rule of block.rules || []) {
       const wanted = Array.isArray(rule.when_class) ? rule.when_class : [rule.when_class];
       if (wanted.indexOf(winnerClass) < 0) continue;
-      if (rule.when_nature && rule.when_nature !== winner.basis.nature) continue;
+      if (rule.when_nature && rule.when_nature !== winnerNature) continue;
       return rule;
     }
     return null;
@@ -1063,7 +1082,7 @@
   function dispose(rubrics, winner, losers, owner, isoDate, sung, remarks) {
     const out = [];
     const admitted = [];
-    const ceiling = ceilingFor(rubrics, winner, sung);
+    const ceiling = ceilingFor(rubrics, winner, sung, isoDate);
     const ceilingLocus = (rubrics.commemoration && rubrics.commemoration.ceilings || {}).locus || null;
     const impediment = rubrics.impediment || {};
     const reduction = impediment.reduction || null;
@@ -1073,6 +1092,12 @@
     // First pass: everything that leaves the day entirely.
     const remaining = [];
     for (const loser of losers) {
+      const explicitOmission = loser.defeatedBy && loser.defeatedBy.override;
+      if (explicitOmission && explicitOmission.omitted_when_with) {
+        out.push({candidate: loser, id: loser.id, disposition: 'omitted',
+          locus: explicitOmission.locus, why: explicitOmission.why});
+        continue;
+      }
       const moved = transferOf(rubrics, loser, winner, owner, isoDate);
       if (moved) { out.push(Object.assign({ candidate: loser, id: loser.id }, moved)); continue; }
 
@@ -1250,6 +1275,7 @@
       position: 1,
       label: ORDINALS[0],
       of: winner.id,
+      source_key: candidateFormularyKey(winner),
       of_name: winner.name,
       kind: 'of the Mass',
       why: 'the oration of the Mass being celebrated',
@@ -1261,6 +1287,7 @@
         position: index + 2,
         label: ORDINALS[index + 1] || 'Further collect',
         of: one.id,
+        source_key: candidateFormularyKey(one),
         of_name: one.name,
         kind: one.basis.commemoration === 'privileged' ? 'privileged commemoration' : 'ordinary commemoration',
         why: one.basis.why,
@@ -1272,7 +1299,7 @@
       const unit = series.find(function (one) { return one.of === group.host.id; });
       if (!unit) return;
       unit.members = [group.host, group.companion].map(function (one) {
-        return {of: one.id, of_name: one.name};
+        return {of: one.id, source_key: candidateFormularyKey(one), of_name: one.name};
       });
       unit.group = 'inseparable';
       unit.group_locus = group.locus;
@@ -1467,10 +1494,10 @@
 
     for (const one of losers) {
       const candidate = one.candidate;
-      if (!candidate || !candidate.key) continue;
+      if (!candidate || !candidateFormularyKey(candidate)) continue;
       add({
         id: one.id,
-        key: candidate.key,
+        key: candidateFormularyKey(candidate),
         label: candidate.name,
         state: one.disposition === 'commemorated' || one.disposition === 'attached' ? 'commemorated' : 'displaced',
         disposition: one.disposition,
@@ -1484,6 +1511,23 @@
   /* ------------------------------------------------------------------------
    * One branch of the derivation
    * --------------------------------------------------------------------- */
+
+  function orationExecution(rubrics) {
+    const execution = rubrics.orations && rubrics.orations.execution;
+    if (execution === undefined) return null;
+    const expected = {"scope":"dated-mass-of-office","locus":"RGMR 436-437; 442-443; 480; 505","conclusions":{"principal":1,"commemorations":2},"multiple_lessons":{"locus":"RGMR 442-443","reading_names":["Lesson","First Lesson","Second Lesson","Third Lesson","Fourth Lesson","Fifth Lesson","Epistle"],"prayer_names":["Collect","Oratio"],"insertion":"after-last-prayer-before-final-reading","commemorated_source":"first-prayer"}};
+    function canonical(value) {
+      if (Array.isArray(value)) return value.map(canonical);
+      if (value && typeof value === 'object') return Object.keys(value).sort().reduce(function (out, key) {
+        out[key] = canonical(value[key]); return out;
+      }, {});
+      return value;
+    }
+    if (rubrics.calendar !== 'roman-1962' || JSON.stringify(canonical(execution)) !== JSON.stringify(canonical(expected))) {
+      throw new Error('unsupported source oration execution contract');
+    }
+    return execution;
+  }
 
   function deriveBranch(rubrics, owner, isoDate, candidates, option, folded, orphanBorrow,
                         calendarRefusals) {
@@ -1741,6 +1785,11 @@
         sung && low.commemorations.length !== sung.commemorations.length
       ),
       orations: orations,
+      ...(orationExecution(rubrics) ? {oration_execution: {
+        ...rubrics.orations.execution,
+        slots: [{slot: 'Collect', locus: rubrics.orations.what_counts.locus}]
+          .concat(rubrics.orations.tracked_by || [])
+      }} : {}),
       ceilings: ceilings,
       extras: extras,
       remarks: remarks,
@@ -1785,7 +1834,7 @@
     // the Ascension has moved to the Sunday it is absent from its Thursday, and
     // that Thursday is then an ordinary weekday that has to be constituted —
     // computing the implied day before the split would have suppressed it.
-    function branchOf(option) {
+  function branchOf(option) {
       const keep = (one) => option === null || !one.territorial || one.territorial === option;
       const set = inscribed.filter(keep);
       const takes = borrowed.filter(keep);
@@ -1794,9 +1843,16 @@
         // RGMR 270: the Mass agrees with the Office of the day. A day with a
         // Mass of its own — the Office of Our Lady on Saturday — takes that
         // one; every other implied day keeps its row and borrows a formulary.
+        // The independently reviewed recovery concerns the 1962 ferial
+        // appointment. Other recensions retain their existing source context.
+        const ferial = rubrics.calendar === 'roman-1962'
+          ? indexedFerialFormularies(year, rubrics, isoDate).filter(keep) : takes;
+        if (ferial.length > 1) {
+          throw new Error('an implied day has more than one source-appointed ferial formulary');
+        }
         implied.formulary = implied.ownMass
           ? Object.assign({ kind: 'own' }, implied.ownMass)
-          : (takes.length ? Object.assign({ kind: 'borrowed' }, takes[0]) : null);
+          : (ferial.length ? Object.assign({ kind: 'borrowed' }, ferial[0]) : null);
         set.unshift(implied);
       }
       return deriveBranch(rubrics, owner, isoDate, set, option, held.folded,

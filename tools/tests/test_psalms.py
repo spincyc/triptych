@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import _psalms  # noqa: E402
+from _bible_artifacts import select_verse_aliases
 
 convert_chapter = _psalms.convert_chapter
 convert_reference = _psalms.convert_reference
@@ -299,9 +300,9 @@ class VerseBoundTests(unittest.TestCase):
                 printed[int(row["chapter"])].add(int(row["verse"]))
         self.assertEqual(sum(len(verses) for verses in printed.values()), 2528)
         recorded: dict[int, set[int]] = collections.defaultdict(set)
-        aliases = sorted(artifacts.glob("verse-aliases-*/verse-aliases.tsv"))
-        self.assertEqual(len(aliases), 1)
-        with aliases[0].open(encoding="utf-8", newline="") as handle:
+        aliases = select_verse_aliases(artifacts.parent)
+        self.assertIsNotNone(aliases)
+        with aliases.open(encoding="utf-8", newline="") as handle:
             for row in csv.DictReader(handle, delimiter="\t"):
                 parts = row["cited_locus"].split(".")
                 if parts[0] == "Ps":

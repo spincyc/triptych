@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-10-25"
+audited_on = "2026-10-26"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 150
 source_surface_file_count = 2747
-snapshot = "sha256:1fedf26dc582197fa8526c55448519f7b48bf7d6db03470aee355d98208436a8"
+snapshot = "sha256:167208846d5c67f9962ccd3e2dc9f842e453f1c67c161ce8752ba3d342bca65b"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -9426,7 +9426,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost/research/source-bindings.toml"
-sha256 = "f0617aafd2f085140bb1d590ecb2d95910acc484577533b8d8b5e44514dbba82"
+sha256 = "f9285f130208125eac205d6dd1e87e7a239f8939cbcc0e00aaf4e0d840e583fc"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost"]
 
@@ -10830,7 +10830,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost/research/source-bindings.toml"
-sha256 = "f48c427ee9032adfbcf34f42bc3a239f9a1ad64e22cedbd57de01c7a7d84facb"
+sha256 = "1abaa241e7c1a33922d1158f8691c9a760932b987531f78b8dc0342f4a195f87"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost"]
 
@@ -11028,7 +11028,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentec
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost/research/source-bindings.toml"
-sha256 = "c7695743cd3b15dfbdae1fa19aedfc2ffdf9bb35829d5c28ede733baebd79712"
+sha256 = "403b35fa694723c5f3077874af8d3bd33c197ab455e71b95159baba82dc94139"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"]
 

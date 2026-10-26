@@ -1429,6 +1429,48 @@ def validate_liturgical_public_data(path: Path) -> None:
                 f"{matched_hash} reached public-alpha data"
             )
 
+    execution_seen: set[tuple] = set()
+    def visit_execution(value: object, trail: tuple = (), mass_key: str | None = None) -> None:
+        if isinstance(value, list):
+            for index, item in enumerate(value): visit_execution(item, trail + (index,), mass_key)
+        elif isinstance(value, dict):
+            if isinstance(value.get("propers"), list) and isinstance(value.get("key"), str):
+                mass_key = value["key"]
+            for key, item in value.items():
+                if key == "execution_source_coverage":
+                    expected_coverage = {"schema": "triptych-execution-source-coverage/v1", "language": "en",
+                        "count_basis": "distinct-source-targets", "sources": 6,
+                        "whole_body_translations_added": 0, "group_completeness": "context-dependent"}
+                    catalog_metadata = trail == ("structure",) and parts[:3] == ("structure", "propers", "catalog")
+                    if item != expected_coverage or (trail != () and not catalog_metadata) or payload.get("calendar") != "roman-1962":
+                        raise ReleaseError(f"{label} {_address(trail)}: unknown or misplaced execution source coverage")
+                if key == "execution_sources":
+                    try:
+                        import _oration_execution
+                        if not isinstance(item, list) or len(item) != 1:
+                            raise ValueError("one exact execution source required per proper")
+                        for source in item: _oration_execution.validate_public(source, ROOT)
+                        source = item[0]
+                        target = tuple(source["target"])
+                        if target in execution_seen:
+                            raise ValueError("repeated execution source target")
+                        execution_seen.add(target)
+                        if payload.get("calendar") != "roman-1962" or parts[:2] != ("structure", "propers"):
+                            raise ValueError("execution source outside Roman1962 Proper structure")
+                        if (mass_key, value.get("form_id"), value.get("name")) != tuple(source["target"][:3]):
+                            raise ValueError("execution source owner mass/form/slot differs")
+                        if _oration_execution.sha(value.get("text") or "") != source["target_latin_sha256"]:
+                            raise ValueError("execution source current owner Latin differs")
+                    except (ValueError, KeyError, TypeError) as error:
+                        raise ReleaseError(f"{label} {_address(trail)}: {error}") from error
+                visit_execution(item, trail + (key,), mass_key)
+    visit_execution(payload)
+    if isinstance(payload, dict) and "execution_source_coverage" in payload:
+        expected_execution_coverage = {"schema": "triptych-execution-source-coverage/v1", "language": "en",
+            "count_basis": "distinct-source-targets", "sources": len(execution_seen),
+            "whole_body_translations_added": 0, "group_completeness": "context-dependent"}
+        if payload["execution_source_coverage"] != expected_execution_coverage:
+            raise ReleaseError(f"{label}: execution source coverage disagrees with the separate source domain")
     visit_quarantined(payload)
     if (
         len(parts) < 3
@@ -1855,8 +1897,10 @@ def validate_propers_read_payload_sources(data_root: Path) -> None:
     # Source-owned appointment facts are optional generator output. The exact
     # catalog structure comparison below binds their complete value; this
     # transport gate does not redefine or evaluate the source fact contract.
+    # Execution-source coverage is validated by the per-file public gate; its
+    # complete value is bound to the catalog by the exact comparison below.
     if (not isinstance(monolith, dict)
-            or set(monolith) - {"proper_appointment_facts"} != {
+            or set(monolith) - {"proper_appointment_facts", "execution_source_coverage"} != {
                 "schema", "calendar", "edition", "edition_short", "numbering",
                 "translations", "languages", "coverage", "masses",
             }

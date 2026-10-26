@@ -1,0 +1,51 @@
+schema = "triptych-proper-target-source-review/v1"
+disposition = "accepted"
+independent = true
+reviewer = "genitrice_extra, independent primary source review SHA-256 f94be8d23b3bb2fed9c80ccb0643693b720dd857fddb8ee2e3df1e4618a87f7d; source_guard_successor, independent code review SHA-256 dc1ac75f2cb44d79002cdd44a7eb1b41504892d78584e863a436bf8dacdac878; root coordinator adoption SHA-256 765c224e2e3f580a03f4e868b169d8ad7fd0ebb196408874d4f8180cca2e2e30"
+
+[target_context]
+scope = "witness-state-only"
+edition_id = "edition.catholic-church.missale-romanum.2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920"
+artifact_id = "artifact.catholic-church.missale-romanum.2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920.ia-reimpressio-pdf-b676ce5c"
+artifact_sha256 = "b676ce5c9598b434ac6b356dd48a49c7e864deb49a45480db1f2a5068738ca1d"
+label = "Bonn 2004 reimpressio of a conformed edition of about 1954"
+civil_date_authority = false
+
+[[entries]]
+mass = "pentecost"
+form_id = "main"
+proper = "Collect"
+course = ""
+cycle = ""
+occurrence = 1
+base_text_sha256 = "cbccc3f7b27765d692a1a6d879e0cc4662e857d0622052e0c28c2326e1069517"
+text_sha256 = "76c16b62811f77c6e969be1b9db9809a4e5a9a94896bdd30e4e1c7b3df2066f9"
+source_id = "passage.triptych.bonn-pre-1955-pentecost-latin-projection.editorial-projection-2026-10-26.pentecost-collect"
+target_passage_id = "passage.catholic-church.missale-romanum.2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920.reader-completion-pentecost-collect"
+evidence_sha256 = "1e774205ff64785d1b6b65ad0ac3691860eec3846d62f6ca339a53562116fcfe"
+
+[[entries]]
+mass = "pentecost"
+form_id = "main"
+proper = "Secret"
+course = ""
+cycle = ""
+occurrence = 1
+base_text_sha256 = "784537ace944dabcb76aa34f5947d1ab6806629f27280a69cb888bda131ff9df"
+text_sha256 = "e4149297fffeccff97a8a51d5f15207e9cea2d9f9617a77d82a9bb6f62681d86"
+source_id = "passage.triptych.bonn-pre-1955-pentecost-latin-projection.editorial-projection-2026-10-26.pentecost-secret"
+target_passage_id = "passage.catholic-church.missale-romanum.2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920.reader-completion-pentecost-secret"
+evidence_sha256 = "ef8b2c279ee40f65692cdcbb0ed811133971d86a807243e62155fb101e491841"
+
+[[entries]]
+mass = "pentecost"
+form_id = "main"
+proper = "Postcommunion"
+course = ""
+cycle = ""
+occurrence = 1
+base_text_sha256 = "234350816165ad1341d1d00773d5f300782a9298966162252d6862c649c47eb8"
+text_sha256 = "b39663c740af3058e521609ba2567e183e6fc1f2d0eeb9361bd74e54e3ed8d87"
+source_id = "passage.triptych.bonn-pre-1955-pentecost-latin-projection.editorial-projection-2026-10-26.pentecost-postcommunion"
+target_passage_id = "passage.catholic-church.missale-romanum.2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920.reader-completion-pentecost-postcommunion"
+evidence_sha256 = "915dec47319124392395610628e1b2bf648490c898ae63a4e04d34c21ad71130"

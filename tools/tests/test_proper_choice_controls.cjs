@@ -384,7 +384,8 @@ test('both entrances load the single control owner before the thin shell and mat
 
 test('dedicated CommonJS controls retain browser DOM, legacy migration, and disabled Day negatives', () => {
   const commonJS = require(path.join(uiModuleRoot, 'source-choice-controls.js'));
-  assert.deepEqual(Object.keys(commonJS).sort(), ['attachSourcePathChoices', 'properChoiceRemovals', 'renderProperChoice']);
+  assert.deepEqual(Object.keys(commonJS).sort(), ['attachSourcePathChoices', 'createDayDateControls',
+    'properChoiceRemovals', 'renderProperChoice']);
   function snapshot(node) {
     return {tag: node.tagName, className: node.className, dataset: {...node.dataset},
       attributes: {...node.attributes}, text: node.textContent, id: node.id || null,

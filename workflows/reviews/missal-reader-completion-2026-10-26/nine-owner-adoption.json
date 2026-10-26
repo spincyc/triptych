@@ -1,0 +1,366 @@
+{
+  "schema": "triptych-reviewed-nine-owner-adoption/v1",
+  "decision": "accepted-exact-nine-source-established-owner-additions",
+  "date": "2026-10-26",
+  "coordinator": "root",
+  "source_review_sha256": "b13bdd67e71532b5fd072550cdaf5be56b8925f10e1996be6a2dd272b966052e",
+  "receiving_review_sha256": "3355827fc552bbc0ce57ac28295243d787eb47f82552400ec8f61726f0d6da1e",
+  "source_install_manifest_sha256": "08c2f39836688450e884856ee201ef5cd8d3a4bc69ab591c7030a43f42a14f89",
+  "component_manifest_sha256": "72a71f19f045a1d6215a180f669bc720a78a6e5e4dce62bd3cc43710697b1609",
+  "source_seal_sha256": "4190593e1958c4f1f532072da2b06ff98fbc238b4d979dc5e71d974ab48b69b7",
+  "allowlist_sha256": "e06b4107ca6da5427978ee5b721408d8b8d522f90ed680897c5f125659f375ca",
+  "allowlist": {
+    "schema": "triptych-source-established-owner-additions/v1",
+    "calendar": "roman-1962",
+    "baseline_domain": 1439,
+    "receiving_domain": 1448,
+    "source_review_sha256": "b13bdd67e71532b5fd072550cdaf5be56b8925f10e1996be6a2dd272b966052e",
+    "targets": [
+      [
+        "comm-ss-gordiani-epimachi-martyrum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      [
+        "comm-ss-gordiani-epimachi-martyrum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      [
+        "comm-ss-gordiani-epimachi-martyrum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      [
+        "s-caeciliae-virginis-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      [
+        "s-caeciliae-virginis-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      [
+        "s-caeciliae-virginis-martyris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      [
+        "vigil-saints-peter-paul",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      [
+        "vigil-saints-peter-paul",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      [
+        "vigil-saints-peter-paul",
+        "main",
+        "Secret",
+        "all",
+        1
+      ]
+    ],
+    "owners": [
+      {
+        "target": [
+          "comm-ss-gordiani-epimachi-martyrum",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "source_expected_target_id": "roman-1962:sanctoral-form:p604-l18:slot:p604-l30:collect",
+        "target_latin_sha256": "bacbdc50ca0ac72e8baaf9a7ec775c69b5c32f4418e6aa9d5095a571a95defd9",
+        "english_sha256": "24c55740088e87e913472a693eb3ea9ae7d805e916e56f7de382e0c644c893e1",
+        "insert_after": "Introit",
+        "insert_before": "Lesson",
+        "operation": "add-source-established-owner"
+      },
+      {
+        "target": [
+          "comm-ss-gordiani-epimachi-martyrum",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "source_expected_target_id": "roman-1962:sanctoral-form:p604-l18:slot:p605-l19:secret",
+        "target_latin_sha256": "2b09ae22929e428f915af03fa530d4470f676250926a980100be7ea49111b549",
+        "english_sha256": "fcc4af900f41e0497b7d50675368447bbc6d45225b4f5ec67e1f67c5665a393c",
+        "insert_after": "Offertory",
+        "insert_before": "Communion",
+        "operation": "add-source-established-owner"
+      },
+      {
+        "target": [
+          "comm-ss-gordiani-epimachi-martyrum",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "source_expected_target_id": "roman-1962:sanctoral-form:p604-l18:slot:p605-l30:postcommunion",
+        "target_latin_sha256": "e2299ba51fb0ccd77494d2b192aee2c8fb1f9c8b393e4dac66e762a332f68312",
+        "english_sha256": "2397345f1294d43f69993b61f2d692e9d91d1fe020b34ac7f2e33925dd7e113d",
+        "insert_after": "Communion",
+        "insert_before": null,
+        "operation": "add-source-established-owner"
+      },
+      {
+        "target": [
+          "vigil-saints-peter-paul",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "source_expected_target_id": "roman-1962:sanctoral-form:p647-l14:slot:p647-l30:collect",
+        "target_latin_sha256": "9c07fcea25d10cfa13fb7472a7e259e4569d63df0fa283abfebbdf14b5559550",
+        "english_sha256": "066c5ea9012f0b8666c3ba4dbbf1020d656e841a7cdc732b7339bc10ab7df91a",
+        "insert_after": "Introit",
+        "insert_before": "Lesson",
+        "operation": "add-source-established-owner"
+      },
+      {
+        "target": [
+          "vigil-saints-peter-paul",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "source_expected_target_id": "roman-1962:sanctoral-form:p647-l14:slot:p648-l18:secret",
+        "target_latin_sha256": "725f30cd83b27ff92679fd7fd5bb6dddfeb698f9449b531973ce7407b68d80eb",
+        "english_sha256": "f26e61e47a32c39017a4263617e15166dfa4a9668e43c9c648206d7d44da3b63",
+        "insert_after": "Offertory",
+        "insert_before": "Communion",
+        "operation": "add-source-established-owner"
+      },
+      {
+        "target": [
+          "vigil-saints-peter-paul",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "source_expected_target_id": "roman-1962:sanctoral-form:p647-l14:slot:p648-l28:postcommunion",
+        "target_latin_sha256": "7ff7eb47a6aed974ff71b4407327d1158e813fa0413ecd620f43b150bc2fb620",
+        "english_sha256": "6d7231e08c83b80f0253baefba21591886a6afdf512aa62281f6eecefb2a1561",
+        "insert_after": "Communion",
+        "insert_before": null,
+        "operation": "add-source-established-owner"
+      },
+      {
+        "target": [
+          "s-caeciliae-virginis-martyris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "source_expected_target_id": "roman-1962:sanctoral-form:p803-l63:slot:p803-l74:collect",
+        "target_latin_sha256": "9c8f97dbaf1a7e442d7083fb5f9f690a6395ac112df46dc48f930a19b48c9672",
+        "english_sha256": "4dd79a02d35103d8adfcd7f738cd1812d80b80baaf3b80f1b3e1fb5ac8960012",
+        "insert_after": "Introit",
+        "insert_before": "Lesson",
+        "operation": "add-source-established-owner"
+      },
+      {
+        "target": [
+          "s-caeciliae-virginis-martyris",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "source_expected_target_id": "roman-1962:sanctoral-form:p803-l63:slot:p804-l65:secret",
+        "target_latin_sha256": "5fd3916e4bc6cb2c5c38035ff9c2ed5f73e6e53850039d02826208a79499cbf1",
+        "english_sha256": "d88b30ebee8525c312d355605a159f2a156eee12f67f7ef855584600885648bf",
+        "insert_after": "Offertory",
+        "insert_before": "Communion",
+        "operation": "add-source-established-owner"
+      },
+      {
+        "target": [
+          "s-caeciliae-virginis-martyris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "source_expected_target_id": "roman-1962:sanctoral-form:p803-l63:slot:p804-l77:postcommunion",
+        "target_latin_sha256": "2fce5ba4bdcb315093b386dd6b9cf76b5da1950b9d82876e7c95d0c0957bf0db",
+        "english_sha256": "e07feb1d1ce209ecc266eb1a14cb4f9282818191bf0a352f5290d125031afd6f",
+        "insert_after": "Communion",
+        "insert_before": null,
+        "operation": "add-source-established-owner"
+      }
+    ],
+    "Lateran_Secret": "Excluded: referred role with unresolved inside/outside-church Common choice, not a tenth own body."
+  },
+  "reviewed_targets": [
+    {
+      "target": [
+        "comm-ss-gordiani-epimachi-martyrum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "Latin_sha256": "bacbdc50ca0ac72e8baaf9a7ec775c69b5c32f4418e6aa9d5095a571a95defd9",
+      "English_sha256": "24c55740088e87e913472a693eb3ea9ae7d805e916e56f7de382e0c644c893e1",
+      "verification_passage": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.reader-completion-20261026-absent-nodes-comm-ss-gordiani-epimachi-martyrum--main--collect--all--1-verify-en",
+      "publication_passage": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.reader-completion-20261026-absent-nodes-comm-ss-gordiani-epimachi-martyrum--main--collect--all--1-publish-en",
+      "state": "exact-source-and-role-join-passed"
+    },
+    {
+      "target": [
+        "comm-ss-gordiani-epimachi-martyrum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "Latin_sha256": "2b09ae22929e428f915af03fa530d4470f676250926a980100be7ea49111b549",
+      "English_sha256": "fcc4af900f41e0497b7d50675368447bbc6d45225b4f5ec67e1f67c5665a393c",
+      "verification_passage": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.reader-completion-20261026-absent-nodes-comm-ss-gordiani-epimachi-martyrum--main--secret--all--1-verify-en",
+      "publication_passage": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.reader-completion-20261026-absent-nodes-comm-ss-gordiani-epimachi-martyrum--main--secret--all--1-publish-en",
+      "state": "exact-source-and-role-join-passed"
+    },
+    {
+      "target": [
+        "comm-ss-gordiani-epimachi-martyrum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "Latin_sha256": "e2299ba51fb0ccd77494d2b192aee2c8fb1f9c8b393e4dac66e762a332f68312",
+      "English_sha256": "2397345f1294d43f69993b61f2d692e9d91d1fe020b34ac7f2e33925dd7e113d",
+      "verification_passage": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.reader-completion-20261026-absent-nodes-comm-ss-gordiani-epimachi-martyrum--main--postcommunion--all--1-verify-en",
+      "publication_passage": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.reader-completion-20261026-absent-nodes-comm-ss-gordiani-epimachi-martyrum--main--postcommunion--all--1-publish-en",
+      "state": "exact-source-and-role-join-passed"
+    },
+    {
+      "target": [
+        "vigil-saints-peter-paul",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "Latin_sha256": "9c07fcea25d10cfa13fb7472a7e259e4569d63df0fa283abfebbdf14b5559550",
+      "English_sha256": "066c5ea9012f0b8666c3ba4dbbf1020d656e841a7cdc732b7339bc10ab7df91a",
+      "verification_passage": "passage.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.reader-completion-20261026-absent-nodes-vigil-saints-peter-paul--main--collect--all--1-verify-en",
+      "publication_passage": "passage.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.reader-completion-20261026-absent-nodes-vigil-saints-peter-paul--main--collect--all--1-publish-en",
+      "state": "exact-source-and-role-join-passed"
+    },
+    {
+      "target": [
+        "vigil-saints-peter-paul",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "Latin_sha256": "725f30cd83b27ff92679fd7fd5bb6dddfeb698f9449b531973ce7407b68d80eb",
+      "English_sha256": "f26e61e47a32c39017a4263617e15166dfa4a9668e43c9c648206d7d44da3b63",
+      "verification_passage": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.reader-completion-20261026-absent-nodes-vigil-saints-peter-paul--main--secret--all--1-verify-en-body",
+      "publication_passage": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.reader-completion-20261026-absent-nodes-vigil-saints-peter-paul--main--secret--all--1-publish-en",
+      "state": "exact-source-and-role-join-passed"
+    },
+    {
+      "target": [
+        "vigil-saints-peter-paul",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "Latin_sha256": "7ff7eb47a6aed974ff71b4407327d1158e813fa0413ecd620f43b150bc2fb620",
+      "English_sha256": "6d7231e08c83b80f0253baefba21591886a6afdf512aa62281f6eecefb2a1561",
+      "verification_passage": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.reader-completion-20261026-absent-nodes-vigil-saints-peter-paul--main--postcommunion--all--1-verify-en-body",
+      "publication_passage": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.reader-completion-20261026-absent-nodes-vigil-saints-peter-paul--main--postcommunion--all--1-publish-en",
+      "state": "exact-source-and-role-join-passed"
+    },
+    {
+      "target": [
+        "s-caeciliae-virginis-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "Latin_sha256": "9c8f97dbaf1a7e442d7083fb5f9f690a6395ac112df46dc48f930a19b48c9672",
+      "English_sha256": "4dd79a02d35103d8adfcd7f738cd1812d80b80baaf3b80f1b3e1fb5ac8960012",
+      "verification_passage": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.reader-completion-20261026-absent-nodes-s-caeciliae-virginis-martyris--main--collect--all--1-verify-en",
+      "publication_passage": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.reader-completion-20261026-absent-nodes-s-caeciliae-virginis-martyris--main--collect--all--1-publish-en",
+      "state": "exact-source-and-role-join-passed"
+    },
+    {
+      "target": [
+        "s-caeciliae-virginis-martyris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "Latin_sha256": "5fd3916e4bc6cb2c5c38035ff9c2ed5f73e6e53850039d02826208a79499cbf1",
+      "English_sha256": "d88b30ebee8525c312d355605a159f2a156eee12f67f7ef855584600885648bf",
+      "verification_passage": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.reader-completion-20261026-absent-nodes-s-caeciliae-virginis-martyris--main--secret--all--1-verify-en",
+      "publication_passage": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.reader-completion-20261026-absent-nodes-s-caeciliae-virginis-martyris--main--secret--all--1-publish-en",
+      "state": "exact-source-and-role-join-passed"
+    },
+    {
+      "target": [
+        "s-caeciliae-virginis-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "Latin_sha256": "2fce5ba4bdcb315093b386dd6b9cf76b5da1950b9d82876e7c95d0c0957bf0db",
+      "English_sha256": "e07feb1d1ce209ecc266eb1a14cb4f9282818191bf0a352f5290d125031afd6f",
+      "verification_passage": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.reader-completion-20261026-absent-nodes-s-caeciliae-virginis-martyris--main--postcommunion--all--1-verify-en",
+      "publication_passage": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.reader-completion-20261026-absent-nodes-s-caeciliae-virginis-martyris--main--postcommunion--all--1-publish-en",
+      "state": "exact-source-and-role-join-passed"
+    }
+  ],
+  "native_receiving_checks": {
+    "source_graph_errors": 0,
+    "fresh_target_body_reads": 18,
+    "new_latin_permitted_unwithheld": 9,
+    "old_owner_dictionaries_conserved": 1439,
+    "old_positive_english_conserved": 1131,
+    "old_absences_conserved": 308,
+    "old_latin_proofs_conserved": 1325
+  },
+  "scope": [
+    "Admit only nine exact reviewed Latin/English source owners at the specified existing Mass coordinates and source-appointed role positions.",
+    "All original 1439 owner dictionaries and existing positive/absence/proof dictionaries remain conserved except separately reviewed Latin/source corrections and independent positive additions.",
+    "No Lateran tenth body, new generic Common selection, inferred calendar usage or unproved source rights.",
+    "Printed historical text/proofs stay separate from target projection and independent source publication controls.",
+    "Final combined epoch, code/source validators, generated output and reader/deployment gates remain separate requirements."
+  ]
+}

@@ -381,6 +381,35 @@ async function click(cdp, selector) {
   await new Promise((done) => setTimeout(done, 50));
 }
 
+async function nativeClick(cdp, selector) {
+  const point = await evaluate(cdp, `(() => {
+    const node = document.querySelector(${JSON.stringify(selector)});
+    if (!node) throw new Error('missing native target');
+    node.scrollIntoView({ block: 'center', behavior: 'instant' });
+    const box = node.getBoundingClientRect();
+    return { x: box.left + box.width / 2, y: box.top + box.height / 2,
+      mobile: innerWidth <= 768 };
+  })()`);
+  if (point.mobile) {
+    await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart',
+      touchPoints: [{ x: point.x, y: point.y }] });
+    await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+  } else {
+    await cdp.send('Input.dispatchMouseEvent', { type: 'mousePressed',
+      x: point.x, y: point.y, button: 'left', clickCount: 1 });
+    await cdp.send('Input.dispatchMouseEvent', { type: 'mouseReleased',
+      x: point.x, y: point.y, button: 'left', clickCount: 1 });
+  }
+  await new Promise((done) => setTimeout(done, 80));
+}
+
+async function nativeKey(cdp, key, code, windowsVirtualKeyCode) {
+  for (const type of ['keyDown', 'keyUp']) {
+    await cdp.send('Input.dispatchKeyEvent', { type, key, code, windowsVirtualKeyCode });
+  }
+  await new Promise((done) => setTimeout(done, 50));
+}
+
 async function openSurface(cdp, name) {
   if (name === 'details' && !await evaluate(cdp,
     `document.querySelector('[data-reader-surface="mode"]').open`)) {
@@ -996,10 +1025,11 @@ async function assertions(cdp, base) {
     await candidate(cdp, base, STATES.pre1955Trinity);
     let value = await snapshot(cdp);
     assert.equal(value.sourceHidden, false);
-    assert.match(value.source, /Recension coverage: Structural-only finding aid/);
-    assert.match(value.source, /Proper text source: .*1962.*inherited uncollated/i);
-    assert.match(value.notice, /structural-only finding aid/i);
-    assert.match(value.notice, /inherited material.*remains uncollated/i);
+    assert.match(value.source, /Recension coverage: Partial finding aid/);
+    assert.match(value.source, /Proper text source: .*1962.*inherited partial/i);
+    assert.match(value.notice, /partial finding aid/i);
+    assert.match(value.notice, /inherited material.*remains partial/i);
+    assert.match(value.notice, /Latin Propers: 0\/3 represented texts/);
 
     await candidate(cdp, base, STATES.pre1955Palm);
     value = await snapshot(cdp);
@@ -1009,7 +1039,7 @@ async function assertions(cdp, base) {
 
     await candidate(cdp, base, STATES.pre1955Supper);
     value = await snapshot(cdp);
-    assert.match(value.source, /inherited uncollated/i);
+    assert.match(value.source, /inherited partial/i);
     assert.match(value.source, /Departure: Moved/);
     await cdp.send('Emulation.setEmulatedMedia', { media: 'print' });
     assert.notEqual(await evaluate(cdp,
@@ -1274,6 +1304,96 @@ async function assertions(cdp, base) {
     await current(cdp, base, STATES.postPentecostDay);
     assert.deepEqual(await evaluate(cdp, 'propersReaderDebug.semantic'), candidateProjection);
   });
+  for (const caseRow of [
+    { name: 'Christmas desktop', width: 1440, height: 1000,
+      route: STATES.romanChristmasForms, first: 'night', second: 'dawn',
+      mass: 'nativitate-domini-octave', ids: ['night', 'dawn', 'day'] },
+    { name: 'All Souls mobile', width: 393, height: 852,
+      route: hash({ missal: 'roman-1962', type: 'sanctoral',
+        mass: 'commemoratione-omnium-fidelium-defunctorum', bible: 'douay-rheims', orations: 'la' }),
+      first: 'first', second: 'second', mass: 'commemoratione-omnium-fidelium-defunctorum',
+      ids: ['first', 'second', 'third'] }
+  ]) {
+    await check('Browse reselects a source Mass form with native input and Back: ' + caseRow.name, async () => {
+      await viewport(cdp, caseRow.width, caseRow.height);
+      await candidate(cdp, base, caseRow.route);
+      assert.equal((await snapshot(cdp)).outcome, 'unresolved');
+      await nativeClick(cdp, '[data-reader-action="browse"]');
+      assert.deepEqual(await evaluate(cdp, `({
+        hidden: document.querySelector('#reader-mass-form-field').hidden,
+        options: document.querySelector('#reader-mass-form').options.length
+      })`), { hidden: true, options: 0 });
+      await escape(cdp);
+      await nativeClick(cdp, '.proper-form-choice button');
+      await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.state?.form === ${JSON.stringify(caseRow.first)}`,
+        caseRow.name + ' first form');
+      const first = await snapshot(cdp);
+      assert.equal(first.outcome, 'ready');
+      assert.equal(first.semantic.resolved.form, caseRow.first);
+      await nativeClick(cdp, '[data-reader-action="contents"]');
+      await nativeClick(cdp, '[data-reader-contents] [data-reader-location][data-ordinal="04"]');
+      const oldLocation = await evaluate(cdp, `new URLSearchParams(location.hash.slice(1)).get('location')`);
+      assert.ok(oldLocation);
+      await nativeClick(cdp, '[data-reader-action="browse"]');
+      const chooser = await evaluate(cdp, `({
+        hidden: document.querySelector('#reader-mass-form-field').hidden,
+        selected: document.querySelector('#reader-mass-form').value,
+        options: [...document.querySelector('#reader-mass-form').options].map(row => row.value),
+        labels: [...document.querySelector('#reader-mass-form').options].map(row => row.textContent),
+        label: document.querySelector('label[for="reader-mass-form"]').textContent
+      })`);
+      assert.equal(chooser.hidden, false);
+      assert.equal(chooser.selected, caseRow.first);
+      assert.equal(chooser.label, 'Mass form');
+      assert.deepEqual(chooser.options, caseRow.ids);
+      assert.ok(chooser.labels.every(Boolean));
+      if (captureDir) await shot(cdp, resolve(captureDir,
+        'propers-form-chooser--' + caseRow.first + '--' + caseRow.width + 'x' + caseRow.height + '.png'));
+      await nativeClick(cdp, '#reader-mass-form');
+      await nativeKey(cdp, 'ArrowDown', 'ArrowDown', 40);
+      await nativeKey(cdp, 'Enter', 'Enter', 13);
+      assert.equal(await evaluate(cdp, `document.querySelector('#reader-mass-form').value`), caseRow.second);
+      await nativeClick(cdp, '#browse-form .surface-apply');
+      await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.state?.form === ${JSON.stringify(caseRow.second)}`,
+        caseRow.name + ' second form');
+      await waitFor(cdp, 'scrollY <= 8', caseRow.name + ' top after form change');
+      const second = await snapshot(cdp);
+      assert.equal(second.outcome, 'ready');
+      assert.equal(second.state.formulary.id, caseRow.mass);
+      assert.equal(second.state.civilDate, null);
+      assert.equal(second.semantic.resolved.form, caseRow.second);
+      assert.notDeepEqual(second.semantic.events.map(row => row.id), first.semantic.events.map(row => row.id));
+      assert.deepEqual(await evaluate(cdp, `({
+        form: new URLSearchParams(location.hash.slice(1)).get('form'),
+        date: new URLSearchParams(location.hash.slice(1)).get('date'),
+        location: new URLSearchParams(location.hash.slice(1)).get('location'),
+        active: document.activeElement.dataset.semanticEventId || null,
+        first: document.querySelector('#reader-document [data-semantic-event-id]')?.dataset.semanticEventId,
+        atTop: scrollY <= 8,
+        staleChoices: new URLSearchParams(location.hash.slice(1)).has('proper-choices')
+      })`), { form: caseRow.second, date: null, location: null,
+        active: second.semantic.events[0].id, first: second.semantic.events[0].id, atTop: true, staleChoices: false });
+      if (captureDir) await shot(cdp, resolve(captureDir,
+        'propers-form-result--' + caseRow.second + '--' + caseRow.width + 'x' + caseRow.height + '.png'));
+      await cdp.send('Page.navigateToHistoryEntry', { entryId: (await cdp.send('Page.getNavigationHistory')).entries
+        .findLast(row => row.url.includes('form=' + caseRow.first))?.id });
+      await waitFor(cdp, `propersReaderDebug.ready && propersReaderDebug.state?.form === ${JSON.stringify(caseRow.first)}`,
+        caseRow.name + ' Back restores first form');
+      assert.equal(await evaluate(cdp, `new URLSearchParams(location.hash.slice(1)).get('location')`), oldLocation);
+      assert.deepEqual((await snapshot(cdp)).semantic, first.semantic);
+      await nativeClick(cdp, '[data-reader-action="browse"]');
+      assert.equal(await evaluate(cdp, `document.querySelector('#reader-mass-form').value`), caseRow.first);
+      await escape(cdp);
+      await candidate(cdp, base, caseRow.route + '&form=not-held-by-this-mass');
+      assert.equal((await snapshot(cdp)).outcome, 'invalid');
+      assert.deepEqual(await evaluate(cdp, `({
+        hidden: document.querySelector('#reader-mass-form-field').hidden,
+        options: document.querySelector('#reader-mass-form').options.length,
+        events: document.querySelectorAll('#reader-document [data-semantic-event-id]').length
+      })`), { hidden: true, options: 0, events: 0 });
+    });
+  }
+  await viewport(cdp, 393, 852);
   if (process.env.TRIPTYCH_P0_ONLY === '1') return;
 
   await check('C6 resolved 1962 Read uses one Mass payload with form and witness fidelity', async () => {
@@ -1385,11 +1505,11 @@ async function assertions(cdp, base) {
     await current(cdp, base, route);
     assert.deepEqual(await evaluate(cdp, 'propersReaderDebug.semantic'), projection);
 
-    // Trinity and Ignatius hold checked English. Lent I's Collect retains its
-    // exact Latin body and ledgered English gap, preserving the unavailable-side
-    // contract alongside the complete Trinity parity checks above.
+    // The ninth Sunday after Pentecost retains a ledgered English Collect gap.
+    // Keep that unavailable side alongside complete Trinity parity; Lent I
+    // now has independently reviewed historical English.
     const unavailableRoute = new URLSearchParams(STATES.englishNone.slice(1));
-    unavailableRoute.set('mass', 'lent-1');
+    unavailableRoute.set('mass', 'pentecost-9');
     unavailableRoute.set('type', 'seasonal');
     unavailableRoute.set('orations', 'la');
     unavailableRoute.set('mode', 'compare');
@@ -1406,7 +1526,7 @@ async function assertions(cdp, base) {
     assert.equal(unavailable.outcome, 'ready', JSON.stringify(unavailable));
     assert.equal(unavailable.state.civilDate, null);
     assert.equal(unavailable.semantic.anchor.correspondingFormulary,
-      'lent-1');
+      'pentecost-9');
     assert.deepEqual(unavailable.semantic.units.find(row => row.semanticSlot === 'collect').sides
       .map(row => row.status), ['text-held', 'text-unavailable']);
     assert.deepEqual(unavailable.sides, ['text-held', 'text-unavailable']);

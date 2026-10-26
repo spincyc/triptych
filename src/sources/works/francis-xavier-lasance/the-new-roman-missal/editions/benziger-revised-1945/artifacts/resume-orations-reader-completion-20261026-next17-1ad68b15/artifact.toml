@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-reader-completion-20261026-next17-1ad68b15"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Public domain in the United States by failure to renew, on the affirmative registration-number record established at src/sources/inventories/lasance-new-roman-missal-rights-v1.toml: A 110108, copyright 15 July 1937, renewal window closed 15 July 1965; A 192159, copyright 1 November 1945, renewal window closed 1 November 1973. That holding is the repository's own and is recorded there with its citations, its controls, and what would overturn it; nothing here re-argues it. It does not cover the lettered inserts at printed pages 1298a-1298n or 1302a-1302d. The tracked publication artifact removes both complete page-bounded ranges, and no entry below quotes either."
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+provenance = "Literal historical human English independently checked against complete bounded facing prayer images. Closed exact source/target/context relations are recorded in workflows/reviews/missal-reader-completion-2026-10-26/finite-source-methods-next18.json SHA256 a77956cf5baa782c575c482add76f08a341fcf4343f32c0681ec0a7171ada87b."
+transformation = "Join checked physical line divisions and encode the reviewed English without changing words, case, punctuation or actual cues. Finite Latin context relations preserve every actual source and target cue. No generic ending matcher, source emendation, English expansion, name substitution or donor fanout."
+retrieved = "2026-10-26"
+sha256 = "1ad68b15c0468a817b183f3dc9d4934457a34f4d6ea7fff1c6371fa759f87f88"
+byte_size = 2510
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-reader-completion-20261026-next17-1ad68b15/english.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "Historical source wording is public domain under its separately recorded expression basis and is excluded from Triptych CC BY authorship. This bounded derivative clears no exact whole PDF, page image, whole OCR, layout, wrapper, modern insert or unexamined setting. It is not official English of the 1962 Missal."

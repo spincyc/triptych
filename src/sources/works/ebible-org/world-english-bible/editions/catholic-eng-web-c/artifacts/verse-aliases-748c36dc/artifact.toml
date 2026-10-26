@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.ebible-org.world-english-bible.catholic-eng-web-c.verse-aliases-748c36dc"
+edition_id = "edition.ebible-org.world-english-bible.catholic-eng-web-c"
+artifact_type = "reference-table"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych-created reference facts and qualification prose; no third-party scripture body is copied into this table."
+rights_jurisdiction = "United States"
+projected_from = ["artifact.catholic-church.vulgata-clementina.ebible-latvuc.usfm-29-hoslatvuc-5b466d7f", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.usfm-42-jdtlatvuc-66351169", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.usfm-47-barlatvuc-6eca1df1", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.usfm-75-romlatvuc-380291ce", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-18-judith-c271f5df", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-30-baruch-97262d58", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-33-osee-0341e42a", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-52-romans-b5092f0e", "artifact.ebible-org.world-english-bible.catholic-eng-web-c.usfm-29-hoseng-web-c-2ef773e6", "artifact.ebible-org.world-english-bible.catholic-eng-web-c.usfm-42-jdteng-web-c-d8d450de", "artifact.ebible-org.world-english-bible.catholic-eng-web-c.usfm-47-bareng-web-c-59488efa", "artifact.ebible-org.world-english-bible.catholic-eng-web-c.usfm-75-romeng-web-c-35fc9b00", "artifact.ebible-org.world-english-bible.catholic-eng-web-c.verse-aliases-2885816a", "artifact.ebible-org.world-english-bible.catholic-eng-web-c.verse-text-18-judith-ef33c346", "artifact.ebible-org.world-english-bible.catholic-eng-web-c.verse-text-30-baruch-f082fb6f", "artifact.ebible-org.world-english-bible.catholic-eng-web-c.verse-text-33-osee-3d630f44", "artifact.ebible-org.world-english-bible.catholic-eng-web-c.verse-text-52-romans-6cb145cf"]
+transformation = "Preserve the exact previous immutable alias payload as a byte prefix and append only independently accepted distinct source-coordinate rows, ordered by cited_locus. No prior row or source wording is edited."
+provenance = "New immutable 2026-10-26 reference revision. Previous artifact artifact.ebible-org.world-english-bible.catholic-eng-web-c.verse-aliases-2885816a SHA256 f65191fd85c52be20c00c68bc4bf12b8ed16bd407881a3b4dc5d9d6b8a9d3650, its payload path and metadata remain unchanged. Append 19 accepted rows (15 exact renumberings; 4 precise refusals). The source acceptance covers only the exact finite coordinates; combined or differing source wording is never silently widened."
+retrieved = "2026-10-26"
+sha256 = "748c36dc99e02273cb0081d6aa1dd113af759c133d6bfe6e30d03f922991447f"
+byte_size = 428485
+path = "src/sources/works/ebible-org/world-english-bible/editions/catholic-eng-web-c/artifacts/verse-aliases-748c36dc/verse-aliases.tsv"
+indexable = true
+encoding = "utf-8"
+notes = "Native Bible verse bodies, divisions and printed order remain unchanged. Baruch acceptance is isolated 3:38 only; no chapter-wide alignment or singleton superset claim. New current ZIPs retain distinct source identities from historical parent packages. Primary archive parents remain remote with unresolved support-file rights; exact complete underlying Bible USFM book children carry separately checked public-domain bases and supply the raw source testimony."

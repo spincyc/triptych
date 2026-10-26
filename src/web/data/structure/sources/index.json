@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 3826,
-  "editions": 1280,
-  "passages": 8747,
-  "readable": 3893,
-  "works": 1069
+  "artifacts": 3889,
+  "editions": 1286,
+  "passages": 8980,
+  "readable": 3944,
+  "works": 1071
  },
  "facets": {
   "authors": [
@@ -675,6 +675,10 @@
    },
    {
     "id": "Diocese of Beauvais",
+    "works": 1
+   },
+   {
+    "id": "Diocese of Chełmno",
     "works": 1
    },
    {
@@ -2155,7 +2159,7 @@
    },
    {
     "id": "Triptych contributors",
-    "works": 2
+    "works": 3
    },
    {
     "id": "U2 / U2.com",
@@ -2608,6 +2612,10 @@
     "works": 3
    },
    {
+    "id": "editorial-source-projection",
+    "works": 3
+   },
+   {
     "id": "episcopal-mandement",
     "works": 3
    },
@@ -2721,10 +2729,6 @@
    },
    {
     "id": "documentary-collection",
-    "works": 2
-   },
-   {
-    "id": "editorial-source-projection",
     "works": 2
    },
    {
@@ -3576,6 +3580,10 @@
     "works": 1
    },
    {
+    "id": "official-diocesan-periodical",
+    "works": 1
+   },
+   {
     "id": "official-directory",
     "works": 1
    },
@@ -4010,11 +4018,11 @@
     "id": "en"
    },
    {
-    "editions": 385,
+    "editions": 390,
     "id": "la"
    },
    {
-    "editions": 54,
+    "editions": 55,
     "id": "mul"
    },
    {
@@ -4201,20 +4209,20 @@
     "label": "19th century"
    },
    {
-    "editions": 281,
+    "editions": 282,
     "id": "1900",
     "label": "20th century"
    },
    {
-    "editions": 673,
+    "editions": 678,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 2155,
-    "editions": 490,
+    "artifacts": 2197,
+    "editions": 492,
     "id": "public-domain"
    },
    {
@@ -4223,8 +4231,8 @@
     "id": "restricted"
    },
    {
-    "artifacts": 423,
-    "editions": 209,
+    "artifacts": 430,
+    "editions": 215,
     "id": "unresolved"
    },
    {
@@ -4233,8 +4241,8 @@
     "id": "licensed"
    },
    {
-    "artifacts": 162,
-    "editions": 41,
+    "artifacts": 176,
+    "editions": 46,
     "id": "project-created"
    },
    {
@@ -10687,8 +10695,8 @@
      "file": "1862-pustet-ratisbon-1862.json",
      "id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
      "language": "la",
-     "passages": 474,
-     "readable": 370,
+     "passages": 498,
+     "readable": 382,
      "rights": [
       "public-domain"
      ],
@@ -10739,8 +10747,8 @@
      "file": "1922-1922-tours-mame-editio-quarta-iuxta-typicam.json",
      "id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
      "language": "la",
-     "passages": 140,
-     "readable": 39,
+     "passages": 168,
+     "readable": 50,
      "rights": [
       "public-domain"
      ],
@@ -10752,9 +10760,10 @@
      "file": "1942-unidentified-pre-1955-witness-ia-1947.json",
      "id": "edition.catholic-church.missale-romanum.unidentified-pre-1955-witness-ia-1947",
      "language": "la",
-     "passages": 0,
-     "readable": 0,
+     "passages": 3,
+     "readable": 1,
      "rights": [
+      "public-domain",
       "unresolved"
      ],
      "title": "Missale Romanum, editio IV iuxta typicam Vaticanam (Benziger Brothers), pre-1955 witness of unestablished printing year",
@@ -10791,7 +10800,7 @@
      "file": "1962-vatican-typica-1962.json",
      "id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
      "language": "la",
-     "passages": 617,
+     "passages": 641,
      "readable": 0,
      "rights": [
       "unresolved"
@@ -10882,7 +10891,7 @@
      "file": "2004-2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920.json",
      "id": "edition.catholic-church.missale-romanum.2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920",
      "language": "la",
-     "passages": 0,
+     "passages": 3,
      "readable": 0,
      "rights": [
       "unresolved"
@@ -11288,11 +11297,12 @@
      "file": "1598-ebible-latvuc.json",
      "id": "edition.catholic-church.vulgata-clementina.ebible-latvuc",
      "language": "la",
-     "passages": 0,
+     "passages": 1,
      "readable": 0,
      "rights": [
       "project-created",
-      "public-domain"
+      "public-domain",
+      "unresolved"
      ],
      "title": "Clementine Vulgate 1598, eBible.org latVUC",
      "year": 1598
@@ -12541,11 +12551,12 @@
      "file": "1769-ebible-engkjv.json",
      "id": "edition.church-of-england.king-james-version.ebible-engkjv",
      "language": "en",
-     "passages": 0,
+     "passages": 1,
      "readable": 0,
      "rights": [
       "project-created",
-      "public-domain"
+      "public-domain",
+      "unresolved"
      ],
      "title": "The Holy Bible, King James Version with the Apocrypha, eBible.org eng-kjv",
      "year": 1769
@@ -14893,6 +14904,33 @@
    "title": "Missale Bellovacense"
   },
   {
+   "alternate_titles": [],
+   "author": "Diocese of Chełmno",
+   "category": "official-diocesan-periodical",
+   "directory": "editions/diocese-of-chelmno/oredownik-diecezji-chelminskiej/",
+   "editions": [
+    {
+     "date": "1947",
+     "file": "1947-1947-year-3-number-3.json",
+     "id": "edition.diocese-of-chelmno.oredownik-diecezji-chelminskiej.1947-year-3-number-3",
+     "language": "mul",
+     "passages": 2,
+     "readable": 0,
+     "rights": [
+      "unresolved"
+     ],
+     "title": "Orędownik Diecezji Chełmińskiej, Rok3(85), Maj-Czerwiec1947, Nr3",
+     "year": 1947
+    }
+   ],
+   "id": "work.diocese-of-chelmno.oredownik-diecezji-chelminskiej",
+   "languages": [
+    "pl",
+    "la"
+   ],
+   "title": "Orędownik Diecezji Chełmińskiej"
+  },
+  {
    "alternate_titles": [
     "Missale insignis ecclesie Leodiensis",
     "Missale secundum usum insignis ecclesie Leodiensis"
@@ -15503,7 +15541,8 @@
      "readable": 0,
      "rights": [
       "project-created",
-      "public-domain"
+      "public-domain",
+      "unresolved"
      ],
      "title": "The Holy Bible in English, Douay-Rheims American Edition of 1899 (eBible.org engDRA)",
      "year": 1899
@@ -16406,7 +16445,7 @@
      "file": "1945-benziger-revised-1945.json",
      "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
      "language": "en",
-     "passages": 1990,
+     "passages": 2038,
      "readable": 14,
      "rights": [
       "project-created",
@@ -16421,7 +16460,7 @@
      "file": "1946-1946-benziger-revised-1945.json",
      "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946",
      "language": "en",
-     "passages": 21,
+     "passages": 24,
      "readable": 4,
      "rights": [
       "public-domain",
@@ -17200,9 +17239,10 @@
      "file": "1925-saint-andre-lohmann-1925.json",
      "id": "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925",
      "language": "en",
-     "passages": 0,
+     "passages": 66,
      "readable": 0,
      "rights": [
+      "public-domain",
       "unresolved"
      ],
      "title": "Daily Missal with Vespers for Sundays and Feasts",
@@ -32792,11 +32832,12 @@
      "file": "1895-ebible-eng-rv.json",
      "id": "edition.convocation-of-canterbury.revised-version.ebible-eng-rv",
      "language": "en",
-     "passages": 0,
+     "passages": 1,
      "readable": 0,
      "rights": [
       "project-created",
-      "public-domain"
+      "public-domain",
+      "unresolved"
      ],
      "title": "The Revised Version of the Holy Bible with Apocrypha (1895), eBible.org eng-rv",
      "year": 1895
@@ -34755,6 +34796,32 @@
    "alternate_titles": [],
    "author": "Triptych contributors",
    "category": "editorial-source-projection",
+   "directory": "editions/triptych/bonn-pre-1955-pentecost-latin-projection/",
+   "editions": [
+    {
+     "date": "2026-10-26",
+     "file": "2026-2026-10-26-editorial-projection.json",
+     "id": "edition.triptych.bonn-pre-1955-pentecost-latin-projection.editorial-projection-2026-10-26",
+     "language": "la",
+     "passages": 3,
+     "readable": 3,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Bonn Pentecost Three-Prayer Editorial Projection, 26 October 2026",
+     "year": 2026
+    }
+   ],
+   "id": "work.triptych.bonn-pre-1955-pentecost-latin-projection",
+   "languages": [
+    "la"
+   ],
+   "title": "Bonn Pre-1955 Pentecost Latin Prayer Projection"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Triptych contributors",
+   "category": "editorial-source-projection",
    "directory": "editions/triptych/roman-1962-latin-proper-editorial-projection/",
    "editions": [
     {
@@ -34911,6 +34978,58 @@
       "project-created"
      ],
      "title": "Roman 1962 Latin Proper Editorial Projection, 23 October 2026, two-body supplement",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-26",
+     "file": "2026-2026-10-26-editorial-projection-absent-nodes.json",
+     "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-absent-nodes",
+     "language": "la",
+     "passages": 9,
+     "readable": 9,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman 1962 Latin Proper Editorial Projection, 26 October 2026, nine source-established absent orations",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-26",
+     "file": "2026-2026-10-26-editorial-projection-latin-five.json",
+     "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-five",
+     "language": "la",
+     "passages": 5,
+     "readable": 5,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman 1962 Latin Proper Editorial Projection, 26 October 2026, five additional normal Oratio bodies",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-26",
+     "file": "2026-2026-10-26-editorial-projection-latin-seven.json",
+     "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven",
+     "language": "la",
+     "passages": 7,
+     "readable": 7,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman1962Latin Proper Editorial Projection,26October2026,seven finite-rights bodies",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-26",
+     "file": "2026-2026-10-26-editorial-projection-sanctoral-repairs.json",
+     "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-sanctoral-repairs",
+     "language": "la",
+     "passages": 3,
+     "readable": 3,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman 1962 Latin Proper Editorial Projection, 26 October 2026, two sanctoral repairs and one provenance correction",
      "year": 2026
     }
    ],
@@ -36596,11 +36715,12 @@
      "file": "2020-catholic-eng-web-c.json",
      "id": "edition.ebible-org.world-english-bible.catholic-eng-web-c",
      "language": "en",
-     "passages": 0,
+     "passages": 2,
      "readable": 0,
      "rights": [
       "project-created",
-      "public-domain"
+      "public-domain",
+      "unresolved"
      ],
      "title": "The World English Bible, Catholic Edition (eBible.org eng-web-c)",
      "year": 2020

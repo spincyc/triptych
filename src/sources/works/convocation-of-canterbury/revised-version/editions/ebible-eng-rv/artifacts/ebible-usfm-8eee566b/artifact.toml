@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.convocation-of-canterbury.revised-version.ebible-eng-rv.ebible-usfm-8eee566b"
+edition_id = "edition.convocation-of-canterbury.revised-version.ebible-eng-rv"
+artifact_type = "downloadable-data"
+media_type = "application/zip"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "Underlying Bible text has its separately verified public-domain basis; this whole container also includes modern publisher support files whose exact redistribution basis is unresolved. No package-wide public-domain claim is made and no archive bytes are retained in public source storage."
+rights_jurisdiction = "United States"
+source_url = "https://eBible.org/Scriptures/eng-rv_usfm.zip"
+provenance = "Complete official publisher USFM ZIP acquired and hashed on 2026-10-26 as finite native-marker evidence. It is a distinct source identity from historical parent packages. Only separately manifested complete unchanged USFM book members are retained; the complete archive remains a remote hashed parent."
+retrieved = "2026-10-26"
+sha256 = "8eee566b1e4a6a77363221b450bb00fb2f7a9afb98dd6981f094e6c24a6040d5"
+byte_size = 3166778
+indexable = false
+notes = "ACCESS LIMITATION: the complete 3166778-byte archive has 84 members (80 USFM files). Its modern support members are excluded from retained public payloads: copr.htm SHA256 eedf705debe31067eb982660f0e498682a42159927e5311dc5c0638364c4f1f0; keys.asc SHA256 8659487be35d9a79b8bb41eb68db1e96e9a1933792f683b88e0de50cd3841942; signature.txt.asc SHA256 ab9c4e955cc476d7c846f93f6dee84f5c9712a31ce3c03b4c923027e30782fec; latin.css SHA256 b0bafca14b3632a01adb83e8b8683ad86e76b4eb65131f0ed90ff3103787c175. Their stylesheets differ from Haiola upstream material and this record does not assert a package-wide redistribution grant. The underlying Bible text permission is separate. Parent archive URL/hash/extent describe the acquired bytes, not an identity claim about earlier deliveries. No CSS, HTML wrapper, public-key file or signature is copied into the retained USFM children."

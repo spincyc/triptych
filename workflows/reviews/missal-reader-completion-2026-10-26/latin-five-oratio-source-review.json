@@ -1,0 +1,624 @@
+{
+  "status": "ACCEPT_EXACT_FIVE_ORATIO_SOURCE_BODIES_AND_TARGET_PROJECTIONS_FOR_CANONICAL_PRODUCER",
+  "reviewer": "/root/latin_candidates; independent of /root/latin_ember_orations producer",
+  "recorded_on": "2026-10-26",
+  "base_HEAD": "f3f59d483358128e1b78d7a12aaeb4f3feab4a8a",
+  "scope": "Independent complete source/target prayer image collation, finite conclusion controls, source identity and current United States rights basis, faithful historical extracts, exact current target/proof/English-absence joins. Canonical assembly/admission and runtime model remain separate.",
+  "accepted_proposal": {
+    "path": ".scratch/reader-completion-20261026-latin-ember/source-proposal.json",
+    "sha256": "c7dfb42ff17abbe6332a4304ac84f7fc5d02021dd195c8e5ccbe283f9e9cc52c",
+    "bytes": 17373
+  },
+  "accepted_historical_text": {
+    "path": ".scratch/reader-completion-20261026-latin-ember/latin-only.txt",
+    "sha256": "b5c77d8c5c6d8eb71d4a0f914aa9df808fb00536bc5c263cdd61ba5d33d5713b",
+    "bytes": 881
+  },
+  "accepted_historical_PDF_extracts": [
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/mame-five-pages.pdf",
+      "sha256": "9d6b117077bc6fc105035b0540f8e46938776a5fef8bd4e4fdec7658a1603415",
+      "bytes": 753109
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/mame-support-pages.pdf",
+      "sha256": "d79410cf7b26b3dde9de6e117eb1c5ebc7cf1a174f006b4b5024fc7d462e4fc7",
+      "bytes": 617459
+    }
+  ],
+  "accepted_target_body_carrier_private_until_assembled": {
+    "path": ".scratch/reader-completion-20261026-latin-ember-review/checked-target-latin.txt",
+    "sha256": "d82591596f919bc18834804124b9efbe0f81f383b4cceeb08583035d158b76b0",
+    "bytes": 968
+  },
+  "targets": [
+    {
+      "target": [
+        "advent-ember-wednesday",
+        "main",
+        "Oratio",
+        "all",
+        1
+      ],
+      "historical_source_pdf_page": 122,
+      "historical_printed_page": "8",
+      "historical_line": 1,
+      "target_pdf_page": 87,
+      "target_printed_page": "6",
+      "target_unit": "35",
+      "historical_body_sha256_with_LF": "be9cfae1fd5575b78e4748451714c0b7e85a7b4bae8c47b8913c181b5d45900b",
+      "accepted_target_body_sha256_without_LF": "81fef5642ec7e6fea74b7573ac321e93b0da3cde2c50081960abddfdbd5d676e",
+      "accepted_target_body_sha256_with_LF": "74e442a42a44911f7dcfddf187a9ca60803e4cf8cd1eb0dd12e989bbc8d9e20a",
+      "canonical_before_node": {
+        "name": "Oratio",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "no-exemplar"
+            }
+          ]
+        },
+        "notes": "Missale Romanum 1962, artifact p. 87, printed p. 6, unit 35: a second normal Oratio follows the first Gradual and precedes the second Lesson. Its body remains unavailable."
+      },
+      "canonical_before_node_canonical_json_sha256": "6a873c072b95678b1b259d46c06cd44286c3156e6f78f20597e4c4ebec41e364",
+      "current_Latin_proof_rows": [],
+      "preserve_English_unavailable_rows": [
+        {
+          "mass": "advent-ember-wednesday",
+          "form_id": "main",
+          "proper": "Oratio",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "reason": {
+            "kind": "no-exemplar"
+          },
+          "note": "No exact English whole-body exemplar is bound to this source-established literal appointment."
+        }
+      ],
+      "English_positive_rows": [],
+      "source_word_verdict": "ACCEPT_COMPLETE_PETITION_AND_ACTUAL_TARGET_CONCLUSION_UNDER_DISCLOSED_TRANSFORMATIONS"
+    },
+    {
+      "target": [
+        "lent-4-wednesday",
+        "main",
+        "Oratio",
+        "all",
+        1
+      ],
+      "historical_source_pdf_page": 253,
+      "historical_printed_page": "139",
+      "historical_line": 2,
+      "target_pdf_page": 191,
+      "target_printed_page": "110",
+      "target_unit": "712",
+      "historical_body_sha256_with_LF": "ee7635bba04e873cde6b057fe1169f44d69d19b8e2607e9d6682e03f7454ae38",
+      "accepted_target_body_sha256_without_LF": "8d3a737b30b9f190cebfb08b9774f3019f924b8de30e0f1146b64f3ab42c17e0",
+      "accepted_target_body_sha256_with_LF": "ee7635bba04e873cde6b057fe1169f44d69d19b8e2607e9d6682e03f7454ae38",
+      "canonical_before_node": {
+        "name": "Oratio",
+        "incipit": "Praesta, quaesumus, omnipotens Deus",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Missale Romanum 1962, printed p. 110, numbered text 712; artifact PDF p. 191. The normal formulary appoints this prayer; its complete Latin body has not been collated to a publication witness."
+      },
+      "canonical_before_node_canonical_json_sha256": "d620f8041f0d04324197e13310d16ba181dd5b6971c4bb234ac88a1dbbd3e808",
+      "current_Latin_proof_rows": [],
+      "preserve_English_unavailable_rows": [
+        {
+          "mass": "lent-4-wednesday",
+          "form_id": "main",
+          "proper": "Oratio",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "reason": {
+            "kind": "no-exemplar"
+          },
+          "note": "No exact English whole-body exemplar is bound to this source-established normal Proper appointment."
+        }
+      ],
+      "English_positive_rows": [],
+      "source_word_verdict": "ACCEPT_COMPLETE_PETITION_AND_ACTUAL_TARGET_CONCLUSION_UNDER_DISCLOSED_TRANSFORMATIONS"
+    },
+    {
+      "target": [
+        "holy-wednesday",
+        "main",
+        "Oratio",
+        "all",
+        1
+      ],
+      "historical_source_pdf_page": 307,
+      "historical_printed_page": "193",
+      "historical_line": 3,
+      "target_pdf_page": 228,
+      "target_printed_page": "147",
+      "target_unit": "882",
+      "historical_body_sha256_with_LF": "b6d1edbf56896fa3d8be0d21793d069d7bdcd5bbf29a890aa72acc70c1e409c5",
+      "accepted_target_body_sha256_without_LF": "061b80044a5a979f2636ceb29b44b0d8d3227b2d9e75e1525a87dad3fecad7c1",
+      "accepted_target_body_sha256_with_LF": "a1ba771e3c018e3ae52224e1c440e2b97e0e3361c80e8558cb87297b1b7debc2",
+      "canonical_before_node": {
+        "name": "Oratio",
+        "incipit": "Deus, qui pro nobis",
+        "source": "composed",
+        "notes": "Missale Romanum 1962, artifact p. 228, printed p. 147, numbered unit 882; source-established normal appointment. Printed after Graduale881 and before the second Lesson883. Exact wording remains unavailable in this record.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "no-exemplar"
+            }
+          ]
+        }
+      },
+      "canonical_before_node_canonical_json_sha256": "722a3bbb2092663dfdb08d1d548a789e5bf0e80057b9530aca33af9c4e89cfa9",
+      "current_Latin_proof_rows": [],
+      "preserve_English_unavailable_rows": [
+        {
+          "mass": "holy-wednesday",
+          "form_id": "main",
+          "proper": "Oratio",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "reason": {
+            "kind": "no-exemplar"
+          },
+          "note": "No exact English whole-body exemplar is bound to this source-established normal appointment. Its Scripture component does not supply the uncited Missal wording."
+        }
+      ],
+      "English_positive_rows": [],
+      "source_word_verdict": "ACCEPT_COMPLETE_PETITION_AND_ACTUAL_TARGET_CONCLUSION_UNDER_DISCLOSED_TRANSFORMATIONS"
+    },
+    {
+      "target": [
+        "pentecost-ember-wednesday",
+        "main",
+        "Oratio",
+        "all",
+        1
+      ],
+      "historical_source_pdf_page": 519,
+      "historical_printed_page": "405",
+      "historical_line": 4,
+      "target_pdf_page": 443,
+      "target_printed_page": "362",
+      "target_unit": "1344",
+      "historical_body_sha256_with_LF": "f51f92db3c54f99b3eea2f878081fef139134bb645e0d92f05abf7460b4f9681",
+      "accepted_target_body_sha256_without_LF": "b1554d275e58d34b6358dbb8b00e38fe1bca958d3c620f120e3abd94bab58b27",
+      "accepted_target_body_sha256_with_LF": "50c254fdba0b7ab1379e983f91442a97976993da9b2ff1e9842cea044dac1175",
+      "canonical_before_node": {
+        "name": "Oratio",
+        "incipit": "Praesta, quaesumus, omnipotens",
+        "source": "composed",
+        "notes": "Missale Romanum 1962, artifact p. 443, printed p. 362, numbered unit 1344; source-established normal appointment. Printed after the first Alleluia1343 and before the second Lesson1345. Exact wording remains unavailable in this record.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "no-exemplar"
+            }
+          ]
+        }
+      },
+      "canonical_before_node_canonical_json_sha256": "f75e93767967da44ec0a4e16e8ccdb10b9763559678107e3fafa65bf0261e883",
+      "current_Latin_proof_rows": [],
+      "preserve_English_unavailable_rows": [
+        {
+          "mass": "pentecost-ember-wednesday",
+          "form_id": "main",
+          "proper": "Oratio",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "reason": {
+            "kind": "no-exemplar"
+          },
+          "note": "No exact English whole-body exemplar is bound to this source-established normal appointment. Its Scripture component does not supply the uncited Missal wording."
+        }
+      ],
+      "English_positive_rows": [],
+      "source_word_verdict": "ACCEPT_COMPLETE_PETITION_AND_ACTUAL_TARGET_CONCLUSION_UNDER_DISCLOSED_TRANSFORMATIONS"
+    },
+    {
+      "target": [
+        "september-ember-wednesday",
+        "main",
+        "Oratio",
+        "all",
+        1
+      ],
+      "historical_source_pdf_page": 566,
+      "historical_printed_page": "452",
+      "historical_line": 5,
+      "target_pdf_page": 481,
+      "target_printed_page": "400",
+      "target_unit": "1616",
+      "historical_body_sha256_with_LF": "5e580a64f3aae0d675415b98eedb11df27bc9b51189055e65ef4e5c9bd2f5b81",
+      "accepted_target_body_sha256_without_LF": "ca1b628d292f23dc05a4e3b99a078fc8d8f06ac0ff990c9b258535975b28d884",
+      "accepted_target_body_sha256_with_LF": "db5d327e933dcd20e8f9f36b1f03fec9af0958986fbae5ef74225f06b9671c2b",
+      "canonical_before_node": {
+        "name": "Oratio",
+        "incipit": "Praesta, quaesumus, Domine, familiae tuae",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+            }
+          ]
+        },
+        "notes": "Missale Romanum 1962, physical PDF p. 481, printed p. 400, right column, numbered unit 1616. This additional Oratio follows the first Gradual and precedes the second Lesson. Its exact Latin body remains unavailable."
+      },
+      "canonical_before_node_canonical_json_sha256": "702f408aa957b4c14765b00d5751b9c60a91cef9bc307ce6a6bedd0d7649c0d4",
+      "current_Latin_proof_rows": [],
+      "preserve_English_unavailable_rows": [
+        {
+          "mass": "september-ember-wednesday",
+          "form_id": "main",
+          "proper": "Oratio",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "reason": {
+            "kind": "no-exemplar"
+          },
+          "note": "No exact English exemplar is bound to the additional source-established Oratio, numbered unit 1616 at physical PDF page 481, printed page 400."
+        }
+      ],
+      "English_positive_rows": [],
+      "source_word_verdict": "ACCEPT_COMPLETE_PETITION_AND_ACTUAL_TARGET_CONCLUSION_UNDER_DISCLOSED_TRANSFORMATIONS"
+    }
+  ],
+  "counts": {
+    "accepted_targets": 5,
+    "blocking_source_word_findings": 0,
+    "blocking_identity_or_derivative_findings": 0,
+    "nonblocking_legacy_rights_rationale_findings": 1,
+    "parent_actual_whole_page_views_read": 23,
+    "independently_keyed_complete_historical_and_target_readings": 10,
+    "parent_word_and_stop_assertions": 27,
+    "parent_negative_controls": 12,
+    "independent_producer_raster_reproductions": 25,
+    "additional_parent_target_raster_reproductions": 10,
+    "original_to_extract_full_page_raster_pairs": 20,
+    "original_to_extract_raw_image_stream_page_pairs": 10,
+    "page_boxes_matching_per_pair": 5,
+    "current_before_node_joins": 5,
+    "new_exact_Latin_proof_targets_needed": 5,
+    "English_absences_to_preserve": 5,
+    "English_admissions": 0,
+    "final_pin_files_verified": 48
+  },
+  "independent_companion_reviews": [
+    {
+      "receipt": {
+        "path": ".scratch/reader-completion-20261026-latin-ember-review/mechanical/RECEIPT.json",
+        "sha256": "1ae8502b3e768c8f42d8d2a361921d17d9f1431276b674a6c75c70b029f303e7",
+        "bytes": 6778
+      },
+      "scope": "Exact pins and rasters, historical line/petition/target-hash joins, five exact current owner nodes, absent Latin proof and English positives, exact English unavailable rows."
+    },
+    {
+      "receipt": {
+        "path": ".scratch/reader-completion-20261026-latin-ember-review/identity-rights/IDENTITY-RIGHTS-REVIEW.json",
+        "sha256": "7f09f9d9ef405a38b2edff612981febfa386667da747c479b4a1e672b7db5cb8",
+        "bytes": 15389
+      },
+      "scope": "Exact Mame identity; whole-source joins; title/approval; faithful historical extracts; current US rights; bounded IA/Google attribution finding. This companion claims no body collation."
+    }
+  ],
+  "finite_conclusion_decisions": [
+    "Advent: historical own Qui vivis. remains in source artifact. Actual target longer prefix through in unitate. is literally printed in Mame115 and agrees with historical IX17 Christ-directed rule. No later Spiritus Sancti or Amen is copied.",
+    "Lent4: both own source and actual target stop at Per Dominum.; no expansion.",
+    "HolyWednesday: source Per eumdem Dominum. and target Per eundem Dominum. are a disclosed received spelling difference. Do not assert literal source-string equality.",
+    "Pentecost: literal Mame368 supplies Per Dominum nostrum Jesum Christum Filium tuum: Qui tecum vivit et regnat in unitate; own Mame519 cue and IX17 explicitly give ejusdem. Actual target gives precisely that longer prefix with comma after Christum, stopping after ejusdem. No HolySpirit/Deus/peromnia/Amen tail.",
+    "September: historical own Per Dominum nostrum. remains in source artifact; actual target stops at Per Dominum. All petition words agree."
+  ],
+  "rights_and_distribution_decision": {
+    "jurisdiction": "United States only",
+    "historical_basis": "Actual1922commercial conformed printing independently established. Current elapsed maximum term supports bounded historical pages and transcriptions. Faithful extraction retains raw image streams, geometry, marks and provenance.",
+    "finite_IA_Google_finding": "Fresh IA metadata identifies IA Cebu/USB-camera/Scribe provenance; actual front leaves1-15 and exact edition/artifact fields establish no Google-specific licence or attribution condition. No whole-book notice absence search or host licence grant is inferred. Preserve publisher/sourceURL/wholehash/date/page-map/transformations.",
+    "modern_boundary": "Whole1962PDF and all target rasters remain private research evidence. Modern target records use text-free locators/hashes. No modern page image occurs in either accepted historical extract.",
+    "legacy_metadata_correction": {
+      "path": ".scratch/reader-completion-20261026-latin-ember-review/identity-rights/proposed-artifact-rights-rationale-correction.json",
+      "sha256": "0ec080c63f8e619b189bbc467a1b13c2b3a38bff993e5c90c55c273252a45b19",
+      "bytes": 4463
+    },
+    "legacy_metadata_finding": "Existing artifact sentence claiming maximum term expiry before1January1996 is unsupported by1922publication. Current USPD outcome survives. Apply the exact separately proposed accurate elapsed-term rationale and regenerate affected bindings/fingerprints before final publication. No new expiry-before1996 claim is accepted."
+  },
+  "assembly_requirements": [
+    "Rebase five exact main/Oratio/all/1 before nodes and source input epochs. These are additional normal Oratio nodes, not first Collects or Oratio super populum.",
+    "Create historical source passages with actual historical short cues and separate project editorial projections with target text/pointing/spelling/conclusion lengths.",
+    "Add five Latin proof rows; remove unavailable text_status only for accepted bodies; preserve incipits/roles and replace stale body-unavailable note wording.",
+    "Preserve all five exact English unavailable rows and unrelated language/proof rows. No English source or translation is admitted.",
+    "Preserve ordinary_frame unavailability for repeated-reading assembly; supplying prayer bodies alone does not prove a runtime frame.",
+    "Use accurate rights rationale, complete source metadata/fingerprint/provenance joins and owning source/calendar/derived/publication gates; independently review assembled postimages before installation."
+  ],
+  "limits": [
+    "Source-only acceptance for these exact bodies/carriers. No canonical mutation, commit, push, runtime or assembled publication acceptance.",
+    "No annual/whole-Missal/other-proper completeness, first-Collect, Oratio super populum, English or other witness admission.",
+    "Producer hash-checked Pustet but did not image-collate it for these five; no prayer proof from that witness is asserted.",
+    "Producer body hashes omit LF; this receipt separately pins one-line+LF hashes/carrier. Other wrapping requires fresh exact hashes."
+  ],
+  "files": [
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/source-proposal.json",
+      "sha256": "c7dfb42ff17abbe6332a4304ac84f7fc5d02021dd195c8e5ccbe283f9e9cc52c",
+      "bytes": 17373
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/latin-only.txt",
+      "sha256": "b5c77d8c5c6d8eb71d4a0f914aa9df808fb00536bc5c263cdd61ba5d33d5713b",
+      "bytes": 881
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/mame-five-pages.pdf",
+      "sha256": "9d6b117077bc6fc105035b0540f8e46938776a5fef8bd4e4fdec7658a1603415",
+      "bytes": 753109
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/mame-support-pages.pdf",
+      "sha256": "d79410cf7b26b3dde9de6e117eb1c5ebc7cf1a174f006b4b5024fc7d462e4fc7",
+      "bytes": 617459
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/images-mame/p122-200.png",
+      "sha256": "ec4354aa12c4556dbc0f7f86066eeeb1fc3ced68c622b8cb9e86a8bed0d3c847",
+      "bytes": 550436
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/images-mame/p122-400.png",
+      "sha256": "dc8298e47fad7b0aa7216eb7e6f6530046fb8977c3d16ef70c85e861740604a5",
+      "bytes": 1395429
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/images-1962/p087-200.png",
+      "sha256": "7896a2f34f5902f21d2dd9b46e7c9750c58103ca129cf5b7b259510d854083f6",
+      "bytes": 242356
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/images-1962/p87-400.png",
+      "sha256": "d94c8b9809b9f2016189c638de7a6e301b2521a7d48d38f79fb9fffc8eb73bb9",
+      "bytes": 272759
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/images-mame/p253-200.png",
+      "sha256": "9686e27c69e1a223d16bbf97839ca8391d1b8e1e12f9a86d19c62462dd327b48",
+      "bytes": 473670
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/images-mame/p253-400.png",
+      "sha256": "2255d6dccd0718f72b8c550e2d3b2b85e0179381312af840fe91f62067f5030a",
+      "bytes": 1235684
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/images-1962/p191-200.png",
+      "sha256": "58354ee84972fad8093cf0009dc9b8d5d6a831849ece31a0526cc0935313a333",
+      "bytes": 249219
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/images-1962/p191-400.png",
+      "sha256": "5914cd2c6395fa79f9f891e202e980d39aa1da6c1973f4c0c83aa32b5a8e3e63",
+      "bytes": 272511
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/images-mame/p307-200.png",
+      "sha256": "4df1a5bba3564bd53868458eca9f3906e3a8660dc8d8a23926e7ca61fcb2f1a7",
+      "bytes": 525323
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/images-mame/p307-400.png",
+      "sha256": "95911f61a820f32f8135b34df43956cfaaf1cd1cee144519704a988dcfbc5d70",
+      "bytes": 1355630
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/images-1962/p228-200.png",
+      "sha256": "9bc89090dadbe8d4d26fa20633b9bae1fa3f94c2765022638d4fe0cc516a343f",
+      "bytes": 224967
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/images-1962/p228-400.png",
+      "sha256": "9399418f2a14573a6bc6be408e9163ec343e8d3273f2b29ae752e3cce691521b",
+      "bytes": 257618
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/images-mame/p519-200.png",
+      "sha256": "fb2ab0011c32e0f6eee8242076c6969247739fd7308f2b7e0b6b8c36b2510324",
+      "bytes": 516027
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/images-mame/p519-400.png",
+      "sha256": "58b337ae68b5c41c50f772f1515ef86f28b17eeb0e99f690467157c60c89717f",
+      "bytes": 1298103
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/images-1962/p443-200.png",
+      "sha256": "514528d5dab1bae59b6b3aa0743fd468938346fbd5a9fbd8a601899bd9ae36f6",
+      "bytes": 245026
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/images-1962/p443-400.png",
+      "sha256": "78fa9020e7f6b948d521d1cc4501a7cd0ca0e6d248e0e39467a2c2a193275f57",
+      "bytes": 276701
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/images-mame/p566-200.png",
+      "sha256": "f87f2ec76b9d144815df3e7fdcbc4c51cc45eb25be6dd1af0c3aa4b97a1f97b6",
+      "bytes": 529800
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/images-mame/p566-400.png",
+      "sha256": "85d482ca6cf94522c23905c98bc65791f1f41e54ab475ac3fe389add4438c7a3",
+      "bytes": 1378615
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/images-1962/p481-200.png",
+      "sha256": "7c04d0ab6fae6efa84484780e1aad70ddee5e8c1c18a43b7e9d48633a710f5a0",
+      "bytes": 236688
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/images-1962/p481-400.png",
+      "sha256": "b6f117ca572913118407fe7e1395ad3102861001285550794b3f12815c0d3d97",
+      "bytes": 258186
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/images-mame/p13-200.png",
+      "sha256": "eda0251d536b6b545d6573c0008b081f02a7d6a248a5c0262d510ba5275f9340",
+      "bytes": 235482
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/images-mame/p15-200.png",
+      "sha256": "bb6f5cad3820f32c767274369f2935710cfa7770880844b6c54cdf09ff202b24",
+      "bytes": 331227
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/images-mame/p54-400.png",
+      "sha256": "55500419bea7036a882c81cfa4fe8f0c4af1237c8aea88c5e78301a222a22b87",
+      "bytes": 1686211
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/images-mame/p115-400.png",
+      "sha256": "0ae24e24a93bc688b4f44f559c8d938bd71499bb995425e57cec5593bb27b980",
+      "bytes": 1377551
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/images-mame/p368-400.png",
+      "sha256": "3cbbc84bdecf0afc4ddf90b9d134ac49882f4d9d4f2db719169db7e368ceaa53",
+      "bytes": 1184327
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember/proof-receipt.json",
+      "sha256": "f363419a283040c7051902a633cddb651173f2d241b04f77db212196fe6e43fc",
+      "bytes": 13306
+    },
+    {
+      "path": ".scratch/c1-pre1955/download/mame1922.pdf",
+      "sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+      "bytes": 51720493
+    },
+    {
+      "path": ".scratch/c1-retry-1962/missale62.pdf",
+      "sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "bytes": 82815941
+    },
+    {
+      "path": ".scratch/resume-postconciliar-orations/pustet-1862.pdf",
+      "sha256": "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474",
+      "bytes": 102880787
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember-review/independent-image-readings.json",
+      "sha256": "c14cb598ebcd5875cdf13c1db5bef99aae95e14d4766be88c7180d9004c3c724",
+      "bytes": 14039
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember-review/VIEW-LOG.json",
+      "sha256": "4c976e57600bb22f2f522866bdc7d4aeda7aa932e57a37fa77ffb6436be1b0e6",
+      "bytes": 13909
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember-review/target-raster-reproduction.json",
+      "sha256": "50ed6977c3c281a1361be06620a2cf1d3b14dc996e1deababa92a44e6f69fd3d",
+      "bytes": 8054
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember-review/checked-target-latin.txt",
+      "sha256": "d82591596f919bc18834804124b9efbe0f81f383b4cceeb08583035d158b76b0",
+      "bytes": 968
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember-review/mechanical/RECEIPT.json",
+      "sha256": "1ae8502b3e768c8f42d8d2a361921d17d9f1431276b674a6c75c70b029f303e7",
+      "bytes": 6778
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember-review/mechanical/SEALED.json",
+      "sha256": "5a1aac78ae7f70580f5c8f92f9a5c36256c079c16352b6adec4a9ad6f20be943",
+      "bytes": 7129
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember-review/mechanical/MECHANICAL-REVIEW.json",
+      "sha256": "6e80497d6518e3598a01d7435fc55dc6c6dcb6cfa6209ecb09356de9a98a819f",
+      "bytes": 36922
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember-review/identity-rights/IDENTITY-RIGHTS-REVIEW.json",
+      "sha256": "7f09f9d9ef405a38b2edff612981febfa386667da747c479b4a1e672b7db5cb8",
+      "bytes": 15389
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember-review/identity-rights/SEALED.json",
+      "sha256": "a9be0eceb9cb64865dbd59012d42df5a837fd785aed64847be85bcac07bfa435",
+      "bytes": 1482
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember-review/identity-rights/proposed-artifact-rights-rationale-correction.json",
+      "sha256": "0ec080c63f8e619b189bbc467a1b13c2b3a38bff993e5c90c55c273252a45b19",
+      "bytes": 4463
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember-review/identity-rights/mechanical-evidence.json",
+      "sha256": "fae26c3bfc05154eeb7325333a890dee20c091cff0ae617c5af061d9cb3627ef",
+      "bytes": 28252
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-ember-review/identity-rights/derivative-image-stream-evidence.json",
+      "sha256": "6f031549e5057743be8c990ac2265a954da91c1481b819049175d5b514709728",
+      "bytes": 13244
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ia-scan-pdf-9873693a/artifact.toml",
+      "sha256": "72e9a9f73deab975d22e4e665ec891afc931f613549493a65c7b3c38572def45",
+      "bytes": 2649
+    },
+    {
+      "path": "src/sources/inventories/missal-acquisition-audit-v1.toml",
+      "sha256": "12cfdf48a6e371c977083d1aeeb4b17bdde13cb8b9540474fd896b9ab38429b3",
+      "bytes": 141159
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/edition.toml",
+      "sha256": "c5570791955722356a338b95201c30372b26a9fa44e82882e504daa7a23b7b89",
+      "bytes": 1931
+    }
+  ],
+  "own_mutations": {
+    "canonical": 0,
+    "proof": 0,
+    "English": 0,
+    "producer_packet": 0,
+    "frozen": 0,
+    "Git": 0,
+    "writes": "Only assigned reviewer scratch and child review leaves."
+  }
+}

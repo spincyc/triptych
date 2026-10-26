@@ -2036,6 +2036,30 @@ class PublicAlphaTest(unittest.TestCase):
             REPOSITORY_ROOT / "src/web/data"
         )
 
+    def test_1962_read_split_binds_execution_source_coverage(self) -> None:
+        # The transport binds the exact source-owned value; the separate
+        # per-file public gate validates its semantic and privacy contract.
+        prefix = "src/web/data/structure/propers/"
+        fixture = self.make_propers_read_fixture()
+        generated = json.loads((REPOSITORY_ROOT / prefix / "roman-1962.json").read_bytes())
+        coverage = generated["execution_source_coverage"]
+        fixture["structure"]["execution_source_coverage"] = coverage
+        fixture["catalog"]["structure"]["execution_source_coverage"] = json.loads(json.dumps(coverage))
+        self.write_json(prefix + "roman-1962.json", fixture["structure"])
+        generation = digest((self.root / prefix / "roman-1962.json").read_bytes())
+        fixture["catalog"]["generation"] = generation
+        self.write_json(prefix + "catalog/roman-1962.json", fixture["catalog"])
+        for mass in fixture["structure"]["masses"]:
+            relative = prefix + f"mass/roman-1962/{mass['key']}.json"
+            envelope = json.loads((self.root / relative).read_bytes())
+            envelope["generation"] = generation
+            self.write_json(relative, envelope)
+        self.tool.validate_propers_read_payload_sources(self.root / "src/web/data")
+        fixture["catalog"]["structure"]["execution_source_coverage"]["unbound"] = True
+        self.write_json(prefix + "catalog/roman-1962.json", fixture["catalog"])
+        with self.assertRaisesRegex(self.tool.ReleaseError, "catalog structure differs"):
+            self.tool.validate_propers_read_payload_sources(self.root / "src/web/data")
+
     def test_1962_read_split_binds_appointment_facts_and_choice_anchors(self) -> None:
         prefix = "src/web/data/structure/propers/"
         data_root = self.root / "src/web/data"

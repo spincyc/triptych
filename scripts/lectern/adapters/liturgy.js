@@ -198,7 +198,7 @@ module.exports = function liturgy(realm) {
       translationWitness: state.witness || null,
       heading: 'h3',
       cycle: event.selected && event.selected.cycle || null,
-      orationGroups: event.orationGroups || null, orationContext: event.orationContext || null, eventId: event.id, structure: owner,
+      orationGroups: event.orationGroups || null, executionSource: event.executionSource || null, orationContext: event.orationContext || null, eventId: event.id, structure: owner,
     });
     return { blocks: realm.dom.read(section) };
   }
@@ -391,7 +391,7 @@ module.exports = function liturgy(realm) {
   /* The same selected-Mass union the browser offers, including partial and
    * project-created witnesses. Corpus-wide manifests cannot answer this. */
   function witnessesFor(result, owner, state) {
-    return T.coverageWitnesses(T.summarizeCoverage(T.selectedCoverageUnits(result, owner)), state.orations);
+    return T.executionWitnesses(result, T.coverageWitnesses(T.summarizeCoverage(T.selectedCoverageUnits(result, owner)), state.orations), state.orations);
   }
 
   /* Ask Study's production presenter to write its apparatus against semantic
@@ -480,6 +480,7 @@ module.exports = function liturgy(realm) {
       resolved: adapted.resolved || null,
       calendarResult: adapted.calendarResult || null,
       coverage: adapted.coverage || [],
+      ...(adapted.executionSourceCoverage ? {executionSourceCoverage: adapted.executionSourceCoverage} : {}),
       explicitAbsences: adapted.explicitAbsences || [],
       unresolvedChoices: (adapted.unresolvedChoices || []).map((one) => ({ id: one.id, reason: one.reason,
         options: (one.options || []).map((option) => ({ id: option.id, identity: option.identity || null })) })),

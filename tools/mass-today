@@ -113,7 +113,7 @@ STANDING_WORDS = {
     "said": "",
     "option": "the rubrics permit this or the Mass above",
     "additional": "also said today, at another hour; it competes for the day with nothing",
-    "commemorated": "NOT said today; its collect is said within the Mass above",
+    "commemorated": "NOT said today; its admitted orations are said within the Mass above",
     "displaced": "NOT said today; displaced by the Mass above",
     "unresolved": "a candidate; this date is not settled here",
 }
@@ -1044,6 +1044,7 @@ def propers_of(
         # form is a subsequence of the full appointed source list: numbering
         # its own rows would silently turn Day's 015-026 into 001-012.
         "_proper_source_indices": [source_indices[id(p)] for p in selected_propers],
+        "_oration_source_rows": [{"proper": p, "sourceIndex": source_indices[id(p)]} for p in entries if not is_placeholder(p)],
         "forms": forms,
         "selected_form": selected_form,
         "form_choice_required": bool(forms and selected_form is None),
@@ -1259,6 +1260,7 @@ def run_show(arguments: argparse.Namespace) -> dict:
                     payload=proper_payloads.get(key),
                 )
             )
+            entry._oration_source_rows = entry.pop("_oration_source_rows", [])
             if entry.get("refused"):
                 record_problem({
                     "component": "mass-propers",
@@ -1358,6 +1360,8 @@ def run_show(arguments: argparse.Namespace) -> dict:
                     "selectable": selectable,
                     "selected_mass": selected_mass,
                     "unsettled": source_branch.get("unsettled") or [],
+                    "orations": source_branch.get("orations") or {},
+                    **({"oration_execution": source_branch["oration_execution"]} if "oration_execution" in source_branch else {}),
                     "masses": masses,
                 })
 
@@ -1554,6 +1558,8 @@ def run_show(arguments: argparse.Namespace) -> dict:
             for mass in branch.get("masses") or []
         ]
         for mass in readable:
+            if isinstance(mass, _SourceMass):
+                mass._oration_context = oration_context_for(row, mass, when)
             source_indices = mass.get("_proper_source_indices", [])
             path_resolution = None
             if mass.get("proper_source_paths") or any(_calendars.SOURCE_PATH_RELATION in proper for proper in mass.get("propers") or []):
@@ -1577,7 +1583,7 @@ def run_show(arguments: argparse.Namespace) -> dict:
                         proper_appointment_context_for(
                             str(row["calendar"]), mass, predicates,
                             getattr(arguments, "proper_choice", None) if selected else None,
-                        ),
+                        ), getattr(mass, "_oration_context", None),
                     )
                     publish_appointment_resolution(mass, path_resolution)
                     source_path_rows[id(mass)] = path_resolution["_prepared_rows"]
@@ -1612,14 +1618,14 @@ def run_show(arguments: argparse.Namespace) -> dict:
                 or not isinstance(ordinary, dict)
                 or ordinary.get("refused")
             ):
-                if not mass.get("proper_source_paths") and not any("appointment_identity" in proper or "appointment_replacement" in proper or _calendars.APPOINTMENT_APPLICABILITY in proper or _calendars.SOURCE_PATH_RELATION in proper for proper in mass.get("propers") or []) and not getattr(arguments, "proper_choice", None):
+                if not (getattr(mass, "_oration_context", {}) or {}).get("execution") and not mass.get("proper_source_paths") and not any("appointment_identity" in proper or "appointment_replacement" in proper or _calendars.APPOINTMENT_APPLICABILITY in proper or _calendars.SOURCE_PATH_RELATION in proper for proper in mass.get("propers") or []) and not getattr(arguments, "proper_choice", None):
                     continue
                 ordinary = None
             mass["expanded_events"] = expanded_event_projection(
                 str(row["calendar"]), mass, ordinary, source_indices,
                 ordinary_predicate_context_for(row, mass, when),
                 getattr(arguments, "proper_choice", None),
-                prepared_resolution=path_resolution,
+                prepared_resolution=path_resolution, oration_context=getattr(mass, "_oration_context", None),
             )
 
     bible = chosen_bible or indexed_bible(arguments.bible)
@@ -1754,15 +1760,33 @@ def ordinary_predicates(propers: list[dict]) -> dict[str, bool]:
     return predicates
 
 
+def oration_context_for(day: dict, mass: dict, date: str | None = None) -> dict:
+    branch = getattr(mass, "_source_branch", {})
+    readable = getattr(mass, "_source_readable", {})
+    return {
+        "active": bool(day.get("selected_mass") == mass.get("key") and branch.get("settled") and readable.get("state") == "said"),
+        "calendar": day.get("calendar"), "mainKey": mass.get("key"),
+        "date": date, "season": day.get("season"), "facts": mass.get("proper_appointment_facts") or {},
+        "execution": branch.get("oration_execution"),
+        "series": (branch.get("orations") or {}).get("all") or (branch.get("orations") or {}).get("low_mass") or [],
+        "owners": [{"key": owner.get("key"), "sourcePaths": owner.get("proper_source_paths") or [], "rows": getattr(owner, "_oration_source_rows", [])} for owner in day.get("masses") or []],
+    }
+
+
 def mass_events(
     ordinary: dict,
     propers: list[dict],
     wanted: list[str] | str | None,
     predicate_context: dict | None = None,
     proper_appointment_context: dict | None = None,
+    oration_context: dict | None = None,
 ) -> dict:
     harness = (
         "const model = require(process.argv[1]);\n"
+        "process.on('uncaughtException', error => {\n"
+        "  process.stderr.write(JSON.stringify({code:error.code || 'shared-seating-failed',message:error.message,context:error.context || null}));\n"
+        "  process.exitCode = 1;\n"
+        "});\n"
         "let raw = '';\n"
         "process.stdin.on('data', (chunk) => { raw += chunk; });\n"
         "process.stdin.on('end', () => {\n"
@@ -1778,6 +1802,23 @@ def mass_events(
         "    appointments.rows, model.seats(input.ordinary, shown), null, appointments.selections) : null;\n"
         "  const events = input.ordinary ? model.massEvents(shown, placed) :\n"
         "    model.unframedEvents(appointments.rows, null, appointments.selections);\n"
+        "  const activeRows = [];\n"
+        "  events.forEach(event => {\n"
+        "    if (event.kind === 'proper') activeRows.push({proper:event.proper,sourceIndex:event.sourceIndex});\n"
+        "    if (event.kind === 'proper_choice' && event.selection && event.selection.state === 'selected') {\n"
+        "      activeRows.push(...event.options.find(one => one.id === event.selection.option).rows);\n"
+        "    }\n"
+        "  });\n"
+        "  const plan = model.orationPlan(activeRows, input.oration_context);\n"
+        "  const planned = new Map(plan.map(one => [one.sourceIndex, one.groups]));\n"
+        "  function attach(event) {\n"
+        "    if (event.kind === 'proper' && planned.has(event.sourceIndex)) event.orationGroups = planned.get(event.sourceIndex);\n"
+        "    if (event.kind === 'proper_choice' && event.selection && event.selection.state === 'selected') {\n"
+        "      const option = event.options.find(one => one.id === event.selection.option);\n"
+        "      option.rows.forEach(row => {if (planned.has(row.sourceIndex)) row.orationGroups = planned.get(row.sourceIndex);});\n"
+        "    }\n"
+        "  }\n"
+        "  events.forEach(attach);\n"
         "  process.stdout.write(JSON.stringify({\n"
         "    events: events, unresolved: resolved.unresolved,\n"
         "    selected: resolved.selected,\n"
@@ -1802,6 +1843,7 @@ def mass_events(
                 "wanted": ordinary_selection_map(ordinary or {}, wanted),
                 "predicate_context": predicate_context,
                 "proper_appointment_context": proper_appointment_context or {},
+                "oration_context": oration_context,
                 "predicates": ordinary_predicates(propers),
             }),
             capture_output=True,
@@ -1944,7 +1986,7 @@ def expanded_event_projection(
     source_indices: list[int],
     predicate_context: dict,
     proper_choices=None,
-    *, prepared_resolution: dict | None = None,
+    *, prepared_resolution: dict | None = None, oration_context: dict | None = None,
 ) -> list[dict]:
     """Publish only the ordered identities of the CLI's seated event stream."""
     propers = mass.get("propers") or []
@@ -1960,13 +2002,21 @@ def expanded_event_projection(
     ]
     resolution = prepared_resolution if prepared_resolution is not None else mass_events(
         ordinary, rows, None, predicate_context,
-        proper_appointment_context_for(calendar, mass, predicate_context, proper_choices))
+        proper_appointment_context_for(calendar, mass, predicate_context, proper_choices), oration_context)
     stream = resolution["events"]
     publish_appointment_resolution(mass, resolution)
     mass_key = str(mass["key"])
 
     def proper_id(index: int) -> str:
         return f"proper/{calendar}/{mass_key}/{index + 1:03d}"
+
+    def group_projection(groups):
+        return [{**{key: value for key, value in group.items() if key != "members"},
+                 "members": [{"id": f"proper/{calendar}/{member['key']}/{member['sourceIndex'] + 1:03d}",
+                              "key": member["key"], "source_index": member["sourceIndex"],
+                              "form_id": member["proper"].get("form_id") or "main",
+                              **({"applicability": member["applicability"]} if "applicability" in member else {})}
+                             for member in group["members"]]} for group in groups]
 
     events: list[dict] = []
     for event in stream:
@@ -1986,6 +2036,7 @@ def expanded_event_projection(
                 "id": proper_id(event["sourceIndex"]), "kind": "proper",
                 "source_index": event["sourceIndex"],
                 "form_id": str(event["proper"].get("form_id") or "main"),
+                **({"oration_groups": group_projection(event["orationGroups"])} if event.get("orationGroups") else {}),
             })
         elif kind == "proper_choice":
             form_id = str(event["formId"])
@@ -1998,6 +2049,7 @@ def expanded_event_projection(
                     {
                         "id": option["id"],
                         "events": [proper_id(row["sourceIndex"]) for row in option["rows"]],
+                        **({"oration_groups": [{"id": proper_id(row["sourceIndex"]), "groups": group_projection(row["orationGroups"])} for row in option["rows"] if row.get("orationGroups")]} if any(row.get("orationGroups") for row in option["rows"]) else {}),
                     }
                     for option in event["options"]
                 ],
@@ -2244,19 +2296,34 @@ def render_expanded_mass(
             ):
                 print(line)
 
+    def pour_event(event, seat=None):
+        pour([(event["proper"], seat)])
+        for group in event.get("orationGroups") or []:
+            if group["position"] == 2 and 'intermediate-conclusion-spans-unbound' in group['execution'].get('unresolved', []):
+                aside("Oration execution unresolved: printed ending cues are retained; exact intermediate conclusion spans are not established.")
+            if 'source-name-placeholder-unbound' in group['execution'].get('unresolved', []):
+                aside("Oration execution unresolved: the source name placeholder is retained; occurrence-specific wording is not established.")
+            for member in group["members"]:
+                if member["key"] == mass.get("key") and member["sourceIndex"] == event["sourceIndex"]:
+                    continue
+                aside(str(member.get("of_name") or member["key"]) + "; conclusion group " + str(group["conclusion_group"]))
+                pour([(member["proper"], seat)])
+
     def pour_choice(event):
         selection = event.get("selection") or {"state": "required", "option": None}
         option = next((option for option in event["options"] if option["id"] == selection.get("option")), None)
         if option is None:
             aside("Proper choice required: " + str(event["group"]) + "; options: " + ", ".join(option["id"] for option in event["options"]))
         else:
-            pour([(row["proper"], event.get("seat")) for row in option["rows"]])
+            for row in option["rows"]:
+                pour_event(row, event.get("seat"))
 
     source_rows = [{"proper": proper, "sourceIndex": index} for proper, index in zip(propers, mass.get("_proper_source_indices") or range(len(propers)))]
     # `frame` identifies the enacted Mass even when no Ordinary is available.
     # Other displayed formularies keep their own unselected appointment state.
     proper_choices = getattr(arguments, "proper_choice", None) if frame else None
     appointment_context = proper_appointment_context_for(str(calendar or arguments.calendar or ""), mass, predicate_context or {}, proper_choices)
+    oration_context = getattr(mass, "_oration_context", None) if frame else None
 
     if ordinary is None or "refused" in (ordinary or {}) or not frame:
         if ordinary is not None and "refused" in ordinary:
@@ -2267,15 +2334,15 @@ def render_expanded_mass(
                 "the Ordinary is printed once, above; this formulary's propers "
                 "are set out here in the missal's own order."
             )
-        if not mass.get("proper_source_paths") and not any(_calendars.ORDINARY_DISPOSITION in proper or "appointment_replacement" in proper or _calendars.APPOINTMENT_APPLICABILITY in proper or _calendars.SOURCE_PATH_RELATION in proper for proper in propers) and not appointment_context["choices"]:
+        if not (oration_context or {}).get("execution") and not mass.get("proper_source_paths") and not any(_calendars.ORDINARY_DISPOSITION in proper or "appointment_replacement" in proper or _calendars.APPOINTMENT_APPLICABILITY in proper or _calendars.SOURCE_PATH_RELATION in proper for proper in propers) and not appointment_context["choices"]:
             pour([(proper, None) for proper in propers])
             return
-        resolution = mass.get("_source_path_resolution") or mass_events(None, source_rows, None, predicate_context, appointment_context)
+        resolution = mass.get("_source_path_resolution") or mass_events(None, source_rows, None, predicate_context, appointment_context, oration_context)
         for event in resolution["events"]:
             if event["kind"] == "proper_choice":
                 pour_choice(event)
             elif event["kind"] == "proper":
-                pour([(event["proper"], None)])
+                pour_event(event)
         for unresolved in resolution["proper_appointment_unresolved"]:
             aside("Proper appointment unresolved: " + str(unresolved.get("basis") or unresolved.get("group")))
         for unresolved in resolution.get("source_path_unresolved") or []:
@@ -2283,7 +2350,7 @@ def render_expanded_mass(
         return
 
     resolution = mass.get("_source_path_resolution") or mass_events(
-        ordinary, source_rows, arguments.ordinary_variant, predicate_context, appointment_context
+        ordinary, source_rows, arguments.ordinary_variant, predicate_context, appointment_context, oration_context
     )
     for unresolved in resolution["unresolved"]:
         condition = unresolved.get("condition") or {}
@@ -2329,7 +2396,7 @@ def render_expanded_mass(
                     "departs from the frame. The rest is shown in the missal's own "
                     "order, unseated and unreordered."
                 )
-            pour([(event["proper"], event.get("seat"))])
+            pour_event(event, event.get("seat"))
 
 
 def render(payload: object, arguments: argparse.Namespace) -> int:

@@ -215,6 +215,20 @@
   },
   "16": {
    "book": "Romans",
+   "edition_loci": {
+    "world-english-bible-catholic": [
+     {
+      "chapter": 16,
+      "first": 1,
+      "last": 24
+     },
+     {
+      "chapter": 14,
+      "first": 24,
+      "last": 26
+     }
+    ]
+   },
    "loci": {
     "hebrew": [
      {
@@ -241,8 +255,7 @@
    "numbering": "vulgate",
    "ref": "Romans 16",
    "refused": {
-    "revised-version-1895": "revised-version-1895: Rom 16:24 is missing",
-    "world-english-bible-catholic": "world-english-bible-catholic: canonical Rom 16 spans 1-27, but this edition prints 1-24; no chapter correspondence is recorded in its verse aliases"
+    "revised-version-1895": "revised-version-1895: Rom 16:24 is missing"
    },
    "token": "Rom",
    "unresolved": null

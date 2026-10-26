@@ -117,6 +117,35 @@ def _page_key(label):
     return int(number), label[len(number):]
 
 
+def printed_page_match(value):
+    """Match source citations, preserving literal superscript supplement labels.
+
+    This locator grants no publication basis. The narrower numbered-page
+    predicate used by the Lasance rights checks remains unchanged.
+    """
+    legacy = numbered_page_match(value)
+    if legacy is not None or not isinstance(value, str):
+        return legacy
+    superscript = "[¹²³⁴⁵⁶⁷⁸⁹][⁰¹²³⁴⁵⁶⁷⁸⁹]*"
+    label = rf"[0-9]+(?:{superscript})?"
+    match = re.fullmatch(rf"({label})(?:[-–]({label}|{superscript}))?", value)
+    if match is None or not any(char in "⁰¹²³⁴⁵⁶⁷⁸⁹" for char in value):
+        return None
+
+    def page_key(label, base=None):
+        parts = re.fullmatch(r"([0-9]*)([⁰¹²³⁴⁵⁶⁷⁸⁹]*)", label)
+        number, suffix = parts.groups()
+        return int(number) if number else base, int(suffix.translate(
+            str.maketrans("⁰¹²³⁴⁵⁶⁷⁸⁹", "0123456789")
+        )) if suffix else 0
+
+    first = page_key(match.group(1))
+    last = page_key(match.group(2) or match.group(1), first[0])
+    if match.group(2) and not match.group(2)[0].isascii() and not first[1]:
+        return None
+    return match if first[0] > 0 and first <= last else None
+
+
 def approved_lasance_printed_page(entry):
     """Keep later inserts out even when the general locator admits letters."""
     witness = entry.get("witness")

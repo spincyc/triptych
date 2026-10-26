@@ -52,6 +52,8 @@
   const missalSelect = document.getElementById('reader-missal');
   const typeSelect = document.getElementById('reader-type');
   const formularySelect = document.getElementById('reader-formulary');
+  const massFormField = document.getElementById('reader-mass-form-field');
+  const massFormSelect = document.getElementById('reader-mass-form');
   const bibleSelect = document.getElementById('reader-bible');
   const orationsSelect = document.getElementById('reader-orations');
   const witnessField = document.getElementById('reader-witness-field');
@@ -710,6 +712,17 @@
       if (target) target.focus({ preventScroll: true });
       return;
     }
+    if (intent === 'form-result') {
+      const first = reading.querySelector('[data-semantic-event-id]');
+      if (first) first.focus({ preventScroll: true });
+      const serial = runtime.serial;
+      requestAnimationFrame(function () {
+        if (serial === runtime.serial) {
+          readerShell.restoreSemanticLocation({ kind: 'top', id: null });
+        }
+      });
+      return;
+    }
     if (intent === 'title') title.focus();
     if (['mode', 'study'].includes(intent)) shellRoot.querySelector('[data-reader-action="' + intent + '"]').focus({ preventScroll: true });
   }
@@ -795,31 +808,8 @@
   }
 
   function unresolvedFormChoice(result, mass) {
-    const choice = (result.unresolvedChoices || []).find(function (row) {
-      return row && typeof row.id === 'string' && row.id.indexOf('proper-form:') === 0;
-    });
-    if (!choice) return false;
-    const section = T.el('section', 'candidate-entry proper-form-choice');
-    section.appendChild(T.el('h2', null, mass.name || mass.key));
-    section.appendChild(T.el('p', 'cycle-choice-note', choice.reason ||
-      'Several source-appointed forms are held. Choose one explicitly.'));
-    const controls = T.el('div', 'cycle-choice-controls');
-    controls.setAttribute('role', 'group');
-    controls.setAttribute('aria-label', 'Choose a source-appointed form');
-    const labels = [];
-    (choice.options || []).forEach(function (option) {
-      const sourceForm = formRow(mass, option.id);
-      const label = sourceForm && sourceForm.name || T.titleCase(option.id);
-      labels.push(label);
-      const button = T.el('button', null, label);
-      button.type = 'button';
-      button.addEventListener('click', function () {
-        navigate({ form: option.id }, [], { location: null, focus: 'title' });
-      });
-      controls.appendChild(button);
-    });
-    section.appendChild(T.el('p', 'proper-form-summary', 'Available forms: ' + labels.join('; ') + '.'));
-    section.appendChild(controls);
+    const section = ProperEvents.renderFormChoice(result, mass);
+    if (!section) return false;
     replaceReading(section);
     title.textContent = mass.name || mass.key;
     typeLine.textContent = 'Source-appointed form required';
@@ -1073,7 +1063,22 @@
     }) || null;
   }
 
-  function fillOrations(structure, mass, language, witness) {
+  function fillMassForms(mass, selected) {
+    massFormSelect.replaceChildren();
+    massFormField.hidden = true;
+    const forms = mass && mass.forms || [];
+    const state = runtime.normalized && runtime.normalized.state;
+    if (runtime.outcome !== 'ready' || runtime.compareView ||
+        state && state.requestedMode === 'compare' || forms.length < 2 ||
+        !forms.some(function (row) { return row.id === selected; })) return;
+    T.fillSelect(massFormSelect, forms.map(function (row) {
+      return { value: row.id, label: row.name || row.id };
+    }));
+    massFormSelect.value = selected;
+    massFormField.hidden = false;
+  }
+
+  function fillOrations(structure, mass, language, witness, state) {
     const languages = T.orationLanguagesOf(structure);
     T.fillSelect(orationsSelect, languages.map(function (row) {
       return { value: row.lang, label: T.orationLanguageLabel(row), title: row.lang };
@@ -1084,7 +1089,14 @@
     witnessField.hidden = true;
     if (orationsSelect.value === T.SOURCE_LANGUAGE) return;
 
-    const witnessState = formularyWitnessState(structure, mass, orationsSelect.value);
+    const current = runtime.normalized && runtime.normalized.state;
+    if (!state && current && !massFormField.hidden && current.form !== massFormSelect.value) {
+      state = Object.assign({}, current, { form: massFormSelect.value });
+      delete state.properChoices;
+      delete state.alternative;
+      delete state.cycle;
+    }
+    const witnessState = formularyWitnessState(structure, mass, orationsSelect.value, state);
     if (witnessState.choices.length > 1) {
       T.fillSelect(witnessSelect, witnessState.choices.map(function (row) {
         return { value: row.id, label: row.label, title: row.id };
@@ -1099,15 +1111,16 @@
   }
 
   function setBrowseEnabled(enabled) {
-    [missalSelect, typeSelect, formularySelect, bibleSelect, orationsSelect, witnessSelect]
+    [missalSelect, typeSelect, formularySelect, massFormSelect, bibleSelect, orationsSelect, witnessSelect]
       .forEach(function (control) { control.disabled = !enabled; });
     browseForm.querySelector('.surface-apply').disabled = !enabled;
   }
 
   function resetBrowseSurface() {
-    [missalSelect, typeSelect, formularySelect, bibleSelect, orationsSelect, witnessSelect]
+    [missalSelect, typeSelect, formularySelect, massFormSelect, bibleSelect, orationsSelect, witnessSelect]
       .forEach(function (select) { select.replaceChildren(); });
     witnessField.hidden = true;
+    massFormField.hidden = true;
     browseStatus.textContent = 'Choose an edition to begin a new, explicit formulary selection.';
     setBrowseEnabled(false);
     if (runtime.manifests) {
@@ -1136,6 +1149,7 @@
     fillOrations(runtime.structure, mass, state.languages.orations,
       state.languages.translationWitness || null);
     fillFormularies(runtime.groups, typeSelect.value, currentMass);
+    fillMassForms(mass, state.form);
     browseStatus.textContent = currentMass
       ? 'Changing missal or type revalidates the formulary and requires another choice when it is not held.'
       : 'A formulary must be selected. Nothing is chosen by manifest order.';
@@ -1147,6 +1161,7 @@
     const serial = ++runtime.browseSerial;
     typeSelect.replaceChildren();
     formularySelect.replaceChildren();
+    fillMassForms(null, null);
     orationsSelect.replaceChildren();
     witnessSelect.replaceChildren();
     witnessField.hidden = true;
@@ -1584,6 +1599,7 @@
     const available = runtime.draftStructure && runtime.draftStructure.calendar === missalSelect.value
       ? runtime.draftGroups : runtime.groups;
     fillFormularies(available, typeSelect.value, null);
+    fillMassForms(null, null);
     const structure = runtime.draftStructure && runtime.draftStructure.calendar === missalSelect.value
       ? runtime.draftStructure : runtime.structure;
     if (structure) fillOrations(structure, null, orationsSelect.value, null);
@@ -1594,8 +1610,20 @@
     const structure = draft ? runtime.draftStructure : runtime.structure;
     const groups = draft ? runtime.draftGroups : runtime.groups;
     if (structure) {
-      fillOrations(structure, selectedBrowseMass(groups), orationsSelect.value, null);
+      const mass = selectedBrowseMass(groups);
+      const current = runtime.normalized && runtime.normalized.state;
+      fillMassForms(mass, browseKeepsCurrentFormulary() && current.form);
+      fillOrations(structure, mass, orationsSelect.value, null);
     }
+  });
+  massFormSelect.addEventListener('change', function () {
+    const current = runtime.normalized && runtime.normalized.state;
+    if (!current || !browseKeepsCurrentFormulary() || massFormField.hidden) return;
+    const draft = Object.assign({}, current, { form: massFormSelect.value });
+    delete draft.properChoices;
+    delete draft.alternative;
+    delete draft.cycle;
+    fillOrations(runtime.structure, runtime.mass, orationsSelect.value, null, draft);
   });
   orationsSelect.addEventListener('change', function () {
     const draft = runtime.draftStructure && runtime.draftStructure.calendar === missalSelect.value;
@@ -1636,6 +1664,10 @@
       bible: bibleSelect.value,
       orations: orationsSelect.value
     };
+    const current = runtime.normalized && runtime.normalized.state;
+    const formChanged = !massFormField.hidden && current &&
+      massFormSelect.value !== current.form;
+    if (!massFormField.hidden) updates.form = massFormSelect.value;
     updates[PUBLIC_KEYS.translationWitness] = witnessField.hidden ? null : witnessSelect.value;
     const removals = [
       'location', LEGACY_KEYS.cycle, LEGACY_KEYS.alternative,
@@ -1643,8 +1675,9 @@
     ];
     if (!browseKeepsCurrentFormulary()) {
       removals.push('form', PUBLIC_KEYS.cycle, PUBLIC_KEYS.alternative);
+    } else if (formChanged) {
+      removals.push(PUBLIC_KEYS.cycle, PUBLIC_KEYS.alternative);
     }
-    const current = runtime.normalized && runtime.normalized.state;
     if (!current || current.edition.id !== missalSelect.value) {
       removals.push('ordinary-lang');
       (((runtime.manifests && runtime.manifests.ordinaryIndex || {}).calendars) || [])
@@ -1654,7 +1687,8 @@
     }
     readerShell.close({ restoreFocus: false });
     navigate(updates, removals, {
-      location: null, focus: 'title', rememberPreferences: true
+      location: formChanged ? { kind: 'top', id: null } : null,
+      focus: formChanged ? 'form-result' : 'title', rememberPreferences: true
     });
   });
 

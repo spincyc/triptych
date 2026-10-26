@@ -1539,6 +1539,149 @@
     });
   }
 
+  /**
+   * Locate source-owned orations in an already admitted Day series. This does
+   * not admit a commemoration, select a Mass, alter words, or supply endings.
+   * Both the browser adapter and the expanded CLI consume this same plan.
+   */
+  function orationPlan(rows, context) {
+    if (!context || !context.active || !context.execution) return [];
+    function fail(reason, message) {
+      const error = new Error(message); error.code = reason;
+      error.context = {mainKey: context.mainKey, scope: 'oration-assembly'};
+      throw error;
+    }
+    const execution = context.execution;
+    if (context.calendar !== 'roman-1962' || execution.scope !== 'dated-mass-of-office' ||
+        !execution.conclusions || execution.conclusions.principal !== 1 ||
+        execution.conclusions.commemorations !== 2 ||
+        !Array.isArray(execution.slots) || !execution.slots.length) {
+      fail('unsupported-oration-context', 'unsupported source oration execution contract');
+    }
+    const series = context.series || [];
+    if (!series.length || series[0].source_key !== context.mainKey) {
+      fail('principal-oration-owner-unbound', 'oration series has no matching principal source owner');
+    }
+    if (series.some(function (unit, index) { return !unit || unit.position !== index + 1; })) {
+      fail('invalid-counted-oration-unit', 'oration units lost their exact admitted sequence');
+    }
+    if (JSON.stringify(execution.slots.map(function (slot) { return slot.slot; })) !==
+        JSON.stringify(['Collect', 'Secret', 'Postcommunion'])) {
+      fail('unsupported-oration-slot', 'oration execution requires all three exact source slots');
+    }
+    const units = series.filter(function (unit) { return unit.position > 1 || unit.members; });
+    if (!units.length) return [];
+    const owners = new Map();
+    (context.owners || []).forEach(function (owner) {
+      if (!owner || typeof owner.key !== 'string' || owners.has(owner.key) || !Array.isArray(owner.rows)) {
+        fail('ambiguous-oration-source-owner', 'oration source owners require unique exact keys and rows');
+      }
+      owners.set(owner.key, owner);
+    });
+    const sequence = rows.map(properRow);
+    const multiple = execution.multiple_lessons;
+    if (!multiple || multiple.insertion !== 'after-last-prayer-before-final-reading' ||
+        multiple.commemorated_source !== 'first-prayer' ||
+        !Array.isArray(multiple.reading_names) || !Array.isArray(multiple.prayer_names)) {
+      fail('unsupported-oration-context', 'unsupported source multiple-lesson oration contract');
+    }
+    function familyMatches(row, slot) {
+      return semanticProperId(row.proper, true) === semanticProperId({name: slot}, true);
+    }
+    const admittedOwners = new Map();
+    function admittedRows(owner) {
+      if (admittedOwners.has(owner.key)) return admittedOwners.get(owner.key);
+      let prepared;
+      try { prepared = prepareProperAppointments(owner.rows, {
+        calendar: context.calendar, entrance: 'day', mass: owner.key,
+        date: context.date || null, season: context.season || null,
+        facts: context.facts || {}, choices: {}, sourcePaths: owner.sourcePaths || []
+      }); } catch (error) {
+        fail('oration-source-context-unbound', error.message);
+      }
+      const selected = [];
+      unframedEvents(prepared.rows, null, prepared.selections).forEach(function (event) {
+        if (event.kind === 'proper') selected.push(event);
+        else if (event.kind === 'proper_choice' && event.selection.state === 'selected') {
+          selected.push(...event.options.find(function (one) {
+            return one.id === event.selection.option;
+          }).rows);
+        }
+      });
+      // Keep the literal original owner, not the preparer's annotation-free copy.
+      const active = selected.map(function (one) {
+        return owner.rows.find(function (row) { return row.sourceIndex === one.sourceIndex; });
+      });
+      admittedOwners.set(owner.key, active); return active;
+    }
+    function matchingOwner(member, slot) {
+      const key = member.source_key;
+      const held = key && owners.get(key);
+      if (!held) fail('oration-source-owner-unbound', 'oration member lacks its exact source owner: ' + member.of);
+      const matching = admittedRows(held).filter(function (row) { return familyMatches(row, slot); });
+      if (matching.length !== 1) {
+        fail('oration-source-slot-unbound', 'oration member lacks a unique source-qualified ' + slot + ': ' + key);
+      }
+      const result = {key: key, sourceIndex: matching[0].sourceIndex, proper: matching[0].proper,
+        of_name: member.of_name};
+      const disposition = result.proper.ordinary_disposition;
+      if (disposition && disposition.when) result.applicability = {
+        mass: key, sourceIndex: result.sourceIndex, when: disposition.when,
+        basis: disposition.basis, date: context.date || null, season: context.season || null
+      };
+      return result;
+    }
+    return execution.slots.map(function (slot) {
+      if (!slot || typeof slot.slot !== 'string' || !semanticProperId({name: slot.slot}, true)) {
+        fail('unsupported-oration-slot', 'oration execution has an unknown semantic slot');
+      }
+      let anchor = sequence.filter(function (row) { return familyMatches(row, slot.slot); });
+      let placementLocus = slot.locus || execution.locus;
+      if (slot.slot === 'Collect') {
+        const lessons = sequence.filter(function (row) {
+          return multiple.reading_names.indexOf(row.proper.name) >= 0;
+        });
+        if (lessons.length > 1) {
+          const final = lessons[lessons.length - 1].sourceIndex;
+          const prayers = sequence.filter(function (row) {
+            return row.sourceIndex < final && multiple.prayer_names.indexOf(row.proper.name) >= 0;
+          });
+          anchor = prayers.length ? [prayers[prayers.length - 1]] : [];
+          placementLocus = multiple.locus;
+        }
+      }
+      if (anchor.length !== 1) {
+        fail('principal-oration-slot-unbound', 'oration series lacks a unique principal source seat for ' + slot.slot);
+      }
+      const groups = units.map(function (unit) {
+        const members = unit.members || [{of: unit.of, source_key: unit.source_key, of_name: unit.of_name}];
+        const kind = unit.members ? 'inseparable' : 'commemoration';
+        if ((kind === 'inseparable' && (unit.count !== 1 || members.length !== 2)) ||
+            (kind === 'commemoration' && members.length !== 1)) {
+          fail('invalid-counted-oration-unit', 'oration unit has inconsistent counted members');
+        }
+        const group = {kind: kind, count: 1, position: unit.position,
+          conclusion: unit.conclusion, locus: unit.group_locus || unit.locus || execution.locus,
+          placement_locus: placementLocus, slot: slot.slot,
+          conclusion_group: unit.position === 1 ? 1 : 2,
+          conclusion_final: unit.position === 1 || unit.position === series[series.length - 1].position,
+          members: members.map(function (member) { return matchingOwner(member, slot.slot); })};
+        // The source bodies remain separately attributable. Where intermediate
+        // printed cues would need source-checked spans, do not present a
+        // synthesized execution text or silently suppress a received ending.
+        const unresolved = [];
+        if (unit.position > 1 && series.length > 2) unresolved.push('intermediate-conclusion-spans-unbound');
+        if (group.members.some(function (member) {
+          return /\bN\./.test(member.proper.text || '');
+        })) unresolved.push('source-name-placeholder-unbound');
+        group.execution = {state: unresolved.length ? 'unresolved' : 'source-wording',
+          unresolved: unresolved, basis: execution.locus};
+        return group;
+      });
+      return {sourceIndex: anchor[0].sourceIndex, slot: slot.slot, groups: groups};
+    });
+  }
+
   return {
     variantGroupsOf: variantGroupsOf,
     variantGroupOf: variantGroupOf,
@@ -1562,6 +1705,7 @@
     properUnits: properUnits,
     seatPropers: seatPropers,
     massEvents: massEvents,
-    unframedEvents: unframedEvents
+    unframedEvents: unframedEvents,
+    orationPlan: orationPlan
   };
 }));

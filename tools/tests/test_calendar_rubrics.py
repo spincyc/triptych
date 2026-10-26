@@ -544,7 +544,7 @@ class SourceDrivenFailClosedRegressionTests(unittest.TestCase):
 
     CASES = {
         "postconciliar": {
-            "holy-family-refusal": "2022-12-30",
+            "holy-family-fallback": "2022-12-30",
             "joseph-departure": "2023-03-19",
             "joseph-arrival": "2023-03-20",
             "ordinary-time-orations": "2026-01-12",
@@ -614,19 +614,16 @@ class SourceDrivenFailClosedRegressionTests(unittest.TestCase):
             self.assertIn(scope, {row.get("scope") for row in branch["unsettled"]})
         return branch
 
-    def test_thirty_december_refusal_blocks_the_date_not_the_liturgical_year(self) -> None:
-        result, branch = self.results["holy-family-refusal"]
-        self.assert_refused("holy-family-refusal")
-        self.assertIn(
-            "the weekday position of 30 December",
-            {row["what"] for row in branch["unsettled"]},
-        )
-        active = [
-            row for row in result["liturgicalYear"]["unresolved"]
-            if row["what"] == "the weekday position of 30 December"
-        ]
-        self.assertEqual(len(active), 1)
-        self.assertTrue(active[0].get("when") or active[0].get("from"))
+    def test_thirty_december_uses_the_source_defined_holy_family_fallback(self) -> None:
+        result, branch = self.results["holy-family-fallback"]
+        self.assertTrue(branch["settled"])
+        self.assertEqual(branch["winner"]["id"], "holy-family")
+        self.assertFalse(branch["unsettled"])
+        self.assertEqual([row["of"] for row in branch["orations"]["all"]], ["holy-family"])
+        self.assertFalse(any(
+            row["what"] in ("holy-family", "the weekday position of 30 December")
+            for row in result["liturgicalYear"]["unresolved"]
+        ))
 
     def test_nualc_five_moves_saint_joseph_to_the_following_monday(self) -> None:
         _, departure = self.results["joseph-departure"]
@@ -754,6 +751,38 @@ class SourceDrivenAssignmentTests(unittest.TestCase):
 
 
 class OverrideValidationTests(unittest.TestCase):
+    def test_named_omission_accepts_only_a_held_distinct_companion(self) -> None:
+        entry = {
+            "id": "printed-omission", "key": "baptism", "omitted_when_with": "holy-family",
+            "locus": "printed rubric", "why": "the named celebration is omitted",
+        }
+        assigned = {"baptism": {"basis": "place-1"}, "holy-family": {"basis": "place-1"}}
+        self.assertEqual(rubrics.check_overrides({"overrides": [entry]}, assigned,
+                         {"place-1": 0}, "fixture"), [])
+        for companion, text in (("unheld", "does not carry"),
+                                ("baptism", "own target as companion")):
+            with self.subTest(companion=companion):
+                found = rubrics.check_overrides(
+                    {"overrides": [{**entry, "omitted_when_with": companion}]},
+                    assigned, {"place-1": 0}, "fixture")
+                self.assertEqual(len(found), 1, found)
+                self.assertIn(text, found[0])
+
+    def test_named_omission_refuses_mixed_or_unexplained_actions(self) -> None:
+        entry = {
+            "id": "printed-omission", "key": "baptism", "omitted_when_with": "holy-family",
+            "locus": "printed rubric", "why": "the named celebration is omitted",
+        }
+        assigned = {"baptism": {"basis": "place-1"}, "holy-family": {"basis": "place-1"}}
+        for mutation, text in (({"yields_to": "sunday"}, "unknown fields"),
+                               ({"omitted_when_with": ""}, "nonempty string"),
+                               ({"why": ""}, "nonempty string")):
+            with self.subTest(mutation=mutation):
+                found = rubrics.check_overrides({"overrides": [{**entry, **mutation}]},
+                         assigned, {"place-1": 0}, "fixture")
+                self.assertEqual(len(found), 1, found)
+                self.assertIn(text, found[0])
+
     def test_every_override_row_must_be_a_mapping(self) -> None:
         found = rubrics.check_overrides(
             {"overrides": [None]}, {}, {}, "fixture/rubrics.yaml"
@@ -826,6 +855,56 @@ class OverrideValidationTests(unittest.TestCase):
                         "cannot be proved portable",
                         rubrics.javascript_regex_problem(pattern),
                     )
+
+
+class ResumedSundayOccurrenceRegressionTests(unittest.TestCase):
+    def test_2008_feasts_displace_without_compressing_the_nominal_slots(self) -> None:
+        built, problems, _ = rubrics.build(CALENDARS, "roman-1962")
+        self.assertEqual(problems, [])
+        index = calendar_days.load_calendar(CALENDARS, "roman-1962")
+        years = calendar_days.build_years(index, [2008, 2009])
+        calendar_days.with_fixed(index, [2008])
+        year = calendar_days.year_document(index, 2008, years)
+        dates = ["2008-10-26", "2008-11-02", "2008-11-09", "2008-11-16"]
+        for date, number in zip(dates, [3, 4, 5, 6]):
+            self.assertIn("resumed-epiphany-" + str(number),
+                          [row["key"] for row in year["days"][date]])
+        answered = rubrics.run_model({"cases": [
+            {"id": date, "date": date, "year": year, "rubrics": built[0]}
+            for date in dates + ["2008-11-23"]]})
+        expected = ["christ-the-king", "resumed-epiphany-4",
+                    "dedicatione-archibasilicae-mi-salvatoris",
+                    "resumed-epiphany-6", "last-sunday-after-pentecost"]
+        for result, winner in zip(answered["results"], expected):
+            with self.subTest(date=result["id"]):
+                self.assertTrue(result["ok"], result)
+                branch, = result["result"]["options"]
+                self.assertTrue(branch["settled"], branch)
+                self.assertEqual(branch["winner"]["id"], winner)
+        lateran, = answered["results"][2]["result"]["options"]
+        self.assertEqual([row["of"] for row in lateran["orations"]["low_mass"]],
+                         ["dedicatione-archibasilicae-mi-salvatoris"])
+
+
+class SundayPrivilegesValidationTests(unittest.TestCase):
+    def fixture(self, **changes):
+        basis = {"id": "lord-feast", "label": "a feast", "why": "source rule",
+                 "row": 1, "nature": "feast", "of_the_lord": True,
+                 "sunday_privileges": True, "locus": "RG 16 a"}
+        basis.update(changes)
+        return {"precedence": {"rows": [{"row": 1, "class": "II"}]}, "bases": [basis]}
+
+    def test_sunday_privileges_are_source_scoped_to_a_second_class_lord_feast(self) -> None:
+        self.assertEqual(rubrics.check_bases(self.fixture(), "fixture")[1], [])
+        for changes in ({"sunday_privileges": "true"}, {"nature": "feria"},
+                        {"of_the_lord": False}):
+            with self.subTest(changes=changes):
+                problems = rubrics.check_bases(self.fixture(**changes), "fixture")[1]
+                self.assertEqual(len(problems), 1, problems)
+                self.assertTrue(any("privileges" in row for row in problems))
+        fixture = self.fixture()
+        fixture["precedence"]["rows"][0]["class"] = "I"
+        self.assertEqual(len(rubrics.check_bases(fixture, "fixture")[1]), 1)
 
 
 class OptionalDayChoiceTests(unittest.TestCase):

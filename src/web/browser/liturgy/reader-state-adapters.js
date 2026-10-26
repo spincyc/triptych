@@ -1570,6 +1570,29 @@
     }];
   }
 
+  function orationExecutionAbsences(events) {
+    const out = [];
+    function visit(event) {
+      if (event.kind === 'proper-choice') {
+        (event.options || []).filter(function (option) {
+          return event.selection.state === 'selected' && event.selection.option === option.id;
+        }).forEach(function (option) { (option.events || []).forEach(visit); });
+      }
+      const reasons = new Set();
+      (event.orationGroups || []).forEach(function (group) {
+        (group.execution && group.execution.unresolved || []).forEach(function (reason) {
+          if (reasons.has(reason)) return;
+          reasons.add(reason);
+          out.push({kind: 'explicit-semantic-absence', scope: 'oration-execution',
+            repositoryTerm: 'unresolved', event: event.id, reason: reason,
+            sourceHooks: [{kind: 'locus', id: group.execution.basis}]});
+        });
+      });
+    }
+    (events || []).forEach(visit);
+    return out;
+  }
+
   function coverageFor(
     structure, mass, propers, request, ordinary, events, ordinaryUnresolved, selectedForm,
     appointmentUnresolved
@@ -1782,6 +1805,9 @@
         rows.push(ordinaryLanguageCoverage(ordinary, request, ordinaryUnresolved));
       }
     }
+    const orationAbsences = orationExecutionAbsences(events);
+    if (orationAbsences.length) rows.push(Contract.coverage('unsupported', 'oration-execution', null,
+      orationAbsences.map(function (absence) {return {kind: 'unsupported-object', basis: absence.reason, event: absence.event};})));
     return rows;
   }
 
@@ -1947,7 +1973,17 @@
   function assertExplicitWitnesses(events, request, structure) {
     const languages = request.languages || {};
     if (languages.translationWitness) {
-      const held = selectedRows(events).some(function (row) {
+      // A witness may supply a reachable source option which the reader has
+      // deliberately left unresolved. Validate that held offer without choosing
+      // an option or changing the active text/coverage projection. An explicit
+      // option continues to admit only its selected members.
+      const witnessEvents = (events || []).flatMap(function (event) {
+        return event && event.kind === 'proper-choice' && event.selection.state === 'required'
+          ? (event.options || []).flatMap(function (option) { return option.events || []; })
+          : [event];
+      });
+      const held = selectedRows(witnessEvents).some(function (row) {
+        if (row.event.executionSource && row.event.executionSource.source.source_aliases.indexOf(languages.translationWitness) >= 0) return true;
         if (row.selected.sourceId === languages.translationWitness) return true;
         // Citation-led units and conflicting readings retain the authored
         // witness validation without selecting a conflicting body.
@@ -1980,22 +2016,19 @@
   function selectedRows(events) {
     const rows = [];
     const properEvents = [];
-    (events || []).forEach(function (event) {
+    function visit(event) {
       if (event && event.kind === 'proper-choice') {
         (event.options || []).filter(function (option) {
           return event.selection.state === 'selected' && event.selection.option === option.id;
-        }).forEach(function (option) {
-          properEvents.push.apply(properEvents, option.events || []);
-        });
+        }).forEach(function (option) { (option.events || []).forEach(visit); });
       } else {
         properEvents.push(event);
         (event.orationGroups || []).forEach(function (group) {
-          (group.members || []).forEach(function (member) {
-            if (member.id !== event.id) properEvents.push(member);
-          });
+          (group.members || []).forEach(function (member) { if (member.id !== event.id) visit(member); });
         });
       }
-    });
+    }
+    (events || []).forEach(visit);
     properEvents.forEach(function (event) {
       if (event.kind !== 'proper' || !event.selected) return;
       if (event.selected.kind !== 'cycle-alternatives') {
@@ -2118,7 +2151,7 @@
       }}
     );
     const events = withOrationGroups(
-      seated.events, branch, readable, mass, adaptedRequest, input.structure
+      seated.events, branch, readable, mass, adaptedRequest, input.structure, null, {season: derived.season}
     );
     assertExplicitWitnesses(events, adaptedRequest, input.structure);
     const resolved = {
@@ -2141,13 +2174,14 @@
       },
       resolved: resolved,
       events: events,
+      ...(executionSourceCoverage(events).petitions ? {executionSourceCoverage: executionSourceCoverage(events)} : {}),
       ...(hasOwn(seated.prepared, 'usage') ? {properAppointmentUsage: seated.prepared.usage} : {}),
       sourcePathChoices: sourcePathChoices(seated.prepared, mass, request, events),
       coverage: coverageFor(
         input.structure, mass, seated.prepared.activeRows.map(function (row) { return row.proper; }),
         adaptedRequest, ordinary, events, seated.ordinaryUnresolved, formSelection.form, seated.prepared.unresolved.concat(seated.prepared.sourcePathUnresolved)
       ),
-      explicitAbsences: explicitAbsencesFor(branch, lectionary).concat(
+      explicitAbsences: explicitAbsencesFor(branch, lectionary).concat(orationExecutionAbsences(events),
         claimLocalCollectAbsences(mass, request, formSelection.form)
       ),
       unresolvedChoices: choices.concat(
@@ -2165,7 +2199,197 @@
    * source owners. The frame seats that slot once; its ordered members follow
    * within it. A selected raw/displaced formulary never acquires this Day use.
    */
-  function withOrationGroups(events, branch, readable, mass, request, structure) {
+  // Finite source/execution joins. Whole historical English remains immutable;
+  // the applied planner, never a date-only shortcut, supplies the two owners.
+  const EXECUTION_METHOD = 'roman-1962-rg110-six-source-execution-20261026';
+  const EXECUTION_PUBLIC_PINS = {"[\"cathedrae-s-petri-apostoli\",\"main\",\"Collect\",\"all\",1]":"e1fc8c67f2269f58ed6ef2c3d061644eb33f47445695f41445c76dfcd8ce56ea","[\"cathedrae-s-petri-apostoli\",\"main\",\"Postcommunion\",\"all\",1]":"600592c94ff0e7c21dda833935c9c57b4a70ea06c54998256ea146e2ec179263","[\"cathedrae-s-petri-apostoli\",\"main\",\"Secret\",\"all\",1]":"a7047d1593aaae79225319ca5ab2371eb888774e64538e5e96537eda3d74e2d7","[\"commemoratione-s-pauli-apostoli\",\"main\",\"Collect\",\"all\",1]":"3c75b67e589114900c586eb99de8c7fd916bc71453ae30f4c26b48e3b0f218a4","[\"commemoratione-s-pauli-apostoli\",\"main\",\"Postcommunion\",\"all\",1]":"ccb29c2fb66eecc9794db9dd316d73f74556848ab20ca6dc0619d5fe5c1c9d53","[\"commemoratione-s-pauli-apostoli\",\"main\",\"Secret\",\"all\",1]":"df93a225d7903bf7488026484e23edd43cccdce1ccb6bdbe8fde488eaf14ed6d"};
+  function executionCanonical(value) {
+    if (Array.isArray(value)) return '[' + value.map(executionCanonical).join(',') + ']';
+    if (value && typeof value === 'object') return '{' + Object.keys(value).sort().map(function (key) {
+      return JSON.stringify(key) + ':' + executionCanonical(value[key]);
+    }).join(',') + '}';
+    return JSON.stringify(value);
+  }
+  function executionSha(text) {
+    const bytes = unescape(encodeURIComponent(text));
+    const words = [], constants = [], initial = [];
+    let prime = 2;
+    while (constants.length < 64) {
+      let isPrime = true;
+      for (let divisor = 2; divisor * divisor <= prime; divisor++) if (prime % divisor === 0) { isPrime = false; break; }
+      if (isPrime) {
+        if (initial.length < 8) initial.push((Math.sqrt(prime) % 1 * 4294967296) | 0);
+        constants.push((Math.cbrt(prime) % 1 * 4294967296) | 0);
+      }
+      prime++;
+    }
+    for (let index = 0; index < bytes.length; index++) words[index >> 2] = (words[index >> 2] || 0) | bytes.charCodeAt(index) << (24 - index % 4 * 8);
+    words[bytes.length >> 2] = (words[bytes.length >> 2] || 0) | 128 << (24 - bytes.length % 4 * 8);
+    words[(((bytes.length + 8) >> 6) + 1) * 16 - 1] = bytes.length * 8;
+    const rotate = function (value, count) { return value >>> count | value << (32 - count); };
+    let hash = initial.slice();
+    for (let start = 0; start < words.length; start += 16) {
+      const schedule = [], work = hash.slice();
+      for (let index = 0; index < 64; index++) {
+        if (index < 16) schedule[index] = words[start + index] | 0;
+        else {
+          const a = schedule[index - 15], b = schedule[index - 2];
+          schedule[index] = (schedule[index - 16] + (rotate(a, 7) ^ rotate(a, 18) ^ a >>> 3) + schedule[index - 7] + (rotate(b, 17) ^ rotate(b, 19) ^ b >>> 10)) | 0;
+        }
+        const a = work[0], b = work[1], c = work[2], d = work[3], e = work[4], f = work[5], g = work[6], h = work[7];
+        const t1 = (h + (rotate(e, 6) ^ rotate(e, 11) ^ rotate(e, 25)) + (e & f ^ ~e & g) + constants[index] + schedule[index]) | 0;
+        const t2 = ((rotate(a, 2) ^ rotate(a, 13) ^ rotate(a, 22)) + (a & b ^ a & c ^ b & c)) | 0;
+        work.splice(0, 8, (t1 + t2) | 0, a, b, c, (d + t1) | 0, e, f, g);
+      }
+      hash = hash.map(function (value, index) { return (value + work[index]) | 0; });
+    }
+    return hash.map(function (value) { return (value >>> 0).toString(16).padStart(8, '0'); }).join('');
+  }
+  function validateExecutionSource(source, proper, group, request, structure) {
+    const key = source && JSON.stringify(source.target);
+    if (!source || source.schema !== 'triptych-oration-execution-source/v1' || source.method_id !== EXECUTION_METHOD ||
+        executionSha(executionCanonical(source)) !== EXECUTION_PUBLIC_PINS[key]) throw new Error('unrecognized or changed execution source');
+    if (request.edition.id !== 'roman-1962' || request.languages.orations !== 'en' || source.lang !== 'en' ||
+        source.target[1] !== 'main' || source.target[3] !== 'all' || source.target[4] !== 1 ||
+        String(request.civilDate).slice(5) !== source.fixed_date || source.scope !== 'dated-mass-of-office' ||
+        group.kind !== 'inseparable' || group.count !== 1 || group.members.length !== 2 ||
+        group.members[0].key !== source.target[0] || group.members[1].key !== source.companion.target[0] ||
+        group.slot !== source.target[2]) throw new Error('execution source outside exact applied RG110 context');
+    if (executionSha(proper.text || '') !== source.target_latin_sha256 ||
+        executionSha(group.members[1].proper.text || '') !== source.companion.latin_sha256) throw new Error('execution source current Latin owner changed');
+    if (source.offset_units !== 'utf16' || source.ranges.length !== 3) throw new Error('execution source range units differ');
+    let end = 0;
+    source.ranges.forEach(function (range, index) {
+      if (range.kind !== ['petition', 'separator', 'printed-conclusion-cue'][index] || range.start !== end ||
+          !Number.isInteger(range.end) || range.end < end || range.end > source.source_text.length ||
+          (range.end > 0 && range.end < source.source_text.length && /[\uD800-\uDBFF]/.test(source.source_text[range.end - 1]) && /[\uDC00-\uDFFF]/.test(source.source_text[range.end]))) throw new Error('execution source range splits source characters');
+      end = range.end;
+    });
+    if (end !== source.source_text.length || executionSha(source.source_text) !== source.source_sha256) throw new Error('execution source full text changed');
+    const companion = structure.masses.find(function (one) { return one.key === source.companion.target[0]; });
+    const matches = (companion && companion.propers || []).filter(function (one) { return one.name === source.target[2] && one.form_id === 'main'; });
+    if (matches.length !== 1 || !(matches[0].translations || []).some(function (translation) {
+      return translation.lang === 'en' && translation.source_id === source.companion.source_id && translation.text === source.companion.source_text;
+    })) throw new Error('execution companion literal English owner changed');
+  }
+  function executionSourceCoverage(events) {
+    const seen = new Map();
+    function visit(event) {
+      if (event.executionSource) seen.set(event.id, event.executionSource);
+      (event.orationGroups || []).forEach(function (group) { group.members.forEach(visit); });
+      if (event.kind === 'proper-choice') (event.options || []).filter(function (option) {
+        return event.selection.state === 'selected' && option.id === event.selection.option;
+      }).forEach(function (option) { (option.events || []).forEach(visit); });
+    }
+    (events || []).forEach(visit);
+    return {schema: 'triptych-selected-execution-coverage/v1', count_basis: 'distinct-appointed-source-targets',
+      petitions: seen.size, unresolved: Array.from(seen.values()).filter(function (one) { return one.state === 'unresolved'; }).length,
+      whole_body_translations_added: 0, complete_English_claim: false};
+  }
+
+  function withOrationExecutionSource(projected, proper, group, request, structure) {
+    if (!(proper.execution_sources || []).length || request.languages.orations !== 'en') return projected;
+    if (proper.execution_sources.length !== 1) throw new Error('execution source conflict requires explicit settlement');
+    const source = proper.execution_sources[0];
+    validateExecutionSource(source, proper, group, request, structure);
+    const wanted = request.languages.translationWitness;
+    if (wanted && source.source_aliases.indexOf(wanted) < 0) return projected;
+    const unresolved = [];
+    if (source.companion.cue_state !== 'printed') unresolved.push('companion-English-conclusion-unbound');
+    if (source.companion.unbound_name || /\bN\./.test(source.source_text)) unresolved.push('source-name-placeholder-unbound');
+    if (wanted && wanted !== source.companion.source_id) unresolved.push('companion-English-unavailable-in-selected-witness');
+    if (group.conclusion_final === false) unresolved.push('later-shared-conclusion-unbound');
+    return Object.assign({}, projected, {
+      sourceHooks: uniqueSourceHooks([projected]).concat([
+        {kind: 'publication', id: source.provenance.publication_passage_id},
+        {kind: 'publication', id: source.provenance.companion_publication_passage_id}
+      ]),
+      executionSource: {schema: 'triptych-selected-execution-source/v1', source: source,
+        selected_witness: wanted || source.source_id,
+        state: unresolved.length ? 'unresolved' : 'petition-and-printed-companion-cue', unresolved: unresolved}
+    });
+  }
+
+  function withOrationGroups(events, branch, readable, mass, request, structure, projectMember, dayContext) {
+    if (!branch.settled || readable.state !== 'said' || !branch.oration_execution) {
+      return withInseparableGroups(events, branch, readable, mass, request, structure);
+    }
+    const properEvents = [];
+    function collect(event) {
+      if (event.kind === 'proper') properEvents.push(event);
+      else if (event.kind === 'proper-choice' && event.selection.state === 'selected') {
+        const selected = event.options.find(function (one) { return one.id === event.selection.option; });
+        (selected.events || []).forEach(collect);
+      }
+    }
+    events.forEach(collect);
+    const indexFor = function (event) {
+      const hook = (event.sourceHooks || []).find(function (one) { return one.kind === 'proper-structure'; });
+      const match = hook && /\/(\d{3})$/.exec(hook.id);
+      if (!match) throw new Error('oration placement requires an exact principal source coordinate');
+      return Number(match[1]) - 1;
+    };
+    const rows = properEvents.map(function (event) {
+      const sourceIndex = indexFor(event);
+      const proper = (mass.propers || [])[sourceIndex];
+      if (!proper) throw new Error('oration principal source coordinate is not held');
+      return {proper: proper, sourceIndex: sourceIndex};
+    });
+    const plan = Seating.orationPlan(rows, {
+      active: true, calendar: request.edition.id, mainKey: mass.key, execution: branch.oration_execution,
+      date: request.civilDate, season: dayContext && dayContext.season || null,
+      facts: structure.proper_appointment_facts || {},
+      series: branch.orations.all || branch.orations.low_mass || [],
+      owners: (structure.masses || []).map(function (owner) {
+        return {key: owner.key, sourcePaths: owner.proper_source_paths || [], rows: (owner.propers || []).map(function (proper, sourceIndex) {
+          return {proper: proper, sourceIndex: sourceIndex};
+        })};
+      })
+    });
+    const byIndex = new Map(plan.map(function (one) { return [one.sourceIndex, one]; }));
+    function attach(event) {
+      if (event.kind === 'proper-choice') {
+        return Object.assign({}, event, {options: event.options.map(function (option) {
+          return event.selection.state === 'selected' && event.selection.option === option.id
+            ? Object.assign({}, option, {events: option.events.map(attach)}) : option;
+        })});
+      }
+      if (event.kind !== 'proper') return event;
+      const seatPlan = byIndex.get(indexFor(event));
+      if (!seatPlan) return event;
+      const groups = seatPlan.groups.map(function (group) {
+        return Object.assign({}, group, {members: group.members.map(function (member) {
+          const owner = structure.masses.find(function (one) { return one.key === member.key; });
+          const projected = projectMember ? projectMember(member, event) : projectProper(
+            member.proper, member.sourceIndex, owner, request, structure, 'day',
+            event.seat, semanticSlot({name: group.slot}));
+          projected.of_name = member.of_name;
+          if (member.applicability) projected.sourceHooks.push({
+            kind: 'proper-appointment', id: JSON.stringify(member.applicability)
+          });
+          return withOrationExecutionSource(projected, member.proper, group, request, structure);
+        })});
+      });
+      groups.forEach(function (group) {
+        const bounded = group.members.find(function (member) { return member.executionSource; });
+        if (!bounded) return;
+        const unresolved = Array.from(new Set((group.execution && group.execution.unresolved || [])
+          .concat(bounded.executionSource.unresolved)));
+        group.execution = Object.assign({}, group.execution, {state: unresolved.length ? 'unresolved' : 'petition-and-printed-companion-cue',
+          unresolved: unresolved, source_method: EXECUTION_METHOD});
+      });
+      const own = groups.flatMap(function (group) { return group.members; }).find(function (member) {
+        return member.id === event.id && member.executionSource;
+      });
+      return Object.assign({}, event, own ? {executionSource: own.executionSource} : {}, {orationGroups: groups,
+        sourceHooks: uniqueSourceHooks([event].concat(groups.flatMap(function (group) {
+          return group.members;
+        }))).concat(groups.map(function (group) { return {kind: 'locus', id: group.locus}; }))});
+    }
+    return events.map(attach);
+  }
+
+  function withInseparableGroups(events, branch, readable, mass, request, structure) {
     if (!branch.settled || readable.state !== 'said') return events;
     const series = branch.orations && (branch.orations.all || branch.orations.low_mass) || [];
     const groups = series.filter(function (one) { return one.group === 'inseparable'; });
@@ -2316,6 +2540,7 @@
       calendarResult: null,
       resolved: resolved,
       events: events,
+      ...(executionSourceCoverage(events).petitions ? {executionSourceCoverage: executionSourceCoverage(events)} : {}),
       ...(hasOwn(seated.prepared, 'usage') ? {properAppointmentUsage: seated.prepared.usage} : {}),
       sourcePathChoices: sourcePathChoices(seated.prepared, mass, request, events),
       coverage: coverageFor(
@@ -2783,6 +3008,32 @@
         function () { throw new Error('unframed Proper sequence carried an Ordinary event'); }
       );
     }
+    events = withOrationGroups(events, branch, readable, generatedMass, adaptedRequest, input.structure,
+      function (member, anchor) {
+        const owners = (day.masses || []).filter(function (one) { return one.key === member.key; });
+        if (owners.length !== 1) throw new Error('mass-today oration member lacks one exact raw source owner');
+        const owner = owners[0];
+        const generatedOwner = input.structure.masses.find(function (one) { return one.key === member.key; });
+        const generatedRows = generatedOwner.propers.map(function (proper, sourceIndex) {
+          return {proper: proper, sourceIndex: sourceIndex};
+        }).filter(function (row) { return row.proper.form_id === member.proper.form_id && row.proper.name !== 'Placeholder'; });
+        const forms = (owner.forms || []).filter(function (one) { return one.id === member.proper.form_id; });
+        if (forms.length > 1) throw new Error('mass-today oration member has ambiguous raw source forms');
+        const rows = forms.length ? forms[0].propers : owner.propers;
+        if (!rows || rows.length !== generatedRows.length) throw new Error('mass-today oration source row count drifted');
+        const ordinal = generatedRows.findIndex(function (row) { return row.sourceIndex === member.sourceIndex; });
+        if (ordinal < 0) throw new Error('mass-today oration member lacks its exact raw source ordinal');
+        const proper = rows[ordinal];
+        assertCliProperIdentity(member.proper, proper, false);
+        const selected = cliMaterial(proper, adaptedRequest, member.proper);
+        return {
+          id: properEventId(request.edition.id, member.key, member.sourceIndex), kind: 'proper',
+          semanticSlot: semanticSlot(member.proper), editionSlotLabel: proper.name,
+          form: proper.form || null, sourceKind: proper.source || null, selected: selected,
+          seat: anchor.seat || null,
+          sourceHooks: sourceHooks(proper, selected, request.edition.id, member.key, member.sourceIndex)
+        };
+      }, {season: input.derived.season});
     assertExplicitWitnesses(events, adaptedRequest, input.structure);
     const resolved = {
       edition: request.edition.id, formulary: mass.key, standing: mass.standing
@@ -2800,6 +3051,7 @@
       },
       resolved: resolved,
       events: events,
+      ...(executionSourceCoverage(events).petitions ? {executionSourceCoverage: executionSourceCoverage(events)} : {}),
       ...(hasOwn(prepared, 'usage') ? {properAppointmentUsage: prepared.usage} : {}),
       sourcePathChoices: sourcePathChoices(prepared, generatedMass, request, events),
       coverage: coverageFor(
@@ -2810,7 +3062,7 @@
           ? day.ordinary : null,
         events, ordinaryUnresolved, formSelection.form, prepared.unresolved.concat(prepared.sourcePathUnresolved)
       ),
-      explicitAbsences: explicitAbsencesFor(branch, lectionary).concat(
+      explicitAbsences: explicitAbsencesFor(branch, lectionary).concat(orationExecutionAbsences(events),
         claimLocalCollectAbsences(generatedMass, request, formSelection.form)
       ),
       unresolvedChoices: choices.concat(

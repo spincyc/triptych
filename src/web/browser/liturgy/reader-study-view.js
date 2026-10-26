@@ -66,6 +66,42 @@
     });
   }
 
+  function executionFacts(selected) {
+    if (!selected || selected.schema !== 'triptych-selected-execution-source/v1' ||
+        Object.keys(selected).sort().join('|') !== 'schema|selected_witness|source|state|unresolved' ||
+        ['unresolved', 'petition-and-printed-companion-cue'].indexOf(selected.state) < 0 ||
+        !Array.isArray(selected.unresolved)) fail('closed execution source selection required');
+    const source = selected.source;
+    if (!source || source.schema !== 'triptych-oration-execution-source/v1' || source.lang !== 'en' ||
+        source.scope !== 'dated-mass-of-office' || source.rule !== 'RG110' ||
+        !source.provenance || !source.companion || !Array.isArray(source.source_aliases) ||
+        source.source_aliases.indexOf(selected.selected_witness) < 0) fail('execution source facts need the applied finite witness');
+    const fields = [source.method_id, source.record_sha256, source.source_sha256, source.source_id,
+      source.source_label, source.provenance.publication_passage_id,
+      source.provenance.companion_publication_passage_id, source.companion.source_id];
+    if (!fields.every(nonempty) || !selected.unresolved.every(nonempty)) fail('execution source facts lack exact identities');
+    return {schema: 'triptych-study-execution-facts/v1', disposition: 'petition-only',
+      language: 'en', state: selected.state, selectedWitness: selected.selected_witness,
+      historicalWitness: source.source_id, historicalLabel: source.source_label,
+      method: source.method_id, sourceRecordSha256: source.record_sha256,
+      fullHistoricalEnglishSha256: source.source_sha256,
+      publicationPassage: source.provenance.publication_passage_id,
+      companionPublicationPassage: source.provenance.companion_publication_passage_id,
+      companionWitness: source.companion.source_id, companionCueState: source.companion.cue_state,
+      unresolved: selected.unresolved.slice()};
+  }
+
+  function executionCoverageFacts(coverage) {
+    if (!coverage || Object.keys(coverage).sort().join('|') !== 'complete_English_claim|count_basis|petitions|schema|unresolved|whole_body_translations_added' ||
+        coverage.schema !== 'triptych-selected-execution-coverage/v1' ||
+        coverage.count_basis !== 'distinct-appointed-source-targets' ||
+        !Number.isInteger(coverage.petitions) || coverage.petitions < 1 || coverage.petitions > 6 ||
+        !Number.isInteger(coverage.unresolved) || coverage.unresolved < 0 || coverage.unresolved > coverage.petitions ||
+        coverage.whole_body_translations_added !== 0 || coverage.complete_English_claim !== false) fail('closed execution coverage facts required');
+    return {schema: coverage.schema, count_basis: coverage.count_basis, petitions: coverage.petitions,
+      unresolved: coverage.unresolved, whole_body_translations_added: 0, complete_English_claim: false};
+  }
+
   function project(result) {
     if (!result || ['day', 'propers'].indexOf(result.entrance) < 0 ||
         !result.request || !result.request.edition ||
@@ -92,16 +128,21 @@
           ? event.semanticSlot.identity.id : null,
         seat: seatFacts(event.seat), selected: selectedFacts(event.selected),
         sourceHooks: sourceFacts(event.sourceHooks),
+        ...(event.executionSource ? {executionFacts: executionFacts(event.executionSource)} : {}),
         ...(event.orationContext ? {orationContext: event.orationContext} : {}),
         ...(event.orationGroups ? {orationGroups: event.orationGroups.map(function (group) {
-          if (group.kind !== 'inseparable' || group.count !== 1 ||
-              !Array.isArray(group.members) || group.members.length !== 2) {
-            fail('an inseparable oration needs two source owners counting as one');
+          if (group.count !== 1 || !Array.isArray(group.members) ||
+              (group.kind === 'inseparable' ? group.members.length !== 2 :
+                group.kind === 'commemoration' ? group.members.length !== 1 : true)) {
+            fail('a counted oration needs its exact source owners');
           }
-          return {count: group.count, conclusion: group.conclusion, locus: group.locus,
+          return {kind: group.kind, count: group.count, conclusion: group.conclusion, locus: group.locus,
+            conclusion_group: group.conclusion_group || null,
+            execution: group.execution || null,
             members: group.members.map(function (member) {
               return {id: member.id, label: member.of_name, selected: selectedFacts(member.selected),
-                sourceHooks: sourceFacts(member.sourceHooks)};
+                sourceHooks: sourceFacts(member.sourceHooks),
+                ...(member.executionSource ? {executionFacts: executionFacts(member.executionSource)} : {})};
             })};
         })} : {})
       };
@@ -127,6 +168,7 @@
         type: result.resolved.type || null
       },
       calendar: calendar, coverage: coverageFacts(result.coverage),
+      ...(result.executionSourceCoverage ? {executionCoverage: executionCoverageFacts(result.executionSourceCoverage)} : {}),
       unresolvedChoices: result.unresolvedChoices.map(function (choice) {
         return {
           id: choice.id,
@@ -250,6 +292,16 @@
       });
     }
 
+    if (study.executionCoverage) {
+      const node = section(overview, 'Execution-scoped historical petitions', 'study-execution-coverage');
+      const facts = T.el('dl', 'study-facts');
+      fact(facts, 'Source petitions', study.executionCoverage.petitions);
+      fact(facts, 'Unresolved executions', study.executionCoverage.unresolved);
+      fact(facts, 'Whole-prayer translations added', 0);
+      fact(facts, 'Complete English execution claimed', 'No');
+      node.appendChild(facts);
+    }
+
     if (study.unresolvedChoices.length) {
       const node = section(overview, 'Unresolved choices', 'study-choices');
       study.unresolvedChoices.forEach(function (choice) {
@@ -264,6 +316,21 @@
         item.appendChild(facts);
         node.appendChild(item);
       });
+    }
+
+    function executionLabels(facts, execution) {
+      if (!execution) return;
+      fact(facts, 'Execution source disposition', execution.disposition);
+      fact(facts, 'Execution source state', execution.state);
+      fact(facts, 'Selected execution witness', execution.selectedWitness);
+      fact(facts, 'Historical source', execution.historicalLabel);
+      fact(facts, 'Execution method', execution.method);
+      fact(facts, 'Full historical English hash', execution.fullHistoricalEnglishSha256);
+      fact(facts, 'Petition publication passage', execution.publicationPassage);
+      fact(facts, 'Companion publication passage', execution.companionPublicationPassage);
+      fact(facts, 'Companion execution witness', execution.companionWitness);
+      fact(facts, 'Companion English cue', execution.companionCueState);
+      fact(facts, 'Execution remains unresolved', execution.unresolved.join('; '));
     }
 
     attached.forEach(function (row) {
@@ -298,6 +365,7 @@
         fact(facts, 'Witness relation', event.selected.relation);
         fact(facts, 'Collation', event.selected.collation);
       }
+      executionLabels(facts, event.executionFacts);
       event.sourceHooks.forEach(function (hook) {
         fact(facts, 'Source record', hook.kind + ': ' + hook.id);
       });
@@ -306,13 +374,16 @@
         fact(facts, 'Group source', event.orationContext.relation.locus);
       }
       (event.orationGroups || []).forEach(function (group) {
-        fact(facts, 'Oration group', 'two inseparable prayers count as one');
+        fact(facts, 'Oration group', group.kind === 'inseparable' ? 'two inseparable prayers count as one' : 'one commemorated prayer');
         fact(facts, 'Conclusion', group.conclusion);
+        fact(facts, 'Conclusion group', group.conclusion_group);
+        fact(facts, 'Execution text', group.execution && group.execution.state);
         fact(facts, 'Group basis', group.locus);
         group.members.forEach(function (member) {
           fact(facts, 'Prayer owner', member.label);
           fact(facts, 'Prayer availability', member.selected && member.selected.availability);
           fact(facts, 'Prayer witness', member.selected && member.selected.sourceId);
+          executionLabels(facts, member.executionFacts);
         });
       });
       node.appendChild(facts);
