@@ -51,8 +51,10 @@ postconciliar PDFs, 335 pages, rebuild to the previously reviewed bytes under
 the corrected registry. Preliminary source/code disclosure review finds no private data,
 unintended provider work or retained restricted acquisition bodies.
 
-Complete final source/site gates, integrated outgoing cold/disclosure reviews,
-main publication and exact live deployment verification remain outstanding.
+Complete post-archive source, production-site, Pages compatibility, release,
+ledger and tool-registry gates pass. The two sealed EOF-only advisories remain
+explicitly qualified. Integrated outgoing cold/disclosure reviews, main
+publication and exact live deployment verification remain outstanding.
 
 ## GPT Last Things and next Sunday propers, 2026-10-25
 

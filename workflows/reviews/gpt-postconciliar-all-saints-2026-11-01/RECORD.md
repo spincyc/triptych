@@ -337,8 +337,14 @@ Official dated occurrence verification, source registration and dispositions,
 all native content/visual/web/publication reviews, three exact installed PDFs,
 the canonical web edition and terminal native acceptance/archive reproduction
 are complete. Post-archive bookkeeping is refreshed. The complete final source
-and site gates, outgoing integration/disclosure cold reviews, main publication
-and live deployment verification remain open. No main deployment is claimed.
+aggregate passes at tested commit `a141a9185e5389ea0172f33fe9355045230d37e1`,
+as do the production site build, GitHub Pages compatibility verifier, release
+and promised-deliverable checks, and tool-registry check. The pinned runtime
+uses Markdown 3.10.3. `final-validation.json` records every actual command,
+numeric exit, timing and log hash; all five required checks pass. The broader
+164-unit source-family audit remains pending, as it was before this target.
+Outgoing integration/disclosure cold reviews, main publication and live
+deployment verification remain open. No main deployment is claimed.
 
 The local candidate staging audit admits 195 intended UTF-8 text files and no
 binary acquisition, ignored build/scratch/PDF output, other-provider file or

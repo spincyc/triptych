@@ -1,0 +1,128 @@
+{
+  "schema": 1,
+  "scope": "Complete local post-archive publication validation; outgoing cold review and hosted deployment recorded separately",
+  "candidate_commit": "a141a9185e5389ea0172f33fe9355045230d37e1",
+  "verified_at_utc": "2026-10-26T14:13:22.249346+00:00",
+  "python_markdown": "3.10.3",
+  "python": "3.14.8",
+  "pyyaml": "6.0.3",
+  "all_required_local_checks_pass": true,
+  "checks": [
+    {
+      "name": "final-source-aggregate",
+      "command": [
+        "make",
+        "PYTHON=.scratch/pc-r07-production/runtime/bin/python3",
+        "check-sources"
+      ],
+      "path_prepend": ".scratch/pc-r07-production/runtime/bin",
+      "started_at_utc": "2026-10-26T14:07:41.675071+00:00",
+      "finished_at_utc": "2026-10-26T14:13:22.248944+00:00",
+      "elapsed_seconds": 340.574,
+      "exit": 0,
+      "log": ".scratch/pc-r07-integration/final-source-aggregate.log",
+      "log_sha256": "a895d0241b0a1c0f0973dc1f1b4bd038ff125a1438c2ef80521caca8e3630506"
+    },
+    {
+      "name": "final-site-build",
+      "command": [
+        "make",
+        "PYTHON=.scratch/pc-r07-production/runtime/bin/python3",
+        "public-site"
+      ],
+      "path_prepend": ".scratch/pc-r07-production/runtime/bin",
+      "started_at_utc": "2026-10-26T14:07:41.675203+00:00",
+      "finished_at_utc": "2026-10-26T14:08:05.887292+00:00",
+      "elapsed_seconds": 24.212,
+      "exit": 0,
+      "log": ".scratch/pc-r07-integration/final-site-build.log",
+      "log_sha256": "9b75f570674ee216f1770057d22eef7b898ece7fd630daa49660ebbfd7b72196"
+    },
+    {
+      "name": "final-release-ledger",
+      "command": [
+        "make",
+        "PYTHON=.scratch/pc-r07-production/runtime/bin/python3",
+        "check-release-bindings",
+        "check-promised-deliverables"
+      ],
+      "path_prepend": ".scratch/pc-r07-production/runtime/bin",
+      "started_at_utc": "2026-10-26T14:07:41.675356+00:00",
+      "finished_at_utc": "2026-10-26T14:07:52.859822+00:00",
+      "elapsed_seconds": 11.184,
+      "exit": 0,
+      "log": ".scratch/pc-r07-integration/final-release-ledger.log",
+      "log_sha256": "0a724f3930525e301481557f049ed627c5ee73fb42ed7c80deb54df38304bca2"
+    },
+    {
+      "name": "final-tool-registry",
+      "command": [
+        "$HOME/.local/bin/tmt",
+        "check"
+      ],
+      "path_prepend": ".scratch/pc-r07-production/runtime/bin",
+      "started_at_utc": "2026-10-26T14:07:41.675674+00:00",
+      "finished_at_utc": "2026-10-26T14:07:46.035687+00:00",
+      "elapsed_seconds": 4.36,
+      "exit": 0,
+      "log": ".scratch/pc-r07-integration/final-tool-registry.log",
+      "log_sha256": "dc51b8c96c2d745df3bd5590d990230a482fd247123599548e0632fdbf97fc22"
+    },
+    {
+      "name": "final-pages-verifier",
+      "command": [
+        ".scratch/pc-r07-production/runtime/bin/python3",
+        "tools/tpt",
+        "public-alpha",
+        "verify",
+        "--deployment-target",
+        "github-pages"
+      ],
+      "path_prepend": ".scratch/pc-r07-production/runtime/bin",
+      "started_at_utc": "2026-10-26T14:08:05.887501+00:00",
+      "finished_at_utc": "2026-10-26T14:08:28.425770+00:00",
+      "elapsed_seconds": 22.538,
+      "exit": 0,
+      "log": ".scratch/pc-r07-integration/final-pages-verifier.log",
+      "log_sha256": "b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14"
+    }
+  ],
+  "native_acceptance_record_sha256": "e88e793ec2c670edd131b1f7f1692d503e0b8b85eea59eeb8158e617841d0eb2",
+  "known_nonblocking": [
+    "Two accepted study TeX components retain one EOF blank each; exact sealed bytes preserved. git diff --check exits 2 for these two whitespace-only advisories.",
+    "Historical native archive compatibility test was unavailable and skipped; this target actual archive and isolated reproduction match all 80 files."
+  ],
+  "source_input_git_objects": {
+    ".gitattributes": "d955bffa0bc87bf0ecdbe3e7739fc2636a6160a3",
+    ".github": "c3ac44065e1a5a5150da82a2b142036a02b7d26d",
+    ".gitignore": "48d8804e984bf8f1743505ce11f6852f6cdf5da5",
+    "ABOUT.md": "c0eecb799647360d3dcbddcd00f09d5a894a24de",
+    "AGENTS.md": "a8397c2076f59577165e0f8e7be4030daccd95d7",
+    "CONTRIBUTING.md": "ef55e1679c7f849a392e23ce538a3591e5d9efa6",
+    "LICENSE": "a351b9d0bd02ca2710a6b375cdd39ff4147a26e9",
+    "LICENSES": "3e3ebed261a28883f50e3a84251a8ff7ac66c64a",
+    "Makefile": "06366092069826901108c3fb6caab89c631939d9",
+    "README.md": "d712a97384667e93571a51c081367f983021d8ad",
+    "THIRD_PARTY.md": "7288665f6e745a655a18cab0ff870bede19069e1",
+    "build": "3060edba992797389120c2b4aea7238a080d85fd",
+    "docs": "cfdbfd7449b20846e6cd52e74bdf52b0f7988ac4",
+    "guidance": "136403d9ee0fd82f49da75156d78c05080702784",
+    "library": "bd30a3faa795b83626a2dc66a350e3f40c758383",
+    "pdf": "0cd529ae0597bdd2dc77c88603f056ebc6c44796",
+    "release": "5692f55296342ec5fc28e58f2cd809b71020f167",
+    "requirements-public-alpha.txt": "5cd195ce957cd391691809101a8670fd525efad5",
+    "requirements-tools.txt": "f62ce0c56db2b5d134cff98f7fb1625023cd2874",
+    "requirements-tui.txt": "0fa02d7d2259089f57be8638e5583bbc5cef788f",
+    "scripts": "a731a42c79bc3529a2b8141643d6f9ce43c02161",
+    "src": "a15d43ce53f43de19fea240a3c734f9f12dd3156",
+    "tests": "707d71bccc7e168ad3ef3e0f9f9fe293c9cd9e50",
+    "tmt.json": "ea0181420513b8c0e170ff5717bd81c00629817c",
+    "tools": "53c62d3f44649a71ef80149b1bc737b50b259df2",
+    "web": "7e61f09d9507e672af670e4384f7ccdd4b53b896",
+    "workflows/ARCHITECTURE.md": "c4e0a7000f338f06ad4d563546e0f082892f3f28",
+    "workflows/OPERATOR.md": "ea94f9c92de2125eb8c9dde3e0c20f5ebe74eba3",
+    "workflows/fragments": "be43d2ea84c94e5d0710811a0f31708bfb2a1486",
+    "workflows/pipelines": "15435599c865600db8fe4986db609a201b968ca8",
+    "workflows/schema": "b742d12e339a7bcbb2852efbd4ea702d78f028fa"
+  }
+}
