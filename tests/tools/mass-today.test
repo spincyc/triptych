@@ -77,11 +77,11 @@ source = yaml.safe_load((
     pathlib.Path(sys.argv[2]) / "src/sources/calendars/roman-pre-1955/propers.yaml"
 ).read_text(encoding="utf-8"))
 assert source["text_from"] == "roman-1962", source["text_from"]
-assert source["recension_coverage"]["status"] == "structural-only"
+assert source["recension_coverage"]["status"] == "partial"
 prelude = [
     "Historical boundary — stands before: " + "; ".join(source["stands_before"]),
-    "Recension coverage: structural-only",
-    "Proper text source: roman-1962 (inherited, uncollated)",
+    "Recension coverage: partial",
+    "Proper text source: roman-1962 (inherited, partial)",
     source["advisory"],
 ]
 # Exact apparatus-only equality excludes every Proper heading/body, Bible text,
@@ -91,9 +91,9 @@ PY
 pre1955="$("$tool" mass-propers show --calendar roman-pre-1955 --mass advent-1 --lang en)"
 for want in "Historical boundary" \
 	"de-rubricis-simpliciorem-1955; maxima-redemptionis-1955" \
-	"Recension coverage: structural-only" \
-	"Proper text source: roman-1962 (inherited, uncollated)" \
-	"Structural-only pre-1955 projection, not a complete 1920 Missal corpus"; do
+	"Recension coverage: partial" \
+	"Proper text source: roman-1962 (inherited, partial)" \
+	"not a complete 1920 corpus"; do
 	case "$pre1955" in
 	*"$want"*) ;;
 	*) echo "pre-1955 day view is missing provenance: $want" >&2; exit 1 ;;
@@ -105,13 +105,13 @@ python3 - "$sandbox/pre1955-day-provenance.json" <<'PY'
 import json, sys
 
 document = json.load(open(sys.argv[1], encoding="utf-8"))
-assert document["advisory"].startswith("Structural-only pre-1955 projection")
+assert document["advisory"].startswith("Partial pre-1955 projection")
 assert document["stands_before"] == [
     "de-rubricis-simpliciorem-1955", "maxima-redemptionis-1955"
 ]
-assert document["recension_coverage"]["status"] == "structural-only"
+assert document["recension_coverage"]["status"] == "partial"
 assert document["recension_coverage"]["inheritance"]["source_calendar"] == "roman-1962"
-assert document["recension_coverage"]["inheritance"]["status"] == "uncollated"
+assert document["recension_coverage"]["inheritance"]["status"] == "partial"
 assert document["mass"]["recension"]["calendar"] == "roman-1962"
 assert document["mass"]["recension"]["text_from"] == "roman-1962"
 assert document["mass"]["recension"]["stated"] is False
@@ -228,23 +228,43 @@ assert mass["bible"] == {
 }, mass["bible"]
 PY
 
-# A settled implied feria can lack a held formulary.  That is neither an
-# unsettled day nor a Mass choice: the typed suppression says exactly which
-# source boundary prevents an Ordinary from being assembled.
+# The reviewed ferial-use source now appoints the preceding Sunday on this
+# settled implied feria. Preserve that positive appointment and exercise the
+# unavailable-formulary suppression independently with a synthetic sibling
+# result, so a later source recovery cannot erase the negative control.
 run_tool show --date 2027-05-03 --calendar roman-1962 --ordinary --json \
 	>"$sandbox/implied-feria-without-formulary.json"
-/usr/bin/python3 - "$sandbox/implied-feria-without-formulary.json" <<'PY'
-import json, sys
+/usr/bin/python3 - "$sandbox/implied-feria-without-formulary.json" "$repo/tools/mass-today" <<'PY'
+import importlib.machinery, importlib.util, json, sys
+from types import SimpleNamespace
+from unittest.mock import patch
 
 day = json.load(open(sys.argv[1], encoding="utf-8"))["days"][0]
 assert day["settled"] is True, day
-assert day["selected_mass"] is None, day
-assert day["ordinary_suppressed"] == {
-    "kind": "ferial-formulary-unavailable"
-}, day
+assert day["selected_mass"] == "easter-5", day
+assert "ordinary_suppressed" not in day, day
+assert day["ordinary"]["calendar"] == "roman-1962", day
 winner = day["branches"][0]["winner"]
 assert winner["source"] == "implied", winner
-assert winner["key"] is None and winner["formulary"] is None, winner
+assert winner["formulary"]["key"] == "easter-5", winner
+
+loader = importlib.machinery.SourceFileLoader("mass_today_missing_form_fixture", sys.argv[2])
+spec = importlib.util.spec_from_loader(loader.name, loader)
+module = importlib.util.module_from_spec(spec)
+loader.exec_module(module)
+args = SimpleNamespace(date="2027-05-03", calendar="roman-1962", ordinary=True,
+    expanded=False, bible=None, lang=None, json=True, format="json", form=None,
+    ordinary_variant=None, territory=None, mass=None, why=False, rubrics=True)
+missing = {"days": [{"calendar": "roman-1962", "options": [{
+    "settled": True, "winner": {"source": "implied", "key": None, "formulary": None},
+    "readable": [],
+}]}]}
+with patch.object(module, "invoke", return_value=missing) as sibling:
+    absent_day = module.run_show(args)["days"][0]
+sibling.assert_called_once_with("calendar-rubrics", ["day", "--date", "2027-05-03", "--calendar", "roman-1962"])
+assert absent_day["settled"] is True and absent_day["selected_mass"] is None, absent_day
+assert absent_day["ordinary_suppressed"] == {"kind": "ferial-formulary-unavailable"}, absent_day
+assert absent_day["masses"] == [] and "ordinary" not in absent_day, absent_day
 PY
 
 # ---- The expanded mode ----------------------------------------------------

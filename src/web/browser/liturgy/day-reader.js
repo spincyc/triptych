@@ -1748,7 +1748,7 @@
       translationWitness: state.languages.translationWitness || null,
       heading: heading,
       cycle: event.selected && event.selected.cycle || null,
-      orationGroups: event.orationGroups || null, executionSource: event.executionSource || null, orationContext: event.orationContext || null, eventId: event.id, structure: structure
+      orationGroups: event.orationGroups || null, executionSource: event.executionSource || null, nameExecution: event.nameExecution || null, orationContext: event.orationContext || null, eventId: event.id, structure: structure
     });
     const choice = renderTranslationWitnessChoice(
       event, resolvableTranslationWitnessState(result, structure, state), prefix, result,
@@ -2068,7 +2068,8 @@
         if (!raw) throw new Error('production Ordinary element is missing for ' + event.id);
         const node = exposeReaderLocus(
           semanticNode(
-            composeInstrumentAbsences(OrdinaryRenderer.renderElement(raw, ordinary)),
+            composeInstrumentAbsences(OrdinaryRenderer.renderElement(raw, ordinary, undefined,
+              { calendar: state.edition.id, formulary: mass && mass.key })),
             event,
             ordinal,
             prefix

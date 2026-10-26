@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.finite-name-anthony-heading-c4d42399"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Public domain in the United States by failure to renew, on the affirmative registration-number record established at src/sources/inventories/lasance-new-roman-missal-rights-v1.toml: A 110108, copyright 15 July 1937, renewal window closed 15 July 1965; A 192159, copyright 1 November 1945, renewal window closed 1 November 1973. That holding is the repository's own and is recorded there with its citations, its controls, and what would overturn it; nothing here re-argues it. It does not cover the lettered inserts at printed pages 1298a-1298n or 1302a-1302d. The tracked publication artifact removes both complete page-bounded ranges, and no entry below quotes either."
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+provenance = "Literal same-book dated Anthony Abbot heading, independently source-reviewed; English name fact only. No historically named prayer is claimed."
+transformation = "Store the whole heading verbatim; use only the exact independently accepted name interval in a separately typed execution inference."
+retrieved = "2026-10-26"
+sha256 = "c4d423990225efece20c05c967449c38467cefa292918c306f68f998a56bd2d2"
+byte_size = 96
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/finite-name-anthony-heading-c4d42399/heading.tsv"
+encoding = "utf-8"
+indexable = true

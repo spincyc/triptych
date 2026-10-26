@@ -1429,6 +1429,7 @@ def validate_liturgical_public_data(path: Path) -> None:
                 f"{matched_hash} reached public-alpha data"
             )
 
+    name_seen: set[tuple] = set()
     execution_seen: set[tuple] = set()
     def visit_execution(value: object, trail: tuple = (), mass_key: str | None = None) -> None:
         if isinstance(value, list):
@@ -1437,6 +1438,32 @@ def validate_liturgical_public_data(path: Path) -> None:
             if isinstance(value.get("propers"), list) and isinstance(value.get("key"), str):
                 mass_key = value["key"]
             for key, item in value.items():
+                if key == "name_execution_source_coverage":
+                    expected = {"schema": "triptych-name-source-coverage/v1", "sources": 2,
+                        "historical_named_translations_added": 0, "count_basis": "distinct-exact-recipient-occurrences"}
+                    catalog = trail == ("structure",) and parts[:3] == ("structure", "propers", "catalog")
+                    if item != expected or (trail != () and not catalog) or payload.get("calendar") != "roman-1962":
+                        raise ReleaseError(f"{label} {_address(trail)}: unknown/misplaced finite name coverage")
+                if key == "name_execution_sources":
+                    try:
+                        import _name_execution
+                        if not isinstance(item, list) or len(item) != 1:
+                            raise ValueError("one exact finite name source required")
+                        source = _name_execution.validate_public(item[0], ROOT)
+                        target = tuple(source["target"])
+                        if target in name_seen:
+                            raise ValueError("repeated finite name recipient")
+                        name_seen.add(target)
+                        if payload.get("calendar") != "roman-1962" or parts[:2] != ("structure", "propers"):
+                            raise ValueError("finite name source outside Roman1962 propers")
+                        if (mass_key, value.get("form_id"), value.get("name")) != target[:3]:
+                            raise ValueError("finite name recipient/form/slot differs")
+                        if value.get("taken_from") != source["recipient_source_relation"]:
+                            raise ValueError("exact own/Common recipient source relation differs")
+                        if _name_execution.sha(value.get("text") or "") != source["canonical_latin_sha256"]:
+                            raise ValueError("current canonical source differs; no Latin repair allowed")
+                    except (ValueError, KeyError, TypeError, OSError) as error:
+                        raise ReleaseError(f"{label} {_address(trail)}: {error}") from error
                 if key == "execution_source_coverage":
                     expected_coverage = {"schema": "triptych-execution-source-coverage/v1", "language": "en",
                         "count_basis": "distinct-source-targets", "sources": 6,
@@ -1465,6 +1492,8 @@ def validate_liturgical_public_data(path: Path) -> None:
                         raise ReleaseError(f"{label} {_address(trail)}: {error}") from error
                 visit_execution(item, trail + (key,), mass_key)
     visit_execution(payload)
+    if isinstance(payload, dict) and "name_execution_source_coverage" in payload and len(name_seen) != 2:
+        raise ReleaseError(f"{label}: finite name coverage disagrees with actual separate source domain")
     if isinstance(payload, dict) and "execution_source_coverage" in payload:
         expected_execution_coverage = {"schema": "triptych-execution-source-coverage/v1", "language": "en",
             "count_basis": "distinct-source-targets", "sources": len(execution_seen),
@@ -1900,7 +1929,7 @@ def validate_propers_read_payload_sources(data_root: Path) -> None:
     # Execution-source coverage is validated by the per-file public gate; its
     # complete value is bound to the catalog by the exact comparison below.
     if (not isinstance(monolith, dict)
-            or set(monolith) - {"proper_appointment_facts", "execution_source_coverage"} != {
+            or set(monolith) - {"proper_appointment_facts", "execution_source_coverage", "name_execution_source_coverage"} != {
                 "schema", "calendar", "edition", "edition_short", "numbering",
                 "translations", "languages", "coverage", "masses",
             }

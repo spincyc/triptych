@@ -44,6 +44,7 @@ title supports a separate traditional-attribution for Ps. 33 and Ps. 94; the
 earlier superscription-setting remains and Ps. 117 remains undated under the
 traditional profile. The checks preserve each relation and its provenance.
 """
+import ast
 import json
 import re
 import shutil
@@ -355,8 +356,29 @@ class WiringTests(unittest.TestCase):
 
         source = (ROOT / "scripts" / "_proper_chronology.py").read_text(
             encoding="utf-8")
-        code = "\n".join(line for line in source.splitlines()
-                         if not line.lstrip().startswith("#"))
+        # Leaf presentation metadata is not chronology corpus input. Exactly
+        # this helper reads its manifest and an optional generated format
+        # header. Keep file reads forbidden everywhere else in the wiring.
+        tree = ast.parse(source)
+        presentation = next(node for node in tree.body
+                            if isinstance(node, ast.FunctionDef)
+                            and node.name == "presentation_contract")
+        calls = [node for node in ast.walk(presentation)
+                 if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute)
+                 and node.func.attr in {"read_text", "read_bytes", "open", "glob", "rglob"}]
+        self.assertEqual(sorted(ast.unparse(node.func) for node in calls),
+                         ["generated.read_text", "path.read_text"])
+        assignments = {node.targets[0].id: ast.unparse(node.value)
+                       for node in ast.walk(presentation)
+                       if isinstance(node, ast.Assign) and len(node.targets) == 1
+                       and isinstance(node.targets[0], ast.Name)}
+        self.assertEqual(assignments["path"], "leaf / 'proper-components.toml'")
+        self.assertEqual(assignments["generated"], "leaf / ANNOTATIONS_RECORD")
+        self.assertEqual(_proper_chronology.ANNOTATIONS_RECORD, "research/chronology-annotations.tex")
+        lines = source.splitlines()
+        code = "\n".join(line for number, line in enumerate(lines, 1)
+                         if not presentation.lineno <= number <= presentation.end_lineno
+                         and not line.lstrip().startswith("#"))
         self.assertIn("import _chronology", code)
         for forbidden in ("import yaml", "CORPUS_ROOT", "open(",
                           "read_text", "glob("):

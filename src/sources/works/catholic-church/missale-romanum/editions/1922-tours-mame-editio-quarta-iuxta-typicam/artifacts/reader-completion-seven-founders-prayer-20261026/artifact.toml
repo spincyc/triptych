@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-completion-seven-founders-prayer-20261026"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The exact Alfred Mame Tours 1922 commercial printing is public domain in the United States by elapsed publication-date term. This does not rely on host availability or the unsupported older assertion of expiry before1996. Historical source words and faithful mechanical reproductions are excluded from the project CC BY4.0 grant."
+provenance = "The entire own Seven Founders Collect, with actual Qui vivis. stop, was independently read on complete Mame1922 PDF648/printed534 at2400and4800pixels. The complete page is retained separately. OCR supplied no reading."
+retrieved = "2026-10-26"
+sha256 = "bd026ec0167047cb34a82fa74f7777e7e56bf9123c4c500050fa9961fa5c2d76"
+byte_size = 257
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-completion-seven-founders-prayer-20261026/latin-only.txt"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-completion-seven-founders-pages-20261026"
+transformation = "Join printed physical wraps and true line-end divisions; remove stress accents, expand ae/oe ligatures, normalize decorative initial case and typographic spacing. Preserve actual source words, pointing, Genitricis, foecundasti and short Qui vivis. ending. One complete historical prayer plus finalLF."
+encoding = "utf-8"
+indexable = true
+notes = "This historical transcript does not contain target Genetricis/fecundasti or its longer ending and is never labeled as literal target-byte identity."

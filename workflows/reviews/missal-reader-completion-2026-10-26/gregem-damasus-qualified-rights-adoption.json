@@ -1,0 +1,173 @@
+{
+  "schema": "triptych-finite-qualified-Latin-rights-adoption/v1",
+  "status": "accepted",
+  "reviewer": "root",
+  "reviewed_on": "2026-10-26",
+  "jurisdiction": "United States civil copyright; no new foreign or canonical permission adjudication",
+  "policy_basis": "guidance/liturgical-text-publication-policy.md section1 priority6 ambiguous-but-defensible",
+  "confidence": "moderate; bounded editorial assessment, not a court judgment or holder permission",
+  "independent_rights_recommendation_sha256": "55cd087ccae72be5c4fc5a9ee8e1cd7ac8ca9ee7aa33c893fabf1ce5a3b2a055",
+  "independent_source_comparison_sha256": "0e9b90e235df57345455980ace764a447404356230d6c631d94acd613ccad890",
+  "source_review_sha256": "fb4a82f2a87fc599118484eb64011708017d80c8ad05a7d28221c1ec8b41aee9",
+  "exact_scopes": [
+    {
+      "target": [
+        "commune-summorum-pontificum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "operation": "permit-only-exact-received-Latin-body-through-truthful-source-and-rights-proof",
+      "received_text_with_terminal_LF": {
+        "text": "Gregem tuum, Pastor aeterne, placatus intende: et per beatum N. (Martyrem tuum atque) Summum Pontificem perpetua protectione custodi; quem totius Ecclesiae praestitisti esse pastorem. Per Dominum.\n",
+        "sha256_with_final_LF": "e520fa2e88c8241c62b0ab06171beb2da1532bb39d25b2b7059a6dd80b2f1bd4",
+        "UTF8_bytes": 197
+      },
+      "underlying_whole_foundation": {
+        "text": "Gregem tuum Pastor bone placatus intende et per beatos apostolos perpetua protectione custodi quos totius ecclesiae praestitisti Filii tui vicarios esse pastores per.\n",
+        "sha256_with_final_LF": "755f446efcf85d6417f256f7f1291df29bbfa87504bcf31580dd4a50988fa718",
+        "UTF8_bytes": 167
+      },
+      "source_fact": "Feltoe1896 printed42 physical66 corrected by same-edition erratum physical24; this is a critical printed witness, not an exact manuscript reproduction. AAS1942 and1962 supply exact later target attestation and are separately disclosed.",
+      "whole_arrangement_assessment": "The old single prayer supplies the continuous governing sequence: look upon the flock and keep it under perpetual protection through the appointed shepherds. The exact later edit retains that sequence. The change in addressee epithet, singular name/office/martyr slot, necessary relative and predicate agreement, removal of Filii tui vicarios, and conventional conclusion completion form a limited adaptation of that one template. Taken together, these do not add a new narrative, juxtaposition of separate source prayers, or independently developed petition. This supports the qualified view that the new contribution remains routine and below sufficient original authorship.",
+      "strongest_contrary_argument": "Replacing apostles/vicars of the Son with a SupremePontiff and omitting the vicar clause is a theological redaction, not wholly mechanical grammar. The aggregate could be treated as minimally creative expressive adaptation. The cited authorities do not decide this prayer, so publication is proposed under policy priority6 rather than asserted as an unqualified historical whole-prayer public-domain identity."
+    },
+    {
+      "target": [
+        "s-damasi-i-papae-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "operation": "correct-existing-rights-and-proof-rationale-only-preserve-all-body-and-English-bytes",
+      "current_raw_wrapped_body_sha256": "8be4980dfd10f7a70ea1e0674d51271639d7f187b2013678d884a52f51d1bef5",
+      "received_flat_text_with_terminal_LF": {
+        "text": "Gregem tuum, Pastor aeterne, placatus intende: et per beatum Damasum Summum Pontificem perpetua protectione custodi; quem totius Ecclesiae praestitisti esse pastorem. Per Dominum.\n",
+        "sha256_with_final_LF": "4ac4a377e44c85352772e6c28fce60227df947e58d070a60c288a8b8304c474d",
+        "UTF8_bytes": 180
+      },
+      "assessment": "The23word Damasus branch makes the same singular/shepherd/vicar-clause changes while supplying the day's name and omitting the optional martyr phrase. It presents no greater identified new expressive contribution than the assessed Common. The existing positive does not prove the Common's rights and is not an independent old witness."
+    }
+  ],
+  "root_decision": "Adopt the qualified per-text assessment for these two exact forms. The continuous older whole petition supplies the arrangement; the bounded rank/name/agreement and conventional conclusion redaction is assessed together as routine rather than a new developed petition. The theological-redaction originality objection remains disclosed and limits confidence. This is not literal whole-prayer identity or an unqualified public-domain claim. Damasus is assessed independently under the same rationale, never used as authority for Common.",
+  "official_legal_sources": [
+    {
+      "authority": "17 USC101-103;104A",
+      "url": "https://www.copyright.gov/title17/92chap1.html",
+      "retrieved_on": "2026-10-26",
+      "sha256": "97999d678e2877c8142da81a0dce819b210e9f92aa5a405d130bf2f2e50c7d75",
+      "rule": "Original authorship and any new derivative contribution must be distinguished from preexisting material. Foreign-work restoration cannot be dismissed merely for missing US formalities."
+    },
+    {
+      "authority": "17 USC304-305",
+      "url": "https://www.copyright.gov/title17/92chap3.html",
+      "retrieved_on": "2026-10-26",
+      "sha256": "121ed92e20b6fc9325e22a2f0f33cadabc56fda923b06902e8f8372292d0db6d",
+      "rule": "The 95-year published-work term, where applicable, runs through the calendar-year end;1932/1942 publication alone establishes no expired US term in2026."
+    },
+    {
+      "authority": "USCO CompendiumThirdEdition308;311.2;312.2;313.4B-C",
+      "url": "https://www.copyright.gov/comp3/chap300/ch300-copyrightable-authorship.pdf",
+      "retrieved_on": "2026-10-26",
+      "sha256": "363f7898364800c62b7a8457133955df3884cf5950510abaffecf656bd39c37d",
+      "rule": "Routine grammatical edits, names and short phrases can lack authorship; protected selection or adaptation remains possible. Consider the actual whole, not a count of isolated words."
+    },
+    {
+      "authority": "USCO Circular14",
+      "url": "https://www.copyright.gov/circs/circ14.pdf",
+      "retrieved_on": "2026-10-26",
+      "sha256": "928aa3a506f94d5772bad430bbb01ff54aec812194aff33d3aab6b95a2ceffc1",
+      "rule": "A derivative can use one or more older works; new copyright would cover only sufficient new authorship."
+    },
+    {
+      "authority": "Feist499US340,345-351,358-363(1991)",
+      "url": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep499/usrep499340/usrep499340.pdf",
+      "retrieved_on": "2026-10-26",
+      "sha256": "e093d8132592c560347496912858bf7aa41c06cf8173f90e9f53a7aaddad0476",
+      "rule": "Originality has a low creativity threshold; effort alone does not suffice, and original selection/arrangement can matter."
+    }
+  ],
+  "surfaces": [
+    "web",
+    "corpus-data",
+    "public-git",
+    "download",
+    "print",
+    "cli"
+  ],
+  "required_receiving": [
+    "A durable rights record under src/sources/inventories carries these exact targets, policy token, qualified rationale, contrary argument, source/legal citations, surface limits and overturning evidence.",
+    "Exact normalized prayer/source controllers and full before/after proof dictionaries must receive separate mechanical review. No false older-target identity, ownership-based clearance or gate bypass is permitted.",
+    "THIRD_PARTY notice and file-level exclusions distinguish the underlying prayer from scan, typography, apparatus and the project carrier.",
+    "All current English dictionaries and unrelated proof/body/refusal records remain exact."
+  ],
+  "excluded": [
+    "AlbertCollect",
+    "AlbertSecret",
+    "AlbertPostcommunion",
+    "all other Common prayers or recipient fanout",
+    "English translations",
+    "wholeAAS/1962/Lasance PDFs",
+    "modern page images/typography/editorial apparatus",
+    "source acquisition or availability inferred from this rights decision"
+  ],
+  "Albert_holds": [
+    {
+      "target": [
+        "s-alberti-magni-episcopi-confessoris-ecclesiae",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "recommendation": "HOLD_FULL_LATIN_BODY_BASIS_UNRESOLVED_ON_THIS_BOUNDED_RECORD",
+      "exact_obstacle": "No affirmative per-text basis for the potentially modern connected petition, independently of its exact1932/1962 attestation and longer1962 conclusion.",
+      "what_changes_the_hold": [
+        "a qualifying complete older primary witness/authorized stock template matching this exact petition and actual ending",
+        "a body-specific permission or independently established foreign/US publication-term route",
+        "a further reasoned rights assessment that establishes why the complete contribution lacks sufficient original authorship"
+      ]
+    },
+    {
+      "target": [
+        "s-alberti-magni-episcopi-confessoris-ecclesiae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "recommendation": "HOLD_FULL_LATIN_BODY_BASIS_UNRESOLVED_ON_THIS_BOUNDED_RECORD",
+      "exact_obstacle": "The potentially creative new connected arrangement/tail lacks a separate defensible publication basis on this record. No invented stitched older Albert prayer can cure it.",
+      "what_changes_the_hold": [
+        "a complete pre1931 primary witness to this received Albert sequence or a genuinely applicable historical source-authorized template",
+        "an independently verified source for the actual complete arrangement/tail under an applicable affirmative rights route",
+        "body-specific permission or a further well-supported nonoriginality assessment of the entire arrangement"
+      ]
+    },
+    {
+      "target": [
+        "s-alberti-magni-episcopi-confessoris-ecclesiae",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "recommendation": "HOLD_FULL_LATIN_BODY_BASIS_UNRESOLVED_ON_THIS_BOUNDED_RECORD",
+      "exact_obstacle": "No complete older target foundation, applicable printed blank, or sufficiently reasoned nonoriginality basis for the full received petition and actual ending.",
+      "what_changes_the_hold": [
+        "a verified older complete prayer carrying this actual petition and ending",
+        "a source-authorized stock formula with the exact Albert name/office application",
+        "body-specific rights permission or a further evidenced whole-arrangement nonoriginality route"
+      ]
+    }
+  ],
+  "overturning_evidence": [
+    "A specific enforceable reservation or holder evidence concerning the exact new contribution.",
+    "A better per-text originality analysis establishing sufficient creative expressive redaction in the actual full arrangement.",
+    "A material source mismatch or proof failing to bind the exact received target."
+  ],
+  "canonical_grant_path": "workflows/reviews/missal-reader-completion-2026-10-26/gregem-damasus-qualified-rights-adoption.json",
+  "canonical_writes_at_adoption": 0
+}

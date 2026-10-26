@@ -74,12 +74,12 @@ class PrintedPageLabels(unittest.TestCase):
             with self.subTest(label=label):
                 self.assertFalse(helper.approved_lasance_printed_page({"witness": "lasance-1945", "printed_page": label}))
 
-    def source_problems(self, printed, *, context=None, artifact_pages=None, states=None, witness="lefebvre-1925"):
+    def source_problems(self, printed, *, context=None, artifact_pages=None, states=None, witness="lefebvre-1925", artifact_sha256=None):
         entry = dict(artifact_id="artifact.page", passage_id="passage.page", ia_leaf=1747,
                      ia_leaf_range=[1747, 1747], printed_page=printed, witness=witness,
                      translations=[dict(source_id="edition.lefebvre", rights="public-domain")])
         locus = f"printed pp. {printed}" if "-" in printed or "–" in printed else f"printed p. {printed}"
-        passage = dict(artifact_id="artifact.page", artifact_sha256="a" * 64,
+        passage = dict(artifact_id="artifact.page", artifact_sha256="a" * 64 if artifact_sha256 is None else artifact_sha256,
                        artifact_page_ranges=artifact_pages or [[1748, 1748]],
                        states=["inspected", "verified"] if states is None else states,
                        verified_on="2026-10-26", context=locus if context is None else context)
@@ -122,6 +122,43 @@ class PrintedPageLabels(unittest.TestCase):
         ):
             with self.subTest(printed=printed, context=context):
                 self.assertEqual(self.source_problems(printed, context=context), [])
+
+    def test_bare_printed_locators_accept_exact_labels_and_ranges(self):
+        for printed in ("1619", "1175", "1506", "399", "1383", "1271-1272", "1224",
+                        "1711²", "1711²–⁴", "1711²-1711⁴", "1711a-1711b"):
+            with self.subTest(printed=printed):
+                self.assertEqual(self.source_problems(printed, context=f"Source location: printed {printed}."), [])
+
+    def test_bare_printed_locators_require_literal_case_suffixes_and_endpoints(self):
+        for printed, context in (
+            ("1711", "printed 17112"),
+            ("1711", "printed 1711²"),
+            ("1711²", "printed 1711³"),
+            ("1711²", "printed 1711²⁰"),
+            ("1711²", "printed 1711²a"),
+            ("1711²", "printed 1711²_note"),
+            ("1711²", "printed 1711²–⁴"),
+            ("1711²", "printed 1711² - 1711⁴"),
+            ("1711²", "unprinted 1711²"),
+            ("1711²", "Printed 1711²"),
+            ("1711²", "printed pp. 1711²"),
+            ("1711a", "printed 1711A"),
+            ("1271-1272", "printed 1271"),
+            ("1271-1272", "printed 1271-1273"),
+            ("1271-1272", "printed 1271-12720"),
+            ("1271-1272", "printed 1271-1272-1273"),
+            ("1711²–⁴", "printed 1711²–³"),
+            ("1711²–⁴", "printed 1711²–⁴⁰"),
+            ("1711²–⁴", "printed 1711²–⁴–⁶"),
+        ):
+            with self.subTest(printed=printed, context=context):
+                self.assertIn("passage context does not record", "\n".join(self.source_problems(printed, context=context)))
+
+    def test_bare_printed_locator_keeps_physical_page_and_hash_proofs(self):
+        context = "Source location: printed 1711²."
+        self.assertIn("artifact_page_ranges [[1748, 1748]]", "\n".join(self.source_problems("1711²", context=context, artifact_pages=[[1749, 1749]])))
+        self.assertIn("artifact_sha256 does not pin the named artifact", "\n".join(self.source_problems("1711²", context=context, artifact_sha256="b" * 64)))
+        self.assertIn("inspected and dated verified passage", "\n".join(self.source_problems("1711²", context=context, states=["inspected"])))
 
     def test_longer_locator_or_range_cannot_prove_an_exact_context_label(self):
         for printed, context in (

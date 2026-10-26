@@ -59,6 +59,13 @@ cannot drift into two rules --- which is exactly what had already happened
 between `from_artifact` and `from_inventory`, and is why the postconciliar Latin
 could not be reached at all however much of it this project held.
 
+A language text block may declare `applicability` with exactly `kind =
+"formulary"`, `calendar`, a nonempty unique `formularies` list, and a cited
+`basis`. This scopes execution of the held body by appointed formulary identity;
+source coverage still counts it as held. Consumers require the closed context
+{calendar, formulary}; absent, malformed or unmatched context never authorizes
+its words. Civil clock time supplies no source appointment.
+
 Two languages do not imply one provenance. The artifact-backed Roman frames join
 the facing columns of one printing and may therefore assume only a shared key
 space. Each carried column still declares an `english` or `latin` provenance
@@ -526,7 +533,7 @@ ADDITIONAL_TEXT_FIELDS = {"element", "english", "latin", "english_turns",
                           "latin_turns", "turns_basis"}
 ADDITIONAL_SIDE_FIELDS = {"witness", "artifact", "element", "elements", "column",
                           "relation", "collation", "collation_finding",
-                          "target_wording", "note"}
+                          "target_wording", "note", "applicability"}
 
 # A complete, separately witnessed English body may replace a defective or
 # abbreviated base rendering. The old source artifact remains immutable, and
@@ -2824,6 +2831,31 @@ def structured_turns(entry: dict, side: str, library: dict, artifact_id: str,
     return turns
 
 
+def translation_applicability(block: dict, key: str, lang: str, name: str) -> dict | None:
+    """A held language body may have narrower execution scope than its element.
+
+    The closed formulary contract uses appointed source identity, never clock
+    time. Coverage continues to count the held source body; execution consumers
+    must establish a matching calendar/formulary before exposing its words.
+    """
+    if "applicability" not in block:
+        return None
+    scope = block["applicability"]
+    fields = {"kind", "calendar", "formularies", "basis"}
+    identifier = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+    if (not isinstance(scope, dict) or set(scope) != fields
+            or scope.get("kind") != "formulary"
+            or not isinstance(scope.get("calendar"), str)
+            or not identifier.fullmatch(scope["calendar"])
+            or not isinstance(scope.get("basis"), str) or not scope["basis"].strip()
+            or not isinstance(scope.get("formularies"), list) or not scope["formularies"]
+            or any(not isinstance(one, str) or not identifier.fullmatch(one)
+                   for one in scope["formularies"])
+            or len(scope["formularies"]) != len(set(scope["formularies"]))):
+        raise SourceError(f"{name}: element {key} has malformed {lang} applicability")
+    return {**scope, "formularies": list(scope["formularies"])}
+
+
 def side_text(entry: dict, lang: str, witnesses: dict, restricted: dict, library: dict,
               key: str, name: str) -> dict | None:
     """One element's text in one language, from whichever edition holds it.
@@ -2888,6 +2920,9 @@ def side_text(entry: dict, lang: str, witnesses: dict, restricted: dict, library
             f"{name}: element {key} draws project-created Latin from "
             f"{witness_id} without a collated word-exact target_wording"
         )
+    scope = translation_applicability(block, key, lang, name)
+    if scope is not None:
+        translation["applicability"] = scope
     turns = structured_turns(
         entry, SIDE_BLOCKS[lang], library, artifact_id, named, column, key, name, text
     )

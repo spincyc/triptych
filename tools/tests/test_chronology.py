@@ -15,6 +15,7 @@ would go green against the wrong file.
 """
 from __future__ import annotations
 
+import hashlib
 import io
 import json
 import re
@@ -1096,8 +1097,34 @@ bindings:
         attributed = (32, 33, 39, 70, 85, 94, 97, 107, 118, 137, 140, 144)
         self.assertEqual(
             {str(span) for item in bindings for span in item.scope},
-            {f"Ps.{chapter}" for chapter in attributed},
+            {f"Ps.{chapter}" for chapter in attributed}
+            | {"Ps.2.8", "Ps.28.10-11", "Ps.71.1", "Ps.71.8", "Ps.71.11"},
         )
+        # The source-authored F01 row is deliberately narrower than a whole
+        # Psalm attribution. Pin its complete scope and author qualification;
+        # this changes neither chronology claims nor their acceptance state.
+        partial = [item for item in bindings
+                   if "Ps.2.8" in {str(span) for span in item.scope}]
+        self.assertEqual(len(partial), 1)
+        self.assertEqual({str(span) for span in partial[0].scope},
+                         {"Ps.2.8", "Ps.28.10-11", "Ps.71.1", "Ps.71.8", "Ps.71.11"})
+        self.assertEqual(hashlib.sha256(partial[0].note.encode()).hexdigest(),
+                         "39b3fc5d6c4b5f037c61c7d88e82744334119cf60570cec3034e508f10cc01dd")
+        self.assertEqual(set(partial[0].sources), {
+            "bible:douay-rheims:Ps.28.1", "bible:douay-rheims:Ps.71.1",
+            "bible:douay-rheims:Acts.4.25",
+            "artifact.robert-bellarmine.commentary-on-the-book-of-psalms."
+            "2026-09-05-osullivan-ecatholic2000.historical-text-357551e1",
+        })
+        for locus in ("Ps.2.8", "Ps.28.10", "Ps.28.11", "Ps.71.1", "Ps.71.8", "Ps.71.11"):
+            answer = _chronology.chronology(locus)
+            matching = [item for item in answer.assertions
+                        if item.relation == "traditional-attribution" and item.subject == subject]
+            self.assertEqual(len(matching), 1, locus)
+            self.assertEqual(matching[0].claim.disposition, "disputed", locus)
+        for locus in ("Ps.2.7", "Ps.2.9", "Ps.28.9", "Ps.71.2", "Ps.71.7", "Ps.71.9", "Ps.71.10", "Ps.71.12"):
+            self.assertFalse([item for item in _chronology.chronology(locus).assertions
+                              if item.relation == "traditional-attribution" and item.subject == subject], locus)
         for chapter in attributed:
             for verse in (1, _chronology.verse_counts()[("Ps", chapter)]):
                 with self.subTest(chapter=chapter, verse=verse):

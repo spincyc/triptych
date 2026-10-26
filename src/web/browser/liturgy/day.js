@@ -1039,7 +1039,8 @@
       // The Ordinary is the frame and the propers go into it. A Mass with no
       // formulary still gets the frame: the reader is following the same rite,
       // and the line above has already said what is not transcribed.
-      section.appendChild(renderFrame(ordinary, propers, renderMassProper));
+      section.appendChild(renderFrame(ordinary, propers, renderMassProper, null,
+        { calendar: derived.calendar, formulary: mass && mass.key }));
     } else if (formSelection.ok) {
       for (const proper of propers) {
         if (T.isPlaceholder(proper)) continue;
@@ -1225,13 +1226,13 @@
     }
   }
 
-  function renderPairedElement(element, file, language) {
+  function renderPairedElement(element, file, language, context) {
     const section = T.el('section', 'proper ordinary-element is-' + element.kind);
     const heading = elementHeading(element);
     if (heading) section.appendChild(heading);
     const pair = T.el('div', 'text-pair');
     for (const lang of ['la', language.lang]) {
-      const selected = window.LiturgyReaderStateAdapters.selectOrdinaryTranslation(element, file, lang, null);
+      const selected = window.LiturgyReaderStateAdapters.selectOrdinaryTranslation(element, file, lang, null, context);
       const raw = selected.availability === 'held' && (element.translations || []).find(function (row) {
         return row.lang === lang && (row.source_id || row.source || null) === selected.sourceId && row.text === selected.text;
       });
@@ -1252,7 +1253,7 @@
     return section;
   }
 
-  function renderElement(element, file, options) {
+  function renderElement(element, file, options, context) {
     // The kind rides on the class, because how a missal sets an element is
     // decided by what kind of thing it is: a rubric in italic, a head across
     // the measure, a prayer in the reading face. Who says it is on the heading,
@@ -1260,7 +1261,7 @@
     const explicit = options || {};
     const requested = chosenLanguage(file);
     if (!options && state.textDisplay === 'latin-and-selected' && requested && requested.lang !== 'la') {
-      return renderPairedElement(element, file, requested);
+      return renderPairedElement(element, file, requested, context);
     }
     const section = T.el('section', (options ? 'text-side-body is-' : 'proper ordinary-element is-') + element.kind);
 
@@ -1269,9 +1270,15 @@
 
     const language = explicit.language ? { lang: explicit.language } : chosenLanguage(file);
     const translations = element.translations || [];
-    const held = options ? explicit.held : (language
-      ? translations.find((one) => one.lang === language.lang) || null
-      : null);
+    const guarded = language && translations.some((one) => one.lang === language.lang &&
+      Object.prototype.hasOwnProperty.call(one, 'applicability'));
+    const selected = explicit.selected || (guarded &&
+      window.LiturgyReaderStateAdapters.selectOrdinaryTranslation(element, file, language.lang, null, context));
+    const held = selected ? (selected.availability === 'held' && translations.find((one) =>
+      one.lang === language.lang && one.text === selected.text &&
+      (one.source_id || one.source || null) === selected.sourceId) || null)
+      : (options ? explicit.held : (language
+        ? translations.find((one) => one.lang === language.lang) || null : null));
     if (held) {
       // No label above the words. "Composed text — not scripture" is true of
       // every element of an Ordinary, so saying it 195 times said nothing 194
@@ -1317,18 +1324,22 @@
     // nothing in any language at all; there the reader is looking at an incipit and is owed the entire
     // account of why, and everywhere else the count stands in the preamble
     // rather than under 195 elements that do have their words.
-    const choice = explicit.selected && explicit.selected.availability === 'choice-required';
+    const choice = selected && selected.availability === 'choice-required';
     if (choice) section.appendChild(T.el('p', 'composed-note unit-absence',
-      'Several ' + T.languageName(explicit.language) + ' Ordinary witnesses are held; no witness was selected.'));
-    if (options && !held && !choice) {
-      const note = T.notice('its ' + T.languageName(explicit.language) + '. ' +
-        absenceWord(file, explicit.selected.absenceKey));
-      note.setAttribute('data-text-absence', explicit.language + ':' + explicit.selected.reason);
+      'Several ' + T.languageName(language.lang) + ' Ordinary witnesses are held; no witness was selected.'));
+    if ((options || guarded) && !held && !choice) {
+      const applicability = selected.applicability;
+      const reason = applicability ? (applicability.state === 'unresolved'
+        ? 'Applicability is unresolved: no appointed formulary context is established for this held source text.'
+        : 'This held source text is not applicable to the appointed formulary.')
+        : absenceWord(file, selected.absenceKey);
+      const note = T.notice('its ' + T.languageName(language.lang) + '. ' + reason);
+      note.setAttribute('data-text-absence', language.lang + ':' + selected.reason);
       section.appendChild(note);
     }
     const anywhere = translations.length > 0;
     for (const one of languagesOf(file)) {
-      if (options) continue;
+      if (options || (guarded && one.lang === language.lang)) continue;
       if (translations.some((row) => row.lang === one.lang)) continue;
       if (anywhere && (!language || one.lang !== language.lang)) continue;
       section.appendChild(T.notice(
@@ -1490,7 +1501,7 @@
   }
 
   /** The frame, with the day's propers set into it. */
-  function renderFrame(file, propers, renderMassProper, decorateEvent) {
+  function renderFrame(file, propers, renderMassProper, decorateEvent, context) {
     const shown = shownElements(file);
     const placed = seatPropers(propers, seats(file, shown));
     const announced = { before: false, after: false };
@@ -1502,7 +1513,7 @@
         return division;
       },
       element: function (event) {
-        const element = renderElement(event.element, file);
+        const element = renderElement(event.element, file, undefined, context);
         if (decorateEvent) decorateEvent(event, element);
         return element;
       },

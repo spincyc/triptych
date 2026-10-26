@@ -1609,9 +1609,9 @@ def overlay_entry_source_problems(
             printed_context = " ".join(
                 str(passage.data.get(field) or "") for field in ("context", "notes")
             )
-            # Recorded range citations use both p. and pp. The exact endpoints,
-            # suffixes and physical-page binding still control the source locus.
-            printed_prefix = r"printed pp?\. " if last else r"printed p\. "
+            # Recorded citations may omit p./pp.; ranges use either marker.
+            # Exact endpoints, suffixes and physical-page binding still control.
+            printed_prefix = r"printed (?:pp?\. )?" if last else r"printed (?:p\. )?"
             # A longer page suffix or range is not proof of this exact locus.
             printed_pattern = (
                 rf"(?<!\w){printed_prefix}{re.escape(str(printed))}"
@@ -3663,6 +3663,14 @@ def overlay_problems(paths: list[Path]) -> tuple[list[str], list[dict]]:
                 if path.parent.name != "roman-1962":
                     raise ValueError("execution_sources is only defined for the finite Roman1962 method")
                 _oration_execution.load_sources(path.parent.parent, path.parent.name, sibling("mass-propers"))
+            except (ValueError, KeyError, TypeError, OSError) as error:
+                problems.append(f"{sidecar}: {error}")
+        if "name_execution_sources" in document:
+            try:
+                import _name_execution
+                if path.parent.name != "roman-1962":
+                    raise ValueError("name_execution_sources is defined only for the finite Roman1962 two-case method")
+                _name_execution.load_name_sources(path.parent.parent, path.parent.name, sibling("mass-propers"))
             except (ValueError, KeyError, TypeError, OSError) as error:
                 problems.append(f"{sidecar}: {error}")
         # Loaded once, and only where a sidecar was actually found.

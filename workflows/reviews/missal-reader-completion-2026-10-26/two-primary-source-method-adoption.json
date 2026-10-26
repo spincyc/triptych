@@ -1,0 +1,808 @@
+{
+  "schema": "triptych-exact-two-source-method-root-adoption/v1",
+  "status": "accepted",
+  "reviewer": "root",
+  "reviewed_on": "2026-10-26",
+  "method_id": "finite-two-primary-spellings-and-person-20261026",
+  "proposed_method_sha256": "c23810552267572606b07f743a18f4f0372627987d99c88c076f556a597cbded",
+  "independent_semantic_review_sha256": "f29fed5dd190bfaebe64f3479fb9e2238ef10e4966fde889ced9911af1a8d5f2",
+  "independent_full_source_chain_review_sha256": "aab4ff9945ab8e444b909837087506da56c4ff826c3827191681bc94664907bf",
+  "scope": "Exactly these two current full-prayer/source/English/proof/cue contexts; old20, old ablative two-target grant, all earlier methods and all unrelated holds remain unchanged.",
+  "controls": [
+    {
+      "id": "passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-supplement-v2-fecundo-foecundo",
+      "controller_sha256": "40fcccaf01e297f47ebe5533f690e02319195c9cb3cadca62c3a7d6379d42de3",
+      "locus": "Lewis and Short 1879 printed733 and764; retained focused PDF3–4.",
+      "observed": "The fecundo entry marks a transitive first-conjugation verb and gives the sense make fruitful; foecundo is expressly cross-referenced to fec-.",
+      "qualification": "The following fecundus entry describes foecund-/faecund- spellings as sometimes erroneous. Lexeme identity is not a claim of equal editorial preference. No foet-/fet- or general oe/e replacement follows.",
+      "controller_id": "artifact.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-supplement-v2-facsimile-40fcccaf"
+    },
+    {
+      "id": "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.finite-two-perfect-contraction-20261026",
+      "controller_sha256": "2d7edbac5e1c30b5b54c4a934eb5de99543154a0bf763162496a8518757479cb",
+      "locus": "Allen and Greenough 1903 printed91 section181; parent PDF109; proposed retained full-page excerpt1.",
+      "observed": "Perfect-stem v between vowels may disappear with contraction; section181a covers perfects in -avi and preserves its stated restrictions.",
+      "qualification": "The exact prayer forms are not printed by this grammar. Their analysis is an explicit manual inference for the actual word at the actual prayer position, combined with the printed lemma and contextual syntax."
+    },
+    {
+      "id": "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.finite-two-first-conjugation-perfect-second-singular-20261026",
+      "controller_sha256": "3149a59c04dd651e1cdc562aedba19f0fc34d611af9a62950b3fc200f511d0e3",
+      "locus": "Allen and Greenough 1903 printed93 section184; parent PDF111; existing retained excerpt6.",
+      "observed": "The active perfect indicative singular paradigm explicitly prints amavisti with the English you loved.",
+      "qualification": "That actual page is already retained; the earlier source passage used its present rows only and its old permissions remain unchanged."
+    },
+    {
+      "id": "passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.genitrice-genetrice-lemma-identity",
+      "controller_sha256": "840823d07bb22ee8a4d9b06e3ec32886b7b7f732cce651f4ce17bff58a1bb78e",
+      "locus": "Lewis and Short 1879 printed807–808; retained focused PDF4–5.",
+      "observed": "Genetrix (less frequent genitrix), -icis, feminine, is one mother noun; the genitrix entry cross-refers to genetrix.",
+      "qualification": "The frequency distinction and orthographical index preference are retained. Exact actual Genitricis/Genetricis are judged here as feminine genitive singular only; the old ablative Genitrice two-target grant does not license this new context.",
+      "controller_id": "artifact.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.genitrice-genetrice-evidence-facsimile-840823d0"
+    },
+    {
+      "id": "passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.genitrice-genetrice-orthographical-reservation",
+      "controller_sha256": "840823d07bb22ee8a4d9b06e3ec32886b7b7f732cce651f4ce17bff58a1bb78e",
+      "locus": "Lewis and Short orthographical index; retained excerpt3.",
+      "observed": "The orthographical index prefers genetrix to genitrix while the full lemma expressly recognizes both spellings.",
+      "qualification": "No blanket e/i transform or equal-preference claim.",
+      "controller_id": "artifact.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.genitrice-genetrice-evidence-facsimile-840823d0"
+    }
+  ],
+  "contexts": [
+    {
+      "target": [
+        "ss-septem-fundatorum-ordinis-servorum-beatae",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "comparison_route": "closed-finite-context",
+      "finite_relation": "NEW_EXACT_LEXICAL_PERSON_AND_ACTUAL_CONCLUSION_CONTEXT_PROPOSED_ONLY",
+      "historical_latin": "Domine Jesu Christe, qui ad recolendam memoriam dolorum sanctissimae Genitricis tuae, per septem beatos Patres nova Servorum ejus familia Ecclesiam tuam foecundasti: concede propitius; ita nos eorum consociari fletibus, ut perfruamur et gaudiis: Qui vivis.",
+      "historical_latin_sha256": "504784d7615539c7c52dd87cb18140a4b6f758f0aa85aa5c523639d47eee51a7",
+      "english": "O Lord Jesus Christ Who, in order to renew the memory of the sorrows of Thy most holy Mother, hast through the seven blessed fathers enriched Thy Church with a new family of her servants; mercifully grant that we may be so united in their sorrows as to share in their joys. Who livest and reignest.",
+      "english_sha256": "f814ae468b8e433e23ab109607aa4237e9e1ab0a47e8671fa6e770d9ce351452",
+      "actual_source_cue": "Qui vivis.",
+      "actual_source_cue_sha256": "3ac4f21a2d3e9601286a0b0c08f76c1ff488ef749fa847e94478ab0e4d9947a3",
+      "actual_English_cue": "Who livest and reignest.",
+      "actual_English_cue_sha256": "974b4d4c5218f67b43382f44fcad137b930a85026f5f666437c18655297d7261",
+      "actual_target_cue": "Qui vivis et regnas cum Deo Patre in\nunitate.\n",
+      "actual_target_cue_sha256": "288a24fe6d1e7dfd7eed8ff134ff16220cbd0981ab7d8fb29fa34bd969441a05",
+      "source_artifact_id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf",
+      "source_edition_id": "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925",
+      "source_pdf_sha256": "28c9046c5acfa19297ab9aeaa14ac4f8d8fcffab1307b51215b94fa4ca6172a2",
+      "actual_prayer_pdf_pages": [
+        1307,
+        1308
+      ],
+      "actual_prayer_printed_pages": [
+        "1271",
+        "1272"
+      ],
+      "source_context": "Within the separately headed FEBRUARY12 Seven Holy Founders of the Servite Order Mass, the own Collect begins in the bottom paired columns of PDF1307/printed1271. Its final flétibus word crosses to PDF1308/printed1272; both full language endings appear at the head of that next page, followed by the Lenten commemoration rubric and Epistle. The previous Apparition prayer at the top of PDF1307 is a different preceding unit and was excluded.",
+      "petition_word_count": 33,
+      "source_petition_tokens": [
+        "domine",
+        "jesu",
+        "christe",
+        "qui",
+        "ad",
+        "recolendam",
+        "memoriam",
+        "dolorum",
+        "sanctissimae",
+        "genitricis",
+        "tuae",
+        "per",
+        "septem",
+        "beatos",
+        "patres",
+        "nova",
+        "servorum",
+        "ejus",
+        "familia",
+        "ecclesiam",
+        "tuam",
+        "foecundasti",
+        "concede",
+        "propitius",
+        "ita",
+        "nos",
+        "eorum",
+        "consociari",
+        "fletibus",
+        "ut",
+        "perfruamur",
+        "et",
+        "gaudiis"
+      ],
+      "target_petition_tokens": [
+        "domine",
+        "jesu",
+        "christe",
+        "qui",
+        "ad",
+        "recolendam",
+        "memoriam",
+        "dolorum",
+        "sanctissimae",
+        "genetricis",
+        "tuae",
+        "per",
+        "septem",
+        "beatos",
+        "patres",
+        "nova",
+        "servorum",
+        "ejus",
+        "familia",
+        "ecclesiam",
+        "tuam",
+        "fecundasti",
+        "concede",
+        "propitius",
+        "ita",
+        "nos",
+        "eorum",
+        "consociari",
+        "fletibus",
+        "ut",
+        "perfruamur",
+        "et",
+        "gaudiis"
+      ],
+      "complete_petition_differences": [
+        {
+          "position": 9,
+          "source": "genitricis",
+          "target": "genetricis"
+        },
+        {
+          "position": 21,
+          "source": "foecundasti",
+          "target": "fecundasti"
+        }
+      ],
+      "exact_contextual_judgments": [
+        {
+          "position": 9,
+          "source": "genitricis",
+          "target": "genetricis",
+          "lemma": "genitrix / genetrix",
+          "part_of_speech": "noun",
+          "gender": "feminine",
+          "number": "singular",
+          "case": "genitive",
+          "actual_syntax": "Dependent on dolorum within memoriam dolorum sanctissimae Genitricis/Genetricis tuae; sanctissimae and tuae agree with the mother noun. The addressee is explicitly Domine Jesu Christe.",
+          "evidence_ids": [
+            "passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.genitrice-genetrice-lemma-identity",
+            "passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.genitrice-genetrice-orthographical-reservation"
+          ],
+          "scope_of_prior_authority": "Owning guidance and the earlier declared-orthography method recognize Genetrix/Genitrix as received forms; the old20 list and the old two-target ablative grant do not include or authorize this genitive context. This exact genitive occurrence is expressly submitted for the present independent/root judgment.",
+          "basis_kind": "dictionary lemma/genitive ending plus the actually printed full prayer forms and syntax; local manual judgment only"
+        },
+        {
+          "position": 21,
+          "source": "foecundasti",
+          "target": "fecundasti",
+          "lemma": "foecundo / fecundo",
+          "part_of_speech": "verb",
+          "mood": "indicative",
+          "tense": "perfect",
+          "voice": "active",
+          "person": 2,
+          "number": "singular",
+          "actual_syntax": "Christ is addressed in Domine Jesu Christe; the relative qui has that addressee as antecedent; Ecclesiam tuam is the feminine accusative singular direct object and nova Servorum ejus familia is an ablative complement. Both actual forms are contracted perfect second singular, corresponding analytically to foecundavisti/fecundavisti; these longer forms are explanatory analysis, never substituted into source, target or English.",
+          "evidence_ids": [
+            "passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-supplement-v2-fecundo-foecundo",
+            "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.finite-two-first-conjugation-perfect-second-singular-20261026",
+            "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.finite-two-perfect-contraction-20261026"
+          ],
+          "basis_kind": "manual analysis of this actual printed word using the explicit dictionary lemma cross-reference and first-conjugation perfect/contraction evidence, not generic stem substitution",
+          "reservation": "The lexicon editorially prefers fecund- and calls foecund-/faecund- sometimes erroneous; the comparison identifies the same word without claiming equal preference. The old foetu/fetu noun pair supplies no permission here."
+        }
+      ],
+      "conclusion_context": {
+        "addressee": "Jesus Christ, explicitly named in the initial vocative; second-person Qui vivis source cue and complete target cue remain Christ-directed.",
+        "family": "direct-Son Qui vivis",
+        "own_source_full_control_id": "qui-vivis-full",
+        "own_source_full_control_pdf_pages": [
+          104
+        ],
+        "formal_rule": "Mame1922 PDF54 printedxlii IX17 direct Son conclusion; no etc expansion",
+        "actual_target_formula_support": "Complete Mame1922 PDF115 full Christ-directed formula has the complete actual target nine-word ending as a contiguous prefix, including cum Deo Patre.",
+        "new_English_endings_added": false
+      },
+      "current_target_join": {
+        "raw_owner": {
+          "mass": "ss-septem-fundatorum-ordinis-servorum-beatae",
+          "form": "",
+          "proper": "Collect",
+          "course": "",
+          "cycle": "",
+          "occurrence": 1
+        },
+        "raw_body": "Domine Jesu Christe, qui, ad recolendam memoriam dolorum sanctissimae\nGenetricis tuae, per septem beatos Patres nova Servorum ejus familia\nEcclesiam tuam fecundasti: concede propitius; ita nos eorum consociari\nfletibus, ut perfruamur et gaudiis: Qui vivis et regnas cum Deo Patre in\nunitate.\n",
+        "raw_body_sha256": "58883b38d04a0503f279b6752f8be4f0653efb980ac5a44a94519238e307ee5b",
+        "complete_raw_proof": {
+          "mass": "ss-septem-fundatorum-ordinis-servorum-beatae",
+          "form": "",
+          "proper": "Collect",
+          "course": "",
+          "cycle": "",
+          "occurrence": 1,
+          "text_sha256": "58883b38d04a0503f279b6752f8be4f0653efb980ac5a44a94519238e307ee5b",
+          "provenance_status": "collated",
+          "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-seven-founders.seven-founders-collect-20261026",
+          "source_date": "2026-10-26 project editorial projection; complete Mame Tours1922 page-image witness",
+          "locator": "Editorial projection physical lines1-5; complete historical Mame Tours1922 original PDF648/printed534, February12 Seven Founders Collect, right column",
+          "relationship": "editorial-projection-exact-to-target",
+          "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.reader-completion-2026-10-26-seven-founders-collect-target-locator",
+          "verification_locator": "printed p.475, no.2177; artifact PDF p.556",
+          "transformations": [
+            "join historical physical wraps and line-end divisions",
+            "remove historical stress accents and expand ae/oe ligatures",
+            "retain every current target byte and printed pointing as an editorial projection",
+            "declare source Genitricis versus target Genetricis and source foecundasti versus target fecundasti without rewriting the historical source",
+            "use the separately literal Mame Christ-directed conclusion control only through the actual target in unitate stop"
+          ],
+          "provenance_evidence": "Complete source and target page-image collation replaces the earlier mixed Pustet/Mame/OCR account for this current proof only. Mame Tours1922 PDF648/printed534 actually prints the entire prayer with Genitricis, foecundasti and short Qui vivis. The controlling1962page is PDF556/printed475/no2177, not the older wrongPDF557/476 locator. It prints Genetricis, fecundasti and Qui vivis et regnas cum Deo Patre in unitate. The remaining complete petition words agree in order. The exact longer target conclusion prefix is printed contiguously on Mame PDF115, while IX17 onPDF54 identifies the Christ-addressed family. All differences are declared in the new projection; the historical source is not represented as literal target-byte identity or as Pustet1862. No generic lexical, source-wide or English conclusion permission follows.",
+          "provenance_authority": "Triptych editorial projection checked by complete historical and controlling-target page-image collation",
+          "provenance_confidence": "high",
+          "publication_status": "permitted",
+          "publication_basis": "public-domain",
+          "surfaces": [
+            "web",
+            "download",
+            "print",
+            "cli",
+            "corpus-data",
+            "public-git"
+          ],
+          "publication_source_ids": [
+            "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-seven-founders.seven-founders-complete-20261026",
+            "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-completion-seven-founders-prayer-20261026",
+            "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-completion-seven-founders-pages-20261026",
+            "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-support-pages-20261026"
+          ],
+          "publication_locator": "Mame Tours1922 original PDF648, printed534, complete own Seven Founders Collect; literal Christ-conclusion originalPDF115/printed1 and own source rule originalPDF54/printedxlii, retained support extract pages4and3 respectively",
+          "publication_evidence": "Underlying historical prayer language is public-domain material independently documented by the actual Mame Tours1922 full page and complete checked transcription. The current target spellings Genetricis/fecundasti, its pointing and exact longer conclusion stop are separately declared editorial projection choices. Mame actually prints the longer Christ-directed conclusion words contiguously atPDF115, supported by its own IX17 rule atPDF54. The current elapsed-publication-term historical witness plus repository17USC103(b) basis applies. No Pustet1862 attribution, whole1962book clearance, inherited OCR inference, English admission or new spelling/name method is asserted."
+        },
+        "complete_raw_proof_sha256": "77aa2dd0edb659c41358dec2efab75b8c2e00989b34d81865652cfe1c5a7c008",
+        "effective_recorded_decision": {
+          "key": {
+            "mass": "ss-septem-fundatorum-ordinis-servorum-beatae",
+            "form": "",
+            "proper": "Collect",
+            "course": "",
+            "cycle": "",
+            "occurrence": 1
+          },
+          "text_sha256": "58883b38d04a0503f279b6752f8be4f0653efb980ac5a44a94519238e307ee5b",
+          "provenance_status": "collated",
+          "publication_status": "permitted",
+          "publication_basis": "public-domain",
+          "surfaces": [
+            "cli",
+            "corpus-data",
+            "download",
+            "print",
+            "public-git",
+            "web"
+          ],
+          "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-seven-founders.seven-founders-collect-20261026",
+          "source_date": "2026-10-26 project editorial projection; complete Mame Tours1922 page-image witness",
+          "locator": "Editorial projection physical lines1-5; complete historical Mame Tours1922 original PDF648/printed534, February12 Seven Founders Collect, right column",
+          "relationship": "editorial-projection-exact-to-target",
+          "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.reader-completion-2026-10-26-seven-founders-collect-target-locator",
+          "verification_locator": "printed p.475, no.2177; artifact PDF p.556",
+          "transformations": [
+            "join historical physical wraps and line-end divisions",
+            "remove historical stress accents and expand ae/oe ligatures",
+            "retain every current target byte and printed pointing as an editorial projection",
+            "declare source Genitricis versus target Genetricis and source foecundasti versus target fecundasti without rewriting the historical source",
+            "use the separately literal Mame Christ-directed conclusion control only through the actual target in unitate stop"
+          ],
+          "provenance_evidence": "Complete source and target page-image collation replaces the earlier mixed Pustet/Mame/OCR account for this current proof only. Mame Tours1922 PDF648/printed534 actually prints the entire prayer with Genitricis, foecundasti and short Qui vivis. The controlling1962page is PDF556/printed475/no2177, not the older wrongPDF557/476 locator. It prints Genetricis, fecundasti and Qui vivis et regnas cum Deo Patre in unitate. The remaining complete petition words agree in order. The exact longer target conclusion prefix is printed contiguously on Mame PDF115, while IX17 onPDF54 identifies the Christ-addressed family. All differences are declared in the new projection; the historical source is not represented as literal target-byte identity or as Pustet1862. No generic lexical, source-wide or English conclusion permission follows.",
+          "provenance_authority": "Triptych editorial projection checked by complete historical and controlling-target page-image collation",
+          "provenance_confidence": "high",
+          "authority": "",
+          "evidence": "Underlying historical prayer language is public-domain material independently documented by the actual Mame Tours1922 full page and complete checked transcription. The current target spellings Genetricis/fecundasti, its pointing and exact longer conclusion stop are separately declared editorial projection choices. Mame actually prints the longer Christ-directed conclusion words contiguously atPDF115, supported by its own IX17 rule atPDF54. The current elapsed-publication-term historical witness plus repository17USC103(b) basis applies. No Pustet1862 attribution, whole1962book clearance, inherited OCR inference, English admission or new spelling/name method is asserted.",
+          "publication_source_ids": [
+            "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-seven-founders.seven-founders-complete-20261026",
+            "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-completion-seven-founders-prayer-20261026",
+            "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-completion-seven-founders-pages-20261026",
+            "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-support-pages-20261026"
+          ],
+          "publication_locator": "Mame Tours1922 original PDF648, printed534, complete own Seven Founders Collect; literal Christ-conclusion originalPDF115/printed1 and own source rule originalPDF54/printedxlii, retained support extract pages4and3 respectively",
+          "publication_retrieved": "",
+          "notice": "",
+          "note": "",
+          "reason": "",
+          "target_context": null
+        },
+        "effective_recorded_decision_sha256": "7226031743a2573a6f3ed78509a3892bcade9714e039272b2f85f4d41771a8c7",
+        "current_typed_absence": {
+          "mass": "ss-septem-fundatorum-ordinis-servorum-beatae",
+          "form_id": "main",
+          "proper": "Collect",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "reason": {
+            "kind": "no-exemplar"
+          },
+          "note": "No exact English exemplar is bound to this source-established Latin proper."
+        },
+        "current_typed_absence_sha256": "1032a6a6043c4d71a877987b830ae972cff8b0570e68ccf1d3f148aa3ca7fec6",
+        "owning_resolved_slot_identity": [
+          "ss-septem-fundatorum-ordinis-servorum-beatae",
+          "main",
+          "Collect",
+          "all",
+          1
+        ]
+      },
+      "proof_prerequisite": {
+        "required": true,
+        "component": "SevenFounders full truthful Mame source/proof successor, manifest SHA487df1af84ef0453dd858443f4d9daf521180c9900b895957ac6867ea4861f6d",
+        "observed_current_before_proof_sha256": "4847b632669139d385c1654ea9b5ec55ed387f64394869503da6f314742db13a",
+        "required_after_proof_sha256": "77aa2dd0edb659c41358dec2efab75b8c2e00989b34d81865652cfe1c5a7c008",
+        "installation_rule": "Compose the full fourteen-postimage component and its one proof replacement first; do not also install the superseded standalone three-path locator component. Current body and English remain unchanged. Independent chain acceptance and final current-parent replay remain required."
+      },
+      "source_and_English_and_target_rewritten": false,
+      "English_expansion": false,
+      "unprinted_Amen_added": false,
+      "generic_comparator_change": false,
+      "generic_stem_or_name_fold": false,
+      "N_or_X_substitution": false,
+      "other_word_or_clause_changes_permitted": false,
+      "full_source_target_byte_identity_claimed": false,
+      "donor_fanout": false,
+      "raw_POS_or_corpus_assessment_fields_filled": false,
+      "root_adoption_and_receiving_required": true,
+      "context_sha256": "fed298424e35c06ba4833e7e57238e2b77e293b35a998fe50ed81492d497fd42"
+    },
+    {
+      "target": [
+        "s-petri-caelestini-papae-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "comparison_route": "closed-finite-context",
+      "finite_relation": "NEW_EXACT_LEXICAL_PERSON_AND_ACTUAL_CONCLUSION_CONTEXT_PROPOSED_ONLY",
+      "historical_latin": "Deus, qui beatum Petrum Coelestinum ad summi pontificatus apicem sublimasti quique illum humilitati postponere docuisti: concede propitius; ut ejus exemplo cuncta mundi despicere, et ad promissa humilibus praemia pervenire feliciter mereamur. Per Dominum.",
+      "historical_latin_sha256": "78351fabf0f302bbb8c5712bfdd91795304162ec3e774aa6f2dba15411cb5d5a",
+      "english": "O God, Who wast pleased to raise blessed Peter Celestine to the supreme Pontificate, and nevertheless, didst teach him to set before that highest of earthly dignities the practising of the virtue of humility: make us, we beseech Thee, following his example, to care not at all for the high things of this world, and thereby to ensure for ourselves, the reward Thou hast promised to the humble of heart. Through our Lord.",
+      "english_sha256": "6af25967b8f13d9590295b94c3de04750f1318f0ebf53219a60e614b3b206040",
+      "actual_source_cue": "Per Dominum.",
+      "actual_source_cue_sha256": "0d42d43e85d4e54358a3f8d0d92e33ec89213a0676cd1b814d09f87dab519ace",
+      "actual_English_cue": "Through our Lord.",
+      "actual_English_cue_sha256": "1c52641c8831c94b925b8feb037977e7f03a56a545361c3416e38c88b78a7630",
+      "actual_target_cue": "Per Dominum nostrum Jesum Christum, Filium tuum: Qui\ntecum vivit et regnat in unitate.\n",
+      "actual_target_cue_sha256": "90d77d2ffafc5f91771f67d6bf1c5fee43601255e5a82d322b2b10a27ee78bb6",
+      "source_artifact_id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf",
+      "source_edition_id": "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925",
+      "source_pdf_sha256": "28c9046c5acfa19297ab9aeaa14ac4f8d8fcffab1307b51215b94fa4ca6172a2",
+      "actual_prayer_pdf_pages": [
+        1419
+      ],
+      "actual_prayer_printed_pages": [
+        "1383"
+      ],
+      "source_context": "The distinct MAY19 St.Peter Celestine PopeConfessor section explicitly appoints MassStatuit p255, except, then prints this complete own named Collect. English continues below the paired columns on the same page and ends ThroughourLord before the St.Pudentiana commemoration rubric; no further page continuation. The opening fragment at the top of this page belongs to the previous Venantius prayer and was excluded.",
+      "petition_word_count": 31,
+      "source_petition_tokens": [
+        "deus",
+        "qui",
+        "beatum",
+        "petrum",
+        "coelestinum",
+        "ad",
+        "summi",
+        "pontificatus",
+        "apicem",
+        "sublimasti",
+        "quique",
+        "illum",
+        "humilitati",
+        "postponere",
+        "docuisti",
+        "concede",
+        "propitius",
+        "ut",
+        "ejus",
+        "exemplo",
+        "cuncta",
+        "mundi",
+        "despicere",
+        "et",
+        "ad",
+        "promissa",
+        "humilibus",
+        "praemia",
+        "pervenire",
+        "feliciter",
+        "mereamur"
+      ],
+      "target_petition_tokens": [
+        "deus",
+        "qui",
+        "beatum",
+        "petrum",
+        "caelestinum",
+        "ad",
+        "summi",
+        "pontificatus",
+        "apicem",
+        "sublimasti",
+        "quique",
+        "illum",
+        "humilitati",
+        "postponere",
+        "docuisti",
+        "concede",
+        "propitius",
+        "ut",
+        "ejus",
+        "exemplo",
+        "cuncta",
+        "mundi",
+        "despicere",
+        "et",
+        "ad",
+        "promissa",
+        "humilibus",
+        "praemia",
+        "pervenire",
+        "feliciter",
+        "mereamur"
+      ],
+      "complete_petition_differences": [
+        {
+          "position": 4,
+          "source": "coelestinum",
+          "target": "caelestinum"
+        }
+      ],
+      "exact_contextual_judgments": [
+        {
+          "position": 4,
+          "source": "coelestinum",
+          "target": "caelestinum",
+          "kind": "literal historical proper-name spelling of the same specifically identified person",
+          "person_identity": "Saint Peter Celestine, Pope and Confessor, appointed on May19; the same renunciation/humility-themed own Collect is excepted in both actual books.",
+          "grammatical_role": "Accusative masculine singular name in beatum Petrum Coelestinum/Caelestinum, object of sublimasti. No N, X, missing name, new English name or gender/case change occurs.",
+          "primary_controls": [
+            "Lefebvre1925 PDF1419 printed1383 actual May19 StPeterCelestine Pope heading, named full Collect and printed English PeterCelestine",
+            "Controlling1962 PDF613 printed532 May19 S.PetriCaelestini Papae et Confessoris; following PDF614 printed533 no2621 complete Collect",
+            "Pustet1862 PDF533 printed447 complete named prayer, independently checked by separate chain peer"
+          ],
+          "basis_kind": "local same-person and spelling judgment from actual dated primary appointments and the full same petition, not a generic name normalizer",
+          "mass_frame_limit": "The historical book appoints Mass Statuit and the target Si diligis me, both with the own Collect exception. Only the exact own Collect is compared; no identity of the remaining formulary is asserted.",
+          "biography_limit": "Neither a birth-year calculation nor a generic alias table is used. No source biographical statement is silently corrected."
+        }
+      ],
+      "conclusion_context": {
+        "addressee": "Father, Deus; third-person Per Dominum source and complete target actual ordinary-Lord conclusion.",
+        "family": "ordinary Father-address Per Dominum",
+        "own_source_full_control_id": "ordinary-full",
+        "own_source_full_control_pdf_pages": [
+          42,
+          43
+        ],
+        "own_source_short_control_id": "ordinary-short",
+        "own_source_short_control_pdf_pages": [
+          188
+        ],
+        "formal_rule": "Mame1922 PDF54 printedxlii IX17 Father conclusion; no etc expansion",
+        "new_English_endings_added": false
+      },
+      "current_target_join": {
+        "raw_owner": {
+          "mass": "s-petri-caelestini-papae-confessoris",
+          "form": "",
+          "proper": "Collect",
+          "course": "",
+          "cycle": "",
+          "occurrence": 1
+        },
+        "raw_body": "Deus, qui beatum Petrum Caelestinum ad summi pontificatus apicem sublimasti,\nquique illum humilitati postponere docuisti: concede propitius; ut ejus\nexemplo cuncta mundi despicere, et ad promissa humilibus praemia pervenire\nfeliciter mereamur. Per Dominum nostrum Jesum Christum, Filium tuum: Qui\ntecum vivit et regnat in unitate.\n",
+        "raw_body_sha256": "aa059e8c866223920843498cf6ebc207445654472255ae4f8314228baf23f953",
+        "complete_raw_proof": {
+          "mass": "s-petri-caelestini-papae-confessoris",
+          "form": "",
+          "proper": "Collect",
+          "course": "",
+          "cycle": "",
+          "occurrence": 1,
+          "text_sha256": "aa059e8c866223920843498cf6ebc207445654472255ae4f8314228baf23f953",
+          "provenance_status": "collated",
+          "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-petri-caelestini-papae-confessoris-collect",
+          "source_date": "2026-10-01 corrected project editorial projection; antecedent Pustet Ratisbon 1862",
+          "locator": "editorial-projection artifact physical lines 21-25; antecedent Pustet Ratisbon 1862, printed p. 447; artifact PDF p. 533; page-image passage passage.catholic-church.missale-romanum.pustet-ratisbon-1862.recovery-2026-10-01-s-petri-caelestini-papae-confessoris-collect",
+          "relationship": "editorial-projection-exact-to-target",
+          "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.recovery-2026-10-01-s-petri-caelestini-papae-confessoris-collect",
+          "verification_locator": "printed p. 533; artifact PDF p. 614",
+          "transformations": [
+            "join printed line wraps",
+            "remove stress accents",
+            "expand printed ae/oe ligatures to ae/oe",
+            "normalise consonantal i to the calendar's j orthography",
+            "apply the target printing's punctuation",
+            "carry the target's conclusion at its printed length"
+          ],
+          "provenance_evidence": "Cold page-image review on 2026-10-01 supersedes the former OCR-based comparison and its erroneous collation claim for this body. The target was read at 200 and 400 dpi and the complete petition corroborated word for word on the 1862 page image. The 1862 prints Coelestinum with oe and the short Per Dominum; the target prints Caelestinum with ae and the longer conclusion through in unitate. The remaining petition agrees word for word. Repair ilium to illum; apply the target case and pointing. The projection passage hashes exactly as the corrected calendar body.",
+          "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+          "provenance_confidence": "high",
+          "publication_status": "permitted",
+          "publication_basis": "public-domain",
+          "surfaces": [
+            "web",
+            "download",
+            "print",
+            "cli",
+            "corpus-data",
+            "public-git"
+          ],
+          "publication_source_ids": [
+            "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.recovery-page-reading-orations-f5b13d07",
+            "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf",
+            "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+          ],
+          "publication_locator": "Pustet Ratisbon 1862, printed p. 447; artifact PDF p. 533; page-image passage passage.catholic-church.missale-romanum.pustet-ratisbon-1862.recovery-2026-10-01-s-petri-caelestini-papae-confessoris-collect",
+          "publication_evidence": "The underlying petition is preexisting public-domain material, independently attested by the 1862 printing; the dated page-image passage establishes every word. The existing 1962 facsimile rights record applies the repository's 17 U.S.C. 103(b) basis. The project owns only the declared editorial projection, including punctuation, orthography and conclusion extent."
+        },
+        "complete_raw_proof_sha256": "725a2faff6192d0204e4c833f03475b4b3438ee58c0e1530e2c887bfaf151478",
+        "effective_recorded_decision": {
+          "key": {
+            "mass": "s-petri-caelestini-papae-confessoris",
+            "form": "",
+            "proper": "Collect",
+            "course": "",
+            "cycle": "",
+            "occurrence": 1
+          },
+          "text_sha256": "aa059e8c866223920843498cf6ebc207445654472255ae4f8314228baf23f953",
+          "provenance_status": "collated",
+          "publication_status": "permitted",
+          "publication_basis": "public-domain",
+          "surfaces": [
+            "cli",
+            "corpus-data",
+            "download",
+            "print",
+            "public-git",
+            "web"
+          ],
+          "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-petri-caelestini-papae-confessoris-collect",
+          "source_date": "2026-10-01 corrected project editorial projection; antecedent Pustet Ratisbon 1862",
+          "locator": "editorial-projection artifact physical lines 21-25; antecedent Pustet Ratisbon 1862, printed p. 447; artifact PDF p. 533; page-image passage passage.catholic-church.missale-romanum.pustet-ratisbon-1862.recovery-2026-10-01-s-petri-caelestini-papae-confessoris-collect",
+          "relationship": "editorial-projection-exact-to-target",
+          "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.recovery-2026-10-01-s-petri-caelestini-papae-confessoris-collect",
+          "verification_locator": "printed p. 533; artifact PDF p. 614",
+          "transformations": [
+            "join printed line wraps",
+            "remove stress accents",
+            "expand printed ae/oe ligatures to ae/oe",
+            "normalise consonantal i to the calendar's j orthography",
+            "apply the target printing's punctuation",
+            "carry the target's conclusion at its printed length"
+          ],
+          "provenance_evidence": "Cold page-image review on 2026-10-01 supersedes the former OCR-based comparison and its erroneous collation claim for this body. The target was read at 200 and 400 dpi and the complete petition corroborated word for word on the 1862 page image. The 1862 prints Coelestinum with oe and the short Per Dominum; the target prints Caelestinum with ae and the longer conclusion through in unitate. The remaining petition agrees word for word. Repair ilium to illum; apply the target case and pointing. The projection passage hashes exactly as the corrected calendar body.",
+          "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+          "provenance_confidence": "high",
+          "authority": "",
+          "evidence": "The underlying petition is preexisting public-domain material, independently attested by the 1862 printing; the dated page-image passage establishes every word. The existing 1962 facsimile rights record applies the repository's 17 U.S.C. 103(b) basis. The project owns only the declared editorial projection, including punctuation, orthography and conclusion extent.",
+          "publication_source_ids": [
+            "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.recovery-page-reading-orations-f5b13d07",
+            "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf",
+            "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+          ],
+          "publication_locator": "Pustet Ratisbon 1862, printed p. 447; artifact PDF p. 533; page-image passage passage.catholic-church.missale-romanum.pustet-ratisbon-1862.recovery-2026-10-01-s-petri-caelestini-papae-confessoris-collect",
+          "publication_retrieved": "",
+          "notice": "",
+          "note": "",
+          "reason": "",
+          "target_context": null
+        },
+        "effective_recorded_decision_sha256": "c8f578ee17245f5225baeb4df070f60bf0f398bde8cdf986db02c5a65e5cceb7",
+        "current_typed_absence": {
+          "mass": "s-petri-caelestini-papae-confessoris",
+          "form_id": "main",
+          "proper": "Collect",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "reason": {
+            "kind": "no-exemplar"
+          },
+          "note": "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
+        },
+        "current_typed_absence_sha256": "304bfc1d109fee5bb3677611925b19ef501c25f709b6037808857acd4cb0cb76",
+        "owning_resolved_slot_identity": [
+          "s-petri-caelestini-papae-confessoris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ]
+      },
+      "proof_prerequisite": {
+        "required": false,
+        "basis": "Existing corrected2026-10-01 Pustet page-image chain and exact current proof remain; independent source-chain peer must confirm before final receiving. No blind new proof or old artifact alteration."
+      },
+      "source_and_English_and_target_rewritten": false,
+      "English_expansion": false,
+      "unprinted_Amen_added": false,
+      "generic_comparator_change": false,
+      "generic_stem_or_name_fold": false,
+      "N_or_X_substitution": false,
+      "other_word_or_clause_changes_permitted": false,
+      "full_source_target_byte_identity_claimed": false,
+      "donor_fanout": false,
+      "raw_POS_or_corpus_assessment_fields_filled": false,
+      "root_adoption_and_receiving_required": true,
+      "context_sha256": "7d7243a1770703af520242fcc4f3bdcb87464492961fbef2c46ef0d539627d8a"
+    }
+  ],
+  "hard_limits": [
+    "No source or target or literal English word is edited.",
+    "No new English ending, name, response or Amen is supplied.",
+    "No general foecund-/fecund-, e/i, oe/ae, lemma, case, name or morphological normalizer is authorized.",
+    "No N/X/other-saint substitution. No matching by similar meaning.",
+    "All exact current-owner raw Latin/body/proof/absence hashes and source/family/person controls must replay on the coherent receiving parent.",
+    "SevenFounders full truthful Mame proof component must be independently accepted and composed before positive English.",
+    "Current Peter corrected Pustet proof must independently replay; no full-formulary equivalence inferred.",
+    "Rosary sanctissimo/sacratissimo stays a different-word hold. Other source gaps are not declared absent worldwide."
+  ],
+  "negative_controls": [
+    "reject Rosary sanctissimo/sacratissimo as not covered",
+    "reject another unlisted foecund- surface or another target mass",
+    "reject Genitrice or Genetricem by inference from this genitive context",
+    "reject another proper-name pair or another Celestine without the exact dated own-prayer context",
+    "reject any source/source-cue/target-body/proof/English hash change",
+    "reject ordinary Father versus same-Spirit or Christ-address interchange",
+    "reject any English word/ending addition or hidden POS fill"
+  ],
+  "petition_difference_position_convention": {
+    "index_base": 0,
+    "meaning": "Each position is the zero-based index in both complete petition token arrays. Human word numbers are position+1.",
+    "closed_positions": [
+      {
+        "target": [
+          "ss-septem-fundatorum-ordinis-servorum-beatae",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "differences": [
+          {
+            "position": 9,
+            "human_word_number": 10,
+            "source": "genitricis",
+            "target": "genetricis"
+          },
+          {
+            "position": 21,
+            "human_word_number": 22,
+            "source": "foecundasti",
+            "target": "fecundasti"
+          }
+        ]
+      },
+      {
+        "target": [
+          "s-petri-caelestini-papae-confessoris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "differences": [
+          {
+            "position": 4,
+            "human_word_number": 5,
+            "source": "coelestinum",
+            "target": "caelestinum"
+          }
+        ]
+      }
+    ]
+  },
+  "root_decision": "Accept exactly the2 complete context dictionaries and semantic judgments for the3 expressly positioned spelling/person relations. Genitricis/Genetricis is the actual feminine genitive singular; foecundasti/fecundasti is the locally inferred contracted perfect active second singular, with dictionary editorial reservations retained; Coelestinum/Caelestinum identifies only the named May19 own Collect, not whole Mass identity. No generic spelling, stem, case, person or name rule follows. Literal source English and short cues remain unchanged; no continuation, Amen, response, new name or etc expansion.",
+  "prerequisites": [
+    "Receive the complete14-file truthful Seven Founders chain, superseding its locator-only proposal, before its English admission. Current proof4847 must reach exact77aa via that separately accepted chain.",
+    "Peter retains the corrected current725a proof, exact full body and source context; no new proof replacement.",
+    "Receive the4 add-only Allen grammar control files and bind their exact native source controller IDs.",
+    "Separately review complete granular receiving dictionaries, current typed absences, source payloads and notices; root method adoption alone creates no English entry."
+  ],
+  "semantic_context_decisions": [
+    {
+      "target": [
+        "ss-septem-fundatorum-ordinis-servorum-beatae",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "context_sha256": "fed298424e35c06ba4833e7e57238e2b77e293b35a998fe50ed81492d497fd42",
+      "decision": "SUPPORTED_EXACT_OCCURRENCE",
+      "petition_words": 33,
+      "zero_based_positions": [
+        9,
+        21
+      ],
+      "human_word_numbers": [
+        10,
+        22
+      ],
+      "noun_judgment": {
+        "source": "Genitricis",
+        "target": "Genetricis",
+        "analysis": "Same mother noun, feminine genitive singular, dependent on dolorum in memoriam dolorum sanctissimae Genitricis/Genetricis tuae. The two genitive feminine modifiers sanctissimae/tuae and the actual Christ-addressed prayer syntax make this an explicit occurrence analysis.",
+        "primary_basis": "Lewis and Short printed807 gives genetrix with less frequent genitrix, genitive -icis, feminine; printed808 explicitly cross-refers genitrix to genetrix. The orthographical index prefers genetrix and that reservation remains.",
+        "authority_limit": "The old Genitrice/Genetrice ablative two-target grant and old20 permissions do not authorize this different case. This review independently supports only the actual new genitive occurrence; no e/i fold or generated case family."
+      },
+      "verb_judgment": {
+        "source": "foecundasti",
+        "target": "fecundasti",
+        "analysis": "Same transitive first-conjugation verb at this occurrence; contracted perfect active indicative second singular. Relative qui refers to the explicitly addressed Domine Jesu Christe. Ecclesiam tuam is the accusative singular direct object; nova Servorum ejus familia is the ablative singular complement; per septem beatos Patres has its printed accusative plural.",
+        "primary_basis": "Lewis and Short printed733 marks fecundo, -are, v.a.; printed764 explicitly cross-refers foecundo to fec-. Allen and Greenough printed93 section184 gives amavisti as second-singular active perfect indicative; printed91 section181a describes loss of intervocalic v and contraction in -avi perfects.",
+        "inference_ceiling": "The dictionary and grammar do not print these complete inflected prayer words. The words themselves occur on the prayer pages. Identification of the two actual contracted forms is a local manual inference from those printed forms, the lemma and syntax; analytical fecundavisti/foecundavisti must never replace corpus or English text.",
+        "reservation": "The dictionary notes sometimes erroneous foecund-/faecund- spelling in the adjoining fecundus entry. Lexeme identity is supported without equal editorial preference or any foetu/fetu-derived permission."
+      },
+      "conclusion_judgment": {
+        "family": "Direct Son, explicitly named Jesus Christ",
+        "literal_source_Latin_cue": "Qui vivis.",
+        "literal_source_English_cue": "Who livest and reignest.",
+        "actual_target_stop": "Qui vivis et regnas cum Deo Patre in unitate.",
+        "support": "The actual target page prints that complete nine-word cue. Lefebvre PDF104 has the corresponding full Christ-addressed Latin/English conclusion. Mame IX17 on PDF54 identifies the direct-Son family; Mame PDF115 actually prints the nine target words as one contiguous prefix.",
+        "limit": "The etc in the formal rule is not a word source. No English continuation, Spirit clause, response or Amen is supplied; the literal historical short English cue stays short."
+      }
+    },
+    {
+      "target": [
+        "s-petri-caelestini-papae-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "context_sha256": "7d7243a1770703af520242fcc4f3bdcb87464492961fbef2c46ef0d539627d8a",
+      "decision": "SUPPORTED_EXACT_OCCURRENCE",
+      "petition_words": 31,
+      "zero_based_positions": [
+        4
+      ],
+      "human_word_numbers": [
+        5
+      ],
+      "proper_name_judgment": {
+        "source": "Coelestinum",
+        "target": "Caelestinum",
+        "analysis": "Accusative masculine singular in beatum Petrum Coelestinum/Caelestinum, object of sublimasti. The actual May19 historical heading and complete named Collect, literal printed English Peter Celestine, and target May19 Pope-and-Confessor heading plus following numbered own Collect identify the same person and same own petition.",
+        "primary_basis": "Lefebvre PDF1419 printed1383; target PDF613 printed532 and PDF614 printed533/no2621. Existing corrected Pustet source chain is separately accepted by the pinned independent chain receipt.",
+        "limit": "Only the excepted own Collect is compared. Historical Mass Statuit and target Mass Si diligis me differ; no full-formulary equivalence follows. No generic name table, other Celestine, N/X substitution, new English name, biography correction or gender/case change is authorized."
+      },
+      "conclusion_judgment": {
+        "family": "Ordinary Father-address Per Dominum",
+        "literal_source_Latin_cue": "Per Dominum.",
+        "literal_source_English_cue": "Through our Lord.",
+        "support": "The actual source prints precisely the short cues and the actual target prints its complete retained ordinary-Lord cue. Lefebvre PDF42–43 supplies the full paired Latin/English ordinary-Lord formula; PDF188 independently prints short Per Dominum/Through our Lord. Mame PDF54 IX17 identifies the Father-address family.",
+        "limit": "Do not expand the source English or append Amen, and do not substitute same-Lord, same-Spirit or direct-Son conclusions."
+      }
+    }
+  ],
+  "admissions_created_at_method_adoption": 0,
+  "canonical_grant_path": "workflows/reviews/missal-reader-completion-2026-10-26/two-primary-source-method-adoption.json",
+  "canonical_writes_at_adoption": 0
+}
