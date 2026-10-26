@@ -11,7 +11,7 @@ Last reconciled: 2026-10-25.
 
 <!-- promised-deliverable: gpt-flt-and-sunday-2026-10-25 -->
 
-**In progress.** Apply the recent Catholic voice and plain-drafting guidance
+**Complete.** Apply the recent Catholic voice and plain-drafting guidance
 to the four GPT Four Last Things essays, preserving their substantive
 source-based spiritual reading and approximate existing extent. Complete the
 GPT 1962 proper-study workflow for next Sunday, 1 November 2026, after verifying
@@ -55,8 +55,16 @@ facts and artifacts in the merged context, explicitly retaining the historical
 meaning of four changed global research seals. Full merged source, site,
 Pages-verifier, release/ledger and tool-registry checks now pass. Final cold
 review accepts the eight-commit outgoing range with all 1,285 new blobs checked;
-the built site preserves the exact reviewed artifact and HTML bytes. Main push
-and live verification remain the final steps.
+the built site preserves the exact reviewed artifact and HTML bytes.
+
+Commit `d67e2259c3ee87cdd78608330b86e2c300443da6` is published to the workspace
+feature ref and to `main` by genuine fast-forward. Pages run `40259179418` and
+hygiene run `40259179414` both succeed for that exact commit. At 02:48 UTC on
+26 October, all 23 normal live routes return 200 and match the reviewed/local
+bytes: seven canonical PDFs, seven provider aliases, five web editions, both
+owning library pages, catalogue data and the publication manifest. The owning
+record retains the exact hashes and run links. This completion receipt records
+that verified source publication; its own changes are closure records only.
 
 ## GPT proper-study register revision, 2026-10-23
 

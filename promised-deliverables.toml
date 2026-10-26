@@ -4,7 +4,7 @@ schema_version = 1
 id = "gpt-flt-and-sunday-2026-10-25"
 owner = "PROJECT-WORK.md"
 promise = "Apply the recent voice and drafting guidance to the four GPT Four Last Things essays; complete the next-Sunday 1962 proper-study workflow for 1 November 2026; cold-review and validate the resulting publications; publish to main and verify deployment."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "four-essays"
@@ -27,8 +27,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "published-and-live"
   criterion = "The reviewed public outgoing range reaches main by fast-forward without history rewriting, deployment succeeds for the published commit, and the affected live publications match the reviewed artifacts."
-  status = "open"
-  evidence = ["workflows/reviews/gpt-flt-and-sunday-2026-10-25/RECORD.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-flt-and-sunday-2026-10-25/RECORD.md", "workflows/reviews/gpt-flt-and-sunday-2026-10-25/published-runs.json", "workflows/reviews/gpt-flt-and-sunday-2026-10-25/live-verification.json"]
 
 [[deliverables]]
 id = "gpt-propers-register-2026-10-23"
