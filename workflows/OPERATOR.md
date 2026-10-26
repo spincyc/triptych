@@ -32,7 +32,11 @@ or another governing edition is allowed.
 The printed packet chooses which advance command is valid. Use full IDs for
 new leaves; the scope gate checks exact provider authorization before research.
 Postconciliar discovery validates registry-fixed formula slugs and the selected
-edition-locale. The initial resolver supports Proper-of-Time targets; additional
+edition-locale for `PC-S` Proper-of-Time and `PC-R` General Calendar replacement
+targets. Scope permits an authorized new target before context creates its
+source owner. Replacement chronology then requires one exact adopted edition
+disposition and its registry-fixed, same-edition owner. All Souls requires one
+complete adopted expansion; mixed or partial shapes fail closed. Other
 postconciliar families require an explicit registry resolver rather than a
 grammar-only pass.
 
@@ -355,6 +359,21 @@ without restamping its old acceptance.
 A driver archives a terminal run into its leaf with
 `tools/proper-study-run-archive <run-id> --cycles <cycles-record>`, which
 verifies every result and packet against the run's state before it writes.
+The default archive preserves those bytes exactly and refuses absolute
+filesystem paths. If a retained result's top-level `notes` string or list of
+strings names files under the current checkout, opt in with
+`--redact-repository-paths`. This creates a declared public derivative after
+native hash verification: only the current repository-root prefix plus its
+separator is removed from path tokens in those notes. HTTP(S) source URLs,
+decisions, findings, seals, artifact fields, packets and other records remain
+unchanged. Residual absolute filesystem paths in any input refuse the whole
+archive; this flag does not clear arbitrary private content. The native run
+is never edited. `redaction-receipt.json` records the policy, original and
+archived file hashes, and every changed JSON pointer and replacement count,
+without recording private path values. `record.md` labels the derivative and
+retains both accepted-native and archived result hashes. Repeating the same
+command against the same native run reproduces the derivative exactly.
+
 While a run is live, land nothing that its stages do not own. The
 `proper-study-v4` and `proper-study-v5` research seals cover every module the chronology
 computation compiles, `scripts/_tooling.py` included, so registering any tool

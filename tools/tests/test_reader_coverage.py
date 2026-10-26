@@ -209,7 +209,10 @@ class ReaderCoverageTests(unittest.TestCase):
         self.assertEqual(len(prayers), 3)
         for row in prayers:
             with self.subTest(proper=row["name"]):
-                self.assertEqual(row["text_status"]["state"], "unavailable")
+                # A held Latin body and a different held English witness no
+                # longer leave this entire proper in an unavailable state.
+                self.assertIsNone(row["text_status"])
+                self.assertTrue(row["text"].strip())
                 missing = node(op="oration", proper=row, witness=caswall)
                 self.assertIsNone(missing["text"])
                 self.assertEqual(missing["reason"], "absent-in-witness")

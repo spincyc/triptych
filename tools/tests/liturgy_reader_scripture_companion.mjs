@@ -23,7 +23,7 @@ const structure = read('src/web/data/structure/propers/roman-1962.json');
 const context = Adapters.validationContext({ entrance:'propers', bibles:{ bibles },
   properIndex:read('src/web/data/structure/propers/index.json'), ordinaryIndex:{ calendars:[] },
   structures:{ 'roman-1962':structure } });
-const prefix = '#missal=roman-1962&type=seasonal&mass=advent-1&bible=douay-rheims&orations=la&mode=compare&compare=bible-edition';
+const prefix = '#missal=roman-1962&type=seasonal&mass=pentecost&bible=douay-rheims&orations=la&mode=compare&compare=bible-edition';
 const hash = prefix + '&peer-bible=king-james-version';
 const normalize = value => State.normalizeLegacy(State.parseLegacy('propers', value), {
   context, defaults:{ missal:'roman-1962', bible:'douay-rheims', orations:'la' }

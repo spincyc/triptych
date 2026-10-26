@@ -492,7 +492,7 @@ class GateCommandTests(unittest.TestCase):
             def element(self, key):
                 return element if key == element.key else None
 
-        found = Found(elements=(element,), state="appointed")
+        found = Found(elements=(element,), state="appointed", presentation="")
         with tempfile.TemporaryDirectory() as temporary:
             leaf = Path(temporary)
             (leaf / "dossier.tex").write_text(

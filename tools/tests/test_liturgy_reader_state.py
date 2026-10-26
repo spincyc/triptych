@@ -2566,11 +2566,11 @@ class ParityTests(unittest.TestCase):
     def test_inherited_pre_1955_propers_are_partial_not_complete(self) -> None:
         recension = {
             "kind": "partial-recension",
-            "recensionStatus": "structural-only",
+            "recensionStatus": "partial",
             "domain": "propers",
-            "domainState": "none",
+            "domainState": "partial",
             "sourceCalendar": "roman-1962",
-            "inheritanceStatus": "uncollated",
+            "inheritanceStatus": "partial",
         }
 
         def coverage(key: str, kind: str) -> dict:
@@ -2592,7 +2592,7 @@ class ParityTests(unittest.TestCase):
 
         # Sacred Heart has no conditional inherited appointments. All three
         # 1962 prayer bodies are held; each remains withheld in the uncollated
-        # pre-1955 projection, which stays partial without a new attestation.
+        # pre-1955 projection, which stays partial outside independently held bodies.
         key = "sacred-heart"
         inherited = coverage(key, "seasonal")
         self.assertEqual(inherited.get("formulary:" + key), {

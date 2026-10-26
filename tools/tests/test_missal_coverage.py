@@ -12,12 +12,14 @@ import sys
 import tempfile
 import tomllib
 from collections import Counter
+from functools import lru_cache
 import unittest
 from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 import _missal_coverage as coverage
+from tools.tests import _source_batch_guards as G
 
 
 def tool(name):
@@ -30,6 +32,74 @@ def tool(name):
 
 def english(report):
     return next(row for row in report["languages"] if row["lang"] == "en")
+
+
+@lru_cache(maxsize=1)
+def current_english_owners():
+    """Read exact reviewed positive/absence partitions, not an old gap count."""
+    propers = tool("mass-propers")
+    document = propers.load_calendar(ROOT / "src/sources/calendars", "roman-1962")
+    ledger = tomllib.loads((ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml").read_text())
+    partitions = []
+    for table in ("entries", "untranslated"):
+        rows = ledger[table]
+        mapped = {propers.translation_record_identity(row, document): row for row in rows}
+        if len(mapped) != len(rows):
+            raise AssertionError("duplicate English source owner")
+        partitions.append(mapped)
+    if set(partitions[0]) & set(partitions[1]):
+        raise AssertionError("an English owner is both held and unavailable")
+    return partitions
+
+
+def assert_current_english_owner(test, identity):
+    """An original owner may be filled only by its exact accepted source row."""
+    positive, absent = current_english_owners()
+    frozen = G.fixture()
+    key = G.canonical(identity)
+    test.assertNotEqual(identity in positive, identity in absent, identity)
+    if identity in positive:
+        row = positive[identity]
+        test.assertEqual(G.digest(G.canonical(row)), frozen["roman_current_english_positive"][key])
+        translations = [value for value in row["translations"] if value["lang"] == "en"]
+        test.assertTrue(translations, identity)
+        for value in translations:
+            test.assertEqual(value["rights"], "public-domain", identity)
+            test.assertTrue(value["text"].strip(), identity)
+            test.assertTrue(value["source_id"], identity)
+        return translations
+    row = absent[identity]
+    test.assertEqual(G.digest(G.canonical(row)), frozen["roman_current_english_absence"][key])
+    test.assertEqual(row["availability"], "unavailable", identity)
+    test.assertEqual(row["reason"], {"kind": "no-exemplar"}, identity)
+    test.assertNotIn("text", row)
+    test.assertNotIn("source_id", row)
+    return []
+
+
+# Exact source slots established by the accepted 26 October missing-owner and
+# calendar-role repair review. This is an appointment delta, not a wording grant.
+REVIEWED_20261026_SOURCE_JOINS = {
+    "roman-1962:sanctoral-form:" + suffix for suffix in (
+        "p566-l25:slot:p566-l65:tract",
+        "p577-l71:slot:p578-l43:tract",
+        "p583-l3:slot:p583-l57:tract",
+        "p604-l18:slot:p604-l30:collect",
+        "p604-l18:slot:p605-l19:secret",
+        "p604-l18:slot:p605-l30:postcommunion",
+        "p621-l16:slot:p621-l38:collect",
+        "p621-l16:slot:p622-l38:offertory-antiphon",
+        "p621-l16:slot:p622-l43:secret",
+        "p621-l16:slot:p622-l57:communion-antiphon",
+        "p621-l16:slot:p622-l63:postcommunion",
+        "p647-l14:slot:p647-l30:collect",
+        "p647-l14:slot:p648-l18:secret",
+        "p647-l14:slot:p648-l28:postcommunion",
+        "p803-l63:slot:p803-l74:collect",
+        "p803-l63:slot:p804-l65:secret",
+        "p803-l63:slot:p804-l77:postcommunion",
+    )
+}
 
 
 class CoverageTests(unittest.TestCase):
@@ -288,7 +358,7 @@ class GeneratorCoverageTests(unittest.TestCase):
                      mock.patch.object(propers, "load_calendar", return_value=document), \
                      mock.patch.object(propers, "translation_overlay", return_value=({}, {}, [], {})), \
                      mock.patch.object(propers, "publication_records", return_value=({}, [])), \
-                     mock.patch.object(propers, "sanitize_proper", side_effect=lambda value, *args: value), \
+                     mock.patch.object(propers, "sanitize_proper", side_effect=lambda value, *args, **kwargs: value), \
                      mock.patch.object(propers._missal_coverage, "expectations", return_value={"state": "unresolved"}):
                     report = propers.calendar_structure(ROOT / "src/sources/calendars", "postconciliar", {})
                 child = report["masses"][0]["propers"][0][family][cycle]
@@ -313,7 +383,7 @@ class GeneratorCoverageTests(unittest.TestCase):
         with mock.patch.object(propers, "load_calendar", return_value=document), \
              mock.patch.object(propers, "translation_overlay", return_value=({}, {}, [], {})), \
              mock.patch.object(propers, "publication_records", return_value=({}, [])), \
-             mock.patch.object(propers, "sanitize_proper", side_effect=lambda value, *args: value), \
+             mock.patch.object(propers, "sanitize_proper", side_effect=lambda value, *args, **kwargs: value), \
              mock.patch.object(propers, "citation_structure", return_value={"ref": "Psalm 1"}), \
              mock.patch.object(propers._missal_coverage, "expectations", return_value={"state": "unresolved"}):
             report = propers.calendar_structure(ROOT / "src/sources/calendars", "postconciliar", {})
@@ -354,7 +424,7 @@ class GeneratorCoverageTests(unittest.TestCase):
         with mock.patch.object(propers, "load_calendar", return_value=document), \
              mock.patch.object(propers, "translation_overlay", return_value=({}, {}, [], {})), \
              mock.patch.object(propers, "publication_records", return_value=({}, [])), \
-             mock.patch.object(propers, "sanitize_proper", side_effect=lambda value, *args: value), \
+             mock.patch.object(propers, "sanitize_proper", side_effect=lambda value, *args, **kwargs: value), \
              mock.patch.object(propers._missal_coverage, "expectations", return_value={"state": "unresolved"}):
             report = propers.calendar_structure(ROOT / "src/sources/calendars", "roman-pre-1955", {})
         latin_rows = {row["key"]: row["propers"][0]["coverage"]["languages"][0]
@@ -426,19 +496,13 @@ class RealCorpusCoverageTests(unittest.TestCase):
                               languages["la"]["publication_basis"]))
             self.assertEqual("unresolved" if role == "Secret" else "exact-target",
                              languages["la"]["relationship"])
-            self.assertEqual("not-sourced", languages["en"]["availability"])
-            self.assertFalse(proper["translations"])
+            expected_english = assert_current_english_owner(self, (name, "main", role, "all", 1))
+            self.assertEqual("available" if expected_english else "not-sourced", languages["en"]["availability"])
+            self.assertEqual([(r["text"], r["source_id"]) for r in proper["translations"]],
+                             [(r["text"], r["source_id"]) for r in expected_english])
         self.assertNotIn("Tract", [p["name"] for p in mass["propers"]])
         self.assertEqual("composed", found["Communion"]["source"])
         self.assertFalse(found["Communion"]["citations"])
-        ledger = tomllib.loads((ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml").read_text())
-        for role in expected:
-            rows = [r for r in ledger["untranslated"] if
-                    (r["mass"], r["form_id"], r["proper"], r["cycle"], r["occurrence"],
-                     r["lang"], r["extent"]) == (name, "main", role, "all", 1, "en", "body")]
-            self.assertEqual(len(rows), 1)
-            self.assertEqual(rows[0]["reason"], {"kind": "no-exemplar"})
-            self.assertFalse([r for r in ledger["entries"] if r["mass"] == name and r["proper"] == role])
         child = tomllib.loads((ROOT / "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml").read_text())
         self.assertFalse([r for r in child.get("untranslated", []) if r["mass"] == name and r["proper"] in expected])
         for calendar in ("roman-1962", "roman-pre-1955"):
@@ -494,7 +558,8 @@ class RealCorpusCoverageTests(unittest.TestCase):
                     self.assertTrue(proper["citations"])
                     self.assertEqual(unit["scripture_component"]["relationship"],
                                      "bible-reconstruction")
-        english_witness = {"Collect": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+        english_witness = {"Lesson": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+                           "Collect": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
                            "Secret": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
                            "Postcommunion": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
                            "Introit": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
@@ -504,6 +569,7 @@ class RealCorpusCoverageTests(unittest.TestCase):
                            # Bound 2026-10-19 (G14 lane), its genuflection a typed rubric.
                            "Alleluia": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
                            "Sequence": "edition.edward-caswall.lyra-catholica.london-1849"}
+        self.assertEqual(set(roman), set(english_witness))
         for name, (_, english_row) in roman.items():
             with self.subTest(name=name, lang="en"):
                 if name in english_witness:
@@ -513,16 +579,10 @@ class RealCorpusCoverageTests(unittest.TestCase):
                                      [english_witness[name]])
                     self.assertEqual([row["relationship"] for row in english_row["witnesses"]],
                                      ["historical-antecedent"])
-                else:
-                    # Both public-domain witnesses lack the Missal's discipuli:
-                    # a typed witness gap, not a missing binding.
-                    self.assertEqual(name, "Lesson")
-                    self.assertEqual(english_row["availability"], "unresolved")
-                    self.assertEqual(english_row["witnesses"], [])
         latin_summary, english_summary = mass("roman-1962")["coverage"]["languages"]
         self.assertEqual((latin_summary["targets"], latin_summary["exact_target"]), (10, 10))
         self.assertEqual((english_summary["available"],
-                          english_summary["relationships"]["historical-antecedent"]), (9, 9))
+                          english_summary["relationships"]["historical-antecedent"]), (10, 10))
         # Pre-1955 inherits 1962's bodies uncollated: never exact-target there.
         for name, (latin, english_row) in bodies("roman-pre-1955").items():
             with self.subTest(calendar="roman-pre-1955", name=name):
@@ -554,13 +614,17 @@ class RealCorpusCoverageTests(unittest.TestCase):
                 self.assertEqual(proper["source"], "composed")
                 self.assertIsNone(proper["text_status"])
                 self.assertTrue(proper["text"])
-                self.assertFalse(proper["translations"])
+                expected_english = assert_current_english_owner(self, ("christ-the-king", "main", name, "all", 1))
+                self.assertEqual([(r["text"], r["source_id"]) for r in proper["translations"]],
+                                 [(r["text"], r["source_id"]) for r in expected_english])
                 languages = {row["lang"]: row for row in proper["coverage"]["languages"]}
                 self.assertEqual((languages["la"]["availability"],
                                   languages["la"]["relationship"]),
                                  ("available", "exact-target"))
-                self.assertEqual(languages["en"]["availability"], "unresolved")
-                self.assertEqual(languages["en"]["witnesses"], [])
+                self.assertEqual(languages["en"]["availability"], "available")
+                self.assertEqual(languages["en"]["relationship"], "historical-antecedent")
+                self.assertEqual([r["id"] for r in languages["en"]["witnesses"]],
+                                 [r["source_id"] for r in expected_english])
                 self.assertEqual(hashlib.sha256(proper["text"].encode()).hexdigest(), {
                     "Collect": "6af5e3a4069557becc63497526bb1e3b76fa5bb0a7eb67f4ec4fb86a27097eb4",
                     "Secret": "406851c5d1ce570d8dd192b412ece7ef1ee85fea81135b2839ba7a22d320e0ff",
@@ -624,10 +688,11 @@ class RealCorpusCoverageTests(unittest.TestCase):
         self.assertEqual({row["mass"] for row in withheld}, {"commune-summorum-pontificum"})
         self.assertEqual(len(withheld), 5)
         retyped = [row for row in ledger["untranslated"] if "(C2 gap G3)" in row["note"]]
-        # 336 since 2026-10-19 (C3): the Pentecost Collect, Secret and
-        # Postcommunion were bound and left the untranslated ledger; 335 once
-        # the Pentecost Alleluia was bound the same day (G14 lane).
-        self.assertEqual(len(retyped), 335)
+        # Accepted bindings can fill these former gaps. Each remaining row
+        # retains the exact reviewed absence record, never a rights restriction.
+        for row in retyped:
+            identity = self.propers.translation_record_identity(row)
+            self.assertFalse(assert_current_english_owner(self, identity))
         self.assertEqual({row["reason"]["kind"] for row in retyped}, {"no-exemplar"})
         restricted = [unit for mass in self.files["roman-1962"]["masses"]
                       for unit in coverage.proper_units(mass)
@@ -645,51 +710,49 @@ class RealCorpusCoverageTests(unittest.TestCase):
 
 
 class ExpectedInventoryTests(unittest.TestCase):
+    def test_reviewed_missing_owner_and_role_joins_are_the_exact_source_delta(self):
+        propers = tool("mass-propers")
+        document = propers.load_calendar(ROOT / "src/sources/calendars", "roman-1962")
+        historical = G.historical_document(document)
+        inventory = ROOT / "src/sources/inventories/missal-expected-targets-v1.toml"
+        def states(value):
+            return {row["id"]: row["state"] for row in coverage.expectations(
+                inventory, "roman-1962", [mass for _, mass in propers.masses_of(value)])["targets"]}
+        before, current = states(historical), states(document)
+        changed = {key for key in current if current[key] != before[key]}
+        self.assertEqual(changed, REVIEWED_20261026_SOURCE_JOINS)
+        for key in changed:
+            self.assertEqual((before[key], current[key]), ("not-represented", "represented"))
+
     def test_ember_advent_lent_english_owners_keep_each_source_form_and_oratio_occurrence(self):
         expected = set([('advent-ember-saturday', 'longer', 'Collect', 1), ('advent-ember-saturday', 'longer', 'Oratio', 1), ('advent-ember-saturday', 'longer', 'Oratio', 2), ('advent-ember-saturday', 'longer', 'Oratio', 3), ('advent-ember-saturday', 'longer', 'Oratio', 4), ('advent-ember-saturday', 'longer', 'Oratio', 5), ('advent-ember-saturday', 'longer', 'Postcommunion', 1), ('advent-ember-saturday', 'longer', 'Secret', 1), ('advent-ember-saturday', 'shorter', 'Collect', 1), ('advent-ember-saturday', 'shorter', 'Oratio', 1), ('advent-ember-saturday', 'shorter', 'Postcommunion', 1), ('advent-ember-saturday', 'shorter', 'Secret', 1), ('lent-1-ember-saturday', 'longer', 'Collect', 1), ('lent-1-ember-saturday', 'longer', 'Oratio', 1), ('lent-1-ember-saturday', 'longer', 'Oratio', 2), ('lent-1-ember-saturday', 'longer', 'Oratio', 3), ('lent-1-ember-saturday', 'longer', 'Oratio', 4), ('lent-1-ember-saturday', 'longer', 'Oratio', 5), ('lent-1-ember-saturday', 'longer', 'Oratio', 6), ('lent-1-ember-saturday', 'longer', 'Postcommunion', 1), ('lent-1-ember-saturday', 'longer', 'Secret', 1), ('lent-1-ember-saturday', 'shorter', 'Collect', 1), ('lent-1-ember-saturday', 'shorter', 'Oratio', 1), ('lent-1-ember-saturday', 'shorter', 'Oratio', 2), ('lent-1-ember-saturday', 'shorter', 'Postcommunion', 1), ('lent-1-ember-saturday', 'shorter', 'Secret', 1)])
         expected.add(("lent-1-ember-saturday", "longer", "Hymn (Benedictus es)", 1))
+        positive, absent = current_english_owners()
         masses = {row[0] for row in expected}
-        ledger = tomllib.loads((ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml").read_text())
-        rows = [row for row in ledger["untranslated"] if row["mass"] in masses]
-        self.assertEqual(27, len(rows))
-        actual = {(row["mass"], row["form_id"], row["proper"], row["occurrence"]) for row in rows}
+        actual = {(mass, form, proper, occurrence)
+                  for mass, form, proper, cycle, occurrence in set(positive) | set(absent)
+                  if mass in masses}
         self.assertEqual(expected, actual)
-        self.assertFalse([row for row in ledger["entries"] if row["mass"] in masses])
-        for row in rows:
-            self.assertEqual(("all", "en", "body", "unavailable"),
-                             tuple(row[k] for k in ("cycle", "lang", "extent", "availability")))
-            self.assertEqual({"kind": "no-exemplar"}, row["reason"])
-            self.assertNotIn("text", row)
-            self.assertNotIn("text-free", row["note"])
+        for mass, form, proper, occurrence in expected:
+            assert_current_english_owner(self, (mass, form, proper, "all", occurrence))
         propers = tool("mass-propers")
         for calendar in ("roman-1962", "roman-pre-1955"):
             report = propers.english_coverage(ROOT / "src/sources/calendars", calendar)
             self.assertEqual((0, 0, 0), (report["outside_the_ledger"], report["unaccounted"], report["unmatched_records"]))
 
-    def test_christmas_existing_nine_english_absences_keep_stable_form_ids(self):
-        propers = tool("mass-propers")
-        root = ROOT / "src/sources/calendars"
-        path = ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml"
-        ledger = tomllib.loads(path.read_text())
-        rows = [row for row in ledger["untranslated"] if row["mass"] == "nativitate-domini-octave"]
-        expected = {(form_id, name) for form_id in ("night", "dawn", "day")
+    def test_christmas_english_owners_keep_stable_form_ids(self):
+        expected = {(form, name) for form in ("night", "dawn", "day")
                     for name in ("Collect", "Secret", "Postcommunion")}
-        self.assertEqual(9, len([row for row in rows if row["proper"] != "Alleluia"]))
         expected.add(("day", "Alleluia"))
-        self.assertEqual(10, len(rows))
-        self.assertEqual(expected, {(row["form_id"], row["proper"]) for row in rows})
-        for row in rows:
-            with self.subTest(form=row["form_id"], proper=row["proper"]):
-                self.assertEqual(("all", 1, "en", "body", "unavailable"),
-                                 tuple(row[key] for key in ("cycle", "occurrence", "lang", "extent", "availability")))
-                self.assertEqual({"kind": "no-exemplar"}, row["reason"])
-                self.assertNotIn("text", row)
-                self.assertNotIn("text-free", row["note"])
-        self.assertFalse([row for row in ledger["entries"] if row["mass"] == "nativitate-domini-octave"])
-        pre55 = tomllib.loads((ROOT / "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml").read_text())
-        self.assertFalse([row for row in pre55.get("untranslated", []) if row["mass"] == "nativitate-domini-octave"])
+        positive, absent = current_english_owners()
+        actual = {(form, name) for mass, form, name, cycle, occurrence in set(positive) | set(absent)
+                  if mass == "nativitate-domini-octave"}
+        self.assertEqual(actual, expected)
+        for form, name in expected:
+            assert_current_english_owner(self, ("nativitate-domini-octave", form, name, "all", 1))
+        propers = tool("mass-propers")
         for calendar in ("roman-1962", "roman-pre-1955"):
-            report = propers.english_coverage(root, calendar)
+            report = propers.english_coverage(ROOT / "src/sources/calendars", calendar)
             for key in ("unaccounted", "unmatched_records", "stale_translation_records"):
                 self.assertEqual(0, report[key], (calendar, key))
 
@@ -935,7 +998,8 @@ state = "unenumerated"
         current = {row["id"]: row["state"] for row in coverage.expectations(
             path, "roman-1962", masses)["targets"]}
         self.assertEqual(Counter(current[row["id"]] for row in joined),
-                         {"represented": 3133, "not-represented": 294})
+                         {"represented": 3133 + len(REVIEWED_20261026_SOURCE_JOINS),
+                          "not-represented": 294 - len(REVIEWED_20261026_SOURCE_JOINS)})
         gap_id = "roman-1962:sanctoral-form:p511-l46:slot:p511-l62:secret"
         self.assertEqual(current[gap_id], "represented")
 
@@ -1089,7 +1153,8 @@ state = "unenumerated"
                     self.assertEqual([row["ref"] for row in held[0]["citations"]], [citation])
         published = document["coverage"]["expected_inventory"]
         self.assertEqual(published["target_states"],
-                         {"represented": 4196, "not-represented": 90, "unresolved": 3705})
+                         {"represented": 4196 + len(REVIEWED_20261026_SOURCE_JOINS),
+                          "not-represented": 90 - len(REVIEWED_20261026_SOURCE_JOINS), "unresolved": 3705})
         self.assertEqual({row["id"] for row in published["not_represented"]} & joins.keys(), set())
         # The source's Tract1877 is explicitly votive after Septuagesima;
         # it remains an expected source obligation outside this feast model.
@@ -1134,7 +1199,8 @@ state = "unenumerated"
                 self.assertLess(order.index(role), order.index(after))
         published = document["coverage"]["expected_inventory"]
         self.assertEqual(published["target_states"],
-                         {"represented": 4196, "not-represented": 90, "unresolved": 3705})
+                         {"represented": 4196 + len(REVIEWED_20261026_SOURCE_JOINS),
+                          "not-represented": 90 - len(REVIEWED_20261026_SOURCE_JOINS), "unresolved": 3705})
         gaps = {row["id"] for row in published["not_represented"]}
         self.assertTrue(all(f"roman-1962:sanctoral-form:{locus}" not in gaps
                             for locus, *_ in rows))
@@ -1246,138 +1312,62 @@ state = "unenumerated"
                 self.assertEqual(proper["latin"]["provenance"]["relationship"],
                                  "editorial-projection-exact-to-target")
 
-    def test_all_saints_new_own_bodies_have_shared_english_absences(self):
-        propers = tool("mass-propers")
-        root = ROOT / "src/sources/calendars"
-        ledger = tomllib.loads((ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml")
-                               .read_text())
-        names = {"Introit", "Collect", "Secret", "Postcommunion"}
-        for name in names:
+    def test_all_saints_own_bodies_have_reviewed_english_accounting(self):
+        for name in ("Introit", "Collect", "Secret", "Postcommunion"):
             with self.subTest(proper=name):
-                rows = [row for row in ledger["untranslated"]
-                        if (row["mass"], row["form_id"], row["proper"], row["cycle"],
-                            row["occurrence"], row["lang"], row["extent"]) ==
-                        ("omnium-sanctorum", "main", name, "all", 1, "en", "body")]
-                self.assertEqual(len(rows), 1)
-                self.assertEqual(rows[0]["reason"], {"kind": "no-exemplar"})
-                self.assertEqual(rows[0]["availability"], "unavailable")
-                self.assertNotIn("text", rows[0])
-                self.assertFalse([row for row in ledger["entries"]
-                                  if row["mass"] == "omnium-sanctorum"
-                                  and row["proper"] == name])
-        pre55 = tomllib.loads((ROOT / "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml")
-                              .read_text()).get("untranslated", [])
-        self.assertFalse([row for row in pre55 if row["mass"] == "omnium-sanctorum"
-                          and row["proper"] in names])
-        for calendar in ("roman-1962", "roman-pre-1955"):
-            with self.subTest(calendar=calendar):
-                report = propers.english_coverage(root, calendar)
-                self.assertEqual(report["unaccounted"], 0)
-                self.assertEqual(report["unmatched_records"], 0)
-                self.assertEqual(report["stale_translation_records"], 0)
+                assert_current_english_owner(self, ("omnium-sanctorum", "main", name, "all", 1))
+        self.assert_shared_english_accounting()
 
-    def test_six_new_own_orations_have_shared_english_absences(self):
+    def test_six_new_own_orations_have_reviewed_english_accounting(self):
         propers = tool("mass-propers")
         root = ROOT / "src/sources/calendars"
         masses = {"s-antonii-padua-confessoris-ecclesiae-doctoris",
                   "s-bibianae-virginis-martyris", "comm-s-sabbae-abbatis"}
         names = {"Secret", "Postcommunion"}
-        ledger = tomllib.loads((ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml")
-                               .read_text())
-        expected = {(mass, "main", name, "all", 1, "en", "body")
-                    for mass in masses for name in names}
-        actual = []
-        for row in ledger["untranslated"]:
-            if row["mass"] not in masses or row["proper"] not in names:
-                continue
-            actual.append(tuple(row[field] for field in
-                                ("mass", "form_id", "proper", "cycle", "occurrence", "lang", "extent")))
-            self.assertEqual(row["availability"], "unavailable")
-            self.assertEqual(row["reason"], {"kind": "no-exemplar"})
-            self.assertNotIn("source_id", row)
-            self.assertNotIn("text", row)
-            self.assertNotIn("translations", row)
-        self.assertEqual(len(actual), 6)
-        self.assertEqual(set(actual), expected)
-        self.assertFalse([row for row in ledger["entries"]
-                          if row["mass"] in masses and row["proper"] in names])
-        pre55 = tomllib.loads((ROOT / "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml")
-                              .read_text()).get("untranslated", [])
-        self.assertFalse([row for row in pre55
-                          if row["mass"] in masses and row["proper"] in names])
         for calendar in ("roman-1962", "roman-pre-1955"):
-            with self.subTest(calendar=calendar):
-                document = propers.load_calendar(root, calendar)
-                source_masses = propers._calendars.mass_index(document)
-                overlay, absent, stale, witnesses = propers.translation_overlay(calendar, root)
-                for mass_key in masses:
-                    mass = source_masses[mass_key]
-                    appointed = [row for row in propers.appointed_propers(document, mass)
-                                 if row[1]["name"] in names]
-                    self.assertEqual(len(appointed), 2)
-                    for form, proper, origin in appointed:
-                        self.assertIsNone(origin)
-                        self.assertEqual(proper["source"], "composed")
-                        identity = propers.source_slot_identity(document, mass, form, proper, origin)
-                        self.assertEqual(identity, (mass_key, "main", proper["name"], 1))
-                        key = propers.overlay_key(mass, form, proper, origin)
-                        self.assertEqual(key, (mass_key, "", proper["name"]))
-                        carried = propers.carry_translations(calendar, key, proper, overlay,
-                                                             stale, identity, witnesses)
-                        self.assertFalse([row for row in carried.get("translations") or []
-                                          if row.get("lang") == "en"])
-                        records = propers.matching_untranslated_records(
-                            carried, absent.get(propers.untranslated_key(identity)) or [], identity[3])
-                        self.assertEqual(len(records), 1)
+            document = propers.load_calendar(root, calendar)
+            source_masses = propers._calendars.mass_index(document)
+            overlay, absent, stale, witnesses = propers.translation_overlay(calendar, root)
+            for mass_key in masses:
+                mass = source_masses[mass_key]
+                appointed = [row for row in propers.appointed_propers(document, mass)
+                             if row[1]["name"] in names]
+                self.assertEqual(len(appointed), 2)
+                for form, proper, origin in appointed:
+                    self.assertIsNone(origin)
+                    self.assertEqual(proper["source"], "composed")
+                    identity = propers.source_slot_identity(document, mass, form, proper, origin)
+                    self.assertEqual(identity, (mass_key, "main", proper["name"], 1))
+                    expected = assert_current_english_owner(self, (mass_key, "main", proper["name"], "all", 1))
+                    key = propers.overlay_key(mass, form, proper, origin)
+                    self.assertEqual(key, (mass_key, "", proper["name"]))
+                    carried = propers.carry_translations(calendar, key, proper, overlay, stale, identity, witnesses)
+                    actual = [row for row in carried.get("translations") or [] if row.get("lang") == "en"]
+                    self.assertEqual([(row["text"], row["source_id"], row["rights"]) for row in actual],
+                                     [(row["text"], row["source_id"], row["rights"]) for row in expected])
+                    records = propers.matching_untranslated_records(
+                        carried, absent.get(propers.untranslated_key(identity)) or [], identity[3])
+                    self.assertEqual(len(records), 0 if expected else 1)
+                    if records:
                         self.assertEqual(records[0]["reason"], {"kind": "no-exemplar"})
-                report = propers.english_coverage(root, calendar)
-                self.assertEqual(report["unaccounted"], 0)
-                self.assertEqual(report["unmatched_records"], 0)
-                self.assertEqual(report["stale_translation_records"], 0)
+        self.assert_shared_english_accounting()
 
-    def test_theodore_own_orations_have_shared_english_absences(self):
+    def assert_shared_english_accounting(self):
         propers = tool("mass-propers")
-        root = ROOT / "src/sources/calendars"
-        ledger = tomllib.loads((ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml")
-                               .read_text())
+        for calendar in ("roman-1962", "roman-pre-1955"):
+            report = propers.english_coverage(ROOT / "src/sources/calendars", calendar)
+            for axis in ("unaccounted", "outside_the_ledger", "unmatched_records", "stale_translation_records"):
+                self.assertEqual(report[axis], 0, (calendar, axis))
+
+    def test_theodore_own_orations_have_reviewed_english_accounting(self):
         for name in ("Secret", "Postcommunion"):
             with self.subTest(proper=name):
-                rows = [row for row in ledger["untranslated"]
-                        if (row["mass"], row["form_id"], row["proper"], row["cycle"],
-                            row["occurrence"], row["lang"], row["extent"]) ==
-                        ("comm-s-theodori-martyris", "main", name, "all", 1, "en", "body")]
-                self.assertEqual(len(rows), 1)
-                self.assertEqual(rows[0]["reason"], {"kind": "no-exemplar"})
-                self.assertEqual(rows[0]["availability"], "unavailable")
-                self.assertNotIn("text", rows[0])
-                self.assertFalse([row for row in ledger["entries"]
-                                  if row["mass"] == "comm-s-theodori-martyris"
-                                  and row["proper"] == name])
-        for calendar in ("roman-1962", "roman-pre-1955"):
-            with self.subTest(calendar=calendar):
-                report = propers.english_coverage(root, calendar)
-                self.assertEqual(report["unaccounted"], 0)
-                self.assertEqual(report["unmatched_records"], 0)
-                self.assertEqual(report["stale_translation_records"], 0)
-                absent = tomllib.loads((ROOT / "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml")
-                                       .read_text()).get("untranslated", [])
-                self.assertFalse([row for row in absent
-                                  if row["mass"] == "comm-s-theodori-martyris"
-                                  and row["proper"] in {"Secret", "Postcommunion"}])
+                assert_current_english_owner(self, ("comm-s-theodori-martyris", "main", name, "all", 1))
+        self.assert_shared_english_accounting()
 
     def test_st_thomas_english_body_is_ledgered_for_both_calendars(self):
-        propers = tool("mass-propers")
-        root = ROOT / "src/sources/calendars"
-        for calendar in ("roman-1962", "roman-pre-1955"):
-            with self.subTest(calendar=calendar):
-                result = propers.english_coverage(root, calendar)
-                self.assertEqual(result["unaccounted"], 0)
-                self.assertEqual(result["unmatched_records"], 0)
-                rows = tomllib.loads((ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml")
-                                     .read_text())["untranslated"]
-                self.assertEqual(len([row for row in rows
-                                      if row["mass"] == "s-thomae-apostoli"
-                                      and row["proper"] == "Introit"]), 1)
+        assert_current_english_owner(self, ("s-thomae-apostoli", "main", "Introit", "all", 1))
+        self.assert_shared_english_accounting()
 
     def test_duplicate_held_proper_does_not_resolve_a_single_source_slot(self):
         slot = ('\n[[targets]]\nid="slot"\nslice_id="fixed"\nkind="text-slot"\n'
@@ -1407,7 +1397,7 @@ state = "unenumerated"
         self.assertEqual([row["id"] for row in missing],
                          ["roman-1962:commemoration:1962-12-25-comm"])
         published = coverage.published_expectations(report)
-        self.assertEqual(len(published["not_represented"]), 295)
+        self.assertEqual(len(published["not_represented"]), 295 - len(REVIEWED_20261026_SOURCE_JOINS))
         self.assertEqual([row["id"] for row in published["not_represented"]
                           if row["slice_id"] == "roman-1962-universal-fixed-calendar"],
                          ["roman-1962:commemoration:1962-12-25-comm"])
@@ -1463,31 +1453,12 @@ state = "unenumerated"
                          {"represented": 0, "not-represented": 0, "unresolved": 0})
         self.assertEqual(published["not_represented"], [])
 
-    def test_uncited_own_chants_have_shared_english_absences(self):
-        propers = tool("mass-propers")
-        root = ROOT / "src/sources/calendars"
+    def test_uncited_own_chants_have_reviewed_english_accounting(self):
         identities = [('nativitate-beatae-mariae-virginis', 'Alleluia'), ('nativitate-beatae-mariae-virginis', 'Communion'), ('nativitate-beatae-mariae-virginis', 'Gradual'), ('nativitate-beatae-mariae-virginis', 'Introit'), ('nativitate-beatae-mariae-virginis', 'Offertory'), ('s-laurentii-martyris', 'Alleluia'), ('s-martini-episcopi-confessoris', 'Alleluia'), ('s-matthaei-apostoli-evangelistae', 'Alleluia')]
-        ledger = tomllib.loads((ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml").read_text())
-        absent_pre55 = tomllib.loads((ROOT / "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml").read_text()).get("untranslated", [])
         for mass, name in identities:
             with self.subTest(mass=mass, proper=name):
-                selected = [row for row in ledger["untranslated"]
-                    if (row.get("mass"), row.get("form_id"), row.get("proper"), row.get("cycle"),
-                        row.get("occurrence"), row.get("lang"), row.get("extent")) ==
-                       (mass, "main", name, "all", 1, "en", "body")]
-                self.assertEqual(len(selected), 1)
-                self.assertEqual(selected[0]["availability"], "unavailable")
-                self.assertEqual(selected[0]["reason"], {"kind": "no-exemplar"})
-                self.assertNotIn("text", selected[0])
-                self.assertFalse([row for row in ledger["entries"]
-                                  if row["mass"] == mass and row["proper"] == name])
-                self.assertFalse([row for row in absent_pre55
-                                  if row["mass"] == mass and row["proper"] == name])
-        for calendar in ("roman-1962", "roman-pre-1955"):
-            with self.subTest(calendar=calendar):
-                report = propers.english_coverage(root, calendar)
-                for axis in ("unaccounted", "outside_the_ledger", "unmatched_records", "stale_translation_records"):
-                    self.assertEqual(report[axis], 0)
+                assert_current_english_owner(self, (mass, "main", name, "all", 1))
+        self.assert_shared_english_accounting()
 
 
 if __name__ == "__main__":

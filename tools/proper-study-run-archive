@@ -11,6 +11,7 @@ import re
 import shutil
 import subprocess
 import sys
+import tempfile
 from dataclasses import dataclass
 from pathlib import Path, PurePosixPath
 
@@ -69,6 +70,15 @@ RUN_ID = re.compile(r"[0-9a-f]{16}")
 RUNS = PurePosixPath("build") / "tpt-runs"
 RESULTS_DIR = PurePosixPath("evaluations") / "proper-study-results"
 RECORD = "record.md"
+REDACTION_RECEIPT = "redaction-receipt.json"
+REDACTION_POLICY = "repository-root-prefix-in-result-notes-v1"
+HTTP_URL = re.compile(r"https?://[^\s<>\"'`]+", re.I)
+PLACEHOLDER_PATH = re.compile(r"<[A-Za-z_][A-Za-z0-9_-]*>/[^\s<>\"'`]*")
+FILESYSTEM_PATH = re.compile(
+    r"(?<![\w./\\])/+[^/\s\"'`<>()[\]{},;|\\][^\s\"'`<>()[\]{},;|\\]*"
+    r"|(?<!\w)[A-Za-z]:[\\/]"
+    r"|(?<![\w./\\])\\{2,}[^\s\\/]+"
+    r"|\bfile://", re.I)
 
 # The archive's layout, which the committed archives already have. A reader
 # who has opened one leaf's archive can open every other, and the reproduction
@@ -96,6 +106,7 @@ class Row:
     disposition: str
     packet_hash: str
     result_hash: str
+    result_file: str = ""
 
 
 @dataclass
@@ -276,12 +287,12 @@ def collect(root: Path, run_id: str) -> Archive:
         packet = packets.get(key)
         if packet is None:
             raise ArchiveError(f"no packet recorded for {key[0]} iteration {key[1]}")
-        name, data = verified(root, record, "result", run_rel / "results")
-        files[name] = data
+        result_name, data = verified(root, record, "result", run_rel / "results")
+        files[result_name] = data
         name, data = verified(root, packet, "packet", run_rel / "packets")
         files[f"packets/{name}"] = data
         rows.append(Row(str(key[0]), int(key[1]), str(record.get("disposition", "")),
-                        str(packet["hash"]), str(record["hash"])))
+                        str(packet["hash"]), str(record["hash"]), result_name))
     if len(packets) != len(rows):
         raise ArchiveError(
             f"{plural(len(packets), 'packet')} but {plural(len(rows), 'result')}; "
@@ -308,7 +319,123 @@ def collect(root: Path, run_id: str) -> Archive:
                    files, len(interventions))
 
 
-def record_text(archive: Archive, cycles: str) -> str:
+def json_value(data: bytes, name: str):
+    """Read strict JSON without losing duplicate fields in a derivative."""
+    def unique(pairs):
+        value = {}
+        for key, item in pairs:
+            if key in value:
+                raise ValueError("duplicate JSON field")
+            value[key] = item
+        return value
+
+    def constant(_value):
+        raise ValueError("nonstandard JSON constant")
+
+    try:
+        return json.loads(data.decode("utf-8"), object_pairs_hook=unique,
+                          parse_constant=constant)
+    except (UnicodeError, ValueError) as error:
+        raise ArchiveError(f"cannot privacy-audit {name}: invalid UTF-8 JSON") from error
+
+
+def json_strings(value):
+    if isinstance(value, str):
+        yield value
+    elif isinstance(value, list):
+        for item in value:
+            yield from json_strings(item)
+    elif isinstance(value, dict):
+        for key, item in value.items():
+            yield key
+            yield from json_strings(item)
+
+
+def public_files(files: dict[str, bytes], root: Path) -> None:
+    """Refuse local absolute paths while preserving source URLs and templates.
+
+    This audits native payloads, not generated JSON-pointer receipt metadata.
+    Unknown or substantive fields are never rewritten to pass this check.
+    """
+    for name, data in sorted(files.items()):
+        if name.endswith(".json"):
+            strings = json_strings(json_value(data, name))
+        else:
+            try:
+                strings = (data.decode("utf-8"),)
+            except UnicodeError as error:
+                raise ArchiveError(f"cannot privacy-audit {name}: invalid UTF-8") from error
+        if any(root.resolve().as_posix() in value
+               or FILESYSTEM_PATH.search(PLACEHOLDER_PATH.sub("", HTTP_URL.sub("", value)))
+               for value in strings):
+            raise ArchiveError(f"private absolute filesystem path in {name}; "
+                               "only result notes support --redact-repository-paths")
+
+
+def redact_notes(value: str, prefix: str) -> tuple[str, int]:
+    """Remove the current checkout prefix from path tokens outside source URLs."""
+    pattern = re.compile(r"(?<![\w./\\])" + re.escape(prefix))
+
+    def relative(match):
+        suffix = re.match(r"[^\s\"'`<>()[\]{},;|\\]*", match.string[match.end():]).group()
+        parts = suffix.rstrip("/").split("/")
+        if not suffix or any(part in {"", ".", ".."} for part in parts):
+            raise ArchiveError("result notes contain a noncanonical repository path; "
+                               "no derivative was written")
+        return ""
+
+    pieces, count, start = [], 0, 0
+    for match in HTTP_URL.finditer(value):
+        text, changed = pattern.subn(relative, value[start:match.start()])
+        pieces.extend((text, match.group()))
+        count += changed
+        start = match.end()
+    text, changed = pattern.subn(relative, value[start:])
+    return "".join([*pieces, text]), count + changed
+
+
+def derivative(root: Path, archive: Archive, files: dict[str, bytes]) -> tuple[dict[str, bytes], dict]:
+    """An explicit public derivative of verified native bytes, never a new verdict."""
+    output = dict(files)
+    changes = {}
+    prefix = root.resolve().as_posix() + "/"
+    for row in archive.rows:
+        data = json_value(files[row.result_file], row.result_file)
+        if not isinstance(data, dict):
+            raise ArchiveError(f"cannot derive {row.result_file}: result is not a JSON object")
+        notes = data.get("notes")
+        entries = [("/notes", notes)] if isinstance(notes, str) else (
+            [(f"/notes/{index}", value) for index, value in enumerate(notes)]
+            if isinstance(notes, list) else [])
+        changed = []
+        for pointer, value in entries:
+            if not isinstance(value, str):
+                continue
+            redacted, count = redact_notes(value, prefix)
+            if not count:
+                continue
+            if pointer == "/notes":
+                data["notes"] = redacted
+            else:
+                data["notes"][int(pointer.rsplit("/", 1)[1])] = redacted
+            changed.append({"json_pointer": pointer, "replacements": count})
+        if changed:
+            output[row.result_file] = (json.dumps(data, ensure_ascii=False, sort_keys=True,
+                                                 indent=2) + "\n").encode("utf-8")
+            changes[row.result_file] = changed
+    public_files(output, root)
+    receipt = {
+        "schema": 1, "record_type": "proper-study-run-archive-derivative",
+        "run_id": archive.run_id, "policy": REDACTION_POLICY,
+        "operation": "remove current repository root plus separator from result notes path tokens",
+        "files": [{"path": name, "native_sha256": sha256(files[name]),
+                   "archived_sha256": sha256(output[name]), "changes": changes.get(name, [])}
+                  for name in sorted(files)],
+    }
+    return output, receipt
+
+
+def record_text(archive: Archive, cycles: str, receipt: dict | None = None) -> str:
     """record.md: what the archive is, and one table row per result."""
     manifest = archive.manifest
     count = len(archive.rows)
@@ -320,19 +447,30 @@ def record_text(archive: Archive, cycles: str) -> str:
         f"Run `{archive.run_id}`; seed commit `{manifest['repo_commit']}`. Terminal "
         f"disposition **{archive.disposition}**.",
         "",
-        "The JSON files are exact engine-retained result bytes, copied after the run "
+        (("The result JSON files are explicitly declared public derivatives of the verified "
+          "engine-retained bytes. Only current-repository-root prefixes in top-level "
+          "`notes` strings were removed. The native run is unchanged; original and archived "
+          f"hashes and every changed JSON pointer/count are in `{REDACTION_RECEIPT}`. "
+          "All other input files remain exact. A stage's PASS records only its own completed "
+          "work; publication acceptance is the terminal gate's. The engine supplies any "
+          "`review_inputs` seal; workers do not author it. The interventions are the "
+          "driver's records of host facts the packets do not carry, and the driver's "
+          f"account of every cycle is in `{cycles}`.") if receipt is not None else
+        ("The JSON files are exact engine-retained result bytes, copied after the run "
         "reached its terminal disposition. A stage's PASS records only its own completed "
         "work; publication acceptance is the terminal gate's. The engine supplies any "
         "`review_inputs` seal; workers do not author it. The interventions are the "
         "driver's records of host facts the packets do not carry, and the driver's "
-        f"account of every cycle is in `{cycles}`.",
+        f"account of every cycle is in `{cycles}`.")),
         "",
-        "| Stage | Iteration | Disposition | Packet SHA-256 | Accepted result SHA-256 |",
-        "| --- | ---: | --- | --- | --- |",
+        "| Stage | Iteration | Disposition | Packet SHA-256 | Accepted result SHA-256 |"
+        + (" Archived result SHA-256 |" if receipt is not None else ""),
+        "| --- | ---: | --- | --- | --- |" + (" --- |" if receipt is not None else ""),
     ]
+    archived = {item["path"]: item["archived_sha256"] for item in receipt["files"]} if receipt else {}
     lines += [
         f"| {row.stage} | {row.iteration} | {row.disposition} | `{row.packet_hash}` | "
-        f"`{row.result_hash}` |"
+        f"`{row.result_hash}` |" + (f" `{archived[row.result_file]}` |" if receipt is not None else "")
         for row in archive.rows
     ]
     preserved = "which is" if count == 1 else "all of which are"
@@ -395,7 +533,9 @@ def write(dest: Path, files: dict[str, bytes]) -> None:
     the destination either holds the whole archive or nothing.
     """
     dest.parent.mkdir(parents=True, exist_ok=True)
-    staging = dest.parent / f".{dest.name}.partial-{os.getpid()}"
+    # Exclusive creation prevents unrelated or stale staging contents from
+    # entering an archive without having passed its audit and receipt.
+    staging = Path(tempfile.mkdtemp(prefix=f".{dest.name}.partial-", dir=dest.parent))
     try:
         for name, data in sorted(files.items()):
             target = staging / name
@@ -415,7 +555,8 @@ def shown(root: Path, path: Path) -> str:
         return str(path)
 
 
-def archive_run(root: Path, run_id: str, cycles: str, output: str | None) -> tuple[Path, Archive]:
+def archive_run(root: Path, run_id: str, cycles: str, output: str | None,
+                *, redact_repository_paths: bool = False) -> tuple[Path, Archive]:
     if Path(cycles).is_absolute() or ".." in PurePosixPath(cycles).parts or not cycles:
         raise ArchiveError(
             "--cycles must be a repository-relative path, because record.md is "
@@ -424,13 +565,21 @@ def archive_run(root: Path, run_id: str, cycles: str, output: str | None) -> tup
     archive = collect(root, run_id)
     dest = destination(root, archive, output)
     files = dict(archive.files)
-    # Asked of the engine only once nothing else can refuse: both are read-only,
-    # but each is a full launcher process.
+    # Both engine queries are read-only. Their bytes receive the same privacy
+    # audit as the verified inputs before anything is written.
     for verb in ("status", "replay"):
         files[f"terminal-{verb}.json"] = engine_report(
             root, archive.proper, verb, archive.run_id, archive.disposition
         )
-    files[RECORD] = record_text(archive, cycles).encode("utf-8")
+    receipt = None
+    if redact_repository_paths:
+        files, receipt = derivative(root, archive, files)
+        files[REDACTION_RECEIPT] = (json.dumps(receipt, ensure_ascii=False, sort_keys=True,
+                                            indent=2) + "\n").encode("utf-8")
+    else:
+        public_files(files, root)
+    files[RECORD] = record_text(archive, cycles, receipt).encode("utf-8")
+    public_files({RECORD: files[RECORD]}, root)
     write(dest, files)
     return dest, archive
 
@@ -451,6 +600,11 @@ def main(argv: list[str] | None = None) -> int:
             "hashes to its record, and a destination that already holds anything.\n"
             "Everything is read and verified before anything is written, and the\n"
             "archive is moved into place whole, so a refusal writes nothing.\n\n"
+            "Absolute filesystem paths are refused. --redact-repository-paths\n"
+            "opts into a declared derivative: only the current checkout prefix in\n"
+            "result notes becomes repository-relative. A deterministic receipt\n"
+            "preserves original/archived hashes and every changed JSON pointer.\n"
+            "Other fields and files stay exact; residual absolute paths refuse.\n\n"
             "--output DIR writes the same archive to DIR instead of the leaf, which\n"
             "is how an archive is checked: archive an already-archived run to a\n"
             "scratch directory and `diff -r` it against the committed copy."
@@ -470,6 +624,11 @@ def main(argv: list[str] | None = None) -> int:
         help="write the archive to DIR (absent or empty) instead of the leaf",
     )
     parser.add_argument(
+        "--redact-repository-paths", action="store_true",
+        help="derive public result notes with only the current checkout prefix removed; "
+        "record original/archived hashes and changed JSON pointers",
+    )
+    parser.add_argument(
         "--root",
         metavar="DIR",
         default=str(ROOT),
@@ -480,7 +639,8 @@ def main(argv: list[str] | None = None) -> int:
 
     root = Path(args.root).resolve()
     try:
-        dest, archive = archive_run(root, args.run_id, args.cycles, args.output)
+        dest, archive = archive_run(root, args.run_id, args.cycles, args.output,
+                                    redact_repository_paths=args.redact_repository_paths)
     except ArchiveError as error:
         print(f"{ERROR}{error}", file=sys.stderr)
         return 1

@@ -1,0 +1,8 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/research/context.md",
+  "disposition": "PASS",
+  "iteration": 0,
+  "notes": "Scope gate, exact registry/shared-owner adapter checks, all 12 ordered keys, dependency paths and local Markdown links passed. make check-sources exited 2 at check-document-catalogue because the required reserved scaffold has no web-edition.toml yet; source-library validation and the six curriculum rights tests passed. Full log: .scratch/pc-r07-production/resolve-context-0000/check-sources.log. Global inventory refresh and source registration remain later-stage work.",
+  "stage": "resolve-context",
+  "summary": "Resolved PC-R07-ABC as the annual U.S. All Saints solemnity on 2026-11-01 and wrote research/context.md, the complete 12-unit inventory in propers/verified.md and instance/manifest.md, and research/source-plan.md. Created the registry-fixed shared Missal owner, reserved main.tex, and added the exact GPT edition disposition and dated occurrence while preserving the remaining 2008/current U.S. exemplar limits."
+}

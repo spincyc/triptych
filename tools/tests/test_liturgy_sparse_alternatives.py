@@ -32,6 +32,11 @@ const clone = value => JSON.parse(JSON.stringify(value));
 const sacred = 'most-sacred-heart-jesus';
 const thursday = 'ot-12-thursday';
 const massOf = (held, key) => held.masses.find(mass => mass.key === key);
+const acclamationAlternative = mass => {
+  const row = mass.propers.find(row => row.ordinary_disposition?.option === '1-john-4-10b');
+  assert(row, 'the source retains the alternative Gospel Acclamation');
+  return row;
+};
 const choiceId = (mass, group) => 'proper-choice/postconciliar/' + mass + '/main/' + group;
 const properId = (mass, offset) => 'proper/postconciliar/' + mass + '/' + String(offset + 1).padStart(3, '0');
 const members = result => result.events.flatMap(event => event.kind === 'proper-choice' ?
@@ -182,12 +187,12 @@ if (input.op === 'actual-days') {
   }
 } else if (input.op === 'strict-refusals') {
   const cases = [
-    mutateMass(dayCase('2026-06-12', sacred), mass => {delete mass.propers[0].cycles.A;}),
+    mutateMass(dayCase('2026-06-12', sacred), mass => {delete mass.propers.find(row => row.name === 'First Reading').cycles.A;}),
     mutateMass(dayCase('2026-06-12', sacred), mass => {
-      mass.propers[4].cycles.Z = clone(mass.propers[4].cycles.B);}),
+      acclamationAlternative(mass).cycles.Z = clone(acclamationAlternative(mass).cycles.B);}),
     mutateMass(dayCase('2026-06-12', sacred), mass => {
-      mass.propers[4].weekday_cycles = {I: clone(mass.propers[4].cycles.B)};}),
-    mutateMass(dayCase('2026-06-25', thursday), mass => {delete mass.propers[0].weekday_cycles.II;})
+      acclamationAlternative(mass).weekday_cycles = {I: clone(acclamationAlternative(mass).cycles.B)};}),
+    mutateMass(dayCase('2026-06-25', thursday), mass => {delete mass.propers.find(row => row.name === 'First Reading').weekday_cycles.II;})
   ];
   for (const held of cases) assert.throws(() => A.adaptDay(held),
     /not held|unsupported Lectionary cycle keys|both Sunday and weekday|no option for the selected cycle/);
@@ -201,13 +206,13 @@ if (input.op === 'actual-days') {
   assert.throws(() => A.adaptDay(missing), /no resolved Lectionary year/);
 } else if (input.op === 'whole-option-validation') {
   const held = mutateMass(dayCase('2026-06-12', sacred), mass => {
-    const row = clone(mass.propers[4]);
+    const row = clone(acclamationAlternative(mass));
     row.cycles.Z = clone(row.cycles.B);
     mass.propers.splice(5, 0, row);
   });
   assert.throws(() => A.adaptDay(held), /unsupported Lectionary cycle keys/);
   const badStatus = mutateMass(dayCase('2026-06-12', sacred), mass => {
-    mass.propers[4].cycles.B.text_status = {state: 'unavailable', scope: 'invented-scope'};
+    acclamationAlternative(mass).cycles.B.text_status = {state: 'unavailable', scope: 'invented-scope'};
   });
   assert.throws(() => A.adaptDay(badStatus), /text_status/);
 } else if (input.op === 'input-and-api-contract') {

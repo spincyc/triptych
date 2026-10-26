@@ -20,6 +20,7 @@ The stable Proper-of-Time series, with independent ChatGPT and Claude studies
 for each Lectionary cycle. Provider columns link available editions or say
 `Planned`; cycles with the same availability share a row.
 
+<!-- triptych-publication-id: liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc -->
 <!-- triptych-publication-id: claude:liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a -->
 <!-- triptych-publication-id: claude:liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a -->
 <!-- triptych-publication-id: claude:liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a -->
@@ -135,6 +136,6 @@ for each Lectionary cycle. Provider columns link available editions or say
 | PC-R04 | **Transfiguration of the Lord** | A, B, C | Planned | Planned |
 | PC-R05 | **Assumption of the Blessed Virgin Mary** | A, B, C | Planned | Planned |
 | PC-R06 | **Exaltation of the Holy Cross** | A, B, C | Planned | Planned |
-| PC-R07 | **All Saints** | A, B, C | Planned | Planned |
+| PC-R07 | **All Saints** | A, B, C | [Research PDF](../pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.pdf) · [Synthesis PDF](../pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-synthesis.pdf) · [Homily PDF](../pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-homily.pdf) · [Read](../web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.html) | Planned |
 | PC-R08 | **Commemoration of All the Faithful Departed** | A, B, C | Unresolved | Unresolved |
 | PC-R09 | **Dedication of the Lateran Basilica** | A, B, C | Planned | Planned |

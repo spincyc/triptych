@@ -54,10 +54,16 @@
   const formularySelect = document.getElementById('reader-formulary');
   const massFormField = document.getElementById('reader-mass-form-field');
   const massFormSelect = document.getElementById('reader-mass-form');
+  if ((!massFormField || !massFormSelect) && (massFormField || massFormSelect ||
+      !window.location.pathname.endsWith('/reader-visual-reset-propers.html'))) {
+    throw new Error('Mass form controls missing');
+  }
   const bibleSelect = document.getElementById('reader-bible');
   const orationsSelect = document.getElementById('reader-orations');
   const witnessField = document.getElementById('reader-witness-field');
   const witnessSelect = document.getElementById('reader-witness');
+  const browseSelects = [missalSelect, typeSelect, formularySelect, massFormSelect,
+    bibleSelect, orationsSelect, witnessSelect].filter(Boolean);
 
   const cache = new Map();
   let properSearch = null;
@@ -1064,6 +1070,7 @@
   }
 
   function fillMassForms(mass, selected) {
+    if (!massFormSelect) return;
     massFormSelect.replaceChildren();
     massFormField.hidden = true;
     const forms = mass && mass.forms || [];
@@ -1090,7 +1097,7 @@
     if (orationsSelect.value === T.SOURCE_LANGUAGE) return;
 
     const current = runtime.normalized && runtime.normalized.state;
-    if (!state && current && !massFormField.hidden && current.form !== massFormSelect.value) {
+    if (!state && current && massFormField?.hidden === false && current.form !== massFormSelect.value) {
       state = Object.assign({}, current, { form: massFormSelect.value });
       delete state.properChoices;
       delete state.alternative;
@@ -1111,16 +1118,14 @@
   }
 
   function setBrowseEnabled(enabled) {
-    [missalSelect, typeSelect, formularySelect, massFormSelect, bibleSelect, orationsSelect, witnessSelect]
-      .forEach(function (control) { control.disabled = !enabled; });
+    browseSelects.forEach(function (control) { control.disabled = !enabled; });
     browseForm.querySelector('.surface-apply').disabled = !enabled;
   }
 
   function resetBrowseSurface() {
-    [missalSelect, typeSelect, formularySelect, massFormSelect, bibleSelect, orationsSelect, witnessSelect]
-      .forEach(function (select) { select.replaceChildren(); });
+    browseSelects.forEach(function (select) { select.replaceChildren(); });
     witnessField.hidden = true;
-    massFormField.hidden = true;
+    if (massFormField) massFormField.hidden = true;
     browseStatus.textContent = 'Choose an edition to begin a new, explicit formulary selection.';
     setBrowseEnabled(false);
     if (runtime.manifests) {
@@ -1616,7 +1621,7 @@
       fillOrations(structure, mass, orationsSelect.value, null);
     }
   });
-  massFormSelect.addEventListener('change', function () {
+  massFormSelect?.addEventListener('change', function () {
     const current = runtime.normalized && runtime.normalized.state;
     if (!current || !browseKeepsCurrentFormulary() || massFormField.hidden) return;
     const draft = Object.assign({}, current, { form: massFormSelect.value });
@@ -1665,9 +1670,9 @@
       orations: orationsSelect.value
     };
     const current = runtime.normalized && runtime.normalized.state;
-    const formChanged = !massFormField.hidden && current &&
+    const formChanged = massFormField?.hidden === false && current &&
       massFormSelect.value !== current.form;
-    if (!massFormField.hidden) updates.form = massFormSelect.value;
+    if (massFormField?.hidden === false) updates.form = massFormSelect.value;
     updates[PUBLIC_KEYS.translationWitness] = witnessField.hidden ? null : witnessSelect.value;
     const removals = [
       'location', LEGACY_KEYS.cycle, LEGACY_KEYS.alternative,

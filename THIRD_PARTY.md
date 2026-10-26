@@ -1082,7 +1082,7 @@ Dated 2026-10-26 nine source-established oration receiving batch: the own Collec
 
 Bede’s *The Explanation of the Apocalypse*, translated by Edward Marshall
 (Oxford and London: James Parker and Co.,1878), is retained as its complete
-192-page facsimile, a distinct uncorrected text extraction and five separately
+192-page facsimile, a distinct uncorrected text extraction and separately
 checked verse-comment transcriptions. The historical translation and mechanical
 page reproduction have the recorded United States public-domain basis. Original
 Google digitizer attribution remains intact under

@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-10-26"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:827450f1414d903fb782e94a90ae4b42dbe2488c71bc20ac5eeb1eaa437f2b17"
+inventory_snapshot = "sha256:e23a42e44d014166a79636b7d2be14d1c102c376cdf093a18393d4352ad87fda"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
-classification_snapshot = "sha256:080d5e634e8a9b4a964d4771e522f1e0363f3656829175fa40c5d78d4475d650"
-canonical_catalog_snapshot = "sha256:bfe9682d51f6c85ebbda6690d6fa55f906471706bd3dfb5eddba31818dc5d326"
+classification_snapshot = "sha256:2cac89653e39a45437b2b4b6d752469c5f7b7af65581d7154c5888616b27a27c"
+canonical_catalog_snapshot = "sha256:182a16abdeb08470c6b40adaaacfa9467ef1fc430b34dfd3ace14de38e33b16e"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:283026862b39af01a88f641c2f690463e82ccb50860f515a5bbd22216e1ea407"
+snapshot = "sha256:bbe75459cc073fff53e582f94e928dfd447c3360e5052043d5c188e5d2f6ec96"
 families = []
 
 [[review_units]]
@@ -597,6 +597,11 @@ surface_snapshot = "sha256:30e943d8a2071a60e4e3a993d89b5713a8c8f3d7fd6e08f4b816b
 review_state = "pending"
 
 [[review_units]]
+owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"
+surface_snapshot = "sha256:57c9a59b1450a6cacfa97b61a48980c38e93bc69c5d3285f43fdc44f69baf1d6"
+review_state = "pending"
+
+[[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s26-most-holy-trinity-year-a"
 surface_snapshot = "sha256:b97af9dc12c4a8424699d5467ee759399a1518c8715db5b3b6145aa0e4539a96"
 review_state = "pending"
@@ -728,7 +733,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"
-surface_snapshot = "sha256:0ed916879fbba203259237c71762f62f3b14119c0672263737f524268abdd90a"
+surface_snapshot = "sha256:47862f5415c3d26499f349324afa852a904ed442146d4e0defeecc800b18f6ba"
 review_state = "pending"
 
 [[review_units]]

@@ -1,0 +1,42 @@
+{
+  "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc",
+  "pagination_evidence": {
+    "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-synthesis.aux": "d4abbf5cf38e8d74092bddd9373f9eaaf35ea56b932b8623eef9baf7408a6183",
+    "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.aux": "cc5967daaa1489aa4824409e4c25a2b7a8b1fd946a9e8800a492761703895838"
+  },
+  "pdfs": {
+    "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-homily.pdf": "a197407d552a2f13c3965dc6dfc5aca70c41f2108496f88fe97919436f05a300",
+    "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-synthesis.pdf": "df39c8e92d420eb74a6a3bf569c6b38e3ed5f291cc809b091badd3a0ae2cfec4",
+    "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.pdf": "ddebff78fcd57d0cc5a2d1f2b561a3676ad39252d518bd65f49f996e6864e0cd"
+  },
+  "provider": "gpt",
+  "render_inputs": {
+    "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+    "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+    "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/generation-metadata.tex": "deafbc8b19e69805d57efa0d7c132a25edaa4ffa5cbda0e704e36a4cfe93800c",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/homily.tex": "f0b192fd7603d750c1e1acf2d25100c80d4b4c8131c218316ede03788a603104",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/main.tex": "0b33160829f743ced70c148911b960c3e3778289ce9400fcb20f5a8897756952",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/proper-components.toml": "94e8237f76df7cda28b656f0b59d02bd5f462c84fbe8ceaca3fb4fcc60969512",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/research/chronology-annotations.tex": "0ae88ac20aa9f69b1e61a874b46bbe7cd55137f24df5433b22b174637de581d8",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/00-opening.tex": "1182f7b60b6fde5e97fc5414ddf6f61e4565dea5d10934cb13446018c5e05e08",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/01-map.tex": "b5e1ff1fa885573665a5ea638ab617f14b90adf9c838c5adf1c432332e5cf07f",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/10-treatment.tex": "6aa160bb9ed71619f6c1e5c588fc673e859187b4fe7496fbd00b0d3b150e98f7",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/20-texts.tex": "da637b373696f8b49f40dea228fffbc514cdb406f1945d2979acdd9496fcd4ed",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/30-desire.tex": "799f4b97444fff5d230eb826aac70b18aa26748f4db3b2f5a3b026221dd9e221",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/40-multitude.tex": "a6c2c84b25ed8070b80e593d1d113ecd4f188522bdacedf65d2e8e72c53ead2d",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/50-comparison.tex": "02240c47f37002790312f2e15df8daee8c5308fcbab0bd39c18be2563e3c535f",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/60-history.tex": "abf8255759de1d208835f00b02f14a6fc95692c1c8c38028fac08f31543202b3",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/70-apparatus.tex": "e41c72940d096c7ab4526faffe9b48575118bcd5ab04e6e27c3d8ca0494051ec",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/homily-10-spoken.tex": "7fdf2ae2502eeb8c0c36c6a9d2e539427187e746b666f03c1f40c393e100ffc3",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/homily-90-notes.tex": "2fd2b383820af4160f6c6812a5660c42dadb58a37395d2091ccbf3615af6ec88",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/synthesis-01-inventory.tex": "175a728e9d50db1e958e28119535c35630fc95d79520805d666cc1450bda63b4",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/synthesis-02-overview.tex": "3cee5992b8e4ef425d2d974211396f99dfa4dc55550002996913dd2100e9a998",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/synthesis-03-chronology.tex": "f4763ffceead02e475d27cf0686823d3e55299b4efade66d5152e983c709a006",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/synthesis-04-themes.tex": "6a138632767aaa078b9c1a35b8914d3c0f515723d7bd495cc2a111cb3d1b732e",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/synthesis-05-commentary.tex": "a5af0c930251ce4bbfd4c5c61d8f26c8cc338fe911990d218b14a269b44e6286",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/synthesis-90-apparatus.tex": "4f866fca20f921ee6e2eaee267073e63eb6ae4761ed95de7121cd884b5814d54",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/synthesis.tex": "9778790d8754cb98ef80f8cff81f8598d2759ae99529c963c3ab5f3c1e924bc9"
+  },
+  "schema": 2
+}

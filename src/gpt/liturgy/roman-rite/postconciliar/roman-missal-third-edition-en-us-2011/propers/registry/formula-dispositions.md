@@ -5,6 +5,7 @@
 **Correction:** on 2026-09-24 the rows below, written before the registry renumbering of 2026-08-22, were corrected to the renumbered parents, formula keys and slugs of their current leaves and reordered by parent; their Lectionary numbers, owners and dispositions are unchanged and were not re-reviewed.
 **Specific addition:** PC-S53-A, evaluated 2026-09-28; only this new target was resolved in that addition.
 **Specific addition:** PC-S55-A, context resolved 2026-10-13; earlier targets were not re-reviewed.
+**Specific addition:** PC-R07-ABC, context resolved 2026-10-25; earlier targets were not re-reviewed.
 **Stable authority:** [Postconciliar Proper Registry](../../../../../../../../guidance/liturgy/postconciliar-propers-registry.md)
 
 This record adopts the stable parent IDs, formula keys, slug grammar, ordering, ownership rules, and counts without modification. A disposition applies only when stated below. Every unlisted baseline key remains `not evaluated`, not `not-present-in-edition`.
@@ -31,6 +32,12 @@ This record adopts the stable parent IDs, formula keys, slug grammar, ordering, 
 | `PC-S55` | `PC-S55-A` | `pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a` | 145 | [Ordinary Time Week XXIX owner](../temporal/shared/ordinary-time/weeks/29/propers/verified.md) | Adopted for the authorized three-document study; national-calendar occurrence and U.S. Lectionary inventory independently checked 2026-10-13. Shared Missal collation and edition limits belong to Week 29. Context resolution does not confer research or publication acceptance. |
 
 The stable registry contains 184 baseline Proper-of-Time targets. This edition record evaluates sixteen of them and makes no disposition for the other 168. It adopts `PC-T01` Evening Mass of the Lord's Supper and `PC-T02` Celebration of the Lord's Passion as two additional, not-yet-evaluated targets. It adopts `PC-T03` Easter Vigil as an identity alias for the existing `PC-S17-A-VIGIL`, `PC-S17-B-VIGIL`, and `PC-S17-C-VIGIL` targets, not as a fourth target or owner. The celebration names are edition-identified; exact printed capitalization remains subject to direct altar-book collation. This record has not evaluated the three conditional Scrutiny targets, the six weekday fallback targets, or a complete General Calendar replacement matrix. Therefore neither the stable totals nor a collection-completeness claim may be assigned to this edition-locale.
+
+## Evaluated General Calendar replacement target
+
+| Parent | Formula key | Full publication slug | Lectionary | Canonical owner | Disposition |
+| --- | --- | --- | ---: | --- | --- |
+| `PC-R07` | `PC-R07-ABC` | `pc-r07-all-saints-abc` | 667 | [All Saints owner](../general-calendar/shared/formularies/pc-r07-all-saints/propers/verified.md) | Adopted for the authorized three-document study. National occurrence and annual U.S. Lectionary boundaries independently checked 2026-10-25; one annual `ABC` set, no separate appointed Vigil or closed reading alternative. The shared owner alone records Missal evidence and the unfinished exact 2008/current U.S. exemplar checks. This context disposition is not research or publication acceptance and does not evaluate another replacement target or the complete replacement matrix. |
 
 ## `PC-R08` — unresolved and fail-closed
 

@@ -3798,3 +3798,17 @@ reason = "Five complete photographed pages from one Paris 1606 Cistercian missal
 id = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-volume-5-english-1930.christ-the-king-identity-facsimile-a6eac9b9"
 manifest_sha256 = "f83d3c18d8ce688f3fa4097bfc686fe3f64ccbeee932af8d81a244958be57010"
 reason = "Seven complete photographed pages from Schuster's one identified English volume V: its title and colophon, then printed pp. 200-204, including the next chapter's opening as boundary context. These pages belong to that same work and identify no separate constituent work. The artifact notes explicitly deny whole-volume coverage; that denial triggers the container-shape pattern. No conclusion about the omitted volume pages is made."
+
+[[containers]]
+id = "work.united-states-conference-of-catholic-bishops.divine-worship-newsletter-2021-02"
+manifest_sha256 = "e31c66f3d064eabf646ab495c3e45248351fb5ab5fa6f8f5eb22eae1bec86b04"
+status = "partial"
+basis = "Complete four-page February 2021 issue, printed 5-8, acquired as exact e06d7b65 artifact; inspected article title and printed 7-8 identify the constituent below."
+unresolved = "Other issue contents were acquired, not individually identified as reusable works or inspected for publication claims."
+
+[[containers.constituents]]
+author = "United States Conference of Catholic Bishops, Secretariat of Divine Worship"
+title = "USCCB Approves, CDWDS Confirms Translation Change to Collect Prayer Conclusions"
+whole = true
+locator = "printed 7-8 / artifact pages 3-4"
+basis = "The complete article and its continuation were read at the stated pages; the title appears at the opening on printed 7."

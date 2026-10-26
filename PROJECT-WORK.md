@@ -11,7 +11,7 @@ Last reconciled: 2026-10-26.
 
 <!-- promised-deliverable: four-last-things-pdf-layout-2026-10-26 -->
 
-**Candidate: reviewed and installed; publication pending.** The maintainer
+**Complete: pushed to main and verified live.** The maintainer
 requested two-column Four Last Things articles, a clean standalone title
 page for each document, contents after the title, and publication to `main`.
 This covers all four topics in both provider editions. Work began from
@@ -63,9 +63,85 @@ public-site build, GitHub Pages verifier, tracked web-currentness, scoped
 release bindings, promised-deliverable ledger and tool-registry checks pass.
 A separate final review accepts the complete 46-file source/record/release
 diff against `9f51eb530`, with no material content or disclosure concern.
-Publication to `main` and live byte verification remain pending. Commits stay on workspace branch `feature/flt`;
-publication uses an ordinary fast-forward update to `origin/main`, without
-switching the local branch or rewriting history.
+
+### Verified publication, 2026-10-26
+
+Commit `82b8c71dadca1dbbc1d0d9280167e261294af2d1` reached `origin/main`
+by ordinary fast-forward. [Pages run 40338343854](https://github.com/spincyc/triptych/actions/runs/40338343854)
+and [repository hygiene run 40338343908](https://github.com/spincyc/triptych/actions/runs/40338343908)
+both succeeded for that exact source commit.
+
+At `2026-10-26T14:40:04Z`, all 27 checked normal routes on `https://mystago.gy/`
+returned HTTP 200 and matched the verified local artifact byte for byte:
+eight canonical PDFs, their eight provider-qualified aliases, eight web
+editions, the Faith catalogue, document-catalogue data and the publication
+manifest. All live PDF hashes equal the accepted hashes above. The live
+publication-manifest SHA-256 is
+`ba8123f6a1f6b5c7191b0e70b629703873ac8427f4114643d2b21417ecc247ba`.
+
+Commits remain on workspace branch `feature/flt`; publication updated
+`origin/main` without switching branches or rewriting history. This closure
+receipt describes the verified source publication; it changes no reader-facing
+artifact and does not claim its own subsequent deployment.
+
+## GPT postconciliar All Saints, 2026-10-25
+
+<!-- promised-deliverable: gpt-postconciliar-all-saints-2026-11-01 -->
+
+**Complete.** Complete the GPT postconciliar proper-study workflow for Sunday,
+1 November 2026, All Saints, under the United States Roman Missal, Third Edition
+(2011), with independent cold reviews and publication to main. The permanent
+target is `PC-R07-ABC`,
+`liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc`.
+This one-provider production exception is recorded in the production plan.
+The completed 1962 F02 publication is a separate work and supplies no
+postconciliar appointment, research judgment or authored interpretation.
+
+Work starts at clean `9f51eb530`, equal to both remote refs. Commits remain on
+`feature/propers/codex`; main publication uses a genuine fast-forward without
+switching the workspace branch or rewriting history. The owning receipt is
+`workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/RECORD.md`.
+
+Native version-15 run `0af32a5cd3635b06`, seeded at `e1ed2ba5d`, reaches
+**ACCEPTED** with 37 results, no standing findings and no escalations. The
+20-page study, ten-page concise study and three-page, 1,174-word homily pass
+fresh content, artifact and visual reviews; all 33 final pages are inspected.
+The sole canonical web edition passes source-fidelity and actual desktop/phone
+review. Both study findings, editorial self-narration and an obsolete proof
+status sentence, are repaired through their native owners and dependent reviews.
+All three installed PDFs and canonical Markdown match the accepted hashes.
+
+The terminal 80-file archive exactly matches an isolated reproduction. Its
+explicit derivative removes only five private checkout prefixes from optional
+research notes; all substantive fields and immutable native evidence remain
+unchanged. The receipt records original/exported hashes and the frozen cycles.
+Post-archive publication inventory and family bookkeeping refresh is complete.
+Native source registration has 33 bindings, 37 dispositions, six Bede admissions
+and thirteen deferred candidate-use keys; edition and rights limits remain
+explicit. Broader corpus chronology and source-family audits remain open.
+
+Three independently reviewed support commits add exact registry-backed PC-R
+identity/chronology, General Calendar source ownership and explicit safe archive
+export. Their focused suites pass 85, 57 and 41 tests respectively; one
+historical-native archive reproduction is honestly skipped. The 28 existing GPT
+postconciliar PDFs, 335 pages, rebuild to the previously reviewed bytes under
+the corrected registry. Preliminary source/code disclosure review finds no private data,
+unintended provider work or retained restricted acquisition bodies.
+
+Complete post-archive source, production-site, Pages compatibility, release,
+ledger and tool-registry gates pass. The two sealed EOF-only advisories remain
+explicitly qualified. Pinned outgoing cold/disclosure reviews approve without blockers. Main then
+advances with published article-layout work. Its eight PDFs reproduce all 196
+recorded reviewed pages byte-for-byte; combined metadata and all merged local
+gates pass. Scoped postmerge integration and public-object cold rechecks both approve
+without findings. Main publication and exact live deployment verification are complete.
+
+The reviewed result reaches main at `e910f3c76` by genuine fast-forward.
+Repository hygiene and Pages deployment both succeed. All 35 normal live
+routes on `mystago.gy`, including the new three PDF/canonical-alias pairs,
+canonical web, catalog/corpus/manifest and preserved incoming articles, return
+HTTP 200 with exact reviewed bytes. The owning published-runs and live receipts
+record the evidence. This completion receipt changes operator records only.
 
 ## GPT Last Things and next Sunday propers, 2026-10-25
 

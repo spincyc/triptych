@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
 audited_on = "2026-10-25"
-publication_snapshot = "sha256:ffb6ce492693118c5de2a5ef1603f9ce3974f579cefbeccde1ff5fb9b75d9046"
-classification_snapshot = "sha256:080d5e634e8a9b4a964d4771e522f1e0363f3656829175fa40c5d78d4475d650"
+publication_snapshot = "sha256:6e76be34f11face959ae959ffc48b52d8f6c92930594320c087549ef4b962b69"
+classification_snapshot = "sha256:2cac89653e39a45437b2b4b6d752469c5f7b7af65581d7154c5888616b27a27c"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -471,6 +471,10 @@ source_categories = ["canon-law", "dataset-survey", "finding-aid", "historical-p
 [[classifications]]
 document = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 
 [[classifications]]
 document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s26-most-holy-trinity-year-a"

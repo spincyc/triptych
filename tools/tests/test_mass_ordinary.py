@@ -349,7 +349,7 @@ class OrdinaryStructure(unittest.TestCase):
         # Cummiskey's source-owned English has no new turn partition here.
         expected |= {
             ("roman-1962", "oblatio/" + key, "la")
-            for key in ("munda-cor-meum", "dominus-sit-in-corde-meo", "per-evangelica-dicta")
+            for key in ("munda-cor-meum", "dominus-sit-in-corde-meo", "per-evangelica-dicta", "accendat-in-nobis")
         }
         # C26 optional source presentation: English has one source-grounded
         # priest-with-assistants turn; the separate Latin remains priest only.
@@ -482,23 +482,22 @@ class OrdinaryStructure(unittest.TestCase):
             {row["key"]: row["count"] for row in roman["absences"]},
             {
                 "appointment-not-established": 6,
-                # 2026-10-19 (C3): the Pentecost Communicantes head and the
-                # Easter and Pentecost Hanc igitur are held; the continuation's
-                # and the Pentecost head's English are typed variants.
+                # Reviewed proper Canon heads now fill their own source gaps.
+                # The separate Joseph continuation remains unavailable.
                 "communicantes-continuation-english-lacks-1962-clause": 1,
-                "no-facing-latin": 5,
+                "no-facing-latin": 4,
                 "not-in-the-1962-ordo": 0,
                 "preface-not-in-witness": 2,
-                "proper-canon-form-not-held": 8,
-                "proper-communicantes-english-variant": 1,
+                "proper-canon-form-not-held": 0,
+                "proper-communicantes-english-variant": 0,
                 "witness-own-english": 63,
             },
         )
-        self.assertEqual(sum(row["count"] for row in roman["absences"]), 86)
+        self.assertEqual(sum(row["count"] for row in roman["absences"]), 76)
         by_key = {element["key"]: element for element in elements(roman)}
         self.assertEqual(
             by_key["oblatio/accendat-in-nobis"]["absent"]["latin"],
-            "no-facing-latin",
+            None,
         )
         # 2026-10-19 (C2 G6): both not-in-the-1962-ordo orations are excluded,
         # so the class now accounts only for source rows, not emitted elements.
@@ -714,11 +713,10 @@ class OrdinarySlots(unittest.TestCase):
     def test_the_seats_name_propers_the_corpus_actually_carries(self) -> None:
         """A seat for a proper name no mass uses is a seat that never fills.
 
-        Not a rights or a truth question — a spelling one, and exactly the kind
-        that resolves successfully and does nothing. A structural-only
-        recension with no independently represented Propers is checked against
-        the canonical corpus-wide vocabulary: its typed missing formularies
-        cannot supply names of their own.
+        This checks the slot vocabulary. A partial recension is checked
+        against the canonical corpus-wide vocabulary because an unrepresented
+        formulary cannot supply names of its own. A complete recension must
+        supply every slot name from its own corpus.
         """
         corpus_names = set()
         for path in PROPERS.glob("*.json"):
@@ -744,7 +742,7 @@ class OrdinarySlots(unittest.TestCase):
                 .get("propers", {})
                 .get("state")
             )
-            if proper_coverage == "none":
+            if proper_coverage in {"none", "partial", "structural-only", "inherited-uncollated"}:
                 used = corpus_names
             for slot in file["slots"]:
                 for proper in slot["propers"]:
@@ -1218,10 +1216,9 @@ process.stdin.on('end', () => {
         self.assertEqual(
             [(one["lang"], one["held"], one["missing"])
              for one in roman["language_coverage"]],
-            # 2026-10-19 (C3): the Holy Spirit Preface's opening occurrence,
-            # the Pentecost Communicantes head, the shared continuation and the
-            # Easter and Pentecost Hanc igitur.
-            [("en", 186, 10), ("la", 120, 76)],
+            # Reviewed proper Canon heads and the separately witnessed
+            # Accendat fill their individual sides without adding frame rows.
+            [("en", 191, 5), ("la", 125, 71)],
         )
         self.assertEqual(
             [one["key"] for one in roman["exclusions"]],
@@ -2619,28 +2616,11 @@ process.stdout.write(JSON.stringify({
     def test_a_language_nobody_holds_is_offered_and_says_why(self) -> None:
         """Partial language coverage stays visible and never becomes fallback.
 
-        A language is offered whether or not a given element holds it, and a
-        reader who asks for it must be told, at every element that is silent,
-        under which recorded reason — never handed a page that has quietly gone
-        blank. The reasons are different reasons and must not be
-        interchangeable.
-
-        SUPERSEDES the reading of 2026-08-01, which held that NEITHER missal's
-        Latin was here and that the 1962's whole absence was
-        `latin-not-transcribed`, work nobody had done. The 1861 witness's facing
-        Latin column has since been transcribed and is carried, so 112 of that
-        file's 195 elements now hold their Latin and the Te igitur — the example
-        this test used for the absent case — is one of them. What remains absent
-        there is absent for one of three source-specific reasons: eight blocks
-        contain a 1962 prayer or form without facing Latin, four belong to the
-        abolished second-oration regime, and seventy-one are the witness's own
-        English apparatus. So the absent case is now taken on an element that
-        really is absent, and the held case is asserted beside it, because a
-        control that offers a language must be tested on both.
-
-        The postconciliar file now carries partial English and partial
-        antecedent Latin. It must neither describe the Latin as wholly absent
-        nor silently fall back to English where an element has no Latin.
+        The postconciliar English is unavailable. The Roman frame has checked
+        historical English and Latin bodies, including separately witnessed
+        proper Canon heads and the Mame Accendat. Its remaining gaps keep their
+        source-specific reasons; a reader must never receive another language
+        silently in place of the requested side.
         """
         report = self.run_harness()
         self.assertEqual(
@@ -2648,16 +2628,12 @@ process.stdout.write(JSON.stringify({
         self.assertEqual(
             [one["held"] for one in report["languages"]["postconciliar"]], [0, 20])
         self.assertEqual(
-            [one["held"] for one in report["languages"]["roman-1962"]], [186, 120])
-        # The Latin the 1962 file does not hold is exactly the elements the
-        # preamble's reasons partition; the next test asserts those counts from
-        # the other side. Since 2026-10-19 (C2 G5/G6): six more source rows are
-        # excluded, ten text-free appointment stand-ins are inserted, and the
-        # Sanctus after a proper Preface is a second occurrence of its row.
+            [one["held"] for one in report["languages"]["roman-1962"]], [191, 125])
+        # The reviewed five new English heads and four new Latin heads plus
+        # Accendat add five held sides in each language without adding elements.
+        # The remaining Latin sides match the preamble's typed partition.
         elements = report["languages"]["roman-1962"][1]["elements"]
-        # 2026-10-19 (C3): two more elements (the Preface opening and the
-        # Communicantes continuation), and four more held Latin texts.
-        self.assertEqual(elements - 120, 76)
+        self.assertEqual(elements - 125, 71)
 
         pater = report["kyrie_in_each"]
         self.assertNotIn("Our Father, who art in heaven", pater["en"])
@@ -2682,48 +2658,41 @@ process.stdout.write(JSON.stringify({
         self.assertNotIn("Not shown: its Latin.", canon["la"])
         self.assertNotIn("The 1861 witness prints this block only in English", canon["la"])
 
-        # Absent: this offertory prayer is one of the eight 1962 prayers/forms
-        # the book sets to the full measure in English, so the Latin side names
-        # its narrow reason and only that reason.
+        # Accendat's independently checked Mame Latin is now held. This does
+        # not turn the old Cummiskey column into a witness for those words.
         accendat = report["accendat_in_each"]
         self.assertIn("May the Lord enkindle", accendat["en"])
         self.assertNotIn("May the Lord enkindle", accendat["la"])
-        self.assertIn("Not shown: its Latin.", accendat["la"])
-        self.assertIn("The 1861 witness prints this block only in English", accendat["la"])
+        self.assertNotIn("Not shown: its Latin.", accendat["la"])
+        self.assertIn("Accéndat in nobis", accendat["la"])
+        self.assertNotIn("The 1861 witness prints this block only in English", accendat["la"])
         self.assertNotIn("editio-typica", accendat["la"])
 
     def test_the_reason_is_stated_once_and_referred_to_after_that(self) -> None:
-        """Two copies of a reason are two reasons waiting to disagree.
+        """State every absence reason once and refer to it from affected rows.
 
-        Printed in full at every element it covers, the 1861 Latin reason ran to
-        one copy of the same 400 characters per element the moment a reader
-        asked for the Latin. It is stated in the preamble, with how far it
-        reaches, and the elements name it.
-
-        The reach is what moved, not the rule: one blanket reason is now three
-        exact source classifications. In the 1962 target frame their emitted
-        counts are 8, 2, and 67 after six explicit exclusions; source-wide they
-        account for 8, 4, and 71 rows. The preamble must state every emitted
-        reason once and say how far it goes, covered elements must refer to it
-        without repeating it, and an element that holds Latin must not carry a
-        reason at all.
+        New checked witnesses fill individual gaps without changing the older
+        witness's own findings. Four source-only English blocks, the separate
+        Joseph continuation, two Prefaces and sixty-three English apparatus
+        rows remain typed; six appointment stand-ins are model gaps. A held
+        Latin prayer must not continue to claim a facing-column absence.
         """
         report = self.run_harness()
         preamble = report["preamble_1962"]
         self.assertIn("The 1861 witness prints this block only in English", preamble)
-        self.assertIn("5 of 196 elements", preamble)
+        self.assertIn("4 of 196 elements", preamble)
         self.assertIn("This older oration is outside the 1962 Ordinary", preamble)
         self.assertIn("0 of 196 elements", preamble)
         self.assertIn("The 1861 lay witness supplies its own English heading or rubric", preamble)
         self.assertIn("63 of 196 elements", preamble)
         self.assertIn("This day’s Ordinary appointment is not established — 6 of 196 elements", preamble)
-        self.assertIn("The appointed proper Canon form is not held here — 8 of 196 elements", preamble)
-        self.assertIn("Held English differs from this proper Communicantes — 1 of 196 elements", preamble)
+        self.assertIn("The appointed proper Canon form is not held here — 0 of 196 elements", preamble)
+        self.assertIn("Held English differs from this proper Communicantes — 0 of 196 elements", preamble)
         self.assertIn(
             "Held English lacks the 1962 Saint Joseph clause — 1 of 196 elements", preamble)
         self.assertIn("The appointed Preface is absent from the 1861 witness — 2 of 196 elements", preamble)
         self.assertNotIn("undefined", preamble)
-        self.assertIn("The 1861 witness prints this block only in English", report["accendat_in_each"]["la"])
+        self.assertNotIn("The 1861 witness prints this block only in English", report["accendat_in_each"]["la"])
         self.assertNotIn("The 1861 witness prints this block only in English", report["te_igitur_in_each"]["la"])
 
     def test_the_speaker_is_named_and_a_name_is_not_a_mark(self) -> None:

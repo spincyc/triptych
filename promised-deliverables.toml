@@ -4,7 +4,7 @@ schema_version = 1
 id = "four-last-things-pdf-layout-2026-10-26"
 owner = "PROJECT-WORK.md"
 promise = "Give all eight GPT and Claude Four Last Things PDFs two-column article bodies, a clean standalone title page and following contents, preserve their substantive text, review and install the PDFs, and publish to main with deployment verification."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "flt-layout-reviewed"
@@ -15,8 +15,41 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "flt-layout-published"
   criterion = "The validated source change reaches origin/main by ordinary push, the Pages workflow succeeds, and live affected PDF routes match reviewed bytes."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
+  check = "contains"
+  path = "PROJECT-WORK.md"
+  needle = "### Verified publication, 2026-10-26"
+
+[[deliverables]]
+id = "gpt-postconciliar-all-saints-2026-11-01"
+owner = "PROJECT-WORK.md"
+promise = "Complete the GPT postconciliar All Saints proper-study workflow for Sunday 1 November 2026, with independent cold review, three reviewed PDFs and canonical web edition, main publication and verified deployment."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "identity-and-workflow"
+  criterion = "PC-R07-ABC and its dated United States occurrence are verified; explicit registry-backed workflow and chronology support preserves existing target and family guards and passes focused regression and independent code review."
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/RECORD.md", "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/code-review-recheck.json", "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/inventory-code-review.json"]
+
+  [[deliverables.requirements]]
+  id = "native-acceptance"
+  criterion = "A real version-15 proper-study run reaches ACCEPTED with complete research and reusable-source registration, distinct source-grounded interpretations, all required independent cold reviews, and a durable native result archive."
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/RECORD.md", "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/native-acceptance.json", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/record.md"]
+
+  [[deliverables.requirements]]
+  id = "reviewed-publications"
+  criterion = "The 20–50-page research study, 10–12-page concise study and speakable homily are independently reviewed, built, visually inspected and installed with exact reviewed bytes; the sole canonical web edition, catalog, inventories and release records are current and required gates pass."
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/RECORD.md", "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/native-acceptance.json", "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/final-validation.json"]
+
+  [[deliverables.requirements]]
+  id = "published-and-live"
+  criterion = "The exact intended public outgoing range receives final cold review and reaches main without force or history rewriting; the resulting deployment succeeds and live publication artifacts match reviewed bytes."
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/RECORD.md", "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/main-reconciliation-cold-review.json", "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/main-reconciliation-disclosure.json", "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/published-runs.json", "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/live-verification.json"]
 
 [[deliverables]]
 id = "gpt-flt-and-sunday-2026-10-25"

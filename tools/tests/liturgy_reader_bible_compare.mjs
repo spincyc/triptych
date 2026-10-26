@@ -23,7 +23,7 @@ const structure = read('src/web/data/structure/propers/roman-1962.json');
 const context = Adapters.validationContext({ entrance:'propers', bibles:{ bibles },
   properIndex:read('src/web/data/structure/propers/index.json'), ordinaryIndex:{ calendars:[] },
   structures:{ 'roman-1962':structure } });
-const prefix = '#missal=roman-1962&type=seasonal&mass=advent-1&bible=douay-rheims&orations=la&mode=compare&compare=bible-edition';
+const prefix = '#missal=roman-1962&type=seasonal&mass=pentecost&bible=douay-rheims&orations=la&mode=compare&compare=bible-edition';
 const fixture = JSON.parse(readFileSync(resolve(CANDIDATE, 'tools/tests/fixtures/liturgy-reader-comparison/v1/propers-roman-1962-bible-editions.json'), 'utf8'));
 const hash = fixture.positive.hash;
 assert.equal(hash, prefix + '&peer-bible=king-james-version');
@@ -82,6 +82,13 @@ async function build(value = hash) {
   return {...result,production,prepared};
 }
 
+test('date-independent Advent conditional appointments remain unresolved rather than borrowed from a Sunday',()=>{
+  const prepared=input(hash.replace('mass=pentecost','mass=advent-1'));
+  for(const side of prepared.sides) assert.ok(side.result.unresolvedChoices.some(choice=>
+    choice.id==='proper-condition/roman-1962/advent-1/main/advent-1-alleluia-use'));
+  assert.throws(()=>Comparison.compare(prepared),/choices that remain unresolved/);
+});
+
 test('explicit published Bible peers retain identities numbering and canonical storage-free URL state',()=>{
   const normalized=normalize(hash);
   assert.equal(normalized.ok,true,JSON.stringify(normalized.errors));
@@ -128,7 +135,7 @@ test('Bible side requests preserve every non-Bible axis and never mutate origina
 });
 
 test('same source membership aligns every Pentecost occurrence including unmapped Lesson and Sequence',()=>{
-  const prepared=input(hash.replace('mass=advent-1','mass=pentecost'));
+  const prepared=input(hash);
   const view=Comparison.compare(prepared);
   assert.equal(view.units.length,10); assert.equal(view.calendarResults,null);
   assert.ok(view.units.every(unit=>unit.relation==='same-source-event'));
@@ -144,8 +151,8 @@ test('duplicate wrong-owner wrong-form wrong-label and wrong-coordinate source e
   for(const mutate of [
     p=>p.sides[1].result.events.push(structuredClone(p.sides[1].result.events[0])),
     p=>{p.sides[1].result.events[0].sourceHooks.push({...p.sides[1].result.events[0].sourceHooks[0]});},
-    p=>{p.sides[1].result.events[0].sourceHooks[0].id='roman-1962/pentecost/001';},
-    p=>{p.sides[1].result.events[0].id='proper/roman-1962/advent-1/999';},
+    p=>{p.sides[1].result.events[0].sourceHooks[0].id='roman-1962/advent-1/001';},
+    p=>{p.sides[1].result.events[0].id='proper/roman-1962/pentecost/999';},
     p=>{p.sides[1].result.events[0].editionSlotLabel='Not its source role';},
     p=>{p.sides[1].result.resolved.form='another-form';},
     p=>{p.sides[1].structure=structuredClone(structure);}
@@ -186,11 +193,11 @@ test('two Bible fragment maps render independent words and precise Psalm numberi
   const text=built.rendered.fragment.textContent;
   assert.match(text,/Douay-Rheims/); assert.match(text,/King James/);
   assert.match(text,/vulgate numbering/); assert.match(text,/hebrew numbering, psalm titles unnumbered/);
-  assert.match(text,/Bible reconstruction/); assert.match(text,/To thee|Unto thee/i); assert.match(text,/Psalm[s]? 25|Ps 25/);
+  assert.match(text,/not the Missal’s wording/); assert.match(text,/Pentecost/i); assert.match(text,/Acts 2/);
   assert.ok(built.production.requests.some(path=>path.includes('/douay-rheims/chapters/')));
   assert.ok(built.production.requests.some(path=>path.includes('/king-james-version/chapters/')));
   assert.equal(built.rendered.semanticIds.length,10);
-  assert.ok(built.rendered.semanticIds.every(id=>id.startsWith('compare/source/proper/roman-1962/advent-1/')));
+  assert.ok(built.rendered.semanticIds.every(id=>id.startsWith('compare/source/proper/roman-1962/pentecost/')));
 });
 
 test('real Epiphany Psalm72 refusal stays on the selected English side without a Douay fallback',async()=>{

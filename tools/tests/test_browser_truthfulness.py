@@ -1134,7 +1134,7 @@ PANEL = """JSON.stringify({
     .map((node) => node.textContent),
   follow: Array.from(new Set(Array.from(
     document.querySelectorAll('#detail button.link-button'))
-    .map((node) => node.textContent))),
+    .map((node) => node.textContent).filter((text) => text.startsWith('Follow this ')))),
   fold: Array.from(document.querySelectorAll('#detail .fold-summary'))
     .map((node) => node.textContent),
   text: document.getElementById('detail').textContent.replace(/\\s+/g, ' ')

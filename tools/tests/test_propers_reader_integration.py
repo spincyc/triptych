@@ -183,7 +183,14 @@ class PropersReaderIntegrationTests(unittest.TestCase):
             "the explicit location is not present in the rendered semantic event inventory",
             source,
         )
-        self.assertNotIn("restoreSemanticLocation({ kind: 'top'", source)
+        # Explicit invalid locations stay refused; only an intentional Mass
+        # form change restores the top after committing its new event inventory.
+        form_focus = source[source.index("if (intent === 'form-result')"):
+                            source.index("if (intent === 'title')")]
+        self.assertIn("readerShell.restoreSemanticLocation({ kind: 'top'", form_focus)
+        self.assertEqual(source.count("restoreSemanticLocation({ kind: 'top'"), 1)
+        self.assertIn("serial === runtime.serial", form_focus)
+        self.assertIn("location: formChanged ? { kind: 'top', id: null } : null", source)
 
     def test_rendered_semantic_ids_are_unique_and_exactly_match_contents_order(self) -> None:
         source = text(JS)

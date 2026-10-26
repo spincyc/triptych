@@ -1,7 +1,7 @@
 {
   "acceptance": {
-    "receipt_path": "workflows/reviews/missal-reader-completion-2026-10-26/source-review-combined-format-v2.json",
-    "receipt_sha256": "a73258a46518b90d279e589c25cac69e3fdf85a2315856188dd7ea7a9c298efc",
+    "receipt_path": "workflows/reviews/missal-reader-completion-2026-10-26/source-review-combined-pc-v3.json",
+    "receipt_sha256": "501dc02e85f51e173e1f12d770c493a8d9c08425ca6d842883c5da36f36707f7",
     "status": "accepted"
   },
   "baseline_revision": "2e030b564f4413b735ddbea3061082ebe981b11a",
@@ -3605,7 +3605,7 @@
       ]
     },
     "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml": {
-      "after_sha256": "b6e29c3ae2b6cfd27d101614cad13d02b51e62c09606ddc4e2e02b8f662cc70e",
+      "after_sha256": "59fc17879a6bd7ad5dcc7b329dd1c89f4e9c60296bf7fb67157db73fe9ab5213",
       "before_sha256": "c2bf07d5551fbe7ae2748ce7390c37b0d707df7cf275d400126b04cacd8600f0",
       "hunks": [
         {
@@ -3693,7 +3693,7 @@
             3504,
             12009
           ],
-          "after_slice_sha256": "0f67e250486fc04fc7f3ba855b4b5d64ffe9685c5e9f285799e18e7f2dd0499f",
+          "after_slice_sha256": "904f0b735812d46fb767c37ad225f43fb5c51ead87fbdf74aa75853cf4ef0e27",
           "before_utf8": ""
         },
         {
@@ -29923,6 +29923,6 @@
   ],
   "schema": "triptych-test-source-batch/v1",
   "source_input_manifest_path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
-  "source_input_manifest_sha256": "186d45d66989397961f0c22c57d7ff6efbc5efc040230b52611c992184ed520e",
-  "state": "2026-10-26 reviewed format/performance source epoch; prayer dictionaries and bounded rights conserved"
+  "source_input_manifest_sha256": "49a4ddf208b5763ec3732c61fcb517ddceb705ba03ab776199ee35798e3ec92a",
+  "state": "2026-10-26 reviewed first PCpublication and QA epoch; unchanged prayer oracles and original17 historical before streams"
 }

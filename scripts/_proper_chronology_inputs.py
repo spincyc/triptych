@@ -25,8 +25,15 @@ INPUT = "research/chronology-inputs.toml"
 REGISTRY = "guidance/liturgy/postconciliar-propers-registry.md"
 DOCUMENT = re.compile(
     r"liturgy/roman-rite/postconciliar/([a-z0-9]+(?:-[a-z0-9]+)*)/"
-    r"propers/temporal/(pc-s[0-9]{2}-.+)"
+    r"propers/(temporal|general-calendar)/(pc-[sr][0-9]{2}-.+)"
 )
+
+
+class RegisteredTarget(NamedTuple):
+    formula: str
+    family: str
+    slug: str
+    owner: str
 
 
 class Appointments(NamedTuple):
@@ -67,6 +74,118 @@ def _fields(record: dict, allowed: set[str], where: str) -> None:
         raise ValueError(f"{where}: invalid or unknown appointment fields")
 
 
+def registered_target(document: str, root: Path, formula: str | None = None) -> RegisteredTarget:
+    """Resolve only the stable PC-S temporal and PC-R replacement namespaces.
+
+    A matching slug is insufficient in the other calendar family. Edition
+    adoption is a separate check: in particular the stable registry lists both
+    possible All Souls expansions without selecting one for any edition.
+    """
+    match = DOCUMENT.fullmatch(document)
+    if match is None or any(part in {"", ".", ".."} for part in document.split("/")):
+        raise ValueError("postconciliar identity requires a registered PC-S temporal "
+                         "or PC-R general-calendar leaf")
+    registry = _file(root, REGISTRY).read_text(encoding="utf-8")
+    stems = dict(re.findall(r"^\| (PC-[SR]\d\d) \| `(pc-[sr][^`]+)` \|", registry, re.M))
+    keys = set(re.findall(r"`(PC-[SR]\d\d-(?:ABC|[ABC])(?:-[A-Z0-9]+)*)`", registry))
+    if formula is not None and (not isinstance(formula, str) or formula not in keys):
+        raise ValueError("appointment formula is not an exact registered PC-S or PC-R key")
+    targets = []
+    for key in ([formula] if formula is not None else sorted(keys)):
+        parts = key.split("-")
+        parent = "-".join(parts[:2])
+        stem = stems.get(parent)
+        if stem is None:
+            continue
+        family = "temporal" if parent.startswith("PC-S") else "general-calendar"
+        suffix = "abc" if parts[2] == "ABC" else f"year-{parts[2].lower()}"
+        slug = "-".join([stem, suffix, *(part.lower() for part in parts[3:] if part != "O")])
+        if (family, slug) != (match[2], match[3]):
+            continue
+        number = int(parent[4:])
+        if family == "temporal" and "SCRUTINY" in parts:
+            owner = "ritual/shared/formularies/celebration-of-the-scrutinies"
+        elif family == "temporal" and 28 <= number <= 59:
+            owner = f"temporal/shared/ordinary-time/weeks/{number - 26:02}"
+        else:
+            owner = f"{family}/shared/formularies/{stem}"
+        targets.append(RegisteredTarget(key, family, slug, owner + "/propers/verified.md"))
+    if len(targets) != 1:
+        raise ValueError("postconciliar formula does not identify this exact registered slug and family")
+    return targets[0]
+
+
+def replacement_disposition(root: Path, proper_root: Path, target: RegisteredTarget) -> None:
+    """Require one exact edition-adopted PC-R row and its stable source owner.
+
+    Read the named columns, so a key or slug mentioned in another target's
+    qualifications cannot adopt it. The existing edition tables distinguish
+    adopted or published targets from the unresolved replacement inventory.
+    """
+    registry_path = _file(root, (proper_root / "registry/formula-dispositions.md")
+                          .relative_to(root).as_posix())
+    lines = registry_path.read_text(encoding="utf-8").splitlines()
+
+    def cells(line: str) -> list[str]:
+        stripped = line.strip()
+        if not stripped.startswith("|") or not stripped.endswith("|"):
+            return []
+        return [cell.strip() for cell in stripped[1:-1].split("|")]
+
+    rows = []
+    required = ("formula key", "full publication slug", "canonical owner", "disposition")
+    for index, line in enumerate(lines[:-1]):
+        header = [re.sub(r"[*_`]", "", cell).casefold() for cell in cells(line)]
+        if any(header.count(name) != 1 for name in required):
+            continue
+        separator = cells(lines[index + 1])
+        if (len(separator) != len(header) or any(
+                re.fullmatch(r":?-{3,}:?", cell) is None for cell in separator)):
+            continue
+        for row_line in lines[index + 2:]:
+            row = cells(row_line)
+            if not row:
+                break
+            if len(row) == len(header):
+                rows.append(dict(zip(header, row)))
+    matches = [row for row in rows if row["formula key"] == f"`{target.formula}`"
+               or row["full publication slug"] == f"`{target.slug}`"]
+    if (len(matches) != 1 or matches[0]["formula key"] != f"`{target.formula}`"
+            or matches[0]["full publication slug"] != f"`{target.slug}`"
+            or re.match(r"(?:Adopted|Published)\b", matches[0]["disposition"]) is None):
+        raise ValueError("replacement formula requires one exact adopted edition registry disposition")
+    links = re.findall(r"\[[^]]+\]\(([^)]+)\)", matches[0]["canonical owner"])
+    if links != [f"../{target.owner}"]:
+        raise ValueError("replacement edition disposition names a different canonical shared owner")
+    if target.formula.startswith("PC-R08-"):
+        # The stable registry offers alternatives, not a union of targets.
+        # An edition must adopt one complete expansion before any leaf can
+        # consume it; checking only this leaf's row would admit both shapes.
+        registry = _file(root, REGISTRY).read_text(encoding="utf-8")
+        keys = set(re.findall(r"`(PC-R08-(?:ABC|[ABC])-FORMULARY-[123])`", registry))
+        expansions = [{key for key in keys if key.split("-")[2] == "ABC"},
+                      {key for key in keys if key.split("-")[2] != "ABC"}]
+        adopted = [row for row in rows
+                   if (row["formula key"].startswith("`PC-R08-")
+                       or row["full publication slug"].startswith("`pc-r08-"))
+                   and re.match(r"(?:Adopted|Published)\b", row["disposition"])]
+        adopted_keys = [row["formula key"].strip("`") for row in adopted]
+        if (len(adopted_keys) != len(set(adopted_keys))
+                or set(adopted_keys) not in expansions):
+            raise ValueError("PC-R08 edition must adopt exactly one complete registered expansion")
+        stem = re.search(r"^\| PC-R08 \| `([^`]+)` \|", registry, re.M).group(1)
+        for row, key in zip(adopted, adopted_keys):
+            parts = key.split("-")
+            suffix = "abc" if parts[2] == "ABC" else f"year-{parts[2].lower()}"
+            slug = "-".join([stem, suffix, *(part.lower() for part in parts[3:])])
+            if (row["formula key"] != f"`{key}`"
+                    or row["full publication slug"] != f"`{slug}`"
+                    or re.findall(r"\[[^]]+\]\(([^)]+)\)", row["canonical owner"])
+                    != [f"../{target.owner}"]):
+                raise ValueError("PC-R08 expansion has a different registered slug or canonical shared owner")
+    _file(root, (proper_root / target.owner).relative_to(root).as_posix())
+
+
 def _canonical_locus(system: str, locus: str, key: str) -> str:
     token, chapter, verse = locus.split(".")
     converted = _chronology.to_canonical(system, token, int(chapter), int(verse))
@@ -84,9 +203,7 @@ def load(document: str, root: Path, provider: str, loci_of) -> Appointments:
     printed bounds remain in refs and the explicit query-boundary note. They
     neither supply missing appointed wording nor claim subverse precision.
     """
-    match = DOCUMENT.fullmatch(document)
-    if match is None or any(part in {"", ".", ".."} for part in document.split("/")):
-        raise ValueError("postconciliar chronology requires a registered PC-S temporal leaf")
+    target = registered_target(document, root)
     if provider not in {"gpt", "claude"}:
         raise ValueError("postconciliar chronology provider must be gpt or claude")
     leaf_id = f"src/{provider}/{document}"
@@ -100,30 +217,12 @@ def load(document: str, root: Path, provider: str, loci_of) -> Appointments:
         raise ValueError("appointment input schema, document or calendar does not match its leaf")
 
     registry_path = _file(root, REGISTRY)
-    registry = registry_path.read_text(encoding="utf-8")
-    stems = dict(re.findall(r"^\| (PC-S\d\d) \| `(pc-s[^`]+)` \|", registry, re.M))
     formula = data.get("formula", "")
-    if not isinstance(formula, str) or not re.fullmatch(
-        r"PC-S\d\d-(?:ABC|[ABC])(?:-[A-Z0-9]+)*", formula
-    ) or f"`{formula}`" not in registry:
-        raise ValueError("appointment formula is not an exact registered PC-S key")
-    parts = formula.split("-")
-    parent = "-".join(parts[:2])
-    stem = stems.get(parent)
-    suffix = "abc" if parts[2] == "ABC" else f"year-{parts[2].lower()}"
-    slug = "-".join([stem or "", suffix, *(part.lower() for part in parts[3:] if part != "O")])
-    if slug != match[2]:
+    if formula != target.formula:
         raise ValueError("appointment formula does not identify this exact registered slug")
 
     proper_root = leaf.parent.parent
-    number = int(parent[4:])
-    if "SCRUTINY" in parts:
-        owner = proper_root / "ritual/shared/formularies/celebration-of-the-scrutinies"
-    elif 28 <= number <= 59:
-        owner = proper_root / f"temporal/shared/ordinary-time/weeks/{number - 26:02}"
-    else:
-        owner = proper_root / f"temporal/shared/formularies/{stem}"
-    owner_id = (owner / "propers/verified.md").relative_to(root).as_posix()
+    owner_id = (proper_root / target.owner).relative_to(root).as_posix()
     if data.get("shared_owner") != owner_id:
         raise ValueError("appointment shared owner is not this formula's same-edition canonical owner")
     local_owner = f"{leaf_id}/propers/verified.md"
@@ -137,9 +236,11 @@ def load(document: str, root: Path, provider: str, loci_of) -> Appointments:
     for filename in ("README.md", "formula-dispositions.md"):
         dependencies.add(_file(root, (proper_root / "registry" / filename).relative_to(root).as_posix()))
     dispositions = (proper_root / "registry/formula-dispositions.md").read_text(encoding="utf-8")
-    if not any(f"`{formula}`" in line and f"`{slug}`" in line
+    if not any(f"`{formula}`" in line and f"`{target.slug}`" in line
                for line in dispositions.splitlines() if line.startswith("|")):
         raise ValueError("appointment formula has no exact edition registry disposition")
+    if target.family == "general-calendar":
+        replacement_disposition(root, proper_root, target)
     elements = data.get("elements")
     if not isinstance(elements, list) or not elements:
         raise ValueError("appointment input requires a complete element inventory")

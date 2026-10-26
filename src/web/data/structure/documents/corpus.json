@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name. Production provenance is what each document records about itself, field by field, omitting any field its record says was not recoverable; comparing it against the workflows declared below is a finding aid and never an authority, and nothing in this repository gates on it.",
  "counted": {
-  "documents": 214,
-  "issues": 274,
-  "pages": 7179,
+  "documents": 215,
+  "issues": 277,
+  "pages": 7199,
   "titles_unrecorded": 0,
-  "works": 153
+  "works": 154
  },
  "models": [
   {
@@ -29,7 +29,7 @@
    "id": "claude-fable-5"
   },
   {
-   "documents": 18,
+   "documents": 19,
    "id": "GPT-6"
   },
   {
@@ -56,7 +56,7 @@
    "label": "Claude"
   },
   {
-   "documents": 151,
+   "documents": 152,
    "id": "gpt",
    "label": "GPT"
   }
@@ -85,7 +85,7 @@
   },
   {
    "id": "liturgy",
-   "works": 60
+   "works": 61
   },
   {
    "id": "theology",
@@ -10104,6 +10104,91 @@
     }
    ],
    "leaf": "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass",
+   "section": "liturgy"
+  },
+  {
+   "catalog": "library/novus-ordo-liturgy.md",
+   "catalog_page": "library/novus-ordo-liturgy.html",
+   "editions": [
+    {
+     "also": [
+      {
+       "kind": "synthesis",
+       "pages": 10,
+       "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-synthesis.pdf",
+       "subject": "Roman Missal Third Edition, United States: concise study for 1 November 2026",
+       "title": "All Saints: a concise comparison"
+      },
+      {
+       "kind": "homily",
+       "pages": 3,
+       "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-homily.pdf",
+       "subject": "Roman Missal Third Edition, United States: homily for an adult parish assembly, 1 November 2026",
+       "title": "All Saints: becoming ready to see God"
+      }
+     ],
+     "authorization": "perpetual-public-repository-2026",
+     "contributions": [
+      {
+       "model": "GPT-6",
+       "qualifiers": "workflow-declared-effort=high; client=Codex; unexposed: exact model variant; unexposed: model reasoning configuration; unexposed: runtime version",
+       "runtime": "OpenAI Codex API agent; unexposed: client version; unexposed: server revision. Authored the expansive All Saints study from reviewed research, reopened decisive retained commentary, assembled lawful study Scripture and historical annotations, and performed author proof verification."
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "workflow-declared-effort=high; client=Codex; unexposed: exact model variant; unexposed: model reasoning configuration; unexposed: runtime version",
+       "runtime": "OpenAI Codex API agent; unexposed: client version; unexposed: server revision. Revised the opening and earth-promise comparisons to state the sources' difference directly in author-study iteration 1."
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "workflow-declared-effort=high; client=Codex; unexposed: exact model variant; unexposed: model reasoning configuration; unexposed: runtime version",
+       "runtime": "OpenAI Codex API agent; unexposed: client version; unexposed: server revision. Derived the concise All Saints comparison from the accepted expansive study, reused the reviewed generated chronology, and performed synthesis author proof verification."
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "workflow-declared-effort=high; client=Codex; unexposed: exact model variant; unexposed: model reasoning configuration; unexposed: runtime version",
+       "runtime": "OpenAI Codex API agent; unexposed: client version; unexposed: server revision. Derived the All Saints homily from both reviewed studies, reopened the used Augustine and Bede evidence, and performed silent prose and author proof verification."
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "workflow-declared-effort=high; client=Codex; unexposed: exact model variant; unexposed: model reasoning configuration; unexposed: runtime version",
+       "runtime": "OpenAI Codex API agent; unexposed: client version; unexposed: server revision. Removed the obsolete author-checkpoint sentence from the study scope appendix in author-study iteration 2 and verified the revised author proof and canonical web probe."
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "workflow-declared-effort=high; client=Codex; unexposed: exact model variant; unexposed: model reasoning configuration; unexposed: runtime version",
+       "runtime": "OpenAI Codex API agent; unexposed: client version; unexposed: server revision. Recompared the retained concise All Saints text with the accepted study after the bounded scope-status deletion in derive-synthesis iteration 1, preserved its substantive prose, and verified a fresh synthesis author proof."
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "workflow-declared-effort=high; client=Codex; unexposed: exact model variant; unexposed: model reasoning configuration; unexposed: runtime version",
+       "runtime": "OpenAI Codex API agent; unexposed: client version; unexposed: server revision. Recompared the retained All Saints homily with both reviewed studies after the bounded scope-status deletion in derive-homily iteration 1, reopened the used Augustine and Bede evidence, and preserved its supported preaching prose."
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "GPT-6"
+     ],
+     "pages": 20,
+     "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.pdf",
+     "produced": {
+      "run_id": "0af32a5cd3635b06",
+      "seed_commit": "e1ed2ba5d4cdf3a5199f3bcf78a0d2b3069683bb",
+      "workflow_digest": "4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83",
+      "workflow_id": "proper-study",
+      "workflow_version": "15"
+     },
+     "provider": "gpt",
+     "reviewed": "2026-10-26",
+     "revised": "2026-10-26T12:59:00Z",
+     "status": "alpha",
+     "subject": "Roman Missal Third Edition, United States: expansive study for 1 November 2026",
+     "title": "All Saints: desire, reconciliation and the sight of God",
+     "title_source": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/main.tex",
+     "web": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.html"
+    }
+   ],
+   "leaf": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc",
    "section": "liturgy"
   },
   {

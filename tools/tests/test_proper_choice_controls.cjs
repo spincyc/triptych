@@ -382,6 +382,27 @@ test('both entrances load the single control owner before the thin shell and mat
     assert.equal(source('reader-shell.js').includes('function ' + name + '('), false);
 });
 
+test('only the retained Propers visual oracle may omit the production Mass form controls', () => {
+  const declaration = propersSource.slice(propersSource.indexOf("  const massFormField ="),
+    propersSource.indexOf("  const bibleSelect ="));
+  function initialize(pathname, field, select) {
+    return vm.runInNewContext(`(() => { ${declaration}; return Boolean(massFormField && massFormSelect); })()`, {
+      window: {location: {pathname}}, document: {getElementById(id) {
+        return id === 'reader-mass-form-field' ? field : select;
+      }}
+    });
+  }
+  for (const route of ['/liturgy/index.html', '/liturgy/propers-reader.html']) {
+    assert.equal(initialize(route, {}, {}), true);
+    for (const controls of [[null, null], [{}, null], [null, {}]])
+      assert.throws(() => initialize(route, ...controls), /Mass form controls/);
+  }
+  const oracle = '/liturgy/reader-visual-reset-propers.html';
+  assert.equal(initialize(oracle, null, null), false);
+  assert.throws(() => initialize(oracle, {}, null), /Mass form controls/);
+  assert.throws(() => initialize(oracle, null, {}), /Mass form controls/);
+});
+
 test('dedicated CommonJS controls retain browser DOM, legacy migration, and disabled Day negatives', () => {
   const commonJS = require(path.join(uiModuleRoot, 'source-choice-controls.js'));
   assert.deepEqual(Object.keys(commonJS).sort(), ['attachSourcePathChoices', 'createDayDateControls',

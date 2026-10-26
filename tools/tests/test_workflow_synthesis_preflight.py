@@ -754,29 +754,13 @@ class CorpusTests(unittest.TestCase):
                        for job, result in zip(jobs, results)
                        if result.returncode})
 
-    def test_the_gate_refuses_none_of_the_twenty_manifest_leaves(self):
-        """Which, recorded, so that a change in the number is a decision.
+    def test_the_gate_refuses_none_of_the_twenty_seven_manifest_leaves(self):
+        """Keep the explicit manifest census and full synthesis gate together.
 
-        The census stood at fifteen, then seventeen and eighteen, and is now
-        twenty after both providers' Nineteenth Sundays were added. Each
-        addition is recorded here rather than left to fail as an inherited
-        red. The earlier additions were
-        the GPT Seventeenth Sunday after Pentecost, the Claude
-        Seventeenth Sunday produced by run `1e02dc05f2df9940`, and the Claude
-        Eighteenth Sunday produced by run `71b6f89518984232`. None of the
-        three was refused.
-
-        Until 2026-09-24 the gate refused six: claude/49, 51, 52 and 53 and
-        gpt/49, each for `house-voice` in prose written before either screen
-        existed, and gpt/52 for `proposal-fields`; every one was a leaf
-        `content-preflight` refused as well. That day's audit repaired all six
-        (from e8217e665; gpt/52 in e11d8b618), so the list is now empty, and
-        held empty: a leaf the gate refuses again is a decision, not a drift.
-        The six are still refused over the audited tree; see
-        `test_the_companion_only_prose_the_gate_was_built_for` and
-        `EditionScopeTests`.
+        A new manifest must update the census deliberately and still pass
+        every check applied to the existing leaves.
         """
-        self.assertEqual(len(manifest_leaves()), 20)
+        self.assertEqual(len(manifest_leaves()), 27)
         self.assertEqual(self.refused(GATE_CHECKS, "synthesis"), [])
 
     def test_the_gate_refuses_no_leaf_the_canonical_gate_accepts(self):
