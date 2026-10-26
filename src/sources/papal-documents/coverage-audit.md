@@ -39,9 +39,12 @@ is a genuine printed tome XX: its first body page bears the footer
 *Bull. Rom. Tom. XX* and begins act CCCXII, dated 5 February 1835, under
 Gregory XVI's fifth pontifical year. Page 2 continues that act and begins
 CCCXIII. Its offered page list contains eighty-eight numbered body pages.
-This separately observed source must remain visible beside the nineteen
-acquired volume input sets; its whole-file access and complete extent require
-their own disposition.
+The [holding library catalog](https://opacplus.bsb-muenchen.de/primaws/rest/pub/pnxs/L/alma991052178329707356?vid=49BVB_BSB%3AVU1&lang=en)
+identifies this copy as incomplete, ending at printed p. 88. Act CCCLXXII,
+dated 1 February 1836, begins on printed p. 87 and continues into the
+truncated final page. The complete offered digital copy
+therefore remains a physically truncated witness; earlier complete acts and
+its final incomplete act require separate constituent dispositions.
 
 The continuation's openly offered Internet Archive inputs were pursued under
 both *Bullarii Romani continuatio* and its numbered item family. The direct
@@ -60,9 +63,12 @@ printed title identifies tome V. Neither the raw OCR nor the source metadata
 is silently corrected by these bibliographic findings.
 
 The Benedict XIV Hanicq items numbered 1–4 are physical parts of a thirteen-part
-1826–1827 edition, rather than four complete original tomes. A separately
-identified four-tome Mainardi/Occhi set offers complete OCR and layout inputs;
-its final-year appendix must be included when stating its temporal coverage.
+1826–1827 edition, rather than four complete original tomes. The separately
+identified four-tome set prints Rome, Hieronymus Mainardi, with publication
+expenses supplied by the Venetian Bartholomaeus Occhi: tomes I–III are dated
+1754 and IV is dated 1758. Its final-year appendix belongs to the stated
+temporal coverage. The four offered OCR/layout/scandata input sets are
+complete downloads; physical leaf completeness remains a separate question.
 The [Berkeley Law catalog](https://lawcat.berkeley.edu/record/339866) distinguishes
 the Hanicq parts and volumes. A source set must follow the acquired printing's
 own structure rather than inherit a count from a differently arranged edition.
@@ -81,7 +87,21 @@ Rome 1854, states a selection limit in its preface, printed p. IV: acts and
 letters about private persons which the pope did not intend publicly issued
 are omitted. Pages V–VI explain the division between universal-Church and
 Pontifical-State civil material. Thus acquisition of the complete printed
-series would still preserve that edition's own selection boundary.
+series would still preserve that edition's own selection boundary. Some
+downloads also bind several numbered volumes: the [Internet Archive volume V
+witness](https://archive.org/details/piiixpontificis01ixgoog) contains volumes
+V and VI. Their whole delivery belongs to one composite container; each
+numbered volume and each constituent act needs its own exact bounds.
+
+Pius IX's civil *Parte seconda* has two volumes. The [State Archive of Rome's
+holding catalog](https://archiviodistatoroma.cultura.gov.it/wp-content/uploads/2024/03/Collezione_Leggi_Stato-della-Chiesa.pdf),
+PDF p. 4, identifies volume I with acts of 1846–1850 and volume II with acts
+of 1851–1856, both printed in Rome in 1857. The second volume's whole body
+has not been acquired: the identified Google candidate's offered download
+returned HTTP 429, and its complete physical extent remains unverified.
+This is a whole-body access gap. Separately, *Pars prima* volume IV has whole
+PDF and text inputs but remains held for individual extraction because its
+literal LF lines and PDF pages require a many-to-many geometry mapping.
 
 The Gregory XVI civil volume likewise contains documents by other issuers.
 Its first item, printed p. 1, is Treasurer Mario Mattei's circular of
@@ -139,3 +159,55 @@ reconstruction, an extraction failure such as inseparable columns, an
 identified historical fragment, unavailable or consultation-limited access,
 and text withheld for an unresolved distribution basis. A failed route or
 empty literal search does not establish that no document survives.
+
+## Existing source inputs and language gaps
+
+The pre-acquisition catalog at `d67e2259` already identified the following
+retained English collections. The bounds below are literal LF discovery
+envelopes, including notes and editorial matter where present. They do not
+admit individual works to reader manifests or establish complete historical
+coverage.
+
+- [work.nicene-and-post-nicene-fathers.series-2-volume-12](../works/nicene-and-post-nicene-fathers/series-2-volume-12/work.toml),
+  [edition.nicene-and-post-nicene-fathers.series-2-volume-12.ccel-web-2026-09-28](../works/nicene-and-post-nicene-fathers/series-2-volume-12/editions/2026-09-28-ccel-web/edition.toml):
+  English Leo-associated letters at LF850–12188, with some summaries and
+  letters by other issuers; Gregory's selected Register at LF28791–45195,
+  with actual body books I–VIII ending at VIII.XXXV. Later books named in
+  introductory contents are not retained body coverage.
+- [work.ante-nicene-fathers.volume-1](../works/ante-nicene-fathers/volume-1/work.toml),
+  [edition.ante-nicene-fathers.volume-1.ccel-web-2026-10-13](../works/ante-nicene-fathers/volume-1/editions/2026-10-13-ccel-web-2026-10-13/edition.toml):
+  English First Clement at LF353–2305, numbered I–LIX; the source reports a
+  lost manuscript leaf. The existing abstract
+  [work.clement-of-rome.first-epistle-to-the-corinthians](../works/clement-of-rome/first-epistle-to-the-corinthians/work.toml)
+  records Greek, but had no edition or artifact children at that baseline.
+- [work.ante-nicene-fathers.volume-5](../works/ante-nicene-fathers/volume-5/work.toml),
+  [edition.ante-nicene-fathers.volume-5.ccel-web-2026-10-13](../works/ante-nicene-fathers/volume-5/editions/2026-10-13-ccel-web-2026-10-13/edition.toml):
+  English Cornelius-to-Cyprian entries XLV at LF32514–32625 and XLVII at
+  LF32693–32726. Other Cyprianic correspondents and quotations remain
+  distinct; references to Stephen do not establish complete Stephen letters.
+- [work.ante-nicene-fathers.volume-7](../works/ante-nicene-fathers/volume-7/work.toml),
+  [edition.ante-nicene-fathers.volume-7.ccel-web-2026-10-19](../works/ante-nicene-fathers/volume-7/editions/2026-10-19-ccel-web/edition.toml):
+  English Dionysius of Rome, *Against the Sabellians*, at LF34690–34985,
+  including apparatus. The source identifies a fragment transmitted through
+  Athanasius, rather than a complete act or Dionysius of Alexandria's work.
+
+The Latin [edition.migne.patrologia-latina-13.paris-1845](../works/migne/patrologia-latina-13/editions/paris-1845/edition.toml)
+identifies Siricius through two remote page images, columns 1137–1140 of the
+letter to Himerius; it supplies no retained whole decretal. No direct
+Innocent I body registration was identified at the baseline. Quotations and
+compilation finding aids do not establish a complete act. No retained Latin
+Leo or Gregory letter corpus was identified at that baseline.
+
+Benedict XV likewise had no identified English body edition at the baseline;
+[work.benedict-xv.principi-apostolorum-petro](../works/benedict-xv/principi-apostolorum-petro/work.toml)
+was Latin metadata without edition or artifact children. Two newer historical
+English OCR witnesses are now registered:
+[edition.acta-papal-archives.aas.006.archive.aas.006.057](../works/acta-papal-archives/1914-11-01-aas.006-archive.aas.006.work-ad-beatissimi/editions/1914-acta-aas-006-archive.aas.006.057/edition.toml)
+for *Ad beatissimi* (fourteen disjoint ranges spanning LF26947–27592,
+632 retained lines), and
+[edition.acta-papal-archives.aas.007.archive.aas.007.033](../works/acta-papal-archives/1915-07-28-aas.007-archive.aas.007.work-allorche/editions/1915-acta-aas-007-archive.aas.007.033/edition.toml)
+for *Allorché fummo chiamati* (LF15411–15448, 15450–15490 and 15492–15522).
+Their controlling source hashes and English incipits were checked; this does
+not replace image collation. Fourteen Vatican English delivery records remain
+restricted metadata only, so these two bodies do not establish general
+Benedict XV English coverage.

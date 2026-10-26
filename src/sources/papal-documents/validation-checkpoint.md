@@ -69,3 +69,43 @@ Acta and additional historically printed English translations have separate
 acquisition and boundary-review work. Possessing those inputs does not add
 complete acts or readers to this checkpoint. The [coverage audit](coverage-audit.md)
 records printing, extent, language and access gaps.
+
+## Recovery integration checkpoint
+
+The later source snapshot has 9,489 works, 12,362 editions, 10,025 artifacts,
+8,761 segments and 8,793 passages. Its 49,435 canonical manifests retain the
+same before/after byte fingerprint
+`6948f8262ecddd29b1edbdb179a6f3c58818ef23b6f4f68d60def0f80537f26d`.
+The source-reader projection now contains 16,282 files: 1,700 additions and
+53 updates. All 3,919 existing readable payloads remain byte-identical; all
+seven Casti artifacts remain restricted, with no reader text emitted.
+Strict source-library, reader and freshness checks, both publication
+inventories and 31 reader tests pass. The family catalog pin is current while
+all 163 review units remain pending and no family or atomic-citation coverage
+is asserted.
+
+The current source plan selects 5,827 readers after 710 exclusions, including
+507 confirmed source-order withdrawals. Exact frozen receipts account for
+5,826 successful PDFs and 11,697 pages, plus one long-token layout failure.
+An independently checked, source-preserving repair succeeds; its canonical
+selection remains pending. Further sealed admissions and page reviews are
+outside these frozen build counts. Visual audit reconciliation and first
+installation remain in progress. A mechanical scan also found probable
+modern-wrapper inclusions in continuation selections; those require source
+classification and explicit correction before release acceptance.
+
+The final focused source, geometry, acquisition, export, typesetting,
+selection, collection and installation suite passes 374 tests. The registry
+check and all 14 typesetter examples pass. Independent reproductions verify
+the repairs for altered page-witness staging, lost reviewed discoveries,
+collection input overwrites and interrupted installer writes. Source artifacts
+and earlier PDFs remain preserved. Character geometry is a tested Python API;
+its local demonstration does not admit a whole act or create an active reader.
+
+The owning act-history generator refreshed 31 comparison records, changing
+only 62 source-library implementation hash/size values. All other values and
+the other 526 projection files are unchanged. The subsequent aggregate used
+`make -o check-act-history check-sources`, with act-history freshness proved
+separately, and stopped at the then-stale 1,753 reader projections. Those
+projections are now repaired and checked independently. Later aggregate gates
+were not reached; this checkpoint does not claim a complete aggregate pass.

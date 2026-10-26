@@ -832,6 +832,29 @@ def withdraw_retained(root: Path, receipt: dict, decision: dict, stage: Path) ->
 
 def command(args: argparse.Namespace) -> dict:
     root = args.root.resolve()
+    if args.verb == "witness":
+        # Native page witnesses depend on an existing canonical parent artifact,
+        # not on discovery/index entries or network acquisition state.
+        from _papal_page_witness import extract_witness, register_witness
+        local = lambda path: path if path.is_absolute() else root / path
+        recipe = json.loads(local(args.recipe).read_text(encoding="utf-8"))
+        operation = register_witness if args.register else extract_witness
+        result = operation(root, recipe, local(args.cached_pdf), local(args.scratch))
+        receipt = result["receipt"]
+        summary = {"status": result.get("status", "reused-staging" if result.get("reused") else "staged"),
+                   "parent_artifact_id": receipt["parent_artifact_id"], "pages": receipt["pages"],
+                   "sha256": receipt["output_sha256"], "byte_size": receipt["output_byte_size"],
+                   "rights": "caller-supplied; extraction does not infer clearance",
+                   "source_review": "not assessed; no passage or verified status created"}
+        if args.register:
+            summary["artifact_ids"] = result["artifact_ids"]
+            summary["registration_source"] = result["registration_source"]
+            if "staged_output_sha256" in result:
+                summary["staged_output_sha256"] = result["staged_output_sha256"]
+        else:
+            summary["output_path"] = str((result["stage"] / "witness.pdf").relative_to(root))
+            summary["receipt_path"] = str((result["stage"] / "receipt.json").relative_to(root))
+        return summary
     catalog = read_catalog(args.catalog if args.catalog.is_absolute() else root / args.catalog)
     selected = [d for d in catalog["documents"] if not args.document or d["id"] in args.document]
     if args.document and len(selected) != len(set(args.document)):
@@ -942,6 +965,30 @@ def parser(examples: dict | None = None) -> argparse.ArgumentParser:
             child.add_argument("--revision", required=True)
             child.add_argument("--out", type=Path, required=True)
         with_examples(child, (examples or {}).get(verb, ()))
+    child = verbs.add_parser("witness", help="extract or register native pages from a pinned cached parent PDF", description="""Stage first, then optionally register three immutable same-edition artifacts.
+
+The JSON recipe must supply schema triptych-papal-page-witness/v1, UTC revision,
+slug, title, parent_artifact_path, parent_artifact_id, parent_sha256,
+parent_byte_size, edition_id, increasing one-based pages, rights_status,
+rights_basis, rights_jurisdiction and extent_note. Native pages
+are copied with Poppler; native-bilevel-images additionally requires one exact
+image ordinal/dimensions/dpi/pixel_sha256 selector per page. No index catalog,
+network access, inferred clearance or source/visual verification is involved.
+
+Use --recipe your-reviewed-recipe.json --cached-pdf .scratch/whole-source.pdf
+--scratch .scratch/your-witness-lane to stage and inspect the receipt. Repeat
+with --register only after the caller's rights assessment covers that output.
+Existing canonical bytes are reused only after exact checks, never replaced.
+New registration extracts again from the pinned parent; mutable staging bytes
+are never promoted. Poppler trailer IDs can differ; final hashes are reported.
+""")
+    child.add_argument("--root", type=Path, default=ROOT)
+    child.add_argument("--recipe", type=Path, required=True, help="triptych-papal-page-witness/v1 JSON with exact parent, pages and affirmative caller rights")
+    child.add_argument("--cached-pdf", type=Path, required=True, help="whole local PDF matching the existing parent artifact SHA and size")
+    child.add_argument("--scratch", type=Path, required=True, help="exclusive staging beneath repository .scratch")
+    child.add_argument("--register", action="store_true", help="add three immutable same-edition artifacts after mechanical checks; default stages only")
+    child.add_argument("--json", action="store_true")
+    with_examples(child, (examples or {}).get("witness", ()))
     return p
 
 

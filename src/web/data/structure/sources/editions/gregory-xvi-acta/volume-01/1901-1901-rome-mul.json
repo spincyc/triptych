@@ -1,0 +1,118 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "historical-printing-evidence-container",
+   "byte_size": 64517323,
+   "edition_owned": true,
+   "id": "artifact.gregory-xvi-acta.volume-01.1901-rome-mul.imprint-217d75b65279",
+   "media_type": "application/pdf",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/actagregoriipapa0001vinc/actagregoriipapa0001vinc.pdf",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "automated-pagination-map",
+   "byte_size": 90954,
+   "edition_owned": true,
+   "id": "artifact.gregory-xvi-acta.volume-01.1901-rome-mul.labels-144c4189e93c",
+   "media_type": "application/json",
+   "notes": "Exact whole offered response retained without changing its bytes. A token match or an imprint check does not establish complete image collation or act authentication.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "Scratch candidate only: historical Latin/Italian wording in the identified Rome1901 printing is eligible for artifact-specific United States expired-term assessment under src/sources/inventories/papal-documents-rights-v1.toml. Whole PDF wrapper, incidental library/digitizer marks, historical editorial matter and remote PDF evidence descriptor remain separately reviewable; no worldwide, provider-wide, whole-PDF or Triptych source-text licence is asserted.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/actagregoriipapa0001vinc/actagregoriipapa0001vinc_page_numbers.json",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "mechanical-line-leaf-map",
+   "byte_size": 183972,
+   "edition_owned": true,
+   "id": "artifact.gregory-xvi-acta.volume-01.1901-rome-mul.line-map-6bea4a47a17e",
+   "media_type": "application/json",
+   "notes": "Mapping pins exact OCR and XML hashes. Layout flags are conservative leads, not verified reading order or printed pagination.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "licensed",
+   "rights_basis": "Project-created factual correspondence data under CC BY 4.0; source words retain their separately identified historical rights.",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "uncorrected-ocr",
+   "byte_size": 2617486,
+   "edition_owned": true,
+   "id": "artifact.gregory-xvi-acta.volume-01.1901-rome-mul.ocr-cdd5664e1012",
+   "media_type": "text/plain",
+   "notes": "Exact whole offered response retained without changing its bytes. A token match or an imprint check does not establish complete image collation or act authentication.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "Scratch candidate only: historical Latin/Italian wording in the identified Rome1901 printing is eligible for artifact-specific United States expired-term assessment under src/sources/inventories/papal-documents-rights-v1.toml. Whole PDF wrapper, incidental library/digitizer marks, historical editorial matter and remote PDF evidence descriptor remain separately reviewable; no worldwide, provider-wide, whole-PDF or Triptych source-text licence is asserted.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/actagregoriipapa0001vinc/actagregoriipapa0001vinc_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "mechanical-scan-sequence",
+   "byte_size": 669469,
+   "edition_owned": true,
+   "id": "artifact.gregory-xvi-acta.volume-01.1901-rome-mul.scandata-4a4397b91704",
+   "media_type": "application/xml",
+   "notes": "Exact whole offered response retained without changing its bytes. A token match or an imprint check does not establish complete image collation or act authentication.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "Scratch candidate only: historical Latin/Italian wording in the identified Rome1901 printing is eligible for artifact-specific United States expired-term assessment under src/sources/inventories/papal-documents-rights-v1.toml. Whole PDF wrapper, incidental library/digitizer marks, historical editorial matter and remote PDF evidence descriptor remain separately reviewable; no worldwide, provider-wide, whole-PDF or Triptych source-text licence is asserted.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/actagregoriipapa0001vinc/actagregoriipapa0001vinc_scandata.xml",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "ocr-layout-xml",
+   "byte_size": 29053303,
+   "edition_owned": true,
+   "id": "artifact.gregory-xvi-acta.volume-01.1901-rome-mul.xml-c0eb0a32361e",
+   "media_type": "application/xml",
+   "notes": "The exact 29,053,303-byte verbose XML remains remote for its measured size. Complete raw OCR, exact token/line/leaf correspondence and a standalone replay recipe are retained offline. A token match or an imprint check does not establish complete image collation or act authentication.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "Scratch candidate only: historical Latin/Italian wording in the identified Rome1901 printing is eligible for artifact-specific United States expired-term assessment under src/sources/inventories/papal-documents-rights-v1.toml. Whole PDF wrapper, incidental library/digitizer marks, historical editorial matter and remote PDF evidence descriptor remain separately reviewable; no worldwide, provider-wide, whole-PDF or Triptych source-text licence is asserted.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/actagregoriipapa0001vinc/actagregoriipapa0001vinc_djvu.xml",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1901",
+  "editors": [],
+  "id": "edition.gregory-xvi-acta.volume-01.1901-rome-mul",
+  "jurisdiction": null,
+  "language": "mul",
+  "publication": "Rome: Ex Typographia Polyglotta S. C. de Propaganda Fide, 1901.",
+  "title": "Acta Gregorii Papae XVI — Volumen 1, Pars prima canonica — 1901",
+  "translators": [],
+  "year": 1901
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Antonio Maria Bernasconi, collection editor; individual issuing authorities as stated in each source item",
+  "category": "historical-document-container",
+  "description": "Historical collection containing acts, constituent instruments and editorial apparatus. Acquiring this container establishes no complete census or authentication of its acts.",
+  "id": "work.gregory-xvi-acta.volume-01",
+  "languages": [
+   "la",
+   "it"
+  ],
+  "title": "Acta Gregorii Papae XVI — Volumen 1, Pars prima canonica"
+ }
+}

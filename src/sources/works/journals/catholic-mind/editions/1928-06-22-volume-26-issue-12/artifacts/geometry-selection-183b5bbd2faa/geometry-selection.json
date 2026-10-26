@@ -1,0 +1,4911 @@
+{
+  "schema": "triptych-english-word-geometry-selection/v1",
+  "source_xml": "sim_catholic-mind_1928-06-22_26_12_djvu.xml",
+  "source_xml_sha256": "ab5f773ad79ffe5b3c3e8fb374c30230f5f54eafd22ed4037aae8555be35f4de",
+  "source_pdf": "sim_catholic-mind_1928-06-22_26_12.pdf",
+  "source_pdf_sha256": "00e2cf5d4c9522b7c6ebe52dad445c2d4af629f12c50fc2dd09727a09e845b80",
+  "selected_artifact_page_range": [
+    1,
+    17
+  ],
+  "method": "Select exact XML WORD text in original XML paragraph/line order within explicit page rectangle; join words/lines with spaces and separate retained XML paragraphs by blank LF. Exclude printed upper running heads/masthead, lower isolated numeric page labels, and wholly neighboring-page words outside main text column. Preserve OCR spelling, punctuation, broken words and source dating.",
+  "output": "papal-act-geometry-text.txt",
+  "output_sha256": "3f9a048e01b14e8b6596dc8c323dca807ad02c6e8becba2b1a3689490e940f40",
+  "output_bytes": 35248,
+  "pages": [
+    {
+      "page": 1,
+      "width": 1730,
+      "height": 2662,
+      "word_center_x_min": 110,
+      "word_center_x_max": 1730,
+      "word_center_y_min": 340,
+      "word_center_y_max": 2662,
+      "excluded_words": [
+        {
+          "text": "nd",
+          "coords": [
+            2,
+            1187,
+            42,
+            1154
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "Ice",
+          "coords": [
+            0,
+            1237,
+            42,
+            1214
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "THE",
+          "coords": [
+            256,
+            246,
+            352,
+            215
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "CATHOLIC",
+          "coords": [
+            374,
+            247,
+            610,
+            214
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "MIND,",
+          "coords": [
+            634,
+            250,
+            766,
+            213
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "Vol.",
+          "coords": [
+            187,
+            287,
+            250,
+            255
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "XXVI,",
+          "coords": [
+            270,
+            291,
+            397,
+            255
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "No.",
+          "coords": [
+            415,
+            286,
+            478,
+            255
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "12,",
+          "coords": [
+            499,
+            290,
+            546,
+            256
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "June",
+          "coords": [
+            565,
+            286,
+            645,
+            255
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "22,",
+          "coords": [
+            664,
+            290,
+            712,
+            255
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "1928",
+          "coords": [
+            731,
+            285,
+            809,
+            254
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "221",
+          "coords": [
+            754,
+            2437,
+            812,
+            2406
+          ],
+          "reason": "isolated printed page number at lower margin"
+        }
+      ],
+      "kept_words": 305
+    },
+    {
+      "page": 2,
+      "width": 1730,
+      "height": 2654,
+      "word_center_x_min": 110,
+      "word_center_x_max": 1730,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2654,
+      "excluded_words": [
+        {
+          "text": "222",
+          "coords": [
+            418,
+            259,
+            477,
+            230
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "REPARATION",
+          "coords": [
+            555,
+            259,
+            869,
+            227
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "DUE",
+          "coords": [
+            898,
+            256,
+            997,
+            226
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "TO",
+          "coords": [
+            1022,
+            256,
+            1087,
+            225
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "SACRED",
+          "coords": [
+            1114,
+            255,
+            1301,
+            222
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "HEART",
+          "coords": [
+            1329,
+            251,
+            1494,
+            219
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        }
+      ],
+      "kept_words": 417
+    },
+    {
+      "page": 3,
+      "width": 1730,
+      "height": 2654,
+      "word_center_x_min": 110,
+      "word_center_x_max": 1730,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2654,
+      "excluded_words": [
+        {
+          "text": "REPARATION",
+          "coords": [
+            289,
+            253,
+            603,
+            221
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "DUE",
+          "coords": [
+            634,
+            253,
+            731,
+            222
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "TO",
+          "coords": [
+            756,
+            253,
+            821,
+            223
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "SACRED",
+          "coords": [
+            848,
+            253,
+            1036,
+            221
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "HEART",
+          "coords": [
+            1064,
+            252,
+            1230,
+            221
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "223",
+          "coords": [
+            1304,
+            253,
+            1363,
+            222
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        }
+      ],
+      "kept_words": 393
+    },
+    {
+      "page": 4,
+      "width": 1730,
+      "height": 2670,
+      "word_center_x_min": 110,
+      "word_center_x_max": 1730,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2670,
+      "excluded_words": [
+        {
+          "text": "224",
+          "coords": [
+            456,
+            269,
+            515,
+            240
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "REPARATION",
+          "coords": [
+            593,
+            270,
+            907,
+            240
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "DUE",
+          "coords": [
+            937,
+            270,
+            1036,
+            239
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "TO",
+          "coords": [
+            1060,
+            270,
+            1125,
+            239
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "SACRED",
+          "coords": [
+            1152,
+            270,
+            1339,
+            238
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "HEART",
+          "coords": [
+            1366,
+            268,
+            1532,
+            237
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        }
+      ],
+      "kept_words": 401
+    },
+    {
+      "page": 5,
+      "width": 1730,
+      "height": 2670,
+      "word_center_x_min": 110,
+      "word_center_x_max": 1730,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2670,
+      "excluded_words": [
+        {
+          "text": "od",
+          "coords": [
+            0,
+            287,
+            67,
+            276
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "yver",
+          "coords": [
+            0,
+            371,
+            66,
+            348
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ion,",
+          "coords": [
+            4,
+            422,
+            66,
+            385
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "tual",
+          "coords": [
+            0,
+            471,
+            66,
+            438
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "red",
+          "coords": [
+            0,
+            521,
+            67,
+            488
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "in-",
+          "coords": [
+            24,
+            570,
+            67,
+            536
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "1ole",
+          "coords": [
+            0,
+            620,
+            68,
+            586
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "blic",
+          "coords": [
+            4,
+            670,
+            68,
+            634
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "Due",
+          "coords": [
+            0,
+            720,
+            69,
+            684
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "-en-",
+          "coords": [
+            0,
+            768,
+            68,
+            746
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "e",
+          "coords": [
+            0,
+            817,
+            15,
+            795
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "to",
+          "coords": [
+            38,
+            818,
+            68,
+            791
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "and",
+          "coords": [
+            4,
+            868,
+            68,
+            835
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": ")",
+          "coords": [
+            0,
+            916,
+            4,
+            894
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "of",
+          "coords": [
+            34,
+            918,
+            68,
+            884
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "yine",
+          "coords": [
+            0,
+            967,
+            69,
+            932
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ely:",
+          "coords": [
+            0,
+            1025,
+            68,
+            981
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "XIX,",
+          "coords": [
+            0,
+            1070,
+            68,
+            1031
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "rth,",
+          "coords": [
+            4,
+            1118,
+            69,
+            1081
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "Dice",
+          "coords": [
+            0,
+            1165,
+            68,
+            1130
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "cate",
+          "coords": [
+            0,
+            1215,
+            68,
+            1187
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "‘red",
+          "coords": [
+            0,
+            1264,
+            67,
+            1230
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "Thy",
+          "coords": [
+            0,
+            1323,
+            67,
+            1279
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "the",
+          "coords": [
+            10,
+            1363,
+            65,
+            1328
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "10le",
+          "coords": [
+            0,
+            1412,
+            67,
+            1378
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "rist,",
+          "coords": [
+            0,
+            1465,
+            67,
+            1427
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "was",
+          "coords": [
+            0,
+            1511,
+            67,
+            1489
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ces-",
+          "coords": [
+            0,
+            1561,
+            66,
+            1538
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "use",
+          "coords": [
+            0,
+            1610,
+            66,
+            1587
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ur-",
+          "coords": [
+            0,
+            1813,
+            65,
+            1782
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": ";",
+          "coords": [
+            0,
+            1863,
+            5,
+            1841
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "to",
+          "coords": [
+            33,
+            1863,
+            65,
+            1837
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "Mas",
+          "coords": [
+            0,
+            1912,
+            66,
+            1885
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ires",
+          "coords": [
+            2,
+            1962,
+            65,
+            1927
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "the",
+          "coords": [
+            8,
+            2012,
+            65,
+            1977
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ear",
+          "coords": [
+            0,
+            2061,
+            65,
+            2027
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "We",
+          "coords": [
+            2,
+            2111,
+            64,
+            2076
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "‘jan",
+          "coords": [
+            0,
+            2160,
+            62,
+            2126
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "rly",
+          "coords": [
+            0,
+            2219,
+            63,
+            2176
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ion",
+          "coords": [
+            0,
+            2257,
+            62,
+            2224
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "me,",
+          "coords": [
+            1,
+            2308,
+            63,
+            2285
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "be-",
+          "coords": [
+            8,
+            2356,
+            62,
+            2323
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "iole",
+          "coords": [
+            0,
+            2406,
+            63,
+            2373
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "reet",
+          "coords": [
+            0,
+            2457,
+            64,
+            2428
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "REPARATION",
+          "coords": [
+            283,
+            239,
+            599,
+            207
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "DUE",
+          "coords": [
+            628,
+            239,
+            728,
+            207
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "TO",
+          "coords": [
+            752,
+            238,
+            818,
+            206
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "SACRED",
+          "coords": [
+            845,
+            238,
+            1032,
+            205
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "HEART",
+          "coords": [
+            1059,
+            236,
+            1226,
+            204
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "225",
+          "coords": [
+            1300,
+            234,
+            1359,
+            202
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        }
+      ],
+      "kept_words": 395
+    },
+    {
+      "page": 6,
+      "width": 1730,
+      "height": 2654,
+      "word_center_x_min": 110,
+      "word_center_x_max": 1730,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2654,
+      "excluded_words": [
+        {
+          "text": "226",
+          "coords": [
+            478,
+            240,
+            538,
+            209
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "REPARATION",
+          "coords": [
+            615,
+            241,
+            930,
+            209
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "DUE",
+          "coords": [
+            960,
+            241,
+            1058,
+            210
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "TO",
+          "coords": [
+            1083,
+            241,
+            1148,
+            210
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "SACRED",
+          "coords": [
+            1175,
+            241,
+            1363,
+            209
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "HEART",
+          "coords": [
+            1390,
+            240,
+            1556,
+            208
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        }
+      ],
+      "kept_words": 406
+    },
+    {
+      "page": 7,
+      "width": 1730,
+      "height": 2654,
+      "word_center_x_min": 110,
+      "word_center_x_max": 1730,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2654,
+      "excluded_words": [
+        {
+          "text": "We",
+          "coords": [
+            24,
+            343,
+            80,
+            307
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "“the",
+          "coords": [
+            6,
+            393,
+            80,
+            358
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "|",
+          "coords": [
+            0,
+            439,
+            4,
+            419
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "we",
+          "coords": [
+            39,
+            442,
+            81,
+            420
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "act",
+          "coords": [
+            32,
+            491,
+            79,
+            467
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "lves",
+          "coords": [
+            0,
+            539,
+            80,
+            504
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "Him",
+          "coords": [
+            1,
+            588,
+            80,
+            553
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "irom",
+          "coords": [
+            0,
+            637,
+            81,
+            601
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ches",
+          "coords": [
+            5,
+            686,
+            82,
+            652
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "t",
+          "coords": [
+            0,
+            736,
+            20,
+            708
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "of",
+          "coords": [
+            49,
+            736,
+            81,
+            703
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "»tted",
+          "coords": [
+            4,
+            786,
+            82,
+            754
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "purn",
+          "coords": [
+            0,
+            844,
+            82,
+            812
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "t",
+          "coords": [
+            0,
+            883,
+            19,
+            849
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "as",
+          "coords": [
+            50,
+            883,
+            82,
+            863
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "‘ord-",
+          "coords": [
+            0,
+            983,
+            83,
+            949
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "have",
+          "coords": [
+            0,
+            1031,
+            83,
+            997
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "dam,",
+          "coords": [
+            0,
+            1082,
+            83,
+            1047
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "and",
+          "coords": [
+            20,
+            1130,
+            83,
+            1098
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "our-",
+          "coords": [
+            7,
+            1178,
+            83,
+            1157
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "t",
+          "coords": [
+            0,
+            1228,
+            6,
+            1201
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "the",
+          "coords": [
+            31,
+            1228,
+            85,
+            1195
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ruth,",
+          "coords": [
+            0,
+            1279,
+            85,
+            1244
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "gius",
+          "coords": [
+            0,
+            1336,
+            84,
+            1293
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ood-",
+          "coords": [
+            4,
+            1375,
+            85,
+            1342
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ever",
+          "coords": [
+            7,
+            1424,
+            85,
+            1403
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "born",
+          "coords": [
+            0,
+            1473,
+            84,
+            1439
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "ostle",
+          "coords": [
+            0,
+            1523,
+            86,
+            1490
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "dren",
+          "coords": [
+            4,
+            1573,
+            85,
+            1539
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "1",
+          "coords": [
+            0,
+            1621,
+            5,
+            1600
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "the",
+          "coords": [
+            32,
+            1622,
+            86,
+            1589
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "1one",
+          "coords": [
+            0,
+            1670,
+            87,
+            1649
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "tion,",
+          "coords": [
+            4,
+            1721,
+            87,
+            1686
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "tried",
+          "coords": [
+            0,
+            1770,
+            87,
+            1736
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "es.",
+          "coords": [
+            2,
+            1819,
+            49,
+            1798
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "rreat",
+          "coords": [
+            0,
+            1972,
+            87,
+            1938
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "God",
+          "coords": [
+            13,
+            2012,
+            87,
+            1979
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "1",
+          "coords": [
+            3,
+            2062,
+            13,
+            2041
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "Us,",
+          "coords": [
+            41,
+            2062,
+            88,
+            2041
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "king",
+          "coords": [
+            5,
+            2118,
+            89,
+            2078
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "Phou",
+          "coords": [
+            0,
+            2161,
+            88,
+            2127
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "Lolo-",
+          "coords": [
+            0,
+            2210,
+            88,
+            2177
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "Be-",
+          "coords": [
+            31,
+            2259,
+            88,
+            2226
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "Orne",
+          "coords": [
+            0,
+            2308,
+            89,
+            2287
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "nded",
+          "coords": [
+            0,
+            2359,
+            88,
+            2324
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "self",
+          "coords": [
+            27,
+            2408,
+            89,
+            2373
+          ],
+          "reason": "outside main page text column"
+        },
+        {
+          "text": "REPARATION",
+          "coords": [
+            295,
+            245,
+            611,
+            214
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "DUE",
+          "coords": [
+            640,
+            244,
+            740,
+            213
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "TO",
+          "coords": [
+            764,
+            244,
+            830,
+            213
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "SACRED",
+          "coords": [
+            857,
+            243,
+            1045,
+            211
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "HEART",
+          "coords": [
+            1072,
+            240,
+            1238,
+            209
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "227",
+          "coords": [
+            1313,
+            238,
+            1372,
+            206
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        }
+      ],
+      "kept_words": 421
+    },
+    {
+      "page": 8,
+      "width": 1730,
+      "height": 2662,
+      "word_center_x_min": 110,
+      "word_center_x_max": 1730,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2662,
+      "excluded_words": [
+        {
+          "text": "228",
+          "coords": [
+            439,
+            247,
+            498,
+            217
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "#REPARATION",
+          "coords": [
+            575,
+            246,
+            891,
+            215
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "DUE",
+          "coords": [
+            920,
+            246,
+            1018,
+            215
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "TO",
+          "coords": [
+            1043,
+            245,
+            1108,
+            214
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "SACRED",
+          "coords": [
+            1135,
+            245,
+            1323,
+            212
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "HEART",
+          "coords": [
+            1350,
+            243,
+            1517,
+            212
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        }
+      ],
+      "kept_words": 411
+    },
+    {
+      "page": 9,
+      "width": 1730,
+      "height": 2662,
+      "word_center_x_min": 110,
+      "word_center_x_max": 1730,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2662,
+      "excluded_words": [
+        {
+          "text": "REPARATION",
+          "coords": [
+            292,
+            270,
+            607,
+            238
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "DUE",
+          "coords": [
+            636,
+            268,
+            735,
+            237
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "TO",
+          "coords": [
+            759,
+            268,
+            824,
+            236
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "SACRED",
+          "coords": [
+            851,
+            267,
+            1039,
+            234
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "HEART",
+          "coords": [
+            1066,
+            264,
+            1233,
+            232
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "229",
+          "coords": [
+            1307,
+            261,
+            1367,
+            230
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        }
+      ],
+      "kept_words": 376
+    },
+    {
+      "page": 10,
+      "width": 1730,
+      "height": 2670,
+      "word_center_x_min": 110,
+      "word_center_x_max": 1730,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2670,
+      "excluded_words": [
+        {
+          "text": "230",
+          "coords": [
+            424,
+            280,
+            482,
+            250
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "REPARATION",
+          "coords": [
+            561,
+            279,
+            874,
+            248
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "DUE",
+          "coords": [
+            904,
+            278,
+            1002,
+            247
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "TO",
+          "coords": [
+            1027,
+            277,
+            1091,
+            247
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "SACRED",
+          "coords": [
+            1119,
+            277,
+            1306,
+            245
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "HEART",
+          "coords": [
+            1334,
+            275,
+            1499,
+            244
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        }
+      ],
+      "kept_words": 397
+    },
+    {
+      "page": 11,
+      "width": 1730,
+      "height": 2670,
+      "word_center_x_min": 110,
+      "word_center_x_max": 1730,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2670,
+      "excluded_words": [
+        {
+          "text": "REPARATION",
+          "coords": [
+            295,
+            258,
+            610,
+            226
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "DUE",
+          "coords": [
+            640,
+            256,
+            738,
+            226
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "TO",
+          "coords": [
+            763,
+            256,
+            828,
+            225
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "SACRED",
+          "coords": [
+            855,
+            255,
+            1043,
+            223
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "HEART",
+          "coords": [
+            1072,
+            252,
+            1237,
+            221
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "231",
+          "coords": [
+            1311,
+            250,
+            1367,
+            219
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        }
+      ],
+      "kept_words": 371
+    },
+    {
+      "page": 12,
+      "width": 1730,
+      "height": 2662,
+      "word_center_x_min": 110,
+      "word_center_x_max": 1730,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2662,
+      "excluded_words": [
+        {
+          "text": "232",
+          "coords": [
+            401,
+            248,
+            460,
+            218
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "REPARATION",
+          "coords": [
+            537,
+            249,
+            852,
+            218
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "DUE",
+          "coords": [
+            881,
+            249,
+            980,
+            218
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "TO",
+          "coords": [
+            1004,
+            249,
+            1069,
+            217
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "SACRED",
+          "coords": [
+            1097,
+            248,
+            1284,
+            216
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "HEART",
+          "coords": [
+            1311,
+            247,
+            1477,
+            216
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        }
+      ],
+      "kept_words": 398
+    },
+    {
+      "page": 13,
+      "width": 1730,
+      "height": 2662,
+      "word_center_x_min": 110,
+      "word_center_x_max": 1730,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2662,
+      "excluded_words": [
+        {
+          "text": "REPARATION",
+          "coords": [
+            320,
+            234,
+            637,
+            202
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "DUE",
+          "coords": [
+            665,
+            233,
+            765,
+            202
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "TO",
+          "coords": [
+            789,
+            233,
+            855,
+            201
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "SACRED",
+          "coords": [
+            882,
+            233,
+            1070,
+            200
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "HEART",
+          "coords": [
+            1097,
+            231,
+            1264,
+            199
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "233",
+          "coords": [
+            1338,
+            230,
+            1397,
+            198
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        }
+      ],
+      "kept_words": 418
+    },
+    {
+      "page": 14,
+      "width": 1730,
+      "height": 2662,
+      "word_center_x_min": 110,
+      "word_center_x_max": 1730,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2662,
+      "excluded_words": [
+        {
+          "text": "234",
+          "coords": [
+            374,
+            241,
+            432,
+            211
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "REPARATION",
+          "coords": [
+            510,
+            240,
+            825,
+            209
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "DUE",
+          "coords": [
+            854,
+            239,
+            953,
+            208
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "TO",
+          "coords": [
+            978,
+            238,
+            1042,
+            207
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "SACRED",
+          "coords": [
+            1070,
+            238,
+            1257,
+            205
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "HEART",
+          "coords": [
+            1285,
+            236,
+            1451,
+            205
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        }
+      ],
+      "kept_words": 373
+    },
+    {
+      "page": 15,
+      "width": 1730,
+      "height": 2662,
+      "word_center_x_min": 110,
+      "word_center_x_max": 1730,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2662,
+      "excluded_words": [
+        {
+          "text": "REPARATION",
+          "coords": [
+            329,
+            201,
+            646,
+            168
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "DUE",
+          "coords": [
+            674,
+            200,
+            773,
+            168
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "TO",
+          "coords": [
+            798,
+            200,
+            863,
+            167
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "SACRED",
+          "coords": [
+            891,
+            200,
+            1079,
+            166
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "HEART",
+          "coords": [
+            1106,
+            199,
+            1272,
+            166
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "235",
+          "coords": [
+            1347,
+            197,
+            1405,
+            164
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        }
+      ],
+      "kept_words": 332
+    },
+    {
+      "page": 16,
+      "width": 1730,
+      "height": 2694,
+      "word_center_x_min": 110,
+      "word_center_x_max": 1730,
+      "word_center_y_min": 280,
+      "word_center_y_max": 2694,
+      "excluded_words": [
+        {
+          "text": "236",
+          "coords": [
+            394,
+            246,
+            453,
+            216
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "REPARATION",
+          "coords": [
+            537,
+            246,
+            853,
+            214
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "DUE",
+          "coords": [
+            878,
+            245,
+            977,
+            214
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "TO",
+          "coords": [
+            998,
+            245,
+            1063,
+            213
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "SACRED",
+          "coords": [
+            1087,
+            245,
+            1274,
+            213
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "HEART",
+          "coords": [
+            1297,
+            244,
+            1463,
+            212
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        }
+      ],
+      "kept_words": 401
+    },
+    {
+      "page": 17,
+      "width": 1730,
+      "height": 2694,
+      "word_center_x_min": 110,
+      "word_center_x_max": 1730,
+      "word_center_y_min": 280,
+      "word_center_y_max": 650,
+      "excluded_words": [
+        {
+          "text": "THE",
+          "coords": [
+            510,
+            245,
+            612,
+            214
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "CATHOLIC",
+          "coords": [
+            641,
+            245,
+            893,
+            212
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "MAN",
+          "coords": [
+            922,
+            242,
+            1027,
+            211
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "237",
+          "coords": [
+            1316,
+            238,
+            1374,
+            206
+          ],
+          "reason": "printed running header or journal masthead above main text"
+        },
+        {
+          "text": "The",
+          "coords": [
+            459,
+            793,
+            593,
+            737
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "Catholic",
+          "coords": [
+            622,
+            792,
+            907,
+            736
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "Man",
+          "coords": [
+            936,
+            790,
+            1086,
+            735
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "Rev.",
+          "coords": [
+            420,
+            894,
+            511,
+            860
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "Artuur",
+          "coords": [
+            546,
+            893,
+            718,
+            858
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "I.",
+          "coords": [
+            751,
+            892,
+            780,
+            857
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "Keecan,",
+          "coords": [
+            814,
+            898,
+            996,
+            856
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "C.M.",
+          "coords": [
+            1029,
+            891,
+            1129,
+            854
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "Excerpts",
+          "coords": [
+            173,
+            973,
+            314,
+            939
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "from",
+          "coords": [
+            334,
+            972,
+            416,
+            936
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "sermon",
+          "coords": [
+            438,
+            965,
+            557,
+            945
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "delivered",
+          "coords": [
+            578,
+            965,
+            730,
+            934
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "at",
+          "coords": [
+            750,
+            964,
+            782,
+            938
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "St.",
+          "coords": [
+            803,
+            964,
+            847,
+            934
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "Mary’s",
+          "coords": [
+            869,
+            969,
+            986,
+            933
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "Seminary.",
+          "coords": [
+            1006,
+            969,
+            1175,
+            932
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "Reprinted",
+          "coords": [
+            1216,
+            968,
+            1384,
+            930
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "from",
+          "coords": [
+            433,
+            1013,
+            515,
+            977
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            534,
+            1006,
+            584,
+            976
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "“Baltimore",
+          "coords": [
+            601,
+            1005,
+            788,
+            975
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "Catholic",
+          "coords": [
+            808,
+            1005,
+            947,
+            974
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "Review.”",
+          "coords": [
+            965,
+            1003,
+            1119,
+            973
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "AS",
+          "coords": [
+            172,
+            1143,
+            285,
+            1056
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "I",
+          "coords": [
+            309,
+            1091,
+            323,
+            1056
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "see",
+          "coords": [
+            347,
+            1091,
+            404,
+            1068
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "you",
+          "coords": [
+            425,
+            1102,
+            497,
+            1067
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "assembled",
+          "coords": [
+            516,
+            1090,
+            719,
+            1054
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "here",
+          "coords": [
+            738,
+            1089,
+            825,
+            1053
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "in",
+          "coords": [
+            844,
+            1088,
+            882,
+            1052
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "such",
+          "coords": [
+            904,
+            1088,
+            992,
+            1052
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "splendid",
+          "coords": [
+            1014,
+            1098,
+            1179,
+            1051
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "numbers,",
+          "coords": [
+            1200,
+            1093,
+            1386,
+            1051
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "I",
+          "coords": [
+            282,
+            1145,
+            297,
+            1111
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "cannot",
+          "coords": [
+            329,
+            1145,
+            461,
+            1116
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "keep",
+          "coords": [
+            491,
+            1165,
+            581,
+            1109
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "my",
+          "coords": [
+            610,
+            1154,
+            672,
+            1120
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "thoughts",
+          "coords": [
+            703,
+            1152,
+            877,
+            1107
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "from",
+          "coords": [
+            912,
+            1141,
+            1009,
+            1106
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "roving",
+          "coords": [
+            1043,
+            1150,
+            1173,
+            1106
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "far",
+          "coords": [
+            1206,
+            1141,
+            1265,
+            1105
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "back",
+          "coords": [
+            1295,
+            1140,
+            1386,
+            1104
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "along",
+          "coords": [
+            177,
+            1206,
+            290,
+            1162
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            307,
+            1196,
+            369,
+            1161
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "dim,",
+          "coords": [
+            388,
+            1199,
+            477,
+            1160
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "misty",
+          "coords": [
+            495,
+            1205,
+            610,
+            1159
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "hallways",
+          "coords": [
+            628,
+            1204,
+            791,
+            1147
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "of",
+          "coords": [
+            831,
+            1192,
+            873,
+            1157
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            892,
+            1193,
+            955,
+            1157
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "past,",
+          "coords": [
+            974,
+            1203,
+            1070,
+            1163
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "down",
+          "coords": [
+            1090,
+            1192,
+            1199,
+            1134
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "through",
+          "coords": [
+            1221,
+            1201,
+            1388,
+            1156
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            175,
+            1248,
+            232,
+            1212
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "arches",
+          "coords": [
+            251,
+            1248,
+            378,
+            1211
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "of",
+          "coords": [
+            398,
+            1247,
+            440,
+            1210
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            460,
+            1246,
+            522,
+            1210
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "forgotten",
+          "coords": [
+            544,
+            1255,
+            732,
+            1196
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "years",
+          "coords": [
+            751,
+            1255,
+            878,
+            1219
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": ";",
+          "coords": [
+            865,
+            1259,
+            885,
+            1202
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "I",
+          "coords": [
+            901,
+            1243,
+            917,
+            1207
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "see",
+          "coords": [
+            940,
+            1244,
+            1000,
+            1219
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "all",
+          "coords": [
+            1017,
+            1243,
+            1065,
+            1207
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            1084,
+            1243,
+            1147,
+            1206
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "while",
+          "coords": [
+            1167,
+            1243,
+            1275,
+            1206
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "your",
+          "coords": [
+            1294,
+            1253,
+            1388,
+            1217
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "type—noble,",
+          "coords": [
+            176,
+            1309,
+            425,
+            1262
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "well-defined.",
+          "coords": [
+            457,
+            1296,
+            714,
+            1260
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "That",
+          "coords": [
+            247,
+            1348,
+            349,
+            1312
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "type",
+          "coords": [
+            376,
+            1358,
+            465,
+            1318
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "stands",
+          "coords": [
+            494,
+            1347,
+            623,
+            1311
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "out",
+          "coords": [
+            652,
+            1346,
+            717,
+            1316
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "cleancut,",
+          "coords": [
+            745,
+            1351,
+            927,
+            1309
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "chiseled",
+          "coords": [
+            955,
+            1345,
+            1119,
+            1308
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "against",
+          "coords": [
+            1148,
+            1353,
+            1299,
+            1308
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            1328,
+            1344,
+            1391,
+            1308
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "background",
+          "coords": [
+            178,
+            1408,
+            410,
+            1363
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "of",
+          "coords": [
+            433,
+            1397,
+            475,
+            1362
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            499,
+            1397,
+            561,
+            1361
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "centuries.",
+          "coords": [
+            583,
+            1396,
+            776,
+            1360
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "I",
+          "coords": [
+            826,
+            1394,
+            841,
+            1360
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "see",
+          "coords": [
+            869,
+            1395,
+            926,
+            1372
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "him",
+          "coords": [
+            950,
+            1394,
+            1058,
+            1359
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "in",
+          "coords": [
+            1050,
+            1394,
+            1086,
+            1372
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "Rome",
+          "coords": [
+            1111,
+            1394,
+            1227,
+            1359
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "of",
+          "coords": [
+            1250,
+            1394,
+            1291,
+            1358
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "old,",
+          "coords": [
+            1316,
+            1400,
+            1390,
+            1358
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "daring",
+          "coords": [
+            178,
+            1458,
+            306,
+            1413
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            337,
+            1448,
+            399,
+            1413
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "Neros",
+          "coords": [
+            434,
+            1447,
+            554,
+            1412
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "and",
+          "coords": [
+            587,
+            1446,
+            658,
+            1411
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            692,
+            1446,
+            752,
+            1411
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "Czsars",
+          "coords": [
+            787,
+            1446,
+            929,
+            1410
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "all,",
+          "coords": [
+            964,
+            1449,
+            1022,
+            1409
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "proclaiming",
+          "coords": [
+            1055,
+            1454,
+            1297,
+            1408
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            1329,
+            1445,
+            1391,
+            1408
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "great",
+          "coords": [
+            178,
+            1508,
+            277,
+            1469
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "individuality",
+          "coords": [
+            320,
+            1508,
+            574,
+            1461
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "of",
+          "coords": [
+            615,
+            1496,
+            656,
+            1460
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "man",
+          "coords": [
+            699,
+            1495,
+            782,
+            1473
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "against",
+          "coords": [
+            824,
+            1505,
+            967,
+            1459
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            1007,
+            1495,
+            1068,
+            1459
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "all-consuming",
+          "coords": [
+            1108,
+            1504,
+            1391,
+            1458
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "tyranny",
+          "coords": [
+            181,
+            1559,
+            342,
+            1520
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "of",
+          "coords": [
+            361,
+            1547,
+            403,
+            1512
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "state",
+          "coords": [
+            424,
+            1547,
+            519,
+            1518
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "absolutism.",
+          "coords": [
+            538,
+            1547,
+            774,
+            1511
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "I",
+          "coords": [
+            252,
+            1599,
+            267,
+            1564
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "see",
+          "coords": [
+            294,
+            1599,
+            354,
+            1576
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "him",
+          "coords": [
+            379,
+            1598,
+            454,
+            1562
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "ten",
+          "coords": [
+            481,
+            1597,
+            540,
+            1568
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "times",
+          "coords": [
+            565,
+            1597,
+            672,
+            1561
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "over",
+          "coords": [
+            694,
+            1597,
+            786,
+            1573
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "with",
+          "coords": [
+            811,
+            1596,
+            899,
+            1560
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "unruffled",
+          "coords": [
+            925,
+            1595,
+            1105,
+            1559
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "countenance,",
+          "coords": [
+            1133,
+            1601,
+            1392,
+            1565
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "face",
+          "coords": [
+            184,
+            1650,
+            260,
+            1614
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "cauldrons",
+          "coords": [
+            284,
+            1650,
+            481,
+            1614
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "of",
+          "coords": [
+            508,
+            1648,
+            548,
+            1612
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "burning",
+          "coords": [
+            573,
+            1657,
+            735,
+            1611
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "oil,",
+          "coords": [
+            761,
+            1653,
+            820,
+            1611
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "or",
+          "coords": [
+            847,
+            1647,
+            889,
+            1623
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "gaze",
+          "coords": [
+            915,
+            1656,
+            1003,
+            1623
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "with",
+          "coords": [
+            1030,
+            1646,
+            1117,
+            1610
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "courage",
+          "coords": [
+            1142,
+            1654,
+            1300,
+            1621
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "un-",
+          "coords": [
+            1327,
+            1645,
+            1393,
+            1622
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "flinching",
+          "coords": [
+            183,
+            1709,
+            354,
+            1664
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "into",
+          "coords": [
+            380,
+            1700,
+            456,
+            1664
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            480,
+            1699,
+            543,
+            1664
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "glaring",
+          "coords": [
+            569,
+            1708,
+            713,
+            1662
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "eyes",
+          "coords": [
+            740,
+            1709,
+            823,
+            1675
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "of",
+          "coords": [
+            849,
+            1698,
+            891,
+            1662
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "fierce",
+          "coords": [
+            922,
+            1697,
+            1028,
+            1661
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "Numidian",
+          "coords": [
+            1058,
+            1697,
+            1260,
+            1660
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "lions,",
+          "coords": [
+            1287,
+            1702,
+            1394,
+            1660
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "or",
+          "coords": [
+            182,
+            1750,
+            221,
+            1728
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "welcome",
+          "coords": [
+            244,
+            1751,
+            414,
+            1715
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "even",
+          "coords": [
+            438,
+            1750,
+            528,
+            1727
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "gayly",
+          "coords": [
+            550,
+            1760,
+            658,
+            1714
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            682,
+            1749,
+            741,
+            1714
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "rack,",
+          "coords": [
+            765,
+            1754,
+            862,
+            1713
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            886,
+            1748,
+            945,
+            1712
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "sword,",
+          "coords": [
+            970,
+            1752,
+            1103,
+            1712
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            1127,
+            1748,
+            1187,
+            1712
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "rope",
+          "coords": [
+            1212,
+            1757,
+            1299,
+            1723
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "and",
+          "coords": [
+            1322,
+            1748,
+            1394,
+            1712
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            183,
+            1802,
+            239,
+            1766
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "cross,",
+          "coords": [
+            267,
+            1805,
+            382,
+            1778
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "while",
+          "coords": [
+            412,
+            1800,
+            519,
+            1764
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "Imperial",
+          "coords": [
+            549,
+            1809,
+            719,
+            1763
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "Rome",
+          "coords": [
+            753,
+            1799,
+            868,
+            1764
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "marshaled",
+          "coords": [
+            897,
+            1798,
+            1103,
+            1762
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "her",
+          "coords": [
+            1134,
+            1798,
+            1199,
+            1762
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "vast",
+          "coords": [
+            1228,
+            1798,
+            1309,
+            1768
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "re-",
+          "coords": [
+            1340,
+            1798,
+            1394,
+            1774
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "sources",
+          "coords": [
+            184,
+            1852,
+            328,
+            1828
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "of",
+          "coords": [
+            358,
+            1851,
+            398,
+            1815
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "power",
+          "coords": [
+            429,
+            1861,
+            552,
+            1827
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "in",
+          "coords": [
+            582,
+            1850,
+            617,
+            1815
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "a",
+          "coords": [
+            646,
+            1850,
+            668,
+            1826
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "vain",
+          "coords": [
+            696,
+            1849,
+            780,
+            1813
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "attempt",
+          "coords": [
+            809,
+            1859,
+            962,
+            1820
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "to",
+          "coords": [
+            993,
+            1849,
+            1030,
+            1820
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "crush",
+          "coords": [
+            1059,
+            1848,
+            1169,
+            1813
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            1198,
+            1849,
+            1260,
+            1812
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "spirit",
+          "coords": [
+            1290,
+            1859,
+            1395,
+            1812
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "that",
+          "coords": [
+            184,
+            1902,
+            258,
+            1867
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "would",
+          "coords": [
+            285,
+            1902,
+            406,
+            1866
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "not",
+          "coords": [
+            433,
+            1901,
+            495,
+            1872
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "down",
+          "coords": [
+            519,
+            1900,
+            629,
+            1866
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "or",
+          "coords": [
+            655,
+            1901,
+            697,
+            1877
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "die.",
+          "coords": [
+            723,
+            1900,
+            791,
+            1864
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "With",
+          "coords": [
+            255,
+            1952,
+            359,
+            1916
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            384,
+            1952,
+            446,
+            1916
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "young",
+          "coords": [
+            471,
+            1962,
+            595,
+            1927
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "Church",
+          "coords": [
+            622,
+            1951,
+            769,
+            1915
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "that",
+          "coords": [
+            797,
+            1951,
+            874,
+            1914
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "for",
+          "coords": [
+            902,
+            1950,
+            963,
+            1914
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "three",
+          "coords": [
+            988,
+            1950,
+            1091,
+            1914
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "centuries",
+          "coords": [
+            1116,
+            1950,
+            1298,
+            1912
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "had",
+          "coords": [
+            1324,
+            1950,
+            1397,
+            1913
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "hidden,",
+          "coords": [
+            187,
+            2006,
+            337,
+            1967
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "crushed",
+          "coords": [
+            357,
+            2002,
+            517,
+            1966
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "and",
+          "coords": [
+            537,
+            2001,
+            610,
+            1966
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "bleeding,",
+          "coords": [
+            629,
+            2010,
+            817,
+            1965
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "in",
+          "coords": [
+            838,
+            2000,
+            874,
+            1965
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            894,
+            2000,
+            956,
+            1965
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "bowels",
+          "coords": [
+            976,
+            2000,
+            1117,
+            1964
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "of",
+          "coords": [
+            1136,
+            2000,
+            1177,
+            1964
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            1197,
+            2000,
+            1261,
+            1964
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "earth,",
+          "coords": [
+            1280,
+            2006,
+            1400,
+            1964
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "I",
+          "coords": [
+            188,
+            2052,
+            201,
+            2017
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "see",
+          "coords": [
+            225,
+            2053,
+            282,
+            2030
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "him",
+          "coords": [
+            302,
+            2052,
+            377,
+            2017
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "emerge",
+          "coords": [
+            399,
+            2060,
+            543,
+            2028
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "triumphant",
+          "coords": [
+            564,
+            2060,
+            789,
+            2015
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "to",
+          "coords": [
+            812,
+            2050,
+            849,
+            2022
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "plant",
+          "coords": [
+            870,
+            2060,
+            969,
+            2015
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            993,
+            2050,
+            1052,
+            2015
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "Cross",
+          "coords": [
+            1075,
+            2050,
+            1187,
+            2015
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "of",
+          "coords": [
+            1208,
+            2050,
+            1249,
+            2014
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "Christ",
+          "coords": [
+            1274,
+            2050,
+            1399,
+            2014
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "high",
+          "coords": [
+            186,
+            2113,
+            270,
+            2067
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "over",
+          "coords": [
+            291,
+            2103,
+            378,
+            2080
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "that",
+          "coords": [
+            400,
+            2103,
+            475,
+            2067
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "mausoleum",
+          "coords": [
+            497,
+            2102,
+            723,
+            2066
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "of",
+          "coords": [
+            745,
+            2101,
+            786,
+            2065
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "Rome’s",
+          "coords": [
+            811,
+            2101,
+            958,
+            2065
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "fallen",
+          "coords": [
+            983,
+            2101,
+            1093,
+            2065
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "and",
+          "coords": [
+            1114,
+            2101,
+            1187,
+            2065
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "forgotten",
+          "coords": [
+            1212,
+            2110,
+            1399,
+            2064
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "gods—the",
+          "coords": [
+            186,
+            2162,
+            387,
+            2118
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "Pantheon.",
+          "coords": [
+            418,
+            2153,
+            617,
+            2118
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "I",
+          "coords": [
+            260,
+            2203,
+            275,
+            2169
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "see",
+          "coords": [
+            299,
+            2204,
+            356,
+            2181
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "him",
+          "coords": [
+            376,
+            2203,
+            450,
+            2168
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "save",
+          "coords": [
+            474,
+            2203,
+            557,
+            2181
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            579,
+            2203,
+            637,
+            2168
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "civilization",
+          "coords": [
+            656,
+            2203,
+            876,
+            2167
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "of",
+          "coords": [
+            898,
+            2202,
+            938,
+            2167
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "his",
+          "coords": [
+            961,
+            2202,
+            1017,
+            2166
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "day",
+          "coords": [
+            1039,
+            2213,
+            1107,
+            2167
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "and",
+          "coords": [
+            1128,
+            2202,
+            1200,
+            2167
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "roll",
+          "coords": [
+            1222,
+            2202,
+            1288,
+            2167
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "back",
+          "coords": [
+            1310,
+            2202,
+            1400,
+            2166
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            188,
+            2255,
+            246,
+            2219
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "onrushing",
+          "coords": [
+            279,
+            2263,
+            483,
+            2219
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "tides",
+          "coords": [
+            516,
+            2254,
+            609,
+            2219
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "of",
+          "coords": [
+            642,
+            2254,
+            684,
+            2218
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "fierce",
+          "coords": [
+            722,
+            2254,
+            828,
+            2218
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "barbarian",
+          "coords": [
+            862,
+            2253,
+            1055,
+            2217
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "hordes.",
+          "coords": [
+            1086,
+            2253,
+            1235,
+            2208
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "Then",
+          "coords": [
+            1296,
+            2253,
+            1400,
+            2217
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "better",
+          "coords": [
+            187,
+            2305,
+            302,
+            2270
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "still,",
+          "coords": [
+            322,
+            2311,
+            405,
+            2270
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "task",
+          "coords": [
+            426,
+            2305,
+            505,
+            2269
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "of",
+          "coords": [
+            523,
+            2304,
+            565,
+            2269
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "a",
+          "coords": [
+            584,
+            2304,
+            606,
+            2281
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "thousand",
+          "coords": [
+            626,
+            2304,
+            806,
+            2269
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "years,",
+          "coords": [
+            826,
+            2315,
+            943,
+            2280
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "go",
+          "coords": [
+            961,
+            2314,
+            1009,
+            2281
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "back",
+          "coords": [
+            1028,
+            2303,
+            1117,
+            2268
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "with",
+          "coords": [
+            1138,
+            2303,
+            1225,
+            2268
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "them",
+          "coords": [
+            1246,
+            2303,
+            1344,
+            2260
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "to",
+          "coords": [
+            1363,
+            2304,
+            1402,
+            2274
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "far",
+          "coords": [
+            190,
+            2355,
+            248,
+            2319
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "uncharted",
+          "coords": [
+            278,
+            2355,
+            477,
+            2320
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "lands,",
+          "coords": [
+            508,
+            2359,
+            623,
+            2320
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "teaching",
+          "coords": [
+            654,
+            2364,
+            821,
+            2318
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            850,
+            2354,
+            911,
+            2319
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "unlettered",
+          "coords": [
+            942,
+            2354,
+            1143,
+            2318
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "and",
+          "coords": [
+            1174,
+            2354,
+            1246,
+            2318
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "unfet-",
+          "coords": [
+            1277,
+            2354,
+            1402,
+            2318
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "tered",
+          "coords": [
+            190,
+            2405,
+            289,
+            2370
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "tribes",
+          "coords": [
+            312,
+            2405,
+            422,
+            2370
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "of",
+          "coords": [
+            445,
+            2405,
+            486,
+            2369
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            511,
+            2405,
+            571,
+            2369
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "forest",
+          "coords": [
+            597,
+            2405,
+            711,
+            2369
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "that",
+          "coords": [
+            733,
+            2405,
+            812,
+            2369
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "no",
+          "coords": [
+            835,
+            2405,
+            883,
+            2381
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "man",
+          "coords": [
+            904,
+            2404,
+            988,
+            2381
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "is",
+          "coords": [
+            1013,
+            2403,
+            1042,
+            2368
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "a",
+          "coords": [
+            1064,
+            2404,
+            1086,
+            2381
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "law",
+          "coords": [
+            1107,
+            2404,
+            1175,
+            2368
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "unto",
+          "coords": [
+            1199,
+            2404,
+            1288,
+            2374
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "him-",
+          "coords": [
+            1309,
+            2404,
+            1402,
+            2368
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "self,",
+          "coords": [
+            191,
+            2461,
+            273,
+            2419
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "teaching",
+          "coords": [
+            299,
+            2466,
+            465,
+            2419
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "them",
+          "coords": [
+            492,
+            2455,
+            589,
+            2419
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "the",
+          "coords": [
+            615,
+            2456,
+            676,
+            2419
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "Christian",
+          "coords": [
+            704,
+            2455,
+            889,
+            2418
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "principles",
+          "coords": [
+            915,
+            2465,
+            1112,
+            2418
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "of",
+          "coords": [
+            1140,
+            2455,
+            1180,
+            2419
+          ],
+          "reason": "following independent article below completed prayer"
+        },
+        {
+          "text": "obedience",
+          "coords": [
+            1209,
+            2455,
+            1404,
+            2418
+          ],
+          "reason": "following independent article below completed prayer"
+        }
+      ],
+      "kept_words": 58
+    }
+  ]
+}

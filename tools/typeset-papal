@@ -21,6 +21,52 @@ EXAMPLES = {
         Example('tools/typeset-papal render --document papal.leo-xiii.hf-l-xiii-enc-15051891-rerum-novarum --out .scratch/typeset_pipeline/collection-example --compile', ('papal.leo-xiii.hf-l-xiii-enc-15051891-rerum-novarum (la): compiled',), 'Generate a local reader and its exact receipt for the collection example.'),
         Example('tools/typeset-papal collect --batch rerum .scratch/typeset_pipeline/collection-example/receipt.json .scratch/typeset_pipeline/collection-example/frozen-manifest.json --out .scratch/typeset_pipeline/collection-example-index', ('collected: 1 source editions; 1 compiled PDFs; 0 layout reviewed',), 'The local index records explicit page-review status; add --review for exact reviewed hashes.'),
     ),
+    'plan': (
+        Example('tools/typeset-papal check --manifest src/sources/papal-documents/vatican-corrections-manifest.json', ('valid: 58 admitted source editions',), 'Validate the admitted replacement selections before planning.'),
+        Example('tools/typeset-papal plan --base vatican src/sources/papal-documents/typeset-manifest.json --correction corrections src/sources/papal-documents/vatican-corrections-manifest.json --out .scratch/typeset_pipeline/plan-example/current-manifest.json', ('planned: 392 current source editions; 58 obsolete selections excluded',), 'Write the active source plan with exact input hashes and pinned per-row revisions.'),
+    ),
+    'prepare-install': (
+        Example(
+            'tools/typeset-papal plan --help',
+            (
+                "... 17 more lines",
+            ),
+            'Inspect how to regenerate the complete current source-selection plan.'),
+        Example(
+            'tools/typeset-papal prepare-install --help',
+            (
+                "... 19 more lines",
+            ),
+            'Inspect required receipt pairs and review inputs; preparation writes only its scratch proposal.'),
+    ),
+    'install': (
+        Example(
+            'tools/typeset-papal prepare-install --help',
+            (
+                "... 19 more lines",
+            ),
+            'Prepare and inspect the exact candidate set before running installation.'),
+        Example(
+            'tools/typeset-papal install --help',
+            (
+                "... 14 more lines",
+            ),
+            'Read the installation arguments without changing the installed release.'),
+    ),
+    'check-install': (
+        Example(
+            'tools/typeset-papal install --help',
+            (
+                "... 14 more lines",
+            ),
+            'Inspect the installed-release operation and its prepared-input requirement.'),
+        Example(
+            'tools/typeset-papal check-install --help',
+            (
+                "... 14 more lines",
+            ),
+            'Read the validation arguments; a real installed release is required to run the check.'),
+    ),
 }
 
 if __name__ == "__main__":

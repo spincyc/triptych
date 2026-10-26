@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.gregory-xvi-acta.volume-03.1902-rome-mul.line-map-4119aba0a748"
+edition_id = "edition.gregory-xvi-acta.volume-03.1902-rome-mul"
+artifact_type = "mechanical-line-leaf-map"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "licensed"
+license = "CC-BY-4.0"
+retrieved = "2026-10-26"
+rights_basis = "Project-created factual correspondence data under CC BY 4.0; source words retain their separately identified historical rights."
+sha256 = "4119aba0a748d5475653465c135bcec55919bcfbc0bc14ddeb66871a764c0446"
+byte_size = 203040
+path = "src/sources/works/gregory-xvi-acta/volume-03/editions/1902-rome-mul/artifacts/line-map-4119aba0a748/line-map.json"
+derived_from = "artifact.gregory-xvi-acta.volume-03.1902-rome-mul.xml-444021d5ec67"
+support_artifacts = [{ artifact_id = "artifact.gregory-xvi-acta.volume-03.1902-rome-mul.ocr-323a14120941", embedded_reference = "ocr.txt" }, { artifact_id = "artifact.gregory-xvi-acta.volume-03.1902-rome-mul.labels-a29b9f463853", embedded_reference = "page_numbers.json" }]
+transformation = "Compare every whole TXT whitespace token with every XML WORD token; derive raw LF positions and leaf identifiers from explicit XML filenames. Automated labels join by leaf ID. Replay with artifact.triptych.historical-papal-line-mapping.2026-10-26-v1-21d25700.recipe-21d25700861f."
+provenance = "Mechanical correspondence over complete acquired inputs; no generated source text."
+notes = "Mapping pins exact OCR and XML hashes. Layout flags are conservative leads, not verified reading order or printed pagination."

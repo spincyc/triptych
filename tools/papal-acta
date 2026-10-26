@@ -9,28 +9,100 @@ from _papal_acta import main
 
 EXAMPLES = {
     "acquire": (
-        Example("tools/papal-acta check --json", (), "Read-only source and boundary validation."),
-        Example("tools/papal-acta list --series ASS --summary --json", (), "Read-only historical catalog inspection."),
+        Example(
+            "tools/papal-acta check --json",
+            (
+                "{\"complete_bounds\":2634,\"gaps\":1393,\"grouped_index_records\":0,\"identified_works\":2594,\"metadata_index_records\":7314,\"metadata_only\":7314,\"numbered_volumes_by_series\":{\"AAS\":118,\"ASS\":41},\"retained_act_witnesses\":2634,\"retained_fragment_witnesses\":1,\"source_act_records\":10041,\"source_container_witnesses\":181,\"source_witness_records\":10041,\"status\":\"valid\",\"unique_pdf_witnesses\":180,\"unresolved\":93,\"v\":1,\"volumes\":181}",
+            ),
+            "Read-only source and boundary validation.",
+        ),
+        Example(
+            "tools/papal-acta list --series ASS --summary --json",
+            (
+                "{\"complete_bounds\":738,\"count\":820,\"metadata_only\":0,\"status\":\"ok\",\"unresolved\":82,\"v\":1}",
+            ),
+            "Read-only historical catalog inspection.",
+        ),
     ),
     "index": (
-        Example("tools/papal-acta check --json", (), "Read-only source and boundary validation."),
-        Example("tools/papal-acta list --series ASS --summary --json", (), "Read-only historical catalog inspection."),
+        Example(
+            "tools/papal-acta check --json",
+            (
+                "{\"complete_bounds\":2634,\"gaps\":1393,\"grouped_index_records\":0,\"identified_works\":2594,\"metadata_index_records\":7314,\"metadata_only\":7314,\"numbered_volumes_by_series\":{\"AAS\":118,\"ASS\":41},\"retained_act_witnesses\":2634,\"retained_fragment_witnesses\":1,\"source_act_records\":10041,\"source_container_witnesses\":181,\"source_witness_records\":10041,\"status\":\"valid\",\"unique_pdf_witnesses\":180,\"unresolved\":93,\"v\":1,\"volumes\":181}",
+            ),
+            "Read-only source and boundary validation.",
+        ),
+        Example(
+            "tools/papal-acta list --series ASS --summary --json",
+            (
+                "{\"complete_bounds\":738,\"count\":820,\"metadata_only\":0,\"status\":\"ok\",\"unresolved\":82,\"v\":1}",
+            ),
+            "Read-only historical catalog inspection.",
+        ),
     ),
     "register": (
-        Example("tools/papal-acta check --json", (), "Read-only source and boundary validation."),
-        Example("tools/papal-acta list --series ASS --summary --json", (), "Read-only historical catalog inspection."),
+        Example(
+            "tools/papal-acta check --json",
+            (
+                "{\"complete_bounds\":2634,\"gaps\":1393,\"grouped_index_records\":0,\"identified_works\":2594,\"metadata_index_records\":7314,\"metadata_only\":7314,\"numbered_volumes_by_series\":{\"AAS\":118,\"ASS\":41},\"retained_act_witnesses\":2634,\"retained_fragment_witnesses\":1,\"source_act_records\":10041,\"source_container_witnesses\":181,\"source_witness_records\":10041,\"status\":\"valid\",\"unique_pdf_witnesses\":180,\"unresolved\":93,\"v\":1,\"volumes\":181}",
+            ),
+            "Read-only source and boundary validation.",
+        ),
+        Example(
+            "tools/papal-acta list --series ASS --summary --json",
+            (
+                "{\"complete_bounds\":738,\"count\":820,\"metadata_only\":0,\"status\":\"ok\",\"unresolved\":82,\"v\":1}",
+            ),
+            "Read-only historical catalog inspection.",
+        ),
     ),
     "manifest": (
-        Example("tools/papal-acta check --json", (), "Read-only source and boundary validation."),
-        Example("tools/papal-acta list --series ASS --summary --json", (), "Read-only historical catalog inspection."),
+        Example(
+            "tools/papal-acta check --json",
+            (
+                "{\"complete_bounds\":2634,\"gaps\":1393,\"grouped_index_records\":0,\"identified_works\":2594,\"metadata_index_records\":7314,\"metadata_only\":7314,\"numbered_volumes_by_series\":{\"AAS\":118,\"ASS\":41},\"retained_act_witnesses\":2634,\"retained_fragment_witnesses\":1,\"source_act_records\":10041,\"source_container_witnesses\":181,\"source_witness_records\":10041,\"status\":\"valid\",\"unique_pdf_witnesses\":180,\"unresolved\":93,\"v\":1,\"volumes\":181}",
+            ),
+            "Read-only source and boundary validation.",
+        ),
+        Example(
+            "tools/papal-acta list --series ASS --summary --json",
+            (
+                "{\"complete_bounds\":738,\"count\":820,\"metadata_only\":0,\"status\":\"ok\",\"unresolved\":82,\"v\":1}",
+            ),
+            "Read-only historical catalog inspection.",
+        ),
     ),
     "check": (
-        Example("tools/papal-acta check --json", (), "Read-only source and boundary validation."),
-        Example("tools/papal-acta list --series ASS --summary --json", (), "Read-only historical catalog inspection."),
+        Example(
+            "tools/papal-acta check --json",
+            (
+                "{\"complete_bounds\":2634,\"gaps\":1393,\"grouped_index_records\":0,\"identified_works\":2594,\"metadata_index_records\":7314,\"metadata_only\":7314,\"numbered_volumes_by_series\":{\"AAS\":118,\"ASS\":41},\"retained_act_witnesses\":2634,\"retained_fragment_witnesses\":1,\"source_act_records\":10041,\"source_container_witnesses\":181,\"source_witness_records\":10041,\"status\":\"valid\",\"unique_pdf_witnesses\":180,\"unresolved\":93,\"v\":1,\"volumes\":181}",
+            ),
+            "Read-only source and boundary validation.",
+        ),
+        Example(
+            "tools/papal-acta list --series ASS --summary --json",
+            (
+                "{\"complete_bounds\":738,\"count\":820,\"metadata_only\":0,\"status\":\"ok\",\"unresolved\":82,\"v\":1}",
+            ),
+            "Read-only historical catalog inspection.",
+        ),
     ),
     "list": (
-        Example("tools/papal-acta check --json", (), "Read-only source and boundary validation."),
-        Example("tools/papal-acta list --series ASS --summary --json", (), "Read-only historical catalog inspection."),
+        Example(
+            "tools/papal-acta check --json",
+            (
+                "{\"complete_bounds\":2634,\"gaps\":1393,\"grouped_index_records\":0,\"identified_works\":2594,\"metadata_index_records\":7314,\"metadata_only\":7314,\"numbered_volumes_by_series\":{\"AAS\":118,\"ASS\":41},\"retained_act_witnesses\":2634,\"retained_fragment_witnesses\":1,\"source_act_records\":10041,\"source_container_witnesses\":181,\"source_witness_records\":10041,\"status\":\"valid\",\"unique_pdf_witnesses\":180,\"unresolved\":93,\"v\":1,\"volumes\":181}",
+            ),
+            "Read-only source and boundary validation.",
+        ),
+        Example(
+            "tools/papal-acta list --series ASS --summary --json",
+            (
+                "{\"complete_bounds\":738,\"count\":820,\"metadata_only\":0,\"status\":\"ok\",\"unresolved\":82,\"v\":1}",
+            ),
+            "Read-only historical catalog inspection.",
+        ),
     ),
 }
 

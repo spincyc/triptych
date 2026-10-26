@@ -1,0 +1,77 @@
+{
+  "changed_WORDs": 527,
+  "changed_pages": 1,
+  "checks": {
+    "all_source_and_output_bytes_accounted": true,
+    "every_changed_WORD_exactly_once": true,
+    "exact_XML_byte_offsets_and_coordinates": true,
+    "indivisible_WORD_values_unchanged": true,
+    "no_OBJECT_attributes_serialized": true,
+    "unchanged_raw_chunks_byte_identical": true,
+    "whole_output_token_bijection": true,
+    "whole_raw_TXT_XML_token_equality": true
+  },
+  "derived_from": "artifact.bullarium-romanum.volume-12.1867-turin-latin.ocr-7142fbc19444",
+  "generator": "bullarium-geometry",
+  "generator_version": 1,
+  "hybrid_bytes": 3890510,
+  "hybrid_sha256": "e69d188972ee07a5bead29e71447e68ec671ba2830e377ab4d254e4ae74bfa2c",
+  "limitations": [
+    "No OCR character correction, word restoration or translation.",
+    "Unchanged pages retain their original OCR order, including unresolved defects.",
+    "Explicit coordinates, role assignments and order are replayed; their historical meaning is not inferred.",
+    "Geometry replay establishes no act admission, note ownership, authentication or image collation.",
+    "Only changed-page inter-WORD whitespace differs from the earlier explicit page recipe. Exact XML-decoded WORD values, including their internal whitespace/padding, are unchanged and indivisible. No source wording or labels are added."
+  ],
+  "outputs": {
+    "byte-map.json": {
+      "byte_size": 1188,
+      "sha256": "108c32af80f33d6592439e41d50842b127f1fd93783f883ef348057276c93610"
+    },
+    "changed-word-map.jsonl.gz": {
+      "byte_size": 33079,
+      "sha256": "05008f0c720e5b77240b44997e0af063933a231087646f2110f28352db3f6c86"
+    },
+    "hybrid.txt": {
+      "byte_size": 3890510,
+      "sha256": "e69d188972ee07a5bead29e71447e68ec671ba2830e377ab4d254e4ae74bfa2c"
+    },
+    "page-map.json": {
+      "byte_size": 581876,
+      "sha256": "0092f32d19dbd3c191dd609b32ca6a2b29b24d5ca98aafd49067e1e5247be2f3"
+    }
+  },
+  "recipe_sha256": "427ae30c0ea9ac79f666d97409f8c05c330924d41f6f95c8b3047b8499fd654c",
+  "roles": {
+    "body-left": 212,
+    "body-right": 242,
+    "footer": 5,
+    "gutter-ocr": 1,
+    "header": 10,
+    "margin-right": 12,
+    "notes-left": 37,
+    "notes-right": 8
+  },
+  "schema": "triptych-bullarium-hybrid-witness/v1",
+  "serialization": "word-per-line",
+  "source_WORDs": 477424,
+  "source_evidence_pins": {
+    "src/sources/works/bullarium-romanum/volume-12/editions/1867-turin-latin/artifacts/coordinate-evidence-v1-4ee4ff9764d4/evidence.json": "4ee4ff9764d4582ae48380d8be1ed2904d19335afc5db99b1db7e4000379d421"
+  },
+  "source_pages": 924,
+  "source_tokens": 482177,
+  "source_txt": {
+    "artifact_id": "artifact.bullarium-romanum.volume-12.1867-turin-latin.ocr-7142fbc19444",
+    "byte_size": 3890620,
+    "path": "src/sources/works/bullarium-romanum/volume-12/editions/1867-turin-latin/artifacts/ocr-7142fbc19444/ocr.txt",
+    "sha256": "7142fbc19444b22a8b4ee9fe9ea0b947e2bfce6fcbf90aa0d354ff40530ce685"
+  },
+  "source_xml": {
+    "artifact_id": "artifact.bullarium-romanum.volume-12.1867-turin-latin.xml-95fe035b27cf",
+    "byte_size": 39539021,
+    "sha256": "95fe035b27cf8c21654ac99bd71b4cf9402fc14e9b776bfc70d2a5c565790ff3",
+    "source_url": "https://archive.org/download/bullarumdiplomat12cath/bullarumdiplomat12cath_djvu.xml"
+  },
+  "volume": 12,
+  "word_map_coverage": "changed-pages-only; unchanged bytes and page WORD/token ranges are mapped compactly"
+}

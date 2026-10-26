@@ -329,12 +329,58 @@ def admit(root,review_paths,revision,manifest_path=MANIFEST,fragment_manifest_pa
     if not manifest_target.is_relative_to(root.resolve()) or not fragment_target.is_relative_to(root.resolve()):
         raise ValueError("manifest destinations must remain inside the repository")
     existing=json.loads(manifest_target.read_text()) if manifest_target.exists() else {"documents":[]}
+    existing_bytes=manifest_target.read_bytes() if manifest_target.exists() else None
     document_index={document["id"]:document for document in existing["documents"]}
     fragment_existing=json.loads(fragment_target.read_text()) if fragment_target.exists() else {"documents":[]}
+    fragment_existing_bytes=fragment_target.read_bytes() if fragment_target.exists() else None
     fragment_index={document["id"].removesuffix(".fragment"):document for document in fragment_existing["documents"]}
+    old_documents=json.loads(json.dumps(existing["documents"]))
+    old_fragments=json.loads(json.dumps(fragment_existing["documents"]))
+    for state in (existing,fragment_existing):
+        if state.get("revision"):
+            for document in state["documents"]:
+                document.setdefault("revision",state["revision"])
     seen=set()
     source_cache={}
     reader_notes=reader_notes or {}
+    def reviewed_child(parent,item,identifier):
+        source_id=item.get("source_artifact_id",parent["artifact_id"])
+        digest=item.get("artifact_sha256",parent["artifact_sha256"])
+        if source_id==parent["artifact_id"]:
+            if digest!=parent["artifact_sha256"]:
+                raise ValueError("additional discovery changed its controlling source")
+        else:
+            container=volumes[parent["volume"]]["container"]
+            matches=[a for a in container["artifacts"].values() if a["id"]==source_id]
+            if len(matches)!=1:
+                raise ValueError("source-order child requires a registered volume controller")
+            derived=tomllib.loads((root/matches[0]["manifest"]).read_text())
+            if (derived["id"]!=source_id or derived["sha256"]!=digest or
+                    derived["edition_id"]!=container["edition_id"] or
+                    derived.get("derived_from")!=parent["artifact_id"] or
+                    derived.get("artifact_type")!="coordinate-reading-order-ocr"):
+                raise ValueError("source-order child requires the exact raw parent and volume edition")
+        ranges=item["physical_line_ranges"]
+        child={**parent,"id":identifier,"parent_unit_id":parent["id"],"status":"held",
+            "heading_line":ranges[0][0],"physical_line_ranges":ranges,
+            "act_number_raw":item.get("act_number_raw","not recovered"),"act_number":None,
+            "artifact_id":source_id,"artifact_sha256":digest}
+        child.pop("review",None)
+        for field in ("review_history","active_reader_status","reader_withdrawal","active_render_selection",
+                      "canonical_identity_resolution","canonical_match_candidates","work_id","edition_id","segment_id","segment_path","extent_kind",
+                      "reading_selection_variant_of","prior_reading_selection"):
+            child.pop(field,None)
+        if source_id!=parent["artifact_id"]:
+            child["source_order_parent"]={"unit_id":parent["id"],"artifact_id":parent["artifact_id"],
+                "artifact_sha256":parent["artifact_sha256"],"physical_line_ranges":parent["physical_line_ranges"]}
+            for field in ("protocol","date_raw","boundary_evidence","line_map_id","artifact_page_range","leaf_bounds","printed_page_labels_raw"):
+                child.pop(field,None)
+        else:
+            child["date_raw"]=[lead for lead in parent.get("date_raw",[]) if type(lead.get("line")) is int
+                and any(a<=lead["line"]<=z for a,z in ranges)]
+            if parent.get("protocol") and not any(a<=parent["protocol"]["line"]<=z for a,z in ranges):
+                child.pop("protocol",None)
+        return child
     for path in review_paths:
         review=json.loads(path.read_text())
         if review.get("schema")!="triptych-bullarium-boundary-reviews/v1":
@@ -352,19 +398,17 @@ def admit(root,review_paths,revision,manifest_path=MANIFEST,fragment_manifest_pa
                     item[key]=value
             if item["unit_id"] not in units:
                 parent=units.get(item.get("parent_unit_id"))
-                if not parent or item["artifact_sha256"]!=parent["artifact_sha256"] or not re.fullmatch(r"[a-z0-9.-]+",item["unit_id"]):
+                if not parent or not re.fullmatch(r"[a-z0-9.-]+",item["unit_id"]):
                     raise ValueError("additional discovery requires its exact cataloged parent")
-                ranges=item["physical_line_ranges"]
-                unit={**parent,"id":item["unit_id"],"parent_unit_id":parent["id"],"status":"held",
-                    "heading_line":ranges[0][0],"physical_line_ranges":ranges,
-                    "act_number_raw":item.get("act_number_raw","not recovered"),"act_number":None}
-                unit.pop("review",None)
+                unit=reviewed_child(parent,item,item["unit_id"])
                 units[unit["id"]]=unit
             else:
                 unit=units[item["unit_id"]]
             if unit.get("review") and unit["review"]!=item:
                 unit.setdefault("review_history",[]).append(unit["review"])
             if item["decision"]=="split":
+                if unit.get("segment_path"):
+                    raise ValueError("registered witnesses require a new selection identity; split review cannot replace their source pins")
                 if item["artifact_sha256"]!=unit["artifact_sha256"] or not item.get("constituents"):
                     raise ValueError("split requires exact source and reviewed constituents")
                 if unit["id"] in document_index:
@@ -372,46 +416,27 @@ def admit(root,review_paths,revision,manifest_path=MANIFEST,fragment_manifest_pa
                 unit.update({"status":"split-into-constituents","review":item})
                 for index,child in enumerate(item["constituents"],1):
                     child_id=unit["id"]+f".part-{index:02d}"
-                    child_ranges=child["physical_line_ranges"]
-                    child_unit={**unit,"id":child_id,"parent_unit_id":unit["id"],"status":"held",
-                        "heading_line":child_ranges[0][0],"physical_line_ranges":child_ranges,
-                        "act_number_raw":child.get("act_number_raw","not recovered"),"act_number":None}
-                    child_unit.pop("review",None)
-                    units[child_id]=child_unit
-                    pending.append({**child,"unit_id":child_id,"artifact_sha256":unit["artifact_sha256"],"decision":child.get("decision","admit")})
+                    child_unit=reviewed_child(unit,child,child_id)
+                    registered=units.get(child_id)
+                    if registered and registered.get("segment_path"):
+                        if any(registered.get(key)!=child_unit.get(key) for key in ("artifact_id","artifact_sha256","physical_line_ranges")):
+                            raise ValueError("a split child already has immutable registered source pins")
+                    else:
+                        units[child_id]=child_unit
+                    pending.append({**child,"unit_id":child_id,"artifact_sha256":child_unit["artifact_sha256"],"decision":child.get("decision","admit")})
                 continue
             if item["decision"] not in {"admit","fragment"}:
                 if item["artifact_sha256"]!=unit["artifact_sha256"]:
                     raise ValueError("held review does not pin exact source")
+                if unit.get("segment_path"):
+                    raise ValueError("registered reader withdrawals require PDF-pinned withdrawal metadata; historical source records remain immutable")
                 document_index.pop(unit["id"],None)
                 fragment_index.pop(unit["id"],None)
-                if unit.get("segment_path"):
-                    segment_path=(root/unit["segment_path"]).resolve()
-                    canonical_edition=not unit.get("work_id","").startswith("work.bullarium-romanum.") and "-bullarium-" in segment_path.parent.parent.name
-                    if not segment_path.is_relative_to((root/"src/sources/works/bullarium-romanum").resolve()) and not (
-                            canonical_edition and segment_path.is_relative_to((root/"src/sources/works").resolve())):
-                        raise ValueError("withdrawn segment is outside the Bullarium owner")
-                    if segment_path.exists():
-                        segment=tomllib.loads(segment_path.read_text())
-                        if segment["id"]!=unit["segment_id"]:
-                            raise ValueError("withdrawn segment identity changed")
-                        segment_path.unlink()
-                        edition_path=segment_path.parent.parent/"edition.toml"
-                        work_path=segment_path.parents[3]/"work.toml"
-                        withdrawal="The previously proposed full OCR extent was withdrawn after source review. "+item["review_note"]
-                        edition_record=tomllib.loads(edition_path.read_text())
-                        edition_record["notes"]=withdrawal
-                        record(edition_path,edition_record)
-                        if not canonical_edition:
-                            work_record=tomllib.loads(work_path.read_text())
-                            work_record["work_type"]="historical-act-witness-candidate"
-                            work_record["description"]=withdrawal
-                            record(work_path,work_record)
-                    unit.pop("segment_id",None)
-                    unit.pop("segment_path",None)
                 unit["review"]=item
                 unit["status"]={"duplicate":"duplicate-witness","non-papal":"non-papal-source-unit","non-act":"not-an-independent-act"}.get(item["decision"],"specifically-held")
                 continue
+            if unit.get("active_reader_status")=="source-order-hold":
+                raise ValueError("withdrawn source-order witnesses require a new source/selection identity, not a reader-note override")
             if unit["id"] in seen:
                 raise ValueError("duplicate boundary admission")
             seen.add(unit["id"])
@@ -423,13 +448,22 @@ def admit(root,review_paths,revision,manifest_path=MANIFEST,fragment_manifest_pa
             if not all(isinstance(item.get(k),str) and item[k].strip() for k in ("printed_attribution","title","review_note","reviewed_extent")):
                 raise ValueError("incomplete boundary review")
             container=volumes[unit["volume"]]["container"]
-            source_id=container["artifacts"]["ocr"]["id"]
+            source_id=unit["artifact_id"]
             if source_id not in source_cache:
-                source=tomllib.loads((root/container["artifacts"]["ocr"]["manifest"]).read_text())
+                matches=[a for a in container["artifacts"].values() if a["id"]==source_id]
+                if len(matches)!=1:
+                    raise ValueError("constituent controller is not registered to its volume")
+                declaration=matches[0]
+                source=tomllib.loads((root/declaration["manifest"]).read_text())
                 payload=(root/source["path"]).read_bytes()
-                if sha(payload)!=source["sha256"] or len(payload)!=source["byte_size"]:
+                if source["id"]!=source_id or declaration["sha256"]!=source["sha256"] or sha(payload)!=source["sha256"] or len(payload)!=source["byte_size"]:
                     raise ValueError("exact source bytes changed before admission")
-                mapping=json.loads((root/container["line_map_path"]).read_text()) if container.get("line_map_path") else {"pages":[]}
+                map_path=container.get("line_map_path") if source_id==container["artifacts"]["ocr"]["id"] else declaration.get("line_map_path")
+                mapping=json.loads((root/map_path).read_text()) if map_path else {"pages":[]}
+                for page in mapping["pages"]:
+                    if "output_lf_range_1" in page:
+                        span=page["output_lf_range_1"]
+                        page.update(physical_line_start=span[0] if span else None,physical_line_end=span[1] if span else None)
                 source_cache[source_id]=(source,lines(payload),mapping)
             source,raw,mapping=source_cache[source_id]
             if source["sha256"]!=unit["artifact_sha256"]:
@@ -450,6 +484,12 @@ def admit(root,review_paths,revision,manifest_path=MANIFEST,fragment_manifest_pa
             if " ".join(item["printed_attribution"].split()) not in literal:
                 item["reviewed_identity_label"]=item["printed_attribution"]
                 item["printed_attribution"]=literal
+            replay_document=None
+            if unit.get("segment_path"):
+                prior_document=(fragment_index if is_fragment else document_index).get(unit["id"])
+                if item!=unit.get("review") or prior_document is None:
+                    raise ValueError("registered source reviews require a new versioned selection or correction identity")
+                replay_document=json.loads(json.dumps(prior_document))
             selected_pages=[page for page in mapping["pages"] if page["physical_line_start"] is not None and any(
                 page["physical_line_start"]<=end and page["physical_line_end"]>=start for start,end in ranges)]
             unit["reviewed_scan_leaf_ids"]=[page["leaf"] for page in selected_pages]
@@ -458,6 +498,8 @@ def admit(root,review_paths,revision,manifest_path=MANIFEST,fragment_manifest_pa
             language=item.get("language","la")
             work_id="work.bullarium-romanum."+owner
             edition_key=Path(container["edition_path"]).name
+            if language!="la":
+                edition_key=edition_key.removesuffix("-latin")+{"it":"-italian","mul":"-multilingual"}.get(language,"-"+language)
             base=root/"src/sources/works/bullarium-romanum"/owner.replace(".","-")
             identity_namespace="bullarium-romanum."+owner
             canonical=item.get("canonical_work_id")
@@ -477,22 +519,35 @@ def admit(root,review_paths,revision,manifest_path=MANIFEST,fragment_manifest_pa
             segment_path=parent/"segments/source-ocr.toml"
             note=(("Fragment witness; the source omits part of the act. " if is_fragment else "")+"The exact selected raw OCR extent and surrounding boundary context were inspected. "
                 "Printed attribution is preserved; this is not modern authentication, critical dating or image-collated text. "+item["review_note"])
-            if not canonical:
-                record(base/"work.toml",{"schema":1,"record_type":"work","id":work_id,"title":item["title"],
-                    "responsible":item["printed_attribution"],"work_type":"historical-papal-act-fragment" if is_fragment else "historically-attributed-papal-act","languages":item.get("component_languages",[language]),
-                    "description":note,"relations":[container["work_id"]]})
-            elif (parent/"edition.toml").exists() and not segment_path.exists():
-                raise ValueError("an existing canonical edition cannot be overwritten by a new join")
-            record(parent/"edition.toml",{"schema":1,"record_type":"edition","id":edition_id,"work_id":work_id,
-                "title":item["title"]+" — "+edition_key,"language":language,"date":edition_key[:4],
-                "publication":"Constituent in "+container["work_id"]+", source unit "+unit["act_number_raw"]+".","notes":note})
-            record(segment_path,{"schema":2,"record_type":"segment","id":segment_id,"edition_id":edition_id,
-                "artifact_id":source["id"],"artifact_sha256":source["sha256"],"segment_type":"constituent-fragment" if is_fragment else "constituent-work",
-                "physical_line_ranges":ranges,"states":["cataloged","acquired","inspected"],"context":note,
-                "notes":"Review extent: "+item["reviewed_extent"]+" Source text remains uncorrected OCR, with historical synopsis, dating/signatures and apparatus in the selected extent. No image collation or historical authentication is claimed."})
+            prior_selection=None
+            if item.get("reading_selection_variant_of"):
+                prior_selection=units.get(item["reading_selection_variant_of"])
+                if (not prior_selection or prior_selection.get("work_id")!=work_id or
+                        prior_selection.get("artifact_id")==source["id"] or
+                        source.get("artifact_type")!="coordinate-reading-order-ocr"):
+                    raise ValueError("a repaired reading selection requires the same reviewed work and a genuinely new ordered controller")
+            if replay_document is None:
+                if not canonical:
+                    record(base/"work.toml",{"schema":1,"record_type":"work","id":work_id,"title":item["title"],
+                        "responsible":item["printed_attribution"],"work_type":"historical-papal-act-fragment" if is_fragment else "historically-attributed-papal-act","languages":item.get("component_languages",[language]),
+                        "description":note,"relations":[container["work_id"]]})
+                elif (parent/"edition.toml").exists() and not segment_path.exists():
+                    raise ValueError("an existing canonical edition cannot be overwritten by a new join")
+                record(parent/"edition.toml",{"schema":1,"record_type":"edition","id":edition_id,"work_id":work_id,
+                    "title":item["title"]+" — "+edition_key,"language":language,"date":edition_key[:4],
+                    "publication":"Constituent in "+container["work_id"]+", source unit "+unit["act_number_raw"]+".","notes":note})
+                record(segment_path,{"schema":2,"record_type":"segment","id":segment_id,"edition_id":edition_id,
+                    "artifact_id":source["id"],"artifact_sha256":source["sha256"],"segment_type":"constituent-fragment" if is_fragment else "constituent-work",
+                    "physical_line_ranges":ranges,"states":["cataloged","acquired","inspected"],"context":note,
+                    "notes":"Review extent: "+item["reviewed_extent"]+" Source text remains uncorrected OCR, with historical synopsis, dating/signatures and apparatus in the selected extent. No image collation or historical authentication is claimed."})
             unit.update({"status":"admitted-fragment" if is_fragment else "admitted-mechanical-ocr-extent","extent_kind":"fragment" if is_fragment else "printed-act",
                 "work_id":work_id,"edition_id":edition_id,
                 "segment_id":segment_id,"segment_path":str(segment_path.relative_to(root)),"review":item})
+            unit["reviewed_protocol"]={"physical_line_ranges":[[astart,aend]],"literal":literal,"artifact_sha256":source["sha256"]}
+            if prior_selection is not None:
+                unit["reading_selection_variant_of"]=prior_selection["id"]
+                unit["prior_reading_selection"]={key:prior_selection[key] for key in
+                    ("id","artifact_id","artifact_sha256","segment_id","segment_path") if key in prior_selection}
             if canonical:
                 unit["canonical_identity_resolution"]=item["identity_evidence"]
                 if unit.get("parent_unit_id"):
@@ -500,7 +555,7 @@ def admit(root,review_paths,revision,manifest_path=MANIFEST,fragment_manifest_pa
                         "status":"reviewed-and-joined","unit_id":unit["id"],"physical_line_ranges":ranges,
                         "evidence":item["identity_evidence"]}
             extent="; ".join(f"{start}-{end}" for start,end in ranges)
-            locator=f"Raw OCR LF lines {extent}. "
+            locator=("Source-derived reading-order LF lines " if source.get("artifact_type")=="coordinate-reading-order-ocr" else "Raw OCR LF lines ")+extent+". "
             if selected_pages:
                 locator+=f"Exact scan leaf bounds {selected_pages[0]['leaf']}-{selected_pages[-1]['leaf']}; automated printed-page labels remain unverified. "
             source_note=(("Fragment witness: part of the act is absent from this printing. " if is_fragment else "")+"From Bullarium Romanum, "+container["work_id"].removeprefix("work.bullarium-romanum.")+", "+edition_key+". "+locator+"Uncorrected, uncollated source OCR. "
@@ -510,6 +565,7 @@ def admit(root,review_paths,revision,manifest_path=MANIFEST,fragment_manifest_pa
             elif item.get("reader_source_note"):
                 source_note+=" "+item["reader_source_note"]
             document={"id":unit["id"]+(".fragment" if is_fragment else ""),"title":item["title"],"pope":item["printed_attribution"],"date":None,
+                "revision":revision,
                 "document_type":item.get("document_type","Historical papal act fragment (printed attribution)" if is_fragment else "Historical papal act (printed attribution)"),"language":language,"source_url":source["source_url"],
                 "text_path":source["path"],"sha256":source["sha256"],"artifact_id":source["id"],
                 "rights_status":source["rights_status"],"rights_basis":source["rights_basis"],"segment_id":segment_id,
@@ -518,6 +574,8 @@ def admit(root,review_paths,revision,manifest_path=MANIFEST,fragment_manifest_pa
                 "extent_kind":"fragment" if is_fragment else "printed-act"}
             if item.get("language_label"):
                 document["language_label"]=item["language_label"]
+            if replay_document is not None:
+                document=replay_document
             if is_fragment:
                 document_index.pop(unit["id"],None)
                 fragment_index[unit["id"]]=document
@@ -536,7 +594,12 @@ def admit(root,review_paths,revision,manifest_path=MANIFEST,fragment_manifest_pa
     catalog["coverage"].update({"independent_papal_acts_admitted":sum(u["status"]=="admitted-mechanical-ocr-extent" for u in units.values()),
         "units_held":sum(u["status"] in {"held","specifically-held"} for u in units.values()),
         "split_source_units":sum(u["status"]=="split-into-constituents" for u in units.values()),
-        "additional_split_constituents":sum("parent_unit_id" in u for u in units.values()),
+        "additional_source_units":sum("parent_unit_id" in u for u in units.values()),
+        "additional_split_constituents":sum("parent_unit_id" in u and bool(re.search(r"\.part-[0-9]+$",u["id"])) for u in units.values()),
+        "identified_additional_source_units":sum("parent_unit_id" in u and not re.search(r"\.part-[0-9]+$",u["id"]) and not u.get("reading_selection_variant_of") for u in units.values()),
+        "additional_reading_selections":sum(bool(u.get("reading_selection_variant_of")) for u in units.values()),
+        "coordinate_reading_order_constituents":sum("source_order_parent" in u for u in units.values()),
+        "active_source_order_withdrawals":sum(u.get("active_reader_status")=="source-order-hold" for u in units.values()),
         "specifically_reviewed_holds":sum(u["status"]=="specifically-held" for u in units.values()),
         "duplicate_witnesses":sum(u["status"]=="duplicate-witness" for u in units.values()),
         "non_papal_units":sum(u["status"]=="non-papal-source-unit" for u in units.values()),
@@ -551,12 +614,24 @@ def admit(root,review_paths,revision,manifest_path=MANIFEST,fragment_manifest_pa
         "reported_papal_response":"An explicitly attributed, cleanly bounded reported papal decision can be retained with its petition and narration, labeled as a reported response; no first-person/autograph or juridical-weight claim is inferred.",
         "roster_only":"A detached beneficiary roster with the whole operative grant absent is research-only documentary material, not a recovered papal-act fragment.",
         "date_absence":"An empty lexical date lead or null normalized date is not an eligibility barrier. Missing substantive source text is assessed independently."}
+    catalog["source_extent_policy"]["inline_body_margin_fusion"]="Known marginal ownership does not clear word interleaving inside the substantive body. A separately bounded summary can remain literal; confirmed inline fusion stays held until a separately identified derivative restores source order. Frozen prior witnesses remain historical records and are not silently edited."
     catalog["boundary_limit"]="Exact LF ranges identify source candidates. Only explicitly reviewed extents have constituent records; unreviewed candidates remain held. OCR column order, historical attribution and authenticity are independent questions."
     catalog["identity_matching"]="Canonical joins require explicit reviewed incipit, printed issuer, raw dating and distinctive source-context evidence. No title-only merge is made; other unresolved identities remain separate candidates."
     write(root/CATALOG,json_bytes(catalog))
-    write(manifest_target,json_bytes({"schema":"triptych-papal-typeset/v1","revision":revision,"documents":documents}))
-    write(fragment_target,json_bytes({"schema":"triptych-papal-typeset/v1","revision":revision,"documents":fragments,
-        "extent_kind":"fragment","source_note":"Surviving historical fragments only; never included in complete-act counts. Each source note states the missing portion."}))
+    for target,state,prior_bytes,prior_documents,new_documents,extra in (
+            (manifest_target,existing,existing_bytes,old_documents,documents,{}),
+            (fragment_target,fragment_existing,fragment_existing_bytes,old_fragments,fragments,
+             {"extent_kind":"fragment","source_note":"Surviving historical fragments only; never included in complete-act counts. Each source note states the missing portion."})):
+        result={**state,**extra,"schema":"triptych-papal-typeset/v1","revision":revision,"documents":new_documents}
+        if prior_documents and prior_bytes and (prior_documents!=new_documents or state.get("revision")!=revision):
+            digest=sha(prior_bytes)
+            write(root/".scratch/bullarium_reconstruction/manifest-history"/(digest+".json"),prior_bytes)
+            history=list(state.get("input_history",[]))
+            entry={"revision":state["revision"],"sha256":digest,"document_ids":[d["id"] for d in prior_documents],"archive_key":"sha256:"+digest}
+            if not history or history[-1]!=entry:
+                history.append(entry)
+            result["input_history"]=history
+        write(target,json_bytes(result))
     return {"status":"ok",**catalog["coverage"]}
 
 
@@ -665,8 +740,10 @@ def register(root,volume,archive,paths,mapping):
 
 
 def reconstruct(root,selected,revision):
-    archives=archive_volumes(root)
     previous=json.loads((root/CATALOG).read_text()) if (root/CATALOG).exists() else {"volumes":[],"units":[]}
+    if any(unit.get("segment_id") for unit in previous["units"]):
+        raise ValueError("registered constituent witnesses are immutable; use reviewed admission/correction updates instead of discovery replay")
+    archives=archive_volumes(root)
     previous_units={unit["id"]:unit for unit in previous["units"]}
     volumes=[v for v in previous["volumes"] if v["volume"] not in selected]
     units=[u for u in previous["units"] if u["volume"] not in selected]
@@ -750,6 +827,25 @@ def check(root,path):
 
 
 def main(argv=None,examples=None):
+    argv=list(sys.argv[1:] if argv is None else argv)
+    # The independently tested adapters own their argument contracts. Preserve
+    # the global root option when forwarding to either adapter.
+    prefix=[]
+    rest=argv
+    if rest[:1]==["--root"] and len(rest)>2:
+        prefix=rest[:2]
+        rest=rest[2:]
+    elif rest and rest[0].startswith("--root="):
+        prefix=rest[:1]
+        rest=rest[1:]
+    if rest and rest[0] in {"series","corrections","geometry"}:
+        if rest[0]=="series":
+            from _bullarium_series import main as adapter
+        elif rest[0]=="corrections":
+            from _bullarium_corrections import main as adapter
+        else:
+            from _bullarium_geometry import main as adapter
+        return adapter(prefix+rest[1:],examples=examples)
     parser=examples_live_on_the_verbs(argparse.ArgumentParser(prog="bullarium",description=__doc__),"bullarium")
     parser.add_argument("--root",type=Path,default=ROOT)
     sub=parser.add_subparsers(dest="verb",required=True)
@@ -766,6 +862,9 @@ def main(argv=None,examples=None):
             command.add_argument("--fragment-manifest-out",default=FRAGMENT_MANIFEST)
             command.add_argument("--reader-notes",action="append",type=Path,default=[])
         with_examples(command,(examples or {}).get(name,()))
+    sub.add_parser("series",help="Acquire configured historical series and review their constituents.")
+    sub.add_parser("corrections",help="Append separately identified corrections with exact PDF supersessions.")
+    sub.add_parser("geometry",help="Replay exact XML WORD reading-order recipes without source correction.")
     args=parser.parse_args(argv)
     try:
         root=args.root.resolve()

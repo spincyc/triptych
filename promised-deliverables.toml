@@ -22,7 +22,7 @@ state = "in_progress"
   id = "two-column-editions"
   criterion = "Every acquired and admitted individual document has a source-pinned two-column TeX edition and compiled PDF preserving its language, paragraph numbering, signatures and notes; review and installation states are recorded without substituting templates or metadata-only entries for full-text editions."
   status = "open"
-  evidence = ["scripts/_typeset_papal.py", "src/sources/papal-documents/typeset-manifest.json", "src/sources/papal-documents/historical-english-manifest.json"]
+  evidence = ["scripts/_typeset_papal.py", "scripts/_papal_collection.py", "scripts/_papal_install.py", "src/sources/papal-documents/typeset-manifest.json", "src/sources/papal-documents/historical-english-manifest.json", "src/sources/papal-documents/bullarium-active-withdrawals.json"]
 
   [[deliverables.requirements]]
   id = "presentation-reuse"

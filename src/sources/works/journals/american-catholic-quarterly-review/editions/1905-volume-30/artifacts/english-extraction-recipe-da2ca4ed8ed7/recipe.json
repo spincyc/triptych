@@ -1,0 +1,97 @@
+{
+  "acquisition_receipt_sha256": "0372064881c0273425eb57131118294dd43dc7ddefc0ce71d86ccdf12fa7a424",
+  "archive_metadata_sha256": "7775873cf5aca553e5393af9ec7063bcff8ca41fea1db38a3921b0cd68d4c9ad",
+  "documents": [
+    {
+      "catalog_id": "papal.pius-x.hf-p-x-enc-15041905-acerbo-nimis",
+      "first_raw_line": "THE  TEACHING  OF  CHRISTIAN  DOCTRINE. ",
+      "known_source_limits": "The signature precedes the dating clause in this printing; both remain in their literal source order.",
+      "last_raw_line": "Pontificate. ",
+      "omitted_whole_lines": [
+        {
+          "line": 22888,
+          "reason": "printed-running-header",
+          "source_line_bytes_with_lf_sha256": "6fd1c6be339c986920beda37112cf5a47880a8456246c6bab4b82726ae5ab8cd",
+          "text": "The    Teaching  of   Christian  Doctrine.  427 "
+        },
+        {
+          "line": 22938,
+          "reason": "printed-running-header",
+          "source_line_bytes_with_lf_sha256": "3a6940535f0a337215a56f2cc00eb8dd572a61e8dbc773510db57c5f79c8ae4f",
+          "text": "428  American  Catholic  Quarterly  Review. "
+        },
+        {
+          "line": 22991,
+          "reason": "printed-running-header",
+          "source_line_bytes_with_lf_sha256": "03494c4688aec695ae45377a104645132bda921c4cfdb2c7ec45ac54b8cc0137",
+          "text": "The   Teaching  of  Christian  Doctrine.  429 "
+        },
+        {
+          "line": 23043,
+          "reason": "printed-running-header",
+          "source_line_bytes_with_lf_sha256": "7f8bd9810b1246a0e6f075be506a255abd30f9709f3dd894c399d2a1483cb9bc",
+          "text": "430  American  Catholic  Quarterly  Review. "
+        },
+        {
+          "line": 23094,
+          "reason": "printed-running-header",
+          "source_line_bytes_with_lf_sha256": "ee9f6d3f0fe0c4417645d06678db4eb4e1e2475f316fadb9e26ce85b4591afb5",
+          "text": "The    Teaching  of   Christian  Doctrine.  431 "
+        },
+        {
+          "line": 23143,
+          "reason": "printed-running-header",
+          "source_line_bytes_with_lf_sha256": "6fad4ee4786eadc9de4f115106a9adac8239296d9b8b3b97414fcc36d5972f56",
+          "text": "43^  American  Catholic  Quarterly  Review. "
+        },
+        {
+          "line": 23193,
+          "reason": "printed-running-header",
+          "source_line_bytes_with_lf_sha256": "60c6806438c836e71fe725787a0464287bb9885e51128c926667d512e6be9302",
+          "text": "The   Teaching  of   Christian  Doctrine.  433 "
+        },
+        {
+          "line": 23249,
+          "reason": "printed-running-header",
+          "source_line_bytes_with_lf_sha256": "298bd46b25671f52720b824e0ef3fc65c24dea3919caf7b596a236d7202b34e6",
+          "text": "434  American  Catholic  Quarterly  Review. "
+        },
+        {
+          "line": 23300,
+          "reason": "printed-running-header",
+          "source_line_bytes_with_lf_sha256": "4ff2bca1ae5c7211ab934c26931b57e9fbed20e5643362fdc75d4fb0eaf2cfb9",
+          "text": "The   Teaching  of  Christian  Doctrine.  435 "
+        }
+      ],
+      "printed_pages": "426–435",
+      "raw_physical_line_ranges": [
+        [
+          22847,
+          23338
+        ]
+      ],
+      "reading_non_whitespace_sha256": "f89c72e2927582776c471b6d3bbef91ca13d81ed9325d6402e8ad95fdb0c9fc0",
+      "reading_physical_line_ranges": [
+        [
+          1,
+          97
+        ]
+      ],
+      "selected_non_whitespace_sha256": "f89c72e2927582776c471b6d3bbef91ca13d81ed9325d6402e8ad95fdb0c9fc0",
+      "source_review_identity_evidence": "Pius X is explicitly named in the English heading and signature; the universal bishops/Patriarchs/Primates/Archbishops/Ordinaries address, translated incipit about the distressing and difficult time and Supreme Pastor, catechetical subject, and 15 April 1905 dating positively identify Acerbo nimis. Canonical Latin opening and closing were inspected for identity only, not used to rewrite the English."
+    }
+  ],
+  "expected_reading_sha256": "55104820e9870021e04597a9656697bbd18340de9876e871952b9574359d9745",
+  "normalization": "Select exact one-based inclusive physical LF ranges, omit only each exact reviewed entire running-furniture or outside-body-margin line, normalize whitespace within original blank-line blocks to single spaces, retain all remaining words, punctuation, hyphen fragments and source order. Join blocks with one blank line.",
+  "printing_year": "1905",
+  "provider_raw_file": {
+    "md5": "f11f8cd15a0201eff279fe8ab1ba94bb",
+    "name": "americancatholic30philuoft_djvu.txt",
+    "sha1": "d616c0ff6de5425346e1e46a9eb4d3596bc895de",
+    "size": "2733908"
+  },
+  "schema": "triptych-historical-english-extraction/v1",
+  "source_artifact_id": "artifact.journals.american-catholic-quarterly-review.1905-volume-30.ia-ocr-2abc21119ef4",
+  "source_sha256": "2abc21119ef49fa7c02db9f7c5783cd16ef5a92f29851d3daf393d8ff49efb50",
+  "source_xml_sha256": "1a0d6f9e7515b2c70663a67c1915667c0c49079776eb95adca6fd96725547f1c"
+}

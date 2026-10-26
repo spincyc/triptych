@@ -48,7 +48,7 @@
         "typeset-papal"
       ],
       "stage": "draft",
-      "usage": "bullarium {acquire,reconstruct,admit,check,status} [--review PATH] [--json]"
+      "usage": "bullarium {acquire,reconstruct,admit,check,status,series,corrections,geometry} [OPTIONS]"
     },
     "calendar-days": {
       "idempotent": true,
@@ -428,13 +428,14 @@
       "lang": "python",
       "mutates": true,
       "origin": "local",
-      "purpose": "Register papal identities and acquire distributable Latin source artifacts.",
+      "purpose": "Register papal sources and acquire Latin texts or native page witnesses.",
       "requires": [
+        "papal-documents",
         "source-library",
         "typeset-papal"
       ],
       "stage": "draft",
-      "usage": "papal-sources {plan,register,acquire,manifest} --catalog PATH [--json]"
+      "usage": "papal-sources {plan,register,acquire,manifest,witness} [--catalog PATH] [--json]"
     },
     "pdf-review": {
       "idempotent": true,
@@ -640,13 +641,13 @@
       "lang": "python",
       "mutates": true,
       "origin": "local",
-      "purpose": "Typeset admitted papal source editions as two-column TeX and PDF.",
+      "purpose": "Build, catalog and install admitted papal source reading PDFs.",
       "requires": [
         "papal-documents",
         "source-library"
       ],
       "stage": "draft",
-      "usage": "typeset-papal {check,render,collect} [--manifest PATH] --out DIR"
+      "usage": "typeset-papal {check,render,plan,collect,prepare-install,install,check-install} [OPTIONS]"
     },
     "web-edition": {
       "idempotent": true,

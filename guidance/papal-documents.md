@@ -36,6 +36,14 @@ papal mandate names its actual responsible issuer; papal context does not
 turn it into an independently authored papal act. Joining an archival witness
 to an existing work requires positive identity evidence beyond a shared title.
 
+A formal audience rescript may record a papal administrative grant in the
+third person. Preserve its actual recorded-grant genre, audience/grant formula
+and recording official or office, with the papal context distinguished from
+personal authorship. First-person wording is not an admission requirement.
+A curial report merely mentioning papal approval still needs a distinct source
+identity. The Holy See's [1992 rescript](https://www.vatican.va/roman_curia/secretariat_state/archivio/documents/rc_seg-st_19921126_rescriptum-battesimo_lt.html)
+illustrates the distinction; each historical record needs its own evidence.
+
 ## Acquisition and rights
 
 Retrieve complete source responses mechanically; source wording never passes
@@ -89,6 +97,12 @@ date can remain unknown without excluding an otherwise identified witness.
 
 An admitted complete printed witness retains its substantive text, closing,
 subscriptions and its own historical notes as that edition prints them.
+Separately identified editorial titles, date captions or other non-substantive
+publishing furniture may be excluded with exact source bounds and an explicit
+extent qualification. Such a reader represents the complete papal body, not
+every item of printed apparatus. This exception does not permit dropping an
+address, protocol, actual dating clause, subscription or substantive note, or
+accepting interleaved body words merely because their ownership is known.
 Conventional chancery abbreviations may remain literal when disclosed; do not
 expand them from memory or promise an unfolded autograph. An explicit omission
 of a proem, substantive body, annex or subscriptions receives its own finding.
@@ -97,6 +111,10 @@ title with its missing-content notice. Inseparable neighboring acts or mixed
 column order remain unresolved. Do not designate an arbitrary clean OCR
 subrange of a complete printing as a historical fragment to bypass an
 extraction failure.
+
+A protocol or incipit followed by a reference to an omitted body is a catalog
+lead, not a substantive fragment reader. Retain its source and relation as
+metadata without creating a PDF that implies recovered act wording.
 
 Record a correction in a separately identified derivative with exact input
 hashes, retained source evidence, affected loci and a replayable transformation.
@@ -158,6 +176,12 @@ Before a PDF enters an installed/public destination:
 5. Install only those reviewed bytes and expose a link only when the
    installed artifact and the release surface exist.
 
+A sparse final page can retain a genuine historical subscription, registration
+line or source note. Record that qualification without treating it as a layout
+failure solely for its sparseness. A terminal page containing only project
+source/rights notices or unrelated running-head furniture does not establish
+source-bearing final-page coverage.
+
 Presentation projects reuse the canonical source-library IDs and their own
 `research/source-bindings.toml`, pinning exact witnesses and loci. A slide,
 study, timeline, or bibliography may link an identified source or reviewed
@@ -165,3 +189,37 @@ reading PDF, but must keep its own interpretation and source-sufficiency
 judgment. A catalog topic or proposed relation is a finding aid, not an
 independent textual authority. Modern or untranslated items remain useful
 metadata references without promising a locally available PDF.
+
+## Installed source readers
+
+The 2026-10-25 request for individual papal reading PDFs requires a durable
+deliverable as well as reproducible build tools. Reviewed current readers
+therefore have a narrow tracked destination at `pdf/papal-documents/`, outside
+the AI-provider publication trees. This exception does not change the normal
+deployment-build policy for other PDFs. Generated standalone TeX and body
+fragments remain reproducible intermediates, derived from the canonical source
+artifacts and retained rendering selections.
+
+`release/papal-documents.json` owns the installed set. It records the exact
+source identities, selections and rendering revisions, PDF paths, hashes,
+sizes and page counts, and full-page PASS evidence. Retain the frozen input
+manifests and receipts needed to interpret those pins under
+`release/papal-documents/inputs/`, deduplicated by their content hashes. These
+are release records, not additional historical witnesses or verified passages.
+Do not retain machine-specific paths or runtime identifiers in them.
+
+Installation selects only current, affirmatively distributable readers that
+pass source fidelity and hash-bound inspection of every page. Apply all source
+supersessions and withdrawals first. Pending, failed and rejected readers
+remain explicit delivery states without installed PDF links. Installation
+copies the reviewed bytes; it does not rerender, rewrite their provenance or
+promote a source's evidence state. File names derive their date prefix from
+the selected record, using `unknown-date` when unresolved, and preserve a
+collision-checked source identity and language.
+
+Validate the complete owned path set and every installed hash against the
+release record. An obsolete alias may be removed only when the previous release
+owns it and its bytes still match that release; preserve an unexpected file
+for investigation. Preserve prior releases in Git history. A changed current
+selection cannot leave a withdrawn PDF advertised as current. Installation and
+a feature-branch checkpoint do not themselves deploy a website.

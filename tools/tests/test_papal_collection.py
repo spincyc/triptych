@@ -161,6 +161,20 @@ class CollectionTests(unittest.TestCase):
         with self.assertRaisesRegex(collection.PapalCollectionError, "frozen-manifest bytes"):
             collection.collect_batches([spec], self.out)
 
+    def test_collection_binds_original_row_revision_and_corpus(self):
+        spec, manifest, receipt = self.batch()
+        manifest["documents"][0].update(revision="2026-10-26T04:00:00Z", collection_corpus="original corpus")
+        receipt["documents"][0]["render_revision"] = "2026-10-26T04:00:00Z"
+        self.write(spec["manifest"], manifest)
+        self.write(spec["receipt"], receipt)
+        result = collection.collect_batches([spec], self.out)
+        self.assertEqual(result["documents"][0]["render_revision"], "2026-10-26T04:00:00Z")
+        self.assertEqual(result["documents"][0]["corpus"], "original corpus")
+        receipt["documents"][0].pop("render_revision")
+        self.write(spec["receipt"], receipt)
+        with self.assertRaisesRegex(collection.PapalCollectionError, "render revisions"):
+            collection.collect_batches([spec], self.out)
+
     def test_duplicate_active_identity_refuses_even_when_bytes_match(self):
         first, _, _ = self.batch("first")
         second, _, _ = self.batch("second")
@@ -363,6 +377,305 @@ class CollectionTests(unittest.TestCase):
             collection.collect_batches([spec], self.out)
         self.assertFalse((self.out / "collection.json").exists())
         self.assertEqual(target.read_text(), "untouched")
+
+
+    def test_collection_preserves_metadata_inputs_aliased_by_output_endpoints(self):
+        for kind in ("manifest", "receipt", "supersession", "review"):
+            with self.subTest(kind=kind):
+                spec, _, receipt = self.batch(kind)
+                target = self.out / "collection.json"
+                self.out.mkdir(exist_ok=True)
+                navigation = self.out / "index.html"
+                navigation.write_bytes(b"existing navigation must survive refusal")
+                kwargs = {}
+                if kind in {"manifest", "receipt"}:
+                    target.write_bytes(spec[kind].read_bytes())
+                    spec[kind] = target
+                elif kind == "supersession":
+                    path, _ = self.corrections(receipt["documents"][0], None)
+                    target.write_bytes(path.read_bytes())
+                    kwargs["supersession_manifests"] = [target]
+                else:
+                    path, _ = self.review(spec, receipt)
+                    target.write_bytes(path.read_bytes())
+                    kwargs["review_manifests"] = [target]
+                before = {path: path.read_bytes() for path in (target, navigation)}
+                with self.assertRaises(collection.PapalCollectionError):
+                    collection.collect_batches([spec], self.out, **kwargs)
+                self.assertEqual({path: path.read_bytes() for path in before}, before)
+
+    def test_collection_preserves_current_and_reused_prior_report_output_aliases(self):
+        spec, _, receipt = self.batch()
+        path, audit = self.review(spec, receipt)
+        self.out.mkdir()
+        collection_path = self.out / "collection.json"
+        report_path = self.out / "index.html"
+        for prior in (False, True):
+            with self.subTest(prior=prior):
+                collection_path.write_bytes(b"previous metadata")
+                report_path.write_bytes(b"exact hashed review report")
+                row = copy.deepcopy(audit["documents"][0])
+                if prior:
+                    row["individually_inspected_pages"] = [1]
+                    row["reused_pages"] = [2]
+                    row["reuse_proofs"] = [{"page": 2, "current_raster_sha256": "a" * 64,
+                        "prior_raster_sha256": "a" * 64, "prior_pdf_sha256": "b" * 64,
+                        "prior_report": report_path.relative_to(ROOT).as_posix(),
+                        "prior_report_sha256": hashlib.sha256(report_path.read_bytes()).hexdigest()}]
+                else:
+                    row["report"] = report_path.relative_to(ROOT).as_posix()
+                    row["report_sha256"] = hashlib.sha256(report_path.read_bytes()).hexdigest()
+                self.write(path, dict(audit, documents=[row]))
+                before = {item: item.read_bytes() for item in (path, collection_path, report_path)}
+                with self.assertRaisesRegex(collection.PapalCollectionError, "collides"):
+                    collection.collect_batches([spec], self.out, review_manifests=[path])
+                self.assertEqual({item: item.read_bytes() for item in before}, before)
+
+
+class SourcePlanTests(unittest.TestCase):
+    setUp = CollectionTests.setUp
+    tearDown = CollectionTests.tearDown
+    write = CollectionTests.write
+    batch = CollectionTests.batch
+
+    def component(self, name, identifier="papal.test.one", revision="2026-10-26T05:10:28Z"):
+        spec, manifest, _ = self.batch(name, identifier)
+        manifest["revision"] = revision
+        manifest["documents"][0].pop("text")
+        manifest["documents"][0]["text_path"] = "src/sources/synthetic/" + name + "/text.txt"
+        self.write(spec["manifest"], manifest)
+        return {"name": name, "path": spec["manifest"]}, manifest
+
+    def correction(self, base, data, name="correction"):
+        path = self.root / (name + ".json")
+        changed = copy.deepcopy(data)
+        changed["revision"] = "2026-10-26T06:00:00Z"
+        changed["base_manifest_sha256"] = hashlib.sha256(base["path"].read_bytes()).hexdigest()
+        changed["documents"][0]["title"] = "Explicit corrected display title"
+        self.write(path, changed)
+        return {"name": name, "path": path}, changed
+
+    def plan(self, bases, corrections=()):
+        return collection.plan_sources(bases, corrections, self.root / "current.json")
+
+    def test_additive_rows_retain_revisions_and_distinct_witness_ids(self):
+        base, _ = self.component("base")
+        delta, _ = self.component("delta", "historical.test.same-act.other-witness", "2026-10-26T07:00:00Z")
+        delta["role"] = "delta"
+        result = self.plan([base, delta])
+        rows = {row["id"]: row for row in result["documents"]}
+        self.assertEqual(result["revision"], "2026-10-26T07:00:00Z")
+        self.assertEqual(rows["papal.test.one"]["revision"], "2026-10-26T05:10:28Z")
+        self.assertEqual(rows["historical.test.same-act.other-witness"]["revision"], "2026-10-26T07:00:00Z")
+        self.assertEqual(result["selection_plan"]["inputs"][1]["role"], "delta")
+
+    def test_explicit_row_revision_precedes_component_revision(self):
+        base, data = self.component("base")
+        data["documents"][0]["revision"] = "2026-10-26T03:00:00Z"
+        self.write(base["path"], data)
+        self.assertEqual(self.plan([base])["documents"][0]["revision"], "2026-10-26T03:00:00Z")
+
+    def test_same_source_metadata_override_needs_no_fabricated_pdf_hash(self):
+        base, data = self.component("base")
+        correction, changed = self.correction(base, data)
+        result = self.plan([base], [correction])
+        self.assertEqual(result["documents"][0]["title"], changed["documents"][0]["title"])
+        self.assertEqual(result["documents"][0]["collection_corpus"], "base")
+        self.assertEqual(result["selection_plan"]["summary"]["metadata_overrides"], 1)
+        prior = result["selection_plan"]["exclusions"][0]["prior"]
+        self.assertEqual(prior["selection"]["manifest_sha256"], hashlib.sha256(base["path"].read_bytes()).hexdigest())
+        self.assertNotIn("pdf_sha256", json.dumps(result))
+        changed.pop("base_manifest_sha256")
+        self.write(correction["path"], changed)
+        self.assertEqual(self.plan([base], [correction])["selection_plan"]["summary"]["selected"], 1)
+
+    def test_incorrect_declared_base_pin_refuses(self):
+        base, data = self.component("base")
+        correction, changed = self.correction(base, data)
+        changed["base_manifest_sha256"] = "f" * 64
+        self.write(correction["path"], changed)
+        with self.assertRaisesRegex(collection.PapalCollectionError, "base manifest"):
+            self.plan([base], [correction])
+
+    def test_changed_bounds_without_exact_prior_supersession_refuse(self):
+        base, data = self.component("base")
+        correction, changed = self.correction(base, data)
+        changed["documents"][0]["physical_line_ranges"] = [[1, 3]]
+        self.write(correction["path"], changed)
+        with self.assertRaisesRegex(collection.PapalCollectionError, "explicit source supersession"):
+            self.plan([base], [correction])
+
+    def test_source_identity_comparison_does_not_coerce_boolean_or_float_bounds(self):
+        base, data = self.component("base")
+        correction, changed = self.correction(base, data)
+        for start in (True, 1.0):
+            changed["documents"][0]["physical_line_ranges"] = [[start, 2]]
+            self.write(correction["path"], changed)
+            with self.subTest(start=start), self.assertRaisesRegex(collection.PapalCollectionError, "explicit source supersession"):
+                self.plan([base], [correction])
+
+    def test_explicit_source_supersession_and_withdrawal_preserve_provenance(self):
+        base, data = self.component("base")
+        other, other_data = self.component("other", "papal.test.withdraw")
+        correction, changed = self.correction(base, data)
+        old = data["documents"][0]
+        new = changed["documents"][0]
+        new["id"] = "papal.test.one.notes-v2"
+        new["physical_line_ranges"] = [[1, 3]]
+        prior = {"id": old["id"], "language": old["language"], "artifact_id": old["artifact_id"],
+                 "source_sha256": old["sha256"], "segment_id": old["segment_id"]}
+        withdrawn = other_data["documents"][0]
+        changed.pop("base_manifest_sha256")
+        changed["supersessions"] = [
+            {"prior": prior, "replacement": {**prior, "id": new["id"]}, "reason": "Exact source-boundary correction."},
+            {"prior": {"id": withdrawn["id"], "language": withdrawn["language"], "artifact_id": withdrawn["artifact_id"],
+                       "source_sha256": withdrawn["sha256"], "segment_id": withdrawn["segment_id"]},
+             "replacement": None, "reason": "Explicit withdrawal."}]
+        self.write(correction["path"], changed)
+        result = self.plan([base, other], [correction])
+        self.assertEqual([row["id"] for row in result["documents"]], [new["id"]])
+        self.assertEqual(result["selection_plan"]["summary"]["source_supersessions"], 1)
+        self.assertEqual(result["selection_plan"]["summary"]["withdrawals"], 1)
+        changed["supersessions"][0]["prior"].pop("segment_id")
+        self.write(correction["path"], changed)
+        with self.assertRaisesRegex(collection.PapalCollectionError, "segment pin"):
+            self.plan([base, other], [correction])
+
+    def test_unexplained_additive_collision_or_orphan_correction_refuses(self):
+        first, data = self.component("first")
+        second, _ = self.component("second")
+        with self.assertRaisesRegex(collection.PapalCollectionError, "collision"):
+            self.plan([first, second])
+        correction, changed = self.correction(first, data)
+        changed["documents"][0]["id"] = "unproven.new.identifier"
+        self.write(correction["path"], changed)
+        with self.assertRaisesRegex(collection.PapalCollectionError, "proven predecessor"):
+            self.plan([first], [correction])
+
+    def test_correction_cannot_collapse_distinct_witnesses_into_one_replacement(self):
+        first, data = self.component("first")
+        second, other = self.component("second", "papal.test.other-witness")
+        correction, changed = self.correction(first, data)
+        changed.pop("base_manifest_sha256")
+        changed["documents"][0]["id"] = "papal.test.replacement"
+        replacement = changed["documents"][0]
+        target = {"id": replacement["id"], "language": replacement["language"],
+                  "artifact_id": replacement["artifact_id"], "source_sha256": replacement["sha256"],
+                  "segment_id": replacement["segment_id"]}
+        changed["supersessions"] = [{"prior": {"id": row["id"], "language": row["language"],
+            "artifact_id": row["artifact_id"], "source_sha256": row["sha256"], "segment_id": row["segment_id"]},
+            "replacement": target, "reason": "Synthetic attempted convergence."}
+            for row in (data["documents"][0], other["documents"][0])]
+        self.write(correction["path"], changed)
+        with self.assertRaisesRegex(collection.PapalCollectionError, "uniquely proven predecessor"):
+            self.plan([first, second], [correction])
+
+    def test_source_plan_is_deterministic_and_never_mutates_components(self):
+        base, data = self.component("base")
+        correction, _ = self.correction(base, data)
+        pins = {item["path"]: item["path"].read_bytes() for item in (base, correction)}
+        self.plan([base], [correction])
+        first = (self.root / "current.json").read_bytes()
+        self.plan([base], [correction])
+        self.assertEqual(first, (self.root / "current.json").read_bytes())
+        self.assertTrue(all(path.read_bytes() == payload for path, payload in pins.items()))
+
+    def test_inline_source_body_is_refused_not_copied(self):
+        base, data = self.component("base")
+        data["documents"][0]["text"] = "Synthetic source body must remain under its own artifact."
+        self.write(base["path"], data)
+        with self.assertRaisesRegex(collection.PapalCollectionError, "never copied source bodies"):
+            self.plan([base])
+
+    def test_source_plan_cannot_overwrite_its_frozen_input(self):
+        base, _ = self.component("base")
+        before = base["path"].read_bytes()
+        with self.assertRaisesRegex(collection.PapalCollectionError, "replace an input"):
+            collection.plan_sources([base], [], base["path"])
+        self.assertEqual(base["path"].read_bytes(), before)
+
+    def test_source_plan_cannot_follow_an_output_symlink(self):
+        base, _ = self.component("base")
+        target = self.root / "unrelated.json"
+        target.write_text("untouched")
+        output = self.root / "current.json"
+        output.symlink_to(target)
+        with self.assertRaisesRegex(collection.PapalCollectionError, "symlink"):
+            self.plan([base])
+        self.assertEqual(target.read_text(), "untouched")
+
+    def test_actual_confirmed_geometry_withdrawals_override_positive_source_selections(self):
+        source = ROOT / "src/sources/papal-documents"
+        geometry = source / "bullarium-geometry-manifest.json"
+        negative = source / "bullarium-active-withdrawals.json"
+        positive = json.loads(geometry.read_text())
+        negative_bytes = negative.read_bytes()
+        withdrawal = json.loads(negative_bytes)
+        geometry_keys = {(row["id"], row["language"]) for row in positive["documents"]}
+        self.assertTrue(geometry_keys)
+        assertions = [row for row in withdrawal["supersessions"]
+                      if (row["prior"]["id"], row["prior"]["language"]) in geometry_keys]
+        withdrawn_keys = {(row["prior"]["id"], row["prior"]["language"]) for row in assertions}
+        self.assertGreaterEqual(len(withdrawn_keys), 4)
+        self.assertTrue(all(row["replacement"] is None for row in assertions))
+        subset = self.root / "actual-geometry-withdrawals.json"
+        self.write(subset, {"schema": collection.MANIFEST_SCHEMA, "revision": withdrawal["revision"],
+                           "documents": [], "supersessions": assertions,
+                           "source_inventory_sha256": hashlib.sha256(negative_bytes).hexdigest()})
+        result = self.plan([{"name": "actual-geometry", "path": geometry}],
+                           [{"name": "actual-withdrawals", "path": subset}])
+        selected = {(row["id"], row["language"]) for row in result["documents"]}
+        self.assertEqual(selected, geometry_keys - withdrawn_keys)
+        self.assertEqual(result["selection_plan"]["summary"]["withdrawals"], len(withdrawn_keys))
+
+    def test_last_reader_withdrawal_replaces_index_but_preserves_pdf_and_provenance(self):
+        base, data = self.component("base")
+        spec = {"name": "base", "manifest": base["path"], "receipt": base["path"].parent / "receipt.json"}
+        before = collection.collect_batches([spec], self.out)
+        old_pdf_url = before["documents"][0]["files"]["pdf"]
+        pdf = base["path"].parent / 'title "&.pdf'
+        original_pdf = pdf.read_bytes()
+        old = data["documents"][0]
+        negative = self.root / "withdrawals.json"
+        self.write(negative, {"schema": collection.MANIFEST_SCHEMA, "revision": "2026-10-26T07:00:00Z", "documents": [],
+            "supersessions": [{"prior": {"id": old["id"], "language": old["language"], "artifact_id": old["artifact_id"],
+                "source_sha256": old["sha256"], "segment_id": old["segment_id"]}, "replacement": None,
+                "reason": "Synthetic source-only withdrawal; no prior PDF hash is asserted."}]})
+        plan = self.plan([base], [{"name": "withdrawals", "path": negative}])
+        result = collection.collect_empty_plan(self.root / "current.json", self.out)
+        self.assertEqual(result["documents"], [])
+        self.assertEqual(result["summary"]["compiled"], 0)
+        self.assertEqual(result["summary"]["source_exclusions"], 1)
+        self.assertEqual(result["source_selection_plan"]["provenance"], plan["selection_plan"])
+        self.assertNotIn(old_pdf_url, (self.out / "index.html").read_text())
+        self.assertIn("0 current readers", (self.out / "index.html").read_text())
+        self.assertEqual(pdf.read_bytes(), original_pdf)
+
+    def test_empty_collection_refuses_a_plan_with_active_readers(self):
+        base, _ = self.component("base")
+        self.plan([base])
+        self.out.mkdir()
+        index = self.out / "index.html"
+        index.write_text("Existing index remains untouched on invalid input.")
+        with self.assertRaisesRegex(collection.PapalCollectionError, "no active readers"):
+            collection.collect_empty_plan(self.root / "current.json", self.out)
+        self.assertEqual(index.read_text(), "Existing index remains untouched on invalid input.")
+
+    def test_empty_collection_refuses_source_plan_output_collision_without_changing_files(self):
+        base, data = self.component("base")
+        data["documents"] = []
+        self.write(base["path"], data)
+        plan = self.plan([base])
+        self.out.mkdir()
+        for name in ("collection.json", "index.html"):
+            source = self.out / name
+            other = self.out / ("index.html" if name == "collection.json" else "collection.json")
+            self.write(source, plan)
+            other.write_text("Existing navigation and metadata must remain exact.")
+            before = {path: path.read_bytes() for path in (source, other)}
+            with self.subTest(name=name), self.assertRaisesRegex(collection.PapalCollectionError, "collides"):
+                collection.collect_empty_plan(source, self.out)
+            self.assertTrue(all(path.read_bytes() == payload for path, payload in before.items()))
 
 
 if __name__ == "__main__":

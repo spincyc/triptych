@@ -24,13 +24,76 @@ tools/papal-documents list --language la
 ```
 
 `make papal-catalog` writes the Vatican JSON, CSV and BibLaTeX exports, plus
-separate archive, *Bullarium* and Acta JSON snapshots, under
-`.scratch/papal-pdfs/`. `make papal-pdfs` compiles the admitted reader manifests.
-Each batch has an `index.html` with PDF and TeX links and a receipt identifying
-the exact inputs and successful outputs. `PAPAL_OUT` changes the output root
-and `PAPAL_JOBS` bounds compilation concurrency. `make check-papal` runs catalog,
+separate archive, *Bullarium*, Acta and available historical-series JSON
+snapshots, under `.scratch/papal-pdfs/`. `make papal-plan` resolves the admitted
+base and correction selections into `PAPAL_OUT/current-manifest.json`, applying
+recorded replacements and withdrawals before rendering. `make papal-pdfs`
+validates that plan, renders only its current selections under
+`PAPAL_OUT/current/`, then collects them under `PAPAL_OUT/collection/`. It does
+not rebuild obsolete base or correction batches.
+
+Open `collection/index.html` for the combined PDF and TeX links, source details
+and page-review status; `collection/collection.json` retains the machine-readable
+inventory. The index links existing outputs, so keep `current/` with
+`collection/` when moving this local tree. The render receipt and frozen input
+manifest remain under `current/`. `PAPAL_OUT` changes the output root and
+`PAPAL_JOBS` bounds compilation concurrency. `make check-papal` runs catalog,
 input-hash, rights and focused tool checks. These commands generate local source
 editions; installation and deployment have their own review requirements.
+
+`PAPAL_BASE_MANIFESTS` supplies named additive source selections;
+`PAPAL_CORRECTION_MANIFESTS` supplies the ordered corrections to apply.
+`PAPAL_REVIEW_MANIFESTS` supplies hash-bound page-review evidence to the
+collection. Override these only with the exact manifests intended for that
+selection. `make papal-collection` refreshes the plan and index from existing
+current outputs without starting a render; a changed plan requires matching
+rendered bytes and receipt before collection can succeed.
+
+## Retain reviewed PDFs outside the build directory
+
+`typeset-papal prepare-install` checks existing frozen receipt/manifest pairs
+against a newly resolved default source plan. It selects only exact current
+PDFs with passing source fidelity and hash-bound layout inspection of every
+page. Pending, missing, failed and rejected readers remain delivery states;
+they do not receive installed PDF links. A layout PASS retains the source's
+OCR and historical qualifications.
+
+The pair inventory is a JSON object with schema
+`triptych-papal-render-batch-pairs/v1` and a `batches` array. Each entry names
+`name`, repository-relative `receipt` and `manifest` paths, and their exact
+`receipt_sha256` and `manifest_sha256` digests. Use the immutable
+`frozen-manifest.json` retained by that render, or its exact earlier frozen
+snapshot. The inventory locates evidence; it cannot override current source
+withdrawals or missing review evidence.
+
+```sh
+make papal-install-plan PAPAL_INSTALL_BATCH_PAIRS=.scratch/papal-pdfs/batch-pairs.json
+# Inspect .scratch/papal-pdfs/prepared-install.json before copying the release.
+make papal-install
+make check-papal-install
+```
+
+`PAPAL_INSTALL_PREPARED` changes the prepared JSON path. Installation consumes
+that existing proposal and repeats the checks; it refuses a changed proposal
+or source inventory. Preparation and checking resolve the repository's default
+source inputs, including newly admitted correction and withdrawal files.
+They do not accept a source subset as a release of the whole collection.
+
+Installed readers live in `pdf/papal-documents/` with date, identity and
+language in their names. `release/papal-documents.json` binds their exact
+bytes and records the remaining delivery states. Frozen source selections,
+receipts, review records and full-page reports are retained by content hash
+under `release/papal-documents/`, so deleting `.scratch` does not erase the
+release's evidence. Standalone TeX and body fragments remain reproducible
+build outputs. The release record's `documents[].pdf` paths can supply
+appendices or a presentation's source-reader list without introducing an
+AI-provider publication.
+
+Checking reconciles the installed set with the current source plan and
+verifies its files and retained evidence. New selections are reported as
+uninstalled; a withdrawn or changed installed selection fails the check.
+Installation removes an obsolete owned path only when its bytes still match
+the previous release. Unexpected or unowned files are preserved for review.
 
 `list --language` selects documents with a linked edition in that language.
 `show --document ID` prints the full catalog record, including its language
@@ -104,7 +167,12 @@ constituent retains the source's language and order, with the multilingual
 extent identified in its record and reader. Two columns do not imply a
 Latin/English parallel translation. The tool also emits a `.body.tex` fragment beside
 the standalone `.tex`. Its output receipt gives the exact filenames, source
-hash, and compiled PDF identity:
+hash, and compiled PDF identity.
+
+Rendering requires Python 3.11 or later and XeLaTeX, with TeX Gyre Pagella,
+Junicode and FreeSerif available to the font loader. PDF checks use Poppler's `pdfinfo`,
+`pdffonts` and `pdftotext`. The generated TeX retains its font declarations;
+keep the standalone file and any support files beside its body fragment.
 
 ```sh
 tools/typeset-papal check --manifest src/sources/papal-documents/typeset-manifest.json --json
@@ -116,15 +184,27 @@ Choose a manifest by its source edition:
 | Manifest in `src/sources/papal-documents/` | Reader input |
 | --- | --- |
 | `typeset-manifest.json` | Admitted historical Latin transcriptions from the Vatican collections. |
+| `vatican-corrections-manifest.json` | Explicit source or reader corrections to the Vatican selection. |
 | `historical-english-manifest.json` | Bounded English entries from the 1903 Benziger collection. |
 | `historical-english-supplement-manifest.json` | Independently identified additional historical English editions. |
+| `historical-english-supplement-fragment-manifest.json` | Identified abridged or damaged supplemental English witnesses. |
+| `historical-english-journal-manifest.json` | Additional complete historical English journal witnesses. |
+| `historical-english-journal-fragment-manifest.json` | Identified damaged or abridged journal witnesses. |
+| `historical-english-book-manifest.json` | Additional complete historical English book witnesses. |
+| `historical-english-book-fragment-manifest.json` | Identified damaged or abridged book witnesses. |
+| `historical-english-corrections-manifest.json` | Explicit metadata or layout corrections to earlier English selections. |
 | `quanta-syllabus-manifest.json` | Separate *Quanta cura* and *Syllabus* constituents of one composite Latin delivery. |
 | `bullarium-manifest.json` | Admitted complete printed-act witnesses from the selected *Bullarium* volumes. |
 | `bullarium-fragment-manifest.json` | Explicitly identified historical fragments, each with its missing-content notice. |
 | `bullarium-rescue-manifest.json` | Additional complete printed witnesses recovered by a later reviewed reconstruction pass. |
 | `bullarium-rescue-fragment-manifest.json` | Additional identified historical fragments from that reviewed pass. |
 | `bullarium-corrections-manifest.json` | Replacement selections and explicit supersessions for earlier incomplete notes or corrected reader apparatus. |
+| `bullarium-geometry-manifest.json` | Reviewed complete witnesses recovered through exact source-coordinate mappings. |
+| `bullarium-geometry-fragment-manifest.json` | Identified historical fragments recovered through those mappings. |
 | `acta-manifest.json` | Selected admitted historical *ASS* and *AAS* act witnesses. |
+| `acta-title-corrections-manifest.json` | Reviewed display-title replacements with exact prior-PDF supersessions. |
+| `acta-layout-corrections-manifest.json` | Layout repairs for initial failed Acta renders. |
+| `acta-visual-corrections-manifest.json` | Source-pinned metadata or layout replacements arising from page review. |
 
 A manifest can be empty while identification or boundary review is unfinished.
 Its count describes selected source editions, not the number of all papal acts.
@@ -136,15 +216,34 @@ Some named files belong to later workflow phases. Their presence and coverage
 records, rather than their reserved names, establish which work has finished.
 
 The render manifests use `triptych-papal-typeset/v1`, with an explicit
-`revision` and `documents` array. The correction manifest also carries a
-`supersessions` array. The initial *Bullarium* complete and fragment snapshots
+`revision` and `documents` array. A document row may pin its own `revision`;
+otherwise the top-level revision controls that row. The source plan preserves
+this effective revision in every selected row, and the render receipt records
+it as `documents[].render_revision`. Adding an unrelated selection therefore
+need not alter the revision printed in an unchanged reader.
+
+The plan's `selection_plan` retains the component manifest paths and hashes,
+original row positions and hashes, and the reasons and source pins for excluded
+predecessors. Same-source metadata or layout corrections remain distinct from
+changes of source identity or extent, which require explicit supersessions.
+The initial *Bullarium* complete and fragment snapshots
 remain frozen; rescue snapshots add reviewed witnesses, and correction
 snapshots replace specific earlier selections without rewriting their source
-bytes or identities. For a final handout or publication, apply the recorded
-supersessions and exclude the named old PDFs. Concatenating every batch would
-retain withdrawn selections alongside their replacements. Separate batch
-receipts preserve the review history; they do not by themselves choose the
-current combined set.
+bytes or identities. The active plan applies recorded supersessions and excludes
+the named predecessors. Concatenating every historical batch would retain
+withdrawn selections alongside their replacements.
+
+Already frozen multi-batch outputs can still be indexed with
+`typeset-papal collect`: repeat `--batch NAME RECEIPT FROZEN_MANIFEST` for the
+exact existing batches, `--supersessions PATH` for applicable corrections and
+`--review PATH` for page-review audits. This reads and checks existing files;
+it neither renders nor installs PDFs. Use `collect --help` for the full syntax.
+A complete `PASS` review can follow the exact same PDF bytes into a new batch
+receipt when document identity, language, PDF hash, page count and retained
+full-page review evidence agree. The collection records both original and
+current receipt hashes. A filename, matching source text or successful build
+alone cannot transfer review; changed pages need inspection or a declared
+exact-raster reuse proof.
 
 A paper can input the generated body fragment in an appendix. Use XeLaTeX,
 load `hyperref`, and retain the Unicode font declarations from the paired
@@ -243,6 +342,23 @@ does not become a historical fragment merely because extraction is difficult.
 An unparsed act date remains unknown in metadata and is omitted from the
 reader's date line; this does not imply that the source lacks a date.
 
+For bounded original-page evidence, `papal-sources witness` works from a whole
+cached PDF already registered under its truthful source edition:
+
+```sh
+tools/papal-sources witness --recipe .scratch/papal-project/page-recipe.json --cached-pdf .scratch/papal-project/whole-source.pdf --scratch .scratch/papal-project/page-evidence --json
+```
+
+The recipe pins the registered parent identity, complete SHA-256 and byte size,
+same edition, increasing one-based pages, explicit rights basis and retained
+extent. The command checks these before staging native pages. Its
+`native-bilevel-images` backend additionally requires exact image selectors,
+dimensions, resolution and pixel hashes. It fetches nothing and infers no
+rights clearance. Inspect the staged receipt and output; repeating with
+`--register` adds three immutable artifacts for the selected PDF, recipe and
+receipt. It creates no passage records or `verified` evidence promotion. See
+`witness --help` for the exact required recipe fields.
+
 ## Coverage
 
 The discovery boundary is the Vatican's curated papal HTML collections from
@@ -288,3 +404,8 @@ bounded or unresolved, and literal OCR remains distinct from separately
 recorded mechanical repairs. The supplement's source and review records state
 the phase reached for each edition; it inherits no whole-text collation claim
 from the 1903 collection.
+
+The [English expansion record](../src/sources/papal-documents/english-expansion-coverage.md)
+identifies the separate book and journal printings, complete and damaged
+constituents, and bounded exclusions. Its source admissions, render receipts
+and page reviews remain separate results.

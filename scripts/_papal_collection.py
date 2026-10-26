@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import datetime as dt
+import copy
 import hashlib
 import html
 import json
@@ -16,6 +17,7 @@ SCHEMA = "triptych-papal-collection/v1"
 RECEIPT_SCHEMA = "triptych-papal-typeset-receipt/v1"
 MANIFEST_SCHEMA = "triptych-papal-typeset/v1"
 REVIEW_SCHEMA = "triptych-papal-visual-review/v1"
+PLAN_SCHEMA = "triptych-papal-source-plan/v1"
 SHA = re.compile(r"[a-f0-9]{64}")
 LANGUAGE = re.compile(r"[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*")
 LANGUAGE_NAMES = {"en": "English", "la": "Latin", "it": "Italian", "fr": "French",
@@ -140,6 +142,10 @@ def _batch(spec, out):
         seen.add(key)
         source = sources.get(key)
         _require(source is not None, "batch edition is absent from its frozen manifest")
+        effective_revision = source.get("revision", manifest["revision"])
+        _revision(effective_revision)
+        _require(item.get("render_revision", receipt["revision"]) == effective_revision,
+                 "receipt and selected source render revisions disagree")
         for receipt_key, manifest_key in (("artifact_id", "artifact_id"), ("source_sha256", "sha256"),
                                           ("segment_id", "segment_id"), ("physical_line_ranges", "physical_line_ranges")):
             _require(item.get(receipt_key) == source.get(manifest_key),
@@ -177,11 +183,13 @@ def _batch(spec, out):
             _local_file(batch_root, item["pdf"], ".pdf", required=False)
         language_label = source.get("language_label") or LANGUAGE_NAMES.get(key[1], key[1])
         _require(_nonempty(language_label), "language label must be text")
-        row = {"corpus": spec["name"], "id": key[0], "language": key[1],
+        corpus = source.get("collection_corpus", spec["name"])
+        _require(_nonempty(corpus), "collection corpus must be text")
+        row = {"corpus": corpus, "id": key[0], "language": key[1],
                "language_label": language_label,
                "title": source["title"], "issuer": source["pope"], "date": date,
                "status": status, "artifact_id": item["artifact_id"], "source_sha256": item["source_sha256"],
-               "receipt_sha256": receipt_sha, "files": files,
+               "receipt_sha256": receipt_sha, "render_revision": effective_revision, "files": files,
                "page_review": {"status": "not-recorded"}}
         if item.get("segment_id"):
             row["segment_id"] = item["segment_id"]
@@ -260,11 +268,27 @@ def _page_set(value, pages):
     return set(value)
 
 
-def _reviews(rows, paths, out):
+def _protect_report_inputs(value, protected):
+    if isinstance(value, dict):
+        for key, item in value.items():
+            if key in {"report", "prior_report"} and _nonempty(item):
+                _require(not any(ord(char) < 32 for char in item), "visual report path contains a control character")
+                protected.add((ROOT / item).resolve())
+            elif isinstance(item, (dict, list)):
+                _protect_report_inputs(item, protected)
+    elif isinstance(value, list):
+        for item in value:
+            _protect_report_inputs(item, protected)
+
+
+def _reviews(rows, paths, out, protected_paths=None):
     inputs, seen, unmatched, report_hashes = [], set(), 0, {}
     for path in paths:
         path = Path(path).resolve()
         data, digest = _json(path)
+        if protected_paths is not None:
+            protected_paths.add(path)
+            _protect_report_inputs(data, protected_paths)
         _require(data.get("schema") == REVIEW_SCHEMA and isinstance(data.get("documents"), list), "incorrect visual-review manifest schema")
         top_receipt = data.get("frozen_receipt_sha256")
         _require(_digest(top_receipt), "visual review requires a frozen receipt SHA-256")
@@ -353,6 +377,8 @@ def _html(data):
         rows.append('<tr class="edition" ' + attributes + '>' + "".join('<td>' + value + '</td>' for value in values) + '</tr>')
     summary = data["summary"]
     heading = f'{summary["compiled"]} compiled PDFs; {summary["layout_reviewed"]} layout reviewed; {summary["excluded"]} superseded or withdrawn snapshots excluded.'
+    if "source_selection_plan" in data:
+        heading = f'0 current readers; {summary["source_exclusions"]} source selections superseded or withdrawn.'
     return '''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Papal source collection</title><style>
@@ -380,21 +406,26 @@ def collect_batches(batches, out, supersession_manifests=(), review_manifests=()
     _require(out.is_relative_to(ROOT / ".scratch") or out.is_relative_to(ROOT / "build"),
              "collection output must be under repository .scratch or build")
     _require(isinstance(batches, (list, tuple)) and batches, "collection requires at least one named batch")
-    rows, inputs, names = [], [], set()
+    rows, inputs, names, protected = [], [], set(), set()
     for spec in batches:
         _require(isinstance(spec, dict) and _nonempty(spec.get("name")), "batch requires a name")
         _require(spec["name"] not in names, "duplicate batch name")
         names.add(spec["name"])
         batch_rows, batch_input = _batch(spec, out)
+        protected.update(Path(spec[key]).resolve() for key in ("receipt", "manifest"))
+        raw_receipt, _ = _json(Path(spec["receipt"]).resolve())
+        if raw_receipt.get("input_manifest"):
+            protected.add((Path(spec["receipt"]).resolve().parent / raw_receipt["input_manifest"]).resolve())
         rows.extend(batch_rows)
         inputs.append(batch_input)
     rows, excluded, corrections = _supersede(rows, supersession_manifests, out)
+    protected.update(Path(path).resolve() for path in supersession_manifests)
     identities = set()
     for row in rows:
         key = _identity(row)
         _require(key not in identities, "conflicting or ambiguous duplicate active identity")
         identities.add(key)
-    reviews, unmatched_reviews = _reviews(rows, review_manifests, out)
+    reviews, unmatched_reviews = _reviews(rows, review_manifests, out, protected)
     rows.sort(key=lambda row: (row["corpus"].casefold(), row["issuer"].casefold(), row["date"] or "9999-99-99", row["language"], row["id"]))
     compiled = [row for row in rows if row["status"] == "compiled"]
     summary = {"batches": len(inputs), "documents": len(rows), "compiled": len(compiled),
@@ -407,6 +438,13 @@ def collect_batches(batches, out, supersession_manifests=(), review_manifests=()
     result = {"schema": SCHEMA, "generator": "typeset-papal collect", "generator_version": 1,
               "batches": inputs, "supersession_inputs": corrections, "review_inputs": reviews,
               "unmatched_review_entries": unmatched_reviews, "documents": rows, "excluded": excluded, "summary": summary}
+    _write_collection_outputs(result, out, protected)
+    return result
+
+
+def _write_collection_outputs(result, out, protected_paths=()):
+    endpoints = {(out / name).resolve() for name in ("collection.json", "index.html")}
+    _require(not endpoints.intersection(protected_paths), "collection output collides with an input or report")
     payloads = {"collection.json": json.dumps(result, ensure_ascii=False, sort_keys=True, indent=2) + "\n",
                 "index.html": _html(result)}
     _require(all(not (out / name).is_symlink() for name in payloads), "collection output file must not be a symlink")
@@ -419,4 +457,203 @@ def collect_batches(batches, out, supersession_manifests=(), review_manifests=()
             temporary.replace(out / name)
         finally:
             temporary.unlink(missing_ok=True)
+
+
+def collect_empty_plan(manifest, out):
+    """Replace stale navigation with an explicit validated zero-reader selection."""
+    out = Path(out).resolve()
+    _require(out.is_relative_to(ROOT / ".scratch") or out.is_relative_to(ROOT / "build"),
+             "collection output must be under repository .scratch or build")
+    path = Path(manifest).resolve()
+    _require(path not in {out / "collection.json", out / "index.html"},
+             "empty collection output collides with its source plan")
+    plan, digest, rows = _manifest(path)
+    provenance = plan.get("selection_plan")
+    _require(not rows and isinstance(provenance, dict) and provenance.get("schema") == PLAN_SCHEMA,
+             "empty collection requires a derived source plan with no active readers")
+    _require(isinstance(provenance.get("summary"), dict) and type(provenance["summary"].get("selected")) is int
+             and provenance["summary"]["selected"] == 0, "empty source plan must select exactly zero readers")
+    _require(isinstance(provenance.get("inputs"), list) and provenance["inputs"]
+             and isinstance(provenance.get("exclusions"), list), "empty source plan requires input/exclusion provenance")
+    _require(all(isinstance(item, dict) and _digest(item.get("sha256")) for item in provenance["inputs"]),
+             "empty source plan inputs require exact hashes")
+    summary = dict.fromkeys(("batches", "documents", "compiled", "failed", "rendered", "layout_reviewed",
+                            "review_pending", "changes_required", "excluded", "pages"), 0)
+    summary["source_exclusions"] = len(provenance["exclusions"])
+    result = {"schema": SCHEMA, "generator": "typeset-papal collect", "generator_version": 1,
+              "selection_kind": "source-only-empty-plan", "batches": [], "documents": [], "excluded": [],
+              "supersession_inputs": [], "review_inputs": [], "unmatched_review_entries": 0, "summary": summary,
+              "source_selection_plan": {"path": _link(path, out), "sha256": digest,
+                                        "revision": plan["revision"], "provenance": provenance}}
+    _write_collection_outputs(result, out)
+    return result
+
+
+SOURCE_FIELDS = ("artifact_id", "sha256", "segment_id", "segment_path", "physical_line_ranges",
+                 "text_path", "edition_id", "work_id")
+
+
+def _row_sha(row):
+    return hashlib.sha256(json.dumps(row, ensure_ascii=False, sort_keys=True,
+                                     separators=(",", ":")).encode("utf-8")).hexdigest()
+
+
+def _source_fields(row):
+    _require(_nonempty(row.get("artifact_id")) and _digest(row.get("sha256")), "source plan requires exact artifact and SHA-256 pins")
+    _require("text" not in row and "blocks" not in row, "source plans accept metadata references, never copied source bodies")
+    return {key: row.get(key) for key in SOURCE_FIELDS}
+
+
+def _plan_pins(row, assertion):
+    _require(isinstance(assertion, dict), "source supersession requires exact pins")
+    _require(assertion.get("artifact_id") == row.get("artifact_id") and
+             assertion.get("source_sha256") == row.get("sha256"), "source supersession artifact/SHA pins disagree")
+    if row.get("segment_id") is not None:
+        _require(assertion.get("segment_id") == row["segment_id"], "source supersession requires the exact segment pin")
+    elif "segment_id" in assertion:
+        _require(assertion["segment_id"] is None, "source supersession has an unexpected segment pin")
+    for key in ("physical_line_ranges", "text_path", "segment_path", "edition_id", "work_id"):
+        if key in assertion:
+            _require(_row_sha(assertion[key]) == _row_sha(row.get(key)), f"source supersession disagrees on {key}")
+    if "pdf_sha256" in assertion:
+        _require(_digest(assertion["pdf_sha256"]), "declared prior PDF hash must be an exact SHA-256")
+
+
+def plan_sources(base_manifests, correction_manifests, out):
+    """Select current source references before rendering, without changing inputs."""
+    _require(not Path(out).is_symlink(), "source plan output must not be a symlink")
+    out = Path(out).resolve()
+    _require((out.is_relative_to(ROOT / ".scratch") or out.is_relative_to(ROOT / "build")) and out.suffix == ".json",
+             "source plan must be a JSON file under repository .scratch or build")
+    _require(isinstance(base_manifests, (list, tuple)) and base_manifests,
+             "source plan requires at least one base or delta manifest")
+    _require(isinstance(correction_manifests, (list, tuple)), "source corrections must be an ordered component array")
+    active, inputs, exclusions, names = {}, [], [], set()
+    counts = {"base_rows": 0, "correction_rows": 0, "metadata_overrides": 0,
+              "source_supersessions": 0, "withdrawals": 0}
+
+    def load(spec, role):
+        _require(isinstance(spec, dict) and _nonempty(spec.get("name")) and isinstance(spec.get("path"), (str, Path)),
+                 "source component requires a name and manifest path")
+        _require(spec["name"] not in names, "duplicate source component name")
+        names.add(spec["name"])
+        path = Path(spec["path"]).resolve()
+        _require(path.is_relative_to(ROOT), "source component manifest must remain repository-relative")
+        _require(path != out, "source plan cannot replace an input component manifest")
+        data, digest, rows = _manifest(path)
+        records = []
+        for index, row in enumerate(data["documents"]):
+            _source_fields(row)
+            _require(row.get("date") is None or isinstance(row["date"], str), "source plan date must be text or null")
+            revision = row.get("revision", data["revision"])
+            _revision(revision)
+            records.append((_identity(row), row, {"component": spec["name"], "manifest_sha256": digest,
+                "row_index": index, "row_sha256": _row_sha(row), "revision": revision}))
+        info = {"name": spec["name"], "role": role, "path": path.relative_to(ROOT).as_posix(),
+                "sha256": digest, "revision": data["revision"], "documents": len(rows)}
+        inputs.append(info)
+        return data, digest, records
+
+    def entry(row, origin, corpus, lineage):
+        _require(_nonempty(corpus), "source component corpus must be text")
+        selected = copy.deepcopy(row)
+        selected["revision"] = origin["revision"]
+        selected["collection_corpus"] = corpus
+        return {"row": selected, "origin": origin, "lineage": set(lineage)}
+
+    def exclude(old, replacement, component_sha, reason, kind, declared_prior=None):
+        record = {"kind": kind, "prior": {"id": old["row"]["id"], "language": old["row"]["language"],
+                  "source": _source_fields(old["row"]), "selection": old["origin"]},
+                  "replacement": replacement, "correction_manifest_sha256": component_sha, "reason": reason}
+        if declared_prior is not None:
+            record["declared_prior"] = copy.deepcopy(declared_prior)
+        exclusions.append(record)
+
+    for spec in base_manifests:
+        _require(isinstance(spec, dict), "source component requires a named manifest")
+        _, digest, records = load(spec, spec.get("role", "base"))
+        _require(spec.get("role", "base") in {"base", "delta"}, "invalid additive source role")
+        for key, row, origin in records:
+            _require(key not in active, "unexplained collision between base/delta source identities")
+            active[key] = entry(row, origin, row.get("collection_corpus", spec["name"]), {digest})
+        counts["base_rows"] += len(records)
+
+    for spec in correction_manifests:
+        data, digest, records = load(spec, "correction")
+        known_hashes = {item["sha256"] for item in inputs[:-1]}
+        base_pin = data.get("base_manifest_sha256")
+        if base_pin is not None:
+            _require(_digest(base_pin) and base_pin in known_hashes, "correction base manifest SHA-256 is not an included predecessor")
+        assertions = data.get("supersessions", [])
+        _require(isinstance(assertions, list), "source corrections require a supersessions array")
+        replacements, removed, actions = {}, {}, []
+        for assertion in assertions:
+            _require(isinstance(assertion, dict) and _nonempty(assertion.get("reason")), "source supersession requires a reason")
+            prior = assertion.get("prior")
+            key = _identity(prior)
+            _require(key in active and key not in removed, "source supersession requires one unique active predecessor")
+            old = active[key]
+            _plan_pins(old["row"], prior)
+            if base_pin is not None:
+                _require(base_pin in old["lineage"], "correction base pin does not identify this predecessor")
+            replacement = assertion.get("replacement", "missing")
+            _require(replacement is None or isinstance(replacement, dict), "source supersession requires a replacement or explicit null")
+            if replacement is not None:
+                target = _identity(replacement)
+                _require(target not in replacements, "source replacement must have one uniquely proven predecessor")
+                replacements.setdefault(target, []).append(old)
+            removed[key] = old
+            actions.append((old, assertion))
+        for key in removed:
+            del active[key]
+        for key, row, origin in records:
+            old = active.get(key)
+            claimed = replacements.get(key, [])
+            if claimed:
+                _require(old is None, "declared source replacement collides with another active identity")
+                corpora = {prior["row"]["collection_corpus"] for prior in claimed}
+                corpus = next(iter(corpora)) if len(corpora) == 1 else spec["name"]
+                lineage = set().union(*(prior["lineage"] for prior in claimed)) | {digest}
+            else:
+                _require(old is not None, "correction row has no uniquely proven predecessor")
+                _require(_row_sha(_source_fields(old["row"])) == _row_sha(_source_fields(row)),
+                         "changed source identity or bounds require an explicit source supersession")
+                if base_pin is not None:
+                    _require(base_pin in old["lineage"], "correction base pin does not identify this predecessor")
+                exclude(old, {"id": key[0], "language": key[1]}, digest,
+                        "Explicit metadata/layout correction retains the exact source identity and selection.", "same-source-correction")
+                counts["metadata_overrides"] += 1
+                corpus, lineage = old["row"]["collection_corpus"], old["lineage"] | {digest}
+            active[key] = entry(row, origin, corpus, lineage)
+        for old, assertion in actions:
+            replacement = assertion["replacement"]
+            if replacement is not None:
+                target = _identity(replacement)
+                _require(target in active, "declared source replacement is absent")
+                _plan_pins(active[target]["row"], replacement)
+                counts["source_supersessions"] += 1
+            else:
+                counts["withdrawals"] += 1
+            exclude(old, replacement, digest, assertion["reason"],
+                    "source-supersession" if replacement is not None else "withdrawal", assertion["prior"])
+        counts["correction_rows"] += len(records)
+    selected = sorted(active.values(), key=lambda item: (item["row"]["collection_corpus"],
+                      item["row"].get("date") or "9999-99-99", item["row"]["id"], item["row"]["language"]))
+    selections = [{"id": item["row"]["id"], "language": item["row"]["language"],
+                   "collection_corpus": item["row"]["collection_corpus"], **item["origin"]} for item in selected]
+    summary = {"inputs": len(inputs), **counts, "selected": len(selected), "excluded": len(exclusions)}
+    revisions = [item["revision"] for item in inputs] + [item["row"]["revision"] for item in selected]
+    result = {"schema": MANIFEST_SCHEMA, "revision": max(revisions), "documents": [item["row"] for item in selected],
+              "selection_plan": {"schema": PLAN_SCHEMA, "row_hash_method": "sha256-json-utf8-sorted-keys-compact-v1",
+                                 "inputs": inputs, "selections": selections,
+                                 "exclusions": exclusions, "summary": summary}}
+    _require(not out.is_symlink(), "source plan output must not be a symlink")
+    out.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=out.parent, prefix=".source-plan-", delete=False) as stream:
+        temporary = Path(stream.name)
+        stream.write(json.dumps(result, ensure_ascii=False, sort_keys=True, indent=2) + "\n")
+    try:
+        temporary.replace(out)
+    finally:
+        temporary.unlink(missing_ok=True)
     return result

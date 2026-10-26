@@ -349,6 +349,23 @@ claims new rights in the historical wording. The Philippine entry is abridged
 in the historical translation itself; word-level errors and source-heading
 date discrepancies elsewhere remain disclosed.
 
+Additional historical English witnesses include the 1855 *Official documents
+connected with the definition of the dogma of the Immaculate Conception*,
+Herbert Vaughan's *The Year of Preparation for the Vatican Council* (1869),
+*The Dogmatic Canons and Decrees* (1912), James H. Ryan's *The Encyclicals of
+Pius XI* (1927), identified 1904–1908 *American Catholic Quarterly Review*
+volumes, 1928 *Catholic Mind* issues and the papal appendix to *The Programme
+of Modernism* (1908). Their individual source records establish the actual
+printing, translator where known, retained constituent and United States
+public-domain basis. The surrounding collection's exposition is distinct from
+the papal text. These historical translations, notes and faithful mechanical
+source derivatives are excluded from Triptych's CC BY 4.0 grant. Abridgments,
+damaged printings and inherited OCR defects retain their specific notices;
+another translation supplies no silent repair. Modern wrappers and later
+reprints are assessed separately. The
+[English expansion record](src/sources/papal-documents/english-expansion-coverage.md)
+identifies the retained witnesses and bounded exclusions.
+
 ## Received Prayers, Hymns, and Translations
 
 Received prayers, antiphons, chants, collects, hymns, and translations not

@@ -1,0 +1,118 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "historical-printing-evidence-container",
+   "byte_size": 75427078,
+   "edition_owned": true,
+   "id": "artifact.gregory-xvi-acta.volume-04.1904-rome-mul.imprint-c11b69c4e911",
+   "media_type": "application/pdf",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/actagregoriipapa0004vinc/actagregoriipapa0004vinc.pdf",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "automated-pagination-map",
+   "byte_size": 112850,
+   "edition_owned": true,
+   "id": "artifact.gregory-xvi-acta.volume-04.1904-rome-mul.labels-019e44bb7be7",
+   "media_type": "application/json",
+   "notes": "Exact whole offered response retained without changing its bytes. A token match or an imprint check does not establish complete image collation or act authentication.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "Scratch candidate only: historical Latin/Italian wording in the identified Rome1904 printing is eligible for artifact-specific United States expired-term assessment under src/sources/inventories/papal-documents-rights-v1.toml. Whole PDF wrapper, incidental library/digitizer marks, historical editorial matter and remote PDF evidence descriptor remain separately reviewable; no worldwide, provider-wide, whole-PDF or Triptych source-text licence is asserted.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/actagregoriipapa0004vinc/actagregoriipapa0004vinc_page_numbers.json",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "mechanical-line-leaf-map",
+   "byte_size": 216359,
+   "edition_owned": true,
+   "id": "artifact.gregory-xvi-acta.volume-04.1904-rome-mul.line-map-b61d70381454",
+   "media_type": "application/json",
+   "notes": "Mapping pins exact OCR and XML hashes. Layout flags are conservative leads, not verified reading order or printed pagination.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "licensed",
+   "rights_basis": "Project-created factual correspondence data under CC BY 4.0; source words retain their separately identified historical rights.",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "uncorrected-ocr",
+   "byte_size": 3270638,
+   "edition_owned": true,
+   "id": "artifact.gregory-xvi-acta.volume-04.1904-rome-mul.ocr-1d3c4d03aed7",
+   "media_type": "text/plain",
+   "notes": "Exact whole offered response retained without changing its bytes. A token match or an imprint check does not establish complete image collation or act authentication.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "Scratch candidate only: historical Latin/Italian wording in the identified Rome1904 printing is eligible for artifact-specific United States expired-term assessment under src/sources/inventories/papal-documents-rights-v1.toml. Whole PDF wrapper, incidental library/digitizer marks, historical editorial matter and remote PDF evidence descriptor remain separately reviewable; no worldwide, provider-wide, whole-PDF or Triptych source-text licence is asserted.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/actagregoriipapa0004vinc/actagregoriipapa0004vinc_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "mechanical-scan-sequence",
+   "byte_size": 830038,
+   "edition_owned": true,
+   "id": "artifact.gregory-xvi-acta.volume-04.1904-rome-mul.scandata-4dd86321e49d",
+   "media_type": "application/xml",
+   "notes": "Exact whole offered response retained without changing its bytes. A token match or an imprint check does not establish complete image collation or act authentication.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "Scratch candidate only: historical Latin/Italian wording in the identified Rome1904 printing is eligible for artifact-specific United States expired-term assessment under src/sources/inventories/papal-documents-rights-v1.toml. Whole PDF wrapper, incidental library/digitizer marks, historical editorial matter and remote PDF evidence descriptor remain separately reviewable; no worldwide, provider-wide, whole-PDF or Triptych source-text licence is asserted.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/actagregoriipapa0004vinc/actagregoriipapa0004vinc_scandata.xml",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "ocr-layout-xml",
+   "byte_size": 40504476,
+   "edition_owned": true,
+   "id": "artifact.gregory-xvi-acta.volume-04.1904-rome-mul.xml-d49f705aa6d7",
+   "media_type": "application/xml",
+   "notes": "The exact 40,504,476-byte verbose XML remains remote for its measured size. Complete raw OCR, exact token/line/leaf correspondence and a standalone replay recipe are retained offline. A token match or an imprint check does not establish complete image collation or act authentication.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "Scratch candidate only: historical Latin/Italian wording in the identified Rome1904 printing is eligible for artifact-specific United States expired-term assessment under src/sources/inventories/papal-documents-rights-v1.toml. Whole PDF wrapper, incidental library/digitizer marks, historical editorial matter and remote PDF evidence descriptor remain separately reviewable; no worldwide, provider-wide, whole-PDF or Triptych source-text licence is asserted.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/actagregoriipapa0004vinc/actagregoriipapa0004vinc_djvu.xml",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1904",
+  "editors": [],
+  "id": "edition.gregory-xvi-acta.volume-04.1904-rome-mul",
+  "jurisdiction": null,
+  "language": "mul",
+  "publication": "Rome: Ex Typographia Polyglotta S. C. de Propaganda Fide, 1904.",
+  "title": "Acta Gregorii Papae XVI — Volumen 4, Pars secunda civilis — 1904",
+  "translators": [],
+  "year": 1904
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Antonio Maria Bernasconi, collection editor; individual issuing authorities as stated in each source item",
+  "category": "historical-document-container",
+  "description": "Historical collection containing acts, constituent instruments and editorial apparatus. Acquiring this container establishes no complete census or authentication of its acts.",
+  "id": "work.gregory-xvi-acta.volume-04",
+  "languages": [
+   "la",
+   "it"
+  ],
+  "title": "Acta Gregorii Papae XVI — Volumen 4, Pars secunda civilis"
+ }
+}

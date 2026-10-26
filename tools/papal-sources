@@ -25,6 +25,18 @@ EXAMPLES = {
         Example('tools/papal-sources manifest --document papal.missing --revision 2026-10-26T00:00:00Z --out .scratch/source_records/example-manifest.json --json', ('{"code":"input","error":"an explicitly selected document was not found","status":"error","v":1}',), 'An unknown selection is refused before an output manifest is written.'),
         Example('tools/papal-sources manifest --document papal.missing --revision 2026-10-26T00:00:00Z --out .scratch/source_records/example-manifest.json', ('papal-sources: an explicitly selected document was not found',), 'The same refusal in ordinary text; the destination is not created.'),
     ),
+    'witness': (
+        Example(
+            'tools/papal-sources witness --recipe src/sources/papal-documents/acta-manifest.json --cached-pdf .scratch/not-needed.pdf --scratch .scratch/source_records/witness-example --json',
+            ('{"code":"input","error":"expected triptych-papal-page-witness/v1","status":"error","v":1}',),
+            'A typesetting manifest is refused before PDF access, staging, or source registration.',
+        ),
+        Example(
+            'tools/papal-sources witness --recipe src/sources/papal-documents/acta-manifest.json --cached-pdf .scratch/not-needed.pdf --scratch .scratch/source_records/witness-example',
+            ('papal-sources: expected triptych-papal-page-witness/v1',),
+            'The same input refusal in ordinary text; caller-supplied page and rights evidence is mandatory.',
+        ),
+    ),
 }
 
 if __name__ == "__main__":

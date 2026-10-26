@@ -239,6 +239,8 @@ TEX_SPECIAL = {"\\": r"\textbackslash{}", "{": r"\{", "}": r"\}", "$": r"\$",
                "^": r"\textasciicircum{}", "~": r"\textasciitilde{}", "\f": " "}
 CYRILLIC_RUN = re.compile(r"[\u0400-\u052f\u1c80-\u1c8f\u2de0-\u2dff\ua640-\ua69f]")
 UNICODE_RUN = re.compile(r"[\u0370-\u052f\u1f00-\u1fff\u1c80-\u1c8f\u2de0-\u2dff\ua640-\ua69f][\u0370-\u052f\u1f00-\u1fff\u1c80-\u1c8f\u2de0-\u2dff\ua640-\ua69f\u0300-\u036f]*|.[\u0300-\u036f]+|[\u0300-\u036f]+")
+SYMBOL_RUN = re.compile(r"[\u25ba]")
+FONT_RUN = re.compile(UNICODE_RUN.pattern + "|" + SYMBOL_RUN.pattern)
 
 
 def tex_escape(text: str) -> str:
@@ -250,9 +252,11 @@ def tex_escape(text: str) -> str:
 def source_tex_escape(text: str) -> str:
     """Preserve Greek, Cyrillic and combining characters with supporting fonts."""
     parts, offset = [], 0
-    for match in UNICODE_RUN.finditer(text):
+    for match in FONT_RUN.finditer(text):
         parts.append(tex_escape(text[offset:match.start()]))
-        if CYRILLIC_RUN.search(match.group()):
+        if SYMBOL_RUN.search(match.group()):
+            parts.append(r"{\PapalSymbolFont " + tex_escape(match.group()) + "}")
+        elif CYRILLIC_RUN.search(match.group()):
             parts.append(r"{\PapalCyrillicFont " + tex_escape(match.group()) + "}")
         else:
             # Some composed abbreviation glyphs omit their mark in ToUnicode.
@@ -260,6 +264,25 @@ def source_tex_escape(text: str) -> str:
             parts.append(r"\PapalUnicodeText{" + actual + "}{" + tex_escape(match.group()) + "}")
         offset = match.end()
     parts.append(tex_escape(text[offset:]))
+    return "".join(parts)
+
+
+def body_tex_escape(text: str, allow_long_token_breaks=False) -> str:
+    """Optionally wrap literal long OCR runs without adding source characters."""
+    if not allow_long_token_breaks:
+        return source_tex_escape(text)
+    parts, offset = [], 0
+    for match in re.finditer(r"\S{48,}", text):
+        parts.append(source_tex_escape(text[offset:match.start()]))
+        clusters = []
+        for char in match.group():
+            if clusters and unicodedata.category(char).startswith("M"):
+                clusters[-1] += char
+            else:
+                clusters.append(char)
+        parts.append(r"\allowbreak{}".join(source_tex_escape(cluster) for cluster in clusters))
+        offset = match.end()
+    parts.append(source_tex_escape(text[offset:]))
     return "".join(parts)
 
 
@@ -273,6 +296,16 @@ def _resolve_path(value: str, root: Path) -> Path:
     return resolved
 
 
+def _validate_revision(value, owner="manifest") -> str:
+    try:
+        if not isinstance(value, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z", value):
+            raise ValueError()
+        dt.datetime.strptime(value, "%Y-%m-%dT%H:%M:%SZ")
+    except (ValueError, TypeError) as error:
+        raise PapalTypesetError(f"{owner} revision must be an explicit whole-second UTC timestamp") from error
+    return value
+
+
 def validate_document(document: dict, root: Path = ROOT) -> dict:
     for name in ("id", "title", "pope", "language", "source_url", "text_path", "sha256",
                  "artifact_id", "rights_status", "rights_basis"):
@@ -282,12 +315,14 @@ def validate_document(document: dict, root: Path = ROOT) -> dict:
         raise PapalTypesetError("document id must use lowercase ASCII letters, digits, dots and hyphens")
     if document["language"] not in LANGUAGES:
         raise PapalTypesetError(f"unsupported language: {document['language']}")
+    if "revision" in document:
+        _validate_revision(document["revision"], "document")
     if "language_label" in document:
         label = document["language_label"]
-        if (document["language"] != "mul" or not isinstance(label, str) or not label.strip()
+        if (not isinstance(label, str) or not label.strip()
                 or label != label.strip() or len(label) > 120
                 or any(ord(char) < 32 or char in "\u2028\u2029" for char in label)):
-            raise PapalTypesetError("language_label requires a bounded single-line label for a mul edition")
+            raise PapalTypesetError("language_label requires a bounded single-line label")
     if document["rights_status"] not in ADMITTED_RIGHTS:
         raise PapalTypesetError("document lacks an admitted distribution rights status")
     for name in ("source_note", "rights_notice"):
@@ -366,8 +401,18 @@ def validate_document(document: dict, root: Path = ROOT) -> dict:
                 raise PapalTypesetError("segment ranges overlap or escape the controlling artifact")
             excerpts.append("\n".join(line.removesuffix("\r") for line in lines[start - 1:end]))
             last = end
-        text = "\n\n".join(excerpts)
-    elif document.get("physical_line_ranges") or document.get("segment_path"):
+        continuations = document.get("range_continuations", [])
+        if (not isinstance(continuations, list)
+                or any(type(index) is not int or not 0 <= index < len(excerpts) - 1 for index in continuations)
+                or continuations != sorted(set(continuations))):
+            raise PapalTypesetError("range_continuations must contain ordered unique nonterminal range indices")
+        text = excerpts[0]
+        for index, excerpt in enumerate(excerpts[1:]):
+            # The registered bounds and controller hash remain authoritative.
+            # Only an explicitly declared selection boundary loses its paragraph
+            # break; every retained non-whitespace character stays literal.
+            text = text.rstrip() + " " + excerpt.lstrip() if index in continuations else text + "\n\n" + excerpt
+    elif document.get("physical_line_ranges") or document.get("segment_path") or "range_continuations" in document:
         raise PapalTypesetError("bounded text selection requires a registered segment_id")
     try:
         edition = tomllib.loads(edition_path.read_text(encoding="utf-8"))
@@ -395,11 +440,19 @@ def validate_document(document: dict, root: Path = ROOT) -> dict:
     if (not isinstance(keep, list) or any(type(index) is not int or not 0 <= index < len(blocks) - 1 for index in keep)
             or keep != sorted(set(keep))):
         raise PapalTypesetError("keep_with_next must contain ordered unique paragraph indices before the final block")
+    if document.get("keep_with_next_mode", "paragraph") not in ("paragraph", "first-line"):
+        raise PapalTypesetError("keep_with_next_mode must be paragraph or first-line")
     terminal = document.get("terminal_keep_blocks", 0)
     if type(terminal) is not int or not 0 <= terminal <= len(blocks):
         raise PapalTypesetError("terminal_keep_blocks must be a bounded source-block count")
     if type(document.get("compact_layout", False)) is not bool:
         raise PapalTypesetError("compact_layout must be an explicit boolean")
+    if type(document.get("allow_long_token_breaks", False)) is not bool:
+        raise PapalTypesetError("allow_long_token_breaks must be an explicit boolean")
+    if "compact_margin" in document and (not document.get("compact_layout", False)
+            or type(document["compact_margin"]) not in (int, float)
+            or document["compact_margin"] not in (0.5, 0.55, 0.6, 0.65)):
+        raise PapalTypesetError("compact_margin requires compact_layout and a supported 0.5–0.65 inch margin")
     return {**document, "blocks": blocks, "text": text, "artifact_manifest": artifact, "keep_with_next": keep}
 
 
@@ -411,13 +464,7 @@ def read_manifest(path: Path, root: Path = ROOT, selected=()) -> tuple[dict, lis
         raise PapalTypesetError("typeset manifest is not readable JSON") from error
     if not isinstance(manifest, dict) or manifest.get("schema") != SCHEMA:
         raise PapalTypesetError(f"typeset manifest requires schema {SCHEMA}")
-    revision = manifest.get("revision", "")
-    try:
-        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z", revision):
-            raise ValueError()
-        dt.datetime.strptime(revision, "%Y-%m-%dT%H:%M:%SZ")
-    except (ValueError, TypeError) as error:
-        raise PapalTypesetError("manifest revision must be an explicit whole-second UTC timestamp") from error
+    _validate_revision(manifest.get("revision"))
     rows = manifest.get("documents")
     if not isinstance(rows, list):
         raise PapalTypesetError("typeset manifest requires a documents array")
@@ -443,11 +490,11 @@ def _manifest_snapshot(manifest: dict, documents: list[dict]) -> bytes:
     if payload is not None and json.loads(payload.decode("utf-8")) != manifest:
         raise PapalTypesetError("loaded manifest changed after validation; reload the intended input")
     rows = {(row["id"], row["language"]): row for row in manifest["documents"]}
-    fields = ("title", "pope", "date", "language_label", "source_url", "text_path", "sha256",
+    fields = ("title", "pope", "date", "revision", "language_label", "source_url", "text_path", "sha256",
               "artifact_id", "rights_status", "rights_basis", "rights_notice", "source_note",
-              "segment_id", "segment_path", "physical_line_ranges", "keep_with_next",
-              "terminal_keep_blocks", "compact_layout", "blocks")
-    defaults = {"keep_with_next": [], "terminal_keep_blocks": 0, "compact_layout": False}
+              "segment_id", "segment_path", "physical_line_ranges", "range_continuations", "keep_with_next", "keep_with_next_mode",
+              "terminal_keep_blocks", "compact_layout", "compact_margin", "allow_long_token_breaks", "blocks")
+    defaults = {"keep_with_next": [], "keep_with_next_mode": "paragraph", "terminal_keep_blocks": 0, "compact_layout": False}
     for document in documents:
         row = rows.get((document["id"], document["language"]))
         if row is None:
@@ -469,21 +516,27 @@ def render_body(document: dict, start=0, end=None, include_label=True, no_break_
     if CYRILLIC_RUN.search(document["text"]):
         output.append(r"\providecommand{\PapalCyrillicFont}{}")
     keep = set(document.get("keep_with_next", []))
+    first_line = document.get("keep_with_next_mode", "paragraph") == "first-line"
     for index, block in enumerate(document["blocks"][start:end], start):
-        if index in keep and index - 1 not in keep:
+        if index in keep and (first_line or index - 1 not in keep):
             output.append(r"\begin{samepage}")
-        value = source_tex_escape(block["text"])
+        value = body_tex_escape(block["text"], document.get("allow_long_token_breaks", False))
         output.append(r"\subsection*{" + value + "}" if block["kind"] == "heading" else value + "\n\\par")
-        if index in keep:
-            output.append(r"\nopagebreak[4]")
-        elif index - 1 in keep:
-            output.append(r"\end{samepage}")
+        if first_line:
+            if index in keep:
+                output.extend([r"\end{samepage}", r"\nopagebreak[4]"])
+        else:
+            if index in keep:
+                output.append(r"\nopagebreak[4]")
+            elif index - 1 in keep:
+                output.append(r"\end{samepage}")
         if no_break_after:
             output.append(r"\nopagebreak[4]")
     return "\n\n".join(output) + "\n"
 
 
 def render_tex(document: dict, revision: str) -> str:
+    revision = document.get("revision", revision)
     stem = output_stem(document)
     title, pope = source_tex_escape(document["title"]), source_tex_escape(document["pope"])
     # PDF string keys accept line breaks, but TeX paragraph tokens are illegal
@@ -497,6 +550,8 @@ def render_tex(document: dict, revision: str) -> str:
                       + r"\newcommand{\PapalUnicodeText}[2]{{\PapalUnicodeFont\XeTeXgenerateactualtext=1 #2}}" + "\n")
     if any(CYRILLIC_RUN.search(str(document.get(key, ""))) for key in ("text", "title", "pope", "source_note", "rights_notice", "rights_basis", "language_label")):
         font_setup += r"\newfontfamily\PapalCyrillicFont[Ligatures=TeXOff]{FreeSerif}" + "\n"
+    if any(SYMBOL_RUN.search(str(document.get(key, ""))) for key in ("text", "title", "pope", "source_note", "rights_notice", "rights_basis", "language_label")):
+        font_setup += r"\newfontfamily\PapalSymbolFont[Ligatures=TeXOff]{FreeSerif}" + "\n"
     language_text = document.get("language_label") or LANGUAGES[document["language"]]
     language, metadata_language = source_tex_escape(language_text), tex_escape(language_text)
     date = document.get("date")
@@ -546,7 +601,8 @@ Triptych organization and typesetting: CC BY 4.0. Source text retains its own ri
 """
     if document.get("compact_layout", False):
         # A selected layout remedy keeps the body at 10pt and preserves all text.
-        source = source.replace("margin=0.7in,columnsep=0.26in", "margin=0.65in,columnsep=0.24in", 1)
+        margin = format(document.get("compact_margin", 0.65), "g")
+        source = source.replace("margin=0.7in,columnsep=0.26in", f"margin={margin}in,columnsep=0.24in", 1)
         source = source.replace(r"\setlength{\parskip}{2pt}", r"\setlength{\parskip}{1pt}", 1)
     identity_body = render_body(document) + (f"\0terminal_keep_blocks={terminal}" if terminal else "")
     identifier = hashlib.sha256((source + "\0" + identity_body).encode("utf-8")).hexdigest()[:32]
@@ -617,6 +673,7 @@ def pdf_body_fidelity(pdf: Path, document: dict, pages: int) -> dict:
 
 
 def _compile(tex: Path, revision: str, document: dict) -> dict:
+    revision = document.get("revision", revision)
     engine = shutil.which("xelatex")
     if not engine:
         raise PapalTypesetError("xelatex is unavailable")
@@ -728,12 +785,13 @@ def render_documents(manifest: dict, documents: list[dict], out: Path, compile_p
         changed = _write_rendered(document, manifest["revision"], folder)
         results.append({"id": document["id"], "language": document["language"], "stem": stem,
                         "artifact_id": document["artifact_id"], "source_sha256": document["sha256"],
+                        "render_revision": document.get("revision", manifest["revision"]),
                         "tex": f"{stem}/{tex.name}", "body_tex": f"{stem}/{body.name}",
                         "changed": changed, "status": "rendered"})
         for key in ("segment_id", "physical_line_ranges"):
             if key in document:
                 results[-1][key] = document[key]
-        for key in ("compact_layout", "keep_with_next", "terminal_keep_blocks"):
+        for key in ("compact_layout", "compact_margin", "allow_long_token_breaks", "range_continuations", "keep_with_next", "keep_with_next_mode", "terminal_keep_blocks"):
             if document.get(key):
                 results[-1][key] = document[key]
     errors = []
@@ -782,19 +840,76 @@ def main(argv=None, examples=None):
     collect = verbs.add_parser("collect", description="Collect verified local reader batches and exact review/supersession records",
                                formatter_class=argparse.RawDescriptionHelpFormatter)
     with_examples(collect, examples.get("collect", ()))
-    collect.add_argument("--batch", action="append", nargs=3, required=True, metavar=("NAME", "RECEIPT", "MANIFEST"))
+    collect_inputs = collect.add_mutually_exclusive_group(required=True)
+    collect_inputs.add_argument("--batch", action="append", nargs=3, metavar=("NAME", "RECEIPT", "MANIFEST"))
+    collect_inputs.add_argument("--empty-plan", type=Path, help="validated source plan with zero active selections")
     collect.add_argument("--supersessions", action="append", type=Path, default=[])
     collect.add_argument("--review", action="append", type=Path, default=[])
     collect.add_argument("--out", type=Path, default=ROOT / ".scratch/papal-collection")
     collect.add_argument("--json", action="store_true")
+    plan = verbs.add_parser("plan", description="Resolve current source selections before rendering",
+                            formatter_class=argparse.RawDescriptionHelpFormatter)
+    with_examples(plan, examples.get("plan", ()))
+    plan.add_argument("--base", action="append", nargs=2, required=True, metavar=("NAME", "MANIFEST"))
+    plan.add_argument("--correction", action="append", nargs=2, default=[], metavar=("NAME", "MANIFEST"))
+    plan.add_argument("--out", type=Path, default=ROOT / ".scratch/papal-pdfs/current-manifest.json")
+    plan.add_argument("--json", action="store_true")
+    prepare_install = verbs.add_parser("prepare-install", description="Prepare exact current, fully page-reviewed PDFs for inspection before installation",
+                                       formatter_class=argparse.RawDescriptionHelpFormatter)
+    with_examples(prepare_install, examples.get("prepare-install", ()))
+    prepare_install.add_argument("--plan", type=Path, required=True)
+    prepare_install.add_argument("--batch-pairs", type=Path, required=True)
+    prepare_install.add_argument("--review", action="append", type=Path, default=[])
+    prepare_install.add_argument("--out", type=Path, default=ROOT / ".scratch/papal-install/prepared.json")
+    prepare_install.add_argument("--json", action="store_true")
+    install = verbs.add_parser("install", description="Install a reviewed preparation after revalidating its exact current inputs",
+                               formatter_class=argparse.RawDescriptionHelpFormatter)
+    with_examples(install, examples.get("install", ()))
+    install.add_argument("--prepared", type=Path, required=True)
+    install.add_argument("--json", action="store_true")
+    check_install = verbs.add_parser("check-install", description="Check installed PDF bytes, durable evidence and current source selections",
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    with_examples(check_install, examples.get("check-install", ()))
+    check_install.add_argument("--plan", type=Path, required=True)
+    check_install.add_argument("--json", action="store_true")
     args = parser.parse_args(argv)
     try:
-        if args.verb == "collect":
-            from _papal_collection import collect_batches, PapalCollectionError
-            batches = [{"name": name, "receipt": Path(receipt), "manifest": Path(manifest)}
-                       for name, receipt, manifest in args.batch]
+        if args.verb in {"prepare-install", "install", "check-install"}:
+            from _papal_install import prepare_install, install_prepared, check_install, RELEASE
+            from _papal_collection import PapalCollectionError
             try:
-                payload = collect_batches(batches, safe_output(args.out), args.supersessions, args.review)
+                if args.verb == "prepare-install":
+                    prepared = prepare_install(args.plan, args.batch_pairs, args.out, args.review)
+                    payload = {"schema": prepared["schema"], "summary": prepared["summary"],
+                               "prepared": os.path.relpath(args.out.resolve(), ROOT),
+                               "sha256": hashlib.sha256(args.out.read_bytes()).hexdigest()}
+                elif args.verb == "install":
+                    released = install_prepared(args.prepared)
+                    payload = {"schema": released["schema"], "summary": released["summary"],
+                               "release": RELEASE.as_posix()}
+                else:
+                    payload = check_install(args.plan)
+            except PapalCollectionError as error:
+                raise PapalTypesetError(str(error)) from error
+        elif args.verb in {"collect", "plan"}:
+            from _papal_collection import collect_batches, plan_sources, PapalCollectionError
+            try:
+                if args.verb == "collect":
+                    if args.empty_plan:
+                        from _papal_collection import collect_empty_plan
+                        if args.supersessions or args.review:
+                            raise PapalTypesetError("empty-plan collection takes its exclusions from the validated plan")
+                        payload = collect_empty_plan(args.empty_plan, safe_output(args.out))
+                    else:
+                        batches = [{"name": name, "receipt": Path(receipt), "manifest": Path(manifest)}
+                                   for name, receipt, manifest in args.batch]
+                        payload = collect_batches(batches, safe_output(args.out), args.supersessions, args.review)
+                else:
+                    out = safe_output(args.out)
+                    planned = plan_sources([{ "name": name, "path": Path(path)} for name, path in args.base],
+                                           [{ "name": name, "path": Path(path)} for name, path in args.correction], out)
+                    payload = {"schema": "triptych-papal-source-plan/v1", "summary": planned["selection_plan"]["summary"],
+                               "manifest": os.path.relpath(out, ROOT), "sha256": hashlib.sha256(out.read_bytes()).hexdigest()}
             except PapalCollectionError as error:
                 raise PapalTypesetError(str(error)) from error
         else:
@@ -810,6 +925,12 @@ def main(argv=None, examples=None):
         elif args.verb == "collect":
             summary = payload["summary"]
             print(f"collected: {summary['documents']} source editions; {summary['compiled']} compiled PDFs; {summary['layout_reviewed']} layout reviewed")
+        elif args.verb == "plan":
+            print(f"planned: {payload['summary']['selected']} current source editions; {payload['summary']['excluded']} obsolete selections excluded")
+        elif args.verb in {"prepare-install", "install"}:
+            print(f"{'prepared' if args.verb == 'prepare-install' else 'installed'}: {payload['summary']['ready']} reviewed PDFs; {payload['summary']['current']} current source editions")
+        elif args.verb == "check-install":
+            print(f"{payload['status']}: {payload['installed']} installed PDFs; {payload['current']} current source editions; {payload['not_installed']} not installed")
         else:
             for item in payload["documents"]:
                 print(f"{item['id']} ({item['language']}): {item['status']}")

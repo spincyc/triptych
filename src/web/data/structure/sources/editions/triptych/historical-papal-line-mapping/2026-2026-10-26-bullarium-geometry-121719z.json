@@ -1,0 +1,44 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "immutable-reading-order-inventory-input",
+   "byte_size": 9960,
+   "edition_owned": true,
+   "id": "artifact.triptych.historical-papal-line-mapping.2026-10-26-bullarium-geometry-121719z.input-ebae0891e81c",
+   "media_type": "application/json",
+   "notes": "Project apparatus only; never a selected papal-document body or separate editable inventory. The current inventory remains src/sources/papal-documents/bullarium-geometry-manifest.json.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "licensed",
+   "rights_basis": "Project-created inventory metadata under the repository MIT license. Historical titles and attribution strings retain their identified historical-source rights; the project license does not extend to source wording.",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-10-26",
+  "editors": [],
+  "id": "edition.triptych.historical-papal-line-mapping.2026-10-26-bullarium-geometry-121719z",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "Triptych project-apparatus snapshot",
+  "title": "Initial Bullarium coordinate-order inventory input, 2026-10-26T12:17:19Z",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Triptych contributors",
+  "category": "processing-method",
+  "description": "Project software that checks complete OCR/XML token identity and records physical source lines and explicit scan leaf identifiers. The method does not establish textual accuracy, reading order or authenticity.",
+  "id": "work.triptych.historical-papal-line-mapping",
+  "languages": [
+   "en"
+  ],
+  "title": "Exact token and line-to-leaf mapping for historical papal sources"
+ }
+}

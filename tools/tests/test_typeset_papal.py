@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import hashlib
+import io
 import json
 from pathlib import Path
 import re
@@ -10,6 +11,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from contextlib import redirect_stderr, redirect_stdout
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -104,6 +106,58 @@ class ManifestTests(unittest.TestCase):
         with self.assertRaisesRegex(papal.PapalTypesetError, "rights_status"):
             papal.validate_document(self.doc, self.root)
 
+    def test_installer_cli_dispatch_is_explicit_and_preparation_stdout_is_bounded(self):
+        import _papal_install as installer
+        summary = {"current": 3, "ready": 1, "pages": 2, "bytes": 100,
+                   "review_pending": 2, "changes_required": 0, "failed": 0, "missing": 0}
+        out = self.root / "prepared.json"
+        def prepare(plan, pairs, target, reviews):
+            self.assertEqual((plan, pairs, reviews), (Path("plan.json"), Path("pairs.json"), [Path("review.json")]))
+            target.write_text('{"synthetic":true}\n')
+            return {"schema": installer.PREPARED_SCHEMA, "summary": summary,
+                    "documents": [{"source": "Do not copy candidate details to stdout"}]}
+        stdout = io.StringIO()
+        with patch.object(installer, "prepare_install", side_effect=prepare) as prepared, redirect_stdout(stdout), \
+                patch.object(papal, "render_documents") as render:
+            code = papal.main(["prepare-install", "--plan", "plan.json", "--batch-pairs", "pairs.json",
+                               "--review", "review.json", "--out", str(out), "--json"])
+        self.assertEqual(code, 0)
+        self.assertEqual(json.loads(stdout.getvalue())["sha256"], hashlib.sha256(out.read_bytes()).hexdigest())
+        self.assertNotIn("documents", json.loads(stdout.getvalue()))
+        prepared.assert_called_once()
+        render.assert_not_called()
+        for verb, arguments, function, returned in (
+            ("install", ["--prepared", "prepared.json"], "install_prepared", {"schema": installer.RELEASE_SCHEMA, "summary": summary}),
+            ("check-install", ["--plan", "plan.json"], "check_install", {"schema": installer.RELEASE_SCHEMA,
+                "status": "valid", "installed": 1, "current": 3, "not_installed": 2})):
+            stdout = io.StringIO()
+            with self.subTest(verb=verb), patch.object(installer, function, return_value=returned) as called, \
+                    redirect_stdout(stdout), patch.object(papal, "render_documents") as render:
+                self.assertEqual(papal.main([verb, *arguments, "--json"]), 0)
+            called.assert_called_once_with(Path(arguments[1]))
+            self.assertEqual(json.loads(stdout.getvalue())["schema"], installer.RELEASE_SCHEMA)
+            render.assert_not_called()
+
+    def test_installer_cli_refusal_is_visible_without_rendering_or_installing(self):
+        import _papal_install as installer
+        stderr = io.StringIO()
+        with patch.object(installer, "prepare_install", side_effect=installer.PapalInstallError("source plan is stale")), \
+                patch.object(installer, "install_prepared") as install, patch.object(papal, "render_documents") as render, \
+                redirect_stderr(stderr):
+            code = papal.main(["prepare-install", "--plan", "plan.json", "--batch-pairs", "pairs.json", "--json"])
+        self.assertEqual(code, 2)
+        self.assertEqual(json.loads(stderr.getvalue())["error"], "source plan is stale")
+        install.assert_not_called()
+        render.assert_not_called()
+
+    def test_installer_help_never_dispatches_an_install(self):
+        import _papal_install as installer
+        with patch.object(installer, "install_prepared") as install, redirect_stdout(io.StringIO()):
+            with self.assertRaises(SystemExit) as result:
+                papal.main(["install", "--help"])
+        self.assertEqual(result.exception.code, 0)
+        install.assert_not_called()
+
     def test_missing_rights_and_payload_tampering_refuse(self):
         for key, value in (("rights_status", "unresolved"), ("rights_basis", ""), ("language", "xx")):
             changed = {**self.doc, key: value}
@@ -141,8 +195,9 @@ class ManifestTests(unittest.TestCase):
         for bad in ("", "A\nB", " Latin", 12):
             with self.assertRaisesRegex(papal.PapalTypesetError, "language_label"):
                 papal.validate_document({**doc, "language_label": bad}, self.root)
-        with self.assertRaisesRegex(papal.PapalTypesetError, "language_label"):
-            papal.validate_document({**self.doc, "language_label": "Another language"}, self.root)
+        edition.write_text('schema = 1\nrecord_type = "edition"\nid = "edition.test.fixture"\nlanguage = "en"\n')
+        primary = papal.validate_document({**self.doc, "language_label": "English, with Latin quotations"}, self.root)
+        self.assertIn("English, with Latin quotations", papal.render_tex(primary, self.manifest["revision"]))
 
     def test_hashed_text_cannot_be_replaced_by_unchecked_blocks(self):
         doc = {**self.doc, "blocks": [{"kind": "paragraph", "text": "A different text"}]}
@@ -169,11 +224,79 @@ class ManifestTests(unittest.TestCase):
         with self.assertRaisesRegex(papal.PapalTypesetError, "segment manifest disagrees"):
             papal.validate_document(bad, self.root)
 
+    @unittest.skipUnless(shutil.which("xelatex") and shutil.which("pdfinfo") and shutil.which("pdftotext"), "PDF toolchain unavailable")
+    def test_declared_range_continuation_joins_only_selected_boundary_and_preserves_pdf_words(self):
+        self.payload = "Source words remain perpe-\nExcluded journal footer\ntua without dehyphenation.\n\nOwn historical note.\n"
+        self.payload_path.write_text(self.payload, encoding="utf-8")
+        self.doc["sha256"] = hashlib.sha256(self.payload.encode()).hexdigest()
+        self.artifact.update(sha256=self.doc["sha256"], byte_size=len(self.payload.encode()))
+        self.write_artifact()
+        segment = self.root / "src/sources/works/constituent/editions/1903/segments/continued.toml"
+        segment.parent.mkdir(parents=True)
+        segment.write_text('schema = 2\nrecord_type = "segment"\nid = "segment.test.continued"\n'
+                           'edition_id = "edition.test.continued"\n'
+                           f'artifact_id = "{self.doc["artifact_id"]}"\n'
+                           f'artifact_sha256 = "{self.doc["sha256"]}"\n'
+                           'physical_line_ranges = [[1, 1], [3, 3], [5, 5]]\n', encoding="utf-8")
+        (segment.parents[1] / "edition.toml").write_text(
+            'schema = 1\nrecord_type = "edition"\nid = "edition.test.continued"\nlanguage = "en"\n')
+        row = {**self.doc, "segment_id": "segment.test.continued",
+               "segment_path": segment.relative_to(self.root).as_posix(),
+               "physical_line_ranges": [[1, 1], [3, 3], [5, 5]], "range_continuations": [0]}
+        document = papal.validate_document(row, self.root)
+        self.assertEqual([block["text"] for block in document["blocks"]],
+                         ["Source words remain perpe- tua without dehyphenation.", "Own historical note."])
+        unjoined = papal.validate_document({key: value for key, value in row.items()
+                                           if key != "range_continuations"}, self.root)
+        self.assertEqual(re.sub(r"\s", "", document["text"]), re.sub(r"\s", "", unjoined["text"]))
+        self.assertEqual(self.payload_path.read_text(), self.payload)
+        receipt = papal.render_documents({**self.manifest, "documents": [row]}, [document],
+                                         self.root / "range-continuation", True)
+        self.assertEqual(receipt["errors"], [])
+        self.assertEqual(receipt["documents"][0]["range_continuations"], [0])
+        self.assertEqual(receipt["documents"][0]["text_fidelity"]["status"], "pass")
+        pdf = self.root / "range-continuation" / receipt["documents"][0]["pdf"]
+        extracted = subprocess.check_output(["pdftotext", "-raw", str(pdf), "-"], text=True)
+        self.assertIn("perpe- tua", extracted)
+        self.assertNotIn("Excluded journal footer", extracted)
+        for bad in ([2], [-1], [0, 0], [1, 0], [True], "0", None):
+            with self.subTest(bad=bad), self.assertRaisesRegex(papal.PapalTypesetError, "range_continuations"):
+                papal.validate_document({**row, "range_continuations": bad}, self.root)
+        with self.assertRaisesRegex(papal.PapalTypesetError, "registered segment"):
+            papal.validate_document({**self.doc, "range_continuations": [0]}, self.root)
+
     def test_escape_preserves_printed_metacharacters_and_blocks_input(self):
         self.assertEqual(papal.tex_escape(r"a\b {x} $ & # % _ ^ ~"),
                          r"a\textbackslash{}b \{x\} \$ \& \# \% \_ \textasciicircum{} \textasciitilde{}")
         with self.assertRaises(papal.PapalTypesetError):
             papal.tex_escape("bad\x00text")
+
+    @unittest.skipUnless(shutil.which("xelatex") and shutil.which("pdfinfo") and shutil.which("pdftotext"), "PDF toolchain unavailable")
+    def test_explicit_long_ocr_wrap_preserves_every_character_and_pdf_fidelity(self):
+        token = "RRRALLLLLICCCCÉCCCÓÉOCÓÉÓÉÉÓÉÓÉÓÉÓÉÓÉÓÉÓÉÓÉÓÓÉÓÉÓÉÓÓRÓRÓRÓROOÓ—————M"
+        self.payload = "Ordinary short source words.\n\n" + token + "\n\nFinal source note.\n"
+        self.payload_path.write_text(self.payload, encoding="utf-8")
+        self.doc["sha256"] = hashlib.sha256(self.payload.encode()).hexdigest()
+        self.artifact.update(sha256=self.doc["sha256"], byte_size=len(self.payload.encode()))
+        self.write_artifact()
+        row = {**self.doc, "allow_long_token_breaks": True}
+        document = papal.validate_document(row, self.root)
+        body = papal.render_body(document)
+        self.assertIn(r"\allowbreak{}", body)
+        self.assertIn("Ordinary short source words.", body)
+        self.assertEqual(papal.body_tex_escape("ordinary words", True), papal.source_tex_escape("ordinary words"))
+        self.assertEqual(papal.body_tex_escape("x" * 47, True), "x" * 47)
+        self.assertNotIn("m" + r"\allowbreak{}" + "\u0305", papal.body_tex_escape("m\u0305" * 30, True))
+        receipt = papal.render_documents({**self.manifest, "documents": [row]}, [document],
+                                         self.root / "long-ocr-wrap", True)
+        self.assertEqual(receipt["errors"], [])
+        self.assertEqual(receipt["documents"][0]["allow_long_token_breaks"], True)
+        self.assertEqual(receipt["documents"][0]["text_fidelity"]["status"], "pass")
+        self.assertEqual(document["text"], self.payload)
+        self.assertEqual(self.payload_path.read_text(), self.payload)
+        for bad in (None, 1, "true", []):
+            with self.subTest(bad=bad), self.assertRaisesRegex(papal.PapalTypesetError, "allow_long_token_breaks"):
+                papal.validate_document({**row, "allow_long_token_breaks": bad}, self.root)
 
     def test_render_is_byte_stable_and_single_language_two_columns(self):
         doc = papal.validate_document(self.doc, self.root)
@@ -208,6 +331,32 @@ class ManifestTests(unittest.TestCase):
         with self.assertRaisesRegex(papal.PapalTypesetError, "input manifest on title"):
             papal.render_documents(self.manifest, [document], self.root / "mismatched-input")
 
+    def test_document_revision_requires_a_real_whole_second_utc_timestamp(self):
+        for bad in (None, False, "2026-02-30T00:00:00Z", "2026-10-26T25:00:00Z",
+                    "2026-10-26T00:00:00.1Z", "2026-10-26T00:00:00+00:00"):
+            with self.assertRaisesRegex(papal.PapalTypesetError, "document revision"):
+                papal.validate_document({**self.doc, "revision": bad}, self.root)
+
+    @unittest.skipUnless(shutil.which("xelatex") and shutil.which("pdfinfo") and shutil.which("pdftotext"), "PDF toolchain unavailable")
+    def test_row_revision_keeps_pdf_identity_when_only_inventory_revision_changes(self):
+        row = {**self.doc, "revision": "2020-01-01T00:00:00Z"}
+        checked = papal.validate_document(row, self.root)
+        first_manifest = {**self.manifest, "documents": [row]}
+        second_manifest = {**first_manifest, "revision": "2026-10-26T22:00:00Z"}
+        first_out, second_out = self.root / "first-inventory", self.root / "second-inventory"
+        first = papal.render_documents(first_manifest, [checked], first_out, True)
+        second = papal.render_documents(second_manifest, [checked], second_out, True)
+        self.assertFalse(first["errors"] or second["errors"])
+        self.assertNotEqual(first["input_manifest_sha256"], second["input_manifest_sha256"])
+        self.assertNotEqual(first["revision"], second["revision"])
+        self.assertEqual(first["documents"][0]["render_revision"], row["revision"])
+        self.assertEqual(first["documents"][0]["pdf_sha256"], second["documents"][0]["pdf_sha256"])
+        self.assertEqual((first_out / first["documents"][0]["tex"]).read_bytes(),
+                         (second_out / second["documents"][0]["tex"]).read_bytes())
+        unpinned = papal.validate_document(self.doc, self.root)
+        self.assertNotEqual(papal.render_tex(unpinned, first_manifest["revision"]),
+                            papal.render_tex(unpinned, second_manifest["revision"]))
+
     def test_missing_normalized_date_is_omitted_without_changing_source_text(self):
         known = papal.validate_document(self.doc, self.root)
         unknown = papal.validate_document({**self.doc, "date": None}, self.root)
@@ -232,6 +381,23 @@ class ManifestTests(unittest.TestCase):
             with self.assertRaisesRegex(papal.PapalTypesetError, "keep_with_next"):
                 papal.validate_document({**self.doc, "keep_with_next": value}, self.root)
 
+    @unittest.skipUnless(shutil.which("xelatex") and shutil.which("pdfinfo") and shutil.which("pdftotext"), "PDF toolchain unavailable")
+    def test_heading_can_keep_first_body_line_while_long_paragraph_flows(self):
+        self.payload = "CHAPTER I.\n\n" + "Long source paragraph preserves every printed word. " * 190 + "\n\nClosing source.\n"
+        self.payload_path.write_text(self.payload, encoding="utf-8")
+        self.doc["sha256"] = hashlib.sha256(self.payload.encode()).hexdigest()
+        self.artifact.update(sha256=self.doc["sha256"], byte_size=len(self.payload.encode()))
+        self.write_artifact()
+        row = {**self.doc, "keep_with_next": [0], "keep_with_next_mode": "first-line"}
+        document = papal.validate_document(row, self.root)
+        receipt = papal.render_documents({**self.manifest, "documents": [row]}, [document], self.root / "heading-long-body", True)
+        self.assertEqual(receipt["errors"], [])
+        self.assertGreater(receipt["documents"][0]["pages"], 1)
+        self.assertEqual(receipt["documents"][0]["text_fidelity"]["status"], "pass")
+        self.assertEqual(document["text"], self.payload)
+        with self.assertRaisesRegex(papal.PapalTypesetError, "keep_with_next_mode"):
+            papal.validate_document({**row, "keep_with_next_mode": "unknown"}, self.root)
+
     def test_explicit_compact_layout_preserves_body_size_and_fragment(self):
         normal = papal.validate_document(self.doc, self.root)
         compact = papal.validate_document({**self.doc, "compact_layout": True}, self.root)
@@ -243,6 +409,18 @@ class ManifestTests(unittest.TestCase):
         for bad in ("true", 1, None):
             with self.assertRaisesRegex(papal.PapalTypesetError, "compact_layout"):
                 papal.validate_document({**self.doc, "compact_layout": bad}, self.root)
+
+    def test_selected_compact_margin_is_bounded_without_changing_source(self):
+        doc = papal.validate_document({**self.doc, "compact_layout": True, "compact_margin": 0.5}, self.root)
+        rendered = papal.render_tex(doc, self.manifest["revision"])
+        self.assertIn("margin=0.5in,columnsep=0.24in", rendered)
+        self.assertIn(r"\documentclass[10pt,twocolumn]{article}", rendered)
+        self.assertEqual(papal.render_body(doc), papal.render_body(papal.validate_document(self.doc, self.root)))
+        for bad in (0.4, 0.8, "0.5", True):
+            with self.assertRaisesRegex(papal.PapalTypesetError, "compact_margin"):
+                papal.validate_document({**doc, "compact_margin": bad}, self.root)
+        with self.assertRaisesRegex(papal.PapalTypesetError, "compact_margin"):
+            papal.validate_document({**doc, "compact_layout": False}, self.root)
 
     def test_local_index_escapes_metadata_and_never_invents_a_pdf_link(self):
         source = {**self.doc, "title": "<script>unsafe</script>"}
@@ -299,7 +477,7 @@ class ManifestTests(unittest.TestCase):
 
     @unittest.skipUnless(shutil.which("xelatex") and shutil.which("pdfinfo") and shutil.which("pdftotext"), "PDF toolchain unavailable")
     def test_compiled_greek_combining_mark_and_soft_hyphen_keep_logical_text(self):
-        self.payload = "Greek πάτερ and ἡμῶν, combining x̶ and Ssm̅um, retained Cyrillic aс, and prae\u00adpositi.\fContinuation after a page delimiter.\n"
+        self.payload = "Greek πάτερ and ἡμῶν, combining x̶ and Ssm̅um, retained Cyrillic aс, symbol ►, and prae\u00adpositi.\fContinuation after a page delimiter.\n"
         self.payload_path.write_text(self.payload, encoding="utf-8")
         self.doc["sha256"] = hashlib.sha256(self.payload.encode()).hexdigest()
         self.artifact.update(sha256=self.doc["sha256"], byte_size=len(self.payload.encode()))

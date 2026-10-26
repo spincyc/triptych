@@ -86,6 +86,24 @@ are recorded in `src/sources/papal-documents/validation-checkpoint.md`.
 Source reconstruction, all-page review, final selection and feature publication
 remain open.
 
+Recovery checkpoint, 2026-10-26: commits `ed833ea0a` and `6cbe1bd3f` are
+published on `origin/feature/encyclicals`. The later source plan selects 5,827
+readers after 710 exclusions, including 507 confirmed source-order withdrawals.
+Exact frozen receipts account for 5,826 successful PDFs and 11,697 pages, plus
+one failed long-token layout whose source-preserving repair passes independent
+PDF fidelity checks and awaits its canonical render selection. These build
+counts do not establish page-review acceptance or complete historical coverage.
+
+Current tooling records per-reader revisions, explicit corrections and
+withdrawals, and complete hash-bound page-review evidence. Independent review
+closed staged page-witness tampering, lost reviewed series discoveries,
+collection input overwrites and installer rollback failures. The installer
+retains exact release inputs and copies only current PASS bytes to the
+provider-neutral destination defined in `guidance/papal-documents.md`.
+Its first installation remains pending current evidence reconciliation.
+Additional sealed source admissions and the remaining PDF reviews remain
+active work; source-family review states are not promoted by these operations.
+
 ## GPT Last Things and next Sunday propers, 2026-10-25
 
 <!-- promised-deliverable: gpt-flt-and-sunday-2026-10-25 -->

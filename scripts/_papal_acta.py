@@ -35,6 +35,43 @@ LANGUAGES = {"la", "en", "it", "fr", "de", "es", "pt", "nl", "pl"}
 OCR_NOTE = "Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."
 
 
+def literal_act_date(clause: str) -> str | None:
+    """Parse complete day/year tokens in an already identified dating clause.
+
+    Keep lexical boundaries: deleting separators and matching [MDCLXVI]+ can
+    turn damaged MDCCCCTV into the valid prefix MDCCCC (1900). Never repair
+    missing letters, infer a year from the issuer, or search beyond this clause.
+    Additive historical numerals, including MDCCCCIV, remain admissible.
+    """
+    months = ("ianuarii", "februarii", "martii", "aprilis", "maii", "iunii",
+              "iulii", "augusti", "septembris", "octobris", "novembris", "decembris")
+    numeral = re.compile(r"M{0,4}(?:CM|CD|D?C{0,4})(?:XC|XL|L?X{0,4})(?:IX|IV|V?I{0,4})")
+    def number(token: str) -> int | None:
+        token = token.upper()
+        if token.isascii() and token.isdigit():
+            return int(token)
+        if not token or not numeral.fullmatch(token):
+            return None
+        values = {"M": 1000, "D": 500, "C": 100, "L": 50, "X": 10, "V": 5, "I": 1}
+        return sum(-values[c] if i + 1 < len(token) and values[c] < values[token[i+1]] else values[c]
+                   for i, c in enumerate(token))
+    # Read the entire whitespace/punctuation-delimited token, including damaged
+    # combining marks or OCR symbols. A \w boundary could still accept a Roman
+    # prefix before a combining accent or zero-width damaged glyph.
+    token = r"([^\s,;:.()\[\]]+)"
+    pattern = re.compile(r"\bdie\s+" + token + r"\s+(" + "|".join(months) + r")\s+(?:anno\s+)?" + token, re.I)
+    dates = []
+    for match in pattern.finditer(clause):
+        day, year = number(match[1]), number(match[3])
+        if day is None or year is None:
+            return None
+        try:
+            dates.append(dt.date(year, months.index(match[2].lower()) + 1, day).isoformat())
+        except ValueError:
+            return None
+    return dates[0] if dates and len(set(dates)) == 1 else None
+
+
 def sha(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 

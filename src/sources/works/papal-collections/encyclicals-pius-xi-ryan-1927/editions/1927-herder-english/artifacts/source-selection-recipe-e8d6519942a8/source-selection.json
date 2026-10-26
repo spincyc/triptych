@@ -1,0 +1,2794 @@
+{
+  "extent_reviews": {
+    "a": "review-a.json",
+    "b": "review-b.json",
+    "c": "review-c.json"
+  },
+  "line_map": "line-map.json",
+  "method": "Select exact inclusive LF line ranges from the whole raw OCR; omit only separately enumerated printed running headings/page labels and copy-specific furniture confirmed in the recorded reviews. Do not rewrite words, punctuation, lexical hyphens, notes, dates, headings or signatures.",
+  "schema": "triptych-english-act-selection/v1",
+  "source_ocr": "encyclicalsofpiu0000jame_djvu.txt",
+  "source_ocr_sha256": "7019568db20715af4e9d5a686f1b122af5e466d78744d07e6c6af26b4c9392d8",
+  "source_page_labels": "encyclicalsofpiu0000jame_page_numbers.json",
+  "source_pdf": "encyclicalsofpiu0000jame.pdf",
+  "source_xml": "encyclicalsofpiu0000jame_djvu.xml",
+  "units": [
+    {
+      "extent_limitation": "No substantive omission was found during complete raw-extent reading; this is not whole-text image or translation collation.",
+      "number": 1,
+      "omitted_lines": [
+        {
+          "artifact_page": 53,
+          "line": 1532,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "3 "
+        },
+        {
+          "artifact_page": 54,
+          "line": 1535,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "4 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 56,
+          "line": 1607,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "6 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 58,
+          "line": 1677,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "8 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 60,
+          "line": 1749,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "10 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 62,
+          "line": 1820,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "12 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 64,
+          "line": 1890,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "14 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 66,
+          "line": 1961,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "16 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 68,
+          "line": 2032,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "18 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 70,
+          "line": 2104,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "20 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 72,
+          "line": 2177,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "22 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 74,
+          "line": 2253,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "24 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 76,
+          "line": 2324,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "26 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 78,
+          "line": 2396,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "28 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 80,
+          "line": 2468,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "30 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 82,
+          "line": 2539,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "32 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 84,
+          "line": 2610,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "34 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 86,
+          "line": 2681,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "36 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 88,
+          "line": 2752,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "38 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 90,
+          "line": 2823,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "40 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 92,
+          "line": 2896,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "42 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 94,
+          "line": 2965,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "44 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 96,
+          "line": 3037,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "46 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 55,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 1572,
+          "text": "THE PEACE OF CHRIST 5 "
+        },
+        {
+          "artifact_page": 57,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 1641,
+          "text": "THE PEACE OF CHRIST 7 "
+        },
+        {
+          "artifact_page": 59,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 1713,
+          "text": "THE PEACE OF CHRIST 9 "
+        },
+        {
+          "artifact_page": 61,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 1784,
+          "text": "THE PEACE OF CHRIST 11 "
+        },
+        {
+          "artifact_page": 63,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 1855,
+          "text": "THE PEACE OF CHRIST 13 "
+        },
+        {
+          "artifact_page": 65,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 1925,
+          "text": "THE PEACE OF CHRIST 15 "
+        },
+        {
+          "artifact_page": 67,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 1997,
+          "text": "THE PEACE OF CHRIST 17 "
+        },
+        {
+          "artifact_page": 69,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 2069,
+          "text": "THE PEACE OF CHRIST 19 "
+        },
+        {
+          "artifact_page": 71,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 2140,
+          "text": "THE PEACE OF CHRIST lf "
+        },
+        {
+          "artifact_page": 73,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 2212,
+          "text": "THE PEACE OF CHRIST 23 "
+        },
+        {
+          "artifact_page": 75,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 2288,
+          "text": "THE PEACE OF CHRIST 25 "
+        },
+        {
+          "artifact_page": 77,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 2360,
+          "text": "THE PEACE OF CHRIST 2d "
+        },
+        {
+          "artifact_page": 79,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 2432,
+          "text": "THE PEACE OF CHRIST 29 "
+        },
+        {
+          "artifact_page": 81,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 2503,
+          "text": "THE PEACE OF CHRIST 31 "
+        },
+        {
+          "artifact_page": 83,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 2574,
+          "text": "THE PEACE OF CHRIST 33 "
+        },
+        {
+          "artifact_page": 85,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 2645,
+          "text": "THE PEACE OF CHRIST ~ 35. "
+        },
+        {
+          "artifact_page": 87,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 2716,
+          "text": "THE PEACE OF CHRIST 37 "
+        },
+        {
+          "artifact_page": 89,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 2788,
+          "text": "THE PEACE OF CHRIST 39 "
+        },
+        {
+          "artifact_page": 91,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 2859,
+          "text": "THE PEACE OF CHRIST 41 "
+        },
+        {
+          "artifact_page": 93,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 2930,
+          "text": "THE PEACE OF CHRIST 43 "
+        },
+        {
+          "artifact_page": 95,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 3001,
+          "text": "THE PEACE OF CHRIST 45 "
+        }
+      ],
+      "physical_line_ranges": [
+        [
+          1509,
+          1531
+        ],
+        [
+          1533,
+          1534
+        ],
+        [
+          1536,
+          1571
+        ],
+        [
+          1573,
+          1606
+        ],
+        [
+          1608,
+          1640
+        ],
+        [
+          1642,
+          1676
+        ],
+        [
+          1678,
+          1712
+        ],
+        [
+          1714,
+          1748
+        ],
+        [
+          1750,
+          1783
+        ],
+        [
+          1785,
+          1819
+        ],
+        [
+          1821,
+          1854
+        ],
+        [
+          1856,
+          1889
+        ],
+        [
+          1891,
+          1924
+        ],
+        [
+          1926,
+          1960
+        ],
+        [
+          1962,
+          1996
+        ],
+        [
+          1998,
+          2031
+        ],
+        [
+          2033,
+          2068
+        ],
+        [
+          2070,
+          2103
+        ],
+        [
+          2105,
+          2139
+        ],
+        [
+          2141,
+          2176
+        ],
+        [
+          2178,
+          2211
+        ],
+        [
+          2213,
+          2252
+        ],
+        [
+          2254,
+          2287
+        ],
+        [
+          2289,
+          2323
+        ],
+        [
+          2325,
+          2359
+        ],
+        [
+          2361,
+          2395
+        ],
+        [
+          2397,
+          2431
+        ],
+        [
+          2433,
+          2467
+        ],
+        [
+          2469,
+          2502
+        ],
+        [
+          2504,
+          2538
+        ],
+        [
+          2540,
+          2573
+        ],
+        [
+          2575,
+          2609
+        ],
+        [
+          2611,
+          2644
+        ],
+        [
+          2646,
+          2680
+        ],
+        [
+          2682,
+          2715
+        ],
+        [
+          2717,
+          2751
+        ],
+        [
+          2753,
+          2787
+        ],
+        [
+          2789,
+          2822
+        ],
+        [
+          2824,
+          2858
+        ],
+        [
+          2860,
+          2895
+        ],
+        [
+          2897,
+          2929
+        ],
+        [
+          2931,
+          2964
+        ],
+        [
+          2966,
+          3000
+        ],
+        [
+          3002,
+          3036
+        ],
+        [
+          3038,
+          3071
+        ]
+      ],
+      "raw_range": [
+        1509,
+        3071
+      ],
+      "segment_id": "segment.papal.pius-xi.hf-p-xi-enc-19221223-ubi-arcano-dei-consilio.1927-herder-ryan-english.ryan-english-transcription",
+      "work_id": "work.papal.pius-xi.hf-p-xi-enc-19221223-ubi-arcano-dei-consilio"
+    },
+    {
+      "extent_limitation": "No substantive omission was found during complete raw-extent reading; this is not whole-text image or translation collation.",
+      "number": 2,
+      "omitted_lines": [
+        {
+          "artifact_page": 98,
+          "line": 3106,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "48 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 100,
+          "line": 3177,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "50 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 102,
+          "line": 3248,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "52 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 104,
+          "line": 3317,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "54 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 106,
+          "line": 3389,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "56 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 108,
+          "line": 3468,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "58 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 110,
+          "line": 3539,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "60 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 112,
+          "line": 3610,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "62 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 114,
+          "line": 3681,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "64 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 116,
+          "line": 3754,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "66 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 118,
+          "line": 3825,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "68 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 99,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 3142,
+          "text": "ST. FRANCIS DE SALES 49 "
+        },
+        {
+          "artifact_page": 101,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 3212,
+          "text": "ST. FRANCIS DE SALES 51 "
+        },
+        {
+          "artifact_page": 103,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 3283,
+          "text": "ST. FRANCIS DE SALES — 53 "
+        },
+        {
+          "artifact_page": 105,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 3353,
+          "text": "ST. FRANCIS DE SALES 55 "
+        },
+        {
+          "artifact_page": 107,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 3428,
+          "text": "sf. FRANCIS DE SALES 57 "
+        },
+        {
+          "artifact_page": 109,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 3503,
+          "text": "ST.\\ FRANCIS DE SALES 59 "
+        },
+        {
+          "artifact_page": 111,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 3575,
+          "text": "ST. FRANCIS DE SALES Mis p "
+        },
+        {
+          "artifact_page": 113,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 3646,
+          "text": "ST. FRANCIS DE SALES 63 "
+        },
+        {
+          "artifact_page": 115,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 3718,
+          "text": "ST. FRANCIS DE SALES 65 "
+        },
+        {
+          "artifact_page": 117,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 3789,
+          "text": "ST. FRANCIS DE SALES 67 "
+        },
+        {
+          "artifact_page": 119,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 3861,
+          "text": "ST. FRANCIS DE SALES 69 "
+        }
+      ],
+      "physical_line_ranges": [
+        [
+          3074,
+          3105
+        ],
+        [
+          3107,
+          3141
+        ],
+        [
+          3143,
+          3176
+        ],
+        [
+          3178,
+          3211
+        ],
+        [
+          3213,
+          3247
+        ],
+        [
+          3249,
+          3282
+        ],
+        [
+          3284,
+          3316
+        ],
+        [
+          3318,
+          3352
+        ],
+        [
+          3354,
+          3388
+        ],
+        [
+          3390,
+          3427
+        ],
+        [
+          3429,
+          3467
+        ],
+        [
+          3469,
+          3502
+        ],
+        [
+          3504,
+          3538
+        ],
+        [
+          3540,
+          3574
+        ],
+        [
+          3576,
+          3609
+        ],
+        [
+          3611,
+          3645
+        ],
+        [
+          3647,
+          3680
+        ],
+        [
+          3682,
+          3717
+        ],
+        [
+          3719,
+          3753
+        ],
+        [
+          3755,
+          3788
+        ],
+        [
+          3790,
+          3824
+        ],
+        [
+          3826,
+          3860
+        ],
+        [
+          3862,
+          3882
+        ]
+      ],
+      "raw_range": [
+        3074,
+        3882
+      ],
+      "segment_id": "segment.papal.pius-xi.hf-p-xi-enc-26011923-rerum-omnium-perturbationem.1927-herder-ryan-english.ryan-english-transcription",
+      "work_id": "work.papal.pius-xi.hf-p-xi-enc-26011923-rerum-omnium-perturbationem"
+    },
+    {
+      "extent_limitation": "The historical translator omits the appended prayer to St. Thomas.",
+      "number": 3,
+      "omitted_lines": [
+        {
+          "artifact_page": 120,
+          "line": 3917,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "70 "
+        },
+        {
+          "artifact_page": 122,
+          "line": 3955,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "72 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 124,
+          "line": 4026,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "74 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 126,
+          "line": 4094,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "76 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 128,
+          "line": 4163,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "78 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 130,
+          "line": 4239,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "80 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 132,
+          "line": 4308,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "82 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 134,
+          "line": 4387,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "84 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 136,
+          "line": 4479,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "86 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 138,
+          "line": 4549,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "88 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 140,
+          "line": 4625,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "90 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 142,
+          "line": 4694,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "92 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 144,
+          "line": 4764,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "94 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 146,
+          "line": 4840,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "96 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 148,
+          "line": 4915,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "98 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 121,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 3920,
+          "text": "CANONIZATION OF ST. THOMAS 71 "
+        },
+        {
+          "artifact_page": 123,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 3991,
+          "text": "CANONIZATION OF ST. THOMAS 73 "
+        },
+        {
+          "artifact_page": 125,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 4060,
+          "text": "CANONIZATION OF ST. THOMAS 75 "
+        },
+        {
+          "artifact_page": 127,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 4128,
+          "text": "CANONIZATION OF ST. THOMAS ae "
+        },
+        {
+          "artifact_page": 129,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 4202,
+          "text": "CANONIZATION OF ST. THOMAS 79 "
+        },
+        {
+          "artifact_page": 131,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 4274,
+          "text": "CANONIZATION OF ST. THOMAS 81 "
+        },
+        {
+          "artifact_page": 133,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 4351,
+          "text": "CANONIZATION OF ST. THOMAS _ 83 "
+        },
+        {
+          "artifact_page": 135,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 4444,
+          "text": "CANONIZATION OF ST. THOMAS 85 "
+        },
+        {
+          "artifact_page": 137,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 4514,
+          "text": "CANONIZATION OF ST. THOMAS 87 "
+        },
+        {
+          "artifact_page": 139,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 4590,
+          "text": "CANONIZATION OF ST. THOMAS 89 "
+        },
+        {
+          "artifact_page": 141,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 4660,
+          "text": "CANONIZATION OF ST. THOMAS 91 "
+        },
+        {
+          "artifact_page": 143,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 4729,
+          "text": "CANONIZATION OF ST. THOMAS 93 "
+        },
+        {
+          "artifact_page": 145,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 4799,
+          "text": "CANONIZATION OF ST. THOMAS 95 "
+        },
+        {
+          "artifact_page": 147,
+          "classification": "printed running header identified by exact repeated chapter heading and page-boundary context",
+          "image_collated": false,
+          "line": 4878,
+          "text": "CANONIZATION OF ST. THOMAS 97 "
+        }
+      ],
+      "physical_line_ranges": [
+        [
+          3885,
+          3916
+        ],
+        [
+          3918,
+          3919
+        ],
+        [
+          3921,
+          3954
+        ],
+        [
+          3956,
+          3990
+        ],
+        [
+          3992,
+          4025
+        ],
+        [
+          4027,
+          4059
+        ],
+        [
+          4061,
+          4093
+        ],
+        [
+          4095,
+          4127
+        ],
+        [
+          4129,
+          4162
+        ],
+        [
+          4164,
+          4201
+        ],
+        [
+          4203,
+          4238
+        ],
+        [
+          4240,
+          4273
+        ],
+        [
+          4275,
+          4307
+        ],
+        [
+          4309,
+          4350
+        ],
+        [
+          4352,
+          4386
+        ],
+        [
+          4388,
+          4443
+        ],
+        [
+          4445,
+          4478
+        ],
+        [
+          4480,
+          4513
+        ],
+        [
+          4515,
+          4548
+        ],
+        [
+          4550,
+          4589
+        ],
+        [
+          4591,
+          4624
+        ],
+        [
+          4626,
+          4659
+        ],
+        [
+          4661,
+          4693
+        ],
+        [
+          4695,
+          4728
+        ],
+        [
+          4730,
+          4763
+        ],
+        [
+          4765,
+          4798
+        ],
+        [
+          4800,
+          4839
+        ],
+        [
+          4841,
+          4877
+        ],
+        [
+          4879,
+          4914
+        ],
+        [
+          4916,
+          4927
+        ]
+      ],
+      "raw_range": [
+        3885,
+        4927
+      ],
+      "segment_id": "segment.papal.pius-xi.hf-p-xi-enc-19230629-studiorum-ducem.1927-herder-ryan-english.ryan-english-transcription",
+      "work_id": "work.papal.pius-xi.hf-p-xi-enc-19230629-studiorum-ducem"
+    },
+    {
+      "extent_limitation": "No substantive omission was found during complete raw-extent reading; this is not whole-text image or translation collation.",
+      "number": 4,
+      "omitted_lines": [
+        {
+          "artifact_page": 149,
+          "line": 4962,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "99 "
+        },
+        {
+          "artifact_page": 150,
+          "line": 4965,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "100 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 154,
+          "line": 5108,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "104 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 156,
+          "line": 5177,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "106 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 158,
+          "line": 5247,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "108 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 160,
+          "line": 5316,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "110 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 151,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 5001,
+          "printed_page": "101",
+          "text": "ST. JOSAPHAT 101 "
+        },
+        {
+          "artifact_page": 152,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 5037,
+          "printed_page": "102",
+          "text": "102. THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 153,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 5072,
+          "printed_page": "103",
+          "text": "ST. JOSAPHAT 103 "
+        },
+        {
+          "artifact_page": 155,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 5143,
+          "printed_page": "105",
+          "text": "ST. JOSAPHAT 105 "
+        },
+        {
+          "artifact_page": 157,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 5212,
+          "printed_page": "107",
+          "text": "ST. JOSAPHAT 107 "
+        },
+        {
+          "artifact_page": 159,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 5282,
+          "printed_page": "109",
+          "text": "ST. JOSAPHAT 109 "
+        },
+        {
+          "artifact_page": 161,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 5352,
+          "printed_page": "111",
+          "text": "ST. JOSAPHAT 111 "
+        },
+        {
+          "artifact_page": 162,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 5388,
+          "printed_page": "112",
+          "text": "112. » THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 163,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 5425,
+          "printed_page": "113",
+          "text": "ST. JOSAPHAT — Hf eS "
+        },
+        {
+          "artifact_page": 164,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 5460,
+          "printed_page": "114",
+          "text": "114. THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 165,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 5495,
+          "printed_page": "115",
+          "text": "ST. JOSAPHAT 115 "
+        }
+      ],
+      "physical_line_ranges": [
+        [
+          4930,
+          4961
+        ],
+        [
+          4963,
+          4964
+        ],
+        [
+          4966,
+          5000
+        ],
+        [
+          5002,
+          5036
+        ],
+        [
+          5038,
+          5071
+        ],
+        [
+          5073,
+          5107
+        ],
+        [
+          5109,
+          5142
+        ],
+        [
+          5144,
+          5176
+        ],
+        [
+          5178,
+          5211
+        ],
+        [
+          5213,
+          5246
+        ],
+        [
+          5248,
+          5281
+        ],
+        [
+          5283,
+          5315
+        ],
+        [
+          5317,
+          5351
+        ],
+        [
+          5353,
+          5387
+        ],
+        [
+          5389,
+          5424
+        ],
+        [
+          5426,
+          5459
+        ],
+        [
+          5461,
+          5494
+        ],
+        [
+          5496,
+          5512
+        ]
+      ],
+      "raw_range": [
+        4930,
+        5512
+      ],
+      "segment_id": "segment.papal.pius-xi.hf-p-xi-enc-19231112-ecclesiam-dei.1927-herder-ryan-english.ryan-english-transcription",
+      "work_id": "work.papal.pius-xi.hf-p-xi-enc-19231112-ecclesiam-dei"
+    },
+    {
+      "extent_limitation": "The historical translator omits the accompanying diocesan-association regulations.",
+      "number": 5,
+      "omitted_lines": [
+        {
+          "artifact_page": 166,
+          "line": 5547,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "116 "
+        },
+        {
+          "artifact_page": 168,
+          "line": 5585,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "118 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 170,
+          "line": 5656,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "120 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 176,
+          "line": 5880,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "126 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 178,
+          "line": 5953,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "128 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 167,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 5550,
+          "printed_page": "117",
+          "text": "FRENCH DIOCESAN ASSOCIATIONS 117 "
+        },
+        {
+          "artifact_page": 169,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 5620,
+          "printed_page": "119",
+          "text": "FRENCH DIOCESAN ASSOCIATIONS _ 119 "
+        },
+        {
+          "artifact_page": 171,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 5693,
+          "printed_page": "121",
+          "text": "FRENCH DIOCESAN ASSOCIATIONS 121 "
+        },
+        {
+          "artifact_page": 172,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 5733,
+          "printed_page": "122",
+          "text": "122. THE ENCYCLICALS OF PIUS XI | "
+        },
+        {
+          "artifact_page": 173,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 5771,
+          "printed_page": "123",
+          "text": "FRENCH DIOCESAN ASSOCIATIONS 123 "
+        },
+        {
+          "artifact_page": 174,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 5807,
+          "printed_page": "124",
+          "text": "124. THE ENCYCLICALS OF PIUS XI t "
+        },
+        {
+          "artifact_page": 175,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 5843,
+          "printed_page": "125",
+          "text": "FRENCH DIOCESAN ASSOCIATIONS 125 "
+        },
+        {
+          "artifact_page": 177,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 5918,
+          "printed_page": "127",
+          "text": "FRENCH DIOCESAN ASSOCIATIONS 127 "
+        }
+      ],
+      "physical_line_ranges": [
+        [
+          5515,
+          5546
+        ],
+        [
+          5548,
+          5549
+        ],
+        [
+          5551,
+          5584
+        ],
+        [
+          5586,
+          5619
+        ],
+        [
+          5621,
+          5655
+        ],
+        [
+          5657,
+          5692
+        ],
+        [
+          5694,
+          5732
+        ],
+        [
+          5734,
+          5770
+        ],
+        [
+          5772,
+          5806
+        ],
+        [
+          5808,
+          5842
+        ],
+        [
+          5844,
+          5879
+        ],
+        [
+          5881,
+          5917
+        ],
+        [
+          5919,
+          5952
+        ],
+        [
+          5954,
+          5975
+        ]
+      ],
+      "raw_range": [
+        5515,
+        5975
+      ],
+      "segment_id": "segment.papal.pius-xi.hf-p-xi-enc-18011924-maximam-gravissimamque.1927-herder-ryan-english.ryan-english-transcription",
+      "work_id": "work.papal.pius-xi.hf-p-xi-enc-18011924-maximam-gravissimamque"
+    },
+    {
+      "extent_limitation": "No substantive omission was found during complete raw-extent reading; this is not whole-text image or translation collation.",
+      "number": 6,
+      "omitted_lines": [
+        {
+          "artifact_page": 179,
+          "line": 6011,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "129 "
+        },
+        {
+          "artifact_page": 180,
+          "line": 6014,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "130 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 182,
+          "line": 6089,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "132 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 186,
+          "line": 6251,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "136 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 190,
+          "line": 6393,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "140 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 192,
+          "line": 6462,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "142 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 196,
+          "line": 6604,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "146 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 198,
+          "line": 6674,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "148 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 200,
+          "line": 6745,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "150 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 206,
+          "line": 6959,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "156 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 181,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 6050,
+          "printed_page": "131",
+          "text": "FEAST OF JESUS CHRIST, KING 131 "
+        },
+        {
+          "artifact_page": 183,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 6130,
+          "printed_page": "133",
+          "text": "FEAST OF JESUS CHRIST, KING — 133 "
+        },
+        {
+          "artifact_page": 184,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 6181,
+          "printed_page": "134",
+          "text": "134. THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 185,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 6216,
+          "printed_page": "135",
+          "text": "FEAST OF JESUS CHRIST, KING 135 "
+        },
+        {
+          "artifact_page": 187,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 6286,
+          "printed_page": "137",
+          "text": "FEAST OF JESUS CHRIST, KING 137 "
+        },
+        {
+          "artifact_page": 188,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 6322,
+          "printed_page": "138",
+          "text": "138 THE ENCYCLICALS OF PIUS,/XI "
+        },
+        {
+          "artifact_page": 189,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 6357,
+          "printed_page": "139",
+          "text": "FEAST OF JESUS CHRIST, KING = 139 "
+        },
+        {
+          "artifact_page": 191,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 6427,
+          "printed_page": "141",
+          "text": "FEAST OF JESUS CHRIST, KING 141 "
+        },
+        {
+          "artifact_page": 193,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 6497,
+          "printed_page": "143",
+          "text": "FEAST OF JESUS CHRIST, KING 143 "
+        },
+        {
+          "artifact_page": 194,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 6532,
+          "printed_page": "144",
+          "text": "144. THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 195,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 6568,
+          "printed_page": "145",
+          "text": "FEAST OF JESUS CHRIST, KING 145 "
+        },
+        {
+          "artifact_page": 197,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 6639,
+          "printed_page": "147",
+          "text": "FEAST OF JESUS CHRIST, KING 147 "
+        },
+        {
+          "artifact_page": 199,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 6709,
+          "printed_page": "149",
+          "text": "FEAST OF JESUS CHRIST, KING 149° "
+        },
+        {
+          "artifact_page": 201,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 6780,
+          "printed_page": "151",
+          "text": "FEAST OF JESUS CHRIST, KING 151 "
+        },
+        {
+          "artifact_page": 202,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 6814,
+          "printed_page": "152",
+          "text": "152. THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 203,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 6853,
+          "printed_page": "153",
+          "text": "FEAST OF JESUS CHRIST, KING 153 "
+        },
+        {
+          "artifact_page": 204,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 6888,
+          "printed_page": "154",
+          "text": "154 ‘THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 205,
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed.",
+          "kind": "printed-running-header",
+          "line": 6924,
+          "printed_page": "155",
+          "text": "FEAST OF JESUS CHRIST, KING 155 "
+        },
+        {
+          "artifact_page": 183,
+          "basis": "Native facsimile artifact page183 individually inspected through tools/pdf-review: library stamp is above the printed header; these bottom noise lines have no printed body counterpart.",
+          "kind": "copy-specific-library-stamp",
+          "line": 6127,
+          "printed_page": "133",
+          "text": "ST. ALBERT’S COLLEGE LIBRARY "
+        },
+        {
+          "artifact_page": 183,
+          "basis": "Native facsimile artifact page183 individually inspected through tools/pdf-review: library stamp is above the printed header; these bottom noise lines have no printed body counterpart.",
+          "kind": "non-body-recognition-noise",
+          "line": 6175,
+          "printed_page": "133",
+          "text": "jp lw pee "
+        },
+        {
+          "artifact_page": 183,
+          "basis": "Native facsimile artifact page183 individually inspected through tools/pdf-review: library stamp is above the printed header; these bottom noise lines have no printed body counterpart.",
+          "kind": "non-body-recognition-noise",
+          "line": 6178,
+          "printed_page": "133",
+          "text": "can "
+        }
+      ],
+      "physical_line_ranges": [
+        [
+          5978,
+          6010
+        ],
+        [
+          6012,
+          6013
+        ],
+        [
+          6015,
+          6049
+        ],
+        [
+          6051,
+          6088
+        ],
+        [
+          6090,
+          6126
+        ],
+        [
+          6128,
+          6129
+        ],
+        [
+          6131,
+          6174
+        ],
+        [
+          6176,
+          6177
+        ],
+        [
+          6179,
+          6180
+        ],
+        [
+          6182,
+          6215
+        ],
+        [
+          6217,
+          6250
+        ],
+        [
+          6252,
+          6285
+        ],
+        [
+          6287,
+          6321
+        ],
+        [
+          6323,
+          6356
+        ],
+        [
+          6358,
+          6392
+        ],
+        [
+          6394,
+          6426
+        ],
+        [
+          6428,
+          6461
+        ],
+        [
+          6463,
+          6496
+        ],
+        [
+          6498,
+          6531
+        ],
+        [
+          6533,
+          6567
+        ],
+        [
+          6569,
+          6603
+        ],
+        [
+          6605,
+          6638
+        ],
+        [
+          6640,
+          6673
+        ],
+        [
+          6675,
+          6708
+        ],
+        [
+          6710,
+          6744
+        ],
+        [
+          6746,
+          6779
+        ],
+        [
+          6781,
+          6813
+        ],
+        [
+          6815,
+          6852
+        ],
+        [
+          6854,
+          6887
+        ],
+        [
+          6889,
+          6923
+        ],
+        [
+          6925,
+          6958
+        ],
+        [
+          6960,
+          6975
+        ]
+      ],
+      "raw_range": [
+        5978,
+        6975
+      ],
+      "segment_id": "segment.pius-xi.quas-primas.1927-herder-ryan-english.ryan-english-transcription",
+      "work_id": "work.pius-xi.quas-primas"
+    },
+    {
+      "extent_limitation": "No substantive omission was found during complete raw-extent reading; this is not whole-text image or translation collation.",
+      "number": 7,
+      "omitted_lines": [
+        {
+          "artifact_page": 207,
+          "line": 7007,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "157 "
+        },
+        {
+          "artifact_page": 208,
+          "line": 7010,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "158 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 210,
+          "line": 7080,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "160 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 212,
+          "line": 7154,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "162 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 214,
+          "line": 7224,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "164 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 216,
+          "line": 7299,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "166 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 218,
+          "line": 7374,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "168 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 220,
+          "line": 7443,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "170 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 222,
+          "line": 7514,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "172 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 226,
+          "line": 7655,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "176 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 228,
+          "line": 7724,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "178 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 230,
+          "line": 7792,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "180 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 232,
+          "line": 7865,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "182 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 234,
+          "line": 7942,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "184 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 236,
+          "line": 8016,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "186 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 238,
+          "line": 8086,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "188 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 209,
+          "line": 7045,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "CATHOLIC MISSIONS 159 "
+        },
+        {
+          "artifact_page": 211,
+          "line": 7115,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "CATHOLIC MISSIONS 161 "
+        },
+        {
+          "artifact_page": 213,
+          "line": 7189,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "CATHOLIC MISSIONS 163 "
+        },
+        {
+          "artifact_page": 215,
+          "line": 7259,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "CATHOLIC MISSIONS 165 "
+        },
+        {
+          "artifact_page": 217,
+          "line": 7335,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "CATHOLIC MISSIONS 167 "
+        },
+        {
+          "artifact_page": 219,
+          "line": 7408,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "CATHOLIC MISSIONS 169 "
+        },
+        {
+          "artifact_page": 221,
+          "line": 7478,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "CATHOLIC MISSIONS 171 "
+        },
+        {
+          "artifact_page": 223,
+          "line": 7550,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "CATHOLIC MISSIONS re eae "
+        },
+        {
+          "artifact_page": 224,
+          "line": 7584,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "174. THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 225,
+          "line": 7619,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "CATHOLIC MISSIONS 175 "
+        },
+        {
+          "artifact_page": 227,
+          "line": 7690,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "CATHOLIC MISSIONS 177 "
+        },
+        {
+          "artifact_page": 229,
+          "line": 7758,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "CATHOLIC MISSIONS 179 "
+        },
+        {
+          "artifact_page": 231,
+          "line": 7827,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "CATHOLIC MISSIONS 181 "
+        },
+        {
+          "artifact_page": 233,
+          "line": 7903,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "CATHOLIC MISSIONS 183 "
+        },
+        {
+          "artifact_page": 235,
+          "line": 7977,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "CATHOLIC MISSIONS 185 "
+        },
+        {
+          "artifact_page": 237,
+          "line": 8050,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "CATHOLIC MISSIONS 187 "
+        }
+      ],
+      "physical_line_ranges": [
+        [
+          6978,
+          7006
+        ],
+        [
+          7008,
+          7009
+        ],
+        [
+          7011,
+          7044
+        ],
+        [
+          7046,
+          7079
+        ],
+        [
+          7081,
+          7114
+        ],
+        [
+          7116,
+          7153
+        ],
+        [
+          7155,
+          7188
+        ],
+        [
+          7190,
+          7223
+        ],
+        [
+          7225,
+          7258
+        ],
+        [
+          7260,
+          7298
+        ],
+        [
+          7300,
+          7334
+        ],
+        [
+          7336,
+          7373
+        ],
+        [
+          7375,
+          7407
+        ],
+        [
+          7409,
+          7442
+        ],
+        [
+          7444,
+          7477
+        ],
+        [
+          7479,
+          7513
+        ],
+        [
+          7515,
+          7549
+        ],
+        [
+          7551,
+          7583
+        ],
+        [
+          7585,
+          7618
+        ],
+        [
+          7620,
+          7654
+        ],
+        [
+          7656,
+          7689
+        ],
+        [
+          7691,
+          7723
+        ],
+        [
+          7725,
+          7757
+        ],
+        [
+          7759,
+          7791
+        ],
+        [
+          7793,
+          7826
+        ],
+        [
+          7828,
+          7864
+        ],
+        [
+          7866,
+          7902
+        ],
+        [
+          7904,
+          7941
+        ],
+        [
+          7943,
+          7976
+        ],
+        [
+          7978,
+          8015
+        ],
+        [
+          8017,
+          8049
+        ],
+        [
+          8051,
+          8085
+        ],
+        [
+          8087,
+          8101
+        ]
+      ],
+      "raw_range": [
+        6978,
+        8101
+      ],
+      "segment_id": "segment.papal.pius-xi.hf-p-xi-enc-19260228-rerum-ecclesiae.1927-herder-ryan-english.ryan-english-transcription",
+      "work_id": "work.papal.pius-xi.hf-p-xi-enc-19260228-rerum-ecclesiae"
+    },
+    {
+      "extent_limitation": "No substantive omission was found during complete raw-extent reading; this is not whole-text image or translation collation.",
+      "number": 8,
+      "omitted_lines": [
+        {
+          "artifact_page": 239,
+          "line": 8136,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "189 "
+        },
+        {
+          "artifact_page": 240,
+          "line": 8139,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "190 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 242,
+          "line": 8210,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "192 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 244,
+          "line": 8280,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "194 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 246,
+          "line": 8348,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "196 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 248,
+          "line": 8418,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "198 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 250,
+          "line": 8489,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "200 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 252,
+          "line": 8561,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "202 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 254,
+          "line": 8631,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "204 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 256,
+          "line": 8704,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "206 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 260,
+          "line": 8845,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "210 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 268,
+          "line": 9128,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "218 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 270,
+          "line": 9197,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "220 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 272,
+          "line": 9267,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "222 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 241,
+          "line": 8174,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "ST. FRANCIS OF ASSISI 191 "
+        },
+        {
+          "artifact_page": 243,
+          "line": 8245,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "ST. FRANCIS OF ASSISI 193 "
+        },
+        {
+          "artifact_page": 245,
+          "line": 8314,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "ST. FRANCIS OF ASSISI 195 "
+        },
+        {
+          "artifact_page": 247,
+          "line": 8384,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "ST. FRANCIS OF ASSISI 197 "
+        },
+        {
+          "artifact_page": 249,
+          "line": 8455,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "ST. FRANCIS OF ASSISI 199 "
+        },
+        {
+          "artifact_page": 251,
+          "line": 8525,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "ST. FRANCIS OF ASSISI 201 "
+        },
+        {
+          "artifact_page": 253,
+          "line": 8596,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "ST. FRANCIS OF ASSISI 203 "
+        },
+        {
+          "artifact_page": 255,
+          "line": 8669,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "ST. FRANCIS OF ASSISI 205 "
+        },
+        {
+          "artifact_page": 257,
+          "line": 8739,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "ST. FRANCIS OF ASSISI 207 "
+        },
+        {
+          "artifact_page": 258,
+          "line": 8775,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "208  ##THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 259,
+          "line": 8810,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "ST. FRANCIS OF ASSISI 209 "
+        },
+        {
+          "artifact_page": 261,
+          "line": 8881,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "ST. FRANCIS OF ASSISI 7 | "
+        },
+        {
+          "artifact_page": 262,
+          "line": 8916,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "212. THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 263,
+          "line": 8952,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "ST. FRANCIS OF ASSISI 213 "
+        },
+        {
+          "artifact_page": 264,
+          "line": 8986,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "214. THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 265,
+          "line": 9021,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "ST. FRANCIS OF ASSISI 215 "
+        },
+        {
+          "artifact_page": 266,
+          "line": 9057,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "216 THE ENCYCLICALS OF PIUS XI © "
+        },
+        {
+          "artifact_page": 267,
+          "line": 9092,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "ST. FRANCIS OF ASSISI 217 "
+        },
+        {
+          "artifact_page": 269,
+          "line": 9162,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "ST. FRANCIS OF ASSISI 219 "
+        },
+        {
+          "artifact_page": 271,
+          "line": 9233,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "ST. FRANCIS OF ASSISI 221 "
+        },
+        {
+          "artifact_page": 273,
+          "line": 9302,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "ST. FRANCIS OF ASSISI 223 "
+        },
+        {
+          "artifact_page": 274,
+          "line": 9338,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": ". 224 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 275,
+          "line": 9373,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "ST. FRANCIS OF ASSISI 225 "
+        }
+      ],
+      "physical_line_ranges": [
+        [
+          8104,
+          8135
+        ],
+        [
+          8137,
+          8138
+        ],
+        [
+          8140,
+          8173
+        ],
+        [
+          8175,
+          8209
+        ],
+        [
+          8211,
+          8244
+        ],
+        [
+          8246,
+          8279
+        ],
+        [
+          8281,
+          8313
+        ],
+        [
+          8315,
+          8347
+        ],
+        [
+          8349,
+          8383
+        ],
+        [
+          8385,
+          8417
+        ],
+        [
+          8419,
+          8454
+        ],
+        [
+          8456,
+          8488
+        ],
+        [
+          8490,
+          8524
+        ],
+        [
+          8526,
+          8560
+        ],
+        [
+          8562,
+          8595
+        ],
+        [
+          8597,
+          8630
+        ],
+        [
+          8632,
+          8668
+        ],
+        [
+          8670,
+          8703
+        ],
+        [
+          8705,
+          8738
+        ],
+        [
+          8740,
+          8774
+        ],
+        [
+          8776,
+          8809
+        ],
+        [
+          8811,
+          8844
+        ],
+        [
+          8846,
+          8880
+        ],
+        [
+          8882,
+          8915
+        ],
+        [
+          8917,
+          8951
+        ],
+        [
+          8953,
+          8985
+        ],
+        [
+          8987,
+          9020
+        ],
+        [
+          9022,
+          9056
+        ],
+        [
+          9058,
+          9091
+        ],
+        [
+          9093,
+          9127
+        ],
+        [
+          9129,
+          9161
+        ],
+        [
+          9163,
+          9196
+        ],
+        [
+          9198,
+          9232
+        ],
+        [
+          9234,
+          9266
+        ],
+        [
+          9268,
+          9301
+        ],
+        [
+          9303,
+          9337
+        ],
+        [
+          9339,
+          9372
+        ],
+        [
+          9374,
+          9399
+        ]
+      ],
+      "raw_range": [
+        8104,
+        9399
+      ],
+      "segment_id": "segment.papal.pius-xi.hf-p-xi-enc-19260430-rite-expiatis.1927-herder-ryan-english.ryan-english-transcription",
+      "work_id": "work.papal.pius-xi.hf-p-xi-enc-19260430-rite-expiatis"
+    },
+    {
+      "extent_limitation": "No substantive omission was found during complete raw-extent reading; this is not whole-text image or translation collation.",
+      "number": 9,
+      "omitted_lines": [
+        {
+          "artifact_page": 276,
+          "line": 9435,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "226 "
+        },
+        {
+          "artifact_page": 278,
+          "line": 9473,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "228 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 280,
+          "line": 9544,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "230 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 288,
+          "line": 9838,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "238 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 290,
+          "line": 9911,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "240 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 294,
+          "line": 10052,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "244 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 296,
+          "line": 10122,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "246 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 298,
+          "line": 10197,
+          "reason": "isolated printed running header or page number at page margin",
+          "text": "248 THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 277,
+          "line": 9438,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "PERSECUTION OF MEXICAN CHURCH 227 "
+        },
+        {
+          "artifact_page": 279,
+          "line": 9509,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "PERSECUTION OF MEXICAN CHURCH 229 "
+        },
+        {
+          "artifact_page": 281,
+          "line": 9579,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "PERSECUTION OF MEXICAN CHURCH 231 "
+        },
+        {
+          "artifact_page": 282,
+          "line": 9614,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "232. THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 283,
+          "line": 9652,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "PERSECUTION OF MEXICAN CHURCH 233 "
+        },
+        {
+          "artifact_page": 284,
+          "line": 9687,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "234. THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 285,
+          "line": 9727,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "PERSECUTION OF MEXICAN CHURCH 235 "
+        },
+        {
+          "artifact_page": 286,
+          "line": 9762,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "236  #THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 287,
+          "line": 9797,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "PERSECUTION OF MEXICAN CHURCH 237 "
+        },
+        {
+          "artifact_page": 289,
+          "line": 9876,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "PERSECUTION OF MEXICAN CHURCH § 239 "
+        },
+        {
+          "artifact_page": 291,
+          "line": 9946,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "PERSECUTION OF MEXICAN CHURCH 241 "
+        },
+        {
+          "artifact_page": 292,
+          "line": 9981,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "242. THE ENCYCLICALS OF PIUS XI "
+        },
+        {
+          "artifact_page": 293,
+          "line": 10016,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "PERSECUTION OF MEXICAN CHURCH 243 "
+        },
+        {
+          "artifact_page": 295,
+          "line": 10088,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "PERSECUTION OF MEXICAN CHURCH 245 "
+        },
+        {
+          "artifact_page": 297,
+          "line": 10158,
+          "reason": "alternate act-title running heading or OCR-damaged book-title running heading at page top; exact raw line, no source word replacement",
+          "text": "PERSECUTION OF MEXICAN CHURCH 247 "
+        },
+        {
+          "line": 9649,
+          "reason": "Copy-specific St. Albert’s College Library stamp; native artifact page 283 visually checked in extent-c/native-stamp-proof.json.",
+          "text": "ST, ALBERT’S COLLEGE LIBRARY "
+        }
+      ],
+      "physical_line_ranges": [
+        [
+          9402,
+          9434
+        ],
+        [
+          9436,
+          9437
+        ],
+        [
+          9439,
+          9472
+        ],
+        [
+          9474,
+          9508
+        ],
+        [
+          9510,
+          9543
+        ],
+        [
+          9545,
+          9578
+        ],
+        [
+          9580,
+          9613
+        ],
+        [
+          9615,
+          9648
+        ],
+        [
+          9650,
+          9651
+        ],
+        [
+          9653,
+          9686
+        ],
+        [
+          9688,
+          9726
+        ],
+        [
+          9728,
+          9761
+        ],
+        [
+          9763,
+          9796
+        ],
+        [
+          9798,
+          9837
+        ],
+        [
+          9839,
+          9875
+        ],
+        [
+          9877,
+          9910
+        ],
+        [
+          9912,
+          9945
+        ],
+        [
+          9947,
+          9980
+        ],
+        [
+          9982,
+          10015
+        ],
+        [
+          10017,
+          10051
+        ],
+        [
+          10053,
+          10087
+        ],
+        [
+          10089,
+          10121
+        ],
+        [
+          10123,
+          10157
+        ],
+        [
+          10159,
+          10196
+        ],
+        [
+          10198,
+          10228
+        ]
+      ],
+      "raw_range": [
+        9402,
+        10228
+      ],
+      "segment_id": "segment.papal.pius-xi.hf-p-xi-enc-18111926-iniquis-afflictisque.1927-herder-ryan-english.ryan-english-transcription",
+      "work_id": "work.papal.pius-xi.hf-p-xi-enc-18111926-iniquis-afflictisque"
+    }
+  ]
+}

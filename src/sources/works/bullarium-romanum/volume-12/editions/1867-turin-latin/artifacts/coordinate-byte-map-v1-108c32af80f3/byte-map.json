@@ -1,0 +1,45 @@
+{
+  "chunks": [
+    {
+      "kind": "copied-raw-ocr",
+      "output_byte_range_0": [
+        0,
+        2099279
+      ],
+      "sha256": "44cad910873f30b7b1dde93d04957c033ecf4db501e29c874ab3155a9637267f",
+      "source_byte_range_0": [
+        0,
+        2099279
+      ]
+    },
+    {
+      "kind": "reviewed-page-serialization",
+      "leaf": 495,
+      "output_byte_range_0": [
+        2099279,
+        2103610
+      ],
+      "output_sha256": "91be79234c7bf2e4d00c4616dea4b850192f1dac4d6cff8f8b67f34ddccf43b6",
+      "source_byte_range_0": [
+        2099279,
+        2103720
+      ],
+      "source_sha256": "c199392fe4043e4f6dc20822be08976cbf6d2e19f7bd020a7900666489581fd8"
+    },
+    {
+      "kind": "copied-raw-ocr",
+      "output_byte_range_0": [
+        2103610,
+        3890510
+      ],
+      "sha256": "884e113d7bad9cf6ed39267193fe36276173781c28224f21aabdf421b6259397",
+      "source_byte_range_0": [
+        2103720,
+        3890620
+      ]
+    }
+  ],
+  "output_sha256": "e69d188972ee07a5bead29e71447e68ec671ba2830e377ab4d254e4ae74bfa2c",
+  "schema": "triptych-bullarium-hybrid-byte-map/v1",
+  "source_sha256": "7142fbc19444b22a8b4ee9fe9ea0b947e2bfce6fcbf90aa0d354ff40530ce685"
+}

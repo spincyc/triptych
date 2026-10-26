@@ -13,8 +13,15 @@ passages belong to the [source library](../README.md), under the
 | `source-links.json` | Catalog identities mapped to canonical source works, editions and artifacts; composite and constituent rows remain explicit. |
 | `publication-approvals.json` | Exact original-language or historical-translation text hashes and historical publication evidence admitting retained Latin text. |
 | `typeset-manifest.json` | Exact admitted source artifacts and their rights basis for the two-column reader. |
+| `vatican-corrections-manifest.json` | Explicit replacement source or reader selections and recorded supersessions of earlier Vatican outputs. |
 | `historical-english-manifest.json` | Thirty-one bounded source entries from the 1903 Benziger collection, including an explicitly abridged excerpt. |
 | `historical-english-supplement-manifest.json` | Additional identified historical English editions, with their own source, rights and transcription limits. |
+| `historical-english-supplement-fragment-manifest.json` | Separately identified abridged historical English witnesses and their missing-content notices. |
+| `historical-english-journal-manifest.json` | Additional individually reviewed English journal witnesses, preserving each row's rendering revision. |
+| `historical-english-journal-fragment-manifest.json` | Separately identified damaged or abridged English journal witnesses. |
+| `historical-english-book-manifest.json` | Additional complete historical book witnesses, retaining each rendering revision. |
+| `historical-english-book-fragment-manifest.json` | Separately identified damaged or abridged historical book witnesses. |
+| `historical-english-corrections-manifest.json` | Source-identical English metadata/layout repairs, with exact supersessions when a prior PDF exists. |
 | `quanta-syllabus-manifest.json` | Separately bounded *Quanta cura* and *Syllabus* constituents of one composite delivery. |
 | `bullarium-catalog.json` | Individual printed units in the selected historical volumes, exact extents, review dispositions and unresolved extraction problems. |
 | `bullarium-manifest.json` | Admitted complete printed-act witnesses from the selected *Bullarium* deliveries. |
@@ -24,6 +31,13 @@ passages belong to the [source library](../README.md), under the
 | `bullarium-corrections-manifest.json` | Replacement selections with explicit supersessions of earlier selections, including missing source notes and corrected reader apparatus. |
 | `acta-catalog.json` | Individual *ASS* and *AAS* witnesses, journal containers, act boundaries and stated coverage gaps. |
 | `acta-manifest.json` | Selected admitted historical journal witnesses, one per work and language. |
+| `acta-title-corrections.json` | Source-pinned display-title review ledger, preserving original metadata and exact evidence. |
+| `acta-title-corrections-manifest.json` | Explicit replacement reader selections and exact prior-PDF supersessions. |
+| `acta-layout-corrections-manifest.json` | Separately identified layout repairs for initial failed renders. |
+| `acta-visual-corrections-manifest.json` | Cumulative source-pinned metadata/layout repairs arising from page review, with exact supersessions. |
+| `bullarium-geometry-manifest.json` | Individually reviewed complete witnesses recovered through exact source-coordinate mappings. |
+| `bullarium-geometry-fragment-manifest.json` | Identified historical fragments recovered through the same checked mappings. |
+| `bullarium-active-withdrawals.json` | Empty reader selection with exact active-source withdrawals, affected units and confirmed source-order holds. |
 | `bullarium-continuatio-config.json` | Identified *Bullarium* continuation volumes and their acquisition configuration. |
 | `bullarium-continuatio-catalog.json` | Reconstructed continuation witnesses, source extents, review dispositions and coverage gaps. |
 | `bullarium-continuatio-manifest.json` | Admitted complete printed witnesses from the continuation. |
@@ -44,6 +58,7 @@ passages belong to the [source library](../README.md), under the
 | `bullarium-visual-review.json` | Hash-bound page-review dispositions for a frozen *Bullarium* reader receipt. |
 | `english-visual-review.json` | Hash-bound page-review dispositions for a frozen English reader receipt. |
 | `acta-visual-review.json` | Hash-bound page-review dispositions for a frozen Acta reader receipt. |
+| `historical-series-visual-review.json` | Hash-bound page-review dispositions across the separately identified historical series. |
 | `english-encoding-raster-comparison.json` | Exact page-raster equality and changed-page evidence connecting the original and encoding-repaired English PDFs. |
 
 The catalog follows the Vatican's curated HTML collections from Benedict XIV
@@ -89,7 +104,7 @@ shared typesetting schema below. Acquisition, candidate reconstruction,
 boundary admission, compilation and page review remain separate measured
 phases; their artifacts and declared coverage establish the state reached.
 
-The four shared visual audits use `triptych-papal-visual-review/v1`, with
+The shared visual audits use `triptych-papal-visual-review/v1`, with
 `frozen_receipt_sha256` and `documents`. They identify reviewed bytes and page
 dispositions rather than a whole-series completion status. The English
 encoding comparison uses `triptych-english-page-raster-comparison/v1`, with
@@ -99,13 +114,33 @@ changed pages require their own inspection. Neither proves transcription
 accuracy against historical print.
 
 The render manifests use `triptych-papal-typeset/v1`, with `revision` and
-`documents`; the correction manifest additionally records `supersessions`.
+`documents`. A row's explicit `revision` overrides the top-level fallback;
+the generated receipt records its effective `render_revision`. Correction
+manifests record exact `supersessions` when source selections or existing PDFs
+are replaced; source-identical metadata or layout repairs preserve their exact
+source pins. The Acta title ledger separately uses
+`triptych-papal-acta-title-corrections/v1`, with `revision`, `base_manifest` and
+`rows`.
 Initial *Bullarium* complete and fragment snapshots remain frozen. Later rescue
 and correction snapshots preserve prior source bytes and identities. A final
 selection must apply the recorded supersessions and exclude superseded PDFs,
 including earlier selections missing their own historical notes. Concatenating
 all batches does not produce a valid current selection. Each receipt and
 hash-specific review remains evidence for the bytes it actually identifies.
+
+`make papal-plan` writes `PAPAL_OUT/current-manifest.json` from
+`PAPAL_BASE_MANIFESTS` and ordered `PAPAL_CORRECTION_MANIFESTS`, preserving input
+manifest and row hashes and explicit exclusion history. `make papal-pdfs`
+renders only that active selection under `PAPAL_OUT/current/`, then writes
+the combined index under `PAPAL_OUT/collection/`; obsolete source batches are
+not rebuilt. `PAPAL_REVIEW_MANIFESTS` supplies exact page-review evidence.
+`make papal-collection` reads existing current outputs without compiling.
+Explicit multi-batch `typeset-papal collect` remains available for already
+frozen receipts and their exact source manifests, supersessions and reviews.
+A complete passing review may transfer to a new receipt only for the exact
+same PDF bytes and fully pinned page evidence; the collection retains the
+original receipt identity. It does not infer review from a filename or source
+match.
 
 The historical English files remain uncollated transcriptions with substantial
 inherited OCR word errors and heading-date discrepancies. A separate derivative
@@ -118,6 +153,12 @@ in the historical translation itself. Consult its source notice and the
 item-specific review before quoting. Exact Wikisource responses and the repair
 audit retain their own CC BY-SA 4.0 notices; the historical English wording has
 its separately recorded United States public-domain basis.
+
+The [English expansion record](english-expansion-coverage.md) owns the
+supplemental book and journal source identities, boundary findings and stated
+gaps. Complete, abridged and damaged witnesses remain separate selections.
+Each manifest retains its own render revision and source-quality limits;
+source admission alone supplies no PDF or page-review completion claim.
 
 Historical admission identifies complete printed witnesses, not expanded
 autographs. Literal conventional abbreviations retain their source form and

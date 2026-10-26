@@ -1986,24 +1986,36 @@ distclean: clean
 PAPAL_OUT ?= .scratch/papal-pdfs
 PAPAL_JOBS ?= 4
 PAPAL_MANIFEST_ROOT ?= src/sources/papal-documents
-# Separate output namespaces preserve the identity and extent of each source batch.
-PAPAL_MANIFESTS ?= latin=typeset-manifest.json \
+PAPAL_HISTORICAL_SERIES := bullarium-continuatio benedict-xiv-bullarium gregory-xvi-acta pius-ix-acta
+PAPAL_ENGLISH_ADDITIONS := historical-english-supplement historical-english-journal historical-english-book
+PAPAL_BASE_MANIFESTS ?= latin=typeset-manifest.json \
 	english=historical-english-manifest.json \
 	quanta-syllabus=quanta-syllabus-manifest.json \
 	bullarium=bullarium-manifest.json \
 	bullarium-fragments=bullarium-fragment-manifest.json \
 	acta=acta-manifest.json \
-	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/vatican-corrections-manifest.json),vatican-corrections=vatican-corrections-manifest.json) \
+	$(foreach series,$(PAPAL_ENGLISH_ADDITIONS),$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/$(series)-manifest.json),$(series)=$(series)-manifest.json)) \
+	$(foreach series,$(PAPAL_ENGLISH_ADDITIONS),$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/$(series)-fragment-manifest.json),$(series)-fragments=$(series)-fragment-manifest.json)) \
 	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-rescue-manifest.json),bullarium-rescue=bullarium-rescue-manifest.json) \
 	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-rescue-fragment-manifest.json),bullarium-rescue-fragments=bullarium-rescue-fragment-manifest.json) \
-	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-corrections-manifest.json),bullarium-corrections=bullarium-corrections-manifest.json)
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-geometry-manifest.json),bullarium-geometry=bullarium-geometry-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-geometry-fragment-manifest.json),bullarium-geometry-fragments=bullarium-geometry-fragment-manifest.json) \
+	$(foreach series,$(PAPAL_HISTORICAL_SERIES),$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/$(series)-manifest.json),$(series)=$(series)-manifest.json)) \
+	$(foreach series,$(PAPAL_HISTORICAL_SERIES),$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/$(series)-fragment-manifest.json),$(series)-fragments=$(series)-fragment-manifest.json))
+PAPAL_CORRECTION_MANIFESTS ?= \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/historical-english-corrections-manifest.json),historical-english-corrections=historical-english-corrections-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/vatican-corrections-manifest.json),vatican-corrections=vatican-corrections-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-corrections-manifest.json),bullarium-corrections=bullarium-corrections-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/acta-title-corrections-manifest.json),acta-title-corrections=acta-title-corrections-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/acta-layout-corrections-manifest.json),acta-layout-corrections=acta-layout-corrections-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/acta-visual-corrections-manifest.json),acta-visual-corrections=acta-visual-corrections-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-active-withdrawals.json),bullarium-active-withdrawals=bullarium-active-withdrawals.json)
+PAPAL_CURRENT_MANIFEST ?= $(PAPAL_OUT)/current-manifest.json
+PAPAL_CURRENT_BATCH ?= $(PAPAL_OUT)/current
 PAPAL_COLLECTION_OUT ?= $(PAPAL_OUT)/collection
-PAPAL_COLLECTION_BATCHES ?= $(foreach batch,$(PAPAL_MANIFESTS),$(word 1,$(subst =, ,$(batch))))
-PAPAL_SUPERSESSION_MANIFESTS ?= $(wildcard $(PAPAL_OUT)/vatican-corrections/frozen-manifest.json \
-	$(PAPAL_OUT)/bullarium-corrections/frozen-manifest.json)
-PAPAL_REVIEW_MANIFESTS ?= $(wildcard $(PAPAL_MANIFEST_ROOT)/vatican-visual-review.json \
-	$(PAPAL_MANIFEST_ROOT)/bullarium-visual-review.json \
-	$(PAPAL_MANIFEST_ROOT)/english-visual-review.json)
+PAPAL_REVIEW_MANIFESTS ?= $(wildcard $(PAPAL_MANIFEST_ROOT)/*-visual-review.json)
+PAPAL_INSTALL_BATCH_PAIRS ?= $(PAPAL_OUT)/batch-pairs.json
+PAPAL_INSTALL_PREPARED ?= $(PAPAL_OUT)/prepared-install.json
 # The typesetter refuses an empty selection. Validate the outer contract first
 # so an honestly empty batch is skipped while malformed JSON still fails.
 PAPAL_MANIFEST_COUNT = $(PYTHON) -c 'import datetime,json,re,sys; \
@@ -2015,29 +2027,42 @@ PAPAL_MANIFEST_COUNT = $(PYTHON) -c 'import datetime,json,re,sys; \
 	isinstance(d.get("documents"),list) or sys.exit("papal manifest requires a documents array"); \
 	print(len(d["documents"]))'
 
-.PHONY: check-papal check-papal-manifests papal-catalog papal-pdfs papal-collection
+.PHONY: check-papal check-papal-manifests papal-plan papal-catalog papal-pdfs papal-collection papal-install-plan papal-install check-papal-install
 
 check-papal: check-papal-manifests
 	@$(PYTHON) tools/tpt papal-documents check --json
 	@$(PYTHON) tools/tpt bullarium check --json
 	@$(PYTHON) tools/tpt papal-acta check --json
 	@$(PYTHON) -m unittest discover -s tools/tests -p 'test_papal_*.py'
-	@$(PYTHON) -m unittest discover -s tools/tests -p 'test_bullarium.py'
+	@$(PYTHON) -m unittest discover -s tools/tests -p 'test_bullarium*.py'
 	@$(PYTHON) -m unittest discover -s tools/tests -p 'test_typeset_papal.py'
 
-check-papal-manifests:
+papal-plan:
 	@set -eu; \
-	for batch in $(PAPAL_MANIFESTS); do \
+	set --; \
+	for batch in $(PAPAL_BASE_MANIFESTS); do \
 		name=$${batch%%=*}; \
 		manifest='$(PAPAL_MANIFEST_ROOT)'/$${batch#*=}; \
 		count=$$($(PAPAL_MANIFEST_COUNT) "$$manifest"); \
-		if [ "$$count" -eq 0 ]; then \
-			printf '%s: 0 admitted editions; skipped\n' "$$name"; \
-		else \
-			printf '%s: %s admitted editions\n' "$$name" "$$count"; \
-			$(PYTHON) tools/tpt typeset-papal check --manifest "$$manifest" --json; \
-		fi; \
-	done
+		if [ "$$count" -eq 0 ]; then printf '%s: 0 admitted editions; no readers selected\n' "$$name"; fi; \
+		set -- "$$@" --base "$$name" "$$manifest"; \
+	done; \
+	for batch in $(PAPAL_CORRECTION_MANIFESTS); do \
+		name=$${batch%%=*}; \
+		manifest='$(PAPAL_MANIFEST_ROOT)'/$${batch#*=}; \
+		count=$$($(PAPAL_MANIFEST_COUNT) "$$manifest"); \
+		if [ "$$count" -eq 0 ]; then printf '%s: no replacement readers; source-selection directives still apply\n' "$$name"; fi; \
+		set -- "$$@" --correction "$$name" "$$manifest"; \
+	done; \
+	$(PYTHON) tools/tpt typeset-papal plan "$$@" --out '$(PAPAL_CURRENT_MANIFEST)' --json
+
+check-papal-manifests: papal-plan
+	@set -eu; count=$$($(PAPAL_MANIFEST_COUNT) '$(PAPAL_CURRENT_MANIFEST)'); \
+	if [ "$$count" -eq 0 ]; then \
+		printf '%s\n' 'current: 0 admitted editions; skipped'; \
+	else \
+		$(PYTHON) tools/tpt typeset-papal check --manifest '$(PAPAL_CURRENT_MANIFEST)' --json; \
+	fi
 
 papal-catalog:
 	@$(PYTHON) tools/tpt papal-documents export --format json --out '$(PAPAL_OUT)/catalog.json'
@@ -2046,45 +2071,48 @@ papal-catalog:
 	@cp -- '$(PAPAL_MANIFEST_ROOT)/archives.json' '$(PAPAL_OUT)/archives.json'
 	@cp -- '$(PAPAL_MANIFEST_ROOT)/bullarium-catalog.json' '$(PAPAL_OUT)/bullarium-catalog.json'
 	@cp -- '$(PAPAL_MANIFEST_ROOT)/acta-catalog.json' '$(PAPAL_OUT)/acta-catalog.json'
-
-papal-pdfs: check-papal-manifests papal-catalog
-	@set -eu; \
-	for batch in $(PAPAL_MANIFESTS); do \
-		name=$${batch%%=*}; \
-		manifest='$(PAPAL_MANIFEST_ROOT)'/$${batch#*=}; \
-		count=$$($(PAPAL_MANIFEST_COUNT) "$$manifest"); \
-		if [ "$$count" -eq 0 ]; then \
-			printf '%s: 0 admitted editions; skipped\n' "$$name"; \
-		else \
-			$(PYTHON) tools/tpt typeset-papal render --manifest "$$manifest" \
-				--out '$(PAPAL_OUT)'/"$$name" --compile --jobs '$(PAPAL_JOBS)' --json; \
+	@set -eu; for series in $(PAPAL_HISTORICAL_SERIES); do \
+		catalog='$(PAPAL_MANIFEST_ROOT)'/"$$series"-catalog.json; \
+		if [ -f "$$catalog" ]; then \
+			cp -- "$$catalog" '$(PAPAL_OUT)'/"$$series"-catalog.json; \
 		fi; \
 	done
 
+papal-pdfs: check-papal-manifests papal-catalog
+	@set -eu; count=$$($(PAPAL_MANIFEST_COUNT) '$(PAPAL_CURRENT_MANIFEST)'); \
+	if [ "$$count" -eq 0 ]; then \
+		printf '%s\n' 'current: no readers selected; no PDFs rendered'; \
+	else \
+		$(PYTHON) tools/tpt typeset-papal render --manifest '$(PAPAL_CURRENT_MANIFEST)' \
+			--out '$(PAPAL_CURRENT_BATCH)' --compile --jobs '$(PAPAL_JOBS)' --json; \
+	fi
+	@$(MAKE) --no-print-directory papal-collection
+
 # Collection reads existing outputs only; it never starts a render or installs PDFs.
-papal-collection:
-	@set -eu; set --; \
-	for name in $(PAPAL_COLLECTION_BATCHES); do \
-		receipt='$(PAPAL_OUT)'/"$$name"/receipt.json; \
-		manifest='$(PAPAL_OUT)'/"$$name"/frozen-manifest.json; \
-		if [ ! -f "$$receipt" ]; then \
-			printf '%s: no batch receipt; skipped\n' "$$name"; \
-			continue; \
-		fi; \
-		if [ ! -f "$$manifest" ]; then \
-			printf '%s: missing retained frozen-manifest.json\n' "$$name" >&2; \
-			exit 1; \
-		fi; \
-		set -- "$$@" --batch "$$name" "$$receipt" "$$manifest"; \
-	done; \
-	if [ "$$#" -eq 0 ]; then \
-		printf '%s\n' 'No existing batch receipts selected for papal-collection.' >&2; \
-		exit 1; \
+papal-collection: papal-plan
+	@set -eu; count=$$($(PAPAL_MANIFEST_COUNT) '$(PAPAL_CURRENT_MANIFEST)'); \
+	if [ "$$count" -eq 0 ]; then \
+		$(PYTHON) tools/tpt typeset-papal collect --empty-plan '$(PAPAL_CURRENT_MANIFEST)' --out '$(PAPAL_COLLECTION_OUT)' --json; \
+		exit 0; \
 	fi; \
-	for manifest in $(PAPAL_SUPERSESSION_MANIFESTS); do \
-		set -- "$$@" --supersessions "$$manifest"; \
-	done; \
+	set -- --batch current '$(PAPAL_CURRENT_BATCH)/receipt.json' '$(PAPAL_CURRENT_MANIFEST)'; \
 	for manifest in $(PAPAL_REVIEW_MANIFESTS); do \
 		set -- "$$@" --review "$$manifest"; \
 	done; \
 	$(PYTHON) tools/tpt typeset-papal collect "$$@" --out '$(PAPAL_COLLECTION_OUT)' --json
+
+# An explicit inventory names existing immutable receipt/frozen-manifest pairs.
+# Preparing never copies PDFs into the tracked release.
+papal-install-plan: papal-plan
+	@test -f '$(PAPAL_INSTALL_BATCH_PAIRS)' || { printf '%s\n' 'Set PAPAL_INSTALL_BATCH_PAIRS to a hash-pinned inventory of existing receipt/frozen-manifest pairs.' >&2; exit 1; }
+	@set -eu; set --; \
+	for manifest in $(PAPAL_REVIEW_MANIFESTS); do set -- "$$@" --review "$$manifest"; done; \
+	$(PYTHON) tools/tpt typeset-papal prepare-install --plan '$(PAPAL_CURRENT_MANIFEST)' \
+		--batch-pairs '$(PAPAL_INSTALL_BATCH_PAIRS)' --out '$(PAPAL_INSTALL_PREPARED)' "$$@" --json
+
+# Deliberately consume the previously prepared proposal; never silently replace it.
+papal-install:
+	@$(PYTHON) tools/tpt typeset-papal install --prepared '$(PAPAL_INSTALL_PREPARED)' --json
+
+check-papal-install: papal-plan
+	@$(PYTHON) tools/tpt typeset-papal check-install --plan '$(PAPAL_CURRENT_MANIFEST)' --json

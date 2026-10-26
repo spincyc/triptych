@@ -113,6 +113,25 @@ class ActaFixture(unittest.TestCase):
 
 
 class PhysicalExtentTests(ActaFixture):
+    def test_literal_dating_rejects_damaged_roman_year_instead_of_prefix_1900(self):
+        self.assertIsNone(acta.literal_act_date("Datum Romae, die VIII Aprilis MDCCCCTV, Pontificatus Nostri anno primo."))
+        self.assertIsNone(acta.literal_act_date("die VIII Aprilis MDCCCCIVX"))
+        self.assertIsNone(acta.literal_act_date("die VIIIT Aprilis MDCCCCIV"))
+        self.assertIsNone(acta.literal_act_date("die VIII Aprilis MDCCCCIVPontificatus"))
+        self.assertIsNone(acta.literal_act_date("die VI Iulii MDÇCCCIV"))
+        self.assertIsNone(acta.literal_act_date("die XIX Februarii MCMVHI"))
+        self.assertIsNone(acta.literal_act_date("die XXIV Decembris MCMVH"))
+        self.assertIsNone(acta.literal_act_date("die XXXI Martii MCMVIÌI"))
+        self.assertIsNone(acta.literal_act_date("die XXXI Martii MCMVII\u0300I"))
+        self.assertIsNone(acta.literal_act_date("die VIII Aprilis MDCCCC\u200bIV"))
+
+    def test_literal_dating_accepts_complete_historical_additive_tokens(self):
+        self.assertEqual(acta.literal_act_date("Datum Romae, die VIII Aprilis MDCCCCIV, Pontificatus Nostri anno primo."), "1904-04-08")
+        self.assertEqual(acta.literal_act_date("die xviii\nAprilis anno MDCCCLXVIII."), "1868-04-18")
+        self.assertEqual(acta.literal_act_date("die 8 Aprilis 1904"), "1904-04-08")
+        self.assertEqual(acta.literal_act_date("die XXV Aprilis MCMIV,\nin aedibus"), "1904-04-25")
+        self.assertIsNone(acta.literal_act_date("die XXXI Aprilis MDCCCCIV"))
+
     def test_physical_lines_use_only_lf_and_preserve_form_feed(self):
         lines = acta.physical_lines(TEXT)
         self.assertEqual(len(lines), 5)
