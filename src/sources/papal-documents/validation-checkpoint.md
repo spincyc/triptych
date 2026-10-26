@@ -57,10 +57,12 @@ snapshots. The task's containment omissions and stale source-family/source
 reader projections were separately identified and repaired. Exact comparison
 outputs are retained under `.scratch/core_review/baseline/`.
 
-The aggregate source check stopped at act-history comparison provenance drift.
-Those comparisons pin the changed source-library and tooling implementation;
-the owning generator's provenance-only refresh is being checked separately.
-No clean aggregate result is claimed by this checkpoint.
+The aggregate source check initially stopped at act-history comparison
+provenance drift. The owning generator has now refreshed exactly 31 comparison
+records: 124 hash/size fields for the changed source-library and tooling
+implementation. Deep comparison proves every other value unchanged. The base
+check passes; this was a task-caused provenance update, not an inherited
+failure. No clean result for every aggregate repository gate is claimed.
 
 Post-1740 continuation volumes, Benedict XIV's Bullarium, Gregory XVI/Pius IX
 Acta and additional historically printed English translations have separate
