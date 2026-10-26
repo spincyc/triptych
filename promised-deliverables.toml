@@ -1,6 +1,36 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gpt-postconciliar-all-saints-2026-11-01"
+owner = "PROJECT-WORK.md"
+promise = "Complete the GPT postconciliar All Saints proper-study workflow for Sunday 1 November 2026, with independent cold review, three reviewed PDFs and canonical web edition, main publication and verified deployment."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "identity-and-workflow"
+  criterion = "PC-R07-ABC and its dated United States occurrence are verified; explicit registry-backed workflow and chronology support preserves existing target and family guards and passes focused regression and independent code review."
+  status = "open"
+  evidence = ["workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/RECORD.md"]
+
+  [[deliverables.requirements]]
+  id = "native-acceptance"
+  criterion = "A real version-15 proper-study run reaches ACCEPTED with complete research and reusable-source registration, distinct source-grounded interpretations, all required independent cold reviews, and a durable native result archive."
+  status = "open"
+  evidence = ["workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/RECORD.md"]
+
+  [[deliverables.requirements]]
+  id = "reviewed-publications"
+  criterion = "The 20–50-page research study, 10–12-page concise study and speakable homily are independently reviewed, built, visually inspected and installed with exact reviewed bytes; the sole canonical web edition, catalog, inventories and release records are current and required gates pass."
+  status = "open"
+  evidence = ["workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/RECORD.md"]
+
+  [[deliverables.requirements]]
+  id = "published-and-live"
+  criterion = "The exact intended public outgoing range receives final cold review and reaches main without force or history rewriting; the resulting deployment succeeds and live publication artifacts match reviewed bytes."
+  status = "open"
+  evidence = ["workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/RECORD.md"]
+
+[[deliverables]]
 id = "gpt-flt-and-sunday-2026-10-25"
 owner = "PROJECT-WORK.md"
 promise = "Apply the recent voice and drafting guidance to the four GPT Four Last Things essays; complete the next-Sunday 1962 proper-study workflow for 1 November 2026; cold-review and validate the resulting publications; publish to main and verify deployment."

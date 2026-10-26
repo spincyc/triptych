@@ -89,27 +89,9 @@ def identity(root: Path, document: str) -> str:
         run(root, sys.executable, str(root / "tools/check-proper-identity"),
             "--document", document)
         return "library/traditional-latin-mass.md"
-    match = re.fullmatch(
-        r"liturgy/roman-rite/postconciliar/([a-z0-9]+(?:-[a-z0-9]+)*)/"
-        r"propers/temporal/(pc-s[0-9]{2}-.+)", document)
-    if not match:
-        raise ValueError("expected a 1962 proper or registered postconciliar "
-                         "Proper-of-Time formula; other target families need "
-                         "an explicit registry resolver")
-    registry = (root / "guidance/liturgy/postconciliar-propers-registry.md").read_text()
-    stems = dict(re.findall(r"^\| (PC-S\d\d) \| `(pc-s[^`]+)` \|", registry, re.M))
-    keys = set(re.findall(r"`(PC-S\d\d-(?:ABC|[ABC])(?:-[A-Z0-9]+)*)`", registry))
-    slugs = set()
-    for key in keys:
-        parts = key.split("-")
-        parent, coverage = "-".join(parts[:2]), parts[2]
-        if parent not in stems:
-            continue
-        suffix = "abc" if coverage == "ABC" else f"year-{coverage.lower()}"
-        rest = [part.lower() for part in parts[3:] if part != "O"]
-        slugs.add("-".join([stems[parent], suffix, *rest]))
-    if match[2] not in slugs:
-        raise ValueError("postconciliar slug names no exact formula in the stable registry")
+    from _proper_chronology_inputs import registered_target
+
+    registered_target(document, root)
     return "library/novus-ordo-liturgy.md"
 
 

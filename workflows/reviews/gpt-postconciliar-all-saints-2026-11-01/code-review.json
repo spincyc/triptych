@@ -1,0 +1,165 @@
+{
+  "schema": 1,
+  "review_type": "independent-cold-code-review",
+  "requested_reasoning_effort": "xhigh",
+  "reviewed_on_utc": "2026-10-26",
+  "verdict": "request_changes",
+  "summary": "The requested PC-R07 identity, same-edition chronology ownership, and scope bootstrap passed review and focused checks. Existing PC-S and 1962 compatibility checks passed. The newly enabled general PC-R support has one fail-closed defect: an edition can adopt both mutually exclusive PC-R08 expansion shapes and obtain chronology dossiers for both.",
+  "reviewed_handoff": {
+    "directory": "build/agent-handoffs/20261026T034903Z-pc-r07-code",
+    "archive": "build/agent-handoffs/20261026T034903Z-pc-r07-code.zip",
+    "archive_sha256": "139c0ea0072009671a97d0d1a78728faa5536e7ab61f3adc4e3a28f489e00c72",
+    "patch_sha256": "9ff8a5f11a0375c1442b48a99141523efc1760091e81825077b4ab919baa8240",
+    "base_commit": "9f51eb53077578cc74474255cc1fad114bda6eaa",
+    "branch": "feature/propers/codex",
+    "uncommitted_snapshot": true,
+    "verification": "All four supplied hashes matched the worktree before inspection and matched the isolated test copy. Applying the handoff patch to the three base-commit files plus its new test file reproduced all four hashes. The ZIP passed CRC validation and its six file entries exactly matched the handoff directory. This verdict applies to this immutable snapshot, not subsequent repairs."
+  },
+  "reviewed_paths": [
+    {
+      "path": "scripts/_proper_study.py",
+      "sha256": "00c0691baa9546aacf069f65156ecb3b644894755a765655b0df3a4c03841887"
+    },
+    {
+      "path": "scripts/_proper_chronology_inputs.py",
+      "sha256": "7bd78cfd652c0e750f1357bbf418f95ef723ccd6cccbf15a715f5c96ba0455d6"
+    },
+    {
+      "path": "tools/tests/test_proper_chronology_postconciliar.py",
+      "sha256": "75b4d98162a9579a0652388b0153a45f76a3de097128bc6a793f3b0376a29e7f"
+    },
+    {
+      "path": "tools/tests/test_proper_study_postconciliar_identity.py",
+      "sha256": "d1974336c50a3876c86903df6b73dc3dd5da5d1f73d766a5d85ea938e91781fd"
+    }
+  ],
+  "governing_evidence": [
+    {
+      "path": "guidance/liturgy/postconciliar-propers-registry.md",
+      "sha256": "ffe8a6d8b7d79c652bdc49b3d5f6d4dbb32e3506abc7ab0310e745c2b7306ad4",
+      "role": "Stable keys, exact slug and family grammar, canonical owners, and mutually exclusive PC-R08 edition expansions."
+    },
+    {
+      "path": "guidance/liturgy/postconciliar-propers.md",
+      "sha256": "804ccccdbe27ea3648474b59e597d9ed405de51ed31c4e7e343b74e96e978ef8",
+      "role": "Edition adoption, fail-closed resolution, and source ownership."
+    },
+    {
+      "path": "guidance/liturgy/propers-three-documents.md",
+      "sha256": "963112183390a243a8e6ad00bdc6a3dd4cf1f06e6d66772cc72bee485ddf5631",
+      "role": "Liturgical family separation and research chronology review."
+    },
+    {
+      "path": "workflows/pipelines/proper-study.json",
+      "sha256": "d67907da0a0f36e1280291db0ab0ef4617506ebaad942782f959ce2421e041b7",
+      "role": "Scope gate precedes resolve-context; scope cannot depend on later-created owner and disposition records."
+    }
+  ],
+  "findings": [
+    {
+      "id": "PC-R-CODE-001",
+      "priority": "P2",
+      "severity": "medium",
+      "title": "Reject mixed adopted PC-R08 expansion shapes within an edition",
+      "location": {
+        "path": "scripts/_proper_chronology_inputs.py",
+        "function": "replacement_disposition",
+        "start_line": 149,
+        "end_line": 156
+      },
+      "defect": "The parser retains only rows whose formula or slug matches the current target. It therefore accepts an exact adopted PC-R08 row even when the same edition also adopts the mutually exclusive coverage shape. The one-row check cannot detect that contradiction.",
+      "required_contract": {
+        "path": "guidance/liturgy/postconciliar-propers-registry.md",
+        "start_line": 290,
+        "end_line": 293,
+        "requirement": "Select exactly one PC-R08 expansion after Lectionary collation: the three ABC formularies or the nine A/B/C formularies."
+      },
+      "reproduction": {
+        "command": "python3 ../mixed-expansion-probe.py",
+        "working_directory": ".scratch/pc-r-code-cold-review/snapshot",
+        "exit_status": 0,
+        "fixture": [
+          "Start from PostconciliarChronologyTests.replacement_fixture(), retaining its synthetic appointment inventory and same-edition registry files.",
+          "Create general-calendar/shared/formularies/pc-r08-commemoration-of-all-the-faithful-departed/propers/verified.md under that edition's propers root.",
+          "Replace formula-dispositions.md with a named-column table containing every PC-R08-{ABC,A,B,C}-FORMULARY-{1,2,3} key. Give each its exact corresponding stable slug, the canonical PC-R08 owner link, and disposition 'Adopted synthetic parser fixture.'. This table adopts both complete shapes, not merely incidental mentions or malformed rows.",
+          "Copy the synthetic leaf into pc-r08-commemoration-of-all-the-faithful-departed-abc-formulary-1 and pc-r08-commemoration-of-all-the-faithful-departed-year-a-formulary-1. Update each leaf's document, formula, and shared_owner to its exact target and the same-edition PC-R08 owner.",
+          "For each leaf, call registered_target(), replacement_disposition(), and chronology.dossier(document, root=fixture.root, provider='gpt')."
+        ],
+        "observed": [
+          "PC-R08-ABC-FORMULARY-1 accepted; chronology dossier contains 11 elements.",
+          "PC-R08-A-FORMULARY-1 accepted in the same edition; chronology dossier contains 11 elements."
+        ],
+        "expected": "Reject the conflicting edition selection before producing either PC-R08 chronology dossier.",
+        "evidence_file": ".scratch/pc-r-code-cold-review/mixed-expansion-probe.json"
+      },
+      "consequence": "General PC-R chronology support admits contradictory edition coverage and duplicate target shapes that the stable registry expressly forbids. PC-R07 itself is unaffected, but PC-R08 is newly admitted by the same implementation, so the generic fail-closed claim is incomplete.",
+      "coverage_gap": "test_all_souls_stable_alternatives_do_not_select_an_edition_expansion tests an unresolved record with no adopted row. It does not test mixed adopted shapes.",
+      "recommended_change": "Validate one unambiguous edition-level PC-R08 expansion before accepting a PC-R08 target, rejecting mixed adopted ABC and A/B/C rows; alternatively, explicitly refuse PC-R08 chronology until that validation exists. Add positive coverage for each valid shape and negative coverage for mixed adopted shapes while preserving initial identity/scope bootstrap.",
+      "owner": "scripts/_proper_chronology_inputs.py and tools/tests/test_proper_study_postconciliar_identity.py"
+    }
+  ],
+  "positive_assessments": [
+    "Independently enumerated all 193 PC-S targets and 25 stable PC-R alternatives, including both possible PC-R08 expansions. All 218 resolved to the expected formula and canonical owner; swapping temporal and general-calendar refused every target.",
+    "PC-R07 scope check succeeds with exact provider/identity authorization and an existing edition registry directory before formula-dispositions.md or the canonical owner exists.",
+    "PC-R07 chronology succeeds before proper-components.toml exists, preserving research-before-authoring bootstrap.",
+    "PC-R07 chronology uses only same-provider, same-edition general-calendar and local leaf inputs. An independently checked Claude fixture contained no GPT appointment dependencies.",
+    "The adopted-row checks reject mismatched formula/slug, wrong owner/family/edition links, duplicate target rows, incidental prose mentions, absent owners, and owner symlink aliases.",
+    "The focused tests retain PC-S Ordinary Time and Scrutiny ownership, appointment dependency drift detection, and legacy 1962 record/projection behavior."
+  ],
+  "checks": [
+    {
+      "command": "sha256sum scripts/_proper_study.py scripts/_proper_chronology_inputs.py tools/tests/test_proper_chronology_postconciliar.py tools/tests/test_proper_study_postconciliar_identity.py",
+      "working_directory": ".",
+      "exit_status": 0,
+      "result": "All four values matched file-hashes.json before inspection."
+    },
+    {
+      "command": "python3 -m zipfile -t build/agent-handoffs/20261026T034903Z-pc-r07-code.zip",
+      "working_directory": ".",
+      "exit_status": 0,
+      "result": "ZIP CRC validation passed; independent probe also compared every archived file byte-for-byte with the directory."
+    },
+    {
+      "command": "python3 -m unittest tools.tests.test_proper_study_postconciliar_identity tools.tests.test_proper_chronology_postconciliar -v",
+      "working_directory": ".scratch/pc-r-code-cold-review/snapshot",
+      "exit_status": 0,
+      "result": "21 tests passed in 34.133 seconds.",
+      "log": ".scratch/pc-r-code-cold-review/snapshot/focused-tests.log"
+    },
+    {
+      "command": "python3 -m unittest tools.tests.test_workflow_proper_study -v",
+      "working_directory": ".scratch/pc-r-code-cold-review/snapshot",
+      "exit_status": 0,
+      "result": "48 tests passed in 3.749 seconds.",
+      "log": ".scratch/pc-r-code-cold-review/snapshot/workflow-tests.log"
+    },
+    {
+      "command": "python3 ../identity-probes.py",
+      "working_directory": ".scratch/pc-r-code-cold-review/snapshot",
+      "exit_status": 0,
+      "result": "218 valid identities and expected owners; 218 wrong-family refusals; PC-R07 pre-component chronology, Claude provider ownership, owner-symlink refusal, and initial scope bootstrap passed. The probe also verified snapshot hashes and ZIP/directory equality.",
+      "log": ".scratch/pc-r-code-cold-review/identity-probes.json"
+    },
+    {
+      "command": "python3 ../mixed-expansion-probe.py",
+      "working_directory": ".scratch/pc-r-code-cold-review/snapshot",
+      "exit_status": 0,
+      "result": "Reproduced PC-R-CODE-001: both mutually exclusive adopted PC-R08 shapes produced chronology dossiers in one edition. Exit zero means the probe reproduced the defect, not that the implementation met the requirement.",
+      "log": ".scratch/pc-r-code-cold-review/mixed-expansion-probe.json"
+    },
+    {
+      "command": "git apply --directory=.scratch/pc-r-code-cold-review/reconstructed build/agent-handoffs/20261026T034903Z-pc-r07-code/changes.patch",
+      "working_directory": ".",
+      "exit_status": 0,
+      "result": "Applied to base-commit copies; SHA-256 of every reconstructed reviewed file matched the handoff."
+    }
+  ],
+  "test_isolation": "Tests ran against copied scripts/tools/guidance/workflows with the four reviewed bytes verified. The snapshot's src link supplied existing read-only corpus data; synthetic fixtures and TMPDIR were confined to the exclusive review scratch tree. No subject code, publication, workflow state, commit, or push was changed by this review.",
+  "limitations": [
+    "This is code/contract review only. Synthetic All Saints and All Souls appointment fixtures make no claim about appointed pericopes, liturgical text, source collation, rights, or historical chronology correctness.",
+    "No production run was seeded or advanced, and no publication, PDF, browser, deployment, or source-adoption approval is implied.",
+    "The separate test_proper_chronology_reads suite and full deployment gates were not independently rerun. Handoff-reported checks remain author-supplied evidence unless explicitly listed above.",
+    "Makefile, authorization/production-plan edits, workflow tracking, and other worktree changes outside the four hashed paths were not implementation review subjects. Governing registry/profile/pipeline files were read as contract evidence.",
+    "Ignored scratch logs and probes may be removed by workspace cleanup. The finding's complete fixture conditions, observed results, file hashes, and disposition are retained in this JSON."
+  ]
+}

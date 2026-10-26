@@ -168,6 +168,8 @@ and an identity with no line here is closed.
 
 - Authorized 2026-10-25: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/f02-all-saints`.
 
+- Authorized 2026-10-25: provider `gpt`, identity `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc`.
+
 ### Reference-only publication scope
 
 An additional authorization here replaces full appointed-text reproduction

@@ -32,7 +32,11 @@ or another governing edition is allowed.
 The printed packet chooses which advance command is valid. Use full IDs for
 new leaves; the scope gate checks exact provider authorization before research.
 Postconciliar discovery validates registry-fixed formula slugs and the selected
-edition-locale. The initial resolver supports Proper-of-Time targets; additional
+edition-locale for `PC-S` Proper-of-Time and `PC-R` General Calendar replacement
+targets. Scope permits an authorized new target before context creates its
+source owner. Replacement chronology then requires one exact adopted edition
+disposition and its registry-fixed, same-edition owner. All Souls requires one
+complete adopted expansion; mixed or partial shapes fail closed. Other
 postconciliar families require an explicit registry resolver rather than a
 grammar-only pass.
 

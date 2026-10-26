@@ -318,6 +318,126 @@ class PostconciliarChronologyTests(unittest.TestCase):
         self.assertIn(owner.relative_to(self.root).as_posix(), paths)
         self.assertNotIn(self.owner.relative_to(self.root).as_posix(), paths)
 
+    def replacement_fixture(self, formula="PC-R07-ABC", slug="pc-r07-all-saints-abc",
+                            stem="pc-r07-all-saints"):
+        # Reuse synthetic citations only to test the adapter. This fixture is
+        # not a claim about the replacement's appointed pericopes or wording.
+        document = DOCUMENT.replace("temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+                                    f"general-calendar/{slug}")
+        leaf = self.root / "src/gpt" / document
+        owner = leaf.parent / f"shared/formularies/{stem}/propers/verified.md"
+        shutil.copytree(self.leaf, leaf)
+        self.write(owner, "Synthetic same-edition replacement appointment audit.\n")
+        for path in leaf.rglob("*"):
+            if path.is_file():
+                path.write_text(path.read_text().replace(DOCUMENT, document)
+                                .replace("PC-S51-A", formula)
+                                .replace(self.owner.relative_to(self.root).as_posix(),
+                                         owner.relative_to(self.root).as_posix()))
+        self.write(self.registry / "formula-dispositions.md",
+                   "| Formula key | Full publication slug | Canonical owner | Disposition |\n"
+                   "| --- | --- | --- | --- |\n"
+                   f"| `{formula}` | `{slug}` | "
+                   f"[Owner](../general-calendar/shared/formularies/{stem}/propers/verified.md) | "
+                   "Adopted synthetic adapter fixture. |\n")
+        return document, leaf, owner
+
+    def all_souls_dispositions(self, coverages):
+        stem = "pc-r08-commemoration-of-all-the-faithful-departed"
+        lines = ["| Formula key | Full publication slug | Canonical owner | Disposition |",
+                 "| --- | --- | --- | --- |"]
+        for coverage in coverages:
+            suffix = "abc" if coverage == "ABC" else f"year-{coverage.lower()}"
+            for number in (1, 2, 3):
+                lines.append(f"| `PC-R08-{coverage}-FORMULARY-{number}` | "
+                             f"`{stem}-{suffix}-formulary-{number}` | "
+                             f"[Owner](../general-calendar/shared/formularies/{stem}/propers/verified.md) | "
+                             "Adopted synthetic adapter fixture. |")
+        return "\n".join(lines) + "\n"
+
+    def test_all_souls_dossier_requires_one_complete_edition_expansion(self):
+        stem = "pc-r08-commemoration-of-all-the-faithful-departed"
+        documents = {}
+        for coverage, suffix in (("ABC", "abc"), ("A", "year-a")):
+            documents[coverage], _, _ = self.replacement_fixture(
+                f"PC-R08-{coverage}-FORMULARY-1", f"{stem}-{suffix}-formulary-1", stem)
+        disposition = self.registry / "formula-dispositions.md"
+        for coverages, chosen in ((("ABC",), "ABC"), (("A", "B", "C"), "A")):
+            with self.subTest(selected=coverages):
+                disposition.write_text(self.all_souls_dispositions(coverages))
+                found = chronology.dossier(documents[chosen], root=self.root, provider="gpt")
+                self.assertEqual(found.mass, f"PC-R08-{chosen}-FORMULARY-1")
+                self.assertEqual(found.calendar, "postconciliar")
+        for coverages in (("ABC", "A", "B", "C"), ("ABC", "A"), ("A",)):
+            disposition.write_text(self.all_souls_dispositions(coverages))
+            for coverage in ("ABC", "A"):
+                with self.subTest(adopted=coverages, target=coverage), self.assertRaises(ValueError):
+                    chronology.dossier(documents[coverage], root=self.root, provider="gpt")
+        disposition.write_text("PC-R08 unresolved; no approved edition expansion selected.\n")
+        for document in documents.values():
+            with self.assertRaises(ValueError):
+                chronology.dossier(document, root=self.root, provider="gpt")
+
+    def test_all_souls_dossier_rejects_inconsistent_sibling_rows(self):
+        stem = "pc-r08-commemoration-of-all-the-faithful-departed"
+        document, _, _ = self.replacement_fixture(
+            "PC-R08-ABC-FORMULARY-1", f"{stem}-abc-formulary-1", stem)
+        original = self.all_souls_dispositions(("ABC",))
+        disposition = self.registry / "formula-dispositions.md"
+        for content in (
+            original + original.splitlines()[-1] + "\n",
+            original.replace("`PC-R08-ABC-FORMULARY-3`", "`PC-R08-A-FORMULARY-3`"),
+            original.replace(f"`{stem}-abc-formulary-3`", f"`{stem}-year-a-formulary-3`"),
+            original.replace(f"`{stem}-abc-formulary-3`", "`an-unregistered-slug`"),
+            original.replace(f"`{stem}-abc-formulary-3` | [Owner](../general-calendar/",
+                             f"`{stem}-abc-formulary-3` | [Owner](../temporal/"),
+        ):
+            with self.subTest(content=content):
+                disposition.write_text(content)
+                with self.assertRaisesRegex(ValueError, "PC-R08"):
+                    chronology.dossier(document, root=self.root, provider="gpt")
+
+    def test_replacement_chronology_uses_only_general_calendar_edition_inputs(self):
+        document, leaf, owner = self.replacement_fixture()
+        with patch.object(chronology, "_calendar_document", side_effect=AssertionError("calendar import")):
+            found = chronology.dossier(document, root=self.root, provider="gpt")
+        self.assertEqual((found.calendar, found.mass), ("postconciliar", "PC-R07-ABC"))
+        self.assertEqual([element.key for element in found.elements], self.keys)
+        self.assertEqual(found.element("communion-ps119").loci, ("Ps.118.4", "Ps.118.5"))
+        paths = dict(found.appointment_dependencies)
+        self.assertIn(owner.relative_to(self.root).as_posix(), paths)
+        self.assertIn((leaf / inputs.INPUT).relative_to(self.root).as_posix(), paths)
+        self.assertNotIn(self.owner.relative_to(self.root).as_posix(), paths)
+        self.assertFalse(any("/1962/" in name for name in paths))
+        for command in ("record", "annotations"):
+            args = [sys.executable, str(ROOT / "tools/proper-chronology"), command,
+                    "--document", document, "--provider", "gpt", "--root", str(self.root)]
+            self.assertEqual(subprocess.run(args + ["--write"], capture_output=True).returncode, 0)
+            self.assertEqual(subprocess.run(args + ["--check"], capture_output=True).returncode, 0)
+        owner.write_text(owner.read_text() + "Changed replacement appointment audit.\n")
+        self.assertNotEqual(dict(chronology.dossier(document, root=self.root, provider="gpt")
+                                 .appointment_dependencies), paths)
+
+    def test_replacement_wrong_owner_family_formula_and_disposition_refuse(self):
+        document, leaf, owner = self.replacement_fixture()
+        source = leaf / inputs.INPUT
+        original = source.read_text()
+        for before, after in (
+            ("PC-R07-ABC", "PC-S51-A"),
+            ("PC-R07-ABC", "PC-R07-ABC-VIGIL"),
+            ("calendar = \"postconciliar\"", "calendar = \"roman-1962\""),
+            (owner.relative_to(self.root).as_posix(), self.owner.relative_to(self.root).as_posix()),
+        ):
+            with self.subTest(after=after):
+                source.write_text(original.replace(before, after))
+                with self.assertRaises(ValueError):
+                    chronology.dossier(document, root=self.root, provider="gpt")
+        source.write_text(original)
+        disposition = self.registry / "formula-dispositions.md"
+        disposition.write_text(disposition.read_text().replace("../general-calendar/", "../temporal/"))
+        with self.assertRaisesRegex(ValueError, "different canonical shared owner"):
+            chronology.dossier(document, root=self.root, provider="gpt")
+
     def test_legacy_record_schema_and_projection_are_unchanged(self):
         # The production 1962 leaf now opts into an explicit comparison, so
         # isolate the no-comparison path this compatibility assertion owns.

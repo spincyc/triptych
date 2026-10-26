@@ -7,6 +7,40 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-10-25.
 
+## GPT postconciliar All Saints, 2026-10-25
+
+<!-- promised-deliverable: gpt-postconciliar-all-saints-2026-11-01 -->
+
+**In progress.** Complete the GPT postconciliar proper-study workflow for next
+Sunday, 1 November 2026, All Saints, under the United States Roman Missal,
+Third Edition (2011), with independent cold reviews and publication to main.
+The permanent target is `PC-R07-ABC`,
+`liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc`.
+This authorizes that one provider and identity within the otherwise closed
+collection; the production plan records the exception. The previously completed
+1962 F02 publication is a separate work and supplies no postconciliar
+appointment, research judgment or authored interpretation.
+
+Work starts at clean `9f51eb530`, equal to both remote main and the workspace
+feature ref. Commits remain on `feature/propers/codex`; validated main
+publication uses a genuine fast-forward ref update without switching the
+workspace branch or rewriting history. First extend the workflow's
+registry-backed identity and chronology adapters to this General Calendar
+replacement, preserving fail-closed family and edition controls. Then resolve
+the official dated occurrence, complete the version-15 research and reusable
+source handoff, independently review all three documents and their rendered
+artifacts, archive native acceptance, reconcile inventories and release
+records, and verify deployment and exact live artifacts. The owning receipt
+will be `workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/RECORD.md`.
+
+The identity/chronology extension now preserves bootstrap and exact
+same-edition ownership. A cold code review found a mixed All Souls expansion
+acceptance gap; the correction and full-dossier regressions pass 85 tests,
+and focused independent re-review finds no remaining code blocker. The
+preproduction deployment-source baseline also passes. The official-source
+dossier and pinned isolated build runtime are ready; native production,
+publication acceptance and deployment remain outstanding.
+
 ## GPT Last Things and next Sunday propers, 2026-10-25
 
 <!-- promised-deliverable: gpt-flt-and-sunday-2026-10-25 -->
