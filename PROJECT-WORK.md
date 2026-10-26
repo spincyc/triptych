@@ -11,7 +11,7 @@ Last reconciled: 2026-10-26.
 
 <!-- promised-deliverable: four-last-things-pdf-layout-2026-10-26 -->
 
-**Candidate: reviewed and installed; publication pending.** The maintainer
+**Complete: pushed to main and verified live.** The maintainer
 requested two-column Four Last Things articles, a clean standalone title
 page for each document, contents after the title, and publication to `main`.
 This covers all four topics in both provider editions. Work began from
@@ -63,9 +63,26 @@ public-site build, GitHub Pages verifier, tracked web-currentness, scoped
 release bindings, promised-deliverable ledger and tool-registry checks pass.
 A separate final review accepts the complete 46-file source/record/release
 diff against `9f51eb530`, with no material content or disclosure concern.
-Publication to `main` and live byte verification remain pending. Commits stay on workspace branch `feature/flt`;
-publication uses an ordinary fast-forward update to `origin/main`, without
-switching the local branch or rewriting history.
+
+### Verified publication, 2026-10-26
+
+Commit `82b8c71dadca1dbbc1d0d9280167e261294af2d1` reached `origin/main`
+by ordinary fast-forward. [Pages run 40338343854](https://github.com/spincyc/triptych/actions/runs/40338343854)
+and [repository hygiene run 40338343908](https://github.com/spincyc/triptych/actions/runs/40338343908)
+both succeeded for that exact source commit.
+
+At `2026-10-26T14:40:04Z`, all 27 checked normal routes on `https://mystago.gy/`
+returned HTTP 200 and matched the verified local artifact byte for byte:
+eight canonical PDFs, their eight provider-qualified aliases, eight web
+editions, the Faith catalogue, document-catalogue data and the publication
+manifest. All live PDF hashes equal the accepted hashes above. The live
+publication-manifest SHA-256 is
+`ba8123f6a1f6b5c7191b0e70b629703873ac8427f4114643d2b21417ecc247ba`.
+
+Commits remain on workspace branch `feature/flt`; publication updated
+`origin/main` without switching branches or rewriting history. This closure
+receipt describes the verified source publication; it changes no reader-facing
+artifact and does not claim its own subsequent deployment.
 
 ## GPT postconciliar All Saints, 2026-10-25
 

@@ -48,5 +48,11 @@
   "source_authorization_policy_structure_unchanged": true,
   "merged_gates": "all five required local checks pass at b68df8feb75f3fe8c7cbc60646df2951caf046a7",
   "merged_cold_rechecks": "pending",
-  "merged_validation": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/final-validation.json"
+  "merged_validation": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/final-validation.json",
+  "published_upstream_receipt": "57aa30629fff0a05395b1b7449d5e66bd9d073ac",
+  "receipt_only_merge_paths": [
+    "PROJECT-WORK.md",
+    "promised-deliverables.toml"
+  ],
+  "all_tested_product_input_objects_unchanged_after_receipt_merge": true
 }
