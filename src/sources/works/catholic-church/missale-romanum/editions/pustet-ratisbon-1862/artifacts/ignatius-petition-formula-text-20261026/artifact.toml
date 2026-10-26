@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ignatius-petition-formula-text-20261026"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+rights_basis = "Separate bounded transcriptions of two actual prayers printed in the US-public-domain1862 book. Underlying Latin and response words remain public domain; project metadata does not relicense them."
+provenance = "Full page images actually read on26October2026: originalPDF485 printed399 named Ignatius Postcommunion and originalPDF88 printed2 Contra persecutores Ecclesiae oration with full conclusion and response. These remain two separate source prayers, not a new historical composite."
+retrieved = "2026-10-26"
+sha256 = "e085b59f15592f63937a0a9665b9ac228b96a32295d7c4116a054dc177c8f602"
+byte_size = 477
+path = "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ignatius-petition-formula-text-20261026/latin.txt"
+derived_from = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ignatius-petition-formula-controls-20261026"
+transformation = "Join physical wraps/hyphenation, remove stress accents, expand ae/oe ligatures and render printed response glyph as R.; retain actual source wording, pointing, orthography and abbreviation lengths. Physicalline1 is the complete namedIgnatius prayer; physicalline3 is the complete Contra persecutores prayer plus its separately marked R.Amen."
+encoding = "utf-8"
+indexable = true
+notes = "No target words, target punctuation, target-expanded conclusion or English is inserted into the historical transcription. Printed source marks are outside these transcribed prayer units."

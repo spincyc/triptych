@@ -321,7 +321,8 @@
       element: function (event) {
         const raw = elements.get(event.id.replace(/^ordinary-element\//, ''));
         if (!raw) throw new Error('production Ordinary element is missing for ' + event.id);
-        const node = semanticNode(OrdinaryRenderer.renderElement(raw, ordinary),
+        const node = semanticNode(OrdinaryRenderer.renderElement(raw, ordinary, undefined,
+              { calendar: state.edition.id, formulary: mass && mass.key }),
           event, ordinals.get(event.id));
         node.dataset.readerLocusMajor = division;
         node.dataset.readerLocusUnit = raw.name || raw.locus || 'Ordinary';

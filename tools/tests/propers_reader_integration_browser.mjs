@@ -311,7 +311,7 @@ const STATES = Object.freeze({
   fast: hash({ missal: 'postconciliar', type: 'marian', mass: 'visitation-blessed-virgin-mary', bible: 'douay-rheims', orations: 'la' }),
   englishMultiple: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 'commemoratione-omnium-fidelium-defunctorum', form: 'first', bible: 'douay-rheims', orations: 'en' }),
   englishWitness: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 'commemoratione-omnium-fidelium-defunctorum', form: 'first', bible: 'douay-rheims', orations: 'en', 'translation-witness': MULTIPLE_TRANSLATION_WITNESS }),
-  englishOne: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 'comm-s-saturnini-martyris', bible: 'douay-rheims', orations: 'en' }),
+  englishOne: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 'comm-s-eusebii-confessoris', bible: 'douay-rheims', orations: 'en' }),
   englishNone: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 's-hilarii-episcopi-confessoris-ecclesiae-doctoris', bible: 'douay-rheims', orations: 'en' }),
   romanChristmasForms: hash({ missal: 'roman-1962', type: 'christological', mass: 'nativitate-domini-octave', bible: 'douay-rheims', orations: 'la' }),
   romanChristmasNight: hash({ missal: 'roman-1962', type: 'christological', mass: 'nativitate-domini-octave', bible: 'douay-rheims', orations: 'la', form: 'night' }),

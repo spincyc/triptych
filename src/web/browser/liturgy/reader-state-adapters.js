@@ -698,7 +698,26 @@
     };
   }
 
-  function ordinaryTranslation(element, ordinary, language, witness) {
+  function ordinaryTranslationApplicability(scope, context) {
+    const keys = scope && typeof scope === 'object' && !Array.isArray(scope) ? Object.keys(scope).sort() : [];
+    const id = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+    if (keys.join(',') !== 'basis,calendar,formularies,kind' || scope.kind !== 'formulary' ||
+        typeof scope.calendar !== 'string' || !id.test(scope.calendar) ||
+        typeof scope.basis !== 'string' || !scope.basis.trim() ||
+        !Array.isArray(scope.formularies) || !scope.formularies.length ||
+        scope.formularies.some(function (one) { return typeof one !== 'string' || !id.test(one); }) ||
+        new Set(scope.formularies).size !== scope.formularies.length) {
+      throw new Error('malformed Ordinary translation applicability');
+    }
+    const fields = context && typeof context === 'object' && !Array.isArray(context) ? Object.keys(context).sort() : [];
+    if (fields.join(',') !== 'calendar,formulary' ||
+        typeof context.calendar !== 'string' || !id.test(context.calendar) ||
+        typeof context.formulary !== 'string' || !id.test(context.formulary)) return 'unresolved';
+    return context.calendar === scope.calendar && scope.formularies.indexOf(context.formulary) >= 0
+      ? 'applicable' : 'inapplicable';
+  }
+
+  function ordinaryTranslation(element, ordinary, language, witness, context) {
     const candidates = (element.translations || []).filter(function (one) {
       return one && one.lang === language && one.text;
     });
@@ -709,6 +728,21 @@
       throw new Error('explicit Ordinary witness is not held for an appointed element');
     }
     if (found) {
+      if (Object.prototype.hasOwnProperty.call(found, 'applicability')) {
+        const state = ordinaryTranslationApplicability(found.applicability, context);
+        const applicability = { state: state, scope: found.applicability,
+          context: state === 'unresolved' ? null : { calendar: context.calendar, formulary: context.formulary } };
+        if (state !== 'applicable') return {
+          kind: 'ordinary-text', language: language, sourceId: null, rights: null,
+          absenceKey: null, availability: 'unavailable', text: null,
+          reason: 'applicability-' + state, unavailableState: state === 'unresolved' ? 'unresolved' : 'unavailable',
+          applicability: applicability
+        };
+        return { kind: 'ordinary-text', language: language,
+          sourceId: found.source_id || found.source || null, rights: found.rights || null,
+          relation: found.relation || null, collation: found.collation || null,
+          absenceKey: null, availability: 'held', text: found.text, applicability: applicability };
+      }
       return {
         kind: 'ordinary-text',
         language: language,
@@ -1162,7 +1196,8 @@
         const selected = ordinaryTranslation(
           event.element, ordinary,
           request.languages && request.languages.ordinary || 'en',
-          request.languages && request.languages.ordinaryWitness || null
+          request.languages && request.languages.ordinaryWitness || null,
+          { calendar: request.edition.id, formulary: mass.key }
         );
         return {
           id: 'ordinary-element/' + event.element.key,
@@ -1983,6 +2018,7 @@
           : [event];
       });
       const held = selectedRows(witnessEvents).some(function (row) {
+        if (row.event.nameExecution && row.event.nameExecution.state === 'name-bound' && row.event.nameExecution.relation.source_aliases.indexOf(languages.translationWitness) >= 0) return true;
         if (row.event.executionSource && row.event.executionSource.source.source_aliases.indexOf(languages.translationWitness) >= 0) return true;
         if (row.selected.sourceId === languages.translationWitness) return true;
         // Citation-led units and conflicting readings retain the authored
@@ -2150,9 +2186,10 @@
         mass: mass, formId: formSelection.id || 'main'
       }}
     );
-    const events = withOrationGroups(
+    let events = withOrationGroups(
       seated.events, branch, readable, mass, adaptedRequest, input.structure, null, {season: derived.season}
     );
+    events = withFiniteNameExecution(events, branch, readable, mass, adaptedRequest, input.structure, input.nameExecutionUse || null);
     assertExplicitWitnesses(events, adaptedRequest, input.structure);
     const resolved = {
       edition: request.edition.id, formulary: mass.key, standing: readable.state
@@ -2174,6 +2211,7 @@
       },
       resolved: resolved,
       events: events,
+      ...(nameExecutionCoverage(events).occurrences ? {nameExecutionCoverage: nameExecutionCoverage(events)} : {}),
       ...(executionSourceCoverage(events).petitions ? {executionSourceCoverage: executionSourceCoverage(events)} : {}),
       ...(hasOwn(seated.prepared, 'usage') ? {properAppointmentUsage: seated.prepared.usage} : {}),
       sourcePathChoices: sourcePathChoices(seated.prepared, mass, request, events),
@@ -2308,6 +2346,114 @@
         selected_witness: wanted || source.source_id,
         state: unresolved.length ? 'unresolved' : 'petition-and-printed-companion-cue', unresolved: unresolved}
     });
+  }
+
+  const NAME_METHOD = 'roman-1962-finite-name-two-20261026';
+  const NAME_PUBLIC_PINS = {"[\"s-antonii-abbatis\",\"main\",\"Collect\",\"all\",1]":"5aa4eea80cc659402cf279a6628844a0c8b548331d55fc0b66881414f84a1549","[\"s-patricii-episcopi-confessoris\",\"main\",\"Postcommunion\",\"all\",1]":"4cd09387c699424aec180b9c942a31e10bd2ce6b3d0ce75146e6aab8c8668a74"};
+  function withFiniteNameExecution(events, branch, readable, mass, request, structure, useContext) {
+    const seen = new Set();
+    function apply(event, proper, ownerKey, group) {
+      const sources = proper.name_execution_sources || [];
+      if (!sources.length || request.languages.orations !== 'en') return event;
+      if (sources.length !== 1) throw new Error('finite name source requires one settled relation');
+      const source = sources[0], target = source.target;
+      if (source.schema !== 'triptych-finite-name-execution-source/v1' || source.method_id !== NAME_METHOD ||
+          executionSha(executionCanonical(source)) !== NAME_PUBLIC_PINS[JSON.stringify(target)]) throw new Error('changed or unknown finite name source');
+      if (target[0] !== ownerKey || target[1] !== proper.form_id || target[2] !== proper.name || target[3] !== 'all' || target[4] !== 1 ||
+          executionSha(proper.text || '') !== source.canonical_latin_sha256) throw new Error('finite name current recipient/form/body differs');
+      const referral = proper.taken_from === undefined ? null : proper.taken_from;
+      if (executionCanonical(referral) !== executionCanonical(source.recipient_source_relation)) throw new Error('finite name exact recipient/Common referral differs');
+      const recipient = structure.masses.find(function (one) { return one.key === ownerKey; });
+      if (!recipient || recipient.propers.filter(function (one) { return one.form_id === target[1] && one.name === target[2]; }).length !== 1) throw new Error('finite name recipient slot/occurrence is ambiguous');
+      const common = structure.masses.find(function (one) { return one.key === source.terminal_common[0]; });
+      const donors = (common && common.propers || []).filter(function (one) {
+        return one.form_id === source.terminal_common[1] && one.name === source.terminal_common[2];
+      });
+      if (donors.length !== 1 || executionSha(donors[0].text || '') !== source.common_latin_sha256 ||
+          !(donors[0].translations || []).some(function (one) { return one.lang === 'en' && one.source_id === source.source_id && one.text === source.template.text; })) throw new Error('finite name terminal Common/template differs');
+      const wanted = request.languages.translationWitness;
+      if (wanted && source.source_aliases.indexOf(wanted) < 0) return event;
+      const errors = [], hold = function (reason) { if (errors.indexOf(reason) < 0) errors.push(reason); };
+      if (request.edition.id !== 'roman-1962' || request.civilDate !== source.accepted_date) hold('exact-dated-occurrence-not-adopted');
+      if (!branch.settled || readable.state !== 'said' || !branch.oration_execution || branch.oration_execution.scope !== 'dated-mass-of-office') hold('accepted-Mass-of-Office-use-unbound');
+      const series = branch.orations && (branch.orations.all || branch.orations.low_mass) || [];
+      if (source.required_role === 'own-Mass-of-Office') {
+        if (useContext) hold('unexpected-use-context-for-own-Mass-of-Office');
+        if (group || mass.key !== ownerKey || !branch.winner || branch.winner.key !== ownerKey ||
+            !series[0] || series[0].position !== 1 || series[0].source_key !== ownerKey) hold('exact-own-Mass-of-Office-not-selected');
+      } else {
+        const unit = series.find(function (one) { return one.source_key === ownerKey; });
+        const loser = (branch.losers || []).find(function (one) {
+          return (one.id === ownerKey || one.key === ownerKey) && one.disposition === 'commemorated' && one.kind === 'ordinary';
+        });
+        if (!group || group.kind !== 'commemoration' || group.members.length !== 1 || group.members[0].id !== event.id ||
+            !unit || unit.position !== group.position || unit.position < 2 || !loser) hold('accepted-ordinary-commemoration-not-applied');
+        if (!useContext) hold('explicit-Mass-form-and-conventual-context-unbound');
+        else {
+          const keys = Object.keys(useContext).sort().join('|');
+          if (keys !== 'calendar|conventual|date|mass_form|recipient|role|schema|selected_oration|source_rule' ||
+              useContext.schema !== 'triptych-finite-name-use-context/v1' || useContext.calendar !== 'roman-1962' ||
+              useContext.date !== source.accepted_date || JSON.stringify(useContext.recipient) !== JSON.stringify(target) ||
+              useContext.role !== 'ordinary-commemoration' || ['low', 'sung'].indexOf(useContext.mass_form) < 0 || typeof useContext.conventual !== 'boolean' ||
+              executionCanonical(useContext.source_rule) !== executionCanonical(source.applicability_rule) ||
+              !unit || executionCanonical(useContext.selected_oration) !== executionCanonical({source_key: ownerKey, position: unit.position, kind: 'ordinary', series: 'low_mass'})) hold('source-backed-Mass-use-context-differs');
+          else if (useContext.mass_form === 'sung' && !useContext.conventual) hold('ordinary-commemoration-not-applicable-in-nonconventual-sung-Mass');
+        }
+        if (group && group.conclusion_final !== true) hold('later-shared-conclusion-unbound');
+      }
+      const text = source.template.text, name = source.name_controller;
+      if (source.offset_units !== 'utf16' || text.slice(source.template.placeholder.start, source.template.placeholder.end) !== 'N.' ||
+          executionSha(text) !== source.template.sha256 || executionSha(name.text) !== name.sha256 ||
+          text.slice(source.conclusion.cue_span.start, source.conclusion.cue_span.end) !== 'Through our Lord.' ||
+          source.conclusion.state !== 'separately-proved-source-prefix' || source.conclusion.family !== 'through-our-lord') throw new Error('finite name source ranges or independent conclusion changed');
+      const value = {schema: 'triptych-selected-name-execution/v1', relation: source,
+        state: errors.length ? 'unresolved' : 'name-bound', unresolved: errors,
+        use: source.required_role === 'own-Mass-of-Office' ? 'own-Mass-of-Office' :
+          (useContext && !errors.length ? (useContext.conventual ? 'conventual-Mass' : 'Low-Mass') : null)};
+      seen.add(event.id);
+      return Object.assign({}, event, {nameExecution: value, sourceHooks: uniqueSourceHooks([event]).concat([
+        {kind: 'publication', id: source.template.publication_passage_id},
+        {kind: 'publication', id: source.name_controller.publication_passage_id},
+        {kind: 'inference', id: NAME_METHOD + '/' + source.accepted_date + '/' + ownerKey + '/' + target[2]}
+      ])});
+    }
+    function visit(event) {
+      if (event.kind === 'proper-choice') return Object.assign({}, event, {options: event.options.map(function (option) {
+        return event.selection.state === 'selected' && event.selection.option === option.id
+          ? Object.assign({}, option, {events: option.events.map(visit)}) : option;
+      })});
+      if (event.kind !== 'proper') return event;
+      const hook = (event.sourceHooks || []).find(function (one) { return one.kind === 'proper-structure'; });
+      if (!hook) return event;
+      const parts = hook.id.split('/'), owner = structure.masses.find(function (one) { return one.key === parts[1]; });
+      const proper = owner && owner.propers[Number(parts[2]) - 1];
+      if (!proper) throw new Error('name execution lacks exact production source coordinate');
+      let projected = apply(event, proper, owner.key, null);
+      if (event.orationGroups) projected = Object.assign({}, projected, {orationGroups: event.orationGroups.map(function (group) {
+        return Object.assign({}, group, {members: group.members.map(function (member) {
+          const h = member.sourceHooks.find(function (one) { return one.kind === 'proper-structure'; }).id.split('/');
+          const m = structure.masses.find(function (one) { return one.key === h[1]; });
+          return apply(member, m.propers[Number(h[2]) - 1], m.key, group);
+        })});
+      })});
+      return projected;
+    }
+    return events.map(visit);
+  }
+  function nameExecutionCoverage(events) {
+    const found = new Map();
+    function visit(event) {
+      if (event.nameExecution) found.set(event.id, event.nameExecution);
+      (event.orationGroups || []).forEach(function (group) { group.members.forEach(visit); });
+      if (event.kind === 'proper-choice') (event.options || []).filter(function (option) {
+        return event.selection.state === 'selected' && option.id === event.selection.option;
+      }).forEach(function (option) { option.events.forEach(visit); });
+    }
+    (events || []).forEach(visit);
+    return {schema: 'triptych-name-execution-coverage/v1', occurrences: found.size,
+      bound: Array.from(found.values()).filter(function (one) { return one.state === 'name-bound'; }).length,
+      unresolved: Array.from(found.values()).filter(function (one) { return one.state === 'unresolved'; }).length,
+      historical_named_translations_added: 0, complete_English_claim: false};
   }
 
   function withOrationGroups(events, branch, readable, mass, request, structure, projectMember, dayContext) {
@@ -2540,6 +2686,7 @@
       calendarResult: null,
       resolved: resolved,
       events: events,
+      ...(nameExecutionCoverage(events).occurrences ? {nameExecutionCoverage: nameExecutionCoverage(events)} : {}),
       ...(executionSourceCoverage(events).petitions ? {executionSourceCoverage: executionSourceCoverage(events)} : {}),
       ...(hasOwn(seated.prepared, 'usage') ? {properAppointmentUsage: seated.prepared.usage} : {}),
       sourcePathChoices: sourcePathChoices(seated.prepared, mass, request, events),
@@ -2982,7 +3129,8 @@
         if (event.kind === 'ordinary_element') {
           const selected = ordinaryTranslation(
             event.element, ordinary, request.languages && request.languages.ordinary || 'en',
-            request.languages && request.languages.ordinaryWitness || null
+            request.languages && request.languages.ordinaryWitness || null,
+            { calendar: request.edition.id, formulary: generatedMass.key }
           );
           return {
             id: 'ordinary-element/' + event.element.key,
@@ -3034,6 +3182,7 @@
           sourceHooks: sourceHooks(proper, selected, request.edition.id, member.key, member.sourceIndex)
         };
       }, {season: input.derived.season});
+    events = withFiniteNameExecution(events, branch, readable, generatedMass, adaptedRequest, input.structure, input.nameExecutionUse || null);
     assertExplicitWitnesses(events, adaptedRequest, input.structure);
     const resolved = {
       edition: request.edition.id, formulary: mass.key, standing: mass.standing
@@ -3051,6 +3200,7 @@
       },
       resolved: resolved,
       events: events,
+      ...(nameExecutionCoverage(events).occurrences ? {nameExecutionCoverage: nameExecutionCoverage(events)} : {}),
       ...(executionSourceCoverage(events).petitions ? {executionSourceCoverage: executionSourceCoverage(events)} : {}),
       ...(hasOwn(prepared, 'usage') ? {properAppointmentUsage: prepared.usage} : {}),
       sourcePathChoices: sourcePathChoices(prepared, generatedMass, request, events),

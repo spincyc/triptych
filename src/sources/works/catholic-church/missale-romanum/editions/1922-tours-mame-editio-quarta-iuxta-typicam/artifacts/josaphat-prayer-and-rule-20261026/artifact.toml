@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.josaphat-prayer-and-rule-20261026"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The identified Tours Mame 1922 historical printing is public domain in the United States by expiration of its maximum publication term. This bounded image-checked Latin transcription reproduces only that printing and is excluded from the project CC BY 4.0 grant."
+provenance = "Whole 51720493-byte Mame PDF rehashed as 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005. Complete Josaphat Collect on PDF 871, printed 757, and complete Rubricae generales IX17 on PDF 54, printed xlii, independently reopened and read on their full page images on 26 October 2026. OCR supplied no reading. This is a Mame historical source, not Pustet and not the 1962 target."
+retrieved = "2026-10-26"
+sha256 = "7ca411e3bb3e1de3169bf407bc550bafb15558a245ea152680e8aed6cd662afb"
+byte_size = 815
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/josaphat-prayer-and-rule-20261026/latin-only.txt"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Join physical wraps and printed line-end word division; remove stress accents; expand ligatures; normalize decorative initial capitalization. Preserve every historical word, spelling, pointing and actual conclusion stop. Paragraph 1 is the entire Josaphat Collect including its literal Per Dominum... in unitate ejusdem.; paragraph 2 is the complete historical IX17 rule with every etc. unexpanded."
+encoding = "utf-8"
+indexable = true
+notes = "The Josaphat source prayer does not print Spiritus Sancti after ejusdem. The distinct same-book rule explicitly prints the same-Spirit suffix words, but is not misrepresented as part of the historical prayer. No English, target PDF, images or whole OCR are retained in this artifact."

@@ -46,10 +46,11 @@ PUBLICATION_BASES = frozenset(
         "licensed",
         "restricted",
         "non-exact-historical-witness",
+        "qualified-nonoriginal-adaptation",
     }
 )
 AFFIRMATIVE_PUBLICATION_BASES = frozenset(
-    {"public-domain", "project-created", "permission", "licensed"}
+    {"public-domain", "project-created", "permission", "licensed", "qualified-nonoriginal-adaptation"}
 )
 SURFACES = frozenset(
     {"web", "download", "print", "cli", "corpus-data", "public-git"}
@@ -462,7 +463,8 @@ def decision_for(
 
 
 def _row_problems(where: str, row: Mapping[str, object]) -> list[str]:
-    problems: list[str] = []
+    from _proper_qualified_latin import row_problems
+    problems: list[str] = [f"{where}: {one}" for one in row_problems(row)]
     unknown = sorted(set(row) - ENTRY_FIELDS)
     if unknown:
         problems.append(f"{where}: unknown fields: {', '.join(unknown)}")
@@ -880,9 +882,17 @@ def _source_record_problems(
     where: str,
     row: Mapping[str, object],
     sources: Mapping[str, Mapping[str, object]],
+    *,
+    authority_root: Path | None = None,
+    effective_calendar: str = "",
 ) -> list[str]:
     """Validate witness identity and rights against source-library metadata."""
-    problems: list[str] = []
+    import _proper_qualified_latin as qualified
+    problems: list[str] = [f"{where}: {one}" for one in qualified.source_problems(
+        row, sources, effective_calendar=effective_calendar)]
+    if row.get("publication_basis") == qualified.BASIS:
+        problems.extend(f"{where}: {one}" for one in qualified.authority_problems(
+            authority_root or TRUSTED_REPOSITORY))
     for field in ("source_id", "verification_source_id"):
         source_id = str(row.get(field) or "")
         if not source_id:
@@ -1026,7 +1036,10 @@ def publication_records(
                 records[LatinKey.from_mapping(row)] = row
     if not problems:
         for key, row in records.items():
-            problems.extend(_source_record_problems(key.label(), row, registered_sources))
+            problems.extend(_source_record_problems(
+                key.label(), row, registered_sources,
+                authority_root=calendar_root.resolve().parents[2],
+                effective_calendar=calendar))
     if problems:
         # Callers deliberately need not inspect the diagnostics to remain safe:
         # an invalid or unavailable source graph publishes no Latin wording.

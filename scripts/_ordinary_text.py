@@ -78,6 +78,29 @@ def absence_side(lang: str) -> str:
     return {"en": "english", "la": "latin"}.get(lang, lang)
 
 
+def translation_applicability(translation: dict, context: dict | None = None) -> str:
+    """Source heldness does not authorize executing a scoped language body."""
+    if "applicability" not in translation:
+        return "applicable"
+    scope = translation["applicability"]
+    import re
+    identifier = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+    if (not isinstance(scope, dict) or set(scope) != {"kind", "calendar", "formularies", "basis"}
+            or scope.get("kind") != "formulary"
+            or not isinstance(scope.get("calendar"), str) or not identifier.fullmatch(scope["calendar"])
+            or not isinstance(scope.get("basis"), str) or not scope["basis"].strip()
+            or not isinstance(scope.get("formularies"), list) or not scope["formularies"]
+            or any(not isinstance(one, str) or not identifier.fullmatch(one) for one in scope["formularies"])
+            or len(scope["formularies"]) != len(set(scope["formularies"]))):
+        raise ValueError("malformed Ordinary translation applicability")
+    if (not isinstance(context, dict) or set(context) != {"calendar", "formulary"}
+            or any(not isinstance(context.get(key), str) or not identifier.fullmatch(context[key])
+                   for key in ("calendar", "formulary"))):
+        return "unresolved"
+    return ("applicable" if context["calendar"] == scope["calendar"]
+            and context["formulary"] in scope["formularies"] else "inapplicable")
+
+
 def element_lines(
     element: dict,
     lang: str,
@@ -86,6 +109,7 @@ def element_lines(
     indent: str = "  ",
     show_rubrics: bool = True,
     why: bool = False,
+    context: dict | None = None,
 ) -> list[str]:
     """One element of the Ordinary, set as what it is. Never a blank.
 
@@ -114,6 +138,9 @@ def element_lines(
     lines: list[str] = []
 
     if kind == "heading":
+        applicability = translation_applicability(held[0], context)
+        if applicability != "applicable":
+            return [indent + style.note(f"[held source text; applicability {applicability} for this formulary context]")]
         lines.append("")
         lines.extend(indent + one for one in style.heading(str(held[0]["text"]).strip(), rule="-"))
         if why and element.get("locus"):
@@ -132,6 +159,10 @@ def element_lines(
 
     body = indent + "  "
     if held:
+        applicability = translation_applicability(held[0], context)
+        if applicability != "applicable":
+            lines.append(body + style.note(f"[held source text; applicability {applicability} for this formulary context]"))
+            return lines
         text = str(held[0].get("text") or "")
         if kind == "rubric":
             # Bracketed in every tier. The brackets are the distinction; the

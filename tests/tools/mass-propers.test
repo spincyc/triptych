@@ -31,22 +31,18 @@ case "$out" in
 	;;
 esac
 
-# A withheld Latin body is a typed absence in the reading view, and its audit
-# stays out of it. Advent I was the example until its orations were published on
-# 2026-09-03; St Anthony's Collect is withheld in exactly the state Advent I's
-# was, because the 1962 adds `atque Doctoris` (he was made a Doctor in 1946) and
-# no pre-1931 witness can carry it.
-anthony="$(run_tool --calendar roman-1962 \
-	--mass s-antonii-padua-confessoris-ecclesiae-doctoris)"
-case "$anthony" in
+# The Supreme-Pontiff formulary still has restricted Latin sides. Anthony's
+# separately reviewed Collect is now held, so it cannot be a withholding oracle.
+restricted_latin="$(run_tool --calendar roman-1962 --mass s-pii-v-papae-confessoris)"
+case "$restricted_latin" in
 *"Latin text unavailable"*) ;;
 *) echo "reading view is missing Latin text unavailable" >&2; exit 1 ;;
 esac
-case "$anthony" in
+case "$restricted_latin" in
 *"publication basis"*|*"publication_status"*|*"publication_basis"*)
-	echo "reading view leaked withheld Latin publication audit metadata" >&2
-	exit 1
-	;;
+    echo "reading view leaked withheld Latin publication audit metadata" >&2
+    exit 1
+    ;;
 esac
 
 # A mechanically inherited recension must carry its aggregate boundary and its
@@ -55,9 +51,9 @@ esac
 pre1955="$(run_tool show --calendar roman-pre-1955 --mass advent-1 --lang en)"
 for want in "Historical boundary" \
 	"de-rubricis-simpliciorem-1955; maxima-redemptionis-1955" \
-	"Recension coverage: structural-only" \
-	"Proper text source: roman-1962 (inherited, uncollated)" \
-	"Structural-only pre-1955 projection, not a complete 1920 Missal corpus"; do
+	"Recension coverage: partial" \
+	"Proper text source: roman-1962 (inherited, partial)" \
+	"not a complete 1920 corpus"; do
 	case "$pre1955" in
 	*"$want"*) ;;
 	*) echo "pre-1955 reading view is missing provenance: $want" >&2; exit 1 ;;
@@ -69,14 +65,14 @@ python3 - pre1955-provenance.json <<'PY'
 import json, sys
 
 document = json.load(open(sys.argv[1], encoding="utf-8"))
-assert document["advisory"].startswith("Structural-only pre-1955 projection")
+assert document["advisory"].startswith("Partial pre-1955 projection")
 assert document["stands_before"] == [
     "de-rubricis-simpliciorem-1955", "maxima-redemptionis-1955"
 ]
-assert document["recension_coverage"]["status"] == "structural-only"
+assert document["recension_coverage"]["status"] == "partial"
 assert document["recension_coverage"]["inheritance"] == {
     "source_calendar": "roman-1962",
-    "status": "uncollated",
+    "status": "partial",
     "basis": document["recension_coverage"]["inheritance"]["basis"],
 }
 assert document["mass"]["recension"]["calendar"] == "roman-1962"
@@ -96,30 +92,29 @@ case "$out" in
 esac
 
 # Advent I now has exact Lasance oration bindings. A genuinely unsourced
-# composed unit, St Theodore's own Secret, keeps the no-exemplar control over
+# composed unit, St Anthony's own Postcommunion, keeps the no-exemplar control over
 # published Latin. A Bible selection must not manufacture its English body.
 english="$(run_tool --calendar roman-1962 --mass advent-1 --lang en)"
-unsourced="$(run_tool --calendar roman-1962 --mass comm-s-theodori-martyris \
+unsourced="$(run_tool --calendar roman-1962 --mass s-antonii-padua-confessoris-ecclesiae-doctoris \
 	--lang en --bible douay-rheims)"
 case "$unsourced" in
 *"(en translation unavailable: not yet sourced)"*) ;;
-*) echo "Theodore English did not state its typed reason" >&2; exit 1 ;;
+*) echo "Anthony English did not state its typed reason" >&2; exit 1 ;;
 esac
 case "$unsourced" in
 *"rights restricted"*|*"deliberately"*)
-	echo "Theodore English misstated a no-exemplar absence" >&2
+	echo "Anthony English misstated a no-exemplar absence" >&2
 	exit 1
 	;;
 esac
-# Where the Latin is withheld as well, the note says both facts, and a typed
-# rights restriction keeps its own words. St Anthony's Collect is now
-# no-exemplar over withheld Latin; St Pius V's Secret, from the Common of
-# Popes, is still rights-withheld English over withheld Latin.
+# Anthony's new Latin grant does not supply its missing English. A separate
+# affirmative restriction retains its own words: St Pius V still inherits the
+# restricted Supreme-Pontiff bodies. Neither state may relabel the other.
 anthony_english="$(run_tool --calendar roman-1962 \
 	--mass s-antonii-padua-confessoris-ecclesiae-doctoris --lang en)"
 case "$anthony_english" in
-*"en translation unavailable: not yet sourced; Latin text unavailable"*) ;;
-*) echo "unsourced English over withheld Latin did not report both" >&2; exit 1 ;;
+*"en translation unavailable: not yet sourced"*) ;;
+*) echo "Anthony English did not retain its independent typed gap" >&2; exit 1 ;;
 esac
 pius_english="$(run_tool --calendar roman-1962 --mass s-pii-v-papae-confessoris --lang en)"
 case "$pius_english" in
@@ -179,7 +174,7 @@ for caution in (
 assert not collect.get("untranslated"), collect
 assert not collect.get("unavailable_translations"), collect
 PY
-run_tool --calendar roman-1962 --mass comm-s-theodori-martyris \
+run_tool --calendar roman-1962 --mass s-antonii-padua-confessoris-ecclesiae-doctoris \
 	--lang en --bible douay-rheims --format json >roman-english-unsourced.json
 python3 - roman-english-unsourced.json <<'PY'
 import json, sys
@@ -187,7 +182,7 @@ import json, sys
 document = json.load(open(sys.argv[1], encoding="utf-8"))
 secret = next(
     row["proper"] for row in document["appointed"]
-    if row["proper"]["name"] == "Secret"
+    if row["proper"]["name"] == "Postcommunion"
 )
 assert secret["source"] == "composed", secret
 assert secret["latin"]["withheld"] is False, secret
@@ -197,7 +192,7 @@ assert secret["untranslated"] == [{
     "lang": "en",
     "state": "unavailable",
     "target": {
-        "mass": "comm-s-theodori-martyris", "form_id": "main", "proper": "Secret",
+        "mass": "s-antonii-padua-confessoris-ecclesiae-doctoris", "form_id": "main", "proper": "Postcommunion",
         "cycle": "all", "occurrence": 1, "extent": "body",
     },
 }], secret
@@ -214,7 +209,7 @@ esac
 # machine output; the reading view states only its class (2026-10-19, C2 G3),
 # and the reason's witness, locator and note stay source-side.
 run_tool --calendar roman-1962 \
-	--mass commemoratione-omnium-fidelium-defunctorum \
+	--mass s-antonii-padua-confessoris-ecclesiae-doctoris \
 	--lang en --format json >deliberate-untranslated.json
 python3 - deliberate-untranslated.json <<'PY'
 import json, sys

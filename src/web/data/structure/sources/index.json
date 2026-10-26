@@ -1,10 +1,10 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 3913,
-  "editions": 1297,
-  "passages": 9013,
-  "readable": 3971,
+  "artifacts": 3939,
+  "editions": 1303,
+  "passages": 9110,
+  "readable": 3989,
   "works": 1076
  },
  "facets": {
@@ -4034,7 +4034,7 @@
     "id": "en"
    },
    {
-    "editions": 393,
+    "editions": 399,
     "id": "la"
    },
    {
@@ -4225,19 +4225,19 @@
     "label": "19th century"
    },
    {
-    "editions": 284,
+    "editions": 285,
     "id": "1900",
     "label": "20th century"
    },
    {
-    "editions": 686,
+    "editions": 691,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 2209,
+    "artifacts": 2228,
     "editions": 493,
     "id": "public-domain"
    },
@@ -4247,8 +4247,8 @@
     "id": "restricted"
    },
    {
-    "artifacts": 431,
-    "editions": 216,
+    "artifacts": 432,
+    "editions": 217,
     "id": "unresolved"
    },
    {
@@ -4257,8 +4257,8 @@
     "id": "licensed"
    },
    {
-    "artifacts": 177,
-    "editions": 47,
+    "artifacts": 183,
+    "editions": 52,
     "id": "project-created"
    },
    {
@@ -10725,8 +10725,8 @@
      "file": "1862-pustet-ratisbon-1862.json",
      "id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
      "language": "la",
-     "passages": 498,
-     "readable": 382,
+     "passages": 503,
+     "readable": 387,
      "rights": [
       "public-domain"
      ],
@@ -10777,8 +10777,8 @@
      "file": "1922-1922-tours-mame-editio-quarta-iuxta-typicam.json",
      "id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
      "language": "la",
-     "passages": 174,
-     "readable": 56,
+     "passages": 181,
+     "readable": 62,
      "rights": [
       "public-domain"
      ],
@@ -10830,7 +10830,7 @@
      "file": "1962-vatican-typica-1962.json",
      "id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
      "language": "la",
-     "passages": 641,
+     "passages": 647,
      "readable": 0,
      "rights": [
       "unresolved"
@@ -11280,7 +11280,7 @@
      "file": "1896-feltoe-1896.json",
      "id": "edition.catholic-church.sacramentarium-veronense.feltoe-1896",
      "language": "la",
-     "passages": 1,
+     "passages": 2,
      "readable": 0,
      "rights": [
       "public-domain",
@@ -16516,7 +16516,7 @@
      "file": "1945-benziger-revised-1945.json",
      "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
      "language": "en",
-     "passages": 2044,
+     "passages": 2052,
      "readable": 20,
      "rights": [
       "project-created",
@@ -17310,7 +17310,7 @@
      "file": "1925-saint-andre-lohmann-1925.json",
      "id": "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925",
      "language": "en",
-     "passages": 66,
+     "passages": 126,
      "readable": 0,
      "rights": [
       "public-domain",
@@ -18885,6 +18885,19 @@
      "rights": [],
      "title": "Acta Apostolicae Sedis, volume 23",
      "year": 1931
+    },
+    {
+     "date": "1942",
+     "file": "1942-volume-34-1942.json",
+     "id": "edition.holy-see.acta-apostolicae-sedis.volume-34-1942",
+     "language": "la",
+     "passages": 1,
+     "readable": 0,
+     "rights": [
+      "unresolved"
+     ],
+     "title": "Acta Apostolicae Sedis, volume 34 (1942)",
+     "year": 1942
     },
     {
      "date": "1947",
@@ -22847,7 +22860,7 @@
      "file": "1903-ginn-1903.json",
      "id": "edition.joseph-henry-allen.new-latin-grammar.ginn-1903",
      "language": "en",
-     "passages": 13,
+     "passages": 15,
      "readable": 0,
      "rights": [
       "public-domain"
@@ -35021,8 +35034,8 @@
      "file": "2026-2026-09-03-editorial-projection.json",
      "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03",
      "language": "la",
-     "passages": 1064,
-     "readable": 1064,
+     "passages": 1065,
+     "readable": 1065,
      "rights": [
       "project-created"
      ],
@@ -35174,6 +35187,45 @@
     },
     {
      "date": "2026-10-26",
+     "file": "2026-2026-10-26-editorial-projection-cosmas-chain.json",
+     "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-cosmas-chain",
+     "language": "la",
+     "passages": 1,
+     "readable": 1,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman 1962 Latin Proper Editorial Projection, 26 October 2026, Cosmas and Damian attribution correction",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-26",
+     "file": "2026-2026-10-26-gregem-qualified.json",
+     "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-gregem-qualified",
+     "language": "la",
+     "passages": 2,
+     "readable": 2,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman 1962 Gregem Common and Damasus qualified editorial projection, 26 October 2026",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-26",
+     "file": "2026-2026-10-26-editorial-projection-josaphat-chain.json",
+     "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-josaphat-chain",
+     "language": "la",
+     "passages": 1,
+     "readable": 1,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman 1962 Latin Proper Editorial Projection, 26 October 2026, Josaphat attribution correction",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-26",
      "file": "2026-2026-10-26-editorial-projection-latin-five.json",
      "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-five",
      "language": "la",
@@ -35200,6 +35252,19 @@
     },
     {
      "date": "2026-10-26",
+     "file": "2026-2026-10-26-editorial-projection-philip-secret-chain.json",
+     "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-philip-secret-chain",
+     "language": "la",
+     "passages": 1,
+     "readable": 1,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman1962 Latin Proper EditorialProjection,26 October 2026, PhilipNeriSecret attributioncorrection",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-26",
      "file": "2026-2026-10-26-editorial-projection-sanctoral-repairs.json",
      "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-sanctoral-repairs",
      "language": "la",
@@ -35209,6 +35274,19 @@
       "project-created"
      ],
      "title": "Roman 1962 Latin Proper Editorial Projection, 26 October 2026, two sanctoral repairs and one provenance correction",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-26",
+     "file": "2026-2026-10-26-editorial-projection-seven-founders.json",
+     "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-seven-founders",
+     "language": "la",
+     "passages": 1,
+     "readable": 1,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman1962 Latin Proper Editorial Projection,26October2026, Seven Founders truthful source chain",
      "year": 2026
     }
    ],

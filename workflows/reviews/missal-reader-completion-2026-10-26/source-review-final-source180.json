@@ -1,0 +1,232 @@
+{
+  "all_source_inputs_current_before_acceptance": true,
+  "candidate_compiler_implementation": {
+    "compile_next_guard.py": "a5d2423e8f27226728b9731890e0db67cd9cf8d4e8d51f856b59fcb335762dce",
+    "next_contract.py": "fded2980b7244eff678fc18e0cb017e2a70931235d64a84569ef69eee3547b29",
+    "parent_binding.py": "ad89f282bac2de6d573fa188106ab4ae134246ca32e90d9a9a08dd4654c7bf49"
+  },
+  "candidate_data_proof_sha256": "1570a23c6dd0f80a9eff67e097c10320784187ba8cbd35f50b07704728b2365a",
+  "current_coverage": {
+    "postconciliar": {
+      "ledgered_untranslated": 448,
+      "slots": 564,
+      "with_english": 116
+    },
+    "roman-1962": {
+      "ledgered_untranslated": 260,
+      "slots": 1448,
+      "with_english": 1188
+    },
+    "roman-pre-1955": {
+      "inherited_inapplicable_records": 57,
+      "ledgered_untranslated": 223,
+      "slots": 1391,
+      "with_english": 1168
+    }
+  },
+  "current_transitions": {
+    "postconciliar_english": {
+      "absence": 448,
+      "admissions": 0,
+      "explicit_owner_additions": 3,
+      "parent_owners": 561,
+      "positive": 116
+    },
+    "postconciliar_latin": {
+      "additions": 0,
+      "replacements": 0
+    },
+    "roman-1962_english": {
+      "absence": 260,
+      "admissions": 25,
+      "explicit_owner_additions": 0,
+      "parent_owners": 1448,
+      "positive": 1188
+    },
+    "roman-1962_latin": {
+      "additions": 1,
+      "replacements": 6
+    }
+  },
+  "historical_before_replays": [
+    {
+      "after_sha256": "3a625e5939895bd596cbacea8df1d0f1b501ffc22916ac0e16aedebb42786179",
+      "before_sha256": "69731f40de5d8c4539c4660f7035681ba3429beffd447ac6e29a5c1b98b6829d",
+      "hunks": 6,
+      "path": "src/sources/calendars/postconciliar/propers.yaml"
+    },
+    {
+      "after_sha256": "f0054f3753acc9c857de32b263cac348595a76bda3f0cd572ec8974d1db21812",
+      "before_sha256": "018642eee26d09e3bb014fa60baa0f820ab3637c9d6e349378c696a7b79d6877",
+      "hunks": 97,
+      "path": "src/sources/calendars/roman-1962/propers.yaml"
+    },
+    {
+      "after_sha256": "5943f9788ff9ebe3b614086d824039a2993039f58d3819e85f26ffafb3c38a58",
+      "before_sha256": "5943f9788ff9ebe3b614086d824039a2993039f58d3819e85f26ffafb3c38a58",
+      "hunks": 0,
+      "path": "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml"
+    },
+    {
+      "after_sha256": "f06a68826790a3b828d0f44cccecd52d09ff12c828a01dd330391636bf086128",
+      "before_sha256": "9bf6fe5ecc3b397888a0316f7b5c06e40f65e9dfc1eb96c3bc78d111e7c41597",
+      "hunks": 5,
+      "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml"
+    },
+    {
+      "after_sha256": "6b9b70f19e7d1473619a18022ce91ca430df36485b776933b4313ec85116ce57",
+      "before_sha256": "c2bf07d5551fbe7ae2748ce7390c37b0d707df7cf275d400126b04cacd8600f0",
+      "hunks": 119,
+      "path": "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml"
+    },
+    {
+      "after_sha256": "e812ba664ebe6dda0d4dc878b2f03f6368e94482817be23c44de17763054ced3",
+      "before_sha256": "560e82057dc0480a5b1fe835304ba57ed476b346a38cab6fac550298582016ea",
+      "hunks": 28,
+      "path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml"
+    },
+    {
+      "after_sha256": "1dbc454c7edc0a0e0054ddd57dd65bdc59f07195d193be003e9b200a1f0c57ed",
+      "before_sha256": "79946d1bc6e015d8624d67ce243b59cf3ee634fc5997310aa6d764953349d815",
+      "hunks": 187,
+      "path": "src/sources/inventories/roman-1962-proper-translations-v1.toml"
+    },
+    {
+      "after_sha256": "c50695190d7a5b0a42ddc80569ac9a08483fb36a87bae17b98050a545af3933b",
+      "before_sha256": "465e15d42b7301b22c2d93be1b95b00eb326ee0cd2ad1f928520952a89e89faa",
+      "hunks": 9,
+      "path": "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml"
+    },
+    {
+      "after_sha256": "27aba519f4d733c25818917bb0eda9b461129165b0c4970088384d41d3c9d87d",
+      "before_sha256": "98daa1922358c0d977ddfc97352812d395c6f578591e48691bc1393c6b1ace8d",
+      "hunks": 11,
+      "path": "tools/tests/test_proper_latin.py"
+    },
+    {
+      "after_sha256": "69530f60a46c22ec5e8e2b3a1ed2338695e605abb2f370e20618b7c47c95646d",
+      "before_sha256": "bc3ec297a6ca1edd3f155ccc29381526fee006d2e39a2c43bc0ce06fb81a51d4",
+      "hunks": 7,
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py"
+    },
+    {
+      "after_sha256": "6f3f78af5d6b2a5c39b181476c24edef766f174f6d51b9c638431cdc94bf73f1",
+      "before_sha256": "ddb972cdd5fe9651d1ecc0b33bbc1bf4deca7f1b5f5c7d75b87bc03c54603f9e",
+      "hunks": 3,
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py"
+    },
+    {
+      "after_sha256": "208dc6448c764907e500be197f6e112ebd10e4807f1a84eef5c884ba10228dbd",
+      "before_sha256": "dedf9a58d3f9e6b311bf5caf8f7aa7c51dcc9543d6ee17e4288e834c8cdc0215",
+      "hunks": 8,
+      "path": "tools/tests/test_roman_1962_english13_phase5.py"
+    },
+    {
+      "after_sha256": "e7067e3fc899d473c2619da91789893b102960e88531eafb3fb5114d9aa4627f",
+      "before_sha256": "86b29add67ac575fb147300f4ab6e66c47863a16c4cf5166896a88e710f5335c",
+      "hunks": 5,
+      "path": "tools/tests/test_roman_1962_english31_phase4.py"
+    },
+    {
+      "after_sha256": "e61a6847c080ba9ee4d922339ec05f20cbc98da4d289f3d54f1b47b6018edb91",
+      "before_sha256": "9c11f0b870c14916dfa2530c1e733f262a5c9f526cd613744a06ea7ce3c05190",
+      "hunks": 6,
+      "path": "tools/tests/test_roman_1962_lasance_commons_easter_phase3.py"
+    },
+    {
+      "after_sha256": "e6277ea1c793fd7d00ac2f4c1ae5608ac6d89d5027ba6f75416ae97cdec1390d",
+      "before_sha256": "7dc3a1569140e14f32fa2c98e607577b05871f3c197a307db67107d731d6afca",
+      "hunks": 6,
+      "path": "tools/tests/test_roman_1962_latin22_phase5.py"
+    },
+    {
+      "after_sha256": "8bc6ee1c5d6b0b5dac5b17f6ebde210bee51cd2ffb606daaae7b7e20ef7c2d8a",
+      "before_sha256": "c13d838baf217cf25be163e465a4f90322d8ecf04e89322f237eec105764686e",
+      "hunks": 8,
+      "path": "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py"
+    },
+    {
+      "after_sha256": "07c44e1117eb8644f83fffe01ee059d0ff0706d4f68cbed0c47706b513484921",
+      "before_sha256": "e7354e1d015919cc47f235fca3aa1f5134afc8fe250765eb24b6d2eafbc71f05",
+      "hunks": 3,
+      "path": "tools/tests/test_roman_1962_winter_ursula_source_repair.py"
+    }
+  ],
+  "historical_fields_preserved": [
+    "schema",
+    "baseline_revision",
+    "baseline_roman_document_sha256",
+    "latin_baseline_rows",
+    "latin_baseline_bodies",
+    "latin_baseline_present_keys",
+    "latin_baseline_supplemented_keys",
+    "projection_baseline_source_files",
+    "english_219_keys",
+    "english_baseline_source_files",
+    "english_historical_source_files",
+    "english_historical_absence_scope"
+  ],
+  "independent_receiving": {
+    "code28": "d33f4af470253f235ead90a02fcdd8ee228447c2a974fc99f676b95d7b40d302",
+    "complete_normalization": "0410d0a64b0f0d40cdc942bdb04c8bd654ba8c8dd032ed8d41feb6e4bf5bbb98",
+    "printed_locus": "682901e8874789d5c951491c924591032f09f55057dc2018c83abaad9f2169b6",
+    "public_caution": "18993eb0ab911a0ab73ec680753ec9fdd0d27c619a561cc41d340d6788fe2bbb",
+    "qualified_model": "8b9cabc0d0b7ba6c3419978481147f3111180a2f562005f0ba5f8168ce4ee1ce",
+    "qualified_public_projection": "8b1ddb5e3fea8cbe5004f727644c3999603b677130d7500250ef7258e16913ff",
+    "source180": "6ed8dbbbc932d478494b2db03ba9cc207deb19f9b5cd385fe919b7cc96ec9e30",
+    "source_metadata4": "1fc78fc3946f26236f9a2889d09ae6f6d7cbfb6d59ab18dd6718515db83bbfa7"
+  },
+  "parent_source_receipt_sha256": "501dc02e85f51e173e1f12d770c493a8d9c08425ca6d842883c5da36f36707f7",
+  "pending_fixture_sha256": "6ece1b09c8957b824339663e6ba19d1d125f2ccf4b8d3c658edb01f35b05d6b6",
+  "published_parent": "47c7df92dd1b99ce36266df9c5ebeec089230984",
+  "root_acceptance_basis": [
+    "Accept only the independently received full source/target/proof maps and finite methods identified by the canonical authorities. Compiler success is accounting, not publication authority.",
+    "25 literal historical English admissions; three text-free postconciliar Collect owners; two optional finite-name execution sources without historical-English admissions; day-only Ordinary metadata.",
+    "One qualified Common Latin body and unchanged Damasus body under exact two-owner moderate United States assessment, preserving the contrary originality argument and all three Albert holds.",
+    "Three source-context locator annotations preserve all wording, rights, proof and English dictionaries; the audit changes only three current postimage metadata rows.",
+    "Root independently matched the complete compiled manifest to the frozen 52031-path epoch, all 12 historical fields to the immutable published parent, and all 17 raw inverse byte streams to original Git2e030. All full current inputs were rehashed before this acceptance."
+  ],
+  "schema": "triptych-reviewed-source-batch-receipt/v1",
+  "scope": "missal-source-batch",
+  "source_authorities": [
+    {
+      "path": "workflows/reviews/missal-reader-completion-2026-10-26/english22-latin3-source-adoption.json",
+      "sha256": "e5f8cd03a369130e3aeda2a044389d50db269ebb46577f2445e24342513b53a7"
+    },
+    {
+      "path": "workflows/reviews/missal-reader-completion-2026-10-26/two-primary-source-method-adoption.json",
+      "sha256": "dc65f792de55e7e7d55929308a26ffd6d048003319cda49df18ef361e8f5f13d"
+    },
+    {
+      "path": "workflows/reviews/missal-reader-completion-2026-10-26/francis-one-ignatius-proof-adoption.json",
+      "sha256": "d6a37a46798c3c31fcb09ce9471faeb5e2c5fcaf22686c839eb968e346382d11"
+    },
+    {
+      "path": "workflows/reviews/missal-reader-completion-2026-10-26/postconciliar-three-owner-adoption.json",
+      "sha256": "f76f57e8a7a0f28d9e593fc5e9406a7894b119c8baca1ac6a5ab47a092b0514b"
+    },
+    {
+      "path": "workflows/reviews/missal-reader-completion-2026-10-26/ordinary-day-applicability-adoption.json",
+      "sha256": "6e7b9891ee2a04d19b16f3e6142e93eb386b3715649f3665afa05c71f9edfed8"
+    },
+    {
+      "path": "workflows/reviews/missal-reader-completion-2026-10-26/gregem-damasus-qualified-rights-adoption.json",
+      "sha256": "652f44afd2c566e48391c7b249137eab32a483ace0346f751059ac8c842fad9c"
+    },
+    {
+      "path": "workflows/reviews/missal-reader-completion-2026-10-26/qualified-latin-model-adoption.json",
+      "sha256": "078212c9b7f5a9cd0cd8e1536dcb958a4c07abb5a26c2b86ca1270cd579d8d9e"
+    },
+    {
+      "path": "workflows/reviews/missal-reader-completion-2026-10-26/source-locus-metadata-adoption.json",
+      "sha256": "1ba2c680ae6b4167e1149a8184849f6237993517e00101cc7ba401b692d8f687"
+    }
+  ],
+  "source_epoch_paths": 52031,
+  "source_epoch_sha256": "b77ae86b503498c75ffa21ff7aa07910a52250f51f1e7c9f7449d8d5a255f553",
+  "source_input_manifest_sha256": "702f0b7c9254d4c8981975a330b879237d016bab8495c1cd96ebc84ddc7be0fa",
+  "source_permissions_extended_beyond_exact_reviewed_authorities": false,
+  "status": "accepted",
+  "strict_consumer_sha256": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1",
+  "transition_contract_sha256": "c98da2497c8583e8f2a8eb6cd73a76ceabfbeb0b3d0b5920eb7a958e1a3f1dd6"
+}

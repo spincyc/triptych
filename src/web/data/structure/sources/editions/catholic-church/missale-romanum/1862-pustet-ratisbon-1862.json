@@ -451,6 +451,36 @@
    "storage": "tracked"
   },
   {
+   "artifact_type": "facsimile-extract-pdf",
+   "byte_size": 433790,
+   "edition_owned": true,
+   "id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ignatius-petition-formula-controls-20261026",
+   "media_type": "application/pdf",
+   "notes": "Page1 contains the complete Contra persecutores Ecclesiae oration and its contiguous complete Per Dominum conclusion followed by separately marked R.Amen. Page2 contains the complete named Ignatius Postcommunion with its actual short Per Dominum cue. Both page-foot Digitized by Google attributions are incidental digitizer marks, distinct from the1862 book and excluded from prayer transcriptions and word counts; retained unchanged under the existing Google rights record.",
+   "page_count": 2,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "The Pustet Ratisbon1862 historical book is public domain in the United States by publication date. Faithful mechanical extraction adds no human authorship. Incidental Digitized by Google footers on both extract pages retain their separate status under src/sources/inventories/google-usage-guidelines-rights-v1.toml, conditions item2 and the_other_google_matter. No project licence over scan/source/Google matter is asserted.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/bub_gb_E7sPAAAAIAAJ/bub_gb_E7sPAAAAIAAJ.pdf",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 477,
+   "edition_owned": true,
+   "id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ignatius-petition-formula-text-20261026",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "No target words, target punctuation, target-expanded conclusion or English is inserted into the historical transcription. Printed source marks are outside these transcribed prayer units.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "Separate bounded transcriptions of two actual prayers printed in the US-public-domain1862 book. Underlying Latin and response words remain public domain; project metadata does not relicense them.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
    "artifact_type": "facsimile-pdf",
    "byte_size": 460454,
    "edition_owned": true,
@@ -9256,6 +9286,32 @@
    "words": 46
   },
   {
+   "artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ignatius-petition-formula-text-20261026",
+   "artifact_type": "normalized-text",
+   "context": "The whole actual Contra persecutores prayer is retained. Its conclusion prints contiguously Per Dominum nostrum Jesum Christum Filium tuum, qui tecum vivit et regnat in unitate Spiritus sancti Deus, per omnia saecula saeculorum. R.Amen. The response glyph marks a distinct response after the priest conclusion; this does not turn the Contra persecutores petition into Ignatius or alter either source prayer.",
+   "id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.long-conclusion-response-page88-20261026",
+   "locus": "OriginalPDF88 printed2; extractpage1; Contra persecutores Ecclesiae; historicalLatin physicalline3",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Read the complete actual page image, not OCR. Supporting full-page extract artifact artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ignatius-petition-formula-controls-20261026; historical book and incidental Google marks retain distinct rights. These are independent public-domain word/formula controls, not1962 page-image rights.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "Separate bounded transcriptions of two actual prayers printed in the US-public-domain1862 book. Underlying Latin and response words remain public domain; project metadata does not relicense them.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.catholic-church.missale-romanum.pustet-ratisbon-1862.long-conclusion-response-page88-20261026.json",
+   "verified_on": "2026-10-26",
+   "words": 40
+  },
+  {
    "artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.next-leads-petitions-formula-20261023",
    "artifact_type": "normalized-text",
    "context": "Complete public-domain prayer independently witnessing the standard conclusion without ejusdem; this is conclusion authority, not an antecedent petition for the Easter Vigil.",
@@ -9280,6 +9336,32 @@
    "text_path": "structure/sources/text/passage.catholic-church.missale-romanum.pustet-ratisbon-1862.next-leads-standard-no-ejusdem-formula-20261023.json",
    "verified_on": "2026-10-23",
    "words": 40
+  },
+  {
+   "artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ignatius-petition-formula-text-20261026",
+   "artifact_type": "normalized-text",
+   "context": "Complete namedIgnatius Postcommunion, ending at actual Per Dominum. Source contains Ignatio and Martyre tuo atque Pontifice; no Pontian substitution. This source alone does not print the longer target conclusion or response.",
+   "id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ignatius-postcommunion-page485-20261026",
+   "locus": "OriginalPDF485 printed399; extractpage2; historicalLatin physicalline1",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Read the complete actual page image, not OCR. Supporting full-page extract artifact artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ignatius-petition-formula-controls-20261026; historical book and incidental Google marks retain distinct rights. These are independent public-domain word/formula controls, not1962 page-image rights.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "Separate bounded transcriptions of two actual prayers printed in the US-public-domain1862 book. Underlying Latin and response words remain public domain; project metadata does not relicense them.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ignatius-postcommunion-page485-20261026.json",
+   "verified_on": "2026-10-26",
+   "words": 23
   },
   {
    "artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
@@ -10548,6 +10630,32 @@
    "words": 25
   },
   {
+   "artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-conclusion-authority-20261022",
+   "artifact_type": "normalized-text",
+   "context": "Complete previously registered historical Praesta prayer, actually reopened on full200/400dpi page images as separately attributed conclusionformula control.",
+   "id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.philip-secret-same-spirit-formula-control-20261026",
+   "locus": "Pustet Ratisbon1862 printed p.304; original whole PDF p.390; FeriaIV QuatuorTemporumPentecostes, secondOratio Praesta",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Actual full formula contiguously prints Per Dominum nostrum Jesum Christum Filium tuum : Qui tecum vivit et regnat in unitate ejusdem Spiritus sancti Deus. Only the targetprefix through Spiritus Sancti is carried; final Deus is not appended. Targetcomma afterChristum andcapitalSancti are declared pointing/case. Pustet is formula support, not the Philippetition witness.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "Bounded Latin transcription of the US-public-domain1862 Pustet printing. The underlying words remain public domain; project metadata does not relicense them.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.catholic-church.missale-romanum.pustet-ratisbon-1862.philip-secret-same-spirit-formula-control-20261026.json",
+   "verified_on": "2026-10-26",
+   "words": 35
+  },
+  {
    "artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.next-leads-3-complete-petitions-20261023",
    "artifact_type": "normalized-text",
    "context": "Complete historical petition including only its actually printed conclusion.",
@@ -10786,6 +10894,32 @@
    "storage": "tracked",
    "verified_on": "2026-10-23",
    "withheld": "no-transcription"
+  },
+  {
+   "artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-conclusion-authority-20261022",
+   "artifact_type": "normalized-text",
+   "context": "The complete previously registered historical prayer actually prints Per Dominum nostrum as a contiguous three-word formula prefix.",
+   "id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.cosmas-ordinary-prefix-formula-control-20261026",
+   "locus": "Pustet Ratisbon1862, printed p.304; original whole PDF p.390; Feria IV Quatuor Temporum Pentecostes, second Oratio Praesta",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The exact full historical page was reopened at400 dpi. Only Per Dominum nostrum supplies the unchanged three-word target stop; none of the following Jesum Christum etc. is appended. This Pustet historical formula is not represented as the Cosmas petition witness.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "Bounded Latin transcription of the US-public-domain1862 Pustet printing. The underlying words remain public domain; project metadata does not relicense them.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.catholic-church.missale-romanum.pustet-ratisbon-1862.cosmas-ordinary-prefix-formula-control-20261026.json",
+   "verified_on": "2026-10-26",
+   "words": 35
   },
   {
    "artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.sanctoral-repair-complete-prayers-20261026",
@@ -11428,6 +11562,32 @@
    "storage": "tracked",
    "verified_on": "2026-10-23",
    "withheld": "no-transcription"
+  },
+  {
+   "artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-conclusion-authority-20261022",
+   "artifact_type": "normalized-text",
+   "context": "Complete previously registered historical Praesta prayer, independently reopened on its exact full page image as a separately attributed conclusion formula control.",
+   "id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.josaphat-same-spirit-formula-control-20261026",
+   "locus": "Pustet Ratisbon 1862, printed p. 304; original whole PDF p. 390; Feria IV Quatuor Temporum Pentecostes, second Oratio Praesta",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The actual full Father-through-Son same-Spirit formula contiguously prints in unitate ejusdem Spiritus sancti Deus. It stops at Deus. No omitted target middle, final Deus, per omnia or Amen is supplied. This is formula evidence only; Pustet is not represented as the historical Josaphat prayer witness.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "Bounded Latin transcription of the US-public-domain1862 Pustet printing. The underlying words remain public domain; project metadata does not relicense them.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.catholic-church.missale-romanum.pustet-ratisbon-1862.josaphat-same-spirit-formula-control-20261026.json",
+   "verified_on": "2026-10-26",
+   "words": 35
   },
   {
    "artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.september-dolors-orations-20261023-pages",

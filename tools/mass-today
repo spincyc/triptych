@@ -2376,6 +2376,7 @@ def render_expanded_mass(
             for line in element_lines(
                 event["element"], requested_language(arguments), style,
                 indent=indent, show_rubrics=arguments.rubrics, why=arguments.why,
+                context={"calendar": str(calendar or arguments.calendar or ""), "formulary": str(mass.get("key") or "")},
             ):
                 print(line)
         elif kind == "proper_choice":

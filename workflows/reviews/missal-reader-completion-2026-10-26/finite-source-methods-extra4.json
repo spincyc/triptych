@@ -1,0 +1,2002 @@
+{
+  "schema": "triptych-closed-source-context-comparison-method/v1",
+  "id": "roman-1962-four-reviewed-natalitia-natalitio-source-relations-2026-10-26",
+  "decision": "APPROVED_EXACT_FOUR_EXTRA_PRIMARY_CONTEXTS_ONLY",
+  "approved_targets_after_root_adoption": [
+    [
+      "comm-s-sabinae-martyris",
+      "main",
+      "Collect",
+      "all",
+      1
+    ],
+    [
+      "comm-ss-symphorosae-septem-eius-filiorum",
+      "main",
+      "Collect",
+      "all",
+      1
+    ],
+    [
+      "second-day-within-octave-s-stephani",
+      "main",
+      "Collect",
+      "all",
+      1
+    ],
+    [
+      "comm-s-saturnini-martyris",
+      "main",
+      "Collect",
+      "all",
+      1
+    ]
+  ],
+  "scope": {
+    "contexts": 4,
+    "new_surface_form_pairs": 0,
+    "general_abbreviation_rule": false,
+    "prior_next18_contexts_or_methods_changed": false,
+    "canonical_admissions": 0
+  },
+  "contexts": [
+    {
+      "binding": {
+        "target": [
+          "comm-s-sabinae-martyris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "source_edition_id": "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925",
+        "source_artifact_id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf",
+        "source_artifact_sha256": "28c9046c5acfa19297ab9aeaa14ac4f8d8fcffab1307b51215b94fa4ca6172a2",
+        "source_pdf_pages": [
+          1655
+        ],
+        "source_printed_pages": [
+          "1619"
+        ],
+        "source_context": "August29 own Sabina Martyr heading and complete proper three prayers, after explicit commemoration pointer from Beheading of John Baptist. This is an actually named full prayer, not an N. substitution.",
+        "source_latin_full_original": "Deus, qui inter cétera poténtiae tuae mirácula étiam in sexu frágili victóriam martýrii contulísti: concéde propítius; ut, qui beátae Sabínae Mártyris tuae natalítia cólimus, per ejus ad te exémpla gradiámur. Per Dóminum.",
+        "source_latin_sha256": "76692c8f079e384bf310935fbed4a08cfaf2fe79df309ad8d3a22716950abc6d",
+        "source_English_full_original": "O God, Who amongst the marvels of Thy mighty power hast granted the triumph of martyrdom even to weak women; grant in Thy mercy that we who keep the birthday of blessed Sabina, Thy virgin and martyr, may, by her example, advance nearer to Thee. Through our Lord.",
+        "source_English_sha256": "b04b0c1c082104e3067452667310ac0b6196c530d38f4ddfbff6697bcfdce702",
+        "source_Latin_actual_ending": "Per Dóminum.",
+        "source_English_actual_ending": "Through our Lord.",
+        "source_English_cue_state": "printed",
+        "target_latin_full_unchanged": "Deus, qui inter cetera potentiae tuae miracula etiam in sexu fragili\nvictoriam martyrii contulisti: concede propitius; ut, qui beatae Sabinae\nMartyris tuae natalicia colimus, per ejus ad te exempla gradiamur. Per\nDominum nostrum.\n",
+        "target_latin_sha256": "ba33bc49682ffafe08213c7d848fff072b8588ac57d47223e6e1cb73be55d355",
+        "full_target_proof": {
+          "mass": "comm-s-sabinae-martyris",
+          "form": "",
+          "proper": "Collect",
+          "course": "",
+          "cycle": "",
+          "occurrence": 1,
+          "text_sha256": "ba33bc49682ffafe08213c7d848fff072b8588ac57d47223e6e1cb73be55d355",
+          "provenance_status": "collated",
+          "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-s-sabinae-martyris-collect",
+          "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+          "locator": "editorial-projection artifact physical lines 70-73; antecedent 1862 sanctoral, 29 August, 'Pro comm. S. Sabinae Mart.' inside the Decollation of St John the Baptist; text-layer lines 73035-73043; approx. printed p. 530",
+          "relationship": "editorial-projection-exact-to-target",
+          "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-comm-s-sabinae-martyris-orations",
+          "verification_locator": "printed p. 643, no. 3507; artifact PDF p. 724 (left column), under 'Eodem die 29 augusti, S. Sabinae Mart. Commemoratio'",
+          "transformations": [
+            "join printed line wraps",
+            "remove stress accents",
+            "expand printed ae/oe ligatures to ae/oe",
+            "normalise consonantal i to the calendar's j orthography",
+            "apply the target printing's punctuation",
+            "carry the target's conclusion at its printed length"
+          ],
+          "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: 1862 prints the short conclusion cue where the 1962 prints Per Dominum nostrum; 1862 layer shows fourteen accents as & or digits; no word differs. Corroboration: none attempted beyond the 1862; no hard substitution after the image-settled repairs.",
+          "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+          "provenance_confidence": "high",
+          "publication_status": "permitted",
+          "publication_basis": "public-domain",
+          "surfaces": [
+            "web",
+            "download",
+            "print",
+            "cli",
+            "corpus-data",
+            "public-git"
+          ],
+          "publication_source_ids": [
+            "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.sanctoral-w-2-orations-f26ac956",
+            "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+          ],
+          "publication_locator": "Pustet Ratisbon 1862, 1862 sanctoral, 29 August, 'Pro comm. S. Sabinae Mart.' inside the Decollation of St John the Baptist; text-layer lines 73035-73043; approx. printed p. 530; artifact rights_status public-domain on a book first published in 1862",
+          "publication_evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
+        },
+        "full_target_proof_dictionary_sha256": "d9af4da12eea487f3fb4512ac570b168b191a7bd819a7458726f80472d1fd70d",
+        "current_absence_dictionary": {
+          "mass": "comm-s-sabinae-martyris",
+          "form_id": "main",
+          "proper": "Collect",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "reason": {
+            "kind": "witness-gap",
+            "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+          },
+          "note": "the witness reaches this day and reaches it by reference. At 29 August, under XXIX. DECOLLATION of St. J. BAPTIST at printed p. 653 = leaf n661, it prints `Collect, &c. of St. Sabina, as in p. 493` and no Collect of its own for her. Printed p. 493 = leaf n501 was opened as well: it is MASS XVI. Loquebar, of a Virgin and Martyr, and its Collect renders `we, who solemnize the festival of blessed N. thy Virgin and Martyr, may, by following her example, come to thee` -- the name left as N. and the style Virgin and Martyr, where the 1962's own Collect for this day names her and reads beatae Sabinae Martyris tuae, without Virginis. The only step from the witness's English to this day's Latin is to write a name the witness does not print into a prayer whose form it does not print either, and that step is project-composed text, so it is not taken -- the same refusal as s-hilarii. The Common's English is recorded at commune-virginum-1, where the witness prints it. Both leaves were read at w1400 on 2026-08-19."
+        },
+        "current_absence_dictionary_sha256": "5dfbd0c3812bd2108fd6492b50d09abf28a805cebc87fe9a006ab3d2c8905d9a",
+        "lexical_differences": [
+          {
+            "source_word_index_zero_based": 22,
+            "target_word_index_zero_based": 22,
+            "source": "natalitia",
+            "target": "natalicia",
+            "method_id": "own-appointment-lexically-attested-spelling-2026-10-23",
+            "lexical_passage_ids": [
+              "passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius",
+              "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter",
+              "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension"
+            ],
+            "contextual_parse": {
+              "lexeme": "natalitium/natalicium",
+              "part_of_speech": "substantive noun",
+              "gender": "neuter",
+              "number": "plural",
+              "case": "accusative",
+              "function": "object of colimus"
+            },
+            "contextual_parse_evidence": "Actual source and target put the same noun in the same complete construction with colimus. The named saint or saints are genitive modifiers. The noun denotes the birthday celebration, not a feminine noun or an arbitrary adjective; both contexts require the accusative plural neuter substantive.",
+            "exact_form_authority": {
+              "family": "natalitia-natalicia",
+              "source_form": "natalitia",
+              "target_form": "natalicia",
+              "decision": "ACCEPT_LEXICAL_EVIDENCE_ONLY",
+              "same_form_parses": [
+                "neuter nominative plural",
+                "neuter accusative plural"
+              ],
+              "basis": "Direct lemma/cross-reference plus the cited unchanged paradigm; derived inflection, not a claim that both spellings of this token are quoted in the lexicon.",
+              "source_passage_ids": [
+                "passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius",
+                "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter",
+                "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension"
+              ],
+              "within_token_change": {
+                "source_span_zero_based_half_open": [
+                  6,
+                  7
+                ],
+                "source_characters": "t",
+                "target_span_zero_based_half_open": [
+                  6,
+                  7
+                ],
+                "target_characters": "c"
+              },
+              "actual_prayer_token_positions": null,
+              "limits": [
+                "The requested -a pair is supported only with the same contextual parse; the dictionary separately prints feminine natalicia, ae, as well as the neuter use.",
+                "This initial bounded list includes only the six named neuter surface-form pairs; no blanket t/c fold and no automatically generated adjectival family.",
+                "Morphological features and complete prayer context must match."
+              ]
+            }
+          }
+        ],
+        "complete_petition_word_count": 30,
+        "conclusion_family": "ordinary-Father-through-Son",
+        "conclusion_person_context": "Source and target address Deus with potentiae tuae and Martyris tuae; Sabina is a third-person intercessory example. Actual source Per Dominum / Through our Lord and target Per Dominum nostrum are the ordinary through-the-Son starts. The own-book full example explicitly identifies Dominum as Jesum Christum Filium tuum and the addressee as Father. This is a proposed finite relation for this prayer only, not an inference that every short Per Dominum has an arbitrary longer tail.",
+        "source_note": "Printed English virgin and martyr differs from paired Latin Martyris-only; preserve the received English literally."
+      },
+      "candidate_packet_sha256": "61cfa74c10bd41d8bc6a43cdfdd472ab0f7a199ae8729b5c53718c0a955af19c",
+      "candidate_dictionary_sha256": "ab8997bfed29c5d4284bc6a51cabef62004184f47504d319898d154debe77034",
+      "finite_relation": "Only this actually named ordinary Per-Dominum/Through-our-Lord short source cue relates to the exact current Per-Dominum-nostrum target prefix. Own-book full/short controls plus formal IX17 support this finite family relation; no arbitrary longer tail or English expansion.",
+      "actual_prayer_pdf_pages": [
+        1655
+      ],
+      "actual_prayer_printed_pages": [
+        "1619"
+      ],
+      "separate_context_pdf_pages": [],
+      "separate_context_printed_pages": [],
+      "source_result": "INDEPENDENTLY_SOURCE_ACCEPTED_PENDING_ROOT_EXACT_FOUR_ADOPTION_AND_ASSEMBLED_CARRIERS",
+      "occurrence_grammar_assessment": {
+        "lexeme": "natalitium/natalicium",
+        "part_of_speech": "substantive noun",
+        "gender": "neuter",
+        "number": "plural",
+        "case": "accusative",
+        "function": "object of colimus"
+      },
+      "occurrence_grammar_evidence": "Actual source and target put the same noun in the same complete construction with colimus. The named saint or saints are genitive modifiers. The noun denotes the birthday celebration, not a feminine noun or an arbitrary adjective; both contexts require the accusative plural neuter substantive.",
+      "initial20_method": {
+        "id": "own-appointment-lexically-attested-spelling-2026-10-23",
+        "record_path": "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml",
+        "record_at_candidate_capture_sha256": "b3fddd2aaf16c2f52ec3ee96d8d2bac087ba6fb4dfc2a329615db9e097a34b44",
+        "record_at_independent_review_sha256": "75dcbdb1b5633f399616bacc8a0b135834c93c7de8b39296b94859afa585e8bf",
+        "JSON_string_field": "lexical_comparison_method_20261023_json",
+        "JSON_string_UTF8_sha256": "1b467dc9b7a5d5ea602419db56f881ed392e15181099069dbcf0e9bfbe3325df",
+        "accepted_exact_form_evidence_dictionary_sha256": "0d3fbe5b036fcd62abeb9cd95485abe26b323d27697fea89e5309802d7c334b1",
+        "new_surface_forms_or_stem_closure": false,
+        "raw_or_public_evidence_fields_changed": false
+      },
+      "selected_own_book_control_records": [
+        {
+          "method_path": "workflows/reviews/missal-reader-completion-2026-10-26/finite-source-methods-next18.json",
+          "method_sha256": "a77956cf5baa782c575c482add76f08a341fcf4343f32c0681ec0a7171ada87b",
+          "JSON_pointer": "/source_controls/own_control_bundle/controls/0",
+          "record_id": "ordinary-full",
+          "record_dictionary_sha256": "c981a5a11b421b8d7c47df0a92eb5126a3f2d9105b1c771e6d683a748087132d",
+          "evidence_only_no_prior_context_authority_extended": true
+        },
+        {
+          "method_path": "workflows/reviews/missal-reader-completion-2026-10-26/finite-source-methods-next18.json",
+          "method_sha256": "a77956cf5baa782c575c482add76f08a341fcf4343f32c0681ec0a7171ada87b",
+          "JSON_pointer": "/source_controls/own_control_bundle/controls/5",
+          "record_id": "ordinary-short",
+          "record_dictionary_sha256": "ae459fd1a045e68e742fc980e33eceeecddc5c883bf630a855a5dbb53ccdd13c",
+          "evidence_only_no_prior_context_authority_extended": true
+        }
+      ],
+      "selected_formal_control_record": {
+        "method_path": "workflows/reviews/missal-reader-completion-2026-10-26/finite-source-methods-next18.json",
+        "method_sha256": "a77956cf5baa782c575c482add76f08a341fcf4343f32c0681ec0a7171ada87b",
+        "JSON_pointer": "/source_controls/formal_Latin_controls/source_rules/0",
+        "record_id": "mame1922-rubricae-generales-ix17",
+        "record_dictionary_sha256": "bece1f918671b9d75088271acf87d86f93980ed3ce4abb9e707bd8f27438e2cb",
+        "evidence_only_no_prior_context_authority_extended": true
+      },
+      "target_proof_grade_unchanged": "high",
+      "private_assessment_boundary": "Only a fresh occurrence-bound assessment copy may express the reviewed noun/gender/number/case/function after explicit root adoption. Raw/public lexical records, null positions and dictionary reservations remain unchanged. No other occurrence or form is authorized."
+    },
+    {
+      "binding": {
+        "target": [
+          "comm-ss-symphorosae-septem-eius-filiorum",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "source_edition_id": "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925",
+        "source_artifact_id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf",
+        "source_artifact_sha256": "28c9046c5acfa19297ab9aeaa14ac4f8d8fcffab1307b51215b94fa4ca6172a2",
+        "source_pdf_pages": [
+          1541,
+          1542,
+          1543
+        ],
+        "source_printed_pages": [
+          "1505",
+          "1506",
+          "1507"
+        ],
+        "source_context": "July18 own The Same Day heading StSymphorosa and her SevenSons/Martyrs at1541, own MASS and Introit there, complete named Collect1542; continued same Mass1543. Own names are printed in both languages.",
+        "source_latin_full_original": "Deus, qui nos concédis sanctórum Mártyrum tuórum Symphorósae et filiórum ejus natalítia cólere: da nobis in aetérna beatitúdine de eórum societáte gaudére. Per Dóminum.",
+        "source_latin_sha256": "d2fe691322032f9cc7bfc178a0e4280990f9031b8279c481b63c8e79ad2c719d",
+        "source_English_full_original": "O God, by Whose grace we keep the festival of Thy holy martyrs Symphorosa and her seven sons; grant that we may enjoy their fellowship in everlasting bliss. Through our Lord.",
+        "source_English_sha256": "7d6aae1f4e6f2966a8bccfd8a2d43a7a84c9e4da79e1ef61fcb9e6db12ef3ed3",
+        "source_Latin_actual_ending": "Per Dóminum.",
+        "source_English_actual_ending": "Through our Lord.",
+        "source_English_cue_state": "printed",
+        "target_latin_full_unchanged": "Deus, qui nos concedis sanctorum Martyrum tuorum Symphorosae et filiorum\nejus natalicia colere: da nobis in aeterna beatitudine de eorum societate\ngaudere. Per Dominum.\n",
+        "target_latin_sha256": "ee208c5c21aade6cc9f1911bda06893ecb2dd243fe036ba84c38f21435d53765",
+        "full_target_proof": {
+          "mass": "comm-ss-symphorosae-septem-eius-filiorum",
+          "form": "",
+          "proper": "Collect",
+          "course": "",
+          "cycle": "",
+          "occurrence": 1,
+          "text_sha256": "ee208c5c21aade6cc9f1911bda06893ecb2dd243fe036ba84c38f21435d53765",
+          "provenance_status": "collated",
+          "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-symphorosae-septem-eius-filiorum-collect",
+          "source_date": "2026-10-01 project editorial projection; antecedent Pustet Ratisbon 1862",
+          "locator": "editorial-projection artifact physical lines 76-78; antecedent 1862 Pustet Ratisbon, Festa Julii (18), Eadem Die, S. Symphorosae cum septem Filiis, Martyr., Oratio, printed p. 491, text-layer lines 68394-68400, read on the page image of the registered facsimile PDF at p. 577",
+          "relationship": "editorial-projection-exact-to-target",
+          "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-comm-ss-symphorosae-septem-eius-filiorum-orations",
+          "verification_locator": "printed p. 591, no. 3090; artifact PDF p. 672, right column, under 'Eodem die 18 iulii, Ss. Symphorosae et septem filiorum eius Mm. Commemoratio'",
+          "transformations": [
+            "join printed line wraps",
+            "remove stress accents",
+            "expand printed ae/oe ligatures to ae/oe",
+            "normalise consonantal i to the calendar's j orthography",
+            "apply the target printing's punctuation",
+            "carry the target's conclusion at its printed length"
+          ],
+          "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. The 1962 wording was read on 2026-10-01 on that edition's page image at 200 and again at 400 dpi (printed p. 591, no. 3090; artifact PDF p. 672, right column, under 'Eodem die 18 iulii, Ss. Symphorosae et septem filiorum eius Mm. Commemoratio'), not on any text layer, and the string the 2026-09-04 backfill had stored and quarantined for recogniser damage was not used. Every word was then read on the 1862 Pustet at printed p. 491, Festa Julii (18), Eadem Die, S. Symphorosae cum septem Filiis, Martyr., Oratio, read on the page image of its registered facsimile PDF at p. 577 (text-layer address lines 68394-68400), which carries the text word for word. Differences from the antecedent: the 1862 sets a comma after Symphorosae and capitalises Filiorum; the 1862 spells natalitia where the 1962 spells natalicia: two received spellings of one word.",
+          "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+          "provenance_confidence": "high",
+          "publication_status": "permitted",
+          "publication_basis": "public-domain",
+          "surfaces": [
+            "web",
+            "download",
+            "print",
+            "cli",
+            "corpus-data",
+            "public-git"
+          ],
+          "publication_source_ids": [
+            "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.ki054-page-reading-orations-7d558094",
+            "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf",
+            "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+          ],
+          "publication_locator": "Pustet Ratisbon 1862, Festa Julii (18), Eadem Die, S. Symphorosae cum septem Filiis, Martyr., Oratio, printed p. 491; text-layer lines 68394-68400; read on the page image of the registered facsimile PDF at p. 577; artifact rights_status public-domain on a book first published in 1862",
+          "publication_evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact and its registered facsimile PDF, read on a page image. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which requires exactly this pairing of 103(b) with a public-domain witness."
+        },
+        "full_target_proof_dictionary_sha256": "f463c7d96576f2e16b822bf4f0fec5b0e9669de683a536cc88fc34ff70efa140",
+        "current_absence_dictionary": {
+          "mass": "comm-ss-symphorosae-septem-eius-filiorum",
+          "form_id": "main",
+          "proper": "Collect",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "reason": {
+            "kind": "witness-gap",
+            "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+          },
+          "note": "the witness prints no proper Collect for the day, only a pointer into its Common: leaf n627, printed p. 619, running head `15th AND 18th JULY`, gives `XVIII. St. CAMILLUS de LELLIS, c.` and under it `Commem. of St. SYMPHOROSA, &c. by the Collect, &c. of Mass VIII. p. 477.` Mass VIII was then opened: leaf n486, printed p. 478, running head `OF MANY MARTYRS`, prints `COLLECT. Deus, qui nos.-O God, by whose favour we celebrate the festival of thy holy Martyrs N. and N. grant that we may enjoy their fellowship in eternal bliss. Thro'.` -- with `N. and N.` and no names. That is the 1962's `Deus, qui nos concedis sanctorum Martyrum tuorum Symphorosae, et Filiorum ejus` with the names left out. Reversible from leaf n486 alone if the ground against writing names in is relaxed"
+        },
+        "current_absence_dictionary_sha256": "f32e32f57316cd653c49a5f8f3b728e182294f8570a894edf0d4b949876d7c97",
+        "lexical_differences": [
+          {
+            "source_word_index_zero_based": 11,
+            "target_word_index_zero_based": 11,
+            "source": "natalitia",
+            "target": "natalicia",
+            "method_id": "own-appointment-lexically-attested-spelling-2026-10-23",
+            "lexical_passage_ids": [
+              "passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius",
+              "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter",
+              "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension"
+            ],
+            "contextual_parse": {
+              "lexeme": "natalitium/natalicium",
+              "part_of_speech": "substantive noun",
+              "gender": "neuter",
+              "number": "plural",
+              "case": "accusative",
+              "function": "object of colere"
+            },
+            "contextual_parse_evidence": "Actual source and target put the same noun in the same complete construction with colere. The named saint or saints are genitive modifiers. The noun denotes the birthday celebration, not a feminine noun or an arbitrary adjective; both contexts require the accusative plural neuter substantive.",
+            "exact_form_authority": {
+              "family": "natalitia-natalicia",
+              "source_form": "natalitia",
+              "target_form": "natalicia",
+              "decision": "ACCEPT_LEXICAL_EVIDENCE_ONLY",
+              "same_form_parses": [
+                "neuter nominative plural",
+                "neuter accusative plural"
+              ],
+              "basis": "Direct lemma/cross-reference plus the cited unchanged paradigm; derived inflection, not a claim that both spellings of this token are quoted in the lexicon.",
+              "source_passage_ids": [
+                "passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius",
+                "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter",
+                "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension"
+              ],
+              "within_token_change": {
+                "source_span_zero_based_half_open": [
+                  6,
+                  7
+                ],
+                "source_characters": "t",
+                "target_span_zero_based_half_open": [
+                  6,
+                  7
+                ],
+                "target_characters": "c"
+              },
+              "actual_prayer_token_positions": null,
+              "limits": [
+                "The requested -a pair is supported only with the same contextual parse; the dictionary separately prints feminine natalicia, ae, as well as the neuter use.",
+                "This initial bounded list includes only the six named neuter surface-form pairs; no blanket t/c fold and no automatically generated adjectival family.",
+                "Morphological features and complete prayer context must match."
+              ]
+            }
+          }
+        ],
+        "complete_petition_word_count": 22,
+        "conclusion_family": "identical-actual-ordinary-short",
+        "conclusion_person_context": "Actual source and target both stop at Per Dominum. Literal English ends Through our Lord. No shortened-to-longer conclusion application is needed.",
+        "source_note": "English seven sons is literally printed while Latin filiorum ejus supplies no number; no English word is added."
+      },
+      "candidate_packet_sha256": "66c1238d50d204905d619505c404578d56bd31ec0e44c7cf330ddff8bb69bc76",
+      "candidate_dictionary_sha256": "3154391a8adbaf2f66d531452df9d92a2dfab23ce8ce09c8e80f0d97e328cc26",
+      "finite_relation": "Exact same actual source and target short ordinary ending after typography; only the individually bound exact accusative-plural lexical pair applies.",
+      "actual_prayer_pdf_pages": [
+        1542
+      ],
+      "actual_prayer_printed_pages": [
+        "1506"
+      ],
+      "separate_context_pdf_pages": [
+        1541,
+        1543
+      ],
+      "separate_context_printed_pages": [
+        "1505",
+        "1507"
+      ],
+      "source_result": "INDEPENDENTLY_SOURCE_ACCEPTED_PENDING_ROOT_EXACT_FOUR_ADOPTION_AND_ASSEMBLED_CARRIERS",
+      "occurrence_grammar_assessment": {
+        "lexeme": "natalitium/natalicium",
+        "part_of_speech": "substantive noun",
+        "gender": "neuter",
+        "number": "plural",
+        "case": "accusative",
+        "function": "object of colere"
+      },
+      "occurrence_grammar_evidence": "Actual source and target put the same noun in the same complete construction with colere. The named saint or saints are genitive modifiers. The noun denotes the birthday celebration, not a feminine noun or an arbitrary adjective; both contexts require the accusative plural neuter substantive.",
+      "initial20_method": {
+        "id": "own-appointment-lexically-attested-spelling-2026-10-23",
+        "record_path": "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml",
+        "record_at_candidate_capture_sha256": "b3fddd2aaf16c2f52ec3ee96d8d2bac087ba6fb4dfc2a329615db9e097a34b44",
+        "record_at_independent_review_sha256": "75dcbdb1b5633f399616bacc8a0b135834c93c7de8b39296b94859afa585e8bf",
+        "JSON_string_field": "lexical_comparison_method_20261023_json",
+        "JSON_string_UTF8_sha256": "1b467dc9b7a5d5ea602419db56f881ed392e15181099069dbcf0e9bfbe3325df",
+        "accepted_exact_form_evidence_dictionary_sha256": "0d3fbe5b036fcd62abeb9cd95485abe26b323d27697fea89e5309802d7c334b1",
+        "new_surface_forms_or_stem_closure": false,
+        "raw_or_public_evidence_fields_changed": false
+      },
+      "selected_own_book_control_records": [],
+      "selected_formal_control_record": null,
+      "target_proof_grade_unchanged": "high",
+      "private_assessment_boundary": "Only a fresh occurrence-bound assessment copy may express the reviewed noun/gender/number/case/function after explicit root adoption. Raw/public lexical records, null positions and dictionary reservations remain unchanged. No other occurrence or form is authorized."
+    },
+    {
+      "binding": {
+        "target": [
+          "second-day-within-octave-s-stephani",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "source_edition_id": "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925",
+        "source_artifact_id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf",
+        "source_artifact_sha256": "28c9046c5acfa19297ab9aeaa14ac4f8d8fcffab1307b51215b94fa4ca6172a2",
+        "source_pdf_pages": [
+          432,
+          433
+        ],
+        "source_printed_pages": [
+          "398",
+          "399"
+        ],
+        "source_context": "December26 StStephen FirstMartyr heading432/printed398; explicit MASS SEDERUNT at433/399, Introit then complete own Collect and next Epistle. The prayer is the saint’s own, not a Common or a commemoration prayer borrowed from the preceding Nativity.",
+        "source_latin_full_original": "Da nobis, quaesumus, Dómine, imitári quod cólimus: ut discámus et inimícos dilígere; quia ejus natalítia celebrámus, qui novit étiam pro persecutóribus exoráre Dóminum nostrum Jesum Christum Fílium tuum. Qui tecum.",
+        "source_latin_sha256": "345414874bb744deb2b4d6a4a78d615ba99344fbe14d0053437389ced8504b25",
+        "source_English_full_original": "Grant us, we beseech Thee, O Lord, so to imitate what we revere that we may learn to love even our enemies: for we celebrate the day of his birth to immortality, who could even plead with our Lord Jesus Christ Thy Son on behalf of his persecutors. Who with Thee.",
+        "source_English_sha256": "e09610ea180d558e6dd531dd5ea19422a026a55913b91195648fada115677e3c",
+        "source_Latin_actual_ending": "Qui tecum.",
+        "source_English_actual_ending": "Who with Thee.",
+        "source_English_cue_state": "printed",
+        "target_latin_full_unchanged": "Da nobis, quaesumus, Domine, imitari quod colimus: ut discamus et\ninimicos diligere; quia ejus natalicia celebramus, qui novit etiam pro\npersecutoribus exorare Dominum nostrum Jesum Christum, Filium tuum:\nQui tecum vivit et regnat in unitate.\n",
+        "target_latin_sha256": "f916b45b83ae1c4ddc57fcf86fbed35d580f7c1b1fd3d74403e28370cc0d52d7",
+        "full_target_proof": {
+          "mass": "second-day-within-octave-s-stephani",
+          "form": "",
+          "proper": "Collect",
+          "course": "",
+          "cycle": "",
+          "occurrence": 1,
+          "text_sha256": "f916b45b83ae1c4ddc57fcf86fbed35d580f7c1b1fd3d74403e28370cc0d52d7",
+          "provenance_status": "collated",
+          "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-second-day-within-octave-s-stephani-collect",
+          "source_date": "2026-10-22 project editorial projection; antecedent Pustet Ratisbon 1862",
+          "locator": "projection physical lines 26-29; Pustet Ratisbon 1862 printed p. 20, column R bottom; original PDF p. 106; retained extract p. 1",
+          "relationship": "editorial-projection-exact-to-target",
+          "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.phase3-second-day-within-octave-s-stephani-orations-recheck-2026-10-22",
+          "verification_locator": "1962 printed p. 23, no. 152, column R; artifact PDF p. 104",
+          "transformations": [
+            "join printed wraps",
+            "remove stress accents",
+            "expand ae/oe ligatures",
+            "apply target pointing and capitals",
+            "retain declared project consonantal j",
+            "carry the target conclusion at its actual printed length",
+            "received natalitia to target natalicia spelling"
+          ],
+          "provenance_evidence": "Complete page-image petition match, not OCR, incipit-only or a former-body hash. Historical passage passage.catholic-church.missale-romanum.pustet-ratisbon-1862.phase3-second-day-within-octave-s-stephani-orations-page-image-2026-10-22 records the whole antecedent and its locally printed conclusion. Differences: natalitia/natalicia received spelling; ejus/eius, Jesum/Iesum; pointing Historical ends Qui tecum vivit.; target ends Qui tecum vivit et regnat in unitate.",
+          "provenance_authority": "Triptych complete page-image collation and exact bounded editorial projection",
+          "provenance_confidence": "high",
+          "publication_status": "permitted",
+          "publication_basis": "public-domain",
+          "surfaces": [
+            "web",
+            "download",
+            "print",
+            "cli",
+            "corpus-data",
+            "public-git"
+          ],
+          "publication_source_ids": [
+            "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-winter-eighteen-orations-20261022",
+            "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase3-winter-oration-pages-20261022"
+          ],
+          "publication_locator": "Pustet Ratisbon 1862 printed p. 20, column R bottom; original PDF p. 106; retained extract p. 1",
+          "publication_evidence": "Every word of the complete preexisting petition is independently witnessed in the registered US-public-domain Pustet Ratisbon 1862 printing, with only declared spelling/pointing, explicit rubric-directed blanks where stated, and actual target conclusion length under guidance/propers-for-agents.md. Under 17 U.S.C. 103(b), the restricted 1962 control is not publication authority. natalitia/natalicia received spelling; ejus/eius, Jesum/Iesum; pointing Historical ends Qui tecum vivit.; target ends Qui tecum vivit et regnat in unitate."
+        },
+        "full_target_proof_dictionary_sha256": "02f36bf2494a31c45c17507dc298cc4844bf2e5da03bab447dacaa449fb08e2a",
+        "current_absence_dictionary": {
+          "mass": "second-day-within-octave-s-stephani",
+          "form_id": "main",
+          "proper": "Collect",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "note": "No exact English exemplar is bound to this source-established Proper body.",
+          "reason": {
+            "kind": "no-exemplar"
+          }
+        },
+        "current_absence_dictionary_sha256": "3b2f96fc7ab4feade0889b71c936ccd83343ac6b163b7b4f10d9ed8d0f892679",
+        "lexical_differences": [
+          {
+            "source_word_index_zero_based": 14,
+            "target_word_index_zero_based": 14,
+            "source": "natalitia",
+            "target": "natalicia",
+            "method_id": "own-appointment-lexically-attested-spelling-2026-10-23",
+            "lexical_passage_ids": [
+              "passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius",
+              "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter",
+              "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension"
+            ],
+            "contextual_parse": {
+              "lexeme": "natalitium/natalicium",
+              "part_of_speech": "substantive noun",
+              "gender": "neuter",
+              "number": "plural",
+              "case": "accusative",
+              "function": "object of celebramus"
+            },
+            "contextual_parse_evidence": "Actual source and target put the same noun in the same complete construction with celebramus. The named saint or saints are genitive modifiers. The noun denotes the birthday celebration, not a feminine noun or an arbitrary adjective; both contexts require the accusative plural neuter substantive.",
+            "exact_form_authority": {
+              "family": "natalitia-natalicia",
+              "source_form": "natalitia",
+              "target_form": "natalicia",
+              "decision": "ACCEPT_LEXICAL_EVIDENCE_ONLY",
+              "same_form_parses": [
+                "neuter nominative plural",
+                "neuter accusative plural"
+              ],
+              "basis": "Direct lemma/cross-reference plus the cited unchanged paradigm; derived inflection, not a claim that both spellings of this token are quoted in the lexicon.",
+              "source_passage_ids": [
+                "passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius",
+                "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter",
+                "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension"
+              ],
+              "within_token_change": {
+                "source_span_zero_based_half_open": [
+                  6,
+                  7
+                ],
+                "source_characters": "t",
+                "target_span_zero_based_half_open": [
+                  6,
+                  7
+                ],
+                "target_characters": "c"
+              },
+              "actual_prayer_token_positions": null,
+              "limits": [
+                "The requested -a pair is supported only with the same contextual parse; the dictionary separately prints feminine natalicia, ae, as well as the neuter use.",
+                "This initial bounded list includes only the six named neuter surface-form pairs; no blanket t/c fold and no automatically generated adjectival family.",
+                "Morphological features and complete prayer context must match."
+              ]
+            }
+          }
+        ],
+        "complete_petition_word_count": 28,
+        "conclusion_family": "final-Son-Qui-tecum",
+        "conclusion_person_context": "The petition expressly ends Dominum nostrum Jesum Christum Filium tuum; the relative Qui therefore refers to the third-person Son Jesus Christ, and tecum to the Father addressed by tuum. English repeats our Lord Jesus Christ Thy Son and Who with Thee. Target retains exactly this third-person Son/Father relation. Own-book PDF58 explicitly has dilectum Filium tuum immediately before its full Qui tecum formula; formal Latin IX17 separately says final mention of the Son takes Qui tecum vivit. No direct-Son Qui vivis or same-Spirit clause is supplied.",
+        "source_note": "The actual short English Who with Thee. is preserved; no full conclusion or Amen is added."
+      },
+      "candidate_packet_sha256": "7a508d9c5bc6900e587edb323a6824d2f432eaffaba5c1127c466c7ea5af8c3b",
+      "candidate_dictionary_sha256": "50cdd2e9b70d4f3c9f0b18ef3aa3ede46eef5b924e2a1e0d1a71b9702078a0d8",
+      "finite_relation": "Only this actual final-Son Qui-tecum/Who-with-Thee source cue relates to the independently proved target third-person with-Thee ending. Own-book complete formula and formal IX17 select the family; no omitted Latin/English is supplied.",
+      "actual_prayer_pdf_pages": [
+        433
+      ],
+      "actual_prayer_printed_pages": [
+        "399"
+      ],
+      "separate_context_pdf_pages": [
+        432
+      ],
+      "separate_context_printed_pages": [
+        "398"
+      ],
+      "source_result": "INDEPENDENTLY_SOURCE_ACCEPTED_PENDING_ROOT_EXACT_FOUR_ADOPTION_AND_ASSEMBLED_CARRIERS",
+      "occurrence_grammar_assessment": {
+        "lexeme": "natalitium/natalicium",
+        "part_of_speech": "substantive noun",
+        "gender": "neuter",
+        "number": "plural",
+        "case": "accusative",
+        "function": "object of celebramus"
+      },
+      "occurrence_grammar_evidence": "Actual source and target put the same noun in the same complete construction with celebramus. The named saint or saints are genitive modifiers. The noun denotes the birthday celebration, not a feminine noun or an arbitrary adjective; both contexts require the accusative plural neuter substantive.",
+      "initial20_method": {
+        "id": "own-appointment-lexically-attested-spelling-2026-10-23",
+        "record_path": "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml",
+        "record_at_candidate_capture_sha256": "b3fddd2aaf16c2f52ec3ee96d8d2bac087ba6fb4dfc2a329615db9e097a34b44",
+        "record_at_independent_review_sha256": "75dcbdb1b5633f399616bacc8a0b135834c93c7de8b39296b94859afa585e8bf",
+        "JSON_string_field": "lexical_comparison_method_20261023_json",
+        "JSON_string_UTF8_sha256": "1b467dc9b7a5d5ea602419db56f881ed392e15181099069dbcf0e9bfbe3325df",
+        "accepted_exact_form_evidence_dictionary_sha256": "0d3fbe5b036fcd62abeb9cd95485abe26b323d27697fea89e5309802d7c334b1",
+        "new_surface_forms_or_stem_closure": false,
+        "raw_or_public_evidence_fields_changed": false
+      },
+      "selected_own_book_control_records": [
+        {
+          "method_path": "workflows/reviews/missal-reader-completion-2026-10-26/finite-source-methods-next18.json",
+          "method_sha256": "a77956cf5baa782c575c482add76f08a341fcf4343f32c0681ec0a7171ada87b",
+          "JSON_pointer": "/source_controls/own_control_bundle/controls/1",
+          "record_id": "qui-tecum-full",
+          "record_dictionary_sha256": "8a5a8125705ba8ab7cdce6c80cf1180eb600dc4570c680101066ae66e1beffe8",
+          "evidence_only_no_prior_context_authority_extended": true
+        }
+      ],
+      "selected_formal_control_record": {
+        "method_path": "workflows/reviews/missal-reader-completion-2026-10-26/finite-source-methods-next18.json",
+        "method_sha256": "a77956cf5baa782c575c482add76f08a341fcf4343f32c0681ec0a7171ada87b",
+        "JSON_pointer": "/source_controls/formal_Latin_controls/source_rules/0",
+        "record_id": "mame1922-rubricae-generales-ix17",
+        "record_dictionary_sha256": "bece1f918671b9d75088271acf87d86f93980ed3ce4abb9e707bd8f27438e2cb",
+        "evidence_only_no_prior_context_authority_extended": true
+      },
+      "target_proof_grade_unchanged": "high",
+      "private_assessment_boundary": "Only a fresh occurrence-bound assessment copy may express the reviewed noun/gender/number/case/function after explicit root adoption. Raw/public lexical records, null positions and dictionary reservations remain unchanged. No other occurrence or form is authorized."
+    },
+    {
+      "binding": {
+        "target": [
+          "comm-s-saturnini-martyris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "source_edition_id": "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925",
+        "source_artifact_id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf",
+        "source_artifact_sha256": "28c9046c5acfa19297ab9aeaa14ac4f8d8fcffab1307b51215b94fa4ca6172a2",
+        "source_pdf_pages": [
+          1211
+        ],
+        "source_printed_pages": [
+          "1175"
+        ],
+        "source_context": "November29 TheSameDay StSaturninus heading, Mass Laetabitur from CommonofoneMartyrp225except, followed by complete own named Collect. Page begins with Andrew Vigil continuation, which is not this prayer.",
+        "source_latin_full_original": "Deus, qui nos beáti Saturníni Mártyris tui concédis natalítio pérfrui: ejus nos tríbue méritis adjuvári. Per Dóminum.",
+        "source_latin_sha256": "04e6eb37df3299d63f3c199e3204acc4d72038a6ed98a27ce77b677cead8c3d7",
+        "source_English_full_original": "O God, Who grantest us to rejoice in the feast of Thy blessed martyr, Saturninus, grant us Thine aid through his merits. Through our Lord.",
+        "source_English_sha256": "e21a9bfbd7574fd8803f9b5d19e91f2460084be60605a6a23c23f3185a7bf439",
+        "source_Latin_actual_ending": "Per Dóminum.",
+        "source_English_actual_ending": "Through our Lord.",
+        "source_English_cue_state": "printed",
+        "target_latin_full_unchanged": "Deus, qui nos beati Saturnini Martyris tui concedis natalicio perfrui:\nejus nos tribue meritis adjuvari. Per Dominum.\n",
+        "target_latin_sha256": "22bc39335d9f5fa1a811589a5f34b8de1044ea2086b0bae1fa8c912bd582cbba",
+        "full_target_proof": {
+          "mass": "comm-s-saturnini-martyris",
+          "form": "",
+          "proper": "Collect",
+          "course": "",
+          "cycle": "",
+          "occurrence": 1,
+          "text_sha256": "22bc39335d9f5fa1a811589a5f34b8de1044ea2086b0bae1fa8c912bd582cbba",
+          "provenance_status": "collated",
+          "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase2-comm-s-saturnini-martyris-collect",
+          "source_date": "2026-10-22 project editorial projection; antecedent Pustet Ratisbon 1862",
+          "locator": "projection physical lines 61-62; Pustet 1862 printed p. 362 (opening leaf, number suppressed), R, Pro commemor. S. Saturnini Martyris. Oratio in Vigilia S. Andreae; original PDF p. 448; retained extract p. 1",
+          "relationship": "editorial-projection-exact-to-target",
+          "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.phase2-comm-s-saturnini-martyris-orations-recheck-2026-10-22",
+          "verification_locator": "1962 printed p. Proprium Sanctorum opening, unnumbered, no. 1809, column L, marked P; artifact PDF p. 509",
+          "transformations": [
+            "join printed line wraps",
+            "remove stress accents",
+            "expand ae/oe ligatures",
+            "apply target punctuation and capitals",
+            "retain declared project consonantal j",
+            "carry the target conclusion at its actual printed length",
+            "received spelling natalitio to target natalicio"
+          ],
+          "provenance_evidence": "Complete page-image comparison, not an incipit or former-body-hash reconstruction. The bounded project passage reproduces this exact Unicode hash. The separate historical passage passage.catholic-church.missale-romanum.pustet-ratisbon-1862.phase2-comm-s-saturnini-martyris-orations-page-image-2026-10-22 records the printed antecedent. Differences: Historical natalitio; target natalicio: received spelling of the same word. Historical ejus/adjuvari; target eius/adiuvari. Pointing/capitals/accents/ligatures.",
+          "provenance_authority": "Triptych page-image collation and exact bounded editorial projection",
+          "provenance_confidence": "high",
+          "publication_status": "permitted",
+          "publication_basis": "public-domain",
+          "surfaces": [
+            "web",
+            "download",
+            "print",
+            "cli",
+            "corpus-data",
+            "public-git"
+          ],
+          "publication_source_ids": [
+            "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase2-octnov-commemorations-20261022",
+            "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase2-octnov-commemoration-pages-20261022"
+          ],
+          "publication_locator": "Pustet 1862 printed p. 362 (opening leaf, number suppressed), R, Pro commemor. S. Saturnini Martyris. Oratio in Vigilia S. Andreae; original PDF p. 448; retained extract p. 1",
+          "publication_evidence": "Whole target petition and short conclusion preexist on 1862 p.362 with received spelling only. The 1862 printing is public domain in the United States. Under 17 U.S.C. 103(b), the 1962 edition contributes no new right in this preexisting complete petition. Explicit spelling, pointing and conclusion-length transformations follow guidance/propers-for-agents.md; the restricted control artifact is not publication authority."
+        },
+        "full_target_proof_dictionary_sha256": "8f94c80ec9af8ee39b0a5413851345b0c8b28e0a3f4b0a2497cbdd70a2aef4ee",
+        "current_absence_dictionary": {
+          "mass": "comm-s-saturnini-martyris",
+          "form_id": "main",
+          "proper": "Collect",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "reason": {
+            "kind": "witness-gap",
+            "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+          },
+          "witness_artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+          "witness_passage_id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-comm-s-saturnini-martyris--main--collect--all--1",
+          "verified_artifact_page": 531,
+          "verified_on_page": "2026-08-19",
+          "verified_printed_page": "522",
+          "note": "Read on leaf n530, printed p. 522, running head `29th NOVEMBER.`. This is the FIRST page of the witness's Proper of Saints, which opens at 29 November with the Vigil of St Andrew; the commemoration is printed inside it as `COLLECT. Deus, qui.-Of St. SATURNINUS.`, the day's own Collect standing above it on the preceding leaf. The Latin cue `Deus, qui` answers the 1962 incipit `Deus, qui nos beati Saturnini Martyris tui`. Kalendar p. 776 (leaf n784) confirms the join: `29 Vigil of S. Andrew, Com. of S. Saturninus, m. Simple 521`. Date agrees: 29 November in both books. A small ink mark stands before `Thro'` in the closing line (`by his merits. 'Thro'.`); it is scanner or press dirt and is not reproduced. The historical English and its exact Cummiskey page are registered, and a read-only audit found full-formula agreement with Pustet and the 1962 target. This row remains text-free until durable target-Latin and independent-witness passage bindings preserve that identity check."
+        },
+        "current_absence_dictionary_sha256": "9f717ad6d2c5ddfb2cd67071ae0f586ae040785d6f94138ca1c4512b2b21fe3d",
+        "lexical_differences": [
+          {
+            "source_word_index_zero_based": 8,
+            "target_word_index_zero_based": 8,
+            "source": "natalitio",
+            "target": "natalicio",
+            "method_id": "own-appointment-lexically-attested-spelling-2026-10-23",
+            "lexical_passage_ids": [
+              "passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius",
+              "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter",
+              "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension"
+            ],
+            "contextual_parse": {
+              "lexeme": "natalitium/natalicium",
+              "part_of_speech": "substantive noun",
+              "gender": "neuter",
+              "number": "singular",
+              "case": "ablative",
+              "function": "ablative complement governed by perfrui"
+            },
+            "contextual_parse_evidence": "Actual source and target put the same noun in the same complete construction with perfrui. The named saint or saints are genitive modifiers. The noun denotes the birthday celebration, not a feminine noun or an arbitrary adjective; both contexts require the ablative singular neuter substantive.",
+            "exact_form_authority": {
+              "family": "natalitia-natalicia",
+              "source_form": "natalitio",
+              "target_form": "natalicio",
+              "decision": "ACCEPT_LEXICAL_EVIDENCE_ONLY",
+              "same_form_parses": [
+                "neuter dative singular",
+                "neuter ablative singular"
+              ],
+              "basis": "Direct lemma/cross-reference plus the cited unchanged paradigm; derived inflection, not a claim that both spellings of this token are quoted in the lexicon.",
+              "source_passage_ids": [
+                "passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius",
+                "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter",
+                "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension"
+              ],
+              "within_token_change": {
+                "source_span_zero_based_half_open": [
+                  6,
+                  7
+                ],
+                "source_characters": "t",
+                "target_span_zero_based_half_open": [
+                  6,
+                  7
+                ],
+                "target_characters": "c"
+              },
+              "actual_prayer_token_positions": null,
+              "limits": [
+                "The requested -a pair is supported only with the same contextual parse; the dictionary separately prints feminine natalicia, ae, as well as the neuter use.",
+                "This initial bounded list includes only the six named neuter surface-form pairs; no blanket t/c fold and no automatically generated adjectival family.",
+                "Morphological features and complete prayer context must match."
+              ]
+            }
+          }
+        ],
+        "complete_petition_word_count": 15,
+        "conclusion_family": "identical-actual-ordinary-short",
+        "conclusion_person_context": "Actual source and target both stop at Per Dominum, with English Through our Lord. No shortened-to-longer conclusion application is needed.",
+        "source_note": "Exact natalitio/natalicio is independently enumerated in initial20 and its allowed neuter ablative singular evidence. This is not derived from the separate plural pair."
+      },
+      "candidate_packet_sha256": "9adbad5a107a2d133030bfc6a5f6ef7eb4f3c90d619eefe6c2c55eebde8a5b3e",
+      "candidate_dictionary_sha256": "c07569bc8eb3771ba9959f4ffae54b49dc0364cdd568501d4041c28be60db108",
+      "finite_relation": "Exact same actual source and target short ordinary ending after typography; only the individually bound exact ablative-singular lexical pair applies.",
+      "actual_prayer_pdf_pages": [
+        1211
+      ],
+      "actual_prayer_printed_pages": [
+        "1175"
+      ],
+      "separate_context_pdf_pages": [],
+      "separate_context_printed_pages": [],
+      "source_result": "INDEPENDENTLY_SOURCE_ACCEPTED_PENDING_ROOT_EXACT_FOUR_ADOPTION_AND_ASSEMBLED_CARRIERS",
+      "occurrence_grammar_assessment": {
+        "lexeme": "natalitium/natalicium",
+        "part_of_speech": "substantive noun",
+        "gender": "neuter",
+        "number": "singular",
+        "case": "ablative",
+        "function": "ablative complement governed by perfrui"
+      },
+      "occurrence_grammar_evidence": "Actual source and target put the same noun in the same complete construction with perfrui. The named saint or saints are genitive modifiers. The noun denotes the birthday celebration, not a feminine noun or an arbitrary adjective; both contexts require the ablative singular neuter substantive.",
+      "initial20_method": {
+        "id": "own-appointment-lexically-attested-spelling-2026-10-23",
+        "record_path": "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml",
+        "record_at_candidate_capture_sha256": "b3fddd2aaf16c2f52ec3ee96d8d2bac087ba6fb4dfc2a329615db9e097a34b44",
+        "record_at_independent_review_sha256": "75dcbdb1b5633f399616bacc8a0b135834c93c7de8b39296b94859afa585e8bf",
+        "JSON_string_field": "lexical_comparison_method_20261023_json",
+        "JSON_string_UTF8_sha256": "1b467dc9b7a5d5ea602419db56f881ed392e15181099069dbcf0e9bfbe3325df",
+        "accepted_exact_form_evidence_dictionary_sha256": "b85eef7cc4e32cca27a06d8d4378e5dfdca89061bb5e672c161fa86456aebc5f",
+        "new_surface_forms_or_stem_closure": false,
+        "raw_or_public_evidence_fields_changed": false
+      },
+      "selected_own_book_control_records": [],
+      "selected_formal_control_record": null,
+      "target_proof_grade_unchanged": "high",
+      "private_assessment_boundary": "Only a fresh occurrence-bound assessment copy may express the reviewed noun/gender/number/case/function after explicit root adoption. Raw/public lexical records, null positions and dictionary reservations remain unchanged. No other occurrence or form is authorized."
+    }
+  ],
+  "rights_boundary": {
+    "source_artifact_id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf",
+    "source_artifact_sha256": "28c9046c5acfa19297ab9aeaa14ac4f8d8fcffab1307b51215b94fa4ca6172a2",
+    "identity_and_underlying_text_receipt_sha256": "97f641d9b85d294b12f8f97298c46c177a668563560db20836bfd4b3a84d4314",
+    "bounded_Symphorosa_setting_addendum_sha256": "1e0cf4854847570d9ddeff701582d71029b13fbb0853d58a18d6dae0d050c0fe",
+    "basis": "Existing independently reviewed pre1931 early English-expression UnitedStates expiry basis, with1925 a catalogue-supported expression label and January1927 acquisition bound. These are bounded ordinary printed settings in the same exact parent, not newly dated own colophons.",
+    "limits": "Historical prayer wording derivative only; no whole scan, OCR, raster, commentary, illustration, modern insertion, foreign rights or translator attribution. Preserve source literal English including Sabina virgin wording; no target/source repair."
+  },
+  "mandatory_boundaries": [
+    "Exactly four named full tuples with source/English/actual cue/current body/full proof/gap hashes and selected occurrence parses. Root adoption must name these four; no inferred extension of next18.",
+    "Three natalitia/natalicia occurrences are neuter accusative plural substantives, objects of colimus/colere/celebramus. One natalitio/natalicio occurrence is neuter ablative singular governed by perfrui. Retain all initial20 paradigm/dictionary qualifications and null evidence values.",
+    "Symphorosa and Saturninus need no short/long ending inference because their actual complete endings already agree. Sabina and Stephen are two separately named finite family relations only.",
+    "Preserve source literal English, actual abbreviations, all source/target lengths and existing independent target proof grades. No word/name/response substitution or ending completion.",
+    "Source proof ranges use actual prayer pages; heading/continuity pages remain separate. No donor fanout, generated stem family, arbitrary prefix splice or silent private POS fill.",
+    "Catherine remains excluded: source English has no printed conclusion cue. No English cue may be added and no zero-cue transfer is adopted.",
+    "Irenaeusv2 is already an accepted prior context and is excluded from this newfour; use its corrected source punctuation with no comma after pax, unchanged concentrated English and unchanged target.",
+    "Fresh receiving TSV/artifact/verifier/publication passages, four selected ledger changes and bounded audit entries require independent assembled-source acceptance after root adoption."
+  ],
+  "root_adoption_sha256": "e5a640da0f83729a29ee20592e18ba949915ed3c0cfeec66b61399f667cba7e6",
+  "root_adoption": {
+    "schema": "triptych-coordinator-finite-extra-four-adoption/v1",
+    "decision": "accepted-exact-four-source-application-relations-pending-independent-receiving-review",
+    "adopted_utc": "2026-10-26T04:59:19.310131+00:00",
+    "proposal_sha256": "0419f856b1a3591a652aca0ed93d25e6780443893200b7f33bd25ced03104d96",
+    "independent_review_sha256": "3f79868ef397f5b2af62dde2cdde84759ee4fb1f5a6d6cb6ae562ea7ce71a8ca",
+    "approved_targets": [
+      [
+        "comm-s-sabinae-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      [
+        "comm-ss-symphorosae-septem-eius-filiorum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      [
+        "second-day-within-octave-s-stephani",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      [
+        "comm-s-saturnini-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ]
+    ],
+    "accepted_targets": [
+      [
+        "comm-s-sabinae-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      [
+        "comm-ss-symphorosae-septem-eius-filiorum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      [
+        "second-day-within-octave-s-stephani",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      [
+        "comm-s-saturnini-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ]
+    ],
+    "exact_contexts": [
+      {
+        "binding": {
+          "target": [
+            "comm-s-sabinae-martyris",
+            "main",
+            "Collect",
+            "all",
+            1
+          ],
+          "source_edition_id": "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925",
+          "source_artifact_id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf",
+          "source_artifact_sha256": "28c9046c5acfa19297ab9aeaa14ac4f8d8fcffab1307b51215b94fa4ca6172a2",
+          "source_pdf_pages": [
+            1655
+          ],
+          "source_printed_pages": [
+            "1619"
+          ],
+          "source_context": "August29 own Sabina Martyr heading and complete proper three prayers, after explicit commemoration pointer from Beheading of John Baptist. This is an actually named full prayer, not an N. substitution.",
+          "source_latin_full_original": "Deus, qui inter cétera poténtiae tuae mirácula étiam in sexu frágili victóriam martýrii contulísti: concéde propítius; ut, qui beátae Sabínae Mártyris tuae natalítia cólimus, per ejus ad te exémpla gradiámur. Per Dóminum.",
+          "source_latin_sha256": "76692c8f079e384bf310935fbed4a08cfaf2fe79df309ad8d3a22716950abc6d",
+          "source_English_full_original": "O God, Who amongst the marvels of Thy mighty power hast granted the triumph of martyrdom even to weak women; grant in Thy mercy that we who keep the birthday of blessed Sabina, Thy virgin and martyr, may, by her example, advance nearer to Thee. Through our Lord.",
+          "source_English_sha256": "b04b0c1c082104e3067452667310ac0b6196c530d38f4ddfbff6697bcfdce702",
+          "source_Latin_actual_ending": "Per Dóminum.",
+          "source_English_actual_ending": "Through our Lord.",
+          "source_English_cue_state": "printed",
+          "target_latin_full_unchanged": "Deus, qui inter cetera potentiae tuae miracula etiam in sexu fragili\nvictoriam martyrii contulisti: concede propitius; ut, qui beatae Sabinae\nMartyris tuae natalicia colimus, per ejus ad te exempla gradiamur. Per\nDominum nostrum.\n",
+          "target_latin_sha256": "ba33bc49682ffafe08213c7d848fff072b8588ac57d47223e6e1cb73be55d355",
+          "full_target_proof": {
+            "mass": "comm-s-sabinae-martyris",
+            "form": "",
+            "proper": "Collect",
+            "course": "",
+            "cycle": "",
+            "occurrence": 1,
+            "text_sha256": "ba33bc49682ffafe08213c7d848fff072b8588ac57d47223e6e1cb73be55d355",
+            "provenance_status": "collated",
+            "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-s-sabinae-martyris-collect",
+            "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+            "locator": "editorial-projection artifact physical lines 70-73; antecedent 1862 sanctoral, 29 August, 'Pro comm. S. Sabinae Mart.' inside the Decollation of St John the Baptist; text-layer lines 73035-73043; approx. printed p. 530",
+            "relationship": "editorial-projection-exact-to-target",
+            "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-comm-s-sabinae-martyris-orations",
+            "verification_locator": "printed p. 643, no. 3507; artifact PDF p. 724 (left column), under 'Eodem die 29 augusti, S. Sabinae Mart. Commemoratio'",
+            "transformations": [
+              "join printed line wraps",
+              "remove stress accents",
+              "expand printed ae/oe ligatures to ae/oe",
+              "normalise consonantal i to the calendar's j orthography",
+              "apply the target printing's punctuation",
+              "carry the target's conclusion at its printed length"
+            ],
+            "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: 1862 prints the short conclusion cue where the 1962 prints Per Dominum nostrum; 1862 layer shows fourteen accents as & or digits; no word differs. Corroboration: none attempted beyond the 1862; no hard substitution after the image-settled repairs.",
+            "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+            "provenance_confidence": "high",
+            "publication_status": "permitted",
+            "publication_basis": "public-domain",
+            "surfaces": [
+              "web",
+              "download",
+              "print",
+              "cli",
+              "corpus-data",
+              "public-git"
+            ],
+            "publication_source_ids": [
+              "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.sanctoral-w-2-orations-f26ac956",
+              "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+            ],
+            "publication_locator": "Pustet Ratisbon 1862, 1862 sanctoral, 29 August, 'Pro comm. S. Sabinae Mart.' inside the Decollation of St John the Baptist; text-layer lines 73035-73043; approx. printed p. 530; artifact rights_status public-domain on a book first published in 1862",
+            "publication_evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
+          },
+          "full_target_proof_dictionary_sha256": "d9af4da12eea487f3fb4512ac570b168b191a7bd819a7458726f80472d1fd70d",
+          "current_absence_dictionary": {
+            "mass": "comm-s-sabinae-martyris",
+            "form_id": "main",
+            "proper": "Collect",
+            "cycle": "all",
+            "occurrence": 1,
+            "lang": "en",
+            "extent": "body",
+            "availability": "unavailable",
+            "reason": {
+              "kind": "witness-gap",
+              "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+            },
+            "note": "the witness reaches this day and reaches it by reference. At 29 August, under XXIX. DECOLLATION of St. J. BAPTIST at printed p. 653 = leaf n661, it prints `Collect, &c. of St. Sabina, as in p. 493` and no Collect of its own for her. Printed p. 493 = leaf n501 was opened as well: it is MASS XVI. Loquebar, of a Virgin and Martyr, and its Collect renders `we, who solemnize the festival of blessed N. thy Virgin and Martyr, may, by following her example, come to thee` -- the name left as N. and the style Virgin and Martyr, where the 1962's own Collect for this day names her and reads beatae Sabinae Martyris tuae, without Virginis. The only step from the witness's English to this day's Latin is to write a name the witness does not print into a prayer whose form it does not print either, and that step is project-composed text, so it is not taken -- the same refusal as s-hilarii. The Common's English is recorded at commune-virginum-1, where the witness prints it. Both leaves were read at w1400 on 2026-08-19."
+          },
+          "current_absence_dictionary_sha256": "5dfbd0c3812bd2108fd6492b50d09abf28a805cebc87fe9a006ab3d2c8905d9a",
+          "lexical_differences": [
+            {
+              "source_word_index_zero_based": 22,
+              "target_word_index_zero_based": 22,
+              "source": "natalitia",
+              "target": "natalicia",
+              "method_id": "own-appointment-lexically-attested-spelling-2026-10-23",
+              "lexical_passage_ids": [
+                "passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius",
+                "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter",
+                "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension"
+              ],
+              "contextual_parse": {
+                "lexeme": "natalitium/natalicium",
+                "part_of_speech": "substantive noun",
+                "gender": "neuter",
+                "number": "plural",
+                "case": "accusative",
+                "function": "object of colimus"
+              },
+              "contextual_parse_evidence": "Actual source and target put the same noun in the same complete construction with colimus. The named saint or saints are genitive modifiers. The noun denotes the birthday celebration, not a feminine noun or an arbitrary adjective; both contexts require the accusative plural neuter substantive.",
+              "exact_form_authority": {
+                "family": "natalitia-natalicia",
+                "source_form": "natalitia",
+                "target_form": "natalicia",
+                "decision": "ACCEPT_LEXICAL_EVIDENCE_ONLY",
+                "same_form_parses": [
+                  "neuter nominative plural",
+                  "neuter accusative plural"
+                ],
+                "basis": "Direct lemma/cross-reference plus the cited unchanged paradigm; derived inflection, not a claim that both spellings of this token are quoted in the lexicon.",
+                "source_passage_ids": [
+                  "passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius",
+                  "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter",
+                  "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension"
+                ],
+                "within_token_change": {
+                  "source_span_zero_based_half_open": [
+                    6,
+                    7
+                  ],
+                  "source_characters": "t",
+                  "target_span_zero_based_half_open": [
+                    6,
+                    7
+                  ],
+                  "target_characters": "c"
+                },
+                "actual_prayer_token_positions": null,
+                "limits": [
+                  "The requested -a pair is supported only with the same contextual parse; the dictionary separately prints feminine natalicia, ae, as well as the neuter use.",
+                  "This initial bounded list includes only the six named neuter surface-form pairs; no blanket t/c fold and no automatically generated adjectival family.",
+                  "Morphological features and complete prayer context must match."
+                ]
+              }
+            }
+          ],
+          "complete_petition_word_count": 30,
+          "conclusion_family": "ordinary-Father-through-Son",
+          "conclusion_person_context": "Source and target address Deus with potentiae tuae and Martyris tuae; Sabina is a third-person intercessory example. Actual source Per Dominum / Through our Lord and target Per Dominum nostrum are the ordinary through-the-Son starts. The own-book full example explicitly identifies Dominum as Jesum Christum Filium tuum and the addressee as Father. This is a proposed finite relation for this prayer only, not an inference that every short Per Dominum has an arbitrary longer tail.",
+          "source_note": "Printed English virgin and martyr differs from paired Latin Martyris-only; preserve the received English literally."
+        },
+        "candidate_packet_sha256": "61cfa74c10bd41d8bc6a43cdfdd472ab0f7a199ae8729b5c53718c0a955af19c",
+        "candidate_dictionary_sha256": "ab8997bfed29c5d4284bc6a51cabef62004184f47504d319898d154debe77034",
+        "finite_relation": "Only this actually named ordinary Per-Dominum/Through-our-Lord short source cue relates to the exact current Per-Dominum-nostrum target prefix. Own-book full/short controls plus formal IX17 support this finite family relation; no arbitrary longer tail or English expansion.",
+        "actual_prayer_pdf_pages": [
+          1655
+        ],
+        "actual_prayer_printed_pages": [
+          "1619"
+        ],
+        "separate_context_pdf_pages": [],
+        "separate_context_printed_pages": [],
+        "source_result": "INDEPENDENTLY_SOURCE_ACCEPTED_PENDING_ROOT_EXACT_FOUR_ADOPTION_AND_ASSEMBLED_CARRIERS",
+        "occurrence_grammar_assessment": {
+          "lexeme": "natalitium/natalicium",
+          "part_of_speech": "substantive noun",
+          "gender": "neuter",
+          "number": "plural",
+          "case": "accusative",
+          "function": "object of colimus"
+        },
+        "occurrence_grammar_evidence": "Actual source and target put the same noun in the same complete construction with colimus. The named saint or saints are genitive modifiers. The noun denotes the birthday celebration, not a feminine noun or an arbitrary adjective; both contexts require the accusative plural neuter substantive.",
+        "initial20_method": {
+          "id": "own-appointment-lexically-attested-spelling-2026-10-23",
+          "record_path": "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml",
+          "record_at_candidate_capture_sha256": "b3fddd2aaf16c2f52ec3ee96d8d2bac087ba6fb4dfc2a329615db9e097a34b44",
+          "record_at_independent_review_sha256": "75dcbdb1b5633f399616bacc8a0b135834c93c7de8b39296b94859afa585e8bf",
+          "JSON_string_field": "lexical_comparison_method_20261023_json",
+          "JSON_string_UTF8_sha256": "1b467dc9b7a5d5ea602419db56f881ed392e15181099069dbcf0e9bfbe3325df",
+          "accepted_exact_form_evidence_dictionary_sha256": "0d3fbe5b036fcd62abeb9cd95485abe26b323d27697fea89e5309802d7c334b1",
+          "new_surface_forms_or_stem_closure": false,
+          "raw_or_public_evidence_fields_changed": false
+        },
+        "selected_own_book_control_records": [
+          {
+            "method_path": "workflows/reviews/missal-reader-completion-2026-10-26/finite-source-methods-next18.json",
+            "method_sha256": "a77956cf5baa782c575c482add76f08a341fcf4343f32c0681ec0a7171ada87b",
+            "JSON_pointer": "/source_controls/own_control_bundle/controls/0",
+            "record_id": "ordinary-full",
+            "record_dictionary_sha256": "c981a5a11b421b8d7c47df0a92eb5126a3f2d9105b1c771e6d683a748087132d",
+            "evidence_only_no_prior_context_authority_extended": true
+          },
+          {
+            "method_path": "workflows/reviews/missal-reader-completion-2026-10-26/finite-source-methods-next18.json",
+            "method_sha256": "a77956cf5baa782c575c482add76f08a341fcf4343f32c0681ec0a7171ada87b",
+            "JSON_pointer": "/source_controls/own_control_bundle/controls/5",
+            "record_id": "ordinary-short",
+            "record_dictionary_sha256": "ae459fd1a045e68e742fc980e33eceeecddc5c883bf630a855a5dbb53ccdd13c",
+            "evidence_only_no_prior_context_authority_extended": true
+          }
+        ],
+        "selected_formal_control_record": {
+          "method_path": "workflows/reviews/missal-reader-completion-2026-10-26/finite-source-methods-next18.json",
+          "method_sha256": "a77956cf5baa782c575c482add76f08a341fcf4343f32c0681ec0a7171ada87b",
+          "JSON_pointer": "/source_controls/formal_Latin_controls/source_rules/0",
+          "record_id": "mame1922-rubricae-generales-ix17",
+          "record_dictionary_sha256": "bece1f918671b9d75088271acf87d86f93980ed3ce4abb9e707bd8f27438e2cb",
+          "evidence_only_no_prior_context_authority_extended": true
+        },
+        "target_proof_grade_unchanged": "high",
+        "private_assessment_boundary": "Only a fresh occurrence-bound assessment copy may express the reviewed noun/gender/number/case/function after explicit root adoption. Raw/public lexical records, null positions and dictionary reservations remain unchanged. No other occurrence or form is authorized."
+      },
+      {
+        "binding": {
+          "target": [
+            "comm-ss-symphorosae-septem-eius-filiorum",
+            "main",
+            "Collect",
+            "all",
+            1
+          ],
+          "source_edition_id": "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925",
+          "source_artifact_id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf",
+          "source_artifact_sha256": "28c9046c5acfa19297ab9aeaa14ac4f8d8fcffab1307b51215b94fa4ca6172a2",
+          "source_pdf_pages": [
+            1541,
+            1542,
+            1543
+          ],
+          "source_printed_pages": [
+            "1505",
+            "1506",
+            "1507"
+          ],
+          "source_context": "July18 own The Same Day heading StSymphorosa and her SevenSons/Martyrs at1541, own MASS and Introit there, complete named Collect1542; continued same Mass1543. Own names are printed in both languages.",
+          "source_latin_full_original": "Deus, qui nos concédis sanctórum Mártyrum tuórum Symphorósae et filiórum ejus natalítia cólere: da nobis in aetérna beatitúdine de eórum societáte gaudére. Per Dóminum.",
+          "source_latin_sha256": "d2fe691322032f9cc7bfc178a0e4280990f9031b8279c481b63c8e79ad2c719d",
+          "source_English_full_original": "O God, by Whose grace we keep the festival of Thy holy martyrs Symphorosa and her seven sons; grant that we may enjoy their fellowship in everlasting bliss. Through our Lord.",
+          "source_English_sha256": "7d6aae1f4e6f2966a8bccfd8a2d43a7a84c9e4da79e1ef61fcb9e6db12ef3ed3",
+          "source_Latin_actual_ending": "Per Dóminum.",
+          "source_English_actual_ending": "Through our Lord.",
+          "source_English_cue_state": "printed",
+          "target_latin_full_unchanged": "Deus, qui nos concedis sanctorum Martyrum tuorum Symphorosae et filiorum\nejus natalicia colere: da nobis in aeterna beatitudine de eorum societate\ngaudere. Per Dominum.\n",
+          "target_latin_sha256": "ee208c5c21aade6cc9f1911bda06893ecb2dd243fe036ba84c38f21435d53765",
+          "full_target_proof": {
+            "mass": "comm-ss-symphorosae-septem-eius-filiorum",
+            "form": "",
+            "proper": "Collect",
+            "course": "",
+            "cycle": "",
+            "occurrence": 1,
+            "text_sha256": "ee208c5c21aade6cc9f1911bda06893ecb2dd243fe036ba84c38f21435d53765",
+            "provenance_status": "collated",
+            "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-symphorosae-septem-eius-filiorum-collect",
+            "source_date": "2026-10-01 project editorial projection; antecedent Pustet Ratisbon 1862",
+            "locator": "editorial-projection artifact physical lines 76-78; antecedent 1862 Pustet Ratisbon, Festa Julii (18), Eadem Die, S. Symphorosae cum septem Filiis, Martyr., Oratio, printed p. 491, text-layer lines 68394-68400, read on the page image of the registered facsimile PDF at p. 577",
+            "relationship": "editorial-projection-exact-to-target",
+            "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-comm-ss-symphorosae-septem-eius-filiorum-orations",
+            "verification_locator": "printed p. 591, no. 3090; artifact PDF p. 672, right column, under 'Eodem die 18 iulii, Ss. Symphorosae et septem filiorum eius Mm. Commemoratio'",
+            "transformations": [
+              "join printed line wraps",
+              "remove stress accents",
+              "expand printed ae/oe ligatures to ae/oe",
+              "normalise consonantal i to the calendar's j orthography",
+              "apply the target printing's punctuation",
+              "carry the target's conclusion at its printed length"
+            ],
+            "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. The 1962 wording was read on 2026-10-01 on that edition's page image at 200 and again at 400 dpi (printed p. 591, no. 3090; artifact PDF p. 672, right column, under 'Eodem die 18 iulii, Ss. Symphorosae et septem filiorum eius Mm. Commemoratio'), not on any text layer, and the string the 2026-09-04 backfill had stored and quarantined for recogniser damage was not used. Every word was then read on the 1862 Pustet at printed p. 491, Festa Julii (18), Eadem Die, S. Symphorosae cum septem Filiis, Martyr., Oratio, read on the page image of its registered facsimile PDF at p. 577 (text-layer address lines 68394-68400), which carries the text word for word. Differences from the antecedent: the 1862 sets a comma after Symphorosae and capitalises Filiorum; the 1862 spells natalitia where the 1962 spells natalicia: two received spellings of one word.",
+            "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+            "provenance_confidence": "high",
+            "publication_status": "permitted",
+            "publication_basis": "public-domain",
+            "surfaces": [
+              "web",
+              "download",
+              "print",
+              "cli",
+              "corpus-data",
+              "public-git"
+            ],
+            "publication_source_ids": [
+              "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.ki054-page-reading-orations-7d558094",
+              "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf",
+              "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+            ],
+            "publication_locator": "Pustet Ratisbon 1862, Festa Julii (18), Eadem Die, S. Symphorosae cum septem Filiis, Martyr., Oratio, printed p. 491; text-layer lines 68394-68400; read on the page image of the registered facsimile PDF at p. 577; artifact rights_status public-domain on a book first published in 1862",
+            "publication_evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact and its registered facsimile PDF, read on a page image. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which requires exactly this pairing of 103(b) with a public-domain witness."
+          },
+          "full_target_proof_dictionary_sha256": "f463c7d96576f2e16b822bf4f0fec5b0e9669de683a536cc88fc34ff70efa140",
+          "current_absence_dictionary": {
+            "mass": "comm-ss-symphorosae-septem-eius-filiorum",
+            "form_id": "main",
+            "proper": "Collect",
+            "cycle": "all",
+            "occurrence": 1,
+            "lang": "en",
+            "extent": "body",
+            "availability": "unavailable",
+            "reason": {
+              "kind": "witness-gap",
+              "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+            },
+            "note": "the witness prints no proper Collect for the day, only a pointer into its Common: leaf n627, printed p. 619, running head `15th AND 18th JULY`, gives `XVIII. St. CAMILLUS de LELLIS, c.` and under it `Commem. of St. SYMPHOROSA, &c. by the Collect, &c. of Mass VIII. p. 477.` Mass VIII was then opened: leaf n486, printed p. 478, running head `OF MANY MARTYRS`, prints `COLLECT. Deus, qui nos.-O God, by whose favour we celebrate the festival of thy holy Martyrs N. and N. grant that we may enjoy their fellowship in eternal bliss. Thro'.` -- with `N. and N.` and no names. That is the 1962's `Deus, qui nos concedis sanctorum Martyrum tuorum Symphorosae, et Filiorum ejus` with the names left out. Reversible from leaf n486 alone if the ground against writing names in is relaxed"
+          },
+          "current_absence_dictionary_sha256": "f32e32f57316cd653c49a5f8f3b728e182294f8570a894edf0d4b949876d7c97",
+          "lexical_differences": [
+            {
+              "source_word_index_zero_based": 11,
+              "target_word_index_zero_based": 11,
+              "source": "natalitia",
+              "target": "natalicia",
+              "method_id": "own-appointment-lexically-attested-spelling-2026-10-23",
+              "lexical_passage_ids": [
+                "passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius",
+                "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter",
+                "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension"
+              ],
+              "contextual_parse": {
+                "lexeme": "natalitium/natalicium",
+                "part_of_speech": "substantive noun",
+                "gender": "neuter",
+                "number": "plural",
+                "case": "accusative",
+                "function": "object of colere"
+              },
+              "contextual_parse_evidence": "Actual source and target put the same noun in the same complete construction with colere. The named saint or saints are genitive modifiers. The noun denotes the birthday celebration, not a feminine noun or an arbitrary adjective; both contexts require the accusative plural neuter substantive.",
+              "exact_form_authority": {
+                "family": "natalitia-natalicia",
+                "source_form": "natalitia",
+                "target_form": "natalicia",
+                "decision": "ACCEPT_LEXICAL_EVIDENCE_ONLY",
+                "same_form_parses": [
+                  "neuter nominative plural",
+                  "neuter accusative plural"
+                ],
+                "basis": "Direct lemma/cross-reference plus the cited unchanged paradigm; derived inflection, not a claim that both spellings of this token are quoted in the lexicon.",
+                "source_passage_ids": [
+                  "passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius",
+                  "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter",
+                  "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension"
+                ],
+                "within_token_change": {
+                  "source_span_zero_based_half_open": [
+                    6,
+                    7
+                  ],
+                  "source_characters": "t",
+                  "target_span_zero_based_half_open": [
+                    6,
+                    7
+                  ],
+                  "target_characters": "c"
+                },
+                "actual_prayer_token_positions": null,
+                "limits": [
+                  "The requested -a pair is supported only with the same contextual parse; the dictionary separately prints feminine natalicia, ae, as well as the neuter use.",
+                  "This initial bounded list includes only the six named neuter surface-form pairs; no blanket t/c fold and no automatically generated adjectival family.",
+                  "Morphological features and complete prayer context must match."
+                ]
+              }
+            }
+          ],
+          "complete_petition_word_count": 22,
+          "conclusion_family": "identical-actual-ordinary-short",
+          "conclusion_person_context": "Actual source and target both stop at Per Dominum. Literal English ends Through our Lord. No shortened-to-longer conclusion application is needed.",
+          "source_note": "English seven sons is literally printed while Latin filiorum ejus supplies no number; no English word is added."
+        },
+        "candidate_packet_sha256": "66c1238d50d204905d619505c404578d56bd31ec0e44c7cf330ddff8bb69bc76",
+        "candidate_dictionary_sha256": "3154391a8adbaf2f66d531452df9d92a2dfab23ce8ce09c8e80f0d97e328cc26",
+        "finite_relation": "Exact same actual source and target short ordinary ending after typography; only the individually bound exact accusative-plural lexical pair applies.",
+        "actual_prayer_pdf_pages": [
+          1542
+        ],
+        "actual_prayer_printed_pages": [
+          "1506"
+        ],
+        "separate_context_pdf_pages": [
+          1541,
+          1543
+        ],
+        "separate_context_printed_pages": [
+          "1505",
+          "1507"
+        ],
+        "source_result": "INDEPENDENTLY_SOURCE_ACCEPTED_PENDING_ROOT_EXACT_FOUR_ADOPTION_AND_ASSEMBLED_CARRIERS",
+        "occurrence_grammar_assessment": {
+          "lexeme": "natalitium/natalicium",
+          "part_of_speech": "substantive noun",
+          "gender": "neuter",
+          "number": "plural",
+          "case": "accusative",
+          "function": "object of colere"
+        },
+        "occurrence_grammar_evidence": "Actual source and target put the same noun in the same complete construction with colere. The named saint or saints are genitive modifiers. The noun denotes the birthday celebration, not a feminine noun or an arbitrary adjective; both contexts require the accusative plural neuter substantive.",
+        "initial20_method": {
+          "id": "own-appointment-lexically-attested-spelling-2026-10-23",
+          "record_path": "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml",
+          "record_at_candidate_capture_sha256": "b3fddd2aaf16c2f52ec3ee96d8d2bac087ba6fb4dfc2a329615db9e097a34b44",
+          "record_at_independent_review_sha256": "75dcbdb1b5633f399616bacc8a0b135834c93c7de8b39296b94859afa585e8bf",
+          "JSON_string_field": "lexical_comparison_method_20261023_json",
+          "JSON_string_UTF8_sha256": "1b467dc9b7a5d5ea602419db56f881ed392e15181099069dbcf0e9bfbe3325df",
+          "accepted_exact_form_evidence_dictionary_sha256": "0d3fbe5b036fcd62abeb9cd95485abe26b323d27697fea89e5309802d7c334b1",
+          "new_surface_forms_or_stem_closure": false,
+          "raw_or_public_evidence_fields_changed": false
+        },
+        "selected_own_book_control_records": [],
+        "selected_formal_control_record": null,
+        "target_proof_grade_unchanged": "high",
+        "private_assessment_boundary": "Only a fresh occurrence-bound assessment copy may express the reviewed noun/gender/number/case/function after explicit root adoption. Raw/public lexical records, null positions and dictionary reservations remain unchanged. No other occurrence or form is authorized."
+      },
+      {
+        "binding": {
+          "target": [
+            "second-day-within-octave-s-stephani",
+            "main",
+            "Collect",
+            "all",
+            1
+          ],
+          "source_edition_id": "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925",
+          "source_artifact_id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf",
+          "source_artifact_sha256": "28c9046c5acfa19297ab9aeaa14ac4f8d8fcffab1307b51215b94fa4ca6172a2",
+          "source_pdf_pages": [
+            432,
+            433
+          ],
+          "source_printed_pages": [
+            "398",
+            "399"
+          ],
+          "source_context": "December26 StStephen FirstMartyr heading432/printed398; explicit MASS SEDERUNT at433/399, Introit then complete own Collect and next Epistle. The prayer is the saint’s own, not a Common or a commemoration prayer borrowed from the preceding Nativity.",
+          "source_latin_full_original": "Da nobis, quaesumus, Dómine, imitári quod cólimus: ut discámus et inimícos dilígere; quia ejus natalítia celebrámus, qui novit étiam pro persecutóribus exoráre Dóminum nostrum Jesum Christum Fílium tuum. Qui tecum.",
+          "source_latin_sha256": "345414874bb744deb2b4d6a4a78d615ba99344fbe14d0053437389ced8504b25",
+          "source_English_full_original": "Grant us, we beseech Thee, O Lord, so to imitate what we revere that we may learn to love even our enemies: for we celebrate the day of his birth to immortality, who could even plead with our Lord Jesus Christ Thy Son on behalf of his persecutors. Who with Thee.",
+          "source_English_sha256": "e09610ea180d558e6dd531dd5ea19422a026a55913b91195648fada115677e3c",
+          "source_Latin_actual_ending": "Qui tecum.",
+          "source_English_actual_ending": "Who with Thee.",
+          "source_English_cue_state": "printed",
+          "target_latin_full_unchanged": "Da nobis, quaesumus, Domine, imitari quod colimus: ut discamus et\ninimicos diligere; quia ejus natalicia celebramus, qui novit etiam pro\npersecutoribus exorare Dominum nostrum Jesum Christum, Filium tuum:\nQui tecum vivit et regnat in unitate.\n",
+          "target_latin_sha256": "f916b45b83ae1c4ddc57fcf86fbed35d580f7c1b1fd3d74403e28370cc0d52d7",
+          "full_target_proof": {
+            "mass": "second-day-within-octave-s-stephani",
+            "form": "",
+            "proper": "Collect",
+            "course": "",
+            "cycle": "",
+            "occurrence": 1,
+            "text_sha256": "f916b45b83ae1c4ddc57fcf86fbed35d580f7c1b1fd3d74403e28370cc0d52d7",
+            "provenance_status": "collated",
+            "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-second-day-within-octave-s-stephani-collect",
+            "source_date": "2026-10-22 project editorial projection; antecedent Pustet Ratisbon 1862",
+            "locator": "projection physical lines 26-29; Pustet Ratisbon 1862 printed p. 20, column R bottom; original PDF p. 106; retained extract p. 1",
+            "relationship": "editorial-projection-exact-to-target",
+            "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.phase3-second-day-within-octave-s-stephani-orations-recheck-2026-10-22",
+            "verification_locator": "1962 printed p. 23, no. 152, column R; artifact PDF p. 104",
+            "transformations": [
+              "join printed wraps",
+              "remove stress accents",
+              "expand ae/oe ligatures",
+              "apply target pointing and capitals",
+              "retain declared project consonantal j",
+              "carry the target conclusion at its actual printed length",
+              "received natalitia to target natalicia spelling"
+            ],
+            "provenance_evidence": "Complete page-image petition match, not OCR, incipit-only or a former-body hash. Historical passage passage.catholic-church.missale-romanum.pustet-ratisbon-1862.phase3-second-day-within-octave-s-stephani-orations-page-image-2026-10-22 records the whole antecedent and its locally printed conclusion. Differences: natalitia/natalicia received spelling; ejus/eius, Jesum/Iesum; pointing Historical ends Qui tecum vivit.; target ends Qui tecum vivit et regnat in unitate.",
+            "provenance_authority": "Triptych complete page-image collation and exact bounded editorial projection",
+            "provenance_confidence": "high",
+            "publication_status": "permitted",
+            "publication_basis": "public-domain",
+            "surfaces": [
+              "web",
+              "download",
+              "print",
+              "cli",
+              "corpus-data",
+              "public-git"
+            ],
+            "publication_source_ids": [
+              "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-winter-eighteen-orations-20261022",
+              "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase3-winter-oration-pages-20261022"
+            ],
+            "publication_locator": "Pustet Ratisbon 1862 printed p. 20, column R bottom; original PDF p. 106; retained extract p. 1",
+            "publication_evidence": "Every word of the complete preexisting petition is independently witnessed in the registered US-public-domain Pustet Ratisbon 1862 printing, with only declared spelling/pointing, explicit rubric-directed blanks where stated, and actual target conclusion length under guidance/propers-for-agents.md. Under 17 U.S.C. 103(b), the restricted 1962 control is not publication authority. natalitia/natalicia received spelling; ejus/eius, Jesum/Iesum; pointing Historical ends Qui tecum vivit.; target ends Qui tecum vivit et regnat in unitate."
+          },
+          "full_target_proof_dictionary_sha256": "02f36bf2494a31c45c17507dc298cc4844bf2e5da03bab447dacaa449fb08e2a",
+          "current_absence_dictionary": {
+            "mass": "second-day-within-octave-s-stephani",
+            "form_id": "main",
+            "proper": "Collect",
+            "cycle": "all",
+            "occurrence": 1,
+            "lang": "en",
+            "extent": "body",
+            "availability": "unavailable",
+            "note": "No exact English exemplar is bound to this source-established Proper body.",
+            "reason": {
+              "kind": "no-exemplar"
+            }
+          },
+          "current_absence_dictionary_sha256": "3b2f96fc7ab4feade0889b71c936ccd83343ac6b163b7b4f10d9ed8d0f892679",
+          "lexical_differences": [
+            {
+              "source_word_index_zero_based": 14,
+              "target_word_index_zero_based": 14,
+              "source": "natalitia",
+              "target": "natalicia",
+              "method_id": "own-appointment-lexically-attested-spelling-2026-10-23",
+              "lexical_passage_ids": [
+                "passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius",
+                "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter",
+                "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension"
+              ],
+              "contextual_parse": {
+                "lexeme": "natalitium/natalicium",
+                "part_of_speech": "substantive noun",
+                "gender": "neuter",
+                "number": "plural",
+                "case": "accusative",
+                "function": "object of celebramus"
+              },
+              "contextual_parse_evidence": "Actual source and target put the same noun in the same complete construction with celebramus. The named saint or saints are genitive modifiers. The noun denotes the birthday celebration, not a feminine noun or an arbitrary adjective; both contexts require the accusative plural neuter substantive.",
+              "exact_form_authority": {
+                "family": "natalitia-natalicia",
+                "source_form": "natalitia",
+                "target_form": "natalicia",
+                "decision": "ACCEPT_LEXICAL_EVIDENCE_ONLY",
+                "same_form_parses": [
+                  "neuter nominative plural",
+                  "neuter accusative plural"
+                ],
+                "basis": "Direct lemma/cross-reference plus the cited unchanged paradigm; derived inflection, not a claim that both spellings of this token are quoted in the lexicon.",
+                "source_passage_ids": [
+                  "passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius",
+                  "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter",
+                  "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension"
+                ],
+                "within_token_change": {
+                  "source_span_zero_based_half_open": [
+                    6,
+                    7
+                  ],
+                  "source_characters": "t",
+                  "target_span_zero_based_half_open": [
+                    6,
+                    7
+                  ],
+                  "target_characters": "c"
+                },
+                "actual_prayer_token_positions": null,
+                "limits": [
+                  "The requested -a pair is supported only with the same contextual parse; the dictionary separately prints feminine natalicia, ae, as well as the neuter use.",
+                  "This initial bounded list includes only the six named neuter surface-form pairs; no blanket t/c fold and no automatically generated adjectival family.",
+                  "Morphological features and complete prayer context must match."
+                ]
+              }
+            }
+          ],
+          "complete_petition_word_count": 28,
+          "conclusion_family": "final-Son-Qui-tecum",
+          "conclusion_person_context": "The petition expressly ends Dominum nostrum Jesum Christum Filium tuum; the relative Qui therefore refers to the third-person Son Jesus Christ, and tecum to the Father addressed by tuum. English repeats our Lord Jesus Christ Thy Son and Who with Thee. Target retains exactly this third-person Son/Father relation. Own-book PDF58 explicitly has dilectum Filium tuum immediately before its full Qui tecum formula; formal Latin IX17 separately says final mention of the Son takes Qui tecum vivit. No direct-Son Qui vivis or same-Spirit clause is supplied.",
+          "source_note": "The actual short English Who with Thee. is preserved; no full conclusion or Amen is added."
+        },
+        "candidate_packet_sha256": "7a508d9c5bc6900e587edb323a6824d2f432eaffaba5c1127c466c7ea5af8c3b",
+        "candidate_dictionary_sha256": "50cdd2e9b70d4f3c9f0b18ef3aa3ede46eef5b924e2a1e0d1a71b9702078a0d8",
+        "finite_relation": "Only this actual final-Son Qui-tecum/Who-with-Thee source cue relates to the independently proved target third-person with-Thee ending. Own-book complete formula and formal IX17 select the family; no omitted Latin/English is supplied.",
+        "actual_prayer_pdf_pages": [
+          433
+        ],
+        "actual_prayer_printed_pages": [
+          "399"
+        ],
+        "separate_context_pdf_pages": [
+          432
+        ],
+        "separate_context_printed_pages": [
+          "398"
+        ],
+        "source_result": "INDEPENDENTLY_SOURCE_ACCEPTED_PENDING_ROOT_EXACT_FOUR_ADOPTION_AND_ASSEMBLED_CARRIERS",
+        "occurrence_grammar_assessment": {
+          "lexeme": "natalitium/natalicium",
+          "part_of_speech": "substantive noun",
+          "gender": "neuter",
+          "number": "plural",
+          "case": "accusative",
+          "function": "object of celebramus"
+        },
+        "occurrence_grammar_evidence": "Actual source and target put the same noun in the same complete construction with celebramus. The named saint or saints are genitive modifiers. The noun denotes the birthday celebration, not a feminine noun or an arbitrary adjective; both contexts require the accusative plural neuter substantive.",
+        "initial20_method": {
+          "id": "own-appointment-lexically-attested-spelling-2026-10-23",
+          "record_path": "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml",
+          "record_at_candidate_capture_sha256": "b3fddd2aaf16c2f52ec3ee96d8d2bac087ba6fb4dfc2a329615db9e097a34b44",
+          "record_at_independent_review_sha256": "75dcbdb1b5633f399616bacc8a0b135834c93c7de8b39296b94859afa585e8bf",
+          "JSON_string_field": "lexical_comparison_method_20261023_json",
+          "JSON_string_UTF8_sha256": "1b467dc9b7a5d5ea602419db56f881ed392e15181099069dbcf0e9bfbe3325df",
+          "accepted_exact_form_evidence_dictionary_sha256": "0d3fbe5b036fcd62abeb9cd95485abe26b323d27697fea89e5309802d7c334b1",
+          "new_surface_forms_or_stem_closure": false,
+          "raw_or_public_evidence_fields_changed": false
+        },
+        "selected_own_book_control_records": [
+          {
+            "method_path": "workflows/reviews/missal-reader-completion-2026-10-26/finite-source-methods-next18.json",
+            "method_sha256": "a77956cf5baa782c575c482add76f08a341fcf4343f32c0681ec0a7171ada87b",
+            "JSON_pointer": "/source_controls/own_control_bundle/controls/1",
+            "record_id": "qui-tecum-full",
+            "record_dictionary_sha256": "8a5a8125705ba8ab7cdce6c80cf1180eb600dc4570c680101066ae66e1beffe8",
+            "evidence_only_no_prior_context_authority_extended": true
+          }
+        ],
+        "selected_formal_control_record": {
+          "method_path": "workflows/reviews/missal-reader-completion-2026-10-26/finite-source-methods-next18.json",
+          "method_sha256": "a77956cf5baa782c575c482add76f08a341fcf4343f32c0681ec0a7171ada87b",
+          "JSON_pointer": "/source_controls/formal_Latin_controls/source_rules/0",
+          "record_id": "mame1922-rubricae-generales-ix17",
+          "record_dictionary_sha256": "bece1f918671b9d75088271acf87d86f93980ed3ce4abb9e707bd8f27438e2cb",
+          "evidence_only_no_prior_context_authority_extended": true
+        },
+        "target_proof_grade_unchanged": "high",
+        "private_assessment_boundary": "Only a fresh occurrence-bound assessment copy may express the reviewed noun/gender/number/case/function after explicit root adoption. Raw/public lexical records, null positions and dictionary reservations remain unchanged. No other occurrence or form is authorized."
+      },
+      {
+        "binding": {
+          "target": [
+            "comm-s-saturnini-martyris",
+            "main",
+            "Collect",
+            "all",
+            1
+          ],
+          "source_edition_id": "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925",
+          "source_artifact_id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf",
+          "source_artifact_sha256": "28c9046c5acfa19297ab9aeaa14ac4f8d8fcffab1307b51215b94fa4ca6172a2",
+          "source_pdf_pages": [
+            1211
+          ],
+          "source_printed_pages": [
+            "1175"
+          ],
+          "source_context": "November29 TheSameDay StSaturninus heading, Mass Laetabitur from CommonofoneMartyrp225except, followed by complete own named Collect. Page begins with Andrew Vigil continuation, which is not this prayer.",
+          "source_latin_full_original": "Deus, qui nos beáti Saturníni Mártyris tui concédis natalítio pérfrui: ejus nos tríbue méritis adjuvári. Per Dóminum.",
+          "source_latin_sha256": "04e6eb37df3299d63f3c199e3204acc4d72038a6ed98a27ce77b677cead8c3d7",
+          "source_English_full_original": "O God, Who grantest us to rejoice in the feast of Thy blessed martyr, Saturninus, grant us Thine aid through his merits. Through our Lord.",
+          "source_English_sha256": "e21a9bfbd7574fd8803f9b5d19e91f2460084be60605a6a23c23f3185a7bf439",
+          "source_Latin_actual_ending": "Per Dóminum.",
+          "source_English_actual_ending": "Through our Lord.",
+          "source_English_cue_state": "printed",
+          "target_latin_full_unchanged": "Deus, qui nos beati Saturnini Martyris tui concedis natalicio perfrui:\nejus nos tribue meritis adjuvari. Per Dominum.\n",
+          "target_latin_sha256": "22bc39335d9f5fa1a811589a5f34b8de1044ea2086b0bae1fa8c912bd582cbba",
+          "full_target_proof": {
+            "mass": "comm-s-saturnini-martyris",
+            "form": "",
+            "proper": "Collect",
+            "course": "",
+            "cycle": "",
+            "occurrence": 1,
+            "text_sha256": "22bc39335d9f5fa1a811589a5f34b8de1044ea2086b0bae1fa8c912bd582cbba",
+            "provenance_status": "collated",
+            "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase2-comm-s-saturnini-martyris-collect",
+            "source_date": "2026-10-22 project editorial projection; antecedent Pustet Ratisbon 1862",
+            "locator": "projection physical lines 61-62; Pustet 1862 printed p. 362 (opening leaf, number suppressed), R, Pro commemor. S. Saturnini Martyris. Oratio in Vigilia S. Andreae; original PDF p. 448; retained extract p. 1",
+            "relationship": "editorial-projection-exact-to-target",
+            "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.phase2-comm-s-saturnini-martyris-orations-recheck-2026-10-22",
+            "verification_locator": "1962 printed p. Proprium Sanctorum opening, unnumbered, no. 1809, column L, marked P; artifact PDF p. 509",
+            "transformations": [
+              "join printed line wraps",
+              "remove stress accents",
+              "expand ae/oe ligatures",
+              "apply target punctuation and capitals",
+              "retain declared project consonantal j",
+              "carry the target conclusion at its actual printed length",
+              "received spelling natalitio to target natalicio"
+            ],
+            "provenance_evidence": "Complete page-image comparison, not an incipit or former-body-hash reconstruction. The bounded project passage reproduces this exact Unicode hash. The separate historical passage passage.catholic-church.missale-romanum.pustet-ratisbon-1862.phase2-comm-s-saturnini-martyris-orations-page-image-2026-10-22 records the printed antecedent. Differences: Historical natalitio; target natalicio: received spelling of the same word. Historical ejus/adjuvari; target eius/adiuvari. Pointing/capitals/accents/ligatures.",
+            "provenance_authority": "Triptych page-image collation and exact bounded editorial projection",
+            "provenance_confidence": "high",
+            "publication_status": "permitted",
+            "publication_basis": "public-domain",
+            "surfaces": [
+              "web",
+              "download",
+              "print",
+              "cli",
+              "corpus-data",
+              "public-git"
+            ],
+            "publication_source_ids": [
+              "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase2-octnov-commemorations-20261022",
+              "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase2-octnov-commemoration-pages-20261022"
+            ],
+            "publication_locator": "Pustet 1862 printed p. 362 (opening leaf, number suppressed), R, Pro commemor. S. Saturnini Martyris. Oratio in Vigilia S. Andreae; original PDF p. 448; retained extract p. 1",
+            "publication_evidence": "Whole target petition and short conclusion preexist on 1862 p.362 with received spelling only. The 1862 printing is public domain in the United States. Under 17 U.S.C. 103(b), the 1962 edition contributes no new right in this preexisting complete petition. Explicit spelling, pointing and conclusion-length transformations follow guidance/propers-for-agents.md; the restricted control artifact is not publication authority."
+          },
+          "full_target_proof_dictionary_sha256": "8f94c80ec9af8ee39b0a5413851345b0c8b28e0a3f4b0a2497cbdd70a2aef4ee",
+          "current_absence_dictionary": {
+            "mass": "comm-s-saturnini-martyris",
+            "form_id": "main",
+            "proper": "Collect",
+            "cycle": "all",
+            "occurrence": 1,
+            "lang": "en",
+            "extent": "body",
+            "availability": "unavailable",
+            "reason": {
+              "kind": "witness-gap",
+              "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+            },
+            "witness_artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+            "witness_passage_id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-comm-s-saturnini-martyris--main--collect--all--1",
+            "verified_artifact_page": 531,
+            "verified_on_page": "2026-08-19",
+            "verified_printed_page": "522",
+            "note": "Read on leaf n530, printed p. 522, running head `29th NOVEMBER.`. This is the FIRST page of the witness's Proper of Saints, which opens at 29 November with the Vigil of St Andrew; the commemoration is printed inside it as `COLLECT. Deus, qui.-Of St. SATURNINUS.`, the day's own Collect standing above it on the preceding leaf. The Latin cue `Deus, qui` answers the 1962 incipit `Deus, qui nos beati Saturnini Martyris tui`. Kalendar p. 776 (leaf n784) confirms the join: `29 Vigil of S. Andrew, Com. of S. Saturninus, m. Simple 521`. Date agrees: 29 November in both books. A small ink mark stands before `Thro'` in the closing line (`by his merits. 'Thro'.`); it is scanner or press dirt and is not reproduced. The historical English and its exact Cummiskey page are registered, and a read-only audit found full-formula agreement with Pustet and the 1962 target. This row remains text-free until durable target-Latin and independent-witness passage bindings preserve that identity check."
+          },
+          "current_absence_dictionary_sha256": "9f717ad6d2c5ddfb2cd67071ae0f586ae040785d6f94138ca1c4512b2b21fe3d",
+          "lexical_differences": [
+            {
+              "source_word_index_zero_based": 8,
+              "target_word_index_zero_based": 8,
+              "source": "natalitio",
+              "target": "natalicio",
+              "method_id": "own-appointment-lexically-attested-spelling-2026-10-23",
+              "lexical_passage_ids": [
+                "passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius",
+                "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter",
+                "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension"
+              ],
+              "contextual_parse": {
+                "lexeme": "natalitium/natalicium",
+                "part_of_speech": "substantive noun",
+                "gender": "neuter",
+                "number": "singular",
+                "case": "ablative",
+                "function": "ablative complement governed by perfrui"
+              },
+              "contextual_parse_evidence": "Actual source and target put the same noun in the same complete construction with perfrui. The named saint or saints are genitive modifiers. The noun denotes the birthday celebration, not a feminine noun or an arbitrary adjective; both contexts require the ablative singular neuter substantive.",
+              "exact_form_authority": {
+                "family": "natalitia-natalicia",
+                "source_form": "natalitio",
+                "target_form": "natalicio",
+                "decision": "ACCEPT_LEXICAL_EVIDENCE_ONLY",
+                "same_form_parses": [
+                  "neuter dative singular",
+                  "neuter ablative singular"
+                ],
+                "basis": "Direct lemma/cross-reference plus the cited unchanged paradigm; derived inflection, not a claim that both spellings of this token are quoted in the lexicon.",
+                "source_passage_ids": [
+                  "passage.charlton-t-lewis.a-latin-dictionary.harper-new-york-1879.lexical-spellings-natalicius-natalitius",
+                  "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-second-declension-neuter",
+                  "passage.joseph-henry-allen.new-latin-grammar.ginn-1903.lexical-spellings-adjective-declension"
+                ],
+                "within_token_change": {
+                  "source_span_zero_based_half_open": [
+                    6,
+                    7
+                  ],
+                  "source_characters": "t",
+                  "target_span_zero_based_half_open": [
+                    6,
+                    7
+                  ],
+                  "target_characters": "c"
+                },
+                "actual_prayer_token_positions": null,
+                "limits": [
+                  "The requested -a pair is supported only with the same contextual parse; the dictionary separately prints feminine natalicia, ae, as well as the neuter use.",
+                  "This initial bounded list includes only the six named neuter surface-form pairs; no blanket t/c fold and no automatically generated adjectival family.",
+                  "Morphological features and complete prayer context must match."
+                ]
+              }
+            }
+          ],
+          "complete_petition_word_count": 15,
+          "conclusion_family": "identical-actual-ordinary-short",
+          "conclusion_person_context": "Actual source and target both stop at Per Dominum, with English Through our Lord. No shortened-to-longer conclusion application is needed.",
+          "source_note": "Exact natalitio/natalicio is independently enumerated in initial20 and its allowed neuter ablative singular evidence. This is not derived from the separate plural pair."
+        },
+        "candidate_packet_sha256": "9adbad5a107a2d133030bfc6a5f6ef7eb4f3c90d619eefe6c2c55eebde8a5b3e",
+        "candidate_dictionary_sha256": "c07569bc8eb3771ba9959f4ffae54b49dc0364cdd568501d4041c28be60db108",
+        "finite_relation": "Exact same actual source and target short ordinary ending after typography; only the individually bound exact ablative-singular lexical pair applies.",
+        "actual_prayer_pdf_pages": [
+          1211
+        ],
+        "actual_prayer_printed_pages": [
+          "1175"
+        ],
+        "separate_context_pdf_pages": [],
+        "separate_context_printed_pages": [],
+        "source_result": "INDEPENDENTLY_SOURCE_ACCEPTED_PENDING_ROOT_EXACT_FOUR_ADOPTION_AND_ASSEMBLED_CARRIERS",
+        "occurrence_grammar_assessment": {
+          "lexeme": "natalitium/natalicium",
+          "part_of_speech": "substantive noun",
+          "gender": "neuter",
+          "number": "singular",
+          "case": "ablative",
+          "function": "ablative complement governed by perfrui"
+        },
+        "occurrence_grammar_evidence": "Actual source and target put the same noun in the same complete construction with perfrui. The named saint or saints are genitive modifiers. The noun denotes the birthday celebration, not a feminine noun or an arbitrary adjective; both contexts require the ablative singular neuter substantive.",
+        "initial20_method": {
+          "id": "own-appointment-lexically-attested-spelling-2026-10-23",
+          "record_path": "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml",
+          "record_at_candidate_capture_sha256": "b3fddd2aaf16c2f52ec3ee96d8d2bac087ba6fb4dfc2a329615db9e097a34b44",
+          "record_at_independent_review_sha256": "75dcbdb1b5633f399616bacc8a0b135834c93c7de8b39296b94859afa585e8bf",
+          "JSON_string_field": "lexical_comparison_method_20261023_json",
+          "JSON_string_UTF8_sha256": "1b467dc9b7a5d5ea602419db56f881ed392e15181099069dbcf0e9bfbe3325df",
+          "accepted_exact_form_evidence_dictionary_sha256": "b85eef7cc4e32cca27a06d8d4378e5dfdca89061bb5e672c161fa86456aebc5f",
+          "new_surface_forms_or_stem_closure": false,
+          "raw_or_public_evidence_fields_changed": false
+        },
+        "selected_own_book_control_records": [],
+        "selected_formal_control_record": null,
+        "target_proof_grade_unchanged": "high",
+        "private_assessment_boundary": "Only a fresh occurrence-bound assessment copy may express the reviewed noun/gender/number/case/function after explicit root adoption. Raw/public lexical records, null positions and dictionary reservations remain unchanged. No other occurrence or form is authorized."
+      }
+    ],
+    "rights_boundary": {
+      "source_artifact_id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf",
+      "source_artifact_sha256": "28c9046c5acfa19297ab9aeaa14ac4f8d8fcffab1307b51215b94fa4ca6172a2",
+      "identity_and_underlying_text_receipt_sha256": "97f641d9b85d294b12f8f97298c46c177a668563560db20836bfd4b3a84d4314",
+      "bounded_Symphorosa_setting_addendum_sha256": "1e0cf4854847570d9ddeff701582d71029b13fbb0853d58a18d6dae0d050c0fe",
+      "basis": "Existing independently reviewed pre1931 early English-expression UnitedStates expiry basis, with1925 a catalogue-supported expression label and January1927 acquisition bound. These are bounded ordinary printed settings in the same exact parent, not newly dated own colophons.",
+      "limits": "Historical prayer wording derivative only; no whole scan, OCR, raster, commentary, illustration, modern insertion, foreign rights or translator attribution. Preserve source literal English including Sabina virgin wording; no target/source repair."
+    },
+    "mandatory_boundaries": [
+      "Exactly four named full tuples with source/English/actual cue/current body/full proof/gap hashes and selected occurrence parses. Root adoption must name these four; no inferred extension of next18.",
+      "Three natalitia/natalicia occurrences are neuter accusative plural substantives, objects of colimus/colere/celebramus. One natalitio/natalicio occurrence is neuter ablative singular governed by perfrui. Retain all initial20 paradigm/dictionary qualifications and null evidence values.",
+      "Symphorosa and Saturninus need no short/long ending inference because their actual complete endings already agree. Sabina and Stephen are two separately named finite family relations only.",
+      "Preserve source literal English, actual abbreviations, all source/target lengths and existing independent target proof grades. No word/name/response substitution or ending completion.",
+      "Source proof ranges use actual prayer pages; heading/continuity pages remain separate. No donor fanout, generated stem family, arbitrary prefix splice or silent private POS fill.",
+      "Catherine remains excluded: source English has no printed conclusion cue. No English cue may be added and no zero-cue transfer is adopted.",
+      "Irenaeusv2 is already an accepted prior context and is excluded from this newfour; use its corrected source punctuation with no comma after pax, unchanged concentrated English and unchanged target.",
+      "Fresh receiving TSV/artifact/verifier/publication passages, four selected ledger changes and bounded audit entries require independent assembled-source acceptance after root adoption."
+    ],
+    "private_assessment_authority": "Only fresh exact occurrence-bound reviewed noun/gender/number/case/function assessments in these four pinned contexts may materialize the reviewed parses. Preserve all raw/public null evidence and initial20 dictionary/paradigm reservations. No forms/stems/fanout beyond the exact enumerated pairs and contexts.",
+    "integration_stage": "Next coherent source checkpoint; do not disturb current generation freeze. Native receiving/portable method and independent assembled review required before root integration."
+  },
+  "independent_review_sha256": "3f79868ef397f5b2af62dde2cdde84759ee4fb1f5a6d6cb6ae562ea7ce71a8ca",
+  "independent_semantic_review": {
+    "schema": "independent-extra4-finite-source-application-review/v1",
+    "status": "ACCEPT_FOUR_SOURCE_AND_FINITE_OCCURRENCE_APPLICATIONS_WITH_CATHERINE_HELD",
+    "reviewer": "genitrice_extra",
+    "date": "2026-10-26",
+    "private_input_manifest": {
+      "sha256": "66bab92c3acb5a02f23945e43a3c03bdf144437eec682c727d5ea757d608f660",
+      "bytes": 9904
+    },
+    "portable_method_for_root_adoption": {
+      "sha256": "0419f856b1a3591a652aca0ed93d25e6780443893200b7f33bd25ced03104d96",
+      "bytes": 62061
+    },
+    "accepted_four": [
+      {
+        "target": [
+          "comm-s-sabinae-martyris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "status": "ACCEPT_SOURCE_AND_FINITE_OCCURRENCE_APPLICATION",
+        "candidate_packet_sha256": "61cfa74c10bd41d8bc6a43cdfdd472ab0f7a199ae8729b5c53718c0a955af19c",
+        "source_row_dictionary_sha256": "ab8997bfed29c5d4284bc6a51cabef62004184f47504d319898d154debe77034",
+        "full_target_proof_dictionary_sha256": "d9af4da12eea487f3fb4512ac570b168b191a7bd819a7458726f80472d1fd70d",
+        "current_absence_dictionary_sha256": "5dfbd0c3812bd2108fd6492b50d09abf28a805cebc87fe9a006ab3d2c8905d9a",
+        "grammar": {
+          "lexeme": "natalitium/natalicium",
+          "part_of_speech": "substantive noun",
+          "gender": "neuter",
+          "number": "plural",
+          "case": "accusative",
+          "function": "object of colimus"
+        },
+        "source_Latin_ending_sha256": "633173de9c16d04e65423f0b2687f692feee68e60695ca8bda2be89b84d2b7c3",
+        "source_English_ending_sha256": "1c52641c8831c94b925b8feb037977e7f03a56a545361c3416e38c88b78a7630",
+        "finite_relation": "Only this actually named ordinary Per-Dominum/Through-our-Lord short source cue relates to the exact current Per-Dominum-nostrum target prefix. Own-book full/short controls plus formal IX17 support this finite family relation; no arbitrary longer tail or English expansion.",
+        "actual_prayer_pdf_pages": [
+          1655
+        ],
+        "separate_context_pdf_pages": []
+      },
+      {
+        "target": [
+          "comm-ss-symphorosae-septem-eius-filiorum",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "status": "ACCEPT_SOURCE_AND_FINITE_OCCURRENCE_APPLICATION",
+        "candidate_packet_sha256": "66c1238d50d204905d619505c404578d56bd31ec0e44c7cf330ddff8bb69bc76",
+        "source_row_dictionary_sha256": "3154391a8adbaf2f66d531452df9d92a2dfab23ce8ce09c8e80f0d97e328cc26",
+        "full_target_proof_dictionary_sha256": "f463c7d96576f2e16b822bf4f0fec5b0e9669de683a536cc88fc34ff70efa140",
+        "current_absence_dictionary_sha256": "f32e32f57316cd653c49a5f8f3b728e182294f8570a894edf0d4b949876d7c97",
+        "grammar": {
+          "lexeme": "natalitium/natalicium",
+          "part_of_speech": "substantive noun",
+          "gender": "neuter",
+          "number": "plural",
+          "case": "accusative",
+          "function": "object of colere"
+        },
+        "source_Latin_ending_sha256": "633173de9c16d04e65423f0b2687f692feee68e60695ca8bda2be89b84d2b7c3",
+        "source_English_ending_sha256": "1c52641c8831c94b925b8feb037977e7f03a56a545361c3416e38c88b78a7630",
+        "finite_relation": "Exact same actual source and target short ordinary ending after typography; only the individually bound exact accusative-plural lexical pair applies.",
+        "actual_prayer_pdf_pages": [
+          1542
+        ],
+        "separate_context_pdf_pages": [
+          1541,
+          1543
+        ]
+      },
+      {
+        "target": [
+          "second-day-within-octave-s-stephani",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "status": "ACCEPT_SOURCE_AND_FINITE_OCCURRENCE_APPLICATION",
+        "candidate_packet_sha256": "7a508d9c5bc6900e587edb323a6824d2f432eaffaba5c1127c466c7ea5af8c3b",
+        "source_row_dictionary_sha256": "50cdd2e9b70d4f3c9f0b18ef3aa3ede46eef5b924e2a1e0d1a71b9702078a0d8",
+        "full_target_proof_dictionary_sha256": "02f36bf2494a31c45c17507dc298cc4844bf2e5da03bab447dacaa449fb08e2a",
+        "current_absence_dictionary_sha256": "3b2f96fc7ab4feade0889b71c936ccd83343ac6b163b7b4f10d9ed8d0f892679",
+        "grammar": {
+          "lexeme": "natalitium/natalicium",
+          "part_of_speech": "substantive noun",
+          "gender": "neuter",
+          "number": "plural",
+          "case": "accusative",
+          "function": "object of celebramus"
+        },
+        "source_Latin_ending_sha256": "789e92488549d26f13ad3c397aeeaf1509d7587e827b1a5e3314cd436a832b9a",
+        "source_English_ending_sha256": "0ac62d9fb8dc716ff797eb10d45ee6a639f8513b3a6108d0bd63bba469a52ab7",
+        "finite_relation": "Only this actual final-Son Qui-tecum/Who-with-Thee source cue relates to the independently proved target third-person with-Thee ending. Own-book complete formula and formal IX17 select the family; no omitted Latin/English is supplied.",
+        "actual_prayer_pdf_pages": [
+          433
+        ],
+        "separate_context_pdf_pages": [
+          432
+        ]
+      },
+      {
+        "target": [
+          "comm-s-saturnini-martyris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "status": "ACCEPT_SOURCE_AND_FINITE_OCCURRENCE_APPLICATION",
+        "candidate_packet_sha256": "9adbad5a107a2d133030bfc6a5f6ef7eb4f3c90d619eefe6c2c55eebde8a5b3e",
+        "source_row_dictionary_sha256": "c07569bc8eb3771ba9959f4ffae54b49dc0364cdd568501d4041c28be60db108",
+        "full_target_proof_dictionary_sha256": "8f94c80ec9af8ee39b0a5413851345b0c8b28e0a3f4b0a2497cbdd70a2aef4ee",
+        "current_absence_dictionary_sha256": "9f717ad6d2c5ddfb2cd67071ae0f586ae040785d6f94138ca1c4512b2b21fe3d",
+        "grammar": {
+          "lexeme": "natalitium/natalicium",
+          "part_of_speech": "substantive noun",
+          "gender": "neuter",
+          "number": "singular",
+          "case": "ablative",
+          "function": "ablative complement governed by perfrui"
+        },
+        "source_Latin_ending_sha256": "633173de9c16d04e65423f0b2687f692feee68e60695ca8bda2be89b84d2b7c3",
+        "source_English_ending_sha256": "1c52641c8831c94b925b8feb037977e7f03a56a545361c3416e38c88b78a7630",
+        "finite_relation": "Exact same actual source and target short ordinary ending after typography; only the individually bound exact ablative-singular lexical pair applies.",
+        "actual_prayer_pdf_pages": [
+          1211
+        ],
+        "separate_context_pdf_pages": []
+      }
+    ],
+    "held_one": {
+      "target": [
+        "s-catharinae-virginis-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_packet_sha256": "9b1abb4181e1df1ab146b7ec61b4ce205aa7fa4d5b6e6188be8cc10cf5e94eb6",
+      "source_Latin_sha256": "51571a3e064abf11ca550c3724b024fa1b3e939cf52763252fe6bd76185c5572",
+      "source_English_sha256": "d4683f744fb264b28203fa8ba71b59d5494627a6065362036c9c51a92ae68a14",
+      "staged_corrected_target_body_sha256": "416fe94212bfa59cdb3a933da0ebcb77f1bcf9fd66dabc9d1d772453bb512ced",
+      "staged_corrected_full_target_proof_sha256": "4a16eb82f32f8df73310c874e1784617c12d6f4253a9c5ae68503120cbdd7955",
+      "current_absence_dictionary_sha256": "aa3b290f82592ecb059aebb379f4e0c731a0681777523b132eaa33d3f9e83b89",
+      "actual_source_Latin_cue": "Qui tecum.",
+      "actual_source_English_cue": "",
+      "disposition": "HOLD_NO_PRINTED_ENGLISH_CONCLUSION_CUE_NO_COMPLETION",
+      "finding": "Full English stops at help. before the next November26 heading; the Latin continues through its short third-person cue. Own-book/formal person controls do not supply the absent English words. Corrected staged target body/full proof are directly checked, but do not settle this separate source English boundary."
+    },
+    "Irenaeus_v2_consistency": {
+      "target": [
+        "s-irenaei-episcopi-martyris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_packet_sha256": "c421d03da5f11ba1719785034603b0dee66f20d133bb83bea9e92ff78632fb9d",
+      "prior_public_method": {
+        "path": "workflows/reviews/missal-reader-completion-2026-10-26/finite-source-methods-next18.json",
+        "sha256": "a77956cf5baa782c575c482add76f08a341fcf4343f32c0681ec0a7171ada87b",
+        "context_index": 15
+      },
+      "source_Latin_English_and_target_equal_accepted_context": true,
+      "source_Latin_sha256": "8b197520c1da726ad8b36f03ad829ca6628c3f0eeb5aa4f6969320044cdc7cdc",
+      "source_English_sha256": "c82576335ed5c00a6d33f3d38226ed256c940d11f08f5554d3168eae741a8c09",
+      "target_Latin_sha256": "3c50a4317f2c6ae6bb26c9316432249166ed5c04bbde768404b1e8af9cfc0f30",
+      "fresh_primary_confirmation": "Actual Secret on1487 has no comma after pax; the accepted target separately retains its own comma. Literal concentrated is printed in English and remains unchanged. June28 own source appointment and July3 current receiving identity remain distinct.",
+      "new_receiving_admission_from_this_review": false
+    },
+    "source_reading_findings": [
+      "All four complete paired Latin and English source prayers and actual cues were directly read on full original pages. None requires a blank/name substitution or an English response. Every ordered petition differs solely at its one enumerated initial20 spelling pair after established typography.",
+      "Sabina is a named own prayer below the explicit commemoration referral. Its literal English says virgin and martyr although Latin says Martyr: that historical English remains unchanged, with no Latin insertion or English repair.",
+      "Symphorosa own named Collect is only1542/1506;1541/1543 are heading/continuity context. Stephen own named Collect is only433/399;432 is its heading context, and its following Nativity commemoration remains separate.",
+      "Saturninus is the own named Collect after TheSameDay heading, separate from the preceding AndrewVigil prayers. Its ending agrees in full actual words with the current target.",
+      "Dictionary forms and grammatical paradigms are earlier accepted evidence; these four actual constructions independently select their shared case/number/gender/function. No blanket t/c fold, neuter/feminine ambiguity erasure or new stem/form occurs."
+    ],
+    "authority_boundary": "This receipt recommends the exact proposedfour for explicit root adoption. It does not by itself adopt a method, admit source rows, change old next18 authority or accept assembled carriers.",
+    "canonical_writes": 0,
+    "Git_mutations": 0,
+    "generators_run": false,
+    "new_English_admissions": 0
+  },
+  "adoption_effect": "Root explicitly adopts only these four independently reviewed full source/target/context/grammar relations. Earlier pending-adoption language remains dated evidence; no assembled receiving carrier is accepted by this decision.",
+  "prior_method_boundary": "The existing initial20 exact forms and next18 control wording retain their original scope. This decision adds only four actual occurrence applications and two separately named short/long source-family relations. No generic spelling or abbreviation rule, donor fanout or English completion.",
+  "source_publication_aliases_unchanged": [
+    {
+      "id": "lefebvre-1925",
+      "source_id": "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925",
+      "artifact_id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf",
+      "label": "Daily Missal with Vespers for Sundays & Feasts (Dom Gaspar Lefebvre O.S.B.; Saint Andre/Lohmann early expression, catalogue-supported 1925; English prayer translator unnamed)",
+      "attests": "editio-typica-1920",
+      "attests_kind": "date-bound",
+      "attests_basis": "The early expression is bounded before 1931 by its catalogue identity, ecclesiastical approvals and January 1927 physical accession; its Preface describes a 1920 Latin/rubric base. This identifies an antecedent state after 1920 and before 1955, not an attestation of the 1962 recension. Exact individual target prayer transfer remains separately checked.",
+      "witness_relation": "antecedent",
+      "witness_relation_basis": "Historical pre 1955 human English is carried only through independently reviewed whole-prayer Latin identity and its actual source conclusion. This book-level antecedent label is not target-edition attestation or a permission to transfer other prayers.",
+      "rights": "public-domain",
+      "rights_jurisdiction": "United States",
+      "rights_basis": "Separately manifested hand-transcribed historical Latin and human English prayer wording of the early Daily Missal with Vespers expression, catalogue-supported 1925 and independently bounded before 1931 by January 1927 physical library accession. The maximum United States historical publication term has expired. This affirmative basis covers only the separately checked underlying wording at independently reviewed settings; it does not clear the exact Google/CCWatershed PDF, image/layout/text-layer payloads, modern wrappers, commentary, illustrations or unreviewed/later inserts. Root bounded source-alias decision SHA 256 fefb 839 a 58513 a 2 eee 48166 e 4 a 48000914294949503 a 3 e 5 b 97 e 043 b 1 f 6395252 and independent identity/basis receipt SHA 25697 f 641 d 9 b 85 d 294 b 12 f 8 f 97298 c 46 c 177 a 668563560 db 20836 bfd 4 b 3 a 84 d 4314. No foreign-jurisdiction or official 1962 English claim is made.",
+      "caution": "Historical human translation, not official English of the 1962 Missal or a modern postconciliar translation.1925 is catalogue-supported, not a year printed in the title/colophon; the January 1927 accession independently supports the pre 1931 expression bound. The prayer translator is unnamed; William Busch is a censor, not established as translator. Exact remote PDF/images/whole OCR remain unresolved and unadmitted. Each passage needs its own inspected setting, complete text and conclusion review. Raphael 1711²belongs to an integrated superscript gathering only on the specifically reviewed expression-identity inference; this is no clearance of all inserted leaves."
+    }
+  ],
+  "upstream_evidence_content_digests": [
+    {
+      "role": "approved-finite-extra-four.json",
+      "sha256": "e5a640da0f83729a29ee20592e18ba949915ed3c0cfeec66b61399f667cba7e6"
+    },
+    {
+      "role": "PROPOSED-FINITE-EXTRA4.json",
+      "sha256": "0419f856b1a3591a652aca0ed93d25e6780443893200b7f33bd25ced03104d96"
+    },
+    {
+      "role": "SOURCE-METHOD-REVIEW.json",
+      "sha256": "3f79868ef397f5b2af62dde2cdde84759ee4fb1f5a6d6cb6ae562ea7ce71a8ca"
+    },
+    {
+      "role": "SEALED-REVIEW.json",
+      "sha256": "7c581e9faf2886e0103cccb8ff3c782fd2e57f893a27a52c2add4357f4d3cf15"
+    }
+  ],
+  "transport_disposition": "Only private local file handles are omitted. Every source/English/cue, current target body/full proof/gap, selected exact spelling form/context, source-control identity and rights limit remains explicit. No raw/public lexical evidence or source text is changed."
+}
