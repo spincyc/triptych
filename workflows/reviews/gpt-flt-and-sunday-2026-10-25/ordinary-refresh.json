@@ -1,0 +1,41 @@
+{
+  "scope": "Bounded Ordinary projection refresh after accepted three-file source repair; no publication or native acceptance claimed",
+  "commands": [
+    {
+      "command": "python tools/tpt mass-ordinary structure",
+      "exit": 0,
+      "log": ".scratch/publication-integration/ordinary-generate.log"
+    },
+    {
+      "command": "python tools/tpt mass-ordinary check --json",
+      "exit": 0,
+      "log": ".scratch/publication-integration/ordinary-check.json"
+    },
+    {
+      "command": "python -m unittest tools.tests.test_mass_ordinary.OrdinaryTool",
+      "exit": 0,
+      "tests": 26,
+      "log": ".scratch/publication-integration/ordinary-tool-tests.log"
+    },
+    {
+      "command": "git diff --check -- src/web/data/structure/ordinary",
+      "exit": 0
+    }
+  ],
+  "source_repair_hashes_unchanged": {
+    "src/sources/inventories/roman-1962-ordo-missae-v1.toml": "07d257473c98dd67ac198f1f32351b3a189984b594a7927bd4536737a8404446",
+    "src/sources/inventories/roman-pre-1955-ordo-missae-v1.toml": "7ef0b961804e3e69074c35739fca36606ab56bea41fcdbb818d91e9645462d07",
+    "tools/tests/test_mass_ordinary.py": "3c22165c8d72b5d8a37d56f3fe43e1a7d825633d649d693ac1c19bddd6ae8541"
+  },
+  "generated_paths": {
+    "src/web/data/structure/ordinary/roman-1962.json": "90c630b5e01e406de81c7e529ac591457c419bff147739bf407bd6b40e7fff06",
+    "src/web/data/structure/ordinary/roman-pre-1955.json": "2d70bc58292263f6909c8c729dc2731c128eb2242be790960cbb95d1e6c9b30a"
+  },
+  "seating": {
+    "full_forms": 1529,
+    "nonfull_forms": 100,
+    "failures": 0
+  },
+  "stale": [],
+  "publication_inventory_family_catalogue_release_untouched": true
+}
