@@ -1,0 +1,72 @@
+{
+  "documents": [
+    {
+      "artifact_id": "artifact.journals.american-catholic-quarterly-review.1906-volume-31.english-reading-65ef0cd368fa",
+      "body_tex": "1906-07-28-papal-pius-x-hf-p-x-enc-28071906-pieni-l-animo-acqr-1906-english-4d47e3ba-en/1906-07-28-papal-pius-x-hf-p-x-enc-28071906-pieni-l-animo-acqr-1906-english-4d47e3ba-en.body.tex",
+      "changed": true,
+      "id": "papal.pius-x.hf-p-x-enc-28071906-pieni-l-animo.acqr-1906-english",
+      "keep_with_next": [
+        0
+      ],
+      "language": "en",
+      "layout": "closing-source-with-apparatus",
+      "pages": 4,
+      "pdf": "1906-07-28-papal-pius-x-hf-p-x-enc-28071906-pieni-l-animo-acqr-1906-english-4d47e3ba-en/1906-07-28-papal-pius-x-hf-p-x-enc-28071906-pieni-l-animo-acqr-1906-english-4d47e3ba-en.pdf",
+      "pdf_sha256": "8ca3eb8444bcb023377c28cb17e0473f874462cd98f63d0342f2a68b9f73df78",
+      "physical_line_ranges": [
+        [
+          83,
+          131
+        ]
+      ],
+      "render_revision": "2026-10-26T12:11:12Z",
+      "segment_id": "segment.papal.pius-x.hf-p-x-enc-28071906-pieni-l-animo.1906-acqr-volume-31-english.english-reading",
+      "source_ending_blocks": [
+        22,
+        24
+      ],
+      "source_sha256": "65ef0cd368fa15136317e7a9dae78ee39d3508274fe33f933c7fab1645d2de90",
+      "status": "compiled",
+      "stem": "1906-07-28-papal-pius-x-hf-p-x-enc-28071906-pieni-l-animo-acqr-1906-english-4d47e3ba-en",
+      "support_tex": [
+        "1906-07-28-papal-pius-x-hf-p-x-enc-28071906-pieni-l-animo-acqr-1906-english-4d47e3ba-en/1906-07-28-papal-pius-x-hf-p-x-enc-28071906-pieni-l-animo-acqr-1906-english-4d47e3ba-en.before-ending.tex",
+        "1906-07-28-papal-pius-x-hf-p-x-enc-28071906-pieni-l-animo-acqr-1906-english-4d47e3ba-en/1906-07-28-papal-pius-x-hf-p-x-enc-28071906-pieni-l-animo-acqr-1906-english-4d47e3ba-en.ending.tex"
+      ],
+      "terminal_keep_blocks": 3,
+      "tex": "1906-07-28-papal-pius-x-hf-p-x-enc-28071906-pieni-l-animo-acqr-1906-english-4d47e3ba-en/1906-07-28-papal-pius-x-hf-p-x-enc-28071906-pieni-l-animo-acqr-1906-english-4d47e3ba-en.tex",
+      "text_fidelity": {
+        "method": "pdf-raw-whitespace-soft-hyphen-nfkc-v2",
+        "pages": 4,
+        "source_characters": 17086,
+        "source_first_page": 1,
+        "source_last_page": 4,
+        "source_normalized_characters": 14170,
+        "status": "pass"
+      },
+      "warnings": []
+    }
+  ],
+  "errors": [],
+  "generator": "typeset-papal",
+  "generator_version": 1,
+  "index": "index.html",
+  "input_manifest": "frozen-manifest.json",
+  "input_manifest_sha256": "13f8e692169f6e3f0a3b12572825bce91c53e84254c0386edaadf9604b0af695",
+  "options": {
+    "automatic_hyphenation": false,
+    "body_alignment": "ragged-right",
+    "columns": 2,
+    "form_feed": "layout-whitespace",
+    "punctuation": "literal",
+    "soft_hyphen": "nonprinting",
+    "unicode_text_mapping": "xetex-native"
+  },
+  "receipt": "receipt.json",
+  "revision": "2026-10-26T12:14:31Z",
+  "schema": "triptych-papal-typeset-receipt/v1",
+  "summary": {
+    "compiled": 1,
+    "failed": 0,
+    "selected": 1
+  }
+}

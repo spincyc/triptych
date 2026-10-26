@@ -153,3 +153,16 @@ No other historical family is installed by this initial release.
 The installer preserves exactly the supplied review scope when replaying a
 prepared transaction. Its additional scope regression and independent delta
 checks pass. No source wording or existing PDF bytes changed during copying.
+
+## Expanded scoped installation
+
+The next scoped release contains 453 reviewed PDFs and 1,563 pages:
+392 Vatican Latin readers, 59 historical English witnesses and the two
+Quanta/Syllabus constituents. The PDFs total 12,462,192 bytes; the release record
+has SHA-256 `2d092f6443cf1fb9868fd230aae693f46c371d3950d96f5e229bc560194b5dc5`.
+All 424 previous PDFs remain unchanged; 29 additions contribute 225 pages.
+The 86 content-addressed input/report archives pass exact-hash and private-path
+checks. The owning installer check reports a valid release with every selected
+reader current against its frozen source plan. Explicitly identified English
+fragments remain fragments. No Bullarium, Acta or continuation reader is
+installed by this scope.

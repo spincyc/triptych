@@ -113,12 +113,13 @@ aggregate passes with act-history freshness established separately. Complete
 page review, source-wrapper corrections, further sealed admissions and broader
 installation remain open.
 
-The initial installed release now contains 424 exact reviewed PDFs and 1,338
-pages: 391 Vatican Latin readers, 31 original historical English readers and
-the two Quanta/Syllabus constituents. Their [release record](release/papal-documents.json)
-retains exact frozen inputs, receipts and review reports. Installed hashes,
-owned paths and durable evidence pass validation; all selected source rows
-and 1,607 source dependencies match published checkpoint `408070d3e`.
+The current scoped installation contains 453 exact reviewed PDFs and 1,563
+pages: 392 Vatican Latin readers, 59 historical English witnesses and the two
+Quanta/Syllabus constituents. Their [release record](release/papal-documents.json)
+retains exact frozen inputs, receipts and review reports. All 424 previously
+installed PDFs remain byte-identical; the 29 additions contribute 225 pages.
+Installed hashes, owned paths, source fidelity and durable evidence pass the
+owning checker. English fragments retain their explicit extent qualifications.
 Other historical families remain outside this scoped installation while
 their source-boundary and page-review work continues.
 
