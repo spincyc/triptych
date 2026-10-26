@@ -1,6 +1,63 @@
 schema_version = 1
 
 [[deliverables]]
+id = "claude-1962-f02-all-saints-three-documents-2026-11-01"
+owner = "PROJECT-WORK.md"
+promise = "Complete the Claude 1962 All Saints (F02) proper-study workflow for Sunday 1 November 2026 with independent cold reviews, three reviewed PDFs and the canonical web edition, publish to main by fast-forward and verify the deployment."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "claude-f02-authorized"
+  criterion = "The production plan records the maintainer's one-provider authorization for the exact Claude F02 identity."
+  status = "pass"
+  evidence = ["guidance/liturgy/propers-production-plan.md"]
+  check = "contains"
+  path = "guidance/liturgy/propers-production-plan.md"
+  needle = "- Authorized 2026-10-26: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/f02-all-saints`."
+
+  [[deliverables.requirements]]
+  id = "claude-f02-native-acceptance"
+  criterion = "A real proper-study version-15 run for the identity reaches ACCEPTED with every required fresh cold review, and its results are archived with a cycles record."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-f02-reviewed-publications"
+  criterion = "The research study, concise study and homily are built, visually inspected on every page and installed with the reviewed bytes; the canonical web edition, catalog, inventories and release records are current and the required gates pass."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-f02-main-and-pages"
+  criterion = "The validated work reaches origin/main by fast-forward after the three deploy gates pass locally, the Pages run succeeds, and the live PDF and web routes match the reviewed bytes."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
+id = "claude-flt-register-2026-10-26"
+owner = "PROJECT-WORK.md"
+promise = "Apply the current Catholic voice and plain-drafting guidance to the four Claude Four Last Things essays, preserving quotations, references, structure and approximate extent; review, build, inspect and install them with current web editions; publish to main and verify the deployment."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "claude-flt-register-revised"
+  criterion = "All four Claude essays meet the Catholic voice rule and 'Say what the texts say, plainly', preserve quotations byte for byte and every material claim and qualification, and pass an independent cold register and fidelity review with material findings resolved."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-flt-register-installed"
+  criterion = "All four PDFs build with settled references, pass every-page visual review and metadata, anchor and font checks, and are installed with the reviewed bytes; the web editions, catalogue and release bindings are current."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-flt-register-published"
+  criterion = "The validated change reaches origin/main by fast-forward, the Pages run succeeds, and the live PDF and web routes match the reviewed bytes."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "four-last-things-pdf-layout-2026-10-26"
 owner = "PROJECT-WORK.md"
 promise = "Give all eight GPT and Claude Four Last Things PDFs two-column article bodies, a clean standalone title page and following contents, preserve their substantive text, review and install the PDFs, and publish to main with deployment verification."

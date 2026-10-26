@@ -7,6 +7,36 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-10-26.
 
+## Claude 1962 All Saints, 2026-11-01
+
+<!-- promised-deliverable: claude-1962-f02-all-saints-three-documents-2026-11-01 -->
+
+**In progress.** On 2026-10-26 the maintainer asked for the Claude 1962
+proper-study documents for the upcoming Sunday and authorized publication to
+`main`. Sunday, 1 November 2026 is All Saints (I class), permanent identity
+`F02`, `liturgy/roman-rite/1962/propers/temporal/f02-all-saints`; the
+Twenty-third Sunday after Pentecost is commemorated. The production plan
+records the one-provider authorization. This is an independent Claude
+production: the published GPT leaf for the same identity is not an input.
+
+Work starts at clean `47c7df92d`, equal to `origin/main`. Commits stay on
+`feature/propers/claude`; publication is an ordinary fast-forward of
+`origin/main` after the three deploy gates pass locally.
+
+## Claude Four Last Things register revision, 2026-10-26
+
+<!-- promised-deliverable: claude-flt-register-2026-10-26 -->
+
+**In progress.** On 2026-10-26 the maintainer asked that the new voice and
+drafting guidance be applied to the four Claude Four Last Things essays and
+published to `main`. The governing rules are the Catholic voice rule and
+"Say what the texts say, plainly" in `guidance/editorial.md`. The revision
+changes prose only: quotations, references, bindings, heading order and the
+two-column layout stay as accepted on 2026-10-26, and each essay keeps
+approximately its present extent. Each essay receives an independent cold
+register and fidelity review and every-page visual review before its PDF and
+web edition are reinstalled.
+
 ## Four Last Things PDF layout, 2026-10-26
 
 <!-- promised-deliverable: four-last-things-pdf-layout-2026-10-26 -->

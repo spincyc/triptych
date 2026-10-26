@@ -130,6 +130,13 @@ one identity for that one provider and nothing else, and it is an
 independent Claude production, not a companion to or a derivative of any
 other leaf. It does not open the displaced Twenty-second Sunday after
 Pentecost or the GPT target for the same identity.
+On 2026-10-26 the maintainer authorized the Claude 1962 All Saints target,
+identity `F02`, for Sunday, 1 November 2026, on the same terms and under the
+same three-document contract. It opens that one identity for that one
+provider and nothing else, and it is an independent Claude production, not a
+companion to or a derivative of the published GPT leaf for the same
+identity. It does not open the commemorated Twenty-third Sunday after
+Pentecost.
 
 Each line below records one maintainer decision to open the boundary for
 one provider and one permanent identity. A line is the whole
@@ -169,6 +176,8 @@ and an identity with no line here is closed.
 - Authorized 2026-10-25: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/f02-all-saints`.
 
 - Authorized 2026-10-25: provider `gpt`, identity `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc`.
+
+- Authorized 2026-10-26: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/f02-all-saints`.
 
 ### Reference-only publication scope
 
