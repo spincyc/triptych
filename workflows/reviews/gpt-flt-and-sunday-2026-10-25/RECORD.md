@@ -221,7 +221,9 @@ The twelve preterminal shared commands in `preterminal-integration.json`
 passed. `release-adoption-scope.txt` retains the exact 547 reviewed site-input
 paths expanded into that scoped refresh; the command description in the
 receipt is a template referring to that retained list. No other authorization
-field or site binding was adopted. Claude source and web trees, all 63 Claude
+field or site binding was adopted; the generated `rights_record_sha256`
+was refreshed to match the updated rights table. The rights record's surrounding
+authorization prose is unchanged. Claude source and web trees, all 63 Claude
 catalogue editions, 89 installed Claude PDFs and six bound reading plans remain
 unchanged. The full source aggregate and site/deployment checks follow the
 post-archive inventory refresh; native acceptance does not assert their outcome.
@@ -242,3 +244,42 @@ source and reviewed artifact identities. The per-command check excluding only
 `blank-at-eof` passes; no trailing-space, indentation or other whitespace defect
 is waived. The earlier native scoped check did not include this then-untracked
 file, so its PASS is not represented as a complete staged whitespace pass.
+
+## Complete validation, first attempt
+
+The complete post-archive `make check-sources` returned 2 after 258.856 seconds.
+Its deployment-source prerequisites passed, including historical-data currentness,
+source graph and both inventories, catalogue, Source/Proper projections, calendar
+checks and the repaired Ordinary check. The later commentary-corpus check found
+`src/sources/commentary/mass-commentary-corpus.yaml` stale and returned 64.
+The family recipe after it did not run. The actual first-attempt receipt and log
+hash are retained; no complete source PASS is inferred from the earlier members.
+An independent intersection check confirms that generated corpus is outside all
+archived native review-input sets. Its owner is refreshing the derived index;
+a complete successful rerun remains required.
+
+The public-site build, GitHub Pages artifact verifier and exact publication
+comparison independently pass. `publication-delta.json` records exactly three
+new All Saints PDFs and four revised GPT essays, with 265 existing PDF hashes,
+269 existing aliases, 63 Claude catalogue editions and all six bound reading
+plans preserved. All reviewed article HTML hashes and All Saints artifact/input
+identities match the built site. These passes do not waive the source gate.
+
+The bounded corpus rebuild is now frozen and independently inspected. It
+updates acquisition references and lead rankings for Francis of Paola, John
+of God and John Damascene from the existing resolved calendar/discovery inputs;
+the new Bede admissions were not its cause. All Saints rows, source facts,
+native seals, served inputs, inventory/family and release outputs are unchanged.
+Only the generated YAML changes, to SHA-256
+`5e5bc2f351381bb58b00a3fa79ef8ebe4a06e0b4ce26834c9459876e58ecf36c`.
+The corpus gate and its 23 tests, source inventory, family ledger and zero-stale
+release check pass. `commentary-currentness.json` retains the exact semantic
+delta and commands; `source-first-attempt.json` preserves the failed aggregate.
+A complete rerun follows this repair.
+
+The owner's initial scratch release-scope audit assumed an array where the
+authorization data is a mapping, so that helper did not establish its claimed
+comparison. A corrected read-only audit, retained in `release-scope-recheck.json`,
+and the independent final reviewer both prove the exact 547-path scope. Other
+authorization fields are preserved apart from the generated rights-record
+digest already identified above. No release bytes changed during this recheck.

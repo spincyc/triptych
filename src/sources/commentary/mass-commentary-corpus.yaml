@@ -10,8 +10,8 @@ max_results_per_passage: 20
 max_results_per_mass: 20
 mass_count: 1096
 covered_mass_count: 1095
-unresolved_passage_count: 351
-chapter_matched_passage_count: 3237
+unresolved_passage_count: 353
+chapter_matched_passage_count: 3239
 chapter_matched_passages:
 - 1 Chronicles 29:10; 29:11ab; 29:11d-29:12a; 29:12bcd
 - 1 Chronicles 29:10; 29:11abc; 29:11d-29:12a; 29:12bcd
@@ -2278,6 +2278,7 @@ chapter_matched_passages:
 - Psalms 140:1-140:2; 140:3; 140:8
 - Psalms 140:2
 - Psalms 142:9-142:10
+- Psalms 143:1
 - Psalms 143:1; 143:2; 143:9-143:10
 - Psalms 143:1a; 143:2abc; 143:3-143:4
 - Psalms 144:1
@@ -2358,6 +2359,7 @@ chapter_matched_passages:
 - Psalms 17:31; 17:47; 17:50; 17:51
 - Psalms 17:32
 - Psalms 17:33; 17:35
+- Psalms 17:38-17:39; 17:50
 - Psalms 17:48-17:49
 - Psalms 17:5-17:7
 - Psalms 17:50; 21:23
@@ -4575,6 +4577,11 @@ passages:
   mass_count: 1
   masses:
   - postconciliar::ot-2-friday
+  has_commentary: false
+- passage: 1 Samuel 25:26; 25:28
+  mass_count: 1
+  masses:
+  - roman-1962::s-ioannis-damasceni-confessoris-ecclesiae-doctoris
   has_commentary: false
 - passage: 1 Samuel 26:2; 26:7-26:9; 26:12-26:13; 26:22-26:23
   mass_count: 1
@@ -8374,7 +8381,7 @@ passages:
   - roman-1962::september-ember-friday
   has_commentary: true
 - passage: Hosea 14:6
-  mass_count: 38
+  mass_count: 39
   masses:
   - roman-1962::comm-s-aegidii-abbatis
   - roman-1962::comm-s-eusebii-confessoris
@@ -8397,6 +8404,7 @@ passages:
   - roman-1962::s-ephraem-syri-diaconi-confessoris-ecclesiae
   - roman-1962::s-felicis-valois-confessoris
   - roman-1962::s-francisci-borgiae-confessoris
+  - roman-1962::s-francisci-paula-confessoris
   - roman-1962::s-francisci-salesii-episcopi-confessoris-ecclesiae
   - roman-1962::s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae
   - roman-1962::s-gulielmi-abbatis
@@ -9602,6 +9610,11 @@ passages:
   masses:
   - postconciliar::lent-3-thursday
   has_commentary: true
+- passage: Job 14:7
+  mass_count: 1
+  masses:
+  - roman-1962::s-ioannis-damasceni-confessoris-ecclesiae-doctoris
+  has_commentary: false
 - passage: Job 16:20
   mass_count: 1
   masses:
@@ -17032,13 +17045,14 @@ passages:
   - roman-1962::easter-3
   has_commentary: true
 - passage: Psalms 111:1
-  mass_count: 10
+  mass_count: 11
   masses:
   - roman-1962::commune-confessoris-non-pontificis-2
   - roman-1962::s-camilli-lellis-confessoris
   - roman-1962::s-clementis-i-papae-martyris
   - roman-1962::s-didaci-confessoris
   - roman-1962::s-felicis-valois-confessoris
+  - roman-1962::s-francisci-paula-confessoris
   - roman-1962::s-nicolai-tolentino-confessoris
   - roman-1962::s-petri-alcantara-confessoris
   - roman-1962::s-petri-nolasci-confessoris
@@ -17105,7 +17119,7 @@ passages:
   - postconciliar::ot-9-tuesday
   has_commentary: true
 - passage: Psalms 111:1-111:3
-  mass_count: 79
+  mass_count: 81
   masses:
   - roman-1962::comm-s-aegidii-abbatis
   - roman-1962::comm-s-blasii-episcopi-martyris
@@ -17150,6 +17164,7 @@ passages:
   - roman-1962::s-eusebii-episcopi-martyris
   - roman-1962::s-felicis-valois-confessoris
   - roman-1962::s-francisci-borgiae-confessoris
+  - roman-1962::s-francisci-paula-confessoris
   - roman-1962::s-francisci-salesii-episcopi-confessoris-ecclesiae
   - roman-1962::s-gregorii-barbadici-episcopi-confessoris
   - roman-1962::s-gulielmi-abbatis
@@ -17158,6 +17173,7 @@ passages:
   - roman-1962::s-hilarii-episcopi-confessoris-ecclesiae-doctoris
   - roman-1962::s-hyacinthi-confessoris
   - roman-1962::s-ioannis-a-cruce-confessoris-ecclesiae
+  - roman-1962::s-ioannis-a-deo-confessoris
   - roman-1962::s-ioannis-chrysostomi-episcopi-confessoris-ecclesiae
   - roman-1962::s-ioannis-eudes-confessoris
   - roman-1962::s-ioannis-mariae-vianney-confessoris
@@ -18577,6 +18593,11 @@ passages:
   - roman-1962::holy-monday
   - roman-1962::passion-sunday
   has_commentary: true
+- passage: Psalms 143:1
+  mass_count: 1
+  masses:
+  - roman-1962::s-ioannis-damasceni-confessoris-ecclesiae-doctoris
+  has_commentary: true
 - passage: Psalms 143:1; 143:2; 143:9-143:10
   mass_count: 3
   masses:
@@ -19098,6 +19119,11 @@ passages:
   - roman-1962::pentecost-8
   has_commentary: true
 - passage: Psalms 17:33; 17:35
+  mass_count: 1
+  masses:
+  - roman-1962::s-ioannis-damasceni-confessoris-ecclesiae-doctoris
+  has_commentary: true
+- passage: Psalms 17:38-17:39; 17:50
   mass_count: 1
   masses:
   - roman-1962::s-ioannis-damasceni-confessoris-ecclesiae-doctoris
@@ -244162,8 +244188,10 @@ masses:
     date: '430'
     role: doctor
     confidence: 1.0
-    score: 2.5
+    score: 4.5
     passages:
+    - Psalms 111:1
+    - Psalms 111:1-111:3
     - Psalms 20:2-20:3
     - Psalms 36:30-36:31
     - Psalms 91:13-91:14
@@ -244173,21 +244201,10 @@ masses:
     date: '585'
     role: saintly
     confidence: 1.0
-    score: 1.3333
+    score: 2.3333
     passages:
-    - Psalms 20:2-20:3
-    - Psalms 36:30-36:31
-    - Psalms 91:13-91:14
-  - work_id: null
-    author: Nicholas of Lyra
-    title: Postilla litteralis super totam Bibliam
-    date: '1349'
-    role: saintly
-    confidence: 1.0
-    score: 1.2262
-    passages:
-    - Luke 12:32-12:34
-    - Philippians 3:7-3:12
+    - Psalms 111:1
+    - Psalms 111:1-111:3
     - Psalms 20:2-20:3
     - Psalms 36:30-36:31
     - Psalms 91:13-91:14
@@ -244197,10 +244214,43 @@ masses:
     date: '1637'
     role: saintly
     confidence: 1.0
-    score: 1.2
+    score: 2.2
     passages:
+    - Hosea 14:6
     - Luke 12:32-12:34
     - Philippians 3:7-3:12
+  - work_id: null
+    author: Nicholas of Lyra
+    title: Postilla litteralis super totam Bibliam
+    date: '1349'
+    role: saintly
+    confidence: 1.0
+    score: 1.8512
+    passages:
+    - Hosea 14:6
+    - Luke 12:32-12:34
+    - Philippians 3:7-3:12
+    - Psalms 111:1
+    - Psalms 111:1-111:3
+    - Psalms 20:2-20:3
+    - Psalms 36:30-36:31
+    - Psalms 91:13-91:14
+  - work_id: null
+    author: Denis the Carthusian
+    title: Enarrationes in universam Bibliam
+    date: '1471'
+    role: saintly
+    confidence: 1.0
+    score: 1.2331
+    passages:
+    - Hosea 14:6
+    - Luke 12:32-12:34
+    - Philippians 3:7-3:12
+    - Psalms 111:1
+    - Psalms 111:1-111:3
+    - Psalms 20:2-20:3
+    - Psalms 36:30-36:31
+    - Psalms 91:13-91:14
   - work_id: null
     author: Albert the Great
     title: Super Lucam
@@ -244220,15 +244270,15 @@ masses:
     passages:
     - Psalms 36:30-36:31
   - work_id: null
-    author: Denis the Carthusian
-    title: Enarrationes in universam Bibliam
-    date: '1471'
+    author: Peter Lombard
+    title: Commentarium in Psalmos
+    date: '1160'
     role: saintly
     confidence: 1.0
-    score: 0.7748
+    score: 0.9929
     passages:
-    - Luke 12:32-12:34
-    - Philippians 3:7-3:12
+    - Psalms 111:1
+    - Psalms 111:1-111:3
     - Psalms 20:2-20:3
     - Psalms 36:30-36:31
     - Psalms 91:13-91:14
@@ -244238,24 +244288,79 @@ masses:
     date: '1263'
     role: saintly
     confidence: 1.0
-    score: 0.6104
+    score: 0.9922
     passages:
+    - Hosea 14:6
     - Luke 12:32-12:34
     - Philippians 3:7-3:12
+    - Psalms 111:1
+    - Psalms 111:1-111:3
     - Psalms 20:2-20:3
     - Psalms 36:30-36:31
     - Psalms 91:13-91:14
   - work_id: null
-    author: Peter Lombard
-    title: Commentarium in Psalmos
-    date: '1160'
-    role: saintly
+    author: Robert Bellarmine
+    title: Explanatio in Psalmos
+    date: '1621'
+    role: doctor
     confidence: 1.0
-    score: 0.5929
+    score: 0.825
     passages:
+    - Psalms 111:1
+    - Psalms 111:1-111:3
     - Psalms 20:2-20:3
     - Psalms 36:30-36:31
     - Psalms 91:13-91:14
+  - work_id: null
+    author: Theodoret of Cyrus
+    title: Interpretatio in Psalmos
+    date: '460'
+    role: church-father
+    confidence: 1.0
+    score: 0.7063
+    passages:
+    - Psalms 111:1
+    - Psalms 111:1-111:3
+    - Psalms 20:2-20:3
+    - Psalms 36:30-36:31
+    - Psalms 91:13-91:14
+  - work_id: null
+    author: John Chrysostom
+    title: Expositiones in Psalmos
+    date: '407'
+    role: church-father
+    confidence: 1.0
+    score: 0.6667
+    passages:
+    - Psalms 111:1
+    - Psalms 111:1-111:3
+  - work_id: null
+    author: Albert the Great
+    title: Commentarii in Psalmos
+    date: '1280'
+    role: doctor
+    confidence: 0.6667
+    score: 0.5611
+    passages:
+    - Psalms 111:1
+    - Psalms 111:1-111:3
+    - Psalms 20:2-20:3
+    - Psalms 36:30-36:31
+    - Psalms 91:13-91:14
+  - work_id: null
+    author: Denis the Carthusian
+    title: Enarrationes in omnes libros sacrae Scripturae
+    date: '1471'
+    role: saintly
+    confidence: 0.3333
+    score: 0.5242
+    passages:
+    - Luke 12:32-12:34
+    - Philippians 3:7-3:12
+    - Psalms 111:1
+    - Psalms 111:1-111:3
+    - Psalms 20:2-20:3
+    - Psalms 36:30-36:31
   - work_id: null
     author: Ambrose of Milan
     title: Expositio Evangelii secundum Lucam
@@ -244265,6 +244370,15 @@ masses:
     score: 0.5
     passages:
     - Luke 12:32-12:34
+  - work_id: null
+    author: Cyril of Alexandria
+    title: Commentarius in xii prophetas minores
+    date: '444'
+    role: doctor
+    confidence: 1.0
+    score: 0.5
+    passages:
+    - Hosea 14:6
   - work_id: work.john-chrysostom.homilies-on-philippians
     author: John Chrysostom
     title: Homiliae in epistulam ad Philippenses
@@ -244275,24 +244389,27 @@ masses:
     passages:
     - Philippians 3:7-3:12
   - work_id: null
-    author: Robert Bellarmine
-    title: Explanatio in Psalmos
-    date: '1621'
-    role: doctor
-    confidence: 1.0
-    score: 0.4917
+    author: Bruno the Carthusian
+    title: Expositio in Psalmos
+    date: '1101'
+    role: saint
+    confidence: 0.6667
+    score: 0.4131
     passages:
+    - Psalms 111:1
+    - Psalms 111:1-111:3
     - Psalms 20:2-20:3
     - Psalms 36:30-36:31
-    - Psalms 91:13-91:14
   - work_id: null
-    author: Theodoret of Cyrus
-    title: Interpretatio in Psalmos
-    date: '460'
-    role: church-father
-    confidence: 1.0
-    score: 0.4206
+    author: Jerome
+    title: Commentarioli in Psalmos
+    date: '420'
+    role: doctor
+    confidence: 0.6667
+    score: 0.4059
     passages:
+    - Psalms 111:1
+    - Psalms 111:1-111:3
     - Psalms 20:2-20:3
     - Psalms 36:30-36:31
     - Psalms 91:13-91:14
@@ -244305,67 +244422,7 @@ masses:
     score: 0.3333
     passages:
     - Luke 12:32-12:34
-  - work_id: null
-    author: Denis the Carthusian
-    title: Enarrationes in omnes libros sacrae Scripturae
-    date: '1471'
-    role: saintly
-    confidence: 0.3333
-    score: 0.3242
-    passages:
-    - Luke 12:32-12:34
-    - Philippians 3:7-3:12
-    - Psalms 20:2-20:3
-    - Psalms 36:30-36:31
-  - work_id: null
-    author: Albert the Great
-    title: Commentarii in Psalmos
-    date: '1280'
-    role: doctor
-    confidence: 0.6667
-    score: 0.3111
-    passages:
-    - Psalms 20:2-20:3
-    - Psalms 36:30-36:31
-    - Psalms 91:13-91:14
-  - work_id: null
-    author: Thomas Aquinas
-    title: Postilla super Psalmos
-    date: '1274'
-    role: doctor
-    confidence: 1.0
-    score: 0.2679
-    passages:
-    - Psalms 20:2-20:3
-    - Psalms 36:30-36:31
-  - work_id: null
-    author: Bonaventure
-    title: Commentarius in Evangelium S. Lucae
-    date: '1274'
-    role: doctor
-    confidence: 1.0
-    score: 0.25
-    passages:
-    - Luke 12:32-12:34
-  - work_id: null
-    author: Hilary of Poitiers
-    title: Tractatus super Psalmos
-    date: '367'
-    role: doctor
-    confidence: 1.0
-    score: 0.25
-    passages:
-    - Psalms 91:13-91:14
-  - work_id: null
-    author: Peter Lombard
-    title: Collectanea in omnes divi Pauli epistolas
-    date: '1160'
-    role: saintly
-    confidence: 1.0
-    score: 0.25
-    passages:
-    - Philippians 3:7-3:12
-  passage_count: 5
+  passage_count: 8
 - calendar: roman-1962
   mass_key: s-francisci-salesii-episcopi-confessoris-ecclesiae
   mass_name: S. Francisci Salesii Episcopi, Confessoris et Ecclesiae Doctoris
@@ -250268,8 +250325,22 @@ masses:
     date: '430'
     role: church-father
     confidence: 1.0
-    score: 3.0
+    score: 4.0
     passages:
+    - Psalms 111:1-111:3
+    - Psalms 36:1
+    - Psalms 36:30-36:31
+    - Psalms 88:25
+    - Psalms 91:13; 91:14
+  - work_id: null
+    author: Cassiodorus
+    title: Expositio Psalmorum
+    date: '585'
+    role: saintly
+    confidence: 1.0
+    score: 2.1667
+    passages:
+    - Psalms 111:1-111:3
     - Psalms 36:1
     - Psalms 36:30-36:31
     - Psalms 88:25
@@ -250285,13 +250356,16 @@ masses:
     - Psalms 36:1
     - Psalms 36:30-36:31
   - work_id: null
-    author: Cassiodorus
-    title: Expositio Psalmorum
-    date: '585'
+    author: Nicholas of Lyra
+    title: Postilla litteralis super totam Bibliam
+    date: '1349'
     role: saintly
     confidence: 1.0
-    score: 1.6667
+    score: 1.5929
     passages:
+    - Matthew 22:34-22:46
+    - Matthew 24:46-24:47
+    - Psalms 111:1-111:3
     - Psalms 36:1
     - Psalms 36:30-36:31
     - Psalms 88:25
@@ -250306,20 +250380,6 @@ masses:
     passages:
     - Matthew 22:34-22:46
     - Matthew 24:46-24:47
-  - work_id: null
-    author: Nicholas of Lyra
-    title: Postilla litteralis super totam Bibliam
-    date: '1349'
-    role: saintly
-    confidence: 1.0
-    score: 1.3429
-    passages:
-    - Matthew 22:34-22:46
-    - Matthew 24:46-24:47
-    - Psalms 36:1
-    - Psalms 36:30-36:31
-    - Psalms 88:25
-    - Psalms 91:13; 91:14
   - work_id: null
     author: Albert the Great
     title: Super Matthaeum
@@ -250336,8 +250396,22 @@ masses:
     date: '1160'
     role: saintly
     confidence: 1.0
-    score: 0.7929
+    score: 0.9929
     passages:
+    - Psalms 111:1-111:3
+    - Psalms 36:1
+    - Psalms 36:30-36:31
+    - Psalms 88:25
+    - Psalms 91:13; 91:14
+  - work_id: null
+    author: Robert Bellarmine
+    title: Explanatio in Psalmos
+    date: '1621'
+    role: doctor
+    confidence: 1.0
+    score: 0.825
+    passages:
+    - Psalms 111:1-111:3
     - Psalms 36:1
     - Psalms 36:30-36:31
     - Psalms 88:25
@@ -250358,22 +250432,11 @@ masses:
     date: '1471'
     role: saintly
     confidence: 0.3333
-    score: 0.6733
+    score: 0.7358
     passages:
     - Matthew 22:34-22:46
     - Matthew 24:46-24:47
-    - Psalms 36:1
-    - Psalms 36:30-36:31
-    - Psalms 88:25
-    - Psalms 91:13; 91:14
-  - work_id: null
-    author: Robert Bellarmine
-    title: Explanatio in Psalmos
-    date: '1621'
-    role: doctor
-    confidence: 1.0
-    score: 0.6583
-    passages:
+    - Psalms 111:1-111:3
     - Psalms 36:1
     - Psalms 36:30-36:31
     - Psalms 88:25
@@ -250384,10 +250447,11 @@ masses:
     date: '1263'
     role: saintly
     confidence: 0.6667
-    score: 0.6214
+    score: 0.7123
     passages:
     - Matthew 22:34-22:46
     - Matthew 24:46-24:47
+    - Psalms 111:1-111:3
     - Psalms 36:1
     - Psalms 36:30-36:31
     - Psalms 88:25
@@ -250398,8 +250462,22 @@ masses:
     date: '458'
     role: church-father
     confidence: 1.0
-    score: 0.5635
+    score: 0.7063
     passages:
+    - Psalms 111:1-111:3
+    - Psalms 36:1
+    - Psalms 36:30-36:31
+    - Psalms 88:25
+    - Psalms 91:13; 91:14
+  - work_id: null
+    author: Albert the Great
+    title: Commentarii in Psalmos
+    date: '1280'
+    role: doctor
+    confidence: 0.6667
+    score: 0.5901
+    passages:
+    - Psalms 111:1-111:3
     - Psalms 36:1
     - Psalms 36:30-36:31
     - Psalms 88:25
@@ -250415,30 +250493,44 @@ masses:
     - Matthew 22:34-22:46
     - Matthew 24:46-24:47
   - work_id: null
-    author: Albert the Great
-    title: Commentarii in Psalmos
-    date: '1280'
-    role: doctor
-    confidence: 0.6667
-    score: 0.4651
-    passages:
-    - Psalms 36:1
-    - Psalms 36:30-36:31
-    - Psalms 88:25
-    - Psalms 91:13; 91:14
-  - work_id: null
     author: Denis the Carthusian
     title: Enarrationes in omnes libros sacrae Scripturae
     date: '1471'
     role: saintly
     confidence: 0.6667
-    score: 0.4287
+    score: 0.5287
     passages:
     - Matthew 22:34-22:46
     - Matthew 24:46-24:47
+    - Psalms 111:1-111:3
     - Psalms 36:1
     - Psalms 36:30-36:31
     - Psalms 88:25
+  - work_id: null
+    author: Bruno the Carthusian
+    title: Expositio in Psalmos
+    date: '1101'
+    role: saint
+    confidence: 0.6667
+    score: 0.4361
+    passages:
+    - Psalms 111:1-111:3
+    - Psalms 36:1
+    - Psalms 36:30-36:31
+    - Psalms 88:25
+  - work_id: null
+    author: Jerome
+    title: Commentarioli in Psalmos
+    date: '420'
+    role: church-father
+    confidence: 0.6667
+    score: 0.419
+    passages:
+    - Psalms 111:1-111:3
+    - Psalms 36:1
+    - Psalms 36:30-36:31
+    - Psalms 88:25
+    - Psalms 91:13; 91:14
   - work_id: null
     author: John Chrysostom
     title: Homiliae in Matthaeum
@@ -250450,13 +250542,14 @@ masses:
     - Matthew 22:34-22:46
     - Matthew 24:46-24:47
   - work_id: null
-    author: Jerome
-    title: Commentarioli in Psalmos
-    date: '420'
-    role: church-father
-    confidence: 0.6667
-    score: 0.3357
+    author: Athanasius of Alexandria
+    title: Expositiones in Psalmos
+    date: '373'
+    role: doctor
+    confidence: 0.3333
+    score: 0.3603
     passages:
+    - Psalms 111:1-111:3
     - Psalms 36:1
     - Psalms 36:30-36:31
     - Psalms 88:25
@@ -250470,30 +250563,7 @@ masses:
     score: 0.3333
     passages:
     - Matthew 22:34-22:46
-  - work_id: null
-    author: Bruno the Carthusian
-    title: Expositio in Psalmos
-    date: '1101'
-    role: saint
-    confidence: 0.6667
-    score: 0.325
-    passages:
-    - Psalms 36:1
-    - Psalms 36:30-36:31
-    - Psalms 88:25
-  - work_id: null
-    author: Athanasius of Alexandria
-    title: Expositiones in Psalmos
-    date: '373'
-    role: doctor
-    confidence: 0.3333
-    score: 0.2936
-    passages:
-    - Psalms 36:1
-    - Psalms 36:30-36:31
-    - Psalms 88:25
-    - Psalms 91:13; 91:14
-  passage_count: 6
+  passage_count: 7
 - calendar: roman-1962
   mass_key: s-ioannis-baptistae-la-salle-confessoris
   mass_name: S. Ioannis Baptistae de la Salle Confessoris
@@ -251641,9 +251711,11 @@ masses:
     date: '430'
     role: church-father
     confidence: 1.0
-    score: 2.5
+    score: 4.5
     passages:
+    - Psalms 143:1
     - Psalms 17:33; 17:35
+    - Psalms 17:38-17:39; 17:50
     - Psalms 36:17
     - Psalms 72:24
   - work_id: null
@@ -251652,9 +251724,11 @@ masses:
     date: '585'
     role: saintly
     confidence: 1.0
-    score: 1.3333
+    score: 2.3333
     passages:
+    - Psalms 143:1
     - Psalms 17:33; 17:35
+    - Psalms 17:38-17:39; 17:50
     - Psalms 36:17
     - Psalms 72:24
   - work_id: null
@@ -251663,13 +251737,43 @@ masses:
     date: '1349'
     role: saintly
     confidence: 1.0
-    score: 1.2262
+    score: 1.7024
     passages:
     - Luke 6:6-6:11
+    - Psalms 143:1
     - Psalms 17:33; 17:35
+    - Psalms 17:38-17:39; 17:50
     - Psalms 36:17
     - Psalms 72:24
     - Wisdom 10:10-10:17
+  - work_id: null
+    author: Denis the Carthusian
+    title: Enarrationes in universam Bibliam
+    date: '1471'
+    role: saintly
+    confidence: 0.3333
+    score: 1.0784
+    passages:
+    - Luke 6:6-6:11
+    - Psalms 143:1
+    - Psalms 17:33; 17:35
+    - Psalms 17:38-17:39; 17:50
+    - Psalms 36:17
+    - Psalms 72:24
+    - Wisdom 10:10-10:17
+  - work_id: null
+    author: Peter Lombard
+    title: Commentarium in Psalmos
+    date: '1160'
+    role: saintly
+    confidence: 1.0
+    score: 1.075
+    passages:
+    - Psalms 143:1
+    - Psalms 17:33; 17:35
+    - Psalms 17:38-17:39; 17:50
+    - Psalms 36:17
+    - Psalms 72:24
   - work_id: null
     author: Albert the Great
     title: Super Lucam
@@ -251698,38 +251802,57 @@ masses:
     passages:
     - Wisdom 10:10-10:17
   - work_id: null
-    author: Peter Lombard
-    title: Commentarium in Psalmos
-    date: '1160'
-    role: saintly
-    confidence: 1.0
-    score: 0.7
-    passages:
-    - Psalms 17:33; 17:35
-    - Psalms 36:17
-    - Psalms 72:24
-  - work_id: null
-    author: Denis the Carthusian
-    title: Enarrationes in universam Bibliam
-    date: '1471'
-    role: saintly
-    confidence: 0.3333
-    score: 0.62
-    passages:
-    - Luke 6:6-6:11
-    - Psalms 17:33; 17:35
-    - Psalms 36:17
-    - Psalms 72:24
-    - Wisdom 10:10-10:17
-  - work_id: null
     author: Robert Bellarmine
     title: Explanatio in Psalmos
     date: '1621'
     role: doctor
     confidence: 1.0
-    score: 0.5667
+    score: 0.8667
     passages:
+    - Psalms 143:1
     - Psalms 17:33; 17:35
+    - Psalms 17:38-17:39; 17:50
+    - Psalms 36:17
+    - Psalms 72:24
+  - work_id: null
+    author: Hugh of Saint-Cher
+    title: Postillae in universa Biblia
+    date: '1263'
+    role: saintly
+    confidence: 0.6667
+    score: 0.7681
+    passages:
+    - Luke 6:6-6:11
+    - Psalms 143:1
+    - Psalms 17:33; 17:35
+    - Psalms 17:38-17:39; 17:50
+    - Psalms 36:17
+    - Psalms 72:24
+    - Wisdom 10:10-10:17
+  - work_id: null
+    author: Theodoret of Cyrus
+    title: Interpretatio in Psalmos
+    date: '458'
+    role: church-father
+    confidence: 1.0
+    score: 0.7338
+    passages:
+    - Psalms 143:1
+    - Psalms 17:33; 17:35
+    - Psalms 17:38-17:39; 17:50
+    - Psalms 36:17
+    - Psalms 72:24
+  - work_id: null
+    author: Albert the Great
+    title: Commentarii in Psalmos
+    date: '1280'
+    role: doctor
+    confidence: 0.6667
+    score: 0.5373
+    passages:
+    - Psalms 143:1
+    - Psalms 17:33; 17:35
+    - Psalms 17:38-17:39; 17:50
     - Psalms 36:17
     - Psalms 72:24
   - work_id: null
@@ -251761,70 +251884,16 @@ masses:
     passages:
     - Wisdom 10:10-10:17
   - work_id: null
-    author: Theodoret of Cyrus
-    title: Interpretatio in Psalmos
-    date: '458'
-    role: church-father
-    confidence: 1.0
-    score: 0.4762
-    passages:
-    - Psalms 17:33; 17:35
-    - Psalms 36:17
-    - Psalms 72:24
-  - work_id: null
-    author: Hugh of Saint-Cher
-    title: Postillae in universa Biblia
-    date: '1263'
-    role: saintly
-    confidence: 0.6667
-    score: 0.4569
-    passages:
-    - Luke 6:6-6:11
-    - Psalms 17:33; 17:35
-    - Psalms 36:17
-    - Psalms 72:24
-    - Wisdom 10:10-10:17
-  - work_id: null
     author: Denis the Carthusian
     title: Enarrationes in omnes libros sacrae Scripturae
     date: '1471'
     role: saintly
     confidence: 0.6667
-    score: 0.3568
+    score: 0.4401
     passages:
     - Luke 6:6-6:11
     - Psalms 17:33; 17:35
-    - Psalms 36:17
-    - Psalms 72:24
-  - work_id: null
-    author: Albert the Great
-    title: Commentarii in Psalmos
-    date: '1280'
-    role: doctor
-    confidence: 0.6667
-    score: 0.354
-    passages:
-    - Psalms 17:33; 17:35
-    - Psalms 36:17
-    - Psalms 72:24
-  - work_id: null
-    author: Bede the Venerable
-    title: In Lucae evangelium expositio
-    date: '735'
-    role: doctor
-    confidence: 1.0
-    score: 0.3333
-    passages:
-    - Luke 6:6-6:11
-  - work_id: null
-    author: Bruno the Carthusian
-    title: Expositio in Psalmos
-    date: '1101'
-    role: saint
-    confidence: 0.6667
-    score: 0.3159
-    passages:
-    - Psalms 17:33; 17:35
+    - Psalms 17:38-17:39; 17:50
     - Psalms 36:17
     - Psalms 72:24
   - work_id: null
@@ -251833,20 +251902,50 @@ masses:
     date: '1274'
     role: doctor
     confidence: 1.0
-    score: 0.2679
+    score: 0.4107
     passages:
     - Psalms 17:33; 17:35
+    - Psalms 17:38-17:39; 17:50
     - Psalms 36:17
   - work_id: null
-    author: Bonaventure
-    title: Commentarius in Evangelium S. Lucae
-    date: '1274'
-    role: doctor
-    confidence: 1.0
-    score: 0.25
+    author: Bruno the Carthusian
+    title: Expositio in Psalmos
+    date: '1101'
+    role: saint
+    confidence: 0.6667
+    score: 0.4068
+    passages:
+    - Psalms 17:33; 17:35
+    - Psalms 17:38-17:39; 17:50
+    - Psalms 36:17
+    - Psalms 72:24
+  - work_id: null
+    author: Jerome
+    title: Commentarioli in Psalmos
+    date: '420'
+    role: church-father
+    confidence: 0.6667
+    score: 0.3876
+    passages:
+    - Psalms 143:1
+    - Psalms 17:33; 17:35
+    - Psalms 17:38-17:39; 17:50
+    - Psalms 36:17
+    - Psalms 72:24
+  - work_id: null
+    author: Walafrid Strabo
+    title: Glossa ordinaria
+    date: '849'
+    role: ecclesiastical-writer
+    confidence: 0.6667
+    score: 0.3534
     passages:
     - Luke 6:6-6:11
-  passage_count: 5
+    - Psalms 143:1
+    - Psalms 17:33; 17:35
+    - Psalms 17:38-17:39; 17:50
+    - Wisdom 10:10-10:17
+  passage_count: 7
 - calendar: roman-1962
   mass_key: s-ioannis-eudes-confessoris
   mass_name: S. Ioannis Eudes Confessoris

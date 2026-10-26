@@ -1,0 +1,486 @@
+{
+  "scope": "Bounded generated commentary acquisition-worklist currentness repair",
+  "complete_for_this_boundary": true,
+  "changed_paths": {
+    "src/sources/commentary/mass-commentary-corpus.yaml": {
+      "before": "780402acfe420b904bd346564c8a15bcb94cd9ba380a31fc49add1d0d1b2d06f",
+      "after": "5e5bc2f351381bb58b00a3fa79ef8ebe4a06e0b4ce26834c9459876e58ecf36c"
+    }
+  },
+  "commands": [
+    {
+      "command": "python tools/tpt commentary-work-index build-corpus",
+      "exit": 0,
+      "log": ".scratch/publication-integration/commentary-corpus-generate.log"
+    },
+    {
+      "command": "make check-commentary-corpus PYTHON=.scratch/publication-prep/venv/bin/python",
+      "exit": 0,
+      "tests": 23,
+      "log": ".scratch/publication-integration/commentary-corpus-check.log"
+    },
+    {
+      "command": "python tools/tpt source-inventory check",
+      "exit": 0,
+      "log": ".scratch/publication-integration/commentary-inventory-check.log"
+    },
+    {
+      "command": "python tools/tpt source-family-migration check",
+      "exit": 0,
+      "log": ".scratch/publication-integration/commentary-family-check.log"
+    },
+    {
+      "command": "python tools/tpt release-bindings status",
+      "exit": 0,
+      "log": ".scratch/publication-integration/commentary-release-check.log"
+    },
+    {
+      "command": "git diff --check -- src/sources/commentary/mass-commentary-corpus.yaml",
+      "exit": 0
+    }
+  ],
+  "observed_original_failure": {
+    "root_command": "make check-sources",
+    "exit": 2,
+    "subgate": "check-commentary-corpus",
+    "tool_error_exit": 64,
+    "root_log": ".scratch/root-publication/source-check.log",
+    "diagnostic": "commentary corpus is missing or stale; rerun commentary-work-index build-corpus with the same inputs without --check"
+  },
+  "cause": "The acquisition worklist last refreshed at ed68de18c did not reflect later existing Roman1962 calendar citation sets for Francis of Paola,John of God and John Damascene. The builder reads resolved calendar and discovery inputs; new Bede fragment admission is not its cause. This lane changes no source facts.",
+  "semantic_delta": {
+    "changed_top_level_keys": [
+      "chapter_matched_passage_count",
+      "chapter_matched_passages",
+      "masses",
+      "passages",
+      "unresolved_passage_count"
+    ],
+    "changed_masses": [
+      {
+        "calendar": "roman-1962",
+        "mass": "s-francisci-paula-confessoris",
+        "old_passage_count": 5,
+        "new_passage_count": 8,
+        "old_top_works": 20,
+        "new_top_works": 20
+      },
+      {
+        "calendar": "roman-1962",
+        "mass": "s-ioannis-a-deo-confessoris",
+        "old_passage_count": 6,
+        "new_passage_count": 7,
+        "old_top_works": 20,
+        "new_top_works": 20
+      },
+      {
+        "calendar": "roman-1962",
+        "mass": "s-ioannis-damasceni-confessoris-ecclesiae-doctoris",
+        "old_passage_count": 5,
+        "new_passage_count": 7,
+        "old_top_works": 20,
+        "new_top_works": 20
+      }
+    ],
+    "changed_passages": [
+      {
+        "passage": "1 Samuel 25:26; 25:28",
+        "old": null,
+        "new": {
+          "passage": "1 Samuel 25:26; 25:28",
+          "mass_count": 1,
+          "masses": [
+            "roman-1962::s-ioannis-damasceni-confessoris-ecclesiae-doctoris"
+          ],
+          "has_commentary": false
+        }
+      },
+      {
+        "passage": "Hosea 14:6",
+        "old": {
+          "passage": "Hosea 14:6",
+          "mass_count": 38,
+          "masses": [
+            "roman-1962::comm-s-aegidii-abbatis",
+            "roman-1962::comm-s-eusebii-confessoris",
+            "roman-1962::comm-s-hilarionis-abbatis",
+            "roman-1962::comm-s-mauri-abbatis",
+            "roman-1962::comm-s-sabbae-abbatis",
+            "roman-1962::commune-abbatum",
+            "roman-1962::commune-confessoris-non-pontificis-2",
+            "roman-1962::commune-doctorum-non-pontificis",
+            "roman-1962::commune-doctorum-pontificis",
+            "roman-1962::decollatione-s-ioannis-baptistae",
+            "roman-1962::s-alberti-magni-episcopi-confessoris-ecclesiae",
+            "roman-1962::s-anselmi-episcopi-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-antonii-padua-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-bedae-venerabilis-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-benedicti-abbatis",
+            "roman-1962::s-cyrilli-episcopi-alexandrini-confessoris-ecclesiae",
+            "roman-1962::s-didaci-confessoris",
+            "roman-1962::s-dominici-confessoris",
+            "roman-1962::s-ephraem-syri-diaconi-confessoris-ecclesiae",
+            "roman-1962::s-felicis-valois-confessoris",
+            "roman-1962::s-francisci-borgiae-confessoris",
+            "roman-1962::s-francisci-salesii-episcopi-confessoris-ecclesiae",
+            "roman-1962::s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae",
+            "roman-1962::s-gulielmi-abbatis",
+            "roman-1962::s-hieronymi-presbyteri-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-hilarii-episcopi-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-ioannis-a-cruce-confessoris-ecclesiae",
+            "roman-1962::s-ioseph-sponsi-beatae-mariae-virginis",
+            "roman-1962::s-isidori-episcopi-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-laurentii-brundusio-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-nicolai-tolentino-confessoris",
+            "roman-1962::s-pauli-primi-eremitae-confessoris",
+            "roman-1962::s-petri-canisii-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-petri-damiani-episcopi-confessoris-ecclesiae",
+            "roman-1962::s-petri-nolasci-confessoris",
+            "roman-1962::s-philippi-benitii-confessoris",
+            "roman-1962::s-romualdi-abbatis",
+            "roman-1962::s-silvestri-abbatis"
+          ],
+          "has_commentary": true
+        },
+        "new": {
+          "passage": "Hosea 14:6",
+          "mass_count": 39,
+          "masses": [
+            "roman-1962::comm-s-aegidii-abbatis",
+            "roman-1962::comm-s-eusebii-confessoris",
+            "roman-1962::comm-s-hilarionis-abbatis",
+            "roman-1962::comm-s-mauri-abbatis",
+            "roman-1962::comm-s-sabbae-abbatis",
+            "roman-1962::commune-abbatum",
+            "roman-1962::commune-confessoris-non-pontificis-2",
+            "roman-1962::commune-doctorum-non-pontificis",
+            "roman-1962::commune-doctorum-pontificis",
+            "roman-1962::decollatione-s-ioannis-baptistae",
+            "roman-1962::s-alberti-magni-episcopi-confessoris-ecclesiae",
+            "roman-1962::s-anselmi-episcopi-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-antonii-padua-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-bedae-venerabilis-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-benedicti-abbatis",
+            "roman-1962::s-cyrilli-episcopi-alexandrini-confessoris-ecclesiae",
+            "roman-1962::s-didaci-confessoris",
+            "roman-1962::s-dominici-confessoris",
+            "roman-1962::s-ephraem-syri-diaconi-confessoris-ecclesiae",
+            "roman-1962::s-felicis-valois-confessoris",
+            "roman-1962::s-francisci-borgiae-confessoris",
+            "roman-1962::s-francisci-paula-confessoris",
+            "roman-1962::s-francisci-salesii-episcopi-confessoris-ecclesiae",
+            "roman-1962::s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae",
+            "roman-1962::s-gulielmi-abbatis",
+            "roman-1962::s-hieronymi-presbyteri-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-hilarii-episcopi-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-ioannis-a-cruce-confessoris-ecclesiae",
+            "roman-1962::s-ioseph-sponsi-beatae-mariae-virginis",
+            "roman-1962::s-isidori-episcopi-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-laurentii-brundusio-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-nicolai-tolentino-confessoris",
+            "roman-1962::s-pauli-primi-eremitae-confessoris",
+            "roman-1962::s-petri-canisii-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-petri-damiani-episcopi-confessoris-ecclesiae",
+            "roman-1962::s-petri-nolasci-confessoris",
+            "roman-1962::s-philippi-benitii-confessoris",
+            "roman-1962::s-romualdi-abbatis",
+            "roman-1962::s-silvestri-abbatis"
+          ],
+          "has_commentary": true
+        }
+      },
+      {
+        "passage": "Job 14:7",
+        "old": null,
+        "new": {
+          "passage": "Job 14:7",
+          "mass_count": 1,
+          "masses": [
+            "roman-1962::s-ioannis-damasceni-confessoris-ecclesiae-doctoris"
+          ],
+          "has_commentary": false
+        }
+      },
+      {
+        "passage": "Psalms 111:1",
+        "old": {
+          "passage": "Psalms 111:1",
+          "mass_count": 10,
+          "masses": [
+            "roman-1962::commune-confessoris-non-pontificis-2",
+            "roman-1962::s-camilli-lellis-confessoris",
+            "roman-1962::s-clementis-i-papae-martyris",
+            "roman-1962::s-didaci-confessoris",
+            "roman-1962::s-felicis-valois-confessoris",
+            "roman-1962::s-nicolai-tolentino-confessoris",
+            "roman-1962::s-petri-alcantara-confessoris",
+            "roman-1962::s-petri-nolasci-confessoris",
+            "roman-1962::s-philippi-benitii-confessoris",
+            "roman-1962::vigil-saint-lawrence"
+          ],
+          "has_commentary": true
+        },
+        "new": {
+          "passage": "Psalms 111:1",
+          "mass_count": 11,
+          "masses": [
+            "roman-1962::commune-confessoris-non-pontificis-2",
+            "roman-1962::s-camilli-lellis-confessoris",
+            "roman-1962::s-clementis-i-papae-martyris",
+            "roman-1962::s-didaci-confessoris",
+            "roman-1962::s-felicis-valois-confessoris",
+            "roman-1962::s-francisci-paula-confessoris",
+            "roman-1962::s-nicolai-tolentino-confessoris",
+            "roman-1962::s-petri-alcantara-confessoris",
+            "roman-1962::s-petri-nolasci-confessoris",
+            "roman-1962::s-philippi-benitii-confessoris",
+            "roman-1962::vigil-saint-lawrence"
+          ],
+          "has_commentary": true
+        }
+      },
+      {
+        "passage": "Psalms 111:1-111:3",
+        "old": {
+          "passage": "Psalms 111:1-111:3",
+          "mass_count": 79,
+          "masses": [
+            "roman-1962::comm-s-aegidii-abbatis",
+            "roman-1962::comm-s-blasii-episcopi-martyris",
+            "roman-1962::comm-s-felicis-presbyteri-martyris",
+            "roman-1962::comm-s-gorgonii-martyris",
+            "roman-1962::comm-s-hermetis-martyris",
+            "roman-1962::comm-s-hilarionis-abbatis",
+            "roman-1962::comm-s-liborii-episcopi-confessoris",
+            "roman-1962::comm-s-mauri-abbatis",
+            "roman-1962::comm-s-mennae-martyris",
+            "roman-1962::comm-s-pantaleonis-martyris",
+            "roman-1962::comm-s-remigii-episcopi-confessoris",
+            "roman-1962::comm-s-romani-martyris",
+            "roman-1962::comm-s-sabbae-abbatis",
+            "roman-1962::comm-s-saturnini-martyris",
+            "roman-1962::comm-s-theodori-martyris",
+            "roman-1962::commune-abbatum",
+            "roman-1962::commune-confessoris-non-pontificis-1",
+            "roman-1962::commune-confessoris-non-pontificis-2",
+            "roman-1962::commune-confessoris-pontificis-1",
+            "roman-1962::commune-confessoris-pontificis-2",
+            "roman-1962::commune-doctorum-non-pontificis",
+            "roman-1962::commune-doctorum-pontificis",
+            "roman-1962::commune-unius-martyris-2",
+            "roman-1962::commune-unius-martyris-4",
+            "roman-1962::s-alberti-magni-episcopi-confessoris-ecclesiae",
+            "roman-1962::s-andreae-avellini-confessoris",
+            "roman-1962::s-andreae-corsini-episcopi-confessoris",
+            "roman-1962::s-anselmi-episcopi-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-antonii-mariae-claret-episcopi-confessoris",
+            "roman-1962::s-antonii-padua-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-bedae-venerabilis-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-benedicti-abbatis",
+            "roman-1962::s-brunonis-confessoris",
+            "roman-1962::s-caroli-episcopi-confessoris",
+            "roman-1962::s-casimiri-confessoris",
+            "roman-1962::s-cyrilli-episcopi-alexandrini-confessoris-ecclesiae",
+            "roman-1962::s-cyrilli-episcopi-hierosolymitani-confessoris-ecclesiae",
+            "roman-1962::s-didaci-confessoris",
+            "roman-1962::s-eduardi-regis-confessoris",
+            "roman-1962::s-ephraem-syri-diaconi-confessoris-ecclesiae",
+            "roman-1962::s-eusebii-episcopi-martyris",
+            "roman-1962::s-felicis-valois-confessoris",
+            "roman-1962::s-francisci-borgiae-confessoris",
+            "roman-1962::s-francisci-salesii-episcopi-confessoris-ecclesiae",
+            "roman-1962::s-gregorii-barbadici-episcopi-confessoris",
+            "roman-1962::s-gulielmi-abbatis",
+            "roman-1962::s-henrici-imperatoris-confessoris",
+            "roman-1962::s-hieronymi-presbyteri-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-hilarii-episcopi-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-hyacinthi-confessoris",
+            "roman-1962::s-ioannis-a-cruce-confessoris-ecclesiae",
+            "roman-1962::s-ioannis-chrysostomi-episcopi-confessoris-ecclesiae",
+            "roman-1962::s-ioannis-eudes-confessoris",
+            "roman-1962::s-ioannis-mariae-vianney-confessoris",
+            "roman-1962::s-ioannis-matha-confessoris",
+            "roman-1962::s-ioannis-s-facundo-confessoris",
+            "roman-1962::s-ioseph-sponsi-beatae-mariae-virginis",
+            "roman-1962::s-isidori-episcopi-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-laurentii-brundusio-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-laurentii-iustiniani-episcopi-confessoris",
+            "roman-1962::s-nicolai-tolentino-confessoris",
+            "roman-1962::s-norberti-episcopi-confessoris",
+            "roman-1962::s-paschalis-baylon-confessoris",
+            "roman-1962::s-patricii-episcopi-confessoris",
+            "roman-1962::s-petri-canisii-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-petri-damiani-episcopi-confessoris-ecclesiae",
+            "roman-1962::s-petri-nolasci-confessoris",
+            "roman-1962::s-philippi-benitii-confessoris",
+            "roman-1962::s-polycarpi-episcopi-martyris",
+            "roman-1962::s-raymundi-nonnati-confessoris",
+            "roman-1962::s-raymundi-penafort-confessoris",
+            "roman-1962::s-romualdi-abbatis",
+            "roman-1962::s-silvestri-abbatis",
+            "roman-1962::s-thomae-aquino-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-thomae-villanova-episcopi-confessoris",
+            "roman-1962::s-titi-episcopi-confessoris",
+            "roman-1962::s-ubaldi-episcopi-confessoris",
+            "roman-1962::s-vincentii-ferrerii-confessoris",
+            "roman-1962::third-day-within-octave-s-ioannis"
+          ],
+          "has_commentary": true
+        },
+        "new": {
+          "passage": "Psalms 111:1-111:3",
+          "mass_count": 81,
+          "masses": [
+            "roman-1962::comm-s-aegidii-abbatis",
+            "roman-1962::comm-s-blasii-episcopi-martyris",
+            "roman-1962::comm-s-felicis-presbyteri-martyris",
+            "roman-1962::comm-s-gorgonii-martyris",
+            "roman-1962::comm-s-hermetis-martyris",
+            "roman-1962::comm-s-hilarionis-abbatis",
+            "roman-1962::comm-s-liborii-episcopi-confessoris",
+            "roman-1962::comm-s-mauri-abbatis",
+            "roman-1962::comm-s-mennae-martyris",
+            "roman-1962::comm-s-pantaleonis-martyris",
+            "roman-1962::comm-s-remigii-episcopi-confessoris",
+            "roman-1962::comm-s-romani-martyris",
+            "roman-1962::comm-s-sabbae-abbatis",
+            "roman-1962::comm-s-saturnini-martyris",
+            "roman-1962::comm-s-theodori-martyris",
+            "roman-1962::commune-abbatum",
+            "roman-1962::commune-confessoris-non-pontificis-1",
+            "roman-1962::commune-confessoris-non-pontificis-2",
+            "roman-1962::commune-confessoris-pontificis-1",
+            "roman-1962::commune-confessoris-pontificis-2",
+            "roman-1962::commune-doctorum-non-pontificis",
+            "roman-1962::commune-doctorum-pontificis",
+            "roman-1962::commune-unius-martyris-2",
+            "roman-1962::commune-unius-martyris-4",
+            "roman-1962::s-alberti-magni-episcopi-confessoris-ecclesiae",
+            "roman-1962::s-andreae-avellini-confessoris",
+            "roman-1962::s-andreae-corsini-episcopi-confessoris",
+            "roman-1962::s-anselmi-episcopi-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-antonii-mariae-claret-episcopi-confessoris",
+            "roman-1962::s-antonii-padua-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-bedae-venerabilis-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-benedicti-abbatis",
+            "roman-1962::s-brunonis-confessoris",
+            "roman-1962::s-caroli-episcopi-confessoris",
+            "roman-1962::s-casimiri-confessoris",
+            "roman-1962::s-cyrilli-episcopi-alexandrini-confessoris-ecclesiae",
+            "roman-1962::s-cyrilli-episcopi-hierosolymitani-confessoris-ecclesiae",
+            "roman-1962::s-didaci-confessoris",
+            "roman-1962::s-eduardi-regis-confessoris",
+            "roman-1962::s-ephraem-syri-diaconi-confessoris-ecclesiae",
+            "roman-1962::s-eusebii-episcopi-martyris",
+            "roman-1962::s-felicis-valois-confessoris",
+            "roman-1962::s-francisci-borgiae-confessoris",
+            "roman-1962::s-francisci-paula-confessoris",
+            "roman-1962::s-francisci-salesii-episcopi-confessoris-ecclesiae",
+            "roman-1962::s-gregorii-barbadici-episcopi-confessoris",
+            "roman-1962::s-gulielmi-abbatis",
+            "roman-1962::s-henrici-imperatoris-confessoris",
+            "roman-1962::s-hieronymi-presbyteri-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-hilarii-episcopi-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-hyacinthi-confessoris",
+            "roman-1962::s-ioannis-a-cruce-confessoris-ecclesiae",
+            "roman-1962::s-ioannis-a-deo-confessoris",
+            "roman-1962::s-ioannis-chrysostomi-episcopi-confessoris-ecclesiae",
+            "roman-1962::s-ioannis-eudes-confessoris",
+            "roman-1962::s-ioannis-mariae-vianney-confessoris",
+            "roman-1962::s-ioannis-matha-confessoris",
+            "roman-1962::s-ioannis-s-facundo-confessoris",
+            "roman-1962::s-ioseph-sponsi-beatae-mariae-virginis",
+            "roman-1962::s-isidori-episcopi-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-laurentii-brundusio-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-laurentii-iustiniani-episcopi-confessoris",
+            "roman-1962::s-nicolai-tolentino-confessoris",
+            "roman-1962::s-norberti-episcopi-confessoris",
+            "roman-1962::s-paschalis-baylon-confessoris",
+            "roman-1962::s-patricii-episcopi-confessoris",
+            "roman-1962::s-petri-canisii-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-petri-damiani-episcopi-confessoris-ecclesiae",
+            "roman-1962::s-petri-nolasci-confessoris",
+            "roman-1962::s-philippi-benitii-confessoris",
+            "roman-1962::s-polycarpi-episcopi-martyris",
+            "roman-1962::s-raymundi-nonnati-confessoris",
+            "roman-1962::s-raymundi-penafort-confessoris",
+            "roman-1962::s-romualdi-abbatis",
+            "roman-1962::s-silvestri-abbatis",
+            "roman-1962::s-thomae-aquino-confessoris-ecclesiae-doctoris",
+            "roman-1962::s-thomae-villanova-episcopi-confessoris",
+            "roman-1962::s-titi-episcopi-confessoris",
+            "roman-1962::s-ubaldi-episcopi-confessoris",
+            "roman-1962::s-vincentii-ferrerii-confessoris",
+            "roman-1962::third-day-within-octave-s-ioannis"
+          ],
+          "has_commentary": true
+        }
+      },
+      {
+        "passage": "Psalms 143:1",
+        "old": null,
+        "new": {
+          "passage": "Psalms 143:1",
+          "mass_count": 1,
+          "masses": [
+            "roman-1962::s-ioannis-damasceni-confessoris-ecclesiae-doctoris"
+          ],
+          "has_commentary": true
+        }
+      },
+      {
+        "passage": "Psalms 17:38-17:39; 17:50",
+        "old": null,
+        "new": {
+          "passage": "Psalms 17:38-17:39; 17:50",
+          "mass_count": 1,
+          "masses": [
+            "roman-1962::s-ioannis-damasceni-confessoris-ecclesiae-doctoris"
+          ],
+          "has_commentary": true
+        }
+      }
+    ],
+    "added_chapter_matches": [
+      "Psalms 143:1",
+      "Psalms 17:38-17:39; 17:50"
+    ],
+    "other": {
+      "chapter_matched_passage_count": {
+        "before": 3237,
+        "after": 3239
+      },
+      "unresolved_passage_count": {
+        "before": 351,
+        "after": 353
+      }
+    }
+  },
+  "counts": {
+    "mass_count": 1096,
+    "covered_mass_count": 1095,
+    "unresolved_passage_count": 353,
+    "chapter_matched_passage_count": 3239
+  },
+  "f02_records_unchanged": true,
+  "discovery_index_digest_unchanged": true,
+  "diff_lines": {
+    "added": 335,
+    "removed": 236
+  },
+  "served_input_changed": false,
+  "research_yaml_is_not_authorized_site_source": true,
+  "source_inventory_classification_family_refresh_needed": false,
+  "source_inventory_classification_family_hashes_preserved": true,
+  "catalogue_and_release_hashes_preserved": true,
+  "release_stale_bindings": 0,
+  "all_accepted_and_protected_hashes_match": true,
+  "native_seal_boundary": "Coordinator reports independent cold audit found this exact research YAML absent from every archived native review_inputs mapping,including historical iterations; no sealed input or rendered source changed.",
+  "release_mapping_audit": ".scratch/publication-integration/release-scope-mapping-recheck.json",
+  "not_run": [
+    "Full make check-sources aggregate",
+    "Public site build or verification",
+    "Broader generated-data or release refresh",
+    "Index,commit,push"
+  ]
+}
