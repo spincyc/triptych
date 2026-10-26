@@ -5,62 +5,54 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-25.
+Last reconciled: 2026-10-26.
 
 ## GPT postconciliar All Saints, 2026-10-25
 
 <!-- promised-deliverable: gpt-postconciliar-all-saints-2026-11-01 -->
 
-**In progress.** Complete the GPT postconciliar proper-study workflow for next
-Sunday, 1 November 2026, All Saints, under the United States Roman Missal,
-Third Edition (2011), with independent cold reviews and publication to main.
-The permanent target is `PC-R07-ABC`,
+**In progress.** Complete the GPT postconciliar proper-study workflow for Sunday,
+1 November 2026, All Saints, under the United States Roman Missal, Third Edition
+(2011), with independent cold reviews and publication to main. The permanent
+target is `PC-R07-ABC`,
 `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc`.
-This authorizes that one provider and identity within the otherwise closed
-collection; the production plan records the exception. The previously completed
-1962 F02 publication is a separate work and supplies no postconciliar
-appointment, research judgment or authored interpretation.
+This one-provider production exception is recorded in the production plan.
+The completed 1962 F02 publication is a separate work and supplies no
+postconciliar appointment, research judgment or authored interpretation.
 
-Work starts at clean `9f51eb530`, equal to both remote main and the workspace
-feature ref. Commits remain on `feature/propers/codex`; validated main
-publication uses a genuine fast-forward ref update without switching the
-workspace branch or rewriting history. First extend the workflow's
-registry-backed identity and chronology adapters to this General Calendar
-replacement, preserving fail-closed family and edition controls. Then resolve
-the official dated occurrence, complete the version-15 research and reusable
-source handoff, independently review all three documents and their rendered
-artifacts, archive native acceptance, reconcile inventories and release
-records, and verify deployment and exact live artifacts. The owning receipt
-will be `workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/RECORD.md`.
+Work starts at clean `9f51eb530`, equal to both remote refs. Commits remain on
+`feature/propers/codex`; main publication uses a genuine fast-forward without
+switching the workspace branch or rewriting history. The owning receipt is
+`workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/RECORD.md`.
 
-The identity/chronology extension now preserves bootstrap and exact
-same-edition ownership. A cold code review found a mixed All Souls expansion
-acceptance gap; the correction and full-dossier regressions pass 85 tests,
-and focused independent re-review finds no remaining code blocker. The
-preproduction deployment-source baseline also passes. The official-source
-dossier and pinned isolated build runtime are ready. Native version-15 run
-`0af32a5cd3635b06` is seeded at `e1ed2ba5d`, passes scope, context and research,
-and is registering sources. A parallel publication-path audit identifies an omitted
-general-calendar shared-owner root and PC-R mixed-owner edge in source-inventory;
-its correction passes 57 regressions and independent cold review. The corrected
-tool preserves existing provider inventories and requires the normal reviewed
-refresh before registration is complete. Native acceptance, publication
-acceptance and deployment remain outstanding.
+Native version-15 run `0af32a5cd3635b06`, seeded at `e1ed2ba5d`, reaches
+**ACCEPTED** with 37 results, no standing findings and no escalations. The
+20-page study, ten-page concise study and three-page, 1,174-word homily pass
+fresh content, artifact and visual reviews; all 33 final pages are inspected.
+The sole canonical web edition passes source-fidelity and actual desktop/phone
+review. Both study findings, editorial self-narration and an obsolete proof
+status sentence, are repaired through their native owners and dependent reviews.
+All three installed PDFs and canonical Markdown match the accepted hashes.
 
-The 28 existing GPT postconciliar proper PDFs, 335 pages, rebuild through their
-strict individual targets and match the previously installed reviewed bytes
-exactly. The owning receipt pins the additive registry records used for this
-preservation proof. Global source and metadata checks remain pending until the
-new publication is authored; their initial scaffold-state refusals are retained.
+The terminal 80-file archive exactly matches an isolated reproduction. Its
+explicit derivative removes only five private checkout prefixes from optional
+research notes; all substantive fields and immutable native evidence remain
+unchanged. The receipt records original/exported hashes and the frozen cycles.
+Post-archive publication inventory and family bookkeeping refresh is complete.
+Native source registration has 33 bindings, 37 dispositions, six Bede admissions
+and thirteen deferred candidate-use keys; edition and rights limits remain
+explicit. Broader corpus chronology and source-family audits remain open.
 
-One accepted research result's optional notes contain local absolute paths in
-ignored native storage. The native evidence remains immutable and unpublished;
-a reviewed, explicit archive derivative with original/exported hashes is ready
-to keep private path values out of the public archive. Cold review catches and
-resolves repeated-separator and stale-staging defects; 41 tests pass, one
-historical-native-run reproduction is explicitly skipped, and independent
-re-review approves the corrected code. Actual terminal export and reproduction
-remain pending; no native acceptance or source verdict is manufactured.
+Three independently reviewed support commits add exact registry-backed PC-R
+identity/chronology, General Calendar source ownership and explicit safe archive
+export. Their focused suites pass 85, 57 and 41 tests respectively; one
+historical-native archive reproduction is honestly skipped. The 28 existing GPT
+postconciliar PDFs, 335 pages, rebuild to the previously reviewed bytes under
+the corrected registry. Preliminary source/code disclosure review finds no private data,
+unintended provider work or retained restricted acquisition bodies.
+
+Complete final source/site gates, integrated outgoing cold/disclosure reviews,
+main publication and exact live deployment verification remain outstanding.
 
 ## GPT Last Things and next Sunday propers, 2026-10-25
 

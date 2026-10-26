@@ -1,0 +1,684 @@
+{
+  "schema": 1,
+  "record_type": "preliminary-source-disclosure-review",
+  "reviewed_at_utc": "2026-10-26T11:21:17Z",
+  "disposition": "PASS",
+  "scope": "Preliminary independent public-disclosure/privacy and third-party retention review of the pinned source/data candidates and exact three committed support changes.",
+  "base_commit": "9f51eb53077578cc74474255cc1fad114bda6eaa",
+  "reviewed_code_commit": "99eff5b8d864edf8a3b4bf18913d5de5dc97cb1c",
+  "reviewed_code_commits": [
+    "e1ed2ba5d4cdf3a5199f3bcf78a0d2b3069683bb",
+    "da4bcd8973d2b3dbbfff43979498b53eabb70514",
+    "99eff5b8d864edf8a3b4bf18913d5de5dc97cb1c"
+  ],
+  "handoff": {
+    "directory": "build/agent-handoffs/20261026T111730Z-pc-r07-disclosure",
+    "directory_present": true,
+    "zip": "build/agent-handoffs/20261026T111730Z-pc-r07-disclosure.zip",
+    "zip_sha256": "24fb8434f7611398b5fe919867eb4e46de5a83d6388f34f27acbec550eba28de",
+    "zip_created_and_verified": true,
+    "crc_check": "PASS",
+    "zip_matches_complete_directory": true,
+    "files": [
+      {
+        "path": "build/agent-handoffs/20261026T111730Z-pc-r07-disclosure/HANDOFF.md",
+        "sha256": "979cff387d8064fd500d9b85cfbb46f63f933e302d0ee332179c893f5d63958a",
+        "bytes": 2372
+      },
+      {
+        "path": "build/agent-handoffs/20261026T111730Z-pc-r07-disclosure/REVIEW_REQUEST.md",
+        "sha256": "2e500bc252a68a608da949dfc23327cf4ec8eca49f4d88b2d4ac3f2eae139bbc",
+        "bytes": 637
+      },
+      {
+        "path": "build/agent-handoffs/20261026T111730Z-pc-r07-disclosure/changes.patch",
+        "sha256": "27e749c2e8d05636516735ea318a8cf506e56a10d8d0ed7f2fa77771602a6366",
+        "bytes": 283143
+      },
+      {
+        "path": "build/agent-handoffs/20261026T111730Z-pc-r07-disclosure/checks.txt",
+        "sha256": "e95e66ac76f36cfe135dad46fde93521f9cdd66a3f9a734c4c4c80f0277022cb",
+        "bytes": 646
+      },
+      {
+        "path": "build/agent-handoffs/20261026T111730Z-pc-r07-disclosure/source-map.json",
+        "sha256": "56b5b06f5a77ed48bfb43b131fefb65123d541d5401003c6dfd9f154146da7b1",
+        "bytes": 15832
+      },
+      {
+        "path": "build/agent-handoffs/20261026T111730Z-pc-r07-disclosure/sources.md",
+        "sha256": "70e0e42f3b6c2ffdbabbdd287d1267681876439e4ec0f7789971e6e2d41ed986",
+        "bytes": 973
+      }
+    ]
+  },
+  "audited_source_candidate_files": [
+    {
+      "path": "THIRD_PARTY.md",
+      "sha256": "e007cd65ff359225c99597edfc61e9b68c2e63fc8722293d6a2b47bb9a2b5965",
+      "bytes": 79314
+    },
+    {
+      "path": "src/sources/commentary/fragment-loci.yaml",
+      "sha256": "42ea51b9fa9c9cb87d21695cb2c69f5e4f202614cc6e5ec46bac84595e7cc70c",
+      "bytes": 967948
+    },
+    {
+      "path": "src/sources/inventories/classification-review-v1.toml",
+      "sha256": "914ab05ce798ddd25eca5cc08cc290eb21af274ecfcd1c062121380828cc9951",
+      "bytes": 39171
+    },
+    {
+      "path": "src/sources/inventories/publications-v1.toml",
+      "sha256": "6f974ec672ac86bccf51d2742e8cb33eacfd01416279762e34687b97d70a18c8",
+      "bytes": 965681
+    },
+    {
+      "path": "src/sources/inventories/source-containment-v1.toml",
+      "sha256": "ca5f5f5bb5f8d6fa137ea3dd6d0026da9468c0d6e4817dcb5239b68c54956d05",
+      "bytes": 221291
+    },
+    {
+      "path": "src/sources/inventories/source-family-migration-v1.toml",
+      "sha256": "c73f48a964dd5f5479f1f05a60c9c97d23cfec1d63135b4aeebd168d780b9f60",
+      "bytes": 35902
+    },
+    {
+      "path": "src/sources/works/bede/explanatio-apocalypsis/editions/1878-marshall-parker/artifacts/chapter-7-verse-14-checked-f0128f87/artifact.toml",
+      "sha256": "feded50d89ff5b850fa5a685473d7b0e33c42880baef2f391f4853f29c601650",
+      "bytes": 1814
+    },
+    {
+      "path": "src/sources/works/bede/explanatio-apocalypsis/editions/1878-marshall-parker/artifacts/chapter-7-verse-14-checked-f0128f87/comment.txt",
+      "sha256": "f0128f8767cea2f4ccf707e7abc8b4cdd2e95e03c0da1e5ea547a87b650e66f3",
+      "bytes": 501
+    },
+    {
+      "path": "src/sources/works/bede/explanatio-apocalypsis/editions/1878-marshall-parker/passages/1-7-14.toml",
+      "sha256": "2c02311f15b8dc1662fe06673273f44a480b3d887be5a71739d8ad2daf09b0f2",
+      "bytes": 1890
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/passages/all-saints.toml",
+      "sha256": "95d5179e07f5a0a09eae581747fc7d9bd3461f8e4aa5a53ece662d34d8b595bd",
+      "bytes": 645
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/2011-english-secondary-proper-of-saints/artifacts/secondary-pdf-97d58326/artifact.toml",
+      "sha256": "a18e152c1c631db954887273740c22bfa4a3772ee4bf91df757db3dada1bfc27",
+      "bytes": 1296
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/2011-english-secondary-proper-of-saints/edition.toml",
+      "sha256": "86c82f7f6985ab7ca069fd94d291ef2876f368b1b0b3933b8577ad4ad673e71f",
+      "bytes": 633
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/all-saints-and-blessing-18.toml",
+      "sha256": "062bdb5018cacadb41d8477c769c61199eb75899e5f1033fd984768ced647ddb",
+      "bytes": 742
+    },
+    {
+      "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/all-saints-667.toml",
+      "sha256": "122e8dbbc2e12cdc091e1f858bd4c7bea1850ac8880037096b161f1176122d46",
+      "bytes": 723
+    },
+    {
+      "path": "src/sources/works/dicastery-for-divine-worship-and-the-discipline-of-the-sacraments/calendarium-romanum-web-index/editions/2026-10-25-english-web/artifacts/official-html-4531f6b6/artifact.toml",
+      "sha256": "2166d553a25d02f01773cf12455fd41dafb025abe76f8c5d152509358c6f716d",
+      "bytes": 1509
+    },
+    {
+      "path": "src/sources/works/dicastery-for-divine-worship-and-the-discipline-of-the-sacraments/calendarium-romanum-web-index/editions/2026-10-25-english-web/edition.toml",
+      "sha256": "b9b18925d55006c540fce3d63805297beb9676c4ffe67a384779adb50fc6567d",
+      "bytes": 617
+    },
+    {
+      "path": "src/sources/works/dicastery-for-divine-worship-and-the-discipline-of-the-sacraments/calendarium-romanum-web-index/work.toml",
+      "sha256": "c8dcb36087282d09d2e0ac40707b5ed8da21428bc2b24722256952163e653dad",
+      "bytes": 631
+    },
+    {
+      "path": "src/sources/works/international-commission-on-english-in-the-liturgy/music-for-the-roman-missal/editions/2010-chants-web-2026-08-21/passages/all-saints-preface.toml",
+      "sha256": "b4fe1382b74013ca0ff41a0d1036baa5470fe44abccbf6759d179c4532fbdc50",
+      "bytes": 813
+    },
+    {
+      "path": "src/sources/works/john-paul-ii/angelus-2003-11-01/editions/2026-10-26-official-english-web/artifacts/official-html-f633a56f/artifact.toml",
+      "sha256": "c6ca34a93e84db7ba1dcc7c1ccd61be0f91d8a47d5c43689b6a95e06b21ec67c",
+      "bytes": 1270
+    },
+    {
+      "path": "src/sources/works/john-paul-ii/angelus-2003-11-01/editions/2026-10-26-official-english-web/edition.toml",
+      "sha256": "2eddd1f1a41f15b1481471fa50e4c1e23f99d083b3bcd63a6bc79f42d10ab831",
+      "bytes": 679
+    },
+    {
+      "path": "src/sources/works/john-paul-ii/angelus-2003-11-01/work.toml",
+      "sha256": "2d1cc535dec59ad3c8eb0fafea0f968b454c558d5eaa4969274ee7adfd422d86",
+      "bytes": 433
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/super-matthaeum-reportatio-petri-de-andria/editions/1951-turin-corpusthomisticum-web-2026-10-26/artifacts/cma00-72d453c6/artifact.toml",
+      "sha256": "cc6a081521beeaa7058690c83955a513a94319738522a784fdbb42bd47537952",
+      "bytes": 1574
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/super-matthaeum-reportatio-petri-de-andria/editions/1951-turin-corpusthomisticum-web-2026-10-26/artifacts/cma01-2e3882cd/artifact.toml",
+      "sha256": "a41f7eab56ea8a1ecb6858a306e5bcd66928e72e1f6c6f5a6c41dcf1635835be",
+      "bytes": 1572
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/super-matthaeum-reportatio-petri-de-andria/editions/1951-turin-corpusthomisticum-web-2026-10-26/artifacts/cma0500-a73c7d72/artifact.toml",
+      "sha256": "6e398e849f30aef6ae0258f60d7c796f09df6539eb38204f90f684e2cce737e2",
+      "bytes": 1570
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/super-matthaeum-reportatio-petri-de-andria/editions/1951-turin-corpusthomisticum-web-2026-10-26/edition.toml",
+      "sha256": "1c4b2dadac06a82569079aeb405859b96a3ae559045dc1643f771442b1dc9b1f",
+      "bytes": 829
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/super-matthaeum-reportatio-petri-de-andria/editions/1969-leonine-corpusthomisticum-web-2026-10-26/artifacts/cma0510-86c3a4eb/artifact.toml",
+      "sha256": "aaa74e1a61d3a21c65c4dec81fca65ab00d7d89739f44f674a52d3049c2e5946",
+      "bytes": 1477
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/super-matthaeum-reportatio-petri-de-andria/editions/1969-leonine-corpusthomisticum-web-2026-10-26/edition.toml",
+      "sha256": "88461287d9e99d8130660c646ea39f72a6ca895a7d10f0b19f5feffdd4ea8de1",
+      "bytes": 789
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/super-matthaeum-reportatio-petri-de-andria/work.toml",
+      "sha256": "4a3d6e7d1c604802a095ff6dce564caf4d0f582714de155ecf39f575dd68a4ce",
+      "bytes": 651
+    },
+    {
+      "path": "src/sources/works/united-states-conference-of-catholic-bishops/daily-readings/editions/2026-10-25-page-for-2026-11-01/artifacts/usccb-html-ac8a8454/artifact.toml",
+      "sha256": "c2176aaaf81d44ee74e30dc0f1c16027a3e155e470922064f82f1ff263d9168b",
+      "bytes": 1280
+    },
+    {
+      "path": "src/sources/works/united-states-conference-of-catholic-bishops/daily-readings/editions/2026-10-25-page-for-2026-11-01/edition.toml",
+      "sha256": "528a6e1a05ff3f692a1b70f5226ee3dd909d3789153153d8bd85e8ac698d83e7",
+      "bytes": 754
+    },
+    {
+      "path": "src/sources/works/united-states-conference-of-catholic-bishops/daily-readings/editions/2026-10-25-page-for-2026-11-01/passages/headings-and-citations.toml",
+      "sha256": "c51338390065eccfc9e63a58947a5b8d3021e3b70249097f0a1e57ce2cc2d424",
+      "bytes": 915
+    },
+    {
+      "path": "src/sources/works/united-states-conference-of-catholic-bishops/divine-worship-newsletter-2021-02/editions/2021-february-official-pdf/artifacts/official-pdf-e06d7b65/artifact.toml",
+      "sha256": "2f59797c907e83ce5e5d60abf139b8f75a0c0777fe8a1ba38924352364c48687",
+      "bytes": 1408
+    },
+    {
+      "path": "src/sources/works/united-states-conference-of-catholic-bishops/divine-worship-newsletter-2021-02/editions/2021-february-official-pdf/edition.toml",
+      "sha256": "1329643b8d569c19758d08c0821f21e00d640270816f86cd8fcd02325d023ce1",
+      "bytes": 633
+    },
+    {
+      "path": "src/sources/works/united-states-conference-of-catholic-bishops/divine-worship-newsletter-2021-02/work.toml",
+      "sha256": "e31c66f3d064eabf646ab495c3e45248351fb5ab5fa6f8f5eb22eae1bec86b04",
+      "bytes": 582
+    },
+    {
+      "path": "src/sources/works/united-states-conference-of-catholic-bishops/liturgical-calendar-dioceses-united-states/editions/2026/passages/all-saints-2026.toml",
+      "sha256": "9a486cd020c5e3e43b921bd73b5fac315ae632a437617ab060b5db7f5c4d87bc",
+      "bytes": 743
+    },
+    {
+      "path": "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/2026-10-26-english-web-psalms-introduction/artifacts/psalms-intro-0270804c/artifact.toml",
+      "sha256": "4a40a9300eaa43a376df18d3109767aa3a2d2d120878719996b64e7cfa06bf42",
+      "bytes": 1313
+    },
+    {
+      "path": "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/2026-10-26-english-web-psalms-introduction/edition.toml",
+      "sha256": "6227d286a1edfe022d45849c0f35a9b400b4a6c949731489648a4b0a35335046",
+      "bytes": 612
+    },
+    {
+      "path": "src/web/data/structure/catena/73-apoc/007.json",
+      "sha256": "8aba42e0f3d68ed4e14798da6266d44212aa6753f135c6d542397667e645dfc1",
+      "bytes": 4940
+    },
+    {
+      "path": "src/web/data/structure/catena/index.json",
+      "sha256": "04f6d9fc66e1ed17dd26833ee1fa0f51fbdfea5cef99cf94ed6fadbc82dfab29",
+      "bytes": 35382
+    },
+    {
+      "path": "src/web/data/structure/catena/text/passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-14.json",
+      "sha256": "b5428898ea4fe7ae9075941e60acc872b3575297a991c0f8264754d2dc7523ae",
+      "bytes": 1529
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/bede/explanatio-apocalypsis/1878-1878-marshall-parker.json",
+      "sha256": "7807228862c8bada5cb3929ec871a89632747c2bff9c8d28bb52f0e1c46757a4",
+      "bytes": 12312
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/catholic-church/missale-romanum/2002-vatican-typica-tertia-2002.json",
+      "sha256": "359b228e4c2b123309eab3589379d984441bf826d0b9b7c64c7eae13c8e4a7d1",
+      "bytes": 38624
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/catholic-church/missale-romanum/2010-2010-english-icel-antiphonary.json",
+      "sha256": "03d3775ec5499e661ea37a452aec86357f9af3ef92b5a0ca29f9d9b1346695c6",
+      "bytes": 133803
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/catholic-church/missale-romanum/2011-2011-english-secondary-proper-of-saints.json",
+      "sha256": "488c8349b0fe1965caede075c0e8d9f74cf391d2451bd7b91f24ca600a105b50",
+      "bytes": 1551
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/catholic-church/ordo-lectionum-missae/1981-latin-editio-typica-altera-1981.json",
+      "sha256": "411001ab9e447d5a64cd4d9b6a831b76ddadb4d53a42338518aa56f62f87c4e9",
+      "bytes": 33015
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/dicastery-for-divine-worship-and-the-discipline-of-the-sacraments/calendarium-romanum-web-index/2026-2026-10-25-english-web.json",
+      "sha256": "6250697f28dada2aaf078ead46de0a2a8ead4246a61add4ed7cde936744d59de",
+      "bytes": 1703
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/international-commission-on-english-in-the-liturgy/music-for-the-roman-missal/2026-2010-chants-web-2026-08-21.json",
+      "sha256": "def41b5bc52e8ee6ddeb8b3f35a685d9aa9493a354276f7f8a7e1209856399ce",
+      "bytes": 103340
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/john-paul-ii/angelus-2003-11-01/2026-2026-10-26-official-english-web.json",
+      "sha256": "53043ceb7b191c274f805c722608446fc739887e0d34ee4034be6acc50e48665",
+      "bytes": 1411
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/thomas-aquinas/super-matthaeum-reportatio-petri-de-andria/1951-1951-turin-corpusthomisticum-web-2026-10-26.json",
+      "sha256": "c804b010b168a885e4ec2782cf2ea86ad2baf34d5efc7afab80fab8818617547",
+      "bytes": 2635
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/thomas-aquinas/super-matthaeum-reportatio-petri-de-andria/1969-1969-leonine-corpusthomisticum-web-2026-10-26.json",
+      "sha256": "31673624276ce6876ea1be418264070e4803880bbaacde4e68edb0bac62913fc",
+      "bytes": 1696
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/daily-readings/2026-2026-10-25-page-for-2026-11-01.json",
+      "sha256": "f52c28933de9cf0b67c73b623a5f7dad8579a97797a3eab3794360cc33c5b411",
+      "bytes": 2632
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/divine-worship-newsletter-2021-02/2021-2021-february-official-pdf.json",
+      "sha256": "3b53a958a2e7b2db9ed429cc8e0f43c967cb5ff7bc5d1b5c21acbe4438e70625",
+      "bytes": 1636
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/liturgical-calendar-dioceses-united-states/2026-2026.json",
+      "sha256": "d34ab26d5302f2552516acf36dbd17734498972d1d0e9155bd08f1f64d4beb27",
+      "bytes": 11604
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/2026-2026-10-26-english-web-psalms-introduction.json",
+      "sha256": "4fde039c39695900e76424ae6e613320d1056d0e264451fff5354ab3aa4ade7b",
+      "bytes": 1567
+    },
+    {
+      "path": "src/web/data/structure/sources/index.json",
+      "sha256": "c9353d9b297e2d88fa7ecd8a71f4d4e36d76ac63ed08c0bee51ac9bebbbe3bea",
+      "bytes": 1008916
+    },
+    {
+      "path": "src/web/data/structure/sources/text/passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-14.json",
+      "sha256": "6c31cc760eb7091e15e5db7778e7c44b53c9622a6a4b792b74895d45c952f277",
+      "bytes": 1431
+    }
+  ],
+  "audited_committed_files": [
+    {
+      "path": "Makefile",
+      "object_at_commit": "99eff5b8d864edf8a3b4bf18913d5de5dc97cb1c",
+      "sha256": "7da470e76af780303cda0685190276067560c83d3aec4925cf20ed3fa6d7e47a",
+      "bytes": 108568
+    },
+    {
+      "path": "PROJECT-WORK.md",
+      "object_at_commit": "99eff5b8d864edf8a3b4bf18913d5de5dc97cb1c",
+      "sha256": "66e39e8a885218d07f843fee0413dd3191b86cd2660b8d7814d1abb61945db74",
+      "bytes": 697824
+    },
+    {
+      "path": "guidance/liturgy/propers-production-plan.md",
+      "object_at_commit": "99eff5b8d864edf8a3b4bf18913d5de5dc97cb1c",
+      "sha256": "93b56eeb8989d8216645b0083002ec4e05a4d775d35643611ecca7d7715848c1",
+      "bytes": 18268
+    },
+    {
+      "path": "promised-deliverables.toml",
+      "object_at_commit": "99eff5b8d864edf8a3b4bf18913d5de5dc97cb1c",
+      "sha256": "b9bbb8f8ff536a71b4ddb52d04ff6c0d45783f7fe4ad6c58b7975c3415977b3c",
+      "bytes": 355464
+    },
+    {
+      "path": "scripts/_proper_chronology_inputs.py",
+      "object_at_commit": "99eff5b8d864edf8a3b4bf18913d5de5dc97cb1c",
+      "sha256": "8fde4d5d5c119c17d423680d72d049273ec74d5b778ba273d44bf23d61cfa913",
+      "bytes": 17785
+    },
+    {
+      "path": "scripts/_proper_study.py",
+      "object_at_commit": "99eff5b8d864edf8a3b4bf18913d5de5dc97cb1c",
+      "sha256": "00c0691baa9546aacf069f65156ecb3b644894755a765655b0df3a4c03841887",
+      "bytes": 53937
+    },
+    {
+      "path": "tmt.json",
+      "object_at_commit": "99eff5b8d864edf8a3b4bf18913d5de5dc97cb1c",
+      "sha256": "bf7fd0f1eb2a08b2f2e6e490baf5f2c5e15a40efafb8cd5a7c0ca25886dee4a1",
+      "bytes": 20204
+    },
+    {
+      "path": "tools/proper-study-run-archive",
+      "object_at_commit": "99eff5b8d864edf8a3b4bf18913d5de5dc97cb1c",
+      "sha256": "ce0968c2392bbbc17963dbad5aec12d40f53a1d4b8dc38b5f99034cb0b30bfa0",
+      "bytes": 28353
+    },
+    {
+      "path": "tools/source-inventory",
+      "object_at_commit": "99eff5b8d864edf8a3b4bf18913d5de5dc97cb1c",
+      "sha256": "13e72c716e96f11c624e4e863dde4d7795eb1b4c918ce79ab2be285a3f7adf36",
+      "bytes": 57909
+    },
+    {
+      "path": "tools/tests/test_proper_chronology_postconciliar.py",
+      "object_at_commit": "99eff5b8d864edf8a3b4bf18913d5de5dc97cb1c",
+      "sha256": "9c137c485dd10a6decd8d31d10182ed085dda53b00d160b961f03608837a0189",
+      "bytes": 26772
+    },
+    {
+      "path": "tools/tests/test_proper_study_postconciliar_identity.py",
+      "object_at_commit": "99eff5b8d864edf8a3b4bf18913d5de5dc97cb1c",
+      "sha256": "d1974336c50a3876c86903df6b73dc3dd5da5d1f73d766a5d85ea938e91781fd",
+      "bytes": 7232
+    },
+    {
+      "path": "tools/tests/test_proper_study_run_archive.py",
+      "object_at_commit": "99eff5b8d864edf8a3b4bf18913d5de5dc97cb1c",
+      "sha256": "b1d8d17907af1ca17c9de95ee74f76ff5b6f765000bcf8423ca71d08f2e9ab42",
+      "bytes": 31099
+    },
+    {
+      "path": "tools/tests/test_source_inventory_postconciliar.py",
+      "object_at_commit": "99eff5b8d864edf8a3b4bf18913d5de5dc97cb1c",
+      "sha256": "2ed5c09e668ace12e75e73a22492d5d3003f4aa436246e8aeb7c2c7d9e5c4052",
+      "bytes": 9767
+    },
+    {
+      "path": "workflows/OPERATOR.md",
+      "object_at_commit": "99eff5b8d864edf8a3b4bf18913d5de5dc97cb1c",
+      "sha256": "b4f78592b876eb36f94de27f1ca653e5f737e42f0c0e8a9b6d407e94e504e7dc",
+      "bytes": 130985
+    },
+    {
+      "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/CYCLES.md",
+      "object_at_commit": "99eff5b8d864edf8a3b4bf18913d5de5dc97cb1c",
+      "sha256": "bbea0917aab3ec2a1aed7586def2a96346745036f0cade75a632e0b4e87ad724",
+      "bytes": 987
+    },
+    {
+      "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/RECORD.md",
+      "object_at_commit": "99eff5b8d864edf8a3b4bf18913d5de5dc97cb1c",
+      "sha256": "8971a18e7709fc80922d059860724d54cabac5ca6a5fb810091304c6b712acf7",
+      "bytes": 8490
+    },
+    {
+      "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/archive-code-review-recheck.json",
+      "object_at_commit": "99eff5b8d864edf8a3b4bf18913d5de5dc97cb1c",
+      "sha256": "3959939f630b84fb4fd5551b06bc769726185684fb7c778840e5b0a930f75898",
+      "bytes": 5904
+    },
+    {
+      "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/archive-code-review.json",
+      "object_at_commit": "99eff5b8d864edf8a3b4bf18913d5de5dc97cb1c",
+      "sha256": "f2e31c3af3e5cf73d0cd3073404c2e86830710befff32be0cd67f9faba448a12",
+      "bytes": 8005
+    },
+    {
+      "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/code-review-recheck.json",
+      "object_at_commit": "99eff5b8d864edf8a3b4bf18913d5de5dc97cb1c",
+      "sha256": "2c51ec677db877f90a160723e9c536917e2bf9ee05437d30f7d109769a009c79",
+      "bytes": 7667
+    },
+    {
+      "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/code-review.json",
+      "object_at_commit": "99eff5b8d864edf8a3b4bf18913d5de5dc97cb1c",
+      "sha256": "a6f2f4816a825f27cd635c40ea9af69fbacd15f81b1a3c36f75fd08286b78be0",
+      "bytes": 11989
+    },
+    {
+      "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/existing-publications.json",
+      "object_at_commit": "99eff5b8d864edf8a3b4bf18913d5de5dc97cb1c",
+      "sha256": "ab9d29b38e8d1e387c2ed9ba9c70ddabab2289516c9d61290963be83325c5190",
+      "bytes": 22676
+    },
+    {
+      "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/inventory-code-review.json",
+      "object_at_commit": "99eff5b8d864edf8a3b4bf18913d5de5dc97cb1c",
+      "sha256": "a6f3ff6b0f860b22a11f3cfb8b465304844c6444882d501bae75d726353ed108",
+      "bytes": 12386
+    }
+  ],
+  "supporting_repository_evidence": [
+    {
+      "path": "src/sources/works/bede/explanatio-apocalypsis/editions/1878-marshall-parker/edition.toml",
+      "sha256": "9d7694a30a56831ce78fbee96a5423e121235c4cf4009b3d1e4d425712d4eaa2",
+      "bytes": 784
+    },
+    {
+      "path": "src/sources/works/bede/explanatio-apocalypsis/editions/1878-marshall-parker/artifacts/whole-scan-65cb5fc5/artifact.toml",
+      "sha256": "7fc2fff0fd6ee5d76876cac1c17390278c7d16e7e04939ce22aa015e0fbab70c",
+      "bytes": 2407
+    },
+    {
+      "path": "src/sources/works/bede/explanatio-apocalypsis/editions/1878-marshall-parker/artifacts/whole-scan-65cb5fc5/source.pdf",
+      "sha256": "65cb5fc576314617b124203ace81b5c5f0d5b984b371beb39d26b5fab91ee7fd",
+      "bytes": 4125831
+    },
+    {
+      "path": "guidance/sources.md",
+      "sha256": "4ddc9665ac302dd292067233e21820c99aba2bf7bf0498d661ed3030f077c77e",
+      "bytes": 49352
+    },
+    {
+      "path": "guidance/repository.md",
+      "sha256": "927f811cc807207723200e12894ed0caccf3c9adc9b4201bcaee170bcfd65b30",
+      "bytes": 50319
+    },
+    {
+      "path": "guidance/liturgical-text-publication-policy.md",
+      "sha256": "3a035f6e50c06da9597ea99020efb0fa93939d6ef88f6204ed83ffbdf9aae32f",
+      "bytes": 67556
+    },
+    {
+      "path": "guidance/external-review-handoffs.md",
+      "sha256": "49f74c78ccd9ca7f2a67a6ead30b3869bcd3d4d4563d47838f2f1e0e6f9119fc",
+      "bytes": 8737
+    }
+  ],
+  "checks_performed": [
+    {
+      "id": "candidate-hash-equality",
+      "result": "PASS",
+      "evidence": "All 56 candidate files match source-map.json byte lengths and SHA-256 values at handoff verification and final report write."
+    },
+    {
+      "id": "exact-committed-range",
+      "result": "PASS",
+      "evidence": "The 22 listed paths exactly match git diff --name-only from the recorded base through reviewed_code_commit; exactly three commits occur in that range. Committed operational records were read as commit snapshots, not live workflow results."
+    },
+    {
+      "id": "handoff-integrity",
+      "result": "PASS",
+      "evidence": "ZIP testzip returned no CRC error; its complete non-directory member map equals the six handoff files byte for byte. ZIP has the timestamped relative top-level directory."
+    },
+    {
+      "id": "disclosure-scan-and-inspection",
+      "result": "PASS",
+      "evidence": "Manually inspected new artifact/edition/work/passage records, affected Source/Catena payloads and focused committed changes; scanned all 56 candidate files and 3579 added patch lines for private roots, local addresses, credentials and session-handle fields. No real private values found. Two path hits in historical archive-code-review.json are explicitly synthetic defect reproductions, not actual user/machine data. Public source URLs and test example.test URLs contain no credentials, private hosts or sensitive query keys."
+    },
+    {
+      "id": "restricted-storage-and-projections",
+      "result": "PASS",
+      "evidence": "All ten new restricted artifacts have storage=restricted, indexable=false, no payload path, and artifact.toml as their sole directory file. Their public projection nodes carry metadata/rights-withheld states and no readable body fields. The declared 1357119 acquired bytes are not retained among candidates."
+    },
+    {
+      "id": "new-payload-inventory",
+      "result": "PASS",
+      "evidence": "The only new non-TOML source-library payload is Bede comment.txt: 501 bytes, 91 whitespace-delimited words, SHA-256 f0128f8767cea2f4ccf707e7abc8b4cdd2e95e03c0da1e5ea547a87b650e66f3. No newly retained raw PDF, HTML, scan, OCR bulk or acquisition bundle appears in the reviewed files."
+    },
+    {
+      "id": "bede-witness-and-representation",
+      "result": "PASS",
+      "evidence": "Independently rehashed the unchanged 4125831-byte parent scan to 65cb5fc576314617b124203ace81b5c5f0d5b984b371beb39d26b5fab91ee7fd. Extracted physical PDF page 65, rendered it with tools/pdf-review and visually read printed page 53. The complete tribulation and washed paragraphs under verse 14 match the candidate; verse number, catchwords, footnote marker/Acts footnote and line breaks are omitted exactly as declared; verse-15 prose, modern host wrappers and Google stamp are not transcribed. Artifact, passage and both Source/Catena text bodies agree."
+    },
+    {
+      "id": "bede-retention-basis-and-notice",
+      "result": "PASS",
+      "evidence": "The checked derivative identifies Marshall 1878, its exact already-retained parent, United States historical-publication-term basis, and the distinction from original Latin and host material. THIRD_PARTY.md changes only five separately checked transcriptions to separately checked transcriptions, removing a stale fixed count while preserving public-domain, attribution and project-license exclusions. This conclusion follows the recorded U.S. basis and checked historical witness; no new jurisdictional conclusion is made."
+    },
+    {
+      "id": "provider-boundary",
+      "result": "PASS",
+      "evidence": "Neither the exact committed path set nor the 56 candidate paths contains src/claude, pdf/claude or web/claude changes. The changed publication/classification/migration records describe the intended GPT All Saints addition; shared Source/Catena additions remain provider-neutral."
+    }
+  ],
+  "restricted_artifacts": [
+    {
+      "manifest": "src/sources/works/catholic-church/missale-romanum/editions/2011-english-secondary-proper-of-saints/artifacts/secondary-pdf-97d58326/artifact.toml",
+      "manifest_sha256": "a18e152c1c631db954887273740c22bfa4a3772ee4bf91df757db3dada1bfc27",
+      "artifact_id": "artifact.catholic-church.missale-romanum.2011-english-secondary-proper-of-saints.secondary-pdf-97d58326",
+      "acquisition_sha256": "97d58326b8d04dabc29ff17777174efa33c4f2f894ae68ac38823e0161700f26",
+      "acquisition_bytes_not_retained": 670505,
+      "storage": "restricted",
+      "indexable": false,
+      "payload_path_present": false,
+      "directory_contains_only_manifest": true
+    },
+    {
+      "manifest": "src/sources/works/dicastery-for-divine-worship-and-the-discipline-of-the-sacraments/calendarium-romanum-web-index/editions/2026-10-25-english-web/artifacts/official-html-4531f6b6/artifact.toml",
+      "manifest_sha256": "2166d553a25d02f01773cf12455fd41dafb025abe76f8c5d152509358c6f716d",
+      "artifact_id": "artifact.dicastery-for-divine-worship-and-the-discipline-of-the-sacraments.calendarium-romanum-web-index.2026-10-25-english-web.official-html-4531f6b6",
+      "acquisition_sha256": "4531f6b614a851a098f40fe6f43e2f0f6f4e31804f6d7a0b4b8493a499f7cdb6",
+      "acquisition_bytes_not_retained": 17288,
+      "storage": "restricted",
+      "indexable": false,
+      "payload_path_present": false,
+      "directory_contains_only_manifest": true
+    },
+    {
+      "manifest": "src/sources/works/john-paul-ii/angelus-2003-11-01/editions/2026-10-26-official-english-web/artifacts/official-html-f633a56f/artifact.toml",
+      "manifest_sha256": "c6ca34a93e84db7ba1dcc7c1ccd61be0f91d8a47d5c43689b6a95e06b21ec67c",
+      "artifact_id": "artifact.john-paul-ii.angelus-2003-11-01.2003-official-english-web-2026-10-26.official-html-f633a56f",
+      "acquisition_sha256": "f633a56fe09bc2e71d296512315bf4bbf5875afcfe4cf551fac63cec07e2fdaf",
+      "acquisition_bytes_not_retained": 35883,
+      "storage": "restricted",
+      "indexable": false,
+      "payload_path_present": false,
+      "directory_contains_only_manifest": true
+    },
+    {
+      "manifest": "src/sources/works/thomas-aquinas/super-matthaeum-reportatio-petri-de-andria/editions/1951-turin-corpusthomisticum-web-2026-10-26/artifacts/cma00-72d453c6/artifact.toml",
+      "manifest_sha256": "cc6a081521beeaa7058690c83955a513a94319738522a784fdbb42bd47537952",
+      "artifact_id": "artifact.thomas-aquinas.super-matthaeum-reportatio-petri-de-andria.1951-turin-corpusthomisticum-web-2026-10-26.cma00-72d453c6",
+      "acquisition_sha256": "72d453c6e337163fd3be8da2b24d27a9bb5cb59f30b62d3ef0a3969d18ed8d02",
+      "acquisition_bytes_not_retained": 11138,
+      "storage": "restricted",
+      "indexable": false,
+      "payload_path_present": false,
+      "directory_contains_only_manifest": true
+    },
+    {
+      "manifest": "src/sources/works/thomas-aquinas/super-matthaeum-reportatio-petri-de-andria/editions/1951-turin-corpusthomisticum-web-2026-10-26/artifacts/cma01-2e3882cd/artifact.toml",
+      "manifest_sha256": "a41f7eab56ea8a1ecb6858a306e5bcd66928e72e1f6c6f5a6c41dcf1635835be",
+      "artifact_id": "artifact.thomas-aquinas.super-matthaeum-reportatio-petri-de-andria.1951-turin-corpusthomisticum-web-2026-10-26.cma01-2e3882cd",
+      "acquisition_sha256": "2e3882cdb54e1614482b2b8815de6c64938cd2b53bd00f090ac21881ef98f4d0",
+      "acquisition_bytes_not_retained": 164242,
+      "storage": "restricted",
+      "indexable": false,
+      "payload_path_present": false,
+      "directory_contains_only_manifest": true
+    },
+    {
+      "manifest": "src/sources/works/thomas-aquinas/super-matthaeum-reportatio-petri-de-andria/editions/1951-turin-corpusthomisticum-web-2026-10-26/artifacts/cma0500-a73c7d72/artifact.toml",
+      "manifest_sha256": "6e398e849f30aef6ae0258f60d7c796f09df6539eb38204f90f684e2cce737e2",
+      "artifact_id": "artifact.thomas-aquinas.super-matthaeum-reportatio-petri-de-andria.1951-turin-corpusthomisticum-web-2026-10-26.cma0500-a73c7d72",
+      "acquisition_sha256": "a73c7d72c46ddf5c3cae2971e58df78daac10287a3ad9ecf4f20c2dc36d680a1",
+      "acquisition_bytes_not_retained": 44893,
+      "storage": "restricted",
+      "indexable": false,
+      "payload_path_present": false,
+      "directory_contains_only_manifest": true
+    },
+    {
+      "manifest": "src/sources/works/thomas-aquinas/super-matthaeum-reportatio-petri-de-andria/editions/1969-leonine-corpusthomisticum-web-2026-10-26/artifacts/cma0510-86c3a4eb/artifact.toml",
+      "manifest_sha256": "aaa74e1a61d3a21c65c4dec81fca65ab00d7d89739f44f674a52d3049c2e5946",
+      "artifact_id": "artifact.thomas-aquinas.super-matthaeum-reportatio-petri-de-andria.1969-leonine-corpusthomisticum-web-2026-10-26.cma0510-86c3a4eb",
+      "acquisition_sha256": "86c3a4ebebd1b4d12bd0f2fe55ea6f9be670f8aa0994dc9d1f86e3c36b343370",
+      "acquisition_bytes_not_retained": 51384,
+      "storage": "restricted",
+      "indexable": false,
+      "payload_path_present": false,
+      "directory_contains_only_manifest": true
+    },
+    {
+      "manifest": "src/sources/works/united-states-conference-of-catholic-bishops/daily-readings/editions/2026-10-25-page-for-2026-11-01/artifacts/usccb-html-ac8a8454/artifact.toml",
+      "manifest_sha256": "c2176aaaf81d44ee74e30dc0f1c16027a3e155e470922064f82f1ff263d9168b",
+      "artifact_id": "artifact.united-states-conference-of-catholic-bishops.daily-readings.2026-10-25-page-for-2026-11-01.usccb-html-ac8a8454",
+      "acquisition_sha256": "ac8a845451f39f71d81e6e149a395dff11b7b866ce946aa6fa9d7d4ac520b9c6",
+      "acquisition_bytes_not_retained": 58104,
+      "storage": "restricted",
+      "indexable": false,
+      "payload_path_present": false,
+      "directory_contains_only_manifest": true
+    },
+    {
+      "manifest": "src/sources/works/united-states-conference-of-catholic-bishops/divine-worship-newsletter-2021-02/editions/2021-february-official-pdf/artifacts/official-pdf-e06d7b65/artifact.toml",
+      "manifest_sha256": "2f59797c907e83ce5e5d60abf139b8f75a0c0777fe8a1ba38924352364c48687",
+      "artifact_id": "artifact.united-states-conference-of-catholic-bishops.divine-worship-newsletter-2021-02.2021-february-official-pdf.official-pdf-e06d7b65",
+      "acquisition_sha256": "e06d7b6583dfd651b33155359634d11bd2dd338b5b45d8b5a90163a31a40f638",
+      "acquisition_bytes_not_retained": 229588,
+      "storage": "restricted",
+      "indexable": false,
+      "payload_path_present": false,
+      "directory_contains_only_manifest": true
+    },
+    {
+      "manifest": "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/2026-10-26-english-web-psalms-introduction/artifacts/psalms-intro-0270804c/artifact.toml",
+      "manifest_sha256": "4a40a9300eaa43a376df18d3109767aa3a2d2d120878719996b64e7cfa06bf42",
+      "artifact_id": "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.2026-10-26-english-web-psalms-introduction.psalms-intro-0270804c",
+      "acquisition_sha256": "0270804c1d54a7689e72140f6673ce4387a6b9ee40e19b851a5ba6be8ced0205",
+      "acquisition_bytes_not_retained": 74094,
+      "storage": "restricted",
+      "indexable": false,
+      "payload_path_present": false,
+      "directory_contains_only_manifest": true
+    }
+  ],
+  "findings": [],
+  "limits": [
+    "The live authored General Calendar leaf and its evolving native review state/results were excluded and were not opened for this audit. Inventory references to that leaf are metadata, not content acceptance.",
+    "This report is not terminal native acceptance, publication/content/theological review, rendered-document review, final outgoing-object review, deployment approval or authorization to publish.",
+    "No future native archive or later candidate changes are covered. The archive utility code was inspected as a committed change; its future export contents remain subject to a separate final disclosure review.",
+    "The preliminary report binds the exact file hashes recorded here. Mutable global inventories can later drift while native production continues and require their owning refresh/check before final publication.",
+    "Restricted acquisitions were not fetched or opened by this reviewer. Their exact-body identity and read claims are recorded in manifests and the separate accepted research evidence; this review establishes their absence from the candidate distribution, not new independent collation of protected responses.",
+    "No code tests, source-library validation or final outgoing checks were rerun as part of this privacy lane. The handoff records its earlier source-library validation separately; no unperformed pass is claimed.",
+    "Privacy scanning is bounded by the reviewed snapshot, inspection and stated patterns; it is not a universal secret detector."
+  ],
+  "mutations": {
+    "tracked_files_written": [
+      "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/source-disclosure-review.json"
+    ],
+    "sealed_source_data_native_inventory_release_catalog_code_ledger_or_git_mutated": false,
+    "temporary_visual_evidence": "Created only under the exclusive ignored scratch lane; removed after the page check."
+  }
+}

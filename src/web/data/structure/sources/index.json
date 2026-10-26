@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 3839,
-  "editions": 1283,
-  "passages": 8773,
-  "readable": 3919,
-  "works": 1070
+  "artifacts": 3850,
+  "editions": 1291,
+  "passages": 8780,
+  "readable": 3920,
+  "works": 1074
  },
  "facets": {
   "authors": [
@@ -659,7 +659,7 @@
    },
    {
     "id": "Dicastery for Divine Worship and the Discipline of the Sacraments",
-    "works": 2
+    "works": 3
    },
    {
     "id": "Dicastery for the Doctrine of the Faith",
@@ -1259,7 +1259,7 @@
    },
    {
     "id": "John Paul II",
-    "works": 15
+    "works": 16
    },
    {
     "id": "John XXII",
@@ -2142,6 +2142,10 @@
     "works": 1
    },
    {
+    "id": "Thomas Aquinas; reportatio Petri de Andria",
+    "works": 1
+   },
+   {
     "id": "Thomas de Vio Cajetan",
     "works": 1
    },
@@ -2195,7 +2199,7 @@
    },
    {
     "id": "United States Conference of Catholic Bishops, Secretariat of Divine Worship",
-    "works": 2
+    "works": 3
    },
    {
     "id": "United States Congress",
@@ -2317,7 +2321,7 @@
   "categories": [
    {
     "id": "biblical-commentary",
-    "works": 57
+    "works": 58
    },
    {
     "id": "liturgical-book",
@@ -2332,11 +2336,11 @@
     "works": 27
    },
    {
-    "id": "judicial-opinion",
-    "works": 16
+    "id": "papal-address",
+    "works": 17
    },
    {
-    "id": "papal-address",
+    "id": "judicial-opinion",
     "works": 16
    },
    {
@@ -2805,6 +2809,10 @@
    },
    {
     "id": "official-periodical",
+    "works": 2
+   },
+   {
+    "id": "official-web-index",
     "works": 2
    },
    {
@@ -3628,6 +3636,10 @@
     "works": 1
    },
    {
+    "id": "official-periodical-issue",
+    "works": 1
+   },
+   {
     "id": "official-presentation",
     "works": 1
    },
@@ -3641,10 +3653,6 @@
    },
    {
     "id": "official-report",
-    "works": 1
-   },
-   {
-    "id": "official-web-index",
     "works": 1
    },
    {
@@ -4014,11 +4022,11 @@
   ],
   "languages": [
    {
-    "editions": 642,
+    "editions": 648,
     "id": "en"
    },
    {
-    "editions": 386,
+    "editions": 388,
     "id": "la"
    },
    {
@@ -4209,25 +4217,25 @@
     "label": "19th century"
    },
    {
-    "editions": 281,
+    "editions": 283,
     "id": "1900",
     "label": "20th century"
    },
    {
-    "editions": 675,
+    "editions": 681,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 2166,
+    "artifacts": 2167,
     "editions": 491,
     "id": "public-domain"
    },
    {
-    "artifacts": 878,
-    "editions": 438,
+    "artifacts": 888,
+    "editions": 446,
     "id": "restricted"
    },
    {
@@ -8925,8 +8933,8 @@
      "file": "1878-1878-marshall-parker.json",
      "id": "edition.bede.explanatio-apocalypsis.1878-marshall-parker",
      "language": "en",
-     "passages": 5,
-     "readable": 5,
+     "passages": 6,
+     "readable": 6,
      "rights": [
       "public-domain"
      ],
@@ -10891,7 +10899,7 @@
      "file": "2002-vatican-typica-tertia-2002.json",
      "id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002",
      "language": "la",
-     "passages": 41,
+     "passages": 42,
      "readable": 0,
      "rights": [
       "restricted"
@@ -10928,7 +10936,7 @@
      "file": "2010-2010-english-icel-antiphonary.json",
      "id": "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary",
      "language": "en",
-     "passages": 143,
+     "passages": 144,
      "readable": 0,
      "rights": [
       "restricted"
@@ -10948,6 +10956,19 @@
       "unresolved"
      ],
      "title": "The Roman Missal, third edition — English excerpts published by the Liturgy Office of the Bishops' Conference of England and Wales",
+     "year": 2011
+    },
+    {
+     "date": "2011",
+     "file": "2011-2011-english-secondary-proper-of-saints.json",
+     "id": "edition.catholic-church.missale-romanum.2011-english-secondary-proper-of-saints",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Roman Missal, Proper of Saints, unfinished secondary English PDF",
      "year": 2011
     },
     {
@@ -11042,7 +11063,7 @@
      "file": "1981-latin-editio-typica-altera-1981.json",
      "id": "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981",
      "language": "la",
-     "passages": 33,
+     "passages": 34,
      "readable": 0,
      "rights": [
       "restricted"
@@ -14639,6 +14660,34 @@
     "en"
    ],
    "title": "Deutsche Nationalbibliothek liturgical-book catalogue records"
+  },
+  {
+   "alternate_titles": [
+    "Calendarium Romanum variations index"
+   ],
+   "author": "Dicastery for Divine Worship and the Discipline of the Sacraments",
+   "category": "official-web-index",
+   "directory": "editions/dicastery-for-divine-worship-and-the-discipline-of-the-sacraments/calendarium-romanum-web-index/",
+   "editions": [
+    {
+     "date": "2026-10-25",
+     "file": "2026-2026-10-25-english-web.json",
+     "id": "edition.dicastery-for-divine-worship-and-the-discipline-of-the-sacraments.calendarium-romanum-web-index.2026-10-25-english-web",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Calendarium Romanum index, English web state 25 October 2026",
+     "year": 2026
+    }
+   ],
+   "id": "work.dicastery-for-divine-worship-and-the-discipline-of-the-sacraments.calendarium-romanum-web-index",
+   "languages": [
+    "en"
+   ],
+   "title": "Calendarium Romanum: liturgical-book and variations web index"
   },
   {
    "alternate_titles": [],
@@ -19979,7 +20028,7 @@
      "file": "2026-2010-chants-web-2026-08-21.json",
      "id": "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21",
      "language": "en",
-     "passages": 1,
+     "passages": 2,
      "readable": 0,
      "rights": [
       "restricted",
@@ -22170,6 +22219,34 @@
     "en"
    ],
    "title": "Ad tuendam fidem"
+  },
+  {
+   "alternate_titles": [
+    "Angelus for All Saints 2003"
+   ],
+   "author": "John Paul II",
+   "category": "papal-address",
+   "directory": "editions/john-paul-ii/angelus-2003-11-01/",
+   "editions": [
+    {
+     "date": "2026-10-26",
+     "file": "2026-2026-10-26-official-english-web.json",
+     "id": "edition.john-paul-ii.angelus-2003-11-01.2003-official-english-web-2026-10-26",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Angelus, 1 November 2003, official English web presentation",
+     "year": 2026
+    }
+   ],
+   "id": "work.john-paul-ii.angelus-2003-11-01",
+   "languages": [
+    "it"
+   ],
+   "title": "Angelus, 1 November 2003, Solemnity of All Saints"
   },
   {
    "alternate_titles": [],
@@ -34716,6 +34793,47 @@
   },
   {
    "alternate_titles": [
+    "Super Matthaeum: reportatio Petri de Andria"
+   ],
+   "author": "Thomas Aquinas; reportatio Petri de Andria",
+   "category": "biblical-commentary",
+   "directory": "editions/thomas-aquinas/super-matthaeum-reportatio-petri-de-andria/",
+   "editions": [
+    {
+     "date": "1951",
+     "file": "1951-1951-turin-corpusthomisticum-web-2026-10-26.json",
+     "id": "edition.thomas-aquinas.super-matthaeum-reportatio-petri-de-andria.1951-turin-corpusthomisticum-web-2026-10-26",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Reportatio Petri de Andria: Turin 1951 text, Corpus Thomisticum revision",
+     "year": 1951
+    },
+    {
+     "date": "1969",
+     "file": "1969-1969-leonine-corpusthomisticum-web-2026-10-26.json",
+     "id": "edition.thomas-aquinas.super-matthaeum-reportatio-petri-de-andria.1969-leonine-corpusthomisticum-web-2026-10-26",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Reportatio Petri de Andria: Leonine 1969 text, Corpus Thomisticum revision",
+     "year": 1969
+    }
+   ],
+   "id": "work.thomas-aquinas.super-matthaeum-reportatio-petri-de-andria",
+   "languages": [
+    "la"
+   ],
+   "title": "Super Evangelium S. Matthaei lectura: reportatio Petri de Andria"
+  },
+  {
+   "alternate_titles": [
     "Commentary on the Summa theologiae"
    ],
    "author": "Thomas de Vio Cajetan",
@@ -35339,6 +35457,19 @@
      ],
      "title": "Daily Readings for 18 October 2026, Twenty-ninth Sunday in Ordinary Time, web state of 16 October 2026",
      "year": 2026
+    },
+    {
+     "date": "2026-10-25",
+     "file": "2026-2026-10-25-page-for-2026-11-01.json",
+     "id": "edition.united-states-conference-of-catholic-bishops.daily-readings.2026-10-25-page-for-2026-11-01",
+     "language": "en",
+     "passages": 1,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Daily Readings for 1 November 2026, Solemnity of All Saints, web state 25 October 2026",
+     "year": 2026
     }
    ],
    "id": "work.united-states-conference-of-catholic-bishops.daily-readings",
@@ -35355,6 +35486,19 @@
    "category": "bible-translation",
    "directory": "editions/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/",
    "editions": [
+    {
+     "date": "2026-10-26",
+     "file": "2026-2026-10-26-english-web-psalms-introduction.json",
+     "id": "edition.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.2026-10-26-english-web-psalms-introduction",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Psalms introduction, USCCB web state 26 October 2026",
+     "year": 2026
+    },
     {
      "date": "2026-07-28",
      "file": "2026-english-usccb-web-2026-07-28.json",
@@ -35523,6 +35667,34 @@
   },
   {
    "alternate_titles": [
+    "Divine Worship Newsletter February 2021"
+   ],
+   "author": "United States Conference of Catholic Bishops, Secretariat of Divine Worship",
+   "category": "official-periodical-issue",
+   "directory": "editions/united-states-conference-of-catholic-bishops/divine-worship-newsletter-2021-02/",
+   "editions": [
+    {
+     "date": "2021",
+     "file": "2021-2021-february-official-pdf.json",
+     "id": "edition.united-states-conference-of-catholic-bishops.divine-worship-newsletter-2021-02.2021-february-official-pdf",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Divine Worship Newsletter, volume LVII, February 2021",
+     "year": 2021
+    }
+   ],
+   "id": "work.united-states-conference-of-catholic-bishops.divine-worship-newsletter-2021-02",
+   "languages": [
+    "en"
+   ],
+   "title": "Committee on Divine Worship Newsletter, February 2021"
+  },
+  {
+   "alternate_titles": [
     "Exorcism FAQ"
    ],
    "author": "United States Conference of Catholic Bishops, Secretariat of Divine Worship",
@@ -35575,7 +35747,7 @@
      "file": "2026-2026.json",
      "id": "edition.united-states-conference-of-catholic-bishops.liturgical-calendar-dioceses-united-states.2026",
      "language": "en",
-     "passages": 10,
+     "passages": 11,
      "readable": 0,
      "rights": [
       "restricted"

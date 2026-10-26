@@ -9,14 +9,14 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "identity-and-workflow"
   criterion = "PC-R07-ABC and its dated United States occurrence are verified; explicit registry-backed workflow and chronology support preserves existing target and family guards and passes focused regression and independent code review."
-  status = "open"
-  evidence = ["workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/RECORD.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/RECORD.md", "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/code-review-recheck.json", "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/inventory-code-review.json"]
 
   [[deliverables.requirements]]
   id = "native-acceptance"
   criterion = "A real version-15 proper-study run reaches ACCEPTED with complete research and reusable-source registration, distinct source-grounded interpretations, all required independent cold reviews, and a durable native result archive."
-  status = "open"
-  evidence = ["workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/RECORD.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/RECORD.md", "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/native-acceptance.json", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/record.md"]
 
   [[deliverables.requirements]]
   id = "reviewed-publications"

@@ -1,0 +1,13 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/research/artifacts.json",
+  "disposition": "PASS",
+  "iteration": 1,
+  "notes": [
+    "Detailed exact hashes and diagnostic evidence: .scratch/pc-r07-production/build-artifacts-0001/build-verification.json",
+    "Production audit: src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/research/production-review.md",
+    "Bounded raster manifest: build/tpt-runs/0af32a5cd3635b06/artifacts/build-artifacts-1/rasters/review-run.json",
+    "The known-incomplete broad source aggregate was not repeated; native artifact gate and fresh visual review remain subsequent stages."
+  ],
+  "stage": "build-artifacts",
+  "summary": "Built all three prescribed Make targets to settled 20/10/3-page PDFs; verified logs, extracted text, PDF structure, embedded fonts, metadata, components and physical concise-page markers. Recorded the exact native snapshot and 33 bounded page rasters; no render-source edit or independent visual acceptance is claimed."
+}

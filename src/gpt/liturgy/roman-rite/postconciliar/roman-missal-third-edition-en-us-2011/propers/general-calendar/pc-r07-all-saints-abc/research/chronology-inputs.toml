@@ -1,0 +1,84 @@
+schema = 1
+record_type = "proper-chronology-inputs"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"
+calendar = "postconciliar"
+formula = "PC-R07-ABC"
+shared_owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/shared/formularies/pc-r07-all-saints/propers/verified.md"
+
+[[elements]]
+key = "entrance-antiphon"
+name = "Entrance antiphon"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/shared/formularies/pc-r07-all-saints/propers/verified.md"
+citations = []
+non_scriptural_reason = "Composed Missal text without an appointed biblical citation; theological echoes and compiler chant directions do not create appointments."
+
+[[elements]]
+key = "collect"
+name = "Collect"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/shared/formularies/pc-r07-all-saints/propers/verified.md"
+citations = []
+non_scriptural_reason = "Composed Missal text without an appointed biblical citation; theological echoes and compiler chant directions do not create appointments."
+
+[[elements]]
+key = "first-reading"
+name = "First Reading"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/propers/verified.md"
+citations = [{ ref = "Revelation 7:2-4,9-14", citation = "Revelation 7:2-4,9-14", system = "vulgate", kind = "appointed" }]
+
+[[elements]]
+key = "responsorial-psalm"
+name = "Responsorial Psalm"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/propers/verified.md"
+citations = [{ ref = "Psalm 24:1bc-2,3-4ab,5-6", citation = "Psalm 24:1bc-2,3-4ab,5-6", system = "hebrew", kind = "appointed" }, { ref = "Cf. Psalm 24:6", citation = "Psalm 24:6", system = "hebrew", kind = "adaptation" }]
+
+[[elements]]
+key = "second-reading"
+name = "Second Reading"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/propers/verified.md"
+citations = [{ ref = "1 John 3:1-3", citation = "1 John 3:1-3", system = "vulgate", kind = "appointed" }]
+
+[[elements]]
+key = "gospel-acclamation"
+name = "Gospel acclamation"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/propers/verified.md"
+citations = [{ ref = "Matthew 11:28", citation = "Matthew 11:28", system = "vulgate", kind = "appointed" }]
+
+[[elements]]
+key = "gospel"
+name = "Gospel"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/propers/verified.md"
+citations = [{ ref = "Matthew 5:1-12a", citation = "Matthew 5:1-12a", system = "vulgate", kind = "appointed" }]
+
+[[elements]]
+key = "prayer-over-offerings"
+name = "Prayer over the Offerings"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/shared/formularies/pc-r07-all-saints/propers/verified.md"
+citations = []
+non_scriptural_reason = "Composed Missal text without an appointed biblical citation; theological echoes and compiler chant directions do not create appointments."
+
+[[elements]]
+key = "proper-preface"
+name = "Proper Preface"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/shared/formularies/pc-r07-all-saints/propers/verified.md"
+citations = []
+non_scriptural_reason = "Composed Missal text without an appointed biblical citation; theological echoes and compiler chant directions do not create appointments."
+
+[[elements]]
+key = "communion-antiphon"
+name = "Communion antiphon"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/shared/formularies/pc-r07-all-saints/propers/verified.md"
+citations = [{ ref = "Matthew 5:8-10", citation = "Matthew 5:8-10", system = "vulgate", kind = "appointed" }]
+
+[[elements]]
+key = "prayer-after-communion"
+name = "Prayer after Communion"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/shared/formularies/pc-r07-all-saints/propers/verified.md"
+citations = []
+non_scriptural_reason = "Composed Missal text without an appointed biblical citation; theological echoes and compiler chant directions do not create appointments."
+
+[[elements]]
+key = "solemn-blessing"
+name = "Optional solemn blessing"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/shared/formularies/pc-r07-all-saints/propers/verified.md"
+citations = []
+non_scriptural_reason = "Composed Missal text without an appointed biblical citation; theological echoes and compiler chant directions do not create appointments."

@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-10-25"
+audited_on = "2026-10-26"
 discovery_rule = "src/gpt/**/main.tex"
-publication_count = 151
-source_surface_file_count = 2809
-snapshot = "sha256:2c7d11c1e9b4e56128a5d5d158a01cf818000f11e3bfc5b30d8e6ce30e05ed7a"
+publication_count = 152
+source_surface_file_count = 2885
+snapshot = "sha256:53f944856094088e095d16436a013254886c4eaa3425bb3249b252acb5a3645d"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -55,7 +55,7 @@ roots = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"]
 [[owners]]
 id = "owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"
 kind = "edition-proper-owner"
-roots = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/shared", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared"]
+roots = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/shared", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/shared"]
 
 [[owners]]
 id = "owner.theology.mariology.shared"
@@ -1581,6 +1581,20 @@ source_categories = ["canon-law", "finding-aid", "historical-primary", "institut
 [[documents.record_owners]]
 id = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"
 relationship = "local"
+
+[[documents]]
+id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"
+main = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/main.tex"
+publication_kind = "proper-instance"
+source_mode = "mixed"
+inventory_state = "sources-categorized"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"
+relationship = "local"
+[[documents.record_owners]]
+id = "owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"
+relationship = "source-owner"
 
 [[documents]]
 id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s26-most-holy-trinity-year-a"
@@ -14338,20 +14352,476 @@ kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/blocking-findings-v1.toml"
+sha256 = "24f7631a862a1fb757f60c050b91d281325b991d770e8092d01f7e4d865e9e88"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/artifact-gates-0000.txt"
+sha256 = "803f664cbb8236ec87fa362de05e648e975bbb7bb34b6cb84deef99cbcdeba24"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/artifact-gates-0001.txt"
+sha256 = "ef074a1befc5e8dca705ed0ec08af01575f487cdd2bbca9160cc151a6674675e"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/author-study-0000.txt"
+sha256 = "7be39ddd8c206e3210efa6a723057de702cffbb8adb88b52823c1f794b3cc2b9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/author-study-0001.txt"
+sha256 = "4074cfd74e547e29f3e19fe0b06b719c145abe38fa226972c8c790d108b82781"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/author-study-0002.txt"
+sha256 = "69fdd34be8c96780296479277334b31c9ded9a3add29c33aa7551c5c24b9090f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/build-artifacts-0000.txt"
+sha256 = "e2a4fe3805410a726ae59c6d59140d3f370a1bca963f9fa422612a6e00112af7"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/build-artifacts-0001.txt"
+sha256 = "144e3dcda2a82de4c1d32f329df2076faced0e9b38189f2c77bf41806f57f711"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/derive-homily-0000.txt"
+sha256 = "1b44c2953c2ddf03f09bb5c65c8d7966e09ddac91de0c0b92ebb76c90eeaa5f3"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/derive-homily-0001.txt"
+sha256 = "b6f20859f5396b84e181de989d364b88d18017b76feb6b29979f359f6e9e955c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/derive-synthesis-0000.txt"
+sha256 = "0122031e36fe959cc47ed2a5aff2798d7ea96506b17b6a0a1d40080576760fb8"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/derive-synthesis-0001.txt"
+sha256 = "252d6dc9cb202427e1873d1e22d23815019460ad4d19b30c6570677df5df1dc8"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/generate-web-0000.txt"
+sha256 = "099a4fd174304bf9183ebe34433d7432a960c99c2865a3086027ca148e6ea7dc"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/homily-preflight-0000.txt"
+sha256 = "2aeb6a0094eb87efee642358232b21ed2e33704118db5371182be4721906bbc1"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/homily-preflight-0001.txt"
+sha256 = "477ae5ac87252c256bb790c47267db919b2ee4f44e9fd4b5e11fa4387ea5b058"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/homily-review-0000.txt"
+sha256 = "dd2d45c96fe1bac7e2b1a9d131611ddaa717da19f0bb6e07e2343b57112fbdf0"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/homily-review-0001.txt"
+sha256 = "995037ca077ece8c0196c4bc07cd0abf057a64d187f2a80598814c0691671bbd"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/install-publication-0000.txt"
+sha256 = "16de7194134161c00fee712d0fcd933d2ab06c6ac9aee8fc3ec5cd1c0323de75"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/publication-gates-0000.txt"
+sha256 = "c50e2d54fe3e5344cb6cebce14d04cf2bc712b7114d1f8e9e610b5eb2e24bdfd"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/research-0000.txt"
+sha256 = "565c93a8e5b98c54a81b9b887690da217e217ba9ae9caaecca1b7855f460e46b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/research-preflight-0000.txt"
+sha256 = "19936956f93ce108ba761c21ed7497595c0fcd80179058bf2c19daf6a8662452"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/research-review-0000.txt"
+sha256 = "069b31b3159b2872b6512c65ec0300842a921494b9985f50e6d39157c54bb4a1"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/resolve-context-0000.txt"
+sha256 = "6bd6e88fef26d4c062af4add1fc54ba5fc2656ac6e9ef5c0aca2580b8ba9d782"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/scope-gate-0000.txt"
+sha256 = "c69e1f8c594c6513ef8a8ef5f83d368511fc663e13faa8907ee36576a42d1e52"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/source-registration-0000.txt"
+sha256 = "05e98e022891600b71b0871426040b1c89e0de02c8cbe0e3e68ddcc108a7d14d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/study-preflight-0000.txt"
+sha256 = "d9bfbf3c1ef2c39bb5130df53e3aebca5735bb8284dedfcc16925a23410c9d54"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/study-preflight-0001.txt"
+sha256 = "0b39cfe0be8e2916cebec291efaed653735761cbff9e6f4c7fb524c63659f171"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/study-preflight-0002.txt"
+sha256 = "cffac2232e1cbd6fceed513e999476f60d939ff4442ad3c6e3baff8825302e28"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/study-review-0000.txt"
+sha256 = "6e87718fceb471c9a156585deb5d13c1bee1c4645b2b427c6793d394e8832676"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/study-review-0001.txt"
+sha256 = "7a1b57a0d384ed01eca522e22253712757f782e9f2a3e4f2db17975e1996ea36"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/study-review-0002.txt"
+sha256 = "e84a1bee45d90b482d198ae53bcdcb7d519a9ab84d8a2e0b428513897505fae0"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/synthesis-preflight-0000.txt"
+sha256 = "4353169a502770d5ca19169fb8dd6c4c80c3c2bc8e05656f6069538d50e00681"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/synthesis-preflight-0001.txt"
+sha256 = "5a31261c21cad88e9221bba2c2ee7350ae7b110d48583e8c96a75d3269bef3f9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/synthesis-review-0000.txt"
+sha256 = "02225026d3c3722a113b4e4c83e3cd0e240beccf1eee27a74997e8b69ec3d36d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/synthesis-review-0001.txt"
+sha256 = "e2deb71550d3da3f56cff888a1240bed6d45a59efc6daf542d642c1aa255369f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/visual-review-0000.txt"
+sha256 = "54b999c6d23ee7c51293020c09e0d91bd0cc859a47bb2b0d71894268acc83202"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/visual-review-0001.txt"
+sha256 = "9cf389676fcaa5b8fade2fc5b0684f3dbc75a6d3bc2e96353d1c7ec20dfd9e4c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/packets/web-review-0000.txt"
+sha256 = "3caa0c29dfd74cc741d63bbbd45e0ac254fa09bc344dd29b939978ff44cbedfb"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06/record.md"
+sha256 = "631121b4f82b0659b0cda245202cabadb4e888d35a13bbe02af05848e09ea3bf"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/homily.tex"
+sha256 = "f0b192fd7603d750c1e1acf2d25100c80d4b4c8131c218316ede03788a603104"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/instance/manifest.md"
+sha256 = "9ae6055704d1fe2aa3949d5e91e816673c113bc775b3a39b1bc145c4290b6630"
+kind = "instance-manifest"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/main.tex"
+sha256 = "0b33160829f743ced70c148911b960c3e3778289ce9400fcb20f5a8897756952"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/proper-components.toml"
+sha256 = "94e8237f76df7cda28b656f0b59d02bd5f462c84fbe8ceaca3fb4fcc60969512"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/propers/verified.md"
+sha256 = "574617c10630e751cb43a297cfec38b5c622631c3dd5ca4b8092d3f70c5441b5"
+kind = "proper-verification"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/research/chronology-annotations.tex"
+sha256 = "0ae88ac20aa9f69b1e61a874b46bbe7cd55137f24df5433b22b174637de581d8"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/research/chronology-inputs.toml"
+sha256 = "f30b32a467cb7d56012eddb3291e509def6fa3b786ee844bead09d3b8452e975"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/research/chronology.toml"
+sha256 = "9c6f5536a9398139ffabbe00ea67f3ccace4c9d68cc8f511ca393986dbfead8d"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/research/context.md"
+sha256 = "234b0bfd0205b22a28e40a1749cbca1540b00bdd84801965b274e512a8afc21a"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/research/interpretations.md"
+sha256 = "3cfa62dd9df18429e736362af9d983c0cd7d7da833919d9585867ccb49acb747"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/research/production-review.md"
+sha256 = "9b3be184d8b2af712689129dcab5b1935fd310d17781ef76518c7e4a6b992672"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/research/review-dependencies.toml"
+sha256 = "335bc18d39058d3388bb02f70aa6eaa3b1adfc112885d20e11e068b0e8f244de"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/research/scope.md"
+sha256 = "2f946ead253f594652ee03dac2ef8a1e48f634716d388905293ef437956b5eae"
+kind = "research-scope"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/research/source-bindings.toml"
+sha256 = "656b2c315438766dbfa4724e78ee0974b4e72be9e452bb6997c07ee95b1e6740"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/research/source-dispositions.toml"
+sha256 = "1c954f791fba339b58c6b59702c6afe0769352ae367ad74c608f55a219cea5a0"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/research/source-plan.md"
+sha256 = "a92a783e5ee82084b2862b8a8c3fe5f422c84acfaf976ab94a270462af1c1f28"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/research/source-registration.md"
+sha256 = "2ea7905cd4d411c3c371b5951a832481229311f29e0946239fe4ea95760c23df"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/00-opening.tex"
+sha256 = "1182f7b60b6fde5e97fc5414ddf6f61e4565dea5d10934cb13446018c5e05e08"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/01-map.tex"
+sha256 = "b5e1ff1fa885573665a5ea638ab617f14b90adf9c838c5adf1c432332e5cf07f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/10-treatment.tex"
+sha256 = "6aa160bb9ed71619f6c1e5c588fc673e859187b4fe7496fbd00b0d3b150e98f7"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/20-texts.tex"
+sha256 = "da637b373696f8b49f40dea228fffbc514cdb406f1945d2979acdd9496fcd4ed"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/30-desire.tex"
+sha256 = "799f4b97444fff5d230eb826aac70b18aa26748f4db3b2f5a3b026221dd9e221"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/40-multitude.tex"
+sha256 = "a6c2c84b25ed8070b80e593d1d113ecd4f188522bdacedf65d2e8e72c53ead2d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/50-comparison.tex"
+sha256 = "02240c47f37002790312f2e15df8daee8c5308fcbab0bd39c18be2563e3c535f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/60-history.tex"
+sha256 = "abf8255759de1d208835f00b02f14a6fc95692c1c8c38028fac08f31543202b3"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/70-apparatus.tex"
+sha256 = "e41c72940d096c7ab4526faffe9b48575118bcd5ab04e6e27c3d8ca0494051ec"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/homily-10-spoken.tex"
+sha256 = "7fdf2ae2502eeb8c0c36c6a9d2e539427187e746b666f03c1f40c393e100ffc3"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/homily-90-notes.tex"
+sha256 = "2fd2b383820af4160f6c6812a5660c42dadb58a37395d2091ccbf3615af6ec88"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/synthesis-01-inventory.tex"
+sha256 = "175a728e9d50db1e958e28119535c35630fc95d79520805d666cc1450bda63b4"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/synthesis-02-overview.tex"
+sha256 = "3cee5992b8e4ef425d2d974211396f99dfa4dc55550002996913dd2100e9a998"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/synthesis-03-chronology.tex"
+sha256 = "f4763ffceead02e475d27cf0686823d3e55299b4efade66d5152e983c709a006"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/synthesis-04-themes.tex"
+sha256 = "6a138632767aaa078b9c1a35b8914d3c0f515723d7bd495cc2a111cb3d1b732e"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/synthesis-05-commentary.tex"
+sha256 = "a5af0c930251ce4bbfd4c5c61d8f26c8cc338fe911990d218b14a269b44e6286"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/synthesis-90-apparatus.tex"
+sha256 = "4f866fca20f921ee6e2eaee267073e63eb6ae4761ed95de7121cd884b5814d54"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/synthesis.tex"
+sha256 = "9778790d8754cb98ef80f8cff81f8598d2759ae99529c963c3ab5f3c1e924bc9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/web-edition.toml"
+sha256 = "4205ca3ce31c0b2887c79291d276c927ed3771d066b4cd10e60aebb0d0b3e85b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/shared/formularies/pc-r07-all-saints/propers/verified.md"
+sha256 = "3025d42355a3162576f155c12ed1d0eadca32ec592546ef8ca6bf7c7066e5630"
+kind = "proper-verification"
+owners = ["owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/README.md"
-sha256 = "454b7262c8e30f246a46629e6da476242a7166e6cb38a2370eeda52c72c5554a"
+sha256 = "4e2d92326dece103e1475e70ffb5e447815f9b12d697926e48a54850a1641208"
 kind = "edition-registry"
 owners = ["owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/formula-dispositions.md"
-sha256 = "281e5dd2484b732176f3d4136a070527dbbdb6abbcfc0adfda49e08cd90d206d"
+sha256 = "de58754f5a8ab61dffa3f4a6a479c843fe3763b6a5b37099282960de71d93989"
 kind = "edition-registry"
 owners = ["owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/occurrences-2026.md"
-sha256 = "dce29f74b2d33730123db8a5c93a03978fc14b0e180dcd5047a4a232b51a54f2"
+sha256 = "c52b121830b3463606e93896523390cb005f991c26700ffbde4ff287c86820b7"
 kind = "edition-registry"
 owners = ["owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"]
 

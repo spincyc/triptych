@@ -1,0 +1,20 @@
+{
+  "bootstrap_version": 1,
+  "instructions": "EXECUTION POLICY: PROGRAM GATE\n\nThis stage is run by tpt. Do not start any subagent for it.\n\n1. This stage is a program gate. No AI worker runs it.\n2. Run: tools/tpt proper-study liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc advance 0af32a5cd3635b06 --run-gate\n3. Follow the next packet tpt emits.\n4. Stop only at ACCEPTED or BLOCKED.",
+  "iteration": 0,
+  "normalized_args": {
+    "audience": "adult parish assembly",
+    "date": "2026-11-01",
+    "proper": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc",
+    "provider": "gpt",
+    "research_handoff": ".scratch/pc-r07-production/research-handoff.md"
+  },
+  "packet_hash": "c69e1f8c594c6513ef8a8ef5f83d368511fc663e13faa8907ee36576a42d1e52",
+  "packet_path": "build/tpt-runs/0af32a5cd3635b06/packets/scope-gate-0000.txt",
+  "repo_commit": "e1ed2ba5d4cdf3a5199f3bcf78a0d2b3069683bb",
+  "run_id": "0af32a5cd3635b06",
+  "stage": "scope-gate",
+  "workflow_digest": "4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83",
+  "workflow_id": "proper-study",
+  "workflow_version": 15
+}
