@@ -38,8 +38,14 @@ same-edition ownership. A cold code review found a mixed All Souls expansion
 acceptance gap; the correction and full-dossier regressions pass 85 tests,
 and focused independent re-review finds no remaining code blocker. The
 preproduction deployment-source baseline also passes. The official-source
-dossier and pinned isolated build runtime are ready; native production,
-publication acceptance and deployment remain outstanding.
+dossier and pinned isolated build runtime are ready. Native version-15 run
+`0af32a5cd3635b06` is seeded at `e1ed2ba5d`, passes scope, and is resolving
+context. A parallel publication-path audit identifies an omitted
+general-calendar shared-owner root and PC-R mixed-owner edge in source-inventory;
+its correction passes 57 regressions and independent cold review. The corrected
+tool preserves existing provider inventories and requires the normal reviewed
+refresh before registration is complete. Native acceptance, publication
+acceptance and deployment remain outstanding.
 
 ## GPT Last Things and next Sunday propers, 2026-10-25
 

@@ -68,10 +68,34 @@ the evidence independently. Direct authenticated 2008 Latin altar-book pages and
 a current authoritative U.S. exemplar for all English orations remain source
 limitations to resolve or explicitly qualify through the governing profile.
 
+## Native production
+
+Run `0af32a5cd3635b06` is seeded from
+`e1ed2ba5d4cdf3a5199f3bcf78a0d2b3069683bb`, `proper-study` version 15,
+digest `4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83`.
+Its scope gate passes and a fresh author is resolving context. `CYCLES.md`
+owns the factual stage receipts. The preliminary source handoff is a lead
+package; its findings confer no native research acceptance.
+
+A parallel later-path audit finds a further implementation gap before source
+registration: source-inventory omits general-calendar shared owners and
+classifies PC-R leaves without their mixed owner edge. The focused correction
+recognizes the exact general-calendar owner root, classifies canonical PC-R
+leaves as proper instances, and permits only the additive root migration during
+refresh. Providers without that tree remain valid. All 57 inventory and
+source-family regressions pass; independent `inventory-code-review.json`
+verifies the snapshot and ZIP, reruns those tests and accepts 22 further probe
+commands without a blocking defect. Existing incorrectly classified PC-R rows
+are outside this migration; none exists for the new target. The handoff is
+`build/agent-handoffs/20261026T041147Z-pc-r07-inventory/`, with verified sibling
+ZIP. No shared inventory or source payload was changed by the code lane or its
+review. Native source registration must perform its own reviewed refresh.
+
 ## Completion evidence
 
 Official dated occurrence verification, native workflow acceptance, source
 registration and dispositions, three independently reviewed PDFs, the canonical
 web edition, exact artifact hashes, source and publication gates, final cold
 review, outgoing-object disclosure review, main publication and live deployment
-verification remain open. No completed review or publication is claimed here.
+verification remain open. No native publication acceptance or deployment is
+claimed here.

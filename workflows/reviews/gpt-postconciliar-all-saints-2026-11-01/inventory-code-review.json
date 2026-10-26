@@ -1,0 +1,239 @@
+{
+  "review_schema": 1,
+  "review_type": "independent cold code review",
+  "verdict": "approve",
+  "summary": "No blocking defects found in the pinned two-file change. Canonical same-edition PC-R leaves and shared source files join the existing edition owner; the exact prior three-root definition migrates while unrelated owner alterations remain rejected; a provider without the replacement tree remains valid.",
+  "base_commit": "e1ed2ba5d4cdf3a5199f3bcf78a0d2b3069683bb",
+  "branch": "feature/propers/codex",
+  "reviewed_state": "Two uncommitted files, isolated at handoff hashes; unrelated live production excluded.",
+  "handoff": {
+    "directory": "build/agent-handoffs/20261026T041147Z-pc-r07-inventory",
+    "zip": "build/agent-handoffs/20261026T041147Z-pc-r07-inventory.zip",
+    "zip_sha256": "cca315552950e48f084b532f00c38183f91dfec60f99345e43ce276286763139",
+    "verification": "ZIP CRC passed; all six archive file entries exactly match the handoff directory bytes; both reviewed snapshot hashes match file-hashes.json and the final live recheck."
+  },
+  "reviewed_sha256": {
+    "tools/source-inventory": "13e72c716e96f11c624e4e863dde4d7795eb1b4c918ce79ab2be285a3f7adf36",
+    "tools/tests/test_source_inventory_postconciliar.py": "2ed5c09e668ace12e75e73a22492d5d3003f4aa436246e8aeb7c2c7d9e5c4052"
+  },
+  "findings": [],
+  "assessed_contracts": [
+    {
+      "file": "tools/source-inventory",
+      "lines": [
+        170,
+        258,
+        446,
+        458
+      ],
+      "result": "The same US-2011 edition's direct general-calendar/pc-rNN-* leaves have local plus source-owner edges, source_mode=mixed and publication_kind=proper-instance. General-calendar/shared is owned by the existing provider-local edition owner. Prefix lookalikes, another edition, nested leaves and cross-provider files do not acquire the new edge/owner."
+    },
+    {
+      "file": "tools/source-inventory",
+      "lines": [
+        697,
+        706,
+        918,
+        940
+      ],
+      "result": "Only the additive general-calendar/shared root is optional when its directory is absent. Refresh accepts the full definition or exactly the previous ordered three-root definition for POSTCONCILIAR_OWNER. Wrong kind, removed old roots, reordered roots, extra roots and cross-provider roots are rejected even after snapshot recomputation. Strict check still rejects a stale pre-refresh inventory."
+    },
+    {
+      "file": "tools/tests/test_source_inventory_postconciliar.py",
+      "lines": [
+        65,
+        86,
+        111,
+        130,
+        151
+      ],
+      "result": "Five focused tests cover both providers, owner/file classification, absent-tree compatibility, legacy-root refresh, unowned lookalikes, protected refusal, and preserved temporal/ritual classifications. Independent probes additionally used inventories emitted by the actual base-commit tool."
+    }
+  ],
+  "command_notation": "${REPO} is the repository root; ${SNAPSHOT} is ${REPO}/.scratch/pc-r-inventory-cold-review/snapshot; ${FIXTURE} is the exclusive temporary fixture root. Absolute repository and random fixture paths are normalized only for portable reporting. All fixture mutations occurred beneath the assigned scratch directory. Independent probe commands all used cwd=${SNAPSHOT} and PROVIDER=gpt.",
+  "checks": [
+    {
+      "cwd": "${REPO}",
+      "command": "sha256sum tools/source-inventory tools/tests/test_source_inventory_postconciliar.py build/agent-handoffs/20261026T041147Z-pc-r07-inventory.zip",
+      "exit_status": 0,
+      "result": "Hashes above, confirmed again after review."
+    },
+    {
+      "cwd": "${REPO}",
+      "command": "python3 -m zipfile -t build/agent-handoffs/20261026T041147Z-pc-r07-inventory.zip",
+      "exit_status": 0,
+      "result": "Done testing."
+    },
+    {
+      "cwd": "${SNAPSHOT}",
+      "command": "TMPDIR=${REPO}/.scratch/pc-r-inventory-cold-review/tmp PYTHONDONTWRITEBYTECODE=1 python3 -m unittest tools.tests.test_source_inventory_postconciliar tools.tests.test_source_inventory -v",
+      "exit_status": 0,
+      "result": "36 tests passed in 4.218 seconds."
+    },
+    {
+      "cwd": "${SNAPSHOT}",
+      "command": "TMPDIR=${REPO}/.scratch/pc-r-inventory-cold-review/tmp PYTHONDONTWRITEBYTECODE=1 python3 -m unittest tools.tests.test_source_family_migration -v",
+      "exit_status": 0,
+      "result": "21 tests passed in 6.981 seconds."
+    },
+    {
+      "cwd": "${REPO}",
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 .scratch/pc-r-inventory-cold-review/review_probes.py",
+      "exit_status": 0,
+      "result": [
+        "ZIP CRC, exact directory/archive file set and bytes, and pinned snapshot hashes match",
+        "25 registry PC-R cycle/form spellings classified for both providers",
+        "Actual base-tool inventories pass before migration; stale current check refuses; refresh preserves prior files, categories, state, review date, and other provider; new PC-R remains unresolved until classify",
+        "Seven root/kind tampering variants rejected despite recalculated snapshots; inventory bytes unchanged on rejection"
+      ],
+      "child_command_count": 22,
+      "expected_refusal_count": 9
+    },
+    {
+      "cwd": "${REPO}",
+      "command": "${HOME}/.local/bin/tmt check",
+      "exit_status": 0,
+      "result": "ok"
+    },
+    {
+      "cwd": "${REPO}",
+      "command": "git diff --check -- tools/source-inventory tools/tests/test_source_inventory_postconciliar.py",
+      "exit_status": 0,
+      "result": "Clean."
+    },
+    {
+      "cwd": "${REPO}",
+      "command": "unzip -t build/agent-handoffs/20261026T041147Z-pc-r07-inventory.zip",
+      "exit_status": 127,
+      "result": "unzip unavailable; ZIP testing and exact byte comparison completed with Python zipfile instead."
+    }
+  ],
+  "independent_probe_commands": [
+    {
+      "exit_status": 0,
+      "result": "Passed.",
+      "command": "/usr/bin/python3 ${SNAPSHOT}/tools/source-inventory-before --root ${FIXTURE} bootstrap gpt.toml --provider gpt --audited-on 2026-10-24"
+    },
+    {
+      "exit_status": 0,
+      "result": "Passed.",
+      "command": "/usr/bin/python3 ${SNAPSHOT}/tools/source-inventory-before --root ${FIXTURE} classify gpt.toml --review gpt-review.toml"
+    },
+    {
+      "exit_status": 0,
+      "result": "Passed.",
+      "command": "/usr/bin/python3 ${SNAPSHOT}/tools/source-inventory-before --root ${FIXTURE} check gpt.toml --review gpt-review.toml"
+    },
+    {
+      "exit_status": 0,
+      "result": "Passed.",
+      "command": "/usr/bin/python3 ${SNAPSHOT}/tools/source-inventory --root ${FIXTURE} check gpt.toml --review gpt-review.toml"
+    },
+    {
+      "exit_status": 0,
+      "result": "Passed.",
+      "command": "/usr/bin/python3 ${SNAPSHOT}/tools/source-inventory-before --root ${FIXTURE} bootstrap claude.toml --provider claude --audited-on 2026-10-24"
+    },
+    {
+      "exit_status": 0,
+      "result": "Passed.",
+      "command": "/usr/bin/python3 ${SNAPSHOT}/tools/source-inventory-before --root ${FIXTURE} classify claude.toml --review claude-review.toml"
+    },
+    {
+      "exit_status": 0,
+      "result": "Passed.",
+      "command": "/usr/bin/python3 ${SNAPSHOT}/tools/source-inventory-before --root ${FIXTURE} check claude.toml --review claude-review.toml"
+    },
+    {
+      "exit_status": 0,
+      "result": "Passed.",
+      "command": "/usr/bin/python3 ${SNAPSHOT}/tools/source-inventory --root ${FIXTURE} check claude.toml --review claude-review.toml"
+    },
+    {
+      "exit_status": 1,
+      "result": "Expected refusal: source tree changed before refresh.",
+      "command": "/usr/bin/python3 ${SNAPSHOT}/tools/source-inventory --root ${FIXTURE} check gpt.toml --review gpt-review.toml"
+    },
+    {
+      "exit_status": 0,
+      "result": "Passed.",
+      "command": "/usr/bin/python3 ${SNAPSHOT}/tools/source-inventory --root ${FIXTURE} refresh gpt.toml --review gpt-review.toml --audited-on 2026-10-25"
+    },
+    {
+      "exit_status": 1,
+      "result": "Expected refusal: newly added publication remains unresolved until reviewed/classified.",
+      "command": "/usr/bin/python3 ${SNAPSHOT}/tools/source-inventory --root ${FIXTURE} check gpt.toml --review gpt-review.toml"
+    },
+    {
+      "exit_status": 0,
+      "result": "Passed.",
+      "command": "/usr/bin/python3 ${SNAPSHOT}/tools/source-inventory --root ${FIXTURE} classify gpt.toml --review gpt-review.toml"
+    },
+    {
+      "exit_status": 0,
+      "result": "Passed.",
+      "command": "/usr/bin/python3 ${SNAPSHOT}/tools/source-inventory --root ${FIXTURE} check gpt.toml --review gpt-review.toml"
+    },
+    {
+      "exit_status": 0,
+      "result": "Passed.",
+      "command": "/usr/bin/python3 ${SNAPSHOT}/tools/source-inventory --root ${FIXTURE} refresh claude.toml --review claude-review.toml --audited-on 2026-10-25"
+    },
+    {
+      "exit_status": 0,
+      "result": "Passed.",
+      "command": "/usr/bin/python3 ${SNAPSHOT}/tools/source-inventory --root ${FIXTURE} check claude.toml --review claude-review.toml"
+    },
+    {
+      "exit_status": 1,
+      "result": "Expected refusal: altered owner definition; prior bytes preserved.",
+      "command": "/usr/bin/python3 ${SNAPSHOT}/tools/source-inventory --root ${FIXTURE} refresh tampered-remove_registry.toml --review gpt-review.toml --audited-on 2026-10-25"
+    },
+    {
+      "exit_status": 1,
+      "result": "Expected refusal: altered owner definition; prior bytes preserved.",
+      "command": "/usr/bin/python3 ${SNAPSHOT}/tools/source-inventory --root ${FIXTURE} refresh tampered-remove_shared.toml --review gpt-review.toml --audited-on 2026-10-25"
+    },
+    {
+      "exit_status": 1,
+      "result": "Expected refusal: altered owner definition; prior bytes preserved.",
+      "command": "/usr/bin/python3 ${SNAPSHOT}/tools/source-inventory --root ${FIXTURE} refresh tampered-remove_temporal.toml --review gpt-review.toml --audited-on 2026-10-25"
+    },
+    {
+      "exit_status": 1,
+      "result": "Expected refusal: altered owner definition; prior bytes preserved.",
+      "command": "/usr/bin/python3 ${SNAPSHOT}/tools/source-inventory --root ${FIXTURE} refresh tampered-reorder.toml --review gpt-review.toml --audited-on 2026-10-25"
+    },
+    {
+      "exit_status": 1,
+      "result": "Expected refusal: altered owner definition; prior bytes preserved.",
+      "command": "/usr/bin/python3 ${SNAPSHOT}/tools/source-inventory --root ${FIXTURE} refresh tampered-extra_root.toml --review gpt-review.toml --audited-on 2026-10-25"
+    },
+    {
+      "exit_status": 1,
+      "result": "Expected refusal: altered owner definition; prior bytes preserved.",
+      "command": "/usr/bin/python3 ${SNAPSHOT}/tools/source-inventory --root ${FIXTURE} refresh tampered-cross_provider.toml --review gpt-review.toml --audited-on 2026-10-25"
+    },
+    {
+      "exit_status": 1,
+      "result": "Expected refusal: altered owner definition; prior bytes preserved.",
+      "command": "/usr/bin/python3 ${SNAPSHOT}/tools/source-inventory --root ${FIXTURE} refresh tampered-wrong_kind.toml --review gpt-review.toml --audited-on 2026-10-25"
+    }
+  ],
+  "limitations": [
+    "Approval applies only to the pinned code and tests. No shared inventory/data refresh, source registration, source-library claim verification, native workflow, publication, browser, PDF, or deployment acceptance was performed or implied.",
+    "Inventory namespace/shape classification does not validate a PC-R registered identity, slug meaning, exact formulary-owner existence, or declared build dependency; those remain profile/workflow checks.",
+    "The compatibility exception migrates old owner-root lists. It does not migrate pre-existing incorrectly local/canonical PC-R document rows; strict document-shape validation still rejects those. The verified migration starts from pre-PC-R inventories, which is the stated additive-owner migration path.",
+    "No actual live provider inventory was refreshed or used as a changing review fixture. Both provider compatibility paths were reproduced with isolated inventories generated by the base tool."
+  ],
+  "mutations": {
+    "durable": [
+      "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/inventory-code-review.json"
+    ],
+    "transient": [
+      ".scratch/pc-r-inventory-cold-review/"
+    ],
+    "source_inventory_native_publication_files": "No reviewer mutations.",
+    "commit_push": "Neither performed."
+  }
+}
