@@ -113,15 +113,17 @@ aggregate passes with act-history freshness established separately. Complete
 page review, source-wrapper corrections, further sealed admissions and broader
 installation remain open.
 
-The current scoped installation contains 454 exact reviewed PDFs and 1,569
-pages: 392 Vatican Latin readers, 60 historical English witnesses and the two
-Quanta/Syllabus constituents. Their [release record](release/papal-documents.json)
-retains exact frozen inputs, receipts and review reports. All 424 previously
-installed PDFs remain byte-identical; the 30 additions contribute 231 pages.
+The current scoped installation contains 851 exact reviewed PDFs and 2,170
+pages: 392 Vatican Latin readers, 60 historical English witnesses, the two
+Quanta/Syllabus constituents and 397 historical continuation readers. Their
+[release record](release/papal-documents.json) retains exact frozen inputs,
+receipts and review reports. All 454 previously installed PDFs remain
+byte-identical; the 397 continuation additions contribute 601 pages.
 Installed hashes, owned paths, source fidelity and durable evidence pass the
 owning checker. English fragments retain their explicit extent qualifications.
-Other historical families remain outside this scoped installation while
-their source-boundary and page-review work continues.
+The 472 rejected continuation readers and the remaining historical families
+stay outside this scoped installation while their source-boundary and
+page-review work continues.
 
 ## GPT Last Things and next Sunday propers, 2026-10-25
 

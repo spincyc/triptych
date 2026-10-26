@@ -176,3 +176,15 @@ unchanged. The release record has SHA-256
 covers 60 readers and 433 pages. The refreshed installation includes the new
 global source corrections and withdrawals in its provenance without admitting
 an Acta, Bullarium or continuation PDF.
+
+The first approved continuation scope adds 397 historical readers and 601
+pages, bringing the installed set to 851 PDFs and 2,170 pages
+(20,022,258 bytes). All 454 preceding PDFs and source selections remain
+unchanged. The release record has SHA-256
+`326552fa270b9a6a2c36dc8722adf6f678f53e6dd6e7f47db187b7930299f443`;
+129 exact input/report archives preserve its evidence. All 472 rejected
+continuation readers are absent. The 19 controlling editions have affirmative
+historical-publication rights bases; all 3,001 selected source dependency files
+match the preceding feature checkpoint. Later continuation admissions and
+corrections do not alter the 397 installed selections. Acta and Bullarium
+remain outside this release scope.
