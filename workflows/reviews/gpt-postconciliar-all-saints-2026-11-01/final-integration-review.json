@@ -1,0 +1,333 @@
+{
+  "schema": 1,
+  "review": "Independent final cold publication-integration review",
+  "assigned_effort": "xhigh",
+  "verified_at_utc": "2026-10-26T14:29:09.366795+00:00",
+  "verdict": "APPROVE",
+  "scope": {
+    "questions": [
+      "INT-001",
+      "EOF-001"
+    ],
+    "task_base": "9f51eb53077578cc74474255cc1fad114bda6eaa",
+    "reviewed_commit": "d4e3150248899ea569692b5ae922ac269b91d536",
+    "tested_candidate": "a141a9185e5389ea0172f33fe9355045230d37e1",
+    "boundary": "Exact frozen premerge range and its actual local production artifact. This verdict does not cover later integration or deployment.",
+    "incoming_main_reported_by_coordinator": "82b8c71dadca1dbbc1d0d9280167e261294af2d1",
+    "incoming_main_disposition": "Outside this review; combined source inputs, regenerated metadata and production artifacts require a scoped postmerge recheck.",
+    "identity": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc",
+    "provider": "gpt",
+    "calendar": "postconciliar",
+    "formula_key": "PC-R07-ABC",
+    "celebration": "All Saints, Solemnity, white; Sunday 1 November 2026; United States national calendar; Roman Missal Third Edition (2011)",
+    "appointment_cycle": "Annual common ABC coverage, appointment cycle not applicable; surrounding Sunday cycle A; weekday cycle not applicable",
+    "excluded_judgments": [
+      "DISC-001 public-disclosure judgment",
+      "ARCH-001 substantive archive-derivative judgment",
+      "new comprehensive theological or original-language collation",
+      "hosted deployment acceptance"
+    ]
+  },
+  "handoff": {
+    "directory": "build/agent-handoffs/20261026T141709Z-pc-r07-integrated",
+    "directory_exists": true,
+    "path": "build/agent-handoffs/20261026T141709Z-pc-r07-integrated.zip",
+    "sha256": "67633d24bb74ea26bc1877d4f8ec0e1fe182a6a929a5b646f58c0da519a64890",
+    "files": 68,
+    "directory_bytes_equal": true,
+    "source_map_sha256": "c10d17d4293fdeec5fd082ba81129cc187cc327d81c470d98666f30e83905124",
+    "changes_patch_sha256": "021177aecdbcbc5fd1007ac3ac964f6866888469353d2625053d3b3396027465",
+    "changes_patch_matches_exact_git_range": true
+  },
+  "answers": [
+    {
+      "id": "INT-001",
+      "answer": "APPROVE",
+      "reason": "The frozen final tree, installed artifacts and production site preserve the accepted identity, source qualifications, interpretation boundaries and complete publication wiring. No contrary material defect was found.",
+      "evidence": [
+        "The manifest, composition audit, canonical same-edition shared Missal owner and edition occurrence/disposition records agree on PC-R07-ABC, Lectionary 667 and displacement of the Thirty-first Sunday in Ordinary Time. No separate All Saints Vigil or local enactment is invented.",
+        "Latest accepted research, expansive, concise and homily review input hashes match the current tree: 2,222 research files plus 16 chronology and 8 source-admission computation inputs; 17/11/7 content-review files. The 26 render inputs, all 3 built PDFs, both pagination auxiliaries and canonical web bytes also match their final accepted seals.",
+        "All 80 archived-file hashes and frozen CYCLES hash match native-acceptance.json. This checks integration identity and preserves the separate archival-integrity judgment.",
+        "Research/installed/transport/production PDF bytes agree at 20/10/3 pages. Each canonical public PDF and provider-qualified alias has the same accepted hash. Canonical Markdown matches the accepted conversion; all 10 source-map production files match their exact hashes and byte counts.",
+        "The catalog has exactly one correct primary marker and one All Saints row, with Research PDF, Synthesis PDF, Homily PDF and Read in the ChatGPT cell; Claude remains Planned. Actual generated links use the matching GPT aliases. Three local release records and the production manifest agree on alpha status, sole canonical web owner and perpetual authorization.",
+        "The actual production canonical route has 12 unique appointed-element anchors, 8 four-sense entries, 47 notes, 113 resolved local links/fragments and one revision timestamp. Chromium at 1280x960 and 390x844 verifies contents navigation, note returns, normal catalog links and horizontal access to all four phone catalog links, without browser errors or a preview banner.",
+        "Terminal source, PDF and web qualifications retain the secondary 2002/2008 evidence limit, missing current authoritative U.S. prayer/blessing exemplar, different electronic Aquinas textual bases, received Victorinus qualification, Douay-Rheims study/proclaimed-text distinction, limited English reception checks and source-grounded versus original whole-Mass synthesis. The homily timing remains an estimate, with no audible rehearsal or timed human delivery claimed.",
+        "All 23 changed site-source release bindings independently match their files. The rights-table delta consists only of exact path/hash rows; it does not rewrite publication-status snapshot decisions. No src/claude, web/claude or Claude release-record path changes occur in the range. The 28 existing GPT postconciliar PDFs, 335 pages, and three governing registry inputs independently rehash to their preservation receipt.",
+        "All five recorded final local gate logs rehash correctly, and every pinned publication/build input Git object is identical at the tested candidate and reviewed HEAD. The only later changes are PROJECT-WORK.md, promised-deliverables.toml, RECORD.md and final-validation.json. The ledger remains in_progress with published-and-live open; no premature deployment or external approval claim was found."
+      ]
+    },
+    {
+      "id": "EOF-001",
+      "answer": "APPROVE",
+      "reason": "The range check exits 2 only for two reported EOF-only diagnostics. These empty terminal lines occur after completed TeX prose, are present in accepted source seals and do not add visible content or conceal a missing release condition. Preserve sealed bytes. The operational description of the number of empty lines needs the nonblocking correction below.",
+      "actual_exit": 2,
+      "diagnostic_count": 2,
+      "terminal_lf_bytes": {
+        "00-opening.tex": 3,
+        "20-texts.tex": 2
+      }
+    }
+  ],
+  "findings": [
+    {
+      "id": "INT-N01",
+      "severity": "low",
+      "blocking": false,
+      "location": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/final-validation.json: known_nonblocking[0]",
+      "defect": "The phrase one EOF blank each is not byte-exact. 00-opening.tex ends in three LF bytes, representing two trailing empty lines; 20-texts.tex ends in two LF bytes, representing one. Git reports exactly two file-level EOF diagnostics.",
+      "required_repair": "Correct subsequent operational bookkeeping to say two EOF-only diagnostics, or give the exact empty-line counts. Do not edit or restamp the accepted source bytes to remove these immaterial advisories.",
+      "owner": "Coordinator-owned operational validation record",
+      "disposition": "Coordinator notified and accepted this wording correction for the next operational update; no release-blocking source repair is required."
+    }
+  ],
+  "artifact_pins": {
+    "native_record": {
+      "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/native-acceptance.json",
+      "sha256": "e88e793ec2c670edd131b1f7f1692d503e0b8b85eea59eeb8158e617841d0eb2"
+    },
+    "native_run": {
+      "run_id": "0af32a5cd3635b06",
+      "workflow": "proper-study",
+      "version": 15,
+      "workflow_digest": "4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83",
+      "disposition": "ACCEPTED",
+      "results": 37,
+      "packets": 37
+    },
+    "cycles": {
+      "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/CYCLES.md",
+      "sha256": "0f294d924f2b18d11410116aa67f28ee3e03eaab444fc8bfff71a5befe48238d",
+      "frozen": true
+    },
+    "installed_pdfs": [
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.pdf",
+        "pages": 20,
+        "sha256": "ddebff78fcd57d0cc5a2d1f2b561a3676ad39252d518bd65f49f996e6864e0cd",
+        "bytes": 474624
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-synthesis.pdf",
+        "pages": 10,
+        "sha256": "df39c8e92d420eb74a6a3bf569c6b38e3ed5f291cc809b091badd3a0ae2cfec4",
+        "bytes": 409183
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-homily.pdf",
+        "pages": 3,
+        "sha256": "a197407d552a2f13c3965dc6dfc5aca70c41f2108496f88fe97919436f05a300",
+        "bytes": 246580
+      }
+    ],
+    "canonical_web": {
+      "path": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.md",
+      "sha256": "bef3dd560d840e155e406d53aba214f9c77ff9c8604b374d61a8c7e6ad7d988a",
+      "bytes": 66705
+    },
+    "production_files": [
+      {
+        "path": "PUBLICATION-MANIFEST.json",
+        "sha256": "5583679d52f594427522aa062431f5cb3dd0864fffd1e877a3dfc3f254b126a7",
+        "bytes": 4125122,
+        "live_url": "https://mystago.gy/PUBLICATION-MANIFEST.json"
+      },
+      {
+        "path": "browse/structure/documents/corpus.json",
+        "sha256": "28df6f485278ca07d27532828307c13ed521f529644ca249ea7268a51d93249b",
+        "bytes": 1020457,
+        "live_url": "https://mystago.gy/browse/structure/documents/corpus.json"
+      },
+      {
+        "path": "library/novus-ordo-liturgy.html",
+        "sha256": "8633c6533c81062fdba69d27a4342d6dbed13244d4258151650cd7c5ea310902",
+        "bytes": 29923,
+        "live_url": "https://mystago.gy/library/novus-ordo-liturgy.html"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-gpt-7fa6823929c56309.pdf",
+        "sha256": "ddebff78fcd57d0cc5a2d1f2b561a3676ad39252d518bd65f49f996e6864e0cd",
+        "bytes": 474624,
+        "live_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-gpt-7fa6823929c56309.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-homily-gpt-b955232f95a3f97a.pdf",
+        "sha256": "a197407d552a2f13c3965dc6dfc5aca70c41f2108496f88fe97919436f05a300",
+        "bytes": 246580,
+        "live_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-homily-gpt-b955232f95a3f97a.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-homily.pdf",
+        "sha256": "a197407d552a2f13c3965dc6dfc5aca70c41f2108496f88fe97919436f05a300",
+        "bytes": 246580,
+        "live_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-homily.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-synthesis-gpt-09347a0ff13d09da.pdf",
+        "sha256": "df39c8e92d420eb74a6a3bf569c6b38e3ed5f291cc809b091badd3a0ae2cfec4",
+        "bytes": 409183,
+        "live_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-synthesis-gpt-09347a0ff13d09da.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-synthesis.pdf",
+        "sha256": "df39c8e92d420eb74a6a3bf569c6b38e3ed5f291cc809b091badd3a0ae2cfec4",
+        "bytes": 409183,
+        "live_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-synthesis.pdf"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.pdf",
+        "sha256": "ddebff78fcd57d0cc5a2d1f2b561a3676ad39252d518bd65f49f996e6864e0cd",
+        "bytes": 474624,
+        "live_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.pdf"
+      },
+      {
+        "path": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.html",
+        "sha256": "91be7ebfbe12506b7026dfb4ef5fdcb9bbc53e3a0482fa19bd420ea945b78ea3",
+        "bytes": 87097,
+        "live_url": "https://mystago.gy/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.html"
+      }
+    ],
+    "final_validation": {
+      "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/final-validation.json",
+      "sha256": "85307b6753784ebc87813bfbade797e39ab689457640c00b6512c828bc7ce91a"
+    },
+    "existing_consumer_preservation": {
+      "receipt": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/existing-publications-registry-recheck.json",
+      "receipt_sha256": "825060b043dc6148c08cee65a284abf9d310db4594e90fc888d78c212c3b0e79",
+      "pdf_count": 28,
+      "pages": 335,
+      "registry_inputs": 3
+    }
+  },
+  "verification": {
+    "performed": [
+      {
+        "command": ".scratch/pc-r07-production/runtime/bin/python3 .scratch/pc-r07-final-integration-review/check.py",
+        "exit": 0,
+        "receipt": ".scratch/pc-r07-final-integration-review/checks.json",
+        "receipt_sha256": "8dc91b20f5211cfcd82da932ab90b4ef68469e928249c7917d4c135a82f30aaa",
+        "result": "All exact-range, ZIP, accepted-seal, artifact, route, metadata, catalog, alias, scoped-release, gate-log, unchanged-input and existing-consumer checks passed."
+      },
+      {
+        "command": "node .scratch/pc-r07-final-integration-review/browser.mjs",
+        "exit": 0,
+        "receipt": ".scratch/pc-r07-final-integration-review/production-browser.json",
+        "receipt_sha256": "eb5066621b8fafcd5f3d9b0ade64c34aed064b2aa2fa7aaba40bece52c545c5d",
+        "result": "Actual production artifact checked in isolated Chromium at desktop and phone sizes. Links/anchors, note return, catalog horizontal access and visible metadata passed. Browser and local server were closed; temporary browser profile removed."
+      },
+      {
+        "command": "git diff --check 9f51eb53077578cc74474255cc1fad114bda6eaa d4e3150248899ea569692b5ae922ac269b91d536",
+        "exit": 2,
+        "result": "Exactly the two documented new-blank-line-at-EOF diagnostics; no other whitespace diagnostic."
+      },
+      {
+        "command": "pdfinfo and pdftotext -layout for each of the three installed target PDFs",
+        "exit": 0,
+        "result": "Titles, subjects, Letter boxes, 20/10/3 pages, fixed revision dates and one visible UTC timestamp agree; workflow run/digest do not reach rendered text. Exact invocations and outputs are in checks.json."
+      }
+    ],
+    "exploratory_corrections": [
+      {
+        "command": ".scratch/pc-r07-production/runtime/bin/python3 .scratch/pc-r07-final-integration-review/check.py (initial version)",
+        "exit": 1,
+        "reason": "The supplied one-empty-line-per-file assumption failed at the final EOF assertion, exposing INT-N01. All earlier integration checks had completed; the checker was corrected to record actual 3/2 LF counts and rerun successfully."
+      },
+      {
+        "command": "node .scratch/pc-r07-final-integration-review/browser.mjs (earlier versions)",
+        "exit": 0,
+        "reason": "The initial browser probe read immediate geometry during smooth scrolling. It was strengthened with automatic scroll behavior and awaited route identity; the final probe confirms target headings within one pixel of viewport top and all mobile catalog links reachable."
+      }
+    ],
+    "inherited_checks_independently_bound_to_reviewed_inputs": [
+      {
+        "command": [
+          "make",
+          "PYTHON=.scratch/pc-r07-production/runtime/bin/python3",
+          "check-sources"
+        ],
+        "exit": 0,
+        "log": ".scratch/pc-r07-integration/final-source-aggregate.log",
+        "log_sha256": "a895d0241b0a1c0f0973dc1f1b4bd038ff125a1438c2ef80521caca8e3630506"
+      },
+      {
+        "command": [
+          "make",
+          "PYTHON=.scratch/pc-r07-production/runtime/bin/python3",
+          "public-site"
+        ],
+        "exit": 0,
+        "log": ".scratch/pc-r07-integration/final-site-build.log",
+        "log_sha256": "9b75f570674ee216f1770057d22eef7b898ece7fd630daa49660ebbfd7b72196"
+      },
+      {
+        "command": [
+          "make",
+          "PYTHON=.scratch/pc-r07-production/runtime/bin/python3",
+          "check-release-bindings",
+          "check-promised-deliverables"
+        ],
+        "exit": 0,
+        "log": ".scratch/pc-r07-integration/final-release-ledger.log",
+        "log_sha256": "0a724f3930525e301481557f049ed627c5ee73fb42ed7c80deb54df38304bca2"
+      },
+      {
+        "command": [
+          "$HOME/.local/bin/tmt",
+          "check"
+        ],
+        "exit": 0,
+        "log": ".scratch/pc-r07-integration/final-tool-registry.log",
+        "log_sha256": "dc51b8c96c2d745df3bd5590d990230a482fd247123599548e0632fdbf97fc22"
+      },
+      {
+        "command": [
+          ".scratch/pc-r07-production/runtime/bin/python3",
+          "tools/tpt",
+          "public-alpha",
+          "verify",
+          "--deployment-target",
+          "github-pages"
+        ],
+        "exit": 0,
+        "log": ".scratch/pc-r07-integration/final-pages-verifier.log",
+        "log_sha256": "b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14"
+      }
+    ],
+    "broad_suites_rerun": false,
+    "broad_suite_disposition": "No concrete concern justified repeating the passing full source/site/Pages suites; their exact logs and complete pinned publication input objects were independently verified.",
+    "visual_review_boundary": "Examined the three current PDF contact sheets and repaired study page 19, supplied representative desktop/phone web captures, and six own production desktop/phone captures. The fresh native visual reviewer owns the independently recorded all-33-final-page inspection; this review does not restate contact sheets as a new full-page review."
+  },
+  "guidance": {
+    "personal": "Resolved personal core, collaboration and guidance-maintenance instructions; no delegation performed.",
+    "repository": [
+      "AGENTS.md",
+      "README.md",
+      "ABOUT.md",
+      "CONTRIBUTING.md",
+      "LICENSE",
+      "guidance/editorial.md",
+      "guidance/repository.md",
+      "guidance/sources.md",
+      "guidance/liturgy/postconciliar-propers.md",
+      "guidance/liturgy/postconciliar-propers-registry.md",
+      "guidance/liturgy/propers-three-documents.md",
+      "guidance/liturgy/calendar-computation.md",
+      "guidance/web-editions.md",
+      "guidance/external-review-handoffs.md",
+      "guidance/promised-deliverables.md"
+    ],
+    "additional_scope": "Relevant third-party notice, liturgical-text-publication-policy presumption/per-surface controls and procedures, target source/instance/owner/research records, publication ledger and release records were inspected."
+  },
+  "limitations": [
+    "This is the frozen premerge d4e3150 judgment. Incoming main integration and regenerated shared inventories/release records require a new bounded review before publication.",
+    "Public-disclosure and substantive archive-derivative acceptance remain the separate reviewer lane; matching archive hashes is not a substitute for either judgment.",
+    "No hosted deployment/live-byte claim is made. A still-unpublished route is not treated as a deployment failure.",
+    "Authenticated 2008 Latin and complete current U.S. publisher-exemplar gaps remain qualified; no new original-language or print-image collation was performed.",
+    "Homily delivery is estimated from 1,174 spoken words at 105–115 words per minute; no timed human delivery was performed.",
+    "Broader chronology and source-family completion audits remain open. Historical archive-compatibility reproduction remains unavailable as recorded; no pass is manufactured."
+  ],
+  "files_written": [
+    "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/final-integration-review.json",
+    ".scratch/pc-r07-final-integration-review/"
+  ],
+  "mutations": "Only the assigned report and own scratch files were written. No source, native result, handoff, build/publication, ledger, index, commit, ref, push or external message was changed."
+}

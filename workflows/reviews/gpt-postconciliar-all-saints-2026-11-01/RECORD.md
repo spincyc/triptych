@@ -348,7 +348,25 @@ deployment verification remain open. No main deployment is claimed.
 
 The local candidate staging audit admits 195 intended UTF-8 text files and no
 binary acquisition, ignored build/scratch/PDF output, other-provider file or
-actual checkout/home prefix. The whitespace check exits 2 only for one blank
-EOF line each in accepted `sections/00-opening.tex` and `sections/20-texts.tex`.
+actual checkout/home prefix. The whitespace check exits 2 only for two EOF-only diagnostics in accepted
+`sections/00-opening.tex` and `sections/20-texts.tex`.
 Their sealed bytes are preserved; these two display-neutral advisories are
 carried to final integration review rather than represented as a clean check.
+
+## Incoming main integration
+
+Pinned premerge integration and disclosure reviews both approve
+`d4e3150248899ea569692b5ae922ac269b91d536`, with no blocking findings.
+The integration review corrects only the bookkeeping description: there are two
+EOF diagnostics, while the opening has two trailing empty lines and the text
+component one. Sealed source bytes remain intact. `premerge-validation.json`
+preserves the first complete local gate receipt.
+
+Meanwhile main advances to `82b8c71dadca1dbbc1d0d9280167e261294af2d1`,
+formatting eight Four Last Things editions. The incoming 46 paths intersect none
+of the accepted All Saints research/content/visual/web inputs, render snapshot
+or baselines. Seven edited globals overlap; five derived records need combined
+regeneration, while PROJECT and promises retain both work streams. Eight
+article PDFs have recorded reviewed hashes across 196 pages; they will be
+rebuilt from the exact incoming sources and compared to those hashes. The
+merged source/site and new outgoing objects require their own final rechecks.
