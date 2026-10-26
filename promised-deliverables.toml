@@ -21,8 +21,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "reviewed-artifacts"
   criterion = "All affected PDFs and canonical web editions are built, reviewed and installed; metadata, source records, inventories, catalogue and release bindings are current and required publication checks pass or have an exact inherited-failure comparison."
-  status = "open"
-  evidence = ["workflows/reviews/gpt-flt-and-sunday-2026-10-25/RECORD.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-flt-and-sunday-2026-10-25/RECORD.md", "workflows/reviews/gpt-flt-and-sunday-2026-10-25/final-validation.json", "workflows/reviews/gpt-flt-and-sunday-2026-10-25/publication-delta.json"]
 
   [[deliverables.requirements]]
   id = "published-and-live"

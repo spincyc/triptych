@@ -328,3 +328,32 @@ Peter/Paul pairs do not include All Saints or its privileged Sunday commemoratio
 All seven PDFs and five canonical Markdown editions remain byte-identical to
 their accepted artifacts. Complete merged source/site verification and outgoing
 review follow the merge commit before any main push.
+
+## Final merged validation and outgoing review
+
+All required local gates now pass against merge commit
+`f69a5eb67aa5ec5f44a6544cc616bd44b03aca30`. The complete `make check-sources`
+exits 0 in 268.805 seconds, including the exact deployment-source prerequisites,
+commentary corpus and pending-family ledger. The public-site build, GitHub
+Pages artifact verifier, release/promised-deliverable checks and `tmt check`
+also exit 0. `final-validation.json` preserves actual command, exit, timing and
+log-hash receipts and the source Git-object identities. No failed attempt is
+retagged as successful.
+
+The merged site still contains exactly 272 publication PDFs: three new All
+Saints outputs and four revised GPT essays against the retrieved 269-item
+live baseline. All 265 other PDF hashes, 269 existing alias paths, 63 Claude
+catalogue editions and six reading plans are preserved. The four public article
+HTML files match their accepted review hashes exactly under the changed
+validator. All Saints PDFs, canonical Markdown and 25 render inputs also match.
+The final built publication-manifest SHA-256 is
+`9f1dd5e6cfee7f7041d8cdc5cffe3a1acc824e90c24718209336dd29c722cd55`.
+
+Independent final review accepts the exact outgoing range
+`f3f59d483..f69a5eb67`: eight commits, 254 trees, 1,285 newly reachable blobs
+and 768 endpoint paths. The appended merged verdict in
+`final-publication-review.md` preserves the preceding candidate's verdict,
+reconciles all source, archive, integration and protection boundaries, and
+independently checks actual log hashes. This is completed local validation
+and disclosure acceptance. Main publication and hosted verification follow;
+they are not inferred from these local passes.

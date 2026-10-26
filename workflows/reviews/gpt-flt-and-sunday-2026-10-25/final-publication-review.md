@@ -331,3 +331,148 @@ promise are distinct states. In particular, the 528-row chronology audit and
 163 family reviews remain open. This review records neither a main push nor a
 successful hosted Pages run, and does not represent the complete user request
 as fulfilled before those separately required outcomes occur.
+
+## Concurrent-main merge: final disclosure and integration verdict
+
+**ACCEPT** for the exact outgoing range
+`f3f59d483358128e1b78d7a12aaeb4f3feab4a8a..f69a5eb67aa5ec5f44a6544cc616bd44b03aca30`,
+reviewed on 26 October 2026 UTC after the actual merged publication gates
+completed. This section records the current merge judgment. The preceding
+acceptance through `844cdc6d6` remains a historical, correctly bounded event;
+its claim that all research pins matched is not carried into this changed
+context.
+
+### Public base, objects and merge preservation
+
+`f69a5eb67` is an ordinary two-parent merge of the accepted candidate
+`844cdc6d62908cfc92cf655a3cd9b9478896b5bf` and incoming public main
+`f3f59d483358128e1b78d7a12aaeb4f3feab4a8a`. The public parent is an ancestor
+of the candidate. No published history was rewritten. This disclosure review
+uses that public parent as its exclusion base: objects already public through
+it are not represented as this task's new disclosure.
+
+The exact outgoing range contains **eight commits, 254 trees and 1,285 newly
+reachable blobs**, including intermediate versions, with 768 endpoint paths.
+The merge contributes 514 blobs not encountered in the preceding review.
+All outgoing blob and commit contents received the privacy/route scan. The
+sole lexical candidate remains the previously disposed guidance sentence
+`authorization:`; no actual credential, private environment value, private
+network route, request header or signed/session route was found. The seven
+source PDFs are the already inspected retained historical artifacts; there is
+no new PDF object in the merge delta. No unresolved index entry remains.
+
+Every one of the 543 postimage hashes in `main-shared-paths.json` matches its
+committed file. The source-preservation receipt's six named incoming source and
+Ordinary inventory files equal public main exactly. Independent exhaustive
+parsed comparison of the whole merged 1962 calendar against public main finds
+only the intended All Saints registry change, `1962-11-01` to `F02`; none of
+the upstream Mass corrections was dropped. The fresh source-owner checks and
+complete merged source aggregate separately establish generated currentness.
+
+### Historical research seals and current target acceptance
+
+The entire canonical F02 source-leaf tree object equals the premerge accepted
+tree, including all 55 archive files and their original engine results. Its
+provenance declarations and historical review inputs are untouched. All twelve
+installed artifacts still match their accepted identities, and all 25 F02
+render-input hashes match the immutable artifact receipt.
+
+Current rehashing of the historical research review reproduces 1,775 of its
+1,779 file pins. Exactly four global files differ:
+
+- `src/sources/calendars/roman-1962/propers.yaml`;
+- `src/sources/calendars/roman-1962/rubrics.yaml`;
+- `src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml`; and
+- `src/sources/inventories/roman-1962-proper-translations-v1.toml`.
+
+These are disclosed historical differences, not a newly matching native seal.
+The accepted study, concise, homily, visual and web pins remain intact. The
+initial study revision and the one retained web advisory keep their actual
+recorded dispositions. No archive or provenance field was restamped.
+
+`main-reconciliation-cold.md` supplies a fresh independent current-context
+ACCEPT after primary-page reinspection and comparison of the affected inputs.
+It verifies the two complete target Mass dictionaries, seven Latin and seven
+English inventory dictionaries, all 72 binding fingerprints and all 136 bound
+source ancestors as unchanged. Current occurrence, chronology and publication
+checks pass. RG 110's three Peter/Paul pairs contain neither All Saints nor its
+privileged Sunday commemoration. This bounded new acceptance resolves the
+material target impact of the changed global files; it does not claim that the
+historical run was executed again or accept every unrelated upstream feature.
+
+The changed `tools/public-alpha` comes from already public main. The fresh
+review identifies its RG 110 validator change and unchanged rendering behavior;
+the actual merged-site comparison independently reproduces all four accepted
+article HTML hashes. Thus an unchanged Markdown file is not being substituted
+for proof of unchanged final article rendering.
+
+### Successor Ordinary model and release reconciliation
+
+Incoming main's canonical John Damascene correction supersedes the earlier
+alias repair. Both alternatives now use the role `Offertory`, with distinct
+source occurrence identities. The two Ordinary inventories, two generated
+Ordinary JSON files, Ordinary tool and shared seating implementation are all
+byte-identical to public main. The old alias-based repair hashes remain
+historical evidence, not assertions about the merged files.
+
+Independent AST comparison removes exactly the two added regression methods
+and their `Namespace` import and reproduces the entire incoming test-module
+AST. No upstream test method, helper, assertion or harness content was lost.
+`merge-test-cold.md` accepts this exact successor state after its own focused
+21-test set, five Node guard groups and full 1,629-form Ordinary check. The
+broader 89-test result remains correctly attributed to the author. The existing
+undeclared-qualifier and foreign-applicability guards remain in force.
+
+Exhaustive authorization comparison against public main proves that the
+`site_sources` changes equal the exact **545-path**
+`main-release-adoption-scope.txt` set, and every new hash equals its committed
+file. The sole other authorization-JSON change is the derived
+`rights_record_sha256`, matching the regenerated rights record. No other
+upstream authority metadata or out-of-scope binding changes. The earlier
+547-path premerge proof remains an event against its own earlier base.
+
+Tracked Claude sources, web editions and inventories, and all six reading-plan
+files, are unchanged against public main. The current built-site comparison
+also preserves all 63 Claude catalogue editions and the successful baseline's
+89 Claude PDF identities. Source-family state remains 163 pending units with
+atomic citation coverage false. The merge does not close that screening or
+the global chronology audit.
+
+### Actual merged gates and publication boundary
+
+The following actual receipts were read and each recorded log digest was
+independently recomputed from the corresponding log. Every command exits 0:
+
+| Gate | Receipt under `.scratch/root-publication/` | Actual log SHA-256 |
+| --- | --- | --- |
+| Complete `make check-sources` | `merged-source-check.json` | `03624263c5ef549fcc9c507003ad776a5887e60363faed9f25785c6a9ddfbc6b` |
+| `make public-site` | `merged-site-build.json` | `a4a64240735b35a9d2657ec36bd4348c9685cb98b4b957a4ad707a8eb0b49f3f` |
+| `public-alpha verify --deployment-target github-pages` | `merged-site-verify.json` | `b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14` |
+| Release bindings and promised-deliverable tooling | `merged-release-promises.json` | `43c7be1fd17cd369a90e7b88a1a0304e9879d75af8f3d19f9c2eb7caa921b649` |
+
+The full merged source aggregate ran from
+`2026-10-26T02:07:31.541739+00:00` to
+`2026-10-26T02:12:00.346274+00:00`, taking 268.805 seconds. Its PASS belongs to
+this merged source state. No earlier failed or premerge check was relabelled.
+The source and rendering trees remain frozen at the reviewed merge commit.
+
+The new built publication manifest hashes to
+`9f1dd5e6cfee7f7041d8cdc5cffe3a1acc824e90c24718209336dd29c722cd55`.
+The exact comparison in `publication-delta.json` again finds 272 publications:
+three new All Saints outputs, four revised essays, no removals, 265 preserved
+existing PDF hashes, 269 preserved existing aliases and six unchanged bound
+reading plans. All accepted F02 PDFs and canonical Markdown, 25 render inputs
+and four accepted article HTML identities match. This is a comparison with the
+retrieved successful live artifact, distinct from the public-source merge base.
+
+The full range retains the single already disclosed harmless EOF blank in the
+sealed appointed-text component. The per-command whitespace check excluding
+only `blank-at-eof` passes, and this appended report has no whitespace defect.
+No accepted source was edited to conceal or remove that historical diagnostic.
+
+No material disclosure, merge-integration or local publication-gate blocker
+remains for this exact candidate. This verdict authorizes no history rewrite
+and records no main push, successful hosted Pages run or live-artifact check.
+The coordinator still owns a fresh pre-push ref check, the actual push and
+hosted deployment verification, plus bounded review of later closure-record
+objects. The global chronology and family-review boundaries remain unchanged.

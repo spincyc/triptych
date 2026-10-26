@@ -52,8 +52,11 @@ Prepush main advanced to `f3f59d483` with reviewed missal-source/RG110 work.
 Ordinary integration preserves both lines; shared projections are regenerated
 and both guard suites pass. Fresh source review accepts the unchanged F02
 facts and artifacts in the merged context, explicitly retaining the historical
-meaning of four changed global research seals. Full merged validation and
-outgoing review precede publication.
+meaning of four changed global research seals. Full merged source, site,
+Pages-verifier, release/ledger and tool-registry checks now pass. Final cold
+review accepts the eight-commit outgoing range with all 1,285 new blobs checked;
+the built site preserves the exact reviewed artifact and HTML bytes. Main push
+and live verification remain the final steps.
 
 ## GPT proper-study register revision, 2026-10-23
 
