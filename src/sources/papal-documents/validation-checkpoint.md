@@ -166,3 +166,13 @@ checks. The owning installer check reports a valid release with every selected
 reader current against its frozen source plan. Explicitly identified English
 fragments remain fragments. No Bullarium, Acta or continuation reader is
 installed by this scope.
+
+The completed finite English review adds only the six-page Quinquagesimo ante
+anno witness, bringing the installed set to 454 PDFs and 1,569 pages
+(12,506,149 bytes). All 453 preceding PDFs and source selections remain
+unchanged. The release record has SHA-256
+`5b48e5f35a7e00402f1fe36769baf418ecd01aa4b603de56f3f30e51d8a63816`;
+91 exact input/report archives preserve its evidence. English review now
+covers 60 readers and 433 pages. The refreshed installation includes the new
+global source corrections and withdrawals in its provenance without admitting
+an Acta, Bullarium or continuation PDF.

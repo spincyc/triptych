@@ -3792,20 +3792,93 @@
       "reuse_proofs": [],
       "history": [],
       "raster_review_run_sha256": "206e203627848989de803116636709cd4c54b4d8e94717be81a77ad369da1c0f"
+    },
+    {
+      "id": "papal.pius-xi.hf-p-xi-enc-19291223-quinquagesimo-ante-anno",
+      "language": "en",
+      "pdf_sha256": "7077fc459836358ad500146ef2a6d913b0d3907ba045e0b8757da78747abb7c4",
+      "pages": 6,
+      "status": "PASS",
+      "report": "src/sources/papal-documents/english-quinquagesimo-visual-review.md",
+      "report_sha256": "5fcd057c96bb517a3ae3e7adf37c7d73912920612ff05b9bae6d29c2431706bf",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        "Readable two-column title/body/source apparatus without clipping, overlap, collisions or renderer glyph display defects.",
+        "Historical headings remain with following source text; dated closing and notices share source-bearing page6.",
+        "Inherited OCR lost drop-cap and word fragments remain explicit source limitations."
+      ],
+      "limitations": [
+        "Exact-PDF layout acceptance only; no historical text collation, corrected transcription, translation certification or publication approval.",
+        "Historical English translation in The Catholic Mind 28, no. 5 (8 March 1930), pp. 93–107. The native masthead dates this issue 8 March 1930. The article credits the Rev. John K. Cartwright, S.T.D., translating for the N.C.W.C. News Service, copyright 1930 N.C.W.C. All 15 selected native pages and the full literal XML-word derivative were read for identity, body continuity and bounds. The printed article ends with the 23 December 1929 dated closing; no separate papal subscription is printed before the next article. No subscription, letter, word, footnote or annex is invented. OCR defects, including the lost initial drop-cap F (IFTY), remain uncorrected. Exact reviewed coordinate selection removes only printed running furniture, neighboring-page gutter bleed and the next independent article. Not a critical text, full image-collated transcription or translation-accuracy certification."
+      ],
+      "page_rasters": [
+        {
+          "page": 1,
+          "path": ".scratch/english_expansion/quinquagesimo-visual-review/cache/objects/38/3861dd4cf8762b608c500be8c3aff2a0a4b24c02d1e38c1afd39a0e432512307/pages/page-1.png",
+          "sha256": "20cffd061dfa79f5fb73b79829f84d95fd2aa60e6376aae228c82e934f013d7a",
+          "byte_size": 907742
+        },
+        {
+          "page": 2,
+          "path": ".scratch/english_expansion/quinquagesimo-visual-review/cache/objects/38/3861dd4cf8762b608c500be8c3aff2a0a4b24c02d1e38c1afd39a0e432512307/pages/page-2.png",
+          "sha256": "2186c8fe95506c29e766e8bd408cefc8ac9aabef999e2dbabc8bc1bf5ba9cdd9",
+          "byte_size": 899105
+        },
+        {
+          "page": 3,
+          "path": ".scratch/english_expansion/quinquagesimo-visual-review/cache/objects/38/3861dd4cf8762b608c500be8c3aff2a0a4b24c02d1e38c1afd39a0e432512307/pages/page-3.png",
+          "sha256": "45dec5ca2fc8f6e32ae7a8aa318cd36ca0d4482eea3bf5c46d4bbcd830d594b4",
+          "byte_size": 911402
+        },
+        {
+          "page": 4,
+          "path": ".scratch/english_expansion/quinquagesimo-visual-review/cache/objects/38/3861dd4cf8762b608c500be8c3aff2a0a4b24c02d1e38c1afd39a0e432512307/pages/page-4.png",
+          "sha256": "66e5a94860bd255e5cb8f1d8b8dd8ebdd3145b3d77ad2bb8a8c9103491bba6c6",
+          "byte_size": 950063
+        },
+        {
+          "page": 5,
+          "path": ".scratch/english_expansion/quinquagesimo-visual-review/cache/objects/38/3861dd4cf8762b608c500be8c3aff2a0a4b24c02d1e38c1afd39a0e432512307/pages/page-5.png",
+          "sha256": "1436bcb3be6c9c5ea7de5ec5e5e1bd7bdb2626fca794b1e5c82db963bab44709",
+          "byte_size": 873997
+        },
+        {
+          "page": 6,
+          "path": ".scratch/english_expansion/quinquagesimo-visual-review/cache/objects/38/3861dd4cf8762b608c500be8c3aff2a0a4b24c02d1e38c1afd39a0e432512307/pages/page-6.png",
+          "sha256": "09cc20bf787ec1c23af8c11b0829793c9b51ab68d110fae1a310594444b27e93",
+          "byte_size": 810526
+        }
+      ],
+      "receipt_sha256": "a60db942bc9f98f1611aa1c268cf504bce527b648a8aa0a72a3b979401e1019a",
+      "render_revision": "2026-10-26T12:58:20Z",
+      "source_sha256": "2e8f95fb87ff10b9ca7396ec0c8fc90982d711494b0a9c2d8117f41a018c75e8",
+      "source_note": "Historical English translation in The Catholic Mind 28, no. 5 (8 March 1930), pp. 93–107. The native masthead dates this issue 8 March 1930. The article credits the Rev. John K. Cartwright, S.T.D., translating for the N.C.W.C. News Service, copyright 1930 N.C.W.C. All 15 selected native pages and the full literal XML-word derivative were read for identity, body continuity and bounds. The printed article ends with the 23 December 1929 dated closing; no separate papal subscription is printed before the next article. No subscription, letter, word, footnote or annex is invented. OCR defects, including the lost initial drop-cap F (IFTY), remain uncorrected. Exact reviewed coordinate selection removes only printed running furniture, neighboring-page gutter bleed and the next independent article. Not a critical text, full image-collated transcription or translation-accuracy certification.",
+      "completeness": "complete-within-identified-printed-witness",
+      "renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+      "history": []
     }
   ],
   "summary": {
-    "documents": 59,
-    "pages": 427,
+    "documents": 60,
+    "pages": 433,
     "status": "PASS",
-    "individually_inspected_pages": 308,
+    "individually_inspected_pages": 314,
     "reused_pages": 119,
     "original_documents": 31,
     "original_pages": 210,
     "expanded_documents": 27,
     "expanded_pages": 203,
-    "additional_documents": 1,
-    "additional_pages": 14
+    "additional_documents": 2,
+    "additional_pages": 20
   },
   "review_receipts": [
     {
@@ -4245,6 +4318,608 @@
         "indent": 2,
         "terminal_lf": true
       }
+    },
+    {
+      "sha256": "c58f6e64f3b9c12386e874c295acd3781adadcf37005a5e79b94a7d983f5ddca",
+      "document_positions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58
+      ],
+      "key_order": [
+        "schema",
+        "collection",
+        "frozen_receipt_sha256",
+        "reviewed_on",
+        "revision",
+        "review_scope",
+        "raster_comparison",
+        "raster_renderer_fingerprint",
+        "documents",
+        "summary",
+        "review_receipts",
+        "preserved_audit_snapshots",
+        "expansion_freeze",
+        "additional_frozen_batches"
+      ],
+      "metadata": {
+        "schema": "triptych-papal-visual-review/v1",
+        "collection": "historical-english",
+        "frozen_receipt_sha256": "6c6f508f3bc1859b33cf2c2501a301428ef3bc7d4cbce2b7efd784de08a2e634",
+        "reviewed_on": "2026-10-26",
+        "revision": "2026-10-26T05:10:28Z",
+        "review_scope": "Cumulative exact-PDF draft layout review across separately frozen historical English selections. Source defects, abridgments and absence of full print collation remain explicit.",
+        "raster_comparison": {
+          "path": "src/sources/papal-documents/english-encoding-raster-comparison.json",
+          "sha256": "d007562ea110c3b39643b84fb1d684ad8495588369e0fe127c861205d62cf11e"
+        },
+        "raster_renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+        "summary": {
+          "documents": 59,
+          "pages": 427,
+          "status": "PASS",
+          "individually_inspected_pages": 308,
+          "reused_pages": 119,
+          "original_documents": 31,
+          "original_pages": 210,
+          "expanded_documents": 27,
+          "expanded_pages": 203,
+          "additional_documents": 1,
+          "additional_pages": 14
+        },
+        "review_receipts": [
+          {
+            "path": ".scratch/english_encoding_review/lane-1/receipt.json",
+            "sha256": "5fde30be26a396122d01ea0f42b26ab74b3f0fa15fd6de37fe60268c7e88fc7d",
+            "report": "src/sources/papal-documents/english-encoding-visual-1.md",
+            "report_sha256": "5f12a1794f24f14861f7be29234d9f4f0b3c4d40a230c5413e1d133c3116d8a1"
+          },
+          {
+            "path": ".scratch/english_encoding_review/lane-2/receipt.json",
+            "sha256": "520e9ebb0123713b8bf2de237bb6bc76a72580e0501826f3e2c29426cd0a8e5b",
+            "report": "src/sources/papal-documents/english-encoding-visual-2.md",
+            "report_sha256": "1fbb519f5a2eaee94d2aeff67a7b9836c28b57033f75f15485ea81a6771d39a0"
+          },
+          {
+            "path": ".scratch/english_encoding_review/lane-3/receipt.json",
+            "sha256": "e4020676e9267e2defc03f08b429e9614f1973d956bfe58b9e009da386d43a03",
+            "report": "src/sources/papal-documents/english-encoding-visual-3.md",
+            "report_sha256": "2e433137a98879c3a487ececbf2f4d053c4d0dc4b03d95969f2b5d1425ca6387"
+          },
+          {
+            "path": ".scratch/english_encoding_review/lane-4/receipt.json",
+            "sha256": "9f9ce1a9c5cc9c9d10dd9c87c168475cece27b9d01dcc8ec659d78f44d88c9b0",
+            "report": "src/sources/papal-documents/english-encoding-visual-4.md",
+            "report_sha256": "5aef5665b1630fedc7a9dab8e179bab325c26fb2d3eaeb0505f7d4d00ddffdbc"
+          },
+          {
+            "report": "src/sources/papal-documents/english-expansion-visual-01.md",
+            "report_sha256": "369f15399a1c7fbfcbd0de9715d5d5f7f388102b2aab18ba525e87b5c5a29171",
+            "receipt": ".scratch/english_expansion_review/lane-1/receipt.json",
+            "receipt_sha256": "18f1472af746c3bab5c1f47543e152c27c44e76589e9444bfea871f3e158720f"
+          },
+          {
+            "report": "src/sources/papal-documents/english-expansion-visual-02.md",
+            "report_sha256": "481dc7e1907eed0abc28ea236866fdf8b661916cabee130b28ce0876573378cc",
+            "receipt": ".scratch/english_expansion_review/lane-2/receipt.json",
+            "receipt_sha256": "6e48cd0784409003ebd52236c12383add73bb8c77b91ebd67978fe5c80bf6ae6"
+          },
+          {
+            "report": "src/sources/papal-documents/english-expansion-visual-03.md",
+            "report_sha256": "21850b146796661dec95b976413aef260c63548d38d327c067d4eb9fdcea0f7c",
+            "receipt": ".scratch/english_expansion_review/lane-3/receipt.json",
+            "receipt_sha256": "6ee5c6972eb0136181543438645a75d564327cd45356fbc67cbb2c0cc44bdfc5"
+          }
+        ],
+        "preserved_audit_snapshots": [
+          {
+            "sha256": "427e48339215eb967d2b98885e89984e5edb278243e650fbb2312904ec8666b5",
+            "document_positions": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30
+            ],
+            "key_order": [
+              "schema",
+              "collection",
+              "frozen_receipt_sha256",
+              "reviewed_on",
+              "revision",
+              "review_scope",
+              "raster_comparison",
+              "raster_renderer_fingerprint",
+              "documents",
+              "summary",
+              "review_receipts"
+            ],
+            "metadata": {
+              "schema": "triptych-papal-visual-review/v1",
+              "collection": "historical-english-1903-benziger",
+              "frozen_receipt_sha256": "6c6f508f3bc1859b33cf2c2501a301428ef3bc7d4cbce2b7efd784de08a2e634",
+              "reviewed_on": "2026-10-26",
+              "revision": "2026-10-26T05:10:28Z",
+              "review_scope": "Exact-PDF draft layout review: 103 newly inspected pages plus 107 exact prior-page PNG byte reuses. Not historical print collation, clean-transcription acceptance or publication approval.",
+              "raster_comparison": {
+                "path": "src/sources/papal-documents/english-encoding-raster-comparison.json",
+                "sha256": "d007562ea110c3b39643b84fb1d684ad8495588369e0fe127c861205d62cf11e"
+              },
+              "raster_renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+              "summary": {
+                "documents": 31,
+                "pages": 210,
+                "status": "PASS",
+                "individually_inspected_pages": 103,
+                "reused_pages": 107,
+                "changed_source_documents": 11,
+                "unchanged_source_documents": 20
+              },
+              "review_receipts": [
+                {
+                  "path": ".scratch/english_encoding_review/lane-1/receipt.json",
+                  "sha256": "5fde30be26a396122d01ea0f42b26ab74b3f0fa15fd6de37fe60268c7e88fc7d",
+                  "report": "src/sources/papal-documents/english-encoding-visual-1.md",
+                  "report_sha256": "5f12a1794f24f14861f7be29234d9f4f0b3c4d40a230c5413e1d133c3116d8a1"
+                },
+                {
+                  "path": ".scratch/english_encoding_review/lane-2/receipt.json",
+                  "sha256": "520e9ebb0123713b8bf2de237bb6bc76a72580e0501826f3e2c29426cd0a8e5b",
+                  "report": "src/sources/papal-documents/english-encoding-visual-2.md",
+                  "report_sha256": "1fbb519f5a2eaee94d2aeff67a7b9836c28b57033f75f15485ea81a6771d39a0"
+                },
+                {
+                  "path": ".scratch/english_encoding_review/lane-3/receipt.json",
+                  "sha256": "e4020676e9267e2defc03f08b429e9614f1973d956bfe58b9e009da386d43a03",
+                  "report": "src/sources/papal-documents/english-encoding-visual-3.md",
+                  "report_sha256": "2e433137a98879c3a487ececbf2f4d053c4d0dc4b03d95969f2b5d1425ca6387"
+                },
+                {
+                  "path": ".scratch/english_encoding_review/lane-4/receipt.json",
+                  "sha256": "9f9ce1a9c5cc9c9d10dd9c87c168475cece27b9d01dcc8ec659d78f44d88c9b0",
+                  "report": "src/sources/papal-documents/english-encoding-visual-4.md",
+                  "report_sha256": "5aef5665b1630fedc7a9dab8e179bab325c26fb2d3eaeb0505f7d4d00ddffdbc"
+                }
+              ]
+            },
+            "serialization": {
+              "encoding": "utf-8",
+              "ensure_ascii": false,
+              "indent": 2,
+              "terminal_lf": true
+            }
+          },
+          {
+            "sha256": "c64405e004f7c28a4c9b108ce94ed5363cab0586c6d50cf363518ebb2c854ba7",
+            "document_positions": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54,
+              55,
+              56,
+              57
+            ],
+            "key_order": [
+              "schema",
+              "collection",
+              "frozen_receipt_sha256",
+              "reviewed_on",
+              "revision",
+              "review_scope",
+              "raster_comparison",
+              "raster_renderer_fingerprint",
+              "documents",
+              "summary",
+              "review_receipts",
+              "preserved_audit_snapshots",
+              "expansion_freeze"
+            ],
+            "metadata": {
+              "schema": "triptych-papal-visual-review/v1",
+              "collection": "historical-english",
+              "frozen_receipt_sha256": "6c6f508f3bc1859b33cf2c2501a301428ef3bc7d4cbce2b7efd784de08a2e634",
+              "reviewed_on": "2026-10-26",
+              "revision": "2026-10-26T05:10:28Z",
+              "review_scope": "Cumulative exact-PDF draft layout review across separately frozen historical English selections. Source defects, abridgments and absence of full print collation remain explicit.",
+              "raster_comparison": {
+                "path": "src/sources/papal-documents/english-encoding-raster-comparison.json",
+                "sha256": "d007562ea110c3b39643b84fb1d684ad8495588369e0fe127c861205d62cf11e"
+              },
+              "raster_renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+              "summary": {
+                "documents": 58,
+                "pages": 413,
+                "status": "PASS",
+                "individually_inspected_pages": 294,
+                "reused_pages": 119,
+                "original_documents": 31,
+                "original_pages": 210,
+                "expanded_documents": 27,
+                "expanded_pages": 203
+              },
+              "review_receipts": [
+                {
+                  "path": ".scratch/english_encoding_review/lane-1/receipt.json",
+                  "sha256": "5fde30be26a396122d01ea0f42b26ab74b3f0fa15fd6de37fe60268c7e88fc7d",
+                  "report": "src/sources/papal-documents/english-encoding-visual-1.md",
+                  "report_sha256": "5f12a1794f24f14861f7be29234d9f4f0b3c4d40a230c5413e1d133c3116d8a1"
+                },
+                {
+                  "path": ".scratch/english_encoding_review/lane-2/receipt.json",
+                  "sha256": "520e9ebb0123713b8bf2de237bb6bc76a72580e0501826f3e2c29426cd0a8e5b",
+                  "report": "src/sources/papal-documents/english-encoding-visual-2.md",
+                  "report_sha256": "1fbb519f5a2eaee94d2aeff67a7b9836c28b57033f75f15485ea81a6771d39a0"
+                },
+                {
+                  "path": ".scratch/english_encoding_review/lane-3/receipt.json",
+                  "sha256": "e4020676e9267e2defc03f08b429e9614f1973d956bfe58b9e009da386d43a03",
+                  "report": "src/sources/papal-documents/english-encoding-visual-3.md",
+                  "report_sha256": "2e433137a98879c3a487ececbf2f4d053c4d0dc4b03d95969f2b5d1425ca6387"
+                },
+                {
+                  "path": ".scratch/english_encoding_review/lane-4/receipt.json",
+                  "sha256": "9f9ce1a9c5cc9c9d10dd9c87c168475cece27b9d01dcc8ec659d78f44d88c9b0",
+                  "report": "src/sources/papal-documents/english-encoding-visual-4.md",
+                  "report_sha256": "5aef5665b1630fedc7a9dab8e179bab325c26fb2d3eaeb0505f7d4d00ddffdbc"
+                },
+                {
+                  "report": "src/sources/papal-documents/english-expansion-visual-01.md",
+                  "report_sha256": "369f15399a1c7fbfcbd0de9715d5d5f7f388102b2aab18ba525e87b5c5a29171",
+                  "receipt": ".scratch/english_expansion_review/lane-1/receipt.json",
+                  "receipt_sha256": "18f1472af746c3bab5c1f47543e152c27c44e76589e9444bfea871f3e158720f"
+                },
+                {
+                  "report": "src/sources/papal-documents/english-expansion-visual-02.md",
+                  "report_sha256": "481dc7e1907eed0abc28ea236866fdf8b661916cabee130b28ce0876573378cc",
+                  "receipt": ".scratch/english_expansion_review/lane-2/receipt.json",
+                  "receipt_sha256": "6e48cd0784409003ebd52236c12383add73bb8c77b91ebd67978fe5c80bf6ae6"
+                },
+                {
+                  "report": "src/sources/papal-documents/english-expansion-visual-03.md",
+                  "report_sha256": "21850b146796661dec95b976413aef260c63548d38d327c067d4eb9fdcea0f7c",
+                  "receipt": ".scratch/english_expansion_review/lane-3/receipt.json",
+                  "receipt_sha256": "6ee5c6972eb0136181543438645a75d564327cd45356fbc67cbb2c0cc44bdfc5"
+                }
+              ],
+              "preserved_audit_snapshots": [
+                {
+                  "sha256": "427e48339215eb967d2b98885e89984e5edb278243e650fbb2312904ec8666b5",
+                  "document_positions": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30
+                  ],
+                  "key_order": [
+                    "schema",
+                    "collection",
+                    "frozen_receipt_sha256",
+                    "reviewed_on",
+                    "revision",
+                    "review_scope",
+                    "raster_comparison",
+                    "raster_renderer_fingerprint",
+                    "documents",
+                    "summary",
+                    "review_receipts"
+                  ],
+                  "metadata": {
+                    "schema": "triptych-papal-visual-review/v1",
+                    "collection": "historical-english-1903-benziger",
+                    "frozen_receipt_sha256": "6c6f508f3bc1859b33cf2c2501a301428ef3bc7d4cbce2b7efd784de08a2e634",
+                    "reviewed_on": "2026-10-26",
+                    "revision": "2026-10-26T05:10:28Z",
+                    "review_scope": "Exact-PDF draft layout review: 103 newly inspected pages plus 107 exact prior-page PNG byte reuses. Not historical print collation, clean-transcription acceptance or publication approval.",
+                    "raster_comparison": {
+                      "path": "src/sources/papal-documents/english-encoding-raster-comparison.json",
+                      "sha256": "d007562ea110c3b39643b84fb1d684ad8495588369e0fe127c861205d62cf11e"
+                    },
+                    "raster_renderer_fingerprint": "cb6bc6758b165c50bba7f68d7b5e1df5cc66fa3e0aad97361992b67d97cea2ba",
+                    "summary": {
+                      "documents": 31,
+                      "pages": 210,
+                      "status": "PASS",
+                      "individually_inspected_pages": 103,
+                      "reused_pages": 107,
+                      "changed_source_documents": 11,
+                      "unchanged_source_documents": 20
+                    },
+                    "review_receipts": [
+                      {
+                        "path": ".scratch/english_encoding_review/lane-1/receipt.json",
+                        "sha256": "5fde30be26a396122d01ea0f42b26ab74b3f0fa15fd6de37fe60268c7e88fc7d",
+                        "report": "src/sources/papal-documents/english-encoding-visual-1.md",
+                        "report_sha256": "5f12a1794f24f14861f7be29234d9f4f0b3c4d40a230c5413e1d133c3116d8a1"
+                      },
+                      {
+                        "path": ".scratch/english_encoding_review/lane-2/receipt.json",
+                        "sha256": "520e9ebb0123713b8bf2de237bb6bc76a72580e0501826f3e2c29426cd0a8e5b",
+                        "report": "src/sources/papal-documents/english-encoding-visual-2.md",
+                        "report_sha256": "1fbb519f5a2eaee94d2aeff67a7b9836c28b57033f75f15485ea81a6771d39a0"
+                      },
+                      {
+                        "path": ".scratch/english_encoding_review/lane-3/receipt.json",
+                        "sha256": "e4020676e9267e2defc03f08b429e9614f1973d956bfe58b9e009da386d43a03",
+                        "report": "src/sources/papal-documents/english-encoding-visual-3.md",
+                        "report_sha256": "2e433137a98879c3a487ececbf2f4d053c4d0dc4b03d95969f2b5d1425ca6387"
+                      },
+                      {
+                        "path": ".scratch/english_encoding_review/lane-4/receipt.json",
+                        "sha256": "9f9ce1a9c5cc9c9d10dd9c87c168475cece27b9d01dcc8ec659d78f44d88c9b0",
+                        "report": "src/sources/papal-documents/english-encoding-visual-4.md",
+                        "report_sha256": "5aef5665b1630fedc7a9dab8e179bab325c26fb2d3eaeb0505f7d4d00ddffdbc"
+                      }
+                    ]
+                  },
+                  "serialization": {
+                    "encoding": "utf-8",
+                    "ensure_ascii": false,
+                    "indent": 2,
+                    "terminal_lf": true
+                  }
+                }
+              ],
+              "expansion_freeze": {
+                "collection_sha256": "9e810481529778c88ae74d44ea79e9e6dd52454e07031f13682c666b9940179c",
+                "documents": 27,
+                "pages": 203,
+                "explicit_review_corrections": [
+                  {
+                    "pdf_path": ".scratch/typeset_pipeline/english-corrections-0002/1870-04-24-papal-pius-ix-constitutio-dogmatica-dei-filius-24-aprilis-1870-7b1ef3d4-en/1870-04-24-papal-pius-ix-constitutio-dogmatica-dei-filius-24-aprilis-1870-7b1ef3d4-en.pdf",
+                    "receipt_path": ".scratch/typeset_pipeline/english-corrections-0002/receipt.json",
+                    "manifest_path": ".scratch/typeset_pipeline/english-corrections-0002/frozen-manifest.json",
+                    "manifest_sha256": "d5fff9c424a8969299b65bb83d397bd2b78b0e4d0d828011214c19bb0cc89f54",
+                    "prior_pdf_sha256": "6b7f0cd717c8f0844b9def821f6db34abada9a373f0d91ad27a4ce3b0cb6aa4a",
+                    "correction_reason": "CHAPTER II Of Revelation stranded at p2left-column foot from following body."
+                  },
+                  {
+                    "pdf_path": ".scratch/typeset_pipeline/english-corrections-0002/1928-01-06-papal-pius-xi-hf-p-xi-enc-19280106-mortalium-animos-84c4d016-en/1928-01-06-papal-pius-xi-hf-p-xi-enc-19280106-mortalium-animos-84c4d016-en.pdf",
+                    "receipt_path": ".scratch/typeset_pipeline/english-corrections-0002/receipt.json",
+                    "manifest_path": ".scratch/typeset_pipeline/english-corrections-0002/frozen-manifest.json",
+                    "manifest_sha256": "d5fff9c424a8969299b65bb83d397bd2b78b0e4d0d828011214c19bb0cc89f54",
+                    "prior_pdf_sha256": "5aaeb43e5e51e1de0a5d23cc430c66324670df5fff69d6c97ce078be36b17929",
+                    "correction_reason": "CHURCH ESTABLISHED By CHRIST stranded at p1right-column foot before p2body."
+                  },
+                  {
+                    "pdf_path": ".scratch/typeset_pipeline/english-corrections-0002/1922-12-23-papal-pius-xi-hf-p-xi-enc-19221223-ubi-arcano-dei-consilio-f438ea5d-en/1922-12-23-papal-pius-xi-hf-p-xi-enc-19221223-ubi-arcano-dei-consilio-f438ea5d-en.pdf",
+                    "receipt_path": ".scratch/typeset_pipeline/english-corrections-0002/receipt.json",
+                    "manifest_path": ".scratch/typeset_pipeline/english-corrections-0002/frozen-manifest.json",
+                    "manifest_sha256": "d5fff9c424a8969299b65bb83d397bd2b78b0e4d0d828011214c19bb0cc89f54",
+                    "prior_pdf_sha256": "25c0276f34e10f7917579cf79a4c6558e4ab1756f1660b8053fd5bb2f79ef614",
+                    "correction_reason": "Source notice omits starting folio on physicalpage12."
+                  }
+                ],
+                "excluded_later_additions": [
+                  "Quinquagesimo and any subsequent unfrozen receipt"
+                ]
+              }
+            },
+            "serialization": {
+              "encoding": "utf-8",
+              "ensure_ascii": false,
+              "indent": 2,
+              "terminal_lf": true
+            }
+          }
+        ],
+        "expansion_freeze": {
+          "collection_sha256": "9e810481529778c88ae74d44ea79e9e6dd52454e07031f13682c666b9940179c",
+          "documents": 27,
+          "pages": 203,
+          "explicit_review_corrections": [
+            {
+              "pdf_path": ".scratch/typeset_pipeline/english-corrections-0002/1870-04-24-papal-pius-ix-constitutio-dogmatica-dei-filius-24-aprilis-1870-7b1ef3d4-en/1870-04-24-papal-pius-ix-constitutio-dogmatica-dei-filius-24-aprilis-1870-7b1ef3d4-en.pdf",
+              "receipt_path": ".scratch/typeset_pipeline/english-corrections-0002/receipt.json",
+              "manifest_path": ".scratch/typeset_pipeline/english-corrections-0002/frozen-manifest.json",
+              "manifest_sha256": "d5fff9c424a8969299b65bb83d397bd2b78b0e4d0d828011214c19bb0cc89f54",
+              "prior_pdf_sha256": "6b7f0cd717c8f0844b9def821f6db34abada9a373f0d91ad27a4ce3b0cb6aa4a",
+              "correction_reason": "CHAPTER II Of Revelation stranded at p2left-column foot from following body."
+            },
+            {
+              "pdf_path": ".scratch/typeset_pipeline/english-corrections-0002/1928-01-06-papal-pius-xi-hf-p-xi-enc-19280106-mortalium-animos-84c4d016-en/1928-01-06-papal-pius-xi-hf-p-xi-enc-19280106-mortalium-animos-84c4d016-en.pdf",
+              "receipt_path": ".scratch/typeset_pipeline/english-corrections-0002/receipt.json",
+              "manifest_path": ".scratch/typeset_pipeline/english-corrections-0002/frozen-manifest.json",
+              "manifest_sha256": "d5fff9c424a8969299b65bb83d397bd2b78b0e4d0d828011214c19bb0cc89f54",
+              "prior_pdf_sha256": "5aaeb43e5e51e1de0a5d23cc430c66324670df5fff69d6c97ce078be36b17929",
+              "correction_reason": "CHURCH ESTABLISHED By CHRIST stranded at p1right-column foot before p2body."
+            },
+            {
+              "pdf_path": ".scratch/typeset_pipeline/english-corrections-0002/1922-12-23-papal-pius-xi-hf-p-xi-enc-19221223-ubi-arcano-dei-consilio-f438ea5d-en/1922-12-23-papal-pius-xi-hf-p-xi-enc-19221223-ubi-arcano-dei-consilio-f438ea5d-en.pdf",
+              "receipt_path": ".scratch/typeset_pipeline/english-corrections-0002/receipt.json",
+              "manifest_path": ".scratch/typeset_pipeline/english-corrections-0002/frozen-manifest.json",
+              "manifest_sha256": "d5fff9c424a8969299b65bb83d397bd2b78b0e4d0d828011214c19bb0cc89f54",
+              "prior_pdf_sha256": "25c0276f34e10f7917579cf79a4c6558e4ab1756f1660b8053fd5bb2f79ef614",
+              "correction_reason": "Source notice omits starting folio on physicalpage12."
+            }
+          ],
+          "excluded_later_additions": [
+            "Quinquagesimo and any subsequent unfrozen receipt"
+          ]
+        },
+        "additional_frozen_batches": [
+          {
+            "name": "Divini illius Magistri — separately frozen1930English reader",
+            "pdf_path": ".scratch/typeset_pipeline/english-journal-0003/1929-12-31-papal-pius-xi-hf-p-xi-enc-31121929-divini-illius-magistri-a6878805-en/1929-12-31-papal-pius-xi-hf-p-xi-enc-31121929-divini-illius-magistri-a6878805-en.pdf",
+            "receipt_path": ".scratch/typeset_pipeline/english-journal-0003/receipt.json",
+            "manifest_path": ".scratch/typeset_pipeline/english-journal-0003/frozen-manifest.json",
+            "manifest_sha256": "5c3c377fb0e9264f5eaaa123e521f30e933d71b9df20e7b6560443a3d47f6ca4",
+            "review_receipt": ".scratch/english_divini_review/inspection/receipt.json",
+            "review_receipt_sha256": "eed1a3c7f1de489c295dc0c1047d646bc5b33e704b0b0011f367fb8bc0d23447",
+            "scope": "Separate later addition; outside the frozen27PDF/203page expansion selection.",
+            "id": "papal.pius-xi.hf-p-xi-enc-31121929-divini-illius-magistri",
+            "pdf_sha256": "fb6d2b1598120e894bd8cb5efcc6ac309b3c2efc03298e08ee2329ee60b90c72",
+            "pages": 14,
+            "receipt_sha256": "fff368fd4ee6556145a5b21ec076790a54e93826314368e5c668d2c505a0f79d"
+          }
+        ]
+      },
+      "serialization": {
+        "encoding": "utf-8",
+        "ensure_ascii": false,
+        "indent": 2,
+        "terminal_lf": true
+      }
     }
   ],
   "expansion_freeze": {
@@ -4295,6 +4970,20 @@
       "pdf_sha256": "fb6d2b1598120e894bd8cb5efcc6ac309b3c2efc03298e08ee2329ee60b90c72",
       "pages": 14,
       "receipt_sha256": "fff368fd4ee6556145a5b21ec076790a54e93826314368e5c668d2c505a0f79d"
+    },
+    {
+      "name": "Quinquagesimo ante anno — separately frozen1930English reader",
+      "pdf_path": ".scratch/typeset_pipeline/english-journal-0002/1929-12-23-papal-pius-xi-hf-p-xi-enc-19291223-quinquagesimo-ante-anno-850f2c8f-en/1929-12-23-papal-pius-xi-hf-p-xi-enc-19291223-quinquagesimo-ante-anno-850f2c8f-en.pdf",
+      "receipt_path": ".scratch/typeset_pipeline/english-journal-0002/receipt.json",
+      "manifest_path": ".scratch/typeset_pipeline/english-journal-0002/frozen-manifest.json",
+      "manifest_sha256": "56186dd915642ccc5e49f2a6d71c8ebeb6707501310502c4e785ef2140718527",
+      "review_receipt": ".scratch/english_expansion/quinquagesimo-visual-review/audit.json",
+      "review_receipt_sha256": "e826abbac16f720b652a9072ced8df28448d6e70c6f29eda6788ea2a58d91b45",
+      "scope": "Final separate later addition; outside the frozen27PDF/203page expansion selection.",
+      "id": "papal.pius-xi.hf-p-xi-enc-19291223-quinquagesimo-ante-anno",
+      "pdf_sha256": "7077fc459836358ad500146ef2a6d913b0d3907ba045e0b8757da78747abb7c4",
+      "pages": 6,
+      "receipt_sha256": "a60db942bc9f98f1611aa1c268cf504bce527b648a8aa0a72a3b979401e1019a"
     }
   ]
 }
