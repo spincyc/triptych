@@ -138,6 +138,24 @@ class InstallTests(unittest.TestCase):
         self.assertEqual(proposal["summary"]["ready"], 1)
         self.assertFalse(any("future-not" in row["source"] for row in proposal["archives"]))
 
+    def test_install_replays_only_the_explicitly_prepared_review_scope(self):
+        self.fixtures(("PASS", "PASS"))
+        second = copy.deepcopy(self.audit)
+        second["documents"] = [second["documents"][1]]
+        self.audit["documents"] = [self.audit["documents"][0]]
+        self.write(self.audit_path, self.audit)
+        other = self.audits / "other-visual-review.json"
+        self.write(other, second)
+        proposal = installer.prepare_install(self.plan_path, self.pairs_path, self.prepared_path,
+                                             review_manifests=[self.audit_path])
+        self.assertEqual(proposal["summary"]["ready"], 1)
+        state = next(row for row in proposal["delivery_states"] if row["id"] == "papal.synthetic.1")
+        self.assertEqual(state["review_evidence"], "not-supplied")
+        self.assertIn("not supplied", state["reason"])
+        release = installer.install_prepared(self.prepared_path)
+        self.assertEqual(len(release["documents"]), 1)
+        self.assertEqual(release["documents"][0]["id"], "papal.synthetic.0")
+
     def test_tampered_pdf_or_report_refuses_before_any_installed_write(self):
         self.fixtures()
         self.prepare()

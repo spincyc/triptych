@@ -133,3 +133,23 @@ After these repairs, `make -o check-act-history check-sources` passes.
 Act-history freshness remains independently established by its exact owning
 generator output comparison. This reports the source aggregate precisely;
 it does not claim a full repository or deployment check.
+
+## Initial installed release
+
+The first scoped installation contains 424 exact reviewed PDFs and 1,338
+pages: 391 Vatican Latin readers, 31 original historical English readers,
+and Quanta cura/Syllabus as two separate constituents. The PDFs total
+11,023,424 bytes. The release record is `release/papal-documents.json`,
+SHA-256 `59a1b12085cefc428a44147bd0f48c7a22de594e758585c8ecf37c62147cd6cc`;
+64 content-addressed metadata/report files retain its durable evidence.
+
+All installed paths and PDF hashes pass the owning checker, and the installed
+source rows remain valid against the later current plan. A separate comparison
+proves all 424 selected rows and all 1,607 source dependency files match
+published checkpoint `408070d3e`. The release's complete plan remains a frozen
+snapshot; later changes to uninstalled families do not imply their acceptance.
+No other historical family is installed by this initial release.
+
+The installer preserves exactly the supplied review scope when replaying a
+prepared transaction. Its additional scope regression and independent delta
+checks pass. No source wording or existing PDF bytes changed during copying.

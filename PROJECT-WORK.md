@@ -100,7 +100,7 @@ closed staged page-witness tampering, lost reviewed series discoveries,
 collection input overwrites and installer rollback failures. The installer
 retains exact release inputs and copies only current PASS bytes to the
 provider-neutral destination defined in `guidance/papal-documents.md`.
-Its first installation remains pending current evidence reconciliation.
+Its first installation was pending evidence reconciliation at that checkpoint.
 Additional sealed source admissions and the remaining PDF reviews remain
 active work; source-family review states are not promoted by these operations.
 
@@ -110,8 +110,17 @@ long-token reader preserves all source characters. Containment passes with
 6,348 constituents after adding the newly registered historical English
 Divini witness and qualifying two further source-order holds. The source
 aggregate passes with act-history freshness established separately. Complete
-page review, source-wrapper corrections, further sealed admissions and first
+page review, source-wrapper corrections, further sealed admissions and broader
 installation remain open.
+
+The initial installed release now contains 424 exact reviewed PDFs and 1,338
+pages: 391 Vatican Latin readers, 31 original historical English readers and
+the two Quanta/Syllabus constituents. Their [release record](release/papal-documents.json)
+retains exact frozen inputs, receipts and review reports. Installed hashes,
+owned paths and durable evidence pass validation; all selected source rows
+and 1,607 source dependencies match published checkpoint `408070d3e`.
+Other historical families remain outside this scoped installation while
+their source-boundary and page-review work continues.
 
 ## GPT Last Things and next Sunday propers, 2026-10-25
 

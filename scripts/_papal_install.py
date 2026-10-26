@@ -216,6 +216,9 @@ def _prepare_data(plan_path, pair_path, review_paths):
             status = evidence[0][3].get("status") if evidence else None
             _require(status in {None, "PENDING", "CHANGES_REQUIRED"}, "unknown current review state")
             state["status"] = "changes-required" if status == "CHANGES_REQUIRED" else "review-pending"
+            state["review_evidence"] = "not-supplied" if not evidence else "supplied"
+            if not evidence:
+                state["reason"] = "Review evidence not supplied for this release."
             states.append(state)
             continue
         audit_path, audit, review_index, review = evidence[0]
@@ -358,7 +361,6 @@ def install_prepared(prepared):
     _require(proposal.get("schema") == PREPARED_SCHEMA, "incorrect prepared installation schema")
     # Re-run the real source, receipt, PDF and review gates immediately before copy.
     reviews = {_safe(row["path"]) for row in proposal["review_inputs"]}
-    reviews.update((ROOT / "src/sources/papal-documents").glob("*-visual-review.json"))
     current = _prepare_data(_safe(proposal["plan"]["path"]), _safe(proposal["batch_pairs"]["path"]), sorted(reviews))
     _require(_canonical(current) == _canonical(proposal), "prepared installation changed; prepare and review it again")
     old_release = _owned_release()
