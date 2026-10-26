@@ -15,8 +15,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "sunday-workflow"
   criterion = "The next Sunday's 1962 Mass, identity and occurrence are verified; its GPT proper-study workflow reaches accepted terminal completion with every mandated research, content, artifact and independent review gate."
-  status = "open"
-  evidence = ["workflows/reviews/gpt-flt-and-sunday-2026-10-25/RECORD.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/gpt-flt-and-sunday-2026-10-25/RECORD.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/fb0417d471635250/record.md"]
 
   [[deliverables.requirements]]
   id = "reviewed-artifacts"

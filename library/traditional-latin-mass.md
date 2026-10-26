@@ -87,6 +87,7 @@ editions are shown as `Planned`.
 <!-- triptych-publication-id: claude:liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost -->
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king -->
 <!-- triptych-publication-id: claude:liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king -->
+<!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/f02-all-saints -->
 
 | ID | Sunday | ChatGPT | Claude |
 | ---: | --- | --- | --- |
@@ -164,6 +165,7 @@ editions are shown as `Planned`.
 | ID | Celebration | ChatGPT | Claude |
 | ---: | --- | --- | --- |
 | F01 | **Christ the King (Last Sunday of October)** | [Full PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.pdf) · [Synthesis PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis.pdf) · [Homily PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-homily.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.html) | [Full PDF](../pdf/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.pdf) · [Synthesis PDF](../pdf/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis.pdf) · [Homily PDF](../pdf/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-homily.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.html) |
+| F02 | **All Saints (November 1)** | [Full PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.pdf) · [Synthesis PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis.pdf) · [Homily PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.html) | Planned |
 
 ## Other Masses
 

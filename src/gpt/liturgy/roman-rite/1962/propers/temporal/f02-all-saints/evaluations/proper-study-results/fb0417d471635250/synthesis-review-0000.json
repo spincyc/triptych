@@ -1,0 +1,301 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/concise/01-inventory.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/concise/02-overview.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "concise-chronology",
+          "kind": "front-matter",
+          "path": "sections/concise/03-chronology.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml",
+            "research/chronology.toml",
+            "research/chronology-annotations.tex"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/concise/04-themes.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/concise/10-commentary.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/concise/90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
+      "element_keys": [
+        "introit",
+        "collect",
+        "commemoration-collect",
+        "lesson",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "commemoration-secret",
+        "preface",
+        "communion",
+        "postcommunion",
+        "commemoration-postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Bede",
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Alfredo Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Bede",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "communion-of-saints"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "communion-of-saints",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Bede",
+            "Thomas Aquinas",
+            "Gregory the Great",
+            "Alfredo Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "purification-and-rest"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "purification-and-rest",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
+    "files": {
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/chronology-annotations.tex": "d396816f55517a7918ac3d74bed09420c977a11f524ec904a923668d7bbf3c51",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/chronology.toml": "6ab0109bd1bc0e7953a23fa47f546883454948ce34f01a2b42c999633b1cccaa",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/interpretations.md": "a2c3d969d4bd190b420942e4d346c83e98b66222f6c59babdbba4e11593a2de2",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/scope.md": "bfba609a58e751b44de767ea0ca62a6005bc79293cdcb084b50654b9b16575a7",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/source-bindings.toml": "39c3420421dfc2014689000c10d2b19e1cd8df4a05e151dfba41a3e7192caba8",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/01-inventory.tex": "503895e1609156a4d48b773990b5d247f8860620906a3b09183f88ce581d654a",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/02-overview.tex": "938369f405fbfd9e0b78d043f9ad7c1ac595d476f5fff5432a54e848b1ca192b",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/03-chronology.tex": "e2067deb5b00bc981da8b2d19909684dee499f1ece66c498edbf01522628dfe5",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/04-themes.tex": "4c55e3cc204735b4c7d09e3e753add274b808d81abd0c56bb03d922c8c83d9be",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/10-commentary.tex": "491d401d02d5a91c2d5af067c5d9f65e2eedc3876c1061175b5c919cc3c0a78e",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/90-apparatus.tex": "8f5c0d549842a670ca3edec237f106f403267fc6c46d6f737f8203bba2d45726",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/synthesis.tex": "75ce756b2026b8f0a023b44977e901f259d22fb7c1db42f04fd3ad0da5f217b8"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "15",
+            "4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83",
+            "fb0417d471635250",
+            "24c1b7ce1781f79937f57b66c221b0ed82e219d9",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "PASS: Independently reviewed All Saints: Communion and Conversion, its ten-page PDF and settled page evidence, against the expansive study and exact Bede, Augustine, Chrysostom, Aquinas, Gregory, Schuster, Missal and chronology loci; all fourteen appointments, the four-row overview, substantive pages 3\u20134, developed commentary from page 5, distinct arguments and material qualifications survive compression without a new source-dependent claim or recurring register defect. Rendered page-2 lookups pair the Gradual's Psalm 33 with pre-accession Geth and qualified A.M. 2944, Matthew 5 with an unnamed mountain and unresolved event date separately from shared Gospel-composition alternatives, and Wisdom with Alexandria and both qualified persecution horizons; this is a concise-study review using identified historical English and Latin evidence, not a global chronology audit or fresh critical-language collation."
+}

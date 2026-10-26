@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name. Production provenance is what each document records about itself, field by field, omitting any field its record says was not recoverable; comparing it against the workflows declared below is a finding aid and never an authority, and nothing in this repository gates on it.",
  "counted": {
-  "documents": 213,
-  "issues": 271,
-  "pages": 7188,
+  "documents": 214,
+  "issues": 274,
+  "pages": 7207,
   "titles_unrecorded": 0,
-  "works": 152
+  "works": 153
  },
  "models": [
   {
@@ -29,7 +29,7 @@
    "id": "claude-fable-5"
   },
   {
-   "documents": 17,
+   "documents": 18,
    "id": "GPT-6"
   },
   {
@@ -56,7 +56,7 @@
    "label": "Claude"
   },
   {
-   "documents": 150,
+   "documents": 151,
    "id": "gpt",
    "label": "GPT"
   }
@@ -85,7 +85,7 @@
   },
   {
    "id": "liturgy",
-   "works": 59
+   "works": 60
   },
   {
    "id": "theology",
@@ -609,11 +609,11 @@
       "GPT-5-based Codex agent",
       "GPT-6-based Codex agent"
      ],
-     "pages": 25,
+     "pages": 24,
      "pdf": "pdf/gpt/articles/faith/four-last-things-01-death.pdf",
      "provider": "gpt",
-     "reviewed": "2026-10-14",
-     "revised": "2026-10-14T01:05:45Z",
+     "reviewed": "2026-10-25",
+     "revised": "2026-10-25T20:34:12Z",
      "status": "alpha",
      "subject": "Death: a Catholic study of mortality, Christian preparation, and resurrection",
      "title": "The Four Last Things: The Hour That Cannot Be Delegated",
@@ -683,6 +683,11 @@
        "model": "GPT-6-based Codex agent",
        "qualifiers": "unexposed: exact model identifier and model qualifiers",
        "runtime": "OpenAI Codex agent (source research, theological synthesis, editorial revision, independent content review, typesetting, and production review); API workspace; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier and model qualifiers",
+       "runtime": "OpenAI Codex agent (Judgment essay plain-drafting revision and claim and citation preservation audit); API workspace; unexposed: client version and server revision"
       }
      ],
      "eligibility": "eligible",
@@ -690,11 +695,11 @@
       "GPT-5-based Codex agent",
       "GPT-6-based Codex agent"
      ],
-     "pages": 25,
+     "pages": 24,
      "pdf": "pdf/gpt/articles/faith/four-last-things-02-judgment.pdf",
      "provider": "gpt",
-     "reviewed": "2026-10-14",
-     "revised": "2026-10-14T01:05:45Z",
+     "reviewed": "2026-10-25",
+     "revised": "2026-10-25T20:37:59Z",
      "status": "alpha",
      "subject": "Judgment: a Catholic study of particular and final judgment, grace, works, mercy, and justice",
      "title": "The Four Last Things: The Truth of a Life",
@@ -769,6 +774,11 @@
        "model": "GPT-6-based Codex agent",
        "qualifiers": "unexposed: exact model identifier and model qualifiers",
        "runtime": "OpenAI Codex agent (source research, theological synthesis, editorial revision, independent content review, typesetting, and production review); API workspace; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier and model qualifiers",
+       "runtime": "OpenAI Codex agent (Catholic voice and plain-prose revision, source-preservation comparison, and targeted build); API workspace; unexposed: reasoning-effort setting, client version, and server revision"
       }
      ],
      "eligibility": "eligible",
@@ -779,8 +789,8 @@
      "pages": 25,
      "pdf": "pdf/gpt/articles/faith/four-last-things-03-hell.pdf",
      "provider": "gpt",
-     "reviewed": "2026-10-14",
-     "revised": "2026-10-14T01:05:45Z",
+     "reviewed": "2026-10-25",
+     "revised": "2026-10-25T20:42:32Z",
      "status": "alpha",
      "subject": "Eternal Punishment and the Call to Conversion",
      "title": "The Four Last Things: Hell",
@@ -857,11 +867,11 @@
       "GPT-5-based Codex agent",
       "GPT-6-based Codex agent"
      ],
-     "pages": 24,
+     "pages": 23,
      "pdf": "pdf/gpt/articles/faith/four-last-things-04-heaven.pdf",
      "provider": "gpt",
-     "reviewed": "2026-10-14",
-     "revised": "2026-10-14T01:05:45Z",
+     "reviewed": "2026-10-25",
+     "revised": "2026-10-25T20:38:01Z",
      "status": "alpha",
      "subject": "Heaven: a Catholic study of the beatific vision, communion of saints, resurrection, and the new creation",
      "title": "The Four Last Things: The End for Which We Were Made",
@@ -7965,6 +7975,76 @@
     }
    ],
    "leaf": "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king",
+   "section": "liturgy"
+  },
+  {
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
+   "editions": [
+    {
+     "also": [
+      {
+       "kind": "synthesis",
+       "pages": 10,
+       "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis.pdf",
+       "subject": "A concise comparison of two interpretations of the 1962 Roman Missal propers for 1 November 2026",
+       "title": "All Saints: Communion and Conversion"
+      },
+      {
+       "kind": "homily",
+       "pages": 3,
+       "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily.pdf",
+       "subject": "A homily for an adult parish assembly on the 1962 Roman Missal feast, 1 November 2026",
+       "title": "All Saints: The Rest Christ Gives"
+      }
+     ],
+     "authorization": "perpetual-public-repository-2026",
+     "contributions": [
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; expansive study, received appointed-text assembly, two interpretations, historical appendix, component manifest and author proof verification; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; study revision integrating Apocalypse 7 and Bede into the second interpretation, plain comparison repair and author proof verification; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; concise study derivation, four-page opening, interleaved comparison, source-note selection and author proof verification; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; homily derivation, spoken argument, source and delivery note, silent oral-clarity read and scoped author proof verification; unexposed: client version and server revision"
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "GPT-6"
+     ],
+     "pages": 22,
+     "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.pdf",
+     "produced": {
+      "run_id": "fb0417d471635250",
+      "seed_commit": "24c1b7ce1781f79937f57b66c221b0ed82e219d9",
+      "workflow_digest": "4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83",
+      "workflow_id": "proper-study",
+      "workflow_version": "15"
+     },
+     "provider": "gpt",
+     "reviewed": "2026-10-25",
+     "revised": "2026-10-25T23:52:03Z",
+     "status": "alpha",
+     "subject": "An expansive study of the 1962 Roman Missal propers for 1 November 2026",
+     "title": "All Saints: Communion, Conversion, and the Promised Kingdom",
+     "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/main.tex",
+     "web": "web/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.html"
+    }
+   ],
+   "leaf": "liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
    "section": "liturgy"
   },
   {

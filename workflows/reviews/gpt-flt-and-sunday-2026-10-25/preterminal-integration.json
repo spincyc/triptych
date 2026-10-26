@@ -1,0 +1,140 @@
+{
+  "phase": "pre-terminal-publication-shared-integration",
+  "complete_for_this_boundary": true,
+  "final_archive_refresh_and_full_publication_checks_still_required": true,
+  "commands": [
+    {
+      "command": "python tools/tpt source-inventory refresh --audited-on 2026-10-25",
+      "exit": 0,
+      "log": ".scratch/publication-integration/preterminal-inventory-refresh.log"
+    },
+    {
+      "command": "python tools/tpt source-family-migration refresh --audited-on 2026-10-25",
+      "exit": 0,
+      "log": ".scratch/publication-integration/preterminal-family-refresh.log"
+    },
+    {
+      "command": "python tools/tpt document-library structure",
+      "exit": 0,
+      "log": ".scratch/publication-integration/preterminal-catalogue-generate.log"
+    },
+    {
+      "command": "python tools/tpt release-bindings refresh --adopt-new-site-sources [--only PATH for each exact547-line scope entry]",
+      "exit": 0,
+      "log": ".scratch/publication-integration/preterminal-release-refresh.log"
+    },
+    {
+      "command": "python tools/tpt source-inventory check",
+      "exit": 0,
+      "log": ".scratch/publication-integration/preterminal-inventory-check.log"
+    },
+    {
+      "command": "python tools/tpt source-inventory check src/sources/inventories/claude-publications-v1.toml --review src/sources/inventories/claude-classification-review-v1.toml",
+      "exit": 0,
+      "log": ".scratch/publication-integration/preterminal-claude-inventory-check.log"
+    },
+    {
+      "command": "python tools/tpt source-family-migration check",
+      "exit": 0,
+      "log": ".scratch/publication-integration/preterminal-family-check.log"
+    },
+    {
+      "command": "make check-document-catalogue PYTHON=.scratch/publication-prep/venv/bin/python",
+      "exit": 0,
+      "log": ".scratch/publication-integration/preterminal-catalogue-check.log"
+    },
+    {
+      "command": "python tools/tpt release-bindings status",
+      "exit": 0,
+      "log": ".scratch/publication-integration/preterminal-release-check.log"
+    },
+    {
+      "command": "python scripts/_proper_study.py check --provider gpt --document liturgy/roman-rite/1962/propers/temporal/f02-all-saints --date 2026-11-01 --phase publication --require-presentation --require-format --require-authority --require-orientation --require-orientation-v2",
+      "exit": 0,
+      "log": ".scratch/publication-integration/preterminal-proper-check.log"
+    },
+    {
+      "command": "python tools/tpt public-alpha check --provider gpt --document liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
+      "exit": 0,
+      "log": ".scratch/publication-integration/preterminal-public-alpha-check.log"
+    },
+    {
+      "command": "make check-web-editions-current PYTHON=.scratch/publication-prep/venv/bin/python",
+      "exit": 0,
+      "log": ".scratch/publication-integration/preterminal-web-current.log"
+    }
+  ],
+  "initial_release_status": {
+    "exit": 1,
+    "log": ".scratch/publication-integration/preterminal-release-before.log",
+    "disposition": "546 stale or unrecorded site inputs plus the subsequently generated catalogue were reviewed and scoped; post-refresh status is0."
+  },
+  "changed_paths": {
+    "src/sources/inventories/publications-v1.toml": "f9c0e3cdcc4e8735405b022df6c13a54863bb9faca7effe1a3e92c59c110128e",
+    "src/sources/inventories/source-family-migration-v1.toml": "d2bbb3d91ef6d85b8609c024e05308211e2f23259b77b2165c5825912ac33a1a",
+    "src/web/data/structure/documents/corpus.json": "add96456fb2d26aedb60f5f339b30693aaac8069e415ff8bc829a20062c2651f",
+    "release/public-alpha.json": "bfb9a188a87110f508e880a3d6ce0587e2b55a587739e30bf4bf515bba51b3cb",
+    "release/rights/public-alpha-2026-07-15.md": "bf49b28dc3b082914093fc3761e193688961a7732e3814f683f6c5b9ec842b19"
+  },
+  "classification_unchanged": {
+    "document": "liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
+    "source_categories": [
+      "finding-aid",
+      "historical-primary",
+      "institutional-current",
+      "liturgical",
+      "patristic",
+      "repository-internal",
+      "scholastic",
+      "scripture",
+      "secondary"
+    ]
+  },
+  "family": {
+    "families": 0,
+    "review_states": {
+      "pending": 163
+    },
+    "atomic_citation_coverage": false
+  },
+  "gpt_inventory": {
+    "publications": 151,
+    "source_surface_files": 2783,
+    "owners": 12
+  },
+  "release_scope": {
+    "exact_changed_site_inputs": 547,
+    "path_manifest": ".scratch/publication-integration/preterminal-release-scope.txt",
+    "out_of_scope_site_bindings_unchanged": true,
+    "authorization_other_fields_preserved": true
+  },
+  "protection_receipt": ".scratch/publication-integration/preterminal-protection-check.json",
+  "protected": {
+    "accepted_pdfs": 7,
+    "accepted_markdown": 5,
+    "f02_render_source_paths": 25,
+    "additional_build_snapshot_paths": 5,
+    "claude_pdf_hashes": 89,
+    "claude_catalogue_editions": 63,
+    "cold_repair_hashes": 3,
+    "reading_plan_tracked_diff": []
+  },
+  "catalogue": {
+    "works": 153,
+    "documents": 214,
+    "issues": 274,
+    "pages_including_historical_held_facts": 7207,
+    "installed_titles_confirmed": 272,
+    "absent_held_issues": [
+      "claude:liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost",
+      "claude:liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost-synthesis"
+    ]
+  },
+  "not_run": [
+    "Full make check-sources after terminal archive",
+    "Public site build or artifact verification",
+    "Global deployment validation",
+    "Index mutation,commit,push"
+  ],
+  "whitespace_check_exit": 0
+}

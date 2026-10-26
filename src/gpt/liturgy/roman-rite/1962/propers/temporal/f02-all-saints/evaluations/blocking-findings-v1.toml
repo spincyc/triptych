@@ -1,0 +1,138 @@
+# Blocking findings standing against this publication, the
+# verdicts its evaluation lanes reached, and the observations
+# they recorded outside their own criteria. Written by tpt after
+# each evaluation of this leaf.
+#
+# One record, several stages. Every entry names the stage that
+# raised it, [[stages]] says what each stage last said, and an
+# evaluation replaces its own stage's entries and leaves every
+# other stage's alone -- so what the content evaluation found
+# still stands here after the synthesis evaluation has spoken. A
+# stage that looked and found nothing leaves an empty list
+# rather than no entry: "evaluated, nothing stands" and
+# "nobody has looked" are different facts, per stage.
+#
+# The keys directly below these comments describe the write that
+# last touched this file, and count every stage's entries
+# together. They are its summary line. What a given stage found
+# is in that stage's [[stages]] entry and in the entries naming
+# it -- reading the top-level stage as the record's one stage is
+# the mistake this schema exists to stop.
+#
+# It exists because a run's own results live under build/, which
+# is ignored, which `make clean` and `wt tidy` delete without
+# asking, and which nothing preserves between productions.
+#
+# Nothing reads this back into a run. Carrying findings from one
+# production into the next wants doing where the run's identity
+# can cover it -- a committed record, or this file's hash in the
+# run id and the acceptance audit -- and until then this is a
+# record for people.
+#
+# Escalations -- defects in artifacts no stage of the run may
+# write: guidance, the source library, the tools, the workflow --
+# are written here too, from the run's whole ledger, so that the
+# decision they ask of a maintainer outlives the run directory.
+#
+# Accepted findings are true defects a lane judged not worth a
+# repair round, with the reason it judged so. Advisories are
+# defects that did not merit blocking. Both are here because a
+# verdict that dies with the run is met again by the next cold
+# read as though nobody had ever weighed it, and weighed again --
+# which is how a document in good shape spends a whole iteration
+# budget. A later evaluation reads these before it raises.
+
+standing_findings_schema = 4
+record_type = "standing-blocking-findings"
+document = "liturgy/roman-rite/1962/propers/temporal/f02-all-saints"
+provider = "gpt"
+run_id = "fb0417d471635250"
+workflow = "proper-study"
+workflow_version = 15
+stage = "web-review"
+iteration = 0
+disposition = "PASS"
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
+
+[[stages]]
+stage = "homily-review"
+iteration = 0
+disposition = "PASS"
+run_id = "fb0417d471635250"
+workflow = "proper-study"
+workflow_version = 15
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[stages]]
+stage = "research-review"
+iteration = 0
+disposition = "PASS"
+run_id = "fb0417d471635250"
+workflow = "proper-study"
+workflow_version = 15
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[stages]]
+stage = "study-review"
+iteration = 1
+disposition = "PASS"
+run_id = "fb0417d471635250"
+workflow = "proper-study"
+workflow_version = 15
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[stages]]
+stage = "synthesis-review"
+iteration = 0
+disposition = "PASS"
+run_id = "fb0417d471635250"
+workflow = "proper-study"
+workflow_version = 15
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[stages]]
+stage = "visual-review"
+iteration = 0
+disposition = "PASS"
+run_id = "fb0417d471635250"
+workflow = "proper-study"
+workflow_version = 15
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[stages]]
+stage = "web-review"
+iteration = 0
+disposition = "PASS"
+run_id = "fb0417d471635250"
+workflow = "proper-study"
+workflow_version = 15
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
+
+[[advisories]]
+stage = "web-review"
+id = "WEB-REGISTER-001"
+severity = "advisory"
+location = "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/70-date-location.tex:113–114; generated Markdown line 503, final sentence under Apocalypse: Patmos and the heavenly vision"
+problem = "The isolated sentence beginning 'The generated orientation preserves the returned alternatives' describes production and editorial restraint rather than the biblical or historical subject. The conversion faithfully retains this source wording; the paragraph's preceding sentences already give the composition alternatives, their qualifications, and the distinction between Patmos and the vision."
+required_result = "When this source passage is next revised, delete that closing process sentence, preserving the preceding composition alternatives and Durand's earlier-proposal qualification. This removes no historical information and avoids the production terms 'generated orientation' and 'returned alternatives'."

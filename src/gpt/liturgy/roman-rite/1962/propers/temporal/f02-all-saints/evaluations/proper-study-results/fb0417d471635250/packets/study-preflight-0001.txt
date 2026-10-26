@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v15
+WORKFLOW_DIGEST: 4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83
+RUN_ID: fb0417d471635250
+COMMIT: 24c1b7ce1781f79937f57b66c221b0ed82e219d9
+STAGE: study-preflight
+ITERATION: 1
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-01","proper":"liturgy/roman-rite/1962/propers/temporal/f02-all-saints","provider":"gpt","research_handoff":".scratch/tlm-discovery/preliminary-handoff.md"}
+DOCUMENT_ROOT: src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"STU-002","location":"sections/40-purification-and-rest.tex:112\u2013115","problem":"After accurately comparing Augustine's enduring inheritance with Chrysostom's present sensible reward, the prose turns into advice about editing the comparison: it 'should not be dissolved' or 'enlarged'. These instructions repeat the comparison's safeguards instead of continuing its exposition. This is an isolated register defect, not a recurring document-wide pattern.","required_result":"Replace the editorial instructions with the direct distinction, or end the paragraph once that distinction has been stated. For example: 'Augustine identifies the inheritance with the saints' enduring rest; Chrysostom includes the present security of the meek person's possessions while retaining future gifts.' Preserve the exact source loci and the difference in what the promised earth refers to.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

@@ -1,0 +1,25 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "WEB-REGISTER-001",
+      "location": "src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/70-date-location.tex:113\u2013114; generated Markdown line 503, final sentence under Apocalypse: Patmos and the heavenly vision",
+      "problem": "The isolated sentence beginning 'The generated orientation preserves the returned alternatives' describes production and editorial restraint rather than the biblical or historical subject. The conversion faithfully retains this source wording; the paragraph's preceding sentences already give the composition alternatives, their qualifications, and the distinction between Patmos and the vision.",
+      "required_result": "When this source passage is next revised, delete that closing process sentence, preserving the preceding composition alternatives and Durand's earlier-proposal qualification. This removes no historical information and avoids the production terms 'generated orientation' and 'returned alternatives'.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "document": "liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
+    "files": {},
+    "provider": "gpt",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.md": "a5fa4507b9e9c2f56a461afe67d941b739b92cf34efef6397097fc7958ff30f8"
+    }
+  },
+  "stage": "web-review",
+  "summary": "PASS for the complete canonical All Saints web study, conversion SHA-256 a5fa4507b9e9c2f56a461afe67d941b739b92cf34efef6397097fc7958ff30f8 from research/web-artifact.json, compared with its canonical sources and reviewed 22-page research PDF 0e357f23576aeb6bad9e70b970b391c0a33b33f6ec80c3ca8cd66e4d6f5be8bd, with exact-locus checks of Bede on Apocalypse 7:4,9\u201312, Chrysostom Matthew XXXVIII.3\u20135, and Augustine City of God XX.9. Locked site rendering and Chromium at 1280\u00d7900 and 393\u00d7852 preserve all fourteen appointed-text anchors, both interpretations and their four senses, both tables, all 56 notes and backlinks, 125 resolving fragment links, readable notation, revision timestamp and rights notice; selected web states were visually inspected and source checks used registered historical English, with one isolated advisory about source prose and no blocking conversion defect."
+}

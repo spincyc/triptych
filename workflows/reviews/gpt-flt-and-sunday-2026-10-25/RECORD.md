@@ -92,7 +92,9 @@ chronology audit.
 
 The registrar's frozen source set has 72 bindings and 75 dispositions: five
 Bede passages admitted, 17 bounded commentary deferrals and 56 non-commentary
-rows. Thirteen new artifacts retain 9,792,728 lawfully distributable bytes;
+rows. Thirteen new artifact manifests comprise twelve tracked payloads totaling
+9,792,728 lawfully distributable bytes and one restricted, metadata-only Ordo
+record with no retained payload;
 the preceding 37 binding dictionaries and pins are unchanged. Source graph,
 Source/Proper/Catena projection currentness, paragraph checks, both publication
 inventories and the family ledger pass. The GPT inventory now contains 151
@@ -122,4 +124,121 @@ difficulties and source loci, exact selected text boundaries, dispositions,
 qualified chronological alternatives and unresolved dates.
 `research-acceptance.json` summarizes the actual engine outcomes and hashes
 their native result files. That acceptance authorizes drafting, not future
-prose or artifact acceptance. The expansive-study stage is now active.
+prose or artifact acceptance.
+
+The expansive study subsequently passed cold rereview at 22 pages after
+`STU-001` was repaired: its second interpretation now develops the Apocalypse
+Lesson through the reviewed Bede material. The advisory editorial-instruction
+passage was also corrected. Fresh review accepted both repairs with no findings,
+checked all 18 sealed study files and preserved the sources' real alternatives.
+The accepted proof hash is
+`c9d409ae77be7d0214d2716a65f867072d1bf7dcc9c6397f29f2203a1638dc61`.
+This is content acceptance; final bundle visual review and installation remain
+later stages. The 10-page concise study then passed cold review with no findings;
+the reviewer independently recovered both arguments and verified their preserved
+qualifications and 14-element coverage. Auxiliary markers place map/four senses
+on page 1, chronology on page 2, themes on pages 3–4 and commentary on page 5.
+The 1,236-word homily then passed independent cold review with no findings.
+The reviewer independently reproduced its word count, verified Chrysostom,
+Augustine and Bede's exact loci, and checked all nine sealed inputs. Its
+10.3–11.2-minute estimate uses 110–120 spoken words per minute and is not a
+claim of human rehearsal. The final three-artifact build and separate visual
+and canonical web review remain later acceptance stages.
+
+## Independent source-checkpoint disclosure review
+
+`checkpoint-disclosure-review.md` accepts the exact committed range
+`6a1fe6e33..9ff79af29` for its bounded disclosure and integration scope. The
+review independently enumerated 666 newly reachable blobs and four commits,
+including intermediate versions; verified all twelve retained payload hashes
+and sizes and seven source PDFs; confirmed the protected Claude tree and
+inventory identities; checked the four essay installations and retained prior
+receipt; and matched all 1,779 research-sealed files to the checkpoint.
+No material blocker was found. Its verdict excludes future document content,
+artifacts, full publication gates, main push and deployment. Those remain
+required before completion.
+
+## Inherited deployment failure
+
+Read-only GitHub inspection found that the latest main checkpoint's
+[Pages run 40033634816](https://github.com/spincyc/triptych/actions/runs/40033634816),
+for `6a1fe6e3361fec6d1f011a0ae03a0e47d12fa6cf`, failed on 23 October at
+`make check-deployment-sources`. Its final command, `mass-ordinary check`,
+refused `roman-1962/s-ioannis-damasceni-confessoris-ecclesiae-doctoris/main`
+with "alternative Proper group must share one usable semantic Ordinary seat".
+The last successful live baseline is therefore distinct from the current
+main source checkpoint. The dedicated lane reproduced the failure and added
+the exact seasonal Offertory role label to the two source-owned Ordinary
+tables. No validator code, calendar input, source text, conditional fact or
+native publication source changed. Both tables remain `qualified=false`;
+the pre-1955 foreign-source candidates remain unresolved and non-executing.
+Independent primary-page inspection and cold review accept the exact repair.
+The author ran 20 focused Python tests and five Node guard groups; the cold
+reviewer independently ran 28 Python tests, the five guard groups, baseline
+failure reproduction and unknown/false-condition seat probes. All pass.
+`deployment-blocker.md` and `deployment-blocker-cold.md` own the exact evidence
+and three frozen file hashes.
+
+The first repaired semantic check validated all 1,629 Mass forms but returned
+1 for two stale generated Ordinary JSON files. The shared owner subsequently
+regenerated exactly those two files: `mass-ordinary check --json` exits 0,
+with no stale files or seating failures across 1,529 full and 100 non-full
+forms. All 26 `OrdinaryTool` tests also pass. `ordinary-refresh.json` records
+the commands, generated hashes and unchanged source-repair identities. The
+complete deployment-source aggregate remains a later required gate. The native
+driver independently confirmed that neither changed Ordinary table belongs
+to any of the seven current F02 review-input sets or its artifact render inputs.
+All accepted F02 seals remain intact.
+
+## Terminal All Saints publication acceptance
+
+The native engine reached **ACCEPTED** in run `fb0417d471635250`. Its five
+terminal publication checks exited 0 after validating immutable inputs; no
+manual intervention or escalation was recorded. The final 22/10/3-page PDF
+bundle and canonical web edition passed independent visual and web review.
+Every one of the 35 pages was inspected; actual desktop and phone checks
+covered navigation, source notes, chronology tables and responsive layout.
+The complete root installation check in `installed-artifacts.json` verifies
+seven PDFs, five canonical Markdown files and all 25 F02 render inputs against
+their accepted hashes.
+
+The web reviewer retained one nonblocking advisory, `WEB-REGISTER-001`, on the
+date appendix's closing sentence about generated orientation. It remains an
+explicit next-revision item; neither its disposition nor native acceptance
+claims that it was deleted. No material finding remains unresolved.
+
+The canonical native archive is
+`src/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/fb0417d471635250/`.
+It contains 25 actual engine results, 25 packets and 55 files in total, with
+zero interventions. A separately generated archive and `diff -qr` both exited
+0. The archive record SHA-256 is
+`2e599e2b60bd97913fabce1678c385e70d8da1a83c21cd50c114495b96bbf960`;
+the terminal gate result is
+`87e27f47187bceefeff0205ab007611fe381e50491f82a337afa2b2f1cdd7d2a`.
+The owning `CYCLES.md` records the complete native progression and final freeze.
+
+The twelve preterminal shared commands in `preterminal-integration.json`
+passed. `release-adoption-scope.txt` retains the exact 547 reviewed site-input
+paths expanded into that scoped refresh; the command description in the
+receipt is a template referring to that retained list. No other authorization
+field or site binding was adopted. Claude source and web trees, all 63 Claude
+catalogue editions, 89 installed Claude PDFs and six bound reading plans remain
+unchanged. The full source aggregate and site/deployment checks follow the
+post-archive inventory refresh; native acceptance does not assert their outcome.
+
+That final refresh is now complete and frozen. `postarchive-refresh.json`
+records six successful focused commands and the final GPT inventory: 151
+publications, 2,809 source surfaces and 12 owners, including the archive's
+26 added text surfaces. Classification is unchanged. All 163 family units
+remain pending; release bindings have zero stale entries. The catalogue,
+release outputs, accepted artifacts, render inputs and protected publications
+remain byte-identical to the preterminal boundary. Complete source/site
+validation and final outgoing disclosure review remain required before push.
+
+The first complete staged whitespace check, which also inspects newly tracked
+files, reports one extra blank line at the end of the accepted appointed-text
+component. It has no rendered effect and is retained to preserve its sealed
+source and reviewed artifact identities. The per-command check excluding only
+`blank-at-eof` passes; no trailing-space, indentation or other whitespace defect
+is waived. The earlier native scoped check did not include this then-untracked
+file, so its PASS is not represented as a complete staged whitespace pass.

@@ -26,22 +26,27 @@ validated publication to `main` uses a genuine fast-forward ref update,
 without changing the local branch or rewriting history. The owning record is
 `workflows/reviews/gpt-flt-and-sunday-2026-10-25/RECORD.md`.
 
-The four essays now pass independent content/source and separate artifact/web
-reviews, including focused rereview of the Judgment, Heaven and Hell repairs.
-All 96 pages (24/24/25/23) and the four web editions are reviewed and installed
-at their accepted hashes, with references and bindings preserved. The shared
-production receipt retains the preceding publication. All Saints is registered
-as F02 and its version-15 run `fb0417d471635250` has passed context resolution,
-source registration, research preflight and independent cold research review.
-The expansive study is being drafted from 1,779 sealed evidence files;
-the remaining document and publication stages are in progress. The global chronology
-audit remains open; a separately inspected Wisdom date concern is cleared by
-the existing qualified lower-bound output. Integrated source/release checks,
-native workflow completion and main/live publication remain outstanding.
-The source checkpoint includes 72 bindings, five admitted Bede passages and
-the reviewed Source/Catena/Proper projections. Its aggregate receipt records
-the expected pre-author missing-web-declaration failure without claiming a
-global source pass; all focused registration and currentness checks pass.
+The four essays pass independent content/source and separate artifact/web
+reviews, with all material findings resolved. Their 96 pages (24/24/25/23)
+and four web editions are installed at their accepted hashes; references,
+bindings and the preceding production receipt remain preserved. All Saints,
+F02, reaches native **ACCEPTED** in version-15 run `fb0417d471635250`.
+Its 22-page study, ten-page synthesis and three-page, 1,236-word homily pass
+independent content review, all 35 rendered pages and desktop/phone web review.
+The native archive preserves 25 results and 25 packets across 55 files and
+matches an independently reproduced archive exactly. One nonblocking advisory
+about a process sentence remains recorded for the next revision.
+
+All seven PDFs and five canonical Markdown files match accepted bytes. The
+source checkpoint has 72 bindings, five admitted Bede passages and reviewed
+Source/Catena/Proper projections. Focused publication, catalogue, web-currentness,
+inventory/family and scoped release checks pass. An inherited main deployment
+failure was independently repaired through two exact Ordinary role declarations;
+its current check passes across 1,629 forms with strict applicability guards
+preserved. Post-archive inventory/family refresh is complete. Final aggregate
+source/site checks, outgoing integration review, main push and live verification
+remain outstanding. The global chronology and source-family audits remain open;
+this target's qualified dates have their own accepted source-fidelity review.
 
 ## GPT proper-study register revision, 2026-10-23
 
