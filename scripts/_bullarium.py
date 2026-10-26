@@ -838,13 +838,15 @@ def main(argv=None,examples=None):
     elif rest and rest[0].startswith("--root="):
         prefix=rest[:1]
         rest=rest[1:]
-    if rest and rest[0] in {"series","corrections","geometry"}:
+    if rest and rest[0] in {"series","corrections","geometry","screen"}:
         if rest[0]=="series":
             from _bullarium_series import main as adapter
         elif rest[0]=="corrections":
             from _bullarium_corrections import main as adapter
-        else:
+        elif rest[0]=="geometry":
             from _bullarium_geometry import main as adapter
+        else:
+            from _bullarium_screen import main as adapter
         return adapter(prefix+rest[1:],examples=examples)
     parser=examples_live_on_the_verbs(argparse.ArgumentParser(prog="bullarium",description=__doc__),"bullarium")
     parser.add_argument("--root",type=Path,default=ROOT)
@@ -865,6 +867,7 @@ def main(argv=None,examples=None):
     sub.add_parser("series",help="Acquire configured historical series and review their constituents.")
     sub.add_parser("corrections",help="Append separately identified corrections with exact PDF supersessions.")
     sub.add_parser("geometry",help="Replay exact XML WORD reading-order recipes without source correction.")
+    sub.add_parser("screen",help="Screen native geometry for advisory research leads without clearing sources.")
     args=parser.parse_args(argv)
     try:
         root=args.root.resolve()

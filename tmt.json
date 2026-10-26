@@ -44,11 +44,12 @@
       "origin": "local",
       "purpose": "Acquire Bullarium witnesses and reconstruct source-bounded papal acts.",
       "requires": [
+        "papal-documents",
         "source-library",
         "typeset-papal"
       ],
       "stage": "draft",
-      "usage": "bullarium {acquire,reconstruct,admit,check,status,series,corrections,geometry} [OPTIONS]"
+      "usage": "bullarium {acquire,reconstruct,admit,check,status,series,corrections,geometry,screen} [OPTIONS]"
     },
     "calendar-days": {
       "idempotent": true,

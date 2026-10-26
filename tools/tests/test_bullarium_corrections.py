@@ -521,5 +521,261 @@ class CorrectionTests(unittest.TestCase):
         self.assertEqual(json.loads(stderr.getvalue())["code"], "input")
 
 
+    def append_fixture(self):
+        originals = [self.doc] + [{**self.doc, "id": f"bullarium.fixture.unit-{n:04}"} for n in (2, 3, 4)]
+        current = [{**old, "id": old["id"] + ".apparatus-v2"} for old in originals[:2]]
+        receipts = [self.receipt]
+        self.current_receipts = []
+
+        def receipt_for(document, name):
+            saved = self.doc
+            self.doc = document
+            path = self.add_receipt(name, ("%PDF-1.4\nExact synthetic prior " + document["id"] + "\n").encode())
+            self.doc = saved
+            return path
+
+        receipts += [receipt_for(old, f"old-{n}") for n, old in enumerate(originals[1:], 2)]
+        for n, old in enumerate(current):
+            path = receipt_for(old, f"current-{n}")
+            receipts.append(path)
+            self.current_receipts.append(path)
+        self.write_json(self.initial, {"schema": corrections.SCHEMA, "revision": PRIOR_REVISION, "documents": originals})
+        supersessions = []
+        for old, replacement, path in zip(originals[:2], current, receipts[:2]):
+            pdf_row = json.loads(path.read_bytes())["documents"][0]
+            supersessions.append({"prior": {"id": old["id"], "language": old["language"],
+                "pdf_sha256": pdf_row["pdf_sha256"], "artifact_id": old["artifact_id"],
+                "source_sha256": old["sha256"], "segment_id": old["segment_id"]},
+                "replacement": {"id": replacement["id"], "language": replacement["language"],
+                "artifact_id": replacement["artifact_id"], "source_sha256": replacement["sha256"],
+                "segment_id": replacement["segment_id"]}, "reason": "Earlier synthetic apparatus correction."})
+        self.base = {"schema": corrections.SCHEMA, "revision": PRIOR_REVISION,
+                     "documents": current, "supersessions": supersessions}
+        self.write_json(self.out, self.base)
+        self.base_bytes = self.out.read_bytes()
+        self.archive = self.root / "input-history/base.json"
+        self.plan["initial_manifests"].append(self.out.relative_to(self.root).as_posix())
+        self.plan["prior_receipts"] = [path.relative_to(self.root).as_posix() for path in receipts]
+        priors = [current[0], *originals[2:]]
+        self.plan["corrections"] = [{"prior_id": old["id"], "replacement_id": old["id"] + ".next",
+            "reason": "Append a synthetic independently reviewed metadata correction.",
+            "changes": {"source_note": "New synthetic apparatus; source wording stays exact."}} for old in priors]
+        self.plan["append"] = {"base_sha256": hashlib.sha256(self.base_bytes).hexdigest(),
+            "base_revision": PRIOR_REVISION, "archive_path": self.archive.relative_to(self.root).as_posix()}
+
+    def test_append_preserves_old_rows_sources_PDFs_and_exact_history_bytes(self):
+        self.append_fixture()
+        before = self.frozen_files()
+        result = self.build()
+        self.assertEqual(len(result["documents"]), 5)
+        self.assertEqual(len(result["supersessions"]), 5)
+        for original, retained in zip(self.base["documents"], result["documents"][:2]):
+            self.assertEqual(retained, {**original, "revision": PRIOR_REVISION})
+            self.assertEqual(retained["physical_line_ranges"], original["physical_line_ranges"])
+        self.assertEqual(result["supersessions"][:2], self.base["supersessions"])
+        self.assertEqual(self.archive.read_bytes(), self.base_bytes)
+        for path, data in before.items():
+            self.assertEqual(path.read_bytes(), data)
+        self.assertEqual([row["revision"] for row in result["documents"]], [PRIOR_REVISION]*2 + [REVISION]*3)
+        self.assertEqual(result["input_history"][0]["sha256"], hashlib.sha256(self.base_bytes).hexdigest())
+
+    def test_append_CLI_reports_cumulative_counts_and_null_opt_in_is_refused(self):
+        self.append_fixture()
+        original = copy.deepcopy(self.plan)
+        self.plan["append"] = None
+        with self.assertRaisesRegex(ValueError, "append requires"):
+            self.build()
+        self.assertEqual(self.out.read_bytes(), self.base_bytes)
+        self.plan = original
+        self.write_json(self.plan_path, self.plan)
+        stdout, stderr = io.StringIO(), io.StringIO()
+        with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
+            status = corrections.main(["--root", str(self.root), "--plan", "plan.json", "--out", "corrections.json",
+                                       "--revision", REVISION, "--json"])
+        self.assertEqual(status, 0, stderr.getvalue())
+        self.assertEqual(json.loads(stdout.getvalue())["documents"], 5)
+        self.assertEqual(json.loads(stdout.getvalue())["supersessions"], 5)
+        self.assertEqual(self.archive.read_bytes(), self.base_bytes)
+
+    def test_append_replay_has_identical_bytes_no_duplicate_rows_or_history(self):
+        self.append_fixture()
+        result = self.build()
+        output = self.out.read_bytes()
+        before = self.frozen_files()
+        self.assertEqual(self.build(), result)
+        self.assertEqual(self.out.read_bytes(), output)
+        self.assertEqual(before, self.frozen_files())
+        self.assertEqual(len(result["input_history"]), 1)
+
+    def test_append_preserves_an_explicit_older_row_revision_and_old_receipt(self):
+        self.append_fixture()
+        older = "2026-10-26T09:00:00Z"
+        self.base["documents"][0]["revision"] = older
+        self.write_json(self.out, self.base)
+        self.base_bytes = self.out.read_bytes()
+        self.plan["append"]["base_sha256"] = hashlib.sha256(self.base_bytes).hexdigest()
+        receipt = json.loads(self.current_receipts[0].read_bytes())
+        receipt["revision"] = older
+        self.write_json(self.current_receipts[0], receipt)
+        result = self.build()
+        self.assertEqual(result["documents"][0]["revision"], older)
+        self.assertEqual(result["documents"][-3]["revision"], REVISION)
+
+    def test_append_unknown_prior_row_render_revision_cannot_use_new_header(self):
+        self.append_fixture()
+        receipt = json.loads(self.current_receipts[0].read_bytes())
+        receipt["revision"] = REVISION
+        receipt["documents"][0]["render_revision"] = CUMULATIVE_REVISION
+        self.write_json(self.current_receipts[0], receipt)
+        with self.assertRaisesRegex(ValueError, "document render revision disagree"):
+            self.build()
+        self.assertEqual(self.out.read_bytes(), self.base_bytes)
+        self.assertFalse(self.archive.exists())
+
+    def test_append_prior_PDF_and_source_selection_gates_remain_exact(self):
+        self.append_fixture()
+        original = self.current_receipts[0].read_bytes()
+        for field, value, error in (("pdf_sha256", "0"*64, "prior PDF SHA-256 mismatch"),
+                                   ("physical_line_ranges", [[1, 11]], "frozen source on physical_line_ranges")):
+            with self.subTest(field=field):
+                receipt = json.loads(original)
+                receipt["documents"][0][field] = value
+                self.write_json(self.current_receipts[0], receipt)
+                with self.assertRaisesRegex(ValueError, error):
+                    self.build()
+                self.assertEqual(self.out.read_bytes(), self.base_bytes)
+        self.current_receipts[0].write_bytes(original)
+        receipt = json.loads(original)
+        pdf = self.current_receipts[0].parent / receipt["documents"][0]["pdf"]
+        pdf.write_bytes(b"%PDF-1.4\nChanged actual prior bytes.\n")
+        with self.assertRaisesRegex(ValueError, "prior PDF SHA-256 mismatch"):
+            self.build()
+
+    def test_append_replacement_ID_and_retired_predecessor_are_refused(self):
+        self.append_fixture()
+        original = copy.deepcopy(self.plan)
+        self.plan["corrections"][0]["replacement_id"] = self.base["documents"][1]["id"]
+        with self.assertRaisesRegex(ValueError, "replacement_id must be distinct"):
+            self.build()
+        self.plan = original
+        self.plan["corrections"][0]["prior_id"] = self.doc["id"]
+        with self.assertRaisesRegex(ValueError, "already superseded alias"):
+            self.build()
+        self.assertEqual(self.out.read_bytes(), self.base_bytes)
+
+    def test_append_requires_exact_base_archive_and_explicit_revision_advance(self):
+        self.append_fixture()
+        self.archive.parent.mkdir()
+        self.archive.write_bytes(b"Wrong historical snapshot.\n")
+        with self.assertRaisesRegex(ValueError, "frozen base SHA256 mismatch"):
+            self.build()
+        self.archive.unlink()
+        self.write_json(self.plan_path, self.plan)
+        with self.assertRaisesRegex(ValueError, "must advance"):
+            corrections.build_corrections(self.root, self.plan_path, self.out, PRIOR_REVISION)
+        self.plan["append"]["base_revision"] = CUMULATIVE_REVISION
+        with self.assertRaisesRegex(ValueError, "base schema/revision mismatch"):
+            self.build()
+        self.assertEqual(self.out.read_bytes(), self.base_bytes)
+
+    def test_append_rejects_unexpected_current_inventory_without_overwriting(self):
+        self.append_fixture()
+        source.write(self.archive, self.base_bytes)
+        tampered = {**self.base, "revision": CUMULATIVE_REVISION}
+        self.write_json(self.out, tampered)
+        before = self.out.read_bytes()
+        with self.assertRaisesRegex(ValueError, "neither the frozen base nor the exact cumulative replay"):
+            self.build()
+        self.assertEqual(self.out.read_bytes(), before)
+
+    def test_append_failed_validation_keeps_base_and_rolls_back_new_selection(self):
+        self.append_fixture()
+        self.new_segment()
+        self.plan["corrections"][-1]["changes"]["terminal_keep_blocks"] = 999
+        before = self.frozen_files()
+        with self.assertRaisesRegex(ValueError, "bounded source-block count"):
+            self.build()
+        self.assertEqual(self.out.read_bytes(), self.base_bytes)
+        self.assertEqual(before, self.frozen_files())
+        self.assertFalse(self.archive.exists())
+
+    def test_append_rechecks_inventory_before_atomic_install(self):
+        self.append_fixture()
+        install = corrections._install_cumulative
+        concurrent = b"Concurrent inventory owner bytes.\n"
+        def changed(root, path, output, state):
+            path.write_bytes(concurrent)
+            return install(root, path, output, state)
+        with patch.object(corrections, "_install_cumulative", side_effect=changed):
+            with self.assertRaisesRegex(ValueError, "changed before cumulative replacement"):
+                self.build()
+        self.assertEqual(self.out.read_bytes(), concurrent)
+        self.assertEqual(self.archive.read_bytes(), self.base_bytes)
+
+    def test_second_append_retains_all_prior_row_revisions_and_history(self):
+        self.append_fixture()
+        first = self.build()
+        first_bytes = self.out.read_bytes()
+        newest = first["documents"][-3]
+        saved = self.doc
+        self.doc = newest
+        receipt_path = self.add_receipt("newly-rendered", b"%PDF-1.4\nNew corrected synthetic PDF.\n")
+        self.doc = saved
+        receipt = json.loads(receipt_path.read_bytes())
+        receipt["revision"] = REVISION
+        receipt["documents"][0]["render_revision"] = REVISION
+        self.write_json(receipt_path, receipt)
+        self.plan["prior_receipts"].append(receipt_path.relative_to(self.root).as_posix())
+        self.plan["append"] = {"base_sha256": hashlib.sha256(first_bytes).hexdigest(), "base_revision": REVISION,
+                               "archive_path": "input-history/second.json"}
+        self.plan["corrections"] = [{"prior_id": newest["id"], "replacement_id": newest["id"] + ".later",
+                                    "reason": "A later synthetic metadata correction.", "changes": {"source_note": "Later apparatus."}}]
+        self.write_json(self.plan_path, self.plan)
+        second = corrections.build_corrections(self.root, self.plan_path, self.out, "2026-10-26T13:00:00Z")
+        self.assertEqual(second["documents"][:5], first["documents"])
+        self.assertEqual(len(second["input_history"]), 2)
+        self.assertEqual((self.root / "input-history/second.json").read_bytes(), first_bytes)
+
+    def git_base_commit(self):
+        # An isolated test object database; no real repository ref is changed.
+        def git(args, payload=None, env=None):
+            process = subprocess.run(["git", "-C", str(self.root), *args], input=payload,
+                                     capture_output=True, check=True, env=env)
+            return process.stdout.decode().strip()
+        git(["init", "-q"])
+        blob = git(["hash-object", "-w", "--stdin"], self.base_bytes)
+        tree = git(["mktree"], f"100644 blob {blob}\t{self.out.name}\n".encode())
+        env = {**os.environ, "GIT_AUTHOR_NAME": "Synthetic fixture", "GIT_AUTHOR_EMAIL": "fixture@example.invalid",
+               "GIT_COMMITTER_NAME": "Synthetic fixture", "GIT_COMMITTER_EMAIL": "fixture@example.invalid",
+               "GIT_AUTHOR_DATE": "2026-10-26T10:00:00Z", "GIT_COMMITTER_DATE": "2026-10-26T10:00:00Z"}
+        return git(["commit-tree", tree], b"Synthetic frozen input fixture.\n", env), blob
+
+    def test_append_can_bind_exact_committed_bytes_without_archive_duplication(self):
+        self.append_fixture()
+        commit, blob = self.git_base_commit()
+        self.plan["append"] = {"base_sha256": hashlib.sha256(self.base_bytes).hexdigest(),
+            "base_revision": PRIOR_REVISION, "git_commit": commit, "git_path": self.out.name}
+        result = self.build()
+        history = result["input_history"][0]
+        self.assertEqual(history["git_commit"], commit)
+        self.assertEqual(history["git_path"], self.out.name)
+        self.assertFalse(self.archive.exists())
+        self.assertEqual(corrections._git_history_bytes(self.root, commit, self.out.name), self.base_bytes)
+        self.assertEqual(self.build(), result)
+
+    def test_append_rejects_unknown_Git_commit_blob_and_wrong_path(self):
+        self.append_fixture()
+        commit, blob = self.git_base_commit()
+        for object_id, path, error in (("0"*40, self.out.name, "unavailable"),
+                                       (blob, self.out.name, "not a commit"),
+                                       (commit, "other.json", "same existing inventory")):
+            with self.subTest(object_id=object_id, path=path):
+                self.plan["append"] = {"base_sha256": hashlib.sha256(self.base_bytes).hexdigest(),
+                    "base_revision": PRIOR_REVISION, "git_commit": object_id, "git_path": path}
+                with self.assertRaisesRegex(ValueError, error):
+                    self.build()
+                self.assertEqual(self.out.read_bytes(), self.base_bytes)
+
+
 if __name__ == "__main__":
     unittest.main()

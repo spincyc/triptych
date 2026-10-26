@@ -8,6 +8,10 @@ from _bullarium import main
 from _tooling import Example
 
 EXAMPLES = {
+    'screen': (
+        Example('tools/bullarium screen --frontier ../outside --catalog src/sources/papal-documents/bullarium-catalog.json --input-map .scratch/bullarium_reconstruction/geometry_screen_engine/input-map.json --out .scratch/bullarium_reconstruction/geometry_screen_engine/preflight --json', ('{"code":"input","error":"input path must be canonical repository-relative without traversal","status":"error","v":1}',), 'Traversal is refused before input reads, source extraction or output writes.'),
+        Example('tools/bullarium screen --frontier ../outside --catalog src/sources/papal-documents/bullarium-catalog.json --input-map .scratch/bullarium_reconstruction/geometry_screen_engine/input-map.json --out .scratch/bullarium_reconstruction/geometry_screen_engine/preflight', ('bullarium screen: input path must be canonical repository-relative without traversal',), 'The same deterministic traversal refusal in ordinary text.'),
+    ),
     'geometry': (
         Example('tools/bullarium geometry --recipe .scratch/bullarium_reconstruction/geometry_engine/absent-recipe.json --out .scratch/bullarium_reconstruction/geometry_engine/preflight --json', ('{"code":"input","error":"geometry recipe is not readable JSON","status":"error","v":1}',), 'A missing recipe is refused before creating derivative outputs.'),
         Example('tools/bullarium geometry --recipe .scratch/bullarium_reconstruction/geometry_engine/absent-recipe.json --out .scratch/bullarium_reconstruction/geometry_engine/preflight', ('bullarium geometry: geometry recipe is not readable JSON',), 'The same safe recipe refusal in ordinary text.'),

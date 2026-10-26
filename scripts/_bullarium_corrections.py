@@ -4,11 +4,13 @@ from __future__ import annotations
 import argparse
 import copy
 import datetime as dt
+import fcntl
 import hashlib
 import json
 import os
 from pathlib import Path
 import re
+import subprocess
 import sys
 import tempfile
 import tomllib
@@ -71,7 +73,7 @@ def _path(root, value, *, relative=False):
     return resolved
 
 
-def _json(path):
+def _json_payload(payload):
     def pairs(items):
         result = {}
         for key, value in items:
@@ -82,9 +84,13 @@ def _json(path):
     def constant(value):
         raise CorrectionError("non-finite JSON value: " + value)
 
-    result = json.loads(path.read_bytes(), object_pairs_hook=pairs, parse_constant=constant)
+    result = json.loads(payload, object_pairs_hook=pairs, parse_constant=constant)
     _require(isinstance(result, dict), "JSON input requires an object")
     return result
+
+
+def _json(path):
+    return _json_payload(path.read_bytes())
 
 
 def _toml(path, kind):
@@ -121,10 +127,11 @@ def _repo_paths(plan, name, root):
     return paths
 
 
-def _initial_documents(paths, frozen):
+def _initial_documents(paths, frozen, overrides=None):
     documents, revisions = {}, {}
+    overrides = {} if overrides is None else overrides
     for path in paths:
-        manifest = _json(path)
+        manifest = overrides[path] if path in overrides else _json(path)
         _require(manifest.get("schema") == SCHEMA, "initial manifest has an unknown schema")
         _revision(manifest.get("revision"))
         rows = manifest.get("documents")
@@ -145,7 +152,8 @@ def _initial_documents(paths, frozen):
                      "initial manifests disagree on a prior document")
             documents[key] = row
             revisions.setdefault(key, set()).add(effective_revision)
-        frozen[path] = _hash(path)
+        if path not in overrides:
+            frozen[path] = _hash(path)
     return documents, revisions
 
 
@@ -320,7 +328,127 @@ def _append_file(root, path, data, writer):
     return True
 
 
-def build_corrections(root, plan_path, out_path, revision):
+def _git_history_bytes(root, commit, path):
+    """Read an exact committed input without changing refs or the worktree."""
+    _require(isinstance(commit, str) and re.fullmatch(r"[a-f0-9]{40}", commit),
+             "append Git input requires a full commit object ID")
+    _path(root, path, relative=True)
+
+    def git(*args):
+        result = subprocess.run(["git", "--no-replace-objects", "-C", str(root), *args], capture_output=True, check=False)
+        _require(result.returncode == 0, "append Git input commit/path is unavailable")
+        return result.stdout
+
+    _require(Path(git("rev-parse", "--show-toplevel").decode().strip()).resolve() == root,
+             "append Git input must belong to the exact source repository")
+    _require(git("cat-file", "-t", commit).strip() == b"commit", "append Git input object is not a commit")
+    return git("show", commit + ":" + path)
+
+
+def _cumulative_base(root, plan, out_path, revision, frozen):
+    if "append" not in plan:
+        return None
+    spec = plan["append"]
+    _require(isinstance(spec, dict) and set(spec) in (
+        {"base_sha256", "base_revision", "archive_path"},
+        {"base_sha256", "base_revision", "git_commit", "git_path"}),
+        "append requires base_sha256, base_revision and archive_path or git_commit/git_path")
+    _require(isinstance(spec["base_sha256"], str) and SHA.fullmatch(spec["base_sha256"]),
+             "append requires an exact base SHA256")
+    _revision(spec["base_revision"])
+    _require(revision > spec["base_revision"], "append revision must advance the frozen base revision")
+    _require(out_path.is_file(), "append requires the existing correction inventory")
+    current = out_path.read_bytes()
+    archive = None
+    if "git_commit" in spec:
+        _require(spec["git_path"] == out_path.relative_to(root).as_posix(),
+                 "append Git path must identify the same existing inventory")
+        payload = _git_history_bytes(root, spec["git_commit"], spec["git_path"])
+        storage = {"storage": "git", "git_commit": spec["git_commit"], "git_path": spec["git_path"]}
+    else:
+        archive = _path(root, spec["archive_path"], relative=True)
+        _require(archive != out_path and archive.suffix == ".json"
+                 and not archive.is_relative_to(root / "src/sources/works"),
+                 "append archive must be separate JSON outside source record owners")
+        payload = archive.read_bytes() if archive.exists() else current
+        if archive.exists():
+            frozen[archive] = _hash(archive)
+        storage = {"storage": "archive", "archive_key": "sha256:" + spec["base_sha256"]}
+    _require(hashlib.sha256(payload).hexdigest() == spec["base_sha256"], "append frozen base SHA256 mismatch")
+    base = _json_payload(payload)
+    _require(base.get("schema") == SCHEMA and base.get("revision") == spec["base_revision"],
+             "append frozen base schema/revision mismatch")
+    _require(set(base) <= {"schema", "revision", "documents", "supersessions", "input_history"}
+             and isinstance(base.get("documents"), list) and base["documents"]
+             and isinstance(base.get("supersessions"), list),
+             "append base must be an ordinary correction inventory with documents/supersessions")
+    identities = set()
+    for document in base["documents"]:
+        key = _identity(document)
+        _require(key not in identities, "append base has duplicate document identities")
+        identities.add(key)
+        when = document.get("revision", base["revision"])
+        _revision(when)
+        _require(when <= base["revision"], "append base row revision exceeds its inventory revision")
+    rows = {_identity(document): document for document in base["documents"]}
+    prior_pins = set()
+    for item in base["supersessions"]:
+        _require(isinstance(item, dict) and set(item) == {"prior", "replacement", "reason"}
+                 and _text(item["reason"]) and isinstance(item["prior"], dict)
+                 and isinstance(item["replacement"], dict), "append base has a malformed correction supersession")
+        prior, replacement = item["prior"], item["replacement"]
+        key, replacement_key = _identity(prior), _identity(replacement)
+        _require(isinstance(prior.get("pdf_sha256"), str) and SHA.fullmatch(prior["pdf_sha256"]),
+                 "append base supersession lacks its exact prior PDF pin")
+        _require((key, prior["pdf_sha256"]) not in prior_pins, "append base has duplicate prior PDF pins")
+        prior_pins.add((key, prior["pdf_sha256"]))
+        target = rows.get(replacement_key)
+        _require(target is not None, "append base replacement is absent from its document inventory")
+        for pin, field in (("artifact_id", "artifact_id"), ("source_sha256", "sha256"), ("segment_id", "segment_id")):
+            _require(replacement.get(pin) == target.get(field), "append base replacement source pin disagrees")
+    _require(isinstance(base.get("input_history", []), list), "append base input_history must be an array")
+    return {"base": base, "bytes": payload, "archive": archive, "storage": storage,
+            "observed_output_sha256": hashlib.sha256(current).hexdigest(), "spec": spec}
+
+
+def _cumulative_result(state, documents, supersessions, revision):
+    if state is None:
+        return {"schema": SCHEMA, "revision": revision, "documents": documents, "supersessions": supersessions}
+    base = state["base"]
+    old_ids = {document["id"] for document in base["documents"]}
+    _require(not old_ids.intersection(document["id"] for document in documents),
+             "append replacements must have distinct IDs from frozen inventory rows")
+    retired = {_identity(row["prior"]) for row in base["supersessions"]}
+    _require(not retired.intersection(_identity(row["prior"]) for row in supersessions),
+             "append must correct the current document identity, not an already superseded alias")
+    retained = copy.deepcopy(base["documents"])
+    for document in retained:
+        document.setdefault("revision", base["revision"])
+    history = copy.deepcopy(base.get("input_history", []))
+    history.append({"revision": base["revision"], "sha256": state["spec"]["base_sha256"],
+                    "document_count": len(base["documents"]), "supersession_count": len(base["supersessions"]),
+                    **state["storage"]})
+    return {"schema": SCHEMA, "revision": revision, "documents": retained + documents,
+            "supersessions": copy.deepcopy(base["supersessions"]) + supersessions, "input_history": history}
+
+
+def _install_cumulative(root, out_path, output, state):
+    """Replace only the exact state checked under the cooperating-builder lock."""
+    if out_path.read_bytes() == output:
+        return
+    scratch = root / ".scratch/bullarium_reconstruction/correction_engine/staging"
+    with tempfile.NamedTemporaryFile(dir=scratch, delete=False) as stream:
+        temporary = Path(stream.name)
+        stream.write(output)
+    try:
+        _require(out_path.is_file() and _hash(out_path) == state["observed_output_sha256"],
+                 "correction inventory changed before cumulative replacement")
+        os.replace(temporary, out_path)
+    finally:
+        temporary.unlink(missing_ok=True)
+
+
+def _build_corrections(root, plan_path, out_path, revision):
     """Return/write a new manifest; preserve old records, source bytes and PDFs.
 
     Inner plan paths are repository-relative. A new edition automatically creates
@@ -338,11 +466,17 @@ def build_corrections(root, plan_path, out_path, revision):
              "correction manifest must be JSON outside source record owners")
     plan = _json(plan_path)
     _require(plan.get("schema") == PLAN_SCHEMA, "unknown correction plan schema")
-    _require(set(plan) == {"schema", "initial_manifests", "prior_receipts", "corrections"},
+    _require({"schema", "initial_manifests", "prior_receipts", "corrections"} <= set(plan)
+             and set(plan) <= {"schema", "initial_manifests", "prior_receipts", "corrections", "append"},
              "correction plan has missing or unsupported fields")
     _require(isinstance(plan["corrections"], list) and plan["corrections"], "corrections[] must be nonempty")
     frozen = {plan_path: _hash(plan_path)}
-    initial, revisions = _initial_documents(_repo_paths(plan, "initial_manifests", root), frozen)
+    cumulative = _cumulative_base(root, plan, out_path, revision, frozen)
+    initial_paths = _repo_paths(plan, "initial_manifests", root)
+    _require(cumulative is None or out_path in initial_paths,
+             "append inventory must be explicitly listed in initial_manifests")
+    overrides = {out_path: cumulative["base"]} if cumulative is not None else {}
+    initial, revisions = _initial_documents(initial_paths, frozen, overrides)
     observed = _prior_pdfs(_repo_paths(plan, "prior_receipts", root), initial, revisions, root, frozen)
     documents, supersessions, records, seen = [], [], {}, set()
     old_ids = {key[0] for key in initial}
@@ -397,14 +531,19 @@ def build_corrections(root, plan_path, out_path, revision):
                 replacement["segment_id"] = document["segment_id"]
             supersessions.append({"prior": previous, "replacement": replacement, "reason": row["reason"]})
         seen.add(prior_id)
-    result = {"schema": SCHEMA, "revision": revision, "documents": documents, "supersessions": supersessions}
+    result = _cumulative_result(cumulative, documents, supersessions, revision)
     output = source.json_bytes(result)
     _require(out_path not in frozen and not (set(records) & set(frozen)), "new output would edit a frozen input")
     for path, (_, data) in records.items():
         _path(root, path)
         _require(path.resolve() == path, "new source paths cannot pass through symlinks")
         _absent_or_identical(path, data)
-    _absent_or_identical(out_path, output)
+    if cumulative is None:
+        _absent_or_identical(out_path, output)
+    else:
+        _require(cumulative["observed_output_sha256"] in {
+            cumulative["spec"]["base_sha256"], hashlib.sha256(output).hexdigest()},
+            "existing inventory is neither the frozen base nor the exact cumulative replay")
     _frozen_unchanged(frozen)
     created = []
     try:
@@ -412,10 +551,21 @@ def build_corrections(root, plan_path, out_path, revision):
             _require(path.resolve() == path, "new source paths cannot pass through symlinks")
             if _append_file(root, path, data, lambda staged: source.record(staged, record)):
                 created.append((path, data))
-        for document in documents:
+        for document in result["documents"]:
             validate_document(document, root)
         _frozen_unchanged(frozen)
-        _append_file(root, out_path, output, lambda staged: source.write(staged, output))
+        if cumulative is None:
+            _append_file(root, out_path, output, lambda staged: source.write(staged, output))
+        else:
+            if "git_commit" in cumulative["spec"]:
+                _require(_git_history_bytes(root, cumulative["spec"]["git_commit"], cumulative["spec"]["git_path"])
+                         == cumulative["bytes"], "committed correction input changed during validation")
+            else:
+                _append_file(root, cumulative["archive"], cumulative["bytes"],
+                             lambda staged: source.write(staged, cumulative["bytes"]))
+                frozen[cumulative["archive"]] = cumulative["spec"]["base_sha256"]
+            _frozen_unchanged(frozen)
+            _install_cumulative(root, out_path, output, cumulative)
     except Exception:
         for path, data in reversed(created):
             if path.is_file() and path.read_bytes() == data:
@@ -429,6 +579,28 @@ def build_corrections(root, plan_path, out_path, revision):
                     parent = parent.parent
         raise
     return result
+
+
+def build_corrections(root, plan_path, out_path, revision):
+    """Create or explicitly append a PDF-pinned correction inventory.
+
+    Optional plan append:{} pins the exact old inventory and immutable archive
+    or Git input. Retained rows keep their effective render revisions. An
+    advisory directory lock serializes cooperating correction builders; the
+    existing inventory is compared again immediately before atomic replacement.
+    """
+    _revision(revision)
+    root = Path(root).resolve()
+    scratch = root / ".scratch/bullarium_reconstruction/correction_engine/staging"
+    _require(scratch.resolve().is_relative_to(root), "correction staging path escapes the repository")
+    scratch.mkdir(parents=True, exist_ok=True)
+    descriptor = os.open(scratch, os.O_RDONLY)
+    try:
+        fcntl.flock(descriptor, fcntl.LOCK_EX)
+        return _build_corrections(root, plan_path, out_path, revision)
+    finally:
+        fcntl.flock(descriptor, fcntl.LOCK_UN)
+        os.close(descriptor)
 
 
 def build_withdrawals(root, plan_path, out_path, revision):
