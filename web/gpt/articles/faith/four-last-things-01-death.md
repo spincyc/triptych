@@ -362,6 +362,6 @@ This essay is Catholic spiritual reading for an annual return to the Four Last T
 
 The historical Scripture and translations retain their public-domain status in the United States; modern Holy See texts retain their own rights. Electronic transcriptions are not critical editions or facsimiles. No New Advent modernization or newly composed vocal prayer is reproduced.
 
-**Last revised (UTC):** 2026-10-25T20:34:12Z
+**Last revised (UTC):** 2026-10-26T13:53:17Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

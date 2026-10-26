@@ -1,6 +1,24 @@
 schema_version = 1
 
 [[deliverables]]
+id = "four-last-things-pdf-layout-2026-10-26"
+owner = "PROJECT-WORK.md"
+promise = "Give all eight GPT and Claude Four Last Things PDFs two-column article bodies, a clean standalone title page and following contents, preserve their substantive text, review and install the PDFs, and publish to main with deployment verification."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "flt-layout-reviewed"
+  criterion = "All eight PDFs build with settled references and pass every-page visual review, metadata, anchor, font and text checks; reviewed bytes are installed and web/catalogue projections are current."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "flt-layout-published"
+  criterion = "The validated source change reaches origin/main by ordinary push, the Pages workflow succeeds, and live affected PDF routes match reviewed bytes."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "gpt-flt-and-sunday-2026-10-25"
 owner = "PROJECT-WORK.md"
 promise = "Apply the recent voice and drafting guidance to the four GPT Four Last Things essays; complete the next-Sunday 1962 proper-study workflow for 1 November 2026; cold-review and validate the resulting publications; publish to main and verify deployment."

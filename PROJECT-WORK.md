@@ -5,7 +5,67 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-25.
+Last reconciled: 2026-10-26.
+
+## Four Last Things PDF layout, 2026-10-26
+
+<!-- promised-deliverable: four-last-things-pdf-layout-2026-10-26 -->
+
+**Candidate: reviewed and installed; publication pending.** The maintainer
+requested two-column Four Last Things articles, a clean standalone title
+page for each document, contents after the title, and publication to `main`.
+This covers all four topics in both provider editions. Work began from
+`9f51eb530`, preserving the 25 October GPT content revision.
+
+The shared provider formats now give every article an 11-point two-column
+body with 0.85-inch margins and a 0.3-inch column gap. Title pages and
+contents are separate; Notes and terminal appendices remain full width,
+including Claude's graded-teaching tables. Print-only paragraph adjustments
+resolve two narrow-column overflows. Local notes/reference spacing prevents
+note-only or colophon-only spill pages. The requested layout supersedes
+older single-column physical-page targets while preserving the essays.
+
+Independent visual reviews cover every rendered page: 91 GPT pages and
+105 Claude pages, 196 total. Every page was opened at full raster size;
+after terminal repairs, unchanged raster bytes were compared and every
+changed page reopened. All eight final artifacts are accepted. Section-end
+whitespace before the full-width apparatus is intentional. Residual
+underfull-box diagnostics were checked visually and do not indicate clipping,
+missing text or broken reading order. Default text extraction can interleave
+columns; raw extraction preserves the content-stream order.
+
+Builds settle references and contents; all eight anchor and generation
+metadata gates pass. No final log contains overflow, undefined references or
+package warnings. PDF structure, embedded fonts, title/contents/body order,
+final-page references and colophon, and exact reviewed-build/installed-mirror
+identity pass. All eight regenerated web editions match their prior text
+byte for byte after masking only revision timestamps. Source inventories and
+the family ledger are refreshed without changing source classifications or
+research judgments. The catalogue changes only the four affected works;
+release bindings are scoped to their web editions and that catalogue.
+
+### Reviewed artifacts
+
+| Edition / topic | Pages | PDF SHA-256 |
+| --- | ---: | --- |
+| claude / death | 24 | `55fb41f699ead340c283c938260783b835aa09bca2fd4849a8c4da7a5d5fe1c7` |
+| claude / judgment | 27 | `537e7efdee6bb887e92951a9bb1c14269c8f8ecdbb5566f283a48317438757fc` |
+| claude / hell | 31 | `4cecbc1241297594e2c648005e58936f430102c652d1d690d408b33a953f23d6` |
+| claude / heaven | 23 | `bf54df5b0f615a1527bda88c04bed8902b809d9c149ae2aed0048ab1a0037c89` |
+| gpt / death | 23 | `bc4b414fcb623c9490c8dc3d62d1acaa767229c4f2e350b100ccdaf21bec3aba` |
+| gpt / judgment | 23 | `77658094f0abcb5bc6a7a14055f9e2f2a775aefc227e7403542aba1f3aa2b0bd` |
+| gpt / hell | 24 | `0d90272295974fbe904985cd2ec838692b7d664364500b219698bfe799452fe2` |
+| gpt / heaven | 21 | `12e6fbe74f19dd27d03603de5060749e2f35df0fb30b28145e3c59a4369f3873` |
+
+The full `make check-sources` aggregate passes, including the exact
+`check-deployment-sources` graph and the source-family routine gate. The
+public-site build, GitHub Pages verifier, tracked web-currentness, scoped
+release bindings, promised-deliverable ledger and tool-registry checks pass.
+A separate final review accepts the complete 46-file source/record/release
+diff against `9f51eb530`, with no material content or disclosure concern.
+Publication to `main` and live byte verification remain pending. Commits stay on workspace branch `feature/flt`;
+publication uses an ordinary fast-forward update to `origin/main`, without
+switching the local branch or rewriting history.
 
 ## GPT Last Things and next Sunday propers, 2026-10-25
 

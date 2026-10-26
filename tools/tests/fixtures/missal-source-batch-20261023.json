@@ -1,7 +1,7 @@
 {
   "acceptance": {
-    "receipt_path": "workflows/reviews/missal-reader-completion-2026-10-26/source-review-combined-merged-v1.json",
-    "receipt_sha256": "ecbb482e752941c8419a14411135389fecca27bedde8d8ad5224bd6761806e9b",
+    "receipt_path": "workflows/reviews/missal-reader-completion-2026-10-26/source-review-combined-format-v2.json",
+    "receipt_sha256": "a73258a46518b90d279e589c25cac69e3fdf85a2315856188dd7ea7a9c298efc",
     "status": "accepted"
   },
   "baseline_revision": "2e030b564f4413b735ddbea3061082ebe981b11a",
@@ -29923,6 +29923,6 @@
   ],
   "schema": "triptych-test-source-batch/v1",
   "source_input_manifest_path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
-  "source_input_manifest_sha256": "ba7bf32d33bdc2312d90fae48864d1ab36a0cb812957a73c95f0bdecedd4f9ef",
-  "state": "2026-10-26 reviewed merged source epoch; prayer dictionaries and bounded rights conserved"
+  "source_input_manifest_sha256": "186d45d66989397961f0c22c57d7ff6efbc5efc040230b52611c992184ed520e",
+  "state": "2026-10-26 reviewed format/performance source epoch; prayer dictionaries and bounded rights conserved"
 }
