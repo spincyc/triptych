@@ -11,7 +11,7 @@ Last reconciled: 2026-10-27.
 
 <!-- promised-deliverable: claude-1962-f02-all-saints-three-documents-2026-11-01 -->
 
-**Accepted and installed; publication to `main` pending.** On
+**Complete: accepted, pushed to `main` and verified live.** On
 2026-10-26 the maintainer asked for the Claude 1962 proper-study documents
 for the upcoming Sunday and authorized publication to `main`. Sunday,
 1 November 2026 is All Saints (I class), permanent identity `F02`,
@@ -46,6 +46,13 @@ leaf under `evaluations/proper-study-results/427e2f58bb897a16/`. The
 driver's account covers every cycle, the five standing advisories and what
 is left for other owners:
 [CYCLES.md](workflows/reviews/claude-1962-f02-production-2026-10-27/CYCLES.md).
+The three local deploy gates passed, and `origin/main` was fast-forwarded
+from `59a9862cc` to `6f93e73e9`. Pages run 40501677604 succeeded. The
+three PDFs, the web edition, the Traditional Latin Mass catalog page, the
+browser's corpus data and the publication manifest are each byte-identical
+live to the verified local site, as
+[deployment-evidence.json](workflows/reviews/claude-1962-f02-production-2026-10-27/deployment-evidence.json)
+records.
 
 ## Claude Four Last Things register revision, 2026-10-26
 

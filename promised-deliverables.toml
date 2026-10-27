@@ -4,7 +4,7 @@ schema_version = 1
 id = "claude-1962-f02-all-saints-three-documents-2026-11-01"
 owner = "PROJECT-WORK.md"
 promise = "Complete the Claude 1962 All Saints (F02) proper-study workflow for Sunday 1 November 2026 with independent cold reviews, three reviewed PDFs and the canonical web edition, publish to main by fast-forward and verify the deployment."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "claude-f02-authorized"
@@ -31,8 +31,9 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-f02-main-and-pages"
   criterion = "The validated work reaches origin/main by fast-forward after the three deploy gates pass locally, the Pages run succeeds, and the live PDF and web routes match the reviewed bytes."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/claude-1962-f02-production-2026-10-27/deployment-evidence.json"]
+  check = "path_exists"
 
 [[deliverables]]
 id = "claude-flt-register-2026-10-26"
