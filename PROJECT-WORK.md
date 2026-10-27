@@ -63,6 +63,46 @@ bindings are refreshed. Remaining: the three deploy gates, the fast-forward
 of `origin/main`, the Pages run and the live check of the four PDFs and web
 editions.
 
+## Claude 1962 All Saints revision, 2026-10-27
+
+<!-- promised-deliverable: claude-1962-f02-revision-2026-10-27 -->
+
+**In progress: opened; the revision run is next.** On 2026-10-27 the
+maintainer asked that the Claude work of 26–27 October be checked, because
+partway through it the host had run some stages on kimi-k3 in place of the
+Claude model, without notice. For All Saints the audit found that the
+substituted model had made the study's last two revisions and their
+reviews, the concise study, the homily and every stage after them, and part
+of the research. The maintainer decided to repair the publication on the
+Claude model before Sunday 1 November 2026, without adding that model as a
+provider anywhere:
+
+- the expansive study goes back to its text after author-study iteration 1
+  of run `427e2f58bb897a16`, the last text the Claude model wrote, and every
+  later revision is made again;
+- the research is rebuilt from the sources, with nothing taken over;
+- the concise study and the homily are derived again from the revised
+  study, and every review is fresh;
+- the first run's cycles record gets a short correction, and the leaf's
+  contribution metadata lists only Claude work by exact model identifier.
+
+The opening commit restores the study. Its section files match byte for
+byte what study-review iteration 0 read, and `generation-metadata.tex` lists
+the two author-study contributions as `claude-opus-5-5`. It removes the
+earlier research and `propers/` records, the concise study, the homily, the
+standing-findings record and the two Patrologia Latina volume 35 artifacts
+registered for this production. The first run's archive stays in the leaf
+as the record of that run and is not evidence. A new `proper-study` v15 run
+revises the leaf in place. It is seeded with the
+[research handoff](workflows/reviews/claude-1962-f02-revision-2026-10-27/HANDOFF.md),
+which lists the twelve findings of study-review iteration 0, the points
+where the later revisions went wrong and the research leads, and keeps the
+GPT leaf closed. Each stage runs as a fresh Factory Droid session with the
+model named explicitly and the packet's effort set exactly: `high` for the
+authors and `xhigh` for the reviews. Each session's recorded model is
+checked before its result is accepted. The published F02 documents stay
+live until the revision replaces them, and the Four Last Things correction
+publishes in the same push.
 ## Claude 1962 All Saints, 2026-11-01
 
 <!-- promised-deliverable: claude-1962-f02-all-saints-three-documents-2026-11-01 -->
@@ -83,8 +123,8 @@ Work began at the authorization commit `c7dfb84c7` on
 `427e2f58bb897a16` (`proper-study` v15) reached ACCEPTED at its
 publication gates with no escalation: 45 packets, 45 accepted results, one
 recorded intervention. Every agent stage ran as a fresh Factory Droid
-worker subagent with no inherited conversation, at its packet's declared
-effort, and every review was a fresh worker. Six cycles were real defects
+worker subagent with no inherited conversation, and every review was a
+fresh worker. Six cycles were real defects
 that program gates or cold reviews found and repaired: two in research (a
 misreported 1570 Offertory, a wrong Offertory collation and psalm
 numbering, a Missal reported read but unread; then unsealed Lasance English
@@ -109,6 +149,12 @@ browser's corpus data and the publication manifest are each byte-identical
 live to the verified local site, as
 [deployment-evidence.json](workflows/reviews/claude-1962-f02-production-2026-10-27/deployment-evidence.json)
 records.
+
+Corrected 2026-10-27 (see "Claude 1962 All Saints revision, 2026-10-27"
+above): this entry first said that every stage ran at its packet's declared
+effort. The Claude workers ran at `high`, the reviews included, and part of
+the production ran on a substituted model, kimi-k3; the cycles record's
+correction says which stages. The revision supersedes this production.
 
 ## Claude Four Last Things register revision, 2026-10-26
 

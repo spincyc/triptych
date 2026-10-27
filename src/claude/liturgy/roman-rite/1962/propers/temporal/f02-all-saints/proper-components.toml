@@ -211,16 +211,12 @@ references = ["propers/verified.md", "research/interpretations.md", "research/sc
 # src/sources/inventories/author-standing-v1.toml. Blessed Ildefonso Schuster
 # is read on this Mass as a Mass and is cited element by element; Lucien
 # Fromage and William Durandus stand as ecclesiastical writers; Rabanus Maurus
-# is cited as a compiler of Augustine; none of them carries a reading.
-# Victorinus of Pettau is the first reading's second developed witness on the
-# Lesson's chapter, under the recension caution research/interpretations.md
-# records, and Cyprian of Carthage is its recorded rival on the crowd;
-# neither has an author-standing row, and neither carries. The evidence map
-# for every lane is research/interpretations.md.
+# is cited as a compiler of Augustine. None of them carries a reading. The
+# evidence map for every lane is research/interpretations.md.
 
 [[lanes]]
 key = "sealed-number-uncounted-crowd"
-authors = ["Bede", "Augustine of Hippo", "Victorinus of Pettau", "Cyprian of Carthage", "Gregory the Great", "Alfredo Ildefonso Schuster", "Lucien Fromage", "William Durandus"]
+authors = ["Bede", "Augustine of Hippo", "Gregory the Great", "Alfredo Ildefonso Schuster", "Lucien Fromage", "William Durandus"]
 carrying_authors = ["Bede", "Augustine of Hippo"]
 sources = ["research/interpretations.md", "research/scope.md", "research/source-bindings.toml"]
 senses = ["literal", "allegorical", "moral", "anagogical"]

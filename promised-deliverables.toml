@@ -40,6 +40,38 @@ state = "in_progress"
   evidence = ["PROJECT-WORK.md"]
 
 [[deliverables]]
+id = "claude-1962-f02-revision-2026-10-27"
+owner = "PROJECT-WORK.md"
+promise = "Repair the Claude 1962 All Saints (F02) on the Claude model before Sunday 1 November 2026: restore the expansive study to its text after author-study iteration 1 of the first run, rebuild the research from the sources, make every later study revision and derive the concise study and homily again in a fresh proper-study version-15 run with fresh Claude reviews, correct the first run's cycles record, list only Claude contributions by exact model identifier, and publish to main with live verification."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "claude-f02-revision-opened"
+  criterion = "Before the run is seeded, the leaf holds the iteration-1 study sections byte for byte as study-review iteration 0 read them, its generation metadata lists only the two Claude author-study contributions by exact model identifier, the earlier research, propers, concise, homily and standing-findings records and the two PL 35 artifacts registered for the first run are removed, the first run's cycles record carries its correction, and the research handoff is committed."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/claude-1962-f02-revision-2026-10-27/HANDOFF.md", "workflows/reviews/claude-1962-f02-production-2026-10-27/CYCLES.md"]
+  check = "contains"
+  path = "workflows/reviews/claude-1962-f02-production-2026-10-27/CYCLES.md"
+  needle = "**Model provenance: correction of 27 October 2026.**"
+
+  [[deliverables.requirements]]
+  id = "claude-f02-revision-run-accepted"
+  criterion = "A proper-study version-15 run for provider claude, identity liturgy/roman-rite/1962/propers/temporal/f02-all-saints, date 2026-11-01, audience adult parish assembly, seeded with the research handoff, reaches ACCEPTED; every agent stage is a fresh session whose recorded model is claude-opus-5-5 at the packet's declared effort; the revised PDFs and web edition are installed with the reviewed bytes, and the run is archived in the leaf with a cycles record."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-f02-revision-findings"
+  criterion = "Each of the twelve study findings and each research lead in the handoff is resolved by the run or recorded with the reason it is not, in a tracked record."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-f02-revision-main-and-pages"
+  criterion = "The revision reaches origin/main by fast-forward after the three deploy gates pass locally, the Pages run succeeds, and the live PDFs and web edition match the reviewed bytes."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+[[deliverables]]
 id = "claude-1962-f02-all-saints-three-documents-2026-11-01"
 owner = "PROJECT-WORK.md"
 promise = "Complete the Claude 1962 All Saints (F02) proper-study workflow for Sunday 1 November 2026 with independent cold reviews, three reviewed PDFs and the canonical web edition, publish to main by fast-forward and verify the deployment."
