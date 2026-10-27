@@ -214,6 +214,12 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
       "61-twenty-first-after-pentecost-homily.pdf",
       "f01-christ-the-king.pdf",
       "f01-christ-the-king-homily.pdf",
+      # This exact source owner and its installed three-edition catalogue are
+      # checked below; a Planned peer column is not a missing GPT publication.
+      "f02-all-saints.pdf",
+      "f02-all-saints-homily.pdf",
+      "pc-r07-all-saints-abc.pdf",
+      "pc-r07-all-saints-abc-homily.pdf",
       *(f"pc-s{number}-{slug}-year-a.pdf" for number, slug in (
         (37, "eleventh-sunday-in-ordinary-time"),
         (38, "twelfth-sunday-in-ordinary-time"),
@@ -239,6 +245,25 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
       "pc-s44-eighteenth-sunday-in-ordinary-time-year-b.pdf",
       "pc-s44-eighteenth-sunday-in-ordinary-time-year-c.pdf",
     }
+    corpus = json.loads((ROOT / "src/web/data/structure/documents/corpus.json").read_text())
+    for owner, catalog in (
+        ("liturgy/roman-rite/1962/propers/temporal/f02-all-saints", "library/traditional-latin-mass.md"),
+        ("liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/"
+         "propers/general-calendar/pc-r07-all-saints-abc", "library/novus-ordo-liturgy.md"),
+    ):
+      works = [work for work in corpus["works"] if work["leaf"] == owner]
+      self.assertEqual(len(works), 1)
+      self.assertEqual(works[0]["catalog"], catalog)
+      editions = [edition for edition in works[0]["editions"] if edition["provider"] == "gpt"]
+      self.assertEqual(len(editions), 1)
+      edition = editions[0]
+      self.assertEqual(edition["title_source"], "src/gpt/" + owner + "/main.tex")
+      self.assertTrue((ROOT / edition["title_source"]).is_file())
+      self.assertEqual(edition["status"], "alpha")
+      paths = {edition["pdf"], *(row["pdf"] for row in edition["also"])}
+      self.assertEqual(paths, {"pdf/gpt/" + owner + suffix
+                               for suffix in (".pdf", "-synthesis.pdf", "-homily.pdf")})
+      self.assertTrue(all((ROOT / path).is_file() for path in paths))
     for name in ("traditional-latin-mass.md", "novus-ordo-liturgy.md"):
       text = (ROOT / "library" / name).read_text()
       calendar = text.split("## Sunday Propers Calendar", 1)[1]

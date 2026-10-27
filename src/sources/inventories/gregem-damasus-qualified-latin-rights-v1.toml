@@ -1,0 +1,103 @@
+schema = "triptych-finite-qualified-latin-rights/v1"
+reviewed_on = "2026-10-26"
+jurisdiction = "United States civil copyright; no new foreign or canonical permission adjudication"
+publication_basis = "qualified-nonoriginal-adaptation"
+policy = "guidance/liturgical-text-publication-policy.md"
+policy_priority = 6
+confidence = "moderate; bounded editorial assessment, not a court judgment or holder permission"
+adoption = "workflows/reviews/missal-reader-completion-2026-10-26/gregem-damasus-qualified-rights-adoption.json"
+adoption_sha256 = "652f44afd2c566e48391c7b249137eab32a483ace0346f751059ac8c842fad9c"
+independent_rights_recommendation_sha256 = "55cd087ccae72be5c4fc5a9ee8e1cd7ac8ca9ee7aa33c893fabf1ce5a3b2a055"
+independent_source_comparison_sha256 = "0e9b90e235df57345455980ace764a447404356230d6c631d94acd613ccad890"
+source_review_sha256 = "fb4a82f2a87fc599118484eb64011708017d80c8ad05a7d28221c1ec8b41aee9"
+decision = "Adopt the qualified per-text assessment for these two exact forms. The continuous older whole petition supplies the arrangement; the bounded rank/name/agreement and conventional conclusion redaction is assessed together as routine rather than a new developed petition. The theological-redaction originality objection remains disclosed and limits confidence. This is not literal whole-prayer identity or an unqualified public-domain claim. Damasus is assessed independently under the same rationale, never used as authority for Common."
+whole_arrangement_assessment = "The old single prayer supplies the continuous governing sequence: look upon the flock and keep it under perpetual protection through the appointed shepherds. The exact later edit retains that sequence. The change in addressee epithet, singular name/office/martyr slot, necessary relative and predicate agreement, removal of Filii tui vicarios, and conventional conclusion completion form a limited adaptation of that one template. Taken together, these do not add a new narrative, juxtaposition of separate source prayers, or independently developed petition. This supports the qualified view that the new contribution remains routine and below sufficient original authorship."
+strongest_contrary_argument = "Replacing apostles/vicars of the Son with a SupremePontiff and omitting the vicar clause is a theological redaction, not wholly mechanical grammar. The aggregate could be treated as minimally creative expressive adaptation. The cited authorities do not decide this prayer, so publication is proposed under policy priority6 rather than asserted as an unqualified historical whole-prayer public-domain identity."
+source_fact = "Feltoe1896 printed42 physical66 corrected by same-edition erratum physical24; this is a critical printed witness, not an exact manuscript reproduction. AAS1942 and1962 supply exact later target attestation and are separately disclosed."
+source_comparison = "Feltoe 1896 printed p.42 lines8-10 has Pater; the same-edition erratum at PDF24 directs Pastor. Corrected whole foundation is23words, Common26words, Damasus23words; neither is complete-word identity. No age or first-composition date is inferred from a partial match or printing date."
+source_use = "AAS34(1942) issue4 printed107/PDF23 supplies the later Common, with ellipsis after N. and comma after Pontificem. The 1962 typica printed[1] no.4176/PDF809 controls received Common pointing. Damasus is directly witnessed by 1962 printed439 no.1887/PDF520 and Lasance printed855/IA n853. Neither modern facsimile nor its typography/apparatus is redistributed."
+routes_examined_and_refused = ["Priority1/3: the old whole foundation is public domain but not the complete later word sequence; its age does not itself clear every later addition.", "Priorities2/4/5: no body-specific holder permission, general grant or authorized syndication is established on this bounded record.", "Priority6: adopt the bounded whole-arrangement nonoriginality assessment, with moderate confidence and its contrary theological-redaction argument.", "No inference from project carrier ownership, Lasance English renewal, similarity percentage, religious purpose or shortness alone.", "No blanket AAS/1962 public-domain claim or unperformed foreign-term/renewal investigation."]
+overturning_evidence = ["A specific enforceable reservation or holder evidence concerning the exact new contribution.", "A better per-text originality analysis establishing sufficient creative expressive redaction in the actual full arrangement.", "A material source mismatch or proof failing to bind the exact received target."]
+excluded = ["AlbertCollect", "AlbertSecret", "AlbertPostcommunion", "all other Common prayers or recipient fanout", "English translations", "wholeAAS/1962/Lasance PDFs", "modern page images/typography/editorial apparatus", "source acquisition or availability inferred from this rights decision"]
+surfaces = ["web", "corpus-data", "public-git", "download", "print", "cli"]
+prior_Damasus_rationale = "Supersedes only the current Damasus publication rationale that combined project projection ownership and Lasance renewal. Those facts do not independently clear the later Latin contribution. Its Latin bytes, English, historical source metadata and old audit remain unchanged."
+prior_Common_absence = "The old Pustet/Mame/1604/1570 finding stays as historical bounded evidence. The newly received AAS target and older whole foundation supersede a global missing-source inference for this one Collect only."
+
+[[scopes]]
+target = ["commune-summorum-pontificum", "main", "Collect", "all", 1]
+latin_key = ["commune-summorum-pontificum", "", "Collect", "", "", 1]
+text_sha256 = "e520fa2e88c8241c62b0ab06171beb2da1532bb39d25b2b7059a6dd80b2f1bd4"
+effect = "one-new-body"
+literal_older_whole_identity = false
+
+[[scopes]]
+target = ["s-damasi-i-papae-confessoris", "main", "Collect", "all", 1]
+latin_key = ["s-damasi-i-papae-confessoris", "", "Collect", "", "", 1]
+text_sha256 = "8be4980dfd10f7a70ea1e0674d51271639d7f187b2013678d884a52f51d1bef5"
+effect = "rights-proof-replacement-only-unchanged-body"
+literal_older_whole_identity = false
+
+[[legal_sources]]
+authority = "17 USC101-103;104A"
+url = "https://www.copyright.gov/title17/92chap1.html"
+retrieved_on = "2026-10-26"
+sha256 = "97999d678e2877c8142da81a0dce819b210e9f92aa5a405d130bf2f2e50c7d75"
+rule = "Original authorship and any new derivative contribution must be distinguished from preexisting material. Foreign-work restoration cannot be dismissed merely for missing US formalities."
+
+[[legal_sources]]
+authority = "17 USC304-305"
+url = "https://www.copyright.gov/title17/92chap3.html"
+retrieved_on = "2026-10-26"
+sha256 = "121ed92e20b6fc9325e22a2f0f33cadabc56fda923b06902e8f8372292d0db6d"
+rule = "The 95-year published-work term, where applicable, runs through the calendar-year end;1932/1942 publication alone establishes no expired US term in2026."
+
+[[legal_sources]]
+authority = "USCO CompendiumThirdEdition308;311.2;312.2;313.4B-C"
+url = "https://www.copyright.gov/comp3/chap300/ch300-copyrightable-authorship.pdf"
+retrieved_on = "2026-10-26"
+sha256 = "363f7898364800c62b7a8457133955df3884cf5950510abaffecf656bd39c37d"
+rule = "Routine grammatical edits, names and short phrases can lack authorship; protected selection or adaptation remains possible. Consider the actual whole, not a count of isolated words."
+
+[[legal_sources]]
+authority = "USCO Circular14"
+url = "https://www.copyright.gov/circs/circ14.pdf"
+retrieved_on = "2026-10-26"
+sha256 = "928aa3a506f94d5772bad430bbb01ff54aec812194aff33d3aab6b95a2ceffc1"
+rule = "A derivative can use one or more older works; new copyright would cover only sufficient new authorship."
+
+[[legal_sources]]
+authority = "Feist499US340,345-351,358-363(1991)"
+url = "https://tile.loc.gov/storage-services/service/ll/usrep/usrep499/usrep499340/usrep499340.pdf"
+retrieved_on = "2026-10-26"
+sha256 = "e093d8132592c560347496912858bf7aa41c06cf8173f90e9f53a7aaddad0476"
+rule = "Originality has a low creativity threshold; effort alone does not suffice, and original selection/arrangement can matter."
+
+[[Albert_holds]]
+target = ["s-alberti-magni-episcopi-confessoris-ecclesiae", "main", "Collect", "all", 1]
+recommendation = "HOLD_FULL_LATIN_BODY_BASIS_UNRESOLVED_ON_THIS_BOUNDED_RECORD"
+exact_obstacle = "No affirmative per-text basis for the potentially modern connected petition, independently of its exact1932/1962 attestation and longer1962 conclusion."
+what_changes_the_hold = ["a qualifying complete older primary witness/authorized stock template matching this exact petition and actual ending", "a body-specific permission or independently established foreign/US publication-term route", "a further reasoned rights assessment that establishes why the complete contribution lacks sufficient original authorship"]
+state = "unresolved-rights-not-infringement-or-source-absence"
+whole_arrangement_assessment = "The received1932 Collect contains a developed petition about subjecting human wisdom to divine faith, following Albert's teaching, and attaining heavenly light. No complete older prayer or sufficiently bounded functional template for that whole sequence has been received. Its generic invocation/name/office does not exhaust the potentially original connected expression. The rare interior finding-aid negatives are bounded leads, not proof that1932 is its composition date."
+strongest_publication_argument = "Several devotional words and the saint's name/rank are conventional; the petition is brief. Neither fact explains away the whole expressive sequence or supplies an earlier complete source."
+current_English_preserved = true
+
+[[Albert_holds]]
+target = ["s-alberti-magni-episcopi-confessoris-ecclesiae", "main", "Secret", "all", 1]
+recommendation = "HOLD_FULL_LATIN_BODY_BASIS_UNRESOLVED_ON_THIS_BOUNDED_RECORD"
+exact_obstacle = "The potentially creative new connected arrangement/tail lacks a separate defensible publication basis on this record. No invented stitched older Albert prayer can cure it."
+what_changes_the_hold = ["a complete pre1931 primary witness to this received Albert sequence or a genuinely applicable historical source-authorized template", "an independently verified source for the actual complete arrangement/tail under an applicable affirmative rights route", "body-specific permission or a further well-supported nonoriginality assessment of the entire arrangement"]
+state = "unresolved-rights-not-infringement-or-source-absence"
+whole_arrangement_assessment = "Two whole1862 prayers are independently received. ThursdayafterAshes supplies the first six target words; HolyWednesday supplies the next nine, followed by the distinct eight-word target tail beati Alberti intercessione et exemplo pio consequamur affectu. The target changes the affect phrase's case/number/order and joins the two earlier prayer structures. This is not just substitution of a saint's name into either old whole prayer. That recombination and adaptation may itself clear the low originality threshold; the current evidence does not establish it as a necessary or routine stock arrangement."
+strongest_publication_argument = "The opening and passion clause are demonstrably old, the saint/intercession wording is conventional, and the contribution is small. A two-source selection does not automatically earn copyright. But copyright in a recasting of expressive passages is not resolved by the mere count of two input prayers or by atomizing its words."
+current_English_preserved = true
+
+[[Albert_holds]]
+target = ["s-alberti-magni-episcopi-confessoris-ecclesiae", "main", "Postcommunion", "all", 1]
+recommendation = "HOLD_FULL_LATIN_BODY_BASIS_UNRESOLVED_ON_THIS_BOUNDED_RECORD"
+exact_obstacle = "No complete older target foundation, applicable printed blank, or sufficiently reasoned nonoriginality basis for the full received petition and actual ending."
+what_changes_the_hold = ["a verified older complete prayer carrying this actual petition and ending", "a source-authorized stock formula with the exact Albert name/office application", "body-specific rights permission or a further evidenced whole-arrangement nonoriginality route"]
+state = "unresolved-rights-not-infringement-or-source-absence"
+whole_arrangement_assessment = "The two complete Pius prayers received from1910/1929 are different37-word petitions. They share phrases such as perpetua pace but do not supply Albert's23-word petition, its breathing-in-peace request, or a source-authorized Albert application. The generic sacramental opening and saint's name/role do not explain the whole linkage of sacramental reception, enemy defence, intercession and peaceful breathing as mechanically selected older expression."
+strongest_publication_argument = "Individual devotional clauses may be old or commonplace and a short invocation may be too slight to protect. The record establishes only fragmentary foundations, not that the full actual arrangement is routine or otherwise unprotected."
+current_English_preserved = true

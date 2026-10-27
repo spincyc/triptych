@@ -222,6 +222,18 @@ def _payload_lines(library, artifact: dict) -> list[str] | None:
         return None
 
 
+def _qualified_reading(library, passage: dict, artifact: dict, result: dict) -> dict:
+    """Check the actual result after inline or physical-line selection."""
+    from _proper_qualified_latin import reading_problems
+    problems = reading_problems(
+        library.root, passage, artifact, sources=library.records,
+        text=result.get("text"))
+    if not problems:
+        return result
+    return {**{key: value for key, value in result.items() if key != "text"},
+            "readable": False, "withheld": "rights", "reason": "; ".join(problems)}
+
+
 def reading_of(library, passage: dict) -> dict:
     """May this passage be read here, and if not, why not.
 
@@ -259,6 +271,13 @@ def reading_of(library, passage: dict) -> dict:
         "source_url": artifact.get("source_url"),
     }
 
+    from _proper_qualified_latin import reading_problems
+    qualified_problems = reading_problems(
+        library.root, passage, artifact, sources=library.records)
+    if qualified_problems:
+        return {**common, "readable": False, "withheld": "rights",
+                "reason": "; ".join(qualified_problems)}
+
     if rights not in DISTRIBUTABLE_RIGHTS:
         stated = {
             "restricted": (
@@ -291,12 +310,12 @@ def reading_of(library, passage: dict) -> dict:
 
     text = passage.get("text")
     if isinstance(text, str) and text.strip():
-        return {
+        return _qualified_reading(library, passage, artifact, {
             **common,
             "readable": True,
             "source": "transcription",
             "text": text,
-        }
+        })
 
     ranges = passage.get("physical_line_ranges")
     media = str(artifact.get("media_type") or "")
@@ -337,12 +356,12 @@ def reading_of(library, passage: dict) -> dict:
                     ),
                 }
             held.extend(lines[start - 1 : end])
-        return {
+        return _qualified_reading(library, passage, artifact, {
             **common,
             "readable": True,
             "source": "physical-lines",
             "text": "\n".join(held),
-        }
+        })
 
     return {
         **common,
@@ -440,9 +459,11 @@ def corpus(library) -> list[dict]:
         # A sandbox library is a handful of files; caching it would leave an
         # entry in the real repository's build/ that nothing reads again.
         return _corpus(library)
+    from _proper_qualified_latin import cache_fingerprint
+    qualified_key = cache_fingerprint(library.root)
     return cached_json(
         ROOT / "build" / "source-reader-corpus",
-        f"{fingerprint}-{code_fingerprint(__file__)}",
+        f"{fingerprint}-{code_fingerprint(__file__)}-{qualified_key}",
         lambda: _corpus(library),
     )
 

@@ -102,6 +102,32 @@
       unresolved: coverage.unresolved, whole_body_translations_added: 0, complete_English_claim: false};
   }
 
+  function nameExecutionFacts(value) {
+    if (!value || Object.keys(value).sort().join('|') !== 'relation|schema|state|unresolved|use' ||
+        value.schema !== 'triptych-selected-name-execution/v1' || ['name-bound', 'unresolved'].indexOf(value.state) < 0 ||
+        !Array.isArray(value.unresolved)) fail('closed finite name execution facts required');
+    const relation = value.relation;
+    if (!relation || relation.schema !== 'triptych-finite-name-execution-source/v1' || relation.inference.historically_named_English !== false) fail('finite name inference identity required');
+    return {schema: 'triptych-study-name-execution/v1', disposition: 'derived-template-name-inference',
+      state: value.state, use: value.use, unresolved: value.unresolved.slice(), historicalNamedEnglish: false,
+      method: relation.method_id, templateWitness: relation.source_id,
+      rootAdoptionHash: relation.inference.root_adoption_sha256, sourceReviewHash: relation.inference.source_review_sha256,
+      sourceRecordHash: relation.record_sha256, templateHash: relation.template.sha256, nameControllerHash: relation.name_controller.sha256,
+      templatePublication: relation.template.publication_passage_id,
+      namePublication: relation.name_controller.publication_passage_id,
+      canonicalLatinHash: relation.canonical_latin_sha256, namedNormativeLatinHash: relation.named_normative_latin_sha256,
+      canonicalProofOwner: relation.canonical_proof_owner, separateConclusion: relation.conclusion.state};
+  }
+
+  function nameCoverageFacts(value) {
+    if (!value || Object.keys(value).sort().join('|') !== 'bound|complete_English_claim|historical_named_translations_added|occurrences|schema|unresolved' ||
+        value.schema !== 'triptych-name-execution-coverage/v1' || !Number.isInteger(value.occurrences) || value.occurrences < 1 || value.occurrences > 2 ||
+        !Number.isInteger(value.bound) || !Number.isInteger(value.unresolved) || value.bound < 0 || value.unresolved < 0 || value.bound + value.unresolved !== value.occurrences ||
+        value.historical_named_translations_added !== 0 || value.complete_English_claim !== false) fail('closed name execution coverage required');
+    return {schema: value.schema, occurrences: value.occurrences, bound: value.bound, unresolved: value.unresolved,
+      historical_named_translations_added: 0, complete_English_claim: false};
+  }
+
   function project(result) {
     if (!result || ['day', 'propers'].indexOf(result.entrance) < 0 ||
         !result.request || !result.request.edition ||
@@ -128,6 +154,7 @@
           ? event.semanticSlot.identity.id : null,
         seat: seatFacts(event.seat), selected: selectedFacts(event.selected),
         sourceHooks: sourceFacts(event.sourceHooks),
+        ...(event.nameExecution ? {nameExecutionFacts: nameExecutionFacts(event.nameExecution)} : {}),
         ...(event.executionSource ? {executionFacts: executionFacts(event.executionSource)} : {}),
         ...(event.orationContext ? {orationContext: event.orationContext} : {}),
         ...(event.orationGroups ? {orationGroups: event.orationGroups.map(function (group) {
@@ -142,6 +169,7 @@
             members: group.members.map(function (member) {
               return {id: member.id, label: member.of_name, selected: selectedFacts(member.selected),
                 sourceHooks: sourceFacts(member.sourceHooks),
+                ...(member.nameExecution ? {nameExecutionFacts: nameExecutionFacts(member.nameExecution)} : {}),
                 ...(member.executionSource ? {executionFacts: executionFacts(member.executionSource)} : {})};
             })};
         })} : {})
@@ -168,6 +196,7 @@
         type: result.resolved.type || null
       },
       calendar: calendar, coverage: coverageFacts(result.coverage),
+      ...(result.nameExecutionCoverage ? {nameExecutionCoverage: nameCoverageFacts(result.nameExecutionCoverage)} : {}),
       ...(result.executionSourceCoverage ? {executionCoverage: executionCoverageFacts(result.executionSourceCoverage)} : {}),
       unresolvedChoices: result.unresolvedChoices.map(function (choice) {
         return {
@@ -333,6 +362,34 @@
       fact(facts, 'Execution remains unresolved', execution.unresolved.join('; '));
     }
 
+    function nameLabels(facts, value) {
+      if (!value) return;
+      fact(facts, 'Name execution disposition', value.disposition);
+      fact(facts, 'Name execution state', value.state);
+      fact(facts, 'Name inference method', value.method);
+      fact(facts, 'Root adoption hash', value.rootAdoptionHash);
+      fact(facts, 'Independent source review hash', value.sourceReviewHash);
+      fact(facts, 'Whole historical template hash', value.templateHash);
+      fact(facts, 'Whole name controller hash', value.nameControllerHash);
+      fact(facts, 'Source-qualified use', value.use);
+      fact(facts, 'Whole historical template publication', value.templatePublication);
+      fact(facts, 'Literal name controller publication', value.namePublication);
+      fact(facts, 'Canonical Latin proof owner', value.canonicalProofOwner);
+      fact(facts, 'Canonical Latin hash', value.canonicalLatinHash);
+      fact(facts, 'Distinct named normative Latin hash', value.namedNormativeLatinHash);
+      fact(facts, 'Independent conclusion control', value.separateConclusion);
+      fact(facts, 'Name execution hold', value.unresolved.join('; '));
+    }
+
+    if (study.nameExecutionCoverage) {
+      const node = section(overview, 'Finite name execution coverage', 'study-name-execution');
+      const facts = T.el('dl', 'study-facts');
+      fact(facts, 'Bound occurrences', study.nameExecutionCoverage.bound);
+      fact(facts, 'Unresolved occurrences', study.nameExecutionCoverage.unresolved);
+      fact(facts, 'Recovered historical named English', 0);
+      node.appendChild(facts);
+    }
+
     attached.forEach(function (row) {
       const event = row.event;
       const host = row.host;
@@ -365,6 +422,7 @@
         fact(facts, 'Witness relation', event.selected.relation);
         fact(facts, 'Collation', event.selected.collation);
       }
+      nameLabels(facts, event.nameExecutionFacts);
       executionLabels(facts, event.executionFacts);
       event.sourceHooks.forEach(function (hook) {
         fact(facts, 'Source record', hook.kind + ': ' + hook.id);
@@ -383,6 +441,7 @@
           fact(facts, 'Prayer owner', member.label);
           fact(facts, 'Prayer availability', member.selected && member.selected.availability);
           fact(facts, 'Prayer witness', member.selected && member.selected.sourceId);
+          nameLabels(facts, member.nameExecutionFacts);
           executionLabels(facts, member.executionFacts);
         });
       });

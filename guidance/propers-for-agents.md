@@ -631,7 +631,7 @@ carries the identical block.
 | postconciliar | seasonal | 390 | 2465 | 0 |
 | postconciliar | christological | 7 | 79 | 0 |
 | postconciliar | marian | 14 | 70 | 0 |
-| postconciliar | sanctoral | 201 | 900 | 0 |
+| postconciliar | sanctoral | 201 | 903 | 0 |
 | postconciliar | common | 7 | 0 | 0 |
 
 | Calendar | Rank | Entries | Celebrations |
@@ -654,7 +654,7 @@ carries the identical block.
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
 | Masses | 8 | 491 | 619 |
-| Propers | 0 | 3753 | 3514 |
+| Propers | 0 | 3753 | 3517 |
 | — named `Placeholder` | 0 | 0 | 0 |
 | — inside a `forms` block | 0 | 211 | 204 |
 | — carrying a `cycles` mapping | 0 | 0 | 306 |
@@ -662,7 +662,7 @@ carries the identical block.
 | Masses holding only placeholders | 0 | 0 | 0 |
 | Masses taking a formulary from another entry | 0 | 166 | 0 |
 | Propers taking their text from another entry | 0 | 101 | 51 |
-| Propers that are not placeholders | 0 | 3753 | 3514 |
+| Propers that are not placeholders | 0 | 3753 | 3517 |
 | — of those, scripture-bearing | 0 | 2270 | 3051 |
 | Encoded passages | 0 | 2757 | 4030 |
 | Distinct books cited | 0 | 58 | 73 |

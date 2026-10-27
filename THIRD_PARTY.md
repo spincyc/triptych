@@ -406,6 +406,133 @@ States expression basis and is excluded from Triptych CC BY authorship. The whol
 mixed PDF, page images, whole OCR, modern layout, wrappers and unexamined settings
 remain unresolved and unadmitted. No English cue, response or name is supplied.
 
+Five additional historical English receiving rows use existing complete-sequence
+methods only: Matthias Secret, Holy Tuesday Collect, and the normal additional
+Oratio of Lent 4 Wednesday, Holy Wednesday and September Ember Wednesday.
+`workflows/reviews/missal-reader-completion-2026-10-26/existing-source-methods-forward-five.json`
+binds each literal Latin/English source, actual ending, own-appointment context,
+complete target proof, typed gap and independent source review. The existing
+twenty-pair lexical method is unchanged; two contextual eumdem/eundem applications
+and one declared coelestia/caelestia orthography are separately identified.
+No new finite method or rights claim is made. Matthias's original English
+“defended Through” retains its absent punctuation. These bounded historical
+quotations retain each expression's existing United States basis and are excluded
+from new Triptych CC BY authorship. No official 1962 English, whole PDF, image,
+OCR, modern advertisement, wrapper, unreviewed setting, new ending, response or
+name is supplied. Advent and Pentecost additional Oratio remain outside this batch.
+
+Five further Easter Lefebvre historical receiving rows are bounded by
+`workflows/reviews/missal-reader-completion-2026-10-26/finite-source-methods-easter-five.json`:
+Easter Sunday, Tuesday and Wednesday Collects and Easter Friday Collect and
+Postcommunion. Their five actual printed Latin and English prayers,
+own-appointment settings and literal short English cues have separate exact
+source and receiving records. Three ordinary and two actual same-Lord relations
+are individually identified; this supplies no general abbreviation rule or new
+lexical authority. Their historical wording retains the existing bounded United
+States expression basis and is excluded from Triptych CC BY authorship. The whole
+mixed PDF, page images, whole OCR, modern layout, wrappers and unexamined settings
+remain unresolved and unadmitted. No English cue, response or name is supplied.
+
+Five further historical Lefebvre English receiving rows are bounded by
+`workflows/reviews/missal-reader-completion-2026-10-26/finite-source-methods-sanctoral-oratio-five.json`:
+Sabina Secret, Euphemia and Companions Collect, Advent and Pentecost Ember
+Wednesday additional Oratio, and Prisca Collect. Each preserves the complete
+literal historical English and actual short cue. Three ordinary Father-through-Son,
+one direct-Son and one explicitly same-Spirit relation are separately approved
+for those exact source, target and proof dictionaries. Prisca uses only the
+existing exact natalitia/natalicia spelling pair. This grants no general ending
+rule, new lexical form, response, name substitution or English expansion. Sabina's
+literal English says virgin and martyr while its Latin says Martyris; both are
+retained. The historical underlying wording retains the existing bounded United
+States expression basis and remains excluded from Triptych CC BY authorship.
+The whole mixed scan, page images, whole OCR, modern wrappers and unexamined
+settings stay unresolved and unadmitted.
+
+One further historical Lefebvre receiving row is bounded by
+`workflows/reviews/missal-reader-completion-2026-10-26/finite-source-methods-josaphat-one.json`:
+the Josaphat Collect at its actual own appointment. Its literal English and
+actual same-Spirit Latin cue are retained together with their printed asymmetry:
+the English ends only “Through our Lord.” The separately identified historical
+formula controls are bounded evidence for this exact relation. This underlying
+historical wording retains the existing narrow United States expression basis
+and is excluded from Triptych CC BY authorship. The whole mixed PDF, page
+images, OCR, modern layout, wrappers and unexamined settings remain unresolved
+and unadmitted. No English conclusion, Spirit words, response or name is supplied.
+
+One further historical Lefebvre receiving row is bounded by
+`workflows/reviews/missal-reader-completion-2026-10-26/finite-source-methods-philip-one.json`:
+the Philip Neri Secret at its actual own appointment. The literal Latin and
+English retain their printed spaced ellipsis and same-Spirit suffix. Separately
+identified own-book and formal historical formula controls support only this
+exact relation; neither the English nor source Latin ellipsis is expanded.
+This underlying historical wording retains the existing narrow United States
+expression basis and is excluded from Triptych CC BY authorship. The whole
+mixed PDF, page images, OCR, modern layout, wrappers and unexamined settings
+remain unresolved and unadmitted. No unprinted words or response are supplied.
+
+One further historical Lefebvre receiving row is bounded by
+`workflows/reviews/missal-reader-completion-2026-10-26/finite-source-methods-cosmas-one.json`:
+the Cosmas and Damian Collect at its actual own appointment. Literal source
+English and the ordinary short cue remain unchanged. Separately
+identified own-book and formal historical formula controls support only this
+exact relation; neither the English nor source Latin cue is expanded.
+This underlying historical wording retains the existing narrow United States
+expression basis and is excluded from Triptych CC BY authorship. The whole
+mixed PDF, page images, OCR, modern layout, wrappers and unexamined settings
+remain unresolved and unadmitted. No unprinted words or response are supplied.
+
+Two separately reviewed name-execution relations reuse the Lasance/Walsh
+Common templates and literal same-book name controllers: Anthony's dated
+January 17 heading and Patrick's own Collect. Their exact source ranges and
+publication passages retain the existing bounded United States nonrenewal basis;
+the name inference is a labelled Triptych execution relation, not a historically
+printed named English prayer or an ordinary translation admission. The complete
+printed `N.` templates and name controllers remain unchanged and visible. Only
+the two exact dated uses accepted in
+`workflows/reviews/reader-completion-2026-10-26/finite-name-two-root-adoption.json`
+are supported. No whole scan, image, modern wrapper, added text layer, later
+insert or unreviewed setting is cleared, and the historical wording is excluded
+from Triptych's CC BY authorship claim.
+
+
+
+The Seven Founders Collect receives a count-neutral truthful source-chain correction from the complete Alfred Mame Tours1922 page at originalPDF648/printed534. A new immutable full-page extract and checked historical Latin preserve actual Genitricis, foecundasti and Qui vivis. The separate project projection preserves the existing1962body while declaring target Genetricis/fecundasti, pointing and exact conclusion extent; actual Mame conclusion controls are identified separately. Historical words and faithful source reproduction are public domain in the United States by elapsed publication-date term and excluded from the project CC BY4.0 grant. Only the disclosed editorial projection is project-created. The corrected target verification is hash-only metadata for1962PDF556/printed475/no2177; no modern target scan or image is redistributed. Older source artifacts/passages remain immutable. This source-chain correction supplies no English admission or lexical/name-substitution method.
+
+Two further historical Lefebvre own Collects, Seven Founders and Peter Celestine,
+are bounded by `workflows/reviews/missal-reader-completion-2026-10-26/two-primary-source-method-adoption.json`.
+Their complete historical English and actual short printed cues are retained
+literally under the existing bounded United States underlying-expression basis
+and are excluded from Triptych CC BY authorship. The exact genitive spelling,
+contracted perfect second-singular verb and named May19 own-Collect relation are
+locally reviewed contexts; they supply no generic spelling or name rule and no
+whole-Mass identity. No English continuation, response or Amen is supplied.
+The mixed whole PDF, images, OCR, modern layout and wrappers remain unadmitted.
+
+
+### Gregem Common and Damasus: qualified Latin assessment, 26 October 2026
+
+The exact Roman1962 Common Collect Gregem tuum and the existing Damasus Collect
+are admitted on the qualified United States basis in
+`src/sources/inventories/gregem-damasus-qualified-latin-rights-v1.toml`,
+under publication-policy section1 priority6, with moderate confidence.
+Feltoe's1896 whole prayer (printed42; corrected by its own erratum) is a
+public-domain foundation, but neither later form is that whole word sequence.
+The bounded later redaction is assessed together as lacking sufficient new
+authorship; the contrary theological-redaction originality argument remains
+disclosed. This is an editorial assessment, not holder permission or a court
+judgment. AAS1942, Lasance and the1962 facsimiles supply disclosed testimony;
+no whole modern PDF, image, typography or apparatus is cleared by this finding.
+
+The two artifacts under
+`src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-gregem-qualified/`
+are project-created carriers only. Their third-party Latin words are excluded
+from the project's CC BY4.0 offer and distributed only on the exact qualified
+basis and surfaces recorded there. This correction supersedes only the earlier
+Damasus claim that projection ownership and Lasance renewal independently
+cleared the later Latin. Older artifacts and their historical notices remain
+intact. All English dictionaries retain their separate existing rights basis.
+Albert's three Latin orations remain unresolved on the body-specific reasons
+in the rights record; none is admitted by this Common/Damasus decision.
 ## Quotations and Source Records
 
 Quotations and closely transcribed material from books, articles, websites,
@@ -1098,3 +1225,66 @@ selected pages and individual United States rights basis. Lasance’s later
 lettered inserts are excluded. These historical words and images remain outside
 the project license; the restricted1962 whole facsimile, modern CT response,
 dated Ordo HTML and modern Haydock delivery are not distributed by this addition.
+
+The closed extra-primary batch retains four additional own-prayer English rows:
+Sabina Collect, Symphorosa and her seven sons Collect, Saint Stephen First Martyr
+Collect, and Saturninus Collect. Each has an exact recipient-specific source and
+publication proof under the finite record
+`workflows/reviews/missal-reader-completion-2026-10-26/finite-source-methods-extra4.json`.
+The separately checked early Lefebvre historical wording retains its United States
+public-domain basis and is excluded from Triptych CC BY authorship. All printed
+English wording and actual short conclusions remain literal, including Sabina's
+printed virgin-and-martyr wording. The four exact contextual natalitia/natalicia or
+natalitio/natalicio applications add no stem closure or new lexical permission.
+These bounded derivatives clear no whole scan, image, OCR, wrapper, illustration,
+layout, later insert or unreviewed setting. Catherine's zero-English-cue source
+is excluded from this receiving batch.
+
+### Josaphat Latin provenance correction (26 October 2026)
+
+One new bounded Latin transcription preserves the complete Josaphat Collect
+and the separate conclusion rule in the identified Tours Mame 1922 printing.
+The underlying Latin has the recorded United States public-domain basis and
+is excluded from the project CC BY 4.0 grant. The one-prayer project projection
+keeps the existing target bytes and explicitly attributes the historical
+petition to Mame, with its actual abbreviated conclusion and separately
+identified same-Spirit suffix support from the own Mame rule and Pustet 1862
+formula. No 1962 target image, whole scan, OCR or historical English is added.
+Older mixed-attribution records remain immutable history.
+
+### Philip Neri Secret Latin provenance correction (26 October 2026)
+
+One new bounded image-checked Latin transcription preserves the entire named
+Secret and its separate conclusion rule in the public-domain Tours Mame 1922
+printing. The unchanged target projection distinguishes that historical
+petition and actual short cue from a separately identified Pustet 1862 full
+same-Spirit formula and the Mame own conclusion rule. Every target ending
+word through Spiritus Sancti is printed in that full formula; no later tail
+is supplied. Underlying Latin is excluded from the project CC BY 4.0 grant.
+No 1962 page image, whole scan, OCR or English is added. All older mixed
+attribution artifacts and notes remain immutable history.
+
+### Cosmas and Damian Latin provenance correction (26 October 2026)
+
+A new bounded image-checked Latin transcription preserves the complete named
+Collect in the public-domain Tours Mame 1922 printing. Its historical natalitia
+and actual Per Dominum stop remain literal; the unchanged target projection
+declares natalicia as a received noun spelling and attributes only its longer
+three-word conclusion prefix to a separately identified Pustet 1862 formula.
+The underlying Latin is excluded from the project CC BY 4.0 grant. No 1962
+page image, whole scan, OCR or English is added. Older source records remain
+immutable history.
+
+The Ignatius source-chain recheck of 26 October 2026 retains two complete pages
+from the public-domain Pustet Ratisbon 1862 Missale Romanum: original PDF pages
+88 and 485 (printed pages 2 and 399). The extract preserves the incidental
+Digitized by Google page-foot attribution on both artifact pages 1–2. These
+digitizer marks are distinct from the historical Missal and from the project’s
+editorial contributions; their separate treatment follows
+`src/sources/inventories/google-usage-guidelines-rights-v1.toml`, conditions item 2
+and `the_other_google_matter`. The corresponding Latin-only transcription
+excludes those marks. No modern 1962 facsimile or English response is admitted.
+
+### Francis Collect: bounded Lasance English receiving, 26 October 2026
+
+The separately manifested `src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-reader-completion-20261026-francis-one-f9548bab/english.tsv` retains only the literal October4 Francis Collect in Lasance/Walsh revised1945 English, at ordinary printed1224 (artifactPDF1219). Its UnitedStates public-domain basis is the existing A110108/A192159 nonrenewal record and insert-excluded expression anchor; lettered inserts1298a-1298n and1302a-1302d remain excluded. The source and publication passages retain the exact named appointment, complete Latin comparison, two bounded spellings and unchanged short English ending. This historical translation is not official1962 English. No whole scan, page image, protected layout, new Latin permission, conclusion expansion or English response is admitted.

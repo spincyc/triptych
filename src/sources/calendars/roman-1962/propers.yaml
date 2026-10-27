@@ -18148,12 +18148,8 @@ sections:
         incipit: Gregem tuum, Pastor
         source: composed
         notes: Printed p. [1], no. 4176.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf
+        text: |
+          Gregem tuum, Pastor aeterne, placatus intende: et per beatum N. (Martyrem tuum atque) Summum Pontificem perpetua protectione custodi; quem totius Ecclesiae praestitisti esse pastorem. Per Dominum.
       - name: Collect (in plurali)
         incipit: Gregem tuum, Pastor
         source: composed
@@ -33107,12 +33103,7 @@ sections:
           in unitate.
       - name: Postcommunion
         source: composed
-        notes: >-
-          Printed locus printed p. 464, no. 2094; artifact PDF p. 545. Preexisting
-          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
-          Pustet Ratisbon 1862 at Tours: Mame 1922 (editio quarta iuxta typicam
-          Vaticanam), printed p. 759; artifact PDF p. 873 (text layer, column-correct
-          -raw extraction).
+        notes: Target printed p. 464, no. 2094; artifact PDF p. 545. Current body retained byte-exactly. Complete named Ignatius petition visually checked in Pustet Ratisbon 1862, printed p. 399, PDF p. 485. Its actual short Per Dominum cue is distinct from the complete conclusion and separately marked R. Amen printed contiguously in the same book, printed p. 2, PDF p. 88. The 1962 unit explicitly includes that separate response before the February 2 title. Current proof is the 2026-10-26 source-chain successor; no English is added.
         text: |
           Refecti participatione muneris sacri, quaesumus, Domine Deus noster: ut,
           cujus exsequimur cultum, intercedente beato Ignatio Martyre tuo atque
@@ -33797,12 +33788,7 @@ sections:
           ref: Psalms 8:2
       - name: Collect
         source: composed
-        notes: >-
-          Printed locus printed p. 476, no. 2177; artifact PDF p. 557. Preexisting
-          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
-          Pustet Ratisbon 1862 at Tours: Mame 1922 (editio quarta iuxta typicam
-          Vaticanam), printed p. 534; artifact PDF p. 648 (text layer, column-correct
-          -raw extraction).
+        notes: Printed p.475, no.2177; controlling1962artifact PDF556. Complete historical Mame Tours1922 own Collect independently read at originalPDF648/printed534, with actual Genitricis, foecundasti and Qui vivis. preserved separately. The count-neutral2026-10-26 editorial projection declares the existing target spellings Genetricis/fecundasti, target pointing and exact longer conclusion prefix; literal Mame PDF115 and IX17/PDF54 supply the separately retained Christ-directed conclusion controls. No Pustet1862 source attribution or OCR-based complete collation is claimed for this new chain. The current Latin body and all English dispositions are unchanged.
         text: |
           Domine Jesu Christe, qui, ad recolendam memoriam dolorum sanctissimae
           Genetricis tuae, per septem beatos Patres nova Servorum ejus familia

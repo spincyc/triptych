@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-gregem-qualified.common-gregem-collect-e520fa2e"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-gregem-qualified"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Project-created describes only the carrier/transcription layout. The underlying third-party Latin is admitted solely as qualified-nonoriginal-adaptation under src/sources/inventories/gregem-damasus-qualified-latin-rights-v1.toml (policy1 priority6, moderate confidence), adopted by workflows/reviews/missal-reader-completion-2026-10-26/gregem-damasus-qualified-rights-adoption.json SHA256 652f44afd2c566e48391c7b249137eab32a483ace0346f751059ac8c842fad9c. Qualified United States editorial assessment under publication policy section 1 priority 6; moderate confidence. The continuous 1896 whole foundation is public domain, but these later forms are not literally that whole prayer. The limited name/rank/agreement and theological redaction is assessed together as nonoriginal; a contrary originality argument remains. This is not holder permission, a court judgment, or a claim that AAS 1942 or the 1962 edition is public domain. Triptych owns only its editorial carrier. See src/sources/inventories/gregem-damasus-qualified-latin-rights-v1.toml."
+rights_jurisdiction = "United States"
+provenance = "Exact received body from pinned prior AAS/1962 primary image collations; the separately printed1896 whole prayer and its explicit erratum supply the continuous old foundation. No words inferred from OCR or reconstructed from the foundation."
+retrieved = "2026-10-26"
+sha256 = "e520fa2e88c8241c62b0ab06171beb2da1532bb39d25b2b7059a6dd80b2f1bd4"
+byte_size = 197
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-gregem-qualified/artifacts/common-gregem-collect-e520fa2e/latin.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13", "artifact.holy-see.acta-apostolicae-sedis.volume-34-1942.ia-issue-4-facsimile-55e40f1e"]
+transformation = "For Common: join wraps, expand ae/oe ligatures, strip printed stress accents;1962 controls removal of AAS ellipsis after N. and comma after Pontificem; preserve exact received Per Dominum stop. For Damasus: preserve all existing wrapped body bytes, including its1962 pointing; no regeneration or naming substitution. Neither derives target wording by editing the1896 prayer."
+indexable = true
+encoding = "utf-8"
+notes = "Qualified United States editorial assessment under publication policy section 1 priority 6; moderate confidence. The continuous 1896 whole foundation is public domain, but these later forms are not literally that whole prayer. The limited name/rank/agreement and theological redaction is assessed together as nonoriginal; a contrary originality argument remains. This is not holder permission, a court judgment, or a claim that AAS 1942 or the 1962 edition is public domain. Triptych owns only its editorial carrier. See src/sources/inventories/gregem-damasus-qualified-latin-rights-v1.toml."

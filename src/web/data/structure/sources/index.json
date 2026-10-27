@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 3922,
+  "artifacts": 3939,
   "editions": 1303,
-  "passages": 9021,
-  "readable": 3971,
-  "works": 1079
+  "passages": 9110,
+  "readable": 3989,
+  "works": 1076
  },
  "facets": {
   "authors": [
@@ -1127,7 +1127,7 @@
    },
    {
     "id": "Institut du Christ Roi Souverain Prêtre, France",
-    "works": 2
+    "works": 1
    },
    {
     "id": "Institute for New Testament Textual Research",
@@ -1498,10 +1498,6 @@
     "works": 2
    },
    {
-    "id": "Missale Meum (website; the operator is not named in the retrieved page)",
-    "works": 1
-   },
-   {
     "id": "Mississippi Supreme Court",
     "works": 1
    },
@@ -1607,10 +1603,6 @@
    },
    {
     "id": "Parliament of the United Kingdom",
-    "works": 1
-   },
-   {
-    "id": "Patrick L. Murphy",
     "works": 1
    },
    {
@@ -2360,16 +2352,16 @@
     "works": 15
    },
    {
-    "id": "liturgical-commentary",
-    "works": 14
-   },
-   {
     "id": "novel",
     "works": 14
    },
    {
     "id": "patristic-apology",
     "works": 14
+   },
+   {
+    "id": "liturgical-commentary",
+    "works": 13
    },
    {
     "id": "museum-object",
@@ -2777,10 +2769,6 @@
    },
    {
     "id": "institutional-ordo",
-    "works": 2
-   },
-   {
-    "id": "institutional-web-page",
     "works": 2
    },
    {
@@ -3388,6 +3376,10 @@
     "works": 1
    },
    {
+    "id": "institutional-web-page",
+    "works": 1
+   },
+   {
     "id": "institutional-webpage",
     "works": 1
    },
@@ -3501,10 +3493,6 @@
    },
    {
     "id": "liturgical-vestment-history",
-    "works": 1
-   },
-   {
-    "id": "liturgical-web-calendar",
     "works": 1
    },
    {
@@ -4042,11 +4030,11 @@
   ],
   "languages": [
    {
-    "editions": 650,
+    "editions": 648,
     "id": "en"
    },
    {
-    "editions": 393,
+    "editions": 399,
     "id": "la"
    },
    {
@@ -4054,7 +4042,7 @@
     "id": "mul"
    },
    {
-    "editions": 47,
+    "editions": 43,
     "id": "fr"
    },
    {
@@ -4249,18 +4237,18 @@
   ],
   "rights": [
    {
-    "artifacts": 2211,
+    "artifacts": 2228,
     "editions": 493,
     "id": "public-domain"
    },
    {
-    "artifacts": 889,
-    "editions": 447,
+    "artifacts": 888,
+    "editions": 446,
     "id": "restricted"
    },
    {
-    "artifacts": 437,
-    "editions": 221,
+    "artifacts": 432,
+    "editions": 217,
     "id": "unresolved"
    },
    {
@@ -4269,8 +4257,8 @@
     "id": "licensed"
    },
    {
-    "artifacts": 177,
-    "editions": 47,
+    "artifacts": 183,
+    "editions": 52,
     "id": "project-created"
    },
    {
@@ -10737,8 +10725,8 @@
      "file": "1862-pustet-ratisbon-1862.json",
      "id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
      "language": "la",
-     "passages": 498,
-     "readable": 382,
+     "passages": 503,
+     "readable": 387,
      "rights": [
       "public-domain"
      ],
@@ -10789,8 +10777,8 @@
      "file": "1922-1922-tours-mame-editio-quarta-iuxta-typicam.json",
      "id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
      "language": "la",
-     "passages": 174,
-     "readable": 56,
+     "passages": 181,
+     "readable": 62,
      "rights": [
       "public-domain"
      ],
@@ -10842,7 +10830,7 @@
      "file": "1962-vatican-typica-1962.json",
      "id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
      "language": "la",
-     "passages": 641,
+     "passages": 647,
      "readable": 0,
      "rights": [
       "unresolved"
@@ -11292,7 +11280,7 @@
      "file": "1896-feltoe-1896.json",
      "id": "edition.catholic-church.sacramentarium-veronense.feltoe-1896",
      "language": "la",
-     "passages": 1,
+     "passages": 2,
      "readable": 0,
      "rights": [
       "public-domain",
@@ -16528,7 +16516,7 @@
      "file": "1945-benziger-revised-1945.json",
      "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
      "language": "en",
-     "passages": 2044,
+     "passages": 2052,
      "readable": 20,
      "rights": [
       "project-created",
@@ -16827,19 +16815,6 @@
       "unresolved"
      ],
      "title": "Ordo du mois, October 2026 state inspected 19 October 2026",
-     "year": 2026
-    },
-    {
-     "date": "2026-10-26",
-     "file": "2026-2026-10-26-web.json",
-     "id": "edition.fssp-france.ordo-du-mois.web-2026-10-26",
-     "language": "fr",
-     "passages": 1,
-     "readable": 0,
-     "rights": [
-      "unresolved"
-     ],
-     "title": "Ordo du mois, November 2026 state inspected 26 October 2026",
      "year": 2026
     }
    ],
@@ -17335,7 +17310,7 @@
      "file": "1925-saint-andre-lohmann-1925.json",
      "id": "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925",
      "language": "en",
-     "passages": 66,
+     "passages": 126,
      "readable": 0,
      "rights": [
       "public-domain",
@@ -18912,6 +18887,19 @@
      "year": 1931
     },
     {
+     "date": "1942",
+     "file": "1942-volume-34-1942.json",
+     "id": "edition.holy-see.acta-apostolicae-sedis.volume-34-1942",
+     "language": "la",
+     "passages": 1,
+     "readable": 0,
+     "rights": [
+      "unresolved"
+     ],
+     "title": "Acta Apostolicae Sedis, volume 34 (1942)",
+     "year": 1942
+    },
+    {
      "date": "1947",
      "file": "1947-volume-39-1947.json",
      "id": "edition.holy-see.acta-apostolicae-sedis.volume-39-1947",
@@ -19997,19 +19985,6 @@
      ],
      "title": "Ordo liturgique — web state of 22 September 2026",
      "year": 2026
-    },
-    {
-     "date": "2026-10-26",
-     "file": "2026-2026-10-26-web.json",
-     "id": "edition.icrsp-france.ordo.web-2026-10-26",
-     "language": "fr",
-     "passages": 1,
-     "readable": 0,
-     "rights": [
-      "unresolved"
-     ],
-     "title": "Ordo liturgique — November 2026 view, web state of 26 October 2026",
-     "year": 2026
     }
    ],
    "id": "work.icrsp-france.ordo",
@@ -20017,35 +19992,6 @@
     "fr"
    ],
    "title": "Ordo liturgique"
-  },
-  {
-   "alternate_titles": [
-    "Textes de la Messe et commentaires"
-   ],
-   "author": "Institut du Christ Roi Souverain Prêtre, France",
-   "category": "institutional-web-page",
-   "directory": "editions/icrsp-france/textes-de-la-messe/",
-   "editions": [
-    {
-     "date": "2026-10-26",
-     "file": "2026-2026-10-26-web.json",
-     "id": "edition.icrsp-france.textes-de-la-messe.web-2026-10-26",
-     "language": "fr",
-     "passages": 1,
-     "readable": 0,
-     "rights": [
-      "unresolved"
-     ],
-     "title": "Textes de la messe — page for 1 November 2026, web state of 26 October 2026",
-     "year": 2026
-    }
-   ],
-   "id": "work.icrsp-france.textes-de-la-messe",
-   "languages": [
-    "fr",
-    "la"
-   ],
-   "title": "Textes de la messe"
   },
   {
    "alternate_titles": [
@@ -22914,7 +22860,7 @@
      "file": "1903-ginn-1903.json",
      "id": "edition.joseph-henry-allen.new-latin-grammar.ginn-1903",
      "language": "en",
-     "passages": 13,
+     "passages": 15,
      "readable": 0,
      "rights": [
       "public-domain"
@@ -24584,33 +24530,6 @@
    "title": "El missal de Sant Ruf — Tortosa, Arx. Cap., ms. 11"
   },
   {
-   "alternate_titles": [],
-   "author": "Missale Meum (website; the operator is not named in the retrieved page)",
-   "category": "liturgical-web-calendar",
-   "directory": "editions/missale-meum/calendar/",
-   "editions": [
-    {
-     "date": "2026-10-26",
-     "file": "2026-2026-10-26-web.json",
-     "id": "edition.missale-meum.calendar.web-2026-10-26",
-     "language": "en",
-     "passages": 1,
-     "readable": 0,
-     "rights": [
-      "unresolved"
-     ],
-     "title": "Missale Meum — English page for 1 November 2026, web state of 26 October 2026 (site version v5.17.2)",
-     "year": 2026
-    }
-   ],
-   "id": "work.missale-meum.calendar",
-   "languages": [
-    "en",
-    "la"
-   ],
-   "title": "Missale Meum: calendar and daily propers"
-  },
-  {
    "alternate_titles": [
     "165 Miss. 523",
     "147 So. 791"
@@ -25565,32 +25484,6 @@
     "en"
    ],
    "title": "Hansard, the Official Report of debates in Parliament"
-  },
-  {
-   "alternate_titles": [],
-   "author": "Patrick L. Murphy",
-   "category": "liturgical-commentary",
-   "directory": "editions/patrick-l-murphy/new-rubrics-of-the-roman-breviary-and-missal/",
-   "editions": [
-    {
-     "date": "1960",
-     "file": "1960-sydney-1960.json",
-     "id": "edition.patrick-l-murphy.new-rubrics-of-the-roman-breviary-and-missal.sydney-1960",
-     "language": "en",
-     "passages": 2,
-     "readable": 0,
-     "rights": [
-      "restricted"
-     ],
-     "title": "The New Rubrics of the Roman Breviary and Missal: Translation and Commentary, edited by Rev. Patrick L. Murphy",
-     "year": 1960
-    }
-   ],
-   "id": "work.patrick-l-murphy.new-rubrics-of-the-roman-breviary-and-missal",
-   "languages": [
-    "en"
-   ],
-   "title": "The New Rubrics of the Roman Breviary and Missal: Translation and Commentary"
   },
   {
    "alternate_titles": [
@@ -28913,19 +28806,6 @@
       "unresolved"
      ],
      "title": "Ordo: 1 November 2026, default English view, retrieved 25 October 2026",
-     "year": 2026
-    },
-    {
-     "date": "2026-10-26",
-     "file": "2026-2026-10-26-web.json",
-     "id": "edition.fsspx.ordo.web-2026-10-26",
-     "language": "fr",
-     "passages": 2,
-     "readable": 0,
-     "rights": [
-      "unresolved"
-     ],
-     "title": "FSSPX Ordo — day page and texts endpoint for 1 November 2026, web state of 26 October 2026",
      "year": 2026
     }
    ],
@@ -35154,8 +35034,8 @@
      "file": "2026-2026-09-03-editorial-projection.json",
      "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03",
      "language": "la",
-     "passages": 1064,
-     "readable": 1064,
+     "passages": 1065,
+     "readable": 1065,
      "rights": [
       "project-created"
      ],
@@ -35307,6 +35187,45 @@
     },
     {
      "date": "2026-10-26",
+     "file": "2026-2026-10-26-editorial-projection-cosmas-chain.json",
+     "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-cosmas-chain",
+     "language": "la",
+     "passages": 1,
+     "readable": 1,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman 1962 Latin Proper Editorial Projection, 26 October 2026, Cosmas and Damian attribution correction",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-26",
+     "file": "2026-2026-10-26-gregem-qualified.json",
+     "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-gregem-qualified",
+     "language": "la",
+     "passages": 2,
+     "readable": 2,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman 1962 Gregem Common and Damasus qualified editorial projection, 26 October 2026",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-26",
+     "file": "2026-2026-10-26-editorial-projection-josaphat-chain.json",
+     "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-josaphat-chain",
+     "language": "la",
+     "passages": 1,
+     "readable": 1,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman 1962 Latin Proper Editorial Projection, 26 October 2026, Josaphat attribution correction",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-26",
      "file": "2026-2026-10-26-editorial-projection-latin-five.json",
      "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-five",
      "language": "la",
@@ -35333,6 +35252,19 @@
     },
     {
      "date": "2026-10-26",
+     "file": "2026-2026-10-26-editorial-projection-philip-secret-chain.json",
+     "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-philip-secret-chain",
+     "language": "la",
+     "passages": 1,
+     "readable": 1,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman1962 Latin Proper EditorialProjection,26 October 2026, PhilipNeriSecret attributioncorrection",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-26",
      "file": "2026-2026-10-26-editorial-projection-sanctoral-repairs.json",
      "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-sanctoral-repairs",
      "language": "la",
@@ -35342,6 +35274,19 @@
       "project-created"
      ],
      "title": "Roman 1962 Latin Proper Editorial Projection, 26 October 2026, two sanctoral repairs and one provenance correction",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-26",
+     "file": "2026-2026-10-26-editorial-projection-seven-founders.json",
+     "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-seven-founders",
+     "language": "la",
+     "passages": 1,
+     "readable": 1,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman1962 Latin Proper Editorial Projection,26October2026, Seven Founders truthful source chain",
      "year": 2026
     }
    ],

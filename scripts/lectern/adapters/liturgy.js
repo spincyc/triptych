@@ -198,7 +198,7 @@ module.exports = function liturgy(realm) {
       translationWitness: state.witness || null,
       heading: 'h3',
       cycle: event.selected && event.selected.cycle || null,
-      orationGroups: event.orationGroups || null, executionSource: event.executionSource || null, orationContext: event.orationContext || null, eventId: event.id, structure: owner,
+      orationGroups: event.orationGroups || null, executionSource: event.executionSource || null, nameExecution: event.nameExecution || null, orationContext: event.orationContext || null, eventId: event.id, structure: owner,
     });
     return { blocks: realm.dom.read(section) };
   }
@@ -219,7 +219,7 @@ module.exports = function liturgy(realm) {
   }
 
   /* The very selected Ordinary witness, set by the same owner as the page. */
-  function renderedOrdinary(element, selected, ordinary, state) {
+  function renderedOrdinary(element, selected, ordinary, state, context) {
     if (!element) return [];
     realm.script('liturgy/ordinary-seating.js');
     globalThis.LiturgyReaderStateAdapters = A;
@@ -229,7 +229,7 @@ module.exports = function liturgy(realm) {
     renderer.configure({ ordinaryLang: selected.language || state.ordinaryLang || state.orations,
       textDisplay: state.textDisplay || 'selected', variants: state.variants || {}, why: false });
     if (state.textDisplay === 'latin-and-selected') {
-      return realm.dom.read(renderer.renderElement(element, ordinary));
+      return realm.dom.read(renderer.renderElement(element, ordinary, undefined, context));
     }
     const held = selected.availability === 'held' && (element.translations || []).find((row) =>
       row.lang === selected.language && row.text === selected.text &&
@@ -288,7 +288,7 @@ module.exports = function liturgy(realm) {
         const element = elements.get(key) || null;
         const selected = event.selected || {};
         out.push(Object.assign(base, {
-          blocks: renderedOrdinary(element, selected, ordinary, state),
+          blocks: renderedOrdinary(element, selected, ordinary, state, { calendar: calendar, formulary: mass && mass.key }),
           element: element ? { key: element.key, kind: element.kind, name: element.name || null,
             speaker: element.speaker || null, latin_incipit: element.latin_incipit || null,
             locus: element.locus || null, variant: element.variant || null,
@@ -310,9 +310,9 @@ module.exports = function liturgy(realm) {
 
   /* The turns of the very translation the adapter selected, never another's. */
   function turnsOf(element, selected) {
-    if (!element || !selected || !selected.language) return [];
+    if (!element || !selected || !selected.language || selected.availability !== 'held') return [];
     const match = (element.translations || []).find((one) => one.lang === selected.language &&
-      (selected.sourceId === undefined || selected.sourceId === null || one.source_id === selected.sourceId));
+      one.text === selected.text && (one.source_id || one.source || null) === selected.sourceId);
     return match && Array.isArray(match.turns) ? match.turns : [];
   }
 
@@ -454,7 +454,7 @@ module.exports = function liturgy(realm) {
       if (state.mass) asked.selectedReadableFormulary = { id: state.mass };
       if (state.form) asked.form = state.form;
       const adapted = A.adaptDay({ request: asked, derived, structure: owner,
-        ordinary: state.ordinary ? ordinaryOf(calendar) : null });
+        ordinary: state.ordinary ? ordinaryOf(calendar) : null, nameExecutionUse: options && options.nameExecutionUse || null });
       return { option: branch.option || null,
         blocks: study(adapted).concat(translationApparatus(adapted, owner, state)) };
     });
@@ -481,6 +481,7 @@ module.exports = function liturgy(realm) {
       calendarResult: adapted.calendarResult || null,
       coverage: adapted.coverage || [],
       ...(adapted.executionSourceCoverage ? {executionSourceCoverage: adapted.executionSourceCoverage} : {}),
+      ...(adapted.nameExecutionCoverage ? {nameExecutionCoverage: adapted.nameExecutionCoverage} : {}),
       explicitAbsences: adapted.explicitAbsences || [],
       unresolvedChoices: (adapted.unresolvedChoices || []).map((one) => ({ id: one.id, reason: one.reason,
         options: (one.options || []).map((option) => ({ id: option.id, identity: option.identity || null })) })),
@@ -600,7 +601,7 @@ module.exports = function liturgy(realm) {
       const heading = multiple ? headingOf(page, branch, ordinal) : null;
       let adapted;
       try {
-        adapted = A.adaptDay({ request: asked, derived, structure: owner, ordinary });
+        adapted = A.adaptDay({ request: asked, derived, structure: owner, ordinary, nameExecutionUse: options && options.nameExecutionUse || null });
       } catch (error) {
         // page: day-reader.js:1251-1262
         rows.push({ option: branch.option || null, heading, branch: branchSummary(branch),
