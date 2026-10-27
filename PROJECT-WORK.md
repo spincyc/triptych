@@ -7,6 +7,62 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-10-27.
 
+## Claude Four Last Things correction, 2026-10-27
+
+<!-- promised-deliverable: claude-flt-correction-2026-10-27 -->
+
+**In progress: corrected and reviewed locally; publication pending, in the
+same push as the All Saints revision.** On 2026-10-27 the maintainer asked
+that the Claude work of 26 October be checked for damage from a model
+substitution: partway through that work the host ran the coordinating
+session and some of its workers on kimi-k3 in place of the Claude model,
+without notice, and the records credited that work to the Claude model. For
+the Four Last Things the maintainer decided that every step the substituted
+model performed is done again by fresh Claude workers, that the records and
+contribution metadata list only Claude work by exact model identifier, and
+that kimi-k3 is named only in a short correction note.
+
+The audit found the essay texts sound and the records wrong. In Judgment the
+substituted model had given the round-1 verdict on the cold-review repairs,
+made both visual reviews and the print-only space reservation, and drafted
+the series record and the contribution line. In Death it had written the
+round-1 visual verdict after the Claude model inspected the pages. Done again
+by Claude: the Judgment round-1 recheck, against the sources, found one
+blocking defect the earlier verdict had passed (a repair sentence calling the
+Lyons profession of 1274 a definition); a two-phrase repair passed at round
+2; a fresh every-page visual review restored the same space reservation, and
+a further every-page review passed the repaired build; and every page of the
+published Death PDF was reviewed again and found clean. The series record was
+rewritten, the Judgment and Death records were corrected, and all four
+`generation-metadata.tex` files now list only Claude contributions. The
+accounts are the series record's "Correction of 27 October 2026" and the
+Judgment record's "Correction, recheck and repair, 27 October 2026".
+
+The review of the regenerated Judgment web edition also found that it had no
+title-page epigraph. No web edition in the series had carried one since
+16 October, because the shared title-page macro was set only in print. The
+macro now sets the epigraph in the web edition too. A review of all four web
+editions then found that four Latin lemmas in Heaven had also been set
+without italics on the web since 16 October, because the source nested
+`\latin` inside `\emph`; they now use `\latin` alone. The print pages are
+unchanged: apart from the revision line, every page of each rebuilt PDF
+matches its predecessor. All four essays carry the revision timestamp
+2026-10-27T16:55:31Z, and all four web editions were converted again,
+reviewed against their PDFs and installed. The account is the series
+record's "Web edition repairs, 27 October 2026".
+
+| Essay | Pages | PDF SHA-256 | Web edition SHA-256 |
+| --- | ---: | --- | --- |
+| I Death | 23 | `321c4346c435299ab6376ce68c1a91fa34face004d903fdcc485c2b6c00d3b3c` | `4a3e7cd75a9c61081a15eb3505f268d2a655b4bf56879a98aa9cef107496a617` |
+| II Judgment | 25 | `6ec2bf6a465cecec3800baa2ac2ef59d6b616383d94952e551b875cae4f36555` | `fedbaef01297c60c2cab44d57037476ab1c0904221e31ee4cf2b4dec6865d04a` |
+| III Hell | 30 | `3bcfa196950617c075073adc31e904c9298047ca48b1979eed34d3cccd9960f5` | `53596d14d153c2bf0043758e19f1fe45ce4c1b5abe2fb0a5e26dc94dbe9dc38b` |
+| IV Heaven | 22 | `53f57926044cfefef5f41dc0de2f1e858d28ae14545f9070c65a2a2e25f6f252` | `185560890437b62851f7aef26bcb39dd594370f936e9c4d5001de398c40632f0` |
+
+The Claude publication inventory, document catalogue and scoped release
+bindings are refreshed. Remaining: the three deploy gates, the fast-forward
+of `origin/main`, the Pages run and the live check of the four PDFs and web
+editions.
+
 ## Claude 1962 All Saints, 2026-11-01
 
 <!-- promised-deliverable: claude-1962-f02-all-saints-three-documents-2026-11-01 -->
@@ -90,6 +146,12 @@ refreshed; source classifications and the family ledger are unchanged.
 `make check-sources`, `check-web-editions-current`,
 `check-release-bindings` and the promise ledger pass.
 
+Corrected 2026-10-27 (see "Claude Four Last Things correction, 2026-10-27"
+above): the Judgment round-1 pass and both Judgment visual reviews summarized
+here, and the Death round-1 visual verdict, were the work of a substituted
+model and have been done again. Judgment now passes at round 2 after one
+further repair, and the print-only adjustments numbered four, not three. The
+table gives the hashes published on 2026-10-26.
 ### Verified register publication, 2026-10-27
 
 `origin/main` had advanced to `da270a039` during the work, so it was

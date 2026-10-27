@@ -37,7 +37,11 @@
    "id": "GPT-6-based Codex agent"
   },
   {
-   "documents": 7,
+   "documents": 4,
+   "id": "claude-opus-5-5"
+  },
+  {
+   "documents": 3,
    "id": "Opus 5.5"
   },
   {
@@ -576,9 +580,29 @@
        "runtime": "OpenAI Codex agent (PDF layout revision and production review); API workspace; unexposed: client version and server revision"
       },
       {
-       "model": "Opus 5.5",
-       "qualifiers": "host-dispatch-tier=heavy; unexposed: exact API model identifier; unexposed: reasoning budget; unexposed: sampling configuration",
-       "runtime": "Factory Droid agent, fresh general-purpose worker subagents with no inherited conversation, and the coordinating session (register revision of 26 October 2026 under guidance/editorial.md \"Speaking from within the tradition\" and \"Say what the texts say, plainly\": revision of the body prose of essay I, Death, with quotations, notes, headings, appendices, references and bindings unchanged; the independent cold register and fidelity review and its rechecks of the repairs; every-page visual review; web edition and production records); Factory Droid CLI 0.249.0; unexposed: server revision"
+       "model": "claude-opus-5-5",
+       "qualifiers": "reasoning-effort=high; host-dispatch-tier=heavy; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, fresh general-purpose worker subagents with no inherited conversation (register revision of 26 October 2026 under guidance/editorial.md \"Speaking from within the tradition\" and \"Say what the texts say, plainly\": revision of the body prose of essay I, Death, with quotations, notes, headings, appendices, references and bindings unchanged, and its repairs after review; the independent cold register and fidelity review and its two rechecks of the repairs; the every-page visual review and the page inspection of the adjusted build); Factory Droid CLI 0.249.0; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5",
+       "qualifiers": "reasoning-effort=high; host-dispatch-tier=heavy; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, fresh general-purpose worker subagents with no inherited conversation (correction of 27 October 2026: reviews of the web edition against the PDF); Factory Droid CLI 0.250.0; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5",
+       "qualifiers": "reasoning-effort=xhigh; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, coordinating session (register revision of 26 October 2026: series brief and dispatch; integration; two print-only layout adjustments; web edition and production records); Factory Droid CLI 0.249.0; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5",
+       "qualifiers": "reasoning-effort=xhigh; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, coordinating session (correction of 27 October 2026: audit of the records of the register revision; correction of this contribution record and of the series and leaf production records; the web-edition branch of the shared title-page macro, which carries the epigraph into the web edition, the revision timestamp and the rebuild and page comparison); Factory Droid CLI 0.250.0; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5",
+       "qualifiers": "reasoning-effort=medium; host-dispatch-tier=medium; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, a fresh general-purpose worker subagent with no inherited conversation (correction of 27 October 2026: independent every-page visual review of the published PDF); Factory Droid CLI 0.250.0; unexposed: server revision"
       }
      ],
      "eligibility": "eligible",
@@ -586,7 +610,7 @@
       "claude-opus-5[1m]",
       "claude-opus-5-5[1m]",
       "GPT-6-based Codex agent",
-      "Opus 5.5"
+      "claude-opus-5-5"
      ],
      "pages": 23,
      "pdf": "pdf/claude/articles/faith/four-last-things-01-death.pdf",
@@ -594,8 +618,8 @@
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
      "provider": "claude",
-     "reviewed": "2026-10-26",
-     "revised": "2026-10-26T18:38:28Z",
+     "reviewed": "2026-10-27",
+     "revised": "2026-10-27T16:55:31Z",
      "status": "alpha",
      "subject": "On Death and the Preparation for It. The Four Last Things, I",
      "title": "The Debt of Nature",
@@ -674,9 +698,29 @@
        "runtime": "OpenAI Codex agent (PDF layout revision and production review); API workspace; unexposed: client version and server revision"
       },
       {
-       "model": "Opus 5.5",
-       "qualifiers": "host-dispatch-tier=heavy; unexposed: exact API model identifier; unexposed: reasoning budget; unexposed: sampling configuration",
-       "runtime": "Factory Droid agent, fresh general-purpose worker subagents with no inherited conversation, and the coordinating session (register revision of 26 October 2026 under guidance/editorial.md \"Speaking from within the tradition\" and \"Say what the texts say, plainly\": revision of the body prose of essay II, Judgment, with quotations, notes, headings, appendices, references and bindings unchanged; the independent cold register and fidelity review and its recheck of the repairs; every-page visual review; web edition and production records); Factory Droid CLI 0.249.0; unexposed: server revision"
+       "model": "claude-opus-5-5",
+       "qualifiers": "reasoning-effort=high; host-dispatch-tier=heavy; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, fresh general-purpose worker subagents with no inherited conversation (register revision of 26 October 2026 under guidance/editorial.md \"Speaking from within the tradition\" and \"Say what the texts say, plainly\": revision of the body prose of essay II, Judgment, with quotations, notes, headings, appendices, references and bindings unchanged, and its repair after the round-0 review; the independent round-0 cold register and fidelity review); Factory Droid CLI 0.249.0; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5",
+       "qualifiers": "reasoning-effort=high; host-dispatch-tier=heavy; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, fresh general-purpose worker subagents with no inherited conversation (correction of 27 October 2026: audit of the 26 October review and records; independent round-1 recheck of the repairs against the sources, and its round-2 recheck; repair of the round-1 finding on the degree of the Lyons profession; every-page visual review with a print-only space reservation, and every-page visual review of the repaired build; reviews of the web edition against the PDF); Factory Droid CLI 0.250.0; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5",
+       "qualifiers": "reasoning-effort=xhigh; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, coordinating session (register revision of 26 October 2026: series brief and dispatch; integration; web conversion and production records); Factory Droid CLI 0.249.0; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5",
+       "qualifiers": "reasoning-effort=xhigh; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, coordinating session (correction of 27 October 2026: audit coordination; integration of the repair; web edition; correction of this contribution record and of the series and leaf production records; the web-edition branch of the shared title-page macro, which carries the epigraph into the web edition, the revision timestamp and the rebuild and page comparison); Factory Droid CLI 0.250.0; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5",
+       "qualifiers": "reasoning-effort=medium; host-dispatch-tier=medium; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, a fresh general-purpose worker subagent with no inherited conversation (correction of 27 October 2026: independent every-page visual review of the PDF published on 26 October); Factory Droid CLI 0.250.0; unexposed: server revision"
       }
      ],
      "eligibility": "eligible",
@@ -684,7 +728,7 @@
       "claude-opus-5[1m]",
       "claude-opus-5-5[1m]",
       "GPT-6-based Codex agent",
-      "Opus 5.5"
+      "claude-opus-5-5"
      ],
      "pages": 25,
      "pdf": "pdf/claude/articles/faith/four-last-things-02-judgment.pdf",
@@ -692,8 +736,8 @@
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
      "provider": "claude",
-     "reviewed": "2026-10-26",
-     "revised": "2026-10-26T23:08:05Z",
+     "reviewed": "2026-10-27",
+     "revised": "2026-10-27T16:55:31Z",
      "status": "alpha",
      "subject": "On the Particular and the General Judgment. The Four Last Things, II",
      "title": "What Death Does Not Finish",
@@ -782,9 +826,24 @@
        "runtime": "OpenAI Codex agent (PDF layout revision and production review); API workspace; unexposed: client version and server revision"
       },
       {
-       "model": "Opus 5.5",
-       "qualifiers": "host-dispatch-tier=heavy; unexposed: exact API model identifier; unexposed: reasoning budget; unexposed: sampling configuration",
-       "runtime": "Factory Droid agent, fresh general-purpose worker subagents with no inherited conversation, and the coordinating session (register revision of 26 October 2026 under guidance/editorial.md \"Speaking from within the tradition\" and \"Say what the texts say, plainly\": revision of the body prose of essay III, Hell, with quotations, notes, headings, appendices, references and bindings unchanged; the independent cold register and fidelity review and its recheck of the advisory repairs; every-page visual review; web edition and production records); Factory Droid CLI 0.249.0; unexposed: server revision"
+       "model": "claude-opus-5-5",
+       "qualifiers": "reasoning-effort=high; host-dispatch-tier=heavy; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, fresh general-purpose worker subagents with no inherited conversation (register revision of 26 October 2026 under guidance/editorial.md \"Speaking from within the tradition\" and \"Say what the texts say, plainly\": revision of the body prose of essay III, Hell, with quotations, notes, headings, appendices, references and bindings unchanged, and its advisory repairs; the independent cold register and fidelity review and its recheck of the repairs; the every-page visual review and its recheck); Factory Droid CLI 0.249.0; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5",
+       "qualifiers": "reasoning-effort=high; host-dispatch-tier=heavy; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, fresh general-purpose worker subagents with no inherited conversation (correction of 27 October 2026: reviews of the web edition against the PDF); Factory Droid CLI 0.250.0; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5",
+       "qualifiers": "reasoning-effort=xhigh; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, coordinating session (register revision of 26 October 2026: series brief and dispatch; integration; one print-only layout adjustment; web edition and production records); Factory Droid CLI 0.249.0; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5",
+       "qualifiers": "reasoning-effort=xhigh; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, coordinating session (correction of 27 October 2026: correction of this contribution record and of the series and leaf production records; the web-edition branch of the shared title-page macro, which carries the epigraph into the web edition, the revision timestamp and the rebuild and page comparison); Factory Droid CLI 0.250.0; unexposed: server revision"
       }
      ],
      "eligibility": "eligible",
@@ -792,7 +851,7 @@
       "claude-opus-5[1m]",
       "claude-opus-5-5[1m]",
       "GPT-6-based Codex agent",
-      "Opus 5.5"
+      "claude-opus-5-5"
      ],
      "pages": 30,
      "pdf": "pdf/claude/articles/faith/four-last-things-03-hell.pdf",
@@ -800,8 +859,8 @@
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
      "provider": "claude",
-     "reviewed": "2026-10-26",
-     "revised": "2026-10-26T18:16:42Z",
+     "reviewed": "2026-10-27",
+     "revised": "2026-10-27T16:55:31Z",
      "status": "alpha",
      "subject": "On Hell, Its Pains, and Its Eternity. The Four Last Things, III",
      "title": "The Fire That Is Not Extinguished",
@@ -885,9 +944,24 @@
        "runtime": "OpenAI Codex agent (PDF layout revision and production review); API workspace; unexposed: client version and server revision"
       },
       {
-       "model": "Opus 5.5",
-       "qualifiers": "host-dispatch-tier=heavy; unexposed: exact API model identifier; unexposed: reasoning budget; unexposed: sampling configuration",
-       "runtime": "Factory Droid agent, fresh general-purpose worker subagents with no inherited conversation, and the coordinating session (register revision of 26 October 2026 under guidance/editorial.md \"Speaking from within the tradition\" and \"Say what the texts say, plainly\": revision of the body prose of essay IV, Heaven, with quotations, notes, headings, appendices, references and bindings unchanged; the independent cold register and fidelity review and its rechecks of the repairs; every-page visual review; web edition and production records); Factory Droid CLI 0.249.0; unexposed: server revision"
+       "model": "claude-opus-5-5",
+       "qualifiers": "reasoning-effort=high; host-dispatch-tier=heavy; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, fresh general-purpose worker subagents with no inherited conversation (register revision of 26 October 2026 under guidance/editorial.md \"Speaking from within the tradition\" and \"Say what the texts say, plainly\": revision of the body prose of essay IV, Heaven, with quotations, notes, headings, appendices, references and bindings unchanged, and its repairs after review; the independent cold register and fidelity review and its two rechecks of the repairs; the every-page visual review); Factory Droid CLI 0.249.0; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5",
+       "qualifiers": "reasoning-effort=high; host-dispatch-tier=heavy; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, fresh general-purpose worker subagents with no inherited conversation (correction of 27 October 2026: reviews of the web edition against the PDF); Factory Droid CLI 0.250.0; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5",
+       "qualifiers": "reasoning-effort=xhigh; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, coordinating session (register revision of 26 October 2026: series brief and dispatch; integration; web edition and production records); Factory Droid CLI 0.249.0; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5-5",
+       "qualifiers": "reasoning-effort=xhigh; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, coordinating session (correction of 27 October 2026: correction of this contribution record and of the series and leaf production records; the web-edition branch of the shared title-page macro, which carries the epigraph into the web edition; the markup of four Latin lemmas in section 10, which the web edition had set without italics; the revision timestamp and the rebuild and page comparison); Factory Droid CLI 0.250.0; unexposed: server revision"
       }
      ],
      "eligibility": "eligible",
@@ -895,7 +969,7 @@
       "claude-opus-5[1m]",
       "claude-opus-5-5[1m]",
       "GPT-6-based Codex agent",
-      "Opus 5.5"
+      "claude-opus-5-5"
      ],
      "pages": 22,
      "pdf": "pdf/claude/articles/faith/four-last-things-04-heaven.pdf",
@@ -903,8 +977,8 @@
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
      "provider": "claude",
-     "reviewed": "2026-10-26",
-     "revised": "2026-10-26T18:22:34Z",
+     "reviewed": "2026-10-27",
+     "revised": "2026-10-27T16:55:31Z",
      "status": "alpha",
      "subject": "On Heaven and the Vision of God. The Four Last Things, IV",
      "title": "Then Face to Face",

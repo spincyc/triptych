@@ -4,6 +4,10 @@
 
 [TOC]
 
+> *We see now through a glass in a dark manner: but then face to face.*
+>
+> 1 Corinthians 13:12
+
 [I. Death](four-last-things-01-death.html) · [II. Judgment](four-last-things-02-judgment.html) · [III. Hell](four-last-things-03-hell.html) · [IV. Heaven](four-last-things-04-heaven.html)
 
 ## They Shall See His Face
@@ -66,13 +70,13 @@ What Irenaeus taught as a Father the Church confessed as dogma. In 1336 Benedict
 
 The Catechism renders the heart of it: these souls “have seen and do see the divine essence with an intuitive vision, and even face to face, without the mediation of any creature.”[^21]
 
-Visione intuitiva: by an intuitive vision. The blessed do not reason their way to God from his works, as we do now, climbing from the creature to the Creator; they see him directly.
+*Visione intuitiva*: by an intuitive vision. The blessed do not reason their way to God from his works, as we do now, climbing from the creature to the Creator; they see him directly.
 
-Et etiam faciali: and even face to face. The word is Saint Paul’s, taken from “then face to face.” Augustine had already explained that “By ‘the face’ of God we are to understand His manifestation, and not a part of the body”.[^22]
+*Et etiam faciali*: and even face to face. The word is Saint Paul’s, taken from “then face to face.” Augustine had already explained that “By ‘the face’ of God we are to understand His manifestation, and not a part of the body”.[^22]
 
-Nulla mediante creatura in ratione obiecti visi se habente: no creature standing between, in the role of the thing seen. What the blessed see is God himself, not an image of him, nor a glory less than God, nor a messenger.
+*Nulla mediante creatura in ratione obiecti visi se habente*: no creature standing between, in the role of the thing seen. What the blessed see is God himself, not an image of him, nor a glory less than God, nor a messenger.
 
-Sed divina essentia immediate se nude, clare et aperte eis ostendente: but the divine essence showing itself to them immediately, plainly, clearly and openly. In this last clause the subject changes: it is no longer the souls who see but the divine essence, which shows itself to them. The vision is God’s gift of himself, and the soul receives it. The Catechism gives the reason: “Because of his transcendence, God cannot be seen as he is, unless he himself opens up his mystery to man’s immediate contemplation and gives him the capacity for it.”[^23]
+*Sed divina essentia immediate se nude, clare et aperte eis ostendente*: but the divine essence showing itself to them immediately, plainly, clearly and openly. In this last clause the subject changes: it is no longer the souls who see but the divine essence, which shows itself to them. The vision is God’s gift of himself, and the soul receives it. The Catechism gives the reason: “Because of his transcendence, God cannot be seen as he is, unless he himself opens up his mystery to man’s immediate contemplation and gives him the capacity for it.”[^23]
 
 A century later the Council of Florence confessed the same vision and added two words from the epistle of John: the purified see clearly God himself, three and one, as he is: *sicuti est*. In the same sentence it defined that one sees more perfectly than another, *pro meritorum tamen diversitate*, according to the diversity of merits.[^24]
 
@@ -422,7 +426,7 @@ Every quotation was read at its locus in the identified witness; the record of t
 
 - Thérèse of Lisieux, *Soeur Thérèse of Lisieux*, ed. T. N. Taylor (London: Burns, Oates & Washbourne, 1912), ch. 2 and Epilogue, [Project Gutenberg eBook 16772](https://www.gutenberg.org/ebooks/16772). Public domain in the United States; quoted briefly.
 
-**Last revised (UTC):** 2026-10-26T18:22:34Z
+**Last revised (UTC):** 2026-10-27T16:55:31Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

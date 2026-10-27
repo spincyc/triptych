@@ -1,6 +1,45 @@
 schema_version = 1
 
 [[deliverables]]
+id = "claude-flt-correction-2026-10-27"
+owner = "PROJECT-WORK.md"
+promise = "Redo with fresh Claude workers every Four Last Things step that a substituted model performed on 2026-10-26, repair what the repeated reviews find, including the title-page epigraph missing from all four web editions and the italics lost from four Latin lemmas in the Heaven web edition, correct the records and generation metadata to list only Claude work by exact model identifier with the substitution named once in a correction note, and publish the corrected essays and web editions to main with live verification."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "claude-flt-correction-rechecked"
+  criterion = "The Judgment round-1 recheck of the cold-review repairs is redone by a fresh Claude reviewer against the sources, its findings are repaired, and a further fresh recheck passes with no findings; the conservation check reports no change beyond main.tex, which the web edition repairs changed to call the title-page macro directly."
+  status = "pass"
+  evidence = ["src/claude/articles/faith/four-last-things-02-judgment/research/revision-2026-10-26.md"]
+  check = "contains"
+  path = "src/claude/articles/faith/four-last-things-02-judgment/research/revision-2026-10-26.md"
+  needle = "## Correction, recheck and repair, 27 October 2026"
+
+  [[deliverables.requirements]]
+  id = "claude-flt-correction-artifacts"
+  criterion = "The repaired Judgment PDF passes a fresh every-page visual review, the Death visual verdict is redone on every page of the published PDF, the four web editions carry their title-page epigraphs, the Heaven edition keeps the italics of its Latin lemmas, and all four are reviewed against their PDFs and installed, and the catalogue and release bindings are current."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "src/claude/articles/faith/four-last-things-shared/register-revision-2026-10-26.md"]
+  check = "contains"
+  path = "src/claude/articles/faith/four-last-things-shared/register-revision-2026-10-26.md"
+  needle = "## Web edition repairs, 27 October 2026"
+
+  [[deliverables.requirements]]
+  id = "claude-flt-correction-records"
+  criterion = "The series record is rewritten without the substituted model's text, the Judgment and Death records are corrected, and all four generation-metadata.tex files list only Claude contributions by exact model identifier and exposed qualifiers."
+  status = "pass"
+  evidence = ["src/claude/articles/faith/four-last-things-shared/register-revision-2026-10-26.md"]
+  check = "contains"
+  path = "src/claude/articles/faith/four-last-things-shared/register-revision-2026-10-26.md"
+  needle = "## Correction of 27 October 2026"
+
+  [[deliverables.requirements]]
+  id = "claude-flt-correction-published"
+  criterion = "The corrected work reaches origin/main by fast-forward after the three deploy gates pass locally, the Pages run succeeds, and the live PDFs and web editions of the four essays match the reviewed bytes."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "claude-1962-f02-all-saints-three-documents-2026-11-01"
 owner = "PROJECT-WORK.md"
 promise = "Complete the Claude 1962 All Saints (F02) proper-study workflow for Sunday 1 November 2026 with independent cold reviews, three reviewed PDFs and the canonical web edition, publish to main by fast-forward and verify the deployment."
