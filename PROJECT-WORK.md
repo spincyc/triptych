@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-26.
+Last reconciled: 2026-10-27.
 
 ## Claude 1962 All Saints, 2026-11-01
 
@@ -27,7 +27,7 @@ Work starts at clean `47c7df92d`, equal to `origin/main`. Commits stay on
 
 <!-- promised-deliverable: claude-flt-register-2026-10-26 -->
 
-**Reviewed and installed; publication to `main` pending.** On 2026-10-26
+**Complete: pushed to main and verified live.** On 2026-10-26
 the maintainer asked that the new voice and drafting guidance be applied to
 the four Claude Four Last Things essays and published to `main`. The
 governing rules are the Catholic voice rule and "Say what the texts say,
@@ -58,6 +58,30 @@ publication inventory, document catalogue and scoped release bindings are
 refreshed; source classifications and the family ledger are unchanged.
 `make check-sources`, `check-web-editions-current`,
 `check-release-bindings` and the promise ledger pass.
+
+### Verified register publication, 2026-10-27
+
+`origin/main` had advanced to `da270a039` during the work, so it was
+merged without rewriting either parent; the only conflict,
+`release/public-alpha.json`, took the upstream manifest and re-recorded only
+the catalogue and the four Claude web editions. The deploy gates
+(`make check-deployment-sources`, `make public-site`,
+`public-alpha verify --deployment-target github-pages`) and
+`make check-sources` passed on the merged tree. Commit
+`ff484b0e3163f4e64c4a48aa14628d0e3ef20f8d` reached `origin/main` by
+ordinary fast-forward. [Pages run 40422812019](https://github.com/spincyc/triptych/actions/runs/40422812019)
+and [repository hygiene run 40422812013](https://github.com/spincyc/triptych/actions/runs/40422812013)
+both succeeded for that exact commit.
+
+At `2026-10-27T00:18:13Z`, all 15 checked routes on `https://mystago.gy/`
+returned HTTP 200 and matched the verified local site byte for byte: the
+four canonical Claude PDFs, their four provider-qualified aliases, the four
+web editions, the Faith catalogue, the document-catalogue data and the
+publication manifest. All live PDF hashes equal the accepted hashes above.
+The live publication-manifest SHA-256 is
+`cf6109a58e45b30987d955569cc93fef9db8a5b9e3c4e04bdea2376b3f165a4f`.
+This closure receipt changes no reader-facing artifact and does not claim
+its own subsequent deployment.
 
 ## Four Last Things PDF layout, 2026-10-26
 

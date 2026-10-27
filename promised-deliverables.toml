@@ -37,7 +37,7 @@ state = "in_progress"
 id = "claude-flt-register-2026-10-26"
 owner = "PROJECT-WORK.md"
 promise = "Apply the current Catholic voice and plain-drafting guidance to the four Claude Four Last Things essays, preserving quotations, references, structure and approximate extent; review, build, inspect and install them with current web editions; publish to main and verify the deployment."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "claude-flt-register-revised"
@@ -55,8 +55,11 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-flt-register-published"
   criterion = "The validated change reaches origin/main by fast-forward, the Pages run succeeds, and the live PDF and web routes match the reviewed bytes."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
+  check = "contains"
+  path = "PROJECT-WORK.md"
+  needle = "### Verified register publication, 2026-10-27"
 
 [[deliverables]]
 id = "four-last-things-pdf-layout-2026-10-26"
