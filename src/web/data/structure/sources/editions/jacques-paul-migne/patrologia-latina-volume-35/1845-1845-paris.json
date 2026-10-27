@@ -16,6 +16,36 @@
    "storage": "tracked"
   },
   {
+   "artifact_type": "facsimile-excerpt",
+   "byte_size": 1463566,
+   "edition_owned": true,
+   "id": "artifact.jacques-paul-migne.patrologia-latina-volume-35.1845-paris.columns-2415-2418-and-2425-2428-facsimile-772856db",
+   "media_type": "application/pdf",
+   "notes": "Four pages only: parent PDF page 557 (columns 2415-2416), the editors' Admonitio de subsequenti expositione in Apocalypsim; parent PDF page 558 (columns 2417-2418), the opening of the anonymous Expositio in Apocalypsim; and parent PDF pages 562-563 (columns 2425-2428), Homily VI, whose comment on Apocalypse 7 stands in columns 2426-2427 with its recapitulation in column 2428. Pages 557, 562 and 563 carry the loci the research stage read as evidence; page 558 was read only to identify the work's opening column. The intervening pages (559-561, columns 2418-2424, Homilies I-V) were not read. All other parent pages are omitted; the parent stays remote for its measured size.",
+   "page_count": 4,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "The 1845 Paris printing is in the United States public domain by date of publication (first published abroad before 1931, as derived for calendar year 2026 under guidance/missals.md). The scan is a Google digitization of a Harvard College Library copy delivered by the Internet Archive; a mechanical digitization of a public-domain printing adds no original authorship, and page extraction adds none. None of the four retained pages carries Google's front matter, so the question governed by src/sources/inventories/google-usage-guidelines-rights-v1.toml does not arise here. No modern editorial text is added by this retention.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/patrologiaecurs143migngoog/patrologiaecurs143migngoog.pdf",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "ocr-text",
+   "byte_size": 4425263,
+   "edition_owned": true,
+   "id": "artifact.jacques-paul-migne.patrologia-latina-volume-35.1845-paris.ia-djvu-text-54f87784",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Uncorrected optical text of the whole volume, 88,550 LF-terminated lines, valid UTF-8, no CR bytes. Google's usage-guidelines page stands at lines 1-41 (see rights_basis); the Harvard College Library bookplate follows, and the Patrologia title page is at about line 79. The appendix's Admonitio de subsequenti expositione in Apocalypsim stands at about lines 81359-81406 and the Expositio in Apocalypsim opens at about line 81408, its last running head at line 84408; the optical order across Migne's two print columns and the interleaved notes is unreliable. QUOTE FROM THIS ARTIFACT ONLY AFTER CHECKING THE PAGE IMAGE: the sister artifact columns-2415-2418-and-2425-2428-facsimile-772856db retains the four pages the All Saints research read. A raw-line negative over this file is evidence about the recognition, not about the printed page.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "The volume was published at Paris in 1845 (the Patrologia title page, PDF p. 6 of the registered scan), and a work first published abroad before 1931 is out of United States copyright; that line is the one guidance/missals.md records as current on 1 January 2026 and it moves every January, so it is written here as derived for calendar year 2026 and not as a standing rule. Restoration under 17 U.S.C. 104A could not reach it: ninety-five years from 1845 ran out in 1940. The bytes are the Internet Archive's optical character recognition of a Google Books digitization; machine recognition of a public-domain printing adds no human authorship, and a faithful mechanical reproduction is not original (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)). GOOGLE FRONT MATTER IS PRESENT: lines 1-41 are Google's own usage-guidelines page, retained unaltered under src/sources/inventories/google-usage-guidelines-rights-v1.toml; it is Google's prose, not the book's, and no quotation, search or negative may treat it as the volume's text. NOT RELIED ON: that the item is available, that the download succeeded, or that any host marks the scan public domain.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/patrologiaecurs143migngoog/patrologiaecurs143migngoog_djvu.txt",
+   "storage": "tracked"
+  },
+  {
    "artifact_type": "scan",
    "byte_size": 62548064,
    "edition_owned": true,

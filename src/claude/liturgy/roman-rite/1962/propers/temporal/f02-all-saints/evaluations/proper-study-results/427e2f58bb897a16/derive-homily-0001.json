@@ -1,0 +1,44 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/homily.tex",
+  "author_proof": {
+    "artifacts_dir": "build/tpt-runs/427e2f58bb897a16/artifacts/derive-homily-0001",
+    "hashes": "build/tpt-runs/427e2f58bb897a16/artifacts/derive-homily-0001/hashes.txt",
+    "log": "build/tpt-runs/427e2f58bb897a16/artifacts/derive-homily-0001/make-doc.log",
+    "pages": 4,
+    "pdf": "build/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily.pdf",
+    "rasters": [
+      "build/tpt-runs/427e2f58bb897a16/artifacts/derive-homily-0001/build/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily/pages/page-1.png",
+      "build/tpt-runs/427e2f58bb897a16/artifacts/derive-homily-0001/build/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily/pages/page-2.png",
+      "build/tpt-runs/427e2f58bb897a16/artifacts/derive-homily-0001/build/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily/pages/page-3.png",
+      "build/tpt-runs/427e2f58bb897a16/artifacts/derive-homily-0001/build/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily/pages/page-4.png"
+    ],
+    "sha256": "792836934fc5f992722a39cf49d1556bc4da94e86a0b3e77ad54b5be2f1b8cfa"
+  },
+  "checks": {
+    "make doc PROVIDER=claude DOC=liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily (anchor check: 0 contents lines, 0 bookmarks, every one on its own anchor; manifest valid: 1; generation metadata: 1 canonical, 0 inherited; LaTeX log clean: no fatal errors, undefined references, overfull/underfull boxes or hyperref warnings)": "exit 0",
+    "scripts/_proper_study.py check --provider claude --document liturgy/roman-rite/1962/propers/temporal/f02-all-saints --date 2026-11-01 --phase content --edition homily --require-presentation --require-format --require-authority --require-orientation --require-orientation-v2": "exit 0",
+    "tpt check-content-preflight --provider claude --edition homily (all checks: bindings-valid, chronology-annotations-current, chronology-claims-supported, chronology-record-current, house-voice, identifiers-resolve, proposal-fields, references-used (11 entries, every one used in the body), relation-coverage, restricted-not-reproduced, structural-meta-labels, unquoted-not-quoted)": "exit 0",
+    "tpt check-content-preflight --provider claude --edition homily --check provenance-matches-run --run-workflow proper-study --run-workflow-version 15 --run-workflow-digest 4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83 --run-id 427e2f58bb897a16 --run-seed-commit c7dfb84c76a057079251e8c918243b787fa69494": "exit 0",
+    "tpt check-proper-components --provider claude --phase artifacts --edition homily": "exit 0",
+    "visual inspection of all 4 pages at raster resolution (pages 1-2 spoken body unchanged; page 3 corrected route paragraph and exact loci; page 4 corrected References, fresh revision timestamp, colophon)": "done"
+  },
+  "disposition": "PASS",
+  "files_changed": [
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/90-note.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/generation-metadata.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/production-review.md"
+  ],
+  "finding_dispositions": [
+    {
+      "id": "HOM-001",
+      "note": "Option (a): the note's route account corrected to match the words actually spoken. Verified against the repository corpora that the spoken clause is Marshall's English of Bede's citation at Explanatio I on 7:4 (passages/1-7-4.toml), not the Douay ('And if you be Christ's, then are you the seed of Abraham', douay-rheims Gal 3:29); Gal 3:29 removed from the Douay list in 90-note.tex's route paragraph and its References entry, and the Bede route stated in both places. The spoken quotation is unchanged, as the finding allowed.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "reports_for_other_owners": [
+    "No new defects. The standing reports of the earlier stages (the accepted study's 'the seven orations' in sections/05-appointed-texts.tex and sections/90-apparatus.tex, the shared appointment test, calendar-entry, formulary-loci, author-standing, provenance-ledger, translation-register and ordo-record items) remain with their owners; this iteration touched none of them."
+  ],
+  "stage": "derive-homily",
+  "summary": "Repaired HOM-001 by the reviewer's option (a): the terminal note now tells the true route of Gal 3:29. The route paragraph's Douay list and the Douay References entry no longer carry Gal 3:29; the note states that the speech's 'if ye be Christ's, then are ye Abraham's seed' is quoted as Bede cites the verse at Explanatio Apocalypsis I on 7:4, in E. Marshall's 1878 English, with the Douay wording given for contrast; the Bede References entry and the exact loci follow. The spoken body, entrypoint and manifest are unchanged; the generation record carries this iteration's contribution and a fresh revision timestamp, and every named gate passes."
+}

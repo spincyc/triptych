@@ -18,14 +18,15 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-f02-native-acceptance"
   criterion = "A real proper-study version-15 run for the identity reaches ACCEPTED with every required fresh cold review, and its results are archived with a cycles record."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/claude-1962-f02-production-2026-10-27/CYCLES.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/427e2f58bb897a16/record.md"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "claude-f02-reviewed-publications"
   criterion = "The research study, concise study and homily are built, visually inspected on every page and installed with the reviewed bytes; the canonical web edition, catalog, inventories and release records are current and the required gates pass."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/production-review.md"]
 
   [[deliverables.requirements]]
   id = "claude-f02-main-and-pages"

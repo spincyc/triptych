@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.jacques-paul-migne.patrologia-latina-volume-35.1845-paris.ia-djvu-text-54f87784"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-35.1845-paris"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The volume was published at Paris in 1845 (the Patrologia title page, PDF p. 6 of the registered scan), and a work first published abroad before 1931 is out of United States copyright; that line is the one guidance/missals.md records as current on 1 January 2026 and it moves every January, so it is written here as derived for calendar year 2026 and not as a standing rule. Restoration under 17 U.S.C. 104A could not reach it: ninety-five years from 1845 ran out in 1940. The bytes are the Internet Archive's optical character recognition of a Google Books digitization; machine recognition of a public-domain printing adds no human authorship, and a faithful mechanical reproduction is not original (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)). GOOGLE FRONT MATTER IS PRESENT: lines 1-41 are Google's own usage-guidelines page, retained unaltered under src/sources/inventories/google-usage-guidelines-rights-v1.toml; it is Google's prose, not the book's, and no quotation, search or negative may treat it as the volume's text. NOT RELIED ON: that the item is available, that the download succeeded, or that any host marks the scan public domain."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/patrologiaecurs143migngoog/patrologiaecurs143migngoog_djvu.txt"
+provenance = "Acquired whole over HTTPS by the research stage of workflow run 427e2f58bb897a16 (iteration 3) on 2026-10-26 as a finding aid for the registered scan, and hashed before use. The source-registration stage of the same run recomputed the SHA-256 and byte size over the retained file and both matched; the byte size (4,425,263) and the SHA-1 (886349be3f88ce3ea0d68c482d37916fb7f042dc) equal the Internet Archive item's own file listing for this file (metadata API, read 2026-10-26). It is the text layer of the same item as artifact.jacques-paul-migne.patrologia-latina-volume-35.1845-paris.internet-archive-google-pdf-b3ff8a95, recognised from the item's page images rather than from the PDF's bytes, so no derived_from edge is asserted. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-10-26"
+sha256 = "54f87784316947fa7c237fa9d3816cd1640bb8b087cd23966e68b2986c02ec56"
+byte_size = 4425263
+path = "src/sources/works/jacques-paul-migne/patrologia-latina-volume-35/editions/1845-paris/artifacts/ia-djvu-text-54f87784/pl-35-djvu.txt"
+encoding = "utf-8"
+indexable = true
+notes = "Uncorrected optical text of the whole volume, 88,550 LF-terminated lines, valid UTF-8, no CR bytes. Google's usage-guidelines page stands at lines 1-41 (see rights_basis); the Harvard College Library bookplate follows, and the Patrologia title page is at about line 79. The appendix's Admonitio de subsequenti expositione in Apocalypsim stands at about lines 81359-81406 and the Expositio in Apocalypsim opens at about line 81408, its last running head at line 84408; the optical order across Migne's two print columns and the interleaved notes is unreliable. QUOTE FROM THIS ARTIFACT ONLY AFTER CHECKING THE PAGE IMAGE: the sister artifact columns-2415-2418-and-2425-2428-facsimile-772856db retains the four pages the All Saints research read. A raw-line negative over this file is evidence about the recognition, not about the printed page."

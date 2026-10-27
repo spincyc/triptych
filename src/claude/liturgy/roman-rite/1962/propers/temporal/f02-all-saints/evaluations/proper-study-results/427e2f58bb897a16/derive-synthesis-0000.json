@@ -1,0 +1,34 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/synthesis.tex",
+  "author_proof": {
+    "aux_path": "build/tpt-runs/427e2f58bb897a16/artifacts/derive-synthesis-0000/f02-all-saints-synthesis.aux",
+    "build_pdf_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis.pdf",
+    "make_doc_log": "build/tpt-runs/427e2f58bb897a16/artifacts/derive-synthesis-0000/make-doc.log",
+    "pdf_path": "build/tpt-runs/427e2f58bb897a16/artifacts/derive-synthesis-0000/f02-all-saints-synthesis.pdf",
+    "pdf_sha256": "adca664fed12b1a3ec337a3b8b614275bab4b334c2d6d55c1983c4a1c61aa67e",
+    "physical_pages": 12,
+    "rasters": "build/tpt-runs/427e2f58bb897a16/artifacts/derive-synthesis-0000/rasters (all 12 pages inspected)"
+  },
+  "checks": [
+    "make doc DOC=liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis PROVIDER=claude: exit 0, 12 pages (within the 10-12 extent), no undefined references, overfull/underfull boxes or hyperref warnings; manifest and generation-metadata checks valid",
+    "tools/check-proper-components --provider claude --document liturgy/roman-rite/1962/propers/temporal/f02-all-saints --phase artifacts --edition synthesis: exit 0; every marker resolves to its contract page (inventory start/end, overview start/end and all four sense rows on page 1; chronology start/end on page 2; themes start page 3, end page 4; commentary start page 5)",
+    "tools/tpt check-content-preflight --provider claude --document liturgy/roman-rite/1962/propers/temporal/f02-all-saints --edition synthesis: exit 0 on all checks, including house-voice, structural-meta-labels, chronology-claims-supported, relation-coverage, restricted-not-reproduced, and references-used (22 entries, all used; 27 loci, all cited)",
+    "Raster review: all 12 pages of the proof PDF inspected at raster resolution; layout clean, no overflow, running heads correct"
+  ],
+  "disposition": "PASS",
+  "files_changed": [
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/synthesis.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/01-inventory.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/02-overview.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/03-date-location.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/04-themes.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/10-commentary.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/90-apparatus.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/generation-metadata.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/production-review.md"
+  ],
+  "iteration": 0,
+  "reports_for_other_owners": "One upstream defect for the study's owner, not repairable from this stage (the accepted study was not edited): the expansive study twice says 'the seven orations' (sections/05-appointed-texts.tex line 22 and sections/90-apparatus.tex line 37), but only six orations exist in this occurrence -- the feast's Collect, Secret and Postcommunion and the commemorated Sunday's three -- and only six Lasance oration English blocks are printed. The synthesis says 'the orations' without a count. Recorded in research/production-review.md under Derive-synthesis, iteration 0.",
+  "stage": "derive-synthesis",
+  "summary": "Authored the concise synthesis of the F02 All Saints study from the accepted expansive study alone, with nothing evidence-dependent added. The entrypoint synthesis.tex and the six manifest-declared concise components are written: page-1 inventory of the fourteen said elements (the feast's ten texts, the commemorated Twenty-third Sunday's three orations, and the unsettled Preface) with its rubrical note, and the four overview rows; the page-2 Scriptural Date and Location table importing research/chronology-annotations.tex once and placing the same eight orientation-v2 rows in the generator's order; the two-page thematic orientation in the order of the Mass with the commentators' answers; the integrated commentary organized by the questions the texts raise (who the sealed are and who the crowd is, with Victorinus under the ANF editors' recension caution and Cyprian's martyrs-only reading kept as the rival Bede rejects at 7:14; why the Beatitudes and in what tense, with the Augustine-Hilary difference kept, Hilary's phrase quoted with its registered scilicet per STU-014, and the Communion's re-singing of Mt 5:8-10 answered with the study's marked inference; the Gradual's promise tested by hunger and death, with the omitted Divites eguerunt and the witnesses' bounded temporal senses; the Church on the way and at rest, including the commemorated Sunday's orations); a closing where-the-three-meet-and-differ comparison; and the terminal scope note and References. The Preface stays deliberately unresolved: both candidates (Trinity, p. 293, no. 1082; common, p. 297, no. 1086) are named, neither asserted, neither text given, and no sentence builds on either. The Offertory's closing alleluia is never presented as ancient, and its 1962 wording (tormentum malitiae) is noted with the history left to the study's appointed texts. Generation metadata carries this stage's AIModelContribution and a fresh revision timestamp; research/production-review.md carries the Derive-synthesis iteration-0 section."
+}

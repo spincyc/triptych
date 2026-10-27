@@ -1,9 +1,9 @@
 {
  "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name. Production provenance is what each document records about itself, field by field, omitting any field its record says was not recoverable; comparing it against the workflows declared below is a finding aid and never an authority, and nothing in this repository gates on it.",
  "counted": {
-  "documents": 215,
-  "issues": 277,
-  "pages": 7194,
+  "documents": 216,
+  "issues": 280,
+  "pages": 7226,
   "titles_unrecorded": 0,
   "works": 154
  },
@@ -37,7 +37,7 @@
    "id": "GPT-6-based Codex agent"
   },
   {
-   "documents": 6,
+   "documents": 7,
    "id": "Opus 5.5"
   },
   {
@@ -51,7 +51,7 @@
  ],
  "providers": [
   {
-   "documents": 63,
+   "documents": 64,
    "id": "claude",
    "label": "Claude"
   },
@@ -8049,6 +8049,83 @@
    "catalog": "library/traditional-latin-mass.md",
    "catalog_page": "library/traditional-latin-mass.html",
    "editions": [
+    {
+     "also": [
+      {
+       "kind": "synthesis",
+       "pages": 12,
+       "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis.pdf",
+       "subject": "Concise study of the 1962 Missale Romanum proper of the feast of All Saints, said on Sunday 1 November 2026 with the commemoration of the Twenty-third Sunday after Pentecost: the appointed texts, four overview senses, the scriptural date and location of each passage, the themes of the propers, and a commentary comparing three interpretations of the whole Mass",
+       "title": "All Saints: A Concise Study of the Proper in the 1962 Roman Missal"
+      },
+      {
+       "kind": "homily",
+       "pages": 4,
+       "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily.pdf",
+       "subject": "A homily for an adult parish assembly on the 1962 Missale Romanum proper of the feast of All Saints, 1 November, I classis, as said on Sunday 1 November 2026 with the commemoration of the Twenty-third Sunday after Pentecost: the Lesson's heard number and seen crowd with Bede and Augustine; the Alleluia's invitation and the Gospel's eight blessings as the way the saints walked, with Augustine and Chrysostom; the Gradual's promise tested by the saints' hunger and death, with Basil and Aquinas; the Offertory's just in the hand of God, with Schuster; the present tense of the first and eighth beatitudes; the intercession asked in the Collect and the Postcommunion; the commemorated Sunday's Collect as the prayer of the first step; and the Communion's three beatitudes sung where the Sacrament is received",
+       "title": "All Saints: The Way the Saints Walked"
+      }
+     ],
+     "authorization": "perpetual-public-repository-2026",
+     "contributions": [
+      {
+       "model": "Opus 5.5",
+       "qualifiers": "packet-declared-effort=high; host-dispatch-tier=heavy; unexposed: exact API model identifier; unexposed: reasoning budget; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, a fresh general-purpose worker subagent with no inherited conversation (author-study stage of proper-study v15, run 427e2f58bb897a16, iteration 0: the expansive study of the canonical leaf from the reviewed research records, comprising the opening with its occurrence on Sunday 1 November 2026, the commemoration of the Twenty-third Sunday after Pentecost and the unsettled Preface; the appointed Latin of the fourteen said elements with their public-domain English and a locator for the Preface naming both readings of the rubrics; the element-by-element settings; three interpretations of the whole formulary, on the sealed number and the uncounted multitude, on the Beatitudes as the way of the saints, and on the promise of no want and the just in the hand of God, each with its own four senses; the comparison; the Scriptural Date and Location appendix on the generated orientation-v2 rows of the chronology projection; the scope appendix and References; the schema-2 component manifest with its future concise and homily components and presentation roles; the leaf-local format and web-edition records; the production audit; and author proof checks); Factory Droid CLI 0.249.0; unexposed: server revision"
+      },
+      {
+       "model": "Opus 5.5",
+       "qualifiers": "packet-declared-effort=high; host-dispatch-tier=heavy; unexposed: exact API model identifier; unexposed: reasoning budget; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, a fresh general-purpose worker subagent with no inherited conversation (author-study stage of proper-study v15, run 427e2f58bb897a16, iteration 1: the repair of the house-voice gate's finding in the appointed texts' notes on the Lasance English of the Lesson and the Offertory and on the unsettled Preface, and in the third interpretation's note on the Offertory's alleluia, with the Preface's search bound moved to the scope appendix and a fresh author proof); Factory Droid CLI 0.249.0; unexposed: server revision"
+      },
+      {
+       "model": "Opus 5.5",
+       "qualifiers": "packet-declared-effort=high; host-dispatch-tier=heavy; unexposed: exact API model identifier; unexposed: reasoning budget; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, a fresh general-purpose worker subagent with no inherited conversation (author-study stage of proper-study v15, run 427e2f58bb897a16, iteration 2: the repair of the six blocking findings carried into this iteration, STU-002 to STU-007: each interpretation now shows, in proportion, how the texts it had omitted bear on its reading -- the first on the Gospel and the Communion, with the Alleluia, the Secret and the commemorated Secret touched lightly, the second on the Lesson's white-robed multitude as the way's end with Bede's robes and palms, with the Secret, the Postcommunion and the commemorated orations touched, and the third on the Lesson's crowd before the throne as the promise shown as kept, with the Introit and the Communion touched -- and the comparison no longer assigns texts to interpretations; the false four-Father agreement on the Beatitudes' tenses replaced by the witnesses' real answers, Augustine's, Aquinas's, Chrysostom's and Hilary's, with Hilary's difference from Augustine kept; Aquinas's Super Psalmos 33 n. 10 given whole, including God's help in necessity, verified at the registered Parma locus, and the witnesses who keep a temporal sense stated truly in the difficulty and the comparison; the Fathers credited only with the clauses they state, the feast-level conclusions stated in the study's own voice; the procedural and disclaiming clauses removed from the body, the translation-register and compilation bounds left to the scope appendix; the restating closers cut and the staged antitheses made positive; with a fresh author proof); Factory Droid CLI 0.249.0; unexposed: server revision"
+      },
+      {
+       "model": "Opus 5.5",
+       "qualifiers": "packet-declared-effort=high; host-dispatch-tier=heavy; unexposed: exact API model identifier; unexposed: reasoning budget; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, a fresh general-purpose worker subagent with no inherited conversation (author-study stage of proper-study v15, run 427e2f58bb897a16, iteration 3: the repair of blocking finding STU-013, the study-side consequence of the iteration-3 research repair -- the first interpretation's false sentence that Augustine says nothing of the seal or the number replaced by his three brief loci on the Lesson (De doctrina christiana III.35.51, Letter XCIII 30, Sermon LXI 1), presented as the short applications they are and never as a commentary on the chapter; Victorinus of Pettau given as the reading's second developed witness on the chapter, under the ANF editors' recension caution, agreeing with Bede that the crowd is the elect out of all believers, Jews and nations, cleansed by baptism in the Lamb's blood, and disagreeing on the angel (Elias, the precursor of Antichrist's times) and on the number (the believers at Elias's preaching in the last times, on 12:6); Cyprian's martyrs-only reading kept visible as the rival Bede rejects at 7:14; and the comparison's where-its-witnesses-differ row now stating the patristic disagreement on the number, the crowd and the angel beside the reception disagreement -- with the manifest's lane authors, the References and the reception appendix following the new citations, and neither Victorinus nor Cyprian carrying; the standing advisories STU-008, STU-009, STU-010 and STU-012 cleared while in those files: the angels of Apoc 7:11 stated as standing round the throne, the ancients and the living creatures and falling on their faces; the Communion's three beatitudes answered with a marked inference from the cited orders and the Communion's place in the Mass; the Offertory's wording history told once, in the appointed texts, and referred to in a clause in the third interpretation; and the Aquinas citation given its lecture and the words he quotes from Chrysostom; with a fresh author proof); Factory Droid CLI 0.249.0; unexposed: server revision"
+      },
+      {
+       "model": "Opus 5.5",
+       "qualifiers": "packet-declared-effort=high; host-dispatch-tier=heavy; unexposed: exact API model identifier; unexposed: reasoning budget; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, a fresh general-purpose worker subagent with no inherited conversation (derive-synthesis stage of proper-study v15, run 427e2f58bb897a16, iteration 0: authorship of the concise synthesis of the F02 All Saints study, from the packet and the accepted study only); Factory Droid CLI 0.249.0; unexposed: server revision"
+      },
+      {
+       "model": "Opus 5.5",
+       "qualifiers": "packet-declared-effort=high; host-dispatch-tier=heavy; unexposed: exact API model identifier; unexposed: reasoning budget; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, a fresh general-purpose worker subagent with no inherited conversation (derive-homily stage of proper-study v15, run 427e2f58bb897a16, iteration 0: the homily for an adult parish assembly at the Mass of All Saints said on Sunday 1 November 2026, written from the accepted study and synthesis alone -- the spoken body, ready to read aloud, following the study's second interpretation on the Beatitudes as the way the saints walked, with the first interpretation's sealed number and uncounted crowd and the third's promise tested by hunger and death, enclosed in properhomily; the terminal note on sources and delivery with its exact loci and References; the production-audit entry recording the argument and the decisive textual detail; the fresh revision timestamp; and author proof checks); Factory Droid CLI 0.249.0; unexposed: server revision"
+      },
+      {
+       "model": "Opus 5.5",
+       "qualifiers": "packet-declared-effort=high; host-dispatch-tier=heavy; unexposed: exact API model identifier; unexposed: reasoning budget; unexposed: sampling configuration",
+       "runtime": "Factory Droid agent, a fresh general-purpose worker subagent with no inherited conversation (derive-homily stage of proper-study v15, run 427e2f58bb897a16, iteration 1: the repair of blocking finding HOM-001, the terminal note's account of the route of Gal 3:29 -- Gal 3:29 removed from the Douay list in the note's route paragraph and from the Douay References entry, and the note now states that \"if ye be Christ's, then are ye Abraham's seed\" is quoted as Bede cites the verse at Explanatio Apocalypsis I on 7:4 in E. Marshall's English, with the Douay wording given for contrast and the Bede References entry and exact loci following; the spoken body unchanged; with a fresh revision timestamp and author proof checks); Factory Droid CLI 0.249.0; unexposed: server revision"
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "Opus 5.5"
+     ],
+     "pages": 32,
+     "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.pdf",
+     "produced": {
+      "run_id": "427e2f58bb897a16",
+      "seed_commit": "c7dfb84c76a057079251e8c918243b787fa69494",
+      "workflow_digest": "4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83",
+      "workflow_id": "proper-study",
+      "workflow_version": "15"
+     },
+     "provider": "claude",
+     "reviewed": "2026-10-27",
+     "revised": "2026-10-27T10:17:15Z",
+     "status": "alpha",
+     "subject": "Expansive study of the 1962 Missale Romanum proper of the feast of All Saints, as said on Sunday 1 November 2026 with the commemoration of the Twenty-third Sunday after Pentecost: appointed texts, each text in its setting, three interpretations of the whole Mass with their four senses, a comparison, and the scriptural date and location of its passages",
+     "title": "All Saints: A Study of the Proper in the 1962 Roman Missal",
+     "title_source": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/main.tex",
+     "web": "web/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.html"
+    },
     {
      "also": [
       {

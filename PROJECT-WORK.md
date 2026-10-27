@@ -5,23 +5,47 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-26.
+Last reconciled: 2026-10-27.
 
 ## Claude 1962 All Saints, 2026-11-01
 
 <!-- promised-deliverable: claude-1962-f02-all-saints-three-documents-2026-11-01 -->
 
-**In progress.** On 2026-10-26 the maintainer asked for the Claude 1962
-proper-study documents for the upcoming Sunday and authorized publication to
-`main`. Sunday, 1 November 2026 is All Saints (I class), permanent identity
-`F02`, `liturgy/roman-rite/1962/propers/temporal/f02-all-saints`; the
-Twenty-third Sunday after Pentecost is commemorated. The production plan
-records the one-provider authorization. This is an independent Claude
-production: the published GPT leaf for the same identity is not an input.
+**Accepted and installed; publication to `main` pending.** On
+2026-10-26 the maintainer asked for the Claude 1962 proper-study documents
+for the upcoming Sunday and authorized publication to `main`. Sunday,
+1 November 2026 is All Saints (I class), permanent identity `F02`,
+`liturgy/roman-rite/1962/propers/temporal/f02-all-saints`; the Twenty-third
+Sunday after Pentecost is commemorated. The production plan records the
+one-provider authorization. This is an independent Claude production: the
+published GPT leaf for the same identity is not an input, and no stage
+opened any GPT-provider file or record for the identity.
 
-Work starts at clean `47c7df92d`, equal to `origin/main`. Commits stay on
+Work began at the authorization commit `c7dfb84c7` on
 `feature/propers/claude`; publication is an ordinary fast-forward of
-`origin/main` after the three deploy gates pass locally.
+`origin/main` after the three deploy gates pass locally. Run
+`427e2f58bb897a16` (`proper-study` v15) reached ACCEPTED at its
+publication gates with no escalation: 45 packets, 45 accepted results, one
+recorded intervention. Every agent stage ran as a fresh Factory Droid
+worker subagent with no inherited conversation, at its packet's declared
+effort, and every review was a fresh worker. Six cycles were real defects
+that program gates or cold reviews found and repaired: two in research (a
+misreported 1570 Offertory, a wrong Offertory collation and psalm
+numbering, a Missal reported read but unread; then unsealed Lasance English
+and unregistered dated web witnesses), one house-voice preflight failure,
+one round where a research false negative hid Victorinus of Pettau on
+Apoc 7 and the study carried six defects of its own, one carry-through gap
+where that research repair never reached the study prose, and one homily
+note that misrouted a Gal 3:29 quotation. The Latin rests on the 1962
+Missal read on the RGMR facsimile page images, with the 1570, 1604, 1862
+and 1889 layers collated; the Preface is deliberately left unsettled, both
+candidates named and neither asserted. The installed family is a 32-page
+expansive study, a 12-page concise study, a four-page homily (about 1,445
+spoken words) and the canonical web edition. The run is archived in the
+leaf under `evaluations/proper-study-results/427e2f58bb897a16/`. The
+driver's account covers every cycle, the five standing advisories and what
+is left for other owners:
+[CYCLES.md](workflows/reviews/claude-1962-f02-production-2026-10-27/CYCLES.md).
 
 ## Claude Four Last Things register revision, 2026-10-26
 

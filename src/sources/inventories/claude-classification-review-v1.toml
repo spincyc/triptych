@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
-audited_on = "2026-10-19"
-publication_snapshot = "sha256:dc5a5949d6087e92ff7d92bc7314e70bd9038b395236a02c69de2c499de42f15"
-classification_snapshot = "sha256:066a93449c675b465749442871f711521d7439660994b8ea00644042b7d72019"
+audited_on = "2026-10-27"
+publication_snapshot = "sha256:0db36815f30d5e885d3455f601515d056d74c41b8a7cb7010ba5fdf3266c6fb4"
+classification_snapshot = "sha256:6c74e6e34761d9fa16a926debcfb140cb5ea6efdc7be2f527390963e9c6c9128"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -175,6 +175,10 @@ source_categories = ["finding-aid", "historical-primary", "institutional-current
 [[classifications]]
 document = "liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"
 source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/propers/temporal/f02-all-saints"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 
 [[classifications]]
 document = "liturgy/roman-rite/1962/reference/assembling-the-mass"

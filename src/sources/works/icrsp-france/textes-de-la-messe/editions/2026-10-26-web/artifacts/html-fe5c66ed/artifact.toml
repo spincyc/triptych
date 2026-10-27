@@ -1,0 +1,17 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.icrsp-france.textes-de-la-messe.web-2026-10-26.html-fe5c66ed"
+edition_id = "edition.icrsp-france.textes-de-la-messe.web-2026-10-26"
+artifact_type = "web-page"
+media_type = "text/html"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "Modern institutional page with authored text, French translations, reproduced commentaries by other authors and site markup. Public access does not establish redistribution rights, and no affirmative grant was identified in the retrieved page. Only identity and factual-locus metadata are retained."
+rights_jurisdiction = "United States"
+source_url = "https://icrspfrance.fr/textes-de-la-messe.php?d=2026-11-01"
+provenance = "Retrieved complete over HTTPS on 2026-10-26 by the resolve-context stage of workflow run 427e2f58bb897a16 and hashed as received. The source-registration stage of the same run re-hashed the retained receipt (SHA-256 and byte length matched) and read the summary line, the Preface rubric and the commemoration headings in locally parsed response text. Nothing between the server and this hash passed through a language model."
+retrieved = "2026-10-26"
+sha256 = "fe5c66edac1959517e86bef714285b02c619a6168501437a56f18e094e7c59b2"
+byte_size = 253820
+indexable = false
+notes = "Complete offered HTML response. Byte stability was not measured; the same site's ordo page is not byte-stable, so this digest should be treated as the identity of the one response read. Access limitation: no HTML or text derivative is retained, because the page's modern text and presentation lack an affirmative redistribution basis. Offline readers have this dated identity and the factual passage record, not the response itself; reopening the wording requires the public URL, which will yield a later state."

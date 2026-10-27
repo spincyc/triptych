@@ -1,0 +1,37 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/main.tex",
+  "author_proof": {
+    "build_pdf_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.pdf",
+    "pdf_path": "build/tpt-runs/427e2f58bb897a16/artifacts/author-study-1/f02-all-saints.pdf",
+    "pdf_sha256": "73b4322241207e0bc00c257b8a16b1690fb7662b69c8b0d040c50d4f524069d6",
+    "physical_pages": 29,
+    "rasters": "build/tpt-runs/427e2f58bb897a16/artifacts/author-study-1/rasters (pages 6, 8, 9, 23, 27)",
+    "web_probe": "build/tpt-runs/427e2f58bb897a16/artifacts/author-study-1/web-probe/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.md"
+  },
+  "checks": [
+    "make doc DOC=liturgy/roman-rite/1962/propers/temporal/f02-all-saints PROVIDER=claude: exit 0, 29 pages, no undefined references, overfull/underfull boxes or warnings; manifest and generation-metadata checks valid",
+    "tools/check-proper-components --provider claude --document liturgy/roman-rite/1962/propers/temporal/f02-all-saints --phase artifacts --edition research: exit 0",
+    "tools/tpt check-content-preflight --provider claude --document liturgy/roman-rite/1962/propers/temporal/f02-all-saints --edition research --check house-voice: exit 0",
+    "tools/tpt check-content-preflight --provider claude --document liturgy/roman-rite/1962/propers/temporal/f02-all-saints --edition research (all checks): exit 0",
+    "tools/tpt web-edition --provider claude --output build/tpt-runs/427e2f58bb897a16/artifacts/author-study-1/web-probe liturgy/roman-rite/1962/propers/temporal/f02-all-saints: exit 0"
+  ],
+  "disposition": "PASS",
+  "files_changed": [
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/05-appointed-texts.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/40-no-want-just-in-gods-hand.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/90-apparatus.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/generation-metadata.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/production-review.md"
+  ],
+  "finding_dispositions": [
+    {
+      "id": "GATE-HOUSE-VOICE",
+      "note": "All four refused sentences were rewritten, not deleted: the Lasance English is still quoted on its attribution alone and the translation register still has no entry for it; the Preface's search bound now stands in the scope appendix, with research/scope.md named as the record of the sources searched; the alleluia's first appearance names its five printings. tools/tpt check-content-preflight --check house-voice --edition research exits 0, and so does the full research-edition preflight.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "reports_for_other_owners": "No new shared-tool or shared-data defect. The defects recorded for other owners under iteration 0 in research/production-review.md still stand.",
+  "stage": "author-study",
+  "summary": "Repaired the house-voice gate finding. The gate's full run refused four reader sentences (05-appointed-texts.tex at the Lesson and Offertory Lasance notes and the Preface note, and 40-no-want-just-in-gods-hand.tex at the Offertory alleluia). Each was rewritten with a source, a text or a fact as its subject and nothing it stated was dropped; the Preface's fuller search bound moved to the scope appendix. Generation metadata and research/production-review.md were updated, and a fresh author proof (29 pages) passes every preflight check."
+}
