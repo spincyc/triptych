@@ -1673,8 +1673,15 @@ class SourceLibraryTests(unittest.TestCase):
         self.write("src/sources/papal-documents/README.md", "Collection contract.\n")
         self.assertEqual(SOURCE_LIBRARY.load_library(self.root).errors, [])
 
+        self.write("src/sources/papal-documents/batch-visual-review.json", json.dumps({
+            "schema": "triptych-papal-visual-review/v1", "documents": [],
+            "frozen_receipt_sha256": "0" * 64,
+        }))
+        self.assertEqual(SOURCE_LIBRARY.load_library(self.root).errors, [])
+
         invalid = {
             "catalog.json": '{"schema":"wrong","documents":[],"coverage":[],"scope":{}}',
+            "other-visual-review.json": '{"schema":"triptych-papal-visual-review/v1","documents":[]}',
             "archives.json": '{"schema":"triptych-papal-archives/v1","schema":"duplicate"}',
             "source-links.json": '{"schema":"triptych-papal-source-links/v1","documents":NaN}',
         }

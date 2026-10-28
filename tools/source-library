@@ -2075,6 +2075,10 @@ def _owned_papal_inventory(library: Library, entry: Path, relative: Path) -> boo
         "pius-ix-acta-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
         "pius-ix-acta-fragment-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
     }
+    if entry.name not in envelopes and entry.name.endswith("-visual-review.json"):
+        # Each reviewed render batch keeps its own page-review audit beside the
+        # named ones; the envelope, not the filename, carries the obligation.
+        envelopes[entry.name] = ("triptych-papal-visual-review/v1", {"documents": list, "frozen_receipt_sha256": str})
     if entry.name not in envelopes:
         return False
 
