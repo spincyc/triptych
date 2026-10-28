@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.bullarium-romanum.volume-03.unit-0082.1858-turin-bullarium-volume-03-latin.source-ocr"
+edition_id = "edition.bullarium-romanum.volume-03.unit-0082.1858-turin-bullarium-volume-03-latin"
+artifact_id = "artifact.bullarium-romanum.volume-03.1858-turin-latin.reading-order-617cb85d7670"
+artifact_sha256 = "617cb85d76704589bffbf0275549aa7815f9f3c238079b8efcd3f8a232486911"
+segment_type = "constituent-work"
+physical_line_ranges = [[23432, 23536], [23557, 23559]]
+states = ["cataloged", "acquired", "inspected"]
+context = "The exact selected raw OCR extent and surrounding boundary context were inspected. Printed attribution is preserved; this is not modern authentication, critical dating or image-collated text. Reading-order selection of the reviewed raw extent bullarium.volume-03.unit-0082 [[22658, 22760]], mapped mechanically through native WORD identity: body WORDs contiguous, no foreign body or marginal WORD inside, no partial or inseparable WORD. XXXIV22658, title22660–22662, synopsis22664–22668 and actual Innocentins protocol22670–22673 identify one independent letter. Ordered body22674–22756 retains historical source note and historical explanatory note together at22717–22719; both belong to this act, through title marker22662 and body marker22696, so their shared raw line contains no foreign-act note. The note-marker OCR is retained without correction. Final dating22758–22760 closes before XXXV22763. Its year OCR is not normalized; date remains null and frozen date_raw remains []. No boundary refinement."
+notes = "Review extent: WORD-identity mapping of the prior reviewed extent; volume evidence gate on native page images; no whole-act image collation. Source text remains uncorrected OCR, with historical synopsis, dating/signatures and apparatus in the selected extent. No image collation or historical authentication is claimed."
