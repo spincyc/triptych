@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.gregory-xvi-acta.volume-03.line-00038031.1902-gregory-xvi-acta-volume-03-la.source-ocr"
+edition_id = "edition.gregory-xvi-acta.volume-03.line-00038031.1902-gregory-xvi-acta-volume-03-la"
+artifact_id = "artifact.gregory-xvi-acta.volume-03.1902-rome-mul.ocr-323a14120941"
+artifact_sha256 = "323a141209419f4d5ba846bba4381470bb7576e7c54206e5a013da13d94e062e"
+segment_type = "constituent-work"
+physical_line_ranges = [[38040, 38061], [38073, 38135], [38141, 38202], [38208, 38224]]
+states = ["cataloged", "acquired", "inspected"]
+context = "Bull CCXII grants the dignitaries and canons of Aversa cathedral the violet cassock and cappa magna after the Capuan model, with the full non obstantibus, Nulli ergo and incarnation-year dating clauses (sexto idus aprilis = 8 April). Issuer evidence: GREGORIUS EPISCOPUS at LF38040–38040; the source dating clause at LF38221–38224 reads: Datum Romae apud sanctum Petrum anno incarnationis dominicae millesimo octingente- simo quadragesimo tertio, sexto idus aprilis, pontificatus Nostri anno decimo tertio. Exact source extent and surrounding boundaries were inspected as uncorrected OCR; no complete print-image collation or historical authentication is claimed."
+notes = "Review extent: Complete selected extent and at least twenty literal-LF lines of context on each side were read in this lane’s exhaustive in-order read of LF32440–42060 (claim LF32524–41982). Every nonblank LF line of the span maps 1:1 to a native XML LINE (zero token mismatches; line-geometry.json), and leaf/column, indent, vertical-gap, intra-line word-gap and short-line geometry screens were dispositioned; no general image collation is claimed. Selected bounds [[38040, 38061], [38073, 38135], [38141, 38202], [38208, 38224]]."
