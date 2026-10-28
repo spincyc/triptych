@@ -130,12 +130,19 @@ whitespace change. Pages whose geometry is uncertain are held and keep their
 raw OCR bytes. Readers keep marginal summaries as separate TAB-led blocks, each
 emitted at its anchor beside the section it annotates and never fused into a
 body line; this is how the continuation series already retains its own
-historical marginal summaries literally. A single OCR WORD that joins marginal
+historical marginal summaries literally. The printing's page-foot footnotes
+are likewise kept as separate blocks at the page break. A footnote set as its
+own block is acceptable; a footnote run into a body, synopsis or protocol
+paragraph blocks the reader. A single OCR WORD that joins marginal
 and body glyphs is an inseparable mixture. Any unit containing one stays held
 for a character-geometry pass and is not admitted with a disclosure. Only a
 unit whose prior reviewed extent maps cleanly and contiguously through WORD
 identity is registered, as a new reading selection of the same work that
-preserves its withdrawn predecessor. Each volume must first pass an evidence
+preserves its withdrawn predecessor. A reading selection found defective is
+replaced by a later derivative's selection that explicitly supersedes it;
+the earlier derivative, selection and document remain as historical records.
+A fragment's extent statement from the earlier raw-OCR review identifies its
+raw OCR line numbers as such. Each volume must first pass an evidence
 gate of at least twelve native page images, at least half of them held out
 from the proposal's tuning, with the running-head rows of every page listed
 for a quick scan. Every page of every repaired PDF is still visually reviewed
