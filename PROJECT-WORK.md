@@ -587,6 +587,36 @@ interleave, displaced list numerals, and the *Syllabus*, whose issuer is
 unresolved). Their readers are rendered and in page review. The release holds
 4,348 PDFs.
 
+Second repair pass, 2026-10-28:
+- **Pius IX and Gregory XVI trims:** 18 readers that failed page review only
+  because a folio, signature, page-foot speck, stamp or duplicated scan sat
+  inside their selection now have narrowed selection variants that exclude
+  exactly those raw lines, with no word changed. All 18 passed fresh page
+  review and are installed. Four failed readers stay held: their furniture
+  shares a line with apparatus, or they have a misread issuer or a collapsed
+  table.
+- **Continuation manual review:** the 22 readers the coordinate audit could
+  not check were reviewed by hand against every native leaf. One installed
+  reader (XIII, line 51765 part 2) is withdrawn for fused marginal-note OCR,
+  six held readers are installed, and two stay held for missing body lines or
+  a neighbouring act's note.
+- **Bullarium VII/IX footnotes and volumes XI, III, VIII:** the geometry tool
+  now recognizes footnotes whose OCR garbled the reference mark. The 17
+  VII/IX readings with a fused note are superseded by replacements. Volumes
+  XI, III and VIII are registered with 65, 54 and 38 clean units. These 174
+  readers are rendered and in page review.
+
+The release holds 4,666 PDFs and 8,760 pages.
+
+Open:
+- page review and installation of the 174 new Bullarium readers;
+- the next Bullarium batch: X, II, the remaining Turin volumes and the
+  appendix;
+- 1,844 unreviewed continuation candidates and a geometry derivative for the
+  withdrawn continuation readers;
+- the Gregory (113) and Pius IX holds;
+- the Benedict XIV Bullarium (207 candidates, including *Ubi primum*).
+
 ## GPT Last Things and next Sunday propers, 2026-10-25
 
 <!-- promised-deliverable: gpt-flt-and-sunday-2026-10-25 -->
