@@ -651,7 +651,9 @@ PROPOSAL_PARAMS = {
     "right_margin_tol_M": 4 / 750, "gutter_tol_M": 6 / 750, "right_start_tol_M": 14 / 750,
     "gutter_ocr_max_chars": 2, "last_word_hang_M": 24 / 750, "merged_line_indent_M": 140 / 750,
     "margin_absorb_indent_M": 140 / 750, "margin_min_char_M": 5 / 750, "body_min_char_M": 8 / 750,
-    "margin_body_min_gap_M": 8 / 750, "header_band_H": 0.16, "header_row_tol_P": 0.5,
+    "margin_body_min_gap_M": 8 / 750, "straddle_M": 50 / 750, "straddle_indent_M": 70 / 750,
+    "straddle_resume_M": 120 / 750, "straddle_height_ratio": 0.75, "straddle_merged_ratio": 1.3,
+    "header_band_H": 0.16, "header_row_tol_P": 0.5,
     "header_isolation_P": 1.2, "text_top_min_tokens": 4, "text_top_min_width_M": 0.4,
     "text_top_min_height": 0.85, "footer_band_H": 0.88, "footer_gap_P": 1.6, "row_merge_P": 0.45,
     "margin_row_merge_P": 0.3, "margin_block_gap_factor": 1.5, "margin_block_gap_default_P": 0.9,
@@ -659,16 +661,25 @@ PROPOSAL_PARAMS = {
     "paragraph_short_M": 45 / 750,
     "note_band_C": 0.5, "note_max_rows": 15, "note_gap_P": 0.9, "note_strong_gap_P": 1.5,
     "note_strong_min_rows": 3, "note_suspect_gap_P": 1.2, "note_tight_gap_P": 0.6, "note_advance_ratio": 0.88, "note_height_ratio": 0.9,
+    "note_cue_rows": 3, "note_continuation_gap_P": 1.05,
 }
 # A footnote's first WORD often opens with its reference mark: (1), (t), (I) ...
 # A footnote reference mark as OCR renders it: "(1)", "(t)", "(I)", "(1;", "()j",
 # "<1)", "(!)", "1)", "H)", "ri)", ")" ...
 NOTE_MARK = re.compile(r"[\(\[<{][^\s]{0,2}[\)\]}>;j]|[^\s(\[]{0,2}[\)\]]")
-# ... or a bare mark set as its own WORD: 1-9, or "1" misread as I, l, i, ì, t, { or \\, or "1."
-BARE_MARK = re.compile(r"[1-9Ilit{\\]|[ìí]|1\.")
+# ... or a bare mark set as its own WORD: 1-9, or "1" misread as I, l, i, ì, t, !, { or \\, or "1."
+BARE_MARK = re.compile(r"[1-9Ilit!{\\]|[ìí]|1\.")
+# ... and "1" misread as f or d, which counts only with editorial wording: a lone
+# "f" opening a row is more often the cross before a subscription ("f Ego ...")
+CUED_MARK = re.compile(r"[fd]")
+# OCR specks printed before a mark (". „, ■ I Cherub."); never a section sign "§"
+SPECK = re.compile(r"[.,„■•●·'\"`:;_~*\-—–]+")
+# a section number after a bare-mark-like token: "§ 2." read as "8 2." or "I 2."
+SECTION_NUMBER = re.compile(r"\d+[.,]?")
 # Editorial-note wording that corroborates a footnote: the editors' sigla "(R. T.)"
 # in OCR variants, register sources and the editions the notes cite.
-NOTE_CUE = re.compile(r"[\(\'\"«]?\s*[RrBbKkHhNnUu«]\s*[\.,]?\s*[TtIi]\s*[\.,]?\s*\)|\bEx\s+R[eo]g|[RKUH][ce]g[ce]st|Itegest|\bResesi|"
+NOTE_CUE = re.compile(r"[\(\'\"«]?\s*[RrBbKkHhNnUuPp«»]\s*[\.,]{0,2}\s*[TtIi]\s*[\.,]?\s*[\)\}\]]|\bEx\s+R[eo]g|[RKUH][ce]g[ce]st|Itegest|\bResesi|"
+                      r"\b[Aa]r[cl][hl]i?[il]?v\.|\bAicliiv|"
                       r"Cherub|Cher\.|Mainard|Raynald|Ughell|Wadd|Rymer|Baluz|\bLegimus\b|\bLeg\.|"
                       r"\bForsan\b|\bForsitan\b|\b[Ee]dit\.|\bVide\b")
 
@@ -680,22 +691,37 @@ def _note_mark(words, cue=False):
     that opens with a capital, as a note does (a numbered synopsis range such
     as "1 ad 4." does not), or when editorial-note wording corroborates it.
     """
-    first = words[0]["value"].strip().lstrip("■•●,")      # specks OCR'd before the mark
+    # tokens, skipping specks OCR'd before the mark (". „, ■" ...); a WORD can
+    # hold the mark and the note's first word together ("ti) Legitur")
+    tokens = [t for w in words for t in w["value"].split()]
+    bullet = False
+    while tokens and SPECK.fullmatch(tokens[0]):
+        bullet = bullet or tokens[0] in ("■", "•", "●")
+        tokens.pop(0)
+    if not tokens:
+        return False
+    first = tokens[0].lstrip("■•●,")
     if NOTE_MARK.fullmatch(first):
         return True
+    if bullet and first[:1].isupper() and sum(c.isalpha() for c in first) >= 2 and not BARE_MARK.fullmatch(first):
+        return True      # the mark printed as a lone square or bullet: "■ Haec moderatio ..."
     # a mark run into its note's first word, "(1)Ex", but not "(juomodolibet":
     # a "j" or ";" read as the closing bracket must end the WORD
     prefix = NOTE_MARK.match(first)
-    rest = first[prefix.end():] if prefix else ""
+    rest = first[prefix.end():].lstrip("'\"`") if prefix else ""   # "(l)'Leg."
     if prefix and first[:1] in "([<{" and prefix.group()[-1] in ")]}>" and rest[:1].isupper():
         return True      # not "[)at." (a dating line's "Dat.")
     if cue and first[:1] in "([<{" and len(first) <= 3:      # "(IJ Ex Regest." lost its closing bracket
         return True
     if first == "1.":       # also how a synopsis numbers its first item: needs editorial wording
-        return cue and len(words) > 1
-    return (BARE_MARK.fullmatch(first) is not None and len(words) > 1
-            and (cue or words[1]["value"].strip()[:1].isupper()))
-
+        return cue and len(tokens) > 1
+    if len(tokens) > 2 and tokens[1] in (".", ","):     # "1 . Ex Regest.": the mark's period set apart
+        return cue and BARE_MARK.fullmatch(first) is not None and any(c.isalpha() for c in tokens[2])
+    if len(tokens) < 2 or SECTION_NUMBER.fullmatch(tokens[1]) or not any(c.isalpha() for c in tokens[1]):
+        return False     # "8 2. Cum autem" is a section; a mark is followed by the note's words
+    if CUED_MARK.fullmatch(first):
+        return cue
+    return BARE_MARK.fullmatch(first) is not None and (cue or tokens[1][:1].isupper())
 
 CODE_OF = {role: code for code, role in ROLE_CODES.items()}
 CATALOG = "src/sources/papal-documents/bullarium-catalog.json"
@@ -735,6 +761,28 @@ def _ntok(words):
 
 def _nchars(word):
     return len("".join(word["value"].split()))
+
+
+# OCR renderings of marginal glyphs run on after a body word: quotes, carets, low quotes.
+# (A square or a trade-mark sign is more often an ink blot than a marginal glyph.)
+STRADDLE_JUNK = "'\"`^*°„"
+
+
+def _junk_run_on(value):
+    """A body WORD that carries marginal glyphs after its letters ('operis""\'', 'aliquot^^se,',
+    'pro-„em,', 'eis-mo'), not an ordinary word or a line-end hyphenation ('Iu-')."""
+    core = value.strip().rstrip(".,;:")
+    if sum(c.isalpha() for c in core) < 2 or core.endswith("-"):
+        return False
+    tail = len(core) - len(core.rstrip(STRADDLE_JUNK))
+    return (tail >= 2 or any(c in core for c in "^°«»")
+            or re.search(r"[-„][a-zA-Z„,.]*[„,][a-zA-Z„,.]*$", core) is not None
+            or re.search(r"[a-zA-Z]-[a-z]{1,6}$", core) is not None)     # "eis-" and the margin's "mo"
+
+
+def _garbled(value):
+    """OCR of two printed rows merged into one WORD shows glyphs no Latin word has."""
+    return any(not (c.isalnum() or c in ".,;:-") for c in value.strip())
 
 
 def _theil_sen(points):
@@ -967,10 +1015,54 @@ def propose_page(page, m, p=PROPOSAL_PARAMS):
             inseparable.append((wid, "multitoken-WORD-body-and-right-margin"))
         else:
             uncertain.append((wid, "multitoken-WORD-crosses-" + name))
+    # A WORD box crossing the outer body edge is usually padding (into the inter-line gap,
+    # a paragraph indent, blank margin or a marginal block's indented first line).  It
+    # holds text from both sides only with glyph evidence, and the WORD is then recorded
+    # as inseparable (its unit held) without changing its role:
+    # - a margin WORD in body-size type, its OCR LINE resuming body WORDs within a few
+    #   characters of the box's end, the box covering more than a paragraph indent's
+    #   width of the body's start alone -- beyond the widest indent, or with OCR of
+    #   merged rows (a box taller than body type, or glyphs no Latin word has);
+    # - a body WORD whose box runs past the edge into a marginal row printed on its line
+    #   (beyond where the marginal block's other rows start), with marginal glyphs read
+    #   after its letters or a box spanning the whole column ("Tmodj": a line's first
+    #   letter and the margin's glyphs in one WORD).
+    body_words = [w for w in words if str(role.get(w["source_word_global_1"])).startswith("body")]
+    body_h = statistics.median(w["source_bbox"][3] - w["source_bbox"][1] for w in body_words) if body_words else 0
+    # each marginal OCR LINE with lettered text: its start (first marginal WORD) and lettered box
+    margin_rows, margin_any = [], []
+    for line in lines:
+        marginal = [w for w in line if role.get(w["source_word_global_1"]) == "margin-right"]
+        lettered = [w for w in marginal if sum(c.isalpha() for c in w["value"]) >= 2]
+        margin_rows += [(marginal[0]["source_bbox"][0], lettered[0]["source_bbox"])] if lettered else []
+        margin_any += [w["source_bbox"] for w in marginal]
     for line in lines:
         for i, word in enumerate(line):
             wid, r, y = word["source_word_global_1"], role.get(word["source_word_global_1"]), _yc(word)
             last = i == len(line) - 1
+            x0, top, x1, bottom = word["source_bbox"]
+            if (r == "margin-left" and not last and bottom - top >= p["straddle_height_ratio"] * body_h
+                    and sum(c.isalpha() for c in word["value"]) >= 2):
+                L0 = _at(E["L0"], y)
+                row = [w["source_bbox"] for w in line[i + 1:] if str(role.get(w["source_word_global_1"])).startswith("body")
+                       and sum(c.isalpha() for c in w["value"]) >= 2]
+                start = min((b[0] for b in row), default=x1)
+                reach = min(x1, start) - L0
+                if (row and start - x1 <= px["straddle_resume"] and reach > px["straddle"]
+                        and (reach > px["straddle_indent"] or bottom - top > p["straddle_merged_ratio"] * body_h
+                             or _garbled(word["value"]))):
+                    inseparable.append((wid, "margin-WORD-box-holds-body-start"))
+            if (r == "body-right" and not last and role.get(line[i + 1]["source_word_global_1"]) == "margin-right"
+                    and x1 > _at(E["R1"], y) + px["last_word_hang"]):
+                beside = lambda b: top <= (b[1] + b[3]) / 2 <= bottom
+                others = [x for x, b in margin_rows if not beside(b) and abs(_yc({"source_bbox": b}) - y) <= 3 * pitch]
+                past = bool(others) and x1 > statistics.median(others) + px["margin_body_min_gap"]
+                # junk after the letters, beside the marginal row it came from (often read as specks);
+                # a whole-measure box only beside a lettered marginal row
+                if past and (_junk_run_on(word["value"]) and any(beside(b) for b in margin_any)
+                             or sum(c.isalpha() for c in word["value"]) >= 2 and x1 - x0 >= measure
+                             and any(beside(b) for _, b in margin_rows)):
+                    inseparable.append((wid, "body-WORD-box-runs-into-right-margin"))
             following = None if last else role.get(line[i + 1]["source_word_global_1"])
             if last and r == "body-right" and word["source_bbox"][2] > _at(E["R1"], y) + px["last_word_hang"]:
                 inseparable.append((wid, "line-final-body-WORD-overhangs-right-edge"))
@@ -1039,41 +1131,74 @@ def propose_page(page, m, p=PROPOSAL_PARAMS):
                    for f, ratio in ((advance, p["note_advance_ratio"]), (word_height, p["note_height_ratio"])))
     for column, side, e0 in (("body-left", "notes-left", E["L0"]), ("body-right", "notes-right", E["R0"])):
         body = rows.get(column, [])
-        marked, continued, suspect, area = None, None, None, None
-        for i in range(max(2, len(body) - p["note_max_rows"]), len(body)):
-            gap = body[i]["yc"] - body[i - 1]["yc"]
-            lower = body[0]["yc"] + p["note_band_C"] * (body[-1]["yc"] - body[0]["yc"])
-            if gap < p["note_tight_gap_P"] * pitch or body[i]["yc"] < lower:
+        start, floor = max(2, len(body) - p["note_max_rows"]), len(body) - 1
+        while True:
+            marked, continued, suspect, area = None, None, None, None
+            # a note opens in the lower part of the column above the notes found so far
+            lower = body[0]["yc"] + p["note_band_C"] * (body[floor]["yc"] - body[0]["yc"]) if body else 0
+            for i in range(start, len(body)):
+                gap = body[i]["yc"] - body[i - 1]["yc"]
+                if gap < p["note_tight_gap_P"] * pitch or body[i]["yc"] < lower:
+                    continue
+                wide = gap >= p["note_gap_P"] * pitch
+                tail, above = body[i:], body[:i]
+                small = smaller(tail, above)
+                # editorial wording in the candidate row itself, or in the row after a mark
+                text = lambda r: " ".join(w["value"].strip() for w in r["words"])
+                cue_here = NOTE_CUE.search(text(body[i])) is not None
+                # editorial wording in the next row, or a few rows down in small type,
+                # corroborates a mark (a note's sigla usually close it), but only
+                # within this note: the rows below up to the next marked row
+                own = []
+                for r in body[i + 2:i + 1 + p["note_cue_rows"]]:
+                    if _note_mark(r["words"]):
+                        break
+                    own.append(r)
+                cue_tail = (i + 1 < len(body) and NOTE_CUE.search(text(body[i + 1])) is not None
+                            or small and any(NOTE_CUE.search(text(r)) for r in own))
+                mark = _note_mark(body[i]["words"], cue_here or cue_tail)
+                cue = cue_here or (mark and cue_tail)
+                first = body[i]["words"][0]["value"].strip().lstrip("■•●,")
+                if area is None and wide and small and gap >= p["note_suspect_gap_P"] * pitch:
+                    area = i         # small type below a rule's space: a possible note area
+                    if len(first) <= 2 or first[:1] in "([<{":
+                        suspect = i  # opening on a short token, perhaps a garbled mark
+                # A note: a mark in small type, a mark with editorial wording, or small
+                # type with editorial wording (its mark lost entirely).  Below body
+                # leading only a small-type mark with editorial wording counts.
+                # editorial wording alone must also start below a note rule's space
+                cue_start = cue and gap >= p["note_suspect_gap_P"] * pitch
+                if wide and (small and (mark or cue_start) or mark and cue) or small and mark and cue:
+                    marked = marked if marked is not None else i
+                elif (wide and small and column == "body-right" and marked_left and gap >= p["note_strong_gap_P"] * pitch
+                      and len(tail) >= p["note_strong_min_rows"]
+                      and abs(body[i]["x0"] - _at(e0, body[i]["yc"])) <= px["full_line_tol"]
+                      and (continued is None or gap > continued[0])):
+                    continued = (gap, i)
+            # A note area taller than the window: its first marked row opens the
+            # window, or only small-type note lines lie above that row in the
+            # window -- look further up the column with the same tests.
+            if (marked is not None and start > 2
+                    and (marked == start or smaller(body[start:marked], body[:start]))):
+                start, floor = max(2, start - p["note_max_rows"]), marked
                 continue
-            wide = gap >= p["note_gap_P"] * pitch
-            tail, above = body[i:], body[:i]
-            small = smaller(tail, above)
-            # editorial wording in the candidate row itself, or in the row after a mark
-            cue_here = NOTE_CUE.search(" ".join(w["value"].strip() for w in body[i]["words"])) is not None
-            cue_next = i + 1 < len(body) and NOTE_CUE.search(" ".join(w["value"].strip() for w in body[i + 1]["words"])) is not None
-            mark = _note_mark(body[i]["words"], cue_here or cue_next)
-            cue = cue_here or (mark and cue_next)
-            first = body[i]["words"][0]["value"].strip().lstrip("■•●,")
-            if area is None and wide and small and gap >= p["note_suspect_gap_P"] * pitch:
-                area = i         # small type below a rule's space: a possible note area
-                if len(first) <= 2 or first[:1] in "([<{":
-                    suspect = i  # opening on a short token, perhaps a garbled mark
-            # A note: a mark in small type, a mark with editorial wording, or small
-            # type with editorial wording (its mark lost entirely).  Below body
-            # leading only a small-type mark with editorial wording counts.
-            # editorial wording alone must also start below a note rule's space
-            cue_start = cue and gap >= p["note_suspect_gap_P"] * pitch
-            if wide and (small and (mark or cue_start) or mark and cue) or small and mark and cue:
-                marked = marked if marked is not None else i
-            elif (wide and small and column == "body-right" and marked_left and gap >= p["note_strong_gap_P"] * pitch
-                  and len(tail) >= p["note_strong_min_rows"]
-                  and abs(body[i]["x0"] - _at(e0, body[i]["yc"])) <= px["full_line_tol"]
-                  and (continued is None or gap > continued[0])):
-                continued = (gap, i)
+            break
         split = marked if marked is not None else (continued[1] if continued else None)
         if split is None and area is not None and any(_note_mark(r["words"]) for r in body[area + 1:]):
             # A note continued from the previous page heads the note area;
             # the page's own marked notes follow it at note leading.
+            split = area
+        elif (split is not None and area is not None and area < split and split == marked
+              and abs(body[area]["x0"] - _at(e0, body[area]["yc"])) <= px["full_line_tol"]
+              and all(body[k]["yc"] - body[k - 1]["yc"] < p["note_continuation_gap_P"] * pitch
+                      for k in range(area + 1, split + 1))
+              and smaller(body[area:split], body[:area])
+              and NOTE_CUE.search(" ".join(w["value"] for w in body[split - 1]["words"]))):
+            # ... and when that continuation -- a run-on line at the column edge,
+            # at note leading down to the marked notes -- closes with editorial
+            # wording it belongs to the note block too, not to the body above.
+            # (A synopsis closing with the editors' sigla sits below its heading
+            # and above the notes' rule space, so it fails the leading test.)
             split = area
         if split is None and suspect is not None:
             # small type below a wide gap at a column foot, but no reference

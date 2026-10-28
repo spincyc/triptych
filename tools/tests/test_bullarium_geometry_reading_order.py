@@ -43,13 +43,22 @@ def note_rows():
     return rows
 
 
-def garbled_note_rows(first):
-    """One small-type note row below a wide gap whose mark OCR garbled (or lost)."""
-    y0 = TOP + 18 * PITCH + 25
-    return [[(value, (L0 + j * 70, y0, L0 + (j + 1) * 70, y0 + 28)) for j, value in enumerate(first)]]
+def garbled_note_rows(first, gaps=None):
+    """Small-type note rows below a wide gap whose mark OCR garbled (or lost).
+
+    ``first`` is one row of WORD values, or a list of such rows; ``gaps``
+    optionally gives the spacing above each row after the first (default 38).
+    """
+    rows = first if first and isinstance(first[0], list) else [first]
+    out, y0 = [], TOP + 18 * PITCH + 25
+    for k, values in enumerate(rows):
+        y0 += (gaps[k - 1] if gaps else 38) if k else 0
+        out.append([(value, (L0 + j * 70, y0, L0 + (j + 1) * 70, y0 + 28)) for j, value in enumerate(values)])
+    return out
 
 
-def page_lines(*, interleave=False, deadzone=False, mixed=False, fused=True, notes=False, note_rows=None):
+def page_lines(*, interleave=False, deadzone=False, mixed=False, fused=True, notes=False, note_rows=None,
+               note_gaps=None):
     header = [[("An.", (100, 180, 140, 210)), ("C.", (140, 180, 170, 210)), ("1300", (170, 180, 280, 210))],
               [("BULLARIUM", (820, 180, 960, 210)), ("ROMANUM", (960, 180, 1100, 210))],
               [("17", (1450, 180, 1500, 210)), ("An.", (1600, 180, 1640, 210)), ("C.", (1640, 180, 1670, 210)),
@@ -76,7 +85,7 @@ def page_lines(*, interleave=False, deadzone=False, mixed=False, fused=True, not
     if notes:
         left += globals()["note_rows"]()
     elif note_rows:
-        left += garbled_note_rows(note_rows)
+        left += garbled_note_rows(note_rows, note_gaps)
     note = [[("summarium", (160, TOP + 11 * PITCH + 5, 290, TOP + 11 * PITCH + 30))]] if fused else []
     if interleave:
         body = left[:10] + right[:5] + left[10:] + note + right[5:]
@@ -239,6 +248,69 @@ class ReadingOrderTests(unittest.TestCase):
         wid = page["inseparable_WORDs"][0][0]
         role = next(code for code, _, runs in page["rows"] for a, z in runs if a <= wid <= z)
         self.assertEqual(role, "L")
+
+    def straddle_page(self, *, left=None, right=None, margin_on_row=True):
+        """page_lines() with left line 6 opening on a margin WORD (value, x1, height, body indent)
+        and/or right line 3 ending on a body WORD (value, or (value, x0)) run 60 px past R1, beside
+        a marginal block whose first row (on line 3 unless margin_on_row is false) is indented.
+        Each call builds its own fixture root (source records are immutable)."""
+        self.root = Path(tempfile.mkdtemp(dir=self.temp.name))
+        lines = page_lines(fused=False)
+        if left:
+            value, x1, height, indent = left
+            y0 = TOP + 6 * PITCH
+            lines[3 + 6] = [(value, (120, y0, x1, y0 + height))] + body_line("L", 6, indent=indent, short=indent > 140)
+        if right:
+            k = 3 + 20 + 3
+            y0 = TOP + 3 * PITCH
+            body = lines[k]
+            value, x0 = right if isinstance(right, tuple) else (right, body[-1][1][0])
+            body = [w for w in body if w[1][2] <= x0] if isinstance(right, tuple) else body[:-1]
+            # the LINE runs on to a marginal row printed beside it, or only to a speck
+            lines[k] = body + [(value, (x0, y0, R1 + 60, y0 + 40)),
+                               ("Confirmatio", (R1 + 62, y0 + 5, R1 + 200, y0 + 30)) if margin_on_row
+                               else ("•", (R1 + 62, y0 + 12, R1 + 70, y0 + 20))]
+            lines += [[(text, (R1 + 20, y0 + j * PITCH + 5, R1 + 150, y0 + j * PITCH + 30))]
+                      for j, text in ((1, "litterarum"), (2, "fatarum."))]
+        self.volume(lines)
+        page = self.propose()["pages"][0]
+        self.assertEqual(page["status"], "reordered")
+        return page
+
+    def test_a_margin_WORD_whose_box_holds_the_body_rows_start_is_inseparable(self):
+        for left in (("dat,tantumper-tione", L0 + 90, 40, 90),  # beyond the widest paragraph indent
+                     ("«a-p(", L0 + 60, 40, 60),                # an indent's width, but garbled OCR
+                     ("ronontsdu-s", L0 + 61, 60, 61)):         # two margin rows and the body in one box
+            with self.subTest(left=left[0]):
+                page = self.straddle_page(left=left)
+                self.assertEqual([reason for _, reason in page["inseparable_WORDs"]], ["margin-WORD-box-holds-body-start"])
+                wid = page["inseparable_WORDs"][0][0]     # held, not reassigned: the value is the margin's
+                self.assertEqual(next(code for code, _, runs in page["rows"] for a, z in runs if a <= wid <= z), "ML")
+
+    def test_padded_margin_boxes_over_an_indent_a_gap_or_in_margin_type_are_not_straddles(self):
+        for left in (("hic", L0 + 51, 40, 51),                  # the box stops in a paragraph indent
+                     ("prohi-", L0 + 90, 20, 95),               # margin-size type cannot hold body glyphs
+                     ("prae-", L0 + 66, 40, 311)):              # its LINE resumes far into a short row
+            with self.subTest(left=left[0]):
+                page = self.straddle_page(left=left)
+                self.assertEqual(page["inseparable_WORDs"], [])
+
+    def test_a_body_WORD_running_on_into_a_marginal_row_with_its_glyphs_is_inseparable(self):
+        for right in ('operis""\'', ("Tmodj", R0)):        # marginal glyphs; one box over the whole measure
+            with self.subTest(right=right):
+                page = self.straddle_page(right=right)
+                self.assertEqual([reason for _, reason in page["inseparable_WORDs"]], ["body-WORD-box-runs-into-right-margin"])
+        for right, on_row in (("tempore", True),              # a padded box, no marginal glyphs
+                              (("gestari.", R0), False)):     # a short last line's box over blank margin and a speck
+            with self.subTest(right=right):
+                page = self.straddle_page(right=right, margin_on_row=on_row)
+                self.assertEqual(page["inseparable_WORDs"], [])
+        self.assertTrue(geometry._junk_run_on("pro-„em,"))
+        self.assertTrue(geometry._junk_run_on("eis-mo"))
+        self.assertFalse(geometry._junk_run_on("evangelica™"))     # an ink blot
+        self.assertFalse(geometry._junk_run_on("■'-nis"))
+        self.assertFalse(geometry._junk_run_on("Iu-"))
+        self.assertFalse(geometry._junk_run_on("eiusdem,"))
 
     def test_dead_zone_start_holds_the_page_without_guessing(self):
         self.volume(page_lines(deadzone=True))
@@ -414,6 +486,65 @@ class ReadingOrderTests(unittest.TestCase):
                 self.volume(page_lines(note_rows=first))
                 page = self.propose()["pages"][0]
                 self.assertEqual([b["side"] for b in page["notes_blocks"]], ["notes-left"])
+
+    def test_note_marks_hidden_by_OCR_specks_and_joined_WORDs(self):
+        mark = lambda *values: geometry._note_mark([{"value": v} for v in values])
+        self.assertTrue(mark("ti) Legitur ", "haec"))          # mark and first word in one WORD
+        self.assertTrue(mark(".", "„,", "■", "I", "Cherubinus"))  # specks before the mark
+        self.assertTrue(mark("(l)'Leg.", "f."))                # quote between mark and word
+        self.assertTrue(mark("!", "Puerperam"))
+        self.assertTrue(mark("■", "Haec", "moderatio"))           # the mark printed as a lone square
+        self.assertFalse(mark("■", "haec"))
+        cued = lambda *values: geometry._note_mark([{"value": v} for v in values], cue=True)
+        self.assertFalse(mark("d", "Erectionem"))              # "1" read as d or f needs editorial wording
+        self.assertTrue(cued("d", "Erectionem"))
+        self.assertFalse(mark("f", "leges,"))
+        self.assertTrue(cued("f", "leges,"))
+        self.assertTrue(cued("1", ".", "Ex", "Regest."))       # the mark's period set apart
+        self.assertTrue(geometry.NOTE_CUE.search("quid aliud deest (R. T.}."))
+        self.assertTrue(geometry.NOTE_CUE.search("Ex Archiv. Vatic."))
+        self.assertTrue(geometry.NOTE_CUE.search("(1) Ex arcliiv. Ecclesiae huius"))
+
+    def test_section_signs_and_subscription_crosses_are_not_note_marks(self):
+        mark = lambda *values: geometry._note_mark([{"value": v} for v in values])
+        cued = lambda *values: geometry._note_mark([{"value": v} for v in values], cue=True)
+        self.assertFalse(cued("§", "1.", "Cum", "itaque"))     # a section sign is not a speck
+        self.assertFalse(cued("§", "1", ".", "Praestantia"))
+        self.assertFalse(cued("8", "2.", "Cum", "autem"))      # "§ 2." read as "8 2."
+        self.assertFalse(cued("8", "1", ".", "Nullus"))
+        self.assertFalse(mark("I", "2.", "Non", "praemissis"))
+        self.assertFalse(cued("^", "A.", "Ipsorum"))          # "§" read as "^"
+        self.assertFalse(mark("f", "Ego", "Antonius"))        # the cross before a subscription
+        self.assertFalse(cued("'", "i", "•", "■n", "•"))      # OCR specks, not a note's words
+
+    def test_editorial_wording_in_a_later_note_does_not_corroborate_a_bare_mark(self):
+        self.volume(page_lines(note_rows=[["1", "taluni", "romae", "apud", "sanctum", "petrum"],
+                                          ["romae", "apud", "sanctum", "petrum", "dicta"],
+                                          ["(1)", "Ex", "Regest.", "Vatic.", "notaa", "notab"]]))
+        page = self.propose()["pages"][0]
+        self.assertEqual([(b["side"], b["rows"]) for b in page["notes_blocks"]], [("notes-left", 1)])
+
+    def test_a_synopsis_closing_with_sigla_above_the_notes_rule_space_stays_body(self):
+        self.volume(page_lines(note_rows=[["Exordium.", "Ecclesias", "quas", "monasterium", "possidet"],
+                                          ["sub", "protectione", "suscipit", "(r.", "t.)"],
+                                          ["(1)", "Ex", "archiv.", "Ecclesiae", "huius", "edidit"]],
+                               note_gaps=[38, 60]))
+        page = self.propose()["pages"][0]
+        self.assertEqual([(b["side"], b["rows"]) for b in page["notes_blocks"]], [("notes-left", 1)])
+
+    def test_editorial_wording_later_in_the_note_corroborates_a_bare_mark(self):
+        self.volume(page_lines(note_rows=[["1", "florum", "generalem", "reformationem", "habes", "in"],
+                                          ["Const.", "praec;", "declarationem", "autem", "illius", "et"],
+                                          ["in", "subseq.", "(r.", "t.)."]]))
+        page = self.propose()["pages"][0]
+        self.assertEqual([(b["side"], b["rows"]) for b in page["notes_blocks"]], [("notes-left", 3)])
+
+    def test_a_continued_note_closing_with_editorial_wording_joins_the_note_block(self):
+        self.volume(page_lines(note_rows=[["libet", "referre", "haec", "acta,", "quibus", "post"],
+                                          ["pacemque", "ei", "reddit.", "(r.", "t.)"],
+                                          ["(1)", "Ex", "Baronio", "ad", "annum", "1122."]]))
+        page = self.propose()["pages"][0]
+        self.assertEqual([(b["side"], b["rows"]) for b in page["notes_blocks"]], [("notes-left", 3)])
 
     def test_body_like_rows_are_not_notes(self):
         mark = lambda *values: geometry._note_mark([{"value": v} for v in values])
