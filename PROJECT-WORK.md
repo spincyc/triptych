@@ -14,29 +14,44 @@ Last reconciled: 2026-10-27.
 **In progress: corrected and reviewed locally; publication pending, in the
 same push as the All Saints revision.** On 2026-10-27 the maintainer asked
 that the Claude work of 26 October be checked for damage from a model
-substitution: partway through that work the host ran the coordinating
-session and some of its workers on kimi-k3 in place of the Claude model,
-without notice, and the records credited that work to the Claude model. For
-the Four Last Things the maintainer decided that every step the substituted
-model performed is done again by fresh Claude workers, that the records and
-contribution metadata list only Claude work by exact model identifier, and
-that kimi-k3 is named only in a short correction note.
+substitution: partway through that work the host switched the coordinating
+session and some of its workers from the Claude model to kimi-k3. The switch
+was announced inside those sessions but was not acted on, and the records
+credited that work to the Claude model. The maintainer declined to add the
+substituted model to the contribution records. The correction therefore had
+every review that model performed done again by fresh Claude workers, had its
+one print-only adjustment re-derived independently, rewrote the records it had
+written, and superseded its mechanical steps with Claude rebuilds and
+refreshes. The contribution metadata lists only Claude work by exact model
+identifier, and kimi-k3 is named only in the correction notes.
 
 The audit found the essay texts sound and the records wrong. In Judgment the
 substituted model had given the round-1 verdict on the cold-review repairs,
-made both visual reviews and the print-only space reservation, and drafted
-the series record and the contribution line. In Death it had written the
-round-1 visual verdict after the Claude model inspected the pages. Done again
-by Claude: the Judgment round-1 recheck, against the sources, found one
-blocking defect the earlier verdict had passed (a repair sentence calling the
-Lyons profession of 1274 a definition); a two-phrase repair passed at round
-2; a fresh every-page visual review restored the same space reservation, and
-a further every-page review passed the repaired build; and every page of the
+made both visual reviews and the print-only space reservation, and drafted the
+series record and the contribution line. In Death it had written the round-1
+visual verdict after the Claude model inspected the pages. Done again by
+Claude: the Judgment round-1 recheck, against the sources, found one blocking
+defect the earlier verdict had passed (a repair sentence calling the Lyons
+profession of 1274 a definition); a two-phrase repair passed at round 2; a
+fresh every-page visual review restored the same space reservation, and a
+further every-page review passed the repaired build; and every page of the
 published Death PDF was reviewed again and found clean. The series record was
 rewritten, the Judgment and Death records were corrected, and all four
 `generation-metadata.tex` files now list only Claude contributions. The
 accounts are the series record's "Correction of 27 October 2026" and the
 Judgment record's "Correction, recheck and repair, 27 October 2026".
+
+On 2026-10-28 a further independent Claude audit of the correction commit
+`b1dd8c785` rebuilt the four PDFs and converted the four web editions again,
+byte for byte identical to the installed files and their recorded hashes, and
+confirmed from the session logs that every review the substituted model made
+had been done again by Claude. It found record statements that overstated or
+misdated the correction: this entry and the series record had called the
+switch unannounced and had credited the redo plan to the maintainer; the
+series record's list of the substituted model's steps was incomplete; and
+smaller figures and section numbers in the Judgment and Death records were
+wrong. Those records were corrected on 2026-10-28 with no change to any render
+source, PDF or web edition.
 
 The review of the regenerated Judgment web edition also found that it had no
 title-page epigraph. No web edition in the series had carried one since
@@ -198,6 +213,7 @@ here, and the Death round-1 visual verdict, were the work of a substituted
 model and have been done again. Judgment now passes at round 2 after one
 further repair, and the print-only adjustments numbered four, not three. The
 table gives the hashes published on 2026-10-26.
+
 ### Verified register publication, 2026-10-27
 
 `origin/main` had advanced to `da270a039` during the work, so it was

@@ -12,18 +12,34 @@ were accepted. Each essay's own account is in its
 
 ## Correction of 27 October 2026
 
-During the work of 26 October the host substituted the model kimi-k3 for the
-Claude model in the coordinating session and in some of its workers, without
-notice to the work. In this series that model gave the round-1 verdict on the
-Judgment repairs, made both Judgment visual reviews and the Judgment
-print-only space reservation, wrote the round-1 verdict of the Death visual
-review after the Claude model had inspected the pages, and drafted the first
-version of this record and the Judgment contribution line. The records then
-credited all of it to the Claude model. On 27 October each of those steps was
-done again by fresh Claude workers, as the sections below and the Judgment and
-Death records describe. This file was rewritten, and the four
-`generation-metadata.tex` files now list only Claude work, by exact model
+During the work of 26 October the host switched the coordinating session and
+some of its workers from the Claude model to kimi-k3. The switch was announced
+inside those sessions but was not acted on. In this series that model gave the
+round-1 verdict on the Judgment repairs, made both Judgment visual reviews and
+the Judgment print-only space reservation, and wrote the round-1 verdict of
+the Death visual review after the Claude model had inspected the pages. It
+also drafted the first version of this record, a section of the Judgment
+record and the Judgment contribution line. It built and converted the Judgment
+essay, installed the four PDFs, and refreshed the inventory, catalogue and
+release bindings. The records then credited all of it to the Claude model. On
+27 October fresh Claude workers did each of its reviews again. A fresh Claude
+worker, given the text with the reservation removed (its brief said that one
+had been removed), re-derived the same reservation. The Claude coordinating
+session rewrote the records. The substituted model's mechanical steps were
+superseded by the Claude rebuilds and refreshes of 26 and 27 October, as the
+sections below and the Judgment and Death records describe. The four
+`generation-metadata.tex` files list only Claude work, by exact model
 identifier.
+
+An independent Claude audit on 28 October confirmed this account from the
+session logs, rebuilt the four PDFs and converted the four web editions again
+byte for byte, and corrected statements in this record, in the Judgment and
+Death records and in `PROJECT-WORK.md`. It also found that the Death and
+Heaven worker contribution lines credit the worker with "its repairs after
+review", though the round-1 repairs (Death DEA-006 and DEA-007, Heaven
+HEA-005) were made by the coordinating session. Both sessions ran on the
+Claude model; the lines are left as they are so that the installed PDFs keep
+their reviewed bytes.
 
 ## What the revision changes
 
@@ -31,19 +47,21 @@ Only the essays' own prose in the body sections. The block and inline
 quotations, the `\latin` spans, the endnotes and their attachment points, the
 headings, the appendices ("Teaching and Its Grades"; "Scope, Method, and
 Qualifications"; the references), `main.tex` and the source bindings are as
-they were on 16 October. A conservation check compares each essay with the
-revision's starting commit, `c7dfb84c7`; it compares quotations as text with
-whitespace normalized, and it passed with no problems on every round for all
-four essays. The web edition repairs of 27 October (below) changed each
-`main.tex`, which now calls the title-page macro without a print-edition
-condition, and removed the `\emph` around four `\latin` spans in Heaven. Run
-again after them, the check reports `main.tex` as changed in each essay and
-nothing else.
+they were at the revision's starting commit, `c7dfb84c7`, which already
+carried the two-column layout revision of 26 October. A conservation check
+compares each essay with the revision's starting commit, `c7dfb84c7`; it
+compares quotations as text with whitespace normalized, and it passed with no
+problems on every round for all four essays. The web edition repairs of 27
+October (below) changed each `main.tex`, which now calls the title-page macro
+without a print-edition condition, and removed the `\emph` around four
+`\latin` spans in Heaven. Run again after them, the check reports `main.tex`
+as changed in each essay and nothing else.
 
 The revision withdrew no claim, qualification, attribution, date, locus or
 grade. Some repair sentences say in the essay's own words a connection that
 the earlier text left implicit. The cold reviews checked each of them. One of
-them, in Judgment, gave a conciliar act a higher degree than it has; it was
+them, in Judgment, gave the Lyons profession of 1274, the emperor's profession
+of faith received at the council, a higher degree than it has; it was
 corrected on 27 October.
 
 Extent, by the checker's count of body prose (headings, endnotes and
@@ -52,7 +70,7 @@ print-only adjustments excluded):
 | Essay | Words before | Words after | Ratio |
 | --- | ---: | ---: | ---: |
 | I Death | 10,825 | 9,798 | 0.905 |
-| II Judgment | 11,582 | 10,421 | 0.900 |
+| II Judgment | 11,582 | 10,421 | 0.8998 |
 | III Hell | 13,606 | 12,599 | 0.926 |
 | IV Heaven | 10,126 | 9,285 | 0.917 |
 
@@ -179,6 +197,6 @@ gives the hashes published on 26 October.
 
 ## Publication
 
-`PROJECT-WORK.md` records the deployments to `main` and their live checks:
-the revision on 26 October, and the Judgment repair, the web edition repairs
-and the record correction of 27 October.
+`PROJECT-WORK.md` records the deployment of 26 October and its live check. The
+correction of 27 October is recorded there as pending until it is deployed and
+verified.
