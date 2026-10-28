@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-27.
+Last reconciled: 2026-10-28.
 
 ## Claude 1962 All Saints, 2026-11-01
 
@@ -257,8 +257,10 @@ record the evidence. This completion receipt changes operator records only.
 **In progress.** Source and organize papal encyclicals, bulls, and related
 formal documents; catalogue their editions; produce two-column TeX/PDF source
 editions; and make the sources reusable by larger presentation projects.
-The workspace target is `feature/encyclicals`; this work does not change
-`main` or deploy the reader site.
+On 2026-10-28 the maintainer authorized integrating this work into `main`
+and completing every queued lane. The installed readers under
+`pdf/papal-documents/` are repository release files; they are not part of
+the deployed Pages site, whose Sources projection lists their source records.
 
 The first acquisition boundary is the Vatican's mixed historical collections
 and modern document-category indexes, supplemented by the printed Bullarium,
@@ -367,6 +369,30 @@ owning checker. English fragments retain their explicit extent qualifications.
 The 472 rejected continuation readers and the remaining historical families
 stay outside this scoped installation while their source-boundary and
 page-review work continues.
+
+Recovery and main integration, 2026-10-28: the interrupted session's
+in-flight admissions and review evidence were committed, the 332 newly
+admitted continuation witnesses received their containment entries, and the
+release grew to 3,540 reviewed PDFs and 6,684 pages by adding 2,619 ASS/AAS
+Acta witnesses and 70 Gregory XVI Acta witnesses. Their review evidence is
+the completed Acta audit (2,619 PASS, nine follow-up corrections pending) and
+the Gregory lanes merged into the series audit.
+
+Page review of the 332 continuation admissions, the nine Acta follow-up
+corrections and the 59 provider-mark corrections is complete but not yet
+installed. It found that continuation volumes XIV, XV, XVIII and XIX print
+marginal summaries that their OCR fuses inline into body lines, often too
+garbled for first-pass review to recognize.
+Fresh full-size re-verification turned all 28 of one corrected lane to
+changes-required. Every installed continuation reader (397, mostly volumes
+XIII and XIV) therefore stays under a source-order re-audit, and a reader
+that fails it is withdrawn from the next release. The Bullarium (Turin)
+readers remain uninstalled for the same defect class: about 600 of 630
+independently screened units show confirmed fusion. Both families need
+coordinate-based reconstruction from the native OCR geometry before further
+admission. Codex's prepared correction plan for 412 remaining continuation
+readers (provider marks and the `Rome: None` placeholder) is still to be
+applied.
 
 ## GPT Last Things and next Sunday propers, 2026-10-25
 
