@@ -1,6 +1,6 @@
 {
   "documents": [],
-  "revision": "2026-10-28T22:49:41Z",
+  "revision": "2026-10-28T22:59:33Z",
   "schema": "triptych-papal-typeset/v1",
   "supersessions": [
     {
@@ -333,6 +333,268 @@
         "source_sha256": "e3cb674fd723d9f16c10562dd15e3f565aac2a19586d6f0c5664374f365b2db0"
       },
       "reason": "Whole reader withdrawn: the source OCR never read one printed body line inside this act, so the reader silently omits it. Confirmed on the native page image; the raw OCR lacks the line too, so no replacement can restore it.",
+      "replacement": null
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.bullarium-romanum.volume-07.1862-turin-latin.reading-order-a11d40af8cde",
+        "id": "bullarium.volume-07.unit-0143.reading-order-v2",
+        "language": "la",
+        "physical_line_ranges": [
+          [
+            79998,
+            80162
+          ]
+        ],
+        "segment_id": "segment.bullarium-romanum.volume-07.unit-0143.1862-turin-bullarium-volume-07-reading-order-v2-latin.source-ocr",
+        "source_sha256": "a11d40af8cde81ae63a6877aa6168ea08e317d2e7cfcaac8f0f48d8f881d34a8"
+      },
+      "reason": "Whole reader withdrawn before installation: a single OCR WORD holds both marginal and body glyphs across the column edge, so the reader prints body text inside a marginal block or loses it; confirmed on native page images or in page review, and the corrected classifier holds the unit, so no clean replacement exists.",
+      "replacement": null
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.bullarium-romanum.volume-07.1862-turin-latin.reading-order-a11d40af8cde",
+        "id": "bullarium.volume-07.unit-0165.reading-order-v2",
+        "language": "la",
+        "physical_line_ranges": [
+          [
+            88999,
+            89585
+          ]
+        ],
+        "segment_id": "segment.bullarium-romanum.volume-07.unit-0165.1862-turin-bullarium-volume-07-reading-order-v2-latin.source-ocr",
+        "source_sha256": "a11d40af8cde81ae63a6877aa6168ea08e317d2e7cfcaac8f0f48d8f881d34a8"
+      },
+      "reason": "Whole reader withdrawn before installation: a single OCR WORD holds both marginal and body glyphs across the column edge, so the reader prints body text inside a marginal block or loses it; confirmed on native page images or in page review, and the corrected classifier holds the unit, so no clean replacement exists.",
+      "replacement": null
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.reading-order-d3f5fdf5c043",
+        "id": "bullarium.volume-08.unit-0031.reading-order",
+        "language": "la",
+        "physical_line_ranges": [
+          [
+            12719,
+            12746
+          ],
+          [
+            12750,
+            12750
+          ],
+          [
+            12752,
+            12847
+          ]
+        ],
+        "segment_id": "segment.bullarium-romanum.volume-08.unit-0031.1883-naples-bullarium-volume-08-latin.source-ocr",
+        "source_sha256": "d3f5fdf5c0430cd6881da2914a4dbcb0b73a4ec9d229c0cc4bb22740c504c0f7"
+      },
+      "reason": "Whole reader withdrawn before installation: a single OCR WORD holds both marginal and body glyphs across the column edge, so the reader prints body text inside a marginal block or loses it; confirmed on native page images or in page review, and the corrected classifier holds the unit, so no clean replacement exists.",
+      "replacement": null
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.bullarium-romanum.volume-03.1858-turin-latin.reading-order-617cb85d7670",
+        "id": "bullarium.volume-03.unit-0173.part-02.reading-order.fragment",
+        "language": "la",
+        "physical_line_ranges": [
+          [
+            47057,
+            47350
+          ],
+          [
+            47418,
+            47427
+          ]
+        ],
+        "segment_id": "segment.bullarium-romanum.volume-03.unit-0173.part-02.1858-turin-bullarium-volume-03-latin.source-ocr",
+        "source_sha256": "617cb85d76704589bffbf0275549aa7815f9f3c238079b8efcd3f8a232486911"
+      },
+      "reason": "Whole reader withdrawn before installation: a single OCR WORD holds both marginal and body glyphs across the column edge, so the reader prints body text inside a marginal block or loses it; confirmed on native page images or in page review, and the corrected classifier holds the unit, so no clean replacement exists.",
+      "replacement": null
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.bullarium-romanum.volume-03.1858-turin-latin.reading-order-617cb85d7670",
+        "id": "bullarium.volume-03.unit-0099.reading-order",
+        "language": "la",
+        "physical_line_ranges": [
+          [
+            26599,
+            26849
+          ]
+        ],
+        "segment_id": "segment.bullarium-romanum.volume-03.unit-0099.1858-turin-bullarium-volume-03-latin.source-ocr",
+        "source_sha256": "617cb85d76704589bffbf0275549aa7815f9f3c238079b8efcd3f8a232486911"
+      },
+      "reason": "Whole reader withdrawn before installation: a single OCR WORD holds both marginal and body glyphs across the column edge, so the reader prints body text inside a marginal block or loses it; confirmed on native page images or in page review, and the corrected classifier holds the unit, so no clean replacement exists.",
+      "replacement": null
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.bullarium-romanum.volume-03.1858-turin-latin.reading-order-617cb85d7670",
+        "id": "bullarium.volume-03.unit-0163.reading-order",
+        "language": "la",
+        "physical_line_ranges": [
+          [
+            44463,
+            45031
+          ]
+        ],
+        "segment_id": "segment.bullarium-romanum.volume-03.unit-0163.1858-turin-bullarium-volume-03-latin.source-ocr",
+        "source_sha256": "617cb85d76704589bffbf0275549aa7815f9f3c238079b8efcd3f8a232486911"
+      },
+      "reason": "Whole reader withdrawn before installation: a single OCR WORD holds both marginal and body glyphs across the column edge, so the reader prints body text inside a marginal block or loses it; confirmed on native page images or in page review, and the corrected classifier holds the unit, so no clean replacement exists.",
+      "replacement": null
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.bullarium-romanum.volume-03.1858-turin-latin.reading-order-617cb85d7670",
+        "id": "bullarium.volume-03.unit-0165.reading-order",
+        "language": "la",
+        "physical_line_ranges": [
+          [
+            45111,
+            45496
+          ],
+          [
+            45552,
+            45552
+          ]
+        ],
+        "segment_id": "segment.bullarium-romanum.volume-03.unit-0165.1858-turin-bullarium-volume-03-latin.source-ocr",
+        "source_sha256": "617cb85d76704589bffbf0275549aa7815f9f3c238079b8efcd3f8a232486911"
+      },
+      "reason": "Whole reader withdrawn before installation: a single OCR WORD holds both marginal and body glyphs across the column edge, so the reader prints body text inside a marginal block or loses it; confirmed on native page images or in page review, and the corrected classifier holds the unit, so no clean replacement exists.",
+      "replacement": null
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.bullarium-romanum.volume-03.1858-turin-latin.reading-order-617cb85d7670",
+        "id": "bullarium.volume-03.unit-0196.reading-order",
+        "language": "la",
+        "physical_line_ranges": [
+          [
+            52201,
+            52473
+          ]
+        ],
+        "segment_id": "segment.bullarium-romanum.volume-03.unit-0196.1858-turin-bullarium-volume-03-latin.source-ocr",
+        "source_sha256": "617cb85d76704589bffbf0275549aa7815f9f3c238079b8efcd3f8a232486911"
+      },
+      "reason": "Whole reader withdrawn before installation: a single OCR WORD holds both marginal and body glyphs across the column edge, so the reader prints body text inside a marginal block or loses it; confirmed on native page images or in page review, and the corrected classifier holds the unit, so no clean replacement exists.",
+      "replacement": null
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.reading-order-d3f5fdf5c043",
+        "id": "bullarium.volume-08.unit-0167.reading-order",
+        "language": "la",
+        "physical_line_ranges": [
+          [
+            76117,
+            76385
+          ]
+        ],
+        "segment_id": "segment.bullarium-romanum.volume-08.unit-0167.1883-naples-bullarium-volume-08-latin.source-ocr",
+        "source_sha256": "d3f5fdf5c0430cd6881da2914a4dbcb0b73a4ec9d229c0cc4bb22740c504c0f7"
+      },
+      "reason": "Whole reader withdrawn before installation: a single OCR WORD holds both marginal and body glyphs across the column edge, so the reader prints body text inside a marginal block or loses it; confirmed on native page images or in page review, and the corrected classifier holds the unit, so no clean replacement exists.",
+      "replacement": null
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.reading-order-d3f5fdf5c043",
+        "id": "bullarium.volume-08.unit-0189.reading-order",
+        "language": "la",
+        "physical_line_ranges": [
+          [
+            86900,
+            87348
+          ]
+        ],
+        "segment_id": "segment.bullarium-romanum.volume-08.unit-0189.1883-naples-bullarium-volume-08-latin.source-ocr",
+        "source_sha256": "d3f5fdf5c0430cd6881da2914a4dbcb0b73a4ec9d229c0cc4bb22740c504c0f7"
+      },
+      "reason": "Whole reader withdrawn before installation: a single OCR WORD holds both marginal and body glyphs across the column edge, so the reader prints body text inside a marginal block or loses it; confirmed on native page images or in page review, and the corrected classifier holds the unit, so no clean replacement exists.",
+      "replacement": null
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.reading-order-d3f5fdf5c043",
+        "id": "bullarium.volume-08.unit-0193.reading-order",
+        "language": "la",
+        "physical_line_ranges": [
+          [
+            88817,
+            88835
+          ],
+          [
+            88839,
+            89252
+          ]
+        ],
+        "segment_id": "segment.bullarium-romanum.volume-08.unit-0193.1883-naples-bullarium-volume-08-latin.source-ocr",
+        "source_sha256": "d3f5fdf5c0430cd6881da2914a4dbcb0b73a4ec9d229c0cc4bb22740c504c0f7"
+      },
+      "reason": "Whole reader withdrawn before installation: a single OCR WORD holds both marginal and body glyphs across the column edge, so the reader prints body text inside a marginal block or loses it; confirmed on native page images or in page review, and the corrected classifier holds the unit, so no clean replacement exists.",
+      "replacement": null
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.bullarium-romanum.volume-08.1883-naples-latin.reading-order-d3f5fdf5c043",
+        "id": "bullarium.volume-08.unit-0203.reading-order",
+        "language": "la",
+        "physical_line_ranges": [
+          [
+            95254,
+            95537
+          ]
+        ],
+        "segment_id": "segment.bullarium-romanum.volume-08.unit-0203.1883-naples-bullarium-volume-08-latin.source-ocr",
+        "source_sha256": "d3f5fdf5c0430cd6881da2914a4dbcb0b73a4ec9d229c0cc4bb22740c504c0f7"
+      },
+      "reason": "Whole reader withdrawn before installation: a single OCR WORD holds both marginal and body glyphs across the column edge, so the reader prints body text inside a marginal block or loses it; confirmed on native page images or in page review, and the corrected classifier holds the unit, so no clean replacement exists.",
+      "replacement": null
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.bullarium-romanum.volume-09.1865-turin-latin.reading-order-2b0b41aa0b77",
+        "id": "bullarium.volume-09.unit-0005.part-02.reading-order-v2",
+        "language": "la",
+        "physical_line_ranges": [
+          [
+            3816,
+            4203
+          ]
+        ],
+        "segment_id": "segment.bullarium-romanum.volume-09.unit-0005.part-02.1865-turin-bullarium-volume-09-reading-order-v2-latin.source-ocr",
+        "source_sha256": "2b0b41aa0b7797e77ed9ecad366ffd21846f1733ea036e5a6ea16650fc77bb93"
+      },
+      "reason": "Whole reader withdrawn before installation: a single OCR WORD holds both marginal and body glyphs across the column edge, so the reader prints body text inside a marginal block or loses it; confirmed on native page images or in page review, and the corrected classifier holds the unit, so no clean replacement exists.",
+      "replacement": null
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.bullarium-romanum.volume-11.1867-turin-latin.reading-order-e3cb674fd723",
+        "id": "bullarium.volume-11.unit-0118.reading-order",
+        "language": "la",
+        "physical_line_ranges": [
+          [
+            52801,
+            52889
+          ],
+          [
+            52896,
+            53018
+          ]
+        ],
+        "segment_id": "segment.bullarium-romanum.volume-11.unit-0118.1867-turin-bullarium-volume-11-latin.source-ocr",
+        "source_sha256": "e3cb674fd723d9f16c10562dd15e3f565aac2a19586d6f0c5664374f365b2db0"
+      },
+      "reason": "Whole reader withdrawn before installation: a single OCR WORD holds both marginal and body glyphs across the column edge, so the reader prints body text inside a marginal block or loses it; confirmed on native page images or in page review, and the corrected classifier holds the unit, so no clean replacement exists.",
       "replacement": null
     }
   ]
