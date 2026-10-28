@@ -378,14 +378,19 @@ tools/bullarium geometry map-units --recipe .scratch/reading-order/v04/recipe.js
 `propose` writes an explicit v2 recipe and `running-heads.tsv`, which lists
 every page's running-head row for a quick scan. The recipe records each page
 as reordered, held (with its reason) or empty, and each reordered page's rows
-of native WORD ordinals. It also records page measurements and any
-inseparable mixed WORDs. Its thresholds are fractions of the measured column
+of native WORD ordinals. Rows carry a role: running head, body column,
+marginal summary (a TAB-led block at the section it annotates), page-foot note
+(a separate block at the page break, starting at its reference mark), gutter
+OCR or footer. It also records page measurements and any inseparable mixed
+WORDs. Its thresholds are fractions of the measured column
 width and line pitch. The replay expands the rows into the explicit v1 recipe
 and proves that every WORD appears exactly once, unchanged. `map-units` places
 every catalog unit in the derivative through WORD identity and assigns one
 category: `clean`, `review:margin-ownership-at-boundary`,
 `hold:inseparable-WORD`, `hold:body-not-contiguous` or another hold. Only
-`clean` units can be registered. Name them explicitly in a selection file,
+`clean` units can be registered. A unit's own page-foot notes printed after
+the next unit begins form an extra range of its selection. Name the units
+explicitly in a selection file,
 `{"schema": "triptych-bullarium-reading-order-selection/v1", "units": [...]}`:
 
 ```sh
@@ -397,8 +402,17 @@ the gzip recipe, the page map and the replay receipt. It declares them in the
 volume container and then admits each selected unit through `bullarium admit`
 as `<unit>.reading-order`, a new reading selection of the same work, into
 `bullarium-geometry-manifest.json`. Every write is append-only. Raw artifacts,
-prior segments and the withdrawal inventory are not touched. Admission is not
-installation: a volume must first pass its native-image evidence gate, and
+prior segments and the withdrawal inventory are not touched.
+
+To replace defective reading selections, register a corrected derivative with
+`--supersede --reason "..."`. Each unit's newest reading selection is
+superseded by `<unit>.reading-order-vN`, a new edition and segment of the same
+work on the new derivative. Its document row and the supersession row go to
+`bullarium-reading-order-corrections-manifest.json`, which the source plan
+reads as a correction manifest. Earlier derivatives, selections and documents
+are kept unchanged.
+
+Admission is not installation: a volume must first pass its native-image evidence gate, and
 every page of every repaired PDF is reviewed before install.
 
 ## Coverage

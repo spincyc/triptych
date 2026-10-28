@@ -33,7 +33,17 @@ def body_line(column, index, *, words=6, indent=0, short=False, prefix="w"):
     return entries
 
 
-def page_lines(*, interleave=False, deadzone=False, mixed=False, fused=True):
+def note_rows():
+    """Two small-type page-foot note rows below a rule's gap at the foot of the left column."""
+    rows = []
+    for k, values in enumerate((["(1)", "Ex", "Regest.", "Vatic.", "notaa", "notab", "notac", "notad"],
+                                ["notae", "notaf", "notag", "notah", "notai", "notaj", "notak", "notal"])):
+        y0 = TOP + 18 * PITCH + 25 + k * 38
+        rows.append([(value, (L0 + j * 70, y0, L0 + (j + 1) * 70, y0 + 28)) for j, value in enumerate(values)])
+    return rows
+
+
+def page_lines(*, interleave=False, deadzone=False, mixed=False, fused=True, notes=False):
     header = [[("An.", (100, 180, 140, 210)), ("C.", (140, 180, 170, 210)), ("1300", (170, 180, 280, 210))],
               [("BULLARIUM", (820, 180, 960, 210)), ("ROMANUM", (960, 180, 1100, 210))],
               [("17", (1450, 180, 1500, 210)), ("An.", (1600, 180, 1640, 210)), ("C.", (1640, 180, 1670, 210)),
@@ -49,11 +59,16 @@ def page_lines(*, interleave=False, deadzone=False, mixed=False, fused=True):
                    [(v, (x0 + 40 if j == 0 else x0, y0, x1, y1)) for j, (v, (x0, y0, x1, y1)) in enumerate(line)]
         if deadzone and i == 16:
             line = [(v, (L0 - 8.5 if j == 0 else x0, y0, x1, y1)) for j, (v, (x0, y0, x1, y1)) in enumerate(line)]
-        left.append(line)
+        if notes and i == 17:     # the body breaks a word at the foot of the column
+            line = line[:-1] + [("fun-", line[-1][1])]
+        if not (notes and i >= 18):
+            left.append(line)
         line = body_line("R", i, indent=40 if i in (0, 12) else 0, short=(i == 11))
         if fused and i == 5:      # a marginal summary fused at the end of a body LINE
             line = line + [("Clausulae", (R1 + 20, TOP + i * PITCH + 5, R1 + 150, TOP + i * PITCH + 30))]
         right.append(line)
+    if notes:
+        left += note_rows()
     note = [[("summarium", (160, TOP + 11 * PITCH + 5, 290, TOP + 11 * PITCH + 30))]] if fused else []
     if interleave:
         body = left[:10] + right[:5] + left[10:] + note + right[5:]
@@ -65,7 +80,7 @@ def page_lines(*, interleave=False, deadzone=False, mixed=False, fused=True):
 class Fixture:
     """A synthetic two-page volume with a blank leaf, its records and catalog."""
 
-    def __init__(self, root, pages):
+    def __init__(self, root, pages, baseline=False):
         self.root = root
         xml = bytearray(b'<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE DjVuXML>\n<DjVuXML><BODY>')
         raw = bytearray()
@@ -74,7 +89,8 @@ class Fixture:
             for line in lines:
                 xml.extend(b"<LINE>")
                 for value, (x0, y0, x1, y1) in line:
-                    xml.extend(f'<WORD coords="{int(x0)},{int(y1)},{int(x1)},{int(y0)}">{value}</WORD>'.encode())
+                    extra = f",{int(y1) - 4}" if baseline else ""     # the five-value DjVu form ends in a baseline
+                    xml.extend(f'<WORD coords="{int(x0)},{int(y1)},{int(x1)},{int(y0)}{extra}">{value}</WORD>'.encode())
                 xml.extend(b"</LINE>")
                 raw.extend((" ".join(v for v, _ in line) + "\n").encode())
             raw.extend(b"\n")
@@ -123,8 +139,8 @@ class ReadingOrderTests(unittest.TestCase):
     def tearDown(self):
         self.temp.cleanup()
 
-    def volume(self, *pages, units=None):
-        fixture = Fixture(self.root, list(pages) + [[]])
+    def volume(self, *pages, units=None, baseline=False):
+        fixture = Fixture(self.root, list(pages) + [[]], baseline=baseline)
         fixture.catalog(units(fixture) if units else [])
         return fixture
 
@@ -152,7 +168,7 @@ class ReadingOrderTests(unittest.TestCase):
         self.assertEqual(head[0], "1\treordered\tAn. C. 1300 BULLARIUM ROMANUM 17 An. C. 1300")
 
     def test_v2_replay_is_byte_equivalent_to_its_explicit_v1_expansion(self):
-        self.volume(page_lines(mixed=True))
+        self.volume(page_lines(mixed=True, notes=True))
         self.propose()
         geometry.build(self.root, ".scratch/proposal/recipe.json", ".scratch/v2")
         recipe, raw, xml, _ = geometry.load_recipe(self.root, ".scratch/proposal/recipe.json")
@@ -346,6 +362,16 @@ class ReadingOrderTests(unittest.TestCase):
             self.register()
         self.assertEqual(self.snapshot(), frozen)
 
+    def test_register_refuses_a_unit_already_holding_the_canonical_edition_key(self):
+        _, unit = self.registration_fixture()
+        catalog = json.loads((self.root / b.CATALOG).read_text())
+        catalog["units"][0]["edition_id"] = "edition.example.work.1857-turin-bullarium-volume-01-latin"
+        b.write(self.root / b.CATALOG, b.json_bytes(catalog))
+        frozen = self.snapshot()
+        with self.assertRaisesRegex(ValueError, "canonical edition key"):
+            self.register()
+        self.assertEqual(self.snapshot(), frozen)
+
     def test_register_admits_only_units_mapped_clean(self):
         self.registration_fixture()
         mapping = json.loads((self.root / ".scratch/mapping.json").read_text())
@@ -356,6 +382,114 @@ class ReadingOrderTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "only units mapped 'clean'"):
             self.register()
         self.assertEqual(self.snapshot(), frozen)
+
+    def test_page_foot_notes_are_a_separate_block_at_the_page_break(self):
+        self.volume(page_lines(notes=True))
+        page = self.propose()["pages"][0]
+        codes = [row[0] for row in page["rows"]]
+        self.assertEqual([row[1] for row in page["rows"] if row[0] == "NL"], ["p", "l"])
+        self.assertGreater(min(i for i, c in enumerate(codes) if c == "NL"), max(i for i, c in enumerate(codes) if c == "R"))
+        self.assertEqual(page["notes_blocks"][0]["side"], "notes-left")
+        geometry.build(self.root, ".scratch/proposal/recipe.json", ".scratch/notes")
+        text = (self.root / ".scratch/notes/hybrid.txt").read_text()
+        self.assertIn("fun-\nwr0x0", text)                      # the body runs on across the column
+        self.assertIn("\n\n(1) Ex Regest. Vatic. notaa notab notac notad\nnotae", text)
+        self.assertNotIn("fun-\n(1)", text)
+
+    def test_unmarked_small_rows_after_a_heading_gap_stay_body(self):
+        lines = page_lines()
+        lines[-1] = [(v.replace("wr19", "summ"), (x0, y0 + 30, x1, y1 + 2)) for v, (x0, y0, x1, y1) in lines[-1]]
+        self.volume(lines)
+        page = self.propose()["pages"][0]
+        self.assertEqual(page["notes_blocks"], [])
+
+    def test_unit_keeps_its_page_foot_notes(self):
+        rows = self.mapped(lambda f: [f.unit(1, [[1, 46]])], notes=True)
+        self.assertEqual(rows["bullarium.volume-01.unit-0001"]["category"], "clean")
+
+    def test_notes_displaced_past_the_next_unit_become_an_extra_range(self):
+        rows = self.mapped(lambda f: [f.unit(1, [[1, 24]]), f.unit(2, [[25, 46]])], notes=True)
+        first, second = rows["bullarium.volume-01.unit-0001"], rows["bullarium.volume-01.unit-0002"]
+        self.assertEqual((first["category"], second["category"]), ("clean", "clean"))
+        self.assertEqual(len(first["new_physical_line_ranges"]), 2)
+        self.assertLess(second["new_physical_line_ranges"][0][1], first["new_physical_line_ranges"][1][0])
+
+    def test_raw_line_numbers_are_labelled_in_reader_notes(self):
+        self.assertEqual(geometry._raw_line_note("Retain source note12296–12298 and LF 15845; exclude nextXV54890."),
+                         "Retain source note (raw OCR line 12296–12298) and raw OCR line 15845; exclude next XV (raw OCR line 54890).")
+
+    def test_supersede_appends_a_replacement_reading_and_keeps_the_prior_one(self):
+        fixture, unit = self.registration_fixture()
+        self.register()
+        prior = json.loads((self.root / b.CATALOG).read_text())
+        prior_child = next(u for u in prior["units"] if u["id"] == unit["id"] + ".reading-order")
+        recipe = json.loads((self.root / ".scratch/proposal/recipe.json").read_text())
+        row = next(r for r in recipe["pages"][0]["rows"] if r[0] == "L" and r[1] == "l")
+        row[1] = "p"                                          # a different, still conserving derivative
+        b.write(self.root / ".scratch/v2/recipe.json", json.dumps(recipe).encode())
+        geometry.build(self.root, ".scratch/v2/recipe.json", ".scratch/v2/replay")
+        geometry.map_units(self.root, ".scratch/v2/recipe.json", ".scratch/v2/replay", ".scratch/v2/mapping.json")
+        keep = [self.root / prior_child["segment_path"], self.root / prior_child["segment_path"].replace("/segments/source-ocr.toml", "/edition.toml"),
+                self.root / geometry.GEOMETRY_MANIFEST]
+        frozen = {path: path.read_bytes() for path in keep}
+        call = lambda: geometry.register(self.root, ".scratch/v2/recipe.json", ".scratch/v2/replay", ".scratch/v2/mapping.json",
+                                         ".scratch/units.json", "2026-10-29T00:00:00Z", supersede=True, reason="Synthetic replacement.")
+        result = call()
+        self.assertEqual(result["superseded_readings"], 1)
+        self.assertEqual({path: path.read_bytes() for path in keep}, frozen)
+        catalog = json.loads((self.root / b.CATALOG).read_text())
+        units = {u["id"]: u for u in catalog["units"]}
+        self.assertEqual(units[prior_child["id"]], prior_child)
+        child = units[unit["id"] + ".reading-order-v2"]
+        self.assertEqual((child["reading_selection_variant_of"], child["work_id"], child["status"]),
+                         (prior_child["id"], prior_child["work_id"], "admitted-mechanical-ocr-extent"))
+        self.assertTrue(child["edition_id"].endswith("-reading-order-v2-latin"))
+        corrections = json.loads((self.root / geometry.READING_ORDER_CORRECTIONS).read_text())
+        self.assertEqual([s["prior"]["id"] for s in corrections["supersessions"]], [prior_child["id"]])
+        self.assertEqual(corrections["documents"][0]["id"], child["id"])
+        self.assertEqual(b.check(self.root, self.root / b.CATALOG)["status"], "ok")
+        snapshot = self.snapshot()
+        call()
+        self.assertEqual(self.snapshot(), snapshot)
+
+    def test_supersede_requires_a_reason_and_a_prior_reading(self):
+        self.registration_fixture()
+        with self.assertRaisesRegex(ValueError, "nothing to supersede"):
+            geometry.register(self.root, ".scratch/proposal/recipe.json", ".scratch/replay", ".scratch/mapping.json",
+                              ".scratch/units.json", "2026-10-29T00:00:00Z", supersede=True, reason="x")
+        with self.assertRaisesRegex(ValueError, "explicit --reason"):
+            geometry.register(self.root, ".scratch/proposal/recipe.json", ".scratch/replay", ".scratch/mapping.json",
+                              ".scratch/units.json", "2026-10-29T00:00:00Z", supersede=True)
+
+    def test_five_value_coords_give_the_same_geometry_and_text(self):
+        outputs, base = {}, self.root
+        for baseline in (False, True):
+            with self.subTest(baseline=baseline):
+                self.root = base / ("five" if baseline else "four")     # each fixture needs its own source tree
+                self.volume(page_lines(notes=True), baseline=baseline)
+                name = "five" if baseline else "four"
+                recipe = self.propose(name)
+                geometry.build(self.root, f".scratch/{name}/recipe.json", f".scratch/{name}-replay")
+                outputs[name] = (recipe["pages"], (self.root / f".scratch/{name}-replay/hybrid.txt").read_bytes())
+                recipe2, raw, xml, _ = geometry.load_recipe(self.root, f".scratch/{name}/recipe.json")
+                expanded = geometry.expand_v2(recipe2, raw, xml)
+                if baseline:
+                    self.assertTrue(all(w["coords"].count(",") == 4 for p in expanded["changed_pages"] for w in p["words"]))
+                b.write(self.root / f".scratch/{name}-v1.json", json.dumps(expanded).encode())
+                geometry.build(self.root, f".scratch/{name}-v1.json", f".scratch/{name}-v1")
+                self.assertEqual((self.root / f".scratch/{name}-v1/hybrid.txt").read_bytes(), outputs[name][1])
+        self.assertEqual(outputs["four"], outputs["five"])
+
+    def test_six_value_coords_are_refused(self):
+        self.volume(page_lines())
+        recipe = self.propose()
+        xml_path = self.root / "src/sources/works/bullarium-romanum/volume-01/editions/1857-turin-latin/artifacts/xml/ocr.xml"
+        bad = xml_path.read_bytes().replace(b'coords="', b'coords="1,1,', 1)      # six values
+        self.assertNotEqual(bad, xml_path.read_bytes())
+        with self.assertRaisesRegex(ValueError, "exact integer coordinates"):
+            geometry._xml_pages(bad, (self.root / recipe["source_txt"]["path"]).read_bytes(),
+                                geometry._tokens((self.root / recipe["source_txt"]["path"]).read_bytes()),
+                                {page["leaf"]: {} for page in recipe["pages"]})
 
     def test_verbs_refuse_unsafe_inputs_before_reading_sources(self):
         cases = (
