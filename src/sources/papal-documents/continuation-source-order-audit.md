@@ -554,3 +554,72 @@ Unauditable readers kept installed:
 - `bullarium-continuatio.volume-11.line-00077357` (geometry coverage 0.3587)
 - `bullarium-continuatio.volume-13.line-00051765.part-01` (geometry coverage 0.7063)
 - `bullarium-continuatio.volume-13.line-00051765.part-02` (geometry coverage 0.0)
+
+## Held readers audited before installation
+
+On 2026-10-28 the same method audited the 199 continuation readers that had passed page review but were held from installation (coordinate audit record SHA-256 `cc9257b13336248119137c1547d0e7a96894d057e15c031ff1f3336003637db3`; strong-lead precision 59/60 image-checked, cumulative 176/177). The 21 confirmed continuatio-0016 readers below are withdrawn with prior-to-null supersessions and never installed; the 8 unauditable ones stay held for manual page review. Of the 28 provider-mark corrections, 27 show confirmed fusion and stay uninstalled.
+
+| Reader | Volume | Fused loci | First locus |
+|---|---|---:|---|
+| `bullarium-continuatio.volume-03.line-00078926` | III | 1 | leaf 415, LF 78929: `Dat. die tr.` |
+| `bullarium-continuatio.volume-03.line-00089480` | III | 1 | leaf 473, LF 89483: `Dat. die 12.` |
+| `bullarium-continuatio.volume-03.line-00093972.part-01` | III | 1 | leaf 499, LF 93975: `Dat. die 29.` |
+| `bullarium-continuatio.volume-06.line-00086386.part-01` | VI | 1 | leaf 497, LF 86376: `Anno VII GConcessio indulgentia plenarim , asse-` |
+| `bullarium-continuatio.volume-15.line-00059791.part-03` | XV | 3 | leaf 417, LF 59979: `iui. du Dispensatio episcopi Orthosiensis a cura` |
+| `bullarium-continuatio.volume-15.line-00065860.part-02` | XV | 3 | leaf 460, LF 66076: `"Sff cietatis nuncupatae sacrae Familiae ere-` |
+| `bullarium-continuatio.volume-15.line-00066523.part-01` | XV | 1 | leaf 463, LF 66542: `wtiriM olim metropolitanae ecclesiae Parisiensi` |
+| `bullarium-continuatio.volume-15.line-00068796.part-03` | XV | 2 | leaf 483, LF 69282: `piL 4i« Subjectio sedis Montispessulani metropoli-` |
+| `bullarium-continuatio.volume-15.line-00069498.part-01` | XV | 3 | leaf 484, LF 69500: `Cessatio juris melropolitici archiepiscopi oit st*` |
+| `bullarium-continuatio.volume-15.line-00090847.part-05` | XV | 3 | leaf 595, LF 91330: `* *SS‘U dae ab illis, qui nomen dederint con-` |
+| `bullarium-continuatio.volume-15.line-00093250` | XV | 2 | leaf 608, LF 93252: `Deputatio temporanei administratoris ec- r»i diu` |
+| `bullarium-continuatio.volume-15.line-00097145` | XV | 2 | leaf 636, LF 97150: `XX,M exislenlium favore mulierum adscripia-` |
+| `bullarium-continuatio.volume-15.line-00097575.part-02` | XV | 2 | leaf 640, LF 97733: `b«uo ei ie- cesiuni circumscripliorieri^! scn>` |
+| `bullarium-continuatio.volume-19.line-00058106` | XIX | 11 | leaf 417, LF 58113: `p«t dia Regulae sequendae in distributione aquae` |
+| `bullarium-continuatio.volume-19.line-00085838.part-01` | XIX | 1 | leaf 603, LF 85861: `VtimbIu Maronitarum natio a praedecesso-` |
+| `bullarium-continuatio.volume-19.line-00085838.part-02` | XIX | 2 | leaf 604, LF 85948: `Pir. Jfe ' J' '` |
+| `bullarium-continuatio.volume-19.line-00086108` | XIX | 2 | leaf 605, LF 86111: `s janii Encyclica litera porrecta venerabilibus fra-` |
+| `bullarium-continuatio.volume-19.line-00086831.part-02` | XIX | 2 | leaf 610, LF 86907: `J. 1. Jn sublimi principis apostolo- ,rWi4` |
+| `bullarium-continuatio.volume-19.line-00087543.part-01` | XIX | 4 | leaf 615, LF 87549: `n , «» r jg mpiU` |
+| `bullarium-continuatio.volume-19.line-00087543.part-02` | XIX | 2 | leaf 616, LF 87654: `tut. si. Collatio muoeris legali pro insula sancti` |
+| `bullarium-continuatio.volume-19.line-00087779` | XIX | 1 | leaf 617, LF 87785: `"SST* atolico.` |
+
+Provider-mark corrections with confirmed fusion:
+
+- `bullarium-continuatio.volume-18.line-00015238.part-01.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00015238.part-02.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00015470.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00016096.part-01.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00016498.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00016916.part-01.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00017193.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00017494.part-02.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00017701.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00017862.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00017980.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00018492.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00018761.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00019727.discovery-01.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00020089.discovery-01.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00020473.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00020888.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00021533.discovery-01.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00021533.discovery-03.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00021533.discovery-04.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00022620.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00022878.part-01.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00023244.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00023326.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00023558.part-01.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00024403.part-01.provider-marks-omitted-v2`
+- `bullarium-continuatio.volume-18.line-00024403.part-02.provider-marks-omitted-v2`
+
+Unauditable readers held for manual review:
+
+- `bullarium-continuatio.volume-01.line-00056519` (geometry coverage 0.7391)
+- `bullarium-continuatio.volume-04.line-00113320` (geometry coverage 0.7294)
+- `bullarium-continuatio.volume-04.line-00140383` (geometry coverage 0.3382)
+- `bullarium-continuatio.volume-04.line-00141657.part-01` (geometry coverage 0.9545)
+- `bullarium-continuatio.volume-06.line-00059641.part-02` (geometry coverage 0.4962)
+- `bullarium-continuatio.volume-06.line-00060243.part-01` (geometry coverage 0.6271)
+- `bullarium-continuatio.volume-06.line-00106172` (geometry coverage 0.9116)
+- `bullarium-continuatio.volume-16.line-00046344` (geometry coverage 0.8428)

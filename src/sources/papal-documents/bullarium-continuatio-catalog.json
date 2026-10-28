@@ -1,12 +1,12 @@
 {
   "config_sha256": "e72eb2094c9e0261ffa6e1dc72550e37aa7752bbcfb824ea5d5470894da1125f",
   "coverage": {
-    "complete_printed_witnesses": 988,
+    "complete_printed_witnesses": 967,
     "fragment_witnesses": 0,
     "note": "Candidates include false headings and non-papal units. Counts describe source witnesses, not authenticated unique acts.",
     "raw_candidates": 5896,
     "source_containers": 19,
-    "specifically_held": 1516,
+    "specifically_held": 1537,
     "unreviewed_candidates": 1844
   },
   "documents": [
@@ -54820,33 +54820,67 @@
         "line": 78941,
         "raw": "Clemens PP. XIII"
       },
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-03.1838-rome-mul.ocr-d3ebdc3bb0fc",
+          "id": "bullarium-continuatio.volume-03.line-00078926",
+          "language": "la",
+          "pdf_sha256": "8f9bd2bb54a0a626a26d099cb695c3af742598a25658e56ac48c57bd5e67b9fd",
+          "physical_line_ranges": [
+            [
+              78926,
+              78983
+            ]
+          ],
+          "segment_id": "segment.bullarium-continuatio.volume-03.line-00078926.1838-bullarium-continuatio-volume-03-la.source-ocr",
+          "source_sha256": "d3ebdc3bb0fcd0d9578b80bc89d23718ef5358379f9e08c0acdb36c5954791d4"
+        },
+        "reason": "Whole reader withdrawn before installation: the coordinate source-order audit confirmed printed marginal summary or date text fused into body or heading lines (1 loci; first at leaf 415, LF 78929). Recorded in src/sources/papal-documents/continuation-source-order-audit.md.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "cc9257b13336248119137c1547d0e7a96894d057e15c031ff1f3336003637db3",
       "render_revision": "2026-10-26T18:35:44Z",
       "review": {
         "artifact_sha256": "d3ebdc3bb0fcd0d9578b80bc89d23718ef5358379f9e08c0acdb36c5954791d4",
-        "boundary_review": "Starts at its own DCXIII heading 78926 after preceding hospital brief and ends at complete closing 78983 before next DCXIV heading 78998.",
-        "date": null,
-        "decision": "admit",
+        "decision": "hold",
         "document_id": "bullarium-continuatio.volume-03.line-00078926",
-        "genre": "apostolic-letter",
-        "language": "la",
         "physical_line_ranges": [
           [
             78926,
             78983
           ]
         ],
-        "printed_attribution": "Clemens PP. XIII.",
-        "reader_source_note": "Literal printed abbreviations and uncorrected OCR are retained.",
-        "reading_order_review": "Every selected LF entry and surrounding 20 LF context read; body 78949–78983 is sequential and separate own dating 78929–78931 does not fuse with body words.",
-        "review_note": "Entire raw DCXIII LF 78926–78995 plus 20 LF context read. Exact refinement ends 78983 before running furniture 78995. Own title, protocol, universal addressee, continuous grant, seven-year limitation, gratuitousness condition, transumpt clause and complete date survive in order. No substantive column or margin interleaving occurs.",
-        "reviewed_extent": "Full independent indulgence letter including its title and separate marginal dating, through the complete concluding date.",
-        "source_attribution_lines": [
-          78941,
-          78941
-        ],
-        "source_extent_review": "Complete uncorrected printed witness. Conventional peniten., confessis and other printed abbreviations remain literal; no expansion or conjectural completion.",
+        "review_note": "Reader withdrawn by the coordinate source-order audit: native DjVu WORD geometry places marginal-summary or marginal-date WORDs on raw lines shared with body WORDs inside the selected extent (1 loci), and the rendered PDF prints that marginal text inside body or heading paragraphs. A complete ordered reader needs a coordinate reading-order derivative. Audit report SHA-256 e44dd97490bb8036d2e507cd0946a28b8aecf5fa9504975ec0fe6520e0cd6e02.",
         "title": "Indulgentia plenaria visitantibus ecclesias Societatis Jesu die quinta Februarii"
       },
+      "review_history": [
+        {
+          "artifact_sha256": "d3ebdc3bb0fcd0d9578b80bc89d23718ef5358379f9e08c0acdb36c5954791d4",
+          "boundary_review": "Starts at its own DCXIII heading 78926 after preceding hospital brief and ends at complete closing 78983 before next DCXIV heading 78998.",
+          "date": null,
+          "decision": "admit",
+          "document_id": "bullarium-continuatio.volume-03.line-00078926",
+          "genre": "apostolic-letter",
+          "language": "la",
+          "physical_line_ranges": [
+            [
+              78926,
+              78983
+            ]
+          ],
+          "printed_attribution": "Clemens PP. XIII.",
+          "reader_source_note": "Literal printed abbreviations and uncorrected OCR are retained.",
+          "reading_order_review": "Every selected LF entry and surrounding 20 LF context read; body 78949–78983 is sequential and separate own dating 78929–78931 does not fuse with body words.",
+          "review_note": "Entire raw DCXIII LF 78926–78995 plus 20 LF context read. Exact refinement ends 78983 before running furniture 78995. Own title, protocol, universal addressee, continuous grant, seven-year limitation, gratuitousness condition, transumpt clause and complete date survive in order. No substantive column or margin interleaving occurs.",
+          "reviewed_extent": "Full independent indulgence letter including its title and separate marginal dating, through the complete concluding date.",
+          "source_attribution_lines": [
+            78941,
+            78941
+          ],
+          "source_extent_review": "Complete uncorrected printed witness. Conventional peniten., confessis and other printed abbreviations remain literal; no expansion or conjectural completion.",
+          "title": "Indulgentia plenaria visitantibus ecclesias Societatis Jesu die quinta Februarii"
+        }
+      ],
       "scan_leaf_ids": [
         415
       ],
@@ -54854,7 +54888,7 @@
       "segment_path": "src/sources/works/bullarium-continuatio/volume-03-line-00078926/editions/1838-bullarium-continuatio-volume-03-la/segments/source-ocr.toml",
       "selection_start": 78926,
       "source_heading_raw": "DCXIII. ",
-      "status": "admitted-complete",
+      "status": "specifically-held",
       "title_raw": "DCXIII. Dat. die tr. Augusti 1767. Anno X. : : : . : xs Iudulgentia plenaria pro singulis chri- fidelibus visitantibus quamcumque ec- clesiam clericorum regularium .socie- tatis Jesu die 5. Februarii cujuscum- que anni. | Clemens PP. XIII. Universis christifidelibus praesentes",
       "volume_key": "volume-03",
       "work_id": "work.bullarium-continuatio.volume-03.line-00078926"
@@ -55658,33 +55692,67 @@
         "line": 89502,
         "raw": "Clemens PP. XIII"
       },
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-03.1838-rome-mul.ocr-d3ebdc3bb0fc",
+          "id": "bullarium-continuatio.volume-03.line-00089480",
+          "language": "la",
+          "pdf_sha256": "6a356ae19cb1d2834df0721b2298d23d1f4bfe0c73ecc26ab99aec21bb0191d1",
+          "physical_line_ranges": [
+            [
+              89480,
+              89609
+            ]
+          ],
+          "segment_id": "segment.bullarium-continuatio.volume-03.line-00089480.1838-bullarium-continuatio-volume-03-la.source-ocr",
+          "source_sha256": "d3ebdc3bb0fcd0d9578b80bc89d23718ef5358379f9e08c0acdb36c5954791d4"
+        },
+        "reason": "Whole reader withdrawn before installation: the coordinate source-order audit confirmed printed marginal summary or date text fused into body or heading lines (1 loci; first at leaf 473, LF 89483). Recorded in src/sources/papal-documents/continuation-source-order-audit.md.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "cc9257b13336248119137c1547d0e7a96894d057e15c031ff1f3336003637db3",
       "render_revision": "2026-10-26T18:35:44Z",
       "review": {
         "artifact_sha256": "d3ebdc3bb0fcd0d9578b80bc89d23718ef5358379f9e08c0acdb36c5954791d4",
-        "boundary_review": "Own DCXXXI heading 89480 after preceding letter and complete ending 89599 plus own separated margin 89602–89609, before furniture 89613 and next genuine DCXXXII 89625.",
-        "date": null,
-        "decision": "admit",
+        "decision": "hold",
         "document_id": "bullarium-continuatio.volume-03.line-00089480",
-        "genre": "apostolic-letter",
-        "language": "la",
         "physical_line_ranges": [
           [
             89480,
             89609
           ]
         ],
-        "printed_attribution": "Clemens PP. XIII.",
-        "reader_source_note": "Uncorrected OCR spelling and source abbreviations are retained.",
-        "reading_order_review": "Every substantive selected LF entry and 20 LF context read. Paragraph1 is continuous 89509–89564; paragraph 2 continues 89565–89599, with wholly separate own marginal blocks 89543–89547 and 89602–89609.",
-        "review_note": "Entire raw DCXXXI LF 89480–89612 plus 20 LF context read. Exact refinement ends 89609 after final own marginal summary, excluding following furniture. Own addressee/protocol 89502, two continuous paragraphs with own separated margins, dated blessing 89595–89599 complete the letter. No substantive inversion or same-LF main/margin fusion found.",
-        "reviewed_extent": "Entire independently printed circular including title, addressee, protocol, two paragraphs, blessing/date and final own marginal summary.",
-        "source_attribution_lines": [
-          89502,
-          89502
-        ],
-        "source_extent_review": "Complete uncorrected printed letter; source spelling and OCR defects remain literal. No missing substantive content or silently expanded abbreviation.",
+        "review_note": "Reader withdrawn by the coordinate source-order audit: native DjVu WORD geometry places marginal-summary or marginal-date WORDs on raw lines shared with body WORDs inside the selected extent (1 loci), and the rendered PDF prints that marginal text inside body or heading paragraphs. A complete ordered reader needs a coordinate reading-order derivative. Audit report SHA-256 e44dd97490bb8036d2e507cd0946a28b8aecf5fa9504975ec0fe6520e0cd6e02.",
         "title": "Epistola ad Archiepiscopos et Episcopos Poloniae de dissidentium conatibus"
       },
+      "review_history": [
+        {
+          "artifact_sha256": "d3ebdc3bb0fcd0d9578b80bc89d23718ef5358379f9e08c0acdb36c5954791d4",
+          "boundary_review": "Own DCXXXI heading 89480 after preceding letter and complete ending 89599 plus own separated margin 89602–89609, before furniture 89613 and next genuine DCXXXII 89625.",
+          "date": null,
+          "decision": "admit",
+          "document_id": "bullarium-continuatio.volume-03.line-00089480",
+          "genre": "apostolic-letter",
+          "language": "la",
+          "physical_line_ranges": [
+            [
+              89480,
+              89609
+            ]
+          ],
+          "printed_attribution": "Clemens PP. XIII.",
+          "reader_source_note": "Uncorrected OCR spelling and source abbreviations are retained.",
+          "reading_order_review": "Every substantive selected LF entry and 20 LF context read. Paragraph1 is continuous 89509–89564; paragraph 2 continues 89565–89599, with wholly separate own marginal blocks 89543–89547 and 89602–89609.",
+          "review_note": "Entire raw DCXXXI LF 89480–89612 plus 20 LF context read. Exact refinement ends 89609 after final own marginal summary, excluding following furniture. Own addressee/protocol 89502, two continuous paragraphs with own separated margins, dated blessing 89595–89599 complete the letter. No substantive inversion or same-LF main/margin fusion found.",
+          "reviewed_extent": "Entire independently printed circular including title, addressee, protocol, two paragraphs, blessing/date and final own marginal summary.",
+          "source_attribution_lines": [
+            89502,
+            89502
+          ],
+          "source_extent_review": "Complete uncorrected printed letter; source spelling and OCR defects remain literal. No missing substantive content or silently expanded abbreviation.",
+          "title": "Epistola ad Archiepiscopos et Episcopos Poloniae de dissidentium conatibus"
+        }
+      ],
       "scan_leaf_ids": [
         473
       ],
@@ -55692,7 +55760,7 @@
       "segment_path": "src/sources/works/bullarium-continuatio/volume-03-line-00089480/editions/1838-bullarium-continuatio-volume-03-la/segments/source-ocr.toml",
       "selection_start": 89480,
       "source_heading_raw": "DCXXXI. ",
-      "status": "admitted-complete",
+      "status": "specifically-held",
       "title_raw": "DCXXXI. Dat. die 12. Po 1767. mE 0l Catholicz Religionis res comendat cun- ctis in Polonize regno Archiepiscopis , et Episcopis contra dissidentium .co- nafus. Fide epistolam praecedentem , et adno. lationem in ea appositum. Venerabilibus fratribus Archiepiscopis ,",
       "volume_key": "volume-03",
       "work_id": "work.bullarium-continuatio.volume-03.line-00089480"
@@ -56636,33 +56704,67 @@
         ]
       ],
       "protocol": null,
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-03.1838-rome-mul.ocr-d3ebdc3bb0fc",
+          "id": "bullarium-continuatio.volume-03.line-00093972.part-01",
+          "language": "la",
+          "pdf_sha256": "1fd13eea907c365ca7e379efc029b82bdffde6ccf9f68c0cef5f8aabed9bb09a",
+          "physical_line_ranges": [
+            [
+              93972,
+              94052
+            ]
+          ],
+          "segment_id": "segment.bullarium-continuatio.volume-03.line-00093972.part-01.1838-bullarium-continuatio-volume-03-la.source-ocr",
+          "source_sha256": "d3ebdc3bb0fcd0d9578b80bc89d23718ef5358379f9e08c0acdb36c5954791d4"
+        },
+        "reason": "Whole reader withdrawn before installation: the coordinate source-order audit confirmed printed marginal summary or date text fused into body or heading lines (1 loci; first at leaf 499, LF 93975). Recorded in src/sources/papal-documents/continuation-source-order-audit.md.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "cc9257b13336248119137c1547d0e7a96894d057e15c031ff1f3336003637db3",
       "render_revision": "2026-10-26T18:35:44Z",
       "review": {
         "artifact_sha256": "d3ebdc3bb0fcd0d9578b80bc89d23718ef5358379f9e08c0acdb36c5954791d4",
-        "boundary_review": "Own heading 93972, title and cross-reference 93978–93985, addressee 93987–93989, protocol 93992 and complete date 94049–94052; next independent DCLI starts 94058.",
-        "date": null,
-        "decision": "admit",
+        "decision": "hold",
         "document_id": "bullarium-continuatio.volume-03.line-00093972.part-01",
-        "genre": "apostolic-letter",
-        "language": "la",
-        "parent_id": "bullarium-continuatio.volume-03.line-00093972",
         "physical_line_ranges": [
           [
             93972,
             94052
           ]
         ],
-        "printed_attribution": "Clemens PP. XIII.",
-        "reading_order_review": "Every selected LF entry and 20 LF context read. Main paragraph 93999–94052 continues across own runninghead 94018; no foreign body, substantive inversion or margin-word interleaving found.",
-        "review_note": "Full DCL Aliphano letter 93972–94052 and 20 LF context read. Complete independent single-paragraph admonition, explicit own addressee/protocol and complete blessing/date. All main text is sequential and no own historical margin fuses with it.",
-        "reviewed_extent": "Entire independent printed act with its own protocol, complete substantive body, conclusion, dating and separate own source notes.",
-        "source_attribution_lines": [
-          93992,
-          93992
-        ],
-        "source_extent_review": "Complete uncorrected printed papal letter; source spelling and OCR defects are preserved without conjectural normalization.",
+        "review_note": "Reader withdrawn by the coordinate source-order audit: native DjVu WORD geometry places marginal-summary or marginal-date WORDs on raw lines shared with body WORDs inside the selected extent (1 loci), and the rendered PDF prints that marginal text inside body or heading paragraphs. A complete ordered reader needs a coordinate reading-order derivative. Audit report SHA-256 e44dd97490bb8036d2e507cd0946a28b8aecf5fa9504975ec0fe6520e0cd6e02.",
         "title": "Epistola ad Episcopum Aliphanum de expulsione Societatis Jesu"
       },
+      "review_history": [
+        {
+          "artifact_sha256": "d3ebdc3bb0fcd0d9578b80bc89d23718ef5358379f9e08c0acdb36c5954791d4",
+          "boundary_review": "Own heading 93972, title and cross-reference 93978–93985, addressee 93987–93989, protocol 93992 and complete date 94049–94052; next independent DCLI starts 94058.",
+          "date": null,
+          "decision": "admit",
+          "document_id": "bullarium-continuatio.volume-03.line-00093972.part-01",
+          "genre": "apostolic-letter",
+          "language": "la",
+          "parent_id": "bullarium-continuatio.volume-03.line-00093972",
+          "physical_line_ranges": [
+            [
+              93972,
+              94052
+            ]
+          ],
+          "printed_attribution": "Clemens PP. XIII.",
+          "reading_order_review": "Every selected LF entry and 20 LF context read. Main paragraph 93999–94052 continues across own runninghead 94018; no foreign body, substantive inversion or margin-word interleaving found.",
+          "review_note": "Full DCL Aliphano letter 93972–94052 and 20 LF context read. Complete independent single-paragraph admonition, explicit own addressee/protocol and complete blessing/date. All main text is sequential and no own historical margin fuses with it.",
+          "reviewed_extent": "Entire independent printed act with its own protocol, complete substantive body, conclusion, dating and separate own source notes.",
+          "source_attribution_lines": [
+            93992,
+            93992
+          ],
+          "source_extent_review": "Complete uncorrected printed papal letter; source spelling and OCR defects are preserved without conjectural normalization.",
+          "title": "Epistola ad Episcopum Aliphanum de expulsione Societatis Jesu"
+        }
+      ],
       "scan_leaf_ids": [
         499,
         500,
@@ -56675,7 +56777,7 @@
       "segment_path": "src/sources/works/bullarium-continuatio/volume-03-line-00093972-part-01/editions/1838-bullarium-continuatio-volume-03-la/segments/source-ocr.toml",
       "selection_start": 93972,
       "source_heading_raw": "DCL. ",
-      "status": "admitted-complete",
+      "status": "specifically-held",
       "title_raw": "DCL. ",
       "volume_key": "volume-03",
       "work_id": "work.bullarium-continuatio.volume-03.line-00093972.part-01"
@@ -114633,33 +114735,67 @@
         ]
       ],
       "protocol": null,
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-06.1843-rome-mul.ocr-a91a386cae2d",
+          "id": "bullarium-continuatio.volume-06.line-00086386.part-01",
+          "language": "la",
+          "pdf_sha256": "46c69dcf066606d07a855e0d275aadbb7778faf9ab1ee7354ac7783cb8311a2d",
+          "physical_line_ranges": [
+            [
+              86371,
+              86439
+            ]
+          ],
+          "segment_id": "segment.bullarium-continuatio.volume-06.line-00086386.part-01.1843-bullarium-continuatio-volume-06-la.source-ocr",
+          "source_sha256": "a91a386cae2d2d37f287d305a9a487db4ea0e77574d6e14bdb38bd484c12e143"
+        },
+        "reason": "Whole reader withdrawn before installation: the coordinate source-order audit confirmed printed marginal summary or date text fused into body or heading lines (1 loci; first at leaf 497, LF 86376). Recorded in src/sources/papal-documents/continuation-source-order-audit.md.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "cc9257b13336248119137c1547d0e7a96894d057e15c031ff1f3336003637db3",
       "render_revision": "2026-10-26T18:35:44Z",
       "review": {
         "artifact_sha256": "a91a386cae2d2d37f287d305a9a487db4ea0e77574d6e14bdb38bd484c12e143",
-        "boundary_review": "Own heading, issuer protocol and substantive opening precede a continuous body, final provisions and own closing; the following act begins outside the selected range.",
-        "date": null,
-        "decision": "admit",
+        "decision": "hold",
         "document_id": "bullarium-continuatio.volume-06.line-00086386.part-01",
-        "genre": "breve",
-        "language": "la",
-        "parent_id": "bullarium-continuatio.volume-06.line-00086386",
         "physical_line_ranges": [
           [
             86371,
             86439
           ]
         ],
-        "printed_attribution": "Pios PP. VI.",
-        "reading_order_review": "The entire selected body was read in source LF order. No fused neighboring body, fused own margin/body words, displaced substantive clause or unresolved continuation was found.",
-        "review_note": "Entire CCCLXVIII indulgence grant and context read. Own title begins LF86376 before detector heading, exact Pius protocol LF86383, full grant and transumpt/dating LF86423–86439 are in coherent order. Separate own synopsis retained; uncorrected OCR remains qualified.",
-        "reviewed_extent": "Entire LF86371–86439 read with at least20 LF surrounding context.",
-        "source_attribution_lines": [
-          86383,
-          86383
-        ],
-        "source_extent_review": "Complete printed witness in the exact uncorrected OCR artifact. Conventional literal abbreviations and print synopsis are retained; no explicit absence of substantive material found. No print-image collation or historical authentication claimed.",
+        "review_note": "Reader withdrawn by the coordinate source-order audit: native DjVu WORD geometry places marginal-summary or marginal-date WORDs on raw lines shared with body WORDs inside the selected extent (1 loci), and the rendered PDF prints that marginal text inside body or heading paragraphs. A complete ordered reader needs a coordinate reading-order derivative. Audit report SHA-256 e44dd97490bb8036d2e507cd0946a28b8aecf5fa9504975ec0fe6520e0cd6e02.",
         "title": "Indulgentia pro visitantibus ecclesias occasione capituli generalis Canonicorum Sanctissimi Salvatoris"
       },
+      "review_history": [
+        {
+          "artifact_sha256": "a91a386cae2d2d37f287d305a9a487db4ea0e77574d6e14bdb38bd484c12e143",
+          "boundary_review": "Own heading, issuer protocol and substantive opening precede a continuous body, final provisions and own closing; the following act begins outside the selected range.",
+          "date": null,
+          "decision": "admit",
+          "document_id": "bullarium-continuatio.volume-06.line-00086386.part-01",
+          "genre": "breve",
+          "language": "la",
+          "parent_id": "bullarium-continuatio.volume-06.line-00086386",
+          "physical_line_ranges": [
+            [
+              86371,
+              86439
+            ]
+          ],
+          "printed_attribution": "Pios PP. VI.",
+          "reading_order_review": "The entire selected body was read in source LF order. No fused neighboring body, fused own margin/body words, displaced substantive clause or unresolved continuation was found.",
+          "review_note": "Entire CCCLXVIII indulgence grant and context read. Own title begins LF86376 before detector heading, exact Pius protocol LF86383, full grant and transumpt/dating LF86423–86439 are in coherent order. Separate own synopsis retained; uncorrected OCR remains qualified.",
+          "reviewed_extent": "Entire LF86371–86439 read with at least20 LF surrounding context.",
+          "source_attribution_lines": [
+            86383,
+            86383
+          ],
+          "source_extent_review": "Complete printed witness in the exact uncorrected OCR artifact. Conventional literal abbreviations and print synopsis are retained; no explicit absence of substantive material found. No print-image collation or historical authentication claimed.",
+          "title": "Indulgentia pro visitantibus ecclesias occasione capituli generalis Canonicorum Sanctissimi Salvatoris"
+        }
+      ],
       "scan_leaf_ids": [
         497,
         498
@@ -114668,7 +114804,7 @@
       "segment_path": "src/sources/works/bullarium-continuatio/volume-06-line-00086386-part-01/editions/1843-bullarium-continuatio-volume-06-la/segments/source-ocr.toml",
       "selection_start": 86386,
       "source_heading_raw": "Bat. die ",
-      "status": "admitted-complete",
+      "status": "specifically-held",
       "title_raw": "Bat. die ",
       "volume_key": "volume-06",
       "work_id": "work.bullarium-continuatio.volume-06.line-00086386.part-01"
@@ -308879,34 +309015,68 @@
         ]
       ],
       "protocol": null,
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-15.1853-rome-mul.ocr-98d02eba261d",
+          "id": "bullarium-continuatio.volume-15.line-00059791.part-03",
+          "language": "la",
+          "pdf_sha256": "3ad6ec532ee7e72d145a341208e34d6a3ad019fd27aa245cc647e2297e36544b",
+          "physical_line_ranges": [
+            [
+              59977,
+              60058
+            ]
+          ],
+          "segment_id": "segment.bullarium-continuatio.volume-15.line-00059791.part-03.1853-bullarium-continuatio-volume-15-la.source-ocr",
+          "source_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86"
+        },
+        "reason": "Whole reader withdrawn before installation: the coordinate source-order audit confirmed printed marginal summary or date text fused into body or heading lines (3 loci; first at leaf 417, LF 59979). Recorded in src/sources/papal-documents/continuation-source-order-audit.md.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "cc9257b13336248119137c1547d0e7a96894d057e15c031ff1f3336003637db3",
       "render_revision": "2026-10-26T18:35:44Z",
       "review": {
         "artifact_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86",
-        "boundary_review": "Independent printed title and issuer at LF59991–59991; complete substantive body and printed dating/subscription retained; adjacent matter excluded. Complete Cathedralem ecclesiam independently addressed to deSalamon/SaintFlour: entire1817circumscription/92-seesandfinancialimpossibilityhistory,23Augustallocutionreference, grantinterimadministrationwithinoldlimitsandmetropolitanrights, papalblessingand29May1820date. Separateidentifiedrecipient/diocese/body,notduplicateoftheotherlettersorpreviousToulouseletter. Nextsectionheading60073–60077excluded.",
-        "date": null,
-        "decision": "admit",
+        "decision": "hold",
         "document_id": "bullarium-continuatio.volume-15.line-00059791.part-03",
-        "genre": "apostolic-letter",
-        "language": "la",
-        "parent_id": "bullarium-continuatio.volume-15.line-00059791",
         "physical_line_ranges": [
           [
             59977,
             60058
           ]
         ],
-        "printed_attribution": "Pios  pp.  >11",
-        "reader_source_note": "Uncorrected historical OCR; marginal labels and conventional chancery abbreviations remain literal.",
-        "reading_order_review": "Leaf417L/R, quoted1817norms60005resumeclearquae60008thenwholeoperativeinterimgrant/blessing/date. ExactXMLnormalcolumns,nofusedbody.",
-        "review_note": "Exact LF-based review of source SHA 98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86; whole proposed extent and 20 literal LF on each side inspected. Complete Cathedralem ecclesiam independently addressed to deSalamon/SaintFlour: entire1817circumscription/92-seesandfinancialimpossibilityhistory,23Augustallocutionreference, grantinterimadministrationwithinoldlimitsandmetropolitanrights, papalblessingand29May1820date. Separateidentifiedrecipient/diocese/body,notduplicateoftheotherlettersorpreviousToulouseletter. Nextsectionheading60073–60077excluded. Exact XML↔TXT whitespace-token correspondence proved over all 452300 tokens; per-line XML boxes inspected for this act. Leaf417L/R, quoted1817norms60005resumeclearquae60008thenwholeoperativeinterimgrant/blessing/date. ExactXMLnormalcolumns,nofusedbody.",
-        "reviewed_extent": "Complete proposed and refined act extent LF59791–60077; literal context LF59771–60097 fully read.",
-        "source_attribution_lines": [
-          59991,
-          59991
-        ],
-        "source_extent_review": "All substantive paragraphs, marginal labels and historical notes present within these bounds were retained literally. No omitted body/annex/subscription is asserted; conventional chancery abbreviations and OCR damage remain unexpanded. Complete Cathedralem ecclesiam independently addressed to deSalamon/SaintFlour: entire1817circumscription/92-seesandfinancialimpossibilityhistory,23Augustallocutionreference, grantinterimadministrationwithinoldlimitsandmetropolitanrights, papalblessingand29May1820date. Separateidentifiedrecipient/diocese/body,notduplicateoftheotherlettersorpreviousToulouseletter. Nextsectionheading60073–60077excluded.",
+        "review_note": "Reader withdrawn by the coordinate source-order audit: native DjVu WORD geometry places marginal-summary or marginal-date WORDs on raw lines shared with body WORDs inside the selected extent (3 loci), and the rendered PDF prints that marginal text inside body or heading paragraphs. A complete ordered reader needs a coordinate reading-order derivative. Audit report SHA-256 e44dd97490bb8036d2e507cd0946a28b8aecf5fa9504975ec0fe6520e0cd6e02.",
         "title": "Administratio temporanea ecclesiae sancti Flori Ludovico Syphreo Josepho de Salamon concredita"
       },
+      "review_history": [
+        {
+          "artifact_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86",
+          "boundary_review": "Independent printed title and issuer at LF59991–59991; complete substantive body and printed dating/subscription retained; adjacent matter excluded. Complete Cathedralem ecclesiam independently addressed to deSalamon/SaintFlour: entire1817circumscription/92-seesandfinancialimpossibilityhistory,23Augustallocutionreference, grantinterimadministrationwithinoldlimitsandmetropolitanrights, papalblessingand29May1820date. Separateidentifiedrecipient/diocese/body,notduplicateoftheotherlettersorpreviousToulouseletter. Nextsectionheading60073–60077excluded.",
+          "date": null,
+          "decision": "admit",
+          "document_id": "bullarium-continuatio.volume-15.line-00059791.part-03",
+          "genre": "apostolic-letter",
+          "language": "la",
+          "parent_id": "bullarium-continuatio.volume-15.line-00059791",
+          "physical_line_ranges": [
+            [
+              59977,
+              60058
+            ]
+          ],
+          "printed_attribution": "Pios  pp.  >11",
+          "reader_source_note": "Uncorrected historical OCR; marginal labels and conventional chancery abbreviations remain literal.",
+          "reading_order_review": "Leaf417L/R, quoted1817norms60005resumeclearquae60008thenwholeoperativeinterimgrant/blessing/date. ExactXMLnormalcolumns,nofusedbody.",
+          "review_note": "Exact LF-based review of source SHA 98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86; whole proposed extent and 20 literal LF on each side inspected. Complete Cathedralem ecclesiam independently addressed to deSalamon/SaintFlour: entire1817circumscription/92-seesandfinancialimpossibilityhistory,23Augustallocutionreference, grantinterimadministrationwithinoldlimitsandmetropolitanrights, papalblessingand29May1820date. Separateidentifiedrecipient/diocese/body,notduplicateoftheotherlettersorpreviousToulouseletter. Nextsectionheading60073–60077excluded. Exact XML↔TXT whitespace-token correspondence proved over all 452300 tokens; per-line XML boxes inspected for this act. Leaf417L/R, quoted1817norms60005resumeclearquae60008thenwholeoperativeinterimgrant/blessing/date. ExactXMLnormalcolumns,nofusedbody.",
+          "reviewed_extent": "Complete proposed and refined act extent LF59791–60077; literal context LF59771–60097 fully read.",
+          "source_attribution_lines": [
+            59991,
+            59991
+          ],
+          "source_extent_review": "All substantive paragraphs, marginal labels and historical notes present within these bounds were retained literally. No omitted body/annex/subscription is asserted; conventional chancery abbreviations and OCR damage remain unexpanded. Complete Cathedralem ecclesiam independently addressed to deSalamon/SaintFlour: entire1817circumscription/92-seesandfinancialimpossibilityhistory,23Augustallocutionreference, grantinterimadministrationwithinoldlimitsandmetropolitanrights, papalblessingand29May1820date. Separateidentifiedrecipient/diocese/body,notduplicateoftheotherlettersorpreviousToulouseletter. Nextsectionheading60073–60077excluded.",
+          "title": "Administratio temporanea ecclesiae sancti Flori Ludovico Syphreo Josepho de Salamon concredita"
+        }
+      ],
       "scan_leaf_ids": [
         416,
         417,
@@ -308916,7 +309086,7 @@
       "segment_path": "src/sources/works/bullarium-continuatio/volume-15-line-00059791-part-03/editions/1853-bullarium-continuatio-volume-15-la/segments/source-ocr.toml",
       "selection_start": 59791,
       "source_heading_raw": "CMLXX1X. ",
-      "status": "admitted-complete",
+      "status": "specifically-held",
       "title_raw": "CMLXX1X. ",
       "volume_key": "volume-15",
       "work_id": "work.bullarium-continuatio.volume-15.line-00059791.part-03"
@@ -309818,34 +309988,68 @@
         ]
       ],
       "protocol": null,
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-15.1853-rome-mul.ocr-98d02eba261d",
+          "id": "bullarium-continuatio.volume-15.line-00065860.part-02",
+          "language": "la",
+          "pdf_sha256": "9fe0521876d8707edfc9a38184c7934ab5245e4ade99049585e515ac6bf274b1",
+          "physical_line_ranges": [
+            [
+              66073,
+              66176
+            ]
+          ],
+          "segment_id": "segment.bullarium-continuatio.volume-15.line-00065860.part-02.1853-bullarium-continuatio-volume-15-la.source-ocr",
+          "source_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86"
+        },
+        "reason": "Whole reader withdrawn before installation: the coordinate source-order audit confirmed printed marginal summary or date text fused into body or heading lines (3 loci; first at leaf 460, LF 66076). Recorded in src/sources/papal-documents/continuation-source-order-audit.md.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "cc9257b13336248119137c1547d0e7a96894d057e15c031ff1f3336003637db3",
       "render_revision": "2026-10-26T18:35:44Z",
       "review": {
         "artifact_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86",
-        "boundary_review": "Independent printed title and issuer at LF66080–66080; complete substantive body and printed dating/subscription retained; adjacent matter excluded. Complete Laborantibus Nobis §§1–3andfinalderogation/perpetuity: whole3000-memberpetition, admission/death/ChristmasAssumptionJosephplenaries, sevenyears/quarantinesforenumeratedotherfeasts,and100daysforeachprayer/piouswork,allconditions/28August1821date66172–66176. Refinedthroughfalsem66140topreservegrantandclosing;postclosingbleed66178ffexcluded.",
-        "date": null,
-        "decision": "admit",
+        "decision": "hold",
         "document_id": "bullarium-continuatio.volume-15.line-00065860.part-02",
-        "genre": "apostolic-letter",
-        "language": "la",
-        "parent_id": "bullarium-continuatio.volume-15.line-00065860",
         "physical_line_ranges": [
           [
             66073,
             66176
           ]
         ],
-        "printed_attribution": "Pius  PE  VII.",
-        "reader_source_note": "Uncorrected historical OCR; marginal labels and conventional chancery abbreviations remain literal.",
-        "reading_order_review": "Leaf460L/R. SanctaeMatrisEcclesiae66136continuesexaltatione66142acrossfalsem/pagefooter; fullremainingindulgenceconditions/dateordinarycolumnorder.",
-        "review_note": "Exact LF-based review of source SHA 98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86; whole proposed extent and 20 literal LF on each side inspected. Complete Laborantibus Nobis §§1–3andfinalderogation/perpetuity: whole3000-memberpetition, admission/death/ChristmasAssumptionJosephplenaries, sevenyears/quarantinesforenumeratedotherfeasts,and100daysforeachprayer/piouswork,allconditions/28August1821date66172–66176. Refinedthroughfalsem66140topreservegrantandclosing;postclosingbleed66178ffexcluded. Exact XML↔TXT whitespace-token correspondence proved over all 452300 tokens; per-line XML boxes inspected for this act. Leaf460L/R. SanctaeMatrisEcclesiae66136continuesexaltatione66142acrossfalsem/pagefooter; fullremainingindulgenceconditions/dateordinarycolumnorder.",
-        "reviewed_extent": "Complete proposed and refined act extent LF65860–66137; literal context LF65840–66196 fully read.",
-        "source_attribution_lines": [
-          66080,
-          66080
-        ],
-        "source_extent_review": "All substantive paragraphs, marginal labels and historical notes present within these bounds were retained literally. No omitted body/annex/subscription is asserted; conventional chancery abbreviations and OCR damage remain unexpanded. Complete Laborantibus Nobis §§1–3andfinalderogation/perpetuity: whole3000-memberpetition, admission/death/ChristmasAssumptionJosephplenaries, sevenyears/quarantinesforenumeratedotherfeasts,and100daysforeachprayer/piouswork,allconditions/28August1821date66172–66176. Refinedthroughfalsem66140topreservegrantandclosing;postclosingbleed66178ffexcluded.",
+        "review_note": "Reader withdrawn by the coordinate source-order audit: native DjVu WORD geometry places marginal-summary or marginal-date WORDs on raw lines shared with body WORDs inside the selected extent (3 loci), and the rendered PDF prints that marginal text inside body or heading paragraphs. A complete ordered reader needs a coordinate reading-order derivative. Audit report SHA-256 e44dd97490bb8036d2e507cd0946a28b8aecf5fa9504975ec0fe6520e0cd6e02.",
         "title": "Concessio indulgentiarum societati sacrae Familiae Lugdunensi"
       },
+      "review_history": [
+        {
+          "artifact_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86",
+          "boundary_review": "Independent printed title and issuer at LF66080–66080; complete substantive body and printed dating/subscription retained; adjacent matter excluded. Complete Laborantibus Nobis §§1–3andfinalderogation/perpetuity: whole3000-memberpetition, admission/death/ChristmasAssumptionJosephplenaries, sevenyears/quarantinesforenumeratedotherfeasts,and100daysforeachprayer/piouswork,allconditions/28August1821date66172–66176. Refinedthroughfalsem66140topreservegrantandclosing;postclosingbleed66178ffexcluded.",
+          "date": null,
+          "decision": "admit",
+          "document_id": "bullarium-continuatio.volume-15.line-00065860.part-02",
+          "genre": "apostolic-letter",
+          "language": "la",
+          "parent_id": "bullarium-continuatio.volume-15.line-00065860",
+          "physical_line_ranges": [
+            [
+              66073,
+              66176
+            ]
+          ],
+          "printed_attribution": "Pius  PE  VII.",
+          "reader_source_note": "Uncorrected historical OCR; marginal labels and conventional chancery abbreviations remain literal.",
+          "reading_order_review": "Leaf460L/R. SanctaeMatrisEcclesiae66136continuesexaltatione66142acrossfalsem/pagefooter; fullremainingindulgenceconditions/dateordinarycolumnorder.",
+          "review_note": "Exact LF-based review of source SHA 98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86; whole proposed extent and 20 literal LF on each side inspected. Complete Laborantibus Nobis §§1–3andfinalderogation/perpetuity: whole3000-memberpetition, admission/death/ChristmasAssumptionJosephplenaries, sevenyears/quarantinesforenumeratedotherfeasts,and100daysforeachprayer/piouswork,allconditions/28August1821date66172–66176. Refinedthroughfalsem66140topreservegrantandclosing;postclosingbleed66178ffexcluded. Exact XML↔TXT whitespace-token correspondence proved over all 452300 tokens; per-line XML boxes inspected for this act. Leaf460L/R. SanctaeMatrisEcclesiae66136continuesexaltatione66142acrossfalsem/pagefooter; fullremainingindulgenceconditions/dateordinarycolumnorder.",
+          "reviewed_extent": "Complete proposed and refined act extent LF65860–66137; literal context LF65840–66196 fully read.",
+          "source_attribution_lines": [
+            66080,
+            66080
+          ],
+          "source_extent_review": "All substantive paragraphs, marginal labels and historical notes present within these bounds were retained literally. No omitted body/annex/subscription is asserted; conventional chancery abbreviations and OCR damage remain unexpanded. Complete Laborantibus Nobis §§1–3andfinalderogation/perpetuity: whole3000-memberpetition, admission/death/ChristmasAssumptionJosephplenaries, sevenyears/quarantinesforenumeratedotherfeasts,and100daysforeachprayer/piouswork,allconditions/28August1821date66172–66176. Refinedthroughfalsem66140topreservegrantandclosing;postclosingbleed66178ffexcluded.",
+          "title": "Concessio indulgentiarum societati sacrae Familiae Lugdunensi"
+        }
+      ],
       "scan_leaf_ids": [
         458,
         459,
@@ -309855,7 +310059,7 @@
       "segment_path": "src/sources/works/bullarium-continuatio/volume-15-line-00065860-part-02/editions/1853-bullarium-continuatio-volume-15-la/segments/source-ocr.toml",
       "selection_start": 65860,
       "source_heading_raw": "- „1  CMXCVI.  ^ ",
-      "status": "admitted-complete",
+      "status": "specifically-held",
       "title_raw": "- „1  CMXCVI.  ^ ",
       "volume_key": "volume-15",
       "work_id": "work.bullarium-continuatio.volume-15.line-00065860.part-02"
@@ -310257,34 +310461,68 @@
         ]
       ],
       "protocol": null,
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-15.1853-rome-mul.ocr-98d02eba261d",
+          "id": "bullarium-continuatio.volume-15.line-00066523.part-01",
+          "language": "la",
+          "pdf_sha256": "746faac3b0f8cf8763f533a511345e3912c7b8ac5d3c0aae2c20f9fd2722641e",
+          "physical_line_ranges": [
+            [
+              66523,
+              66576
+            ]
+          ],
+          "segment_id": "segment.bullarium-continuatio.volume-15.line-00066523.part-01.1853-bullarium-continuatio-volume-15-la.source-ocr",
+          "source_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86"
+        },
+        "reason": "Whole reader withdrawn before installation: the coordinate source-order audit confirmed printed marginal summary or date text fused into body or heading lines (1 loci; first at leaf 463, LF 66542). Recorded in src/sources/papal-documents/continuation-source-order-audit.md.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "cc9257b13336248119137c1547d0e7a96894d057e15c031ff1f3336003637db3",
       "render_revision": "2026-10-26T18:35:44Z",
       "review": {
         "artifact_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86",
-        "boundary_review": "Independent printed title and issuer at LF66535–66535; complete substantive body and printed dating/subscription retained; adjacent matter excluded. Complete separatelyaddressed4September1821brief: TalleyrandParisrecipient; whole1817Troyes→Sensassignment/1819suspensionhistoryandnewSensarchbishoppossessionnotice, fullmetropolitanrelease/blessing/date66572–66576. Allsubstantivecommand/conditions/closingretained; samehistoricalcircumstancesdonotmaketheseindependentrecipientlettersduplicates.",
-        "date": null,
-        "decision": "admit",
+        "decision": "hold",
         "document_id": "bullarium-continuatio.volume-15.line-00066523.part-01",
-        "genre": "apostolic-letter",
-        "language": "la",
-        "parent_id": "bullarium-continuatio.volume-15.line-00066523",
         "physical_line_ranges": [
           [
             66523,
             66576
           ]
         ],
-        "printed_attribution": "Pius  PP.  VII.",
-        "reader_source_note": "Uncorrected historical OCR; marginal labels and conventional chancery abbreviations remain literal.",
-        "reading_order_review": "ExactXMLleaves463–465normalL/R. Eachtitle/protocol/proem/operativecommand/blessing/datecompleteinorder; onlypostclosingbleed/marginalnext-datefurnitureexcluded. No fusedbody.",
-        "review_note": "Exact LF-based review of source SHA 98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86; whole proposed extent and 20 literal LF on each side inspected. Complete separatelyaddressed4September1821brief: TalleyrandParisrecipient; whole1817Troyes→Sensassignment/1819suspensionhistoryandnewSensarchbishoppossessionnotice, fullmetropolitanrelease/blessing/date66572–66576. Allsubstantivecommand/conditions/closingretained; samehistoricalcircumstancesdonotmaketheseindependentrecipientlettersduplicates. Exact XML↔TXT whitespace-token correspondence proved over all 452300 tokens; per-line XML boxes inspected for this act. ExactXMLleaves463–465normalL/R. Eachtitle/protocol/proem/operativecommand/blessing/datecompleteinorder; onlypostclosingbleed/marginalnext-datefurnitureexcluded. No fusedbody.",
-        "reviewed_extent": "Complete proposed and refined act extent LF66523–66916; literal context LF66503–66936 fully read.",
-        "source_attribution_lines": [
-          66535,
-          66535
-        ],
-        "source_extent_review": "All substantive paragraphs, marginal labels and historical notes present within these bounds were retained literally. No omitted body/annex/subscription is asserted; conventional chancery abbreviations and OCR damage remain unexpanded. Complete separatelyaddressed4September1821brief: TalleyrandParisrecipient; whole1817Troyes→Sensassignment/1819suspensionhistoryandnewSensarchbishoppossessionnotice, fullmetropolitanrelease/blessing/date66572–66576. Allsubstantivecommand/conditions/closingretained; samehistoricalcircumstancesdonotmaketheseindependentrecipientlettersduplicates.",
+        "review_note": "Reader withdrawn by the coordinate source-order audit: native DjVu WORD geometry places marginal-summary or marginal-date WORDs on raw lines shared with body WORDs inside the selected extent (1 loci), and the rendered PDF prints that marginal text inside body or heading paragraphs. A complete ordered reader needs a coordinate reading-order derivative. Audit report SHA-256 e44dd97490bb8036d2e507cd0946a28b8aecf5fa9504975ec0fe6520e0cd6e02.",
         "title": "Exemptio ecclesiae Trecensis a iure metropolitico Parisiensi"
       },
+      "review_history": [
+        {
+          "artifact_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86",
+          "boundary_review": "Independent printed title and issuer at LF66535–66535; complete substantive body and printed dating/subscription retained; adjacent matter excluded. Complete separatelyaddressed4September1821brief: TalleyrandParisrecipient; whole1817Troyes→Sensassignment/1819suspensionhistoryandnewSensarchbishoppossessionnotice, fullmetropolitanrelease/blessing/date66572–66576. Allsubstantivecommand/conditions/closingretained; samehistoricalcircumstancesdonotmaketheseindependentrecipientlettersduplicates.",
+          "date": null,
+          "decision": "admit",
+          "document_id": "bullarium-continuatio.volume-15.line-00066523.part-01",
+          "genre": "apostolic-letter",
+          "language": "la",
+          "parent_id": "bullarium-continuatio.volume-15.line-00066523",
+          "physical_line_ranges": [
+            [
+              66523,
+              66576
+            ]
+          ],
+          "printed_attribution": "Pius  PP.  VII.",
+          "reader_source_note": "Uncorrected historical OCR; marginal labels and conventional chancery abbreviations remain literal.",
+          "reading_order_review": "ExactXMLleaves463–465normalL/R. Eachtitle/protocol/proem/operativecommand/blessing/datecompleteinorder; onlypostclosingbleed/marginalnext-datefurnitureexcluded. No fusedbody.",
+          "review_note": "Exact LF-based review of source SHA 98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86; whole proposed extent and 20 literal LF on each side inspected. Complete separatelyaddressed4September1821brief: TalleyrandParisrecipient; whole1817Troyes→Sensassignment/1819suspensionhistoryandnewSensarchbishoppossessionnotice, fullmetropolitanrelease/blessing/date66572–66576. Allsubstantivecommand/conditions/closingretained; samehistoricalcircumstancesdonotmaketheseindependentrecipientlettersduplicates. Exact XML↔TXT whitespace-token correspondence proved over all 452300 tokens; per-line XML boxes inspected for this act. ExactXMLleaves463–465normalL/R. Eachtitle/protocol/proem/operativecommand/blessing/datecompleteinorder; onlypostclosingbleed/marginalnext-datefurnitureexcluded. No fusedbody.",
+          "reviewed_extent": "Complete proposed and refined act extent LF66523–66916; literal context LF66503–66936 fully read.",
+          "source_attribution_lines": [
+            66535,
+            66535
+          ],
+          "source_extent_review": "All substantive paragraphs, marginal labels and historical notes present within these bounds were retained literally. No omitted body/annex/subscription is asserted; conventional chancery abbreviations and OCR damage remain unexpanded. Complete separatelyaddressed4September1821brief: TalleyrandParisrecipient; whole1817Troyes→Sensassignment/1819suspensionhistoryandnewSensarchbishoppossessionnotice, fullmetropolitanrelease/blessing/date66572–66576. Allsubstantivecommand/conditions/closingretained; samehistoricalcircumstancesdonotmaketheseindependentrecipientlettersduplicates.",
+          "title": "Exemptio ecclesiae Trecensis a iure metropolitico Parisiensi"
+        }
+      ],
       "scan_leaf_ids": [
         463,
         464,
@@ -310294,7 +310532,7 @@
       "segment_path": "src/sources/works/bullarium-continuatio/volume-15-line-00066523-part-01/editions/1853-bullarium-continuatio-volume-15-la/segments/source-ocr.toml",
       "selection_start": 66523,
       "source_heading_raw": "MI. ",
-      "status": "admitted-complete",
+      "status": "specifically-held",
       "title_raw": "MI. ",
       "volume_key": "volume-15",
       "work_id": "work.bullarium-continuatio.volume-15.line-00066523.part-01"
@@ -311493,34 +311731,68 @@
         ]
       ],
       "protocol": null,
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-15.1853-rome-mul.ocr-98d02eba261d",
+          "id": "bullarium-continuatio.volume-15.line-00068796.part-03",
+          "language": "la",
+          "pdf_sha256": "4783757d5789e4f61b17870ab8e458dee6c92bd860ae3930d92d3e31a18af975",
+          "physical_line_ranges": [
+            [
+              69280,
+              69348
+            ]
+          ],
+          "segment_id": "segment.bullarium-continuatio.volume-15.line-00068796.part-03.1853-bullarium-continuatio-volume-15-la.source-ocr",
+          "source_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86"
+        },
+        "reason": "Whole reader withdrawn before installation: the coordinate source-order audit confirmed printed marginal summary or date text fused into body or heading lines (2 loci; first at leaf 483, LF 69282). Recorded in src/sources/papal-documents/continuation-source-order-audit.md.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "cc9257b13336248119137c1547d0e7a96894d057e15c031ff1f3336003637db3",
       "render_revision": "2026-10-26T18:35:44Z",
       "review": {
         "artifact_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86",
-        "boundary_review": "Independent printed title and issuer at LF69290–69290; complete substantive body and printed dating/subscription retained; adjacent matter excluded. Complete Nostris apostolicis literis toToulouseAnneAntoineJules: full1817Narbonne/1819suspension history, explicit Montpellier transfer to Avignon and Toulouse jurisdiction cessation effective upon new Avignon archbishop possession, blessing and24September1821date69344–69348. Printed rubric suggests Toulouse subjection, but operative body clearly releases Toulouse in favor of Avignon; title follows body.",
-        "date": null,
-        "decision": "admit",
+        "decision": "hold",
         "document_id": "bullarium-continuatio.volume-15.line-00068796.part-03",
-        "genre": "apostolic-letter",
-        "language": "la",
-        "parent_id": "bullarium-continuatio.volume-15.line-00068796",
         "physical_line_ranges": [
           [
             69280,
             69348
           ]
         ],
-        "printed_attribution": "Pius  PP.  YU.",
-        "reader_source_note": "Uncorrected historical OCR; marginal labels and conventional chancery abbreviations remain literal.",
-        "reading_order_review": "Leaf483L/R. One complete notice with all effective condition/blessing/date in normal order; no body fusion.",
-        "review_note": "Exact LF-based review of source SHA 98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86; whole proposed extent and 20 literal LF on each side inspected. Complete Nostris apostolicis literis toToulouseAnneAntoineJules: full1817Narbonne/1819suspension history, explicit Montpellier transfer to Avignon and Toulouse jurisdiction cessation effective upon new Avignon archbishop possession, blessing and24September1821date69344–69348. Printed rubric suggests Toulouse subjection, but operative body clearly releases Toulouse in favor of Avignon; title follows body. Exact XML↔TXT whitespace-token correspondence proved over all 452300 tokens; per-line XML boxes inspected for this act. Leaf483L/R. One complete notice with all effective condition/blessing/date in normal order; no body fusion.",
-        "reviewed_extent": "Complete proposed and refined act extent LF68796–69348; literal context LF68776–69368 fully read.",
-        "source_attribution_lines": [
-          69290,
-          69290
-        ],
-        "source_extent_review": "All substantive paragraphs, marginal labels and historical notes present within these bounds were retained literally. No omitted body/annex/subscription is asserted; conventional chancery abbreviations and OCR damage remain unexpanded. Complete Nostris apostolicis literis toToulouseAnneAntoineJules: full1817Narbonne/1819suspension history, explicit Montpellier transfer to Avignon and Toulouse jurisdiction cessation effective upon new Avignon archbishop possession, blessing and24September1821date69344–69348. Printed rubric suggests Toulouse subjection, but operative body clearly releases Toulouse in favor of Avignon; title follows body.",
+        "review_note": "Reader withdrawn by the coordinate source-order audit: native DjVu WORD geometry places marginal-summary or marginal-date WORDs on raw lines shared with body WORDs inside the selected extent (2 loci), and the rendered PDF prints that marginal text inside body or heading paragraphs. A complete ordered reader needs a coordinate reading-order derivative. Audit report SHA-256 e44dd97490bb8036d2e507cd0946a28b8aecf5fa9504975ec0fe6520e0cd6e02.",
         "title": "Cessatio iuris metropolitici Tolosani super ecclesia Montispessulani"
       },
+      "review_history": [
+        {
+          "artifact_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86",
+          "boundary_review": "Independent printed title and issuer at LF69290–69290; complete substantive body and printed dating/subscription retained; adjacent matter excluded. Complete Nostris apostolicis literis toToulouseAnneAntoineJules: full1817Narbonne/1819suspension history, explicit Montpellier transfer to Avignon and Toulouse jurisdiction cessation effective upon new Avignon archbishop possession, blessing and24September1821date69344–69348. Printed rubric suggests Toulouse subjection, but operative body clearly releases Toulouse in favor of Avignon; title follows body.",
+          "date": null,
+          "decision": "admit",
+          "document_id": "bullarium-continuatio.volume-15.line-00068796.part-03",
+          "genre": "apostolic-letter",
+          "language": "la",
+          "parent_id": "bullarium-continuatio.volume-15.line-00068796",
+          "physical_line_ranges": [
+            [
+              69280,
+              69348
+            ]
+          ],
+          "printed_attribution": "Pius  PP.  YU.",
+          "reader_source_note": "Uncorrected historical OCR; marginal labels and conventional chancery abbreviations remain literal.",
+          "reading_order_review": "Leaf483L/R. One complete notice with all effective condition/blessing/date in normal order; no body fusion.",
+          "review_note": "Exact LF-based review of source SHA 98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86; whole proposed extent and 20 literal LF on each side inspected. Complete Nostris apostolicis literis toToulouseAnneAntoineJules: full1817Narbonne/1819suspension history, explicit Montpellier transfer to Avignon and Toulouse jurisdiction cessation effective upon new Avignon archbishop possession, blessing and24September1821date69344–69348. Printed rubric suggests Toulouse subjection, but operative body clearly releases Toulouse in favor of Avignon; title follows body. Exact XML↔TXT whitespace-token correspondence proved over all 452300 tokens; per-line XML boxes inspected for this act. Leaf483L/R. One complete notice with all effective condition/blessing/date in normal order; no body fusion.",
+          "reviewed_extent": "Complete proposed and refined act extent LF68796–69348; literal context LF68776–69368 fully read.",
+          "source_attribution_lines": [
+            69290,
+            69290
+          ],
+          "source_extent_review": "All substantive paragraphs, marginal labels and historical notes present within these bounds were retained literally. No omitted body/annex/subscription is asserted; conventional chancery abbreviations and OCR damage remain unexpanded. Complete Nostris apostolicis literis toToulouseAnneAntoineJules: full1817Narbonne/1819suspension history, explicit Montpellier transfer to Avignon and Toulouse jurisdiction cessation effective upon new Avignon archbishop possession, blessing and24September1821date69344–69348. Printed rubric suggests Toulouse subjection, but operative body clearly releases Toulouse in favor of Avignon; title follows body.",
+          "title": "Cessatio iuris metropolitici Tolosani super ecclesia Montispessulani"
+        }
+      ],
       "scan_leaf_ids": [
         479,
         480,
@@ -311532,7 +311804,7 @@
       "segment_path": "src/sources/works/bullarium-continuatio/volume-15-line-00068796-part-03/editions/1853-bullarium-continuatio-volume-15-la/segments/source-ocr.toml",
       "selection_start": 68796,
       "source_heading_raw": "Mxvni. ",
-      "status": "admitted-complete",
+      "status": "specifically-held",
       "title_raw": "Mxvni. ",
       "volume_key": "volume-15",
       "work_id": "work.bullarium-continuatio.volume-15.line-00068796.part-03"
@@ -311789,34 +312061,68 @@
         ]
       ],
       "protocol": null,
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-15.1853-rome-mul.ocr-98d02eba261d",
+          "id": "bullarium-continuatio.volume-15.line-00069498.part-01",
+          "language": "la",
+          "pdf_sha256": "6fa0719a9f789bb2aabc21b6e774d7f2b6db5df280898e98e91e265d17a1bd1b",
+          "physical_line_ranges": [
+            [
+              69498,
+              69563
+            ]
+          ],
+          "segment_id": "segment.bullarium-continuatio.volume-15.line-00069498.part-01.1853-bullarium-continuatio-volume-15-la.source-ocr",
+          "source_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86"
+        },
+        "reason": "Whole reader withdrawn before installation: the coordinate source-order audit confirmed printed marginal summary or date text fused into body or heading lines (3 loci; first at leaf 484, LF 69500). Recorded in src/sources/papal-documents/continuation-source-order-audit.md.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "cc9257b13336248119137c1547d0e7a96894d057e15c031ff1f3336003637db3",
       "render_revision": "2026-10-26T18:35:44Z",
       "review": {
         "artifact_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86",
-        "boundary_review": "Independent printed title and issuer at LF69509–69509; complete substantive body and printed dating/subscription retained; adjacent matter excluded. Complete Etsi per Nostras toValenceMarieJosephAntoineLaurent: entire1817Vienne/1819Lyoninterimhistory, Avignonmetropolitansubjectioneffectiveuponnewarchbishopspossessionwithderogation, blessingand24September1821date69559–69563. DifferentrecipientfrompriorLyoncessationpublicbrief.",
-        "date": null,
-        "decision": "admit",
+        "decision": "hold",
         "document_id": "bullarium-continuatio.volume-15.line-00069498.part-01",
-        "genre": "apostolic-letter",
-        "language": "la",
-        "parent_id": "bullarium-continuatio.volume-15.line-00069498",
         "physical_line_ranges": [
           [
             69498,
             69563
           ]
         ],
-        "printed_attribution": "Pius  PP.  VII.",
-        "reader_source_note": "Uncorrected historical OCR; marginal labels and conventional chancery abbreviations remain literal.",
-        "reading_order_review": "Leaf484R. Completeparagraph/operativecondition/blessing/dateordered. ExactXMLnormalcolumns.",
-        "review_note": "Exact LF-based review of source SHA 98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86; whole proposed extent and 20 literal LF on each side inspected. Complete Etsi per Nostras toValenceMarieJosephAntoineLaurent: entire1817Vienne/1819Lyoninterimhistory, Avignonmetropolitansubjectioneffectiveuponnewarchbishopspossessionwithderogation, blessingand24September1821date69559–69563. DifferentrecipientfrompriorLyoncessationpublicbrief. Exact XML↔TXT whitespace-token correspondence proved over all 452300 tokens; per-line XML boxes inspected for this act. Leaf484R. Completeparagraph/operativecondition/blessing/dateordered. ExactXMLnormalcolumns.",
-        "reviewed_extent": "Complete proposed and refined act extent LF69498–69682; literal context LF69478–69702 fully read.",
-        "source_attribution_lines": [
-          69509,
-          69509
-        ],
-        "source_extent_review": "All substantive paragraphs, marginal labels and historical notes present within these bounds were retained literally. No omitted body/annex/subscription is asserted; conventional chancery abbreviations and OCR damage remain unexpanded. Complete Etsi per Nostras toValenceMarieJosephAntoineLaurent: entire1817Vienne/1819Lyoninterimhistory, Avignonmetropolitansubjectioneffectiveuponnewarchbishopspossessionwithderogation, blessingand24September1821date69559–69563. DifferentrecipientfrompriorLyoncessationpublicbrief.",
+        "review_note": "Reader withdrawn by the coordinate source-order audit: native DjVu WORD geometry places marginal-summary or marginal-date WORDs on raw lines shared with body WORDs inside the selected extent (3 loci), and the rendered PDF prints that marginal text inside body or heading paragraphs. A complete ordered reader needs a coordinate reading-order derivative. Audit report SHA-256 e44dd97490bb8036d2e507cd0946a28b8aecf5fa9504975ec0fe6520e0cd6e02.",
         "title": "Subjectio ecclesiae Valentinensis archiepiscopo Avenionensi"
       },
+      "review_history": [
+        {
+          "artifact_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86",
+          "boundary_review": "Independent printed title and issuer at LF69509–69509; complete substantive body and printed dating/subscription retained; adjacent matter excluded. Complete Etsi per Nostras toValenceMarieJosephAntoineLaurent: entire1817Vienne/1819Lyoninterimhistory, Avignonmetropolitansubjectioneffectiveuponnewarchbishopspossessionwithderogation, blessingand24September1821date69559–69563. DifferentrecipientfrompriorLyoncessationpublicbrief.",
+          "date": null,
+          "decision": "admit",
+          "document_id": "bullarium-continuatio.volume-15.line-00069498.part-01",
+          "genre": "apostolic-letter",
+          "language": "la",
+          "parent_id": "bullarium-continuatio.volume-15.line-00069498",
+          "physical_line_ranges": [
+            [
+              69498,
+              69563
+            ]
+          ],
+          "printed_attribution": "Pius  PP.  VII.",
+          "reader_source_note": "Uncorrected historical OCR; marginal labels and conventional chancery abbreviations remain literal.",
+          "reading_order_review": "Leaf484R. Completeparagraph/operativecondition/blessing/dateordered. ExactXMLnormalcolumns.",
+          "review_note": "Exact LF-based review of source SHA 98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86; whole proposed extent and 20 literal LF on each side inspected. Complete Etsi per Nostras toValenceMarieJosephAntoineLaurent: entire1817Vienne/1819Lyoninterimhistory, Avignonmetropolitansubjectioneffectiveuponnewarchbishopspossessionwithderogation, blessingand24September1821date69559–69563. DifferentrecipientfrompriorLyoncessationpublicbrief. Exact XML↔TXT whitespace-token correspondence proved over all 452300 tokens; per-line XML boxes inspected for this act. Leaf484R. Completeparagraph/operativecondition/blessing/dateordered. ExactXMLnormalcolumns.",
+          "reviewed_extent": "Complete proposed and refined act extent LF69498–69682; literal context LF69478–69702 fully read.",
+          "source_attribution_lines": [
+            69509,
+            69509
+          ],
+          "source_extent_review": "All substantive paragraphs, marginal labels and historical notes present within these bounds were retained literally. No omitted body/annex/subscription is asserted; conventional chancery abbreviations and OCR damage remain unexpanded. Complete Etsi per Nostras toValenceMarieJosephAntoineLaurent: entire1817Vienne/1819Lyoninterimhistory, Avignonmetropolitansubjectioneffectiveuponnewarchbishopspossessionwithderogation, blessingand24September1821date69559–69563. DifferentrecipientfrompriorLyoncessationpublicbrief.",
+          "title": "Subjectio ecclesiae Valentinensis archiepiscopo Avenionensi"
+        }
+      ],
       "scan_leaf_ids": [
         484,
         485
@@ -311825,7 +312131,7 @@
       "segment_path": "src/sources/works/bullarium-continuatio/volume-15-line-00069498-part-01/editions/1853-bullarium-continuatio-volume-15-la/segments/source-ocr.toml",
       "selection_start": 69498,
       "source_heading_raw": "MXXI. ",
-      "status": "admitted-complete",
+      "status": "specifically-held",
       "title_raw": "MXXI. ",
       "volume_key": "volume-15",
       "work_id": "work.bullarium-continuatio.volume-15.line-00069498.part-01"
@@ -330830,33 +331136,67 @@
         ]
       ],
       "protocol": null,
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-15.1853-rome-mul.ocr-98d02eba261d",
+          "id": "bullarium-continuatio.volume-15.line-00090847.part-05",
+          "language": "la",
+          "pdf_sha256": "028e9394e7206ca7d1f1da5e324169ef7f26ac979777c8000ce18dee2163502f",
+          "physical_line_ranges": [
+            [
+              91327,
+              91443
+            ]
+          ],
+          "segment_id": "segment.bullarium-continuatio.volume-15.line-00090847.part-05.1853-bullarium-continuatio-volume-15-la.source-ocr",
+          "source_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86"
+        },
+        "reason": "Whole reader withdrawn before installation: the coordinate source-order audit confirmed printed marginal summary or date text fused into body or heading lines (3 loci; first at leaf 595, LF 91330). Recorded in src/sources/papal-documents/continuation-source-order-audit.md.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "cc9257b13336248119137c1547d0e7a96894d057e15c031ff1f3336003637db3",
       "render_revision": "2026-10-26T18:35:44Z",
       "review": {
         "artifact_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86",
-        "boundary_review": "Own printed identification/protocol precedes the entire substantive body; all terminal legal/dating/subscription text and own source notes retained. Neighboring independently issued instruments distinguished by their own protocols and closings.",
-        "date": null,
-        "decision": "admit",
+        "decision": "hold",
         "document_id": "bullarium-continuatio.volume-15.line-00090847.part-05",
-        "genre": "apostolic brief",
-        "language": "la",
-        "parent_id": "bullarium-continuatio.volume-15.line-00090847",
         "physical_line_ranges": [
           [
             91327,
             91443
           ]
         ],
-        "printed_attribution": "Pius  PP.  VII.  , /",
-        "reading_order_review": "Whole literal body and exact XML-to-LF coordinate evidence inspected. Substantive left/right columns and page continuations are in normal order, without joined or reversed substantive blocks. Displaced marginal labels remain literal apparatus. Exact registered XML leaves 595–595; whole-act substantive flow checked separately from page-wide advisory flags.",
-        "review_note": "MLX Quamquam de parochis: whole three-clause brief, full catechetical-school rationale and petition, all entry/death/Conception/Joseph/monthly indulgences and confession/communion/prayer/activity conditions, perpetuity/transumpt and datum LF91439–91443. Exact XML leaf span 595–595 normal substantive flow; next act margins onleaf596 excluded.",
-        "reviewed_extent": "Entire literal LF91327–91443 and at least20LF surrounding context fully read against acquired OCR SHA256 98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86.",
-        "source_attribution_lines": [
-          91335,
-          91335
-        ],
-        "source_extent_review": "Complete presently printed substantive body, incorporated text, source notes and terminal legal/dating/subscription matter retained as uncorrected OCR. No explicit historical omission found. No complete print-image collation or independent historical authentication claimed.",
+        "review_note": "Reader withdrawn by the coordinate source-order audit: native DjVu WORD geometry places marginal-summary or marginal-date WORDs on raw lines shared with body WORDs inside the selected extent (3 loci), and the rendered PDF prints that marginal text inside body or heading paragraphs. A complete ordered reader needs a coordinate reading-order derivative. Audit report SHA-256 e44dd97490bb8036d2e507cd0946a28b8aecf5fa9504975ec0fe6520e0cd6e02.",
         "title": "Indulgentiae sodalibus Scholarum Christianarum seu Piarum in Belgio"
       },
+      "review_history": [
+        {
+          "artifact_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86",
+          "boundary_review": "Own printed identification/protocol precedes the entire substantive body; all terminal legal/dating/subscription text and own source notes retained. Neighboring independently issued instruments distinguished by their own protocols and closings.",
+          "date": null,
+          "decision": "admit",
+          "document_id": "bullarium-continuatio.volume-15.line-00090847.part-05",
+          "genre": "apostolic brief",
+          "language": "la",
+          "parent_id": "bullarium-continuatio.volume-15.line-00090847",
+          "physical_line_ranges": [
+            [
+              91327,
+              91443
+            ]
+          ],
+          "printed_attribution": "Pius  PP.  VII.  , /",
+          "reading_order_review": "Whole literal body and exact XML-to-LF coordinate evidence inspected. Substantive left/right columns and page continuations are in normal order, without joined or reversed substantive blocks. Displaced marginal labels remain literal apparatus. Exact registered XML leaves 595–595; whole-act substantive flow checked separately from page-wide advisory flags.",
+          "review_note": "MLX Quamquam de parochis: whole three-clause brief, full catechetical-school rationale and petition, all entry/death/Conception/Joseph/monthly indulgences and confession/communion/prayer/activity conditions, perpetuity/transumpt and datum LF91439–91443. Exact XML leaf span 595–595 normal substantive flow; next act margins onleaf596 excluded.",
+          "reviewed_extent": "Entire literal LF91327–91443 and at least20LF surrounding context fully read against acquired OCR SHA256 98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86.",
+          "source_attribution_lines": [
+            91335,
+            91335
+          ],
+          "source_extent_review": "Complete presently printed substantive body, incorporated text, source notes and terminal legal/dating/subscription matter retained as uncorrected OCR. No explicit historical omission found. No complete print-image collation or independent historical authentication claimed.",
+          "title": "Indulgentiae sodalibus Scholarum Christianarum seu Piarum in Belgio"
+        }
+      ],
       "scan_leaf_ids": [
         591,
         592,
@@ -330869,7 +331209,7 @@
       "segment_path": "src/sources/works/bullarium-continuatio/volume-15-line-00090847-part-05/editions/1853-bullarium-continuatio-volume-15-la/segments/source-ocr.toml",
       "selection_start": 90847,
       "source_heading_raw": "MLX.  , ",
-      "status": "admitted-complete",
+      "status": "specifically-held",
       "title_raw": "MLX.  , ",
       "volume_key": "volume-15",
       "work_id": "work.bullarium-continuatio.volume-15.line-00090847.part-05"
@@ -332013,33 +332353,67 @@
         "line": 93259,
         "raw": "Pius  PP.  VII"
       },
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-15.1853-rome-mul.ocr-98d02eba261d",
+          "id": "bullarium-continuatio.volume-15.line-00093250",
+          "language": "la",
+          "pdf_sha256": "55e106983995ecba6c45c6df776bc49bfd6acd1118f2de53ddf416647d760e7c",
+          "physical_line_ranges": [
+            [
+              93250,
+              93311
+            ]
+          ],
+          "segment_id": "segment.bullarium-continuatio.volume-15.line-00093250.1853-bullarium-continuatio-volume-15-la.source-ocr",
+          "source_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86"
+        },
+        "reason": "Whole reader withdrawn before installation: the coordinate source-order audit confirmed printed marginal summary or date text fused into body or heading lines (2 loci; first at leaf 608, LF 93252). Recorded in src/sources/papal-documents/continuation-source-order-audit.md.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "cc9257b13336248119137c1547d0e7a96894d057e15c031ff1f3336003637db3",
       "render_revision": "2026-10-26T18:35:44Z",
       "review": {
         "artifact_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86",
-        "boundary_review": "Independent printed title and issuer at LF93259–93259; complete substantive body and printed dating/subscription retained; adjacent matter excluded. Complete letter to Joannes Petrus of Amiens, jurisdiction commission, blessing and dating93307–93311. Post-close furniture93312–93320 excluded.",
-        "date": null,
-        "decision": "admit",
+        "decision": "hold",
         "document_id": "bullarium-continuatio.volume-15.line-00093250",
-        "genre": "apostolic-letter",
-        "language": "la",
         "physical_line_ranges": [
           [
             93250,
             93311
           ]
         ],
-        "printed_attribution": "Pius  PP.  VII.",
-        "reader_source_note": "Uncorrected historical OCR; marginal labels and conventional chancery abbreviations remain literal.",
-        "reading_order_review": "Complete letter occupies leaf608 right, in continuous body order. Similarity to prior Tutelensis letter does not imply duplicate identity; different addressee and dioceses.",
-        "review_note": "Exact LF-based review of source SHA 98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86; whole proposed extent and 20 literal LF on each side inspected. Complete letter to Joannes Petrus of Amiens, jurisdiction commission, blessing and dating93307–93311. Post-close furniture93312–93320 excluded. Exact XML↔TXT whitespace-token correspondence proved over all 452300 tokens; per-line XML boxes inspected for this act. Complete letter occupies leaf608 right, in continuous body order. Similarity to prior Tutelensis letter does not imply duplicate identity; different addressee and dioceses.",
-        "reviewed_extent": "Complete proposed and refined act extent LF93250–93320; literal context LF93230–93340 fully read.",
-        "source_attribution_lines": [
-          93259,
-          93259
-        ],
-        "source_extent_review": "All substantive paragraphs, marginal labels and historical notes present within these bounds were retained literally. No omitted body/annex/subscription is asserted; conventional chancery abbreviations and OCR damage remain unexpanded. Complete letter to Joannes Petrus of Amiens, jurisdiction commission, blessing and dating93307–93311. Post-close furniture93312–93320 excluded.",
+        "review_note": "Reader withdrawn by the coordinate source-order audit: native DjVu WORD geometry places marginal-summary or marginal-date WORDs on raw lines shared with body WORDs inside the selected extent (2 loci), and the rendered PDF prints that marginal text inside body or heading paragraphs. A complete ordered reader needs a coordinate reading-order derivative. Audit report SHA-256 e44dd97490bb8036d2e507cd0946a28b8aecf5fa9504975ec0fe6520e0cd6e02.",
         "title": "Deputatio administratoris ecclesiarum provinciae Oesiae"
       },
+      "review_history": [
+        {
+          "artifact_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86",
+          "boundary_review": "Independent printed title and issuer at LF93259–93259; complete substantive body and printed dating/subscription retained; adjacent matter excluded. Complete letter to Joannes Petrus of Amiens, jurisdiction commission, blessing and dating93307–93311. Post-close furniture93312–93320 excluded.",
+          "date": null,
+          "decision": "admit",
+          "document_id": "bullarium-continuatio.volume-15.line-00093250",
+          "genre": "apostolic-letter",
+          "language": "la",
+          "physical_line_ranges": [
+            [
+              93250,
+              93311
+            ]
+          ],
+          "printed_attribution": "Pius  PP.  VII.",
+          "reader_source_note": "Uncorrected historical OCR; marginal labels and conventional chancery abbreviations remain literal.",
+          "reading_order_review": "Complete letter occupies leaf608 right, in continuous body order. Similarity to prior Tutelensis letter does not imply duplicate identity; different addressee and dioceses.",
+          "review_note": "Exact LF-based review of source SHA 98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86; whole proposed extent and 20 literal LF on each side inspected. Complete letter to Joannes Petrus of Amiens, jurisdiction commission, blessing and dating93307–93311. Post-close furniture93312–93320 excluded. Exact XML↔TXT whitespace-token correspondence proved over all 452300 tokens; per-line XML boxes inspected for this act. Complete letter occupies leaf608 right, in continuous body order. Similarity to prior Tutelensis letter does not imply duplicate identity; different addressee and dioceses.",
+          "reviewed_extent": "Complete proposed and refined act extent LF93250–93320; literal context LF93230–93340 fully read.",
+          "source_attribution_lines": [
+            93259,
+            93259
+          ],
+          "source_extent_review": "All substantive paragraphs, marginal labels and historical notes present within these bounds were retained literally. No omitted body/annex/subscription is asserted; conventional chancery abbreviations and OCR damage remain unexpanded. Complete letter to Joannes Petrus of Amiens, jurisdiction commission, blessing and dating93307–93311. Post-close furniture93312–93320 excluded.",
+          "title": "Deputatio administratoris ecclesiarum provinciae Oesiae"
+        }
+      ],
       "scan_leaf_ids": [
         608,
         609
@@ -332048,7 +332422,7 @@
       "segment_path": "src/sources/works/bullarium-continuatio/volume-15-line-00093250/editions/1853-bullarium-continuatio-volume-15-la/segments/source-ocr.toml",
       "selection_start": 93250,
       "source_heading_raw": "MLXIX. ",
-      "status": "admitted-complete",
+      "status": "specifically-held",
       "title_raw": "MLXIX. Deputatio  temporanei  administratoris  ec-  r»i  diu clesiarum  episcopalium  provinciae  Qe- 17 siae  in  regno  Galliarum.  ***•  xxm* Venerabili  fratri Joanni  Petro  episcopo  Ambianensi Pius  PP.  VII. Venerabilis  frater Salutem  et  apostolicam  benedictionem S.  1.  Inter  ecclesias  episcopales, quarum  erectionem  decrevimus  per  No- stras  iiteras  = Commissa  divinitus  = sexto kalendas  augusti  anno  millesimo  octingen-",
       "volume_key": "volume-15",
       "work_id": "work.bullarium-continuatio.volume-15.line-00093250"
@@ -333338,32 +333712,66 @@
         "line": 97153,
         "raw": "Pius  PP.  VII"
       },
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-15.1853-rome-mul.ocr-98d02eba261d",
+          "id": "bullarium-continuatio.volume-15.line-00097145",
+          "language": "la",
+          "pdf_sha256": "258cefc8cf6491712bc4f51fc8f69e4b909e55e103475d55346f4eebb01bc1c3",
+          "physical_line_ranges": [
+            [
+              97145,
+              97219
+            ]
+          ],
+          "segment_id": "segment.bullarium-continuatio.volume-15.line-00097145.1853-bullarium-continuatio-volume-15-la.source-ocr",
+          "source_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86"
+        },
+        "reason": "Whole reader withdrawn before installation: the coordinate source-order audit confirmed printed marginal summary or date text fused into body or heading lines (2 loci; first at leaf 636, LF 97150). Recorded in src/sources/papal-documents/continuation-source-order-audit.md.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "cc9257b13336248119137c1547d0e7a96894d057e15c031ff1f3336003637db3",
       "render_revision": "2026-10-26T18:35:44Z",
       "review": {
         "artifact_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86",
-        "boundary_review": "Own printed identification/protocol precedes the entire substantive body; all terminal legal/dating/subscription text and own source notes retained. Neighboring independently issued instruments distinguished by their own protocols and closings.",
-        "date": null,
-        "decision": "admit",
+        "decision": "hold",
         "document_id": "bullarium-continuatio.volume-15.line-00097145",
-        "genre": "apostolic brief",
-        "language": "la",
         "physical_line_ranges": [
           [
             97145,
             97219
           ]
         ],
-        "printed_attribution": "Pius  PP.  VII.",
-        "reading_order_review": "Whole literal body and exact XML-to-LF coordinate evidence inspected. Substantive left/right columns and page continuations are in normal order, without joined or reversed substantive blocks. Displaced marginal labels remain literal apparatus. Exact registered XML leaves 636–636; whole-act substantive flow checked separately from page-wide advisory flags.",
-        "review_note": "MLXXXIV Serendo veritatis lumini: all three clauses, fullpreviousschoolindulgence history, contribution/association eligibility, grant to male/female financial supporters with priorconditions retainedbyreference, perpetuity/transumpt and datumLF97215–97219. Exact XML leaf span 636–636 normal substantive order. Prior9Aug1822brief is referenced, not expressly omitted annex; this complete amendment witness retained with factual cross-reference.",
-        "reviewed_extent": "Entire literal LF97145–97219 and at least20LF surrounding context fully read against acquired OCR SHA256 98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86.",
-        "source_attribution_lines": [
-          97153,
-          97153
-        ],
-        "source_extent_review": "Complete presently printed substantive body, incorporated text, source notes and terminal legal/dating/subscription matter retained as uncorrected OCR. No explicit historical omission found. No complete print-image collation or independent historical authentication claimed.",
+        "review_note": "Reader withdrawn by the coordinate source-order audit: native DjVu WORD geometry places marginal-summary or marginal-date WORDs on raw lines shared with body WORDs inside the selected extent (2 loci), and the rendered PDF prints that marginal text inside body or heading paragraphs. A complete ordered reader needs a coordinate reading-order derivative. Audit report SHA-256 e44dd97490bb8036d2e507cd0946a28b8aecf5fa9504975ec0fe6520e0cd6e02.",
         "title": "Participatio indulgentiarum Scholarum Piarum Belgii pro sociis et sociabus benefactoribus"
       },
+      "review_history": [
+        {
+          "artifact_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86",
+          "boundary_review": "Own printed identification/protocol precedes the entire substantive body; all terminal legal/dating/subscription text and own source notes retained. Neighboring independently issued instruments distinguished by their own protocols and closings.",
+          "date": null,
+          "decision": "admit",
+          "document_id": "bullarium-continuatio.volume-15.line-00097145",
+          "genre": "apostolic brief",
+          "language": "la",
+          "physical_line_ranges": [
+            [
+              97145,
+              97219
+            ]
+          ],
+          "printed_attribution": "Pius  PP.  VII.",
+          "reading_order_review": "Whole literal body and exact XML-to-LF coordinate evidence inspected. Substantive left/right columns and page continuations are in normal order, without joined or reversed substantive blocks. Displaced marginal labels remain literal apparatus. Exact registered XML leaves 636–636; whole-act substantive flow checked separately from page-wide advisory flags.",
+          "review_note": "MLXXXIV Serendo veritatis lumini: all three clauses, fullpreviousschoolindulgence history, contribution/association eligibility, grant to male/female financial supporters with priorconditions retainedbyreference, perpetuity/transumpt and datumLF97215–97219. Exact XML leaf span 636–636 normal substantive order. Prior9Aug1822brief is referenced, not expressly omitted annex; this complete amendment witness retained with factual cross-reference.",
+          "reviewed_extent": "Entire literal LF97145–97219 and at least20LF surrounding context fully read against acquired OCR SHA256 98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86.",
+          "source_attribution_lines": [
+            97153,
+            97153
+          ],
+          "source_extent_review": "Complete presently printed substantive body, incorporated text, source notes and terminal legal/dating/subscription matter retained as uncorrected OCR. No explicit historical omission found. No complete print-image collation or independent historical authentication claimed.",
+          "title": "Participatio indulgentiarum Scholarum Piarum Belgii pro sociis et sociabus benefactoribus"
+        }
+      ],
       "scan_leaf_ids": [
         636
       ],
@@ -333371,7 +333779,7 @@
       "segment_path": "src/sources/works/bullarium-continuatio/volume-15-line-00097145/editions/1853-bullarium-continuatio-volume-15-la/segments/source-ocr.toml",
       "selection_start": 97145,
       "source_heading_raw": "MLXXXIV. ",
-      "status": "admitted-complete",
+      "status": "specifically-held",
       "title_raw": "MLXXXIV. m.  4*  Participatio  indulgentiarum  concessarum 7 sodalitatibus  Scholarum  Piarum  in  Belgio XX,M  exislenlium  favore  mulierum  adscripia- rum  sodalitiis. Pius  PP.  VII. Ad  futuram  rei  memoriam. $.  1.  Serendo  veritatis  lumini,  quod <«««•»-  & es^  cj  excitando  pietatis  studio, quum  intelligeremus  prodesse  plurimum in  Belgio  sodales,  qui  fratrum  Scholarum Piarum  seu  Christianarum  adepti  sunt  no- men, quod  quibusdam  in  scholis  rudimen- ta Christianae  religionis  pueros  doceant ,",
       "volume_key": "volume-15",
       "work_id": "work.bullarium-continuatio.volume-15.line-00097145"
@@ -333573,34 +333981,68 @@
         ]
       ],
       "protocol": null,
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-15.1853-rome-mul.ocr-98d02eba261d",
+          "id": "bullarium-continuatio.volume-15.line-00097575.part-02",
+          "language": "la",
+          "pdf_sha256": "e68da3e7a860c36ba28ead289230f2fdcfb898fe4f5cf7546be9c091628f680b",
+          "physical_line_ranges": [
+            [
+              97700,
+              97781
+            ]
+          ],
+          "segment_id": "segment.bullarium-continuatio.volume-15.line-00097575.part-02.1853-bullarium-continuatio-volume-15-la.source-ocr",
+          "source_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86"
+        },
+        "reason": "Whole reader withdrawn before installation: the coordinate source-order audit confirmed printed marginal summary or date text fused into body or heading lines (2 loci; first at leaf 640, LF 97733). Recorded in src/sources/papal-documents/continuation-source-order-audit.md.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "cc9257b13336248119137c1547d0e7a96894d057e15c031ff1f3336003637db3",
       "render_revision": "2026-10-26T18:35:44Z",
       "review": {
         "artifact_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86",
-        "boundary_review": "Own printed identification/protocol precedes the entire substantive body; all terminal legal/dating/subscription text and own source notes retained. Neighboring independently issued instruments distinguished by their own protocols and closings.",
-        "date": null,
-        "decision": "admit",
+        "decision": "hold",
         "document_id": "bullarium-continuatio.volume-15.line-00097575.part-02",
-        "genre": "apostolic brief",
-        "language": "la",
-        "parent_id": "bullarium-continuatio.volume-15.line-00097575",
         "physical_line_ranges": [
           [
             97700,
             97781
           ]
         ],
-        "printed_attribution": "Pira  PP.  VII",
-        "reader_source_note": "The latter portion has heavy source OCR errors caused by show-through.",
-        "reading_order_review": "Whole literal body and exact XML-to-LF coordinate evidence inspected. Substantive left/right columns and page continuations are in normal order, without joined or reversed substantive blocks. Displaced marginal labels remain literal apparatus. Exact registered XML leaves 640–640; whole-act substantive flow checked separately from page-wide advisory flags.",
-        "review_note": "MLXXXVIII Post novam: whole single-clause brief toStephenAnthonybishopTroyes, complete1817transfer/1819temporaryadministration/1822ViennesuppressionandLyontitle history, fulldeclarationcontinuingTroyesepiscopaljurisdictionasifneverreleased, blessinganddatumLF97777–97781. Ownpretitlemarginaldate97700–97704 retained. Exact XML leaf span 640–640 left→right continuation normal. Native640 confirms each foregroundcontinuationrowLF97753–97775representedbutseverelygarbled, noactualmissingbodyrow established.",
-        "reviewed_extent": "Entire literal LF97700–97781 and at least20LF surrounding context fully read against acquired OCR SHA256 98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86.",
-        "source_attribution_lines": [
-          97724,
-          97724
-        ],
-        "source_extent_review": "Complete presently printed substantive body, incorporated text, source notes and terminal legal/dating/subscription matter retained as uncorrected OCR. No explicit historical omission found. No complete print-image collation or independent historical authentication claimed.",
+        "review_note": "Reader withdrawn by the coordinate source-order audit: native DjVu WORD geometry places marginal-summary or marginal-date WORDs on raw lines shared with body WORDs inside the selected extent (2 loci), and the rendered PDF prints that marginal text inside body or heading paragraphs. A complete ordered reader needs a coordinate reading-order derivative. Audit report SHA-256 e44dd97490bb8036d2e507cd0946a28b8aecf5fa9504975ec0fe6520e0cd6e02.",
         "title": "Confirmatio jurisdictionis episcopalis in ecclesia Trecensi"
       },
+      "review_history": [
+        {
+          "artifact_sha256": "98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86",
+          "boundary_review": "Own printed identification/protocol precedes the entire substantive body; all terminal legal/dating/subscription text and own source notes retained. Neighboring independently issued instruments distinguished by their own protocols and closings.",
+          "date": null,
+          "decision": "admit",
+          "document_id": "bullarium-continuatio.volume-15.line-00097575.part-02",
+          "genre": "apostolic brief",
+          "language": "la",
+          "parent_id": "bullarium-continuatio.volume-15.line-00097575",
+          "physical_line_ranges": [
+            [
+              97700,
+              97781
+            ]
+          ],
+          "printed_attribution": "Pira  PP.  VII",
+          "reader_source_note": "The latter portion has heavy source OCR errors caused by show-through.",
+          "reading_order_review": "Whole literal body and exact XML-to-LF coordinate evidence inspected. Substantive left/right columns and page continuations are in normal order, without joined or reversed substantive blocks. Displaced marginal labels remain literal apparatus. Exact registered XML leaves 640–640; whole-act substantive flow checked separately from page-wide advisory flags.",
+          "review_note": "MLXXXVIII Post novam: whole single-clause brief toStephenAnthonybishopTroyes, complete1817transfer/1819temporaryadministration/1822ViennesuppressionandLyontitle history, fulldeclarationcontinuingTroyesepiscopaljurisdictionasifneverreleased, blessinganddatumLF97777–97781. Ownpretitlemarginaldate97700–97704 retained. Exact XML leaf span 640–640 left→right continuation normal. Native640 confirms each foregroundcontinuationrowLF97753–97775representedbutseverelygarbled, noactualmissingbodyrow established.",
+          "reviewed_extent": "Entire literal LF97700–97781 and at least20LF surrounding context fully read against acquired OCR SHA256 98d02eba261de04a06123bd5a79c853ba2b7ecb1733cfb935ca29f7ac2392d86.",
+          "source_attribution_lines": [
+            97724,
+            97724
+          ],
+          "source_extent_review": "Complete presently printed substantive body, incorporated text, source notes and terminal legal/dating/subscription matter retained as uncorrected OCR. No explicit historical omission found. No complete print-image collation or independent historical authentication claimed.",
+          "title": "Confirmatio jurisdictionis episcopalis in ecclesia Trecensi"
+        }
+      ],
       "scan_leaf_ids": [
         639,
         640,
@@ -333610,7 +334052,7 @@
       "segment_path": "src/sources/works/bullarium-continuatio/volume-15-line-00097575-part-02/editions/1853-bullarium-continuatio-volume-15-la/segments/source-ocr.toml",
       "selection_start": 97575,
       "source_heading_raw": "Dii.  41« ",
-      "status": "admitted-complete",
+      "status": "specifically-held",
       "title_raw": "Dii.  41« ",
       "volume_key": "volume-15",
       "work_id": "work.bullarium-continuatio.volume-15.line-00097575.part-02"
@@ -490261,15 +490703,46 @@
         ]
       ],
       "protocol": null,
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-19.1857-rome-mul.ocr-c12cbb5c5cd4",
+          "id": "bullarium-continuatio.volume-19.line-00058106",
+          "language": "it",
+          "pdf_sha256": "9a85550be78ecec7cb8af137e90a3cc6414a5f529f96321d6e84b0b13a339a40",
+          "physical_line_ranges": [
+            [
+              58109,
+              58240
+            ],
+            [
+              58251,
+              58313
+            ],
+            [
+              58318,
+              58381
+            ],
+            [
+              58391,
+              58454
+            ],
+            [
+              58460,
+              58486
+            ]
+          ],
+          "segment_id": "segment.bullarium-continuatio.volume-19.line-00058106.1857-bullarium-continuatio-volume-19-it.source-ocr",
+          "source_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba"
+        },
+        "reason": "Whole reader withdrawn before installation: the coordinate source-order audit confirmed printed marginal summary or date text fused into body or heading lines (11 loci; first at leaf 417, LF 58113). Recorded in src/sources/papal-documents/continuation-source-order-audit.md.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "cc9257b13336248119137c1547d0e7a96894d057e15c031ff1f3336003637db3",
       "render_revision": "2026-10-26T18:35:44Z",
       "review": {
         "artifact_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba",
-        "boundary_review": "CCXXVIII58109, own date integrated in58113–58115, address to Cardinal Ludovico Gazzoli58119–58132; seven full sections and complete date58482–58484 with Gregorius PP.XVI subscription58486. Next Cuyo erection58489.",
-        "date": null,
-        "decision": "admit",
+        "decision": "hold",
         "document_id": "bullarium-continuatio.volume-19.line-00058106",
-        "genre": "chirograph",
-        "language": "it",
         "physical_line_ranges": [
           [
             58109,
@@ -490292,17 +490765,52 @@
             58486
           ]
         ],
-        "printed_attribution": "Gregorius PP. XVI.",
-        "reading_order_review": "Leaves417–419 normal L/R; all three commission tasks58165–58190 retained, philosophical college58313/58318 continuous around split running header58316, an-/nesso58381/58391 and privilegia-/tissimo58454/58460 natural continuations. Shared header portions excluded, own summaries retained.",
-        "review_note": "Fully read every literal LF58109–58486, with20LF outside context. CCXXVIII58109, own date integrated in58113–58115, address to Cardinal Ludovico Gazzoli58119–58132; seven full sections and complete date58482–58484 with Gregorius PP.XVI subscription58486. Next Cuyo erection58489. Leaves417–419 normal L/R; all three commission tasks58165–58190 retained, philosophical college58313/58318 continuous around split running header58316, an-/nesso58381/58391 and privilegia-/tissimo58454/58460 natural continuations. Shared header portions excluded, own summaries retained. Whole Italian papal chirograph, complete factual/technical report and distribution norms, plenary authorization, legal clauses and actual papal signature. Raw source preserved; no normalized date eligibility gate or existing-work join asserted.",
-        "reviewed_extent": "Every literal LF58109–58486 with at least20LF outside context, including all substantive sections, own source notes/marginalia, subscriptions and closing.",
-        "source_attribution_lines": [
-          58486,
-          58486
-        ],
-        "source_extent_review": "Whole Italian papal chirograph, complete factual/technical report and distribution norms, plenary authorization, legal clauses and actual papal signature.",
+        "review_note": "Reader withdrawn by the coordinate source-order audit: native DjVu WORD geometry places marginal-summary or marginal-date WORDs on raw lines shared with body WORDs inside the selected extent (11 loci), and the rendered PDF prints that marginal text inside body or heading paragraphs. A complete ordered reader needs a coordinate reading-order derivative. Audit report SHA-256 e44dd97490bb8036d2e507cd0946a28b8aecf5fa9504975ec0fe6520e0cd6e02.",
         "title": "Norme per la distribuzione dell’Acqua Felice in Roma"
       },
+      "review_history": [
+        {
+          "artifact_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba",
+          "boundary_review": "CCXXVIII58109, own date integrated in58113–58115, address to Cardinal Ludovico Gazzoli58119–58132; seven full sections and complete date58482–58484 with Gregorius PP.XVI subscription58486. Next Cuyo erection58489.",
+          "date": null,
+          "decision": "admit",
+          "document_id": "bullarium-continuatio.volume-19.line-00058106",
+          "genre": "chirograph",
+          "language": "it",
+          "physical_line_ranges": [
+            [
+              58109,
+              58240
+            ],
+            [
+              58251,
+              58313
+            ],
+            [
+              58318,
+              58381
+            ],
+            [
+              58391,
+              58454
+            ],
+            [
+              58460,
+              58486
+            ]
+          ],
+          "printed_attribution": "Gregorius PP. XVI.",
+          "reading_order_review": "Leaves417–419 normal L/R; all three commission tasks58165–58190 retained, philosophical college58313/58318 continuous around split running header58316, an-/nesso58381/58391 and privilegia-/tissimo58454/58460 natural continuations. Shared header portions excluded, own summaries retained.",
+          "review_note": "Fully read every literal LF58109–58486, with20LF outside context. CCXXVIII58109, own date integrated in58113–58115, address to Cardinal Ludovico Gazzoli58119–58132; seven full sections and complete date58482–58484 with Gregorius PP.XVI subscription58486. Next Cuyo erection58489. Leaves417–419 normal L/R; all three commission tasks58165–58190 retained, philosophical college58313/58318 continuous around split running header58316, an-/nesso58381/58391 and privilegia-/tissimo58454/58460 natural continuations. Shared header portions excluded, own summaries retained. Whole Italian papal chirograph, complete factual/technical report and distribution norms, plenary authorization, legal clauses and actual papal signature. Raw source preserved; no normalized date eligibility gate or existing-work join asserted.",
+          "reviewed_extent": "Every literal LF58109–58486 with at least20LF outside context, including all substantive sections, own source notes/marginalia, subscriptions and closing.",
+          "source_attribution_lines": [
+            58486,
+            58486
+          ],
+          "source_extent_review": "Whole Italian papal chirograph, complete factual/technical report and distribution norms, plenary authorization, legal clauses and actual papal signature.",
+          "title": "Norme per la distribuzione dell’Acqua Felice in Roma"
+        }
+      ],
       "scan_leaf_ids": [
         417
       ],
@@ -490310,7 +490818,7 @@
       "segment_path": "src/sources/works/bullarium-continuatio/volume-19-line-00058106/editions/1857-bullarium-continuatio-volume-19-it/segments/source-ocr.toml",
       "selection_start": 58106,
       "source_heading_raw": "i ",
-      "status": "admitted-complete",
+      "status": "specifically-held",
       "title_raw": "i CCXXV1H. . *,  t tj-;  i-  iit  r.'--  •\"  * -i p«t  dia  Regulae  sequendae  in  distributione  aquae * m&\"u  nuncupatae  p Aequa  Felice  • in  Drbe. -0  «V ,1  • , i'!,  *•;  -t  ■ I i I •• Reverendissimo  cardinale , . - . 1 • . r>-  i Ludovico  Gazzoii Prefetto  della  s.  congregazione",
       "volume_key": "volume-19",
       "work_id": "work.bullarium-continuatio.volume-19.line-00058106"
@@ -507170,16 +507678,34 @@
         ]
       ],
       "protocol": null,
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-19.1857-rome-mul.ocr-c12cbb5c5cd4",
+          "id": "bullarium-continuatio.volume-19.line-00085838.part-01",
+          "language": "la",
+          "pdf_sha256": "1a9c966f8b43d94b69a988247a6bc1a21bf835cdc930f451b786923f41b1ceb8",
+          "physical_line_ranges": [
+            [
+              85838,
+              85870
+            ],
+            [
+              85873,
+              85932
+            ]
+          ],
+          "segment_id": "segment.bullarium-continuatio.volume-19.line-00085838.part-01.1857-bullarium-continuatio-volume-19-la.source-ocr",
+          "source_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba"
+        },
+        "reason": "Whole reader withdrawn before installation: the coordinate source-order audit confirmed printed marginal summary or date text fused into body or heading lines (1 loci; first at leaf 603, LF 85861). Recorded in src/sources/papal-documents/continuation-source-order-audit.md.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "cc9257b13336248119137c1547d0e7a96894d057e15c031ff1f3336003637db3",
       "render_revision": "2026-10-26T18:35:44Z",
       "review": {
         "artifact_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba",
-        "boundary_review": "CCXXXII85838, patriarchJosephPeteraddress85848–85851, ownGregorius85854, Summissaepe85860; allthreeparagraphs andblessing/date85929–85932 before23385944.",
-        "date": null,
-        "decision": "admit",
+        "decision": "hold",
         "document_id": "bullarium-continuatio.volume-19.line-00085838.part-01",
-        "genre": "apostolic-brief",
-        "language": "la",
-        "parent_id": "bullarium-continuatio.volume-19.line-00085838",
         "physical_line_ranges": [
           [
             85838,
@@ -507190,17 +507716,41 @@
             85932
           ]
         ],
-        "printed_attribution": "Gregorius PP. XVI.",
-        "reading_order_review": "Exact mapped leaves follow ordinary left column then right column, without fused substantive lines or displaced clauses. Own marginal summaries retained; running headers and scan furniture omitted.",
-        "review_note": "Fully read every literal LF85838–85932, with20LF outside context. CCXXXII85838, patriarchJosephPeteraddress85848–85851, ownGregorius85854, Summissaepe85860; allthreeparagraphs andblessing/date85929–85932 before23385944. Exact mapped leaves follow ordinary left column then right column, without fused substantive lines or displaced clauses. Own marginal summaries retained; running headers and scan furniture omitted. Whole Latin apostolic brief, all surviving substantive paragraphs, dispositive clauses and complete date; no additional subscription printed before next independent act. Raw source preserved; no normalized date eligibility gate or existing-work join asserted.",
-        "reviewed_extent": "Every literal LF85838–85932 with at least20LF outside context, including all substantive sections, own source notes/marginalia, subscriptions and closing.",
-        "source_attribution_lines": [
-          85854,
-          85854
-        ],
-        "source_extent_review": "Whole Latin apostolic brief, all surviving substantive paragraphs, dispositive clauses and complete date; no additional subscription printed before next independent act.",
+        "review_note": "Reader withdrawn by the coordinate source-order audit: native DjVu WORD geometry places marginal-summary or marginal-date WORDs on raw lines shared with body WORDs inside the selected extent (1 loci), and the rendered PDF prints that marginal text inside body or heading paragraphs. A complete ordered reader needs a coordinate reading-order derivative. Audit report SHA-256 e44dd97490bb8036d2e507cd0946a28b8aecf5fa9504975ec0fe6520e0cd6e02.",
         "title": "De archiepiscopo Hierapolitano Maronitarum Paulo Arutin ad montem Libanum vocando"
       },
+      "review_history": [
+        {
+          "artifact_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba",
+          "boundary_review": "CCXXXII85838, patriarchJosephPeteraddress85848–85851, ownGregorius85854, Summissaepe85860; allthreeparagraphs andblessing/date85929–85932 before23385944.",
+          "date": null,
+          "decision": "admit",
+          "document_id": "bullarium-continuatio.volume-19.line-00085838.part-01",
+          "genre": "apostolic-brief",
+          "language": "la",
+          "parent_id": "bullarium-continuatio.volume-19.line-00085838",
+          "physical_line_ranges": [
+            [
+              85838,
+              85870
+            ],
+            [
+              85873,
+              85932
+            ]
+          ],
+          "printed_attribution": "Gregorius PP. XVI.",
+          "reading_order_review": "Exact mapped leaves follow ordinary left column then right column, without fused substantive lines or displaced clauses. Own marginal summaries retained; running headers and scan furniture omitted.",
+          "review_note": "Fully read every literal LF85838–85932, with20LF outside context. CCXXXII85838, patriarchJosephPeteraddress85848–85851, ownGregorius85854, Summissaepe85860; allthreeparagraphs andblessing/date85929–85932 before23385944. Exact mapped leaves follow ordinary left column then right column, without fused substantive lines or displaced clauses. Own marginal summaries retained; running headers and scan furniture omitted. Whole Latin apostolic brief, all surviving substantive paragraphs, dispositive clauses and complete date; no additional subscription printed before next independent act. Raw source preserved; no normalized date eligibility gate or existing-work join asserted.",
+          "reviewed_extent": "Every literal LF85838–85932 with at least20LF outside context, including all substantive sections, own source notes/marginalia, subscriptions and closing.",
+          "source_attribution_lines": [
+            85854,
+            85854
+          ],
+          "source_extent_review": "Whole Latin apostolic brief, all surviving substantive paragraphs, dispositive clauses and complete date; no additional subscription printed before next independent act.",
+          "title": "De archiepiscopo Hierapolitano Maronitarum Paulo Arutin ad montem Libanum vocando"
+        }
+      ],
       "scan_leaf_ids": [
         603,
         604
@@ -507209,7 +507759,7 @@
       "segment_path": "src/sources/works/bullarium-continuatio/volume-19-line-00085838-part-01/editions/1857-bullarium-continuatio-volume-19-la/segments/source-ocr.toml",
       "selection_start": 85838,
       "source_heading_raw": "CCXXXII. ",
-      "status": "admitted-complete",
+      "status": "specifically-held",
       "title_raw": "CCXXXII. ",
       "volume_key": "volume-19",
       "work_id": "work.bullarium-continuatio.volume-19.line-00085838.part-01"
@@ -507256,65 +507806,99 @@
         ]
       ],
       "protocol": null,
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-19.1857-rome-mul.ocr-c12cbb5c5cd4",
+          "id": "bullarium-continuatio.volume-19.line-00085838.part-02",
+          "language": "la",
+          "pdf_sha256": "b680fb52c8cea6e0a70a6e57c1c78035203bbe95cc24f7e13002d273a10266c1",
+          "physical_line_ranges": [
+            [
+              85944,
+              86025
+            ]
+          ],
+          "segment_id": "segment.bullarium-continuatio.volume-19.line-00085838.part-02.1857-bullarium-continuatio-volume-19-la.source-ocr",
+          "source_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba"
+        },
+        "reason": "Whole reader withdrawn before installation: the coordinate source-order audit confirmed printed marginal summary or date text fused into body or heading lines (2 loci; first at leaf 604, LF 85948). Recorded in src/sources/papal-documents/continuation-source-order-audit.md.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "cc9257b13336248119137c1547d0e7a96894d057e15c031ff1f3336003637db3",
       "render_revision": "2026-10-26T18:35:44Z",
       "review": {
         "artifact_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba",
-        "boundary_review": "CCXXXIII85944, Venerabilisfrater85962 andDumecclesia85967; entireadministrative revocation and electionmandate, exhortation, blessing,date86022–86025 before23486028.",
-        "date": null,
-        "decision": "admit",
+        "decision": "hold",
         "document_id": "bullarium-continuatio.volume-19.line-00085838.part-02",
-        "genre": "apostolic-brief",
-        "language": "la",
-        "parent_id": "bullarium-continuatio.volume-19.line-00085838",
         "physical_line_ranges": [
           [
             85944,
             86025
           ]
         ],
-        "printed_attribution": "Gregarios PP. Decimas Sextus",
-        "reader_source_note": "The OCR renders the abbreviated protocol numeral XIV; the surrounding printed pontificate heading identifies Gregory XVI.",
-        "reading_order_review": "Mappedleaf604 normalL/R; continuousbody through86025. Protocol85959 readsGregoriusPPXIV in OCR; neighboring fullpontificateheader86080 explicitlyreadsDecimasSextus and ownfirstyear1831closing agrees withGregoryXVI. LiteralOCR preserved; no competing historicalissuer inferred.",
-        "review_note": "Fully read every literal LF85944–86025, with20LF outside context. CCXXXIII85944, Venerabilisfrater85962 andDumecclesia85967; entireadministrative revocation and electionmandate, exhortation, blessing,date86022–86025 before23486028. Mappedleaf604 normalL/R; continuousbody through86025. Protocol85959 readsGregoriusPPXIV in OCR; neighboring fullpontificateheader86080 explicitlyreadsDecimasSextus and ownfirstyear1831closing agrees withGregoryXVI. LiteralOCR preserved; no competing historicalissuer inferred. Whole Latin papal letter in two sections, fulloperativebody anddate, no missing historical text. Raw source preserved; no normalized date eligibility gate or existing-work join asserted.",
-        "reviewed_extent": "Every literal LF85944–86025 with at least20LF outside context, including all substantive sections, own source notes/marginalia, subscriptions and closing.",
-        "source_attribution_context": {
+        "review_note": "Reader withdrawn by the coordinate source-order audit: native DjVu WORD geometry places marginal-summary or marginal-date WORDs on raw lines shared with body WORDs inside the selected extent (2 loci), and the rendered PDF prints that marginal text inside body or heading paragraphs. A complete ordered reader needs a coordinate reading-order derivative. Audit report SHA-256 e44dd97490bb8036d2e507cd0946a28b8aecf5fa9504975ec0fe6520e0cd6e02.",
+        "title": "De administratione ecclesiae Hierapolitanae Melchitarum et novi archiepiscopi electione"
+      },
+      "review_history": [
+        {
           "artifact_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba",
-          "basis": "Neighboring fullrunningheader86080 onleaf605 identifiesDecimusSextus within boundedGregoryXVI sequence. This act explicitlynames predecessorLeoXII85972 and closesfirstyear1831; abbreviated85959XIV is inconsistent OCRnumeral, not positive evidence for1590pontificate. Protocol/closing substantively agree withGregoryXVI.",
-          "kind": "shared-running-header",
-          "page_evidence": [
-            {
-              "artifact_page": 606,
-              "basis": "Neighboring fullrunningheader86080 onleaf605 identifiesDecimusSextus within boundedGregoryXVI sequence. This act explicitlynames predecessorLeoXII85972 and closesfirstyear1831; abbreviated85959XIV is inconsistent OCRnumeral, not positive evidence for1590pontificate. Protocol/closing substantively agree withGregoryXVI.",
-              "leaf": 605
-            }
-          ],
-          "protocol_and_closing_review": {
-            "basis": "Neighboring fullrunningheader86080 onleaf605 identifiesDecimusSextus within boundedGregoryXVI sequence. This act explicitlynames predecessorLeoXII85972 and closesfirstyear1831; abbreviated85959XIV is inconsistent OCRnumeral, not positive evidence for1590pontificate. Protocol/closing substantively agree withGregoryXVI.",
-            "closing_lines": [
-              86012,
-              86025
-            ],
-            "conflicting_issuer": false,
-            "finding": "consistent",
-            "protocol_lines": [
-              85962,
-              85978
-            ]
-          },
-          "scope_line_ranges": [
+          "boundary_review": "CCXXXIII85944, Venerabilisfrater85962 andDumecclesia85967; entireadministrative revocation and electionmandate, exhortation, blessing,date86022–86025 before23486028.",
+          "date": null,
+          "decision": "admit",
+          "document_id": "bullarium-continuatio.volume-19.line-00085838.part-02",
+          "genre": "apostolic-brief",
+          "language": "la",
+          "parent_id": "bullarium-continuatio.volume-19.line-00085838",
+          "physical_line_ranges": [
             [
               85944,
               86025
             ]
-          ]
-        },
-        "source_attribution_lines": [
-          86080,
-          86080
-        ],
-        "source_extent_review": "Whole Latin papal letter in two sections, fulloperativebody anddate, no missing historical text.",
-        "title": "De administratione ecclesiae Hierapolitanae Melchitarum et novi archiepiscopi electione"
-      },
+          ],
+          "printed_attribution": "Gregarios PP. Decimas Sextus",
+          "reader_source_note": "The OCR renders the abbreviated protocol numeral XIV; the surrounding printed pontificate heading identifies Gregory XVI.",
+          "reading_order_review": "Mappedleaf604 normalL/R; continuousbody through86025. Protocol85959 readsGregoriusPPXIV in OCR; neighboring fullpontificateheader86080 explicitlyreadsDecimasSextus and ownfirstyear1831closing agrees withGregoryXVI. LiteralOCR preserved; no competing historicalissuer inferred.",
+          "review_note": "Fully read every literal LF85944–86025, with20LF outside context. CCXXXIII85944, Venerabilisfrater85962 andDumecclesia85967; entireadministrative revocation and electionmandate, exhortation, blessing,date86022–86025 before23486028. Mappedleaf604 normalL/R; continuousbody through86025. Protocol85959 readsGregoriusPPXIV in OCR; neighboring fullpontificateheader86080 explicitlyreadsDecimasSextus and ownfirstyear1831closing agrees withGregoryXVI. LiteralOCR preserved; no competing historicalissuer inferred. Whole Latin papal letter in two sections, fulloperativebody anddate, no missing historical text. Raw source preserved; no normalized date eligibility gate or existing-work join asserted.",
+          "reviewed_extent": "Every literal LF85944–86025 with at least20LF outside context, including all substantive sections, own source notes/marginalia, subscriptions and closing.",
+          "source_attribution_context": {
+            "artifact_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba",
+            "basis": "Neighboring fullrunningheader86080 onleaf605 identifiesDecimusSextus within boundedGregoryXVI sequence. This act explicitlynames predecessorLeoXII85972 and closesfirstyear1831; abbreviated85959XIV is inconsistent OCRnumeral, not positive evidence for1590pontificate. Protocol/closing substantively agree withGregoryXVI.",
+            "kind": "shared-running-header",
+            "page_evidence": [
+              {
+                "artifact_page": 606,
+                "basis": "Neighboring fullrunningheader86080 onleaf605 identifiesDecimusSextus within boundedGregoryXVI sequence. This act explicitlynames predecessorLeoXII85972 and closesfirstyear1831; abbreviated85959XIV is inconsistent OCRnumeral, not positive evidence for1590pontificate. Protocol/closing substantively agree withGregoryXVI.",
+                "leaf": 605
+              }
+            ],
+            "protocol_and_closing_review": {
+              "basis": "Neighboring fullrunningheader86080 onleaf605 identifiesDecimusSextus within boundedGregoryXVI sequence. This act explicitlynames predecessorLeoXII85972 and closesfirstyear1831; abbreviated85959XIV is inconsistent OCRnumeral, not positive evidence for1590pontificate. Protocol/closing substantively agree withGregoryXVI.",
+              "closing_lines": [
+                86012,
+                86025
+              ],
+              "conflicting_issuer": false,
+              "finding": "consistent",
+              "protocol_lines": [
+                85962,
+                85978
+              ]
+            },
+            "scope_line_ranges": [
+              [
+                85944,
+                86025
+              ]
+            ]
+          },
+          "source_attribution_lines": [
+            86080,
+            86080
+          ],
+          "source_extent_review": "Whole Latin papal letter in two sections, fulloperativebody anddate, no missing historical text.",
+          "title": "De administratione ecclesiae Hierapolitanae Melchitarum et novi archiepiscopi electione"
+        }
+      ],
       "scan_leaf_ids": [
         603,
         604
@@ -507323,7 +507907,7 @@
       "segment_path": "src/sources/works/bullarium-continuatio/volume-19-line-00085838-part-02/editions/1857-bullarium-continuatio-volume-19-la/segments/source-ocr.toml",
       "selection_start": 85838,
       "source_heading_raw": "uun  I')  fii  CCXXXIII.  *•  * v ",
-      "status": "admitted-complete",
+      "status": "specifically-held",
       "title_raw": "uun  I')  fii  CCXXXIII.  *•  * v ",
       "volume_key": "volume-19",
       "work_id": "work.bullarium-continuatio.volume-19.line-00085838.part-02"
@@ -507451,15 +508035,34 @@
         "line": 86116,
         "raw": "Gregorius  PP.  XVI"
       },
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-19.1857-rome-mul.ocr-c12cbb5c5cd4",
+          "id": "bullarium-continuatio.volume-19.line-00086108",
+          "language": "la",
+          "pdf_sha256": "5df0a9b4aa8c0a605a73370dbd39e8e359b9d987f6dd8635f6400b724709cae7",
+          "physical_line_ranges": [
+            [
+              86108,
+              86206
+            ],
+            [
+              86218,
+              86316
+            ]
+          ],
+          "segment_id": "segment.bullarium-continuatio.volume-19.line-00086108.1857-bullarium-continuatio-volume-19-la.source-ocr",
+          "source_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba"
+        },
+        "reason": "Whole reader withdrawn before installation: the coordinate source-order audit confirmed printed marginal summary or date text fused into body or heading lines (2 loci; first at leaf 605, LF 86111). Recorded in src/sources/papal-documents/continuation-source-order-audit.md.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "cc9257b13336248119137c1547d0e7a96894d057e15c031ff1f3336003637db3",
       "render_revision": "2026-10-26T18:35:44Z",
       "review": {
         "artifact_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba",
-        "boundary_review": "CCXXXV86108, explicitencyclicaltitle andPolishbishopsaddressees86111–86113, ownGregorius86116, Cumprimum86124; entireencyclical throughfinalblessing/date86313–86316 before23686319.",
-        "date": null,
-        "decision": "admit",
+        "decision": "hold",
         "document_id": "bullarium-continuatio.volume-19.line-00086108",
-        "genre": "encyclical",
-        "language": "la",
         "physical_line_ranges": [
           [
             86108,
@@ -507470,17 +508073,40 @@
             86316
           ]
         ],
-        "printed_attribution": "Gregorius PP. XVI.",
-        "reading_order_review": "Leaves605–606 normalL/R; apostolicquotation continues86206/86218 aroundpageheader; completequotedscripture, Augustine,Tertullian andallclosingexhortations retained.",
-        "review_note": "Fully read every literal LF86108–86316, with20LF outside context. CCXXXV86108, explicitencyclicaltitle andPolishbishopsaddressees86111–86113, ownGregorius86116, Cumprimum86124; entireencyclical throughfinalblessing/date86313–86316 before23686319. Leaves605–606 normalL/R; apostolicquotation continues86206/86218 aroundpageheader; completequotedscripture, Augustine,Tertullian andallclosingexhortations retained. Whole Latin encyclical, includingallprintedcitations and completeclosing; no separatesubscription printed. Raw source preserved; no normalized date eligibility gate or existing-work join asserted.",
-        "reviewed_extent": "Every literal LF86108–86316 with at least20LF outside context, including all substantive sections, own source notes/marginalia, subscriptions and closing.",
-        "source_attribution_lines": [
-          86116,
-          86116
-        ],
-        "source_extent_review": "Whole Latin encyclical, includingallprintedcitations and completeclosing; no separatesubscription printed.",
+        "review_note": "Reader withdrawn by the coordinate source-order audit: native DjVu WORD geometry places marginal-summary or marginal-date WORDs on raw lines shared with body WORDs inside the selected extent (2 loci), and the rendered PDF prints that marginal text inside body or heading paragraphs. A complete ordered reader needs a coordinate reading-order derivative. Audit report SHA-256 e44dd97490bb8036d2e507cd0946a28b8aecf5fa9504975ec0fe6520e0cd6e02.",
         "title": "Cum primum: litterae encyclicae ad episcopos Poloniae"
       },
+      "review_history": [
+        {
+          "artifact_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba",
+          "boundary_review": "CCXXXV86108, explicitencyclicaltitle andPolishbishopsaddressees86111–86113, ownGregorius86116, Cumprimum86124; entireencyclical throughfinalblessing/date86313–86316 before23686319.",
+          "date": null,
+          "decision": "admit",
+          "document_id": "bullarium-continuatio.volume-19.line-00086108",
+          "genre": "encyclical",
+          "language": "la",
+          "physical_line_ranges": [
+            [
+              86108,
+              86206
+            ],
+            [
+              86218,
+              86316
+            ]
+          ],
+          "printed_attribution": "Gregorius PP. XVI.",
+          "reading_order_review": "Leaves605–606 normalL/R; apostolicquotation continues86206/86218 aroundpageheader; completequotedscripture, Augustine,Tertullian andallclosingexhortations retained.",
+          "review_note": "Fully read every literal LF86108–86316, with20LF outside context. CCXXXV86108, explicitencyclicaltitle andPolishbishopsaddressees86111–86113, ownGregorius86116, Cumprimum86124; entireencyclical throughfinalblessing/date86313–86316 before23686319. Leaves605–606 normalL/R; apostolicquotation continues86206/86218 aroundpageheader; completequotedscripture, Augustine,Tertullian andallclosingexhortations retained. Whole Latin encyclical, includingallprintedcitations and completeclosing; no separatesubscription printed. Raw source preserved; no normalized date eligibility gate or existing-work join asserted.",
+          "reviewed_extent": "Every literal LF86108–86316 with at least20LF outside context, including all substantive sections, own source notes/marginalia, subscriptions and closing.",
+          "source_attribution_lines": [
+            86116,
+            86116
+          ],
+          "source_extent_review": "Whole Latin encyclical, includingallprintedcitations and completeclosing; no separatesubscription printed.",
+          "title": "Cum primum: litterae encyclicae ad episcopos Poloniae"
+        }
+      ],
       "scan_leaf_ids": [
         605,
         606
@@ -507489,7 +508115,7 @@
       "segment_path": "src/sources/works/bullarium-continuatio/volume-19-line-00086108/editions/1857-bullarium-continuatio-volume-19-la/segments/source-ocr.toml",
       "selection_start": 86108,
       "source_heading_raw": "CCXXXV. ",
-      "status": "admitted-complete",
+      "status": "specifically-held",
       "title_raw": "CCXXXV. s janii  Encyclica  litera  porrecta  venerabilibus  fra- inw3!!.  tribus  archiepiscopis  et  episcopis  in  Po- loniae  regno  commorantibus. Gregorius  PP.  XVI. Venerabiles  fratres Salutem  et  apostolicam  benedictionem Cum  primum  ad  aures  Nostras  fa- ma acerbissimarum  calamitatum  , quae elapso  anno  florenlissimum  istud  regnum",
       "volume_key": "volume-19",
       "work_id": "work.bullarium-continuatio.volume-19.line-00086108"
@@ -508391,16 +509017,50 @@
         ]
       ],
       "protocol": null,
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-19.1857-rome-mul.ocr-c12cbb5c5cd4",
+          "id": "bullarium-continuatio.volume-19.line-00086831.part-02",
+          "language": "la",
+          "pdf_sha256": "b2b9d7ed6e4879f2cc347db00a258b79a85f5fbca3c632bfd59ba4fe0892f7e0",
+          "physical_line_ranges": [
+            [
+              86828,
+              86828
+            ],
+            [
+              86834,
+              86837
+            ],
+            [
+              86852,
+              86856
+            ],
+            [
+              86900,
+              86936
+            ],
+            [
+              86945,
+              87008
+            ],
+            [
+              87011,
+              87027
+            ]
+          ],
+          "segment_id": "segment.bullarium-continuatio.volume-19.line-00086831.part-02.1857-bullarium-continuatio-volume-19-la.source-ocr",
+          "source_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba"
+        },
+        "reason": "Whole reader withdrawn before installation: the coordinate source-order audit confirmed printed marginal summary or date text fused into body or heading lines (2 loci; first at leaf 610, LF 86907). Recorded in src/sources/papal-documents/continuation-source-order-audit.md.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "cc9257b13336248119137c1547d0e7a96894d057e15c031ff1f3336003637db3",
       "render_revision": "2026-10-26T18:35:44Z",
       "review": {
         "artifact_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba",
-        "boundary_review": "CCXLI86828, righttitle86834–86835, Planellavisitoraddress86852–86856, ownGregorius86900, Insublimi86907; allthreeparagraphs/fullclosingdate87024–87027 before24287030.",
-        "date": null,
-        "decision": "admit",
+        "decision": "hold",
         "document_id": "bullarium-continuatio.volume-19.line-00086831.part-02",
-        "genre": "apostolic-brief",
-        "language": "la",
-        "parent_id": "bullarium-continuatio.volume-19.line-00086831",
         "physical_line_ranges": [
           [
             86828,
@@ -508427,17 +509087,57 @@
             87027
           ]
         ],
-        "printed_attribution": "Gregorius PP. XVI.",
-        "reading_order_review": "Exactleaf610L/R/L/R warningsariseinterleavingseparate240/241 blocks. All241 selectedblocksrightcolumnx985–1517:header66828,title86834,address86852,protocol86900,body86907–86936. NaturalNostrorum86936/strorum86945 andeffectum87007/exequutionem87011; completeascendingselection withoutfusion.",
-        "review_note": "Fully read every literal LF86828–87027, with20LF outside context. CCXLI86828, righttitle86834–86835, Planellavisitoraddress86852–86856, ownGregorius86900, Insublimi86907; allthreeparagraphs/fullclosingdate87024–87027 before24287030. Exactleaf610L/R/L/R warningsariseinterleavingseparate240/241 blocks. All241 selectedblocksrightcolumnx985–1517:header66828,title86834,address86852,protocol86900,body86907–86936. NaturalNostrorum86936/strorum86945 andeffectum87007/exequutionem87011; completeascendingselection withoutfusion. Whole Latin apostolic brief, all surviving substantive paragraphs, dispositive clauses and complete date; no additional subscription printed before next independent act. Raw source preserved; no normalized date eligibility gate or existing-work join asserted.",
-        "reviewed_extent": "Every literal LF86828–87027 with at least20LF outside context, including all substantive sections, own source notes/marginalia, subscriptions and closing.",
-        "source_attribution_lines": [
-          86900,
-          86900
-        ],
-        "source_extent_review": "Whole Latin apostolic brief, all surviving substantive paragraphs, dispositive clauses and complete date; no additional subscription printed before next independent act.",
+        "review_note": "Reader withdrawn by the coordinate source-order audit: native DjVu WORD geometry places marginal-summary or marginal-date WORDs on raw lines shared with body WORDs inside the selected extent (2 loci), and the rendered PDF prints that marginal text inside body or heading paragraphs. A complete ordered reader needs a coordinate reading-order derivative. Audit report SHA-256 e44dd97490bb8036d2e507cd0946a28b8aecf5fa9504975ec0fe6520e0cd6e02.",
         "title": "Deputatio visitatoris apostolici missionis Tunetanae"
       },
+      "review_history": [
+        {
+          "artifact_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba",
+          "boundary_review": "CCXLI86828, righttitle86834–86835, Planellavisitoraddress86852–86856, ownGregorius86900, Insublimi86907; allthreeparagraphs/fullclosingdate87024–87027 before24287030.",
+          "date": null,
+          "decision": "admit",
+          "document_id": "bullarium-continuatio.volume-19.line-00086831.part-02",
+          "genre": "apostolic-brief",
+          "language": "la",
+          "parent_id": "bullarium-continuatio.volume-19.line-00086831",
+          "physical_line_ranges": [
+            [
+              86828,
+              86828
+            ],
+            [
+              86834,
+              86837
+            ],
+            [
+              86852,
+              86856
+            ],
+            [
+              86900,
+              86936
+            ],
+            [
+              86945,
+              87008
+            ],
+            [
+              87011,
+              87027
+            ]
+          ],
+          "printed_attribution": "Gregorius PP. XVI.",
+          "reading_order_review": "Exactleaf610L/R/L/R warningsariseinterleavingseparate240/241 blocks. All241 selectedblocksrightcolumnx985–1517:header66828,title86834,address86852,protocol86900,body86907–86936. NaturalNostrorum86936/strorum86945 andeffectum87007/exequutionem87011; completeascendingselection withoutfusion.",
+          "review_note": "Fully read every literal LF86828–87027, with20LF outside context. CCXLI86828, righttitle86834–86835, Planellavisitoraddress86852–86856, ownGregorius86900, Insublimi86907; allthreeparagraphs/fullclosingdate87024–87027 before24287030. Exactleaf610L/R/L/R warningsariseinterleavingseparate240/241 blocks. All241 selectedblocksrightcolumnx985–1517:header66828,title86834,address86852,protocol86900,body86907–86936. NaturalNostrorum86936/strorum86945 andeffectum87007/exequutionem87011; completeascendingselection withoutfusion. Whole Latin apostolic brief, all surviving substantive paragraphs, dispositive clauses and complete date; no additional subscription printed before next independent act. Raw source preserved; no normalized date eligibility gate or existing-work join asserted.",
+          "reviewed_extent": "Every literal LF86828–87027 with at least20LF outside context, including all substantive sections, own source notes/marginalia, subscriptions and closing.",
+          "source_attribution_lines": [
+            86900,
+            86900
+          ],
+          "source_extent_review": "Whole Latin apostolic brief, all surviving substantive paragraphs, dispositive clauses and complete date; no additional subscription printed before next independent act.",
+          "title": "Deputatio visitatoris apostolici missionis Tunetanae"
+        }
+      ],
       "scan_leaf_ids": [
         610,
         611,
@@ -508447,7 +509147,7 @@
       "segment_path": "src/sources/works/bullarium-continuatio/volume-19-line-00086831-part-02/editions/1857-bullarium-continuatio-volume-19-la/segments/source-ocr.toml",
       "selection_start": 86831,
       "source_heading_raw": "CCXLI. ",
-      "status": "admitted-complete",
+      "status": "specifically-held",
       "title_raw": "CCXLI. ",
       "volume_key": "volume-19",
       "work_id": "work.bullarium-continuatio.volume-19.line-00086831.part-02"
@@ -508968,16 +509668,34 @@
         ]
       ],
       "protocol": null,
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-19.1857-rome-mul.ocr-c12cbb5c5cd4",
+          "id": "bullarium-continuatio.volume-19.line-00087543.part-01",
+          "language": "la",
+          "pdf_sha256": "6f031fd4f4bead01a96b2e4016213c11e5aaa0719303c36887a703bb2c720da2",
+          "physical_line_ranges": [
+            [
+              87543,
+              87616
+            ],
+            [
+              87630,
+              87648
+            ]
+          ],
+          "segment_id": "segment.bullarium-continuatio.volume-19.line-00087543.part-01.1857-bullarium-continuatio-volume-19-la.source-ocr",
+          "source_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba"
+        },
+        "reason": "Whole reader withdrawn before installation: the coordinate source-order audit confirmed printed marginal summary or date text fused into body or heading lines (4 loci; first at leaf 615, LF 87549). Recorded in src/sources/papal-documents/continuation-source-order-audit.md.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "cc9257b13336248119137c1547d0e7a96894d057e15c031ff1f3336003637db3",
       "render_revision": "2026-10-26T18:35:44Z",
       "review": {
         "artifact_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba",
-        "boundary_review": "CCXLVII87543, bishopAloysiusMariaBlancisaddress87557–87560; degraded abbreviatedprotocol87564, Pastoralisofficii87572, allfour sections/fullclosing87644–87648 before24887651.",
-        "date": null,
-        "decision": "admit",
+        "decision": "hold",
         "document_id": "bullarium-continuatio.volume-19.line-00087543.part-01",
-        "genre": "apostolic-brief",
-        "language": "la",
-        "parent_id": "bullarium-continuatio.volume-19.line-00087543",
         "physical_line_ranges": [
           [
             87543,
@@ -508988,48 +509706,72 @@
             87648
           ]
         ],
-        "printed_attribution": "Gregor ius PP-. Decimus Sextus",
-        "reading_order_review": "Exactleaves615–616 normalL/R, episcopum87616/copum87630 naturalpagecontinuation. Neighboring fullrunningheader87489 onownleaf615 identifiesGregoryXVI, no competingissuer inprotocol orclosing.",
-        "review_note": "Fully read every literal LF87543–87648, with20LF outside context. CCXLVII87543, bishopAloysiusMariaBlancisaddress87557–87560; degraded abbreviatedprotocol87564, Pastoralisofficii87572, allfour sections/fullclosing87644–87648 before24887651. Exactleaves615–616 normalL/R, episcopum87616/copum87630 naturalpagecontinuation. Neighboring fullrunningheader87489 onownleaf615 identifiesGregoryXVI, no competingissuer inprotocol orclosing. WholeLatin brief includingfulljurisdictionalrevocation/appointment, nonobstantibus anddate. Raw source preserved; no normalized date eligibility gate or existing-work join asserted.",
-        "reviewed_extent": "Every literal LF87543–87648 with at least20LF outside context, including all substantive sections, own source notes/marginalia, subscriptions and closing.",
-        "source_attribution_context": {
-          "artifact_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba",
-          "basis": "Ownpageleaf615/artifact616 header87489 explicitlyidentifiesDecimusSextus; protocol87564 damagedbutGregoriusPP recognizable, andNostri/firstpersonPetrinecommissionwith1834fourthyearclosingconsistent. Sharedheaderoutsidebodykeptonlyasmetadataevidence.",
-          "kind": "shared-running-header",
-          "page_evidence": [
-            {
-              "artifact_page": 616,
-              "basis": "Ownpageleaf615/artifact616 header87489 explicitlyidentifiesDecimusSextus; protocol87564 damagedbutGregoriusPP recognizable, andNostri/firstpersonPetrinecommissionwith1834fourthyearclosingconsistent. Sharedheaderoutsidebodykeptonlyasmetadataevidence.",
-              "leaf": 615
-            }
-          ],
-          "protocol_and_closing_review": {
-            "basis": "Ownpageleaf615/artifact616 header87489 explicitlyidentifiesDecimusSextus; protocol87564 damagedbutGregoriusPP recognizable, andNostri/firstpersonPetrinecommissionwith1834fourthyearclosingconsistent. Sharedheaderoutsidebodykeptonlyasmetadataevidence.",
-            "closing_lines": [
-              87641,
-              87648
-            ],
-            "conflicting_issuer": false,
-            "finding": "consistent",
-            "protocol_lines": [
-              87568,
-              87578
-            ]
-          },
-          "scope_line_ranges": [
-            [
-              87543,
-              87648
-            ]
-          ]
-        },
-        "source_attribution_lines": [
-          87489,
-          87489
-        ],
-        "source_extent_review": "WholeLatin brief includingfulljurisdictionalrevocation/appointment, nonobstantibus anddate.",
+        "review_note": "Reader withdrawn by the coordinate source-order audit: native DjVu WORD geometry places marginal-summary or marginal-date WORDs on raw lines shared with body WORDs inside the selected extent (4 loci), and the rendered PDF prints that marginal text inside body or heading paragraphs. A complete ordered reader needs a coordinate reading-order derivative. Audit report SHA-256 e44dd97490bb8036d2e507cd0946a28b8aecf5fa9504975ec0fe6520e0cd6e02.",
         "title": "Constitutio delegati apostolici in regno Graeciae"
       },
+      "review_history": [
+        {
+          "artifact_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba",
+          "boundary_review": "CCXLVII87543, bishopAloysiusMariaBlancisaddress87557–87560; degraded abbreviatedprotocol87564, Pastoralisofficii87572, allfour sections/fullclosing87644–87648 before24887651.",
+          "date": null,
+          "decision": "admit",
+          "document_id": "bullarium-continuatio.volume-19.line-00087543.part-01",
+          "genre": "apostolic-brief",
+          "language": "la",
+          "parent_id": "bullarium-continuatio.volume-19.line-00087543",
+          "physical_line_ranges": [
+            [
+              87543,
+              87616
+            ],
+            [
+              87630,
+              87648
+            ]
+          ],
+          "printed_attribution": "Gregor ius PP-. Decimus Sextus",
+          "reading_order_review": "Exactleaves615–616 normalL/R, episcopum87616/copum87630 naturalpagecontinuation. Neighboring fullrunningheader87489 onownleaf615 identifiesGregoryXVI, no competingissuer inprotocol orclosing.",
+          "review_note": "Fully read every literal LF87543–87648, with20LF outside context. CCXLVII87543, bishopAloysiusMariaBlancisaddress87557–87560; degraded abbreviatedprotocol87564, Pastoralisofficii87572, allfour sections/fullclosing87644–87648 before24887651. Exactleaves615–616 normalL/R, episcopum87616/copum87630 naturalpagecontinuation. Neighboring fullrunningheader87489 onownleaf615 identifiesGregoryXVI, no competingissuer inprotocol orclosing. WholeLatin brief includingfulljurisdictionalrevocation/appointment, nonobstantibus anddate. Raw source preserved; no normalized date eligibility gate or existing-work join asserted.",
+          "reviewed_extent": "Every literal LF87543–87648 with at least20LF outside context, including all substantive sections, own source notes/marginalia, subscriptions and closing.",
+          "source_attribution_context": {
+            "artifact_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba",
+            "basis": "Ownpageleaf615/artifact616 header87489 explicitlyidentifiesDecimusSextus; protocol87564 damagedbutGregoriusPP recognizable, andNostri/firstpersonPetrinecommissionwith1834fourthyearclosingconsistent. Sharedheaderoutsidebodykeptonlyasmetadataevidence.",
+            "kind": "shared-running-header",
+            "page_evidence": [
+              {
+                "artifact_page": 616,
+                "basis": "Ownpageleaf615/artifact616 header87489 explicitlyidentifiesDecimusSextus; protocol87564 damagedbutGregoriusPP recognizable, andNostri/firstpersonPetrinecommissionwith1834fourthyearclosingconsistent. Sharedheaderoutsidebodykeptonlyasmetadataevidence.",
+                "leaf": 615
+              }
+            ],
+            "protocol_and_closing_review": {
+              "basis": "Ownpageleaf615/artifact616 header87489 explicitlyidentifiesDecimusSextus; protocol87564 damagedbutGregoriusPP recognizable, andNostri/firstpersonPetrinecommissionwith1834fourthyearclosingconsistent. Sharedheaderoutsidebodykeptonlyasmetadataevidence.",
+              "closing_lines": [
+                87641,
+                87648
+              ],
+              "conflicting_issuer": false,
+              "finding": "consistent",
+              "protocol_lines": [
+                87568,
+                87578
+              ]
+            },
+            "scope_line_ranges": [
+              [
+                87543,
+                87648
+              ]
+            ]
+          },
+          "source_attribution_lines": [
+            87489,
+            87489
+          ],
+          "source_extent_review": "WholeLatin brief includingfulljurisdictionalrevocation/appointment, nonobstantibus anddate.",
+          "title": "Constitutio delegati apostolici in regno Graeciae"
+        }
+      ],
       "scan_leaf_ids": [
         615,
         616,
@@ -509039,7 +509781,7 @@
       "segment_path": "src/sources/works/bullarium-continuatio/volume-19-line-00087543-part-01/editions/1857-bullarium-continuatio-volume-19-la/segments/source-ocr.toml",
       "selection_start": 87543,
       "source_heading_raw": "CCXLVII., ",
-      "status": "admitted-complete",
+      "status": "specifically-held",
       "title_raw": "CCXLVII., ",
       "volume_key": "volume-19",
       "work_id": "work.bullarium-continuatio.volume-19.line-00087543.part-01"
@@ -509091,16 +509833,34 @@
         ]
       ],
       "protocol": null,
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-19.1857-rome-mul.ocr-c12cbb5c5cd4",
+          "id": "bullarium-continuatio.volume-19.line-00087543.part-02",
+          "language": "la",
+          "pdf_sha256": "643ca9f7204f49968433075b63e12597a1291668203084a1770f49eebf271f59",
+          "physical_line_ranges": [
+            [
+              87651,
+              87755
+            ],
+            [
+              87767,
+              87776
+            ]
+          ],
+          "segment_id": "segment.bullarium-continuatio.volume-19.line-00087543.part-02.1857-bullarium-continuatio-volume-19-la.source-ocr",
+          "source_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba"
+        },
+        "reason": "Whole reader withdrawn before installation: the coordinate source-order audit confirmed printed marginal summary or date text fused into body or heading lines (2 loci; first at leaf 616, LF 87654). Recorded in src/sources/papal-documents/continuation-source-order-audit.md.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "cc9257b13336248119137c1547d0e7a96894d057e15c031ff1f3336003637db3",
       "render_revision": "2026-10-26T18:35:44Z",
       "review": {
         "artifact_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba",
-        "boundary_review": "CCXLVIII87651, JohnEnglandaddress87658–87661, ownGregorius87663, UniversiDominici87671; entirecommission, extraordinaryfacultiesreference/pagellae andfinalprayer/date87772–87776 before24987779.",
-        "date": null,
-        "decision": "admit",
+        "decision": "hold",
         "document_id": "bullarium-continuatio.volume-19.line-00087543.part-02",
-        "genre": "apostolic-brief",
-        "language": "la",
-        "parent_id": "bullarium-continuatio.volume-19.line-00087543",
         "physical_line_ranges": [
           [
             87651,
@@ -509111,17 +509871,41 @@
             87776
           ]
         ],
-        "printed_attribution": "Gregorius PP. XVI.",
-        "reading_order_review": "Exact mapped leaves follow ordinary left column then right column, without fused substantive lines or displaced clauses. Own marginal summaries retained; running headers and scan furniture omitted.",
-        "review_note": "Fully read every literal LF87651–87776, with20LF outside context. CCXLVIII87651, JohnEnglandaddress87658–87661, ownGregorius87663, UniversiDominici87671; entirecommission, extraordinaryfacultiesreference/pagellae andfinalprayer/date87772–87776 before24987779. Exact mapped leaves follow ordinary left column then right column, without fused substantive lines or displaced clauses. Own marginal summaries retained; running headers and scan furniture omitted. Whole Latin apostolic brief, all substantive paragraphs, dispositive clauses and complete date; no additional subscription printed before next independent act. Raw source preserved; no normalized date eligibility gate or existing-work join asserted.",
-        "reviewed_extent": "Every literal LF87651–87776 with at least20LF outside context, including all substantive sections, own source notes/marginalia, subscriptions and closing.",
-        "source_attribution_lines": [
-          87663,
-          87663
-        ],
-        "source_extent_review": "Whole Latin apostolic brief, all substantive paragraphs, dispositive clauses and complete date; no additional subscription printed before next independent act.",
+        "review_note": "Reader withdrawn by the coordinate source-order audit: native DjVu WORD geometry places marginal-summary or marginal-date WORDs on raw lines shared with body WORDs inside the selected extent (2 loci), and the rendered PDF prints that marginal text inside body or heading paragraphs. A complete ordered reader needs a coordinate reading-order derivative. Audit report SHA-256 e44dd97490bb8036d2e507cd0946a28b8aecf5fa9504975ec0fe6520e0cd6e02.",
         "title": "Confirmatio muneris legati apostolici in insula Haitarum Joanni England"
       },
+      "review_history": [
+        {
+          "artifact_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba",
+          "boundary_review": "CCXLVIII87651, JohnEnglandaddress87658–87661, ownGregorius87663, UniversiDominici87671; entirecommission, extraordinaryfacultiesreference/pagellae andfinalprayer/date87772–87776 before24987779.",
+          "date": null,
+          "decision": "admit",
+          "document_id": "bullarium-continuatio.volume-19.line-00087543.part-02",
+          "genre": "apostolic-brief",
+          "language": "la",
+          "parent_id": "bullarium-continuatio.volume-19.line-00087543",
+          "physical_line_ranges": [
+            [
+              87651,
+              87755
+            ],
+            [
+              87767,
+              87776
+            ]
+          ],
+          "printed_attribution": "Gregorius PP. XVI.",
+          "reading_order_review": "Exact mapped leaves follow ordinary left column then right column, without fused substantive lines or displaced clauses. Own marginal summaries retained; running headers and scan furniture omitted.",
+          "review_note": "Fully read every literal LF87651–87776, with20LF outside context. CCXLVIII87651, JohnEnglandaddress87658–87661, ownGregorius87663, UniversiDominici87671; entirecommission, extraordinaryfacultiesreference/pagellae andfinalprayer/date87772–87776 before24987779. Exact mapped leaves follow ordinary left column then right column, without fused substantive lines or displaced clauses. Own marginal summaries retained; running headers and scan furniture omitted. Whole Latin apostolic brief, all substantive paragraphs, dispositive clauses and complete date; no additional subscription printed before next independent act. Raw source preserved; no normalized date eligibility gate or existing-work join asserted.",
+          "reviewed_extent": "Every literal LF87651–87776 with at least20LF outside context, including all substantive sections, own source notes/marginalia, subscriptions and closing.",
+          "source_attribution_lines": [
+            87663,
+            87663
+          ],
+          "source_extent_review": "Whole Latin apostolic brief, all substantive paragraphs, dispositive clauses and complete date; no additional subscription printed before next independent act.",
+          "title": "Confirmatio muneris legati apostolici in insula Haitarum Joanni England"
+        }
+      ],
       "scan_leaf_ids": [
         615,
         616,
@@ -509131,7 +509915,7 @@
       "segment_path": "src/sources/works/bullarium-continuatio/volume-19-line-00087543-part-02/editions/1857-bullarium-continuatio-volume-19-la/segments/source-ocr.toml",
       "selection_start": 87543,
       "source_heading_raw": "CCXLV1I1. ",
-      "status": "admitted-complete",
+      "status": "specifically-held",
       "title_raw": "CCXLV1I1. ",
       "volume_key": "volume-19",
       "work_id": "work.bullarium-continuatio.volume-19.line-00087543.part-02"
@@ -509175,32 +509959,66 @@
         "line": 87793,
         "raw": "Gregorius  PP.  XVI"
       },
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-19.1857-rome-mul.ocr-c12cbb5c5cd4",
+          "id": "bullarium-continuatio.volume-19.line-00087779",
+          "language": "la",
+          "pdf_sha256": "85032bda5bc47f980828133ed464f87f29470fa4115a11430bb1d2c028944ec2",
+          "physical_line_ranges": [
+            [
+              87779,
+              87855
+            ]
+          ],
+          "segment_id": "segment.bullarium-continuatio.volume-19.line-00087779.1857-bullarium-continuatio-volume-19-la.source-ocr",
+          "source_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba"
+        },
+        "reason": "Whole reader withdrawn before installation: the coordinate source-order audit confirmed printed marginal summary or date text fused into body or heading lines (1 loci; first at leaf 617, LF 87785). Recorded in src/sources/papal-documents/continuation-source-order-audit.md.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "cc9257b13336248119137c1547d0e7a96894d057e15c031ff1f3336003637db3",
       "render_revision": "2026-10-26T18:35:44Z",
       "review": {
         "artifact_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba",
-        "boundary_review": "Printed249 heading87779, KingOthoaddress87788–87790, ownGregorius87793, Nobilissimum87805; allcommendation andblessing/date87852–87855 before25087858.",
-        "date": null,
-        "decision": "admit",
+        "decision": "hold",
         "document_id": "bullarium-continuatio.volume-19.line-00087779",
-        "genre": "apostolic-brief",
-        "language": "la",
         "physical_line_ranges": [
           [
             87779,
             87855
           ]
         ],
-        "printed_attribution": "Gregorius PP. XVI.",
-        "reading_order_review": "Exact mapped leaves follow ordinary left column then right column, without fused substantive lines or displaced clauses. Own marginal summaries retained; running headers and scan furniture omitted.",
-        "review_note": "Fully read every literal LF87779–87855, with20LF outside context. Printed249 heading87779, KingOthoaddress87788–87790, ownGregorius87793, Nobilissimum87805; allcommendation andblessing/date87852–87855 before25087858. Exact mapped leaves follow ordinary left column then right column, without fused substantive lines or displaced clauses. Own marginal summaries retained; running headers and scan furniture omitted. Whole Latin apostolic brief, all substantive paragraphs, dispositive clauses and complete date; no additional subscription printed before next independent act. Raw source preserved; no normalized date eligibility gate or existing-work join asserted.",
-        "reviewed_extent": "Every literal LF87779–87855 with at least20LF outside context, including all substantive sections, own source notes/marginalia, subscriptions and closing.",
-        "source_attribution_lines": [
-          87793,
-          87793
-        ],
-        "source_extent_review": "Whole Latin apostolic brief, all substantive paragraphs, dispositive clauses and complete date; no additional subscription printed before next independent act.",
+        "review_note": "Reader withdrawn by the coordinate source-order audit: native DjVu WORD geometry places marginal-summary or marginal-date WORDs on raw lines shared with body WORDs inside the selected extent (1 loci), and the rendered PDF prints that marginal text inside body or heading paragraphs. A complete ordered reader needs a coordinate reading-order derivative. Audit report SHA-256 e44dd97490bb8036d2e507cd0946a28b8aecf5fa9504975ec0fe6520e0cd6e02.",
         "title": "Commendatio episcopi Syrensis delegati apostolici Othoni regi Graeciae"
       },
+      "review_history": [
+        {
+          "artifact_sha256": "c12cbb5c5cd49431faa43afd645db2e5c577129b4ea58ff171e1b4231f6e48ba",
+          "boundary_review": "Printed249 heading87779, KingOthoaddress87788–87790, ownGregorius87793, Nobilissimum87805; allcommendation andblessing/date87852–87855 before25087858.",
+          "date": null,
+          "decision": "admit",
+          "document_id": "bullarium-continuatio.volume-19.line-00087779",
+          "genre": "apostolic-brief",
+          "language": "la",
+          "physical_line_ranges": [
+            [
+              87779,
+              87855
+            ]
+          ],
+          "printed_attribution": "Gregorius PP. XVI.",
+          "reading_order_review": "Exact mapped leaves follow ordinary left column then right column, without fused substantive lines or displaced clauses. Own marginal summaries retained; running headers and scan furniture omitted.",
+          "review_note": "Fully read every literal LF87779–87855, with20LF outside context. Printed249 heading87779, KingOthoaddress87788–87790, ownGregorius87793, Nobilissimum87805; allcommendation andblessing/date87852–87855 before25087858. Exact mapped leaves follow ordinary left column then right column, without fused substantive lines or displaced clauses. Own marginal summaries retained; running headers and scan furniture omitted. Whole Latin apostolic brief, all substantive paragraphs, dispositive clauses and complete date; no additional subscription printed before next independent act. Raw source preserved; no normalized date eligibility gate or existing-work join asserted.",
+          "reviewed_extent": "Every literal LF87779–87855 with at least20LF outside context, including all substantive sections, own source notes/marginalia, subscriptions and closing.",
+          "source_attribution_lines": [
+            87793,
+            87793
+          ],
+          "source_extent_review": "Whole Latin apostolic brief, all substantive paragraphs, dispositive clauses and complete date; no additional subscription printed before next independent act.",
+          "title": "Commendatio episcopi Syrensis delegati apostolici Othoni regi Graeciae"
+        }
+      ],
       "scan_leaf_ids": [
         617
       ],
@@ -509208,7 +510026,7 @@
       "segment_path": "src/sources/works/bullarium-continuatio/volume-19-line-00087779/editions/1857-bullarium-continuatio-volume-19-la/segments/source-ocr.toml",
       "selection_start": 87779,
       "source_heading_raw": "CCIL. ",
-      "status": "admitted-complete",
+      "status": "specifically-held",
       "title_raw": "CCIL. Commendatio  facta  Olboni  I.  Graeciae a*-  regi  pro  episcopo  Syrensi  delegato  apo- \"SST*  atolico. Carissimo  in  Christo filio  Nostro  Othoni  I. Graeciae  regi  illustri Gregorius  PP.  XVI. Carissime  in  Christo  fili",
       "volume_key": "volume-19",
       "work_id": "work.bullarium-continuatio.volume-19.line-00087779"
@@ -517975,7 +518793,7 @@
   "reader_selection_coverage": {
     "note": "Reader-format/selection variants do not increase complete historical-witness counts. Frozen base rows remain resolvable historical components.",
     "variants": 59,
-    "withdrawals": 213
+    "withdrawals": 234
   },
   "render_corrections": [
     {
@@ -518066,7 +518884,7 @@
       "segment_id": "segment.bullarium-continuatio.volume-02.line-00056225.part-03.1837-bullarium-continuatio-volume-02-mul.source-ocr"
     }
   ],
-  "revision": "2026-10-28T18:00:31Z",
+  "revision": "2026-10-28T18:15:01Z",
   "schema": "triptych-papal-series-catalog/v1",
   "scope": "Configured historical source containers and proposed constituents; no complete historical papal-act census or authenticity determination.",
   "series_id": "bullarium-continuatio",
