@@ -122,6 +122,25 @@ Character-encoding repair does not establish word-level collation. Preserve
 the prior artifact and reviewed consumer pins; superseding an incomplete
 selection requires an explicit disposition before its PDF can be installed.
 
+Where an OCR text stream fuses a printing's marginal summaries into body
+lines, a whole-volume coordinate reading-order derivative may restore source
+order. It is such a separately identified derivative. Every native WORD appears
+exactly once with its value unchanged, and only order, role and inter-WORD
+whitespace change. Pages whose geometry is uncertain are held and keep their
+raw OCR bytes. Readers keep marginal summaries as separate TAB-led blocks, each
+emitted at its anchor beside the section it annotates and never fused into a
+body line; this is how the continuation series already retains its own
+historical marginal summaries literally. A single OCR WORD that joins marginal
+and body glyphs is an inseparable mixture. Any unit containing one stays held
+for a character-geometry pass and is not admitted with a disclosure. Only a
+unit whose prior reviewed extent maps cleanly and contiguously through WORD
+identity is registered, as a new reading selection of the same work that
+preserves its withdrawn predecessor. Each volume must first pass an evidence
+gate of at least twelve native page images, at least half of them held out
+from the proposal's tuning, with the running-head rows of every page listed
+for a quick scan. Every page of every repaired PDF is still visually reviewed
+before installation.
+
 ## Mechanical reading edition
 
 These are source editions, attributed to the named pope and source edition.

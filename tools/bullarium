@@ -16,6 +16,18 @@ EXAMPLES = {
         Example('tools/bullarium geometry --recipe .scratch/bullarium_reconstruction/geometry_engine/absent-recipe.json --out .scratch/bullarium_reconstruction/geometry_engine/preflight --json', ('{"code":"input","error":"geometry recipe is not readable JSON","status":"error","v":1}',), 'A missing recipe is refused before creating derivative outputs.'),
         Example('tools/bullarium geometry --recipe .scratch/bullarium_reconstruction/geometry_engine/absent-recipe.json --out .scratch/bullarium_reconstruction/geometry_engine/preflight', ('bullarium geometry: geometry recipe is not readable JSON',), 'The same safe recipe refusal in ordinary text.'),
     ),
+    'geometry propose': (
+        Example('tools/bullarium geometry propose --volume 4 --out ../outside --json', ('{"code":"input","error":"input path must be canonical repository-relative without traversal","status":"error","v":1}',), 'An output outside scratch/build is refused before any source is read.'),
+        Example('tools/bullarium geometry propose --volume 4 --out ../outside', ('bullarium geometry propose: input path must be canonical repository-relative without traversal',), 'The same refusal in ordinary text.'),
+    ),
+    'geometry map-units': (
+        Example('tools/bullarium geometry map-units --recipe .scratch/absent/recipe.json --replay .scratch/absent --out ../outside.json --json', ('{"code":"input","error":"input path must be canonical repository-relative without traversal","status":"error","v":1}',), 'The mapping destination is checked before the recipe, replay or catalog is read.'),
+        Example('tools/bullarium geometry map-units --recipe .scratch/absent/recipe.json --replay .scratch/absent --out ../outside.json', ('bullarium geometry map-units: input path must be canonical repository-relative without traversal',), 'The same refusal in ordinary text.'),
+    ),
+    'geometry register': (
+        Example('tools/bullarium geometry register --recipe .scratch/absent/recipe.json --replay .scratch/absent --mapping .scratch/absent/mapping.json --units .scratch/absent/units.json --revision invalid --json', ('{"code":"input","error":"revision requires explicit whole-second UTC","status":"error","v":1}',), 'An invalid revision is refused before replay, catalog reads or any source write.'),
+        Example('tools/bullarium geometry register --recipe .scratch/absent/recipe.json --replay .scratch/absent --mapping .scratch/absent/mapping.json --units .scratch/absent/units.json --revision invalid', ('bullarium geometry register: revision requires explicit whole-second UTC',), 'The same refusal in ordinary text.'),
+    ),
     'series': (
         Example('tools/bullarium series check --config ../../outside --json', ('{"error": "path must stay below repository root", "status": "error", "v": 1}',), 'A config outside the repository is refused before source reads or mutations.'),
         Example('tools/bullarium series check --config ../../outside', ('bullarium series: path must stay below repository root',), 'The same safe path refusal in ordinary text.'),

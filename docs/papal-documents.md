@@ -360,6 +360,47 @@ rights clearance. Inspect the staged receipt and output; repeating with
 receipt. It creates no passage records or `verified` evidence promotion. See
 `witness --help` for the exact required recipe fields.
 
+### Reading-order derivatives for fused marginal summaries
+
+When the archive.org text stream fuses a volume's marginal summaries into body
+lines, rebuild the whole volume from its native DjVu WORD coordinates instead
+of repairing readers one by one. The input map locates the cached whole XML
+(`triptych-bullarium-geometry-input-map/v1`). Proposal, replay and mapping
+write only below `.scratch/` or `build/`:
+
+```sh
+tools/bullarium geometry propose --volume 4 --input-map .scratch/reading-order/input-map-volume-04.json --out .scratch/reading-order/v04
+tools/bullarium geometry --recipe .scratch/reading-order/v04/recipe.json --input-map .scratch/reading-order/input-map-volume-04.json --out .scratch/reading-order/v04/replay
+tools/bullarium geometry --recipe .scratch/reading-order/v04/recipe.json --input-map .scratch/reading-order/input-map-volume-04.json --out .scratch/reading-order/v04/replay --check
+tools/bullarium geometry map-units --recipe .scratch/reading-order/v04/recipe.json --replay .scratch/reading-order/v04/replay --out .scratch/reading-order/v04/unit-mapping.json
+```
+
+`propose` writes an explicit v2 recipe and `running-heads.tsv`, which lists
+every page's running-head row for a quick scan. The recipe records each page
+as reordered, held (with its reason) or empty, and each reordered page's rows
+of native WORD ordinals. It also records page measurements and any
+inseparable mixed WORDs. Its thresholds are fractions of the measured column
+width and line pitch. The replay expands the rows into the explicit v1 recipe
+and proves that every WORD appears exactly once, unchanged. `map-units` places
+every catalog unit in the derivative through WORD identity and assigns one
+category: `clean`, `review:margin-ownership-at-boundary`,
+`hold:inseparable-WORD`, `hold:body-not-contiguous` or another hold. Only
+`clean` units can be registered. Name them explicitly in a selection file,
+`{"schema": "triptych-bullarium-reading-order-selection/v1", "units": [...]}`:
+
+```sh
+tools/bullarium geometry register --recipe .scratch/reading-order/v04/recipe.json --replay .scratch/reading-order/v04/replay --mapping .scratch/reading-order/v04/unit-mapping.json --units .scratch/reading-order/v04/selection.json --revision 2026-10-28T00:00:00Z --input-map .scratch/reading-order/input-map-volume-04.json
+```
+
+`register` writes four artifacts under the volume edition: the derivative,
+the gzip recipe, the page map and the replay receipt. It declares them in the
+volume container and then admits each selected unit through `bullarium admit`
+as `<unit>.reading-order`, a new reading selection of the same work, into
+`bullarium-geometry-manifest.json`. Every write is append-only. Raw artifacts,
+prior segments and the withdrawal inventory are not touched. Admission is not
+installation: a volume must first pass its native-image evidence gate, and
+every page of every repaired PDF is reviewed before install.
+
 ## Coverage
 
 The discovery boundary is the Vatican's curated papal HTML collections from

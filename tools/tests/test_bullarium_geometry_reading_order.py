@@ -1,0 +1,374 @@
+"""Reading-order recipes: v2 rows, proposal envelopes, unit mapping and registration."""
+from __future__ import annotations
+
+import copy
+import gzip
+import json
+from pathlib import Path
+import sys
+import tempfile
+import tomllib
+import unittest
+
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "scripts"))
+sys.dont_write_bytecode = True
+import _bullarium as b
+import _bullarium_geometry as geometry
+
+W, H, L0, MEASURE, R0, PITCH, TOP = 2000, 3000, 300, 600, 960, 50, 330
+L1, R1 = L0 + MEASURE, R0 + MEASURE
+
+
+def body_line(column, index, *, words=6, indent=0, short=False, prefix="w"):
+    e0 = L0 if column == "L" else R0
+    y0 = TOP + index * PITCH
+    count = 4 if short else words
+    step = (MEASURE - indent) // words
+    entries = []
+    for k in range(count):
+        x0 = e0 + indent + k * step
+        x1 = e0 + MEASURE if (k == count - 1 and not short) else x0 + step
+        entries.append((f"{prefix}{column.lower()}{index}x{k}", (x0, y0, x1, y0 + 40)))
+    return entries
+
+
+def page_lines(*, interleave=False, deadzone=False, mixed=False, fused=True):
+    header = [[("An.", (100, 180, 140, 210)), ("C.", (140, 180, 170, 210)), ("1300", (170, 180, 280, 210))],
+              [("BULLARIUM", (820, 180, 960, 210)), ("ROMANUM", (960, 180, 1100, 210))],
+              [("17", (1450, 180, 1500, 210)), ("An.", (1600, 180, 1640, 210)), ("C.", (1640, 180, 1670, 210)),
+               ("1300", (1670, 180, 1780, 210))]]
+    left, right = [], []
+    for i in range(20):
+        indent = 40 if i in (0, 10) else 0
+        line = body_line("L", i, indent=indent, short=(i == 9))
+        if fused and i == 10:     # a marginal summary fused at the start of a body LINE
+            line = [("Prooemium.", (150, TOP + i * PITCH + 5, L0 + indent, TOP + i * PITCH + 30))] + line
+        if mixed and i == 14:     # marginal hyphen and first body word in one WORD
+            line = [("-et", (L0 - 16, TOP + i * PITCH, L0 + 40, TOP + i * PITCH + 40))] + \
+                   [(v, (x0 + 40 if j == 0 else x0, y0, x1, y1)) for j, (v, (x0, y0, x1, y1)) in enumerate(line)]
+        if deadzone and i == 16:
+            line = [(v, (L0 - 8.5 if j == 0 else x0, y0, x1, y1)) for j, (v, (x0, y0, x1, y1)) in enumerate(line)]
+        left.append(line)
+        line = body_line("R", i, indent=40 if i in (0, 12) else 0, short=(i == 11))
+        if fused and i == 5:      # a marginal summary fused at the end of a body LINE
+            line = line + [("Clausulae", (R1 + 20, TOP + i * PITCH + 5, R1 + 150, TOP + i * PITCH + 30))]
+        right.append(line)
+    note = [[("summarium", (160, TOP + 11 * PITCH + 5, 290, TOP + 11 * PITCH + 30))]] if fused else []
+    if interleave:
+        body = left[:10] + right[:5] + left[10:] + note + right[5:]
+    else:
+        body = left + note + right
+    return header + body
+
+
+class Fixture:
+    """A synthetic two-page volume with a blank leaf, its records and catalog."""
+
+    def __init__(self, root, pages):
+        self.root = root
+        xml = bytearray(b'<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE DjVuXML>\n<DjVuXML><BODY>')
+        raw = bytearray()
+        for number, lines in enumerate(pages, 1):
+            xml.extend(f'<OBJECT usemap="vol_{number:04d}.djvu" width="{W}" height="{H}"><HIDDENTEXT>'.encode())
+            for line in lines:
+                xml.extend(b"<LINE>")
+                for value, (x0, y0, x1, y1) in line:
+                    xml.extend(f'<WORD coords="{int(x0)},{int(y1)},{int(x1)},{int(y0)}">{value}</WORD>'.encode())
+                xml.extend(b"</LINE>")
+                raw.extend((" ".join(v for v, _ in line) + "\n").encode())
+            raw.extend(b"\n")
+            xml.extend(b"</HIDDENTEXT></OBJECT>")
+        xml.extend(b"</BODY></DjVuXML>")
+        self.raw, self.xml = bytes(raw), bytes(xml)
+        base = root / "src/sources/works/bullarium-romanum/volume-01/editions/1857-turin-latin"
+        self.edition_path = base
+        records = {}
+        for key, name, payload in (("ocr", "ocr.txt", self.raw), ("xml", "ocr.xml", self.xml)):
+            folder = base / "artifacts" / key
+            b.write(folder / name, payload)
+            record = {"schema": 1, "record_type": "artifact", "id": f"artifact.bullarium-romanum.volume-01.1857-turin-latin.{key}",
+                      "edition_id": "edition.bullarium-romanum.volume-01.1857-turin-latin", "storage": "tracked",
+                      "media_type": "text/plain" if key == "ocr" else "application/xml", "rights_status": "public-domain",
+                      "rights_basis": "Identified 1857 printing.", "path": str((folder / name).relative_to(root)),
+                      "sha256": b.sha(payload), "byte_size": len(payload), "source_url": f"https://example.org/{name}"}
+            b.record(folder / "artifact.toml", record)
+            records[key] = (record, str((folder / "artifact.toml").relative_to(root)))
+        self.records = records
+        self.container = {"work_id": "work.bullarium-romanum.volume-01", "edition_id": "edition.bullarium-romanum.volume-01.1857-turin-latin",
+                          "edition_path": str(base.relative_to(root)),
+                          "artifacts": {key: {"id": rec["id"], "sha256": rec["sha256"], "manifest": manifest}
+                                        for key, (rec, manifest) in records.items()}}
+
+    def catalog(self, units):
+        b.write(self.root / b.CATALOG, b.json_bytes({"schema": "triptych-bullarium-catalog/v1",
+                                                     "volumes": [{"volume": 1, "container": self.container}],
+                                                     "units": units, "coverage": {}}))
+        b.write(self.root / geometry.WITHDRAWALS, b.json_bytes({"affected_units": []}))
+
+    def unit(self, number, ranges, **extra):
+        rec = self.records["ocr"][0]
+        return {"id": f"bullarium.volume-01.unit-{number:04d}", "volume": 1, "artifact_id": rec["id"],
+                "artifact_sha256": rec["sha256"], "act_number_raw": str(number), "status": "held",
+                "physical_line_ranges": ranges, **extra}
+
+
+class ReadingOrderTests(unittest.TestCase):
+    def setUp(self):
+        scratch = ROOT / ".scratch/bullarium_reconstruction/geometry_engine/tests"
+        scratch.mkdir(parents=True, exist_ok=True)
+        self.temp = tempfile.TemporaryDirectory(dir=scratch)
+        self.root = Path(self.temp.name)
+
+    def tearDown(self):
+        self.temp.cleanup()
+
+    def volume(self, *pages, units=None):
+        fixture = Fixture(self.root, list(pages) + [[]])
+        fixture.catalog(units(fixture) if units else [])
+        return fixture
+
+    def propose(self, name="proposal"):
+        geometry.propose(self.root, f".scratch/{name}", volume=1)
+        return json.loads((self.root / f".scratch/{name}/recipe.json").read_bytes())
+
+    def test_proposal_separates_margins_heads_and_columns(self):
+        self.volume(page_lines())
+        recipe = self.propose()
+        page = recipe["pages"][0]
+        self.assertEqual(page["status"], "reordered")
+        self.assertEqual([p["status"] for p in recipe["pages"]], ["reordered", "empty"])
+        codes = [row[0] for row in page["rows"]]
+        self.assertEqual(codes[0], "H")
+        self.assertLess(max(i for i, c in enumerate(codes) if c == "L"), min(i for i, c in enumerate(codes) if c == "R"))
+        products = geometry.build(self.root, ".scratch/proposal/recipe.json", ".scratch/replay")
+        text = (self.root / ".scratch/replay/hybrid.txt").read_text()
+        self.assertIn("\n\n\tProoemium.\n\tsummarium\n\n", text)       # one block, TAB-led, before its section
+        self.assertIn("\n\n\tClausulae\n\n", text)
+        self.assertTrue(text.startswith("An. C. 1300 BULLARIUM ROMANUM 17 An. C. 1300\n\n"))
+        self.assertLess(text.index("wl19x5"), text.index("wr0x0"))
+        self.assertEqual(products["changed_pages"], 1)
+        head = (self.root / ".scratch/proposal/running-heads.tsv").read_text().splitlines()
+        self.assertEqual(head[0], "1\treordered\tAn. C. 1300 BULLARIUM ROMANUM 17 An. C. 1300")
+
+    def test_v2_replay_is_byte_equivalent_to_its_explicit_v1_expansion(self):
+        self.volume(page_lines(mixed=True))
+        self.propose()
+        geometry.build(self.root, ".scratch/proposal/recipe.json", ".scratch/v2")
+        recipe, raw, xml, _ = geometry.load_recipe(self.root, ".scratch/proposal/recipe.json")
+        expanded = geometry.expand_v2(recipe, raw, xml)
+        self.assertTrue(any(page["before"] == "" for page in expanded["changed_pages"]))
+        b.write(self.root / ".scratch/v1.json", json.dumps(expanded).encode())
+        geometry.build(self.root, ".scratch/v1.json", ".scratch/v1")
+        for name in ("hybrid.txt", "page-map.json", "byte-map.json", "changed-word-map.jsonl.gz"):
+            self.assertEqual((self.root / ".scratch/v2" / name).read_bytes(), (self.root / ".scratch/v1" / name).read_bytes(), name)
+        v1, v2 = (json.loads((self.root / f".scratch/{n}/validation.json").read_text()) for n in ("v1", "v2"))
+        self.assertEqual(v2.pop("recipe_schema"), geometry.SCHEMA_V2)
+        self.assertNotIn("recipe_schema", v1)
+        for item in (v1, v2):
+            item.pop("recipe_sha256")
+            item["outputs"].pop("validation.json", None)
+        self.assertEqual(v1, v2)
+
+    def test_page_initial_marginal_row_keeps_its_tab_in_both_schemas(self):
+        self.volume(page_lines())
+        recipe = self.propose()
+        page = recipe["pages"][0]
+        header = [row for row in page["rows"] if row[0] == "H"]
+        rest = [row for row in page["rows"] if row[0] != "H"]
+        page["rows"] = [["ML", "p", rest[0][2]]] + rest[1:] + [["H", "p", run] for row in header for run in [row[2]]]
+        b.write(self.root / ".scratch/tab.json", json.dumps(recipe).encode())
+        geometry.build(self.root, ".scratch/tab.json", ".scratch/tab")
+        recipe2, raw, xml, _ = geometry.load_recipe(self.root, ".scratch/tab.json")
+        expanded = geometry.expand_v2(recipe2, raw, xml)
+        self.assertEqual(expanded["changed_pages"][0]["before"], "\t")
+        b.write(self.root / ".scratch/tab-v1.json", json.dumps(expanded).encode())
+        geometry.build(self.root, ".scratch/tab-v1.json", ".scratch/tab-v1")
+        self.assertEqual((self.root / ".scratch/tab/hybrid.txt").read_bytes(), (self.root / ".scratch/tab-v1/hybrid.txt").read_bytes())
+
+    def test_v2_rows_must_name_every_page_WORD_exactly_once(self):
+        self.volume(page_lines())
+        recipe = self.propose()
+        rows = recipe["pages"][0]["rows"]
+        first = rows[1][2][0][0]
+        cases = {
+            "duplicate": lambda r: r["pages"][0]["rows"].append(["L", "l", [[first, first]]]),
+            "missing": lambda r: r["pages"][0]["rows"].pop(),
+            "foreign": lambda r: r["pages"][0]["rows"].append(["L", "l", [[99999, 99999]]]),
+            "bad code": lambda r: r["pages"][0]["rows"][1].__setitem__(0, "X"),
+            "page order": lambda r: r["pages"].reverse(),
+            "held with rows": lambda r: r["pages"][0].update(status="held", hold={"reason": "x"}),
+        }
+        for name, mutate in cases.items():
+            with self.subTest(name):
+                broken = copy.deepcopy(recipe)
+                mutate(broken)
+                b.write(self.root / ".scratch/broken.json", json.dumps(broken).encode())
+                with self.assertRaises(geometry.GeometryError):
+                    geometry.build(self.root, ".scratch/broken.json", ".scratch/broken-" + name.replace(" ", "-"))
+
+    def test_margin_hyphen_joined_to_first_body_word_stays_with_the_body_and_is_recorded(self):
+        self.volume(page_lines(mixed=True))
+        page = self.propose()["pages"][0]
+        self.assertEqual(page["status"], "reordered")
+        self.assertEqual([reason for _, reason in page["inseparable_WORDs"]], ["margin-WORD-extent-enters-body-start"])
+        wid = page["inseparable_WORDs"][0][0]
+        role = next(code for code, _, runs in page["rows"] for a, z in runs if a <= wid <= z)
+        self.assertEqual(role, "L")
+
+    def test_dead_zone_start_holds_the_page_without_guessing(self):
+        self.volume(page_lines(deadzone=True))
+        page = self.propose()["pages"][0]
+        self.assertEqual((page["status"], page["hold"]["reason"]), ("held", "uncertain-WORD-role"))
+        self.assertEqual(page["hold"]["detail"]["WORDs"][0][1], "left-edge-dead-zone")
+        geometry.build(self.root, ".scratch/proposal/recipe.json", ".scratch/held")
+        self.assertEqual((self.root / ".scratch/held/hybrid.txt").read_bytes(),
+                         (self.root / "src/sources/works/bullarium-romanum/volume-01/editions/1857-turin-latin/artifacts/ocr/ocr.txt").read_bytes())
+
+    def test_proposal_is_deterministic_and_refuses_to_replace_a_different_one(self):
+        self.volume(page_lines())
+        first = self.propose()
+        self.assertEqual(self.propose(), first)
+        path = self.root / ".scratch/proposal/recipe.json"
+        path.write_bytes(path.read_bytes() + b" ")
+        with self.assertRaisesRegex(ValueError, "differing proposal"):
+            self.propose()
+
+    def test_measure_relative_thresholds_scale_with_the_printed_measure(self):
+        self.volume(page_lines())
+        native = geometry.source_pages(self.root, geometry._record_pin(self.root, self.records("ocr")),
+                                       geometry._record_pin(self.root, self.records("xml")), [1])
+        page = native["pages"][0]
+        self.assertEqual(geometry.volume_measure([page]), MEASURE)
+        m = geometry.measure_page(page, MEASURE)
+        self.assertEqual((round(m["edges"]["L0"]["a"]), round(m["edges"]["R1"]["a"]), m["edges"]["L0"]["confirmed"]), (L0, R1, True))
+
+    def records(self, key):
+        return f"src/sources/works/bullarium-romanum/volume-01/editions/1857-turin-latin/artifacts/{key}/artifact.toml"
+
+    def mapped(self, units, **page):
+        self.volume(page_lines(**page), units=units)
+        self.propose()
+        geometry.build(self.root, ".scratch/proposal/recipe.json", ".scratch/replay")
+        geometry.map_units(self.root, ".scratch/proposal/recipe.json", ".scratch/replay", ".scratch/mapping.json")
+        return {u["unit_id"]: u for u in json.loads((self.root / ".scratch/mapping.json").read_text())["units"]}
+
+    def test_unit_mapping_finds_a_clean_contiguous_range(self):
+        rows = self.mapped(lambda f: [f.unit(1, [[1, 46]])])
+        self.assertEqual(rows["bullarium.volume-01.unit-0001"]["category"], "clean")
+
+    def test_unit_cut_on_raw_order_is_held_when_coordinate_order_interleaves_it(self):
+        # raw order: left 1-10, right 1-5, left 11-20 ...: an old boundary after
+        # right line 5 is not a boundary in coordinate order.
+        rows = self.mapped(lambda f: [f.unit(1, [[1, 18]]), f.unit(2, [[19, 46]])], interleave=True)
+        self.assertEqual(rows["bullarium.volume-01.unit-0001"]["category"], "hold:body-not-contiguous")
+
+    def test_unit_with_an_inseparable_WORD_is_held(self):
+        rows = self.mapped(lambda f: [f.unit(1, [[1, 46]])], mixed=True)
+        self.assertEqual(rows["bullarium.volume-01.unit-0001"]["category"], "hold:inseparable-WORD")
+
+    def registration_fixture(self):
+        fixture = self.volume(page_lines(), units=lambda f: [f.unit(1, [[1, 46]])])
+        review = {"unit_id": "bullarium.volume-01.unit-0001", "artifact_sha256": fixture.records["ocr"][0]["sha256"],
+                  "physical_line_ranges": [[1, 46]], "decision": "admit", "printed_attribution": "wl0x1 wl0x2",
+                  "title": "Titulus", "source_attribution_lines": [4, 4], "review_note": "Whole extent inspected.",
+                  "reviewed_extent": "Entire selected raw extent; no image collation."}
+        b.write(self.root / "review.json", b.json_bytes({"schema": "triptych-bullarium-boundary-reviews/v1", "reviews": [review]}))
+        b.admit(self.root, [self.root / "review.json"], "2026-10-27T00:00:00Z")
+        catalog = json.loads((self.root / b.CATALOG).read_text())
+        unit = catalog["units"][0]
+        unit.update(status="specifically-held", active_reader_status="source-order-hold",
+                    review_history=[copy.deepcopy(unit["review"])],
+                    review={**unit["review"], "decision": "hold", "review_note": "Synthetic confirmed fusion."})
+        b.write(self.root / b.CATALOG, b.json_bytes(catalog))
+        self.propose()
+        geometry.build(self.root, ".scratch/proposal/recipe.json", ".scratch/replay")
+        geometry.map_units(self.root, ".scratch/proposal/recipe.json", ".scratch/replay", ".scratch/mapping.json")
+        b.write(self.root / ".scratch/units.json", json.dumps({"schema": "triptych-bullarium-reading-order-selection/v1",
+                                                               "units": [unit["id"]]}).encode())
+        return fixture, unit
+
+    def snapshot(self, below="src"):
+        return {p: p.read_bytes() for p in (self.root / below).rglob("*") if p.is_file()}
+
+    def register(self):
+        return geometry.register(self.root, ".scratch/proposal/recipe.json", ".scratch/replay", ".scratch/mapping.json",
+                                 ".scratch/units.json", "2026-10-28T00:00:00Z")
+
+    def test_register_appends_a_new_reading_selection_and_preserves_raw_pins(self):
+        fixture, unit = self.registration_fixture()
+        before = self.snapshot()
+        result = self.register()
+        after = self.snapshot()
+        changed = {p for p in before if before[p] != after.get(p)}
+        self.assertEqual({p.relative_to(self.root).as_posix() for p in changed}, {b.CATALOG})   # every other write is new
+        for key in ("ocr", "xml"):      # raw artifact pins and bytes are untouched
+            record, manifest = fixture.records[key]
+            self.assertEqual(after[self.root / manifest], before[self.root / manifest])
+            self.assertEqual(after[self.root / record["path"]], before[self.root / record["path"]])
+        old_segment = self.root / unit["segment_path"]
+        self.assertEqual(after[old_segment], before[old_segment])
+        catalog = json.loads((self.root / b.CATALOG).read_text())
+        child = next(u for u in catalog["units"] if u["id"].endswith(".reading-order"))
+        self.assertEqual((child["status"], child["reading_selection_variant_of"], child["work_id"]),
+                         ("admitted-mechanical-ocr-extent", unit["id"], unit["work_id"]))
+        self.assertEqual(child["artifact_sha256"], result["derivative_sha256"])
+        derived = tomllib.loads((self.root / next(d["manifest"] for k, d in catalog["volumes"][0]["container"]["artifacts"].items()
+                                                  if k.startswith("reading_order_") and "recipe" not in k and "map" not in k
+                                                  and "validation" not in k)).read_text())
+        self.assertEqual((derived["artifact_type"], derived["derived_from"]),
+                         ("coordinate-reading-order-ocr", fixture.records["ocr"][0]["id"]))
+        document = json.loads((self.root / geometry.GEOMETRY_MANIFEST).read_text())["documents"][0]
+        self.assertEqual((document["id"], document["artifact_id"]), (child["id"], derived["id"]))
+        self.assertIn("marginal summaries are kept as separate blocks", document["source_note"])
+        segment = tomllib.loads((self.root / document["segment_path"]).read_text())
+        self.assertEqual(segment["artifact_sha256"], derived["sha256"])
+        self.assertEqual(b.check(self.root, self.root / b.CATALOG)["status"], "ok")
+
+    def test_register_replay_is_absent_or_identical(self):
+        self.registration_fixture()
+        self.register()
+        frozen = self.snapshot()
+        self.register()
+        self.assertEqual(self.snapshot(), frozen)
+
+    def test_register_refuses_a_differing_existing_artifact_before_any_write(self):
+        self.registration_fixture()
+        hybrid = (self.root / ".scratch/replay/hybrid.txt").read_bytes()
+        key = "reading-order-" + b.sha(hybrid)[:12]
+        target = self.root / "src/sources/works/bullarium-romanum/volume-01/editions/1857-turin-latin/artifacts" / key / "hybrid.txt"
+        b.write(target, b"different bytes\n")
+        frozen = self.snapshot()
+        with self.assertRaisesRegex(ValueError, "immutable"):
+            self.register()
+        self.assertEqual(self.snapshot(), frozen)
+
+    def test_register_admits_only_units_mapped_clean(self):
+        self.registration_fixture()
+        mapping = json.loads((self.root / ".scratch/mapping.json").read_text())
+        mapping["units"][0]["category"] = "review:margin-ownership-at-boundary"
+        path = self.root / ".scratch/mapping.json"
+        path.write_text(json.dumps(mapping))
+        frozen = self.snapshot()
+        with self.assertRaisesRegex(ValueError, "only units mapped 'clean'"):
+            self.register()
+        self.assertEqual(self.snapshot(), frozen)
+
+    def test_verbs_refuse_unsafe_inputs_before_reading_sources(self):
+        cases = (
+            (["propose", "--volume", "4", "--out", "../outside", "--json"], "without traversal"),
+            (["map-units", "--recipe", "x.json", "--replay", "x", "--out", "../outside.json", "--json"], "without traversal"),
+            (["register", "--recipe", "x", "--replay", "x", "--mapping", "x", "--units", "x", "--revision", "bad", "--json"], "whole-second UTC"),
+        )
+        for argv, message in cases:
+            with self.subTest(argv[0]):
+                import contextlib
+                import io
+                stream = io.StringIO()
+                with contextlib.redirect_stderr(stream):
+                    self.assertEqual(geometry.main(["--root", str(self.root)] + argv), 2)
+                self.assertIn(message, stream.getvalue())
+
+
+if __name__ == "__main__":
+    unittest.main()
