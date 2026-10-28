@@ -418,8 +418,27 @@ Open:
   flags real marginal text on body lines in 168 of the 208 volume-XIII
   readers) and withdrawal of any confirmed defects;
 - the four rejected Gregory readers;
-- boundary review of the Pius IX Acta (113 candidates) and the Benedict XIV
-  Bullarium (207, including *Ubi primum*).
+- boundary review of the Benedict XIV Bullarium (207 candidates, including
+  *Ubi primum*), whose printing shows the same margin fusion and so waits for
+  the geometry roll-out.
+
+Continuation audit, 2026-10-28: the coordinate detector was checked against
+native page images (176 of 177 strong leads true). It confirmed marginal
+summaries or dates fused into body or heading lines in 212 of the 397
+installed continuation readers. Those readers are withdrawn with explicit
+prior-to-null supersessions and their PDFs removed from the release. The 199
+held readers were audited before installation: 21 were withdrawn, the 27
+confirmed provider-mark corrections stay uninstalled, 8 unauditable readers
+stay held for manual review, and 143 lead-free readers were installed. The 14
+unauditable installed readers stay pending manual review. See
+`src/sources/papal-documents/continuation-source-order-audit.md`.
+
+Pius IX Acta, 2026-10-28: all 113 held candidates across Pars I volumes
+I–III and Pars II volume I are dispositioned. 174 complete printed witnesses
+are admitted, and 8 are held (missing scan pages, an Arabic facing-page
+interleave, displaced list numerals, and the *Syllabus*, whose issuer is
+unresolved). Their readers are rendered and in page review. The release holds
+4,348 PDFs.
 
 ## GPT Last Things and next Sunday propers, 2026-10-25
 
