@@ -68,6 +68,13 @@ SOURCE = 'artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facs
 # Whole source-owned chant bodies, independently pinned.
 CHANT_HASHES = {('nativitate-beatae-mariae-virginis', 'Introit'): 'ac1ab9d240f7cb3a0f088b80acb48167d61a16abc34d4fd96a865714ab886bc3', ('nativitate-beatae-mariae-virginis', 'Gradual'): '4896ee177aa0b456e960353ff0f5bbfa528a96a63aa9ea345fbbc9e3343845d8', ('nativitate-beatae-mariae-virginis', 'Alleluia'): 'a59d3ce0509fb1fe1b8066be8924a3e65a3235bbe0eca82c8e39465839533400', ('nativitate-beatae-mariae-virginis', 'Offertory'): '6a49511ddca9bbae452c505236e219da4e5f9796c6032e18180009776d3df9a2', ('nativitate-beatae-mariae-virginis', 'Communion'): '7083e0d7d8b0fcfa0708cfb40cfab85450b47d45cd1eb029bc930197e49ec979', ('s-laurentii-martyris', 'Alleluia'): '197f737fc1392463d519c814fd6813e91234acb56f4b9d82a1dd04e52a32d3e8', ('s-matthaei-apostoli-evangelistae', 'Alleluia'): 'fe78c111312d6329c2e9e48a5729be71eb761e56f84c15405459771f0aba4496', ('s-martini-episcopi-confessoris', 'Alleluia'): '4f67dbe69d5046af1293fde8dc2bbe69e20d265a9b97b92af33e5a7a7d234fd5'}
 CHANT_PASSAGES = {('nativitate-beatae-mariae-virginis', 'Introit'): 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.uncited-bvm-nativity-introit', ('nativitate-beatae-mariae-virginis', 'Gradual'): 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.uncited-bvm-nativity-gradual', ('nativitate-beatae-mariae-virginis', 'Alleluia'): 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.uncited-bvm-nativity-alleluia', ('nativitate-beatae-mariae-virginis', 'Offertory'): 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.uncited-bvm-nativity-offertory', ('nativitate-beatae-mariae-virginis', 'Communion'): 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.uncited-bvm-nativity-communion', ('s-laurentii-martyris', 'Alleluia'): 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.uncited-laurence-alleluia', ('s-matthaei-apostoli-evangelistae', 'Alleluia'): 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.uncited-matthew-alleluia', ('s-martini-episcopi-confessoris', 'Alleluia'): 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.uncited-martin-alleluia'}
+# Each former no-exemplar English absence became one confirmed received English
+# entry: 1f1be432b (the Communion is the exact Cummiskey REUSE_TARGET pinned by
+# test_roman_1962_english31_phase4) and eeab39fef
+# (the other seven, Lasance 1945; [[accepted]] core193/core39 in
+# src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml).
+CHANT_ENGLISH = {key: 'lasance-1945' for key in CHANT_HASHES}
+CHANT_ENGLISH['nativitate-beatae-mariae-virginis', 'Communion'] = 'cummiskey-1861'
 HISTORICAL_ARTIFACT = 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.uncited-eight-chants-la-checked-d05badcc'
 PROJECTION_ARTIFACT = 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.uncited-eight-chants-a4fbf91f'
 
@@ -218,17 +225,16 @@ class Roman1962ChantAppointmentTest(unittest.TestCase):
                 self.assertEqual(row['publication_source_ids'], [PROJECTION_ARTIFACT, HISTORICAL_ARTIFACT])
                 self.assertNotIn('Hic est sacerdos', proper['text'])
 
-    def test_each_uncited_target_has_one_exact_english_absence(self):
+    def test_each_uncited_target_has_one_exact_english_disposition(self):
         for key, name in CHANT_HASHES:
             with self.subTest(mass=key, proper=name):
                 def same(row):
-                    return (row.get('mass'), row.get('form_id'), row.get('proper'), row.get('cycle'), row.get('occurrence'), row.get('lang')) == (key, 'main', name, 'all', 1, 'en')
-                rows = [r for r in self.translations['untranslated'] if same(r)]
+                    return (row.get('mass'), row.get('form_id'), row.get('proper'), row.get('cycle'), row.get('occurrence')) == (key, 'main', name, 'all', 1)
+                self.assertFalse(any(same(r) and r.get('lang') == 'en' for r in self.translations['untranslated']))
+                rows = [r for r in self.translations.get('entries', []) if same(r)]
                 self.assertEqual(len(rows), 1)
-                self.assertEqual(rows[0]['reason'], {'kind': 'no-exemplar'})
-                self.assertEqual(rows[0]['extent'], 'body')
-                self.assertEqual(rows[0]['availability'], 'unavailable')
-                self.assertFalse(any(same(r) for r in self.translations.get('entries', [])))
+                self.assertEqual([t['lang'] for t in rows[0]['translations']], ['en'])
+                self.assertEqual((rows[0]['witness'], rows[0]['collation_result']), (CHANT_ENGLISH[key, name], 'confirmed'))
 
     def test_the_evidence_is_exactly_bounded_to_the_repaired_targets(self):
         rows = {(r['mass'], r['proper']): r for r in self.evidence['appointments']}
@@ -297,11 +303,12 @@ class Roman1962ChantAppointmentTest(unittest.TestCase):
         identity = lambda row: (row.get('mass'), row.get('form_id'), row.get('proper'),
                                 row.get('cycle'), row.get('occurrence'), row.get('lang'))
         target = ('s-laurentii-martyris', 'main', 'Alleluia', 'all', 1, 'en')
-        english = [r for r in self.translations['untranslated'] if identity(r) == target]
+        self.assertFalse(any(identity(r) == target for r in self.translations['untranslated']))
+        # eeab39fef: one confirmed Lasance entry for the normal-feast Alleluia only.
+        english = [r for r in self.translations.get('entries', []) if identity(r)[:5] == target[:5]]
         self.assertEqual(len(english), 1)
-        self.assertEqual((english[0]['extent'], english[0]['availability'], english[0]['reason']),
-                         ('body', 'unavailable', {'kind': 'no-exemplar'}))
-        self.assertFalse(any(identity(r) == target for r in self.translations.get('entries', [])))
+        self.assertEqual(([t['lang'] for t in english[0]['translations']], english[0]['witness'],
+                          english[0]['collation_result']), (['en'], 'lasance-1945', 'confirmed'))
 
     def test_votive_citations_and_extra_tract_are_detected(self):
         wrong_alleluia = copy.deepcopy(self.document)

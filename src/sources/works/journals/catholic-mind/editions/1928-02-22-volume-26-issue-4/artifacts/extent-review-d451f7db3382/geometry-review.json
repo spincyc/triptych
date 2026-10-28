@@ -1,0 +1,279 @@
+{
+  "schema": "triptych-english-geometry-review/v1",
+  "reviewed_on": "2026-10-26",
+  "decision": "admit-source-geometry-selection",
+  "status": "PASS",
+  "scope": "Exact source-region and printed-act extent review of twelve native facsimile pages. This admission does not certify error-free OCR, translation accuracy, historical authenticity, generated-PDF layout, installation or publication.",
+  "source_pdf": {
+    "path": ".scratch/english_expansion/pius_xi/sim_catholic-mind_1928-02-22_26_4/sim_catholic-mind_1928-02-22_26_4.pdf",
+    "sha256": "648aa46c014074e8ae99e6f6e3119534f40ff9d2fedb342e0189ba98393343f1",
+    "byte_size": 3589001,
+    "whole_acquired_artifact": true
+  },
+  "source_xml": {
+    "path": ".scratch/english_expansion/pius_xi/sim_catholic-mind_1928-02-22_26_4/sim_catholic-mind_1928-02-22_26_4_djvu.xml",
+    "sha256": "15ac32dd5c05b494db50c24040e81d6895eb74def00d3c072b0b403a44426457",
+    "byte_size": 626844
+  },
+  "geometry_recipe": {
+    "path": ".scratch/english_expansion/pius_xi/extract-journal-geometry.py",
+    "sha256": "37901180f403d9aafe34fbba4303383d7a456891c4e5b1cd3ec75cc7821f4d34"
+  },
+  "geometry_audit": {
+    "path": ".scratch/english_expansion/pius_xi/sim_catholic-mind_1928-02-22_26_4/geometry-selection.json",
+    "sha256": "1e2ac16624d792f37f7b2eb5cc946cc3449e0d9b00310ca21d80383f6fc8de98"
+  },
+  "selected_text": {
+    "path": ".scratch/english_expansion/pius_xi/sim_catholic-mind_1928-02-22_26_4/papal-act-geometry-text.txt",
+    "sha256": "123633d87eefc46a8093a1a9692ee16e1e7d255c66924b8cad5a3d0a8b5c8a26",
+    "byte_size": 25161,
+    "word_count": 4460,
+    "excluded_word_count": 247,
+    "full_text_read": true,
+    "independent_xml_replay_exact": true
+  },
+  "source_identity": {
+    "journal": "The Catholic Mind",
+    "volume": 26,
+    "issue": 4,
+    "publication_date": "1928-02-22",
+    "printed_pages": [
+      61,
+      72
+    ],
+    "title": "The Promotion of True Religious Unity",
+    "responsible": "Pius XI",
+    "act_date": "1928-01-06",
+    "translation_source_credit": "Reprinted from the N. C. W. C. News Sheet.",
+    "translator": "not named on this printed article",
+    "proof": "Native page1 masthead/title/source credit and native page12 complete dating clause/papal signature were inspected."
+  },
+  "page_coverage": [
+    {
+      "artifact_page": 1,
+      "printed_page": 61,
+      "raster_path": ".scratch/english_expansion/pius_xi/journal-proof/rasters/.scratch/english_expansion/pius_xi/sim_catholic-mind_1928-02-22_26_4/sim_catholic-mind_1928-02-22_26_4/pages/page-01.png",
+      "raster_sha256": "4919491e502b6c180854c51f9ba23b25d5fdc6c306abf3d5b7f8f60f059f1cf3",
+      "raster_byte_size": 1462097,
+      "individually_inspected": true,
+      "mask_review": "PASS"
+    },
+    {
+      "artifact_page": 2,
+      "printed_page": 62,
+      "raster_path": ".scratch/english_expansion/pius_xi/journal-proof/rasters/.scratch/english_expansion/pius_xi/sim_catholic-mind_1928-02-22_26_4/sim_catholic-mind_1928-02-22_26_4/pages/page-02.png",
+      "raster_sha256": "e7268d17d1a3a02a538a24dea54e4fc9e5f13476d19cd6d811f222a062e5bf9b",
+      "raster_byte_size": 1658973,
+      "individually_inspected": true,
+      "mask_review": "PASS"
+    },
+    {
+      "artifact_page": 3,
+      "printed_page": 63,
+      "raster_path": ".scratch/english_expansion/pius_xi/journal-proof/rasters/.scratch/english_expansion/pius_xi/sim_catholic-mind_1928-02-22_26_4/sim_catholic-mind_1928-02-22_26_4/pages/page-03.png",
+      "raster_sha256": "c5bbb7d04752a69b4c49b0b6b5f5e8ca0da5d3751bbce8ed2c106cbd12582bac",
+      "raster_byte_size": 1745801,
+      "individually_inspected": true,
+      "mask_review": "PASS"
+    },
+    {
+      "artifact_page": 4,
+      "printed_page": 64,
+      "raster_path": ".scratch/english_expansion/pius_xi/journal-proof/rasters/.scratch/english_expansion/pius_xi/sim_catholic-mind_1928-02-22_26_4/sim_catholic-mind_1928-02-22_26_4/pages/page-04.png",
+      "raster_sha256": "c41ad355ef084ba1fb07f85e0d167bc44c0821707b3e6e4321ade3f801139461",
+      "raster_byte_size": 1755582,
+      "individually_inspected": true,
+      "mask_review": "PASS"
+    },
+    {
+      "artifact_page": 5,
+      "printed_page": 65,
+      "raster_path": ".scratch/english_expansion/pius_xi/journal-proof/rasters/.scratch/english_expansion/pius_xi/sim_catholic-mind_1928-02-22_26_4/sim_catholic-mind_1928-02-22_26_4/pages/page-05.png",
+      "raster_sha256": "ecab8107426c31bf219230e14bd1c7617b750331abefbf4cc75f42d38e6d497e",
+      "raster_byte_size": 1754351,
+      "individually_inspected": true,
+      "mask_review": "PASS"
+    },
+    {
+      "artifact_page": 6,
+      "printed_page": 66,
+      "raster_path": ".scratch/english_expansion/pius_xi/journal-proof/rasters/.scratch/english_expansion/pius_xi/sim_catholic-mind_1928-02-22_26_4/sim_catholic-mind_1928-02-22_26_4/pages/page-06.png",
+      "raster_sha256": "fedfd72536b1a53f4f0c89db6aff81e6acfa50d447bb772f6690eb3b81bc6d5c",
+      "raster_byte_size": 1745066,
+      "individually_inspected": true,
+      "mask_review": "PASS"
+    },
+    {
+      "artifact_page": 7,
+      "printed_page": 67,
+      "raster_path": ".scratch/english_expansion/pius_xi/journal-proof/rasters/.scratch/english_expansion/pius_xi/sim_catholic-mind_1928-02-22_26_4/sim_catholic-mind_1928-02-22_26_4/pages/page-07.png",
+      "raster_sha256": "247f20d2fa7145a7859355feeed6112d06faa917d75e5397dea248373cb659b8",
+      "raster_byte_size": 1853800,
+      "individually_inspected": true,
+      "mask_review": "PASS"
+    },
+    {
+      "artifact_page": 8,
+      "printed_page": 68,
+      "raster_path": ".scratch/english_expansion/pius_xi/journal-proof/rasters/.scratch/english_expansion/pius_xi/sim_catholic-mind_1928-02-22_26_4/sim_catholic-mind_1928-02-22_26_4/pages/page-08.png",
+      "raster_sha256": "9e5c1b02379cead5f41dc755f7deddaa3d311cd2d930bffc149eb96ca7e5bbc0",
+      "raster_byte_size": 1736181,
+      "individually_inspected": true,
+      "mask_review": "PASS"
+    },
+    {
+      "artifact_page": 9,
+      "printed_page": 69,
+      "raster_path": ".scratch/english_expansion/pius_xi/journal-proof/rasters/.scratch/english_expansion/pius_xi/sim_catholic-mind_1928-02-22_26_4/sim_catholic-mind_1928-02-22_26_4/pages/page-09.png",
+      "raster_sha256": "498df5d576afc9f3d54c33160bcd5a473d2a2b5117d48fe641d6b7c41bbe8005",
+      "raster_byte_size": 1767684,
+      "individually_inspected": true,
+      "mask_review": "PASS"
+    },
+    {
+      "artifact_page": 10,
+      "printed_page": 70,
+      "raster_path": ".scratch/english_expansion/pius_xi/journal-proof/rasters/.scratch/english_expansion/pius_xi/sim_catholic-mind_1928-02-22_26_4/sim_catholic-mind_1928-02-22_26_4/pages/page-10.png",
+      "raster_sha256": "f1ced74e346f22933dc784d1175acc523fb2343b68e70d20eef8b0756992b33d",
+      "raster_byte_size": 1742856,
+      "individually_inspected": true,
+      "mask_review": "PASS"
+    },
+    {
+      "artifact_page": 11,
+      "printed_page": 71,
+      "raster_path": ".scratch/english_expansion/pius_xi/journal-proof/rasters/.scratch/english_expansion/pius_xi/sim_catholic-mind_1928-02-22_26_4/sim_catholic-mind_1928-02-22_26_4/pages/page-11.png",
+      "raster_sha256": "2dbce3f2e9a2189b7eac4890b2a3a6511a715cee7af5c6f46e3970789062609d",
+      "raster_byte_size": 1791810,
+      "individually_inspected": true,
+      "mask_review": "PASS"
+    },
+    {
+      "artifact_page": 12,
+      "printed_page": 72,
+      "raster_path": ".scratch/english_expansion/pius_xi/journal-proof/rasters/.scratch/english_expansion/pius_xi/sim_catholic-mind_1928-02-22_26_4/sim_catholic-mind_1928-02-22_26_4/pages/page-12.png",
+      "raster_sha256": "3feca82dcb69614ae1f2bab17df1458b580e7cdcf0d08806e0b23ae0f1fa083c",
+      "raster_byte_size": 1445868,
+      "individually_inspected": true,
+      "mask_review": "PASS"
+    }
+  ],
+  "mask": {
+    "word_center_x_min": 135,
+    "word_center_x_max": 1700,
+    "word_center_y_min_first_page": 340,
+    "word_center_y_min_other_pages": 280,
+    "selection_pages": [
+      1,
+      12
+    ],
+    "exclusion_assessment": "The 247 excluded XML words are printed journal masthead/running headers, the isolated first-page number, neighboring-page gutter text or scanner border marks. No substantive main-column act word, source section heading, footnote, dating clause or signature was found outside the final selection. All twelve page images were individually read at original raster detail and compared with the full selected text and complete exclusion inventory."
+  },
+  "five_additional_border_noise_exclusions": [
+    {
+      "artifact_page": 3,
+      "text": ",",
+      "coords": [
+        130,
+        2384,
+        133,
+        2381
+      ],
+      "basis": "Tiny isolated margin mark before the last main-column line; no printed grammatical comma occurs there in the page image."
+    },
+    {
+      "artifact_page": 4,
+      "text": "f",
+      "coords": [
+        1709,
+        1297,
+        1716,
+        1284
+      ],
+      "basis": "Isolated outer-edge mark beyond the main text column; not the printed phrase between that and Church."
+    },
+    {
+      "artifact_page": 7,
+      "text": "—",
+      "coords": [
+        111,
+        2275,
+        131,
+        2215
+      ],
+      "basis": "Left border/gutter mark outside the main printed line."
+    },
+    {
+      "artifact_page": 7,
+      "text": "—",
+      "coords": [
+        103,
+        2323,
+        119,
+        2264
+      ],
+      "basis": "Left border/gutter mark outside the main printed line."
+    },
+    {
+      "artifact_page": 7,
+      "text": "—",
+      "coords": [
+        104,
+        2376,
+        125,
+        2315
+      ],
+      "basis": "Left border/gutter mark outside the main printed line."
+    }
+  ],
+  "boundaries": {
+    "beginning": "Retains printed article title, attribution and source credit, then complete address to bishops and opening paragraph. The journal masthead is excluded.",
+    "ending": "Retains final blessing, full sixth-of-January1928 dating clause, PiusXI signature and all closing footnotes28–30. No text from the following journal article is selected.",
+    "source_notes": "Printed footnotes1–30 remain in source page order; OCR errors in their reference glyphs and numbering remain literal."
+  },
+  "retained_ocr_findings": [
+    {
+      "artifact_page": 1,
+      "example": "Hottness/Pore in printed attribution; accomplish recognized as we in body",
+      "disposition": "Recognition errors remain literal; no lexical replacement made."
+    },
+    {
+      "artifact_page": 2,
+      "example": "hmiself",
+      "disposition": "Recognition error remains literal."
+    },
+    {
+      "artifact_page": 4,
+      "example": "Reference glyphs and note numbers differ from the image in places",
+      "disposition": "All notes retained; no numbering reconstructed."
+    },
+    {
+      "artifact_page": 11,
+      "text": "_",
+      "coords": [
+        170,
+        2019,
+        175,
+        2014
+      ],
+      "disposition": "Isolated OCR mark remains inside the selected main-page region; source accuracy remains qualified rather than narrowing the border further."
+    }
+  ],
+  "history": [
+    {
+      "output_sha256": "9e6fc47e1ec9457c12134043e4fbd6a9b223ac0c5b735f1301ef09bbbfd56921",
+      "status": "REJECTED",
+      "reason": "Right bound1600 clipped right-hand text, including substantive words and footnotes on even-numbered source pages. Opening the right edge restored117 XML tokens, including one isolated border mark later removed; the final mask retains the116 additional article-region tokens."
+    },
+    {
+      "output_sha256": "23f99485d26ce74d7912bf148a6c80fe645dc96d848f175fcb8b3f3488935a5f",
+      "status": "SUPERSEDED",
+      "reason": "Restored right-edge words, but admitted five isolated border/gutter-noise tokens; final135..1700mask excludes only those five further tokens."
+    }
+  ],
+  "limitations": [
+    "Only the stated twelve-page article extent was inspected; the rest of the journal issue is outside this review.",
+    "Exact XML token retention and region membership do not establish correct OCR recognition or fidelity of this human translation to the Latin original.",
+    "No source wording, OCR bytes, extraction recipe or canonical source record was edited by this reviewer."
+  ]
+}

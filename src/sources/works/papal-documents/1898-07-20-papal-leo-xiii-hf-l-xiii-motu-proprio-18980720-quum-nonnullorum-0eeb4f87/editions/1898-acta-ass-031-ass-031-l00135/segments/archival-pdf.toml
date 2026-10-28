@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.ass.031.ass-031-l00135.pdf"
+edition_id = "edition.acta-papal-archives.ass.031.ass-031-l00135"
+artifact_id = "artifact.acta-papal-archives.ass.031.vatican-pdf-4c1f67a3"
+artifact_sha256 = "4c1f67a32e35808f32bcee788ff380bd8bafc954e854a441be99be58dc1a9eb9"
+segment_type = "archival-act-locator"
+states = ["cataloged", "acquired", "inspected"]
+artifact_page_ranges = [[4, 5]]
+context = "{\"closing_physical_lines\": [190, 193], \"closing_text\": \"    Datum R o m a e a p u d S. P e t r u m die 20 Iulii 1898, Pontificatus\\nNostri a n n o v i c e s i m o primo.\\n\\n                                    LEO P P . XIII.\", \"end_line\": 193, \"removed\": \"Running header/page-number lines carrying formfeed and Acta volume/fascicle footers are omitted via disjoint ranges; all remaining source text and notes in selected extent retained.\", \"retained_historical_note_ranges\": [], \"start_line\": 135}"
+notes = "Artifact-page locators are distinct from the printed page labels [{\"artifact_page\": 4, \"printed_page\": \"4\", \"running_head_text\": \"4                                       MOTU PROPRIO\"}, {\"artifact_page\": 5, \"printed_page\": \"5\", \"running_head_text\": \"MOTU PROPRIO                                           5\"}]. Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

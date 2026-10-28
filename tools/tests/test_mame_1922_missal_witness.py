@@ -79,8 +79,13 @@ class Mame1922WitnessTests(unittest.TestCase):
             "https://archive.org/download/missaleromanum0000unse/"
             "missaleromanum0000unse.pdf",
         )
-        self.assertIn("before the pre-1931", artifact["rights_basis"])
-        self.assertIn("not on Internet Archive availability", artifact["rights_basis"])
+        # Rationale corrected 2026-10-26 (8d7e3b301) with an unchanged
+        # public-domain outcome: workflows/reviews/missal-reader-completion-2026-10-26/
+        # mame-rights-rationale-correction.json, installed by the accepted
+        # latin-twelve-admission-adoption.json. The withdrawn pre-1996 premise stays out.
+        self.assertIn("no remaining United States copyright term in 2026", artifact["rights_basis"])
+        self.assertNotIn("no subsisting term to restore", artifact["rights_basis"])
+        self.assertIn("not Internet Archive availability", artifact["rights_basis"])
 
     def test_visual_passage_bounds_keep_universal_and_appendix_claims_apart(
         self,
@@ -174,8 +179,10 @@ class Mame1922WitnessTests(unittest.TestCase):
         # witnesses. They do not make the remote facsimile payload readable.
         # 2026-10-19 (C3 1962 Pentecost) added two: the Pentecost chants and
         # readings, and the Pentecost Preface and proper Canon forms.
+        # 2026-10-20..26 missal-reader recoveries (0c66f19e3 through da270a039)
+        # added 125, and the All Saints research evidence (9ff79af29) six.
         tracked = sorted(PASSAGES.glob("*.toml"))
-        self.assertEqual(len(tracked), 50)
+        self.assertEqual(len(tracked), 181)
         recoveries = {
             "comm-septem-dolorum-beatae-mariae-virginis-orations.toml": "artifact PDF p. 677",
             "s-hilarii-episcopi-confessoris-ecclesiae-doctoris-orations.toml": "artifact PDF p. 904",
@@ -192,15 +199,32 @@ class Mame1922WitnessTests(unittest.TestCase):
             sorted(passage["id"] for passage in structure["passages"]),
             sorted(load(path)["id"] for path in tracked),
         )
+        # Since 2026-10-20 most new passages bind bounded derivative artifacts
+        # of this edition rather than the whole PDF. Each binding must match its
+        # tracked passage record; the whole remote PDF (57 passages: the 50 above
+        # plus seven from 0c66f19e3, 2eee59d23, e7b48b050 and f3f59d483) stays
+        # identity-only, and only tracked public-domain derivatives are readable.
         self.assertEqual(
-            {passage["artifact_id"] for passage in structure["passages"]},
-            {ARTIFACT_ID},
+            {passage["id"]: passage["artifact_id"] for passage in structure["passages"]},
+            {load(path)["id"]: load(path)["artifact_id"] for path in tracked},
         )
-        for passage in structure["passages"]:
+        artifacts = {
+            record["id"]: record
+            for record in map(load, (EDITION_DIR / "artifacts").glob("*/artifact.toml"))
+        }
+        whole = [p for p in structure["passages"] if p["artifact_id"] == ARTIFACT_ID]
+        self.assertEqual(len(whole), 57)
+        for passage in whole:
             self.assertFalse(passage["readable"])
             self.assertEqual(passage["withheld"], "storage")
             self.assertNotIn("text", passage)
             self.assertNotIn("text_path", passage)
+        for passage in structure["passages"]:
+            artifact = artifacts[passage["artifact_id"]]
+            self.assertEqual(artifact["edition_id"], EDITION_ID)
+            self.assertEqual(artifact["rights_status"], "public-domain")
+            if passage["readable"]:
+                self.assertEqual(artifact["storage"], "tracked")
 
     def test_guidance_closes_acquisition_without_claiming_target_collation(self) -> None:
         guidance = PROPERS_GUIDANCE.read_text(encoding="utf-8")

@@ -11,6 +11,8 @@ import tomllib
 import unittest
 from unittest import mock
 
+import yaml
+
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -25,18 +27,31 @@ def tool(name):
 
 
 class StLucyDispositionTests(unittest.TestCase):
-    def test_mixed_communion_has_one_exact_english_absence_in_both_calendars(self):
+    def test_mixed_communion_has_one_exact_english_disposition_in_both_calendars(self):
         inventory = tomllib.loads((ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml")
                                   .read_text(encoding="utf-8"))
         rows = [row for row in inventory["untranslated"]
                 if (row["mass"], row["form_id"], row["proper"], row["cycle"], row["occurrence"],
                     row["lang"], row["extent"]) ==
                 ("s-luciae-virginis-martyris", "main", "Communion", "all", 1, "en", "body")]
-        self.assertEqual(len(rows), 1)
-        self.assertEqual(rows[0]["reason"], {"kind": "no-exemplar"})
-        self.assertEqual(rows[0]["availability"], "unavailable")
-        self.assertIn("quasi", rows[0]["note"])
-        self.assertIn("sicut", rows[0]["note"])
+        # eeab39fef replaced the no-exemplar absence with one confirmed Lasance
+        # 1945 entry ([[accepted]] core193 in
+        # src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml).
+        self.assertEqual(rows, [])
+        entries = [row for row in inventory["entries"]
+                   if (row["mass"], row.get("form_id", "main"), row["proper"], row.get("cycle", "all"),
+                       row.get("occurrence", 1)) == ("s-luciae-virginis-martyris", "main", "Communion", "all", 1)]
+        self.assertEqual(len(entries), 1)
+        self.assertEqual(([t["lang"] for t in entries[0]["translations"]], entries[0]["witness"],
+                          entries[0]["collation_result"]), (["en"], "lasance-1945", "confirmed"))
+        # The printed quasi / Bible sicut divergence stays recorded on the mixed Latin proper.
+        latin = yaml.safe_load((ROOT / "src/sources/calendars/roman-1962/propers.yaml").read_text(encoding="utf-8"))
+        communion = next(p for section in latin["sections"].values() for mass in section["masses"]
+                         if mass["key"] == "s-luciae-virginis-martyris"
+                         for p in mass["propers"] if p["name"] == "Communion")
+        self.assertEqual(communion["source"], "mixed")
+        self.assertIn("quasi", communion["notes"])
+        self.assertIn("sicut", communion["notes"])
 
         propers = tool("mass-propers")
         root = ROOT / "src/sources/calendars"

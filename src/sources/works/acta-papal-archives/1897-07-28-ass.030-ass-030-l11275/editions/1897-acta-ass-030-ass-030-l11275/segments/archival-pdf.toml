@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.ass.030.ass-030-l11275.pdf"
+edition_id = "edition.acta-papal-archives.ass.030.ass-030-l11275"
+artifact_id = "artifact.acta-papal-archives.ass.030.vatican-pdf-b9366cd4"
+artifact_sha256 = "b9366cd4091305a79cb8aa8f3ed14e74e062efc626f7bd3de11eca569f35cbac"
+segment_type = "archival-act-locator"
+states = ["cataloged", "acquired", "inspected"]
+artifact_page_ranges = [[282, 284]]
+context = "{\"closing_physical_lines\": [11344, 11346], \"closing_text\": \"     Datum R o m a e apud Sanctum Petrum sub annulo Piscato-\\nris die 28 Iulii MDGGGXCVII, Pontificatus Nostri anno vicesimo\\n                                                      A. Card. MACCHI.\", \"end_line\": 11346, \"removed\": \"Running header/page-number lines carrying formfeed and Acta volume/fascicle footers are omitted via disjoint ranges; all remaining source text and notes in selected extent retained.\", \"retained_historical_note_ranges\": [], \"start_line\": 11275}"
+notes = "Artifact-page locators are distinct from the printed page labels [{\"artifact_page\": 282, \"printed_page\": \"282\", \"running_head_text\": \"282                         EX   SECRETARIA   BREVIUM\"}, {\"artifact_page\": 283, \"printed_page\": \"283\", \"running_head_text\": \"EX   SEGRETARIA   BREVIUM                    283\"}, {\"artifact_page\": 284, \"printed_page\": \"284\", \"running_head_text\": \"284                       EX   SEGRETARIA   BREVIUM\"}]. Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

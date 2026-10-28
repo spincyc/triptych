@@ -50,6 +50,17 @@ EDITORIAL_PROJECTION = (
     ROOT
     / "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection"
 )
+# Only the finite Gregem/Damasus adoption's exact scopes carry the qualified
+# basis, with its disclosed source and target attestations as supplements.
+QUALIFIED_KEYS = {
+    LatinKey(mass, "", proper, "", "", occurrence)
+    for mass, form, proper, cycle, occurrence in (
+        scope["target"] for scope in json.loads(
+            (ROOT / "workflows/reviews/missal-reader-completion-2026-10-26/"
+             "gregem-damasus-qualified-rights-adoption.json").read_text()
+        )["exact_scopes"])
+    if form == "main" and cycle == "all"
+}
 
 
 def registered_artifact(artifact_id: str) -> dict:
@@ -629,6 +640,9 @@ class ProductionLedgerTests(unittest.TestCase):
                     "pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf",
                     "artifact.catholic-church.missale-romanum."
                     "1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+                    # Ignatius Postcommunion only (francis-one-ignatius-proof-adoption.json).
+                    "artifact.catholic-church.missale-romanum."
+                    "pustet-ratisbon-1862.ignatius-petition-formula-text-20261026",
                 },
                 "projected_from": {
                     "artifact.catholic-church.missale-romanum."
@@ -726,6 +740,7 @@ class ProductionLedgerTests(unittest.TestCase):
         phase5_supplements = set()
         used_projection_editions = set()
         supplemented = []
+        ignatius_witnessed = set()
         for calendar, key, row in permitted:
             with self.subTest(calendar=calendar, key=key):
                 matches = [
@@ -757,7 +772,9 @@ class ProductionLedgerTests(unittest.TestCase):
                         "editorial-projection-exact-to-target", row["relationship"]
                     )
                 self.assertTrue(row["transformations"])
-                self.assertEqual("public-domain", row["publication_basis"])
+                self.assertEqual(
+                    "qualified-nonoriginal-adaptation" if key in QUALIFIED_KEYS else "public-domain",
+                    row["publication_basis"])
                 self.assertEqual(set(SURFACES), set(row["surfaces"]))
                 # The 2026-09-03 edition carries one projection artifact per
                 # backfill lane, so a row names an artifact *of* that edition
@@ -765,6 +782,8 @@ class ProductionLedgerTests(unittest.TestCase):
                 # is still pinned exactly.
                 ids = row["publication_source_ids"]
                 self.assertGreaterEqual(len(ids), 2, ids)
+                if ids[1].endswith(".ignatius-petition-formula-text-20261026"):
+                    ignatius_witnessed.add((calendar, key))
                 if edition in BATCH_GUARDS.projection_specs():
                     self.assertIn(ids[0], batch_artifact_specs)
                     spec = batch_artifact_specs[ids[0]]
@@ -802,6 +821,10 @@ class ProductionLedgerTests(unittest.TestCase):
                 witness = registered_artifact(ids[1])
                 for extra in ids[2:]:
                     supplement = registered_artifact(extra)
+                    if key in QUALIFIED_KEYS:
+                        # Disclosed attestations, not a same-printing basis;
+                        # assert_supplemented_owners pins their exact ids.
+                        continue
                     if key == LatinKey("s-teresiae-a-iesu-infante-virginis", "", "Collect", "", "", 1):
                         # Original bounded Schott petition/Pustet conclusion case.
                         self.assertEqual(['artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-schott-projection-20261022', 'artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.phase5-latin22-seven-historical-prayers-20261022', 'artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-conclusion-authority-20261022'], ids)
@@ -827,6 +850,10 @@ class ProductionLedgerTests(unittest.TestCase):
                     )
                 )
         self.assertEqual(set(projection_specs), used_projection_editions)
+        # The 2026-09-03 edition admits the Ignatius artifact for one row only.
+        self.assertEqual({("roman-1962", LatinKey("s-ignatii-episcopi-martyris", "", "Postcommunion", "", "", 1))},
+                         ignatius_witnessed)
+        self.assertEqual(2, len(QUALIFIED_KEYS))
         # The same kind of tripwire as the permitted count: a further witness
         # beside the pinned one is rare, so each is a visible edit here.
         # 30 since 2026-10-01: the 29 KI-054 rows resting on the 1862 name its
@@ -905,7 +932,9 @@ class ProductionLedgerTests(unittest.TestCase):
                 for line in payload[start - 1 : end]
             )
             self.assertEqual(row["text_sha256"], text_sha256(projected_body))
-        self.assertEqual(349, len(nonpermitted))
+        # 348 since St Anthony's removed Collect became permitted under the
+        # accepted latin-seven-rights-adoption.json (2026-10-26).
+        self.assertEqual(348, len(nonpermitted))
         collated = [
             item for item in nonpermitted if item[2]["provenance_status"] == "collated"
         ]
@@ -960,7 +989,8 @@ class ProductionLedgerTests(unittest.TestCase):
         unresolved = [
             row for _, _, row in nonpermitted if row["provenance_status"] == "unresolved"
         ]
-        self.assertEqual(346, len(unresolved))
+        # 345 since the same St Anthony Collect (latin-seven) left this set.
+        self.assertEqual(345, len(unresolved))
         self.assertTrue(all(row["publication_basis"] == "unresolved" for row in unresolved))
         postconciliar = [
             row for calendar, _, row in nonpermitted if calendar == "postconciliar"

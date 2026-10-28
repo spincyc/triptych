@@ -1,0 +1,899 @@
+{
+  "schema": "triptych-english-extent-review/v1",
+  "source_path": ".scratch/english_expansion/pius_xi/encyclicalsofpiu0000jame/encyclicalsofpiu0000jame_djvu.txt",
+  "source_sha256": "7019568db20715af4e9d5a686f1b122af5e466d78744d07e6c6af26b4c9392d8",
+  "candidate_snapshot_sha256": "3fa37c4e61bd0f2f0388df27837f8207af7ccb06fba94761cda64b79d50e4cf4",
+  "scope": "Ryan1927 candidates4–6 only; scratch review without canonical mutation",
+  "preface_read_range": [
+    57,
+    89
+  ],
+  "assigned_documents": 3,
+  "assigned_lines_read": 2042,
+  "documents": [
+    {
+      "number": 4,
+      "title": "Ecclesiam Dei",
+      "act_date": "1923-11-12",
+      "raw_range": [
+        4930,
+        5512
+      ],
+      "full_raw_read_range_with_context": [
+        4910,
+        5532
+      ],
+      "full_assigned_lines_read": 583,
+      "artifact_pages": [
+        149,
+        165
+      ],
+      "printed_pages": [
+        "99",
+        "115"
+      ],
+      "decision": "admit-complete-printed-extent",
+      "boundary_result": "The source chapter begins with its own encyclical heading/title, flows continuously through its own papal text, and ends with its dated Roman closing and PIUS XI signature before the next independent chapter.",
+      "closing_evidence": {
+        "line_range": [
+          5504,
+          5512
+        ],
+        "date": "1923-11-12",
+        "signature_line": 5512,
+        "signature_text": "PIUS XI. "
+      },
+      "source_notes_result": "Biblical and historical references are inline in these three chapters; no separate note tail was observed after the papal signature. Quotational ellipses occur inside cited passages and were not treated as omissions of the encyclical.",
+      "existing_margin_omissions_checked": [
+        {
+          "line": 4962,
+          "text": "99 ",
+          "artifact_page": 149,
+          "reason": "isolated printed running header or page number at page margin"
+        },
+        {
+          "line": 4965,
+          "text": "100 THE ENCYCLICALS OF PIUS XI ",
+          "artifact_page": 150,
+          "reason": "isolated printed running header or page number at page margin"
+        },
+        {
+          "line": 5108,
+          "text": "104 THE ENCYCLICALS OF PIUS XI ",
+          "artifact_page": 154,
+          "reason": "isolated printed running header or page number at page margin"
+        },
+        {
+          "line": 5177,
+          "text": "106 THE ENCYCLICALS OF PIUS XI ",
+          "artifact_page": 156,
+          "reason": "isolated printed running header or page number at page margin"
+        },
+        {
+          "line": 5247,
+          "text": "108 THE ENCYCLICALS OF PIUS XI ",
+          "artifact_page": 158,
+          "reason": "isolated printed running header or page number at page margin"
+        },
+        {
+          "line": 5316,
+          "text": "110 THE ENCYCLICALS OF PIUS XI ",
+          "artifact_page": 160,
+          "reason": "isolated printed running header or page number at page margin"
+        }
+      ],
+      "additional_exact_omissions": [
+        {
+          "line": 5001,
+          "text": "ST. JOSAPHAT 101 ",
+          "artifact_page": 151,
+          "printed_page": "101",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 5037,
+          "text": "102. THE ENCYCLICALS OF PIUS XI ",
+          "artifact_page": 152,
+          "printed_page": "102",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 5072,
+          "text": "ST. JOSAPHAT 103 ",
+          "artifact_page": 153,
+          "printed_page": "103",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 5143,
+          "text": "ST. JOSAPHAT 105 ",
+          "artifact_page": 155,
+          "printed_page": "105",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 5212,
+          "text": "ST. JOSAPHAT 107 ",
+          "artifact_page": 157,
+          "printed_page": "107",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 5282,
+          "text": "ST. JOSAPHAT 109 ",
+          "artifact_page": 159,
+          "printed_page": "109",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 5352,
+          "text": "ST. JOSAPHAT 111 ",
+          "artifact_page": 161,
+          "printed_page": "111",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 5388,
+          "text": "112. » THE ENCYCLICALS OF PIUS XI ",
+          "artifact_page": 162,
+          "printed_page": "112",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 5425,
+          "text": "ST. JOSAPHAT — Hf eS ",
+          "artifact_page": 163,
+          "printed_page": "113",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 5460,
+          "text": "114. THE ENCYCLICALS OF PIUS XI ",
+          "artifact_page": 164,
+          "printed_page": "114",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 5495,
+          "text": "ST. JOSAPHAT 115 ",
+          "artifact_page": 165,
+          "printed_page": "115",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        }
+      ],
+      "proposed_physical_line_ranges": [
+        [
+          4930,
+          4961
+        ],
+        [
+          4963,
+          4964
+        ],
+        [
+          4966,
+          5000
+        ],
+        [
+          5002,
+          5036
+        ],
+        [
+          5038,
+          5071
+        ],
+        [
+          5073,
+          5107
+        ],
+        [
+          5109,
+          5142
+        ],
+        [
+          5144,
+          5176
+        ],
+        [
+          5178,
+          5211
+        ],
+        [
+          5213,
+          5246
+        ],
+        [
+          5248,
+          5281
+        ],
+        [
+          5283,
+          5315
+        ],
+        [
+          5317,
+          5351
+        ],
+        [
+          5353,
+          5387
+        ],
+        [
+          5389,
+          5424
+        ],
+        [
+          5426,
+          5459
+        ],
+        [
+          5461,
+          5494
+        ],
+        [
+          5496,
+          5512
+        ]
+      ],
+      "body_spelling_changes": 0,
+      "source_byte_changes": 0,
+      "blockers": [],
+      "limitations": [
+        "Full OCR extent inspected, not whole-work print-image collation.",
+        "Inherited word recognition, punctuation and line-hyphenation defects remain literal.",
+        "Complete printed extent does not assert a clean transcription or a verified translation."
+      ],
+      "specific_findings": [
+        "Printed pages99–115 retain Ecclesiam Dei, its StJosaphat subject, closing12November1923 and papal signature.",
+        "Raw running header5425 has damaged page-number recognition; native facsimile artifact page163 confirms that the entire line is the STJOSAPHAT/113 running header."
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Maximam gravissimamque",
+      "act_date": "1924-01-18",
+      "raw_range": [
+        5515,
+        5975
+      ],
+      "full_raw_read_range_with_context": [
+        5495,
+        5995
+      ],
+      "full_assigned_lines_read": 461,
+      "artifact_pages": [
+        166,
+        178
+      ],
+      "printed_pages": [
+        "116",
+        "128"
+      ],
+      "decision": "historically-abridged-translation",
+      "boundary_result": "The source chapter begins with its own encyclical heading/title, flows continuously through its own papal text, and ends with its dated Roman closing and PIUS XI signature before the next independent chapter.",
+      "closing_evidence": {
+        "line_range": [
+          5967,
+          5975
+        ],
+        "date": "1924-01-18",
+        "signature_line": 5975,
+        "signature_text": "PIUS XI. "
+      },
+      "source_notes_result": "Biblical and historical references are inline in these three chapters; no separate note tail was observed after the papal signature. Quotational ellipses occur inside cited passages and were not treated as omissions of the encyclical.",
+      "existing_margin_omissions_checked": [
+        {
+          "line": 5547,
+          "text": "116 ",
+          "artifact_page": 166,
+          "reason": "isolated printed running header or page number at page margin"
+        },
+        {
+          "line": 5585,
+          "text": "118 THE ENCYCLICALS OF PIUS XI ",
+          "artifact_page": 168,
+          "reason": "isolated printed running header or page number at page margin"
+        },
+        {
+          "line": 5656,
+          "text": "120 THE ENCYCLICALS OF PIUS XI ",
+          "artifact_page": 170,
+          "reason": "isolated printed running header or page number at page margin"
+        },
+        {
+          "line": 5880,
+          "text": "126 THE ENCYCLICALS OF PIUS XI ",
+          "artifact_page": 176,
+          "reason": "isolated printed running header or page number at page margin"
+        },
+        {
+          "line": 5953,
+          "text": "128 THE ENCYCLICALS OF PIUS XI ",
+          "artifact_page": 178,
+          "reason": "isolated printed running header or page number at page margin"
+        }
+      ],
+      "additional_exact_omissions": [
+        {
+          "line": 5550,
+          "text": "FRENCH DIOCESAN ASSOCIATIONS 117 ",
+          "artifact_page": 167,
+          "printed_page": "117",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 5620,
+          "text": "FRENCH DIOCESAN ASSOCIATIONS _ 119 ",
+          "artifact_page": 169,
+          "printed_page": "119",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 5693,
+          "text": "FRENCH DIOCESAN ASSOCIATIONS 121 ",
+          "artifact_page": 171,
+          "printed_page": "121",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 5733,
+          "text": "122. THE ENCYCLICALS OF PIUS XI | ",
+          "artifact_page": 172,
+          "printed_page": "122",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 5771,
+          "text": "FRENCH DIOCESAN ASSOCIATIONS 123 ",
+          "artifact_page": 173,
+          "printed_page": "123",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 5807,
+          "text": "124. THE ENCYCLICALS OF PIUS XI t ",
+          "artifact_page": 174,
+          "printed_page": "124",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 5843,
+          "text": "FRENCH DIOCESAN ASSOCIATIONS 125 ",
+          "artifact_page": 175,
+          "printed_page": "125",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 5918,
+          "text": "FRENCH DIOCESAN ASSOCIATIONS 127 ",
+          "artifact_page": 177,
+          "printed_page": "127",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        }
+      ],
+      "proposed_physical_line_ranges": [
+        [
+          5515,
+          5546
+        ],
+        [
+          5548,
+          5549
+        ],
+        [
+          5551,
+          5584
+        ],
+        [
+          5586,
+          5619
+        ],
+        [
+          5621,
+          5655
+        ],
+        [
+          5657,
+          5692
+        ],
+        [
+          5694,
+          5732
+        ],
+        [
+          5734,
+          5770
+        ],
+        [
+          5772,
+          5806
+        ],
+        [
+          5808,
+          5842
+        ],
+        [
+          5844,
+          5879
+        ],
+        [
+          5881,
+          5917
+        ],
+        [
+          5919,
+          5952
+        ],
+        [
+          5954,
+          5975
+        ]
+      ],
+      "body_spelling_changes": 0,
+      "source_byte_changes": 0,
+      "blockers": [],
+      "limitations": [
+        "Full OCR extent inspected, not whole-work print-image collation.",
+        "Inherited word recognition, punctuation and line-hyphenation defects remain literal.",
+        "Complete printed extent does not assert a clean transcription or a verified translation.",
+        "The accompanying diocesan-association regulations are deliberately absent from this historical English translation; label as body-only/abridged or keep excluded from complete-work counts."
+      ],
+      "specific_findings": [
+        "Ryan preface lines68–71 explicitly says diocesan-association regulations were not translated/reproduced.",
+        "Body line5826 refers to statutes as hereto subjoined, but the chapter ends after the papal signature and is followed immediately by Quas primas.",
+        "The encyclical body and dating are retained; do not label the larger act-and-regulation package complete."
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Quas primas",
+      "act_date": "1925-12-11",
+      "raw_range": [
+        5978,
+        6975
+      ],
+      "full_raw_read_range_with_context": [
+        5958,
+        6995
+      ],
+      "full_assigned_lines_read": 998,
+      "artifact_pages": [
+        179,
+        206
+      ],
+      "printed_pages": [
+        "129",
+        "156"
+      ],
+      "decision": "admit-complete-printed-extent",
+      "boundary_result": "The source chapter begins with its own encyclical heading/title, flows continuously through its own papal text, and ends with its dated Roman closing and PIUS XI signature before the next independent chapter.",
+      "closing_evidence": {
+        "line_range": [
+          6967,
+          6975
+        ],
+        "date": "1925-12-11",
+        "signature_line": 6975,
+        "signature_text": "PIUS XI. "
+      },
+      "source_notes_result": "Biblical and historical references are inline in these three chapters; no separate note tail was observed after the papal signature. Quotational ellipses occur inside cited passages and were not treated as omissions of the encyclical.",
+      "existing_margin_omissions_checked": [
+        {
+          "line": 6011,
+          "text": "129 ",
+          "artifact_page": 179,
+          "reason": "isolated printed running header or page number at page margin"
+        },
+        {
+          "line": 6014,
+          "text": "130 THE ENCYCLICALS OF PIUS XI ",
+          "artifact_page": 180,
+          "reason": "isolated printed running header or page number at page margin"
+        },
+        {
+          "line": 6089,
+          "text": "132 THE ENCYCLICALS OF PIUS XI ",
+          "artifact_page": 182,
+          "reason": "isolated printed running header or page number at page margin"
+        },
+        {
+          "line": 6251,
+          "text": "136 THE ENCYCLICALS OF PIUS XI ",
+          "artifact_page": 186,
+          "reason": "isolated printed running header or page number at page margin"
+        },
+        {
+          "line": 6393,
+          "text": "140 THE ENCYCLICALS OF PIUS XI ",
+          "artifact_page": 190,
+          "reason": "isolated printed running header or page number at page margin"
+        },
+        {
+          "line": 6462,
+          "text": "142 THE ENCYCLICALS OF PIUS XI ",
+          "artifact_page": 192,
+          "reason": "isolated printed running header or page number at page margin"
+        },
+        {
+          "line": 6604,
+          "text": "146 THE ENCYCLICALS OF PIUS XI ",
+          "artifact_page": 196,
+          "reason": "isolated printed running header or page number at page margin"
+        },
+        {
+          "line": 6674,
+          "text": "148 THE ENCYCLICALS OF PIUS XI ",
+          "artifact_page": 198,
+          "reason": "isolated printed running header or page number at page margin"
+        },
+        {
+          "line": 6745,
+          "text": "150 THE ENCYCLICALS OF PIUS XI ",
+          "artifact_page": 200,
+          "reason": "isolated printed running header or page number at page margin"
+        },
+        {
+          "line": 6959,
+          "text": "156 THE ENCYCLICALS OF PIUS XI ",
+          "artifact_page": 206,
+          "reason": "isolated printed running header or page number at page margin"
+        }
+      ],
+      "additional_exact_omissions": [
+        {
+          "line": 6050,
+          "text": "FEAST OF JESUS CHRIST, KING 131 ",
+          "artifact_page": 181,
+          "printed_page": "131",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 6130,
+          "text": "FEAST OF JESUS CHRIST, KING — 133 ",
+          "artifact_page": 183,
+          "printed_page": "133",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 6181,
+          "text": "134. THE ENCYCLICALS OF PIUS XI ",
+          "artifact_page": 184,
+          "printed_page": "134",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 6216,
+          "text": "FEAST OF JESUS CHRIST, KING 135 ",
+          "artifact_page": 185,
+          "printed_page": "135",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 6286,
+          "text": "FEAST OF JESUS CHRIST, KING 137 ",
+          "artifact_page": 187,
+          "printed_page": "137",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 6322,
+          "text": "138 THE ENCYCLICALS OF PIUS,/XI ",
+          "artifact_page": 188,
+          "printed_page": "138",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 6357,
+          "text": "FEAST OF JESUS CHRIST, KING = 139 ",
+          "artifact_page": 189,
+          "printed_page": "139",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 6427,
+          "text": "FEAST OF JESUS CHRIST, KING 141 ",
+          "artifact_page": 191,
+          "printed_page": "141",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 6497,
+          "text": "FEAST OF JESUS CHRIST, KING 143 ",
+          "artifact_page": 193,
+          "printed_page": "143",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 6532,
+          "text": "144. THE ENCYCLICALS OF PIUS XI ",
+          "artifact_page": 194,
+          "printed_page": "144",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 6568,
+          "text": "FEAST OF JESUS CHRIST, KING 145 ",
+          "artifact_page": 195,
+          "printed_page": "145",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 6639,
+          "text": "FEAST OF JESUS CHRIST, KING 147 ",
+          "artifact_page": 197,
+          "printed_page": "147",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 6709,
+          "text": "FEAST OF JESUS CHRIST, KING 149° ",
+          "artifact_page": 199,
+          "printed_page": "149",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 6780,
+          "text": "FEAST OF JESUS CHRIST, KING 151 ",
+          "artifact_page": 201,
+          "printed_page": "151",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 6814,
+          "text": "152. THE ENCYCLICALS OF PIUS XI ",
+          "artifact_page": 202,
+          "printed_page": "152",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 6853,
+          "text": "FEAST OF JESUS CHRIST, KING 153 ",
+          "artifact_page": 203,
+          "printed_page": "153",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 6888,
+          "text": "154 ‘THE ENCYCLICALS OF PIUS XI ",
+          "artifact_page": 204,
+          "printed_page": "154",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 6924,
+          "text": "FEAST OF JESUS CHRIST, KING 155 ",
+          "artifact_page": 205,
+          "printed_page": "155",
+          "kind": "printed-running-header",
+          "basis": "Full raw extent and exact page-map margin position inspected; alternating book/act header. No source body words are removed."
+        },
+        {
+          "line": 6127,
+          "text": "ST. ALBERT’S COLLEGE LIBRARY ",
+          "artifact_page": 183,
+          "printed_page": "133",
+          "kind": "copy-specific-library-stamp",
+          "basis": "Native facsimile artifact page183 individually inspected through tools/pdf-review: library stamp is above the printed header; these bottom noise lines have no printed body counterpart."
+        },
+        {
+          "line": 6175,
+          "text": "jp lw pee ",
+          "artifact_page": 183,
+          "printed_page": "133",
+          "kind": "non-body-recognition-noise",
+          "basis": "Native facsimile artifact page183 individually inspected through tools/pdf-review: library stamp is above the printed header; these bottom noise lines have no printed body counterpart."
+        },
+        {
+          "line": 6178,
+          "text": "can ",
+          "artifact_page": 183,
+          "printed_page": "133",
+          "kind": "non-body-recognition-noise",
+          "basis": "Native facsimile artifact page183 individually inspected through tools/pdf-review: library stamp is above the printed header; these bottom noise lines have no printed body counterpart."
+        }
+      ],
+      "proposed_physical_line_ranges": [
+        [
+          5978,
+          6010
+        ],
+        [
+          6012,
+          6013
+        ],
+        [
+          6015,
+          6049
+        ],
+        [
+          6051,
+          6088
+        ],
+        [
+          6090,
+          6126
+        ],
+        [
+          6128,
+          6129
+        ],
+        [
+          6131,
+          6174
+        ],
+        [
+          6176,
+          6177
+        ],
+        [
+          6179,
+          6180
+        ],
+        [
+          6182,
+          6215
+        ],
+        [
+          6217,
+          6250
+        ],
+        [
+          6252,
+          6285
+        ],
+        [
+          6287,
+          6321
+        ],
+        [
+          6323,
+          6356
+        ],
+        [
+          6358,
+          6392
+        ],
+        [
+          6394,
+          6426
+        ],
+        [
+          6428,
+          6461
+        ],
+        [
+          6463,
+          6496
+        ],
+        [
+          6498,
+          6531
+        ],
+        [
+          6533,
+          6567
+        ],
+        [
+          6569,
+          6603
+        ],
+        [
+          6605,
+          6638
+        ],
+        [
+          6640,
+          6673
+        ],
+        [
+          6675,
+          6708
+        ],
+        [
+          6710,
+          6744
+        ],
+        [
+          6746,
+          6779
+        ],
+        [
+          6781,
+          6813
+        ],
+        [
+          6815,
+          6852
+        ],
+        [
+          6854,
+          6887
+        ],
+        [
+          6889,
+          6923
+        ],
+        [
+          6925,
+          6958
+        ],
+        [
+          6960,
+          6975
+        ]
+      ],
+      "body_spelling_changes": 0,
+      "source_byte_changes": 0,
+      "blockers": [],
+      "limitations": [
+        "Full OCR extent inspected, not whole-work print-image collation.",
+        "Inherited word recognition, punctuation and line-hyphenation defects remain literal.",
+        "Complete printed extent does not assert a clean transcription or a verified translation.",
+        "Printedp133/raw6133 contains damaged word recognition; the complete printed page is present, but this OCR is not a reliable verbatim transcription."
+      ],
+      "specific_findings": [
+        "Printed pages129–156 retain Quas primas, feast institution, concluding exhortation, closing11December1925 and papal signature.",
+        "Native facsimile artifact page183 confirms copy-specific library stamp6127 and OCR margin noise6175/6178 are outside the printed papal text.",
+        "Raw line6133 has a substantive word-recognition defect at the right edge of the first body line on printedp133. It is not corrected here and must remain an explicit OCR limitation."
+      ]
+    }
+  ],
+  "native_image_checks": [
+    {
+      "source_artifact_page": 163,
+      "native_page_pdf": ".scratch/english_expansion/pius_xi/extent-b/native-pages/page-163.pdf",
+      "native_page_pdf_sha256": "76a3d695e35bfd898e908b59c5ea2ee02a6b2a04af8fe608aebf88d7052d1506",
+      "review_png": ".scratch/english_expansion/pius_xi/extent-b/rasters/.scratch/english_expansion/pius_xi/extent-b/native-pages/page-163/pages/page-1.png",
+      "review_png_sha256": "d65c5de2c0881198e913c56fccdba9675c35f2e8bf330b6433df5e89e0671e65",
+      "inspection": "Individual complete page raster opened at original resolution through view_image; limited to the stated header/margin findings."
+    },
+    {
+      "source_artifact_page": 183,
+      "native_page_pdf": ".scratch/english_expansion/pius_xi/extent-b/native-pages/page-183.pdf",
+      "native_page_pdf_sha256": "237679f9ee781cbcd0f69f43cc2c68bd51b734b6bbb7297900101c7743a7e4da",
+      "review_png": ".scratch/english_expansion/pius_xi/extent-b/rasters/.scratch/english_expansion/pius_xi/extent-b/native-pages/page-183/pages/page-1.png",
+      "review_png_sha256": "3d4897c29b8c7fd3659f001963dc0a470e5068ebfbf378e87217f42529ab3cf6",
+      "inspection": "Individual complete page raster opened at original resolution through view_image; limited to the stated header/margin findings."
+    }
+  ],
+  "source_facsimile_path": ".scratch/english_expansion/pius_xi/encyclicalsofpiu0000jame/encyclicalsofpiu0000jame.pdf",
+  "source_facsimile_sha256": "045e449fa79f45d63a351dc7ce3b98df0f146eb24d603d3c9f2b683d8670e699",
+  "pdf_review_receipt_sha256": "f9e3ea42b9e3b914c6730e03a6cd3a1f662d225bf19da48480a24fd4ddf21dfb",
+  "changes": "No source, canonical record, manifest, or PDF selection changed. Additional exclusions are proposals bound to exact raw lines."
+}

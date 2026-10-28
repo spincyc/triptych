@@ -1863,18 +1863,21 @@ REMAINING_REMOVED = json.loads(r'''[
   }
 ]''')
 
+# Re-pinned after later accepted reader integrations: pre-1955 Bonn three
+# (8d7e3b301), _proper_latin/_calendars/_missal_coverage (8d7e3b301, da270a039)
+# and the Anthony-Collect oracle update in the Alexander/Hilary test.
 PRESERVED_FILES = json.loads(r'''{
-  "src/sources/calendars/roman-pre-1955/propers.yaml": "037c74fa2dc8ecab13e2bd3bebc2e0ee194255c149b35d2c546d8c36cd9af65d",
+  "src/sources/calendars/roman-pre-1955/propers.yaml": "b28446e40b74769e7d16de193ad075dab362a9692b005a5e8ff8f97b1928291f",
   "src/sources/inventories/roman-pre-1955-proper-latin-provenance-v1.toml": "da959d9ba61843d2cb8f08155241b5b69058b6705f3d76aac67e6c70803546d9",
   "src/sources/inventories/christ-the-king-early-witnesses-rights-v1.toml": "709520743fe520e94386a6e514426ef27acc305d27d80d03ded7886e4831c7cd",
-  "scripts/_proper_latin.py": "064d6567ba12b7ab19191fb3c530b248c70a9de0855afe5c932c7be81a5874a6",
-  "scripts/_calendars.py": "c2ec47e2001a219429ca879165d56202a0cd587b00c36f3abe18a6a4dec593ef",
-  "scripts/_missal_coverage.py": "e2d93f25f683d76fd7e277c77c8de4d61ff3019d745e62e63358c3926ffb3ca4",
+  "scripts/_proper_latin.py": "4a76b969d373bd23a06ea8905450c9b8ee10764e6cb68cc4b5d6621b2eb72aae",
+  "scripts/_calendars.py": "54f37042b07ae107a9bea59fe6080d5699f70290335ae7ddee453752f35eb7d4",
+  "scripts/_missal_coverage.py": "635cc202ce2bc40d8c6195733bd365cf9b63405bf8d60c2d2b9ee5782587589d",
   "tools/tests/test_roman_1962_winter_ursula_source_repair.py": "e7354e1d015919cc47f235fca3aa1f5134afc8fe250765eb24b6d2eafbc71f05",
   "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py": "c13d838baf217cf25be163e465a4f90322d8ecf04e89322f237eec105764686e",
   "tools/tests/test_roman_1962_boniface_annual_source_repair.py": "b1cab01b3a01d831143e075cdc83345ef73d03145caf674624b1c27bf6c11775",
   "tools/tests/test_roman_1962_mayoct_source_repair.py": "8acb539c4388f6665f1b61b252879e2a73d6844052c21ae1d67d481e8d116599",
-  "tools/tests/test_roman_1962_alexander_hilary_restoration.py": "98cf7be34f0a26c6427b472ea749164ef49df91b5c020bed3484760e90b5463b",
+  "tools/tests/test_roman_1962_alexander_hilary_restoration.py": "04f9cc3568716f34b786d6cdc167977a11335fd2432b96313f2071e035524ce5",
   "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-22-editorial-projection/edition.toml": "010c0563003399bf9af8708cdede8ae59377cdf44793f299ff9130640b33f800",
   "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-22-editorial-projection/passages/phase2-comm-s-mennae-martyris-postcommunion.toml": "cd1e36b37e43bff1d02fb34a8f71098b17b81b40cea1dd54de323a9d4ac46d6f",
   "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-22-editorial-projection/passages/phase4-s-callisti-i-papae-martyris-postcommunion.toml": "4fd8da4e92c3ba6e529effd00e3c90f072db7d569a88c23f4afc8488f62b9a9e",

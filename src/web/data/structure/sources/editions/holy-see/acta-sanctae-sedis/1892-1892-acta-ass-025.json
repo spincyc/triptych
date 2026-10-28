@@ -1,0 +1,99 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "mechanical-pdf-text-extraction",
+   "byte_size": 1757057,
+   "edition_owned": true,
+   "id": "artifact.acta-papal-archives.ass.025.extracted-text-5b4f11b9",
+   "media_type": "text/plain",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "restricted"
+  },
+  {
+   "artifact_type": "mechanical-pdf-text-extraction",
+   "byte_size": 10738,
+   "edition_owned": true,
+   "id": "artifact.acta-papal-archives.ass.025.extracted-text-c7a9c3f3",
+   "media_type": "text/plain",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "restricted"
+  },
+  {
+   "artifact_type": "historical-text-derivative",
+   "byte_size": 1756738,
+   "edition_owned": true,
+   "id": "artifact.acta-papal-archives.ass.025.historical-text-0cd99634",
+   "media_type": "text/plain",
+   "notes": "Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations. [\"Formal-act census bounded to this exact whole-volume Vatican OCR artifact and its index/body sweep; no claim to all surviving acts of the pontificate.\", \"Source paragraph order and OCR retained mechanically; no silent spelling correction or model-generated body reconstruction.\"]",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"detail\": \"Original ASS title imprint reproduced before the separately printed1968/1969 Johnson reprint notice; historical publication year/period is corroborated by archive inventory. This is textual-imprint evidence, not an original-print facsimile claim.\", \"evidence_physical_lines\": [1, 35]} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "historical-text-derivative",
+   "byte_size": 10738,
+   "edition_owned": true,
+   "id": "artifact.acta-papal-archives.ass.025.historical-text-c7a9c3f3",
+   "media_type": "text/plain",
+   "notes": "Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations. [\"Uncollated archival OCR; interleaved running-head characters mechanically separated using exact source slices.\"]",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"detail\": \"Original ASS title imprint reproduced before the separately printed1968/1969 Johnson reprint notice; historical publication year/period is corroborated by archive inventory. This is textual-imprint evidence, not an original-print facsimile claim.\", \"evidence_physical_lines\": [1, 35]} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "archival-ocr-pdf",
+   "byte_size": 3282012,
+   "edition_owned": true,
+   "id": "artifact.acta-papal-archives.ass.025.vatican-pdf-bebce8f3",
+   "media_type": "application/pdf",
+   "page_count": 767,
+   "retrieved": "2026-10-26",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.vatican.va/archive/ass/documents/ASS-25-1892-93-ocr.pdf",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1892",
+  "editors": [],
+  "id": "edition.acta-papal-archives.ass.025.1892-acta-ass-025",
+  "jurisdiction": null,
+  "language": "mul",
+  "publication": "{\"detail\": \"Original ASS title imprint reproduced before the separately printed1968/1969 Johnson reprint notice; historical publication year/period is corroborated by archive inventory. This is textual-imprint evidence, not an original-print facsimile claim.\", \"evidence_physical_lines\": [1, 35]}",
+  "title": "Acta Sanctae Sedis — source witness ass.025",
+  "translators": [],
+  "year": 1892
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "ASS",
+   "Acta Sanctae Sedis in compendium opportune redacta"
+  ],
+  "author": "Holy See",
+  "category": "official-periodical",
+  "description": "The Holy See periodical that preceded Acta Apostolicae Sedis. Volume editions and exact delivery artifacts remain container identities distinct from the papal acts and other documents printed within them.",
+  "id": "work.holy-see.acta-sanctae-sedis",
+  "languages": [],
+  "title": "Acta Sanctae Sedis"
+ }
+}

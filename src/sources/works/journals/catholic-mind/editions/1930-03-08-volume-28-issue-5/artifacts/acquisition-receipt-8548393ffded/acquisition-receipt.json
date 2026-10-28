@@ -1,0 +1,82 @@
+{
+  "complete_responses": [
+    {
+      "byte_size": 15333,
+      "filename": "metadata.json",
+      "provider_checks": "API response itself; no self-authenticating provider hash",
+      "provider_sha1": null,
+      "provider_size": null,
+      "sha1": "e1a5fa6be67a92f87e18e1ce91bb1c880f12bce9",
+      "sha256": "7f1dda693c8044652042b69712be4bd91f41d9505bdd74f5336eb539e8839df6",
+      "source_url": "https://archive.org/metadata/sim_catholic-mind_1930-03-08_28_5"
+    },
+    {
+      "byte_size": 3705194,
+      "filename": "sim_catholic-mind_1930-03-08_28_5.pdf",
+      "provider_checks": "pass",
+      "provider_sha1": "bda9b37401d94fa41e1cb4d3a4f3c5ef09989f9a",
+      "provider_size": "3705194",
+      "sha1": "bda9b37401d94fa41e1cb4d3a4f3c5ef09989f9a",
+      "sha256": "43e032a24e5520e1a948d3ad2239445f5924e5ced4f20381e4498c0a8745404a",
+      "source_url": "https://archive.org/download/sim_catholic-mind_1930-03-08_28_5/sim_catholic-mind_1930-03-08_28_5.pdf"
+    },
+    {
+      "byte_size": 45383,
+      "filename": "sim_catholic-mind_1930-03-08_28_5_djvu.txt",
+      "provider_checks": "pass",
+      "provider_sha1": "17ea28bfbaee4bfc80c2a4dd2a8a11426919f37d",
+      "provider_size": "45383",
+      "sha1": "17ea28bfbaee4bfc80c2a4dd2a8a11426919f37d",
+      "sha256": "5893c834e7315c5c1d8214ce27f021451d33d2b0e97267dddb6c63437c79ae8e",
+      "source_url": "https://archive.org/download/sim_catholic-mind_1930-03-08_28_5/sim_catholic-mind_1930-03-08_28_5_djvu.txt"
+    },
+    {
+      "byte_size": 614096,
+      "filename": "sim_catholic-mind_1930-03-08_28_5_djvu.xml",
+      "provider_checks": "pass",
+      "provider_sha1": "904d31c9434da705d415ddd678e5bdf2bed38571",
+      "provider_size": "614096",
+      "sha1": "904d31c9434da705d415ddd678e5bdf2bed38571",
+      "sha256": "bdb7dcd3a510fa4830254b2aee6c7c7ce9fe0e6d6479ce4545950f48abcd0351",
+      "source_url": "https://archive.org/download/sim_catholic-mind_1930-03-08_28_5/sim_catholic-mind_1930-03-08_28_5_djvu.xml"
+    },
+    {
+      "byte_size": 3493,
+      "filename": "sim_catholic-mind_1930-03-08_28_5_page_numbers.json",
+      "provider_checks": "pass",
+      "provider_sha1": "30a652a711b8702e0d37f6f43c181a9e3b6d73cd",
+      "provider_size": "3493",
+      "sha1": "30a652a711b8702e0d37f6f43c181a9e3b6d73cd",
+      "sha256": "7348a06f64ed151184e82ee365b99cfca17eb721429932965f614b3933980664",
+      "source_url": "https://archive.org/download/sim_catholic-mind_1930-03-08_28_5/sim_catholic-mind_1930-03-08_28_5_page_numbers.json"
+    },
+    {
+      "byte_size": 7299,
+      "filename": "sim_catholic-mind_1930-03-08_28_5_scandata.xml",
+      "provider_checks": "pass",
+      "provider_sha1": "fc10fec364ee34da1803a9ee2e8af4b20b16e7ab",
+      "provider_size": "7299",
+      "sha1": "fc10fec364ee34da1803a9ee2e8af4b20b16e7ab",
+      "sha256": "90205430d36f9b38d57f63b34ec8391c4eff27e56f8b644459334fae81a63342",
+      "source_url": "https://archive.org/download/sim_catholic-mind_1930-03-08_28_5/sim_catholic-mind_1930-03-08_28_5_scandata.xml"
+    }
+  ],
+  "limitation": "Provider publication fields are corroborated by the actual native issue masthead. Raw modern API metadata stays scratch-only; this factual receipt retains exact whole-source hashes and provider checks.",
+  "metadata_snapshot_sha256": "7f1dda693c8044652042b69712be4bd91f41d9505bdd74f5336eb539e8839df6",
+  "publication_fields": {
+    "date": "1930-03-08",
+    "identifier": "sim_catholic-mind_1930-03-08_28_5",
+    "imagecount": "20",
+    "issue": "5",
+    "language": "English",
+    "publisher": "America Press Inc.",
+    "source": [
+      "IA1518813-07",
+      "microfilm"
+    ],
+    "title": "The Catholic Mind  1930-03-08: Vol 28 Iss 5",
+    "volume": "28"
+  },
+  "schema": "triptych-english-source-acquisition-receipt/v1",
+  "source_identifier": "sim_catholic-mind_1930-03-08_28_5"
+}

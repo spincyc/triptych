@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.gregory-xvi-acta.volume-01.line-00022412.part-02.1901-gregory-xvi-acta-volume-01-it.source-ocr"
+edition_id = "edition.gregory-xvi-acta.volume-01.line-00022412.part-02.1901-gregory-xvi-acta-volume-01-it"
+artifact_id = "artifact.gregory-xvi-acta.volume-01.1901-rome-mul.ocr-cdd5664e1012"
+artifact_sha256 = "cdd5664e1012a3cec8d36ccb9c3921e61ee2ddbfc15158fe6cbf290ef907f619"
+segment_type = "constituent-work"
+physical_line_ranges = [[22627, 22680], [22695, 22759], [22768, 22827], [22833, 22885]]
+states = ["cataloged", "acquired", "inspected"]
+context = "Italian chirograph CXLI (no candidate heading was detected) to Cardinal Agostino Rivarola, prefect of the Congregazione delle Acque, ordering the Aniene diversion at Tivoli; address 22627–22630, body 22633–22881, Dato 22883–22885. Excluded: provenance citation, signature line, the second half of the running title and page number 145 (22683–22692); signature 19 and page-164 running title (22762–22765); provenance citation 22830. The Dato at 22883–22885 reads questo di g giugno 1832; the recognized day glyph g is not normalized, so the act date is left unknown (June 1832). Issuer evidence 14.6 ACTA GREGORII PP. XVI. at LF22765 (running-title context; see source_attribution_context). Exact source extent and surrounding boundaries were inspected as uncorrected OCR; no complete print-image collation or historical authentication is claimed."
+notes = "Review extent: Every nonblank literal LF of the claimed span 15018–28510 plus context 14990–15017 and 28511–28540 was read in acquired order (lane full read); this unit's heading, selected extent, gaps and at least twenty LF on each side were read. Whole-source TXT/XML WORD token equality (353435 tokens) was verified and native WORD geometry was checked for every selected line. No page image was needed; no general image collation is claimed. Selected bounds [[22627, 22680], [22695, 22759], [22768, 22827], [22833, 22885]]."

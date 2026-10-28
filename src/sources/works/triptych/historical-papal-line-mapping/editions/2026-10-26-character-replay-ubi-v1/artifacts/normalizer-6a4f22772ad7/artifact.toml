@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.historical-papal-line-mapping.2026-10-26-character-replay-ubi-v1.normalizer-6a4f22772ad7"
+edition_id = "edition.triptych.historical-papal-line-mapping.2026-10-26-character-replay-ubi-v1"
+artifact_type = "immutable-coordinate-projection-software"
+media_type = "text/x-python"
+storage = "tracked"
+rights_status = "licensed"
+rights_basis = "Project-created processing software under the repository MIT terms; historical source wording retains its own rights."
+retrieved = "2026-10-26"
+sha256 = "6a4f22772ad7deef565d2639377a1042a3c573addea33bfa657f9ba505630391"
+byte_size = 1644
+provenance = "Exact source-derived Ubi Primum character/coordinate reconstruction evidence. Only three native pages receive role assignments; no lexical correction, translation or historical authenticity determination."
+notes = "Exact self-contained attribute-only adapter for original five-coordinate DjVu XML on leaves26–28. Fifth fields remain in the exact original source; no WORD value, order, non-coordinate attribute or unrelated source byte changes. Bbox semantics are proved directly by3029 native character unions and three native image dimension matches."
+license = "MIT"
+path = "src/sources/works/triptych/historical-papal-line-mapping/editions/2026-10-26-character-replay-ubi-v1/artifacts/normalizer-6a4f22772ad7/normalize-coordinates.py"

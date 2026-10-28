@@ -1,0 +1,15 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.acta-papal-archives.aas.010.extracted-text-f447c276"
+edition_id = "edition.acta-papal-archives.aas.010.1918-acta-aas-010"
+artifact_type = "mechanical-pdf-text-extraction"
+media_type = "text/plain"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "Exact extraction may contain protected text or modern wrappers and remains transient. Separately manifested historical text excludes uncleared material."
+retrieved = "2026-10-26"
+sha256 = "f447c2765b6d9cced86e65746c78a3838624c6d487bc3f42012962819a316c2b"
+byte_size = 12664
+derived_from = "artifact.acta-papal-archives.aas.010.extracted-text-46163bff"
+transformation = "Mechanical exact LF/Unicode-column extraction; no character substitution.; Retain the complete selected papal body, then read the explicitly numbered prayer stanzas1/2 and3/4 left then right at Unicode guttercolumn42; read hymn stanzas1–4 down the left column before5–8 down the right, then central stanza9. Preserve every selected original character, OCR number glyph and literal abbreviated refrain. Append LF after each selected source row/slice.; select inclusive 1-based LF ranges and 0-based half-open Unicode columns in this declared order: [{\"physical_line_range\":[7525,7551],\"unicode_columns\":null},{\"physical_line_range\":[7553,7593],\"unicode_columns\":null},{\"physical_line_range\":[7595,7635],\"unicode_columns\":null},{\"physical_line_range\":[7637,7676],\"unicode_columns\":null},{\"physical_line_range\":[7677,7679],\"unicode_columns\":[0,42]},{\"physical_line_range\":[7677,7679],\"unicode_columns\":[42,null]},{\"physical_line_range\":[7681,7681],\"unicode_columns\":null},{\"physical_line_range\":[7682,7684],\"unicode_columns\":[0,42]},{\"physical_line_range\":[7682,7684],\"unicode_columns\":[42,null]},{\"physical_line_range\":[7685,7703],\"unicode_columns\":null},{\"physical_line_range\":[7704,7721],\"unicode_columns\":[0,42]},{\"physical_line_range\":[7704,7721],\"unicode_columns\":[42,null]},{\"physical_line_range\":[7722,7724],\"unicode_columns\":null}]; join_previous concatenates consecutive fragments of the same source LF line before its LF; otherwise append LF after each selected source line/slice, preserving all selected characters; Retain the complete selected papal body, then read the explicitly numbered prayer stanzas1/2 and3/4 left then right at Unicode guttercolumn42; read hymn stanzas1–4 down the left column before5–8 down the right, then central stanza9. Preserve every selected original character, OCR number glyph and literal abbreviated refrain. Append LF after each selected source row/slice."
+notes = "Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

@@ -1,0 +1,183 @@
+# Factual rights position for papal source editions. The profile owns workflow.
+# This is a project research position in the stated jurisdiction, not counsel.
+rights_schema = 1
+record_type = "papal-documents-rights"
+recorded_on = "2026-10-26"
+jurisdiction = "United States"
+profile = "guidance/papal-documents.md"
+
+holding = """
+Retain identified historical original text and human translations only under
+an artifact-specific affirmative basis. As of this record, original Latin
+demonstrably published by 1930 is eligible for a United States expired-term
+assessment; the act's issue date alone is insufficient. A historical human
+translation demonstrably printed by 1930 is assessed on its own edition and
+publication evidence. A modern translation or revised edition is a separate
+rights object. Modern and unresolved bodies remain metadata-only in
+the public corpus. This record establishes no worldwide public-domain claim,
+general Vatican permission, or permission to publish source-site wrappers.
+"""
+
+[historical_text]
+candidate_cutoff = "1930-12-31"
+cutoff_kind = "documented publication of retained wording, not issuance alone"
+decision = "eligible per artifact after historical identity and boundaries are established"
+basis = """
+17 U.S.C. 304 provides the 95-year maximum term for the relevant already
+published works; section 305 supplies calendar-year expiration. Copyright
+Office Circular 15A, April 2026, page 2, states the resulting pre-1931 cutoff
+for United States publications. For qualifying foreign restored works,
+104A(a)(1)(B) provides only the remainder of the otherwise applicable United
+States term. Applying these provisions to an identified pre-1931 foreign
+printing is the project's jurisdiction-specific assessment, not a quotation
+of a blanket Vatican waiver. Previously unpublished works require separate
+analysis under section 303.
+"""
+required_evidence = [
+  "Language and expression identify the retained wording as historical original text or a separately identified historical human translation.",
+  "An identified printing, journal citation, or equivalent source establishes publication by 1930.",
+  "The artifact identifies the exact delivery hash and historical text boundary.",
+  "Modern translation, editorial prose, creative revision, wrapper, and imagery are excluded or separately cleared.",
+  "Uncollated transcription and OCR limitations are explicit; no historical-image check is invented.",
+]
+excluded_inferences = [
+  "Papal, official, or governmental character by itself makes every text public domain.",
+  "An act dated before 1931 clears any Italian or English page carrying it.",
+  "An old incipit clears a modern translation, introduction, revision, or note.",
+  "A modern delivery date proves the date of the underlying wording.",
+  "A copyright notice over a compilation creates rights in its unchanged public-domain constituents.",
+]
+
+[historical_translation]
+decision = "eligible independently when the actual translation was published by 1930"
+required_evidence = [
+  "Identify the human translator where known and the controlling historical translated edition.",
+  "Establish that edition's publication date from the printing or reliable edition evidence, not the act's date.",
+  "Distinguish a faithful transcription from a later revised, modernized, or annotated translation.",
+  "Retain the exact translation's historical notes and attribution while excluding separately uncleared modern additions.",
+]
+shared_basis = "A collection edition may own one documented rights basis used by its bounded constituents; each artifact still identifies the exact edition, source boundary, hash, and applicable exclusions."
+
+[derivatives]
+basis = """
+17 U.S.C. 103(b) confines derivative/compilation copyright to new contributions
+and does not extend rights in preexisting wording. Copyright Office Compendium
+313.4(A) treats mere copying, scanning, or digitization without additional
+original authorship as insufficient. This supports a faithful historical-text
+derivative; it does not clear creative editorial revisions. The derivative
+must name the excluded material and retain attribution and provenance.
+Website conditions and other jurisdictions remain separate questions; this
+record does not adjudicate them by treating markup removal as consent.
+"""
+raw_parent_default = "restricted"
+historical_plain_text_default = "requires item-specific affirmative basis"
+modern_body_default = "restricted or unresolved; metadata only publicly"
+project_license_exclusion = "Historical/source wording is not offered under Triptych CC BY 4.0."
+
+[vatican_terms]
+url = "https://www.vatican.va/content/vatican/en/legal-notes.html"
+checked_on = "2026-10-26"
+loci = ["4. ACCESS AND USE", "5. USER'S RESPONSIBILITIES", "7. INTELLECTUAL AND INDUSTRIAL PROPERTY"]
+finding = """
+The portal allows free personal and nonprofit access/viewing. Sections 4 and 7
+require written authorization for broader collection, modification, and
+redistribution; section 5 also asserts restrictions on external linking.
+No written authorization to Triptych was established. This is the portal's
+stated position, not an adopted finding that it owns every historical word.
+The project therefore claims no general license over its HTML or modern
+bodies and distinguishes the underlying historical text from the delivery.
+"""
+
+[papal_encyclicals_online]
+url = "https://www.papalencyclicals.net/about"
+directory_url = "https://www.papalencyclicals.net/document-directory"
+checked_on = "2026-10-26"
+finding = """
+The site is a secondary archive. Its account traces much of the collection to
+CRNET transcriptions of the Pierian Press compilation The Papal Encyclicals
+1740-1981. It reports permission granted to that site and expressly says its
+webmaster cannot grant copyright permissions. These facts supply no
+transferable permission to Triptych. Use its directory as a finding aid;
+identify each underlying edition before retaining its wording.
+"""
+
+[wikisource]
+latin_index = "https://la.wikisource.org/wiki/Categoria:Bullae"
+english_index = "https://en.wikisource.org/wiki/Category:Papal_bulls"
+checked_on = "2026-10-26"
+finding = """
+Inspect the particular edition and contributor history. Original texts,
+volunteer translations, modern annotation, and wiki encoding have distinct
+rights. A site-wide footer is not evidence that every historical source or
+translation has the same status. Unknown-source transcriptions remain
+explicitly uncollated, and licensed contributions retain their own notices.
+"""
+examples = [
+  "https://en.wikisource.org/wiki/Translation:Sicut_Ecclesiarum_praelatis",
+  "https://la.wikisource.org/wiki/Unam_sanctam",
+]
+
+[[archive_routes]]
+id = "vatican-formal-documents"
+url = "https://www.vatican.va/content/benedictus-xiv/en.index.1.html"
+coverage = "Named Vatican pontiff/category indexes beginning with Benedict XIV; languages vary."
+limitation = "Discovery coverage is bounded by the named indexes and crawl receipt; index headings do not clear body rights."
+
+[[archive_routes]]
+id = "acta-sanctae-sedis"
+url = "https://www.vatican.va/archive/ass/index_it.htm"
+coverage = "41 indexed volumes, 1865-1866 through 1908."
+example = "https://www.vatican.va/archive/ass/documents/ASS-01-1865-66-ocr.pdf"
+limitation = "Volume I delivery includes a 1968 Johnson reprint notice and reproduces an 1872 stereotype title: separate historical text from later wrapper. Issue date, edition date, and scan date differ."
+
+[[archive_routes]]
+id = "acta-apostolicae-sedis"
+url = "https://www.vatican.va/archive/aas/index_en.htm"
+coverage = "Journal begins in 1909; index continues through available 2026 issues at review."
+example = "https://www.vatican.va/archive/aas/documents/AAS-22-1930-ocr.pdf"
+limitation = "Later volumes are not cleared by the historical cutoff. Each act needs a printed locus; a whole journal volume is not one papal work."
+
+[[archive_routes]]
+id = "bullarium-romanum-turin"
+url = "https://onlinebooks.library.upenn.edu/webbin/metabook?id=bullromantau"
+coverage = "Turin edition: 24 main Latin volumes and one appendix, published 1857-1872; main collection covers 440-1740."
+example = "https://archive.org/details/bullarumdiplomat01cath"
+metadata_url = "https://archive.org/metadata/bullarumdiplomat01cath"
+limitation = "Volume-level archive discovery is not individual document recovery. Segment acts by identified pages/loci and check OCR before asserting wording. No completeness claim for every historical bull."
+
+[[authorities]]
+id = "us-copyright-term"
+url = "https://www.copyright.gov/title17/92chap3.html"
+loci = ["303", "304", "305"]
+checked_on = "2026-10-26"
+
+[[authorities]]
+id = "us-duration-circular"
+url = "https://www.copyright.gov/circs/circ15a.pdf"
+loci = ["April 2026 revision, page 2"]
+checked_on = "2026-10-26"
+artifact_id = "artifact.united-states-copyright-office.duration-of-copyright-circular15a.2026-04-revision.official-pdf-6ff3c561"
+
+[[authorities]]
+id = "us-derivative-and-foreign-restoration"
+url = "https://www.copyright.gov/title17/92chap1.html"
+loci = ["103(b)", "104A(a)(1)(B)"]
+checked_on = "2026-10-26"
+artifact_id = "artifact.united-states-code.copyright-chapter-1.2026-10-21-official-web.official-html-97999d67"
+
+[[authorities]]
+id = "us-mere-copies"
+url = "https://www.copyright.gov/comp3/chap300/ch300-copyrightable-authorship.pdf"
+loci = ["313.4(A), printed chapter pages 26-27"]
+checked_on = "2026-10-26"
+artifact_id = "artifact.united-states-copyright-office.copyrightable-authorship-what-can-be-registered.2021-third-edition-chapter-300.official-pdf-363f7898"
+
+[reconsideration]
+triggers = [
+  "An item supplies an identified historical printing and exact body boundaries.",
+  "A rights holder supplies a grant covering the actual repository, PDF, and presentation surfaces.",
+  "A particular translation or digital edition supplies an applicable license and required attribution.",
+  "A textual comparison identifies modern additions or materially different wording in a retained candidate.",
+  "The relevant jurisdiction or source conditions materially change.",
+]
+effect = "Review affected artifacts and consumers; do not mechanically clear a whole language or pontificate."

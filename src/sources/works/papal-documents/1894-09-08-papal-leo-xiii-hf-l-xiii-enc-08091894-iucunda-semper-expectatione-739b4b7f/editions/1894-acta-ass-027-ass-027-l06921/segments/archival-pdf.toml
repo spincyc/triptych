@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.ass.027.ass-027-l06921.pdf"
+edition_id = "edition.acta-papal-archives.ass.027.ass-027-l06921"
+artifact_id = "artifact.acta-papal-archives.ass.027.vatican-pdf-cef47d12"
+artifact_sha256 = "cef47d120d5700533b8de81d136a7d5d90790157755e4cca2400b2cb0e189fd4"
+segment_type = "archival-act-locator"
+states = ["cataloged", "acquired", "inspected"]
+artifact_page_ranges = [[177, 184]]
+context = "{\"closing_physical_lines\": [7219, 7222], \"closing_text\": \"     Datum R o m a e apud S. Petrum die VIII Sept. an. MDCCCXCIV,\\nPontificatus Nostri decimo septimo.\\n\\n                                       LEO PP. X I I I .\", \"end_line\": 7222, \"removed\": \"Running header/page-number lines carrying formfeed and Acta volume/fascicle footers are omitted via disjoint ranges; all remaining source text and notes in selected extent retained.\", \"retained_historical_note_ranges\": [[7255, 7255]], \"start_line\": 6921}"
+notes = "Artifact-page locators are distinct from the printed page labels [{\"artifact_page\": 177, \"printed_page\": \"177\", \"running_head_text\": \"177\"}, {\"artifact_page\": 178, \"printed_page\": \"178\", \"running_head_text\": \"178                        EPISTOLA ENCYCLICA\"}, {\"artifact_page\": 179, \"printed_page\": \"179\", \"running_head_text\": \"EPISTOLA ENCYCLICA                        179\"}, {\"artifact_page\": 180, \"printed_page\": \"180\", \"running_head_text\": \"180                             EPISTOLA ENCYCLICA\"}, {\"artifact_page\": 181, \"printed_page\": \"181\", \"running_head_text\": \"EPISTOLA. ENCYCLICA               181\"}, {\"artifact_page\": 182, \"printed_page\": \"182\", \"running_head_text\": \"182                        EPISTOLA ENCYCLICA\"}, {\"artifact_page\": 183, \"printed_page\": \"183\", \"running_head_text\": \"EPISTOLA ENCYCLICA                       183\"}, {\"artifact_page\": 184, \"printed_page\": \"184\", \"running_head_text\": \"184                                 EPISTOLA     ENCYCLICA\"}]. Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+"""Register papal identities and acquire reviewed Latin source artifacts."""
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+from _papal_sources import main
+from _tooling import Example
+
+# Captured invocations; replayed by the repository example gate.
+EXAMPLES = {
+    'plan': (
+        Example('tools/papal-sources plan --document papal.leo-xiii.hf-l-xiii-enc-15051891-rerum-novarum --json', ('{"candidate_ids":["papal.leo-xiii.hf-l-xiii-enc-15051891-rerum-novarum"],"documents":1,"excluded":{"conflicting-act-dates":0,"later-act-date":0,"no-latin-delivery":0,"non-whole-record":0,"unresolved-act-date":0},"latin_candidates":1,"rights":"Candidate scope only; promotion requires reviewed publication and exact-wording approval.","status":"ok","v":1}',), 'Reports the selected work’s acquisition candidate status; writes no source records.'),
+        Example('tools/papal-sources plan --document papal.pius-x.hf-p-x-enc-19070908-pascendi-dominici-gregis --json', ('{"candidate_ids":["papal.pius-x.hf-p-x-enc-19070908-pascendi-dominici-gregis"],"documents":1,"excluded":{"conflicting-act-dates":0,"later-act-date":0,"no-latin-delivery":0,"non-whole-record":0,"unresolved-act-date":0},"latin_candidates":1,"rights":"Candidate scope only; promotion requires reviewed publication and exact-wording approval.","status":"ok","v":1}',), 'Candidate status does not establish publication rights.'),
+    ),
+    'register': (
+        Example('tools/papal-sources register --document papal.missing --json', ('{"code":"input","error":"an explicitly selected document was not found","status":"error","v":1}',), 'An unknown selection is refused before source registration.'),
+        Example('tools/papal-sources register --document papal.missing', ('papal-sources: an explicitly selected document was not found',), 'The same refusal in ordinary text; no source records are written.'),
+    ),
+    'acquire': (
+        Example('tools/papal-sources acquire --document papal.missing --json', ('{"code":"input","error":"an explicitly selected document was not found","status":"error","v":1}',), 'An unknown selection is refused before network access or source mutation.'),
+        Example('tools/papal-sources acquire --document papal.missing', ('papal-sources: an explicitly selected document was not found',), 'The same preflight refusal in ordinary text.'),
+    ),
+    'manifest': (
+        Example('tools/papal-sources manifest --document papal.missing --revision 2026-10-26T00:00:00Z --out .scratch/source_records/example-manifest.json --json', ('{"code":"input","error":"an explicitly selected document was not found","status":"error","v":1}',), 'An unknown selection is refused before an output manifest is written.'),
+        Example('tools/papal-sources manifest --document papal.missing --revision 2026-10-26T00:00:00Z --out .scratch/source_records/example-manifest.json', ('papal-sources: an explicitly selected document was not found',), 'The same refusal in ordinary text; the destination is not created.'),
+    ),
+    'witness': (
+        Example(
+            'tools/papal-sources witness --recipe src/sources/papal-documents/acta-manifest.json --cached-pdf .scratch/not-needed.pdf --scratch .scratch/source_records/witness-example --json',
+            ('{"code":"input","error":"expected triptych-papal-page-witness/v1","status":"error","v":1}',),
+            'A typesetting manifest is refused before PDF access, staging, or source registration.',
+        ),
+        Example(
+            'tools/papal-sources witness --recipe src/sources/papal-documents/acta-manifest.json --cached-pdf .scratch/not-needed.pdf --scratch .scratch/source_records/witness-example',
+            ('papal-sources: expected triptych-papal-page-witness/v1',),
+            'The same input refusal in ordinary text; caller-supplied page and rights evidence is mandatory.',
+        ),
+    ),
+}
+
+if __name__ == "__main__":
+    raise SystemExit(main(examples=EXAMPLES))

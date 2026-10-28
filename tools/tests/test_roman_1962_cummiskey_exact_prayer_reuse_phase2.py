@@ -338,18 +338,27 @@ class CummiskeyExactPrayerReusePhase2Tests(unittest.TestCase):
                 original, CALENDARS, LEDGER, self.witnesses
             )
 
-    def test_advent_ii_collect_stays_unserved_and_both_censuses_are_accounted(self):
+    def test_advent_ii_collect_refuses_cummiskey_reuse_and_both_censuses_are_accounted(self):
         refused = identity(("advent-2", "Collect"))
-        self.assertNotIn(refused, self.overlay)
-        rows = [r for r in self.document["untranslated"]
-                if (r["mass"], r["form_id"], r["proper"], r["cycle"], r["occurrence"]) == refused]
-        self.assertEqual(len(rows), 1)
-        self.assertEqual(rows[0]["reason"]["kind"], "witness-gap")
-        self.assertIn("Who livest.", rows[0]["note"])
-        self.assertIn("Qui tecum.", rows[0]["note"])
+        # 8d7e3b301 replaced the witness-gap (Lasance "Who livest." against "Qui
+        # tecum.") with one separately reviewed, conclusion-compatible Lefebvre
+        # 1925 English (english_sha256 in finite-source-methods-next18.json under
+        # workflows/reviews/missal-reader-completion-2026-10-26; [[accepted]]
+        # next17 in src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml).
+        self.assertNotIn(refused, self.entries)
+        self.assertFalse([r for r in self.document["untranslated"]
+                          if (r["mass"], r["form_id"], r["proper"], r["cycle"], r["occurrence"]) == refused])
+        served = self.overlay[refused]
+        self.assertEqual((served["witness"], served["collation_result"]), ("lefebvre-1925", "confirmed"))
+        self.assertEqual([sha(t["text"]) for t in served["translations"]],
+                         ["477de70209b91ea3ae16ca9caffbebc481aa704ec066456c436129c997c98cc5"])
+        self.assertNotIn(PREFIX, served["passage_id"] + served["publication_artifact_id"])
+        # The phase-2 censuses were (1427, 219, 1208) and (1378, 206, 1172); these
+        # are the current_coverage of the accepted receipt
+        # workflows/reviews/missal-reader-completion-2026-10-26/source-review-final-source180.json.
         for calendar, expected in (
-            ("roman-1962", (1427, 219, 1208)),
-            ("roman-pre-1955", (1378, 206, 1172)),
+            ("roman-1962", (1448, 1188, 260)),
+            ("roman-pre-1955", (1391, 1168, 223)),
         ):
             census = self.propers.english_coverage(CALENDARS, calendar)
             self.assertEqual(

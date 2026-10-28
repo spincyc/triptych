@@ -1,0 +1,71 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "mechanical-pdf-text-extraction",
+   "byte_size": 1493126,
+   "edition_owned": true,
+   "id": "artifact.acta-papal-archives.ass.009.extracted-text-d651476a",
+   "media_type": "text/plain",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "restricted"
+  },
+  {
+   "artifact_type": "historical-text-derivative",
+   "byte_size": 1491307,
+   "edition_owned": true,
+   "id": "artifact.acta-papal-archives.ass.009.historical-text-a7896d1d",
+   "media_type": "text/plain",
+   "notes": "Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations. [\"Vatican -ocr.pdf text reconstruction; no original-print facsimile collation asserted.\", \"Complete PDFs hashed before extraction; UTF-8, LF and formfeed bytes in -layout text retained exactly.\", \"Discovery based on whole volume Summa actorum, formal headings and dating/signature search; historical quotations are candidates only when a distinct formal instrument is identified.\", \"No canonical work joins inferred. OCR errors, source abbreviations, source page-order defects and unresolved language/column segmentation are not silently corrected.\"]",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. Historical title identifies volumeIX ANNO1876, EDITIO TERTIA, Rome Ex Typographia Polyglotta Vaticana MCMXV (1915), LF25–39. Modern Johnson publishing wrapper LF41–44 and1968 reprint LF50–51 excluded; printed body begins LF52. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "archival-ocr-pdf",
+   "byte_size": 2680037,
+   "edition_owned": true,
+   "id": "artifact.acta-papal-archives.ass.009.vatican-pdf-a849b1d9",
+   "media_type": "application/pdf",
+   "page_count": 690,
+   "retrieved": "2026-10-26",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.vatican.va/archive/ass/documents/ASS-09-1876-ocr.pdf",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1915",
+  "editors": [],
+  "id": "edition.acta-papal-archives.ass.009.1915-acta-ass-009",
+  "jurisdiction": null,
+  "language": "mul",
+  "publication": "Historical title identifies volumeIX ANNO1876, EDITIO TERTIA, Rome Ex Typographia Polyglotta Vaticana MCMXV (1915), LF25–39. Modern Johnson publishing wrapper LF41–44 and1968 reprint LF50–51 excluded; printed body begins LF52.",
+  "title": "Acta Sanctae Sedis — source witness ass.009",
+  "translators": [],
+  "year": 1915
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "ASS",
+   "Acta Sanctae Sedis in compendium opportune redacta"
+  ],
+  "author": "Holy See",
+  "category": "official-periodical",
+  "description": "The Holy See periodical that preceded Acta Apostolicae Sedis. Volume editions and exact delivery artifacts remain container identities distinct from the papal acts and other documents printed within them.",
+  "id": "work.holy-see.acta-sanctae-sedis",
+  "languages": [],
+  "title": "Acta Sanctae Sedis"
+ }
+}

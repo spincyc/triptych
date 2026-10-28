@@ -78,6 +78,49 @@ state = "in_progress"
   status = "open"
   evidence = ["PROJECT-WORK.md"]
 [[deliverables]]
+id = "papal-documents-2026-10-25"
+owner = "PROJECT-WORK.md"
+promise = "Source, catalogue, and organize papal encyclicals, bulls, and related formal documents; create two-column TeX/PDF editions of each sourced document and a concrete reuse path into larger presentation projects, retaining explicit historical, edition, and rights gaps."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "catalogue-and-coverage"
+  criterion = "A reproducible catalogue identifies official document rows, pope, genre, date, source indexes, language editions, acquisition failures, and explicit historical coverage limits; archive volume inventories are distinguished from individual document records."
+  status = "open"
+  evidence = ["src/sources/papal-documents/catalog.json", "src/sources/papal-documents/archives.json", "docs/papal-documents.md"]
+
+  [[deliverables.requirements]]
+  id = "source-artifacts"
+  criterion = "Sourced text is retained under truthful canonical work/edition/artifact or segment ownership with exact hashes, retrieval provenance, and affirmative edition-specific rights; missing and restricted witnesses are explicitly accounted for."
+  status = "open"
+  evidence = ["src/sources/papal-documents/source-links.json", "src/sources/papal-documents/publication-approvals.json", "src/sources/inventories/papal-documents-rights-v1.toml"]
+
+  [[deliverables.requirements]]
+  id = "two-column-editions"
+  criterion = "Every acquired and admitted individual document has a source-pinned two-column TeX edition and compiled PDF preserving its language, paragraph numbering, signatures and notes; review and installation states are recorded without substituting templates or metadata-only entries for full-text editions."
+  status = "open"
+  evidence = ["scripts/_typeset_papal.py", "scripts/_papal_collection.py", "scripts/_papal_install.py", "src/sources/papal-documents/typeset-manifest.json", "src/sources/papal-documents/historical-english-manifest.json", "src/sources/papal-documents/bullarium-active-withdrawals.json", "release/papal-documents.json", "pdf/papal-documents"]
+
+  [[deliverables.requirements]]
+  id = "presentation-reuse"
+  criterion = "Executed exports provide unique citation identities, bibliographic and tabular metadata, and a working TeX or presentation inclusion example that references canonical sources without duplicating their editable text."
+  status = "pass"
+  evidence = ["docs/papal-documents.md", "scripts/_papal_exports.py", "src/sources/papal-documents/presentation-integration-review.md"]
+  check = "path_exists"
+
+  [[deliverables.requirements]]
+  id = "validation-and-integration"
+  criterion = "Focused parser, rights, identity, typesetting and export checks pass; the source-library and affected repository gates are run with inherited failures distinguished; the coherent result is committed to feature/encyclicals and remaining gaps are recoverable from tracked records."
+  status = "open"
+  evidence = ["tools/tests/test_papal_documents.py", "tools/tests/test_papal_sources.py", "tools/tests/test_typeset_papal.py", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "historical-individual-reconstruction"
+  criterion = "The confirmed historical expansion reconstructs individually identified papal acts from the Bullarium and ASS/AAS witnesses wherever source-supported boundaries and rights permit; every catalog candidate is dispositioned with exact container identity, issuer/date/genre evidence, boundary/reading-order review and duplicate or hold reasons, and every admitted English or Latin edition receives a source-pinned two-column TeX/PDF. Whole volumes, unchecked candidates, curial material, protected bodies and unresolved extents are never counted as recovered complete papal acts."
+  status = "open"
+  evidence = ["src/sources/papal-documents/bullarium-catalog.json", "src/sources/papal-documents/acta-catalog.json", "guidance/papal-documents.md"]
+
+[[deliverables]]
 id = "claude-1962-f02-all-saints-three-documents-2026-11-01"
 owner = "PROJECT-WORK.md"
 promise = "Complete the Claude 1962 All Saints (F02) proper-study workflow for Sunday 1 November 2026 with independent cold reviews, three reviewed PDFs and the canonical web edition, publish to main by fast-forward and verify the deployment."

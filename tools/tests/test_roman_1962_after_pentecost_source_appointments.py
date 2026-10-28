@@ -59,10 +59,14 @@ class AfterPentecostSourceAppointmentTests(unittest.TestCase):
         target = next(r for r in inventory['targets'] if r['id'] == 'roman-1962.temporal.september-ember-wed:collect:2')
         self.assertEqual((target['calendar_proper_name'], target['calendar_proper_occurrence']), ('Oratio', 1))
         english = tomllib.loads((ROOT / 'src/sources/inventories/roman-1962-proper-translations-v1.toml').read_text())
-        rows = [r for kind in ['untranslated', 'translations'] for r in english.get(kind, [])
-                if (r.get('mass'), r.get('form_id'), r.get('proper'), r.get('cycle'), r.get('occurrence'), r.get('lang'))
-                == ('september-ember-wednesday', 'main', 'Oratio', 'all', 1, 'en')]
+        identity = ('september-ember-wednesday', 'main', 'Oratio', 'all', 1)
+        same = lambda r: (r.get('mass'), r.get('form_id'), r.get('proper'), r.get('cycle'), r.get('occurrence')) == identity
+        rows = [r for r in english['untranslated'] if same(r) and r.get('lang') == 'en']
+        rows += [r for r in english['entries'] if same(r) and 'en' in [t['lang'] for t in r['translations']]]
         self.assertEqual(len(rows), 1)
+        # da270a039: the no-exemplar absence became one confirmed Lefebvre entry (english22-latin3-source-adoption.json
+        # under workflows/reviews/missal-reader-completion-2026-10-26; [[accepted]] existing-forward-five).
+        self.assertEqual((rows[0].get('witness'), rows[0].get('collation_result')), ('lefebvre-1925', 'confirmed'))
 
     def test_christ_king_3943_3944_votive_alternatives_do_not_enter_normal_form(self):
         # MR1962 physical779/printed698,L: the preceding clause expressly says In Missis votivis.

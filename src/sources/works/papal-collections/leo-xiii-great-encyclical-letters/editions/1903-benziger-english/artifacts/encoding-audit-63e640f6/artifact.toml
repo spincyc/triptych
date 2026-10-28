@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.encoding-audit-63e640f6"
+edition_id = "edition.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english"
+artifact_type = "project-encoding-repair-audit"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "licensed"
+license = "CC-BY-SA-4.0"
+rights_basis = "Project-created factual audit and historical public-domain OCR contexts, including short exact Wikisource HTML response excerpts. The combined audit is offered under CC BY-SA 4.0 to preserve the terms of those contributor-markup excerpts; attribution and revision histories are recorded on the linked exact chapter-response artifacts. The underlying 1903 English wording retains its separate United States public-domain basis."
+provenance = "Exact unchanged investigation receipt, SHA-256 63e640f643fe8eee0189b9815f945ac8052cfaa9d74ebbc057b3a50ac31c37d1. Its scratch-candidate stage and paths describe the investigation before adoption; the current registered controllers are declared in the dependency package and segment records."
+retrieved = "2026-10-26"
+derived_from = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-reading-text-fc16a357"
+transformation = "Enumerate suspicious encoding spans in the retained Wikisource-derived container; reverse 193 intact Windows-1252 display/UTF-8 sequences and hypothesize 12 partial black-square marker repairs only where exact unique context independently agrees with the complete retained IA OCR. Record before/after code points, raw source offsets, complete input hashes, comparison windows, raw partial-sequence response excerpts, and exact reversibility checks. No lexical correction or print-image verification is claimed."
+encoding = "utf-8"
+indexable = false
+support_artifacts = [{ artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ia-raw-ocr-2b7c730b", embedded_reference = "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/ia-raw-ocr-2b7c730b/greatencyclicall00cathuoft_djvu.txt" }, { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-13-f963cf1b", embedded_reference = "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/ws-chapter-13-f963cf1b/response.json" }, { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-17-654664ba", embedded_reference = "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/ws-chapter-17-654664ba/response.json" }, { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-23-2656a9e9", embedded_reference = "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/ws-chapter-23-2656a9e9/response.json" }, { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-24-447b6b43", embedded_reference = "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/ws-chapter-24-447b6b43/response.json" }, { artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-30-c6661c2c", embedded_reference = "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/ws-chapter-30-c6661c2c/response.json" }]
+notes = "This preserves the exact pre-adoption audit, including 11 affected selection IDs. It does not promote the whole transcription to verified and does not include or adopt the separate Tesseract research pilot."
+sha256 = "63e640f643fe8eee0189b9815f945ac8052cfaa9d74ebbc057b3a50ac31c37d1"
+byte_size = 263421
+path = "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/encoding-audit-63e640f6/encoding-investigation.json"

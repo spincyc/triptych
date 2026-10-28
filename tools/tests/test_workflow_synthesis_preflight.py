@@ -754,13 +754,14 @@ class CorpusTests(unittest.TestCase):
                        for job, result in zip(jobs, results)
                        if result.returncode})
 
-    def test_the_gate_refuses_none_of_the_twenty_seven_manifest_leaves(self):
+    def test_the_gate_refuses_none_of_the_twenty_eight_manifest_leaves(self):
         """Keep the explicit manifest census and full synthesis gate together.
 
         A new manifest must update the census deliberately and still pass
-        every check applied to the existing leaves.
+        every check applied to the existing leaves. The twenty-eighth is the
+        Claude All Saints (f02-all-saints), published 2026-10-27.
         """
-        self.assertEqual(len(manifest_leaves()), 27)
+        self.assertEqual(len(manifest_leaves()), 28)
         self.assertEqual(self.refused(GATE_CHECKS, "synthesis"), [])
 
     def test_the_gate_refuses_no_leaf_the_canonical_gate_accepts(self):

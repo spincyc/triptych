@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.bullarium-romanum.volume-04.unit-0218.part-01.1859-turin-latin.source-ocr"
+edition_id = "edition.bullarium-romanum.volume-04.unit-0218.part-01.1859-turin-latin"
+artifact_id = "artifact.bullarium-romanum.volume-04.1859-turin-latin.ocr-ea5a1bbf8d4f"
+artifact_sha256 = "ea5a1bbf8d4fc51353b60f7d9f4d22e7cffe81c5ca30ef1a069e53a41fa5f9dd"
+segment_type = "constituent-work"
+physical_line_ranges = [[88672, 88746], [88749, 88780]]
+states = ["cataloged", "acquired", "inspected"]
+context = "The exact selected raw OCR extent and surrounding boundary context were inspected. Printed attribution is preserved; this is not modern authentication, critical dating or image-collated text. Complete independent papal commission addressed to the cardinal: actual Martinus protocol at 88672–88675, opening and mandate at 88677–88712, faculty at 88714–88733, obedience/enforcement at 88753–88765, derogation at 88767–88774 and dating at 88776–88780. The separate cardinal instrument starts only after the papal dating, at 88782. The complete body witness starts with its own protocol; the combined editorial summary is explicitly excluded in the parent apparatus record. The foreign cardinal marginal synopsis at 88747–88748 is excluded on both context and XML geometry: object 741/usemap 0742 places it at x338–418,y2354–2415 beside the cardinal opening at 88797, after the papal dating at y1552. The own papal marginal tail at 88744 is retained; no historical or source note belonging to this papal body was found. The frozen empty date_raw is preserved despite the printed dating clause."
+notes = "Review extent: entire selected OCR range plus20lines either side; no image collation Source text remains uncorrected OCR, with historical synopsis, dating/signatures and apparatus in the selected extent. No image collation or historical authentication is claimed."

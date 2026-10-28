@@ -1,0 +1,5 @@
+#!/bin/sh
+# Share the repository smoke gate with tmt.
+set -eu
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+exec "$repo/tests/tools/papal-acta.test"

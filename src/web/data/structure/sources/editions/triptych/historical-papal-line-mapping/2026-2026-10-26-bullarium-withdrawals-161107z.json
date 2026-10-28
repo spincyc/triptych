@@ -1,0 +1,44 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "immutable-papal-withdrawal-inventory-input",
+   "byte_size": 12116706,
+   "edition_owned": true,
+   "id": "artifact.triptych.historical-papal-line-mapping.2026-10-26-bullarium-withdrawals-161107z.input-aa7bf4c37467",
+   "media_type": "application/json",
+   "notes": "Historical project input only. The sole editable negative inventory remains src/sources/papal-documents/bullarium-active-withdrawals.json; no separate papal-act body is created.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "licensed",
+   "rights_basis": "Project-created inventory metadata under the repository MIT license. Historical titles, attribution and source wording retain the rights of their identified historical printing artifacts; the project license does not extend to external source wording.",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-10-26",
+  "editors": [],
+  "id": "edition.triptych.historical-papal-line-mapping.2026-10-26-bullarium-withdrawals-161107z",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "Triptych project-apparatus snapshot",
+  "title": "Frozen Bullarium withdrawal inventory input, 2026-10-26T16:11:07Z",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Triptych contributors",
+  "category": "processing-method",
+  "description": "Project software that checks complete OCR/XML token identity and records physical source lines and explicit scan leaf identifiers. The method does not establish textual accuracy, reading order or authenticity.",
+  "id": "work.triptych.historical-papal-line-mapping",
+  "languages": [
+   "en"
+  ],
+  "title": "Exact token and line-to-leaf mapping for historical papal sources"
+ }
+}

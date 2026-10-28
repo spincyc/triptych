@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-chapter-24-447b6b43"
+edition_id = "edition.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english"
+artifact_type = "web-transcription-response"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "licensed"
+license = "CC-BY-SA-4.0"
+rights_basis = "The modern Wikisource contributor markup and encoding are offered under CC BY-SA 4.0; attribution is to the Wikisource contributors to the linked chapter, whose revision history identifies contributors. The underlying English printing is the separate 1903 Benziger public-domain text. Exact API response retained unchanged; modifications occur only in the separately manifested plain-text derivative."
+source_url = "https://en.wikisource.org/w/api.php?action=parse&page=The+Great+Encyclical+Letters+of+Pope+Leo+XIII%2FChristian+Democracy&prop=text%7Crevid&format=json"
+provenance = "Whole MediaWiki action=parse response for The Great Encyclical Letters of Pope Leo XIII/Christian Democracy; source revision 15539561. Contributor attribution and history: https://en.wikisource.org/wiki/The_Great_Encyclical_Letters_of_Pope_Leo_XIII/Christian_Democracy?action=history . Wikisource copyright policy: https://en.wikisource.org/wiki/Wikisource:Copyright_policy ."
+retrieved = "2026-10-26"
+encoding = "utf-8"
+indexable = false
+notes = "The response contains the complete rendered chapter, including navigation/markup/footnotes. Chapter 24 of 30. The source's transcription still requires cleanup/proofreading; exact bytes and their source revision are preserved without declaring textual verification."
+sha256 = "447b6b4317391fbc4e970ad962604f1feed55bf67f1d58dd01183859c26365ff"
+byte_size = 49243
+path = "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/ws-chapter-24-447b6b43/response.json"

@@ -1369,13 +1369,18 @@ RETAINED_SOURCE_REVIEWS = {
 
 # Sources passage authority only: no calendar permission is inferred from the
 # dated Gregory ledger row. Common I and Gregory remain distinct targets.
+# The three Mame pins moved only with the 2026-10-26 whole-PDF rights_basis
+# rationale correction proposed in workflows/reviews/missal-reader-completion-
+# 2026-10-26/mame-rights-rationale-correction.json and installed by the accepted
+# latin-twelve-admission-adoption.json (8d7e3b301); restoring its
+# existing_exact_value reproduces the former 06bc13c6/56cc38a5/2aeeef19 pins.
 COMMON_I_SOURCE_PINS = {
     "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.primary-commune-confessoris-pontificis-1-lesson": "sha256:c0e03608eb717ce4b15cdcaf478c3dbdbde83228f3cbcc19e6cf150ace20b656",
-    "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.primary-s-gregorii-thaumaturgi-episcopi-confessoris-lesson-checked-2026-10-20": "sha256:06bc13c63f2a1e4943793953634a0fabf523436a0b178f2b9972ae7839a57c6f",
+    "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.primary-s-gregorii-thaumaturgi-episcopi-confessoris-lesson-checked-2026-10-20": "sha256:654cdd922b1be53f46814fba3cf6fb3c04ecc655b29b0326b94a84030efa085e",
     "passage.catholic-church.missale-romanum.vatican-typica-1962.primary-commune-confessoris-pontificis-1-lesson-word-collation-2026-10-20": "sha256:8404757635f27d45653a9d75b604fbdd686ea355d4e0ae92318cd3bbbe082b3b",
     "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.adapted-primary-readings-76d61000": "sha256:113c346c2d5cb9973f0058908f45c8b6c5662f6d574fca043dce28f80c747d41",
-    "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.adapted-primary-readings-la-checked-e3a67098": "sha256:56cc38a5430693f846746b31ec24bd4571f86b72ab5591c55bbd96473338f490",
-    "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a": "sha256:2aeeef19bd9fd55efb91a84ab940dd7be0abed5af53bc5d1d63517fb364b7661"
+    "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.adapted-primary-readings-la-checked-e3a67098": "sha256:73b8db18243b8ce0fa2442202f4639612183e4288252f83d9dc54ce15876a5e6",
+    "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a": "sha256:11fde86ecd5f8addfdc68c4cb278118f703a47704b35a8e5b415b311400fc070"
 }
 COMMON_I_PASSAGE, COMMON_I_HISTORICAL_PASSAGE, COMMON_I_TARGET_PASSAGE = (
     list(COMMON_I_SOURCE_PINS)[:3]

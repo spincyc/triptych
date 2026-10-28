@@ -1,0 +1,58 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "official-html",
+   "byte_size": 70323,
+   "edition_owned": true,
+   "id": "artifact.papal.pius-xi.hf-p-xi-enc-19230629-studiorum-ducem.2026-10-26-vatican-la.html",
+   "media_type": "text/html",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "restricted",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.vatican.va/content/pius-xi/la/encyclicals/documents/hf_p-xi_enc_19230629_studiorum-ducem.html",
+   "storage": "restricted"
+  },
+  {
+   "artifact_type": "normalized-transcription",
+   "byte_size": 35637,
+   "edition_owned": true,
+   "id": "artifact.papal.pius-xi.hf-p-xi-enc-19230629-studiorum-ducem.2026-10-26-vatican-la.latin-text-951c5ea1844d",
+   "media_type": "text/plain",
+   "notes": "Normalized transcription, not a facsimile or critical edition. Historical Latin wording is public domain in the United States; portal markup and translations have separate rights. Historical witness: Acta Apostolicae Sedis 15 (1923), pp. 309-326. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "Original historical wording identified in Acta Apostolicae Sedis 15 (1923), pp. 309-326, published by 1930. United States expired-term assessment under 17 U.S.C. 304 and 305; qualifying foreign restoration under 104A(a)(1)(B) receives only the remainder of that term. The preexisting wording remains distinct from modern HTML, creative revision and translations under 103(b). See src/sources/inventories/papal-documents-rights-v1.toml for the primary authorities and jurisdictional limits. ",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://www.vatican.va/content/pius-xi/la/encyclicals/documents/hf_p-xi_enc_19230629_studiorum-ducem.html",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": "Holy See web presentation",
+  "date": "2026-10-26",
+  "editors": [],
+  "id": "edition.papal.pius-xi.hf-p-xi-enc-19230629-studiorum-ducem.2026-10-26-vatican-la",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Holy See web delivery identified from its official index on 2026-10-26",
+  "title": "Studiorum Ducem — Holy See la web delivery",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Pius XI",
+  "category": "encyclical",
+  "description": "Papal act dated 1923-06-29; identified from the Holy See index. Index metadata establishes discovery identity, not whole-text verification. https://www.vatican.va/content/pius-xi/en/encyclicals.index.html https://www.vatican.va/content/pius-xi/it/encyclicals.index.html",
+  "id": "work.papal.pius-xi.hf-p-xi-enc-19230629-studiorum-ducem",
+  "languages": [
+   "it",
+   "la"
+  ],
+  "title": "Studiorum Ducem"
+ }
+}

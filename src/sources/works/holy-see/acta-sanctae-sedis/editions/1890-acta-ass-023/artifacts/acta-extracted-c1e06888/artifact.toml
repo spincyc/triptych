@@ -1,0 +1,15 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.acta-papal-archives.ass.023.extracted-text-c1e06888"
+edition_id = "edition.acta-papal-archives.ass.023.1890-acta-ass-023"
+artifact_type = "mechanical-pdf-text-extraction"
+media_type = "text/plain"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "Exact extraction may contain protected text or modern wrappers and remains transient. Separately manifested historical text excludes uncleared material."
+retrieved = "2026-10-26"
+sha256 = "c1e0688899a41e575cc671b750462446cf7f4a07e6e1aa7ada01b0bc1c67569f"
+byte_size = 8861
+derived_from = "artifact.acta-papal-archives.ass.023.extracted-text-707358f1"
+transformation = "Mechanical exact source Unicode-column selection; no source character substitution.; Remove only source running-head letters/folio digits from the explicitly declared Unicode slices. Every retained character comes directly from the hashed complete layout extraction; concatenate fragments of the same source row before its original LF. Independent -raw extraction corroborates the separation but supplies no replacement wording.; select inclusive 1-based LF ranges and 0-based half-open Unicode columns in this declared order: [{\"physical_line_range\":[43,82],\"unicode_columns\":null},{\"physical_line_range\":[84,124],\"unicode_columns\":null},{\"physical_line_range\":[125,125],\"unicode_columns\":[0,51]},{\"physical_line_range\":[126,149],\"unicode_columns\":null}]; join_previous concatenates consecutive fragments of the same source LF line before its LF; otherwise append LF after each selected source line/slice, preserving all selected characters; Remove only source running-head letters/folio digits from the explicitly declared Unicode slices. Every retained character comes directly from the hashed complete layout extraction; concatenate fragments of the same source row before its original LF. Independent -raw extraction corroborates the separation but supplies no replacement wording."
+notes = "Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

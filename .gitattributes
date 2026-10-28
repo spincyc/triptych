@@ -12,3 +12,8 @@ src/*/**/propers/retrieved.txt -whitespace -text
 # or cleanup of source-significant whitespace. Manifests remain ordinary text.
 src/sources/**/artifacts/** -text -whitespace
 src/sources/**/artifacts/**/artifact.toml text eol=lf !whitespace
+
+# Digest-bound reader evidence preserves the original JSON/report byte streams.
+release/papal-documents/inputs/*.json -text -whitespace
+release/papal-documents/reports/*.md -text -whitespace
+src/sources/papal-documents/*visual*.md -text -whitespace

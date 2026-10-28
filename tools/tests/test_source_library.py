@@ -1664,6 +1664,38 @@ class SourceLibraryTests(unittest.TestCase):
             )
         self.assertNotIn("inventories/audit.toml", joined)
 
+    def test_papal_inventory_ownership_is_limited_to_named_envelopes(self) -> None:
+        self.add_valid_vertical_fixture()
+        self.write("src/sources/papal-documents/catalog.json", json.dumps({
+            "schema": "triptych-papal-documents/v1", "documents": [],
+            "coverage": [], "scope": {},
+        }))
+        self.write("src/sources/papal-documents/README.md", "Collection contract.\n")
+        self.assertEqual(SOURCE_LIBRARY.load_library(self.root).errors, [])
+
+        self.write("src/sources/papal-documents/batch-visual-review.json", json.dumps({
+            "schema": "triptych-papal-visual-review/v1", "documents": [],
+            "frozen_receipt_sha256": "0" * 64,
+        }))
+        self.assertEqual(SOURCE_LIBRARY.load_library(self.root).errors, [])
+
+        invalid = {
+            "catalog.json": '{"schema":"wrong","documents":[],"coverage":[],"scope":{}}',
+            "other-visual-review.json": '{"schema":"triptych-papal-visual-review/v1","documents":[]}',
+            "archives.json": '{"schema":"triptych-papal-archives/v1","schema":"duplicate"}',
+            "source-links.json": '{"schema":"triptych-papal-source-links/v1","documents":NaN}',
+        }
+        for name, payload in invalid.items():
+            self.write("src/sources/papal-documents/" + name, payload)
+        rogue = ("rogue.json", "nested/catalog.json", "source.txt", "source.pdf")
+        for name in rogue:
+            self.write("src/sources/papal-documents/" + name, "unowned\n")
+        joined = "\n".join(SOURCE_LIBRARY.load_library(self.root).errors)
+        for name in invalid:
+            self.assertIn("papal-documents/" + name + ": invalid papal inventory", joined)
+        for name in rogue:
+            self.assertIn("papal-documents/" + name + ": file is outside", joined)
+
     def test_a_table_the_bible_tool_writes_and_gates_is_owned(self) -> None:
         """The derived trees keep their own formats; the suffix guard keeps out blobs.
 

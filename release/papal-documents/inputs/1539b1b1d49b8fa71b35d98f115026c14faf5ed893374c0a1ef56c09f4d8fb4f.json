@@ -1,0 +1,86 @@
+{
+  "documents": [
+    {
+      "artifact_id": "artifact.papal-collections.pius-ix-quanta-cura-syllabus.2026-10-26-vatican-latin.latin-text-04f9a32a9434",
+      "body_tex": "1864-12-08-papal-pius-ix-encyclica-quanta-cura-8-decembris-1864-78357f4d-la/1864-12-08-papal-pius-ix-encyclica-quanta-cura-8-decembris-1864-78357f4d-la.body.tex",
+      "changed": true,
+      "id": "papal.pius-ix.encyclica-quanta-cura-8-decembris-1864",
+      "language": "la",
+      "pages": 4,
+      "pdf": "1864-12-08-papal-pius-ix-encyclica-quanta-cura-8-decembris-1864-78357f4d-la/1864-12-08-papal-pius-ix-encyclica-quanta-cura-8-decembris-1864-78357f4d-la.pdf",
+      "pdf_sha256": "24bd8db2aa9850b81092398876aeedc248b65c5c6def679c14f578d648891614",
+      "physical_line_ranges": [
+        [
+          1,
+          67
+        ]
+      ],
+      "segment_id": "segment.papal.pius-ix.encyclica-quanta-cura-8-decembris-1864.2026-10-26-vatican-latin-segment.complete-latin-text",
+      "source_sha256": "04f9a32a9434f0a63fee57b2c58d51c629525a3c084888fd5a6cdb68fce7f0ea",
+      "status": "compiled",
+      "stem": "1864-12-08-papal-pius-ix-encyclica-quanta-cura-8-decembris-1864-78357f4d-la",
+      "tex": "1864-12-08-papal-pius-ix-encyclica-quanta-cura-8-decembris-1864-78357f4d-la/1864-12-08-papal-pius-ix-encyclica-quanta-cura-8-decembris-1864-78357f4d-la.tex",
+      "text_fidelity": {
+        "method": "pdf-raw-whitespace-soft-hyphen-nfkc-v2",
+        "pages": 4,
+        "source_characters": 20311,
+        "source_first_page": 1,
+        "source_last_page": 4,
+        "source_normalized_characters": 17594,
+        "status": "pass"
+      },
+      "warnings": []
+    },
+    {
+      "artifact_id": "artifact.papal-collections.pius-ix-quanta-cura-syllabus.2026-10-26-vatican-latin.latin-text-04f9a32a9434",
+      "body_tex": "1864-12-08-papal-pius-ix-syllabus-errorum-1864-12-08-cfcb518d-la/1864-12-08-papal-pius-ix-syllabus-errorum-1864-12-08-cfcb518d-la.body.tex",
+      "changed": false,
+      "id": "papal.pius-ix.syllabus-errorum-1864-12-08",
+      "language": "la",
+      "pages": 5,
+      "pdf": "1864-12-08-papal-pius-ix-syllabus-errorum-1864-12-08-cfcb518d-la/1864-12-08-papal-pius-ix-syllabus-errorum-1864-12-08-cfcb518d-la.pdf",
+      "pdf_sha256": "3597e56ab103b2ba59e04c84c70278ac341754c4018ebf8087ef50cf554d3c46",
+      "physical_line_ranges": [
+        [
+          69,
+          489
+        ]
+      ],
+      "segment_id": "segment.papal-collections.pius-ix-syllabus-errorum.2026-10-26-vatican-latin-segment.complete-latin-text",
+      "source_sha256": "04f9a32a9434f0a63fee57b2c58d51c629525a3c084888fd5a6cdb68fce7f0ea",
+      "status": "compiled",
+      "stem": "1864-12-08-papal-pius-ix-syllabus-errorum-1864-12-08-cfcb518d-la",
+      "tex": "1864-12-08-papal-pius-ix-syllabus-errorum-1864-12-08-cfcb518d-la/1864-12-08-papal-pius-ix-syllabus-errorum-1864-12-08-cfcb518d-la.tex",
+      "text_fidelity": {
+        "method": "pdf-raw-whitespace-soft-hyphen-nfkc-v2",
+        "pages": 5,
+        "source_characters": 20668,
+        "source_first_page": 1,
+        "source_last_page": 5,
+        "source_normalized_characters": 17670,
+        "status": "pass"
+      },
+      "warnings": []
+    }
+  ],
+  "errors": [],
+  "generator": "typeset-papal",
+  "generator_version": 1,
+  "index": "index.html",
+  "options": {
+    "automatic_hyphenation": false,
+    "body_alignment": "ragged-right",
+    "columns": 2,
+    "form_feed": "layout-whitespace",
+    "punctuation": "literal",
+    "soft_hyphen": "nonprinting"
+  },
+  "receipt": "receipt.json",
+  "revision": "2026-10-26T04:09:27Z",
+  "schema": "triptych-papal-typeset-receipt/v1",
+  "summary": {
+    "compiled": 2,
+    "failed": 0,
+    "selected": 2
+  }
+}

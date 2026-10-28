@@ -1,0 +1,75 @@
+{
+  "changed_WORDs": 408175,
+  "changed_pages": 747,
+  "checks": {
+    "all_source_and_output_bytes_accounted": true,
+    "every_changed_WORD_exactly_once": true,
+    "exact_XML_byte_offsets_and_coordinates": true,
+    "indivisible_WORD_values_unchanged": true,
+    "no_OBJECT_attributes_serialized": true,
+    "unchanged_raw_chunks_byte_identical": true,
+    "whole_output_token_bijection": true,
+    "whole_raw_TXT_XML_token_equality": true
+  },
+  "derived_from": "artifact.bullarium-romanum.volume-04.1859-turin-latin.ocr-ea5a1bbf8d4f",
+  "generator": "bullarium-geometry",
+  "generator_version": 1,
+  "hybrid_bytes": 3125638,
+  "hybrid_sha256": "497a692a65d1dfe838c88ebf7a748585889d2c3b9ba80be7e2cc38189b26982d",
+  "limitations": [
+    "No OCR character correction, word restoration or translation.",
+    "Unchanged pages retain their original OCR order, including unresolved defects.",
+    "Explicit coordinates, role assignments and order are replayed; their historical meaning is not inferred.",
+    "Geometry replay establishes no act admission, note ownership, authentication or image collation."
+  ],
+  "outputs": {
+    "byte-map.json": {
+      "byte_size": 504853,
+      "sha256": "ab02b1841ecdf8a681be20a49f12e5b0e4ab8170db63248b6620fb0a759b2c18"
+    },
+    "changed-word-map.jsonl.gz": {
+      "byte_size": 23254506,
+      "sha256": "710b55343b3aa8ed96c067898dd756a445b8fa6a0aba8d092c373a8ff10c4c82"
+    },
+    "hybrid.txt": {
+      "byte_size": 3125638,
+      "sha256": "497a692a65d1dfe838c88ebf7a748585889d2c3b9ba80be7e2cc38189b26982d"
+    },
+    "page-map.json": {
+      "byte_size": 506187,
+      "sha256": "ebe7fc483b3c1ab7251527803fd03d9832de170af28c2b71c5e84a962f9f0a4f"
+    }
+  },
+  "recipe_schema": "triptych-bullarium-geometry-recipe/v2",
+  "recipe_sha256": "7a35d5d153ba8f03c20481f3909d56bc1b59433ccdbafcd5c59d98bdc50e124a",
+  "roles": {
+    "body-left": 194947,
+    "body-right": 193910,
+    "footer": 3,
+    "gutter-ocr": 26,
+    "header": 7069,
+    "margin-left": 6142,
+    "margin-right": 6078
+  },
+  "schema": "triptych-bullarium-hybrid-witness/v1",
+  "serialization": "recipe-whitespace",
+  "source_WORDs": 422442,
+  "source_evidence_pins": {},
+  "source_pages": 806,
+  "source_tokens": 426463,
+  "source_txt": {
+    "artifact_id": "artifact.bullarium-romanum.volume-04.1859-turin-latin.ocr-ea5a1bbf8d4f",
+    "byte_size": 3521615,
+    "path": "src/sources/works/bullarium-romanum/volume-04/editions/1859-turin-latin/artifacts/ocr-ea5a1bbf8d4f/ocr.txt",
+    "sha256": "ea5a1bbf8d4fc51353b60f7d9f4d22e7cffe81c5ca30ef1a069e53a41fa5f9dd",
+    "source_url": "https://archive.org/download/bullarumdiplomat04cath/bullarumdiplomat04cath_djvu.txt"
+  },
+  "source_xml": {
+    "artifact_id": "artifact.bullarium-romanum.volume-04.1859-turin-latin.xml-a28bc5a232d3",
+    "byte_size": 34816026,
+    "sha256": "a28bc5a232d316ae68b4068897dbb74ae471868cf16ec37b7efbeb7051224636",
+    "source_url": "https://archive.org/download/bullarumdiplomat04cath/bullarumdiplomat04cath_djvu.xml"
+  },
+  "volume": 4,
+  "word_map_coverage": "changed-pages-only; unchanged bytes and page WORD/token ranges are mapped compactly"
+}

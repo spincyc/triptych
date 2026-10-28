@@ -36,4 +36,5 @@ authors, its extent, and when it was last revised — open
 ## How this was built
 
 [The Bibles](docs/bibles.md) · [The Mass](docs/the-mass.md) ·
-[Reading and Commentary](docs/reading-and-commentary.md)
+[Reading and Commentary](docs/reading-and-commentary.md) ·
+[Papal Documents](docs/papal-documents.md)

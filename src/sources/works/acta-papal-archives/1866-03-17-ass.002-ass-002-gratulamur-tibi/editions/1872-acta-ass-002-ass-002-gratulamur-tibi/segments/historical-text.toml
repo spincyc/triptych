@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.ass.002.ass-002-gratulamur-tibi"
+edition_id = "edition.acta-papal-archives.ass.002.ass-002-gratulamur-tibi"
+artifact_id = "artifact.acta-papal-archives.ass.002.historical-text-5e0a8791"
+artifact_sha256 = "5e0a8791e8dfed353361e228401df5d04f9c2669b36a9b7890c8aab6ee4d4177"
+segment_type = "constituent-work"
+states = ["cataloged", "acquired", "inspected"]
+physical_line_ranges = [[1, 108]]
+context = "Inspected source lines 10823–10838 give issuer/salutation and incipit; source closure inspected at lines 10903–10913. Identity remains source-local; no canonical match is inferred. Original source coordinates remain in the derivative ordered_source_line_ranges metadata."
+notes = "Exact per-act derivative concatenates only reviewed ordered source physical LF ranges; all characters of those source lines are retained. Main body and historical notes are complete. Main papal letter followed by its historical bibliographic/translation notes. Column note blocks moved after the act; unrelated journal heads omitted. Joins checked against layout pp273–275: so-/cietatem and dm/tutti protetto. Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

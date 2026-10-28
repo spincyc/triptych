@@ -1,0 +1,96 @@
+{
+  "schema": "triptych-bullarium-audit-archive-handoff/v1",
+  "archives": [
+    {
+      "schema": "triptych-bullarium-archive-inventory/v1",
+      "archive_filename": "held-coverage-audit-v1.tar.gz",
+      "archive_bytes": 8494678,
+      "archive_sha256": "1580b3a24a45c555bbbc35293f438adf5eacd52ee16bd804a3100f75f582e90f",
+      "project_reports": 143,
+      "members": 148,
+      "member_payload_bytes": 77987281,
+      "redaction_records": 500,
+      "changed_project_reports": 13,
+      "protected_historical_fields": 79496,
+      "source_preservation_all_equal": true,
+      "original_files_unchanged": true,
+      "byte_identical_rebuild": true,
+      "headers_verified": true,
+      "privacy_tokens_remaining": 0
+    },
+    {
+      "schema": "triptych-bullarium-archive-inventory/v1",
+      "archive_filename": "accepted-fusion-audit-v1.tar.gz",
+      "archive_bytes": 5910287,
+      "archive_sha256": "409869cf5fb70890ee3c9f38ab53a91d57ecd90216cdbe65473a335a2740f8a0",
+      "project_reports": 44,
+      "members": 49,
+      "member_payload_bytes": 68854629,
+      "redaction_records": 7439,
+      "changed_project_reports": 20,
+      "protected_historical_fields": 81233,
+      "source_preservation_all_equal": true,
+      "original_files_unchanged": true,
+      "byte_identical_rebuild": true,
+      "headers_verified": true,
+      "privacy_tokens_remaining": 0,
+      "transient_reviewer_identifiers_removed": 62
+    }
+  ],
+  "canonical_edits": false,
+  "original_project_report_edits": false,
+  "source_word_or_geometry_changes": false,
+  "scope": "Project apparatus, not papal acts/readers; historical12:42 audit snapshots are superseded for eligibility by the current canonical catalog and negative inventory.",
+  "exact_included_lists": [
+    {
+      "filename": "held-coverage-audit-v1-inventory.json",
+      "bytes": 115002,
+      "sha256": "bbf3eb307cd21119a1749f92448ede5ca6685dcb906f17e32a6cbd66f48ff75a"
+    },
+    {
+      "filename": "accepted-fusion-audit-v1-inventory.json",
+      "bytes": 33309,
+      "sha256": "496550f946277d807f0a0a870e06e35345d2b51acac18d3149fe059315e40148"
+    }
+  ],
+  "build_spec": {
+    "filename": "build-spec.json",
+    "bytes": 1527,
+    "sha256": "ee2b5acf9212c6a6bb5b0ddfbf7ecb9dc2f21f69c1b8d2ef4c3ddcd162777439"
+  },
+  "limitations": [
+    "Original embedded receipts identify unsanitized project-report bytes. Each archive manifest maps those hashes to retained copy hashes; metadata redactions prevent whole-original-byte reproduction from the archive alone.",
+    "Canonical source owners retain the OCR/XML containers, native images and PDFs. Replaying text/XML correspondence or image judgments requires those owners and the relevant tool versions.",
+    "Old accepted-snapshot counts and proposed next batches are historical; current canonical catalog and active-withdrawal inventory control eligibility.",
+    "The archives retain project apparatus and exact evidence, not new papal acts/readers or independent authenticity/whole-source image-collation conclusions.",
+    "Same-runtime tar/gzip rebuilds are byte-identical. Different compression implementation versions may yield different gzip bytes for identical member payloads."
+  ],
+  "transient_reviewer_identifiers_removed": 62,
+  "independent_validation": {
+    "filename": "independent-verification/validation.json",
+    "bytes": 1854279,
+    "sha256": "071a25d5e26cbab743eee1498748cd9c53326f586dc4928cc0ce84b1c4076da9",
+    "checks_passed": 9340,
+    "failures": 0,
+    "privacy_matches": 0
+  },
+  "privacy_source_preservation": {
+    "private_locations_in_member_bytes": 0,
+    "transient_harness_identifiers_in_member_bytes": 0,
+    "historical_source_string_fields_preserved": 160729,
+    "source_identity_hash_bounds_geometry_preserved": true,
+    "all_original_project_reports_unchanged": true,
+    "held_redaction_records": 500,
+    "fusion_redaction_records": 7439,
+    "transient_reviewer_identifiers_neutralized_in_copies": 62
+  },
+  "ready_for_registration": [
+    "held-coverage-audit-v1.tar.gz",
+    "accepted-fusion-audit-v1.tar.gz",
+    "held-coverage-audit-v1-inventory.json",
+    "accepted-fusion-audit-v1-inventory.json",
+    "build-spec.json",
+    "independent-verification/validation.json",
+    "handoff.json"
+  ]
+}

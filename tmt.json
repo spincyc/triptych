@@ -36,6 +36,21 @@
       "stage": "draft",
       "usage": "audit-latin-body-substitutions [--calendar roman-1962]"
     },
+    "bullarium": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Acquire Bullarium witnesses and reconstruct source-bounded papal acts.",
+      "requires": [
+        "papal-documents",
+        "source-library",
+        "typeset-papal"
+      ],
+      "stage": "draft",
+      "usage": "bullarium {acquire,reconstruct,admit,check,status,series,corrections,geometry,screen} [OPTIONS]; geometry {propose,map-units,register} [OPTIONS]"
+    },
     "calendar-days": {
       "idempotent": true,
       "json": true,
@@ -383,6 +398,46 @@
       "stage": "draft",
       "usage": "tools/missal-coverage-reconciliation [--json]"
     },
+    "papal-acta": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Reconstruct papal acts from identified ASS and AAS witnesses.",
+      "requires": [
+        "source-library",
+        "typeset-papal"
+      ],
+      "stage": "draft",
+      "usage": "papal-acta {acquire,index,register,manifest,list,check} [--series ASS|AAS] [--json]"
+    },
+    "papal-documents": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Discover and inspect a provenance-bearing catalogue of papal documents.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "papal-documents {discover,check,list,show,export} [--catalog PATH] [--json]"
+    },
+    "papal-sources": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Register papal sources and acquire Latin texts or native page witnesses.",
+      "requires": [
+        "papal-documents",
+        "source-library",
+        "typeset-papal"
+      ],
+      "stage": "draft",
+      "usage": "papal-sources {plan,register,acquire,manifest,witness} [--catalog PATH] [--json]"
+    },
     "pdf-review": {
       "idempotent": true,
       "json": false,
@@ -538,7 +593,9 @@
       "mutates": false,
       "origin": "local",
       "purpose": "Validate and query Triptych's provider-neutral reusable source library.",
-      "requires": [],
+      "requires": [
+        "papal-documents"
+      ],
       "stage": "draft",
       "usage": "source-library {validate,fingerprint,uses,impact,search}"
     },
@@ -578,6 +635,20 @@
       ],
       "stage": "draft",
       "usage": "typeset-bible {list,check,render} [--bible ID] [--source-root DIR] [--out DIR]"
+    },
+    "typeset-papal": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Build, catalog and install admitted papal source reading PDFs.",
+      "requires": [
+        "papal-documents",
+        "source-library"
+      ],
+      "stage": "draft",
+      "usage": "typeset-papal {check,render,plan,collect,prepare-install,install,check-install} [OPTIONS]"
     },
     "web-edition": {
       "idempotent": true,

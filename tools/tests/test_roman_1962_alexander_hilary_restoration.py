@@ -182,8 +182,12 @@ class SourceRepairTests(unittest.TestCase):
         self.assertEqual(accepted["body"],
                          prayer(self.index, dict(mass=john.mass, proper=john.proper))["text"])
         self.assertIn("anselm-schott", accepted["historical_passage_id"])
-        for mass in ["s-antonii-padua-confessoris-ecclesiae-doctoris","comm-s-silvestri-i-papae-confessoris"]:
-            self.assertNotIn("text",prayer(self.index,dict(mass=mass,proper="Collect")))
+        # Anthony's Collect later replaced its removed row under the accepted
+        # latin-seven adoption (workflows/reviews/missal-reader-completion-2026-10-26/
+        # latin-seven-rights-adoption.json; ledger text_sha256); Silvester's stays a gap.
+        anthony = prayer(self.index,dict(mass="s-antonii-padua-confessoris-ecclesiae-doctoris",proper="Collect"))
+        self.assertEqual("477fc3ccb5b28d6c984eb149d9150b2beac0f0c263bbf7fce39682f2e0ae505e",digest(anthony["text"]))
+        self.assertNotIn("text",prayer(self.index,dict(mass="comm-s-silvestri-i-papae-confessoris",proper="Collect")))
 
 if __name__ == "__main__":
     unittest.main()

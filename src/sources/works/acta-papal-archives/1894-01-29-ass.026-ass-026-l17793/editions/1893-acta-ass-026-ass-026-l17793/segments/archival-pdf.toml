@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.ass.026.ass-026-l17793.pdf"
+edition_id = "edition.acta-papal-archives.ass.026.ass-026-l17793"
+artifact_id = "artifact.acta-papal-archives.ass.026.vatican-pdf-02f81d1d"
+artifact_sha256 = "02f81d1d13781d2f7d27d4aa327d7ec83bbe5ea8ec22f785eda20dd4ce777446"
+segment_type = "archival-act-locator"
+states = ["cataloged", "acquired", "inspected"]
+artifact_page_ranges = [[449, 451]]
+context = "{\"closing_physical_lines\": [17891, 17894], \"closing_text\": \"        D a t u m R o m a e a p u d S . P e t r u m s u b A n n u l o Piscatoris die\\nx x i x I a n u a r i i MDCCCXCIV. P o n t i f i c a t u s N o s t r i A n n o D e c i m o s e x t o .\\n\\n                                                               M. CARD. R A M P O L L A .\", \"end_line\": 17894, \"removed\": \"Running header/page-number lines carrying formfeed and Acta volume/fascicle footers are omitted via disjoint ranges; all remaining source text and notes in selected extent retained.\", \"retained_historical_note_ranges\": [], \"start_line\": 17793}"
+notes = "Artifact-page locators are distinct from the printed page labels [{\"artifact_page\": 449, \"printed_page\": \"449\", \"running_head_text\": \"449\"}, {\"artifact_page\": 450, \"printed_page\": \"450\", \"running_head_text\": \"450                                               LITTERAE\"}, {\"artifact_page\": 451, \"printed_page\": \"45\", \"running_head_text\": \"LITTERAE                                                   45i\"}]. Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

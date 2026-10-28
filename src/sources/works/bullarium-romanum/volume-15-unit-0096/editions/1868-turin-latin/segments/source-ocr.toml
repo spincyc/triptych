@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.bullarium-romanum.volume-15.unit-0096.1868-turin-latin.source-ocr"
+edition_id = "edition.bullarium-romanum.volume-15.unit-0096.1868-turin-latin"
+artifact_id = "artifact.bullarium-romanum.volume-15.1868-turin-latin.ocr-3a315264019c"
+artifact_sha256 = "3a315264019ce5f0a4eaf49c6e372aea48737ed6456cedc18109380e3951ec2a"
+segment_type = "constituent-work"
+physical_line_ranges = [[33294, 33440], [33464, 33466]]
+states = ["cataloged", "acquired", "inspected"]
+context = "The exact selected raw OCR extent and surrounding boundary context were inspected. Printed attribution is preserved; this is not modern authentication, critical dating or image-collated text. Heading DCCLXVI at 33294 and synopsis 33296–33297,33303–33306 cross a running header but lead to addressee 33308–33312, Urban self-attribution 33314 and salutation 33316–33317. Entire Conservationi sections 1–4 continue coherently through 33434, then full dating 33436–33440. Next heading DCCLXVII at 33443 and its protocol 33453–33454 delimit the body. Own title-source note 33354 and two delayed notes 33464 and 33466 are included: their explicit corrections suis to tuis and quamcumque to quemcumque match the marked words at 33428 and 33434, not the next act. Disjoint range 33464–33466 therefore recovers this act’s historical apparatus without absorbing the next heading/body. Source prints dating despite empty discovery date_raw; date remains null."
+notes = "Review extent: entire selected OCR range plus20lines either side; no image collation Source text remains uncorrected OCR, with historical synopsis, dating/signatures and apparatus in the selected extent. No image collation or historical authentication is claimed."

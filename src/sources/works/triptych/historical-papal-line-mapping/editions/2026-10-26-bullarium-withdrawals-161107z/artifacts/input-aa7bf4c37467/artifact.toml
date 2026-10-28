@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.historical-papal-line-mapping.2026-10-26-bullarium-withdrawals-161107z.input-aa7bf4c37467"
+edition_id = "edition.triptych.historical-papal-line-mapping.2026-10-26-bullarium-withdrawals-161107z"
+artifact_type = "immutable-papal-withdrawal-inventory-input"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "licensed"
+license = "MIT"
+rights_basis = "Project-created inventory metadata under the repository MIT license. Historical titles, attribution and source wording retain the rights of their identified historical printing artifacts; the project license does not extend to external source wording."
+retrieved = "2026-10-26"
+sha256 = "aa7bf4c374674f5b53846a203f76812bb4e07fdfe8a3cf924d21918146125c79"
+byte_size = 12116706
+path = "src/sources/works/triptych/historical-papal-line-mapping/editions/2026-10-26-bullarium-withdrawals-161107z/artifacts/input-aa7bf4c37467/frozen-inventory.json"
+provenance = "Exact complete 510-unit withdrawal inventory bytes retained before cumulative extension; full SHA256 identifies the immutable prior negative input."
+notes = "Historical project input only. The sole editable negative inventory remains src/sources/papal-documents/bullarium-active-withdrawals.json; no separate papal-act body is created."

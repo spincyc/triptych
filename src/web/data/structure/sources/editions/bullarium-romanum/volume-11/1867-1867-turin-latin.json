@@ -1,0 +1,90 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "automated-pagination-map",
+   "byte_size": 130756,
+   "edition_owned": true,
+   "id": "artifact.bullarium-romanum.volume-11.1867-turin-latin.labels-42bad7979403",
+   "media_type": "application/json",
+   "notes": "Complete uncorrected response. Token identity and physical bounds do not establish column reading order or verified printed pagination.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "United States: the identified Turin 1867 printing, Volume XI, was published before 1931. Its historical Latin and contemporary editorial apparatus have an expired-term basis under the repository papal-documents-rights-v1.toml assessment (17 USC 104A, 304, 305). Mechanical OCR and generated page data add no original authorship (Compendium 313.4(A)); factual digitization/library marks introduce no modern creative introduction or translation. No worldwide public-domain claim or Triptych license over source wording is asserted.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/bullarumdiplomat11cath/bullarumdiplomat11cath_page_numbers.json",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "mechanical-line-leaf-map",
+   "byte_size": 252625,
+   "edition_owned": true,
+   "id": "artifact.bullarium-romanum.volume-11.1867-turin-latin.line-map-16ec8e2b667e",
+   "media_type": "application/json",
+   "notes": "Identity/locators only. Geometry screen flags some reading-order defects and never certifies their absence; automated printed-page labels remain unverified.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "United States: the identified Turin 1867 printing, Volume XI, was published before 1931. Its historical Latin and contemporary editorial apparatus have an expired-term basis under the repository papal-documents-rights-v1.toml assessment (17 USC 104A, 304, 305). Mechanical OCR and generated page data add no original authorship (Compendium 313.4(A)); factual digitization/library marks introduce no modern creative introduction or translation. No worldwide public-domain claim or Triptych license over source wording is asserted.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "uncorrected-ocr",
+   "byte_size": 3107270,
+   "edition_owned": true,
+   "id": "artifact.bullarium-romanum.volume-11.1867-turin-latin.ocr-ff156b2ab9cf",
+   "media_type": "text/plain",
+   "notes": "Complete uncorrected response. Token identity and physical bounds do not establish column reading order or verified printed pagination.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "United States: the identified Turin 1867 printing, Volume XI, was published before 1931. Its historical Latin and contemporary editorial apparatus have an expired-term basis under the repository papal-documents-rights-v1.toml assessment (17 USC 104A, 304, 305). Mechanical OCR and generated page data add no original authorship (Compendium 313.4(A)); factual digitization/library marks introduce no modern creative introduction or translation. No worldwide public-domain claim or Triptych license over source wording is asserted.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/bullarumdiplomat11cath/bullarumdiplomat11cath_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "ocr-layout-xml",
+   "byte_size": 31447616,
+   "edition_owned": true,
+   "id": "artifact.bullarium-romanum.volume-11.1867-turin-latin.xml-6efa3c8986f9",
+   "media_type": "application/xml",
+   "notes": "The exact 31,447,616-byte verbose XML is remote because of measured size and source-machine attributes. Offline alternatives: complete raw OCR and compact exact token/line/leaf map retained in this edition. Token identity and physical bounds do not establish column reading order or verified printed pagination.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "United States: the identified Turin 1867 printing, Volume XI, was published before 1931. Its historical Latin and contemporary editorial apparatus have an expired-term basis under the repository papal-documents-rights-v1.toml assessment (17 USC 104A, 304, 305). Mechanical OCR and generated page data add no original authorship (Compendium 313.4(A)); factual digitization/library marks introduce no modern creative introduction or translation. No worldwide public-domain claim or Triptych license over source wording is asserted.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/bullarumdiplomat11cath/bullarumdiplomat11cath_djvu.xml",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1867",
+  "editors": [],
+  "id": "edition.bullarium-romanum.volume-11.1867-turin-latin",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Bullarum diplomatum et privilegiorum sanctorum Romanorum pontificum, Volume XI; Turin, 1867.",
+  "title": "Volume XI — Turin 1867",
+  "translators": [],
+  "year": 1867
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Historical Bullarium editors and the act authors attributed within the printing",
+  "category": "historical-document-container",
+  "description": "A separately owned historical container: papal/curial acts, inserted instruments, biographies and editorial apparatus. Possession establishes no census or authentication of its attributed acts.",
+  "id": "work.bullarium-romanum.volume-11",
+  "languages": [
+   "la",
+   "it"
+  ],
+  "title": "Bullarium Romanum — Volume XI"
+ }
+}

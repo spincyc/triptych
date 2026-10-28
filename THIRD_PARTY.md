@@ -332,6 +332,72 @@ translations, and other ecclesiastical or civil texts remain subject to their
 own status. An official character, citation, or public web location does not
 by itself place a text under the Triptych license.
 
+### Papal document source editions
+
+The papal-document collection retains identified historical Latin wording and
+historical human translations under their artifact-specific United States
+public-domain bases. The shared factual assessment and exclusions are recorded
+in `src/sources/inventories/papal-documents-rights-v1.toml`; each retained
+artifact identifies the actual printing, delivery, hash and source boundary.
+The underlying historical wording, including historical editorial notes where
+identified, is excluded from Triptych's CC BY 4.0 grant. A modern web delivery
+or an act's signature date does not establish the publication date of that
+wording. Modern translations, creative revisions and unresolved bodies remain
+outside the retained public text; their source records may provide factual
+metadata and consultation links.
+
+The selected *Bullarium Romanum*, *Acta Sanctae Sedis*, *Acta Apostolicae Sedis*
+and *Pii IX Pontificis Maximi Acta* witnesses retain their identified historical
+text and apparatus under their separately recorded publication-term bases.
+Modern reprint wrappers, later index matter and excluded source-site material
+are distinguished from those historical constituents. In particular, bounded
+1930 journal issues are assessed by their own publication evidence; the annual
+volume label does not clear later fascicles. OCR and mechanically extracted
+text remain uncorrected transcriptions except for specifically documented
+source-backed derivatives. Complete printed witnesses, explicit historical
+fragments and unresolved extraction boundaries are recorded separately. None
+of these labels implies complete image collation or ownership of source words.
+Retained facsimile excerpts have their own artifact-specific basis and preserve
+the stated producer attribution and notices; no general licence over Vatican,
+Internet Archive or Google presentation material is asserted.
+
+The English collection is *The Great Encyclical Letters of Pope Leo XIII*
+(New York, Cincinnati and Chicago: Benziger Brothers, 1903), with a preface by
+John J. Wynne, S.J. The printing credits several sources of translation without
+naming individual translators for every chapter. Its historical English and
+notes have the recorded United States public-domain basis. The exact raw
+[Wikisource chapter responses](https://en.wikisource.org/wiki/The_Great_Encyclical_Letters_of_Pope_Leo_XIII)
+retain the separate [CC BY-SA 4.0 licence](https://creativecommons.org/licenses/by-sa/4.0/)
+for contributor markup and encoding, with attribution and revision-history
+links in each artifact record. Those responses are unchanged. Their plain-text
+derivative removes modern navigation, markup, links, styles and page controls;
+it retains historical wording and substantial inherited OCR errors. A separate
+derivative repairs 205 corroborated character-encoding spans with the original
+preserved. Its exact repair audit includes short Wikisource HTML excerpts and
+therefore also retains CC BY-SA 4.0; its record supplies the contributor links
+and change description. Reusers must preserve attribution, identify changes
+and meet ShareAlike where required. Neither that licence nor Triptych's licence
+claims new rights in the historical wording. The Philippine entry is abridged
+in the historical translation itself; word-level errors and source-heading
+date discrepancies elsewhere remain disclosed.
+
+Additional historical English witnesses include the 1855 *Official documents
+connected with the definition of the dogma of the Immaculate Conception*,
+Herbert Vaughan's *The Year of Preparation for the Vatican Council* (1869),
+*The Dogmatic Canons and Decrees* (1912), James H. Ryan's *The Encyclicals of
+Pius XI* (1927), identified 1904–1908 *American Catholic Quarterly Review*
+volumes, 1928 *Catholic Mind* issues and the papal appendix to *The Programme
+of Modernism* (1908). Their individual source records establish the actual
+printing, translator where known, retained constituent and United States
+public-domain basis. The surrounding collection's exposition is distinct from
+the papal text. These historical translations, notes and faithful mechanical
+source derivatives are excluded from Triptych's CC BY 4.0 grant. Abridgments,
+damaged printings and inherited OCR defects retain their specific notices;
+another translation supplies no silent repair. Modern wrappers and later
+reprints are assessed separately. The
+[English expansion record](src/sources/papal-documents/english-expansion-coverage.md)
+identifies the retained witnesses and bounded exclusions.
+
 ## Received Prayers, Hymns, and Translations
 
 Received prayers, antiphons, chants, collects, hymns, and translations not
@@ -663,6 +729,17 @@ These font programs likewise retain their own license rather than CC BY 4.0.
 The PDFs embed subsetted font programs. TeX packages and other build
 dependencies are external software governed by their own licenses; they are
 not vendored merely because the build invokes them.
+
+The papal source readers use TeX Gyre Pagella by B. Jackowski, J. M. Nowacki
+and contributors on behalf of the TeX user groups, under the
+[GUST Font License](https://www.gust.org.pl/projects/e-foundry/licenses/GUST-FONT-LICENSE.txt).
+Where source characters require them, the readers also embed portions of
+Junicode by Peter S. Baker under SIL Open Font License 1.1 and GNU FreeFont's
+FreeSerif by the GNU FreeFont contributors under GPL version 3 or later with
+its [document-embedding exception](https://www.gnu.org/s/freefont/license.html).
+These are the existing font programs used by the typesetter, not project-owned
+letterforms or the separately renamed browser fallback described below. Their
+font licences remain separate from the source wording and project apparatus.
 
 ## Additional missal chronology witnesses
 

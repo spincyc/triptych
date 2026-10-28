@@ -15,7 +15,7 @@ Apply these rules in order:
 ## Ownership and paths
 
 - `src/` contains tracked authoring sources, focused evidence and research records, reusable fragments, and the provider-neutral reusable source library governed by `guidance/sources.md`.
-- `pdf/` contains PDFs installed from reviewed builds. They are built during deployment and are no longer tracked, except `pdf/reading-plans/`, which a release authorization binds by digest and which stays tracked; see the dated note below.
+- `pdf/` contains PDFs installed from reviewed builds. Deployment builds normally remain untracked. Digest-bound reading plans and the reviewed papal source readers described in their profile are narrowly tracked exceptions; see the dated note below and [papal source installation](papal-documents.md#installed-source-readers).
 - `web/` contains tracked reader-facing web editions installed from reviewed conversions of the same sources, governed by `guidance/web-editions.md`.
 - `build/` contains only ignored, reproducible intermediates, logs, caches, review rasters, and generated release artifacts.
 
@@ -32,7 +32,7 @@ purpose — `\pdfinfoomitdate=1` and `\pdftrailerid{}` in
 revision rather than the build clock — so those bytes were reproducible from
 the tree that was keeping them.
 
-`pdf/reading-plans/` is the exception and stays tracked. Its six volumes are
+`pdf/reading-plans/` remains a tracked exception. Its six volumes are
 named in `release/public-alpha.json` under the perpetual authorization's
 `site_sources`, each bound to an exact SHA-256, and `tools/tpt public-alpha
 verify` reads them from the tree. An authorization that binds bytes has to be

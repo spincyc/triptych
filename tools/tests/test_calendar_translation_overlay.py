@@ -1047,6 +1047,20 @@ class RecoveredCummiskeyAntecedentProductionTests(unittest.TestCase):
         ("most-holy-name-mary", "Prayer over the Offerings"),
         ("most-holy-name-mary", "Prayer after Communion"),
     }
+    # Current dispositions of that historical 43: 79d48aa62 removed the
+    # unrelated George and Apollinaris Collect bindings (now typed no-exemplar
+    # gaps) and bound the checked Advent IV antecedent under its own artifact,
+    # per workflows/reviews/missal-reader-resume-2026-10-23/source-review-postconciliar.json.
+    UNBOUND = {
+        ("saint-george-martyr", "Collect"),
+        ("saint-apollinaris-bishop-martyr", "Collect"),
+    }
+    RECOVERED = {
+        ("advent-4", "Collect"): (
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861."
+            "postconciliar-advent4-antecedent-en-20261023"
+        ),
+    }
 
     def setUp(self) -> None:
         with self.INVENTORY.open("rb") as handle:
@@ -1061,11 +1075,14 @@ class RecoveredCummiskeyAntecedentProductionTests(unittest.TestCase):
         gaps = {self.key(row): row for row in self.data["untranslated"]}
         self.assertEqual(len(self.BOUND), 27)
         self.assertEqual(len(self.QUARANTINED), 16)
-        for key in self.BOUND:
+        self.assertLessEqual(self.UNBOUND, self.BOUND)
+        self.assertLessEqual(set(self.RECOVERED), self.QUARANTINED)
+        for key in (self.BOUND - self.UNBOUND) | set(self.RECOVERED):
             self.assertIn(key, positives)
             self.assertNotIn(key, gaps)
             row = positives[key]
-            self.assertEqual(row["publication_artifact_id"], self.PUBLICATION_ARTIFACT)
+            self.assertEqual(row["publication_artifact_id"],
+                             self.RECOVERED.get(key, self.PUBLICATION_ARTIFACT))
             self.assertEqual(len(row["translations"]), 1)
             self.assertEqual(row["translations"][0]["rights"], "public-domain")
             for field in (
@@ -1076,7 +1093,7 @@ class RecoveredCummiskeyAntecedentProductionTests(unittest.TestCase):
                 "publication_passage_id",
             ):
                 self.assertTrue(row.get(field), (key, field))
-        for key in self.QUARANTINED:
+        for key in (self.QUARANTINED - set(self.RECOVERED)) | self.UNBOUND:
             self.assertNotIn(key, positives)
             self.assertIn(key, gaps)
             self.assertEqual(gaps[key]["availability"], "unavailable")

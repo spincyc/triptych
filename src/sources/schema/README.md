@@ -230,3 +230,10 @@ must update this file and those tests in the same commit when their documented
 surface is affected. Changing accepted fields, manifest meaning, fingerprint
 inputs, or search-receipt semantics requires the schema-version decision in
 `guidance/sources.md` and a changelog entry.
+
+The collection metadata and page-review comparison audit under
+`papal-documents/` follow the separate inventory contract in that directory's
+README. Only its exact named,
+versioned JSON envelopes and immediate Markdown records are admitted there;
+external wording still requires a canonical artifact or bounded segment.
+Inventory ownership changes no source schema or fingerprint semantics.

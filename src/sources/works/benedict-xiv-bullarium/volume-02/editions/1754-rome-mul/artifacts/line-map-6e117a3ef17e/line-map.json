@@ -1,0 +1,5508 @@
+{
+  "layout": "A conservative geometry screen finds some column-order defects; passing it does not establish reading order.",
+  "method": "exact-whitespace-token-equality-v1",
+  "ocr_sha256": "ec34457280f2ccf07f9ab74cd5f985af39f598ed65344af60e339d093622f466",
+  "pages": [
+    {
+      "artifact_page": 1,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [],
+      "leaf": 0,
+      "physical_line_end": null,
+      "physical_line_start": null,
+      "source_page_label_raw": null,
+      "tokens": 0,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 2,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [],
+      "leaf": 1,
+      "physical_line_end": 2,
+      "physical_line_start": 2,
+      "source_page_label_raw": null,
+      "tokens": 1,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 3,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [],
+      "leaf": 2,
+      "physical_line_end": null,
+      "physical_line_start": null,
+      "source_page_label_raw": null,
+      "tokens": 0,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 4,
+      "body_column_sequence": [
+        "L",
+        "R",
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables",
+        "body-column-order-reverses"
+      ],
+      "leaf": 3,
+      "physical_line_end": 237,
+      "physical_line_start": 11,
+      "source_page_label_raw": null,
+      "tokens": 319,
+      "wide_body_line_count": 2
+    },
+    {
+      "artifact_page": 5,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 4,
+      "physical_line_end": 268,
+      "physical_line_start": 243,
+      "source_page_label_raw": null,
+      "tokens": 48,
+      "wide_body_line_count": 3
+    },
+    {
+      "artifact_page": 6,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [],
+      "leaf": 5,
+      "physical_line_end": 272,
+      "physical_line_start": 272,
+      "source_page_label_raw": null,
+      "tokens": 3,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 7,
+      "body_column_sequence": [
+        "R",
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables",
+        "body-column-order-reverses"
+      ],
+      "leaf": 6,
+      "physical_line_end": 650,
+      "physical_line_start": 276,
+      "source_page_label_raw": null,
+      "tokens": 698,
+      "wide_body_line_count": 1
+    },
+    {
+      "artifact_page": 8,
+      "body_column_sequence": [
+        "L",
+        "R",
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "body-column-order-reverses"
+      ],
+      "leaf": 7,
+      "physical_line_end": 890,
+      "physical_line_start": 654,
+      "source_page_label_raw": null,
+      "tokens": 1158,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 9,
+      "body_column_sequence": [
+        "R",
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables",
+        "body-column-order-reverses"
+      ],
+      "leaf": 8,
+      "physical_line_end": 1020,
+      "physical_line_start": 894,
+      "source_page_label_raw": null,
+      "tokens": 678,
+      "wide_body_line_count": 1
+    },
+    {
+      "artifact_page": 10,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 9,
+      "physical_line_end": 1182,
+      "physical_line_start": 1023,
+      "source_page_label_raw": null,
+      "tokens": 1115,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 11,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 10,
+      "physical_line_end": 1308,
+      "physical_line_start": 1186,
+      "source_page_label_raw": null,
+      "tokens": 1015,
+      "wide_body_line_count": 70
+    },
+    {
+      "artifact_page": 12,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 11,
+      "physical_line_end": 1473,
+      "physical_line_start": 1312,
+      "source_page_label_raw": null,
+      "tokens": 883,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 13,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 12,
+      "physical_line_end": 1637,
+      "physical_line_start": 1478,
+      "source_page_label_raw": null,
+      "tokens": 965,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 14,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 13,
+      "physical_line_end": 1802,
+      "physical_line_start": 1641,
+      "source_page_label_raw": null,
+      "tokens": 1011,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 15,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 14,
+      "physical_line_end": 1971,
+      "physical_line_start": 1806,
+      "source_page_label_raw": null,
+      "tokens": 993,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 16,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 15,
+      "physical_line_end": 2140,
+      "physical_line_start": 1975,
+      "source_page_label_raw": null,
+      "tokens": 1101,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 17,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 16,
+      "physical_line_end": 2315,
+      "physical_line_start": 2144,
+      "source_page_label_raw": null,
+      "tokens": 1004,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 18,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 17,
+      "physical_line_end": 2483,
+      "physical_line_start": 2318,
+      "source_page_label_raw": null,
+      "tokens": 1088,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 19,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 18,
+      "physical_line_end": 2576,
+      "physical_line_start": 2487,
+      "source_page_label_raw": null,
+      "tokens": 1096,
+      "wide_body_line_count": 70
+    },
+    {
+      "artifact_page": 20,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 19,
+      "physical_line_end": 2747,
+      "physical_line_start": 2580,
+      "source_page_label_raw": null,
+      "tokens": 1084,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 21,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 20,
+      "physical_line_end": 2916,
+      "physical_line_start": 2751,
+      "source_page_label_raw": null,
+      "tokens": 1046,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 22,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 21,
+      "physical_line_end": 3065,
+      "physical_line_start": 2920,
+      "source_page_label_raw": null,
+      "tokens": 850,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 23,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 22,
+      "physical_line_end": 3244,
+      "physical_line_start": 3069,
+      "source_page_label_raw": null,
+      "tokens": 930,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 24,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 23,
+      "physical_line_end": 3406,
+      "physical_line_start": 3248,
+      "source_page_label_raw": null,
+      "tokens": 1069,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 25,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 24,
+      "physical_line_end": 3584,
+      "physical_line_start": 3410,
+      "source_page_label_raw": null,
+      "tokens": 1146,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 26,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 25,
+      "physical_line_end": 3748,
+      "physical_line_start": 3588,
+      "source_page_label_raw": null,
+      "tokens": 1091,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 27,
+      "body_column_sequence": [
+        "R",
+        "L",
+        "R",
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables",
+        "body-column-order-reverses"
+      ],
+      "leaf": 26,
+      "physical_line_end": 3944,
+      "physical_line_start": 3752,
+      "source_page_label_raw": null,
+      "tokens": 949,
+      "wide_body_line_count": 1
+    },
+    {
+      "artifact_page": 28,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 27,
+      "physical_line_end": 4148,
+      "physical_line_start": 3948,
+      "source_page_label_raw": null,
+      "tokens": 941,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 29,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 28,
+      "physical_line_end": 4353,
+      "physical_line_start": 4152,
+      "source_page_label_raw": null,
+      "tokens": 1317,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 30,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 29,
+      "physical_line_end": 4514,
+      "physical_line_start": 4357,
+      "source_page_label_raw": null,
+      "tokens": 1414,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 31,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 30,
+      "physical_line_end": 4675,
+      "physical_line_start": 4518,
+      "source_page_label_raw": null,
+      "tokens": 1234,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 32,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 31,
+      "physical_line_end": 4853,
+      "physical_line_start": 4679,
+      "source_page_label_raw": null,
+      "tokens": 1205,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 33,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 32,
+      "physical_line_end": 5046,
+      "physical_line_start": 4857,
+      "source_page_label_raw": null,
+      "tokens": 1226,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 34,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 33,
+      "physical_line_end": 5246,
+      "physical_line_start": 5050,
+      "source_page_label_raw": null,
+      "tokens": 1256,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 35,
+      "body_column_sequence": [
+        "L",
+        "R",
+        "L",
+        "R",
+        "L",
+        "R",
+        "L",
+        "R",
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables",
+        "body-column-order-reverses"
+      ],
+      "leaf": 34,
+      "physical_line_end": 5445,
+      "physical_line_start": 5250,
+      "source_page_label_raw": null,
+      "tokens": 1225,
+      "wide_body_line_count": 16
+    },
+    {
+      "artifact_page": 36,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 35,
+      "physical_line_end": 5610,
+      "physical_line_start": 5449,
+      "source_page_label_raw": null,
+      "tokens": 1252,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 37,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 36,
+      "physical_line_end": 5772,
+      "physical_line_start": 5614,
+      "source_page_label_raw": null,
+      "tokens": 1247,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 38,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 37,
+      "physical_line_end": 5977,
+      "physical_line_start": 5776,
+      "source_page_label_raw": null,
+      "tokens": 1199,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 39,
+      "body_column_sequence": [
+        "R",
+        "L",
+        "R",
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables",
+        "body-column-order-reverses"
+      ],
+      "leaf": 38,
+      "physical_line_end": 6179,
+      "physical_line_start": 5981,
+      "source_page_label_raw": null,
+      "tokens": 1295,
+      "wide_body_line_count": 15
+    },
+    {
+      "artifact_page": 40,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 39,
+      "physical_line_end": 6352,
+      "physical_line_start": 6183,
+      "source_page_label_raw": null,
+      "tokens": 1089,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 41,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 40,
+      "physical_line_end": 6586,
+      "physical_line_start": 6356,
+      "source_page_label_raw": null,
+      "tokens": 949,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 42,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 41,
+      "physical_line_end": 6771,
+      "physical_line_start": 6590,
+      "source_page_label_raw": null,
+      "tokens": 1077,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 43,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 42,
+      "physical_line_end": 6971,
+      "physical_line_start": 6775,
+      "source_page_label_raw": null,
+      "tokens": 1094,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 44,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 43,
+      "physical_line_end": 7141,
+      "physical_line_start": 6975,
+      "source_page_label_raw": null,
+      "tokens": 979,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 45,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 44,
+      "physical_line_end": 7311,
+      "physical_line_start": 7145,
+      "source_page_label_raw": null,
+      "tokens": 866,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 46,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 45,
+      "physical_line_end": 7426,
+      "physical_line_start": 7315,
+      "source_page_label_raw": null,
+      "tokens": 1003,
+      "wide_body_line_count": 69
+    },
+    {
+      "artifact_page": 47,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 46,
+      "physical_line_end": 7597,
+      "physical_line_start": 7430,
+      "source_page_label_raw": null,
+      "tokens": 987,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 48,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 47,
+      "physical_line_end": 7763,
+      "physical_line_start": 7601,
+      "source_page_label_raw": null,
+      "tokens": 921,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 49,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 48,
+      "physical_line_end": 7958,
+      "physical_line_start": 7767,
+      "source_page_label_raw": null,
+      "tokens": 1065,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 50,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 49,
+      "physical_line_end": 8125,
+      "physical_line_start": 7962,
+      "source_page_label_raw": null,
+      "tokens": 1035,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 51,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 50,
+      "physical_line_end": 8311,
+      "physical_line_start": 8129,
+      "source_page_label_raw": null,
+      "tokens": 1073,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 52,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 51,
+      "physical_line_end": 8471,
+      "physical_line_start": 8315,
+      "source_page_label_raw": null,
+      "tokens": 1017,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 53,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 52,
+      "physical_line_end": 8701,
+      "physical_line_start": 8475,
+      "source_page_label_raw": null,
+      "tokens": 954,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 54,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 53,
+      "physical_line_end": 8881,
+      "physical_line_start": 8705,
+      "source_page_label_raw": null,
+      "tokens": 670,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 55,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 54,
+      "physical_line_end": 9066,
+      "physical_line_start": 8885,
+      "source_page_label_raw": null,
+      "tokens": 1048,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 56,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 55,
+      "physical_line_end": 9232,
+      "physical_line_start": 9070,
+      "source_page_label_raw": null,
+      "tokens": 1032,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 57,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 56,
+      "physical_line_end": 9420,
+      "physical_line_start": 9236,
+      "source_page_label_raw": null,
+      "tokens": 1021,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 58,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 57,
+      "physical_line_end": 9593,
+      "physical_line_start": 9424,
+      "source_page_label_raw": null,
+      "tokens": 994,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 59,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 58,
+      "physical_line_end": 9797,
+      "physical_line_start": 9597,
+      "source_page_label_raw": null,
+      "tokens": 993,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 60,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 59,
+      "physical_line_end": 10011,
+      "physical_line_start": 9800,
+      "source_page_label_raw": null,
+      "tokens": 638,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 61,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 60,
+      "physical_line_end": 10195,
+      "physical_line_start": 10015,
+      "source_page_label_raw": null,
+      "tokens": 953,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 62,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 61,
+      "physical_line_end": 10360,
+      "physical_line_start": 10198,
+      "source_page_label_raw": null,
+      "tokens": 1045,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 63,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 62,
+      "physical_line_end": 10602,
+      "physical_line_start": 10364,
+      "source_page_label_raw": null,
+      "tokens": 1067,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 64,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 63,
+      "physical_line_end": 10768,
+      "physical_line_start": 10605,
+      "source_page_label_raw": null,
+      "tokens": 1005,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 65,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 64,
+      "physical_line_end": 10938,
+      "physical_line_start": 10772,
+      "source_page_label_raw": null,
+      "tokens": 987,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 66,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 65,
+      "physical_line_end": 11170,
+      "physical_line_start": 10942,
+      "source_page_label_raw": null,
+      "tokens": 727,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 67,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 66,
+      "physical_line_end": 11395,
+      "physical_line_start": 11174,
+      "source_page_label_raw": null,
+      "tokens": 949,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 68,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 67,
+      "physical_line_end": 11563,
+      "physical_line_start": 11398,
+      "source_page_label_raw": null,
+      "tokens": 1040,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 69,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 68,
+      "physical_line_end": 11733,
+      "physical_line_start": 11570,
+      "source_page_label_raw": null,
+      "tokens": 1042,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 70,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 69,
+      "physical_line_end": 11917,
+      "physical_line_start": 11737,
+      "source_page_label_raw": null,
+      "tokens": 1034,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 71,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 70,
+      "physical_line_end": 12148,
+      "physical_line_start": 11921,
+      "source_page_label_raw": null,
+      "tokens": 638,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 72,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 71,
+      "physical_line_end": 12321,
+      "physical_line_start": 12152,
+      "source_page_label_raw": null,
+      "tokens": 977,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 73,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 72,
+      "physical_line_end": 12511,
+      "physical_line_start": 12325,
+      "source_page_label_raw": null,
+      "tokens": 1059,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 74,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 73,
+      "physical_line_end": 12597,
+      "physical_line_start": 12515,
+      "source_page_label_raw": null,
+      "tokens": 1001,
+      "wide_body_line_count": 67
+    },
+    {
+      "artifact_page": 75,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 74,
+      "physical_line_end": 12767,
+      "physical_line_start": 12601,
+      "source_page_label_raw": null,
+      "tokens": 1010,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 76,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 75,
+      "physical_line_end": 12976,
+      "physical_line_start": 12771,
+      "source_page_label_raw": null,
+      "tokens": 998,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 77,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 76,
+      "physical_line_end": 13220,
+      "physical_line_start": 12985,
+      "source_page_label_raw": null,
+      "tokens": 805,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 78,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 77,
+      "physical_line_end": 13423,
+      "physical_line_start": 13224,
+      "source_page_label_raw": null,
+      "tokens": 786,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 79,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 78,
+      "physical_line_end": 13602,
+      "physical_line_start": 13427,
+      "source_page_label_raw": null,
+      "tokens": 951,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 80,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 79,
+      "physical_line_end": 13785,
+      "physical_line_start": 13606,
+      "source_page_label_raw": null,
+      "tokens": 1019,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 81,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 80,
+      "physical_line_end": 13948,
+      "physical_line_start": 13789,
+      "source_page_label_raw": null,
+      "tokens": 1030,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 82,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 81,
+      "physical_line_end": 14043,
+      "physical_line_start": 13952,
+      "source_page_label_raw": null,
+      "tokens": 1085,
+      "wide_body_line_count": 67
+    },
+    {
+      "artifact_page": 83,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 82,
+      "physical_line_end": 14237,
+      "physical_line_start": 14048,
+      "source_page_label_raw": null,
+      "tokens": 927,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 84,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 83,
+      "physical_line_end": 14423,
+      "physical_line_start": 14241,
+      "source_page_label_raw": null,
+      "tokens": 1125,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 85,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 84,
+      "physical_line_end": 14530,
+      "physical_line_start": 14427,
+      "source_page_label_raw": null,
+      "tokens": 1087,
+      "wide_body_line_count": 69
+    },
+    {
+      "artifact_page": 86,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 85,
+      "physical_line_end": 14710,
+      "physical_line_start": 14534,
+      "source_page_label_raw": null,
+      "tokens": 977,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 87,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 86,
+      "physical_line_end": 14875,
+      "physical_line_start": 14714,
+      "source_page_label_raw": null,
+      "tokens": 1043,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 88,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 87,
+      "physical_line_end": 15039,
+      "physical_line_start": 14879,
+      "source_page_label_raw": null,
+      "tokens": 990,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 89,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 88,
+      "physical_line_end": 15210,
+      "physical_line_start": 15043,
+      "source_page_label_raw": null,
+      "tokens": 1058,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 90,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 89,
+      "physical_line_end": 15378,
+      "physical_line_start": 15214,
+      "source_page_label_raw": null,
+      "tokens": 1092,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 91,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 90,
+      "physical_line_end": 15548,
+      "physical_line_start": 15382,
+      "source_page_label_raw": null,
+      "tokens": 1060,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 92,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 91,
+      "physical_line_end": 15716,
+      "physical_line_start": 15552,
+      "source_page_label_raw": null,
+      "tokens": 1097,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 93,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 92,
+      "physical_line_end": 15883,
+      "physical_line_start": 15720,
+      "source_page_label_raw": null,
+      "tokens": 844,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 94,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 93,
+      "physical_line_end": 15977,
+      "physical_line_start": 15887,
+      "source_page_label_raw": null,
+      "tokens": 952,
+      "wide_body_line_count": 68
+    },
+    {
+      "artifact_page": 95,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 94,
+      "physical_line_end": 16151,
+      "physical_line_start": 15981,
+      "source_page_label_raw": null,
+      "tokens": 912,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 96,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 95,
+      "physical_line_end": 16316,
+      "physical_line_start": 16155,
+      "source_page_label_raw": null,
+      "tokens": 950,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 97,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 96,
+      "physical_line_end": 16501,
+      "physical_line_start": 16320,
+      "source_page_label_raw": null,
+      "tokens": 966,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 98,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 97,
+      "physical_line_end": 16664,
+      "physical_line_start": 16505,
+      "source_page_label_raw": null,
+      "tokens": 1083,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 99,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 98,
+      "physical_line_end": 16834,
+      "physical_line_start": 16668,
+      "source_page_label_raw": null,
+      "tokens": 1062,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 100,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 99,
+      "physical_line_end": 17026,
+      "physical_line_start": 16838,
+      "source_page_label_raw": null,
+      "tokens": 1071,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 101,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 100,
+      "physical_line_end": 17204,
+      "physical_line_start": 17030,
+      "source_page_label_raw": null,
+      "tokens": 1086,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 102,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 101,
+      "physical_line_end": 17374,
+      "physical_line_start": 17208,
+      "source_page_label_raw": null,
+      "tokens": 954,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 103,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 102,
+      "physical_line_end": 17586,
+      "physical_line_start": 17378,
+      "source_page_label_raw": null,
+      "tokens": 1003,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 104,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 103,
+      "physical_line_end": 17737,
+      "physical_line_start": 17589,
+      "source_page_label_raw": null,
+      "tokens": 1026,
+      "wide_body_line_count": 12
+    },
+    {
+      "artifact_page": 105,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 104,
+      "physical_line_end": 17906,
+      "physical_line_start": 17741,
+      "source_page_label_raw": null,
+      "tokens": 1121,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 106,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 105,
+      "physical_line_end": 18083,
+      "physical_line_start": 17910,
+      "source_page_label_raw": null,
+      "tokens": 919,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 107,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 106,
+      "physical_line_end": 18269,
+      "physical_line_start": 18087,
+      "source_page_label_raw": null,
+      "tokens": 1044,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 108,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 107,
+      "physical_line_end": 18438,
+      "physical_line_start": 18272,
+      "source_page_label_raw": null,
+      "tokens": 969,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 109,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 108,
+      "physical_line_end": 18602,
+      "physical_line_start": 18442,
+      "source_page_label_raw": null,
+      "tokens": 1004,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 110,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 109,
+      "physical_line_end": 18799,
+      "physical_line_start": 18606,
+      "source_page_label_raw": null,
+      "tokens": 1049,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 111,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 110,
+      "physical_line_end": 18972,
+      "physical_line_start": 18803,
+      "source_page_label_raw": null,
+      "tokens": 942,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 112,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 111,
+      "physical_line_end": 19138,
+      "physical_line_start": 18975,
+      "source_page_label_raw": null,
+      "tokens": 1134,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 113,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 112,
+      "physical_line_end": 19342,
+      "physical_line_start": 19142,
+      "source_page_label_raw": null,
+      "tokens": 1131,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 114,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 113,
+      "physical_line_end": 19506,
+      "physical_line_start": 19345,
+      "source_page_label_raw": null,
+      "tokens": 1124,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 115,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 114,
+      "physical_line_end": 19674,
+      "physical_line_start": 19510,
+      "source_page_label_raw": null,
+      "tokens": 1119,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 116,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 115,
+      "physical_line_end": 19855,
+      "physical_line_start": 19678,
+      "source_page_label_raw": null,
+      "tokens": 977,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 117,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 116,
+      "physical_line_end": 20018,
+      "physical_line_start": 19859,
+      "source_page_label_raw": null,
+      "tokens": 941,
+      "wide_body_line_count": 12
+    },
+    {
+      "artifact_page": 118,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 117,
+      "physical_line_end": 20217,
+      "physical_line_start": 20022,
+      "source_page_label_raw": null,
+      "tokens": 1093,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 119,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 118,
+      "physical_line_end": 20404,
+      "physical_line_start": 20221,
+      "source_page_label_raw": null,
+      "tokens": 1061,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 120,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 119,
+      "physical_line_end": 20588,
+      "physical_line_start": 20408,
+      "source_page_label_raw": null,
+      "tokens": 1081,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 121,
+      "body_column_sequence": [
+        "L",
+        "R",
+        "L",
+        "R",
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables",
+        "body-column-order-reverses"
+      ],
+      "leaf": 120,
+      "physical_line_end": 20765,
+      "physical_line_start": 20592,
+      "source_page_label_raw": null,
+      "tokens": 898,
+      "wide_body_line_count": 3
+    },
+    {
+      "artifact_page": 122,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 121,
+      "physical_line_end": 20950,
+      "physical_line_start": 20769,
+      "source_page_label_raw": null,
+      "tokens": 1267,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 123,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 122,
+      "physical_line_end": 21114,
+      "physical_line_start": 20956,
+      "source_page_label_raw": null,
+      "tokens": 1154,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 124,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 123,
+      "physical_line_end": 21272,
+      "physical_line_start": 21118,
+      "source_page_label_raw": null,
+      "tokens": 1131,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 125,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 124,
+      "physical_line_end": 21434,
+      "physical_line_start": 21276,
+      "source_page_label_raw": null,
+      "tokens": 1165,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 126,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 125,
+      "physical_line_end": 21601,
+      "physical_line_start": 21438,
+      "source_page_label_raw": null,
+      "tokens": 1224,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 127,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 126,
+      "physical_line_end": 21768,
+      "physical_line_start": 21605,
+      "source_page_label_raw": null,
+      "tokens": 1143,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 128,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 127,
+      "physical_line_end": 21931,
+      "physical_line_start": 21772,
+      "source_page_label_raw": null,
+      "tokens": 1155,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 129,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 128,
+      "physical_line_end": 22095,
+      "physical_line_start": 21935,
+      "source_page_label_raw": null,
+      "tokens": 1179,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 130,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 129,
+      "physical_line_end": 22261,
+      "physical_line_start": 22099,
+      "source_page_label_raw": null,
+      "tokens": 1142,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 131,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 130,
+      "physical_line_end": 22424,
+      "physical_line_start": 22265,
+      "source_page_label_raw": null,
+      "tokens": 1189,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 132,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 131,
+      "physical_line_end": 22606,
+      "physical_line_start": 22428,
+      "source_page_label_raw": null,
+      "tokens": 1152,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 133,
+      "body_column_sequence": [
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 132,
+      "physical_line_end": 22698,
+      "physical_line_start": 22610,
+      "source_page_label_raw": null,
+      "tokens": 1124,
+      "wide_body_line_count": 68
+    },
+    {
+      "artifact_page": 134,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 133,
+      "physical_line_end": 22881,
+      "physical_line_start": 22702,
+      "source_page_label_raw": null,
+      "tokens": 1209,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 135,
+      "body_column_sequence": [
+        "L",
+        "R",
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables",
+        "body-column-order-reverses"
+      ],
+      "leaf": 134,
+      "physical_line_end": 23040,
+      "physical_line_start": 22885,
+      "source_page_label_raw": null,
+      "tokens": 1204,
+      "wide_body_line_count": 13
+    },
+    {
+      "artifact_page": 136,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 135,
+      "physical_line_end": 23210,
+      "physical_line_start": 23044,
+      "source_page_label_raw": null,
+      "tokens": 1224,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 137,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 136,
+      "physical_line_end": 23377,
+      "physical_line_start": 23214,
+      "source_page_label_raw": null,
+      "tokens": 1198,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 138,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 137,
+      "physical_line_end": 23538,
+      "physical_line_start": 23381,
+      "source_page_label_raw": null,
+      "tokens": 1246,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 139,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 138,
+      "physical_line_end": 23702,
+      "physical_line_start": 23542,
+      "source_page_label_raw": null,
+      "tokens": 1180,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 140,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 139,
+      "physical_line_end": 23867,
+      "physical_line_start": 23706,
+      "source_page_label_raw": null,
+      "tokens": 1240,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 141,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 140,
+      "physical_line_end": 24034,
+      "physical_line_start": 23871,
+      "source_page_label_raw": null,
+      "tokens": 1134,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 142,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 141,
+      "physical_line_end": 24215,
+      "physical_line_start": 24038,
+      "source_page_label_raw": null,
+      "tokens": 1211,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 143,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 142,
+      "physical_line_end": 24375,
+      "physical_line_start": 24219,
+      "source_page_label_raw": null,
+      "tokens": 1075,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 144,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 143,
+      "physical_line_end": 24537,
+      "physical_line_start": 24379,
+      "source_page_label_raw": null,
+      "tokens": 1181,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 145,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 144,
+      "physical_line_end": 24689,
+      "physical_line_start": 24541,
+      "source_page_label_raw": null,
+      "tokens": 1146,
+      "wide_body_line_count": 6
+    },
+    {
+      "artifact_page": 146,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 145,
+      "physical_line_end": 24857,
+      "physical_line_start": 24693,
+      "source_page_label_raw": null,
+      "tokens": 1185,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 147,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 146,
+      "physical_line_end": 25027,
+      "physical_line_start": 24861,
+      "source_page_label_raw": null,
+      "tokens": 1174,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 148,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 147,
+      "physical_line_end": 25197,
+      "physical_line_start": 25031,
+      "source_page_label_raw": null,
+      "tokens": 1152,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 149,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 148,
+      "physical_line_end": 25350,
+      "physical_line_start": 25201,
+      "source_page_label_raw": null,
+      "tokens": 1145,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 150,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 149,
+      "physical_line_end": 25514,
+      "physical_line_start": 25354,
+      "source_page_label_raw": null,
+      "tokens": 1138,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 151,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 150,
+      "physical_line_end": 25680,
+      "physical_line_start": 25518,
+      "source_page_label_raw": null,
+      "tokens": 1063,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 152,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 151,
+      "physical_line_end": 25844,
+      "physical_line_start": 25684,
+      "source_page_label_raw": null,
+      "tokens": 1154,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 153,
+      "body_column_sequence": [
+        "L",
+        "R",
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables",
+        "body-column-order-reverses"
+      ],
+      "leaf": 152,
+      "physical_line_end": 25999,
+      "physical_line_start": 25848,
+      "source_page_label_raw": null,
+      "tokens": 912,
+      "wide_body_line_count": 3
+    },
+    {
+      "artifact_page": 154,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 153,
+      "physical_line_end": 26166,
+      "physical_line_start": 26003,
+      "source_page_label_raw": null,
+      "tokens": 1193,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 155,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 154,
+      "physical_line_end": 26322,
+      "physical_line_start": 26170,
+      "source_page_label_raw": null,
+      "tokens": 1166,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 156,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 155,
+      "physical_line_end": 26483,
+      "physical_line_start": 26326,
+      "source_page_label_raw": null,
+      "tokens": 1144,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 157,
+      "body_column_sequence": [
+        "L",
+        "R",
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "body-column-order-reverses"
+      ],
+      "leaf": 156,
+      "physical_line_end": 26647,
+      "physical_line_start": 26487,
+      "source_page_label_raw": null,
+      "tokens": 1105,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 158,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 157,
+      "physical_line_end": 26839,
+      "physical_line_start": 26651,
+      "source_page_label_raw": null,
+      "tokens": 1126,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 159,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 158,
+      "physical_line_end": 27007,
+      "physical_line_start": 26843,
+      "source_page_label_raw": null,
+      "tokens": 1144,
+      "wide_body_line_count": 6
+    },
+    {
+      "artifact_page": 160,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 159,
+      "physical_line_end": 27193,
+      "physical_line_start": 27011,
+      "source_page_label_raw": null,
+      "tokens": 1196,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 161,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 160,
+      "physical_line_end": 27380,
+      "physical_line_start": 27197,
+      "source_page_label_raw": null,
+      "tokens": 1223,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 162,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 161,
+      "physical_line_end": 27554,
+      "physical_line_start": 27384,
+      "source_page_label_raw": null,
+      "tokens": 1185,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 163,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 162,
+      "physical_line_end": 27720,
+      "physical_line_start": 27558,
+      "source_page_label_raw": null,
+      "tokens": 1184,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 164,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 163,
+      "physical_line_end": 27925,
+      "physical_line_start": 27724,
+      "source_page_label_raw": null,
+      "tokens": 948,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 165,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 164,
+      "physical_line_end": 28092,
+      "physical_line_start": 27929,
+      "source_page_label_raw": null,
+      "tokens": 994,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 166,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 165,
+      "physical_line_end": 28260,
+      "physical_line_start": 28096,
+      "source_page_label_raw": null,
+      "tokens": 904,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 167,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 166,
+      "physical_line_end": 28439,
+      "physical_line_start": 28264,
+      "source_page_label_raw": null,
+      "tokens": 986,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 168,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 167,
+      "physical_line_end": 28604,
+      "physical_line_start": 28443,
+      "source_page_label_raw": null,
+      "tokens": 958,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 169,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 168,
+      "physical_line_end": 28771,
+      "physical_line_start": 28608,
+      "source_page_label_raw": null,
+      "tokens": 1071,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 170,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 169,
+      "physical_line_end": 28939,
+      "physical_line_start": 28775,
+      "source_page_label_raw": null,
+      "tokens": 1097,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 171,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 170,
+      "physical_line_end": 29093,
+      "physical_line_start": 28943,
+      "source_page_label_raw": null,
+      "tokens": 1033,
+      "wide_body_line_count": 10
+    },
+    {
+      "artifact_page": 172,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 171,
+      "physical_line_end": 29199,
+      "physical_line_start": 29097,
+      "source_page_label_raw": null,
+      "tokens": 910,
+      "wide_body_line_count": 56
+    },
+    {
+      "artifact_page": 173,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 172,
+      "physical_line_end": 29290,
+      "physical_line_start": 29203,
+      "source_page_label_raw": null,
+      "tokens": 1040,
+      "wide_body_line_count": 69
+    },
+    {
+      "artifact_page": 174,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 173,
+      "physical_line_end": 29476,
+      "physical_line_start": 29294,
+      "source_page_label_raw": null,
+      "tokens": 949,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 175,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 174,
+      "physical_line_end": 29643,
+      "physical_line_start": 29480,
+      "source_page_label_raw": null,
+      "tokens": 1006,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 176,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 175,
+      "physical_line_end": 29804,
+      "physical_line_start": 29647,
+      "source_page_label_raw": null,
+      "tokens": 1009,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 177,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 176,
+      "physical_line_end": 29969,
+      "physical_line_start": 29808,
+      "source_page_label_raw": null,
+      "tokens": 1038,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 178,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 177,
+      "physical_line_end": 30146,
+      "physical_line_start": 29973,
+      "source_page_label_raw": null,
+      "tokens": 1026,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 179,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 178,
+      "physical_line_end": 30316,
+      "physical_line_start": 30150,
+      "source_page_label_raw": null,
+      "tokens": 946,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 180,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 179,
+      "physical_line_end": 30511,
+      "physical_line_start": 30320,
+      "source_page_label_raw": null,
+      "tokens": 998,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 181,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 180,
+      "physical_line_end": 30675,
+      "physical_line_start": 30515,
+      "source_page_label_raw": null,
+      "tokens": 1023,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 182,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 181,
+      "physical_line_end": 30869,
+      "physical_line_start": 30679,
+      "source_page_label_raw": null,
+      "tokens": 1032,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 183,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 182,
+      "physical_line_end": 31038,
+      "physical_line_start": 30873,
+      "source_page_label_raw": null,
+      "tokens": 1010,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 184,
+      "body_column_sequence": [
+        "L",
+        "R",
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "body-column-order-reverses"
+      ],
+      "leaf": 183,
+      "physical_line_end": 31221,
+      "physical_line_start": 31042,
+      "source_page_label_raw": null,
+      "tokens": 754,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 185,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 184,
+      "physical_line_end": 31441,
+      "physical_line_start": 31225,
+      "source_page_label_raw": null,
+      "tokens": 1276,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 186,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 185,
+      "physical_line_end": 31610,
+      "physical_line_start": 31445,
+      "source_page_label_raw": null,
+      "tokens": 1128,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 187,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 186,
+      "physical_line_end": 31769,
+      "physical_line_start": 31614,
+      "source_page_label_raw": null,
+      "tokens": 1093,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 188,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 187,
+      "physical_line_end": 31960,
+      "physical_line_start": 31773,
+      "source_page_label_raw": null,
+      "tokens": 1134,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 189,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 188,
+      "physical_line_end": 32128,
+      "physical_line_start": 31964,
+      "source_page_label_raw": null,
+      "tokens": 1118,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 190,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 189,
+      "physical_line_end": 32302,
+      "physical_line_start": 32132,
+      "source_page_label_raw": null,
+      "tokens": 1087,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 191,
+      "body_column_sequence": [
+        "L",
+        "R",
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables",
+        "body-column-order-reverses"
+      ],
+      "leaf": 190,
+      "physical_line_end": 32468,
+      "physical_line_start": 32306,
+      "source_page_label_raw": null,
+      "tokens": 900,
+      "wide_body_line_count": 1
+    },
+    {
+      "artifact_page": 192,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 191,
+      "physical_line_end": 32629,
+      "physical_line_start": 32472,
+      "source_page_label_raw": null,
+      "tokens": 1120,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 193,
+      "body_column_sequence": [
+        "L",
+        "R",
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "body-column-order-reverses"
+      ],
+      "leaf": 192,
+      "physical_line_end": 32799,
+      "physical_line_start": 32633,
+      "source_page_label_raw": null,
+      "tokens": 1143,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 194,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 193,
+      "physical_line_end": 32999,
+      "physical_line_start": 32803,
+      "source_page_label_raw": null,
+      "tokens": 1181,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 195,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 194,
+      "physical_line_end": 33173,
+      "physical_line_start": 33003,
+      "source_page_label_raw": null,
+      "tokens": 1154,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 196,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 195,
+      "physical_line_end": 33335,
+      "physical_line_start": 33177,
+      "source_page_label_raw": null,
+      "tokens": 1095,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 197,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 196,
+      "physical_line_end": 33424,
+      "physical_line_start": 33339,
+      "source_page_label_raw": null,
+      "tokens": 1127,
+      "wide_body_line_count": 65
+    },
+    {
+      "artifact_page": 198,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 197,
+      "physical_line_end": 33595,
+      "physical_line_start": 33428,
+      "source_page_label_raw": null,
+      "tokens": 1120,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 199,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 198,
+      "physical_line_end": 33748,
+      "physical_line_start": 33599,
+      "source_page_label_raw": null,
+      "tokens": 1014,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 200,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 199,
+      "physical_line_end": 33913,
+      "physical_line_start": 33752,
+      "source_page_label_raw": null,
+      "tokens": 1080,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 201,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 200,
+      "physical_line_end": 34078,
+      "physical_line_start": 33917,
+      "source_page_label_raw": null,
+      "tokens": 1049,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 202,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 201,
+      "physical_line_end": 34245,
+      "physical_line_start": 34082,
+      "source_page_label_raw": null,
+      "tokens": 1009,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 203,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 202,
+      "physical_line_end": 34412,
+      "physical_line_start": 34249,
+      "source_page_label_raw": null,
+      "tokens": 935,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 204,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 203,
+      "physical_line_end": 34569,
+      "physical_line_start": 34416,
+      "source_page_label_raw": null,
+      "tokens": 919,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 205,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 204,
+      "physical_line_end": 34804,
+      "physical_line_start": 34573,
+      "source_page_label_raw": null,
+      "tokens": 1051,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 206,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 205,
+      "physical_line_end": 34969,
+      "physical_line_start": 34808,
+      "source_page_label_raw": null,
+      "tokens": 1060,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 207,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 206,
+      "physical_line_end": 35141,
+      "physical_line_start": 34973,
+      "source_page_label_raw": null,
+      "tokens": 996,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 208,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 207,
+      "physical_line_end": 35308,
+      "physical_line_start": 35145,
+      "source_page_label_raw": null,
+      "tokens": 1057,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 209,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 208,
+      "physical_line_end": 35478,
+      "physical_line_start": 35312,
+      "source_page_label_raw": null,
+      "tokens": 917,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 210,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 209,
+      "physical_line_end": 35645,
+      "physical_line_start": 35482,
+      "source_page_label_raw": null,
+      "tokens": 1085,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 211,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 210,
+      "physical_line_end": 35819,
+      "physical_line_start": 35649,
+      "source_page_label_raw": null,
+      "tokens": 1063,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 212,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 211,
+      "physical_line_end": 36017,
+      "physical_line_start": 35823,
+      "source_page_label_raw": null,
+      "tokens": 1109,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 213,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 212,
+      "physical_line_end": 36185,
+      "physical_line_start": 36021,
+      "source_page_label_raw": null,
+      "tokens": 881,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 214,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 213,
+      "physical_line_end": 36351,
+      "physical_line_start": 36189,
+      "source_page_label_raw": null,
+      "tokens": 1072,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 215,
+      "body_column_sequence": [
+        "R",
+        "L",
+        "R",
+        "L",
+        "R",
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables",
+        "body-column-order-reverses"
+      ],
+      "leaf": 214,
+      "physical_line_end": 36539,
+      "physical_line_start": 36355,
+      "source_page_label_raw": null,
+      "tokens": 1075,
+      "wide_body_line_count": 35
+    },
+    {
+      "artifact_page": 216,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 215,
+      "physical_line_end": 36707,
+      "physical_line_start": 36543,
+      "source_page_label_raw": null,
+      "tokens": 1121,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 217,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 216,
+      "physical_line_end": 36872,
+      "physical_line_start": 36711,
+      "source_page_label_raw": null,
+      "tokens": 1185,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 218,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 217,
+      "physical_line_end": 37073,
+      "physical_line_start": 36876,
+      "source_page_label_raw": null,
+      "tokens": 1125,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 219,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 218,
+      "physical_line_end": 37243,
+      "physical_line_start": 37077,
+      "source_page_label_raw": null,
+      "tokens": 1080,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 220,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 219,
+      "physical_line_end": 37406,
+      "physical_line_start": 37247,
+      "source_page_label_raw": null,
+      "tokens": 1071,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 221,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 220,
+      "physical_line_end": 37595,
+      "physical_line_start": 37410,
+      "source_page_label_raw": null,
+      "tokens": 914,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 222,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 221,
+      "physical_line_end": 37754,
+      "physical_line_start": 37599,
+      "source_page_label_raw": null,
+      "tokens": 887,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 223,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 222,
+      "physical_line_end": 37918,
+      "physical_line_start": 37758,
+      "source_page_label_raw": null,
+      "tokens": 1020,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 224,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 223,
+      "physical_line_end": 38082,
+      "physical_line_start": 37922,
+      "source_page_label_raw": null,
+      "tokens": 1005,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 225,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 224,
+      "physical_line_end": 38246,
+      "physical_line_start": 38086,
+      "source_page_label_raw": null,
+      "tokens": 992,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 226,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 225,
+      "physical_line_end": 38410,
+      "physical_line_start": 38250,
+      "source_page_label_raw": null,
+      "tokens": 1017,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 227,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 226,
+      "physical_line_end": 38604,
+      "physical_line_start": 38414,
+      "source_page_label_raw": null,
+      "tokens": 906,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 228,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 227,
+      "physical_line_end": 38791,
+      "physical_line_start": 38608,
+      "source_page_label_raw": null,
+      "tokens": 993,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 229,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 228,
+      "physical_line_end": 38956,
+      "physical_line_start": 38795,
+      "source_page_label_raw": null,
+      "tokens": 1176,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 230,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 229,
+      "physical_line_end": 39193,
+      "physical_line_start": 38960,
+      "source_page_label_raw": null,
+      "tokens": 1197,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 231,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 230,
+      "physical_line_end": 39353,
+      "physical_line_start": 39197,
+      "source_page_label_raw": null,
+      "tokens": 1175,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 232,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 231,
+      "physical_line_end": 39512,
+      "physical_line_start": 39357,
+      "source_page_label_raw": null,
+      "tokens": 1143,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 233,
+      "body_column_sequence": [
+        "L",
+        "R",
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "body-column-order-reverses"
+      ],
+      "leaf": 232,
+      "physical_line_end": 39686,
+      "physical_line_start": 39516,
+      "source_page_label_raw": null,
+      "tokens": 1033,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 234,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 233,
+      "physical_line_end": 39853,
+      "physical_line_start": 39690,
+      "source_page_label_raw": null,
+      "tokens": 1162,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 235,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 234,
+      "physical_line_end": 40054,
+      "physical_line_start": 39857,
+      "source_page_label_raw": null,
+      "tokens": 1169,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 236,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 235,
+      "physical_line_end": 40221,
+      "physical_line_start": 40058,
+      "source_page_label_raw": null,
+      "tokens": 1110,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 237,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 236,
+      "physical_line_end": 40383,
+      "physical_line_start": 40225,
+      "source_page_label_raw": null,
+      "tokens": 1147,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 238,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 237,
+      "physical_line_end": 40590,
+      "physical_line_start": 40387,
+      "source_page_label_raw": null,
+      "tokens": 972,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 239,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 238,
+      "physical_line_end": 40805,
+      "physical_line_start": 40594,
+      "source_page_label_raw": null,
+      "tokens": 1018,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 240,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 239,
+      "physical_line_end": 41002,
+      "physical_line_start": 40809,
+      "source_page_label_raw": null,
+      "tokens": 1074,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 241,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 240,
+      "physical_line_end": 41189,
+      "physical_line_start": 41006,
+      "source_page_label_raw": null,
+      "tokens": 1116,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 242,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 241,
+      "physical_line_end": 41351,
+      "physical_line_start": 41193,
+      "source_page_label_raw": null,
+      "tokens": 1088,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 243,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 242,
+      "physical_line_end": 41525,
+      "physical_line_start": 41355,
+      "source_page_label_raw": null,
+      "tokens": 1052,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 244,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 243,
+      "physical_line_end": 41729,
+      "physical_line_start": 41529,
+      "source_page_label_raw": null,
+      "tokens": 1038,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 245,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 244,
+      "physical_line_end": 41930,
+      "physical_line_start": 41733,
+      "source_page_label_raw": null,
+      "tokens": 1059,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 246,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 245,
+      "physical_line_end": 42092,
+      "physical_line_start": 41934,
+      "source_page_label_raw": null,
+      "tokens": 1041,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 247,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 246,
+      "physical_line_end": 42270,
+      "physical_line_start": 42096,
+      "source_page_label_raw": null,
+      "tokens": 1041,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 248,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 247,
+      "physical_line_end": 42435,
+      "physical_line_start": 42274,
+      "source_page_label_raw": null,
+      "tokens": 1062,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 249,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 248,
+      "physical_line_end": 42597,
+      "physical_line_start": 42439,
+      "source_page_label_raw": null,
+      "tokens": 1033,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 250,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 249,
+      "physical_line_end": 42853,
+      "physical_line_start": 42601,
+      "source_page_label_raw": null,
+      "tokens": 1010,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 251,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 250,
+      "physical_line_end": 43024,
+      "physical_line_start": 42857,
+      "source_page_label_raw": null,
+      "tokens": 1022,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 252,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 251,
+      "physical_line_end": 43186,
+      "physical_line_start": 43028,
+      "source_page_label_raw": null,
+      "tokens": 923,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 253,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 252,
+      "physical_line_end": 43348,
+      "physical_line_start": 43190,
+      "source_page_label_raw": null,
+      "tokens": 959,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 254,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 253,
+      "physical_line_end": 43532,
+      "physical_line_start": 43352,
+      "source_page_label_raw": null,
+      "tokens": 999,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 255,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 254,
+      "physical_line_end": 43704,
+      "physical_line_start": 43536,
+      "source_page_label_raw": null,
+      "tokens": 962,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 256,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 255,
+      "physical_line_end": 43902,
+      "physical_line_start": 43708,
+      "source_page_label_raw": null,
+      "tokens": 1072,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 257,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 256,
+      "physical_line_end": 44063,
+      "physical_line_start": 43906,
+      "source_page_label_raw": null,
+      "tokens": 1024,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 258,
+      "body_column_sequence": [
+        "R",
+        "L",
+        "R",
+        "L",
+        "R",
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables",
+        "body-column-order-reverses"
+      ],
+      "leaf": 257,
+      "physical_line_end": 44220,
+      "physical_line_start": 44067,
+      "source_page_label_raw": null,
+      "tokens": 946,
+      "wide_body_line_count": 4
+    },
+    {
+      "artifact_page": 259,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 258,
+      "physical_line_end": 44430,
+      "physical_line_start": 44224,
+      "source_page_label_raw": null,
+      "tokens": 1189,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 260,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 259,
+      "physical_line_end": 44658,
+      "physical_line_start": 44434,
+      "source_page_label_raw": null,
+      "tokens": 1251,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 261,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 260,
+      "physical_line_end": 44845,
+      "physical_line_start": 44662,
+      "source_page_label_raw": null,
+      "tokens": 1157,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 262,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 261,
+      "physical_line_end": 45043,
+      "physical_line_start": 44849,
+      "source_page_label_raw": null,
+      "tokens": 1177,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 263,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 262,
+      "physical_line_end": 45207,
+      "physical_line_start": 45047,
+      "source_page_label_raw": null,
+      "tokens": 1094,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 264,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 263,
+      "physical_line_end": 45381,
+      "physical_line_start": 45211,
+      "source_page_label_raw": null,
+      "tokens": 1221,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 265,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 264,
+      "physical_line_end": 45554,
+      "physical_line_start": 45385,
+      "source_page_label_raw": null,
+      "tokens": 1062,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 266,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 265,
+      "physical_line_end": 45755,
+      "physical_line_start": 45558,
+      "source_page_label_raw": null,
+      "tokens": 1060,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 267,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 266,
+      "physical_line_end": 45923,
+      "physical_line_start": 45759,
+      "source_page_label_raw": null,
+      "tokens": 1074,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 268,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 267,
+      "physical_line_end": 46158,
+      "physical_line_start": 45927,
+      "source_page_label_raw": null,
+      "tokens": 1093,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 269,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 268,
+      "physical_line_end": 46322,
+      "physical_line_start": 46162,
+      "source_page_label_raw": null,
+      "tokens": 1014,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 270,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 269,
+      "physical_line_end": 46542,
+      "physical_line_start": 46326,
+      "source_page_label_raw": null,
+      "tokens": 1044,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 271,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 270,
+      "physical_line_end": 46707,
+      "physical_line_start": 46546,
+      "source_page_label_raw": null,
+      "tokens": 1061,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 272,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 271,
+      "physical_line_end": 46871,
+      "physical_line_start": 46711,
+      "source_page_label_raw": null,
+      "tokens": 1089,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 273,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 272,
+      "physical_line_end": 47037,
+      "physical_line_start": 46875,
+      "source_page_label_raw": null,
+      "tokens": 1143,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 274,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 273,
+      "physical_line_end": 47212,
+      "physical_line_start": 47041,
+      "source_page_label_raw": null,
+      "tokens": 1086,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 275,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 274,
+      "physical_line_end": 47375,
+      "physical_line_start": 47216,
+      "source_page_label_raw": null,
+      "tokens": 1123,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 276,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 275,
+      "physical_line_end": 47543,
+      "physical_line_start": 47379,
+      "source_page_label_raw": null,
+      "tokens": 1141,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 277,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 276,
+      "physical_line_end": 47712,
+      "physical_line_start": 47547,
+      "source_page_label_raw": null,
+      "tokens": 978,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 278,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 277,
+      "physical_line_end": 47876,
+      "physical_line_start": 47716,
+      "source_page_label_raw": null,
+      "tokens": 1059,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 279,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 278,
+      "physical_line_end": 48046,
+      "physical_line_start": 47880,
+      "source_page_label_raw": null,
+      "tokens": 1055,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 280,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 279,
+      "physical_line_end": 48207,
+      "physical_line_start": 48050,
+      "source_page_label_raw": null,
+      "tokens": 1105,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 281,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 280,
+      "physical_line_end": 48374,
+      "physical_line_start": 48211,
+      "source_page_label_raw": null,
+      "tokens": 1091,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 282,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 281,
+      "physical_line_end": 48580,
+      "physical_line_start": 48378,
+      "source_page_label_raw": null,
+      "tokens": 1083,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 283,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 282,
+      "physical_line_end": 48744,
+      "physical_line_start": 48584,
+      "source_page_label_raw": null,
+      "tokens": 1109,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 284,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 283,
+      "physical_line_end": 48906,
+      "physical_line_start": 48748,
+      "source_page_label_raw": null,
+      "tokens": 1030,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 285,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 284,
+      "physical_line_end": 49073,
+      "physical_line_start": 48910,
+      "source_page_label_raw": null,
+      "tokens": 1071,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 286,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 285,
+      "physical_line_end": 49243,
+      "physical_line_start": 49077,
+      "source_page_label_raw": null,
+      "tokens": 1102,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 287,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 286,
+      "physical_line_end": 49430,
+      "physical_line_start": 49247,
+      "source_page_label_raw": null,
+      "tokens": 1083,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 288,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 287,
+      "physical_line_end": 49611,
+      "physical_line_start": 49434,
+      "source_page_label_raw": null,
+      "tokens": 918,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 289,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 288,
+      "physical_line_end": 49770,
+      "physical_line_start": 49615,
+      "source_page_label_raw": null,
+      "tokens": 975,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 290,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 289,
+      "physical_line_end": 49934,
+      "physical_line_start": 49774,
+      "source_page_label_raw": null,
+      "tokens": 1048,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 291,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 290,
+      "physical_line_end": 50095,
+      "physical_line_start": 49938,
+      "source_page_label_raw": null,
+      "tokens": 1064,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 292,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 291,
+      "physical_line_end": 50253,
+      "physical_line_start": 50099,
+      "source_page_label_raw": null,
+      "tokens": 1030,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 293,
+      "body_column_sequence": [
+        "R",
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables",
+        "body-column-order-reverses"
+      ],
+      "leaf": 292,
+      "physical_line_end": 50403,
+      "physical_line_start": 50257,
+      "source_page_label_raw": null,
+      "tokens": 1009,
+      "wide_body_line_count": 66
+    },
+    {
+      "artifact_page": 294,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 293,
+      "physical_line_end": 50568,
+      "physical_line_start": 50407,
+      "source_page_label_raw": null,
+      "tokens": 998,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 295,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 294,
+      "physical_line_end": 50738,
+      "physical_line_start": 50572,
+      "source_page_label_raw": null,
+      "tokens": 902,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 296,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 295,
+      "physical_line_end": 50899,
+      "physical_line_start": 50742,
+      "source_page_label_raw": null,
+      "tokens": 982,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 297,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 296,
+      "physical_line_end": 51062,
+      "physical_line_start": 50903,
+      "source_page_label_raw": null,
+      "tokens": 992,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 298,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 297,
+      "physical_line_end": 51233,
+      "physical_line_start": 51066,
+      "source_page_label_raw": null,
+      "tokens": 1030,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 299,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 298,
+      "physical_line_end": 51473,
+      "physical_line_start": 51237,
+      "source_page_label_raw": null,
+      "tokens": 996,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 300,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 299,
+      "physical_line_end": 51653,
+      "physical_line_start": 51477,
+      "source_page_label_raw": null,
+      "tokens": 964,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 301,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 300,
+      "physical_line_end": 51811,
+      "physical_line_start": 51657,
+      "source_page_label_raw": null,
+      "tokens": 1083,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 302,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 301,
+      "physical_line_end": 52022,
+      "physical_line_start": 51815,
+      "source_page_label_raw": null,
+      "tokens": 1007,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 303,
+      "body_column_sequence": [
+        "L",
+        "R",
+        "L",
+        "R",
+        "L",
+        "R",
+        "L",
+        "R",
+        "L",
+        "R",
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables",
+        "body-column-order-reverses"
+      ],
+      "leaf": 302,
+      "physical_line_end": 52215,
+      "physical_line_start": 52026,
+      "source_page_label_raw": null,
+      "tokens": 1064,
+      "wide_body_line_count": 22
+    },
+    {
+      "artifact_page": 304,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 303,
+      "physical_line_end": 52411,
+      "physical_line_start": 52219,
+      "source_page_label_raw": null,
+      "tokens": 948,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 305,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 304,
+      "physical_line_end": 52573,
+      "physical_line_start": 52415,
+      "source_page_label_raw": null,
+      "tokens": 1030,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 306,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 305,
+      "physical_line_end": 52813,
+      "physical_line_start": 52577,
+      "source_page_label_raw": null,
+      "tokens": 1140,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 307,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 306,
+      "physical_line_end": 53013,
+      "physical_line_start": 52817,
+      "source_page_label_raw": null,
+      "tokens": 1073,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 308,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 307,
+      "physical_line_end": 53183,
+      "physical_line_start": 53017,
+      "source_page_label_raw": null,
+      "tokens": 1026,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 309,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 308,
+      "physical_line_end": 53350,
+      "physical_line_start": 53187,
+      "source_page_label_raw": null,
+      "tokens": 916,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 310,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 309,
+      "physical_line_end": 53513,
+      "physical_line_start": 53354,
+      "source_page_label_raw": null,
+      "tokens": 1011,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 311,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 310,
+      "physical_line_end": 53682,
+      "physical_line_start": 53517,
+      "source_page_label_raw": null,
+      "tokens": 945,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 312,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 311,
+      "physical_line_end": 53843,
+      "physical_line_start": 53686,
+      "source_page_label_raw": null,
+      "tokens": 1008,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 313,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 312,
+      "physical_line_end": 54044,
+      "physical_line_start": 53847,
+      "source_page_label_raw": null,
+      "tokens": 1052,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 314,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 313,
+      "physical_line_end": 54254,
+      "physical_line_start": 54048,
+      "source_page_label_raw": null,
+      "tokens": 1006,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 315,
+      "body_column_sequence": [
+        "L",
+        "R",
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "body-column-order-reverses"
+      ],
+      "leaf": 314,
+      "physical_line_end": 54500,
+      "physical_line_start": 54258,
+      "source_page_label_raw": null,
+      "tokens": 1047,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 316,
+      "body_column_sequence": [
+        "L",
+        "R",
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "body-column-order-reverses"
+      ],
+      "leaf": 315,
+      "physical_line_end": 54669,
+      "physical_line_start": 54505,
+      "source_page_label_raw": null,
+      "tokens": 945,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 317,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 316,
+      "physical_line_end": 54835,
+      "physical_line_start": 54673,
+      "source_page_label_raw": null,
+      "tokens": 1021,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 318,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 317,
+      "physical_line_end": 54996,
+      "physical_line_start": 54839,
+      "source_page_label_raw": null,
+      "tokens": 997,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 319,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 318,
+      "physical_line_end": 55156,
+      "physical_line_start": 55000,
+      "source_page_label_raw": null,
+      "tokens": 964,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 320,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 319,
+      "physical_line_end": 55319,
+      "physical_line_start": 55160,
+      "source_page_label_raw": null,
+      "tokens": 999,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 321,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 320,
+      "physical_line_end": 55478,
+      "physical_line_start": 55323,
+      "source_page_label_raw": null,
+      "tokens": 1035,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 322,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 321,
+      "physical_line_end": 55637,
+      "physical_line_start": 55482,
+      "source_page_label_raw": null,
+      "tokens": 990,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 323,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 322,
+      "physical_line_end": 55800,
+      "physical_line_start": 55641,
+      "source_page_label_raw": null,
+      "tokens": 970,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 324,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 323,
+      "physical_line_end": 55887,
+      "physical_line_start": 55804,
+      "source_page_label_raw": null,
+      "tokens": 973,
+      "wide_body_line_count": 69
+    },
+    {
+      "artifact_page": 325,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 324,
+      "physical_line_end": 56065,
+      "physical_line_start": 55891,
+      "source_page_label_raw": null,
+      "tokens": 1018,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 326,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 325,
+      "physical_line_end": 56231,
+      "physical_line_start": 56069,
+      "source_page_label_raw": null,
+      "tokens": 981,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 327,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 326,
+      "physical_line_end": 56392,
+      "physical_line_start": 56235,
+      "source_page_label_raw": null,
+      "tokens": 959,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 328,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 327,
+      "physical_line_end": 56554,
+      "physical_line_start": 56396,
+      "source_page_label_raw": null,
+      "tokens": 1013,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 329,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 328,
+      "physical_line_end": 56728,
+      "physical_line_start": 56558,
+      "source_page_label_raw": null,
+      "tokens": 1000,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 330,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 329,
+      "physical_line_end": 56973,
+      "physical_line_start": 56732,
+      "source_page_label_raw": null,
+      "tokens": 1126,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 331,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 330,
+      "physical_line_end": 57137,
+      "physical_line_start": 56977,
+      "source_page_label_raw": null,
+      "tokens": 1283,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 332,
+      "body_column_sequence": [
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 331,
+      "physical_line_end": 57226,
+      "physical_line_start": 57141,
+      "source_page_label_raw": null,
+      "tokens": 1118,
+      "wide_body_line_count": 68
+    },
+    {
+      "artifact_page": 333,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 332,
+      "physical_line_end": 57441,
+      "physical_line_start": 57230,
+      "source_page_label_raw": null,
+      "tokens": 976,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 334,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 333,
+      "physical_line_end": 57571,
+      "physical_line_start": 57445,
+      "source_page_label_raw": null,
+      "tokens": 771,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 335,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 334,
+      "physical_line_end": 57714,
+      "physical_line_start": 57575,
+      "source_page_label_raw": null,
+      "tokens": 693,
+      "wide_body_line_count": 1
+    },
+    {
+      "artifact_page": 336,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 335,
+      "physical_line_end": 57878,
+      "physical_line_start": 57718,
+      "source_page_label_raw": null,
+      "tokens": 975,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 337,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 336,
+      "physical_line_end": 58042,
+      "physical_line_start": 57882,
+      "source_page_label_raw": null,
+      "tokens": 952,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 338,
+      "body_column_sequence": [
+        "R",
+        "L"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables",
+        "body-column-order-reverses"
+      ],
+      "leaf": 337,
+      "physical_line_end": 58132,
+      "physical_line_start": 58046,
+      "source_page_label_raw": null,
+      "tokens": 941,
+      "wide_body_line_count": 65
+    },
+    {
+      "artifact_page": 339,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 338,
+      "physical_line_end": 58298,
+      "physical_line_start": 58136,
+      "source_page_label_raw": null,
+      "tokens": 952,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 340,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 339,
+      "physical_line_end": 58461,
+      "physical_line_start": 58302,
+      "source_page_label_raw": null,
+      "tokens": 916,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 341,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 340,
+      "physical_line_end": 58624,
+      "physical_line_start": 58465,
+      "source_page_label_raw": null,
+      "tokens": 837,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 342,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 341,
+      "physical_line_end": 58777,
+      "physical_line_start": 58628,
+      "source_page_label_raw": null,
+      "tokens": 902,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 343,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 342,
+      "physical_line_end": 58939,
+      "physical_line_start": 58781,
+      "source_page_label_raw": null,
+      "tokens": 910,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 344,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 343,
+      "physical_line_end": 59099,
+      "physical_line_start": 58943,
+      "source_page_label_raw": null,
+      "tokens": 889,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 345,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 344,
+      "physical_line_end": 59265,
+      "physical_line_start": 59103,
+      "source_page_label_raw": null,
+      "tokens": 1034,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 346,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 345,
+      "physical_line_end": 59369,
+      "physical_line_start": 59269,
+      "source_page_label_raw": null,
+      "tokens": 595,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 347,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [
+        "wide-body-lines-cross-columns-or-tables"
+      ],
+      "leaf": 346,
+      "physical_line_end": 59570,
+      "physical_line_start": 59373,
+      "source_page_label_raw": null,
+      "tokens": 1027,
+      "wide_body_line_count": 2
+    },
+    {
+      "artifact_page": 348,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 347,
+      "physical_line_end": 59802,
+      "physical_line_start": 59574,
+      "source_page_label_raw": null,
+      "tokens": 1094,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 349,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 348,
+      "physical_line_end": 60029,
+      "physical_line_start": 59805,
+      "source_page_label_raw": null,
+      "tokens": 1082,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 350,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 349,
+      "physical_line_end": 60255,
+      "physical_line_start": 60033,
+      "source_page_label_raw": null,
+      "tokens": 1122,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 351,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 350,
+      "physical_line_end": 60484,
+      "physical_line_start": 60259,
+      "source_page_label_raw": null,
+      "tokens": 1010,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 352,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 351,
+      "physical_line_end": 60715,
+      "physical_line_start": 60487,
+      "source_page_label_raw": null,
+      "tokens": 1087,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 353,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 352,
+      "physical_line_end": 60933,
+      "physical_line_start": 60718,
+      "source_page_label_raw": null,
+      "tokens": 1126,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 354,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 353,
+      "physical_line_end": 61151,
+      "physical_line_start": 60936,
+      "source_page_label_raw": null,
+      "tokens": 1107,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 355,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 354,
+      "physical_line_end": 61380,
+      "physical_line_start": 61154,
+      "source_page_label_raw": null,
+      "tokens": 1059,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 356,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 355,
+      "physical_line_end": 61605,
+      "physical_line_start": 61384,
+      "source_page_label_raw": null,
+      "tokens": 1067,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 357,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 356,
+      "physical_line_end": 61811,
+      "physical_line_start": 61608,
+      "source_page_label_raw": null,
+      "tokens": 1088,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 358,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 357,
+      "physical_line_end": 62040,
+      "physical_line_start": 61815,
+      "source_page_label_raw": null,
+      "tokens": 1096,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 359,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 358,
+      "physical_line_end": 62269,
+      "physical_line_start": 62043,
+      "source_page_label_raw": null,
+      "tokens": 1045,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 360,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 359,
+      "physical_line_end": 62489,
+      "physical_line_start": 62273,
+      "source_page_label_raw": null,
+      "tokens": 1060,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 361,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 360,
+      "physical_line_end": 62712,
+      "physical_line_start": 62493,
+      "source_page_label_raw": null,
+      "tokens": 1079,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 362,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 361,
+      "physical_line_end": 62917,
+      "physical_line_start": 62715,
+      "source_page_label_raw": null,
+      "tokens": 1100,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 363,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 362,
+      "physical_line_end": 63139,
+      "physical_line_start": 62920,
+      "source_page_label_raw": null,
+      "tokens": 1069,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 364,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 363,
+      "physical_line_end": 63378,
+      "physical_line_start": 63142,
+      "source_page_label_raw": null,
+      "tokens": 1167,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 365,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 364,
+      "physical_line_end": 63621,
+      "physical_line_start": 63381,
+      "source_page_label_raw": null,
+      "tokens": 1074,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 366,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 365,
+      "physical_line_end": 63844,
+      "physical_line_start": 63624,
+      "source_page_label_raw": null,
+      "tokens": 1055,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 367,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 366,
+      "physical_line_end": 64066,
+      "physical_line_start": 63847,
+      "source_page_label_raw": null,
+      "tokens": 1131,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 368,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 367,
+      "physical_line_end": 64294,
+      "physical_line_start": 64069,
+      "source_page_label_raw": null,
+      "tokens": 1174,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 369,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 368,
+      "physical_line_end": 64511,
+      "physical_line_start": 64297,
+      "source_page_label_raw": null,
+      "tokens": 1121,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 370,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 369,
+      "physical_line_end": 64747,
+      "physical_line_start": 64514,
+      "source_page_label_raw": null,
+      "tokens": 1158,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 371,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 370,
+      "physical_line_end": 64961,
+      "physical_line_start": 64750,
+      "source_page_label_raw": null,
+      "tokens": 1189,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 372,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 371,
+      "physical_line_end": 65176,
+      "physical_line_start": 64964,
+      "source_page_label_raw": null,
+      "tokens": 1181,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 373,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 372,
+      "physical_line_end": 65398,
+      "physical_line_start": 65179,
+      "source_page_label_raw": null,
+      "tokens": 1131,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 374,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 373,
+      "physical_line_end": 65623,
+      "physical_line_start": 65401,
+      "source_page_label_raw": null,
+      "tokens": 1186,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 375,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 374,
+      "physical_line_end": 65829,
+      "physical_line_start": 65627,
+      "source_page_label_raw": null,
+      "tokens": 1164,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 376,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 375,
+      "physical_line_end": 66044,
+      "physical_line_start": 65833,
+      "source_page_label_raw": null,
+      "tokens": 1211,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 377,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 376,
+      "physical_line_end": 66255,
+      "physical_line_start": 66047,
+      "source_page_label_raw": null,
+      "tokens": 1188,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 378,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 377,
+      "physical_line_end": 66488,
+      "physical_line_start": 66258,
+      "source_page_label_raw": null,
+      "tokens": 1112,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 379,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 378,
+      "physical_line_end": 66699,
+      "physical_line_start": 66491,
+      "source_page_label_raw": null,
+      "tokens": 1124,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 380,
+      "body_column_sequence": [
+        "L",
+        "R"
+      ],
+      "layout_hold_reasons": [],
+      "leaf": 379,
+      "physical_line_end": 66897,
+      "physical_line_start": 66703,
+      "source_page_label_raw": null,
+      "tokens": 1010,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 381,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [],
+      "leaf": 380,
+      "physical_line_end": null,
+      "physical_line_start": null,
+      "source_page_label_raw": null,
+      "tokens": 0,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 382,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [],
+      "leaf": 381,
+      "physical_line_end": null,
+      "physical_line_start": null,
+      "source_page_label_raw": null,
+      "tokens": 0,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 383,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [],
+      "leaf": 382,
+      "physical_line_end": null,
+      "physical_line_start": null,
+      "source_page_label_raw": null,
+      "tokens": 0,
+      "wide_body_line_count": 0
+    },
+    {
+      "artifact_page": 384,
+      "body_column_sequence": [],
+      "layout_hold_reasons": [],
+      "leaf": 383,
+      "physical_line_end": null,
+      "physical_line_start": null,
+      "source_page_label_raw": null,
+      "tokens": 0,
+      "wide_body_line_count": 0
+    }
+  ],
+  "pagination": "Leaf IDs are exact XML filename suffixes. Automated page labels are unverified; blank separator lines are unmapped.",
+  "physical_line_count": 66905,
+  "replay_recipe_artifact_id": "artifact.triptych.historical-papal-line-mapping.2026-10-26-v1-21d25700.recipe-21d25700861f",
+  "replay_recipe_sha256": "21d25700861f2a6bdf3fa860c7e55cb16424b25730cd5c5b798290a3302f65ca",
+  "schema": "triptych-bullarium-line-map/v1",
+  "source_inputs": {
+    "ocr": "ocr.txt"
+  },
+  "token_count": 393156,
+  "xml_sha256": "d8491ea0cdd6ec3385b77d68c9cbfa9e6b3184811b219fd29be32ff73879bd2c"
+}

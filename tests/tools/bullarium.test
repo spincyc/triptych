@@ -1,0 +1,15 @@
+#!/bin/sh
+set -eu
+tool="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)/tools/bullarium"
+"$tool" --help >/dev/null
+"$tool" series --help >/dev/null
+"$tool" corrections --help >/dev/null
+"$tool" geometry --help >/dev/null
+"$tool" geometry propose --help >/dev/null
+"$tool" geometry map-units --help >/dev/null
+"$tool" geometry register --help >/dev/null
+"$tool" screen --help >/dev/null
+if "$tool" acquire --volume 0 --json 2>/dev/null; then
+    exit 1
+fi
+"$tool" status --json | python -c 'import json,sys; d=json.load(sys.stdin); assert d["v"]==1 and d["whole_containers_acquired"]==25'

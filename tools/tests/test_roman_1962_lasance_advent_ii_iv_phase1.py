@@ -36,6 +36,12 @@ EXPECTED = {
     ('advent-4', 'Postcommunion'): ('ac7e9bd2e457e7b0652edb809fc5e2d4fd948d025fb984b13c7dd358f464333f', [133, 133], '132', 96, 15, 97, 'Per Dominum.', 'Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.'),
 }
 ACTIVE = {key: value for key, value in EXPECTED.items() if key != ('advent-2', 'Collect')}
+# 8d7e3b301 replaced the AdventII Collect witness-gap with one separately reviewed
+# Lefebvre 1925 entry (finite-source-methods-next18.json under
+# workflows/reviews/missal-reader-completion-2026-10-26; [[accepted]] next17 in
+# src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml). The
+# discrepant Lasance English stays evidence-only and unattached.
+LEFEBVRE = 'edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925'
 
 
 def sha(value):
@@ -87,11 +93,15 @@ class LasanceAdventIIIVPhase1Tests(unittest.TestCase):
 
     def test_source_discrepancies_are_retained_not_silently_corrected(self):
         self.assertNotIn(('advent-2', 'Collect'), self.entries)
-        absences = [r for r in self.document['untranslated']
+        self.assertFalse([r for r in self.document['untranslated']
+                          if (r['mass'], r['proper']) == ('advent-2', 'Collect')])
+        received = [r for r in self.document['entries']
                     if (r['mass'], r['proper']) == ('advent-2', 'Collect')]
-        self.assertEqual(len(absences), 1)
-        self.assertEqual(absences[0]['reason'], {'kind': 'witness-gap', 'source_id': EDITION})
-        self.assertIn('evidence-only', absences[0]['note'])
+        self.assertEqual(len(received), 1)
+        self.assertEqual((received[0]['witness'], received[0]['collation_result'],
+                          [t['source_id'] for t in received[0]['translations']]),
+                         ('lefebvre-1925', 'confirmed', [LEFEBVRE]))
+        self.assertNotIn(PREFIX, received[0]['passage_id'] + received[0]['publication_artifact_id'])
         collect = tomllib.loads((EDITION_PATH / 'passages' /
             'verify-phase1-advent-2--main--collect--all--1.toml').read_text())
         for phrase in ('internal source conclusion discrepancy', 'Source Latin ending: Qui tecum.',
@@ -155,7 +165,9 @@ class LasanceAdventIIIVPhase1Tests(unittest.TestCase):
         overlay, untranslated, stale, witnesses = propers.translation_overlay('roman-1962', CALENDARS)
         self.assertEqual(stale, [])
         self.assertEqual(witnesses[EDITION]['witness_relation'], 'antecedent')
-        self.assertNotIn(('advent-2', 'main', 'Collect', 'all', 1), overlay)
+        lefebvre = overlay['advent-2', 'main', 'Collect', 'all', 1]
+        self.assertEqual((lefebvre['witness'], [t['source_id'] for t in lefebvre['translations']]),
+                         ('lefebvre-1925', [LEFEBVRE]))
         for mass, proper in ACTIVE:
             row = overlay[mass, 'main', proper, 'all', 1]
             self.assertEqual(row['publication_artifact_id'], ARTIFACT)

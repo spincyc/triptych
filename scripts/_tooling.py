@@ -63,12 +63,13 @@ GROUPS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
         "acquisition",
         "Retrieval from outside the project. This is the only group that "
         "reaches outside your machine at all. Browser acceptance in the release "
-        "group uses local browser services. knox-bible fetches licensed "
+        "group uses local browser services. The papal tools discover official "
+        "indexes and acquire editions under their recorded rights. knox-bible fetches licensed "
         "text and what it writes never enters the repository: every verb of it "
         "refuses a destination inside this checkout. harvest spends on a model "
         "in one verb, `ask`, and what comes back lands in a dated ledger that "
         "records which model said it and when.",
-        ("harvest", "knox-bible"),
+        ("bullarium", "harvest", "knox-bible", "papal-acta", "papal-documents", "papal-sources"),
     ),
     (
         "scripture",
@@ -115,6 +116,7 @@ GROUPS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
             "source-inventory",
             "source-library",
             "source-reader",
+            "typeset-papal",
         ),
     ),
     (
@@ -167,13 +169,14 @@ GROUP_OF = {name: group for group, _, names in GROUPS for name in names}
 #
 # A reader deciding whether to run something wants one question answered before
 # any other: does this spend anything outside my machine? Two ways it could —
-# a network call, or a model — so each tool declares which, and the honest
-# current answer is that exactly one does either, and both sit in the same
-# group so the listing answers the question by where a tool appears.
+# a network call, or a model — so each tool declares which. Acquisition tools
+# appear together in the listing, with the reach of each named explicitly.
 #
-# `knox-bible` alone retrieves from the external network: licensed Knox text
-# from its publisher, one chapter a request. It refuses to write
-# anywhere inside the repository. `history-browser-acceptance` instead uses
+# `knox-bible` retrieves licensed Knox text from its publisher over the external
+# network, one chapter a request. It refuses to write
+# anywhere inside the repository. The papal acquisition tools retrieve official
+# indexes and identified archival witnesses under their source rights records.
+# `history-browser-acceptance` instead uses
 # loopback HTTP for its preview and WebDriver services; its URL gate rejects
 # external targets. That local service reach is declared separately.
 #
@@ -198,6 +201,7 @@ REACHES: dict[str, str] = {
     "act-history": NOTHING,
     "artwork-library": NOTHING,
     "audit-latin-body-substitutions": NOTHING,
+    "bullarium": NETWORK,
     "calendar-days": NOTHING,
     "calendar-rubrics": NOTHING,
     "calendar-spine": NOTHING,
@@ -225,6 +229,9 @@ REACHES: dict[str, str] = {
     "mass-propers": NOTHING,
     "mass-today": NOTHING,
     "missal-coverage-reconciliation": NOTHING,
+    "papal-acta": NETWORK,
+    "papal-documents": NETWORK,
+    "papal-sources": NETWORK,
     "pdf-review": NOTHING,
     "proper-chronology": NOTHING,
     "proper-study-run-archive": NOTHING,
@@ -241,6 +248,7 @@ REACHES: dict[str, str] = {
     "source-reader": NOTHING,
     "tpt": NOTHING,
     "typeset-bible": NOTHING,
+    "typeset-papal": NOTHING,
     "web-edition": NOTHING,
 }
 

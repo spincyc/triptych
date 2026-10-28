@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.ass.033.ass-033-l07634.pdf"
+edition_id = "edition.acta-papal-archives.ass.033.ass-033-l07634"
+artifact_id = "artifact.acta-papal-archives.ass.033.vatican-pdf-18fd550d"
+artifact_sha256 = "18fd550d59a2de5ac9f7e283c407c43ee5d1f004032b9109c4cdc733fcb021d6"
+segment_type = "archival-act-locator"
+states = ["cataloged", "acquired", "inspected"]
+artifact_page_ranges = [[198, 201]]
+context = "{\"closing_physical_lines\": [7769, 7772], \"closing_text\": \"     Datum R o m a e apud S. Petrum sub annulo Piscatoris die\\nX I V Septembris MCM. Pontificatus Nostri Anno Vigesimo tertio.\\n     De speciali mandato S S m i .\\n                                         ALOIS. CARD. MACCHI.\", \"end_line\": 7772, \"removed\": \"Running header/page-number lines carrying formfeed and Acta volume/fascicle footers are omitted via disjoint ranges; all remaining source text and notes in selected extent retained.\", \"retained_historical_note_ranges\": [], \"start_line\": 7634}"
+notes = "Artifact-page locators are distinct from the printed page labels [{\"artifact_page\": 198, \"printed_page\": \"198\", \"running_head_text\": \"198                              LITTERAE\"}, {\"artifact_page\": 199, \"printed_page\": \"199\", \"running_head_text\": \"LITTERAE                             199\"}, {\"artifact_page\": 200, \"printed_page\": \"200\", \"running_head_text\": \"200                            LITTERAE\"}, {\"artifact_page\": 201, \"printed_page\": \"201\", \"running_head_text\": \"LITTERAE                                201\"}]. Archival OCR reconstruction and mechanical extraction; no facsimile image collation is claimed. OCR errors, historical spelling, line breaks, and unverified pagination remain source limitations."

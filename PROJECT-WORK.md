@@ -397,6 +397,177 @@ canonical web, catalog/corpus/manifest and preserved incoming articles, return
 HTTP 200 with exact reviewed bytes. The owning published-runs and live receipts
 record the evidence. This completion receipt changes operator records only.
 
+## Papal document source corpus, 2026-10-25
+
+<!-- promised-deliverable: papal-documents-2026-10-25 -->
+
+**In progress.** Source and organize papal encyclicals, bulls, and related
+formal documents; catalogue their editions; produce two-column TeX/PDF source
+editions; and make the sources reusable by larger presentation projects.
+On 2026-10-28 the maintainer authorized integrating this work into `main`
+and completing every queued lane. The installed readers under
+`pdf/papal-documents/` are repository release files; they are not part of
+the deployed Pages site, whose Sources projection lists their source records.
+
+The first acquisition boundary is the Vatican's mixed historical collections
+and modern document-category indexes, supplemented by the printed Bullarium,
+ASS/AAS volume inventories, and identified historical English editions.
+An index's coverage is recorded independently from the universe of historical
+papal acts. Historical volume acquisition does not count as individual-document
+segmentation. Modern translation rights, missing original-language witnesses,
+unresolved dates, index errors, and unsegmented volumes remain explicit gaps.
+
+The canonical ownership remains the provider-neutral source library. Exact
+source bytes, original works, translations, and generated source editions stay
+distinct. Publicly retained text needs its own affirmative rights basis;
+public accessibility and an act's date alone do not establish it. Full-text
+retrieval, normalized text, typesetting, visual review, installation, and public
+distribution are separately recorded states. The owning collection records are
+under `src/sources/papal-documents/`; the profile is
+`guidance/papal-documents.md`.
+
+On 2026-10-26 the maintainer confirmed both coverage layers: English and Latin
+where available, the linked Vatican formal-document collections, and
+reconstruction of individual acts from the historical volumes. Volume
+acquisition alone does not fulfill that expansion. The Bullarium and ASS/AAS
+programs therefore retain exact containers and independently reviewed act
+boundaries, with explicit holds for interleaved columns, displaced notes,
+uncertain issuers, duplicate scans and unavailable material. Later protected
+bodies remain metadata-only. Printed attribution does not authenticate an early
+or disputed act.
+
+The Vatican index snapshot contains 2,814 source-index records across 237
+pages, including six absent historical Latin interfaces, reviewed aliases,
+source-date conflicts and composite/constituent distinctions. The first source
+program retained historical Latin readings and 31 bounded English translation
+entries from the 1903 Benziger collection. The English transcriptions retain
+substantial source OCR errors; 205 separately audited character-encoding spans
+in 11 selections have been repaired without rewriting words. Successful layout
+review is not image collation. Quanta cura and the Syllabus have separate constituent identities
+within one controlling delivery.
+
+Publication-date review reopened Casti connubii: its nominal 31 December 1930
+date and AAS volume label do not establish publication before 1931. A
+contemporary report identifies 8 January 1931. Its full text and generated
+readers are withheld while its factual metadata and evidence remain. Earlier
+1930 fascicles are not blanket-dated by the annual 1931 colophon.
+
+Required aggregate validation, final source projections, complete PDF review,
+coherent commits and feature publication remain in progress. No main
+deployment or complete historical corpus is claimed.
+
+The presentation reuse requirement is met by executed tabular, bibliographic
+and Beamer exports, a four-page individually inspected role-aware source-card
+example, and documented source-fragment/PDF-appendix imports. The exact review
+copy is recorded in
+`src/sources/papal-documents/presentation-integration-review.md`.
+
+The historical coverage audit identified separate post-1740 continuations,
+Benedict XIV's Bullarium, and Gregory XVI/Pius IX Acta as additional source
+families. Their complete available input witnesses and printing identities are
+being established independently of the initial Turin and journal batches.
+Current visual findings also require explicit supersessions for missing source
+notes, mixed-language identification, stranded headings, erroneous index
+metadata and retained modern portal apparatus. A compiled batch is not a final
+reviewed selection; the combined reader index must apply exact exclusions.
+
+The recovered initial corpus and Acta source checkpoint passes source-library,
+containment, source-inventory, family-catalog and reader-projection checks.
+Its scope, initial compilation counts, baseline comparison and open corrections
+are recorded in `src/sources/papal-documents/validation-checkpoint.md`.
+Source reconstruction, all-page review, final selection and feature publication
+remain open.
+
+Recovery checkpoint, 2026-10-26: commits `ed833ea0a` and `6cbe1bd3f` are
+published on `origin/feature/encyclicals`. The later source plan selects 5,827
+readers after 710 exclusions, including 507 confirmed source-order withdrawals.
+Exact frozen receipts account for 5,826 successful PDFs and 11,697 pages, plus
+one failed long-token layout whose source-preserving repair passes independent
+PDF fidelity checks and awaits its canonical render selection. These build
+counts do not establish page-review acceptance or complete historical coverage.
+
+Current tooling records per-reader revisions, explicit corrections and
+withdrawals, and complete hash-bound page-review evidence. Independent review
+closed staged page-witness tampering, lost reviewed series discoveries,
+collection input overwrites and installer rollback failures. The installer
+retains exact release inputs and copies only current PASS bytes to the
+provider-neutral destination defined in `guidance/papal-documents.md`.
+Its first installation was pending evidence reconciliation at that checkpoint.
+Additional sealed source admissions and the remaining PDF reviews remain
+active work; source-family review states are not promoted by these operations.
+
+The follow-up current plan has 5,825 successful PDFs and 11,696 pages, with no
+missing or failed builds and 509 source-order withdrawals excluded. The new
+long-token reader preserves all source characters. Containment passes with
+6,348 constituents after adding the newly registered historical English
+Divini witness and qualifying two further source-order holds. The source
+aggregate passes with act-history freshness established separately. Complete
+page review, source-wrapper corrections, further sealed admissions and broader
+installation remain open.
+
+The current scoped installation contains 851 exact reviewed PDFs and 2,170
+pages: 392 Vatican Latin readers, 60 historical English witnesses, the two
+Quanta/Syllabus constituents and 397 historical continuation readers. Their
+[release record](release/papal-documents.json) retains exact frozen inputs,
+receipts and review reports. All 454 previously installed PDFs remain
+byte-identical; the 397 continuation additions contribute 601 pages.
+Installed hashes, owned paths, source fidelity and durable evidence pass the
+owning checker. English fragments retain their explicit extent qualifications.
+The 472 rejected continuation readers and the remaining historical families
+stay outside this scoped installation while their source-boundary and
+page-review work continues.
+
+Recovery and main integration, 2026-10-28: the interrupted session's
+in-flight admissions and review evidence were committed, the 332 newly
+admitted continuation witnesses received their containment entries, and the
+release grew to 3,540 reviewed PDFs and 6,684 pages by adding 2,619 ASS/AAS
+Acta witnesses and 70 Gregory XVI Acta witnesses. Their review evidence is
+the completed Acta audit (2,619 PASS, nine follow-up corrections pending) and
+the Gregory lanes merged into the series audit.
+
+Page review of the 332 continuation admissions, the nine Acta follow-up
+corrections and the 59 provider-mark corrections is complete but not yet
+installed. It found that continuation volumes XIV, XV, XVIII and XIX print
+marginal summaries that their OCR fuses inline into body lines, often too
+garbled for first-pass review to recognize.
+Fresh full-size re-verification turned all 28 of one corrected lane to
+changes-required. Every installed continuation reader (397, mostly volumes
+XIII and XIV) therefore stays under a source-order re-audit, and a reader
+that fails it is withdrawn from the next release. The Bullarium (Turin)
+readers remain uninstalled for the same defect class: about 600 of 630
+independently screened units show confirmed fusion. Both families need
+coordinate-based reconstruction from the native OCR geometry before further
+admission. Codex's prepared correction plan for 412 remaining continuation
+readers (provider marks and the `Rome: None` placeholder) is still to be
+applied.
+
+Gregory XVI and Bullarium repair, 2026-10-28: every one of the 1,473 Gregory
+XVI Acta candidates now carries a reviewed disposition (0 unreviewed). 826
+complete printed witnesses and one historical fragment were admitted in 22
+boundary packets. 113 holds remain for displaced or missing OCR words and
+compound printings, and the civil volume's curial instruments are recorded
+with their actual issuers. Page review passed 823 of the 827 new readers, and
+all 823 are installed.
+
+A whole-volume coordinate reading-order derivative now repairs Bullarium
+margin fusion (`tools/bullarium geometry`; rules in
+`guidance/papal-documents.md`). Volume IV is registered with 70 repaired
+readings. Page review found no fused marginal summary among 464 blocks, and
+45 readers are installed. The other 25 wait for the tool to set printed
+footnotes as their own blocks instead of joining them to body paragraphs.
+The release holds 4,417 PDFs and 8,013 pages.
+
+Open:
+- footnote separation and the volume IV replacements;
+- the Bullarium roll-out by withdrawn-fusion count (VII, IX, XI, III, VIII,
+  X, II, then the rest), each behind a twelve-page native-image evidence gate;
+- a coordinate audit of the 397 installed continuation readers (the detector
+  flags real marginal text on body lines in 168 of the 208 volume-XIII
+  readers) and withdrawal of any confirmed defects;
+- the four rejected Gregory readers;
+- boundary review of the Pius IX Acta (113 candidates) and the Benedict XIV
+  Bullarium (207, including *Ubi primum*).
+
 ## GPT Last Things and next Sunday propers, 2026-10-25
 
 <!-- promised-deliverable: gpt-flt-and-sunday-2026-10-25 -->

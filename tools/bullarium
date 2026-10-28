@@ -1,0 +1,63 @@
+#!/usr/bin/env python3
+"""Acquire Bullarium witnesses and audit source-bounded historical units."""
+from pathlib import Path
+import sys
+sys.dont_write_bytecode = True
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+from _bullarium import main
+from _tooling import Example
+
+EXAMPLES = {
+    'screen': (
+        Example('tools/bullarium screen --frontier ../outside --catalog src/sources/papal-documents/bullarium-catalog.json --input-map .scratch/bullarium_reconstruction/geometry_screen_engine/input-map.json --out .scratch/bullarium_reconstruction/geometry_screen_engine/preflight --json', ('{"code":"input","error":"input path must be canonical repository-relative without traversal","status":"error","v":1}',), 'Traversal is refused before input reads, source extraction or output writes.'),
+        Example('tools/bullarium screen --frontier ../outside --catalog src/sources/papal-documents/bullarium-catalog.json --input-map .scratch/bullarium_reconstruction/geometry_screen_engine/input-map.json --out .scratch/bullarium_reconstruction/geometry_screen_engine/preflight', ('bullarium screen: input path must be canonical repository-relative without traversal',), 'The same deterministic traversal refusal in ordinary text.'),
+    ),
+    'geometry': (
+        Example('tools/bullarium geometry --recipe .scratch/bullarium_reconstruction/geometry_engine/absent-recipe.json --out .scratch/bullarium_reconstruction/geometry_engine/preflight --json', ('{"code":"input","error":"geometry recipe is not readable JSON","status":"error","v":1}',), 'A missing recipe is refused before creating derivative outputs.'),
+        Example('tools/bullarium geometry --recipe .scratch/bullarium_reconstruction/geometry_engine/absent-recipe.json --out .scratch/bullarium_reconstruction/geometry_engine/preflight', ('bullarium geometry: geometry recipe is not readable JSON',), 'The same safe recipe refusal in ordinary text.'),
+    ),
+    'geometry propose': (
+        Example('tools/bullarium geometry propose --volume 4 --out ../outside --json', ('{"code":"input","error":"input path must be canonical repository-relative without traversal","status":"error","v":1}',), 'An output outside scratch/build is refused before any source is read.'),
+        Example('tools/bullarium geometry propose --volume 4 --out ../outside', ('bullarium geometry propose: input path must be canonical repository-relative without traversal',), 'The same refusal in ordinary text.'),
+    ),
+    'geometry map-units': (
+        Example('tools/bullarium geometry map-units --recipe .scratch/absent/recipe.json --replay .scratch/absent --out ../outside.json --json', ('{"code":"input","error":"input path must be canonical repository-relative without traversal","status":"error","v":1}',), 'The mapping destination is checked before the recipe, replay or catalog is read.'),
+        Example('tools/bullarium geometry map-units --recipe .scratch/absent/recipe.json --replay .scratch/absent --out ../outside.json', ('bullarium geometry map-units: input path must be canonical repository-relative without traversal',), 'The same refusal in ordinary text.'),
+    ),
+    'geometry register': (
+        Example('tools/bullarium geometry register --recipe .scratch/absent/recipe.json --replay .scratch/absent --mapping .scratch/absent/mapping.json --units .scratch/absent/units.json --revision invalid --json', ('{"code":"input","error":"revision requires explicit whole-second UTC","status":"error","v":1}',), 'An invalid revision is refused before replay, catalog reads or any source write.'),
+        Example('tools/bullarium geometry register --recipe .scratch/absent/recipe.json --replay .scratch/absent --mapping .scratch/absent/mapping.json --units .scratch/absent/units.json --revision invalid', ('bullarium geometry register: revision requires explicit whole-second UTC',), 'The same refusal in ordinary text.'),
+    ),
+    'series': (
+        Example('tools/bullarium series check --config ../../outside --json', ('{"error": "path must stay below repository root", "status": "error", "v": 1}',), 'A config outside the repository is refused before source reads or mutations.'),
+        Example('tools/bullarium series check --config ../../outside', ('bullarium series: path must stay below repository root',), 'The same safe path refusal in ordinary text.'),
+    ),
+    'corrections': (
+        Example('tools/bullarium corrections --plan .scratch/bullarium_reconstruction/correction_engine/absent.json --out .scratch/bullarium_reconstruction/correction_engine/preflight.json --revision invalid --json', ('{"code":"input","error":"revision requires explicit whole-second UTC","status":"error","v":1}',), 'An invalid revision is refused before source reads or correction writes.'),
+        Example('tools/bullarium corrections --plan .scratch/bullarium_reconstruction/correction_engine/absent.json --out .scratch/bullarium_reconstruction/correction_engine/preflight.json --revision invalid', ('bullarium corrections: revision requires explicit whole-second UTC',), 'The same safe revision refusal in ordinary text.'),
+        Example('tools/bullarium corrections --withdrawals --plan .scratch/bullarium_reconstruction/correction_engine/absent.json --out .scratch/bullarium_reconstruction/correction_engine/preflight-withdrawals.json --revision invalid --json', ('{"code":"input","error":"revision requires explicit whole-second UTC","status":"error","v":1}',), 'Withdrawal metadata also requires an explicit valid revision before any input reads or writes.'),
+        Example('tools/bullarium corrections --withdrawals --plan .scratch/bullarium_reconstruction/correction_engine/absent.json --out .scratch/bullarium_reconstruction/correction_engine/preflight-withdrawals.json --revision invalid', ('bullarium corrections: revision requires explicit whole-second UTC',), 'The same safe withdrawal preflight in ordinary text.'),
+    ),
+    'acquire': (
+        Example('tools/bullarium acquire --volume 0 --json', ('{"code":"input","error":"volume must be 1-24 or appendix","status":"error","v":1}',), 'An invalid selection is refused before network access or source mutation.'),
+        Example('tools/bullarium acquire --volume 0', ('bullarium: volume must be 1-24 or appendix',), 'The same refusal in ordinary text.'),
+    ),
+    'reconstruct': (
+        Example('tools/bullarium reconstruct --volume 0 --revision 2026-10-26T00:00:00Z --json', ('{"code":"input","error":"volume must be 1-24 or appendix","status":"error","v":1}',), 'An invalid selection cannot overwrite the canonical reconstruction.'),
+        Example('tools/bullarium reconstruct --volume 0 --revision 2026-10-26T00:00:00Z', ('bullarium: volume must be 1-24 or appendix',), 'The same refusal in ordinary text.'),
+    ),
+    'admit': (
+        Example('tools/bullarium admit --volume 0 --review .scratch/bullarium_reconstruction/absent.json --revision 2026-10-26T00:00:00Z --json', ('{"code":"input","error":"volume must be 1-24 or appendix","status":"error","v":1}',), 'Invalid admission selection is refused before any constituent is registered.'),
+        Example('tools/bullarium admit --volume 0 --review .scratch/bullarium_reconstruction/absent.json --revision 2026-10-26T00:00:00Z', ('bullarium: volume must be 1-24 or appendix',), 'The same refusal in ordinary text.'),
+    ),
+    'check': (
+        Example('tools/bullarium check --volume 0 --json', ('{"code":"input","error":"volume must be 1-24 or appendix","status":"error","v":1}',), 'Invalid source selections are rejected explicitly.'),
+        Example('tools/bullarium check --volume 0', ('bullarium: volume must be 1-24 or appendix',), 'The same refusal in ordinary text.'),
+    ),
+    'status': (
+        Example('tools/bullarium status --volume 0 --json', ('{"code":"input","error":"volume must be 1-24 or appendix","status":"error","v":1}',), 'Invalid scope is not silently reported as the full collection.'),
+        Example('tools/bullarium status --volume 0', ('bullarium: volume must be 1-24 or appendix',), 'The same refusal in ordinary text.'),
+    ),
+}
+if __name__ == "__main__":
+    raise SystemExit(main(examples=EXAMPLES))
