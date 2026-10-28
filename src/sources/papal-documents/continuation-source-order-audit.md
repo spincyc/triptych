@@ -623,3 +623,32 @@ Unauditable readers held for manual review:
 - `bullarium-continuatio.volume-06.line-00060243.part-01` (geometry coverage 0.6271)
 - `bullarium-continuatio.volume-06.line-00106172` (geometry coverage 0.9116)
 - `bullarium-continuatio.volume-16.line-00046344` (geometry coverage 0.8428)
+
+## Manual review of unauditable readers
+
+On 2026-10-28 every PDF page and every native leaf of the 22 readers the coordinate method could not audit (14 installed, 8 held) was opened and each printed marginal note beside the selected extent was traced into the PDF (manual review record SHA-256 `18e53a4adb1db5df902162db72c9f06a11486d4073b6f93d94c9e7caada1fd49`). One installed reader shows marginal-note OCR fused inside body paragraphs and is withdrawn with a prior-to-null supersession. Running heads and signatures left inline are qualifications in this series, not fusion.
+
+| Reader | Before | Verdict | Fused loci | Disposition | First locus |
+|---|---|---|---:|---|---|
+| `bullarium-continuatio.volume-01.line-00056519` | held | clean | 0 | cleared for installation |  |
+| `bullarium-continuatio.volume-02.line-00015940` | installed | clean | 0 | stays installed |  |
+| `bullarium-continuatio.volume-03.line-00006884.part-02` | installed | clean | 0 | stays installed |  |
+| `bullarium-continuatio.volume-03.line-00054934.part-03` | installed | clean | 0 | stays installed |  |
+| `bullarium-continuatio.volume-03.line-00055330.part-03` | installed | clean | 0 | stays installed |  |
+| `bullarium-continuatio.volume-04.line-00113320` | held | clean | 0 | stays held: body lines LF 113391-113392 are missing from the selection |  |
+| `bullarium-continuatio.volume-04.line-00140383` | held | clean | 0 | cleared for installation |  |
+| `bullarium-continuatio.volume-04.line-00141657.part-01` | held | clean | 0 | cleared for installation |  |
+| `bullarium-continuatio.volume-05.line-00003390.missed-v` | installed | clean | 0 | stays installed |  |
+| `bullarium-continuatio.volume-06.line-00059641.part-02` | held | clean | 0 | cleared for installation |  |
+| `bullarium-continuatio.volume-06.line-00060243.part-01` | held | clean | 0 | cleared for installation |  |
+| `bullarium-continuatio.volume-06.line-00106172` | held | clean | 0 | stays held: selection carries the preceding act's marginal note and omits two of its own notes |  |
+| `bullarium-continuatio.volume-07.line-00053204` | installed | clean | 0 | stays installed |  |
+| `bullarium-continuatio.volume-08.line-00068643.part-02` | installed | clean | 0 | stays installed |  |
+| `bullarium-continuatio.volume-08.line-00069815` | installed | clean | 0 | stays installed |  |
+| `bullarium-continuatio.volume-10.line-00005876.part-01` | installed | clean | 0 | stays installed |  |
+| `bullarium-continuatio.volume-11.line-00033598.part-02` | installed | clean | 0 | stays installed |  |
+| `bullarium-continuatio.volume-11.line-00054994.part-01` | installed | clean | 0 | stays installed |  |
+| `bullarium-continuatio.volume-11.line-00077357` | installed | clean | 0 | stays installed |  |
+| `bullarium-continuatio.volume-13.line-00051765.part-01` | installed | clean | 0 | stays installed |  |
+| `bullarium-continuatio.volume-13.line-00051765.part-02` | installed | confirmed-fusion | 3 | withdrawn | leaf 393, LF 51969: `dc„` |
+| `bullarium-continuatio.volume-16.line-00046344` | held | clean | 0 | cleared for installation |  |

@@ -1,12 +1,12 @@
 {
   "config_sha256": "e72eb2094c9e0261ffa6e1dc72550e37aa7752bbcfb824ea5d5470894da1125f",
   "coverage": {
-    "complete_printed_witnesses": 967,
+    "complete_printed_witnesses": 966,
     "fragment_witnesses": 0,
     "note": "Candidates include false headings and non-papal units. Counts describe source witnesses, not authenticated unique acts.",
     "raw_candidates": 5896,
     "source_containers": 19,
-    "specifically_held": 1537,
+    "specifically_held": 1538,
     "unreviewed_candidates": 1844
   },
   "documents": [
@@ -255184,16 +255184,38 @@
         ]
       ],
       "protocol": null,
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-continuatio.volume-13.1847-rome-mul.ocr-86b80fa11d26",
+          "id": "bullarium-continuatio.volume-13.line-00051765.part-02",
+          "language": "la",
+          "pdf_sha256": "16094692e749999a018145c2ce44febc0b8ee4726dbda4e8652a0dbe69a8d827",
+          "physical_line_ranges": [
+            [
+              51950,
+              52020
+            ],
+            [
+              52029,
+              52034
+            ],
+            [
+              52040,
+              52089
+            ]
+          ],
+          "segment_id": "segment.bullarium-continuatio.volume-13.line-00051765.part-02.1847-bullarium-continuatio-volume-13-la.source-ocr",
+          "source_sha256": "86b80fa11d2683f5b6413a564c62e437109b1ef41e84294aeb22087a03e795d8"
+        },
+        "reason": "Whole reader withdrawn: manual native-image review confirmed printed marginal note text fused into body paragraphs (3 loci; first at leaf 393, LF 51969). Recorded in src/sources/papal-documents/continuation-source-order-audit.md.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "18e53a4adb1db5df902162db72c9f06a11486d4073b6f93d94c9e7caada1fd49",
       "render_revision": "2026-10-26T13:13:50Z",
       "review": {
         "artifact_sha256": "86b80fa11d2683f5b6413a564c62e437109b1ef41e84294aeb22087a03e795d8",
-        "boundary_review": "DXCVII51950, Pius PP.VII51961, §§1–4 complete date52085–52089. Next59852095.",
-        "date": null,
-        "decision": "admit",
+        "decision": "hold",
         "document_id": "bullarium-continuatio.volume-13.line-00051765.part-02",
-        "genre": "apostolic-brief",
-        "language": "la",
-        "parent_id": "bullarium-continuatio.volume-13.line-00051765",
         "physical_line_ranges": [
           [
             51950,
@@ -255208,17 +255230,45 @@
             52089
           ]
         ],
-        "printed_attribution": "Pius PP. VII.",
-        "reading_order_review": "Normal L/R leaves393–394, benevi-/sum52011/52040 natural; own grant/derogation margins52029–52034 retained.",
-        "review_note": "Fully read LF51950–52089 with at least20 LF context; DXCVII51950, Pius PP.VII51961, §§1–4 complete date52085–52089. Next59852095. Normal L/R leaves393–394, benevi-/sum52011/52040 natural; own grant/derogation margins52029–52034 retained. Whole Latin renewal brief, historical grant recited by reference, necessity/automatic cessation conditions and complete date. Distinct renewal, no duplicate inferred. No existing-work join or normalized act date asserted.",
-        "reviewed_extent": "Every physical LF51950–52089, with20 LF context on each side, including all substantive sections, closing and own historical notes.",
-        "source_attribution_lines": [
-          51961,
-          51961
-        ],
-        "source_extent_review": "Whole Latin renewal brief, historical grant recited by reference, necessity/automatic cessation conditions and complete date. Distinct renewal, no duplicate inferred.",
+        "review_note": "Reader withdrawn by manual native-image review: the printed marginal notes beside the selected extent appear as OCR text inside body paragraphs (3 loci). A complete ordered reader needs a coordinate reading-order derivative; source bounds and the prior PDF remain retained. Audit report SHA-256 67d8bfdf897ff71d18de92239e3f5a7f0beef2ea23d66eefa728c7b46002c78a.",
         "title": "Prorogatio privilegii Francisci Cesarei Leoni ad aliud decennium"
       },
+      "review_history": [
+        {
+          "artifact_sha256": "86b80fa11d2683f5b6413a564c62e437109b1ef41e84294aeb22087a03e795d8",
+          "boundary_review": "DXCVII51950, Pius PP.VII51961, §§1–4 complete date52085–52089. Next59852095.",
+          "date": null,
+          "decision": "admit",
+          "document_id": "bullarium-continuatio.volume-13.line-00051765.part-02",
+          "genre": "apostolic-brief",
+          "language": "la",
+          "parent_id": "bullarium-continuatio.volume-13.line-00051765",
+          "physical_line_ranges": [
+            [
+              51950,
+              52020
+            ],
+            [
+              52029,
+              52034
+            ],
+            [
+              52040,
+              52089
+            ]
+          ],
+          "printed_attribution": "Pius PP. VII.",
+          "reading_order_review": "Normal L/R leaves393–394, benevi-/sum52011/52040 natural; own grant/derogation margins52029–52034 retained.",
+          "review_note": "Fully read LF51950–52089 with at least20 LF context; DXCVII51950, Pius PP.VII51961, §§1–4 complete date52085–52089. Next59852095. Normal L/R leaves393–394, benevi-/sum52011/52040 natural; own grant/derogation margins52029–52034 retained. Whole Latin renewal brief, historical grant recited by reference, necessity/automatic cessation conditions and complete date. Distinct renewal, no duplicate inferred. No existing-work join or normalized act date asserted.",
+          "reviewed_extent": "Every physical LF51950–52089, with20 LF context on each side, including all substantive sections, closing and own historical notes.",
+          "source_attribution_lines": [
+            51961,
+            51961
+          ],
+          "source_extent_review": "Whole Latin renewal brief, historical grant recited by reference, necessity/automatic cessation conditions and complete date. Distinct renewal, no duplicate inferred.",
+          "title": "Prorogatio privilegii Francisci Cesarei Leoni ad aliud decennium"
+        }
+      ],
       "scan_leaf_ids": [
         392,
         393,
@@ -255228,7 +255278,7 @@
       "segment_path": "src/sources/works/bullarium-continuatio/volume-13-line-00051765-part-02/editions/1847-bullarium-continuatio-volume-13-la/segments/source-ocr.toml",
       "selection_start": 51765,
       "source_heading_raw": "Dxcvn. ",
-      "status": "admitted-complete",
+      "status": "specifically-held",
       "title_raw": "Dxcvn. ",
       "volume_key": "volume-13",
       "work_id": "work.bullarium-continuatio.volume-13.line-00051765.part-02"
@@ -518793,7 +518843,7 @@
   "reader_selection_coverage": {
     "note": "Reader-format/selection variants do not increase complete historical-witness counts. Frozen base rows remain resolvable historical components.",
     "variants": 59,
-    "withdrawals": 234
+    "withdrawals": 235
   },
   "render_corrections": [
     {
@@ -518884,7 +518934,7 @@
       "segment_id": "segment.bullarium-continuatio.volume-02.line-00056225.part-03.1837-bullarium-continuatio-volume-02-mul.source-ocr"
     }
   ],
-  "revision": "2026-10-28T18:15:01Z",
+  "revision": "2026-10-28T19:40:25Z",
   "schema": "triptych-papal-series-catalog/v1",
   "scope": "Configured historical source containers and proposed constituents; no complete historical papal-act census or authenticity determination.",
   "series_id": "bullarium-continuatio",

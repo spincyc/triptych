@@ -3155,7 +3155,7 @@
       "title": "Perlatum ad Nos est — Michaeli Lewicki archiepiscopo Leopoliensi Rutheni ritus de primatu et ritibus"
     }
   ],
-  "revision": "2026-10-28T19:36:58Z",
+  "revision": "2026-10-28T19:40:25Z",
   "schema": "triptych-papal-typeset/v1",
   "scope": "Cumulative explicit reader-only corrections; original source controllers and historical base selections remain unchanged.",
   "supersessions": [
@@ -13032,6 +13032,32 @@
         "segment_id": "segment.gregory-xvi-acta.volume-03.line-00020298.part-04.1902-gregory-xvi-acta-volume-03-la.source-ocr.reader-v2",
         "source_sha256": "323a141209419f4d5ba846bba4381470bb7576e7c54206e5a013da13d94e062e"
       }
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.bullarium-continuatio.volume-13.1847-rome-mul.ocr-86b80fa11d26",
+        "id": "bullarium-continuatio.volume-13.line-00051765.part-02",
+        "language": "la",
+        "pdf_sha256": "16094692e749999a018145c2ce44febc0b8ee4726dbda4e8652a0dbe69a8d827",
+        "physical_line_ranges": [
+          [
+            51950,
+            52020
+          ],
+          [
+            52029,
+            52034
+          ],
+          [
+            52040,
+            52089
+          ]
+        ],
+        "segment_id": "segment.bullarium-continuatio.volume-13.line-00051765.part-02.1847-bullarium-continuatio-volume-13-la.source-ocr",
+        "source_sha256": "86b80fa11d2683f5b6413a564c62e437109b1ef41e84294aeb22087a03e795d8"
+      },
+      "reason": "Whole reader withdrawn: manual native-image review confirmed printed marginal note text fused into body paragraphs (3 loci; first at leaf 393, LF 51969). Recorded in src/sources/papal-documents/continuation-source-order-audit.md.",
+      "replacement": null
     }
   ]
 }
