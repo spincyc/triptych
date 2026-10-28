@@ -618,15 +618,17 @@ Second repair pass, 2026-10-28:
   surviving mark, and four readers where a single OCR word spans the margin
   and the body, so a body word prints inside the marginal block.
 - **Straddling words:** a scan of all 400 registered geometry readings found
-  that same word-level mixture in 43 live readings. The 19 that passed page
-  review are held. The 20 already installed (IV 9, VII 6, IX 5) are being
-  checked on native page images before withdrawal or replacement.
+  that same word-level mixture in 43 live readings. A native-image check
+  confirmed 26 of the 43 flagged words. Of the 19 held readers that passed
+  page review, 9 are clean and installed; 10 stay held. Of the 20 already
+  installed, 14 are confirmed (IV 8, VII 2, IX 4) and wait for withdrawal
+  or a corrected replacement.
 
-The release holds 4,812 PDFs and 9,044 pages.
+The release holds 4,821 PDFs and 9,070 pages.
 
 Open:
-- image confirmation of the 39 straddling-word readings, then withdrawal or
-  supersession of the confirmed installed ones;
+- withdrawal or supersession of the 14 confirmed installed straddling-word
+  readings, and a sampled image audit of the lower-confidence crossings;
 - the geometry classifier fix and supersede package for the nine failed
   readers;
 - the next Bullarium batch: X, II, the remaining Turin volumes and the
