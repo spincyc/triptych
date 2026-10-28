@@ -25069,6 +25069,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-08-unit-0173/1883-1883-naples-latin.json` | `1d99bee3d977b58196fc71fec5cba775a3a6e2b304eff9be7722cfd2d59e3fd1` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-08-unit-0174/1883-1883-naples-latin.json` | `319c19a4c21723206ab3feefa90b8bf7e12a7141f8b7b7a9fc2fe270d9eed7d6` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-08-unit-0176/1883-1883-naples-bullarium-volume-08-latin.json` | `3e1bf090b8b8d8f82d436e82de7685020f8155e1c53c24bd359057769e995ba9` |
+| `src/web/data/structure/sources/editions/bullarium-romanum/volume-08-unit-0176/1883-1883-naples-bullarium-volume-08-reading-order-v2-latin.json` | `2add96577517a49bb45fd7b90103bf9903195e68d3240e1e7996cc3d7933a008` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-08-unit-0176/1883-1883-naples-latin.json` | `7e0c4085a77c1fdb7147e628ba5829690112df1241d4420fff7cee5d06d1c766` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-08-unit-0177/1883-1883-naples-latin.json` | `5738a569feadeb60776a316a4465116a2e8215e1694cf932ce7c291a1ca6496a` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-08-unit-0178/1883-1883-naples-latin.json` | `42090cf4b2ba88a884f3dc3162254f781d5486b89d8c0008222c8c20bf32b875` |
@@ -25110,7 +25111,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-08-unit-0233/1883-1883-naples-latin.json` | `bf4ff3dc51e9c8fe4d374ec69c45e49dfe8907df993a42de064e7501023941c7` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-08-unit-0235/1883-1883-naples-bullarium-volume-08-latin.json` | `390008c1c8eb90a2d3d49d807191d2b02190347c4f674003c9c4a2022d663f69` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-08-unit-0235/1883-1883-naples-latin.json` | `c7e7f28c30729b15f260be1d1bce0ee05a38d267739884bc330f7ae6b7cde971` |
-| `src/web/data/structure/sources/editions/bullarium-romanum/volume-08/1883-1883-naples-latin.json` | `bcbc24c9ae95e6197029210667e696f4208b0c310c72aa3ec63d8362d8b8294d` |
+| `src/web/data/structure/sources/editions/bullarium-romanum/volume-08/1883-1883-naples-latin.json` | `2546958d3c9c0f378e69781f6390a4c5b869838823d75ba2a47bcac3a11ab3b6` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-09-unit-0001/1865-1865-turin-bullarium-volume-09-latin.json` | `7f99d1ae7bcb7435c34fa0e939c0fa1a4b9cd3c05cb2498ae6250f6d7e92719d` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-09-unit-0001/1865-1865-turin-latin.json` | `169def2f7d6cff52bd304bf19f4af6895f47b778f3b7896a90deec2a41f5aedb` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-09-unit-0002/1865-1865-turin-bullarium-volume-09-latin.json` | `c231aa62579ab35ca1536aad60ea1b16d8cb8592716c9d0e125808c4f4b1dc55` |
@@ -25381,13 +25382,16 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0028/1867-1867-turin-bullarium-volume-11-latin.json` | `c2628bdd9fc9d75398ad8aeab68e3085d18131ef5cb58ab8d011ed51cb250865` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0028/1867-1867-turin-latin.json` | `9ed4a941cabc5c95bd0dc38a3bd88b156f014a19ec6b80cc268f7fb6aeb7ebcf` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0030/1867-1867-turin-bullarium-volume-11-latin.json` | `013acee920bfce7a4c69214c946d9e663e917ef494a695e7610918f13abca79e` |
+| `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0030/1867-1867-turin-bullarium-volume-11-reading-order-v2-latin.json` | `beb772ed012970a9f11636df8829d752e55ec62f5eab025a830dd7fb6a11c55d` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0030/1867-1867-turin-latin.json` | `79cfe6627dd8a38719de08899b0f1388cfe1f593ee1393b38a884e4b88b8d082` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0033/1867-1867-turin-bullarium-volume-11-latin.json` | `94a2b3f673b41c616ae717ec0ef5e121cbc116acaae355bab8d75608e47f065c` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0033/1867-1867-turin-latin.json` | `43bc7cfdcb7fe98461fd5d9573fd6d7f6ae8c51d9391f40b0359d7be764b2d5c` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0034/1867-1867-turin-latin.json` | `3b014f6e6422a627a70bba85abbe5c8bbc056f6fc147269a52bf713fa0b3737b` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0037/1867-1867-turin-bullarium-volume-11-latin.json` | `63654f10dc38c632e7f7238f58d08cc6fc88fb14d45af3bd142db01b2c6b57e2` |
+| `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0037/1867-1867-turin-bullarium-volume-11-reading-order-v2-latin.json` | `2dace0db6094e7fc4f82f8a2245c537632f346743e599eaecc8bc20ace351c0e` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0037/1867-1867-turin-latin.json` | `8920ebbadba5dacd1193c28ebf3b0bf89bcd983a5c868ddb4864c5d76737e9e0` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0038/1867-1867-turin-bullarium-volume-11-latin.json` | `2ac3c74eb6f46fdb7cf40c0242e0ee21528bbe8070f2f6f478b80a0d0a742ffa` |
+| `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0038/1867-1867-turin-bullarium-volume-11-reading-order-v2-latin.json` | `c2dc8e32da5626bc5450f803b7332d5fdc14c169bf0e3d00ef7cc1119b613135` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0038/1867-1867-turin-latin.json` | `c885cfd8e24755663a86fcf5a75430cf2374a17c388353213d5cddc8703e0ab3` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0039/1867-1867-turin-bullarium-volume-11-latin.json` | `44f2f53100630155ca3aa1ff097751c9c2566d8b97a9dc6fbee4e8d5d8a0d39f` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0039/1867-1867-turin-latin.json` | `c6ce7f0782d385a091f67e8af823cd46e8e1ade0552cad90a3de7023eb772d32` |
@@ -25435,6 +25439,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0080/1867-1867-turin-latin.json` | `c851459f9bfb62497df6563da2c91dd7ee71f72e213de9665f7f3994f1245e96` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0082/1867-1867-turin-latin.json` | `4565a46830a73eff751d4e9f5aca35dcaa0858871e30bdd56972fc820e46014e` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0086/1867-1867-turin-bullarium-volume-11-latin.json` | `92cb4f43b04c6420200889c6dc1d064d8fcfc1589c2f00a7738e56d402d3b238` |
+| `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0086/1867-1867-turin-bullarium-volume-11-reading-order-v2-latin.json` | `a4946a9e087f65c81a34845bfeeafd38c73b52bcde2a4e7fa1a5331f17bf4fad` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0086/1867-1867-turin-latin.json` | `5367139c4323b9a5be482d1676c8f2290b5db90df0213335a76f7abbfe794ca9` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0087/1867-1867-turin-bullarium-volume-11-latin.json` | `53612327e3f385ac96999ca01201fa36001875eae79c52439f7c4f217ca49c53` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0087/1867-1867-turin-latin.json` | `984738fb4d040a3d40e17bb1cbb1a41dbd5f421e3c7d18ab44c96ec89c6eabb3` |
@@ -25514,7 +25519,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0193/1867-1867-turin-latin.json` | `24569a95611fa1b4c52511ae43a5ef4b3386f756192b456f7fd031d974b4cc86` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0195/1867-1867-turin-latin.json` | `85777a77c9fb0221a86ce2f4176bab89cecf3feaf726dde0969e6317e3d36d76` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-11-unit-0196/1867-1867-turin-latin.json` | `5b5914bfda70a80ae87e4220540167bc953f466a6ac7c7d9f02c058627af4751` |
-| `src/web/data/structure/sources/editions/bullarium-romanum/volume-11/1867-1867-turin-latin.json` | `3b97df3297b878bef60a63c7afedb084ab921f6662f2698b34fc709a428a3d93` |
+| `src/web/data/structure/sources/editions/bullarium-romanum/volume-11/1867-1867-turin-latin.json` | `f785175cfc34f9b413e714f83a70fd588a1e29036fc255ad7638fc7903f8c19f` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-12-unit-0003/1867-1867-turin-latin.json` | `7320f5edc79059d86dc774f598c1473de46679dbff6b5d1db105f9d78006afac` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-12-unit-0011/1867-1867-turin-latin.json` | `c363bc19c41ee94964c0b0f4cf8ab905904d645122460a39850bb01217744818` |
 | `src/web/data/structure/sources/editions/bullarium-romanum/volume-12-unit-0018/1867-1867-turin-latin.json` | `47d32a83f17355b7438509c3117d30ad6b58a26ab16d587b1c69d41fa4f41a92` |
@@ -34616,7 +34621,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/william-williams/guide-me-o-thou-great-jehovah/2026-hymnal-of-praise-1913-hymnary-web-2026-07-29.json` | `0c387edabb7fcde38b30186316a98931754e5184bea07b1c3f437c3192f8e195` |
 | `src/web/data/structure/sources/editions/world-health-organization/icd-11-clinical-descriptions-and-diagnostic-requirements/2024-english-who-2024.json` | `97b5a08dc7e0a83a6c4da5990e21e8fcc2e4356d569903f09b8b97d34f1672aa` |
 | `src/web/data/structure/sources/editions/world-intellectual-property-organization/wipo-lex-berne-contracting-parties/2026-web-2026-08-01.json` | `ffaf08c0f47cd6ab1d4761546a9e290ce69420b185c891d67395fcc17d5d9d5e` |
-| `src/web/data/structure/sources/index.json` | `d912c9fab069a7ca268ebf95e69ee65863bd994040dae06bf48a87607b7d2130` |
+| `src/web/data/structure/sources/index.json` | `398ce63e89f0c85d637affc5a9eb7bcdefb8cbe11028c71c0a0751c726ba3d49` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.1.json` | `bf80df77e273500e8769a0a0613d4bb907a736fafce970a0e62804eda1219c58` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.10.json` | `14700390dab93606af7e6e934d457e2ed524f13977f64bb6ede3f04daea4521d` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.100.json` | `c9b31161f4c7f56ea4c89bfaa550e47bc6327f5b8db9f685dc5bf2a4d73d1de2` |
