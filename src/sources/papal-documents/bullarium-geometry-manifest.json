@@ -102,6 +102,53 @@
       "title": "Dp  clectione  praelalonnn  congregationis S'indi Bernardiin  Italia  monachorum Ordinis  Cisterciensis  regularis  obser- vantiae,  de  celerò  facienda  ex  universo numero  sacerdolum  dictae  congregatio- lìis ,  qui  minora  officia  laudabiliter biennio  exercucrinl  *."
     },
     {
+      "artifact_id": "artifact.bullarium-romanum.volume-12.1867-turin-latin.coordinate-order-v2-5931620559a0",
+      "date": null,
+      "document_type": "Historical papal act (printed attribution)",
+      "extent_kind": "printed-act",
+      "id": "bullarium.volume-12.unit-0107.full-order-v2",
+      "language": "la",
+      "language_label": "Latin",
+      "physical_line_ranges": [
+        [
+          65639,
+          65778
+        ],
+        [
+          65785,
+          65796
+        ],
+        [
+          65830,
+          66332
+        ],
+        [
+          66338,
+          66345
+        ],
+        [
+          66356,
+          66860
+        ],
+        [
+          66873,
+          66941
+        ]
+      ],
+      "pope": "Paulus  Episcopns , \nservus  servorum  Dei. \nDilocto  Clio  nostro  et  Sedis  Apostolicae  nun- \nciò  in  regno  Poloniae  residenti,  salutem \net  apostolicam  benedictionem \n",
+      "revision": "2026-10-26T15:57:13Z",
+      "rights_basis": "United States: the identified Turin 1867 printing, Volume XII, was published before 1931. Its historical Latin and contemporary editorial apparatus have an expired-term basis under the repository papal-documents-rights-v1.toml assessment (17 USC 104A, 304, 305). Mechanical OCR and generated page data add no original authorship (Compendium 313.4(A)); factual digitization/library marks introduce no modern creative introduction or translation. No worldwide public-domain claim or Triptych license over source wording is asserted.",
+      "rights_notice": "1867 Turin printing: public domain in the United States.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.bullarium-romanum.volume-12.unit-0107.part-01.1867-turin-bullarium-volume-12-latin.source-ocr",
+      "segment_path": "src/sources/works/bullarium-romanum/volume-12-unit-0107-part-01/editions/1867-turin-bullarium-volume-12-latin/segments/source-ocr.toml",
+      "sha256": "5931620559a0fb2a25c05293ddad02bc89e82f6fa8140df39a3bd90a88193294",
+      "source_note": "From Bullarium Romanum, volume-12, 1867-turin-bullarium-volume-12-latin. Source-derived reading-order LF lines 65639-65778; 65785-65796; 65830-66332; 66338-66345; 66356-66860; 66873-66941. Exact scan leaf bounds 494-497; automated printed-page labels remain unverified. Uncorrected, uncollated source OCR. The selected witness retains its source headings, identified historical notes, dating/signatures and literal abbreviations without expansion. Attribution is the printing's; source dates remain literal and no normalized act date is supplied. Latin printed witness. Reading order follows the inspected body columns on scan leaves 494–497 (printed pages 456–459). The marginal summaries and all historical notes remain included as separate blocks. Eight uncertain interline OCR recognitions are retained separately from continuous prose. The historical apparatus records tentative lexical conjectures, alternative readings and an editorially added word; its wording remains literal, and no further words are supplied or adopted. The printed sections 1–4 and full and short dating survive. Page reordering changes serialization and whitespace between intact XML WORDs. OCR characters have not been collated throughout against the images, and historical attribution and dating have not been authenticated.",
+      "source_url": "https://archive.org/download/bullarumdiplomat12cath/bullarumdiplomat12cath_djvu.txt",
+      "text_path": "src/sources/works/bullarium-romanum/volume-12/editions/1867-turin-latin/artifacts/coordinate-order-v2-5931620559a0/hybrid.txt",
+      "title": "Nuttdo  apostolico  in  Poloniae  regno  com- \nmittitur  dismembrano  decimarutn  ma- \nuipulariuìH  praeffcturae  Lomzensis  a \nmensa  episcopali  Plocensi ,  eammque \nunio  mensae  capiluìari  prò  distribu- \nlionum  i]uotìdiatìarum  awjmenlo^ . \n"
+    },
+    {
       "artifact_id": "artifact.bullarium-romanum.volume-12.1867-turin-latin.coordinate-order-v1-e69d188972ee",
       "date": null,
       "document_type": "Historical papal act (printed attribution)",
@@ -141,8 +188,21 @@
       ],
       "revision": "2026-10-26T12:17:19Z",
       "sha256": "ebae0891e81c6d34914ee403505e87528ba66f07321e3a95259fa26fb6707d58"
+    },
+    {
+      "archive_git_commit": "408070d3e815d8c143e33395bb8bc9029d562547",
+      "archive_git_path": "src/sources/papal-documents/bullarium-geometry-manifest.json",
+      "archive_key": "sha256:f3a701fbf9cc750caf61400d61f7b96cc8eedf6395576ed39bdd856270b0ca73",
+      "document_ids": [
+        "bullarium.volume-08.unit-0066.part-01",
+        "bullarium.volume-08.unit-0067.part-01",
+        "bullarium.volume-08.unit-0155.part-01",
+        "bullarium.volume-12.unit-0107.part-01"
+      ],
+      "revision": "2026-10-26T12:42:17Z",
+      "sha256": "f3a701fbf9cc750caf61400d61f7b96cc8eedf6395576ed39bdd856270b0ca73"
     }
   ],
-  "revision": "2026-10-26T12:42:17Z",
+  "revision": "2026-10-26T15:57:13Z",
   "schema": "triptych-papal-typeset/v1"
 }

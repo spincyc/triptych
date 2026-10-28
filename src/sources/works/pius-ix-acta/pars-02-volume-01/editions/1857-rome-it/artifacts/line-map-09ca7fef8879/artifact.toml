@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.pius-ix-acta.pars-02-volume-01.1857-rome-it.line-map-09ca7fef8879"
+edition_id = "edition.pius-ix-acta.pars-02-volume-01.1857-rome-it"
+artifact_type = "mechanical-line-leaf-map"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "licensed"
+license = "CC-BY-4.0"
+retrieved = "2026-10-26"
+rights_basis = "Project-created factual correspondence data under CC BY 4.0; source words retain their separately identified historical rights."
+sha256 = "09ca7fef88799655accb156174cd639ee6abbd82b51ed8f45ea1e82b6b8fafcf"
+byte_size = 273605
+path = "src/sources/works/pius-ix-acta/pars-02-volume-01/editions/1857-rome-it/artifacts/line-map-09ca7fef8879/line-map.json"
+derived_from = "artifact.pius-ix-acta.pars-02-volume-01.1857-rome-it.xml-12ee8c2810c6"
+support_artifacts = [{ artifact_id = "artifact.pius-ix-acta.pars-02-volume-01.1857-rome-it.ocr-34d40fa922b1", embedded_reference = "ocr.txt" }, { artifact_id = "artifact.pius-ix-acta.pars-02-volume-01.1857-rome-it.labels-3944f8753fe8", embedded_reference = "page_numbers.json" }]
+transformation = "Compare every whole TXT whitespace token with every XML WORD token; derive raw LF positions and leaf identifiers from explicit XML filenames. Automated labels join by leaf ID. Replay with artifact.triptych.historical-papal-line-mapping.2026-10-26-v1-21d25700.recipe-21d25700861f."
+provenance = "Mechanical correspondence over complete acquired inputs; no generated source text."
+notes = "Mapping pins exact OCR and XML hashes. Layout flags are conservative leads, not verified reading order or printed pagination."

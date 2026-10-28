@@ -1,5 +1,6 @@
 """Bullarium source bounds, geometry warnings and truthful constituent ownership."""
 import hashlib
+import io
 import json
 from pathlib import Path
 import sys
@@ -106,6 +107,145 @@ class BullariumTests(unittest.TestCase):
         self.assertEqual(segment["schema"],2)
         self.assertEqual(segment["physical_line_ranges"],[[1,5]])
         self.assertEqual(len(list((self.root/"src/sources/works").rglob("ocr.txt"))),1)
+
+    def test_source_records_are_absent_or_byte_identical(self):
+        for kind in ("work","edition","segment","artifact"):
+            with self.subTest(kind=kind):
+                path=self.root/kind/(kind+".toml")
+                data={"record_type":kind,"id":kind+".example","title":"Original"}
+                b.record(path,data)
+                frozen=path.read_bytes()
+                modified=path.stat().st_mtime_ns
+                b.record(path,data)
+                self.assertEqual((path.read_bytes(),path.stat().st_mtime_ns),(frozen,modified))
+                with self.assertRaisesRegex(ValueError,"new source/selection identity"):
+                    b.record(path,{**data,"title":"Replacement"})
+                self.assertEqual(path.read_bytes(),frozen)
+
+    def test_registration_replays_exact_bytes_and_rejects_an_artifact_payload_collision(self):
+        paths={}
+        downloads=[]
+        for kind,filename,payload,format_ in (
+                ("ocr","ocr.txt",b"Verba integra.\n","DjVuTXT"),
+                ("xml","ocr.xml",b"<DjVuXML/>\n","Djvu XML"),
+                ("labels","page_numbers.json",b'{"pages":[]}\n',"Page Numbers JSON")):
+            path=self.root/"acquired"/filename
+            b.write(path,payload)
+            paths[kind]=path
+            downloads.append({"source_format":format_,"url":"https://example.org/"+filename,
+                "size_bytes":len(payload),"source_declared_sha1":hashlib.sha1(payload).hexdigest()})
+        archive={"publication_year":1857,"downloads":downloads}
+        mapping={"pages":[]}
+        container=b.register(self.root,1,archive,paths,mapping)
+        frozen={p:p.read_bytes() for p in self.root.rglob("*") if p.is_file()}
+        self.assertEqual(b.register(self.root,1,archive,paths,mapping),container)
+        self.assertEqual({p:p.read_bytes() for p in self.root.rglob("*") if p.is_file()},frozen)
+        artifact=tomllib.loads((self.root/container["artifacts"]["ocr"]["manifest"]).read_text())
+        (self.root/artifact["path"]).write_bytes(b"A conflicting preexisting payload.\n")
+        frozen={p:p.read_bytes() for p in self.root.rglob("*") if p.is_file()}
+        with self.assertRaisesRegex(ValueError,"new source/selection identity"):
+            b.register(self.root,1,archive,paths,mapping)
+        self.assertEqual({p:p.read_bytes() for p in self.root.rglob("*") if p.is_file()},frozen)
+
+    def test_admission_preflights_an_orphan_segment_collision(self):
+        artifact,units=self.admission_fixture(count=1)
+        review=self.review(artifact,units[0],1)
+        target=self.root/"src/sources/works/bullarium-romanum/volume-01-unit-0001/editions/1857-turin-latin/segments/source-ocr.toml"
+        b.record(target,{"record_type":"segment","id":"segment.prior","artifact_sha256":"0"*64})
+        frozen={p:p.read_bytes() for p in self.root.rglob("*") if p.is_file()}
+        with self.assertRaisesRegex(ValueError,"new source/selection identity"):
+            b.admit(self.root,[review],"2026-10-26T04:00:00Z")
+        self.assertEqual({p:p.read_bytes() for p in self.root.rglob("*") if p.is_file()},frozen)
+
+    def test_later_collision_does_not_partially_register_an_earlier_unit(self):
+        artifact,units=self.admission_fixture()
+        reviews=[self.review(artifact,unit,i) for i,unit in enumerate(units,1)]
+        target=self.root/"src/sources/works/bullarium-romanum/volume-01-unit-0002/editions/1857-turin-latin/edition.toml"
+        b.record(target,{"record_type":"edition","id":"edition.prior","title":"Retained"})
+        frozen={p:p.read_bytes() for p in self.root.rglob("*") if p.is_file()}
+        with self.assertRaisesRegex(ValueError,"new source/selection identity"):
+            b.admit(self.root,reviews,"2026-10-26T04:00:00Z")
+        self.assertEqual({p:p.read_bytes() for p in self.root.rglob("*") if p.is_file()},frozen)
+
+    def test_manifest_endpoints_cannot_alias_pending_source_records(self):
+        artifact,units=self.admission_fixture(count=1)
+        review=self.review(artifact,units[0],1)
+        base="src/sources/works/bullarium-romanum/volume-01-unit-0001/"
+        paths=[base+"work.toml",base+"editions/1857-turin-latin/edition.toml",
+            base+"editions/1857-turin-latin/segments/source-ocr.toml"]
+        frozen={p:p.read_bytes() for p in self.root.rglob("*") if p.is_file()}
+        for endpoint in ("manifest_path","fragment_manifest_path"):
+            for path in paths:
+                with self.subTest(endpoint=endpoint,path=path):
+                    with self.assertRaisesRegex(ValueError,"manifest.*(?:alias|source)"):
+                        b.admit(self.root,[review],"2026-10-26T04:00:00Z",**{endpoint:path})
+                    self.assertEqual({p:p.read_bytes() for p in self.root.rglob("*") if p.is_file()},frozen)
+
+    def test_manifest_endpoints_must_be_distinct_before_any_registration(self):
+        artifact,units=self.admission_fixture(count=1)
+        review=self.review(artifact,units[0],1)
+        frozen={p:p.read_bytes() for p in self.root.rglob("*") if p.is_file()}
+        for path in ("shared-new.json",b.MANIFEST):
+            with self.subTest(path=path):
+                with self.assertRaisesRegex(ValueError,"manifest.*distinct"):
+                    b.admit(self.root,[review],"2026-10-26T04:00:00Z",manifest_path=path,fragment_manifest_path=path)
+                self.assertEqual({p:p.read_bytes() for p in self.root.rglob("*") if p.is_file()},frozen)
+
+    def test_manifest_endpoints_cannot_alias_catalog_or_review_inputs(self):
+        artifact,units=self.admission_fixture(count=1)
+        review=self.review(artifact,units[0],1)
+        frozen={p:p.read_bytes() for p in self.root.rglob("*") if p.is_file()}
+        for endpoint in ("manifest_path","fragment_manifest_path"):
+            for path in (b.CATALOG,str(review.relative_to(self.root))):
+                with self.subTest(endpoint=endpoint,path=path):
+                    with self.assertRaisesRegex(ValueError,"manifest.*alias"):
+                        b.admit(self.root,[review],"2026-10-26T04:00:00Z",**{endpoint:path})
+                    self.assertEqual({p:p.read_bytes() for p in self.root.rglob("*") if p.is_file()},frozen)
+
+    def test_resolved_manifest_endpoint_aliases_are_rejected(self):
+        artifact,units=self.admission_fixture(count=1)
+        review=self.review(artifact,units[0],1)
+        alias=self.root/"manifest-alias.json"
+        alias.symlink_to(self.root/b.MANIFEST)
+        frozen={p:p.read_bytes() for p in self.root.rglob("*") if p.is_file()}
+        with self.assertRaisesRegex(ValueError,"manifest.*distinct"):
+            b.admit(self.root,[review],"2026-10-26T04:00:00Z",fragment_manifest_path=str(alias))
+        self.assertEqual({p:p.read_bytes() for p in self.root.rglob("*") if p.is_file()},frozen)
+
+    def test_manifest_cannot_overwrite_a_source_payload_outside_the_source_tree(self):
+        artifact,units=self.admission_fixture(count=1)
+        payload=b'{"documents": [], "attribution": "Leo Papa I"}\n'
+        target=self.root/"controller.json"
+        b.write(target,payload)
+        artifact.update(path="controller.json",sha256=b.sha(payload),byte_size=len(payload))
+        metadata=self.root/"src/sources/works/bullarium-romanum/volume-01/editions/1857-turin-latin/artifacts/ocr/artifact.toml"
+        metadata.write_bytes(b.record_bytes(artifact))
+        catalog=json.loads((self.root/b.CATALOG).read_text())
+        catalog["units"][0]["artifact_sha256"]=artifact["sha256"]
+        catalog["volumes"][0]["container"]["artifacts"]["ocr"]["sha256"]=artifact["sha256"]
+        b.write(self.root/b.CATALOG,b.json_bytes(catalog))
+        review=self.review(artifact,units[0],1)
+        data=json.loads(review.read_text());data["reviews"][0].update(physical_line_ranges=[[1,1]],source_attribution_lines=[1,1])
+        b.write(review,b.json_bytes(data))
+        frozen={p:p.read_bytes() for p in self.root.rglob("*") if p.is_file()}
+        for endpoint in ("manifest_path","fragment_manifest_path"):
+            with self.subTest(endpoint=endpoint):
+                with self.assertRaisesRegex(ValueError,"manifest.*alias"):
+                    b.admit(self.root,[review],"2026-10-26T04:00:00Z",**{endpoint:"controller.json"})
+                self.assertEqual({p:p.read_bytes() for p in self.root.rglob("*") if p.is_file()},frozen)
+
+    def test_cli_manifest_cannot_replace_its_reader_notes_input(self):
+        artifact,units=self.admission_fixture(count=1)
+        review=self.review(artifact,units[0],1)
+        notes=self.root/"reader-notes.json"
+        b.write(notes,b.json_bytes({units[0]["id"]:{"reader_source_note":"Retained source note."}}))
+        frozen={p:p.read_bytes() for p in self.root.rglob("*") if p.is_file()}
+        with patch("sys.stderr",new_callable=io.StringIO) as errors:
+            result=b.main(["--root",str(self.root),"admit","--review",str(review),"--revision","2026-10-26T04:00:00Z",
+                "--reader-notes",str(notes),"--manifest-out",str(notes),"--json"],examples={})
+        self.assertEqual(result,2)
+        self.assertIn("alias",json.loads(errors.getvalue())["error"])
+        self.assertEqual({p:p.read_bytes() for p in self.root.rglob("*") if p.is_file()},frozen)
 
     def test_admissions_are_cumulative(self):
         artifact,units=self.admission_fixture()
@@ -299,6 +439,48 @@ class BullariumTests(unittest.TestCase):
         self.assertEqual((self.root/prior["segment_path"]).read_bytes(),old_segment)
         self.assertEqual(work_path.read_bytes(),old_work)
         self.assertEqual((result["additional_reading_selections"],result["identified_additional_source_units"]),(1,0))
+
+    def canonical_ordered_variant_fixture(self):
+        order_path,derived=self.source_order_fixture()
+        child=json.loads(order_path.read_text())["reviews"][0]["constituents"][0]
+        catalog=json.loads((self.root/b.CATALOG).read_text())
+        raw=tomllib.loads((self.root/catalog["volumes"][0]["container"]["artifacts"]["ocr"]["manifest"]).read_text())
+        b.admit(self.root,[self.review(raw,catalog["units"][0],1)],"2026-10-26T03:00:00Z")
+        prior=json.loads((self.root/b.CATALOG).read_text())["units"][0]
+        child.update(unit_id=prior["id"]+".ordered-v2",parent_unit_id=prior["id"],
+            canonical_work_id=prior["work_id"],identity_evidence={"existing_work_id":prior["work_id"],"basis":"Same synthetic act, independently checked ordered source."},
+            reading_selection_variant_of=prior["id"])
+        path=self.root/"ordered-v2-review.json"
+        b.write(path,b.json_bytes({"schema":"triptych-bullarium-boundary-reviews/v1","reviews":[child]}))
+        b.admit(self.root,[path],"2026-10-26T04:00:00Z")
+        return path,derived
+
+    def test_second_ordered_canonical_join_cannot_replace_an_existing_selection(self):
+        first_path,derived=self.canonical_ordered_variant_fixture()
+        first=json.loads(first_path.read_text())["reviews"][0]
+        payload=b"Leo Papa I\nTitulus\nAlia verba integra.\nData Romae.\n"
+        folder=self.root/Path(derived["path"]).parent.parent/"coordinate-order-v3"
+        b.write(folder/"ocr.txt",payload)
+        replacement={**derived,"id":"artifact.example.coordinate-order-v3","path":str((folder/"ocr.txt").relative_to(self.root)),
+            "sha256":b.sha(payload),"byte_size":len(payload)}
+        b.record(folder/"artifact.toml",replacement)
+        catalog=json.loads((self.root/b.CATALOG).read_text())
+        catalog["volumes"][0]["container"]["artifacts"]["coordinate-order-v3"]={"id":replacement["id"],"sha256":replacement["sha256"],"manifest":str((folder/"artifact.toml").relative_to(self.root))}
+        b.write(self.root/b.CATALOG,b.json_bytes(catalog))
+        second={**first,"unit_id":first["parent_unit_id"]+".ordered-v3","source_artifact_id":replacement["id"],
+            "artifact_sha256":replacement["sha256"],"reading_selection_variant_of":first["unit_id"]}
+        path=self.root/"ordered-v3-review.json"
+        b.write(path,b.json_bytes({"schema":"triptych-bullarium-boundary-reviews/v1","reviews":[second]}))
+        frozen={p:p.read_bytes() for p in self.root.rglob("*") if p.is_file()}
+        with self.assertRaisesRegex(ValueError,"new source/selection identity"):
+            b.admit(self.root,[path],"2026-10-26T05:00:00Z")
+        self.assertEqual({p:p.read_bytes() for p in self.root.rglob("*") if p.is_file()},frozen)
+
+    def test_exact_ordered_canonical_join_replay_keeps_all_original_bytes(self):
+        path,_=self.canonical_ordered_variant_fixture()
+        frozen={p:p.read_bytes() for p in self.root.rglob("*") if p.is_file()}
+        b.admit(self.root,[path],"2026-10-26T04:00:00Z")
+        self.assertEqual({p:p.read_bytes() for p in self.root.rglob("*") if p.is_file()},frozen)
 
     def test_discovered_child_does_not_inherit_other_acts_protocol_or_date_leads(self):
         artifact,units=self.admission_fixture(count=1)

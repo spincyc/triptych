@@ -1,0 +1,59 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "immutable-coordinate-projection-software",
+   "byte_size": 1644,
+   "edition_owned": true,
+   "id": "artifact.triptych.historical-papal-line-mapping.2026-10-26-character-replay-ubi-v1.normalizer-6a4f22772ad7",
+   "media_type": "text/x-python",
+   "notes": "Exact self-contained attribute-only adapter for original five-coordinate DjVu XML on leaves26–28. Fifth fields remain in the exact original source; no WORD value, order, non-coordinate attribute or unrelated source byte changes. Bbox semantics are proved directly by3029 native character unions and three native image dimension matches.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "licensed",
+   "rights_basis": "Project-created processing software under the repository MIT terms; historical source wording retains its own rights.",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "immutable-character-replay-software-bundle",
+   "byte_size": 112640,
+   "edition_owned": true,
+   "id": "artifact.triptych.historical-papal-line-mapping.2026-10-26-character-replay-ubi-v1.replay-engine-39d50b7999c3",
+   "media_type": "application/x-tar",
+   "notes": "Immutable MIT software snapshots and a thin replay wrapper. Editable authorities remain the repository scripts; this archive freezes exact reproducibility, attributes processing to Triptych contributors and never attributes historical wording to software.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "licensed",
+   "rights_basis": "Project-created processing software under the repository MIT terms; historical source wording retains its own rights.",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-10-26",
+  "editors": [],
+  "id": "edition.triptych.historical-papal-line-mapping.2026-10-26-character-replay-ubi-v1",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "Triptych project processing software; character-geometry-v1 snapshot",
+  "title": "Immutable native-character replay engine and exact coordinate adapter",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Triptych contributors",
+  "category": "processing-method",
+  "description": "Project software that checks complete OCR/XML token identity and records physical source lines and explicit scan leaf identifiers. The method does not establish textual accuracy, reading order or authenticity.",
+  "id": "work.triptych.historical-papal-line-mapping",
+  "languages": [
+   "en"
+  ],
+  "title": "Exact token and line-to-leaf mapping for historical papal sources"
+ }
+}

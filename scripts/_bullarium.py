@@ -83,8 +83,33 @@ def toml_value(value):
     raise ValueError("unsupported TOML field")
 
 
+def record_bytes(data):
+    return ("\n".join(f"{key} = {toml_value(value)}" for key,value in data.items())+"\n").encode()
+
+
+def check_source_write(path, data):
+    if path.exists() or path.is_symlink():
+        if not path.is_file() or path.read_bytes()!=data:
+            raise ValueError("existing source bytes are immutable; an explicitly new source/selection identity is required")
+        return True
+    return False
+
+
+def write_source(path, data):
+    """Retain source bytes without replacing an existing or concurrent witness."""
+    if check_source_write(path,data):
+        return
+    path.parent.mkdir(parents=True,exist_ok=True)
+    try:
+        with path.open("xb") as stream:
+            stream.write(data)
+    except FileExistsError:
+        if not check_source_write(path,data):
+            raise
+
+
 def record(path, data):
-    write(path, ("\n".join(f"{key} = {toml_value(value)}" for key,value in data.items())+"\n").encode())
+    write_source(path,record_bytes(data))
 
 
 def roman(number):
@@ -312,7 +337,7 @@ def acquire(root,selected):
             request=urllib.request.Request(url,headers={"User-Agent":"Triptych-Bullarium/1 (public historical-source acquisition)"})
             with urllib.request.urlopen(request,timeout=180) as response:
                 payload=response.read()
-            write(path,payload)
+            write_source(path,payload)
             downloaded+=1
         routes=source_routes(archives.get(volume,{}),paths)
         total+=sum(item["byte_size"] for item in routes.values())
@@ -320,14 +345,47 @@ def acquire(root,selected):
             "responses_reused":reused,"whole_response_bytes":total}
 
 
-def admit(root,review_paths,revision,manifest_path=MANIFEST,fragment_manifest_path=FRAGMENT_MANIFEST,reader_notes=None):
-    catalog=json.loads((root/CATALOG).read_text())
-    units={u["id"]:u for u in catalog["units"]}
-    volumes={v["volume"]:v for v in catalog["volumes"]}
+def admit(root,review_paths,revision,manifest_path=MANIFEST,fragment_manifest_path=FRAGMENT_MANIFEST,reader_notes=None,*,input_paths=()):
+    root=Path(root).resolve()
+    review_paths=[Path(path) for path in review_paths]
     manifest_target=(root/manifest_path).resolve()
     fragment_target=(root/fragment_manifest_path).resolve()
-    if not manifest_target.is_relative_to(root.resolve()) or not fragment_target.is_relative_to(root.resolve()):
-        raise ValueError("manifest destinations must remain inside the repository")
+    targets=(manifest_target,fragment_target)
+    source_records={}
+    source_inputs={(root/CATALOG).resolve(),*(path.resolve() for path in review_paths),
+        *(Path(path).resolve() for path in input_paths)}
+    def aliases(first,second):
+        return first==second or (first.exists() and second.exists() and first.samefile(second))
+    def check_manifest_targets():
+        if any(not target.is_relative_to(root) for target in targets):
+            raise ValueError("manifest destinations must remain inside the repository")
+        if aliases(*targets):
+            raise ValueError("manifest output destinations must be distinct")
+        if any(target.is_relative_to((root/"src/sources/works").resolve()) for target in targets):
+            raise ValueError("manifest output destinations cannot alias the source-record namespace")
+        protected=source_inputs|{path.resolve() for path in source_records}
+        if any(aliases(target,path) for target in targets for path in protected):
+            raise ValueError("manifest output destination aliases a catalog, source or review input")
+    def read_source(path):
+        path=Path(path)
+        resolved=path.resolve()
+        if any(aliases(target,resolved) for target in targets):
+            raise ValueError("manifest output destination aliases a catalog, source or review input")
+        source_inputs.add(resolved)
+        return path.read_bytes()
+    check_manifest_targets()
+    catalog=json.loads(read_source(root/CATALOG))
+    units={u["id"]:u for u in catalog["units"]}
+    volumes={v["volume"]:v for v in catalog["volumes"]}
+    for volume in volumes.values():
+        container=volume["container"]
+        if container.get("line_map_path"):
+            source_inputs.add((root/container["line_map_path"]).resolve())
+        for declaration in container["artifacts"].values():
+            source_inputs.add((root/declaration["manifest"]).resolve())
+            if declaration.get("line_map_path"):
+                source_inputs.add((root/declaration["line_map_path"]).resolve())
+    check_manifest_targets()
     existing=json.loads(manifest_target.read_text()) if manifest_target.exists() else {"documents":[]}
     existing_bytes=manifest_target.read_bytes() if manifest_target.exists() else None
     document_index={document["id"]:document for document in existing["documents"]}
@@ -343,6 +401,13 @@ def admit(root,review_paths,revision,manifest_path=MANIFEST,fragment_manifest_pa
     seen=set()
     source_cache={}
     reader_notes=reader_notes or {}
+    def stage_record(path,data):
+        path=path.resolve()
+        payload=record_bytes(data)
+        check_source_write(path,payload)
+        if path in source_records and source_records[path]!=payload:
+            raise ValueError("conflicting source registrations require an explicitly new source/selection identity")
+        source_records[path]=payload
     def reviewed_child(parent,item,identifier):
         source_id=item.get("source_artifact_id",parent["artifact_id"])
         digest=item.get("artifact_sha256",parent["artifact_sha256"])
@@ -354,7 +419,7 @@ def admit(root,review_paths,revision,manifest_path=MANIFEST,fragment_manifest_pa
             matches=[a for a in container["artifacts"].values() if a["id"]==source_id]
             if len(matches)!=1:
                 raise ValueError("source-order child requires a registered volume controller")
-            derived=tomllib.loads((root/matches[0]["manifest"]).read_text())
+            derived=tomllib.loads(read_source(root/matches[0]["manifest"]).decode())
             if (derived["id"]!=source_id or derived["sha256"]!=digest or
                     derived["edition_id"]!=container["edition_id"] or
                     derived.get("derived_from")!=parent["artifact_id"] or
@@ -382,7 +447,7 @@ def admit(root,review_paths,revision,manifest_path=MANIFEST,fragment_manifest_pa
                 child.pop("protocol",None)
         return child
     for path in review_paths:
-        review=json.loads(path.read_text())
+        review=json.loads(read_source(path))
         if review.get("schema")!="triptych-bullarium-boundary-reviews/v1":
             raise ValueError("unknown boundary review schema")
         pending=list(review["reviews"])+list(review.get("extra_dispositions",[]))
@@ -454,12 +519,12 @@ def admit(root,review_paths,revision,manifest_path=MANIFEST,fragment_manifest_pa
                 if len(matches)!=1:
                     raise ValueError("constituent controller is not registered to its volume")
                 declaration=matches[0]
-                source=tomllib.loads((root/declaration["manifest"]).read_text())
-                payload=(root/source["path"]).read_bytes()
+                source=tomllib.loads(read_source(root/declaration["manifest"]).decode())
+                payload=read_source(root/source["path"])
                 if source["id"]!=source_id or declaration["sha256"]!=source["sha256"] or sha(payload)!=source["sha256"] or len(payload)!=source["byte_size"]:
                     raise ValueError("exact source bytes changed before admission")
                 map_path=container.get("line_map_path") if source_id==container["artifacts"]["ocr"]["id"] else declaration.get("line_map_path")
-                mapping=json.loads((root/map_path).read_text()) if map_path else {"pages":[]}
+                mapping=json.loads(read_source(root/map_path)) if map_path else {"pages":[]}
                 for page in mapping["pages"]:
                     if "output_lf_range_1" in page:
                         span=page["output_lf_range_1"]
@@ -506,7 +571,7 @@ def admit(root,review_paths,revision,manifest_path=MANIFEST,fragment_manifest_pa
             if canonical:
                 if not item.get("identity_evidence") or item["identity_evidence"].get("existing_work_id")!=canonical:
                     raise ValueError("canonical joins require reviewed issuer/date/incipit/source evidence")
-                matches=[path for path in (root/"src/sources/works").glob("*/*/work.toml") if tomllib.loads(path.read_text()).get("id")==canonical]
+                matches=[path for path in (root/"src/sources/works").glob("*/*/work.toml") if tomllib.loads(read_source(path).decode()).get("id")==canonical]
                 if len(matches)!=1:
                     raise ValueError("canonical work identity is absent or ambiguous")
                 base=matches[0].parent
@@ -528,15 +593,15 @@ def admit(root,review_paths,revision,manifest_path=MANIFEST,fragment_manifest_pa
                     raise ValueError("a repaired reading selection requires the same reviewed work and a genuinely new ordered controller")
             if replay_document is None:
                 if not canonical:
-                    record(base/"work.toml",{"schema":1,"record_type":"work","id":work_id,"title":item["title"],
+                    stage_record(base/"work.toml",{"schema":1,"record_type":"work","id":work_id,"title":item["title"],
                         "responsible":item["printed_attribution"],"work_type":"historical-papal-act-fragment" if is_fragment else "historically-attributed-papal-act","languages":item.get("component_languages",[language]),
                         "description":note,"relations":[container["work_id"]]})
                 elif (parent/"edition.toml").exists() and not segment_path.exists():
-                    raise ValueError("an existing canonical edition cannot be overwritten by a new join")
-                record(parent/"edition.toml",{"schema":1,"record_type":"edition","id":edition_id,"work_id":work_id,
+                    raise ValueError("an existing canonical edition requires an explicitly new source/selection identity for a new join")
+                stage_record(parent/"edition.toml",{"schema":1,"record_type":"edition","id":edition_id,"work_id":work_id,
                     "title":item["title"]+" — "+edition_key,"language":language,"date":edition_key[:4],
                     "publication":"Constituent in "+container["work_id"]+", source unit "+unit["act_number_raw"]+".","notes":note})
-                record(segment_path,{"schema":2,"record_type":"segment","id":segment_id,"edition_id":edition_id,
+                stage_record(segment_path,{"schema":2,"record_type":"segment","id":segment_id,"edition_id":edition_id,
                     "artifact_id":source["id"],"artifact_sha256":source["sha256"],"segment_type":"constituent-fragment" if is_fragment else "constituent-work",
                     "physical_line_ranges":ranges,"states":["cataloged","acquired","inspected"],"context":note,
                     "notes":"Review extent: "+item["reviewed_extent"]+" Source text remains uncorrected OCR, with historical synopsis, dating/signatures and apparatus in the selected extent. No image collation or historical authentication is claimed."})
@@ -617,6 +682,11 @@ def admit(root,review_paths,revision,manifest_path=MANIFEST,fragment_manifest_pa
     catalog["source_extent_policy"]["inline_body_margin_fusion"]="Known marginal ownership does not clear word interleaving inside the substantive body. A separately bounded summary can remain literal; confirmed inline fusion stays held until a separately identified derivative restores source order. Frozen prior witnesses remain historical records and are not silently edited."
     catalog["boundary_limit"]="Exact LF ranges identify source candidates. Only explicitly reviewed extents have constituent records; unreviewed candidates remain held. OCR column order, historical attribution and authenticity are independent questions."
     catalog["identity_matching"]="Canonical joins require explicit reviewed incipit, printed issuer, raw dating and distinctive source-context evidence. No title-only merge is made; other unresolved identities remain separate candidates."
+    check_manifest_targets()
+    for path,payload in source_records.items():
+        check_source_write(path,payload)
+    for path,payload in source_records.items():
+        write_source(path,payload)
     write(root/CATALOG,json_bytes(catalog))
     for target,state,prior_bytes,prior_documents,new_documents,extra in (
             (manifest_target,existing,existing_bytes,old_documents,documents,{}),
@@ -673,7 +743,7 @@ def register(root,volume,archive,paths,mapping):
             "notes":(f"The exact {info['byte_size']:,}-byte verbose XML is remote because of measured size and source-machine attributes. Offline alternatives: complete raw OCR and compact exact token/line/leaf map retained in this edition. " if kind=="xml" else "Complete uncorrected response. ")+"Token identity and physical bounds do not establish column reading order or verified printed pagination."}
         if kind!="xml":
             target=directory/paths[kind].name
-            write(target,paths[kind].read_bytes())
+            write_source(target,paths[kind].read_bytes())
             data["path"]=str(target.relative_to(root))
         if kind=="ocr":
             data.update({"indexable":True,"encoding":"utf-8"})
@@ -706,7 +776,7 @@ def register(root,volume,archive,paths,mapping):
         image_id=f"artifact.bullarium-romanum.{key}.{edition}.imprint-{sha(image_bytes)[:12]}"
         image_dir=parent/"artifacts"/f"imprint-{sha(image_bytes)[:12]}"
         image_path=image_dir/"title-page.png"
-        write(image_path,image_bytes)
+        write_source(image_path,image_bytes)
         page=2 if volume=="appendix" else 9
         scale=1800 if volume==8 else 1400
         record(image_dir/"artifact.toml",{"schema":1,"record_type":"artifact","id":image_id,"edition_id":edition_id,
@@ -726,7 +796,7 @@ def register(root,volume,archive,paths,mapping):
     map_id=f"artifact.bullarium-romanum.{key}.{edition}.line-map-{sha(payload)[:12]}"
     directory=parent/"artifacts"/f"line-map-{sha(payload)[:12]}"
     target=directory/"line-map.json"
-    write(target,payload)
+    write_source(target,payload)
     record(directory/"artifact.toml",{"schema":1,"record_type":"artifact","id":map_id,"edition_id":edition_id,
         "artifact_type":"mechanical-line-leaf-map","media_type":"application/json","storage":"tracked",
         "rights_status":"public-domain","rights_basis":rights,"rights_jurisdiction":"United States",
@@ -892,7 +962,7 @@ def main(argv=None,examples=None):
                                 prior[field]+=" "+data
                             else:
                                 prior[field]=data
-                result=admit(root,args.review,args.revision,args.manifest_out,args.fragment_manifest_out,reader_notes)
+                result=admit(root,args.review,args.revision,args.manifest_out,args.fragment_manifest_out,reader_notes,input_paths=args.reader_notes)
         elif args.verb=="acquire":
             result=acquire(root,selected)
         else:

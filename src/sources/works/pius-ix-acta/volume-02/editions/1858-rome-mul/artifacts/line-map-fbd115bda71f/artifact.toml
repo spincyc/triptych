@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.pius-ix-acta.volume-02.1858-rome-mul.line-map-fbd115bda71f"
+edition_id = "edition.pius-ix-acta.volume-02.1858-rome-mul"
+artifact_type = "mechanical-line-leaf-map"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "licensed"
+license = "CC-BY-4.0"
+retrieved = "2026-10-26"
+rights_basis = "Project-created factual correspondence data under CC BY 4.0; source words retain their separately identified historical rights."
+sha256 = "fbd115bda71f30f4edc757e2bab9f445288b19c8477b03719fc3db473a66a2ed"
+byte_size = 235144
+path = "src/sources/works/pius-ix-acta/volume-02/editions/1858-rome-mul/artifacts/line-map-fbd115bda71f/line-map.json"
+derived_from = "artifact.pius-ix-acta.volume-02.1858-rome-mul.xml-222f984dd86e"
+support_artifacts = [{ artifact_id = "artifact.pius-ix-acta.volume-02.1858-rome-mul.ocr-f990bdb4b3f7", embedded_reference = "ocr.txt" }]
+transformation = "Compare every whole TXT whitespace token with every XML WORD token; derive raw LF positions and leaf identifiers from explicit XML filenames. Automated labels join by leaf ID. Replay with artifact.triptych.historical-papal-line-mapping.2026-10-26-v1-21d25700.recipe-21d25700861f."
+provenance = "Mechanical correspondence over complete acquired inputs; no generated source text."
+notes = "Mapping pins exact OCR and XML hashes. Layout flags are conservative leads, not verified reading order or printed pagination."

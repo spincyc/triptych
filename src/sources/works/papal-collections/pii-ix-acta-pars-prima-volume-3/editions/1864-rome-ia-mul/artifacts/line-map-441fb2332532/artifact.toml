@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.papal-collections.pii-ix-acta-pars-prima-volume-3.1864-rome-ia-mul.line-map-441fb2332532"
+edition_id = "edition.papal-collections.pii-ix-acta-pars-prima-volume-3.1864-rome-ia-mul"
+artifact_type = "mechanical-line-leaf-map"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "licensed"
+license = "CC-BY-4.0"
+retrieved = "2026-10-26"
+rights_basis = "Project-created factual correspondence data under CC BY 4.0; source words retain their separately identified historical rights."
+sha256 = "441fb23325324a554e3b6d5a81f7f7eb6f39bbc1bf90a136d69625e12110a9f5"
+byte_size = 272027
+path = "src/sources/works/papal-collections/pii-ix-acta-pars-prima-volume-3/editions/1864-rome-ia-mul/artifacts/line-map-441fb2332532/line-map.json"
+derived_from = "artifact.papal-collections.pii-ix-acta-pars-prima-volume-3.1864-rome-ia-mul.xml-f96407d3d9b9"
+support_artifacts = [{ artifact_id = "artifact.papal-collections.pii-ix-acta-pars-prima-volume-3.1864-rome-ia-mul.ocr-3a788e20d82b", embedded_reference = "ocr.txt" }, { artifact_id = "artifact.papal-collections.pii-ix-acta-pars-prima-volume-3.1864-rome-ia-mul.labels-9da67b19087a", embedded_reference = "page_numbers.json" }]
+transformation = "Compare every whole TXT whitespace token with every XML WORD token; derive raw LF positions and leaf identifiers from explicit XML filenames. Automated labels join by leaf ID. Replay with artifact.triptych.historical-papal-line-mapping.2026-10-26-v1-21d25700.recipe-21d25700861f."
+provenance = "Mechanical correspondence over complete acquired inputs; no generated source text."
+notes = "Mapping pins exact OCR and XML hashes. Layout flags are conservative leads, not verified reading order or printed pagination."

@@ -1,0 +1,101 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "historical-printing-evidence-container",
+   "byte_size": 26087150,
+   "edition_owned": true,
+   "id": "artifact.pius-ix-acta.volume-02.1858-rome-mul.imprint-3b0d1410971d",
+   "media_type": "application/pdf",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/ActaPiiIXII/ActaPiiIX-II.pdf",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "mechanical-line-leaf-map",
+   "byte_size": 235144,
+   "edition_owned": true,
+   "id": "artifact.pius-ix-acta.volume-02.1858-rome-mul.line-map-fbd115bda71f",
+   "media_type": "application/json",
+   "notes": "Mapping pins exact OCR and XML hashes. Layout flags are conservative leads, not verified reading order or printed pagination.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "licensed",
+   "rights_basis": "Project-created factual correspondence data under CC BY 4.0; source words retain their separately identified historical rights.",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "uncorrected-ocr",
+   "byte_size": 958630,
+   "edition_owned": true,
+   "id": "artifact.pius-ix-acta.volume-02.1858-rome-mul.ocr-f990bdb4b3f7",
+   "media_type": "text/plain",
+   "notes": "Exact whole offered response retained without changing its bytes. A token match or an imprint check does not establish complete image collation or act authentication.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "Historical wording and contemporary apparatus of the identified Rome 1858 printing are public domain in the United States by expiration of publication term, under src/sources/inventories/papal-documents-rights-v1.toml. Mechanical OCR does not add original authorship; no corrected or image-collated text is asserted. Google's usage-guidelines front matter and digitizer marks are preserved as separate modern material under the repository's recorded implied-license and independent fair-use assessment in src/sources/inventories/google-usage-guidelines-rights-v1.toml; they are excluded from the historical work, bounded body searches and Triptych's CC BY grant. The Google front-matter prose occupies physical LF lines 1–51 (Italian); recurring digitizer marks and factual library marks remain intact.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/ActaPiiIXII/ActaPiiIX-II_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "mechanical-scan-sequence",
+   "byte_size": 194214,
+   "edition_owned": true,
+   "id": "artifact.pius-ix-acta.volume-02.1858-rome-mul.scandata-4af112d0bb0d",
+   "media_type": "application/xml",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/ActaPiiIXII/ActaPiiIX-II_scandata.xml",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "ocr-layout-xml",
+   "byte_size": 9158613,
+   "edition_owned": true,
+   "id": "artifact.pius-ix-acta.volume-02.1858-rome-mul.xml-222f984dd86e",
+   "media_type": "application/xml",
+   "notes": "The exact 9,158,613-byte verbose XML remains remote for its measured size. Complete raw OCR, exact token/line/leaf correspondence and a standalone replay recipe are retained offline. A token match or an imprint check does not establish complete image collation or act authentication.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "Historical wording and contemporary apparatus of the identified Rome 1858 printing are public domain in the United States by expiration of publication term, under src/sources/inventories/papal-documents-rights-v1.toml. Mechanical OCR does not add original authorship; no corrected or image-collated text is asserted. This exact verbose OCR-layout XML remains remote for its measured byte size; complete raw OCR, exact token/line/leaf map and the standalone replay recipe are retained offline. The source wrapper is distinct from the historical text. Google's usage-guidelines front matter and digitizer marks are preserved as separate modern material under the repository's recorded implied-license and independent fair-use assessment in src/sources/inventories/google-usage-guidelines-rights-v1.toml; they are excluded from the historical work, bounded body searches and Triptych's CC BY grant. ",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/ActaPiiIXII/ActaPiiIX-II_djvu.xml",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1858",
+  "editors": [],
+  "id": "edition.pius-ix-acta.volume-02.1858-rome-mul",
+  "jurisdiction": null,
+  "language": "mul",
+  "publication": "Pii IX Pontificis Maximi Acta, pars prima, volume II. Rome: Ex Typographia Bonarum Artium, habita facultate, 1858.",
+  "title": "Pii IX Pontificis Maximi Acta, pars prima, volume II — 1858",
+  "translators": [],
+  "year": 1858
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Historical collection editors; issuing authorities attributed within each instrument",
+  "category": "historical-document-container",
+  "description": "Historical collection containing acts, constituent instruments and editorial apparatus. Acquiring this container establishes no complete census or authentication of its acts.",
+  "id": "work.pius-ix-acta.volume-02",
+  "languages": [
+   "la",
+   "it"
+  ],
+  "title": "Pii IX Pontificis Maximi Acta, pars prima, volume II"
+ }
+}
