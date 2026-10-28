@@ -192,5 +192,10 @@ affected.
 
 ## Publication
 
-Publication is recorded in `PROJECT-WORK.md` and, once verified, in
-[`deployment-evidence.json`](deployment-evidence.json).
+`origin/main` fast-forwarded to `ffadf81e4e` on 2026-10-28, after two merges
+of `origin/main` into the branch and the three deploy gates passed locally.
+Pages run 40753942788 succeeded, and the three PDFs and the web edition, with
+the Four Last Things correction published in the same push, matched the local
+site build byte for byte on the live site.
+[`deployment-evidence.json`](deployment-evidence.json) records the routes and
+hashes.
