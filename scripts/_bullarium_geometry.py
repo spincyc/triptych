@@ -1313,7 +1313,8 @@ def map_units(root, recipe_path, replay_dir, out_path, *, catalog_path=CATALOG, 
     return report["summary"]
 
 
-def _artifact(root, edition_dir, edition_id, key, filename, payload, raw_record, kind, media_type, notes, derived_from=None):
+def _artifact(root, edition_dir, edition_id, key, filename, payload, raw_record, kind, media_type, notes, retrieved,
+              derived_from=None):
     """Stage one immutable artifact (payload and record) under the volume edition."""
     digest = _sha(payload)
     folder = edition_dir / "artifacts" / f"{key}-{digest[:12]}"
@@ -1322,6 +1323,7 @@ def _artifact(root, edition_dir, edition_id, key, filename, payload, raw_record,
               "rights_status": raw_record["rights_status"], "rights_basis": raw_record["rights_basis"],
               "rights_jurisdiction": raw_record.get("rights_jurisdiction", "United States"),
               "path": str((folder / filename).relative_to(root)), "sha256": digest, "byte_size": len(payload),
+              "retrieved": retrieved,
               "provenance": "Deterministic product of tools/bullarium geometry; whole bytes hashed and replayable.",
               "notes": notes}
     if derived_from:
@@ -1390,13 +1392,13 @@ def register(root, recipe_path, replay_dir, mapping_path, units_path, revision, 
         "recipe": _artifact(root, edition_dir, edition_id, "reading-order-recipe", "recipe.json.gz",
                             gzip.compress(recipe_bytes, mtime=0), raw_record, "coordinate-reading-order-recipe",
                             "application/gzip", f"Explicit v2 reading-order recipe (decoded SHA256 {_sha(recipe_bytes)}) "
-                            f"for raw OCR {raw_record['id']} and XML {recipe['source_xml']['artifact_id']}."),
+                            f"for raw OCR {raw_record['id']} and XML {recipe['source_xml']['artifact_id']}.", revision[:10]),
         "page_map": _artifact(root, edition_dir, edition_id, "reading-order-page-map", "page-map.json",
                               (replay / "page-map.json").read_bytes(), raw_record, "coordinate-reading-order-page-map",
-                              "application/json", "Per-page source and output byte/LF spans of the reading-order derivative."),
+                              "application/json", "Per-page source and output byte/LF spans of the reading-order derivative.", revision[:10]),
         "validation": _artifact(root, edition_dir, edition_id, "reading-order-validation", "validation.json",
                                 (replay / "validation.json").read_bytes(), raw_record, "coordinate-reading-order-validation",
-                                "application/json", "Replay receipt: input pins, output hashes and the conservation checks."),
+                                "application/json", "Replay receipt: input pins, output hashes and the conservation checks.", revision[:10]),
     }
     hybrid = (replay / "hybrid.txt").read_bytes()
     recipe_id = pieces["recipe"][0]["id"]
@@ -1406,7 +1408,7 @@ def register(root, recipe_path, replay_dir, mapping_path, units_path, revision, 
                                 f"{recipe['source_xml']['artifact_id']} (SHA256 {recipe['source_xml']['sha256']}). Every native "
                                 "WORD appears exactly once with its value unchanged; only page order, roles and inter-WORD "
                                 "whitespace change. Marginal summaries are separate TAB-led blocks at their anchors; held "
-                                "pages keep raw OCR bytes.", derived_from=raw_record["id"])
+                                "pages keep raw OCR bytes.", revision[:10], derived_from=raw_record["id"])
     staged = []
     for name, (record, payload_path, record_path, payload) in pieces.items():
         bullarium.check_source_write(payload_path, payload)

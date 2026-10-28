@@ -318,6 +318,9 @@ class ReadingOrderTests(unittest.TestCase):
                                                   and "validation" not in k)).read_text())
         self.assertEqual((derived["artifact_type"], derived["derived_from"]),
                          ("coordinate-reading-order-ocr", fixture.records["ocr"][0]["id"]))
+        for declared in catalog["volumes"][0]["container"]["artifacts"].values():
+            if declared["id"].split(".")[-1].startswith("reading-order"):   # source-library: tracked artifacts carry a date
+                self.assertEqual(tomllib.loads((self.root / declared["manifest"]).read_text())["retrieved"], "2026-10-28")
         document = json.loads((self.root / geometry.GEOMETRY_MANIFEST).read_text())["documents"][0]
         self.assertEqual((document["id"], document["artifact_id"]), (child["id"], derived["id"]))
         self.assertIn("marginal summaries are kept as separate blocks", document["source_note"])
