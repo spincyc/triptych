@@ -375,19 +375,26 @@ tools/bullarium geometry --recipe .scratch/reading-order/v04/recipe.json --input
 tools/bullarium geometry map-units --recipe .scratch/reading-order/v04/recipe.json --replay .scratch/reading-order/v04/replay --out .scratch/reading-order/v04/unit-mapping.json
 ```
 
-`propose` writes an explicit v2 recipe and `running-heads.tsv`, which lists
-every page's running-head row for a quick scan. The recipe records each page
+`propose` writes an explicit v2 recipe, `running-heads.tsv`, which lists
+every page's running-head row for a quick scan, and `note-suspects.tsv`. That
+second file lists small-type rows below a rule's space at a column foot that
+open on a short token but were not split as notes. The recipe records each page
 as reordered, held (with its reason) or empty, and each reordered page's rows
 of native WORD ordinals. Rows carry a role: running head, body column,
 marginal summary (a TAB-led block at the section it annotates), page-foot note
-(a separate block at the page break, starting at its reference mark), gutter
-OCR or footer. It also records page measurements and any inseparable mixed
+(a separate block at the page break), gutter OCR or footer. A note starts at
+a reference mark in small type, or at a mark or small type corroborated by
+editorial wording ("(R. T.)", "Ex Regest.", "Cherub.", "Mainardus" and similar).
+OCR-garbled marks such as `i`, `t`, `{`, `I)` or `1.` count only with that
+support. It also records page measurements and any inseparable mixed
 WORDs. Its thresholds are fractions of the measured column
 width and line pitch. The replay expands the rows into the explicit v1 recipe
 and proves that every WORD appears exactly once, unchanged. `map-units` places
 every catalog unit in the derivative through WORD identity and assigns one
 category: `clean`, `review:margin-ownership-at-boundary`,
-`hold:inseparable-WORD`, `hold:body-not-contiguous` or another hold. Only
+`hold:inseparable-WORD`, `hold:body-not-contiguous`,
+`review:possible-unsplit-note` (the unit contains a listed note suspect) or
+another hold. Only
 `clean` units can be registered. A unit's own page-foot notes printed after
 the next unit begins form an extra range of its selection. Name the units
 explicitly in a selection file,

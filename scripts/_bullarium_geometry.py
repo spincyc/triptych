@@ -29,7 +29,7 @@ ROLE_CODES = {"H": "header", "L": "body-left", "R": "body-right", "ML": "margin-
               "NL": "notes-left", "NR": "notes-right", "F": "footer", "G": "gutter-ocr"}
 V2_PAGE_FIELDS = {"leaf", "object_ordinal_1", "status"}
 V2_PAGE_OPTIONAL = {"rows", "hold", "measurements", "role_WORD_counts", "inseparable_WORDs", "margin_blocks",
-                    "header_rows", "notes_blocks", "paragraph_breaks", "source_word_range_1", "source_lf_range_1"}
+                    "header_rows", "notes_blocks", "note_suspects", "paragraph_breaks", "source_word_range_1", "source_lf_range_1"}
 ROLES = {"header", "body-left", "body-right", "margin-left", "margin-right",
          "notes-left", "notes-right", "footer", "uncertain", "gutter-ocr"}
 SHA = re.compile(r"[a-f0-9]{64}")
@@ -658,26 +658,45 @@ PROPOSAL_PARAMS = {
     "margin_block_max_gap_P": 3.0, "margin_anchor_back_rows": 2, "paragraph_indent_M": 22 / 750,
     "paragraph_short_M": 45 / 750,
     "note_band_C": 0.5, "note_max_rows": 15, "note_gap_P": 0.9, "note_strong_gap_P": 1.5,
-    "note_strong_min_rows": 3, "note_advance_ratio": 0.88, "note_height_ratio": 0.9,
+    "note_strong_min_rows": 3, "note_suspect_gap_P": 1.2, "note_tight_gap_P": 0.6, "note_advance_ratio": 0.88, "note_height_ratio": 0.9,
 }
 # A footnote's first WORD often opens with its reference mark: (1), (t), (I) ...
-# OCR may lose one or both brackets: "H)", "1)", or a bare "1" set as its own WORD.
-NOTE_MARK = re.compile(r"[\(\[]?[0-9tIilHj*]{1,2}[\)\]]")
-BARE_MARK = re.compile(r"[1-9Il]")   # OCR reads a bare "1" as "I" or "l" too
+# A footnote reference mark as OCR renders it: "(1)", "(t)", "(I)", "(1;", "()j",
+# "<1)", "(!)", "1)", "H)", "ri)", ")" ...
+NOTE_MARK = re.compile(r"[\(\[<{][^\s]{0,2}[\)\]}>;j]|[^\s(\[]{0,2}[\)\]]")
+# ... or a bare mark set as its own WORD: 1-9, or "1" misread as I, l, i, ì, t, { or \\, or "1."
+BARE_MARK = re.compile(r"[1-9Ilit{\\]|[ìí]|1\.")
+# Editorial-note wording that corroborates a footnote: the editors' sigla "(R. T.)"
+# in OCR variants, register sources and the editions the notes cite.
+NOTE_CUE = re.compile(r"[\(\'\"«]?\s*[RrBbKkHhNnUu«]\s*[\.,]?\s*[TtIi]\s*[\.,]?\s*\)|\bEx\s+R[eo]g|[RKUH][ce]g[ce]st|Itegest|\bResesi|"
+                      r"Cherub|Cher\.|Mainard|Raynald|Ughell|Wadd|Rymer|Baluz|\bLegimus\b|\bLeg\.|"
+                      r"\bForsan\b|\bForsitan\b|\b[Ee]dit\.|\bVide\b")
 
 
-def _note_mark(words):
+def _note_mark(words, cue=False):
     """A row opens with a footnote reference mark.
 
-    A bare digit counts only when it is a WORD of its own followed by a WORD
-    that opens with a capital, as a note does; a numbered synopsis range such
-    as "1 ad 4." does not.
+    A bare mark counts only when it is a WORD of its own followed by a WORD
+    that opens with a capital, as a note does (a numbered synopsis range such
+    as "1 ad 4." does not), or when editorial-note wording corroborates it.
     """
-    first = words[0]["value"].strip()
-    if NOTE_MARK.match(first):
+    first = words[0]["value"].strip().lstrip("■•●,")      # specks OCR'd before the mark
+    if NOTE_MARK.fullmatch(first):
         return True
+    # a mark run into its note's first word, "(1)Ex", but not "(juomodolibet":
+    # a "j" or ";" read as the closing bracket must end the WORD
+    prefix = NOTE_MARK.match(first)
+    rest = first[prefix.end():] if prefix else ""
+    if prefix and first[:1] in "([<{" and prefix.group()[-1] in ")]}>" and rest[:1].isupper():
+        return True      # not "[)at." (a dating line's "Dat.")
+    if cue and first[:1] in "([<{" and len(first) <= 3:      # "(IJ Ex Regest." lost its closing bracket
+        return True
+    if first == "1.":       # also how a synopsis numbers its first item: needs editorial wording
+        return cue and len(words) > 1
     return (BARE_MARK.fullmatch(first) is not None and len(words) > 1
-            and words[1]["value"].strip()[:1].isupper())
+            and (cue or words[1]["value"].strip()[:1].isupper()))
+
+
 CODE_OF = {role: code for code, role in ROLE_CODES.items()}
 CATALOG = "src/sources/papal-documents/bullarium-catalog.json"
 WITHDRAWALS = "src/sources/papal-documents/bullarium-active-withdrawals.json"
@@ -1004,7 +1023,7 @@ def propose_page(page, m, p=PROPOSAL_PARAMS):
     # ends in marked notes, the gap above it is wide, it has at least three
     # small-type rows and its first row starts at the column edge.  Notes are
     # emitted at the page break, so no body paragraph runs into one.
-    notes_found, marked_left = [], False
+    notes_found, note_suspects, marked_left = [], [], False
     def advance(row):
         """Pixels per character: small type sets more characters in the same width."""
         return (row["x1"] - row["x0"]) / max(1, len(" ".join(w["value"].strip() for w in row["words"])))
@@ -1020,27 +1039,51 @@ def propose_page(page, m, p=PROPOSAL_PARAMS):
                    for f, ratio in ((advance, p["note_advance_ratio"]), (word_height, p["note_height_ratio"])))
     for column, side, e0 in (("body-left", "notes-left", E["L0"]), ("body-right", "notes-right", E["R0"])):
         body = rows.get(column, [])
-        marked, continued = None, None
+        marked, continued, suspect, area = None, None, None, None
         for i in range(max(2, len(body) - p["note_max_rows"]), len(body)):
             gap = body[i]["yc"] - body[i - 1]["yc"]
             lower = body[0]["yc"] + p["note_band_C"] * (body[-1]["yc"] - body[0]["yc"])
-            if gap < p["note_gap_P"] * pitch or body[i]["yc"] < lower:
+            if gap < p["note_tight_gap_P"] * pitch or body[i]["yc"] < lower:
                 continue
+            wide = gap >= p["note_gap_P"] * pitch
             tail, above = body[i:], body[:i]
-            if not smaller(tail, above):
-                continue
-            if _note_mark(body[i]["words"]):
+            small = smaller(tail, above)
+            # editorial wording in the candidate row itself, or in the row after a mark
+            cue_here = NOTE_CUE.search(" ".join(w["value"].strip() for w in body[i]["words"])) is not None
+            cue_next = i + 1 < len(body) and NOTE_CUE.search(" ".join(w["value"].strip() for w in body[i + 1]["words"])) is not None
+            mark = _note_mark(body[i]["words"], cue_here or cue_next)
+            cue = cue_here or (mark and cue_next)
+            first = body[i]["words"][0]["value"].strip().lstrip("■•●,")
+            if area is None and wide and small and gap >= p["note_suspect_gap_P"] * pitch:
+                area = i         # small type below a rule's space: a possible note area
+                if len(first) <= 2 or first[:1] in "([<{":
+                    suspect = i  # opening on a short token, perhaps a garbled mark
+            # A note: a mark in small type, a mark with editorial wording, or small
+            # type with editorial wording (its mark lost entirely).  Below body
+            # leading only a small-type mark with editorial wording counts.
+            # editorial wording alone must also start below a note rule's space
+            cue_start = cue and gap >= p["note_suspect_gap_P"] * pitch
+            if wide and (small and (mark or cue_start) or mark and cue) or small and mark and cue:
                 marked = marked if marked is not None else i
-            elif (column == "body-right" and marked_left and gap >= p["note_strong_gap_P"] * pitch
+            elif (wide and small and column == "body-right" and marked_left and gap >= p["note_strong_gap_P"] * pitch
                   and len(tail) >= p["note_strong_min_rows"]
                   and abs(body[i]["x0"] - _at(e0, body[i]["yc"])) <= px["full_line_tol"]
                   and (continued is None or gap > continued[0])):
                 continued = (gap, i)
         split = marked if marked is not None else (continued[1] if continued else None)
+        if split is None and area is not None and any(_note_mark(r["words"]) for r in body[area + 1:]):
+            # A note continued from the previous page heads the note area;
+            # the page's own marked notes follow it at note leading.
+            split = area
+        if split is None and suspect is not None:
+            # small type below a wide gap at a column foot, but no reference
+            # mark: listed for review, never split by guess
+            note_suspects.append({"side": side, "first_WORD": body[suspect]["words"][0]["source_word_global_1"],
+                                  "rows": len(body) - suspect})
         if split is not None:
             rows[side], rows[column] = body[split:], body[:split]
             marked_left = marked_left or (column == "body-left" and marked is not None)
-            notes_found.append({"side": side, "rows": len(rows[side]), "marked": marked is not None,
+            notes_found.append({"side": side, "rows": len(rows[side]), "marked": split == marked,
                                 "first_WORD": rows[side][0]["words"][0]["source_word_global_1"]})
     para_start, previous = {}, None
     for column in ("body-left", "body-right"):
@@ -1129,6 +1172,7 @@ def propose_page(page, m, p=PROPOSAL_PARAMS):
     return {"rows": [[code, brk, _runs(ids)] for code, brk, ids in plan], "role_WORD_counts": dict(sorted(counts.items())),
             "inseparable_WORDs": sorted(recorded), "margin_blocks": block_records,
             "header_rows": [_runs(ids) for code, _, ids in plan if code == "H"], "notes_blocks": notes_found,
+            "note_suspects": note_suspects,
             "paragraph_breaks": sum(1 for key, value in para_start.items() if value) - (1 if para_start else 0)}
 
 
@@ -1193,7 +1237,7 @@ def propose(root, out_dir, *, volume=None, source_txt_record=None, source_xml_re
     pages, count = _xml_pages(xml, raw, _tokens(raw), _All())
     measure = volume_measure(pages)
     entries, statuses = [], Counter()
-    heads = []
+    heads, suspects = [], []
     for page in pages:
         entry = {"leaf": page["leaf"], "object_ordinal_1": page["artifact_page"],
                  "source_lf_range_1": page["source_lf_range_1"]}
@@ -1215,6 +1259,10 @@ def propose(root, out_dir, *, volume=None, source_txt_record=None, source_xml_re
         else:
             head = "(page " + entry["status"] + ")"
         heads.append(f"{page['leaf']}\t{entry['status']}\t{head}")
+        for suspect in entry.get("note_suspects", []):
+            row = next(r for r in entry["rows"] if any(a <= suspect["first_WORD"] <= z for a, z in r[2]))
+            suspects.append(f"{page['leaf']}\t{suspect['side']}\t{suspect['rows']}\t"
+                            + " ".join(values[i].strip() for a, z in row[2] for i in range(a, z + 1)))
     # A page sharing a raw LF line with its neighbour cannot be replaced by an
     # LF-enclosed span; the replay would refuse it, so it is held here.
     spans = [(i, e["source_lf_range_1"]) for i, e in enumerate(entries) if e["source_lf_range_1"]]
@@ -1236,7 +1284,8 @@ def propose(root, out_dir, *, volume=None, source_txt_record=None, source_xml_re
     if volume_key is not None:
         recipe["volume"] = volume_key
     products = {"recipe.json": (json.dumps(recipe, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n").encode(),
-                "running-heads.tsv": ("\n".join(heads) + "\n").encode()}
+                "running-heads.tsv": ("\n".join(heads) + "\n").encode(),
+                "note-suspects.tsv": ("\n".join(suspects) + "\n").encode()}
     out.mkdir(parents=True, exist_ok=True)
     for name, data in products.items():
         path = out / name
@@ -1244,7 +1293,9 @@ def propose(root, out_dir, *, volume=None, source_txt_record=None, source_xml_re
         if not path.exists():
             path.write_bytes(data)
     return {"recipe_sha256": _sha(products["recipe.json"]), "page_status_counts": recipe["proposal"]["page_status_counts"],
-            "measure_px": measure, "inseparable_WORDs": sum(len(e.get("inseparable_WORDs", [])) for e in entries)}
+            "measure_px": measure, "inseparable_WORDs": sum(len(e.get("inseparable_WORDs", [])) for e in entries),
+            "note_blocks": sum(len(e.get("notes_blocks", [])) for e in entries),
+            "note_suspects": len(suspects)}
 
 
 def _replay_products(root, replay_dir):
@@ -1273,6 +1324,8 @@ def map_units(root, recipe_path, replay_dir, out_path, *, catalog_path=CATALOG, 
     withdrawals_bytes = _path(root, withdrawals_path, True).read_bytes()
     catalog, withdrawals = json.loads(catalog_bytes), json.loads(withdrawals_bytes)
     inseparable = {wid for page in recipe["pages"] for wid, _ in page.get("inseparable_WORDs", [])}
+    # rows that look like a note with a garbled mark but were not split
+    note_suspects = {s["first_WORD"] for page in recipe["pages"] for s in page.get("note_suspects", [])}
     by_raw, by_out = defaultdict(list), defaultdict(list)
     for word in words:
         item = {"id": word["source_word_global_1"], "role": word["role"], "ol": word["output_lf_range_1"][0], "leaf": word["leaf"],
@@ -1386,12 +1439,15 @@ def map_units(root, recipe_path, replay_dir, out_path, *, catalog_path=CATALOG, 
             category = "hold:inseparable-WORD"
         elif foreign_margin or escaped:
             category = "review:margin-ownership-at-boundary"
+        elif note_suspects & set(selected):
+            category = "review:possible-unsplit-note"
         else:
             category = "clean-with-unchanged-pages" if held else "clean"
         results.append({**row, "category": category, "new_physical_line_ranges": spans + extra,
                         "furniture_lines_inside": sorted(furniture), "foreign_body_WORDs": foreign_body,
                         "foreign_margin_WORDs": foreign_margin, "escaped_margin_WORDs": len(escaped),
                         "partial_WORDs": partial, "inseparable_WORDs": mixed, "unchanged_leaves": held,
+                        "note_suspect_WORDs": sorted(note_suspects & set(selected)),
                         "reviewed_fusion_lines_on_held_pages": sorted(set(loci))})
     loci_report = Counter()
     for unit_id, a in affected.items():

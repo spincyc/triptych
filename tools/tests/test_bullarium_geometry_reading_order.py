@@ -43,7 +43,13 @@ def note_rows():
     return rows
 
 
-def page_lines(*, interleave=False, deadzone=False, mixed=False, fused=True, notes=False):
+def garbled_note_rows(first):
+    """One small-type note row below a wide gap whose mark OCR garbled (or lost)."""
+    y0 = TOP + 18 * PITCH + 25
+    return [[(value, (L0 + j * 70, y0, L0 + (j + 1) * 70, y0 + 28)) for j, value in enumerate(first)]]
+
+
+def page_lines(*, interleave=False, deadzone=False, mixed=False, fused=True, notes=False, note_rows=None):
     header = [[("An.", (100, 180, 140, 210)), ("C.", (140, 180, 170, 210)), ("1300", (170, 180, 280, 210))],
               [("BULLARIUM", (820, 180, 960, 210)), ("ROMANUM", (960, 180, 1100, 210))],
               [("17", (1450, 180, 1500, 210)), ("An.", (1600, 180, 1640, 210)), ("C.", (1640, 180, 1670, 210)),
@@ -61,14 +67,16 @@ def page_lines(*, interleave=False, deadzone=False, mixed=False, fused=True, not
             line = [(v, (L0 - 8.5 if j == 0 else x0, y0, x1, y1)) for j, (v, (x0, y0, x1, y1)) in enumerate(line)]
         if notes and i == 17:     # the body breaks a word at the foot of the column
             line = line[:-1] + [("fun-", line[-1][1])]
-        if not (notes and i >= 18):
+        if not ((notes or note_rows) and i >= 18):
             left.append(line)
         line = body_line("R", i, indent=40 if i in (0, 12) else 0, short=(i == 11))
         if fused and i == 5:      # a marginal summary fused at the end of a body LINE
             line = line + [("Clausulae", (R1 + 20, TOP + i * PITCH + 5, R1 + 150, TOP + i * PITCH + 30))]
         right.append(line)
     if notes:
-        left += note_rows()
+        left += globals()["note_rows"]()
+    elif note_rows:
+        left += garbled_note_rows(note_rows)
     note = [[("summarium", (160, TOP + 11 * PITCH + 5, 290, TOP + 11 * PITCH + 30))]] if fused else []
     if interleave:
         body = left[:10] + right[:5] + left[10:] + note + right[5:]
@@ -395,6 +403,30 @@ class ReadingOrderTests(unittest.TestCase):
         self.assertIn("fun-\nwr0x0", text)                      # the body runs on across the column
         self.assertIn("\n\n(1) Ex Regest. Vatic. notaa notab notac notad\nnotae", text)
         self.assertNotIn("fun-\n(1)", text)
+
+    def test_garbled_or_lost_marks_with_editorial_wording_are_notes(self):
+        for first in (["t", "Ex", "Regest.", "in", "Secret.", "Brevium."],
+                      ["{", "Alia", "reformatio", "in", "Pii", "IV"],
+                      ["i", "Leg.", "forte", "ecclesiam", "(r.", "t.)."],
+                      ["Ea", "omittit", "Mainardus,", "quia", "notum", "est"]):
+            with self.subTest(first=first[0]):
+                self.root = Path(tempfile.mkdtemp(dir=self.temp.name))
+                self.volume(page_lines(note_rows=first))
+                page = self.propose()["pages"][0]
+                self.assertEqual([b["side"] for b in page["notes_blocks"]], ["notes-left"])
+
+    def test_body_like_rows_are_not_notes(self):
+        mark = lambda *values: geometry._note_mark([{"value": v} for v in values])
+        self.assertTrue(mark("(1)", "Ex"))
+        self.assertTrue(mark("(1)Ex", "Regest."))
+        self.assertTrue(mark("\\", "Ex"))
+        self.assertTrue(mark("i", "Leg."))
+        self.assertFalse(mark("1", "ad"))                   # "1 ad 4." in a synopsis
+        self.assertFalse(mark("1.", "Ouuritur"))            # a synopsis's first item
+        self.assertTrue(geometry._note_mark([{"value": "1."}, {"value": "Foulaninus"}], cue=True))
+        self.assertFalse(mark("(juomodolibet", "ac"))       # body word read with a bracket
+        self.assertFalse(mark("[)at.", "die"))              # a dating line's "Dat."
+        self.assertFalse(mark("§", "1."))
 
     def test_unmarked_small_rows_after_a_heading_gap_stay_body(self):
         lines = page_lines()

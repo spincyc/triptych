@@ -8,6 +8,7 @@ import hashlib
 from html import escape
 import io
 import json
+import re
 from pathlib import Path
 import shlex
 import sys
@@ -155,6 +156,24 @@ class ScreenTests(unittest.TestCase):
             page = json.loads(gzip.decompress(cache.read_bytes()))
             self.assertRegex(page["full_page_tokens_sha256"], r"^[a-f0-9]{64}$")
             self.assertNotIn(self.private, json.dumps(page))
+
+    def test_five_value_coords_screen_exactly_like_four_value_coords(self):
+        def summary(out):
+            report = json.loads((self.root / out / "screen.json").read_bytes())
+            return [(row["unit_id"], row["status"], [(flag["kind"], [w["source_bbox"] for w in flag["WORDs"]])
+                                                     for flag in row["flags"]]) for row in report["results"]]
+        self.run_screen()
+        four = summary(self.out)
+        five_xml = re.sub(rb'coords="(-?\d+),(-?\d+),(-?\d+),(-?\d+)"',
+                          lambda m: b'coords="%s,%s,%s,%s,%d"' % (*m.groups(), int(m[2]) - 3), self.xml_path.read_bytes())
+        self.assertNotEqual(five_xml, self.xml_path.read_bytes())
+        self.xml_path.write_bytes(five_xml)
+        self.refresh()
+        self.out = ".scratch/output-five"
+        self.run_screen()
+        self.assertEqual(summary(self.out), four)
+        self.assertTrue(any(flag["WORDs"][0]["coords"].count(",") == 4
+                            for row in self.report()["results"] for flag in row["flags"]))
 
     def test_positive_negative_and_pure_caption_are_not_clearance(self):
         self.run_screen()
