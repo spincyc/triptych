@@ -2015,6 +2015,7 @@ PAPAL_CORRECTION_MANIFESTS ?= \
 	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/acta-visual-corrections-manifest.json),acta-visual-corrections=acta-visual-corrections-manifest.json) \
 	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/historical-series-corrections-manifest.json),historical-series-corrections=historical-series-corrections-manifest.json) \
 	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-reading-order-corrections-manifest.json),bullarium-reading-order-corrections=bullarium-reading-order-corrections-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-reading-order-withdrawals-manifest.json),bullarium-reading-order-withdrawals=bullarium-reading-order-withdrawals-manifest.json) \
 	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-active-withdrawals.json),bullarium-active-withdrawals=bullarium-active-withdrawals.json)
 PAPAL_CURRENT_MANIFEST ?= $(PAPAL_OUT)/current-manifest.json
 PAPAL_CURRENT_BATCH ?= $(PAPAL_OUT)/current
