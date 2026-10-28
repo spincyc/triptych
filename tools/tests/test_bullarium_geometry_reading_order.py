@@ -249,7 +249,7 @@ class ReadingOrderTests(unittest.TestCase):
         role = next(code for code, _, runs in page["rows"] for a, z in runs if a <= wid <= z)
         self.assertEqual(role, "L")
 
-    def straddle_page(self, *, left=None, right=None, margin_on_row=True):
+    def straddle_page(self, *, left=None, right=None, margin_on_row=True, block_left=20, gap_line=None):
         """page_lines() with left line 6 opening on a margin WORD (value, x1, height, body indent)
         and/or right line 3 ending on a body WORD (value, or (value, x0)) run 60 px past R1, beside
         a marginal block whose first row (on line 3 unless margin_on_row is false) is indented.
@@ -270,8 +270,10 @@ class ReadingOrderTests(unittest.TestCase):
             lines[k] = body + [(value, (x0, y0, R1 + 60, y0 + 40)),
                                ("Confirmatio", (R1 + 62, y0 + 5, R1 + 200, y0 + 30)) if margin_on_row
                                else ("•", (R1 + 62, y0 + 12, R1 + 70, y0 + 20))]
-            lines += [[(text, (R1 + 20, y0 + j * PITCH + 5, R1 + 150, y0 + j * PITCH + 30))]
+            lines += [[(text, (R1 + block_left, y0 + j * PITCH + 5, R1 + 150, y0 + j * PITCH + 30))]
                       for j, text in ((1, "litterarum"), (2, "fatarum."))]
+        if gap_line:
+            lines.append(gap_line)
         self.volume(lines)
         page = self.propose()["pages"][0]
         self.assertEqual(page["status"], "reordered")
@@ -287,6 +289,13 @@ class ReadingOrderTests(unittest.TestCase):
                 wid = page["inseparable_WORDs"][0][0]     # held, not reassigned: the value is the margin's
                 self.assertEqual(next(code for code, _, runs in page["rows"] for a, z in runs if a <= wid <= z), "ML")
 
+    def test_a_margin_box_padded_into_the_inter_line_gap_beside_specks_is_not_a_straddle(self):
+        y = TOP + 6 * PITCH + 30          # between body rows 6 and 7: the box's centre meets no body glyph
+        page = self.straddle_page(gap_line=[("pnssil", (120, y, L0 + 200, y + 36)), ("i-i", (L0 + 200, y + 10, L0 + 320, y + 26)),
+                                            ("•", (L0 + 320, y + 10, L0 + 350, y + 24))])
+        self.assertEqual([reason for _, reason in page["inseparable_WORDs"]
+                          if reason == "margin-WORD-box-holds-body-start"], [])
+
     def test_padded_margin_boxes_over_an_indent_a_gap_or_in_margin_type_are_not_straddles(self):
         for left in (("hic", L0 + 51, 40, 51),                  # the box stops in a paragraph indent
                      ("prohi-", L0 + 90, 20, 95),               # margin-size type cannot hold body glyphs
@@ -300,10 +309,11 @@ class ReadingOrderTests(unittest.TestCase):
             with self.subTest(right=right):
                 page = self.straddle_page(right=right)
                 self.assertEqual([reason for _, reason in page["inseparable_WORDs"]], ["body-WORD-box-runs-into-right-margin"])
-        for right, on_row in (("tempore", True),              # a padded box, no marginal glyphs
-                              (("gestari.", R0), False)):     # a short last line's box over blank margin and a speck
+        for right, on_row, block in (("tempore", True, 20),          # a padded box, no marginal glyphs
+                                     (("gestari.", R0), False, 20),  # a short last line's box over blank margin and a speck
+                                     (("intendant.", R0), True, 50)):  # padded to the edge of an unbroken marginal row
             with self.subTest(right=right):
-                page = self.straddle_page(right=right, margin_on_row=on_row)
+                page = self.straddle_page(right=right, margin_on_row=on_row, block_left=block)
                 self.assertEqual(page["inseparable_WORDs"], [])
         self.assertTrue(geometry._junk_run_on("pro-„em,"))
         self.assertTrue(geometry._junk_run_on("eis-mo"))
@@ -712,6 +722,37 @@ class ReadingOrderTests(unittest.TestCase):
             with self.subTest(message), self.assertRaisesRegex(ValueError, message):
                 geometry.withdraw(self.root, path, revision, reason, evidence)
         self.assertEqual(self.snapshot(), before)
+
+    def test_a_marginal_raw_title_is_replaced_by_the_heading_rows_of_the_reading(self):
+        unit = {"heading_line": 10}
+        words = {10: [("CCCXLV.", "body-left")],
+                 13: [("Ordines", "margin-left"), ("Militares", "margin-left")], 14: [("pro", "margin-left"), ("de-", "margin-left")],
+                 17: [("Suppressio", "body-left"), ("ecclesiarum", "body-left")]}
+        self.assertTrue(geometry._title_is_marginal(unit, "Ordines  Militares pro de-", words))
+        self.assertFalse(geometry._title_is_marginal(unit, "Suppressio ecclesiarum", {**words, 13: words[17], 14: []}))
+        self.assertFalse(geometry._title_is_marginal({"heading_line": 10}, "Ordines Militares", {}))   # a held page: no WORD roles
+        hybrid = ["", "CCCXLV.", "", "\tOrdines Militares", "\tpro de-", "", "Suppressio nonnullarum ecclesiarum , ca-",
+                  "pellarum et prioratuum", "", "SUMMARIUM", "", "Clemens episcopus"]
+        roles = {2: {"body-left"}, 4: {"margin-left"}, 5: {"margin-left"}, 7: {"body-left"}, 8: {"body-left"},
+                 10: {"body-left"}, 12: {"body-left"}}
+        self.assertEqual(geometry._heading_title([[2, 12]], hybrid, roles, 12),
+                         "Suppressio nonnullarum ecclesiarum , ca- pellarum et prioratuum")
+        self.assertIsNone(geometry._heading_title([[2, 12]], hybrid, roles, 4))     # attribution right after the number
+
+    def test_a_body_row_the_OCR_never_read_holds_the_page(self):
+        def page(drop, last=None):
+            self.root = Path(tempfile.mkdtemp(dir=self.temp.name))
+            lines = page_lines(fused=False)
+            if last:      # the row above the gap ends its sentence
+                row = lines[3 + drop - 1]
+                lines[3 + drop - 1] = row[:-1] + [(last, row[-1][1])]
+            del lines[3 + drop]
+            self.volume(lines)
+            return self.propose()["pages"][0]
+        held = page(8)        # a full justified row, two pitches, then the column-edge row that continues it
+        self.assertEqual((held["status"], held["hold"]["reason"]), ("held", "body-row-without-WORDs"))
+        self.assertEqual(page(9)["status"], "reordered")             # the gap ends a paragraph: the next row is indented
+        self.assertEqual(page(8, last="finis.")["status"], "reordered")     # or the row above closes its sentence
 
     def test_five_value_coords_give_the_same_geometry_and_text(self):
         outputs, base = {}, self.root

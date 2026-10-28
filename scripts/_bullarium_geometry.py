@@ -652,7 +652,8 @@ PROPOSAL_PARAMS = {
     "gutter_ocr_max_chars": 2, "last_word_hang_M": 24 / 750, "merged_line_indent_M": 140 / 750,
     "margin_absorb_indent_M": 140 / 750, "margin_min_char_M": 5 / 750, "body_min_char_M": 8 / 750,
     "margin_body_min_gap_M": 8 / 750, "straddle_M": 50 / 750, "straddle_indent_M": 70 / 750,
-    "straddle_resume_M": 120 / 750, "straddle_height_ratio": 0.75, "straddle_merged_ratio": 1.3,
+    "straddle_resume_M": 120 / 750, "straddle_height_ratio": 0.75, "straddle_row_height_ratio": 0.55,
+    "straddle_merged_ratio": 1.3,
     "header_band_H": 0.16, "header_row_tol_P": 0.5,
     "header_isolation_P": 1.2, "text_top_min_tokens": 4, "text_top_min_width_M": 0.4,
     "text_top_min_height": 0.85, "footer_band_H": 0.88, "footer_gap_P": 1.6, "row_merge_P": 0.45,
@@ -661,7 +662,7 @@ PROPOSAL_PARAMS = {
     "paragraph_short_M": 45 / 750,
     "note_band_C": 0.5, "note_max_rows": 15, "note_gap_P": 0.9, "note_strong_gap_P": 1.5,
     "note_strong_min_rows": 3, "note_suspect_gap_P": 1.2, "note_tight_gap_P": 0.6, "note_advance_ratio": 0.88, "note_height_ratio": 0.9,
-    "note_cue_rows": 3, "note_continuation_gap_P": 1.05,
+    "note_cue_rows": 3, "note_continuation_gap_P": 1.05, "missing_row_gap_P": [1.75, 2.35],
 }
 # A footnote's first WORD often opens with its reference mark: (1), (t), (I) ...
 # A footnote reference mark as OCR renders it: "(1)", "(t)", "(I)", "(1;", "()j",
@@ -1044,8 +1045,15 @@ def propose_page(page, m, p=PROPOSAL_PARAMS):
             if (r == "margin-left" and not last and bottom - top >= p["straddle_height_ratio"] * body_h
                     and sum(c.isalpha() for c in word["value"]) >= 2):
                 L0 = _at(E["L0"], y)
+                # the body row printed at this WORD's y-centre: lettered WORDs of its LINE spanning
+                # that height in body type -- a word without ascenders ("unum") is shorter, a speck
+                # strewn across an inter-line gap ("i-i") is short and nearly letterless
+                def body_glyphs(w):
+                    letters, h = sum(c.isalpha() for c in w["value"]), w["source_bbox"][3] - w["source_bbox"][1]
+                    return (letters >= 2 and h >= p["straddle_row_height_ratio"] * body_h
+                            and (letters >= 3 or h >= p["straddle_height_ratio"] * body_h))
                 row = [w["source_bbox"] for w in line[i + 1:] if str(role.get(w["source_word_global_1"])).startswith("body")
-                       and sum(c.isalpha() for c in w["value"]) >= 2]
+                       and body_glyphs(w) and w["source_bbox"][1] <= y <= w["source_bbox"][3]]
                 start = min((b[0] for b in row), default=x1)
                 reach = min(x1, start) - L0
                 if (row and start - x1 <= px["straddle_resume"] and reach > px["straddle"]
@@ -1059,9 +1067,12 @@ def propose_page(page, m, p=PROPOSAL_PARAMS):
                 past = bool(others) and x1 > statistics.median(others) + px["margin_body_min_gap"]
                 # junk after the letters, beside the marginal row it came from (often read as specks);
                 # a whole-measure box only beside a lettered marginal row
+                # a whole-measure box must also leave a gap of at least a marginal glyph between the
+                # block's edge and where the marginal row beside it is read to start
+                swallowed = bool(others) and x1 > statistics.median(others) + px["last_word_hang"]
                 if past and (_junk_run_on(word["value"]) and any(beside(b) for b in margin_any)
-                             or sum(c.isalpha() for c in word["value"]) >= 2 and x1 - x0 >= measure
-                             and any(beside(b) for _, b in margin_rows)):
+                             or swallowed and sum(c.isalpha() for c in word["value"]) >= 2 and x1 - x0 >= measure
+                             and any(beside(b) and b[0] >= x1 - px["margin_body_min_gap"] for _, b in margin_rows)):
                     inseparable.append((wid, "body-WORD-box-runs-into-right-margin"))
             following = None if last else role.get(line[i + 1]["source_word_global_1"])
             if last and r == "body-right" and word["source_bbox"][2] > _at(E["R1"], y) + px["last_word_hang"]:
@@ -1210,6 +1221,20 @@ def propose_page(page, m, p=PROPOSAL_PARAMS):
             marked_left = marked_left or (column == "body-left" and marked is not None)
             notes_found.append({"side": side, "rows": len(rows[side]), "marked": split == marked,
                                 "first_WORD": rows[side][0]["words"][0]["source_word_global_1"]})
+    # A printed body row the OCR never read leaves about two line pitches between a full
+    # justified row whose sentence runs on and the column-edge row that continues it
+    # ("eccle-" ... "sub invocatione"): the text is lost, so the page is held.
+    for column, e0, e1 in (("body-left", E["L0"], E["L1"]), ("body-right", E["R0"], E["R1"])):
+        body = rows.get(column, [])
+        for above, below in zip(body, body[1:]):
+            gap = below["yc"] - above["yc"]
+            last = next((w["value"].strip() for w in reversed(above["words"]) if any(c.isalnum() for c in w["value"])), "")
+            if (p["missing_row_gap_P"][0] * pitch <= gap <= p["missing_row_gap_P"][1] * pitch
+                    and above["x1"] >= _at(e1, above["yc"]) - px["full_line_tol"]
+                    and abs(below["x0"] - _at(e0, below["yc"])) <= px["full_line_tol"]
+                    and (last.endswith("-") or last[-1:].isalnum() or last.endswith(","))):
+                raise Hold("body-row-without-WORDs", WORDs=[above["words"][-1]["source_word_global_1"],
+                                                            below["words"][0]["source_word_global_1"]])
     para_start, previous = {}, None
     for column in ("body-left", "body-right"):
         e0 = E["L0"] if column == "body-left" else E["R0"]
@@ -1647,6 +1672,54 @@ def _raw_line_note(text):
     return re.sub(r"(?<=[a-z])(?=[IVXLC]{2,}\b)", " ", text)
 
 
+TITLE_NOTE = ("The reader's title is taken from the act's heading rows in this reading-order text: the earlier "
+              "raw-OCR title was marginal-summary text read beside the heading.")
+ACT_NUMBER = re.compile(r"(?:[IVXLCDM]+|[0-9]+)\s*\.?")
+SUMMARY_HEAD = re.compile(r"S[UVL]MM[A-Z]{2,6}\.?")
+
+
+def _title_is_marginal(unit, title, by_raw_words):
+    """The prior title was read from raw lines below the act number whose WORDs the
+    derivative sets as marginal summary (at least half of them)."""
+    norm = lambda text: re.sub(r"\s+", "", text or "")
+    target, heading = norm(title), unit.get("heading_line")
+    if not target or not isinstance(heading, int):
+        return False
+    words, seen = [], ""
+    for n in range(heading + 1, heading + 41):
+        line = by_raw_words.get(n)
+        if not line:          # blank raw lines between the act number and its title are skipped
+            if words or n > heading + 5:
+                break
+            continue
+        text = norm("".join(value for value, _ in line))
+        if not text or text not in target[len(seen):]:
+            break
+        words += line
+        seen += text
+    margin = sum(role in {"margin-left", "margin-right"} for _, role in words)
+    return bool(words) and len(seen) >= len(target) / 2 and 2 * margin >= len(words)
+
+
+def _heading_title(ranges, hybrid_lines, out_roles, stop):
+    """The act's title as the reading-order text prints it: the body rows after the act
+    number and before the attribution, past any marginal block, up to a synopsis heading."""
+    parts = []
+    for n in range(ranges[0][0], min(stop, ranges[0][1] + 1)):
+        text = hybrid_lines[n - 1] if 0 < n <= len(hybrid_lines) else ""
+        roles = out_roles.get(n, set())
+        if not text.strip() or text.startswith("\t") or (roles and not roles & {"body-left", "body-right"}):
+            continue
+        text = " ".join(text.split())
+        if not parts and ACT_NUMBER.fullmatch(text):
+            continue
+        if SUMMARY_HEAD.fullmatch(text.upper()) or len(parts) == 8:
+            break
+        parts.append(text)
+    title = " ".join(parts)
+    return title if len(re.sub("[^A-Za-zÀ-ÿ]", "", title)) >= 18 else None
+
+
 def _reading_versions(units, unit_id):
     """Existing reading selections of a unit, oldest first: .reading-order, .reading-order-v2, ..."""
     found = []
@@ -1745,12 +1818,16 @@ def register(root, recipe_path, replay_dir, mapping_path, units_path, revision, 
         _require(container["artifacts"].get(key, declaration) == declaration, "a container declaration already differs: " + key)
         declarations[key] = declaration
     order_record = pieces["order"][0]
-    by_raw = defaultdict(list)
+    by_raw, by_raw_words, out_roles = defaultdict(list), defaultdict(list), defaultdict(set)
     with gzip.open(replay / "changed-word-map.jsonl.gz", "rt", encoding="utf-8") as stream:
         for line in stream:
             word = json.loads(line)
             for n in word["source_txt_physical_lines"]:
                 by_raw[n].append((word["output_lf_range_1"][0], word["role"]))
+            by_raw_words[word["source_txt_physical_lines"][0]].append((word["value"], word["role"]))
+            for n in range(word["output_lf_range_1"][0], word["output_lf_range_1"][1] + 1):
+                out_roles[n].add(word["role"])
+    hybrid_lines = pieces["order"][3].decode("utf-8").split("\n")
     units = {u["id"]: u for u in catalog["units"]}
     reviews = []
     for unit_id in selected["units"]:
@@ -1788,6 +1865,11 @@ def register(root, recipe_path, replay_dir, mapping_path, units_path, revision, 
         for key in ("language", "language_label", "document_type", "extent_kind", "source_extent_limit"):
             if key in prior:
                 item[key] = prior[key]
+        if _title_is_marginal(unit, prior["title"], by_raw_words):
+            heading = _heading_title(ranges, hybrid_lines, out_roles, item["source_attribution_lines"][0])
+            if heading:
+                item["title"] = heading
+                item["reader_source_note"] = item["reader_source_note"] + " " + TITLE_NOTE
         if prior["decision"] == "fragment":     # the missing-content statement stays first
             extent = prior.get("reader_source_note", prior.get("source_extent_limit"))
             item["reader_source_note"] = " ".join(filter(None, [extent and RAW_LINE_DISCLOSURE + _raw_line_note(extent),
@@ -1925,11 +2007,15 @@ def _supersede(root, catalog, catalog_file, container, units, rows, reviews, ord
         new_units.append(unit)
         document = copy.deepcopy(prior_doc)
         new_doc_id = new_id + (".fragment" if fragment else "")
+        source_note = _replacement_note(prior_doc["source_note"], prior_key, new_key, ranges, pages, fragment)
+        retitled = TITLE_NOTE in item["reader_source_note"]
+        if retitled and TITLE_NOTE not in source_note:
+            source_note += " " + TITLE_NOTE
         document.update(id=new_doc_id, artifact_id=order_record["id"], sha256=order_record["sha256"],
                         text_path=order_record["path"], segment_id=new_segment_id,
+                        title=item["title"] if retitled else prior_doc["title"],
                         segment_path=str(new_segment_path.relative_to(root)), physical_line_ranges=ranges,
-                        revision=revision, source_note=_replacement_note(prior_doc["source_note"], prior_key, new_key,
-                                                                          ranges, pages, fragment))
+                        revision=revision, source_note=source_note)
         existing = next((d for d in corrections["documents"] if d["id"] == new_doc_id), None)
         if existing is not None:      # a replay keeps the row it already wrote
             _require({k: v for k, v in existing.items() if k != "revision"} == {k: v for k, v in document.items() if k != "revision"},
