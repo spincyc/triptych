@@ -612,13 +612,23 @@ Second repair pass, 2026-10-28:
 - **Bullarium VII/IX footnotes and volumes XI, III, VIII:** the geometry tool
   now recognizes footnotes whose OCR garbled the reference mark. The 17
   VII/IX readings with a fused note are superseded by replacements. Volumes
-  XI, III and VIII are registered with 65, 54 and 38 clean units. These 174
-  readers are rendered and in page review.
+  XI, III and VIII are registered with 65, 54 and 38 clean units. Page review
+  of these 174 readers passed 165 and installed 146. Nine failed: four XI
+  footnotes continued across a page break, one VIII footnote with no
+  surviving mark, and four readers where a single OCR word spans the margin
+  and the body, so a body word prints inside the marginal block.
+- **Straddling words:** a scan of all 400 registered geometry readings found
+  that same word-level mixture in 43 live readings. The 19 that passed page
+  review are held. The 20 already installed (IV 9, VII 6, IX 5) are being
+  checked on native page images before withdrawal or replacement.
 
-The release holds 4,666 PDFs and 8,760 pages.
+The release holds 4,812 PDFs and 9,044 pages.
 
 Open:
-- page review and installation of the 174 new Bullarium readers;
+- image confirmation of the 39 straddling-word readings, then withdrawal or
+  supersession of the confirmed installed ones;
+- the geometry classifier fix and supersede package for the nine failed
+  readers;
 - the next Bullarium batch: X, II, the remaining Turin volumes and the
   appendix;
 - 1,844 unreviewed continuation candidates and a geometry derivative for the
