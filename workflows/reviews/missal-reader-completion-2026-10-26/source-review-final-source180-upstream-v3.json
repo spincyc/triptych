@@ -6,7 +6,7 @@
     "Compiler success is accounting, not publication authority; content-derived fixture fields are re-validated by the consuming tests."
   ],
   "all_source_inputs_current_before_acceptance": true,
-  "compiler_sha256": "76997544a870f122413057686108b44ac28ba318f2929d25ce2181317f68ae13",
+  "compiler_sha256": "8a09aa3d6313d026cd022380ce1af5bdedf6dd8741d59516b1232a1ab372f202",
   "fixture_amendments": [
     {
       "authority": "workflows/reviews/missal-reader-completion-2026-10-26/francis-one-ignatius-proof-adoption.json",
@@ -950,6 +950,12 @@
       "path": "src/web/data/structure/sources/index.json"
     },
     {
+      "after_sha256": "681ef2c42dd6b1f37028cd57ae5c4e35e755b2896786c5efba83bbb10d705713",
+      "before_sha256": null,
+      "class": "this-task-working-tree-edit",
+      "path": "tests/tools/papal-documents.test"
+    },
+    {
       "after_sha256": "f4c7b8bcd3e4f8d7a67707f77e50bb206d02c8ee53a17484604839aa6ba9297d",
       "before_sha256": "bf7fd0f1eb2a08b2f2e6e490baf5f2c5e15a40efafb8cd5a7c0ca25886dee4a1",
       "class": "published-upstream-range",
@@ -1148,6 +1154,12 @@
       "path": "tools/tests/test_roman_1962_early_lent_nonprimary.py"
     },
     {
+      "after_sha256": "555695293abaf85a7bb38d758d5552a8d91c00c9cc8322340abae6206c39b807",
+      "before_sha256": "b2eb469992602293d5df41d6980181e8a390dfcbb7ec83434b495429459d5bb9",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_roman_1962_english_recovery_20261023.py"
+    },
+    {
       "after_sha256": "4b7d0a7262db8216e1ec8489e689f4959c4bb1c0a07563542864ff63f3cf511f",
       "before_sha256": "e32d0c5fba69405e060ec3ec285bb4eec08f8f6cbe8c64dca98d2cfc22efd003",
       "class": "this-task-working-tree-edit",
@@ -1245,16 +1257,17 @@
     }
   ],
   "pin_delta_counts": {
-    "published-upstream-range:added": 52546,
+    "published-upstream-range:added": 52545,
     "published-upstream-range:modified": 138,
-    "this-task-working-tree-edit:modified": 39,
+    "this-task-working-tree-edit:added": 1,
+    "this-task-working-tree-edit:modified": 40,
     "v2-receipt-becomes-ordinary-input:added": 1
   },
   "published_parent": "cbf5917ce5b5a1ff450029035f319dafdf366540",
   "published_upstream_additions": {
-    "count": 52546,
+    "count": 52545,
     "derivation": "git diff --name-only --diff-filter=A upstream_range_base published_parent, each hashed from the working tree",
-    "path_sha256_list_digest": "b6e0e41f800fdc1da6e951fbf530cb3fbe9e0e3114cc029791079de1a740b071"
+    "path_sha256_list_digest": "f70a4c1d2bc4d241745552c301c23c17f379978f87de41947700ffd8f82c5100"
   },
   "reader_written_paths_unchanged": {
     "derivation": "git log --author=Codex --since=2026-10-19 --name-only -- src/sources, less the shared registries",
@@ -1315,7 +1328,7 @@
     "workflows/reviews/missal-reader-completion-2026-10-26/source-review-final-source180-upstream-v3.json"
   ],
   "source_epoch_paths": 104580,
-  "source_input_manifest_sha256": "9505370ea718eb49afb9d5ac9acece8acde1527324ce2b511832033ae4089688",
+  "source_input_manifest_sha256": "747c3ec0b2f6825d33335baa65ea249aaa356eb85295def3f24aeceabc5d6fc0",
   "source_permissions_extended_beyond_exact_reviewed_authorities": false,
   "status": "accepted",
   "successor_kind": "upstream-path-delta",

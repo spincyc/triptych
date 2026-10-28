@@ -4,6 +4,7 @@ set -eu
 repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
 tool="$repo/tools/papal-documents"
 "$tool" --help >/dev/null
+mkdir -p "$repo/.scratch/catalog_pipeline"
 sandbox="$(mktemp -d "$repo/.scratch/catalog_pipeline/smoke.XXXXXX")"
 trap 'rm -rf "$sandbox"' EXIT INT TERM
 "$tool" check --json >"$sandbox/check.json"
