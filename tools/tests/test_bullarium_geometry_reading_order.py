@@ -624,6 +624,95 @@ class ReadingOrderTests(unittest.TestCase):
             geometry.register(self.root, ".scratch/proposal/recipe.json", ".scratch/replay", ".scratch/mapping.json",
                               ".scratch/units.json", "2026-10-29T00:00:00Z", supersede=True)
 
+    def withdrawal(self, *ids, pdf=None, name="withdraw.json"):
+        readings = [{"id": i, "pdf_sha256": pdf} for i in ids]
+        b.write(self.root / ".scratch" / name, json.dumps({"schema": geometry.WITHDRAWAL_SELECTION_SCHEMA,
+                                                           "readings": readings}).encode())
+        return ".scratch/" + name
+
+    def plan(self):
+        from _papal_collection import plan_sources
+        docs = self.root / "src/sources/papal-documents"
+        corrections = [{"name": n, "path": docs / f} for n, f in (
+            ("bullarium-reading-order-corrections", "bullarium-reading-order-corrections-manifest.json"),
+            ("bullarium-reading-order-withdrawals", "bullarium-reading-order-withdrawals-manifest.json")) if (docs / f).exists()]
+        bases = [{"name": n, "path": docs / f} for n, f in (
+            ("bullarium-geometry", "bullarium-geometry-manifest.json"),
+            ("bullarium-geometry-fragments", "bullarium-geometry-fragment-manifest.json")) if (docs / f).exists()]
+        return plan_sources(bases, corrections, self.root / ".scratch/plan.json")["selection_plan"]["summary"]
+
+    def test_withdraw_holds_the_reading_and_records_a_null_supersession(self):
+        _, unit = self.registration_fixture()
+        self.register()
+        reading_id = unit["id"] + ".reading-order"
+        prior = next(u for u in json.loads((self.root / b.CATALOG).read_text())["units"] if u["id"] == reading_id)
+        base = (self.root / geometry.GEOMETRY_MANIFEST).read_bytes()
+        call = lambda: geometry.withdraw(self.root, self.withdrawal(reading_id), "2026-10-29T00:00:00Z",
+                                         "Synthetic straddling WORD.", "a" * 64)
+        self.assertEqual(call()["withdrawn_readings"], 1)
+        units = {u["id"]: u for u in json.loads((self.root / b.CATALOG).read_text())["units"]}
+        held = units[reading_id]
+        self.assertEqual((held["status"], held["review"]["decision"], held["reader_withdrawal_evidence_sha256"]),
+                         ("specifically-held", "hold", "a" * 64))
+        self.assertEqual(held["review_history"][-1], prior["review"])
+        self.assertIn("Synthetic straddling WORD.", held["review"]["review_note"])
+        manifest = json.loads((self.root / geometry.READING_ORDER_WITHDRAWALS).read_text())
+        self.assertEqual(manifest["supersessions"], [held["reader_withdrawal"]])
+        self.assertIsNone(held["reader_withdrawal"]["replacement"])
+        self.assertNotIn("pdf_sha256", held["reader_withdrawal"]["prior"])     # never installed
+        self.assertEqual((self.root / geometry.GEOMETRY_MANIFEST).read_bytes(), base)
+        self.assertEqual(b.check(self.root, self.root / b.CATALOG)["status"], "ok")
+        summary = self.plan()
+        self.assertEqual((summary["withdrawals"], summary["selected"]), (1, 0))
+        snapshot = self.snapshot()
+        self.assertEqual(call()["withdrawn_readings"], 0)      # an identical rerun changes nothing
+        self.assertEqual(self.snapshot(), snapshot)
+        with self.assertRaisesRegex(ValueError, "already withdrawn differently"):
+            geometry.withdraw(self.root, self.withdrawal(reading_id), "2026-10-29T00:00:00Z", "Another reason.", "a" * 64)
+
+    def test_withdraw_reaches_a_replacement_reading_and_pins_an_installed_pdf(self):
+        _, unit = self.registration_fixture()
+        self.register()
+        recipe = json.loads((self.root / ".scratch/proposal/recipe.json").read_text())
+        row = next(r for r in recipe["pages"][0]["rows"] if r[0] == "L" and r[1] == "l")
+        row[1] = "p"
+        b.write(self.root / ".scratch/v2/recipe.json", json.dumps(recipe).encode())
+        geometry.build(self.root, ".scratch/v2/recipe.json", ".scratch/v2/replay")
+        geometry.map_units(self.root, ".scratch/v2/recipe.json", ".scratch/v2/replay", ".scratch/v2/mapping.json")
+        geometry.register(self.root, ".scratch/v2/recipe.json", ".scratch/v2/replay", ".scratch/v2/mapping.json",
+                          ".scratch/units.json", "2026-10-29T00:00:00Z", supersede=True, reason="Synthetic replacement.")
+        v1, v2 = unit["id"] + ".reading-order", unit["id"] + ".reading-order-v2"
+        args = ("2026-10-30T00:00:00Z", "Synthetic straddling WORD.", "b" * 64)
+        with self.assertRaisesRegex(ValueError, "withdrawn through its replacement"):
+            geometry.withdraw(self.root, self.withdrawal(v1), *args)
+        b.write(self.root / geometry.RELEASE, json.dumps({"documents": [{"id": v2, "language": "la", "pdf_sha256": "c" * 64}]}).encode())
+        for pdf in (None, "d" * 64):
+            with self.subTest(pdf=pdf), self.assertRaisesRegex(ValueError, "exact release PDF"):
+                geometry.withdraw(self.root, self.withdrawal(v2, pdf=pdf), *args)
+        geometry.withdraw(self.root, self.withdrawal(v2, pdf="c" * 64), *args)
+        manifest = json.loads((self.root / geometry.READING_ORDER_WITHDRAWALS).read_text())
+        self.assertEqual([(x["prior"]["id"], x["prior"]["pdf_sha256"]) for x in manifest["supersessions"]], [(v2, "c" * 64)])
+        self.assertEqual(b.check(self.root, self.root / b.CATALOG)["status"], "ok")
+        summary = self.plan()      # the replacement is planned from the corrections, then withdrawn
+        self.assertEqual((summary["source_supersessions"], summary["withdrawals"], summary["selected"]), (1, 1, 0))
+
+    def test_withdraw_refuses_incomplete_or_unknown_selections_before_any_write(self):
+        _, unit = self.registration_fixture()
+        self.register()
+        reading_id = unit["id"] + ".reading-order"
+        good, unknown = self.withdrawal(reading_id, name="good.json"), self.withdrawal(unit["id"] + ".reading-order-v7", name="unknown.json")
+        pinned = self.withdrawal(reading_id, pdf="e" * 64, name="pinned.json")
+        before = self.snapshot()
+        cases = ((good, "bad", "x", "a" * 64, "whole-second UTC"),
+                 (good, "2026-10-29T00:00:00Z", " ", "a" * 64, "explicit --reason"),
+                 (good, "2026-10-29T00:00:00Z", "x", "A" * 64, "evidence-sha256"),
+                 (unknown, "2026-10-29T00:00:00Z", "x", "a" * 64, "no registered reading"),
+                 (pinned, "2026-10-29T00:00:00Z", "x", "a" * 64, "uninstalled reading"))
+        for path, revision, reason, evidence, message in cases:
+            with self.subTest(message), self.assertRaisesRegex(ValueError, message):
+                geometry.withdraw(self.root, path, revision, reason, evidence)
+        self.assertEqual(self.snapshot(), before)
+
     def test_five_value_coords_give_the_same_geometry_and_text(self):
         outputs, base = {}, self.root
         for baseline in (False, True):
@@ -659,6 +748,7 @@ class ReadingOrderTests(unittest.TestCase):
             (["propose", "--volume", "4", "--out", "../outside", "--json"], "without traversal"),
             (["map-units", "--recipe", "x.json", "--replay", "x", "--out", "../outside.json", "--json"], "without traversal"),
             (["register", "--recipe", "x", "--replay", "x", "--mapping", "x", "--units", "x", "--revision", "bad", "--json"], "whole-second UTC"),
+            (["withdraw", "--units", "x", "--revision", "bad", "--reason", "x", "--evidence-sha256", "x", "--json"], "whole-second UTC"),
         )
         for argv, message in cases:
             with self.subTest(argv[0]):

@@ -1969,6 +1969,114 @@ def _supersede(root, catalog, catalog_file, container, units, rows, reviews, ord
             "corrections_manifest": READING_ORDER_CORRECTIONS}
 
 
+READING_ORDER_WITHDRAWALS = "src/sources/papal-documents/bullarium-reading-order-withdrawals-manifest.json"
+RELEASE = "release/papal-documents.json"
+WITHDRAWAL_SELECTION_SCHEMA = "triptych-bullarium-reading-withdrawal-selection/v1"
+
+
+def withdraw(root, units_path, revision, reason, evidence_sha256):
+    """Withdraw registered reading selections with an explicit prior-to-null supersession.
+
+    For each selected reading document: its catalog unit becomes specifically
+    held, with the admission review archived in ``review_history``, a hold
+    review stating the reason and evidence, ``reader_withdrawal`` (the action)
+    and ``reader_withdrawal_evidence_sha256``; the action
+    ``{"prior": <exact pins>, "reason": ..., "replacement": null}`` goes into the
+    reading-order withdrawals manifest, which the source plan reads after the
+    reading-order corrections manifest (so a replacement reading can itself be
+    withdrawn).  An installed reading (a row in release/papal-documents.json) is
+    pinned by its PDF SHA-256; an uninstalled one carries no PDF pin.  Records,
+    segments, artifacts and the base manifests stay byte-identical; an identical
+    rerun changes nothing.
+    """
+    import _bullarium as bullarium
+    _require(re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z", str(revision)), "revision requires explicit whole-second UTC")
+    _require(isinstance(reason, str) and reason.strip(), "a withdrawal requires an explicit --reason")
+    _require(isinstance(evidence_sha256, str) and re.fullmatch(r"[0-9a-f]{64}", evidence_sha256),
+             "a withdrawal requires --evidence-sha256 (64 lowercase hex)")
+    root = Path(root).resolve()
+    selection = json.loads(_path(root, units_path, True).read_bytes())
+    readings = selection.get("readings") if isinstance(selection, dict) else None
+    _require(selection.get("schema") == WITHDRAWAL_SELECTION_SCHEMA and isinstance(readings, list) and readings
+             and all(isinstance(r, dict) and isinstance(r.get("id"), str) for r in readings)
+             and len({r["id"] for r in readings}) == len(readings), "withdrawal selection requires an explicit nonempty reading list")
+    manifests = {}
+    for path in (GEOMETRY_MANIFEST, GEOMETRY_FRAGMENT_MANIFEST, READING_ORDER_CORRECTIONS):
+        target = _path(root, path, True)
+        if target.exists():
+            manifests[path] = json.loads(target.read_bytes())
+    documents = {d["id"]: d for m in manifests.values() for d in m["documents"]}
+    superseded = {x["prior"]["id"] for x in manifests.get(READING_ORDER_CORRECTIONS, {}).get("supersessions", [])}
+    withdrawals_file = _path(root, READING_ORDER_WITHDRAWALS, True)
+    withdrawals = (json.loads(withdrawals_file.read_bytes()) if withdrawals_file.exists()
+                   else {"schema": "triptych-papal-typeset/v1", "revision": revision, "documents": [], "supersessions": []})
+    _require(withdrawals.get("schema") == "triptych-papal-typeset/v1" and withdrawals.get("documents") == []
+             and isinstance(withdrawals.get("supersessions"), list), "unknown reading-order withdrawals manifest")
+    release_file = root / RELEASE
+    installed = ({(d["id"], d["language"]): d for d in json.loads(release_file.read_bytes())["documents"]}
+                 if release_file.exists() else {})
+    catalog_file = _path(root, CATALOG, True)
+    catalog = json.loads(catalog_file.read_bytes())
+    units = {u["id"]: u for u in catalog["units"]}
+    actions, changed = [], 0
+    for item in readings:
+        doc_id = item["id"]
+        document = documents.get(doc_id)
+        _require(document is not None, "no registered reading document " + doc_id)
+        unit = units.get(doc_id.removesuffix(".fragment"))
+        _require(unit is not None and unit.get("reading_selection_variant_of") and unit.get("segment_id") == document["segment_id"]
+                 and unit.get("artifact_sha256") == document["sha256"], "reading document disagrees with its catalog unit: " + doc_id)
+        _require(doc_id not in superseded, "a superseded reading is withdrawn through its replacement: " + doc_id)
+        release_row = installed.get((doc_id, document["language"]))
+        pdf = item.get("pdf_sha256")
+        if release_row is not None:
+            _require(pdf == release_row.get("pdf_sha256"), "installed reading requires its exact release PDF SHA-256: " + doc_id)
+        else:
+            _require(pdf is None, "an uninstalled reading has no PDF to pin: " + doc_id)
+        prior = {"id": doc_id, "language": document["language"], "artifact_id": document["artifact_id"],
+                 "source_sha256": document["sha256"], "segment_id": document["segment_id"],
+                 "physical_line_ranges": document["physical_line_ranges"]}
+        if pdf is not None:
+            prior["pdf_sha256"] = pdf
+        action = {"prior": prior, "reason": reason, "replacement": None}
+        earlier = [x for x in withdrawals["supersessions"] if x["prior"]["id"] == doc_id]
+        _require(not earlier or earlier == [action], "the reading is already withdrawn differently: " + doc_id)
+        if unit.get("reader_withdrawal") is not None:     # a replay of this withdrawal
+            _require(unit["reader_withdrawal"] == action and unit.get("reader_withdrawal_evidence_sha256") == evidence_sha256
+                     and earlier, "the reading's unit is already withdrawn differently: " + doc_id)
+            continue
+        _require(unit["status"] in {"admitted-mechanical-ocr-extent", "admitted-fragment"},
+                 "only an admitted reading selection can be withdrawn: " + doc_id)
+        note = f"Reader withdrawn by an explicit prior-to-null supersession: {reason.strip()} Evidence SHA-256 {evidence_sha256}."
+        if isinstance(item.get("note"), str) and item["note"].strip():
+            note += " " + item["note"].strip()
+        unit["review_history"] = list(unit.get("review_history", [])) + [unit["review"]]
+        unit["review"] = bullarium.durable_review({
+            "artifact_sha256": unit["artifact_sha256"], "decision": "hold", "document_id": doc_id,
+            "physical_line_ranges": document["physical_line_ranges"], "review_note": note,
+            "title": unit["review"].get("title")})
+        unit["status"] = "specifically-held"
+        unit["reader_withdrawal"] = action
+        unit["reader_withdrawal_evidence_sha256"] = evidence_sha256
+        if not earlier:
+            actions.append(action)
+        changed += 1
+    if changed or actions:
+        coverage = catalog["coverage"]
+        values = units.values()
+        coverage.update(independent_papal_acts_admitted=sum(u["status"] == "admitted-mechanical-ocr-extent" for u in values),
+                        fragment_witnesses_admitted=sum(u["status"] == "admitted-fragment" for u in values),
+                        units_held=sum(u["status"] in {"held", "specifically-held"} for u in values),
+                        specifically_reviewed_holds=sum(u["status"] == "specifically-held" for u in values))
+        catalog["units"] = sorted(values, key=lambda u: u["id"])
+        withdrawals["supersessions"] += actions
+        withdrawals["revision"] = max(withdrawals.get("revision", revision), revision)
+        bullarium.write(withdrawals_file, bullarium.json_bytes(withdrawals))
+        bullarium.write(catalog_file, bullarium.json_bytes(catalog))
+    return {"withdrawn_readings": changed, "withdrawals_manifest": READING_ORDER_WITHDRAWALS,
+            "manifest_supersessions": len(withdrawals["supersessions"])}
+
+
 VERB_EXAMPLES = {
     "propose": (
         Example("tools/bullarium geometry propose --volume 4 --out ../outside --json",
@@ -1994,11 +2102,20 @@ VERB_EXAMPLES = {
                 ("bullarium geometry register: revision requires explicit whole-second UTC",),
                 "The same refusal in ordinary text."),
     ),
+    "withdraw": (
+        Example("tools/bullarium geometry withdraw --units .scratch/absent/withdraw.json --revision invalid --reason x --evidence-sha256 x --json",
+                ('{"code":"input","error":"revision requires explicit whole-second UTC","status":"error","v":1}',),
+                "An invalid revision is refused before the selection, catalog or any manifest is read."),
+        Example("tools/bullarium geometry withdraw --units .scratch/absent/withdraw.json --revision invalid --reason x --evidence-sha256 x",
+                ("bullarium geometry withdraw: revision requires explicit whole-second UTC",),
+                "The same refusal in ordinary text."),
+    ),
 }
 VERB_HELP = {
     "propose": "Propose an explicit v2 reading-order recipe from native WORD geometry (scratch/build output only).",
     "map-units": "Map every catalog unit of the volume onto a replayed derivative through WORD identity.",
     "register": "Register a replayed derivative and admit explicitly selected 'clean' units via bullarium admit.",
+    "withdraw": "Withdraw registered reading selections by explicit prior-to-null supersessions (no replacement).",
 }
 
 
@@ -2020,6 +2137,9 @@ def _verb_main(verb, argv, examples):
         parser.add_argument("--out", required=True)
         parser.add_argument("--catalog", default=CATALOG)
         parser.add_argument("--withdrawals", default=WITHDRAWALS)
+    elif verb == "withdraw":
+        for name in ("units", "revision", "reason", "evidence-sha256"):
+            parser.add_argument("--" + name, required=True)
     else:
         for name in ("recipe", "replay", "mapping", "units", "revision"):
             parser.add_argument("--" + name, required=True)
@@ -2036,6 +2156,8 @@ def _verb_main(verb, argv, examples):
         elif verb == "map-units":
             info = map_units(args.root, args.recipe, args.replay, args.out, catalog_path=args.catalog,
                              withdrawals_path=args.withdrawals)
+        elif verb == "withdraw":
+            info = withdraw(args.root, args.units, args.revision, args.reason, args.evidence_sha256)
         else:
             info = register(args.root, args.recipe, args.replay, args.mapping, args.units, args.revision,
                             input_map=args.input_map, supersede=args.supersede, reason=args.reason)
