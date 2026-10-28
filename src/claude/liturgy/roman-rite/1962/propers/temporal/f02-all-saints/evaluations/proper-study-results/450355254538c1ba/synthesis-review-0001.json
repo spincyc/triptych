@@ -1,0 +1,422 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "SYN-004",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/03-date-location.tex lines 16, 20, 24 and 28 (place phrases of rows row-e88e943a6faaa20b, row-fb6656afd6f4b4f0, row-43dce930fad06090 and row-8b85083df79d6e95); physical p. 2",
+      "problem": "Part (a) of this advisory is repaired: the note now says that the Gradual sings Ps 33:10 and only the second half of 33:11. Part (b) stands. Four rows still name no place and do not say that the place is unknown. These are David's reign ('Two psalms of praise and of the fear of the Lord ...'), the Psalter's composition ('The Psalter, the book in which both psalms stand.'), Wisdom's composition (the phrase names the Ptolemaic reigns but no place of writing) and Matthew's composition ('The Gospel according to St Matthew, from which ...'). The profile asks the table to name the place of the subject being dated, or to say when a location is unknown. The phrases repeat sections/80-date-location.tex lines 14-28 unchanged, so the same gap stands in study-owned text.",
+      "required_result": "Where the record supplies no place for a composition or attribution row, say so in that row's phrase, for example 'place of writing not given'. Do not leave the place unstated. If the phrase is changed, make the same change in the expansive appendix.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-005",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/10-commentary.tex lines 27-29 (p. 5), 110-111 (p. 6) and 347-349 (p. 9)",
+      "problem": "Three framing clauses say more than their sources. (a) Lines 27-29: 'Three early commentators on the Apocalypse agree that the multitude holds the elect of every nation.' The study (20-sealed-number-uncounted-crowd.tex 75-83) and research/scope.md (lines 1014-1023, PL 35 cols. 2425-2426) record the anonymous Expositio only for the angel (the Church) and the number ('omnis omnino Ecclesia est'). Neither says what it makes of the multitude, and the concise's own paragraph on it (48-51) gives no such reading. Bede's first account of 7:9 is 'the glory of those who are to overcome the wickedness of the last persecution' (checked in the tracked Marshall chapter-7 comments); only his second account names the Gentiles. The sentence makes up a three-way agreement, which is a source-dependent claim the study does not make. (b) Lines 110-111: 'Augustine and Aquinas agree that the multitude no man could number has a number, and that God knows it.' Ench. 29 and ST I q. 23 a. 7 speak of the number of the saints and of the predestined, not of the Lesson's multitude. Applying their words to the multitude is the study's own inference, and the study keeps it as one (20:116-119, 203-205). (c) Lines 347-349 give the third interpretation's allegory as 'Israel, which killed the Bread of life and went hungry'. This drops what Basil says Israel hungers for, the hearing of the word (40-no-want-just-in-gods-hand.tex 55-56, 206-207; the concise itself at line 217: 'now hungers for the word'). In an interpretation about bodily want, 'went hungry' reads as bodily hunger, which reverses the figure. None of the three changes an interpretation's controlling claim, and after (a) the next paragraphs give each commentator's own words. This is therefore advisory.",
+      "required_result": "(a) Replace lines 27-29 with 'Three early commentators on the Apocalypse part over the number and over the angel who seals; Bede, in the second of his two accounts of verse 9, and Victorinus find the nations in the multitude.' Alternatively, keep only the second sentence. (b) Replace lines 110-111 with 'Augustine and Aquinas agree that the number of the saints is fixed and known to God.' (c) At line 348 write 'Israel, which killed the Bread of life and now hungers for the word'. Add no source or locus.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-006",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/10-commentary.tex lines 34-36, 98-99, 113-116, 124-125, 150-153, 169-170, 208-210, 212-213, 254-256 and 311-313, against sections/concise/04-themes.tex lines 26-27, 64-65, 79-84, 87-89, 100-102, 105-106 and 117-119",
+      "problem": "Most of pp. 5-9 goes beyond the opening. New there are Bede's cube of ten, Victorinus, Cyprian against Schuster, Gregory and Aquinas on the number, the gifts set against the steps, Chrysostom 38.3, Bernard's reconciliations, the dispute over bodily need, Hilary, and the Offertory's peace and hand of God. But in about ten places the commentary gives the reader again what pp. 3-4 have just given. The tenses sentence (04:100-102) returns almost word for word at 10:254-256. Gal 3:29, 'if ye be Christ's, then are ye Abraham's seed', is quoted on p. 3 (04:64-65) and again on p. 5 (10:35-36). Bernard on the night-office verse appears three times (04:82-84; 10:113-116; 10:208-210). Augustine's objection is given twice (04:79-82; 10:212-213), and so are Chrysostom's 'not this or that person' (04:87-89; 10:124-125), Fromage's filled choirs (04:26-27; 10:98-99), Augustine's gloss on Enarr. 87 (04:117-119; 10:311-313) and the eighth beatitude's return to the start (04:105-106; 10:169-170). The first unit also ends (10:150-153) on a sentence that lists again the four differences the unit has just set out. Each repeat is short and serves as the setup of a comparison, and none is copied from the study, so this is not the section's habit (guidance/editorial.md, 'Say it once'). It does make the reader cross the same ground twice in eleven pages.",
+      "required_result": "Where the commentary needs a point that pp. 3-4 already gave, name it in a clause and go straight to what is new. Do not quote it again. Rewrites: (1) Replace 10:254-257 ('The Beatitudes do not keep one tense ... None of these authors divides the rewards along those lines.') with 'None of these authors divides the rewards by the Beatitudes' tenses.' (2) Replace 10:113-119 with 'Bernard, who says that the night-office verse is meant for us and not for the saints in glory, calls those still in the fight holy juxta solam adhuc praedestinationem, \"so far only by predestination,\" with a holiness that latet ... penes Deum, lies hidden with God (sermo 5, nn. 2-3). He does not comment on the Mass Gradual.' (3) Cut 'Its authorities differ on the angel who seals ... makes salvation easy.' at 10:150-153. (4) At 10:35-36 cite Gal 3:29 without quoting it again. Keep every claim-local qualification.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-007",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/10-commentary.tex line 212 ('The promise is harder.'), p. 7",
+      "problem": "The sentence tells the reader that the difficulty is hard before saying what it is (guidance/editorial.md, 'Let emphasis come from content'). The study review raised the same form in the expansive study as STU-014. It is an isolated instance, and the objection that follows carries the weight.",
+      "required_result": "Cut the sentence and begin the paragraph with the objection: 'Against the promise Augustine voices the objection himself: by the letter the verse seems to deceive, ...'.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-008",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/10-commentary.tex lines 15-19 (opening of the commentary, p. 5) and 339-359 ('The four senses compared', p. 9)",
+      "problem": "The study's comparison ends: 'The three answers can be held together, since each answers a different question; the disagreements that remain lie within each interpretation, among the authorities it relies on' (50-comparison.tex 82-85). The concise never says how the three answers stand to one another as wholes. In the rewritten commentary the questions no longer map one to one onto the interpretations: the second and third both answer the unit on fear and the unit on when the reward is had, and the close compares only the four senses. Within each unit the reader is shown where the authorities differ, but not whether the second and third interpretations' answers at the Offertory, peace begun now and the just safe in God's hand, compete or combine. Nothing in the concise presents them as rivals, so no one is misled; one of the study's main comparative conclusions is simply left for the reader to infer.",
+      "required_result": "State that conclusion once, in a sentence or two, in the close or in the commentary's opening paragraph, taking it from 50-comparison.tex without reprinting the table or its paragraphs. For example: 'The three answers can be held together, since each answers a different question; the second and the third meet at the Offertory, one in its peace, now in hope and at last in fact, the other in its hand of God, and the disagreements that remain are among the authorities within each.' Add no new source-dependent claim.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 1,
+  "observations": [
+    {
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/synthesis.tex with sections/concise/90-apparatus.tex line 6 (\\runninghead{Scope and References}); scratch build p. 9",
+      "note": "Page 9 carries the running head 'Scope and References' above the end of the commentary and the four-senses comparison, because the apparatus's running head is set on the page where its section starts mid-page. The shared-format defect already recorded for main.tex recurs in the concise; it belongs to the visual review and the format owner."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/concise/01-inventory.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-inventory"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/concise/02-overview.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "concise-date-location",
+          "kind": "front-matter",
+          "path": "sections/concise/03-date-location.tex",
+          "references": [
+            "format.tex",
+            "research/chronology-annotations.tex",
+            "research/chronology.toml"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-overview"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/concise/04-themes.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-themes"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/concise/10-commentary.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/concise/90-apparatus.tex",
+          "references": [
+            "propers/verified.md",
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
+      "element_keys": [
+        "introit",
+        "collect",
+        "commemoration-collect",
+        "lesson",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "commemoration-secret",
+        "preface",
+        "communion",
+        "postcommunion",
+        "commemoration-postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Bede",
+            "Augustine of Hippo",
+            "Gregory the Great",
+            "Thomas Aquinas",
+            "John Chrysostom",
+            "Sicard of Cremona",
+            "Lucien Fromage",
+            "William Durandus",
+            "Alfredo Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Bede",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "sealed-number-uncounted-crowd"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "sealed-number-uncounted-crowd",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Rabanus Maurus",
+            "Basil of Caesarea",
+            "Bede",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Rabanus Maurus"
+          ],
+          "component_keys": [
+            "beatitudes-way-of-the-saints"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "beatitudes-way-of-the-saints",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Basil of Caesarea",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Robert Bellarmine",
+            "Alfredo Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Basil of Caesarea",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "no-want-just-in-gods-hand"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "no-want-just-in-gods-hand",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/format.tex": "43c4890d11fec65696c54659b90db4841affb0ccae551e3cfff335db4233a9ab",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/propers/verified.md": "df0692445c3b65b1e0034af0523b5ced3e02ad4b9c4e4010556c431f018393fc",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/chronology-annotations.tex": "d396816f55517a7918ac3d74bed09420c977a11f524ec904a923668d7bbf3c51",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/chronology.toml": "6ab0109bd1bc0e7953a23fa47f546883454948ce34f01a2b42c999633b1cccaa",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/interpretations.md": "40707f126b71756797508e63738807fff7727cc0c090d917670f5cab36d0da0c",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/scope.md": "c90a6c41700d0d62a893dfb089bd7bc17bbed79fd7d850b74a0bb862d9b29c04",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/01-inventory.tex": "a0b1ff927528d42c6ff84bf85abcbed682ddb8381c6312ba78e99525e8469f03",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/02-overview.tex": "972f3fbcd170642b4117f45670a2e67015d8606f9d5606a99e8b836bb044b7e6",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/03-date-location.tex": "0a59dda2a305b24944b4a3eb0e972b133f4460f6d85d43abf85a815be58f184b",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/04-themes.tex": "5615ef7204cc79e74f00329f03ac330ac25329b94b7865fe1933247385990c43",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/10-commentary.tex": "c57a4948b3006467cd5d214ec752b43f625943f79fc262c1f645e52a1478b1b8",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/90-apparatus.tex": "1a18f58912ea77fb72271afd136a424cb25ba129ac0f0ffb19ccba687faf2c59",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/synthesis.tex": "dcbfffe7326f5cd210d1b8bae35a8e594d50e522e8a2181f941335b224073687",
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "15",
+            "4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83",
+            "450355254538c1ba",
+            "4f52b9ade338f9a9f4f39f312aa45989a0baf2ca",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "Cold review of the concise study src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/synthesis.tex (11 physical pages; scratch rebuild settled with no warning, PDF SHA-256 abb35a858397b9e5ef9ca8ec06dd678edd5e0a85474b1eaa2539e44995db7eff, identical to the hash in research/production-review.md; all fifteen sealed input hashes match). Placement from the settled aux: inventory, overview and all four sense markers on p. 1, chronology alone on p. 2, themes p. 3 to p. 4 (both pages filled with text), commentary from p. 5. The standing blocking finding SYN-001 is repaired. The commentary is now built on three questions, and the interpretations meet at the texts they share: the second and the third at the Gradual (command and promise) and at the Offertory (peace, and the hand of God). Bede's first account is set beside the eighth beatitude, and the close compares only the four senses. With quotations removed, 508 of 3,115 words of its own prose (16%) lie in eight-word runs shared with study sections 00-50 (56% before). Each answer recovered from the concise prose before the study was consulted: (1) the sealed and the uncounted are one Church, a single city with the angels, whose number God knows (Bede, Augustine, with Gregory and Aquinas); (2) the Beatitudes are the way the saints walked, with the Gradual's fear as its first step and a reward begun on the way and perfected at its end (Augustine, Chrysostom, Aquinas, Rabanus, with Hilary dissenting in emphasis); (3) the good the God-fearing cannot lack is God himself, so the just in God's hand keep the promise though hungry and killed (Basil, Augustine, Bonaventure, against Aquinas and Bellarmine on bodily need). All three agree with 50-comparison.tex. Every claim-local qualification survives: Bede 'not in so many words', Victorinus's uncertain text, Bernard not on the Mass Gradual, Rabanus's own words, Bonaventure's mortis, the Secret not said this day, Durandus's intercessionibus and Cyprian's martyrdom-only conclusion. Page-2 lookup on the rendered table: Gradual Ps 33:10-11 pairs with three labelled rows (the traditional attribution, David's reign, disputed B.C. 1055-1015; the Psalter's composition, before c. 165 B.C.; the superscription setting, David at the court of Achis, king of Geth, among the Philistines, A.M. 2944, Haydock reporting Ussher). Gospel Mt 5:1-12 pairs with the event on an unnamed mountain after 4:23-25, date unresolved, and with Matthew's composition, six disputed alternatives. The note gives the Apocalypse, 5:12a and 33:11b. Each pairing is found without crossing a paragraph. Source loci checked in tracked text: Bede on 7:4-12 (Marshall), Augustine Sermon LXI and De serm. Dom. I.4.12 (NPNF I.6), Chrysostom Hom. in Matt. 15.4, 15.5, 15.9 and 38.3 (NPNF I.10), Victorinus on 7:2-9 and 12:6 (ANF 7), Bernard sermo 1 n. 15 and sermo 5 nn. 2-3 (PL 183 OCR, including 'Illorum lauda virtutem, quorum jam certa victoria est'), and Alphonsus, Ninth Consideration. All agree with the concise. Not checked at source in this review: the PL 35 Expositio (remote image scan only), Hilary (PL 9 OCR too noisy to search), Basil PG 29 and Aquinas on the Psalms; for these the review relied on the reviewed study and research/scope.md. Five advisories: SYN-004 re-filed for its unrepaired part (b); SYN-005, three framing claims that go beyond their sources; SYN-006, points from pp. 3-4 given again on pp. 5-9; SYN-007, one announced difficulty; SYN-008, the relation of the three answers left unstated. Verdict: PASS. This dispatch contributed the independent cold review of the concise study at synthesis-review iteration 1, with a scratch rebuild, a page-placement check, the page-2 lookup and source-locus spot checks."
+}

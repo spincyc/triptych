@@ -1,582 +1,598 @@
-# Proposed interpretations of the whole formulary
+# Interpretations of the Mass of All Saints, 1 November 2026
 
-Run `427e2f58bb897a16`, research stage, iteration 0, revised in
-iterations 1, 2 and 3 (iteration 3 added the Lesson's further patristic
-witnesses to Reading A and the comparison). This record proposes
-interpretations of the appointed formulary of *In Festo Omnium Sanctorum* as
-said on Sunday 1 November 2026 — the feast's ten elements, the disputed
-Preface slot, and the three orations of the commemorated Twenty-third Sunday
-after Pentecost. It is one of the three research documents; the appointed
-text is controlled in `propers/verified.md`, and the evidence for every
-claim below is in `research/scope.md`.
+Research stage, iteration 3, proper-study run `450355254538c1ba`, 27 October
+2026. Iteration 3 restates the Collect's *intercessoribus* and
+*intercessionibus* as two variants with their witnesses, assigning neither
+priority; records that Rabanus's comment on Mt 11:28 is Jerome's; gives both
+of its readings wherever it is cited; and describes Rabanus's source labels
+as printed. Iteration 2 adds Rabanus Maurus as a carrying author of Reading B, adds
+Hilary's, Augustine's, Gregory's and Rabanus's comments on Mt 11:28 to the
+Alleluia, gives the Collect's *intercessionibus* its sacramentary witnesses,
+and corrects the locus of Augustine's "starting-point" sentence; nothing else
+was re-derived (research/scope.md, opening). Three readings of the whole formulary are proposed. Each names the
+authors who carry it (Fathers or saints with a standing row in
+`src/sources/inventories/author-standing-v1.toml`) and those who only support
+it. Every author statement below was read at the locus research/scope.md
+gives. An author is credited with a connection only where his locus comments on
+the element's own verse or text. Statements marked **editorial** are this
+record's proposals for how an element joins a reading; where an editorial join
+uses an author's words from a locus on another verse, the entry says which
+verse that locus comments on, and the author is not credited with the join. No
+author read interprets this whole Mass.
 
-**How to read the proposals.** Each reading states the exegetical question it
-answers, its controlling claim, the witnesses that carry it, the contribution
-of every element, the four senses as the reading distributes them, and the
-strongest difficulty it must survive. Per the guidance, a reading is carried
-by at least two authors of carrying standing (father, doctor, canonized
-saint; a blessed may second); ecclesiastical-writers (Durandus, Beleth,
-Fromage, Cassiodorus, Theodoret and their like) and servants of God
-(Guéranger) are evidence of reception and never carry. The liturgical
-commentators (Schuster, blessed; the Guéranger-Fromage continuation; Durandus;
-Beleth) supply the Mass-level reading of the formulary and are cited as such.
-**Where this record goes beyond what a named witness says, the synthesis is
-editorial and is marked as such.** Nothing here is the study's text; the
-authoring stage chooses and writes.
+## 1. The exegetical questions that divide the readings
 
-## 1. The questions the formulary forces
+1. **Who and how many?** Apoc 7:4 counts 144,000 sealed; 7:9 sees a multitude
+   *quam dinumeráre nemo póterat*. Are they one people or two, is the number
+   known to anyone, and does the uncounted multitude show that salvation is
+   easily reached (research/scope.md 5.1, 6.1, 6.2, 6.5)? Reading A is built on
+   the answer.
+2. **When are the beatitudes' rewards given?** Mt 5:3-12a has a present
+   *est* at the first and eighth and futures between. Are the rewards given in
+   this life, begun here, or kept for the immortal state (5.2, 6.3)? Reading B
+   is built on the answer.
+3. **What does "nothing is lacking" promise?** Ps 33:10-11 in the Gradual
+   (*nihil deest … non defícient omni bono*) and Wis 3:1 in the Offertory
+   (*in manu Dei*). Are the goods bodily, spiritual, or God himself; are the
+   just kept from harm or only from final harm; and whose souls are in God's
+   hand (5.3, 5.5, 6.4, 6.7)? Reading C is built on the answer.
 
-1. **Who are the sealed, and who is the crowd?** The Lesson counts exactly
-   144,000 from the tribes and then shows a multitude no man can number, from
-   every nation, before the throne (Apoc 7:4, 9). The feast reads both in one
-   breath. Any reading must say how the number and the crowd relate (scope
-   §5.1).
-2. **What does the feast promise, and to whom?** The Gradual promises that
-   nothing is lacking to those who fear the Lord, while the Gospel blesses
-   the poor, the mourning, the hungry and the persecuted — and the Missal
-   cuts the psalm's own foil, *Divites eguerunt* (scope §5.2). The promise
-   and the blessed condition must be reconciled without flattening either.
-3. **Whose feast is it — the Church triumphant's, or the Church still on
-   the way?** The Introit and Lesson celebrate the saints already rejoicing
-   with the angels; the Collect asks for mercy *multiplicatis
-   intercessoribus*; the Offertory speaks of the just who "seemed to die";
-   the Postcommunion asks that the *fideles populi* — the faithful peoples,
-   still journeying — be defended by the saints' perpetual supplication. The
-   formulary stands in both cities at once.
-4. **Why these texts for this feast?** The Lesson is the Pantheon
-   dedication's own (Schuster; Durandus), the Introit was St Agatha's, the
-   Collect is older than the November date. The formulary is a layered
-   composition, and a reading may use the layers — but must not invent a
-   single moment of composition that the evidence does not give.
-5. **What does the commemorated Sunday add?** *Absolve, quaesumus* (loose
-   the guilt of Thy peoples), *Pro nostrae servitutis augmento* (accept the
-   offering of our servitude), and the prayer not to be left subject to
-   human perils stand inside the feast's joy. A reading may hear the
-   juxtaposition; it must not pretend the Sunday's texts belong to the
-   feast.
+The readings are complementary in their objects (the company, the way, the
+possession) and differ in the inference each makes from its controlling
+passage. Each also takes a side, or leaves sides standing, on the others'
+questions (section 5).
 
-## 2. Reading A — The sealed number and the uncounted crowd: one Church sealed from every nation (`sealed-number-uncounted-crowd`)
+## 2. Reading A — `sealed-number-uncounted-crowd`: one city of angels and men, numbered by God and beyond our count
 
-**Exegetical question.** How can the same vision number the sealed at
-144,000 and then show a crowd no man can number — and what does the seal do?
+**Controlling claim.** The feast keeps in one celebration the whole company of
+the saints, which the Lesson shows as a number sealed and a multitude no man
+could number: a people known to God by number and closed to human counting,
+gathered with the angels, whose intercession the Church asks as a multitude.
 
-**Controlling claim.** The definite number and the uncounted multitude are
-one Church seen in two aspects: the whole number of the elect, complete by
-God's reckoning, sealed with the sign of the cross on the forehead — the
-faith confessed openly — gathered first from Israel by nature or by
-imitation of faith, and then from every nation. The feast of All Saints is
-the Church's own vision of herself whole: those sealed for confession on
-earth are those standing with palms before the throne. The sealing is not
-restriction but preservation (*Nolite nocere… quoadusque signemus*), and
-the palms are the cross's triumph.
+**Carrying authors and their reasoning.**
 
-**Carrying witnesses.**
+- **Bede** (*Explanatio Apocalypsis* on 7:1-12). The angel from the east is
+  the Lord incarnate, the Angel of great counsel, who seals his own on the
+  forehead with the cross; the seal is faith. The number of 7:4 signifies the
+  innumerable multitude of the whole Church. On 7:9 he reads the multitude
+  first as the victors of the last persecution, then, as an alternative, as the
+  Gentiles joined to the Church. On 7:10 the multitude's loud voice is the
+  Church's unceasing praise of the Father and the Son reigning in the Church,
+  the Holy Spirit reigning with them; at 7:11 the angels may stand for the
+  multitude or be the angels themselves; on 7:12 the Church offers the
+  sevenfold praise and confesses in each member that it received it from God.
+- **Augustine** (Sermon LXI; *Enchiridion* 29). In Sermon LXI, on "Are there
+  few that be saved?" (Lk 13:23-24), he quotes Apoc 7:9 and says "This is the
+  mass of the saints": the few who enter by the narrow gate are "few" in
+  comparison of the lost and "many in the society of the Angels", and they are
+  the winnowed grain of the threshing floor, a mass large enough "to fill the
+  garner of heaven". In *Ench.* 29 restored mankind fills the place the fallen
+  angels left in the company of the angels, perhaps with a greater number; "we
+  do not know the number either of the saints or of the devils", but it is
+  present to the Creator.
 
-- **Bede (father), *Explanatio Apocalypsis* on Apoc 7** (read whole, scope
-  §3.3). He carries the claim: the definite number is the perfection of the
-  whole Church — twelve times twelve times a thousand, the cube of ten;
-  the sealed are drawn from the patriarchs on, by nature or by imitation of
-  faith (Gal 3:29: *if you be Christ's, then are you the seed of Abraham*);
-  Judah, *confession*, heads the list and Benjamin, *son of the right
-  hand*, closes it, so the sealed run from confession of the faith to
-  sitting at the right hand. At v. 9 he first reads the multitude as those
-  who overcome the last persecution, and then, as an alternative ("may
-  also be thus understood"), as the Gentiles saved after the tribes; the
-  controlling claim's "one Church seen in two aspects" is this study's
-  synthesis of his v. 4 reading (the number signifies "the innumerable
-  multitude of the whole Church") with that alternative, not his own
-  formula. The robes are
-  baptism, the palms the triumph of the cross; the loud voice is unceasing
-  praise; and — decisive for a feast of all saints — those washed in the
-  Lamb's blood are not the martyrs alone but the whole Church.
-- **Augustine (father), on the Lesson in three brief loci, and in the
-  *Enarrationes* on Ps 32 and Ps 33** (scope §3.2, §3.3, §3.4). On the
-  Lesson he seconds Bede's two central claims. Of the number: twelve into
-  twelve gives 144, "used in the Apocalypse to signify the whole body of the
-  saints", a number that refers "not to times, but to men" (*De doctrina
-  christiana* III.35.51). Of the crowd: the Apocalypse's many thousands
-  which no man can number, in white robes with palms, are the one Church,
-  few beside the wicked and many in herself (Letter XCIII §30); the few who
-  are saved are themselves the many, and the great multitude with white
-  robes and palms "is the mass of the saints" (Sermon LXI). These are short
-  applications inside other arguments, not an exposition of Apoc 7. The
-  number statement stands in his account of Tyconius's rule, and the text
-  does not separate Tyconius's application from his own. He says nothing
-  here of the angel from the east or of the seal. Authoring must present
-  these loci as what they are and never as an Augustinian commentary on
-  the chapter; the reading's verse-by-verse claims on the Lesson still rest
-  on Bede. His Enarrationes do not comment on Apoc 7 and must not be
-  presented as interpreting the Lesson.
-  What he contributes on the psalm texts the Mass says: on Ps 32:1, the Introit verse (NPNF
-  "Psalm XXXIII" §1), "rejoice, O ye righteous, not in yourselves, for that
-  is not safe; but in the Lord", praise being comely to those "who submit
-  themselves unto the Lord"; and on the Gradual's second verse, Ps 33:11b
-  (Vulgate; NPNF "ver. 10", §14), that what "they that seek the Lord shall
-  not want" is spiritual riches — justice, truth, charity, faith,
-  endurance — with Mt 5:6 cited in the same section. As psalm context
-  only, outside the Introit verse: on Ps 32:12 (Vulgate, the same in
-  NPNF's numbering, §12) "one nation is blessed, belonging to the heavenly
-  city", chosen "not of itself, but by the gift of God". Hearing that
-  *gens* beside the Lesson's *ex omnibus gentibus* is this study's
-  editorial join, not Augustine's. His Living Bread gloss (NPNF §14) is
-  his answer to "The rich do lack and suffer hunger", Ps 33:11a, *Divites
-  eguerunt*, which the Gradual omits (scope §5.2, §10.2 c); authoring must
-  present it as his comment on the psalm's omitted half-verse, never as a
-  gloss on what the Mass says. His reading of Ps 33:12 (Vulgate; NPNF
-  "ver. 11"), *Come, ye children… I will teach you the fear of the Lord*
-  as Christ speaking, is context from a verse the Mass does not say and
-  supports nothing here. What his two said-text glosses give the reading
-  is its claim that the sealed Church rejoices "not in yourselves": her
-  number is God's choice and gift, not her own achievement.
+Bede gives the Lesson's sign, its one Church and its praise; Augustine reads
+the Lesson's uncounted multitude against the narrow gate, and gives the city of
+angels and men and the number God knows and we do not. The two are compatible:
+Bede's "innumerable multitude" is innumerable to us, and Augustine says the
+same of the number.
 
-**Supporting and rival witnesses on the Lesson (none carries).**
+**Supporting witnesses.** Gregory the Great (*Hom. in Ev.* 34.11): as many men
+ascend as elect angels remained, and the elect's ways of life are allotted to
+the nine orders. Aquinas (*ST* I q. 23 a. 7): the number is certain to God;
+"better to say" it is known to God alone, with the Missal's Secret *Deus, cui
+soli cognitus est numerus electorum*. The anonymous PL 35 *Expositio* (hom.
+6): the angel is the Catholic Church rising from the Lord's Passion and
+Resurrection; the 144,000 are the whole Church. Victorinus: the multitude is
+the believers of Jews and nations; the 144,000 believe at Elias's preaching.
+Cyprian (*Ad Fortunatum* 11): the Christian martyrs cannot be numbered, as the
+Apocalypse testifies (7:9-15), and from the quotation he concludes that no one
+should think martyrdom hard, "when he sees that the crowd of martyrs cannot be
+numbered". Bernard (sermo 5 n. 2): those still fighting are holy "juxta solam
+adhuc praedestinationem", a holiness hidden with God. Sicard (*Mitrale* IX c.
+49): the Lesson "de numero signatorum" and the Gospel "de numero
+beatitudinum" fit the feast together. Fromage (on the Introit antiphon): the
+angels rejoice to see the gaps in their choirs filled. Durandus (VII.34) on
+the Collect of his Mass: a multitude interceding cannot fail to be heard.
+Bruno of Würzburg, on Ps 32:1, in an extract the volume marks as
+Cassiodorus's: "Collaudatio vero multorum ore una laudatio est, propter
+unitatem Ecclesiae". Schuster stands with Cyprian on one point and against Augustine (Limits).
 
-- **Victorinus of Pettau, *Commentary on the Apocalypse*, on 7:2, 7:9 and
-  12:6** (no standing row; scope §3.3). The oldest Latin commentary held on
-  this Lesson, and the reading's second developed witness on the chapter.
-  *What he contributes:* the uncounted crowd is "the number of the elect out
-  of all believers", Jews and nations alike, "cleansed by baptism in the
-  blood of the Lamb", who "have made their robes white, keeping the grace
-  which they have received". That supports Reading A's claim that the
-  crowd is the whole number of the elect from every nation, and its
-  baptismal reading of the robes. It adds a moral note Bede does not stress:
-  the white robe must be kept. *Where he disagrees with Bede:* the angel
-  ascending from the east is Elias, the precursor of Antichrist's times,
-  sent to recall the Jews (Mal 4:5–6), not the Lord incarnate bearing the
-  cross; his setting is the last persecution, with seven archangels against
-  Antichrist; and the 144,000 (named on 12:6) are those who believe at
-  Elias's preaching in the last times, a particular company and not the
-  perfection of the whole Church. His rule that the Apocalypse
-  recapitulates and that "order" is not to be sought in it bears on how
-  the sealing and the crowd follow one another. *Limits:* the editor's
-  elucidations warn of corrupted and interpolated manuscripts, a later
-  Augustinian corrector and an uncertain author; any use must carry that
-  caution, and his comments skip vv. 3–8 and 10–12.
-- **Bellarmine (doctor), on Ps 86:2 and 121:2** (scope §3.3). An analogue,
-  not a comment on the Lesson: the tribes' names on the gates signify that
-  the Church's first members came from Israel and then the fullness of the
-  Gentiles, as the Apocalypse counts the twelve thousands of each tribe and
-  then the multitude of all nations. It seconds Bede's alternative order
-  (Israel first, then the nations).
-- **The anonymous *Expositio in Apocalypsim* printed in PL 35** (no
-  standing; scope §3.3). It agrees with Bede at every point that matters
-  here: the 144,000 are *tota Ecclesia*, the crowd is the same Church, the
-  robes were washed by the whole Church in baptism and not by martyrs only.
-  Its editors describe it as stitched together from Victorinus, Primasius
-  and Bede, so it witnesses the reception of Bede's line, not an
-  independent confirmation. It makes the ascending angel the Church rising
-  from the Lord's passion or resurrection, a third reading of the angel.
-- **Cyprian, *Ad Fortunatum* §11** (no standing row; scope §3.3). The
-  rival: the uncounted crowd is the Christian martyrs, more than can be
-  numbered. Bede at v. 14 and the *Expositio* explicitly reject a
-  martyrs-only reading: the washed robes belong to the whole Church.
+**Every element.**
 
-**Mass-level reception.** Schuster: the Lesson is "significant of the
-origin of the feast," the Pantheon lesson, and the seal is Ezechiel's Tau
-on the foreheads of those who mourn. The continuation (Guéranger-Fromage):
-the Lesson is the "second census" after Augustus's at the Nativity —
-enrolment in the book of life against the beast's mark. Durandus: the
-Lesson's presence at the dedication feast from the beginning. These are
-reception; the ecclesiastical-writers among them do not carry.
+- Introit: the angels rejoice in the saints' feast and praise the Son of God.
+  Fromage, on the antiphon itself: the angels rejoice to see the gaps in their
+  choirs filled. Aquinas, on Ps 32:1 itself: *collaudatio* is praise in every
+  lot and "unanimiter". **Editorial**: joining Aquinas's "unanimiter" to the
+  angels' and men's praise together, and Augustine's and Gregory's one city of
+  angels and men (*Ench.* 29; *Hom.* 34.11, not on Ps 32) to the antiphon, are
+  this record's joins.
+- Collect: *multiplicatis intercessoribus* ("intercessors"). Fromage, on this
+  Collect: so many intercessors, the whole of heaven. Durandus quotes the
+  Collect of his Mass as *multiplicatis intercessionibus* ("intercessions").
+  The two are variant readings of the same Collect. *Intercessoribus* stands
+  in the prayer of all the apostles from which the Collect is adapted, in
+  the Leonine and Gelasian Sacramentaries, and for the feast in the
+  Gilbertine and Sarum Missals and the Roman Missal from 1570 to 1962;
+  *intercessionibus* stands for the feast in Ménard's Gregorian codex, the
+  eleventh-century Monte Suavicino sacramentary (PL 151, and again in an
+  appendix to PL 85) and Durandus (research/scope.md 3.1, 3.3). No witness
+  read says which came first, and none is to be called the older. Ménard
+  notes that the Roman Missal reads *intercessoribus* and that his codex's
+  reading, named first, "non est contemnenda". Durandus is used only for what
+  he says of the petition both forms share: it rests on many interceding,
+  "impossibile est multitudinem non exaudiri".
+- Commemoration Collect: deliverance from the bonds of sins contracted through
+  frailty: **editorial**, the sealed are those marked out from that bondage;
+  no author read joins it.
+- Lesson: the controlling text (Bede; Augustine, Sermon LXI; Victorinus; PL 35;
+  Cyprian; Sicard).
+- Gradual: *omnes Sancti eius*. Bernard (sermo 5 n. 3) speaks of the verse as
+  sung in the night office of the feast: it is said not to the saints in
+  glory, who no longer fear, but to us; in n. 2 he calls those still fighting
+  holy by a predestination hidden with God. **Editorial**: he does not comment
+  on the Mass Gradual, and applying his words to it is this record's join.
+- Alleluia: *omnes qui laborátis*: Chrysostom, on this verse (*Hom. in Matt.*
+  38.3): "not this or that person, but all"; **editorial** link to the
+  uncounted.
+- Gospel: **editorial**: the beatitudes as the marks of those in the
+  multitude; Bede's first reading of 7:9 (victors of persecution) meets Mt
+  5:10-12a. Sicard joins the two numbers, not the two texts' contents.
+- Offertory: the souls of the just in God's hand. Bonaventure, on the verse:
+  the martyrs specially, "quod etiam verum est de aliis iustis"; Schuster: the
+  martyrs. **Editorial**: the number kept by God.
+- Secret: *pro cunctórum … honóre iustórum*, the honour of all the just
+  together.
+- Commemoration Secret: *quod imméritis contulísti*: **editorial**, the
+  number given by grace; Augustine's next chapter (*Ench.* 30) is headed that
+  men are not saved by good works, which was not read beyond its title.
+- Preface: either candidate closes with the praise of the angels to which the
+  Church's voice is joined; **editorial**, the city of angels and men at the
+  altar. Neither Preface is asserted.
+- Communion: *fílii Dei vocabúntur*: **editorial**, the multitude named.
+- Postcommunion: *perpétua supplicatióne muníri*: **editorial**, the
+  intercession of the Collect continued. Bernard (sermo 2 n. 1) says our
+  infirmity is helped by the saints' intercession; he speaks of the feast,
+  not of this prayer.
+- Commemoration Postcommunion: *humánis non sinas subiacére perículis*:
+  **editorial**, the sealing's *Nolíte nocére* (7:3) as protection.
 
-**Every element's contribution.**
+**Four senses.**
 
-- *Introit* — the Church on earth keeps the feast of the Church in heaven:
-  *Gaudeamus omnes in Domino*, the angels rejoicing "sub honore Sanctorum
-  omnium"; the psalm verse (Ps 32:1) commands joy in the Lord, not in
-  ourselves — Augustine's gloss on the verse ("not in yourselves… but in
-  the Lord") supplies the "not in ourselves".
-- *Collect* — God "granted us to venerate the merits of all Thy saints
-  under one celebration": the oneness of the celebration mirrors the
-  oneness of the numbered Church; *multiplicatis intercessoribus* — the
-  crowd intercedes as a crowd.
-- *Commemoration Collect* — *Absolve… tuorum delicta populorum*: the same
-  "peoples" stand in need of loosing from guilt; the sealed are sealed out
-  of a sinful people (editorial juxtaposition, marked).
-- *Lesson* — the reading's seat: seal, number, tribes, crowd, robes,
-  palms, the sevenfold praise.
-- *Gradual* — *Timete Dominum, omnes Sancti eius*: the sealed are the
-  God-fearing; "nothing is lacking" because the seal is preservation to the
-  end (Ps 33:8 Vulgate, Hebrew 34:8, English 34:7, in context: the angel of
-  the Lord encamps around those who fear Him; editorial join with Apoc 7:3). Augustine reaches this element
-  only through its second verse: the good the seekers do not lack is
-  spiritual (NPNF §14); his Living Bread gloss belongs to the omitted
-  *Divites eguerunt* and is not this element's contribution.
-- *Alleluia verse* — *Venite ad me omnes qui laboratis*: the gathering
-  voice; the crowd is a crowd of the once-burdened (Chrysostom: all in
-  anxiety, sorrows and sins).
-- *Gospel* — the beatitudes describe the sealed on their way: poor,
-  mourning, hungry, persecuted — the forehead that will bear the mark of
-  the Lamb first bears the world's hatred.
-- *Offertory* — the sealed in death: the just seem to die, and are in
-  peace, in God's hand; the seal holds through death (Wis 3 read with Apoc
-  7 is the reading's hinge, editorially joined).
-- *Secret* — the offering is acceptable "pro cunctorum… honore iustorum":
-  the sacrifice honours the whole numbered body.
-- *Commemoration Secret* — the servitude-offering of the still-journeying
-  assembly, joined under its own conclusion.
-- *Preface slot* — unsettled (context.md); under this reading the common
-  Preface's *cum Angelis…* or the Trinity Preface's doxology both serve
-  the vision's ending in praise; no choice is made here.
-- *Communion* — the three last beatitudes received in the Sacrament:
-  purity, peace, persecution — the seal's content tasted (continuation:
-  the beatitudes joined to the Sacrament where they feed).
-- *Postcommunion* — the *fideles populi* journeying toward eternity, kept
-  by the saints' perpetual supplication: the numbered Church prays the
-  travelling Church home (Schuster's gloss of *fideles populi*).
-- *Commemoration Postcommunion* — "whom Thou grantest to rejoice in divine
-  participation, suffer not to lie subject to human perils": the seal as
-  present protection (editorial juxtaposition, marked).
+- Literal: John sees a counted sealing from the twelve tribes and an uncounted
+  multitude from all nations, with the angels falling on their faces before
+  the throne.
+- Allegorical: the angel from the east is Christ the Angel of great counsel,
+  who seals with the cross (Bede); the 144,000 and the multitude are the one
+  Church (Bede; PL 35).
+- Moral: holiness on earth is hidden with God (Bernard), so the Church asks
+  the help of the saints whose holiness is known, and venerating them serves
+  us, not them (Bernard sermo 5 n. 5); the narrow gate still stands, though
+  those who pass it are many (Augustine, Sermon LXI).
+- Anagogical: the heavenly city of angels and men, complete in a number God
+  knows (Augustine; Gregory; Aquinas); the winnowed mass of the saints laid up
+  in the garner of heaven (Augustine, Sermon LXI).
 
-**Four senses.** Literal: John's vision of the sealing and the crowd.
-Allegorical: the one Church from Israel and the nations, sealed in baptism
-with the cross (Bede). Tropological: the seal is confessed faith on the
-forehead — the moral life of the beatitudes under persecution.
-Anagogical: the standing before the throne, the unceasing voice, the
-sevenfold praise — the Church's end, already true of the saints.
+**Limits.**
 
-**Strongest difficulty.** The number itself: 144,000 reads as a limit, and
-the tribes are Israel's. Bede's resolution (the number as perfection, not
-count; Israel by nature or by imitation; Dan omitted and Manasses added)
-must be given with his warrant, not as the study's invention — and the
-continuation's rival "second census" reading must remain visible (scope
-§6.1). So must the patristic disagreement (scope §5.1, §6 item 1). On the
-number, Bede and Augustine read the whole Church, while Victorinus reads
-the believers at Elias's preaching in the last times. On the crowd, Bede,
-Augustine and Victorinus read the elect from all believers, while Cyprian
-reads the martyrs. On the angel from the east, Bede reads the Lord
-incarnate, Victorinus Elias, and the PL 35 *Expositio* the Church. Reading A
-follows Bede and Augustine on the number and the crowd and must say that
-it does so against Victorinus and Cyprian, not as if the Fathers spoke
-with one voice. It needs no position on the angel beyond Bede's, but the
-study should not present Bede's identification as the only patristic
-answer. A reading that quietly drops *centum quadraginta quatuor milia* to
-reach the crowd fails its own Lesson.
+- Apoc 7:9 says no *man* could number the multitude. No witness read says the
+  saved are uncountable to God; Augustine and Aquinas say the opposite.
+- On whether the multitude shows that salvation is easily reached, Cyprian and
+  Schuster stand on one side and Augustine on the other (research/scope.md
+  6.2). Cyprian concludes from 7:9 that martyrdom is not hard, because the
+  martyrs cannot be numbered; his conclusion is limited to martyrdom, and it
+  is the ancient precedent read for Schuster's "It is not then so hard to be
+  saved, as St John writes that he could not count the number of the elect".
+  Augustine reads the same verse as showing that the few are many in
+  themselves, while the narrow gate of Lk 13:24 still stands. Augustine also
+  says the saved are many, so the difference is over what follows from the
+  number. Schuster's "St John writes that he could not count" misreads *nemo*;
+  report it as Schuster's view.
+- Augustine and Gregory disagree on what the number completes (the place of
+  the fallen, or the number of those who remained); Aquinas sets both aside.
+- Victorinus's text is an uncertain recension.
+- Augustine's "great mass" in Sermon LXI is the heap of winnowed grain; the
+  image and "This is the mass of the saints" are to be kept together.
+- Augustine's "one nation of the heavenly city" (on Ps 32:12) and his angel of
+  great counsel (on Ps 33:8) comment on verses the Mass does not say; neither
+  is used.
+- The Missal Secret Aquinas quotes is not said on this day.
 
-## 3. Reading B — The Beatitudes: the saints' way, which is the portrait of Christ, climbed from humility to persecution (`beatitudes-way-of-the-saints`)
+## 3. Reading B — `beatitudes-way-of-the-saints`: the saints' way, begun here and perfected there
 
-**Exegetical question.** Why is the Gospel of All Saints the Beatitudes —
-and why does the Mass then sing the last three of them again over the
-chalice?
+**Controlling claim.** The Gospel's beatitudes are the way by which the saints
+reached the joy the Mass keeps; their rewards are begun in this life and
+perfected in the next, so the feast holds up the saints' end and the way to it
+in one Mass.
 
-**Controlling claim.** The Beatitudes are the saints' way because they are
-first Christ's own portrait and the summary of the redemptive life: an
-ascent that begins in the fear of the Lord (poverty of spirit) and ends in
-persecution for justice, the eighth beatitude returning to the first and
-enclosing the whole as perfection. The feast does not describe the saints'
-privilege; it reads their itinerary — which is the Church's itinerary, and
-each communicant's. The Gospel "can be no other" (Schuster: the decalogue
-of happiness); the Communion repeats the way's summit — purity of heart,
-peace, persecution — as the Sacrament's own fruit.
+**Carrying authors and their reasoning.**
 
-**Carrying witnesses.**
+- **Augustine** (*De serm. Dom.* I.3.10-I.4.12; Sermons XIX-XX on Mt 11:28).
+  The beatitudes rise in order from humility, and "the eighth, as it were,
+  returns to the starting-point, because it shows and commends what is
+  complete and perfect" (I.3.10); the seven steps answer to the seven gifts
+  of Isa 11:2-3 in reverse, so that fear of the Lord answers to the poor in
+  spirit (I.4.11); the one reward is variously named, and the eighth "goes
+  back to the starting-point, and makes manifest the perfect man" (I.4.12).
+  On Mt 11:29 (Sermon XIX n. 2): "Thou wishest to be great, begin from the
+  least … first think of the foundation of humility". Of the promises: "And those promises can indeed be
+  fulfilled in this life, as we believe them to have been fulfilled in the case
+  of the apostles. For that all-embracing change into the angelic form, which
+  is promised after this life, cannot be explained in any words."
+- **John Chrysostom** (*Hom. in Matt.* 15; 38.3). The mourners are comforted
+  "both here and there"; the beatitudes are a ladder. In Hom. 38 the meekness
+  and lowliness of Mt 11:29 are "the mother of all strictness of life.
+  Wherefore also, when beginning those divine laws, with this He began", and
+  "even before the things to come, He gives thee here thy recompense".
+- **Thomas Aquinas** (*Super Matt.* 5 lect. 2). The rewards are given in the
+  way as a beginning and in the homeland perfectly; peace "hic inchoatur" (on
+  5:9); the eight rewards are one reward under different names; he reports
+  Chrysostom that persecution is said without "from the pagans".
+- **Hilary of Poitiers** (*In Matt.* IV; XI n. 15). Christ gives the precepts
+  of the heavenly life "in paternae scilicet majestatis positus celsitudine";
+  the earth of the meek is Christ's glorified body, "claritate clarificati
+  ejus corporis vestiemur"; consolation and satiety are "in caelo"; God is
+  seen only by those "spiritu perfecti, et immortalitate immutati"; the
+  persecuted are "gloriosi promissorum Dei martyres". On Mt 11:28-29 (XI n.
+  15, col. 984, image-read): he calls to himself those labouring under the
+  Law's difficulties and burdened with the world's sins, and promises to take
+  away the labour and the burden "si modo ejus jugum tollant, mandatorum
+  scilicet suorum praecepta suscipiant, eumque sacramento crucis adeant: quia
+  corde humilis et mitis sit".
+- **Rabanus Maurus** (*Expositio in Matt.* II on 5:1-12; IV on 11:28). A
+  compiler who names many of his sources in parenthetical labels in the
+  running text, such as "(Hieron.)", "(Aug.)" and "(MAURUS.)": on the poor in spirit he takes Augustine's
+  "Initium autem sapientiae timor Domini"; on 5:8, in his own words, the pure
+  in heart see God "hic in aenigmate per gratiam, in futuro autem facie ad
+  faciem" (col. 796, image-read, after the label "(MAURUS.)"); on 5:9-10 he takes over Augustine's
+  sentence that the promises can be fulfilled in this life and that the
+  eighth goes back to the start (OCR, paraphrase); on the Lord's Prayer he
+  repeats Augustine's matching of the seven petitions to the beatitudes. On
+  Mt 11:28 (col. 916, image-read) the burden is sin (Zach 5; Ps 37), "vel
+  certe" the Law's heaviest yoke, from which the call is "ad Evangelii …
+  gratiam". That comment carries no label and is compiled, not his own: it is
+  Jerome's comment on the verse (*In Matt.* II, PL 26 col. 75, image-read),
+  taken over nearly word for word.
 
-- **Augustine (father), *De sermone Domini in monte* I** (scope §3.6). He
-  carries the structure: the sermon is the perfect standard of the
-  Christian life; the mountain is the greater righteousness given by love
-  as Sinai gave the lesser by fear; the seven gifts of Isa 11 map the seven
-  steps from fear (the poor in spirit) up to wisdom (the peacemakers); the
-  eighth returns to the starting-point as the eighth day returns to the
-  first — perfection; the rewards are one kingdom variously named, begun in
-  this life, perfected after; "falsely and for my sake" marks the true
-  persecution off from the heretic's.
-- **John Chrysostom (father), *Homily 15 on Matthew*** (scope §3.6). He
-  carries the way's psychology: the poor in spirit are the humble and
-  contrite by choice, awe-struck at God's words; humility is the
-  foundation as pride is the root of all evil; the beatitudes are
-  blessings, not commandments — promises drawing free choice; the virtues
-  form a golden chain, each linked to the next; the peacemakers do the
-  Only-Begotten's own work; the rewards, sensible mingled with spiritual,
-  all shadow the one Kingdom; and the persecution promised is the
-  prophets' fellowship.
+Augustine, Chrysostom, Aquinas and Rabanus place the rewards in this life as
+fulfilment, foretaste, beginning or vision by grace; Hilary places them in the changed, immortal state.
+Augustine's own next sentence keeps a consummation after this life beyond
+words, so his difference from Hilary is one of emphasis. Their contributions
+are compatible as the two ends of one way, and the difference is real: on
+Hilary's reading the Gospel describes chiefly what the saints now possess, on
+the others' what they already lived. The study must keep both.
 
-**Supporting reception (not carrying).** Aquinas (doctor): each beatitude
-is merit and reward; the active virtues are ways, not beatitude itself;
-beatitude is the vision of God with love's delight; the rewards are
-inchoate in via, consummate in patria; the eighth is the perfection of all
-(the furnace proves the just); persecution blesses only propter iustitiam.
-Hilary (father): the meek inherit the earth read as the Lord's assumed
-body; only the perfected in spirit see God. Rabanus (saint, compiler):
-transmits Augustine with the gifts mapping. Schuster and the continuation
-supply the Mass-level reading: the mountain against Sinai, the beatitudes
-as the portrait of the Son of Man and the Church's only ideal; the
-Alleluia verse "prepares" the Gospel as the Lord's invitation to those
-faint beneath the cross; the Communion takes the three last beatitudes
-into the Sacrament.
+**Supporting witnesses.** Jerome (*In Matt.* II on 11:28-29, PL 26 col. 75,
+image-read; standing `father`): the burden is sin, or else the Law's yoke,
+from which the call is to the Gospel's grace; the source of Rabanus's comment,
+so one reading and not a second witness to it. Bernard (sermo 1 nn. 9, 13-15): a lesser kingdom
+given as a pledge (1 Tim 4:8); vision now in a mirror, then face to face; the
+soul reconciled to itself in the first three, to its neighbour in the next
+two, to God in the sixth, and reconciling others in the seventh; the eighth
+is the martyrs' prerogative, and the same promise is made to the poor and to
+the martyrs because voluntary poverty is a kind of martyrdom. Fromage: the
+Communion recalls the last three beatitudes because it cannot repeat the
+series, and brings them to the Sacrament in which they are nourished; and the
+Offertory sings that the beatitudes raise man above death, which does not shake
+the peace of the just but consummates it. Bonaventure, on Wis 3:3, reporting
+the *Glossa*: the peace of the just is "Perpetuae quietis, nunc in spe, tandem
+in re". Alphonsus, on Wis 3:1-3: the saints "begin to feel that peace which
+they shall afterwards fully enjoy in Heaven". Basil, on Ps 32:1: the rare joy
+given us is a small taste that reminds us of the unbroken joy of the just.
+Sicard: the Gospel "de numero beatitudinum" fits the feast with the Lesson.
+Gregory (*Moralia* I n. 24): Mt 11:28 is spoken to those weighed down by the
+Law's yoke, and rest "is promised to those that labour well". Aquinas (*ST*
+I-II q. 107 a. 4) reports Hilary's reading of Mt 11:28 to show the New Law
+lighter than the Old. Schuster: those who have least by the world's measure receive the larger
+share. Bernard, Bonaventure and Alphonsus have no standing row.
 
-**Every element's contribution.**
+**Every element.**
 
-- *Introit* — the joy that the way buys: the feast's *Gaudeamus* is sung
-  by those still climbing, with the angels already rejoicing; Ps 32:1's
-  joy "in the Lord" is the poor-in-spirit joy (Augustine: not in
-  yourselves).
-- *Collect* — the merits of all the saints venerated under one
-  celebration: the way has been walked, in every terrain, and the walkers
-  now intercede.
-- *Commemoration Collect* — the climb begins in being loosed from guilt;
-  *pro nostra fragilitate* is poverty of spirit in petition (editorial
-  juxtaposition, marked).
-- *Lesson* — where the way ends: robes washed, palms in hand, the crowd
-  that no man can number — the beatitudes' future tenses cashed (the
-  editorial link; Bede gives robes=baptism, palms=the cross's triumph).
-- *Gradual* — the fear of the Lord, the way's first step (Augustine's
-  mapping: fear → poverty of spirit), promises no lack along the road.
-- *Alleluia verse* — *Venite ad me… et ego reficiam vos*: the invitation
-  under which the climb is made (Chrysostom Hom. 38: not "I will save you
-  only," but "I will place you in all security"; the yoke easy to the
-  lowly).
-- *Gospel* — the reading's seat.
-- *Offertory* — the way walked to the end: the persecuted "seem to die,"
-  and are in peace; death consummates the just man's peace (continuation),
-  and the persecutor's hand is not God's (Schuster).
-- *Secret* — the offering honours the just who finished the way and
-  becomes salutary for those still on it.
-- *Commemoration Secret* — the increase-of-servitude offering: the yoke,
-  editorially heard beside Mt 11:29–30.
-- *Preface slot* — unsettled; under this reading either candidate serves,
-  and the medieval proper Preface quoted by Schuster (*ut cum exsultantibus
-  sanctis… gaudia nostra subiungas*) is history that shows how the Roman
-  rite once sang this feast's hope — not the 1962 appointment.
-- *Communion* — the way's summit received: *mundo corde… Deum videbunt* —
-  Aquinas: beatitude itself is the vision of God; Hilary: only the
-  perfected see; the Sacrament is the vision's pledge.
-- *Postcommunion* — *semper veneratione laetari… perpetua supplicatione
-  muniri*: the veneration of those who completed the way and the defence
-  of those on it.
-- *Commemoration Postcommunion* — divine participation against human
-  perils: the pilgrim's petition at the way's end of the Mass (editorial
-  juxtaposition, marked).
+- Introit: *Exsultáte, iusti … rectos decet collaudátio*. Basil, on the verse:
+  the joy God sometimes lets fall on us is a small taste reminding us of the
+  joy that is unbroken in the just. Augustine, on the verse (*Enarr.* 32, en. 2
+  s. 1): the upright are those who direct the heart by God's will, and if
+  human frailty troubles them, divine equity consoles. **Editorial**: the
+  feast kept *sub honóre Sanctórum ómnium* as the end of the way.
+- Collect: the saints' *mérita* venerated: **editorial**, the merits as the
+  beatitudes lived.
+- Commemoration Collect: the bonds of sins contracted *pro nostra
+  fragilitáte*: **editorial**. Hilary reads the mourners as those who mourn
+  their sins (IV n. 4, on the Gospel's mourners); joining that to this prayer
+  is this record's join.
+- Lesson: the multitude in white robes with palms: **editorial**. Bede's first
+  reading of 7:9, the victors of persecution, is set beside the eighth
+  beatitude by this record; Bernard (sermo 5 n. 2) reads Apoc 7:14, outside the
+  Lesson, of those who came out of great tribulation. Sicard joins the
+  Lesson's number to the Gospel's.
+- Gradual: *Timéte Dóminum*: **editorial**. Augustine (I.4.11) pairs the fear
+  of the Lord with the poor in spirit; applying this to the Gradual's
+  *Timete Dominum* is this record's join.
+- Alleluia: *Veníte ad me … et ego refíciam vos*: Chrysostom, on Mt 11:28-29
+  (Hom. 38.3), joins this invitation's meekness to the opening of the
+  beatitudes and says the recompense is given here. Hilary, on the verse (XI
+  n. 15): the yoke taken is his commandments, and he is approached by the
+  sacrament of the cross, being meek and humble. Augustine, on the verse
+  (Sermon XIX n. 2): begin from the foundation of humility. Rabanus, in his
+  second reading (*vel certe*), and Gregory (*Moralia* I n. 24, a use with an
+  inference): the call is from the Law's yoke to the Gospel's grace;
+  Rabanus's first reading is the burden of sin (Zach 5; Ps 37). Both readings
+  are Jerome's, which Rabanus takes over unlabelled. These witnesses differ on
+  what the burden is (research/scope.md 6.8).
+- Gospel: the controlling text.
+- Offertory: *illi autem sunt in pace*. Bonaventure, on this clause, reports
+  the *Glossa*: perpetual rest, "nunc in spe, tandem in re". Alphonsus, on Wis
+  3:1-3: the peace of the just begins before death and is fully enjoyed in
+  heaven. Fromage, on the Offertory: death does not shake the peace of the
+  just but consummates it. Aquinas's "hic inchoatur" (on Mt 5:9) and
+  Augustine's "ex parte hic … ex toto illic" (on Ps 33:15) are not on Wis 3:3
+  and are not used here.
+- Secret: the gifts of devotion offered for the honour of all the just.
+- Commemoration Secret: *ut, quod imméritis contulísti, propítius
+  exsequáris*: **editorial**, the prayer asks God to complete what he began;
+  Aquinas's *inchoatio* and *perfectio* (on Mt 5) set beside it by this record.
+- Preface: either candidate's praise with the angels: **editorial**, the clean
+  of heart who will see God; neither Preface is asserted.
+- Communion: the last three beatitudes: Fromage's reason, on the antiphon
+  itself. Augustine's eighth returning to the starting-point (I.3.10, again
+  in I.4.12), Rabanus's vision "hic in aenigmate … in futuro autem facie ad
+  faciem" and Bernard's
+  reconciliations ending with the martyrs comment on the same verses as part of
+  the Gospel, not on the antiphon.
+- Postcommunion: *semper veneratióne lætári*: **editorial**, joy now.
+  Chrysostom's "here" (Hom. 38.3) is on Mt 11:29; applying it to this prayer
+  is this record's join.
+- Commemoration Postcommunion: those who share divine things not left to human
+  dangers: **editorial**, the persecuted of 5:10-12a kept.
 
-**Four senses.** Literal: the Lord's sermon and its promises. Allegorical:
-the beatitudes as Christ's self-portrait and the Church's form — the way
-the sealed of Apoc 7 actually walked. Tropological: the ascent each hearer
-must climb, from the fear of the Lord to the willingness to be reviled.
-Anagogical: *ipsorum est regnum caelorum* — the present tense of the first
-and eighth beatitudes, true now of the saints, pledged to the Church.
+**Four senses.**
 
-**Strongest difficulty.** The tenses (scope §5.4): six beatitudes are
-future, the first and eighth present. Read flatly, either the saints do
-not yet reign (against the feast) or the mourners are already comforted
-(against experience). The reading must hold Augustine's in-via/in-patria
-structure with Aquinas's inchoate/consummate precision and Chrysostom's
-mingled prizes — and say plainly, with Hilary, that the vision of God is
-the perfected's. A homiletic collapse into "the Beatitudes make you happy
-now" fails the text and the feast.
+- Literal: Christ, seated on the mountain, teaches his disciples the eight
+  beatitudes and their rewards, and the ninth blessing addressed to them.
+- Allegorical: Christ teaches from the Father's majesty; the earth is his
+  glorified body (Hilary).
+- Moral: the beatitudes as steps (Augustine; Chrysostom) and as
+  reconciliations of the soul with itself, neighbour and God (Bernard).
+- Anagogical: the kingdom and the vision of God, perfect in the homeland
+  (Aquinas) and given to those changed by immortality (Hilary); the angelic
+  form promised after this life (Augustine).
 
-## 4. Reading C — "No want to them that fear Him": the just in the hand of God (`no-want-just-in-gods-hand`)
+**Limits.**
 
-**Exegetical question.** What does the feast say to the scandal the texts
-themselves admit — that the wicked prosper, that the just hunger, that the
-saints' death looks like defeat?
+- No witness read holds that the first and eighth rewards are present and the
+  six between future; a study that observes the tenses must say the
+  observation is its own.
+- Augustine's comment on Ps 33:11 with Mt 5:6 (*Enarr.* 33 s. 2 n. 15) is on
+  the half-verse the Gradual omits; Basil's joining of *Gustate* to Mt 5:6 is
+  on v. 9, not said.
+- Aquinas's lecture number is Corpus Thomisticum's; the Venice printing is
+  cited by page.
+- Rabanus is a compiler: most of what he says on Mt 5 is labelled in the
+  running text as Augustine's ("(Aug.)") or Jerome's ("(Hieron.)"), and only
+  the words labelled "(MAURUS.)" may be credited to him as his own; his
+  passage on 5:9-10 is badly garbled in the OCR and is given in paraphrase.
+  His comment on Mt 11:28 carries no label and is Jerome's (PL 26 col. 75):
+  cite it as Jerome's comment compiled by Rabanus, not as Rabanus's own
+  words. It offers two readings of the burden and does not choose.
+- Fromage is an ecclesiastical writer, and his text is French. Bonaventure and
+  Alphonsus have no standing row and support only; Bonaventure's *Glossa* is
+  known here only as he reports it.
 
-**Controlling claim.** The fear of the Lord is the saints' whole wealth:
-*non est inopia timentibus eum* is true not as temporal comfort but
-because the God-fearing possess God — and the deaths that look like loss
-(*visi sunt oculis insipientium mori*) are peace, because the souls of the
-just are in the hand of God, not in the persecutor's. The feast is the
-Church's answer to the impious speech of Wisdom 2: it celebrates the
-dead as living, the poor as enriched, the defeated as crowned — and it
-puts the answer on the lips of the still-hungering assembly, which then
-asks, in the Collect, for mercy through the multiplied intercessors, and,
-in the commemoration's orations, to be loosed from guilt and kept from
-human perils. The juxtaposition is the doctrine: those who have no want
-intercede for those who still want.
+## 4. Reading C — `no-want-just-in-gods-hand`: nothing lacking to those who fear, the just in God's hand
 
-**Carrying witnesses.**
+**Controlling claim.** The saints lack nothing because God himself is their
+good, and the just are in God's hand where the torment of malice does not
+touch them; the fear of the Lord that the Gradual commands is the way of
+those still on earth to that possession.
 
-- **Basil of Caesarea (father), *Homily on Psalm 33*** (scope §3.4). He
-  carries the psalm's answer: unless fear instructs our life, holiness
-  cannot be established in the body; fear nailed into the flesh (Ps
-  118:120) leaves nothing lacking, because the God-fearing sins nothing
-  and wants nothing of human nature's goods; *Divites eguerunt* is Israel
-  itself, starved of the word (Amos 8:11), while the Gentiles who seek the
-  Lord lack no good — and Paul, under scourgings and shipwreck, lacked no
-  good because the perfect good is God Himself.
-- **Robert Bellarmine (doctor, canonized saint), *Commentary on Ps 32–33***
-  (scope §3.2, §3.4). He carries the two-sense precision: the saints' fear
-  is filial, not servile — the perfect lover fears offending; *no want* in
-  the higher sense means feeling no want, the friend of God owning
-  everything; in the lower sense, God supplies; the seekers of the Lord
-  want no good because they cling to the Supreme Good.
+**Carrying authors and their reasoning.**
 
-**Supporting reception (not carrying).** Augustine faces the scandal
-(wicked rich die in plenty) and resolves it spiritually — the rich lack
-the Living Bread (his comment on *Divites eguerunt*, the half-verse the
-Gradual omits, so presented as the psalm's and not the Mass's), the good
-the seekers do not lack is spiritual riches, and the blessed hunger is for
-righteousness (Mt 5:6, cited inside the psalm's exposition). Aquinas raises Augustine's objection
-(the apostles hunger and are naked) and answers with God as physician who
-sometimes prescribes want. Chrysostom (Hom. 28) quotes Wis 3:1 against the
-wandering of dead souls — the just dead are in God's hand. Gregory's
-*Moralia* reads Wis 3:2 of the righteous stock dying in the dust. Schuster
-reads the Offertory as the divine artist's undisturbed masterpiece; the
-continuation reads the beatitudes raising man above torments and death.
-Durandus gives the feast's fourth cause from the Collect: the multitude of
-intercessors cannot fail to be heard.
+- **Basil** (*Hom. in Ps.* 33 nn. 6-7; *Hom. in Ps.* 32 n. 1). Without fear
+  holiness in the body cannot be achieved; the fearer "nihil deest ad
+  quamlibet virtutem, sed perfectus est". On v. 11, "Perfectum omnino bonum
+  Deus ipse est, quo non minuentur quotquot exquirunt ipsum"; the goods are not
+  bodily, for the apostles sought the Lord and lacked bodily goods, and Paul
+  lacked nothing of the goods though scourged and shipwrecked. On Ps 32:1:
+  exult "non cum res domi vobis prospere succedunt … sed quod Dominum
+  habetis".
+- **Augustine** (*Enarr. in Ps.* 33 s. 2 nn. 14-15, 19; 32, en. 1; 87 n. 5).
+  Taken literally Ps 33:11 seems to deceive; the goods are spiritual; peace is
+  had in part here and wholly there (on v. 15). On Ps 32:1: "exsultate justi,
+  non in vobis, non enim hoc tutum est; sed in Domino". On Wis 3:1 itself
+  (*Enarr.* 87 n. 5): "Justorum animae in manu Dei sunt, hoc est, habitant in
+  adjutorio Altissimi, et in protectione Dei coeli commorantur", said of the
+  just among the dead before their resurrection.
+- **Thomas Aquinas** (*Super Ps.* 33 nn. 10-11; *In Ps.* 32). No one can be
+  holy without fear; *non est inopia* is true spiritually, of the content man,
+  and because "Deus quaerentibus se subvenit in necessitate"; the apostles'
+  hunger is the physician's withholding. On Ps 32:1: exult "in Domino, non in
+  mundo".
+- **Robert Bellarmine** (*In Ps.* 33:10-11; 32:1). To feel no want is the
+  essence of perfection; those who cling to the Supreme Good possess all good;
+  a humbler temporal sense also stands. On Ps 32:1: praise is a special
+  invitation to the just, with whom God is always pleased.
 
-**Every element's contribution.**
+Basil and Augustine put the promised good in God and the spiritual goods;
+Aquinas and Bellarmine add providence in bodily need. The four agree that the
+fearer lacks nothing that matters and disagree whether bodily need is
+included; the disagreement survives (research/scope.md 6.4). Augustine's gloss
+on Wis 3:1 joins the Offertory to the same possession: to be in God's hand is
+to dwell under his help.
 
-- *Introit* — the answer's tone: joy first, before the argument;
-  *rectos decet collaudatio* — praise befits the upright (Bellarmine:
-  rejoicing includes praising in joy).
-- *Collect* — *desideratam nobis tuae propitiationis abundantiam,
-  multiplicatis intercessoribus, largiaris*: the abundant propitiation is
-  begged through the crowd that itself knows no want.
-- *Commemoration Collect* — the confession that we are not yet the
-  fearless: loosing from the chains our fragility contracted (editorial
-  juxtaposition, marked).
-- *Lesson* — the crowd before the throne is the psalm's promise
-  displayed: those who feared want nothing now.
-- *Gradual* — the reading's seat: *Timete Dominum omnes Sancti eius:
-  quoniam nihil deest timentibus eum*; the omitted *Divites eguerunt*
-  (scope §5.2) is heard, not suppressed — the foil the feast refuses to
-  sing is the world's accounting, and the reading must say so.
-- *Alleluia verse* — *Venite ad me omnes qui laboratis et onerati estis*:
-  the invitation addressed exactly to those who experience want
-  (Chrysostom: all in anxiety, sorrows, sins).
-- *Gospel* — the beatitudes as the inventory of the God-fearing's wealth:
-  kingdom, earth, comfort, fill, mercy, vision, sonship — and persecution
-  as the treasury's seal (Mt 5:6 answers Ps 33:10 by Augustine's own
-  cross-citation).
-- *Offertory* — the reading's second seat: the just in God's hand, the
-  *tormentum malitiae* that cannot touch them, the death that is peace;
-  the *alleluia* that the 1962 antiphon appends is the scandal answered in
-  the text's own voice (editorial observation on the adaptation, grounded
-  in the collation). The observation is about the 1962 form only: the
-  1570 Missal's own All Saints Offertory read *tormentum mortis* without
-  alleluia; *malitiae* is held for this feast from the 1604 printing, and
-  the alleluia first in the Mame 1922, its date of entry unresolved (scope
-  §3.7). The reading must not present the alleluia as ancient.
-- *Secret* — *nobis salutaria, te miserante, reddantur*: the offering
-  becomes salutary for the wanting through God's mercy.
-- *Commemoration Secret* — the servitude-offering: what the wanting still
-  owe and bring (editorial juxtaposition, marked).
-- *Preface slot* — unsettled; under this reading the common Preface's
-  angelic doxology serves the feast's conviction that the wanting Church
-  sings with those who want nothing.
-- *Communion* — *Beati mundo corde… Deum videbunt*: the supreme good
-  possessed — Bellarmine's higher sense made sacramental.
-- *Postcommunion* — the *fideles populi* defended by the saints' perpetual
-  supplication: the no-want Church spends its wealth on the journeying
-  peoples (Schuster's *fideles populi* gloss).
-- *Commemoration Postcommunion* — kept from human perils by divine
-  participation: the hand of God, prayed over the departing assembly
-  (editorial juxtaposition, marked).
+**Supporting witnesses.** Bonaventure (*Comm. in Sap.* c. 3): the souls are
+the martyrs specially and all the just truly; "in manu Dei sunt, id est in
+protectione, et ideo sunt securae", with Ps 90:1 and Jn 10:28; the torment that
+does not touch them is eternal death, temporal death being "quasi umbra
+mortis … quidam transitus ad vitam". Alphonsus (Ninth Consideration): "If God
+holds fast in his hands the souls of the just, who can snatch them from him?";
+God multiplies his help at the hour of death. Schuster: the persecutor thinks
+the martyrs' lives are in his hands, but they are in God's. Bruno of
+Würzburg, on Ps 32:1, reporting Cassiodorus: exult not "in terrenis
+delectationibus … sed in Domino". Bernard (sermo 5 n.
+3), on Ps 33:10 as sung in the night office: *Timete* is said not to the saints
+in glory, who no longer fear, but to us, "Tota interim beatitudo nostra est
+timere Deum". Chrysostom (Hom. 38.3): the rest of Mt 11:28 given here.
+Bonaventure, Alphonsus, Bernard and Bruno have no standing row. Three further uses of
+Wis 3:1-3 (Chrysostom, *Hom. in Matt.* 28 n. 3; Gregory, *Moralia* XII n. 6;
+Bernard on St Malachy) illuminate the verse and are not relied on
+(research/scope.md 3.8).
 
-**Four senses.** Literal: the psalm's promise and Wisdom's verdict on the
-just man's death. Allegorical: the Church's two states — the interceding
-triumphant and the petitioning militant — in one formulary. Tropological:
-filial fear as the soul's wealth, the fear that offends-not and lacks
-nothing (Bellarmine), nailed into the flesh (Basil). Anagogical: *in manu
-Dei* — the final rest, the torment that never touches, the vision that is
-the only full possession.
+**Every element.**
 
-**Strongest difficulty.** The promise reads false to the assembly that
-sings it: saints have starved; the just have died badly; the Mass itself
-commemorates a Sunday that begs to be loosed from guilt (scope §5.2, §5.3).
-The reading survives only by keeping the scandal inside the sermon — with
-Augustine's wicked-rich, Aquinas's hungering apostles, Basil's famished
-Israel, and the Missal's own omission of *Divites eguerunt* — and by
-refusing the temporal-comfort reading, which the witnesses unanimously
-reject. A version that preaches "trust God and you will not want" in the
-flat sense fails the text, the witnesses, and the hearers.
+- Introit: *Exsultáte, iusti, in Dómino*: Augustine and Basil, on the verse:
+  the just exult not in themselves nor in prosperity but in the Lord they
+  possess. Aquinas, on the verse: in the Lord, not in the world, and praise in
+  prosperity and adversity alike. Bernard's "in exsultatione et laude" (sermo 5
+  n. 3) is said of the saints' festivity, not of Ps 32:1, and is not used for
+  the Introit.
+- Collect: *desiderátam … propitiatiónis abundántiam*: **editorial**,
+  abundance of mercy as the opposite of want.
+- Commemoration Collect: the bonds of sins: **editorial**. Basil reads Israel
+  as made poor by sin against the Lord (n. 7, on Ps 33:11); joining that to
+  this prayer is this record's join.
+- Lesson: *Nolíte nocére … quoadúsque signémus*: **editorial**, the sealed
+  kept; the promise that they shall hunger no more (Apoc 7:16) lies outside the
+  Lesson and may be cited only as context.
+- Gradual: the controlling text (Basil; Augustine; Aquinas; Bellarmine; Bernard
+  on the verse as sung in the night office).
+- Alleluia: *ego refíciam vos*: Chrysostom, on the verse: rest given here.
+  Augustine, on the verse (Sermon XIX n. 1): all labour because they are
+  "mortal men, frail creatures and infirm", and he calls them "that ye may
+  labour no more".
+- Gospel: those who hunger and thirst for justice are filled: **editorial**;
+  Augustine's and Basil's joining of Ps 33 to Mt 5:6 is made on verses the
+  Mass does not say and must be cited as such.
+- Offertory: the controlling text with the Gradual. Augustine (*Enarr.* 87 n.
+  5) and Bonaventure: in God's hand is under his help and protection;
+  Bonaventure: the torment is eternal death; Alphonsus: no one can snatch them
+  from God; Schuster: the martyrs, against their persecutor.
+- Secret: *nobis salutária*.
+- Commemoration Secret: *quod imméritis contulísti*: **editorial**, what is
+  given unmerited.
+- Preface: either candidate: **editorial**; neither is asserted.
+- Communion: *ipsi Deum vidébunt*: **editorial**, Basil's "Perfectum omnino
+  bonum Deus ipse est" (on Ps 33:11) as the good seen.
+- Postcommunion: *muníri*, defended by their prayers.
+- Commemoration Postcommunion: *humánis non sinas subiacére perículis*: the
+  Sunday's prayer asks protection from human dangers. **Editorial**: it agrees
+  with Aquinas's and Bellarmine's admission of a temporal sense, against
+  Basil's exclusion of bodily goods; the study may set the prayer beside the
+  disagreement and should not decide it by the prayer.
 
-## 5. Comparison of the readings
+**Four senses.**
 
-- **Centre of gravity.** A reads the Lesson as the key (the Church seen
-  whole, sealed and uncounted); B reads the Gospel as the key (the way);
-  C reads the Gradual and Offertory as the key (the promise under the
-  scandal). A is ecclesial and visionary, B is paedagogic and moral, C is
-  consolatory and polemical.
-- **Witness base.** A rests on Bede with Augustine. Bede expounds the
-  chapter; Augustine reads its number and crowd as the whole Church in three
-  brief loci and seconds the said psalm texts. Bellarmine supports A by
-  analogue. Victorinus is a developed but non-carrying second commentary
-  that agrees on the crowd and the baptismal robes and dissents on the
-  angel and the number. Cyprian is a non-carrying rival, and the PL 35
-  *Expositio* is dependent reception of Bede. B rests on Augustine with
-  Chrysostom (Aquinas and Hilary close behind); C on Basil with
-  Bellarmine (Augustine, Aquinas, Chrysostom supporting). B has the
-  deepest bench; A has the tightest fit to the feast's unique Lesson, and
-  the only reading whose witnesses openly disagree on its central text; C
-  makes the most of the feast's strangest element — the adapted Offertory
-  and the omitted half-verse.
-- **Use of the commemoration.** All three hear the Sunday's orations as
-  the journeying Church's voice inside the feast; none may present them as
-  the feast's own. C uses them most structurally (want against no-want).
-- **Use of the commentators.** Schuster's origin-history (Pantheon,
-  Agatha, Gelasian) serves A's "one celebration" theme; the continuation's
-  "second census" serves A and must be kept visible as Bede's rival
-  reading; B and C draw on the continuation's beatitude-mysticism only as
-  reception. Durandus's four causes serve C's intercession theme.
-- **Risks.** A can drift into triumphalism that forgets the Collect's
-  begged mercy; B can drift into moralism that forgets the saints are
-  already crowned; C can drift into the prosperity reading it exists to
-  refuse. Each reading's own difficulty section names the failure mode.
-- **Compatibility.** They are layered, not rivals: A says who the saints
-  are, B says how they came, C says why the world misreads them. An
-  authoring stage may take one as spine and borrow the others' elements,
-  provided the carrying witnesses stay attached to the claims they carry
-  and the rival receptions stay visible.
+- Literal: the psalmist (the title sets him at Geth before Achimelech)
+  promises those who fear the Lord no want; Wisdom's just seemed to the
+  unwise to die and are in peace.
+- Allegorical: the rich who became poor are Israel, those who seek are the
+  nations (Basil, n. 7).
+- Moral: fear trains the life and nails the flesh (Basil, with Ps 118:120); no
+  holiness without fear (Aquinas); our beatitude now is fear (Bernard); joy is
+  in the Lord, not in ourselves (Augustine on Ps 32:1).
+- Anagogical: God himself the perfect good (Basil); peace wholly there
+  (Augustine); the souls of the just in God's protection and in peace
+  (Augustine on Wis 3:1; Bonaventure).
+
+**Limits.**
+
+- Augustine's "Living Bread" gloss belongs to the half-verse the Gradual
+  omits; it may be used only if the study says so.
+- Augustine's gloss on Wis 3:1 covers one clause; the Offertory's other clauses
+  rest on Bonaventure and Alphonsus, who support and do not carry, and on
+  Schuster.
+- Whose souls the Offertory names is disputed: Schuster says the martyrs,
+  Alphonsus every just soul, Bonaventure both (research/scope.md 6.7). The
+  study must not narrow the antiphon to the martyrs without saying so.
+- *malitiae*: the form is older than the 1570 printing, in the Gregorian
+  Antiphonary, the Fonte Avellana codices and Sarum (research/scope.md 3.8),
+  but no witness read comments on it in the Offertory; Peter of Celle's gloss of
+  *tormentum malitiae* is a use of the verse. The study must not build on a
+  reason for the wording.
+- Bellarmine is read in an abridged English; Aquinas on the Psalms and
+  Bonaventure in OCR.
+- Bellarmine says nothing of the vision of God or of the Communion.
+
+## 5. Comparison
+
+| | A: the company | B: the way | C: the possession |
+|---|---|---|---|
+| Controlling passage | Apoc 7:2-12 | Mt 5:1-12a | Ps 33:10-11 with Wis 3:1-3 |
+| Distinguishing inference | the counted and the uncounted are one Church, numbered by God | the rewards are begun here and perfected there | nothing is lacking because God is the good |
+| Carrying | Bede, Augustine | Augustine, Chrysostom, Aquinas, Hilary, Rabanus | Basil, Augustine, Aquinas, Bellarmine |
+| Introit | the angels' joy (Fromage); *unanimiter* (Aquinas; join editorial) | a taste of the unbroken joy (Basil); the upright (Augustine) | joy in the Lord, not in prosperity (Augustine, Basil) |
+| Lesson | controls | the white-robed victors (editorial, from Bede on 7:9) | the sealed kept from harm (editorial) |
+| Gradual | said to us, not to the saints in glory (Bernard on the night office; editorial join) | fear as the first step (editorial; Augustine I.4.11 is on Mt 5:3) | controls |
+| Gospel | marks of the multitude (editorial) | controls | Mt 5:6 (editorial, with a caution) |
+| Offertory | the number kept (editorial); the martyrs and all the just (Bonaventure) | peace now in hope, at last in fact (Bonaventure's *Glossa*; Alphonsus; Fromage) | controls with the Gradual (Augustine on Wis 3:1; Bonaventure; Alphonsus) |
+| Communion | the multitude named (editorial) | Fromage's three; the Gospel's witnesses on the same verses | the good seen (editorial) |
+| Real disagreement inside | Augustine against Gregory on the number; Cyprian and Schuster against Augustine on ease | Hilary against the others on when, Augustine qualifying his own emphasis; on Mt 11:28, the burden as frailty and sin (Chrysostom; Augustine, Sermon XIX; Rabanus's first reading, after Jerome) or first as the Law's yoke (Gregory; Hilary, with the world's sins; Rabanus's second reading, after Jerome) | Basil against Aquinas and Bellarmine on bodily goods; Schuster against Alphonsus on whose souls |
+
+What each sees that the others miss:
+
+- A alone answers the Lesson's double vision and the Collect's multitude of
+  intercessors; it says little about how one becomes a saint, except through
+  Augustine's narrow gate.
+- B alone gives the Gospel and the Communion their own weight and gives the
+  feast a way; it reads the Lesson only through its eighth beatitude.
+- C alone gives the Gradual and the Offertory their own argument and the
+  commemoration's Postcommunion a place in a real dispute; it reads the Lesson
+  and the Communion only by editorial joins.
+
+The readings share Augustine and Aquinas, who argue differently in each: in A
+on the number known to God and the few who are many, in B on the rewards
+begun, in C on spiritual and bodily goods and on God's hand. They do not
+contradict one another: a study may hold all three.
 
 ## 6. Notes for authoring
 
-1. The Preface slot is **unsettled** (Trinity n. 1082 against common
-   n. 1086). Follow the one fixed rule in scope §11: name the slot as
-   unsettled; name both candidates with their RGMR basis (482 and 494 b,
-   with the Vigil of the Nativity rubric as an analogy only, for the
-   Trinity Preface; 482, 483 and 498 for the common Preface); assert
-   neither; reproduce neither text; build nothing on either Preface's
-   wording (the *Preface slot* lines in each reading are no more than
-   that); cite no Ordo, web calendar or repository test (scope §6 item 7,
-   §10.1).
-2. The last Gospel is Jn 1:1–14 under RGMR 509–510, read on the registered
-   1962 page. Cite only those RGMR loci. The dated web Ordos read in the
-   context stage are registered as context only (bindings 35-40): do not
-   cite or present them, and
-   do not present any variance of theirs (scope §6 item 8, §11).
-3. Numbering discipline (scope §6.9): Ps 32 = Heb./Eng. 33; the Gradual's
-   Ps 33:10–11 (Vulgate) = Douay 33:10–11 = Hebrew 34:10–11 = English
-   34:9–10. NPNF titles Augustine's expositions "Psalm XXXIII" and "Psalm
-   XXXIV" and numbers Ps 33's verses by the English count, so its "ver. 9"
-   and "ver. 10" are Vulgate 33:10–11 and its "ver. 11" is Vulgate 33:12,
-   outside the Gradual. Bellarmine's psalm numbers are the Vulgate's, but
-   his verse numbers in Ps 33 are one lower (his vv. 9–10 = Vulgate
-   33:10–11); in Ps 32 his verse numbers agree with the Vulgate. Every
-   citation carries its basis.
-4. Textual discipline: the Offertory is the 1962 adapted antiphon
-   (*autem* omitted, *tanget*, *malitiae*, 3:2b–3a omitted, added
-   *alleluia*), never the Clementine verse; its history is stated as
-   witnessed and no further (1570 *mortis* without alleluia; *malitiae*
-   from 1604; alleluia first held in 1922, entry unresolved; scope §3.7); the
-   Gradual's wording is the Roman psalter's, not the Clementine's; the
-   Lesson's incipit and the Gospel's opening are liturgical forms. English
-   follows the routes in `propers/verified.md` — Douay only where it
-   carries the Missal's form; Lasance under its own attribution for the
-   orations, with its pre-1960 rubrics disclosed; the Lasance scriptural
-   English remains a lead (no inventory row).
-5. Carrying rules honoured above: carriers are Bede, Augustine, Basil,
-   Chrysostom, Bellarmine (fathers, doctors, canonized); Aquinas and
-   Hilary support; Schuster (blessed) may second but is used here as
-   Mass-level reception; the Guéranger-Fromage continuation, Durandus and
-   Beleth never carry; the continuation's words are Fromage's (decision
-   D7); Rabanus is a saintly compiler whose Mt 5 matter is Augustine's
-   (printed "(Aug.)"). Victorinus and Cyprian have no standing rows and
-   never carry; the PL 35 *Expositio* is anonymous and dependent and never
-   carries. Augustine's Apocalypse loci second Reading A as brief
-   applications, not as a commentary (Reading A, *Carrying witnesses*).
-6. Do not use: Bernard's All Saints sermons (not held; no registered
-   passage, no standing row), Victorinus's English without its recension
-   caution, the PL 35 *Expositio* under Augustine's or Caesarius's name or
-   as evidence independent of Bede, Gregory of Nyssa's beatitudes homilies (no holdings, no
-   row), Jerome on Mt 5 (unfetched remote lead), Theodoret or Athanasius
-   on the psalms (unread), Peter of Celle's Wis 3:1 quotation as Beleth's
-   (attribution caution, scope §3.1), the medieval proper Preface Schuster
-   quotes (history, not appointment), or any element of the Twenty-third
-   Sunday beyond its three orations.
-7. Editorial syntheses are marked at the point of use above; the authoring
-   stage re-verifies every marked join before adopting it.
-8. The audience is an adult parish assembly (ARGS.audience); the homily
-   stage should note that the three readings scale differently: B preaches
-   most directly, A most festally, C most pastorally — and C alone preaches
-   honestly where the assembly grieves.
+- **Carrying authors** differ from `proper-components.toml` as it stands in
+  one name: this record has A Bede and Augustine; B Augustine, Chrysostom,
+  Aquinas, Hilary and Rabanus Maurus (standing `saint`); C Basil,
+  Bellarmine, Augustine, Aquinas. The manifest (not a research-owned file)
+  does not list Rabanus among B's carrying authors and its lane comment calls
+  him only a compiler of Augustine (research/scope.md section 10).
+- **Authors lists** in the manifest differ from this record: A also draws on
+  Aquinas, Victorinus, Cyprian, Bernard and Sicard; B on Bernard, Fromage,
+  Bonaventure, Alphonsus and Gregory (*Moralia* I, on Mt 11:28), and on
+  Rabanus Maurus, whose commentary on Mt 5 and Mt 11:28 iteration 1 wrongly
+  recorded as not found in the PL 107 OCR (he is known on Wisdom only through
+  Bonaventure); C on Bernard, Bonaventure, Alphonsus and Schuster, and not on
+  Durandus; Gregory the Great's *Moralia* XII is only an illuminating use for
+  C.
+- Bernard, Victorinus, Cyprian, Bonaventure, Alphonsus, Peter of Celle and Bruno
+  of Würzburg have no standing row and may not be presented as carrying a reading.
+- Do not say the sources are silent on why the Communion repeats three
+  beatitudes (Fromage answers); do not quote Fromage in English as if from
+  the source.
+- Durandus's Collect reads *intercessionibus*, not the 1962 *intercessoribus*;
+  do not call his word the 1962 Collect's, and do not call it his own slip:
+  it is a variant reading that Ménard's Gregorian codex and the Monte
+  Suavicino sacramentary (PL 151) also give, while the Leonine and Gelasian
+  prayer of the apostles and the Gilbertine, Sarum and Roman Missals read
+  *intercessoribus*. Do not call either reading older or later: no witness
+  read establishes the direction. Do not render Ménard's "prior lectio" as
+  "the older reading"; it is the reading he named first. His supplying of omitted feasts is his
+  second of four causes.
+- Augustine's "great mass" in Sermon LXI is the heap of winnowed grain, and
+  "This is the mass of the saints" is said of Apoc 7:9; keep the image and the
+  phrase together.
+- Cyprian draws a conclusion from Apoc 7:9 (martyrdom is not hard); do not
+  present Schuster's "not so hard to be saved" as without precedent, or
+  Cyprian's conclusion as reaching beyond martyrdom.
+- Bernard's *Timete Dominum* "hac nocte" is the night office; do not say he
+  comments on the Mass Gradual.
+- Alphonsus quotes Wis 3:1-3 with the antiphon's omission; do not say he took
+  it from the Offertory.
+- The Lesson's 7:11: the angels fall on their faces.
+- Chrysostom's quotations above are from NPNF; Alphonsus's from the 1843
+  English; mark omissions.
+- The Preface stays unresolved between two candidates; the Missal's p. 16
+  direction for the Vigil of the Nativity on a Sunday supports either
+  inference (research/scope.md 3.11).
+- The "starting-point" sentence is Augustine's I.3.10 (I.4.12 repeats the
+  thought in other words); cite the locus that holds the words quoted.
+- The Offertory's *alleluia* is first found in Mame 1922; the scan once cited
+  as "Rome 1920" is a 1951-1954 printing, so do not say the 1920 typical
+  edition added it (research/scope.md 3.8).
+- Psalm citations use the Vulgate number; give the basis where an author
+  numbers otherwise (research/scope.md section 1).

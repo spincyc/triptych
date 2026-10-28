@@ -437,6 +437,23 @@ class PublicDerivativeTests(Fixture):
         report.write_text(json.dumps(data))
         self.assertIn("private absolute filesystem path", self.refusal(redact_repository_paths=True))
 
+    def test_tex_quoted_in_a_packet_json_line_is_not_a_unc_path(self) -> None:
+        packet = self.run_dir / "packets/scope-gate-0000.txt"
+        finding = {"problem": "typeset as '\\,'' after \\Needspace{12\\baselineskip}"}
+        packet.write_text("STAGE: scope-gate\nPRIOR_FINDINGS: " + json.dumps([finding]) + "\n")
+        self.state["packet_hashes"][0]["hash"] = sha(packet.read_bytes())
+        self.write_json("state.json", self.state)
+        dest = self.archived(redact_repository_paths=True)
+        self.assertEqual((dest / "packets/scope-gate-0000.txt").read_bytes(), packet.read_bytes())
+
+    def test_a_unc_path_inside_a_packet_json_line_still_refuses(self) -> None:
+        packet = self.run_dir / "packets/scope-gate-0000.txt"
+        finding = {"location": "\\\\fixture-host\\evidence.txt"}
+        packet.write_text("PRIOR_FINDINGS: " + json.dumps([finding]) + "\n")
+        self.state["packet_hashes"][0]["hash"] = sha(packet.read_bytes())
+        self.write_json("state.json", self.state)
+        self.assertIn("private absolute filesystem path", self.refusal(redact_repository_paths=True))
+
     def test_derivative_still_verifies_original_hash_before_any_replacement(self) -> None:
         path, _ = self.retained_result(notes=f"Inspect {self.root}/research/evidence.md")
         path.write_bytes(path.read_bytes() + b"\n")

@@ -1,0 +1,22 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/source-dispositions.toml",
+  "defects_for_other_owners": [
+    "src/sources/inventories/source-family-migration-v1.toml: canonical_catalog_snapshot is stale after the new source records; the ledger owner must re-pin it (refresh --accept-canonical-catalog).",
+    "src/sources/inventories/claude-publications-v1.toml: stale hashes and missing paths for the f02 leaf files while the revision is open.",
+    "calendar roman-1962 propers.yaml omnium-sanctorum: Gospel cited as Mt 5:1-12 where 5:1-12a is meant; Offertory cites Wis 3:1-3 as the entire passage; no Preface case is recorded.",
+    "test_ordinary_appointments allSaintsSunday1962 expects the common Preface; this needs review against the 1962 rubrics.",
+    "The proper-chronology generator renders the Apocalypse book as 'Revelation'.",
+    "The provenance and translation inventories lack rows for this formulary's scriptural texts; formulary-loci is empty for it.",
+    "author-standing-v1.toml has no rows for Bernard of Clairvaux, Victorinus of Pettau or Cyprian.",
+    "The source-containment Victorinus extent (Rev 1, 5, 19) does not match the ANF text read (chs. 7, 12).",
+    "No Bede passage records exist for Apoc 7:1-3; Wis 3:1-3 has no commentary mapping; the PL 35 Expositio is not represented as a work.",
+    "The Mame derivative 415a1d46 does not reproduce Mame's orthography.",
+    "work.fsspx.ordo declares English but the responses are French.",
+    "The Internet Archive metadata for PL 183 gives 1844; the title pages read 1854 (recorded in the edition notes).",
+    "No English translation of Bernard's All Saints sermons is registered."
+  ],
+  "disposition": "PASS",
+  "iteration": 0,
+  "stage": "source-registration",
+  "summary": "This dispatch registered the unregistered sources the All Saints research read, bound them to the leaf, and wrote the leaf's per-source commentary dispositions. Registered: work.jacques-paul-migne.patrologia-latina-volume-183 with its 1854 Paris edition, a remote Internet Archive scan, a tracked optical text, and a tracked facsimile excerpt of cols. 453-481; work.bernard-of-clairvaux.sermones-in-festo-omnium-sanctorum with its 1854 Migne PL 183 edition and segment cols-453-481; edition.thomas-aquinas.summa-theologiae.2026-10-27-english-dominicans-newadvent-prima-q23 with a restricted delivery artifact and a tracked normalized text. A PL 183 containment entry was added to source-containment-v1.toml. research/source-bindings.toml gained bindings 54-57 (Bernard segment, PL 183 scan, PL 183 optical text, New Advent ST I q. 23); bindings 1-53 are unchanged. research/source-dispositions.toml holds 65 rows. Admitted: Bede on the Apocalypse passages 1-7-4, 1-7-9, 1-7-10, 1-7-11, 1-7-12. Not-commentary: text control, Bible, Lasance, Durandus/Beleth, text layers, and the New Advent delivery. Deferred, for want of passage records, page-image collation, verified transcription, original-language text, recension identity, work records, attribution, or publishable rights: Schuster, Fromage, Victorinus, the Bede 7:1-3 scan, the PL 35 Expositio, Cyprian, Augustine (Enchiridion, De sermone Domini, Sermon 61, Enarr. in Ps 33), Gregory, Aquinas (ST, Super Psalmos, Super Matthaeum), Basil, Bellarmine, Chrysostom, Hilary, and Bernard and the PL 183 artifacts. research/scope.md was corrected: section 3.3 and section 10 now record the New Advent and Bernard sources as registered, and section 10 notes the migration-ledger snapshot defect. Checks: source-library validate valid (bindings=4321); proper-study source-dispositions and research check with --require-source-dispositions pass; commentary-work-index containment passes; make source-projection passes; source-reader check and structure --check pass; calendar-days, check-calendar-masses, mass-propers structure, calendar-rubrics and mass-ordinary checks pass; 91 locus-pattern, disposition and source-library unit tests pass. make -k check-sources fails only at check-document-catalogue (homily.tex and synthesis.tex not yet written, as expected), check-publication-inventories (claude-publications-v1.toml holds stale hashes and missing paths for the open f02 revision), and source-family-migration check (pinned canonical_catalog_snapshot is stale, as any new source record makes it)."
+}

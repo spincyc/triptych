@@ -4,6 +4,10 @@
 
 [TOC]
 
+> *In all thy works remember thy last end, and thou shalt never sin.*
+>
+> Ecclesiasticus 7:40
+
 [I. Death](four-last-things-01-death.html) · [II. Judgment](four-last-things-02-judgment.html) · [III. Hell](four-last-things-03-hell.html) · [IV. Heaven](four-last-things-04-heaven.html)
 
 ## Remember Thy Last End
@@ -359,7 +363,7 @@ These pages are a study aid prepared within the Triptych library. They carry no 
 
 - *Code of Canon Law* (1983), cann. 921–922, 1004, official English, [vatican.va](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann879-958_en.html), accessed 16 October 2026; © Libreria Editrice Vaticana, quoted briefly.
 
-**Last revised (UTC):** 2026-10-26T18:38:28Z
+**Last revised (UTC):** 2026-10-27T16:55:31Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

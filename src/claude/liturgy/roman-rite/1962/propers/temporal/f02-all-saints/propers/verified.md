@@ -1,206 +1,126 @@
-# Omnium Sanctorum — Verified Propers
+# Verified text of the Mass of All Saints, 1 November 2026
 
-Facsimile-collated appointed text in liturgical order. This record is the text
-control for the canonical leaf
-`liturgy/roman-rite/1962/propers/temporal/f02-all-saints` and for every output
-derived from it. It carries the Latin of the controlling edition as printed,
-each element's relation to the public-domain witnesses and to the Clementine
-Vulgate, the publication basis of the Latin, and the lawful English route for
-each text. It contains no study prose. Occurrence on 1 November 2026 —
-precedence, the commemoration of the Twenty-third Sunday after Pentecost, and
-the disputed Preface — is settled as far as this stage can settle it in
-`research/context.md` and is not re-argued here.
+The words said in every Mass of Sunday 1 November 2026 under the 1962 books:
+the feast's own formulary with the three orations of the Twenty-third Sunday
+after Pentecost commemorated after the feast's Collect, Secret and
+Postcommunion (research/context.md, *Occurrence on 1 November 2026*). Read and
+recorded on 27 October 2026 in the research stage of proper-study run
+`450355254538c1ba`.
 
 ## Provenance
 
-- **Controlling edition.** *Missale Romanum ex decreto Sacrosancti Concilii
-  Tridentini restitutum, Summorum Pontificum cura recognitum*, editio typica
-  (Typis Polyglottis Vaticanis, 1962). Source-library identity
-  `edition.catholic-church.missale-romanum.vatican-typica-1962`.
-- **Controlling artifact.** The CMAA facsimile,
-  `artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf`,
-  SHA-256 `648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a`,
-  82,815,941 bytes. The copy held by this run's resolve-context stage matched
-  the registered record before any page was rendered. The artifact is
-  `storage = "remote"`; no payload is installed in this repository and no page
-  image of it is reproduced anywhere.
-- **Printed formulary heading and rank.** Below the running head `FESTA
-  NOVEMBRIS` and a full-width engraved headpiece (the enthroned Lord, the
-  Lamb with its book, the four living creatures, angels, and elders with palms
-  and crowns): `Die 1 novembris` / `IN FESTO OMNIUM SANCTORUM` / `I classis`,
-  centred, printed p. 702. The headpiece is decoration, not a text of the
-  Mass, and is not reproduced.
-- **Printed location.** The Sanctorale. Printed p. 702 (artifact PDF p. 783)
-  carries the heading, the Introit (no. 3974) and Collect (3975) in its
-  left-hand column and the Lesson's opening (3976) in its right-hand column.
-  Printed p. 703 (PDF p. 784; running head `Festa novembris (1)`) carries the
-  Lesson's remainder, the Gradual (3977), Alleluia (3978) and Gospel opening
-  (3979) in its left-hand column, and the Gospel's remainder with the cue
-  `Credo.`, Offertory (3980), Secret (3981), Communion (3982) and
-  Postcommunion (3983) in its right-hand column. Marginal numbers
-  **3974–3983**, ten numbers for ten printed elements, none skipped and none
-  shared. The boundaries on either side (Ss Simon and Jude, ending no. 3973
-  on printed p. 701; the *Missa votiva de omnibus Sanctis*, opening no. 3984
-  on printed p. 704) were read on page images by the resolve-context stage
-  and are recorded in `research/context.md`.
-- **Commemorated Sunday's orations.** Printed p. 416 (PDF p. 497; running
-  head `…III post Pentecosten`) carries the Collect of the Twenty-third
-  Sunday after Pentecost at no. 1720; printed p. 417 (PDF p. 498; running
-  head `Dominica XXIII post Pentecosten`) carries its Secret at no. 1726 —
-  followed by the Sunday's own rubric `Præfatio de Ss.ma Trinitate.`, which
-  belongs to the Sunday's Mass — and its Postcommunion at no. 1728.
-- **Digital leaves and resolution.** PDF pp. 783 and 784 were rendered whole
-  at 200 dpi and read; each page was then rendered at 400 dpi and read in
-  overlapping quarter crops, so that every column section carrying this
-  formulary was read at 400 dpi. PDF pp. 497 and 498 were read at 200 dpi,
-  whole and in right-column crops. The rasters were transient working
-  renders; they are not kept with these records and are not installed
-  anywhere.
-- **Colour.** White, which the formulary does not print; RG 120 d, as
-  `research/context.md` records. The scan is bitonal.
-- **Verification status and date.** Collated 2026-10-26 in the research stage
-  of run `427e2f58bb897a16`. No unresolved reading remains in the controlling
-  witness. The text-layer pulls in `propers/retrieved.txt` were not used for
-  any reading.
+- **Controlling witness.** *Missale Romanum*, editio typica, Typis Polyglottis
+  Vaticanis 1962, read on the page images of
+  `artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf`
+  (whole file SHA-256
+  `648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a`,
+  82,815,941 bytes, matched before any page was read). The feast: printed pp.
+  702-703 = artifact PDF pp. 783-784, marginal nos. 3974-3983. The commemoration:
+  printed pp. 416-417 = PDF pp. 497-498, nos. 1720, 1726, 1728. Each page was read
+  whole at 200 dpi and again in 400-dpi crops of every column section. Every Latin
+  form below, accents, ligatures, capitals, pointing and conclusion cues
+  included, is the page's.
+- **Text layers.** The facsimile's own text layer and the text layers of the
+  Mame 1922 and Pustet 1862 extracts are kept, unedited, in
+  `propers/retrieved.txt`. They located pages and words; none controls a form
+  given here.
+- **Collation witnesses.** Mame 1922 (*Missale Romanum*, editio quarta iuxta
+  typicam, Tours: Mame, 1922), registered page extract
+  `…1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-1922-pages-0682b2da`
+  (parent PDF pp. 862-864 = printed pp. 748-750), read at 200 and 400 dpi in
+  quarter crops. Pustet 1862 (*Missale Romanum*, Ratisbon: Pustet, 1862),
+  registered extract
+  `…pustet-ratisbon-1862.pentecost-23-prayer-pages-7e6ef53b` (printed pp.
+  357-358, *Dominica XXIII post Pentecosten*), read at 400 dpi in crops of each
+  oration. Both extracts matched their registered digests.
+- **Bible comparison.** Clementine Vulgate
+  (`edition.catholic-church.vulgata-clementina.ebible-latvuc`) and Douay-Rheims
+  (Challoner) (`edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581`),
+  read in their tracked verse texts. Psalms are cited in the Missal's Vulgate
+  numbering with the Hebrew number in parentheses (psalm concordance
+  `…challoner-gutenberg-1581.psalm-numbering-ee3c7757`).
 
 ## The publication basis of the Latin
 
-The feast in its present form (Gregory IV's extension of the Pantheon
-dedication to the universal Church, ninth century) is ancient, so every
-element of this formulary stands in the public-domain typical line this
-repository tracks. The holding of
-`src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml` is the
-route: the Latin travels on 17 U.S.C. 103(b) plus public-domain witnesses to
-the preexisting words, never on a property of the 1962 book. No page image,
-layout, accent scheme, rubric wording or marginal number of the 1962 book is
-reproduced in any publication; the Latin below is this record's
-facsimile-checked transcription of the words, with the page's own accent
-marks kept here for control.
+The repository's holding
+(`src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml`) is
+that the 1962 printing is a collation witness and that 17 U.S.C. 103(b) frees
+only preexisting material: each element's Latin may be published where a
+public-domain printing carries the same words.
 
-- **Witness for the feast's ten elements: the Tours Mame 1922 printing.**
-  *Missale Romanum*, editio IV iuxta typicam (Mame, Tours, 1922),
-  `edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam`,
-  printed pp. 748–750 (artifact pp. 862–864), held as the scan extract
-  `…all-saints-1922-pages-0682b2da` and read into two checked artifacts: the
-  four own bodies `…all-saints-four-propers-la-checked-82edd79a` (SHA-256
-  `2a0cd4cb…`) and the six scriptural bodies
-  `…all-saints-scriptural-propers-la-checked-415a1d46` (SHA-256 `f8d0bf5c…`),
-  each carried by its passages. A work published abroad in 1922 is in the
-  United States public domain (the Cornell chart line recorded in
-  `guidance/missals.md` §5, applied as of 2026-10-26).
-- **Collation result, read this stage.** Each of the ten elements as the 1962
-  page prints it stands in the Mame text word for word. The differences are
-  orthography (the Mame's consonantal *j*, as printed: `Joannes`, `Jesus`,
-  `Juda`, `justitiam`, `Justorum`, `justorum`, `Sancti ejus`,
-  `discipuli ejus`),
-  accents (the checked artifacts carry none), and one conclusion cue (the
-  Postcommunion: Mame `Per Dominum.` against the 1962 `Per Dominum
-  nostrum.`), on which the working rule recorded in
-  `guidance/propers-for-agents.md` holds — conclusion length changes no
-  verdict; reproduce the conclusion the target prints. No difference changes
-  which word is said.
-- **Witness for the commemoration's three orations: the Pustet 1862
-  printing, read on its page images.** The Twenty-third Sunday's orations
-  are preexisting words printed in the public-domain Ratisbon Pustet Missal
-  of 1862. This stage's iteration-1 repair read the tracked page extract
-  `artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.pentecost-23-prayer-pages-7e6ef53b`
-  (438,339 bytes, SHA-256 `7e6ef53b…` matched; two pages = parent PDF
-  pp. 443–444 of the registered facsimile `…ia-facsimile-pdf-363d6fc3` =
-  printed pp. 357–358), rendered at 150 dpi whole and in 300-dpi crops:
-  - Collect *Absólve, quæsumus Dómine, tuórum delícta populórum…tua
-    benignitáte liberémur.*, cue `Per Dóminum.` — printed p. 357 (extract
-    p. 1), foot of the left column;
-  - Secret *Pro nostræ servitútis augménto…propítius exequáris.*, cue
-    `Per Dóminum nostrum.` — printed p. 358 (extract p. 2), from the foot of
-    the left column to the head of the right;
-  - Postcommunion *Quǽsumus, omnípotens Deus: ut quos…subjacére perículis.*,
-    cue `Per Dóminum.` — printed p. 358 (extract p. 2), right column.
-  Each agrees with the 1962 page word for word. The differences are
-  orthography (`exequáris` for `exsequáris`, `subjacére` for
-  `subiacére`), light pointing (a comma fewer in places, e.g. after
-  `quæsumus`), and the shorter conclusion cues; the 1962 page prints the
-  conclusions in full, and they are given below as the target prints them.
-  The provenance ledger
-  `src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml` marks
-  the `pentecost-23` Collect, Secret and Postcommunion rows `permitted` on
-  the same printed pp. 357–358, with the Pustet text layer
-  `…pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf` (lines
-  52526–52533, 52640–52649, 52660–52666), which this stage also read and
-  which agrees with the page images.
-- **Project editorial projections, internal only.** Two project artifacts
-  join the checked witnesses into working text:
-  `artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-saints-four-propers-adfda498`
-  (the four own bodies, in the calendar's *j* orthography) and
-  `…editorial-projection-2026-10-25-f02.f02-remaining-nine-latin-f645e8ee`
-  (the six scriptural bodies in the target's *i* orthography, plus the three
-  commemoration orations). Each declares its sources and transformation in
-  its artifact record. They are collation conveniences, not a publication
-  source; the 1962 page remains the control.
-- **Rubrics and preface directions.** The feast's formulary prints no rubric
-  beyond its headings and cues. The Sunday's rubric `Præfatio de Ss.ma
-  Trinitate.` (no. 1726, p. 417) is 1960 rubrical matter of the Sunday's
-  Mass; the studies describe it and do not reproduce it as this feast's text.
-
-The shared ledger has no `omnium-sanctorum` rows for the six scriptural
-bodies; this record carries the collation, and the missing rows are reported
-for that ledger's owner in `research/scope.md` §10.
+- **The feast's ten elements.** Mame 1922, a typical-edition printing published
+  in 1922 and in the public domain in the United States, prints every word of
+  every element below, read on its page images. The differences are
+  orthography (*j* for consonantal *i*: *justi*, *Joánnes*, *Juda*, *Joseph*,
+  *ejus*, *Jesus*, *justítiam*, *Justórum*, *justórum*; *míllia* for *mília*;
+  *Bénjamin* for *Béniamin*; *Allelúja* for *Allelúia*), pointing and
+  capitalization (*sancti ejus* for *Sancti eius* in the Gradual), one Mame
+  misprint (*quoasdúsque* for *quoadúsque*, Lesson), and the Postcommunion's
+  conclusion cue (*Per Dóminum.* for 1962's *Per Dóminum nostrum.*, both cues
+  of the same fixed conclusion). No word of a body differs.
+- **The commemoration's three orations.** Pustet 1862 prints every word of the
+  three bodies. The differences are orthography (*exequáris* for 1962
+  *exsequáris*; *subjacére* for *subiacére*), pointing, and the conclusion cues
+  (Pustet *Per Dóminum.* or *Per Dóminum nostrum.* where 1962 prints the full
+  *Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in
+  unitáte.*). The full conclusion is the Missal's fixed common formula; the
+  1962 page prints it in full here only because these orations stand first in
+  their own Sunday Mass.
+- **Orthography published.** The forms published are the 1962 page's, which the
+  103(b) holding admits because the words are the preexisting words of the
+  witnesses named.
 
 ## Appointed text, as printed in 1962
 
-Accents, ligatures and pointing are those of the page images. `℣.` renders
-the versicle sign. Elements 1–14 are said on 1 November 2026; the Preface
-slot (element 11) is disputed and is recorded, not filled.
-
 ### 1. Introit (`introit`) — no. 3974, printed p. 702, left column
 
-Heading: `Antiphona ad Introitum` · verse citation `Ps. 32, 1`
+*Antiphona ad Introitum.* The antiphon has no printed citation; the verse is
+headed *Ps. 32, 1*.
 
 > Gaudeámus omnes in Dómino, diem festum celebrántes sub honóre Sanctórum
 > ómnium: de quorum solemnitáte gaudent Angeli, et colláudant Fílium Dei.
 > *Ps. 32, 1* Exsultáte, iusti, in Dómino: rectos decet collaudátio.
 > ℣. Glória Patri.
 
-The repetition of the antiphon after the *Gloria Patri* is the rubrical rule
-(RGMR 427), not printed. The antiphon is an ecclesiastical composition and
-carries no citation; the psalm verse is its citation. Mame (p. 748): same
-words; `justi`. Clementine: Ps 32:1 agrees, without the inscription `Psalmus
-David`, which the Clementine prints inside v. 1.
+- The page prints *solemnitáte* with one *l*; Mame 1922 the same.
+- Mame 1922 (p. 748): same words; *justi*.
+- Clementine Ps 32:1: the verse without the title words *Psalmus David*. The
+  antiphon is not a biblical text.
 
 ### 2. Collect (`collect`) — no. 3975, printed p. 702, left column
 
-Heading: `Oratio`
+*Oratio.*
 
 > Omnípotens sempitérne Deus, qui nos ómnium Sanctórum tuórum mérita sub una
 > tribuísti celebritáte venerári: quǽsumus; ut desiderátam nobis tuæ
 > propitiatiónis abundántiam, multiplicátis intercessóribus, largiáris. Per
 > Dóminum.
 
-Mame (p. 748): same words and the same cue.
+- Mame 1922 (p. 748): identical, pointing included.
 
-### 3. Commemoration Collect (`commemoration-collect`) — no. 1720, printed p. 416, right column
+### 3. Commemoration: Collect of the Twenty-third Sunday (`commemoration-collect`) — no. 1720, printed p. 416, right column
 
-Heading: `Oratio` (of the Dominica XXIII post Pentecosten)
+*Oratio.*
 
 > Absólve, quǽsumus, Dómine, tuórum delícta populórum: ut a peccatórum
 > néxibus, quæ pro nostra fragilitáte contráximus, tua benignitáte liberémur.
 > Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat
 > in unitáte.
 
-Said after the feast's Collect under this second conclusion (RG 108–109 a,
-111 a; RGMR 434 a, 437 a), as `research/context.md` settles. Pustet 1862
-(printed p. 357, read on the page image): same words, with the cue
-`Per Dóminum.`.
+- The last line of the conclusion was read on the 200-dpi page and confirmed on
+  the text layer; the body at 400 dpi.
+- Pustet 1862 (p. 357): same words; *Per Dóminum.*
 
-### 4. Lesson (`lesson`) — no. 3976, printed pp. 702–703
+### 4. Lesson (`lesson`) — no. 3976, printed pp. 702 (right column) - 703 (left column)
 
-Heading: `Léctio libri Apocalýpsis beáti Ioánnis Apóstoli.` · `Apoc. 7, 2-12`
+*Léctio libri Apocalýpsis beáti Ioánnis Apóstoli.* *Apoc. 7, 2-12*
 
 > In diébus illis: Ecce ego Ioánnes vidi álterum Angelum ascendéntem ab ortu
 > solis, habéntem signum Dei vivi: et clamávit voce magna quátuor Angelis,
 > quibus datum est nocére terræ et mari, dicens: Nolíte nocére terræ et mari,
 > neque arbóribus, quoadúsque signémus servos Dei nostri in fróntibus eórum.
 > Et audívi númerum signatórum, centum quadragínta quátuor mília signáti, ex
-> omni tribu filiórum Israel. Ex tribu Iuda duódecim mília signáti. Ex tribu
+> omni tribu filiórum Israël. Ex tribu Iuda duódecim mília signáti. Ex tribu
 > Ruben duódecim mília signáti. Ex tribu Gad duódecim mília signáti. Ex tribu
 > Aser duódecim mília signáti. Ex tribu Néphtali duódecim mília signáti. Ex
 > tribu Manásse duódecim mília signáti. Ex tribu Símeon duódecim mília
@@ -211,48 +131,55 @@ Heading: `Léctio libri Apocalýpsis beáti Ioánnis Apóstoli.` · `Apoc. 7, 2-
 > tríbubus, et pópulis, et linguis: stantes ante thronum, et in conspéctu
 > Agni, amícti stolis albis, et palmæ in mánibus eórum: et clamábant voce
 > magna, dicéntes: Salus Deo nostro, qui sedet super thronum, et Agno. Et
-> omnes Angeli stabant in circúitu throni, et seniórum, et quátuor
-> animálium: et cecidérunt in conspéctu throni in fácies suas, et
-> adoravérunt Deum, dicéntes: Amen. Benedíctio, et cláritas, et sapiéntia, et
-> gratiárum áctio, honor, et virtus, et fortitúdo Deo nostro in sǽcula
-> sæculórum. Amen.
+> omnes Angeli stabant in circúitu throni, et seniórum, et quátuor animálium:
+> et cecidérunt in conspéctu throni in fácies suas, et adoravérunt Deum,
+> dicéntes: Amen. Benedíctio, et cláritas, et sapiéntia, et gratiárum áctio,
+> honor, et virtus, et fortitúdo Deo nostro in sǽcula sæculórum. Amen.
 
-The Lesson crosses the page at `Néphtali duódecim / mília signáti`. Mame
-(pp. 748–749): same words; `Joannes`, `Juda`. Clementine: the liturgical
-incipit `In diébus illis: Ecce ego Ioánnes vidi álterum Angelum` stands for
-`Et vidi alterum angelum ascendentem` (7:2); every other word of vv. 2–12
-agrees.
+- The page turns after *Ex tribu Néphtali duódecim*.
+- Grammar of 7:11: it is the angels, standing round the throne, the ancients
+  and the four living creatures, who fall on their faces and adore.
+- Mame 1922 (pp. 748-749): same words; *Joánnes*, *Juda*, *Joseph*, *míllia*
+  throughout, *Bénjamin*, misprint *quoasdúsque*; lighter pointing (no comma
+  before *dicens* or after the second *mari*; none between *géntibus et
+  tríbubus et pópulis et linguis*).
+- Clementine Apoc 7:2-12: the liturgical opening *In diébus illis: Ecce ego
+  Ioánnes vidi* stands for the Clementine's *Et vidi*; otherwise orthography
+  only (*millia*, *Nephthali*, *Benjamin*).
 
 ### 5. Gradual (`gradual`) — no. 3977, printed p. 703, left column
 
-Heading: `Graduale` · `Ps. 33, 10 et 11`
+*Graduale.* *Ps. 33, 10 et 11* (Hebrew 34:10-11)
 
 > Timéte Dóminum, omnes Sancti eius: quóniam nihil deest timéntibus eum.
 > ℣. Inquiréntes autem Dóminum, non defícient omni bono.
 
-Mame (p. 749): same words; `Sancti ejus`. Clementine: the Missal keeps the
-older Roman psalter wording — v. 10 as `quóniam nihil deest timéntibus eum`
-for the Clementine's `quoniam non est inopia timentibus eum`, and the second
-clause of v. 11 as `non defícient omni bono` for `non minuentur omni bono`;
-v. 11a `Dívites eguérunt, et esuriérunt` is not said.
+- Mame 1922 (p. 749): same words; *sancti ejus*; no comma after *Dóminum*.
+- Clementine Ps 33:10-11 reads *quoniam non est inopia timentibus eum.
+  Divites eguerunt, et esurierunt; inquirentes autem Dominum non minuentur omni
+  bono.* The Gradual has *nihil deest* for *non est inopia*, omits *Divites
+  eguerunt, et esurierunt*, and reads *non defícient* for *non minuentur*.
+  Augustine's psalter in *Enarr. in Ps. 33* s. 2 n. 14 reads *nihil deest* in
+  v. 10 but *non minuentur* in v. 11 (research/scope.md section 3.5); the
+  Gradual's whole form is not identified in any psalter read.
+- Vulgate 33:12, *Venite, filii*, is not said.
 
 ### 6. Alleluia (`alleluia`) — no. 3978, printed p. 703, left column
 
-> Allelúia, allelúia. ℣. *Matth. 11, 28* Veníte ad me, omnes qui laborátis
-> et oneráti estis: et ego refíciam vos. Allelúia.
+> Allelúia, allelúia. ℣. *Matth. 11, 28* Veníte ad me, omnes qui laborátis et
+> oneráti estis: et ego refíciam vos. Allelúia.
 
-Mame (p. 749): same words. Clementine: agrees apart from orthography. No
-Sequence and no Tract; the feast never falls in Septuagesima or paschal
-time.
+- Mame 1922 (p. 749): same words; *Allelúja*.
+- Clementine Mt 11:28: same words.
 
-### 7. Gospel (`gospel`) — no. 3979, printed p. 703, both columns
+### 7. Gospel (`gospel`) — no. 3979, printed p. 703, left and right columns
 
-Heading: `✠ Sequéntia sancti Evangélii secúndum Matthǽum.` · `Mt. 5, 1-12`
+*✠ Sequéntia sancti Evangélii secúndum Matthǽum.* *Mt. 5, 1-12*
 
 > In illo témpore: Videns Iesus turbas, ascéndit in montem, et cum sedísset,
-> accessérunt ad eum discípuli eius, et apériens os suum, docébat eos,
-> dicens: Beáti páuperes spíritu: quóniam ipsórum est regnum cælórum. Beáti
-> mites: quóniam ipsi possidébunt terram. Beáti qui lugent: quóniam ipsi
+> accessérunt ad eum discípuli eius, et apériens os suum, docébat eos, dicens:
+> Beáti páuperes spíritu: quóniam ipsórum est regnum cælórum. Beáti mites:
+> quóniam ipsi possidébunt terram. Beáti qui lugent: quóniam ipsi
 > consolabúntur. Beáti qui esúriunt et sítiunt iustítiam: quóniam ipsi
 > saturabúntur. Beáti misericórdes: quóniam ipsi misericórdiam consequéntur.
 > Beáti mundo corde: quóniam ipsi Deum vidébunt. Beáti pacífici: quóniam
@@ -262,208 +189,214 @@ Heading: `✠ Sequéntia sancti Evangélii secúndum Matthǽum.` · `Mt. 5, 1-12
 > propter me: gaudéte et exsultáte, quóniam merces vestra copiósa est in
 > cælis.
 
-Cue: `Credo.` Mame (pp. 749–750): same words; `Jesus`, `discipuli ejus`.
-Clementine: the liturgical opening `In illo tempore: Videns Iesus turbas`
-stands for `Videns autem Jesus turbas` (5:1); the reading ends at 5:12a
-(`in cælis`), before `Sic enim persecuti sunt prophetas…`; every other word
-of vv. 1–12a agrees.
+- Printed cue *Credo.* follows.
+- The column turns after *Beáti páuperes spíritu: quóniam*.
+- The heading cites *Mt. 5, 1-12*; the text ends at 12a (*in cælis*). Verse
+  12b, *Sic enim persecuti sunt prophetas, qui fuerunt ante vos*, is not read.
+- Mame 1922 (pp. 748-749): same words; *Jesus*, *ejus*, *justítiam*; *et, cum
+  sedísset,* and *et, apériens os suum docébat*.
+- Clementine Mt 5:1-12a: the liturgical opening *In illo témpore: Videns Iesus*
+  stands for *Videns autem Jesus*.
 
 ### 8. Offertory (`offertory`) — no. 3980, printed p. 703, right column
 
-Heading: `Ant. ad Offertorium` · `Sap. 3, 1, 2 et 3`
+*Ant. ad Offertorium.* *Sap. 3, 1, 2 et 3*
 
 > Iustórum ánimæ in manu Dei sunt, et non tanget illos torméntum malítiæ:
 > visi sunt óculis insipiéntium mori: illi autem sunt in pace, allelúia.
 
-Mame (p. 750): same words; `Justorum`. Clementine
-(`src/sources/bibles/clementine-vulgate/chapters/Wis/3.json`): Wis 3:1
-`Justorum autem animæ in manu Dei sunt, et non tangent illos tormentum
-mortis.` 3:2 `Visi sunt oculis insipientium mori, et æstimata est afflictio
-exitus illorum,` 3:3 `et quod a nobis est iter exterminium; illi autem sunt
-in pace:`. Against it the antiphon (1) omits `autem` after `Iustórum`
-(3:1); (2) reads `tanget` for `tangent` (3:1); (3) reads `malítiæ` for
-`mortis` (3:1); (4) omits `et æstimata est afflictio exitus illorum, et quod
-a nobis est iter exterminium` (3:2b–3a); and (5) adds `allelúia`. The
-antiphon is the received liturgical form, not the verse. Its history is
-recorded in `research/scope.md` §3.7: the 1570 Missal's own All Saints
-Offertory reads `tormentum mortis` without alleluia.
+- Mame 1922 (p. 750): same words; *Justórum*, *allelúja*. Its citation reads
+  *Sap. 3, 1-2 et 3*.
+- Clementine Wis 3:1-3 reads *Justorum autem animæ in manu Dei sunt, et non
+  tangent illos tormentum mortis. Visi sunt oculis insipientium mori, et
+  æstimata est afflictio exitus illorum, et quod a nobis est iter
+  exterminium; illi autem sunt in pace*. The antiphon omits *autem*, reads
+  *tanget* for *tangent* and *malítiæ* for *mortis*, omits 3:2b-3a, and adds
+  *allelúia*. Its history is in research/scope.md section 3.8.
 
 ### 9. Secret (`secret`) — no. 3981, printed p. 703, right column
 
-Heading: `Secreta`
+*Secreta.*
 
-> Múnera tibi, Dómine, nostræ devotiónis offérimus: quæ et pro cunctórum
-> tibi grata sint honóre iustórum, et nobis salutária, te miseránte,
-> reddántur. Per Dóminum.
+> Múnera tibi, Dómine, nostræ devotiónis offérimus: quæ et pro cunctórum tibi
+> grata sint honóre iustórum, et nobis salutária, te miseránte, reddántur. Per
+> Dóminum.
 
-Mame (p. 750): same words and cue; `justorum`.
+- Mame 1922 (p. 750): same words; *justórum*.
+- No Preface direction is printed on the feast's pages.
 
-### 10. Commemoration Secret (`commemoration-secret`) — no. 1726, printed p. 417, right column
+### 10. Commemoration: Secret of the Twenty-third Sunday (`commemoration-secret`) — no. 1726, printed p. 417, right column
 
-Heading: `Secreta` (of the Sunday)
+*Secreta.*
 
 > Pro nostræ servitútis augménto sacrifícium tibi, Dómine, laudis offérimus:
 > ut, quod imméritis contulísti, propítius exsequáris. Per Dóminum nostrum
 > Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte.
 
-Said secretly after the feast's Secret; its last words are said aloud before
-the Preface (RGMR 481). The rubric `Præfatio de Ss.ma Trinitate.` printed
-after it belongs to the Sunday's Mass and is not inherited (RGMR 483).
+- The page then prints *Praefatio de Ssma Trinitate.*, the Sunday's own Mass's
+  direction (element 11).
+- Pustet 1862 (pp. 357-358): same words; *exequáris*; *Per Dóminum nostrum.*
+  Pustet then prints a second and third Secret (pre-1960 multiple orations),
+  not said in 1962.
 
-### 11. Preface (`preface`) — disputed, recorded not filled
+### 11. Preface (`preface`) — not printed with the formulary
 
-The feast prints no proper Preface and no Preface direction. The slot is one
-Preface, either *Præfatio de Ss.ma Trinitate* (n. 1082, printed p. 293) or
-*Præfatio commúnis* (n. 1086, printed p. 297). The evidence both ways rests
-only on registered loci of this edition: RGMR 482, 483, 494 b and 498
-(printed p. XXXIV) and the Vigil of the Nativity rubric (printed p. 16),
-stated in `research/scope.md` §6 item 7 and `research/context.md`
-(*Occurrence*, Preface). The repository test that asserts the common Preface
-without an authority is reported for its owner in `research/scope.md` §10.
-No registered source settles the slot, and the studies follow the fixed rule
-in `research/scope.md` §11: both candidates named with their basis, neither
-asserted, and no Ordo or web calendar cited. Neither text is reproduced here, because
-neither is settled as this feast's appointment and both are registered
-elsewhere (`…vatican-typica-1962.praefationes`,
-`…praefationes-sine-cantu`, with the 1861 Cummiskey antecedent collations in
-`src/sources/inventories/roman-1962-ordo-missae-v1.toml`).
+Unresolved between two candidates; neither is asserted.
+
+- Candidate 1: *Praefatio de Ss.ma Trinitate*, *Praefationes sine cantu*,
+  printed p. 293, no. 1082 (PDF 374), read. Basis: RGMR 482 gives a Mass with
+  no proper Preface the Preface *de Tempore*; RGMR 494 b makes the Trinity
+  Preface the Preface *de Tempore* on the second-class Sundays outside the
+  Christmas and Easter seasons; the Sunday's own page directs it.
+- Candidate 2: *Praefatio communis*, printed p. 297, no. 1086 (PDF 378), read.
+  Basis: RGMR 483, *Nulla commemoratio, in Missa occurrens, praefationem
+  propriam inducit*, and RGMR 498 (the common Preface for Masses that have no
+  proper Preface and may not take the Preface *de Tempore*).
+- The governing edition's closest direction: the Vigil of the Nativity,
+  printed p. 16 (PDF 97, after Secret no. 105, page image read), *Praefatio
+  communis; sed, si venerit in dominica, dicitur de Ss.ma Trinitate.* As an
+  application of RGMR 482 and 494 b it favours candidate 1; as a special
+  exception, printed because 494 b (*in dominicis*) lacks the seasonal
+  rubrics' *in ceteris Missis … quae praefatione propria carent*, it favours
+  candidate 2 (research/scope.md 3.11). The ICRSP Ordo for the date directs
+  the Trinity Preface; that is not a rubric of the Missal.
+- No registered rubrical authority read settles the case of a feast that takes
+  the Sunday (research/scope.md 3.11 and section 7). The text of neither
+  Preface is given here; a study that prints one must name both and assert
+  neither.
 
 ### 12. Communion (`communion`) — no. 3982, printed p. 703, right column
 
-Heading: `Ant. ad Communionem` · `Mt. 5, 8-10`
+*Ant. ad Communionem.* *Mt. 5, 8-10*
 
-> Beáti mundo corde, quóniam ipsi Deum vidébunt: beáti pacífici, quóniam
-> fílii Dei vocabúntur: beáti qui persecutiónem patiúntur propter
-> iustítiam, quóniam ipsórum est regnum cælórum.
+> Beáti mundo corde, quóniam ipsi Deum vidébunt: beáti pacífici, quóniam fílii
+> Dei vocabúntur: beáti qui persecutiónem patiúntur propter iustítiam, quóniam
+> ipsórum est regnum cælórum.
 
-Mame (p. 750): same words. Clementine: vv. 8–10, agreeing word for word.
+- Mame 1922 (p. 750): same words; *justítiam*.
+- Clementine Mt 5:8-10: same words.
 
 ### 13. Postcommunion (`postcommunion`) — no. 3983, printed p. 703, right column
 
-Heading: `Postcommunio`
+*Postcommunio.*
 
 > Da, quǽsumus, Dómine, fidélibus pópulis ómnium Sanctórum semper
 > veneratióne lætári: et eórum perpétua supplicatióne muníri. Per Dóminum
 > nostrum.
 
-Mame (p. 750): same words; the cue is `Per Dominum.` — the one conclusion
-difference between the witnesses, handled by the conclusion rule above.
+- Mame 1922 (p. 750, image-read): same words; *Per Dóminum.*
 
-### 14. Commemoration Postcommunion (`commemoration-postcommunion`) — no. 1728, printed p. 417, right column
+### 14. Commemoration: Postcommunion of the Twenty-third Sunday (`commemoration-postcommunion`) — no. 1728, printed p. 417, right column
 
-Heading: `Postcommunio` (of the Sunday)
+*Postcommunio.*
 
-> Quǽsumus, omnípotens Deus: ut, quos divína tríbuis participatióne
-> gaudére, humánis non sinas subiacére perículis. Per Dóminum nostrum Iesum
-> Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte.
+> Quǽsumus, omnípotens Deus: ut, quos divína tríbuis participatióne gaudére,
+> humánis non sinas subiacére perículis. Per Dóminum nostrum Iesum Christum,
+> Fílium tuum: Qui tecum vivit et regnat in unitáte.
 
-Said after the feast's Postcommunion under this second conclusion, as no. 3.
+- The page then prints the rubric *Si dominicæ post Pentecosten fuerint plures
+  quam XXIV …*, which does not apply in 2026 (research/context.md).
+- Pustet 1862 (p. 358): same words; *subjacére*; *Per Dóminum.*
 
-### Nothing else is proper
+## Nothing else is proper
 
-The formulary prints no Sequence, Tract, prophecy, proper *Communicantes* or
-*Hanc igitur*, *Oratio super populum*, second oration beyond the Sunday's
-commemoration, blessing or alternative reading (RGMR 501). The votive
-formulary on printed p. 704 is a separate Mass and contributes nothing. The
-Ordinary is not reproduced.
+The feast's pages print no Tract, Sequence, proper *Communicantes* or *Hanc
+igitur*, *Oratio super populum*, alternative reading or Preface direction. The
+votive Mass of All Saints that follows (no. 3984, p. 704) is a different
+formulary. The Mame 1922 page adds pre-1955 directions for the vigil and the
+octave, which are not 1962.
 
 ## English routes
 
-English is never composed, translated, adapted or paraphrased by the studies.
-Every English text below is quoted from a registered public-domain witness
-and attributed at first use and in the references. None is an approved
-liturgical translation.
+Historical study aids, not approved liturgical translations.
 
-- **Scriptural elements: the Douay-Rheims (Challoner),**
-  `edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581`,
-  read through `tools/tpt mass-propers show --bible douay-rheims` and the
-  verse-text artifacts directly. Where the Missal selects part of a verse,
-  the Douay words for that part are quoted, with an ellipsis for what the
-  Missal omits; nothing is reworded to fit. The Douay cannot carry these
-  Missal forms, which the studies give in Latin with a plain statement of
-  what they are:
-  - the Lesson's liturgical incipit `In diebus illis: Ecce ego Ioannes vidi
-    alterum Angelum ascendentem ab ortu solis` (the Douay's 7:2 begins `And
-    I saw another angel ascending from the rising of the sun`);
-  - the Gradual's received wording (`Fear the Lord, all ye his saints: for
-    there is no want to them that fear him` is close, but the Douay's v. 11
-    begins `The rich have wanted, and have suffered hunger`, which the Mass
-    does not read, and `shall not be deprived of any good` for the Missal's
-    `non deficient omni bono` differs in the verb);
-  - the Gospel's liturgical opening `In illo témpore: Videns Iesus turbas`
-    (the Douay's 5:1 reads `And seeing the multitudes`) and its end at 12a;
-  - the Offertory, an adaptation. Douay Wis 3:1–3 reads `But the souls of
-    the just are in the hand of God, and the torment of death shall not
-    touch them. In the sight of the unwise they seemed to die: and their
-    departure was taken for misery: And their going away from us, for utter
-    destruction: but they are in peace.` The antiphon has no `But` at the
-    start (the omitted `autem`), `the torment of malice` where the Douay
-    has `the torment of death`, none of `and their departure was taken for
-    misery: And their going away from us, for utter destruction` (3:2b–3a),
-    and a closing `alleluia`. (The `tanget`/`tangent` difference does not
-    show in English.);
-  - the Introit antiphon (no biblical source) and the Introit verse's omitted
-    inscription `A psalm for David`, which the Douay prints inside Ps 32:1
-    (its own numbering; the Missal's `Ps. 32, 1` is the Douay's 32:1 with
-    the inscription separate, per the repository concordance
-    `…challoner-gutenberg-1581.psalm-numbering-ee3c7757`: Vulgate 32 =
-    Hebrew/English 33. For the Gradual, the Vulgate and the Douay both count
-    Ps 33's inscription as v. 1, as the Hebrew does, so Vulgate 33:10–11 =
-    Douay 33:10–11 = Hebrew 34:10–11; English Bibles that follow the Hebrew
-    but leave the inscription unnumbered call these verses 34:9–10).
-  The Lasance hand missal (next item) prints its own English of every one of
-  these received forms in the registered checked artifact
-  `artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.all-saints-scriptural-propers-en-checked-ff92e98e`
-  (SHA-256 `99597fe1…`), e.g. `In those days, behold, I, John, saw another
-  angel ascending from the rising of the sun` and `the torment of malice
-  shall not touch them … but they are in peace. Alleluia.` No
-  translations-inventory row registers that artifact, so it is a lead: an
-  author who quotes it does so under the Lasance's attribution and says so.
-- **Orations: the Lasance *New Roman Missal*, Benziger revised edition of
-  1945,**
-  `edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945`,
-  English layer public domain in the United States by nonrenewal
-  (`src/sources/inventories/lasance-new-roman-missal-rights-v1.toml`). The
-  Introit and Collect (printed p. 1265) and the Secret and Postcommunion
-  (printed p. 1268) stand in
-  `src/sources/inventories/roman-1962-proper-translations-v1.toml` with
-  `collation_result = "confirmed"`; the commemoration's three orations stand
-  in the same inventory under `pentecost-23` (printed pp. 733, 735-736, 736).
-  Those rows rest on these Lasance records, every one of them declared in
-  `research/review-dependencies.toml` and so inside the research seal: the
-  publication artifacts
-  `artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-core193-2026-10-23-0736f65f`
-  (`english.tsv` rows 83-86, the omnium-sanctorum Collect, Introit,
-  Postcommunion and Secret) and `…resume-orations-phase2-2026-10-23-5a4e83f7`
-  (rows 88-90, the pentecost-23 Collect, Postcommunion and Secret); the
-  verify passages (page-image inspection of the facsimile
-  `…internet-archive-facsimile-pdf-6cf3c3d0`) and publish passages (the
-  bounded derivative rows)
-  `…resume-orations-core193-2026-10-23-{verify,publish}-omnium-sanctorum--main--{introit,collect,secret,postcommunion}--all--1`
-  and
-  `…resume-orations-phase2-2026-10-23-{verify,publish}-pentecost-23--main--{collect,secret,postcommunion}--all--1`;
-  and the same-witness conclusion table
-  `…resume-orations-conclusion-table-2026-10-23-7dbb4a25` with its verify and
-  transcription passages, on which the omnium-sanctorum Postcommunion and the
-  three pentecost-23 rows rest. The English quoted must be the publish
-  passage's row, byte for byte. The Lasance English was not re-read on its
-  page images in this stage.
-  **Rubrical difference, disclosed.** The Lasance prints the pre-1960 order
-  (`Double of the First Class`, additional commemorations and conclusions,
-  and a different commemorated-Sunday apparatus). None of that is the 1962
-  order, and the studies never present it as such. Its Latin column is not a
-  publication source here.
-- **Restricted English, never used.** No ICEL, Knox, Jerusalem, RSV, NRSV,
-  NABRE or Grail text is reproduced.
+- **Scripture, Douay-Rheims (Challoner)**, as registered, verse texts read for
+  Ps 32:1, Apoc 7:2-12, Ps 33:10-11, Mt 11:28, Mt 5:1-12a, Wis 3:1-3 and Mt
+  5:8-10. The Douay carries the Missal's text exactly for the Alleluia verse,
+  the Communion and the Gospel's verses 1-12a, and for the Lesson's verses
+  apart from its liturgical opening. It does not carry:
+  - the Lesson's and Gospel's liturgical openings (*In diébus illis: Ecce ego
+    Ioánnes vidi*; *In illo témpore*);
+  - the Introit verse's title words, which the Missal omits (Douay "A psalm for
+    David." must be left out);
+  - the Gradual: the Douay of Ps 33:10-11 is "Fear the Lord, all ye his saints:
+    for there is no want to them that fear him. The rich have wanted, and have
+    suffered hunger: but they that seek the Lord shall not be deprived of any
+    good." The middle clause is not said; quoted for the Gradual it needs an
+    ellipsis ("… for there is no want to them that fear him. … but they that
+    seek the Lord shall not be deprived of any good"), and "shall not be
+    deprived" renders *non minuentur*, not the Gradual's *non defícient*;
+  - the Offertory: the Douay of Wis 3:1-3 reads "But the souls of the just are
+    in the hand of God, and the torment of death shall not touch them. In the
+    sight of the unwise they seemed to die: and their departure was taken for
+    misery: And their going away from us, for utter destruction: but they are
+    in peace." Its *death* is the Clementine's *mortis*, not the antiphon's
+    *malitiæ*; it cannot carry the antiphon.
+- **Lasance, *The New Roman Missal*, Benziger revision of 1945**
+  (`edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945`;
+  facsimile
+  `…benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0`, SHA-256
+  matched; rights holding
+  `src/sources/inventories/lasance-new-roman-missal-rights-v1.toml`). All
+  Saints at printed pp. 1265-1268 (PDF pp. 1266-1269) and the Twenty-third
+  Sunday at printed pp. 733-736 (PDF pp. 731-734), every page read on page
+  images at 110 dpi and the orations' page again at 150 dpi; no excluded
+  lettered range is touched. Its rubrics are pre-1960 ("Double of the First
+  Class with a Common Octave"; "Preface for Weekdays, page 775" on All Saints;
+  "Preface for Sundays, page 773" and second and third orations on the
+  Sunday). The English, as printed:
+  - Introit (p. 1265): "Let us all rejoice in the Lord, celebrating a feast in
+    honor of all the saints, in whose solemnity the angels rejoice and join in
+    praising the Son of God. Ps. 32, 1. Rejoice in the Lord, ye just: praise
+    becometh the upright. ℣. Glory."
+  - Collect (p. 1265): "Almighty, eternal God, Who hast granted us to venerate
+    the merits of all Thy saints in one solemnity, vouchsafe to us, we beseech
+    Thee, through the multitude of our intercessors, that abundance of Thy
+    mercy for which we ever have hoped. Through our Lord."
+  - Gradual (p. 1266): "Fear the Lord, all ye His saints: for there is no want
+    to them that fear Him. ℣. But they that seek the Lord shall not be deprived
+    of any good."
+  - Offertory (pp. 1267-1268): "The souls of the just are in the hand of God,
+    and the torment of malice shall not touch them: in the sight of the unwise
+    they seemed to die, but they are in peace. Alleluia."
+  - Secret (p. 1268): "We offer Thee, O Lord, the gifts of our devotion; may
+    they be made pleasing to Thee for the honor of all the just and, by Thy
+    mercy, be profitable to our selves. Through our Lord." (The page prints
+    *our selves* as two words.)
+  - Postcommunion (p. 1268): "Grant to Thy faithful people, we beseech Thee, O
+    Lord, ever to rejoice in the veneration of all Thy saints, and to be
+    defended by their unceasing prayers. Through our Lord."
+  - Commemoration Collect (p. 733): "Remit, we beseech Thee, O Lord, the sins
+    of Thy people, that by Thy kindness we may be delivered from the trammels
+    of our sins, in which, through our frailty, we have become entangled.
+    Through our Lord."
+  - Commemoration Secret (pp. 735-736): "We offer Thee, O Lord, the Sacrifice
+    of praise for the increase of our service, that Thou mayest graciously
+    complete that which, for no merit of ours, Thou hast granted unto us.
+    Through our Lord."
+  - Commemoration Postcommunion (p. 736): "We pray Thee, O almighty God, that
+    Thou wilt not suffer to be overcome by human dangers those to whom Thou
+    grantest participation in things that are divine. Through our Lord."
+  - The Lesson, Alleluia, Gospel and Communion English of pp. 1265-1268 agree
+    with the tracked derivative
+    `…benziger-revised-1945.all-saints-scriptural-propers-en-checked-ff92e98e`;
+    its Gospel opens "At that time, Jesus seeing the multitudes" and ends at
+    "very great in heaven" (12a).
+- The orations' English agrees with the tracked derivatives
+  `…resume-orations-core193-2026-10-23-0736f65f` (the feast's four) and
+  `…resume-orations-phase2-2026-10-23-5a4e83f7` (the Sunday's three), checked
+  against the page images above.
 
 ## Unresolved discrepancies
 
-None in the controlling witness: no element has an unread word. Two bounded
-matters are recorded, not errors: (1) the Mame Postcommunion cue `Per
-Dominum.` against the 1962 `Per Dominum nostrum.`, settled by the
-conclusion rule; (2) the Preface appointment is disputed between the Trinity
-and common Prefaces — a rubrical question about which text is said, not a
-textual defect, carried open in `research/context.md` and reported for the
-test's owner. The shared records' over-wide Gradual, Gospel and Offertory
-ranges, which make `mass-propers show` serve Douay words the Mass does not
-read, are reported in `research/scope.md` §10.
+- **The Preface** (element 11): two candidates, neither asserted; the
+  Missal's p. 16 direction supports either (research/scope.md 3.11).
+- **The Offertory's wording history**: *malitiæ* is the older chant form (the
+  Sarum Missal and Peter of Celle), against the 1570 printing's *mortis*; when
+  the *allelúia* was added (between the 1889 and 1920 printings read) is not
+  witnessed by any act or decree read (research/scope.md section 3.8).
+- **The Gradual's psalter form**: not identified (element 5).
+- **The commemoration's Secret**: 1962 *exsequáris* against Pustet
+  *exequáris*, orthographic only.
+- **Mame 1922 misprint** *quoasdúsque* (Lesson); it changes no word of the
+  basis.

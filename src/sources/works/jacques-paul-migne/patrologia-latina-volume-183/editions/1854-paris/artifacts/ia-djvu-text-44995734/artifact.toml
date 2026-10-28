@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.jacques-paul-migne.patrologia-latina-volume-183.1854-paris.ia-djvu-text-44995734"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-183.1854-paris"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The volume was published at Paris in 1854, and a work first published abroad before 1931 is out of United States copyright; that line is the one guidance/missals.md records as current on 1 January 2026 and it moves every January, so it is written here as derived for calendar year 2026 and not as a standing rule. Restoration under 17 U.S.C. 104A could not reach it: ninety-five years from 1854 ran out in 1949. THE GOOGLE QUESTION WAS DECIDED ON THESE BYTES. Probes run case-insensitively over the whole file with runs of non-alphanumeric characters collapsed: \"usage guidelines\" 0; \"about google book search\" 0; \"this is a digital copy\" 0; \"digitized by google\" 0; \"google book search\" 0; \"google\" 0. No notice, licence, reservation or condition of any kind appears in the file; it opens with the optical text of the bookplate of the Library of the Claremont School of Theology. A faithful mechanical reproduction of a public-domain work is not original authorship (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)), and machine optical character recognition adds no human authorship on top of it. NOT RELIED ON: that the item is available, that the download succeeded, or that any host marks the scan public domain."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/patrologiaecursu0183mign/patrologiaecursu0183mign_djvu.txt"
+provenance = "Acquired whole over HTTPS by the research stage of workflow run 450355254538c1ba on 2026-10-27 and hashed before use; re-hashed by the source-registration stage of the same run before it was copied into the library unchanged. The SHA-1 of the retrieved bytes (69d71b1267fe0b8413a5c690d54037583a82884d) and the byte size (4,127,764) match the Internet Archive item's own file list for this file. Identified from the item patrologiaecursu0183mign after the library search recorded on the sister scan artifact internet-archive-pdf-7a1e1e7a found no registered route to PL 183. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-10-27"
+sha256 = "449957346cf138812697c9f27b12dfec40b699b327b0b00ddb937fbdae61b39a"
+byte_size = 4127764
+path = "src/sources/works/jacques-paul-migne/patrologia-latina-volume-183/editions/1854-paris/artifacts/ia-djvu-text-44995734/pl-183-djvu.txt"
+encoding = "utf-8"
+indexable = true
+notes = "Uncorrected optical text of the whole volume, 123,797 LF-terminated lines, valid UTF-8. Bernard's five sermons In festo omnium Sanctorum stand at physical lines 40430-42980 (the headings of sermo I at line 40454, II at 41316, III at 41863, read by the recognizer as SERMO IL., IV at 42096 and V at 42473; the sermons In transitu S. Malachiae begin at line 42983), with the editors' footnotes interleaved; the optical order across Migne's two print columns and the notes is unreliable, and column numbers are often misread (456 as 496, 459 as 450, 479 as 419). QUOTE FROM THIS ARTIFACT ONLY AFTER CHECKING THE PAGE IMAGE: the sister artifact columns-453-481-facsimile-de0326c9 retains the fifteen pages of the All Saints sermons."

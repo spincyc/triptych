@@ -24859,6 +24859,54 @@ locator = "from col. 231, as the Elenchus lists it"
 basis = "Work description ('Hilary's Tractatus super psalmos (col. 231)')."
 
 [[containers]]
+id = "work.jacques-paul-migne.patrologia-latina-volume-183"
+manifest_sha256 = "1c4e4798fe467d7076140db45742c9d0a3dd099c9d21fe4fbc0c5e08a49d6b1b"
+status = "partial"
+basis = "Work description, which transcribes the volume's own Elenchus (artifact PDF page 10, read on the image): 'Operum tomus III, Sermones de tempore (col. 35), de sanctis (col. 359), de diversis (col. 537); Sententiae (col. 747); Aliae sententiae (col. 751); Parabolae (col. 757); Confessionis privatae formula (col. 773); Officium de S. Victore (col. 775); Operum tomus IV, Sermones in Cantica (col. 785)', with the placings it records from the optical text's running heads and from the page images of PDF pages 233 and 247."
+unresolved = "The Sermones de tempore and de sanctis are not enumerated feast by feast in the record beyond the series listed below; the Sententiae, Aliae sententiae, Parabolae, Confessionis privatae formula and Officium de S. Victore are not joined to any index title; only the All Saints sermons have been read against the volume."
+
+[[containers.constituents]]
+author = "Bernard of Clairvaux"
+title = "Sermones in festo omnium Sanctorum"
+work_id = "work.bernard-of-clairvaux.sermones-in-festo-omnium-sanctorum"
+whole = true
+locator = "sermones I-V, cols. 453-481, artifact PDF pp. 233-247"
+basis = "Segment segment.bernard-of-clairvaux.sermones-in-festo-omnium-sanctorum.1854-migne-pl183.cols-453-481; work description ('the five sermons In festo omnium Sanctorum begin ... those run to the head of col. 481')."
+
+[[containers.constituents]]
+author = "Bernard of Clairvaux"
+title = "Sermones in festo sancti Michaelis"
+work_id = "work.bernard-of-clairvaux.sermones-in-festo-sancti-michaelis"
+locator = "from about col. 447 (optical text) to the head of col. 453, PDF p. 233"
+basis = "Work description ('the sermons In festo S. Michaelis begin at about col. 447 (optical text) and end at the head of col. 453')."
+
+[[containers.constituents]]
+author = "Bernard of Clairvaux"
+title = "Sermones de Adventu Domini"
+locator = "at the head of the Sermones de tempore, from col. 35 (optical text)"
+basis = "Work description ('the optical text's running heads place the sermons De adventu Domini at their head (col. 35)')."
+
+[[containers.constituents]]
+author = "Bernard of Clairvaux"
+title = "Sermones in psalmum XC Qui habitat"
+work_id = "work.bernard-of-clairvaux.sermones-in-psalmum-qui-habitat"
+locator = "within the Sermones de tempore (optical text); columns not established"
+basis = "Work description ('the seventeen sermons In psalmum XC Qui habitat, in Quadragesima habiti, later in the same series')."
+
+[[containers.constituents]]
+author = "Bernard of Clairvaux"
+title = "Sermones de Diversis"
+locator = "from col. 537, as the Elenchus lists it"
+basis = "Work description ('de diversis (col. 537)', from the Elenchus)."
+
+[[containers.constituents]]
+author = "Bernard of Clairvaux"
+title = "Sermones super Cantica canticorum"
+work_id = "work.bernard-of-clairvaux.sermones-super-cantica-canticorum"
+locator = "from col. 785, as the Elenchus lists it (Operum tomus IV)"
+extent_unresolved = "The Elenchus gives only the opening column; how many of the sermons this volume prints was not read."
+basis = "Work description ('Operum tomus IV, Sermones in Cantica (col. 785)', from the Elenchus)."
+[[containers]]
 id = "work.jacques-paul-migne.patrologia-latina-volume-107"
 manifest_sha256 = "876a62dfffc9e2a51a25c277ab733b3e97feef182425e55abd3fdc004e5e6fbf"
 status = "partial"

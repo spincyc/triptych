@@ -1,0 +1,725 @@
+{
+  "admitted_passage_ids": [
+    "passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-10",
+    "passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-11",
+    "passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-12",
+    "passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-4",
+    "passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-9"
+  ],
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/source-dispositions.toml",
+  "changed_paths": [
+    {
+      "path": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-107/editions/1864-paris/artifacts/columns-795-798-821-822-915-918-facsimile-ee654c7b/artifact.toml",
+      "sha256": "645cfe5fe6c6a7adee6289c9ee852fe265c257d4100eafafa959c33e7e56afee"
+    },
+    {
+      "path": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-107/editions/1864-paris/artifacts/columns-795-798-821-822-915-918-facsimile-ee654c7b/pl-107-1864-columns-795-798-821-822-915-918.pdf",
+      "sha256": "ee654c7b120c2e168f9a746ad55e30166a53b84f0edc9ae4355a3d238d60dccb"
+    },
+    {
+      "path": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/editions/1844-paris/artifacts/columns-983-984-facsimile-5d351a27/artifact.toml",
+      "sha256": "3c60c0d9609e391c19df97f22d8503e67ee9d3f2c6a8aa2127bb41b3b8478bcb"
+    },
+    {
+      "path": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/editions/1844-paris/artifacts/columns-983-984-facsimile-5d351a27/pl-9-1844-columns-983-984.pdf",
+      "sha256": "5d351a27a617fb44f2e6ee4ea0575928d0ecd3233f89836b86ccc472200a69ea"
+    },
+    {
+      "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/source-bindings.toml",
+      "sha256": "ef1871a383a3c7309f5c3394d44b018dfc819376a48ffd08cc9e6970bb490407"
+    },
+    {
+      "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/source-dispositions.toml",
+      "sha256": "3510a22a0358d14a721cbea13a575e242a5b6de82fe0a95702f1bf888a7bf93f"
+    },
+    {
+      "path": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/scope.md",
+      "sha256": "eea2e31a767370ff2a5711f5aa67d65df8f6980edff366fc84840e70fb6240cf"
+    },
+    {
+      "path": "src/web/data/structure/sources/index.json",
+      "sha256": "9ac30876ca23da0da8191e3d53008cc45d632c1685a6e3298ebed941bc48d32d"
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/jacques-paul-migne/patrologia-latina-volume-107/1864-1864-paris.json",
+      "sha256": "2bb715f844df38b31ddccfdff277d5895e501ba8c21af5b9a3b75050bdcbe9bd"
+    },
+    {
+      "path": "src/web/data/structure/sources/editions/jacques-paul-migne/patrologia-latina-volume-9/1844-1844-paris.json",
+      "sha256": "44b0aa0ae1e7efdc36164dc8b1c718d75c25302ba13ef0117c8f5341aefd8ebf"
+    }
+  ],
+  "checks": [
+    {
+      "command": "tools/source-library validate",
+      "exit_code": 0,
+      "log": ".scratch/f02r/work/source-registration-0002/validate.log",
+      "result": "source-library valid: artifact=3953 corpus=5 edition=1312 passage=9118 segment=125 work=1081 bindings=4387"
+    },
+    {
+      "command": "make source-projection",
+      "exit_code": 0,
+      "log": ".scratch/f02r/work/source-registration-0002/projection.log",
+      "result": "1081 works, 1312 editions, 3953 artifacts, 9118 passages; 3989 readable here"
+    },
+    {
+      "command": "python3 scripts/_proper_study.py --provider claude --document liturgy/roman-rite/1962/propers/temporal/f02-all-saints source-dispositions",
+      "exit_code": 0,
+      "log": ".scratch/f02r/work/source-registration-0002/dispositions.log"
+    },
+    {
+      "command": "python3 scripts/_proper_study.py --provider claude --document liturgy/roman-rite/1962/propers/temporal/f02-all-saints --phase research --require-presentation --require-format --require-authority --require-orientation --require-orientation-v2 --require-source-dispositions check",
+      "exit_code": 0,
+      "log": ".scratch/f02r/work/source-registration-0002/phasecheck.log"
+    },
+    {
+      "command": "make -k check-sources",
+      "exit_code": 2,
+      "log": ".scratch/f02r/work/source-registration-0002/check-sources.log",
+      "result": "expected failures only: check-document-catalogue (homily.tex and synthesis.tex absent while the revision is open) and check-publication-inventories (claude-publications-v1.toml hashes stale and lists absent synthesis/homily files); check-source-reader not reached through make"
+    },
+    {
+      "command": "make -k check-source-containment check-commentator-inventories check-commentary-corpus",
+      "exit_code": 0,
+      "log": ".scratch/f02r/work/source-registration-0002/check-sources-rest.log"
+    },
+    {
+      "command": "tools/tpt source-reader check",
+      "exit_code": 0,
+      "log": ".scratch/f02r/work/source-registration-0002/source-reader.log"
+    },
+    {
+      "command": "tools/tpt source-family-migration check",
+      "exit_code": 1,
+      "log": ".scratch/f02r/work/source-registration-0002/migration2.log",
+      "result": "pinned canonical_catalog_snapshot is stale (owner refresh; any new source record stales it)"
+    }
+  ],
+  "defects_for_other_owners": [
+    "tools/source-library text search matches literally within one line and has no whitespace-tolerant mode, so double-spaced Internet Archive text layers give silent false negatives.",
+    "The remote-scan artifact records of PL 107 (1864) and PL 9 (1844) do not name the new tracked facsimile excerpts in their access-limitation notes (shared records, not edited here).",
+    "src/sources/inventories/source-family-migration-v1.toml: pinned canonical_catalog_snapshot is stale after the new artifacts; the ledger owner refreshes it.",
+    "src/sources/inventories/claude-publications-v1.toml is stale for this document's open revision (hashes and absent synthesis/homily files).",
+    "No work records exist for Hilary's In Matthaeum, Bruno of Wuerzburg's Expositio Psalmorum (in PL 142), the PL 151 sacramentary and liturgical excerpts, Peter of Celle (PL 202), or Bernard's In transitu S. Malachiae.",
+    "The library holds no Latin of Augustine's Sermons XIX-XXI or De sermone Domini, of Gregory's Moralia, of Cyprian's Ad Fortunatum or of Victorinus, and no text of Jerome's commentary on Matthew to check the source of Rabanus on Mt 11:28.",
+    "author-standing-v1.toml lacks rows for Bruno of Wuerzburg, Bernard, Cyprian, Victorinus of Pettau, Bonaventure, Alphonsus Liguori and Peter of Celle.",
+    "proper-components.toml (assembly-owned) omits Rabanus Maurus from the carrying authors of the beatitudes lane although research records him as carrying Reading B.",
+    "The study's section on the Lord's Prayer and the beatitudes quotes PL 107 lines 93919-93920 as Rabanus's own; the passage is Augustine's De sermone Domini II.11.38 taken over by Rabanus."
+  ],
+  "deferred": [
+    {
+      "binding_index": 26,
+      "id": "schuster-sacramentary-v-all-saints-chapter",
+      "missing_criteria": [
+        "passage-record",
+        "natural-excerpt-boundary"
+      ],
+      "source_id": "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-volume-5-english-1930.all-saints-research-chapter-volume-5-d55b5905"
+    },
+    {
+      "binding_index": 27,
+      "id": "schuster-sacramentary-v-all-saints-ocr",
+      "missing_criteria": [
+        "passage-record",
+        "page-image-collation"
+      ],
+      "source_id": "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-volume-5-english-1930.ia-volume-5-ocr-65192aa1"
+    },
+    {
+      "binding_index": 29,
+      "id": "fromage-communion-three-beatitudes",
+      "missing_criteria": [
+        "passage-record",
+        "page-image-collation"
+      ],
+      "source_id": "artifact.prosper-gueranger.the-liturgical-year.french-oudin-1909-volume-15.ia-djvu-text-6301674b"
+    },
+    {
+      "binding_index": 29,
+      "id": "fromage-offertory-wisdom",
+      "missing_criteria": [
+        "passage-record",
+        "page-image-collation"
+      ],
+      "source_id": "artifact.prosper-gueranger.the-liturgical-year.french-oudin-1909-volume-15.ia-djvu-text-6301674b"
+    },
+    {
+      "binding_index": 30,
+      "id": "victorinus-in-apocalypsin-7-2-9",
+      "missing_criteria": [
+        "passage-record",
+        "recension-identity",
+        "original-language-text",
+        "page-image-collation"
+      ],
+      "source_id": "artifact.ante-nicene-fathers.volume-7.ccel-web-2026-10-19.ccel-text-b69327af"
+    },
+    {
+      "binding_index": 30,
+      "id": "victorinus-in-apocalypsin-12-6",
+      "missing_criteria": [
+        "passage-record",
+        "recension-identity",
+        "original-language-text",
+        "page-image-collation"
+      ],
+      "source_id": "artifact.ante-nicene-fathers.volume-7.ccel-web-2026-10-19.ccel-text-b69327af"
+    },
+    {
+      "binding_index": 31,
+      "id": "bede-explanatio-apocalypsis-7-1-3-scan",
+      "missing_criteria": [
+        "passage-record"
+      ],
+      "source_id": "artifact.bede.explanatio-apocalypsis.1878-marshall-parker.whole-scan-65cb5fc5"
+    },
+    {
+      "binding_index": 37,
+      "id": "expositio-in-apocalypsim-pl35-homilia-6",
+      "missing_criteria": [
+        "work-record",
+        "attribution",
+        "passage-record"
+      ],
+      "source_id": "artifact.jacques-paul-migne.patrologia-latina-volume-35.1845-paris.internet-archive-google-pdf-b3ff8a95"
+    },
+    {
+      "binding_index": 38,
+      "id": "cyprian-ad-fortunatum-11",
+      "missing_criteria": [
+        "passage-record",
+        "original-language-text",
+        "page-image-collation"
+      ],
+      "source_id": "artifact.ante-nicene-fathers.volume-5.ccel-web-2026-10-13.ccel-text-a02b61c3"
+    },
+    {
+      "binding_index": 39,
+      "id": "augustine-enchiridion-29",
+      "missing_criteria": [
+        "scripture-extent",
+        "passage-record",
+        "publishable-rights"
+      ],
+      "source_id": "artifact.augustine.enchiridion-ad-laurentium.english-npnf1-3-new-advent-web-2026-09-05.newadvent-1302-bed70924"
+    },
+    {
+      "binding_index": 40,
+      "id": "gregory-homiliae-in-evangelia-34-11",
+      "missing_criteria": [
+        "scripture-extent",
+        "passage-record",
+        "page-image-collation"
+      ],
+      "source_id": "artifact.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.complete-extracted-text-dc25dd69"
+    },
+    {
+      "binding_index": 41,
+      "id": "aquinas-summa-i-23-7",
+      "missing_criteria": [
+        "scripture-extent",
+        "passage-record"
+      ],
+      "source_id": "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-prima.pg17611-body-9c99a67a"
+    },
+    {
+      "binding_index": 42,
+      "id": "augustine-de-sermone-domini-i-3-10-i-4-12",
+      "missing_criteria": [
+        "passage-record",
+        "original-language-text"
+      ],
+      "source_id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.ccel-text-ce371798"
+    },
+    {
+      "binding_index": 42,
+      "id": "augustine-sermon-61-few-saved",
+      "missing_criteria": [
+        "passage-record",
+        "original-language-text"
+      ],
+      "source_id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.ccel-text-ce371798"
+    },
+    {
+      "binding_index": 42,
+      "id": "augustine-sermons-19-20-mt-11-28",
+      "missing_criteria": [
+        "passage-record",
+        "original-language-text",
+        "natural-excerpt-boundary"
+      ],
+      "source_id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.ccel-text-ce371798"
+    },
+    {
+      "binding_index": 42,
+      "id": "augustine-sermon-21-n11-mt-11-28",
+      "missing_criteria": [
+        "passage-record",
+        "original-language-text"
+      ],
+      "source_id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.ccel-text-ce371798"
+    },
+    {
+      "binding_index": 42,
+      "id": "augustine-de-sermone-domini-ii-11-38",
+      "missing_criteria": [
+        "passage-record",
+        "original-language-text"
+      ],
+      "source_id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.ccel-text-ce371798"
+    },
+    {
+      "binding_index": 43,
+      "id": "augustine-enarrationes-ps-33-sermo-2",
+      "missing_criteria": [
+        "passage-record",
+        "page-image-collation"
+      ],
+      "source_id": "artifact.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-part-4-latin-text"
+    },
+    {
+      "binding_index": 43,
+      "id": "augustine-enarrationes-ps-32-1",
+      "missing_criteria": [
+        "passage-record",
+        "page-image-collation"
+      ],
+      "source_id": "artifact.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-part-4-latin-text"
+    },
+    {
+      "binding_index": 44,
+      "id": "basil-homilia-in-ps-33-nn-6-7",
+      "missing_criteria": [
+        "passage-record",
+        "greek-original-collation"
+      ],
+      "source_id": "segment.basil-of-caesarea.homilia-in-psalmum-33.1860-migne-pg29.cols-349-385"
+    },
+    {
+      "binding_index": 45,
+      "id": "basil-homilia-in-ps-33-pg29-facsimile",
+      "missing_criteria": [
+        "passage-record",
+        "greek-original-collation"
+      ],
+      "source_id": "artifact.jacques-paul-migne.patrologia-graeca-volume-29.1860-paris.commons-pdf-53d21baf"
+    },
+    {
+      "binding_index": 46,
+      "id": "basil-homilia-in-ps-32-n1",
+      "missing_criteria": [
+        "passage-record",
+        "page-image-collation"
+      ],
+      "source_id": "artifact.jacques-paul-migne.patrologia-graeca-volume-29.1860-paris.full-text-layer-2898b217"
+    },
+    {
+      "binding_index": 47,
+      "id": "aquinas-super-psalmos-33-10-11",
+      "missing_criteria": [
+        "passage-record",
+        "page-image-collation"
+      ],
+      "source_id": "artifact.thomas-aquinas.opera-omnia-volume-14.1863-parma.ia-complete-ocr-02c6dc25"
+    },
+    {
+      "binding_index": 47,
+      "id": "aquinas-super-psalmos-32-1",
+      "missing_criteria": [
+        "passage-record",
+        "page-image-collation"
+      ],
+      "source_id": "artifact.thomas-aquinas.opera-omnia-volume-14.1863-parma.ia-complete-ocr-02c6dc25"
+    },
+    {
+      "binding_index": 48,
+      "id": "bellarmine-in-ps-33-10-11",
+      "missing_criteria": [
+        "passage-record",
+        "unabridged-text",
+        "latin-original"
+      ],
+      "source_id": "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+    },
+    {
+      "binding_index": 48,
+      "id": "bellarmine-in-ps-32-1",
+      "missing_criteria": [
+        "passage-record",
+        "unabridged-text",
+        "latin-original"
+      ],
+      "source_id": "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+    },
+    {
+      "binding_index": 49,
+      "id": "chrysostom-hom-in-matt-15",
+      "missing_criteria": [
+        "passage-record",
+        "original-language-text"
+      ],
+      "source_id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-10.ccel-web-2026-09-17.ccel-text-adb8f1c9"
+    },
+    {
+      "binding_index": 49,
+      "id": "chrysostom-hom-in-matt-38-3",
+      "missing_criteria": [
+        "passage-record",
+        "original-language-text"
+      ],
+      "source_id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-10.ccel-web-2026-09-17.ccel-text-adb8f1c9"
+    },
+    {
+      "binding_index": 49,
+      "id": "chrysostom-hom-in-matt-28-3-wis-3-1",
+      "missing_criteria": [
+        "passage-record",
+        "original-language-text"
+      ],
+      "source_id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-10.ccel-web-2026-09-17.ccel-text-adb8f1c9"
+    },
+    {
+      "binding_index": 50,
+      "id": "hilary-in-matthaeum-iv-1-9",
+      "missing_criteria": [
+        "passage-record",
+        "page-image-collation"
+      ],
+      "source_id": "artifact.jacques-paul-migne.patrologia-latina-volume-9.1844-paris.ia-djvu-text-db389fea"
+    },
+    {
+      "binding_index": 50,
+      "id": "hilary-in-matthaeum-xi-15",
+      "missing_criteria": [
+        "passage-record",
+        "verified-transcription",
+        "work-record"
+      ],
+      "source_id": "artifact.jacques-paul-migne.patrologia-latina-volume-9.1844-paris.ia-djvu-text-db389fea"
+    },
+    {
+      "binding_index": 51,
+      "id": "aquinas-super-matthaeum-5-lect-2-turin",
+      "missing_criteria": [
+        "passage-record",
+        "publishable-rights"
+      ],
+      "source_id": "artifact.thomas-aquinas.super-matthaeum-reportatio-petri-de-andria.1951-turin-corpusthomisticum-web-2026-10-26.cma0500-a73c7d72"
+    },
+    {
+      "binding_index": 52,
+      "id": "aquinas-super-matthaeum-5-10-leonine",
+      "missing_criteria": [
+        "passage-record",
+        "publishable-rights"
+      ],
+      "source_id": "artifact.thomas-aquinas.super-matthaeum-reportatio-petri-de-andria.1969-leonine-corpusthomisticum-web-2026-10-26.cma0510-86c3a4eb"
+    },
+    {
+      "binding_index": 53,
+      "id": "aquinas-in-matthaeum-5-venice-1745",
+      "missing_criteria": [
+        "passage-record",
+        "verified-transcription"
+      ],
+      "source_id": "artifact.thomas-aquinas.opera-editio-altera-veneta-tomus-3.venice-bettinelli-1745.internet-archive-google-pdf-adb333e0"
+    },
+    {
+      "binding_index": 54,
+      "id": "bernard-omnium-sanctorum-sermo-1-beatitudes",
+      "missing_criteria": [
+        "passage-record",
+        "verified-transcription",
+        "page-image-collation"
+      ],
+      "source_id": "segment.bernard-of-clairvaux.sermones-in-festo-omnium-sanctorum.1854-migne-pl183.cols-453-481"
+    },
+    {
+      "binding_index": 54,
+      "id": "bernard-omnium-sanctorum-sermo-2-n1-intercession",
+      "missing_criteria": [
+        "scripture-extent",
+        "passage-record",
+        "verified-transcription"
+      ],
+      "source_id": "segment.bernard-of-clairvaux.sermones-in-festo-omnium-sanctorum.1854-migne-pl183.cols-453-481"
+    },
+    {
+      "binding_index": 54,
+      "id": "bernard-omnium-sanctorum-sermo-2-n4-souls-rest",
+      "missing_criteria": [
+        "passage-record",
+        "page-image-collation"
+      ],
+      "source_id": "segment.bernard-of-clairvaux.sermones-in-festo-omnium-sanctorum.1854-migne-pl183.cols-453-481"
+    },
+    {
+      "binding_index": 54,
+      "id": "bernard-omnium-sanctorum-sermo-5-n2-apoc-7-14",
+      "missing_criteria": [
+        "passage-record",
+        "verified-transcription"
+      ],
+      "source_id": "segment.bernard-of-clairvaux.sermones-in-festo-omnium-sanctorum.1854-migne-pl183.cols-453-481"
+    },
+    {
+      "binding_index": 54,
+      "id": "bernard-omnium-sanctorum-sermo-5-n3-timete",
+      "missing_criteria": [
+        "passage-record",
+        "verified-transcription"
+      ],
+      "source_id": "segment.bernard-of-clairvaux.sermones-in-festo-omnium-sanctorum.1854-migne-pl183.cols-453-481"
+    },
+    {
+      "binding_index": 54,
+      "id": "bernard-omnium-sanctorum-sermo-5-n5-veneration",
+      "missing_criteria": [
+        "scripture-extent",
+        "passage-record",
+        "page-image-collation"
+      ],
+      "source_id": "segment.bernard-of-clairvaux.sermones-in-festo-omnium-sanctorum.1854-migne-pl183.cols-453-481"
+    },
+    {
+      "binding_index": 55,
+      "id": "bernard-pl183-scan-image-read-columns",
+      "missing_criteria": [
+        "passage-record",
+        "verified-transcription"
+      ],
+      "source_id": "artifact.jacques-paul-migne.patrologia-latina-volume-183.1854-paris.internet-archive-pdf-7a1e1e7a"
+    },
+    {
+      "binding_index": 56,
+      "id": "bernard-pl183-ocr-read-columns",
+      "missing_criteria": [
+        "passage-record",
+        "page-image-collation"
+      ],
+      "source_id": "artifact.jacques-paul-migne.patrologia-latina-volume-183.1854-paris.ia-djvu-text-44995734"
+    },
+    {
+      "binding_index": 56,
+      "id": "bernard-in-transitu-malachiae-sermo-2-n5",
+      "missing_criteria": [
+        "passage-record",
+        "page-image-collation",
+        "work-record"
+      ],
+      "source_id": "artifact.jacques-paul-migne.patrologia-latina-volume-183.1854-paris.ia-djvu-text-44995734"
+    },
+    {
+      "binding_index": 58,
+      "id": "bonaventure-in-sapientiam-3-1-3",
+      "missing_criteria": [
+        "passage-record",
+        "page-image-collation"
+      ],
+      "source_id": "artifact.bonaventure.opera-omnia-quaracchi.1893-volume-6.ia-djvu-ocr-e7f54e11"
+    },
+    {
+      "binding_index": 59,
+      "id": "augustine-enarrationes-ps-87-5-wis-3-1",
+      "missing_criteria": [
+        "passage-record",
+        "natural-excerpt-boundary",
+        "page-image-collation"
+      ],
+      "source_id": "artifact.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-part-9-latin-text"
+    },
+    {
+      "binding_index": 60,
+      "id": "alphonsus-preparation-for-death-ninth-consideration",
+      "missing_criteria": [
+        "passage-record",
+        "original-language-text",
+        "page-image-collation"
+      ],
+      "source_id": "artifact.alphonsus-liguori.apparecchio-alla-morte.duffy-1843.historical-ocr-d25bba22"
+    },
+    {
+      "binding_index": 61,
+      "id": "gregory-moralia-xii-6-wis-3-2",
+      "missing_criteria": [
+        "passage-record",
+        "original-language-text",
+        "page-image-collation"
+      ],
+      "source_id": "artifact.gregory-the-great.moralia-in-iob.2026-10-12-library-of-fathers-lectionarycentral.complete-text-d9f9ed86"
+    },
+    {
+      "binding_index": 61,
+      "id": "gregory-moralia-i-24-mt-11-28",
+      "missing_criteria": [
+        "passage-record",
+        "original-language-text",
+        "page-image-collation"
+      ],
+      "source_id": "artifact.gregory-the-great.moralia-in-iob.2026-10-12-library-of-fathers-lectionarycentral.complete-text-d9f9ed86"
+    },
+    {
+      "binding_index": 63,
+      "id": "peter-of-celle-pl202-wis-3-1-uses",
+      "missing_criteria": [
+        "passage-record",
+        "work-record",
+        "page-image-collation"
+      ],
+      "source_id": "artifact.john-beleth.summa-de-ecclesiasticis-officiis.latin-migne-pl-202.ia-djvu-ocr-22b781bf"
+    },
+    {
+      "binding_index": 64,
+      "id": "sicard-mitrale-ix-49",
+      "missing_criteria": [
+        "passage-record",
+        "page-image-collation"
+      ],
+      "source_id": "artifact.sicard-of-cremona.mitrale.latin-migne-pl-213.ia-djvu-ocr-ea9fd813"
+    },
+    {
+      "binding_index": 74,
+      "id": "bruno-of-wurzburg-expositio-psalmorum-32-1",
+      "missing_criteria": [
+        "passage-record",
+        "source-attribution",
+        "page-image-collation",
+        "work-record"
+      ],
+      "source_id": "artifact.berno-of-reichenau.libellus-de-quibusdam-rebus-ad-missae-officium-pertinentibus.latin-migne-pl-142.ia-djvu-ocr-991758f7"
+    },
+    {
+      "binding_index": 89,
+      "id": "rabanus-expositio-in-matthaeum-ii-5-1-12",
+      "missing_criteria": [
+        "passage-record",
+        "natural-excerpt-boundary",
+        "source-attribution",
+        "page-image-collation",
+        "verified-transcription"
+      ],
+      "source_id": "artifact.jacques-paul-migne.patrologia-latina-volume-107.1864-paris.ia-djvu-text-5b8a4b8b"
+    },
+    {
+      "binding_index": 89,
+      "id": "rabanus-expositio-in-matthaeum-ii-lords-prayer-beatitudes",
+      "missing_criteria": [
+        "passage-record",
+        "source-attribution",
+        "verified-transcription"
+      ],
+      "source_id": "artifact.jacques-paul-migne.patrologia-latina-volume-107.1864-paris.ia-djvu-text-5b8a4b8b"
+    },
+    {
+      "binding_index": 89,
+      "id": "rabanus-expositio-in-matthaeum-iv-11-28",
+      "missing_criteria": [
+        "passage-record",
+        "source-attribution",
+        "verified-transcription"
+      ],
+      "source_id": "artifact.jacques-paul-migne.patrologia-latina-volume-107.1864-paris.ia-djvu-text-5b8a4b8b"
+    },
+    {
+      "binding_index": 90,
+      "id": "rabanus-pl107-scan-cols-796-797",
+      "missing_criteria": [
+        "passage-record",
+        "verified-transcription",
+        "natural-excerpt-boundary"
+      ],
+      "source_id": "artifact.jacques-paul-migne.patrologia-latina-volume-107.1864-paris.internet-archive-pdf-249f1795"
+    },
+    {
+      "binding_index": 90,
+      "id": "rabanus-pl107-scan-col-822",
+      "missing_criteria": [
+        "passage-record",
+        "source-attribution",
+        "verified-transcription"
+      ],
+      "source_id": "artifact.jacques-paul-migne.patrologia-latina-volume-107.1864-paris.internet-archive-pdf-249f1795"
+    },
+    {
+      "binding_index": 90,
+      "id": "rabanus-pl107-scan-col-916",
+      "missing_criteria": [
+        "passage-record",
+        "source-attribution",
+        "verified-transcription"
+      ],
+      "source_id": "artifact.jacques-paul-migne.patrologia-latina-volume-107.1864-paris.internet-archive-pdf-249f1795"
+    },
+    {
+      "binding_index": 91,
+      "id": "hilary-in-matthaeum-xi-15-scan",
+      "missing_criteria": [
+        "passage-record",
+        "verified-transcription",
+        "work-record"
+      ],
+      "source_id": "artifact.jacques-paul-migne.patrologia-latina-volume-9.1844-paris.internet-archive-pdf-eab6d2f4"
+    },
+    {
+      "binding_index": 92,
+      "id": "aquinas-summa-i-ii-107-4-hilary-mt-11-28",
+      "missing_criteria": [
+        "passage-record",
+        "original-language-text"
+      ],
+      "source_id": "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-prima-secundae.pg17897-body-6d5b93fb"
+    },
+    {
+      "binding_index": 122,
+      "id": "rabanus-pl107-retained-excerpt-cols-796-797",
+      "missing_criteria": [
+        "passage-record",
+        "verified-transcription",
+        "natural-excerpt-boundary"
+      ],
+      "source_id": "artifact.jacques-paul-migne.patrologia-latina-volume-107.1864-paris.columns-795-798-821-822-915-918-facsimile-ee654c7b"
+    },
+    {
+      "binding_index": 122,
+      "id": "rabanus-pl107-retained-excerpt-col-822",
+      "missing_criteria": [
+        "passage-record",
+        "source-attribution",
+        "verified-transcription"
+      ],
+      "source_id": "artifact.jacques-paul-migne.patrologia-latina-volume-107.1864-paris.columns-795-798-821-822-915-918-facsimile-ee654c7b"
+    },
+    {
+      "binding_index": 122,
+      "id": "rabanus-pl107-retained-excerpt-col-916",
+      "missing_criteria": [
+        "passage-record",
+        "source-attribution",
+        "verified-transcription"
+      ],
+      "source_id": "artifact.jacques-paul-migne.patrologia-latina-volume-107.1864-paris.columns-795-798-821-822-915-918-facsimile-ee654c7b"
+    },
+    {
+      "binding_index": 123,
+      "id": "hilary-in-matthaeum-xi-15-retained-page",
+      "missing_criteria": [
+        "passage-record",
+        "verified-transcription",
+        "work-record"
+      ],
+      "source_id": "artifact.jacques-paul-migne.patrologia-latina-volume-9.1844-paris.columns-983-984-facsimile-5d351a27"
+    }
+  ],
+  "disposition": "PASS",
+  "document_root": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
+  "finding_dispositions": [],
+  "iteration": 2,
+  "registered_source_ids": [
+    "artifact.jacques-paul-migne.patrologia-latina-volume-107.1864-paris.columns-795-798-821-822-915-918-facsimile-ee654c7b",
+    "artifact.jacques-paul-migne.patrologia-latina-volume-9.1844-paris.columns-983-984-facsimile-5d351a27"
+  ],
+  "rejected": [],
+  "run": "450355254538c1ba",
+  "stage": "source-registration",
+  "summary": "Source registration for iteration 2 is reconciled. Contribution: registered the PL 107 and PL 9 page images read by research as two tracked facsimile excerpts and rewrote research/source-dispositions.toml so that every one of the 123 bindings, including the iteration-2 Rabanus, Hilary, Augustine, Gregory, Aquinas, PL 78, PL 151 and Bruno loci, carries a current pinned disposition. The disposition file has 164 rows: 6 admitted (the five Bede Explanatio passages, unchanged), 63 deferred, 95 not-commentary, 0 rejected. No new passage records or catena edges were created, because no new commentary locus meets the passage-record, checked-Latin or attribution criteria. Advisory RES-014 is applied: the Augustine disposition locus now starts at scope.md line 932. scope.md section 10 now records the reconciled dispositions, the retained excerpts and the unverified source of Rabanus on Mt 11:28."
+}

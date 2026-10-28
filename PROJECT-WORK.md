@@ -7,6 +7,140 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-10-28.
 
+## Claude Four Last Things correction, 2026-10-27
+
+<!-- promised-deliverable: claude-flt-correction-2026-10-27 -->
+
+**In progress: corrected and reviewed locally; publication pending, in the
+same push as the All Saints revision.** On 2026-10-27 the maintainer asked
+that the Claude work of 26 October be checked for damage from a model
+substitution: partway through that work the host switched the coordinating
+session and some of its workers from the Claude model to kimi-k3. The switch
+was announced inside those sessions but was not acted on, and the records
+credited that work to the Claude model. The maintainer declined to add the
+substituted model to the contribution records. The correction therefore had
+every review that model performed done again by fresh Claude workers, had its
+one print-only adjustment re-derived independently, rewrote the records it had
+written, and superseded its mechanical steps with Claude rebuilds and
+refreshes. The contribution metadata lists only Claude work by exact model
+identifier, and kimi-k3 is named only in the correction notes.
+
+The audit found the essay texts sound and the records wrong. In Judgment the
+substituted model had given the round-1 verdict on the cold-review repairs,
+made both visual reviews and the print-only space reservation, and drafted the
+series record and the contribution line. In Death it had written the round-1
+visual verdict after the Claude model inspected the pages. Done again by
+Claude: the Judgment round-1 recheck, against the sources, found one blocking
+defect the earlier verdict had passed (a repair sentence calling the Lyons
+profession of 1274 a definition); a two-phrase repair passed at round 2; a
+fresh every-page visual review restored the same space reservation, and a
+further every-page review passed the repaired build; and every page of the
+published Death PDF was reviewed again and found clean. The series record was
+rewritten, the Judgment and Death records were corrected, and all four
+`generation-metadata.tex` files now list only Claude contributions. The
+accounts are the series record's "Correction of 27 October 2026" and the
+Judgment record's "Correction, recheck and repair, 27 October 2026".
+
+On 2026-10-28 a further independent Claude audit of the correction commit
+`b1dd8c785` rebuilt the four PDFs and converted the four web editions again,
+byte for byte identical to the installed files and their recorded hashes, and
+confirmed from the session logs that every review the substituted model made
+had been done again by Claude. It found record statements that overstated or
+misdated the correction: this entry and the series record had called the
+switch unannounced and had credited the redo plan to the maintainer; the
+series record's list of the substituted model's steps was incomplete; and
+smaller figures and section numbers in the Judgment and Death records were
+wrong. Those records were corrected on 2026-10-28 with no change to any render
+source, PDF or web edition.
+
+The review of the regenerated Judgment web edition also found that it had no
+title-page epigraph. No web edition in the series had carried one since
+16 October, because the shared title-page macro was set only in print. The
+macro now sets the epigraph in the web edition too. A review of all four web
+editions then found that four Latin lemmas in Heaven had also been set
+without italics on the web since 16 October, because the source nested
+`\latin` inside `\emph`; they now use `\latin` alone. The print pages are
+unchanged: apart from the revision line, every page of each rebuilt PDF
+matches its predecessor. All four essays carry the revision timestamp
+2026-10-27T16:55:31Z, and all four web editions were converted again,
+reviewed against their PDFs and installed. The account is the series
+record's "Web edition repairs, 27 October 2026".
+
+| Essay | Pages | PDF SHA-256 | Web edition SHA-256 |
+| --- | ---: | --- | --- |
+| I Death | 23 | `321c4346c435299ab6376ce68c1a91fa34face004d903fdcc485c2b6c00d3b3c` | `4a3e7cd75a9c61081a15eb3505f268d2a655b4bf56879a98aa9cef107496a617` |
+| II Judgment | 25 | `6ec2bf6a465cecec3800baa2ac2ef59d6b616383d94952e551b875cae4f36555` | `fedbaef01297c60c2cab44d57037476ab1c0904221e31ee4cf2b4dec6865d04a` |
+| III Hell | 30 | `3bcfa196950617c075073adc31e904c9298047ca48b1979eed34d3cccd9960f5` | `53596d14d153c2bf0043758e19f1fe45ce4c1b5abe2fb0a5e26dc94dbe9dc38b` |
+| IV Heaven | 22 | `53f57926044cfefef5f41dc0de2f1e858d28ae14545f9070c65a2a2e25f6f252` | `185560890437b62851f7aef26bcb39dd594370f936e9c4d5001de398c40632f0` |
+
+The Claude publication inventory, document catalogue and scoped release
+bindings are refreshed. Remaining: the three deploy gates, the fast-forward
+of `origin/main`, the Pages run and the live check of the four PDFs and web
+editions.
+
+## Claude 1962 All Saints revision, 2026-10-27
+
+<!-- promised-deliverable: claude-1962-f02-revision-2026-10-27 -->
+
+**In progress: accepted and committed locally; publication pending, in the
+same push as the Four Last Things correction.** On 2026-10-27 the maintainer
+asked that the Claude work of 26–27 October be checked, because partway
+through it the host had switched some stages from the Claude model to kimi-k3;
+the switch was announced inside those sessions but was not acted on. For All Saints the audit found that the
+substituted model had made the study's last two revisions and their
+reviews, the concise study, the homily and every stage after them, and part
+of the research. The maintainer decided to repair the publication on the
+Claude model before Sunday 1 November 2026, without adding that model as a
+provider anywhere:
+
+- the expansive study goes back to its text after author-study iteration 1
+  of run `427e2f58bb897a16`, the last text the Claude model wrote, and every
+  later revision is made again;
+- the research is rebuilt from the sources, with nothing taken over;
+- the concise study and the homily are derived again from the revised
+  study, and every review is fresh;
+- the first run's cycles record gets a short correction, and the leaf's
+  contribution metadata lists only Claude work by exact model identifier.
+
+The opening commit restores the study. Its section files match byte for
+byte what study-review iteration 0 read, and `generation-metadata.tex` lists
+the two author-study contributions as `claude-opus-5-5`. It removes the
+earlier research and `propers/` records, the concise study, the homily, the
+standing-findings record and the two Patrologia Latina volume 35 artifacts
+registered for this production. The first run's archive stays in the leaf
+as the record of that run and is not evidence. A new `proper-study` v15 run
+revises the leaf in place. It is seeded with the
+[research handoff](workflows/reviews/claude-1962-f02-revision-2026-10-27/HANDOFF.md),
+which lists the twelve findings of study-review iteration 0, the points
+where the later revisions went wrong and the research leads, and keeps the
+GPT leaf closed.  Run `450355254538c1ba` reached ACCEPTED on 2026-10-28 with
+no escalation: 52 packets, 52 accepted results, one intervention, seven repair
+cycles (three in research, one each in the study, the concise study, the
+homily and the concise study's layout). Every accepted agent stage ran on
+`claude-opus-5-5` at its packet's effort. Through author-study 0 the workers
+were Factory Droid sessions with the model pinned, each accepted only after
+its session log showed the Claude model alone; one research attempt the host
+switched to kimi-k3 was rejected and its files removed, and one study-review
+result whose session closed on kimi-k3 was set aside and the review done
+again. From study-review 0 the workers were fresh Claude Code harness
+subagents. The installed PDFs are the expansive study (31 pages,
+`08f8c5e99572d5f8a9584555c47b901bc32abd09fdf74dd5d7094f387143c3bc`), the
+concise study (11 pages,
+`fb899d0258fe16641fb2be454eb088f37fd41011012fe599b5fb2d5ac397c881`) and the
+homily (4 pages,
+`a6630b389583e729bbaa18103fb48364e2767d47485ecbddeb4ddbef4d3bc2ac`); the web
+edition is `cbe405ad17c9ba6be5d64d37891a282e99700df9a1ded3528ab595931cf0438c`.
+The run is archived in the leaf; its [cycles
+record](workflows/reviews/claude-1962-f02-revision-2026-10-27/CYCLES.md) says
+what became of every handoff finding and lead and lists the advisories that
+stand, among them the physician answer at Aquinas, *In Ps.* 33 n. 10, which
+the research and both studies credit to Aquinas though he reports it as
+Augustine's (the homily is right). The archive tool's privacy audit was fixed
+after acceptance (`b38044fe8`) so that the run could be archived. The Claude
+publication inventory and the source-family ledger are refreshed. Remaining:
+the three deploy gates, the fast-forward of `origin/main`, the Pages run and
+the live check.
+
 ## Claude 1962 All Saints, 2026-11-01
 
 <!-- promised-deliverable: claude-1962-f02-all-saints-three-documents-2026-11-01 -->
@@ -27,8 +161,8 @@ Work began at the authorization commit `c7dfb84c7` on
 `427e2f58bb897a16` (`proper-study` v15) reached ACCEPTED at its
 publication gates with no escalation: 45 packets, 45 accepted results, one
 recorded intervention. Every agent stage ran as a fresh Factory Droid
-worker subagent with no inherited conversation, at its packet's declared
-effort, and every review was a fresh worker. Six cycles were real defects
+worker subagent with no inherited conversation, and every review was a
+fresh worker. Six cycles were real defects
 that program gates or cold reviews found and repaired: two in research (a
 misreported 1570 Offertory, a wrong Offertory collation and psalm
 numbering, a Missal reported read but unread; then unsealed Lasance English
@@ -53,6 +187,12 @@ browser's corpus data and the publication manifest are each byte-identical
 live to the verified local site, as
 [deployment-evidence.json](workflows/reviews/claude-1962-f02-production-2026-10-27/deployment-evidence.json)
 records.
+
+Corrected 2026-10-27 (see "Claude 1962 All Saints revision, 2026-10-27"
+above): this entry first said that every stage ran at its packet's declared
+effort. The Claude workers ran at `high`, the reviews included, and part of
+the production ran on a substituted model, kimi-k3; the cycles record's
+correction says which stages. The revision supersedes this production.
 
 ## Claude Four Last Things register revision, 2026-10-26
 
@@ -89,6 +229,13 @@ publication inventory, document catalogue and scoped release bindings are
 refreshed; source classifications and the family ledger are unchanged.
 `make check-sources`, `check-web-editions-current`,
 `check-release-bindings` and the promise ledger pass.
+
+Corrected 2026-10-27 (see "Claude Four Last Things correction, 2026-10-27"
+above): the Judgment round-1 pass and both Judgment visual reviews summarized
+here, and the Death round-1 visual verdict, were the work of a substituted
+model and have been done again. Judgment now passes at round 2 after one
+further repair, and the print-only adjustments numbered four, not three. The
+table gives the hashes published on 2026-10-26.
 
 ### Verified register publication, 2026-10-27
 
