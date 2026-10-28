@@ -12,14 +12,14 @@
     "duplicate_witnesses": 3,
     "fragment_witnesses_admitted": 40,
     "identified_additional_source_units": 1,
-    "independent_papal_acts_admitted": 1709,
+    "independent_papal_acts_admitted": 1705,
     "non_papal_units": 10,
     "not_independent_acts": 24,
     "note": "Candidates include false positives and non-papal units; they are not recovered independent papal act counts.",
     "raw_candidate_units": 5462,
-    "specifically_reviewed_holds": 1330,
+    "specifically_reviewed_holds": 1334,
     "split_source_units": 74,
-    "units_held": 4163,
+    "units_held": 4167,
     "whole_containers_acquired": 25
   },
   "date_lead_limit": "date_raw preserves lexical dating leads. The pattern can also match ordinary uses of data/datum or a historical citation. These are not normalized act dates; all unestablished ISO dates remain null.",
@@ -127296,35 +127296,69 @@
         "segment_id": "segment.bullarium-romanum.volume-04.unit-0128.1859-turin-latin.source-ocr",
         "segment_path": "src/sources/works/bullarium-romanum/volume-04-unit-0128/editions/1859-turin-latin/segments/source-ocr.toml"
       },
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-romanum.volume-04.1859-turin-latin.reading-order-497a692a65d1",
+          "id": "bullarium.volume-04.unit-0128.reading-order",
+          "language": "la",
+          "pdf_sha256": "e47f99a845a7fdc9f389e2d02803da7708e8586d121a4c3bc25193deed456e5f",
+          "physical_line_ranges": [
+            [
+              60047,
+              60135
+            ]
+          ],
+          "segment_id": "segment.bullarium-romanum.volume-04.unit-0128.1859-turin-bullarium-volume-04-latin.source-ocr",
+          "source_sha256": "497a692a65d1dfe838c88ebf7a748585889d2c3b9ba80be7e2cc38189b26982d"
+        },
+        "reason": "Whole reader withdrawn: the source OCR never read one printed body line inside this act, so the reader silently omits it. Confirmed on the native page image; the raw OCR lacks the line too, so no replacement can restore it.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "7199842546a6a6c108c921be8969946a65760fc774477f857c043ce22bc074b1",
       "reading_selection_variant_of": "bullarium.volume-04.unit-0128",
       "review": {
         "artifact_sha256": "497a692a65d1dfe838c88ebf7a748585889d2c3b9ba80be7e2cc38189b26982d",
-        "canonical_work_id": "work.bullarium-romanum.volume-04.unit-0128",
-        "decision": "admit",
-        "identity_evidence": {
-          "basis": "Same printed act: every native WORD of the prior reviewed raw extent maps to this contiguous reading-order range through WORD identity.",
-          "existing_work_id": "work.bullarium-romanum.volume-04.unit-0128"
-        },
-        "parent_unit_id": "bullarium.volume-04.unit-0128",
+        "decision": "hold",
+        "document_id": "bullarium.volume-04.unit-0128.reading-order",
         "physical_line_ranges": [
           [
             60047,
             60135
           ]
         ],
-        "printed_attribution": "Clemens  episcopus  servns  servoram  Dei, \nad   fatnram  rei  memoriam.",
-        "reader_source_note": "Reading order follows native word coordinates; the printing's marginal summaries are kept as separate blocks beside the sections they annotate; held pages, if any, keep raw OCR order.",
-        "reading_selection_variant_of": "bullarium.volume-04.unit-0128",
-        "review_note": "Reading-order selection of the reviewed raw extent bullarium.volume-04.unit-0128 [[59922, 59999]], mapped mechanically through native WORD identity: body WORDs contiguous, no foreign body or marginal WORD inside, no partial or inseparable WORD. Own synopsis59925, protocol59941–59942 and source59974 identify continuous body through closing59991–59993 and dating59995–59999. Trim subsequent InnocentVI heading and biography60002–60026. Conventional formula abbreviations remain literal; no substantive omission.",
-        "reviewed_extent": "WORD-identity mapping of the prior reviewed extent; volume evidence gate on native page images; no whole-act image collation.",
-        "source_artifact_id": "artifact.bullarium-romanum.volume-04.1859-turin-latin.reading-order-497a692a65d1",
-        "source_attribution_lines": [
-          60069,
-          60071
-        ],
-        "title": "Reclores  provi uriarui»,  ciì>ilalum,  aliorum-",
-        "unit_id": "bullarium.volume-04.unit-0128.reading-order"
+        "review_note": "Reader withdrawn by an explicit prior-to-null supersession: Whole reader withdrawn: the source OCR never read one printed body line inside this act, so the reader silently omits it. Confirmed on the native page image; the raw OCR lacks the line too, so no replacement can restore it. Evidence SHA-256 7199842546a6a6c108c921be8969946a65760fc774477f857c043ce22bc074b1.",
+        "title": "Reclores  provi uriarui»,  ciì>ilalum,  aliorum-"
       },
+      "review_history": [
+        {
+          "artifact_sha256": "497a692a65d1dfe838c88ebf7a748585889d2c3b9ba80be7e2cc38189b26982d",
+          "canonical_work_id": "work.bullarium-romanum.volume-04.unit-0128",
+          "decision": "admit",
+          "identity_evidence": {
+            "basis": "Same printed act: every native WORD of the prior reviewed raw extent maps to this contiguous reading-order range through WORD identity.",
+            "existing_work_id": "work.bullarium-romanum.volume-04.unit-0128"
+          },
+          "parent_unit_id": "bullarium.volume-04.unit-0128",
+          "physical_line_ranges": [
+            [
+              60047,
+              60135
+            ]
+          ],
+          "printed_attribution": "Clemens  episcopus  servns  servoram  Dei, \nad   fatnram  rei  memoriam.",
+          "reader_source_note": "Reading order follows native word coordinates; the printing's marginal summaries are kept as separate blocks beside the sections they annotate; held pages, if any, keep raw OCR order.",
+          "reading_selection_variant_of": "bullarium.volume-04.unit-0128",
+          "review_note": "Reading-order selection of the reviewed raw extent bullarium.volume-04.unit-0128 [[59922, 59999]], mapped mechanically through native WORD identity: body WORDs contiguous, no foreign body or marginal WORD inside, no partial or inseparable WORD. Own synopsis59925, protocol59941–59942 and source59974 identify continuous body through closing59991–59993 and dating59995–59999. Trim subsequent InnocentVI heading and biography60002–60026. Conventional formula abbreviations remain literal; no substantive omission.",
+          "reviewed_extent": "WORD-identity mapping of the prior reviewed extent; volume evidence gate on native page images; no whole-act image collation.",
+          "source_artifact_id": "artifact.bullarium-romanum.volume-04.1859-turin-latin.reading-order-497a692a65d1",
+          "source_attribution_lines": [
+            60069,
+            60071
+          ],
+          "title": "Reclores  provi uriarui»,  ciì>ilalum,  aliorum-",
+          "unit_id": "bullarium.volume-04.unit-0128.reading-order"
+        }
+      ],
       "reviewed_artifact_pages": [
         510
       ],
@@ -127354,7 +127388,7 @@
         ],
         "unit_id": "bullarium.volume-04.unit-0128"
       },
-      "status": "admitted-mechanical-ocr-extent",
+      "status": "specifically-held",
       "title_raw": "Reclores  provi uriarui»,  ciì>ilalum,  aliorum- que  lornrum  Rom.  lìcclenùte  iwwediate subiectontm  n  Ulcsau>^ari{<^  enrumdrm proiunciarum  ultra  debitum  aliquid  per violeiUiam  exlorqnentes  vcl  alias  quo- modolibcl  cxigentes,  cxcommunicalioni)! vinculo  innodantur,  suisque  offciia  prt- vantur  (I).",
       "volume": 4,
       "work_id": "work.bullarium-romanum.volume-04.unit-0128"
@@ -255592,16 +255626,34 @@
         "segment_id": "segment.bullarium-romanum.volume-09.unit-0069.1865-turin-latin.source-ocr",
         "segment_path": "src/sources/works/bullarium-romanum/volume-09-unit-0069/editions/1865-turin-latin/segments/source-ocr.toml"
       },
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-romanum.volume-09.1865-turin-latin.reading-order-68f508d921d6",
+          "id": "bullarium.volume-09.unit-0069.reading-order",
+          "language": "la",
+          "pdf_sha256": "d6e3b2b0f97abd83e10dacfec00502361c99dfab8f6861bd0a1e2f59dcd34fa0",
+          "physical_line_ranges": [
+            [
+              39994,
+              40095
+            ],
+            [
+              40100,
+              40279
+            ]
+          ],
+          "segment_id": "segment.bullarium-romanum.volume-09.unit-0069.1865-turin-bullarium-volume-09-latin.source-ocr",
+          "source_sha256": "68f508d921d68d5db2bfa5c8738fc704f167c8945878aa179141061f8fca8432"
+        },
+        "reason": "Whole reader withdrawn: the source OCR never read one printed body line inside this act, so the reader silently omits it. Confirmed on the native page image; the raw OCR lacks the line too, so no replacement can restore it.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "7199842546a6a6c108c921be8969946a65760fc774477f857c043ce22bc074b1",
       "reading_selection_variant_of": "bullarium.volume-09.unit-0069",
       "review": {
         "artifact_sha256": "68f508d921d68d5db2bfa5c8738fc704f167c8945878aa179141061f8fca8432",
-        "canonical_work_id": "work.bullarium-romanum.volume-09.unit-0069",
-        "decision": "admit",
-        "identity_evidence": {
-          "basis": "Same printed act: every native WORD of the prior reviewed raw extent maps to this contiguous reading-order range through WORD identity.",
-          "existing_work_id": "work.bullarium-romanum.volume-09.unit-0069"
-        },
-        "parent_unit_id": "bullarium.volume-09.unit-0069",
+        "decision": "hold",
+        "document_id": "bullarium.volume-09.unit-0069.reading-order",
         "physical_line_ranges": [
           [
             39994,
@@ -255612,19 +255664,43 @@
             40279
           ]
         ],
-        "printed_attribution": "SixtusPapaV,  ad  perpetuam  rei  memoriam.",
-        "reader_source_note": "Reading order follows native word coordinates; the printing's marginal summaries are kept as separate blocks beside the sections they annotate and its page-foot notes as separate blocks at the page break; held pages, if any, keep raw OCR order.",
-        "reading_selection_variant_of": "bullarium.volume-09.unit-0069",
-        "review_note": "Reading-order selection of the reviewed raw extent bullarium.volume-09.unit-0069 [[39280, 39325], [39330, 39565]], mapped mechanically through native WORD identity: body WORDs contiguous, no foreign body or marginal WORD inside, no partial or inseparable WORD. XXXV39280 has the actual outer Sixtus protocol39287. Ioannes Papa XXII at39312 is a predecessor in paragraph1, not the issuer; subsequent references to Leo X and Paul III likewise remain historical recitals. All five provisions continue in order to39559, followed by own Datum39561–39563 and conflicting printed summary39565 before XXXVI39568. Exclude historical note39326–39329, explicitly tied by note1 to prior XXXIV39273; retain this act's own note2 at39331, corresponding to its synopsis marker39285. The discontiguous ranges remove only the independently identified prior-act note. Preserve the December/November source date conflict and all uncorrected OCR/margins.",
-        "reviewed_extent": "WORD-identity mapping of the prior reviewed extent; volume evidence gate on native page images; no whole-act image collation.",
-        "source_artifact_id": "artifact.bullarium-romanum.volume-09.1865-turin-latin.reading-order-68f508d921d6",
-        "source_attribution_lines": [
-          40002,
-          40002
-        ],
-        "title": "Indnìgelnr  mililinp  de  Montei^ia  miUti- Ims  prn  tempore  exì<;tentìbux,  ut  ma- irimonhim  ivxla  liUeras  Pnnli  IH conlrahere  valcant  \"\\",
-        "unit_id": "bullarium.volume-09.unit-0069.reading-order"
+        "review_note": "Reader withdrawn by an explicit prior-to-null supersession: Whole reader withdrawn: the source OCR never read one printed body line inside this act, so the reader silently omits it. Confirmed on the native page image; the raw OCR lacks the line too, so no replacement can restore it. Evidence SHA-256 7199842546a6a6c108c921be8969946a65760fc774477f857c043ce22bc074b1.",
+        "title": "Indnìgelnr  mililinp  de  Montei^ia  miUti- Ims  prn  tempore  exì<;tentìbux,  ut  ma- irimonhim  ivxla  liUeras  Pnnli  IH conlrahere  valcant  \"\\"
       },
+      "review_history": [
+        {
+          "artifact_sha256": "68f508d921d68d5db2bfa5c8738fc704f167c8945878aa179141061f8fca8432",
+          "canonical_work_id": "work.bullarium-romanum.volume-09.unit-0069",
+          "decision": "admit",
+          "identity_evidence": {
+            "basis": "Same printed act: every native WORD of the prior reviewed raw extent maps to this contiguous reading-order range through WORD identity.",
+            "existing_work_id": "work.bullarium-romanum.volume-09.unit-0069"
+          },
+          "parent_unit_id": "bullarium.volume-09.unit-0069",
+          "physical_line_ranges": [
+            [
+              39994,
+              40095
+            ],
+            [
+              40100,
+              40279
+            ]
+          ],
+          "printed_attribution": "SixtusPapaV,  ad  perpetuam  rei  memoriam.",
+          "reader_source_note": "Reading order follows native word coordinates; the printing's marginal summaries are kept as separate blocks beside the sections they annotate and its page-foot notes as separate blocks at the page break; held pages, if any, keep raw OCR order.",
+          "reading_selection_variant_of": "bullarium.volume-09.unit-0069",
+          "review_note": "Reading-order selection of the reviewed raw extent bullarium.volume-09.unit-0069 [[39280, 39325], [39330, 39565]], mapped mechanically through native WORD identity: body WORDs contiguous, no foreign body or marginal WORD inside, no partial or inseparable WORD. XXXV39280 has the actual outer Sixtus protocol39287. Ioannes Papa XXII at39312 is a predecessor in paragraph1, not the issuer; subsequent references to Leo X and Paul III likewise remain historical recitals. All five provisions continue in order to39559, followed by own Datum39561–39563 and conflicting printed summary39565 before XXXVI39568. Exclude historical note39326–39329, explicitly tied by note1 to prior XXXIV39273; retain this act's own note2 at39331, corresponding to its synopsis marker39285. The discontiguous ranges remove only the independently identified prior-act note. Preserve the December/November source date conflict and all uncorrected OCR/margins.",
+          "reviewed_extent": "WORD-identity mapping of the prior reviewed extent; volume evidence gate on native page images; no whole-act image collation.",
+          "source_artifact_id": "artifact.bullarium-romanum.volume-09.1865-turin-latin.reading-order-68f508d921d6",
+          "source_attribution_lines": [
+            40002,
+            40002
+          ],
+          "title": "Indnìgelnr  mililinp  de  Montei^ia  miUti- Ims  prn  tempore  exì<;tentìbux,  ut  ma- irimonhim  ivxla  liUeras  Pnnli  IH conlrahere  valcant  \"\\",
+          "unit_id": "bullarium.volume-09.unit-0069.reading-order"
+        }
+      ],
       "reviewed_artifact_pages": [
         355,
         356,
@@ -255658,7 +255734,7 @@
         ],
         "unit_id": "bullarium.volume-09.unit-0069"
       },
-      "status": "admitted-mechanical-ocr-extent",
+      "status": "specifically-held",
       "title_raw": "Indnìgelnr  mililinp  de  Montei^ia  miUti- Ims  prn  tempore  exì<;tentìbux,  ut  ma- irimonhim  ivxla  liUeras  Pnnli  IH conlrahere  valcant  \"\\",
       "volume": 9,
       "work_id": "work.bullarium-romanum.volume-09.unit-0069"
@@ -257001,35 +257077,69 @@
         "segment_id": "segment.bullarium-romanum.volume-09.unit-0075.1865-turin-latin.source-ocr",
         "segment_path": "src/sources/works/bullarium-romanum/volume-09-unit-0075/editions/1865-turin-latin/segments/source-ocr.toml"
       },
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-romanum.volume-09.1865-turin-latin.reading-order-68f508d921d6",
+          "id": "bullarium.volume-09.unit-0075.reading-order",
+          "language": "la",
+          "pdf_sha256": "0d170c80aec526d59cf5e2a81fd15d8abdcb9bf8747378c73aa20329e2ecc579",
+          "physical_line_ranges": [
+            [
+              41540,
+              41736
+            ]
+          ],
+          "segment_id": "segment.bullarium-romanum.volume-09.unit-0075.1865-turin-bullarium-volume-09-latin.source-ocr",
+          "source_sha256": "68f508d921d68d5db2bfa5c8738fc704f167c8945878aa179141061f8fca8432"
+        },
+        "reason": "Whole reader withdrawn: the source OCR never read one printed body line inside this act, so the reader silently omits it. Confirmed on the native page image; the raw OCR lacks the line too, so no replacement can restore it.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "7199842546a6a6c108c921be8969946a65760fc774477f857c043ce22bc074b1",
       "reading_selection_variant_of": "bullarium.volume-09.unit-0075",
       "review": {
         "artifact_sha256": "68f508d921d68d5db2bfa5c8738fc704f167c8945878aa179141061f8fca8432",
-        "canonical_work_id": "work.bullarium-romanum.volume-09.unit-0075",
-        "decision": "admit",
-        "identity_evidence": {
-          "basis": "Same printed act: every native WORD of the prior reviewed raw extent maps to this contiguous reading-order range through WORD identity.",
-          "existing_work_id": "work.bullarium-romanum.volume-09.unit-0075"
-        },
-        "parent_unit_id": "bullarium.volume-09.unit-0075",
+        "decision": "hold",
+        "document_id": "bullarium.volume-09.unit-0075.reading-order",
         "physical_line_ranges": [
           [
             41540,
             41736
           ]
         ],
-        "printed_attribution": "Sixtus  Papa  V,ad  perpetuam  rei  memoriam.",
-        "reader_source_note": "Reading order follows native word coordinates; the printing's marginal summaries are kept as separate blocks beside the sections they annotate and its page-foot notes as separate blocks at the page break; held pages, if any, keep raw OCR order.",
-        "reading_selection_variant_of": "bullarium.volume-09.unit-0075",
-        "review_note": "Reading-order selection of the reviewed raw extent bullarium.volume-09.unit-0075 [[40841, 41033]], mapped mechanically through native WORD identity: body WORDs contiguous, no foreign body or marginal WORD inside, no partial or inseparable WORD. Independent XLI Benevento statutes with Sixtus V protocol40851, preamble and §§1–9, source Datum41029–41031 and summary41033. Prior act closes40838; XLII begins41045. Refined start restores current Beneventan marginal synopsis40841–40843; end excludes running matter41036–41042. Registry40865 and current grant, jurisdiction, municipal-office and transumpt glosses retained. Date metadata absence does not affect this complete source boundary; dates remain unnormalized.",
-        "reviewed_extent": "WORD-identity mapping of the prior reviewed extent; volume evidence gate on native page images; no whole-act image collation.",
-        "source_artifact_id": "artifact.bullarium-romanum.volume-09.1865-turin-latin.reading-order-68f508d921d6",
-        "source_attribution_lines": [
-          41546,
-          41546
-        ],
-        "title": "Diversa  staiti ta  prò  civitate Benevenlana\\",
-        "unit_id": "bullarium.volume-09.unit-0075.reading-order"
+        "review_note": "Reader withdrawn by an explicit prior-to-null supersession: Whole reader withdrawn: the source OCR never read one printed body line inside this act, so the reader silently omits it. Confirmed on the native page image; the raw OCR lacks the line too, so no replacement can restore it. Evidence SHA-256 7199842546a6a6c108c921be8969946a65760fc774477f857c043ce22bc074b1.",
+        "title": "Diversa  staiti ta  prò  civitate Benevenlana\\"
       },
+      "review_history": [
+        {
+          "artifact_sha256": "68f508d921d68d5db2bfa5c8738fc704f167c8945878aa179141061f8fca8432",
+          "canonical_work_id": "work.bullarium-romanum.volume-09.unit-0075",
+          "decision": "admit",
+          "identity_evidence": {
+            "basis": "Same printed act: every native WORD of the prior reviewed raw extent maps to this contiguous reading-order range through WORD identity.",
+            "existing_work_id": "work.bullarium-romanum.volume-09.unit-0075"
+          },
+          "parent_unit_id": "bullarium.volume-09.unit-0075",
+          "physical_line_ranges": [
+            [
+              41540,
+              41736
+            ]
+          ],
+          "printed_attribution": "Sixtus  Papa  V,ad  perpetuam  rei  memoriam.",
+          "reader_source_note": "Reading order follows native word coordinates; the printing's marginal summaries are kept as separate blocks beside the sections they annotate and its page-foot notes as separate blocks at the page break; held pages, if any, keep raw OCR order.",
+          "reading_selection_variant_of": "bullarium.volume-09.unit-0075",
+          "review_note": "Reading-order selection of the reviewed raw extent bullarium.volume-09.unit-0075 [[40841, 41033]], mapped mechanically through native WORD identity: body WORDs contiguous, no foreign body or marginal WORD inside, no partial or inseparable WORD. Independent XLI Benevento statutes with Sixtus V protocol40851, preamble and §§1–9, source Datum41029–41031 and summary41033. Prior act closes40838; XLII begins41045. Refined start restores current Beneventan marginal synopsis40841–40843; end excludes running matter41036–41042. Registry40865 and current grant, jurisdiction, municipal-office and transumpt glosses retained. Date metadata absence does not affect this complete source boundary; dates remain unnormalized.",
+          "reviewed_extent": "WORD-identity mapping of the prior reviewed extent; volume evidence gate on native page images; no whole-act image collation.",
+          "source_artifact_id": "artifact.bullarium-romanum.volume-09.1865-turin-latin.reading-order-68f508d921d6",
+          "source_attribution_lines": [
+            41546,
+            41546
+          ],
+          "title": "Diversa  staiti ta  prò  civitate Benevenlana\\",
+          "unit_id": "bullarium.volume-09.unit-0075.reading-order"
+        }
+      ],
       "reviewed_artifact_pages": [
         368,
         369
@@ -257061,7 +257171,7 @@
         ],
         "unit_id": "bullarium.volume-09.unit-0075"
       },
-      "status": "admitted-mechanical-ocr-extent",
+      "status": "specifically-held",
       "title_raw": "Diversa  staiti ta  prò  civitate Benevenlana\\",
       "volume": 9,
       "work_id": "work.bullarium-romanum.volume-09.unit-0075"
@@ -325308,16 +325418,34 @@
         "segment_id": "segment.bullarium-romanum.volume-11.unit-0179.1867-turin-latin.source-ocr",
         "segment_path": "src/sources/works/bullarium-romanum/volume-11-unit-0179/editions/1867-turin-latin/segments/source-ocr.toml"
       },
+      "reader_withdrawal": {
+        "prior": {
+          "artifact_id": "artifact.bullarium-romanum.volume-11.1867-turin-latin.reading-order-e3cb674fd723",
+          "id": "bullarium.volume-11.unit-0179.reading-order",
+          "language": "la",
+          "pdf_sha256": "6def3b6098464a479928e13e02130cfce4878eddde47f585b980dd402f6cacd2",
+          "physical_line_ranges": [
+            [
+              79616,
+              79634
+            ],
+            [
+              79640,
+              80532
+            ]
+          ],
+          "segment_id": "segment.bullarium-romanum.volume-11.unit-0179.1867-turin-bullarium-volume-11-latin.source-ocr",
+          "source_sha256": "e3cb674fd723d9f16c10562dd15e3f565aac2a19586d6f0c5664374f365b2db0"
+        },
+        "reason": "Whole reader withdrawn: the source OCR never read one printed body line inside this act, so the reader silently omits it. Confirmed on the native page image; the raw OCR lacks the line too, so no replacement can restore it.",
+        "replacement": null
+      },
+      "reader_withdrawal_evidence_sha256": "7199842546a6a6c108c921be8969946a65760fc774477f857c043ce22bc074b1",
       "reading_selection_variant_of": "bullarium.volume-11.unit-0179",
       "review": {
         "artifact_sha256": "e3cb674fd723d9f16c10562dd15e3f565aac2a19586d6f0c5664374f365b2db0",
-        "canonical_work_id": "work.bullarium-romanum.volume-11.unit-0179",
-        "decision": "admit",
-        "identity_evidence": {
-          "basis": "Same printed act: every native WORD of the prior reviewed raw extent maps to this contiguous reading-order range through WORD identity.",
-          "existing_work_id": "work.bullarium-romanum.volume-11.unit-0179"
-        },
-        "parent_unit_id": "bullarium.volume-11.unit-0179",
+        "decision": "hold",
+        "document_id": "bullarium.volume-11.unit-0179.reading-order",
         "physical_line_ranges": [
           [
             79616,
@@ -325328,19 +325456,43 @@
             80532
           ]
         ],
-        "printed_attribution": "Paulus  Episcopus",
-        "reader_source_note": "Reading order follows native word coordinates; the printing's marginal summaries are kept as separate blocks beside the sections they annotate and its page-foot notes as separate blocks at the page break; held pages, if any, keep raw OCR order.",
-        "reading_selection_variant_of": "bullarium.volume-11.unit-0179",
-        "review_note": "Reading-order selection of the reviewed raw extent bullarium.volume-11.unit-0179 [[79531, 80471]], mapped mechanically through native WORD identity: body WORDs contiguous, no foreign body or marginal WORD inside, no partial or inseparable WORD. CLIII has independent heading/synopsis79531–79533 and episcopal protocol79535–79539. Entire exordium and §§1–30 run in ascending order through sanction80450–80464 and dating80466–80471. Synopsis references79548–79556, readings79623–79624 and80327 remain in place. OCR damage and duplicate note numbering are preserved as source data; preceding rescript ends79528 and next CLIV begins80474.",
-        "reviewed_extent": "WORD-identity mapping of the prior reviewed extent; volume evidence gate on native page images; no whole-act image collation.",
-        "source_artifact_id": "artifact.bullarium-romanum.volume-11.1867-turin-latin.reading-order-e3cb674fd723",
-        "source_attribution_lines": [
-          79620,
-          79620
-        ],
-        "title": "Litterae  processus  in  die  Coenae  Domini*.",
-        "unit_id": "bullarium.volume-11.unit-0179.reading-order"
+        "review_note": "Reader withdrawn by an explicit prior-to-null supersession: Whole reader withdrawn: the source OCR never read one printed body line inside this act, so the reader silently omits it. Confirmed on the native page image; the raw OCR lacks the line too, so no replacement can restore it. Evidence SHA-256 7199842546a6a6c108c921be8969946a65760fc774477f857c043ce22bc074b1.",
+        "title": "Litterae  processus  in  die  Coenae  Domini*."
       },
+      "review_history": [
+        {
+          "artifact_sha256": "e3cb674fd723d9f16c10562dd15e3f565aac2a19586d6f0c5664374f365b2db0",
+          "canonical_work_id": "work.bullarium-romanum.volume-11.unit-0179",
+          "decision": "admit",
+          "identity_evidence": {
+            "basis": "Same printed act: every native WORD of the prior reviewed raw extent maps to this contiguous reading-order range through WORD identity.",
+            "existing_work_id": "work.bullarium-romanum.volume-11.unit-0179"
+          },
+          "parent_unit_id": "bullarium.volume-11.unit-0179",
+          "physical_line_ranges": [
+            [
+              79616,
+              79634
+            ],
+            [
+              79640,
+              80532
+            ]
+          ],
+          "printed_attribution": "Paulus  Episcopus",
+          "reader_source_note": "Reading order follows native word coordinates; the printing's marginal summaries are kept as separate blocks beside the sections they annotate and its page-foot notes as separate blocks at the page break; held pages, if any, keep raw OCR order.",
+          "reading_selection_variant_of": "bullarium.volume-11.unit-0179",
+          "review_note": "Reading-order selection of the reviewed raw extent bullarium.volume-11.unit-0179 [[79531, 80471]], mapped mechanically through native WORD identity: body WORDs contiguous, no foreign body or marginal WORD inside, no partial or inseparable WORD. CLIII has independent heading/synopsis79531–79533 and episcopal protocol79535–79539. Entire exordium and §§1–30 run in ascending order through sanction80450–80464 and dating80466–80471. Synopsis references79548–79556, readings79623–79624 and80327 remain in place. OCR damage and duplicate note numbering are preserved as source data; preceding rescript ends79528 and next CLIV begins80474.",
+          "reviewed_extent": "WORD-identity mapping of the prior reviewed extent; volume evidence gate on native page images; no whole-act image collation.",
+          "source_artifact_id": "artifact.bullarium-romanum.volume-11.1867-turin-latin.reading-order-e3cb674fd723",
+          "source_attribution_lines": [
+            79620,
+            79620
+          ],
+          "title": "Litterae  processus  in  die  Coenae  Domini*.",
+          "unit_id": "bullarium.volume-11.unit-0179.reading-order"
+        }
+      ],
       "reviewed_artifact_pages": [
         655,
         656,
@@ -325384,7 +325536,7 @@
         ],
         "unit_id": "bullarium.volume-11.unit-0179"
       },
-      "status": "admitted-mechanical-ocr-extent",
+      "status": "specifically-held",
       "title_raw": "Litterae  processus  in  die  Coenae  Domini*.",
       "volume": 11,
       "work_id": "work.bullarium-romanum.volume-11.unit-0179"

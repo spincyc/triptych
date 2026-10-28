@@ -1,6 +1,6 @@
 {
   "documents": [],
-  "revision": "2026-10-28T22:26:33Z",
+  "revision": "2026-10-28T22:49:41Z",
   "schema": "triptych-papal-typeset/v1",
   "supersessions": [
     {
@@ -253,6 +253,86 @@
         "source_sha256": "68f508d921d68d5db2bfa5c8738fc704f167c8945878aa179141061f8fca8432"
       },
       "reason": "Whole reader withdrawn: a single OCR WORD holds both marginal and body glyphs across the column edge, so the reader prints body text inside a marginal block or loses it. Confirmed on native page images; the corrected classifier holds the unit as inseparable, so no clean replacement exists.",
+      "replacement": null
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.bullarium-romanum.volume-04.1859-turin-latin.reading-order-497a692a65d1",
+        "id": "bullarium.volume-04.unit-0128.reading-order",
+        "language": "la",
+        "pdf_sha256": "e47f99a845a7fdc9f389e2d02803da7708e8586d121a4c3bc25193deed456e5f",
+        "physical_line_ranges": [
+          [
+            60047,
+            60135
+          ]
+        ],
+        "segment_id": "segment.bullarium-romanum.volume-04.unit-0128.1859-turin-bullarium-volume-04-latin.source-ocr",
+        "source_sha256": "497a692a65d1dfe838c88ebf7a748585889d2c3b9ba80be7e2cc38189b26982d"
+      },
+      "reason": "Whole reader withdrawn: the source OCR never read one printed body line inside this act, so the reader silently omits it. Confirmed on the native page image; the raw OCR lacks the line too, so no replacement can restore it.",
+      "replacement": null
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.bullarium-romanum.volume-09.1865-turin-latin.reading-order-68f508d921d6",
+        "id": "bullarium.volume-09.unit-0069.reading-order",
+        "language": "la",
+        "pdf_sha256": "d6e3b2b0f97abd83e10dacfec00502361c99dfab8f6861bd0a1e2f59dcd34fa0",
+        "physical_line_ranges": [
+          [
+            39994,
+            40095
+          ],
+          [
+            40100,
+            40279
+          ]
+        ],
+        "segment_id": "segment.bullarium-romanum.volume-09.unit-0069.1865-turin-bullarium-volume-09-latin.source-ocr",
+        "source_sha256": "68f508d921d68d5db2bfa5c8738fc704f167c8945878aa179141061f8fca8432"
+      },
+      "reason": "Whole reader withdrawn: the source OCR never read one printed body line inside this act, so the reader silently omits it. Confirmed on the native page image; the raw OCR lacks the line too, so no replacement can restore it.",
+      "replacement": null
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.bullarium-romanum.volume-09.1865-turin-latin.reading-order-68f508d921d6",
+        "id": "bullarium.volume-09.unit-0075.reading-order",
+        "language": "la",
+        "pdf_sha256": "0d170c80aec526d59cf5e2a81fd15d8abdcb9bf8747378c73aa20329e2ecc579",
+        "physical_line_ranges": [
+          [
+            41540,
+            41736
+          ]
+        ],
+        "segment_id": "segment.bullarium-romanum.volume-09.unit-0075.1865-turin-bullarium-volume-09-latin.source-ocr",
+        "source_sha256": "68f508d921d68d5db2bfa5c8738fc704f167c8945878aa179141061f8fca8432"
+      },
+      "reason": "Whole reader withdrawn: the source OCR never read one printed body line inside this act, so the reader silently omits it. Confirmed on the native page image; the raw OCR lacks the line too, so no replacement can restore it.",
+      "replacement": null
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.bullarium-romanum.volume-11.1867-turin-latin.reading-order-e3cb674fd723",
+        "id": "bullarium.volume-11.unit-0179.reading-order",
+        "language": "la",
+        "pdf_sha256": "6def3b6098464a479928e13e02130cfce4878eddde47f585b980dd402f6cacd2",
+        "physical_line_ranges": [
+          [
+            79616,
+            79634
+          ],
+          [
+            79640,
+            80532
+          ]
+        ],
+        "segment_id": "segment.bullarium-romanum.volume-11.unit-0179.1867-turin-bullarium-volume-11-latin.source-ocr",
+        "source_sha256": "e3cb674fd723d9f16c10562dd15e3f565aac2a19586d6f0c5664374f365b2db0"
+      },
+      "reason": "Whole reader withdrawn: the source OCR never read one printed body line inside this act, so the reader silently omits it. Confirmed on the native page image; the raw OCR lacks the line too, so no replacement can restore it.",
       "replacement": null
     }
   ]

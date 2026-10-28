@@ -624,8 +624,13 @@ Second repair pass, 2026-10-28:
   installed readers (IV 8, VII 2, IX 4) are withdrawn with explicit
   prior-to-null supersessions in a new reading-order withdrawals manifest.
   The geometry tool now holds such units as inseparable.
+- **Lost printed lines:** the tool now also holds a page whose OCR skipped a
+  whole printed body line. Of the 8 installed readers touching such a page,
+  native images confirmed a missing line inside 4 (IV 0128, IX 0069, IX 0075,
+  XI 0179), which are withdrawn the same way. The other 4 are clean.
+- A sample of 30 lower-confidence word crossings showed no displaced text.
 
-The release holds 4,807 PDFs and 9,033 pages.
+The release holds 4,803 PDFs and 9,022 pages.
 
 Open:
 - a sampled image audit of the lower-confidence word crossings;
