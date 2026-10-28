@@ -1,0 +1,320 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "HOM-001",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/10-homily.tex lines 24-27, 57-66 and 95-97, read against lines 107-109",
+      "problem": "The Gospel step, which the note lists as the homily's own connection, shifts the meaning of 'poor'. The speech quotes Mt 5:3 correctly at line 61 ('Blessed are the poor in spirit'). Its own paraphrases then drop the Gospel's qualifiers. Mt 5:6's hunger and thirst after justice becomes 'those who hunger and thirst' (line 25) and 'the hungry shall have their fill' (line 59). The poor in spirit become 'the poor while they are poor' (lines 63-64) and 'the poor and the mourners and the persecuted of the Gospel' (lines 95-96). The speech then concludes: 'Those who go without bread and without safety are not without the good, for the kingdom is theirs' (lines 65-66). So the present-tense kingdom of Mt 5:3 is applied to material want, and the speech calls this 'the Gradual's promise in the Lord's own words' (lines 64-65). Mt 5:3 and 5:6 do not bless the breadless or the hungry as such. The speech itself later gives Augustine's reading, that the poor in spirit are the humble who have put themselves under God (lines 107-109; De serm. Dom. I.3.10, 'those not puffed up, while the soul submits itself to divine authority', and I.4.11). That reading contradicts the material sense on which the central step depends. No witness in research/scope.md or research/interpretations.md reads the present-tense kingdom of Mt 5:3 as belonging to those without bread. The nearest are Bernard's voluntary poverty (sermo 1 n. 15) and Schuster's general remark on the Gospel ('those who have least according to the world receive a larger share'), and the speech neither uses them nor says what they say. The study's literal sense names 'the poor in spirit ... those who hunger for justice'. A listener who knows the beatitude hears the argument depend on leaving out 'in spirit'.",
+      "repair_target": "homily",
+      "required_result": "Keep the Gospel's qualifiers wherever the speech paraphrases or argues from Mt 5:3 and 5:6 ('the poor in spirit'; 'those who hunger and thirst after justice'). Rest the join between the Gradual and the Gospel on what the texts name. One way is to say that the kingdom already belongs to the poor in spirit and to those persecuted for justice' sake, and to join that to the Gradual's command to fear through Augustine's pairing of the fear of the Lord with the poor in spirit, which the speech already has. If the speech wants the saints' material want inside the first beatitude, it must give a checked reading that joins the two and say whose it is: for example Bernard, sermo 1 n. 15, on voluntary poverty as a kind of martyrdom, or Schuster on those who have least by the world's measure, both in the reviewed study. Update the note's list of the homily's own connections to describe the join as rewritten.",
+      "severity": "blocking"
+    },
+    {
+      "id": "HOM-002",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/10-homily.tex lines 30-36 and 118-120; src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/90-note.tex lines 45-58",
+      "problem": "The speech misreports where Augustine stands on his objector (Enarr. in Ps. 33, s. 2, n. 14, Migne Latin text, checked at the locus). It says Augustine 'heard that objection from his own people' and 'grants the man his point'. At the locus Augustine first tells his hearer not to say it ('Attende, et noli dicere'). He then gives the complaint as what the hearer 'says in his heart' ('et dicis in animo tuo'). He concedes only that, taken by the letter, the verse seems to deceive ('Si ad litteram accipias, videtur te fallere'). He judges the man's conclusion that Scripture deceived him to be a snare: 'Sic cogitantem suffocat laqueus scandali. Escam enim mortalem quaerit in terra, et veram mercedem non quaerit in coelo, et mittit caput in laqueum diaboli'. n. 15 then opens 'Noli ergo sic intelligere'. Nothing at the locus says the objection was heard from anyone. The closing application builds on this framing: 'He was right to do all of it. He was mistaken only about what he had been promised. Do what he did' (lines 118-120). That holds up as a pattern a man whom Augustine describes as caught in the snare of scandal, and the listener is never told Augustine's verdict. The expansive study states the locus correctly ('St Augustine states the difficulty as an objector would'). The departure is the homily's own.",
+      "repair_target": "homily",
+      "required_result": "Report Augustine as the locus has him. He puts the complaint in the heart of one of his hearers, concedes only that the verse taken by the letter seems to deceive, and warns that whoever reasons so is caught in a snare, because he seeks bread on earth and not his reward in heaven. Remove 'heard that objection from his own people' and 'grants the man his point'. For example: 'St Augustine puts that objection in the mouth of one of his hearers ... Augustine admits that, taken by the letter, the verse seems to deceive. But he warns the man that this way of thinking is a snare: he is looking for food on earth and not for his reward in heaven.' The response may still take the man's daily practice as a pattern. It must not say or imply that Augustine accepted the complaint, and 'mistaken only' must not contradict Augustine's verdict. The note must describe the response's use of the figure as the homily's own.",
+      "severity": "blocking"
+    },
+    {
+      "id": "HOM-003",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/10-homily.tex lines 99-116, with 118-121 and 127-130",
+      "problem": "From the Lesson to the end, nearly every step is handed to a named authority in a line or two, and two of those steps cannot be followed by ear. (1) Lines 99-103: Bernard is given in a 45-word sentence that nests one quotation inside another ('We sang to the saints this night, \"Fear the Lord, all ye his saints,\" but not to these'). 'These' has no referent until the next sentence, and the sentence is spent getting to a point the preacher could state directly: the command is said to us. (2) Lines 107-108: 'the fear that St Augustine puts on the first step of the beatitudes'. The speech never explains Augustine's scheme of steps, so the listener cannot know what 'the first step' is. (3) Lines 109-110: Basil's point is a one-line verdict in a phrase that reads like a translation ('the man it keeps lacks nothing for any virtue'). (4) Lines 112-113: the preacher states Bernard's point ('our feast adds nothing to them') and then gives it to Bernard ('St Bernard says so plainly'). (5) Lines 114-116: the Collect and the Postcommunion are quoted side by side, and no sentence says how they follow from Bernard's point. With Thomas at lines 120-121 and Basil at lines 128-130, six paragraphs in a row each rest on a named authority's one-line point. guidance/editorial.md ('Plain is not flat') and the homily profile name this as the opposite failure: a run of names with one-line verdicts, and arguments handed to authorities instead of carried by the preacher. The pattern runs through the closing section.",
+      "repair_target": "homily",
+      "required_result": "Rewrite lines 99-116 so that the preacher carries each step in plain speech. Name a Father only where his reasoning is given, give each sentence one idea a listener can hold, and state the connection between a Father's point and the prayers that follow it. Possible rewrites. Lines 99-105: 'The verse that makes the promise begins with a command: \"Fear the Lord, all ye his saints.\" St Bernard, preaching on this feast, said that the saints in glory no longer need that command, because they no longer fear. It is said to us, who are still on the way; for now, he said, our whole happiness is to fear God.' Lines 107-110: 'This is the fear of a humble man who has put himself under God. St Augustine sets it beside the first beatitude, the poor in spirit, because both are humility. St Basil says that such fear keeps a man from every shameful act, so that he lacks nothing he needs for any virtue.' Lines 112-116: 'Our feast adds nothing to the saints. St Bernard says that honouring them helps us, not them: it makes us want to be with them. So the Collect asked God's mercy for us through the multitude of our intercessors, and the Postcommunion will ask that their prayers defend us.' Keep exact quotations few and short.",
+      "severity": "blocking"
+    },
+    {
+      "id": "HOM-004",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/10-homily.tex lines 63-66, 78-79 and 83-87",
+      "problem": "Three times the speech says again what the listener has just heard, and each time it ends on a reversal built on the 'go without' wording it has used since lines 22 and 28. (1) Lines 65-66: 'Those who go without bread and without safety are not without the good, for the kingdom is theirs' repeats the two sentences before it, so nothing is lost if it is deleted. (2) Lines 78-79: 'To the men who killed him, the just man was finished. He was in the hand of God.' paraphrases the antiphon quoted in the sentence before. (3) Lines 83-87 repeat the Gradual (lines 17-19) and the Offertory (lines 76-78) before ending on a three-part sentence with a reversal: 'He went without bread, without justice from men, and at last without his life, and he did not go without God'. 'Without bread' is not in Wisdom. Each instance fails the 'Each sentence adds something' or 'Say it once' test in guidance/editorial.md, and repeated three times the reversal works as a refrain, which the homily profile excludes.",
+      "repair_target": "homily",
+      "required_result": "Say each step once, in plain words, and do not end a paragraph on a 'go without ... not without' reversal. Possible rewrites. Lines 63-66: 'The kingdom already belongs to the poor in spirit, and to those persecuted for justice' sake while they suffer it.' Then state the link to the Gradual once, as the preacher's inference, and stop. Lines 78-79: cut the restatement and go straight to Augustine's gloss. Lines 83-87: 'Read with the Gradual, the Offertory shows the good the just man kept when men took his life: he is in God's hand.'",
+      "severity": "blocking"
+    },
+    {
+      "id": "HOM-005",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/10-homily.tex lines 48-52 and 87-88",
+      "problem": "Lines 48-52 put the Aquinas answer in a 44-word sentence that opens with two subordinate clauses ('When God lets his servants go hungry, as St Paul says that he and the other apostles were hungry and thirsty even as he wrote, Thomas compares ...'). The listener must hold Paul's words before learning what they are for. 'Even as he wrote' is an unclear rendering of 1 Cor 4:11's 'unto this hour'. Lines 87-88 explain when the Secret is said ('said a few moments after the Offertory') to a congregation that hears this Mass every year.",
+      "required_result": "Split the sentence, for example: 'St Paul writes that he and the other apostles were hungry and thirsty to that very hour. Thomas answers that God then acts like a physician, who keeps food from a sick man for the sake of his health.' Drop the explanation of when the Secret is said.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-006",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/90-note.tex lines 77-80 ('Texts quoted, and their route')",
+      "problem": "The note says that Augustine on Ps 33 and Ps 87, Basil and Bernard 'are quoted in the English the expansive study gives'. In the speech Basil is never in quotation marks (lines 45-46, 109-110 and 128-130 are paraphrase). Augustine on Ps 87 (lines 79-81) is the study's English word for word ('dwell in the help of the Most High and abide in the protection of the God of heaven') but is not marked as a quotation. Bernard sermo 5 n. 5 (lines 112-114) is paraphrase. The clause 'the Offertory's English is quoted on the Lasance's attribution' does not say what is meant.",
+      "required_result": "State each route exactly: which patristic words are quoted, and mark those in the speech (for example the Ps 87 gloss), and which are paraphrased in the study's English. Reword the Offertory clause plainly, for example: 'the Offertory's English is the Lasance's, quoted without its closing Alleluia'.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "homily-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex",
+          "references": [
+            "propers/verified.md",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
+      "element_keys": [
+        "introit",
+        "collect",
+        "commemoration-collect",
+        "lesson",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "commemoration-secret",
+        "preface",
+        "communion",
+        "postcommunion",
+        "commemoration-postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Bede",
+            "Augustine of Hippo",
+            "Gregory the Great",
+            "Thomas Aquinas",
+            "John Chrysostom",
+            "Sicard of Cremona",
+            "Lucien Fromage",
+            "William Durandus",
+            "Alfredo Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Bede",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "sealed-number-uncounted-crowd"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "sealed-number-uncounted-crowd",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Rabanus Maurus",
+            "Basil of Caesarea",
+            "Bede",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Rabanus Maurus"
+          ],
+          "component_keys": [
+            "beatitudes-way-of-the-saints"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "beatitudes-way-of-the-saints",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Basil of Caesarea",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Robert Bellarmine",
+            "Alfredo Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Basil of Caesarea",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "no-want-just-in-gods-hand"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "no-want-just-in-gods-hand",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/format.tex": "43c4890d11fec65696c54659b90db4841affb0ccae551e3cfff335db4233a9ab",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/homily.tex": "149c5054615dfe156c0ce2431d11d63aaf3e8f46364dd255694c46671e7c4d36",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/propers/verified.md": "df0692445c3b65b1e0034af0523b5ced3e02ad4b9c4e4010556c431f018393fc",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/interpretations.md": "40707f126b71756797508e63738807fff7727cc0c090d917670f5cab36d0da0c",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/scope.md": "c90a6c41700d0d62a893dfb089bd7bc17bbed79fd7d850b74a0bb862d9b29c04",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/10-homily.tex": "55c49ab165249c03ff76dae2788c33cb1064a64bff7a5905c48ed3823f7266de",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/90-note.tex": "aa76dbd9fc00105efbbb7c656a59ef742f6de580918fdccc61bdae4f288bc793",
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "15",
+            "4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83",
+            "450355254538c1ba",
+            "4f52b9ade338f9a9f4f39f312aa45989a0baf2ca",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Cold review of the All Saints homily (homily.tex; sections/homily/10-homily.tex, 1,401 spoken words, about 10.8 to 11.7 minutes at 120-130 words a minute by arithmetic, matching the note; and 90-note.tex), against the sealed verified.md, interpretations.md and scope.md and the reviewed expansive study's third and second interpretations. Every sealed file matched the REVIEW_INPUTS hashes. Each patristic locus the speech uses was read at its tracked witness: Augustine, Enarr. in Ps. 33 s. 2 nn. 14-15 and 87 n. 5 (Migne Latin) and De serm. Dom. I.3.10-I.4.11 (NPNF); Basil, Hom. in Ps. 33 nn. 6-7 and Ps. 32 n. 1 (PG 29 Latin text layer); Aquinas, In Ps. 33 n. 10 (Parma OCR, p. 206-207); Chrysostom, Hom. in Matt. 15.4 (NPNF); Bernard, sermo 5 nn. 3 and 5 (PL 183 OCR). The Lasance and Douay quotations were checked against verified.md. All loci and quotations are accurate except Augustine's stance on his objector. The speech is specific to this Mass and passes the text-substitution test: the Gradual's promise of no want, Basil's dilemma, the difference between Basil and Thomas, the Offertory and the closing Introit are well chosen. Four blocking findings remain, all for the homily to repair. (1) The Gospel step reads 'the poor in spirit' as those who go without bread. (2) Augustine's view of the objector is misreported, and the closing response is built on that account. (3) The closing section hands each step to an authority in one line. (4) Restatements end in 'go without ... not without' reversals. There are two advisories, on oral clarity and on the note's account of where its quotations come from. Limits: no performance was timed; the production audit is outside the seal and was not judged. This dispatch contributed an independent cold review of the homily, with each patristic locus checked at its source witness."
+}

@@ -1,0 +1,17 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "document": "liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
+    "files": {},
+    "provider": "claude",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.md": "cbe405ad17c9ba6be5d64d37891a282e99700df9a1ded3528ab595931cf0438c"
+    }
+  },
+  "stage": "web-review",
+  "summary": "Reviewed the canonical web conversion build/web/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.md, actual conversion hash cbe405ad17c9ba6be5d64d37891a282e99700df9a1ded3528ab595931cf0438c (equal to research/web-artifact.json and the REVIEW_INPUTS seal), against the reviewed research PDF build/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.pdf (sha256 08f8c5e99572d5f8a9584555c47b901bc32abd09fdf74dd5d7094f387143c3bc, 31 pages) and the canonical source; every render input and PDF hash in research/artifacts.json matches the tree. Evidence checked: tools/web-edition regenerated the edition from current sources byte-identical to the reviewed file, with its audits passing; tools/check-web-edition accepts the leaf as eligible; a word-level diff of the PDF's extracted text against the site-rendered HTML finds no omitted or added text, the only differences being PDF running heads, contents page numbers, table-cell reading order, and ellipsis and versicle glyph forms; the rendered page (site renderer, Markdown 3.10.3) has one title, 10 top-level sections each linked from a working 10-entry contents list, 56 subsections, 67 unique ids including all 14 proper-<element> anchors at their element headings, the three interpretations as separate sections each closing with its own Literal, Allegorical, Moral and Anagogical definition list, 27 blockquotes matching the 27 quoted texts, the map, comparison and Scriptural Date and Location tables complete, the source notes beneath each appointed text, readable Latin accents, versicles and smallcaps or upright cues, no TeX debris or exposed production metadata, and the revision timestamp 2026-10-28T17:52:51Z with the rights colophon. Presentation was judged on headless-Chromium screenshots of a local preview render at 1280px and 390px, not on the deployed site: at 390px the three-column date table takes the site's two-line dossier layout, and the opening map and comparison tables scroll sideways as the site sets every ordinary table. Limits: the standing study-review advisories STU-013 (closing clause lists and the repeated Preface sentence), STU-014 and STU-015 are still in the text and are reproduced faithfully; I did not raise them again. The generator-owned Passage and Date cells ('Revelation 7:2-12', 'Matthew 5:1-12', hyphenated B.C. ranges) are reproduced exactly as the PDF prints them, as the visual-review observation records. Verdict: PASS; these exact bytes may go to installation. This dispatch contributed an independent cold review of the canonical web conversion against the reviewed research PDF and its sources."
+}

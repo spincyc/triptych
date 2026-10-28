@@ -1,0 +1,294 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "HOM-009",
+      "location": "research/scope.md lines 1105-1107 (Aquinas, In Ps. 33 n. 10); research/interpretations.md line 407-408 (Reading C, Aquinas); sections/40-no-want-just-in-gods-hand.tex lines 92-95 and 105-109; sections/concise/10-commentary.tex lines 235-238 and 244-250; research/source-bindings.toml, the binding of the NPNF I.6 text (lines 441-452)",
+      "problem": "The homily now credits the physician to Augustine as Aquinas reports him (10-homily.tex lines 53-56; 90-note.tex lines 50-55 and 141-144; References line 163; the PDF subject). That matches Aquinas, In Ps. 33 n. 10 (Parma vol. 14 p. 206, registered OCR lines 42642-42652): 'Sed objicit Augustinus in serm. Dom. in mont. quia Apostolus ait 1 Cor. 4 ... Et dicit quod Deus est nutritor et medicus.' The homily part of this advisory is therefore cleared. The research records and both studies still say only that Aquinas raises the objection of 1 Cor 4:11 and answers it with the physician, without saying that he reports Augustine. The homily and the reviewed studies now name different saints for the same image. The homily also cites De serm. Dom. II.17.58 (NPNF I.6, registered text lines 5850-5878), which no research record names and which the leaf's binding of that registered text does not list among its loci. The argument and the Basil-Aquinas difference over bodily goods are unaffected.",
+      "required_result": "When the research records and the two studies are next revised, scope.md, interpretations.md, section 40 and the concise commentary say that Aquinas takes the objection of St Paul's hunger and the physician's answer from Augustine. For example: 'He meets St Paul's \"Even unto this hour we both hunger and thirst\" (1 Cor 4:11), an objection he says Augustine raised, with Augustine's answer (De serm. Dom. II.17.58): God is nourisher and physician, and a physician withholds food from the sick for their health.' The NPNF I.6 binding in research/source-bindings.toml also names De serm. Dom. II.17.58 at its registered lines.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-011",
+      "location": "sections/homily/10-homily.tex line 72 (paragraph 7) and lines 110-111 (paragraph 12); 90-note.tex lines 107-113",
+      "problem": "The speech uses one word in two senses five paragraphs apart. In paragraph 7, 'the beatitudes' are the Gospel's eight sayings: 'He matches the beatitudes with the gifts of the Holy Spirit ... so that the fear of the Lord stands first, and he gives that fear to the humble, the poor in spirit.' In paragraph 12, Bernard's 'tota interim beatitudo nostra est timere Deum' is quoted as \"our whole beatitude is to fear God\", where beatitude means blessedness. A listener who has just heard that Augustine puts the fear of the Lord first among the beatitudes will most easily hear Bernard saying that the Beatitudes all come down to fearing God. Bernard does not say that (sermo 5 n. 3, PL 183, registered OCR lines 42623-42639). He says that our blessedness for now lies in the fear of God, while the saints' festivity lies in exultation and praise. This is one sentence, so the finding is advisory.",
+      "required_result": "Bernard's word reaches the ear as blessedness or happiness, not as the Gospel's sayings. For example, lines 110-111: 'For now, he said, our whole happiness is to fear God, while the saints keep their feast in joy and praise.' The note's account of what is quoted and what is paraphrased (90-note.tex lines 107-113 and 119-120) then lists Bernard's n. 3 sentence among the paraphrases. Alternatively, the quotation stays and paragraph 7 says 'the eight blessings of the Gospel' where it now says 'the beatitudes'.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 2,
+  "observations": [
+    {
+      "location": "research/production-review.md lines 1-9",
+      "note": "The record's opening still calls it the production record of run 427e2f58bb897a16, seeded at commit c7dfb84c76a057079251e8c918243b787fa69494. Its later sections, including the three derive-homily entries, record run 450355254538c1ba under their own headings, so a reader of the opening alone would take the whole record for the superseded run's."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "homily-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex",
+          "references": [
+            "propers/verified.md",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
+      "element_keys": [
+        "introit",
+        "collect",
+        "commemoration-collect",
+        "lesson",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "commemoration-secret",
+        "preface",
+        "communion",
+        "postcommunion",
+        "commemoration-postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Bede",
+            "Augustine of Hippo",
+            "Gregory the Great",
+            "Thomas Aquinas",
+            "John Chrysostom",
+            "Sicard of Cremona",
+            "Lucien Fromage",
+            "William Durandus",
+            "Alfredo Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Bede",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "sealed-number-uncounted-crowd"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "sealed-number-uncounted-crowd",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Rabanus Maurus",
+            "Basil of Caesarea",
+            "Bede",
+            "Lucien Fromage"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Rabanus Maurus"
+          ],
+          "component_keys": [
+            "beatitudes-way-of-the-saints"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "beatitudes-way-of-the-saints",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Basil of Caesarea",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Robert Bellarmine",
+            "Alfredo Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Basil of Caesarea",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "no-want-just-in-gods-hand"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "no-want-just-in-gods-hand",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/format.tex": "43c4890d11fec65696c54659b90db4841affb0ccae551e3cfff335db4233a9ab",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/homily.tex": "30b13599c715e124338f2c8fb298526109e9a0f1c3b7d61642d90aa0db6d48c2",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/propers/verified.md": "df0692445c3b65b1e0034af0523b5ced3e02ad4b9c4e4010556c431f018393fc",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/interpretations.md": "40707f126b71756797508e63738807fff7727cc0c090d917670f5cab36d0da0c",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/scope.md": "c90a6c41700d0d62a893dfb089bd7bc17bbed79fd7d850b74a0bb862d9b29c04",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/10-homily.tex": "30757206f0b455fc9580b41c6220927e6443f27a94e3ef7c9f01b962de515fa2",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/90-note.tex": "249a7aeff6d912970db5b5e4db1fc02825fb3a10065d6e7d2a44cf83b4c6c764",
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "15",
+            "4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83",
+            "450355254538c1ba",
+            "4f52b9ade338f9a9f4f39f312aa45989a0baf2ca",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Cold review of the All Saints homily (homily.tex with sections/homily/10-homily.tex and 90-note.tex) as speech and exegesis, read continuously and then checked against its evidence and the reviewed studies. The spoken body counts 1,367 words, which agrees with the note's 1,370 words and 10.5-11.4 minutes by arithmetic; the note claims no timed or audible delivery. Every quotation and attribution in the speech was checked at the registered locus: Douay Ps 33:10-11, Wis 2:20, Mt 5:1-10 and Apoc 7:9-10; the Lasance Introit, Collect, Offertory, Secret and Postcommunion English as transcribed in propers/verified.md; Augustine, Enarr. in Ps. 33 s. 2 nn. 14-15 and 87 n. 5 (Migne Latin), De serm. Dom. I.1.3, I.3.10, I.4.11 and II.17.58 (NPNF I.6); Basil, Hom. in Ps. 33 nn. 6-7 and Hom. in Ps. 32 n. 1 (PG 29 text layer, Greek and Latin); Aquinas, In Ps. 33 n. 10 (Parma vol. 14 OCR); Chrysostom, Hom. in Matt. 15.4 (NPNF I.10); Bernard, In festo omnium Sanctorum sermo 5 nn. 3 and 5 (PL 183 OCR). The note's Missal loci were checked against verified.md, and its relation to the three interpretations against research/interpretations.md and sections/20, 30 and 40. All of it is faithful. The speech makes one exegetical argument that would not survive replacing the readings, since it rests on Ps 33:10-11 with the omitted 11a, the present tense of Mt 5:3 and 5:10, and Wis 2:20 with 3:1-3. It keeps the Basil-Aquinas difference over bodily goods and draws its joins in the preacher's voice, and the note records them as the homily's own. It gives one response from the text, and it ends on its conclusion with the Eucharist and hope. The four homily advisories of iteration 1 (HOM-007 to HOM-010) are cleared in the homily. Limits: the Basil, Aquinas and Bernard loci were read on OCR text layers here, and the PG and PL facsimiles were not re-read. The PDF was not rebuilt or inspected, which belongs to the visual stage. Verdict PASS, with two advisories: HOM-009, re-filed for its upstream remainder only, and HOM-011. There is one observation. This dispatch contributed an independent cold review of the revised homily, with locus-level verification of every source it quotes or paraphrases."
+}

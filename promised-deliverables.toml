@@ -57,14 +57,20 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-f02-revision-run-accepted"
   criterion = "A proper-study version-15 run for provider claude, identity liturgy/roman-rite/1962/propers/temporal/f02-all-saints, date 2026-11-01, audience adult parish assembly, seeded with the research handoff, reaches ACCEPTED; every agent stage is a fresh session whose recorded model is claude-opus-5-5 at the packet's declared effort; the revised PDFs and web edition are installed with the reviewed bytes, and the run is archived in the leaf with a cycles record."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/claude-1962-f02-revision-2026-10-27/CYCLES.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/record.md"]
+  check = "contains"
+  path = "workflows/reviews/claude-1962-f02-revision-2026-10-27/CYCLES.md"
+  needle = "**ACCEPTED**, with no escalations: 52 packets, 52 accepted results"
 
   [[deliverables.requirements]]
   id = "claude-f02-revision-findings"
   criterion = "Each of the twelve study findings and each research lead in the handoff is resolved by the run or recorded with the reason it is not, in a tracked record."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/claude-1962-f02-revision-2026-10-27/CYCLES.md"]
+  check = "contains"
+  path = "workflows/reviews/claude-1962-f02-revision-2026-10-27/CYCLES.md"
+  needle = "## What became of the research leads and other handoff points"
 
   [[deliverables.requirements]]
   id = "claude-f02-revision-main-and-pages"

@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "claude"
-audited_on = "2026-10-27"
+audited_on = "2026-10-28"
 discovery_rule = "src/claude/**/main.tex"
 publication_count = 64
-source_surface_file_count = 2103
-snapshot = "sha256:fdee717511d8c2e7aa1fc4be44def28045c5b9345fac6cb1de409f6674992a47"
+source_surface_file_count = 2156
+snapshot = "sha256:aa1193bea2a000d8ccfd87b94034f1a8853a9ee6ee743a9f640158e8f71f327c"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -1385,7 +1385,7 @@ owners = ["articles/faith/four-last-things-01-death"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-01-death/research/revision-2026-10-26.md"
-sha256 = "716c2a9b9d77996e89dcca68fcf93bd9c74ce1a687e8d5c66fd7141f36c9f1d8"
+sha256 = "ff6d37e57c6b5c67ea2e26f8560c0e11a7bc13df86f38c9a9005a8fac7dfec9b"
 kind = "research-record"
 owners = ["articles/faith/four-last-things-01-death"]
 
@@ -1517,7 +1517,7 @@ owners = ["articles/faith/four-last-things-02-judgment"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-02-judgment/research/revision-2026-10-26.md"
-sha256 = "f8d3927fe70a6e4f1d773de2e1474c082d43e29d2cd10e3c76ca8d56be9a469d"
+sha256 = "c368e95c01d15ade32b74a74fae94e6297af10400a4a1b7360f20987de9fad39"
 kind = "research-record"
 owners = ["articles/faith/four-last-things-02-judgment"]
 
@@ -1889,7 +1889,7 @@ owners = ["owner.articles.faith.four-last-things"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-shared/register-revision-2026-10-26.md"
-sha256 = "a22a344dfca1aac4e6200ca772afaee0868867cd4b6bf93cc0197f99326fb39d"
+sha256 = "c2b32d46c24bfd2611de24448cf4442c9d64a972df5c125d235b628e0f07bdd0"
 kind = "rendered-content"
 owners = ["owner.articles.faith.four-last-things"]
 
@@ -8741,7 +8741,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/blocking-findings-v1.toml"
-sha256 = "a8c00403250fc2ba90d635bbe4da38dbf4f2602ff4dc4a2d91d1cbdf623c5611"
+sha256 = "9f917808d2f903d591db2697e159c31031e10f28d929cd704c972561a8988986"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
@@ -9022,6 +9022,324 @@ kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/artifact-gates-0000.txt"
+sha256 = "dab4c37a4b9af7f8966233f8fa81ee60538e0cd5da0c85e8e5fc2c92603dc700"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/artifact-gates-0001.txt"
+sha256 = "820aa6b8f8dd1204e98f7d12c692aa45767fe837ad6a988c19430ec56a5eefde"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/author-study-0000.txt"
+sha256 = "fed1b6aec23bb1c80fa83403c3192021a7a8c8702812f918eb04ccd1375f49cd"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/author-study-0001.txt"
+sha256 = "f25b52e88905cf2fb2f7e90aefbc73f09d087aa10ab618a7150c25546024f584"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/build-artifacts-0000.txt"
+sha256 = "ce90858c0cc6688a9cee7c931d1f9f467b0352c8a226f3670e95eca701839adb"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/build-artifacts-0001.txt"
+sha256 = "6d2b7d6c5065ffa1f92fe36bc14f993ecc61994eceee4336897fa7dc7e234df8"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/derive-homily-0000.txt"
+sha256 = "07bf6a5f6dd97f8b530b79a550213ee9c57de04530a0b45031e0f81500a87f3c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/derive-homily-0001.txt"
+sha256 = "490fea1cfa25ceda1481e4107b07c442ea7f8caca66bb6b2003f6728696c5466"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/derive-homily-0002.txt"
+sha256 = "81a746207ba0db6e15efb9a6c62703d18533fb24511aee1947d015651126b688"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/derive-synthesis-0000.txt"
+sha256 = "1af2e5b6627a62de2413cad2a639b1a59ae1deb79da53f205d11e792bcd6c942"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/derive-synthesis-0001.txt"
+sha256 = "bbbeb52625101cbe6707aaa9e8d4e308cccb7ba3518a92dde14b9c76f68443e0"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/derive-synthesis-0002.txt"
+sha256 = "38283532710a0d205f34c2d6db5c1c7d9df30aebea2abdbd12d586470e2af0c9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/generate-web-0000.txt"
+sha256 = "eaad23f6496d882432b4ace98359eeff8115390e8f94522e6f33e68d1d4728c9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/homily-preflight-0000.txt"
+sha256 = "c9e948bfe0385d3a51519cd84a2d88b8e4e32e309045c80b39830af05a2a359f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/homily-preflight-0001.txt"
+sha256 = "c701c2dcca51b2280ad968ba8d164f178cbe30e0cc587cfb8e9ad3b1da1ed953"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/homily-preflight-0002.txt"
+sha256 = "0f8bb3ad891a96ed6a450004c4d36d55c0ce3b76592992f927d9fa8b133f646b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/homily-review-0000.txt"
+sha256 = "590e40e1e7e9481119f74d4de182844de54ca96bb2d75925ac90d7f2e1647c28"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/homily-review-0001.txt"
+sha256 = "3cb111eb0b8956164922bebab0fefe0ea76b7b45cdc80e97041bac731080e47c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/homily-review-0002.txt"
+sha256 = "1b2d35f2f3f5e0d60ffc80856a718d81d910d3803752b360b810167add43de53"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/install-publication-0000.txt"
+sha256 = "963cee99b0933bac038ed2b0dc6df0b9296a0d03bbea29a80e0d2eda3953bf24"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/publication-gates-0000.txt"
+sha256 = "87df66da32a73f34d517a0f97e9230e6e9a2ac39c411c33539d98ce08ccd5a69"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/research-0000.txt"
+sha256 = "cf000c2dbfd8fd8bf3b79151fcddf6f6f2a1668e542544b8b8796094813fa533"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/research-0001.txt"
+sha256 = "99ceeb51f9b8d35cfbe0de38c9a945d31bb59fd9c4671bfd0d977fbeb45fe552"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/research-0002.txt"
+sha256 = "cc5f3a9aa602cfe3f1e50fb774b4f480116888db01d8805fa79ca65817cee0d3"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/research-0003.txt"
+sha256 = "44375e7a06adeb658dd93fdfd3f22e3f4a9d5a29c64aed72a3caa885c551c1b5"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/research-preflight-0000.txt"
+sha256 = "a89c20a55f430d2e52c8be8fead7b1b100111b36ac99bc8b96a1d5715e189947"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/research-preflight-0001.txt"
+sha256 = "e3b3a08f254dc47680e18dfe1d779c6502168e65395074476cc538a3751adc65"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/research-preflight-0002.txt"
+sha256 = "b78fc1be21ee5e0cad010d1f1d1f20385696ec9af2d6ad3479bb3b742bd468b2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/research-preflight-0003.txt"
+sha256 = "cb361cfac0bf925a4481c41816abefb5ac53616ae2e538e7416ad7156541b737"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/research-review-0000.txt"
+sha256 = "1f2e24817b71bb0bad9b1dbc593182c706de6cc0e18c4759e6bc25844e40d0f8"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/research-review-0001.txt"
+sha256 = "b9daadba33ba4bf4bc0d37bc5d307bbb2ddbb4ca2314253e45e0169afc4896a3"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/research-review-0002.txt"
+sha256 = "adec0194861b8b7b37c4452c400c65cb762b8fcdf45e15d26361a2c6f582139d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/research-review-0003.txt"
+sha256 = "ce44d03a1c276a487980c50071721f25cf17d009d5efd127b3f75ea62cf49223"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/resolve-context-0000.txt"
+sha256 = "03bfdc518ad191b4a76f3e89576a4c2b5220bec3f6dddaf215379a6f9dcddf27"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/scope-gate-0000.txt"
+sha256 = "d289dce73e10b680129824f155c61dc8adbad368f1c7d4b046e0dcd1afb47113"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/source-registration-0000.txt"
+sha256 = "3a8cc900544e21977221191cff585f6cbbc8e9d97d45c629b5ec778d7b48d70b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/source-registration-0001.txt"
+sha256 = "d3498739abe049200e2b194f3056001c01673b65bff3386661bb207cecf384c2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/source-registration-0002.txt"
+sha256 = "5734d1e97323dc109b951d1813b4bc924dda0a8656bb566f3e44b9fcb1c889e7"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/source-registration-0003.txt"
+sha256 = "3a4bdaf09d2d2c5754aa716034f98f8a9757c1f9b89758d4a7dd9875213c65cd"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/study-preflight-0000.txt"
+sha256 = "4403954595b783c8cce934951a02bfff0ff4f9fda5a3488548efbb0814f48b3f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/study-preflight-0001.txt"
+sha256 = "1773df50a6d2fd1d5d4a95256f89b4442719f6b8278912d10a686d1084c587be"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/study-review-0000.txt"
+sha256 = "741114b10785414ae832f43770b67adcc784fde42cdd1c2a98938ff997dd6496"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/study-review-0001.txt"
+sha256 = "4db089470b2b3a367f134fbb98a611537804663ed0c8769de5e522aa7ebac73c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/synthesis-preflight-0000.txt"
+sha256 = "dc343857c5a68520ac7faf179b03664769518383e215abe69b50249dc6ce5487"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/synthesis-preflight-0001.txt"
+sha256 = "6585145f675836c99a6455c2e45607feccec41a81a0d3ca55aafc0ccd607f5d6"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/synthesis-preflight-0002.txt"
+sha256 = "043fc0b74253590cb024d328963ffdc500be88d50dc2241e23ae2fb7227e052a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/synthesis-review-0000.txt"
+sha256 = "10d034251825a8a1d74ff9e46ae626a483bb58941a9ef232439d709e97e0ebe9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/synthesis-review-0001.txt"
+sha256 = "2709a85e12ba3224155c9082204dabb356dbe406be8d3640cf29808321bae8e8"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/synthesis-review-0002.txt"
+sha256 = "f5ed2360ae2a283fa733a5010ac30ff54ceeb846c6407317700519c7586fd972"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/visual-review-0000.txt"
+sha256 = "2b4b946bbd428ab24a392c5d1c4ea3a5d079e85f9bb3088a39b76532aebdee4b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/visual-review-0001.txt"
+sha256 = "13e03cc2b6ee38b5965dbf54a6b36ee3f2820cc6d68d527992da31e250ddb239"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/packets/web-review-0000.txt"
+sha256 = "36ad596d1d3b6f7955bcdbb720ad347f542bc2877e083139c6f07aff6246f22a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/evaluations/proper-study-results/450355254538c1ba/record.md"
+sha256 = "f41743cabe2c1a1a376eb52a2960912287dea1046cad74e5483d86abb2cdaab2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
+
+[[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/format.tex"
 sha256 = "43c4890d11fec65696c54659b90db4841affb0ccae551e3cfff335db4233a9ab"
 kind = "rendered-content"
@@ -9029,7 +9347,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/homily.tex"
-sha256 = "448d142d5eaa0fe0535cd4432527a1672734823db69a4ba3985bfb9b8cd4097f"
+sha256 = "30b13599c715e124338f2c8fb298526109e9a0f1c3b7d61642d90aa0db6d48c2"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
@@ -9041,19 +9359,19 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/proper-components.toml"
-sha256 = "d0588d748f2f9e1652eb23a91599d1fa99b865105c0f9a669cbffd56acf4a8bb"
+sha256 = "8d05991b37a91afb5e466a8abbeb2571fb45dd279503c564b9c377233af758a8"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/propers/retrieved.txt"
-sha256 = "ff417b42d3542ef66e0d887be53f2a9581d3d03fe207d1c5ed5d27520e75b2d7"
+sha256 = "3c96373bc69b40001d6c315cdf3459bd1050e2742eca7a30986881289b8b40b2"
 kind = "local-evidence-payload"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/propers/verified.md"
-sha256 = "ebda4a0f776c8e921dacc403c1f0497f432c4f6449d4871075cb7a4d904529c7"
+sha256 = "df0692445c3b65b1e0034af0523b5ced3e02ad4b9c4e4010556c431f018393fc"
 kind = "proper-verification"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
@@ -9071,151 +9389,151 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/context.md"
-sha256 = "d4a4f33af2ec388799e70181b759d25c68b6bb246a9b162c27e6fed68dc4fe94"
+sha256 = "41f7b9c54cc1c340dd46c8efec291cedc1341c5bb83c9fccb1a54b8cdafac609"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/interpretations.md"
-sha256 = "1d225c377b74ace4fefdb9dfe35d3910b83eedcff0b317e0d78bd98a8c8f01a9"
+sha256 = "40707f126b71756797508e63738807fff7727cc0c090d917670f5cab36d0da0c"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/production-review.md"
-sha256 = "18fe9ab04a086e54a7b7465deef33589c27cd5405823d1415554d5797d58e294"
+sha256 = "cdd14a9a2bbd2731a072e11904f5e88c74d0f10518c490559a18427e68033698"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/review-dependencies.toml"
-sha256 = "aca5f17ac315e986b0a8ee6f982a2b74126b4f1c7f4d0e8cbdae1ce3ce21ab31"
+sha256 = "f39ad56dc0bf8db9c56f63884dfe4dd094f4f6833ff6e3cd30b03e8655013c4e"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/scope.md"
-sha256 = "6d2d4974b91dfaf31d0f6525f048d540fa90ce1b05e7336653aa517ecb973319"
+sha256 = "c90a6c41700d0d62a893dfb089bd7bc17bbed79fd7d850b74a0bb862d9b29c04"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/source-bindings.toml"
-sha256 = "28795c1d7174e1273c35bbdcf38291ada0b483d84af23dd9b85439386c6203ce"
+sha256 = "c7b5f5167d468a3feb601234b4013d552122b28834b17f53f4ed65eb356a32b9"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/source-dispositions.toml"
-sha256 = "4e9054a0af69922d2f68d37a2fbab59e26347bda9f0f88a2f70936435ac7d563"
+sha256 = "5533d8cd07e046714756874572955e92f54ff78b825f3c7e5f9be0be801f0fa9"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/00-opening.tex"
-sha256 = "5ac664bc18fb76769e9031d50e979bb9493d13aa89c2ba64b0add2f111c2540e"
+sha256 = "fa0c028a18077544c5b06b4d044965e9982b6b4ee0b541618375e919640fa4f3"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/05-appointed-texts.tex"
-sha256 = "be1bea5c798ef7ce957ac8936f9615c9ab4920057822aa94d09479f4f7ab4aa7"
+sha256 = "50562e9223995c595b203b60ebb38b4a230fa07eef5175b987d1bd300daaf55a"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/10-each-element.tex"
-sha256 = "be18971907e4c7f72d63bd528995fcf923f46a6b66512277c9cb6de3e798f112"
+sha256 = "b5f84b21c77e686a723fa316710a0d12936cde89b46ba8356fa5b0c7574d0a74"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/20-sealed-number-uncounted-crowd.tex"
-sha256 = "dbc47fb61b696666b055b45c46d9a5ed6edaa30bf18982697999e68c9be296c5"
+sha256 = "942a833350f62734d8ad7f303f05b8faf80afe3b06bf17eef7f9280bda51aa6d"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/30-beatitudes-way-of-the-saints.tex"
-sha256 = "7ade01269f77f57b1f86ff1c0046dd400c7762d886a9007bb030e9de32d0b83b"
+sha256 = "dd8f4370e84c16d59fd5b23e297b202e893db1b3915d6f31c63b5b44f67659a4"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/40-no-want-just-in-gods-hand.tex"
-sha256 = "405e28c77ec34abc16273616be02d70c9cbf77c930a047236eb77785ff72e9e9"
+sha256 = "2ce98e890a82e44f9b4c6ec6abc8375841cf289bfebadc4a883f77047fba4ac7"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/50-comparison.tex"
-sha256 = "724980e44444eb3662b5b877aa0268be9d81bc8a11cf0d9f9cc4d7e816ad7805"
+sha256 = "fa992f366c899b067c4cea3eba4987fdad9bb76e110d5b8f1640dfdf582edcc8"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/80-date-location.tex"
-sha256 = "dcd5be9ae548458b84870c992585c8d17c847c324801adec3eea2c830c55446b"
+sha256 = "d24752ed8971234d90e80bde986b569157e432ea7b8daa9f680b8ab7886bfd9e"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/90-apparatus.tex"
-sha256 = "25f90c40e9a7657c09e3ef9cb60b08b949dd4b1f25cfe4bfe6ebe67389d143fc"
+sha256 = "d64f98588a9008f385d332063a68dce1497d3515b14fc4afc520ffa4d45d7f57"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/01-inventory.tex"
-sha256 = "313a972e5e3e6bc2a5d6e997a8a55525e007923e6ca0937323af6344a08597c5"
+sha256 = "a0b1ff927528d42c6ff84bf85abcbed682ddb8381c6312ba78e99525e8469f03"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/02-overview.tex"
-sha256 = "298103616107751736032ec6b900c987963295e381262b7624f7a2397a5394b0"
+sha256 = "972f3fbcd170642b4117f45670a2e67015d8606f9d5606a99e8b836bb044b7e6"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/03-date-location.tex"
-sha256 = "628ff96fddc986aca625c416d6fc31169e61baedf82a7e1d21b5820e857f43de"
+sha256 = "0a59dda2a305b24944b4a3eb0e972b133f4460f6d85d43abf85a815be58f184b"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/04-themes.tex"
-sha256 = "7c266adc32318fab81ad8aeb5a82b0fda26921f640fa3053e77cea13b2840643"
+sha256 = "5615ef7204cc79e74f00329f03ac330ac25329b94b7865fe1933247385990c43"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/10-commentary.tex"
-sha256 = "f3f15e6f11d93fc0099bfa21225eee4e06c0962ade83c0b65897ba420894540d"
+sha256 = "68581d1a49b9ef1f2006273088c9d92f8abac3405a0c4509ea35f9e40d7e431e"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/90-apparatus.tex"
-sha256 = "a3bf205d3ec3f9756d603c1bb3ed5bf89ade6484d4b8daf5da6ec4da6cd18840"
+sha256 = "1a18f58912ea77fb72271afd136a424cb25ba129ac0f0ffb19ccba687faf2c59"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/10-homily.tex"
-sha256 = "210aa6e92c534c137682d244963833b7f4397e63524a1ecfa73b685d14a55647"
+sha256 = "30757206f0b455fc9580b41c6220927e6443f27a94e3ef7c9f01b962de515fa2"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/90-note.tex"
-sha256 = "8250c06d2b1af4863e30144c2b11f6ab69f6a1b0ea9e380c6696fef0a610d59b"
+sha256 = "249a7aeff6d912970db5b5e4db1fc02825fb3a10065d6e7d2a44cf83b4c6c764"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/synthesis.tex"
-sha256 = "88c43202b8dbf66c4269190b6f5f94df19a3302d210c4fa765c830c479e60cc4"
+sha256 = "800ef22ca937f33829e2daee306704f4733872875ef3f0e9673463374776730f"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/f02-all-saints"]
 

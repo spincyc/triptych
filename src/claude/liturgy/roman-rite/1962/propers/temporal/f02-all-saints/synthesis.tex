@@ -1,0 +1,48 @@
+% Concise study of the feast of All Saints, derived from the canonical
+% expansive study in this same leaf. The physical page positions of the
+% opening four pages are fixed by guidance/liturgy/propers-three-documents.md
+% and are recorded in the settled auxiliary file by the zref markers each
+% opening component carries. No cover or contents page stands before them.
+% The generated chronology definitions are imported once, by the page-2
+% component itself.
+\input{common/preamble}
+\input{common/propers-format}
+\input{liturgy/roman-rite/1962/propers/temporal/f02-all-saints/format}
+
+\hypersetup{
+  pdftitle={All Saints: A Concise Study of the Proper in the 1962 Roman Missal},
+  pdfsubject={Concise study of the 1962 Missale Romanum proper of the feast of All Saints, as said on Sunday 1 November 2026 with the commemoration of the Twenty-third Sunday after Pentecost: the appointed texts, four overview senses, the scriptural date and location of each passage, the themes of the propers, and a commentary comparing three interpretations of the whole Mass}
+}
+
+\begin{document}
+\propertitle{All Saints}
+{In Festo Omnium Sanctorum}
+{Missale Romanum 1962 \quad\textperiodcentered\quad Sanctorale, 1 November, I classis \quad\textperiodcentered\quad Sunday 1 November 2026}
+{The sealed and the uncounted, the Beatitudes, and the just in God's hand: three interpretations compared}
+
+\input{liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/01-inventory}
+\input{liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/02-overview}
+\clearpage
+\input{liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/03-date-location}
+\clearpage
+\input{liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/04-themes}
+\clearpage
+\input{liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/10-commentary}
+% The apparatus sets its running head before its section. \Needspace ends
+% the page first whenever the section cannot start where the commentary
+% ends, so the head is never marked on a page that holds none of it.
+\Needspace{12\baselineskip}
+\input{liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/concise/90-apparatus}
+% The metadata file prints the revision timestamp once, after the References;
+% the rights colophon follows it on the same final page. \Needspace ends the
+% page ahead of the colophon whenever the block cannot stand where the
+% References end, so the colophon never lands on a page of its own.
+\begingroup
+\hbadness=10000
+\footnotesize
+\setlength{\parindent}{0pt}
+\input{liturgy/roman-rite/1962/propers/temporal/f02-all-saints/generation-metadata}
+\Needspace{3\baselineskip}
+\TriptychRightsNotice
+\endgroup
+\end{document}

@@ -1,0 +1,67 @@
+# Controlling external evidence this research reads outside its leaf and that
+# registered source bindings do not already seal (research/source-bindings.toml
+# seals every bound record and its ancestry). Declared on 2026-10-27 in the
+# research stage of run 450355254538c1ba. Every path is a tracked record under
+# src/ in the roman-1962 family or the provider-neutral source library.
+#
+# Rights, ledgers, standing and joins
+# - missale-romanum-1962-facsimile-rights-v1.toml: the 17 U.S.C. 103(b) holding
+#   on which the Latin's publication basis rests, with Mame 1922 and Pustet 1862
+#   as the witnesses (propers/verified.md; research/scope.md section 9).
+# - lasance-new-roman-missal-rights-v1.toml: the nonrenewal record and excluded
+#   ranges behind the Lasance English.
+# - roman-1962-proper-latin-provenance-v1.toml and
+#   roman-1962-proper-translations-v1.toml: same-family ledgers whose rows, and
+#   missing scriptural rows, research/context.md and research/scope.md section
+#   10 report.
+# - author-standing-v1.toml: the standing column of the witness register
+#   (research/scope.md section 4) and the missing rows for Bernard, Victorinus,
+#   Cyprian, Bonaventure, Alphonsus Liguori, Peter of Celle and (iteration 2)
+#   Bruno of Würzburg that keep them from carrying a reading, and Rabanus
+#   Maurus's saint row, on which iteration 2 makes him a carrying author.
+# - source-containment-v1.toml and commentary/passage-commentary-index.yaml: the
+#   joins behind `commentary-work-index discover` for every appointed passage,
+#   including the Victorinus extent defect and the Wis 3:1-3 entry that maps no
+#   commentary although Bonaventure's is contained (research/scope.md sections 3
+#   and 10).
+# - commentary/formulary-loci.yaml: the empty `formulary` result for
+#   omnium-sanctorum and pentecost-23 (research/scope.md section 3.1).
+# - calendars/roman-1962/propers.yaml and rubrics.yaml: the occurrence and
+#   precedence inputs research/context.md adopts, and the Gospel and Offertory
+#   ranges research/scope.md sections 8.2 and 10 report.
+#
+# Ordinary marginal numbers
+# - The five 1962 Ordo Missae passage records whose marginal numbers
+#   research/context.md, "Other text-bearing parts of this Mass", cites.
+#
+# Dated ordo witnesses
+# - The ICRSP and FSSPX ordo records for 1 November 2026 that
+#   research/context.md reads for the day's celebration, the Preface and the
+#   last Gospel, and on which research/scope.md section 7's Preface negative
+#   also rests. This stage did not re-read them.
+#
+# The Scripture chronology corpus
+# research/chronology.toml and research/chronology-annotations.tex were generated
+# with tools/tpt proper-chronology (research/scope.md section 8). The engine
+# seals every file that computation opens outside the leaf and every source the
+# record cites; those need no declaration and are not repeated here.
+paths = [
+  "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml",
+  "src/sources/inventories/lasance-new-roman-missal-rights-v1.toml",
+  "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+  "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+  "src/sources/inventories/author-standing-v1.toml",
+  "src/sources/inventories/source-containment-v1.toml",
+  "src/sources/commentary/formulary-loci.yaml",
+  "src/sources/commentary/passage-commentary-index.yaml",
+  "src/sources/calendars/roman-1962/propers.yaml",
+  "src/sources/calendars/roman-1962/rubrics.yaml",
+  "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ordo-missae-ad-gradum.toml",
+  "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ordo-missae-kyrie-gloria.toml",
+  "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ordo-missae-credo.toml",
+  "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ordo-missae-conclusio.toml",
+  "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ordo-ad-aspergendam-aquam-benedictam.toml",
+  "src/sources/works/icrsp-france/ordo/editions/2026-10-26-web",
+  "src/sources/works/fsspx/ordo/work.toml",
+  "src/sources/works/fsspx/ordo/editions/2026-10-26-web",
+]

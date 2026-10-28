@@ -206,17 +206,21 @@ references = ["propers/verified.md", "research/interpretations.md", "research/sc
 
 # --- Interpretive readings of the whole formulary ------------------------------
 #
-# `authors` names every author a reading draws on; `carrying_authors` names the
-# ones who carry it, each a Father or a canonized saint in
-# src/sources/inventories/author-standing-v1.toml. Blessed Ildefonso Schuster
-# is read on this Mass as a Mass and is cited element by element; Lucien
-# Fromage and William Durandus stand as ecclesiastical writers; Rabanus Maurus
-# is cited as a compiler of Augustine. None of them carries a reading. The
+# `authors` names the authors with an author-standing row that a reading draws
+# on; `carrying_authors` names the ones who carry it, each a Father or a
+# canonized saint in src/sources/inventories/author-standing-v1.toml. St
+# Rabanus Maurus (standing saint) carries the Beatitudes reading only through
+# the words his commentary marks as his own; his comment on Mt 11:28, which is
+# Jerome's, is cited only in the element settings. Blessed Ildefonso Schuster is read on this Mass as a Mass; Lucien
+# Fromage, William Durandus and Sicard of Cremona stand as ecclesiastical
+# writers. None of them carries a reading. Bernard, Victorinus, Cyprian,
+# Bonaventure, Alphonsus Liguori, Bruno of Wurzburg and Peter of Celle have no
+# standing row and are cited in support only, so they are not listed. The
 # evidence map for every lane is research/interpretations.md.
 
 [[lanes]]
 key = "sealed-number-uncounted-crowd"
-authors = ["Bede", "Augustine of Hippo", "Gregory the Great", "Alfredo Ildefonso Schuster", "Lucien Fromage", "William Durandus"]
+authors = ["Bede", "Augustine of Hippo", "Gregory the Great", "Thomas Aquinas", "John Chrysostom", "Sicard of Cremona", "Lucien Fromage", "William Durandus", "Alfredo Ildefonso Schuster"]
 carrying_authors = ["Bede", "Augustine of Hippo"]
 sources = ["research/interpretations.md", "research/scope.md", "research/source-bindings.toml"]
 senses = ["literal", "allegorical", "moral", "anagogical"]
@@ -225,8 +229,8 @@ component_keys = ["sealed-number-uncounted-crowd"]
 
 [[lanes]]
 key = "beatitudes-way-of-the-saints"
-authors = ["Augustine of Hippo", "John Chrysostom", "Thomas Aquinas", "Hilary of Poitiers", "Rabanus Maurus", "Alfredo Ildefonso Schuster"]
-carrying_authors = ["Augustine of Hippo", "John Chrysostom", "Thomas Aquinas", "Hilary of Poitiers"]
+authors = ["Augustine of Hippo", "John Chrysostom", "Thomas Aquinas", "Hilary of Poitiers", "Rabanus Maurus", "Basil of Caesarea", "Bede", "Lucien Fromage"]
+carrying_authors = ["Augustine of Hippo", "John Chrysostom", "Thomas Aquinas", "Hilary of Poitiers", "Rabanus Maurus"]
 sources = ["research/interpretations.md", "research/scope.md", "research/source-bindings.toml"]
 senses = ["literal", "allegorical", "moral", "anagogical"]
 element_keys = ["introit", "collect", "commemoration-collect", "lesson", "gradual", "alleluia", "gospel", "offertory", "secret", "commemoration-secret", "preface", "communion", "postcommunion", "commemoration-postcommunion"]
@@ -234,8 +238,8 @@ component_keys = ["beatitudes-way-of-the-saints"]
 
 [[lanes]]
 key = "no-want-just-in-gods-hand"
-authors = ["Basil of Caesarea", "Robert Bellarmine", "Augustine of Hippo", "Thomas Aquinas", "Gregory the Great", "John Chrysostom", "Alfredo Ildefonso Schuster", "William Durandus"]
-carrying_authors = ["Basil of Caesarea", "Robert Bellarmine", "Augustine of Hippo", "Thomas Aquinas"]
+authors = ["Basil of Caesarea", "Augustine of Hippo", "Thomas Aquinas", "Robert Bellarmine", "Alfredo Ildefonso Schuster"]
+carrying_authors = ["Basil of Caesarea", "Augustine of Hippo", "Thomas Aquinas", "Robert Bellarmine"]
 sources = ["research/interpretations.md", "research/scope.md", "research/source-bindings.toml"]
 senses = ["literal", "allegorical", "moral", "anagogical"]
 element_keys = ["introit", "collect", "commemoration-collect", "lesson", "gradual", "alleluia", "gospel", "offertory", "secret", "commemoration-secret", "preface", "communion", "postcommunion", "commemoration-postcommunion"]

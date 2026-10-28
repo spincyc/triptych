@@ -1,0 +1,49 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/main.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "STU-001",
+      "note": "Fixed inference formula and certifying sentences removed; each inference marked once by a conditional or 'read with'; the three plain rewrites adopted; source-subject qualifications kept.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-002",
+      "note": "The three procession sections were recast with content titles, keeping only Father- or commentator-borne connections; the Sunday orations, Preface and other lightly touched texts get a clause each with no role in the thesis.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-003",
+      "note": "The openings credit each author with his own clause and state the thesis once as the study's; the comparison table has a per-author row and a separate row for the interpretation's answer.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-004",
+      "note": "The 'Reached by inference' row and the paragraphs below it name exactly the inferences the revised interpretations draw.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-005",
+      "note": "Golden chain (Hom. 15.9) in the heading, body and moral sense; present and future grounded on Hom. 15.4 and 15.5; Hom. 38.3 kept to Mt 11:29; the research-record 'ladder' defect is recorded in production-review.md for the research owner.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-006",
+      "note": "Each listed quotation has one full home, with clause-and-pointer references elsewhere; lane 2's Mt 11:28 survey was cut to the humility call, and the burden dispute was removed from the comparison table.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-007",
+      "note": "Six headings retitled by content, with no prefixes.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-008",
+      "note": "Lasance English attributed plainly in the three notes; the register qualification remains only in the scope appendix.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "author-study",
+  "summary": "This dispatch revised the expansive study of the Claude 1962 All Saints leaf to repair blocking findings STU-001 to STU-008 and clear advisories STU-009 to STU-012: the three interpretations' openings, closing sections, inference marking, headings and Chrysostom's golden chain; the comparison table and paragraphs; repeated quotations given one home; the Lasance notes; the date-location place cells; the lanes' author lists in the manifest; a fresh revision timestamp; and the production record. Author proof: build/tpt-runs/450355254538c1ba/artifacts/author-study-0001/f02-all-saints.pdf, 31 pages, sha256 d1d58ba54fb6bd7b3b7be2742554796bc353b70deb3302f71e51f018c7a26d0f; make doc clean (no undefined references, no overfull or underfull boxes), check-proper-components artifacts/research passed, every content preflight check and provenance-matches-run passed, and the web-edition probe completed. Defect for the research owner, recorded in research/production-review.md: research/scope.md section 3.7 and research/interpretations.md section 3 call Chrysostom's Hom. in Matt. 15 account 'a ladder', a word the cited NPNF lines do not contain; his image is 'a sort of golden chain' (15.9)."
+}

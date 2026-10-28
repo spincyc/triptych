@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 3946,
-  "editions": 1309,
+  "artifacts": 3955,
+  "editions": 1312,
   "passages": 9118,
   "readable": 3989,
-  "works": 1079
+  "works": 1081
  },
  "facets": {
   "authors": [
@@ -339,7 +339,7 @@
    },
    {
     "id": "Bernard of Clairvaux",
-    "works": 7
+    "works": 8
    },
    {
     "id": "Berno of Reichenau",
@@ -1183,7 +1183,7 @@
    },
    {
     "id": "Jacques-Paul Migne, publisher and series editor",
-    "works": 12
+    "works": 13
    },
    {
     "id": "James Joyce",
@@ -2372,6 +2372,10 @@
     "works": 14
    },
    {
+    "id": "collected-volume",
+    "works": 13
+   },
+   {
     "id": "museum-object",
     "works": 13
    },
@@ -2381,10 +2385,6 @@
    },
    {
     "id": "apostolic-constitution",
-    "works": 12
-   },
-   {
-    "id": "collected-volume",
     "works": 12
    },
    {
@@ -2472,6 +2472,10 @@
     "works": 6
    },
    {
+    "id": "sermon-series",
+    "works": 6
+   },
+   {
     "id": "biography",
     "works": 5
    },
@@ -2505,10 +2509,6 @@
    },
    {
     "id": "scholarly-catalogue",
-    "works": 5
-   },
-   {
-    "id": "sermon-series",
     "works": 5
    },
    {
@@ -4042,11 +4042,11 @@
   ],
   "languages": [
    {
-    "editions": 650,
+    "editions": 651,
     "id": "en"
    },
    {
-    "editions": 399,
+    "editions": 401,
     "id": "la"
    },
    {
@@ -4232,7 +4232,7 @@
     "label": "18th century"
    },
    {
-    "editions": 218,
+    "editions": 220,
     "id": "1800",
     "label": "19th century"
    },
@@ -4242,20 +4242,20 @@
     "label": "20th century"
    },
    {
-    "editions": 696,
+    "editions": 697,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 2228,
-    "editions": 493,
+    "artifacts": 2236,
+    "editions": 495,
     "id": "public-domain"
    },
    {
-    "artifacts": 889,
-    "editions": 447,
+    "artifacts": 890,
+    "editions": 448,
     "id": "restricted"
    },
    {
@@ -9495,6 +9495,33 @@
     "la"
    ],
    "title": "Letters of Bernard of Clairvaux"
+  },
+  {
+   "alternate_titles": [
+    "In festo omnium Sanctorum sermones",
+    "Sermons for the Feast of All Saints"
+   ],
+   "author": "Bernard of Clairvaux",
+   "category": "sermon-series",
+   "directory": "editions/bernard-of-clairvaux/sermones-in-festo-omnium-sanctorum/",
+   "editions": [
+    {
+     "date": "1854",
+     "file": "1854-1854-migne-pl183.json",
+     "id": "edition.bernard-of-clairvaux.sermones-in-festo-omnium-sanctorum.1854-migne-pl183",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "title": "In festo omnium Sanctorum sermones I-V, Mabillon's text",
+     "year": 1854
+    }
+   ],
+   "id": "work.bernard-of-clairvaux.sermones-in-festo-omnium-sanctorum",
+   "languages": [
+    "la"
+   ],
+   "title": "Sermones in festo omnium Sanctorum"
   },
   {
    "alternate_titles": [
@@ -20859,6 +20886,36 @@
     "la"
    ],
    "title": "Patrologiae cursus completus, Series Latina, volume 92"
+  },
+  {
+   "alternate_titles": [
+    "Patrologia Latina 183",
+    "PL 183",
+    "S. Bernardi abbatis primi Clarae-Vallensis opera omnia, volumen secundum"
+   ],
+   "author": "Jacques-Paul Migne, publisher and series editor",
+   "category": "collected-volume",
+   "directory": "editions/jacques-paul-migne/patrologia-latina-volume-183/",
+   "editions": [
+    {
+     "date": "1854",
+     "file": "1854-1854-paris.json",
+     "id": "edition.jacques-paul-migne.patrologia-latina-volume-183.1854-paris",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "S. Bernardi abbatis primi Clarae-Vallensis opera omnia, volumen secundum (Patrologia Latina 183, Paris, 1854)",
+     "year": 1854
+    }
+   ],
+   "id": "work.jacques-paul-migne.patrologia-latina-volume-183",
+   "languages": [
+    "la"
+   ],
+   "title": "Patrologiae cursus completus, series latina, tomus CLXXXIII"
   },
   {
    "alternate_titles": [
@@ -34345,6 +34402,20 @@
       "restricted"
      ],
      "title": "Summa Theologiae III, question 88: dated New Advent witness of the 1920 Dominican translation",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-27",
+     "file": "2026-2026-10-27-english-dominicans-newadvent-prima-q23.json",
+     "id": "edition.thomas-aquinas.summa-theologiae.2026-10-27-english-dominicans-newadvent-prima-q23",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain",
+      "restricted"
+     ],
+     "title": "Summa Theologiae I, question 23: dated New Advent witness of the 1920 Dominican translation",
      "year": 2026
     },
     {

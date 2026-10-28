@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-27.
+Last reconciled: 2026-10-28.
 
 ## Claude Four Last Things correction, 2026-10-27
 
@@ -82,10 +82,11 @@ editions.
 
 <!-- promised-deliverable: claude-1962-f02-revision-2026-10-27 -->
 
-**In progress: opened; the revision run is next.** On 2026-10-27 the
-maintainer asked that the Claude work of 26–27 October be checked, because
-partway through it the host had run some stages on kimi-k3 in place of the
-Claude model, without notice. For All Saints the audit found that the
+**In progress: accepted and committed locally; publication pending, in the
+same push as the Four Last Things correction.** On 2026-10-27 the maintainer
+asked that the Claude work of 26–27 October be checked, because partway
+through it the host had switched some stages from the Claude model to kimi-k3;
+the switch was announced inside those sessions but was not acted on. For All Saints the audit found that the
 substituted model had made the study's last two revisions and their
 reviews, the concise study, the homily and every stage after them, and part
 of the research. The maintainer decided to repair the publication on the
@@ -112,12 +113,34 @@ revises the leaf in place. It is seeded with the
 [research handoff](workflows/reviews/claude-1962-f02-revision-2026-10-27/HANDOFF.md),
 which lists the twelve findings of study-review iteration 0, the points
 where the later revisions went wrong and the research leads, and keeps the
-GPT leaf closed. Each stage runs as a fresh Factory Droid session with the
-model named explicitly and the packet's effort set exactly: `high` for the
-authors and `xhigh` for the reviews. Each session's recorded model is
-checked before its result is accepted. The published F02 documents stay
-live until the revision replaces them, and the Four Last Things correction
-publishes in the same push.
+GPT leaf closed.  Run `450355254538c1ba` reached ACCEPTED on 2026-10-28 with
+no escalation: 52 packets, 52 accepted results, one intervention, seven repair
+cycles (three in research, one each in the study, the concise study, the
+homily and the concise study's layout). Every accepted agent stage ran on
+`claude-opus-5-5` at its packet's effort. Through author-study 0 the workers
+were Factory Droid sessions with the model pinned, each accepted only after
+its session log showed the Claude model alone; one research attempt the host
+switched to kimi-k3 was rejected and its files removed, and one study-review
+result whose session closed on kimi-k3 was set aside and the review done
+again. From study-review 0 the workers were fresh Claude Code harness
+subagents. The installed PDFs are the expansive study (31 pages,
+`08f8c5e99572d5f8a9584555c47b901bc32abd09fdf74dd5d7094f387143c3bc`), the
+concise study (11 pages,
+`fb899d0258fe16641fb2be454eb088f37fd41011012fe599b5fb2d5ac397c881`) and the
+homily (4 pages,
+`a6630b389583e729bbaa18103fb48364e2767d47485ecbddeb4ddbef4d3bc2ac`); the web
+edition is `cbe405ad17c9ba6be5d64d37891a282e99700df9a1ded3528ab595931cf0438c`.
+The run is archived in the leaf; its [cycles
+record](workflows/reviews/claude-1962-f02-revision-2026-10-27/CYCLES.md) says
+what became of every handoff finding and lead and lists the advisories that
+stand, among them the physician answer at Aquinas, *In Ps.* 33 n. 10, which
+the research and both studies credit to Aquinas though he reports it as
+Augustine's (the homily is right). The archive tool's privacy audit was fixed
+after acceptance (`b38044fe8`) so that the run could be archived. The Claude
+publication inventory and the source-family ledger are refreshed. Remaining:
+the three deploy gates, the fast-forward of `origin/main`, the Pages run and
+the live check.
+
 ## Claude 1962 All Saints, 2026-11-01
 
 <!-- promised-deliverable: claude-1962-f02-all-saints-three-documents-2026-11-01 -->

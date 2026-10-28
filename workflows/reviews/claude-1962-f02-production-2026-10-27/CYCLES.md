@@ -96,9 +96,10 @@ revision:
 
 **Model provenance: correction of 27 October 2026.** This paragraph first
 said that every agent stage ran as `Opus 5.5`, the reviews at `xhigh`, and
-that no other agent contributed. That was wrong. Without notice, the host
-ran part of the driver's session, which wrote this record, and some workers
-on kimi-k3 in place of the Claude model: all of source-registration 0, the
+that no other agent contributed. That was wrong. The host switched part of the
+driver's session, which wrote this record, and some workers from the Claude
+model to kimi-k3; the switch was announced inside those sessions but was not
+acted on. The substituted model ran all of source-registration 0, the
 first dispatch of research-review 0, part of research 0 and of
 source-registration 3, and every dispatch from research-review 3 onward.
 The Claude workers ran as `claude-opus-5-5` at reasoning effort `high`, the

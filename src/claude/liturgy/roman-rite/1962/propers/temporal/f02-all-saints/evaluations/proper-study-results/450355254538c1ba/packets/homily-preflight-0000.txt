@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v15
+WORKFLOW_DIGEST: 4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83
+RUN_ID: 450355254538c1ba
+COMMIT: 4f52b9ade338f9a9f4f39f312aa45989a0baf2ca
+STAGE: homily-preflight
+ITERATION: 0
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-01","proper":"liturgy/roman-rite/1962/propers/temporal/f02-all-saints","provider":"claude","research_handoff":"workflows/reviews/claude-1962-f02-revision-2026-10-27/HANDOFF.md"}
+DOCUMENT_ROOT: src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: []
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)
