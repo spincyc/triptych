@@ -598,12 +598,15 @@ class CompleteMissalReportTests(unittest.TestCase):
         pre_unknown = pre_1955["textual"]["unknown_slots"]
         roman_unknown = families["roman-1962"]["textual"]["unknown_slots"]
         post_unknown = families["postconciliar"]["textual"]["unknown_slots"]
-        self.assertEqual(pre_unknown["lower_bound"], 6)
-        self.assertEqual(roman_unknown["lower_bound"], 6)
+        # c726f83a1 later settled Felicity, Sabina and Venantius from their own
+        # orations as read on the 1962 page images (each mass's notes); Boniface
+        # and the two Dedications remain unresolved.
+        self.assertEqual(pre_unknown["lower_bound"], 3)
+        self.assertEqual(roman_unknown["lower_bound"], 3)
         self.assertEqual(post_unknown["lower_bound"], 0)
         # The 1962 page-image C 2 mark resolves Stanislaus's shared Common
         # selection in both 1962 and the inherited pre-1955 source model.
-        self.assertEqual(len(pre_unknown["unresolved_common_set_selections"]), 6)
+        self.assertEqual(len(pre_unknown["unresolved_common_set_selections"]), 3)
         for row in pre_unknown["unresolved_common_set_selections"]:
             self.assertEqual(set(row), {"mass", "target", "group", "candidates"})
 
@@ -614,8 +617,11 @@ class CompleteMissalReportTests(unittest.TestCase):
         # 2026-10-19 (C3 1962 Pentecost): seven Pentecost entries (Cummiskey
         # Collect, Secret and Postcommunion; Lasance Introit, Gospel, Offertory
         # and Communion) are inherited too, giving 106; the Lasance Pentecost
-        # Alleluia bound the same day (G14 lane) gives 107.
-        self.assertEqual(english["with_english"], 107)
+        # Alleluia bound the same day (G14 lane) gives 107. The 2026-10-21..26
+        # English recoveries give 1168, as the accepted receipt
+        # workflows/reviews/missal-reader-completion-2026-10-26/
+        # source-review-final-source180-presentation-v2.json records.
+        self.assertEqual(english["with_english"], 1168)
         self.assertEqual(
             english["translation_ledger_calendars"],
             ["roman-1962", "roman-pre-1955"],

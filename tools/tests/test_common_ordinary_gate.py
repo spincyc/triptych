@@ -77,8 +77,12 @@ class CommonOrdinaryGate(unittest.TestCase):
         # A bounded in-memory projection of the actual Common source, using
         # the canonical producer and all its referenced terminal owners.
         cls.source.pop('citation_divergences', None)
+        # The finite dated execution sources validate non-Common hosts outside
+        # this projection; their own tests own them.
         with patch.object(MP, 'load_calendar', return_value=cls.source), patch.object(
             MP, 'masses_of', return_value=[('common', mass) for mass in cls.source['sections']['common']['masses']]
+        ), patch.object(MP._oration_execution, 'load_sources', return_value={}), patch.object(
+            MP._name_execution, 'load_name_sources', return_value={}
         ):
             cls.structure = MP.calendar_structure(ROOT / 'src/sources/calendars', 'roman-1962', MP.book_tokens())
 

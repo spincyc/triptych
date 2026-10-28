@@ -153,6 +153,12 @@ class CountingKeyTests(unittest.TestCase):
 
         # The annual source repair includes alternative forms and explicit
         # source-established slots even where the body remains unavailable.
+        # +23 since: twelve slots from eeab39fef (the Queenship's seven own
+        # propers and five seasonal alternatives in other formularies), two
+        # Damascene Offertory forms (7b3e16079),
+        # and the nine adopted owners (8d7e3b301; workflows/reviews/
+        # missal-reader-completion-2026-10-26/nine-owner-adoption.json). The
+        # census blocks regenerated in f3f59d483 and 8d7e3b301 record the same.
         self.assertEqual(
             {
                 row["kind"]: (row["masses"], row["propers"])
@@ -161,16 +167,16 @@ class CountingKeyTests(unittest.TestCase):
             {
                 "seasonal": (128, 1424),
                 "christological": (8, 99),
-                "marian": (18, 156),
-                "sanctoral": (307, 1669),
+                "marian": (18, 163),
+                "sanctoral": (307, 1685),
                 "common": (30, 382),
             },
         )
         self.assertEqual(counted["masses"], 491)
-        self.assertEqual(counted["propers"], 3730)
-        self.assertEqual(counted["substantive_propers"], 3730)
+        self.assertEqual(counted["propers"], 3753)
+        self.assertEqual(counted["substantive_propers"], 3753)
         self.assertEqual(counted["propers_in_forms"], 211)
-        self.assertEqual(counted["scripture_bearing_propers"], 2263)
+        self.assertEqual(counted["scripture_bearing_propers"], 2270)
         self.assertEqual(counted["slot_names"], 128)
 
 
@@ -518,8 +524,12 @@ class EnglishCoverageTests(unittest.TestCase):
             ["roman-1962", "roman-pre-1955"],
         )
         self.assertTrue(rows["roman-pre-1955"]["translation_ledger_inherited"])
+        # 49 + the eight Queenship records the child recension removes
+        # (3cd718395); the accepted receipt workflows/reviews/missal-reader-
+        # completion-2026-10-26/source-review-final-source180-presentation-v2.json
+        # records 57.
         self.assertEqual(
-            rows["roman-pre-1955"]["inherited_inapplicable_records"], 49
+            rows["roman-pre-1955"]["inherited_inapplicable_records"], 57
         )
 
     def test_translation_ledger_inheritance_follows_a_recension_chain(self) -> None:
@@ -791,13 +801,20 @@ class EnglishCoverageTests(unittest.TestCase):
         self.assertEqual(
             [432, 433], recovered["pentecost-13", "Secret"]["ia_leaf_range"]
         )
+        # Angela's former no-exemplar Secret and Postcommunion were closed by
+        # accepted Lasance rows of the 2026-10-23 English recovery (eeab39fef;
+        # roman-1962-english-recovery-2026-10-23.toml).
         angela = {
             row["proper"]: row["reason"]["kind"]
             for row in document["untranslated"]
             if row["mass"] == "s-angelae-mericiae-virginis"
         }
+        self.assertEqual({}, angela)
         self.assertEqual(
-            {"Secret": "no-exemplar", "Postcommunion": "no-exemplar"}, angela
+            {"Collect": "lasance-1945", "Secret": "lasance-1945",
+             "Postcommunion": "lasance-1945"},
+            {row["proper"]: row["witness"] for row in document["entries"]
+             if row["mass"] == "s-angelae-mericiae-virginis"},
         )
         rows = [
             row
@@ -952,6 +969,20 @@ class EnglishCoverageTests(unittest.TestCase):
         )
         self.assertEqual(len(phase5), 13)
         expected += phase5
+        # 2026-10-23..26: exactly the [[accepted]] targets of the reviewed
+        # English recovery ledger, one publication-bound owner each.
+        recovery = tomllib.loads(
+            (ROOT / "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml")
+            .read_text(encoding="utf-8")
+        )
+        recovered_targets = {tuple(row["target"]) for row in recovery["accepted"]}
+        recovered = [
+            row for row in document["entries"]
+            if (row["mass"], row.get("form_id"), row["proper"], row.get("cycle"),
+                row.get("occurrence")) in recovered_targets
+        ]
+        self.assertEqual(len(recovered), len(recovered_targets))
+        expected += recovered
         self.assertEqual(
             {
                 (

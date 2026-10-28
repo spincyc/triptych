@@ -5,6 +5,11 @@ ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT),str(ROOT/'scrip
 import _calendars as C
 from _proper_latin import LatinKey,SURFACES,body_owners,decision_for,publication_records,read_sidecar
 from tools.tests import _source_batch_guards as G
+# The finite qualified-rights adoption names the only bodies whose basis is not
+# public-domain; every other new or corrected body keeps the public-domain basis.
+QUALIFIED=json.loads((ROOT/'workflows/reviews/missal-reader-completion-2026-10-26/gregem-damasus-qualified-rights-adoption.json').read_text())
+QUALIFIED_IDENTITIES={G.canonical({'course':'','cycle':'','form':'','mass':m,'occurrence':o,'proper':p})
+ for m,f,p,c,o in(s['target']for s in QUALIFIED['exact_scopes'])if f=='main'and c=='all'}
 class CurrentSourceBatchLatinTests(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
@@ -37,7 +42,8 @@ class CurrentSourceBatchLatinTests(unittest.TestCase):
     key,body,state=self.bodies[identity];self.assertEqual(state,'present')
     self.assertEqual(G.digest(body),self.frozen['latin_current_bodies'][identity]['body_sha256'])
     row=self.validated[key]
-    self.assertEqual((row['provenance_status'],row['publication_status'],row['publication_basis']),('collated','permitted','public-domain'))
+    basis='qualified-nonoriginal-adaptation'if identity in QUALIFIED_IDENTITIES else'public-domain'
+    self.assertEqual((row['provenance_status'],row['publication_status'],row['publication_basis']),('collated','permitted',basis))
     self.assertEqual(set(row['surfaces']),set(SURFACES));self.assertTrue(decision_for(key,body,self.validated).permits(SURFACES))
     self.assertFalse(decision_for(key,body+'Amen.\n',self.validated).permits(SURFACES))
  def test_superseded_corrected_bodies_are_refused_by_actual_current_permissions(self):
@@ -63,6 +69,14 @@ class CurrentSourceBatchLatinTests(unittest.TestCase):
      self.assertTrue(decision_for(key,before,self.validated).permits(SURFACES))
     else:
      denial=decision_for(key,before,self.validated);self.assertFalse(denial.permits(SURFACES));self.assertIn('stale text hash',denial.reason)
-  self.assertEqual(proof_only,{'s-iosephi-calasanctii-confessoris'})
+  # Each keeps its exact historical body under an accepted proof-only repair:
+  # Calasanctius (latin-three-repair-adoption), the Seven Founders
+  # (two-primary-source-method-adoption), Philip Neri, Josaphat and Cosmas and
+  # Damian (their finite-source-methods records), Ignatius
+  # (francis-one-ignatius-proof-adoption) and Damasus
+  # (gregem-damasus-qualified-rights-adoption).
+  self.assertEqual(proof_only,{'s-iosephi-calasanctii-confessoris','ss-septem-fundatorum-ordinis-servorum-beatae',
+   's-philippi-nerii-confessoris','s-ignatii-episcopi-martyris','s-iosaphat-episcopi-martyris',
+   's-damasi-i-papae-confessoris','ss-cosmae-damiani-martyrum'})
   self.assertEqual(restored,{'s-antonii-padua-confessoris-ecclesiae-doctoris'})
 if __name__=='__main__':unittest.main()

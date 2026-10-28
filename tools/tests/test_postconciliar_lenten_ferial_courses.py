@@ -190,8 +190,9 @@ class LentenFerialCourseTests(unittest.TestCase):
 
     def test_english_and_latin_census_have_exact_terminal_owners(self):
         coverage = self.mp.english_coverage(CALENDARS, "postconciliar")
+        # 561->564/113->116: postconciliar-three-owner-adoption.json (accepted 2026-10-26).
         self.assertEqual({k: coverage[k] for k in ("slots", "with_english", "ledgered_untranslated", "rights_restricted")},
-                         {"slots": 561, "with_english": 113, "ledgered_untranslated": 448, "rights_restricted": 0})
+                         {"slots": 564, "with_english": 116, "ledgered_untranslated": 448, "rights_restricted": 0})
         for field in ("unaccounted", "outside_the_ledger", "unmatched_records", "stale_translation_records"):
             self.assertEqual(coverage[field], 0)
         source_records, trouble = self.check.source_records()

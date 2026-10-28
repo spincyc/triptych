@@ -965,8 +965,9 @@ class WinterUrsulaSourceRepairTests(unittest.TestCase):
         owners = list(body_owners(BATCH_GUARDS.historical_document(self.document)))
         self.assertEqual((1289,1269,20),(len(prior_records),sum(s=="present" for _,_,s in owners),
                                       sum(s=="removed" for _,_,s in owners)))
-        self.assertEqual(1269,sum(r["publication_status"]=="permitted" for r in prior_records.values()))
-        self.assertEqual(17,sum(r["provenance_status"]=="unresolved" for r in prior_records.values()))
+        # Anthony Collect removed->permitted by accepted latin-seven-rights-adoption.json (2026-10-26).
+        self.assertEqual(1270,sum(r["publication_status"]=="permitted" for r in prior_records.values()))
+        self.assertEqual(16,sum(r["provenance_status"]=="unresolved" for r in prior_records.values()))
         self.assertEqual(3,sum(r["publication_status"]=="withheld" for r in prior_records.values()))
         boniface = self.index["comm-s-bonifatii-martyris"]["takes_from"]["common_sets"]["orations"]
         self.assertEqual("unresolved",boniface["state"])

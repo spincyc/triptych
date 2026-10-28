@@ -224,9 +224,12 @@ class MissalExemplarParityTests(unittest.TestCase):
         })
         choices = [event for event in post["expanded_events"]
                    if event["kind"] == "proper-choice"]
+        # Unchosen groups now carry their required selection state
+        # (80c81b358, ee8278c94; guidance/liturgy-reader-state.md).
         self.assertEqual(choices, [{
             "id": "proper-choice/postconciliar/pentecost/day/entrance-antiphon",
             "kind": "proper-choice", "source_index": 14, "form_id": "day",
+            "selection": {"state": "required", "option": None},
             "options": [
                 {"id": "spiritus-domini", "events": ["proper/postconciliar/pentecost/015"]},
                 {"id": "caritas-dei", "events": ["proper/postconciliar/pentecost/016"]},
@@ -240,23 +243,30 @@ class MissalExemplarParityTests(unittest.TestCase):
         )
         # Propers has no civil date.  Its two date-conditioned Ordinary rows
         # therefore remain unresolved instead of inheriting Day's predicate.
+        # Its undated OLM n. 63 reading-set choice (pentecost-day-readings,
+        # c726f83a1) also withholds the Second Reading (020) and Gospel (023),
+        # so the second-reading-appointed Ordinary row stays unresolved too.
         post_propers = self.browser["postPropersMissal"]
         self.assertEqual(post_propers["calendarResult"], None)
         self.assertEqual(
             {row["element"] for row in post_propers["ordinaryUnresolved"]},
-            {"ritus-initiales/gloria-in-excelsis", "symbolum/symbolum-nicaenum"},
+            {"ritus-initiales/gloria-in-excelsis", "liturgia-verbi/lectio-secunda",
+             "symbolum/symbolum-nicaenum"},
         )
+        withheld = {
+            "ordinary-element/ritus-initiales/gloria-in-excelsis",
+            "ordinary-element/liturgia-verbi/lectio-secunda",
+            "proper/postconciliar/pentecost/020",
+            "proper/postconciliar/pentecost/023",
+            "ordinary-element/symbolum/symbolum-nicaenum",
+        }
         self.assertEqual(
             set(post_ids) - set(event["id"] for event in post_propers["events"]),
-            {"ordinary-element/ritus-initiales/gloria-in-excelsis",
-             "ordinary-element/symbolum/symbolum-nicaenum"},
+            withheld,
         )
         self.assertEqual(
             [event["id"] for event in post_propers["events"]],
-            [event_id for event_id in post_ids if event_id not in {
-                "ordinary-element/ritus-initiales/gloria-in-excelsis",
-                "ordinary-element/symbolum/symbolum-nicaenum",
-            }],
+            [event_id for event_id in post_ids if event_id not in withheld],
         )
         self.assertEqual(post_propers["domIds"],
                          [event["id"] for event in post_propers["events"]])
@@ -266,7 +276,10 @@ class MissalExemplarParityTests(unittest.TestCase):
         self.assertEqual(len(pre_ids), 181)
         self.assertEqual(self.assert_full_event_parity(pre, "prePropersMissal"), pre_ids)
         self.assertEqual(pre["ordinary_appointments"], APPOINTMENTS)
-        self.assertEqual(pre["recension_coverage"]["status"], "structural-only")
+        # The accepted Bonn Pentecost three-prayer attestation (8d7e3b301;
+        # missal-reader-completion-2026-10-26/reader-integration-review.json)
+        # moves the recension from structural-only to partial.
+        self.assertEqual(pre["recension_coverage"]["status"], "partial")
         self.assertIn("inherited", self.browser["preDayMissal"]["coverageNotice"].lower())
 
     def test_cli_printed_landmarks_follow_browser_event_order(self) -> None:
@@ -290,17 +303,25 @@ class MissalExemplarParityTests(unittest.TestCase):
         self.assertEqual(self.browser["propersRead"]["domIds"], proper_ids)
         self.assertEqual(self.browser["dayEnglish"]["domIds"], proper_ids)
 
-    def test_lesson_english_absence_keeps_latin_and_types_bible_text(self) -> None:
+    def test_lesson_english_antecedent_replaces_latin_and_types_bible_text(self) -> None:
+        # The former English absence is superseded by the accepted Lasance 1945
+        # admission (3cd51e852; workflows/reviews/missal-reader-resume-2026-10-23/
+        # source-review-phase5-additional209.json).
         lesson = self.mass["propers"][2]
         english = next(row for row in lesson["coverage"]["languages"] if row["lang"] == "en")
-        self.assertEqual(english["availability"], "unresolved")
-        self.assertEqual(english["relationship"], "unresolved")
-        self.assertEqual(english["witnesses"], [])
-        self.assertIn("(no en translation recorded; showing Latin)", self.cli_english)
+        self.assertEqual(english["availability"], "available")
+        self.assertEqual(english["relationship"], "historical-antecedent")
+        self.assertEqual([row["source_id"] for row in english["witnesses"]], [
+            "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+        ])
+        self.assertNotIn("(no en translation recorded; showing Latin)", self.cli_english)
+        self.assertIn("Lesson from the Acts of the Apostles.", self.cli_english)
         rendered = self.browser["dayEnglish"]["lesson"]
-        self.assertIn("English translation unavailable: not resolved", rendered)
-        self.assertIn("The Latin original is shown", rendered)
-        self.assertIn("Lectio Actuum Apostolorum", rendered)
+        self.assertNotIn("English translation unavailable", rendered)
+        self.assertNotIn("The Latin original is shown", rendered)
+        self.assertNotIn("Lectio Actuum Apostolorum", rendered)
+        self.assertIn("Lesson from the Acts of the Apostles.", rendered)
+        self.assertIn("Translation: Lasance and Walsh, The New Roman Missal (1945 revision)", rendered)
         self.assertIn("not the Missal’s wording", rendered)
 
 

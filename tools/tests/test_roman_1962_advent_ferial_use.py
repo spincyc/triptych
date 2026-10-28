@@ -36,13 +36,16 @@ CASES = {
     "advent-3": ("2026-12-13", ["2026-12-14", "2026-12-15", "2026-12-17"]),
     "advent-4": ("2026-12-20", ["2026-12-22", "2026-12-23"]),
 }
+# 2026-12-05 and 12-10 commemorate these saints. Since 8d7e3b301 the Day
+# oration assembly binds each commemorated Collect to its exact source owner.
+COMMEMORATIONS = ("comm-s-sabbae-abbatis", "comm-s-melchiadis-papae-martyris")
 
 # Canonical source resolver supplies appointment identities and inherited
 # metadata. The fixture keeps the actual held source bodies and references;
 # the test does not author a second applicability resolver or Missal wording.
 def structure():
     masses = []
-    for key in [*CASES, "pentecost-2"]:
+    for key in [*CASES, "pentecost-2", *COMMEMORATIONS]:
         entries, problems = C.resolve_propers(SOURCE, INDEX[key], appointments=True)
         if problems:
             raise AssertionError(problems)
@@ -54,7 +57,8 @@ def structure():
             row.update(form=form, form_id="main", cycles={}, translations=[])
             row["citations"] = [{"ref": verse["ref"]} for verse in row.get("verses", [])]
             rows.append(row)
-        masses.append({"key": key, "kind": "seasonal", "propers": rows})
+        masses.append({"key": key, "kind": "sanctoral" if key in COMMEMORATIONS else "seasonal",
+                       "propers": rows})
     return {"calendar": "roman-1962", "proper_appointment_facts": SOURCE["proper_appointment_facts"],
             "translations": [], "masses": masses}
 
@@ -197,14 +201,15 @@ class AdventFerialUse(unittest.TestCase):
                                              "advent-3": [], "advent-4": []})
         # Held 1962 AP86 / printed p.5 L, unit25 (before Gospel26) has
         # no printed citation. The former Psalm79:3 was an inference, removed
-        # by the held-page appointment correction.
+        # by the held-page appointment correction. Its former body gap is
+        # filled by the accepted Phase 5 Latin22 body (1f1be432b; ledger and
+        # missal-source-batch-20261023 latin_current_bodies).
         alleluia = INDEX["advent-3"]["propers"][4]
         self.assertEqual(alleluia["source"], "composed")
         self.assertEqual(alleluia["incipit"], "Excita, Domine, potentiam tuam")
-        self.assertNotIn("text", alleluia)
-        self.assertEqual(alleluia["text_status"], {
-            "state": "unavailable", "scope": "proper-body",
-            "reasons": [{"kind": "no-exemplar"}]})
+        self.assertEqual(hashlib.sha256(alleluia["text"].encode()).hexdigest(),
+                         "0188d53c71815633e8cf11e8d8a245f74e98481cafb978ebe38348733b0b3ccc")
+        self.assertNotIn("text_status", alleluia)
         self.assertEqual(hashlib.sha256(INDEX["advent-4"]["propers"][4]["text"].encode()).hexdigest(),
                          "b7d6fee93fb37223387643d18c0640604e0235b2e63e5813ad8755dfff0f7240")
 
