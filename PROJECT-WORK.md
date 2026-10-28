@@ -11,8 +11,7 @@ Last reconciled: 2026-10-28.
 
 <!-- promised-deliverable: claude-flt-correction-2026-10-27 -->
 
-**In progress: corrected and reviewed locally; publication pending, in the
-same push as the All Saints revision.** On 2026-10-27 the maintainer asked
+**Complete: corrected, pushed to `main` and verified live.** On 2026-10-27 the maintainer asked
 that the Claude work of 26 October be checked for damage from a model
 substitution: partway through that work the host switched the coordinating
 session and some of its workers from the Claude model to kimi-k3. The switch
@@ -74,16 +73,20 @@ record's "Web edition repairs, 27 October 2026".
 | IV Heaven | 22 | `53f57926044cfefef5f41dc0de2f1e858d28ae14545f9070c65a2a2e25f6f252` | `185560890437b62851f7aef26bcb39dd594370f936e9c4d5001de398c40632f0` |
 
 The Claude publication inventory, document catalogue and scoped release
-bindings are refreshed. Remaining: the three deploy gates, the fast-forward
-of `origin/main`, the Pages run and the live check of the four PDFs and web
-editions.
+bindings are refreshed. The correction published with the All Saints revision:
+`origin/main` fast-forwarded to `ffadf81e4e` on 2026-10-28 after the three
+deploy gates passed locally, Pages run 40753942788 and repository hygiene run
+40753942791 succeeded, and the four live PDFs and web editions matched the
+local site build byte for byte, the PDFs also matching the table above, as the
+revision's [deployment
+evidence](workflows/reviews/claude-1962-f02-revision-2026-10-27/deployment-evidence.json)
+records.
 
 ## Claude 1962 All Saints revision, 2026-10-27
 
 <!-- promised-deliverable: claude-1962-f02-revision-2026-10-27 -->
 
-**In progress: accepted and committed locally; publication pending, in the
-same push as the Four Last Things correction.** On 2026-10-27 the maintainer
+**Complete: accepted, pushed to `main` and verified live.** On 2026-10-27 the maintainer
 asked that the Claude work of 26–27 October be checked, because partway
 through it the host had switched some stages from the Claude model to kimi-k3;
 the switch was announced inside those sessions but was not acted on. For All Saints the audit found that the
@@ -137,9 +140,15 @@ stand, among them the physician answer at Aquinas, *In Ps.* 33 n. 10, which
 the research and both studies credit to Aquinas though he reports it as
 Augustine's (the homily is right). The archive tool's privacy audit was fixed
 after acceptance (`b38044fe8`) so that the run could be archived. The Claude
-publication inventory and the source-family ledger are refreshed. Remaining:
-the three deploy gates, the fast-forward of `origin/main`, the Pages run and
-the live check.
+publication inventory and the source-family ledger are refreshed. branch twice
+(`2d87e1cad8`, `ffadf81e4e`), each time re-recording only this branch's
+site-source bindings; after the three deploy gates passed locally,
+`origin/main` fast-forwarded to `ffadf81e4e` on 2026-10-28. Pages run
+40753942788 and repository hygiene run 40753942791 succeeded, and the three
+live PDFs and the web edition matched the local site build and the reviewed
+bytes, as the [deployment
+evidence](workflows/reviews/claude-1962-f02-revision-2026-10-27/deployment-evidence.json)
+records.
 
 ## Claude 1962 All Saints, 2026-11-01
 
