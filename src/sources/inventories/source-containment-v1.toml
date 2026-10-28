@@ -57000,3 +57000,17 @@ manifest_sha256 = "086079810e2b2ba1a6c38ca411ebc487843ff49d0ca2eae64621cd08f045d
 status = "unresolved"
 basis = "The identified historical collection and its exact acquired OCR/XML/page-map records establish a physical source container. No constituent act has yet been admitted from this volume; candidate headings and acquisition do not establish complete act holdings."
 unresolved = "All 46 initial raw proposals remain held/unreviewed in the Benedict XIV catalog. No individual-act completeness, textual collation or authentication is claimed."
+
+[[containers]]
+id = "work.united-states-conference-of-catholic-bishops.divine-worship-newsletter-2021-02"
+manifest_sha256 = "e31c66f3d064eabf646ab495c3e45248351fb5ab5fa6f8f5eb22eae1bec86b04"
+status = "partial"
+basis = "Complete four-page February 2021 issue, printed 5-8, acquired as exact e06d7b65 artifact; inspected article title and printed 7-8 identify the constituent below."
+unresolved = "Other issue contents were acquired, not individually identified as reusable works or inspected for publication claims."
+
+[[containers.constituents]]
+author = "United States Conference of Catholic Bishops, Secretariat of Divine Worship"
+title = "USCCB Approves, CDWDS Confirms Translation Change to Collect Prayer Conclusions"
+whole = true
+locator = "printed 7-8 / artifact pages 3-4"
+basis = "The complete article and its continuation were read at the stated pages; the title appears at the opening on printed 7."

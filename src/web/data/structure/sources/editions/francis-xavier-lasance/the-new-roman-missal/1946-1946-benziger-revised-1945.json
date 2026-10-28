@@ -45,6 +45,21 @@
   },
   {
    "artifact_type": "normalized-text",
+   "byte_size": 249,
+   "edition_owned": true,
+   "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.reader-completion-20261026-absent-nodes-english-71e0c1c9",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "notes": "Recipient-keyed exact bounded historical-English rows. English correspondence is established prayer by prayer, not by incipit or saint. Full source witness and target evidence remain separate.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "public-domain",
+   "rights_basis": "Only ordinary-page original Lasance/Walsh revised1945 English in title-identified1946 printing under existing United States nonrenewal finding for A110108/A192159. Exact registered135628123-byte searchable PDF, not the separately inspected2.49GB original, controls admitted words. No Google framing or whole-scan clearance.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "normalized-text",
    "byte_size": 584,
    "edition_owned": true,
    "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.resume-lexical-holyweek-lexical3-55f8d0b6",
@@ -601,6 +616,72 @@
    "text_path": "structure/sources/text/passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.holy-wednesday-secret-latin.json",
    "verified_on": "2026-10-23",
    "words": 22
+  },
+  {
+   "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.reader-completion-20261026-absent-nodes-english-71e0c1c9",
+   "artifact_type": "normalized-text",
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.reader-completion-20261026-absent-nodes-vigil-saints-peter-paul--main--secret--all--1-publish-en",
+   "locus": "printed p. 1073; body artifact pages [1083]; referral pages [1087]",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-26",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d",
+   "artifact_type": "facsimile-pdf",
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.reader-completion-20261026-absent-nodes-vigil-saints-peter-paul--main--secret--all--1-verify-en-body",
+   "locus": "printed p. 1073; body artifact pages [1083]; referral pages [1087]",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "The rights position for this artifact has not been settled, and an unsettled question is not a permission.",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/the-new-roman-missal/The%20New%20Roman%20Missal%20%281945%29_text.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-10-26",
+   "withheld": "rights"
+  },
+  {
+   "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d",
+   "artifact_type": "facsimile-pdf",
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.reader-completion-20261026-absent-nodes-vigil-saints-peter-paul--main--secret--all--1-verify-en",
+   "locus": "printed p. 1073; body artifact pages [1083]; referral pages [1087]",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "The rights position for this artifact has not been settled, and an unsettled question is not a permission.",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/the-new-roman-missal/The%20New%20Roman%20Missal%20%281945%29_text.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-10-26",
+   "withheld": "rights"
   }
  ],
  "schema": "triptych-source-reader/v1",

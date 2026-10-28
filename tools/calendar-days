@@ -97,7 +97,7 @@ EXAMPLES = {
         Example(
             "tools/calendar-days check",
             (
-                "postconciliar: 38406 placements",
+                "postconciliar: 38421 placements",
                 "roman-1962: 12667 placements",
                 "roman-pre-1955: 12565 placements",
                 "checked against the worked tables in guidance/liturgy/calendar-computation.md",
@@ -106,7 +106,7 @@ EXAMPLES = {
         Example(
             "tools/calendar-days check --json",
             (
-                "{\"calendars\":{\"postconciliar\":{\"placements\":38406,\"rules_suppressed_by_recension\":[],\"rules_with... [+502 chars]",
+                "{\"calendars\":{\"postconciliar\":{\"placements\":38421,\"rules_suppressed_by_recension\":[],\"rules_with... [+502 chars]",
             ),
         ),
     ),
@@ -116,7 +116,7 @@ EXAMPLES = {
             (
                 "roman-1962: 2026-2026",
                 "  dates 365: 316 resolve to a mass, 49 to nothing, 123 carry unranked candidates",
-                "  ferial formulary on 239 dates; 0 dates reach no mass at all",
+                "  ferial formulary on 242 dates; 0 dates reach no mass at all",
                 "  masses 491: 456 reachable, 8 never placed",
                 "    never placed: epiphany-4 (seasonal) - no rule in guidance/liturgy/calendar-computation.md fixes a date for this mass",
                 "    never placed: missa-de-s-maria-in-sabbato-1 (common) - no rule in guidance/liturgy/calendar-computation.md fixes a date for this mass",
@@ -134,7 +134,7 @@ EXAMPLES = {
         Example(
             "tools/calendar-days check",
             (
-                "postconciliar: 38406 placements",
+                "postconciliar: 38421 placements",
                 "roman-1962: 12667 placements",
                 "roman-pre-1955: 12565 placements",
                 "checked against the worked tables in guidance/liturgy/calendar-computation.md",
@@ -417,19 +417,6 @@ OT_GOVERNOR_RULE = (
 # take the whole of WEEKDAYS.
 ADVENT_THIRD_WEEK_WEEKDAYS = 5
 
-# 30 December is the one day of these runs that still fails closed, and not for
-# want of a grammar.
-THIRTIETH_OF_DECEMBER_FAILS_CLOSED = (
-    "25 December is a Sunday, so no Sunday falls within the octave and the "
-    "Holy Family has none to occupy. "
-    + GUIDANCE
-    + " records that Universal Norms 35 a, which is reported to seat it on 30 "
-    "December in such a year, has not been read in a witness for it, so this "
-    "repository does not compute the day's own celebration. A weekday position "
-    "placed there would stand on a date whose celebration has been declined"
-)
-
-
 # ---------------------------------------------------------------- computus
 
 
@@ -664,9 +651,10 @@ class Year:
     def resolve_ferial(self, windows: tuple) -> None:
         """Fill `ferial` for every date whose feria has no Mass of its own.
 
-        A date is skipped where it already carries a temporal candidate, since
-        that candidate is the day's own Mass and RGMR 299 reaches only the
-        remaining ferias. Sundays are skipped because a Sunday is not a feria.
+        A date is skipped where it already carries its own temporal Mass.
+        The 1962 Litany Mass does not constitute the Office of the day under
+        RG 81 and 88, so it does not suppress a remaining feria's formulary.
+        Sundays are skipped because a Sunday is not a feria.
         Everything else in a covered window takes the Mass its immediately
         preceding Sunday governs -- the *immediately* preceding one, so that a
         Sunday occupied by a feast, which this index gives no Mass of the
@@ -680,10 +668,21 @@ class Year:
                 self.ferial[when] = entries
             when += timedelta(days=1)
 
+    def has_own_temporal_mass(self, when: date) -> bool:
+        # RG 81 and 88 confine the 1962 Litany observances to the Mass:
+        # nothing is done in the Office. Their additional Mass therefore does
+        # not replace the feria whose formulary RGMR 299 appoints. A vigil or
+        # other temporal day on the same date still suppresses the borrowing.
+        return any(
+            entry["origin"] == "temporal"
+            and not (self.calendar == "roman-1962" and entry["key"] == "rogation-mass")
+            for entry in self.placements.get(when, [])
+        )
+
     def _ferial_on(self, when: date, covered: dict) -> list[dict]:
         if when.weekday() == 6:
             return []
-        if any(e["origin"] == "temporal" for e in self.placements.get(when, [])):
+        if self.has_own_temporal_mass(when):
             return []
         window = covered.get(self.season_of(when) or "")
         if window is None:
@@ -913,34 +912,43 @@ def build_1962(
             "a transfer by the local Ordinary is not computed",
         )
 
-    # Universal Norms 7 belongs to the postconciliar calendar. No 1962
-    # territorial Sunday transfer has been established by a source held here.
-    # The uncollated pre-1955 projection keeps its existing arithmetic.
-    universal_1962 = target_calendar == "roman-1962"
-    thursday_form, sunday_form = (
-        (None, None) if universal_1962 else TERRITORIAL_OPTIONS["ascension"]
-    )
-    year.put(easter + timedelta(days=38), "vigil-of-the-ascension", "Easter +38", thursday_form)
-    year.put(a.ascension_thursday, "ascension", "Easter +39", thursday_form)
-    year.put(a.ascension_sunday, "sunday-after-ascension", "Easter +42", thursday_form)
-    if not universal_1962:
-        year.put(a.ascension_sunday, "ascension", "Easter +42", sunday_form)
+    # Universal Norms 7 belongs to the postconciliar calendar. It supplies
+    # no territorial transfer for either older Roman calendar. The accepted
+    # Bonn conformed pre-1955 witness's generic Paschal table (artifact p. 23)
+    # assigns Ascension at Easter +39 and Corpus Christi at +60 in all 35
+    # possible Easter-date rows. This is a bounded witness-based finding aid,
+    # not a claim about a local calendar or the 1920 typical impression.
+    year.put(easter + timedelta(days=38), "vigil-of-the-ascension", "Easter +38")
+    year.put(a.ascension_thursday, "ascension", "Easter +39")
+    year.put(a.ascension_sunday, "sunday-after-ascension", "Easter +42")
 
     # The Missal provides otherwise at In Ascensione Domini, printed p. 352:
     # "Diebus a feria VI post Ascensionem usque ad feriam VI ante vigiliam
     # Pentecostes inclusive, dicitur Missa de festo Ascensionis." The rubric is
     # applied to the universal Thursday assignment in the 1962 projection.
     # No alternative 1962 borrowing is inferred for an unproved local transfer.
-    for offset in range(40, 48):
+    # The older witness keeps the Ascension octave but changes the Friday
+    # after its octave to the preceding Sunday's Mass (Bonn artifact pp.
+    # 484-486 / printed pp. 380-382). The 1962 borrowing runs one day longer.
+    last_ascension_offset = 46 if target_calendar == "roman-pre-1955" else 47
+    for offset in range(40, last_ascension_offset + 1):
         when = easter + timedelta(days=offset)
         year.borrows(
             when,
             "ascension",
             "RGMR 299 provided otherwise: the Missal's rubric at printed p. 352 "
             "gives the Mass of the Ascension to the days from the Friday after "
-            "it to the Friday before the vigil of Pentecost inclusive",
-            territorial=thursday_form,
-            under_the_other_option=sunday_form if offset < 42 else None,
+            "it to the Friday before the vigil of Pentecost inclusive"
+            if target_calendar != "roman-pre-1955" else
+            "Bonn conformed pre-1955 witness, artifact pp. 484-486: "
+            "the Mass of Ascension within its octave and on the octave day",
+        )
+    if target_calendar == "roman-pre-1955":
+        year.borrows(
+            easter + timedelta(days=47),
+            "sunday-after-ascension",
+            "Bonn conformed pre-1955 witness, artifact p. 486 / printed p. 382: "
+            "the Friday after the Ascension octave takes the preceding Sunday's Mass",
         )
 
     year.put(easter + timedelta(days=48), "vigil-of-pentecost", "Easter +48")
@@ -973,12 +981,7 @@ def build_1962(
         "prints for the ferias of the week that follows it, Trinity Sunday "
         "having taken the Sunday",
     )
-    corpus_thursday, corpus_sunday = (
-        (None, None) if universal_1962 else TERRITORIAL_OPTIONS["corpus-christi"]
-    )
-    year.put(a.corpus_christi_thursday, "corpus-christi", "Easter +60", corpus_thursday)
-    if not universal_1962:
-        year.put(a.corpus_christi_sunday, "corpus-christi", "Easter +63", corpus_sunday)
+    year.put(a.corpus_christi_thursday, "corpus-christi", "Easter +60")
     year.put(
         easter + timedelta(days=68),
         "sacred-heart",
@@ -1056,9 +1059,7 @@ def build_1962(
     resumed = max(after - 24, 0)
     for slot in range(2, min(23, after - 1) + 1):
         when = a.pentecost + timedelta(days=7 * slot)
-        # Slot 2 is the Sunday a transferred Body and Blood of Christ occupies.
-        mark = corpus_thursday if slot == 2 else None
-        year.put(when, f"pentecost-{slot}", f"slot {slot} of {after} Sundays after Pentecost", mark)
+        year.put(when, f"pentecost-{slot}", f"slot {slot} of {after} Sundays after Pentecost")
         year.governs(when, f"pentecost-{slot}", FERIAL_RULE + f"Sunday {slot} after Pentecost")
     for index, ordinal in enumerate(range(7 - resumed, 7)):
         slot = 24 + index
@@ -1189,11 +1190,11 @@ def build_postconciliar(ending: int, known: set[str]) -> Year:
             "Universal Norms 6: the Sunday within the octave of the Nativity",
         )
     else:
-        year.refuse(
+        year.put(
+            date(ending - 1, 12, 30),
             "holy-family",
-            "25 December is a Sunday, so no Sunday falls within the octave, and "
-            + GUIDANCE
-            + " states no fallback date",
+            "Universal Norms 35 a: 30 December when no Sunday falls within "
+            "the octave of the Nativity",
         )
 
     # The three weekday positions the Octave of the Nativity contributes.
@@ -1208,12 +1209,7 @@ def build_postconciliar(ending: int, known: set[str]) -> Year:
         if when.weekday() == 6:
             continue
         if day_of_month == 30 and within > date(ending - 1, 12, 31):
-            year.refuse(
-                "the weekday position of 30 December",
-                THIRTIETH_OF_DECEMBER_FAILS_CLOSED,
-                from_date=when,
-                to_date=when,
-            )
+            # Universal Norms 35 a appoints the Holy Family on this date.
             continue
         year.put(
             when,
@@ -1934,6 +1930,23 @@ def territorial_block(calendar: str, target_calendar: str | None = None) -> dict
             "ascension": {"computed": "Easter +39 (Thursday)", "transferred_sunday_form": unsupported},
             "body_and_blood_of_christ": {"computed": "Easter +60 (Thursday)", "transferred_sunday_form": unsupported},
         }
+    if calendar == "roman-1962" and target_calendar == "roman-pre-1955":
+        unsupported = (
+            "not computed: no competent pre-1955 territorial Sunday-transfer "
+            "decision or governing rule is established in the held sources"
+        )
+        return {
+            "note": (
+                "The accepted Bonn conformed pre-1955 witness's generic Paschal "
+                "table supplies the usual Thursday assignments. Postconciliar "
+                "Universal Norms 7 is not authority for this older calendar. "
+                "A local transfer or external solemnity requires its own "
+                "competent source; none is inferred from arithmetic."
+            ),
+            "epiphany": {"computed": "6 January", "transferred_sunday_form": unsupported},
+            "ascension": {"computed": "Easter +39 (Thursday)", "transferred_sunday_form": unsupported},
+            "body_and_blood_of_christ": {"computed": "Easter +60 (Thursday)", "transferred_sunday_form": unsupported},
+        }
     block: dict[str, object] = {"note": TERRITORIAL_NOTE}
     if calendar == "roman-1962":
         block["epiphany"] = {"computed": "6 January", "transferred_sunday_form": NO_TRANSFER_RULE}
@@ -2322,7 +2335,7 @@ def check_ferial(known: set[str]) -> list[str]:
                     f"{ending}: {when} is in {season}, whose ferias RGMR 299 gives a "
                     "Mass of their own, and it carries a ferial formulary"
                 )
-            if any(e["origin"] == "temporal" for e in year.placements.get(when, [])):
+            if year.has_own_temporal_mass(when):
                 problems.append(
                     f"{ending}: {when} carries a temporal mass of its own and a "
                     "ferial formulary as well"
@@ -2343,7 +2356,7 @@ def check_ferial(known: set[str]) -> list[str]:
             when
             for when in window
             if when.weekday() != 6
-            and not any(e["origin"] == "temporal" for e in year.placements.get(when, []))
+            and not year.has_own_temporal_mass(when)
         }
         if seen_window != expected:
             problems.append(

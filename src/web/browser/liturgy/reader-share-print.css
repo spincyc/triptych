@@ -218,3 +218,12 @@
     break-inside: avoid-page;
   }
 }
+
+@media print {
+  .reader-document .execution-source-apparatus { display: block; break-inside: avoid; }
+  .reader-document .execution-source-apparatus details > :not(summary) { display: block; }
+}
+
+@media print {
+  .reader-document .name-execution-apparatus { display: block; break-inside: avoid; }
+}

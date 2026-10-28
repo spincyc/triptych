@@ -16,6 +16,35 @@
       get structure() { return dependencies.getStructure(); },
       get ordinary() { return dependencies.getOrdinary(); }
     };
+  function renderFormChoice(result, mass) {
+    const choice = (result.unresolvedChoices || []).find(function (row) {
+      return row && typeof row.id === 'string' && row.id.indexOf('proper-form:') === 0;
+    });
+    if (!choice) return null;
+    const section = T.el('section', 'candidate-entry proper-form-choice');
+    section.appendChild(T.el('h2', null, mass.name || mass.key));
+    section.appendChild(T.el('p', 'cycle-choice-note', choice.reason ||
+      'Several source-appointed forms are held. Choose one explicitly.'));
+    const controls = T.el('div', 'cycle-choice-controls');
+    controls.setAttribute('role', 'group');
+    controls.setAttribute('aria-label', 'Choose a source-appointed form');
+    const labels = [];
+    (choice.options || []).forEach(function (option) {
+      const sourceForm = (mass.forms || []).find(function (row) { return row.id === option.id; });
+      const label = sourceForm && sourceForm.name || T.titleCase(option.id);
+      labels.push(label);
+      const button = T.el('button', null, label);
+      button.type = 'button';
+      button.addEventListener('click', function () {
+        navigate({ form: option.id }, [], { location: null, focus: 'title' });
+      });
+      controls.appendChild(button);
+    });
+    section.appendChild(T.el('p', 'proper-form-summary', 'Available forms: ' + labels.join('; ') + '.'));
+    section.appendChild(controls);
+    return section;
+  }
+
   function nearestProperLocation(location, result) {
     const id = location && location.kind === 'event' && location.id;
     if (!id || /^(?:proper|proper-choice)\//.test(id)) return location;
@@ -292,7 +321,8 @@
       element: function (event) {
         const raw = elements.get(event.id.replace(/^ordinary-element\//, ''));
         if (!raw) throw new Error('production Ordinary element is missing for ' + event.id);
-        const node = semanticNode(OrdinaryRenderer.renderElement(raw, ordinary),
+        const node = semanticNode(OrdinaryRenderer.renderElement(raw, ordinary, undefined,
+              { calendar: state.edition.id, formulary: mass && mass.key }),
           event, ordinals.get(event.id));
         node.dataset.readerLocusMajor = division;
         node.dataset.readerLocusUnit = raw.name || raw.locus || 'Ordinary';
@@ -369,6 +399,7 @@
       renderMissalEvents(fragment, contents, result, mass, bible, fragments, state);
     }
     return Object.freeze({
+      renderFormChoice: renderFormChoice,
       renderEvent: renderEvent,
       renderProperChoiceEvent: renderProperChoiceEvent,
       typedUnplacedSeat: typedUnplacedSeat,

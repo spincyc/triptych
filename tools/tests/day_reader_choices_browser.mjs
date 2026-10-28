@@ -5,7 +5,7 @@
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { createServer } from 'node:http';
-import { access, mkdir, mkdtemp, readFile, rm } from 'node:fs/promises';
+import { access, mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { extname, join, resolve, sep } from 'node:path';
 import process from 'node:process';
 import { refreshCoverage, readerTools, fixtureRequest, verifyRealWitnesses } from './reader_coverage_fixture.mjs';
@@ -14,6 +14,8 @@ const ROOT = resolve(import.meta.dirname, '../..');
 const ROUTE = '/src/web/browser/liturgy/day.html';
 const DATA = '/build/public-alpha/preview/browse';
 const chromeBinary = process.env.TRIPTYCH_CHROME || '/usr/bin/chromium';
+const captureAt = process.argv.indexOf('--capture-dir');
+const captureDir = captureAt >= 0 ? resolve(process.argv[captureAt + 1]) : null;
 
 function mime(path) {
   return ({
@@ -393,6 +395,119 @@ async function testProperForms(cdp, base) {
   assert.equal(invalid.outcome, 'invalid');
   assert.equal(invalid.eventCount, 0);
   assert.equal(invalid.fallbackUnits, 0);
+  await testRealFormReselection(cdp, base);
+}
+
+async function testRealFormReselection(cdp, base) {
+  const cases = [
+    { name: 'christmas-desktop', date: '2026-12-25', mass: 'nativitate-domini-octave',
+      forms: ['night', 'dawn', 'day'], foreign: 'first', width: 1440, height: 900, mobile: false },
+    { name: 'all-souls-mobile', date: '2026-11-02', mass: 'commemoratione-omnium-fidelium-defunctorum',
+      forms: ['first', 'second', 'third'], foreign: 'night', width: 393, height: 852, mobile: true }
+  ];
+  for (const row of cases) {
+    await cdp.send('Emulation.setDeviceMetricsOverride', {
+      width: row.width, height: row.height, deviceScaleFactor: 1, mobile: row.mobile
+    });
+    const hash = state({ date: row.date, missal: 'roman-1962' });
+    await navigate(cdp, base, hash);
+    const initial = await snapshot(cdp);
+    assert.equal(initial.outcome, 'unresolved');
+    assert.deepEqual(initial.options, row.forms);
+    assert.equal(await evaluate(cdp,
+      `document.querySelectorAll('[data-choice-option]:checked').length`), 0);
+    assert.equal(await evaluate(cdp,
+      `document.querySelector('#reader-mass-form-field')?.hidden ?? true`), true);
+    await click(cdp, `[data-choice-option="${row.forms[0]}"]`);
+    await click(cdp, '.candidate-choice-apply');
+    await waitFor(cdp, `dayReaderReady && dayReaderDebug.outcome === 'ready' &&
+      dayReaderDebug.semantic.resolved.form === ${JSON.stringify(row.forms[0])}`,
+    row.name + ' first form');
+    const first = await snapshot(cdp);
+    assert.equal(first.resolved.formulary, row.mass);
+    await click(cdp, '[data-reader-action="contents"]');
+    await evaluate(cdp, `(() => {
+      const buttons = [...document.querySelectorAll('[data-reader-contents] button')];
+      buttons.at(-1).click(); return true;
+    })()`);
+    await waitFor(cdp, `Boolean(new URLSearchParams(location.hash.slice(1)).get('location'))`,
+      row.name + ' deep first-form location');
+    const firstLocation = await evaluate(cdp, `new URLSearchParams(location.hash.slice(1)).get('location')`);
+    await click(cdp, '[data-reader-action="date"]');
+    assert.equal(await evaluate(cdp, `document.querySelector('#reader-mass-form-field').hidden`), false);
+    assert.deepEqual(await evaluate(cdp,
+      `[...document.querySelector('#reader-mass-form').options].map(option => option.value)`), row.forms);
+    assert.equal(await evaluate(cdp, `document.querySelector('#reader-mass-form').value`), row.forms[0]);
+    const ax = await cdp.send('Accessibility.getFullAXTree');
+    assert.equal(ax.nodes.filter(node => node.role?.value === 'combobox' &&
+      node.name?.value === 'Mass form').length, 1);
+    if (captureDir) {
+      await mkdir(captureDir, { recursive: true });
+      const image = await cdp.send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
+      await writeFile(join(captureDir, row.name + '-form-selector.png'), Buffer.from(image.data, 'base64'));
+    }
+    await evaluate(cdp, `document.querySelector('#reader-mass-form').focus(); true`);
+    for (const type of ['keyDown', 'keyUp']) {
+      await cdp.send('Input.dispatchKeyEvent', {
+        type, key: 'ArrowDown', code: 'ArrowDown', windowsVirtualKeyCode: 40, nativeVirtualKeyCode: 40
+      });
+    }
+    assert.equal(await evaluate(cdp, `document.querySelector('#reader-mass-form').value`), row.forms[1]);
+    await click(cdp, '#date-form .surface-apply');
+    await waitFor(cdp, `dayReaderReady && dayReaderDebug.outcome === 'ready' &&
+      dayReaderDebug.semantic.resolved.form === ${JSON.stringify(row.forms[1])}`,
+    row.name + ' second form');
+    const second = await snapshot(cdp);
+    const params = new URLSearchParams(second.hash.slice(1));
+    assert.equal(params.get('mass'), row.mass);
+    assert.equal(params.get('date'), row.date);
+    assert.equal(params.get('form'), row.forms[1]);
+    assert.equal(params.has('location'), false);
+    assert.equal(second.stateLocation, null);
+    assert.equal(second.resolved.formulary, row.mass);
+    assert.ok(second.eventCount > 0);
+    assert.match(await evaluate(cdp,
+      `document.activeElement.dataset.semanticEventId || ''`), /^proper\//);
+    assert.equal(await evaluate(cdp,
+      `document.documentElement.scrollWidth > innerWidth`), false);
+    await click(cdp, '[data-reader-action="date"]');
+    await evaluate(cdp, `document.querySelector('#reader-orations').focus(); true`);
+    for (const type of ['keyDown', 'keyUp']) {
+      await cdp.send('Input.dispatchKeyEvent', {
+        type, key: 'ArrowDown', code: 'ArrowDown', windowsVirtualKeyCode: 40, nativeVirtualKeyCode: 40
+      });
+    }
+    assert.equal(await evaluate(cdp, `document.querySelector('#reader-orations').value`), 'en');
+    await click(cdp, '#date-form .surface-apply');
+    await waitFor(cdp, `dayReaderReady && dayReaderDebug.state.languages.orations === 'en' &&
+      dayReaderDebug.semantic.resolved.form === ${JSON.stringify(row.forms[1])}`,
+    row.name + ' language-only change preserves form');
+    const translated = await snapshot(cdp);
+    assert.equal(translated.resolved.formulary, row.mass);
+    assert.equal(new URLSearchParams(translated.hash.slice(1)).get('form'), row.forms[1]);
+    await evaluate(cdp, 'history.back(); true');
+    await waitFor(cdp, `dayReaderReady && dayReaderDebug.state.languages.orations === 'la' &&
+      dayReaderDebug.semantic.resolved.form === ${JSON.stringify(row.forms[1])}`,
+    row.name + ' language Back preserves form');
+    const renders = await evaluate(cdp, 'dayReaderDebug.renders');
+    await evaluate(cdp, 'history.back(); true');
+    await waitFor(cdp, `dayReaderReady && dayReaderDebug.renders > ${renders} &&
+      dayReaderDebug.semantic.resolved.form === ${JSON.stringify(row.forms[0])}`,
+    row.name + ' Back restores first form');
+    const restored = await snapshot(cdp);
+    assert.equal(restored.resolved.formulary, row.mass);
+    assert.equal(new URLSearchParams(restored.hash.slice(1)).get('location'), firstLocation);
+    assert.deepEqual(restored.semanticLocations, first.semanticLocations);
+    await navigate(cdp, base, hash + '&mass=' + row.mass + '&form=' + row.foreign);
+    const rejected = await snapshot(cdp);
+    assert.equal(rejected.outcome, 'invalid');
+    assert.equal(rejected.eventCount, 0);
+    assert.equal(rejected.fallbackUnits, 0);
+    assert.equal(await evaluate(cdp, `document.querySelector('#reader-mass-form-field').hidden`), true);
+    assert.deepEqual(await evaluate(cdp,
+      `[...document.querySelector('#reader-mass-form').options].map(option => option.value)`), []);
+  }
+  await cdp.send('Emulation.clearDeviceMetricsOverride');
 }
 
 async function testColdRead(cdp, base) {
@@ -543,7 +658,8 @@ async function testTranslationWitnesses(cdp, base) {
   assert.equal(held.outcome, 'ready', JSON.stringify(held.error));
   assert.deepEqual(held.witnessChoices, ['mass/roman-1962/septem-dolorum-beatae-mariae-virginis']);
   assert.deepEqual([...new Set(held.witnessOptions)].sort(), [editionWitness, lasanceWitness].sort());
-  assert.equal(held.englishComposed, 4);
+  // Three source-appointed Nicomedes prayers now accompany the four principal English texts.
+  assert.equal(held.englishComposed, 7);
   for (const witness of [editionWitness, artifactWitness]) {
     await navigate(cdp, base, baseState + '&translation-witness=' + witness);
     const alias = await snapshot(cdp);
@@ -559,8 +675,8 @@ async function testTranslationWitnesses(cdp, base) {
   const dolorsOrations = await snapshot(cdp);
   assert.equal(dolorsOrations.outcome, 'ready', JSON.stringify(dolorsOrations.error));
   assert.deepEqual(dolorsOrations.witnessChoices, []);
-  assert.equal(dolorsOrations.englishComposed, 3);
-  assert.match(dolorsOrations.coverageNotice, /3\/8 uses available from the selected witness/);
+  assert.equal(dolorsOrations.englishComposed, 6);
+  assert.match(dolorsOrations.coverageNotice, /6\/11 uses available from the selected witness/);
   const sequence = await evaluate(cdp,
     `(dayReaderDebug.semantic.events || []).find(row => row.editionSlotLabel === 'Sequence').selected`);
   assert.equal(sequence.reason, 'absent-in-witness');

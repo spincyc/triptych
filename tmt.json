@@ -474,7 +474,7 @@
         "tpt"
       ],
       "stage": "draft",
-      "usage": "proper-study-run-archive RUN_ID --cycles PATH [--output DIR] [--root DIR]"
+      "usage": "proper-study-run-archive RUN_ID --cycles PATH [--output DIR] [--root DIR] [--redact-repository-paths]"
     },
     "public-alpha": {
       "idempotent": true,

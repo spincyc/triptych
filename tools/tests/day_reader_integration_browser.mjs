@@ -288,7 +288,8 @@ const STATES = Object.freeze({
   why: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'pentecost-10', ordinary: '1', 'ordinary-lang': 'en', why: '1' }),
   whyTransferred: hash({ date: '2024-03-25', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', why: '1' }),
   whyLatin: hash({ date: '2020-01-04', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', why: '1' }),
-  whyCommemoration: hash({ date: '2026-01-11', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', why: '1' }),
+  whySundayOmission: hash({ date: '2026-01-11', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', why: '1' }),
+  whyCommemoration: hash({ date: '2027-01-11', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', why: '1' }),
   whyCompleteOrationSlots: hash({ date: '2026-01-15', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', why: '1' }),
   postWhy: hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', mass: 'advent-1', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1', why: '1', 'eucharistic-prayer': 'ep-ii' }),
   invalid: hash({ date: '2026-08-02', missal: 'not-a-missal', bible: 'douay-rheims', orations: 'la' }),
@@ -1670,6 +1671,12 @@ async function runAssertions(cdp, base) {
     const latin = await evaluate(cdp, `[...document.querySelectorAll(
       'details.day-reasoning .reasoning-latin[lang="la"]')].map(row => row.textContent.trim())`);
     assert.deepEqual(latin, []);
+
+    await navigateCandidate(cdp, base, STATES.whySundayOmission);
+    const sunday = await evaluate(cdp,
+      `document.querySelector('details.day-reasoning').textContent`);
+    assert.match(sunday, /Hygini.*omitted/i);
+    assert.doesNotMatch(sunday, /Appointed commemorations/);
 
     await navigateCandidate(cdp, base, STATES.whyCommemoration);
     const proper = await evaluate(cdp,

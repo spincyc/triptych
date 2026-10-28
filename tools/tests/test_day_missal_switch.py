@@ -158,6 +158,8 @@ function replayApply(scenario) {
   const orationsSelect = {value: scenario.orations};
   const formularyField = {hidden: !scenario.formulary};
   const formularySelect = {value: scenario.formulary || ''};
+  const massFormField = {hidden: true};
+  const massFormSelect = {value: ''};
   const ordinaryLangField = {hidden: true};
   const ordinaryLangSelect = {value: ''};
   const ordinaryOptionField = {hidden: true};
@@ -199,8 +201,28 @@ function replayReset(scenario) {
   const dateStatus = {textContent: ''};
   let enabled = null;
   function setDateSurfaceEnabled(value) { enabled = value; }
+  const massFormField = {hidden: false};
+  const massFormSelect = selectStub();
+  const applyButton = {disabled: false};
+  const dateForm = {querySelector() { return applyButton; }};
+  const dateSurface = {querySelector() { return dateStatus; }, querySelectorAll() { return []; }};
+  const nodes = {'date-form': dateForm, 'date-surface': dateSurface,
+    'reader-date': dateInput, 'reader-missal': missalSelect,
+    'reader-bible': bibleSelect, 'reader-orations': orationsSelect,
+    'reader-formulary-field': formularyField, 'reader-formulary': formularySelect,
+    'reader-mass-form-field': massFormField, 'reader-mass-form': massFormSelect,
+    'reader-ordinary-lang-field': ordinaryLangField, 'reader-ordinary-lang': ordinaryLangSelect,
+    'reader-ordinary-option-field': ordinaryOptionField, 'reader-ordinary-option': ordinaryOptionSelect};
+  globalThis.document = {getElementById(id) {
+    if (!Object.hasOwn(nodes, id)) throw new Error('missing Date fixture node: ' + id);
+    return nodes[id];
+  }};
+  globalThis.location = window.location;
+  const Controls = require('./src/web/browser/liturgy/source-choice-controls.js');
+  const dateControls = Controls.createDayDateControls({T, runtime});
   __RESET_BODY__
   resetDateSurface();
+  enabled = !bibleSelect.disabled;
   return {
     date: dateInput.value,
     missal: missalSelect.value,
@@ -324,7 +346,7 @@ class DayMissalSwitchTests(unittest.TestCase):
             {"op": "resolve", "hash": hash_of(REPORTED_DATE, "postconciliar"),
              "missal": "postconciliar", "date": REPORTED_DATE},
         ])
-        self.assertEqual(rows[0]["readable"], [VIANNEY, CYRIACUS])
+        self.assertEqual(rows[0]["readable"], [VIANNEY, "missa-de-s-maria-in-sabbato-5", CYRIACUS])
         self.assertEqual(rows[1]["readable"], [DOMINIC, OT_18_SATURDAY])
         self.assertEqual(set(rows[0]["readable"]) & set(rows[1]["readable"]), set())
         self.assertEqual(rows[0]["title"], "S. Ioannis Mariae Vianney Confessoris")

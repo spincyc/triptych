@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.proper-communicantes-heads-en-20261026-72e750ab"
+edition_id = "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Underlying historical English prayer heads on continuous ordinary printed pp. 60–61, PDF pp. 94–95, actually inspected in this lane and independently reviewed as part of the identified early Saint-Andre/Lohmann expression. The title is undated: 1925 is an edition-identification inference, not a dated colophon. The parent expression is supported by the 21 March 1924 and 13 May 1925 approvals, the Google catalogue attribution Published 1925 with Minnesota original, and the positive January 20, 1927 accession stamp. Even the acquisition bound places these historical words before 1931, beyond the maximum United States publication term by 2026. The English translator is not named in the inspected title, approval or Preface leaves; neither Lefebvre nor William Busch is asserted to be the English translator. This separate checked derivative retains only these historical prayer words. Exact scan pages, Google and host marks, whole OCR, wrapper and illustrations remain remote/unresolved and are not redistributed."
+rights_jurisdiction = "United States"
+provenance = "Source owner read the exact selected words on the held, hash-verified whole-book facsimile pages at 200 and 400 dpi on 2026-10-26. Whole-book pdftotext output was a discovery aid only. No model stood in retrieval or byte hashing. The source packet retains exact image hashes, cuts, conditional-word boundaries and refused readings. Independent source/publication review remains required before adoption."
+retrieved = "2026-10-26"
+sha256 = "72e750ab089903d80ad487113d7344ae4dd61c54f8cfac210404c814cc82d998"
+byte_size = 1889
+path = "src/sources/works/gaspar-lefebvre/daily-missal-with-vespers/editions/saint-andre-lohmann-1925/artifacts/proper-communicantes-heads-en-20261026-72e750ab/text.tsv"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf"
+source_url = "https://archive.ccwatershed.org/media/pdfs/21/02/16/05-35-23_0.pdf"
+transformation = "Read actual historical English heads; join physical wraps and discretionary line-end hyphens, retaining intrinsic hyphens, wording, capitalization and punctuation at the head cut. Stop before likewise or the continuation referral; add no Amen or Joseph clause. For Nativity retain the mixed source instruction in raw_source_english; identify the italic at the Christmas midnight Mass only as nonspoken and preserve the source alternatives as day (night) in the presentation candidate. No English word is translated or added."
+notes = "Historical human English, not approved 1962 English. Empty speaker fields record the lack of a local P/R cue; no actor is borrowed from another source. Easter English is the day form only. Lasance Pentecost adds the same and is refused; the selected Lefebvre Pentecost does not. Scan images, whole OCR and host wrapper remain outside the public payload."

@@ -1,0 +1,67 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "web-page",
+   "byte_size": 253820,
+   "edition_owned": true,
+   "id": "artifact.icrsp-france.textes-de-la-messe.web-2026-10-26.html-fe5c66ed",
+   "media_type": "text/html",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://icrspfrance.fr/textes-de-la-messe.php?d=2026-11-01",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-10-26",
+  "editors": [],
+  "id": "edition.icrsp-france.textes-de-la-messe.web-2026-10-26",
+  "jurisdiction": null,
+  "language": "fr",
+  "publication": "Institut du Christ Roi Souverain Prêtre, France official website",
+  "title": "Textes de la messe — page for 1 November 2026, web state of 26 October 2026",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.icrsp-france.textes-de-la-messe.web-2026-10-26.html-fe5c66ed",
+   "artifact_type": "web-page",
+   "id": "passage.icrsp-france.textes-de-la-messe.web-2026-10-26.2026-11-01",
+   "locus": "2026-11-01",
+   "media_type": "text/html",
+   "readable": false,
+   "reason": "The rights position for this artifact has not been settled, and an unsettled question is not a permission.",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://icrspfrance.fr/textes-de-la-messe.php?d=2026-11-01",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "restricted",
+   "verified_on": null,
+   "withheld": "rights"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Textes de la Messe et commentaires"
+  ],
+  "author": "Institut du Christ Roi Souverain Prêtre, France",
+  "category": "institutional-web-page",
+  "description": "Mutable institutional web page that prints, for a requested date, the Mass texts in Latin and French with the Institute's summary rubric line, followed by commentaries drawn from other authors (for example Dom Lefebvre's missal and sermons of St Francis de Sales). Date-specific responses witness this institution's published usage; the third-party texts it reproduces keep their own authors and rights. Linked from the dated entries of work.icrsp-france.ordo.",
+  "id": "work.icrsp-france.textes-de-la-messe",
+  "languages": [
+   "fr",
+   "la"
+  ],
+  "title": "Textes de la messe"
+ }
+}

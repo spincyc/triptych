@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-20261026"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The exact Alfred Mame Tours 1922 commercial printing is public domain in the United States as of 2026 by elapsed publication-date term. Faithful mechanical reproduction and bounded normalized transcription add no human authorship to the historical prayer words. This basis does not rely on Internet Archive availability, a host licence grant, or the unsupported legacy assertion of expiry before 1996. Historical Latin and source pages are excluded from the project CC BY 4.0 grant."
+provenance = "Five complete historical additional normal Oratio prayers independently image-read from the exact Mame 1922 PDF on 26 October 2026, first by the source producer at 200 and 400 dpi and then by a separate source reviewer. OCR was a finding aid only and supplied no prayer word. Source-only review and exact LF body joins were independently accepted."
+retrieved = "2026-10-26"
+sha256 = "b5c77d8c5c6d8eb71d4a0f914aa9df808fb00536bc5c263cdd61ba5d33d5713b"
+byte_size = 881
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/latin-five-20261026/latin-only.txt"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-pages-20261026"
+transformation = "Join physical wraps and division hyphens, recombine decorative initials, remove stress accents, expand ae/oe ligatures and remove typography-only spacing before punctuation. Preserve every historical word, spelling, pointing mark and actually printed abbreviated conclusion. One LF-delimited complete prayer per line in order: Advent Ember Wednesday, Lent 4 Wednesday, Holy Wednesday, Pentecost Ember Wednesday, September Ember Wednesday. Historical Qui vivis., Per eumdem Dominum., Per Dominum... in unitate ejusdem. and Per Dominum nostrum. remain literal source cues; longer target conclusions are not attributed to these source pages."
+encoding = "utf-8"
+indexable = true

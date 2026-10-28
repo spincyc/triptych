@@ -17120,6 +17120,9 @@ label = "Pio of Pietrelcina, Collect"
 source_record = "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml"
 source_locus = "Notitiae 44 (2008), printed p. 386; artifact p. 68; 23 September; target Supplementum p. 1276"
 identity_state = "established"
+calendar_mass_key = "saint-pius-pietrelcina-priest"
+form_id = "main"
+calendar_proper_name = "Collect"
 
 [[targets]]
 id = "postconciliar:2008:supplement:juan-diego-collect"
@@ -17129,6 +17132,9 @@ label = "Juan Diego, Collect"
 source_record = "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml"
 source_locus = "Notitiae 44 (2008), printed p. 386; artifact p. 68; 9 December; target Supplementum p. 1276"
 identity_state = "established"
+calendar_mass_key = "saint-juan-diego-cuauhtlatoatzin"
+form_id = "main"
+calendar_proper_name = "Collect"
 
 [[targets]]
 id = "postconciliar:2008:supplement:guadalupe-collect"
@@ -17138,6 +17144,9 @@ label = "Our Lady of Guadalupe, Collect"
 source_record = "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml"
 source_locus = "Notitiae 44 (2008), printed p. 387; artifact p. 69; 12 December; target Supplementum p. 1277"
 identity_state = "established"
+calendar_mass_key = "our-lady-guadalupe"
+form_id = "main"
+calendar_proper_name = "Collect"
 
 [[targets]]
 id = "postconciliar:2008:pentecost-vigil:dismissal-1"
@@ -24738,6 +24747,9 @@ source_record = "src/sources/works/holy-see/variationes-et-additiones-missalis-r
 source_locus = "Variationes in reimpressione emendata (2008), Notitiae 44, printed p. 373 / artifact p. 55; entry p. 737, 23 March (2002 typical-edition pagination): Collect wording corrected. Context matched in the registered 2002 reproduction, artifact p. 434. Prior 2002 locator: 2002 Proper of Saints, 03-23; owning target postconciliar.2002.sanctoral.03-23.1; printed collect heading at web line 17302; form opening locator: Missale Romanum 2002, Proper of Saints, 23 martii; heading physical PDF p. 434, web line 17300. Attests that this appointment is present in 2008; it asserts no unchanged wording and no unlisted neighbouring appointment."
 identity_state = "established"
 parent_id = "postconciliar.2002.sanctoral.03-23.1"
+calendar_mass_key = "saint-turibius-mogrovejo-bishop"
+form_id = "main"
+calendar_proper_name = "Collect"
 
 [[targets]]
 id = "postconciliar.2002.sanctoral.03-25.1:entrance-antiphon:1"
@@ -26108,6 +26120,9 @@ source_record = "src/sources/works/holy-see/variationes-et-additiones-missalis-r
 source_locus = "Variationes in reimpressione emendata (2008), Notitiae 44, printed p. 373 / artifact p. 55; entry p. 786, 6 July (2002 typical-edition pagination): Collect wording corrected (same entry also adds a Common referral). Context matched in the registered 2002 reproduction, artifact p. 464. Prior 2002 locator: 2002 Proper of Saints, 07-06; owning target postconciliar.2002.sanctoral.07-06.1; printed collect heading at web line 18417; form opening locator: Missale Romanum 2002, Proper of Saints, 6 iulii; heading physical PDF p. 464, web line 18414. Attests that this appointment is present in 2008; it asserts no unchanged wording and no unlisted neighbouring appointment."
 identity_state = "established"
 parent_id = "postconciliar.2002.sanctoral.07-06.1"
+calendar_mass_key = "saint-maria-goretti-virgin-martyr"
+form_id = "main"
+calendar_proper_name = "Collect"
 
 [[targets]]
 id = "postconciliar.2002.sanctoral.07-09.1:collect:1"
@@ -26578,6 +26593,9 @@ source_record = "src/sources/works/holy-see/variationes-et-additiones-missalis-r
 source_locus = "Variationes in reimpressione emendata (2008), Notitiae 44, printed p. 373 / artifact p. 55; entry p. 799, 5 August (2002 typical-edition pagination): Collect wording and conclusion changed. Context matched in the registered 2002 reproduction, artifact p. 474. Prior 2002 locator: 2002 Proper of Saints, 08-05; owning target postconciliar.2002.sanctoral.08-05.1; printed collect heading at web line 18779; form opening locator: Missale Romanum 2002, Proper of Saints, 5 augusti; heading physical PDF p. 474, web line 18777. Attests that this appointment is present in 2008; it asserts no unchanged wording and no unlisted neighbouring appointment."
 identity_state = "established"
 parent_id = "postconciliar.2002.sanctoral.08-05.1"
+calendar_mass_key = "dedication-basilica-saint-mary-major"
+form_id = "main"
+calendar_proper_name = "Collect"
 
 [[targets]]
 id = "postconciliar.2002.sanctoral.08-06.1:entrance-antiphon:1"
@@ -134138,6 +134156,11 @@ source_locus = "Bonn reimpressio Proprium de Tempore, artifact p. 497, printed p
 identity_state = "established"
 slice_id = "roman-pre-1955-temporal-easter-to-last-sunday"
 
+calendar_mass_key = "pentecost"
+form_id = "main"
+calendar_proper_name = "Collect"
+calendar_proper_occurrence = 1
+
 [[targets]]
 id = "roman-pre-1955:temporal:slot:dominica-pentecostes:reading"
 kind = "text-slot"
@@ -134198,6 +134221,11 @@ source_locus = "Bonn reimpressio Proprium de Tempore, artifact p. 498, printed p
 identity_state = "established"
 slice_id = "roman-pre-1955-temporal-easter-to-last-sunday"
 
+calendar_mass_key = "pentecost"
+form_id = "main"
+calendar_proper_name = "Secret"
+calendar_proper_occurrence = 1
+
 [[targets]]
 id = "roman-pre-1955:temporal:slot:dominica-pentecostes:communion"
 kind = "text-slot"
@@ -134217,6 +134245,11 @@ source_record = "src/sources/works/catholic-church/missale-romanum/editions/2004
 source_locus = "Bonn reimpressio Proprium de Tempore, artifact p. 499, printed p. 395"
 identity_state = "established"
 slice_id = "roman-pre-1955-temporal-easter-to-last-sunday"
+
+calendar_mass_key = "pentecost"
+form_id = "main"
+calendar_proper_name = "Postcommunion"
+calendar_proper_occurrence = 1
 
 [[targets]]
 id = "roman-pre-1955:temporal:slot:dominica-pentecostes:direction-credo"

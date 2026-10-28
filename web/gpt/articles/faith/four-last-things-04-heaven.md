@@ -326,6 +326,6 @@ This essay is Catholic spiritual reading for an annual return to the hope of hea
 
 - St. John Henry Newman, “Holiness Necessary for Future Blessedness,” *Parochial and Plain Sermons*, vol. I, sermon 1, new edition (London, Oxford, and Cambridge: Rivingtons, 1869), pp. 1–14. A sermon from his Anglican period, used for its spiritual account of holiness and happiness, rather than as a comprehensive statement of Catholic teaching on justification.
 
-**Last revised (UTC):** 2026-10-25T20:38:01Z
+**Last revised (UTC):** 2026-10-26T14:07:36Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

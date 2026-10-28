@@ -1,0 +1,709 @@
+{
+  "schema": "triptych-reviewed-latin-three-repair-adoption/v1",
+  "decision": "accepted-root-adoption-exact-three-reviewed-proof-repairs",
+  "date": "2026-10-26",
+  "coordinator": "root",
+  "parent_commit": "f3f59d483358128e1b78d7a12aaeb4f3feab4a8a",
+  "proposal_sha256": "32fd2827c22b43d7b91c5931ee0861f99d981af4918946d028a1d27a69b36134",
+  "independent_source_and_chain_review_sha256": "aa9bbfe1aa8d8c22e05e03b015d817fcac82611dd90dadcdefa57e37c44aa9ea",
+  "projection_artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-sanctoral-repairs.three-reviewed-bodies-20261026",
+  "projection_artifact_sha256": "ce303bc47e7a37b777c7bfabb9750e69b6212c19433fc47c7ba3b5647963d354",
+  "exact_body_repairs": [
+    {
+      "mass": "s-catharinae-virginis-martyris",
+      "form": "",
+      "proper": "Collect",
+      "course": "",
+      "cycle": "",
+      "occurrence": 1
+    },
+    {
+      "mass": "s-matthiae-apostoli",
+      "form": "",
+      "proper": "Secret",
+      "course": "",
+      "cycle": "",
+      "occurrence": 1
+    }
+  ],
+  "exact_proof_replacements": [
+    {
+      "key": {
+        "mass": "s-catharinae-virginis-martyris",
+        "form": "",
+        "proper": "Collect",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "before_latin": "Deus, qui dedisti legem Moysi in summitate montis Sinai, et in eodem loco\nper sanctos Angelos tuos corpus beatae Catharinae Virginis et Martyris tuae\nmirabiliter collocasti: praesta, quiesumus; ut, ejus meritis et\nintercessione, ad montem, qui Christus est, pervenire valeamus: Qui tecum\nvivit et regnat in unitate.\n",
+      "after_latin": "Deus, qui dedisti legem Moysi in summitate montis Sinai, et in eodem loco\nper sanctos Angelos tuos corpus beatae Catharinae Virginis et Martyris tuae\nmirabiliter collocasti: praesta, quaesumus; ut, ejus meritis et\nintercessione, ad montem, qui Christus est, pervenire valeamus: Qui tecum\nvivit et regnat in unitate.\n",
+      "before_body_sha256": "8eb9739c7def2a52d890f5dce435c98a6f8af86b1a59f4b4dff5a5090260dbeb",
+      "after_body_sha256": "416fe94212bfa59cdb3a933da0ebcb77f1bcf9fd66dabc9d1d772453bb512ced",
+      "before_row": {
+        "mass": "s-catharinae-virginis-martyris",
+        "form": "",
+        "proper": "Collect",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "8eb9739c7def2a52d890f5dce435c98a6f8af86b1a59f4b4dff5a5090260dbeb",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-catharinae-virginis-martyris-collect",
+        "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+        "locator": "editorial-projection artifact physical lines 66-70; antecedent printed p. 584; text-layer lines 79469-79479",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-catharinae-virginis-martyris-orations",
+        "verification_locator": "printed p. 726, no. 4166, marked P; artifact PDF p. 807",
+        "transformations": [
+          "join printed line wraps",
+          "remove stress accents",
+          "expand printed ae/oe ligatures to ae/oe",
+          "normalise consonantal i to the calendar's j orthography",
+          "apply the target printing's punctuation",
+          "carry the target's conclusion at its printed length"
+        ],
+        "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: 1962 reads `qui` where 1862 reads `qm`; 1962 reads `Moysi in` where 1862 reads `M6ysi m`; 1962 reads `Sinai,` where 1862 reads `Slnai,`; 1962 reads `eodem` where 1862 reads `e6dem`; 1962 reads `Catharinae Virginis` where 1862 reads `Catnarinae Vfreinis`; 1962 reads `mirabiliter` where 1862 reads `mirabfliter`; 1962 reads `quiesumus;` where 1862 reads `quaesumus;`; 1962 reads `meritis` where 1862 reads `m6ritis`; 1962 reads `intercessione,` where 1862 reads `intercessi6ne,`; 1962 reads `pervenire` where 1862 reads `pervenfre`; 1962 has `et regnat in unitate.`; 1862 has nothing there; 1862 sets commas after `loco` and after `tuos` that the 1962 does not, and none after the second `ut` or after `montem`; 1862 prints the j-orthography (ejus); 1862 conclusion is the short cue `Qui tecum vivit.`; the 1962 writes it out; 1862 layer damage: `qm` for qui, `m` for in, `Slnai`, `Catnarinae`, `Vfreinis`, `mirabfliter`, `pervenfre`; each is a serif or accent misread and each is clean in the 1962. Corroboration: 1922 Mame carries 25 November at PDF p. 877; not transcribed.",
+        "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.sanctoral-w-3-orations-98936698",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+        ],
+        "publication_locator": "Pustet Ratisbon 1862, printed p. 584; text-layer lines 79469-79479; artifact rights_status public-domain on a book first published in 1862",
+        "publication_evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
+      },
+      "after_row": {
+        "mass": "s-catharinae-virginis-martyris",
+        "form": "",
+        "proper": "Collect",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "416fe94212bfa59cdb3a933da0ebcb77f1bcf9fd66dabc9d1d772453bb512ced",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-sanctoral-repairs.s-catharinae-virginis-martyris-collect",
+        "source_date": "2026-10-26 project editorial projection; Pustet Ratisbon 1862 complete page-image witness",
+        "locator": "Editorial projection physical lines [[1, 5]]; historical Pustet Ratisbon 1862 PDF 670, printed p. 584",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.sanctoral-repair-s-catharinae-virginis-martyris-collect-20261026",
+        "verification_locator": "1962 PDF 807, printed p. 726, no. 4166",
+        "transformations": [
+          "join printed line wraps",
+          "remove stress accents",
+          "expand printed ae/oe ligatures",
+          "retain calendar consonantal-j orthography",
+          "apply target pointing",
+          "carry only the actual target conclusion stop"
+        ],
+        "provenance_evidence": "The newly registered immutable projection passage reproduces the complete canonical body hash exactly. Target images were independently read at 200 and 400 dpi and the entire historical petition and actual conclusion were read on complete source images. The target and independent 1862 page both read quaesumus; the former calendar quiesumus was transcription damage. The complete petition agrees word for word. Pustet prints commas after loco, tuos and meritis, none after ut or montem, and a full stop after valeamus. The target prints its own pointing. Pustet actually stops at Qui tecum vivit.; the target stops at Qui tecum vivit et regnat in unitate. The longer target prefix is independently printed contiguously in the separately held Pustet PDF 390, printed p. 304, Praesta oration conclusion; no words beyond the target stop are supplied.",
+        "provenance_authority": "Triptych editorial projection verified by independent complete page-image collation",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-sanctoral-repairs.three-reviewed-bodies-20261026",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.sanctoral-repair-complete-prayers-20261026",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.sanctoral-repair-control-pages-20261026",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-conclusion-authority-20261022"
+        ],
+        "publication_locator": "Pustet Ratisbon 1862 PDF 670, printed p. 584; Pustet PDF 390, printed p. 304, contiguous conclusion prefix",
+        "publication_evidence": "Every complete petition word is independently witnessed in the registered US-public-domain Pustet 1862 source pages and image-checked transcription. Actual source conclusion length is preserved in that transcription; any longer target prefix is independently witnessed contiguously by the separately registered Pustet formula. Publication rests on the repository 17 U.S.C. 103(b) plus public-domain-witness basis, not a clearance of the 1962 edition. The target and independent 1862 page both read quaesumus; the former calendar quiesumus was transcription damage. The complete petition agrees word for word. Pustet prints commas after loco, tuos and meritis, none after ut or montem, and a full stop after valeamus. The target prints its own pointing. Pustet actually stops at Qui tecum vivit.; the target stops at Qui tecum vivit et regnat in unitate. The longer target prefix is independently printed contiguously in the separately held Pustet PDF 390, printed p. 304, Praesta oration conclusion; no words beyond the target stop are supplied."
+      },
+      "independent_source_decision": {
+        "target": [
+          "s-catharinae-virginis-martyris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "decision": "ACCEPT_SOURCE_TEXT_TARGET_REPAIR_AND_DECLARED_CHAIN",
+        "before_body_sha256": "8eb9739c7def2a52d890f5dce435c98a6f8af86b1a59f4b4dff5a5090260dbeb",
+        "after_body_sha256": "416fe94212bfa59cdb3a933da0ebcb77f1bcf9fd66dabc9d1d772453bb512ced",
+        "historical_body_raw_utf8_sha256": "826d2ee95c8eb88d4ea2ecfb516d74774048b893384c3e4947f78d1dce8adb11",
+        "changed_word_index_zero_based": 27,
+        "canonical_body_changed": true,
+        "complete_petition_tokens": 40,
+        "actual_source_conclusion_tokens": [
+          "qui",
+          "tecum",
+          "vivit"
+        ],
+        "actual_target_conclusion_tokens": [
+          "qui",
+          "tecum",
+          "vivit",
+          "et",
+          "regnat",
+          "in",
+          "unitate"
+        ],
+        "declared_source_to_target_spelling_pairs": [],
+        "finding": "Complete1962 image at no.4166 and complete1862 own Catherine Collect both read quaesumus. The replacement repairs a damaged transcription and changes no other canonical prayer byte. Historical Qui tecum vivit. remains literal; target actually stops at Qui tecum vivit et regnat in unitate. The exact longer target prefix is visibly contiguous within the separately registered Pustet PDF390 Praesta conclusion; no later words are supplied.",
+        "target_locator": "1962 PDF 807, printed p. 726, no. 4166",
+        "historical_locator": "Pustet Ratisbon 1862 PDF 670, printed p. 584",
+        "all_other_Latin_bytes_conserved": true,
+        "current_positive_English_absent_for_owner": true,
+        "current_untranslated_records": 1,
+        "no_English_or_source_formula_method_admission": true,
+        "independently_viewed_image_sha256": [
+          "fddf23ac92d2fd54bfb356e1a88f4c7ea4bb481136854d1a191f66fefc780e41",
+          "463176e5c2088a8534bca885488b8498e7cce9554f9db3c8f26c2ed1d31c2982",
+          "a3f34b229e9a605d6fed14a82efa85ab64b714c605dad4d8f1b2c1a3d7cc93b8",
+          "9fbb84ef718ab6bf673bcdda209e436373dc76b1519b10207f394733e2d696ea",
+          "b454f84920cb65977d2df629a74a30169e4f9fc330aa08192f7183c095b2f4f7"
+        ]
+      }
+    },
+    {
+      "key": {
+        "mass": "s-matthiae-apostoli",
+        "form": "",
+        "proper": "Secret",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "before_latin": "Hostias tibi, Domine, quas nomini tuo sacrandas offerimus, sancti Matthias\nApostoli tui prosequatur oratio: per quam nos expiari facias, et defendi.\nPer Dominum.\n",
+      "after_latin": "Hostias tibi, Domine, quas nomini tuo sacrandas offerimus, sancti Matthiae\nApostoli tui prosequatur oratio: per quam nos expiari facias, et defendi.\nPer Dominum.\n",
+      "before_body_sha256": "f416d799e49771d07ec3d12238e25fc3d1c5db96d48e51f8c32e99cd726857ee",
+      "after_body_sha256": "354bf98613b16aaf2b75195cb6aef23ed100a84c9fa0977e13a96988c7c127f7",
+      "before_row": {
+        "mass": "s-matthiae-apostoli",
+        "form": "",
+        "proper": "Secret",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "f416d799e49771d07ec3d12238e25fc3d1c5db96d48e51f8c32e99cd726857ee",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-matthiae-apostoli-secret",
+        "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+        "locator": "editorial-projection artifact physical lines 192-194; antecedent Tours: Mame 1922 (editio quarta iuxta typicam Vaticanam), printed p. 540; artifact PDF p. 654 (text layer, column-correct -raw extraction)",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-matthiae-apostoli-orations",
+        "verification_locator": "printed p. 480, no. 2222; artifact PDF p. 561",
+        "transformations": [
+          "join printed line wraps",
+          "remove stress accents",
+          "expand printed ae/oe ligatures to ae/oe",
+          "normalise consonantal i to the calendar's j orthography",
+          "apply the target printing's punctuation",
+          "carry the target's conclusion at its printed length"
+        ],
+        "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: conclusion length differs: the 1962 prints \"Per Dominum.\"; the antecedent prints \"Per Dominum. Et, in Quadragesima, fit Commem\"; accents, ae/oe ligatures and word division differ throughout; the antecedent reading is an optical text layer and its pointing cannot be trusted at comma level. Corroboration: 1862 at text-layer lines 58757-58766 (printed p. 410), alignment 0.88; 1570 at lines 59802-59811, alignment 0.68 (degraded-latin; corroboration only).",
+        "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+        ],
+        "publication_locator": "Pustet Ratisbon 1862, Tours: Mame 1922 (editio quarta iuxta typicam Vaticanam), printed p. 540; artifact PDF p. 654 (text layer, column-correct -raw extraction); artifact rights_status public-domain",
+        "publication_evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
+      },
+      "after_row": {
+        "mass": "s-matthiae-apostoli",
+        "form": "",
+        "proper": "Secret",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "354bf98613b16aaf2b75195cb6aef23ed100a84c9fa0977e13a96988c7c127f7",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-sanctoral-repairs.s-matthiae-apostoli-secret",
+        "source_date": "2026-10-26 project editorial projection; Pustet Ratisbon 1862 complete page-image witness",
+        "locator": "Editorial projection physical lines [[7, 9]]; historical Pustet Ratisbon 1862 PDF 496, printed p. 410; own day heading PDF 495, printed p. 409",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.sanctoral-repair-s-matthiae-apostoli-secret-20261026",
+        "verification_locator": "1962 PDF 561, printed p. 480, no. 2222",
+        "transformations": [
+          "join printed line wraps",
+          "remove stress accents",
+          "expand printed ae/oe ligatures",
+          "retain calendar consonantal-j orthography",
+          "apply target pointing",
+          "carry only the actual target conclusion stop",
+          "historical Mathiae to target Matthiae spelling"
+        ],
+        "provenance_evidence": "The newly registered immutable projection passage reproduces the complete canonical body hash exactly. Target images were independently read at 200 and 400 dpi and the entire historical petition and actual conclusion were read on complete source images. The controlling target prints Matthiae (Matthiæ), while the former calendar Matthias was transcription damage. Pustet prints the received spelling Mathiae (Mathiæ), with one t, for the same name and inflection; this is an orthographic transformation, not a noun substitution. Every petition word and the actual Per Dominum. stop agree. The 1862 heading is on the preceding full page and the entire Secret on the next; neighboring rubrics and other prayers are excluded.",
+        "provenance_authority": "Triptych editorial projection verified by independent complete page-image collation",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-sanctoral-repairs.three-reviewed-bodies-20261026",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.sanctoral-repair-complete-prayers-20261026",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.sanctoral-repair-control-pages-20261026"
+        ],
+        "publication_locator": "Pustet Ratisbon 1862 PDF 496, printed p. 410; own day heading PDF 495, printed p. 409",
+        "publication_evidence": "Every complete petition word is independently witnessed in the registered US-public-domain Pustet 1862 source pages and image-checked transcription. Actual source conclusion length is preserved in that transcription; any longer target prefix is independently witnessed contiguously by the separately registered Pustet formula. Publication rests on the repository 17 U.S.C. 103(b) plus public-domain-witness basis, not a clearance of the 1962 edition. The controlling target prints Matthiae (Matthiæ), while the former calendar Matthias was transcription damage. Pustet prints the received spelling Mathiae (Mathiæ), with one t, for the same name and inflection; this is an orthographic transformation, not a noun substitution. Every petition word and the actual Per Dominum. stop agree. The 1862 heading is on the preceding full page and the entire Secret on the next; neighboring rubrics and other prayers are excluded."
+      },
+      "independent_source_decision": {
+        "target": [
+          "s-matthiae-apostoli",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "decision": "ACCEPT_SOURCE_TEXT_TARGET_REPAIR_AND_DECLARED_CHAIN",
+        "before_body_sha256": "f416d799e49771d07ec3d12238e25fc3d1c5db96d48e51f8c32e99cd726857ee",
+        "after_body_sha256": "354bf98613b16aaf2b75195cb6aef23ed100a84c9fa0977e13a96988c7c127f7",
+        "historical_body_raw_utf8_sha256": "937458b6c027546a0b44fc9112a95c35ce3b1d19aefdf783d1d5f4a3376ed5b8",
+        "changed_word_index_zero_based": 9,
+        "canonical_body_changed": true,
+        "complete_petition_tokens": 21,
+        "actual_source_conclusion_tokens": [
+          "per",
+          "dominum"
+        ],
+        "actual_target_conclusion_tokens": [
+          "per",
+          "dominum"
+        ],
+        "declared_source_to_target_spelling_pairs": [
+          {
+            "source_word_index_zero_based": 9,
+            "target_word_index_zero_based": 9,
+            "source_form": "mathiae",
+            "target_form": "matthiae"
+          }
+        ],
+        "finding": "Complete1962 image at no.2222 reads Matthiae (Matthiæ), not Matthias. Pustet prints Mathiae (Mathiæ), one-t, in the same genitive singular name and unchanged complete Secret under its actual February24/25 heading. The declared source-to-target orthography preserves those separate readings; this source review authorizes no arbitrary name substitution or English lexical-rule expansion. Every remaining petition word and actual Per Dominum. stop agree.",
+        "target_locator": "1962 PDF 561, printed p. 480, no. 2222",
+        "historical_locator": "Pustet Ratisbon 1862 PDF 496, printed p. 410; own day heading PDF 495, printed p. 409",
+        "all_other_Latin_bytes_conserved": true,
+        "current_positive_English_absent_for_owner": true,
+        "current_untranslated_records": 1,
+        "no_English_or_source_formula_method_admission": true,
+        "independently_viewed_image_sha256": [
+          "c5560ef4592ed554589ff54a00ac385b38effde6679e763f1f14b7861ac15df6",
+          "16e5e15dff5c0223c3d2dcf2189e17cb321c99ab3acc9616786c02a3cce58694",
+          "d1c5a68049669093f3a33063647e3cffa0de8ae3e2a5a52b975bcca3a666804d",
+          "2ee4b702a82766c5a31e6f0bdaea180efbd518fcfd0dc5e6a9277cbb20664449",
+          "fc4fbfeca0b8817f77a6db860c4a5692d07cf876a09ac611e96a5470b13b879d"
+        ]
+      }
+    },
+    {
+      "key": {
+        "mass": "s-iosephi-calasanctii-confessoris",
+        "form": "",
+        "proper": "Collect",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "before_latin": "Deus, qui per sanctum Josephum Confessorem tuum, ad erudiendam spiritu\nintellegentiae ac pietatis juventutem, novum Ecclesiae tuae subsidium\nprovidere dignatus es: praesta, quaesumus; nos, ejus exemplo et\nintercessione, ita facere et docere, ut praemia consequamur aeterna. Per\nDominum nostrum.\n",
+      "after_latin": "Deus, qui per sanctum Josephum Confessorem tuum, ad erudiendam spiritu\nintellegentiae ac pietatis juventutem, novum Ecclesiae tuae subsidium\nprovidere dignatus es: praesta, quaesumus; nos, ejus exemplo et\nintercessione, ita facere et docere, ut praemia consequamur aeterna. Per\nDominum nostrum.\n",
+      "before_body_sha256": "8eccf0c2a207270588f4a2ced5b50519aa2cbf197fc9a1faa4b233210fbbe391",
+      "after_body_sha256": "8eccf0c2a207270588f4a2ced5b50519aa2cbf197fc9a1faa4b233210fbbe391",
+      "before_row": {
+        "mass": "s-iosephi-calasanctii-confessoris",
+        "form": "",
+        "proper": "Collect",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "8eccf0c2a207270588f4a2ced5b50519aa2cbf197fc9a1faa4b233210fbbe391",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-iosephi-calasanctii-confessoris-collect",
+        "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+        "locator": "editorial-projection artifact physical lines 335-339; antecedent Tours Mame 1922 (editio quarta iuxta typicam Vaticanam), printed p. 701; artifact PDF p. 815; column-correct raw-text lines 62595-62617",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-iosephi-calasanctii-confessoris-orations",
+        "verification_locator": "printed p. 638, no. 3469; artifact PDF p. 719",
+        "transformations": [
+          "join printed line wraps",
+          "remove stress accents",
+          "expand printed ae/oe ligatures to ae/oe",
+          "normalise consonantal i to the calendar's j orthography",
+          "apply the target printing's punctuation",
+          "carry the target's conclusion at its printed length"
+        ],
+        "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: the Tours Mame 1922 reads 'EUS,' where the 1962 prints 'Deus,'; the Tours Mame 1922 window carries 'D' at this point where the 1962 does not; the Tours Mame 1922 reads 'spiOratio Die Aug. — ritu intelligéntizw' where the 1962 prints 'spiritu intellegentiae'; the Tours Mame 1922 reads 'tu' where the 1962 prints 'tuae'; the Tours Mame 1922 window carries ':' at this point where the 1962 does not; the Tours Mame 1922 reads 'ztérna.' where the 1962 prints 'aeterna.'; the Tours Mame 1922 sets no pointing after 'es' where the 1962 sets a colon; recogniser damage in the Tours Mame 1922 text layer at this locus, not variant readings: EUS, for eius; Ecclésiz for eclesiae; przesta, for praesta; quzsumus; for quaesumus; intercessiéne, for intercesione; premia for praemia; bare numeric tokens (printed folio / marginal numbers) dropped from the Tours Mame 1922 reading: 2. 702 28 2° 6° 36, 30- 31.; conclusion length was not collated: the 1962 prints 'Per Dominum nostrum.' and the witness abbreviates the same rubrical cue; one formula at two lengths, which is within the matched tolerance. Corroboration: Pustet Ratisbon 1862, nearest preceding printed-folio marker 528 at text-layer line 72684; text-layer lines 72775-72805 (char-level agreement 0.843 with the 1962 target).",
+        "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-3-orations-b43e63f0",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+        ],
+        "publication_locator": "Pustet Ratisbon 1862, Tours Mame 1922 (editio quarta iuxta typicam Vaticanam), printed p. 701; artifact PDF p. 815; column-correct raw-text lines 62595-62617; artifact rights_status public-domain",
+        "publication_evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
+      },
+      "after_row": {
+        "mass": "s-iosephi-calasanctii-confessoris",
+        "form": "",
+        "proper": "Collect",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "8eccf0c2a207270588f4a2ced5b50519aa2cbf197fc9a1faa4b233210fbbe391",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-sanctoral-repairs.s-iosephi-calasanctii-confessoris-collect",
+        "source_date": "2026-10-26 project editorial projection; Pustet Ratisbon 1862 complete page-image witness",
+        "locator": "Editorial projection physical lines [[11, 15]]; historical Pustet Ratisbon 1862 PDF 614-615, printed pp. 528-529",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.sanctoral-repair-s-iosephi-calasanctii-confessoris-collect-20261026",
+        "verification_locator": "1962 PDF 719, printed p. 638, no. 3469",
+        "transformations": [
+          "join printed line wraps",
+          "remove stress accents",
+          "expand printed ae/oe ligatures",
+          "retain calendar consonantal-j orthography",
+          "apply target pointing",
+          "carry only the actual target conclusion stop",
+          "historical intelligentiae to target intellegentiae spelling"
+        ],
+        "provenance_evidence": "The newly registered immutable projection passage reproduces the complete canonical body hash exactly. Target images were independently read at 200 and 400 dpi and the entire historical petition and actual conclusion were read on complete source images. The target and independent Pustet pages both print providere; the proposed provenire substitution is rejected. The calendar body remains byte-identical. Target intellegentiae and historical intelligentiae are received spellings of one word, retained separately. Pustet prints a comma after intelligentiae, no comma after juventutem, a comma rather than the target semicolon after quaesumus, no comma after nos, a comma after exemplo, none after intercessione, and a comma after facere. Pustet actually stops at Per Dominum.; the target stops at Per Dominum nostrum. That contiguous longer prefix is independently printed in the separately held Pustet PDF 390, printed p. 304. The prior 1862-owned evidence had incorrectly named Tours Mame 1922 PDF 815 and its raw lines; this new chain identifies the actual Pustet pages and changes no old artifact or passage.",
+        "provenance_authority": "Triptych editorial projection verified by independent complete page-image collation",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-sanctoral-repairs.three-reviewed-bodies-20261026",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.sanctoral-repair-complete-prayers-20261026",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.sanctoral-repair-control-pages-20261026",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-conclusion-authority-20261022"
+        ],
+        "publication_locator": "Pustet Ratisbon 1862 PDF 614-615, printed pp. 528-529; Pustet PDF 390, printed p. 304, contiguous conclusion prefix",
+        "publication_evidence": "Every complete petition word is independently witnessed in the registered US-public-domain Pustet 1862 source pages and image-checked transcription. Actual source conclusion length is preserved in that transcription; any longer target prefix is independently witnessed contiguously by the separately registered Pustet formula. Publication rests on the repository 17 U.S.C. 103(b) plus public-domain-witness basis, not a clearance of the 1962 edition. The target and independent Pustet pages both print providere; the proposed provenire substitution is rejected. The calendar body remains byte-identical. Target intellegentiae and historical intelligentiae are received spellings of one word, retained separately. Pustet prints a comma after intelligentiae, no comma after juventutem, a comma rather than the target semicolon after quaesumus, no comma after nos, a comma after exemplo, none after intercessione, and a comma after facere. Pustet actually stops at Per Dominum.; the target stops at Per Dominum nostrum. That contiguous longer prefix is independently printed in the separately held Pustet PDF 390, printed p. 304. The prior 1862-owned evidence had incorrectly named Tours Mame 1922 PDF 815 and its raw lines; this new chain identifies the actual Pustet pages and changes no old artifact or passage."
+      },
+      "independent_source_decision": {
+        "target": [
+          "s-iosephi-calasanctii-confessoris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "decision": "ACCEPT_SOURCE_TEXT_TARGET_REPAIR_AND_DECLARED_CHAIN",
+        "before_body_sha256": "8eccf0c2a207270588f4a2ced5b50519aa2cbf197fc9a1faa4b233210fbbe391",
+        "after_body_sha256": "8eccf0c2a207270588f4a2ced5b50519aa2cbf197fc9a1faa4b233210fbbe391",
+        "historical_body_raw_utf8_sha256": "be7e4e8bbf8ea4dc3fe4e57c7e6fd1a6ea2e2971e55766a64198957b8214ecbd",
+        "changed_word_index_zero_based": null,
+        "canonical_body_changed": false,
+        "complete_petition_tokens": 36,
+        "actual_source_conclusion_tokens": [
+          "per",
+          "dominum"
+        ],
+        "actual_target_conclusion_tokens": [
+          "per",
+          "dominum",
+          "nostrum"
+        ],
+        "declared_source_to_target_spelling_pairs": [
+          {
+            "source_word_index_zero_based": 10,
+            "target_word_index_zero_based": 10,
+            "source_form": "intelligentiae",
+            "target_form": "intellegentiae"
+          }
+        ],
+        "finding": "Complete1962 no.3469 and both Pustet pages read providere; proposed provenire is correctly refused. Canonical body stays byte-identical. Historical intelligentiae and target intellegentiae are separately retained declared orthography. Actual August27 heading and uninterrupted prayer across printed528–529 identify this source; old mixed Mame/Pustet attribution is superseded only in the live owner row. Source actual Per Dominum. remains literal, and target Per Dominum nostrum. is independently present as a contiguous prefix on Pustet PDF390.",
+        "target_locator": "1962 PDF 719, printed p. 638, no. 3469",
+        "historical_locator": "Pustet Ratisbon 1862 PDF 614-615, printed pp. 528-529",
+        "all_other_Latin_bytes_conserved": true,
+        "current_positive_English_absent_for_owner": true,
+        "current_untranslated_records": 1,
+        "no_English_or_source_formula_method_admission": true,
+        "independently_viewed_image_sha256": [
+          "26351ccc5d5d01d1c9d74edfa63ec7cffd87aeee11eaffc984585b802a9ee356",
+          "9c9d0c9b8611f26944e78ed6eef3a1c964061f8d20ee82f4ed6660687e9b69dc",
+          "fe5005a26b5f2645b16fe5be88c04438ddc90ebffc4263310185bf6de8353e49",
+          "0d6336651a593566bdf8fde4601768c2300daec008068adaa916d5a691cb3202",
+          "b795399de53158f64c002e58d8dd865a58687ba84795103fd53cd957e382ad5c",
+          "2541fa1b0cd677277714c6c190ff130bac11bf0bc07882fb07e21163bb1297ed",
+          "b454f84920cb65977d2df629a74a30169e4f9fc330aa08192f7183c095b2f4f7"
+        ]
+      }
+    }
+  ],
+  "source_export": [
+    {
+      "path": "THIRD_PARTY.md",
+      "sha256": "aa37cfd1a596ce201ebb5497d33cb541344026a1c161aff0a279696dd44271c3",
+      "byte_size": 79098,
+      "existed": true,
+      "before_sha256": "2e843c58760a934a60587ae2cd52defd6ec9ab37d958410b9e81de154291d46d",
+      "mode": "0644",
+      "is_symlink": false
+    },
+    {
+      "path": "src/sources/calendars/roman-1962/propers.yaml",
+      "sha256": "7e76e9d940659dfe2c9aa293da95fa4a9e5711640e53b6ed44341edf85e1c01c",
+      "byte_size": 2625469,
+      "existed": true,
+      "before_sha256": "ef47c63c9528a99f2e5b70bd849f0014f8bbddfc1a8af116d77e500e08c0f9bf",
+      "mode": "0644",
+      "is_symlink": false
+    },
+    {
+      "path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+      "sha256": "733e1eaed6070b99da98ff06c1302f36b48d2a4baf5be65e542f1620d3ca038e",
+      "byte_size": 5077058,
+      "existed": true,
+      "before_sha256": "aafe43ebf3c4a7c5a7a7ab974c19472fe331b936c6d671b110be94f1bad81eb2",
+      "mode": "0644",
+      "is_symlink": false
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/sanctoral-repair-complete-prayers-20261026/artifact.toml",
+      "sha256": "06dbfefc5722f08ebfa8bbe6abe790ee5f87b142bc0c522983f87c8f44a943bb",
+      "byte_size": 1621,
+      "existed": false,
+      "before_sha256": null,
+      "mode": "0644",
+      "is_symlink": false
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/sanctoral-repair-complete-prayers-20261026/latin-only.txt",
+      "sha256": "611103bd7b073f4dbbbe2cfb6d30880b8e0cf4f688e11ac8d3173932f3fc16cb",
+      "byte_size": 746,
+      "existed": false,
+      "before_sha256": null,
+      "mode": "0644",
+      "is_symlink": false
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/sanctoral-repair-control-pages-20261026/artifact.toml",
+      "sha256": "d820b3876a4ca3f0638bfec32f59bde9b6621493cd8f774732190c2a0faedc01",
+      "byte_size": 2568,
+      "existed": false,
+      "before_sha256": null,
+      "mode": "0644",
+      "is_symlink": false
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/sanctoral-repair-control-pages-20261026/source.pdf",
+      "sha256": "54b5c9101380bace602855538baf8919bb6242777ffc3d802f7e3b0d7ae7ad29",
+      "byte_size": 1088622,
+      "existed": false,
+      "before_sha256": null,
+      "mode": "0644",
+      "is_symlink": false
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/sanctoral-repair-s-catharinae-virginis-martyris-collect-20261026.toml",
+      "sha256": "4c96c9608ea1ad29b01607e97b14dc1b85142ff2487783df942b2cbcbb86a456",
+      "byte_size": 1334,
+      "existed": false,
+      "before_sha256": null,
+      "mode": "0644",
+      "is_symlink": false
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/sanctoral-repair-s-catharinae-virginis-martyris-collect-images-20261026.toml",
+      "sha256": "20ebe75e5f318076a8e6c4d549830e97187c7a1b2e2662e5e7a4173d67c7dd3c",
+      "byte_size": 852,
+      "existed": false,
+      "before_sha256": null,
+      "mode": "0644",
+      "is_symlink": false
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/sanctoral-repair-s-iosephi-calasanctii-confessoris-collect-20261026.toml",
+      "sha256": "bd80fd439398d542c225da009046cff1c07549027179e962bc0ef5747e9cc251",
+      "byte_size": 1612,
+      "existed": false,
+      "before_sha256": null,
+      "mode": "0644",
+      "is_symlink": false
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/sanctoral-repair-s-iosephi-calasanctii-confessoris-collect-images-20261026.toml",
+      "sha256": "3b4f69bc06b979e14e0687ed29c283c933140536d048209ebf567e812f3ce84f",
+      "byte_size": 864,
+      "existed": false,
+      "before_sha256": null,
+      "mode": "0644",
+      "is_symlink": false
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/sanctoral-repair-s-matthiae-apostoli-secret-20261026.toml",
+      "sha256": "e0bd35d00cf8e732d16eb8fdc38a28c593ede2056b6fa58817c11bce43e24597",
+      "byte_size": 1240,
+      "existed": false,
+      "before_sha256": null,
+      "mode": "0644",
+      "is_symlink": false
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/sanctoral-repair-s-matthiae-apostoli-secret-images-20261026.toml",
+      "sha256": "250112150c2e5ad90e9d914181c7aafa3c1a6d583d84975351d6923bac510665",
+      "byte_size": 881,
+      "existed": false,
+      "before_sha256": null,
+      "mode": "0644",
+      "is_symlink": false
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/sanctoral-repair-s-catharinae-virginis-martyris-collect-20261026.toml",
+      "sha256": "f1576f58a1d124db91fbd5ab1bbfd85a6f83ec679e2952da4036e04e506755db",
+      "byte_size": 1486,
+      "existed": false,
+      "before_sha256": null,
+      "mode": "0644",
+      "is_symlink": false
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/sanctoral-repair-s-iosephi-calasanctii-confessoris-collect-20261026.toml",
+      "sha256": "735e00eeaf5eddc97d30984b364a967704e52dc5486a6408067cffa31e204a5f",
+      "byte_size": 1755,
+      "existed": false,
+      "before_sha256": null,
+      "mode": "0644",
+      "is_symlink": false
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/sanctoral-repair-s-matthiae-apostoli-secret-20261026.toml",
+      "sha256": "c6b5e16e8f42dd8d34cce6ab884b920377fe63d5a5910abad16eef31764dbeab",
+      "byte_size": 1351,
+      "existed": false,
+      "before_sha256": null,
+      "mode": "0644",
+      "is_symlink": false
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-sanctoral-repairs/artifacts/three-reviewed-bodies-20261026/artifact.toml",
+      "sha256": "c776198b463855ccb463e25802192186163b99629e49977f19090226db049182",
+      "byte_size": 2876,
+      "existed": false,
+      "before_sha256": null,
+      "mode": "0644",
+      "is_symlink": false
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-sanctoral-repairs/artifacts/three-reviewed-bodies-20261026/latin-only.txt",
+      "sha256": "ce303bc47e7a37b777c7bfabb9750e69b6212c19433fc47c7ba3b5647963d354",
+      "byte_size": 775,
+      "existed": false,
+      "before_sha256": null,
+      "mode": "0644",
+      "is_symlink": false
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-sanctoral-repairs/edition.toml",
+      "sha256": "f2ae6f5047498d8f0e497035719167f3df3200be61f57a58a62be6131e7c12ff",
+      "byte_size": 924,
+      "existed": false,
+      "before_sha256": null,
+      "mode": "0644",
+      "is_symlink": false
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-sanctoral-repairs/passages/s-catharinae-virginis-martyris-collect.toml",
+      "sha256": "de922bc8e53c22d4ad0ae73deeb9bb5c789c574db4190f73f97371190847d2ca",
+      "byte_size": 1592,
+      "existed": false,
+      "before_sha256": null,
+      "mode": "0644",
+      "is_symlink": false
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-sanctoral-repairs/passages/s-iosephi-calasanctii-confessoris-collect.toml",
+      "sha256": "fe2083c5eb0006b6df505c76e7273b1b4418280eecf2b5dcb8379fb58ae21be3",
+      "byte_size": 1872,
+      "existed": false,
+      "before_sha256": null,
+      "mode": "0644",
+      "is_symlink": false
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-sanctoral-repairs/passages/s-matthiae-apostoli-secret.toml",
+      "sha256": "9f2d1697c515de7ae60d587ceb689819ce7c641f3e7026a4cc83bec81d421cbd",
+      "byte_size": 1498,
+      "existed": false,
+      "before_sha256": null,
+      "mode": "0644",
+      "is_symlink": false
+    }
+  ],
+  "rights_scope": {
+    "existing_Pustet1862_and_1962_underlying_text_basis_applied": true,
+    "1962_whole_edition_clearance": false,
+    "protected_target_images_retained_in_public_postimages": false,
+    "Google_footer_metadata_finding_resolved": "V2 explicitly names Google digitizer footers on extract pages1–5, gives original-page map, distinguishes the marks from Missal words and applies the existing Google-matter rights record. Exact PDF and historical texts remain unchanged.",
+    "existing_Google_rights_record": "src/sources/inventories/google-usage-guidelines-rights-v1.toml",
+    "source_images_and_Google_marks_excluded_from_project_CC_BY_grant": true,
+    "whole_book_or_foreign_rights_claim": false
+  },
+  "conservation": {
+    "exact_body_owner_count": 1325,
+    "only_two_changed_Latin_bodies": true,
+    "only_three_changed_Latin_proof_rows": true,
+    "Joseph_body_byte_identical": true,
+    "other_calendar_fields_identical_after_only3_note_and2_body_updates": true,
+    "current_positive_English_file_sha256": "a8140456e71ed2a1a94589740de62ca2dc2619abe7f7adfbcf5a1a5c3f4d88ea",
+    "all3_English_owners_still_untranslated": true,
+    "existing_source_artifacts_passages_dictionaries_and_historical_replay_files_not_in_write_set": true,
+    "current17_historical_replays_independently_equal_original_Git2e030_bytes": true,
+    "future_combined_epoch_or_successor_fixture_accepted": false,
+    "future_epoch_gate": "Coordinator must construct and independently verify successor after-pins and exact reverse hunks that reconstruct all17 original before-byte streams. Never rewrite historical before bytes to fit a live repair."
+  },
+  "scope": [
+    "Exactly Catherine Collect quiesumus to quaesumus, Matthias Secret Matthias to Matthiae, and Joseph Calasanctius Collect byte-identical source-provenance replacement.",
+    "Full old and new LatinKey/proof/body values are fixed. All other parent Latin proof/body/refusal dictionaries and all1123 parent English positive dictionaries remain exact.",
+    "Historical source artifacts and passages remain immutable. Original17 historical before-byte streams and baseline proof values remain originalGit2e030.",
+    "This record does not extend any English finite source method, make a whole-edition rights claim, or admit a new owner domain.",
+    "Final combined code/source epoch, exact current-only audit after-pins, strict successor fixture and independent acceptance remain separate root integration obligations."
+  ],
+  "adoption_parent_sha256": "ff56d16039bf65caf5c8d6a47c59efed7dc6124b62dd7565382dbf00f991c2c0",
+  "adopted_utc": "2026-10-26T04:28:02.578305+00:00"
+}

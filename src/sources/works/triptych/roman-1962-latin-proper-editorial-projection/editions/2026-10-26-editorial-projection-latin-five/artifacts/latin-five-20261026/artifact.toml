@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-five.latin-five-20261026"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-five"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "Triptych offers only its transcription layout and disclosed normalization under CC BY 4.0. All underlying complete prayer words are independently witnessed in the United States public-domain Mame Tours 1922 printing; that Latin remains public domain and is excluded from the project grant. Finite literal historical conclusion controls supply only the prefixes actually printed by the target. Publication uses the repository 17 U.S.C.103(b) plus independent public-domain-witness basis, not clearance of the1962 book, images or layout."
+provenance = "Five exact target and historical complete prayers independently collated from whole-page images at 200 and 400 dpi and accepted in separate source-only review on 26 October 2026. Mechanical review joined five exact current before nodes, absentLatin proof rows, preserved English absences and acceptedone-line + LF hashes. No OCR or model supplied any prayer word."
+retrieved = "2026-10-26"
+sha256 = "d82591596f919bc18834804124b9efbe0f81f383b4cceeb08583035d158b76b0"
+byte_size = 968
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-latin-five/artifacts/latin-five-20261026/latin-only.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-20261026", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-pages-20261026", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-support-pages-20261026", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "One LF-delimited complete accepted target body per line, matching historical order. Join source wraps, remove stress accents, expand ligatures, retain declared calendar consonantal-j spelling and actual target pointing. Advent uses literal Mame115 Christ-directed prefix through in unitate.; Pentecost uses literal Mame368 Father-directed prefix through in unitate plus own PDF 519 ejusdem cue under PDF 54 IX17; Holy Wednesday historical eumdem to target eundem is disclosed received spelling; September shortens actual historical Per Dominum nostrum to target Per Dominum. No other conclusion tail or Amen. Historical source artifact remains unchanged."
+encoding = "utf-8"
+indexable = true
+notes = "Exact source-only accepted carrier SHA256 d82591596f919bc18834804124b9efbe0f81f383b4cceeb08583035d158b76b0. Five Latin bodies only; no English, appointment or Ordinary-frame change. The modern target whole PDF and page rasters stay remote or private scratch."

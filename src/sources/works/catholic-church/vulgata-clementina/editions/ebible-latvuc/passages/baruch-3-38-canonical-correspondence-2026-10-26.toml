@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+id = "passage.catholic-church.vulgata-clementina.ebible-latvuc.baruch-3-38-canonical-correspondence-2026-10-26"
+edition_id = "edition.catholic-church.vulgata-clementina.ebible-latvuc"
+artifact_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.usfm-47-barlatvuc-6eca1df1"
+artifact_sha256 = "6eca1df1c359e5119f124a8999d4d67b0721a63356bd40699b2d086b66dc7da2"
+locus = "Bar.3.38"
+states = ["cataloged", "acquired", "inspected", "verified"]
+physical_line_ranges = [[106, 106]]
+verified_on = "2026-10-26"
+context = "Exact terminal Baruch clause. Canonical Vulgate verse3:38 source coordinate."
+notes = "The complete native Baruch3 chapter was compared byte-for-byte at explicit chapter/verse markers in the current publisher USFM archive 439d1789e021e3209125270dd2e3476f9ff7e99fea2a0349778655e4e40b7826, member 47-BARlatVUC.usfm SHA256 6eca1df1c359e5119f124a8999d4d67b0721a63356bd40699b2d086b66dc7da2. The current parent archive is not asserted to equal the historical package that produced the already-held normalized TSV. The controller is now the complete unchanged retained native USFM book member, and its physical range addresses the exact native verse-marker line. The normalized terminal-body hash below remains a comparison to the already-held TSV after its declared transformation. Whole-archive modern support files remain excluded and their rights unresolved. The native terminal full body SHA256 is af576f4793ba3ef596cca114581a01a81280585ab34d6e21694acc1ebad51952. In WEB/KJV/RV, neighboring canonical3:34-35 share native3:34; no singleton superset join is activated here. WEB/RV retain their feminine pronoun and KJV its masculine pronoun unchanged."

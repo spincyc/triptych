@@ -1,0 +1,281 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "HOM-001",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/90-note.tex:83 (the route claim) and :113 (the References Douay entry); the spoken quotation is at sections/homily/10-homily.tex:51",
+      "problem": "The speech quotes 'if ye be Christ's, then are ye Abraham's seed' (10-homily.tex:51, introduced as St Paul's word, Gal 3:29). These are not the words of the Douay-Rheims, which reads 'And if you be Christ's; then are you the seed of Abraham, heirs according to the promise' (repository Douay corpus, to-galatas 3:29). They are E. Marshall's 1878 English rendering of the verse as Bede quotes it inside the Explanatio passage the homily is following (the quotation flows directly out of Bede's 'that is, the whole body of the saints'). Yet the terminal note states: 'Scripture quoted is the Douay--Rheims (Challoner): Apoc 7:9; Gal 3:29; Mt 11:28; Ps 33:10; Mt 5:3, 10 ...' (90-note.tex:83), and the References entry lists Gal 3:29 among the Douay texts used (90-note.tex:113). The note's account of this quotation's route is therefore false: a reader who checks the stated source finds different words. The speech itself is fine as it stands; the defect is in the note's record of where the words come from.",
+      "repair_target": "homily",
+      "required_result": "The terminal note's account of the route of Gal 3:29 must match the words actually spoken. Either (a) correct the note: remove Gal 3:29 from the Douay list in the route paragraph and the References entry, and state that the verse is quoted as Bede cites it, in Marshall's English; or (b) change the spoken words to the Douay form ('if you be Christ's, then are you the seed of Abraham') so the existing note is true. Every other quotation's route was verified and is unaffected.",
+      "severity": "blocking"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "homily-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex",
+          "references": [
+            "propers/verified.md",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
+      "element_keys": [
+        "introit",
+        "collect",
+        "commemoration-collect",
+        "lesson",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "commemoration-secret",
+        "preface",
+        "communion",
+        "postcommunion",
+        "commemoration-postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Bede",
+            "Augustine of Hippo",
+            "Victorinus of Pettau",
+            "Cyprian of Carthage",
+            "Gregory the Great",
+            "Alfredo Ildefonso Schuster",
+            "Lucien Fromage",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Bede",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "sealed-number-uncounted-crowd"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "sealed-number-uncounted-crowd",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Rabanus Maurus",
+            "Alfredo Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Hilary of Poitiers"
+          ],
+          "component_keys": [
+            "beatitudes-way-of-the-saints"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "beatitudes-way-of-the-saints",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Basil of Caesarea",
+            "Robert Bellarmine",
+            "Augustine of Hippo",
+            "Thomas Aquinas",
+            "Gregory the Great",
+            "John Chrysostom",
+            "Alfredo Ildefonso Schuster",
+            "William Durandus"
+          ],
+          "carrying_authors": [
+            "Basil of Caesarea",
+            "Robert Bellarmine",
+            "Augustine of Hippo",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "no-want-just-in-gods-hand"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "commemoration-collect",
+            "lesson",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "commemoration-secret",
+            "preface",
+            "communion",
+            "postcommunion",
+            "commemoration-postcommunion"
+          ],
+          "key": "no-want-just-in-gods-hand",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/f02-all-saints",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/format.tex": "43c4890d11fec65696c54659b90db4841affb0ccae551e3cfff335db4233a9ab",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/homily.tex": "448d142d5eaa0fe0535cd4432527a1672734823db69a4ba3985bfb9b8cd4097f",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/propers/verified.md": "ebda4a0f776c8e921dacc403c1f0497f432c4f6449d4871075cb7a4d904529c7",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/interpretations.md": "1d225c377b74ace4fefdb9dfe35d3910b83eedcff0b317e0d78bd98a8c8f01a9",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/scope.md": "6d2d4974b91dfaf31d0f6525f048d540fa90ce1b05e7336653aa517ecb973319",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/10-homily.tex": "210aa6e92c534c137682d244963833b7f4397e63524a1ecfa73b685d14a55647",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/90-note.tex": "51b71903786a8bdc7611210b6c9a4acebffca6267ed62ba9ce6fcdbebcda89c4",
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "15",
+            "4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83",
+            "427e2f58bb897a16",
+            "c7dfb84c76a057079251e8c918243b787fa69494",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Reviewed the full homily deliverable (sections/homily/10-homily.tex, 90-note.tex, homily.tex, format.tex) against the homily profile, the stage guidance, the accepted expansive and concise studies, and the propers record. All ten sealed inputs verified by SHA-256. Every quotation and attribution in the speech was re-checked against the repository payloads and retained page images: the repository Douay corpus (Apoc 7:2-4, 11-12 paraphrase and 7:9; Mt 11:28; Ps 33:10; Mt 5:3, 8-10), Lasance 1945 publish rows (Introit, adapted Offertory, commemorated Collect, Postcommunion), Bede in Marshall's English (definite number; robes as baptism; palms as the triumph of the Cross; the angels as the persons of the multitude), Augustine (De serm. Dom. I 'a perfect standard of the Christian life', 'humble and God-fearing', the eighth beatitude returning to the starting-point; Sermon LXI 'This is the mass of the saints'; Enarrationes on Ps 33 'the Scripture has deceived me'), Chrysostom (Hom. 15 'a sort of golden chain' and 'though thou be a slave'; Hom. 38 'not this or that person, but all that are in anxiety, in sorrows, in sins'), Basil on Ps 33 (PG 29 retained page images verify the homily on Ps 33 and its comments on vv. 10-11 through the lemma of v. 11 at col. 366 D; the 'perfect good is God himself' clause rests on the research record's reading of cols. 365-368 and is consistent with everything inspectable), Aquinas (Super Psalmos 33 nn. 10-11 'nourisher and physician' and 'comes to the help of those who seek him in their need'; Super Matthaeum cap. 5 rewards perfect only in the homeland, in their beginning on the way), Durandus Rationale VII.34 (second cause of the feast), and Schuster vol. V p. 211 ('in the hands of God'; the f/l misread in the bound OCR is the research record's declared handling, accepted by the study). All are exact or faithful. Every interpretive join the speech makes is identified in the terminal note as the homily's own, as the profile requires, and none of the avoided material (Victorinus, Cyprian, Bellarmine's two senses, Augustine on the omitted half-verse, the commemorated Secret and Postcommunion) appears in the speech. The note's factual claims check out: exactly 1,445 spoken words (verified by count), 11.1-12.0 minutes at 120-130 wpm by arithmetic, the fixed Preface rule honored (both candidates named, neither used), truthful rehearsal statement, References all used. Register is plain, oral, second person, historical present, short sentences, no questions, no profile-proscribed devices; the one practicable response comes from the commemorated Collect and is said once. Structure conforms to the profile (literal imports in fixed order, single spoken component inside properhomily, terminal note after the closing page break, rights notice and generation metadata present). One defect: the terminal note states that the Scripture quoted is the Douay-Rheims and lists Gal 3:29 among those quotations, but the spoken words 'if ye be Christ's, then are ye Abraham's seed' are E. Marshall's English of the verse as Bede cites it, not the Douay ('if you be Christ's, then are you the seed of Abraham'). CHANGES_REQUIRED for that single repair."
+}

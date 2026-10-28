@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.church-of-england.king-james-version.ebible-engkjv.verse-aliases-4c994ba5"
+edition_id = "edition.church-of-england.king-james-version.ebible-engkjv"
+artifact_type = "reference-table"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych-created reference facts and qualification prose; no third-party scripture body is copied into this table."
+rights_jurisdiction = "United States"
+projected_from = ["artifact.catholic-church.vulgata-clementina.ebible-latvuc.usfm-29-hoslatvuc-5b466d7f", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.usfm-42-jdtlatvuc-66351169", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.usfm-47-barlatvuc-6eca1df1", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-18-judith-c271f5df", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-30-baruch-97262d58", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-33-osee-0341e42a", "artifact.church-of-england.king-james-version.ebible-engkjv.usfm-29-hoseng-kjv-7aface17", "artifact.church-of-england.king-james-version.ebible-engkjv.usfm-42-jdteng-kjv-f59209d9", "artifact.church-of-england.king-james-version.ebible-engkjv.usfm-47-bareng-kjv-acfdef1d", "artifact.church-of-england.king-james-version.ebible-engkjv.verse-aliases-087975e7", "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-28-hosea-739ac74c", "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-43-judith-81d7b6da", "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-47-baruch-a8b4c916"]
+transformation = "Preserve the exact previous immutable alias payload as a byte prefix and append only independently accepted distinct source-coordinate rows, ordered by cited_locus. No prior row or source wording is edited."
+provenance = "New immutable 2026-10-26 reference revision. Previous artifact artifact.church-of-england.king-james-version.ebible-engkjv.verse-aliases-087975e7 SHA256 b7956fd8da35e8e120e5838a3534a1989fc6f31e50edc8fc6aafa3135cddab32, its payload path and metadata remain unchanged. Append 16 accepted rows (12 exact renumberings; 4 precise refusals). The source acceptance covers only the exact finite coordinates; combined or differing source wording is never silently widened."
+retrieved = "2026-10-26"
+sha256 = "4c994ba50c9dc8cff01b680521017e9eba7b17c8370bcd1cc02e92e9d617e467"
+byte_size = 433463
+path = "src/sources/works/church-of-england/king-james-version/editions/ebible-engkjv/artifacts/verse-aliases-4c994ba5/verse-aliases.tsv"
+indexable = true
+encoding = "utf-8"
+notes = "Native Bible verse bodies, divisions and printed order remain unchanged. Baruch acceptance is isolated 3:38 only; no chapter-wide alignment or singleton superset claim. New current ZIPs retain distinct source identities from historical parent packages. Primary archive parents remain remote with unresolved support-file rights; exact complete underlying Bible USFM book children carry separately checked public-domain bases and supply the raw source testimony."

@@ -5,7 +5,250 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-25.
+Last reconciled: 2026-10-27.
+
+## Claude 1962 All Saints, 2026-11-01
+
+<!-- promised-deliverable: claude-1962-f02-all-saints-three-documents-2026-11-01 -->
+
+**Complete: accepted, pushed to `main` and verified live.** On
+2026-10-26 the maintainer asked for the Claude 1962 proper-study documents
+for the upcoming Sunday and authorized publication to `main`. Sunday,
+1 November 2026 is All Saints (I class), permanent identity `F02`,
+`liturgy/roman-rite/1962/propers/temporal/f02-all-saints`; the Twenty-third
+Sunday after Pentecost is commemorated. The production plan records the
+one-provider authorization. This is an independent Claude production: the
+published GPT leaf for the same identity is not an input, and no stage
+opened any GPT-provider file or record for the identity.
+
+Work began at the authorization commit `c7dfb84c7` on
+`feature/propers/claude`; publication is an ordinary fast-forward of
+`origin/main` after the three deploy gates pass locally. Run
+`427e2f58bb897a16` (`proper-study` v15) reached ACCEPTED at its
+publication gates with no escalation: 45 packets, 45 accepted results, one
+recorded intervention. Every agent stage ran as a fresh Factory Droid
+worker subagent with no inherited conversation, at its packet's declared
+effort, and every review was a fresh worker. Six cycles were real defects
+that program gates or cold reviews found and repaired: two in research (a
+misreported 1570 Offertory, a wrong Offertory collation and psalm
+numbering, a Missal reported read but unread; then unsealed Lasance English
+and unregistered dated web witnesses), one house-voice preflight failure,
+one round where a research false negative hid Victorinus of Pettau on
+Apoc 7 and the study carried six defects of its own, one carry-through gap
+where that research repair never reached the study prose, and one homily
+note that misrouted a Gal 3:29 quotation. The Latin rests on the 1962
+Missal read on the RGMR facsimile page images, with the 1570, 1604, 1862
+and 1889 layers collated; the Preface is deliberately left unsettled, both
+candidates named and neither asserted. The installed family is a 32-page
+expansive study, a 12-page concise study, a four-page homily (about 1,445
+spoken words) and the canonical web edition. The run is archived in the
+leaf under `evaluations/proper-study-results/427e2f58bb897a16/`. The
+driver's account covers every cycle, the five standing advisories and what
+is left for other owners:
+[CYCLES.md](workflows/reviews/claude-1962-f02-production-2026-10-27/CYCLES.md).
+The three local deploy gates passed, and `origin/main` was fast-forwarded
+from `59a9862cc` to `6f93e73e9`. Pages run 40501677604 succeeded. The
+three PDFs, the web edition, the Traditional Latin Mass catalog page, the
+browser's corpus data and the publication manifest are each byte-identical
+live to the verified local site, as
+[deployment-evidence.json](workflows/reviews/claude-1962-f02-production-2026-10-27/deployment-evidence.json)
+records.
+
+## Claude Four Last Things register revision, 2026-10-26
+
+<!-- promised-deliverable: claude-flt-register-2026-10-26 -->
+
+**Complete: pushed to main and verified live.** On 2026-10-26
+the maintainer asked that the new voice and drafting guidance be applied to
+the four Claude Four Last Things essays and published to `main`. The
+governing rules are the Catholic voice rule and "Say what the texts say,
+plainly" in `guidance/editorial.md`. The revision changes prose only:
+quotations, references, bindings, heading order and the two-column layout
+stay as accepted on 2026-10-26, and each essay keeps approximately its
+present extent.
+
+All four essays are revised. A mechanical conservation check against
+`c7dfb84c7` passes for each: quotations, `\latin` spans, endnotes,
+headings, appendices and `main.tex` are unchanged, and body prose is
+90-93% of its starting length. Each essay passed an independent cold
+register and fidelity review (Death and Heaven at round 2, Judgment and Hell
+at round 1) and an independent every-page visual review; three print-only
+space and column adjustments changed no word. The series record is
+`src/claude/articles/faith/four-last-things-shared/register-revision-2026-10-26.md`,
+with each leaf's `research/revision-2026-10-26.md` and `research/scope.md`.
+
+| Essay | Pages | PDF SHA-256 |
+| --- | ---: | --- |
+| I Death | 23 | `c0ce7de359ea8da84599bd1dcdbf883457ad3d99a9acb89c720313eb7bd196e6` |
+| II Judgment | 25 | `07227cae27258bcaf5af90fe188a93d373ed32e03a35026040a467dcf52f7731` |
+| III Hell | 30 | `e4f164a8b5122cfad75bb2efce11b8263efa3148c6065ab12f04372b7794507d` |
+| IV Heaven | 22 | `1c2fb4e8e6a664609b3b31afb61e239d2c3d2edd6a54384a6614d8913714effa` |
+
+The reviewed PDFs and regenerated web editions are installed. The Claude
+publication inventory, document catalogue and scoped release bindings are
+refreshed; source classifications and the family ledger are unchanged.
+`make check-sources`, `check-web-editions-current`,
+`check-release-bindings` and the promise ledger pass.
+
+### Verified register publication, 2026-10-27
+
+`origin/main` had advanced to `da270a039` during the work, so it was
+merged without rewriting either parent; the only conflict,
+`release/public-alpha.json`, took the upstream manifest and re-recorded only
+the catalogue and the four Claude web editions. The deploy gates
+(`make check-deployment-sources`, `make public-site`,
+`public-alpha verify --deployment-target github-pages`) and
+`make check-sources` passed on the merged tree. Commit
+`ff484b0e3163f4e64c4a48aa14628d0e3ef20f8d` reached `origin/main` by
+ordinary fast-forward. [Pages run 40422812019](https://github.com/spincyc/triptych/actions/runs/40422812019)
+and [repository hygiene run 40422812013](https://github.com/spincyc/triptych/actions/runs/40422812013)
+both succeeded for that exact commit.
+
+At `2026-10-27T00:18:13Z`, all 15 checked routes on `https://mystago.gy/`
+returned HTTP 200 and matched the verified local site byte for byte: the
+four canonical Claude PDFs, their four provider-qualified aliases, the four
+web editions, the Faith catalogue, the document-catalogue data and the
+publication manifest. All live PDF hashes equal the accepted hashes above.
+The live publication-manifest SHA-256 is
+`cf6109a58e45b30987d955569cc93fef9db8a5b9e3c4e04bdea2376b3f165a4f`.
+This closure receipt changes no reader-facing artifact and does not claim
+its own subsequent deployment.
+
+## Four Last Things PDF layout, 2026-10-26
+
+<!-- promised-deliverable: four-last-things-pdf-layout-2026-10-26 -->
+
+**Complete: pushed to main and verified live.** The maintainer
+requested two-column Four Last Things articles, a clean standalone title
+page for each document, contents after the title, and publication to `main`.
+This covers all four topics in both provider editions. Work began from
+`9f51eb530`, preserving the 25 October GPT content revision.
+
+The shared provider formats now give every article an 11-point two-column
+body with 0.85-inch margins and a 0.3-inch column gap. Title pages and
+contents are separate; Notes and terminal appendices remain full width,
+including Claude's graded-teaching tables. Print-only paragraph adjustments
+resolve two narrow-column overflows. Local notes/reference spacing prevents
+note-only or colophon-only spill pages. The requested layout supersedes
+older single-column physical-page targets while preserving the essays.
+
+Independent visual reviews cover every rendered page: 91 GPT pages and
+105 Claude pages, 196 total. Every page was opened at full raster size;
+after terminal repairs, unchanged raster bytes were compared and every
+changed page reopened. All eight final artifacts are accepted. Section-end
+whitespace before the full-width apparatus is intentional. Residual
+underfull-box diagnostics were checked visually and do not indicate clipping,
+missing text or broken reading order. Default text extraction can interleave
+columns; raw extraction preserves the content-stream order.
+
+Builds settle references and contents; all eight anchor and generation
+metadata gates pass. No final log contains overflow, undefined references or
+package warnings. PDF structure, embedded fonts, title/contents/body order,
+final-page references and colophon, and exact reviewed-build/installed-mirror
+identity pass. All eight regenerated web editions match their prior text
+byte for byte after masking only revision timestamps. Source inventories and
+the family ledger are refreshed without changing source classifications or
+research judgments. The catalogue changes only the four affected works;
+release bindings are scoped to their web editions and that catalogue.
+
+### Reviewed artifacts
+
+| Edition / topic | Pages | PDF SHA-256 |
+| --- | ---: | --- |
+| claude / death | 24 | `55fb41f699ead340c283c938260783b835aa09bca2fd4849a8c4da7a5d5fe1c7` |
+| claude / judgment | 27 | `537e7efdee6bb887e92951a9bb1c14269c8f8ecdbb5566f283a48317438757fc` |
+| claude / hell | 31 | `4cecbc1241297594e2c648005e58936f430102c652d1d690d408b33a953f23d6` |
+| claude / heaven | 23 | `bf54df5b0f615a1527bda88c04bed8902b809d9c149ae2aed0048ab1a0037c89` |
+| gpt / death | 23 | `bc4b414fcb623c9490c8dc3d62d1acaa767229c4f2e350b100ccdaf21bec3aba` |
+| gpt / judgment | 23 | `77658094f0abcb5bc6a7a14055f9e2f2a775aefc227e7403542aba1f3aa2b0bd` |
+| gpt / hell | 24 | `0d90272295974fbe904985cd2ec838692b7d664364500b219698bfe799452fe2` |
+| gpt / heaven | 21 | `12e6fbe74f19dd27d03603de5060749e2f35df0fb30b28145e3c59a4369f3873` |
+
+The full `make check-sources` aggregate passes, including the exact
+`check-deployment-sources` graph and the source-family routine gate. The
+public-site build, GitHub Pages verifier, tracked web-currentness, scoped
+release bindings, promised-deliverable ledger and tool-registry checks pass.
+A separate final review accepts the complete 46-file source/record/release
+diff against `9f51eb530`, with no material content or disclosure concern.
+
+### Verified publication, 2026-10-26
+
+Commit `82b8c71dadca1dbbc1d0d9280167e261294af2d1` reached `origin/main`
+by ordinary fast-forward. [Pages run 40338343854](https://github.com/spincyc/triptych/actions/runs/40338343854)
+and [repository hygiene run 40338343908](https://github.com/spincyc/triptych/actions/runs/40338343908)
+both succeeded for that exact source commit.
+
+At `2026-10-26T14:40:04Z`, all 27 checked normal routes on `https://mystago.gy/`
+returned HTTP 200 and matched the verified local artifact byte for byte:
+eight canonical PDFs, their eight provider-qualified aliases, eight web
+editions, the Faith catalogue, document-catalogue data and the publication
+manifest. All live PDF hashes equal the accepted hashes above. The live
+publication-manifest SHA-256 is
+`ba8123f6a1f6b5c7191b0e70b629703873ac8427f4114643d2b21417ecc247ba`.
+
+Commits remain on workspace branch `feature/flt`; publication updated
+`origin/main` without switching branches or rewriting history. This closure
+receipt describes the verified source publication; it changes no reader-facing
+artifact and does not claim its own subsequent deployment.
+
+## GPT postconciliar All Saints, 2026-10-25
+
+<!-- promised-deliverable: gpt-postconciliar-all-saints-2026-11-01 -->
+
+**Complete.** Complete the GPT postconciliar proper-study workflow for Sunday,
+1 November 2026, All Saints, under the United States Roman Missal, Third Edition
+(2011), with independent cold reviews and publication to main. The permanent
+target is `PC-R07-ABC`,
+`liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc`.
+This one-provider production exception is recorded in the production plan.
+The completed 1962 F02 publication is a separate work and supplies no
+postconciliar appointment, research judgment or authored interpretation.
+
+Work starts at clean `9f51eb530`, equal to both remote refs. Commits remain on
+`feature/propers/codex`; main publication uses a genuine fast-forward without
+switching the workspace branch or rewriting history. The owning receipt is
+`workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/RECORD.md`.
+
+Native version-15 run `0af32a5cd3635b06`, seeded at `e1ed2ba5d`, reaches
+**ACCEPTED** with 37 results, no standing findings and no escalations. The
+20-page study, ten-page concise study and three-page, 1,174-word homily pass
+fresh content, artifact and visual reviews; all 33 final pages are inspected.
+The sole canonical web edition passes source-fidelity and actual desktop/phone
+review. Both study findings, editorial self-narration and an obsolete proof
+status sentence, are repaired through their native owners and dependent reviews.
+All three installed PDFs and canonical Markdown match the accepted hashes.
+
+The terminal 80-file archive exactly matches an isolated reproduction. Its
+explicit derivative removes only five private checkout prefixes from optional
+research notes; all substantive fields and immutable native evidence remain
+unchanged. The receipt records original/exported hashes and the frozen cycles.
+Post-archive publication inventory and family bookkeeping refresh is complete.
+Native source registration has 33 bindings, 37 dispositions, six Bede admissions
+and thirteen deferred candidate-use keys; edition and rights limits remain
+explicit. Broader corpus chronology and source-family audits remain open.
+
+Three independently reviewed support commits add exact registry-backed PC-R
+identity/chronology, General Calendar source ownership and explicit safe archive
+export. Their focused suites pass 85, 57 and 41 tests respectively; one
+historical-native archive reproduction is honestly skipped. The 28 existing GPT
+postconciliar PDFs, 335 pages, rebuild to the previously reviewed bytes under
+the corrected registry. Preliminary source/code disclosure review finds no private data,
+unintended provider work or retained restricted acquisition bodies.
+
+Complete post-archive source, production-site, Pages compatibility, release,
+ledger and tool-registry gates pass. The two sealed EOF-only advisories remain
+explicitly qualified. Pinned outgoing cold/disclosure reviews approve without blockers. Main then
+advances with published article-layout work. Its eight PDFs reproduce all 196
+recorded reviewed pages byte-for-byte; combined metadata and all merged local
+gates pass. Scoped postmerge integration and public-object cold rechecks both approve
+without findings. Main publication and exact live deployment verification are complete.
+
+The reviewed result reaches main at `e910f3c76` by genuine fast-forward.
+Repository hygiene and Pages deployment both succeed. All 35 normal live
+routes on `mystago.gy`, including the new three PDF/canonical-alias pairs,
+canonical web, catalog/corpus/manifest and preserved incoming articles, return
+HTTP 200 with exact reviewed bytes. The owning published-runs and live receipts
+record the evidence. This completion receipt changes operator records only.
 
 ## Papal document source corpus, 2026-10-25
 
@@ -129,7 +372,7 @@ page-review work continues.
 
 <!-- promised-deliverable: gpt-flt-and-sunday-2026-10-25 -->
 
-**In progress.** Apply the recent Catholic voice and plain-drafting guidance
+**Complete.** Apply the recent Catholic voice and plain-drafting guidance
 to the four GPT Four Last Things essays, preserving their substantive
 source-based spiritual reading and approximate existing extent. Complete the
 GPT 1962 proper-study workflow for next Sunday, 1 November 2026, after verifying
@@ -173,8 +416,16 @@ facts and artifacts in the merged context, explicitly retaining the historical
 meaning of four changed global research seals. Full merged source, site,
 Pages-verifier, release/ledger and tool-registry checks now pass. Final cold
 review accepts the eight-commit outgoing range with all 1,285 new blobs checked;
-the built site preserves the exact reviewed artifact and HTML bytes. Main push
-and live verification remain the final steps.
+the built site preserves the exact reviewed artifact and HTML bytes.
+
+Commit `d67e2259c3ee87cdd78608330b86e2c300443da6` is published to the workspace
+feature ref and to `main` by genuine fast-forward. Pages run `40259179418` and
+hygiene run `40259179414` both succeed for that exact commit. At 02:48 UTC on
+26 October, all 23 normal live routes return 200 and match the reviewed/local
+bytes: seven canonical PDFs, seven provider aliases, five web editions, both
+owning library pages, catalogue data and the publication manifest. The owning
+record retains the exact hashes and run links. This completion receipt records
+that verified source publication; its own changes are closure records only.
 
 ## GPT proper-study register revision, 2026-10-23
 

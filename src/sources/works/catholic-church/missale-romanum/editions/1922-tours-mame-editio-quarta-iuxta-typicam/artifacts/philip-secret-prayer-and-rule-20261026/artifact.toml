@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.philip-secret-prayer-and-rule-20261026"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The identified Tours Mame 1922 printing is public domain in the United States by expiration of its maximum publication term. This bounded image-checked Latin transcription reproduces only that printing and is excluded from the project CC BY 4.0 grant."
+provenance = "Whole 51720493-byte Mame PDF rehashed as 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005. Complete Philip Neri Secret PDF 715/printed 601, own May26 heading PDF 714/printed 600, and complete Rubricae generales IX17 PDF 54/printed xlii read on full page images on26 October 2026. This historical source is Mame 1922, not Pustet 1862 and not target 1962."
+retrieved = "2026-10-26"
+sha256 = "81dd43c9a6f2ff27269d010d3e1e21f7712062974523a76013b068ee9e65c3ff"
+byte_size = 732
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/philip-secret-prayer-and-rule-20261026/latin-only.txt"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Join physical wraps and printed line-end division; remove stress accents, expand ligatures, normalize decorative initials. Preserve all actual words, pointing and source Per Dominum... in unitate ejusdem. Paragraph1 is entire PhilipSecret; paragraph2 is complete own IX17 rule with every etc. unexpanded."
+encoding = "utf-8"
+indexable = true
+notes = "Actual PhilipSecret does not print the omitted middle or Spiritus Sancti afterejusdem. Separate own rule and Pustet full formula are not misrepresented as part of this historical prayer. No English, target PDF/images, whole scan or OCR payload is added."

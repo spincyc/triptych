@@ -73,7 +73,7 @@ from _lasance_publication import (
     LASANCE_PUBLICATION_EDITIONS,
     approved_lasance_publication,
     approved_lasance_printed_page,
-    numbered_page_match,
+    printed_page_match,
     shared_lasance_rights_owner,
 )
 from _proper_latin import (
@@ -1549,7 +1549,7 @@ def overlay_entry_source_problems(
         )
 
     printed = entry.get("printed_page")
-    printed_match = numbered_page_match(printed)
+    printed_match = printed_page_match(printed)
     if printed_match is not None and not approved_lasance_printed_page(entry):
         printed_match = None
     if printed_match is None:
@@ -1604,12 +1604,20 @@ def overlay_entry_source_problems(
             first = printed_match.group(1)
             last = printed_match.group(2)
             printed_locus = (
-                f"printed pp. {first}-{last}" if last else f"printed p. {first}"
+                f"printed pp. {printed}" if last else f"printed p. {first}"
             )
             printed_context = " ".join(
                 str(passage.data.get(field) or "") for field in ("context", "notes")
             )
-            if printed_locus not in printed_context:
+            # Recorded citations may omit p./pp.; ranges use either marker.
+            # Exact endpoints, suffixes and physical-page binding still control.
+            printed_prefix = r"printed (?:pp?\. )?" if last else r"printed (?:p\. )?"
+            # A longer page suffix or range is not proof of this exact locus.
+            printed_pattern = (
+                rf"(?<!\w){printed_prefix}{re.escape(str(printed))}"
+                r"(?!\w|\s*[-–]\s*[0-9⁰¹²³⁴⁵⁶⁷⁸⁹])"
+            )
+            if re.search(printed_pattern, printed_context) is None:
                 problems.append(
                     f"{where}: passage context does not record {printed_locus!r}"
                 )
@@ -3649,6 +3657,22 @@ def overlay_problems(paths: list[Path]) -> tuple[list[str], list[dict]]:
         except (OSError, tomllib.TOMLDecodeError) as error:
             problems.append(f"{sidecar}: unreadable: {error}")
             continue
+        if "execution_sources" in document:
+            try:
+                import _oration_execution
+                if path.parent.name != "roman-1962":
+                    raise ValueError("execution_sources is only defined for the finite Roman1962 method")
+                _oration_execution.load_sources(path.parent.parent, path.parent.name, sibling("mass-propers"))
+            except (ValueError, KeyError, TypeError, OSError) as error:
+                problems.append(f"{sidecar}: {error}")
+        if "name_execution_sources" in document:
+            try:
+                import _name_execution
+                if path.parent.name != "roman-1962":
+                    raise ValueError("name_execution_sources is defined only for the finite Roman1962 two-case method")
+                _name_execution.load_name_sources(path.parent.parent, path.parent.name, sibling("mass-propers"))
+            except (ValueError, KeyError, TypeError, OSError) as error:
+                problems.append(f"{sidecar}: {error}")
         # Loaded once, and only where a sidecar was actually found.
         if history is None:
             history = act_history()

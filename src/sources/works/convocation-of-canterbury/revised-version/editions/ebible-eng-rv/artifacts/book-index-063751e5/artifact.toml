@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.convocation-of-canterbury.revised-version.ebible-eng-rv.book-index-063751e5"
+edition_id = "edition.convocation-of-canterbury.revised-version.ebible-eng-rv"
+artifact_type = "reference-table"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych-created book identity/count and source-coordinate reference facts."
+rights_jurisdiction = "United States"
+projected_from = ["artifact.convocation-of-canterbury.revised-version.ebible-eng-rv.book-index-a2c921f7", "artifact.convocation-of-canterbury.revised-version.ebible-eng-rv.verse-aliases-cb6721c1"]
+transformation = "Retain every book row and every field except the Baruch note; WEB also receives the separately accepted Romans source-coordinate note. Book order, names, tokens, aliases, filenames and declared counts stay byte-identical."
+provenance = "New immutable 2026-10-26 book-index revision. The old artifact, ID, payload path and bytes remain unchanged. Notes remove prior claims that reviewed exact aliases cannot be executed; no edition Bible wording or numbering is rewritten."
+retrieved = "2026-10-26"
+sha256 = "063751e52398059416d1fa09ebaefd743f4eaf88f041ec98c2cae22cc24ebde1"
+byte_size = 17632
+path = "src/sources/works/convocation-of-canterbury/revised-version/editions/ebible-eng-rv/artifacts/book-index-063751e5/book-index.tsv"
+indexable = true
+encoding = "utf-8"

@@ -1,0 +1,112 @@
+{
+  "run_id": 40347749826,
+  "repository": "spincyc/triptych",
+  "published_commit": "e910f3c76ef03fa825d2eb6da227914e01a1d509",
+  "jobs": [
+    {
+      "id": 121659113435,
+      "name": "deploy",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 40347749826,
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check out repository",
+          "conclusion": "success"
+        },
+        {
+          "name": "Set up Python",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install PDF text extraction dependency",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install site and deployment-check dependencies",
+          "conclusion": "success"
+        },
+        {
+          "name": "Confirm the release-bound reading-plan tracks are present",
+          "conclusion": "success"
+        },
+        {
+          "name": "Restore the typeset-PDF store",
+          "conclusion": "success"
+        },
+        {
+          "name": "Plan the typesetting against the PDF cache",
+          "conclusion": "success"
+        },
+        {
+          "name": "Prepare the container build script",
+          "conclusion": "success"
+        },
+        {
+          "name": "Pull the pinned TeX Live toolchain",
+          "conclusion": "success"
+        },
+        {
+          "name": "Typeset the outstanding PDFs in the pinned container",
+          "conclusion": "success"
+        },
+        {
+          "name": "Return the workspace to the runner user",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install the restored corpus without the typesetting toolchain",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Record the typeset PDFs in the store",
+          "conclusion": "success"
+        },
+        {
+          "name": "Save the typeset-PDF store",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify deployable sources and inventories",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build public artifact",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify artifact and GitHub Pages compatibility",
+          "conclusion": "success"
+        },
+        {
+          "name": "Configure Pages",
+          "conclusion": "success"
+        },
+        {
+          "name": "Upload verified artifact",
+          "conclusion": "success"
+        },
+        {
+          "name": "Deploy",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Set up Python",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Check out repository",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ]
+}

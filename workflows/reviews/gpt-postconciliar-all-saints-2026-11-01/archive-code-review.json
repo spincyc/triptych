@@ -1,0 +1,109 @@
+{
+  "schema": 1,
+  "review": "independent cold archive code review",
+  "reviewed_at_utc": "2026-10-26T05:00:24Z",
+  "verdict": "request_changes",
+  "scope": {
+    "branch": "feature/propers/codex",
+    "base_commit": "da4bcd8973d2b3dbbfff43979498b53eabb70514",
+    "state": "four uncommitted files pinned by the immutable handoff; later repairs are outside this verdict",
+    "handoff": "build/agent-handoffs/20261026T045517Z-pc-r07-archive",
+    "handoff_zip_sha256": "54f2a8e7eaf55f43b7d5f8c5faa5e076323e7ed4c523b23cad365f6ab505ef32",
+    "file_sha256": {
+      "tools/proper-study-run-archive": "00d4ebf7e5962cf52e1a9d4d4e75c69e5b496db99526fbf4db7fd991244ca6e8",
+      "tools/tests/test_proper_study_run_archive.py": "c7a9689965a306982e6e751acfdd7b06d9cdc7ee55fc3888ca82d8810a80ae11",
+      "tmt.json": "bf7fd0f1eb2a08b2f2e6e490baf5f2c5e15a40efafb8cd5a7c0ca25886dee4a1",
+      "workflows/OPERATOR.md": "b4f78592b876eb36f94de27f1ca653e5f737e42f0c0e8a9b6d407e94e504e7dc"
+    },
+    "registry_scope": "proper-study-run-archive usage only",
+    "operator_scope": "archive subsection, lines 359-375"
+  },
+  "findings": [
+    {
+      "id": "ARCHIVE-01",
+      "severity": "blocking",
+      "priority": "P2",
+      "locations": ["tools/proper-study-run-archive:77-81", "tools/proper-study-run-archive:367-369"],
+      "problem": "The residual audit accepts absolute paths with repeated leading separators. Its POSIX branch excludes //, while its UNC branch requires exactly two leading separators and a later share separator. Thus ///home/synthetic-review-user/private.txt and //synthetic-private survive unchanged into a successful opt-in archive. This contradicts the promised refusal of unsafe residuals.",
+      "reproduction": "In the pinned test Fixture, retained_result(notes='///home/synthetic-review-user/private.txt'); archived(redact_repository_paths=True) succeeds and the archived research-review-0001.json retains that exact synthetic absolute path. Repeating with //synthetic-private also succeeds.",
+      "windows_assessment": "Direct public_files probes refuse canonical C:\\synthetic-private\\probe.txt, C:/synthetic-private/probe.txt, and standard UNC paths. A three-leading-backslash host/share path is accepted despite ntpath.isabs returning true. Single-leading-backslash paths are not treated as fully absolute by the available ntpath implementation and are not a separate finding.",
+      "required_result": "Refuse repeated-leading-separator absolute forms outside the documented URL/template exceptions, with regression cases for POSIX and Windows forms; refuse the entire archive before writing. Preserve HTTP(S) citations and legitimate relative paths."
+    },
+    {
+      "id": "ARCHIVE-02",
+      "severity": "blocking",
+      "priority": "P2",
+      "locations": ["tools/proper-study-run-archive:535-543"],
+      "origin": "preexisting writer behavior, still material to this export's privacy and exact-content contract",
+      "problem": "The writer reuses a predictable staging directory without exclusive creation or proving it empty. A stale directory left after interruption and PID reuse can contribute files that were never verified, privacy-audited, or listed in the derivative receipt, and they are then renamed into the finished archive.",
+      "reproduction": "In the pinned Fixture, precreate dest.parent / f'.{dest.name}.partial-{os.getpid()}', add unreviewed.txt, then call archived(redact_repository_paths=True). The command succeeds; unreviewed.txt exists in the final archive and is absent from redaction-receipt.json.",
+      "required_result": "Create a unique staging directory exclusively, write and clean only that directory, and prove that preexisting partial directories cannot contribute files or be removed. Retain whole-output publication and cleanup after a staged write failure."
+    }
+  ],
+  "checks": [
+    {
+      "check": "pinned-file identity and ZIP inventory/CRC/byte comparison",
+      "exit_status": 0,
+      "result": "All four hashes match file-hashes.json; ZIP contains exactly the handoff directory files with identical bytes."
+    },
+    {
+      "command": "env PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tools/tests -p test_proper_study_run_archive.py -v",
+      "context": "exclusive minimal snapshot under .scratch/pc-r-archive-cold-review; exact pinned tool and test bytes plus scripts/_tooling.py; fixture writes remain inside that scratch lane",
+      "exit_status": 0,
+      "tests_run": 37,
+      "passed": 36,
+      "skipped": 1,
+      "qualification": "Historical committed-archive reproduction skipped. The three historical native run directories are also absent in the original checkout; no historical replay pass is claimed."
+    },
+    {
+      "check": "independent synthetic residual-path and stale-staging probes",
+      "exit_status": 0,
+      "result": "Both blockers reproduced against the pinned minimal snapshot; exit zero means the probes completed and confirmed the defects."
+    },
+    {
+      "check": "safe default fixture compared with the base-commit archiver",
+      "exit_status": 0,
+      "result": "Entire default archive trees match byte for byte."
+    },
+    {
+      "check": "injected failure on second staged file write, with absent and existing-empty destinations",
+      "exit_status": 0,
+      "result": "Both destinations remain unchanged and temporary staging is removed; this does not cure preexisting-staging contamination."
+    },
+    {
+      "command": "tmt check",
+      "exit_status": 0,
+      "result": "ok"
+    },
+    {
+      "command": "git diff --check -- tools/proper-study-run-archive tools/tests/test_proper_study_run_archive.py tmt.json workflows/OPERATOR.md",
+      "exit_status": 0,
+      "result": "clean"
+    }
+  ],
+  "native_readonly_probe": {
+    "exit_status": 0,
+    "run_id": "0af32a5cd3635b06",
+    "source_sha256": "977ba5692fe4596b800a328a9ca60c61edd06f87d75c1a60d4ee5c30aa4387f9",
+    "in_memory_derived_result_sha256": "cc7879a408604555fc17d72d44dd175e30b67bffdea9e6d5a126d275727dcdb0",
+    "verified_result_hashes": 3,
+    "verified_packet_hashes": 4,
+    "changed_file": "research-0000.json",
+    "changes": [{"json_pointer": "/notes", "replacements": 5}],
+    "all_non_notes_values_preserved": true,
+    "all_other_candidate_input_bytes_preserved": true,
+    "native_tree_bytes_unchanged_during_probe": true,
+    "mode": "In-memory derivative only; archive_run and write were never called for the active run. The candidate includes the three result-corresponding packets. A fourth pending packet was independently hash-verified. No terminal count gate was represented as passed.",
+    "private_values_copied_to_review": false,
+    "actual_archive_created": false
+  },
+  "assessment": "For the current native example, originals are hash-verified before the notes-only transformation; substantive values and other candidate files remain unchanged. The focused suite covers immutable inputs, dual hashes, deterministic receipt/output, unchanged URLs and templates, unsupported-field refusal, native hash mismatch, and privacy refusal without output. The two reproduced safety gaps still prevent approval.",
+  "limitations": [
+    "No actual terminal archive or independent terminal replay was performed for the active run, which has an unanswered packet.",
+    "Historical archive reproduction remains unavailable because retained native directories are missing.",
+    "Windows assessment used synthetic parser/audit probes on the available host, not Windows filesystem execution.",
+    "The native privacy result is evidence for that exact in-memory candidate, not a proof that arbitrary private content is recognized.",
+    "Source quality, publication acceptance, global source data, deployment, and later repairs are outside this verdict."
+  ],
+  "mutations": "Only this review report and exclusive scratch outputs were written. No subject code, native run records, source data, publications, commits, or pushes were changed by the reviewer."
+}

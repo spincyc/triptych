@@ -1,0 +1,65 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "VIS-001",
+      "location": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/70-apparatus.tex:30; pc-r07-all-saints-abc.pdf, physical page 19, final sentence of Appendix: Scope and Qualifications",
+      "problem": "The rendered scope still says, \u2018This author proof precedes independent study review and the separately authored companions.\u2019 That describes an earlier authoring checkpoint and is false for the present three-artifact set: both separately authored companions are complete and included in this dispatch, their apparatus refers to the reviewed studies, and the native study-review receipt records completion. It therefore gives the reader an inaccurate account of the study's current review and companion state. The sentence is present in the canonical TeX source whose hash matches the visual packet; rebuilding the same approved bytes cannot remove it.",
+      "repair_target": "study",
+      "required_result": "Revise the canonical study's scope appendix to remove the obsolete author-stage sentence or replace it with an accurate, durable statement supported by completed review facts. Preserve the genuine edition, rights and evidence qualifications and make no claim of an acceptance still outstanding. Route this source edit through the study owner and the required dependent review/build sequence, then inspect the newly rendered page and resulting artifact set.",
+      "severity": "blocking"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "artifacts": {
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc",
+      "pagination_evidence": {
+        "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-synthesis.aux": "d4abbf5cf38e8d74092bddd9373f9eaaf35ea56b932b8623eef9baf7408a6183",
+        "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.aux": "cc5967daaa1489aa4824409e4c25a2b7a8b1fd946a9e8800a492761703895838"
+      },
+      "pdfs": {
+        "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-homily.pdf": "d3dadf546ba95244d128668d8da1459bab95e3a5fa7e38dc4d609389c9a48ebe",
+        "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-synthesis.pdf": "48e123bb0d66f3e32ddc597c141d09698c31e09be06a4427d20d7f32662fe9ac",
+        "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.pdf": "d6b7f1650e62360ab0eacd0ab5d8cedc9b13609867df7ed6e34c60ff9684e4ff"
+      },
+      "provider": "gpt",
+      "render_inputs": {
+        "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+        "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+        "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/generation-metadata.tex": "2438a91b3caafdb52c464c4f6c87f726eacc90c12e4da500beadb7a7c042dd86",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/homily.tex": "f0b192fd7603d750c1e1acf2d25100c80d4b4c8131c218316ede03788a603104",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/main.tex": "0b33160829f743ced70c148911b960c3e3778289ce9400fcb20f5a8897756952",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/proper-components.toml": "94e8237f76df7cda28b656f0b59d02bd5f462c84fbe8ceaca3fb4fcc60969512",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/research/chronology-annotations.tex": "0ae88ac20aa9f69b1e61a874b46bbe7cd55137f24df5433b22b174637de581d8",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/00-opening.tex": "1182f7b60b6fde5e97fc5414ddf6f61e4565dea5d10934cb13446018c5e05e08",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/01-map.tex": "b5e1ff1fa885573665a5ea638ab617f14b90adf9c838c5adf1c432332e5cf07f",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/10-treatment.tex": "6aa160bb9ed71619f6c1e5c588fc673e859187b4fe7496fbd00b0d3b150e98f7",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/20-texts.tex": "da637b373696f8b49f40dea228fffbc514cdb406f1945d2979acdd9496fcd4ed",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/30-desire.tex": "799f4b97444fff5d230eb826aac70b18aa26748f4db3b2f5a3b026221dd9e221",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/40-multitude.tex": "a6c2c84b25ed8070b80e593d1d113ecd4f188522bdacedf65d2e8e72c53ead2d",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/50-comparison.tex": "02240c47f37002790312f2e15df8daee8c5308fcbab0bd39c18be2563e3c535f",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/60-history.tex": "abf8255759de1d208835f00b02f14a6fc95692c1c8c38028fac08f31543202b3",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/70-apparatus.tex": "0a61e6f7210a5ef9c73cf426a55f511c944f656668a4eb7c4d5f887833733145",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/homily-10-spoken.tex": "7fdf2ae2502eeb8c0c36c6a9d2e539427187e746b666f03c1f40c393e100ffc3",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/homily-90-notes.tex": "2fd2b383820af4160f6c6812a5660c42dadb58a37395d2091ccbf3615af6ec88",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/synthesis-01-inventory.tex": "175a728e9d50db1e958e28119535c35630fc95d79520805d666cc1450bda63b4",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/synthesis-02-overview.tex": "3cee5992b8e4ef425d2d974211396f99dfa4dc55550002996913dd2100e9a998",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/synthesis-03-chronology.tex": "f4763ffceead02e475d27cf0686823d3e55299b4efade66d5152e983c709a006",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/synthesis-04-themes.tex": "6a138632767aaa078b9c1a35b8914d3c0f515723d7bd495cc2a111cb3d1b732e",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/synthesis-05-commentary.tex": "a5af0c930251ce4bbfd4c5c61d8f26c8cc338fe911990d218b14a269b44e6286",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/sections/synthesis-90-apparatus.tex": "4f866fca20f921ee6e2eaee267073e63eb6ae4761ed95de7121cd884b5814d54",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/synthesis.tex": "9778790d8754cb98ef80f8cff81f8598d2759ae99529c963c3ab5f3c1e924bc9"
+      },
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc",
+    "files": {},
+    "provider": "gpt",
+    "review": "visual",
+    "schema": 1
+  },
+  "stage": "visual-review",
+  "summary": "Independently opened all three contact sheets and every full-page raster: study physical pages 1\u201320, synthesis 1\u201310, and homily 1\u20133, covering all 33 pages. Reviewed artifacts and verified receipt SHA-256 values: build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.pdf = d6b7f1650e62360ab0eacd0ab5d8cedc9b13609867df7ed6e34c60ff9684e4ff; build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-synthesis.pdf = 48e123bb0d66f3e32ddc597c141d09698c31e09be06a4427d20d7f32662fe9ac; build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-homily.pdf = d3dadf546ba95244d128668d8da1459bab95e3a5fa7e38dc4d609389c9a48ebe. The handoff PDF copies match those hashes, its packet matches the native packet, and its sibling ZIP passes integrity testing.\n\nThe 20/10/3 physical extents, monochrome Latin Modern typography, 11-point article baseline, 0.75-inch margins, headings, footnotes, running furniture and compact terminal rights notices are satisfactory. All font subsets are embedded. Neither study has columns; the homily has a full-width title, readable two-column speech on pages 1\u20132, and separate full-width apparatus on page 3. No clipped or overlapping content, missing sense block, or disruptive sparse spill was found. The study's contents and two developed interpretations are navigable; the synthesis visibly interleaves the alternatives. Its actual opening agrees with the settled AUX evidence: complete twelve-unit inventory and exactly four overview rows on page 1, chronology alone on page 2, substantive Themes and Movement on pages 3\u20134, developed comparison beginning on page 5.\n\nFor the required normal-size lookup, I independently rendered synthesis page 2 at 96 dpi (816 by 1056 pixels) to .scratch/pc-r07-production/visual-review-0000/synthesis-p02-96dpi.png. I located Second Reading: 1 John 3:1\u20133 and paired it directly with composition of the First Epistle, probable association with Ephesus, uncertain recipients' town, and c. A.D. 90\u2013100; the collective Johannine-span qualification remains in that row. I also recovered Matthew 5:1\u201312a's Galilean mountain event with unresolved date separately from the consolidated Matthew composition alternatives. Pairings remain visible at that size. I compared the table with its generated definitions and the study's historical appendix, and read the context, scope, interpretation and source-registration records for the rendered argument and stated evidence limits. This review does not renew source-collation judgments or claim a timed human delivery, web acceptance or publication acceptance. Verdict: CHANGES_REQUIRED for one inaccurate rendered review-state sentence owned by the canonical study source; no disposable-output-only repair was identified."
+}

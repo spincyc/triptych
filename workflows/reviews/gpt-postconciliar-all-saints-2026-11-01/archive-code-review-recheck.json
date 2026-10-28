@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "review": "independent focused recheck of the archive corrections",
+  "reviewed_at_utc": "2026-10-26T05:03:38Z",
+  "verdict": "approve",
+  "acceptance_scope": "The pinned code correction only. Actual terminal export, terminal replay and publication acceptance remain separate pending gates.",
+  "scope": {
+    "branch": "feature/propers/codex",
+    "base_commit": "da4bcd8973d2b3dbbfff43979498b53eabb70514",
+    "handoff": "build/agent-handoffs/20261026T050158Z-pc-r07-archive",
+    "handoff_zip_sha256": "a9a3b6b496ba16aed7d22afd171b2b8a6143ddad98fbfa368f193e98df67da87",
+    "file_sha256": {
+      "tools/proper-study-run-archive": "ce0968c2392bbbc17963dbad5aec12d40f53a1d4b8dc38b5f99034cb0b30bfa0",
+      "tools/tests/test_proper_study_run_archive.py": "b1d8d17907af1ca17c9de95ee74f76ff5b6f765000bcf8423ca71d08f2e9ab42",
+      "tmt.json": "bf7fd0f1eb2a08b2f2e6e490baf5f2c5e15a40efafb8cd5a7c0ca25886dee4a1",
+      "workflows/OPERATOR.md": "b4f78592b876eb36f94de27f1ca653e5f737e42f0c0e8a9b6d407e94e504e7dc"
+    }
+  },
+  "prior_evidence": {
+    "report": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/archive-code-review.json",
+    "sha256": "f2e31c3af3e5cf73d0cd3073404c2e86830710befff32be0cd67f9faba448a12",
+    "unchanged": true,
+    "matches_handoff_prior_archive_review": true,
+    "reuse": "Retain that report's independently proved original-hash ordering, notes-only native transformation, substantive-field preservation, native immutability and historical-reproduction limitation. AST comparison confirms every tool function and class except write is unchanged; the other tool changes are the path regex and tempfile import. Registry usage and operator documentation are byte-identical to the prior snapshot."
+  },
+  "resolved_findings": [
+    {
+      "id": "ARCHIVE-01",
+      "status": "resolved",
+      "locations": ["tools/proper-study-run-archive:77-81", "tools/tests/test_proper_study_run_archive.py:398-417"],
+      "evidence": "The regex now covers repeated leading POSIX slashes and two or more UNC backslashes, including host-only forms. Independent reruns of the original triple-slash, double-slash host-only, and triple-backslash cases refuse with no output in both default and opt-in modes. The suite additionally covers 2, 3, 4 and 8 separators and preserves repeated separators inside HTTP(S) citations and template spans."
+    },
+    {
+      "id": "ARCHIVE-02",
+      "status": "resolved",
+      "locations": ["tools/proper-study-run-archive:535-548", "tools/tests/test_proper_study_run_archive.py:251-291"],
+      "evidence": "mkdtemp creates the staging directory exclusively; cleanup targets that new directory. Independently precreating the former PID-based staging path with unreviewed.txt leaves its bytes untouched, excludes it from the final archive, and yields exactly the receipt inventory plus receipt and record. The suite also verifies a foreign staging symlink is neither followed nor removed and a copy failure preserves the empty destination and unrelated staging."
+    }
+  ],
+  "findings": [],
+  "checks": [
+    {
+      "check": "corrected pinned identities, historical report identity, ZIP CRC/inventory/byte equality",
+      "exit_status": 0,
+      "result": "All four pins match; the ZIP is an exact transport copy; the historical report and its handoff copy remain byte-identical."
+    },
+    {
+      "command": "env PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tools/tests -p test_proper_study_run_archive.py -v",
+      "context": "exact corrected tool and tests in exclusive .scratch/pc-r-archive-cold-review/recheck-snapshot, with scripts/_tooling.py; all fixture writes remain in the reviewer lane",
+      "exit_status": 0,
+      "tests_run": 42,
+      "passed": 41,
+      "skipped": 1,
+      "qualification": "The historical committed-archive reproduction is still skipped, not passed. Its unavailable retained native directories are documented in the unchanged prior report."
+    },
+    {
+      "check": "independent reruns of both prior blockers and comparison of corrected safe default output against the base-commit archiver",
+      "exit_status": 0,
+      "result": "All six residual-path refusal cases pass; stale content remains isolated; receipt inventory is exact; default archive trees match byte for byte."
+    },
+    {
+      "check": "tightened privacy audit on the current native candidate in memory only",
+      "exit_status": 0,
+      "result": "The three-result candidate still passes the corrected audit. Native research-0000.json retains source SHA256 977ba5692fe4596b800a328a9ca60c61edd06f87d75c1a60d4ee5c30aa4387f9; the five-replacement /notes derivative retains SHA256 cc7879a408604555fc17d72d44dd175e30b67bffdea9e6d5a126d275727dcdb0, matching prior evidence. State bytes remain unchanged during the probe. No archive_run or write call was made for the active run."
+    },
+    {"command": "tmt check", "exit_status": 0, "result": "ok"},
+    {
+      "command": "git diff --check -- tools/proper-study-run-archive tools/tests/test_proper_study_run_archive.py tmt.json workflows/OPERATOR.md",
+      "exit_status": 0,
+      "result": "clean"
+    }
+  ],
+  "limitations": [
+    "No actual archive or terminal replay was performed for the live native run; no terminal gate was represented as passed.",
+    "Historical committed-archive reproduction remains unavailable.",
+    "Windows path coverage consists of synthetic parser/audit cases on the current host, not Windows filesystem execution.",
+    "The bounded path policy does not establish that arbitrary private content is absent. Source quality and publication acceptance are outside this code verdict."
+  ],
+  "mutations": "Only this separate recheck report and exclusive scratch outputs were written. The historical report, subject code, native records, source data and publications were not changed. No commits or pushes were made."
+}

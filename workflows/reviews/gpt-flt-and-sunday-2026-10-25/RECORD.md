@@ -357,3 +357,39 @@ reconciles all source, archive, integration and protection boundaries, and
 independently checks actual log hashes. This is completed local validation
 and disclosure acceptance. Main publication and hosted verification follow;
 they are not inferred from these local passes.
+
+## Published and verified live
+
+The reviewed source and validation commit
+[`d67e2259c3ee87cdd78608330b86e2c300443da6`](https://github.com/spincyc/triptych/commit/d67e2259c3ee87cdd78608330b86e2c300443da6)
+was pushed to `feature/propers/codex`, then to `main` by genuine fast-forward
+from `f3f59d483`. The local workspace branch remained unchanged. A fresh ref
+check and source Git-object comparison established that the final validation
+records changed no validated source or deployment input.
+
+[Pages run 40259179418](https://github.com/spincyc/triptych/actions/runs/40259179418)
+and [hygiene run 40259179414](https://github.com/spincyc/triptych/actions/runs/40259179414)
+both complete successfully for that exact published commit.
+`published-runs.json` retains the actual run/job/step outcomes. The hosted job
+typeset the outstanding PDFs with the pinned toolchain, passed its deployment
+source checks, built and verified the artifact, and deployed it successfully.
+
+At `2026-10-26T02:48:51.312239+00:00`, all 23 ordinary live URLs returned HTTP
+200 with SHA-256 identical to the reviewed local site. `live-verification.json`
+records each expected and actual hash, size and final URL. Coverage is seven
+canonical PDFs and their seven provider aliases, five canonical web editions,
+the Faith and 1962 library pages, document-catalogue JSON and publication
+manifest. The live manifest matches
+`9f1dd5e6cfee7f7041d8cdc5cffe3a1acc824e90c24718209336dd29c722cd55`.
+The successful hosted PDFs therefore preserve the exact independently reviewed
+131 pages, and the existing-publication protections remain established by the
+matching complete manifest and `publication-delta.json`.
+
+All four requirements of `gpt-flt-and-sunday-2026-10-25` are now satisfied.
+The remaining nonblocking prose advisory and harmless sealed EOF blank remain
+explicitly recorded. The source-family and global chronology audits remain
+open in their own promises. This closeout describes the verified source
+publication above; its own commit contains only completion records, with
+source/deployment Git-object identities unchanged.
+`tools/check-promised-deliverables --require-complete gpt-flt-and-sunday-2026-10-25`
+exits 0 for the completed entry.

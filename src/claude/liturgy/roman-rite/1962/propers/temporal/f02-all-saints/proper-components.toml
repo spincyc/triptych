@@ -1,0 +1,246 @@
+schema = 2
+format_contract = "propers-format-v1"
+authority_contract = "authority-standing-v1"
+record_type = "proper-components"
+document = "liturgy/roman-rite/1962/propers/temporal/f02-all-saints"
+calendar = "roman-1962"
+entrypoint = "main.tex"
+synthesis_entrypoint = "synthesis.tex"
+homily_entrypoint = "homily.tex"
+appointed_text_completeness = "complete"
+presentation_contract = "interpretive-pagination-v1"
+chronology_presentation = "orientation-v2"
+
+# The fourteen elements said in the Mass of Sunday 1 November 2026, in the
+# order of the Mass: the feast's ten texts (printed pp. 702-703, nos.
+# 3974-3983) with the three orations of the Twenty-third Sunday after
+# Pentecost (pp. 416-417, nos. 1720, 1726, 1728) commemorated after the
+# feast's Collect, Secret and Postcommunion. The feast prints no Preface; the
+# general rubrics can be read for the Trinity Preface or for the common
+# Preface (research/context.md), so the preface key anchors a locator that
+# names both and gives neither text.
+element_keys = ["introit", "collect", "commemoration-collect", "lesson", "gradual", "alleluia", "gospel", "offertory", "secret", "commemoration-secret", "preface", "communion", "postcommunion", "commemoration-postcommunion"]
+
+[outputs]
+research = "liturgy/roman-rite/1962/propers/temporal/f02-all-saints"
+synthesis = "liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis"
+homily = "liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily"
+web = "liturgy/roman-rite/1962/propers/temporal/f02-all-saints"
+canonical_label = "Full PDF"
+synthesis_label = "Synthesis PDF"
+homily_label = "Homily PDF"
+
+# Physical-page roles of the concise companion's fixed opening
+# (guidance/liturgy/propers-three-documents.md), all written by the concise
+# author. The chronology role prints the orientation-v2 rows of
+# research/chronology-annotations.tex; their reviewed home in the study is the
+# terminal Scriptural Date and Location appendix (component
+# scriptural-date-location).
+[presentation]
+inventory = "concise-inventory"
+overview = "concise-overview"
+chronology = "concise-date-location"
+themes = "concise-themes"
+commentary = "concise-commentary"
+
+# --- Research study (main.tex) ------------------------------------------------
+
+[[components]]
+key = "opening"
+kind = "front-matter"
+path = "sections/00-opening.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "commemoration-collect", "lesson", "gradual", "alleluia", "gospel", "offertory", "secret", "commemoration-secret", "preface", "communion", "postcommunion", "commemoration-postcommunion"]
+references = ["format.tex", "propers/verified.md", "research/context.md", "research/scope.md", "research/interpretations.md"]
+
+[[components]]
+key = "appointed-texts"
+kind = "appointed-text"
+path = "sections/05-appointed-texts.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "commemoration-collect", "lesson", "gradual", "alleluia", "gospel", "offertory", "secret", "commemoration-secret", "preface", "communion", "postcommunion", "commemoration-postcommunion"]
+references = ["format.tex", "propers/verified.md", "research/context.md"]
+
+[[components]]
+key = "each-element"
+kind = "proper-treatment"
+path = "sections/10-each-element.tex"
+modes = ["research"]
+depends_on = ["appointed-texts"]
+element_keys = ["introit", "collect", "commemoration-collect", "lesson", "gradual", "alleluia", "gospel", "offertory", "secret", "commemoration-secret", "preface", "communion", "postcommunion", "commemoration-postcommunion"]
+references = ["format.tex", "propers/verified.md", "research/context.md", "research/scope.md"]
+
+[[components]]
+key = "sealed-number-uncounted-crowd"
+kind = "interpretive-lane"
+path = "sections/20-sealed-number-uncounted-crowd.tex"
+modes = ["research"]
+depends_on = ["each-element"]
+element_keys = ["introit", "collect", "commemoration-collect", "lesson", "gradual", "alleluia", "gospel", "offertory", "secret", "commemoration-secret", "preface", "communion", "postcommunion", "commemoration-postcommunion"]
+references = ["format.tex", "research/interpretations.md", "research/scope.md"]
+
+[[components]]
+key = "beatitudes-way-of-the-saints"
+kind = "interpretive-lane"
+path = "sections/30-beatitudes-way-of-the-saints.tex"
+modes = ["research"]
+depends_on = ["each-element"]
+element_keys = ["introit", "collect", "commemoration-collect", "lesson", "gradual", "alleluia", "gospel", "offertory", "secret", "commemoration-secret", "preface", "communion", "postcommunion", "commemoration-postcommunion"]
+references = ["format.tex", "research/interpretations.md", "research/scope.md"]
+
+[[components]]
+key = "no-want-just-in-gods-hand"
+kind = "interpretive-lane"
+path = "sections/40-no-want-just-in-gods-hand.tex"
+modes = ["research"]
+depends_on = ["each-element"]
+element_keys = ["introit", "collect", "commemoration-collect", "lesson", "gradual", "alleluia", "gospel", "offertory", "secret", "commemoration-secret", "preface", "communion", "postcommunion", "commemoration-postcommunion"]
+references = ["format.tex", "research/interpretations.md", "research/scope.md"]
+
+[[components]]
+key = "comparison"
+kind = "front-matter"
+path = "sections/50-comparison.tex"
+modes = ["research"]
+depends_on = ["sealed-number-uncounted-crowd", "beatitudes-way-of-the-saints", "no-want-just-in-gods-hand"]
+element_keys = ["introit", "collect", "commemoration-collect", "lesson", "gradual", "alleluia", "gospel", "offertory", "secret", "commemoration-secret", "preface", "communion", "postcommunion", "commemoration-postcommunion"]
+references = ["format.tex", "research/interpretations.md", "research/scope.md"]
+
+# The study's terminal historical appendix: the reviewed home of the
+# chronology the concise page 2 will reprint.
+[[components]]
+key = "scriptural-date-location"
+kind = "front-matter"
+path = "sections/80-date-location.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "lesson", "gradual", "alleluia", "gospel", "offertory", "communion"]
+references = ["format.tex", "research/chronology-annotations.tex", "research/chronology.toml", "research/scope.md"]
+
+[[components]]
+key = "study-apparatus"
+kind = "terminal-apparatus"
+path = "sections/90-apparatus.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "commemoration-collect", "lesson", "gradual", "alleluia", "gospel", "offertory", "secret", "commemoration-secret", "preface", "communion", "postcommunion", "commemoration-postcommunion"]
+references = ["propers/verified.md", "research/context.md", "research/scope.md", "research/interpretations.md", "research/source-bindings.toml"]
+
+# --- Concise study (synthesis.tex), written by the concise author -------------
+
+[[components]]
+key = "concise-inventory"
+kind = "front-matter"
+path = "sections/concise/01-inventory.tex"
+modes = ["synthesis"]
+depends_on = []
+element_keys = ["introit", "collect", "commemoration-collect", "lesson", "gradual", "alleluia", "gospel", "offertory", "secret", "commemoration-secret", "preface", "communion", "postcommunion", "commemoration-postcommunion"]
+references = ["format.tex", "propers/verified.md"]
+
+[[components]]
+key = "concise-overview"
+kind = "front-matter"
+path = "sections/concise/02-overview.tex"
+modes = ["synthesis"]
+depends_on = ["concise-inventory"]
+element_keys = ["introit", "collect", "commemoration-collect", "lesson", "gradual", "alleluia", "gospel", "offertory", "secret", "commemoration-secret", "preface", "communion", "postcommunion", "commemoration-postcommunion"]
+references = ["format.tex", "research/interpretations.md"]
+
+[[components]]
+key = "concise-date-location"
+kind = "front-matter"
+path = "sections/concise/03-date-location.tex"
+modes = ["synthesis"]
+depends_on = []
+element_keys = ["introit", "lesson", "gradual", "alleluia", "gospel", "offertory", "communion"]
+references = ["format.tex", "research/chronology-annotations.tex", "research/chronology.toml"]
+
+[[components]]
+key = "concise-themes"
+kind = "front-matter"
+path = "sections/concise/04-themes.tex"
+modes = ["synthesis"]
+depends_on = ["concise-overview"]
+element_keys = ["introit", "collect", "commemoration-collect", "lesson", "gradual", "alleluia", "gospel", "offertory", "secret", "commemoration-secret", "preface", "communion", "postcommunion", "commemoration-postcommunion"]
+references = ["format.tex", "research/interpretations.md"]
+
+[[components]]
+key = "concise-commentary"
+kind = "integrated-commentary"
+path = "sections/concise/10-commentary.tex"
+modes = ["synthesis"]
+depends_on = ["concise-themes"]
+element_keys = ["introit", "collect", "commemoration-collect", "lesson", "gradual", "alleluia", "gospel", "offertory", "secret", "commemoration-secret", "preface", "communion", "postcommunion", "commemoration-postcommunion"]
+references = ["format.tex", "research/interpretations.md", "research/scope.md"]
+
+[[components]]
+key = "concise-apparatus"
+kind = "terminal-apparatus"
+path = "sections/concise/90-apparatus.tex"
+modes = ["synthesis"]
+depends_on = []
+element_keys = ["introit", "collect", "commemoration-collect", "lesson", "gradual", "alleluia", "gospel", "offertory", "secret", "commemoration-secret", "preface", "communion", "postcommunion", "commemoration-postcommunion"]
+references = ["propers/verified.md", "research/scope.md", "research/interpretations.md"]
+
+# --- Homily (homily.tex), written by the homily author --------------------------
+
+[[components]]
+key = "homily-body"
+kind = "homily"
+path = "sections/homily/10-homily.tex"
+modes = ["homily"]
+depends_on = []
+element_keys = ["introit", "collect", "commemoration-collect", "lesson", "gradual", "alleluia", "gospel", "offertory", "secret", "commemoration-secret", "preface", "communion", "postcommunion", "commemoration-postcommunion"]
+references = ["format.tex", "propers/verified.md", "research/interpretations.md"]
+
+[[components]]
+key = "homily-note"
+kind = "terminal-apparatus"
+path = "sections/homily/90-note.tex"
+modes = ["homily"]
+depends_on = ["homily-body"]
+element_keys = ["introit", "collect", "commemoration-collect", "lesson", "gradual", "alleluia", "gospel", "offertory", "secret", "commemoration-secret", "preface", "communion", "postcommunion", "commemoration-postcommunion"]
+references = ["propers/verified.md", "research/interpretations.md", "research/scope.md"]
+
+# --- Interpretive readings of the whole formulary ------------------------------
+#
+# `authors` names every author a reading draws on; `carrying_authors` names the
+# ones who carry it, each a Father or a canonized saint in
+# src/sources/inventories/author-standing-v1.toml. Blessed Ildefonso Schuster
+# is read on this Mass as a Mass and is cited element by element; Lucien
+# Fromage and William Durandus stand as ecclesiastical writers; Rabanus Maurus
+# is cited as a compiler of Augustine; none of them carries a reading.
+# Victorinus of Pettau is the first reading's second developed witness on the
+# Lesson's chapter, under the recension caution research/interpretations.md
+# records, and Cyprian of Carthage is its recorded rival on the crowd;
+# neither has an author-standing row, and neither carries. The evidence map
+# for every lane is research/interpretations.md.
+
+[[lanes]]
+key = "sealed-number-uncounted-crowd"
+authors = ["Bede", "Augustine of Hippo", "Victorinus of Pettau", "Cyprian of Carthage", "Gregory the Great", "Alfredo Ildefonso Schuster", "Lucien Fromage", "William Durandus"]
+carrying_authors = ["Bede", "Augustine of Hippo"]
+sources = ["research/interpretations.md", "research/scope.md", "research/source-bindings.toml"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = ["introit", "collect", "commemoration-collect", "lesson", "gradual", "alleluia", "gospel", "offertory", "secret", "commemoration-secret", "preface", "communion", "postcommunion", "commemoration-postcommunion"]
+component_keys = ["sealed-number-uncounted-crowd"]
+
+[[lanes]]
+key = "beatitudes-way-of-the-saints"
+authors = ["Augustine of Hippo", "John Chrysostom", "Thomas Aquinas", "Hilary of Poitiers", "Rabanus Maurus", "Alfredo Ildefonso Schuster"]
+carrying_authors = ["Augustine of Hippo", "John Chrysostom", "Thomas Aquinas", "Hilary of Poitiers"]
+sources = ["research/interpretations.md", "research/scope.md", "research/source-bindings.toml"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = ["introit", "collect", "commemoration-collect", "lesson", "gradual", "alleluia", "gospel", "offertory", "secret", "commemoration-secret", "preface", "communion", "postcommunion", "commemoration-postcommunion"]
+component_keys = ["beatitudes-way-of-the-saints"]
+
+[[lanes]]
+key = "no-want-just-in-gods-hand"
+authors = ["Basil of Caesarea", "Robert Bellarmine", "Augustine of Hippo", "Thomas Aquinas", "Gregory the Great", "John Chrysostom", "Alfredo Ildefonso Schuster", "William Durandus"]
+carrying_authors = ["Basil of Caesarea", "Robert Bellarmine", "Augustine of Hippo", "Thomas Aquinas"]
+sources = ["research/interpretations.md", "research/scope.md", "research/source-bindings.toml"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = ["introit", "collect", "commemoration-collect", "lesson", "gradual", "alleluia", "gospel", "offertory", "secret", "commemoration-secret", "preface", "communion", "postcommunion", "commemoration-postcommunion"]
+component_keys = ["no-want-just-in-gods-hand"]

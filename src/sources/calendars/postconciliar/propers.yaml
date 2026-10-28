@@ -56671,27 +56671,17 @@ sections:
       date: 03-23
       rank: Optional memorial
       kind: sanctoral
-      notes: 'The Lectionary citations were read at 200 dpi in the page images of the
-        Ordo lectionum Missae, editio typica altera 1981, artifact
-        internet-archive-scan-pdf-ed4bc14e, at artifact page 335, printed page 281, n.
-        544. The Ordo heads it De Communi pastorum, and this repository carries no
-        Common, so the heading is recorded and not resolved. The Ordo prints its
-        responsorial psalms in Vulgate numbering; they are converted here by
-        scripts/_psalms from the tracked verse concordance, because this file declares
-        psalm_numbering hebrew. The Ordo prints this psalm selection in nine places -
-        nn. 541, 544, 571, 617, 635, 655, 665 and 683 across the whole Proprium de
-        Sanctis, and the entry all eight cite, n. 721,5 itself, in the Communia at
-        artifact page 386, printed page 332 - and does not print the part letters alike
-        in them: 7-8 at n. 541 and 7-8a at the other eight. All nine were read in the
-        page images, five of them at 400 dpi. Each is recorded as printed rather than
-        harmonized; the divergence is the book''s own. The Communia entry the
-        cross-reference names reads 7-8a, so n. 541 stands alone against the very entry
-        it cites. All eight sanctoral printings are now carried under separate identities.
-        Nothing else of this Mass has been read - the Entrance and Communion Antiphons
-        and the three orations are printed in the Missal, not in the Ordo, and are
-        absent because no witness to them is on disk that this project may publish. See
-        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
+      notes: "The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 335, printed page 281, n. 544. The Ordo heads it De Communi pastorum, and this repository carries identity-only Common records that do not resolve a target-edition formulary, so the heading is recorded and not resolved. The Ordo prints its responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the tracked verse concordance, because this file declares psalm_numbering hebrew. The Ordo prints this psalm selection in nine places - nn. 541, 544, 571, 617, 635, 655, 665 and 683 across the whole Proprium de Sanctis, and the entry all eight cite, n. 721,5 itself, in the Communia at artifact page 386, printed page 332 - and does not print the part letters alike in them: 7-8 at n. 541 and 7-8a at the other eight. All nine were read in the page images, five of them at 400 dpi. Each is recorded as printed rather than harmonized; the divergence is the book's own. The Communia entry the cross-reference names reads 7-8a, so n. 541 stands alone against the very entry it cites. All eight sanctoral printings are now carried under separate identities. The own Collect role was independently checked in the official 2008 Variationes, Notitiae 44, printed p. 373 / artifact p. 55 (entry p. 737), against its heading context in the registered secondary 2002 reproduction, artifact p. 434. Its role is represented below without wording. The Missal antiphon directions above remain separate from the Lectionary headings; no Common oration or full target formulary is resolved. Publishable full Missal prayer bodies remain unestablished. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml."
       propers:
+      - name: Collect
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: segment.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.notitiae-pages-368-387
+        notes: Own Collect appointment positively established by the official 2008 Variationes, Notitiae 44, printed p. 373 / artifact p. 55, entry p. 737, and its 03-23 heading context checked in the registered secondary 2002 reproduction, artifact p. 434. Existing expected target postconciliar.2002.sanctoral.03-23.1:collect:1. This records the role only; no complete authenticated 2008 body, Latin publication basis or English whole-prayer exemplar is established. No wording or Common oration is inferred.
       - name: First Reading
         source: scripture
         verses:
@@ -61063,20 +61053,17 @@ sections:
       date: 07-06
       rank: Optional memorial
       kind: sanctoral
-      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo
-        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
-        at artifact page 349, printed page 295, n. 596. The Ordo heads it De Communi martyrum
-        vel virginum, and this repository carries identity-only Common records that do not resolve a target-edition formulary, so the heading is recorded
-        and not resolved. The Ordo groups two pairs of the psalm''s selections - 6 et 8ab,
-        16bc et 17 - into one stanza with et; this file''s citation grammar has an ordered
-        list of ranges and no stanza grouping, so each grouped stanza is recorded as two
-        selections naming the same verses. The Ordo prints its responsorial psalms in Vulgate
-        numbering; they are converted here by scripts/_psalms from the tracked verse concordance,
-        because this file declares psalm_numbering hebrew. Nothing else of this Mass has
-        been read - the Entrance and Communion Antiphons and the three orations are printed
-        in the Missal, not in the Ordo, and are absent because no witness to them is on
-        disk that this project may publish. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
+      notes: "The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 349, printed page 295, n. 596. The Ordo heads it De Communi martyrum vel virginum, and this repository carries identity-only Common records that do not resolve a target-edition formulary, so the heading is recorded and not resolved. The Ordo groups two pairs of the psalm's selections - 6 et 8ab, 16bc et 17 - into one stanza with et; this file's citation grammar has an ordered list of ranges and no stanza grouping, so each grouped stanza is recorded as two selections naming the same verses. The Ordo prints its responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the tracked verse concordance, because this file declares psalm_numbering hebrew. The own Collect role was independently checked in the official 2008 Variationes, Notitiae 44, printed p. 373 / artifact p. 55 (entry p. 786), against its heading context in the registered secondary 2002 reproduction, artifact p. 464. Its role is represented below without wording. The Missal antiphon directions above remain separate from the Lectionary headings; no Common oration or full target formulary is resolved. Publishable full Missal prayer bodies remain unestablished. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml."
       propers:
+      - name: Collect
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: segment.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.notitiae-pages-368-387
+        notes: Own Collect appointment positively established by the official 2008 Variationes, Notitiae 44, printed p. 373 / artifact p. 55, entry p. 786, and its 07-06 heading context checked in the registered secondary 2002 reproduction, artifact p. 464. Existing expected target postconciliar.2002.sanctoral.07-06.1:collect:1. This records the role only; no complete authenticated 2008 body, Latin publication basis or English whole-prayer exemplar is established. No wording or Common oration is inferred.
       - name: First Reading
         source: scripture
         verses:
@@ -62521,16 +62508,17 @@ sections:
       date: 08-05
       rank: Optional memorial
       kind: sanctoral
-      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo
-        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
-        at artifact page 353, printed page 299, n. 613. The Ordo heads it De Communi beatae
-        Mariae Virginis, and this repository carries identity-only Common records that do not resolve a target-edition formulary, so the heading is recorded
-        and not resolved. The responsorial here is the canticle of Judith 13 and not a psalm,
-        so nothing about it is converted. Nothing else of this Mass has been read - the
-        Entrance and Communion Antiphons and the three orations are printed in the Missal,
-        not in the Ordo, and are absent because no witness to them is on disk that this
-        project may publish. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
+      notes: "The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 353, printed page 299, n. 613. The Ordo heads it De Communi beatae Mariae Virginis, and this repository carries identity-only Common records that do not resolve a target-edition formulary, so the heading is recorded and not resolved. The responsorial here is the canticle of Judith 13 and not a psalm, so nothing about it is converted. The own Collect role was independently checked in the official 2008 Variationes, Notitiae 44, printed p. 373 / artifact p. 55 (entry p. 799), against its heading context in the registered secondary 2002 reproduction, artifact p. 474. Its role is represented below without wording. The Missal antiphon directions above remain separate from the Lectionary headings; no Common oration or full target formulary is resolved. Publishable full Missal prayer bodies remain unestablished. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml."
       propers:
+      - name: Collect
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: segment.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.notitiae-pages-368-387
+        notes: Own Collect appointment positively established by the official 2008 Variationes, Notitiae 44, printed p. 373 / artifact p. 55, entry p. 799, and its 08-05 heading context checked in the registered secondary 2002 reproduction, artifact p. 474. Existing expected target postconciliar.2002.sanctoral.08-05.1:collect:1. This records the role only; no complete authenticated 2008 body, Latin publication basis or English whole-prayer exemplar is established. No wording or Common oration is inferred.
       - name: First Reading
         source: scripture
         verses:

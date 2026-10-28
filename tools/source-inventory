@@ -8,6 +8,7 @@ import datetime as dt
 import hashlib
 import json
 import os
+import re
 import stat
 import sys
 import tempfile
@@ -169,6 +170,10 @@ NOVENA_OWNER = "owner.devotions.novenas.shared"
 POSTCONCILIAR_OWNER = (
     "owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"
 )
+POSTCONCILIAR_GENERAL_SHARED = (
+    "liturgy/roman-rite/postconciliar/"
+    "roman-missal-third-edition-en-us-2011/propers/general-calendar/shared"
+)
 BIOGRAPHY_OWNER = "owner.biographies.shared"
 MARIOLOGY_OWNER = "owner.theology.mariology.shared"
 BIBLICAL_HISTORY_OWNER = "owner.history.biblical-translations"
@@ -250,6 +255,7 @@ PROVIDER_NONPUBLICATION_OWNERS = (
             "roman-missal-third-edition-en-us-2011/propers/shared",
             "liturgy/roman-rite/postconciliar/"
             "roman-missal-third-edition-en-us-2011/propers/temporal/shared",
+            POSTCONCILIAR_GENERAL_SHARED,
         ],
         "kind": "edition-proper-owner",
     },
@@ -437,7 +443,15 @@ def _document_shape(document: str, provider: str = DEFAULT_PROVIDER) -> tuple[st
         "liturgy/roman-rite/postconciliar/"
         "roman-missal-third-edition-en-us-2011/propers/temporal/pc-"
     )
-    if document.startswith(postconciliar_prefix):
+    replacement_prefix = (
+        "liturgy/roman-rite/postconciliar/"
+        "roman-missal-third-edition-en-us-2011/propers/general-calendar/"
+    )
+    if document.startswith(postconciliar_prefix) or (
+        document.startswith(replacement_prefix)
+        and re.fullmatch(r"pc-r[0-9]{2}-[a-z0-9]+(?:-[a-z0-9]+)*",
+                         document[len(replacement_prefix):]) is not None
+    ):
         return (
             "mixed",
             [local, {"id": POSTCONCILIAR_OWNER, "relationship": "source-owner"}],
@@ -681,8 +695,13 @@ def _inventory_classification_errors(
 
 
 def _active_owners(root: Path, provider: str) -> list[dict[str, Any]]:
+    # Replacement owners are created only when that provider first consumes
+    # one. Do not require an empty general-calendar tree in other providers.
+    replacement_root = f"src/{provider}/{POSTCONCILIAR_GENERAL_SHARED}"
     return [
-        {"id": owner["id"], "kind": owner["kind"], "roots": list(owner["roots"])}
+        {"id": owner["id"], "kind": owner["kind"],
+         "roots": [owner_root for owner_root in owner["roots"]
+                   if owner_root != replacement_root or (root / owner_root).is_dir()]}
         for owner in _nonpublication_owners(provider)
         if any((root / owner_root).is_dir() for owner_root in owner["roots"])
     ]
@@ -905,7 +924,13 @@ def _validate(
                 ),
                 None,
             )
-            if expected_owner is None or owner != expected_owner:
+            # A refresh may migrate the prior, valid PC owner definition,
+            # which predates the additive general-calendar/shared root.
+            legacy_owner = ({**expected_owner, "roots": [
+                value for value in expected_owner["roots"]
+                if value != f"src/{provider}/{POSTCONCILIAR_GENERAL_SHARED}"]}
+                if expected_owner is not None and owner_id == POSTCONCILIAR_OWNER else None)
+            if expected_owner is None or (owner != expected_owner and owner != legacy_owner):
                 errors.append(f"{label} does not match explicit ownership rules")
         owner_ids.append(owner_id)
         normalized_owners.append(owner)

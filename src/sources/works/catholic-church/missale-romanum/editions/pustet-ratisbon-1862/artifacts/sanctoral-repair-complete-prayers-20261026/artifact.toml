@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.sanctoral-repair-complete-prayers-20261026"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+rights_basis = "The Pustet Ratisbon 1862 historical printing is public domain in the United States by publication date. This bounded image-checked transcription adds no prayer words and is excluded from the project CC BY 4.0 grant."
+provenance = "All three complete historical petitions and their actual printed conclusions independently read from whole page images on 26 October 2026, including both sides of the Joseph page break. OCR supplied no reading."
+retrieved = "2026-10-26"
+sha256 = "611103bd7b073f4dbbbe2cfb6d30880b8e0cf4f688e11ac8d3173932f3fc16cb"
+byte_size = 746
+path = "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/sanctoral-repair-complete-prayers-20261026/latin-only.txt"
+derived_from = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.sanctoral-repair-control-pages-20261026"
+transformation = "Join physical line wraps and end-of-line hyphens, remove stress accents, expand ae/oe ligatures, normalize decorative initial capitalization. Preserve every historical word, received spelling, punctuation and actually printed conclusion stop. Paragraph order: Catherine Collect, Matthias Secret, Joseph Calasanctius Collect."
+encoding = "utf-8"
+indexable = true

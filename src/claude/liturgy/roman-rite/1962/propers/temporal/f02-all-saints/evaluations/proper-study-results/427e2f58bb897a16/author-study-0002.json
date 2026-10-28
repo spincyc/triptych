@@ -1,0 +1,65 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/main.tex",
+  "author_proof": {
+    "build_pdf_path": "build/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.pdf",
+    "pdf_path": "build/tpt-runs/427e2f58bb897a16/artifacts/author-study-2/f02-all-saints-author-proof.pdf",
+    "pdf_sha256": "57b4974370fdb2864fb959230232c00fb1d717e7e2346f7d6e0c468db906584a",
+    "physical_pages": 30,
+    "rasters": "build/tpt-runs/427e2f58bb897a16/artifacts/author-study-2/rasters (contact sheet and pages 3, 11, 14, 15, 16, 20, 22, 23, 25 inspected)",
+    "web_probe": "build/tpt-runs/427e2f58bb897a16/artifacts/author-study-2/web-probe/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.md"
+  },
+  "checks": [
+    "make doc DOC=liturgy/roman-rite/1962/propers/temporal/f02-all-saints PROVIDER=claude: exit 0, 30 pages, no undefined references, overfull/underfull boxes or hyperref warnings; manifest and generation-metadata checks valid",
+    "tools/check-proper-components --provider claude --document liturgy/roman-rite/1962/propers/temporal/f02-all-saints --phase artifacts --edition research: exit 0",
+    "tools/tpt check-content-preflight --provider claude --document liturgy/roman-rite/1962/propers/temporal/f02-all-saints --edition research (all checks, including house-voice, over the eleven reader-facing files): exit 0",
+    "tools/tpt web-edition --provider claude --output build/tpt-runs/427e2f58bb897a16/artifacts/author-study-2/web-probe liturgy/roman-rite/1962/propers/temporal/f02-all-saints: exit 0; all fourteen proper-<element-key> anchors present exactly once in the Markdown"
+  ],
+  "disposition": "PASS",
+  "files_changed": [
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/00-opening.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/05-appointed-texts.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/10-each-element.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/20-sealed-number-uncounted-crowd.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/30-beatitudes-way-of-the-saints.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/40-no-want-just-in-gods-hand.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/50-comparison.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/generation-metadata.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/production-review.md"
+  ],
+  "finding_dispositions": [
+    {
+      "id": "STU-002",
+      "note": "Each interpretation now uses the texts it had omitted, in proportion. The first (20) says how the Gospel's blessings and the Communion's clean of heart bear on who the sealed are and touches the Alleluia, the Secret and the commemorated Secret; the second (30) takes up the Lesson's white-robed, palm-bearing multitude as the way's end with Bede's robes as baptism and palms as the cross's triumph, marked as this interpretation's own inference, and touches the Secret, the Postcommunion and the commemorated orations; the third (40) reads the Lesson's crowd before the throne as the promise shown kept and touches the Introit (Bellarmine's 'special duty of the just') and the Communion (the vision of God, Bellarmine's higher sense). No closing roll call was added. In the comparison (50) the opening sentence is cut, the table row 'Texts it starts from' is now 'Where its question presses hardest', the shared-texts paragraph says the three meet in the same texts and read them differently, and the closing admission of division is rewritten.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-003",
+      "note": "The summing sentence is replaced in 30. The two-present, six-future grammatical observation is stated once as this study's own; then each Father's resolution stands separately: Augustine (the promises can be fulfilled in this life, as in the apostles; the change into the angelic form after it), Aquinas (begun on the way, completed in the homeland), Chrysostom (both here and there), Hilary (the vision for those perfected and changed), with Hilary's difference from Augustine kept. The anagogical sense is divided per witness instead of crediting all four with one answer.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-004",
+      "note": "40 now gives Super Psalmos 33 n. 10 whole: spiritual goods first (the fear of the Lord as the treasure, Isa 33), then bodily goods (contentment with what one has, Phil 4:11-12, and 'Item Deus quaerentibus se subvenit in necessitate'), then the objection in Augustine's name (1 Cor 4) and the physician answer. The clause was verified in the registered Parma vol. 14 OCR artifact (src/sources/works/thomas-aquinas/opera-omnia-volume-14/editions/1863-parma/artifacts/ia-complete-ocr-02c6dc25/aquinas-parma14.txt, physical line 42640, between the contentment clause and 'Sed objicit Augustinus'; OCR reads 'qtiaerenlihus'). The difficulty paragraph and the 50 table now say a temporal sense is kept by Bellarmine, as the humbler meaning, and by Aquinas, as God's help in necessity; 'every witness refuses' and 'Bellarmine alone' are gone. A research-record gap (scope.md's Aquinas passage record and section 5.2 omit the clause) is reported in research/production-review.md for the research owner.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-005",
+      "note": "00, 20, 30, 40 and 50 now credit each Father only with the clause he states at his locus: 00's 'on both accounts' sentence rewritten; 20 opens with Bede's number as the whole Church and the seal as the sign of the cross and Augustine's rejoicing in the Lord, with 'Read together' marking the feast-level conclusion; 20's goods sentence follows the finding's model (Augustine names the virtues, close to Bede's tribes); 30 opens with each of the four Fathers' own clause and says none of them comments on the feast; 40's Basil sentence gives his own statement (the one who fears lacks nothing for any virtue; the perfect good is God himself), and 50's Basil/Bellarmine sentence now matches it.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-006",
+      "note": "The procedural and disclaiming clauses are removed from the body of 05, 10, 20, 30, 40 and 50, including the finding's given rewrites: 20 'Taken together, Bede's two comments give the number as the Church's completeness and the multitude as its extent'; 10 'The feast's prayer asks for the saints' defence, and the Sunday's asks for protection from human dangers'; 50 'The witnesses still disagree on the census, on the land of the meek and on the rich who lack'; 40's 'this study does not supply one' and 'does not merge'/'study notes only' clauses deleted; 40's alleluia sentence now states positively what the 1962 form says. The translation-register and compilation bounds remain in the scope appendix. The house-voice gate and the full research-edition preflight exit 0.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-007",
+      "note": "The restating closers are cut (20's seal/cross and number/completeness closers, 30's Augustine closer, 20's triple-reading closer, 40's saints-who-lack-nothing closer, among the listed loci) and the staged antitheses are made positive, including the finding's given rewrites: 40 'For Aquinas, the want of the God-fearing is given for their health'; 40 'Their answers differ in what they say is promised: God himself (Basil, Bellarmine), the virtues (Augustine), and want that serves salvation (Aquinas)'; 50 'In each interpretation holiness begins in what God gives: the seal, the humility of the first beatitude, the fear the Gradual commands'. A first-pass replacement in 40 that duplicated the quotation above it was itself deleted on review (say it once).",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 2,
+  "reports_for_other_owners": "One new research-record defect: research/scope.md's passage record for Aquinas's Super Psalmos on Ps 33:9-11 (and the section 5.2 synthesis following it) omits the temporal clause 'Item Deus quaerentibus se subvenit in necessitate' that the Parma text carries at n. 10, verified in the registered artifact at physical line 42640; the study now quotes the clause from the artifact, and the scope record should be reconciled by the research owner. The defects recorded for other owners under iteration 0 in research/production-review.md still stand.",
+  "stage": "author-study",
+  "summary": "Repaired all six blocking findings carried from the iteration-1 study review (STU-002 to STU-007). The three interpretations now show, in proportion, how every appointed text they had omitted bears on their reading, and the comparison no longer assigns texts to interpretations; the false four-Father agreement on the Beatitudes' tenses is replaced by the witnesses' real, differing answers; Aquinas's Super Psalmos 33 n. 10 is given whole, with God's help in necessity verified at the registered Parma vol. 14 artifact, and the difficulty and comparison now state truly which witnesses keep a temporal sense; the Fathers are credited only with the clauses they state, with feast-level conclusions in the study's own voice; the procedural and disclaiming clauses are removed from the body; and the restating closers and staged antitheses are cut or made positive. Generation metadata and research/production-review.md are updated, and a fresh author proof (30 pages) passes every preflight check and the web-edition probe."
+}

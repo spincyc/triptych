@@ -1,0 +1,73 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "editorial-projection",
+   "byte_size": 303,
+   "edition_owned": true,
+   "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-josaphat-chain.josaphat-collect-unchanged-20261026",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "This exact one-owner successor replaces the current proof dependency on the older 90-prayer mixed Pustet/Mame projection only for Josaphat Collect. The old projection artifact, passage notes and all 89 complementary bodies remain unchanged. No English, appointment or availability count changes.",
+   "page_count": null,
+   "retrieved": "2026-10-26",
+   "rights": "project-created",
+   "rights_basis": "Triptych offers only its bounded selection, layout and declared editorial normalization under CC BY 4.0. Every petition word is independently witnessed by the public-domain Tours Mame 1922 printing; the explicit conclusion suffix is separately printed in that edition own rule and the public-domain Pustet 1862 formula. The underlying Latin remains public domain and excluded from the project grant. The repository preexisting-material basis under 17 U.S.C. 103(b) does not clear the 1962 facsimile, images, layout or other later contributions.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": "Project editorial projection, not a Missal edition or liturgical authority",
+  "date": "2026-10-26",
+  "editors": [
+   "Triptych contributors"
+  ],
+  "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-josaphat-chain",
+  "jurisdiction": "United States",
+  "language": "la",
+  "publication": "Triptych project-created editorial projection",
+  "title": "Roman 1962 Latin Proper Editorial Projection, 26 October 2026, Josaphat attribution correction",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-josaphat-chain.josaphat-collect-unchanged-20261026",
+   "artifact_type": "editorial-projection",
+   "context": "The unchanged complete target-bound Josaphat Collect with truthful distinct historical petition, formula and target controllers.",
+   "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-josaphat-chain.s-iosaphat-episcopi-martyris-collect",
+   "locus": "s-iosaphat-episcopi-martyris, Collect; project physical lines 1-5; Mame1922 printed757/PDF871 with IX17 printedxlii/PDF54; target1962 printed718/no4097/PDF799",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Exact full UTF8 body including final LF SHA256 8ac5c63a4f70f545c337ffb3ccf2a36223df16945211944a2ec31db59c72c0f0. Mame PDF 871/printed 757 supplies every one of the 37 petition words and its actual Per Dominum... in unitate ejusdem. cue. The actual 1962 PDF 799/printed 718/no.4097 stops at Per Dominum ... in unitate eiusdem Spiritus Sancti. Mame own IX17 on PDF 54/printed xlii explicitly prints In unitate ejusdem Spiritus Sancti, etc.; the separately registered Pustet PDF 390/printed 304 Praesta formula prints that suffix contiguously in a Father-through-Son conclusion. Only the two already printed target suffix words Spiritus Sancti are supported by these separate controls; neither omitted middle nor any later tail is added. The project retains its consonantal-j convention, punctuation, wraps and final LF. Pustet is formula support, never the source of this Josaphat petition.",
+   "readable": true,
+   "rights": "project-created",
+   "rights_basis": "Triptych offers only its bounded selection, layout and declared editorial normalization under CC BY 4.0. Every petition word is independently witnessed by the public-domain Tours Mame 1922 printing; the explicit conclusion suffix is separately printed in that edition own rule and the public-domain Pustet 1862 formula. The underlying Latin remains public domain and excluded from the project grant. The repository preexisting-material basis under 17 U.S.C. 103(b) does not clear the 1962 facsimile, images, layout or other later contributions.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-josaphat-chain.s-iosaphat-episcopi-martyris-collect.json",
+   "verified_on": "2026-10-26",
+   "words": 45
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Triptych contributors",
+  "category": "editorial-source-projection",
+  "description": "A project-created editorial source projection containing bounded Latin prayer bodies in date-specific artifacts. It is neither an edition of a historical hand missal nor an edition of the Missale Romanum. Each artifact records the transformation rule over separate public-domain antecedent and 1962 page-image witnesses; its passages let consumers cite the projected bodies without assigning Triptych's target-controlled collation choices to the antecedent printing.",
+  "id": "work.triptych.roman-1962-latin-proper-editorial-projection",
+  "languages": [
+   "la"
+  ],
+  "title": "Roman 1962 Latin Proper Editorial Projection"
+ }
+}

@@ -1,0 +1,265 @@
+RETRIEVED -- In Festo Omnium Sanctorum (1 novembris), 1962 Missale Romanum
+Unedited finding aid. NOT publication text. Optical-reading errors are preserved deliberately.
+
+Two machine pulls follow. None controls any published wording: every Latin form in
+propers/verified.md was read on page images of the controlling facsimile rendered at 200
+and 400 dpi, and the public-domain witnesses (Mame 1922, Pustet 1862) stand in their own
+registered artifacts. The pulls are kept so that a later reader can see what each text
+layer gives and where it fails. Retrieved and recorded on 2026-10-26 in the research
+stage of proper-study run 427e2f58bb897a16.
+
+==============================================================================
+PULL 1 -- the controlling facsimile's own embedded text layer, the formulary
+==============================================================================
+Represented edition : Missale Romanum, editio typica (Typis Polyglottis Vaticanis, 1962)
+Artifact            : artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+Whole-file SHA-256  : 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a
+                      82,815,941 bytes; the hash-checked copy held by this run's
+                      resolve-context stage was re-hashed before use and matched the
+                      registered record.
+Method              : poppler pdftotext in -layout mode over artifact PDF pp. 783-784
+                      (printed pp. 702-703). The two-column layout is flattened line by
+                      line, so the columns interleave; drop capitals are detached or lost.
+Extract SHA-256     : b6980cae8b9d160c6f458cb28bdc1a6f6cd18e0638105290be1e2af51dc7d582
+                      (the two pages exactly as the tool emits them, form feeds included)
+Boundaries shown    : printed p. 702 opens with the running head FESTA NOVEMBRIS and
+                      a full-width engraved headpiece (the throne, the Lamb, the four
+                      living creatures, angels, and elders bearing palms and crowns; no
+                      text layer for it), then the rubric Die 1 novembris and the
+                      heading IN FESTO / OMNIUM SANCTORUM / I classis; nos. 3974-3975
+                      follow in the left column and no. 3976 opens in the right. Printed p. 703 (running head Festa
+                      novembris (1)) carries the end of the Lesson, nos. 3977-3983, and
+                      ends with the Postcommunion. The preceding formulary (Ss Simon and
+                      Jude, ending no. 3973 on printed p. 701) and the following one (the
+                      votive Mass of All Saints, opening no. 3984 on printed p. 704) are
+                      outside these two pages; research/context.md records both
+                      boundaries as read on page images.
+Known misreadings   : the drop capitals G (Gaudeamus, rendered 'audeamus'), O
+                      (Omnipotens, 'O mnipotens'), I (In diebus, 'I n diebus'), I (In
+                      illo, 'T n illo'), M (Munera, 'M unera'), D (Da, 'D a') detached;
+                      'tuse' for tuae (the ae ligature dropped); 'fades' for facies;
+                      'ftlii' for filii; 'fiierint' for fuerint; 'Oflfertorium' for
+                      Offertorium; 'torm£ntum' for tormentum; letter-spaced words such as
+                      'D o m i n e'. Accents are dropped throughout.
+
+--- BEGIN PULL 1 ---
+                                  FESTA NOVEMBRIS
+
+                                     Die i novembris
+
+                                    IN FESTO
+       OMNIUM SANCTORUM
+                                          I classis
+
+3974         Antiphona ad Introitum              Lectio libri Apocalypsis beati Ioannis
+                       audeamus omnes in Do-        Apostoli.                Apoc. 7, 2-12
+                        mino, diem festum ce-
+                        lebrantes sub honore
+                        Sanctorum omnium:
+                                                 I  n diebus illis: Ecce ego Ioannes vidi 3976
+                                                     alterum Angelum ascendentem ab
+                        de quorum solemnita-     ortu solis, habentem signum Dei vivi:
+                        te gaudent Angeli, et    et clamavit voce magna quatuor Ange-
+     collaudant Filium Dei. Ps. 32, 1 Exsul-     lis, quibus datum est nocere terrae et
+     tate, iusti, in Domino: rectos decet col-   mari, dicens: Nolite nocere terrae et
+     laudatio. V. Gloria Patri.                  mari, neque arboribus, quoadusque si-
+                       Oratio                    gnemus servos Dei nostri in frontibus
+                                                 eorum. Et audivi numerum signato-
+3975
+       O   mnipotens sempiterne Deus, qui
+                                                 rum, centum quadraginta quatuor mi-
+            nos omnium Sanctorum tuorum
+                                                 lia signati, ex omni tribu filiorum Israel.
+     merita sub una tribuisti celebritate ve-
+                                                 Ex tribu Iuda duodecim milia signati.
+     nerari: quaesumus; ut desideratam no-       Ex tribu Ruben duodecim milia si-
+     bis tuse propitiationis abundantiam,        gnati. Ex tribu Gad duodecim milia
+     multiplicatis intercessoribus, largiaris.   signati. Ex tribu Aser duodecim milia
+     Per Dominum.                                signati. Ex tribu Nephtali duodecim
+                                    Festa novembris (i)                            703
+
+   milia signati. Ex tribu Manasse duo-         ipsorum est regnum caelorum. Beati mi-
+   decim milia signati. Ex tribu Simeon         tes: quoniam ipsi possidebunt terram.
+   duodecim milia signati. Ex tribu Levi        Beati qui lugent: quoniam ipsi conso-
+   duodecim milia signati. Ex tribu Issa-       labuntur. Beati qui esuriunt et sitiunt
+   char duodecim milia signati. Ex tri-         iustitiam: quoniam ipsi saturabuntur.
+   bu Zabulon duodecim milia signati.           Beati misericordes: quoniam ipsi mise-
+   Ex tribu Ioseph duodecim milia signa-        ricordiam consequentur. Beati mundo
+   ti. Ex tribu Beniamin duodecim milia         corde: quoniam ftlii Dei voca-
+   signati. Post haec vidi turbam magnam,       buntur. Beati qui persecutionem patiun-
+   quam dinumerare nemo poterat, ex om-         tur propter iustitiam: quoniam ipsorum
+   nibus gentibus, et tribubus, et popu-        est regnum caelorum. Beati estis cum
+   lis, et linguis: stantes ante thronum,       maledixerint vobis, et persecuti vos
+   et in conspectu Agni, amicti stolis al-      fiierint, et dixerint omne malum ad-
+   bis, et palmae in manibus eorum: et          versum vos, mentientes, propter me:
+   clamabant voce magna, dicentes: Sa-          gaudete et exsultate, quoniam merces
+   lus Deo nostro, qui sedet super thro-        vestra copiosa est in caelis.    Credo.
+   num, et Agno. Et omnes Angeli sta-
+   bant in circuitu throni, et seniorum,
+                                                Ant. ad Oflfertorium    Sap. 3,1, 2 et 3
+   et quatuor animalium: et ceciderunt
+                                                   Iustorum animae in manu Dei sunt, 3980
+   in conspectu throni in fades suas, et
+                                                et non tanget illos torm£ntum malitiae:
+   adoraverunt Deum, dicentes: Amen.
+                                                visi sunt oculis insipientium mori: illi
+   Benedictio, et claritas, et sapientia, et
+                                                autem sunt in pace, alleluia.
+   gratiarum actio, honor, et virtus, et
+   fortitudo Deo nostro in saecula saeculo-                    Secreta
+   rum. Amen.
+   Graduale                  Ps. 33, 10 et 11   M  unera tibi, Domine, nostrae devo- 3981
+                                                    tionis offerimus: quae et pro cunc-
+                                            torum tibi grata sint honore iustorum,
+3977 Timete Dominum, omnes Sancti eius:
+                                            et nobis salutaria, te miserante, red-
+    quoniam nihil deest timentibus eum.
+                                            dantur. Per Dominum.
+    V. Inquirentes autem Dominum, non dantur. Per Dominum.
+    deficient omni bono.                    Ant. ad Communionem            Mt. 5, 8-10 3982
+3978 Alleluia, alleluia. V. Matth. 11, 28
+                                               Beati mundo corde, quoniam ipsi
+    Venite ad me, omnes qui laboratis
+                                            Deum videbunt: beati pacifici, quoniam
+    et onerati estis: et ego reficiam vos.
+                                            filii Dei vocabuntur: beati qui perse-
+    Alleluia.
+                                            cutionem patiuntur propter iustitiam,
+         Sequentia sancti Evangelii secun- quoniam ipsorum est regnum caelorum.
+           dum Matthaeum.      Mt. 5, 1-12                Postcommunio
+
+   1
+3979 T n illo tempore: Videns Iesus turbas,
+        ascendit in montem, et cum sedis-       D a, quaesumus, Domine, fidelibus 3983
+                                                   populis omnium Sanctorum sem-
+    set, accesserunt ad eum discipuli eius, per veneratione laetari: et eorum per-
+    et aperiens os suum, docebat eos, di- petua supplicatione muniri. Per Domi-
+    cens: Beati pauperes spiritu: quoniam num nostrum.
+--- END PULL 1 ---
+
+==============================================================================
+PULL 2 -- the controlling facsimile's text layer, the commemorated Sunday
+==============================================================================
+Artifact            : as Pull 1
+Method              : poppler pdftotext -layout over artifact PDF pp. 497-498 (printed
+                      pp. 416-417), Dominica XXIII post Pentecosten. Only the three
+                      orations the commemoration requires (nos. 1720, 1726, 1728) are
+                      part of this Mass; the rest of the Sunday's formulary is shown
+                      because the pull is verbatim.
+Extract SHA-256     : cf80135e4578c1a1dce1360e6a508e31bf7ae5c1ea5abf4a522c2e7df2664457
+Known misreadings   : the drop capitals D (Dicit, 'D icit'), A (Absolve, 'A bsolve'),
+                      F (Fratres, 'F itres'), D (De nostrae, 'F D nostrae'), I (In illo,
+                      'T n illo'), Q (Quaesumus, 'uiesumus' with 'Q' detached) detached
+                      or garbled; 'Graduate' for Graduale; 'secin- dum' for secundum;
+                      'participation' for participatione; 'habentuf' for habentur; the
+                      Gospel cross rendered 'iTj' / 'r j j'; the paragraph sign rendered
+                      '^'; 'earn' for eam; 'ssecula' for saecula. Accents dropped.
+
+--- BEGIN PULL 2 ---
+    416                       Dominica XXIII post Pentecosten
+     suos cum Herodianis, dicentes: Magi-                      DOMINICA
+     ster, scimus quia verax es, et viam              VIGESIMA TERTIA
+     Dei in veritate doces, et non est tibi
+     cura de aliquo: non enim respicis per-               post Pentecosten
+     sonam hominum: die ergo nobis quid                           II classis
+     tibi videtur, licet censum dare Cae-         ^ Si haec dominica a superveniente do-
+     sari, an non? Cognita autem Iesus minica ultima post Pentecosten impedia-
+     nequitia eorum, ait: Quid me tentatis, tur, omittitur.
+     hypocritae ? Ostendite mihi numisma                 Antiphona ad Introitum
+     census. At illi obtulerunt ei denarium.              Ierem. 29, 11, 12 et 14
+                                               D
+                                                            icit Dominus: Ego cogito co-1719
+     et superscriptio? Dicunt ei: Caesaris.                 I gitationes pacis, et non afflic-
+     Tune ait illis: Reddite ergo quae sunt                 tionis: invocabitis me, et ego
+     Caesaris, Caesari; et quae sunt Dei, Deo.                exaudiam vos: et reducam
+        Credo.                                  captivitatem vestram de cunctis locis.
+     Ant. ad Offertorium Esth. 14,12 et 13 Ps. 84, 2 Benedixisti, Domine, terram
+ 1715 Recordare mei, Domine, omni po- tuam: avertisti captivitatem Iacob.
+     tentatui dominans: et da sermonem             V. Gloria Patri.
+     rectum in os meum, ut placeant verba                           Oratio
+     mea in conspectu principis.                  A bsolve, quaesumus, Domine, tuo-1720
+                        Secreta                 XJL rum delicta populorum: ut a pec-
+                                                catorum nexibus, quae pro nostra fra-
+1716 T^\a, misericors Deus: ut haec salu-
+                                                gilitate contraximus, tua benignita-
+      JLx taris oblatio, et a propriis nos
+                                                te liberemur. Per Dominum nostrum
+     reatibus indesinenter expediat, et ab
+                                                Iesum Christum, Filium tuum: Qui
+     omnibus tueatur adversis. Per Domi-
+                                                tecum vivit et regnat in unitate.
+     num nostrum Iesum Christum, Filium
+     tuum: Qui tecum vivit.
+                                                Lectio Epistolae beati Pauli Apostoli
+        Praefatio de Ssma Trinitate.
+                                                 ad Philippenses.
+                                                          Philipp. 3, 17-21; 4, 1-3
+     Ant. ad Communionem              Ps. 16, 6
+1717 Ego clamavi, quoniam exaudisti me,
+      Deus: inclina aurem tuam, et exaudi       F     itres: Imitatores mei estote, et ob- 1721
+                                                      servate eos qui ita ambulant, sicut
+                                                habetis formam nostram. Multi enim
+      verba mea.
+                                                ambulant, quos saepe dicebam vobis
+                    Postcommunio                (nunc autem et flens dico) inimicos cru-
+1718 ^umpsimus, Domine, sacri dona my- cis Christi: quorum finis interitus: quo-
+      v 3 sterii, humiliter deprecantes: ut, rum Deus venter est: et gloria in con-
+      quae in tui commemorationem nos fa- fusione ipsorum, qui terrena sapiunt.
+      cere praecepisti, in nostrae proficiant Nostra autem conversatio in caelis est:
+      infirmitatis auxilium: Qui vivis et re- unde etiam Salvatorem exspectamus
+      gnas cum Deo Patre in unitate.            Dominum nostrum Iesum Christum,
+                                  Dominica XXIII post Pentecosten                     417
+
+       qui reformabit corpus humilitatis no-      domum principis, et vidisset tibicines
+       strae, configuratum corpori claritatis     et turbam tumultuantem, dicebat: Re-
+       suae, secundum operationem, qua etiam      cedite: non est enim mortua puella,
+       possit subicere sibi omnia. Itaque, fra-   sed dormit. Et deridebant eum. Et
+       tres mei carissimi, et desideratissimi,    cum eiecta esset turba, intravit, et te-
+       gaudium meum, et corona mea: sic sta-      nuit manum eius. Et surrexit puella.
+       te in Domino, carissimi. Evodiam rogo,     Et exiit fama haec in universam ter-
+       et Syntychen deprecor idipsum sapere       ram illam.
+       in Domino. Etiam rogo et te, germane          Credo.
+       compar, adiuva illas, quae mecum labo-     Ant. ad Offertorium      Ps. 129, 1-2
+       raverunt in Evangelio cum Clemente,
+                                                    De profundis clamavi adte, Domine: 1725
+       et ceteris adiutoribus meis, quorum no-
+                                                  Domine, exaudi orationem meam: de
+       mina sunt in libro vitae.
+                                                  profundis clamavi ad te, Domine.
+    Graduate                    Ps. 43, 8-9
+                                                                    Secreta
+1722   Liberasti nos, Domine, ex affligenti-
+    bus nos: et eos, qui nos oderunt,
+                                                  F     D nostrae servitutis augmento sa- 1726
+    confudisti. V. In Deo laudabimur tota         crificium tibi, Domine, laudis of-
+                                                  ferimus: ut, quod immeritis contu-
+    die, et in nomine tuo confitebimur in         listi, propitius exsequaris. Per Domi-
+    ssecula.                                      num nostrum Iesum Christum, Fi-
+1723 Alleluia, alleluia. V. P s . 129, 1-2        lium tuum: Qui tecum vivit et regnat
+    De profundis clamavi ad te, Domine:           in unitate.
+    Domine, exaudi orationem meam.                   Praefatio de Ssma Trinitate.
+    Alleluia.
+                                                  Ant. ad Communionem Marc. 11, 24
+1724 iTjSequentia sancti Evangelii seciin-
+                                                     Amen dico vobis, quidquid orantes 1727
+     r j j dum Matthaeum.         Mt. 9, 18-26
+                                                  petitis, credite quia accipietis, et fiet
+     T n illo tempore: Loquente Iesu ad tur-
+                                                  vobis.
+     JL bas, ecce princeps unus accessit, et
+     adorabat eum, dicens: Domine, filia                       Postcommunio
+     mea modo defuncta est: sed veni, im-
+                                                       uiesumus, omnipotens Deus: ut, 1728
+     pone manum tuam super earn, et vivet.        Q     quos divina tribuis participation
+     Et surgens Iesus sequebatur eum, et di-      gaudere, humanis non sinas subiacere
+     scipuli eius. Et ecce mulier, quae san-      periculis. Per Dominum nostrum Iesum
+     guinis fluxum patiebatur duodecim an-        Christum, Filium tuum: Qui tecum
+     nis, accessit retro, et tetigit fimbriam     vivit et regnat in unitate.
+     vestimenti eius. Dicebat enim intra se:         ^ Si dominicae post Pentecosten fue-
+     Si tetigero tantum vestimentum eius,         rint plures quam XXIV, tune post XXIII
+     salva ero. At Iesus conversus et videns      resumuntur Missae dominicarum, quae su-
+     earn, dixit: Confide, filia, fides tua te    perfuerunt post Epiphaniam, ut infra ha-
+     salvam fecit. Et salva facta est mulier      bentuf, iuxta ordinem qui in rubricis in-
+     ex ilia hora. Et cum venisset Iesus in       venitur. Et ultimo loco semper ponitur
+                                                  Missa dominicae XXIV, ut infra 422.
+--- END PULL 2 ---

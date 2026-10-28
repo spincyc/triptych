@@ -65,7 +65,7 @@ apparatus exists to catch, and no resolution count will show it to you.
   both on load — equal-length sides, all 150 psalms, no gap, no overlap, and a
   psalm alias row only of a verse merged into the one before it at its psalm's
   end. It raises `PsalterUnavailable` rather than converting from a bad table.
-- `tools/index-bible`'s `EDITIONS` dict is the edition registry. `numbering`,
+- `scripts/_bible_editions.py` owns the `EDITIONS` registry imported by `tools/index-bible`. `numbering`,
   `psalter`, `psalm_titles`, `rights`, `publishable` and the artifact path all
   live there.
 - Book identity is read per edition from that edition's `book-index.tsv`. Modern
@@ -140,13 +140,29 @@ Ranked by how much damage it does before anyone notices.
 | Fact | Owner | Never put it |
 |---|---|---|
 | Psalm number, verse and split correspondence | `psalm-numbering.tsv` (Douay artifact), read by `scripts/_psalms.py` | in a tool, a calendar, or a second table |
-| Which system an edition is addressed in | `EDITIONS` in `tools/index-bible` (`numbering`, `psalter`, `psalm_titles`) | in the calendar |
+| Which system an edition is addressed in | `EDITIONS` in `scripts/_bible_editions.py` (`numbering`, `psalter`, `psalm_titles`) | in the calendar |
 | A verse this edition merged, or does not carry under that book | that edition's `verse-aliases.tsv` | in the calendar — the Douay and Clementine need different answers for 1 Thess 4 |
 | Book names, tokens, aliases, per-book counts | that edition's `book-index.tsv` | in a shared alias table |
 | Which target a calendar's citation means in a divergent book | that calendar's `citation_divergences` | in a tool |
 | Psalm loci a calendar's own declaration cannot hold | that calendar's `psalm_numbering_exceptions` | anywhere permanent — the ledger is temporary and self-cleaning |
 | Rights basis, jurisdiction, transformation | the artifact's `artifact.toml`; edition-level facts in `edition.toml` | in prose elsewhere |
 | Whether a text may be served publicly | `publishable` in `EDITIONS`, via `index-bible manifest` | in a page filter |
+
+An indexed edition may declare `verse_aliases_artifact_id` and
+`book_index_artifact_id` in its registry row. Each controls its named role.
+Each value is an exact artifact ID, not a path or a preference for the newest table.
+Without it, exactly one legacy table of the role is selected; several require an
+explicit declaration. `_bible_artifacts.select_reference_artifact` validates the
+selected artifact's edition, tracked rights, canonical contained path, size and
+hash before its indexing or resolution consumer reads it. Adding a corrected
+table therefore leaves every old artifact ID, byte sequence and path unchanged.
+The edition root itself cannot be a symlink. A selected registry path must
+state the complete `owner/work/editions/edition/artifacts` path and agree
+exactly with the source ID; short suffixes never establish ownership.
+This source-index control changes no source-library manifest schema or pinned
+fingerprint. Unregistered bare technical fixtures retain unique-file lookup
+only while they carry no edition or alias artifact manifests; an explicit
+selection never uses that compatibility path.
 
 Extend existing tools; do not add a program. `guidance/versification.md` §8.7
 names the intended verbs (`index-bible inventory`, `index-bible divergences`,

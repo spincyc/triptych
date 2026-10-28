@@ -1,0 +1,132 @@
+schema = "triptych-bonn-pentecost-target-propers/v1"
+calendar = "roman-pre-1955"
+base_calendar = "roman-1962"
+
+[target_context]
+scope = "witness-state-only"
+edition_id = "edition.catholic-church.missale-romanum.2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920"
+artifact_id = "artifact.catholic-church.missale-romanum.2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920.ia-reimpressio-pdf-b676ce5c"
+artifact_sha256 = "b676ce5c9598b434ac6b356dd48a49c7e864deb49a45480db1f2a5068738ca1d"
+label = "Bonn 2004 reimpressio of a conformed edition of about 1954"
+civil_date_authority = false
+
+[review]
+path = "src/sources/inventories/reviews/bonn-pentecost-three-prayers-source-review-v1.toml"
+sha256 = "15a8d807fcc313a57a72bb5c91c9aaee99d9ce3d8ee464b19e4c4fe7d158027d"
+
+[[entries]]
+mass = "pentecost"
+form_id = "main"
+proper = "Collect"
+course = ""
+cycle = ""
+occurrence = 1
+base_text_sha256 = "cbccc3f7b27765d692a1a6d879e0cc4662e857d0622052e0c28c2326e1069517"
+text_sha256 = "76c16b62811f77c6e969be1b9db9809a4e5a9a94896bdd30e4e1c7b3df2066f9"
+source_id = "passage.triptych.bonn-pre-1955-pentecost-latin-projection.editorial-projection-2026-10-26.pentecost-collect"
+target_passage_id = "passage.catholic-church.missale-romanum.2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920.reader-completion-pentecost-collect"
+evidence_sha256 = "1e774205ff64785d1b6b65ad0ac3691860eec3846d62f6ca339a53562116fcfe"
+
+[entries.provenance]
+mass = "pentecost"
+form = ""
+proper = "Collect"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "76c16b62811f77c6e969be1b9db9809a4e5a9a94896bdd30e4e1c7b3df2066f9"
+provenance_status = "collated"
+source_id = "passage.triptych.bonn-pre-1955-pentecost-latin-projection.editorial-projection-2026-10-26.pentecost-collect"
+source_date = "Bonn 2004 reimpressio of a conformed state of about 1954; source transcription independently accepted 2026-10-26"
+locator = "Editorial projection physical line 1"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920.reader-completion-pentecost-collect"
+verification_locator = "Dominica Pentecostes, Collect, artifact pages [497], printed [393]"
+transformations = ["join target printed line and page wraps", "remove target stress accents", "retain target j spelling and target pointing", "retain the target literal short conclusion including its printed spaced or unspaced three-dot cue"]
+provenance_evidence = "Every prayer petition was read on Bonn 200/400 dpi images and independent 1862 images; exact Bonn short conclusion retained. Bonn capitalizes Sancti and replaces the comma after sapere with a semicolon.; Bonn prints the literal short cue Per Dominum . . . in unitate ejusdem Spiritus.; it does not print the inherited 1962 expanded conclusion."
+provenance_authority = "Independent primary source review by genitrice_extra accepted these exact three transcriptions on 2026-10-26 (SOURCE-REVIEW SHA-256 f94be8d23b3bb2fed9c80ccb0643693b720dd857fddb8ee2e3df1e4618a87f7d); adopted by the root coordinator for this Bonn witness state only."
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["cli", "corpus-data", "download", "print", "public-git", "web"]
+publication_source_ids = ["artifact.triptych.bonn-pre-1955-pentecost-latin-projection.editorial-projection-2026-10-26.three-prayers-90ea7729", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-384-c7491a25"]
+publication_locator = "Registered 1862 Pustet leaf 384, printed 299"
+publication_evidence = "Existing repository 103(b) plus independent public-domain witness route, with the 2026-10-19 accepted Bonn witness decision. The exact three-owner independent source-review receipt is accepted, following primary source review and coordinator adoption. Its exact current evidence and body hashes remain mandatory; this is not a whole-reprint publication grant or civil-date attestation."
+
+[[entries]]
+mass = "pentecost"
+form_id = "main"
+proper = "Secret"
+course = ""
+cycle = ""
+occurrence = 1
+base_text_sha256 = "784537ace944dabcb76aa34f5947d1ab6806629f27280a69cb888bda131ff9df"
+text_sha256 = "e4149297fffeccff97a8a51d5f15207e9cea2d9f9617a77d82a9bb6f62681d86"
+source_id = "passage.triptych.bonn-pre-1955-pentecost-latin-projection.editorial-projection-2026-10-26.pentecost-secret"
+target_passage_id = "passage.catholic-church.missale-romanum.2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920.reader-completion-pentecost-secret"
+evidence_sha256 = "ef8b2c279ee40f65692cdcbb0ed811133971d86a807243e62155fb101e491841"
+
+[entries.provenance]
+mass = "pentecost"
+form = ""
+proper = "Secret"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "e4149297fffeccff97a8a51d5f15207e9cea2d9f9617a77d82a9bb6f62681d86"
+provenance_status = "collated"
+source_id = "passage.triptych.bonn-pre-1955-pentecost-latin-projection.editorial-projection-2026-10-26.pentecost-secret"
+source_date = "Bonn 2004 reimpressio of a conformed state of about 1954; source transcription independently accepted 2026-10-26"
+locator = "Editorial projection physical line 2"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920.reader-completion-pentecost-secret"
+verification_locator = "Dominica Pentecostes, Secret, artifact pages [498, 499], printed 394, 395"
+transformations = ["join target printed line and page wraps", "remove target stress accents", "retain target j spelling and target pointing", "retain the target literal short conclusion including its printed spaced or unspaced three-dot cue"]
+provenance_evidence = "Every prayer petition was read on Bonn 200/400 dpi images and independent 1862 images; exact Bonn short conclusion retained. Bonn capitalizes Sancti and prints a comma after quaesumus.; The source prayer crosses a page turn: Secreta and Per Domi- on printed 394, followed by num . . . in unitate ejusdem Spiritus. at the top of printed 395.; The inherited 1962 body prints Per Dominum nostrum ... in unitate ejusdem.; Bonn has no nostrum in its literal cue and explicitly prints Spiritus."
+provenance_authority = "Independent primary source review by genitrice_extra accepted these exact three transcriptions on 2026-10-26 (SOURCE-REVIEW SHA-256 f94be8d23b3bb2fed9c80ccb0643693b720dd857fddb8ee2e3df1e4618a87f7d); adopted by the root coordinator for this Bonn witness state only."
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["cli", "corpus-data", "download", "print", "public-git", "web"]
+publication_source_ids = ["artifact.triptych.bonn-pre-1955-pentecost-latin-projection.editorial-projection-2026-10-26.three-prayers-90ea7729", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-386-4ed5e594"]
+publication_locator = "Registered 1862 Pustet leaf 386, printed 301"
+publication_evidence = "Existing repository 103(b) plus independent public-domain witness route, with the 2026-10-19 accepted Bonn witness decision. The exact three-owner independent source-review receipt is accepted, following primary source review and coordinator adoption. Its exact current evidence and body hashes remain mandatory; this is not a whole-reprint publication grant or civil-date attestation."
+
+[[entries]]
+mass = "pentecost"
+form_id = "main"
+proper = "Postcommunion"
+course = ""
+cycle = ""
+occurrence = 1
+base_text_sha256 = "234350816165ad1341d1d00773d5f300782a9298966162252d6862c649c47eb8"
+text_sha256 = "b39663c740af3058e521609ba2567e183e6fc1f2d0eeb9361bd74e54e3ed8d87"
+source_id = "passage.triptych.bonn-pre-1955-pentecost-latin-projection.editorial-projection-2026-10-26.pentecost-postcommunion"
+target_passage_id = "passage.catholic-church.missale-romanum.2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920.reader-completion-pentecost-postcommunion"
+evidence_sha256 = "915dec47319124392395610628e1b2bf648490c898ae63a4e04d34c21ad71130"
+
+[entries.provenance]
+mass = "pentecost"
+form = ""
+proper = "Postcommunion"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "b39663c740af3058e521609ba2567e183e6fc1f2d0eeb9361bd74e54e3ed8d87"
+provenance_status = "collated"
+source_id = "passage.triptych.bonn-pre-1955-pentecost-latin-projection.editorial-projection-2026-10-26.pentecost-postcommunion"
+source_date = "Bonn 2004 reimpressio of a conformed state of about 1954; source transcription independently accepted 2026-10-26"
+locator = "Editorial projection physical line 3"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920.reader-completion-pentecost-postcommunion"
+verification_locator = "Dominica Pentecostes, Postcommunion, artifact pages [499], printed 395"
+transformations = ["join target printed line and page wraps", "remove target stress accents", "retain target j spelling and target pointing", "retain the target literal short conclusion including its printed spaced or unspaced three-dot cue"]
+provenance_evidence = "Every prayer petition was read on Bonn 200/400 dpi images and independent 1862 images; exact Bonn short conclusion retained. Bonn prints a colon after infusio and the orthographic form fecundet; Pustet prints a comma and foecundet.; Bonn prints the literal short cue Per Dominum ... in unitate ejusdem.; it does not print the inherited 1962 expanded conclusion."
+provenance_authority = "Independent primary source review by genitrice_extra accepted these exact three transcriptions on 2026-10-26 (SOURCE-REVIEW SHA-256 f94be8d23b3bb2fed9c80ccb0643693b720dd857fddb8ee2e3df1e4618a87f7d); adopted by the root coordinator for this Bonn witness state only."
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["cli", "corpus-data", "download", "print", "public-git", "web"]
+publication_source_ids = ["artifact.triptych.bonn-pre-1955-pentecost-latin-projection.editorial-projection-2026-10-26.three-prayers-90ea7729", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-386-4ed5e594"]
+publication_locator = "Registered 1862 Pustet leaf 386, printed 301"
+publication_evidence = "Existing repository 103(b) plus independent public-domain witness route, with the 2026-10-19 accepted Bonn witness decision. The exact three-owner independent source-review receipt is accepted, following primary source review and coordinator adoption. Its exact current evidence and body hashes remain mandatory; this is not a whole-reprint publication grant or civil-date attestation."

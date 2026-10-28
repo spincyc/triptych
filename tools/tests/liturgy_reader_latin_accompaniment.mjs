@@ -205,9 +205,9 @@ test('Day normalization round trips the same optional presentation without a ter
 });
 
 test('comparison axes hold accompaniment fixed across independently adapted sides', () => {
-  const left=normalize(identity.replace('pentecost','advent-1')).state;
+  const left=normalize(identity.replace('mass=pentecost','mass=pentecost-10')).state;
   const right={...left,languages:{orations:'la'},textDisplay:'latin-and-selected'};
-  const comparison={dimension:'oration-language',anchor:{correspondingFormulary:'advent-1'},sides:[
+  const comparison={dimension:'oration-language',anchor:{correspondingFormulary:'pentecost-10'},sides:[
     {id:'en',edition:left.edition,formulary:left.formulary,languages:left.languages},
     {id:'la',edition:right.edition,formulary:right.formulary,languages:right.languages}]};
   const adapted=state=>Adapters.adaptPropers({request:state,structure});

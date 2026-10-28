@@ -71,6 +71,18 @@ class CurriculumLiturgicalRightsTests(unittest.TestCase):
 """,
             encoding="utf-8",
         )
+        # The commentary-corpus gate composes two unit-test modules after its
+        # CLI checks. Keep these fixture modules observable just like the
+        # curriculum-rights gate, without running source-domain tests here.
+        for module in ("test_harvest_work_identity", "test_commentary_mass_inheritance"):
+            (self.root / "tools/tests" / f"{module}.py").write_text(
+                "import os\nimport unittest\n\n"
+                "class CommentaryCorpusGateTests(unittest.TestCase):\n"
+                "    def test_gate_was_invoked(self):\n"
+                "        with open(os.environ['MAKE_TEST_COMMENTARY_CORPUS_LOG'], 'a') as log:\n"
+                f"            log.write({module!r} + '\\n')\n",
+                encoding="utf-8",
+            )
         launcher = self.root / "tools" / "tpt"
         launcher.write_text(
             """#!/usr/bin/env python3
@@ -226,6 +238,13 @@ with open(os.environ["MAKE_TEST_COMMENTARY_WORK_INDEX_LOG"], "a", encoding="utf-
         )
         self.commentary_work_index.chmod(0o755)
 
+        self.harvest = library / "harvest"
+        self.harvest.write_text(
+            "#!/bin/sh\nprintf '%s\\n' \"$*\" >> \"$MAKE_TEST_HARVEST_LOG\"\n",
+            encoding="utf-8",
+        )
+        self.harvest.chmod(0o755)
+
         self.pdflatex = scripts / "fake-pdflatex"
         self.pdflatex.write_text(
             """#!/bin/sh
@@ -260,6 +279,8 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.source_gate_order_log = self.root / "source-gate-order.log"
         self.commentary_work_index_log = self.root / "commentary-work-index.log"
         self.curriculum_rights_log = self.root / "curriculum-rights.log"
+        self.harvest_log = self.root / "harvest.log"
+        self.commentary_corpus_log = self.root / "commentary-corpus.log"
         self.pacman_log = self.root / "pacman.log"
         self.codex_log = self.root / "codex.log"
         self.environment = os.environ.copy()
@@ -283,6 +304,8 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
                 "MAKE_TEST_CURRICULUM_RIGHTS_LOG": str(
                     self.curriculum_rights_log
                 ),
+                "MAKE_TEST_HARVEST_LOG": str(self.harvest_log),
+                "MAKE_TEST_COMMENTARY_CORPUS_LOG": str(self.commentary_corpus_log),
                 "MAKE_TEST_PACMAN_LOG": str(self.pacman_log),
                 "MAKE_TEST_CODEX_LOG": str(self.codex_log),
                 "PATH": f"{scripts}:{self.environment['PATH']}",
@@ -328,6 +351,8 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.source_gate_order_log.write_text("", encoding="utf-8")
         self.commentary_work_index_log.write_text("", encoding="utf-8")
         self.curriculum_rights_log.write_text("", encoding="utf-8")
+        self.harvest_log.write_text("", encoding="utf-8")
+        self.commentary_corpus_log.write_text("", encoding="utf-8")
 
     @staticmethod
     def sha256(path: Path) -> str:
@@ -395,11 +420,16 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.assertEqual(self.lines(self.source_family_migration_log), ["check"])
         self.assertEqual(
             self.lines(self.commentary_work_index_log),
-            ["containment", "standing", "formulary"],
+            ["containment", "standing", "formulary", "build-corpus --check"],
         )
         self.assertEqual(
             self.lines(self.source_gate_order_log),
             ["library", "inventory", "family"],
+        )
+        self.assertEqual(self.lines(self.harvest_log), ["promote --check --json"])
+        self.assertEqual(
+            self.lines(self.commentary_corpus_log),
+            ["test_harvest_work_identity", "test_commentary_mass_inheritance"],
         )
         self.assertEqual(self.lines(self.latex_log), [])
         self.assertEqual(self.lines(self.check_log), [])

@@ -243,6 +243,24 @@ class SealCompositionTests(unittest.TestCase):
             with self.subTest(path=path.name):
                 self.assertNotEqual(self.seal(), before)
 
+    def test_bible_artifact_selection_changes_both_v3_and_v4_seals(self):
+        modules = ("scripts/_bible_artifacts.py", "scripts/_bible_editions.py")
+        self.trace["modules"].extend(modules)
+        for relative in modules:
+            (self.root / relative).write_text("Original artifact selection.")
+        for relative in modules:
+            path = self.root / relative
+            for contract in (study.RESEARCH_REVIEW_CONTRACT,
+                             study.CHRONOLOGY_READS_CONTRACT):
+                with self.subTest(module=relative, contract=contract):
+                    before = self.seal(contract)
+                    self.assertIn(relative, before["chronology_computation_inputs"])
+                    path.write_text("Changed artifact selection.")
+                    self.assertNotEqual(
+                        before["chronology_computation_inputs"][relative],
+                        self.seal(contract)["chronology_computation_inputs"][relative])
+                    path.write_text("Original artifact selection.")
+
     def test_v3_is_unchanged_by_anything_the_trace_reports(self):
         before = self.seal(study.RESEARCH_REVIEW_CONTRACT)
         self.assertNotIn("chronology_cited_sources", before)

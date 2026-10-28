@@ -1,0 +1,202 @@
+schema = 2
+record_type = "proper-components"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"
+calendar = "postconciliar"
+entrypoint = "main.tex"
+synthesis_entrypoint = "synthesis.tex"
+homily_entrypoint = "homily.tex"
+appointed_text_completeness = "rights-limited"
+presentation_contract = "interpretive-pagination-v1"
+chronology_presentation = "orientation-v2"
+format_contract = "propers-format-v1"
+authority_contract = "authority-standing-v1"
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "prayer-over-offerings", "proper-preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+
+[outputs]
+research = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"
+synthesis = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-synthesis"
+homily = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-homily"
+web = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"
+canonical_label = "Research PDF"
+synthesis_label = "Synthesis PDF"
+homily_label = "Homily PDF"
+
+[presentation]
+inventory = "concise-inventory"
+overview = "concise-overview"
+chronology = "concise-chronology"
+themes = "concise-themes"
+commentary = "concise-commentary"
+
+[[components]]
+key = "opening"
+path = "sections/00-opening.tex"
+kind = "front-matter"
+modes = ["research"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "prayer-over-offerings", "proper-preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+depends_on = []
+references = []
+
+[[components]]
+key = "study-map"
+path = "sections/01-map.tex"
+kind = "front-matter"
+modes = ["research"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "prayer-over-offerings", "proper-preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+depends_on = []
+references = []
+
+[[components]]
+key = "treatment"
+path = "sections/10-treatment.tex"
+kind = "proper-treatment"
+modes = ["research"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "prayer-over-offerings", "proper-preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+depends_on = []
+references = ["research/scope.md", "research/source-bindings.toml"]
+
+[[components]]
+key = "texts"
+path = "sections/20-texts.tex"
+kind = "appointed-text"
+modes = ["research"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "prayer-over-offerings", "proper-preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+depends_on = []
+references = ["research/source-bindings.toml"]
+
+[[components]]
+key = "desire"
+path = "sections/30-desire.tex"
+kind = "interpretive-lane"
+modes = ["research"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "prayer-over-offerings", "proper-preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+depends_on = []
+references = ["research/interpretations.md"]
+
+[[components]]
+key = "multitude"
+path = "sections/40-multitude.tex"
+kind = "interpretive-lane"
+modes = ["research"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "prayer-over-offerings", "proper-preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+depends_on = []
+references = ["research/interpretations.md"]
+
+[[components]]
+key = "comparison"
+path = "sections/50-comparison.tex"
+kind = "front-matter"
+modes = ["research"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "prayer-over-offerings", "proper-preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+depends_on = []
+references = []
+
+[[components]]
+key = "history"
+path = "sections/60-history.tex"
+kind = "terminal-apparatus"
+modes = ["research"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "prayer-over-offerings", "proper-preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+depends_on = []
+references = ["research/chronology-annotations.tex", "research/chronology.toml"]
+
+[[components]]
+key = "apparatus"
+path = "sections/70-apparatus.tex"
+kind = "terminal-apparatus"
+modes = ["research"]
+element_keys = []
+depends_on = []
+references = ["research/scope.md"]
+
+[[components]]
+key = "concise-inventory"
+path = "sections/synthesis-01-inventory.tex"
+kind = "front-matter"
+modes = ["synthesis"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "prayer-over-offerings", "proper-preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+depends_on = []
+references = []
+
+[[components]]
+key = "concise-overview"
+path = "sections/synthesis-02-overview.tex"
+kind = "front-matter"
+modes = ["synthesis"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "prayer-over-offerings", "proper-preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+depends_on = []
+references = []
+
+[[components]]
+key = "concise-chronology"
+path = "sections/synthesis-03-chronology.tex"
+kind = "front-matter"
+modes = ["synthesis"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "prayer-over-offerings", "proper-preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+depends_on = []
+references = ["research/chronology-annotations.tex"]
+
+[[components]]
+key = "concise-themes"
+path = "sections/synthesis-04-themes.tex"
+kind = "front-matter"
+modes = ["synthesis"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "prayer-over-offerings", "proper-preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+depends_on = []
+references = []
+
+[[components]]
+key = "concise-commentary"
+path = "sections/synthesis-05-commentary.tex"
+kind = "integrated-commentary"
+modes = ["synthesis"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "prayer-over-offerings", "proper-preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+depends_on = []
+references = ["research/interpretations.md"]
+
+[[components]]
+key = "concise-apparatus"
+path = "sections/synthesis-90-apparatus.tex"
+kind = "terminal-apparatus"
+modes = ["synthesis"]
+element_keys = []
+depends_on = []
+references = []
+
+[[components]]
+key = "spoken"
+path = "sections/homily-10-spoken.tex"
+kind = "homily"
+modes = ["homily"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "prayer-over-offerings", "proper-preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+depends_on = []
+references = ["research/interpretations.md"]
+
+[[components]]
+key = "homily-notes"
+path = "sections/homily-90-notes.tex"
+kind = "terminal-apparatus"
+modes = ["homily"]
+element_keys = []
+depends_on = []
+references = []
+
+[[lanes]]
+key = "purified-desire"
+title = "Purified desire and the sight of God"
+authors = ["Augustine of Hippo", "Thomas Aquinas", "Bede", "John Chrysostom"]
+carrying_authors = ["Augustine of Hippo", "Thomas Aquinas"]
+sources = ["research/interpretations.md", "research/scope.md", "research/source-bindings.toml"]
+component_keys = ["desire"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "prayer-over-offerings", "proper-preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+
+[[lanes]]
+key = "reconciled-multitude"
+title = "The Lamb gathers a people who make peace and endure"
+authors = ["Bede", "John Chrysostom", "Augustine of Hippo", "Thomas Aquinas"]
+carrying_authors = ["Bede", "John Chrysostom"]
+sources = ["research/interpretations.md", "research/scope.md", "research/source-bindings.toml"]
+component_keys = ["multitude"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "prayer-over-offerings", "proper-preface", "communion-antiphon", "prayer-after-communion", "solemn-blessing"]
+senses = ["literal", "allegorical", "moral", "anagogical"]

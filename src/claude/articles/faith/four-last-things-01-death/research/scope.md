@@ -1,5 +1,23 @@
 # Scope — *The Debt of Nature: On Death and the Preparation for It* (Claude, Four Last Things I)
 
+## Register revision — 2026-10-26
+
+The maintainer asked that the guidance of 21 October 2026 ("Say what the texts
+say, plainly") and the Catholic voice rule be applied to this essay. The
+revision changes prose only. Quotations, notes, headings, appendices,
+references and bindings are unchanged. The record is
+`research/revision-2026-10-26.md`.
+
+## PDF layout revision — 2026-10-26
+
+The maintainer requested a standalone title page, following contents, and a
+two-column article body in both provider editions. The 11-point body uses
+0.85-inch margins and a 0.3-inch column gap; contents, notes and appendices
+remain full width. All substantive text, citations and received prayers are
+preserved. This commission supersedes earlier single-column physical-page
+targets for this layout revision; it does not shorten the essay. Production
+evidence is recorded in `PROJECT-WORK.md` under the 26 October PDF layout.
+
 Rewritten 2026-10-16 under the maintainer's decisions recorded in
 `src/claude/articles/faith/four-last-things-shared/cold-review-2026-10-16.md`
 ("Decisions taken") and the series brief for the rewrite.

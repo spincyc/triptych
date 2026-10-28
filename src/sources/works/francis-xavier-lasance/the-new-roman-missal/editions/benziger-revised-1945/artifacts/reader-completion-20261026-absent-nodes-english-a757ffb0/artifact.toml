@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.reader-completion-20261026-absent-nodes-english-a757ffb0"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+retrieved = "2026-10-26"
+sha256 = "a757ffb030749eb6de5aa3e893fb538259c89875bab42e87d222812f2b54c344"
+byte_size = 1753
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/reader-completion-20261026-absent-nodes-english-a757ffb0/english.tsv"
+encoding = "utf-8"
+indexable = true
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+rights_basis = "Only original ordinary-page Lasance/Walsh revised1945 English, under existing United States nonrenewal finding for A110108/A192159 in lasance-new-roman-missal-rights-v1.toml. Excluded inserts1298a-1298n/1302a-1302d, scan images, art and later matter are absent. Source edition is revised1945 in a c1955-56 printing; not1937."
+provenance = "Complete bilingual own appointment source pages directly viewed at200/400dpi on2026-10-26. Source PDF exact digest rechecked. Printed body, actual English and Latin conclusion cues, day heading and any internal referral inspected. OCR served only as a finding aid. Independent complete page-image source review accepted on 2026-10-26. Independent source-review receipt SHA256 b13bdd67e71532b5fd072550cdaf5be56b8925f10e1996be6a2dd272b966052e."
+transformation = "Flatten decorative small capitals to ordinary word case; join layout wraps and printed division hyphens. Retain English words, punctuation, names, sacred pronouns and actual Through our Lord. cue. No translated, corrected or expanded ending. No Amen supplied."
+notes = "Recipient-keyed exact bounded historical-English rows. English correspondence is established prayer by prayer, not by incipit or saint. Full source witness and target evidence remain separate."

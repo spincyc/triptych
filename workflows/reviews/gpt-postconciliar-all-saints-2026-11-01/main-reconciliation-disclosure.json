@@ -1,0 +1,733 @@
+{
+  "schema": 1,
+  "record_type": "postmerge-public-object-and-archive-disclosure-recheck",
+  "assigned_effort": "xhigh",
+  "reviewed_at_utc": "2026-10-26T15:12:46Z",
+  "disposition": "APPROVE",
+  "scope": {
+    "questions": [
+      "DISC-001",
+      "ARCH-001"
+    ],
+    "branch": "feature/propers/codex",
+    "published_outgoing_baseline": "57aa30629fff0a05395b1b7449d5e66bd9d073ac",
+    "reviewed_commit": "13e247bc1ff1e91cd01310711d8f4ac2675df8ab",
+    "prior_reviewed_commit": "d4e3150248899ea569692b5ae922ac269b91d536",
+    "tested_merged_candidate": "b68df8feb75f3fe8c7cbc60646df2951caf046a7",
+    "boundary": "Exact outgoing object set, including all intermediate commits and ordinary merge history, against the stated published baseline. Source-body/archive judgments are reused only after exact identity checks. Publication integration/EOF acceptance, pushing, future objects and hosted/live deployment are excluded."
+  },
+  "historical_evidence": {
+    "report": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/final-disclosure-review.json",
+    "report_sha256": "3ad9ecb0adbd09891c6f4fb6e5c7605da4faecd0fe6828aa32edf1654ba028bb",
+    "unchanged": true,
+    "prior_object_counts": {
+      "commit": 5,
+      "tree": 172,
+      "blob": 214
+    },
+    "prior_object_total": 391,
+    "prior_manifest_sha256": "00c8b41ab0aed5c0c0278325d06556b475bf3edcf4e2a7aa1d63bcf39ecfd2d9",
+    "prior_handoff_zip_sha256": "67633d24bb74ea26bc1877d4f8ec0e1fe182a6a929a5b646f58c0da519a64890",
+    "prior_handoff_unchanged": true
+  },
+  "handoff": {
+    "directory": "build/agent-handoffs/20261026T150549Z-pc-r07-integrated",
+    "directory_present": true,
+    "reviewer_created_or_changed_handoff": false,
+    "zip": "build/agent-handoffs/20261026T150549Z-pc-r07-integrated.zip",
+    "sha256": "1f7b0dd7279ec03451a7c3622adc308ba37f10105aa6cdfd2db92afaeef34159",
+    "bytes": 22653733,
+    "entries": 70,
+    "files": 70,
+    "crc_and_byte_equality": true,
+    "safe_paths": true,
+    "zip_present_and_verified": true,
+    "all_core_research_source_map_and_reconciliation_files_read": true,
+    "changes_patch_equals_exact_outgoing_diff": true,
+    "current_source_map_public_pins_verified": 35,
+    "all55_pdf_png_artifact_surfaces_equal_prior_package": true
+  },
+  "object_coverage": {
+    "enumeration_command": "git rev-list --objects 13e247bc1ff1e91cd01310711d8f4ac2675df8ab ^57aa30629fff0a05395b1b7449d5e66bd9d073ac",
+    "manifest": "build/agent-handoffs/20261026T150549Z-pc-r07-integrated/outgoing-objects.json",
+    "manifest_sha256": "36f8b83addd9c27da0c0da31cde01658902f2315e90f1ce358f218d58cf6f33d",
+    "manifest_equals_independent_git_oid_type_size_path_inventory": true,
+    "total": 446,
+    "counts": {
+      "commit": 9,
+      "tree": 200,
+      "blob": 237
+    },
+    "uncompressed_bytes": 35863555,
+    "all_commit_and_blob_payloads_utf8": true,
+    "prior_reviewed_objects_identically_retained": 391,
+    "prior_objects_removed": 0,
+    "additional_objects": 55,
+    "additional_counts": {
+      "commit": 4,
+      "tree": 28,
+      "blob": 23
+    },
+    "additional_manifest": [
+      {
+        "oid": "13e247bc1ff1e91cd01310711d8f4ac2675df8ab",
+        "path": "",
+        "type": "commit",
+        "bytes": 609,
+        "sha256": "4c480231dfc973fecac1123b9b86ef43d785ecfe39cceb14880cf490aa12807c"
+      },
+      {
+        "oid": "30ad8f45a0f11686ab9ec3d34c3e7b0ce98b00e7",
+        "path": "",
+        "type": "commit",
+        "bytes": 602,
+        "sha256": "d9936996bf533486c6d637594bf4c5a29e525e7b8b723daa20d80a74175033e8"
+      },
+      {
+        "oid": "b68df8feb75f3fe8c7cbc60646df2951caf046a7",
+        "path": "",
+        "type": "commit",
+        "bytes": 722,
+        "sha256": "990f820a0158db786aea19b8cd2d8197686181df53af1d817078bd7c78030ffb"
+      },
+      {
+        "oid": "23f3ed952b0c28e418a020aaf880d3e9173d4457",
+        "path": "",
+        "type": "commit",
+        "bytes": 582,
+        "sha256": "6d7fd480031e963b277b36cf9416811b4a44e4f88d8ea7339cc8a34e83e4dfad"
+      },
+      {
+        "oid": "1f74a69213b841316ce5975468b1bfd68409c29c",
+        "path": "",
+        "type": "tree",
+        "bytes": 1093,
+        "sha256": "d32f1d26f9a62ab1a81f190c41bb973b4c4161660d942195a148b7c7ed209baf"
+      },
+      {
+        "oid": "a69c825f9f7a706b82700479ef06cc9e2dab7e88",
+        "path": "PROJECT-WORK.md",
+        "type": "blob",
+        "bytes": 702185,
+        "sha256": "ed2630093773c04008a67a2672f485559a51ed4e198f87a06039ca15699e22c1"
+      },
+      {
+        "oid": "8c05381ab2f0d1d2faf945158a1b3744e94c5487",
+        "path": "promised-deliverables.toml",
+        "type": "blob",
+        "bytes": 357139,
+        "sha256": "10ba2a40fad67749e536ad212e7246f1c8dd9071f274d3ba3e39b3d36fbbfa5e"
+      },
+      {
+        "oid": "232a27af6e1684abeafa088df5dca9beefa4050f",
+        "path": "release",
+        "type": "tree",
+        "bytes": 193,
+        "sha256": "4fd4290209e085b96ee298490f41af5abf9afb94717da633083022b0662c5c3b"
+      },
+      {
+        "oid": "aff1805dc398265cf6308dd3d2cc049b9ead9e26",
+        "path": "release/public-alpha.json",
+        "type": "blob",
+        "bytes": 3937936,
+        "sha256": "6c856bb5e72d65b5827668d3175118eabf381f39b09b6ac336cf5aa95fa5f549"
+      },
+      {
+        "oid": "f1821ed58bc8d07b63753ad26600a2f75040d7d5",
+        "path": "release/rights",
+        "type": "tree",
+        "bytes": 54,
+        "sha256": "50d5f6bb1e416a5f96f7747b559ee575fa12d5e2d50655c83e7339fac96a1977"
+      },
+      {
+        "oid": "11bb4916e39cc61df756487ebc6eac445fc19171",
+        "path": "release/rights/public-alpha-2026-07-15.md",
+        "type": "blob",
+        "bytes": 3974725,
+        "sha256": "ce4b8fab97e8c51202723c12af8d56a042f167c66f8762fe700bc988845bba6f"
+      },
+      {
+        "oid": "9dc3183ff1c0fe849312224051fa9ddc72dcd39e",
+        "path": "src",
+        "type": "tree",
+        "bytes": 160,
+        "sha256": "42f54edff34653680ce78047d0b8b947d97a676d27897856a1d133393ab8bb18"
+      },
+      {
+        "oid": "845272a3100bee1f85b3fbaebc49f886e7bb7557",
+        "path": "src/gpt",
+        "type": "tree",
+        "bytes": 250,
+        "sha256": "62dc2c902185f17e8612e8cfd17ecff6d9071115edb207e3256716f81cb0c9a3"
+      },
+      {
+        "oid": "2badd1e6d72829491377f42200056f737ff0f021",
+        "path": "src/sources",
+        "type": "tree",
+        "bytes": 357,
+        "sha256": "1f3d6c40bdd8fd4a3a145db2224f09c125f4d1c978e26ac728b511391cabb3c6"
+      },
+      {
+        "oid": "5c8b7dfbf2f0ee648aeb6e7f27008b63659d0b24",
+        "path": "src/sources/inventories",
+        "type": "tree",
+        "bytes": 11728,
+        "sha256": "3841c4678823cbea7ffdd6a2bfc6d06c63b8451eb947aa26483c05a426d4acef"
+      },
+      {
+        "oid": "2b0c956808ab20757f85664b668b96ffcf317c77",
+        "path": "src/sources/inventories/publications-v1.toml",
+        "type": "blob",
+        "bytes": 992529,
+        "sha256": "479a413210e34639af91727cb44a0d6d9a15918ba875b8c3d1c4a4c2d7322702"
+      },
+      {
+        "oid": "c0f6ec0f1f57ff35093662e1669c103a3709b52c",
+        "path": "src/sources/inventories/source-family-migration-v1.toml",
+        "type": "blob",
+        "bytes": 35902,
+        "sha256": "4249a2d25e0d40dd5192821e37cfa58da252b9bd6401af69a8f118f6951e46f2"
+      },
+      {
+        "oid": "3d44bdbd710c85fe83c9497f83d8e68806cb00c1",
+        "path": "src/web",
+        "type": "tree",
+        "bytes": 65,
+        "sha256": "b5b6c6cd6beecd1d600e3faefa4d54a5d3264234ac23b0c0043ed8bba7ccc31c"
+      },
+      {
+        "oid": "7cfcc5280254a7b73fb96cf9f9e2034c9413cec2",
+        "path": "src/web/data",
+        "type": "tree",
+        "bytes": 75,
+        "sha256": "a81058c821993d3fca7f9e210389ffe915b0914b050bb777c9254e48c3b43d09"
+      },
+      {
+        "oid": "9f62306fbe2da4fa806b390a23e67cb507d306ea",
+        "path": "src/web/data/structure",
+        "type": "tree",
+        "bytes": 351,
+        "sha256": "b43aba3b1a1f18605f989a5860120bf011f115ac3eacc311f8d77dd0c32771b7"
+      },
+      {
+        "oid": "99989edbe3dad6330437df12700a731ec0c52624",
+        "path": "src/web/data/structure/documents",
+        "type": "tree",
+        "bytes": 39,
+        "sha256": "77b1fea5a7c3613612357008bd7a67bbf3ed83241071dce591f895a8b66c1b19"
+      },
+      {
+        "oid": "099ceb190ffc181dc76de6d10156f92834748ff6",
+        "path": "src/web/data/structure/documents/corpus.json",
+        "type": "blob",
+        "bytes": 1016820,
+        "sha256": "a1d9d1734a1460d920fc51f184ecb1c85a703474a7af80d6b4901c4b8b3d8135"
+      },
+      {
+        "oid": "7b59f844737f4923fb6b34dd59a0f6932c097f06",
+        "path": "web",
+        "type": "tree",
+        "bytes": 63,
+        "sha256": "bb1be47ab7cc59a411905f99f7484f602d949dcc1fd7d033538056b41ef195fc"
+      },
+      {
+        "oid": "f0c2048a47d3ffed9ccf28bd09bad4607cbc7c85",
+        "path": "web/gpt",
+        "type": "tree",
+        "bytes": 176,
+        "sha256": "8396800094a19e34321683a1d481fa9125402b1dd114569326edabf803563091"
+      },
+      {
+        "oid": "0c58dcf31ec38f8fe6209bb67555b4be31b456d9",
+        "path": "workflows",
+        "type": "tree",
+        "bytes": 221,
+        "sha256": "c86185cb7c2852ce162070ef1b7cff39c3ea87bcf848af11a9bcd58a1f98b9f5"
+      },
+      {
+        "oid": "ccff46e6f6109fa1db75e11ce91e449bf117c59c",
+        "path": "workflows/reviews",
+        "type": "tree",
+        "bytes": 3934,
+        "sha256": "bcee714598e70bb9b6797127d67292b3311fc1f1d4994ec8d35352f4197f1aad"
+      },
+      {
+        "oid": "6ed7ce1ec9a0a6aa8614524a6420f1c985c343c3",
+        "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01",
+        "type": "tree",
+        "bytes": 901,
+        "sha256": "bd8e2a5a4eefa3e872a3c9131c939cb1ab5091814db4481a62c261330fb5bb2a"
+      },
+      {
+        "oid": "17c55c80c7a59438ae1f2fa4569c4fc379ad744f",
+        "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/RECORD.md",
+        "type": "blob",
+        "bytes": 25909,
+        "sha256": "a39f10eddb442a29bbed1eddee5ae69f949dac91ff28f7195e72f40de3d64894"
+      },
+      {
+        "oid": "e290be18f7a372edd89a47ee86f58cb26d88ba54",
+        "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/final-disclosure-review.json",
+        "type": "blob",
+        "bytes": 26857,
+        "sha256": "3ad9ecb0adbd09891c6f4fb6e5c7605da4faecd0fe6828aa32edf1654ba028bb"
+      },
+      {
+        "oid": "4a1f5f610aca01a89de44504ca06324614383c8a",
+        "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/final-integration-review.json",
+        "type": "blob",
+        "bytes": 21213,
+        "sha256": "801f2fb52decb3515a6e29f538aeb874ff6c9d5bfeb96ff29c6f2edf2328dd46"
+      },
+      {
+        "oid": "8832d2927eea2c53cf17e16e55439c29a9984c1c",
+        "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/final-validation.json",
+        "type": "blob",
+        "bytes": 5803,
+        "sha256": "3bf26738ebd6bc7a3e2a27891d84b66f1de049202eece2ce90e8db464d39783f"
+      },
+      {
+        "oid": "a56fb4f8a76c24f5510864716707c68225369704",
+        "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/incoming-publications-reproduction.json",
+        "type": "blob",
+        "bytes": 20706,
+        "sha256": "cec927359d26cd54afb9f35049ba6ea1a15cd3ac9dca9a41df4625c1385d22b5"
+      },
+      {
+        "oid": "9beff0444fefffeef9cb0947265d1248f50b3d7c",
+        "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/main-reconciliation.json",
+        "type": "blob",
+        "bytes": 4370,
+        "sha256": "96082c711c25e5a07f43d84ba15272f67ad092758e4b74042e986182a9b1d42b"
+      },
+      {
+        "oid": "c183252e1c91c1b6ddaebdbea788413bea4a8145",
+        "path": "",
+        "type": "tree",
+        "bytes": 1093,
+        "sha256": "73215b5188496055ea2dc0f6cfa046b39bc9968ca4398b99a9c0f5b00ddd07e3"
+      },
+      {
+        "oid": "fb9db0aba81decc9e9c6fbaedfdce8158fbef8e2",
+        "path": "PROJECT-WORK.md",
+        "type": "blob",
+        "bytes": 701304,
+        "sha256": "e2c2899156482aae3ea44dac66a1d65cbbd2cced3ed6b420c62391ab60de65b3"
+      },
+      {
+        "oid": "421a2f9eb47b4c05f49d46dd636f36e2719a68c1",
+        "path": "promised-deliverables.toml",
+        "type": "blob",
+        "bytes": 357042,
+        "sha256": "f6a40e0cdfdc32905c3ff4f013e232c902a70897ccdb8e28628f9704747d1dfd"
+      },
+      {
+        "oid": "60b8c9444da2dd15e76a329da41e79375f31ae04",
+        "path": "workflows",
+        "type": "tree",
+        "bytes": 221,
+        "sha256": "a54a16829ea388853e68c54611b1ceced3fb21e068b8fedb975d5fbcab48289f"
+      },
+      {
+        "oid": "e4cc4e9a65a605d42accd4eab0e1955a46daffe2",
+        "path": "workflows/reviews",
+        "type": "tree",
+        "bytes": 3934,
+        "sha256": "dd208666bfa729fe6594b7b160231aae37db3cf6894ff7d4e20384b54158cbbd"
+      },
+      {
+        "oid": "43d65a06752badebbf9ed24b95e1ecd1ca9c3142",
+        "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01",
+        "type": "tree",
+        "bytes": 901,
+        "sha256": "bb894305ed6e3cf53fd8d652b4cbda9f689e01f689a1f3096d42ad6049925eeb"
+      },
+      {
+        "oid": "fdf1d9f1f54811d00a6ffdce635ae30ec93c2bb9",
+        "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/main-reconciliation.json",
+        "type": "blob",
+        "bytes": 4127,
+        "sha256": "749c8ddcd665be6987c292c19b40b4412ed7eb63542b65c62a257e96f4b8cc81"
+      },
+      {
+        "oid": "11d4562638431e64282bff9b2d0643bfa4737077",
+        "path": "",
+        "type": "tree",
+        "bytes": 1093,
+        "sha256": "60ad9a2796fc37e1bf88934ab85870eb1f329c3486f57b878a9349de2d4c7a40"
+      },
+      {
+        "oid": "742364eda30cc46b590966ab644adf35cfbf8685",
+        "path": "PROJECT-WORK.md",
+        "type": "blob",
+        "bytes": 701225,
+        "sha256": "aec39f938a242362ae40696a1d48191f2b05788c9cd988fb2bb235156891f528"
+      },
+      {
+        "oid": "740f4d756eda8692f3a495ac533804eb844d438e",
+        "path": "promised-deliverables.toml",
+        "type": "blob",
+        "bytes": 357042,
+        "sha256": "8d22ec3111514b9c23c9da4e5bf9b4228bcadba8425c6bdcd16211266fd98f3b"
+      },
+      {
+        "oid": "1cf4a4c0d6e4afdecb615caa071560c70a718d12",
+        "path": "workflows",
+        "type": "tree",
+        "bytes": 221,
+        "sha256": "d23d10972669f11edfd112da23ebc5dcaded917d25b89d04e1a1c342df3528c5"
+      },
+      {
+        "oid": "757bfe054cc89a712cfefa477944737a4116083c",
+        "path": "workflows/reviews",
+        "type": "tree",
+        "bytes": 3934,
+        "sha256": "454050cc5485f0dae22df96e7756f368b64b38a0aadcb38d1391c650885c1828"
+      },
+      {
+        "oid": "99d21873a1135308fbb37ac38d118b8912a586a5",
+        "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01",
+        "type": "tree",
+        "bytes": 901,
+        "sha256": "85a7983f6cc8bb6de7df8ccd02747cbb2a14f05c8f7f95c71a6163ef1246bf5a"
+      },
+      {
+        "oid": "27da2ba46a86e05e2a1280b2b8bda30a63478fd5",
+        "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/RECORD.md",
+        "type": "blob",
+        "bytes": 25409,
+        "sha256": "e2a7767d014c64626acf1dc2c200a5d815ac62b7846b64f40208b0452263f3e6"
+      },
+      {
+        "oid": "381a147bb1bd3386a040a4af62198d6ba2eda6a5",
+        "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/main-reconciliation.json",
+        "type": "blob",
+        "bytes": 3949,
+        "sha256": "bfe5477be0662696fd982d7669e045433983b7ce5181da030a1e4b2cefd00fea"
+      },
+      {
+        "oid": "0ad0b0e3b17dbbc530ebf7cc0385a877c825c8b8",
+        "path": "",
+        "type": "tree",
+        "bytes": 1093,
+        "sha256": "276bcea336ac9bf8ffbbeed842c0ca4ee2823b66c4c29fbe0a3663060e6ba410"
+      },
+      {
+        "oid": "45c3ff370bda06908ffaa22f6f14bce355abd78f",
+        "path": "PROJECT-WORK.md",
+        "type": "blob",
+        "bytes": 697491,
+        "sha256": "29675546f410c1d76762f83b6c649a8de1e8bdae90ff38505c956096171b43e9"
+      },
+      {
+        "oid": "d15778e37b62c7199a5df4da31a948c84c5c73b5",
+        "path": "promised-deliverables.toml",
+        "type": "blob",
+        "bytes": 356078,
+        "sha256": "a177b251530450d5d5d59256029494434306057652ed87fa0bc96584d48e1ac3"
+      },
+      {
+        "oid": "aee7d3edeea0a3307a084eb5e75ed19ee61f3cf9",
+        "path": "workflows",
+        "type": "tree",
+        "bytes": 221,
+        "sha256": "bf22d7cfc5a1dd8d2fba228b7ef310cc3a5c1cf5623337df29737ec6e21cfee4"
+      },
+      {
+        "oid": "725aacfa26eaec5b1eefc0751dadf88516b68196",
+        "path": "workflows/reviews",
+        "type": "tree",
+        "bytes": 3934,
+        "sha256": "0b4b86f6e14f1d97cefeb6b733aa810185eae765afcdd19844763e242bd37ac1"
+      },
+      {
+        "oid": "7c5c2645bd54cf1492ae83d26a588d7e1414ed84",
+        "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01",
+        "type": "tree",
+        "bytes": 782,
+        "sha256": "0a99a620ab37b5ecad85106afa8ce849ea448ca47ff549bc46a9f608fbc4fbea"
+      },
+      {
+        "oid": "4835dd71e570883ddf222a13651d4c2134c10aa0",
+        "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/RECORD.md",
+        "type": "blob",
+        "bytes": 24668,
+        "sha256": "f484940afba1e2ea06f9d39537f33b1de88e344ed47073d777fb145339c37862"
+      }
+    ],
+    "method": "Independently enumerated the full 446-object set and read every object with git cat-file; re-ran full-byte privacy scans over all 237 blobs and nine commits. Compared object IDs against the prior 391-object manifest and inspected all 55 additional objects, including full intermediate record versions. Traversed every additional tree and checked canonical merge parents and public project author metadata.",
+    "additional_tree_and_commit_checks": {
+      "new_tree_count": 28,
+      "new_tree_direct_entries": 658,
+      "entry_modes": {
+        "100644": 327,
+        "040000": 331
+      },
+      "new_commit_metadata": [
+        {
+          "oid": "13e247bc1ff1e91cd01310711d8f4ac2675df8ab",
+          "parents": [
+            "30ad8f45a0f11686ab9ec3d34c3e7b0ce98b00e7",
+            "57aa30629fff0a05395b1b7449d5e66bd9d073ac"
+          ],
+          "subject": "Preserve the published article deployment receipt"
+        },
+        {
+          "oid": "30ad8f45a0f11686ab9ec3d34c3e7b0ce98b00e7",
+          "parents": [
+            "b68df8feb75f3fe8c7cbc60646df2951caf046a7"
+          ],
+          "subject": "Record successful merged publication gates"
+        },
+        {
+          "oid": "b68df8feb75f3fe8c7cbc60646df2951caf046a7",
+          "parents": [
+            "23f3ed952b0c28e418a020aaf880d3e9173d4457",
+            "82b8c71dadca1dbbc1d0d9280167e261294af2d1"
+          ],
+          "subject": "Merge published article layouts into All Saints production"
+        },
+        {
+          "oid": "23f3ed952b0c28e418a020aaf880d3e9173d4457",
+          "parents": [
+            "d4e3150248899ea569692b5ae922ac269b91d536"
+          ],
+          "subject": "Record premerge All Saints cold reviews"
+        }
+      ],
+      "unsafe_names_or_extra_modes": false
+    },
+    "incoming_baseline_semantics": "Published incoming article sources and their 82b8/57aa history are already reachable from the published baseline. They are not classified as new unreviewed work. The ordinary merges preserve that ancestry; the original five task commits and all their intermediate objects remain included in this review."
+  },
+  "answers": [
+    {
+      "id": "DISC-001",
+      "answer": "APPROVE",
+      "reason": "All additional commit/tree/blob objects are intended reconciliation, scoped metadata/release and review records. The full outgoing set and new handoff contain no identified actual machine/home/checkout/user/host value, ephemeral session/process handle, credential, sensitive query value, raw restricted acquisition, new unbounded third-party payload or unintended provider edit."
+    },
+    {
+      "id": "ARCH-001",
+      "answer": "APPROVE",
+      "reason": "All 735 native files, all 80 public archive files, frozen CYCLES, accepted source bytes and the earlier independent reproduction remain exact by hash. Original/exported research hashes and the receipt are unchanged; structural comparison again permits only the same five prefix removals in /notes. No archive, native result, packet, decision, seal or source was reauthored."
+    }
+  ],
+  "findings": [],
+  "privacy_checks": {
+    "actual_local_identity_hits": 0,
+    "credentials_private_keys_sensitive_query_values_sessions_or_guids_found": 0,
+    "email_hits": 18,
+    "email_disposition": "Nine commit author/committer pairs carry the established Triptych Project GitHub users.noreply identity. No new private correspondence or personal address was found.",
+    "path_candidate_disposition": "The five full-Git-object path candidates are exactly the previously reviewed standard system paths, synthetic refusal examples and explicitly synthetic historical defect reproductions. Additional broad-path hits are portable variable expressions, JSON pointers, glob/TeX/HTML syntax and the same preexisting examples; no new actual local value was found.",
+    "method": "Full-object scan categories and broader absolute-path triage were retained from the prior independent audit. Current local identifiers stayed in memory; neither native private prefix values nor matched private values were written to reports. All handoff text, three PDF texts/metadata and PNG textual metadata were also scanned.",
+    "handoff_binary_checks": {
+      "pdf_count": 3,
+      "pdfinfo_and_pdftotext_exit_statuses": [
+        0,
+        0,
+        0
+      ],
+      "png_count": 52,
+      "png_text_metadata_chunks": 0,
+      "all55_binary_surfaces_byte_identical_to_previously_reviewed_package": true
+    },
+    "new_blob_families": [
+      "PROJECT-WORK.md",
+      "promised-deliverables.toml",
+      "release/public-alpha.json",
+      "release/rights/public-alpha-2026-07-15.md",
+      "src/sources/inventories/publications-v1.toml",
+      "src/sources/inventories/source-family-migration-v1.toml",
+      "src/web/data/structure/documents/corpus.json",
+      "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/"
+    ],
+    "new_build_scratch_pdf_raster_or_restricted_source_payloads": false
+  },
+  "retention_and_archive_identity": {
+    "source_library_records_source_catena_bodies_owner_and_target_sources_third_party_notice_exactly_equal_prior": true,
+    "ten_restricted_artifact_manifests_unchanged_and_metadata_only": true,
+    "restricted_raw_acquired_bytes_withheld": 1357119,
+    "sole_new_retained_external_source_payload": {
+      "path": "src/sources/works/bede/explanatio-apocalypsis/editions/1878-marshall-parker/artifacts/chapter-7-verse-14-checked-f0128f87/comment.txt",
+      "bytes": 501,
+      "whitespace_words": 91,
+      "sha256": "f0128f8767cea2f4ccf707e7abc8b4cdd2e95e03c0da1e5ea547a87b650e66f3",
+      "passage_text_equal": true,
+      "source_reader_body_equal": true,
+      "catena_body_equal": true,
+      "catena_path": "src/web/data/structure/catena/text/passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-14.json"
+    },
+    "rights_basis": "The prior checked 1878 Marshall United States historical-publication-term basis and explicit project-license exclusions are unchanged. No new source acquisition, original-language check, legal conclusion or policy broadening is asserted.",
+    "native_files": 735,
+    "native_inventory_sha256": "0b357eaff3a243ba5a696b7eef730ad75a422094fcbc133bb449ad3055846462",
+    "archive_files": 80,
+    "archive_hashes_all_equal_native_acceptance_inventory_and_prior_reproduction": true,
+    "native_acceptance_sha256": "e88e793ec2c670edd131b1f7f1692d503e0b8b85eea59eeb8158e617841d0eb2",
+    "frozen_cycles_sha256": "0f294d924f2b18d11410116aa67f28ee3e03eaab444fc8bfff71a5befe48238d",
+    "native_research_sha256": "977ba5692fe4596b800a328a9ca60c61edd06f87d75c1a60d4ee5c30aa4387f9",
+    "public_research_sha256": "cc7879a408604555fc17d72d44dd175e30b67bffdea9e6d5a126d275727dcdb0",
+    "redaction_receipt_sha256": "2d0d1f132031ad9a1997b188d5f09ca6a4cddb0ea4a0f354d5549ca90ada95f0",
+    "changed_json_pointers": [
+      "/notes"
+    ],
+    "prefix_removals": 5,
+    "all_other_research_values_identical": true,
+    "new_export_performed": false,
+    "reproduction_reuse": "The present 80 archive hashes, unchanged archiver blob, 735-file native inventory digest and CYCLES hash exactly match the prior independent all-80-file reproduction. No additional export was necessary."
+  },
+  "policy_safe_release_reconciliation": {
+    "release_scoped_refresh_paths": 31,
+    "actual_site_source_rows_changed_from_published_baseline": 23,
+    "changed_paths": [
+      "THIRD_PARTY.md",
+      "library/novus-ordo-liturgy.md",
+      "src/web/data/structure/catena/73-apoc/007.json",
+      "src/web/data/structure/catena/index.json",
+      "src/web/data/structure/catena/text/passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-14.json",
+      "src/web/data/structure/documents/corpus.json",
+      "src/web/data/structure/sources/editions/bede/explanatio-apocalypsis/1878-1878-marshall-parker.json",
+      "src/web/data/structure/sources/editions/catholic-church/missale-romanum/2002-vatican-typica-tertia-2002.json",
+      "src/web/data/structure/sources/editions/catholic-church/missale-romanum/2010-2010-english-icel-antiphonary.json",
+      "src/web/data/structure/sources/editions/catholic-church/missale-romanum/2011-2011-english-secondary-proper-of-saints.json",
+      "src/web/data/structure/sources/editions/catholic-church/ordo-lectionum-missae/1981-latin-editio-typica-altera-1981.json",
+      "src/web/data/structure/sources/editions/dicastery-for-divine-worship-and-the-discipline-of-the-sacraments/calendarium-romanum-web-index/2026-2026-10-25-english-web.json",
+      "src/web/data/structure/sources/editions/international-commission-on-english-in-the-liturgy/music-for-the-roman-missal/2026-2010-chants-web-2026-08-21.json",
+      "src/web/data/structure/sources/editions/john-paul-ii/angelus-2003-11-01/2026-2026-10-26-official-english-web.json",
+      "src/web/data/structure/sources/editions/thomas-aquinas/super-matthaeum-reportatio-petri-de-andria/1951-1951-turin-corpusthomisticum-web-2026-10-26.json",
+      "src/web/data/structure/sources/editions/thomas-aquinas/super-matthaeum-reportatio-petri-de-andria/1969-1969-leonine-corpusthomisticum-web-2026-10-26.json",
+      "src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/daily-readings/2026-2026-10-25-page-for-2026-11-01.json",
+      "src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/divine-worship-newsletter-2021-02/2021-2021-february-official-pdf.json",
+      "src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/liturgical-calendar-dioceses-united-states/2026-2026.json",
+      "src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/2026-2026-10-26-english-web-psalms-introduction.json",
+      "src/web/data/structure/sources/index.json",
+      "src/web/data/structure/sources/text/passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-14.json",
+      "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.md"
+    ],
+    "eight_article_bindings_already_match_published_baseline": true,
+    "all_changed_and31scoped_site_source_hashes_match_files": true,
+    "release_authorization_fields_other_than_site_sources_and_rights_digest_unchanged": true,
+    "rights_narrative_outside_path_hash_rows_byte_identical": true,
+    "rights_hash_rows_change_exactly_matches23site_source_changes": true,
+    "rights_record_sha256": "ce4b8fab97e8c51202723c12af8d56a042f167c66f8762fe700bc988845bba6f",
+    "unrelated_rows_preserved": true,
+    "public_file_hash_and_size_pins_verified": 35,
+    "tested_product_git_objects_identical_at_b68_and_reviewed_head": 31,
+    "latest_receipt_merge_only_changed": [
+      "PROJECT-WORK.md",
+      "promised-deliverables.toml",
+      "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/main-reconciliation.json"
+    ],
+    "incoming_preservation": {
+      "input_files_equal_upstream_published_baseline_and_head": 39,
+      "incoming_article_source_and_web_paths_have_no_diff_from_published_baseline": true,
+      "installed_pdf_hashes_verified": 8,
+      "installed_pdf_pages_verified": 196,
+      "artifacts": [
+        {
+          "provider": "claude",
+          "document": "articles/faith/four-last-things-01-death",
+          "pages": 24,
+          "sha256": "55fb41f699ead340c283c938260783b835aa09bca2fd4849a8c4da7a5d5fe1c7"
+        },
+        {
+          "provider": "claude",
+          "document": "articles/faith/four-last-things-02-judgment",
+          "pages": 27,
+          "sha256": "537e7efdee6bb887e92951a9bb1c14269c8f8ecdbb5566f283a48317438757fc"
+        },
+        {
+          "provider": "claude",
+          "document": "articles/faith/four-last-things-03-hell",
+          "pages": 31,
+          "sha256": "4cecbc1241297594e2c648005e58936f430102c652d1d690d408b33a953f23d6"
+        },
+        {
+          "provider": "claude",
+          "document": "articles/faith/four-last-things-04-heaven",
+          "pages": 23,
+          "sha256": "bf54df5b0f615a1527bda88c04bed8902b809d9c149ae2aed0048ab1a0037c89"
+        },
+        {
+          "provider": "gpt",
+          "document": "articles/faith/four-last-things-01-death",
+          "pages": 23,
+          "sha256": "bc4b414fcb623c9490c8dc3d62d1acaa767229c4f2e350b100ccdaf21bec3aba"
+        },
+        {
+          "provider": "gpt",
+          "document": "articles/faith/four-last-things-02-judgment",
+          "pages": 23,
+          "sha256": "77658094f0abcb5bc6a7a14055f9e2f2a775aefc227e7403542aba1f3aa2b0bd"
+        },
+        {
+          "provider": "gpt",
+          "document": "articles/faith/four-last-things-03-hell",
+          "pages": 24,
+          "sha256": "0d90272295974fbe904985cd2ec838692b7d664364500b219698bfe799452fe2"
+        },
+        {
+          "provider": "gpt",
+          "document": "articles/faith/four-last-things-04-heaven",
+          "pages": 21,
+          "sha256": "12e6fbe74f19dd27d03603de5060749e2f35df0fb30b28145e3c59a4369f3873"
+        }
+      ],
+      "review_limit": "This checks preservation of already-published reviewed bytes, not a new visual/content acceptance of those articles."
+    }
+  },
+  "checks": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .scratch/pc-r07-production/runtime/bin/python3 .scratch/pc-r07-final-disclosure-review/postmerge/audit.py",
+      "exit_status": 0,
+      "result": "446-object inventory, full-object privacy scan and exact 70-file ZIP transport checks pass."
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .scratch/pc-r07-production/runtime/bin/python3 .scratch/pc-r07-final-disclosure-review/postmerge/surface_audit.py",
+      "exit_status": 0,
+      "result": "Second full-object/handoff screen, PDF extraction/metadata and PNG textual-metadata checks pass."
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .scratch/pc-r07-production/runtime/bin/python3 .scratch/pc-r07-final-disclosure-review/postmerge/reconcile_audit.py",
+      "exit_status": 0,
+      "result": "Native/archive/source identity, prior report/ZIP preservation,39 incoming files,8 PDFs/196 pages, scoped release policy/narrative/hash rows,35 public pins and31 product Git-object identities pass.",
+      "exploratory_note": "The first reviewer narrative comparison exited1 because replacing entire table rows left one newline per newly added row; filtering complete matching rows corrected the comparison. No narrative or policy difference was present, and no subject file was changed."
+    },
+    {
+      "method": "Direct git cat-file commit and git ls-tree checks of four additional commits and 28 additional trees",
+      "exit_status": 0,
+      "result": "Canonical ordinary-merge ancestry/public project author identity; 658 direct tree entries, only regular file/tree modes, no unsafe names."
+    }
+  ],
+  "limits": [
+    "Approval covers only DISC-001/ARCH-001 for 57aa30629fff0a05395b1b7449d5e66bd9d073ac through 13e247bc1ff1e91cd01310711d8f4ac2675df8ab. This new report and any later objects need the coordinator exact final outgoing-object check.",
+    "No broad source/site suite or native export was rerun. Prior research/archive decisions are reused only after exact identity; the coordinator recorded merged local gates separately, and publication integration is independently reviewed in its own lane.",
+    "No push or deployment was performed or approved by this report; the coordinator owns publication and live verification. Already-published incoming-main sources are baseline material.",
+    "Privacy scans and contextual inspection provide bounded evidence, not proof that every possible unknown secret encoding or private prose form is absent.",
+    "The existing rights/source-authentication/currentness limitations and unavailable historical-run compatibility test remain explicit. No new legal or original-language conclusion is claimed."
+  ],
+  "mutation_boundary": {
+    "written": [
+      "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/main-reconciliation-disclosure.json",
+      ".scratch/pc-r07-final-disclosure-review/"
+    ],
+    "historical_report_and_handoff_unchanged": true,
+    "subject_source_native_metadata_git_or_build_publication_writes": false,
+    "commits": 0,
+    "pushes": 0,
+    "external_messages": 0,
+    "further_agents": 0
+  },
+  "scratch_evidence": {
+    "audit.py": "04ef51795fa86e2063bd0f7950cb2eba73a97df8de2929bd42fd5338c6ffad51",
+    "broad-path-triage.json": "283808c3d17986fac67d34739907cd5f7f960a798e17f09002829aefb0a9a722",
+    "handoff-surfaces.json": "f41f0acb4f7ffd5c6ad2efa825f62cba02625dcf64ed0fbf5f9f6d2ab407fe0d",
+    "object-coverage-delta.json": "f56b56499248493aa6ba37cb85e2e1f01dd3c7d48d8f7b007b7f57ef6d4e956a",
+    "object-scan-hits.json": "91301faa88107185fe8fc97c03faf9ab4f5acc521b5ec685f780b5ae2089fa3e",
+    "reconcile_audit.py": "dd10dc808f8443452550a670243aaaccd840fcd5bcf7322d0ff1cbff40d2e349",
+    "reconciliation-summary.json": "395c42010f8713ad6227a2bf00e1daf12746bd63154de971ff4e03d685e4a60b",
+    "scan-summary.json": "cdd5b2851ff8bba04cf6b755a9de3b373e28ce31ca0d18ba3e59e6920d53a269",
+    "surface-scan-hits.json": "d51e5ba294c2b44f16fa143af87016c14c4cb18f5c14c01114c255add2e18663",
+    "surface_audit.py": "e1a14247cfc3ba99797b518fbb8bda7964782518580405c34536eab4cb8d4ecd",
+    "tree-and-commit-summary.json": "ce7e4a1e348165dfc1c91305533195064788ffd7fd3dcc9c2bc4fcea55586147",
+    "verified-objects.json": "377d772cb3685239caa7345df45c03b68fe8ecc865852d78d5ec33ca0f9c4299"
+  }
+}

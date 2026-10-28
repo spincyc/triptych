@@ -1,5 +1,15 @@
 # Heaven — Research Scope
 
+## PDF layout revision — 2026-10-26
+
+The maintainer requested a standalone title page, following contents, and a
+two-column article body in both provider editions. The 11-point body uses
+0.85-inch margins and a 0.3-inch column gap; contents, notes and appendices
+remain full width. All substantive text, citations and received prayers are
+preserved. This commission supersedes earlier single-column physical-page
+targets for this layout revision; it does not shorten the essay. Production
+evidence is recorded in `PROJECT-WORK.md` under the 26 October PDF layout.
+
 - **Publication:** `articles/faith/four-last-things-04-heaven` (GPT).
 - **Profile:** discursive faith/theology article, `guidance/articles.md`.
 - **Series:** *The Four Last Things*, four independently readable studies.

@@ -1112,3 +1112,25 @@ permission is decided per text and per surface: what might be displayed by a
 future eligible route is not thereby a file a reader may download or a corpus
 the world may clone. The current public route quarantines ICEL payloads and
 retains only text-free rights, source, and acknowledgement metadata.
+
+## Finite execution-scoped historical witnesses
+
+A historical prayer whose actual ending differs from the target retains its
+existing whole-body translation hold. A separately reviewed, finite execution method
+may retain that complete historical English verbatim, bind exact petition and
+printed-cue spans to its whole-source hash, and project the petition only in an
+independently established execution relation. It must keep the printed ending
+in labelled source apparatus, keep the whole-body hold and denominator, and
+supply a joint conclusion only from a separately proved companion source.
+This adds no ending substitution, formula expansion, calendar equivalence, or
+permission to translate. Rights and public-artifact bindings remain per source.
+
+The initial authority is the exact six-record Roman1962 RG110 method at
+`workflows/reviews/reader-completion-2026-10-26/oration-execution-six-authority.json`,
+validated by `scripts/_oration_execution.py`. Its source editions, complete
+English, Latin bodies/proofs, source page ranges, public projections and exact
+dated relation are closed by hashes. Another target, witness, context, language,
+form, source spelling application, or method needs a separately reviewed
+successor. No arbitrary method label or freeform `execution_sources` row is an
+authority. An absent English cue or unbound occurrence name remains unresolved;
+these records cannot claim complete English execution.

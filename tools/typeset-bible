@@ -59,6 +59,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from _bible_artifacts import select_book_index  # noqa: E402
 from _psalms import NumberingError, PSALMS, convert_range  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
@@ -428,14 +429,11 @@ class Edition:
         return tomllib.loads(path.read_text(encoding="utf-8"))
 
     def _books(self) -> list[Book]:
-        index = sorted(self.artifacts.glob("book-index-*/book-index.tsv"))
-        if len(index) != 1:
-            raise ValueError(
-                f"{self.id}: expected exactly one book index under {self.artifacts}, "
-                f"found {len(index)}"
-            )
+        index = select_book_index(self.artifacts.parent)
+        if index is None:
+            raise ValueError(f"{self.id}: no book index under {self.artifacts}")
         books: list[Book] = []
-        for row in read_tsv(index[0]):
+        for row in read_tsv(index):
             # Identity by the declared file name, never by the position of an
             # artifact directory in a listing.
             found = sorted(self.artifacts.glob(f"verse-text-*/{row['file']}"))

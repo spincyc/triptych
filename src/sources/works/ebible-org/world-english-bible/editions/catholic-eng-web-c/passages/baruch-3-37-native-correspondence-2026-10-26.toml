@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+id = "passage.ebible-org.world-english-bible.catholic-eng-web-c.baruch-3-37-native-correspondence-2026-10-26"
+edition_id = "edition.ebible-org.world-english-bible.catholic-eng-web-c"
+artifact_id = "artifact.ebible-org.world-english-bible.catholic-eng-web-c.usfm-47-bareng-web-c-59488efa"
+artifact_sha256 = "59488efac7bfd4cf8b8964f7e638e9f994ddff8620f927d4ca6f2add2b64a061"
+locus = "Bar.3.37"
+states = ["cataloged", "acquired", "inspected", "verified"]
+physical_line_ranges = [[115, 115]]
+verified_on = "2026-10-26"
+context = "Exact terminal Baruch clause. Native whole verse3:37 corresponds to canonical Clementine3:38; this is an edition Bible reconstruction, not exact Missal wording."
+notes = "The complete native Baruch3 chapter was compared byte-for-byte at explicit chapter/verse markers in the current publisher USFM archive 6fedbef919e0850ecbe7a9480012c2549f327db7aa7bccf79d1bf6261e9992c1, member 47-BAReng-web-c.usfm SHA256 59488efac7bfd4cf8b8964f7e638e9f994ddff8620f927d4ca6f2add2b64a061. The current parent archive is not asserted to equal the historical package that produced the already-held normalized TSV. The controller is now the complete unchanged retained native USFM book member, and its physical range addresses the exact native verse-marker line. The normalized terminal-body hash below remains a comparison to the already-held TSV after its declared transformation. Whole-archive modern support files remain excluded and their rights unresolved. The native terminal full body SHA256 is 23e6235933076d2a48cd274f56bb083d87754b173daa5ca3e4463f7a70651847. Neighboring canonical3:34-35 share native3:34; no singleton superset join is activated here. WEB/RV retain their feminine pronoun and KJV its masculine pronoun unchanged."

@@ -31,6 +31,7 @@ import unittest
 from importlib.machinery import SourceFileLoader
 from importlib.util import module_from_spec, spec_from_loader
 from pathlib import Path
+from tools.tests import _source_batch_guards as G
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -303,10 +304,23 @@ class PageImageProvenanceGate(unittest.TestCase):
         ]
 
     def test_all_lasance_page_collations_resolve_exactly(self):
-        # 36 since 2026-10-19 (C3): the Pentecost Introit, Gospel, Offertory
-        # and Communion, which now carry the Missal's own Latin; 37 with the
-        # Pentecost Alleluia bound the same day (G14 lane).
-        self.assertEqual(len(self.bound), 37)
+        # Checked source acquisitions may add owners. Match the entire live
+        # positive partition to its independently accepted fixture first, then
+        # require the page-image cohort to be exactly the English Lasance
+        # owners, identified independently by translation source rather than
+        # the verification-artifact predicate used by setUp.
+        document = propers.load_calendar(propers.DEFAULT_ROOT, "roman-1962")
+        identity = lambda row: propers.translation_record_identity(row, document)
+        entries = {identity(row): row for row in self.document["entries"]}
+        self.assertEqual(len(entries), len(self.document["entries"]))
+        G.assert_current_english_entries(entries)
+        source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+        expected = {key for key, row in entries.items()
+                    if any(t.get("source_id") == source_id for t in row["translations"])}
+        actual = {identity(row) for row in self.bound}
+        self.assertEqual(len(actual), len(self.bound))
+        self.assertEqual(actual, expected)
+        self.assertTrue(LASANCE_SAFE_19 <= actual)
         for row in self.bound:
             where = f"{row['mass']}/{row['proper']}"
             self.assertEqual(
@@ -417,6 +431,64 @@ class PageImageProvenanceGate(unittest.TestCase):
             "Lasance", self.bound[0], witnesses
         )
         self.assertTrue(any("tracked public-domain artifact" in p for p in problems))
+
+
+class PublicWitnessCautions(unittest.TestCase):
+    """Public witness context retains qualifications, not source-study pins."""
+
+    def test_private_comparison_controller_notes_are_not_public_cautions(self):
+        for source_id in (
+            "passage.catholic-church.missale-romanum.vatican-typica-1970.example",
+            "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.example",
+            "passage.synthetic.protected-controller",
+        ):
+            with self.subTest(source_id=source_id):
+                note = "Historical comparison evidence. Comparison controllers: " + source_id + "."
+                self.assertIsNone(propers.public_witness_caution(note))
+                self.assertIsNone(propers.public_witness_caution(note.lower()))
+
+    def test_neutral_witness_qualifications_remain_literal(self):
+        for caution in (
+            "Historical antecedent English for study; not approved contemporary English.",
+            "The historical conclusion differs; correspondence to the 2008 reimpressio remains unresolved.",
+            "Comparison of the received prayers supplies no whole-prayer identity.",
+        ):
+            self.assertEqual(propers.public_witness_caution(caution), caution)
+        self.assertIsNone(propers.public_witness_caution("ICEL private permission record"))
+        self.assertIsNone(propers.public_witness_caution(
+            "International Commission on English in the Liturgy private evidence"))
+
+    def test_easter_vigil_exports_neutral_context_and_preserves_source_notes(self):
+        names = {"Prayer after the First Reading (alternative)",
+                 "Prayer after the Fifth Reading", "Prayer after the Sixth Reading"}
+        path = ROOT / "src/sources/inventories/postconciliar-proper-translations-v1.toml"
+        raw = path.read_bytes()
+        ledger = tomllib.loads(raw.decode())
+        rows = [row for row in ledger["entries"]
+                if row["mass"] == "easter-vigil" and row["proper"] in names]
+        self.assertEqual({row["proper"] for row in rows}, names)
+        self.assertEqual(len(rows), 3)
+        notes = {row["proper"]: row["witness_note"] for row in rows}
+        self.assertTrue(all("Comparison controllers:" in note for note in notes.values()))
+        witnesses = {row["id"]: row for row in ledger["sources"]}
+        structure = propers.calendar_structure(propers.DEFAULT_ROOT, "postconciliar", propers.book_tokens())
+        mass = next(row for row in structure["masses"] if row["key"] == "easter-vigil")
+        for entry in rows:
+            with self.subTest(proper=entry["proper"]):
+                proper = next(row for row in mass["propers"] if row["name"] == entry["proper"])
+                expected = [row for row in entry["translations"] if row["lang"] == "en"]
+                actual = [row for row in proper["translations"] if row["lang"] == "en"]
+                self.assertEqual(len(actual), 1)
+                self.assertEqual([(row["text"], row["source_id"], row["rights"]) for row in actual],
+                                 [(row["text"], row["source_id"], row["rights"]) for row in expected])
+                caution = actual[0]["caution"]
+                self.assertEqual(caution, witnesses[entry["witness"]]["caution"].strip())
+                self.assertIn("not approved contemporary English", caution)
+                self.assertIn("2008 correspondence remains unresolved", caution)
+                self.assertNotIn("Comparison controllers:", caution)
+                self.assertNotIn("passage.catholic-church.missale-romanum.vatican-", caution)
+                self.assertEqual(entry["witness_note"], notes[entry["proper"]])
+        self.assertEqual(path.read_bytes(), raw)
 
 
 class TheCorpusItself(unittest.TestCase):
@@ -605,14 +677,23 @@ class TheCorpusItself(unittest.TestCase):
                 for translation in row["translations"]
             )
         ]
-        # The nine 2026-10-01 recoveries have their own bindings. Only the
-        # Fifteenth Sunday Secret matches this older derivative byte for byte;
-        # the other conclusions retain the page's punctuation instead.
-        self.assertEqual(
-            {(row["mass"], row["proper"]) for row in recovered},
-            {("pentecost-15", "Secret")},
-        )
+        # A later independent binding may recover identical wording without
+        # turning this unbound derivative into a serving basis. Every such row
+        # belongs to the exact accepted positive partition and must validate
+        # its own publication chain; retain the original October recovery as
+        # an independently pinned sample.
+        calendar = propers.load_calendar(propers.DEFAULT_ROOT, "roman-1962")
+        current = {propers.translation_record_identity(row, calendar): row
+                   for row in document["entries"]}
+        G.assert_current_english_entries(current)
         for row in recovered:
+            self.assertNotEqual(row["publication_artifact_id"], ARTIFACT)
+            self.assertNotEqual(row["artifact_id"], ARTIFACT)
+            propers.validate_translation_publication_binding(row, propers.DEFAULT_ROOT, SIDECAR)
+        sample = [row for row in recovered
+                  if (row["mass"], row["proper"]) == ("pentecost-15", "Secret")]
+        self.assertEqual(len(sample), 1)
+        for row in sample:
             self.assertEqual(row["artifact_id"], ARTIFACT.rsplit(".", 1)[0] + ".ia-scan-pdf")
             self.assertEqual(row["ia_leaf_range"], [437, 437])
             self.assertEqual(
@@ -629,15 +710,23 @@ class TheCorpusItself(unittest.TestCase):
             if row.get("reason") == {"kind": "no-exemplar"}
             and EDITION in row.get("note", "")
         ]
-        # 348 until 2026-10-01: four pentecost-19 rows, then nine orations of
-        # pentecost-13 through pentecost-15 acquired exact publication bindings.
-        # On 2026-10-19 (C2 gap G3) the 335 were retyped from rights-withheld
-        # to no-exemplar: the witness is public domain and only the binding is
-        # missing. Each note still names this edition as the quarantined lead.
-        # 332 since 2026-10-19 (C3): the Pentecost Collect, Secret and
-        # Postcommunion were bound through roman-1962-pentecost-en; 331 once
-        # the Pentecost Alleluia was bound from Lasance (G14 lane).
-        self.assertEqual(len(unavailable), 331)
+        # Replay the exact historical lead cohort. Accepted positive owners
+        # may leave it; every owner still in the accepted absence partition
+        # must retain its exact typed row and quarantined source note.
+        old = tomllib.loads(G.historical_text(SIDECAR.relative_to(ROOT).as_posix()))
+        identity = lambda row: G.canonical(propers.translation_record_identity(row, calendar))
+        historical_leads = {identity(row) for row in old["untranslated"]
+                            if row.get("reason") == {"kind": "no-exemplar"}
+                            and EDITION in row.get("note", "")}
+        accepted = G.fixture()
+        self.assertLessEqual(historical_leads,
+                             set(accepted["roman_current_english_positive"])
+                             | set(accepted["roman_current_english_absence"]))
+        actual = {identity(row): G.digest(G.canonical(row)) for row in unavailable}
+        self.assertEqual(len(actual), len(unavailable))
+        expected = {key: value for key, value in accepted["roman_current_english_absence"].items()
+                    if key in historical_leads}
+        self.assertEqual(actual, expected)
         self.assertTrue(all("text" not in row for row in unavailable))
 
     def test_holy_week_is_outside_the_second_witness(self):

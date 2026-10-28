@@ -558,8 +558,8 @@ for key, want in (
     assert got == want, (key, sorted(got), sorted(want))
 PY
 
-# A year in which 25 December is a Sunday has no Sunday within the octave, and
-# the guidance states no fallback, so the year refuses rather than inventing one.
+# Universal Norms 35 a appoints the Holy Family on 30 December when Christmas
+# is a Sunday. The 1962 and structural pre-1955 calendars do not inherit it.
 run_tool structure --out "$sandbox/gap" --first 2022 --last 2022 >/dev/null
 python3 - "$sandbox/gap/structure/calendar" <<'PY'
 import json, pathlib, sys
@@ -568,11 +568,14 @@ root = pathlib.Path(sys.argv[1])
 document = json.loads((root / "postconciliar" / "2022.json").read_text(encoding="utf-8"))
 year = [y for y in document["liturgical_years"] if y["year"] == 2023][0]
 refused = {row["what"]: row for row in year["unresolved"]}
-assert "holy-family" in refused, year["unresolved"]
-thirtieth = refused["the weekday position of 30 December"]
-assert thirtieth["from"] == thirtieth["to"] == "2022-12-30", thirtieth
+assert "holy-family" not in refused, year["unresolved"]
+assert "the weekday position of 30 December" not in refused, year["unresolved"]
+assert [row["key"] for row in document["days"]["2022-12-30"]] == ["holy-family"]
 assert "2022-12-25" in document["days"]
 assert all("holy-family" not in c["key"] for c in document["days"]["2022-12-25"])
+for calendar in ("roman-1962", "roman-pre-1955"):
+    older = json.loads((root / calendar / "2022.json").read_text(encoding="utf-8"))
+    assert all(row["key"] != "holy-family" for row in older["days"]["2022-12-30"]), calendar
 PY
 
 # The postconciliar weekday series: where each position falls, and which day is
@@ -714,15 +717,15 @@ assert year.borrowed == {}, year.borrowed
 # Over the whole emitted span: no weekday position stands on a Sunday or
 # outside its own season, a thirty-three-week year never reaches ten of
 # Ordinary Time's 204 positions and a thirty-four-week year never reaches four,
-# and 30 December fails closed in exactly the years in which no Sunday falls
-# within the octave of the Nativity.
+# and 30 December takes the Holy Family in exactly the years in which no
+# Sunday falls within the octave of the Nativity.
 SEASON_OF = {"lent": "lent", "holy": "holy-week", "easter": "easter", "ot": "ordinary-time",
              "christmas": "christmas", "advent": "advent"}
 # The date-keyed runs, whose last segment is a day of the month rather than a
 # weekday name and which this loop must cover all the same.
 DATED = ("advent-december-", "christmas-december-", "christmas-january-")
 lost = {}
-closed = 0
+holy_family_fallbacks = 0
 week_keyed = {}
 date_keyed = {}
 years_reached = {}
@@ -755,20 +758,17 @@ for ending in range(tool.FIRST_YEAR, tool.LAST_YEAR + 1):
     lost.setdefault(built.facts["ordinary_time_weeks"], set()).add(204 - len(reached))
     week_keyed[advent_weeks] = week_keyed.get(advent_weeks, 0) + 1
     date_keyed[advent_dates] = date_keyed.get(advent_dates, 0) + 1
-    thirtieth = [
-        row for row in built.unresolved
-        if row["what"] == "the weekday position of 30 December"
-    ]
-    if thirtieth:
-        closed += 1
-        when = date(ending - 1, 12, 30)
-        assert date(ending - 1, 12, 25).weekday() == 6, ending
-        assert len(thirtieth) == 1, (ending, thirtieth)
-        assert thirtieth[0]["from"] == thirtieth[0]["to"] == when.isoformat(), (
-            ending, thirtieth[0]
-        )
+    when = date(ending - 1, 12, 30)
+    thirtieth = [row["key"] for row in built.placements.get(when, [])]
+    no_sunday = date(ending - 1, 12, 25).weekday() == 6
+    assert ("holy-family" in thirtieth) == (no_sunday or when.weekday() == 6), (ending, thirtieth)
+    assert not any(row["what"] in ("holy-family", "the weekday position of 30 December")
+                   for row in built.unresolved), (ending, built.unresolved)
+    if no_sunday:
+        holy_family_fallbacks += 1
+        assert "christmas-december-30" not in thirtieth, (ending, thirtieth)
 assert lost == {33: {10}, 34: {4}}, lost
-assert closed == 15, closed
+assert holy_family_fallbacks == 15, holy_family_fallbacks
 # The two Advent runs against the counts the guidance states from the computus:
 # the week-keyed run holds twelve to seventeen of its seventeen positions, all
 # five of the third week's being lost in the 28 years whose Third Sunday of
@@ -1031,3 +1031,21 @@ if run_tool check --format nonesuch >/dev/null 2>&1; then
 fi
 
 echo ok
+
+# RG 81 and 88 leave the Office of a Rogation day intact. The additional
+# Litany Mass must not suppress the 1962 feria's preceding-Sunday formulary.
+run_tool structure --out "$sandbox/rogation-feria" --first 2022 --last 2022 >/dev/null
+python3 - "$sandbox/rogation-feria/structure/calendar" <<'PY'
+import json, pathlib, sys
+root = pathlib.Path(sys.argv[1])
+roman = json.loads((root / "roman-1962/2022.json").read_text())
+older = json.loads((root / "roman-pre-1955/2022.json").read_text())
+for stamp in ("2022-05-23", "2022-05-24"):
+    assert "rogation-mass" in {row["key"] for row in roman["days"][stamp]}, stamp
+    assert [row["key"] for row in roman["ferial_formulary"][stamp]] == ["easter-5"], stamp
+    assert stamp not in older.get("ferial_formulary", {}), stamp
+# The vigil of the Ascension is an actual temporal day, so Wednesday still
+# has its own formulary despite the same additional Litany Mass.
+assert "2022-05-25" not in roman.get("ferial_formulary", {})
+assert "vigil-of-the-ascension" in {row["key"] for row in roman["days"]["2022-05-25"]}
+PY

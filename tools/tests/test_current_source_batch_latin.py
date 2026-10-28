@@ -24,7 +24,12 @@ class CurrentSourceBatchLatinTests(unittest.TestCase):
     _,body,state=self.bodies[identity];self.assertEqual({'state':state,'body_sha256':G.digest(body)if body is not None else None},want)
   removed={identity for identity,v in baseline.items()if v['state']=='removed'}
   self.assertEqual(len(removed),20)
-  for identity in removed:
+  # The accepted successor restores Anthony's previously removed Collect.
+  # All other removed owners retain their original refusal contract.
+  restored=removed & corrected
+  self.assertEqual({json.loads(identity)['mass'] for identity in restored},
+                   {'s-antonii-padua-confessoris-ecclesiae-doctoris'})
+  for identity in removed-restored:
    key,body,state=self.bodies[identity];self.assertEqual(state,'removed');self.assertFalse(decision_for(key,'Invented body.',self.validated).permits(SURFACES))
  def test_every_explicit_new_or_corrected_body_has_current_six_surface_proof(self):
   for identity in self.frozen['new_latin_keys']+self.frozen['corrected_latin_keys']:
@@ -40,9 +45,24 @@ class CurrentSourceBatchLatinTests(unittest.TestCase):
   # bodies and publication records above come from the actual current corpus.
   historical=G.historical_document(self.document)
   prior={G.key_string(k):body for k,body,state in body_owners(historical)if state=='present'}
+  proof_only=set();restored=set()
   for identity in self.frozen['corrected_latin_keys']:
    with self.subTest(identity=identity):
-    key,current,state=self.bodies[identity];before=prior[identity]
-    self.assertNotEqual(before,current);self.assertEqual(G.digest(before),self.frozen['latin_baseline_bodies'][identity]['body_sha256'])
-    denial=decision_for(key,before,self.validated);self.assertFalse(denial.permits(SURFACES));self.assertIn('stale text hash',denial.reason)
+    key,current,state=self.bodies[identity]
+    baseline=self.frozen['latin_baseline_bodies'][identity]
+    if baseline['state']=='removed':
+     self.assertNotIn(identity,prior);restored.add(json.loads(identity)['mass']);continue
+    before=prior[identity]
+    self.assertEqual(G.digest(before),baseline['body_sha256'])
+    if before==current:
+     # Joseph Calasanctius is an accepted evidence-chain repair. It leaves
+     # the complete historical body exact and cannot make that body stale.
+     proof_only.add(json.loads(identity)['mass'])
+     self.assertNotEqual(self.frozen['latin_baseline_rows']['roman-1962'][identity],
+                         self.frozen['latin_current_rows']['roman-1962'][identity])
+     self.assertTrue(decision_for(key,before,self.validated).permits(SURFACES))
+    else:
+     denial=decision_for(key,before,self.validated);self.assertFalse(denial.permits(SURFACES));self.assertIn('stale text hash',denial.reason)
+  self.assertEqual(proof_only,{'s-iosephi-calasanctii-confessoris'})
+  self.assertEqual(restored,{'s-antonii-padua-confessoris-ecclesiae-doctoris'})
 if __name__=='__main__':unittest.main()

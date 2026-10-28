@@ -494,7 +494,24 @@ class ProductionLedgerTests(unittest.TestCase):
             )
             self.assertEqual([], problems)
             if calendar != "roman-pre-1955":
-                records = BATCH_GUARDS.historical_latin_records(records, calendar)
+                # Current repairs/restorations keep their exact live proof map.
+                # Historical counts describe the original ledger values, not
+                # the current values of owners that happened to exist then.
+                BATCH_GUARDS.assert_current_latin(records, calendar)
+                archived = tomllib.loads(BATCH_GUARDS.historical_text(
+                    f"src/sources/inventories/{calendar}{SIDECAR_SUFFIX}"
+                ))
+                records = {
+                    LatinKey.from_mapping(row): row
+                    for entry in archived["entries"]
+                    for row in [{**archived["defaults"], **entry}]
+                }
+                self.assertEqual(
+                    BATCH_GUARDS.fixture()["latin_baseline_rows"][calendar],
+                    {BATCH_GUARDS.key_string(key): BATCH_GUARDS.digest(
+                        BATCH_GUARDS.canonical(row)
+                    ) for key, row in records.items()},
+                )
             self.assertEqual(total, len(records))
             self.assertEqual(
                 # 46 since 2026-10-01: KI-054 published 31 quarantined bodies.

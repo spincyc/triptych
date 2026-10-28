@@ -56,6 +56,26 @@ LATIN_COLLATIONS = {"collated": "collated", "identified": "uncollated",
                     "unresolved": "unresolved"}
 
 
+def is_witness_state_body(latin: object) -> bool:
+    """A source-validated, permitted body with an explicitly bounded witness claim.
+
+    This maps the owning publication decision; it does not grant permission or
+    verify a source record itself. Unknown/uncollated context stays inherited.
+    """
+    if not isinstance(latin, dict):
+        return False
+    context = latin.get("target_context") or {}
+    provenance = latin.get("provenance") or {}
+    publication = latin.get("publication") or {}
+    from _proper_target_overrides import is_public_context
+    return (is_public_context(context)
+            and latin.get("withheld") is False
+            and publication.get("status") == "permitted"
+            and publication.get("basis") in {"public-domain", "project-created", "permission", "licensed"}
+            and provenance.get("status") == "collated"
+            and provenance.get("relationship") in LATIN_TARGET_RELATIONSHIPS)
+
+
 def latin_evidence(latin: object, *, inherited: bool = False) -> dict:
     """Map one public Latin record to coverage terms without reading the text.
 
@@ -67,6 +87,11 @@ def latin_evidence(latin: object, *, inherited: bool = False) -> dict:
     provenance = latin.get("provenance") if isinstance(latin.get("provenance"), dict) else {}
     publication = latin.get("publication") if isinstance(latin.get("publication"), dict) else {}
     basis = str(publication.get("basis") or "unresolved")
+    if is_witness_state_body(latin):
+        # Exact to the identified Bonn witness, without upgrading generic
+        # pre-1955 dates or the nominal 1920 target to exact-target wording.
+        return {"relationship": "unresolved", "collation": "collated",
+                "publication_basis": basis}
     if inherited:
         return {"relationship": "unresolved", "collation": "uncollated",
                 "publication_basis": basis}
@@ -538,6 +563,30 @@ def expectations(path: Path, calendar: str, masses: list[dict]) -> dict:
                     proper_occurrence = row.get("calendar_proper_occurrence")
                     appointment = row.get("calendar_ordinary_appointment")
                     option = row.get("calendar_ordinary_option")
+                    parent = inventory_targets.get(row.get("parent_id"))
+                    # A category's source-only slot may stay unresolved. Once
+                    # it names any calendar join, require the complete own
+                    # Collect address before generic Mass/form classification.
+                    if (
+                        row["kind"] == "text-slot"
+                        and parent and parent.get("kind") == "collect-category"
+                        and (
+                            parent.get("calendar_mass_key")
+                            or any(field in row for field in (
+                                "calendar_mass_key", "form_id", "cycle", "cycle_family",
+                                "calendar_proper_name", "calendar_proper_occurrence",
+                                "calendar_ordinary_appointment", "calendar_ordinary_option",
+                            ))
+                        )
+                        and not (
+                            row.get("calendar_mass_key") and row.get("form_id")
+                            and proper_name == "Collect"
+                        )
+                    ):
+                        raise ValueError(
+                            "expected Missal Collect category join requires explicit "
+                            "calendar_mass_key, form_id and calendar_proper_name Collect"
+                        )
                     if "calendar_proper_occurrence" in row and (
                         not proper_name or type(proper_occurrence) is not int
                         or proper_occurrence < 1
@@ -555,13 +604,25 @@ def expectations(path: Path, calendar: str, masses: list[dict]) -> dict:
                             raise ValueError("invalid expected Missal calendar_ordinary_appointment")
                         if bool(option) != bool(appointment) or (option is not None and not isinstance(option, str)):
                             raise ValueError("expected Missal ordinary appointment requires its option")
-                        parent = inventory_targets.get(row.get("parent_id"))
                         if not row.get("calendar_mass_key") and not (parent and parent.get("calendar_mass_key")):
                             raise ValueError("expected Missal calendar unit join requires a joined Mass")
-                        if parent and parent.get("kind") != "form":
-                            raise ValueError("expected Missal calendar unit join requires a parent form")
+                        # A sanctoral source may enumerate an own Collect
+                        # beneath a collect-category rather than a full form.
+                        # Preserve that independently sourced hierarchy; only
+                        # an explicit Mass/form-qualified Collect join can use it.
+                        direct_collect = bool(
+                            parent and parent.get("kind") == "collect-category"
+                            and proper_name == "Collect"
+                            and row.get("calendar_mass_key") and row.get("form_id")
+                        )
+                        if parent and parent.get("kind") != "form" and not direct_collect:
+                            raise ValueError(
+                                "expected Missal calendar unit join requires a parent form"
+                                " or explicitly joined Collect category"
+                            )
                         if parent and row.get("calendar_mass_key") and (
-                            row["calendar_mass_key"] != parent.get("calendar_mass_key")
+                            (not direct_collect or parent.get("calendar_mass_key"))
+                            and row["calendar_mass_key"] != parent.get("calendar_mass_key")
                         ):
                             raise ValueError("expected Missal calendar unit join disagrees with its parent form")
                     if row.get("cycle") and row["cycle"] not in {"A", "B", "C", "ABC", "I", "II", "I-II"}:

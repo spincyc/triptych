@@ -987,12 +987,12 @@ owns the canon. Both run inside `make check` and need PyYAML
 | roman-1962 | seasonal | 128 | 1424 | 0 |
 | roman-1962 | christological | 8 | 99 | 0 |
 | roman-1962 | marian | 18 | 163 | 0 |
-| roman-1962 | sanctoral | 307 | 1676 | 0 |
+| roman-1962 | sanctoral | 307 | 1685 | 0 |
 | roman-1962 | common | 30 | 382 | 0 |
 | postconciliar | seasonal | 390 | 2465 | 0 |
 | postconciliar | christological | 7 | 79 | 0 |
 | postconciliar | marian | 14 | 70 | 0 |
-| postconciliar | sanctoral | 201 | 900 | 0 |
+| postconciliar | sanctoral | 201 | 903 | 0 |
 | postconciliar | common | 7 | 0 | 0 |
 
 | Calendar | Rank | Entries | Celebrations |
@@ -1015,7 +1015,7 @@ owns the canon. Both run inside `make check` and need PyYAML
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
 | Masses | 8 | 491 | 619 |
-| Propers | 0 | 3744 | 3514 |
+| Propers | 0 | 3753 | 3517 |
 | — named `Placeholder` | 0 | 0 | 0 |
 | — inside a `forms` block | 0 | 211 | 204 |
 | — carrying a `cycles` mapping | 0 | 0 | 306 |
@@ -1023,7 +1023,7 @@ owns the canon. Both run inside `make check` and need PyYAML
 | Masses holding only placeholders | 0 | 0 | 0 |
 | Masses taking a formulary from another entry | 0 | 166 | 0 |
 | Propers taking their text from another entry | 0 | 101 | 51 |
-| Propers that are not placeholders | 0 | 3744 | 3514 |
+| Propers that are not placeholders | 0 | 3753 | 3517 |
 | — of those, scripture-bearing | 0 | 2270 | 3051 |
 | Encoded passages | 0 | 2757 | 4030 |
 | Distinct books cited | 0 | 58 | 73 |
@@ -1096,3 +1096,46 @@ their existing language scope. The existing public absence target must match
 the unit's exact target identity. Read selects an eligible held English body
 first; otherwise it shows the typed whole-body absence. Bible references and
 excerpts remain separately identified components and cannot close the gap.
+
+## Finite historical sources for an applied oration group
+
+`execution_sources` is a separate source/execution sidecar domain. Its first
+method closes six exact Roman1962 host/form/slot/cycle/occurrence records in
+`workflows/reviews/reader-completion-2026-10-26/oration-execution-six-authority.json`.
+It grants no whole-body `translations` entry and removes no `untranslated` row.
+Each native record retains the complete literal historical English, the
+received historical Latin transcription, page-image verification, a separate tracked whole-English publication row,
+current host and companion Latin/proof dictionaries, and a separately existing
+companion English publication binding. Lasance Latin retains the received transcription with printed stress accents
+removed; Chair Latin retains its accents. Neither stored Latin string changes
+under this method. Literal whole English and normalized Latin comparison are
+separate claims. Source partitions use Unicode codepoint
+bounds and checked UTF8 byte bounds; the public projection explicitly uses
+UTF16 bounds and must preserve surrogate boundaries.
+
+The only execution is a settled, actually applied dated1962 RG110 two-member
+group with those exact source owners and form. The petition becomes readable
+English while the principal witness's literal printed cue remains labelled
+historical source apparatus. The companion supplies only its separately proved
+literal English and printed cue; no conclusion is expanded or constructed.
+A missing companion cue, a name placeholder, a later shared conclusion, or an
+explicit witness that does not hold the companion keeps execution unresolved.
+Unknown contexts and source/proof changes refuse this projection. The raw
+Propers entrance and ordinary English coverage keep their existing holds.
+
+The public `execution_sources` field carries only the closed source projection,
+source/proof hashes and publication-passage identities. Selected reader events
+use `executionSource` and separate `executionSourceCoverage`; they do not put a
+petition into `translation.text`, `selected.text`, a legacy export, or the
+printed-rubric `text_structure` domain. Source apparatus remains visible in the
+reader and print and is excluded from executed-prayer copying.
+
+## Finite Common name execution
+
+The separately adopted two-case `name_execution_sources` domain preserves the
+whole historical N. template and literal same-book name controller. It creates
+a labelled execution inference only for the exact adopted occurrence and
+source-backed use, with independent conclusion controls. It changes no ordinary
+translation, absence, canonical Latin or existing six-source conclusion method.
+See `guidance/liturgy/finite-name-execution.md` for the closed two-case contract,
+explicit Patrick Mass-use requirement, source/derived separation and refusals.

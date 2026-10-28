@@ -26,8 +26,9 @@ calendar: roman-pre-1955
 #
 # `text_from` is MECHANICAL and points at where text has been transcribed IN
 # THIS REPOSITORY. Every entry this file does not state is served from
-# `roman-1962` and stamped as such, because the 1962 typical edition is the only
-# printing anyone here has read a proper from. That is Rule 2a: a text resides in
+# `roman-1962` and stamped as such, because the 1962 typical edition supplies the resident complete Proper
+# corpus. A separate exact three-owner inventory now attests Pentecost prayers
+# to the identified Bonn c1954 witness state, without moving residence. That is Rule 2a: a text resides in
 # the base, its witnesses are recorded per witness, and a text attested by only
 # one printing says so.
 #
@@ -39,9 +40,10 @@ calendar: roman-pre-1955
 # pre-1955 book is the base and 1962 a revision on top of it, and the measurement
 # below supports it. Flipping residence — moving 2,312 propers into this
 # directory and leaving 1962 as the departure file — is refused HERE and now for
-# one reason, stated in guidance/recensions.md section 6 as precondition 0: no
-# proper in this repository yet records which printings have been read for it.
-# Until it does, moving the transcriptions under a 1920 heading would assert a
+# one reason, stated in guidance/recensions.md section 6 as precondition 0:
+# corpus-wide per-witness attestation remains incomplete. Three Bonn Pentecost
+# prayer attestations do not establish every inherited Proper. Moving the
+# remaining transcriptions under a 1920 heading would assert a
 # provenance nobody established, which is the defect the whole apparatus exists
 # to catch. The flip is the work; declaring the recension is not blocked on it.
 text_from: roman-1962
@@ -53,17 +55,19 @@ stands_before:
 # it beside the coverage record so a projected 1962 formulary cannot be
 # described as a complete transcription of the target recension.
 advisory: >-
-  Structural-only pre-1955 projection, not a complete 1920 Missal corpus. Only
-  six Holy Week departures and the exact absences of St Joseph the Worker and
-  the Queenship of the Blessed Virgin Mary are established here. Every unstated
-  formulary is served mechanically from roman-1962 without target-recension
-  collation and must be described as inherited and uncollated rather than
-  complete for 1920.
+  Partial pre-1955 projection with exactly three separately attested Latin
+  prayer bodies: Pentecost main Collect, Secret and Postcommunion, occurrence
+  one, in the Bonn 2004 reimpressio of a conformed edition of about 1954. This
+  witness-state-only attestation gives no civil-date authority or authenticated
+  Vatican 1920 claim. Six Holy Week departures and the exact absences of St
+  Joseph the Worker and the Queenship of the Blessed Virgin Mary are also
+  established here. Other unstated wording remains mechanically inherited from
+  roman-1962 and uncollated for the target; this is not a complete 1920 corpus.
 
 recension_coverage:
   schema: triptych-recension-coverage/v1
-  as_of: '2026-10-20'
-  status: structural-only
+  as_of: '2026-10-26'
+  status: partial
   domains:
     calendar:
       state: partial
@@ -80,13 +84,17 @@ recension_coverage:
         criteria into numbered rows. It records divergences and supports a
         finding aid, but it does not implement the criteria as criteria.
     propers:
-      state: none
+      state: partial
       basis: >-
-        No Proper wording in this departure file is transcribed from or
-        page-collated against the 1920 typical edition. Known-different bundled
-        formularies carry typed unavailable status and no pseudo-Proper rows;
-        unstated formularies are mechanical roman-1962 fallback, not pre-1955
-        attestations.
+        A separate hash-bound inventory attests exactly Pentecost main Collect,
+        Secret and Postcommunion, occurrence one, to the identified Bonn 2004
+        reimpressio of a conformed edition of about 1954. Literal short endings
+        are retained. This establishes three witness-state bodies, without
+        civil-date authority, an authenticated Vatican 1920 claim or generic
+        exact-target identity. All other resident inherited prayer owners
+        remain withheld; English dictionaries and inheritance are unchanged.
+        Other unstated wording remains mechanical roman-1962 fallback.
+        Known-different bundled formularies keep typed unavailable status.
     commons:
       state: inherited-uncollated
       basis: >-
@@ -108,12 +116,28 @@ recension_coverage:
         ceremonial, notation, the Office, and unstated units.
   inheritance:
     source_calendar: roman-1962
-    status: uncollated
+    status: partial
     basis: >-
-      `text_from` is a mechanical fallback to the only target altar-book corpus
-      transcribed in this repository. It does not assert that any unstated 1962
-      entry was checked in a pre-1955 witness or remained unchanged.
+      `text_from` remains a mechanical fallback to the resident roman-1962
+      altar-book corpus. Exactly three separately selected Pentecost prayer
+      bodies have current per-body Bonn witness-state attestations. Their
+      generic relationship remains unresolved, collation collated and generic
+      exact-target count zero. All other inherited wording remains uncollated
+      for this target; source ownership and English inheritance are unchanged.
   evidence:
+  - id: bonn-pentecost-three-prayers
+    domains: [propers]
+    grade: page-image-collated
+    record: src/sources/inventories/roman-pre-1955-proper-target-overrides-v1.toml
+    basis: >-
+      Independent primary page reading and code review, followed by coordinator
+      adoption, accept only Pentecost main Collect, Secret and Postcommunion,
+      occurrence one. The hash-bound receipt pins their actual literal Bonn
+      short endings and exact current source graph. The witness is the Bonn
+      2004 reimpressio of a conformed c1954 edition; no civil-date legislation,
+      whole-form completion or generic Vatican 1920 identity is inferred.
+    witnesses:
+    - edition.catholic-church.missale-romanum.2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920
   - id: roman-holy-week-structure
     domains: [calendar, ceremonies, propers]
     grade: ocr-structure-read
@@ -176,7 +200,8 @@ recension_coverage:
       accepted Bonn 2004 reimpressio of the conformed 28th edition of about
       1954, with the 1922 Mame conformed printing as the control for later
       additions. The completed section-body inventory establishes identities,
-      not wording agreement or per-Proper attestation. An exact Vatican 1920
+      not general wording agreement. Three Pentecost prayer attestations
+      are separately accepted; the remainder stays open. An exact Vatican 1920
       impression remains unauthenticated; acquiring it is not a prerequisite
       under the maintainer's 2026-10-19 witness decision. OCR may locate text
       but may not supply it.
@@ -230,9 +255,11 @@ ordering: departures in the order the Missal prints the days they fall on
 registry: src/sources/inventories/roman-holy-week-acts-v1.toml (unit-level record)
 psalm_numbering: vulgate
 citation_convention: Vulgate book names and Vulgate psalm numbering
-orthography: target 1920 typical-edition Latin (j retained, ae/oe digraphs); no target text held
+orthography: inherited Latin retains j and ae/oe digraphs; three separate Bonn prayer bodies retain their literal witness pointing and short cues, without generic 1920 attestation
 
 verification: |
+  Three Pentecost Latin bodies are separately attested in the bounded Bonn
+  target-override inventory; the rows below retain only structural departures.
   NO TEXT IS TRANSCRIBED IN THIS FILE, and no row below carries a word of Latin
   read from any book. Every departure states an identity, a placement, or a
   structural fact, and cites the record that established it.

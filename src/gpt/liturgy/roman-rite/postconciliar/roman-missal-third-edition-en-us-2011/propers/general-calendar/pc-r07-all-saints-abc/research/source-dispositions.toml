@@ -1,0 +1,438 @@
+schema = 1
+contract = "proper-study-source-dispositions-v1"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc"
+numbering = "vulgate"
+
+[[sources]]
+id = "augustine-sermon-mount-i-1-4"
+binding_index = 1
+binding_sha256 = "2fa32fb7eb7d55fdf18170d2071c9b7fc40b136806a13728497d5f184bbd251a"
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.ccel-text-ce371798"
+source_fingerprint = "sha256:7f21e16b88aa6eba6556891bfa99280fd5662bf42ef391de140ad6d2960b329a"
+locus = "Augustine, De sermone Domini in monte I.1-4, sections1-12; physical585-1090"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The exact lawful NPNF volume is retained and the bounded English argument was inspected. No separately checked natural excerpt, constituent edition/controller and printing or original-language verification has yet been prepared for corpus display; bibliographic use remains inspected, not an L3 passage."
+scripture_extents = [{ token = "Matt", first_chapter = 5, first_verse = 1, last_chapter = 5, last_verse = 10 }]
+missing_criteria = ["natural-excerpt-transcription", "constituent-edition-controller", "printing-wording-check", "original-language-check", "text-date-or-explicit-unestablished-basis"]
+
+[[sources]]
+id = "augustine-john-epistle-homily-iv"
+binding_index = 2
+binding_sha256 = "e36406d3b8af941eaede0e81dab6a60c36f67895fb7cab6b78f8392ed0f91ef4"
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-7.ccel-web-2026-09-17.ccel-text-266502c9"
+source_fingerprint = "sha256:10294711891b3ca7163bf578e02d0a027dbd110257bdaf2fb0b89b65ffe858de"
+locus = "Augustine, In epistolam Ioannis IV.1-9; physical39642-39990"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The retained NPNF homily is headed 1 John 2:27-3:8. Sections 1-9 were read, with the next section’s opening in the stated physical bound; no complete verified natural excerpt or constituent controller has been registered. The candidate follows the homily heading, not only the appointed 3:1-3."
+scripture_extents = [{ token = "1John", first_chapter = 2, first_verse = 27, last_chapter = 3, last_verse = 8 }]
+missing_criteria = ["natural-excerpt-transcription", "constituent-edition-controller", "printing-wording-check", "original-language-check", "text-date-or-explicit-unestablished-basis"]
+
+[[sources]]
+id = "augustine-psalm-23-1-10"
+binding_index = 3
+binding_sha256 = "926ec27e0fe794b356ab79121308bdefff072d0954916893bc6ee955db16f742"
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
+source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
+locus = "23.1-10"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The exact NPNF English and its Lat. XXIII countercheck were inspected. A checked passage text and natural section transcription remain to be prepared against the printing; inspected Latin alternatives elsewhere in the library do not establish this English excerpt’s wording automatically."
+scripture_extents = [{ token = "Ps", first_chapter = 23, first_verse = 1, last_chapter = 23, last_verse = 10 }]
+missing_criteria = ["natural-excerpt-transcription", "printing-wording-check", "original-language-check", "text-date-or-explicit-unestablished-basis"]
+
+[[sources]]
+id = "chrysostom-matthew-xv-1-10"
+binding_index = 4
+binding_sha256 = "d5805f0bb2e1224511b6ebcb9b28e7cccd9bbcc71ed6788f01d21cdb64813471"
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-10.ccel-web-2026-09-17.ccel-text-adb8f1c9"
+source_fingerprint = "sha256:0209917237dc0599614ab5b3a70d1563de63045007c4a8d4eb7776dd6ec37992"
+locus = "Homily XV, sections 1-9 and opening of section 10; physical lines 8742-9275"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The physical range includes the opening of section 10 on Matthew 5:13 after the Beatitudes. It is neither the complete homily nor a checked extract ending at 12a. A complete natural excerpt with its own textual control is still needed; the source’s reach is wider than the liturgical Gospel."
+scripture_extents = [{ token = "Matt", first_chapter = 5, first_verse = 1, last_chapter = 5, last_verse = 13 }]
+missing_criteria = ["natural-excerpt-boundary", "natural-excerpt-transcription", "printing-wording-check", "original-language-check", "text-date-or-explicit-unestablished-basis"]
+
+[[sources]]
+id = "chrysostom-matthew-xxxviii-1-3"
+binding_index = 4
+binding_sha256 = "d5805f0bb2e1224511b6ebcb9b28e7cccd9bbcc71ed6788f01d21cdb64813471"
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-10.ccel-web-2026-09-17.ccel-text-adb8f1c9"
+source_fingerprint = "sha256:0209917237dc0599614ab5b3a70d1563de63045007c4a8d4eb7776dd6ec37992"
+locus = "Homily XXXVIII, sections 1-3; physical 23727-23974, with section 4 opening through 23980"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The inspected argument expounds Matthew 11:25-30, including the invitation, yoke and rest, and reaches the following section opening. No separately verified complete natural excerpt or original/printing collation is recorded for this candidate."
+scripture_extents = [{ token = "Matt", first_chapter = 11, first_verse = 25, last_chapter = 11, last_verse = 30 }]
+missing_criteria = ["natural-excerpt-transcription", "printing-wording-check", "original-language-check", "text-date-or-explicit-unestablished-basis"]
+
+[[sources]]
+id = "victorinus-received-apocalypse-seven"
+binding_index = 5
+binding_sha256 = "417d203505b545d0b8a860a58b683ab02ff9cd4f72b833e56ad1d983b13f2305"
+source_id = "artifact.ante-nicene-fathers.volume-7.ccel-web-2026-10-19.ccel-text-b69327af"
+source_fingerprint = "sha256:f3e73dde77b3f5cefed09f8434f7e1d070ba005508c320851c66d617b3e618ae"
+locus = "Received Victorinus, From the seventh chapter, comments 2 and 9, physical 33565-33625; editorial transmission elucidations 34445-34545"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The received ANF commentary was read, including the edition’s warnings about interpolations and recension. Its seventh-chapter lemmas are verses 2 and 9; no natural excerpt has been authenticated as unaltered Victorinus, nor collated to a Latin recension or printing. The existing lawful anthology stays retained without turning its transmission qualification into a new attribution verdict."
+scripture_extents = [{ token = "Apoc", first_chapter = 7, first_verse = 2, last_chapter = 7, last_verse = 2 }, { token = "Apoc", first_chapter = 7, first_verse = 9, last_chapter = 7, last_verse = 9 }]
+missing_criteria = ["received-recension-attribution", "natural-excerpt-transcription", "printing-wording-check", "original-language-check", "text-date-or-explicit-unestablished-basis"]
+
+[[sources]]
+id = "bede-apocalypse-seven-checked-comments"
+binding_index = 6
+binding_sha256 = "97e09faee804772713aa6df69d5192fbf714e27647d74693894cdef077961646"
+source_id = "artifact.bede.explanatio-apocalypsis.1878-marshall-parker.whole-scan-65cb5fc5"
+source_fingerprint = "sha256:b6bcc7fc92307e3606218a6535077932562aaa22762dc446e4a2efd5b2cb10b2"
+locus = "Book I chapter VII, comments on verses 4,9-12,14, printed 46,52-53 / artifact 58,64-65"
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "Six complete verse-comments are retained under their own exact scan-derived transcription controllers. The earlier five passages remain unchanged; verse 14 adds the complete tribulation and washed paragraphs, checked against printed 53 / artifact 65. Canonical Scripture edges determine the extent. Marshall’s translation voice and the sourced composition range remain explicit."
+passage_ids = ["passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-4", "passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-9", "passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-10", "passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-11", "passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-12", "passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-14"]
+
+[[sources]]
+id = "bede-apocalypse-seven-other-comments"
+binding_index = 6
+binding_sha256 = "97e09faee804772713aa6df69d5192fbf714e27647d74693894cdef077961646"
+source_id = "artifact.bede.explanatio-apocalypsis.1878-marshall-parker.whole-scan-65cb5fc5"
+source_fingerprint = "sha256:b6bcc7fc92307e3606218a6535077932562aaa22762dc446e4a2efd5b2cb10b2"
+locus = "Book I chapter VII, remaining comments under verses 1-3,5-8,13,15-17; printed 44-54"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The rest of chapter VII was read via the whole finding-aid text layer. It is not included in the six image-checked comment passages. The remaining verse-comments need individual complete natural transcriptions and page-image checks; whole-scan possession does not make them L3."
+scripture_extents = [{ token = "Apoc", first_chapter = 7, first_verse = 1, last_chapter = 7, last_verse = 3 }, { token = "Apoc", first_chapter = 7, first_verse = 5, last_chapter = 7, last_verse = 8 }, { token = "Apoc", first_chapter = 7, first_verse = 13, last_chapter = 7, last_verse = 13 }, { token = "Apoc", first_chapter = 7, first_verse = 15, last_chapter = 7, last_verse = 17 }]
+missing_criteria = ["natural-excerpt-transcription", "page-image-wording-check"]
+
+[[sources]]
+id = "aquinas-psalm-23-n1-5"
+binding_index = 7
+binding_sha256 = "34c46f0d0c5069d5e8d9dc8afe1bf9331856b969093381f6861610228d26d4ee"
+source_id = "artifact.thomas-aquinas.super-psalmos.latin-corpusthomisticum-web-2026-07-28.cps21-html-5e8fdbbe"
+source_fingerprint = "sha256:d7e2f9d87d27ac76392972b00af3983181d6071724944573eae45a7c370b68dd"
+locus = "23.n1; 23.n2; 23.n3; 23.n4; 23.n5"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The exact restricted cps21 delivery is inspected and freshly rehashed. It declares the Parma 1863 base and later Alarcón revision. The library’s older original-Latin collected-volume holding is a finding aid; Psalm 23 has not been collated there. No authenticated separation of reserved modern interventions or verified natural excerpt is available, and no lawful exact English counterpart was established in the inspected holdings."
+scripture_extents = [{ token = "Ps", first_chapter = 23, first_verse = 1, last_chapter = 23, last_verse = 10 }]
+missing_criteria = ["printing-wording-check", "modern-edition-intervention-separation", "distribution-basis-for-excerpt", "natural-excerpt-transcription", "english-edition-acquisition-review", "text-date-or-explicit-unestablished-basis"]
+
+[[sources]]
+id = "douay-psalm-study-control"
+binding_index = 8
+binding_sha256 = "6214d5355a5d8cfecf7677d600bf2a16fcbcc1d11e7ba653498278399afb4551"
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+locus = "Ps.23.1-10"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The Bible’s scriptural text is a study-text control, not an external commentary fragment."
+
+[[sources]]
+id = "douay-matthew-study-control"
+binding_index = 9
+binding_sha256 = "663e595de6b8a2702cedd9dfd94bf3f3dd4320a20bc6398ad24314fb1ff0b101"
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-47-matthew-dd0ba183"
+source_fingerprint = "sha256:ed47ecb092ecb6256fb84450e8ad39d0debf2efe6c65442199a76a7fb1a8b98b"
+locus = "Matt.4.1-7.29; Matt.11.1-30"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The Bible’s appointed verses and wider context supply study Scripture, not commentary prose."
+
+[[sources]]
+id = "douay-john-epistle-study-control"
+binding_index = 10
+binding_sha256 = "58cd111b89ee7100b12f90f2656cd5869e91b984285546225f47d8973f44e97c"
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-69-1-john-109bfb9f"
+source_fingerprint = "sha256:49cb9b0f5c004489d8ca8d01109560c49c03b9b6ef95aa7d441c06fb1d9bc9b1"
+locus = "1John.2.1-4.21"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The biblical text controls the study quotation and canonical context, not a commentary excerpt."
+
+[[sources]]
+id = "douay-apocalypse-study-control"
+binding_index = 11
+binding_sha256 = "42bab07c538c49d1020ca6091f4e0696b202b8399f8a3d17783a62c613703b2b"
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-73-apocalypse-9ae5c352"
+source_fingerprint = "sha256:b28bde358a8ffc3aa2486baeeeda9bb23021b0bab1a8dccd447d33b2f7225cdb"
+locus = "Apoc.5.1-8.13"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The biblical text controls the study quotation and canonical context, not a commentary excerpt."
+
+[[sources]]
+id = "missal-2002-all-saints-control"
+binding_index = 12
+binding_sha256 = "2c2147ac47ab0aef0fac534a8d129a45bc0e3eed32fb7bc8e71533c759af90af"
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+source_fingerprint = "sha256:1cb25c1744f5977f70958c52c1b0cd3ee4aa100bdf216e36ae0da42b092fbce4"
+locus = "AllSaints artifact512-514; Solemn blessing18 artifact377-378"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The source is a qualified liturgical-text control, not biblical commentary. Its exact 2008 fidelity remains unresolved."
+
+[[sources]]
+id = "missal-2008-variationes-control"
+binding_index = 13
+binding_sha256 = "da0334574bf550c2bf25ea7b0d86fd24c03e5638eb5bcd4347a013e88a8e950e"
+source_id = "segment.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.notitiae-pages-368-387"
+source_fingerprint = "sha256:395f4b1fe8b9422dc93be2ca7eaa0930af88620c5ce8a8735d20a625ddeaae7e"
+locus = "Variationes printed368-387; Proper of Saints373-374"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The inspected official variation list is textual/currentness apparatus, not commentary; absence of an All Saints entry is bounded to that list."
+
+[[sources]]
+id = "antiphonary-all-saints-control"
+binding_index = 14
+binding_sha256 = "48f4e9b37de36704c99da16592aad054de37627e188fc42a3a599b5740c15c53"
+source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
+source_fingerprint = "sha256:3a0fc506c0d80243812d8c3fb34c5702b522cfe41a7cd70d4ab88948f44a4df5"
+locus = "AllSaints artifact142 printed134"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The source controls appointed antiphons and separate compiler apparatus, not a biblical commentary fragment."
+
+[[sources]]
+id = "icel-all-saints-preface-control"
+binding_index = 15
+binding_sha256 = "2569e658ab9caab4dac215faafc3e01921489c5b0f234e7341ee29adc11f7f86"
+source_id = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.73-jerusalem-d"
+source_fingerprint = "sha256:d71fd78ca96126ff63b216841d23f4267fd0064fe5c760230588f065406a876e"
+locus = "Entire two-page AllSaints Preface"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The source is an official Preface text witness, not a commentator’s exposition. Its protected body is withheld."
+
+[[sources]]
+id = "us-calendar-2026-occurrence-control"
+binding_index = 16
+binding_sha256 = "4eb8cb55cff8ab0ada551492aa3f5baf9f578f7345927cc256b059d3117da7a1"
+source_id = "artifact.united-states-conference-of-catholic-bishops.liturgical-calendar-dioceses-united-states.2026.usccb-pdf-4bd9add0"
+source_fingerprint = "sha256:6b03a6d576295053daafb5d76c438d24b48393994e5795a1b2aad2a8dd0340c0"
+locus = "Calendar artifact7/printed5; Calendar artifact44/printed42"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The official dated calendar controls occurrence and cycle, not Scripture exegesis."
+
+[[sources]]
+id = "girm-chapter-two-branch-control"
+binding_index = 17
+binding_sha256 = "e97268a56c664f29f503904c910722a93ca5804bbe365c9ec6a328a261fe2330"
+source_id = "artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.girm-2-2026-10-13-948449f2"
+source_fingerprint = "sha256:04a3c62035115788c98a3807eb7bc225daf5ef12f03c82f861e5c29dab7d088b"
+locus = "48; 51; 52; 53; 54; 61; 62; 63; 64; 74; 87; 88; 89; 90"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The source supplies liturgical rubrics and branch classes, not a commentary fragment."
+
+[[sources]]
+id = "girm-chapter-seven-choice-control"
+binding_index = 18
+binding_sha256 = "4dfe249ed588c7dec193f49967eb2ddcd53089e9a92383f522e48f22f531a2f7"
+source_id = "artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.girm-7-2026-10-13-54b349ee"
+source_fingerprint = "sha256:22b766755772ec2bc4011ef61be2435605f5693a223b4f46fcdf6ed14d1587e7"
+locus = "352; 353; 354; 355; 356; 357; 358; 359; 360; 361; 362; 363; 364; 365; 366; 367"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The source supplies the governing choice rubrics, not Scripture commentary."
+
+[[sources]]
+id = "olm-all-saints-667-control"
+binding_index = 19
+binding_sha256 = "0497ac1016f2507c3d039c6fd6bee78010ef227332e1332720f641307e5d065a"
+source_id = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+source_fingerprint = "sha256:2296f2ff27bc0f11a41b7dcd2fdc09291f317bb57991d7e0dad0c08f7e7d206e"
+locus = "OLM1981 n667 artifact367/printed313"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The source supplies the annual reading appointment and permitted options, not a commentary fragment."
+
+[[sources]]
+id = "encyclopedia-apocalypse-context"
+binding_index = 20
+binding_sha256 = "c7a850bd30cba27a5cd2dcf4636603e5b5b82b561a76a543bbf102009aad7f2a"
+source_id = "artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01594b-7f47696f-article-text"
+source_fingerprint = "sha256:cadc306783f19877e45c114ebfa32c0e13c444f55be2bec37b661bd1c6eefada"
+locus = "Van den Biesen, Apocalypse: date/authorship discussion, Domitian and Vespasian alternatives"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Historical encyclopedia scholarship supplies date/place context, not a reusable exegetical fragment from a commentator."
+
+[[sources]]
+id = "encyclopedia-matthew-context"
+binding_index = 21
+binding_sha256 = "b39027dde73fe5dacc1d65887d91eefcd50897d5c940e70f34316dd2c2264ff8"
+source_id = "artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef-article-text"
+source_fingerprint = "sha256:a5698ebe70292d9dc1c32df2c8cc440778cb8d0dc2f840f11d127482a4c4d5dd"
+locus = "Jacquier, Gospel of St. Matthew: date and place of composition, Palestinian/Hebrew-origin tradition and Greek-text question"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Historical encyclopedia scholarship supplies date/place context, not a reusable exegetical fragment from a commentator."
+
+[[sources]]
+id = "encyclopedia-new-testament-context"
+binding_index = 22
+binding_sha256 = "f65bb293c9d7cbd472801dc71e53f09ff1e0d1d65763c136c868fc3e50341702"
+source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c-article-text"
+source_fingerprint = "sha256:0a5a9e3b92db7d3a9953343ff8b1a04ec7baa2a01adbf31eadc28dc4e8f410d4"
+locus = "Durand, The New Testament: Origin, collective Johannine-writings chronology"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Historical encyclopedia scholarship supplies date/place context, not a reusable exegetical fragment from a commentator."
+
+[[sources]]
+id = "encyclopedia-john-epistles-context"
+binding_index = 23
+binding_sha256 = "b1d4ac9ea90907b790458efe0ab96946b0c070745235e76bf22d45d844a23756"
+source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08435a-d50fa955-article-text"
+source_fingerprint = "sha256:5c24553849bed3f79dcd909fdd809e7c0ad11e87e3665e3fb47f3906ec0d2a2d"
+locus = "Drum, Epistles of Saint John: First Epistle, Time and Place; Destination and Purpose"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Historical encyclopedia scholarship supplies date/place context, not a reusable exegetical fragment from a commentator."
+
+[[sources]]
+id = "aquinas-peter-matthew-five-john-analogue"
+binding_index = 24
+binding_sha256 = "8813d64a02745f4a9d7a06df8a9b8c1a669cfd9cda7b5f644888882f7f562713"
+source_id = "artifact.thomas-aquinas.super-matthaeum-reportatio-petri-de-andria.1951-turin-corpusthomisticum-web-2026-10-26.cma0500-a73c7d72"
+source_fingerprint = "sha256:90aba505e00df26d38fb345628c75da8bd6e71f8cbcfef440f2041b4d8e2a938"
+locus = "Caput 5 lectio 2, paragraph 87340; full offered 5:1-10a page"
+relationship = "doctrinal-illumination"
+disposition = "deferred"
+reason = "The same paragraph cites 1 John 3:1-2 inside Matthew’s Beatitude argument. This use remains doctrinal illumination for the epistle, with the candidate anchored to the Scripture actually expounded (Matthew 5), never relabelled as a continuous 1 John commentary."
+scripture_extents = [{ token = "Matt", first_chapter = 5, first_verse = 3, last_chapter = 5, last_verse = 10 }]
+missing_criteria = ["printing-wording-check", "reportatio-comparison", "modern-edition-intervention-separation", "distribution-basis-for-excerpt", "natural-excerpt-transcription", "text-date-or-explicit-unestablished-basis"]
+
+[[sources]]
+id = "aquinas-peter-matthew-five-lectio-two"
+binding_index = 24
+binding_sha256 = "8813d64a02745f4a9d7a06df8a9b8c1a669cfd9cda7b5f644888882f7f562713"
+source_id = "artifact.thomas-aquinas.super-matthaeum-reportatio-petri-de-andria.1951-turin-corpusthomisticum-web-2026-10-26.cma0500-a73c7d72"
+source_fingerprint = "sha256:90aba505e00df26d38fb345628c75da8bd6e71f8cbcfef440f2041b4d8e2a938"
+locus = "Caput 5 lectio 2, paragraph 87340; full offered 5:1-10a page"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The inspected cma0500 text explicitly names Peter of Andria and Turin 1951. It is registered separately from the inherited Leodegar report and the 1969 continuation. The exact Latin web revision remains restricted; the generic earlier Venetian Matthew holding does not identify this reportatio or establish a lawful word-identical excerpt without collation."
+scripture_extents = [{ token = "Matt", first_chapter = 5, first_verse = 3, last_chapter = 5, last_verse = 10 }]
+missing_criteria = ["printing-wording-check", "reportatio-comparison", "modern-edition-intervention-separation", "distribution-basis-for-excerpt", "natural-excerpt-transcription", "english-edition-acquisition-review", "text-date-or-explicit-unestablished-basis"]
+
+[[sources]]
+id = "aquinas-peter-matthew-five-rest-analogue"
+binding_index = 24
+binding_sha256 = "8813d64a02745f4a9d7a06df8a9b8c1a669cfd9cda7b5f644888882f7f562713"
+source_id = "artifact.thomas-aquinas.super-matthaeum-reportatio-petri-de-andria.1951-turin-corpusthomisticum-web-2026-10-26.cma0500-a73c7d72"
+source_fingerprint = "sha256:90aba505e00df26d38fb345628c75da8bd6e71f8cbcfef440f2041b4d8e2a938"
+locus = "Caput 5 lectio 2, paragraph 87340; full offered 5:1-10a page"
+relationship = "analogue"
+disposition = "deferred"
+reason = "The Matthew 5 argument is an analogue for the Matthew 11:28 acclamation. Its own Scripture address remains Matthew 5. Failed guessed chapter 11 URLs do not establish an absence of Aquinas’s commentary on that passage."
+scripture_extents = [{ token = "Matt", first_chapter = 5, first_verse = 3, last_chapter = 5, last_verse = 10 }]
+missing_criteria = ["printing-wording-check", "reportatio-comparison", "modern-edition-intervention-separation", "distribution-basis-for-excerpt", "natural-excerpt-transcription", "text-date-or-explicit-unestablished-basis"]
+
+[[sources]]
+id = "aquinas-cma01-navigation"
+binding_index = 25
+binding_sha256 = "5e886fd19138ad14d55970bea1fe1e37b0b260dd13fcd3e8f66076d4d8714771"
+source_id = "artifact.thomas-aquinas.super-matthaeum-reportatio-petri-de-andria.1951-turin-corpusthomisticum-web-2026-10-26.cma01-2e3882cd"
+source_fingerprint = "sha256:bc74353aec70b0d3b95e29150361ad9e35e555910f37759fcfeb8237f054169a"
+locus = "Title, reporter/printing header and navigation for chapters 1-2"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Only delivery title, reportatio attribution, printing header and navigation were inspected. The acquired chapter 1-2 exegesis was not used or checked; calling this an uninspected lead would erase the actual metadata inspection."
+
+[[sources]]
+id = "aquinas-cma00-navigation"
+binding_index = 26
+binding_sha256 = "2fdde0e5c63ba78f0fefd3a18eaad5c5453725ce1a02e2285f3fa2e336f0b1c8"
+source_id = "artifact.thomas-aquinas.super-matthaeum-reportatio-petri-de-andria.1951-turin-corpusthomisticum-web-2026-10-26.cma00-72d453c6"
+source_fingerprint = "sha256:cadba352659ca305b3c9f88963e87073e16e1744bd9cbd0cdb63c0755324e19e"
+locus = "Title, reporter/printing header, navigation metadata"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Only delivery and navigation metadata were inspected. Its title identifies a prologue, not merely an index; the prologue argument was not used or checked."
+
+[[sources]]
+id = "aquinas-peter-matthew-five-persecution"
+binding_index = 27
+binding_sha256 = "07779a653a0f98f6c757c1401aedcc2ca352dfca7f8f26bfb2d70114a37e63e8"
+source_id = "artifact.thomas-aquinas.super-matthaeum-reportatio-petri-de-andria.1969-leonine-corpusthomisticum-web-2026-10-26.cma0510-86c3a4eb"
+source_fingerprint = "sha256:2350a6109b6038122d30bcd7052d67c40b1ce82ff3d809d54baaa207d52688dd"
+locus = "Caput 5, paragraphs 87564-87566, verses 10-12 and adjacent verse 13 boundary"
+relationship = "direct-exegesis"
+disposition = "deferred"
+reason = "The exact cma0510 response identifies the Leonine 1969 text, not the Turin 1951 base of cma0500. Its inspected 87564-87566 comments reach Matthew 5:10-12; the whole page continues to 22. A lawful checked excerpt requires direct verification of the edition’s interventions and rights, reportatio identification and exact natural boundaries."
+scripture_extents = [{ token = "Matt", first_chapter = 5, first_verse = 10, last_chapter = 5, last_verse = 12 }]
+missing_criteria = ["printing-wording-check", "reportatio-comparison", "modern-edition-intervention-separation", "distribution-basis-for-excerpt", "natural-excerpt-transcription", "english-edition-acquisition-review", "text-date-or-explicit-unestablished-basis"]
+
+[[sources]]
+id = "usccb-daily-all-saints-control"
+binding_index = 28
+binding_sha256 = "c31189243b98ff0a04d2456bbbe52cbd51025ff4fe5b9dca65c551e24d1f19d1"
+source_id = "artifact.united-states-conference-of-catholic-bishops.daily-readings.2026-10-25-page-for-2026-11-01.usccb-html-ac8a8454"
+source_fingerprint = "sha256:2b5cb230a0695e1dc0c321b5f8ef380e7fdada497255912cc1cd4c6293d46bbd"
+locus = "Solemnity of All Saints, Lectionary 667; every heading/citation, appointed endpoint and rights footer"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The daily page supplies factual appointment/citation/endpoint controls, not a commentary fragment. Protected proclaimed bodies and refrain are withheld."
+
+[[sources]]
+id = "dicastery-calendar-index-context"
+binding_index = 29
+binding_sha256 = "3383a51e85a0ec5393ed57d7ab3131210862842207383ecb052a022374d69e3d"
+source_id = "artifact.dicastery-for-divine-worship-and-the-discipline-of-the-sacraments.calendarium-romanum-web-index.2026-10-25-english-web.official-html-4531f6b6"
+source_fingerprint = "sha256:08864e4cecbfaf99f0dfc623a57294baaf1eed821922428c9b2ea52e1c7fc431"
+locus = "Complete offered eight-entry variations list and explanatory paragraph"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The modern finding-aid page supplies bounded bibliographic/currentness leads. It is neither the 1969 calendar book nor biblical commentary."
+
+[[sources]]
+id = "john-paul-ii-all-saints-2003"
+binding_index = 30
+binding_sha256 = "f5e97073f4c01a6c7068a900ed10036385fffd0b19d2ed226d577eaf1ba7b1f0"
+source_id = "artifact.john-paul-ii.angelus-2003-11-01.2003-official-english-web-2026-10-26.official-html-f633a56f"
+source_fingerprint = "sha256:4de77dbafcf307f763bb77879bb8929426153f46e5c61bbfa90361ff11bd73f5"
+locus = "Angelus 1 November 2003, sections 1-2; entire address body read"
+relationship = "doctrinal-illumination"
+disposition = "deferred"
+reason = "The inspected address gives general All Saints/pilgrimage/holiness illumination; it has no established natural primary Scripture-commentary extent. It is retained as inspected reception even though unused in the final interpretive plan. No anonymous official translation is promoted to L3 without translator/voice and redistribution checks; the original Italian remains uncollated."
+scripture_extents = []
+missing_criteria = ["scripture-extent", "translation-attribution", "distribution-basis-for-excerpt", "original-language-check"]
+
+[[sources]]
+id = "secondary-english-missal-control"
+binding_index = 31
+binding_sha256 = "bbcffcdf00b06438fecc0afaddbc7469e0ea7212222e4441110a3be54e0bcded"
+source_id = "artifact.catholic-church.missale-romanum.2011-english-secondary-proper-of-saints.secondary-pdf-97d58326"
+source_fingerprint = "sha256:884cad8834eaf2ec9518095ad3d217b6f485352a0fd38169c288bbd9c94fcb44"
+locus = "All Saints, printed 149-150, complete entry and placeholder referrals"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "A qualified unfinished secondary liturgical witness with placeholders and old conclusion, not Scripture commentary or an authenticated current U.S. exemplar."
+
+[[sources]]
+id = "usccb-2021-collect-currentness"
+binding_index = 32
+binding_sha256 = "dcc4281e260537e3df4f8cbe54cdd2aad8d623397b6f13e0a30a94bcbcd00eb6"
+source_id = "artifact.united-states-conference-of-catholic-bishops.divine-worship-newsletter-2021-02.2021-february-official-pdf.official-pdf-e06d7b65"
+source_fingerprint = "sha256:3692c09222387d1a03874abc1e9e3bb201e127b40bfceff460156905615cfe27"
+locus = "Collect-conclusion article, printed 7-8 / artifact pages 3-4"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "The official newsletter article controls the 2021 Collect-conclusion correction, not a biblical commentary fragment."
+
+[[sources]]
+id = "usccb-psalms-introduction-context"
+binding_index = 33
+binding_sha256 = "9b72a722d1e5112b189d2991a28a6e5e3f9960782305d178113e87e748ea5dc9"
+source_id = "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.2026-10-26-english-web-psalms-introduction.psalms-intro-0270804c"
+source_fingerprint = "sha256:f03d8445e2710dd4a88a65a22be31b18c983aeac07ea0a2aa5270164160fc7e3"
+locus = "Psalms introduction: title/superscription, collection date before c. 165 BC, numbering discussion"
+relationship = "not-commentary"
+disposition = "not-commentary"
+reason = "Modern Bible introduction used only for historical composition/collection context. This fresh exact response does not replace the older chronology source or supply a Psalm 23 composition year."

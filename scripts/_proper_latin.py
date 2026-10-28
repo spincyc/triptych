@@ -46,10 +46,11 @@ PUBLICATION_BASES = frozenset(
         "licensed",
         "restricted",
         "non-exact-historical-witness",
+        "qualified-nonoriginal-adaptation",
     }
 )
 AFFIRMATIVE_PUBLICATION_BASES = frozenset(
-    {"public-domain", "project-created", "permission", "licensed"}
+    {"public-domain", "project-created", "permission", "licensed", "qualified-nonoriginal-adaptation"}
 )
 SURFACES = frozenset(
     {"web", "download", "print", "cli", "corpus-data", "public-git"}
@@ -158,6 +159,7 @@ class LatinDecision:
     notice: str = ""
     note: str = ""
     reason: str = ""
+    target_context: dict | None = None
 
     def permits(self, wanted: Iterable[str]) -> bool:
         return (
@@ -209,12 +211,17 @@ class LatinDecision:
         ):
             if value:
                 publication[field] = value
+        projected_context = None
+        if permitted and self.target_context:
+            from _proper_target_overrides import public_context
+            projected_context = public_context(self.target_context)
         return {
             "text_sha256": self.text_sha256,
             "provenance": provenance,
             "publication": publication,
             "withheld": not permitted,
             "reason": reason or None,
+            **({"target_context": projected_context} if projected_context else {}),
             **({"note": self.note} if self.note else {}),
         }
 
@@ -411,6 +418,7 @@ def _decision(
         publication_retrieved=str(row.get("publication_retrieved") or ""),
         notice=str(row.get("notice") or ""),
         note=str(row.get("note") or ""),
+        target_context=row.get("_target_context"),
     )
 
 
@@ -455,7 +463,8 @@ def decision_for(
 
 
 def _row_problems(where: str, row: Mapping[str, object]) -> list[str]:
-    problems: list[str] = []
+    from _proper_qualified_latin import row_problems
+    problems: list[str] = [f"{where}: {one}" for one in row_problems(row)]
     unknown = sorted(set(row) - ENTRY_FIELDS)
     if unknown:
         problems.append(f"{where}: unknown fields: {', '.join(unknown)}")
@@ -873,9 +882,17 @@ def _source_record_problems(
     where: str,
     row: Mapping[str, object],
     sources: Mapping[str, Mapping[str, object]],
+    *,
+    authority_root: Path | None = None,
+    effective_calendar: str = "",
 ) -> list[str]:
     """Validate witness identity and rights against source-library metadata."""
-    problems: list[str] = []
+    import _proper_qualified_latin as qualified
+    problems: list[str] = [f"{where}: {one}" for one in qualified.source_problems(
+        row, sources, effective_calendar=effective_calendar)]
+    if row.get("publication_basis") == qualified.BASIS:
+        problems.extend(f"{where}: {one}" for one in qualified.authority_problems(
+            authority_root or TRUSTED_REPOSITORY))
     for field in ("source_id", "verification_source_id"):
         source_id = str(row.get(field) or "")
         if not source_id:
@@ -918,6 +935,33 @@ def _source_record_problems(
             f"with rights_status {basis!r}"
         )
     return problems
+
+
+def target_overrides(calendar_root: Path, calendar: str, *, document: dict | None = None,
+                     registered_sources: Mapping | None = None) -> tuple[list[dict], list[str]]:
+    """The bounded, independently reviewed target-witness body overlay."""
+    import _proper_target_overrides as target
+    path = calendar_root.parent / "inventories" / (calendar + target.SUFFIX)
+    if not path.is_file():
+        return [], []
+    if document is None:
+        document = _calendars.load_document(calendar_root, calendar)
+    if registered_sources is None:
+        registered_sources, trouble = _source_library_records(calendar_root)
+        if trouble:
+            return [], list(trouble)
+    return target.load(calendar_root.resolve().parents[2], calendar_root, calendar,
+                       document, registered_sources,
+                       row_problems=_row_problems, source_problems=_source_record_problems)
+
+
+def target_document(calendar_root: Path, calendar: str, document: dict) -> dict:
+    """Replace only target-owned bodies after validation; pending review is inert."""
+    import _proper_target_overrides as target
+    overrides, problems = target_overrides(calendar_root, calendar, document=document)
+    if problems:
+        raise ValueError("; ".join(problems))
+    return target.apply(document, overrides)
 
 
 def publication_records(
@@ -982,8 +1026,20 @@ def publication_records(
         registered_sources, source_problems = _source_library_records(calendar_root)
         problems.extend(source_problems)
     if not problems:
+        overrides, trouble = target_overrides(calendar_root, calendar,
+                                              registered_sources=registered_sources)
+        problems.extend(trouble)
+        if not trouble:
+            import _proper_target_overrides as target
+            for override in overrides:
+                row = dict(override["provenance"], _target_context=dict(target.CONTEXT))
+                records[LatinKey.from_mapping(row)] = row
+    if not problems:
         for key, row in records.items():
-            problems.extend(_source_record_problems(key.label(), row, registered_sources))
+            problems.extend(_source_record_problems(
+                key.label(), row, registered_sources,
+                authority_root=calendar_root.resolve().parents[2],
+                effective_calendar=calendar))
     if problems:
         # Callers deliberately need not inspect the diagnostics to remain safe:
         # an invalid or unavailable source graph publishes no Latin wording.
@@ -1044,6 +1100,9 @@ def sidecar_problems(
                 problems.append(f"{path}: stale text hash for {key.label()}")
         for key in sorted(set(records) - set(expected)):
             problems.append(f"{path}: orphan entry for {key.label()}")
+        if (inventory_root / (calendar + "-proper-target-overrides-v1.toml")).is_file():
+            _, trouble = target_overrides(calendar_path.parent.parent, calendar)
+            problems.extend(trouble)
     return problems
 
 
@@ -1052,6 +1111,8 @@ def sanitize_proper(
     base_key: LatinKey,
     records: Mapping[LatinKey, Mapping[str, object]],
     surfaces: Iterable[str],
+    *,
+    cycle_keys: Mapping[tuple[str, str], LatinKey] | None = None,
 ) -> dict:
     """Copy one resolved proper with unpermitted Latin wording removed."""
     copied = copy.deepcopy(dict(proper))
@@ -1092,7 +1153,10 @@ def sanitize_proper(
             if isinstance(owner, dict):
                 sanitize(
                     owner,
-                    LatinKey(base_key.mass, base_key.form, base_key.proper, course, str(cycle)),
+                    (cycle_keys or {}).get(
+                        (course, str(cycle)),
+                        LatinKey(base_key.mass, base_key.form, base_key.proper, course, str(cycle)),
+                    ),
                 )
     return copied
 
@@ -1103,7 +1167,8 @@ def sanitize_mass(
     surfaces: Iterable[str],
 ) -> dict:
     """Copy a source mass so JSON/YAML output cannot retain an unredacted twin."""
-    copied = copy.deepcopy(dict(mass))
+    source_mass = dict(mass)
+    copied = copy.deepcopy(source_mass)
     mass_key = str(copied.get("key") or "")
     groups: list[tuple[str, object]] = [("", copied.get("propers"))]
     groups.extend(
@@ -1111,7 +1176,10 @@ def sanitize_mass(
         for form in copied.get("forms") or []
         if isinstance(form, dict)
     )
-    occurrences: dict[tuple[str, str, str], int] = {}
+    # The canonical enumerator owns both direct and cycle occurrence counts.
+    # Pair its full-Mass keys with each source node's owner events so a cycle
+    # cannot fall back to a same-word record owned by another occurrence.
+    source_owners = iter(body_owners({"sections": {"source": {"masses": [source_mass]}}}))
     for form, propers in groups:
         if not isinstance(propers, list):
             continue
@@ -1119,14 +1187,29 @@ def sanitize_mass(
             if not isinstance(proper, dict):
                 continue
             bare = (mass_key, form, str(proper.get("name") or ""))
-            if isinstance(proper.get("text"), str) or _is_removed_body_owner(proper):
-                occurrences[bare] = occurrences.get(bare, 0) + 1
+            node = {"sections": {"source": {"masses": [
+                {"key": mass_key, "propers": [proper]},
+            ]}}}
+            keys = {}
+            for local, body, status in body_owners(node):
+                source = next(source_owners, None)
+                if source is None:
+                    raise ValueError("source Latin owner order is incomplete")
+                key, source_body, source_status = source
+                if ((key.mass, key.form, key.proper, key.course, key.cycle)
+                        != (*bare, local.course, local.cycle)
+                        or (source_body, source_status) != (body, status)):
+                    raise ValueError("source Latin owner order does not match the Mass")
+                keys[(key.course, key.cycle)] = key
             propers[index] = sanitize_proper(
                 proper,
-                LatinKey(*bare, occurrence=occurrences.get(bare, 0)),
+                keys.get(("", ""), LatinKey(*bare)),
                 records,
                 surfaces,
+                cycle_keys=keys,
             )
+    if next(source_owners, None) is not None:
+        raise ValueError("source Latin owners remain outside the Mass projection")
     return copied
 
 

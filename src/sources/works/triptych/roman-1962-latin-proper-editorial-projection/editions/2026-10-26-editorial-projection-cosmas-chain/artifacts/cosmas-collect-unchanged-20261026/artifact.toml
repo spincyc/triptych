@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-cosmas-chain.cosmas-collect-unchanged-20261026"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-cosmas-chain"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "Triptych offers only the bounded selection, layout and declared normalization under CC BY 4.0. The complete historical petition words are independently image-checked in public-domain Mame 1922, and the longer actual target prefix independently printed in public-domain Pustet 1862. Underlying Latin is public domain and excluded from project grant. The repository preexisting-material witness basis under17 U.S.C. 103(b) does not clear the 1962 facsimile, layout, images or later contributions."
+provenance = "New immutable narrow target-bound Latin projection with distinct actual historical prayer, formula and target controllers. Mame 1922 whole PDF 839/printed 725 supplies the complete named petition and actual Per Dominum. stop. Target1962 whole PDF 749/printed 668/no3714 prints natalicia and actually stops at Per Dominum nostrum. Source natalitia and target natalicia are the same substantive neuter accusative plural direct object of colimus, an explicitly declared received noun spelling. Separately registered Pustet 1862 whole PDF 390/printed 304 Praesta prints Per Dominum nostrum contiguously; only this three-word prefix supports the target actual longer cue, with no added tail. Pustet is formula evidence, not the historical Cosmas petition witness. Current wraps, final LF and all Latin body bytes remain unchanged."
+retrieved = "2026-10-26"
+sha256 = "c767db70fa4486fbeedb5a3dba2e9a15c5313133a4ef671d361fc0c4439db840"
+byte_size = 194
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-cosmas-chain/artifacts/cosmas-collect-unchanged-20261026/latin-only.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.cosmas-complete-prayer-20261026", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-conclusion-authority-20261022", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-petitions-and-formulas-20261022", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Preserve exact current UTF8 Latin body including wraps/final LF. Remove historical stress accents, expand ligatures, normalize decorative capitalization, apply target pointing. Explicit historical natalitia to target natalicia is one received neuter accusative plural noun spelling. Actual historical Per Dominum. to target Per Dominum nostrum. is separately witnessed contiguously by Pustet full formula; append no later words."
+encoding = "utf-8"
+indexable = true
+notes = "One-owner current proof successor, no Latin body/English/appointment/availability change. Every old artifact, passage, assessment and mixed-attribution note remains immutable history."

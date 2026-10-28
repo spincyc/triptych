@@ -68,7 +68,7 @@ ASSERTION_COUNTS = {
     "liturgy_reader_visual_reset_browser.mjs": 33,
     # Plus the C2 G9 both-entrances Bible-reconstruction claim check, and the
     # three C2 G14 / G9 follow-up checks on 1962 Pentecost (2026-10-19).
-    "propers_reader_integration_browser.mjs": 69,
+    "propers_reader_integration_browser.mjs": 71,
 }
 
 # Review-only prototype harnesses serve the tracked tree directly rather than

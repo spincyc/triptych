@@ -35,12 +35,15 @@
 \input{articles/faith/four-last-things-04-heaven/sections/80-in-paradisum}
 % END BODY SECTIONS
 
-\clearpage
+\ifdefined\TriptychPrintEdition
+\onecolumn
+\else
+\fi
 \phantomsection
 \addcontentsline{toc}{section}{Notes}
 \begingroup
 \small
-\setlength{\parskip}{0.3em}
+\setlength{\parskip}{0.2em}
 \setlength{\parindent}{0pt}
 \theendnotes
 \endgroup

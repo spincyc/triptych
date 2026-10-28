@@ -48,6 +48,8 @@ from functools import lru_cache
 from pathlib import Path
 from typing import NamedTuple
 
+from _bible_artifacts import AliasArtifactError, select_verse_aliases
+
 SYSTEMS = ("vulgate", "hebrew")
 PSALMS = "Psalms"
 LAST_PSALM = 150
@@ -65,7 +67,6 @@ CONCORDANCE_GLOB = "psalm-numbering-*/psalm-numbering.tsv"
 # The concordance's witness records, in its own verse-alias table, the verses it
 # prints inside the verse before them. Two are psalm verses, and both belong to
 # the numbering the concordance describes; see `witness_merges`.
-WITNESS_ALIASES_GLOB = "verse-aliases-*/verse-aliases.tsv"
 PSALMS_TOKEN = "Ps"
 MERGED_VERSE = "merged-verse"
 
@@ -180,13 +181,14 @@ def witness_merges() -> tuple[tuple[int, int], ...]:
     of its psalm; anything else in the table refuses the load rather than being
     read as something it does not say.
     """
-    found = sorted(CONCORDANCE_ROOT.glob(WITNESS_ALIASES_GLOB))
-    if len(found) != 1:
-        raise PsalterUnavailable(
-            f"expected one verse-alias table under {CONCORDANCE_ROOT}, found {len(found)}"
-        )
+    try:
+        selected = select_verse_aliases(CONCORDANCE_ROOT.parent)
+    except AliasArtifactError as error:
+        raise PsalterUnavailable(str(error)) from error
+    if selected is None:
+        raise PsalterUnavailable(f"no verse-alias table under {CONCORDANCE_ROOT}")
     merges: list[tuple[int, int]] = []
-    with found[0].open(encoding="utf-8", newline="") as handle:
+    with selected.open(encoding="utf-8", newline="") as handle:
         for line, row in enumerate(csv.DictReader(handle, delimiter="\t"), start=2):
             cited = (row.get("cited_locus") or "").strip().split(".")
             if len(cited) != 3 or cited[0] != PSALMS_TOKEN:
@@ -196,7 +198,7 @@ def witness_merges() -> tuple[tuple[int, int], ...]:
             kind = (row.get("kind") or "").strip()
             if kind != MERGED_VERSE or carrier != f"{PSALMS_TOKEN}.{chapter}.{verse - 1}":
                 raise PsalterUnavailable(
-                    f"{found[0]}:{line}: the witness records Psalm {chapter}:{verse} as "
+                    f"{selected}:{line}: the witness records Psalm {chapter}:{verse} as "
                     f"{kind!r} into {carrier!r}; only a verse printed inside the one "
                     f"before it says anything about the psalm numbering"
                 )

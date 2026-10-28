@@ -1,0 +1,261 @@
+{
+  "schema": 1,
+  "scope": "Native acceptance, exact installed artifacts and terminal archive; final integration/main/live acceptance is separate",
+  "verified_at_utc": "2026-10-26T14:01:28.570243+00:00",
+  "run_id": "0af32a5cd3635b06",
+  "workflow": "proper-study",
+  "version": 15,
+  "workflow_digest": "4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83",
+  "seed_commit": "e1ed2ba5d4cdf3a5199f3bcf78a0d2b3069683bb",
+  "disposition": "ACCEPTED",
+  "results": 37,
+  "packets": 37,
+  "escalations": [],
+  "standing_findings": [],
+  "cycles": {
+    "path": "workflows/reviews/gpt-postconciliar-all-saints-2026-11-01/CYCLES.md",
+    "sha256": "0f294d924f2b18d11410116aa67f28ee3e03eaab444fc8bfff71a5befe48238d",
+    "frozen": true
+  },
+  "installed_pdfs": [
+    {
+      "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.pdf",
+      "pages": 20,
+      "sha256": "ddebff78fcd57d0cc5a2d1f2b561a3676ad39252d518bd65f49f996e6864e0cd",
+      "bytes": 474624
+    },
+    {
+      "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-synthesis.pdf",
+      "pages": 10,
+      "sha256": "df39c8e92d420eb74a6a3bf569c6b38e3ed5f291cc809b091badd3a0ae2cfec4",
+      "bytes": 409183
+    },
+    {
+      "path": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-homily.pdf",
+      "pages": 3,
+      "sha256": "a197407d552a2f13c3965dc6dfc5aca70c41f2108496f88fe97919436f05a300",
+      "bytes": 246580
+    }
+  ],
+  "canonical_web": {
+    "path": "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.md",
+    "sha256": "bef3dd560d840e155e406d53aba214f9c77ff9c8604b374d61a8c7e6ad7d988a",
+    "bytes": 66705
+  },
+  "archive": {
+    "path": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc/evaluations/proper-study-results/0af32a5cd3635b06",
+    "files": 80,
+    "sha256_inventory": {
+      "artifact-gates-0000.json": "97af5c9c6c70bfc4459030f6b4c4d3ef1c5d44f458a9759ff4ab5fcbb5607d3c",
+      "artifact-gates-0001.json": "8d6a7c139b783c8489d67a5012f7cc8e3099b15e615f90603c523961611646cd",
+      "author-study-0000.json": "25f934ca83692aed538f86f5bc81867124b877c6926a8bc7b3ff524dfb0fe73e",
+      "author-study-0001.json": "24cc45fbc337745a55212408a68dde27bb1cfc2bd88dcb8b44d4ec3d5e53204c",
+      "author-study-0002.json": "38f525e1dd6735f080a5a86d21d614dac7705e668e7590c64ecbfe3d43626e33",
+      "build-artifacts-0000.json": "b303ebf6c569dd842a7781890f4654dbc52a890e026b253ca807bc049b6ee26a",
+      "build-artifacts-0001.json": "4cd2421a6c71e50b47c6dbfa239de46ef899bb30944b3a038089ebf62d534051",
+      "derive-homily-0000.json": "3378052286fa094764a93ecbb7ab16d6630f033d9b3afaeceed2bdec39df3d40",
+      "derive-homily-0001.json": "6c5c7fe78ff18f9e1e23add7198bcfb25e0ef80a66a095ebddff74041a90bb21",
+      "derive-synthesis-0000.json": "320b1029daf8f42118d40a751dc03b4a0825df9b6bd8ff966fd79bea45c38ec5",
+      "derive-synthesis-0001.json": "0652614e7db7dac6704d8f74680ab8e97b683b3db892fd068a156c4cdfdaa231",
+      "generate-web-0000.json": "d461c14b9093603dee749d989ae76ead8a3ce8ad8c0a7a6e47c0de1bd7ac0758",
+      "homily-preflight-0000.json": "38c3abc374b62eb01fe47799b263dc88821ecda5d4aac8a36d1adbda83d9b628",
+      "homily-preflight-0001.json": "dd64e18d636bf105c5b251444195d128462ca7f80ffb809f123598fc42bea5de",
+      "homily-review-0000.json": "7bd0e7f714c095012bd56f6e7bf95dcb39d51a454ba021a8f6775d0adb871e05",
+      "homily-review-0001.json": "86a74c9e31c2be13473918c2f141eabd418fdd7ac5b65a3339eaf5823b94ad0d",
+      "install-publication-0000.json": "192f06f5ff435e1c8bd0c2aaebd2981004ea4c07cc80b0dac196337430b01750",
+      "packets/artifact-gates-0000.txt": "803f664cbb8236ec87fa362de05e648e975bbb7bb34b6cb84deef99cbcdeba24",
+      "packets/artifact-gates-0001.txt": "ef074a1befc5e8dca705ed0ec08af01575f487cdd2bbca9160cc151a6674675e",
+      "packets/author-study-0000.txt": "7be39ddd8c206e3210efa6a723057de702cffbb8adb88b52823c1f794b3cc2b9",
+      "packets/author-study-0001.txt": "4074cfd74e547e29f3e19fe0b06b719c145abe38fa226972c8c790d108b82781",
+      "packets/author-study-0002.txt": "69fdd34be8c96780296479277334b31c9ded9a3add29c33aa7551c5c24b9090f",
+      "packets/build-artifacts-0000.txt": "e2a4fe3805410a726ae59c6d59140d3f370a1bca963f9fa422612a6e00112af7",
+      "packets/build-artifacts-0001.txt": "144e3dcda2a82de4c1d32f329df2076faced0e9b38189f2c77bf41806f57f711",
+      "packets/derive-homily-0000.txt": "1b44c2953c2ddf03f09bb5c65c8d7966e09ddac91de0c0b92ebb76c90eeaa5f3",
+      "packets/derive-homily-0001.txt": "b6f20859f5396b84e181de989d364b88d18017b76feb6b29979f359f6e9e955c",
+      "packets/derive-synthesis-0000.txt": "0122031e36fe959cc47ed2a5aff2798d7ea96506b17b6a0a1d40080576760fb8",
+      "packets/derive-synthesis-0001.txt": "252d6dc9cb202427e1873d1e22d23815019460ad4d19b30c6570677df5df1dc8",
+      "packets/generate-web-0000.txt": "099a4fd174304bf9183ebe34433d7432a960c99c2865a3086027ca148e6ea7dc",
+      "packets/homily-preflight-0000.txt": "2aeb6a0094eb87efee642358232b21ed2e33704118db5371182be4721906bbc1",
+      "packets/homily-preflight-0001.txt": "477ae5ac87252c256bb790c47267db919b2ee4f44e9fd4b5e11fa4387ea5b058",
+      "packets/homily-review-0000.txt": "dd2d45c96fe1bac7e2b1a9d131611ddaa717da19f0bb6e07e2343b57112fbdf0",
+      "packets/homily-review-0001.txt": "995037ca077ece8c0196c4bc07cd0abf057a64d187f2a80598814c0691671bbd",
+      "packets/install-publication-0000.txt": "16de7194134161c00fee712d0fcd933d2ab06c6ac9aee8fc3ec5cd1c0323de75",
+      "packets/publication-gates-0000.txt": "c50e2d54fe3e5344cb6cebce14d04cf2bc712b7114d1f8e9e610b5eb2e24bdfd",
+      "packets/research-0000.txt": "565c93a8e5b98c54a81b9b887690da217e217ba9ae9caaecca1b7855f460e46b",
+      "packets/research-preflight-0000.txt": "19936956f93ce108ba761c21ed7497595c0fcd80179058bf2c19daf6a8662452",
+      "packets/research-review-0000.txt": "069b31b3159b2872b6512c65ec0300842a921494b9985f50e6d39157c54bb4a1",
+      "packets/resolve-context-0000.txt": "6bd6e88fef26d4c062af4add1fc54ba5fc2656ac6e9ef5c0aca2580b8ba9d782",
+      "packets/scope-gate-0000.txt": "c69e1f8c594c6513ef8a8ef5f83d368511fc663e13faa8907ee36576a42d1e52",
+      "packets/source-registration-0000.txt": "05e98e022891600b71b0871426040b1c89e0de02c8cbe0e3e68ddcc108a7d14d",
+      "packets/study-preflight-0000.txt": "d9bfbf3c1ef2c39bb5130df53e3aebca5735bb8284dedfcc16925a23410c9d54",
+      "packets/study-preflight-0001.txt": "0b39cfe0be8e2916cebec291efaed653735761cbff9e6f4c7fb524c63659f171",
+      "packets/study-preflight-0002.txt": "cffac2232e1cbd6fceed513e999476f60d939ff4442ad3c6e3baff8825302e28",
+      "packets/study-review-0000.txt": "6e87718fceb471c9a156585deb5d13c1bee1c4645b2b427c6793d394e8832676",
+      "packets/study-review-0001.txt": "7a1b57a0d384ed01eca522e22253712757f782e9f2a3e4f2db17975e1996ea36",
+      "packets/study-review-0002.txt": "e84a1bee45d90b482d198ae53bcdcb7d519a9ab84d8a2e0b428513897505fae0",
+      "packets/synthesis-preflight-0000.txt": "4353169a502770d5ca19169fb8dd6c4c80c3c2bc8e05656f6069538d50e00681",
+      "packets/synthesis-preflight-0001.txt": "5a31261c21cad88e9221bba2c2ee7350ae7b110d48583e8c96a75d3269bef3f9",
+      "packets/synthesis-review-0000.txt": "02225026d3c3722a113b4e4c83e3cd0e240beccf1eee27a74997e8b69ec3d36d",
+      "packets/synthesis-review-0001.txt": "e2deb71550d3da3f56cff888a1240bed6d45a59efc6daf542d642c1aa255369f",
+      "packets/visual-review-0000.txt": "54b999c6d23ee7c51293020c09e0d91bd0cc859a47bb2b0d71894268acc83202",
+      "packets/visual-review-0001.txt": "9cf389676fcaa5b8fade2fc5b0684f3dbc75a6d3bc2e96353d1c7ec20dfd9e4c",
+      "packets/web-review-0000.txt": "3caa0c29dfd74cc741d63bbbd45e0ac254fa09bc344dd29b939978ff44cbedfb",
+      "publication-gates-0000.json": "87e27f47187bceefeff0205ab007611fe381e50491f82a337afa2b2f1cdd7d2a",
+      "record.md": "631121b4f82b0659b0cda245202cabadb4e888d35a13bbe02af05848e09ea3bf",
+      "redaction-receipt.json": "2d0d1f132031ad9a1997b188d5f09ca6a4cddb0ea4a0f354d5549ca90ada95f0",
+      "research-0000.json": "cc7879a408604555fc17d72d44dd175e30b67bffdea9e6d5a126d275727dcdb0",
+      "research-preflight-0000.json": "d9c4c5d71ce61eb0186e720a8b7c42807d1ab40d1053516f4841a9f45c9468f1",
+      "research-review-0000.json": "04ad9547e623377122e03c2b4499917f7e8e239143fc4489fb4aaf796e966aa2",
+      "resolve-context-0000.json": "c50e98f4dab49808f854525d809cb8e125847a8b1ea4ea033f9c18bad89534bf",
+      "scope-gate-0000.json": "c2c5dc73384dcaa82e6a0b0b6d655a49fd9f0d8345607513add762f6826c4e2d",
+      "seed-bootstrap.json": "6c71f7fa1ba7ed77afaa47740e8f8e1b6a91cde02469ad7825d6f7ae16bf215a",
+      "seed-manifest.json": "daa7d69c1e6966d5158a97ec6d58461fa2f8d4f19228dcb69f84bedf3cc19c28",
+      "source-registration-0000.json": "e29f77bf7f2a1a1f98921b8d312bccde1e928fe8e670922490ddae0dce773535",
+      "study-preflight-0000.json": "db4f430efb6baf21bb53a26e3ace3bc17674c5b6c4e65d8af259ee8366a0f0ae",
+      "study-preflight-0001.json": "64cc916498497445157cff08a5427e9162b4d673fa3d872e7e211df5c9e04202",
+      "study-preflight-0002.json": "fa1f37edf322caf9a8086d37c76932f39c21fd61b9e8cb561d319d286391c9bd",
+      "study-review-0000.json": "8f122e836d1f60d68851a9d72e2404341e70a7b1d6e0c80479607d58c4203f39",
+      "study-review-0001.json": "009c8f083fa8812c0fb2fbf025cafcd7edc624e7b19fa99f80027b43bab37b66",
+      "study-review-0002.json": "0ec22f7df4682639bd17d7cdf2a78408ed7b32e530783c1539c907a3961d52c3",
+      "synthesis-preflight-0000.json": "67b87db41056e0690c03027475a5706f18334b8a627effc6e088c72dc2725ad3",
+      "synthesis-preflight-0001.json": "6e1973b0386d22a673b2f14206bbd01007c3c41624ed78abd9fac4f7055f4055",
+      "synthesis-review-0000.json": "c27d4fe873163c8def08ad1c8537ed8af94bc04c080311117fb99efb609c040b",
+      "synthesis-review-0001.json": "32a1ca7776b5ad778d107baf751ecf9ba6497d49ccf199f4fe30735c789175e4",
+      "terminal-replay.json": "8f6b97ca97c11a234ea4d6b8da0e873ac5024dda7a2cb96cb1bbedb1d7a010fa",
+      "terminal-status.json": "83e24fe7e112719443581496d287a7119f6d10125622177632ff7b84a95f8ce4",
+      "visual-review-0000.json": "f61ba5108dcc0e4bf886140e5c053c886078035dc09317d77f4a9c106f0b0df4",
+      "visual-review-0001.json": "1988025f0c1f18c24ba2398ed7c2610b249091187bd8efbd761815629e5b9322",
+      "web-review-0000.json": "69e770daccc2b7a7782ac3ea82473c194e0659385ae43d047be7cb155dc17757"
+    },
+    "export_exit": 0,
+    "isolated_reproduction_exit": 0,
+    "full_diff_exit": 0,
+    "root_rechecked_all_file_hashes_equal": true,
+    "coordinator_verified_native_files_unchanged": 735,
+    "redaction_receipt_sha256": "2d0d1f132031ad9a1997b188d5f09ca6a4cddb0ea4a0f354d5549ca90ada95f0",
+    "changed_native_records": [
+      {
+        "archived_sha256": "cc7879a408604555fc17d72d44dd175e30b67bffdea9e6d5a126d275727dcdb0",
+        "changes": [
+          {
+            "json_pointer": "/notes",
+            "replacements": 5
+          }
+        ],
+        "native_sha256": "977ba5692fe4596b800a328a9ca60c61edd06f87d75c1a60d4ee5c30aa4387f9",
+        "path": "research-0000.json"
+      }
+    ],
+    "other_substantive_research_fields_exact": true,
+    "private_prefix_hits": []
+  },
+  "native_review_handoffs": [
+    {
+      "directory": "build/agent-handoffs/20261026T051015Z-pc-r07-research-review",
+      "directory_created": true,
+      "zip": "build/agent-handoffs/20261026T051015Z-pc-r07-research-review.zip",
+      "zip_created_and_verified": true,
+      "zip_sha256": "29a35300f4f5f34c8468352f343555cd0da7d2312b0fb649f840d9d0e10d0f7d",
+      "packet_sha256": "069b31b3159b2872b6512c65ec0300842a921494b9985f50e6d39157c54bb4a1",
+      "file_count": 7
+    },
+    {
+      "directory": "build/agent-handoffs/20261026T054739Z-pc-r07-study-review",
+      "directory_created": true,
+      "zip": "build/agent-handoffs/20261026T054739Z-pc-r07-study-review.zip",
+      "zip_created_and_verified": true,
+      "zip_sha256": "e5090639b101e08bbb027260ec45a0336d8d712c2e08fe7c85f3a7c17af1b364",
+      "packet_sha256": "6e87718fceb471c9a156585deb5d13c1bee1c4645b2b427c6793d394e8832676",
+      "file_count": 29
+    },
+    {
+      "directory": "build/agent-handoffs/20261026T113212Z-pc-r07-study-review-1",
+      "directory_created": true,
+      "zip": "build/agent-handoffs/20261026T113212Z-pc-r07-study-review-1.zip",
+      "zip_created_and_verified": true,
+      "zip_sha256": "ef0e9d367545c563e18286f0253a9d838f6d559727cd20b013c4ed1d49b57964",
+      "packet_sha256": "7a1b57a0d384ed01eca522e22253712757f782e9f2a3e4f2db17975e1996ea36",
+      "file_count": 49
+    },
+    {
+      "directory": "build/agent-handoffs/20261026T114947Z-pc-r07-synthesis-review",
+      "directory_created": true,
+      "zip": "build/agent-handoffs/20261026T114947Z-pc-r07-synthesis-review.zip",
+      "zip_created_and_verified": true,
+      "zip_sha256": "3a057ceccb285c6df4980e9fad6da9043f40f7327864cbfea19e602d4a264812",
+      "packet_sha256": "02225026d3c3722a113b4e4c83e3cd0e240beccf1eee27a74997e8b69ec3d36d",
+      "file_count": 21
+    },
+    {
+      "directory": "build/agent-handoffs/20261026T120752Z-pc-r07-homily-review",
+      "directory_created": true,
+      "zip": "build/agent-handoffs/20261026T120752Z-pc-r07-homily-review.zip",
+      "zip_created_and_verified": true,
+      "zip_sha256": "c8e4a548df54597b61e88aa00f04f1adf2b1e63f1e9c33ac6c0635a525140bb8",
+      "packet_sha256": "dd2d45c96fe1bac7e2b1a9d131611ddaa717da19f0bb6e07e2343b57112fbdf0",
+      "file_count": 13
+    },
+    {
+      "directory": "build/agent-handoffs/20261026T122000Z-pc-r07-visual-review",
+      "directory_created": true,
+      "zip": "build/agent-handoffs/20261026T122000Z-pc-r07-visual-review.zip",
+      "zip_created_and_verified": true,
+      "zip_sha256": "81d0aa5dcfa92b2f6f1ca2ac0e8fe8d23323ae47c77b28894a8a7595d052be99",
+      "packet_sha256": "54b999c6d23ee7c51293020c09e0d91bd0cc859a47bb2b0d71894268acc83202",
+      "file_count": 48
+    },
+    {
+      "directory": "build/agent-handoffs/20261026T123742Z-pc-r07-study-review-2",
+      "directory_created": true,
+      "zip": "build/agent-handoffs/20261026T123742Z-pc-r07-study-review-2.zip",
+      "zip_created_and_verified": true,
+      "zip_sha256": "96b1f240e8fba4d27fe7141f4a201df3b4c4cb539cb8d033a727cc36e3aba79f",
+      "packet_sha256": "e84a1bee45d90b482d198ae53bcdcb7d519a9ab84d8a2e0b428513897505fae0",
+      "file_count": 51
+    },
+    {
+      "directory": "build/agent-handoffs/20261026T124900Z-pc-r07-synthesis-review-1",
+      "directory_created": true,
+      "zip": "build/agent-handoffs/20261026T124900Z-pc-r07-synthesis-review-1.zip",
+      "zip_created_and_verified": true,
+      "zip_sha256": "311dac09c2f6d79c23c4b2709fa12856d5af1f922edd6a6969967b719d2aff1a",
+      "packet_sha256": "e2deb71550d3da3f56cff888a1240bed6d45a59efc6daf542d642c1aa255369f",
+      "file_count": 23
+    },
+    {
+      "directory": "build/agent-handoffs/20261026T130426Z-pc-r07-homily-review-1",
+      "directory_created": true,
+      "zip": "build/agent-handoffs/20261026T130426Z-pc-r07-homily-review-1.zip",
+      "zip_created_and_verified": true,
+      "zip_sha256": "6d15a93af83d6762c3cb5d5f4c9f8ace9a8716b31c61c6efbb30afb6d21659f8",
+      "packet_sha256": "995037ca077ece8c0196c4bc07cd0abf057a64d187f2a80598814c0691671bbd",
+      "file_count": 16
+    },
+    {
+      "directory": "build/agent-handoffs/20261026T131509Z-pc-r07-visual-review-1",
+      "directory_created": true,
+      "zip": "build/agent-handoffs/20261026T131509Z-pc-r07-visual-review-1.zip",
+      "zip_created_and_verified": true,
+      "zip_sha256": "4902df59ed1311bb49259da3415de4cdf6f5406d4eca7de482e7930956b1940b",
+      "packet_sha256": "9cf389676fcaa5b8fade2fc5b0684f3dbc75a6d3bc2e96353d1c7ec20dfd9e4c",
+      "file_count": 71
+    },
+    {
+      "directory": "build/agent-handoffs/20261026T133211Z-pc-r07-web-review-0",
+      "directory_created": true,
+      "zip": "build/agent-handoffs/20261026T133211Z-pc-r07-web-review-0.zip",
+      "zip_created_and_verified": true,
+      "zip_sha256": "749f755bb3dc4294907b0eefa8440e59da1f33ed9bd4305e1a66fe071c7169d1",
+      "packet_sha256": "3caa0c29dfd74cc741d63bbbd45e0ac254fa09bc344dd29b939978ff44cbedfb",
+      "file_count": 30
+    }
+  ],
+  "all_native_handoff_directories_created": true,
+  "all_native_zips_created_and_verified": true,
+  "remaining_work_at_verification": [
+    "final source/site gates",
+    "outgoing integration/disclosure cold review",
+    "main publication",
+    "live deployment verification"
+  ]
+}

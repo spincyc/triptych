@@ -1,5 +1,22 @@
 # Hell — Research Scope (Claude edition)
 
+## Register revision — 2026-10-26
+
+The maintainer asked that the 21 October guidance ("Say what the texts say,
+plainly") and the Catholic voice rule be applied to this essay. Only the
+body prose was revised. Quotations, notes, headings, appendices, references
+and bindings are unchanged. The record is `research/revision-2026-10-26.md`.
+
+## PDF layout revision — 2026-10-26
+
+The maintainer requested a standalone title page, following contents, and a
+two-column article body in both provider editions. The 11-point body uses
+0.85-inch margins and a 0.3-inch column gap; contents, notes and appendices
+remain full width. All substantive text, citations and received prayers are
+preserved. This commission supersedes earlier single-column physical-page
+targets for this layout revision; it does not shorten the essay. Production
+evidence is recorded in `PROJECT-WORK.md` under the 26 October PDF layout.
+
 - **Publication:** `articles/faith/four-last-things-03-hell` (provider `claude`)
 - **Title:** *The Fire That Is Not Extinguished: On Hell, Its Pains, and Its Eternity* (Mark 9:43, Douay–Rheims)
 - **Profile:** discursive faith article (`guidance/articles.md`), under the voice rules of `guidance/editorial.md` "Speaking from within the tradition" (extended to all faith work on 16 October 2026).

@@ -25,11 +25,13 @@ import hashlib
 import importlib.machinery
 import importlib.util
 import json
+import os
 import subprocess
 import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[2]
 TOOL = ROOT / "tools" / "proper-study-run-archive"
@@ -100,7 +102,9 @@ class Fixture(unittest.TestCase):
     disposition = "ACCEPTED"
 
     def setUp(self) -> None:
-        self.scratch = tempfile.TemporaryDirectory()
+        scratch = ROOT / ".scratch/pc-r-workflow-support/archive/tests"
+        scratch.mkdir(parents=True, exist_ok=True)
+        self.scratch = tempfile.TemporaryDirectory(dir=scratch)
         self.root = Path(self.scratch.name)
         self.run_dir = self.root / "build" / "tpt-runs" / RUN
         (self.root / LEAF).mkdir(parents=True)
@@ -167,19 +171,28 @@ class Fixture(unittest.TestCase):
     def leaf_archive(self) -> Path:
         return self.root / LEAF / "evaluations" / "proper-study-results" / RUN
 
-    def archived(self, output: Path | None = None) -> Path:
+    def archived(self, output: Path | None = None, **options) -> Path:
         dest, _ = ARCHIVER.archive_run(self.root, RUN, CYCLES,
-                                       str(output) if output else None)
+                                       str(output) if output else None, **options)
         return dest
 
     def refusal(self, *, output: Path | None = None, run: str = RUN,
-                cycles: str = CYCLES) -> str:
+                cycles: str = CYCLES, **options) -> str:
         before = tree(self.root)
         with self.assertRaises(ARCHIVER.ArchiveError) as raised:
-            ARCHIVER.archive_run(self.root, run, cycles, str(output) if output else None)
+            ARCHIVER.archive_run(self.root, run, cycles, str(output) if output else None, **options)
         self.assertEqual(tree(self.root), before, "a refusal wrote something")
         self.assertEqual(list(self.root.rglob(".*.partial-*")), [])
         return str(raised.exception)
+
+    def retained_result(self, **fields) -> tuple[Path, dict]:
+        path = self.run_dir / "results/research-review-0001.json"
+        result = json.loads(path.read_text())
+        result.update(fields)
+        path.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
+        self.state["result_hashes"][-1]["hash"] = sha(path.read_bytes())
+        self.write_json("state.json", self.state)
+        return path, result
 
 
 class ArchiveContentTests(Fixture):
@@ -232,6 +245,210 @@ class ArchiveContentTests(Fixture):
         empty = self.root / "empty"
         empty.mkdir()
         self.assertIn("record.md", tree(self.archived(output=empty)))
+
+
+class PublicDerivativeTests(Fixture):
+    def test_stale_staging_contents_are_neither_published_nor_removed(self) -> None:
+        output = self.root / "public-archive"
+        stale = output.parent / f".{output.name}.partial-{os.getpid()}"
+        stale.mkdir()
+        (stale / "unreviewed.txt").write_text(f"Unreviewed: {self.root.parent}/external/evidence.json\n")
+        expected = tree(stale)
+        dest = self.archived(output=output, redact_repository_paths=True)
+        self.assertEqual(tree(stale), expected)
+        self.assertNotIn("unreviewed.txt", tree(dest))
+        receipt = json.loads((dest / ARCHIVER.REDACTION_RECEIPT).read_text())
+        self.assertEqual(set(tree(dest)), {item["path"] for item in receipt["files"]}
+                         | {ARCHIVER.REDACTION_RECEIPT, ARCHIVER.RECORD})
+
+    def test_foreign_staging_symlink_is_neither_followed_nor_removed(self) -> None:
+        output = self.root / "public-archive"
+        foreign = self.root / "foreign"
+        foreign.mkdir()
+        (foreign / "keep.txt").write_text("Foreign contents.\n")
+        stale = output.parent / f".{output.name}.partial-{os.getpid()}"
+        stale.symlink_to(foreign, target_is_directory=True)
+        expected = tree(foreign)
+        dest = self.archived(output=output, redact_repository_paths=True)
+        self.assertTrue(stale.is_symlink())
+        self.assertEqual(stale.resolve(), foreign)
+        self.assertEqual(tree(foreign), expected)
+        self.assertNotIn("keep.txt", tree(dest))
+
+    def test_copy_failure_cleans_only_its_new_staging_and_preserves_empty_destination(self) -> None:
+        output = self.root / "public-archive"
+        output.mkdir()
+        stale = output.parent / f".{output.name}.partial-{os.getpid()}"
+        stale.mkdir()
+        (stale / "keep.txt").write_text("Foreign contents.\n")
+        before, directories = tree(self.root), set(self.root.iterdir())
+        with mock.patch.object(Path, "write_bytes", side_effect=OSError("injected copy failure")):
+            with self.assertRaisesRegex(OSError, "injected copy failure"):
+                self.archived(output=output, redact_repository_paths=True)
+        self.assertEqual(tree(self.root), before)
+        self.assertEqual(set(self.root.iterdir()), directories)
+        self.assertTrue(output.is_dir())
+        self.assertEqual(list(output.iterdir()), [])
+
+    def test_only_notes_change_with_complete_hash_receipt_and_immutable_native_run(self) -> None:
+        notes = (f"Read {self.root}/.scratch/evidence.json and {self.root}/research/audit.md; "
+                 "Revelation 7:2-4, 9-14; https://example.test/source/home/reading.pdf.")
+        path, original = self.retained_result(
+            notes=notes, summary="The bounded evidence supports the finding.",
+            review_inputs={"schema": 5, "sha256": "b" * 64, "paths": ["src/sources/work.toml"]},
+            artifact_path="research/evidence.md", findings=[{"id": "F1", "severity": "accepted"}])
+        native = tree(self.run_dir)
+        original_bytes = path.read_bytes()
+        dest = self.archived(redact_repository_paths=True)
+        result = json.loads((dest / path.name).read_text())
+        self.assertEqual(result, {**original, "notes": notes.replace(str(self.root) + "/", "")})
+        self.assertEqual(tree(self.run_dir), native)
+        receipt = json.loads((dest / ARCHIVER.REDACTION_RECEIPT).read_text())
+        self.assertEqual((receipt["schema"], receipt["policy"], receipt["run_id"]),
+                         (1, ARCHIVER.REDACTION_POLICY, RUN))
+        row = next(item for item in receipt["files"] if item["path"] == path.name)
+        self.assertEqual(row, {"path": path.name, "native_sha256": sha(original_bytes),
+                               "archived_sha256": sha((dest / path.name).read_bytes()),
+                               "changes": [{"json_pointer": "/notes", "replacements": 2}]})
+        original_archive = ARCHIVER.collect(self.root, RUN).files
+        for item in receipt["files"]:
+            self.assertEqual(item["archived_sha256"], sha((dest / item["path"]).read_bytes()))
+            if item["path"] != path.name:
+                self.assertEqual(item["native_sha256"], item["archived_sha256"])
+                self.assertEqual(item["changes"], [])
+                if item["path"] in original_archive:
+                    self.assertEqual((dest / item["path"]).read_bytes(), original_archive[item["path"]])
+        record = (dest / "record.md").read_text()
+        self.assertIn("explicitly declared public derivatives", record)
+        self.assertIn(row["native_sha256"], record)
+        self.assertIn(row["archived_sha256"], record)
+        self.assertIn("Archived result SHA-256", record)
+        self.assertFalse(any(str(self.root).encode() in data for data in tree(dest).values()))
+
+    def test_list_notes_record_every_changed_string_pointer_and_preserve_other_entries(self) -> None:
+        notes = [f"Read {self.root}/.scratch/first.json.",
+                 f"Keep {self.root}/research/second.md and {self.root}/research/third.md.",
+                 "Already relative: research/fourth.md; John 1:1/3."]
+        path, original = self.retained_result(notes=notes)
+        dest = self.archived(redact_repository_paths=True)
+        self.assertEqual(json.loads((dest / path.name).read_text()),
+                         {**original, "notes": [text.replace(str(self.root) + "/", "") for text in notes]})
+        receipt = json.loads((dest / ARCHIVER.REDACTION_RECEIPT).read_text())
+        row = next(item for item in receipt["files"] if item["path"] == path.name)
+        self.assertEqual(row["changes"], [{"json_pointer": "/notes/0", "replacements": 1},
+                                          {"json_pointer": "/notes/1", "replacements": 2}])
+
+    def test_already_relative_notes_and_http_citations_retain_exact_bytes(self) -> None:
+        for notes in ("Read research/audit.md; https://example.test/home/source.pdf.",
+                      [".scratch/evidence.json", "John 1:1-3; http://example.test/Users/source.pdf"]):
+            with self.subTest(notes=notes):
+                path, _ = self.retained_result(notes=notes)
+                expected = path.read_bytes()
+                dest = self.archived(output=self.root / f"relative-{isinstance(notes, list)}",
+                                     redact_repository_paths=True)
+                self.assertEqual((dest / path.name).read_bytes(), expected)
+                receipt = json.loads((dest / ARCHIVER.REDACTION_RECEIPT).read_text())
+                self.assertTrue(all(item["native_sha256"] == item["archived_sha256"]
+                                    and item["changes"] == [] for item in receipt["files"]))
+
+    def test_derivative_reproduction_is_deterministic_and_leaves_native_state_exact(self) -> None:
+        self.retained_result(notes=f"Checked {self.root}/.scratch/evidence.json.")
+        before = tree(self.run_dir)
+        first = self.archived(output=self.root / "first", redact_repository_paths=True)
+        second = self.archived(output=self.root / "second", redact_repository_paths=True)
+        self.assertEqual(tree(first), tree(second))
+        self.assertEqual(tree(self.run_dir), before)
+
+    def test_packet_placeholder_root_is_a_template_and_its_exact_bytes_are_preserved(self) -> None:
+        packet = self.run_dir / "packets/scope-gate-0000.txt"
+        expected = b"Write `<document_root>/evaluations/blocking-findings-v1.toml`.\n"
+        packet.write_bytes(expected)
+        self.state["packet_hashes"][0]["hash"] = sha(expected)
+        self.write_json("state.json", self.state)
+        dest = self.archived(redact_repository_paths=True)
+        self.assertEqual((dest / "packets/scope-gate-0000.txt").read_bytes(), expected)
+
+    def test_default_refuses_private_notes_without_copying_or_rewriting_them(self) -> None:
+        self.retained_result(notes=f"Checked {self.root}/.scratch/evidence.json.")
+        self.assertIn("private absolute filesystem path", self.refusal())
+
+    def test_unsupported_decision_seal_artifact_and_nested_note_fields_are_never_redacted(self) -> None:
+        original = (self.run_dir / "results/research-review-0001.json").read_bytes()
+        for field, value in (
+            ("summary", f"Checked {self.root}/.scratch/evidence.json"),
+            ("artifact_path", f"{self.root}/research/evidence.md"),
+            ("review_inputs", {"paths": [f"{self.root}/src/sources/work.toml"]}),
+            ("findings", [{"problem": f"Inspect {self.root}/research/evidence.md"}]),
+            ("notes", [{"text": f"Inspect {self.root}/research/evidence.md"}]),
+        ):
+            with self.subTest(field=field):
+                (self.run_dir / "results/research-review-0001.json").write_bytes(original)
+                self.retained_result(**{field: value})
+                self.assertIn("private absolute filesystem path",
+                              self.refusal(redact_repository_paths=True))
+
+    def test_other_absolute_paths_and_noncanonical_descendants_refuse(self) -> None:
+        for path in (str(self.root.parent / "external/evidence.json"),
+                     str(self.root) + "/../external/evidence.json",
+                     str(self.root) + "/research//evidence.md", str(self.root)):
+            with self.subTest(path=path):
+                self.retained_result(notes=f"Inspect {path}")
+                self.refusal(redact_repository_paths=True)
+
+    def test_repeated_leading_posix_and_unc_separators_cannot_hide_absolute_paths(self) -> None:
+        external = str(self.root.parent / "external/evidence.json").lstrip("/")
+        paths = ["/" * count + external for count in (2, 3, 4, 8)]
+        paths += ["/" * count + "synthetic-private" for count in (2, 3, 4, 8)]
+        paths += ["\\" * count + "fixture-host\\evidence.txt" for count in (2, 3, 4, 8)]
+        paths += ["\\" * count + "fixture-host" for count in (2, 3, 4, 8)]
+        for path in paths:
+            for redact in (False, True):
+                with self.subTest(path=path, redact=redact):
+                    self.retained_result(notes=f"Inspect {path}")
+                    self.assertIn("private absolute filesystem path",
+                                  self.refusal(redact_repository_paths=redact))
+
+    def test_source_url_and_template_repeated_separators_remain_exact(self) -> None:
+        notes = ("https://example.test///source.pdf and "
+                 "<document_root>///evaluations/result.json are source and template references.")
+        path, _ = self.retained_result(notes=notes)
+        expected = path.read_bytes()
+        dest = self.archived(redact_repository_paths=True)
+        self.assertEqual((dest / path.name).read_bytes(), expected)
+
+    def test_a_source_url_containing_current_machine_root_is_refused_without_changing_the_citation(self) -> None:
+        self.retained_result(notes=f"https://example.test/source?path={self.root}/research/evidence.md")
+        self.assertIn("private absolute filesystem path", self.refusal(redact_repository_paths=True))
+
+    def test_packets_interventions_and_terminal_reports_remain_exact_or_refuse(self) -> None:
+        packet = self.run_dir / "packets/scope-gate-0000.txt"
+        packet.write_text(f"Inspect {self.root}/research/evidence.md\n")
+        self.state["packet_hashes"][0]["hash"] = sha(packet.read_bytes())
+        self.write_json("state.json", self.state)
+        self.assertIn("private absolute filesystem path", self.refusal(redact_repository_paths=True))
+        self.build()
+        intervention = self.run_dir / "interventions/0000.json"
+        intervention.write_text(json.dumps({"text": f"Inspect {self.root}/research/evidence.md"}))
+        self.assertIn("private absolute filesystem path", self.refusal(redact_repository_paths=True))
+        self.build()
+        report = self.root / "engine/status.json"
+        data = json.loads(report.read_text())
+        data["notes"] = f"Inspect {self.root}/research/evidence.md"
+        report.write_text(json.dumps(data))
+        self.assertIn("private absolute filesystem path", self.refusal(redact_repository_paths=True))
+
+    def test_derivative_still_verifies_original_hash_before_any_replacement(self) -> None:
+        path, _ = self.retained_result(notes=f"Inspect {self.root}/research/evidence.md")
+        path.write_bytes(path.read_bytes() + b"\n")
+        self.assertIn("result hash mismatch", self.refusal(redact_repository_paths=True))
+
+    def test_privacy_refusal_preserves_an_empty_destination_and_leaves_no_partial_archive(self) -> None:
+        self.retained_result(notes=str(self.root.parent / "external/evidence.json"))
+        empty = self.root / "empty"
+        empty.mkdir()
+        self.refusal(output=empty, redact_repository_paths=True)
+        self.assertTrue(empty.is_dir())
+        self.assertEqual(list(empty.iterdir()), [])
 
 
 class PluralTests(Fixture):
@@ -351,6 +568,12 @@ class ExitStatusTests(Fixture):
 
     def test_the_cycles_record_is_required(self) -> None:
         self.assertEqual(self.run_tool(RUN).returncode, 2)
+
+    def test_explicit_derivative_flag_records_a_public_archive(self) -> None:
+        self.retained_result(notes=f"Inspect {self.root}/research/evidence.md")
+        result = self.run_tool(RUN, "--cycles", CYCLES, "--redact-repository-paths")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertTrue((self.leaf_archive / ARCHIVER.REDACTION_RECEIPT).is_file())
 
 
 class ReproductionTests(unittest.TestCase):

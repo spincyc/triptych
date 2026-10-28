@@ -1,0 +1,319 @@
+{
+  "schema": 1,
+  "recorded_on": "2026-10-26",
+  "reviewer": "/root/latin_candidates/anthony_pc; independent of Philip/James producer; reviewer did not author this Philip proposal",
+  "review_status": "ACCEPT_BOUNDED_PHILIP_HISTORICAL_SOURCE_AND_BENZIGER_TITLE_CONDITION_ONLY",
+  "scope": "Exact Philip/James historical source-only packet and its eight additive source postimages; independent complete-body, source identity, metadata, title/copyright/approval inspection and target difference review. No canonical acceptance or new legal opinion.",
+  "target": [
+    "ss-philippi-iacobi-apostolorum",
+    "main",
+    "Collect",
+    "all",
+    2
+  ],
+  "base_commit": "f3f59d483358128e1b78d7a12aaeb4f3feab4a8a",
+  "current_calendar": {
+    "path": "src/sources/calendars/roman-1962/propers.yaml",
+    "sha256": "ef47c63c9528a99f2e5b70bd849f0014f8bbddfc1a8af116d77e500e08c0f9bf",
+    "exact_before_node_matches": true,
+    "before_state": "unavailable / no-exemplar; own-collect alternative outside-paschal; occurrence1 anchor unchanged"
+  },
+  "accepted_exact_packet": {
+    "path": ".scratch/reader-completion-20261026-latin-holds/philip-james/SEALED.json",
+    "sha256": "67833fd7230bf68bd7aff8fdac9c14312df8b37bc54dc7a4fb27a44bf3d76b05",
+    "bytes": 2301
+  },
+  "accepted_exact_proposal": {
+    "path": ".scratch/reader-completion-20261026-latin-holds/philip-james/source-only-proposal.json",
+    "sha256": "a0a7beef1758aebd6c1b1e80b02abfb64e241e251219ab61eda63ba0a5b7ebaf",
+    "bytes": 3730
+  },
+  "accepted_exact_word_delta": {
+    "path": ".scratch/reader-completion-20261026-latin-holds/philip-james/whole-prayer-word-delta.json",
+    "sha256": "ace84f476a0774aad23fa65da60ebce18008b72cd880ea489811a026c4ec04c0",
+    "bytes": 1358
+  },
+  "accepted_source_postimages": [
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/unidentified-pre-1955-witness-ia-1947/artifacts/ia-full-text-pdf-f0d4edd4/artifact.toml",
+      "pre_sha256": null,
+      "post_sha256": "259f045d593e460bc68e2c488580636ea184785536385942163d6254f05a4270",
+      "bytes": 1699
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/unidentified-pre-1955-witness-ia-1947/artifacts/philip-collect-and-identity-pages-20261026/artifact.toml",
+      "pre_sha256": null,
+      "post_sha256": "df6db62f4cd7db631c8c84861764b5807e807b0164a961b5daafcdc806554af2",
+      "bytes": 2305
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/unidentified-pre-1955-witness-ia-1947/artifacts/philip-collect-and-identity-pages-20261026/source.pdf",
+      "pre_sha256": null,
+      "post_sha256": "eb0935b8e430e516596079173bd1090ace8d1a0bb0a6b796e6b560784241cb34",
+      "bytes": 3207233
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/unidentified-pre-1955-witness-ia-1947/artifacts/philip-votive-collect-checked-20261026/artifact.toml",
+      "pre_sha256": null,
+      "post_sha256": "5899c8749f274a1b321954d6bbc82fbde491384afdca6fcaf0b826fecc885462",
+      "bytes": 2511
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/unidentified-pre-1955-witness-ia-1947/artifacts/philip-votive-collect-checked-20261026/latin.txt",
+      "pre_sha256": null,
+      "post_sha256": "799378bbde82ce5eaab33385b1dac3edb4c2819e917f16c48b3285a9cd75d1a1",
+      "bytes": 170
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/unidentified-pre-1955-witness-ia-1947/passages/philip-votive-collect-20261026.toml",
+      "pre_sha256": null,
+      "post_sha256": "33c593642da33a9e4d1b7e12699e015c6d7b2dbccd91ea1a40dc2e960d1525c6",
+      "bytes": 1060
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/unidentified-pre-1955-witness-ia-1947/passages/philip-votive-collect-images-20261026.toml",
+      "pre_sha256": null,
+      "post_sha256": "63b5e115a6afd69ac8b1530b86fa36167f926e845d0e4bbc76e4cf6cb238b8b3",
+      "bytes": 1073
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/unidentified-pre-1955-witness-ia-1947/passages/title-copyright-approval-20261026.toml",
+      "pre_sha256": null,
+      "post_sha256": "4501d7bd58e9f54a52d132f2102c5ca50bb069fe5f9141a2f78cb98be480d9e7",
+      "bytes": 1079
+    }
+  ],
+  "accepted_source_postimages_count": 8,
+  "historical_body": {
+    "text": "Deus, qui nos Apostolorum tuorum Philippi et Jacobi commemoratione laetificas: praesta, quaesumus; ut, quorum gaudemus meritis, instruamur exemplis. Per Dominum nostrum.\n",
+    "sha256": "799378bbde82ce5eaab33385b1dac3edb4c2819e917f16c48b3285a9cd75d1a1",
+    "bytes": 170,
+    "actual_conclusion": "Per Dominum nostrum.",
+    "source_page": 637,
+    "printed_page": 563,
+    "column": "left, Oratio under explicit Pro Missis votivis extra Tempus Paschale setting",
+    "source_words_control": "Actual whole-page rasters at 200 and 400 dpi. OCR is only a finding aid.",
+    "normalization": "Stress accents removed; ligatures expanded; line and intra-word hyphens joined; complete words, pointing, proper name and actual conclusion preserved; source Jacobi retained."
+  },
+  "identity_findings": [
+    "Whole delivered IA Additional Text PDF is 289044262 bytes / 1218 pages; independent SHA256 f0d4edd45cb0edf3120625bdd365b11b3302eef00708650e7e85cbed960448c3 and SHA1 e8cbe094bd0af49e5c6bf383bf6a94f822ce1aff match held full metadata. OCR companion SHA256724a04fa083f780580a066b6ff2cad806190406d0c2112f74d2d8b8efbfc4bcb joins the previously registered exact artifact; its metadata SHA1/size independently agree.",
+    "Own full page1 identifies Missale Romanum, editio IV juxta typicam Vaticanam, Neo Eboraci, Benziger Brothers, Inc. It is a conformed publisher edition; it is not authenticated as an actual Vatican typical impression.",
+    "Own full page2 expressly prints Copyright, 1942, 1944, by Benziger Brothers, Inc., and Set up, printed and bound in the United States of America.",
+    "Own full page3 gives Francis Joseph, Archbishop of New York, approval dated 8 December 1942, confirming agreement with the typical edition and SRC additions/variations of 9 January 1942.",
+    "Own full page4 reprints the typical decree of 25 July 1920. This is contextual conformity evidence and does not date the Benziger impression to1920.",
+    "The uploader title/locator1947 remains an acquisition label. The exact printing year and a single exact registration assignment remain unsettled.",
+    "Extract controller SHA256eb0935b8e430e516596079173bd1090ace8d1a0bb0a6b796e6b560784241cb34 is exactly eight full pages: original1-4 then635-638. All eight independently rendered whole/extract pairs match byte-exact at200dpi; original637/extract7 also match at400dpi. Passage ranges[1,4], [5,8] and textline[1,1] match these exact controllers."
+  ],
+  "complete_target_findings": [
+    "Modern private fullPDF605-607 establish own May11 SS.Philippi et Iacobi identity. Occurrence1 unit2550 on605 is the distinct annual annua prayer with the shorter Per Dominum ending.",
+    "Exact occurrence2 is fullPDF606 / printed525, right-bottom unit2559 below Extra tempus paschale. Whole prayer and actual Per Dominum nostrum. are present on606;607 closes the outside-Paschal setting before May12.",
+    "New Benziger full635-638 establish own May1 named Philip/James historical setting. Full637 expressly starts a separate votive Mass outside Paschal time and prints the complete commemoratione prayer. No annua occurs in this prayer; none is deleted from the proposal.",
+    "After declared Jacobi/Iacobi consonantal spelling comparison, whole-word difference to the entire actual modern parenthetical union is exactly one added ordinary target word solemnitate. The actual target prints solemnitate (commemoratione), with that spelling and functional parentheses. All other words and the actual Per Dominum nostrum. ending agree.",
+    "This historical source proves the entire commemoratione choice. It does not itself print either the complete1962 parenthetical union or a no-annua solemnitate choice. No text is inferred, joined from unrelated prayers or reconstructed."
+  ],
+  "existing_rights_record_condition": {
+    "record": {
+      "path": "src/sources/inventories/lasance-new-roman-missal-rights-v1.toml",
+      "sha256": "2125b5c00cfec520ec15ccb50d6935375c5180df20f64cac22a478ec411154b1",
+      "bytes": 47983
+    },
+    "section": "the_1942_benziger",
+    "inspection_condition": "The stated condition requiring inspection of this artifact own title/copyright leaves is factually satisfied by these exact complete source pages1-3.",
+    "accepted_scope": "The proposed bounded eight-page historical excerpt and its exact historical Latin transcription can rely on the existing six-registration nonrenewal disposition, subject to coordinator adoption and durable recording of this fulfilled inspection condition.",
+    "registration_limit": "The title editioIV and copyright1942/1944 do not determine one exact registration or printing year. The existing record explicitly reports all six1942-1945 branches unrenewed and retains the A5373 collision disposition; this source review does not rerun or expand that legal search.",
+    "excluded_scope": "No whole1962 work clearance, general HolySee clearance, unexamined later insert, entire289MB derivative redistribution, uploader licence reliance or new independent legal opinion."
+  },
+  "preserved_prior_refusals": {
+    "record": {
+      "path": ".scratch/resume-next-latin-five-residual/dispositions.json",
+      "sha256": "0d2025764efbb053dead5132c919b80129776a80e1ec35541af5d6271285a117",
+      "bytes": 17595
+    },
+    "Pustet1862_extent": [
+      520,
+      521,
+      522
+    ],
+    "Mame1922_extent": [
+      696,
+      697,
+      698
+    ],
+    "disposition": "Their bounded nonidentity findings remain correct for those exact witnesses: annual annua retained, parenthetical commemoratione absent, and Pustet shorter ending. The new Benziger whole-prayer witness is a distinct positive source; these old records are not rewritten. This review does not newly claim exhaustive absence in either old book."
+  },
+  "actual_image_reads": [
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/philip-james/benziger-identity-200-0001.png",
+      "sha256": "48f587893f96eb22c2c902305b32199ef36b8301cf388279101abae10c847c30",
+      "dpi": 200,
+      "PDF_page": 1,
+      "role": "complete historical identity leaf"
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/philip-james/benziger-identity-200-0002.png",
+      "sha256": "ad4eea67cc1b138dbd7f57b5c480dcb161018e5a4f67d33f14655fd49c926650",
+      "dpi": 200,
+      "PDF_page": 2,
+      "role": "complete historical identity leaf"
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/philip-james/benziger-identity-200-0003.png",
+      "sha256": "f8e2b1ed64741da3c27f47864000d19e3fdfb3a22a964be899a412f9e2514ff7",
+      "dpi": 200,
+      "PDF_page": 3,
+      "role": "complete historical identity leaf"
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/philip-james/benziger-identity-200-0004.png",
+      "sha256": "d5b47a295edaaeb3b464477a07460a245f3d32d26af04ef56568f382b809e433",
+      "dpi": 200,
+      "PDF_page": 4,
+      "role": "complete historical identity leaf"
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/philip-james/benziger-philip-200-0635.png",
+      "sha256": "51ce422a3ead7f0922ff01e96597eaa20fc4ab005081e02d9ac215cbc20f5aea",
+      "dpi": 200,
+      "PDF_page": 635,
+      "role": "complete named historical setting"
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/philip-james/benziger-philip-200-0636.png",
+      "sha256": "6786e3a04e043fb4eb860493a7a5940c5fa2b540f0801531dc960f7ca93da796",
+      "dpi": 200,
+      "PDF_page": 636,
+      "role": "complete named historical setting"
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/philip-james/benziger-philip-200-0637.png",
+      "sha256": "532c05096e7211b4c38ec762e7a14877d776a8648936ae4aeeea2fcb43c0f86d",
+      "dpi": 200,
+      "PDF_page": 637,
+      "role": "complete named historical setting"
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/philip-james/benziger-philip-200-0638.png",
+      "sha256": "30a63d40e52e0980b2c201487400e3b548f6b28fde1964f9210bb7237332a4e0",
+      "dpi": 200,
+      "PDF_page": 638,
+      "role": "complete named historical setting"
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/philip-james/private-target-200-0605.png",
+      "sha256": "6249d7bf22dedf5f587cda7061f0bfed1632dcbbfbb4444b04689a8eed53e744",
+      "dpi": 200,
+      "PDF_page": 605,
+      "role": "complete modern-target private appointment context; not public transport"
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/philip-james/private-target-200-0606.png",
+      "sha256": "5a65592e682b7a4205fe9742932a83682fb03d350fba68658ca79e554e4dbde6",
+      "dpi": 200,
+      "PDF_page": 606,
+      "role": "complete modern-target private appointment context; not public transport"
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/philip-james/private-target-200-0607.png",
+      "sha256": "ddc509c97cdc8ad00f5c5c1a79a01533a0678fd256b8f3f258c0c9ca10aca369",
+      "dpi": 200,
+      "PDF_page": 607,
+      "role": "complete modern-target private appointment context; not public transport"
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/philip-james/benziger-philip-400-0637.png",
+      "sha256": "f19dd8a3c8b97b652716f30145c19a520846ff9f4afcd3207a50026cfb1337b7",
+      "dpi": 400,
+      "PDF_page": 637,
+      "role": "complete historical prayer and context"
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/philip-james/private-target-400-0606.png",
+      "sha256": "730947aeacb0a1bf7d53b77238e12b53fd3dcdd36b205a9cdaa0fd0fa37e40a1",
+      "dpi": 400,
+      "PDF_page": 606,
+      "role": "complete private target union and ending"
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/source-review-philip/identity-400-0001.png",
+      "sha256": "2349821332328b88009191a3ae90f7a8b6db270a05f505632e77f65cbf896962",
+      "dpi": 400,
+      "PDF_page": 1,
+      "role": "reviewer independently rendered complete title"
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/source-review-philip/identity-400-0002.png",
+      "sha256": "1a0299f7d7f87168b894c29b5bfd0d38d958d6973e7fb800748e464e32b23f4a",
+      "dpi": 400,
+      "PDF_page": 2,
+      "role": "reviewer independently rendered complete copyright"
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/source-review-philip/identity-400-0003.png",
+      "sha256": "853450db46142281446a68c87020284b6548936840e5b661f9b0eebf89cc47f9",
+      "dpi": 400,
+      "PDF_page": 3,
+      "role": "reviewer independently rendered complete approval"
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/source-review-philip/source637-400.png",
+      "sha256": "0ef47e5db59edf6f80a3717cc32c5a3eed557126e948dea2db2370bc8c870c45",
+      "dpi": 400,
+      "PDF_page": 637,
+      "role": "reviewer independently rendered complete historical prayer"
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/source-review-philip/target606-400.png",
+      "sha256": "730947aeacb0a1bf7d53b77238e12b53fd3dcdd36b205a9cdaa0fd0fa37e40a1",
+      "dpi": 400,
+      "PDF_page": 606,
+      "role": "reviewer independently rendered complete private target"
+    }
+  ],
+  "counts": {
+    "actual_whole_page_views_read": 18,
+    "new_historical_source_postimages": 8,
+    "new_TOML_records_parsed": 6,
+    "pinned_input_or_postimage_file_checks": 33,
+    "whole_source_extract_default_raster_pair_checks": 9,
+    "historical_author_gray_raster_pins_reproduced": 9,
+    "private_target_rasters_reproduced": 4,
+    "IA_file_size_SHA1_joins": 2,
+    "whole_PDF_identity_checks": 3,
+    "exact_current_node_checks": 1,
+    "patch_check": 1,
+    "source_or_metadata_defects": 0,
+    "canonical_writes": 0,
+    "Git_mutations": 0
+  },
+  "check_evidence": [
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/source-review-philip/mechanical-evidence.json",
+      "sha256": "448a024010c577b67a1e6b5b7a046ec03cac3fda84c8f4964159a52fee923ca2",
+      "bytes": 10159
+    },
+    {
+      "path": ".scratch/reader-completion-20261026-latin-holds/source-review-philip/reproduction-evidence.json",
+      "sha256": "f0afddedd9c3eb27b99445f37c6197f9b48c473e79bd45b17b655ffaa7ac9346",
+      "bytes": 12559
+    }
+  ],
+  "read_only_patch_check": {
+    "command": "git apply --check .scratch/reader-completion-20261026-latin-holds/philip-james/source-records.patch",
+    "exit_code": 0,
+    "result": "All eight additive paths are absent and patch applies to current base without mutation."
+  },
+  "remaining_requirements": [
+    "Coordinator must separately accept and durably bind the existing narrow short-phrase/functional-parenthesis rights decision to the exact modern target delta; this source-only receipt does not grant that legal or publication admission.",
+    "Coordinator must assemble and review exact canonical body/proof/provenance joins and source graph on the current parent. Full graph, calendar gates and assembled installation are outside this source review.",
+    "Any change to the sealed proposal, postimage bytes, source controller, actual words, ending, parenthetical treatment or rights basis requires a new bounded review disposition.",
+    "Private modern source PDF, target rasters and private-target-control.json remain excluded from public transport; independently rendered reviewer target rasters remain private scratch."
+  ],
+  "explicit_nonclaims": [
+    "No English acceptance or new translation",
+    "No annual completeness result",
+    "No source adopted or canonical body published by this reviewer",
+    "No sourcegraph global gate pass",
+    "No rewrite of old refusals or sealed packet state",
+    "No acceptance of Anthony from this review"
+  ]
+}

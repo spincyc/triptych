@@ -527,10 +527,12 @@ class Day(Surface):
         return self.choices.setdefault((calendar or self.calendar, self.date.isoformat()), {})
 
     def offers(self, calendar: str) -> list:
-        """Every open choice of one missal's reading, each tagged with its branch."""
+        """The source's choices stay reachable after a selection, within its branch."""
         view = self.views.get(calendar) or {}
         found = []
         for row in view.get("rows") or []:
+            if row.get("failed"):
+                continue
             branch = (row.get("heading") or {}).get("label")
             prefix = f"{branch} · " if branch else ""
             context = {**row, "day": {"branches": [row.get("branch") or {}]}}
@@ -543,6 +545,24 @@ class Day(Surface):
                     found.append(((calendar, row.get("option"), ident, option["id"], row),
                                   f"{prefix}{missal.option_label(choice, option, context)}"
                                   f"   ({choice.get('reason') or ident})"))
+            # Unresolved choices disappear once made. The resolved branch still
+            # carries the same readable identities, and the selected Mass still
+            # carries its source-authored forms. Keep those source identities
+            # reachable without adding other Masses or forms.
+            resolved = self.resolved_key(row)
+            readable = (row.get("branch") or {}).get("readable") or []
+            if resolved and len(readable) > 1:
+                for option in readable:
+                    mark = " (selected)" if option["key"] == resolved else ""
+                    found.append(((calendar, row.get("option"), "calendar-formulary", option["key"], row),
+                                  f"{prefix}{option.get('label') or option['key']} — {option['state']}{mark}"))
+            selected_form = (row.get("resolved") or {}).get("form")
+            forms = (row.get("mass") or {}).get("forms") or []
+            if selected_form and len(forms) > 1:
+                for form in forms:
+                    mark = " (selected)" if form["id"] == selected_form else ""
+                    found.append(((calendar, row.get("option"), "proper-form", form["id"], row),
+                                  f"{prefix}{form['name']}   (formulary form){mark}"))
             for path in row.get("sourcePaths") or []:
                 for option in path["options"]:
                     if not option["unavailable"] and option.get("properChoices"):

@@ -1,0 +1,50 @@
+{
+  "artifact_latex_log": "build/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily.log",
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/homily.tex",
+  "author_proof": {
+    "artifacts_dir": "build/tpt-runs/427e2f58bb897a16/artifacts/derive-homily-0000",
+    "hashes": "build/tpt-runs/427e2f58bb897a16/artifacts/derive-homily-0000/hashes.txt",
+    "log": "build/tpt-runs/427e2f58bb897a16/artifacts/derive-homily-0000/make-doc.log",
+    "pages": 4,
+    "pdf": "build/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily.pdf",
+    "rasters": [
+      "build/tpt-runs/427e2f58bb897a16/artifacts/derive-homily-0000/rasters/page-1.png",
+      "build/tpt-runs/427e2f58bb897a16/artifacts/derive-homily-0000/rasters/page-2.png",
+      "build/tpt-runs/427e2f58bb897a16/artifacts/derive-homily-0000/rasters/page-3.png",
+      "build/tpt-runs/427e2f58bb897a16/artifacts/derive-homily-0000/rasters/page-4.png"
+    ],
+    "sha256": "53f0ea66ead5b95adb97e314f83cc1fbc5bbb2c9044c2f93e4a97dce09ccf957"
+  },
+  "checks": {
+    "make doc PROVIDER=claude DOC=liturgy/roman-rite/1962/propers/temporal/f02-all-saints-homily (anchor check: 0 contents lines, 0 bookmarks, every one on its own anchor; manifest valid: 1; generation metadata: 1 canonical, 0 inherited; LaTeX log clean: no fatal errors, undefined references, overfull/underfull boxes or hyperref warnings)": "exit 0",
+    "scripts/_proper_study.py check --phase content --edition homily --date 2026-11-01 --require-presentation --require-format --require-authority --require-orientation --require-orientation-v2": "exit 0",
+    "tpt check-content-preflight --edition homily --check bindings-valid (47 bindings, every id registered and fingerprinted)": "exit 0",
+    "tpt check-content-preflight --edition homily --check chronology-annotations-current": "exit 0",
+    "tpt check-content-preflight --edition homily --check chronology-claims-supported": "exit 0",
+    "tpt check-content-preflight --edition homily --check chronology-record-current": "exit 0",
+    "tpt check-content-preflight --edition homily --check house-voice": "exit 0",
+    "tpt check-content-preflight --edition homily --check identifiers-resolve (the leaf prints no source identifier)": "exit 0",
+    "tpt check-content-preflight --edition homily --check provenance-matches-run --run-workflow proper-study --run-workflow-version 15 --run-workflow-digest 4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83 --run-id 427e2f58bb897a16 --run-seed-commit c7dfb84c76a057079251e8c918243b787fa69494": "exit 0",
+    "tpt check-content-preflight --edition homily --check references-used (11 entries, every one used in the body)": "exit 0",
+    "tpt check-content-preflight --edition homily --check relation-coverage (3 interpretive lanes, each declaring all four senses and whole-proper component coverage)": "exit 0",
+    "tpt check-content-preflight --edition homily --check restricted-not-reproduced (7 restricted sources, none reproduced)": "exit 0",
+    "tpt check-content-preflight --edition homily --check structural-meta-labels": "exit 0",
+    "tpt check-content-preflight --edition homily --check unquoted-not-quoted": "exit 0",
+    "tpt check-proper-components --phase artifacts --edition homily": "exit 0"
+  },
+  "disposition": "PASS",
+  "files_changed": [
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/homily.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/10-homily.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/sections/homily/90-note.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/generation-metadata.tex",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints/research/production-review.md"
+  ],
+  "iteration": 0,
+  "reports_for_other_owners": [
+    "No new defects. The accepted expansive study still says 'the seven orations of this Mass' in sections/05-appointed-texts.tex and sections/90-synthesis.tex although the leaf prints six (five feast orations plus the commemorated Collect); already reported by derive-study-3 and derive-synthesis-0, and remains with the study's owner. The homily avoids the count ('the Collect', 'the prayers of this Mass') and was verified to contain no 'seven' count.",
+    "The homily's spoken body runs about 1,445 words (some 11.1-12.0 minutes at 120-130 words per minute by arithmetic alone); it has not been delivered aloud or timed, and any future re-voicing should keep the revision timestamp, the note's length paragraph and the production-audit entry in step."
+  ],
+  "stage": "derive-homily",
+  "summary": "Wrote the All Saints homily 'The Way the Saints Walked' (homily.tex plus its two manifest-declared components): a 1,445-word spoken body, ready to read aloud to an adult parish assembly at the Mass of All Saints said on Sunday 1 November 2026, taking its spine from the accepted study's second interpretation (Augustine's ordered way and Chrysostom's golden chain) and borrowing from the first (Bede's definite number signifying the innumerable multitude, Augustine's 'mass of the saints') and the third (Augustine's objector, Basil's perfect good, Aquinas's nourisher-and-physician, Schuster's hands sentence). The speech joins the Gospel to the Introit, Lesson, Alleluia, Gradual, Offertory, Secret, Communion and Postcommunion, hears the commemorated Sunday's Collect as the prayer of the first step, and ends at the Communion's three beatitudes on 'the clean of heart shall see God'; the note on sources and delivery records audience, length and pace, the relation to the study's three interpretations, the route of every quoted text, and the exact loci. All component-contract and content-preflight gates pass; the 4-page proof PDF was inspected at raster resolution page by page."
+}

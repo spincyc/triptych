@@ -1,0 +1,17 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.fsspx.ordo.web-2026-10-26.texts-json-5404783d"
+edition_id = "edition.fsspx.ordo.web-2026-10-26"
+artifact_type = "web-api-response"
+media_type = "application/json"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "Modern institutional calendar data with French translations of the Mass texts and an authored notice. Public access does not establish redistribution rights, and no affirmative grant was identified. Only identity and factual-locus metadata are retained."
+rights_jurisdiction = "United States"
+source_url = "https://ordo.fsspx.org/api/v1/calendar/2026/11/1/texts"
+provenance = "Retrieved complete over HTTPS on 2026-10-26 by the resolve-context stage of workflow run 427e2f58bb897a16 and hashed as received. The source-registration stage of the same run re-hashed the retained receipt (SHA-256 and byte length matched) and read the day, celebration, commemoration and observance fields and the Mass items in the parsed JSON. Nothing between the server and this hash passed through a language model."
+retrieved = "2026-10-26"
+sha256 = "5404783db2625d3f59dbc4281080d7c6f954549803df227a51b714e8898d221f"
+byte_size = 11425
+indexable = false
+notes = "Complete JSON response of the texts endpoint for 2026-11-01. Byte stability was not measured. Access limitation: the response is not retained, because its translations and notice lack an affirmative redistribution basis; offline readers have this identity and the factual passage record, and a later request to the URL may return different data."

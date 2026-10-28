@@ -2535,7 +2535,114 @@ window.Triptych = (function () {
    * the Latin stays visible, labelled as Latin, beside the exact typed absence of
    * the translation. No other witness of the translation is borrowed.
    */
+  /** A readable petition, with its immutable historical ending in apparatus. */
+  function renderExecutionSource(container, held) {
+    const selected = held.executionSource;
+    const source = selected.source;
+    const range = source.ranges[0];
+    const body = composedBody(source.source_text.slice(range.start, range.end), null,
+      composedLabel('Historical English petition · dated RG110 execution source'));
+    body.lang = 'en';
+    body.setAttribute('data-execution-petition', source.record_sha256);
+    container.appendChild(body);
+    const apparatus = el('aside', 'execution-source-apparatus');
+    apparatus.setAttribute('role', 'note');
+    apparatus.setAttribute('data-copy', 'skip');
+    apparatus.appendChild(el('p', 'composed-note', 'Historical human English; not approved for liturgical use. Only the petition is projected here; a translation of this whole prayer remains unavailable for this Missal.'));
+    apparatus.appendChild(el('p', 'composed-note', 'Historical source: ' + source.source_label +
+      '. Its printed ending belongs to the source witness; the appointed joint conclusion belongs to the companion. Any unbound English cue remains unresolved.'));
+    const cue = source.ranges[2];
+    apparatus.appendChild(el('p', 'composed-note historical-ending-cue',
+      'Historical witness ending: ' + source.source_text.slice(cue.start, cue.end)));
+    const details = el('details', 'execution-source-whole');
+    details.appendChild(el('summary', 'composed-note', 'Complete historical English prayer'));
+    details.appendChild(el('p', 'composed-note', source.source_text));
+    apparatus.appendChild(details);
+    container.appendChild(apparatus);
+    if (selected.state === 'unresolved') {
+      const note = el('p', 'composed-note unit-absence execution-source-unresolved',
+        'Execution remains unresolved: ' + selected.unresolved.map(function (reason) {
+          return {'companion-English-conclusion-unbound': 'the companion source prints no English ending cue',
+            'source-name-placeholder-unbound': 'the source name placeholder is unbound',
+            'companion-English-unavailable-in-selected-witness': 'the companion English is unavailable in the selected witness',
+            'later-shared-conclusion-unbound': 'a later shared conclusion remains unbound'}[reason] || reason;
+        }).join('; ') + '.');
+      note.dataset.unitAbsence = 'unresolved:oration-execution';
+      container.appendChild(note);
+    }
+    return {text: null, lang: 'en', shown: true, missing: false, source: source.source_id,
+      sourceLabel: source.source_label, rights: 'public-domain', executionScoped: true};
+  }
+
+  /** Witness offers from selected, applied execution contexts, separate from body coverage. */
+  function executionWitnesses(result, ordinaryChoices, language) {
+    const choices = ordinaryChoices.slice();
+    if (language !== 'en') return choices;
+    const counts = new Map();
+    const seen = new Set();
+    function visit(event) {
+      if (event.kind === 'proper-choice') {
+        (event.options || []).filter(function (option) {
+          return event.selection.state === 'selected' && option.id === event.selection.option;
+        }).forEach(function (option) { (option.events || []).forEach(visit); });
+      }
+      if (event.executionSource && !seen.has(event.id)) {
+        seen.add(event.id);
+        const source = event.executionSource.source;
+        if (!counts.has(source.source_id)) counts.set(source.source_id, {source: source, count: 0});
+        counts.get(source.source_id).count++;
+      }
+      (event.orationGroups || []).forEach(function (group) { (group.members || []).forEach(visit); });
+    }
+    (result && result.events || []).forEach(visit);
+    counts.forEach(function (row, id) {
+      const existing = choices.find(function (choice) { return choice.id === id || (choice.aliases || []).indexOf(id) >= 0; });
+      const label = row.count + ' execution-scoped source petitions';
+      if (existing) existing.label += ' · ' + label;
+      else choices.push({id: id, aliases: row.source.source_aliases, label: row.source.source_label + ' · ' + label,
+        execution_sources: row.count, whole_body_translations_added: 0});
+    });
+    return choices;
+  }
+
+  function renderNameExecution(container, held) {
+    const selected = held.nameExecution, relation = selected.relation;
+    const source = relation.template, controller = relation.name_controller;
+    const bound = selected.state === 'name-bound';
+    const name = controller.text.slice(controller.name_span.start, controller.name_span.end);
+    // Only the two attested source intervals participate. Every outside source
+    // character, including commas, titles, can not and the actual cue, survives.
+    const text = bound ? source.text.slice(0, source.placeholder.start) + name + source.text.slice(source.placeholder.end) : source.text;
+    const body = composedBody(text, null, composedLabel(bound
+      ? 'Derived reading · historical prayer and attested name'
+      : 'Historical Common template · name remains unbound'));
+    body.lang = 'en';body.dataset.nameExecutionState = selected.state;
+    container.appendChild(body);
+    const apparatus = el('aside', 'name-execution-apparatus');
+    apparatus.setAttribute('data-copy', 'skip');apparatus.setAttribute('role', 'note');
+    apparatus.appendChild(el('p', 'composed-note',
+      (bound ? 'This name binding is a separately reviewed execution inference for this occurrence. ' : 'This name relation is limited to ' + relation.accepted_date + ' and its stated Mass conditions; it is not applied here. ') + 'The historical prayer itself prints N.; no historically printed named English prayer is claimed.'));
+    if (relation.canonical_latin_sha256 !== relation.named_normative_latin_sha256) apparatus.appendChild(el('p', 'composed-note',
+      'The canonical Latin remains its Common template with N. The separately reviewed named Latin controller is distinct.'));
+    apparatus.appendChild(el('p', 'composed-note', 'Historical source: ' + relation.source_label));
+    const full = el('div', 'name-execution-sources');
+    full.appendChild(el('p', 'composed-note', 'Historical template and literal name source'));
+    if (bound) full.appendChild(el('p', 'composed-note historical-name-template', source.text));
+    full.appendChild(el('p', 'composed-note historical-name-controller', controller.text));
+    apparatus.appendChild(full);
+    apparatus.appendChild(el('p', 'composed-note',
+      'The literal English ending is retained: ' + relation.conclusion.literal_english_cue + ' No conclusion tail or response is supplied.'));
+    container.appendChild(apparatus);
+    if (!bound) {
+      const note = el('p', 'composed-note unit-absence name-execution-hold', 'Name execution remains unresolved: ' + selected.unresolved.map(function (reason) { return {'exact-dated-occurrence-not-adopted': 'this date has no adopted name relation', 'accepted-Mass-of-Office-use-unbound': 'the Mass-of-Office use is unbound', 'exact-own-Mass-of-Office-not-selected': 'the exact own Mass is not selected', 'unexpected-use-context-for-own-Mass-of-Office': 'a foreign or unsupported use context was supplied for the own Mass', 'accepted-ordinary-commemoration-not-applied': 'this ordinary commemoration is not applied', 'explicit-Mass-form-and-conventual-context-unbound': 'the Mass form and conventual status are not established', 'source-backed-Mass-use-context-differs': 'the supplied Mass context differs from the source conditions', 'ordinary-commemoration-not-applicable-in-nonconventual-sung-Mass': 'an ordinary commemoration is not applicable in a non-conventual sung Mass', 'later-shared-conclusion-unbound': 'the later shared conclusion is unbound'}[reason] || reason; }).join('; ') + '.');
+      note.dataset.unitAbsence = 'unresolved:finite-name-execution';container.appendChild(note);
+    }
+    return {text: null, lang: 'en', shown: true, missing: false, source: null, executionScoped: true, nameExecutionScoped: true};
+  }
+
   function renderSingleOrationState(container, owner, held, scope, parentSource) {
+    if (held.nameExecution && held.orations === 'en') return renderNameExecution(container, held);
+    if (held.executionSource && held.orations === 'en') return renderExecutionSource(container, held);
     const asked = held.orations || SOURCE_LANGUAGE;
     const oration = orationFor(owner, asked, held.translationWitness || null);
     const latinHeld = Boolean(owner.text) && !(owner.latin && owner.latin.withheld);
@@ -2560,6 +2667,21 @@ window.Triptych = (function () {
         composed.setAttribute('data-unit-original', SOURCE_LANGUAGE);
       }
       container.appendChild(composed);
+      const context = shownLang === SOURCE_LANGUAGE && owner.latin && owner.latin.target_context;
+      if (context && Object.keys(context).length === 3 &&
+          context.scope === 'witness-state-only' && context.civil_date_authority === false &&
+          typeof context.label === 'string' && context.label.trim() &&
+          owner.latin.withheld === false &&
+          owner.latin.publication && owner.latin.publication.status === 'permitted' &&
+          ['public-domain', 'project-created', 'permission', 'licensed'].includes(owner.latin.publication.basis) &&
+          owner.latin.provenance && owner.latin.provenance.status === 'collated' &&
+          owner.latin.provenance.relationship === 'editorial-projection-exact-to-target') {
+        const note = el('p', 'composed-note unit-witness-context',
+          context.label + ' · checked witness wording; no date-specific pre-1955 attribution is established.');
+        note.lang = 'en';
+        note.setAttribute('data-target-witness-context', context.scope);
+        container.appendChild(note);
+      }
     }
     oration.shown = Boolean(shown);
     if (!oration.missing) return oration;
@@ -2626,6 +2748,10 @@ window.Triptych = (function () {
       label: 'Lasance and Walsh, The New Roman Missal (1945 revision)',
       qualification: 'Historical lay translation; not approved for liturgical use. Its wording and recension may differ from the selected Missal.'
     },
+    'edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925': {
+      label: 'Daily Missal with Vespers (Saint André/Lohmann; early version dated to 1925 by its catalogue)',
+      qualification: 'Historical translation; not official 1962 or modern postconciliar English. Its prayer translator is unnamed. Wording and recension may differ from the selected Missal.'
+    },
     'edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861': {
       label: 'The Roman Missal for the Laity (Cummiskey, 1861)',
       qualification: 'Historical lay translation; not approved for liturgical use. Its wording and recension may differ from the selected Missal.'
@@ -2668,6 +2794,7 @@ window.Triptych = (function () {
   }
 
   function orationCredits(container, oration) {
+    if (oration.executionScoped) return;
     container.appendChild(translationCredits(oration));
   }
 
@@ -2681,6 +2808,9 @@ window.Triptych = (function () {
     const latin = orationFor(owner, SOURCE_LANGUAGE, null);
     const selected = orationFor(owner, asked, held.translationWitness || null);
     function metadata(lang, selection) {
+      if (lang === 'en' && held.nameExecution) return {sourceId: held.nameExecution.relation.source_id, rights: 'public-domain', relationship: held.nameExecution.state === 'name-bound' ? 'derived-name-execution' : 'historical-template-quotation', availability: 'held'};
+      if (lang === 'en' && held.executionSource) return {sourceId: held.executionSource.source.source_id,
+        rights: 'public-domain', relationship: 'execution-petition-only', availability: 'held'};
       const row = coverage && (coverage.languages || []).find(function (one) { return one.lang === lang; });
       const witness = row && (row.witnesses || []).find(function (one) {
         return one.id === selection.source || one.source_id === selection.source ||
@@ -2901,13 +3031,27 @@ window.Triptych = (function () {
   /** Render exact separately attributed bodies, never a synthesized prayer. */
   function appendOrationGroups(section, groups, eventId, structure, bible, fragments, options) {
     (groups || []).forEach(function (group) {
-      if (group.kind !== 'inseparable' || group.count !== 1 ||
-          !Array.isArray(group.members) || group.members.length !== 2) {
-        throw new Error('invalid inseparable oration presentation');
+      if (group.count !== 1 || !Array.isArray(group.members) ||
+          (group.kind === 'inseparable' ? group.members.length !== 2 :
+            group.kind === 'commemoration' ? group.members.length !== 1 : true)) {
+        throw new Error('invalid counted oration presentation');
       }
-      const wrapper = el('div', 'inseparable-oration-group');
+      const wrapper = el('div', group.kind === 'inseparable' ? 'inseparable-oration-group' : 'commemorated-oration');
       wrapper.dataset.orationCount = '1';
       wrapper.dataset.orationBasis = group.locus;
+      if (group.conclusion_group) wrapper.dataset.conclusionGroup = String(group.conclusion_group);
+      if (group.execution && (group.execution.unresolved || []).indexOf('intermediate-conclusion-spans-unbound') >= 0 && group.position === 2) {
+        const absence = el('p', 'composed-note unit-absence oration-execution-absence',
+          'These source prayers retain their printed ending cues. One second conclusion is appointed for this chain; an execution text separating the intermediate cues is not yet established.');
+        absence.dataset.unitAbsence = 'unresolved:oration-execution-boundaries';
+        wrapper.appendChild(absence);
+      }
+      if (group.execution && (group.execution.unresolved || []).indexOf('source-name-placeholder-unbound') >= 0) {
+        const absence = el('p', 'composed-note unit-absence oration-execution-absence',
+          group.members.some(function (member) { return member.nameExecution && member.nameExecution.state === 'name-bound'; }) ? 'The canonical source retains N. The separately labelled English name execution does not change that Latin source.' : 'The appointed source retains a name placeholder. Occurrence-specific name wording is not established.');
+        absence.dataset.unitAbsence = 'unresolved:oration-source-name';
+        wrapper.appendChild(absence);
+      }
       group.members.forEach(function (member) {
         if (member.id === eventId) return;
         const hook = (member.sourceHooks || []).find(function (one) { return one.kind === 'proper-structure'; });
@@ -2918,15 +3062,15 @@ window.Triptych = (function () {
         if (!proper) throw new Error('inseparable prayer has no exact production owner: ' + member.id);
         const level = Number(String(options.heading || 'h3').slice(1)) || 3;
         const rendered = renderProper(proper, bible, fragments, Object.assign({}, options, {
-          orationGroups: null, heading: 'h' + Math.min(6, level + 1)
+          orationGroups: null, executionSource: member.executionSource || null, nameExecution: member.nameExecution || null, heading: 'h' + Math.min(6, level + 1)
         }));
         const title = rendered.querySelector('.proper-name');
         if (title && member.of_name) title.textContent = proper.name + ' — ' + member.of_name;
         wrapper.appendChild(rendered);
       });
-      wrapper.appendChild(el('p', 'composed-note inseparable-oration-note',
-        'These two prayers count as one and are said under ' + group.conclusion +
-        '.'));
+      wrapper.appendChild(el('p', group.kind === 'inseparable' ? 'composed-note inseparable-oration-note' : 'composed-note commemoration-conclusion-note',
+        group.kind === 'inseparable' ? 'These two prayers count as one and are said under ' + group.conclusion + '.' :
+          'This commemoration belongs to the second-conclusion group.'));
       section.appendChild(wrapper);
     });
   }
@@ -3008,6 +3152,7 @@ window.Triptych = (function () {
     selectedOrdinaryCoverageUnits: selectedOrdinaryCoverageUnits,
     summarizeCoverage: summarizeCoverage,
     coverageWitnesses: coverageWitnesses,
+    executionWitnesses: executionWitnesses,
     coverageSummaryText: coverageSummaryText,
     coverageNoticeText: coverageNoticeText,
     recensionContext: recensionContext,

@@ -26,7 +26,7 @@ from typing import NamedTuple
 
 ROOT = Path(__file__).resolve().parents[1]
 
-from _psalms import PSALMS
+from _psalms import PSALMS, PSALMS_TOKEN
 
 # How a refusal reads when it is the edition's own verse-alias table speaking
 # rather than a gap. The distinction is load-bearing: a recorded refusal is
@@ -383,6 +383,22 @@ class EditionReader(NamedTuple):
 
 
 @functools.lru_cache(maxsize=1)
+def _bible_register():
+    """The source-owned Bible registry and resolver, shared by the projections."""
+    loader = SourceFileLoader("_index_bible_register", str(ROOT / "tools" / "index-bible"))
+    spec = spec_from_loader(loader.name, loader)
+    register = module_from_spec(spec)
+    loader.exec_module(register)
+    return register
+
+
+@functools.lru_cache(maxsize=None)
+def _edition_bible(name: str):
+    register = _bible_register()
+    return register.Bible(register.SOURCE_ROOT / str(register.EDITIONS[name]["artifacts"]))
+
+
+@functools.lru_cache(maxsize=1)
 def edition_readers() -> tuple[EditionReader, ...]:
     """Every publishable edition held in the repository, with its departure table.
 
@@ -401,10 +417,7 @@ def edition_readers() -> tuple[EditionReader, ...]:
     from _projection import alias_rows, point  # noqa: PLC0415
     from _psalms import addressing  # noqa: PLC0415
 
-    loader = SourceFileLoader("_index_bible_register", str(ROOT / "tools" / "index-bible"))
-    spec = spec_from_loader(loader.name, loader)
-    register = module_from_spec(spec)
-    loader.exec_module(register)
+    register = _bible_register()
     readers: list[EditionReader] = []
     for name, edition in sorted(register.EDITIONS.items()):
         artifacts = register.SOURCE_ROOT / str(edition["artifacts"])
@@ -443,8 +456,37 @@ def placed(reader: EditionReader, token: str, loci: list[dict]) -> tuple[list[di
     for locus in loci:
         book = locus.get("book") or token
         chapter, first, last = locus["chapter"], locus.get("first"), locus.get("last")
-        if (book, chapter) not in reader.chapters or (first is None and last is None):
+        if (book, chapter) not in reader.chapters:
             moved.append(dict(locus))
+            continue
+        if first is None and last is None:
+            if book == PSALMS_TOKEN:
+                # A whole psalm keeps its native extent, including split verses
+                # without point aliases. This is separate from a book redirect.
+                moved.append(dict(locus))
+                continue
+            from _canon import CANONICAL_BIBLE  # noqa: PLC0415
+
+            # Alias rows address the canonical source domain. Their own min/max
+            # may cover only part of a chapter (WEB Esther 13:8-18), so they
+            # cannot supply the bounds of a whole-chapter request.
+            bounds = _edition_bible(CANONICAL_BIBLE).chapters.get((book, chapter))
+            if bounds is None:
+                return [], f"{book} {chapter}: canonical chapter extent is not recorded"
+            low, high = bounds
+            _text, problem, _opened, _closed = _edition_bible(reader.id).span(
+                book,
+                {"begin": {"chapter": chapter, "verse": low},
+                 "end": {"chapter": chapter, "verse": high}},
+            )
+            if problem:
+                return [], f"{reader.id}: {problem}"
+            native, problem = placed(reader, token, [
+                {**locus, "first": low, "last": high},
+            ])
+            if problem:
+                return [], problem
+            moved.extend(native)
             continue
 
         def carrier(verse: int) -> tuple:
