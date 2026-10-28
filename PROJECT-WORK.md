@@ -394,6 +394,33 @@ admission. Codex's prepared correction plan for 412 remaining continuation
 readers (provider marks and the `Rome: None` placeholder) is still to be
 applied.
 
+Gregory XVI and Bullarium repair, 2026-10-28: every one of the 1,473 Gregory
+XVI Acta candidates now carries a reviewed disposition (0 unreviewed). 826
+complete printed witnesses and one historical fragment were admitted in 22
+boundary packets. 113 holds remain for displaced or missing OCR words and
+compound printings, and the civil volume's curial instruments are recorded
+with their actual issuers. Page review passed 823 of the 827 new readers, and
+all 823 are installed.
+
+A whole-volume coordinate reading-order derivative now repairs Bullarium
+margin fusion (`tools/bullarium geometry`; rules in
+`guidance/papal-documents.md`). Volume IV is registered with 70 repaired
+readings. Page review found no fused marginal summary among 464 blocks, and
+45 readers are installed. The other 25 wait for the tool to set printed
+footnotes as their own blocks instead of joining them to body paragraphs.
+The release holds 4,417 PDFs and 8,013 pages.
+
+Open:
+- footnote separation and the volume IV replacements;
+- the Bullarium roll-out by withdrawn-fusion count (VII, IX, XI, III, VIII,
+  X, II, then the rest), each behind a twelve-page native-image evidence gate;
+- a coordinate audit of the 397 installed continuation readers (the detector
+  flags real marginal text on body lines in 168 of the 208 volume-XIII
+  readers) and withdrawal of any confirmed defects;
+- the four rejected Gregory readers;
+- boundary review of the Pius IX Acta (113 candidates) and the Benedict XIV
+  Bullarium (207, including *Ubi primum*).
+
 ## GPT Last Things and next Sunday propers, 2026-10-25
 
 <!-- promised-deliverable: gpt-flt-and-sunday-2026-10-25 -->
