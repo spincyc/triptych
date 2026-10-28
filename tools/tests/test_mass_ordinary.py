@@ -3556,6 +3556,8 @@ global.window = { location: { search: '' }, addEventListener() {},
   MassAssembly: { derive: () => ({}) }, matchMedia: null };
 global.window.OrdinarySeating = require(
   './src/web/browser/liturgy/ordinary-seating.js');
+global.window.LiturgyReaderStateAdapters = require(
+  './src/web/browser/liturgy/reader-state-adapters.js');
 
 eval(fs.readFileSync('src/web/browser/shared/browser-core.js', 'utf8'));
 global.window.Triptych = Object.assign({}, global.window.Triptych, {

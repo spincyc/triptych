@@ -157,10 +157,11 @@ class EasterFerialTests(unittest.TestCase):
         self.assertNotIn("verses", gospels[1])
         self.assertNotIn("proper_appointment_facts", self.doc)
 
-    def test_english561_113_448_latin329_no_accounting_errors(self):
+    def test_english564_116_448_latin329_no_accounting_errors(self):
         coverage = self.mp.english_coverage(CALENDARS, "postconciliar")
+        # 561->564/113->116: postconciliar-three-owner-adoption.json (accepted 2026-10-26).
         self.assertEqual({k: coverage[k] for k in ("slots", "with_english", "ledgered_untranslated", "rights_restricted")},
-                         {"slots": 561, "with_english": 113, "ledgered_untranslated": 448, "rights_restricted": 0})
+                         {"slots": 564, "with_english": 116, "ledgered_untranslated": 448, "rights_restricted": 0})
         for field in ("unaccounted", "outside_the_ledger", "unmatched_records", "stale_translation_records"):
             self.assertEqual(coverage[field], 0)
         self.assertEqual(len(list(L.body_owners(self.doc))), 329)

@@ -118,15 +118,17 @@ class EasterVViiFerialTests(unittest.TestCase):
             for field in ("source_id", "witness_artifact_id", "witness_passage_id", "incipit", "quarantined_text_sha256"):
                 self.assertNotIn(field, row)
 
-    def test_english561_113_448_latin329_no_accounting_errors(self):
+    def test_english564_116_448_latin329_no_accounting_errors(self):
         coverage = self.mp.english_coverage(CALENDARS, "postconciliar")
+        # 561->564/113->116: postconciliar-three-owner-adoption.json (accepted 2026-10-26).
         self.assertEqual({k: coverage[k] for k in ("slots", "with_english", "ledgered_untranslated", "rights_restricted")},
-                         {"slots": 561, "with_english": 113, "ledgered_untranslated": 448, "rights_restricted": 0})
+                         {"slots": 564, "with_english": 116, "ledgered_untranslated": 448, "rights_restricted": 0})
         for field in ("unaccounted", "outside_the_ledger", "unmatched_records", "stale_translation_records"):
             self.assertEqual(coverage[field], 0)
         self.assertEqual(len(list(L.body_owners(self.doc))), 329)
         self.assertEqual(sum(1 for _ in self.mp.masses_of(self.doc)), 619)
-        self.assertEqual(sum(1 for _, m in self.mp.masses_of(self.doc) for _ in self.mp.propers_of(m)), 3514)
+        # 3514->3517: the same adoption's three new Collect nodes.
+        self.assertEqual(sum(1 for _, m in self.mp.masses_of(self.doc) for _ in self.mp.propers_of(m)), 3517)
 
     def test_no_incipit_or_bible_fallback_in_projection_and_english_renderer(self):
         for key in HELD:

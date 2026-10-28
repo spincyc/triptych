@@ -106,6 +106,41 @@ ANTECEDENT_EDITION = (
     / "src/sources/works/catholic-church/missale-romanum/editions"
     / "vatican-typica-1920/edition.toml"
 )
+# Former exact gaps that the 2026-10-23..26 recoveries each answered with one
+# confirmed received English entry, listed under [[accepted]] (batch in the
+# comment) in src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml.
+RECEIVED_ENGLISH = {
+    ("comm-s-sabinae-martyris", "main", "Collect", "all", 1): "lefebvre-1925",  # extra4
+    ("comm-ss-symphorosae-septem-eius-filiorum", "main", "Collect", "all", 1): "lefebvre-1925",  # extra4
+    ("comm-ss-symphorosae-septem-eius-filiorum", "main", "Postcommunion", "all", 1): "lefebvre-1925",  # next17
+    ("commemoratione-omnium-fidelium-defunctorum", "second", "Collect", "all", 1): "lasance-1945",  # core193
+    ("commemoratione-omnium-fidelium-defunctorum", "second", "Secret", "all", 1): "lefebvre-1925",  # lefebvre8
+    ("commemoratione-omnium-fidelium-defunctorum", "second", "Postcommunion", "all", 1): "lasance-1945",  # core193
+    ("commemoratione-omnium-fidelium-defunctorum", "third", "Collect", "all", 1): "lasance-1945",  # core193
+    ("commemoratione-omnium-fidelium-defunctorum", "third", "Secret", "all", 1): "lefebvre-1925",  # lefebvre8
+    ("commemoratione-omnium-fidelium-defunctorum", "third", "Postcommunion", "all", 1): "lefebvre-1925",  # lefebvre8
+    ("commune-dedicationis-ecclesiae", "main", "Gradual", "all", 1): "lasance-1945",  # core39
+    ("commune-dedicationis-ecclesiae", "main", "Alleluia (Tempore paschali)", "all", 1): "lasance-1945",  # core39
+    ("commune-festorum-bmv", "main", "Introit", "all", 1): "lasance-1945",  # core39
+    ("commune-festorum-bmv", "main", "Alleluia (Tempore paschali)", "all", 1): "lasance-1945",  # core39
+    ("commune-festorum-bmv", "main", "Communion", "all", 1): "lasance-1945",  # core39
+    ("commune-non-virginum-1", "main", "Collect", "all", 1): "lasance-1945",  # lexical-first23
+    ("commune-non-virginum-1", "main", "Secret", "all", 1): "lasance-1945",  # phase1
+    ("commune-non-virginum-1", "main", "Postcommunion", "all", 1): "lasance-1945",  # phase2
+    ("commune-non-virginum-1", "main", "Collect (Pro pluribus Martyribus quae non sint Virgines)", "all", 1): "lasance-1945",  # phase2
+    ("commune-non-virginum-1", "main", "Secret (Pro pluribus Martyribus quae non sint Virgines)", "all", 1): "lasance-1945",  # phase2
+    ("commune-virginum-4", "main", "Alleluia (Tempore paschali)", "all", 1): "lasance-1945",  # core39
+}
+# 1f1be432b bound 22 exact whole-Latin Cummiskey reuses through two separate
+# artifacts whose own owners are test_roman_1962_cummiskey_exact_prayer_reuse_phase2
+# (21) and test_roman_1962_english31_phase4 (1); they are not page transcriptions
+# in the seven publication TSVs checked below.
+CUMMISKEY_REUSE_ARTIFACTS = {
+    "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861."
+    "roman-1962-exact-prayer-reuse-en-386eed26": 21,
+    "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861."
+    "phase4-nativity-marian-reuse-en-ed897177": 1,
+}
 
 TOP_FIELDS = {
     "schema",
@@ -544,6 +579,7 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
             for form in ("second", "third")
             for proper in ("Collect", "Secret", "Postcommunion")
         }
+        identities -= set(RECEIVED_ENGLISH)
         identities |= cls.source_established_unavailable_identities()
         return identities
 
@@ -633,6 +669,22 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                 }
             }
         )
+        # 3cd718395: the newly represented Queenship rows, per
+        # workflows/reviews/missal-reader-resume-2026-10-23/source-review-phase4-pre1955.json.
+        absent |= cls.main_identities(
+            {
+                "beatae-mariae-virginis-reginae": {
+                    "Introit",
+                    "Collect",
+                    "Alleluia",
+                    "Alleluia (Tempore paschali)",
+                    "Offertory",
+                    "Secret",
+                    "Communion",
+                    "Postcommunion",
+                }
+            }
+        )
         affected = entries | absent
         affected |= {
             ("palm-sunday", "main", "Procession Antiphon", "all", occurrence)
@@ -693,11 +745,33 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
         # explicit appointments. Telesphorus and Hyginus now use their checked
         # Common pointers rather than six duplicate gaps. Three Advent gaps
         # gained Lasance bindings; Christ the King retains its source gaps.
-        self.assertEqual(len(source_established), 161)
-        self.assertEqual(len(expected), 226)
+        # 1f1be432b..da270a039 (Codex, 2026-10-22..26) admitted 100 of the 161
+        # source-established Latin bodies (each now a collated, permitted row in
+        # roman-1962-proper-latin-provenance-v1.toml) and newly represented 11
+        # typed target gaps (eight Queenship, Francis of Paola, two Damascene):
+        # 161 -> 72. RECEIVED_ENGLISH left the exact set and the English
+        # recoveries emptied most quarantined rows: 226 -> 117, 1078 -> 143.
+        # Their 260 typed rows equal current_coverage ledgered_untranslated in
+        # workflows/reviews/missal-reader-completion-2026-10-26/source-review-final-source180.json.
+        self.assertEqual(len(source_established), 72)
+        self.assertEqual(len(expected), 117)
         self.assertTrue(expected.issubset(typed))
+        entries = {}
+        for row in self.base["entries"]:
+            key = (row["mass"], row.get("form_id", "main"), row["proper"],
+                   row.get("cycle", "all"), row.get("occurrence", 1))
+            entries.setdefault(key, []).append(row)
+        for identity, witness in RECEIVED_ENGLISH.items():
+            with self.subTest(received=identity):
+                self.assertNotIn(identity, typed)
+                self.assertEqual(
+                    [(row["witness"], row["collation_result"],
+                      [t["lang"] for t in row["translations"]])
+                     for row in entries.get(identity, [])],
+                    [(witness, "confirmed", ["en"])],
+                )
         quarantined = set(typed) - expected
-        self.assertEqual(len(quarantined), 1078)
+        self.assertEqual(len(quarantined), 143)
         self.assertEqual(
             {
                 (
@@ -721,9 +795,10 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                 # 934 and 13 since 2026-10-19 (C3): three Pentecost orations
                 # were bound, and the Pentecost Lesson gained a witness gap;
                 # 933 once the Pentecost Alleluia was bound (G14 lane).
-                ("no-exemplar", None): 1062,
-                ("witness-gap", CUMMISKEY_SOURCE): 13,
-                ("witness-gap", "passage.catholic-church.missale-romanum.vatican-typica-1962.christ-the-king-appointments"): 3,
+                # 1062, 13 and the three Christ the King gaps fell to 140, 3
+                # and 0 as the 2026-10-22..26 recoveries answered them.
+                ("no-exemplar", None): 140,
+                ("witness-gap", CUMMISKEY_SOURCE): 3,
             },
         )
         self.assertEqual(len(typed), len(self.base["untranslated"]))
@@ -847,9 +922,24 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
         }
         # 77 since 2026-10-19 (C3): the Pentecost Collect, Secret and
         # Postcommunion bind through roman-1962-pentecost-en (C2 gap G3).
-        self.assertEqual(len(expected), 77)
+        # 99 since 1f1be432b: the 22 CUMMISKEY_REUSE_ARTIFACTS bindings.
+        self.assertEqual(len(expected), 99)
         self.assertEqual(set(bound), expected)
         self.assertTrue(expected.isdisjoint(self.exact_gap_identities()))
+        reused = {
+            artifact: {
+                identity
+                for identity, row in bound.items()
+                if row["publication_artifact_id"] == artifact
+            }
+            for artifact in CUMMISKEY_REUSE_ARTIFACTS
+        }
+        self.assertEqual(
+            {artifact: len(rows) for artifact, rows in reused.items()},
+            CUMMISKEY_REUSE_ARTIFACTS,
+        )
+        expected -= set().union(*reused.values())
+        self.assertEqual(len(expected), 77)
         self.assertEqual(
             hashlib.sha256(CUMMISKEY_PUBLICATION_TSV.read_bytes()).hexdigest(),
             CUMMISKEY_PUBLICATION_SHA256,
@@ -965,15 +1055,17 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
         rows = self.child["inherited_inapplicable"]
         actual = {(row["record"], self.identity(row)) for row in rows}
         expected = self.exact_child_exclusions()
-        self.assertEqual(len(expected), 49)
+        # 49 -> 57 with the eight Queenship rows; 13 -> 20 entry records as
+        # 3cd718395, 3cd51e852 and 69b608402 followed parent English admissions.
+        self.assertEqual(len(expected), 57)
         self.assertEqual(actual, expected)
         self.assertEqual(len(actual), len(rows))
         self.assertEqual({row["record"] for row in rows}, {"entry", "untranslated"})
         self.assertEqual(
-            sum(row["record"] == "entry" for row in rows), 13
+            sum(row["record"] == "entry" for row in rows), 20
         )
         self.assertEqual(
-            sum(row["record"] == "untranslated" for row in rows), 36
+            sum(row["record"] == "untranslated" for row in rows), 37
         )
         for row in rows:
             with self.subTest(record=row["record"], identity=self.identity(row)):
@@ -994,7 +1086,8 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                     row["reason"],
                     "recension-absent"
                     if row["mass"]
-                    in {"chrism-mass", "s-ioseph-opificis-sponsi-beatae-mariae"}
+                    in {"chrism-mass", "s-ioseph-opificis-sponsi-beatae-mariae",
+                        "beatae-mariae-virginis-reginae"}
                     else "recension-replaced",
                 )
                 self.assertEqual(row["basis"], "calendar-departure")
@@ -1021,7 +1114,7 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                     self.assertEqual(row[field], 0)
         self.assertEqual(rows["roman-1962"]["inherited_inapplicable_records"], 0)
         self.assertEqual(
-            rows["roman-pre-1955"]["inherited_inapplicable_records"], 49
+            rows["roman-pre-1955"]["inherited_inapplicable_records"], 57
         )
         self.assertTrue(rows["roman-pre-1955"]["translation_ledger_inherited"])
 

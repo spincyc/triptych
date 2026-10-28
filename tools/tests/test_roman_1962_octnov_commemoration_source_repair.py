@@ -2094,9 +2094,13 @@ class OctNovCommemorationSourceRepairTests(unittest.TestCase):
         current_prior_records = BATCH_GUARDS.historical_latin_records(self.records)
         historical_rows = tomllib.loads(BATCH_GUARDS.historical_text(BATCH_GUARDS.LATIN_PATH))["entries"]
         self.assertEqual(1289, len(historical_rows))
-        self.assertEqual(1269, sum(r["publication_status"] == "permitted"
+        # The accepted latin-seven adoption replaced exactly the removed Anthony
+        # Collect row (workflows/reviews/missal-reader-completion-2026-10-26/
+        # latin-seven-rights-adoption.json); the historical 1269/20 stay pinned.
+        self.assertEqual(1270, sum(r["publication_status"] == "permitted"
                                    for r in current_prior_records.values()))
-        self.assertEqual(20, sum(r.get("body_status") == "removed" for r in rows))
+        self.assertEqual(19, sum(r.get("body_status") == "removed" for r in rows))
+        self.assertEqual(20, sum(r.get("body_status") == "removed" for r in historical_rows))
         self.assertEqual(1269, sum(state == "present" for _, _, state in body_owners(BATCH_GUARDS.historical_document(self.document))))
 
     def test_real_cli_raw_and_appointed_bodies_have_the_same_bytes(self):

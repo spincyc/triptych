@@ -1,4 +1,4 @@
-"""Exact English absences for newly addressed 1962 Common chant bodies."""
+"""Exact English dispositions for newly addressed 1962 Common chant bodies."""
 from __future__ import annotations
 
 import copy
@@ -35,6 +35,13 @@ EXPECTED = {
     ('commune-confessoris-pontificis-1', 'main', 'Alleluia (Tempore paschali)', 'all', 1): 'mixed',
     ('commune-non-virginum-1', 'main', 'Alleluia (Tempore paschali)', 'all', 1): 'mixed',
     ('commune-non-virginum-2', 'main', 'Alleluia (Tempore paschali)', 'all', 1): 'mixed',
+}
+# eeab39fef replaced these two no-exemplar absences with one confirmed Lasance
+# entry each ([[accepted]] core39 in
+# src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml).
+RECEIVED = {
+    ('commune-unius-martyris-2', 'main', 'Alleluia', 'all', 1): 'lasance-1945',
+    ('commune-plurimorum-martyrum-3', 'main', 'Alleluia', 'all', 1): 'lasance-1945',
 }
 
 
@@ -79,13 +86,20 @@ class Roman1962CommonNewEnglishAbsencesTest(unittest.TestCase):
                 self.assertEqual(legacy, (identity[0], '', identity[2]))
                 self.assertNotEqual(owner.get('source'), 'scripture')
 
-    def test_each_whole_english_body_has_one_exact_no_exemplar_record(self):
+    def test_each_whole_english_body_has_one_exact_disposition(self):
         for identity, (proper, owner, legacy) in self.slots.items():
             with self.subTest(identity=identity):
                 records = MP.matching_untranslated_records(
                     proper, self.untranslated.get(MP.untranslated_key(identity)) or [],
                     identity[4], cycle=identity[3], extent='body',
                 )
+                if identity in RECEIVED:
+                    entry = MP.translation_entry_for(self.overlay, legacy, identity) or {}
+                    self.assertEqual(records, [])
+                    self.assertTrue(MP.translation_answers(entry, owner, 'en'))
+                    self.assertEqual((entry.get('witness'), entry.get('collation_result')),
+                                     (RECEIVED[identity], 'confirmed'))
+                    continue
                 self.assertEqual(len(records), 1)
                 record = records[0]
                 self.assertEqual(MP.untranslated_record_identity(record), identity)

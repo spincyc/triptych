@@ -131,7 +131,8 @@ let raw='';process.stdin.on('data',x=>raw+=x);process.stdin.on('end',()=>
 
         # The overlay validates its Scripture targets against the real catalog.
         # Keep the complete citation catalog, then project only the five Masses.
-        with patch.object(MP, "load_calendar", return_value=self.source), patch.object(MP, "translation_overlay", side_effect=complete_translation_overlay), patch.object(MP, "masses_of", side_effect=[all_masses, selected]):
+        # The finite dated execution sources own none of these Masses.
+        with patch.object(MP, "load_calendar", return_value=self.source), patch.object(MP, "translation_overlay", side_effect=complete_translation_overlay), patch.object(MP, "masses_of", side_effect=[all_masses, selected]), patch.object(MP._oration_execution, "load_sources", return_value={}), patch.object(MP._name_execution, "load_name_sources", return_value={}):
             return MP.calendar_structure(ROOT / "src/sources/calendars", "roman-1962", MP.book_tokens())
 
     def test_original_branch_and_readable_survive_privately_before_public_projection(self):

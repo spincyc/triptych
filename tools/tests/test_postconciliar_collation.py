@@ -38,7 +38,6 @@ class PostconciliarPsalmCollationTest(unittest.TestCase):
             ("advent-3-monday", None, None, 161, 187),
             ("advent-december-23", None, None, 166, 199),
             ("lent-1", "cycles", "B", 73, 23),
-            ("lent-3-tuesday", None, None, 188, 238),
             ("ot-3", "cycles", "B", 100, 68),
             ("ot-9-thursday", "weekday_cycles", "II", 244, 356),
         )
@@ -54,6 +53,16 @@ class PostconciliarPsalmCollationTest(unittest.TestCase):
                     {"chapter": 25, "verse": 5, "part": "ab"},
                 )
                 self.assertTrue(citation["ref"].startswith("Psalm 25:4-5ab,"))
+        # Artifact p. 188, n. 238 (lent-3-tuesday) is superseded: accepted
+        # Phase 3 of workflows/reviews/missal-reader-annual-2026-10-22/RECORD.md
+        # keeps its printed Vulgate 24:4bc-5ab bounds in the source carrier.
+        citation = self.citation("lent-3-tuesday", "Responsorial Psalm")
+        self.assertEqual(citation["book"], "Psalms")
+        self.assertEqual(citation["ranges"][0], {
+            "begin": {"chapter": 24, "verse": 4, "part": "bc"},
+            "end": {"chapter": 24, "verse": 5, "part": "ab"},
+        })
+        self.assertEqual(citation["ref"], "Psalm 24:4bc-5ab, 6-7bc, 8-9")
 
     def test_responsorial_range_does_not_extend_3b_into_hebrew_4a(self):
         # Ordo artifact p. 244, n. 355: its Vulgate 4a ends Hebrew verse 3.

@@ -1,0 +1,1323 @@
+{
+  "acceptance_basis": [
+    "Every V2 source, prayer, body, proof, rights, auxiliary, owner and historical map is unchanged except the recorded fixture amendments; only whole-file pins of paths outside the reader-owned prefixes moved.",
+    "Each moved pin is explained by the published upstream range, by this task's own test-harness edits, or by the V2 receipt becoming an ordinary input, as V1 did under V2.",
+    "A re-anchored replay input is one of this task's test edits; its reconstructed historical bytes are byte-identical to the V2 before_sha256.",
+    "Compiler success is accounting, not publication authority; content-derived fixture fields are re-validated by the consuming tests."
+  ],
+  "all_source_inputs_current_before_acceptance": true,
+  "compiler_sha256": "76997544a870f122413057686108b44ac28ba318f2929d25ce2181317f68ae13",
+  "fixture_amendments": [
+    {
+      "authority": "workflows/reviews/missal-reader-completion-2026-10-26/francis-one-ignatius-proof-adoption.json",
+      "op": "delete",
+      "path": [
+        "new_projection_specs",
+        "editorial-projection-2026-09-03"
+      ],
+      "previous_value_sha256": "61ed8c0ffd43e5228f5ce461d61b4b4f4a9e2e18f8b67c23cf2b4837e02ba6f4",
+      "reason": "The 2026-09-03 edition is one of test_proper_latin's historical literal oracles, which add_projection_specs refuses to override by design, so the V2 entry could never pass; the only new fact it carried, the Ignatius petition-formula artifact, is admitted in that test's own 2026-09-03 publication_source_ids, which also asserts that only the Ignatius Postcommunion names it."
+    },
+    {
+      "authority": "workflows/reviews/missal-reader-completion-2026-10-26/francis-one-ignatius-proof-adoption.json",
+      "op": "delete",
+      "path": [
+        "new_projection_artifact_specs",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-1-orations-09719423"
+      ],
+      "previous_value_sha256": "61ed8c0ffd43e5228f5ce461d61b4b4f4a9e2e18f8b67c23cf2b4837e02ba6f4",
+      "reason": "Same collision for the artifact-level spec of the historical 2026-09-03 gap-sanctoral-1 artifact; it admitted only the Ignatius artifact as the pinned witness, which 90 of that artifact's 91 rows do not use, so it could never pass either."
+    }
+  ],
+  "fixture_fields_changed": [
+    "acceptance",
+    "files",
+    "new_projection_artifact_specs",
+    "new_projection_specs",
+    "source_input_manifest_sha256"
+  ],
+  "historical_replay_inputs_reanchored": [
+    {
+      "after_sha256": "31957a3789b2f6291700098bdb7683fc4d0a19e3e4094c3e8f48ab45395302d6",
+      "before_sha256": "98daa1922358c0d977ddfc97352812d395c6f578591e48691bc1393c6b1ace8d",
+      "hunks": 19,
+      "path": "tools/tests/test_proper_latin.py",
+      "v2_after_sha256": "27aba519f4d733c25818917bb0eda9b461129165b0c4970088384d41d3c9d87d",
+      "v2_hunks": 11
+    },
+    {
+      "after_sha256": "2a02299138da22f4f047f4c286f80f0d7efe6f04cb66a633012c8daae300b3f2",
+      "before_sha256": "ddb972cdd5fe9651d1ecc0b33bbc1bf4deca7f1b5f5c7d75b87bc03c54603f9e",
+      "hunks": 4,
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py",
+      "v2_after_sha256": "6f3f78af5d6b2a5c39b181476c24edef766f174f6d51b9c638431cdc94bf73f1",
+      "v2_hunks": 3
+    },
+    {
+      "after_sha256": "8917c73a9c4c0f03d39373271e55df703486e44ba90af600ad6582bbb096941e",
+      "before_sha256": "7dc3a1569140e14f32fa2c98e607577b05871f3c197a307db67107d731d6afca",
+      "hunks": 10,
+      "path": "tools/tests/test_roman_1962_latin22_phase5.py",
+      "v2_after_sha256": "e6277ea1c793fd7d00ac2f4c1ae5608ac6d89d5027ba6f75416ae97cdec1390d",
+      "v2_hunks": 6
+    },
+    {
+      "after_sha256": "a88ad8b7df5c8af8c4e0d3023a0e1864ff68a766bfc51a3b63b019da59ad4124",
+      "before_sha256": "c13d838baf217cf25be163e465a4f90322d8ecf04e89322f237eec105764686e",
+      "hunks": 6,
+      "path": "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py",
+      "v2_after_sha256": "8bc6ee1c5d6b0b5dac5b17f6ebde210bee51cd2ffb606daaae7b7e20ef7c2d8a",
+      "v2_hunks": 8
+    },
+    {
+      "after_sha256": "4ab85f7ee0be0af90267e503dea142b7ce14d5ce2e922f8aab168df092f0d8ba",
+      "before_sha256": "e7354e1d015919cc47f235fca3aa1f5134afc8fe250765eb24b6d2eafbc71f05",
+      "hunks": 3,
+      "path": "tools/tests/test_roman_1962_winter_ursula_source_repair.py",
+      "v2_after_sha256": "07c44e1117eb8644f83fffe01ee059d0ff0706d4f68cbed0c47706b513484921",
+      "v2_hunks": 3
+    }
+  ],
+  "historical_replay_inputs_unchanged": [
+    "src/sources/calendars/postconciliar/propers.yaml",
+    "src/sources/calendars/roman-1962/propers.yaml",
+    "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml",
+    "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+    "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+    "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+    "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml",
+    "tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py",
+    "tools/tests/test_roman_1962_english13_phase5.py",
+    "tools/tests/test_roman_1962_english31_phase4.py",
+    "tools/tests/test_roman_1962_lasance_commons_easter_phase3.py"
+  ],
+  "independent_review": {
+    "blockers": 0,
+    "checks_completed": [
+      "weakening scan of all 39 edited test files: no skips, no try/except, no removed test methods; one assertion merge in test_roman_1962_chant_appointments",
+      "more than eight cited records and commits re-derived, including finding_aid, icel, mame, propers_census, complete_missal_report, postconciliar_collation, Advent body hashes, All Souls and Advent II",
+      "every upstream-range pin equals git diff --name-only da270a039..0a112be43; every task pin is a tools/tests path; no private path in the receipt",
+      "all 17 replay specs rebuild bytes equal to before_sha256; the guard's fixture() validated all pins against the live tree"
+    ],
+    "findings": [
+      {
+        "disposition": "fixed: 154 works and 216 documents pinned literally, citing a141a9185 and 04561be42",
+        "id": 1,
+        "severity": "should-fix",
+        "summary": "test_lectern took its totals from corpus.json, the same value the Texts reader prints, removing the tripwire."
+      },
+      {
+        "disposition": "fixed: this review, its input hashes and the compiler sha256 are embedded in the receipt",
+        "id": 2,
+        "severity": "should-fix",
+        "summary": "the receipt recorded no reviewer, review or compiler identity."
+      },
+      {
+        "disposition": "fixed: the scope is derived from every Codex-authored src/sources path since 2026-10-19, excluding the three registries both streams write, and the field renamed reader_written_paths_unchanged",
+        "id": 3,
+        "severity": "should-fix",
+        "summary": "the reader-owned prefix list omitted work owners the reader stream wrote."
+      },
+      {
+        "disposition": "fixed: test_proper_latin asserts that exactly the Ignatius Postcommunion names it; the amendment reason states the V2 entries could never pass",
+        "id": 4,
+        "severity": "note",
+        "summary": "after the amendment the Ignatius artifact is admitted for the whole 2026-09-03 edition."
+      },
+      {
+        "disposition": "accepted: reported as five",
+        "id": 5,
+        "severity": "note",
+        "summary": "five replay inputs are re-anchored, not four."
+      },
+      {
+        "disposition": "fixed: the historical 20 removed rows are now asserted there",
+        "id": 6,
+        "severity": "note",
+        "summary": "the octnov comment claimed a historical 20 pinned there."
+      },
+      {
+        "disposition": "fixed for the Mame pins and the census wording; latin-seven-rights-adoption.json does name the AnthonyCollect replacement, so those citations stand",
+        "id": 7,
+        "severity": "note",
+        "summary": "citation precision: the Mame correction record is a proposal installed by latin-twelve; the census comment misattributed five seasonal alternatives."
+      },
+      {
+        "disposition": "no change",
+        "id": 8,
+        "severity": "note",
+        "summary": "execution-source stubs in focused-view tests are justified."
+      },
+      {
+        "disposition": "fixed: their count is asserted to be exactly two",
+        "id": 9,
+        "severity": "note",
+        "summary": "QUALIFIED_KEYS skips same-printing checks for two keys."
+      },
+      {
+        "disposition": "accepted and disclosed",
+        "id": 10,
+        "severity": "note",
+        "summary": "latin22 PRESERVED_FILES and virgin II IMMUTABLE_GUARDS now pin current bytes for non-replay files."
+      }
+    ],
+    "post_review_recompilation": "After the review, origin/main advanced from 0a112be43 to cbf5917ce (the published papal source-reader integration, disjoint from these edits). The receipt was recompiled against that parent with the same checks; the reader-written check now compares exact paths, because the new commits add files under the shared holy-see work owner without touching any path the reader wrote. The reviewed inputs above are the pre-disposition state; this receipt's own compiler_sha256 identifies the compiler that produced it.",
+    "reviewed_inputs": {
+      "amendments_sha256": "a634079f7bf919e7378506e4243fd5fa64c34ba6debe32e1a459e5b3ecffa734",
+      "compiler_sha256": "7b9c66ee18eaa304208b1a4126b73c3be463531c6a67fc6db38778694546ced2",
+      "test_edits_patch_sha256": "329bba2d3c47509d7516ab4b43fc05000e72cb5013c1ce20adfaeb143f7ae026",
+      "v3_receipt_sha256": "8d5820b7fafe7e4df32b3bade340fdda21e2d7677a3e5ea2956ca60d7c61ab5f"
+    },
+    "reviewed_on": "2026-10-28",
+    "reviewer": "independent read-only reviewing agent; it wrote nothing in the reviewed checkout"
+  },
+  "parent_source_input_manifest_sha256": "adedeadf0648be9b542973e6275bf13bf4cc985e6b29f311489c4d9413018582",
+  "parent_source_receipt_sha256": "2022bc95da498101f1c8f92a9c921670f1d43ae07deacdf7e19869fde24c3362",
+  "pin_delta": [
+    {
+      "after_sha256": "ddda926f4b52210dc46d98bb7acec26f7872f1309ad4f6f3f62db702875b1cab",
+      "before_sha256": "b97e5a81a97e30110f90b5e0e1c2e895617e915981830fd51244f09897dc816b",
+      "class": "published-upstream-range",
+      "path": ".gitattributes"
+    },
+    {
+      "after_sha256": "069db753c253a62ca8d848a8507d38dfa51c4e7c3baf71863b60261c8a6312c9",
+      "before_sha256": "d0055e3bd028fdaa81346da94994da181b5afa87483adebf7881885427bbad74",
+      "class": "published-upstream-range",
+      "path": ".gitignore"
+    },
+    {
+      "after_sha256": "43b57f082a7db8e24385df2288b99631ed1004dfe77d53e17fea0d075576ad65",
+      "before_sha256": "f8c8e1bb2e2d60104909f5a8b94723c30379fd134090d229b48c7cbfd95b4433",
+      "class": "published-upstream-range",
+      "path": "AGENTS.md"
+    },
+    {
+      "after_sha256": "d3ccde0d5067a01642b484723e546ef3d6de7becf466bc0d7395d997221b6607",
+      "before_sha256": "7da470e76af780303cda0685190276067560c83d3aec4925cf20ed3fa6d7e47a",
+      "class": "published-upstream-range",
+      "path": "Makefile"
+    },
+    {
+      "after_sha256": "21283e63f73c142b2df7ffa9d70ab98d5b917a160eff67d395dbc21d1062786b",
+      "before_sha256": "7b2a85de49130ae50748dcdcb87d014aeffc0f894724d099c3a4ec515c4faa21",
+      "class": "published-upstream-range",
+      "path": "PROJECT-WORK.md"
+    },
+    {
+      "after_sha256": "342fcf0e18b8a7a67371c195c6de6be05ad0ea27c3bc5fde060a95f5b3b72355",
+      "before_sha256": "c71c2ed2a632eb904dd447c6a39ee71c5eecfe94bc424d2eebaef15c3db3b3e0",
+      "class": "published-upstream-range",
+      "path": "README.md"
+    },
+    {
+      "after_sha256": "c5b1b1bae3be4853e567d352f344774a5ac8894ad2a64033105022f7f8f03759",
+      "before_sha256": "9302a87ad92cee7d9557519f6710c0d3d765ed8a25ad11ea6af7b881a1a006ef",
+      "class": "published-upstream-range",
+      "path": "THIRD_PARTY.md"
+    },
+    {
+      "after_sha256": "63191fd07f2fb1ffc6c651732fe1c011e1f24a46a75a1c3eb16061c8fde32b90",
+      "before_sha256": "93b56eeb8989d8216645b0083002ec4e05a4d775d35643611ecca7d7715848c1",
+      "class": "published-upstream-range",
+      "path": "guidance/liturgy/propers-production-plan.md"
+    },
+    {
+      "after_sha256": "13764c3d8a694bac00c0c48a6fb5da3983d2052d77194476062e5d71e49f493d",
+      "before_sha256": "927f811cc807207723200e12894ed0caccf3c9adc9b4201bcaee170bcfd65b30",
+      "class": "published-upstream-range",
+      "path": "guidance/repository.md"
+    },
+    {
+      "after_sha256": "9c76b8591b9f0655ab9fa877401156411be00a71d1ef712a18018e1e6c235f67",
+      "before_sha256": "96260b5be4ab7f15271b11d3425ec3e63659cb57cac1fdcb32ac3dbf2aa2b214",
+      "class": "published-upstream-range",
+      "path": "library/traditional-latin-mass.md"
+    },
+    {
+      "after_sha256": "448e5328143d4f2715c9018d3a50432e99c20810765c98ced0d9ad5bcc1b1ae7",
+      "before_sha256": "e7bbd1550cd55f82e93df9e68e5a7451581abd71c770a53264aaf6dd89613240",
+      "class": "published-upstream-range",
+      "path": "promised-deliverables.toml"
+    },
+    {
+      "after_sha256": "3aff45f3f8b64bb6650cc4979c38e3b00dc8cb0345b00a35bb0105d10a0d01a3",
+      "before_sha256": "409b09af797241b1a36186f18143a6b48cb025c428fee810dbd936d4f0dd5311",
+      "class": "published-upstream-range",
+      "path": "release/public-alpha.json"
+    },
+    {
+      "after_sha256": "94cf641e1799fa041d952ef8ef5afb94301317f9dbb8d2cbeb1b328bc5678ed0",
+      "before_sha256": "cb9160258d823dd171f8b21c8db48ccc341a3196d7a1ac8a2a3dec3a04804999",
+      "class": "published-upstream-range",
+      "path": "release/rights/public-alpha-2026-07-15.md"
+    },
+    {
+      "after_sha256": "eeb93e514c10fd37728ebe13c199830b3d347a000ad02a6e2e3a13300748adc0",
+      "before_sha256": "d019123d6498b5fc3bfdde1259b7ef6b8aae848bf053053deb402423c2ea85f0",
+      "class": "published-upstream-range",
+      "path": "scripts/_tooling.py"
+    },
+    {
+      "after_sha256": "4ac1beaefd08cff4326df8c7030abf58d9c0f80b25c32eef4d4c36e2e4e84e16",
+      "before_sha256": "18d820e6f3065bc849b432488389cab9938f3d73483802c2563ba4d36b2d61fa",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-01-death/generation-metadata.tex"
+    },
+    {
+      "after_sha256": "bd1bf20ea815f5d9e4b709d358bf468497ce62c6d309ff977c561cef20e07bfd",
+      "before_sha256": "a838406489397c426c92b3158b0e7915cbaa1546addff4826894bafc126ea5bd",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-01-death/research/scope.md"
+    },
+    {
+      "after_sha256": "c66292c7e812c470d5c92e14a3d5790efbc9a36dffbacea60eed0915110cc75f",
+      "before_sha256": "b66f747ac53a30ed39871962c3173ec7a0ee56dafc34db67d0b2fe12c38c34ec",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-01-death/sections/00-remember-thy-last-end.tex"
+    },
+    {
+      "after_sha256": "226087c3c0b027e08542c2ae193db7682e94f366e0de091f8f9d0f8cd16c0525",
+      "before_sha256": "b6db73967e49d20b6c60acb32efc031c746842d810f646818bedf936d577057c",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-01-death/sections/10-the-debt-of-nature.tex"
+    },
+    {
+      "after_sha256": "ea153e558e45391a74da4e623df237e5fad6338b87e17c0c489f577489748588",
+      "before_sha256": "35005ffde19493049371db6d1ba3142ab6edf21404d306bfb0872279ef6b2423",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-01-death/sections/20-through-death-he-destroyed-death.tex"
+    },
+    {
+      "after_sha256": "21e79a9fd665a178cf3bbdfb4db36586689bf58f0200d724c8ca5ce1ab63d140",
+      "before_sha256": "322f2f1a4d6a1770948b8c678ac8dd7574bcdcddc1d0c19bc5716db9c3a48e37",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-01-death/sections/30-at-what-hour.tex"
+    },
+    {
+      "after_sha256": "b7d21c663bb715c62a7577e0e2875c2fe269737c62c9071b53f784da8a90dd73",
+      "before_sha256": "c68d55e314354fe18775e68beb7b7f4ecf90b8db914175848b8034aa8fe61e3f",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-01-death/sections/40-not-lost-but-sent-before.tex"
+    },
+    {
+      "after_sha256": "50168b54bbf5209ff618f2b77f9fec2d253e0e5da62ae8fecb6afab3566ea73f",
+      "before_sha256": "60a7b0ccfbb505f81e6136d043bac5b7ef314633ecf37e9cba464f97d5e665bb",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-01-death/sections/50-at-the-lords-altar.tex"
+    },
+    {
+      "after_sha256": "3dba7f768750f166281c0cc3b7fd724338a156c706b519dfefec722c5a177705",
+      "before_sha256": "6b1b725029916444a07c6382af869a880c5d2794bba37caea9a701635f0d01b9",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-01-death/sections/60-the-craft-of-dying.tex"
+    },
+    {
+      "after_sha256": "90069e8fdaed7a02aec20e2e91e1014df2cb00a0a62a7885d9899fdb76378637",
+      "before_sha256": "53582264c4122e1f5994b28bea3b004753c5ccc2ce41445678f608c125f53528",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-01-death/sections/70-the-sacraments-of-the-departing.tex"
+    },
+    {
+      "after_sha256": "36c9df74158fec04b54fba78b741dc28bd883f6cd15d4a49b6d98692c8df9735",
+      "before_sha256": "7d4c380e2ddb26065990b57b64d03d0d42993a87b1a9cb30458598f2c3597cd7",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-01-death/sections/75-the-churchs-last-words.tex"
+    },
+    {
+      "after_sha256": "cfac0fb6c6f9ddb22cba9435ba9fc9f0c39421c95f954c7c89ea69cc1ead729b",
+      "before_sha256": "ea94a7258e506110250eca76bfb42270a84319399c6079238933cb0dcbff7377",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-01-death/sections/80-a-day-each-month.tex"
+    },
+    {
+      "after_sha256": "2d2e377cbd2d44147302389d42104584c53f72e6e7918c836a3b20e5fc33e709",
+      "before_sha256": "4eed6dcfbb877170a7f84167de904b2cefeeb3fcb1666473b18f2e3b1e795e77",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-01-death/sections/82-the-commendation-of-a-soul.tex"
+    },
+    {
+      "after_sha256": "9f389333b14619b83dd42436c707bb15235eee42d6885c144746f702134793f0",
+      "before_sha256": "05627f664e8d5b3d01860c8504c1aad9c93be6642873d682c1942e6ca8a02dfb",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-01-death/web-edition.toml"
+    },
+    {
+      "after_sha256": "7adb83353bf4c49d640c9600278d645c5f5a82292c32bba80fac3a026de3004d",
+      "before_sha256": "9c41bda159eff3cc8624999bcef76c186d89d6fc1e3914821cd3f2697d4ff4ff",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-02-judgment/generation-metadata.tex"
+    },
+    {
+      "after_sha256": "d2cf9294a69e0f486e2b9692959a836a72355ed60fb9d8575e745df0586230b9",
+      "before_sha256": "1d6adb3b330130b98b9fb325cfda24d9d682b7b3620f3845d6c257f74fee953a",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-02-judgment/research/scope.md"
+    },
+    {
+      "after_sha256": "f83df5bf55dfdb2a07ccc00a1b681914b6040f28c2e399f20696a4a1cfa099be",
+      "before_sha256": "f952b075d008c109120c9605aa7573e74ccf454e2ba501bf693a0709bd174a5f",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-02-judgment/sections/00-the-son-of-man-in-his-majesty.tex"
+    },
+    {
+      "after_sha256": "3e2b5a96d8b118680fe4c2ecf0e6754fa8c0fa44f6575905c22ff0d02756faff",
+      "before_sha256": "15cabd862fbcc22e545a6d82392fb018f0e2457f048f65aabdc85b193f92cca6",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-02-judgment/sections/10-at-the-evening-of-life.tex"
+    },
+    {
+      "after_sha256": "bcfe5e011ce1b5ba7938555d35721a1f8254198976d242eead97cd79d198f788",
+      "before_sha256": "36c59add5b83902ef5fd48553f95086f5d17ee7d1dc1a9978d11e563b636f8b6",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-02-judgment/sections/20-nonetheless-on-the-day-of-judgment.tex"
+    },
+    {
+      "after_sha256": "4fa81e288e9d5688d5b5e61093cb0a40a7383b506ed3de384855fc6ce78e7fba",
+      "before_sha256": "7d2d5c3400a5d79b969a72cdce002631f8c61a3d64abc4fc8af1e3128c7b178b",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-02-judgment/sections/30-the-judge-who-was-judged.tex"
+    },
+    {
+      "after_sha256": "d3fce00bc85edcd74d3ed165132cb54606ad706b3eed23cfa3f0ea6639f531cf",
+      "before_sha256": "ba433a3ab67d3a62f9f7e0b0fb6522431a7efa0fad5fb1ee2a7d166b2888b450",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-02-judgment/sections/40-the-books-were-opened.tex"
+    },
+    {
+      "after_sha256": "ff010af31842491bdfe3823db3d9b8a7316abc3a7f94b1c61e22e95de71071af",
+      "before_sha256": "a80654394795610aab39330e47ca0c3eaacf04eb735e4ad5731cc3a7f96d3c4c",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-02-judgment/sections/50-a-mercy-shown-to-the-saved.tex"
+    },
+    {
+      "after_sha256": "5e02d4e9de333fdecfff3dae9d7efb95dc721d6482d9c1728793437f728a0229",
+      "before_sha256": "98b9ecffc709c850332e5703e95de006090715e77931f14a3432b749116e2c73",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-02-judgment/sections/60-remember-me-at-the-altar.tex"
+    },
+    {
+      "after_sha256": "0f21d9109922033c238516caa5dea0330672b37f9171ddb74359a74b5be43ebd",
+      "before_sha256": "de0a6a64e7bc33d93fc0f5200ddc23924e75e02850147b3b42b3e9ab6af39dd1",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-02-judgment/sections/70-the-fear-of-that-day.tex"
+    },
+    {
+      "after_sha256": "8b71cfc84021fec089f571f859e4d8710de762d28cb9f9cd0543e65f4fcdc072",
+      "before_sha256": "b431850d97664867a384d29b95130da505c6e3b7ab6a8255732ba747e42babaf",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-02-judgment/sections/80-the-sequence-for-the-dead.tex"
+    },
+    {
+      "after_sha256": "d5f86ce1e662a72d447d520fd4ab47525f8a1861f876afba207e6e17dd1aee3a",
+      "before_sha256": "bad3c6fd0d4998e9e15164b31e533983e78e1411cc4ff87110cdb55074b7eeaf",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-02-judgment/web-edition.toml"
+    },
+    {
+      "after_sha256": "5ab7109e2b0797b4d1045280f4eec0a9ce0cf3135e71a7fb30013b6e1679c940",
+      "before_sha256": "ef44e35ddf4a79afd7bc529463a70911d8cfe4b77abe61352fd48a0e2bed3a8e",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-03-hell/generation-metadata.tex"
+    },
+    {
+      "after_sha256": "ee7b7e92ab7a46b2caa7d4c26298eeece7a70c1d677550723ccafda1f179ceb6",
+      "before_sha256": "7f11d925a66b0bd2ffff166f77f0b915860126d78b76fce3dcb6c4c0f22fad8d",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-03-hell/research/scope.md"
+    },
+    {
+      "after_sha256": "c11d81dac3bb67531ea96419c554f57c5af873fb64efb046beee9aaf05da221b",
+      "before_sha256": "070fee2513e9907ffff6094be170fc88c862041759ec5c368041d823003e5432",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-03-hell/sections/00-depart-from-me.tex"
+    },
+    {
+      "after_sha256": "78e7d3d4fdd241432ace69ac64fc368b67309803e52f44a7ed7a6d20087b8112",
+      "before_sha256": "9188d06dcf242c9dfdc718ebbfe48d74825ba594c6fbd1f0a50caa0eca58a663",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-03-hell/sections/10-the-loss-of-god.tex"
+    },
+    {
+      "after_sha256": "32d53778498677e46bf5d5e0a50adb52a5a7c544143aa1a4b742323a055d2153",
+      "before_sha256": "40b6bc8ce059cb30222f9993cbfc14aa08633c8ebfa80a3f43338850484411f1",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-03-hell/sections/20-the-fire.tex"
+    },
+    {
+      "after_sha256": "9c3281dc8088bdc122134095e89f10435a81c2db8dba2c24ab26e8463cf01c1f",
+      "before_sha256": "541b4f8ec89747183f1edfec2f1ebe70b48e23faeaaa60625dc7f590354c3633",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-03-hell/sections/30-the-worm-and-the-darkness.tex"
+    },
+    {
+      "after_sha256": "a02d1c4456e3aafdb27f75889c9c229c31543ef479e3779522e20134e81c030e",
+      "before_sha256": "741456d423c86b441cff017fb12904bf94237268852cfc39d9d0cee5ff976882",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-03-hell/sections/40-for-ever.tex"
+    },
+    {
+      "after_sha256": "0e4401db226980bdca27816a843d84a855e13aecf6d869801c3b6c0140042dce",
+      "before_sha256": "f0702f132402fac84fbb68509aa63dd20a46359c38029940e398888ce339f250",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-03-hell/sections/50-with-their-own-bodies.tex"
+    },
+    {
+      "after_sha256": "58d0057ac9625ec7a74cc4f3f4f097b8740879a0a23ec9ad12f48387553cfbfc",
+      "before_sha256": "7ae7f81adf3bd637a5b58e09ece448d83c8fc0e066fad8a0e3ab1cce82702009",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-03-hell/sections/60-the-martyrs-fear.tex"
+    },
+    {
+      "after_sha256": "b85339c542c20950517a6b0e32d08ab59b758d2c5d4b4983f1303ece4332d427",
+      "before_sha256": "c873d933c39c0d2aa797c634c65c9fa4066dbe0ab02dce83dbb03b5d4d52c49e",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-03-hell/sections/65-the-narrow-gate.tex"
+    },
+    {
+      "after_sha256": "36669ddcc748f6d9100841c794f7cf6aab690ef08c19b070616afdc985061e4b",
+      "before_sha256": "312dfc7e5b9eef436e55893857467dfc8c4b0ab4b2407dd4bf77f474ab9d1fee",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-03-hell/sections/70-the-saints-who-saw.tex"
+    },
+    {
+      "after_sha256": "cf8bfb74fe88dfcb004a1d2c5da9ed3e56db6f7166e113e20690da92cc559ec8",
+      "before_sha256": "bc6ab34c6c3930ce7011bd64182284c038077e820281347bd57ce39dcbf0db7a",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-03-hell/sections/75-the-fear-that-saves.tex"
+    },
+    {
+      "after_sha256": "4bbee4cce7fcf1b7a6ccec4ec12e2e29303862fac5b20498b5799100b5523922",
+      "before_sha256": "f3c87680098d5c7a8aab5d3a42bb9743d9dcf0e532ede29320bf8796026f05f5",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-03-hell/sections/78-deliver-us.tex"
+    },
+    {
+      "after_sha256": "bd24330bf5e9016b5960b2be20b69f72fbb6a2a521421c3230496a98b76643e6",
+      "before_sha256": "2d7d2da972d1fba0ced49ccbcd6806cc5adb1a1cc27ae282029ac8349a7285ec",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-03-hell/sections/80-affections-of-saint-alphonsus.tex"
+    },
+    {
+      "after_sha256": "29816efd0e8dcf6033b5e52c21bace230406062e6d4ea72d475dcea375d9f3d8",
+      "before_sha256": "8f5a6e3c784dc1e9af2b3041d2ab990336e35e6d4617d882cdbfb9df5bebe210",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-03-hell/web-edition.toml"
+    },
+    {
+      "after_sha256": "5b9114c13c80ab9da8f2c91e31cb17545af5379837fa2b3cb6ca20d15e32ce97",
+      "before_sha256": "f4290f8e476d0df30a932246d2e808af346983170ba79fad86ffea6a9efda56f",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-04-heaven/generation-metadata.tex"
+    },
+    {
+      "after_sha256": "39029285e00b0609ff1b95be09dd24c6600cb6081aaebe00b306ecd092bde180",
+      "before_sha256": "e5c7772d99a7c220f1d9bbe6f6954f26b3b68607fc8eb12733640ef244a11ecf",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-04-heaven/research/scope.md"
+    },
+    {
+      "after_sha256": "bb2f90c3d2ef96c67bab75effa0960feb274babce28be926a205fe5e4af62d5e",
+      "before_sha256": "f47a173b9bdbf36e8689a3aae6a05f31216b1d8855f8a5074e152ae2b07f5cc6",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-04-heaven/sections/00-they-shall-see-his-face.tex"
+    },
+    {
+      "after_sha256": "298b791f63011a329bd5fe1bae9cb51df756b4727d57b75f5662d733fcd0ba50",
+      "before_sha256": "862b6b1ce024988d533e70b5ad642042d03563cb86fab2f9f2a059a1820f30b0",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-04-heaven/sections/10-the-vision-of-god.tex"
+    },
+    {
+      "after_sha256": "43c898f0334784abf6a41b37e497d7f24b648ff1754749358e70f10020d0af0a",
+      "before_sha256": "033bcf7e753566aa73aaf001e7701f1afd6b1c82d1225b9a743e9d6b1bb3cb3e",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-04-heaven/sections/20-the-restless-heart.tex"
+    },
+    {
+      "after_sha256": "6f2cb0b264fde3cc58a40cb29cc3ff245b973e711407a7e5a03fcd12ae2e9593",
+      "before_sha256": "3a451e546172078a07caaffdc56fac9d17561b03ca3c0c168dba5deff227915c",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-04-heaven/sections/30-star-differeth-from-star.tex"
+    },
+    {
+      "after_sha256": "6abcaae242a4066f3a192c69d1d7172cd01b5f10ebaef194bf71dca12292307a",
+      "before_sha256": "a7d6c01b994193193f18cce2320148ba398b17015cfcbe11df7ba953d70a6787",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-04-heaven/sections/40-the-body-of-glory.tex"
+    },
+    {
+      "after_sha256": "fe9d25c6e3ce8d63360a3a43730cf1091013b99b84da32c527c9252d2de214dc",
+      "before_sha256": "3735b6fbf53e108dc76d15c9e5ac9f66eb4e2a9d951aee5e9284c53c571e6311",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-04-heaven/sections/50-those-we-love.tex"
+    },
+    {
+      "after_sha256": "d81addcc1bf2921caea69764ca478bbaa22bf7489ea13ab153540bedc2ab621a",
+      "before_sha256": "297a8966ebeccb49a8d80521c01244fbca60dadbb7e53285ab5cadda2c0cbc92",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-04-heaven/sections/60-without-which-no-man-shall-see-god.tex"
+    },
+    {
+      "after_sha256": "7e86727d9366672fbe412688569cd348f147aec80c4814ba91552df787104911",
+      "before_sha256": "17a5127bccc64f1f7118baad82d4e7394901d2b474e00d32cf915e6b6303f427",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-04-heaven/sections/70-the-last-of-the-last-things.tex"
+    },
+    {
+      "after_sha256": "e59f324407a5ff713decdcf731ec40f54208c1fbd46fdb359e270f761594702a",
+      "before_sha256": "5bbc297dd21a047eedef26c66a903dd684527d285476d545dc4936346f189752",
+      "class": "published-upstream-range",
+      "path": "src/claude/articles/faith/four-last-things-04-heaven/web-edition.toml"
+    },
+    {
+      "after_sha256": "59bfb4ab3361b38b0ed972becc456bd4426ad2ed14f36a07f08106f35218c4f6",
+      "before_sha256": "0aee604248c97a8e242b58f1b160d179cebea92bc3e8de18abbf1b49d2bc7d4f",
+      "class": "published-upstream-range",
+      "path": "src/sources/README.md"
+    },
+    {
+      "after_sha256": "0f509c779f05eaf3ac87f690885e8db70e84c6ded456c8cce036c99ce6725c31",
+      "before_sha256": "06deb6680b4a9c389658544760ab974b3c1adf3f9bc775a9291a648694197909",
+      "class": "published-upstream-range",
+      "path": "src/sources/inventories/claude-classification-review-v1.toml"
+    },
+    {
+      "after_sha256": "4a2e0235db8f991ca687836664a423c80ab65e63568654332ccac3df592eb81a",
+      "before_sha256": "890edc85cc5abbcb49514ba48f65c364aa34579ddc6a7758e28289a16d913d54",
+      "class": "published-upstream-range",
+      "path": "src/sources/inventories/claude-publications-v1.toml"
+    },
+    {
+      "after_sha256": "0d1acfc5b344d3a0db64a2ef2227dde9cdb78f503d6094e724968c02f8a7c092",
+      "before_sha256": "ca5f5f5bb5f8d6fa137ea3dd6d0026da9468c0d6e4817dcb5239b68c54956d05",
+      "class": "published-upstream-range",
+      "path": "src/sources/inventories/source-containment-v1.toml"
+    },
+    {
+      "after_sha256": "56a81855962d451502c917abeeeb8f42a48236c21512ec7780ef99a0121434e0",
+      "before_sha256": "23b3f0e8f9ea7ca0a36d2a647f4cbf13c90cd97eeb2b601a8e33c5719299c3c5",
+      "class": "published-upstream-range",
+      "path": "src/sources/inventories/source-family-migration-v1.toml"
+    },
+    {
+      "after_sha256": "a359b0c67f02f4022d6d9be0267610c609268ade8ac5ecb25c905deeb1be8691",
+      "before_sha256": "c8c1766d417648f2b71a199ca6ae7a3c1dd388900087f1016a9f8902dc044a13",
+      "class": "published-upstream-range",
+      "path": "src/sources/schema/CHANGELOG.md"
+    },
+    {
+      "after_sha256": "443f7f78f915bdc43ef01e5cec35b9afd416c3a9b7475ec8e9c15fd7e8441afc",
+      "before_sha256": "e742653559a6ff3955246431df07ea556d8b01d0d135313884a4a4c08a107300",
+      "class": "published-upstream-range",
+      "path": "src/sources/schema/README.md"
+    },
+    {
+      "after_sha256": "5a286339e123d8791a6fd047c48e760ddc0193c76e75f66bad23feac094c5f6c",
+      "before_sha256": "7fe6460362ff01dabaaa1ed2edaa12dda7314f731ef07c5d17eab374c10b16c7",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/brightman-1896-greek-basil-chrysostom-anamnesis-oblation.json"
+    },
+    {
+      "after_sha256": "f260a3f5951029095adc0141a5bf49e54f404d74e8c022c850817e31800febf5",
+      "before_sha256": "d001750ad4e0727334e682f36576e30ccc37ea1ed4250b34848daff5c0b30c4b",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/brightman-1896-greek-basil-chrysostom-invocation-gifts.json"
+    },
+    {
+      "after_sha256": "8c55cd9ce1812e9b35dd78a4d365a52f8f897dea40d82bdabb27430a785a1e93",
+      "before_sha256": "50dc7b53940ad442fee33cb15120abe7f681c326b8de2d485470dfe7c16183df",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/brightman-1896-greek-basil-james-anamnesis-oblation.json"
+    },
+    {
+      "after_sha256": "7bab4aaec5797f2bdbfe557a24773ff6948de4b0e04af853138c82406c0c2390",
+      "before_sha256": "916dd052a086a13213540348a55c59db592a73d52eeac66685ae4b5ed7c37f5d",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/brightman-1896-greek-basil-james-invocation-gifts.json"
+    },
+    {
+      "after_sha256": "31552e78ceecd339bf76163fd1ecb769f8dba14ac230f379547e05598568f4ae",
+      "before_sha256": "b277c33a8d8649059d75be8e4d9710e6c33b106ae3c1639f889b13c8aaff40cb",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/brightman-1896-greek-chrysostom-james-anamnesis-oblation.json"
+    },
+    {
+      "after_sha256": "7965bbfa22b3c52dcf9ec877fbc93e71433b42f76332c832948ae0ae3628f3c2",
+      "before_sha256": "f776b53b7fcfafc07c6c977669e7c960bc90ef78ca1e6fe145efbc615c0035d7",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/brightman-1896-greek-chrysostom-james-invocation-gifts.json"
+    },
+    {
+      "after_sha256": "672bb55536590df81fbe46abd145fdd6e72c0b3a5862f473ca1403a79f6edeca",
+      "before_sha256": "3c205a122153bd4f04cc6f0717a7534470e5bca09deadc0730141dbedd775a09",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/carmelite-1574-1621-october-05-calendar.json"
+    },
+    {
+      "after_sha256": "e3152d6b884aeb7f85289877487d6689d9bf461166ddbf1b6742d8b95f5996fe",
+      "before_sha256": "679d3f6feb499f291e9dfd2b89b21ebe2a194d30253cc8a302208e61ce62a6ed",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/cistercian-1606-1657-canon-constituents.json"
+    },
+    {
+      "after_sha256": "d68c9eec59f04a303edc2c1335a2f14ff5bbe653d1e5edaf5dbfac32020b8df4",
+      "before_sha256": "347488089e574fbfde86509ae6c61980bc17d152732869343fae263546ff24c2",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/cistercian-1606-1657-confiteor.json"
+    },
+    {
+      "after_sha256": "a75b97afa42921c897c09b17df40e06b4f5906a8104f440f094df40658c5e1c5",
+      "before_sha256": "ef1afeadeebef20e1aba759c1e595181ebb0aed04e264291c229a871963599d7",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/cistercian-1606-1657-offertory-constituents.json"
+    },
+    {
+      "after_sha256": "572a924aeded46f21c688e1d8473285426cea0deab29104db3f7ffb5a9cc65f7",
+      "before_sha256": "d69bf95c5de9185da567d5b82c932e91d219ea5789982d335d4fe1ddbfb0fa4c",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/cistercian-1606-1657-orate-response.json"
+    },
+    {
+      "after_sha256": "817bc439339792662079ae076255cdc55db989dbc6fa7d7e2c77350943b9415a",
+      "before_sha256": "9f660d0dcd022317ac4c0e2cdc1faf60b680e1e6f6143abc23f04102320e0344",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/cistercian-1606-1657-pater-noster-first-chant.json"
+    },
+    {
+      "after_sha256": "da6050a925503ae720335140aea2826ed086be409673d2bfdd91dd157d16e4f3",
+      "before_sha256": "4a5583d2a4a185ca05775241d5a8f2b5df225f2a8b7ee3d9c26b41f7d783f569",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/cistercian-1606-1657-suscipe-trinitas.json"
+    },
+    {
+      "after_sha256": "3f7c7bb137361c0164bc9e8cd9e3b989cec7d86dceff0a36a675de801f3ee76f",
+      "before_sha256": "c77e67c0117efa1ce0a8dcc5bdd776d5049ab48f826c34bbd6d327a59ed98ad4",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/dominican-1550-1604-suscepimus-collect.json"
+    },
+    {
+      "after_sha256": "4e80556bda0b6bc6d24763772d5e6aac29a1f1a59c0d405440d2500a3c0ddf8b",
+      "before_sha256": "852aaa964e62def6fa8ec8996049fe5843dac450212c4e630e08fc78277c5f70",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/mozarabic-1500-1755-benedictio-panis.json"
+    },
+    {
+      "after_sha256": "cb1c8a50186325b03011642bbaceb9a7aab0198c0d90fcbca2c89370e7300bb4",
+      "before_sha256": "1f85b21ba09555a6b2829981390880e74100edbb56b90fdab63c263830f9c9fd",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/mozarabic-1500-1804-benedictio-panis.json"
+    },
+    {
+      "after_sha256": "813de405683687c6f4b2eadcf3c0a3ab9a03f308c2d2876bb45a1dd4f030843e",
+      "before_sha256": "aa8ff3b3579d2ecde85c66237cf1ba4ad664828b8936e9bbfcd9d34eb12586fc",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/mozarabic-1755-1804-benedictio-panis.json"
+    },
+    {
+      "after_sha256": "211712dd30b245a4df54e8ebefd73c705dae1f7047556623fe10b7b2cccd82c8",
+      "before_sha256": "48f0ab5f2afe58c0f2e50a3d02cb9ddcc20a400a2c58e9293908f642528cd188",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/roman-canon-memento-wilson-r-and-cummiskey-1861.json"
+    },
+    {
+      "after_sha256": "87af99d3abf4c249b51f72c365b1f944c9eec637bef29531de298b6833c0d596",
+      "before_sha256": "18ee259e68a3fd3c8790de181eb2f870cd1767f290ed7f655133516580bdd554",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/roman-hanc-igitur-gelasian-and-cummiskey-1861.json"
+    },
+    {
+      "after_sha256": "e949d38d5c5352294941dcf4ce1798f00ebd30d79d0f922e8e12bdf506c78adb",
+      "before_sha256": "870460763d1b410c3f66e01e8ff56cb191620dbdffad498040d0e8e100ce93e1",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/roman-hanc-igitur-gelasian-and-stowe.json"
+    },
+    {
+      "after_sha256": "44a46819a89bd507e376638a78d52814cd1af6adc4d1c5b32080043a7d5f7359",
+      "before_sha256": "a55927c551c0d55361d712565b7e8c39287d44097118a3da513b514f711b7a4a",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/roman-hanc-igitur-gregorian-and-cummiskey-1861.json"
+    },
+    {
+      "after_sha256": "b5fa9d39d23fa2c743f2f52e9609edaa282004d90caa027ce906e74224fa627f",
+      "before_sha256": "37d5039450b162e1567095ff10d2b9544fc47ac3e91bab233782d3dc480158fc",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/roman-hanc-igitur-gregorian-and-gelasian.json"
+    },
+    {
+      "after_sha256": "0325ece4cad52500e33986911dfd0d806e7283b87aa0e807fb9e604a11e73a50",
+      "before_sha256": "5460b910d9b783f48fae8c321a1324f564c5d5395c8bd72043154f0599ee1dc7",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/roman-hanc-igitur-gregorian-and-stowe.json"
+    },
+    {
+      "after_sha256": "6fe2cd48118b33211df4c471f5cca5beba2bcfb124bdca6f68118b0b97b97923",
+      "before_sha256": "35aadd1b7700a8bdc65e2306b973d5175380fbe5484fa7d65a9d8c624eb06b13",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/roman-hanc-igitur-stowe-and-cummiskey-1861.json"
+    },
+    {
+      "after_sha256": "d4fdffe72072a11b706a246c6d8d1f024f080ea3f8808fd857401ade5ed24bfe",
+      "before_sha256": "9f9713c90b6b275e670d64fc905350d208cbfe5da01e3265806631deca17eca4",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/roman-quam-oblationem-gelasian-and-cummiskey-1861.json"
+    },
+    {
+      "after_sha256": "e01ee8164f7b299e3b2c51b2b502e377dc78f803f60fbfe9b8697fc241710cd9",
+      "before_sha256": "4fe362d29b53daa13413ce3a6e9896ee438f8631d8ad2f71ba303188f14fea41",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/roman-quam-oblationem-gelasian-and-stowe.json"
+    },
+    {
+      "after_sha256": "8447a02a1170524fd14cba833f903ce829d7a2d5ad214a15d10bcafb9cdda07b",
+      "before_sha256": "efb0753cdf5f42b4284b9adc911b85181bd3d6cd9560aae4968bc26c1395fb4f",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/roman-quam-oblationem-gregorian-and-cummiskey-1861.json"
+    },
+    {
+      "after_sha256": "5ac879dbbb4ede3d606c45ebf2da94ce7936a95ea8938be8ef69269b4971c283",
+      "before_sha256": "a5fdbb03d552b09c48b2b5b2e10a65538105e250b5bae984333af3b2ee2be0cf",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/roman-quam-oblationem-gregorian-and-gelasian.json"
+    },
+    {
+      "after_sha256": "7635f496b18eea854b96f51b76e59c3643ff937f3196502f5fe96d93808fc54b",
+      "before_sha256": "7dfe4fbfbafe7969f65d2ad13f63a275138f8856e02e91ea940b4d96cad011d4",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/roman-quam-oblationem-gregorian-and-stowe.json"
+    },
+    {
+      "after_sha256": "f3adc642c10ba28b73a06b022ba73671e3cb07b833738c73c7291280ffaf5778",
+      "before_sha256": "e75854e1605aca3a72cea38dac450666c642e2974a2ec69cce26a62ae6433033",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/roman-quam-oblationem-stowe-and-cummiskey-1861.json"
+    },
+    {
+      "after_sha256": "cbd8c15a5b80b074cac5f10dbe26e4ee33c5497db14490773cc81b51dbb2abd7",
+      "before_sha256": "a03c5e545a9c924df953a738f1ac1654f4a4d7dfcfacf37281c2883613feed1b",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/act-history/comparisons/roman-sanctus-stowe-and-cummiskey-1861.json"
+    },
+    {
+      "after_sha256": "70bcebdcd326922dd121c076d6540f0ecdc86f856428d667b707f69941eecaaf",
+      "before_sha256": "a1d9d1734a1460d920fc51f184ecb1c85a703474a7af80d6b4901c4b8b3d8135",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/documents/corpus.json"
+    },
+    {
+      "after_sha256": "a9e10c2a1e26aa554066ceeb5fa7a51314ab850d362b49fc49acdfa4ddc8a347",
+      "before_sha256": "82c4e4a668b6202a003ca887b2ef93e70df94cac55b45a2c2d16c2eab8610041",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/sources/editions/holy-see/acta-apostolicae-sedis/1910-volume-2-1910.json"
+    },
+    {
+      "after_sha256": "40b009dadc2ac511758570562022c54fa2925f21a58902c5301e030cfdee5eab",
+      "before_sha256": "91d5e776a1c9f944a15808a29244c6232c629184d940c54b1d09a9f8e0ded694",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/sources/editions/holy-see/acta-apostolicae-sedis/1911-volume-3-1911.json"
+    },
+    {
+      "after_sha256": "d436227bb1ce94fd17aa7d48850997374d2d7e6808b470261017613667a5dcec",
+      "before_sha256": "bbf330fa2f4824766f533141134f5538dd66a194ac031779826b947442d2f94f",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/sources/editions/holy-see/acta-apostolicae-sedis/1912-volume-4-1912.json"
+    },
+    {
+      "after_sha256": "28f78a655493f9024b8bb2056b854e84c837c1f79e1564ea36c4a98df6013214",
+      "before_sha256": "6c07d4dbcc92dd6f52299313da6834484e5d66d4b363fff476409c370f3ce5fd",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/sources/editions/holy-see/acta-apostolicae-sedis/1947-volume-39-1947.json"
+    },
+    {
+      "after_sha256": "d56afd503adb5c6226b09d129dd97a59ace9b5ac23197d6c71dab858323e36e2",
+      "before_sha256": "7f2c05bcb68c5b75a345384abe335ee9cb4396f5d2dcbf9a3c8dd4716a98ceca",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/sources/editions/holy-see/acta-apostolicae-sedis/1948-volume-40-1948.json"
+    },
+    {
+      "after_sha256": "f17e56a470471acc07d63305a71537b8667bbbbf67ef2ea5e6e2583c4d38c53c",
+      "before_sha256": "cc91ea6be1cef015300b5436438962498791c7416198fbfc36c3b0efffe666b6",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/sources/editions/holy-see/acta-apostolicae-sedis/1951-1951-volume-43.json"
+    },
+    {
+      "after_sha256": "d68fb41e7ba4cc96a41ca4f24b5738baf20e96ad582c8cc213eb9d3fb71f8b99",
+      "before_sha256": "7b5f95d9a2229ce0a0a13cbbb0e1175e2b9e0f6734638469cef74d0a30dc7ee2",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/sources/editions/holy-see/acta-apostolicae-sedis/1955-volume-47-1955.json"
+    },
+    {
+      "after_sha256": "07a354ce78e685e507ae0dff5d0b3470b3be6a30ca7cef35d03f18ecbf1262a2",
+      "before_sha256": "747118a0777db8b83f1ca218359f755bb5c4e160111c82efeff0847c10351de7",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/sources/editions/holy-see/acta-apostolicae-sedis/1957-volume-49-1957.json"
+    },
+    {
+      "after_sha256": "2728c81c070a4c47b0abef15874ba28b124491a1cc51d915df2c1e197da47eb2",
+      "before_sha256": "494e3e8477798ad6d7d2b5c99c3b9d223212785963c1b6577504e0a904129828",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/sources/editions/holy-see/acta-apostolicae-sedis/1960-volume-52-1960.json"
+    },
+    {
+      "after_sha256": "73fbc67569517864521b464b153a981f50c4b5c8d4293f5ef04dc56405e767df",
+      "before_sha256": "a8d54f415d016fc0a238a0cac5e699b68e8cc278324981d0c4f0b018c9a8b030",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/sources/editions/holy-see/acta-apostolicae-sedis/1962-volume-54-1962.json"
+    },
+    {
+      "after_sha256": "4da01c565c743b7543674c5c0e183bc68de7eb1edfe4acb8c471ba3768eca3e6",
+      "before_sha256": "2d478083e3c26598e7902b9880b13af4baf6a19b5a134c67e1593bcb9662f306",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/sources/editions/holy-see/acta-apostolicae-sedis/1964-volume-56-1964.json"
+    },
+    {
+      "after_sha256": "3d18156d855e70d9aa470b0704daa1ceeece62aa06000576509fce6ee90fbe48",
+      "before_sha256": "96ce62f80ff6c7fd3e80d3da3a4bf83a2a8ecbf54e9867181f633f797f33a0df",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/sources/editions/holy-see/acta-apostolicae-sedis/1965-volume-57-1965.json"
+    },
+    {
+      "after_sha256": "6dbafe6685ea88a9ae7360853f17cbe6243aa8aaa1372148e14809b29ab96893",
+      "before_sha256": "da6b062da6c7e43be80f5b88bd56617bb7bd3e08f2b6a49ddc0898893eed8568",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/sources/editions/holy-see/acta-apostolicae-sedis/1966-volume-58-1966.json"
+    },
+    {
+      "after_sha256": "426f73f0ce6de860162555015fe9ff433f7f5e56110ddeb28d3b4ba11dd56b96",
+      "before_sha256": "515f5ef844dbf051918021588f98aa9be8a1277bf11ca76701807aa2ab2958d6",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/sources/editions/holy-see/acta-apostolicae-sedis/1967-volume-59-1967.json"
+    },
+    {
+      "after_sha256": "cb33405ece76a35cf6f61c6b3d90339ef9cec6a0f23e03ffa58464cd0bbccf59",
+      "before_sha256": "fba6e30d50cd1ebf43511dd64eca96ad75c6c9473a5152b02053db84a29cefa5",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/sources/editions/holy-see/acta-apostolicae-sedis/1970-volume-62-1970.json"
+    },
+    {
+      "after_sha256": "a06a7cfc8f3f55171fe041ba4cf4642c0fbf73fd14db4199562f1e63d28dd8a7",
+      "before_sha256": "f551fdcab31f74d9f66376f855a412bb0804da7cf02445cdb37868385f612328",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/sources/editions/holy-see/acta-apostolicae-sedis/1974-volume-66-1974.json"
+    },
+    {
+      "after_sha256": "7c3f2229a0809ef437ed8fcb5e21a17275e98184c1ee4480fbda59941c487767",
+      "before_sha256": "3865b9413e6eb3d47541527f298cbc3d063882e0925d5a317ad732383f205891",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/sources/editions/holy-see/acta-apostolicae-sedis/1975-volume-67-1975.json"
+    },
+    {
+      "after_sha256": "1d622503d68b05986db2e0ada02265a3ae81bf7e6e31b3b54378bfbeb1e52cac",
+      "before_sha256": "6608c4ea0a8723d7065124913de6b452a1a4146f3fd5f4b4e015b40b349de6e2",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/sources/editions/holy-see/acta-apostolicae-sedis/1976-volume-68-1976.json"
+    },
+    {
+      "after_sha256": "2aa95053a46c0763e7435d24ccc8d5b377e652cdc43902d300e65d2718f7ba89",
+      "before_sha256": "bbef15e237eefba295c8fef755251a7ece2660905732433b36a9cc8d27a71ad9",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/sources/editions/holy-see/acta-apostolicae-sedis/1984-volume-76-1984.json"
+    },
+    {
+      "after_sha256": "28e6b7d6a60a070a0e9c852b32a9b9d2b6567dccfb2c2f8f6643bdf903b71cf7",
+      "before_sha256": "b671145c650ae72d11e63a51924bd2a33ad45ed69083fb8603d2cdec5862b54d",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/sources/editions/holy-see/acta-apostolicae-sedis/1988-volume-80-1988.json"
+    },
+    {
+      "after_sha256": "cdbe3d5adbc61aadb2976aeacecd0dd67e5d8ecb339591e80d5d16991e200d00",
+      "before_sha256": "64bd8fed5cf939b0bc632a6e84ef8f0e2d7bab5bb0524eaac5118e52e4b59148",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/sources/editions/holy-see/acta-apostolicae-sedis/1990-volume-82-1990.json"
+    },
+    {
+      "after_sha256": "208fb6ce3efe5747b9031d75946104850876eb443554ee3a5c631f457d2b747c",
+      "before_sha256": "6b3a21184c63de68abd96be4b1328a347f575286a078b7d560f1851313322a25",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/sources/editions/holy-see/acta-sanctae-sedis/1870-volume-6-1870-1871.json"
+    },
+    {
+      "after_sha256": "faeea7f36bd5c9c9cee5eab37f2162695b1f971ced7f6c5b8633385bb09c7ef3",
+      "before_sha256": "1c886f29311fe6d79f109f3a6eab37391a15baf1706d5bb0aeb3c6a37f86649c",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/sources/editions/jacques-paul-migne/patrologia-latina-volume-35/1845-1845-paris.json"
+    },
+    {
+      "after_sha256": "31898cb4d24fbdf51e7af485ee7184e12fe469388f4e5085130bb372bddf736d",
+      "before_sha256": "59006e23a4535a0ef7de9dc415944d5fdeb77f67601c6b964c2e0bab2a31c8b9",
+      "class": "published-upstream-range",
+      "path": "src/web/data/structure/sources/index.json"
+    },
+    {
+      "after_sha256": "f4c7b8bcd3e4f8d7a67707f77e50bb206d02c8ee53a17484604839aa6ba9297d",
+      "before_sha256": "bf7fd0f1eb2a08b2f2e6e490baf5f2c5e15a40efafb8cd5a7c0ca25886dee4a1",
+      "class": "published-upstream-range",
+      "path": "tmt.json"
+    },
+    {
+      "after_sha256": "78076ea2055af773ed790eae18a8e18239c1df5d291ad3cdd419b03b7e755d5c",
+      "before_sha256": "6167f4618afa0223424bfeba3af31c98aca3209643c78ea082a4fef8dbe05ac8",
+      "class": "published-upstream-range",
+      "path": "tools/source-library"
+    },
+    {
+      "after_sha256": "27d322a9ddb5d2914536f6d5a11c4cd35e7640fa57a46683b58fe47ee5295275",
+      "before_sha256": "049296c2f5444f2cb9e7b38ed3416ee30688795e9d6eef4883b7bd431d9db7fe",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_calendar_translation_overlay.py"
+    },
+    {
+      "after_sha256": "9112ed84f1e081564799eb363b8097dd56c7a44e389186ec4b66d0acdedeab72",
+      "before_sha256": "7c8320d0002b2538eed33174fba1d51d0afa0e3f0539ecf4477961ef58408bcf",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_common_ordinary_gate.py"
+    },
+    {
+      "after_sha256": "082421a677c116e0226d1869658d2c3c6ac613a9db36d0dd8a903044c92515ba",
+      "before_sha256": "e9e211c74d3115bdd9e4747c47fa6bdd059ebb5c73fafcbd0cffb63e9c761899",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_complete_missal_report.py"
+    },
+    {
+      "after_sha256": "b4aa175b0a70b6e61d613d70cdf31f97ef51a07560bdf20ef533de4f8bacd174",
+      "before_sha256": "3ff632fba7b59d3cd7d6ea6308101835692db44cd3644dc5c667b36248e27979",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_current_source_batch_latin.py"
+    },
+    {
+      "after_sha256": "c206ddc1162c376ce357a19f8ed847c215049e4ad539ae15e33e06e4a7e7f987",
+      "before_sha256": "4c684b6a3c362c98c543d96c8cd15cd99eea6397d4080520c5e9916fb4d73c8b",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_icel_artifact_rights.py"
+    },
+    {
+      "after_sha256": "9d66d031665aab3719148f7ddca2258e04571d7ab8998d01c9d7c2b362af4a38",
+      "before_sha256": "ba32706992f27783b3fa1fb7144922f7cdcba40c7fe6de4b49acadbc24e2534c",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_lasance_artifact_rights.py"
+    },
+    {
+      "after_sha256": "9cf35bd16aadc3bc819f3c4c71f472e1fe8f00c1acbfc6e7e2e1a779ff383c38",
+      "before_sha256": "75b05e239879951e53fae7b416f46f02eb3de660bbea3e3a45d28986ff590079",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_lectern.py"
+    },
+    {
+      "after_sha256": "61eddd8f8217b11802a465433dcf56e4a9424d26087b7d350bec08e0490c8a91",
+      "before_sha256": "4ca566723ba5bd64befb1858ba84ae9cc63eedc48b64be24b1a21bd63ffee3b7",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_liturgical_rights_surfaces.py"
+    },
+    {
+      "after_sha256": "a7cccb24029f626bd6d266cd2e0e50d6898fec97c8c3aeb69b24541953eff855",
+      "before_sha256": "dd79208b6be99aa06b03ade3df4b88cd24d490ec5dd4b2ef40a95e3be83d4245",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_mame_1922_missal_witness.py"
+    },
+    {
+      "after_sha256": "9a9855202f82f910130167df1372e3aaa207ccd34b70da1e79a3e67f1cc62b3e",
+      "before_sha256": "42d92d2177b0e75807bfc003fbaa092b7af317455bc42e021d524b87982e8b09",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_mass_ordinary.py"
+    },
+    {
+      "after_sha256": "d169f9fac01208e972fe079233ac7f27c807349fb1e832dd753176ebadc6da0c",
+      "before_sha256": "594539c0a6dbba689fa0b234b08ae1a39328a5d3cb31ce3d270b627b0d979f55",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_mass_today_proper_usage.py"
+    },
+    {
+      "after_sha256": "171f0dd99443cd3de1513b90bc41f266afb4d1450ee4ef691b2a96b8c957ff32",
+      "before_sha256": "f71e93199158c620a196c77c5534d2295cebeca85418c31d73601ccbb2a24a4c",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_mass_today_source_mass_context.py"
+    },
+    {
+      "after_sha256": "3b2b9ffd76ac0d92fd7bf2d3287296655ff27225c469588d78ecb3c790a62b1e",
+      "before_sha256": "8a10dc9a23a0bf329d9ca55147c5b5714a5aaa7eae214ae93227dee23519e194",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_missal_exemplar_parity.py"
+    },
+    {
+      "after_sha256": "c89517fade788f3489eb6468bc5c03b67ae677972865c1fe1c7e07fd1f7b5d86",
+      "before_sha256": "07af805708506d9504b784c77aeb23d4f5718d05d0ddaa5c00f8cefb2e40bfac",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_postconciliar_collation.py"
+    },
+    {
+      "after_sha256": "9de7e686cef10c415782866cbbc5895675b84ba583bc0cd3cdeae599a2f39143",
+      "before_sha256": "1300a5237bf87c747efb5cff34af65119b92c705741ff9b71a098ebc06248a2d",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_postconciliar_easter_ferials.py"
+    },
+    {
+      "after_sha256": "65d0a49a0cc793bf786942bb06ddca3759f070cb61192970d125919c4d9e58cc",
+      "before_sha256": "79f500ae7d46e15e61e71fcaa95cb8db7aabbae5836d8c8524113ddd98d6a417",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_postconciliar_easter_v_vii_ferials.py"
+    },
+    {
+      "after_sha256": "85d1c9a9191d98f92d70511b650abfbb9c384e65f66edd7c2063eccf193ae533",
+      "before_sha256": "e181b34f13234aa012e21c64b5dfa9337f6c0b04ae79956d362970dd13f9f84e",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_postconciliar_lenten_ferial_courses.py"
+    },
+    {
+      "after_sha256": "d2ad103b4249743e12a1769fe3117db1a6453831937b44311466f7ab0c21d082",
+      "before_sha256": "7f554c1242969ea093666796fd03b65cf6fbebe801fefcd59b9cb3458ada809f",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_proper_appointment_contract.py"
+    },
+    {
+      "after_sha256": "84d490b0ab532b8c5d5436587d192d53d239995e3a02aa869ba22bbba50ec1ec",
+      "before_sha256": "2da98665d4b603bea6bff8e8db9cbfbedd71bd28f305da45e0ab42a07a22c2c1",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_proper_appointment_foreign_applicability.py"
+    },
+    {
+      "after_sha256": "31957a3789b2f6291700098bdb7683fc4d0a19e3e4094c3e8f48ab45395302d6",
+      "before_sha256": "27aba519f4d733c25818917bb0eda9b461129165b0c4970088384d41d3c9d87d",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_proper_latin.py"
+    },
+    {
+      "after_sha256": "6a726fae97db4b6bd544edf3dc96ebcf0754b6ad8682ab75a487e7be9be62629",
+      "before_sha256": "c10aa6e3d4461e0477f7985e918e3539c7a0d862993323bb4fa173e856bb27cf",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_propers_census.py"
+    },
+    {
+      "after_sha256": "ce10297defdada53cafb861af2c935c0919813724a4f938a3ca1b57e585d7680",
+      "before_sha256": "527a387cab80477d3a71f7f9a76c138f23b091f0647e0ccbbd8a612e68dfc622",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_roman_1962_advent_ferial_use.py"
+    },
+    {
+      "after_sha256": "9b3db05126afcce06f2e77f1f615d5d3b6a6645981d014463e89b9fcdbd59f94",
+      "before_sha256": "6ef972570a295f91e4dfda4d04cb371b45e9d563ba7074e0b2c492ecd51a0b0b",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_roman_1962_advent_nonprimary_appointments.py"
+    },
+    {
+      "after_sha256": "b2a3d65fb8f773ca1ac2de583a760d60edc6e6d1cbe1317a144746564b49512a",
+      "before_sha256": "5e1bacb5f6ab250689b799766a9c5e2d8a287bbdf7bade4c7124e00323629405",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_roman_1962_after_pentecost_source_appointments.py"
+    },
+    {
+      "after_sha256": "04f9cc3568716f34b786d6cdc167977a11335fd2432b96313f2071e035524ce5",
+      "before_sha256": "98cf7be34f0a26c6427b472ea749164ef49df91b5c020bed3484760e90b5463b",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_roman_1962_alexander_hilary_restoration.py"
+    },
+    {
+      "after_sha256": "8cb588f249b6028f8b142d3f486370e4cacb9d011d2c74ce2a712294d87addfc",
+      "before_sha256": "70222c572f4ba84432320238d6787d9fd2f0d75c89a6e41eba06a601c185a37d",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_roman_1962_all_souls_bodies.py"
+    },
+    {
+      "after_sha256": "74e5d17a2f1a0a1d3934aef5f662c6be553c9c2db9d5e80c5a6e5c1701035014",
+      "before_sha256": "28b60fd6f1d4458416ae8d19b4ad72ed3a68a278eedfc759cea16b14d460398f",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_roman_1962_chant_appointments.py"
+    },
+    {
+      "after_sha256": "56f7f10dcfccf14a4537359b6e866bfb0e9c7d2893986dcafe74b2941446aac4",
+      "before_sha256": "d8b8f4b74d6613b2d641758071d27d3f406fc99541fc6e7671b5c7349c8c8667",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_roman_1962_common_new_english_absences.py"
+    },
+    {
+      "after_sha256": "2a02299138da22f4f047f4c286f80f0d7efe6f04cb66a633012c8daae300b3f2",
+      "before_sha256": "6f3f78af5d6b2a5c39b181476c24edef766f174f6d51b9c638431cdc94bf73f1",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py"
+    },
+    {
+      "after_sha256": "8d19a702d8b92220b70fcd1b196fa992726f04ce9bbeadc78274cf9987767267",
+      "before_sha256": "a951d32d13572db1b696f6861001da22cc5fc776c63a4250f6169bc6e7e43e88",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_roman_1962_cummiskey_exact_prayer_reuse_phase2.py"
+    },
+    {
+      "after_sha256": "bc36843210bb50430e9c4279c09c9bd8c76be5057fd6024d3ef351d52f55a745",
+      "before_sha256": "dea866b45e90047947604780613d3336b12e5b7fa54728f809ccbe50138860a1",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_roman_1962_early_lent_nonprimary.py"
+    },
+    {
+      "after_sha256": "4b7d0a7262db8216e1ec8489e689f4959c4bb1c0a07563542864ff63f3cf511f",
+      "before_sha256": "e32d0c5fba69405e060ec3ec285bb4eec08f8f6cbe8c64dca98d2cfc22efd003",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_roman_1962_finding_aid.py"
+    },
+    {
+      "after_sha256": "22f698e399ae53bdf1c6d4c803be88c1556cf366bbcf8c7897bc00326dc940b0",
+      "before_sha256": "a91b6f62d33442eabd268cfb4367a8768f382e3653a46813fe87f8f211ebe1ed",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_roman_1962_lasance_advent_ii_iv_phase1.py"
+    },
+    {
+      "after_sha256": "8917c73a9c4c0f03d39373271e55df703486e44ba90af600ad6582bbb096941e",
+      "before_sha256": "e6277ea1c793fd7d00ac2f4c1ae5608ac6d89d5027ba6f75416ae97cdec1390d",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_roman_1962_latin22_phase5.py"
+    },
+    {
+      "after_sha256": "a88ad8b7df5c8af8c4e0d3023a0e1864ff68a766bfc51a3b63b019da59ad4124",
+      "before_sha256": "8bc6ee1c5d6b0b5dac5b17f6ebde210bee51cd2ffb606daaae7b7e20ef7c2d8a",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py"
+    },
+    {
+      "after_sha256": "3da385e2b4824a58f72542dcbb976ab69ab7c5859c41c375f4d70937cac5a274",
+      "before_sha256": "fd39751a0ecd2c0222ca1b808b6641b15906397d61372160533a2f24170bb27e",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_roman_1962_summer_commemoration_appointments.py"
+    },
+    {
+      "after_sha256": "4ab85f7ee0be0af90267e503dea142b7ce14d5ce2e922f8aab168df092f0d8ba",
+      "before_sha256": "07c44e1117eb8644f83fffe01ee059d0ff0706d4f68cbed0c47706b513484921",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_roman_1962_winter_ursula_source_repair.py"
+    },
+    {
+      "after_sha256": "84287e07ac9ffbc84ba9d20f6297e46f085aa827405f16dee248a7bfe6d4515b",
+      "before_sha256": "0ea2e693930f4a6ae23385b7d3053bf8fa0a6ed03aba4ae58b02ca953d988d9f",
+      "class": "published-upstream-range",
+      "path": "tools/tests/test_source_library.py"
+    },
+    {
+      "after_sha256": "56045997bde206999023f8a604d0dc5d423c8fab43aa6f9bda558691605c8b50",
+      "before_sha256": "39eca86a0435639b5cee8e17d46629ff22ce32521ba4a4d6eaec558e5a896811",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_st_lucy_coverage_disposition.py"
+    },
+    {
+      "after_sha256": "c6d4f03d8757769f4db9e216b6f2d1e159553064831262a45cce3aa95a8842ad",
+      "before_sha256": "0d826fa79d874592ac494586667a409a58861d1f589d2ede6f2089f4d386e9f7",
+      "class": "published-upstream-range",
+      "path": "tools/tests/test_tool_registry.py"
+    },
+    {
+      "after_sha256": "8f4059c63164454a43bf842237b6985fcf310c0cfb41d795b544ef931e3ba612",
+      "before_sha256": "1f9fbdb78920173351563aea4c83318bba25736e55c5f3e2ea33ebabb3278168",
+      "class": "this-task-working-tree-edit",
+      "path": "tools/tests/test_workflow_synthesis_preflight.py"
+    },
+    {
+      "after_sha256": "711e418aa6b6631428ee624c3dfb705bf62975e6d3a2b3bbb4cd923b596452e5",
+      "before_sha256": "52eca135da0c40d0afaa05ca43d27d5c6854949a9402141aed4418141684eb46",
+      "class": "published-upstream-range",
+      "path": "tools/tpt"
+    },
+    {
+      "after_sha256": "ec286b99658a6655361473e1dd7df5a67b7bc6698ae177ed9b787e8f65e662a5",
+      "before_sha256": "c38e2afd0a96cfdeba45834b79dcd175c15db72aa14aa32c3b29f3aab1f42b02",
+      "class": "published-upstream-range",
+      "path": "web/claude/articles/faith/four-last-things-01-death.md"
+    },
+    {
+      "after_sha256": "3205e299a9d0e273b5fee55aad7a4379f53fa07657aae34697d829ce07d5a139",
+      "before_sha256": "d72e99fd506d7731ce1b3bd633ac9f7009175777e7d0306ae2bf4b3997a2c1c4",
+      "class": "published-upstream-range",
+      "path": "web/claude/articles/faith/four-last-things-02-judgment.md"
+    },
+    {
+      "after_sha256": "0a1e6a02902c72d22b9eb93c70a4cb489963f991d38a28e73339a33cd0fabb40",
+      "before_sha256": "8bb87bc4ca272b7ede816d806ee5ec7359c5f45d18ebd3df87902a6cbaadef8f",
+      "class": "published-upstream-range",
+      "path": "web/claude/articles/faith/four-last-things-03-hell.md"
+    },
+    {
+      "after_sha256": "b39647741705b34a55bd564f869c74d20e26cfa622e76cf02dfde72a9299864b",
+      "before_sha256": "c44bd349c79ec3ef6c6bbfca85cb0264497acadab8f1ba116fecf1940bc037ae",
+      "class": "published-upstream-range",
+      "path": "web/claude/articles/faith/four-last-things-04-heaven.md"
+    },
+    {
+      "after_sha256": "2022bc95da498101f1c8f92a9c921670f1d43ae07deacdf7e19869fde24c3362",
+      "before_sha256": null,
+      "class": "v2-receipt-becomes-ordinary-input",
+      "path": "workflows/reviews/missal-reader-completion-2026-10-26/source-review-final-source180-presentation-v2.json"
+    }
+  ],
+  "pin_delta_counts": {
+    "published-upstream-range:added": 52546,
+    "published-upstream-range:modified": 138,
+    "this-task-working-tree-edit:modified": 39,
+    "v2-receipt-becomes-ordinary-input:added": 1
+  },
+  "published_parent": "cbf5917ce5b5a1ff450029035f319dafdf366540",
+  "published_upstream_additions": {
+    "count": 52546,
+    "derivation": "git diff --name-only --diff-filter=A upstream_range_base published_parent, each hashed from the working tree",
+    "path_sha256_list_digest": "b6e0e41f800fdc1da6e951fbf530cb3fbe9e0e3114cc029791079de1a740b071"
+  },
+  "reader_written_paths_unchanged": {
+    "derivation": "git log --author=Codex --since=2026-10-19 --name-only -- src/sources, less the shared registries",
+    "fixed_prefixes": [
+      "src/sources/calendars/",
+      "src/sources/inventories/roman-1962-",
+      "src/sources/inventories/roman-pre-1955-",
+      "src/sources/inventories/postconciliar-",
+      "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/",
+      "src/sources/works/francis-xavier-lasance/",
+      "src/sources/works/eugene-cummiskey/",
+      "src/sources/works/edward-caswall/",
+      "tools/tests/_source_batch_guards.py"
+    ],
+    "inventory_and_calendar_paths": 64,
+    "reader_written_paths": 3805,
+    "shared_registries_excluded": [
+      "src/sources/inventories/claude-publications-v1.toml",
+      "src/sources/inventories/source-containment-v1.toml",
+      "src/sources/inventories/source-family-migration-v1.toml"
+    ],
+    "shared_registries_moved_upstream": [
+      "src/sources/inventories/claude-publications-v1.toml",
+      "src/sources/inventories/source-containment-v1.toml",
+      "src/sources/inventories/source-family-migration-v1.toml"
+    ],
+    "work_owner_prefixes_informational": [
+      "src/sources/works/anselm-schott/",
+      "src/sources/works/augustine/",
+      "src/sources/works/augustinus-it/",
+      "src/sources/works/bede/",
+      "src/sources/works/catholic-church/",
+      "src/sources/works/charlton-t-lewis/",
+      "src/sources/works/church-of-england/",
+      "src/sources/works/cnrs-irht/",
+      "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/",
+      "src/sources/works/convocation-of-canterbury/",
+      "src/sources/works/diocese-of-chelmno/",
+      "src/sources/works/ebible-org/",
+      "src/sources/works/english-college-of-douay/",
+      "src/sources/works/eugene-cummiskey/",
+      "src/sources/works/francis-xavier-lasance/",
+      "src/sources/works/gaspar-lefebvre/",
+      "src/sources/works/holy-see/",
+      "src/sources/works/ildefonso-schuster/",
+      "src/sources/works/john-chrysostom/",
+      "src/sources/works/joseph-henry-allen/",
+      "src/sources/works/ronald-conte/",
+      "src/sources/works/thomas-aquinas/",
+      "src/sources/works/triptych/"
+    ]
+  },
+  "schema": "triptych-reviewed-source-batch-receipt/v1",
+  "scope": "missal-source-batch",
+  "self_cycle_exclusions": [
+    "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+    "tools/tests/fixtures/missal-source-batch-20261023.json",
+    "workflows/reviews/missal-reader-completion-2026-10-26/source-review-final-source180-upstream-v3.json"
+  ],
+  "source_epoch_paths": 104580,
+  "source_input_manifest_sha256": "9505370ea718eb49afb9d5ac9acece8acde1527324ce2b511832033ae4089688",
+  "source_permissions_extended_beyond_exact_reviewed_authorities": false,
+  "status": "accepted",
+  "successor_kind": "upstream-path-delta",
+  "upstream_range_base": "da270a0394ba7689e7a66bdfe4fa99bec0418674"
+}
