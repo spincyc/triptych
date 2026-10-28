@@ -620,15 +620,15 @@ Second repair pass, 2026-10-28:
 - **Straddling words:** a scan of all 400 registered geometry readings found
   that same word-level mixture in 43 live readings. A native-image check
   confirmed 26 of the 43 flagged words. Of the 19 held readers that passed
-  page review, 9 are clean and installed; 10 stay held. Of the 20 already
-  installed, 14 are confirmed (IV 8, VII 2, IX 4) and wait for withdrawal
-  or a corrected replacement.
+  page review, 9 are clean and installed; 10 stay held. The 14 confirmed
+  installed readers (IV 8, VII 2, IX 4) are withdrawn with explicit
+  prior-to-null supersessions in a new reading-order withdrawals manifest.
+  The geometry tool now holds such units as inseparable.
 
-The release holds 4,821 PDFs and 9,070 pages.
+The release holds 4,807 PDFs and 9,033 pages.
 
 Open:
-- withdrawal or supersession of the 14 confirmed installed straddling-word
-  readings, and a sampled image audit of the lower-confidence crossings;
+- a sampled image audit of the lower-confidence word crossings;
 - the geometry classifier fix and supersede package for the nine failed
   readers;
 - the next Bullarium batch: X, II, the remaining Turin volumes and the
