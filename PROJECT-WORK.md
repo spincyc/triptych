@@ -630,7 +630,30 @@ Second repair pass, 2026-10-28:
   XI 0179), which are withdrawn the same way. The other 4 are clean.
 - A sample of 30 lower-confidence word crossings showed no displaced text.
 
-The release holds 4,803 PDFs and 9,022 pages.
+The release holds 4,808 PDFs and 9,039 pages.
+
+Encyclicals landing page, 2026-10-28 (user priority): the public
+`/encyclicals/` page lists all 322 encyclicals in the Vatican indexes, from
+*Ubi primum* (1740) to the present, one sortable and filterable row each with
+date, pope, title, an AI-written (Claude) description grounded in the act's
+text, and links to the installed two-column readers. 166 rows link readers
+(160 Latin, 44 English, plus other languages); the site now serves exactly
+those linked papal PDFs, hash-checked against the release record. The index
+source is `src/sources/papal-documents/encyclicals-index.json`
+(`make encyclicals-catalogue`).
+
+Paused at the user's request to save effort:
+- English: 195 encyclicals up to 1930 still lack a complete English reader.
+  Two translations are confirmed in Vaughan (1869), already acquired, and
+  about 35 journal candidates are unchecked (Catholic Mind, ACQR, Homiletic
+  Monthly, American Ecclesiastical Review).
+- Latin before 1846: Gasparri's *Codicis Iuris Canonici Fontes* (1926–28)
+  covers 25 of Benedict XIV's 30 uninstalled encyclicals in clean OCR
+  (bodies without salutation or dating), and *Acta Pii VI* (1871) covers
+  Pius VI. Both need new series plumbing.
+- 67 post-1947 rows have no description yet.
+- Bullarium batch 2 and the continuation geometry are paused with handoffs
+  in `.scratch/claude-r3/HANDOFF.md` and `.scratch/claude-cont-geom/pilot.md`.
 
 Open:
 - a sampled image audit of the lower-confidence word crossings;
