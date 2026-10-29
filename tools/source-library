@@ -2021,6 +2021,7 @@ def _owned_papal_inventory(library: Library, entry: Path, relative: Path) -> boo
         return True
     envelopes = {
         "catalog.json": ("triptych-papal-documents/v1", {"documents": list, "coverage": list, "scope": dict}),
+        "encyclicals-index.json": ("triptych-encyclicals-index/v1", {"encyclicals": list, "revision": str, "scope": str, "description_provenance": dict}),
         "archives.json": ("triptych-papal-archives/v1", {"volumes": list, "index_receipts": list, "coverage": dict}),
         "source-links.json": ("triptych-papal-source-links/v1", {"documents": list}),
         "publication-approvals.json": ("triptych-papal-publication-approvals/v1", {"documents": dict}),

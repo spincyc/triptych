@@ -264,7 +264,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-public-alpha prepare-public-alpha \
 	check-pdf-review check-curriculum-rights check-curriculum-sources \
 	check-curriculum-structure check-source-reader source-projection \
-	check-document-catalogue document-catalogue \
+	check-document-catalogue document-catalogue encyclicals-catalogue \
 	public-site public-preview \
 	dependencies-arch dependencies-arch-browser dependencies-arch-tui install-dependencies-arch \
 	verify-public-site verify-public-preview \
@@ -646,6 +646,7 @@ help:
 		'make check-document-catalogue  Confirm each derived title against its PDF and the catalogue against the sources' \
 		'make document-catalogue  Rewrite the browser catalogue of every document' \
 		'make source-projection  Rewrite the browser reading of the source library' \
+		'make encyclicals-catalogue [INDEX=<path>]  Rewrite the browser catalogue of encyclicals from its index' \
 		'make check-source-reader  Prove no withheld source text is served, and no reading is stale' \
 		'make check-public-alpha  Validate the exhaustive public-release policy' \
 		'make prepare-public-alpha  Print current candidate hashes; grants no approval' \
@@ -1931,6 +1932,13 @@ document-catalogue:
 # served to the `sources` reading page, which reads it and walks nothing itself.
 source-projection:
 	@$(PYTHON) $(SOURCE_READER_TOOL) structure
+
+# The catalogue of every encyclical, rewritten from the tracked index and
+# checked reader by reader against release/papal-documents.json. Tracked under
+# src/web/data and served to the `encyclicals` reading page, which reads it and
+# walks nothing itself. INDEX=<path> reads another index, for a trial run.
+encyclicals-catalogue:
+	@$(PYTHON) scripts/_encyclicals.py structure $(if $(INDEX),--index '$(INDEX)',)
 
 $(READING_BUILD_ROOT)/%.tex: $(BIBLE_TYPESET_IMPL) FORCE_BIBLE_RENDER
 	@$(PYTHON) $(BIBLE_TYPESET_TOOL) render --volume '$*' --out '$(READING_BUILD_ROOT)'

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Papal Encyclicals</title>
+<!-- The shared machinery first, then this section's own. Both are local;
+     the page makes no external request until a reader follows a Vatican link. -->
+<link rel="stylesheet" href="../shared/browser-core.css">
+<link rel="stylesheet" href="encyclicals.css">
+</head>
+<body class="encyclicals-page">
+<a class="skip-link" href="#reading">Skip to the list</a>
+
+<header class="page-header">
+  <h1><span class="page-mark" aria-hidden="true">✠</span>Papal Encyclicals</h1>
+  <p class="lede">
+    Every encyclical this project has catalogued, one row each: sort by pope,
+    year or title, and open the Latin or English reading edition where one is
+    held here, or the Vatican’s own page.
+  </p>
+  <p class="tally" id="tally"></p>
+</header>
+
+<!-- Both notices are in the markup, not written by the script: they must be
+     true of the page before anything loads, and with no script at all. -->
+<section class="enc-notices" aria-label="Before you rely on this list">
+  <p class="enc-notice" data-notice="ai-summaries">
+    <strong>The summaries are AI-written.</strong> Claude, an AI model made by
+    Anthropic, wrote each one from the encyclical’s own text. They are a finding
+    aid, not papal wording; read the encyclical before relying on one.
+    <span id="enc-provenance"></span>
+  </p>
+  <p class="enc-notice" data-notice="after-1930">
+    <strong>No text published after 1930 is offered here.</strong> Only Latin
+    printed by 1930, and identified human English translations printed by 1930,
+    are linked. Every other row gives the Vatican’s page and the reason. No
+    modern or AI translation is offered.
+  </p>
+</section>
+
+<div id="banner" class="banner" role="status" hidden></div>
+
+<form id="controls" class="controls" role="search" aria-labelledby="controls-heading">
+  <h2 id="controls-heading" class="visually-hidden">Narrow and order the list</h2>
+
+  <div class="field">
+    <label for="pope-select">Pope</label>
+    <select id="pope-select" name="pope" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field field-narrow">
+    <label for="text-select">Text</label>
+    <select id="text-select" name="text" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field field-narrow">
+    <label for="sort-select">Order</label>
+    <select id="sort-select" name="sort" disabled>
+      <option>Loading…</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="find-input">Find</label>
+    <input id="find-input" name="find" type="search" autocomplete="off"
+           placeholder="title, subject, word or year" disabled>
+  </div>
+</form>
+
+<!-- Not a live region: replacing it would read the whole list aloud on every
+     change. The shared script announces a one-line summary instead. -->
+<main id="reading" class="enc-catalogue" tabindex="-1" aria-busy="true">
+  <noscript>
+    <p>The sortable list needs JavaScript. Without it, the same rows — each
+      encyclical with its reading editions and Vatican page — are in one data
+      file: <a href="../browse/encyclicals/index.json">encyclicals/index.json</a>.</p>
+  </noscript>
+  <p class="placeholder" id="enc-placeholder">Loading the encyclicals…</p>
+  <p class="enc-scroll-hint" id="enc-scroll-hint" hidden>This window is narrower
+    than the table: scroll it sideways for every language and the Vatican link.</p>
+  <div class="enc-scroll" id="enc-scroll" tabindex="0" role="region"
+       aria-label="Encyclicals table">
+    <table id="enc-table" class="enc-table" role="table" hidden>
+      <caption class="visually-hidden">Encyclicals, one per row. Press a column
+        heading to order the list by it.</caption>
+      <thead><tr id="enc-head"></tr></thead>
+      <tbody id="enc-body"></tbody>
+    </table>
+  </div>
+</main>
+
+<footer class="page-footer">
+  <p>
+    A <strong>reading edition</strong> is a two-column setting of one identified
+    historical printing — the Latin as printed by 1930, or an English translation
+    printed by 1930 — whose every page was reviewed before it was installed. Each
+    link names the printing it was set from. <strong>Fragment</strong>
+    marks an edition of a printing that holds only part of the act;
+    <strong>damaged printing</strong> marks one whose source is defective in
+    places. The edition itself says what is missing.
+  </p>
+  <p>
+    The papal wording in these editions is historical text, in the public domain
+    in the United States on its identified printing by 1930; its status
+    elsewhere may differ, and it is excluded from this project’s licence. See
+    <a href="../third-party.html">Third-party material</a>. A Vatican link opens
+    the Holy See’s own site, which this project does not control.
+  </p>
+  <p>
+    The list is one generated file, written by
+    <code>scripts/_encyclicals.py</code> from a tracked index of the Vatican’s
+    own encyclical indexes and reviewed additions. This page reads that file and
+    nothing else.
+  </p>
+  <p>
+    <a href="../liturgy/day.html">Today’s Missal</a> ·
+    <a href="../liturgy/">The propers of the Mass</a> ·
+    <a href="../law/">The Code, Canon by Canon</a> ·
+    <a href="../sources/">The Source Library</a> ·
+    <a href="../texts/">Every Document</a>
+  </p>
+</footer>
+
+<script src="../shared/browser-core.js"></script>
+<script src="encyclicals-model.js"></script>
+<script src="encyclicals.js"></script>
+</body>
+</html>
