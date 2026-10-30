@@ -1,0 +1,70 @@
+{
+  "documents": [
+    {
+      "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.providentissimus-duquesne-note-blocks-fca936aedede",
+      "body_tex": "1893-11-18-papal-leo-xiii-hf-l-xiii-enc-18111893-providentissimus-deus-ec8dd363-en/1893-11-18-papal-leo-xiii-hf-l-xiii-enc-18111893-providentissimus-deus-ec8dd363-en.body.tex",
+      "changed": true,
+      "compact_layout": true,
+      "compact_margin": 0.6,
+      "id": "papal.leo-xiii.hf-l-xiii-enc-18111893-providentissimus-deus",
+      "language": "en",
+      "pages": 11,
+      "pdf": "1893-11-18-papal-leo-xiii-hf-l-xiii-enc-18111893-providentissimus-deus-ec8dd363-en/1893-11-18-papal-leo-xiii-hf-l-xiii-enc-18111893-providentissimus-deus-ec8dd363-en.pdf",
+      "pdf_sha256": "bfb7c2e9da7e370ad47da3247f87e0eec5e0684c08807c832e8d96e19fa2f75f",
+      "physical_line_ranges": [
+        [
+          1,
+          1402
+        ]
+      ],
+      "render_revision": "2026-10-30T15:13:34Z",
+      "segment_id": "segment.papal.leo-xiii.hf-l-xiii-enc-18111893-providentissimus-deus.1903-benziger-english.duquesne-note-blocks-fca936aedede",
+      "source_sha256": "fca936aedede6000b59697dba68ca9e0ff6915ffe7c40d21e4fd66b109b3b830",
+      "status": "compiled",
+      "stem": "1893-11-18-papal-leo-xiii-hf-l-xiii-enc-18111893-providentissimus-deus-ec8dd363-en",
+      "terminal_keep_blocks": 2,
+      "tex": "1893-11-18-papal-leo-xiii-hf-l-xiii-enc-18111893-providentissimus-deus-ec8dd363-en/1893-11-18-papal-leo-xiii-hf-l-xiii-enc-18111893-providentissimus-deus-ec8dd363-en.tex",
+      "text_fidelity": {
+        "layout_hyphens": 64,
+        "method": "pdf-raw-source-aware-line-hyphen-nfkc-v3",
+        "pages": 11,
+        "source_characters": 74508,
+        "source_first_page": 1,
+        "source_last_page": 11,
+        "source_normalized_characters": 52038,
+        "status": "pass"
+      },
+      "warnings": [
+        "Underfull \\hbox (badness 1292) in paragraph at lines 407--444"
+      ]
+    }
+  ],
+  "errors": [],
+  "generator": "typeset-papal",
+  "generator_version": 2,
+  "index": "index.html",
+  "input_manifest": "frozen-manifest.json",
+  "input_manifest_sha256": "957913ed79cf65415cbbb72e029d8d1bc5919fe2d590d7943c58c7d15a14f599",
+  "options": {
+    "automatic_hyphenation": "babel-english-latin",
+    "babel_shorthands": false,
+    "body_alignment": "justified-en-la; ragged-right-other-languages",
+    "body_font": "Latin Modern Roman",
+    "body_leading_pt": 13,
+    "body_size_pt": 10.5,
+    "columns": 2,
+    "form_feed": "layout-whitespace",
+    "layout_hyphen_fidelity": "source-aware-line-end-only",
+    "punctuation": "literal",
+    "soft_hyphen": "nonprinting",
+    "unicode_text_mapping": "xetex-native"
+  },
+  "receipt": "receipt.json",
+  "revision": "2026-10-30T15:13:34Z",
+  "schema": "triptych-papal-typeset-receipt/v1",
+  "summary": {
+    "compiled": 1,
+    "failed": 0,
+    "selected": 1
+  }
+}

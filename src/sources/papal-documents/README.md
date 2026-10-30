@@ -14,7 +14,7 @@ passages belong to the [source library](../README.md), under the
 | `publication-approvals.json` | Exact original-language or historical-translation text hashes and historical publication evidence admitting retained Latin text. |
 | `typeset-manifest.json` | Exact admitted source artifacts and their rights basis for the two-column reader. |
 | `encyclicals-source-corrections-manifest.json` | Nine independently page-reviewed source repairs; immutable parent witnesses, replay recipes and exact prior-reader supersessions remain retained. |
-| `encyclicals-classic-manifest.json` | 221 independently page-reviewed classic selections; together with nine source repairs, 230 of the original 327 versions have installed classic readers. Exact prior-reader supersessions remain retained. |
+| `encyclicals-classic-manifest.json` | 268 independently page-reviewed classic selections; together with nine source repairs, 277 of the original 327 versions have installed classic readers. Exact prior-reader supersessions remain retained. |
 | `encyclicals-classic-renderer-review.md` | Independent renderer regression and adversarial fidelity findings; every replacement PDF retains its own every-page review. |
 | `vatican-corrections-manifest.json` | Explicit replacement source or reader selections and recorded supersessions of earlier Vatican outputs. |
 | `historical-english-manifest.json` | Thirty-one bounded source entries from the 1903 Benziger collection, including an explicitly abridged excerpt. |

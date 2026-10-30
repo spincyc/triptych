@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.acta-papal-archives.aas.002.editae-latin-native-finish-geometry-code-b687a14e7bc7"
+edition_id = "edition.holy-see.acta-apostolicae-sedis.volume-2-1910"
+artifact_type = "source-specific-acquisition-code"
+media_type = "text/x-python"
+storage = "tracked"
+retrieved = "2026-10-30"
+rights_status = "licensed"
+rights_basis = "Source-specific mechanical geometry replay implementation; MIT under repository LICENSE."
+license = "MIT"
+provenance = "Single-column LINE fragments grouped by yMin within3pt, keeping marker-size (<4pt high) fragments separate. Every native WORD value retained exactly once and sorted by x within its row. Only pairs of single-character WORD values with inter-WORD gap<2pt and at least one alphanumeric value join. Complete WORDs remain separated even when tightly set. No source wording typed or inferred."
+notes = "Native Vatican PDF is an archival OCR reconstruction. No lexical repair, translation or original-print facsimile collation. All preceding source artifacts and segments remain retained."
+sha256 = "b687a14e7bc75a271847491cbbb9824ef42c24697f855b112de745df1ce00a0a"
+byte_size = 2670
+path = "src/sources/works/holy-see/acta-apostolicae-sedis/editions/volume-2-1910/artifacts/editae-latin-native-finish-geometry-code-b687a14e7bc7/replay.py"
+indexable = false

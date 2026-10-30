@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.bounded-images-ca31a9280e5a"
+edition_id = "edition.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb"
+artifact_type = "bounded-historical-facsimile-images"
+media_type = "application/zip"
+storage = "tracked"
+rights_status = "permission"
+rights_basis = "BSB supplies this copy under https://rightsstatements.org/vocab/NoC-NC/1.0/, which permits copying, modification and distribution of the digital representation for non-commercial use. The retained bounded historical page images support this non-commercial research/source edition. No commercial-use permission or project CC licence is asserted over the images. The historical wording has its separate United States expired-term basis. Full modern PDF wrappers are excluded from this bounded package."
+rights_jurisdiction = "United States"
+retrieved = "2026-10-30"
+sha256 = "ca31a9280e5a0f8408d4ce63c4a3855389d7b7522ea8231599a157897b4d183f"
+byte_size = 11079319
+path = "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/bounded-images-ca31a9280e5a/historical-images.zip"
+provenance = "Bounded new mechanical OCR recovery from actual BSB historical page images. No source wording passed through a model; the project supplies source bounds and mechanical tooling only."
+source_url = "https://www.digitale-sammlungen.de/en/details/bsb10543911"
+notes = "Deterministic ZIP of unchanged complete BSB IIIF JPEG responses for canvas 5 and 351–371, including title/imprint and immediate act boundary context. Every member URL, SHA-256 and byte extent is pinned by the separately retained OCR recipe. This is a bounded image package, not the whole scan; no source words were reconstructed by a model."

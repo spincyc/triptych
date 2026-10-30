@@ -1,0 +1,72 @@
+{
+  "schema": "triptych-papal-native-spacing/v1",
+  "parent": {
+    "artifact_id": "artifact.acta-papal-archives.ass.015.historical-text-ce7f8fbb",
+    "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1898-acta-ass-015/artifacts/acta-historical-text-ce7f8fbb/historical.txt",
+    "sha256": "ce7f8fbb6a92dd17066c6343b60deb8936d228c487e61c1eabf3b660327dd3ab"
+  },
+  "native_raw": {
+    "artifact_id": "artifact.acta-papal-archives.ass.015.historical-text-ce7f8fbb.native-raw-cum-multa-3c26b55d7104",
+    "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1898-acta-ass-015/artifacts/cum-multa-native-raw-3c26b55d7104/text.txt",
+    "sha256": "3c26b55d71045f106dc8d319a16a6eb119c4beee63cabd56fb3aeb6ad1c82d87"
+  },
+  "native_first_page": 241,
+  "selections": [
+    {
+      "source_range": [
+        9652,
+        9696
+      ],
+      "native_page": 241
+    },
+    {
+      "source_range": [
+        9699,
+        9740
+      ],
+      "native_page": 242
+    },
+    {
+      "source_range": [
+        9742,
+        9782
+      ],
+      "native_page": 243
+    },
+    {
+      "source_range": [
+        9784,
+        9824
+      ],
+      "native_page": 244
+    },
+    {
+      "source_range": [
+        9826,
+        9865
+      ],
+      "native_page": 245
+    },
+    {
+      "source_range": [
+        9867,
+        9907
+      ],
+      "native_page": 246
+    }
+  ],
+  "retained_source_lines": [],
+  "source_id": "acta.ass.015.ass-015-act-006",
+  "output_sha256": "967135b7756ddba9396c50a87ac8c1e7f413b6b5516923fdd4fa2b343bfbc70d",
+  "reviewed_stream_order_pages": [
+    246
+  ],
+  "stream_order_difference_pages": [
+    246
+  ],
+  "review": {
+    "artifact_id": "artifact.acta-papal-archives.ass.015.historical-text-ce7f8fbb.native-spacing-review-cum-multa-9829b25189d3",
+    "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1898-acta-ass-015/artifacts/cum-multa-native-spacing-review-9829b25189d3/review.json",
+    "sha256": "9829b25189d3d2724ce8bbe05ba7ebfc2310696fcdd90edadaaf8ccb3f05cf28"
+  }
+}

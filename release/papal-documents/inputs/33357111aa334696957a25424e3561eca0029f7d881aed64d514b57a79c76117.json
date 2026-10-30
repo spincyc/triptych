@@ -1,0 +1,110 @@
+{
+  "documents": [
+    {
+      "artifact_id": "artifact.nonmediocri-ass26.nonmediocri-native-spacing-da68d4ac35e8",
+      "collection_corpus": "acta",
+      "date": "1893-10-25",
+      "document_type": "letter",
+      "edition_id": "edition.acta-papal-archives.ass.026.ass-026-l07953",
+      "id": "acta.ass.026.ass-026-l07953",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          155
+        ]
+      ],
+      "pope": "Leo XIII",
+      "revision": "2026-10-30T16:58:32Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. The historical title identifies Romae, Typographia Polyglotta, S. Congregationis de Propaganda Fide, 1893-94, at exact source LF line 34. The separately printed 1969 Johnson reprint wrapper at LF 36–40 is excluded. This identifies the reproduced historical printing; the Vatican OCR reconstruction is not image-collated. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.native-spacing-nonmediocri.da68d4ac35e8",
+      "segment_path": "src/sources/works/papal-documents/1893-10-25-papal-leo-xiii-hf-l-xiii-enc-25101893-non-mediocri-08743f66/editions/1893-acta-ass-026-ass-026-l07953/segments/native-spacing-nonmediocri-da68d4ac35e8.toml",
+      "sha256": "da68d4ac35e8f3774a24f8dda673f42449e3cb41e76ccf21a7a99341a4c59fdf",
+      "source_note": "ASS 26 (1893), pp. 199–203. Whitespace restored mechanically from native text geometry; source wording, order, literal hyphens and historical note (1) retained. Vatican OCR reconstruction; inherited OCR spelling remains, without original-print facsimile collation.",
+      "source_url": "https://www.vatican.va/archive/ass/documents/ASS-26-1893-94-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1893-acta-ass-026/artifacts/nonmediocri-native-spacing-da68d4ac35e8/text.txt",
+      "title": "Non mediocri cura",
+      "work_id": "work.papal.leo-xiii.hf-l-xiii-enc-25101893-non-mediocri"
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.ass.017.historical-text-94e21c27",
+      "collection_corpus": "acta",
+      "date": "1884-08-30",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.ass.017.ass-017-act-001",
+      "id": "acta.ass.017.ass-017-act-001",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1819,
+          1863
+        ],
+        [
+          1866,
+          1906
+        ],
+        [
+          1908,
+          1944
+        ]
+      ],
+      "pope": "Leo XIII",
+      "revision": "2026-10-30T16:58:32Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. Historical title-leaf year token MDCCCCLXXXIV (line 30) is damaged; archive inventory identifies the serial volume as 1884 and body includes acts of 1884–1885. Johnson first-reprinting 1968 wrapper excluded. Printing-year certainty requires further title-leaf evidence. This is source-delivery identification, not facsimile collation or independent original-printing verification. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.ass.017.ass-017-act-001",
+      "segment_path": "src/sources/works/papal-documents/1884-08-30-papal-leo-xiii-hf-l-xiii-enc-30081884-superiore-anno-ada7c15c/editions/1884-acta-ass-017-ass-017-act-001/segments/historical-text.toml",
+      "sha256": "94e21c27a3d1a5f07bb02b85a3c0ccd908c29f4894a55b603eecd43b165c8902",
+      "source_note": "ASS 17 (1884), pp. 49–51. Archival OCR text reconstruction, mechanically extracted with pdftotext; historical source notes and inherited OCR spelling and spacing retained. Mechanical extraction is not original-print facsimile collation. Exact LF ranges bind the whole hashed UTF-8 LF/form-feed derivative.",
+      "source_url": "https://www.vatican.va/archive/ass/documents/ASS-17-1884-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1884-acta-ass-017/artifacts/acta-historical-text-94e21c27/historical.txt",
+      "title": "Superiore anno",
+      "work_id": "work.papal.leo-xiii.hf-l-xiii-enc-30081884-superiore-anno"
+    }
+  ],
+  "revision": "2026-10-30T16:58:32Z",
+  "schema": "triptych-papal-typeset/v1",
+  "supersessions": [
+    {
+      "prior": {
+        "artifact_id": "artifact.acta-papal-archives.ass.026.historical-text-15a33cfd",
+        "id": "acta.ass.026.ass-026-l07953",
+        "language": "la",
+        "pdf_sha256": "8db27bb4d6f817fca420a5781984a5bf2919bbad482cbc9fbedaccc95d235a91",
+        "segment_id": "segment.acta-papal-archives.ass.026.ass-026-l07953",
+        "source_sha256": "15a33cfd01401e070c0b912e4154be4f7d163d6730ac8f1cd64ed6096d756d3d"
+      },
+      "reason": "Native geometry whitespace-only restoration; independent cold review pending.",
+      "replacement": {
+        "artifact_id": "artifact.nonmediocri-ass26.nonmediocri-native-spacing-da68d4ac35e8",
+        "id": "acta.ass.026.ass-026-l07953",
+        "language": "la",
+        "revision": "2026-10-30T16:58:32Z",
+        "segment_id": "segment.native-spacing-nonmediocri.da68d4ac35e8",
+        "source_sha256": "da68d4ac35e8f3774a24f8dda673f42449e3cb41e76ccf21a7a99341a4c59fdf"
+      }
+    },
+    {
+      "prior": {
+        "artifact_id": "artifact.acta-papal-archives.ass.017.historical-text-94e21c27",
+        "id": "acta.ass.017.ass-017-act-001",
+        "language": "la",
+        "pdf_sha256": "d2bc466686ca280ffb535383356753563339aa9e8841c1dc95650225cbbba37b",
+        "segment_id": "segment.acta-papal-archives.ass.017.ass-017-act-001",
+        "source_sha256": "94e21c27a3d1a5f07bb02b85a3c0ccd908c29f4894a55b603eecd43b165c8902"
+      },
+      "reason": "Reader apparatus explicitly identifies archival OCR reconstruction and retained OCR spelling/spacing; source body, controller, segment and exact selection unchanged. Independent cold review pending.",
+      "replacement": {
+        "artifact_id": "artifact.acta-papal-archives.ass.017.historical-text-94e21c27",
+        "id": "acta.ass.017.ass-017-act-001",
+        "language": "la",
+        "revision": "2026-10-30T16:58:32Z",
+        "segment_id": "segment.acta-papal-archives.ass.017.ass-017-act-001",
+        "source_sha256": "94e21c27a3d1a5f07bb02b85a3c0ccd908c29f4894a55b603eecd43b165c8902"
+      }
+    }
+  ]
+}

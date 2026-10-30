@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.ass.012.ass-012-act-007.note-blocks-fd4fbfc32f74"
+edition_id = "edition.acta-papal-archives.ass.012.ass-012-act-007"
+artifact_id = "artifact.acta-papal-archives.ass.012.historical-text-e91f242d.note-blocks-arcanum-la-fd4fbfc32f74"
+artifact_sha256 = "fd4fbfc32f74ef62b13b24d533120d495c404cd2405dec588f63092541993872"
+segment_type = "constituent-work"
+states = ["cataloged", "acquired", "inspected"]
+physical_line_ranges = [[1, 48], [50, 92], [94, 136], [138, 180], [182, 225], [227, 270], [272, 316], [318, 361], [363, 406], [408, 450], [452, 494], [496, 537], [539, 579], [581, 624], [626, 667], [669, 711], [713, 755], [757, 768]]
+context = "Same complete prior constituent as segment.acta-papal-archives.ass.012.ass-012-act-007, selected from exact parent artifact.acta-papal-archives.ass.012.historical-text-e91f242d at original physical LF [[15674, 15721], [15724, 15766], [15768, 15810], [15812, 15854], [15856, 15899], [15901, 15944], [15946, 15988], [15990, 16033], [16035, 16078], [16080, 16122], [16124, 16166], [16168, 16209], [16211, 16251], [16253, 16296], [16298, 16339], [16341, 16383], [16385, 16427], [16430, 16441]]. The explicit partition spec is artifact.acta-papal-archives.ass.012.historical-text-e91f242d.note-spec-arcanum-la-d2a5a5efd5e9 (d2a5a5efd5e94c45d4571fa8ba97c8528d4962728613f5a90fc6c8be1b5acd21). Original selection pieces map separately to derivative LF ranges, preserving every existing range and paragraph boundary."
+notes = "Reading-only replacement preserves all selected non-LF bytes and their original order. Historical source-note groups at original LF [[15986, 15988]] occupy separate blocks at their existing source breaks. Prior source/segment remain retained; no lexical repair, reordered body/notes, or original-print collation is claimed."

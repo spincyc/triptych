@@ -1,0 +1,33 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "5d74d051a6b699831b8b682d7bc8a0fbe67a1fd45a956e94d6221e722df342e9",
+  "documents": [
+    {
+      "id": "acta.aas.004.archive.aas.004.046",
+      "language": "la",
+      "pdf_sha256": "980c3fed5a66cc040611d837e5aa1103c3006bdb688034b8b7001bd3ae5598b4",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2
+          ],
+          "description": "Literal hard-line hyphens and bounded OCR quotation/glyph errors remain readable and disclosed. No historical page-foot notes occur. Exact native extent521–525 includes an unnumbered issue-opening page, followed by printed522–525. Closing date and PIUS PP.X subscription remain on source-bearing final reader page; unresolved row date is omitted from identification."
+        }
+      ],
+      "limitations": "Fresh all-page reader and native OCR/text reconstruction inspection, exact source/helper/recipe/map replay and PDF fidelity. No original-print facsimile or lexical collation, translation or independent rights determination; no inherited visual review.",
+      "receipt_sha256": "5d74d051a6b699831b8b682d7bc8a0fbe67a1fd45a956e94d6221e722df342e9",
+      "report": "src/sources/papal-documents/encyclicals-repair-cold-21-b-lacrimabili.md",
+      "report_sha256": "6e32c45fd42a14af399713c2cc5774fc633cf770bada2b045b990caebe0c78b8"
+    }
+  ]
+}

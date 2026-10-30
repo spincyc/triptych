@@ -1,0 +1,75 @@
+{
+  "schema": "triptych-papal-typeset/v1",
+  "revision": "2026-10-30T06:58:47Z",
+  "documents": [
+    {
+      "artifact_id": "artifact.acta-papal-archives.ass.015.historical-text-ce7f8fbb.native-spacing-cum-multa-967135b7756d.note-blocks-cum-multa-dbd6a9de258d",
+      "date": "1882-12-08",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.ass.015.ass-015-act-006",
+      "id": "acta.ass.015.ass-015-act-006",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          261
+        ]
+      ],
+      "pope": "Leo XIII",
+      "revision": "2026-10-30T06:58:47Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. Historical title leaf identifies EDITIO STEREOTYPA (line 25), Rome 1898 (line 37); archive serial label 1882. Johnson first-reprinting 1968 wrapper excluded. This is source-delivery identification, not facsimile collation or independent original-printing verification. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.ass.015.ass-015-act-006.native-spacing-967135b7756d.note-blocks-dbd6a9de258d",
+      "segment_path": "src/sources/works/papal-documents/1882-12-08-papal-leo-xiii-hf-l-xiii-enc-08121882-cum-multa-85499ced/editions/1898-acta-ass-015-ass-015-act-006/segments/note-blocks-cum-multa-dbd6a9de258d.toml",
+      "sha256": "dbd6a9de258dd44308f050c74300b7a943c93d3b776445d3ac4603dac520f768",
+      "source_note": "ASS 15 (1882), printed pages 241–246. Exact LF ranges refer to the whole hashed pdftotext -layout UTF-8 LF/form-feed derivative; no body wording is copied or rewritten through a model. Historical source notes within the identified bounds are retained.  Native spacing is restored only from uniquely matching same-page raw lines, with old source LF order and every selected non-whitespace character preserved. Explicit unmatched layout records remain literal. The separately identified journal printing footer at original LF9697 is excluded; source footnote9696 is retained. A separately registered bounded LF-only derivative partitions explicitly inspected historical source-note groups into distinct paragraph blocks at their source-page breaks. All selected non-LF bytes and their order are unchanged; literal source OCR, word spacing and reference marks remain. The exact partition spec and raw parent are retained; no original-print image collation is claimed.",
+      "source_url": "https://www.vatican.va/archive/ass/documents/ASS-15-1882-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1898-acta-ass-015/artifacts/note-blocks-cum-multa-dbd6a9de258d/text.txt",
+      "title": "Cum multa",
+      "work_id": "work.papal.leo-xiii.hf-l-xiii-enc-08121882-cum-multa",
+      "correction_evidence": {
+        "revision": "2026-10-30T06:44:01Z",
+        "kind": "explicit-source-note-lf-partition",
+        "spec_artifact_id": "artifact.acta-papal-archives.ass.015.historical-text-ce7f8fbb.native-spacing-cum-multa-967135b7756d.note-spec-cum-multa-e29c97ef17e4",
+        "spec_sha256": "e29c97ef17e458b7c85d55a6ed9ca3d15364edb82c806f46abf0ca5adbabe927",
+        "source_note_physical_line_ranges": [
+          [
+            45,
+            45
+          ],
+          [
+            130,
+            130
+          ],
+          [
+            172,
+            172
+          ]
+        ],
+        "prior_segment_id": "segment.acta-papal-archives.ass.015.ass-015-act-006.native-spacing-967135b7756d",
+        "selected_non_lf_sha256": "5fca14eb39cf6f38c7df45fbc65435e1b8fc548799ca0090779a7ebbda222828",
+        "selected_non_lf_bytes_preserved": true,
+        "source_order_preserved": true,
+        "native_spacing_recipe_artifact_id": "artifact.acta-papal-archives.ass.015.historical-text-ce7f8fbb.native-spacing-recipe-cum-multa-39b8ca8cb516",
+        "native_spacing_recipe_sha256": "39b8ca8cb51668fdee040a90256dd2eda2747cf8fad115de20911eb3772a5210",
+        "original_source_note_physical_line_ranges": [
+          [
+            9696,
+            9696
+          ],
+          [
+            9782,
+            9782
+          ],
+          [
+            9824,
+            9824
+          ]
+        ]
+      },
+      "compact_margin": 0.65,
+      "compact_layout": true
+    }
+  ]
+}

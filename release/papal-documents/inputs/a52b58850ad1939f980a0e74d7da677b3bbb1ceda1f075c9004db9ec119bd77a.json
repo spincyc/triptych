@@ -1,0 +1,67 @@
+{
+  "documents": [
+    {
+      "artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.exaliis-repair-text-87320abf345c",
+      "body_tex": "1851-11-21-pius-ix-acta-volume-01-line-00012583-part-01-63a96dab-la/1851-11-21-pius-ix-acta-volume-01-line-00012583-part-01-63a96dab-la.body.tex",
+      "changed": true,
+      "id": "pius-ix-acta.volume-01.line-00012583.part-01",
+      "language": "la",
+      "pages": 2,
+      "pdf": "1851-11-21-pius-ix-acta-volume-01-line-00012583-part-01-63a96dab-la/1851-11-21-pius-ix-acta-volume-01-line-00012583-part-01-63a96dab-la.pdf",
+      "pdf_sha256": "98670c77b75be22b7865a4bec85dc78cb98eacfd0a0cae7c1d38e9c4f04b6e0e",
+      "physical_line_ranges": [
+        [
+          1,
+          148
+        ]
+      ],
+      "render_revision": "2026-10-30T17:31:46Z",
+      "segment_id": "segment.pius-ix-acta.volume-01.line-00012583.part-01.1854-rome-franz-munich-bsb-la.image-ocr-exaliis-repair-87320abf345c",
+      "source_sha256": "87320abf345c99cd855ab844a63eaadee4a65007348eb75382a8ac136c965152",
+      "status": "compiled",
+      "stem": "1851-11-21-pius-ix-acta-volume-01-line-00012583-part-01-63a96dab-la",
+      "tex": "1851-11-21-pius-ix-acta-volume-01-line-00012583-part-01-63a96dab-la/1851-11-21-pius-ix-acta-volume-01-line-00012583-part-01-63a96dab-la.tex",
+      "text_fidelity": {
+        "layout_hyphens": 25,
+        "method": "pdf-raw-source-aware-line-hyphen-nfkc-v3",
+        "pages": 2,
+        "source_characters": 6985,
+        "source_first_page": 1,
+        "source_last_page": 2,
+        "source_normalized_characters": 6047,
+        "status": "pass"
+      },
+      "warnings": [
+        "Underfull \\hbox (badness 1092) in paragraph at lines 112--140"
+      ]
+    }
+  ],
+  "errors": [],
+  "generator": "typeset-papal",
+  "generator_version": 2,
+  "index": "index.html",
+  "input_manifest": "frozen-manifest.json",
+  "input_manifest_sha256": "2dc9d62c7477285b8751f4cc52b54f918941c3cb098db31085b44700b5592a9b",
+  "options": {
+    "automatic_hyphenation": "babel-english-latin",
+    "babel_shorthands": false,
+    "body_alignment": "justified-en-la; ragged-right-other-languages",
+    "body_font": "Latin Modern Roman",
+    "body_leading_pt": 13,
+    "body_size_pt": 10.5,
+    "columns": 2,
+    "form_feed": "layout-whitespace",
+    "layout_hyphen_fidelity": "source-aware-line-end-only",
+    "punctuation": "literal",
+    "soft_hyphen": "nonprinting",
+    "unicode_text_mapping": "xetex-native"
+  },
+  "receipt": "receipt.json",
+  "revision": "2026-10-30T17:31:46Z",
+  "schema": "triptych-papal-typeset-receipt/v1",
+  "summary": {
+    "compiled": 1,
+    "failed": 0,
+    "selected": 1
+  }
+}

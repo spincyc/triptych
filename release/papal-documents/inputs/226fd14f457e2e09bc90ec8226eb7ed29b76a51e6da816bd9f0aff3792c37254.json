@@ -1,0 +1,55 @@
+{
+  "schema": "triptych-papal-typeset/v1",
+  "revision": "2026-10-30T16:32:10Z",
+  "documents": [
+    {
+      "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.humanum-omissions-text-7f8e961ca176",
+      "chapter": 5,
+      "collection_corpus": "english",
+      "completeness": "complete-within-identified-printed-chapter",
+      "date": "1884-04-20",
+      "document_type": "encyclical",
+      "id": "papal.leo-xiii.hf-l-xiii-enc-18840420-humanum-genus",
+      "language": "en",
+      "physical_line_ranges": [
+        [
+          1,
+          79
+        ]
+      ],
+      "pope": "Leo XIII",
+      "revision": "2026-10-30T16:32:10Z",
+      "rights_basis": "The bounded historical English printed by Benziger Brothers in the United States in 1903 and its faithful mechanical image/OCR evidence are public domain in the United States under the publication-term assessment in src/sources/inventories/papal-documents-rights-v1.toml. Historical words are excluded from Triptych CC BY 4.0. Modern delivery covers, library matter and creative revisions are excluded. Scan attribution: Gumberg Library, Duquesne University; Lyrasis Members and Sloan Foundation; Internet Archive.",
+      "rights_notice": "The 1903 English translation is public domain in the United States; Triptych claims no exclusive right in its wording.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.leo-xiii.humanum-genus.1903-benziger-english.omissions-7f8e961ca176",
+      "segment_path": "src/sources/works/leo-xiii/humanum-genus/editions/1903-benziger-english/segments/omissions-7f8e961ca176.toml",
+      "sha256": "7f8e961ca176eeefe996894ce79a9c2dcfd2bf9c81a5e6ec46744e08dfbf7820",
+      "source_note": "Historical human English web transcription of the 1903 Benziger edition; individual translator unidentified. Two substantive omissions at original source LF467 and 469 are recovered from exact fresh OCR byte fragments, with matching full-page and native-crop coordinates and direct native print inspection. Every other selected byte and paragraph boundary remains unchanged. Residual transcription errors remain; full image collation is outstanding.",
+      "source_url": "https://en.wikisource.org/wiki/The_Great_Encyclical_Letters_of_Pope_Leo_XIII/Freemasonry",
+      "text_path": "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/humanum-omissions-text-7f8e961ca176/text.txt",
+      "title": "Freemasonry"
+    }
+  ],
+  "supersessions": [
+    {
+      "reason": "Only two omitted spans are recovered from exact raw OCR fragments. Full-page and clean-crop OCR agree at identical native top-left coordinates, with token dimensions differing by at most1pixel; every used TSV word confidence exceeds95, and the actual native full page/crops were viewed. Internal OCR LF becomes space for the second insertion. No expected replacement wording was typed from a prompt. Other source wording, punctuation, whitespace and all selected LF boundaries remain exact. This is not whole-source collation or translation.",
+      "prior": {
+        "id": "papal.leo-xiii.hf-l-xiii-enc-18840420-humanum-genus",
+        "language": "en",
+        "pdf_sha256": "27380be1983b1af1eefe992fe6bb86952d72c6f52c93524eef33161d600af804",
+        "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-reading-text-fc16a357",
+        "source_sha256": "fc16a357008f7f2e1b0f331dceecc6ae76138b370a19665208fb064677cf6573",
+        "segment_id": "segment.leo-xiii.humanum-genus.1903-benziger-english.benziger-english-transcription"
+      },
+      "replacement": {
+        "id": "papal.leo-xiii.hf-l-xiii-enc-18840420-humanum-genus",
+        "language": "en",
+        "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.humanum-omissions-text-7f8e961ca176",
+        "source_sha256": "7f8e961ca176eeefe996894ce79a9c2dcfd2bf9c81a5e6ec46744e08dfbf7820",
+        "segment_id": "segment.leo-xiii.humanum-genus.1903-benziger-english.omissions-7f8e961ca176",
+        "revision": "2026-10-30T16:32:10Z"
+      }
+    }
+  ]
+}

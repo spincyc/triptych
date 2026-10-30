@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.providentissimus-duquesne-raw-ocr-1b4d5d639257"
+edition_id = "edition.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english"
+artifact_type = "bounded-ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The retained English wording and historical notes are the human translation printed in the United States by Benziger Brothers in 1903, The Great Encyclical Letters of Pope Leo XIII, printed pp.271–302. The title/copyright leaves establish the historical edition independently of the act date. Its United States publication term has expired under src/sources/inventories/papal-documents-rights-v1.toml. Automated OCR adds no identified creative revision; modern delivery wrappers and matter outside this complete printed act are excluded. Historical source wording is excluded from Triptych CC BY 4.0."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/greatencyclicall00cath/greatencyclicall00cath.pdf"
+retrieved = "2026-10-30"
+sha256 = "1b4d5d639257590dfc242adeecad4d161d7d7983cf0dcec94cadb8459ac78b50"
+byte_size = 75895
+derived_from = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.duquesne-full-ocr-24b45985f4cf"
+transformation = "Select complete physical LF lines 11272–12648 inclusive from the exact whole DjVuTXT response 24b45985f4cf66ba0cf0ddcbf9abbe2a37fdfb6373dca02b35b54db6930e90e1, preserving every selected byte and adding one terminal LF. Includes chapter title, caption, all 32 printed pages, running heads and all historical page-foot references; no lexical correction."
+encoding = "utf-8"
+indexable = true
+notes = "Whole act raw extraction. Residual OCR errors remain; not a diplomatic or word-collated transcription. Mechanical full PDF native layout extraction was tested but rejected because it fused two-column notes/folio on printed pp.271 and 273; no words from that rejected extraction enter this source."
+path = "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/providentissimus-duquesne-raw-ocr-1b4d5d639257/text.txt"

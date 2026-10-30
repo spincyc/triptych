@@ -1,0 +1,55 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "7f4f3d82188d3d64390c9832c0af02b6c8cdda5f607c892a5d76fe2482ff2bc2",
+  "documents": [
+    {
+      "id": "acta.ass.024.ass-024-005",
+      "language": "la",
+      "pdf_sha256": "a4934ac07a28db2ca2caba177c55b55a594a729f90ed2cf852f5d638ef1f0c73",
+      "pages": 5,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "description": "Literal OCR spacing, damaged forms and note-label/numbering discrepancies remain conspicuous but legible; they are disclosed, not lexically approved."
+        }
+      ],
+      "limitations": "Bounded current mechanical reader and source-note membership/extent review of a Vatican OCR reconstruction. No whole-original-print or lexical collation, translation, new rights, intake, installation or deployment approval. Duellorum correction remains separately owned.",
+      "receipt_sha256": "7f4f3d82188d3d64390c9832c0af02b6c8cdda5f607c892a5d76fe2482ff2bc2",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-46.md",
+      "report_sha256": "b2a995ec34822f8d4b1e6c388d3d24539035ed2863bdc649fd90581ce8ad5093",
+      "extra_range_ownership_extent": {
+        "status": "PASS",
+        "added_raw_lf_ranges": [
+          [
+            7848,
+            7851
+          ]
+        ],
+        "native_page": 203,
+        "anchor_raw_lf": 7811,
+        "foreign_opening_excluded_raw_lf": [
+          7839,
+          7846
+        ]
+      },
+      "lf_partition_status": "PASS"
+    }
+  ]
+}

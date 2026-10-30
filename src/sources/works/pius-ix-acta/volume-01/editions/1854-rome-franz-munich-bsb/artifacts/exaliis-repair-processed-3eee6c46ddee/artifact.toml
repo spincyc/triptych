@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.exaliis-repair-processed-3eee6c46ddee"
+edition_id = "edition.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb"
+artifact_type = "exaliis-localized-ocr-processed"
+media_type = "application/zip"
+storage = "tracked"
+rights_status = "permission"
+rights_basis = "BSB supplies this copy under https://rightsstatements.org/vocab/NoC-NC/1.0/, which permits copying, modification and distribution of the digital representation for non-commercial use. The retained bounded historical page images support this non-commercial research/source edition. No commercial-use permission or project CC licence is asserted over the images. The historical wording has its separate United States expired-term basis. Full modern PDF wrappers are excluded from this bounded package."
+rights_jurisdiction = "United States"
+retrieved = "2026-10-30"
+sha256 = "3eee6c46ddeeb368531d540beef4f03eecc8ee7b9f407de1b05ee77ebee58ebd"
+byte_size = 237721
+path = "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/exaliis-repair-processed-3eee6c46ddee/processed-images.zip"
+provenance = "New bounded mechanical OCR recovery from retained original BSB canvas360 and361 pixels, plus exact byte composition over the immutable failed BSB candidate. Source words are never authored or inferred."
+derived_from = "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.bounded-images-ca31a9280e5a"
+transformation = "Eight bounded grayscale/threshold comparison and selected OCR input PNGs mechanically cropped from exact original native JPEGs. Explicit processing and decoded Gray8 pixel hashes are recorded by the separately retained Ex aliis repair recipe. No lossy proxy is used as an OCR input."

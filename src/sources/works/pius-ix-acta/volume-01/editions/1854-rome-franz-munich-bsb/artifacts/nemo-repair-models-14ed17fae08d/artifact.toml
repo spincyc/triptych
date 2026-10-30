@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.nemo-repair-models-14ed17fae08d"
+edition_id = "edition.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb"
+artifact_type = "exact-tesseract-best-recognition-models-with-license"
+media_type = "application/zip"
+storage = "tracked"
+rights_status = "licensed"
+rights_basis = "Unmodified tesseract-ocr/tessdata_best eng.traineddata and lat.traineddata, README.md and complete LICENSE from immutable commit e12c65a915945e4c28e237a9b52bc4a8f39a0cec. Upstream README states all data in the repository are Apache-2.0; complete Apache-2.0 grant and attribution are retained inside this package. Recognition model software/data has this separate license and is not historical papal wording."
+license = "Apache-2.0"
+retrieved = "2026-10-30"
+sha256 = "14ed17fae08dde0425293a887915ce91f9f3afb5b15b7deafded93e67d680c02"
+byte_size = 20891134
+path = "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/nemo-repair-models-14ed17fae08d/models.zip"
+source_url = "https://github.com/tesseract-ocr/tessdata_best/tree/e12c65a915945e4c28e237a9b52bc4a8f39a0cec"
+provenance = "Fetched complete official English model and license files from immutable upstream commit; retained Latin model compared byte-for-byte by SHA-256 with the official Latin model already fetched from that commit. Model payloads remain unmodified. ZIP timestamp and Unix file mode are fixed packaging metadata."

@@ -1,0 +1,67 @@
+{
+  "documents": [
+    {
+      "artifact_id": "artifact.acta-papal-archives.aas.002.editae-latin-native-finish-notes-0d59d43d582b",
+      "body_tex": "1910-05-26-acta-aas-002-archive-aas-002-048-518c037a-la/1910-05-26-acta-aas-002-archive-aas-002-048-518c037a-la.body.tex",
+      "changed": true,
+      "id": "acta.aas.002.archive.aas.002.048",
+      "language": "la",
+      "pages": 10,
+      "pdf": "1910-05-26-acta-aas-002-archive-aas-002-048-518c037a-la/1910-05-26-acta-aas-002-archive-aas-002-048-518c037a-la.pdf",
+      "pdf_sha256": "5035b5162de126cd7ca1036b7b6da0de13475a618bcd704bd7076a6913b9310a",
+      "physical_line_ranges": [
+        [
+          1,
+          1231
+        ]
+      ],
+      "render_revision": "2026-10-30T17:44:06Z",
+      "segment_id": "segment.acta-papal-archives.aas.002.archive.aas.002.048.editae-latin-native-finish-0d59d43d582b",
+      "source_sha256": "0d59d43d582b1c2630784de1b45d184db34eb9513a05f92949c9d460a38d0811",
+      "status": "compiled",
+      "stem": "1910-05-26-acta-aas-002-archive-aas-002-048-518c037a-la",
+      "tex": "1910-05-26-acta-aas-002-archive-aas-002-048-518c037a-la/1910-05-26-acta-aas-002-archive-aas-002-048-518c037a-la.tex",
+      "text_fidelity": {
+        "layout_hyphens": 202,
+        "method": "pdf-raw-source-aware-line-hyphen-nfkc-v3",
+        "pages": 10,
+        "source_characters": 51136,
+        "source_first_page": 1,
+        "source_last_page": 10,
+        "source_normalized_characters": 39475,
+        "status": "pass"
+      },
+      "warnings": [
+        "Underfull \\hbox (badness 1009) in paragraph at lines 54--89"
+      ]
+    }
+  ],
+  "errors": [],
+  "generator": "typeset-papal",
+  "generator_version": 2,
+  "index": "index.html",
+  "input_manifest": "frozen-manifest.json",
+  "input_manifest_sha256": "3d76a2359226e54ad1c577ac80c49f227684f39c94122d198393f04ba406cb9d",
+  "options": {
+    "automatic_hyphenation": "babel-english-latin",
+    "babel_shorthands": false,
+    "body_alignment": "justified-en-la; ragged-right-other-languages",
+    "body_font": "Latin Modern Roman",
+    "body_leading_pt": 13,
+    "body_size_pt": 10.5,
+    "columns": 2,
+    "form_feed": "layout-whitespace",
+    "layout_hyphen_fidelity": "source-aware-line-end-only",
+    "punctuation": "literal",
+    "soft_hyphen": "nonprinting",
+    "unicode_text_mapping": "xetex-native"
+  },
+  "receipt": "receipt.json",
+  "revision": "2026-10-30T17:44:06Z",
+  "schema": "triptych-papal-typeset-receipt/v1",
+  "summary": {
+    "compiled": 1,
+    "failed": 0,
+    "selected": 1
+  }
+}

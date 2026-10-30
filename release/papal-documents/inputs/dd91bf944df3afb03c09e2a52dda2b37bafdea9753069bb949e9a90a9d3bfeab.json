@@ -1,0 +1,35 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "1605bbe0138ca0f719c6696a4039b12fa18ef89cef6eeffc4db752096f0cecef",
+  "documents": [
+    {
+      "id": "acta.aas.006.archive.aas.006.055",
+      "language": "es",
+      "pdf_sha256": "31d41384a012164499a97c52faf90060cd1066103ec6588d510a40f5873a2ed7",
+      "pages": 8,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": [
+        "Vatican OCR reconstruction; no original-print, lexical or translation collation.",
+        "Literal OCR defects and source word divisions remain, without sustained unreadability observed.",
+        "Historical notes remain separate source-order paragraphs and may interrupt sentences or divided words.",
+        "Sparse final page contains the genuine historical closing, date, note and subscription."
+      ],
+      "receipt_sha256": "1605bbe0138ca0f719c6696a4039b12fa18ef89cef6eeffc4db752096f0cecef",
+      "report": "src/sources/papal-documents/encyclicals-repair-cold-21-b-ad-beatissimi.md",
+      "report_sha256": "fa3d80d4582d9b4fa1d8c69c8fcb6a0afcdb527b68d2fdd7b5a7e612dc6bcd4d"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "b122cf781f35cbd8080a6f043c232e8e9cee4dd9d5988fb32bab45984207d31e",
+  "documents": [
+    {
+      "findings": [
+        {
+          "description": "Fresh independent contact-sheet and every-page full-size inspection. Historical source notes occupy separate paragraph blocks. Residual original letterspacing, reference grouping, literal source hyphens and OCR glyphs remain visible and disclosed; final page retains genuine historical source content before ruled apparatus.",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "severity": "INFO"
+        }
+      ],
+      "full_size_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "id": "acta.aas.015.archive.aas.015.l000037",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "language": "it",
+      "limitations": "Every reader page inspected at full size and in contact sheets; exact source replays, preservation, note block separation and PDF fidelity independently repeated. Native OCR-PDF geometry checked within the declared constituent bounds. No source/helper/renderer writes; no original-print facsimile, lexical OCR collation, translation equivalence or new rights certification. Compact TeX applies 12.5pt leading while shared receipt options declare 13pt.",
+      "pages": 10,
+      "pdf_sha256": "11460ded8918a166ac0e956a33a40be0fecee7b3d32526f60cceafebe837c6c1",
+      "receipt_sha256": "b122cf781f35cbd8080a6f043c232e8e9cee4dd9d5988fb32bab45984207d31e",
+      "report": "src/sources/papal-documents/encyclicals-note-repairs-02-refinement-cold.md",
+      "report_sha256": "b7714b060c3ae5b21c662fdb3f7ae3353b09778230989e2777be5096e1c44679",
+      "reuse_proofs": [],
+      "reused_pages": [],
+      "review_type": "fresh-independent-source-pdf-cold-review",
+      "status": "PASS"
+    },
+    {
+      "findings": [
+        {
+          "description": "Fresh independent contact-sheet and every-page full-size inspection. Historical source notes occupy separate paragraph blocks. Residual original letterspacing, reference grouping, literal source hyphens and OCR glyphs remain visible and disclosed; final page retains genuine historical source content before ruled apparatus.",
+          "pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "severity": "INFO"
+        },
+        {
+          "description": "Three underfull hbox warnings concern the stretched opening protocol. Full-size inspection found the text legible, unclipped and separate from the body.",
+          "pages": [
+            1
+          ],
+          "severity": "INFO"
+        }
+      ],
+      "full_size_inspected_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "id": "acta.aas.015.archive.aas.015.l024807",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "language": "la",
+      "limitations": "Every reader page inspected at full size and in contact sheets; exact source replays, preservation, note block separation and PDF fidelity independently repeated. Native OCR-PDF geometry checked within the declared constituent bounds. No source/helper/renderer writes; no original-print facsimile, lexical OCR collation, translation equivalence or new rights certification. Compact TeX applies 12.5pt leading while shared receipt options declare 13pt.",
+      "pages": 4,
+      "pdf_sha256": "7534f76b593615efde074b569a22c9076e1576db1ea7151a239f98b950e16354",
+      "receipt_sha256": "b122cf781f35cbd8080a6f043c232e8e9cee4dd9d5988fb32bab45984207d31e",
+      "report": "src/sources/papal-documents/encyclicals-note-repairs-02-refinement-cold.md",
+      "report_sha256": "b7714b060c3ae5b21c662fdb3f7ae3353b09778230989e2777be5096e1c44679",
+      "reuse_proofs": [],
+      "reused_pages": [],
+      "review_type": "fresh-independent-source-pdf-cold-review",
+      "status": "PASS"
+    }
+  ]
+}

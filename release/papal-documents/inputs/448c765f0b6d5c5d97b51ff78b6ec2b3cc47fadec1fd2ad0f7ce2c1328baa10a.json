@@ -1,0 +1,76 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "a52b58850ad1939f980a0e74d7da677b3bbb1ceda1f075c9004db9ec119bd77a",
+  "documents": [
+    {
+      "id": "pius-ix-acta.volume-01.line-00012583.part-01",
+      "language": "la",
+      "source_sha256": "87320abf345c99cd855ab844a63eaadee4a65007348eb75382a8ac136c965152",
+      "pdf_sha256": "98670c77b75be22b7865a4bec85dc78cb98eacfd0a0cae7c1d38e9c4f04b6e0e",
+      "pages": 2,
+      "status": "PASS",
+      "source_recovery_intake_status": "PASS",
+      "source_intake_status": "PASS",
+      "source_recovery_intake_decision": "NEW_INDEPENDENT_BOUNDED_SOURCE_RECOVERY_INTAKE_PASS",
+      "source_admission": "PENDING",
+      "pdf_status": "PASS",
+      "reviewed_pages": [
+        1,
+        2
+      ],
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "resolved-blocker",
+          "pages": [
+            1
+          ],
+          "source_lf": [
+            95,
+            96
+          ],
+          "description": "Fresh native p.350 operative ut non minus…quam prior agrees with exact selected raw span, new source and PDF. Damaged raw ceommulatio prefix is outside the selected span; parent commutatio remains exact."
+        },
+        {
+          "severity": "resolved-warning",
+          "pages": [
+            2
+          ],
+          "source_lf": [
+            99,
+            112
+          ],
+          "description": "Fresh native p.351 salutari and Sacramentum agree with the exact selected raw TXT/TSV substrings and new PDF; all four other parent byte spans remain exact."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            2
+          ],
+          "description": "Residual disclosed OCR spelling, punctuation and source line-end divisions remain usable as an uncorrected mechanical Latin reader, without lexical PASS or complete verbal collation."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            2
+          ],
+          "description": "Final page retains substantial source body, blessing and actual dating in left column; terminal apparatus continues into right column. No apparatus-only spill."
+        }
+      ],
+      "limitations": [
+        "Independent bounded identity, extent, localized recovery and remaining OCR usability decision only; no lexical PASS, full verbal collation, translation judgment, whole-volume image collation or Harvard/Google equality.",
+        "Existing artifact-specific rights records retain their scope; no new broad rights claim or evidence-state promotion.",
+        "Root owns canonical copying, source admission, supersession disposition and installation; source admission remains PENDING."
+      ],
+      "receipt_sha256": "a52b58850ad1939f980a0e74d7da677b3bbb1ceda1f075c9004db9ec119bd77a",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-45.md",
+      "report_sha256": "ba333bcb9962f59b75948e897508137a463504cd5973237efa3ffa6497141375"
+    }
+  ]
+}

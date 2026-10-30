@@ -1,0 +1,25 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.exaliis-repair-recipe-14cc515dc0c3"
+edition_id = "edition.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb"
+artifact_type = "exaliis-localized-ocr-recipe"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "licensed"
+rights_basis = "Project-created bounded coordinates, byte offsets, replay instructions and measured pins, licensed under CC BY 4.0. Historical words, BSB image conditions and model/software licenses remain separate."
+rights_jurisdiction = "United States"
+retrieved = "2026-10-30"
+sha256 = "14cc515dc0c308482ff46e015764462ed8c0c13a6f46e667a45c31564cccf477"
+byte_size = 15847
+path = "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/exaliis-repair-recipe-14cc515dc0c3/recipe.json"
+provenance = "New bounded mechanical OCR recovery from retained original BSB canvas360 and361 pixels, plus exact byte composition over the immutable failed BSB candidate. Source words are never authored or inferred."
+license = "CC-BY-4.0"
+support_artifacts = [
+  { artifact_id = "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.bounded-images-ca31a9280e5a", embedded_reference = "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/bounded-images-ca31a9280e5a/historical-images.zip" },
+  { artifact_id = "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.nemo-repair-models-14ed17fae08d", embedded_reference = "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/nemo-repair-models-14ed17fae08d/models.zip" },
+  { artifact_id = "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.ex-aliis-ocr-text-426797883992", embedded_reference = "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/ex-aliis-ocr-text-426797883992/ex-aliis.txt" },
+  { artifact_id = "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.exaliis-repair-processed-3eee6c46ddee", embedded_reference = "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/exaliis-repair-processed-3eee6c46ddee/processed-images.zip" },
+  { artifact_id = "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.exaliis-repair-raw-7e169e1c2a34", embedded_reference = "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/exaliis-repair-raw-7e169e1c2a34/raw-ocr.zip" },
+  { artifact_id = "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.exaliis-repair-replay-283fbd4bcb43", embedded_reference = "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/exaliis-repair-replay-283fbd4bcb43/replay.py" },
+]
+notes = "The v1 artifact schema has one derived_from edge. This explicit recipe binds both the immutable parent text and new raw OCR inputs, records all three half-open splice spans, and proves unchanged-parent-byte preservation."

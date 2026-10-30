@@ -1,0 +1,165 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "65b3fbe2ae2f40dd14a645357fe6c0b50a41fee2699d4f81a5d9204829b1d368",
+  "documents": [
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-18111893-providentissimus-deus",
+      "language": "en",
+      "pdf_sha256": "bfb7c2e9da7e370ad47da3247f87e0eec5e0684c08807c832e8d96e19fa2f75f",
+      "pages": 11,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "description": "Ordinary isolated OCR errors and source word divisions remain; former multi-line garbling and black-square sequences are resolved. Readability independently judged from all current pages and the native critical loci."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            11
+          ],
+          "description": "Source-bearing final page retains full closing Benediction and historical notes with compact source/rights apparatus. Existing compact margin0.6 and the retained one underfull box visually pass; no spill page."
+        }
+      ],
+      "limitations": [
+        "Uncorrected historical OCR: isolated recognition errors, damaged note markers and physical word divisions remain.",
+        "Bounded source identity/extent/recovery check; all32 source pages in overview, nine full critical source pages plus identified parent identity/boundary leaves. No whole-print lexical collation or translation-accuracy certification.",
+        "Existing United States historical-text basis only; no new rights clearance over modern wrappers or full parent.",
+        "No installation, admission, deployment or source-library verified-state promotion."
+      ],
+      "receipt_sha256": "65b3fbe2ae2f40dd14a645357fe6c0b50a41fee2699d4f81a5d9204829b1d368",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-43.md",
+      "report_sha256": "1216219342152ed3d7683c6babad3f7c298989d389de79c3b1abcb572814eccb",
+      "source_intake_status": "PASS_WITH_ORDINARY_OCR_QUALIFICATION",
+      "page_observations": [
+        {
+          "kind": "reader",
+          "page": 1,
+          "utc": "2026-10-30T18:33:33.043986+00:00",
+          "view": ".scratch/providentissimus-english-recovery/production-jpeg/page-01.jpg",
+          "sha256": "b33be38cd5babbce8bccf760039e02049b8e47d7da80c52fa76802b74cb1ef20",
+          "disposition": "PASS with OCR qualification",
+          "observation": "Title, Leo XIII/date/English and two-column opening are readable. Reference groups stand in separate indented paragraphs; no overlap or clipping. Isolated OCR dehvered, assaU, salv::- and marker noise remain; argument remains understandable."
+        },
+        {
+          "kind": "reader",
+          "page": "2",
+          "utc": "2026-10-30T18:38:06.478883+00:00",
+          "view": ".scratch/encyclical-refinement-package/cold-review-43/reader-02.jpg",
+          "sha256": "b2b61c9536658405984a13e27bcef239705eb80acf4f4b05b2e2d6645456fccd",
+          "disposition": "PASS with OCR qualification",
+          "observation": "Apostles/preaching and Fathers prose reads continuously in normal column order. Historical reference paragraphs are separate even when they interrupt disci-/pline at a source page boundary. Isolated offSce/marker noise and literal word divisions remain; no clipping or black squares."
+        },
+        {
+          "kind": "reader",
+          "page": "3",
+          "utc": "2026-10-30T18:38:06.499569+00:00",
+          "view": ".scratch/encyclical-refinement-package/cold-review-43/reader-03.jpg",
+          "sha256": "e61c23476adc8db3fe5e6a5e066ff67c5d88d5d92924e0bd45d68d59550d2f3b",
+          "disposition": "PASS with OCR qualification",
+          "observation": "Eight source reference groups at upper left stand apart; piety, schools and patristic exposition remain coherent. Sundaj^s, wTiters, 3j and marker defects are isolated; no overlap or multi-line garbling."
+        },
+        {
+          "kind": "reader",
+          "page": "4",
+          "utc": "2026-10-30T18:38:06.519574+00:00",
+          "view": ".scratch/encyclical-refinement-package/cold-review-43/reader-04.jpg",
+          "sha256": "c3971273d31ee142ec85ce3c864bbbbc9392cea3750dbaaeababb005574809d6",
+          "disposition": "PASS with OCR qualification",
+          "observation": "Scholastic/editing discussion and modern-opposition passage fill both columns legibly. Collect on September30 reference has its own paragraph. Cathohcs, carrjdng, detestablt and line-break words remain literal isolated OCR."
+        },
+        {
+          "kind": "reader",
+          "page": "5",
+          "utc": "2026-10-30T18:38:06.539017+00:00",
+          "view": ".scratch/encyclical-refinement-package/cold-review-43/reader-05.jpg",
+          "sha256": "3750608383421f9f92183de9ad37f804f6901b848e5d2a12f7eb92bd23c74730",
+          "disposition": "PASS with OCR qualification",
+          "observation": "Knowledge falsely so-called passage matches the freshly viewed printed282 argument and is coherent. Tim.iv.20 is a separate note paragraph before academical institutions resumes. Later three references remain distinct, no clipping or squares; appoiuted/reUgion remain ordinary OCR."
+        },
+        {
+          "kind": "reader",
+          "page": "6",
+          "utc": "2026-10-30T18:38:06.558118+00:00",
+          "view": ".scratch/encyclical-refinement-package/cold-review-43/reader-06.jpg",
+          "sha256": "230d0d7a2de46e4b72869660063aeabcec73fd97fb952835b8d6c5cbf519dbb4",
+          "disposition": "PASS with OCR qualification",
+          "observation": "Council/Church interpretation and on one hand/on the other private-student passage correspond to freshly viewed native286 and read coherently. Irenaeus/Trent note blocks distinct at lower left; right Fathers/references also clear. CathoUc/moraUty remain isolated OCR, no multi-line nonsense."
+        },
+        {
+          "kind": "reader",
+          "page": "7",
+          "utc": "2026-10-30T18:40:30.162030+00:00",
+          "view": ".scratch/encyclical-refinement-package/cold-review-43/reader-07.jpg",
+          "sha256": "ef52599ba25ad1b6ee9a676ebfa9446cac715e0dafcbac4c6eab7b849f208507",
+          "disposition": "PASS with OCR qualification",
+          "observation": "Fathers commentary and excellent work which Catholics have left in abundance read coherently. Source references stand as separate paragraphs in both columns. inteUgent/appreciatioa/3rudition remain isolated OCR; no black-square sequences or lost lines."
+        },
+        {
+          "kind": "reader",
+          "page": "8",
+          "utc": "2026-10-30T18:40:30.183033+00:00",
+          "view": ".scratch/encyclical-refinement-package/cold-review-43/reader-08.jpg",
+          "sha256": "403ae3afec84bae6460e6a9d4d04cf054f975681a6d94d90d6f297f5f4d74694",
+          "disposition": "PASS with OCR qualification",
+          "observation": "Church credibility, defence, Oriental languages and higher criticism passages remain coherent. Reference groups distinct before body resumes, columns/margins clear. mangHng/stro3dng are isolated ordinary OCR."
+        },
+        {
+          "kind": "reader",
+          "page": "9",
+          "utc": "2026-10-30T18:40:30.203427+00:00",
+          "view": ".scratch/encyclical-refinement-package/cold-review-43/reader-09.jpg",
+          "sha256": "7fa43c6b1626d8d64f660ea81e4b86800b9110033e64e29007b26bfd82c4bbdf",
+          "disposition": "PASS with OCR qualification",
+          "observation": "Science/history/inspiration paragraphs remain readable in normal column order. Four references at left midpage and Sentences/Opusc at right are separate. q.haaa and sacred waiter are preserved OCR defects, not reliable lexical text; no multi-line corruption."
+        },
+        {
+          "kind": "reader",
+          "page": "10",
+          "utc": "2026-10-30T18:40:30.224058+00:00",
+          "view": ".scratch/encyclical-refinement-package/cold-review-43/reader-10.jpg",
+          "sha256": "0a537128c2716d949a4b67811d9bed01aa896efdcd1d6e293e1b8715c4417100",
+          "disposition": "PASS with OCR qualification",
+          "observation": "It follows/inspiration and Fathers quotations are coherent, matching native297 now freshly viewed. Reference paragraphs remain separate before prose resumes. boklly/hamelessly/Bee/studios remain ordinary OCR; no clipping, overlap or black-square runs."
+        },
+        {
+          "kind": "reader",
+          "page": "11",
+          "utc": "2026-10-30T18:40:30.243863+00:00",
+          "view": ".scratch/encyclical-refinement-package/cold-review-43/reader-11.jpg",
+          "sha256": "661ae922cb301ec2aba5a7c3f7608a6ed8385079d1aa5f47a0f17fafd5588d17",
+          "disposition": "PASS with OCR qualification",
+          "observation": "Source-bearing final page contains final exhortation, three preceding source-reference groups, Psalm reference, complete Apostolic Benediction and compact source/rights colophon. Printed301 continuing paragraph flows across columns; native302 closing retained. Apparatus states uncorrected OCR, unidentified translator, furniture omissions, no full image collation. No rights-only spill; underfull paragraph visually clear."
+        }
+      ]
+    }
+  ]
+}

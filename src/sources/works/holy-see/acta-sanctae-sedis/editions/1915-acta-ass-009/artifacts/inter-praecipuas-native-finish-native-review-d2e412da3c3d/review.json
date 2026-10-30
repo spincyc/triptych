@@ -1,0 +1,275 @@
+{
+  "all_word_values_preserved_once": true,
+  "document_id": "acta.ass.009.ass-009-act-035",
+  "language": "la",
+  "lf_records_preserved": 515,
+  "limits": "Producer inspection of native OCR reconstruction. No lexical repair, translated wording, original-print facsimile collation, or independent cold acceptance.",
+  "native_pages_inspected": [
+    644,
+    645,
+    646,
+    647,
+    648,
+    649,
+    650,
+    651,
+    652,
+    653,
+    654,
+    655,
+    656
+  ],
+  "native_pdf": {
+    "artifact_id": "artifact.acta-papal-archives.ass.009.vatican-pdf-a849b1d9",
+    "artifact_pages": [
+      644,
+      656
+    ],
+    "sha256": "a849b1d96a2ec47f4d8286f565c8040f0e48e3b34f8e5df7e42d4e0b7d33ea05"
+  },
+  "native_word_count": 5910,
+  "nonwhitespace_sequence_preserved": true,
+  "note_groups_preserved": 8,
+  "output_sha256": "85105d054e156fab4f5e1913e15886656fbbfc19f792dd4134d60680bc78d584",
+  "per_page_observations": [
+    {
+      "observation": "Single body column below GREGORII XVI heading and protocol; paragraph1 and beginning2; page-foot note1 separate. Larger gaps mark words; letterspaced WORD fragments join below2.2pt. Native OCR reconstruction, not facsimile.",
+      "page": 644,
+      "status": "PASS_BOUNDED_GEOMETRY"
+    },
+    {
+      "observation": "Single body column, paragraph2 continuation then3. Two separately positioned page-foot notes. Inline raised l/2 and source OCR A note marker remain literal. Fragmented LINEs sharing exact yMin combine; raised markers remain separate.",
+      "page": 645,
+      "status": "PASS_BOUNDED_GEOMETRY"
+    },
+    {
+      "observation": "Single body column with raised inline1–8 equivalents; native OCR first inline is backslash and note numerals include repeated3. Footnotes form separate single-width page-foot set; no note-column reorder. Exact-y grouping keeps raised marks and combines4/5 at the one shared marker row; ambiguous numeral-only source LFs preserve original bytes.",
+      "page": 646,
+      "status": "PASS_BOUNDED_GEOMETRY"
+    },
+    {
+      "observation": "Single column, paragraph3 ending then4; four historical notes separately at page foot in source sequence. No mixed note columns. Raised marker rows remain literal; body-word gaps distinct from letter fragments.",
+      "page": 647,
+      "status": "PASS_BOUNDED_GEOMETRY"
+    },
+    {
+      "observation": "Single column, paragraph4 continuation,5,6 beginning; four page-foot notes separate and in source sequence. Exact yMin merges the split profutura/iudicare- body row without merging its nearby superscript. Literal backslash and asterisk retained.",
+      "page": 648,
+      "status": "PASS_BOUNDED_GEOMETRY"
+    },
+    {
+      "observation": "Single body column ends paragraph6 and starts7; long page-foot note set beneath body, including Italian quotation, remains literal and separate. Final note continues at foot of650. Inherited1916 OCR date retained; no lexical correction.",
+      "page": 649,
+      "status": "PASS_BOUNDED_GEOMETRY"
+    },
+    {
+      "observation": "Single body column ends7, contains8, starts9. Continuation of previous historical note occupies page foot and remains its own source paragraph. No note/body order repair required; page-foot block interrupts body only at original page boundary.",
+      "page": 650,
+      "status": "PASS_BOUNDED_GEOMETRY"
+    },
+    {
+      "observation": "Single full-page body column, paragraph9 continuation, no notes. Letterspacing visible within some native words but word boundaries consistently larger; unchanged line sequence maps uniquely.",
+      "page": 651,
+      "status": "PASS_BOUNDED_GEOMETRY"
+    },
+    {
+      "observation": "Single body column, paragraph9 ending then10 and11 beginning, no footnotes. No columns, marginal insertions or order ambiguity.",
+      "page": 652,
+      "status": "PASS_BOUNDED_GEOMETRY"
+    },
+    {
+      "observation": "Single full body column, paragraph11 continuation then12. No notes or marginal columns; raw running-head J excluded by prior bounds; all selected lines unique.",
+      "page": 653,
+      "status": "PASS_BOUNDED_GEOMETRY"
+    },
+    {
+      "observation": "Single body column, paragraph12 continuation then13; one separate page-foot note1. Native OCR edoceanturquod is one fused word and remains unchanged; no lexical split invented.",
+      "page": 654,
+      "status": "PASS_BOUNDED_GEOMETRY"
+    },
+    {
+      "observation": "Single body column, paragraph13 ending,14,15,16 beginning. No notes; source LF sequence leaves page boundary between lai- and eisque literal.",
+      "page": 655,
+      "status": "PASS_BOUNDED_GEOMETRY"
+    },
+    {
+      "observation": "Selected act ends with paragraph16 continuation, Datum Romae clause and GREGORIUS PP. XVI. Subsequent APPENDIX and Congregation text clearly separate and excluded by exact predecessor bounds. No closing or subscription omitted.",
+      "page": 656,
+      "status": "PASS_BOUNDED_GEOMETRY"
+    }
+  ],
+  "prior_source_sha256": "41c8cb04aeb865dfaa1def992d77a9f4e1df1cd7ec011add2e59d182a1f77f50",
+  "retained_original_exceptions": [
+    {
+      "native_match_count": 3,
+      "native_page": 646,
+      "preserve_original": true,
+      "reason": "Repeated numeral-only reference row. Preserve exact parent bytes and source order; no native occurrence or glyph identity is assigned.",
+      "source_line": 91,
+      "source_line_sha256": "6749f921020be718e004f4fb82aa763e643986b6ca06790f88b01a989185b798"
+    },
+    {
+      "native_match_count": 2,
+      "native_page": 646,
+      "preserve_original": true,
+      "reason": "Repeated numeral-only reference row. Preserve exact parent bytes and source order; no native occurrence or glyph identity is assigned.",
+      "source_line": 102,
+      "source_line_sha256": "66b31a169865c663b8891177d0fc04bf6a11969fab6eb9e0ae7aab88061bb82c"
+    },
+    {
+      "native_match_count": 2,
+      "native_page": 646,
+      "preserve_original": true,
+      "reason": "Repeated numeral-only reference row. Preserve exact parent bytes and source order; no native occurrence or glyph identity is assigned.",
+      "source_line": 105,
+      "source_line_sha256": "40f5b41564c2d4eea89b3dc8170df43424f4c1ec447918a478dbcf5368bf0f78"
+    },
+    {
+      "native_match_count": 2,
+      "native_page": 646,
+      "preserve_original": true,
+      "reason": "Repeated numeral-only reference row. Preserve exact parent bytes and source order; no native occurrence or glyph identity is assigned.",
+      "source_line": 109,
+      "source_line_sha256": "a7f1844a1df8295cd2b7593dbe4107122473285d48951bc305ba4f1a6aa99c53"
+    },
+    {
+      "native_match_count": 3,
+      "native_page": 646,
+      "preserve_original": true,
+      "reason": "Repeated numeral-only reference row. Preserve exact parent bytes and source order; no native occurrence or glyph identity is assigned.",
+      "source_line": 117,
+      "source_line_sha256": "47af839b07db0710e4f6fc24cd349e673f2bad8fb161c855a91e4c73a3705576"
+    },
+    {
+      "native_match_count": 3,
+      "native_page": 646,
+      "preserve_original": true,
+      "reason": "Repeated numeral-only reference row. Preserve exact parent bytes and source order; no native occurrence or glyph identity is assigned.",
+      "source_line": 120,
+      "source_line_sha256": "47af839b07db0710e4f6fc24cd349e673f2bad8fb161c855a91e4c73a3705576"
+    },
+    {
+      "native_match_count": 2,
+      "native_page": 646,
+      "preserve_original": true,
+      "reason": "Repeated numeral-only reference row. Preserve exact parent bytes and source order; no native occurrence or glyph identity is assigned.",
+      "source_line": 127,
+      "source_line_sha256": "4ca7e40c7a8df2b0177f44fe9532c38d77fb65086a65ac703941caad3ad719e2"
+    },
+    {
+      "native_match_count": 2,
+      "native_page": 646,
+      "preserve_original": true,
+      "reason": "Repeated numeral-only reference row. Preserve exact parent bytes and source order; no native occurrence or glyph identity is assigned.",
+      "source_line": 129,
+      "source_line_sha256": "772be140c23fc18b13b81705d1e06d6b374bdba5055443e28100932d63e9c07e"
+    },
+    {
+      "native_match_count": 2,
+      "native_page": 646,
+      "preserve_original": true,
+      "reason": "Repeated numeral-only reference row. Preserve exact parent bytes and source order; no native occurrence or glyph identity is assigned.",
+      "source_line": 131,
+      "source_line_sha256": "3a697372e2b9136ac2e640ef875e50d011afbe6a52dd9e2e05d20ae81a548f2b"
+    },
+    {
+      "native_match_count": 2,
+      "native_page": 647,
+      "preserve_original": true,
+      "reason": "Repeated numeral-only reference row. Preserve exact parent bytes and source order; no native occurrence or glyph identity is assigned.",
+      "source_line": 156,
+      "source_line_sha256": "fa4936bdf03ce36fe4425ef700711d73a7238be09a3769f61362ff653ef282fe"
+    },
+    {
+      "native_match_count": 2,
+      "native_page": 647,
+      "preserve_original": true,
+      "reason": "Repeated numeral-only reference row. Preserve exact parent bytes and source order; no native occurrence or glyph identity is assigned.",
+      "source_line": 158,
+      "source_line_sha256": "e29f999c233f410cf349df16e5934988ed94edec46ea4dba5aee9e00a68d1e2c"
+    },
+    {
+      "native_match_count": 2,
+      "native_page": 647,
+      "preserve_original": true,
+      "reason": "Repeated numeral-only reference row. Preserve exact parent bytes and source order; no native occurrence or glyph identity is assigned.",
+      "source_line": 170,
+      "source_line_sha256": "3483e172d97cc37ced47f2d1e37c630fd759a66ff236be15845ec6edee95c57b"
+    },
+    {
+      "native_match_count": 2,
+      "native_page": 647,
+      "preserve_original": true,
+      "reason": "Repeated numeral-only reference row. Preserve exact parent bytes and source order; no native occurrence or glyph identity is assigned.",
+      "source_line": 177,
+      "source_line_sha256": "4d8286b0df46d6da582eb892e206a2f7c4667edd87f128d3d562e917b0ff0989"
+    },
+    {
+      "native_match_count": 2,
+      "native_page": 647,
+      "preserve_original": true,
+      "reason": "Repeated numeral-only reference row. Preserve exact parent bytes and source order; no native occurrence or glyph identity is assigned.",
+      "source_line": 179,
+      "source_line_sha256": "e301bc3fbef1422dfb745a9270cbf5039ef3e563f47cd62abcdd116c4acf1fa7"
+    },
+    {
+      "native_match_count": 2,
+      "native_page": 647,
+      "preserve_original": true,
+      "reason": "Repeated numeral-only reference row. Preserve exact parent bytes and source order; no native occurrence or glyph identity is assigned.",
+      "source_line": 182,
+      "source_line_sha256": "a2b5c39a213b85bb41d1848ff5751b7ef60f807b89b8988b2ed9a30a71b4085a"
+    },
+    {
+      "native_match_count": 2,
+      "native_page": 648,
+      "preserve_original": true,
+      "reason": "Repeated numeral-only reference row. Preserve exact parent bytes and source order; no native occurrence or glyph identity is assigned.",
+      "source_line": 197,
+      "source_line_sha256": "c0dfa7ae6f9f4af2dc9d82bcf96ffadf60021e8e91b9f34bdef3dc66146655a4"
+    },
+    {
+      "native_match_count": 2,
+      "native_page": 648,
+      "preserve_original": true,
+      "reason": "Repeated numeral-only reference row. Preserve exact parent bytes and source order; no native occurrence or glyph identity is assigned.",
+      "source_line": 210,
+      "source_line_sha256": "764a5e2d5a59f8f1b492976488ae8354e95faf465bb34c203a6133074ab873d9"
+    },
+    {
+      "native_match_count": 2,
+      "native_page": 648,
+      "preserve_original": true,
+      "reason": "Repeated numeral-only reference row. Preserve exact parent bytes and source order; no native occurrence or glyph identity is assigned.",
+      "source_line": 224,
+      "source_line_sha256": "fd65188b78296e0121232ff76bef0c19d723609aeef95950ed8650a7ef91babe"
+    },
+    {
+      "native_match_count": 2,
+      "native_page": 648,
+      "preserve_original": true,
+      "reason": "Repeated numeral-only reference row. Preserve exact parent bytes and source order; no native occurrence or glyph identity is assigned.",
+      "source_line": 227,
+      "source_line_sha256": "92d6f94574b83cb00a4ed9ca68e9f86f31c4fcf6ea076e59b0a525ad15240495"
+    },
+    {
+      "native_match_count": 2,
+      "native_page": 649,
+      "preserve_original": true,
+      "reason": "Repeated numeral-only reference row. Preserve exact parent bytes and source order; no native occurrence or glyph identity is assigned.",
+      "source_line": 238,
+      "source_line_sha256": "6749f921020be718e004f4fb82aa763e643986b6ca06790f88b01a989185b798"
+    },
+    {
+      "native_match_count": 2,
+      "native_page": 649,
+      "preserve_original": true,
+      "reason": "Repeated numeral-only reference row. Preserve exact parent bytes and source order; no native occurrence or glyph identity is assigned.",
+      "source_line": 271,
+      "source_line_sha256": "e301bc3fbef1422dfb745a9270cbf5039ef3e563f47cd62abcdd116c4acf1fa7"
+    }
+  ],
+  "schema": "triptych-native-word-whitespace-producer-review/v1",
+  "stream_order_difference_pages": [],
+  "unique_native_matches": 445
+}

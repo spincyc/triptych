@@ -1,0 +1,82 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "b748665cba53d1d479a2f7e73175199ddbbf90f02b2365c71508fc113e7ad923",
+  "documents": [
+    {
+      "id": "pius-ix-acta.volume-01.line-00012583.part-02",
+      "language": "la",
+      "source_sha256": "f4e60868a4e3f3eb574663c0e64ed464c586b5430e513f5a17c567a3ad2235e1",
+      "pdf_sha256": "a04744185d82705ba1b64c621b76f014a4b8ace6a88c9ea1eee0376835d38657",
+      "pages": 3,
+      "status": "PASS",
+      "source_recovery_intake_status": "PASS",
+      "source_intake_status": "PASS",
+      "source_recovery_intake_decision": "NEW_INDEPENDENT_BOUNDED_SOURCE_RECOVERY_INTAKE_PASS",
+      "source_admission": "PENDING",
+      "pdf_status": "PASS",
+      "reviewed_pages": [
+        1,
+        2,
+        3
+      ],
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "resolved-blocker",
+          "pages": [
+            1
+          ],
+          "source_lf": [
+            30,
+            30
+          ],
+          "description": "Fresh native p.353 note, exact raw TXT/TSV, selected source and new PDF agree on (1) and cap.5; earlier wrong note/chapter digits are absent in this candidate."
+        },
+        {
+          "severity": "resolved-warning",
+          "pages": [
+            3
+          ],
+          "description": "Caption-omission claim removed. Actual native p.353 has Irish episcopal address/protocol and no separate publishing genre caption."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            1
+          ],
+          "description": "Native p.354 body callout (1) and historical note (2) mismatch is preserved literally. Inherited section-sign OCR as $ remains disclosed; no anchor is harmonized."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            2,
+            3
+          ],
+          "description": "Remaining disclosed OCR spelling, punctuation, line-end divisions and quotation signs leave the continuous body usable within the bounded mechanical-reader scope. No lexical PASS or full verbal collation."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            3
+          ],
+          "description": "Source-bearing final page has substantial body, blessing and dating followed by apparatus in left column; right column blank. No apparatus-only spill."
+        }
+      ],
+      "limitations": [
+        "Independent bounded identity, extent, localized recovery and remaining OCR usability decision only; no lexical PASS, full verbal collation, translation judgment, whole-volume image collation or Harvard/Google equality.",
+        "Existing artifact-specific rights records retain their scope; no new broad rights claim or evidence-state promotion.",
+        "Root owns canonical copying, source admission, supersession disposition and installation; source admission remains PENDING."
+      ],
+      "receipt_sha256": "b748665cba53d1d479a2f7e73175199ddbbf90f02b2365c71508fc113e7ad923",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-45.md",
+      "report_sha256": "ba333bcb9962f59b75948e897508137a463504cd5973237efa3ffa6497141375"
+    }
+  ]
+}

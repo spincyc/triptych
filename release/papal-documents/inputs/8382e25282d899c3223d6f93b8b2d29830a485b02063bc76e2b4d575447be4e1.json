@@ -1,0 +1,80 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "abad3b4218a75cf70add5b9bfc4cfabaf868dc4302755d1f633692bfd20c1b0f",
+  "documents": [
+    {
+      "id": "acta.ass.012.ass-012-act-002",
+      "language": "la",
+      "pdf_sha256": "a43b7c06ac82fd30235b6582c5929cbdf128826af512b2f1319332baa7772160",
+      "source_sha256": "60f42818f98eeb6303acfe7f595169cd8138cb6e065fa0f6050ddd8cc9598932",
+      "pages": 9,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": [
+        "Native surrounding pages are a hybrid archival OCR reconstruction. Only the recovered note bitmap was checked as historical image content; no whole-act original-print or lexical collation is claimed.",
+        "Existing OCR errors, divided words, raised-glyph extraction order, and damaged note labels remain literal.",
+        "No qpdf executable was available; PDF structure was checked with pdfinfo, pdffonts, and source-aware text extraction.",
+        "PASS closes only assigned source recovery/order and exact PDF layout gates. Rights clearance, translation, admission, installation, and deployment are outside this judgment."
+      ],
+      "receipt_sha256": "abad3b4218a75cf70add5b9bfc4cfabaf868dc4302755d1f633692bfd20c1b0f",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-38.md",
+      "report_sha256": "b491158e499a1e38e24f484b89e0e77ff75b6d29ace006c7e9f0d31e0ea49387",
+      "source_recovery_and_order": {
+        "status": "PASS",
+        "native_note_pages": [
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          115
+        ],
+        "groups": 17,
+        "source_slices": 57,
+        "old_note_words": 409,
+        "body_lf_rows": 745,
+        "all_body_lf_bytes_and_order_unchanged": true,
+        "recovered_native_bitmap_note_checked": true,
+        "native_parent_page": 110,
+        "native_bitmap_object": 443,
+        "fresh_deterministic_replay": "PASS",
+        "raw_added_ocr_bytes": 21,
+        "added_separator_lf_bytes": 2,
+        "insertion_byte_offset": 34322,
+        "global_old_byte_permutation_only": false
+      },
+      "pdf_review": {
+        "status": "PASS",
+        "pages": 9,
+        "recovered_note_page": 7,
+        "source_bearing_terminal_page": 9,
+        "contact_sheet_freshly_inspected": true,
+        "all_pages_freshly_opened_original_resolution": true
+      }
+    }
+  ]
+}

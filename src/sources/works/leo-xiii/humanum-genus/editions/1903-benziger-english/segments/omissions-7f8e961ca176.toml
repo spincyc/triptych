@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.leo-xiii.humanum-genus.1903-benziger-english.omissions-7f8e961ca176"
+edition_id = "edition.leo-xiii.humanum-genus.1903-benziger-english"
+artifact_id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.humanum-omissions-text-7f8e961ca176"
+artifact_sha256 = "7f8e961ca176eeefe996894ce79a9c2dcfd2bf9c81a5e6ec46744e08dfbf7820"
+segment_type = "constituent-work"
+states = ["cataloged", "acquired"]
+context = "Chapter5 Freemasonry in the1903 Benziger historical human English translation, with two substantive omissions mechanically recovered from native printed84."
+physical_line_ranges = [[1, 79]]
+notes = "Only two omitted spans are recovered from exact raw OCR fragments. Full-page and clean-crop OCR agree at identical native top-left coordinates, with token dimensions differing by at most1pixel; every used TSV word confidence exceeds95, and the actual native full page/crops were viewed. Internal OCR LF becomes space for the second insertion. No expected replacement wording was typed from a prompt. Other source wording, punctuation, whitespace and all selected LF boundaries remain exact. This is not whole-source collation or translation. Proposed explicit supersession of segment.leo-xiii.humanum-genus.1903-benziger-english.benziger-english-transcription; prior artifact, segment and reviewed PDF remain unchanged. Recipe artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.humanum-omissions-recipe-a666ecf5b4f7; native evidence artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.humanum-omissions-native-evidence-9014714ed29e."

@@ -1,0 +1,55 @@
+{
+  "schema": "triptych-papal-typeset/v1",
+  "revision": "2026-10-30T17:31:46Z",
+  "documents": [
+    {
+      "artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.exaliis-repair-text-87320abf345c",
+      "collection_corpus": "pius-ix-acta",
+      "date": "1851-11-21",
+      "document_type": "encyclical",
+      "extent_kind": "printed-act",
+      "id": "pius-ix-acta.volume-01.line-00012583.part-01",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          148
+        ]
+      ],
+      "pope": "Pius IX",
+      "revision": "2026-10-30T17:31:46Z",
+      "rights_basis": "Original Latin wording and contemporary notes in the identified 1854 historical printing are public domain in the United States by expiration of publication term under 17 U.S.C. 304–305; 104A supplies only any remaining term, and 103(b) does not extend copyright to preexisting wording. Faithful mechanical OCR adds no original authorship. The BSB title image bears Ex Typographia Bonarum Artium, habita facultate, and Giorgio Franz in Monaco; its primary holding-library catalogue and IIIF metadata date the edition 1854. See src/sources/inventories/papal-documents-rights-v1.toml. This claim covers historical wording and mechanical facts, not modern wrappers or an unrestricted licence over digital images.",
+      "rights_notice": "Historical source wording is public domain in the United States; project typesetting does not relicense it.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.pius-ix-acta.volume-01.line-00012583.part-01.1854-rome-franz-munich-bsb-la.image-ocr-exaliis-repair-87320abf345c",
+      "segment_path": "src/sources/works/pius-ix-acta/volume-01-line-00012583-part-01/editions/1854-rome-franz-munich-bsb-la/segments/image-ocr-exaliis-repair-87320abf345c.toml",
+      "sha256": "87320abf345c99cd855ab844a63eaadee4a65007348eb75382a8ac136c965152",
+      "source_note": "Pii IX Pontificis Maximi Acta, pars prima, volume I. Ex Typographia Bonarum Artium, habita facultate; Giorgio Franz in Monaco. 1854 (holding-library catalogue date). Bayerische Staatsbibliothek, J.can.f. 113 i-1,1; bsb10543911. Printed pp. 348–352. Mechanical OCR from actual facsimile images, with three localized raw-OCR byte compositions for printed pp.350–351 and all other parent bytes preserved. Explicit source-image crops, raw outputs and exact splice recipe are retained separately. Scattered OCR errors remain; no complete verbal collation is claimed. The publishing genre caption, page numbers and gathering signatures are omitted.",
+      "source_url": "https://www.digitale-sammlungen.de/en/details/bsb10543911",
+      "text_path": "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/exaliis-repair-text-87320abf345c/ex-aliis.txt",
+      "title": "Ex aliis Nostris — de facultatibus pro iubilaeo",
+      "edition_id": "edition.pius-ix-acta.volume-01.line-00012583.part-01.1854-rome-franz-munich-bsb-la"
+    }
+  ],
+  "supersessions": [
+    {
+      "prior": {
+        "id": "pius-ix-acta.volume-01.line-00012583.part-01",
+        "language": "la",
+        "artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.ex-aliis-ocr-text-426797883992",
+        "segment_id": "segment.pius-ix-acta.volume-01.line-00012583.part-01.1854-rome-franz-munich-bsb-la.image-ocr",
+        "source_sha256": "4267978839922b17042e7ace35bf770b39c026015d940922d2fadae75eb9187c",
+        "pdf_sha256": "e60c79bdd288e81b46dd7e14d343987397e0ea86d7fa0efe7f657106750ec664"
+      },
+      "replacement": {
+        "id": "pius-ix-acta.volume-01.line-00012583.part-01",
+        "language": "la",
+        "artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.exaliis-repair-text-87320abf345c",
+        "segment_id": "segment.pius-ix-acta.volume-01.line-00012583.part-01.1854-rome-franz-munich-bsb-la.image-ocr-exaliis-repair-87320abf345c",
+        "revision": "2026-10-30T17:31:46Z",
+        "source_sha256": "87320abf345c99cd855ab844a63eaadee4a65007348eb75382a8ac136c965152"
+      },
+      "reason": "Explicitly supersedes the failed first BSB OCR candidate rejected by cold33b for an unreadable operative condition. New candidate mechanically recovers only three exact spans from retained original images and raw OCR, preserves all other parent bytes, and requires a new independent source/PDF cold review. The prior BSB artifact and PDF remain immutable history."
+    }
+  ]
+}

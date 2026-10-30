@@ -1,0 +1,35 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "7cc30a715fe06fa5b5c5ec4636de52f09f703cdc7c909f94d99f210115e3aad0",
+  "documents": [
+    {
+      "id": "acta.ass.015.ass-015-act-006",
+      "language": "la",
+      "pdf_sha256": "0cb33a5c70c29cd563f204cbe2942b08d0b1c7adc67636d82bfb5a4cbb685b5d",
+      "pages": 3,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2,
+            3
+          ],
+          "description": "Literal OCR hard hyphens, source letter spacing and bounded damaged citation/quotation glyphs remain readable and disclosed. All three historical note groups are separate paragraphs; native p241 journal footer alone is excluded. Final reader page retains body, dating and subscription above compact apparatus."
+        }
+      ],
+      "limitations": "Fresh all-page reader and native OCR reconstruction inspection, exact source/helper/recipe/map/spec replay and PDF fidelity. No original-print facsimile or lexical collation, translation or independent rights determination; no inherited visual review.",
+      "receipt_sha256": "7cc30a715fe06fa5b5c5ec4636de52f09f703cdc7c909f94d99f210115e3aad0",
+      "report": "src/sources/papal-documents/encyclicals-repair-cold-21-b-cum-multa.md",
+      "report_sha256": "ff6a0d2c21784c98a430c8f34b384223b9a81f932ee88c57d942f42fcfc298b0"
+    }
+  ]
+}

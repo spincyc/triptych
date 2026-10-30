@@ -1,0 +1,63 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "c6c3a721509d26aeae0ee1f4a09d74eb7a5e7d5a84d8bd54f5ba868d20d0ce68",
+  "documents": [
+    {
+      "id": "acta.ass.020.ass-020-012",
+      "language": "la",
+      "pdf_sha256": "056cc2f199e305d39a9c25b0c4e1cc16e355c11f7b2a0210cb5d293d7969a892",
+      "pages": 7,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "description": "All seven reader pages freshly inspected in contact sheet and full-size views; source body, notes, two-column reading order and terminal apparatus remain readable and contained. Literal OCR/hard-line hyphens persist and slow reading; no sustained material unreadability found."
+        },
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "description": "All eleven historical page-foot note groups match native pages 545–553,555,557 and exact source blocks. Explicit TeX paragraph boundaries precede and follow each note, including ra-/notes/tumque and rerum-/notes/que."
+        },
+        {
+          "severity": "INFO",
+          "pages": [
+            7
+          ],
+          "description": "Final page retains substantive source text, actual blessing/date/subscription and compact ruled terminal apparatus; exact native/source boundary excludes the following Christophori Columbi act."
+        }
+      ],
+      "limitations": "Independent acceptance of exact retained OCR reader bytes and source-boundary geometry. No original-print facsimile or lexical collation, translation review, new rights judgment, fresh compile, or PDF tagging/accessibility test. No prior visual coverage or producer PASS inherited. Literal OCR noise and hard word divisions remain disclosed.",
+      "receipt_sha256": "c6c3a721509d26aeae0ee1f4a09d74eb7a5e7d5a84d8bd54f5ba868d20d0ce68",
+      "report": "src/sources/papal-documents/encyclicals-repair-cold-21-b-in-plurimis.md",
+      "report_sha256": "86e2940c1eedab1ea090e70043ba12933db470b0bea1c63dfa781c22c79afa06"
+    }
+  ]
+}

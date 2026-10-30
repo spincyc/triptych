@@ -154,7 +154,7 @@ or damaged English and 24 have no located English route. All 91 acts after
 extent findings, not translation-accuracy or local-republication permissions.
 Thirty-eight complete-English gaps remain open.
 
-The accepted release contains 4,831 PDFs and 9,206 pages. Seventeen more
+The accepted release contains 4,831 PDFs and 9,218 pages. Seventeen more
 historical human English witnesses raise complete local English coverage from
 47 to 64 acts, with 68 local English readers in total. Source intake separately
 checks their editions, rights basis, extent and source boundaries; every
@@ -163,19 +163,18 @@ imprints and the corrected Editae source order remain explicit. Damaged Coyne
 Ubi is excluded; Studiorum remains a fragment. No new English act wording was
 authored for these additions.
 
-Four classic-reader checkpoints replace 230 of the original 327 encyclical
-source versions: nine source repairs and 221 further accepted readers. The
-23 new English additions also use the classic design, for 253 classic versions
-among 350 linked readers. The remaining 97 original versions still need final
+Five classic-reader checkpoints replace 277 of the original 327 encyclical
+source versions: nine source repairs and 268 further accepted readers. The
+23 new English additions also use the classic design, for 300 classic versions
+among 350 linked readers. The remaining 50 original versions still need final
 acceptance or source repairs. Latin Modern Roman, language-specific hyphenation,
 indented paragraphs and restrained terminal apparatus implement the requested
 appearance. Note and native-spacing repairs preserve their declared source
 bytes and identify any explicit reordering.
 
-The latest checkpoint replaces 54 readers (257 prior pages with 283 reviewed
-pages) and adds 17 English readers (72 pages). All 4,760 other complete release
-rows and PDF bytes are unchanged. There are no withdrawals or filename
-retirements. All 6,832 current source selections are accounted for. Historical
+The latest checkpoint replaces 47 readers (236 prior pages with 248 reviewed
+pages), with no additions. All 4,784 other complete release rows and PDF bytes
+are unchanged. There are no withdrawals or filename retirements. All 6,832 current source selections are accounted for. Historical
 receipts and audits admit only their exact selected readers; unrelated
 historical reviews grant no additional admissions.
 
@@ -193,8 +192,10 @@ Validation passes the complete source and install/fidelity gates, 67
 source-library tests, 243 papal tests, 20 catalogue tests, 151 public-alpha
 tests, exact scoped release bindings, site build and independent deployment
 artifact verification. Built routes pass six viewport and text-size states,
-keyboard and no-JavaScript checks; all 17 new English links resolve to the
-reviewed PDF bytes. Thirteen additional exact source-admission metadata
+keyboard and no-JavaScript checks; all 47 changed reader aliases resolve to the
+reviewed PDF bytes. Direct source and full-install checks ran uncached; the
+aggregate source/deployment check uses an isolated, fingerprinted supported
+cache. Its earlier interrupted run remains distinct from the passing retry. Thirteen additional exact source-admission metadata
 envelopes create no verified passages or PDF-layout approvals. The validator
 cache namespace changes to prevent stale prior ownership rejections.
 
@@ -206,6 +207,17 @@ evidence or granting another reader admission. Two intake reports have
 publication derivatives that change only 17 private diagnostic path values;
 current consumers pin those derivatives and distinguish the raw historical
 hashes. Source wording, source judgments and PDF bytes are unchanged.
+
+Publication of the fourth and fifth checkpoints remains held for the English
+Etsi multa greeting. The earlier address repair retained two unreadable OCR
+lines in source 94992a97e46c8fe05150c4aa0cd998b28f754e8cceec6e8859797de3ed687097
+and seven-page reader 25dfc7d1c6271f8ba501859c979836e07891ba15333334da6b1b5ac2bb7df7fa.
+The root verified the garbled reader text after a late independent finding.
+Earlier positive review and exact fidelity do not waive this source-usability
+failure. Both historical bytes and receipts remain retained. Mechanical native
+recovery and fresh independent source/PDF acceptance are required before
+publication. Other accepted readers and the overall English-coverage counts do
+not establish that this held local reader is usable.
 
 Additional English intake, source-preserving repairs and cold-review
 adjudication continue. A successful render or producer review does not establish

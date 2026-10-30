@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.nonmediocri-ass26.nonmediocri-native-word-lines-code-5ceeff1a55cc"
+edition_id = "edition.acta-papal-archives.ass.026.1893-acta-ass-026"
+artifact_type = "source-specific-acquisition-code"
+media_type = "text/x-python"
+storage = "tracked"
+retrieved = "2026-10-30"
+rights_status = "licensed"
+rights_basis = "Source-specific mechanical replay code; MIT under repository LICENSE."
+license = "MIT"
+provenance = "Source-specific single-column native LINE/WORD preparation. Group native LINE fragments by yMin within0.5pt; preserve every WORD value exactly once, sorted by x in its line. Inter-WORD gaps below2.5pt join; gaps at least2.5pt separate. No source words are typed, inferred or corrected."
+sha256 = "5ceeff1a55cca986b83d5926210d2701f1e16af740e13ee9ae4ff5410052bf87"
+byte_size = 2754
+path = "src/sources/works/holy-see/acta-sanctae-sedis/editions/1893-acta-ass-026/artifacts/nonmediocri-native-word-lines-code-5ceeff1a55cc/replay.py"
+indexable = false

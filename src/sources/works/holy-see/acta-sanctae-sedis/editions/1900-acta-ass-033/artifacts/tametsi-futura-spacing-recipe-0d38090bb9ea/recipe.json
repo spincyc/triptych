@@ -1,0 +1,136 @@
+{
+  "helper": {
+    "path": "scripts/_papal_native_spacing.py",
+    "sha256": "7c7393f6b366bc986e7d106d217a769fabba5a48edd645a7bd02b463eb64d82c"
+  },
+  "native_first_page": 273,
+  "native_pdf": {
+    "artifact_id": "artifact.acta-papal-archives.ass.033.vatican-pdf-18fd550d",
+    "artifact_pages": [
+      273,
+      285
+    ],
+    "sha256": "18fd550d59a2de5ac9f7e283c407c43ee5d1f004032b9109c4cdc733fcb021d6"
+  },
+  "native_raw": {
+    "artifact_id": "artifact.acta-papal-archives.ass.033.tametsi-futura-native-raw-b09ad2447f87",
+    "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1900-acta-ass-033/artifacts/tametsi-futura-native-raw-b09ad2447f87/text.txt",
+    "sha256": "b09ad2447f874da63fdba0cbc294782b836428c12a0b531398c0f9eb0f68513c"
+  },
+  "output_sha256": "b76bbdd32d7a6d80d8d4fcb39760a77638085cd34508fb84764d3ca3802ad052",
+  "parent": {
+    "artifact_id": "artifact.acta-papal-archives.ass.033.historical-text-0bf4c816",
+    "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1900-acta-ass-033/artifacts/acta-historical-text-0bf4c816/historical.txt",
+    "sha256": "0bf4c816a025b28cf31636812e0a2bf93729edf32823a74844f33ea857d3af6f"
+  },
+  "retained_source_lines": [],
+  "review": {
+    "artifact_id": "artifact.acta-papal-archives.ass.033.tametsi-futura-spacing-review-4bface71b72d",
+    "sha256": "4bface71b72d2d8d6f0d855ef48cc403a76f52bcf30b9f15285afca8b47c0321"
+  },
+  "reviewed_stream_order_pages": [
+    278,
+    280,
+    285
+  ],
+  "schema": "triptych-papal-native-spacing/v1",
+  "selections": [
+    {
+      "native_page": 273,
+      "source_range": [
+        10736,
+        10776
+      ]
+    },
+    {
+      "native_page": 274,
+      "source_range": [
+        10779,
+        10819
+      ]
+    },
+    {
+      "native_page": 275,
+      "source_range": [
+        10821,
+        10862
+      ]
+    },
+    {
+      "native_page": 276,
+      "source_range": [
+        10864,
+        10904
+      ]
+    },
+    {
+      "native_page": 277,
+      "source_range": [
+        10906,
+        10947
+      ]
+    },
+    {
+      "native_page": 278,
+      "source_range": [
+        10949,
+        10989
+      ]
+    },
+    {
+      "native_page": 279,
+      "source_range": [
+        10991,
+        11031
+      ]
+    },
+    {
+      "native_page": 280,
+      "source_range": [
+        11033,
+        11073
+      ]
+    },
+    {
+      "native_page": 281,
+      "source_range": [
+        11075,
+        11115
+      ]
+    },
+    {
+      "native_page": 282,
+      "source_range": [
+        11117,
+        11157
+      ]
+    },
+    {
+      "native_page": 283,
+      "source_range": [
+        11159,
+        11199
+      ]
+    },
+    {
+      "native_page": 284,
+      "source_range": [
+        11201,
+        11241
+      ]
+    },
+    {
+      "native_page": 285,
+      "source_range": [
+        11243,
+        11276
+      ]
+    }
+  ],
+  "source_id": "acta.ass.033.ass-033-l10742",
+  "stream_order_difference_pages": [
+    278,
+    280,
+    285
+  ]
+}

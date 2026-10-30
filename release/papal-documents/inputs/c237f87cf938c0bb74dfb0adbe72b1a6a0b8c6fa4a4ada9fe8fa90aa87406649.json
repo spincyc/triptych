@@ -1,0 +1,55 @@
+{
+  "schema": "triptych-papal-typeset/v1",
+  "revision": "2026-10-30T18:04:51Z",
+  "documents": [
+    {
+      "artifact_id": "artifact.acta-papal-archives.ass.024.historical-text-040fa780.note-blocks-octobri-mense-la-3da7b523c316",
+      "collection_corpus": "acta",
+      "date": "1891-09-22",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.ass.024.ass-024-005",
+      "id": "acta.ass.024.ass-024-005",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          451
+        ]
+      ],
+      "pope": "Leo XIII",
+      "revision": "2026-10-30T18:04:51Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"detail\": \"Original ASS title imprint reproduced before the separately printed1968/1969 Johnson reprint notice; historical publication year/period is corroborated by archive inventory. This is textual-imprint evidence, not an original-print facsimile claim.\", \"evidence_physical_lines\": [1, 35]} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.ass.024.ass-024-005.note-blocks-3da7b523c316",
+      "segment_path": "src/sources/works/papal-documents/1891-09-22-papal-leo-xiii-hf-l-xiii-enc-22091891-octobri-mense-9a9ed712/editions/1891-acta-ass-024-ass-024-005/segments/note-blocks-octobri-mense-la-3da7b523c316.toml",
+      "sha256": "3da7b523c3161cd6d05e6b186a17282bd3405751a9ca38353540b73d98fbb736",
+      "source_note": "ASS 24 (1891), pp. 193–203. Uncorrected Vatican OCR reconstruction; no original-print collation. Historical notes remain in source order, including the final Rosary reference after the subscription. Damaged spacing, words and note labels remain literal.",
+      "source_url": "https://www.vatican.va/archive/ass/documents/ASS-24-1891-92-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1891-acta-ass-024/artifacts/note-blocks-octobri-mense-la-3da7b523c316/text.txt",
+      "title": "Epistola encyclica de Mariae Virginis Rosario",
+      "work_id": "work.papal.leo-xiii.hf-l-xiii-enc-22091891-octobri-mense"
+    }
+  ],
+  "supersessions": [
+    {
+      "prior": {
+        "id": "acta.ass.024.ass-024-005",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.024.historical-text-040fa780",
+        "segment_id": "segment.acta-papal-archives.ass.024.ass-024-005",
+        "source_sha256": "040fa780d381758f432e740ecfe4cee01143cc43aceb357677177ec4458a5215",
+        "pdf_sha256": "633c15d18ba7f9456eb81d628e31d3b9917b3f685766aba483d32a69da636eb2"
+      },
+      "replacement": {
+        "id": "acta.ass.024.ass-024-005",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.024.historical-text-040fa780.note-blocks-octobri-mense-la-3da7b523c316",
+        "segment_id": "segment.acta-papal-archives.ass.024.ass-024-005.note-blocks-3da7b523c316",
+        "source_sha256": "3da7b523c3161cd6d05e6b186a17282bd3405751a9ca38353540b73d98fbb736",
+        "revision": "2026-10-30T18:04:51Z"
+      },
+      "reason": "Separate the proven fused LF7513–7515 historical notes and restore the omitted own final note LF7848–7851, after the subscription; retain every prior selected non-LF byte and original order. Exclude the interposed foreign Duellorum body. Prior records and exact failed PDF remain historical evidence."
+    }
+  ]
+}

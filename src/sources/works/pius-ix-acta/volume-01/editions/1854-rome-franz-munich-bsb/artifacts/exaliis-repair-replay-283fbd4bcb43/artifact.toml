@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.exaliis-repair-replay-283fbd4bcb43"
+edition_id = "edition.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb"
+artifact_type = "exaliis-localized-ocr-replay"
+media_type = "text/x-python"
+storage = "tracked"
+rights_status = "licensed"
+rights_basis = "Project-created bounded replay software, licensed under the MIT License. The historical source wording and BSB images retain their separate controlling rights records."
+rights_jurisdiction = "United States"
+retrieved = "2026-10-30"
+sha256 = "283fbd4bcb43551013758faec5196bbc53d69fb88c860caf397337e6a0b87837"
+byte_size = 4782
+path = "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/exaliis-repair-replay-283fbd4bcb43/replay.py"
+provenance = "New bounded mechanical OCR recovery from retained original BSB canvas360 and361 pixels, plus exact byte composition over the immutable failed BSB candidate. Source words are never authored or inferred."
+license = "MIT"
+notes = "SPDX-License-Identifier: MIT appears in the software; full project grant is retained at LICENSES/MIT.txt. Exact replay pins both tool executables and immutable official model bytes/license."

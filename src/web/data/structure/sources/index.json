@@ -1,8 +1,8 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 10716,
-  "editions": 14294,
+  "artifacts": 10863,
+  "editions": 14297,
   "passages": 9532,
   "readable": 4108,
   "works": 10941
@@ -6595,7 +6595,7 @@
    },
    {
     "id": "PII IX PONTIFICIS MAXIMI ACTA",
-    "works": 72
+    "works": 70
    },
    {
     "id": "PII IX. — PONTIFICIS MAXIMI ACTA",
@@ -7587,7 +7587,7 @@
    },
    {
     "id": "Pius IX",
-    "works": 171
+    "works": 173
    },
    {
     "id": "Pius IX; Holy See web presentation",
@@ -11782,7 +11782,7 @@
   ],
   "languages": [
    {
-    "editions": 10267,
+    "editions": 10269,
     "id": "la"
    },
    {
@@ -11794,7 +11794,7 @@
     "id": "it"
    },
    {
-    "editions": 337,
+    "editions": 338,
     "id": "mul"
    },
    {
@@ -12056,7 +12056,7 @@
     "label": "18th century"
    },
    {
-    "editions": 4815,
+    "editions": 4818,
     "id": "1800",
     "label": "19th century"
    },
@@ -12073,23 +12073,23 @@
   ],
   "rights": [
    {
-    "artifacts": 5761,
+    "artifacts": 5763,
     "editions": 5315,
     "id": "restricted"
    },
    {
-    "artifacts": 3406,
-    "editions": 1057,
+    "artifacts": 3475,
+    "editions": 1058,
     "id": "public-domain"
    },
    {
-    "artifacts": 836,
-    "editions": 422,
+    "artifacts": 837,
+    "editions": 423,
     "id": "unresolved"
    },
    {
-    "artifacts": 458,
-    "editions": 185,
+    "artifacts": 529,
+    "editions": 194,
     "id": "licensed"
    },
    {
@@ -12098,8 +12098,8 @@
     "id": "project-created"
    },
    {
-    "artifacts": 24,
-    "editions": 6,
+    "artifacts": 28,
+    "editions": 7,
     "id": "permission"
    },
    {
@@ -135473,6 +135473,22 @@
    "editions": [
     {
      "date": "1854",
+     "file": "1854-1854-rome-franz-munich-bsb.json",
+     "id": "edition.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb",
+     "language": "mul",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed",
+      "permission",
+      "public-domain",
+      "unresolved"
+     ],
+     "title": "Pii IX Pontificis Maximi Acta, pars prima, volume I — Rome / Giorgio Franz in Monaco issue, BSB copy",
+     "year": 1854
+    },
+    {
+     "date": "1854",
      "file": "1854-1854-rome-mul.json",
      "id": "edition.pius-ix-acta.volume-01.1854-rome-mul",
      "language": "mul",
@@ -136087,6 +136103,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [
+      "licensed",
       "public-domain",
       "unresolved"
      ],
@@ -136116,6 +136133,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [
+      "licensed",
       "public-domain",
       "unresolved"
      ],
@@ -136386,6 +136404,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [
+      "licensed",
       "public-domain",
       "unresolved"
      ],
@@ -138218,6 +138237,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [
+      "licensed",
       "public-domain",
       "unresolved"
      ],
@@ -138304,6 +138324,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [
+      "licensed",
       "public-domain",
       "unresolved"
      ],
@@ -138477,6 +138498,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [
+      "licensed",
       "public-domain",
       "unresolved"
      ],
@@ -138521,6 +138543,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [
+      "licensed",
       "public-domain",
       "unresolved"
      ],
@@ -138735,6 +138758,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [
+      "licensed",
       "public-domain",
       "unresolved"
      ],
@@ -198349,30 +198373,6 @@
    "alternate_titles": [],
    "author": "PII IX PONTIFICIS MAXIMI ACTA",
    "category": "historically-attributed-papal-act",
-   "directory": "editions/pius-ix-acta/volume-01-line-00012583-part-01/",
-   "editions": [
-    {
-     "date": "1854",
-     "file": "1854-1854-pius-ix-acta-volume-01-la.json",
-     "id": "edition.pius-ix-acta.volume-01.line-00012583.part-01.1854-pius-ix-acta-volume-01-la",
-     "language": "la",
-     "passages": 0,
-     "readable": 0,
-     "rights": [],
-     "title": "Ex aliis Nostris — de facultatibus pro iubilaeo — Pii IX Pontificis Maximi Acta, pars prima, volume I. Rome: Ex Typographia Bonarum Artium, habita facultate, 1854.",
-     "year": 1854
-    }
-   ],
-   "id": "work.pius-ix-acta.volume-01.line-00012583.part-01",
-   "languages": [
-    "la"
-   ],
-   "title": "Ex aliis Nostris — de facultatibus pro iubilaeo"
-  },
-  {
-   "alternate_titles": [],
-   "author": "PII IX PONTIFICIS MAXIMI ACTA",
-   "category": "historically-attributed-papal-act",
    "directory": "editions/pius-ix-acta/volume-01-line-00014984/",
    "editions": [
     {
@@ -198729,30 +198729,6 @@
     "la"
    ],
    "title": "Neminem vestrum latet — ad Armenios catholicos provinciae Constantinopolitanae"
-  },
-  {
-   "alternate_titles": [],
-   "author": "PII IX PONTIFICIS MAXIMI ACTA",
-   "category": "historically-attributed-papal-act",
-   "directory": "editions/pius-ix-acta/volume-01-line-00012583-part-02/",
-   "editions": [
-    {
-     "date": "1854",
-     "file": "1854-1854-pius-ix-acta-volume-01-la.json",
-     "id": "edition.pius-ix-acta.volume-01.line-00012583.part-02.1854-pius-ix-acta-volume-01-la",
-     "language": "la",
-     "passages": 0,
-     "readable": 0,
-     "rights": [],
-     "title": "Nemo certe ignorat — ad archiepiscopos et episcopos Hiberniae — Pii IX Pontificis Maximi Acta, pars prima, volume I. Rome: Ex Typographia Bonarum Artium, habita facultate, 1854.",
-     "year": 1854
-    }
-   ],
-   "id": "work.pius-ix-acta.volume-01.line-00012583.part-02",
-   "languages": [
-    "la"
-   ],
-   "title": "Nemo certe ignorat — ad archiepiscopos et episcopos Hiberniae"
   },
   {
    "alternate_titles": [],
@@ -237309,6 +237285,41 @@
   {
    "alternate_titles": [],
    "author": "Pius IX",
+   "category": "historically-attributed-papal-act",
+   "directory": "editions/pius-ix-acta/volume-01-line-00012583-part-01/",
+   "editions": [
+    {
+     "date": "1854",
+     "file": "1854-1854-pius-ix-acta-volume-01-la.json",
+     "id": "edition.pius-ix-acta.volume-01.line-00012583.part-01.1854-pius-ix-acta-volume-01-la",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "title": "Ex aliis Nostris — de facultatibus pro iubilaeo — Pii IX Pontificis Maximi Acta, pars prima, volume I. Rome: Ex Typographia Bonarum Artium, habita facultate, 1854.",
+     "year": 1854
+    },
+    {
+     "date": "1854",
+     "file": "1854-1854-rome-franz-munich-bsb-la.json",
+     "id": "edition.pius-ix-acta.volume-01.line-00012583.part-01.1854-rome-franz-munich-bsb-la",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "title": "Ex aliis Nostris — de facultatibus pro iubilaeo — BSB Rome / Giorgio Franz in Monaco issue",
+     "year": 1854
+    }
+   ],
+   "id": "work.pius-ix-acta.volume-01.line-00012583.part-01",
+   "languages": [
+    "la"
+   ],
+   "title": "Ex aliis Nostris — de facultatibus pro iubilaeo"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Pius IX",
    "category": "brief",
    "directory": "editions/papal-documents/1867-11-14-papal-pius-ix-breve-ex-quo-infensissimi-14-novembre-1867-53899c49/",
    "editions": [
@@ -238793,6 +238804,41 @@
     "it"
    ],
    "title": "Nemo certe ignorat"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Pius IX",
+   "category": "historically-attributed-papal-act",
+   "directory": "editions/pius-ix-acta/volume-01-line-00012583-part-02/",
+   "editions": [
+    {
+     "date": "1854",
+     "file": "1854-1854-pius-ix-acta-volume-01-la.json",
+     "id": "edition.pius-ix-acta.volume-01.line-00012583.part-02.1854-pius-ix-acta-volume-01-la",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "title": "Nemo certe ignorat — ad archiepiscopos et episcopos Hiberniae — Pii IX Pontificis Maximi Acta, pars prima, volume I. Rome: Ex Typographia Bonarum Artium, habita facultate, 1854.",
+     "year": 1854
+    },
+    {
+     "date": "1854",
+     "file": "1854-1854-rome-franz-munich-bsb-la.json",
+     "id": "edition.pius-ix-acta.volume-01.line-00012583.part-02.1854-rome-franz-munich-bsb-la",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "title": "Nemo certe ignorat — ad archiepiscopos et episcopos Hiberniae — BSB Rome / Giorgio Franz in Monaco issue",
+     "year": 1854
+    }
+   ],
+   "id": "work.pius-ix-acta.volume-01.line-00012583.part-02",
+   "languages": [
+    "la"
+   ],
+   "title": "Nemo certe ignorat — ad archiepiscopos et episcopos Hiberniae"
   },
   {
    "alternate_titles": [],

@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.processed-images-882a5d5723cb"
+edition_id = "edition.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb"
+artifact_type = "bounded-thresholded-ocr-input-images"
+media_type = "application/zip"
+storage = "tracked"
+rights_status = "permission"
+rights_basis = "BSB supplies this copy under https://rightsstatements.org/vocab/NoC-NC/1.0/, which permits copying, modification and distribution of the digital representation for non-commercial use. The retained bounded historical page images support this non-commercial research/source edition. No commercial-use permission or project CC licence is asserted over the images. The historical wording has its separate United States expired-term basis. Full modern PDF wrappers are excluded from this bounded package."
+rights_jurisdiction = "United States"
+retrieved = "2026-10-30"
+sha256 = "882a5d5723cb23515a12ca7d32846ea57291c00493aea811bd2d68122000473b"
+byte_size = 1006251
+path = "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/processed-images-882a5d5723cb/processed-images.zip"
+provenance = "Bounded new mechanical OCR recovery from actual BSB historical page images. No source wording passed through a model; the project supplies source bounds and mechanical tooling only."
+derived_from = "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.bounded-images-ca31a9280e5a"
+transformation = "Crop the explicitly declared image rectangles, grayscale, threshold at 40 percent, add the declared white border and set density 300; original images remain separately retained. Recipe and MIT replay script are separately registered."

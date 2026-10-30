@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.providentissimus-duquesne-note-blocks-fca936aedede"
+edition_id = "edition.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english"
+artifact_type = "source-note-paragraph-ocr"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The retained English wording and historical notes are the human translation printed in the United States by Benziger Brothers in 1903, The Great Encyclical Letters of Pope Leo XIII, printed pp.271–302. The title/copyright leaves establish the historical edition independently of the act date. Its United States publication term has expired under src/sources/inventories/papal-documents-rights-v1.toml. Automated OCR adds no identified creative revision; modern delivery wrappers and matter outside this complete printed act are excluded. Historical source wording is excluded from Triptych CC BY 4.0."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/greatencyclicall00cath/greatencyclicall00cath.pdf"
+retrieved = "2026-10-30"
+sha256 = "fca936aedede6000b59697dba68ca9e0ff6915ffe7c40d21e4fd66b109b3b830"
+byte_size = 74617
+derived_from = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.providentissimus-duquesne-raw-ocr-1b4d5d639257"
+transformation = "Replay the exact LF-only recipe artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.providentissimus-duquesne-recipe-7351da5d05a7. Omit chapter title/caption, 31 running heads and first folio as bounded publishing furniture, add LF boundaries around 51 source-reference groups, and remove the listed whitespace-only records on printed p.301. All selected non-LF bytes and their order remain unchanged. No lexical correction or translation."
+encoding = "utf-8"
+indexable = true
+notes = "Complete papal body as printed, with every historical note retained in source page order. The book does not print a recipient address, separate dating clause, or signature for this act beyond the excluded editorial date caption. Residual ordinary recognition errors and physical source hyphenation remain; this is mechanical OCR, not whole-text image collation."
+path = "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/providentissimus-duquesne-note-blocks-fca936aedede/text.txt"

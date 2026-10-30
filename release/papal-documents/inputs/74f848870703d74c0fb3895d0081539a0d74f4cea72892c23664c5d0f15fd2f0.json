@@ -1,0 +1,36 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "dac3a5bf147932d03229dde21a2f8e490167792f1ae429970165dbe1c7d27e80",
+  "documents": [
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-18840420-humanum-genus",
+      "language": "en",
+      "pdf_sha256": "b388fd365fa52f28fb6fd2f9ed76b8125ed74502b45449595a0dc7129f31a8b5",
+      "pages": 9,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": [
+        "SOURCE RECOVERY PASS is bounded to the two same-printing omitted spans and inspected printing/chapter boundaries; residual transcription defects remain and full lexical collation is outstanding.",
+        "No translation-equivalence certification, whole-print certification, new legal rights determination, source-state promotion, admission, installation or deployment.",
+        "Prior failed PDF 27380be1983b1af1eefe992fe6bb86952d72c6f52c93524eef33161d600af804 and G report cab6d0435a106002db61fc725d01952cb91c7b57fa77091978ea5c64afceda12 were rehashed unchanged; their failed decision remains in force for those old bytes.",
+        "qpdf was unavailable; PDF structure was read with pdfinfo and source/PDF fidelity replay passed."
+      ],
+      "receipt_sha256": "dac3a5bf147932d03229dde21a2f8e490167792f1ae429970165dbe1c7d27e80",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-42.md",
+      "report_sha256": "c68926f7bf8d662be4327a276335a1d2aafa3cb7bc700bca26d018dc52e62155"
+    }
+  ]
+}
