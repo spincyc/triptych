@@ -1,0 +1,63 @@
+{
+  "helper": {
+    "path": "scripts/_papal_native_spacing.py",
+    "sha256": "8163acf4cc10c54c974690bc8f87f21f302b52ccde2d2124eacaa5e83d9249ea"
+  },
+  "native_first_page": 321,
+  "native_pdf": {
+    "artifact_id": "artifact.acta-papal-archives.ass.034.vatican-pdf-64a68e6e",
+    "artifact_pages": [
+      321,
+      323
+    ],
+    "sha256": "64a68e6efcbf01054672a6bccb274a8ce1dcce4241149ce342d4d478c6786ea8"
+  },
+  "native_raw": {
+    "artifact_id": "artifact.acta-papal-archives.ass.034.bohemiae-native-raw-1a94edbe56a5",
+    "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1901-acta-ass-034/artifacts/bohemiae-native-raw-1a94edbe56a5/text.txt",
+    "sha256": "1a94edbe56a58ccc2105fdabba7d74efbe3c946bedeb1a298738e3c12ed68b0c"
+  },
+  "output_sha256": "c7361b84d5c13954deac0a17eecaf2bbcd0ade8c62defd972400a2d31027b374",
+  "parent": {
+    "artifact_id": "artifact.acta-papal-archives.ass.034.historical-text-817d63a7",
+    "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1901-acta-ass-034/artifacts/acta-historical-text-817d63a7/historical.txt",
+    "sha256": "817d63a71b9ee1a6f3ef8155b871fe5105eb668c6c521c3ab73eafa21f240749"
+  },
+  "review": {
+    "geometry": "Every selected native page is one body column. Historical notes, where present, are distinct page-foot blocks. Native page650 of De Eucharistia places its footnote before body in raw stream order; the geometry puts it at page foot. No native mixed-column fusion observed.",
+    "limits": "Review concerns OCR reconstruction geometry and word-boundary evidence, not original printing glyph collation or lexical accuracy.",
+    "native_pages_inspected": [
+      321,
+      322,
+      323
+    ],
+    "raw_order_policy": "Project only whitespace from exact unique native lines onto the unchanged prior source LF order. Do not adopt native content-stream order."
+  },
+  "reviewed_stream_order_pages": [],
+  "schema": "triptych-papal-native-spacing/v1",
+  "selections": [
+    {
+      "native_page": 321,
+      "source_range": [
+        12841,
+        12880
+      ]
+    },
+    {
+      "native_page": 322,
+      "source_range": [
+        12883,
+        12923
+      ]
+    },
+    {
+      "native_page": 323,
+      "source_range": [
+        12925,
+        12958
+      ]
+    }
+  ],
+  "source_id": "acta.ass.034.ass-034-l012846",
+  "stream_order_difference_pages": []
+}

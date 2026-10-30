@@ -31,6 +31,30 @@ state = "in_progress"
   evidence = ["PROJECT-WORK.md"]
 
 [[deliverables]]
+id = "missal-version-nomenclature-2026-10-30"
+owner = "PROJECT-WORK.md"
+promise = "Establish well-sourced names and firm versioning nomenclature for each missal point in time across the project, replace the vague current Pre-1955 label, and include in the reader only missals with actual contributed content."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "missal-version-primary-sources"
+  criterion = "Every represented missal version has an explicit source-supported name and version identity distinguishing edition, reform horizon, language and the actual contributing witnesses; uncertain exact correspondence is stated."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "guidance/missals.md"]
+
+  [[deliverables.requirements]]
+  id = "missal-version-consistent-consumers"
+  criterion = "Current reader, CLI, source and generated metadata, project prose and governing guidance consistently use the accepted nomenclature; stable-ID compatibility and historical audit evidence are preserved explicitly."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "missal-reader-contribution-filter"
+  criterion = "The reader includes only missal versions with actual contributed content, determined from canonical text or source data rather than placeholder or empty records, with affected navigation and rendering checks passing."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "encyclicals-completion-2026-10-29"
 owner = "PROJECT-WORK.md"
 promise = "Complete the resumed encyclical work, provide complete English translations across the catalogue, give the two-column reading PDFs a classic TeX appearance, and resolve independent cold-review findings."

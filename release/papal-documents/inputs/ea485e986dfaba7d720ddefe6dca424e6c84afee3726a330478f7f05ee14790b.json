@@ -1,0 +1,43 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "1605bbe0138ca0f719c6696a4039b12fa18ef89cef6eeffc4db752096f0cecef",
+  "documents": [
+    {
+      "id": "acta.aas.006.archive.aas.006.053",
+      "language": "it",
+      "pdf_sha256": "9518b69b215ed3114cfff232af5d237c005aaaab97907229bba26974028a5dde",
+      "pages": 7,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "description": "Ragged-right Italian columns remain legible and ordered. All note groups appear as distinct short line/paragraph blocks, including page 3 top and page 7 top and above subscription; source hard-line divisions and OCR punctuation are retained. No clipping, overlap or sustained spacing defect. Final page retains substantive ending, blessing, dated clause, final citation note and BENEDICTUS PP. XV subscription above rule and compact apparatus."
+        }
+      ],
+      "limitations": "Independent full-page reader layout and bounded native source-boundary/repair acceptance. Every actual reader page inspected in contact overview and individually at original raster resolution. Native evidence is OCR reconstruction geometry, not original-print glyph or lexical collation; no translation accuracy, rights certification, exhaustive discovery or whole-volume completeness claim. No page reuse.",
+      "receipt_sha256": "1605bbe0138ca0f719c6696a4039b12fa18ef89cef6eeffc4db752096f0cecef",
+      "report": "src/sources/papal-documents/encyclicals-repair-cold-23-b.md",
+      "report_sha256": "9ba9210c7b168137e68adc7d5ec7ea53a4a0535aae45a45f2f5e9ec500378318"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "79a31c31a6f7981476070689ac0b8262448f37e800d381bb0e7e334ebebe3cd7",
+  "documents": [
+    {
+      "id": "acta.aas.021.aas-021-l29292",
+      "language": "it",
+      "pdf_sha256": "a38a976ff997df18e671a1d00cda65fd29fea324f4f736b0c04baf03803f6698",
+      "pages": 18,
+      "receipt_sha256": "79a31c31a6f7981476070689ac0b8262448f37e800d381bb0e7e334ebebe3cd7",
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            3,
+            5,
+            6,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "description": "Several short historical summaries and isolated body pieces retain visibly damaged literal OCR, including difficult summary wording and isolated debris. Native loci were independently inspected; sustained body text remains usable, and the source note discloses literal WORD values and fragments."
+        },
+        {
+          "severity": "INFO",
+          "pages": [
+            14
+          ],
+          "description": "Declared native-page752 footnote range LF30583–30592 excludes the first note text line LF30582. Native image/WORD evidence places LF30582 in the footer; existing blank LFs30580–30581 already give it a separate paragraph before marker1/continuation. All note text remains, with no body fusion. The range is narrow by one LF; this is a nonblocking current-reader source-role qualification."
+        },
+        {
+          "severity": "INFO",
+          "pages": [
+            18
+          ],
+          "description": "Final page retains the continuing historical quotation/note, blessing, dated closing and PIUS PP. XI subscription before the ruled apparatus. Apparatus continues at the top of the right column; no apparatus-only page results."
+        }
+      ],
+      "limitations": "Independent visual usability, note/body separation and bounded source-method/source-role audit. Every reader page was contact-inspected and opened at full resolution; all 19 marginal loci were checked against native images and WORD identities. Native text is a Vatican OCR reconstruction; no lexical/original-print collation, translation judgment, whole-volume completeness or independent rights certification.",
+      "report": "src/sources/papal-documents/encyclicals-repair-cold-20-a.md",
+      "report_sha256": "179d15d15d8eed624b571aadccf56326d6375766a79fa5a7faa356cb471c523f"
+    }
+  ]
+}

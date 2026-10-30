@@ -1,0 +1,264 @@
+{
+  "helper": {
+    "path": "scripts/_papal_native_spacing.py",
+    "sha256": "b67f55a5075a11a43f23766d477b32c5209a1144262790476e31c4fde2362b49"
+  },
+  "native_first_page": 269,
+  "native_pdf": {
+    "artifact_id": "artifact.acta-papal-archives.ass.026.vatican-pdf-02f81d1d",
+    "artifact_pages": [
+      269,
+      292
+    ],
+    "sha256": "02f81d1d13781d2f7d27d4aa327d7ec83bbe5ea8ec22f785eda20dd4ce777446"
+  },
+  "native_raw": {
+    "artifact_id": "artifact.acta-papal-archives.ass.026.providentissimus-deus-native-raw-3a64c097cf9e",
+    "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1893-acta-ass-026/artifacts/providentissimus-deus-native-raw-3a64c097cf9e/text.txt",
+    "sha256": "3a64c097cf9ef82014fa1fa663cd64ed75a29f91adc44058b0eabdf192506432"
+  },
+  "output_sha256": "a243ee49e97f0509a485c46cd2d60dc29e6a9506da174b04a5839e7d60eef508",
+  "parent": {
+    "artifact_id": "artifact.acta-papal-archives.ass.026.historical-text-15a33cfd",
+    "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1893-acta-ass-026/artifacts/acta-historical-text-15a33cfd/historical.txt",
+    "sha256": "15a33cfd01401e070c0b912e4154be4f7d163d6730ac8f1cd64ed6096d756d3d"
+  },
+  "retained_source_lines": [
+    {
+      "native_page": 269,
+      "reason": "Native page269 places a small k inside the adjacent body line; the old layout extraction isolates it after that line. No same-page exact line match exists. Preserve this original LF byte-for-byte and do not move the glyph.",
+      "source_line": 10678,
+      "source_line_sha256": "48372008f1417239d834947663408cfa1b0940429179eaefecfd6c644e48ba70"
+    },
+    {
+      "native_page": 269,
+      "reason": "Native page269 places a small k inside the adjacent body line; the old layout extraction isolates it after that line. No same-page exact line match exists. Preserve this original LF byte-for-byte and do not move the glyph.",
+      "source_line": 10679,
+      "source_line_sha256": "c7f496da48869b8755d7789ce80201799dc1a845ecb03198bdf68d5289a2e3fc"
+    }
+  ],
+  "review": {
+    "full_size_native_pages": [
+      269,
+      270,
+      271,
+      272,
+      273,
+      279,
+      283,
+      289,
+      292
+    ],
+    "geometry": "Single body column, separate native page-foot notes. Heading/subscription or page-foot notes appear in different raw stream positions on explicitly listed pages. Original layout order is retained.",
+    "limits": "Vatican OCR PDF reconstruction, not original-print facsimile; no lexical repair or original-print glyph collation.",
+    "native_pages_inspected": [
+      269,
+      270,
+      271,
+      272,
+      273,
+      274,
+      275,
+      276,
+      277,
+      278,
+      279,
+      280,
+      281,
+      282,
+      283,
+      284,
+      285,
+      286,
+      287,
+      288,
+      289,
+      290,
+      291,
+      292
+    ],
+    "stream_order_policy": "Project only native whitespace onto the unchanged old source LF order. Never adopt raw content-stream order."
+  },
+  "reviewed_stream_order_pages": [
+    279,
+    289,
+    292
+  ],
+  "schema": "triptych-papal-native-spacing/v1",
+  "selections": [
+    {
+      "native_page": 269,
+      "source_range": [
+        10647,
+        10692
+      ]
+    },
+    {
+      "native_page": 270,
+      "source_range": [
+        10694,
+        10733
+      ]
+    },
+    {
+      "native_page": 271,
+      "source_range": [
+        10735,
+        10775
+      ]
+    },
+    {
+      "native_page": 272,
+      "source_range": [
+        10777,
+        10817
+      ]
+    },
+    {
+      "native_page": 273,
+      "source_range": [
+        10819,
+        10861
+      ]
+    },
+    {
+      "native_page": 274,
+      "source_range": [
+        10864,
+        10905
+      ]
+    },
+    {
+      "native_page": 275,
+      "source_range": [
+        10907,
+        10947
+      ]
+    },
+    {
+      "native_page": 276,
+      "source_range": [
+        10949,
+        10989
+      ]
+    },
+    {
+      "native_page": 277,
+      "source_range": [
+        10991,
+        11032
+      ]
+    },
+    {
+      "native_page": 278,
+      "source_range": [
+        11034,
+        11073
+      ]
+    },
+    {
+      "native_page": 279,
+      "source_range": [
+        11075,
+        11116
+      ]
+    },
+    {
+      "native_page": 280,
+      "source_range": [
+        11118,
+        11159
+      ]
+    },
+    {
+      "native_page": 281,
+      "source_range": [
+        11161,
+        11203
+      ]
+    },
+    {
+      "native_page": 282,
+      "source_range": [
+        11205,
+        11246
+      ]
+    },
+    {
+      "native_page": 283,
+      "source_range": [
+        11248,
+        11289
+      ]
+    },
+    {
+      "native_page": 284,
+      "source_range": [
+        11291,
+        11332
+      ]
+    },
+    {
+      "native_page": 285,
+      "source_range": [
+        11334,
+        11375
+      ]
+    },
+    {
+      "native_page": 286,
+      "source_range": [
+        11377,
+        11418
+      ]
+    },
+    {
+      "native_page": 287,
+      "source_range": [
+        11420,
+        11461
+      ]
+    },
+    {
+      "native_page": 288,
+      "source_range": [
+        11463,
+        11501
+      ]
+    },
+    {
+      "native_page": 289,
+      "source_range": [
+        11503,
+        11545
+      ]
+    },
+    {
+      "native_page": 290,
+      "source_range": [
+        11548,
+        11588
+      ]
+    },
+    {
+      "native_page": 291,
+      "source_range": [
+        11590,
+        11631
+      ]
+    },
+    {
+      "native_page": 292,
+      "source_range": [
+        11633,
+        11665
+      ]
+    }
+  ],
+  "source_id": "acta.ass.026.ass-026-l10652",
+  "stream_order_difference_pages": [
+    279,
+    289,
+    292
+  ]
+}

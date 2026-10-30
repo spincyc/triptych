@@ -1,0 +1,72 @@
+{
+  "schema": "triptych-papal-typeset/v1",
+  "revision": "2026-10-30T10:02:42Z",
+  "documents": [
+    {
+      "artifact_id": "artifact.acta-papal-archives.aas.021.historical-text-c3e4af8a.divini-geometry-3e088ce582c3",
+      "date": "1929-12-31",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.aas.021.aas-021-l29292",
+      "id": "acta.aas.021.aas-021-l29292",
+      "language": "it",
+      "physical_line_ranges": [
+        [
+          1,
+          1836
+        ]
+      ],
+      "pope": "Pius XI",
+      "revision": "2026-10-30T10:02:42Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"basis\": \"The official archival OCR volume identifies the historical AAS title, annual volume and Vatican printing imprint. Constituent source headings, dated issue mastheads, signatures, source notes and historical end indexes belong to that identified printing. This establishes edition testimony through the OCR reconstruction, not image-level collation.\", \"completion_colophon_line_ranges\": [[34441, 34441]], \"completion_colophon_raw\": \"      ABSOLVITUR DIE 20 IANUARII 1930\", \"edition\": \"Acta Apostolicae Sedis 21 (1929), Rome, Typis Polyglottis Vaticanis.\", \"limitation\": \"Annual title year is nominal; the completion colophon and source issue dates are recorded separately.\", \"title_imprint_line_ranges\": [[1, 17]]} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.aas.021.aas-021-l29292.geometry-3e088ce582c3",
+      "segment_path": "src/sources/works/papal-documents/1929-12-31-papal-pius-xi-hf-p-xi-enc-31121929-divini-illius-magistri-a6878805/editions/1930-acta-aas-021-aas-021-l29292/segments/geometry-3e088ce582c3.toml",
+      "sha256": "3e088ce582c38096992fd738dd66246440b3dcfcfcd1068bfd911824c91a4834",
+      "source_note": "AAS 21 (1929), bounded historical Italian constituent. Literal OCR WORD values, source word fragments, notes, closing and subscription remain. An exact source-byte partition retains marginal summaries as separate blocks at their source anchors and page-foot notes in separate blocks at their source breaks. Native WORD ownership and source hashes are retained in the registered spec and geometry review. The archival OCR PDF is a text reconstruction; original printed-page and lexical collation are not claimed.",
+      "source_url": "https://www.vatican.va/archive/aas/documents/AAS-21-1929-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1930-acta-aas-021/artifacts/divini-geometry-3e088ce582c3/text.txt",
+      "title": "AD VENERABILES          FRATRES     PATRIARCHAS, PRIMATES, ARCHIEPISCOPOS, EPI- SCOPOS,   ALIOSQUE      LOCORUM       ORDINARIOS         PACEM     ET   COMMUNIONEM CUM APOSTOLICA       S E D E H A B E N T E S , ET AD DELECTOS FILIOS CHRISTIFI- DELES CATHOLICI ORBIS UNIVERSOS:                  DE   CHRISTIANA I U V E N T A E E D U - CATIONE.",
+      "work_id": "work.papal.pius-xi.hf-p-xi-enc-31121929-divini-illius-magistri",
+      "correction_evidence": {
+        "revision": "2026-10-30T10:02:42Z",
+        "kind": "explicit-native-word-backed-source-byte-role-partition",
+        "spec_artifact_id": "artifact.acta-papal-archives.aas.021.historical-text-c3e4af8a.divini-geometry-spec-bda763b2213f",
+        "spec_sha256": "bda763b2213f48195eb385a14e336cf4e172c3a0c1a43d70909d4d0ddb0fd043",
+        "recipe_artifact_id": "artifact.acta-papal-archives.aas.021.historical-text-c3e4af8a.divini-geometry-recipe-48e4003bf1fc",
+        "recipe_sha256": "48e4003bf1fcf0c4763b417c7aa44ca26bcd9de1996f514d503023d0ca76b4c3",
+        "review_artifact_id": "artifact.acta-papal-archives.aas.021.historical-text-c3e4af8a.divini-geometry-review-a599bd90c8cd",
+        "review_sha256": "a599bd90c8cdee8ac6970eb815b057fc13410ca4a631239c19ea0064255b86b1",
+        "prior_segment_id": "segment.acta-papal-archives.aas.021.aas-021-l29292",
+        "margin_groups": 19,
+        "native_margin_words": 149,
+        "page_foot_blocks": 35,
+        "selected_nonwhitespace_characters": 74703,
+        "selected_nonwhitespace_units_preserved": true,
+        "body_source_order_preserved": true,
+        "independent_cold_review_required": true
+      }
+    }
+  ],
+  "supersessions": [
+    {
+      "prior": {
+        "id": "acta.aas.021.aas-021-l29292",
+        "language": "it",
+        "artifact_id": "artifact.acta-papal-archives.aas.021.historical-text-c3e4af8a",
+        "source_sha256": "c3e4af8a24386821d8b3827235c324e20a4a0a36c0f4dc88b017a3380400357c",
+        "segment_id": "segment.acta-papal-archives.aas.021.aas-021-l29292",
+        "pdf_sha256": "6598f9da5cb1aec1c100691b4517ccf07a668cb244c2e996058ffcc07d55dae1"
+      },
+      "replacement": {
+        "id": "acta.aas.021.aas-021-l29292",
+        "language": "it",
+        "artifact_id": "artifact.acta-papal-archives.aas.021.historical-text-c3e4af8a.divini-geometry-3e088ce582c3",
+        "source_sha256": "3e088ce582c38096992fd738dd66246440b3dcfcfcd1068bfd911824c91a4834",
+        "segment_id": "segment.acta-papal-archives.aas.021.aas-021-l29292.geometry-3e088ce582c3",
+        "revision": "2026-10-30T10:02:42Z"
+      },
+      "reason": "Exact native WORD-backed UTF-8 source-unit role partition replaces interleaved marginal summaries and fused source notes. Every selected WORD value and non-whitespace character remains; source body order and all source notes, closing and subscription are retained. Prior source and segment remain immutable."
+    }
+  ]
+}

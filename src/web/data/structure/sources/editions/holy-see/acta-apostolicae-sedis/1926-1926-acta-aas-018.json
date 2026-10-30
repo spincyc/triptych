@@ -29,6 +29,36 @@
    "storage": "tracked"
   },
   {
+   "artifact_type": "bounded-source-note-block-derivative",
+   "byte_size": 48529,
+   "edition_owned": true,
+   "id": "artifact.acta-papal-archives.aas.018.historical-text-da4909a7.note-blocks-rite-expiatis-la-92195a739059",
+   "media_type": "text/plain",
+   "notes": "Bounded act text, not the whole containing volume. Literal OCR, source spacing, source notes, closing and subscription remain unchanged. No original-print image or whole-word collation is claimed. Replay helper scripts/_papal_source_notes.py SHA-256 at registration: a0b31d45f498bec3a12a29cdff28da38f3e01cc02c50e5de8a9a65e4a82a9d57.",
+   "page_count": null,
+   "retrieved": "2026-10-30",
+   "rights": "public-domain",
+   "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"basis\": \"The official archival OCR volume identifies the historical AAS title, annual volume and Vatican printing imprint. Constituent source headings, dated issue mastheads, signatures, source notes and historical end indexes belong to that identified printing. This establishes edition testimony through the OCR reconstruction, not image-level collation.\", \"completion_colophon_line_ranges\": [[24872, 24872]], \"completion_colophon_raw\": \"           ABSOLVITUR-   D I E 31. DECEMBRIS 1926\", \"edition\": \"Acta Apostolicae Sedis 18 (1926), Rome, Typis Polyglottis Vaticanis.\", \"limitation\": \"Annual title year is nominal; the completion colophon and source issue dates are recorded separately.\", \"title_imprint_line_ranges\": [[1, 17]]} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "source-note-block-partition-spec",
+   "byte_size": 1858,
+   "edition_owned": true,
+   "id": "artifact.acta-papal-archives.aas.018.historical-text-da4909a7.note-spec-rite-expiatis-la-de2b8dfb66dd",
+   "media_type": "application/json",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-10-30",
+   "rights": "licensed",
+   "rights_basis": "Project-created exact source-selection and LF note-partition specification is licensed CC BY 4.0; historical source wording retains its separate rights.",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
    "artifact_type": "archival-ocr-pdf",
    "byte_size": 2671749,
    "edition_owned": true,

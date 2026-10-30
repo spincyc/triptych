@@ -1,0 +1,339 @@
+{
+  "schema": "triptych-papal-native-spacing/v1",
+  "parent": {
+    "artifact_id": "artifact.acta-papal-archives.ass.029.historical-text-864fa26a",
+    "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1896-acta-ass-029/artifacts/acta-historical-text-864fa26a/historical.txt",
+    "sha256": "864fa26a5142712ddc93b24966f859459ba06804ca8508c6c3d4b6cc766925d4"
+  },
+  "native_raw": {
+    "artifact_id": "artifact.acta-papal-archives.ass.029.divinum-native-raw-6645c4d98ae1",
+    "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1896-acta-ass-029/artifacts/divinum-native-raw-6645c4d98ae1/text.txt",
+    "sha256": "6645c4d98ae18227b74465235163f0647321d78d7dbac070e6e47f067067235a"
+  },
+  "native_pdf": {
+    "artifact_id": "artifact.acta-papal-archives.ass.029.vatican-pdf-0972de3d",
+    "sha256": "0972de3da0abf6bf1b37c5eb2da66bba6e11d8b231ec65df32cc826458514b27",
+    "artifact_pages": [
+      644,
+      658
+    ]
+  },
+  "native_first_page": 644,
+  "selections": [
+    {
+      "source_range": [
+        25858,
+        25898
+      ],
+      "native_page": 644
+    },
+    {
+      "source_range": [
+        25900,
+        25940
+      ],
+      "native_page": 645
+    },
+    {
+      "source_range": [
+        25942,
+        25982
+      ],
+      "native_page": 646
+    },
+    {
+      "source_range": [
+        25984,
+        26026
+      ],
+      "native_page": 647
+    },
+    {
+      "source_range": [
+        26028,
+        26070
+      ],
+      "native_page": 648
+    },
+    {
+      "source_range": [
+        26072,
+        26113
+      ],
+      "native_page": 649
+    },
+    {
+      "source_range": [
+        26115,
+        26155
+      ],
+      "native_page": 650
+    },
+    {
+      "source_range": [
+        26157,
+        26199
+      ],
+      "native_page": 651
+    },
+    {
+      "source_range": [
+        26201,
+        26243
+      ],
+      "native_page": 652
+    },
+    {
+      "source_range": [
+        26245,
+        26286
+      ],
+      "native_page": 653
+    },
+    {
+      "source_range": [
+        26288,
+        26328
+      ],
+      "native_page": 654
+    },
+    {
+      "source_range": [
+        26330,
+        26370
+      ],
+      "native_page": 655
+    },
+    {
+      "source_range": [
+        26372,
+        26414
+      ],
+      "native_page": 656
+    },
+    {
+      "source_range": [
+        26416,
+        26457
+      ],
+      "native_page": 657
+    },
+    {
+      "source_range": [
+        26460,
+        26502
+      ],
+      "native_page": 658
+    }
+  ],
+  "retained_source_lines": [
+    {
+      "source_line": 26024,
+      "source_line_sha256": "f68b0e270a69e05ed6c69c22da90d012c9351b2a11ff793e19a7c0df892ed780",
+      "native_page": 647,
+      "reason": "The native raw extractor integrates this superscript with the adjacent source note, whereas the retained layout extractor isolates it on a separate LF. The source line has zero exact native-line matches. Retain all original line bytes and source order; do not move, delete, append or infer the superscript."
+    },
+    {
+      "source_line": 26025,
+      "source_line_sha256": "1703b09c80f709ec37a4b7cb528e167eca4c2311d049e00481d3cd1677378088",
+      "native_page": 647,
+      "reason": "The native raw extractor integrates this superscript with the adjacent source note, whereas the retained layout extractor isolates it on a separate LF. The source line has zero exact native-line matches. Retain all original line bytes and source order; do not move, delete, append or infer the superscript."
+    },
+    {
+      "source_line": 26065,
+      "source_line_sha256": "96346ddd42593a8d2437cadafa6e98ffcefff36c78dee9bdd47d53ee8547e251",
+      "native_page": 648,
+      "reason": "The native raw extractor integrates this superscript with the adjacent source note, whereas the retained layout extractor isolates it on a separate LF. The source line has zero exact native-line matches. Retain all original line bytes and source order; do not move, delete, append or infer the superscript."
+    },
+    {
+      "source_line": 26066,
+      "source_line_sha256": "9c95dfe44d6076e47cc32ee9eeebd88ba5eb7a52e39cfbcce5e308154c1f4436",
+      "native_page": 648,
+      "reason": "The native raw extractor integrates this superscript with the adjacent source note, whereas the retained layout extractor isolates it on a separate LF. The source line has zero exact native-line matches. Retain all original line bytes and source order; do not move, delete, append or infer the superscript."
+    },
+    {
+      "source_line": 26242,
+      "source_line_sha256": "1c8973f8f6c688003d6afc738549aa2ceba0e7eb3aa567fd7bba18391537ae44",
+      "native_page": 652,
+      "reason": "The native raw extractor integrates this superscript with the adjacent source note, whereas the retained layout extractor isolates it on a separate LF. The source line has zero exact native-line matches. Retain all original line bytes and source order; do not move, delete, append or infer the superscript."
+    },
+    {
+      "source_line": 26243,
+      "source_line_sha256": "10c0c4bce4a54e7daba561831891f66914a1783e23cc02c5825cdf6d5b9c0025",
+      "native_page": 652,
+      "reason": "The native raw extractor integrates this superscript with the adjacent source note, whereas the retained layout extractor isolates it on a separate LF. The source line has zero exact native-line matches. Retain all original line bytes and source order; do not move, delete, append or infer the superscript."
+    },
+    {
+      "source_line": 26324,
+      "source_line_sha256": "8c1b6f59ed446ab185719519a1bca6bdd357dde2080ce6f3da149d847b0ea783",
+      "native_page": 654,
+      "reason": "The native raw extractor integrates this superscript with the adjacent source note, whereas the retained layout extractor isolates it on a separate LF. The source line has zero exact native-line matches. Retain all original line bytes and source order; do not move, delete, append or infer the superscript."
+    },
+    {
+      "source_line": 26325,
+      "source_line_sha256": "60f8d9f68a07b0e5d976ef7c65a4ff057ca57fb182f17a9297edcc6c41cd200e",
+      "native_page": 654,
+      "reason": "The native raw extractor integrates this superscript with the adjacent source note, whereas the retained layout extractor isolates it on a separate LF. The source line has zero exact native-line matches. Retain all original line bytes and source order; do not move, delete, append or infer the superscript."
+    },
+    {
+      "source_line": 26369,
+      "source_line_sha256": "d79f4f703e6c635fde1f354146b79885d311a064b218904bf49ae6fc2a6797a6",
+      "native_page": 655,
+      "reason": "The native raw extractor integrates this superscript with the adjacent source note, whereas the retained layout extractor isolates it on a separate LF. The source line has zero exact native-line matches. Retain all original line bytes and source order; do not move, delete, append or infer the superscript."
+    },
+    {
+      "source_line": 26370,
+      "source_line_sha256": "41484e5c15378e580ce82739b39f57f4d21537479bd16ac56811657d2a085a92",
+      "native_page": 655,
+      "reason": "The native raw extractor integrates this superscript with the adjacent source note, whereas the retained layout extractor isolates it on a separate LF. The source line has zero exact native-line matches. Retain all original line bytes and source order; do not move, delete, append or infer the superscript."
+    },
+    {
+      "source_line": 26413,
+      "source_line_sha256": "f52132f818ec25d4a30460723781d8d3635c7ad337bea58eb017e0206896fc79",
+      "native_page": 656,
+      "reason": "The native raw extractor integrates this superscript with the adjacent source note, whereas the retained layout extractor isolates it on a separate LF. The source line has zero exact native-line matches. Retain all original line bytes and source order; do not move, delete, append or infer the superscript."
+    },
+    {
+      "source_line": 26414,
+      "source_line_sha256": "d21086932a0b24ea42b4790be23eefe0d1263eb09b1768d90195d0dcdb26e9d1",
+      "native_page": 656,
+      "reason": "The native raw extractor integrates this superscript with the adjacent source note, whereas the retained layout extractor isolates it on a separate LF. The source line has zero exact native-line matches. Retain all original line bytes and source order; do not move, delete, append or infer the superscript."
+    }
+  ],
+  "reviewed_stream_order_pages": [
+    651,
+    656,
+    657
+  ],
+  "stream_order_difference_pages": [
+    651,
+    656,
+    657
+  ],
+  "output_sha256": "c8bdfba93d02fbf3a28f950cb3093d26c2b5c8cc96c16c4c912725f449b90642",
+  "review": {
+    "schema": "triptych-papal-source-boundary-review/v1",
+    "reviewed_on": "2026-10-30",
+    "source_artifact_id": "artifact.acta-papal-archives.ass.029.historical-text-864fa26a",
+    "source_sha256": "864fa26a5142712ddc93b24966f859459ba06804ca8508c6c3d4b6cc766925d4",
+    "native_artifact_ids": [
+      "artifact.acta-papal-archives.ass.029.vatican-pdf-0972de3d",
+      "artifact.acta-papal-archives.ass.029.divinum-native-raw-6645c4d98ae1"
+    ],
+    "native_pdf_sha256": "0972de3da0abf6bf1b37c5eb2da66bba6e11d8b231ec65df32cc826458514b27",
+    "contact_inspected_native_pages": [
+      644,
+      645,
+      646,
+      647,
+      648,
+      649,
+      650,
+      651,
+      652,
+      653,
+      654,
+      655,
+      656,
+      657,
+      658
+    ],
+    "individually_inspected_native_pages": [
+      647,
+      648,
+      651,
+      652,
+      654,
+      655,
+      656,
+      657
+    ],
+    "stream_order_difference_pages": [
+      651,
+      656,
+      657
+    ],
+    "retained_source_lines": [
+      {
+        "source_line": 26024,
+        "source_line_sha256": "f68b0e270a69e05ed6c69c22da90d012c9351b2a11ff793e19a7c0df892ed780",
+        "native_page": 647,
+        "reason": "The native raw extractor integrates this superscript with the adjacent source note, whereas the retained layout extractor isolates it on a separate LF. The source line has zero exact native-line matches. Retain all original line bytes and source order; do not move, delete, append or infer the superscript."
+      },
+      {
+        "source_line": 26025,
+        "source_line_sha256": "1703b09c80f709ec37a4b7cb528e167eca4c2311d049e00481d3cd1677378088",
+        "native_page": 647,
+        "reason": "The native raw extractor integrates this superscript with the adjacent source note, whereas the retained layout extractor isolates it on a separate LF. The source line has zero exact native-line matches. Retain all original line bytes and source order; do not move, delete, append or infer the superscript."
+      },
+      {
+        "source_line": 26065,
+        "source_line_sha256": "96346ddd42593a8d2437cadafa6e98ffcefff36c78dee9bdd47d53ee8547e251",
+        "native_page": 648,
+        "reason": "The native raw extractor integrates this superscript with the adjacent source note, whereas the retained layout extractor isolates it on a separate LF. The source line has zero exact native-line matches. Retain all original line bytes and source order; do not move, delete, append or infer the superscript."
+      },
+      {
+        "source_line": 26066,
+        "source_line_sha256": "9c95dfe44d6076e47cc32ee9eeebd88ba5eb7a52e39cfbcce5e308154c1f4436",
+        "native_page": 648,
+        "reason": "The native raw extractor integrates this superscript with the adjacent source note, whereas the retained layout extractor isolates it on a separate LF. The source line has zero exact native-line matches. Retain all original line bytes and source order; do not move, delete, append or infer the superscript."
+      },
+      {
+        "source_line": 26242,
+        "source_line_sha256": "1c8973f8f6c688003d6afc738549aa2ceba0e7eb3aa567fd7bba18391537ae44",
+        "native_page": 652,
+        "reason": "The native raw extractor integrates this superscript with the adjacent source note, whereas the retained layout extractor isolates it on a separate LF. The source line has zero exact native-line matches. Retain all original line bytes and source order; do not move, delete, append or infer the superscript."
+      },
+      {
+        "source_line": 26243,
+        "source_line_sha256": "10c0c4bce4a54e7daba561831891f66914a1783e23cc02c5825cdf6d5b9c0025",
+        "native_page": 652,
+        "reason": "The native raw extractor integrates this superscript with the adjacent source note, whereas the retained layout extractor isolates it on a separate LF. The source line has zero exact native-line matches. Retain all original line bytes and source order; do not move, delete, append or infer the superscript."
+      },
+      {
+        "source_line": 26324,
+        "source_line_sha256": "8c1b6f59ed446ab185719519a1bca6bdd357dde2080ce6f3da149d847b0ea783",
+        "native_page": 654,
+        "reason": "The native raw extractor integrates this superscript with the adjacent source note, whereas the retained layout extractor isolates it on a separate LF. The source line has zero exact native-line matches. Retain all original line bytes and source order; do not move, delete, append or infer the superscript."
+      },
+      {
+        "source_line": 26325,
+        "source_line_sha256": "60f8d9f68a07b0e5d976ef7c65a4ff057ca57fb182f17a9297edcc6c41cd200e",
+        "native_page": 654,
+        "reason": "The native raw extractor integrates this superscript with the adjacent source note, whereas the retained layout extractor isolates it on a separate LF. The source line has zero exact native-line matches. Retain all original line bytes and source order; do not move, delete, append or infer the superscript."
+      },
+      {
+        "source_line": 26369,
+        "source_line_sha256": "d79f4f703e6c635fde1f354146b79885d311a064b218904bf49ae6fc2a6797a6",
+        "native_page": 655,
+        "reason": "The native raw extractor integrates this superscript with the adjacent source note, whereas the retained layout extractor isolates it on a separate LF. The source line has zero exact native-line matches. Retain all original line bytes and source order; do not move, delete, append or infer the superscript."
+      },
+      {
+        "source_line": 26370,
+        "source_line_sha256": "41484e5c15378e580ce82739b39f57f4d21537479bd16ac56811657d2a085a92",
+        "native_page": 655,
+        "reason": "The native raw extractor integrates this superscript with the adjacent source note, whereas the retained layout extractor isolates it on a separate LF. The source line has zero exact native-line matches. Retain all original line bytes and source order; do not move, delete, append or infer the superscript."
+      },
+      {
+        "source_line": 26413,
+        "source_line_sha256": "f52132f818ec25d4a30460723781d8d3635c7ad337bea58eb017e0206896fc79",
+        "native_page": 656,
+        "reason": "The native raw extractor integrates this superscript with the adjacent source note, whereas the retained layout extractor isolates it on a separate LF. The source line has zero exact native-line matches. Retain all original line bytes and source order; do not move, delete, append or infer the superscript."
+      },
+      {
+        "source_line": 26414,
+        "source_line_sha256": "d21086932a0b24ea42b4790be23eefe0d1263eb09b1768d90195d0dcdb26e9d1",
+        "native_page": 656,
+        "reason": "The native raw extractor integrates this superscript with the adjacent source note, whereas the retained layout extractor isolates it on a separate LF. The source line has zero exact native-line matches. Retain all original line bytes and source order; do not move, delete, append or infer the superscript."
+      }
+    ],
+    "line_map_artifact": "artifact.acta-papal-archives.ass.029.divinum-native-spacing-map-cef68e87ff77",
+    "line_map_sha256": "cef68e87ff77cde70bf48ff0961049e65a1143d01b374863a2478a96fb7b71fb",
+    "finding": "All15native pages have one body column and distinct page-foot historical notes. The native raw stream puts some notes before body on pages651,656,657; the reader keeps the old source LF order instead.583selected nonblank source LF lines each match exactly one same-page native raw line after whitespace removal. Six superscript fragments and their following note lines have zero whole-line matches because raw extraction integrates the superscript; all12old lines remain byte-for-byte unchanged. Every other nonblank line is strictly projected. Literal source hyphens/OCR/reference defects remain. All original non-whitespace characters and their complete order are invariant.",
+    "limitations": "Geometry and exact whitespace-source correspondence only. Vatican OCR reconstruction, not original-print image or word-level Latin collation."
+  },
+  "helper": {
+    "path": "scripts/_papal_native_spacing.py",
+    "sha256": "b67f55a5075a11a43f23766d477b32c5209a1144262790476e31c4fde2362b49"
+  }
+}

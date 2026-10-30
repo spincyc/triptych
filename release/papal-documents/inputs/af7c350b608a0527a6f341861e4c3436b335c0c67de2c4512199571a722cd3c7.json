@@ -1,0 +1,560 @@
+{
+  "schema": "triptych-papal-typeset/v1",
+  "revision": "2026-10-30T06:31:25Z",
+  "documents": [
+    {
+      "artifact_id": "artifact.acta-papal-archives.aas.009.i.historical-text-1935f4e2.note-blocks-humani-generis-la-7ca42ddf9eb6",
+      "correction_evidence": {
+        "revision": "2026-10-30T06:31:25Z",
+        "kind": "explicit-source-note-lf-partition",
+        "spec_artifact_id": "artifact.acta-papal-archives.aas.009.i.historical-text-1935f4e2.note-spec-humani-generis-la-b003776bc2ed",
+        "spec_sha256": "b003776bc2edcd92b4c43ce22b23650818c4aa7a175056e0c169f6aee6b4993d",
+        "source_note_physical_line_ranges": [
+          [
+            12749,
+            12752
+          ],
+          [
+            12790,
+            12791
+          ],
+          [
+            12829,
+            12842
+          ],
+          [
+            12879,
+            12881
+          ],
+          [
+            12918,
+            12921
+          ],
+          [
+            12958,
+            12967
+          ],
+          [
+            13005,
+            13010
+          ],
+          [
+            13048,
+            13049
+          ],
+          [
+            13086,
+            13089
+          ],
+          [
+            13127,
+            13134
+          ],
+          [
+            13171,
+            13176
+          ],
+          [
+            13213,
+            13226
+          ],
+          [
+            13270,
+            13271
+          ]
+        ],
+        "prior_segment_id": "segment.acta-papal-archives.aas.009.i.archive.aas.009.i.l012721.visual-2026-10-26.bounds-2026-10-30",
+        "selected_non_lf_sha256": "946a9ccb93ca3236b850491f1466e5f0c29a0fc133863243c777fa82b7a2b61a",
+        "selected_non_lf_bytes_preserved": true,
+        "source_order_preserved": true,
+        "selection_changes": [
+          {
+            "kind": "recover-omitted-final-source-note",
+            "physical_line_ranges": [
+              [
+                13270,
+                13271
+              ]
+            ],
+            "native_artifact_page": 317,
+            "reason": "The act closing quotation at original LF13233 has its citation at the foot of native page317, below the next act opening. Only the exact note marker/citation are selected; neighboring act LF13245–13269 remains excluded."
+          }
+        ],
+        "boundary_review_artifact_id": "artifact.acta-papal-archives.aas.009.i.historical-text-1935f4e2.note-review-humani-generis-la-d196d37d5eea",
+        "boundary_review_sha256": "d196d37d5eea05bd1cad1968b466d62e8b0edc0cbd96c5f8c7d7af0391f6ef17"
+      },
+      "date": null,
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.aas.009.i.archive.aas.009.i.l012721",
+      "id": "acta.aas.009.i.archive.aas.009.i.l012721",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          549
+        ]
+      ],
+      "pope": "Benedict XV",
+      "revision": "2026-10-30T06:31:25Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"artifact_page_ranges\": [[1, 1]], \"evidence\": \"Title and imprint in the acquired Vatican OCR PDF identify Acta Apostolicae Sedis, the annual volume, ROMAE / TYPIS POLYGLOTTIS VATICANIS and its Roman-numeral publication year. This is edition provenance, not facsimile collation.\", \"physical_line_ranges\": [[1, 17]], \"publication_year\": 1917} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.aas.009.i.archive.aas.009.i.l012721.visual-2026-10-26.bounds-2026-10-30.note-blocks-7ca42ddf9eb6",
+      "segment_path": "src/sources/works/acta-papal-archives/undated-aas.009.i-archive.aas.009.i.l012721/editions/1917-acta-aas-009-i-archive.aas.009.i.l012721/segments/note-blocks-humani-generis-la-7ca42ddf9eb6.toml",
+      "sha256": "7ca42ddf9eb62e3db3053cac0054b1fa9b589b5df2e8d506cc8be6a28971dda0",
+      "source_note": "AAS 9 (1917). Whole-volume Vatican OCR extraction; no facsimile collation or silent textual correction. An explicit source-selector revision excludes only the positively identified journal furniture at retained LF 12753. All historical body text, citations and notes remain literal. The act closing quotation at original LF13233 has its citation at the foot of native page317, below the next act opening. Only the exact note marker/citation are selected; neighboring act LF13245–13269 remains excluded. A separately registered bounded LF-only derivative partitions explicitly inspected historical source-note groups into distinct paragraph blocks at their source-page breaks. All selected non-LF bytes and their order are unchanged; literal source OCR, word spacing and reference marks remain. The exact partition spec and raw parent are retained; no original-print image collation is claimed.",
+      "source_url": "https://www.vatican.va/archive/aas/documents/AAS-09-I-1917-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1917-acta-aas-009-i/artifacts/note-blocks-humani-generis-la-7ca42ddf9eb6/text.txt",
+      "title": "DE PRAEDICATIONE DIVINI VERBI AD PATRIARCHAS, PRIMATES, ARCHIEPISCOPOS, EPISCOPOS ALIOSQUE LOCORUM ORDINARIOS, PACEM ET COMMUNIONEM CUM APOSTOLICA SEDE HABENTES.",
+      "work_id": "work.acta-papal-archives.aas.009.i-archive.aas.009.i.l012721"
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.aas.012.historical-text-d9a0ce5b.note-blocks-pacem-dei-la-685ae00f7121",
+      "date": null,
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.aas.012.archive.aas.012.l008747",
+      "id": "acta.aas.012.archive.aas.012.l008747",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          438
+        ]
+      ],
+      "pope": "Benedict XV",
+      "revision": "2026-10-30T06:31:25Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"artifact_page_ranges\": [[1, 1]], \"completion_colophon_line_ranges\": [[27513, 27513]], \"completion_colophon_raw\": \"         ABSOLVITUR DIE 17 DEC. 1920. - TYPIS POLYGLOTTIS VATICANIS\", \"evidence\": \"Title and imprint in the acquired Vatican OCR PDF identify Acta Apostolicae Sedis, the annual volume, ROMAE / TYPIS POLYGLOTTIS VATICANIS and its Roman-numeral publication year. This is edition provenance, not facsimile collation.\", \"physical_line_ranges\": [[1, 17]], \"publication_year\": 1920} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.aas.012.archive.aas.012.l008747.note-blocks-685ae00f7121",
+      "segment_path": "src/sources/works/acta-papal-archives/undated-aas.012-archive.aas.012.l008747/editions/1920-acta-aas-012-archive.aas.012.l008747/segments/note-blocks-pacem-dei-la-685ae00f7121.toml",
+      "sha256": "685ae00f71212d5815dbaf2d36c05fb7cb67af24efb9314d94f0c3ed0773770d",
+      "source_note": "AAS 12 (1920). Whole-volume Vatican OCR extraction; no facsimile collation or silent textual correction. A separately registered bounded LF-only derivative partitions explicitly inspected historical source-note groups into distinct paragraph blocks at their source-page breaks. All selected non-LF bytes and their order are unchanged; literal source OCR, word spacing and reference marks remain. The exact partition spec and raw parent are retained; no original-print image collation is claimed.",
+      "source_url": "https://www.vatican.va/archive/aas/documents/AAS-12-1920-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1920-acta-aas-012/artifacts/note-blocks-pacem-dei-la-685ae00f7121/text.txt",
+      "title": "AB PATRIARCHAS, PRIMATES, ARCHIEPISCOPOS, EPISCOPOS ALIOSQUE LOCORUM ORDINARIOS PACEM ET COMMUNIONEM CUM APOSTOLICA SEDE HABENTES: DE PACIS RECONCILIATIONE CHRISTIANA.",
+      "work_id": "work.acta-papal-archives.aas.012-archive.aas.012.l008747",
+      "correction_evidence": {
+        "revision": "2026-10-30T06:31:25Z",
+        "kind": "explicit-source-note-lf-partition",
+        "spec_artifact_id": "artifact.acta-papal-archives.aas.012.historical-text-d9a0ce5b.note-spec-pacem-dei-la-e3227c7681e3",
+        "spec_sha256": "e3227c7681e3fbedebeef1f37eb6e9225b14b4ba98c1d12473bfab02de1b48f0",
+        "source_note_physical_line_ranges": [
+          [
+            8772,
+            8773
+          ],
+          [
+            8813,
+            8815
+          ],
+          [
+            8854,
+            8861
+          ],
+          [
+            8900,
+            8909
+          ],
+          [
+            8951,
+            8954
+          ],
+          [
+            8992,
+            8997
+          ],
+          [
+            9035,
+            9038
+          ],
+          [
+            9077,
+            9078
+          ],
+          [
+            9123,
+            9126
+          ],
+          [
+            9160,
+            9165
+          ]
+        ],
+        "prior_segment_id": "segment.acta-papal-archives.aas.012.archive.aas.012.l008747",
+        "selected_non_lf_sha256": "a86d752a19ce41464d14fad3abb3d2fa163a69db2cd1e5d0f062e44dae387a3b",
+        "selected_non_lf_bytes_preserved": true,
+        "source_order_preserved": true,
+        "selection_changes": [],
+        "boundary_review_artifact_id": "artifact.acta-papal-archives.aas.012.historical-text-d9a0ce5b.note-review-pacem-dei-la-ecaa9770a3a3",
+        "boundary_review_sha256": "ecaa9770a3a3a6084e075f6bf2dbc95167d5d2d79c2ed8450c7d4d711a16e514"
+      }
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.aas.012.historical-text-d9a0ce5b.note-blocks-spiritus-paraclitus-la-d67312fb3536",
+      "date": "1920-09-15",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.aas.012.archive.aas.012.l016158",
+      "id": "acta.aas.012.archive.aas.012.l016158",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          1698
+        ]
+      ],
+      "pope": "Benedict XV",
+      "revision": "2026-10-30T06:31:25Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"artifact_page_ranges\": [[1, 1]], \"completion_colophon_line_ranges\": [[27513, 27513]], \"completion_colophon_raw\": \"         ABSOLVITUR DIE 17 DEC. 1920. - TYPIS POLYGLOTTIS VATICANIS\", \"evidence\": \"Title and imprint in the acquired Vatican OCR PDF identify Acta Apostolicae Sedis, the annual volume, ROMAE / TYPIS POLYGLOTTIS VATICANIS and its Roman-numeral publication year. This is edition provenance, not facsimile collation.\", \"physical_line_ranges\": [[1, 17]], \"publication_year\": 1920} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.aas.012.archive.aas.012.l016158.bounds-2026-10-30.note-blocks-d67312fb3536",
+      "segment_path": "src/sources/works/acta-papal-archives/1920-09-15-aas.012-archive.aas.012.l016158/editions/1920-acta-aas-012-archive.aas.012.l016158/segments/note-blocks-spiritus-paraclitus-la-d67312fb3536.toml",
+      "sha256": "d67312fb3536c0bae876ef7222d0752c203ae8cacb980132d3ef07917a7b0235",
+      "source_note": "AAS 12 (1920). Whole-volume Vatican OCR extraction; no facsimile collation or silent textual correction. A separate footer below all four historical notes names the journal volume/issue/date and carries no act wording. Native page417 was inspected at full size; no body or note shares this LF. A separately registered bounded LF-only derivative partitions explicitly inspected historical source-note groups into distinct paragraph blocks at their source-page breaks. All selected non-LF bytes and their order are unchanged; literal source OCR, word spacing and reference marks remain. The exact partition spec and raw parent are retained; no original-print image collation is claimed.",
+      "source_url": "https://www.vatican.va/archive/aas/documents/AAS-12-1920-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1920-acta-aas-012/artifacts/note-blocks-spiritus-paraclitus-la-d67312fb3536/text.txt",
+      "title": "AD PATRIARCHAS, PRIMATES, ARCHIEPISCOPOS, EPISCOPOS ALIOSQUE LOCORUM ORDINARIOS, PACEM ET COMMUNIONEM CUM APOSTOLICA SEDE HABENTES, IN NATALI MD S. HIERONYMI ECCLESIAE DOCTORIS.",
+      "work_id": "work.acta-papal-archives.aas.012-archive.aas.012.l016158",
+      "correction_evidence": {
+        "revision": "2026-10-30T06:31:25Z",
+        "kind": "explicit-source-note-lf-partition",
+        "spec_artifact_id": "artifact.acta-papal-archives.aas.012.historical-text-d9a0ce5b.note-spec-spiritus-paraclitus-la-0f3b6ebe22e7",
+        "spec_sha256": "0f3b6ebe22e7e389e796bb96ece0f21c373634cefb6b13570317520e90c2ac41",
+        "source_note_physical_line_ranges": [
+          [
+            16191,
+            16192
+          ],
+          [
+            16231,
+            16245
+          ],
+          [
+            16284,
+            16296
+          ],
+          [
+            16333,
+            16336
+          ],
+          [
+            16372,
+            16373
+          ],
+          [
+            16411,
+            16420
+          ],
+          [
+            16457,
+            16466
+          ],
+          [
+            16504,
+            16519
+          ],
+          [
+            16556,
+            16560
+          ],
+          [
+            16670,
+            16673
+          ],
+          [
+            16709,
+            16710
+          ],
+          [
+            16747,
+            16753
+          ],
+          [
+            16791,
+            16799
+          ],
+          [
+            16836,
+            16837
+          ],
+          [
+            16874,
+            16879
+          ],
+          [
+            16919,
+            16926
+          ],
+          [
+            16965,
+            16979
+          ],
+          [
+            17017,
+            17019
+          ],
+          [
+            17056,
+            17066
+          ],
+          [
+            17104,
+            17105
+          ],
+          [
+            17142,
+            17148
+          ],
+          [
+            17187,
+            17192
+          ],
+          [
+            17229,
+            17236
+          ],
+          [
+            17273,
+            17281
+          ],
+          [
+            17318,
+            17328
+          ],
+          [
+            17366,
+            17374
+          ],
+          [
+            17411,
+            17422
+          ],
+          [
+            17459,
+            17464
+          ],
+          [
+            17500,
+            17503
+          ],
+          [
+            17540,
+            17544
+          ],
+          [
+            17585,
+            17590
+          ],
+          [
+            17628,
+            17634
+          ],
+          [
+            17672,
+            17677
+          ],
+          [
+            17714,
+            17721
+          ],
+          [
+            17758,
+            17761
+          ]
+        ],
+        "prior_segment_id": "segment.acta-papal-archives.aas.012.archive.aas.012.l016158.bounds-2026-10-30",
+        "selected_non_lf_sha256": "cac0e2e60ecd214bda97907f7f17be7a87758a2616c7f1cc8c6a4ce4c68814c8",
+        "selected_non_lf_bytes_preserved": true,
+        "source_order_preserved": true,
+        "selection_changes": [
+          {
+            "kind": "exclude-standalone-publishing-furniture",
+            "physical_line_ranges": [
+              [
+                17591,
+                17591
+              ]
+            ],
+            "native_artifact_page": 417,
+            "reason": "A separate footer below all four historical notes names the journal volume/issue/date and carries no act wording. Native page417 was inspected at full size; no body or note shares this LF."
+          }
+        ],
+        "boundary_review_artifact_id": "artifact.acta-papal-archives.aas.012.historical-text-d9a0ce5b.note-review-spiritus-paraclitus-la-c0f71b56146c",
+        "boundary_review_sha256": "c0f71b56146c26b544bd5bfc471a9dc52c99da64fbff66cd2c19761bc3330067"
+      }
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.aas.012.historical-text-d9a0ce5b.note-blocks-principi-apostolorum-la-41b88be5be51",
+      "date": null,
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.aas.012.archive.aas.012.l019212",
+      "id": "acta.aas.012.archive.aas.012.l019212",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          638
+        ]
+      ],
+      "pope": "Benedict XV",
+      "revision": "2026-10-30T06:31:25Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"artifact_page_ranges\": [[1, 1]], \"completion_colophon_line_ranges\": [[27513, 27513]], \"completion_colophon_raw\": \"         ABSOLVITUR DIE 17 DEC. 1920. - TYPIS POLYGLOTTIS VATICANIS\", \"evidence\": \"Title and imprint in the acquired Vatican OCR PDF identify Acta Apostolicae Sedis, the annual volume, ROMAE / TYPIS POLYGLOTTIS VATICANIS and its Roman-numeral publication year. This is edition provenance, not facsimile collation.\", \"physical_line_ranges\": [[1, 17]], \"publication_year\": 1920} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.aas.012.archive.aas.012.l019212.note-blocks-41b88be5be51",
+      "segment_path": "src/sources/works/acta-papal-archives/undated-aas.012-archive.aas.012.l019212/editions/1920-acta-aas-012-archive.aas.012.l019212/segments/note-blocks-principi-apostolorum-la-41b88be5be51.toml",
+      "sha256": "41b88be5be51f23b63a8c21918b06590362abf3bb796673c897038d79e7fbf7f",
+      "source_note": "AAS 12 (1920). Whole-volume Vatican OCR extraction; no facsimile collation or silent textual correction. A separately registered bounded LF-only derivative partitions explicitly inspected historical source-note groups into distinct paragraph blocks at their source-page breaks. All selected non-LF bytes and their order are unchanged; literal source OCR, word spacing and reference marks remain. The exact partition spec and raw parent are retained; no original-print image collation is claimed.",
+      "source_url": "https://www.vatican.va/archive/aas/documents/AAS-12-1920-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1920-acta-aas-012/artifacts/note-blocks-principi-apostolorum-la-41b88be5be51/text.txt",
+      "title": "AD PATRIARCHAS, PRIMATES, ARCHIEPISCOPOS, EPISCOPOS ALIOSQUE LOCORUM ORDINARIOS, PACEM ET COMMUNIONEM CUM APOSTOLICA SEDE HABENTES, DE SANCTO EPHREM SYRO MONACO EDESSENO DOCTORE ECCLESIAE RE- NUNTIANDO.",
+      "work_id": "work.acta-papal-archives.aas.012-archive.aas.012.l019212",
+      "correction_evidence": {
+        "revision": "2026-10-30T06:31:25Z",
+        "kind": "explicit-source-note-lf-partition",
+        "spec_artifact_id": "artifact.acta-papal-archives.aas.012.historical-text-d9a0ce5b.note-spec-principi-apostolorum-la-d7909e4c3aa8",
+        "spec_sha256": "d7909e4c3aa822d8afe32fcfe4fdaa730e0c7f4ada327cf25ed74b25640f66a6",
+        "source_note_physical_line_ranges": [
+          [
+            19238,
+            19247
+          ],
+          [
+            19289,
+            19300
+          ],
+          [
+            19338,
+            19341
+          ],
+          [
+            19382,
+            19385
+          ],
+          [
+            19424,
+            19432
+          ],
+          [
+            19471,
+            19474
+          ],
+          [
+            19512,
+            19517
+          ],
+          [
+            19555,
+            19561
+          ],
+          [
+            19598,
+            19600
+          ],
+          [
+            19637,
+            19642
+          ],
+          [
+            19680,
+            19685
+          ],
+          [
+            19724,
+            19731
+          ],
+          [
+            19823,
+            19824
+          ]
+        ],
+        "prior_segment_id": "segment.acta-papal-archives.aas.012.archive.aas.012.l019212",
+        "selected_non_lf_sha256": "2d23817023ea4c286a73276e3ff38ed7b9ab8339571357ed3111ea6182911ed7",
+        "selected_non_lf_bytes_preserved": true,
+        "source_order_preserved": true,
+        "selection_changes": [],
+        "boundary_review_artifact_id": "artifact.acta-papal-archives.aas.012.historical-text-d9a0ce5b.note-review-principi-apostolorum-la-5821d589f00b",
+        "boundary_review_sha256": "5821d589f00b558b66c5ec4d6decd8974618f42796f4997cb7c44937daad71be"
+      }
+    }
+  ],
+  "supersessions": [
+    {
+      "reason": "Explicit inspected source-footnote LF partitions replace a paragraph-fused reader. Every selected non-LF byte and its source order are preserved; original source and predecessor remain retained. The act closing quotation at original LF13233 has its citation at the foot of native page317, below the next act opening. Only the exact note marker/citation are selected; neighboring act LF13245–13269 remains excluded.",
+      "prior": {
+        "id": "acta.aas.009.i.archive.aas.009.i.l012721",
+        "language": "la",
+        "pdf_sha256": "f2eb5b287b6031a2a25b77bd520c478dc3b8e1a957d2a7b44f16f72e87401068",
+        "artifact_id": "artifact.acta-papal-archives.aas.009.i.historical-text-1935f4e2",
+        "source_sha256": "1935f4e2ff049c060e9c1e18c06de8bb50900e2dcb4dc36290df67ac808ef4e3",
+        "segment_id": "segment.acta-papal-archives.aas.009.i.archive.aas.009.i.l012721.visual-2026-10-26"
+      },
+      "replacement": {
+        "id": "acta.aas.009.i.archive.aas.009.i.l012721",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.aas.009.i.historical-text-1935f4e2.note-blocks-humani-generis-la-7ca42ddf9eb6",
+        "source_sha256": "7ca42ddf9eb62e3db3053cac0054b1fa9b589b5df2e8d506cc8be6a28971dda0",
+        "segment_id": "segment.acta-papal-archives.aas.009.i.archive.aas.009.i.l012721.visual-2026-10-26.bounds-2026-10-30.note-blocks-7ca42ddf9eb6",
+        "revision": "2026-10-30T06:31:25Z"
+      }
+    },
+    {
+      "reason": "Explicit inspected source-footnote LF partitions replace a paragraph-fused reader. Every selected non-LF byte and its source order are preserved; original source and predecessor remain retained. ",
+      "prior": {
+        "id": "acta.aas.012.archive.aas.012.l008747",
+        "language": "la",
+        "pdf_sha256": "96f847ac1c2251d52e93a2d887e90e9412119e5fe8811ebeb91bc54eae6ce890",
+        "artifact_id": "artifact.acta-papal-archives.aas.012.historical-text-d9a0ce5b",
+        "source_sha256": "d9a0ce5b59d42a7aeff20f01a73349e154757550db955dc5a76fbff7e3fbaf20",
+        "segment_id": "segment.acta-papal-archives.aas.012.archive.aas.012.l008747"
+      },
+      "replacement": {
+        "id": "acta.aas.012.archive.aas.012.l008747",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.aas.012.historical-text-d9a0ce5b.note-blocks-pacem-dei-la-685ae00f7121",
+        "source_sha256": "685ae00f71212d5815dbaf2d36c05fb7cb67af24efb9314d94f0c3ed0773770d",
+        "segment_id": "segment.acta-papal-archives.aas.012.archive.aas.012.l008747.note-blocks-685ae00f7121",
+        "revision": "2026-10-30T06:31:25Z"
+      }
+    },
+    {
+      "reason": "Explicit inspected source-footnote LF partitions replace a paragraph-fused reader. Every selected non-LF byte and its source order are preserved; original source and predecessor remain retained. A separate footer below all four historical notes names the journal volume/issue/date and carries no act wording. Native page417 was inspected at full size; no body or note shares this LF.",
+      "prior": {
+        "id": "acta.aas.012.archive.aas.012.l016158",
+        "language": "la",
+        "pdf_sha256": "0efb182c250b83b5d20f7b5ea1c953323d90a1322c2df5c7b975e341f9b2c044",
+        "artifact_id": "artifact.acta-papal-archives.aas.012.historical-text-d9a0ce5b",
+        "source_sha256": "d9a0ce5b59d42a7aeff20f01a73349e154757550db955dc5a76fbff7e3fbaf20",
+        "segment_id": "segment.acta-papal-archives.aas.012.archive.aas.012.l016158"
+      },
+      "replacement": {
+        "id": "acta.aas.012.archive.aas.012.l016158",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.aas.012.historical-text-d9a0ce5b.note-blocks-spiritus-paraclitus-la-d67312fb3536",
+        "source_sha256": "d67312fb3536c0bae876ef7222d0752c203ae8cacb980132d3ef07917a7b0235",
+        "segment_id": "segment.acta-papal-archives.aas.012.archive.aas.012.l016158.bounds-2026-10-30.note-blocks-d67312fb3536",
+        "revision": "2026-10-30T06:31:25Z"
+      }
+    },
+    {
+      "reason": "Explicit inspected source-footnote LF partitions replace a paragraph-fused reader. Every selected non-LF byte and its source order are preserved; original source and predecessor remain retained. ",
+      "prior": {
+        "id": "acta.aas.012.archive.aas.012.l019212",
+        "language": "la",
+        "pdf_sha256": "0030da74413579506cb34b3201a6c8b79c9e56a12e3ca9d67fc2bc907bca5598",
+        "artifact_id": "artifact.acta-papal-archives.aas.012.historical-text-d9a0ce5b",
+        "source_sha256": "d9a0ce5b59d42a7aeff20f01a73349e154757550db955dc5a76fbff7e3fbaf20",
+        "segment_id": "segment.acta-papal-archives.aas.012.archive.aas.012.l019212"
+      },
+      "replacement": {
+        "id": "acta.aas.012.archive.aas.012.l019212",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.aas.012.historical-text-d9a0ce5b.note-blocks-principi-apostolorum-la-41b88be5be51",
+        "source_sha256": "41b88be5be51f23b63a8c21918b06590362abf3bb796673c897038d79e7fbf7f",
+        "segment_id": "segment.acta-papal-archives.aas.012.archive.aas.012.l019212.note-blocks-41b88be5be51",
+        "revision": "2026-10-30T06:31:25Z"
+      }
+    }
+  ]
+}

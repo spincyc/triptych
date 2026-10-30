@@ -1,0 +1,66 @@
+{
+  "documents": [
+    {
+      "allow_long_token_breaks": true,
+      "artifact_id": "artifact.papal.pius-xi.hf-p-xi-enc-19230629-studiorum-ducem.2026-10-26-vatican-la.latin-text-951c5ea1844d",
+      "body_tex": "1923-06-29-papal-pius-xi-hf-p-xi-enc-19230629-studiorum-ducem-8016f6c5-la/1923-06-29-papal-pius-xi-hf-p-xi-enc-19230629-studiorum-ducem-8016f6c5-la.body.tex",
+      "changed": true,
+      "compact_layout": true,
+      "compact_margin": 0.65,
+      "id": "papal.pius-xi.hf-p-xi-enc-19230629-studiorum-ducem",
+      "language": "la",
+      "pages": 7,
+      "pdf": "1923-06-29-papal-pius-xi-hf-p-xi-enc-19230629-studiorum-ducem-8016f6c5-la/1923-06-29-papal-pius-xi-hf-p-xi-enc-19230629-studiorum-ducem-8016f6c5-la.pdf",
+      "pdf_sha256": "a7f75e3214fe08f35802100efaecfeff783b1c0f5177a98eeaa5c2200151eeac",
+      "render_revision": "2026-10-30T03:41:09Z",
+      "source_sha256": "951c5ea1844dfaac6bae5ec28b81ad7b80f591af5f95c9bd4777d0bea11bdf7e",
+      "status": "compiled",
+      "stem": "1923-06-29-papal-pius-xi-hf-p-xi-enc-19230629-studiorum-ducem-8016f6c5-la",
+      "tex": "1923-06-29-papal-pius-xi-hf-p-xi-enc-19230629-studiorum-ducem-8016f6c5-la/1923-06-29-papal-pius-xi-hf-p-xi-enc-19230629-studiorum-ducem-8016f6c5-la.tex",
+      "text_fidelity": {
+        "layout_hyphens": 198,
+        "method": "pdf-raw-source-aware-line-hyphen-nfkc-v3",
+        "pages": 7,
+        "source_characters": 35523,
+        "source_first_page": 1,
+        "source_last_page": 7,
+        "source_normalized_characters": 30514,
+        "status": "pass"
+      },
+      "warnings": [
+        "Underfull \\hbox (badness 10000) in paragraph at lines 18--19",
+        "Underfull \\hbox (badness 5924) in paragraph at lines 18--19",
+        "Underfull \\hbox (badness 6428) in paragraph at lines 18--19",
+        "Underfull \\hbox (badness 10000) in paragraph at lines 141--142"
+      ]
+    }
+  ],
+  "errors": [],
+  "generator": "typeset-papal",
+  "generator_version": 2,
+  "index": "index.html",
+  "input_manifest": "frozen-manifest.json",
+  "input_manifest_sha256": "582ae668f9360aa9ccf8936987c37b8d3ce585880ca08816d706912e7ed8a085",
+  "options": {
+    "automatic_hyphenation": "babel-english-latin",
+    "babel_shorthands": false,
+    "body_alignment": "justified-en-la; ragged-right-other-languages",
+    "body_font": "Latin Modern Roman",
+    "body_leading_pt": 13,
+    "body_size_pt": 10.5,
+    "columns": 2,
+    "form_feed": "layout-whitespace",
+    "layout_hyphen_fidelity": "source-aware-line-end-only",
+    "punctuation": "literal",
+    "soft_hyphen": "nonprinting",
+    "unicode_text_mapping": "xetex-native"
+  },
+  "receipt": "receipt.json",
+  "revision": "2026-10-30T03:41:09Z",
+  "schema": "triptych-papal-typeset-receipt/v1",
+  "summary": {
+    "compiled": 1,
+    "failed": 0,
+    "selected": 1
+  }
+}

@@ -1,7 +1,7 @@
 {
   "acceptance": {
-    "receipt_path": "workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/source-batch-main-nativity-acceptance.json",
-    "receipt_sha256": "e572987bd7e3d5089fc634c8975551e388f66ecfcf58f4da8d0e86ac9b861e85",
+    "receipt_path": "workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/source-batch-classification-acceptance.json",
+    "receipt_sha256": "2c05072109012b7da86c21da2ab23a1b5c89c317cc6be1c21b3f70acfe8e2cca",
     "status": "accepted"
   },
   "baseline_revision": "2e030b564f4413b735ddbea3061082ebe981b11a",
@@ -34972,6 +34972,6 @@
   ],
   "schema": "triptych-test-source-batch/v1",
   "source_input_manifest_path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
-  "source_input_manifest_sha256": "e9cd39f351b23206c7d812c854cbfaaa593b45c3a795c8b53164bb66917da9bd",
+  "source_input_manifest_sha256": "6956adb9fc4336282ade4bce43015d51bb2b73ef9a2ccce1d62e90226022693c",
   "state": "Accepted bounded English-source cohort; full English, exact target correspondence, human review and product completion remain separate."
 }

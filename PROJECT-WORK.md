@@ -101,13 +101,42 @@ transcription from a colon to the semicolon printed in its historical source.
 The bounded successor retains all historical replay streams and binds 7,071
 exact source inputs; its seventeen controls pass. Evidence is retained in
 `workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/`.
-The merged source/publication and quarantine checks pass. The first aggregate
-attempt found stale ignored All Saints study PDFs; accepted main sources are
-being rebuilt and reviewed before retrying. Main has since advanced to
-`f955c512ac`; that reconciliation, final aggregate and artifact validation,
-publication and live verification remain pending.
+The successor also corrects the English finding aid's omission of two historical
+source classes covering three already accepted entries. All previous classes,
+English bodies, permissions and target counts remain exact. The seventeen source
+controls and seventeen affected English tests pass together; 233 publication,
+Source Library and encyclical tests also pass. Their earlier failed attempts
+remain distinguished from the corrected executions.
+
+Main checkpoint `f955c512ac` is reconciled. The final full source aggregate and
+all four public/preview build and verification gates pass. Fresh affected native
+browser contracts pass 136 assertions; unchanged reader and annual-render code
+retain the earlier broader structural evidence with its original limits. The
+stale ignored All Saints PDFs are restored byte-for-byte from the already
+accepted builds and their existing full-page review records; no new document
+content or PDF acceptance is inferred. Publication and live verification remain
+pending. Final merged evidence is retained in the same reconciliation namespace.
 The existing real-terminal maintainer acceptance and broader product promises
 retain their own requirements.
+
+## Missal version names and reader inclusion, 2026-10-30
+
+<!-- promised-deliverable: missal-version-nomenclature-2026-10-30 -->
+
+**In progress.** The maintainer requests source-supported names for every
+historical point represented by a missal, a firm versioning nomenclature across
+the project, retirement of the vague current label “Pre-1955,” and reader
+options only for missals with actual contributed content. A dedicated source
+and implementation lane is establishing edition, reform horizon, language and
+witness distinctions before applying the names consistently. A structural
+placeholder alone does not establish contributed text; actual Latin or English
+content does. Existing source and completeness qualifications remain binding.
+
+The naming matrix, primary-source citations, consumer inventory and inclusion
+rules remain pending. Historical audit bytes and quoted historical labels
+remain evidence of their original state; stable-ID migrations need explicit
+compatibility handling rather than rewriting accepted source receipts.
+
 ## Encyclical completion and English coverage, 2026-10-29
 
 <!-- promised-deliverable: encyclicals-completion-2026-10-29 -->
@@ -124,9 +153,9 @@ partial or damaged English, and 25 have no located English route. All 91 acts
 after 1930 have complete external English routes. These are bounded identity
 and extent findings, not claims of translation accuracy or local republication
 permission. Thirty-nine complete-English gaps remain open. The local release
-contains 4,808 readers, including complete English for 41 acts. Nine of the
-327 encyclical source links now select independently reviewed replacements;
-the remaining installed PDF identities are unchanged.
+contains 4,808 readers, including complete English for 41 acts. The two classic-reader checkpoints now cover
+167 of the 327 encyclical source versions; 160 versions still need final
+acceptance or source repairs.
 
 All 322 descriptions are present. Their attribution records Claude's 255 and
 Codex's 67 contributions; the new descriptions use 66 official English texts
@@ -143,31 +172,29 @@ hash; comparison content and source evidence are identical. The source-family
 bootstrap checkpoint is current while all 164 owner review units remain
 honestly pending; no completed family screening is claimed.
 
-The first classic-reader checkpoint replaces nine exact PDF/source selections:
-Rerum novarum in ASS 23; French Ad beatissimi in AAS 6; ASS 23 acts 004/005;
-three ASS 31 witnesses; Respicientes; and Quamquam pluries. Each replacement
-has independent byte-bound source and page acceptance. Latin Modern Roman,
+Two classic-reader checkpoints now replace 167 of the 327 linked source
+versions. The first installed nine cold-reviewed source repairs; the second
+adds 158 accepted versions with 917 reviewed pages. Latin Modern Roman,
 language-specific hyphenation, indented paragraphs and restrained terminal
 apparatus implement the requested classic appearance. Explicit note and native
-whitespace tools preserve source wording; their cold audits and historical
-helper implementations are retained. This is nine reviewed readers, not a
-claim that the other 318 encyclical source links have been redesigned.
+whitespace transformations preserve source wording and record their actual
+scope; independent source-boundary and every-page findings bind exact PDFs.
 
-The release still has 4,808 PDFs and now 9,040 pages. All 4,799 other installed
-PDF paths, bytes, page counts, render revisions and source selections are
-identical. The complete release was rechecked with the current source-aware
-fidelity method. Current stable PDF paths remain valid when the obsolete
-history records different prior bytes for the same identity; actual retirement
-entries continue to veto publication. Focused regressions and an independent
-adversarial review verify this distinction without relaxing current byte,
-page, review, rights or site-authorization checks.
+The release still has 4,808 PDFs and now 9,087 pages. In the second checkpoint,
+all 4,650 other complete release rows and PDF bytes are unchanged, including
+the first nine replacements. There are no added or withdrawn document keys,
+renamed PDF paths or changes to the 304 external English routes. All 6,809
+current source selections are accounted for by the complete plan and install
+checks. Frozen historical receipts and audits remain scoped to the selected
+readers; unrelated historical review files do not authorize new admissions.
 
-The checkpoint passes the complete source gate, 243 papal tests, 20 catalogue
-tests, 151 public-alpha tests, the 55-tool registry, changed-tool examples,
-site build, independent deployment-artifact verification and the built-route
-viewport, keyboard and no-JavaScript checks. The existing Claude Fifteenth
-Sunday chronology-annotation smoke failure reproduces unchanged at the
-published base; no unrelated chronology content is revised here.
+The checkpoint passes the complete source and install/fidelity gates, 243
+papal tests, 20 catalogue tests, 151 public-alpha tests, exact release bindings,
+site build, independent deployment-artifact verification and built-route
+viewport, keyboard and no-JavaScript checks. The browser captures match the
+previous accepted catalogue. Source-family owner units remain honestly pending.
+Current replay helpers are reused by tracked path and exact implementation
+hash; older implementations and actual code licenses remain identifiable.
 
 Historical English intake, source-preserving note and spacing repairs, classic
 reader installation and the remaining cold-review dispositions continue. A

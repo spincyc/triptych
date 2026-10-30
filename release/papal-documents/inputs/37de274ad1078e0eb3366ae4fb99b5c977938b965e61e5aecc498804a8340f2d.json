@@ -1,0 +1,43 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "048b5919f8a6df92243c67c7bb204c3bba9a3fa539489bf9d40fe4e85b0f5644",
+  "documents": [
+    {
+      "id": "acta.ass.029.ass-029-l25864",
+      "language": "la",
+      "pdf_sha256": "9a202664b57c62c67ed7d5db89383d8814c95854891ef02af3dbe96baf589171",
+      "pages": 7,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "description": "All 15 historical note groups form separate blocks at their source-page breaks. Retained malformed reference markers, superscript fragments, citation punctuation and the short stray glyph cluster remain visible, but do not fuse a note into body or cause sustained unreadability. Page 7 retains the conclusion, date, LEO PAPA XIII and final Psalm note. Apparatus begins at bottom left and continues at top right in normal column order on this same source-bearing page."
+        }
+      ],
+      "limitations": "Independent layout, selected source-boundary, replay and native OCR-PDF geometry acceptance. All reader pages contact- and full-size-inspected; native inspection is bounded to the exact pages listed in the report. No original-print collation, lexical OCR correction, translation accuracy, whole-book completeness or independent rights certification. No raster reuse.",
+      "receipt_sha256": "048b5919f8a6df92243c67c7bb204c3bba9a3fa539489bf9d40fe4e85b0f5644",
+      "report": "src/sources/papal-documents/encyclicals-repair-cold-23-a.md",
+      "report_sha256": "f8789bc65eb2a6dd63f7e746c9a6be281804b181f665f0bd4d0dd4e32f1adae9"
+    }
+  ]
+}
