@@ -1,0 +1,2469 @@
+{
+  "schema": "triptych-public-diagnostic-copy-map/v1",
+  "copies": [
+    {
+      "original_path": ".scratch/cold-repairs-22b/verification.json",
+      "public_path": "inactive/repository/.scratch/cold-repairs-22b/verification.json",
+      "historical_raw_sha256": "35912faa125cb64841461772b1126cc65b4bc99d4806e528cff8b383bfb3f047",
+      "public_sha256": "51c6f03f43cd476af4e92606b85194d29f72da1e7e11dac60244107135d90eb9",
+      "transformations": [
+        {
+          "json_pointer": "/documents/0/archived_note_replay_initial_invocation/stderr",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "f335e8f10a51d1568e6696fcfb70d3fef1e9f9b6002ec9b6d98fb56fe078a0aa",
+          "public_value_sha256": "2f9b38428b4b652e10da6ca94c3382f2f1e1649eb9630d6190e4de3ec7cc90cf"
+        },
+        {
+          "json_pointer": "/documents/0/archived_note_replay/command/5",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "7a090a56d8358ab017d25bd4cfe2ec161b734d8a8b88be64ac7923caee03bc5e",
+          "public_value_sha256": "cdb4ee2aea69cc6a83331bbe96dc2caa9a299d21329efb0336fc02a82e1839a8"
+        },
+        {
+          "json_pointer": "/documents/1/archived_note_replay_initial_invocation/stderr",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "f8188f1f5fda7fecb66825fd90cb50a57b4c819e041bd896762ef52dceb43272",
+          "public_value_sha256": "8208b9e452fca4ca2b698eaabe7aa462550060df4d4d64cca039302e617e4ad4"
+        },
+        {
+          "json_pointer": "/documents/1/archived_note_replay/command/5",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "7a090a56d8358ab017d25bd4cfe2ec161b734d8a8b88be64ac7923caee03bc5e",
+          "public_value_sha256": "cdb4ee2aea69cc6a83331bbe96dc2caa9a299d21329efb0336fc02a82e1839a8"
+        },
+        {
+          "json_pointer": "/documents/2/archived_note_replay_initial_invocation/stderr",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "862894f4343c02999de04c19b32f4efccc0245b16a2e7f17c04c72120dba717b",
+          "public_value_sha256": "c2bddd375d7d428d5b3af23e613558fffb64c512b49f96e6284120c08fc5d2cc"
+        },
+        {
+          "json_pointer": "/documents/2/archived_note_replay/command/5",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "7a090a56d8358ab017d25bd4cfe2ec161b734d8a8b88be64ac7923caee03bc5e",
+          "public_value_sha256": "cdb4ee2aea69cc6a83331bbe96dc2caa9a299d21329efb0336fc02a82e1839a8"
+        },
+        {
+          "json_pointer": "/documents/3/archived_note_replay_initial_invocation/stderr",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "4341124cb9f7931f10eb1ac842aa552030903159dd106f1c33f45be6ee1a8cbc",
+          "public_value_sha256": "8a73769eaae86402f872ab13107ba430d2c379fb43f4da4c814aaf32543ab478"
+        },
+        {
+          "json_pointer": "/documents/3/archived_note_replay/command/5",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "7a090a56d8358ab017d25bd4cfe2ec161b734d8a8b88be64ac7923caee03bc5e",
+          "public_value_sha256": "cdb4ee2aea69cc6a83331bbe96dc2caa9a299d21329efb0336fc02a82e1839a8"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-cold-report-recovery/issuer17-recovered-verdicts.json",
+      "public_path": "inactive/repository/.scratch/encyclical-cold-report-recovery/issuer17-recovered-verdicts.json",
+      "historical_raw_sha256": "09703d03fac0b7f636683e64d66a796251f92b8dc92f701e7b1b0b7f9157f519",
+      "public_sha256": "bdaf1d0a6b8fdfd0589677cff5cffcaaec8ce5e77c52d0dc8308c94f481d3453",
+      "transformations": [
+        {
+          "json_pointer": "/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "48cfbf7beb5273d61ca866123b95fc997c325baf152a0db9ca2fa88519de0f05"
+        },
+        {
+          "json_pointer": "/recovered_by",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "9d59e61e1df9112670195672bb7a8eff2ea04c2d92116ba59296c8a2e0ac30f8"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-cold-report-recovery/recovery-index.json",
+      "public_path": "inactive/repository/.scratch/encyclical-cold-report-recovery/recovery-index.json",
+      "historical_raw_sha256": "bfc551d3d398c7379ade9e624ca5b0d60faadb9eb49f6d23adf2e01c80c0e3bf",
+      "public_sha256": "88ffd99085b135fc5280fc7df29d860eed21e8544d881e07a1ea1afb4c136163",
+      "transformations": [
+        {
+          "json_pointer": "/documents/0/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/0/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "558da33d3ff414a083535bce1dea99c232594979aa0b3615f0eef32b1912dd80"
+        },
+        {
+          "json_pointer": "/documents/1/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/1/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "558da33d3ff414a083535bce1dea99c232594979aa0b3615f0eef32b1912dd80"
+        },
+        {
+          "json_pointer": "/documents/2/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/2/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "558da33d3ff414a083535bce1dea99c232594979aa0b3615f0eef32b1912dd80"
+        },
+        {
+          "json_pointer": "/documents/3/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/3/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "558da33d3ff414a083535bce1dea99c232594979aa0b3615f0eef32b1912dd80"
+        },
+        {
+          "json_pointer": "/documents/4/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/4/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "558da33d3ff414a083535bce1dea99c232594979aa0b3615f0eef32b1912dd80"
+        },
+        {
+          "json_pointer": "/documents/5/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/5/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "558da33d3ff414a083535bce1dea99c232594979aa0b3615f0eef32b1912dd80"
+        },
+        {
+          "json_pointer": "/documents/6/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/6/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "558da33d3ff414a083535bce1dea99c232594979aa0b3615f0eef32b1912dd80"
+        },
+        {
+          "json_pointer": "/documents/7/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/7/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "558da33d3ff414a083535bce1dea99c232594979aa0b3615f0eef32b1912dd80"
+        },
+        {
+          "json_pointer": "/documents/8/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/8/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "3ce9798cccc40c59aa58f2cad6d113f8c144544d134bc8730c90d01c62b6d15d"
+        },
+        {
+          "json_pointer": "/documents/9/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/9/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "3ce9798cccc40c59aa58f2cad6d113f8c144544d134bc8730c90d01c62b6d15d"
+        },
+        {
+          "json_pointer": "/documents/10/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/10/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "3ce9798cccc40c59aa58f2cad6d113f8c144544d134bc8730c90d01c62b6d15d"
+        },
+        {
+          "json_pointer": "/documents/11/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/11/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "7644dee3a0dca71e93f3407e154d92aa87b8bf9bcc6a71f92a29294222ca5e99"
+        },
+        {
+          "json_pointer": "/documents/12/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/12/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "7644dee3a0dca71e93f3407e154d92aa87b8bf9bcc6a71f92a29294222ca5e99"
+        },
+        {
+          "json_pointer": "/documents/13/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/13/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "7644dee3a0dca71e93f3407e154d92aa87b8bf9bcc6a71f92a29294222ca5e99"
+        },
+        {
+          "json_pointer": "/documents/14/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/14/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "7644dee3a0dca71e93f3407e154d92aa87b8bf9bcc6a71f92a29294222ca5e99"
+        },
+        {
+          "json_pointer": "/documents/15/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/15/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "2fe182249f407d3ae2128fb4481645101236f6b1f96f00185f1407a4e7b4ba60"
+        },
+        {
+          "json_pointer": "/documents/16/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/16/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "2fe182249f407d3ae2128fb4481645101236f6b1f96f00185f1407a4e7b4ba60"
+        },
+        {
+          "json_pointer": "/documents/17/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/17/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "2fe182249f407d3ae2128fb4481645101236f6b1f96f00185f1407a4e7b4ba60"
+        },
+        {
+          "json_pointer": "/documents/18/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/18/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "2fe182249f407d3ae2128fb4481645101236f6b1f96f00185f1407a4e7b4ba60"
+        },
+        {
+          "json_pointer": "/documents/19/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/19/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "48cfbf7beb5273d61ca866123b95fc997c325baf152a0db9ca2fa88519de0f05"
+        },
+        {
+          "json_pointer": "/documents/20/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/20/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "48cfbf7beb5273d61ca866123b95fc997c325baf152a0db9ca2fa88519de0f05"
+        },
+        {
+          "json_pointer": "/documents/21/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/21/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "48cfbf7beb5273d61ca866123b95fc997c325baf152a0db9ca2fa88519de0f05"
+        },
+        {
+          "json_pointer": "/documents/22/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/22/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "48cfbf7beb5273d61ca866123b95fc997c325baf152a0db9ca2fa88519de0f05"
+        },
+        {
+          "json_pointer": "/documents/23/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/23/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "48cfbf7beb5273d61ca866123b95fc997c325baf152a0db9ca2fa88519de0f05"
+        },
+        {
+          "json_pointer": "/documents/24/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/24/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "48cfbf7beb5273d61ca866123b95fc997c325baf152a0db9ca2fa88519de0f05"
+        },
+        {
+          "json_pointer": "/documents/25/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/25/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "48cfbf7beb5273d61ca866123b95fc997c325baf152a0db9ca2fa88519de0f05"
+        },
+        {
+          "json_pointer": "/documents/26/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/26/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "48cfbf7beb5273d61ca866123b95fc997c325baf152a0db9ca2fa88519de0f05"
+        },
+        {
+          "json_pointer": "/documents/27/live_operation_handle",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "json_pointer": "/documents/27/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "bc0930a1bdec7799eb54e766b93a7e95da6ef0dc8be30ddd1304a95eedc8e58d"
+        },
+        {
+          "json_pointer": "/lanes/0/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "558da33d3ff414a083535bce1dea99c232594979aa0b3615f0eef32b1912dd80"
+        },
+        {
+          "json_pointer": "/lanes/1/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "3ce9798cccc40c59aa58f2cad6d113f8c144544d134bc8730c90d01c62b6d15d"
+        },
+        {
+          "json_pointer": "/lanes/2/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "7644dee3a0dca71e93f3407e154d92aa87b8bf9bcc6a71f92a29294222ca5e99"
+        },
+        {
+          "json_pointer": "/lanes/3/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "2fe182249f407d3ae2128fb4481645101236f6b1f96f00185f1407a4e7b4ba60"
+        },
+        {
+          "json_pointer": "/lanes/4/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "48cfbf7beb5273d61ca866123b95fc997c325baf152a0db9ca2fa88519de0f05"
+        },
+        {
+          "json_pointer": "/recovery_agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "9d59e61e1df9112670195672bb7a8eff2ea04c2d92116ba59296c8a2e0ac30f8"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-cold-report-recovery/report.md",
+      "public_path": "inactive/repository/.scratch/encyclical-cold-report-recovery/report.md",
+      "historical_raw_sha256": "de2dbe380156f19b1fe716be547eed031c3d2bc41709c27edef7561d0b8b620d",
+      "public_sha256": "ec9d9992fb019eb15375aef53444185e1a7c5d7c43c205a8a75277768bb8d7e2",
+      "transformations": [
+        {
+          "text_scope": "opening attribution",
+          "action": "omit operational runtime observer identifier"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-cold-report-recovery/snapshots/fe6c7e2a463354d6d54746d1b51e3fcdbb3f72414a4f8a4c054b1e002d54c94a--verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-cold-report-recovery/snapshots/fe6c7e2a463354d6d54746d1b51e3fcdbb3f72414a4f8a4c054b1e002d54c94a--verification.json",
+      "historical_raw_sha256": "fe6c7e2a463354d6d54746d1b51e3fcdbb3f72414a4f8a4c054b1e002d54c94a",
+      "public_sha256": "aa131b7b8de18ad472af0a42892d127471252732e210ee40e3d806d6226f932b",
+      "transformations": [
+        {
+          "json_pointer": "/documents/0/archived_note_replay_initial_invocation/stderr",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "f335e8f10a51d1568e6696fcfb70d3fef1e9f9b6002ec9b6d98fb56fe078a0aa",
+          "public_value_sha256": "2f9b38428b4b652e10da6ca94c3382f2f1e1649eb9630d6190e4de3ec7cc90cf"
+        },
+        {
+          "json_pointer": "/documents/0/archived_note_replay/command/5",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "7a090a56d8358ab017d25bd4cfe2ec161b734d8a8b88be64ac7923caee03bc5e",
+          "public_value_sha256": "cdb4ee2aea69cc6a83331bbe96dc2caa9a299d21329efb0336fc02a82e1839a8"
+        },
+        {
+          "json_pointer": "/documents/1/archived_note_replay_initial_invocation/stderr",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "f8188f1f5fda7fecb66825fd90cb50a57b4c819e041bd896762ef52dceb43272",
+          "public_value_sha256": "8208b9e452fca4ca2b698eaabe7aa462550060df4d4d64cca039302e617e4ad4"
+        },
+        {
+          "json_pointer": "/documents/1/archived_note_replay/command/5",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "7a090a56d8358ab017d25bd4cfe2ec161b734d8a8b88be64ac7923caee03bc5e",
+          "public_value_sha256": "cdb4ee2aea69cc6a83331bbe96dc2caa9a299d21329efb0336fc02a82e1839a8"
+        },
+        {
+          "json_pointer": "/documents/2/archived_note_replay_initial_invocation/stderr",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "862894f4343c02999de04c19b32f4efccc0245b16a2e7f17c04c72120dba717b",
+          "public_value_sha256": "c2bddd375d7d428d5b3af23e613558fffb64c512b49f96e6284120c08fc5d2cc"
+        },
+        {
+          "json_pointer": "/documents/2/archived_note_replay/command/5",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "7a090a56d8358ab017d25bd4cfe2ec161b734d8a8b88be64ac7923caee03bc5e",
+          "public_value_sha256": "cdb4ee2aea69cc6a83331bbe96dc2caa9a299d21329efb0336fc02a82e1839a8"
+        },
+        {
+          "json_pointer": "/documents/3/archived_note_replay_initial_invocation/stderr",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "4341124cb9f7931f10eb1ac842aa552030903159dd106f1c33f45be6ee1a8cbc",
+          "public_value_sha256": "8a73769eaae86402f872ab13107ba430d2c379fb43f4da4c814aaf32543ab478"
+        },
+        {
+          "json_pointer": "/documents/3/archived_note_replay/command/5",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "7a090a56d8358ab017d25bd4cfe2ec161b734d8a8b88be64ac7923caee03bc5e",
+          "public_value_sha256": "cdb4ee2aea69cc6a83331bbe96dc2caa9a299d21329efb0336fc02a82e1839a8"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-final-unowned-cold/fausto-iucunda/pdf-review-output.txt",
+      "public_path": "inactive/repository/.scratch/encyclical-final-unowned-cold/fausto-iucunda/pdf-review-output.txt",
+      "historical_raw_sha256": "f9ab6134eac356405dfbadc809d3275ca97500e3dda8f552568a8752eb996a92",
+      "public_sha256": "9ce679e1a570e43f417b4f573a21e5e6a48c261b5f5d323e61dab2c2f73563c2",
+      "transformations": [
+        {
+          "text_scope": "entire diagnostic",
+          "action": "remove exact repository-root prefix"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-final-unowned-cold/sacra-quod/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-final-unowned-cold/sacra-quod/verification.json",
+      "historical_raw_sha256": "134bba90a97c2b0311a5bbf3d3f9701a5bfc95ec32c4c72fa8999c978d68d009",
+      "public_sha256": "3a74bef77a541880e21b9c6317968e695a4889238fbf9a2d234aa0eb5c4dd7a1",
+      "transformations": [
+        {
+          "json_pointer": "/0/helper_command/0",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "c405f8ac869bb18c2c6e239b71519d224b8d9adf47db2fe4e6da9e866aba4866",
+          "public_value_sha256": "886c5aba94e78f3f5caf0f6aa9c20f54ba4c3f2b392de5fa3ede5b70f1258440"
+        },
+        {
+          "json_pointer": "/1/helper_command/0",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "d055670c674f2c3895a46dc6c7c3feaa9f33f595f599193ec15795532ee49301",
+          "public_value_sha256": "2fd5d4fbe7bb39849fd44a50abc2735242a08369ab09f27d3c681c61693cf099"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-last-fifty/coverage-index.json",
+      "public_path": "inactive/repository/.scratch/encyclical-last-fifty/coverage-index.json",
+      "historical_raw_sha256": "aced7daf45ecf3ea8be7484929b27cd818e302c803edb4dbff69cb9149ab1107",
+      "public_sha256": "493916cca416bdcbb303f772a4383ff1546f1b3dd978f109ecc335561cbd3780",
+      "transformations": [
+        {
+          "json_pointer": "/documents/0/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "e32eb51531a35e3645432774bf120ef00e0f84212209ce4175c2eb2679e0a824"
+        },
+        {
+          "json_pointer": "/documents/1/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "e32eb51531a35e3645432774bf120ef00e0f84212209ce4175c2eb2679e0a824"
+        },
+        {
+          "json_pointer": "/documents/2/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "4eac27f6ccf04777f10029d8830a3196c3e68fa083a57db2683b3d6ab62c9447"
+        },
+        {
+          "json_pointer": "/documents/3/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "2fe182249f407d3ae2128fb4481645101236f6b1f96f00185f1407a4e7b4ba60"
+        },
+        {
+          "json_pointer": "/documents/4/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "3ce9798cccc40c59aa58f2cad6d113f8c144544d134bc8730c90d01c62b6d15d"
+        },
+        {
+          "json_pointer": "/documents/5/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "3ce9798cccc40c59aa58f2cad6d113f8c144544d134bc8730c90d01c62b6d15d"
+        },
+        {
+          "json_pointer": "/documents/6/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "3ce9798cccc40c59aa58f2cad6d113f8c144544d134bc8730c90d01c62b6d15d"
+        },
+        {
+          "json_pointer": "/documents/10/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "2fe182249f407d3ae2128fb4481645101236f6b1f96f00185f1407a4e7b4ba60"
+        },
+        {
+          "json_pointer": "/documents/12/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "4eac27f6ccf04777f10029d8830a3196c3e68fa083a57db2683b3d6ab62c9447"
+        },
+        {
+          "json_pointer": "/documents/14/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "7644dee3a0dca71e93f3407e154d92aa87b8bf9bcc6a71f92a29294222ca5e99"
+        },
+        {
+          "json_pointer": "/documents/15/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "00f9077e1b0a2ac3cd49115d1d5f5c5420d10cdc24ed52b6af8346b7fbf2eb1c"
+        },
+        {
+          "json_pointer": "/documents/17/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "7644dee3a0dca71e93f3407e154d92aa87b8bf9bcc6a71f92a29294222ca5e99"
+        },
+        {
+          "json_pointer": "/documents/18/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "2fe182249f407d3ae2128fb4481645101236f6b1f96f00185f1407a4e7b4ba60"
+        },
+        {
+          "json_pointer": "/documents/20/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "7644dee3a0dca71e93f3407e154d92aa87b8bf9bcc6a71f92a29294222ca5e99"
+        },
+        {
+          "json_pointer": "/documents/21/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "8fd3515da109f18b106ea615f7575c2373adc8b7a97e17c819a5ad5a024baf0b"
+        },
+        {
+          "json_pointer": "/documents/23/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "7644dee3a0dca71e93f3407e154d92aa87b8bf9bcc6a71f92a29294222ca5e99"
+        },
+        {
+          "json_pointer": "/documents/26/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "e32eb51531a35e3645432774bf120ef00e0f84212209ce4175c2eb2679e0a824"
+        },
+        {
+          "json_pointer": "/documents/30/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "bf404fb644f4007a8a7e982c551a24a57a98709c180d2d242cfc2f9e5d4ca85a"
+        },
+        {
+          "json_pointer": "/documents/33/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "4eac27f6ccf04777f10029d8830a3196c3e68fa083a57db2683b3d6ab62c9447"
+        },
+        {
+          "json_pointer": "/documents/34/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "4eac27f6ccf04777f10029d8830a3196c3e68fa083a57db2683b3d6ab62c9447"
+        },
+        {
+          "json_pointer": "/documents/38/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "2fe182249f407d3ae2128fb4481645101236f6b1f96f00185f1407a4e7b4ba60"
+        },
+        {
+          "json_pointer": "/documents/39/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "48cfbf7beb5273d61ca866123b95fc997c325baf152a0db9ca2fa88519de0f05"
+        },
+        {
+          "json_pointer": "/documents/40/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "48cfbf7beb5273d61ca866123b95fc997c325baf152a0db9ca2fa88519de0f05"
+        },
+        {
+          "json_pointer": "/documents/41/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "48cfbf7beb5273d61ca866123b95fc997c325baf152a0db9ca2fa88519de0f05"
+        },
+        {
+          "json_pointer": "/documents/42/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "48cfbf7beb5273d61ca866123b95fc997c325baf152a0db9ca2fa88519de0f05"
+        },
+        {
+          "json_pointer": "/documents/43/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "48cfbf7beb5273d61ca866123b95fc997c325baf152a0db9ca2fa88519de0f05"
+        },
+        {
+          "json_pointer": "/documents/44/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "710ba7d5c2b494736548a8970beb7e6fa033d590ac1f20386e555680fc4d127d"
+        },
+        {
+          "json_pointer": "/documents/46/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "48cfbf7beb5273d61ca866123b95fc997c325baf152a0db9ca2fa88519de0f05"
+        },
+        {
+          "json_pointer": "/documents/48/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "710ba7d5c2b494736548a8970beb7e6fa033d590ac1f20386e555680fc4d127d"
+        },
+        {
+          "json_pointer": "/documents/49/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "744a933cb99a66aec1566bd85352599a35fe239a82d9e9b48962843a5ca4befe"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-last-fifty/coverage-table-current.md",
+      "public_path": "inactive/repository/.scratch/encyclical-last-fifty/coverage-table-current.md",
+      "historical_raw_sha256": "d3d9624f49b17a3d29845e1c67b8dfe67c8ecd0c93d171e4de364680c4ba3ad0",
+      "public_sha256": "919b051cff51dd5a6f0eae3b06d5309c0e62cccc590a9d5be2007680b4638f3a",
+      "transformations": [
+        {
+          "text_scope": "Owner / required action table column",
+          "action": "omit operational runtime actor identifiers"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-ready-package/coordination-snapshots/20261030T201701Z/cold-visual-collection.json",
+      "public_path": "inactive/repository/.scratch/encyclical-ready-package/coordination-snapshots/20261030T201701Z/cold-visual-collection.json",
+      "historical_raw_sha256": "b473eeb85d8e4c6f6715578273513da1491a516cb4be5ff99e59c7a1d252f69b",
+      "public_sha256": "a8a1d742de82d4ca27681e63a5a1fd067a5911f0d940b78651cf1622bfc2d0b0",
+      "transformations": [
+        {
+          "json_pointer": "/packets/0/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "3f5bd8fb9af1487519398480a11866c6fc0b2b909f5422395e9165448284a6e9"
+        },
+        {
+          "json_pointer": "/packets/1/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "ae3b78dcc603857886ddb7954c5091e7d059719ebc3ed566a2f47e54457976d8"
+        },
+        {
+          "json_pointer": "/packets/2/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "bb7ee5d46cc2a3e6c7a4a472d335e530121999a9372108c948368bc4a38a3f2b"
+        },
+        {
+          "json_pointer": "/packets/3/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "746f032180992bed9904b67bca3ea56a715404dc97e79ae8764752a55bab8d0d"
+        },
+        {
+          "json_pointer": "/packets/4/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "c7d6312eacb2bcb9859ad4b4e54576c9641669dac70f0125189c262143e0d930"
+        },
+        {
+          "json_pointer": "/packets/5/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "66f03341776f00ea7f9b3d8a994e6d568b292a94c885dee26d19cf61fdc59939"
+        },
+        {
+          "json_pointer": "/packets/6/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "6edb9e574063c154310beffaa7406692d32361d4f29538211b701e6d7a7ac34e"
+        },
+        {
+          "json_pointer": "/packets/7/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "51b6f1814e719bf70bd6982a6fa254e519047888428e0c3f2b0012535486f18b"
+        },
+        {
+          "json_pointer": "/packets/8/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "305efde5d6c3b034f466e0b44b5f539bd1300f82c38c7dece9349b4a4faee817"
+        },
+        {
+          "json_pointer": "/packets/9/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "5dd54e1d640117bfc9166bd5854b01ab8f40291a62c50aff7539030fdabfa249"
+        },
+        {
+          "json_pointer": "/packets/10/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "62bdb1cfda4c781c4138e720defd1e0401131ce7e53db419fc5e4ae39ccdc16a"
+        },
+        {
+          "json_pointer": "/packets/11/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "4cbfdc60eb782e6fd793d3d22d14542d9458db6eaa57c6dfb79578e04f7715dd"
+        },
+        {
+          "json_pointer": "/packets/12/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "0519f115f9e77a1e59e4c8ec64d20dc3608e991247564dfd5b7e546ccfaf79e8"
+        },
+        {
+          "json_pointer": "/packets/13/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "58a2a6f27d147846bf323d938265d37934a2a5568372b57cad241bc9b1c2fb4f"
+        },
+        {
+          "json_pointer": "/packets/14/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "beca7cfc3ecc63db48d724d48b6393c88b5ee01d38cfece50d25e3a9a4c16ff1"
+        },
+        {
+          "json_pointer": "/packets/15/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "fc85ddb8f7527fda152a57adab4e3c1fa089e430fbb65034268a1a11fbbb64ec"
+        },
+        {
+          "json_pointer": "/packets/16/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "6c7e5ff31d495d3de3855043c84686a9be6308ae3b091e268d705d229510f413"
+        },
+        {
+          "json_pointer": "/packets/17/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "3b0c86b36304685a48d262b713df4888a998a32a39148cfdffdaaa38ba89e50f"
+        },
+        {
+          "json_pointer": "/packets/18/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "b695d9c9dd3aabc979b8e0276456e9cff06dc0262974cdf3e123a73817f820ab"
+        },
+        {
+          "json_pointer": "/packets/19/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "e4f6a0d5cd70a3b32a92b26dfcda1ed181c5f8bf17a8e6784a4decdc691065a3"
+        },
+        {
+          "json_pointer": "/packets/20/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "19353503f8d01dd231a9427e67bb9391a96e3911b4841cfaa1874f00aa1427e7"
+        },
+        {
+          "json_pointer": "/packets/21/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "58b5b00ed8e22411258c84caa61b00a99eb8cf24d09bc4c906e6e9465da4c1be"
+        },
+        {
+          "json_pointer": "/packets/22/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "08461c342237c702b2bd82f83e0d458e9c887ed13a6520c53a06022b8f3859b5"
+        },
+        {
+          "json_pointer": "/packets/23/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "c9f92604cf69e40f19945f153dc9670de45e688a4a3690c199bdec9bb2d7ba65"
+        },
+        {
+          "json_pointer": "/packets/24/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "a0125b5f9cca68939fe1b22f4751dd5357bb974b14aec0184e4e0a814280b5ca"
+        },
+        {
+          "json_pointer": "/packets/25/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "ac5f3245fe7ec59df8fade30d1faf767984879e3aa4cdee999a0be934e2b6bac"
+        },
+        {
+          "json_pointer": "/packets/26/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "075270c0ce70b0c0a7ce6092926b4a98ea525ee54e26cecb20c8b5334d58e46c"
+        },
+        {
+          "json_pointer": "/frozen_prior_contexts/0/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "f26a4894d9fec35337718618dd2c1507713ebf57d342c2678c427c2a23cd9b9c"
+        },
+        {
+          "json_pointer": "/frozen_prior_contexts/1/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "8f93e103fa7690be14d8ffc443cd01d4a549d074b6f53fccfefa797c45013d0c"
+        },
+        {
+          "json_pointer": "/frozen_prior_contexts/2/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "e6980a46f9dd69b87d782b8e2c6ad24bbc98448991ca770862dffc240d4d483a"
+        },
+        {
+          "json_pointer": "/frozen_prior_contexts/3/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "ebae039986a5a6f415706c99a137a7a12bce77b2159ab4d96f42210628eda2f7"
+        },
+        {
+          "json_pointer": "/frozen_prior_contexts/4/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "29a4ab5b257233012bab65d965db29146a29ff9de84e9cec30c47937c9f677c3"
+        },
+        {
+          "json_pointer": "/frozen_prior_contexts/5/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "50bc5c9b988ec419de1c0a61bf1a09383e887c4c90a96153f0a2276a75a8fec1"
+        },
+        {
+          "json_pointer": "/blockers/0/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "3f5bd8fb9af1487519398480a11866c6fc0b2b909f5422395e9165448284a6e9"
+        },
+        {
+          "json_pointer": "/blockers/1/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "ae3b78dcc603857886ddb7954c5091e7d059719ebc3ed566a2f47e54457976d8"
+        },
+        {
+          "json_pointer": "/blockers/2/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "bb7ee5d46cc2a3e6c7a4a472d335e530121999a9372108c948368bc4a38a3f2b"
+        },
+        {
+          "json_pointer": "/blockers/3/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "bb7ee5d46cc2a3e6c7a4a472d335e530121999a9372108c948368bc4a38a3f2b"
+        },
+        {
+          "json_pointer": "/blockers/4/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "bb7ee5d46cc2a3e6c7a4a472d335e530121999a9372108c948368bc4a38a3f2b"
+        },
+        {
+          "json_pointer": "/blockers/5/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "746f032180992bed9904b67bca3ea56a715404dc97e79ae8764752a55bab8d0d"
+        },
+        {
+          "json_pointer": "/blockers/6/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "746f032180992bed9904b67bca3ea56a715404dc97e79ae8764752a55bab8d0d"
+        },
+        {
+          "json_pointer": "/blockers/7/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "c7d6312eacb2bcb9859ad4b4e54576c9641669dac70f0125189c262143e0d930"
+        },
+        {
+          "json_pointer": "/blockers/8/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "c7d6312eacb2bcb9859ad4b4e54576c9641669dac70f0125189c262143e0d930"
+        },
+        {
+          "json_pointer": "/blockers/9/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "c7d6312eacb2bcb9859ad4b4e54576c9641669dac70f0125189c262143e0d930"
+        },
+        {
+          "json_pointer": "/blockers/10/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "66f03341776f00ea7f9b3d8a994e6d568b292a94c885dee26d19cf61fdc59939"
+        },
+        {
+          "json_pointer": "/blockers/11/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "66f03341776f00ea7f9b3d8a994e6d568b292a94c885dee26d19cf61fdc59939"
+        },
+        {
+          "json_pointer": "/blockers/12/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "6edb9e574063c154310beffaa7406692d32361d4f29538211b701e6d7a7ac34e"
+        },
+        {
+          "json_pointer": "/blockers/13/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "305efde5d6c3b034f466e0b44b5f539bd1300f82c38c7dece9349b4a4faee817"
+        },
+        {
+          "json_pointer": "/blockers/14/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "5dd54e1d640117bfc9166bd5854b01ab8f40291a62c50aff7539030fdabfa249"
+        },
+        {
+          "json_pointer": "/blockers/15/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "5dd54e1d640117bfc9166bd5854b01ab8f40291a62c50aff7539030fdabfa249"
+        },
+        {
+          "json_pointer": "/blockers/16/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "4cbfdc60eb782e6fd793d3d22d14542d9458db6eaa57c6dfb79578e04f7715dd"
+        },
+        {
+          "json_pointer": "/blockers/17/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "58a2a6f27d147846bf323d938265d37934a2a5568372b57cad241bc9b1c2fb4f"
+        },
+        {
+          "json_pointer": "/blockers/18/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "58a2a6f27d147846bf323d938265d37934a2a5568372b57cad241bc9b1c2fb4f"
+        },
+        {
+          "json_pointer": "/blockers/19/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "beca7cfc3ecc63db48d724d48b6393c88b5ee01d38cfece50d25e3a9a4c16ff1"
+        },
+        {
+          "json_pointer": "/blockers/20/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "fc85ddb8f7527fda152a57adab4e3c1fa089e430fbb65034268a1a11fbbb64ec"
+        },
+        {
+          "json_pointer": "/blockers/21/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "fc85ddb8f7527fda152a57adab4e3c1fa089e430fbb65034268a1a11fbbb64ec"
+        },
+        {
+          "json_pointer": "/blockers/22/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "6c7e5ff31d495d3de3855043c84686a9be6308ae3b091e268d705d229510f413"
+        },
+        {
+          "json_pointer": "/blockers/23/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "58b5b00ed8e22411258c84caa61b00a99eb8cf24d09bc4c906e6e9465da4c1be"
+        },
+        {
+          "json_pointer": "/blockers/24/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "58b5b00ed8e22411258c84caa61b00a99eb8cf24d09bc4c906e6e9465da4c1be"
+        },
+        {
+          "json_pointer": "/blockers/25/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "08461c342237c702b2bd82f83e0d458e9c887ed13a6520c53a06022b8f3859b5"
+        },
+        {
+          "json_pointer": "/blockers/26/agent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "a0125b5f9cca68939fe1b22f4751dd5357bb974b14aec0184e4e0a814280b5ca"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-ready-package/coordination-snapshots/20261030T201701Z/current-cold-blocker-index.json",
+      "public_path": "inactive/repository/.scratch/encyclical-ready-package/coordination-snapshots/20261030T201701Z/current-cold-blocker-index.json",
+      "historical_raw_sha256": "8339a23978659b3456ce0c247c53763cb04d3341e433e2234810a97ed66fdc81",
+      "public_sha256": "f561fd0e1d2e04ddc26b4c40c76cd63c3fd7d63f6e39f95b22d31d22a93c7be0",
+      "transformations": [
+        {
+          "json_pointer": "/completed_failures/1/source_lane_known_from_parent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "dd51040aeb948d9295d70c321f6276e55b53ebd33b360ba7d16d1633f9a2cb99"
+        },
+        {
+          "json_pointer": "/completed_failures/4/source_lane_known_from_parent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "38213dfeb6f4d2755053ca3123908d1018ac136fe5087ac6ac9c9ea13ba628b7"
+        },
+        {
+          "json_pointer": "/completed_failures/6/source_lane_known_from_parent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "38213dfeb6f4d2755053ca3123908d1018ac136fe5087ac6ac9c9ea13ba628b7"
+        },
+        {
+          "json_pointer": "/completed_failures/7/source_lane_known_from_parent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "3ce9798cccc40c59aa58f2cad6d113f8c144544d134bc8730c90d01c62b6d15d"
+        },
+        {
+          "json_pointer": "/completed_failures/9/source_lane_known_from_parent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "3ce9798cccc40c59aa58f2cad6d113f8c144544d134bc8730c90d01c62b6d15d"
+        },
+        {
+          "json_pointer": "/completed_failures/11/source_lane_known_from_parent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "07dd595cabb7ee629a29b717178d3db2852d76b959e060185fe6fcfd82e59151"
+        },
+        {
+          "json_pointer": "/completed_failures/14/coordinator_verified_replacement_candidate/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "0dc3949733a415c4046e7c78eba89fb83710f3f93e706ae11f01bd34c3838525"
+        },
+        {
+          "json_pointer": "/completed_failures/14/source_lane_known_from_parent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "0dc3949733a415c4046e7c78eba89fb83710f3f93e706ae11f01bd34c3838525"
+        },
+        {
+          "json_pointer": "/completed_failures/14/source_lane_verified_from_producer_and_independent_proof",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "0dc3949733a415c4046e7c78eba89fb83710f3f93e706ae11f01bd34c3838525"
+        },
+        {
+          "json_pointer": "/completed_failures/15/source_lane_known_from_parent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "38213dfeb6f4d2755053ca3123908d1018ac136fe5087ac6ac9c9ea13ba628b7"
+        },
+        {
+          "json_pointer": "/completed_failures/19/parent_confirmed_replacement_candidate/cold_coordinator",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "710ba7d5c2b494736548a8970beb7e6fa033d590ac1f20386e555680fc4d127d"
+        },
+        {
+          "json_pointer": "/completed_failures/19/source_lane_known_from_parent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "2b727df7a81561388e839711164af69c6bdb4663898fcd6266768affd892d20c"
+        },
+        {
+          "json_pointer": "/completed_failures/21/source_lane_known_from_parent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "214732d452f64b502c1c0f945199aa92d9b434a360bc911b444e61533b085851"
+        },
+        {
+          "json_pointer": "/completed_failures/26/source_lane_known_from_parent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "38213dfeb6f4d2755053ca3123908d1018ac136fe5087ac6ac9c9ea13ba628b7"
+        },
+        {
+          "json_pointer": "/completed_failures/28/source_lane_known_from_parent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "d503243109974c1130020ae298bc2455c6c07f6d4ee90be31b31c3b90bef413d"
+        },
+        {
+          "json_pointer": "/completed_failures/29/coordinator_verified_replacement_candidate/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "0dc3949733a415c4046e7c78eba89fb83710f3f93e706ae11f01bd34c3838525"
+        },
+        {
+          "json_pointer": "/completed_failures/29/source_lane_known_from_parent",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "0dc3949733a415c4046e7c78eba89fb83710f3f93e706ae11f01bd34c3838525"
+        },
+        {
+          "json_pointer": "/completed_failures/29/source_lane_verified_from_producer_and_independent_proof",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "0dc3949733a415c4046e7c78eba89fb83710f3f93e706ae11f01bd34c3838525"
+        },
+        {
+          "json_pointer": "/completed_failures/30/coordinator_verified_replacement_candidate/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "0dc3949733a415c4046e7c78eba89fb83710f3f93e706ae11f01bd34c3838525"
+        },
+        {
+          "json_pointer": "/completed_failures/30/source_lane_verified_from_producer_and_independent_proof",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "0dc3949733a415c4046e7c78eba89fb83710f3f93e706ae11f01bd34c3838525"
+        },
+        {
+          "json_pointer": "/completed_failures/31/existing_completed_producer_repair/producer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "3c1fe92d4e2ec1f140416ed2cd8a7c2963bf054dca29c818f7c49698470c20a8"
+        },
+        {
+          "json_pointer": "/completed_failures/31/source_lane_verified_producer_handoff",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "3c1fe92d4e2ec1f140416ed2cd8a7c2963bf054dca29c818f7c49698470c20a8"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-ready-package/coordination-snapshots/20261030T201701Z/fifth-cutoff-root-disposition.json",
+      "public_path": "inactive/repository/.scratch/encyclical-ready-package/coordination-snapshots/20261030T201701Z/fifth-cutoff-root-disposition.json",
+      "historical_raw_sha256": "f0ba1c5dee57672ea1305b3b45ec35d4173b0ecd20b854ef18ac2bfb70f0a825",
+      "public_sha256": "81c654aad6a50d49c07edea3c80552068bf79024a0088153aa86d6080e806d3e",
+      "transformations": [
+        {
+          "json_pointer": "/authority",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "ddf68d591aaf58715847f5940d906d7d034118546e347aeec2df845e03f55268"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-ready-package/coordination-snapshots/20261030T201701Z/gregory1842-completed-scope-evidence.json",
+      "public_path": "inactive/repository/.scratch/encyclical-ready-package/coordination-snapshots/20261030T201701Z/gregory1842-completed-scope-evidence.json",
+      "historical_raw_sha256": "dfefba3cc6a1dc91c50467e82f3c8d1b17146ce1df8d9a2de5c6ed6d3ee8d879",
+      "public_sha256": "ad33e1c6413f3e193cd668af46f6417b8ab801b74791d4c119798292a3d24fb6",
+      "transformations": [
+        {
+          "json_pointer": "/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "51b6f1814e719bf70bd6982a6fa254e519047888428e0c3f2b0012535486f18b"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-ready-package/coordination-snapshots/20261030T201701Z/root-etsi-admission-hold-overlay.json",
+      "public_path": "inactive/repository/.scratch/encyclical-ready-package/coordination-snapshots/20261030T201701Z/root-etsi-admission-hold-overlay.json",
+      "historical_raw_sha256": "91e7574944b0a1f4cfa0effe64703b5a6e22b091477a0eb72050434b7ab82dca",
+      "public_sha256": "640a7fb5d5bc3e4669dc18916ab014b8f0ebef2190bb119cf4a79d31c506d07b",
+      "transformations": [
+        {
+          "json_pointer": "/authority_and_evidence_status",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "07e0cd0ce1b0a1bda21141f9e6bbbf554fe009f518729b61b8ab9d8fdae99be4"
+        },
+        {
+          "json_pointer": "/root_direct_observer_contacted",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "3ace72972adac3ba03b3a2d426945ed53903724b9a0c2767d2b39ee7e61eb97b"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-ready-package/coordination-snapshots/20261030T201701Z/verified-producer-repair-history.json",
+      "public_path": "inactive/repository/.scratch/encyclical-ready-package/coordination-snapshots/20261030T201701Z/verified-producer-repair-history.json",
+      "historical_raw_sha256": "11acf9293fb48de7385d604d2dd2803e4a67c1cc945e27384f76b558ea220a59",
+      "public_sha256": "81e49b06e5dbd21337b96651a44ce2acd39e41459d1613a8a4e13a298909a4c9",
+      "transformations": [
+        {
+          "json_pointer": "/repairs/0/producer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "3c1fe92d4e2ec1f140416ed2cd8a7c2963bf054dca29c818f7c49698470c20a8"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-ready-package/coordination-snapshots/20261030T201701Z/verified-ready-replacements.json",
+      "public_path": "inactive/repository/.scratch/encyclical-ready-package/coordination-snapshots/20261030T201701Z/verified-ready-replacements.json",
+      "historical_raw_sha256": "8aa950545669eafb67fc7c1c603193c88a358574415f619fd8eed883423bd15b",
+      "public_sha256": "062d1cec4eab7308d8b25369f393284f225cb800709a3c719bdc77821edcb00b",
+      "transformations": [
+        {
+          "json_pointer": "/replacements/0/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "0dc3949733a415c4046e7c78eba89fb83710f3f93e706ae11f01bd34c3838525"
+        },
+        {
+          "json_pointer": "/replacements/1/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "0dc3949733a415c4046e7c78eba89fb83710f3f93e706ae11f01bd34c3838525"
+        },
+        {
+          "json_pointer": "/replacements/2/owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "0dc3949733a415c4046e7c78eba89fb83710f3f93e706ae11f01bd34c3838525"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-26a/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-26a/verification.json",
+      "historical_raw_sha256": "03d6f23a8e4e589e211430c9c186ca92142f373a335c0a6810b0778b8dd3e9b9",
+      "public_sha256": "a7386c466063af1d77e824b4c3318ef354c929144087b35ccb863d9d37167b95",
+      "transformations": [
+        {
+          "json_pointer": "/documents/0/helper_command/0",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "c405f8ac869bb18c2c6e239b71519d224b8d9adf47db2fe4e6da9e866aba4866",
+          "public_value_sha256": "886c5aba94e78f3f5caf0f6aa9c20f54ba4c3f2b392de5fa3ede5b70f1258440"
+        },
+        {
+          "json_pointer": "/documents/0/helper_command/3",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "64c6fe127e1b154d13e9a70beb0cc11cc760ea0c7705cce3bb271e364e4cd5bc",
+          "public_value_sha256": "7dfdb6eceadc2a47c22b0dfb497f86fc30df1db71e2580aec5140501d776efce"
+        },
+        {
+          "json_pointer": "/documents/0/helper_command/5",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "11e73a177233c13bce481891493172ebb784d3dd1fd8787acc00cdbc00af8854",
+          "public_value_sha256": "0f5ce82e659e67969acf361a1fc55ce2b0b1b2bed085d0f9f5fd8cbee76da0eb"
+        },
+        {
+          "json_pointer": "/documents/1/helper_command/0",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "c405f8ac869bb18c2c6e239b71519d224b8d9adf47db2fe4e6da9e866aba4866",
+          "public_value_sha256": "886c5aba94e78f3f5caf0f6aa9c20f54ba4c3f2b392de5fa3ede5b70f1258440"
+        },
+        {
+          "json_pointer": "/documents/1/helper_command/3",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "1c57dc8af2af3098c832da062dd61e12347d570a04ae11bfd000b8c82685ddeb",
+          "public_value_sha256": "3b66fe07ac5a545057aa5bab726ddd17d57d72590a22932c47dc880471ff8d94"
+        },
+        {
+          "json_pointer": "/documents/1/helper_command/5",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "f2e6c2e65fcd6e185889ff4bb4455345cdefcadb3ccf060509069db66d5ca282",
+          "public_value_sha256": "7b3dbf1470506b94caf1915ff90ae22d9ead3ea3513379994b285aa6aef7e784"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-26b/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-26b/verification.json",
+      "historical_raw_sha256": "4959f90ffc7162fe9d4edcc38a0f31626bf65e2e96513046d3a35bbc0e14d6cb",
+      "public_sha256": "edb06feb6c24268c9bdb9ce20902d0981c241d921c2ccd6adf4243ec4d740ee7",
+      "transformations": [
+        {
+          "json_pointer": "/helper_replay/command/0",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "c405f8ac869bb18c2c6e239b71519d224b8d9adf47db2fe4e6da9e866aba4866",
+          "public_value_sha256": "886c5aba94e78f3f5caf0f6aa9c20f54ba4c3f2b392de5fa3ede5b70f1258440"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-28/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-28/verification.json",
+      "historical_raw_sha256": "10b23e08c4079223a913542125bb85e07686686a53ffda9f3b9dc4fab0150f03",
+      "public_sha256": "5a77eaec3c495843803ef16e1b351a02303f64391aee4a0b67d92bbd11cafaff",
+      "transformations": [
+        {
+          "json_pointer": "/documents/0/helper_replay/command/0",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "c405f8ac869bb18c2c6e239b71519d224b8d9adf47db2fe4e6da9e866aba4866",
+          "public_value_sha256": "886c5aba94e78f3f5caf0f6aa9c20f54ba4c3f2b392de5fa3ede5b70f1258440"
+        },
+        {
+          "json_pointer": "/documents/1/helper_replay/command/0",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "c405f8ac869bb18c2c6e239b71519d224b8d9adf47db2fe4e6da9e866aba4866",
+          "public_value_sha256": "886c5aba94e78f3f5caf0f6aa9c20f54ba4c3f2b392de5fa3ede5b70f1258440"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-29/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-29/verification.json",
+      "historical_raw_sha256": "c5a6597d726ecedd6b5f7a548b3952bc984ddaa673fa772b0b75efeda43e84ec",
+      "public_sha256": "7c98aa5f8ad75f6d03af4cf2aecebb9d5b85402712e040a6d7d314dd74536619",
+      "transformations": [
+        {
+          "json_pointer": "/documents/0/source_notes_replay_command/0",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "c405f8ac869bb18c2c6e239b71519d224b8d9adf47db2fe4e6da9e866aba4866",
+          "public_value_sha256": "886c5aba94e78f3f5caf0f6aa9c20f54ba4c3f2b392de5fa3ede5b70f1258440"
+        },
+        {
+          "json_pointer": "/documents/1/source_notes_replay_command/0",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "c405f8ac869bb18c2c6e239b71519d224b8d9adf47db2fe4e6da9e866aba4866",
+          "public_value_sha256": "886c5aba94e78f3f5caf0f6aa9c20f54ba4c3f2b392de5fa3ede5b70f1258440"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-30a/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-30a/verification.json",
+      "historical_raw_sha256": "e167bae195c434858a444e64728e91bfcaf80f02322153d7744a6b58f2a00c9e",
+      "public_sha256": "9603caf6922278e25f090236fe07fb1fb8cc978182ad1bc107741e1929423b48",
+      "transformations": [
+        {
+          "json_pointer": "/documents/0/helper_replay/command/0",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "c405f8ac869bb18c2c6e239b71519d224b8d9adf47db2fe4e6da9e866aba4866",
+          "public_value_sha256": "886c5aba94e78f3f5caf0f6aa9c20f54ba4c3f2b392de5fa3ede5b70f1258440"
+        },
+        {
+          "json_pointer": "/documents/0/pdfinfo/command/1",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "35b57a45deffcb0372ac119346a78225f9a73d3e0956f4a6b39791cccba25963",
+          "public_value_sha256": "d4075fd5cbb034390240a9a644581b241aaad3bf7e8899de492838ced2784e63"
+        },
+        {
+          "json_pointer": "/documents/0/pdffonts/command/1",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "35b57a45deffcb0372ac119346a78225f9a73d3e0956f4a6b39791cccba25963",
+          "public_value_sha256": "d4075fd5cbb034390240a9a644581b241aaad3bf7e8899de492838ced2784e63"
+        },
+        {
+          "json_pointer": "/documents/1/helper_replay/command/0",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "c405f8ac869bb18c2c6e239b71519d224b8d9adf47db2fe4e6da9e866aba4866",
+          "public_value_sha256": "886c5aba94e78f3f5caf0f6aa9c20f54ba4c3f2b392de5fa3ede5b70f1258440"
+        },
+        {
+          "json_pointer": "/documents/1/pdfinfo/command/1",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "cb4d5a763cc5962c2da7ce3b8a6baf5b95bb4b37e8164bd2ab860e0adcc03174",
+          "public_value_sha256": "0909eaaef15f2fce0239a088be78526e5f5d79c959b846fcc22834cd63bc1993"
+        },
+        {
+          "json_pointer": "/documents/1/pdffonts/command/1",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "cb4d5a763cc5962c2da7ce3b8a6baf5b95bb4b37e8164bd2ab860e0adcc03174",
+          "public_value_sha256": "0909eaaef15f2fce0239a088be78526e5f5d79c959b846fcc22834cd63bc1993"
+        },
+        {
+          "json_pointer": "/schema_validation/command/0",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "789116a70cb1df7d0942ce2adbcc4fd5a9d93c5b392cf1bfb58a99c62f71204c",
+          "public_value_sha256": "1eaf43739c366c5c133fb6c0d5441ef4319b72841b266115e0c27bba969f5b97"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-30b/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-30b/verification.json",
+      "historical_raw_sha256": "24f2ceb4b8808f3c1e0fe1fe6adfb90412eb08d53c55d1b33678c918731abc0e",
+      "public_sha256": "e2ce3b24bdae903592ed2b245025b8deb7721abb0ad1c8ebf395076e065b60bc",
+      "transformations": [
+        {
+          "json_pointer": "/pin_checks/39/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "77d1bc11fdf7e36719b85dd3be156b104981bdf7b53cd740d654645763388b8b",
+          "public_value_sha256": "a2a974c796237042d80fdee13856c0ba42ff92d766c2e613736b1de31e443b0b"
+        },
+        {
+          "json_pointer": "/pin_checks/41/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "bfd4733a2747a6c721f3d4973690b9d3f6aa5d93bcfc120a150de1cd950ecbd4",
+          "public_value_sha256": "60ed5c2714ec01adbf8e18b0f2d43c7aac02cb6a072336c339fffd60602545fb"
+        },
+        {
+          "json_pointer": "/pin_checks/43/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "bb863bbdb92fcd0b623e6249593695f2bdb6dba1d21e79515bb343918189b0fc",
+          "public_value_sha256": "3d59494dec17194a1381d827caac9b0f2833cbd6e9e145a5d25b4b9ad6e7fb03"
+        },
+        {
+          "json_pointer": "/pin_checks/45/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "b6077a7bdf56ddca0eea1eaaca1e8210bd21da01303a18529a55e5681f7fb93e",
+          "public_value_sha256": "99c79ac144d77a0251d5605751c0e96a656895bc1ac3335636bc3dad40e0bd9a"
+        },
+        {
+          "json_pointer": "/pin_checks/47/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "07c532a9441ae852bc11d17618f26c9dbdc5389f76eafec461695c0fa4210d60",
+          "public_value_sha256": "e05aa53671961598e4b035bc149e8923dffd99bca65054941c0d8b3a603eddab"
+        },
+        {
+          "json_pointer": "/pin_checks/49/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "9148658813786b30626abe88793158f155cceff55f90c2310a51464723c832e3",
+          "public_value_sha256": "8b38484d065f64cda335e0cd0c09c8b41c39c613f9592feb899109b89cfd3cd1"
+        },
+        {
+          "json_pointer": "/pin_checks/51/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "70d7f536284f061677573b6e0c2f125d82c089bb4505de73a0ed93f39417e3ef",
+          "public_value_sha256": "b5d5856fbc2bdc280c53a53aba59391d845281107f054b2e014cf7634fbc0908"
+        },
+        {
+          "json_pointer": "/pin_checks/53/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "25952eeb9def28220905acd619aeefb19e17eff8e001bc09a7f98bc0f63ce65e",
+          "public_value_sha256": "ba0b8052495a05e956bebed274c67529b8657c5d0c15b522baec4eb229575e6a"
+        },
+        {
+          "json_pointer": "/pin_checks/55/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "16d693a280be91722f0369c060990644808b5e60438f67b479e239af72d75203",
+          "public_value_sha256": "1f866203376c07eb7762f670594f7117e0928fd041b90c92aaaa88ecc0ad73f7"
+        },
+        {
+          "json_pointer": "/pin_checks/57/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "282f31f94a9a51fed1e902ebc37aa1f9bd17b4ddab370cb5a204b3833ffa1bd2",
+          "public_value_sha256": "489804cab8e8851719d6c0b0ef4dc5ebf93c0f57f470e3e23366b7d49d0e8f53"
+        },
+        {
+          "json_pointer": "/pin_checks/59/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "b7429d3de2d14d328fab3cf491ba9c6abd45996fd229d281e9617050462cd4a1",
+          "public_value_sha256": "d701346f05e379a60b16501c2b47596cf812e3689971b9899dacc53f7a1a34d8"
+        },
+        {
+          "json_pointer": "/pin_checks/61/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "326c6058f1f530e7ba702f9d486108ab7e9d3a957c2bc490cc6178e7a68c76d1",
+          "public_value_sha256": "7acb2a1f53bebcc95b850039e0d50dbfac49bf565bfba674f4de820174d3cb85"
+        },
+        {
+          "json_pointer": "/pin_checks/63/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "0ed74c295d64d7a84a05ec58d7fbec5f2811adb78fdcd06907c95a705db7fafe",
+          "public_value_sha256": "629b23240a4db1817d7c1fdb02887ea216dba71713941c2b57b0ab7452e277ff"
+        },
+        {
+          "json_pointer": "/pin_checks/65/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "e7ac05f02461c8bce958854cc3f2240a0bb766db05fcdbe5b1a9f2ee0674d440",
+          "public_value_sha256": "e80679d98f6caeeaa5c35e21e1805709a88bfd35a68a784be3454a9ba3e1eb35"
+        },
+        {
+          "json_pointer": "/pin_checks/67/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "487ecf5d9048f0daddbea408722cc03e95e5a55e69d38c7e47de2e7193ba37c5",
+          "public_value_sha256": "9d20414eb8a5a9aee599127c1b4665928ae1c34d7549d826f34d5b6a1a099b46"
+        },
+        {
+          "json_pointer": "/pin_checks/69/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "3eda917353efda468c4e5e8b67e4581f6b9fda976e0eb4cef93952c8b5e6bb2d",
+          "public_value_sha256": "121dddb510853f983cc09a4b0a0673a4b40a99d967f044d11074a0f931662da6"
+        },
+        {
+          "json_pointer": "/pin_checks/71/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "34d46a543380070d4dc197761497387bcd06325413f5e88b7a149ce0b8d2e5da",
+          "public_value_sha256": "0e999fe8b6de1e2ac406b98dacdff8376b135e63430554e1f88b553f6966e331"
+        },
+        {
+          "json_pointer": "/pin_checks/73/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "1022a4cf300e2ba364d258cbf5abea71ee08e2c0531cdd9d2f8724394219a9cb",
+          "public_value_sha256": "f361ba20e2888306d093f649391f3958bc8eaa310fa873bfcb3fd5af141fbfdf"
+        },
+        {
+          "json_pointer": "/pin_checks/75/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "b990086894c95777d6c7ec709f7f0353d58db70819b0793cbd27b5c4adc4b938",
+          "public_value_sha256": "62c5709991c251764b10c8189d3b2357af224bc5774ae6e97d343381303c35dc"
+        },
+        {
+          "json_pointer": "/pin_checks/77/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "bd3af22c84442777394b5c9d9efeec85f93a0996364d5f6e74ee6c1444501a11",
+          "public_value_sha256": "46205feee49e3ac86317dd41a631a55873317af26708d3f095a0dcc7a675ce38"
+        },
+        {
+          "json_pointer": "/helper_command/0",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "c405f8ac869bb18c2c6e239b71519d224b8d9adf47db2fe4e6da9e866aba4866",
+          "public_value_sha256": "886c5aba94e78f3f5caf0f6aa9c20f54ba4c3f2b392de5fa3ede5b70f1258440"
+        },
+        {
+          "json_pointer": "/helper_command/3",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "0576dccbc98790b81e76b1d5049469a96da94b477d5c88dc742285e5cad528a5",
+          "public_value_sha256": "c32c4fe6480033e7984fb0e092dac47e8f38a9d57215a6ee68ad75140a9bd5e7"
+        },
+        {
+          "json_pointer": "/helper_command/5",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "34f7e4af8e954ef3aba1606de109ffc6b09424213b68b7141e366e61939fb2d5",
+          "public_value_sha256": "d805037f5af42347860208827e3998fc23f9803cf1cf590430b59b0816c9d3c8"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-34a/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-34a/verification.json",
+      "historical_raw_sha256": "f290bea18d3f2dd7ba9b2fb9de91b2f014d0717e54ca883e6c192d8b3bda27ea",
+      "public_sha256": "a0a3f1704f59e58d19f67c0419767c73ae7f2f2583c627b268ba6d103d487b03",
+      "transformations": [
+        {
+          "json_pointer": "/helper_command/0",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "c405f8ac869bb18c2c6e239b71519d224b8d9adf47db2fe4e6da9e866aba4866",
+          "public_value_sha256": "886c5aba94e78f3f5caf0f6aa9c20f54ba4c3f2b392de5fa3ede5b70f1258440"
+        },
+        {
+          "json_pointer": "/helper_command/3",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "d952d8d00648efc2a7592a5f56cee52e14b15e51c975fa177703f9c25355930b",
+          "public_value_sha256": "d926de0553f0132aa920ec3614f09833876fd3fdd05181d4f12c84637b146e44"
+        },
+        {
+          "json_pointer": "/helper_command/5",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "8f37e5b4b92ca40b6c8ecfdb87abb2d045650b93d25d26d8230ca104d1def587",
+          "public_value_sha256": "f5302e988be4269bada0006e5e63c6714817c5919af61e6d45b9858ec8751cd3"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-34b/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-34b/verification.json",
+      "historical_raw_sha256": "da92e3b0d5efa7c4f095a60b7ad8d3a73be475c881c812ae9775ed03151ad19c",
+      "public_sha256": "825d55ccf13928516cf149e4b9e8a8aef30bf50eebfdd44c2e46a8b03a86cfa9",
+      "transformations": [
+        {
+          "json_pointer": "/pinned_files/61/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "8943e198df7f3ed7b277c45c0cfa1d6d452e16a1d0927ee789e4397c634e03fc",
+          "public_value_sha256": "514a3233d08450c609d90afe6873f308d479162847e1167188330f7d32839d1f"
+        },
+        {
+          "json_pointer": "/pinned_files/63/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "8999851d4c077eb8519548b7170dd948e1c2defdb7b2612397cc18a9a9b1d423",
+          "public_value_sha256": "bedf1d5ec886ed6d4159ef551f4f72bfb8a10cbaed12c2d3be8922aa8d4cb55a"
+        },
+        {
+          "json_pointer": "/pinned_files/65/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "dfbca570ee7ec4dadf681581b947882f1b3d313a29448c1772537b8f5cfb2fe3",
+          "public_value_sha256": "f84aa2de2f24bad8ca6f4a540b45cf42b5fbf295b1cc527791f1a811ae7235bc"
+        },
+        {
+          "json_pointer": "/pinned_files/67/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "d52057ecb3bfca8bade63a70a787a9c0789167d8d9ebee4a35d0a18548dad7e0",
+          "public_value_sha256": "7632f0ca1059d5e71e1faaa3685d6d093778fe88789c3907086df943e6038ff9"
+        },
+        {
+          "json_pointer": "/pinned_files/69/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "2077645b5643126cba9ecfa593eccfcb3243a4d509ba937d0999d8681c0c8834",
+          "public_value_sha256": "03c35624a9d30d6743fc4ab0cb79fc0db45238ad071cd5e0b2aa623ef9255403"
+        },
+        {
+          "json_pointer": "/pinned_files/71/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "e0d5a2e0a526c2082bf6ae388355d96b390859e751adafe01fde96e6a43a0227",
+          "public_value_sha256": "a85417b80743af78260e9ded12f45d5e3c0f220285111a2e13d0ae845e11c6dd"
+        },
+        {
+          "json_pointer": "/pinned_files/73/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "af6b14edbed8ffdcb54089666fa6413f745bf07d44e43df2dc111749d6ac68a1",
+          "public_value_sha256": "dad8d6bca9798db60f791c236a0c7b82e5c29bddbf15ac46e38672ffed799c1c"
+        },
+        {
+          "json_pointer": "/pinned_files/75/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "7ead4f5ae679ca20c9c3c8fda8262423ce20fb13759e074a61c68af240db447c",
+          "public_value_sha256": "57d104d1e4a15e5a35114bed781f8e3522a0a18e59a3dd8db49088123255b990"
+        },
+        {
+          "json_pointer": "/pinned_files/77/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "fbb4518d29e365b2b2e3b5e787d1e51faad2e9539a59b8ca2419841e9e24283b",
+          "public_value_sha256": "a5e86a2ed02db7b320c88b44ffcef5365ddb8368ee4da3d8f6b6a4d953ac4a9b"
+        },
+        {
+          "json_pointer": "/pinned_files/79/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "7b06f5d8809e8e15c20150a30aedbf5045ce909886c15b6b3e2fff908bc9b6b7",
+          "public_value_sha256": "4ae004368c2a8ac925081594bc0c918336ce9683e8c00b8bb56661cc669d3946"
+        },
+        {
+          "json_pointer": "/pinned_files/81/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "1aaa6eac5be7aad9fbbedca8dd4b1756b5fcf0566065036965a487c7c1d774ba",
+          "public_value_sha256": "12e275de5fdc242da2376cb0afadad332008546f59a7f924b29a655fc825fa2b"
+        },
+        {
+          "json_pointer": "/pinned_files/83/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "18b0c6b9858d4546a95e619842c42de455d1746c604d0983e32aa1749183ef7b",
+          "public_value_sha256": "9c9aa9df1aed77df61f3fdb6be582094e74046474c19991a2aebc4590747cbce"
+        },
+        {
+          "json_pointer": "/pinned_files/85/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "92fa0097f405fd71fd52ebde8d390fd4b81293185d9de928390617c3b471ccd4",
+          "public_value_sha256": "88d3a29e5118c93694a9d6900689d17fde8008d44cd30df53024aa55aed0970a"
+        },
+        {
+          "json_pointer": "/pinned_files/90/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "05a5ac3ee346667ec793b267c64ce2bdc0439663d5d983e692a17e829d3dd985",
+          "public_value_sha256": "5cc9fa79e33103ff7eb967065a8a10a76ca84b49b7d10c6ef4de88237153dfd7"
+        },
+        {
+          "json_pointer": "/pinned_files/92/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "f43f5c707f78afe9ab9f7d9f98afa698de8dc85442f41338fdba6c43319c7e75",
+          "public_value_sha256": "d3c02780e6a88b3fdc437eef7e7234020a0decccbf8d171f73452411d3748846"
+        },
+        {
+          "json_pointer": "/pinned_files/94/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "1bac7c491957dab5bd4769ea2fceb9e7bc41bc04891d2a30ef29e5d9d1496bf0",
+          "public_value_sha256": "426a53d4cec6df00bcc5c159ff15c8dfba261df29e8e2882c82e685c07adb5ef"
+        },
+        {
+          "json_pointer": "/pinned_files/99/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "8a74c58c5885f969840bd227e783aa073ae3ce92fd2a1bdf9e154057b69b348c",
+          "public_value_sha256": "b08236f23496f73ef065eb5815dc82e1a426d588901f6a1fe3ddf1b66b84dd84"
+        },
+        {
+          "json_pointer": "/pinned_files/101/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "87c24511ecd17c06c43abecdf55403e740512a282a99dff17dd3092f5f2c54c3",
+          "public_value_sha256": "9de9c22293a71833b7600f282ecbad5eeeb51fd1ed05a2218bee8ed4808e7ff8"
+        },
+        {
+          "json_pointer": "/pinned_files/103/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "4a2a895707fbf1570d1a008d863d7f7996797530f8faacea80c51282e8db3862",
+          "public_value_sha256": "83970de76d9923914c8c6eaca428359dc1d5a18217bfc3f4c9c1a4f68fbfbee5"
+        },
+        {
+          "json_pointer": "/pinned_files/111/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "9a5260d38d6b99678a413ac61a582961e70bda84558f778ddad224495101e3c0",
+          "public_value_sha256": "5d0cfa4bdca5c6dcf7ef0a664d151688ac97c082667046b5f7eb42c5e56b616f"
+        },
+        {
+          "json_pointer": "/pinned_files/113/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "7c7505fa0963c4554ec0cfada287ab9d1ab15e67a4837646cf178fa8075b4d0f",
+          "public_value_sha256": "c9bc6ef247fddf0431cba8da24d1d9300448c4402977a1ea3f5e7823e8b9918d"
+        },
+        {
+          "json_pointer": "/pinned_files/115/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "8a9e39118319739fda5826c74838b061ada94c2ba8e0124182602c93036bd131",
+          "public_value_sha256": "1ea368ac5330ca0b43d160ccdf4a73d33243c633bc126b6ed540680391b6637d"
+        },
+        {
+          "json_pointer": "/pinned_files/117/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "e7f04be4edd2023e26d0fb2ac3ea1a81afc9c44fc27aa3e229f26465a08f3352",
+          "public_value_sha256": "2bb0f3e4f71cebe752ca166475982f46da472406b1477c0552b0b090f39df322"
+        },
+        {
+          "json_pointer": "/pinned_files/119/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "b3ac8ba5bae62f46a8ce82ace9fb9c74784618b9e4af67e7d396900ef646a7fa",
+          "public_value_sha256": "b2af3b7dec466895ba7d31a827a165abaef9777af3eec39bd240cedbbdd72b4d"
+        },
+        {
+          "json_pointer": "/pinned_files/124/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "f03d58bdad475c600c67f4ee6318bb1cf8f759b586291b35f699aa8d6ee50a06",
+          "public_value_sha256": "0873b9c1224bf8586756232c0406cda411ae581b764137c11a5a4dfc6a2e6a0b"
+        },
+        {
+          "json_pointer": "/pinned_files/126/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "a171d3e048046b0d2780444d63d58c43ab7af5bd390242459430de036d502d59",
+          "public_value_sha256": "10783ba53047361f8185cf47f036b0e3a31b9a60a7bcb039c9acb036b442fd0b"
+        },
+        {
+          "json_pointer": "/pinned_files/128/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "e7bc713176d02ce49718fb3e108bdb7a0ab9679cbed1fa7567aa9c534733612c",
+          "public_value_sha256": "048afac9053438f8db4fa9dea7201870e2f8210c3663559b3f42a59ebd36bcdb"
+        },
+        {
+          "json_pointer": "/documents/0/helper_command/0",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "c405f8ac869bb18c2c6e239b71519d224b8d9adf47db2fe4e6da9e866aba4866",
+          "public_value_sha256": "886c5aba94e78f3f5caf0f6aa9c20f54ba4c3f2b392de5fa3ede5b70f1258440"
+        },
+        {
+          "json_pointer": "/documents/0/helper_command/3",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "20bc3772fc453a9a69268c608be7381751718762b140c423f801760aaf5b6ab5",
+          "public_value_sha256": "d5a5e06ca429303f86d9491e488f696e91dec3798598ee2cd2600cb0da49bbe2"
+        },
+        {
+          "json_pointer": "/documents/0/helper_command/5",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "317db0af17a14ab1e45737647d0691a573dc435ee73e79a8c95903908616c799",
+          "public_value_sha256": "5bff0637db24c0c816c992e435511d7fc408c3256b5e1d1ca294240946e41b60"
+        },
+        {
+          "json_pointer": "/documents/1/helper_command/0",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "c405f8ac869bb18c2c6e239b71519d224b8d9adf47db2fe4e6da9e866aba4866",
+          "public_value_sha256": "886c5aba94e78f3f5caf0f6aa9c20f54ba4c3f2b392de5fa3ede5b70f1258440"
+        },
+        {
+          "json_pointer": "/documents/1/helper_command/3",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "33375e8826fb3b77db4a4b287aec957abb12798acfbd17cbe5509900cab87677",
+          "public_value_sha256": "1db452a9cf05688a5fc8add1dcaf151df7a73f3d355042ad45af66054713d0f2"
+        },
+        {
+          "json_pointer": "/documents/1/helper_command/5",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "dd66e4ca221cbd8b1dd8e041fa67e433865b22bf7bfc78f3ccdb62f81cc5bddb",
+          "public_value_sha256": "6422eda8abbb1d09a8c4c92f085074bc2e6e8211f7ac5f761a51011fcc923059"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-37/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-37/verification.json",
+      "historical_raw_sha256": "af25b2b3a5cf2a2af727b74bc2a703248fe5bac0c13c1b7eff8aebe42b9fef3e",
+      "public_sha256": "224cb58aab74e7ec84c75b2c9a067f1083a45e3888c8e79c98b64f03f8dbc33a",
+      "transformations": [
+        {
+          "json_pointer": "/pin_checks/159/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "c3a810b3ad39cefb98cf8fc0d979fca384b605de4dc9dceafb75a29b39c78a74",
+          "public_value_sha256": "a23322d82bc7378045b65a64beefdc9e986f435deee11a46da73cf2abe970f85"
+        },
+        {
+          "json_pointer": "/pin_checks/198/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "353fe1ef532f22b5cce0a600b3fc7c819120ba48b2c415102a954576a7904459",
+          "public_value_sha256": "3f4ac3b4d3748211fbfb4d56461e87b7fcfd2c25ffd0491376a0ffe4857b1d6a"
+        },
+        {
+          "json_pointer": "/native-parent-raster/command/9",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "5d8b072df9414554c8c9d2dbf637e581411cdc94b116a81dd50ed06105a494b4",
+          "public_value_sha256": "8ffd7588171e9d73a39c9ca690cf9eec7f3c817d54af601a4c931feafdf86b67"
+        },
+        {
+          "json_pointer": "/native-excerpt-raster/command/4",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "bf72bb149882fe8b1bc26073672abd521d2804824b275543ccb6fb5d9e930b9d",
+          "public_value_sha256": "3d638ad25e9810fd6578b74b54ac4db57778a2b93e5559738e33fb633352736d"
+        },
+        {
+          "json_pointer": "/native-excerpt-raster/command/5",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "f1566209befb93c83f6b404b2136159f5a87da7df2c2f2761a6ce39c42cf1592",
+          "public_value_sha256": "a0d92ae3296cce3824c1e3293ee6897cdc160251b545eb66961f5b83c25c93a9"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-39/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-39/verification.json",
+      "historical_raw_sha256": "d4eff55f6bdb62dafc8009f536dcda83e0b0051c7a93296b1580aa9a748a8ea2",
+      "public_sha256": "8c4bc0f486820af2189823904b59fd8abe921b06f2df262f9d9410a7150b216f",
+      "transformations": [
+        {
+          "json_pointer": "/tmt_check/command",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "50a2ad7edd266c6a4011791a4bd13b1ae93a9e5d30f19c96f16e7b5a5ebf430e"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-40/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-40/verification.json",
+      "historical_raw_sha256": "cb5374ceadd262849a9f40e7855d6c8e025a1e80caa3270d101a86e53df2bced",
+      "public_sha256": "f019c5ce0953527469d51fca4a914f04705f5290ee8463e1821a98688ef201f9",
+      "transformations": [
+        {
+          "json_pointer": "/commands/29/command",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "7491f7912446f4e314df45cbc30800ea253bb826a0fd6ee225c72ae87b0a68e6",
+          "public_value_sha256": "44005e6a96200c363ca52e2da9fdca8119b3461726546aa93ab52add83d20e5b"
+        },
+        {
+          "json_pointer": "/commands/30/command",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "c81c241da20b45933f844429b2aa9736637de33775bfa2e4dd6de42bd9b17732",
+          "public_value_sha256": "6471fe5dcadd8212af715e5f1f6d685784e02b853ec57abd7e3229eeea86ef85"
+        },
+        {
+          "json_pointer": "/commands/31/command",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "03a3112ed7cef800616ae87093ec8b78d850027fa34d1266e09f583166a5abcd",
+          "public_value_sha256": "f185886b1a578b819ba1de648efe5cc5ea28cac8e40f3111c2c61a88bb2b1b9a"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-41/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-41/verification.json",
+      "historical_raw_sha256": "918e444459dbb1ce80f808345c3e2713cc5c0ca27cbc74a086cf47dde1fb2173",
+      "public_sha256": "2da19b19306b4e36b45a4c4a1c5dc8a2aac48dd8ff0cf3e09aaf1bc688bd978d",
+      "transformations": [
+        {
+          "json_pointer": "/commands/2/argv/0",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "d055670c674f2c3895a46dc6c7c3feaa9f33f595f599193ec15795532ee49301",
+          "public_value_sha256": "2fd5d4fbe7bb39849fd44a50abc2735242a08369ab09f27d3c681c61693cf099"
+        },
+        {
+          "json_pointer": "/commands/3/argv/0",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "c405f8ac869bb18c2c6e239b71519d224b8d9adf47db2fe4e6da9e866aba4866",
+          "public_value_sha256": "886c5aba94e78f3f5caf0f6aa9c20f54ba4c3f2b392de5fa3ede5b70f1258440"
+        },
+        {
+          "json_pointer": "/qpdf/checked",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "1e213b985d719714a290b11bce388b6319862ef6c0941482e09e6dc411fac6a8"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-43/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-43/verification.json",
+      "historical_raw_sha256": "dfadecc35dc97eae071ca26a4253954eda205e05be8ded74f530633ec91d52d0",
+      "public_sha256": "37d109353968099df77ab4e72dafa05ef162b00501d6d46b7857f5384bc66e09",
+      "transformations": [
+        {
+          "json_pointer": "/pins/35/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "660557fad9a96e6a32f0248ee1394fb0a92fca2d8895c95e8318e9dfb46c1cb0",
+          "public_value_sha256": "830ae959a92fdeff7b9265cc8c4fffcc2a65602e7e0820839f2dbf597cad9a93"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-44/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-44/verification.json",
+      "historical_raw_sha256": "b612543eabe734299e3100de5d328a3302acea5d5b8ae27e769677d4fef50543",
+      "public_sha256": "cf0de9e35ddb1b81e7ef5423b9ed5f66c0948edbfa7954007b11feedc7fa7337",
+      "transformations": [
+        {
+          "json_pointer": "/pins/74/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "660557fad9a96e6a32f0248ee1394fb0a92fca2d8895c95e8318e9dfb46c1cb0",
+          "public_value_sha256": "830ae959a92fdeff7b9265cc8c4fffcc2a65602e7e0820839f2dbf597cad9a93"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-47/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-47/verification.json",
+      "historical_raw_sha256": "3922141f9af04d4e41998e77bbec9e140665836fa9eaf8af4e5df1cbbee70dc9",
+      "public_sha256": "f4bc0e456fdadc37647beb27f95d4e249be8a2b2ed7f4f6dcbe6ecbd5148c1b6",
+      "transformations": [
+        {
+          "json_pointer": "/pins/7/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "d2374a1e8ec2b9b1f3afa98ee1d01858c28efd36e3c4115bbaba42c017b3cfb4",
+          "public_value_sha256": "adc6b951c92770358b2a978ce72238cbd319320b5d5bc3328bb38f8d140dbfa8"
+        },
+        {
+          "json_pointer": "/commands/0/argv/4",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "a88b4a2e24d2e1f6a572b3d0d8f4f28cd1eebe8697e2df77c655b1ce97d1f41b",
+          "public_value_sha256": "6108653e76f467995ce1cc7eb4f325bea4f9516467e2b0040d04a3ad940d6996"
+        },
+        {
+          "json_pointer": "/commands/2/argv/5",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "0c6719b53c6e212d317a071ae6a2909d6e36dda4005d4f55673acd96640b7fff",
+          "public_value_sha256": "6d70634f94ffd5d0349a8d1c08fd4361e39bd03c0889e30536f5ae2299271dbc"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-48-aggregate/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-48-aggregate/verification.json",
+      "historical_raw_sha256": "5347b0b55fd32a584d0ef45e894a6078dd669144d022c1735341008f3976cacc",
+      "public_sha256": "e78bd9e754fb789e705d1ab076d08371080ee9ea420447d15b33d706c9fb964e",
+      "transformations": [
+        {
+          "json_pointer": "/assembly_script/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "eba597d0824381551fd33cec9079648a85c78e85395aaf5056b8b939b670b1f0",
+          "public_value_sha256": "09276b0d894fe8d3a5aff50ee12822efceb22aec55c3a6e77b4371b5aee372d8"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-49/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-49/verification.json",
+      "historical_raw_sha256": "6033588145d5086ec4ffaff42e152a579a8fb3af2467e9de21237154c0d24998",
+      "public_sha256": "f05fdf90d7ad6161062e564d451d2ce01c30a9c7e9c631b8c6722a77861d12fa",
+      "transformations": [
+        {
+          "json_pointer": "/pins/54/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "d2374a1e8ec2b9b1f3afa98ee1d01858c28efd36e3c4115bbaba42c017b3cfb4",
+          "public_value_sha256": "adc6b951c92770358b2a978ce72238cbd319320b5d5bc3328bb38f8d140dbfa8"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-50/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-50/verification.json",
+      "historical_raw_sha256": "1f43c00f6a314c49aedc35da04607de3f92d4ac81212bc3a078796461a2f9b71",
+      "public_sha256": "9ff117ad83858a192221838574f302df2e9721304c1ea35c79ed7514af561679",
+      "transformations": [
+        {
+          "json_pointer": "/pins/51/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "d2374a1e8ec2b9b1f3afa98ee1d01858c28efd36e3c4115bbaba42c017b3cfb4",
+          "public_value_sha256": "adc6b951c92770358b2a978ce72238cbd319320b5d5bc3328bb38f8d140dbfa8"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-52-pages-a/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-52-pages-a/verification.json",
+      "historical_raw_sha256": "ec6454d56e1b85b724335363579f31c8bb9e80fd8fb3b3d43a6328dc49e27af4",
+      "public_sha256": "a1648e70f37afecdf62c4c0c3e8f11102d65e54d1af9c508e2784a9d7015b813",
+      "transformations": [
+        {
+          "json_pointer": "/commands/pdf_structure/command/2",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "62838d48a27cf98617da33cc2a66f6749c591fe73c5932292e895aaac4704d86",
+          "public_value_sha256": "4336c9a24f74d4c5a1b3aff7d27d015648f37f4bf3c733c680f3a46a2d4ce968"
+        },
+        {
+          "json_pointer": "/qpdf_limitation",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "ab831646f27a5ebf968ba0038aa3fd0a884da2b11c58d279a34bed44b2740025"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-52-pages-b/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-52-pages-b/verification.json",
+      "historical_raw_sha256": "7d83c5b11949af2f775a9652f916855e0396b48371e0fadb879a870e520a8743",
+      "public_sha256": "8e17aeb18cd7e3618200378ec9c2695dd600e43c15baae3314e6780dbc33ef8a",
+      "transformations": [
+        {
+          "json_pointer": "/raster_identity/pins/0/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "b18ea44499a49c6e0e823ed7fa349aa1da36a3776f01ea81f944dbe5b42c7a9d",
+          "public_value_sha256": "6425f6f380200b5d0a44277b00dbaa715bffb1dec0a18a097e6f5a7d7da7762e"
+        },
+        {
+          "json_pointer": "/raster_identity/pins/1/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "b981f684aa1b6bd0e963f142c9cfb88f4192c011777d60ef151562b5c62b572f",
+          "public_value_sha256": "9f40cbd30eb729e419cd01793556df602abfc49d48e5bfe5aeaeb18a6729dbdd"
+        },
+        {
+          "json_pointer": "/raster_identity/pins/2/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "231a947785c96d792fbdab642c0cfc4b72f9558f70548989afe8be23974eb25b",
+          "public_value_sha256": "78cad1b13d315fecfa41a7bfc76d3cc1481403c0ecad1663b9d39d42c33f9d0e"
+        },
+        {
+          "json_pointer": "/raster_identity/pins/3/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "a1bf7223e59f4e9baf285f98451411def85ddedae738b2149fbb90f8d6f0a7ee",
+          "public_value_sha256": "ed1b32b2c47ffa168573ef673e577f94ad189c06665a653e9181a96ff02b2e52"
+        },
+        {
+          "json_pointer": "/raster_identity/pins/4/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "5b28a539b03c908c9a0b8a011b97fac31fb80ea20361c1c6dcc6758316aa9083",
+          "public_value_sha256": "1260516321e57e1dbf4755b01d4fa2a7bd6c7686c8a2d2fbe8fb5d8f4997a33c"
+        },
+        {
+          "json_pointer": "/raster_identity/pins/5/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "8083d5aafcc75e894eca4dae6807d6f967f183e0751973b04bfc6d18624e71bd",
+          "public_value_sha256": "660638e2d0496d770912080ec74b3b4452a26b77e34700a2ffd5faf8d18dfa49"
+        },
+        {
+          "json_pointer": "/raster_identity/pins/6/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "115da73baf4bd7fd1ec68f6e45de161aae2f6f0d0f707fa94f5f6a30e6552dad",
+          "public_value_sha256": "5a139d327dfa5b6e02abca5cdcd597f5a8cb369c27de3454c7bf32319e9bb337"
+        },
+        {
+          "json_pointer": "/raster_identity/pins/7/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "bb91da1779d1a9d0afc682832b122ccaa7b5daafecad4bb474a44c6eef7bec54",
+          "public_value_sha256": "cf548d92df45e47d7dfc0bd35902cc7f2170f4d91325c6db8d9407d1af483a16"
+        },
+        {
+          "json_pointer": "/raster_identity/pins/8/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "ac8a0917ef6e0f6cbda682d32d1c9969dea4159a061e80d892d0b200a6f909ef",
+          "public_value_sha256": "b565f42afdba42fd5aab89c3f745863942a45cd05dc4aaa94e6ebb4a5b761ee0"
+        },
+        {
+          "json_pointer": "/raster_identity/pins/9/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "3a3dd8eaacc7ed809e1a7092528c7143c9add9e0aee8d665fbb1c6da11d5345d",
+          "public_value_sha256": "7ee941648acddd397506498642bdaadf648bcc0d5428aa26c36f442a89b2c23f"
+        },
+        {
+          "json_pointer": "/raster_identity/pins/10/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "f3f5015ac9db33db7afd34f646add2dc01d346be3a8f0267f2db79ab6ca6378a",
+          "public_value_sha256": "331282dc64a25b2020b6df2589ce7bd918daee66f001612cf43c80d26a634444"
+        },
+        {
+          "json_pointer": "/raster_identity/pins/11/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "9a0b18790342d60a36c0f6983d8be8572af0f84c1a9b696685d7a3c4bfed60ec",
+          "public_value_sha256": "b2ca8dd9483b4a6d30d352fdc4244d5a4b8f2311e64c6495b12e850f023544d6"
+        },
+        {
+          "json_pointer": "/raster_identity/pins/12/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "55dd0e87ab9f40116032a53935b33d20ea2db487483c9e80cf6ca4eed8cbbc29",
+          "public_value_sha256": "88e280cbca9d1239aa4f6fe57a0226b204ff6e2530936b91140d1f1bed62295f"
+        },
+        {
+          "json_pointer": "/raster_identity/pins/13/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "5fd7a2a49c4ea1c3f7c646725ccd92e0c818556ff4aa0acbcbd91c26483c8b9a",
+          "public_value_sha256": "ccd6aa8063e1af0e95535ca6524e4759c097fe3233b3819148bb46b65fb07290"
+        },
+        {
+          "json_pointer": "/raster_identity/pins/14/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "fbc5459cfb836e5250a1350d261c3c1958144afcf7278523161aa25bfad22517",
+          "public_value_sha256": "1ccae0f70d1a3a9cc4a180368c79c0cc51bda1b590f9cc3c19e16bf174ee6674"
+        },
+        {
+          "json_pointer": "/raster_identity/pins/15/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "b1e93c2c390dfd70782ffbf479dbc7731b30ec0f6d84cc51946c31ab9456e44b",
+          "public_value_sha256": "86da5de9ae1feb863b76fedb5e17f70a334ad0d808105ba59868701c40e39bbc"
+        },
+        {
+          "json_pointer": "/raster_identity/pins/16/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "ea49bb71b3bae285e420f72eb93e9184ff26f40b5ddceb5c27f4b40abf1a4795",
+          "public_value_sha256": "6415f510a54825049ad94022f10f44d3a6cc09d0e5f8bd69b268cd09fba9dce1"
+        },
+        {
+          "json_pointer": "/raster_identity/pins/17/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "7d9f7144550ad3f17b5170d80f60e488a721766fd33fbc68cc6e862a64a3600b",
+          "public_value_sha256": "6d380af826afb51a66a747706bab51fc09fa87207635813fa04ea485e8f3bea3"
+        },
+        {
+          "json_pointer": "/raster_identity/pins/18/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "d12f33c28ad0e2a187ede258db633996e86979e500d8822ff75e484535edacfc",
+          "public_value_sha256": "23199bb96db40a837d441d831082ef7a2e94c6034548d85eb99f6631cfff207b"
+        },
+        {
+          "json_pointer": "/raster_identity/pins/19/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "55453bb2e1dfd13f17ef525cc54c623c908c446d7eb43acbe49f29153557d3a9",
+          "public_value_sha256": "14d6a3767e5a276d16eb285e0a6a4f9fdd0865498a95a2cd1890e785e0ddb090"
+        },
+        {
+          "json_pointer": "/raster_identity/pins/20/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "43bc264aecc71375dae60e706d399a1453e94c2a1cd334b5bd721c2b9a92ce1d",
+          "public_value_sha256": "da51e736a05d57d7d5103f8ce0fdc34e3668e050c148b190000602367798e0e6"
+        },
+        {
+          "json_pointer": "/raster_identity/pins/21/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "61b1dd133790e3d3077153cc42e91992ed50ee2518ac111e1086abf8b5a3bec4",
+          "public_value_sha256": "d4531f631016d9ad01ae528bc513c23398e8b796486ea4b57f52536bbda7763d"
+        },
+        {
+          "json_pointer": "/raster_identity/pins/22/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "d1a4ff74978c4959e8e6aacc1e8d56d0661651e198c4229ca0f92678f45288ff",
+          "public_value_sha256": "7cc59b96c22fc0887e416a2427ca5aebb95f2a51ae5b680586fe9359a046e87d"
+        },
+        {
+          "json_pointer": "/raster_identity/pins/23/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "25ba3e305a2c78d618398fcaa91dc9497480137129bfa1cdfb90ba3b6d22353d",
+          "public_value_sha256": "b1b7627e232f2bec9db386952234ea08466d42b72a8c93fc4ce668d081b378af"
+        },
+        {
+          "json_pointer": "/raster_identity/pins/24/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "3a9b4df8b1673c553e4bbde80e9f0bfa71a5a4e9bd063074ca665b58ad1b0f34",
+          "public_value_sha256": "7cdce961534d3a6862152047c3aa822eca5027b895417d207c0c13ef962e3c09"
+        },
+        {
+          "json_pointer": "/raster_identity/pins/25/cache_copy/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "14fd37ba131cff3798636ee0a476ec9a989ba248efb84f9a53d1e5f99f33afc7",
+          "public_value_sha256": "46123cffd1f97f959f85499f778963166fd751c1ba0c61e2c8942651ef04a624"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-52/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-52/verification.json",
+      "historical_raw_sha256": "4a1c5c7e34b4c2c38e875ac1fd6e5473c460c710821e9416d0b6b669c7c4f25e",
+      "public_sha256": "5afccaaf08442a76bf7e40a2a65a9045afdf7aef7782ef044c6036c235ca816a",
+      "transformations": [
+        {
+          "json_pointer": "/assembly_script/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "279c027fa15fac2c67c6e3205f2a5d1504d7e1c11fbb2df7948f6d648c4cfef6",
+          "public_value_sha256": "97f617b3d149e9edc8d49b6fcef49117efc5f134514abce3ee3917de8dea7187"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-54-replacement/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-54-replacement/verification.json",
+      "historical_raw_sha256": "6f8032a389b69b3f55b3b188bf5d1f8f9cc86f64cb4b30cb629a2e1e24b4f9ef",
+      "public_sha256": "058552f07d86c0dd55af438e106fbc2cf426b7221b9c0eb8f3f66bcb61a848e9",
+      "transformations": [
+        {
+          "json_pointer": "/pins/34/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "56b010512b17b4f05dbc682f2f27eb02ee1b6e91f27eec50d17550e524cab9d4",
+          "public_value_sha256": "085ad24092a4e4d3f6cae42b9bac8148d3c46e602bf3c4259fe23e870920ffed"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-55/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-55/verification.json",
+      "historical_raw_sha256": "9dc8b1bd649c8b28d81924ab2847611fbfe97c62e23aedecfe82eec4b73225ab",
+      "public_sha256": "2fc96714df8057e314e97f0950394dd3ac8d01ec0dc79b4adb871dfa7831ee2f",
+      "transformations": [
+        {
+          "json_pointer": "/checks/32/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "56b010512b17b4f05dbc682f2f27eb02ee1b6e91f27eec50d17550e524cab9d4",
+          "public_value_sha256": "085ad24092a4e4d3f6cae42b9bac8148d3c46e602bf3c4259fe23e870920ffed"
+        },
+        {
+          "json_pointer": "/closure_rehashes/32/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "56b010512b17b4f05dbc682f2f27eb02ee1b6e91f27eec50d17550e524cab9d4",
+          "public_value_sha256": "085ad24092a4e4d3f6cae42b9bac8148d3c46e602bf3c4259fe23e870920ffed"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-57b-aggregate/verification-public.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-57b-aggregate/verification-public.json",
+      "historical_raw_sha256": "b2473f3317599d04c340d7f78aed01b92430615e99be5978074045be35120d4a",
+      "public_sha256": "ac777e67654e94ddbdf4bf094636d04343c868f49f302a9e29a5a63d33be035b",
+      "transformations": [
+        {
+          "json_pointer": "/assembly_script/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "d452db78ec1a60f47ff814ac200ddbe8531c291f9cfb0e37c4b1bfb376a25f1c",
+          "public_value_sha256": "482d46ee0f5bd647843041229948ee4816a0b40adb25d2b0f366d2fb4a2822a7"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/input-checks.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-57b-recovery/input-checks.json",
+      "historical_raw_sha256": "aed672a772ed96a605f9213026e12e6123baba2fa2158b39e7c74323e5ad20a2",
+      "public_sha256": "4f7b66ea403709c6f2ec7ddb5643d505e5377f3392be56905614e94deb75c651",
+      "transformations": [
+        {
+          "json_pointer": "/59/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "67388e080289b052c6e5bd38fe2a765ac670157b77b43fbd4e2a52a7c7cfd87c",
+          "public_value_sha256": "304e35feb2cd06b9f1967959f67bed35a613a434c017f429e3553a1fc3f665c3"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-58/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-58/verification.json",
+      "historical_raw_sha256": "f862db595f19fd989a9a43029eab4ece17207034a3bb6ff6504c72439081f7cf",
+      "public_sha256": "200a59ff48c649e4972155b7d66cd957dd597b3b12cf062ddc1eaa8b219c474d",
+      "transformations": [
+        {
+          "json_pointer": "/new_actual_views/0/image_path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "26f40249130fa262ea2ce92680976ca6e198703b894f84f6ce3e9ffdfc9d83f8",
+          "public_value_sha256": "add0a5d3e09cad2e834ca5dc5c25ade5561bf1a86ba371defe0cda99c2cd7453"
+        },
+        {
+          "json_pointer": "/new_actual_views/1/image_path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "fdc38671442a37cfd50434c8d18f04a476165cefe3934bed977e13646c7ed381",
+          "public_value_sha256": "5412c86879991090961b8b63878d5592a3f48678532bd2f3034fb28a5864d630"
+        },
+        {
+          "json_pointer": "/new_actual_views/2/image_path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "37070c85c3fbc02c89ca4a504bac675b3ffe6452acf70e8f78403f9f6bb98a49",
+          "public_value_sha256": "a66ebbf5b48d398b701b4534422935ef4a1d1e1c6475c0d22e7c1dee25a3ffdc"
+        },
+        {
+          "json_pointer": "/new_actual_views/3/image_path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "ae03deea21bd43d83236072509a6bd5a913e11dd4556829df5c7410f5518e5bd",
+          "public_value_sha256": "ad3dd03b65b79d36e9134f5a96fbb782acf48c90af5d472dbdca78c9f9611232"
+        },
+        {
+          "json_pointer": "/new_actual_views/4/image_path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "f4a2fb3d306bc1d4cfbf71327b5b426f2c00d3d10c4312536173ce83a531d737",
+          "public_value_sha256": "0cb5efefe83e1d1ba67cf421b261b05784c325728717cf541629e5b00e68d11f"
+        },
+        {
+          "json_pointer": "/new_actual_views/5/image_path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "ee6da3b985f6a97731619e744bcdd4210edf90c7d2dc7fad729c705e60bca88d",
+          "public_value_sha256": "55e8f3857a5c5361b3fe765a84bca5f8eca1d6c402b420fae81b6b4514950596"
+        },
+        {
+          "json_pointer": "/new_actual_views/6/image_path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "58adc01cc553c8715281a0ff75cf857aa1fbb1bcb3d48ace8eda4fb56ab2956b",
+          "public_value_sha256": "edc422b8596919c38229bc662b30ca0cbc29314b1449cc136bef7fff501052f8"
+        },
+        {
+          "json_pointer": "/new_actual_views/7/image_path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "ced894540d767bffc53569e0ea45904e311bf72a2744d075f47f4e53bf5cd705",
+          "public_value_sha256": "ef3459a3fb530c9c62d093aaf1bb07a0355d56fab7f72f50cef235dcca82f5e7"
+        },
+        {
+          "json_pointer": "/new_actual_views/8/image_path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "1cdc21198a19ca29e0d5d73a15105300706f67a43def6ef940b773b45bce0cc2",
+          "public_value_sha256": "da0f266d18c91b392094353b4ee607fd096e96ee34986e53cf6822930a05cb3b"
+        },
+        {
+          "json_pointer": "/new_actual_views/9/image_path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "8faec54ae1b2632e11412f4ad062d87ab464b9f0471448c70a739f97b70b7d52",
+          "public_value_sha256": "8bbf62eebe16bfb72bed5611bf9cd1f9aae2af43371cbee872f7422d3eb8c819"
+        },
+        {
+          "json_pointer": "/new_actual_views/10/image_path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "1b79b76df16048cc55a22af5b4f0aebf8094063aa7bc973abced37f9744ce222",
+          "public_value_sha256": "d39e2ebd0664d03237529cff7c2ebe07a5f032d39e2f6262bdfd30109fe870ca"
+        },
+        {
+          "json_pointer": "/new_actual_views/11/image_path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "7602fcc781ae9e3b34f97457de3d10234e38fdb7ebb418730fdbf433fe113847",
+          "public_value_sha256": "797c93deabd0fc65bfb1933dfaa2569cec6754d825227e0773f3a815ee9d2da0"
+        },
+        {
+          "json_pointer": "/new_actual_views/12/image_path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "b6fc70177842f26b51b90d8cfc75d21c4493b0703abc51c88c3f06f22d3c950a",
+          "public_value_sha256": "09806c264b11783fc6753c0391b100ec31c919623ebf7330ea7f8fdcc2685713"
+        },
+        {
+          "json_pointer": "/new_actual_views/13/image_path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "754d01f14392cb6de58f7460087dcc949cf0375a73b65cecb2d7be499d8bf5a7",
+          "public_value_sha256": "92932be729cb662b9ec6727610a50b388cb5320bb32e3efb611080c126796aa1"
+        },
+        {
+          "json_pointer": "/new_actual_views/14/image_path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "46991d69e98302555133d893634d2ce241d5acceed4ee210df6d1eb9b76cc98f",
+          "public_value_sha256": "a98b1a8d6043ff9914b21103ce4b920272ff3f7af6dbe6586c16d6ad4a6ff9c4"
+        },
+        {
+          "json_pointer": "/new_actual_views/15/image_path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "012c6d013b232f5ae5e44411155a3cbccfd38df2a15f3f2878f470d66dbe6056",
+          "public_value_sha256": "91be2afa4c8a58d89d3e28fcb7b8d4021a3fbad43325d73fd801c76cf669984f"
+        },
+        {
+          "json_pointer": "/new_actual_views/16/image_path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "f6937f8d6107f9cf30355d005bcb6e3617fb48c799f0069c26f49496033ce7b0",
+          "public_value_sha256": "80eee73814733df8ed4d867355b483560fb84b2db20cdb000b2e24b199086fe6"
+        },
+        {
+          "json_pointer": "/new_actual_views/17/image_path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "9bdd64dbd9bd76336b390550615380f4608d26d40e35281f903ec4d077d4f2f5",
+          "public_value_sha256": "7b4d1ed6804902a107f74e953a34fd9a496ef0001f92e008097b705848ce8355"
+        },
+        {
+          "json_pointer": "/new_actual_views/18/image_path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "9b95ed5e3064bfeb74ad99092d71e514415b0c5d94b6565f002905a0f0c25ce5",
+          "public_value_sha256": "3f9a5b073ee62b5b3e7077d35507c409f82d66fe7b63fa5bdc5ccec43505edb5"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/encyclical-refinement-package/cold-review-60/verification.json",
+      "public_path": "inactive/repository/.scratch/encyclical-refinement-package/cold-review-60/verification.json",
+      "historical_raw_sha256": "19083f011a764f384d7fc730c94d07cb7af7490ef487b320e9d99b2c00fd9d7e",
+      "public_sha256": "f2192f06e6540d870d09cb782f559ba0b04bbe410ade0009404a3ae858bb3d2d",
+      "transformations": [
+        {
+          "json_pointer": "/pinned_files/37/path",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "d2c9b64a65eeb167d24a6c71f386f7277db496c9c0b486be5e7287fd10a5f801",
+          "public_value_sha256": "6e3abc918e0d875fd423c2bef7737d55d21a44d555b6e99cea5102123902afd2"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/inter-graves-spacing-repair/mechanical-verification.json",
+      "public_path": "inactive/repository/.scratch/inter-graves-spacing-repair/mechanical-verification.json",
+      "historical_raw_sha256": "6edbf90898012246e6f2915447e6b246ff732a98fbf1508a48d7c6f67d9b8a1a",
+      "public_sha256": "b50945395cc4ede5bf2f16f97c279d5a0772235297d5bf0235e55151cccc351d",
+      "transformations": [
+        {
+          "json_pointer": "/checks/0/command/3",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "25074d48a1ecb42c690d2deaca71c6a45dd9d9aba70efec8b9647aa12090ada7",
+          "public_value_sha256": "82f6645f1f7f7b8e4813971e8bd4938c6a5a31129b3f87713bb9e6b29965d8a2"
+        },
+        {
+          "json_pointer": "/checks/0/command/5",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "0fb5fd40b673f71d3f1e6b8320ebcfc16d2d97c987d30c338db2f48aa619c18f",
+          "public_value_sha256": "7739ed4de84a36439ad40ee32ba1c2d456b6f5f03c8aebe20e819038b04a8577"
+        },
+        {
+          "json_pointer": "/checks/0/command/7",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "2f027e4c53f7fb4aa9221185b0043a57b6961ec37979d655250a02fa68a1dc03",
+          "public_value_sha256": "ce59e20ed7b254d3b0b8521833b507dc1a6a747bb599e55f15fcdc12e6a09fbb"
+        },
+        {
+          "json_pointer": "/checks/1/command/3",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "2544af5efff37e5d9be7183d6385e89e300c264f44906363560c277e3748773a",
+          "public_value_sha256": "ba85a2f66a2b840fd7bba3e6d0bdb9f7b8e4f45c47bdd6d048cdf706cd28f0ff"
+        },
+        {
+          "json_pointer": "/checks/1/command/5",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "245c6eeda1cc7827a718f8247eab1d1f45aa1eeb2c4a10cbd09f5668dbeef784",
+          "public_value_sha256": "b6ffa8bec025942ea58a99bf8f3fd938efe8029a45cd25304abf7648af4a6e35"
+        },
+        {
+          "json_pointer": "/checks/1/command/7",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "37b13e6d9ee965c5eafca897784d41c1c9e00e356583aa093bb1be209f71bcd4",
+          "public_value_sha256": "409d871cc9f9399acb597fcc65d4e747825f05c5033b26ba503410421057e731"
+        },
+        {
+          "json_pointer": "/checks/2/command/4",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "eb43b41b55378e250b485295c9fc3c30afeae7602e185aec251c1f362672f17f",
+          "public_value_sha256": "680ed955a6c58099eae989ea5a3f92db67c25980d409c914f084beea7fa13980"
+        },
+        {
+          "json_pointer": "/checks/2/command/6",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "245c6eeda1cc7827a718f8247eab1d1f45aa1eeb2c4a10cbd09f5668dbeef784",
+          "public_value_sha256": "b6ffa8bec025942ea58a99bf8f3fd938efe8029a45cd25304abf7648af4a6e35"
+        },
+        {
+          "json_pointer": "/checks/2/command/8",
+          "action": "remove exact repository-root prefix",
+          "historical_value_sha256": "1579a9f5fb88daa8214821bc23d9903a28f3d56b9c97e02ba8532a5efd72803e",
+          "public_value_sha256": "36a75330815f0a20e952a732a0f14ecdcc96e811e8923603788501021a9ba85a"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/pius_latin_remaining_repairs/STOP-HANDOFF.json",
+      "public_path": "inactive/repository/.scratch/pius_latin_remaining_repairs/STOP-HANDOFF.json",
+      "historical_raw_sha256": "ed0953a0806c848af11213f7fbab1346d4ed33ca668cb398123dc6c391f65e8d",
+      "public_sha256": "496e3f13e4b4f653c90ef4b05507810554106f0f7d0c1920e96c9558b0bd8548",
+      "transformations": [
+        {
+          "json_pointer": "/teardown/known_live_handles",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/pius_latin_remaining_repairs/coordinator/progress.json",
+      "public_path": "inactive/repository/.scratch/pius_latin_remaining_repairs/coordinator/progress.json",
+      "historical_raw_sha256": "ab74f1720117d237c052b93cf7ad7e4dbd7c9975c0dc083f408e09262286ae2a",
+      "public_sha256": "e864060471abbbeed17803293a543ec5724242efff0cc60d9ad880a7de4ba132",
+      "transformations": [
+        {
+          "json_pointer": "/acts/1/active_owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "19b8e08e352471b59f64945712a8f506c904eccd78c34b9440c60e6b9c4a3990"
+        },
+        {
+          "json_pointer": "/acts/2/active_owner",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "3030d8c83e346a1a3a1b3be0594dcd7dc3e22ae8e79e2e8547d35313e68c8560"
+        },
+        {
+          "json_pointer": "/acts/2/prior_followup_owner_stopped",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "40727a1943c83b7783de59e992b4fc6db916e560e4c82a650a40d994ffcd33be"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/pius_latin_remaining_repairs/coordinator/singulari-mechanical-handoff/qualified-producer-visual-attestation.json",
+      "public_path": "inactive/repository/.scratch/pius_latin_remaining_repairs/coordinator/singulari-mechanical-handoff/qualified-producer-visual-attestation.json",
+      "historical_raw_sha256": "e363d7d53089b760bd2c7c31aa422f692fcbcfdd91ea67d23ebe34f95759ac89",
+      "public_sha256": "5819e642fa810bba885a1c4c48872b7ffe471b26680edbeab15a3927ec9a1e41",
+      "transformations": [
+        {
+          "json_pointer": "/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "19b8e08e352471b59f64945712a8f506c904eccd78c34b9440c60e6b9c4a3990"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    },
+    {
+      "original_path": ".scratch/pius_latin_remaining_repairs/quanto-coordinator/handoff/report.json",
+      "public_path": "inactive/repository/.scratch/pius_latin_remaining_repairs/quanto-coordinator/handoff/report.json",
+      "historical_raw_sha256": "51c7c6fb696edc4006072762427e1db5ada380e6d0eca65ce3d996cd0594a5b9",
+      "public_sha256": "a830455a8f225d31eae6fc94decb54607840c71659a851dc9a75c631eefbc566",
+      "transformations": [
+        {
+          "json_pointer": "/source_review/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "48ae45f96edc8cda90706797678e681ea49891450340f65e90dbea43df47b03c"
+        },
+        {
+          "json_pointer": "/producer_pdf_review/observer",
+          "action": "omit operational runtime field",
+          "historical_value_sha256": "233d2159f2450a65064a11fa9ef86cba5ed5dac10f877a75d173f4a700cb0456"
+        }
+      ],
+      "hash_semantics": "Historical raw hash identifies the original diagnostic; public bytes have their separately stated hash. No reference hashes silently refreshed."
+    }
+  ]
+}

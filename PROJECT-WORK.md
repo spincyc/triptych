@@ -231,6 +231,10 @@ render or producer review does not establish independent acceptance, and no
 unfinished requirement is waived. The workspace retains feature/encyclicals;
 validated checkpoints publish to origin/main without rewriting history.
 
+The stopped work and exact restoration instructions are retained in the
+[durable handoff](workflows/handoffs/encyclicals-2026-10-30/HANDOFF.md).
+The inactive archive grants no source or reader admission.
+
 ## Claude Four Last Things correction, 2026-10-27
 
 <!-- promised-deliverable: claude-flt-correction-2026-10-27 -->
