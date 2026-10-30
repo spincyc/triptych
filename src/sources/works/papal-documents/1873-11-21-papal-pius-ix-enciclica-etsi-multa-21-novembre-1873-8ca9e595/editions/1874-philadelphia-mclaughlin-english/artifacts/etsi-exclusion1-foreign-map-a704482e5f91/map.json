@@ -1,0 +1,305 @@
+{
+  "schema": "triptych-etsi-cold57-foreign-span-disposition/v1",
+  "source_sha256": "afe42c91f0cb5951f764c39c811a298b51b13ebc81188ae22919559d8fcf109e",
+  "pdf_sha256": "77c489f65d57979916bc16a4696c99c8944ad3e4d63e354181fbadb20d515139",
+  "source_decision": "CHANGES_REQUIRED",
+  "pdf_physical_layout_decision": "PASS",
+  "controlling_criterion": "Root directed on this review turn that confirmed clipped facing-page OCR/furniture is a material source-contamination hold. Main-body readability does not waive foreign additions.",
+  "exact_four_blocks": [
+    {
+      "source_LF_range": [
+        379,
+        387
+      ],
+      "source_byte_range_half_open": [
+        19333,
+        19354
+      ],
+      "block_sha256": "e07353ac5a8987fff8496589d21d882f1dc2af7eeb83235fc98023fdd4a0a987",
+      "block_utf8": "st \n\nP \n\nf< \n\na \n\nc \n",
+      "nonempty_noise_lines": [
+        {
+          "LF": 379,
+          "byte_range": [
+            19333,
+            19337
+          ],
+          "text_utf8": "st \n",
+          "sha256": "47dc702f4d1d193d2e0e1e82767ad59997feb9a3a351e80582e87773e61e7ee6"
+        },
+        {
+          "LF": 381,
+          "byte_range": [
+            19338,
+            19341
+          ],
+          "text_utf8": "P \n",
+          "sha256": "39b425d24a9503d84d93464e2e1b29fffe2fd3d08d4db7b04f81445b23c27d4c"
+        },
+        {
+          "LF": 383,
+          "byte_range": [
+            19342,
+            19346
+          ],
+          "text_utf8": "f< \n",
+          "sha256": "3d28448556c25deb336e9cddbd948208fb266a52a06847a839a07836ccf8f381"
+        },
+        {
+          "LF": 385,
+          "byte_range": [
+            19347,
+            19350
+          ],
+          "text_utf8": "a \n",
+          "sha256": "19ae96e7938ec564866a1bb552e51bc3f1b9aa32c5221f3e8c3a75d0080c7004"
+        },
+        {
+          "LF": 387,
+          "byte_range": [
+            19351,
+            19354
+          ],
+          "text_utf8": "c \n",
+          "sha256": "2886496732dc4cb53c8bdd9f94ae487cc12f6b5db4d29e9b293950d578322f80"
+        }
+      ],
+      "original_native_page": 11,
+      "printed_folio": 12,
+      "native_image": {
+        "path": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-04/pages/page-4.png",
+        "sha256": "55f28ddc949d0ddf13a7ec1e00f1a8b6ac31545b245dbe166d9f3f6adef83fbd",
+        "dimensions": [
+          1221,
+          2200
+        ]
+      },
+      "source_context_note": "Right-edge clipped facing-page text; current next main page starts LF398.",
+      "own_main_and_note_LF_ranges_to_retain": [
+        [
+          345,
+          376
+        ],
+        [
+          390,
+          392
+        ]
+      ],
+      "classification": "FOREIGN_CLIPPED_FACING_PAGE",
+      "decision": "SOURCE_CHANGES_REQUIRED"
+    },
+    {
+      "source_LF_range": [
+        419,
+        419
+      ],
+      "source_byte_range_half_open": [
+        20761,
+        20770
+      ],
+      "block_sha256": "3c11f51bc4ba7d302c36151074764fa29e74d4760852ad0c06b559a302aec908",
+      "block_utf8": "o  o  7 \n",
+      "nonempty_noise_lines": [
+        {
+          "LF": 419,
+          "byte_range": [
+            20761,
+            20770
+          ],
+          "text_utf8": "o  o  7 \n",
+          "sha256": "3c11f51bc4ba7d302c36151074764fa29e74d4760852ad0c06b559a302aec908"
+        }
+      ],
+      "original_native_page": 12,
+      "printed_folio": 13,
+      "native_image": {
+        "path": ".scratch/encyclical-refinement-package/cold-review-57/additional-native-review/.scratch/encyclical-refinement-package/cold-review-57/additional-native-12-13-15/pages/page-1.png",
+        "sha256": "e309a6645a29ed167b2b9345eb503cb19f507bf261d78181ed4c72b7ad06eb52",
+        "dimensions": [
+          1221,
+          2200
+        ]
+      },
+      "source_context_note": "Spurious recognition output; no printed body row between things, and will reject.",
+      "own_main_and_note_LF_ranges_to_retain": [
+        [
+          398,
+          418
+        ],
+        [
+          420,
+          433
+        ]
+      ],
+      "classification": "EXTRANEOUS_RECOGNITION_OUTPUT",
+      "decision": "SOURCE_CHANGES_REQUIRED"
+    },
+    {
+      "source_LF_range": [
+        470,
+        485
+      ],
+      "source_byte_range_half_open": [
+        23477,
+        23515
+      ],
+      "block_sha256": "73b0fd3c28813840114a7862d9a49c44f919d3f664e8fe9bc6f04d015a14e0fa",
+      "block_utf8": "ro \n\nal) \n\nlie \n\nv \n\nai \n\nP \n\na \n\n\n< \n",
+      "nonempty_noise_lines": [
+        {
+          "LF": 470,
+          "byte_range": [
+            23477,
+            23481
+          ],
+          "text_utf8": "ro \n",
+          "sha256": "cf9a3ac40a4a08d407bb36fd3ba3f7a39351e9670a21aaa818b3a9added963b0"
+        },
+        {
+          "LF": 472,
+          "byte_range": [
+            23482,
+            23487
+          ],
+          "text_utf8": "al) \n",
+          "sha256": "02c2653f72f2fa3f966ab8eb0bd1c1c11ffb5fc6e0fc45a048f5c34d7fcabea9"
+        },
+        {
+          "LF": 474,
+          "byte_range": [
+            23488,
+            23493
+          ],
+          "text_utf8": "lie \n",
+          "sha256": "8820aea69af37b86fb0ebb40e0e046223c8fc8645b97a8e4677b265a6ddbc62c"
+        },
+        {
+          "LF": 476,
+          "byte_range": [
+            23494,
+            23497
+          ],
+          "text_utf8": "v \n",
+          "sha256": "24264aa519b9e325bd189fe67fa3ff8db89a681bc94fb5ec6837adaeac738948"
+        },
+        {
+          "LF": 478,
+          "byte_range": [
+            23498,
+            23502
+          ],
+          "text_utf8": "ai \n",
+          "sha256": "0e4c2e7503e6c12e7d05f17bad0be0e2b17818e87ab6d2ca93313d039aeb7061"
+        },
+        {
+          "LF": 480,
+          "byte_range": [
+            23503,
+            23506
+          ],
+          "text_utf8": "P \n",
+          "sha256": "39b425d24a9503d84d93464e2e1b29fffe2fd3d08d4db7b04f81445b23c27d4c"
+        },
+        {
+          "LF": 482,
+          "byte_range": [
+            23507,
+            23510
+          ],
+          "text_utf8": "a \n",
+          "sha256": "19ae96e7938ec564866a1bb552e51bc3f1b9aa32c5221f3e8c3a75d0080c7004"
+        },
+        {
+          "LF": 485,
+          "byte_range": [
+            23512,
+            23515
+          ],
+          "text_utf8": "< \n",
+          "sha256": "0eec7ad35c9c4bfbda5c2edc019c1e28d12340cad8361b978017fb262c676bbc"
+        }
+      ],
+      "original_native_page": 13,
+      "printed_folio": 14,
+      "native_image": {
+        "path": ".scratch/encyclical-refinement-package/cold-review-57/additional-native-review/.scratch/encyclical-refinement-package/cold-review-57/additional-native-12-13-15/pages/page-2.png",
+        "sha256": "62b5665107e102de88245ab5d5bba47eb6a4d7ff1a56d1b67af39c61e36359a3",
+        "dimensions": [
+          1221,
+          2200
+        ]
+      },
+      "source_context_note": "Right-edge clipped facing-page text after complete main body ends souls; current continuation LF491.",
+      "own_main_and_note_LF_ranges_to_retain": [
+        [
+          436,
+          468
+        ]
+      ],
+      "classification": "FOREIGN_CLIPPED_FACING_PAGE",
+      "decision": "SOURCE_CHANGES_REQUIRED"
+    },
+    {
+      "source_LF_range": [
+        564,
+        568
+      ],
+      "source_byte_range_half_open": [
+        27629,
+        27643
+      ],
+      "block_sha256": "6d4a6a2c69d63338ff0bf7c04b3cf6364d96e3338fd6735ecd660f6eeab55f5b",
+      "block_utf8": "i. \n\nii \n\ntl \n",
+      "nonempty_noise_lines": [
+        {
+          "LF": 564,
+          "byte_range": [
+            27629,
+            27633
+          ],
+          "text_utf8": "i. \n",
+          "sha256": "7f69c76a2db9c62f7fc740275362c5a520f20ba999d7ac88a377e0136be5b37b"
+        },
+        {
+          "LF": 566,
+          "byte_range": [
+            27634,
+            27638
+          ],
+          "text_utf8": "ii \n",
+          "sha256": "3835a774ed6bc25ea5d9285964eafab57f38d9fe2dc9ffe74abee9541417f82f"
+        },
+        {
+          "LF": 568,
+          "byte_range": [
+            27639,
+            27643
+          ],
+          "text_utf8": "tl \n",
+          "sha256": "cd432bbc60743c667fba9adbb951f45a175bcdda0cb4a1fa1bc94ee3a6d3c389"
+        }
+      ],
+      "original_native_page": 15,
+      "printed_folio": 16,
+      "native_image": {
+        "path": ".scratch/encyclical-refinement-package/cold-review-57/additional-native-review/.scratch/encyclical-refinement-package/cold-review-57/additional-native-12-13-15/pages/page-3.png",
+        "sha256": "1e7194d1900967791b5e1391ea8e2168999076423e5c463749bedba8d8098d95",
+        "dimensions": [
+          1221,
+          2200
+        ]
+      },
+      "source_context_note": "Right-edge clipped facing-page text after main body ends in testimony; current continuation LF574.",
+      "own_main_and_note_LF_ranges_to_retain": [
+        [
+          530,
+          561
+        ]
+      ],
+      "classification": "FOREIGN_CLIPPED_FACING_PAGE",
+      "decision": "SOURCE_CHANGES_REQUIRED"
+    }
+  ],
+  "deletion_boundary": "No source mutation authorized or performed by reviewer. Full-row block ranges include only listed noise and intervening blank LF rows; nonempty per-line ranges are also supplied for a narrower deletion. All other current source bytes, particularly own historical notes/body/address/closing, must be retained. Page-folio exclusions require their own proven identities; do not infer uninspected folios from this list.",
+  "status": "adverse-disposition-exported; evidence crops to follow"
+}

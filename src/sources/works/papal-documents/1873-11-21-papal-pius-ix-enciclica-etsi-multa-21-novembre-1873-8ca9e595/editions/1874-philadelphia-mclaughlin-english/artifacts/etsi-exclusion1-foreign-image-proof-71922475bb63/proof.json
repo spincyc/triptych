@@ -1,0 +1,155 @@
+{
+  "schema": "triptych-etsi-cold57-foreign-span-image-proof/v1",
+  "source_sha256": "afe42c91f0cb5951f764c39c811a298b51b13ebc81188ae22919559d8fcf109e",
+  "source_decision": "CHANGES_REQUIRED",
+  "pdf_physical_layout_decision": "PASS",
+  "frozen_span_disposition": {
+    "path": ".scratch/encyclical-refinement-package/cold-review-57/foreign-span-disposition.json",
+    "sha256": "a704482e5f91e8987f319f34ecca6457e427b7ce48d5aac4d594907b29c0e728"
+  },
+  "actual_freshly_viewed_context_crops": [
+    {
+      "kind": "noise-context-crop",
+      "original_pdf_page": 11,
+      "image": ".scratch/encyclical-refinement-package/cold-review-57/native-11-noise-context.jpg",
+      "source_image": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-04/pages/page-4.png",
+      "source_image_sha256": "55f28ddc949d0ddf13a7ec1e00f1a8b6ac31545b245dbe166d9f3f6adef83fbd",
+      "source_image_dimensions": [
+        1221,
+        2200
+      ],
+      "crop_rectangle_xywh": [
+        1120,
+        230,
+        101,
+        1670
+      ],
+      "quality": 95,
+      "finding": "Actual JPEG95 context crop freshly viewed. Main-page line endings at left lie before a visible gutter/binding line; clipped facing-page starts re/st/p/f/a/o/b/e appear at extreme right beyond that gutter. LF379–387 foreign noise is not an own-body omission; retain main text and all four source notes. Context rectangle intentionally includes own text for comparison; no image-based automatic deletion implied.",
+      "verdict": "SOURCE CHANGES_REQUIRED: confirmed foreign-facing-page contamination",
+      "sha256": "c56775dae1445f1aae03019e2ad7a7fd45c985382f2064e851f07bfa6e8a2e95"
+    },
+    {
+      "kind": "noise-context-crop",
+      "original_pdf_page": 12,
+      "image": ".scratch/encyclical-refinement-package/cold-review-57/native-12-noise-context.jpg",
+      "source_image": ".scratch/encyclical-refinement-package/cold-review-57/additional-native-review/.scratch/encyclical-refinement-package/cold-review-57/additional-native-12-13-15/pages/page-1.png",
+      "source_image_sha256": "e309a6645a29ed167b2b9345eb503cb19f507bf261d78181ed4c72b7ad06eb52",
+      "source_image_dimensions": [
+        1221,
+        2200
+      ],
+      "crop_rectangle_xywh": [
+        10,
+        1180,
+        1040,
+        210
+      ],
+      "quality": 95,
+      "finding": "Actual JPEG95 context freshly viewed. Printed lines show when he has better ascertained and weighed these things, immediately followed by will reject a suspicion so empty and incredible against. No independent printed row o o7 exists. Delete only exact LF419 source bytes; retain both own body rows and punctuation literal as recognized elsewhere.",
+      "verdict": "SOURCE CHANGES_REQUIRED: extraneous recognition row",
+      "sha256": "d2ce6efe448298f99c2a83ea793157fee526939561f6d759aff53f6c8785dd4d"
+    },
+    {
+      "kind": "noise-context-crop",
+      "original_pdf_page": 13,
+      "image": ".scratch/encyclical-refinement-package/cold-review-57/native-13-noise-context.jpg",
+      "source_image": ".scratch/encyclical-refinement-package/cold-review-57/additional-native-review/.scratch/encyclical-refinement-package/cold-review-57/additional-native-12-13-15/pages/page-2.png",
+      "source_image_dimensions": [
+        1221,
+        2200
+      ],
+      "crop_rectangle_xywh": [
+        1120,
+        230,
+        101,
+        1670
+      ],
+      "quality": 95,
+      "finding": "Actual JPEG95 context freshly viewed. Own main-page line endings remain left of the binding/gutter; clipped facing-page redeemed/abundant and subsequent partial line starts are visible beyond it at far right. LF470–485 noise imports these foreign edge fragments rather than any omitted own line. Retain own LF436–468 complete main text and continuation LF491 onward.",
+      "verdict": "SOURCE CHANGES_REQUIRED: confirmed foreign-facing-page contamination",
+      "sha256": "5d454da23d4f20e480be21a8488736908a301c9ced5968e15647394656ec119a",
+      "source_image_sha256": "62b5665107e102de88245ab5d5bba47eb6a4d7ff1a56d1b67af39c61e36359a3"
+    },
+    {
+      "kind": "noise-context-crop",
+      "original_pdf_page": 15,
+      "image": ".scratch/encyclical-refinement-package/cold-review-57/native-15-noise-context.jpg",
+      "source_image": ".scratch/encyclical-refinement-package/cold-review-57/additional-native-review/.scratch/encyclical-refinement-package/cold-review-57/additional-native-12-13-15/pages/page-3.png",
+      "source_image_dimensions": [
+        1221,
+        2200
+      ],
+      "crop_rectangle_xywh": [
+        1120,
+        230,
+        101,
+        1770
+      ],
+      "quality": 95,
+      "finding": "Actual JPEG95 context freshly viewed. Own printed16 main line endings appear left of visible gutter; partial facing-page quotation marks and letter stems appear beyond it at extreme right. The isolated LF564–568 i./ii/tl is edge-recognition contamination after complete own main text. Preserve LF530–561 and continuationLF574 onward; no ownership waiver follows from readability.",
+      "verdict": "SOURCE CHANGES_REQUIRED: confirmed foreign-facing-page contamination",
+      "sha256": "cc30cb2f379ce3c9f5ad4cdfa5dc1824260b67a61ffdec2f069febf782626bcb",
+      "source_image_sha256": "1e7194d1900967791b5e1391ea8e2168999076423e5c463749bedba8d8098d95"
+    }
+  ],
+  "verified_page_furniture_candidates_only": [
+    {
+      "LF": 113,
+      "source_byte_range_half_open": [
+        5502,
+        5505
+      ],
+      "literal_utf8": "6 \n",
+      "original_pdf_page": 5,
+      "printed_folio": 6,
+      "note": "Actual numeral viewed on native page; own page-number furniture only, not body words."
+    },
+    {
+      "LF": 343,
+      "source_byte_range_half_open": [
+        17402,
+        17406
+      ],
+      "literal_utf8": "12 \n",
+      "original_pdf_page": 11,
+      "printed_folio": 12,
+      "note": "Actual numeral viewed on native page; own page-number furniture only, not body words."
+    },
+    {
+      "LF": 395,
+      "source_byte_range_half_open": [
+        19470,
+        19474
+      ],
+      "literal_utf8": "13 \n",
+      "original_pdf_page": 12,
+      "printed_folio": 13,
+      "note": "Actual numeral viewed on native page; own page-number furniture only, not body words."
+    },
+    {
+      "LF": 527,
+      "source_byte_range_half_open": [
+        25524,
+        25528
+      ],
+      "literal_utf8": "1C \n",
+      "original_pdf_page": 15,
+      "printed_folio": 16,
+      "note": "Actual numeral viewed on native page; own page-number furniture only, not body words.16 is mechanically misread1C."
+    },
+    {
+      "LF": 810,
+      "source_byte_range_half_open": [
+        39778,
+        39782
+      ],
+      "literal_utf8": "23 \n",
+      "original_pdf_page": 22,
+      "printed_folio": 23,
+      "note": "Actual numeral viewed on native page; own page-number furniture only, not body words."
+    }
+  ],
+  "uninspected_native_page_folios": "No deletion recommendation supplied here; do not infer them from sequence alone.",
+  "body_and_note_preservation": "Only the four frozen noise blocks may be removed under current foreign-span evidence. All other byte retention is the default; verified own numeral furniture listed separately for root authorization."
+}

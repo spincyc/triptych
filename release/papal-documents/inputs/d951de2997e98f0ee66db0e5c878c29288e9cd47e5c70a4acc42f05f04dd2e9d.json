@@ -1,0 +1,43 @@
+{
+  "schema": "triptych-rootstop-recovery-role-closure/v1",
+  "packet_sha256": "0491dd19474a3966cc61d46c6cd1f10e2a7a04a9019dd8727e12d0626e66644f",
+  "source_sha256": "0bc35822f5caee4eac0a1b7cfdef4ec9d56baee756a869bd32af0d3a1ef39693",
+  "pdf_sha256": "66ece5336d40091bc60d08be56decbd6c5d0fe8fe7c4849af4b0a1fc9c6e61e9",
+  "source_status": "PASS_BOUNDED_MECHANICAL_OCR_INTAKE",
+  "actual_reader_pages": [
+    6,
+    7
+  ],
+  "pdf_subset_status": "PASS",
+  "whole_pdf_status": "UNASSIGNED",
+  "report": {
+    "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/report.md",
+    "sha256": "06cc974acdde2c260237ec5d367d191f4083edc311795248722f55fba51d0f91",
+    "byte_size": 6720
+  },
+  "reviews": {
+    "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/reviews.json",
+    "sha256": "9e6ed19805748b01d8957a331da0d5c24aecf7dc9bda199ddbbac4079cad635b",
+    "byte_size": 5408
+  },
+  "verification": {
+    "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/verification.json",
+    "sha256": "2e2772f0260dcbf0aa64f2ac373e02f545325f2c35ac83216680fec599ee7641",
+    "byte_size": 7412
+  },
+  "source_decision": {
+    "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/source-decision.json",
+    "sha256": "464e042ff7328ea297971c7abb42f11a9771d4432379cf8897014650b8d63c3f",
+    "byte_size": 5322
+  },
+  "observations": {
+    "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/observations.jsonl",
+    "sha256": "7b9a498f3ea7a12d1bd8e05ed466f41831a13f4c00ed9f6ec20599bcf4e12d9a",
+    "byte_size": 5300
+  },
+  "final_pins": {
+    "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/final-pins.json",
+    "sha256": "489155a027865085247f79768b08d0cc746f5651f19a3e0c0238e9bbd7490dd2",
+    "byte_size": 3558
+  }
+}

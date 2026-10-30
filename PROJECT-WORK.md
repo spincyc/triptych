@@ -208,23 +208,28 @@ publication derivatives that change only 17 private diagnostic path values;
 current consumers pin those derivatives and distinguish the raw historical
 hashes. Source wording, source judgments and PDF bytes are unchanged.
 
-Publication of the fourth and fifth checkpoints remains held for the English
-Etsi multa greeting. The earlier address repair retained two unreadable OCR
-lines in source 94992a97e46c8fe05150c4aa0cd998b28f754e8cceec6e8859797de3ed687097
-and seven-page reader 25dfc7d1c6271f8ba501859c979836e07891ba15333334da6b1b5ac2bb7df7fa.
-The root verified the garbled reader text after a late independent finding.
-Earlier positive review and exact fidelity do not waive this source-usability
-failure. Both historical bytes and receipts remain retained. Mechanical native
-recovery and fresh independent source/PDF acceptance are required before
-publication. Other accepted readers and the overall English-coverage counts do
-not establish that this held local reader is usable.
+The English Etsi multa publication hold is closed for source
+0bc35822f5caee4eac0a1b7cfdef4ec9d56baee756a869bd32af0d3a1ef39693
+and seven-page reader 66ece5336d40091bc60d08be56decbd6c5d0fe8fe7c4849af4b0a1fc9c6e61e9.
+The protocol and initial capital were recovered mechanically from the original
+1874 printing. Nine independently source-identified exclusions remove 101
+bytes of clipped facing-page text, spurious recognition and printed folios;
+all other parent bytes, own notes and closing remain exact. Fresh independent
+source acceptance and disjoint five-plus-two page review cover the complete
+current PDF. Old 949/25df and afe/77c failures and their evidence remain
+historical; no earlier positive report is relabelled. The one-row replacement
+preserves all 4,830 other complete release rows and every installed PDF hash.
+Isolated OCR and citation defects remain qualified; no whole-word or
+translation-accuracy certification is claimed.
 
-Additional English intake, source-preserving repairs and cold-review
-adjudication continue. A successful render or producer review does not establish
-independent acceptance. English coverage, classic readers and overall
-completion remain open. The maintainer requested regular coherent commits
-reconciled and pushed to main; this workspace retains feature/encyclicals
-locally and publishes validated checkpoints to origin/main.
+The maintainer requested a coherent stop, committed checkpoint, persisted
+handoff and push on 2026-10-30. New source/review work is frozen. Fifty original
+classic versions and thirty-eight complete-English gaps remain; completed but
+unadmitted candidates, partial work and source holds are retained separately
+for a later resume. No AI-translated act body was introduced. A successful
+render or producer review does not establish independent acceptance, and no
+unfinished requirement is waived. The workspace retains feature/encyclicals;
+validated checkpoints publish to origin/main without rewriting history.
 
 ## Claude Four Last Things correction, 2026-10-27
 

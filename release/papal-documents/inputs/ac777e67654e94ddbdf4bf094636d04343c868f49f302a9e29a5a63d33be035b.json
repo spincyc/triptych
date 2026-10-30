@@ -1,0 +1,60 @@
+{
+  "schema": "triptych-rootstop-seven-page-aggregate/v1",
+  "packet": {
+    "path": ".scratch/encyclical-refinement-package/packets/57b.json",
+    "sha256": "0491dd19474a3966cc61d46c6cd1f10e2a7a04a9019dd8727e12d0626e66644f",
+    "byte_size": 56634
+  },
+  "assembly_script": {
+    "path": ".scratch/encyclical-refinement-package/assemble-stop57b.py",
+    "sha256": "b04e0d738ed0254c523ccbd0cd13ab4544ae71ffb0f4f209614160a10833dfd6",
+    "byte_size": 11759
+  },
+  "source_status": "PASS_BOUNDED_MECHANICAL_OCR_INTAKE",
+  "pdf_status": "PASS",
+  "source_decision": {
+    "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/source-decision.json",
+    "sha256": "464e042ff7328ea297971c7abb42f11a9771d4432379cf8897014650b8d63c3f",
+    "byte_size": 5322
+  },
+  "stopped_primary": {
+    "path": ".scratch/encyclical-refinement-package/role-decision-57b-stopped-primary.json",
+    "sha256": "41cbb879de26db8f9c9e732ee3b232d587882dec6e00836bb981e4a2b77a1434",
+    "byte_size": 947
+  },
+  "fresh_recovery": {
+    "path": ".scratch/encyclical-refinement-package/role-decision-57b-recovery.json",
+    "sha256": "d951de2997e98f0ee66db0e5c878c29288e9cd47e5c70a4acc42f05f04dd2e9d",
+    "byte_size": 1823
+  },
+  "actual_union": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "disjoint_page_counts": [
+    5,
+    2
+  ],
+  "combined_observations": {
+    "path": ".scratch/encyclical-refinement-package/cold-review-57b-aggregate/combined-observations.json",
+    "sha256": "5a783aefe6312ab5a5cd5b39b992f4321fe64385ec5e1ee5a0583dc12870e995",
+    "byte_size": 14330
+  },
+  "missing_pages": [],
+  "no_reader_visual_reuse": true,
+  "no_coordinator_image_views": true,
+  "same_exact_source_pdf_receipt_frozen_row": true,
+  "source_quality": "Bounded mechanical OCR intake, known isolated literal errors remain.",
+  "operational_status": "Stopped primary observer; recovery operation completed successfully with no live operation. Root owns installation/publication.",
+  "preceding_verification": {
+    "path": ".scratch/encyclical-refinement-package/cold-review-57b-aggregate/verification.json",
+    "sha256": "2d7ee2ce3e8fb992caa94f72efdfc128bbc46e73a3be2d7a5fb1c862826d460b",
+    "byte_size": 2036
+  },
+  "companion_scope": "Publication-safe operational prose only. Exact source/PDF/receipt/frozen-row,5+2actualunion,source decision and all original factual proof pins unchanged. Raw predecessor remains immutable and is not copied as a public payload."
+}

@@ -1,0 +1,123 @@
+{
+  "schema": "triptych-papal-typeset/v1",
+  "revision": "2026-10-30T20:57:04Z",
+  "documents": [
+    {
+      "id": "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
+      "title": "Etsi multa",
+      "date": "1873-11-21",
+      "document_type": "encyclical",
+      "pope": "Pius IX",
+      "language": "en",
+      "completeness": "complete-within-identified-printed-witness",
+      "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-text-0bc35822f5ca",
+      "sha256": "0bc35822f5caee4eac0a1b7cfdef4ec9d56baee756a869bd32af0d3a1ef39693",
+      "text_path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-exclusion1-text-0bc35822f5ca/text.txt",
+      "physical_line_ranges": [
+        [
+          1,
+          788
+        ]
+      ],
+      "segment_id": "segment.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-0bc35822f5ca",
+      "segment_path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/segments/etsi-exclusion1-0bc35822f5ca.toml",
+      "source_url": "https://archive.org/download/encyclicalletter00cath_6/encyclicalletter00cath_6_djvu.txt",
+      "source_note": "Mechanical OCR of the identified 1874 Philadelphia McLaughlin Brothers human translation, including title-leaf recipient address, historical notes and complete subscription. The opening protocol and initial capital were recovered from the original printed page. Excludes proven clipped facing-page text, a spurious recognition row and selected printed page numbers. Other original OCR spelling, quotation and citation defects remain; the body has not been collated word for word.",
+      "rights_status": "public-domain",
+      "rights_basis": "The identified Philadelphia McLaughlin Brothers English pamphlet is dated 1874 on its historical title leaf and in the State Library of Pennsylvania catalogue. Its English text and contemporary printed pages are public domain in the United States by expiration of publication term, under src/sources/inventories/papal-documents-rights-v1.toml. Automated OCR adds no original authorship. The modern Internet Archive funding/digitization leaf is excluded from retained native pages and text.",
+      "rights_notice": "This identified historical English printing is public domain in the United States; source wording retains its own status.",
+      "native_artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.historical-facsimile-597fbc3a7c70",
+      "native_sha256": "597fbc3a7c70e449bf5260b89167694ccb4e7e9d0f52be509f8f7401175a1cfa",
+      "native_path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/historical-facsimile-597fbc3a7c70/source.pdf",
+      "native_act_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "act_id": "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
+      "extent": "complete",
+      "witness": "Philadelphia: McLaughlin Brothers (1874), title-leaf address and pp.3–23",
+      "revision": "2026-10-30T20:57:04Z"
+    }
+  ],
+  "supersessions": [
+    {
+      "prior": {
+        "id": "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
+        "language": "en",
+        "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-protocol-text-afe42c91f0cb",
+        "source_sha256": "afe42c91f0cb5951f764c39c811a298b51b13ebc81188ae22919559d8fcf109e",
+        "segment_id": "segment.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-protocol-afe42c91f0cb",
+        "pdf_sha256": "77c489f65d57979916bc16a4696c99c8944ad3e4d63e354181fbadb20d515139"
+      },
+      "replacement": {
+        "id": "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
+        "language": "en",
+        "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-text-0bc35822f5ca",
+        "source_sha256": "0bc35822f5caee4eac0a1b7cfdef4ec9d56baee756a869bd32af0d3a1ef39693",
+        "segment_id": "segment.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-0bc35822f5ca"
+      },
+      "reason": "Complete identified1874human English translation with recovered original opening retained. Four exact native-proven foreign/spurious OCR blocks and five explicitly authorized own printed folio rows are excluded; all other parent afe42c91 bytes, body, notes and source order remain exact. No source word/citation correction or body-wide collation. Both earlier failed-source candidates remain immutable."
+    }
+  ],
+  "source_correction_evidence": {
+    "recipe": {
+      "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-exclusion1-recipe-d0d45474937b/recipe.json",
+      "sha256": "d0d45474937b90f2018e8de1f9d4412cc4bd047563c29ba32332a27260f178f5",
+      "byte_size": 8759,
+      "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-recipe-d0d45474937b"
+    },
+    "frozen_foreign_span_map": {
+      "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-exclusion1-foreign-map-a704482e5f91/map.json",
+      "sha256": "a704482e5f91e8987f319f34ecca6457e427b7ce48d5aac4d594907b29c0e728",
+      "byte_size": 9527,
+      "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-foreign-map-a704482e5f91"
+    },
+    "frozen_foreign_primary_image_proof": {
+      "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-exclusion1-foreign-image-proof-71922475bb63/proof.json",
+      "sha256": "71922475bb632a060e1768982663fa76e1721462e93e091b518786efd0664a96",
+      "byte_size": 7261,
+      "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-foreign-image-proof-71922475bb63"
+    },
+    "five_authorized_own_folio_proof": {
+      "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-exclusion1-own-folio-proof-fae96079cf26/proof.json",
+      "sha256": "fae96079cf2694a4f21a2929ded70d10ed875bb53b3a952c626171bb7bc50d9a",
+      "byte_size": 5279,
+      "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-own-folio-proof-fae96079cf26"
+    },
+    "native_pixels": {
+      "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-exclusion1-native-pixels-8e4417ac842c/pixels.zip",
+      "sha256": "8e4417ac842c100eb82719e564f7346f9da0cbfe035c498fad4621c254d86670",
+      "byte_size": 4197253,
+      "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-native-pixels-8e4417ac842c"
+    },
+    "implementation": {
+      "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-exclusion1-replay-aa67b0e765f3/replay.py",
+      "sha256": "aa67b0e765f3c803c535ad3960c385eccc12509af75d9f5db5c0ea317caf3213",
+      "byte_size": 7779,
+      "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-replay-aa67b0e765f3"
+    },
+    "parent_source_status": "CHANGES_REQUIRED-foreign-source-contamination",
+    "prior_physical_typography_status": "PASS-separate-from-source-admission",
+    "new_independent_source_and_pdf_review": "required-not-inherited"
+  }
+}

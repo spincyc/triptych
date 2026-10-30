@@ -1,0 +1,554 @@
+{
+  "schema": "triptych-encyclical-cold-verification/v1",
+  "packet": 57,
+  "packet_pin": {
+    "path": ".scratch/encyclical-refinement-package/packets/57.json",
+    "sha256": "39f84cfdb1c57f8fdb178365564dec1f79cdbe8e4d9c8916395d980ad1ac8342",
+    "byte_size": 44689
+  },
+  "canonical_report": "src/sources/papal-documents/encyclicals-refinement-cold-57.md",
+  "canonical_report_unwritten": true,
+  "report_sha256": "95fa2a7019f2bcb0536192890a78d7fdd0f69317a094777819b1a2e3562d9a21",
+  "reviews_pin": {
+    "path": ".scratch/encyclical-refinement-package/cold-review-57/reviews.json",
+    "sha256": "29f5be0d92e3b9772402c6fb73d6a8f0a4cab52b715c5b13f9cd935cb3a1b6e1",
+    "byte_size": 4574
+  },
+  "pdf_pin": {
+    "path": ".scratch/etsi-english-greeting-recovery/render-ready/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en.pdf",
+    "sha256": "77c489f65d57979916bc16a4696c99c8944ad3e4d63e354181fbadb20d515139",
+    "byte_size": 59122
+  },
+  "source_pin": {
+    "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-protocol-text-afe42c91f0cb/text.txt",
+    "sha256": "afe42c91f0cb5951f764c39c811a298b51b13ebc81188ae22919559d8fcf109e",
+    "byte_size": 40192
+  },
+  "receipt_pin": {
+    "path": ".scratch/etsi-english-greeting-recovery/render-ready/receipt.json",
+    "sha256": "5e00c7852c479853e0e956e65ace0284bb36c24ab23d8201698862c6166c1f44",
+    "byte_size": 2761
+  },
+  "frozen_manifest_pin": {
+    "path": ".scratch/etsi-english-greeting-recovery/render-ready/frozen-manifest.json",
+    "sha256": "90675ffe961fa0d8e4fa156588dce8b4d6a59e25b4dbc6c3f7b2f19f3b201cc5",
+    "byte_size": 7047
+  },
+  "source_row_equals_frozen_manifest": true,
+  "final_packet_pin_recheck": true,
+  "packet_checks": 67,
+  "cache_counterpart_checks": 26,
+  "actual_individual_reader_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "actual_native_pages": [
+    1,
+    2,
+    5,
+    11,
+    12,
+    13,
+    15,
+    22
+  ],
+  "actual_recovery_crops": [
+    "issuer",
+    "greeting-one",
+    "greeting-two-prefix",
+    "greeting-two-ending",
+    "body-capital"
+  ],
+  "actual_image_views": 25,
+  "observations": [
+    {
+      "kind": "native-source",
+      "original_pdf_page": 11,
+      "printed_folio": 12,
+      "image": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-04/pages/page-4.png",
+      "sha256": "55f28ddc949d0ddf13a7ec1e00f1a8b6ac31545b245dbe166d9f3f6adef83fbd",
+      "finding": "Fresh full-resolution image inspected. Main printed page prose and four historical footnotes clearly readable. Narrow right gutter contains partial words from facing page; ownership must be compared against current LF379–387. No gap in main page prose is visually apparent.",
+      "verdict": "context inspected; residual comparison pending"
+    },
+    {
+      "kind": "native-source",
+      "original_pdf_page": 1,
+      "printed_folio": "unnumbered title",
+      "image": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-04/pages/page-1.png",
+      "sha256": "9cf46a7c221392ac8eceb8d144f5130ded194724d08e684379954a2411ed7932",
+      "finding": "Full-resolution title leaf directly identifies Encyclical Letter of Our Most Holy Lord Pius IX, by Divine Providence Pope; recipient address to all Patriarchs, Primates, Archbishops, Bishops and other Ordinaries in grace and communion of Apostolic See; examined by Rt. Rev. Bishop of Philadelphia and published with his approbation; Philadelphia McLaughlin Brothers printers Nos.112 and114 South Third Street,1874. Anonymous historical English printing supported by this actual page.",
+      "verdict": "PASS bounded identity/publication/address evidence"
+    },
+    {
+      "kind": "native-source",
+      "original_pdf_page": 2,
+      "printed_folio": "first body leaf (3 inferred; numeral not visible)",
+      "image": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-04/pages/page-2.png",
+      "sha256": "43c91b787911990c05240c44ec6a5f42437782a865377dd5a4c93832f4e4954c",
+      "finding": "Fresh full-resolution opening directly supports ornamental PIUS PP. IX.; both Gothic lines Venerable Brethren; and Health and the Apostolic Benediction:; ornamental initial A plus LTHOUGH. Main body first paragraph and historical Machab.iii.59 footnote readable. Printed folio3 not visible on this first body page; following original5 sample maps to printed6.",
+      "verdict": "PASS bounded protocol/initial source accuracy"
+    },
+    {
+      "kind": "native-source",
+      "original_pdf_page": 22,
+      "printed_folio": 23,
+      "image": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-04/pages/page-5.png",
+      "finding": "Fresh full-resolution closing supports blessing to Venerable Brothers, clergy and people; Rome, St Peter's, twenty-first November1873, twenty-eighth pontifical year, PIUS PP.IX. Nothing substantive follows on historical printed23. Source LF813–822 retains the printed closing/date/subscription.",
+      "verdict": "PASS bounded ending/extent",
+      "sha256": "6b470d59916130ea99d1786211e99009f9cc11030dffbdd33ac3fd54a4a57b77"
+    },
+    {
+      "kind": "native-source",
+      "original_pdf_page": 12,
+      "printed_folio": 13,
+      "image": ".scratch/encyclical-refinement-package/cold-review-57/additional-native-review/.scratch/encyclical-refinement-package/cold-review-57/additional-native-12-13-15/pages/page-1.png",
+      "finding": "Fresh full-resolution folio13. Main text starts refused to obey and ends justice of the most Serene Emperor. LF398–433 carries the substantive lines. At LF417–421 the printing reads weighed these things, followed directly by will reject; no substantive printed row corresponds to LF419 o o 7. That isolated line is extraneous recognition output, not a missing sentence. Printed folio13 and parent/subset image-stream plus seven geometry entries independently match.",
+      "verdict": "PASS bounded LF419 ownership/no substantive loss; reader usability pending",
+      "sha256": "e309a6645a29ed167b2b9345eb503cb19f507bf261d78181ed4c72b7ad06eb52"
+    },
+    {
+      "kind": "native-source",
+      "original_pdf_page": 13,
+      "printed_folio": 14,
+      "image": ".scratch/encyclical-refinement-package/cold-review-57/additional-native-review/.scratch/encyclical-refinement-package/cold-review-57/additional-native-12-13-15/pages/page-2.png",
+      "finding": "Fresh full-resolution folio14. Main text starts The things which We have thus far recounted and ends so great a havoc of souls. Raw LF436–468 preserves those main-text lines. Narrow right edge visibly captures clipped facing-page words, beginning redeemed/abundant/...; LF470–485 is extraneous partial-facing-page OCR rather than substantive words missing from the main folio. Next selected main prose resumes redeemed in the Blood of Christ atLF491. Main page prose remains readable; no main-row omission visible. Image streams and page geometry match parent.",
+      "verdict": "PASS bounded LF470–485 ownership/no main-text loss; reader usability pending",
+      "sha256": "62b5665107e102de88245ab5d5bba47eb6a4d7ff1a56d1b67af39c61e36359a3"
+    },
+    {
+      "kind": "native-source",
+      "original_pdf_page": 15,
+      "printed_folio": 16,
+      "image": ".scratch/encyclical-refinement-package/cold-review-57/additional-native-review/.scratch/encyclical-refinement-package/cold-review-57/additional-native-12-13-15/pages/page-3.png",
+      "finding": "Fresh full-resolution folio16. Main text starts lected them together and ends says, shall be preached in the whole world, in testimony. LF530–561 carries the main text through this boundary. LF564–568 i./ii/tl corresponds to clipped facing-page fragments at narrow right gutter, not omitted main-page words. Native consu[mm]ation is mechanically misread conswnmation atLF557; an isolated word recognition error, separately disclosed. No omitted main-page row is apparent; continuation LF574 to all nations resumes after page break. Parent/subset image streams and page geometry match.",
+      "verdict": "PASS bounded LF564–568 ownership/no main-text loss; reader usability pending",
+      "sha256": "1e7194d1900967791b5e1391ea8e2168999076423e5c463749bedba8d8098d95"
+    },
+    {
+      "kind": "reader-contact",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "image": ".scratch/etsi-english-greeting-recovery/pdf-review-ready/.scratch/etsi-english-greeting-recovery/render-ready/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/contact-sheets/sheet-001.png",
+      "finding": "Fresh contact inspection of exact current 7page reader. Consistent two-column page geometry and text size. Final page visibly contains substantial historical source text and closing before terminal apparatus. Nonprose isolated stacks visible pages4–5; individual usability review follows.",
+      "verdict": "overview inspected; no acceptance inferred",
+      "sha256": "94dc3edba742a2a3078332067299587c88922a8162f780c4493e610d89b84d97"
+    },
+    {
+      "kind": "reader-page",
+      "page": 1,
+      "image": ".scratch/etsi-english-greeting-recovery/pdf-review-ready/.scratch/etsi-english-greeting-recovery/render-ready/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/pages/page-1.png",
+      "finding": "Fresh full-resolution. Etsi multa / PiusIX /1873-11-21 /English clear. Full address precedes PIUS PP.IX.; both restored greeting lines and ALTHOUGH are legible, separated from body. Normal left-to-right columns; historical Machab.iii.59 note has own paragraph at source-page break before literal folio4. No clipping, overlap, dropped glyphs or apparent apparatus intrusion. Literal OCR word divisions and quotation marks remain visible.",
+      "verdict": "PASS layout; qualified OCR",
+      "sha256": "4169bd2d5e1a6f21204ccb75b5a22737b30b5cb658859010c5dc98300a30d7dc"
+    },
+    {
+      "kind": "reader-page",
+      "page": 2,
+      "image": ".scratch/etsi-english-greeting-recovery/pdf-review-ready/.scratch/etsi-english-greeting-recovery/render-ready/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/pages/page-2.png",
+      "finding": "Fresh full-resolution. Both columns readable with adequate gutter and margins, no clipping/overlap/glyph drop. Left column starts historical folio6. Source StJohn note appears as own paragraph in right column followed by historical folio8 and continuation. Ezech note likewise its own block before folio9 at foot; source sentence continues on next reader page. Literal detached parenthesis and OCR spelling/word-division errors remain; no independent correction claimed.",
+      "verdict": "PASS layout; qualified OCR",
+      "sha256": "19c3743acea2ec04d7032800c228e7d5976abdf3e5252eb0f9d694abd198e9ce"
+    },
+    {
+      "kind": "reader-page",
+      "page": 3,
+      "image": ".scratch/etsi-english-greeting-recovery/pdf-review-ready/.scratch/etsi-english-greeting-recovery/render-ready/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/pages/page-3.png",
+      "finding": "Fresh full-resolution. Normal left-column to right-column continuation; start tyrs continues previous Mar- and end always and everywhere la- carries onward. Historical folios10,11,12 retained as separate small blocks. Dense prose remains legible with consistent spacing/margins and no clipping, overlap or glyph loss. No fused source note found on this page.",
+      "verdict": "PASS layout; qualified OCR",
+      "sha256": "88eda7b52216b572b4fef413014be6108d86d094e3e7cb50e1ab1ab35f7eddb5"
+    },
+    {
+      "kind": "reader-page",
+      "page": 4,
+      "image": ".scratch/etsi-english-greeting-recovery/pdf-review-ready/.scratch/etsi-english-greeting-recovery/render-ready/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/pages/page-4.png",
+      "finding": "Fresh full-resolution. Main prose remains legible and source continuation is traceable around noise. LF379–387 renders a five-line st/P/f</a/c stack between have and historical note block; LF419 o o7 renders between things and will reject. LF470 ro appears at right-column foot before remainder on reader5. Native11/12/13 establish these as extraneous OCR, not unrecovered main text. Four historical notes are separated into two standalone lines; the source has StPeter iv.15.16 while OCR has iy.13.16, a real isolated citation-recognition error, not layout loss. No clipping/overlap, source notes remain ordered. Residual intake judgment will explicitly cover these intrusions.",
+      "verdict": "PASS physical layout; residual-noise qualification and final source decision pending",
+      "sha256": "6b3417d8c54f707948871ade5e2e95a59b9dfbeac8192e99fb97f0cbf55dc21e"
+    },
+    {
+      "kind": "reader-page",
+      "page": 5,
+      "image": ".scratch/etsi-english-greeting-recovery/pdf-review-ready/.scratch/etsi-english-greeting-recovery/render-ready/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/pages/page-5.png",
+      "finding": "Fresh full-resolution. LF470–485 noise continues as al)/lie/v/ai/P/a/< at top left before literal folio15 and redeemed; LF564–568 i./ii/tl appears mid-right before17 and to all nations. These isolated strings visibly interrupt source sentences but are not fused into words. Complete before/after sentence continuations remain readable and source pages show no substantive replaced row at those positions. One printed consu[mm]ation is literal OCR conswnmation. Historic folio16 appears misrecognized1C, and source col-/lected is interrupted by that original raw folio. No clipping, overlap or column-order failure; main body remains legible.",
+      "verdict": "PASS physical layout with substantial explicit residual-OCR qualification; final source decision pending",
+      "sha256": "f98e26cbcc2ef29ab73f1de513bd9365e63eaa998eb222bb08412e8e937d41f8"
+    },
+    {
+      "kind": "reader-page",
+      "page": 6,
+      "image": ".scratch/etsi-english-greeting-recovery/pdf-review-ready/.scratch/etsi-english-greeting-recovery/render-ready/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/pages/page-6.png",
+      "finding": "Fresh full-resolution. Dense historical quotations, note signs, source page numerals18–20 and three note blocks remain in declared source order. Notes beginning Augustin, StLeo and Cyprian are visibly separate paragraphs at historical breaks, not run into adjacent body words. Normal two-column continuation, no clipped or overlapping lines/glyphs. Literal OCR punctuation and source word divisions remain prominent and qualification applies.",
+      "verdict": "PASS layout; qualified OCR",
+      "sha256": "d4373868e6e9344ac3674ae8c84b7088d33736bfd963a20c6c72e5f4e5e5bff5"
+    },
+    {
+      "kind": "reader-page",
+      "page": 7,
+      "image": ".scratch/etsi-english-greeting-recovery/pdf-review-ready/.scratch/etsi-english-greeting-recovery/render-ready/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595-en/pages/page-7.png",
+      "finding": "Fresh full-resolution. Source-bearing final page includes lengthy body in both columns, literal folios21–23, final blessing, Rome/StPeter dating clause twenty-firstNovember1873/twenty-eighth pontifical year and PIUS PP.IX. Clear rule separates compact terminal source/right apparatus. Visible qualification names 1874Philadelphia human translation, bounded opening OCR recovery, retained notes/address/subscription and uncollated residual spelling/punctuation/page-boundary noise. Public-domain US source wording and project CC BY4 typesetting boundary distinct. No apparatus-only spill, clipping, overlap or lost glyph; closing agrees with original22/printed23.",
+      "verdict": "PASS layout/closing/terminal apparatus",
+      "sha256": "4edfe527c42f0d77c636552861c21c37f81e571cb30a7c566d9663d1ae8c492f"
+    },
+    {
+      "kind": "native-source",
+      "original_pdf_page": 5,
+      "printed_folio": 6,
+      "image": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-04/pages/page-3.png",
+      "finding": "Fresh full-resolution folio6; main prose from the constitution of the Catholic Church through votes of the people and confirmation of civil power is visible and accords with reader2 extent. Right gutter includes partial neighboring-page letters. Main page has no historical notes. The retained source is a scan of historical English rather than a modern reconstructed/translated document.",
+      "verdict": "PASS bounded source sample; not whole-body collation",
+      "sha256": "52c8c6bda950d7adeadb93c3dcbfaf18152446b16b06eda56278aec1cc495edf"
+    },
+    {
+      "kind": "ocr-crop",
+      "block": "issuer",
+      "image": ".scratch/encyclical-refinement-package/cold-review-57/replay/issuer.png",
+      "finding": "Fresh actual replay crop inspected. Ornamental issuer PIUS PP.IX. visibly matches selected whole raw issuer.txt[0:13]. No manual source wording supplied.",
+      "verdict": "PASS source glyphs/raw selection",
+      "sha256": "3fdc499d8878b465ecacb493c3fdc84757e79b8c84a0b088640c9c98a2a15a13"
+    },
+    {
+      "kind": "ocr-crop",
+      "block": "greeting-one",
+      "image": ".scratch/encyclical-refinement-package/cold-review-57/replay/greeting-one.png",
+      "finding": "Fresh actual replay crop inspected. Gothic Venerable Brethren; is readable despite left gutter scan defect; selected first19 raw TXT bytes accord with actual printed greeting. Unselected OCR residue is excluded only by pinned numeric bounds.",
+      "verdict": "PASS source glyphs/raw selection",
+      "sha256": "64e9cbbc12ae7ca0468b669c35f042c591a3bf20ef9fa914be4b92a20113a2b0"
+    },
+    {
+      "kind": "ocr-crop",
+      "block": "greeting-two-prefix",
+      "image": ".scratch/encyclical-refinement-package/cold-review-57/replay/greeting-two-prefix.png",
+      "finding": "Fresh actual replay crop inspected. Entire Gothic line visibly reads Health and the Apostolic Benediction:; raw prefix crop chosen for bytes[0:25] supplies Health and the Apostolic plus following space. It does not authorize unselected imperfect OCR ending. Both retained numeric spans refer to same native crop rectangle.",
+      "verdict": "PASS source glyphs/prefix selection",
+      "sha256": "463490df615ba318eb9fa3c34b48c7232ecbe5fc68d4b2edae9f32bbb498675c"
+    },
+    {
+      "kind": "ocr-crop",
+      "block": "greeting-two-ending",
+      "image": ".scratch/encyclical-refinement-package/cold-review-57/replay/greeting-two-ending.png",
+      "finding": "Fresh actual replay crop inspected. Half-scale variant shows same Gothic line and clear Benediction: ending. Raw ending bytes[25:37] alone are combined with separate raw prefix[0:25], preserving a mechanically selected line supported by native glyphs. No formula is manually reconstructed.",
+      "verdict": "PASS source glyphs/ending selection",
+      "sha256": "67ec62e7d2e0e04434e1eb9adf3d8f69fd9c4d2451316fca0c7044acbdccc16f"
+    },
+    {
+      "kind": "ocr-crop",
+      "block": "body-capital",
+      "image": ".scratch/encyclical-refinement-package/cold-review-57/replay/body-capital.png",
+      "finding": "Fresh actual replay crop inspected. Ornament contains unmistakable capital A. Recipe uses full generic A–Z uppercase alphabet with PSM10, not a one-character whitelist, and selects raw first byteA. This recovers ALTHOUGH from preserved LTHOUGH without model-authored source text.",
+      "verdict": "PASS source glyphs/generic recognition/initial selection",
+      "sha256": "ff9e2c78765b7565a4c3ff4683cccd7dbd59f933f21fe09400e73c0e54baf1ae"
+    },
+    {
+      "kind": "noise-context-crop",
+      "original_pdf_page": 11,
+      "image": ".scratch/encyclical-refinement-package/cold-review-57/native-11-noise-context.jpg",
+      "source_image": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-04/pages/page-4.png",
+      "source_image_sha256": "55f28ddc949d0ddf13a7ec1e00f1a8b6ac31545b245dbe166d9f3f6adef83fbd",
+      "source_image_dimensions": [
+        1221,
+        2200
+      ],
+      "crop_rectangle_xywh": [
+        1120,
+        230,
+        101,
+        1670
+      ],
+      "quality": 95,
+      "finding": "Actual JPEG95 context crop freshly viewed. Main-page line endings at left lie before a visible gutter/binding line; clipped facing-page starts re/st/p/f/a/o/b/e appear at extreme right beyond that gutter. LF379–387 foreign noise is not an own-body omission; retain main text and all four source notes. Context rectangle intentionally includes own text for comparison; no image-based automatic deletion implied.",
+      "verdict": "SOURCE CHANGES_REQUIRED: confirmed foreign-facing-page contamination",
+      "sha256": "c56775dae1445f1aae03019e2ad7a7fd45c985382f2064e851f07bfa6e8a2e95"
+    },
+    {
+      "kind": "noise-context-crop",
+      "original_pdf_page": 12,
+      "image": ".scratch/encyclical-refinement-package/cold-review-57/native-12-noise-context.jpg",
+      "source_image": ".scratch/encyclical-refinement-package/cold-review-57/additional-native-review/.scratch/encyclical-refinement-package/cold-review-57/additional-native-12-13-15/pages/page-1.png",
+      "source_image_sha256": "e309a6645a29ed167b2b9345eb503cb19f507bf261d78181ed4c72b7ad06eb52",
+      "source_image_dimensions": [
+        1221,
+        2200
+      ],
+      "crop_rectangle_xywh": [
+        10,
+        1180,
+        1040,
+        210
+      ],
+      "quality": 95,
+      "finding": "Actual JPEG95 context freshly viewed. Printed lines show when he has better ascertained and weighed these things, immediately followed by will reject a suspicion so empty and incredible against. No independent printed row o o7 exists. Delete only exact LF419 source bytes; retain both own body rows and punctuation literal as recognized elsewhere.",
+      "verdict": "SOURCE CHANGES_REQUIRED: extraneous recognition row",
+      "sha256": "d2ce6efe448298f99c2a83ea793157fee526939561f6d759aff53f6c8785dd4d"
+    },
+    {
+      "kind": "noise-context-crop",
+      "original_pdf_page": 13,
+      "image": ".scratch/encyclical-refinement-package/cold-review-57/native-13-noise-context.jpg",
+      "source_image": ".scratch/encyclical-refinement-package/cold-review-57/additional-native-review/.scratch/encyclical-refinement-package/cold-review-57/additional-native-12-13-15/pages/page-2.png",
+      "source_image_dimensions": [
+        1221,
+        2200
+      ],
+      "crop_rectangle_xywh": [
+        1120,
+        230,
+        101,
+        1670
+      ],
+      "quality": 95,
+      "finding": "Actual JPEG95 context freshly viewed. Own main-page line endings remain left of the binding/gutter; clipped facing-page redeemed/abundant and subsequent partial line starts are visible beyond it at far right. LF470–485 noise imports these foreign edge fragments rather than any omitted own line. Retain own LF436–468 complete main text and continuation LF491 onward.",
+      "verdict": "SOURCE CHANGES_REQUIRED: confirmed foreign-facing-page contamination",
+      "sha256": "5d454da23d4f20e480be21a8488736908a301c9ced5968e15647394656ec119a",
+      "source_image_sha256": "62b5665107e102de88245ab5d5bba47eb6a4d7ff1a56d1b67af39c61e36359a3"
+    },
+    {
+      "kind": "noise-context-crop",
+      "original_pdf_page": 15,
+      "image": ".scratch/encyclical-refinement-package/cold-review-57/native-15-noise-context.jpg",
+      "source_image": ".scratch/encyclical-refinement-package/cold-review-57/additional-native-review/.scratch/encyclical-refinement-package/cold-review-57/additional-native-12-13-15/pages/page-3.png",
+      "source_image_dimensions": [
+        1221,
+        2200
+      ],
+      "crop_rectangle_xywh": [
+        1120,
+        230,
+        101,
+        1770
+      ],
+      "quality": 95,
+      "finding": "Actual JPEG95 context freshly viewed. Own printed16 main line endings appear left of visible gutter; partial facing-page quotation marks and letter stems appear beyond it at extreme right. The isolated LF564–568 i./ii/tl is edge-recognition contamination after complete own main text. Preserve LF530–561 and continuationLF574 onward; no ownership waiver follows from readability.",
+      "verdict": "SOURCE CHANGES_REQUIRED: confirmed foreign-facing-page contamination",
+      "sha256": "cc30cb2f379ce3c9f5ad4cdfa5dc1824260b67a61ffdec2f069febf782626bcb",
+      "source_image_sha256": "1e7194d1900967791b5e1391ea8e2168999076423e5c463749bedba8d8098d95"
+    }
+  ],
+  "decisions": {
+    "source_intake": {
+      "status": "CHANGES_REQUIRED",
+      "qualification": "Confirmed foreign and extraneous source additions block admission; see separately passing identity and recovery gates."
+    },
+    "source_identity_basis": {
+      "status": "PASS",
+      "qualification": "Bounded actual historical-printing evidence; existing edition-specific United States basis only."
+    },
+    "source_protocol_recovery": {
+      "status": "PASS",
+      "qualification": "Actual native page2 plus all5 crop images, full OCR/model/tool replay and raw-span assembly; no manual source words."
+    },
+    "source_residual_noise_intake_adequacy": {
+      "status": "CHANGES_REQUIRED",
+      "qualification": "Confirmed foreign/extraneous additions are a material source-contamination hold under root criterion, independently of remaining main-prose readability. Frozen82byte/31LF removal map and actual source-edge crop proof supplied."
+    },
+    "pdf_visual": {
+      "status": "PASS",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "admission_publication": {
+      "status": "PENDING_ROOT",
+      "qualification": "No supersession, installation or publication action performed."
+    }
+  },
+  "findings": [
+    {
+      "severity": "blocker",
+      "pages": [
+        4,
+        5
+      ],
+      "description": "Primary-image review confirms foreign clipped-facing-page OCR and spurious recognition additions at LF379–387,419,470–485,564–568. Root admission criterion treats this as material source contamination. Exact removal map is frozen separately. Main prose readability does not waive the source hold."
+    },
+    {
+      "severity": "qualification",
+      "pages": [
+        4,
+        5
+      ],
+      "description": "Real isolated recognition errors remain: native St.Peter iv.15.16 becomes OCR iy.13.16; consummation becomes conswnmation; printed16 becomes1C. No source accuracy or whole-word collation acceptance is granted."
+    },
+    {
+      "severity": "qualification",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "description": "Literal historical page numerals, quotation errors, spelling errors and word divisions remain. Historical note paragraphs stay in source-page order."
+    }
+  ],
+  "limitations": [
+    "Native image inspection covers original pages1,2,5,11,12,13,15,22; no whole22-page lexical collation or translation accuracy claim.",
+    "Mechanical fidelity and exact byte replay are separate from source accuracy. Known citation, word and page-numeral OCR errors remain.",
+    "Historical old949/PDF25df and cold25 status remain separate failed-retained records; no prior acceptance inherited.",
+    "Earlier raw5654 delivery is restricted metadata-only and was not fetched; actual recovery parent949 is exact retained input.",
+    "qpdf/mutool unavailable; successful Ghostscript plus Poppler checks used.",
+    "Root retains source supersession/admission/install/publication and frozen fifth-scope decisions."
+  ],
+  "independent_fidelity": {
+    "status": "pass",
+    "method": "pdf-raw-source-aware-line-hyphen-nfkc-v3",
+    "pages": 7,
+    "source_characters": 39844,
+    "source_normalized_characters": 27689,
+    "layout_hyphens": 53,
+    "source_first_page": 1,
+    "source_last_page": 7
+  },
+  "source_library_validate": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 TRIPTYCH_LIBRARY_CACHE=0 tools/source-library validate",
+    "exit_status": 0,
+    "result": "source-library valid: artifact=11158 corpus=5 edition=14310 passage=9532 segment=10890 work=10944 bindings=4398"
+  },
+  "structure": {
+    "ghostscript_nullpage_exit_status": 0,
+    "poppler_pdfinfo_exit_status": 0,
+    "pdffonts_exit_status": 0,
+    "qpdf": "unavailable",
+    "mutool": "unavailable"
+  },
+  "mutations": {
+    "exclusive_scratch": ".scratch/encyclical-refinement-package/cold-review-57",
+    "outside_scratch": false,
+    "canonical_source": false,
+    "shared_cache": false,
+    "producer": false,
+    "Git": false,
+    "install_publish": false
+  },
+  "evidence_files": [
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/input-checks.json",
+      "sha256": "7b9a62c7b35a7646024da12e86c9225bf803b06abacf423e14a2ede2794dd2c5",
+      "byte_size": 29964
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/recovery-input-checks.json",
+      "sha256": "5214b4697b858313ac04af285de9243dbbbee51b1a0185aa83e1c66ef4ff4038",
+      "byte_size": 6581
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/recovery-independent-assembly.json",
+      "sha256": "b97a050ab009a131434a1811b5622d44a16a66cc82bc5cd6281b1ceefaed8aba",
+      "byte_size": 3348
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/source-metadata-checks.json",
+      "sha256": "9019ace84dcc1353678b65a212b3e75118b10b579bc590563effd90310b9d7a1",
+      "byte_size": 1834
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/cache-copy-checks.json",
+      "sha256": "2c878156c38592b31361c14ee0aa2dbec0bde603420ea417a516b823434a60ef",
+      "byte_size": 7535
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/subset-parity.json",
+      "sha256": "1a4c127e9cd8266e9c5aabe54f6aa6c666ed6edf272c51e862d6042ee8944f47",
+      "byte_size": 3264
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/sample-original-parity.json",
+      "sha256": "641980e7b2c481680a32d4464b19a434291bbbd9d49bbd0065222b87810644b8",
+      "byte_size": 4715
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/independent-fidelity.json",
+      "sha256": "a76504b455104721520fb194965dbac315293052b76ec345ce18d13f11b8290b",
+      "byte_size": 239
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/source-library-validate.log",
+      "sha256": "a54e11c74533f8255920d59c517f092185ddd43345044a52675e997873d08f30",
+      "byte_size": 112
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/source-library-validate-final.log",
+      "sha256": "631849e32ebe24db15ec05cfba2c18c4ce0f7d11cf7069b2d0e4f1d4fa2bcd9c",
+      "byte_size": 112
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/observations.jsonl",
+      "sha256": "f3c24642ddce7111f9c630525ce451e66e510fe0bbe2c00c1df8663e83220fbc",
+      "byte_size": 21319
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/reader-pdfinfo.txt",
+      "sha256": "ae04a269c51dd438a256380089adba78a65a9521047db728b182c83c86978c1b",
+      "byte_size": 849
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/reader-allpages-info.txt",
+      "sha256": "4a2a2113956d8cb1153454ae3c0b9560b5dc808c6e89c8985154061a1516c2c5",
+      "byte_size": 2933
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/reader-pdffonts.txt",
+      "sha256": "433a4cb8177bb47f6b54f089ced8aea0e898bbf2fb98499d55fd6207be4f89ec",
+      "byte_size": 571
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/reader-ghostscript-structure.txt",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "byte_size": 7
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/reader-urls.txt",
+      "sha256": "2020127fe80090c003959fafc7a3962b5e6c2e4932ff617b3c13166eb8f6cf23",
+      "byte_size": 139
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/compile-log-findings.json",
+      "sha256": "da04bf4f3614db04a733961c03169a4443bbf2bffd9d62420142613b502404bf",
+      "byte_size": 483
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/replay/replay-report.json",
+      "sha256": "ca04530a54d35bfff569a6af5e2ecd1bb6d6046f69dabd88ad0846dbe198278a",
+      "byte_size": 11590
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/additional-native-review/review-run.json",
+      "sha256": "e127a09491909e11c35029a019512a1e7df228a81365bf857091f8e82ecca341",
+      "byte_size": 1869
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/foreign-span-disposition.json",
+      "sha256": "a704482e5f91e8987f319f34ecca6457e427b7ce48d5aac4d594907b29c0e728",
+      "byte_size": 9527
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/foreign-span-image-proof.json",
+      "sha256": "71922475bb632a060e1768982663fa76e1721462e93e091b518786efd0664a96",
+      "byte_size": 7261
+    }
+  ],
+  "execution_qualifications": [
+    "Initial naive raster-pin resolver treated relative raster names as repository-relative; corrected to each exact raster_dir before any judgment. All67 final pin checks pass.",
+    "Additional-native review shell result handle was not retained by an early output-only wrapper; no duplicate launch. Durable review-run/cache/subset hashes and completed process state reconciled successful single invocation.",
+    "Optional attempt to repeat predecessor raw5654 selector encountered absent payload path; recorded restricted metadata-only boundary, no fetch or source mutation. Current recovery parent949 and all actual current inputs verified."
+  ]
+}

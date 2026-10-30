@@ -1,0 +1,69 @@
+{
+  "schema": "triptych-encyclical-independent-refinement-reviews/v1",
+  "packet": "57b",
+  "source_status": "PASS_BOUNDED_MECHANICAL_OCR_INTAKE",
+  "pdf_status": "PASS",
+  "documents": [
+    {
+      "id": "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
+      "language": "en",
+      "source_sha256": "0bc35822f5caee4eac0a1b7cfdef4ec9d56baee756a869bd32af0d3a1ef39693",
+      "pdf_sha256": "66ece5336d40091bc60d08be56decbd6c5d0fe8fe7c4849af4b0a1fc9c6e61e9",
+      "receipt_sha256": "326fc9f3aaf372d4917e7da84674fe62354272b02b6f0ee9f9b5a5f6b6cf0fc2",
+      "pages": 7,
+      "status": "PASS",
+      "source_intake_status": "PASS_BOUNDED_MECHANICAL_OCR_INTAKE",
+      "pdf_status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "source_decision": {
+        "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/source-decision.json",
+        "sha256": "464e042ff7328ea297971c7abb42f11a9771d4432379cf8897014650b8d63c3f",
+        "byte_size": 5322
+      },
+      "observer_closures": [
+        {
+          "path": ".scratch/encyclical-refinement-package/role-decision-57b-stopped-primary.json",
+          "sha256": "41cbb879de26db8f9c9e732ee3b232d587882dec6e00836bb981e4a2b77a1434",
+          "byte_size": 947
+        },
+        {
+          "path": ".scratch/encyclical-refinement-package/role-decision-57b-recovery.json",
+          "sha256": "d951de2997e98f0ee66db0e5c878c29288e9cd47e5c70a4acc42f05f04dd2e9d",
+          "byte_size": 1823
+        }
+      ],
+      "actual_observations": {
+        "path": ".scratch/encyclical-refinement-package/cold-review-57b-aggregate/combined-observations.json",
+        "sha256": "5a783aefe6312ab5a5cd5b39b992f4321fe64385ec5e1ee5a0583dc12870e995",
+        "byte_size": 14330
+      },
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "description": "Bounded mechanical OCR source with known isolated citation/spelling/word-division errors; no full lexical or translation accuracy claim."
+        }
+      ],
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-57b.md",
+      "report_sha256": "29ce6e8d6225b992a8d4b39ffa6af1be168edecb3e3dc799c93b15e4244e2897"
+    }
+  ]
+}

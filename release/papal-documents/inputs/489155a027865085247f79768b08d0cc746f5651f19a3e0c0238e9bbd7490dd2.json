@@ -1,0 +1,76 @@
+{
+  "schema": "triptych-rootstop-final-pins/v1",
+  "source_status": "PASS_BOUNDED_MECHANICAL_OCR_INTAKE",
+  "assigned_pdf_tail_status": "PASS",
+  "whole_pdf_status": "UNASSIGNED",
+  "packet_sha256": "0491dd19474a3966cc61d46c6cd1f10e2a7a04a9019dd8727e12d0626e66644f",
+  "source_sha256": "0bc35822f5caee4eac0a1b7cfdef4ec9d56baee756a869bd32af0d3a1ef39693",
+  "pdf_sha256": "66ece5336d40091bc60d08be56decbd6c5d0fe8fe7c4849af4b0a1fc9c6e61e9",
+  "frozen_manifest_sha256": "b7d8ab152bd0322f95601b283dcbf99e9867d5058c68597d4c185a9f66ea362a",
+  "receipt_sha256": "326fc9f3aaf372d4917e7da84674fe62354272b02b6f0ee9f9b5a5f6b6cf0fc2",
+  "canonical_role_report": "src/sources/papal-documents/encyclicals-refinement-cold-57b-recovery.md",
+  "canonical_role_report_written": false,
+  "aggregate_canonical_target": "src/sources/papal-documents/encyclicals-refinement-cold-57b.md",
+  "artifacts": [
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/independent-byte-proof.json",
+      "sha256": "1005ebca72add3867024c72173a2c18372f982d35ffa135d33a25c961b1b8e04",
+      "byte_size": 6014
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/independent-fidelity.json",
+      "sha256": "7c648256125a3192feea6e6eba09b623ba1fddf4511bcde6e881926a2a9c8b2d",
+      "byte_size": 393
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/input-checks.json",
+      "sha256": "aed672a772ed96a605f9213026e12e6123baba2fa2158b39e7c74323e5ad20a2",
+      "byte_size": 28120
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/observations.jsonl",
+      "sha256": "7b9a498f3ea7a12d1bd8e05ed466f41831a13f4c00ed9f6ec20599bcf4e12d9a",
+      "byte_size": 5300
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/pixel-checks.json",
+      "sha256": "708e312acbbd751a5cd09faef8d123c2e20832525bc2c746ccd6533e9bda8332",
+      "byte_size": 3438
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/report.md",
+      "sha256": "06cc974acdde2c260237ec5d367d191f4083edc311795248722f55fba51d0f91",
+      "byte_size": 6720
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/reviews.json",
+      "sha256": "9e6ed19805748b01d8957a331da0d5c24aecf7dc9bda199ddbbac4079cad635b",
+      "byte_size": 5408
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/source-decision.json",
+      "sha256": "464e042ff7328ea297971c7abb42f11a9771d4432379cf8897014650b8d63c3f",
+      "byte_size": 5322
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/source-library-status.json",
+      "sha256": "b4de271b42a2983c9fb800bd250d6a98594ec7408b3ea08256ae3343b8bf0d4b",
+      "byte_size": 332
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/source-library-validate.log",
+      "sha256": "93c87933421bf01b2f9708de04edf23d02746e01013e0b6d3132c2fc000bc451",
+      "byte_size": 112
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/terminal-link-check.json",
+      "sha256": "540fda7e68af40a8df42abe290fcc23da0468838109dc21ca5aa2292a9f28115",
+      "byte_size": 322
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/verification.json",
+      "sha256": "2e2772f0260dcbf0aa64f2ac373e02f545325f2c35ac83216680fec599ee7641",
+      "byte_size": 7412
+    }
+  ]
+}

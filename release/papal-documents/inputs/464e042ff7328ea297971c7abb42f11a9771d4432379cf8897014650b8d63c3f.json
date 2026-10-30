@@ -1,0 +1,107 @@
+{
+  "schema": "triptych-etsi-rootstop-source-recovery-decision/v1",
+  "status": "PASS",
+  "source_decision": "PASS_BOUNDED_MECHANICAL_OCR_INTAKE",
+  "packet": {
+    "path": ".scratch/encyclical-refinement-package/packets/57b.json",
+    "sha256": "0491dd19474a3966cc61d46c6cd1f10e2a7a04a9019dd8727e12d0626e66644f",
+    "byte_size": 56634
+  },
+  "protocol": {
+    "path": ".scratch/encyclical-refinement-package/ROOTSTOP-57b-recovery-protocol.json",
+    "sha256": "29fa51d850196b8f66dbda5071298f12a0040c7e88539c159c69d2da9272fbfd",
+    "byte_size": 3947
+  },
+  "source_sha256": "0bc35822f5caee4eac0a1b7cfdef4ec9d56baee756a869bd32af0d3a1ef39693",
+  "pdf_sha256": "66ece5336d40091bc60d08be56decbd6c5d0fe8fe7c4849af4b0a1fc9c6e61e9",
+  "receipt_sha256": "326fc9f3aaf372d4917e7da84674fe62354272b02b6f0ee9f9b5a5f6b6cf0fc2",
+  "frozen_manifest_sha256": "b7d8ab152bd0322f95601b283dcbf99e9867d5058c68597d4c185a9f66ea362a",
+  "canonical_role_report": "src/sources/papal-documents/encyclicals-refinement-cold-57b-recovery.md",
+  "canonical_role_report_written": false,
+  "aggregate_target": "src/sources/papal-documents/encyclicals-refinement-cold-57b.md",
+  "basis": "Independent present recovery judgment from exact 9-exclusion and all-complement proof, exact frozen prior independent57 identity/protocol/native ownership/readability facts, frozen actual current reader1\u20135 and ownfolio5/11 judgments, and fresh bounded ownfolio12/15/22 geometry. Foreign additions are removed rather than waived.",
+  "prior_independent_facts_credit": {
+    "report.md": {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/report.md",
+      "sha256": "95fa2a7019f2bcb0536192890a78d7fdd0f69317a094777819b1a2e3562d9a21",
+      "byte_size": 18176
+    },
+    "reviews.json": {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/reviews.json",
+      "sha256": "29f5be0d92e3b9772402c6fb73d6a8f0a4cab52b715c5b13f9cd935cb3a1b6e1",
+      "byte_size": 4574
+    },
+    "verification.json": {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/verification.json",
+      "sha256": "8b44fd7981eb1f0e77a9bdef4feb5df15c6727b43feac1c672fdd015216bf155",
+      "byte_size": 34725
+    },
+    "observations.jsonl": {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/observations.jsonl",
+      "sha256": "f3c24642ddce7111f9c630525ce451e66e510fe0bbe2c00c1df8663e83220fbc",
+      "byte_size": 21319
+    },
+    "foreign-span-disposition.json": {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/foreign-span-disposition.json",
+      "sha256": "a704482e5f91e8987f319f34ecca6457e427b7ce48d5aac4d594907b29c0e728",
+      "byte_size": 9527
+    },
+    "foreign-span-image-proof.json": {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57/foreign-span-image-proof.json",
+      "sha256": "71922475bb632a060e1768982663fa76e1721462e93e091b518786efd0664a96",
+      "byte_size": 7261
+    }
+  },
+  "frozen_current_observer_credit": {
+    "path": ".scratch/encyclical-refinement-package/57b-stop-primary-observations.json",
+    "sha256": "d14af29c05ab449f9a5d325319560c272e3f7ea2044df29a14d94887670c0720",
+    "byte_size": 9184
+  },
+  "fresh_own_folio_views": [
+    12,
+    15,
+    22
+  ],
+  "credited_current_own_folio_views": [
+    5,
+    11
+  ],
+  "new_native_full_page_views": [],
+  "exact_removal_summary": {
+    "foreign_intervals": 4,
+    "foreign_bytes": 82,
+    "authorized_own_folio_intervals": 5,
+    "own_folio_bytes": 19,
+    "total_intervals": 9,
+    "total_bytes": 101,
+    "insertions": 0,
+    "all_other_bytes_retained_exactly": true,
+    "reinsertion_restores_afe": true,
+    "opening_protocol_body_historical_notes_closing_subscription_retained": true
+  },
+  "evidence": [
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/independent-byte-proof.json",
+      "sha256": "1005ebca72add3867024c72173a2c18372f982d35ffa135d33a25c961b1b8e04",
+      "byte_size": 6014
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/pixel-checks.json",
+      "sha256": "708e312acbbd751a5cd09faef8d123c2e20832525bc2c746ccd6533e9bda8332",
+      "byte_size": 3438
+    },
+    {
+      "path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/input-checks.json",
+      "sha256": "aed672a772ed96a605f9213026e12e6123baba2fa2158b39e7c74323e5ad20a2",
+      "byte_size": 28120
+    }
+  ],
+  "qualifications": [
+    "1874 identified human English printing and United States public-domain basis are exact frozen prior independent57 facts, not fresh title-page views here.",
+    "Original protocol/model/crop/raw OCR and replay findings credited from prior independent57; no new OCR or new protocol image viewing claimed.",
+    "Isolated Peter citation/spelling/punctuation/word-division OCR defects remain literal and explicitly qualified. Source is not word-for-word collated or translation-verified.",
+    "This gate assesses the bounded exact current mechanical source intake. Old949/25df and afe/77c adverse source histories remain immutable.",
+    "Whole current reader PDF remains UNASSIGNED in this recovery role until coordinator aggregates frozen actual1\u20135/contact with fresh6\u20137. Root retains admission, publication and installation."
+  ],
+  "whole_pdf_status": "UNASSIGNED"
+}

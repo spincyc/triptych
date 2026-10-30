@@ -46887,7 +46887,7 @@
       "corpus": "historical-english-completion",
       "id": "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
       "language": "en",
-      "selection_sha256": "9b020ee6af82bece0f45735c9f616664eaec0d1eafa251967eb6352d7237edcd",
+      "selection_sha256": "7ba47e586bffd8b900c33f8585af6d01a7fb6d14ae23c0ef25cb17cab9e4c071",
       "status": "ready"
     },
     {
@@ -426331,47 +426331,47 @@
       }
     },
     {
-      "bytes": 60494,
+      "bytes": 59346,
       "corpus": "historical-english-completion",
       "id": "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
       "language": "en",
       "manifest": {
-        "bytes": 7148,
-        "path": "release/papal-documents/inputs/d1414b8ac99c58748049f3678af28bfac6aacb9ef297f61df127b08e0d598c64.json",
+        "bytes": 8751,
+        "path": "release/papal-documents/inputs/b7d8ab152bd0322f95601b283dcbf99e9867d5058c68597d4c185a9f66ea362a.json",
         "row_index": 0,
-        "sha256": "d1414b8ac99c58748049f3678af28bfac6aacb9ef297f61df127b08e0d598c64"
+        "sha256": "b7d8ab152bd0322f95601b283dcbf99e9867d5058c68597d4c185a9f66ea362a"
       },
       "pages": 7,
       "pdf": "pdf/papal-documents/1873-11-21--papal.pius-ix.enciclica-etsi-multa-21-novembre-1873--en--f577bcedf4e812b3.pdf",
-      "pdf_sha256": "25dfc7d1c6271f8ba501859c979836e07891ba15333334da6b1b5ac2bb7df7fa",
+      "pdf_sha256": "66ece5336d40091bc60d08be56decbd6c5d0fe8fe7c4849af4b0a1fc9c6e61e9",
       "receipt": {
-        "bytes": 2773,
-        "path": "release/papal-documents/inputs/2db70c1d5659f128f2bbe6a5bf2113c53c26727e7c1314812a50056b9b0bf549.json",
+        "bytes": 2765,
+        "path": "release/papal-documents/inputs/326fc9f3aaf372d4917e7da84674fe62354272b02b6f0ee9f9b5a5f6b6cf0fc2.json",
         "row_index": 0,
-        "sha256": "2db70c1d5659f128f2bbe6a5bf2113c53c26727e7c1314812a50056b9b0bf549"
+        "sha256": "326fc9f3aaf372d4917e7da84674fe62354272b02b6f0ee9f9b5a5f6b6cf0fc2"
       },
-      "render_revision": "2026-10-30T06:05:00Z",
+      "render_revision": "2026-10-30T20:57:04Z",
       "review": {
         "audit": {
-          "bytes": 2325,
-          "path": "release/papal-documents/inputs/3d76168e61481f3b903aeecd6e1f9637f7c3b2cecfb7b27e169ee41bce6bbee5.json",
+          "bytes": 2435,
+          "path": "release/papal-documents/inputs/782539902f47c14c5a05fbbd0b13aabecf9761d76b8412318243c397895e8dd7.json",
           "row_index": 0,
-          "sha256": "3d76168e61481f3b903aeecd6e1f9637f7c3b2cecfb7b27e169ee41bce6bbee5"
+          "sha256": "782539902f47c14c5a05fbbd0b13aabecf9761d76b8412318243c397895e8dd7"
         },
-        "current_receipt_sha256": "2db70c1d5659f128f2bbe6a5bf2113c53c26727e7c1314812a50056b9b0bf549",
-        "original_receipt_sha256": "2db70c1d5659f128f2bbe6a5bf2113c53c26727e7c1314812a50056b9b0bf549",
+        "current_receipt_sha256": "326fc9f3aaf372d4917e7da84674fe62354272b02b6f0ee9f9b5a5f6b6cf0fc2",
+        "original_receipt_sha256": "326fc9f3aaf372d4917e7da84674fe62354272b02b6f0ee9f9b5a5f6b6cf0fc2",
         "reports": {
-          "src/sources/papal-documents/encyclicals-refinement-cold-25.md": {
-            "bytes": 9315,
-            "path": "release/papal-documents/reports/a32e53d4419b6ffc02451665b898987332415ebe217d703e8a310e2973dd9613.md",
-            "sha256": "a32e53d4419b6ffc02451665b898987332415ebe217d703e8a310e2973dd9613"
+          "src/sources/papal-documents/encyclicals-refinement-cold-57b.md": {
+            "bytes": 5316,
+            "path": "release/papal-documents/reports/29ce6e8d6225b992a8d4b39ffa6af1be168edecb3e3dc799c93b15e4244e2897.md",
+            "sha256": "29ce6e8d6225b992a8d4b39ffa6af1be168edecb3e3dc799c93b15e4244e2897"
           }
         },
         "status": "PASS"
       },
       "source": {
         "act_id": "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
-        "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.historical-ocr-with-address-94992a97e46c",
+        "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-text-0bc35822f5ca",
         "completeness": "complete-within-identified-printed-witness",
         "date": "1873-11-21",
         "document_type": "encyclical",
@@ -426408,20 +426408,20 @@
         "physical_line_ranges": [
           [
             1,
-            823
+            788
           ]
         ],
         "pope": "Pius IX",
-        "revision": "2026-10-30T06:05:00Z",
+        "revision": "2026-10-30T20:57:04Z",
         "rights_basis": "The identified Philadelphia McLaughlin Brothers English pamphlet is dated 1874 on its historical title leaf and in the State Library of Pennsylvania catalogue. Its English text and contemporary printed pages are public domain in the United States by expiration of publication term, under src/sources/inventories/papal-documents-rights-v1.toml. Automated OCR adds no original authorship. The modern Internet Archive funding/digitization leaf is excluded from retained native pages and text.",
         "rights_notice": "This identified historical English printing is public domain in the United States; source wording retains its own status.",
         "rights_status": "public-domain",
-        "segment_id": "segment.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.complete-english-with-address",
-        "segment_path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/segments/complete-english-with-address.toml",
-        "sha256": "94992a97e46c8fe05150c4aa0cd998b28f754e8cceec6e8859797de3ed687097",
-        "source_note": "The 1874 Philadelphia title leaf prints the substantive recipient address, not repeated on body p.3: exact raw OCR LF14–15. This replacement includes those address lines and their adjacent blank lines LF16–17 before the unchanged complete former body selection LF38–856. It retains source notes, 21 November 1873 dating clause and PIUS PP. IX subscription. Native title/body proof pages were checked against the exact address bounds. The prior selector omitted this address and is superseded; prior source payloads remain unchanged. The offered OCR still fails to recognize the ornamental issuer heading and initial A, and garbles the gothic salutation; no English wording or OCR words are corrected. Anonymous historical human translation, examined by the Bishop of Philadelphia and published with his approbation.",
+        "segment_id": "segment.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-0bc35822f5ca",
+        "segment_path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/segments/etsi-exclusion1-0bc35822f5ca.toml",
+        "sha256": "0bc35822f5caee4eac0a1b7cfdef4ec9d56baee756a869bd32af0d3a1ef39693",
+        "source_note": "Mechanical OCR of the identified 1874 Philadelphia McLaughlin Brothers human translation, including title-leaf recipient address, historical notes and complete subscription. The opening protocol and initial capital were recovered from the original printed page. Excludes proven clipped facing-page text, a spurious recognition row and selected printed page numbers. Other original OCR spelling, quotation and citation defects remain; the body has not been collated word for word.",
         "source_url": "https://archive.org/download/encyclicalletter00cath_6/encyclicalletter00cath_6_djvu.txt",
-        "text_path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/historical-ocr-with-address-94992a97e46c/text.txt",
+        "text_path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-exclusion1-text-0bc35822f5ca/text.txt",
         "title": "Etsi multa",
         "witness": "Philadelphia: McLaughlin Brothers (1874), title-leaf address and pp.3–23"
       },
@@ -426429,10 +426429,10 @@
         "layout_hyphens": 53,
         "method": "pdf-raw-source-aware-line-hyphen-nfkc-v3",
         "pages": 7,
-        "source_characters": 39843,
+        "source_characters": 39743,
         "source_first_page": 1,
         "source_last_page": 7,
-        "source_normalized_characters": 27683,
+        "source_normalized_characters": 27650,
         "status": "pass"
       }
     },
@@ -476960,12 +476960,6 @@
       "sha256": "2aa6d5fa105801f1f8e63e1606afb1cc439ee499c77f895a6600b4630b7ca7c0"
     },
     {
-      "bytes": 2773,
-      "kind": "receipt",
-      "path": "release/papal-documents/inputs/2db70c1d5659f128f2bbe6a5bf2113c53c26727e7c1314812a50056b9b0bf549.json",
-      "sha256": "2db70c1d5659f128f2bbe6a5bf2113c53c26727e7c1314812a50056b9b0bf549"
-    },
-    {
       "bytes": 4483,
       "kind": "frozen-manifest",
       "path": "release/papal-documents/inputs/2dc9d62c7477285b8751f4cc52b54f918941c3cb098db31085b44700b5592a9b.json",
@@ -477000,6 +476994,12 @@
       "kind": "visual-review",
       "path": "release/papal-documents/inputs/30629b64b301c6e3329e890501afded23736742017d10297fc87b4233e930a18.json",
       "sha256": "30629b64b301c6e3329e890501afded23736742017d10297fc87b4233e930a18"
+    },
+    {
+      "bytes": 2765,
+      "kind": "receipt",
+      "path": "release/papal-documents/inputs/326fc9f3aaf372d4917e7da84674fe62354272b02b6f0ee9f9b5a5f6b6cf0fc2.json",
+      "sha256": "326fc9f3aaf372d4917e7da84674fe62354272b02b6f0ee9f9b5a5f6b6cf0fc2"
     },
     {
       "bytes": 6216,
@@ -477066,12 +477066,6 @@
       "kind": "receipt",
       "path": "release/papal-documents/inputs/3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e.json",
       "sha256": "3d675f5fd22af20a3661feebf3c247fd11071df1d3e66c6c2e684764bff8de1e"
-    },
-    {
-      "bytes": 2325,
-      "kind": "visual-review",
-      "path": "release/papal-documents/inputs/3d76168e61481f3b903aeecd6e1f9637f7c3b2cecfb7b27e169ee41bce6bbee5.json",
-      "sha256": "3d76168e61481f3b903aeecd6e1f9637f7c3b2cecfb7b27e169ee41bce6bbee5"
     },
     {
       "bytes": 4740,
@@ -477266,6 +477260,12 @@
       "sha256": "52c7a1aa7fe33402104309bfdffacab8249c9f6c784105d61ea7d82de352bb38"
     },
     {
+      "bytes": 29032397,
+      "kind": "source-plan",
+      "path": "release/papal-documents/inputs/52fd42808b5b145ab5c7bdda807d5603dea97fb3d0856526c5372cc26723d5eb.json",
+      "sha256": "52fd42808b5b145ab5c7bdda807d5603dea97fb3d0856526c5372cc26723d5eb"
+    },
+    {
       "bytes": 101,
       "kind": "source-input",
       "path": "release/papal-documents/inputs/530f8c58b4bb6ff327e1b6d1e89d3c5c2b07cf76b38aa32a6206023a2a2b04ad.json",
@@ -477386,6 +477386,12 @@
       "sha256": "66a5249add9f085273a3de8efb4cb4ef2bf57ed0044106d89e966b60f7cf71d3"
     },
     {
+      "bytes": 88136,
+      "kind": "source-input",
+      "path": "release/papal-documents/inputs/68ee7bbedb5eab5901388778b7052f011b841c7d61c093db32e6dc741c437762.json",
+      "sha256": "68ee7bbedb5eab5901388778b7052f011b841c7d61c093db32e6dc741c437762"
+    },
+    {
       "bytes": 17574,
       "kind": "source-input",
       "path": "release/papal-documents/inputs/6a84139b3fb582afc96f11f1c3b4c1f30d3120953722ccc2fd4e17f0e0e14bb5.json",
@@ -477504,6 +477510,12 @@
       "kind": "source-input",
       "path": "release/papal-documents/inputs/764a43bc3d2c619c06581b4335bb485a8a1bb068a4f92055839ceb2b6b080d4d.json",
       "sha256": "764a43bc3d2c619c06581b4335bb485a8a1bb068a4f92055839ceb2b6b080d4d"
+    },
+    {
+      "bytes": 2435,
+      "kind": "visual-review",
+      "path": "release/papal-documents/inputs/782539902f47c14c5a05fbbd0b13aabecf9761d76b8412318243c397895e8dd7.json",
+      "sha256": "782539902f47c14c5a05fbbd0b13aabecf9761d76b8412318243c397895e8dd7"
     },
     {
       "bytes": 183629,
@@ -477776,12 +477788,6 @@
       "sha256": "a2ee275ce92e2b203a6cb7947791f1e1b7d97d40a1433a713309de5a9cdb8b8e"
     },
     {
-      "bytes": 29032755,
-      "kind": "source-plan",
-      "path": "release/papal-documents/inputs/a3d1a12f2fa917e068bc343a6d2b9be3ba91b5f26e647623cb6182de5caf772c.json",
-      "sha256": "a3d1a12f2fa917e068bc343a6d2b9be3ba91b5f26e647623cb6182de5caf772c"
-    },
-    {
       "bytes": 2662,
       "kind": "receipt",
       "path": "release/papal-documents/inputs/a52b58850ad1939f980a0e74d7da677b3bbb1ceda1f075c9004db9ec119bd77a.json",
@@ -477894,6 +477900,12 @@
       "kind": "receipt",
       "path": "release/papal-documents/inputs/b748665cba53d1d479a2f7e73175199ddbbf90f02b2365c71508fc113e7ad923.json",
       "sha256": "b748665cba53d1d479a2f7e73175199ddbbf90f02b2365c71508fc113e7ad923"
+    },
+    {
+      "bytes": 8751,
+      "kind": "frozen-manifest",
+      "path": "release/papal-documents/inputs/b7d8ab152bd0322f95601b283dcbf99e9867d5058c68597d4c185a9f66ea362a.json",
+      "sha256": "b7d8ab152bd0322f95601b283dcbf99e9867d5058c68597d4c185a9f66ea362a"
     },
     {
       "bytes": 3338,
@@ -478056,12 +478068,6 @@
       "kind": "frozen-manifest",
       "path": "release/papal-documents/inputs/ce384dfe75cde78b6427f00c878a870507a47e1a9422408dbfa0bfefb0d7b11a.json",
       "sha256": "ce384dfe75cde78b6427f00c878a870507a47e1a9422408dbfa0bfefb0d7b11a"
-    },
-    {
-      "bytes": 7148,
-      "kind": "frozen-manifest",
-      "path": "release/papal-documents/inputs/d1414b8ac99c58748049f3678af28bfac6aacb9ef297f61df127b08e0d598c64.json",
-      "sha256": "d1414b8ac99c58748049f3678af28bfac6aacb9ef297f61df127b08e0d598c64"
     },
     {
       "bytes": 617001,
@@ -478242,12 +478248,6 @@
       "kind": "frozen-manifest",
       "path": "release/papal-documents/inputs/efa57208db285e4daefe1ad5a9bec7b3fecbf173ce958a1e5252f2666d1dc3f8.json",
       "sha256": "efa57208db285e4daefe1ad5a9bec7b3fecbf173ce958a1e5252f2666d1dc3f8"
-    },
-    {
-      "bytes": 69216,
-      "kind": "source-input",
-      "path": "release/papal-documents/inputs/f1460a7dc59470e337149cfa1cd9ba40919f068931ea8a8b0abc8f6c5773ad74.json",
-      "sha256": "f1460a7dc59470e337149cfa1cd9ba40919f068931ea8a8b0abc8f6c5773ad74"
     },
     {
       "bytes": 4284,
@@ -478620,6 +478620,12 @@
       "kind": "report",
       "path": "release/papal-documents/reports/29c9e7aa432db63b8573c9f77edb6bacdaa08141c44aad93d4f8c92c866e67b9.md",
       "sha256": "29c9e7aa432db63b8573c9f77edb6bacdaa08141c44aad93d4f8c92c866e67b9"
+    },
+    {
+      "bytes": 5316,
+      "kind": "report",
+      "path": "release/papal-documents/reports/29ce6e8d6225b992a8d4b39ffa6af1be168edecb3e3dc799c93b15e4244e2897.md",
+      "sha256": "29ce6e8d6225b992a8d4b39ffa6af1be168edecb3e3dc799c93b15e4244e2897"
     },
     {
       "bytes": 24880,
@@ -479988,343 +479994,21 @@
   "generator_version": 1,
   "obsolete": [
     {
-      "id": "acta.ass.007.ass-007-act-010",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1742-12-14--acta.ass.007.ass-007-act-010--la--e1f0450b729e13d7.pdf",
-      "pdf_sha256": "86a37528a36289fdd7ee4b59a4b4ed2993e973c1c690a59869d4a989264b740c",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "acta.ass.009.ass-009-act-035",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1844-05-08--acta.ass.009.ass-009-act-035--la--ee0ca7494cd4c7ce.pdf",
-      "pdf_sha256": "60cb0b9699ffbe38934af4e593048237453092a1c34351998f15f9ce12dfb7d9",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "acta.ass.006.ass-006-act-007",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1859-06-18--acta.ass.006.ass-006-act-007--la--d40e0a7687f892fa.pdf",
-      "pdf_sha256": "930e0018f2c9e2b9e48d5aca4a1377b367ba1053b4faec5802ed952f51f9f792",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "acta.ass.006.ass-006-act-008",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1860-01-19--acta.ass.006.ass-006-act-008--la--7adc6ccec49a132e.pdf",
-      "pdf_sha256": "9a34ffd578335402102159de1a79671e93d9b3e61b5e52bacdc0ed24d53d52e7",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "acta.ass.012.ass-012-act-002",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1879-08-04--acta.ass.012.ass-012-act-002--la--b71da30dc4305df7.pdf",
-      "pdf_sha256": "dccdc2599d7d8e26c90d42ec0a3ac81fbb114a8264b7457b5aa350c5113380e3",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "acta.ass.012.ass-012-act-007",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1880-02-10--acta.ass.012.ass-012-act-007--la--ea21152c8e62c71e.pdf",
-      "pdf_sha256": "82a27f9ea280e8e44102e79f0ebb7ab237853ebbdddb8c8a3a3fbca568206655",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "acta.ass.014.ass-014-act-005",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1882-02-15--acta.ass.014.ass-014-act-005--la--3dcab8ef5bc6102f.pdf",
-      "pdf_sha256": "7a944348339651834d1f01e3d199e0518f66ae0e1dbb2f6005fb8632b351d84b",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "acta.ass.015.ass-015-act-004",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1882-09-17--acta.ass.015.ass-015-act-004--la--5b97aa22853ff69e.pdf",
-      "pdf_sha256": "7486ba1cf1171b40f07849cb3bf4d1084bc1cb259395bd604c52ac2ec36cda51",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "acta.ass.015.ass-015-act-006",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1882-12-08--acta.ass.015.ass-015-act-006--la--d9a499b79cfd0349.pdf",
-      "pdf_sha256": "7092fbac7ffd5ed6d91f3b11c28f631b242dc6c5fc194dc4abae663158bf2f35",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "acta.ass.016.ass-016-act-003",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1883-09-01--acta.ass.016.ass-016-act-003--la--4dcf5490d98a29cd.pdf",
-      "pdf_sha256": "c61baa2923b0db4d27bbca0d2a7bdb7f94c3009f68821a0b8e4cba9ba3dc1152",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "acta.ass.017.ass-017-act-001",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1884-08-30--acta.ass.017.ass-017-act-001--la--18762854f397cbad.pdf",
-      "pdf_sha256": "afde480ebcab7b0df0456c4f009be5b129f1662c09998fd9a3b31113a34e775b",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "acta.ass.020.ass-020-012",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1888-05-05--acta.ass.020.ass-020-012--la--4c003733d2ed6943.pdf",
-      "pdf_sha256": "766e6af34ed9e5439d4e735293704bf9ec801e3c8543ec216356acd864cecda9",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "acta.ass.023.ass-023-011",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1891-03-03--acta.ass.023.ass-023-011--la--558637aee18cb8a6.pdf",
-      "pdf_sha256": "bb879a46d4dddc8e6317a9930105d8f2b9ddbb7c813196d0aae3cb29f8c94851",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "acta.ass.024.ass-024-005",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1891-09-22--acta.ass.024.ass-024-005--la--dbe9638bbcec6a65.pdf",
-      "pdf_sha256": "bd4d04c920ff364977329d5c38f6c98bcda571a04fdd5192b0ffdf35c38dd3f2",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "acta.ass.025.ass-025-012",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1892-12-08--acta.ass.025.ass-025-012--la--18164cbb7bf10e65.pdf",
-      "pdf_sha256": "3ba11b635f5240349799f5367a13a9e0cd0ec6066e843b7f6d8e1b91f675e228",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "acta.ass.026.ass-026-l07953",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1893-10-25--acta.ass.026.ass-026-l07953--la--9f4657adcc8f7177.pdf",
-      "pdf_sha256": "e759d18a4f67c5fcc18b3762120655fa6e3638ea55a13a7f2458f3f86e35e86c",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "acta.ass.033.ass-033-l10742",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1900-11-01--acta.ass.033.ass-033-l10742--la--603e5928d8575491.pdf",
-      "pdf_sha256": "61d42a7909e2e256982ac7ba4c5f3d9c702058d0f346bd9b8a57e8a24d05b1ea",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "acta.ass.034.ass-034-l025156",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1902-04-15--acta.ass.034.ass-034-l025156--la--92a7395ce454de4a.pdf",
-      "pdf_sha256": "fe1319b51b0c87410473d1094d3108dccc80e675e049e96e40a6796158c063c2",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "acta.ass.039.ass-039-l004849",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1906-04-05--acta.ass.039.ass-039-l004849--la--dded64fad9a9f4ef.pdf",
-      "pdf_sha256": "b8341b8c048b0d50ee040b65e85fd0455d05e8b967f82d088d120b0fcc9b8168",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "acta.aas.002.archive.aas.002.048",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1910-05-26--acta.aas.002.archive.aas.002.048--la--a055b151d56e0189.pdf",
-      "pdf_sha256": "79ef8b99c5b7d27df1c691ea5cc6e08e04924a742362634605425cef62cbd6eb",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "acta.aas.006.archive.aas.006.055",
-      "language": "es",
-      "pdf": "pdf/papal-documents/1914-11-01--acta.aas.006.archive.aas.006.055--es--fcf4d3fd6afc837a.pdf",
-      "pdf_sha256": "fb2521c79aff0c9f2ac651f7622c8724f581cd4429ea6e35066d0aa59377487d",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "acta.aas.004.archive.aas.004.046",
-      "language": "la",
-      "pdf": "pdf/papal-documents/unknown-date--acta.aas.004.archive.aas.004.046--la--d187b326f4b26f99.pdf",
-      "pdf_sha256": "f2544239eeaaf62be6a935fb3063802e4734a5da1c54876994e0391c48c1ca9d",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "acta.aas.015.archive.aas.015.l000037",
-      "language": "it",
-      "pdf": "pdf/papal-documents/unknown-date--acta.aas.015.archive.aas.015.l000037--it--e207a3c05e901321.pdf",
-      "pdf_sha256": "09a64fb628cbdbf0ae99844f2ea466da3ad4331b39f63e00756324cc0f473db2",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "acta.aas.015.archive.aas.015.l024807",
-      "language": "la",
-      "pdf": "pdf/papal-documents/unknown-date--acta.aas.015.archive.aas.015.l024807--la--5f542f74e1a1ccec.pdf",
-      "pdf_sha256": "38187265fcbe027c62961f1cd03a517761294b8dceaff7523d79eb5f4e6f5434",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "acta.aas.020.aas-020-l00049",
-      "language": "la",
-      "pdf": "pdf/papal-documents/unknown-date--acta.aas.020.aas-020-l00049--la--0288327994e0cb72.pdf",
-      "pdf_sha256": "bd1f65deffd2463ef3cc36b546065702a2996f7b5c347742c204b8c819eaef21",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "acta.ass.039.ass-039-l014773",
-      "language": "la",
-      "pdf": "pdf/papal-documents/unknown-date--acta.ass.039.ass-039-l014773--la--8c0988bfc66c8e02.pdf",
-      "pdf_sha256": "d044d6fc205cf21b9d87b7ec653e318aa4b7f2ceeeb232cb9253b50070dbed16",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "papal.leo-xiii.hf-l-xiii-enc-28121878-quod-apostolici-muneris",
+      "id": "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
       "language": "en",
-      "pdf": "pdf/papal-documents/1878-12-28--papal.leo-xiii.hf-l-xiii-enc-28121878-quod-apostolici-muneris--en--f6e1990369b292e6.pdf",
-      "pdf_sha256": "8e99bbf91549367d75e553706e56baa7595ab2a5ada69604d5b06323523b6373",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "papal.leo-xiii.hf-l-xiii-enc-18840420-humanum-genus",
-      "language": "en",
-      "pdf": "pdf/papal-documents/1884-04-20--papal.leo-xiii.hf-l-xiii-enc-18840420-humanum-genus--en--dffdcd78e21323c9.pdf",
-      "pdf_sha256": "74c46088e0dd553c294e79732dfa7cc532274f701b375cead02c7adf9bf39f15",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "papal.leo-xiii.hf-l-xiii-enc-18111893-providentissimus-deus",
-      "language": "en",
-      "pdf": "pdf/papal-documents/1893-11-18--papal.leo-xiii.hf-l-xiii-enc-18111893-providentissimus-deus--en--10bcd9882735a8d7.pdf",
-      "pdf_sha256": "c355929180726b087bdf98a4ca19ad0eef52240dcb488acf0af0b2a5147e7a67",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "gregory-xvi-acta.volume-03.line-00013769.part-01",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1840-12-21--gregory-xvi-acta.volume-03.line-00013769.part-01--la--56a969f4b2d44d75.pdf",
-      "pdf_sha256": "8195be426875c2cbef686a33d89cbddd6870055b3d7fb92d1277a504ab8e3cff",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "papal.pius-x.hf-p-x-enc-04101903-e-supremi.acqr-1904-english",
-      "language": "en",
-      "pdf": "pdf/papal-documents/1903-10-04--papal.pius-x.hf-p-x-enc-04101903-e-supremi.acqr-1904-english--en--706022d20a984030.pdf",
-      "pdf_sha256": "7721b5c1a91203720a150f03ccfc8edce5dd69af8979261590bf534d6ac7ae85",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "papal.pius-xi.hf-p-xi-enc-19280508-miserentissimus-redemptor",
-      "language": "en",
-      "pdf": "pdf/papal-documents/1928-05-08--papal.pius-xi.hf-p-xi-enc-19280508-miserentissimus-redemptor--en--25326c32e777d131.pdf",
-      "pdf_sha256": "97d17fc3cc3b9475ce58dbda1c1ce4a6fa7eb7e11e6df4d4bc7e017545fe8bb2",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "papal.pius-x.hf-p-x-enc-19070908-pascendi-dominici-gregis.acqr-1907-english",
-      "language": "en",
-      "pdf": "pdf/papal-documents/1907-09-08--papal.pius-x.hf-p-x-enc-19070908-pascendi-dominici-gregis.acqr-1907-english--en--2f5872654b2877db.pdf",
-      "pdf_sha256": "06a16aa12a0842a3ba86b3a16b8f1e39af18076b482e7fc820ab9a3a3c5531dc",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "papal.leo-xiii.hf-l-xiii-enc-27111885-spectata-fides",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1885-11-27--papal.leo-xiii.hf-l-xiii-enc-27111885-spectata-fides--la--ab0324a103d75766.pdf",
-      "pdf_sha256": "fcdfe4fa94259dd62722b024826b1e33b928cbf0f687f3c91b52d55a96a12040",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "papal.leo-xiii.hf-l-xiii-enc-22121885-quod-auctoritate",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1885-12-22--papal.leo-xiii.hf-l-xiii-enc-22121885-quod-auctoritate--la--e682b2716d8952eb.pdf",
-      "pdf_sha256": "92fc38cfc3beebc8759e4b1bce4698ddaf01b6616cdecf8486aa61cbf3725da2",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "papal.leo-xiii.hf-l-xiii-enc-24061888-saepe-nos",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1888-06-24--papal.leo-xiii.hf-l-xiii-enc-24061888-saepe-nos--la--e09dd5fef3749dab.pdf",
-      "pdf_sha256": "6fd71753338bf234888ff90982da23616031dad3d94a61689eb5c054ec3204d4",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "papal.leo-xiii.hf-l-xiii-enc-15051891-rerum-novarum",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1891-05-15--papal.leo-xiii.hf-l-xiii-enc-15051891-rerum-novarum--la--873e822728907e18.pdf",
-      "pdf_sha256": "53c746cc28083a652a5b378dff48823c7b23f681ddbdf14277795a5db5286fb3",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "papal.leo-xiii.hf-l-xiii-enc-20091896-fidentem-piumque-animum",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1896-09-20--papal.leo-xiii.hf-l-xiii-enc-20091896-fidentem-piumque-animum--la--7acf7ceb519e782e.pdf",
-      "pdf_sha256": "5631505493db4c9f871bc9b9a48420e51f368645f4d03468db2d16eb457d3ebe",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "papal.leo-xiii.hf-l-xiii-enc-25051899-annum-sacrum",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1899-05-25--papal.leo-xiii.hf-l-xiii-enc-25051899-annum-sacrum--la--4fcaa48343a0cb00.pdf",
-      "pdf_sha256": "f42214b9dd6a889567db4d9012a7b254c5db8f6d05592475b60c94ad3bbc5f35",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "papal.pius-x.hf-p-x-enc-10081906-gravissimo-officii-munere",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1906-08-10--papal.pius-x.hf-p-x-enc-10081906-gravissimo-officii-munere--la--2fb6eb177c6cef5d.pdf",
-      "pdf_sha256": "568c20784fc2d34f8dfc7873c126de344585f9c6d96a83162aaefa18b8e87a16",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "papal.benedict-xv.hf-ben-xv-enc-05101920-principi-apostolorum-petro",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1920-10-05--papal.benedict-xv.hf-ben-xv-enc-05101920-principi-apostolorum-petro--la--13908416a1206638.pdf",
-      "pdf_sha256": "445118788544e610af731a27561ca853b075fdcc5098ac4b5d56301f3d6b4520",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "papal.pius-xi.hf-p-xi-enc-11121925-quas-primas",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1925-12-11--papal.pius-xi.hf-p-xi-enc-11121925-quas-primas--la--aad3c1985cb4c3ac.pdf",
-      "pdf_sha256": "488b01badbbde1bee0c4502b5809e532a4ae0a7735af35e0e9fbd1e3f02a5267",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "papal.pius-xi.hf-p-xi-enc-19280106-mortalium-animos",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1928-01-06--papal.pius-xi.hf-p-xi-enc-19280106-mortalium-animos--la--49babd9087d824ef.pdf",
-      "pdf_sha256": "521b812f29bf69dc1237fe64d8c0d52bf458ac1b3070c9651913e40a21e37eb2",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "pius-ix-acta.volume-01.line-00012583.part-01",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1851-11-21--pius-ix-acta.volume-01.line-00012583.part-01--la--9ab31ae39b2db310.pdf",
-      "pdf_sha256": "86a59e7df8e3b7df77f476d3fbfe53e2f35fadb7c21fb066f458436ccc9011a6",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "pius-ix-acta.volume-01.line-00012583.part-02",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1852-03-25--pius-ix-acta.volume-01.line-00012583.part-02--la--e4b9f7ae2c01c982.pdf",
-      "pdf_sha256": "9dbb0bdeeee1348b0283f41ddf758901d24db0eef8c3f0f2ab9a6c9cfde8ee03",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "pius-ix-acta.volume-03.line-00021313.part-08",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1863-09-17--pius-ix-acta.volume-03.line-00021313.part-08--la--57ef1f51037dd5d0.pdf",
-      "pdf_sha256": "a8197aae31a134f5a645271368593e55a170322917a0a852d58571a7e58ec983",
-      "reason": "replaced-by-current-pass"
-    },
-    {
-      "id": "papal.pius-ix.encyclica-quanta-cura-8-decembris-1864",
-      "language": "la",
-      "pdf": "pdf/papal-documents/1864-12-08--papal.pius-ix.encyclica-quanta-cura-8-decembris-1864--la--43dc2bf9535808e9.pdf",
-      "pdf_sha256": "24bd8db2aa9850b81092398876aeedc248b65c5c6def679c14f578d648891614",
+      "pdf": "pdf/papal-documents/1873-11-21--papal.pius-ix.enciclica-etsi-multa-21-novembre-1873--en--f577bcedf4e812b3.pdf",
+      "pdf_sha256": "25dfc7d1c6271f8ba501859c979836e07891ba15333334da6b1b5ac2bb7df7fa",
       "reason": "replaced-by-current-pass"
     }
   ],
   "schema": "triptych-papal-release/v1",
   "source_plan": {
-    "bytes": 29032755,
-    "path": "release/papal-documents/inputs/a3d1a12f2fa917e068bc343a6d2b9be3ba91b5f26e647623cb6182de5caf772c.json",
-    "sha256": "a3d1a12f2fa917e068bc343a6d2b9be3ba91b5f26e647623cb6182de5caf772c"
+    "bytes": 29032397,
+    "path": "release/papal-documents/inputs/52fd42808b5b145ab5c7bdda807d5603dea97fb3d0856526c5372cc26723d5eb.json",
+    "sha256": "52fd42808b5b145ab5c7bdda807d5603dea97fb3d0856526c5372cc26723d5eb"
   },
   "summary": {
-    "bytes": 104214359,
+    "bytes": 104213211,
     "changes_required": 636,
     "current": 6832,
     "failed": 0,

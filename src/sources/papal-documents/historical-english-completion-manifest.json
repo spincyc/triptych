@@ -563,19 +563,19 @@
       "pope": "Pius IX",
       "language": "en",
       "completeness": "complete-within-identified-printed-witness",
-      "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.historical-ocr-with-address-94992a97e46c",
-      "sha256": "94992a97e46c8fe05150c4aa0cd998b28f754e8cceec6e8859797de3ed687097",
-      "text_path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/historical-ocr-with-address-94992a97e46c/text.txt",
+      "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-text-0bc35822f5ca",
+      "sha256": "0bc35822f5caee4eac0a1b7cfdef4ec9d56baee756a869bd32af0d3a1ef39693",
+      "text_path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-exclusion1-text-0bc35822f5ca/text.txt",
       "physical_line_ranges": [
         [
           1,
-          823
+          788
         ]
       ],
-      "segment_id": "segment.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.complete-english-with-address",
-      "segment_path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/segments/complete-english-with-address.toml",
+      "segment_id": "segment.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-0bc35822f5ca",
+      "segment_path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/segments/etsi-exclusion1-0bc35822f5ca.toml",
       "source_url": "https://archive.org/download/encyclicalletter00cath_6/encyclicalletter00cath_6_djvu.txt",
-      "source_note": "The 1874 Philadelphia title leaf prints the substantive recipient address, not repeated on body p.3: exact raw OCR LF14–15. This replacement includes those address lines and their adjacent blank lines LF16–17 before the unchanged complete former body selection LF38–856. It retains source notes, 21 November 1873 dating clause and PIUS PP. IX subscription. Native title/body proof pages were checked against the exact address bounds. The prior selector omitted this address and is superseded; prior source payloads remain unchanged. The offered OCR still fails to recognize the ornamental issuer heading and initial A, and garbles the gothic salutation; no English wording or OCR words are corrected. Anonymous historical human translation, examined by the Bishop of Philadelphia and published with his approbation.",
+      "source_note": "Mechanical OCR of the identified 1874 Philadelphia McLaughlin Brothers human translation, including title-leaf recipient address, historical notes and complete subscription. The opening protocol and initial capital were recovered from the original printed page. Excludes proven clipped facing-page text, a spurious recognition row and selected printed page numbers. Other original OCR spelling, quotation and citation defects remain; the body has not been collated word for word.",
       "rights_status": "public-domain",
       "rights_basis": "The identified Philadelphia McLaughlin Brothers English pamphlet is dated 1874 on its historical title leaf and in the State Library of Pennsylvania catalogue. Its English text and contemporary printed pages are public domain in the United States by expiration of publication term, under src/sources/inventories/papal-documents-rights-v1.toml. Automated OCR adds no original authorship. The modern Internet Archive funding/digitization leaf is excluded from retained native pages and text.",
       "rights_notice": "This identified historical English printing is public domain in the United States; source wording retains its own status.",
@@ -609,7 +609,7 @@
       "act_id": "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
       "extent": "complete",
       "witness": "Philadelphia: McLaughlin Brothers (1874), title-leaf address and pp.3–23",
-      "revision": "2026-10-30T06:05:00Z"
+      "revision": "2026-10-30T20:57:04Z"
     },
     {
       "id": "papal.pius-ix.enciclica-exultavit-cor-nostrum-21-novembre-1851",
@@ -869,5 +869,311 @@
       "title": "Mens nostra",
       "revision": "2026-10-30T03:38:40Z"
     }
-  ]
+  ],
+  "supersessions": [
+    {
+      "prior": {
+        "id": "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
+        "language": "en",
+        "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.historical-ocr-with-address-94992a97e46c",
+        "source_sha256": "94992a97e46c8fe05150c4aa0cd998b28f754e8cceec6e8859797de3ed687097",
+        "segment_id": "segment.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.complete-english-with-address",
+        "pdf_sha256": "25dfc7d1c6271f8ba501859c979836e07891ba15333334da6b1b5ac2bb7df7fa"
+      },
+      "replacement": {
+        "id": "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
+        "language": "en",
+        "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-protocol-text-afe42c91f0cb",
+        "source_sha256": "afe42c91f0cb5951f764c39c811a298b51b13ebc81188ae22919559d8fcf109e",
+        "segment_id": "segment.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-protocol-afe42c91f0cb"
+      },
+      "reason": "Complete identified 1874 historical English witness, including the earlier title-leaf recipient address, exact original-page mechanical issuer/greeting recovery and the missing first body capital. Two corrupt greeting byte ranges are replaced and issuer/capital raw bytes inserted; all other prior bytes remain exact. The body retains isolated original OCR errors and is not word-for-word collated. The earlier 94992a97 source and 25dfc7d1 PDF failed the direct protocol-readability check and remain immutable historical records."
+    },
+    {
+      "prior": {
+        "id": "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
+        "language": "en",
+        "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-protocol-text-afe42c91f0cb",
+        "source_sha256": "afe42c91f0cb5951f764c39c811a298b51b13ebc81188ae22919559d8fcf109e",
+        "segment_id": "segment.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-protocol-afe42c91f0cb",
+        "pdf_sha256": "77c489f65d57979916bc16a4696c99c8944ad3e4d63e354181fbadb20d515139"
+      },
+      "replacement": {
+        "id": "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
+        "language": "en",
+        "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-text-0bc35822f5ca",
+        "source_sha256": "0bc35822f5caee4eac0a1b7cfdef4ec9d56baee756a869bd32af0d3a1ef39693",
+        "segment_id": "segment.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-0bc35822f5ca"
+      },
+      "reason": "Complete identified1874human English translation with recovered original opening retained. Four exact native-proven foreign/spurious OCR blocks and five explicitly authorized own printed folio rows are excluded; all other parent afe42c91 bytes, body, notes and source order remain exact. No source word/citation correction or body-wide collation. Both earlier failed-source candidates remain immutable."
+    }
+  ],
+  "source_correction_evidence": {
+    "protocol_recovery": {
+      "recipe": {
+        "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-protocol-recipe-9967cd52ba79/recipe.json",
+        "sha256": "9967cd52ba79c1d499f9a2b011c84784e57bdc8afee9051f43bc4c173f360d62",
+        "byte_size": 10764,
+        "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-protocol-recipe-9967cd52ba79"
+      },
+      "proof": {
+        "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-protocol-proof-165c48cf5813/proof.zip",
+        "sha256": "165c48cf581307ed14b76219d87df418f7f8efa21fbf0000081a1182628e42ef",
+        "byte_size": 45531,
+        "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-protocol-proof-165c48cf5813"
+      },
+      "implementation": {
+        "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-protocol-replay-ba10bd77f9dc/replay.py",
+        "sha256": "ba10bd77f9dc25be0773387d3e9e70c5285777975182d8c0b8f956bf407fc28d",
+        "byte_size": 5739,
+        "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-protocol-replay-ba10bd77f9dc"
+      },
+      "native_page": 2,
+      "all_other_parent_bytes_unchanged": true,
+      "prior_candidate_status": "failed-protocol-readability",
+      "independent_cold_review": "required-not-yet-performed"
+    },
+    "nine_exact_exclusions": {
+      "recipe": {
+        "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-exclusion1-recipe-d0d45474937b/recipe.json",
+        "sha256": "d0d45474937b90f2018e8de1f9d4412cc4bd047563c29ba32332a27260f178f5",
+        "byte_size": 8759,
+        "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-recipe-d0d45474937b"
+      },
+      "frozen_foreign_span_map": {
+        "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-exclusion1-foreign-map-a704482e5f91/map.json",
+        "sha256": "a704482e5f91e8987f319f34ecca6457e427b7ce48d5aac4d594907b29c0e728",
+        "byte_size": 9527,
+        "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-foreign-map-a704482e5f91"
+      },
+      "frozen_foreign_primary_image_proof": {
+        "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-exclusion1-foreign-image-proof-71922475bb63/proof.json",
+        "sha256": "71922475bb632a060e1768982663fa76e1721462e93e091b518786efd0664a96",
+        "byte_size": 7261,
+        "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-foreign-image-proof-71922475bb63"
+      },
+      "five_authorized_own_folio_proof": {
+        "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-exclusion1-own-folio-proof-fae96079cf26/proof.json",
+        "sha256": "fae96079cf2694a4f21a2929ded70d10ed875bb53b3a952c626171bb7bc50d9a",
+        "byte_size": 5279,
+        "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-own-folio-proof-fae96079cf26"
+      },
+      "native_pixels": {
+        "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-exclusion1-native-pixels-8e4417ac842c/pixels.zip",
+        "sha256": "8e4417ac842c100eb82719e564f7346f9da0cbfe035c498fad4621c254d86670",
+        "byte_size": 4197253,
+        "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-native-pixels-8e4417ac842c"
+      },
+      "implementation": {
+        "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-exclusion1-replay-aa67b0e765f3/replay.py",
+        "sha256": "aa67b0e765f3c803c535ad3960c385eccc12509af75d9f5db5c0ea317caf3213",
+        "byte_size": 7779,
+        "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-exclusion1-replay-aa67b0e765f3"
+      },
+      "parent_source_status": "CHANGES_REQUIRED-foreign-source-contamination",
+      "prior_physical_typography_status": "PASS-separate-from-source-admission",
+      "new_independent_source_and_pdf_review": "required-not-inherited"
+    },
+    "admission": {
+      "source_status": "PASS_BOUNDED_MECHANICAL_OCR_INTAKE",
+      "pdf_layout_status": "PASS",
+      "current_source_sha256": "0bc35822f5caee4eac0a1b7cfdef4ec9d56baee756a869bd32af0d3a1ef39693",
+      "current_pdf_sha256": "66ece5336d40091bc60d08be56decbd6c5d0fe8fe7c4849af4b0a1fc9c6e61e9",
+      "independent_report": {
+        "path": "src/sources/papal-documents/encyclicals-refinement-cold-57b.md",
+        "sha256": "29ce6e8d6225b992a8d4b39ffa6af1be168edecb3e3dc799c93b15e4244e2897",
+        "bytes": 5316
+      },
+      "independent_decision": {
+        "path": "release/papal-documents/inputs/2817fc4848d29f0dad37cd0940f43dbdd5cc685e5e28cb9250d798a42e9ed5e7.json",
+        "sha256": "2817fc4848d29f0dad37cd0940f43dbdd5cc685e5e28cb9250d798a42e9ed5e7",
+        "bytes": 1740
+      },
+      "independent_review": {
+        "path": "release/papal-documents/inputs/2e3bd198b24798472581f75d74c24a57ffd46b6c725f539694a9a61e9c4f1715.json",
+        "sha256": "2e3bd198b24798472581f75d74c24a57ffd46b6c725f539694a9a61e9c4f1715",
+        "bytes": 2462
+      },
+      "independent_verification": {
+        "path": "release/papal-documents/inputs/ac777e67654e94ddbdf4bf094636d04343c868f49f302a9e29a5a63d33be035b.json",
+        "sha256": "ac777e67654e94ddbdf4bf094636d04343c868f49f302a9e29a5a63d33be035b",
+        "bytes": 2464,
+        "raw_sha256": "b2473f3317599d04c340d7f78aed01b92430615e99be5978074045be35120d4a",
+        "raw_source_path": ".scratch/encyclical-refinement-package/cold-review-57b-aggregate/verification-public.json",
+        "publication_copy_change": "Exact repository-root prefix removal only; all other bytes unchanged."
+      },
+      "historical_949_protocol_failure": {
+        "status": "CHANGES_REQUIRED",
+        "source_sha256": "94992a97e46c8fe05150c4aa0cd998b28f754e8cceec6e8859797de3ed687097",
+        "pdf_sha256": "25dfc7d1c6271f8ba501859c979836e07891ba15333334da6b1b5ac2bb7df7fa",
+        "adverse_report": {
+          "path": "src/sources/papal-documents/encyclicals-etsi-english-adverse-2026-10-30.md",
+          "sha256": "341fa06e90c11e9b98b91f94511e913c907d219b5b845a2d0a59e2231f88ca15",
+          "bytes": 3610
+        },
+        "prior_cold25_status_not_inherited": true
+      },
+      "historical_afe_source_failure": {
+        "source_status": "CHANGES_REQUIRED",
+        "pdf_layout_status": "PASS",
+        "source_sha256": "afe42c91f0cb5951f764c39c811a298b51b13ebc81188ae22919559d8fcf109e",
+        "pdf_sha256": "77c489f65d57979916bc16a4696c99c8944ad3e4d63e354181fbadb20d515139",
+        "report": {
+          "path": "src/sources/papal-documents/encyclicals-refinement-cold-57.md",
+          "sha256": "95fa2a7019f2bcb0536192890a78d7fdd0f69317a094777819b1a2e3562d9a21",
+          "bytes": 18176
+        },
+        "decision": {
+          "path": "release/papal-documents/inputs/f33c6e9f24659e768255691bde1b2437c05cb33e2f059037e23ff9d928162a21.json",
+          "sha256": "f33c6e9f24659e768255691bde1b2437c05cb33e2f059037e23ff9d928162a21",
+          "bytes": 4453
+        },
+        "review": {
+          "path": "release/papal-documents/inputs/29f5be0d92e3b9772402c6fb73d6a8f0a4cab52b715c5b13f9cd935cb3a1b6e1.json",
+          "sha256": "29f5be0d92e3b9772402c6fb73d6a8f0a4cab52b715c5b13f9cd935cb3a1b6e1",
+          "bytes": 4574
+        },
+        "verification": {
+          "path": "release/papal-documents/inputs/8b44fd7981eb1f0e77a9bdef4feb5df15c6727b43feac1c672fdd015216bf155.json",
+          "sha256": "8b44fd7981eb1f0e77a9bdef4feb5df15c6727b43feac1c672fdd015216bf155",
+          "bytes": 34725
+        },
+        "frozen_manifest": {
+          "path": "release/papal-documents/inputs/90675ffe961fa0d8e4fa156588dce8b4d6a59e25b4dbc6c3f7b2f19f3b201cc5.json",
+          "sha256": "90675ffe961fa0d8e4fa156588dce8b4d6a59e25b4dbc6c3f7b2f19f3b201cc5",
+          "bytes": 7047
+        },
+        "receipt": {
+          "path": "release/papal-documents/inputs/5e00c7852c479853e0e956e65ace0284bb36c24ab23d8201698862c6166c1f44.json",
+          "sha256": "5e00c7852c479853e0e956e65ace0284bb36c24ab23d8201698862c6166c1f44",
+          "bytes": 2761
+        }
+      },
+      "qualification": "Complete identified historical English printed witness; original OCR citation, spelling and quotation defects remain, including St.Peter iy.13.16. Source intake adequacy and complete printed extent are separate from translation accuracy and whole-word collation, neither of which is certified.",
+      "independent_roles": [
+        {
+          "name": "stopped-primary-current-pages1-5",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "reader_subset_status": "PASS_FROM_PERSISTED_OBSERVER_VERDICTS",
+          "whole_pdf_status": "UNASSIGNED",
+          "whole_source_status": "UNASSIGNED",
+          "source_sha256": "0bc35822f5caee4eac0a1b7cfdef4ec9d56baee756a869bd32af0d3a1ef39693",
+          "pdf_sha256": "66ece5336d40091bc60d08be56decbd6c5d0fe8fe7c4849af4b0a1fc9c6e61e9",
+          "decision": {
+            "path": "release/papal-documents/inputs/41cbb879de26db8f9c9e732ee3b232d587882dec6e00836bb981e4a2b77a1434.json",
+            "sha256": "41cbb879de26db8f9c9e732ee3b232d587882dec6e00836bb981e4a2b77a1434",
+            "bytes": 947
+          }
+        },
+        {
+          "name": "fresh-recovery-current-pages6-7-and-source-judgment",
+          "pages": [
+            6,
+            7
+          ],
+          "pdf_subset_status": "PASS",
+          "whole_pdf_status": "UNASSIGNED",
+          "source_status": "PASS_BOUNDED_MECHANICAL_OCR_INTAKE",
+          "source_sha256": "0bc35822f5caee4eac0a1b7cfdef4ec9d56baee756a869bd32af0d3a1ef39693",
+          "pdf_sha256": "66ece5336d40091bc60d08be56decbd6c5d0fe8fe7c4849af4b0a1fc9c6e61e9",
+          "report": {
+            "path": "src/sources/papal-documents/encyclicals-refinement-cold-57b-recovery.md",
+            "sha256": "06cc974acdde2c260237ec5d367d191f4083edc311795248722f55fba51d0f91",
+            "bytes": 6720
+          },
+          "reviews": {
+            "path": "release/papal-documents/inputs/9e6ed19805748b01d8957a331da0d5c24aecf7dc9bda199ddbbac4079cad635b.json",
+            "sha256": "9e6ed19805748b01d8957a331da0d5c24aecf7dc9bda199ddbbac4079cad635b",
+            "bytes": 5408
+          },
+          "verification": {
+            "path": "release/papal-documents/inputs/2e2772f0260dcbf0aa64f2ac373e02f545325f2c35ac83216680fec599ee7641.json",
+            "sha256": "2e2772f0260dcbf0aa64f2ac373e02f545325f2c35ac83216680fec599ee7641",
+            "bytes": 7412
+          },
+          "decision": {
+            "path": "release/papal-documents/inputs/d951de2997e98f0ee66db0e5c878c29288e9cd47e5c70a4acc42f05f04dd2e9d.json",
+            "sha256": "d951de2997e98f0ee66db0e5c878c29288e9cd47e5c70a4acc42f05f04dd2e9d",
+            "bytes": 1823
+          }
+        }
+      ],
+      "retained_factual_review_inputs": [
+        {
+          "path": "release/papal-documents/inputs/d14af29c05ab449f9a5d325319560c272e3f7ea2044df29a14d94887670c0720.json",
+          "sha256": "d14af29c05ab449f9a5d325319560c272e3f7ea2044df29a14d94887670c0720",
+          "bytes": 9184
+        },
+        {
+          "path": "release/papal-documents/inputs/464e042ff7328ea297971c7abb42f11a9771d4432379cf8897014650b8d63c3f.json",
+          "sha256": "464e042ff7328ea297971c7abb42f11a9771d4432379cf8897014650b8d63c3f",
+          "bytes": 5322
+        },
+        {
+          "path": "release/papal-documents/inputs/489155a027865085247f79768b08d0cc746f5651f19a3e0c0238e9bbd7490dd2.json",
+          "sha256": "489155a027865085247f79768b08d0cc746f5651f19a3e0c0238e9bbd7490dd2",
+          "bytes": 3558
+        },
+        {
+          "path": "release/papal-documents/inputs/5a783aefe6312ab5a5cd5b39b992f4321fe64385ec5e1ee5a0583dc12870e995.json",
+          "sha256": "5a783aefe6312ab5a5cd5b39b992f4321fe64385ec5e1ee5a0583dc12870e995",
+          "bytes": 14330
+        },
+        {
+          "path": "release/papal-documents/inputs/f3c24642ddce7111f9c630525ce451e66e510fe0bbe2c00c1df8663e83220fbc.jsonl",
+          "sha256": "f3c24642ddce7111f9c630525ce451e66e510fe0bbe2c00c1df8663e83220fbc",
+          "bytes": 21319
+        },
+        {
+          "path": "release/papal-documents/inputs/f74827c42f27f9fa968acd2752f9eeef12471dbf115c379b39f959cc621b839f.json",
+          "sha256": "f74827c42f27f9fa968acd2752f9eeef12471dbf115c379b39f959cc621b839f",
+          "bytes": 980
+        },
+        {
+          "path": "release/papal-documents/inputs/1005ebca72add3867024c72173a2c18372f982d35ffa135d33a25c961b1b8e04.json",
+          "sha256": "1005ebca72add3867024c72173a2c18372f982d35ffa135d33a25c961b1b8e04",
+          "bytes": 6014
+        },
+        {
+          "path": "release/papal-documents/inputs/7c648256125a3192feea6e6eba09b623ba1fddf4511bcde6e881926a2a9c8b2d.json",
+          "sha256": "7c648256125a3192feea6e6eba09b623ba1fddf4511bcde6e881926a2a9c8b2d",
+          "bytes": 393
+        },
+        {
+          "path": "release/papal-documents/inputs/4f7b66ea403709c6f2ec7ddb5643d505e5377f3392be56905614e94deb75c651.json",
+          "sha256": "4f7b66ea403709c6f2ec7ddb5643d505e5377f3392be56905614e94deb75c651",
+          "bytes": 28058,
+          "raw_sha256": "aed672a772ed96a605f9213026e12e6123baba2fa2158b39e7c74323e5ad20a2",
+          "raw_source_path": ".scratch/encyclical-refinement-package/cold-review-57b-recovery/input-checks.json",
+          "publication_copy_change": "Exact repository-root prefix removal only; all other bytes unchanged."
+        },
+        {
+          "path": "release/papal-documents/inputs/7b9a498f3ea7a12d1bd8e05ed466f41831a13f4c00ed9f6ec20599bcf4e12d9a.jsonl",
+          "sha256": "7b9a498f3ea7a12d1bd8e05ed466f41831a13f4c00ed9f6ec20599bcf4e12d9a",
+          "bytes": 5300
+        },
+        {
+          "path": "release/papal-documents/inputs/708e312acbbd751a5cd09faef8d123c2e20832525bc2c746ccd6533e9bda8332.json",
+          "sha256": "708e312acbbd751a5cd09faef8d123c2e20832525bc2c746ccd6533e9bda8332",
+          "bytes": 3438
+        },
+        {
+          "path": "release/papal-documents/inputs/b4de271b42a2983c9fb800bd250d6a98594ec7408b3ea08256ae3343b8bf0d4b.json",
+          "sha256": "b4de271b42a2983c9fb800bd250d6a98594ec7408b3ea08256ae3343b8bf0d4b",
+          "bytes": 332
+        },
+        {
+          "path": "release/papal-documents/inputs/540fda7e68af40a8df42abe290fcc23da0468838109dc21ca5aa2292a9f28115.json",
+          "sha256": "540fda7e68af40a8df42abe290fcc23da0468838109dc21ca5aa2292a9f28115",
+          "bytes": 322
+        }
+      ]
+    }
+  }
 }

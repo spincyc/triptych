@@ -1,0 +1,300 @@
+{
+  "schema": "triptych-etsi-1874-protocol-recovery/v1",
+  "implementation": {
+    "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-protocol-replay-ba10bd77f9dc/replay.py",
+    "sha256": "ba10bd77f9dc25be0773387d3e9e70c5285777975182d8c0b8f956bf407fc28d",
+    "byte_size": 5739,
+    "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-protocol-replay-ba10bd77f9dc"
+  },
+  "inputs": {
+    "parent_text": {
+      "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/historical-ocr-with-address-94992a97e46c/text.txt",
+      "sha256": "94992a97e46c8fe05150c4aa0cd998b28f754e8cceec6e8859797de3ed687097",
+      "byte_size": 40194,
+      "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.historical-ocr-with-address-94992a97e46c"
+    },
+    "facsimile": {
+      "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/historical-facsimile-597fbc3a7c70/source.pdf",
+      "sha256": "597fbc3a7c70e449bf5260b89167694ccb4e7e9d0f52be509f8f7401175a1cfa",
+      "byte_size": 1079291,
+      "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.historical-facsimile-597fbc3a7c70"
+    },
+    "eng_archive": {
+      "path": "src/sources/works/pius-ix-acta/volume-01/editions/1854-rome-franz-munich-bsb/artifacts/nemo-repair-models-14ed17fae08d/models.zip",
+      "sha256": "14ed17fae08dde0425293a887915ce91f9f3afb5b15b7deafded93e67d680c02",
+      "byte_size": 20891134,
+      "artifact_id": "artifact.pius-ix-acta.volume-01.1854-rome-franz-munich-bsb.nemo-repair-models-14ed17fae08d"
+    },
+    "deu_archive": {
+      "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/etsi-protocol-deu-latf-model-4d173d85eb79/model.zip",
+      "sha256": "4d173d85eb79f08c3c484d93230ed9182ae33bbdbffc5b41d1f8713e0cc45684",
+      "byte_size": 9679218,
+      "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.etsi-protocol-deu-latf-model-4d173d85eb79"
+    }
+  },
+  "models": [
+    {
+      "archive": "eng_archive",
+      "member": "eng.traineddata",
+      "sha256": "8280aed0782fe27257a68ea10fe7ef324ca0f8d85bd2fd145d1c2b560bcb66ba",
+      "upstream_commit": "e12c65a915945e4c28e237a9b52bc4a8f39a0cec",
+      "url": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_best/e12c65a915945e4c28e237a9b52bc4a8f39a0cec/eng.traineddata"
+    },
+    {
+      "archive": "deu_archive",
+      "member": "deu_latf.traineddata",
+      "sha256": "429b8c33d37e1a4823a2bb082a644ff13e252f735b7945e08a518d22ddcc459e",
+      "upstream_commit": "e12c65a915945e4c28e237a9b52bc4a8f39a0cec",
+      "url": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_best/e12c65a915945e4c28e237a9b52bc4a8f39a0cec/deu_latf.traineddata"
+    }
+  ],
+  "tools": {
+    "pdftoppm": {
+      "path": "/usr/bin/pdftoppm",
+      "sha256": "518cf83997f7d1e414e53d64fb167c0c270c629dcfd356386510fc09a50fb4b2",
+      "version": "pdftoppm version 26.10.0"
+    },
+    "magick": {
+      "path": "/usr/bin/magick",
+      "sha256": "c9b439e075a75795901641dadab39b3aee6395c2220553bb5d7ce30c75ec0b03",
+      "version": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org"
+    },
+    "tesseract": {
+      "path": "/usr/bin/tesseract",
+      "sha256": "0e8a7f5cd32fbed5a897f7ecff3860be04d0df93f5c6721d7ac6d0920a882127",
+      "version": "tesseract 5.5.4"
+    }
+  },
+  "page": 2,
+  "dpi": 300,
+  "native_png_sha256": "447adde87d7da779b5f5d2dfcc2ddc123edcba19cbca66cffb7c4cd1654c68b7",
+  "blocks": [
+    {
+      "id": "issuer",
+      "crop_xywh": [
+        420,
+        515,
+        620,
+        80
+      ],
+      "processing": [
+        "-resize",
+        "50%"
+      ],
+      "border": 30,
+      "language": "deu_latf",
+      "psm": 7,
+      "configuration": [],
+      "outputs": {
+        "png": "3fdc499d8878b465ecacb493c3fdc84757e79b8c84a0b088640c9c98a2a15a13",
+        "txt": "e0967b7f3d61cd998363551534f4132985af46369df441b7add7310bd2dad7db",
+        "tsv": "68fe755cd62dec6e2d1351e7db598b07f0beb7d13d1005733c0ea232671257bb"
+      }
+    },
+    {
+      "id": "greeting-one",
+      "crop_xywh": [
+        0,
+        720,
+        620,
+        90
+      ],
+      "processing": [
+        "-resize",
+        "200%",
+        "-threshold",
+        "50%"
+      ],
+      "border": 30,
+      "language": "eng",
+      "psm": 7,
+      "configuration": [],
+      "outputs": {
+        "png": "64e9cbbc12ae7ca0468b669c35f042c591a3bf20ef9fa914be4b92a20113a2b0",
+        "txt": "09f43de3bfba15e3fa9f0780e2ddd3e5894756f8d2c617500942ffcb77c4d39b",
+        "tsv": "efd0f718d05860d75d49d1dc6900fbb5071230a6d1ec8aa711aad3bf06c5124d"
+      }
+    },
+    {
+      "id": "greeting-two-prefix",
+      "crop_xywh": [
+        210,
+        815,
+        920,
+        90
+      ],
+      "processing": [
+        "-resize",
+        "100%"
+      ],
+      "border": 30,
+      "language": "eng",
+      "psm": 6,
+      "configuration": [],
+      "outputs": {
+        "png": "463490df615ba318eb9fa3c34b48c7232ecbe5fc68d4b2edae9f32bbb498675c",
+        "txt": "016a5436c8dfea9b80dfa464b6ecd8be2303032ae76da6e6175fd26d5cb2d2a6",
+        "tsv": "7d23a3e0b67c6b8e9484fad17f964ca725193a4cb483a1f68784216335992912"
+      }
+    },
+    {
+      "id": "greeting-two-ending",
+      "crop_xywh": [
+        210,
+        815,
+        920,
+        90
+      ],
+      "processing": [
+        "-resize",
+        "50%"
+      ],
+      "border": 30,
+      "language": "eng",
+      "psm": 7,
+      "configuration": [],
+      "outputs": {
+        "png": "67ec62e7d2e0e04434e1eb9adf3d8f69fd9c4d2451316fca0c7044acbdccc16f",
+        "txt": "85617bb58b1682e21de8508583a294e077a22245f5a06bfeabc9111fdc8faa23",
+        "tsv": "633537bf1a5c935527b64ac6de2bfe2284bc05e50d6dc574462c8a917f26c712"
+      }
+    },
+    {
+      "id": "body-capital",
+      "crop_xywh": [
+        65,
+        1040,
+        80,
+        120
+      ],
+      "processing": [
+        "-threshold",
+        "50%",
+        "-resize",
+        "200%"
+      ],
+      "border": 40,
+      "language": "eng",
+      "psm": 10,
+      "configuration": [
+        "-c",
+        "tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+      ],
+      "outputs": {
+        "png": "ff9e2c78765b7565a4c3ff4683cccd7dbd59f933f21fe09400e73c0e54baf1ae",
+        "txt": "06f961b802bc46ee168555f066d28f4f0e9afdf3f88174c1ee6f9de004fc30a0",
+        "tsv": "8f7915ec2b97519e14a2b93ed1bc2c011873369a9144b9d6b680edd2154e19a9"
+      }
+    }
+  ],
+  "edits": [
+    {
+      "parent_byte_range": [
+        140,
+        140
+      ],
+      "removed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_selections": [
+        {
+          "block": "issuer",
+          "byte_range": [
+            0,
+            13
+          ],
+          "sha256": "e0967b7f3d61cd998363551534f4132985af46369df441b7add7310bd2dad7db"
+        }
+      ],
+      "inserted_sha256": "e0967b7f3d61cd998363551534f4132985af46369df441b7add7310bd2dad7db"
+    },
+    {
+      "parent_byte_range": [
+        141,
+        168
+      ],
+      "removed_sha256": "8c5fa13aeb14edd7b92b533c26ecdc8ef37f6472c34ad18148d1f8bd31a974bd",
+      "raw_selections": [
+        {
+          "block": "greeting-one",
+          "byte_range": [
+            0,
+            19
+          ],
+          "sha256": "a10be1a5294da276e88310dc968dbe42f967d6be2d958f4740a12947a3922cf7"
+        }
+      ],
+      "inserted_sha256": "a10be1a5294da276e88310dc968dbe42f967d6be2d958f4740a12947a3922cf7"
+    },
+    {
+      "parent_byte_range": [
+        170,
+        215
+      ],
+      "removed_sha256": "8baed5b9af4918443ea616ada5ccbb8a31b38b66eb73351d7aca1dbd3f5864f7",
+      "raw_selections": [
+        {
+          "block": "greeting-two-prefix",
+          "byte_range": [
+            0,
+            25
+          ],
+          "sha256": "be0ecee9741e828acc556cba5b38b3866835ce66fa1d648ce2d4044c48020c73"
+        },
+        {
+          "block": "greeting-two-ending",
+          "byte_range": [
+            25,
+            37
+          ],
+          "sha256": "dfd75aa749cee0ed9c6454253ed6b675ebe8df6613ca746384b6fc07b94e2e7c"
+        }
+      ],
+      "inserted_sha256": "c7d49dda97c71c4d9ecbc5ac31c06e20b37b4f45a99c06f8f5eaf4c858972996"
+    },
+    {
+      "parent_byte_range": [
+        218,
+        218
+      ],
+      "removed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_selections": [
+        {
+          "block": "body-capital",
+          "byte_range": [
+            0,
+            1
+          ],
+          "sha256": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd"
+        }
+      ],
+      "inserted_sha256": "559aead08264d5795d3909718cdd05abd49572e84fe55590eef31a88a08fdffd"
+    }
+  ],
+  "output_sha256": "afe42c91f0cb5951f764c39c811a298b51b13ebc81188ae22919559d8fcf109e",
+  "limitations": "Only bounded protocol recovery. Original source images and raw OCR outputs remain distinguishable. Unselected letters from imperfect raw OCR variants are never copied into the derived source. Every other body byte remains exact. Existing shared helper algorithms and renderer are unchanged; this source-specific orchestration is necessary because prior immutable OCR replay helpers cannot configure the generic uppercase-alphabet recognition setting or compose multiple raw spans per edit.",
+  "repository_implementations": [
+    {
+      "path": "scripts/_typeset_papal.py",
+      "sha256": "1c14411ed430d51605af66a37ddcb6d758d0eb67c9e8d56a1d4d875e9a0ba146",
+      "license": "MIT",
+      "role": "unchanged production renderer"
+    },
+    {
+      "path": "scripts/_papal_source_order.py",
+      "sha256": "f0a3014db485ee25ffa7df013c81e600f8e4f9eccff76b5ac7daecbc1d6a9c86",
+      "license": "MIT",
+      "role": "unchanged source validation/review tool"
+    },
+    {
+      "path": "tools/source-library",
+      "sha256": "f450ac98d8978cdd532185367e8669ea5487247d938fb5dd5e12c62b75df7d14",
+      "license": "MIT",
+      "role": "unchanged source validation/review tool"
+    },
+    {
+      "path": "tools/pdf-review",
+      "sha256": "0e6f688778216faeb02b3335e4467eb476c878cf94bd89e31af93f86e3a3ad3e",
+      "license": "MIT",
+      "role": "unchanged source validation/review tool"
+    }
+  ]
+}
