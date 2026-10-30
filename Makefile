@@ -60,7 +60,7 @@ ARCH_CORE_PACKAGES := make bash findutils coreutils diffutils
 ARCH_PYTHON_PACKAGES := python tzdata python-markdown python-yaml
 ARCH_TEX_PACKAGES := texlive-bin texlive-basic texlive-latex \
 	texlive-latexrecommended texlive-latexextra texlive-pictures \
-	texlive-fontsrecommended texlive-fontsextra
+	texlive-fontsrecommended texlive-fontsextra texlive-langother
 ARCH_PDF_PACKAGES := poppler imagemagick
 ARCH_WEB_PACKAGES := pandoc
 # The browser's own derivation, replayed under node against each source's
@@ -1999,7 +1999,7 @@ PAPAL_OUT ?= .scratch/papal-pdfs
 PAPAL_JOBS ?= 4
 PAPAL_MANIFEST_ROOT ?= src/sources/papal-documents
 PAPAL_HISTORICAL_SERIES := bullarium-continuatio benedict-xiv-bullarium gregory-xvi-acta pius-ix-acta
-PAPAL_ENGLISH_ADDITIONS := historical-english-supplement historical-english-journal historical-english-book
+PAPAL_ENGLISH_ADDITIONS := historical-english-supplement historical-english-journal historical-english-book historical-english-completion
 PAPAL_BASE_MANIFESTS ?= latin=typeset-manifest.json \
 	english=historical-english-manifest.json \
 	quanta-syllabus=quanta-syllabus-manifest.json \
@@ -2024,7 +2024,9 @@ PAPAL_CORRECTION_MANIFESTS ?= \
 	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/historical-series-corrections-manifest.json),historical-series-corrections=historical-series-corrections-manifest.json) \
 	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-reading-order-corrections-manifest.json),bullarium-reading-order-corrections=bullarium-reading-order-corrections-manifest.json) \
 	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-reading-order-withdrawals-manifest.json),bullarium-reading-order-withdrawals=bullarium-reading-order-withdrawals-manifest.json) \
-	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-active-withdrawals.json),bullarium-active-withdrawals=bullarium-active-withdrawals.json)
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-active-withdrawals.json),bullarium-active-withdrawals=bullarium-active-withdrawals.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/encyclicals-classic-manifest.json),encyclicals-classic=encyclicals-classic-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/encyclicals-source-corrections-manifest.json),encyclicals-source-corrections=encyclicals-source-corrections-manifest.json)
 PAPAL_CURRENT_MANIFEST ?= $(PAPAL_OUT)/current-manifest.json
 PAPAL_CURRENT_BATCH ?= $(PAPAL_OUT)/current
 PAPAL_COLLECTION_OUT ?= $(PAPAL_OUT)/collection

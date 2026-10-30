@@ -185,8 +185,10 @@ Latin/English parallel translation. The tool also emits a `.body.tex` fragment b
 the standalone `.tex`. Its output receipt gives the exact filenames, source
 hash, and compiled PDF identity.
 
-Rendering requires Python 3.11 or later and XeLaTeX, with TeX Gyre Pagella,
-Junicode and FreeSerif available to the font loader. PDF checks use Poppler's `pdfinfo`,
+Rendering requires Python 3.11 or later and XeLaTeX, with Latin Modern Roman,
+Junicode and FreeSerif available to the font loader. English and Latin readers
+use Babel's language-specific hyphenation; Latin requires TeX Live's
+`hyphen-latin` patterns and `babel-latin` support. PDF checks use Poppler's `pdfinfo`,
 `pdffonts` and `pdftotext`. The generated TeX retains its font declarations;
 keep the standalone file and any support files beside its body fragment.
 

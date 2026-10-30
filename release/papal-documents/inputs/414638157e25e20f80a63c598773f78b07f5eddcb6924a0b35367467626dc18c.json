@@ -1,0 +1,72 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "99e8f227e159ecca1da19b2c377a7b5bf9a2daac82cc079a20911685f611e2e4",
+  "documents": [
+    {
+      "id": "acta.ass.023.ass-023-004",
+      "language": "la",
+      "pdf_sha256": "12ae137753b0b768eb77f1abc7c8976ec286a7c22c25756e0d23f613f6ab5a48",
+      "pages": 8,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "description": "The native-spacing projection makes ordinary Latin word groups readable across the two columns. The source retains frequent original hard-line hyphens and occasional internal spacing or glyph damage, including a stray bullet within a divided word on page 7; these remain source qualifications rather than new editorial corrections. Inline citations remain inline, and no source-note/body fusion is visible. Page 8 is sparse but contains the continuing final blessing, the Idibus Octobris 1890 dating clause, pontifical-year line and LEO PAPA XIII subscription before the ruled apparatus; it is a source-bearing final page."
+        }
+      ],
+      "limitations": "Visual layout, source-note separation and the explicitly bounded transformation invariants only. No original-print image collation, whole-book collation, independent translation-equivalence judgment, textual-completeness finding, or independent rights determination was performed. All pages were inspected on bounded contact sheets; full-resolution views are limited to the pages explicitly listed. No page-review reuse.",
+      "receipt_sha256": "99e8f227e159ecca1da19b2c377a7b5bf9a2daac82cc079a20911685f611e2e4",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-18.md",
+      "report_sha256": "62f0587c1d7fe7f2cfea422186c07ff179b6b4dd5ab1327df1ba36822a0d0168"
+    },
+    {
+      "id": "acta.ass.023.ass-023-005",
+      "language": "la",
+      "pdf_sha256": "54cffdd7d38aea22118131112199b6b613b6b5aac3616f1d4bd5267ac3b3bddf",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2
+          ],
+          "description": "Both pages are readable with clear column continuation and a compact final apparatus. Frequent source hard-line hyphens remain, together with isolated residual letterspacing such as h u m o and m o r u m on page 1. Those local source defects reduce reading comfort but do not make the body generally unreadable. Page 2 retains the continuing body, final blessing, 20 November 1890 dating clause and LEO PP. XIII subscription above the ruled source/rights notice. No historical citation note is fused into a body line."
+        }
+      ],
+      "limitations": "Visual layout, source-note separation and the explicitly bounded transformation invariants only. No original-print image collation, whole-book collation, independent translation-equivalence judgment, textual-completeness finding, or independent rights determination was performed. All pages were inspected on bounded contact sheets; full-resolution views are limited to the pages explicitly listed. No page-review reuse.",
+      "receipt_sha256": "99e8f227e159ecca1da19b2c377a7b5bf9a2daac82cc079a20911685f611e2e4",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-18.md",
+      "report_sha256": "62f0587c1d7fe7f2cfea422186c07ff179b6b4dd5ab1327df1ba36822a0d0168"
+    }
+  ]
+}

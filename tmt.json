@@ -423,6 +423,39 @@
       "stage": "draft",
       "usage": "papal-documents {discover,check,list,show,export} [--catalog PATH] [--json]"
     },
+    "papal-native-spacing": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Replay exact native-line whitespace projections without changing source words.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "papal-native-spacing --recipe PATH --out PATH [--root DIR] [--check] [--json]"
+    },
+    "papal-source-notes": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Replay explicit source LF note partitions without changing source words.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "papal-source-notes {derive,check} --spec PATH --out PATH [--root DIR] [--json]"
+    },
+    "papal-source-order": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Replay explicit source note-column byte slices without inferring words.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "papal-source-order {derive,check} --spec PATH --out PATH [--root DIR] [--json]"
+    },
     "papal-sources": {
       "idempotent": true,
       "json": true,

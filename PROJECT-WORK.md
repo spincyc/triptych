@@ -23,8 +23,9 @@ partial or damaged English, and 25 have no located English route. All 91 acts
 after 1930 have complete external English routes. These are bounded identity
 and extent findings, not claims of translation accuracy or local republication
 permission. Thirty-nine complete-English gaps remain open. The local release
-still contains 4,808 readers, including complete English for 41 acts; the 327
-existing encyclical source links retain their exact installed PDF identities.
+contains 4,808 readers, including complete English for 41 acts. Nine of the
+327 encyclical source links now select independently reviewed replacements;
+the remaining installed PDF identities are unchanged.
 
 All 322 descriptions are present. Their attribution records Claude's 255 and
 Codex's 67 contributions; the new descriptions use 66 official English texts
@@ -40,6 +41,32 @@ checks. Thirty-one comparison projections change only the source-library tool
 hash; comparison content and source evidence are identical. The source-family
 bootstrap checkpoint is current while all 164 owner review units remain
 honestly pending; no completed family screening is claimed.
+
+The first classic-reader checkpoint replaces nine exact PDF/source selections:
+Rerum novarum in ASS 23; French Ad beatissimi in AAS 6; ASS 23 acts 004/005;
+three ASS 31 witnesses; Respicientes; and Quamquam pluries. Each replacement
+has independent byte-bound source and page acceptance. Latin Modern Roman,
+language-specific hyphenation, indented paragraphs and restrained terminal
+apparatus implement the requested classic appearance. Explicit note and native
+whitespace tools preserve source wording; their cold audits and historical
+helper implementations are retained. This is nine reviewed readers, not a
+claim that the other 318 encyclical source links have been redesigned.
+
+The release still has 4,808 PDFs and now 9,040 pages. All 4,799 other installed
+PDF paths, bytes, page counts, render revisions and source selections are
+identical. The complete release was rechecked with the current source-aware
+fidelity method. Current stable PDF paths remain valid when the obsolete
+history records different prior bytes for the same identity; actual retirement
+entries continue to veto publication. Focused regressions and an independent
+adversarial review verify this distinction without relaxing current byte,
+page, review, rights or site-authorization checks.
+
+The checkpoint passes the complete source gate, 243 papal tests, 20 catalogue
+tests, 151 public-alpha tests, the 55-tool registry, changed-tool examples,
+site build, independent deployment-artifact verification and the built-route
+viewport, keyboard and no-JavaScript checks. The existing Claude Fifteenth
+Sunday chronology-annotation smoke failure reproduces unchanged at the
+published base; no unrelated chronology content is revised here.
 
 Historical English intake, source-preserving note and spacing repairs, classic
 reader installation and the remaining cold-review dispositions continue. A

@@ -3802,6 +3802,45 @@ class PublicAlphaTest(unittest.TestCase):
                     self.tool.papal_reader_pdfs()
                 self.assertIn(expected, str(failure.exception))
 
+    def test_papal_reader_replacement_history_preserves_the_current_stable_path(self) -> None:
+        fixture = self.make_encyclicals_fixture()
+        current = fixture["release"]["documents"][0]
+        history = {
+            "id": current["id"], "language": current["language"],
+            "pdf": current["pdf"], "pdf_sha256": digest(b"prior reviewed PDF"),
+            "reason": "replaced-by-current-pass",
+        }
+        self.rewrite_papal_release(fixture, lambda release: release["obsolete"].append(history))
+        self.assertEqual({self.PAPAL_LATIN, self.PAPAL_ENGLISH}, set(self.tool.papal_reader_pdfs()))
+        self.assertIn(self.PAPAL_LATIN, self.tool.site_source_paths())
+        self.write(self.PAPAL_LATIN, b"prior reviewed PDF")
+        with self.assertRaisesRegex(self.tool.ReleaseError, "bytes on disk|SHA-256"):
+            self.tool.papal_reader_pdfs()
+
+    def test_papal_reader_replacement_history_requires_distinct_exact_prior_identity(self) -> None:
+        fixture = self.make_encyclicals_fixture()
+        current = fixture["release"]["documents"][0]
+        history = {
+            "id": current["id"], "language": current["language"],
+            "pdf": current["pdf"], "pdf_sha256": digest(b"prior reviewed PDF"),
+            "reason": "replaced-by-current-pass",
+        }
+        cases = (
+            {"reason": "withdrawn-or-no-longer-ready"},
+            {"reason": None},
+            {"pdf_sha256": current["pdf_sha256"]},
+            {"pdf_sha256": "not-an-exact-hash"},
+            {"pdf_sha256": None},
+            {"id": "another.act"},
+            {"language": "another-language"},
+        )
+        for change in cases:
+            with self.subTest(change=change):
+                retired = dict(history, **change)
+                self.rewrite_papal_release(fixture, lambda release: release["obsolete"].append(retired))
+                with self.assertRaisesRegex(self.tool.ReleaseError, "retired by release/papal-documents.json"):
+                    self.tool.papal_reader_pdfs()
+
     def test_papal_reader_reached_through_a_symlink_is_refused(self) -> None:
         self.make_encyclicals_fixture()
         target = self.root / self.PAPAL_LATIN

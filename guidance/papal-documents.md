@@ -185,6 +185,36 @@ and project-created apparatus without assigning papal wording to an AI
 provider. Source-library evidence states retain their existing meanings;
 rendering a source does not promote it to `verified`.
 
+### Classic reading typography
+
+The current reader design uses Latin Modern Roman at 10.5pt with 13pt leading,
+indented paragraphs without extra paragraph gaps, a restrained roman title,
+and a short rule above the smaller terminal apparatus. English and Latin are
+justified with their own Babel hyphenation patterns. Other identified languages
+retain ragged-right composition rather than inheriting English patterns.
+Babel shorthands are disabled so literal source quotation marks and adjoining
+characters cannot become language-specific markup in either body or title.
+Short all-capital source paragraphs use flush-left composition to avoid
+stretched heading words, without becoming newly invented semantic headings.
+Historical notes remain in their source order; typography does not infer new
+note anchors, rewrite OCR word divisions, or move notes into invented footnotes.
+
+XeLaTeX needs the Latin Modern OpenType fonts and Babel's English and Latin
+support. A TeX Live installation requires `babel-english`, `babel-latin` and
+`hyphen-latin`; rebuild its XeLaTeX format after enabling the Latin patterns.
+Arch packages supply the additional Latin support through `texlive-langother`.
+Missing Latin patterns stop compilation rather than silently substituting
+English patterns. Junicode and FreeSerif remain character-specific fallbacks.
+
+Generator version 2 records this design and its transformation options. Its
+text-fidelity check permits an added visible hyphen only at a physical line or
+page ending between source letters. Every original source hyphen must still
+match; the check does not remove all hyphens from either text. Whitespace,
+soft-hyphen and Unicode compatibility normalization retain their previous
+declared meanings. Old frozen receipts and reviewed PDFs remain records of
+their original generator; a typography change requires new byte-bound review
+before replacing any installed reader.
+
 ## Review and use in larger projects
 
 Before a PDF enters an installed/public destination:

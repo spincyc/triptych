@@ -1133,11 +1133,24 @@ def _papal_release_documents(errors: list[str]) -> tuple[dict, set[str]]:
             errors.append(f"{label} records {key[0]!r} in {key[1]!r} twice")
             continue
         documents[key] = document
-    retired = {
-        entry.get("pdf")
-        for entry in release.get("obsolete") or []
-        if isinstance(entry, dict) and isinstance(entry.get("pdf"), str)
-    }
+    retired: set[str] = set()
+    for entry in release.get("obsolete") or []:
+        if not isinstance(entry, dict) or not isinstance(entry.get("pdf"), str):
+            continue
+        current = documents.get((entry.get("id"), entry.get("language")))
+        prior_sha = entry.get("pdf_sha256")
+        replaced = (
+            entry.get("reason") == "replaced-by-current-pass"
+            and current is not None
+            and current.get("pdf") == entry["pdf"]
+            and isinstance(prior_sha, str)
+            and SHA256_RE.fullmatch(prior_sha) is not None
+            and isinstance(current.get("pdf_sha256"), str)
+            and SHA256_RE.fullmatch(current["pdf_sha256"]) is not None
+            and current["pdf_sha256"] != prior_sha
+        )
+        if not replaced:
+            retired.add(entry["pdf"])
     return documents, retired
 
 

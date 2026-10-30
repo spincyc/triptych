@@ -274,7 +274,8 @@ class ManifestTests(unittest.TestCase):
     @unittest.skipUnless(shutil.which("xelatex") and shutil.which("pdfinfo") and shutil.which("pdftotext"), "PDF toolchain unavailable")
     def test_explicit_long_ocr_wrap_preserves_every_character_and_pdf_fidelity(self):
         token = "RRRALLLLLICCCCÉCCCÓÉOCÓÉÓÉÉÓÉÓÉÓÉÓÉÓÉÓÉÓÉÓÉÓÓÉÓÉÓÉÓÓRÓRÓRÓROOÓ—————M"
-        self.payload = "Ordinary short source words.\n\n" + token + "\n\nFinal source note.\n"
+        rule = "_" * 35
+        self.payload = "Ordinary short source words.\n\n" + token + "\n\n" + rule + "\n\nFinal source note.\n"
         self.payload_path.write_text(self.payload, encoding="utf-8")
         self.doc["sha256"] = hashlib.sha256(self.payload.encode()).hexdigest()
         self.artifact.update(sha256=self.doc["sha256"], byte_size=len(self.payload.encode()))
@@ -286,6 +287,8 @@ class ManifestTests(unittest.TestCase):
         self.assertIn("Ordinary short source words.", body)
         self.assertEqual(papal.body_tex_escape("ordinary words", True), papal.source_tex_escape("ordinary words"))
         self.assertEqual(papal.body_tex_escape("x" * 47, True), "x" * 47)
+        self.assertIn(r"\allowbreak{}", papal.body_tex_escape(rule, True))
+        self.assertNotIn(r"\allowbreak{}", papal.body_tex_escape(rule, False))
         self.assertNotIn("m" + r"\allowbreak{}" + "\u0305", papal.body_tex_escape("m\u0305" * 30, True))
         receipt = papal.render_documents({**self.manifest, "documents": [row]}, [document],
                                          self.root / "long-ocr-wrap", True)
@@ -404,7 +407,7 @@ class ManifestTests(unittest.TestCase):
         rendered = papal.render_tex(compact, self.manifest["revision"])
         self.assertIn(r"\documentclass[10pt,twocolumn]{article}", rendered)
         self.assertIn("margin=0.65in,columnsep=0.24in", rendered)
-        self.assertIn(r"\setlength{\parskip}{1pt}", rendered)
+        self.assertIn(r"\fontsize{10.5}{12.5}\selectfont", rendered)
         self.assertEqual(papal.render_body(normal), papal.render_body(compact))
         for bad in ("true", 1, None):
             with self.assertRaisesRegex(papal.PapalTypesetError, "compact_layout"):
@@ -477,8 +480,9 @@ class ManifestTests(unittest.TestCase):
 
     @unittest.skipUnless(shutil.which("xelatex") and shutil.which("pdfinfo") and shutil.which("pdftotext"), "PDF toolchain unavailable")
     def test_compiled_greek_combining_mark_and_soft_hyphen_keep_logical_text(self):
-        self.payload = "Greek πάτερ and ἡμῶν, combining x̶ and Ssm̅um, retained Cyrillic aс, symbol ►, and prae\u00adpositi.\fContinuation after a page delimiter.\n"
+        self.payload = "Greek πάτερ and ἡμῶν, combining x̶ and Ssm̅um, retained Cyrillic aс, symbols ► ■ ― ♦, and prae\u00adpositi.\fContinuation after a page delimiter.\n"
         self.payload_path.write_text(self.payload, encoding="utf-8")
+        self.doc["title"] = "Fixture ■ ― ♦"
         self.doc["sha256"] = hashlib.sha256(self.payload.encode()).hexdigest()
         self.artifact.update(sha256=self.doc["sha256"], byte_size=len(self.payload.encode()))
         self.write_artifact()
@@ -486,6 +490,57 @@ class ManifestTests(unittest.TestCase):
         receipt = papal.render_documents(self.manifest, [checked], self.root / "unicode-output", True)
         self.assertEqual(receipt["errors"], [])
         self.assertEqual(receipt["documents"][0]["warnings"], [])
+
+    @unittest.skipUnless(shutil.which("xelatex") and shutil.which("pdfinfo") and shutil.which("pdftotext"), "PDF toolchain unavailable")
+    def test_latin_patterns_and_justification_preserve_source_hyphens(self):
+        self.payload = ("Extraordinariae proprietates typographicae integram verborum seriem conservant. " * 35
+                        + "\n\nSource-owned puncta et re-lectio integra manent.\n")
+        self.payload_path.write_text(self.payload, encoding="utf-8")
+        self.doc.update(language="la", sha256=hashlib.sha256(self.payload.encode()).hexdigest())
+        self.artifact.update(sha256=self.doc["sha256"], byte_size=len(self.payload.encode()))
+        self.write_artifact()
+        (self.payload_path.parents[2] / "edition.toml").write_text(
+            'schema = 1\nrecord_type = "edition"\nid = "edition.test.fixture"\nlanguage = "la"\n')
+        document = papal.validate_document(self.doc, self.root)
+        receipt = papal.render_documents(self.manifest, [document], self.root / "latin-patterns", True)
+        self.assertEqual(receipt["errors"], [])
+        self.assertGreater(receipt["documents"][0]["text_fidelity"]["layout_hyphens"], 0)
+        self.assertEqual(receipt["generator_version"], 2)
+        self.assertEqual(document["text"], self.payload)
+
+    @unittest.skipUnless(shutil.which("xelatex") and shutil.which("pdfinfo") and shutil.which("pdftotext"), "PDF toolchain unavailable")
+    def test_latin_body_keeps_literal_quotes_and_babel_shorthand_sequences(self):
+        self.payload = 'Dicit: "Verba integra" et "aequitas" servantur. Signa "<, "> et "| manent.\n'
+        self.payload_path.write_text(self.payload, encoding="utf-8")
+        self.doc.update(language="la", sha256=hashlib.sha256(self.payload.encode()).hexdigest())
+        self.artifact.update(sha256=self.doc["sha256"], byte_size=len(self.payload.encode()))
+        self.write_artifact()
+        (self.payload_path.parents[2] / "edition.toml").write_text(
+            'schema = 1\nrecord_type = "edition"\nid = "edition.test.fixture"\nlanguage = "la"\n')
+        document = papal.validate_document(self.doc, self.root)
+        out = self.root / "latin-literal-body-quotes"
+        receipt = papal.render_documents(self.manifest, [document], out, True)
+        self.assertEqual(receipt["errors"], [])
+        pdf = out / receipt["documents"][0]["pdf"]
+        extracted = subprocess.check_output(["pdftotext", "-raw", str(pdf), "-"], text=True)
+        compact = re.sub(r"\s+", " ", extracted)
+        self.assertIn('"Verba integra" et "aequitas"', compact)
+        self.assertIn('"<, "> et "|', compact)
+        self.assertEqual(extracted.count('"'), self.payload.count('"'))
+
+    @unittest.skipUnless(shutil.which("xelatex") and shutil.which("pdfinfo") and shutil.which("pdftotext"), "PDF toolchain unavailable")
+    def test_latin_display_title_keeps_both_ascii_quotes_independently_of_body_fidelity(self):
+        self.doc.update(language="la", title='De "Verba"')
+        (self.payload_path.parents[2] / "edition.toml").write_text(
+            'schema = 1\nrecord_type = "edition"\nid = "edition.test.fixture"\nlanguage = "la"\n')
+        document = papal.validate_document(self.doc, self.root)
+        out = self.root / "latin-literal-title-quotes"
+        receipt = papal.render_documents(self.manifest, [document], out, True)
+        self.assertEqual(receipt["errors"], [])
+        self.assertEqual(receipt["documents"][0]["text_fidelity"]["status"], "pass")
+        pdf = out / receipt["documents"][0]["pdf"]
+        extracted = subprocess.check_output(["pdftotext", "-raw", str(pdf), "-"], text=True)
+        self.assertEqual(extracted.splitlines()[0], self.doc["title"])
 
     def test_form_feed_is_rendering_whitespace_without_mutating_input(self):
         self.assertEqual(papal.tex_escape("word\fcontinuation"), "word continuation")
@@ -504,6 +559,34 @@ class ManifestTests(unittest.TestCase):
         with patch.object(papal.subprocess, "run", return_value=run):
             with self.assertRaisesRegex(papal.PapalTypesetError, "terminal apparatus"):
                 papal.pdf_body_fidelity(self.root / "unused.pdf", {"text": "Original body."}, 2)
+
+    def test_line_hyphens_preserve_original_hyphens_and_every_source_character(self):
+        source = "An extraordinary source-owned re-reading remains exact."
+        for extracted, expected_breaks in (
+            ("An extraor-\ndinary source-owned re-\nreading remains exact.", 1),
+            (source, 0),
+            ("An extraor-\ndinary source-owned re-reading remains exact.", 1)):
+            run = subprocess.CompletedProcess([], 0, stdout=extracted + "\n1\n\f")
+            with self.subTest(extracted=extracted), patch.object(papal.subprocess, "run", return_value=run):
+                result = papal.pdf_body_fidelity(self.root / "unused.pdf", {"text": source}, 1)
+            self.assertEqual(result["layout_hyphens"], expected_breaks)
+            self.assertEqual(result["method"], "pdf-raw-source-aware-line-hyphen-nfkc-v3")
+        for damaged in (
+            source.replace("source-owned", "sourceowned"),
+            source.replace("extraordinary", "ex-traordinary"),
+            source.replace("exact", "ex-\nact!"),
+            source.replace("re-reading", "rereading")):
+            run = subprocess.CompletedProcess([], 0, stdout=damaged + "\n1\n\f")
+            with self.subTest(damaged=damaged), patch.object(papal.subprocess, "run", return_value=run):
+                with self.assertRaisesRegex(papal.PapalTypesetError, "differs from the complete source"):
+                    papal.pdf_body_fidelity(self.root / "unused.pdf", {"text": source}, 1)
+
+    def test_layout_hyphen_at_page_boundary_retains_complete_source_extent(self):
+        run = subprocess.CompletedProcess([], 0, stdout="An extraor-\n1\n\fdinary source-owned text.\n2\n\f")
+        with patch.object(papal.subprocess, "run", return_value=run):
+            result = papal.pdf_body_fidelity(self.root / "unused.pdf", {"text": "An extraordinary source-owned text."}, 2)
+        self.assertEqual(result["layout_hyphens"], 1)
+        self.assertEqual((result["source_first_page"], result["source_last_page"]), (1, 2))
 
     def test_title_only_first_page_cannot_pass_source_edition_check(self):
         run = subprocess.CompletedProcess([], 0, stdout="Title only.\n1\n\fOriginal body. Source note.\n2\n\f")

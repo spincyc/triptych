@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.acta-papal-archives.aas.006.source-notes-helper-92a17c5a5de8"
+edition_id = "edition.acta-papal-archives.aas.006.1914-acta-aas-006"
+artifact_type = "source-replay-implementation"
+media_type = "text/x-python"
+storage = "tracked"
+retrieved = "2026-10-30"
+rights_status = "licensed"
+rights_basis = "Exact archived project-created replay implementation from scripts/, licensed under MIT by LICENSE and LICENSES/MIT.txt; contains no historical source wording."
+license = "MIT"
+provenance = "Exact initial LF note-partition implementation retained before adding inline boundaries and overwrite refusals. Earlier note-derivative provenance pins this SHA-256. Retaining its exact code preserves historical replay independently of later compatible utility changes. It inserts LF records only and generates no source words."
+sha256 = "92a17c5a5de809b2261f14979ef4d71444dae20e490bbfe5617e5fd7bec003c4"
+byte_size = 7510
+path = "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1914-acta-aas-006/artifacts/source-notes-helper-92a17c5a5de8/helper.py"
+indexable = false
+notes = "The MIT software license governs this archived implementation. Historical source text processed by the code retains its separately recorded rights; separate project-created research and recipe records retain their own declared terms."
