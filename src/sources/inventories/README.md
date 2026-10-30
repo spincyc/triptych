@@ -195,17 +195,21 @@ evidence. Refresh never discovers or adds a new family presence. Review and add
 that presence explicitly.
 
 A canonical-manifest addition or edit intentionally blocks ordinary refresh.
-First run `tools/tpt source-library validate`, review the changed manifests, and
-update their family membership. Version 1 uses a conservative global catalog
-checkpoint: every family with canonical IDs must then be re-reviewed and set
-to a `reviewed_on` equal to the new ledger audit date, even when its own
-manifests did not change. Then use
-`--accept-canonical-catalog`. That explicit acceptance seals reviewed ledger
-edits as the operator's semantic-review checkpoint, independently reruns the
-full source-library validator, requires every current canonical ID to belong
-to exactly one family, updates the catalog pin, and still applies the ordinary
-surface-refresh and screening-invalidation rules. Without the flag, catalog
-drift is never adopted silently.
+First run `tools/tpt source-library validate` and review the changed manifests
+and their family membership. A family whose stored `membership_snapshot`
+matches the fingerprint of its current sorted `canonical_ids` retains its prior
+membership review. For a family with canonical IDs whose pin is missing or
+differs, actual review is required and `reviewed_on` must equal the acceptance
+audit date. Record a new membership pin only after that review; refresh carries
+the pin unchanged. When any reviewed family exists, every current canonical ID
+must belong to exactly one family. A bootstrap ledger with `families = []`
+makes no family classification claim and may accept catalog drift with owner
+reviews still pending; adding its first reviewed family activates exhaustive
+membership. Then use `--accept-canonical-catalog`. That explicit acceptance
+independently reruns the full source-library validator, updates the catalog pin,
+and applies the ordinary surface-refresh and screening-invalidation rules.
+Without the flag, catalog drift is never adopted silently. Acceptance does not
+complete family screening or atomic citation coverage.
 
 For routine maintenance, refresh the publication inventory first, complete any
 new classification review and rerun `classify` when needed, then refresh this
