@@ -1,0 +1,91 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "bounded-historical-english-ocr",
+   "byte_size": 19098,
+   "edition_owned": true,
+   "id": "artifact.journals.catholic-mind.1920-07-22-volume-18-issue-14.english-reading-a64fb7b0de3e",
+   "media_type": "text/plain",
+   "notes": "The printing credits the London Tablet translation. All historical source notes retained separately from the body. Exact complete printed act extent pp. 267–275. Source OCR recognition, punctuation and line-end hyphen fragments remain; no corrected translation or full lexical image collation is claimed. Historical notes remain distinct blank-line blocks.",
+   "page_count": null,
+   "retrieved": "2026-10-29",
+   "rights": "public-domain",
+   "rights_basis": "The native issue masthead identifies this United States printing as The Catholic Mind 18, no. 14, 1920-07-22. The historical English translation and contemporary issue material were published by 1930 and are public domain in the United States by expiration of the publication term. This applies to the identified printing, independently of the act date; modern host markup is excluded.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/sim_catholic-mind_1920-07-22_18_14/sim_catholic-mind_1920-07-22_18_14_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "source-extent-review",
+   "byte_size": 1741,
+   "edition_owned": true,
+   "id": "artifact.journals.catholic-mind.1920-07-22-volume-18-issue-14.extent-review-a89ae501e8a3",
+   "media_type": "application/json",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-10-29",
+   "rights": "licensed",
+   "rights_basis": "Project-created source identity, exact extent and inspection record.",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "whole-historical-issue-ocr",
+   "byte_size": 44457,
+   "edition_owned": true,
+   "id": "artifact.journals.catholic-mind.1920-07-22-volume-18-issue-14.ia-ocr-52938d5e134d",
+   "media_type": "text/plain",
+   "notes": "Complete exact openly offered issue OCR, unchanged. Recognition and occasional neighboring-page margin fragments remain in this parent.",
+   "page_count": null,
+   "retrieved": "2026-10-29",
+   "rights": "public-domain",
+   "rights_basis": "The native issue masthead identifies this United States printing as The Catholic Mind 18, no. 14, 1920-07-22. The historical English translation and contemporary issue material were published by 1930 and are public domain in the United States by expiration of the publication term. This applies to the identified printing, independently of the act date; modern host markup is excluded.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/sim_catholic-mind_1920-07-22_18_14/sim_catholic-mind_1920-07-22_18_14_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "literal-source-selection",
+   "byte_size": 6574,
+   "edition_owned": true,
+   "id": "artifact.journals.catholic-mind.1920-07-22-volume-18-issue-14.selection-recipe-57ca866a06de",
+   "media_type": "application/json",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-10-29",
+   "rights": "licensed",
+   "rights_basis": "Project-created exact physical-line selectors and source-extent metadata; historical short quoted spans retain their source status.",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": "Contemporary historical English periodical printing",
+  "date": "1920-07-22",
+  "editors": [],
+  "id": "edition.journals.catholic-mind.1920-07-22-volume-18-issue-14",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "New York: The America Press; 1920-07-22.",
+  "title": "The Catholic Mind, volume 18, no. 14 (1920-07-22)",
+  "translators": [],
+  "year": 1920
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Catholic Mind"
+  ],
+  "author": "America Press",
+  "category": "periodical",
+  "description": "English Catholic periodical. Exact acquired issues own their original scans/OCR and bounded constituent acts; an issue date identifies its historical publication, not the date of an act reprinted within it.",
+  "id": "work.journals.catholic-mind",
+  "languages": [
+   "en"
+  ],
+  "title": "The Catholic Mind"
+ }
+}

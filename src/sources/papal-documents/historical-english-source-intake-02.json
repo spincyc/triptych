@@ -1,0 +1,814 @@
+{
+  "schema": "triptych-three-act-source-cold-audit-recovery/v1",
+  "packet": 2,
+  "scope_sha256": "aa00fddfc4303daa167740d5e6fe839e27da3142997da7467e5ce8727d199fcc",
+  "expected_count": 3,
+  "expected_keys": [
+    [
+      "historical.mcghee-1839.elapso-proxime-anno",
+      "en"
+    ],
+    [
+      "papal.benedict-xv.hf-ben-xv-enc-01121918-quod-iam-diu.catholic-mind-1919-02-08-english",
+      "en"
+    ],
+    [
+      "papal.benedict-xv.hf-ben-xv-enc-01121920-annus-iam-plenus.catholic-mind-1921-02-08-english",
+      "en"
+    ]
+  ],
+  "status": "PASS",
+  "counts": {
+    "documents": 3,
+    "PASS": 3,
+    "PENDING": 0,
+    "BLOCKED": 0,
+    "fresh_images": 16
+  },
+  "completed_at": "2026-10-30T14:02:01.767695+00:00",
+  "method": "All selected text read. Fresh native raster inspections recorded after each image before the next. Current215 source/controller/edition/parent/recipe/key/hash and exact selector gates reexecuted using the pinned prior checker, changing only its output directory in memory. Original derivative-replay receipts reused only after exact current pin gates; their old visual judgments were not inherited.",
+  "verification_runner": {
+    "path": ".scratch/english-intake-recovery/packet-02/audit/check_pins.py",
+    "sha256": "f700448d5f4a184fb44f97c33a8bf65e92166534c838f92db2a66c3a416bc795",
+    "execution_output_override": ".scratch/english-intake-recovery/packet-02/audit-recovery"
+  },
+  "proxy_map": {
+    "path": ".scratch/english-intake-recovery/image-proxies/proxy-map.json",
+    "sha256": "d45e3d467b78d50e9f0be6ee271dd24c04d6b2981c5540e4dc1ae62285882f16"
+  },
+  "pdf_review_helper": {
+    "path": "tools/pdf-review",
+    "sha256": "0e6f688778216faeb02b3335e4467eb476c878cf94bd89e31af93f86e3a3ad3e"
+  },
+  "documents": [
+    {
+      "id": "historical.mcghee-1839.elapso-proxime-anno",
+      "language": "en",
+      "title": "Elapso proxime anno",
+      "status": "PASS",
+      "source_acceptance": "PASS",
+      "row_sha256": "a2203d3363753493095c02330d237c15e3ffdb233c425409d28f1e7eeade8cab",
+      "source_sha256": "5ca9eba70ed98d9d74520b03f0f02c9b22e2eb04cceafe4cc173a8c45fb14ff5",
+      "source_scope_sha256": "5ca9eba70ed98d9d74520b03f0f02c9b22e2eb04cceafe4cc173a8c45fb14ff5",
+      "selected_text_read_complete": true,
+      "proof_pins": {
+        "evidence": {
+          "path": ".scratch/english-intake-recovery/packet-02/act-01-evidence.json",
+          "sha256": "6a4b70776376232d8a6d6eac7525cfc83b164316097df824d4d22908f31a5aa5",
+          "bytes": 37399
+        },
+        "selection": {
+          "path": ".scratch/english-intake-recovery/packet-02/act-01-selected.txt",
+          "sha256": "5ca9eba70ed98d9d74520b03f0f02c9b22e2eb04cceafe4cc173a8c45fb14ff5",
+          "bytes": 8519
+        },
+        "source": {
+          "path": "src/sources/works/robert-james-mcghee/nullity-government-queen-victoria-ireland/editions/1839-tims-dublin/artifacts/elapso-text-5ca9eba70ed98d9d/historical.txt",
+          "sha256": "5ca9eba70ed98d9d74520b03f0f02c9b22e2eb04cceafe4cc173a8c45fb14ff5",
+          "bytes": 8519
+        },
+        "controller": {
+          "id": "segment.papal.benedictus-xiv.elapso-proxime-anno.1839-mcghee-english",
+          "record": "src/sources/works/papal-documents/1751-02-20-papal-benedictus-xiv-enciclica-i-elapso-proxime-anno-i-20-febbraio-1751-il-ponte-02bd6bb0/editions/1839-mcghee-english/segments/historical-english.toml",
+          "sha256": "f076b6e8a7c48f98ca36d2544704917fcd1f8bf4893a265a7e22bf23d43e9834"
+        },
+        "constituent_edition": {
+          "record": "src/sources/works/papal-documents/1751-02-20-papal-benedictus-xiv-enciclica-i-elapso-proxime-anno-i-20-febbraio-1751-il-ponte-02bd6bb0/editions/1839-mcghee-english/edition.toml",
+          "record_sha256": "b7741c4a93de854239da87b10894926982809a2848fb0a457820eddec5b2e76e"
+        },
+        "container_edition": {
+          "record": "src/sources/works/robert-james-mcghee/nullity-government-queen-victoria-ireland/editions/1839-tims-dublin/edition.toml",
+          "record_sha256": "9b9d33534d111403b39392401678457ddecb3ef36d50839f1bfe16b2e8862dfe"
+        },
+        "artifact_record": {
+          "record": "src/sources/works/robert-james-mcghee/nullity-government-queen-victoria-ireland/editions/1839-tims-dublin/artifacts/elapso-text-5ca9eba70ed98d9d/artifact.toml",
+          "record_sha256": "596070acd44f3ef0db8976568b579673e2593e263a0c135ddcf690718bff301f",
+          "id": "artifact.robert-james-mcghee.nullity-government-queen-victoria-ireland.1839.elapso-text-5ca9eba70ed98d9d"
+        },
+        "source_manifest": {
+          "path": "src/sources/papal-documents/historical-english-completion-manifest.json",
+          "sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+          "bytes": 67917
+        },
+        "selector": [
+          [
+            1,
+            23
+          ]
+        ],
+        "derivative_recipe_replay": {
+          "recipe": "src/sources/works/robert-james-mcghee/nullity-government-queen-victoria-ireland/editions/1839-tims-dublin/artifacts/elapso-recipe-db45b3dbae0ec207/recipe.json",
+          "recipe_sha256": "db45b3dbae0ec207e6e894c83c57e257bd5c3342765e73f082a37883fd881e6d",
+          "input_sha256": "5bdd9d1694ec6dfb15f26430b54b058a1f2677e7decabc31116cb8db8080ad8e",
+          "output_sha256": "5ca9eba70ed98d9d74520b03f0f02c9b22e2eb04cceafe4cc173a8c45fb14ff5",
+          "notes_sha256": "988ebe707d03b3707f4fbbe54d32fc5baa1bce4be0c89502804907a68c190e75",
+          "pass": true
+        },
+        "prior_replay_receipt": {
+          "path": ".scratch/english-intake-a2/checks.json",
+          "sha256": "022fe973cdacd90e970311e310df56b4dbd8b62677ede4fe95eaa00ca25be6f1",
+          "row_ordinal": 4
+        },
+        "observations": {
+          "path": ".scratch/english-intake-recovery/packet-02/audit-recovery/observations-act-01.json",
+          "sha256": "d45e17cbe85501d58e0c8be83d098067ff5a1f4ca3306f1935a1033707ce28ee"
+        }
+      },
+      "human_translation_identity": {
+        "schema": 1,
+        "record_type": "edition",
+        "id": "edition.papal.benedictus-xiv.elapso-proxime-anno.1839-mcghee-english",
+        "work_id": "work.papal.benedictus-xiv.enciclica-i-elapso-proxime-anno-i-20-febbraio-1751-il-ponte",
+        "title": "Elapso proxime anno: historical English translation",
+        "language": "en",
+        "date": "1839",
+        "publication": "Robert J. M‘Ghee, The Nullity of the Government of Queen Victoria in Ireland (Dublin: Richard Moore Tims; London: Simpkin, Marshall and Co., 1839), pp.209–214.",
+        "translators": [
+          "Robert James M‘Ghee"
+        ],
+        "authority": "Benedict XIV; unofficial historical English translation by Robert J. M‘Ghee",
+        "notes": "Identity established by the incipit, named issuer, recipient, content, sections1–5 and native closing dated20February1751. Papal body complete in this historical English printing; hostile surrounding commentary and three identified inline editor annotations are separated and attributed. No independent evaluation of translation accuracy is asserted."
+      },
+      "rights_basis": "United States public domain: the historical English translation was printed in Robert J. M‘Ghee, The Nullity of the Government of Queen Victoria in Ireland (Dublin: Richard Moore Tims; London: Simpkin, Marshall and Co., 1839), pp. 209–214. The native title/imprint on PDF page 7 and all translation-bearing native pages 263–268 were visually inspected on 2026-10-30. The 1839 printing supplies this translation's publication evidence independently of the act's 1751 date. The maximum historical term has expired under the repository's United States rights position in src/sources/inventories/papal-documents-rights-v1.toml (17 U.S.C. 304–305; 104A remainder where applicable). This derivative excludes modern digitization furniture and separately identified surrounding polemical commentary. Historical source wording is excluded from Triptych's CC BY 4.0.",
+      "actual_opened_images": [
+        {
+          "act": 1,
+          "proof_page": 17,
+          "source_page": 7,
+          "source_path": ".scratch/english-research-benedict-xiv/queen-victoria-pdf-31cb39239ad8da40.pdf",
+          "source_sha256": "31cb39239ad8da409bcb4a3787e0eb547684bd9ceffa7322d396f289a253fed7",
+          "raster_path": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-17.png",
+          "raster_sha256": "e1a7779d6fdb50d070fcd57804a5b56e8246692223ec69631a2edeb143e6d84a",
+          "proxy_path": ".scratch/english-intake-recovery/image-proxies/packet-02-act-01-sample-01-e1a7779d6fdb.jpg",
+          "proxy_sha256": "ba3106b730b031ed32b390457376923dc8a0b3b70b9e8fee535972009b13d8e2",
+          "proxy_transform": "JPEG95, 4:4:4, full native pixels; review only",
+          "display_path": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-17.png",
+          "display_sha256": "e1a7779d6fdb50d070fcd57804a5b56e8246692223ec69631a2edeb143e6d84a",
+          "display_detail": "auto",
+          "fresh": true,
+          "observed_at": "2026-10-30T14:02:01.642651+00:00",
+          "observations": [
+            "Title page identifies The Nullity of the Government of Queen Victoria in Ireland; or, The Pope, the Virtual Ruler of the Land.",
+            "Title names Rev. Robert J. M‘Ghee, A.B., and announces original documents with translations.",
+            "Imprint reads Dublin: Richard Moore Tims, Grafton Street; Simpkin, Marshall and Co., London; 1839. The 1832 in title concerns bishops’ actions, distinct from imprint year.",
+            "Google digitization footer is modern furniture, excluded from historical text."
+          ]
+        },
+        {
+          "act": 1,
+          "proof_page": 18,
+          "source_page": 263,
+          "source_path": ".scratch/english-research-benedict-xiv/queen-victoria-pdf-31cb39239ad8da40.pdf",
+          "source_sha256": "31cb39239ad8da409bcb4a3787e0eb547684bd9ceffa7322d396f289a253fed7",
+          "raster_path": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-18.png",
+          "raster_sha256": "d78f7a12fe131650dea8af6e31ee114c5a66b2ba470a2bdecf1831ca3c64d8d3",
+          "proxy_path": ".scratch/english-intake-recovery/image-proxies/packet-02-act-01-sample-02-d78f7a12fe13.jpg",
+          "proxy_sha256": "30f3bc226ae142bd4bf9d5bd1e1b2182524ec6c4813143bd4b7451283e3ecaa8",
+          "proxy_transform": "JPEG95, 4:4:4, full native pixels; review only",
+          "display_path": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-18.png",
+          "display_sha256": "d78f7a12fe131650dea8af6e31ee114c5a66b2ba470a2bdecf1831ca3c64d8d3",
+          "display_detail": "auto",
+          "fresh": true,
+          "observed_at": "2026-10-30T13:50:32.607286+00:00",
+          "observations": [
+            "Printed p.209 carries surrounding polemical prose and a separate polemical caption above the act; selected text correctly begins with OF THE DRAGGING FORTH OF CRIMINALS rather than that caption.",
+            "Historical heading identifies an encyclical to Inquisitors against heretical pravity, Benedict XIV Pope, and address Beloved Son, Health and Apostolical Benediction.",
+            "Proem begins At the close of the last year, 1750 and Officii Nostri, continuing to the Bishop/intervention clause at the foot. Selected text retains this actual address and proem."
+          ]
+        },
+        {
+          "act": 1,
+          "proof_page": 19,
+          "source_page": 264,
+          "source_path": ".scratch/english-research-benedict-xiv/queen-victoria-pdf-31cb39239ad8da40.pdf",
+          "source_sha256": "31cb39239ad8da409bcb4a3787e0eb547684bd9ceffa7322d396f289a253fed7",
+          "raster_path": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-19.png",
+          "raster_sha256": "e4001ef22dacba5bd3777b11005e6ca2e6a919ab445dcd45344ec0558b98a7fa",
+          "proxy_path": ".scratch/english-intake-recovery/image-proxies/packet-02-act-01-sample-03-e4001ef22dac.jpg",
+          "proxy_sha256": "15143f87f5416a30d80dad551948c0732182c285d93e65ec011efbd4b5949fc3",
+          "proxy_transform": "JPEG95, 4:4:4, full native pixels; review only",
+          "display_path": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-19.png",
+          "display_sha256": "e4001ef22dacba5bd3777b11005e6ca2e6a919ab445dcd45344ec0558b98a7fa",
+          "display_detail": "auto",
+          "fresh": true,
+          "observed_at": "2026-10-30T13:51:12.180767+00:00",
+          "observations": [
+            "Printed p.210 continues act proem from p.209 with intervention of ecclesiastical person, censures and restoration to church; second paragraph ends our aforecited constitution.",
+            "A new authorial paragraph The preamble of this Bull contains points on which the reader probably requires some information begins an excursus after that boundary. Selected papal text retains both proem paragraphs and excludes that surrounding explanatory/polemical material.",
+            "No footnote or subscription appears on the inspected page."
+          ]
+        },
+        {
+          "act": 1,
+          "proof_page": 20,
+          "source_page": 265,
+          "source_path": ".scratch/english-research-benedict-xiv/queen-victoria-pdf-31cb39239ad8da40.pdf",
+          "source_sha256": "31cb39239ad8da409bcb4a3787e0eb547684bd9ceffa7322d396f289a253fed7",
+          "raster_path": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-20.png",
+          "raster_sha256": "df7714440da0ff21c5abd803c17f23acc64cacd1b2472a1019893f24ddb55e40",
+          "proxy_path": ".scratch/english-intake-recovery/image-proxies/packet-02-act-01-sample-04-df7714440da0.jpg",
+          "proxy_sha256": "e22936b021b143998bbc6f18c836484dd11ad102bc99660cc1563675c3d5f7a2",
+          "proxy_transform": "JPEG95, 4:4:4, full native pixels; review only",
+          "display_path": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-20.png",
+          "display_sha256": "df7714440da0ff21c5abd803c17f23acc64cacd1b2472a1019893f24ddb55e40",
+          "display_detail": "auto",
+          "fresh": true,
+          "observed_at": "2026-10-30T13:51:57.089065+00:00",
+          "observations": [
+            "Printed p.211 mainly continues McGhee's excursus, including a Van Espen quotation; this is separated from the papal act.",
+            "Near the bottom The Bull proceeds introduces Section 1, By adhering also to those regulations ... Gregory XIV ... local immunity; selected text resumes at Section 1 and retains that text.",
+            "The boundary supports exclusion of the pp.210–211 excursus without deleting the proem or Section 1."
+          ]
+        },
+        {
+          "act": 1,
+          "proof_page": 21,
+          "source_page": 266,
+          "source_path": ".scratch/english-research-benedict-xiv/queen-victoria-pdf-31cb39239ad8da40.pdf",
+          "source_sha256": "31cb39239ad8da409bcb4a3787e0eb547684bd9ceffa7322d396f289a253fed7",
+          "raster_path": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-21.png",
+          "raster_sha256": "cfb607acca699ef9cd78a7d615bf7247efe52997904fe7a57ba485b20e404e14",
+          "proxy_path": ".scratch/english-intake-recovery/image-proxies/packet-02-act-01-sample-05-cfb607acca69.jpg",
+          "proxy_sha256": "29c3627d70f6cc91fa8101d24cda5d9eb41c1505a86b0ae44877414e79718178",
+          "proxy_transform": "JPEG95, 4:4:4, full native pixels; review only",
+          "display_path": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-21.png",
+          "display_sha256": "cfb607acca699ef9cd78a7d615bf7247efe52997904fe7a57ba485b20e404e14",
+          "display_detail": "auto",
+          "fresh": true,
+          "observed_at": "2026-10-30T13:52:57.862490+00:00",
+          "observations": [
+            "Printed p.212 continues Section 1 through the 28 January 1751 question and retained closing of that paragraph; Section 2 follows in full, then Section 3.",
+            "Section 3 contains parenthetical editor interpolation Let me now entreat particular attention to the Bull which is here renewed, distinct from the Pope's sentence; selection removes it from papal body and source_note attributes/retains it.",
+            "Section 3 includes John XXI called XXII and Ex parte vestra, extending to line-end commu-; native reading supports retaining historical spelling across page boundary."
+          ]
+        },
+        {
+          "act": 1,
+          "proof_page": 22,
+          "source_page": 267,
+          "source_path": ".scratch/english-research-benedict-xiv/queen-victoria-pdf-31cb39239ad8da40.pdf",
+          "source_sha256": "31cb39239ad8da409bcb4a3787e0eb547684bd9ceffa7322d396f289a253fed7",
+          "raster_path": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-22.png",
+          "raster_sha256": "c0709214d6b6ae02779ddc01089075895f8c9375f460c0e17e35d3e18711a7bb",
+          "proxy_path": ".scratch/english-intake-recovery/image-proxies/packet-02-act-01-sample-06-c0709214d6b6.jpg",
+          "proxy_sha256": "2feb75e2dd73047636c64e2b9e90c75297731e18e2130e6b138f68f01a8c0142",
+          "proxy_transform": "JPEG95, 4:4:4, full native pixels; review only",
+          "display_path": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-22.png",
+          "display_sha256": "c0709214d6b6ae02779ddc01089075895f8c9375f460c0e17e35d3e18711a7bb",
+          "display_detail": "auto",
+          "fresh": true,
+          "observed_at": "2026-10-30T13:53:53.879879+00:00",
+          "observations": [
+            "Printed p.213 begins icated, completing p.212 commu- to printed commuicated, consistent with source_note's preserved infelicity.",
+            "Section 3 closes with Urban VIII consultation of 10 June 1638 and Bishop certified before or after; Section 4 then follows to its end.",
+            "Section 4 visibly contains two italic parenthetical editor glosses, that is excepted from the privileges of the sanctuary, and of the sanctuary. They are removed from papal body and retained/attributed in source_note, together with Section 3 gloss.",
+            "No separate historical footnotes appear; the three inline annotations are the relevant own apparatus."
+          ]
+        },
+        {
+          "act": 1,
+          "proof_page": 23,
+          "source_page": 268,
+          "source_path": ".scratch/english-research-benedict-xiv/queen-victoria-pdf-31cb39239ad8da40.pdf",
+          "source_sha256": "31cb39239ad8da409bcb4a3787e0eb547684bd9ceffa7322d396f289a253fed7",
+          "raster_path": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-23.png",
+          "raster_sha256": "854d90ab39b01edf17539ca468526ed7231b21d189f6aae1f5f05046bbf7d56d",
+          "proxy_path": ".scratch/english-intake-recovery/image-proxies/packet-02-act-01-sample-07-854d90ab39b0.jpg",
+          "proxy_sha256": "0af45ece93279cc78e58e0b3e04a124026e38460db0da4f70b5562d24ac9115e",
+          "proxy_transform": "JPEG95, 4:4:4, full native pixels; review only",
+          "display_path": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-23.png",
+          "display_sha256": "854d90ab39b01edf17539ca468526ed7231b21d189f6aae1f5f05046bbf7d56d",
+          "display_detail": "auto",
+          "fresh": true,
+          "observed_at": "2026-10-30T13:54:42.564039+00:00",
+          "observations": [
+            "Printed p.214 contains Section 5 in full, ending apostolical benediction, then Given at Rome, at St. Mary Major, on the 20th of February, 1751, in the eleventh year of our Pontificate.",
+            "The selected act ends at that genuine dating clause, preserving benediction and closure. A new McGhee paragraph This Bull, be it remembered follows; then a separate Bull of John XXII begins, both excluded.",
+            "Together with pp.209–213 this fresh inspection covers address, proem, Sections 1–5, all three identified editor glosses, and closing of the bounded historical English witness. It does not assess translation accuracy against Latin."
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "kind": "identity",
+          "result": "PASS",
+          "finding": "Unofficial historical human English translation by Robert J. M‘Ghee, identified in his 1839 Dublin/London printing; not an AI translation. Native title page names the author and translations. The papal heading, inquisitor address, content, Sections 1–5 and 20 February 1751 closing identify Elapso proxime anno."
+        },
+        {
+          "kind": "extent",
+          "result": "PASS",
+          "finding": "Fresh title and all six translation-bearing pages209–214 inspected. Subject heading, protocol, address, proem, Sections1–5, blessing and dating clause retained. Polemical caption, pp210–211 excursus and following JohnXXII act excluded at demonstrated boundaries."
+        },
+        {
+          "kind": "historical-apparatus",
+          "result": "PASS",
+          "finding": "Three native editor parentheticals in Sections3–4 are separated from papal wording and preserved in their own exact-hash notes artifact and the row source_note, attributed to M‘Ghee. They are not silently discarded."
+        },
+        {
+          "kind": "retention",
+          "result": "PASS",
+          "finding": "1839 native imprint independently establishes translation publication. Retained bounded text and notes have affirmative US expired-term basis under the pinned rights record. Whole296-page Google/IA scan and layout extraction remain restricted/transient; modern digitization furniture is excluded."
+        },
+        {
+          "kind": "qualification",
+          "result": "NONBLOCKING",
+          "finding": "Hostile source context and unofficial translation are accurately described. Native spelling/infelicities, including commuicated, remain; source accuracy as a translation is not certified."
+        }
+      ],
+      "blockers": [],
+      "scope_limits": [
+        "Source-intake review of these exact three historical human English witnesses only.",
+        "No assessment of lexical translation accuracy against the original language.",
+        "No word-by-word or whole-printing collation; journal OCR recognition, punctuation, and line-end fragments remain disclosed.",
+        "No compiler, output-PDF font/layout, installation, or deployment review.",
+        "United States retention basis applies under the existing pinned repository rights position; no worldwide clearance is asserted."
+      ]
+    },
+    {
+      "id": "papal.benedict-xv.hf-ben-xv-enc-01121918-quod-iam-diu.catholic-mind-1919-02-08-english",
+      "language": "en",
+      "title": "Quod Iam Diu",
+      "status": "PASS",
+      "source_acceptance": "PASS",
+      "row_sha256": "7c7a162da28e6e13c3bac74d01adcf6bbe4bfac92a1608d5c10cc900d362b5eb",
+      "source_sha256": "7b43a5d3fe6462ced5224e47633867e1301290b1e44c4bcf7982dfbb043efb54",
+      "source_scope_sha256": "7b43a5d3fe6462ced5224e47633867e1301290b1e44c4bcf7982dfbb043efb54",
+      "selected_text_read_complete": true,
+      "proof_pins": {
+        "evidence": {
+          "path": ".scratch/english-intake-recovery/packet-02/act-02-evidence.json",
+          "sha256": "36457bd3fc7cdf3e9f0f5b53b0a8eb318534fc45ce7b100710cf23950fb961d8",
+          "bytes": 27524
+        },
+        "selection": {
+          "path": ".scratch/english-intake-recovery/packet-02/act-02-selected.txt",
+          "sha256": "7b43a5d3fe6462ced5224e47633867e1301290b1e44c4bcf7982dfbb043efb54",
+          "bytes": 3042
+        },
+        "source": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1919-02-08-volume-17-issue-3/artifacts/english-reading-7b43a5d3fe64/text.txt",
+          "sha256": "7b43a5d3fe6462ced5224e47633867e1301290b1e44c4bcf7982dfbb043efb54",
+          "bytes": 3042
+        },
+        "controller": {
+          "id": "segment.papal.benedict-xv.hf-ben-xv-enc-01121918-quod-iam-diu.1919-02-08-catholic-mind-english.complete-english-reading",
+          "record": "src/sources/works/papal-documents/1918-12-01-papal-benedict-xv-hf-ben-xv-enc-01121918-quod-iam-diu-068b3abc/editions/1919-02-08-catholic-mind-english/segments/complete-english-reading.toml",
+          "sha256": "cd5e8dea686130ac2cc63d2130081594cfb2acac761f7651eb651e22ae32e813"
+        },
+        "constituent_edition": {
+          "record": "src/sources/works/papal-documents/1918-12-01-papal-benedict-xv-hf-ben-xv-enc-01121918-quod-iam-diu-068b3abc/editions/1919-02-08-catholic-mind-english/edition.toml",
+          "record_sha256": "4a0b2b5fbbdf34177dbf824716f0329a9920628ed5cf449eb81eb206f1919583"
+        },
+        "container_edition": {
+          "record": "src/sources/works/journals/catholic-mind/editions/1919-02-08-volume-17-issue-3/edition.toml",
+          "record_sha256": "b5c2a73848dd461f89cea92feaab7982f254e42be6c99f9225ac7c6d582db597"
+        },
+        "artifact_record": {
+          "record": "src/sources/works/journals/catholic-mind/editions/1919-02-08-volume-17-issue-3/artifacts/english-reading-7b43a5d3fe64/artifact.toml",
+          "record_sha256": "a02a3a7b0201d8e9a7b022922e53db776370a4cb36f21c524db80561b1e3f5df",
+          "id": "artifact.journals.catholic-mind.1919-02-08-volume-17-issue-3.english-reading-7b43a5d3fe64"
+        },
+        "source_manifest": {
+          "path": "src/sources/papal-documents/historical-english-completion-manifest.json",
+          "sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+          "bytes": 67917
+        },
+        "selector": [
+          [
+            1,
+            23
+          ]
+        ],
+        "derivative_recipe_replay": {
+          "recipe": "src/sources/works/journals/catholic-mind/editions/1919-02-08-volume-17-issue-3/artifacts/selection-recipe-6acf5b305cf7/selection.json",
+          "recipe_sha256": "6acf5b305cf76258ea65554f1f3a87db45ce8bcafc049ef6c3e35f9a427b374c",
+          "input_path": "src/sources/works/journals/catholic-mind/editions/1919-02-08-volume-17-issue-3/artifacts/ia-ocr-e57e9329ed73/ocr.txt",
+          "input_sha256": "e57e9329ed73d700b0de52c5c33d4fb01a4644f604da67786d5a689a276ad280",
+          "output_sha256": "7b43a5d3fe6462ced5224e47633867e1301290b1e44c4bcf7982dfbb043efb54",
+          "pass": true,
+          "excluded_lines": [
+            {
+              "line": 1210,
+              "source": "68 THE PEACE CONFERENCE ",
+              "reason": "printed running head"
+            }
+          ]
+        },
+        "prior_replay_receipt": {
+          "path": ".scratch/english-intake-a2/checks.json",
+          "sha256": "022fe973cdacd90e970311e310df56b4dbd8b62677ede4fe95eaa00ca25be6f1",
+          "row_ordinal": 5
+        },
+        "observations": {
+          "path": ".scratch/english-intake-recovery/packet-02/audit-recovery/observations-act-02.json",
+          "sha256": "884ff2074d0dcc02b7a842c296ba3f448b94b0430b4c3dc6b390be4f25f5a72c"
+        }
+      },
+      "human_translation_identity": {
+        "schema": 1,
+        "record_type": "edition",
+        "id": "edition.papal.benedict-xv.hf-ben-xv-enc-01121918-quod-iam-diu.1919-02-08-catholic-mind-english",
+        "work_id": "work.papal.benedict-xv.hf-ben-xv-enc-01121918-quod-iam-diu",
+        "title": "Quod Iam Diu — historical English translation",
+        "language": "en",
+        "date": "1919-02-08",
+        "publication": "The Catholic Mind 17, no. 3 (1919-02-08), pp. 67–68.",
+        "authority": "Historical contemporary human English translation",
+        "notes": "Anonymous contemporary translation. Exact complete printed act extent pp. 67–68. Source OCR recognition, punctuation and line-end hyphen fragments remain; no corrected translation or full lexical image collation is claimed. Historical notes remain distinct blank-line blocks. Native extent review: artifact.journals.catholic-mind.1919-02-08-volume-17-issue-3.extent-review-0bb2a54038bc."
+      },
+      "rights_basis": "The native issue masthead identifies this United States printing as The Catholic Mind 17, no. 3, 1919-02-08. The historical English translation and contemporary issue material were published by 1930 and are public domain in the United States by expiration of the publication term. This applies to the identified printing, independently of the act date; modern host markup is excluded.",
+      "actual_opened_images": [
+        {
+          "act": 2,
+          "proof_page": 24,
+          "source_page": 1,
+          "source_path": "src/sources/works/journals/catholic-mind/editions/1919-02-08-volume-17-issue-3/artifacts/ia-facsimile-fbfb4ef66c16/source.pdf",
+          "source_sha256": "fbfb4ef66c166d6ccebd169a9f758817eb41db3247a09221ac4cf5e48726e8c1",
+          "raster_path": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-24.png",
+          "raster_sha256": "fb1df2db2f175887880d4d922629d346701e6e6218412833eed49eccb52d7455",
+          "proxy_path": ".scratch/english-intake-recovery/image-proxies/packet-02-act-02-sample-01-fb1df2db2f17.jpg",
+          "proxy_sha256": "538065b3c6f39a68a54f05dce8418738f75e7247c261b41c62eb851340ed362d",
+          "proxy_transform": "JPEG95, 4:4:4, full native pixels; review only",
+          "display_path": ".scratch/english-intake-recovery/image-proxies/packet-02-act-02-sample-01-fb1df2db2f17.jpg",
+          "display_sha256": "538065b3c6f39a68a54f05dce8418738f75e7247c261b41c62eb851340ed362d",
+          "display_detail": "auto",
+          "fresh": true,
+          "observed_at": "2026-10-30T13:55:24.784584+00:00",
+          "observations": [
+            "Native issue masthead reads THE CATHOLIC MIND, Vol. XVII, No. 3, February 8, 1919; printed p.49. This identifies historical issue separately from 1 December 1918 act date.",
+            "Page is neighboring article The Pope's War Record by Rt. Rev. Benjamin Joseph Keiley, D.D., a pastoral letter to Savannah clergy and faithful. That byline does not identify translator of the later encyclical; translation remains anonymous.",
+            "The masthead and historical typesetting provide issue publication evidence; neighboring article text does not enter selected Quod Iam Diu."
+          ]
+        },
+        {
+          "act": 2,
+          "proof_page": 25,
+          "source_page": 19,
+          "source_path": "src/sources/works/journals/catholic-mind/editions/1919-02-08-volume-17-issue-3/artifacts/ia-facsimile-fbfb4ef66c16/source.pdf",
+          "source_sha256": "fbfb4ef66c166d6ccebd169a9f758817eb41db3247a09221ac4cf5e48726e8c1",
+          "raster_path": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-25.png",
+          "raster_sha256": "d9cfb623016f3514c2b53ecd647ee1f6fa2a23da50e7b566bd4e74fc2b6e6da5",
+          "proxy_path": ".scratch/english-intake-recovery/image-proxies/packet-02-act-02-sample-02-d9cfb623016f.jpg",
+          "proxy_sha256": "7936591f713017a711e71e8fef6aece760d5a3babd5d485aff14569ab69ee1f4",
+          "proxy_transform": "JPEG95, 4:4:4, full native pixels; review only",
+          "display_path": ".scratch/english-intake-recovery/image-proxies/packet-02-act-02-sample-02-d9cfb623016f.jpg",
+          "display_sha256": "7936591f713017a711e71e8fef6aece760d5a3babd5d485aff14569ab69ee1f4",
+          "display_detail": "auto",
+          "fresh": true,
+          "observed_at": "2026-10-30T13:55:49.477952+00:00",
+          "observations": [
+            "Printed p.67 has a neighboring article paragraph above a clearly separated title Benedict XV and the Peace Conference and subtitle An Encyclical Letter; selected text begins at this title, excluding preceding article.",
+            "Actual address Venerable Brothers, Health and Apostolic Benediction begins with a separate drop-cap V. Selected OCR retains address but recognizes its opening as ENERABL E and splits Bene- diction; these are disclosed OCR defects, not an absent address block.",
+            "First body paragraphs on cessation of arms, prayer and approaching congress continue to such grave at foot, matching bounded continuation into p.68. No historical note or translator byline appears on p.67."
+          ]
+        },
+        {
+          "act": 2,
+          "proof_page": 26,
+          "source_page": 20,
+          "source_path": "src/sources/works/journals/catholic-mind/editions/1919-02-08-volume-17-issue-3/artifacts/ia-facsimile-fbfb4ef66c16/source.pdf",
+          "source_sha256": "fbfb4ef66c166d6ccebd169a9f758817eb41db3247a09221ac4cf5e48726e8c1",
+          "raster_path": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-26.png",
+          "raster_sha256": "dd88a28d613b17416ad4f286f8f97aa38425285da40d7938583e80a1e0b854ad",
+          "proxy_path": ".scratch/english-intake-recovery/image-proxies/packet-02-act-02-sample-03-dd88a28d613b.jpg",
+          "proxy_sha256": "5637cb095f067906481d13ed737ad4799bde92fc12859c30f339371dc9b5d17c",
+          "proxy_transform": "JPEG95, 4:4:4, full native pixels; review only",
+          "display_path": ".scratch/english-intake-recovery/image-proxies/packet-02-act-02-sample-03-dd88a28d613b.jpg",
+          "display_sha256": "5637cb095f067906481d13ed737ad4799bde92fc12859c30f339371dc9b5d17c",
+          "display_detail": "auto",
+          "fresh": true,
+          "observed_at": "2026-10-30T13:56:11.747461+00:00",
+          "observations": [
+            "Printed p.68 continues importance and of so complex a nature from p.67, followed by mandate/public prayers, papal ministry, and apostolic blessing paragraphs, all retained in selected OCR order.",
+            "Closing reads Given at St. Peter's, Rome, December 1, 1918, in the fifth year of Our Pontificate, then Benedict XV, P.P.; selected text retains dating and subscription, with disclosed OCR recognition defects f.fith and BENEpIcT.",
+            "No substantive footnotes/endnotes appear on either act page. Running head 68 THE PEACE CONFERENCE is the one explicitly excluded parent OCR line; genuine closing remains."
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "kind": "identity",
+          "result": "PASS",
+          "finding": "Anonymous contemporary human English printing in The Catholic Mind17 no3, 8February1919, pp67–68, under Benedict XV and the Peace Conference, An Encyclical Letter. Masthead and dated papal subscription establish the historical witness; neighboring Keiley byline is not assigned as translator."
+        },
+        {
+          "kind": "extent",
+          "result": "PASS",
+          "finding": "Fresh masthead and both act pages inspected. Actual Venerable Brothers address, substantive prayer/peace-conference body, Apostolic Blessing, 1December1918 dating clause and BenedictXV,P.P. subscription are retained. Preceding article excluded; no own footnote/endnote is present on either act page."
+        },
+        {
+          "kind": "retention",
+          "result": "PASS",
+          "finding": "1919 historical issue publication independently clears the identified English printing under existing US expired-term policy. Tracked exact issue PDF, OCR parent and bounded derivative have affirmative records; modern host markup is excluded."
+        },
+        {
+          "kind": "qualification",
+          "result": "NONBLOCKING",
+          "finding": "Source is explicitly OCR, not corrected/image-collated text. Examples observed: omitted recognition of drop-cap V in Venerable (ENERABL E), Bene- diction, f.fith, BENEpIcT. Address and closing blocks are present; these disclosed recognition defects do not establish a missing substantive source block."
+        }
+      ],
+      "blockers": [],
+      "scope_limits": [
+        "Source-intake review of these exact three historical human English witnesses only.",
+        "No assessment of lexical translation accuracy against the original language.",
+        "No word-by-word or whole-printing collation; journal OCR recognition, punctuation, and line-end fragments remain disclosed.",
+        "No compiler, output-PDF font/layout, installation, or deployment review.",
+        "United States retention basis applies under the existing pinned repository rights position; no worldwide clearance is asserted."
+      ]
+    },
+    {
+      "id": "papal.benedict-xv.hf-ben-xv-enc-01121920-annus-iam-plenus.catholic-mind-1921-02-08-english",
+      "language": "en",
+      "title": "Annus Iam Plenus",
+      "status": "PASS",
+      "source_acceptance": "PASS",
+      "row_sha256": "37907601125744225cb4217b215d28bac3187feb142c26099e90466acd14f148",
+      "source_sha256": "a92bfab4d109250df59bf6c77d25ae976e772c3ae4537b3ce44c9a8370fb8956",
+      "source_scope_sha256": "a92bfab4d109250df59bf6c77d25ae976e772c3ae4537b3ce44c9a8370fb8956",
+      "selected_text_read_complete": true,
+      "proof_pins": {
+        "evidence": {
+          "path": ".scratch/english-intake-recovery/packet-02/act-03-evidence.json",
+          "sha256": "fcd9572bb587359727468bdd4f41cb50401cdb37e5a09e922a4d5c2a936c5d74",
+          "bytes": 29150
+        },
+        "selection": {
+          "path": ".scratch/english-intake-recovery/packet-02/act-03-selected.txt",
+          "sha256": "a92bfab4d109250df59bf6c77d25ae976e772c3ae4537b3ce44c9a8370fb8956",
+          "bytes": 9254
+        },
+        "source": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1921-02-08-volume-19-issue-3/artifacts/english-reading-a92bfab4d109/text.txt",
+          "sha256": "a92bfab4d109250df59bf6c77d25ae976e772c3ae4537b3ce44c9a8370fb8956",
+          "bytes": 9254
+        },
+        "controller": {
+          "id": "segment.papal.benedict-xv.hf-ben-xv-enc-01121920-annus-iam-plenus.1921-02-08-catholic-mind-english.complete-english-reading",
+          "record": "src/sources/works/papal-documents/1920-12-01-papal-benedict-xv-hf-ben-xv-enc-01121920-annus-iam-plenus-23241e94/editions/1921-02-08-catholic-mind-english/segments/complete-english-reading.toml",
+          "sha256": "b29fb8f9bee9a050a437335bdfee418efc6ed10add99a5b22ce5b06b0e3d0652"
+        },
+        "constituent_edition": {
+          "record": "src/sources/works/papal-documents/1920-12-01-papal-benedict-xv-hf-ben-xv-enc-01121920-annus-iam-plenus-23241e94/editions/1921-02-08-catholic-mind-english/edition.toml",
+          "record_sha256": "05030e23e8c5ef7475e083d0a8cc7015453e7a0bb5dcd6278c0c0d56614c0f0c"
+        },
+        "container_edition": {
+          "record": "src/sources/works/journals/catholic-mind/editions/1921-02-08-volume-19-issue-3/edition.toml",
+          "record_sha256": "7f384c5152016966b338a4d3c3c43e1d58e19a76fdd0f59f2ef3a6910b55c4be"
+        },
+        "artifact_record": {
+          "record": "src/sources/works/journals/catholic-mind/editions/1921-02-08-volume-19-issue-3/artifacts/english-reading-a92bfab4d109/artifact.toml",
+          "record_sha256": "5bfee24964dc4464917e7091249c2c38e7e975b8bbc4c4cc309e19142fed8964",
+          "id": "artifact.journals.catholic-mind.1921-02-08-volume-19-issue-3.english-reading-a92bfab4d109"
+        },
+        "source_manifest": {
+          "path": "src/sources/papal-documents/historical-english-completion-manifest.json",
+          "sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+          "bytes": 67917
+        },
+        "selector": [
+          [
+            1,
+            37
+          ]
+        ],
+        "derivative_recipe_replay": {
+          "recipe": "src/sources/works/journals/catholic-mind/editions/1921-02-08-volume-19-issue-3/artifacts/selection-recipe-ba713c856ed5/selection.json",
+          "recipe_sha256": "ba713c856ed5abebec607338f20457dbc9f73eaedad0a858c752fb551076b8bd",
+          "input_path": "src/sources/works/journals/catholic-mind/editions/1921-02-08-volume-19-issue-3/artifacts/ia-ocr-cdb9117f731c/ocr.txt",
+          "input_sha256": "cdb9117f731c76425a47071ad5ddc7e4791c8345357f1c39348764c472267c90",
+          "output_sha256": "a92bfab4d109250df59bf6c77d25ae976e772c3ae4537b3ce44c9a8370fb8956",
+          "pass": true,
+          "excluded_lines": [
+            {
+              "line": 843,
+              "source": "56 THE POPE AND STARVING CHILDREN ",
+              "reason": "printed running head"
+            },
+            {
+              "line": 898,
+              "source": "THE POPE AND STARVING CHILDREN 57 ",
+              "reason": "printed running head"
+            },
+            {
+              "line": 957,
+              "source": "58 THE POPE AND STARVING CHILDREN ",
+              "reason": "printed running head"
+            },
+            {
+              "line": 1014,
+              "source": "MODESTY IN DRESS 59 ",
+              "reason": "printed running head"
+            }
+          ]
+        },
+        "prior_replay_receipt": {
+          "path": ".scratch/english-intake-a2/checks.json",
+          "sha256": "022fe973cdacd90e970311e310df56b4dbd8b62677ede4fe95eaa00ca25be6f1",
+          "row_ordinal": 6
+        },
+        "observations": {
+          "path": ".scratch/english-intake-recovery/packet-02/audit-recovery/observations-act-03.json",
+          "sha256": "8373e017a1a2b355b89c71ba0350bd9fb460ca7340393a56808abfef37b6abbb"
+        }
+      },
+      "human_translation_identity": {
+        "schema": 1,
+        "record_type": "edition",
+        "id": "edition.papal.benedict-xv.hf-ben-xv-enc-01121920-annus-iam-plenus.1921-02-08-catholic-mind-english",
+        "work_id": "work.papal.benedict-xv.hf-ben-xv-enc-01121920-annus-iam-plenus",
+        "title": "Annus Iam Plenus — historical English translation",
+        "language": "en",
+        "date": "1921-02-08",
+        "publication": "The Catholic Mind 19, no. 3 (1921-02-08), pp. 55–59.",
+        "authority": "Historical contemporary human English translation",
+        "notes": "Anonymous contemporary translation. Exact complete printed act extent pp. 55–59. Source OCR recognition, punctuation and line-end hyphen fragments remain; no corrected translation or full lexical image collation is claimed. Historical notes remain distinct blank-line blocks. Native extent review: artifact.journals.catholic-mind.1921-02-08-volume-19-issue-3.extent-review-ba540c3f56b1."
+      },
+      "rights_basis": "The native issue masthead identifies this United States printing as The Catholic Mind 19, no. 3, 1921-02-08. The historical English translation and contemporary issue material were published by 1930 and are public domain in the United States by expiration of the publication term. This applies to the identified printing, independently of the act date; modern host markup is excluded.",
+      "actual_opened_images": [
+        {
+          "act": 3,
+          "proof_page": 27,
+          "source_page": 1,
+          "source_path": "src/sources/works/journals/catholic-mind/editions/1921-02-08-volume-19-issue-3/artifacts/ia-facsimile-2666c7a5751c/source.pdf",
+          "source_sha256": "2666c7a5751c0af6406ad4df6940e7af7f6f31c4a124184c1b84dd036bad27ef",
+          "raster_path": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-27.png",
+          "raster_sha256": "92643e51a851bacb2dade13c31140abfaa1d39e2d2fee6f5b58d4e7747c600fa",
+          "proxy_path": ".scratch/english-intake-recovery/image-proxies/packet-02-act-03-sample-01-92643e51a851.jpg",
+          "proxy_sha256": "0b193f75a53b3a3aa763616797703619443c6e8ffab20af02f6d890a45c76ed7",
+          "proxy_transform": "JPEG95, 4:4:4, full native pixels; review only",
+          "display_path": ".scratch/english-intake-recovery/image-proxies/packet-02-act-03-sample-01-92643e51a851.jpg",
+          "display_sha256": "0b193f75a53b3a3aa763616797703619443c6e8ffab20af02f6d890a45c76ed7",
+          "display_detail": "auto",
+          "fresh": true,
+          "observed_at": "2026-10-30T13:56:31.377012+00:00",
+          "observations": [
+            "Native masthead reads THE CATHOLIC MIND, Vol. XIX, No. 3, February 8, 1921; printed p.41. This dates identified English issue independently from act's 1 December 1920 closing.",
+            "Page begins neighboring sermon The Church in the United States by Most Rev. Austin Dowling, D.D.; that author/byline is unrelated to anonymous Annus Iam Plenus translation.",
+            "Historical issue masthead is readable; no translator attribution is supplied there for later papal text."
+          ]
+        },
+        {
+          "act": 3,
+          "proof_page": 28,
+          "source_page": 15,
+          "source_path": "src/sources/works/journals/catholic-mind/editions/1921-02-08-volume-19-issue-3/artifacts/ia-facsimile-2666c7a5751c/source.pdf",
+          "source_sha256": "2666c7a5751c0af6406ad4df6940e7af7f6f31c4a124184c1b84dd036bad27ef",
+          "raster_path": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-28.png",
+          "raster_sha256": "6c6a9a72196cc3e5075f787512696c65ee7303cdd55e9855fd693beae8963bab",
+          "proxy_path": ".scratch/english-intake-recovery/image-proxies/packet-02-act-03-sample-02-6c6a9a72196c.jpg",
+          "proxy_sha256": "d71787d96f66f4bb3d9cf1bc0278d33b69cfb993d4633ef88b891b83753ae27f",
+          "proxy_transform": "JPEG95, 4:4:4, full native pixels; review only",
+          "display_path": ".scratch/english-intake-recovery/image-proxies/packet-02-act-03-sample-02-6c6a9a72196c.jpg",
+          "display_sha256": "d71787d96f66f4bb3d9cf1bc0278d33b69cfb993d4633ef88b891b83753ae27f",
+          "display_detail": "auto",
+          "fresh": true,
+          "observed_at": "2026-10-30T13:57:03.543326+00:00",
+          "observations": [
+            "Printed p.55 ends neighboring article above a rule, then starts The Pope and Starving Children; selected text excludes preceding sermon and preserves actual title and extended addressee/subject heading.",
+            "Heading identifies Benedict XV and Patriarchs, Primates, Archbishops, Bishops, Other Local Ordinaries in Peace and Communion with the Apostolic See; address Venerable Brethren and Health and Apostolic Benediction are present and retained.",
+            "Body starts A whole year has now passed, ending an appeal at foot for continuation. No note/translator byline appears on this start page; OCR retains im for native in in heading as disclosed recognition defect."
+          ]
+        },
+        {
+          "act": 3,
+          "proof_page": 29,
+          "source_page": 17,
+          "source_path": "src/sources/works/journals/catholic-mind/editions/1921-02-08-volume-19-issue-3/artifacts/ia-facsimile-2666c7a5751c/source.pdf",
+          "source_sha256": "2666c7a5751c0af6406ad4df6940e7af7f6f31c4a124184c1b84dd036bad27ef",
+          "raster_path": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-29.png",
+          "raster_sha256": "f9d4698b35bc95a55ee7cfb1819735c7f3b576e41f9eb4eeff5083397d799641",
+          "proxy_path": ".scratch/english-intake-recovery/image-proxies/packet-02-act-03-sample-03-f9d4698b35bc.jpg",
+          "proxy_sha256": "b4e5d148e6d0fc71f2626960a0826d8c334eba97109d79e88a363629fe0ef556",
+          "proxy_transform": "JPEG95, 4:4:4, full native pixels; review only",
+          "display_path": ".scratch/english-intake-recovery/image-proxies/packet-02-act-03-sample-03-f9d4698b35bc.jpg",
+          "display_sha256": "b4e5d148e6d0fc71f2626960a0826d8c334eba97109d79e88a363629fe0ef556",
+          "display_detail": "auto",
+          "fresh": true,
+          "observed_at": "2026-10-30T13:57:25.172549+00:00",
+          "observations": [
+            "Printed p.57 continues preceding page with population afflicted by hardships; historical subheading An Appeal for the Hungry follows and is retained in selected OCR (APPFAL/HunNGRY recognition).",
+            "Body charity appeal and richer European children's gifts occupy page through them- at foot. Selected order and boundaries retain this substantive passage; native printing itself reads but in particular to cities of the world, so that awkward wording is not a newly introduced translation.",
+            "No substantive page-foot note or separate apparatus appears on this inspected interior page."
+          ]
+        },
+        {
+          "act": 3,
+          "proof_page": 30,
+          "source_page": 19,
+          "source_path": "src/sources/works/journals/catholic-mind/editions/1921-02-08-volume-19-issue-3/artifacts/ia-facsimile-2666c7a5751c/source.pdf",
+          "source_sha256": "2666c7a5751c0af6406ad4df6940e7af7f6f31c4a124184c1b84dd036bad27ef",
+          "raster_path": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-30.png",
+          "raster_sha256": "0a2db20d121fc8443779eaed3dbf4c995086a8a6b5c01744344678fd0320d34c",
+          "proxy_path": ".scratch/english-intake-recovery/image-proxies/packet-02-act-03-sample-04-0a2db20d121f.jpg",
+          "proxy_sha256": "ea0c5e9c126096ea03159e5543235e040366fed4f4af04e0235867dcf68410cc",
+          "proxy_transform": "JPEG95, 4:4:4, full native pixels; review only",
+          "display_path": ".scratch/english-intake-recovery/image-proxies/packet-02-act-03-sample-04-0a2db20d121f.jpg",
+          "display_sha256": "ea0c5e9c126096ea03159e5543235e040366fed4f4af04e0235867dcf68410cc",
+          "display_detail": "auto",
+          "fresh": true,
+          "observed_at": "2026-10-30T13:57:52.985615+00:00",
+          "observations": [
+            "Printed p.59 carries the final continuation of Annus Iam Plenus despite running head MODESTY IN DRESS; the head announces the next item and is correctly excluded as furniture rather than used to truncate this act.",
+            "Final collection instructions, one hundred thousand Italian lire donation, Apostolic Benediction, Given at Rome at St. Peter's ... first day ... December ... nineteen hundred and twenty ... seventh of Our Pontificate, and Benedict XV, Pope are retained.",
+            "A rule and new title Modesty in Dress follow the genuine papal subscription. That neighboring letter and its Beloved Daughter address are excluded. No own footnote/endnote follows the Annus closing."
+          ]
+        },
+        {
+          "source_path": "src/sources/works/journals/catholic-mind/editions/1921-02-08-volume-19-issue-3/artifacts/ia-facsimile-2666c7a5751c/source.pdf",
+          "source_sha256": "2666c7a5751c0af6406ad4df6940e7af7f6f31c4a124184c1b84dd036bad27ef",
+          "source_page": 16,
+          "printed_page": 56,
+          "bounded_pdf": ".scratch/english-intake-recovery/packet-02/audit-recovery/native-extra/annus-interiors.pdf",
+          "bounded_pdf_sha256": "54c3be0ea3bac8ba31f094cfa73137206378d364a9bd4545cdcbf30dbbfc2be5",
+          "bounded_page": 1,
+          "raster_path": ".scratch/english-intake-recovery/packet-02/audit-recovery/extra-rasters/.scratch/english-intake-recovery/packet-02/audit-recovery/native-extra/annus-interiors/pages/page-1.png",
+          "raster_sha256": "fe10299500587696af0e8843fe35112b706f441f5af018be9ef4b602daaee940",
+          "proxy_path": ".scratch/english-intake-recovery/packet-02/audit-recovery/native-extra/native-page-16.jpg",
+          "proxy_sha256": "324193933abcf782176a8a2142ba8ef01ae2a084321f2cbf82a7811a522c7ffc",
+          "display_path": ".scratch/english-intake-recovery/packet-02/audit-recovery/native-extra/native-page-16.jpg",
+          "display_sha256": "324193933abcf782176a8a2142ba8ef01ae2a084321f2cbf82a7811a522c7ffc",
+          "transform": "pdfseparate source16 and18, pdfunite in order; pdf-review PNG; JPEG95 4:4:4 full raster pixels, white alpha; review only",
+          "act": 3,
+          "proof_page": null,
+          "display_detail": "auto",
+          "fresh": true,
+          "observed_at": "2026-10-30T13:59:39.737091+00:00",
+          "observations": [
+            "Native printed p.56 continues p.55 an appeal with which was actuated by that charity; includes successful collection, Save the Children Fund, continuing scarcity, and war calamities, through as a consequence the at foot.",
+            "Selected text retains this entire substantive block in source order with declared OCR recognition defects including c.!!°:tion for collection.",
+            "No separate footnote, endnote, or marginal historical note appears; nothing substantive is omitted as apparatus on this page."
+          ]
+        },
+        {
+          "source_path": "src/sources/works/journals/catholic-mind/editions/1921-02-08-volume-19-issue-3/artifacts/ia-facsimile-2666c7a5751c/source.pdf",
+          "source_sha256": "2666c7a5751c0af6406ad4df6940e7af7f6f31c4a124184c1b84dd036bad27ef",
+          "source_page": 18,
+          "printed_page": 58,
+          "bounded_pdf": ".scratch/english-intake-recovery/packet-02/audit-recovery/native-extra/annus-interiors.pdf",
+          "bounded_pdf_sha256": "54c3be0ea3bac8ba31f094cfa73137206378d364a9bd4545cdcbf30dbbfc2be5",
+          "bounded_page": 2,
+          "raster_path": ".scratch/english-intake-recovery/packet-02/audit-recovery/extra-rasters/.scratch/english-intake-recovery/packet-02/audit-recovery/native-extra/annus-interiors/pages/page-2.png",
+          "raster_sha256": "3c4c396df024030febc9b6f4566e76397f895d1e5bad4b36de6fdae35d5ee963",
+          "proxy_path": ".scratch/english-intake-recovery/packet-02/audit-recovery/native-extra/native-page-18.jpg",
+          "proxy_sha256": "bb1047ee59b074cd6a0aba07ad4368ae0fe96f5166749c37b4b93ae63854b939",
+          "display_path": ".scratch/english-intake-recovery/packet-02/audit-recovery/native-extra/native-page-18.jpg",
+          "display_sha256": "bb1047ee59b074cd6a0aba07ad4368ae0fe96f5166749c37b4b93ae63854b939",
+          "transform": "pdfseparate source16 and18, pdfunite in order; pdf-review PNG; JPEG95 4:4:4 full raster pixels, white alpha; review only",
+          "act": 3,
+          "proof_page": null,
+          "display_detail": "auto",
+          "fresh": true,
+          "observed_at": "2026-10-30T14:00:10.679375+00:00",
+          "observations": [
+            "Native printed p.58 continues them- from p.57 with selves and discussion of children’s Christmas charity and parental instruction.",
+            "Historical subheading Bethlehem’s Meaning and House of Bread paragraph are present; the appeal to Venerable Brethren at foot continues onto p.59 into effect. Selected text retains these blocks and subheading in order, with declared OCR defects.",
+            "No historical footnote/endnote or marginal note is set on p.58. All five Annus act pages55–59 have now been freshly inspected for extent, apparatus, and source order."
+          ]
+        }
+      ],
+      "findings": [
+        {
+          "kind": "identity",
+          "result": "PASS",
+          "finding": "Anonymous contemporary human English printing in The Catholic Mind19 no3, 8February1921, pp55–59, under The Pope and Starving Children. Full addressee/subject heading names BenedictXV; 1December1920 seventh-pontificate-year subscription identifies Annus Iam Plenus. Neighboring Austin Dowling sermon is excluded and not treated as translator attribution."
+        },
+        {
+          "kind": "extent",
+          "result": "PASS",
+          "finding": "Fresh masthead and all five act pages55–59 inspected, including two separately bounded interior rasters. Extended heading, Venerable Brethren address, Health and Apostolic Benediction, charity appeal, both historical subheadings, final collection directions, blessing, dating clause and BenedictXV,Pope subscription retained. Following Modesty in Dress is excluded after the genuine subscription; its running head on p59 is correctly furniture."
+        },
+        {
+          "kind": "historical-apparatus",
+          "result": "PASS",
+          "finding": "An Appeal for the Hungry and Bethlehem’s Meaning remain in the selected OCR. No separate historical footnotes/endnotes/marginal notes appear on the five inspected act pages; no own substantive apparatus was found missing."
+        },
+        {
+          "kind": "retention",
+          "result": "PASS",
+          "finding": "1921 native issue masthead establishes publication of this historical English printing separately from the1920 act date. Exact tracked issue PDF/OCR and bounded text carry affirmative US expired-term bases under existing policy; no modern wrapper enters selected text."
+        },
+        {
+          "kind": "qualification",
+          "result": "NONBLOCKING",
+          "finding": "OCR recognition/line-end fragments remain disclosed, including im, tq, c.!!°:tion, APPFAL/HunNGRY and @id. No corrected translation or lexical collation is asserted."
+        }
+      ],
+      "blockers": [],
+      "scope_limits": [
+        "Source-intake review of these exact three historical human English witnesses only.",
+        "No assessment of lexical translation accuracy against the original language.",
+        "No word-by-word or whole-printing collation; journal OCR recognition, punctuation, and line-end fragments remain disclosed.",
+        "No compiler, output-PDF font/layout, installation, or deployment review.",
+        "United States retention basis applies under the existing pinned repository rights position; no worldwide clearance is asserted."
+      ]
+    }
+  ],
+  "scope_limits": [
+    "Source-intake review of these exact three historical human English witnesses only.",
+    "No assessment of lexical translation accuracy against the original language.",
+    "No word-by-word or whole-printing collation; journal OCR recognition, punctuation, and line-end fragments remain disclosed.",
+    "No compiler, output-PDF font/layout, installation, or deployment review.",
+    "United States retention basis applies under the existing pinned repository rights position; no worldwide clearance is asserted."
+  ],
+  "blockers": []
+}

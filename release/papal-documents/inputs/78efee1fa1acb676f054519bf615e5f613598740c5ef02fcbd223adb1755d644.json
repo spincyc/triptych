@@ -1,0 +1,185 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "2430013f3645a11acfcdc4e286ccd4d59696c0df1de2f34b3e7c20d10e9015a6",
+  "documents": [
+    {
+      "id": "historical.mcghee-1839.elapso-proxime-anno",
+      "language": "en",
+      "pdf_sha256": "19d106e7ff8b926349932912b21e1566761e7754da64d9157930151832b59ff2",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "info",
+          "pages": [
+            1,
+            2
+          ],
+          "description": "The title identifies English (M‘Ghee, 1839). Numbered source sections continue left-to-right in order. The three historical editor interpolations are explicitly retained in terminal apparatus and distinguished there from Benedict XIV's body. The source dating clause ends before the rule."
+        }
+      ],
+      "limitations": [
+        "Layout review only: no whole-source image collation, translation-accuracy review, rights certification, source-admission decision, full extracted-text fidelity audit, font/metadata audit, or installed-byte verification was performed in this lane. Historical wording/OCR and source identity are subject to the independent source review."
+      ],
+      "receipt_sha256": "2430013f3645a11acfcdc4e286ccd4d59696c0df1de2f34b3e7c20d10e9015a6",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-16.md",
+      "report_sha256": "d7841802426b896c8ce378158ee8214cf7337bf9c0c14ac4817c244f9254f8fa"
+    },
+    {
+      "id": "papal.benedict-xv.hf-ben-xv-enc-01121918-quod-iam-diu.catholic-mind-1919-02-08-english",
+      "language": "en",
+      "pdf_sha256": "d016e808f78e37d2545722ad9791aa24c96bc0d2ea472d6947e42872e3d5368a",
+      "pages": 1,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1
+          ],
+          "description": "The single page identifies title, issuer, date and English language, carries the source body in normal two-column order, and ends with blessing, date and source subscription before the ruled project apparatus. Retained OCR spelling and line-end fragments remain visible; the page is not crowded or clipped."
+        }
+      ],
+      "limitations": "Visual layout and source-note-separation review only. Native source images, wording completeness, OCR accuracy, translation equivalence, provenance and rights were not independently certified in this lane. No word-for-word collation or independent AI translation review was performed. Contact-sheet inspection covers every page; full-size inspection is limited to the pages explicitly listed.",
+      "receipt_sha256": "2430013f3645a11acfcdc4e286ccd4d59696c0df1de2f34b3e7c20d10e9015a6",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-15.md",
+      "report_sha256": "b8beecdfb277f5a2bec23e57529e474253b8a6588b39731f3606157a2365a5b3"
+    },
+    {
+      "id": "papal.benedict-xv.hf-ben-xv-enc-01121920-annus-iam-plenus.catholic-mind-1921-02-08-english",
+      "language": "en",
+      "pdf_sha256": "7245c68b6a1c9fb037add30c314669c232c3dc19c5d2a217cd91658333ca0407",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "info",
+          "pages": [
+            1,
+            2
+          ],
+          "description": "The dense pages retain clear column order and readable paragraphs. Historical OCR heading/capitalization and hard-line word divisions remain qualified. The final blessing, dating clause and BENEDICT XV subscription are visible above compact apparatus."
+        }
+      ],
+      "limitations": [
+        "Layout review only: no whole-source image collation, translation-accuracy review, rights certification, source-admission decision, full extracted-text fidelity audit, font/metadata audit, or installed-byte verification was performed in this lane. Historical wording/OCR and source identity are subject to the independent source review."
+      ],
+      "receipt_sha256": "2430013f3645a11acfcdc4e286ccd4d59696c0df1de2f34b3e7c20d10e9015a6",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-16.md",
+      "report_sha256": "d7841802426b896c8ce378158ee8214cf7337bf9c0c14ac4817c244f9254f8fa"
+    },
+    {
+      "id": "papal.benedict-xv.hf-ben-xv-enc-06011921-sacra-propediem.catholic-mind-1921-03-22-english",
+      "language": "en",
+      "pdf_sha256": "b529ebaa9cf319f4dd8bc9c8df4657cbb6a47ef270e185e93bf0c273ddb16d0e",
+      "pages": 4,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "description": "Retained OCR line-end fragments and paragraph breaks are visible throughout, including the split Epiphany and Pontificate wording in the page 4 closing. The historical section captions remain separate short blocks rather than stretched justified lines. The page 4 dated closing and source subscription precede clearly ruled terminal apparatus."
+        }
+      ],
+      "limitations": "Visual layout and source-note-separation review only. Native source images, wording completeness, OCR accuracy, translation equivalence, provenance and rights were not independently certified in this lane. No word-for-word collation or independent AI translation review was performed. Contact-sheet inspection covers every page; full-size inspection is limited to the pages explicitly listed.",
+      "receipt_sha256": "2430013f3645a11acfcdc4e286ccd4d59696c0df1de2f34b3e7c20d10e9015a6",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-15.md",
+      "report_sha256": "b8beecdfb277f5a2bec23e57529e474253b8a6588b39731f3606157a2365a5b3"
+    },
+    {
+      "id": "papal.benedict-xv.hf-ben-xv-enc-15061917-humani-generis-redemptionem.catholic-mind-1917-09-08-english",
+      "language": "en",
+      "pdf_sha256": "32a6fbe4ac34f166e3cb0e096c160d02bf459015e5968a1b49cd52cab2a7c197",
+      "pages": 6,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "info",
+          "pages": [
+            6
+          ],
+          "description": "The final page has an unused right column, but the left column contains substantial real source continuation, blessing and dating clause, followed by compact apparatus. No apparatus-only page is created. The source note expressly identifies the witness's absence of a separate terminal papal subscription."
+        }
+      ],
+      "limitations": [
+        "Layout review only: no whole-source image collation, translation-accuracy review, rights certification, source-admission decision, full extracted-text fidelity audit, font/metadata audit, or installed-byte verification was performed in this lane. Historical wording/OCR and source identity are subject to the independent source review."
+      ],
+      "receipt_sha256": "2430013f3645a11acfcdc4e286ccd4d59696c0df1de2f34b3e7c20d10e9015a6",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-16.md",
+      "report_sha256": "d7841802426b896c8ce378158ee8214cf7337bf9c0c14ac4817c244f9254f8fa"
+    },
+    {
+      "id": "papal.benedict-xv.hf-ben-xv-enc-23051920-pacem-dei-munus-pulcherrimum.catholic-mind-1920-07-22-english",
+      "language": "en",
+      "pdf_sha256": "5a102764f7d45eec1aeca9f8b6c5fb8f73e14f1f40f4fa6f449ca275bd180102",
+      "pages": 4,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "info",
+          "pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "description": "The historical translation credit and reference groups remain independent indented paragraphs. They interrupt some continued sentences at historical page breaks but do not run into body paragraphs. OCR marker, spelling and hard-hyphen defects remain literal and qualified; the dated closing, subscription and final reference group are readable above the terminal rule."
+        }
+      ],
+      "limitations": [
+        "Layout review only: no whole-source image collation, translation-accuracy review, rights certification, source-admission decision, full extracted-text fidelity audit, font/metadata audit, or installed-byte verification was performed in this lane. Historical wording/OCR and source identity are subject to the independent source review."
+      ],
+      "receipt_sha256": "2430013f3645a11acfcdc4e286ccd4d59696c0df1de2f34b3e7c20d10e9015a6",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-16.md",
+      "report_sha256": "d7841802426b896c8ce378158ee8214cf7337bf9c0c14ac4817c244f9254f8fa"
+    }
+  ]
+}

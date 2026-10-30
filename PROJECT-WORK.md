@@ -141,9 +141,25 @@ and retains historical refusals separately from the current admissions.
 Canonical source consumers pass through the recorded full runs and corrected
 executions; the six census-number collision subcases retain their explicit
 short-number skips. The corrections preserve earlier English admissions and
-source refusals rather than adding texts. Reconciliation with newer main, the
-separately reviewed sanitizer correction, final artifact checks and publication
-remain required before counting this cohort as delivered. Exact local evidence
+source refusals rather than adding texts. The cohort is committed as
+`4403b11f98`; the separately reviewed removed-owner sanitizer correction is
+committed as `61a2b2ae6a`. Main `2827cb6b55` is reconciled in the working tree.
+All five final source/public/preview gates pass. The merged source-consumer run
+found one stale current-code checksum assertion; its reviewed test and source
+epoch successor preserve all seventeen raw replay streams, and all 24 source
+guard and affected phase5 tests pass. The 171 publication and encyclical tests
+also pass. These are composed executions, not a claim that the initial
+292-test run passed. Exact merged evidence is retained under
+`next-english-2026-10-30/main-reconciliation-v2/` in the same review namespace.
+The older Common remains blocked by its existing source-applicability condition;
+generated English availability does not override that reader restriction.
+Fresh browser validation passes 136 native assertions, 68 materialization cases
+(62 visible English bodies and six expected older applicability refusals),
+14 affected Day cases, eight Nativity regressions and 24 exact Sources English
+selections across the public and preview artifacts. Complete Improperia,
+print and actual clipboard checks also pass, with clean final diagnostics.
+The merge commit, outgoing-object audit and publication remain required before
+counting this cohort as delivered. Exact local evidence
 is retained in `next-english-2026-10-30/local-source-validation.json` under the
 same review namespace.
 The actual seven-case decision and its source bindings are retained under
@@ -164,77 +180,84 @@ witness distinctions before applying the names consistently. A structural
 placeholder alone does not establish contributed text; actual Latin or English
 content does. Existing source and completeness qualifications remain binding.
 
-The naming matrix, primary-source citations, consumer inventory and inclusion
-rules remain pending. Historical audit bytes and quoted historical labels
-remain evidence of their original state; stable-ID migrations need explicit
-compatibility handling rather than rewriting accepted source receipts.
+The sourced matrix and implementation have independent bounded review. The
+proposed current reader names are “Roman Missal — Bonn 2004 witness study,”
+“Roman Missal — 1962 typical edition,” and “Roman Missal — 2008 base with
+recorded additions.” The first identifies the actual reprint witness rather
+than treating an inferred calendar horizon as an edition; the last distinguishes
+the 2008 emended reprint of the third typical edition from its recorded later
+additions. The 1962 reader qualification must distinguish the June edition from
+the separately decreed December insertion of Saint Joseph in the Canon.
+Application and final consumer validation remain pending after the current
+English checkpoint. Historical audit bytes and quoted historical labels remain
+evidence of their original state; compatibility preserves opaque existing IDs
+while current public labels and new reader keys use the sourced nomenclature.
 
 ## Encyclical completion and English coverage, 2026-10-29
 
 <!-- promised-deliverable: encyclicals-completion-2026-10-29 -->
 
-**In progress.** The maintainer resumed the encyclical work, requested English
-translations of all catalogued acts, a classic TeX appearance for the two-column
-PDFs, maximum useful parallel work and independent cold review. Existing human
-English sources take priority. This pass has introduced no AI-translated
-encyclical bodies; catalogue descriptions remain separately identified AI work.
+**In progress.** The maintainer requested English translations of all catalogued
+acts, a classic TeX appearance for the two-column PDFs, maximum useful parallel
+work and independent cold review. Existing human English sources take priority.
+This pass has introduced no AI-translated encyclical bodies; catalogue
+descriptions remain separately identified AI work.
 
-The catalogue checkpoint contains 322 distinct Vatican-indexed acts and 304
-external English links: 283 acts have a complete English route, 14 have only
-partial or damaged English, and 25 have no located English route. All 91 acts
-after 1930 have complete external English routes. These are bounded identity
-and extent findings, not claims of translation accuracy or local republication
-permission. Thirty-nine complete-English gaps remain open. The local release
-contains 4,808 readers, including complete English for 41 acts. The two classic-reader checkpoints now cover
-167 of the 327 encyclical source versions; 160 versions still need final
-acceptance or source repairs.
+The catalogue contains 322 distinct Vatican-indexed acts and 304 external
+English links. Complete English is available for 283 acts; 14 have only partial
+or damaged English and 25 have no located English route. All 91 acts after
+1930 have complete external English routes. These are bounded identity and
+extent findings, not translation-accuracy or local-republication permissions.
+Thirty-nine complete-English gaps remain open.
 
-All 322 descriptions are present. Their attribution records Claude's 255 and
-Codex's 67 contributions; the new descriptions use 66 official English texts
-and the explicitly identified Italian Orientales Ecclesias text. The browser
-separates complete English, local PDFs, external links and remaining gaps. Its
-full method is available in a keyboard-accessible disclosure.
+The accepted release contains 4,814 PDFs and 9,108 pages. Its six newly admitted
+historical human English witnesses raise complete local English coverage from
+41 to 47 acts, with 51 local English readers in total. Source intake separately
+checks their editions, rights basis, extent and source boundaries; every
+installed PDF also has exact, independent every-page acceptance. Elapso retains
+and attributes the historical editor's parenthetical interventions. No new
+English act wording was authored for these additions.
 
-Catalogue validation passes 20 tests including two Chromium checks, all 149
-public-alpha test identities, the full source gate, exact release bindings,
-site build and independent GitHub Pages artifact verification. Actual built
-routes pass six viewport and text-reflow cases, filters and keyboard disclosure
-checks. Thirty-one comparison projections change only the source-library tool
-hash; comparison content and source evidence are identical. The source-family
-bootstrap checkpoint is current while all 164 owner review units remain
-honestly pending; no completed family screening is claimed.
-
-Two classic-reader checkpoints now replace 167 of the 327 linked source
-versions. The first installed nine cold-reviewed source repairs; the second
-adds 158 accepted versions with 917 reviewed pages. Latin Modern Roman,
+Three classic-reader checkpoints replace 176 of the original 327 encyclical
+source versions: nine source repairs, 158 further accepted readers, and nine
+more replacements. The six new English additions also use the classic design,
+for 182 classic versions among 333 linked readers. The remaining 151 original
+versions still need final acceptance or source repairs. Latin Modern Roman,
 language-specific hyphenation, indented paragraphs and restrained terminal
-apparatus implement the requested classic appearance. Explicit note and native
-whitespace transformations preserve source wording and record their actual
-scope; independent source-boundary and every-page findings bind exact PDFs.
+apparatus implement the requested appearance. Note and native-spacing repairs
+preserve their declared source bytes and identify any explicit reordering.
 
-The release still has 4,808 PDFs and now 9,087 pages. In the second checkpoint,
-all 4,650 other complete release rows and PDF bytes are unchanged, including
-the first nine replacements. There are no added or withdrawn document keys,
-renamed PDF paths or changes to the 304 external English routes. All 6,809
-current source selections are accounted for by the complete plan and install
-checks. Frozen historical receipts and audits remain scoped to the selected
-readers; unrelated historical review files do not authorize new admissions.
+The latest checkpoint replaces nine readers (36 prior pages with 38 reviewed
+pages) and adds six English readers (19 pages). All 4,799 other complete release
+rows and PDF bytes are unchanged. Constanti Hungarorum's date correction changes
+one owned filename from 11 September to 2 September 1893 under the same source
+key; no document keys are withdrawn. All 6,815 current source selections are
+accounted for. Historical receipts and audits admit only their exact selected
+readers; unrelated historical reviews grant no additional admissions.
 
-The checkpoint passes the complete source and install/fidelity gates, 243
-papal tests, 20 catalogue tests, 151 public-alpha tests, exact release bindings,
-site build, independent deployment-artifact verification and built-route
-viewport, keyboard and no-JavaScript checks. The browser captures match the
-previous accepted catalogue. Source-family owner units remain honestly pending.
-Current replay helpers are reused by tracked path and exact implementation
-hash; older implementations and actual code licenses remain identifiable.
+All 322 descriptions remain present, with Claude's 255 and Codex's 67
+contributions explicitly credited. Summaries and all 304 external English routes
+are unchanged by this PDF checkpoint. The browser distinguishes complete
+English, local PDFs, external links and remaining gaps. Thirty-one comparison
+projections change only the source-library tool hash and size. All 164 source
+family owner review units remain pending; no completed family screening is
+claimed.
 
-Historical English intake, source-preserving note and spacing repairs, classic
-reader installation and the remaining cold-review dispositions continue. A
-successful render or producer review does not establish independent page
-acceptance. The English coverage, classic-reader and overall completion
-requirements below remain open. On 2026-10-30 the maintainer requested regular
-coherent commits reconciled and pushed to main; this workspace retains
-feature/encyclicals locally and publishes validated checkpoints to origin/main.
+Validation passes the complete source and install/fidelity gates, 65
+source-library tests, 243 papal tests, 20 catalogue tests, 151 public-alpha
+tests, exact scoped release bindings, site build and independent deployment
+artifact verification. Built routes pass six viewport and text-size states,
+keyboard and no-JavaScript checks; all six new English links resolve to the
+reviewed PDF bytes. Source-admission metadata owns four exact report/scope
+filenames without creating verified passages or PDF-layout approvals. The
+validator cache namespace changes to prevent stale prior ownership rejections.
+
+Additional English intake, source-preserving repairs and cold-review
+adjudication continue. A successful render or producer review does not establish
+independent acceptance. English coverage, classic readers and overall
+completion remain open. The maintainer requested regular coherent commits
+reconciled and pushed to main; this workspace retains feature/encyclicals
+locally and publishes validated checkpoints to origin/main.
 
 ## Claude Four Last Things correction, 2026-10-27
 

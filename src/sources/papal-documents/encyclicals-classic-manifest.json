@@ -1,6 +1,6 @@
 {
   "schema": "triptych-papal-typeset/v1",
-  "revision": "2026-10-30T10:02:42Z",
+  "revision": "2026-10-30T10:44:37Z",
   "documents": [
     {
       "artifact_id": "artifact.acta-papal-archives.aas.003.historical-text-33536187",
@@ -7856,6 +7856,351 @@
       "source_url": "https://archive.org/download/piiixpontificis00ixgoog/piiixpontificis00ixgoog_djvu.txt",
       "text_path": "src/sources/works/papal-collections/pii-ix-acta-pars-prima-volume-3/editions/1864-rome-ia-mul/artifacts/ocr-3a788e20d82b/ocr.txt",
       "title": "Maximae quidem — ad episcopos Bavariae"
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.aas.006.ad-beatissimi-la-native-spacing-5ce44e58d2c2.note-blocks-ad-beatissimi-la-native-spacing-1587f49f23cc",
+      "date": "1914-11-01",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.aas.006.archive.aas.006.051",
+      "id": "acta.aas.006.archive.aas.006.051",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          727
+        ]
+      ],
+      "pope": "Benedict XV",
+      "revision": "2026-10-30T10:44:37Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"completion_colophon_line_ranges\": [[33746, 33746]], \"completion_colophon_raw\": \"   ABSOLVITUR DIE 31 DEC. 1914. - TYPIS POLYGLOTTIS VATICANIS\", \"evidence\": \"Annual title/imprint and year at physical LF lines 1–18, confirmed by dated issue headings and official archive annual label. This identifies the historical underlying textual edition; the acquired Vatican -ocr.pdf is a modern OCR/text reconstruction and no image collation is claimed.\", \"imprint\": \"Typis Polyglottis Vaticanis\", \"publication_year\": 1914, \"source_index_url\": \"https://www.vatican.va/archive/aas/index_en.htm\", \"title\": \"Acta Apostolicae Sedis: Commentarium officiale\", \"title_imprint_physical_line_ranges\": [[1, 18]], \"volume\": 6} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.aas.006.archive.aas.006.051.native-spacing-2026-10-30.note-blocks-1587f49f23cc",
+      "segment_path": "src/sources/works/acta-papal-archives/1914-11-01-aas.006-archive.aas.006.work-ad-beatissimi/editions/1914-acta-aas-006-archive.aas.006.051/segments/note-blocks-ad-beatissimi-la-native-spacing-1587f49f23cc.toml",
+      "sha256": "1587f49f23ccf15ca5b6f06abc19a513f2ccc01c5c5b902a7cb03be8d8bae992",
+      "source_note": "AAS 6 (1914), Latin witness. Native line whitespace restores most word spacing; 35 unmatched lines and 46 reference-marker lines retain their original spacing. Historical notes form separate paragraphs at their original page breaks. OCR defects, source hard-line hyphens, dating and subscription remain unchanged; no original-print or lexical collation.",
+      "source_url": "https://www.vatican.va/archive/aas/documents/AAS-06-1914-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1914-acta-aas-006/artifacts/note-blocks-ad-beatissimi-la-native-spacing-1587f49f23cc/text.txt",
+      "title": "Ad beatissimi Apostolorum Principis",
+      "work_id": "work.acta-papal-archives.aas.006-archive.aas.006.work-ad-beatissimi",
+      "correction_evidence": {
+        "revision": "2026-10-30T10:44:37Z",
+        "kind": "explicit-source-note-lf-partition",
+        "spec_artifact_id": "artifact.acta-papal-archives.aas.006.ad-beatissimi-la-native-spacing-5ce44e58d2c2.note-spec-ad-beatissimi-la-native-spacing-f11353314408",
+        "spec_sha256": "f1135331440860fdb2e5248953b2337541efd734716bec0a718ba1b139fafec1",
+        "source_note_physical_line_ranges": [
+          [
+            23,
+            24
+          ],
+          [
+            62,
+            67
+          ],
+          [
+            105,
+            106
+          ],
+          [
+            146,
+            161
+          ],
+          [
+            201,
+            208
+          ],
+          [
+            249,
+            255
+          ],
+          [
+            294,
+            295
+          ],
+          [
+            370,
+            371
+          ],
+          [
+            410,
+            417
+          ],
+          [
+            456,
+            457
+          ],
+          [
+            531,
+            534
+          ],
+          [
+            572,
+            575
+          ],
+          [
+            612,
+            613
+          ],
+          [
+            653,
+            660
+          ],
+          [
+            693,
+            694
+          ]
+        ],
+        "prior_segment_id": "segment.acta-papal-archives.aas.006.archive.aas.006.051.native-spacing-2026-10-30",
+        "selected_non_lf_sha256": "e394eadcb5687cee9af22ede8462f39ce41b18d4b24512738f0a5ea43af75962",
+        "selected_non_lf_bytes_preserved": true,
+        "source_order_preserved": true
+      }
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.aas.010.historical-text-7f9a8862",
+      "collection_corpus": "acta",
+      "date": "1918-12-01",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.aas.010.archive.aas.010.l019820",
+      "id": "acta.aas.010.archive.aas.010.l019820",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          19820,
+          19844
+        ],
+        [
+          19847,
+          19882
+        ]
+      ],
+      "pope": "Benedict XV",
+      "revision": "2026-10-30T02:56:48Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"artifact_page_ranges\": [[1, 1]], \"completion_colophon_line_ranges\": [[24270, 24270]], \"completion_colophon_raw\": \"        ABSOLVITUR DIE 5 DEC. 1918. - TYPIS POLYGLOTTIS VATICANIS\", \"evidence\": \"Title and imprint in the acquired Vatican OCR PDF identify Acta Apostolicae Sedis, the annual volume, ROMAE / TYPIS POLYGLOTTIS VATICANIS and its Roman-numeral publication year. This is edition provenance, not facsimile collation.\", \"physical_line_ranges\": [[1, 17]], \"publication_year\": 1918} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.aas.010.archive.aas.010.l019820",
+      "segment_path": "src/sources/works/acta-papal-archives/1918-12-01-aas.010-archive.aas.010.l019820/editions/1918-acta-aas-010-archive.aas.010.l019820/segments/historical-text.toml",
+      "sha256": "7f9a8862646fd073b6ceb69c66eee6fc5ba69f375dcd03a8b2c3828825eacf20",
+      "source_note": "AAS 10 (1918). Whole-volume Vatican OCR extraction; no facsimile collation or silent textual correction.",
+      "source_url": "https://www.vatican.va/archive/aas/documents/AAS-10-1918-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/1918-acta-aas-010/artifacts/acta-historical-text-7f9a8862/historical.txt",
+      "title": "AD VENERABILES FRATRES, PATRIARCHAS, PRIMATES, ARCHIEPISCOPOS, EPISCO- POS ALIOSQUE LOCORUM ORDINARIOS, PACEM ET COMMUNIONEM CUM APO- STOLICA SEDE HABENTES, PER QUAS PUBLICAE INDICUNTUR PRECES PRO CONVENTU DE PACE COMPONENDA.",
+      "work_id": "work.acta-papal-archives.aas.010-archive.aas.010.l019820"
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.ass.026.constanti-hungarorum-native-spacing-notes-5cdf0bbdb77d",
+      "collection_corpus": "acta",
+      "correction_evidence": {
+        "items": [
+          {
+            "all_selected_non_lf_bytes_preserved": true,
+            "date_reconciliation": "Metadata corrected from 1893-09-11 to 1893-09-02 on 2026-10-30. The official Latin delivery's closing reads die II Septemb. An. MDCCCXCIII (https://www.vatican.va/content/leo-xiii/la/encyclicals/documents/hf_l-xiii_enc_02091893_constanti-hungarorum.html), retained in artifact.papal.leo-xiii.hf-l-xiii-enc-02091893-constanti-hungarorum.2026-10-26-vatican-la.latin-text-7317d5125af9 with SHA-256 7317d5125af95dcf15e48731de086ef860d7a4806ca8ce05f2de84e770decf4f. The official English delivery independently states 2 September 1893 (https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_02091893_constanti-hungarorum.html). The retained ASS OCR at original historical.txt LF5395 instead literally reads die 1 1 S e p t e m b r i s An. 1893; that source wording is preserved unchanged as a discrepant OCR witness. This is a metadata reconciliation against the official deliveries, not a claim that the original ASS printing was image-collated. The stable work ID and historical directory path remain unchanged.",
+            "kind": "source-note-block-partition",
+            "new_artifact_id": "artifact.acta-papal-archives.ass.026.constanti-hungarorum-note-blocks-7ab62b9810a8",
+            "new_source_sha256": "7ab62b9810a84b23add5f7f8311c82b5fe032cd971f9ad5f5a2cd53ab384db9a",
+            "original_print_image_collation": false,
+            "original_source_order_preserved": true,
+            "prior_artifact_id": "artifact.acta-papal-archives.ass.026.historical-text-15a33cfd",
+            "prior_physical_line_ranges": [
+              [
+                5084,
+                5124
+              ],
+              [
+                5127,
+                5166
+              ],
+              [
+                5168,
+                5208
+              ],
+              [
+                5210,
+                5249
+              ],
+              [
+                5251,
+                5291
+              ],
+              [
+                5293,
+                5332
+              ],
+              [
+                5334,
+                5374
+              ],
+              [
+                5376,
+                5398
+              ]
+            ],
+            "prior_segment_id": "segment.acta-papal-archives.ass.026.ass-026-l05089",
+            "prior_source_sha256": "15a33cfd01401e070c0b912e4154be4f7d163d6730ac8f1cd64ed6096d756d3d",
+            "recipe_artifact_id": "artifact.acta-papal-archives.ass.026.constanti-hungarorum-note-recipe-012963d48cdc",
+            "recipe_sha256": "012963d48cdc0195df99f1c34e640556c32c0aa73107080040c5ee520c36a962",
+            "selected_non_lf_sha256": "14c654e40935c3374a988d65322db255e949901b3bba152f3a41acf49d32e81f",
+            "source_note_physical_line_ranges": [
+              [
+                5166,
+                5166
+              ],
+              [
+                5208,
+                5208
+              ],
+              [
+                5373,
+                5374
+              ]
+            ]
+          }
+        ],
+        "revision": "2026-10-30T02:38:13Z"
+      },
+      "date": "1893-09-02",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.ass.026.ass-026-l05089",
+      "id": "acta.ass.026.ass-026-l05089",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          320
+        ]
+      ],
+      "pope": "Leo XIII",
+      "revision": "2026-10-30T06:40:13Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. The historical title identifies Romae, Typographia Polyglotta, S. Congregationis de Propaganda Fide, 1893-94, at exact source LF line 34. The separately printed 1969 Johnson reprint wrapper at LF 36–40 is excluded. This identifies the reproduced historical printing; the Vatican OCR reconstruction is not image-collated. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.ass.026.ass-026-l05089.note-blocks-2026-10-30.native-spacing-2026-10-30",
+      "segment_path": "src/sources/works/acta-papal-archives/1893-09-11-ass.026-ass-026-l05089/editions/1893-acta-ass-026-ass-026-l05089/segments/historical-text-native-spacing-2026-10-30.toml",
+      "sha256": "5cdf0bbdb77ddd84d421f85682f36307f9ae1744dbd89b5c2696112b1bd878c8",
+      "source_note": "ASS 26 (1893). Native word spacing is projected from 297 uniquely matching same-page extraction lines, preserving every selected non-whitespace character and original source order. Native content-stream movement is not adopted. All 3 historical source-note groups are separate blocks at source-page breaks. Source OCR glyph errors and literal hard-line hyphens remain; no lexical correction or original-print image collation. Act-date metadata follows the official Latin closing die II Septemb. and the official English 2 September 1893. The historical OCR's literal die 1 1 Septembris is retained as a source discrepancy; no original-print image check is claimed.",
+      "source_url": "https://www.vatican.va/archive/ass/documents/ASS-26-1893-94-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1893-acta-ass-026/artifacts/constanti-hungarorum-native-spacing-notes-5cdf0bbdb77d/text.txt",
+      "title": "Constanti Hungarorum",
+      "work_id": "work.acta-papal-archives.ass.026-ass-026-l05089"
+    },
+    {
+      "artifact_id": "artifact.papal.benedict-xv.hf-ben-xv-enc-01121920-annus-iam-plenus.2026-10-26-vatican-la.latin-text-2ad9f452cda2",
+      "collection_corpus": "latin",
+      "date": "1920-12-01",
+      "document_type": "encyclical",
+      "id": "papal.benedict-xv.hf-ben-xv-enc-01121920-annus-iam-plenus",
+      "language": "la",
+      "pope": "Benedict XV",
+      "revision": "2026-10-30T02:56:48Z",
+      "rights_basis": "Original Latin text identified in Acta Apostolicae Sedis 12 (1920), pp. 553–556, published no later than 1930. United States expired-term assessment under 17 U.S.C. 304 and 305; qualifying foreign restoration under 104A(a)(1)(B) extends only the remaining applicable term. Clearance covers preexisting historical wording under 103(b), not Vatican HTML, later translations, creative revision, or scan/reprint wrapper. See src/sources/inventories/papal-documents-rights-v1.toml.",
+      "rights_notice": "Historical Latin wording is public domain in the United States; rights in portal markup, later translations and modern additions are separate.",
+      "rights_status": "public-domain",
+      "sha256": "2ad9f452cda2fd3f8061e8e73aa3d933534121dc286de76982427ead3bc6d1cd",
+      "source_note": "Historical witness: Acta Apostolicae Sedis 12 (1920), pp. 553–556. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions.",
+      "source_url": "https://www.vatican.va/content/benedict-xv/la/encyclicals/documents/hf_ben-xv_enc_01121920_annus-iam-plenus.html",
+      "text_path": "src/sources/works/papal-documents/1920-12-01-papal-benedict-xv-hf-ben-xv-enc-01121920-annus-iam-plenus-23241e94/editions/2026-10-26-vatican-la/artifacts/latin-text-2ad9f452cda2/text.txt",
+      "title": "Annus Iam Plenus"
+    },
+    {
+      "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-reading-text-fc16a357",
+      "chapter": 3,
+      "collection_corpus": "english",
+      "completeness": "complete-within-identified-printed-chapter",
+      "date": "1879-08-04",
+      "document_type": "encyclical",
+      "id": "papal.leo-xiii.hf-l-xiii-enc-04081879-aeterni-patris",
+      "language": "en",
+      "physical_line_ranges": [
+        [
+          127,
+          297
+        ]
+      ],
+      "pope": "Leo XIII",
+      "revision": "2026-10-30T02:56:48Z",
+      "rights_basis": "Only the wording of the English translation collection printed in the United States by Benziger Brothers in 1903 is retained. Its historical translation/notes are public domain in the United States on the publication-term basis verified on the printed copyright leaf. Modern Wikisource navigation, contributor markup, links, styles, parsing reports and page-number controls are removed; no creative modern revision or independent commentary is intentionally retained. The derivative is a transcription with residual recognition errors, not a critical or corrected edition.",
+      "rights_notice": "The 1903 English translation is public domain in the United States; Triptych claims no exclusive right in its wording.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.papal.leo-xiii.hf-l-xiii-enc-04081879-aeterni-patris.1903-benziger-english.benziger-english-transcription",
+      "segment_path": "src/sources/works/papal-documents/1879-08-04-papal-leo-xiii-hf-l-xiii-enc-04081879-aeterni-patris-2cd8503f/editions/1903-benziger-english/segments/benziger-english-transcription.toml",
+      "sha256": "fc16a357008f7f2e1b0f331dceecc6ae76138b370a19665208fb064677cf6573",
+      "source_note": "Historical English web transcription of the 1903 Benziger edition; individual translator unidentified. Residual OCR errors remain; full image collation is outstanding.",
+      "source_url": "https://en.wikisource.org/wiki/The_Great_Encyclical_Letters_of_Pope_Leo_XIII/The_Study_of_Scholastic_Philosophy",
+      "text_path": "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/ws-reading-text-fc16a357/great-encyclical-letters-reading-text.txt",
+      "title": "The Study of Scholastic Philosophy"
+    },
+    {
+      "artifact_id": "artifact.papal.leo-xiii.hf-l-xiii-enc-08121892-inimica-vis.2026-10-26-vatican-la.latin-text-cb2edf6ef8a6",
+      "collection_corpus": "latin",
+      "date": "1892-12-08",
+      "document_type": "encyclical",
+      "id": "papal.leo-xiii.hf-l-xiii-enc-08121892-inimica-vis",
+      "language": "la",
+      "pope": "Leo XIII",
+      "revision": "2026-10-30T02:56:48Z",
+      "rights_basis": "Historical Latin wording identified in Acta Sanctae Sedis 25 (1892-1893), pp. 274-277, published no later than 1893. United States expired-term assessment under 17 U.S.C. 304 and 305; any qualifying foreign restoration under 104A(a)(1)(B) receives only the remainder of that term. This covers preexisting historical wording under 103(b), not Vatican HTML, later translations, creative revisions, modern bibliographic annotation, or scan/reprint wrapper. See src/sources/inventories/papal-documents-rights-v1.toml for primary authorities and jurisdictional limits.",
+      "rights_notice": "Historical Latin wording is public domain in the United States; rights in portal markup, later translations and modern additions are separate.",
+      "rights_status": "public-domain",
+      "sha256": "cb2edf6ef8a6d3f5c1e5d16bbe01fab77993e044f84685727eb848ed2f5aed6e",
+      "source_note": "Historical witness: Acta Sanctae Sedis 25 (1892-1893), pp. 274-277. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions.",
+      "source_url": "https://www.vatican.va/content/leo-xiii/la/encyclicals/documents/hf_l-xiii_enc_08121892_inimica-vis.html",
+      "text_path": "src/sources/works/papal-documents/1892-12-08-papal-leo-xiii-hf-l-xiii-enc-08121892-inimica-vis-95d67453/editions/2026-10-26-vatican-la/artifacts/latin-text-cb2edf6ef8a6/text.txt",
+      "title": "Inimica Vis"
+    },
+    {
+      "artifact_id": "artifact.papal.leo-xiii.hf-l-xiii-enc-12091891-pastoralis-officii.2026-10-26-vatican-la.latin-text-ff8968b5a6bc",
+      "collection_corpus": "latin",
+      "date": "1891-09-22",
+      "document_type": "encyclical",
+      "id": "papal.leo-xiii.hf-l-xiii-enc-12091891-pastoralis-officii",
+      "language": "la",
+      "pope": "Leo XIII",
+      "revision": "2026-10-30T02:56:48Z",
+      "rights_basis": "Historical Latin wording identified in Acta Sanctae Sedis 24 (1891-1892), pp. 203-207, published no later than 1892. United States expired-term assessment under 17 U.S.C. 304 and 305; any qualifying foreign restoration under 104A(a)(1)(B) receives only the remainder of that term. This covers preexisting historical wording under 103(b), not Vatican HTML, later translations, creative revisions, modern bibliographic annotation, or scan/reprint wrapper. See src/sources/inventories/papal-documents-rights-v1.toml for primary authorities and jurisdictional limits.",
+      "rights_notice": "Historical Latin wording is public domain in the United States; rights in portal markup, later translations and modern additions are separate.",
+      "rights_status": "public-domain",
+      "sha256": "ff8968b5a6bcc638db21a9849793d200ccc27a11fce25d004f26ab2b621cf20c",
+      "source_note": "Historical witness: Acta Sanctae Sedis 24 (1891-1892), pp. 203-207. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions. The official indexes give conflicting act dates. The reviewed act date is 1891-09-22, identified at https://www.vatican.va/archive/ass/documents/ASS-24-1891-92-ocr.pdf printed p. 207, closing dating clause.",
+      "source_url": "https://www.vatican.va/content/leo-xiii/la/encyclicals/documents/hf_l-xiii_enc_12091891_pastoralis-officii.html",
+      "text_path": "src/sources/works/papal-documents/1891-09-12-papal-leo-xiii-hf-l-xiii-enc-12091891-pastoralis-officii-d20db1a4/editions/2026-10-26-vatican-la/artifacts/latin-text-ff8968b5a6bc/text.txt",
+      "title": "Pastoralis Officii"
+    },
+    {
+      "artifact_id": "artifact.papal.leo-xiii.hf-l-xiii-enc-25071898-caritatis-studium.2026-10-26-vatican-la.latin-text-5446e438a3cf",
+      "collection_corpus": "latin",
+      "date": "1898-07-25",
+      "document_type": "encyclical",
+      "id": "papal.leo-xiii.hf-l-xiii-enc-25071898-caritatis-studium",
+      "language": "la",
+      "pope": "Leo XIII",
+      "revision": "2026-10-30T02:56:48Z",
+      "rights_basis": "Historical Latin wording identified in Acta Sanctae Sedis 31 (1898-1899), pp. 6-14, published no later than 1899. United States expired-term assessment under 17 U.S.C. 304 and 305; any qualifying foreign restoration under 104A(a)(1)(B) receives only the remainder of that term. This covers preexisting historical wording under 103(b), not Vatican HTML, later translations, creative revisions, modern bibliographic annotation, or scan/reprint wrapper. See src/sources/inventories/papal-documents-rights-v1.toml for primary authorities and jurisdictional limits.",
+      "rights_notice": "Historical Latin wording is public domain in the United States; rights in portal markup, later translations and modern additions are separate.",
+      "rights_status": "public-domain",
+      "sha256": "5446e438a3cfb3e603785e94f08fe4c1ea4f7c40ddc5bddc868bc2d86a54ee00",
+      "source_note": "Historical witness: Acta Sanctae Sedis 31 (1898-1899), pp. 6-14. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions.",
+      "source_url": "https://www.vatican.va/content/leo-xiii/la/encyclicals/documents/hf_l-xiii_enc_25071898_caritatis-studium.html",
+      "text_path": "src/sources/works/papal-documents/1898-07-25-papal-leo-xiii-hf-l-xiii-enc-25071898-caritatis-studium-8d665a2c/editions/2026-10-26-vatican-la/artifacts/latin-text-5446e438a3cf/text.txt",
+      "title": "Caritatis Studium"
+    },
+    {
+      "artifact_id": "artifact.papal.leo-xiii.hf-l-xiii-enc-29061881-diuturnum.2026-10-26-vatican-la.latin-text-f8b51aa20600",
+      "collection_corpus": "latin",
+      "date": "1881-06-29",
+      "document_type": "encyclical",
+      "id": "papal.leo-xiii.hf-l-xiii-enc-29061881-diuturnum",
+      "language": "la",
+      "pope": "Leo XIII",
+      "revision": "2026-10-30T02:56:48Z",
+      "rights_basis": "Historical Latin wording identified in Acta Sanctae Sedis 14 (1881-1882), pp. 3-14, published no later than 1882. United States expired-term assessment under 17 U.S.C. 304 and 305; any qualifying foreign restoration under 104A(a)(1)(B) receives only the remainder of that term. This covers preexisting historical wording under 103(b), not Vatican HTML, later translations, creative revisions, modern bibliographic annotation, or scan/reprint wrapper. See src/sources/inventories/papal-documents-rights-v1.toml for primary authorities and jurisdictional limits.",
+      "rights_notice": "Historical Latin wording is public domain in the United States; rights in portal markup, later translations and modern additions are separate.",
+      "rights_status": "public-domain",
+      "sha256": "f8b51aa20600211649af746845c879a95548097cf2b2781f907493242f608789",
+      "source_note": "Historical witness: Acta Sanctae Sedis 14 (1881-1882), pp. 3-14. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions.",
+      "source_url": "https://www.vatican.va/content/leo-xiii/la/encyclicals/documents/hf_l-xiii_enc_29061881_diuturnum.html",
+      "text_path": "src/sources/works/papal-documents/1881-06-29-papal-leo-xiii-hf-l-xiii-enc-29061881-diuturnum-2c13c750/editions/2026-10-26-vatican-la/artifacts/latin-text-f8b51aa20600/text.txt",
+      "title": "Diuturnum"
     }
   ],
   "supersessions": [
@@ -10728,6 +11073,167 @@
         "revision": "2026-10-30T02:56:48Z"
       },
       "reason": "Independently accepted exact classic reader replacement; retained prior source/PDF pins remain historical records."
+    },
+    {
+      "prior": {
+        "id": "acta.aas.006.archive.aas.006.051",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.aas.006.historical-text-fb3b4bd1",
+        "source_sha256": "fb3b4bd1a8d41392dc06fc705d97bac09d7aee15780990391456a948f9ea3c67",
+        "segment_id": "segment.acta-papal-archives.aas.006.archive.aas.006.051",
+        "pdf_sha256": "09a5a227ee809db001a9d26b8a6ee892349af09489ca2525a1b2f5a67c2e44d9"
+      },
+      "replacement": {
+        "id": "acta.aas.006.archive.aas.006.051",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.aas.006.ad-beatissimi-la-native-spacing-5ce44e58d2c2.note-blocks-ad-beatissimi-la-native-spacing-1587f49f23cc",
+        "source_sha256": "1587f49f23ccf15ca5b6f06abc19a513f2ccc01c5c5b902a7cb03be8d8bae992",
+        "segment_id": "segment.acta-papal-archives.aas.006.archive.aas.006.051.native-spacing-2026-10-30.note-blocks-1587f49f23cc",
+        "revision": "2026-10-30T10:44:37Z"
+      },
+      "reason": "Independent exact-source/PDF cold PASS; prior release pins and source history retained."
+    },
+    {
+      "prior": {
+        "id": "acta.aas.010.archive.aas.010.l019820",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.aas.010.historical-text-7f9a8862",
+        "source_sha256": "7f9a8862646fd073b6ceb69c66eee6fc5ba69f375dcd03a8b2c3828825eacf20",
+        "segment_id": "segment.acta-papal-archives.aas.010.archive.aas.010.l019820",
+        "pdf_sha256": "3b21bdd73a91b3c1de5dfbc0fc0eb46c22679b150be633e6f18838dd6d43079c"
+      },
+      "replacement": {
+        "id": "acta.aas.010.archive.aas.010.l019820",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.aas.010.historical-text-7f9a8862",
+        "source_sha256": "7f9a8862646fd073b6ceb69c66eee6fc5ba69f375dcd03a8b2c3828825eacf20",
+        "segment_id": "segment.acta-papal-archives.aas.010.archive.aas.010.l019820",
+        "revision": "2026-10-30T02:56:48Z"
+      },
+      "reason": "Independent exact-source/PDF cold PASS; prior release pins and source history retained."
+    },
+    {
+      "prior": {
+        "id": "acta.ass.026.ass-026-l05089",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.026.historical-text-15a33cfd",
+        "source_sha256": "15a33cfd01401e070c0b912e4154be4f7d163d6730ac8f1cd64ed6096d756d3d",
+        "segment_id": "segment.acta-papal-archives.ass.026.ass-026-l05089",
+        "pdf_sha256": "1ac7824dcf2550c4358de9d50f56a135b16b1c45ba6ce1f3bcac155b8b2b5452"
+      },
+      "replacement": {
+        "id": "acta.ass.026.ass-026-l05089",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.026.constanti-hungarorum-native-spacing-notes-5cdf0bbdb77d",
+        "source_sha256": "5cdf0bbdb77ddd84d421f85682f36307f9ae1744dbd89b5c2696112b1bd878c8",
+        "segment_id": "segment.acta-papal-archives.ass.026.ass-026-l05089.note-blocks-2026-10-30.native-spacing-2026-10-30",
+        "revision": "2026-10-30T06:40:13Z"
+      },
+      "reason": "Independent exact-source/PDF cold PASS; prior release pins and source history retained."
+    },
+    {
+      "prior": {
+        "id": "papal.benedict-xv.hf-ben-xv-enc-01121920-annus-iam-plenus",
+        "language": "la",
+        "artifact_id": "artifact.papal.benedict-xv.hf-ben-xv-enc-01121920-annus-iam-plenus.2026-10-26-vatican-la.latin-text-2ad9f452cda2",
+        "source_sha256": "2ad9f452cda2fd3f8061e8e73aa3d933534121dc286de76982427ead3bc6d1cd",
+        "pdf_sha256": "5063c85cb84bc2d37e4d6b6bb5cd164605922454a76d932230ce9867d10c37f6"
+      },
+      "replacement": {
+        "id": "papal.benedict-xv.hf-ben-xv-enc-01121920-annus-iam-plenus",
+        "language": "la",
+        "artifact_id": "artifact.papal.benedict-xv.hf-ben-xv-enc-01121920-annus-iam-plenus.2026-10-26-vatican-la.latin-text-2ad9f452cda2",
+        "source_sha256": "2ad9f452cda2fd3f8061e8e73aa3d933534121dc286de76982427ead3bc6d1cd",
+        "revision": "2026-10-30T02:56:48Z"
+      },
+      "reason": "Independent exact-source/PDF cold PASS; prior release pins and source history retained."
+    },
+    {
+      "prior": {
+        "id": "papal.leo-xiii.hf-l-xiii-enc-04081879-aeterni-patris",
+        "language": "en",
+        "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-reading-text-fc16a357",
+        "source_sha256": "fc16a357008f7f2e1b0f331dceecc6ae76138b370a19665208fb064677cf6573",
+        "segment_id": "segment.papal.leo-xiii.hf-l-xiii-enc-04081879-aeterni-patris.1903-benziger-english.benziger-english-transcription",
+        "pdf_sha256": "2162d4728ee7112fbca9a37d0d47421c0885fa4735e22ab96b2e3805a3e35b65"
+      },
+      "replacement": {
+        "id": "papal.leo-xiii.hf-l-xiii-enc-04081879-aeterni-patris",
+        "language": "en",
+        "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-reading-text-fc16a357",
+        "source_sha256": "fc16a357008f7f2e1b0f331dceecc6ae76138b370a19665208fb064677cf6573",
+        "segment_id": "segment.papal.leo-xiii.hf-l-xiii-enc-04081879-aeterni-patris.1903-benziger-english.benziger-english-transcription",
+        "revision": "2026-10-30T02:56:48Z"
+      },
+      "reason": "Independent exact-source/PDF cold PASS; prior release pins and source history retained."
+    },
+    {
+      "prior": {
+        "id": "papal.leo-xiii.hf-l-xiii-enc-08121892-inimica-vis",
+        "language": "la",
+        "artifact_id": "artifact.papal.leo-xiii.hf-l-xiii-enc-08121892-inimica-vis.2026-10-26-vatican-la.latin-text-cb2edf6ef8a6",
+        "source_sha256": "cb2edf6ef8a6d3f5c1e5d16bbe01fab77993e044f84685727eb848ed2f5aed6e",
+        "pdf_sha256": "713875dc71a64d584e9441834f45e90ded4159ebbdd0ad072a9ddd9a577b4398"
+      },
+      "replacement": {
+        "id": "papal.leo-xiii.hf-l-xiii-enc-08121892-inimica-vis",
+        "language": "la",
+        "artifact_id": "artifact.papal.leo-xiii.hf-l-xiii-enc-08121892-inimica-vis.2026-10-26-vatican-la.latin-text-cb2edf6ef8a6",
+        "source_sha256": "cb2edf6ef8a6d3f5c1e5d16bbe01fab77993e044f84685727eb848ed2f5aed6e",
+        "revision": "2026-10-30T02:56:48Z"
+      },
+      "reason": "Independent exact-source/PDF cold PASS; prior release pins and source history retained."
+    },
+    {
+      "prior": {
+        "id": "papal.leo-xiii.hf-l-xiii-enc-12091891-pastoralis-officii",
+        "language": "la",
+        "artifact_id": "artifact.papal.leo-xiii.hf-l-xiii-enc-12091891-pastoralis-officii.2026-10-26-vatican-la.latin-text-ff8968b5a6bc",
+        "source_sha256": "ff8968b5a6bcc638db21a9849793d200ccc27a11fce25d004f26ab2b621cf20c",
+        "pdf_sha256": "69716fafe4991bfda98592f5ffd3dd092221ad67f5213bd4060bed1f4f8608c1"
+      },
+      "replacement": {
+        "id": "papal.leo-xiii.hf-l-xiii-enc-12091891-pastoralis-officii",
+        "language": "la",
+        "artifact_id": "artifact.papal.leo-xiii.hf-l-xiii-enc-12091891-pastoralis-officii.2026-10-26-vatican-la.latin-text-ff8968b5a6bc",
+        "source_sha256": "ff8968b5a6bcc638db21a9849793d200ccc27a11fce25d004f26ab2b621cf20c",
+        "revision": "2026-10-30T02:56:48Z"
+      },
+      "reason": "Independent exact-source/PDF cold PASS; prior release pins and source history retained."
+    },
+    {
+      "prior": {
+        "id": "papal.leo-xiii.hf-l-xiii-enc-25071898-caritatis-studium",
+        "language": "la",
+        "artifact_id": "artifact.papal.leo-xiii.hf-l-xiii-enc-25071898-caritatis-studium.2026-10-26-vatican-la.latin-text-5446e438a3cf",
+        "source_sha256": "5446e438a3cfb3e603785e94f08fe4c1ea4f7c40ddc5bddc868bc2d86a54ee00",
+        "pdf_sha256": "8fe77a0a6ede6a7caddc7efec72f6ce4302c6d6b6622034fa10b7d4803cf42fb"
+      },
+      "replacement": {
+        "id": "papal.leo-xiii.hf-l-xiii-enc-25071898-caritatis-studium",
+        "language": "la",
+        "artifact_id": "artifact.papal.leo-xiii.hf-l-xiii-enc-25071898-caritatis-studium.2026-10-26-vatican-la.latin-text-5446e438a3cf",
+        "source_sha256": "5446e438a3cfb3e603785e94f08fe4c1ea4f7c40ddc5bddc868bc2d86a54ee00",
+        "revision": "2026-10-30T02:56:48Z"
+      },
+      "reason": "Independent exact-source/PDF cold PASS; prior release pins and source history retained."
+    },
+    {
+      "prior": {
+        "id": "papal.leo-xiii.hf-l-xiii-enc-29061881-diuturnum",
+        "language": "la",
+        "artifact_id": "artifact.papal.leo-xiii.hf-l-xiii-enc-29061881-diuturnum.2026-10-26-vatican-la.latin-text-f8b51aa20600",
+        "source_sha256": "f8b51aa20600211649af746845c879a95548097cf2b2781f907493242f608789",
+        "pdf_sha256": "29bfc0f94b8f4aac6a2b9df6602d14e1688e9713f5f282459baa3f5dc393230d"
+      },
+      "replacement": {
+        "id": "papal.leo-xiii.hf-l-xiii-enc-29061881-diuturnum",
+        "language": "la",
+        "artifact_id": "artifact.papal.leo-xiii.hf-l-xiii-enc-29061881-diuturnum.2026-10-26-vatican-la.latin-text-f8b51aa20600",
+        "source_sha256": "f8b51aa20600211649af746845c879a95548097cf2b2781f907493242f608789",
+        "revision": "2026-10-30T02:56:48Z"
+      },
+      "reason": "Independent exact-source/PDF cold PASS; prior release pins and source history retained."
     }
   ]
 }

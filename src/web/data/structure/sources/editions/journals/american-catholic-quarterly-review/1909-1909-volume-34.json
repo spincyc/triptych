@@ -1,0 +1,45 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "deterministic-source-selector",
+   "byte_size": 624,
+   "edition_owned": true,
+   "id": "artifact.journals.american-catholic-quarterly-review.1909-volume-34.selection-replay-efd0286bfaa7",
+   "media_type": "text/x-python",
+   "notes": "Run with historical.txt, selection.json and a destination. Input/output hashes and exact excluded lines are asserted.",
+   "page_count": null,
+   "retrieved": "2026-10-29",
+   "rights": "licensed",
+   "rights_basis": "Project-created deterministic source selection code.",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": "Historical periodical printing; anonymous human English translation",
+  "date": "1909",
+  "editors": [],
+  "id": "edition.journals.american-catholic-quarterly-review.1909-volume-34",
+  "jurisdiction": null,
+  "language": "mul",
+  "publication": "Philadelphia; volume 34, January–October 1909.",
+  "title": "The American Catholic Quarterly Review, volume 34 (1909)",
+  "translators": [],
+  "year": 1909
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "The American Catholic Quarterly Review",
+  "category": "periodical",
+  "description": "Historical Philadelphia Catholic quarterly; annual and issue witnesses remain separately identified. Only explicitly bounded papal acts are selected here; this registration does not catalog every constituent.",
+  "id": "work.journals.american-catholic-quarterly-review",
+  "languages": [
+   "en",
+   "la"
+  ],
+  "title": "The American Catholic Quarterly Review"
+ }
+}

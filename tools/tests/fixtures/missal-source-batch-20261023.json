@@ -1,7 +1,7 @@
 {
   "acceptance": {
-    "receipt_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-acceptance.json",
-    "receipt_sha256": "5ae2464f2e7a73218262bf91473de8cbcc98e54840dc19d22b02dcb89b110072",
+    "receipt_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/sanitizer-correction/source-batch-acceptance.json",
+    "receipt_sha256": "4d35419fbb3f7a9cf59c2e2934addfeba0327f832f436d3f9fe0de83a4c23871",
     "status": "accepted"
   },
   "baseline_revision": "2e030b564f4413b735ddbea3061082ebe981b11a",
@@ -10233,7 +10233,7 @@
       ]
     },
     "tools/tests/test_roman_1962_latin22_phase5.py": {
-      "after_sha256": "01d6e0490f4b84683823795b2917a8804d17b8b32b38af49b2caa97fca0f015d",
+      "after_sha256": "9414a3119e435fd016ff4f6354650440a065c38d86b5dfab0d7052c16c5aaa09",
       "before_sha256": "7dc3a1569140e14f32fa2c98e607577b05871f3c197a307db67107d731d6afca",
       "hunks": [
         {
@@ -10295,23 +10295,23 @@
         {
           "after_lines": [
             2088,
-            2110
+            2112
           ],
-          "after_slice_sha256": "4f7750d8a60fddb20618d5a1511cf554257b583fc183594854aef5120728a3d5",
+          "after_slice_sha256": "ac253b3bff28f3600e8e2df09f026f99080c605f94f87be3345b47e0602f79e0",
           "before_utf8": "        for path,h in PRESERVED_FILES.items():self.assertEqual(h,digest((ROOT/path).read_bytes()),path)\n"
         },
         {
           "after_lines": [
-            2112,
-            2115
+            2114,
+            2117
           ],
           "after_slice_sha256": "addf67b7130a0f693be00c9b3a01af022351e6432c8fc24e2b6ffa1d3b137434",
           "before_utf8": "        raw=tomllib.loads(self.ledger)[\"entries\"]\n"
         },
         {
           "after_lines": [
-            2118,
-            2119
+            2120,
+            2121
           ],
           "after_slice_sha256": "0e4246ea7cbeeee70fda3c6e53af2e510bc286b80e658cd4486cabeeffb7d89d",
           "before_utf8": "        owners=list(body_owners(self.doc))\n"
@@ -35363,6 +35363,6 @@
   ],
   "schema": "triptych-test-source-batch/v1",
   "source_input_manifest_path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
-  "source_input_manifest_sha256": "13505e8e805b221f78f8004586ca2b4e8f2f2de0c20a2a5e28799af589464e84",
-  "state": "Accepted bounded source successor; see exact independent source-batch receipt."
+  "source_input_manifest_sha256": "ea29e0b2f4ae20bb73626f88070608a5a7b76a2dead18a3d7daee32ebc3c9f2b",
+  "state": "Accepted one current sanitizer-checksum test input successor; exact accounting review and historical replay preserved."
 }

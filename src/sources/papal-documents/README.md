@@ -14,7 +14,7 @@ passages belong to the [source library](../README.md), under the
 | `publication-approvals.json` | Exact original-language or historical-translation text hashes and historical publication evidence admitting retained Latin text. |
 | `typeset-manifest.json` | Exact admitted source artifacts and their rights basis for the two-column reader. |
 | `encyclicals-source-corrections-manifest.json` | Nine independently page-reviewed source repairs; immutable parent witnesses, replay recipes and exact prior-reader supersessions remain retained. |
-| `encyclicals-classic-manifest.json` | 158 additional independently page-reviewed classic readers; exact prior-reader supersessions retained. This is a partial checkpoint of the wider classic collection. |
+| `encyclicals-classic-manifest.json` | 167 independently page-reviewed classic selections; together with nine source repairs, 176 of the original 327 versions have installed classic readers. Exact prior-reader supersessions remain retained. |
 | `encyclicals-classic-renderer-review.md` | Independent renderer regression and adversarial fidelity findings; every replacement PDF retains its own every-page review. |
 | `vatican-corrections-manifest.json` | Explicit replacement source or reader selections and recorded supersessions of earlier Vatican outputs. |
 | `historical-english-manifest.json` | Thirty-one bounded source entries from the 1903 Benziger collection, including an explicitly abridged excerpt. |
@@ -23,6 +23,9 @@ passages belong to the [source library](../README.md), under the
 | `historical-english-journal-manifest.json` | Additional individually reviewed English journal witnesses, preserving each row's rendering revision. |
 | `historical-english-journal-fragment-manifest.json` | Separately identified damaged or abridged English journal witnesses. |
 | `historical-english-book-manifest.json` | Additional complete historical book witnesses, retaining each rendering revision. |
+| `historical-english-completion-manifest.json` | Six independently source-admitted and page-reviewed historical human English additions; the remaining candidate English editions are outside this checkpoint. |
+| `historical-english-source-intake-02.json`, `historical-english-source-intake-03.json` | Independent bounded source-admission judgments for the six additions; separate from PDF-layout acceptance and source-library verification states. |
+| `historical-english-source-intake-02-scope.json`, `historical-english-source-intake-03-scope.json` | Exact three-act scope inputs identifying source rows and evidence pins for those two source-admission judgments. |
 | `historical-english-book-fragment-manifest.json` | Separately identified damaged or abridged historical book witnesses. |
 | `historical-english-corrections-manifest.json` | Source-identical English metadata/layout repairs, with exact supersessions when a prior PDF exists. |
 | `quanta-syllabus-manifest.json` | Separately bounded *Quanta cura* and *Syllabus* constituents of one composite delivery. |

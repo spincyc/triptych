@@ -1,0 +1,260 @@
+{
+  "schema": "triptych-papal-typeset/v1",
+  "revision": "2026-10-30T06:40:13Z",
+  "documents": [
+    {
+      "artifact_id": "artifact.acta-papal-archives.ass.026.constanti-hungarorum-native-spacing-notes-5cdf0bbdb77d",
+      "collection_corpus": "acta",
+      "correction_evidence": {
+        "items": [
+          {
+            "all_selected_non_lf_bytes_preserved": true,
+            "date_reconciliation": "Metadata corrected from 1893-09-11 to 1893-09-02 on 2026-10-30. The official Latin delivery's closing reads die II Septemb. An. MDCCCXCIII (https://www.vatican.va/content/leo-xiii/la/encyclicals/documents/hf_l-xiii_enc_02091893_constanti-hungarorum.html), retained in artifact.papal.leo-xiii.hf-l-xiii-enc-02091893-constanti-hungarorum.2026-10-26-vatican-la.latin-text-7317d5125af9 with SHA-256 7317d5125af95dcf15e48731de086ef860d7a4806ca8ce05f2de84e770decf4f. The official English delivery independently states 2 September 1893 (https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_02091893_constanti-hungarorum.html). The retained ASS OCR at original historical.txt LF5395 instead literally reads die 1 1 S e p t e m b r i s An. 1893; that source wording is preserved unchanged as a discrepant OCR witness. This is a metadata reconciliation against the official deliveries, not a claim that the original ASS printing was image-collated. The stable work ID and historical directory path remain unchanged.",
+            "kind": "source-note-block-partition",
+            "new_artifact_id": "artifact.acta-papal-archives.ass.026.constanti-hungarorum-note-blocks-7ab62b9810a8",
+            "new_source_sha256": "7ab62b9810a84b23add5f7f8311c82b5fe032cd971f9ad5f5a2cd53ab384db9a",
+            "original_print_image_collation": false,
+            "original_source_order_preserved": true,
+            "prior_artifact_id": "artifact.acta-papal-archives.ass.026.historical-text-15a33cfd",
+            "prior_physical_line_ranges": [
+              [
+                5084,
+                5124
+              ],
+              [
+                5127,
+                5166
+              ],
+              [
+                5168,
+                5208
+              ],
+              [
+                5210,
+                5249
+              ],
+              [
+                5251,
+                5291
+              ],
+              [
+                5293,
+                5332
+              ],
+              [
+                5334,
+                5374
+              ],
+              [
+                5376,
+                5398
+              ]
+            ],
+            "prior_segment_id": "segment.acta-papal-archives.ass.026.ass-026-l05089",
+            "prior_source_sha256": "15a33cfd01401e070c0b912e4154be4f7d163d6730ac8f1cd64ed6096d756d3d",
+            "recipe_artifact_id": "artifact.acta-papal-archives.ass.026.constanti-hungarorum-note-recipe-012963d48cdc",
+            "recipe_sha256": "012963d48cdc0195df99f1c34e640556c32c0aa73107080040c5ee520c36a962",
+            "selected_non_lf_sha256": "14c654e40935c3374a988d65322db255e949901b3bba152f3a41acf49d32e81f",
+            "source_note_physical_line_ranges": [
+              [
+                5166,
+                5166
+              ],
+              [
+                5208,
+                5208
+              ],
+              [
+                5373,
+                5374
+              ]
+            ]
+          }
+        ],
+        "revision": "2026-10-30T02:38:13Z"
+      },
+      "date": "1893-09-02",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.ass.026.ass-026-l05089",
+      "id": "acta.ass.026.ass-026-l05089",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          320
+        ]
+      ],
+      "pope": "Leo XIII",
+      "revision": "2026-10-30T06:40:13Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. The historical title identifies Romae, Typographia Polyglotta, S. Congregationis de Propaganda Fide, 1893-94, at exact source LF line 34. The separately printed 1969 Johnson reprint wrapper at LF 36–40 is excluded. This identifies the reproduced historical printing; the Vatican OCR reconstruction is not image-collated. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.ass.026.ass-026-l05089.note-blocks-2026-10-30.native-spacing-2026-10-30",
+      "segment_path": "src/sources/works/acta-papal-archives/1893-09-11-ass.026-ass-026-l05089/editions/1893-acta-ass-026-ass-026-l05089/segments/historical-text-native-spacing-2026-10-30.toml",
+      "sha256": "5cdf0bbdb77ddd84d421f85682f36307f9ae1744dbd89b5c2696112b1bd878c8",
+      "source_note": "ASS 26 (1893). Native word spacing is projected from 297 uniquely matching same-page extraction lines, preserving every selected non-whitespace character and original source order. Native content-stream movement is not adopted. All 3 historical source-note groups are separate blocks at source-page breaks. Source OCR glyph errors and literal hard-line hyphens remain; no lexical correction or original-print image collation. Act-date metadata follows the official Latin closing die II Septemb. and the official English 2 September 1893. The historical OCR's literal die 1 1 Septembris is retained as a source discrepancy; no original-print image check is claimed.",
+      "source_url": "https://www.vatican.va/archive/ass/documents/ASS-26-1893-94-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1893-acta-ass-026/artifacts/constanti-hungarorum-native-spacing-notes-5cdf0bbdb77d/text.txt",
+      "title": "Constanti Hungarorum",
+      "work_id": "work.acta-papal-archives.ass.026-ass-026-l05089"
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.ass.031.caritatis-studium-native-spacing-notes-d6ae05aa21db",
+      "collection_corpus": "acta",
+      "date": "1898-07-25",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.ass.031.ass-031-l00195",
+      "id": "acta.ass.031.ass-031-l00195",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          363
+        ]
+      ],
+      "pope": "Leo XIII",
+      "revision": "2026-10-30T06:40:13Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. The historical title identifies Romae, Typographia Polyglotta, S. Congregationis de Propaganda Fide, 1898-99, at exact source LF line 42. The separately printed 1969 Johnson reprint wrapper at LF 44–48 is excluded. This identifies the reproduced historical printing; the Vatican OCR reconstruction is not image-collated. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.ass.031.ass-031-l00195.native-spacing-2026-10-30",
+      "segment_path": "src/sources/works/papal-documents/1898-07-25-papal-leo-xiii-hf-l-xiii-enc-25071898-caritatis-studium-8d665a2c/editions/1898-acta-ass-031-ass-031-l00195/segments/historical-text-native-spacing-2026-10-30.toml",
+      "sha256": "d6ae05aa21db81565df23b1b9781715efeee7c67fba0fa3c6826e579ba779ad7",
+      "source_note": "ASS 31 (1898). Native word spacing is projected from 319 uniquely matching same-page extraction lines, preserving every selected non-whitespace character and original source order. Native content-stream movement is not adopted. All 6 historical source-note groups are separate blocks at source-page breaks. Source OCR glyph errors and literal hard-line hyphens remain; no lexical correction or original-print image collation.",
+      "source_url": "https://www.vatican.va/archive/ass/documents/ASS-31-1898-99-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1898-acta-ass-031/artifacts/caritatis-studium-native-spacing-notes-d6ae05aa21db/text.txt",
+      "title": "Caritatis studium",
+      "work_id": "work.papal.leo-xiii.hf-l-xiii-enc-25071898-caritatis-studium"
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.ass.031.cum-diuturnum-native-spacing-23e160e5a95d",
+      "collection_corpus": "acta",
+      "date": "1898-12-25",
+      "document_type": "letter",
+      "edition_id": "edition.acta-papal-archives.ass.031.ass-031-l12735",
+      "id": "acta.ass.031.ass-031-l12735",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          56
+        ]
+      ],
+      "pope": "Leo XIII",
+      "revision": "2026-10-30T06:40:13Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. The historical title identifies Romae, Typographia Polyglotta, S. Congregationis de Propaganda Fide, 1898-99, at exact source LF line 42. The separately printed 1969 Johnson reprint wrapper at LF 44–48 is excluded. This identifies the reproduced historical printing; the Vatican OCR reconstruction is not image-collated. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.ass.031.ass-031-l12735.native-spacing-2026-10-30",
+      "segment_path": "src/sources/works/papal-documents/1898-12-25-papal-leo-xiii-hf-l-xiii-enc-25121898-quum-diuturnum-5849c8e4/editions/1898-acta-ass-031-ass-031-l12735/segments/historical-text-native-spacing-2026-10-30.toml",
+      "sha256": "23e160e5a95d3d5f803b45847696282a5c6f9e343139b7f5f16ca57522f14f6c",
+      "source_note": "ASS 31 (1898). Native word spacing is projected from 49 uniquely matching same-page extraction lines, preserving every selected non-whitespace character and original source order. Native content-stream movement is not adopted. The non-act journal/fascicle footer at native page321, original historical LF12772, is explicitly excluded; the papal title/address, body, dated close and subscription remain. Source OCR glyph errors and literal hard-line hyphens remain; no lexical correction or original-print image collation.",
+      "source_url": "https://www.vatican.va/archive/ass/documents/ASS-31-1898-99-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1898-acta-ass-031/artifacts/cum-diuturnum-native-spacing-23e160e5a95d/text.txt",
+      "title": "Cum diuturnum",
+      "work_id": "work.papal.leo-xiii.hf-l-xiii-enc-25121898-quum-diuturnum"
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.ass.031.annum-sacrum-native-spacing-notes-2f28f4133b06",
+      "collection_corpus": "acta",
+      "date": "1899-05-25",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.ass.031.ass-031-l26153",
+      "id": "acta.ass.031.ass-031-l26153",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          261
+        ]
+      ],
+      "pope": "Leo XIII",
+      "revision": "2026-10-30T06:40:13Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. The historical title identifies Romae, Typographia Polyglotta, S. Congregationis de Propaganda Fide, 1898-99, at exact source LF line 42. The separately printed 1969 Johnson reprint wrapper at LF 44–48 is excluded. This identifies the reproduced historical printing; the Vatican OCR reconstruction is not image-collated. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.ass.031.ass-031-l26153.native-spacing-2026-10-30",
+      "segment_path": "src/sources/works/papal-documents/1899-05-25-papal-leo-xiii-hf-l-xiii-enc-25051899-annum-sacrum-6c3608f3/editions/1898-acta-ass-031-ass-031-l26153/segments/historical-text-native-spacing-2026-10-30.toml",
+      "sha256": "2f28f4133b06116ed8d58457aee0f8febaf283440cb255ab2113fca1559a0218",
+      "source_note": "ASS 31 (1898). Native word spacing is projected from 234 uniquely matching same-page extraction lines, preserving every selected non-whitespace character and original source order. Native content-stream movement is not adopted. All 3 historical source-note groups are separate blocks at source-page breaks. Includes the complete printed consecration formula following the papal signature. Source OCR glyph errors and literal hard-line hyphens remain; no lexical correction or original-print image collation.",
+      "source_url": "https://www.vatican.va/archive/ass/documents/ASS-31-1898-99-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1898-acta-ass-031/artifacts/annum-sacrum-native-spacing-notes-2f28f4133b06/text.txt",
+      "title": "Annum sacrum",
+      "work_id": "work.papal.leo-xiii.hf-l-xiii-enc-25051899-annum-sacrum"
+    }
+  ],
+  "supersessions": [
+    {
+      "prior": {
+        "id": "acta.ass.026.ass-026-l05089",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.026.constanti-hungarorum-note-blocks-7ab62b9810a8",
+        "source_sha256": "7ab62b9810a84b23add5f7f8311c82b5fe032cd971f9ad5f5a2cd53ab384db9a",
+        "segment_id": "segment.acta-papal-archives.ass.026.ass-026-l05089.note-blocks-2026-10-30",
+        "pdf_sha256": "0f13ef69a9edcbc53e024c8cb42522132c89fc99bc02adac33ef62cde5de110b"
+      },
+      "replacement": {
+        "id": "acta.ass.026.ass-026-l05089",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.026.constanti-hungarorum-native-spacing-notes-5cdf0bbdb77d",
+        "source_sha256": "5cdf0bbdb77ddd84d421f85682f36307f9ae1744dbd89b5c2696112b1bd878c8",
+        "segment_id": "segment.acta-papal-archives.ass.026.ass-026-l05089.note-blocks-2026-10-30.native-spacing-2026-10-30"
+      },
+      "reason": "Exact same-page native-line whitespace projection restores word boundaries, preserves substantive source characters/order and separates source notes. Earlier artifacts, segments and reviewed PDFs remain historical records."
+    },
+    {
+      "prior": {
+        "id": "acta.ass.031.ass-031-l00195",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.031.historical-text-f531d746",
+        "source_sha256": "f531d746d1e89a2761fd5805e2e876a803f27edd7cdca800e922016c391571f0",
+        "segment_id": "segment.acta-papal-archives.ass.031.ass-031-l00195",
+        "pdf_sha256": "0da1bd4236f341ff4844ed6f772e3d244649e7284e74a9fccd09a7d43effc6a8"
+      },
+      "replacement": {
+        "id": "acta.ass.031.ass-031-l00195",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.031.caritatis-studium-native-spacing-notes-d6ae05aa21db",
+        "source_sha256": "d6ae05aa21db81565df23b1b9781715efeee7c67fba0fa3c6826e579ba779ad7",
+        "segment_id": "segment.acta-papal-archives.ass.031.ass-031-l00195.native-spacing-2026-10-30"
+      },
+      "reason": "Exact same-page native-line whitespace projection restores word boundaries, preserves substantive source characters/order and separates source notes. Earlier artifacts, segments and reviewed PDFs remain historical records."
+    },
+    {
+      "prior": {
+        "id": "acta.ass.031.ass-031-l12735",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.031.historical-text-f531d746",
+        "source_sha256": "f531d746d1e89a2761fd5805e2e876a803f27edd7cdca800e922016c391571f0",
+        "segment_id": "segment.acta-papal-archives.ass.031.ass-031-l12735",
+        "pdf_sha256": "f52151b2f58723a4f7edaa1924af7bc083e8e0c05be77af2c33ea2371c141d49"
+      },
+      "replacement": {
+        "id": "acta.ass.031.ass-031-l12735",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.031.cum-diuturnum-native-spacing-23e160e5a95d",
+        "source_sha256": "23e160e5a95d3d5f803b45847696282a5c6f9e343139b7f5f16ca57522f14f6c",
+        "segment_id": "segment.acta-papal-archives.ass.031.ass-031-l12735.native-spacing-2026-10-30"
+      },
+      "reason": "Exact same-page native-line whitespace projection restores word boundaries, preserves substantive source characters/order and separates source notes. One native-proven non-act publisher-footer LF is excluded with explicit bounds. Earlier artifacts, segments and reviewed PDFs remain historical records."
+    },
+    {
+      "prior": {
+        "id": "acta.ass.031.ass-031-l26153",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.031.historical-text-f531d746",
+        "source_sha256": "f531d746d1e89a2761fd5805e2e876a803f27edd7cdca800e922016c391571f0",
+        "segment_id": "segment.acta-papal-archives.ass.031.ass-031-l26153",
+        "pdf_sha256": "f1098b8c7fb4bbaf157308e95e3b96e63f43a78fe4e466d4af398e69dc46a382"
+      },
+      "replacement": {
+        "id": "acta.ass.031.ass-031-l26153",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.031.annum-sacrum-native-spacing-notes-2f28f4133b06",
+        "source_sha256": "2f28f4133b06116ed8d58457aee0f8febaf283440cb255ab2113fca1559a0218",
+        "segment_id": "segment.acta-papal-archives.ass.031.ass-031-l26153.native-spacing-2026-10-30"
+      },
+      "reason": "Exact same-page native-line whitespace projection restores word boundaries, preserves substantive source characters/order and separates source notes. Earlier artifacts, segments and reviewed PDFs remain historical records."
+    }
+  ]
+}

@@ -2093,7 +2093,9 @@ class Latin22Phase5Tests(unittest.TestCase):
                 # checkpoint, separately from the later finite-authority code.
                 archived = ROOT / "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/historical-code/proper-latin-prior.py"
                 self.assertEqual(h, digest(archived.read_bytes()), path + " at 6aeb96a392")
-                self.assertEqual("d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376",
+                # The separately reviewed removed-marker sanitizer fix retains
+                # every valid body; its exact adoption is recorded beside the source epoch.
+                self.assertEqual("852acb6a88084aba5729e5f60e807ca4e10f9c4436f5db2b23a9fdd3fbe2da1a",
                                  digest((ROOT / path).read_bytes()), path + " current")
                 authority = ROOT / "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json"
                 self.assertEqual("920299972ab84575183de8c84adcd3f7418bdc46304fbe1d6a4435fad1103ee3",

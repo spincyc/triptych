@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 10568,
-  "editions": 14254,
+  "artifacts": 10610,
+  "editions": 14267,
   "passages": 9612,
   "readable": 4137,
-  "works": 10936
+  "works": 10937
  },
  "facets": {
   "authors": [
@@ -8258,6 +8258,10 @@
     "works": 1
    },
    {
+    "id": "Robert James M‘Ghee",
+    "works": 1
+   },
+   {
     "id": "Robert Tressell",
     "works": 1
    },
@@ -10148,6 +10152,10 @@
     "works": 5
    },
    {
+    "id": "historical-document-collection",
+    "works": 5
+   },
+   {
     "id": "journal-article",
     "works": 5
    },
@@ -10181,10 +10189,6 @@
    },
    {
     "id": "hagiography",
-    "works": 4
-   },
-   {
-    "id": "historical-document-collection",
     "works": 4
    },
    {
@@ -11762,7 +11766,7 @@
     "id": "la"
    },
    {
-    "editions": 1149,
+    "editions": 1161,
     "id": "en"
    },
    {
@@ -11770,7 +11774,7 @@
     "id": "it"
    },
    {
-    "editions": 332,
+    "editions": 333,
     "id": "mul"
    },
    {
@@ -12032,12 +12036,12 @@
     "label": "18th century"
    },
    {
-    "editions": 4804,
+    "editions": 4806,
     "id": "1800",
     "label": "19th century"
    },
    {
-    "editions": 3700,
+    "editions": 3711,
     "id": "1900",
     "label": "20th century"
    },
@@ -12054,23 +12058,23 @@
     "id": "restricted"
    },
    {
-    "artifacts": 3346,
-    "editions": 1038,
+    "artifacts": 3365,
+    "editions": 1044,
     "id": "public-domain"
    },
    {
-    "artifacts": 824,
-    "editions": 415,
+    "artifacts": 826,
+    "editions": 416,
     "id": "unresolved"
    },
    {
-    "artifacts": 377,
-    "editions": 157,
+    "artifacts": 397,
+    "editions": 163,
     "id": "licensed"
    },
    {
-    "artifacts": 236,
-    "editions": 71,
+    "artifacts": 237,
+    "editions": 72,
     "id": "project-created"
    },
    {
@@ -21855,6 +21859,76 @@
    "directory": "editions/journals/catholic-mind/",
    "editions": [
     {
+     "date": "1917-09-08",
+     "file": "1917-1917-09-08-volume-15-issue-17.json",
+     "id": "edition.journals.catholic-mind.1917-09-08-volume-15-issue-17",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed",
+      "public-domain"
+     ],
+     "title": "The Catholic Mind, volume 15, no. 17 (1917-09-08)",
+     "year": 1917
+    },
+    {
+     "date": "1919-02-08",
+     "file": "1919-1919-02-08-volume-17-issue-3.json",
+     "id": "edition.journals.catholic-mind.1919-02-08-volume-17-issue-3",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed",
+      "public-domain"
+     ],
+     "title": "The Catholic Mind, volume 17, no. 3 (1919-02-08)",
+     "year": 1919
+    },
+    {
+     "date": "1920-07-22",
+     "file": "1920-1920-07-22-volume-18-issue-14.json",
+     "id": "edition.journals.catholic-mind.1920-07-22-volume-18-issue-14",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed",
+      "public-domain"
+     ],
+     "title": "The Catholic Mind, volume 18, no. 14 (1920-07-22)",
+     "year": 1920
+    },
+    {
+     "date": "1921-02-08",
+     "file": "1921-1921-02-08-volume-19-issue-3.json",
+     "id": "edition.journals.catholic-mind.1921-02-08-volume-19-issue-3",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed",
+      "public-domain"
+     ],
+     "title": "The Catholic Mind, volume 19, no. 3 (1921-02-08)",
+     "year": 1921
+    },
+    {
+     "date": "1921-03-22",
+     "file": "1921-1921-03-22-volume-19-issue-6.json",
+     "id": "edition.journals.catholic-mind.1921-03-22-volume-19-issue-6",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed",
+      "public-domain"
+     ],
+     "title": "The Catholic Mind, volume 19, no. 6 (1921-03-22)",
+     "year": 1921
+    },
+    {
      "date": "1928-02-22",
      "file": "1928-1928-02-22-volume-26-issue-4.json",
      "id": "edition.journals.catholic-mind.1928-02-22-volume-26-issue-4",
@@ -26574,6 +26648,17 @@
    "category": "encyclical",
    "directory": "editions/papal-documents/1751-02-20-papal-benedictus-xiv-enciclica-i-elapso-proxime-anno-i-20-febbraio-1751-il-ponte-02bd6bb0/",
    "editions": [
+    {
+     "date": "1839",
+     "file": "1839-1839-mcghee-english.json",
+     "id": "edition.papal.benedictus-xiv.elapso-proxime-anno.1839-mcghee-english",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "title": "Elapso proxime anno: historical English translation",
+     "year": 1839
+    },
     {
      "date": "2026-10-26",
      "file": "2026-2026-10-26-vatican-it.json",
@@ -35528,6 +35613,17 @@
    "directory": "editions/papal-documents/1920-12-01-papal-benedict-xv-hf-ben-xv-enc-01121920-annus-iam-plenus-23241e94/",
    "editions": [
     {
+     "date": "1921-02-08",
+     "file": "1921-1921-02-08-catholic-mind-english.json",
+     "id": "edition.papal.benedict-xv.hf-ben-xv-enc-01121920-annus-iam-plenus.1921-02-08-catholic-mind-english",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "title": "Annus Iam Plenus — historical English translation",
+     "year": 1921
+    },
+    {
      "date": "2026-10-26",
      "file": "2026-2026-10-26-vatican-en.json",
      "id": "edition.papal.benedict-xv.hf-ben-xv-enc-01121920-annus-iam-plenus.2026-10-26-vatican-en",
@@ -38821,6 +38917,17 @@
    "directory": "editions/papal-documents/1917-06-15-papal-benedict-xv-hf-ben-xv-enc-15061917-humani-generis-redemptionem-ac6fb370/",
    "editions": [
     {
+     "date": "1917-09-08",
+     "file": "1917-1917-09-08-catholic-mind-english.json",
+     "id": "edition.papal.benedict-xv.hf-ben-xv-enc-15061917-humani-generis-redemptionem.1917-09-08-catholic-mind-english",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "title": "Humani Generis Redemptionem — historical English translation",
+     "year": 1917
+    },
+    {
      "date": "2026-10-26",
      "file": "2026-2026-10-26-vatican-en.json",
      "id": "edition.papal.benedict-xv.hf-ben-xv-enc-15061917-humani-generis-redemptionem.2026-10-26-vatican-en",
@@ -40782,6 +40889,17 @@
    "directory": "editions/papal-documents/1920-05-23-papal-benedict-xv-hf-ben-xv-enc-23051920-pacem-dei-munus-pulcherrimum-23c1df5d/",
    "editions": [
     {
+     "date": "1920-07-22",
+     "file": "1920-1920-07-22-catholic-mind-english.json",
+     "id": "edition.papal.benedict-xv.hf-ben-xv-enc-23051920-pacem-dei-munus-pulcherrimum.1920-07-22-catholic-mind-english",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "title": "Pacem, Dei Munus Pulcherrimum — historical English translation",
+     "year": 1920
+    },
+    {
      "date": "2026-10-26",
      "file": "2026-2026-10-26-vatican-en.json",
      "id": "edition.papal.benedict-xv.hf-ben-xv-enc-23051920-pacem-dei-munus-pulcherrimum.2026-10-26-vatican-en",
@@ -41254,6 +41372,17 @@
    "category": "encyclical",
    "directory": "editions/papal-documents/1918-12-01-papal-benedict-xv-hf-ben-xv-enc-01121918-quod-iam-diu-068b3abc/",
    "editions": [
+    {
+     "date": "1919-02-08",
+     "file": "1919-1919-02-08-catholic-mind-english.json",
+     "id": "edition.papal.benedict-xv.hf-ben-xv-enc-01121918-quod-iam-diu.1919-02-08-catholic-mind-english",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "title": "Quod Iam Diu — historical English translation",
+     "year": 1919
+    },
     {
      "date": "2026-10-26",
      "file": "2026-2026-10-26-vatican-en.json",
@@ -42298,6 +42427,17 @@
    "category": "encyclical",
    "directory": "editions/papal-documents/1921-01-06-papal-benedict-xv-hf-ben-xv-enc-06011921-sacra-propediem-0e46b83d/",
    "editions": [
+    {
+     "date": "1921-03-22",
+     "file": "1921-1921-03-22-catholic-mind-english.json",
+     "id": "edition.papal.benedict-xv.hf-ben-xv-enc-06011921-sacra-propediem.1921-03-22-catholic-mind-english",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "title": "Sacra Propediem — historical English translation",
+     "year": 1921
+    },
     {
      "date": "2026-10-26",
      "file": "2026-2026-10-26-vatican-en.json",
@@ -308839,6 +308979,35 @@
    "title": "The Scarlet Gown: Being Verses by a St. Andrews Man"
   },
   {
+   "alternate_titles": [],
+   "author": "Robert James M‘Ghee",
+   "category": "historical-document-collection",
+   "directory": "editions/robert-james-mcghee/nullity-government-queen-victoria-ireland/",
+   "editions": [
+    {
+     "date": "1839",
+     "file": "1839-1839-tims-dublin.json",
+     "id": "edition.robert-james-mcghee.nullity-government-queen-victoria-ireland.1839-tims-dublin",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "project-created",
+      "public-domain",
+      "unresolved"
+     ],
+     "title": "The Nullity of the Government of Queen Victoria in Ireland",
+     "year": 1839
+    }
+   ],
+   "id": "work.robert-james-mcghee.nullity-government-queen-victoria-ireland",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "title": "The Nullity of the Government of Queen Victoria in Ireland; or, the Pope, the Virtual Ruler of the Land"
+  },
+  {
    "alternate_titles": [
     "Robert Tressall",
     "Robert Noonan",
@@ -315059,6 +315228,19 @@
      ],
      "title": "The American Catholic Quarterly Review, volume 33 (January–October 1908)",
      "year": 1908
+    },
+    {
+     "date": "1909",
+     "file": "1909-1909-volume-34.json",
+     "id": "edition.journals.american-catholic-quarterly-review.1909-volume-34",
+     "language": "mul",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed"
+     ],
+     "title": "The American Catholic Quarterly Review, volume 34 (1909)",
+     "year": 1909
     }
    ],
    "id": "work.journals.american-catholic-quarterly-review",

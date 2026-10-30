@@ -1,0 +1,65 @@
+{
+  "accepted_sanitizer_application": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/sanitizer-correction/actual-application.json",
+    "sha256": "5d8c6804c0c2b83dca5d0f08b4ee0b91df1aaa72a26ac0c837ba2b5ab79fded4"
+  },
+  "all_other_semantic_oracles_exact": true,
+  "canonical_writes": 0,
+  "current_sanitizer_code_sha256": "852acb6a88084aba5729e5f60e807ca4e10f9c4436f5db2b23a9fdd3fbe2da1a",
+  "driver_sha256": "aef240ed7b90607ebe91814ccbfc845af6b794467406d48c62d5d5eccf959f30",
+  "historical_fields_exact": [
+    "schema",
+    "baseline_revision",
+    "baseline_roman_document_sha256",
+    "latin_baseline_rows",
+    "latin_baseline_bodies",
+    "latin_baseline_present_keys",
+    "latin_baseline_supplemented_keys",
+    "projection_baseline_source_files",
+    "english_219_keys",
+    "english_baseline_source_files",
+    "english_historical_source_files",
+    "english_historical_absence_scope"
+  ],
+  "manifest_sha256": "ea29e0b2f4ae20bb73626f88070608a5a7b76a2dead18a3d7daee32ebc3c9f2b",
+  "new_fixture_core_sha256": "89c924185f6eb4e72f8a5a0c2b1e460fac86638ac89792e16ea1889a1b759fb0",
+  "old_fixture_core_sha256": "be05e5928b8be8dd59c23dc8401c431e616ca605ea138dd0bf465d7a18330e3a",
+  "original17_before": {
+    "src/sources/calendars/postconciliar/propers.yaml": "69731f40de5d8c4539c4660f7035681ba3429beffd447ac6e29a5c1b98b6829d",
+    "src/sources/calendars/roman-1962/propers.yaml": "018642eee26d09e3bb014fa60baa0f820ab3637c9d6e349378c696a7b79d6877",
+    "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml": "5943f9788ff9ebe3b614086d824039a2993039f58d3819e85f26ffafb3c38a58",
+    "src/sources/inventories/postconciliar-proper-translations-v1.toml": "9bf6fe5ecc3b397888a0316f7b5c06e40f65e9dfc1eb96c3bc78d111e7c41597",
+    "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml": "c2bf07d5551fbe7ae2748ce7390c37b0d707df7cf275d400126b04cacd8600f0",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml": "560e82057dc0480a5b1fe835304ba57ed476b346a38cab6fac550298582016ea",
+    "src/sources/inventories/roman-1962-proper-translations-v1.toml": "79946d1bc6e015d8624d67ce243b59cf3ee634fc5997310aa6d764953349d815",
+    "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml": "465e15d42b7301b22c2d93be1b95b00eb326ee0cd2ad1f928520952a89e89faa",
+    "tools/tests/test_proper_latin.py": "98daa1922358c0d977ddfc97352812d395c6f578591e48691bc1393c6b1ace8d",
+    "tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py": "bc3ec297a6ca1edd3f155ccc29381526fee006d2e39a2c43bc0ce06fb81a51d4",
+    "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py": "ddb972cdd5fe9651d1ecc0b33bbc1bf4deca7f1b5f5c7d75b87bc03c54603f9e",
+    "tools/tests/test_roman_1962_english13_phase5.py": "dedf9a58d3f9e6b311bf5caf8f7aa7c51dcc9543d6ee17e4288e834c8cdc0215",
+    "tools/tests/test_roman_1962_english31_phase4.py": "86b29add67ac575fb147300f4ab6e66c47863a16c4cf5166896a88e710f5335c",
+    "tools/tests/test_roman_1962_lasance_commons_easter_phase3.py": "9c11f0b870c14916dfa2530c1e733f262a5c9f526cd613744a06ea7ce3c05190",
+    "tools/tests/test_roman_1962_latin22_phase5.py": "7dc3a1569140e14f32fa2c98e607577b05871f3c197a307db67107d731d6afca",
+    "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py": "c13d838baf217cf25be163e465a4f90322d8ecf04e89322f237eec105764686e",
+    "tools/tests/test_roman_1962_winter_ursula_source_repair.py": "e7354e1d015919cc47f235fca3aa1f5134afc8fe250765eb24b6d2eafbc71f05"
+  },
+  "other16_inverse_specifications_exact": true,
+  "parent_acceptance_sha256": "5ae2464f2e7a73218262bf91473de8cbcc98e54840dc19d22b02dcb89b110072",
+  "parent_fixture_sha256": "ae34d8450f42835523ee6c5c2ec44cf5d99f6289adc83654853aa47c3fbe1b97",
+  "parent_git_revision": "61a2b2ae6a80d61b19f409097d07016b50fb8f48",
+  "parent_manifest_sha256": "13505e8e805b221f78f8004586ca2b4e8f2f2de0c20a2a5e28799af589464e84",
+  "pending_fixture_sha256": "96bfe6b1cd2103d99732faff05939b119f6122db724082d6ae28dc37106d431e",
+  "runtime_permission_or_source_judgment_created": false,
+  "schema": "triptych-exact-one-test-input-successor/v1",
+  "scope": "One test checksum pin/raw inverse only. No current runtime imported, semantic compiler run or Names metadata mixed in.",
+  "source_delta": [
+    {
+      "before_sha256": "01d6e0490f4b84683823795b2917a8804d17b8b32b38af49b2caa97fca0f015d",
+      "path": "tools/tests/test_roman_1962_latin22_phase5.py",
+      "post_sha256": "9414a3119e435fd016ff4f6354650440a065c38d86b5dfab0d7052c16c5aaa09"
+    }
+  ],
+  "source_paths": 7264,
+  "status": "pending-independent-accounting-review",
+  "unchanged_semantic_transition_contract_sha256": "7495dee6d0d191b9f376d6494e8323dd47a1869a0636deaac0a0c4f1d6a11755"
+}

@@ -1,0 +1,702 @@
+{
+  "schema": "triptych-papal-native-spacing-review/v1",
+  "source_id": "acta.aas.006.archive.aas.006.051",
+  "native_pdf_sha256": "b655eb5e24d52cfabc538f3da1e3e19d7056fe9dc1fcb67189a3b1bea5c8831f",
+  "native_pages_inspected": [
+    565,
+    566,
+    567,
+    568,
+    569,
+    570,
+    571,
+    572,
+    573,
+    574,
+    575,
+    576,
+    577,
+    578,
+    579,
+    580,
+    581
+  ],
+  "full_size_native_pages": [
+    566,
+    568,
+    569,
+    570,
+    571,
+    574,
+    575,
+    577,
+    578,
+    580,
+    581
+  ],
+  "geometry": "One body column with historical notes at page foot; no interleaved note columns or marginal-summary body mixture. All17pages were contact-inspected and11pages containing retained reference-marker or raw-grouping discrepancies were opened full-size.",
+  "source_order_policy": "Preserve every old selected LF record in old order. Native whitespace is adopted only for556uniquely identified ordinary lines;81original records are retained without assigning native identity. The ordinary matched native line order is monotonic on every page. Raw superscript placement and body-line splitting are never adopted.",
+  "retained_source_lines": [
+    {
+      "source_line": 23285,
+      "source_line_sha256": "931f2c4624e0a5db10749f4cea20c4249d503f6cf523a8b7f8f4b0581a373a9c",
+      "native_page": 566,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23315; both resolve to native raw LF38. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23286,
+      "source_line_sha256": "f3669f2cd214b2925240a32cc2626984200e88a7ff6e9edf80dfd1accc3fce7f",
+      "native_page": 566,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23297,
+      "source_line_sha256": "81c92e8d39b16ee339c4bc08afc7102ab10f185e8f28162c2df37079c251a853",
+      "native_page": 566,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23317; both resolve to native raw LF40. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23298,
+      "source_line_sha256": "3589b37bff2c5f993cb3f7fecc503b07b0cd562588c27bec5fab07f2fefda30b",
+      "native_page": 566,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23315,
+      "source_line_sha256": "fd65188b78296e0121232ff76bef0c19d723609aeef95950ed8650a7ef91babe",
+      "native_page": 566,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23285; both resolve to native raw LF38. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23317,
+      "source_line_sha256": "92d6f94574b83cb00a4ed9ca68e9f86f31c4fcf6ea076e59b0a525ad15240495",
+      "native_page": 566,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23297; both resolve to native raw LF40. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23374,
+      "source_line_sha256": "6e76fec43924cb737606505d44a333a49efc44b7cf017ffd3282b3c3139df644",
+      "native_page": 568,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23397; both resolve to native raw LF38. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23375,
+      "source_line_sha256": "8108e356f056476db2ceb70d4851a2f8c68805263320390661311bee3b8f14db",
+      "native_page": 568,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23376,
+      "source_line_sha256": "e22536fef2b8be464b74312997c8925226c9487c5d4e99fcaedb290618a8e4a0",
+      "native_page": 568,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23399; both resolve to native raw LF40. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23377,
+      "source_line_sha256": "963655c832e5fb2a51755295c0dc46638e84a8a3db753d9de3bce1ba80c7c085",
+      "native_page": 568,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23378,
+      "source_line_sha256": "e01e1c94c4eef5ae954928ea4e3a9d1ee1723d25214b48525db3cc510a7e9111",
+      "native_page": 568,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23401; both resolve to native raw LF42. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23379,
+      "source_line_sha256": "cf8933dc71aa9a43ee64770bbcc783e2f623a41d0d589348b726353fcaaa7ca8",
+      "native_page": 568,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23382,
+      "source_line_sha256": "5e0eda92b0ebd9dfe51c1ddea14e9c5e2e45c1ab800f74fc45418469d7ac72c4",
+      "native_page": 568,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23403; both resolve to native raw LF44. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23383,
+      "source_line_sha256": "bde77b6432a987ba276070fb517fcba13d2cee6f40bc8b0c9430aba639a67660",
+      "native_page": 568,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23385,
+      "source_line_sha256": "31a573de85cc05a31cf541900edb2a9c629e85b9823c8b3f3495cc0492a0a39d",
+      "native_page": 568,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23405; both resolve to native raw LF46. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23386,
+      "source_line_sha256": "3c34c6c4743ac45f32bdc9eb151deca0ee015a258da4426ffdf624f04636ef3d",
+      "native_page": 568,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23390,
+      "source_line_sha256": "c0345b533bb53c18e15ba5ef0ae18e6259103efb545b9b1797a9af974578afed",
+      "native_page": 568,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23407; both resolve to native raw LF48. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23391,
+      "source_line_sha256": "579fa69fbb6e95b79af4b64f267491e9f0013071ba2f15e00a3a188728b90360",
+      "native_page": 568,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23392,
+      "source_line_sha256": "0aa2328fabc01d4ec6891f9b8e807dea0fb5277266a6c57d5d9c2520638db5d9",
+      "native_page": 568,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23409; both resolve to native raw LF50. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23393,
+      "source_line_sha256": "b588b8a1ed082af7e9a16969d39f8d1229a324fec3c9b78854c354022d6087b2",
+      "native_page": 568,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23394,
+      "source_line_sha256": "f44191ba8824b91d6ac2df656b0192d9fa26d6ae0e4fc8022761e784ed8c66e2",
+      "native_page": 568,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23411; both resolve to native raw LF52. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23395,
+      "source_line_sha256": "d48629e4e3a3541e5f87cad44f3dd901e68dcf73c4a44e11331a203fcf087af6",
+      "native_page": 568,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23397,
+      "source_line_sha256": "e6eeb4cb3a8d11c59199e56f464167953c92287f81b801f18f0b43dbc83ff1e4",
+      "native_page": 568,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23374; both resolve to native raw LF38. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23399,
+      "source_line_sha256": "fd65188b78296e0121232ff76bef0c19d723609aeef95950ed8650a7ef91babe",
+      "native_page": 568,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23376; both resolve to native raw LF40. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23401,
+      "source_line_sha256": "92d6f94574b83cb00a4ed9ca68e9f86f31c4fcf6ea076e59b0a525ad15240495",
+      "native_page": 568,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23378; both resolve to native raw LF42. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23403,
+      "source_line_sha256": "708cd92c26dc4b95cc1adb9a6fa631631bbb16e6d54fe7b8a48f7ad0ab83bc9d",
+      "native_page": 568,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23382; both resolve to native raw LF44. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23405,
+      "source_line_sha256": "1d85dc67e5535dc000671cbbafa4c93ffcf0b2cdfc5d5628ed3cb5c127b98959",
+      "native_page": 568,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23385; both resolve to native raw LF46. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23407,
+      "source_line_sha256": "bf9f1885e2b0ad4dad46b17eab494d514030ea98b62d394e9221aa7da233304e",
+      "native_page": 568,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23390; both resolve to native raw LF48. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23409,
+      "source_line_sha256": "ff6f241cf67d0a2ac0761374d6a4cc6b0a5b525f624c7c0b711d331e3238f09d",
+      "native_page": 568,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23392; both resolve to native raw LF50. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23411,
+      "source_line_sha256": "fbe085585266c6031c1b4f6c6334065f81c74b7c091ac954e29574fe591f7822",
+      "native_page": 568,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23394; both resolve to native raw LF52. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23420,
+      "source_line_sha256": "fc1cb59a88a0202af60cfc460ab9fb5c9950096a7a7b22f4fe5b68344fa685ea",
+      "native_page": 569,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23454; both resolve to native raw LF40. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23421,
+      "source_line_sha256": "c81807f58cecddc2b05de1e63ed98119e33bf3987bcfa7cc9f2008ad03c7d962",
+      "native_page": 569,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23444,
+      "source_line_sha256": "4060ff0562e431218af21e6b4f1d83e7000506589d09627f5107d0d7172e38ae",
+      "native_page": 569,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23445,
+      "source_line_sha256": "251d14bfbdbdba7bb4f2ad5a4614923ed004a9c8a9dc0988a9de7ce8218b44a3",
+      "native_page": 569,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23450,
+      "source_line_sha256": "3755c928f444aa94658ddb205611f7a759374e38e79439fe07cef61f801ee46d",
+      "native_page": 569,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23451,
+      "source_line_sha256": "faee25c5f956eae965c0b234c0edbbcd023a1ca87b6b095d053aa788c4316f0b",
+      "native_page": 569,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23454,
+      "source_line_sha256": "fa2901f1aeebc8d0ed88cf358135905aacc12c4322c3fa6cf7b9ee98b434af16",
+      "native_page": 569,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23420; both resolve to native raw LF40. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23494,
+      "source_line_sha256": "b73b6d8466a75b50051568b223467f21c5683ebb3a460fed13fa70b67c93e935",
+      "native_page": 570,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23502; both resolve to native raw LF38. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23495,
+      "source_line_sha256": "a6cb07851c17896e8d193930c1ca0d54b96f81d8ceed55d0652cfb5a87e0ebcb",
+      "native_page": 570,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23498,
+      "source_line_sha256": "4fcc2ab9efca5870f51f1577cce634d3056ca498f3663c491c026cd63657c620",
+      "native_page": 570,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23499,
+      "source_line_sha256": "162f8769aa606185f8617a65e44bddc593eb408e14304a484384822ca88503ee",
+      "native_page": 570,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23502,
+      "source_line_sha256": "12f64f06bdccfa7df91b62e198c69de8d8dd5cf8f2f922b788623e73c87c8509",
+      "native_page": 570,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23494; both resolve to native raw LF38. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23503,
+      "source_line_sha256": "a7327b6383701dd0ff0ae6636d42a77ebac3fb5e1515e3af1d10fda97a53d232",
+      "native_page": 570,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23504,
+      "source_line_sha256": "2bfd40c202af7b316f353ca77522655e44e29fc5dba467542488db8517606bb8",
+      "native_page": 570,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23512,
+      "source_line_sha256": "e8a049c5d47422a82cf388c9b55573df7cc2a7e1d1239d55082a02d0419fced9",
+      "native_page": 571,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23545; both resolve to native raw LF36. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23513,
+      "source_line_sha256": "72f34195c08dbc1c21bee05c655fb4ac10297900ca3f41f67347ba389eed81a2",
+      "native_page": 571,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23545,
+      "source_line_sha256": "b47812a4a15529033b36690b4950715ab966af3a8306660e445d3043bd7f6ff6",
+      "native_page": 571,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23512; both resolve to native raw LF36. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23636,
+      "source_line_sha256": "23a235a99231227ac5b91396472de7b195336a545fb67ae9e40bd675008cfbcc",
+      "native_page": 574,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23663; both resolve to native raw LF39. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23637,
+      "source_line_sha256": "d81c535da33098a2d1988108dd00c49dae0d58fb041c2aeeb4c56434bc4baff4",
+      "native_page": 574,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23645,
+      "source_line_sha256": "999626569cde30262413fb4efad82677b0d939f676324e61a71cabe3c7ae7b05",
+      "native_page": 574,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23646,
+      "source_line_sha256": "c33d81ae2af814f9857fbf2f788cef88f17cfdb1a859c8a05702f7712fe3432c",
+      "native_page": 574,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23648,
+      "source_line_sha256": "cbc91953499a79e8f50e8f6ab835ac269ac8be126fbf447e9a2a8ef7a4826d98",
+      "native_page": 574,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23649,
+      "source_line_sha256": "bca6286cee4efb2a472b7650bf81fd8f11ebd34a300f30376168d25e4f90d9da",
+      "native_page": 574,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23652,
+      "source_line_sha256": "60e8cb14f5bd1ac90ba7aa9c000aa5eb6a87810a5d71b2ee4f52e7920dd512c8",
+      "native_page": 574,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23667; both resolve to native raw LF43. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23653,
+      "source_line_sha256": "8c8800c64b4deb80605d32490139dd38d66bdce1db56c7eaea6f1503a8f898d8",
+      "native_page": 574,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23663,
+      "source_line_sha256": "fd65188b78296e0121232ff76bef0c19d723609aeef95950ed8650a7ef91babe",
+      "native_page": 574,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23636; both resolve to native raw LF39. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23667,
+      "source_line_sha256": "708cd92c26dc4b95cc1adb9a6fa631631bbb16e6d54fe7b8a48f7ad0ab83bc9d",
+      "native_page": 574,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23652; both resolve to native raw LF43. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23703,
+      "source_line_sha256": "1f265a32a263b64e6626fccd6c4b951de6a87abf911a91fc42c62d7bbf7c8d0d",
+      "native_page": 575,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23707; both resolve to native raw LF36. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23704,
+      "source_line_sha256": "be8da79864894cd6ab70ec131e9c85cce474990f7a3f667421d3757b32ad64d9",
+      "native_page": 575,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23707,
+      "source_line_sha256": "1dc25a887e512048ba2bcb6881ee4c497c46a7357e63110f7edb7ebc9b9cc8eb",
+      "native_page": 575,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23703; both resolve to native raw LF36. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23771,
+      "source_line_sha256": "4909797825dce38b0a9777bdd54c205f666a33a6637d156667d8ca97914ee45f",
+      "native_page": 577,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23784; both resolve to native raw LF38. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23772,
+      "source_line_sha256": "a899ba2f8d56679e42a1210002fd5d8ce46da2be2b1666790fed276de0d6ed5d",
+      "native_page": 577,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23784,
+      "source_line_sha256": "fd65188b78296e0121232ff76bef0c19d723609aeef95950ed8650a7ef91babe",
+      "native_page": 577,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23771; both resolve to native raw LF38. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23817,
+      "source_line_sha256": "b4a3408745dd960fcd2a23144f5604910045850c773ee3654295d84e5a8a8f7b",
+      "native_page": 578,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23825; both resolve to native raw LF37. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23818,
+      "source_line_sha256": "2df7b85589db1c19e67aa0d179129163770162036b878516a5e2cd06441ddd90",
+      "native_page": 578,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23825,
+      "source_line_sha256": "fd65188b78296e0121232ff76bef0c19d723609aeef95950ed8650a7ef91babe",
+      "native_page": 578,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23817; both resolve to native raw LF37. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23870,
+      "source_line_sha256": "c834efb368521824a9a67af7bf3303988de6c0400ecfd3344d7621f15892d4af",
+      "native_page": 580,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23904; both resolve to native raw LF36. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23871,
+      "source_line_sha256": "bc1a98803abfbfaef1e57dba7836e704fa755c5955c5980e826b334cdfde7766",
+      "native_page": 580,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23876,
+      "source_line_sha256": "a3873aaeedc62438bbfb2a33c0ef13606e27eff0c03ba9b5730fd6221bf66789",
+      "native_page": 580,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23906; both resolve to native raw LF38. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23877,
+      "source_line_sha256": "212393dc64c4772a1a1382ac081a1e1f4e2f3302a52848039d0f6eafb0ec1969",
+      "native_page": 580,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23880,
+      "source_line_sha256": "634aa6e8bec0defa5be70df8c044267f8590a11df44a9c15dd00744669098afe",
+      "native_page": 580,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23908; both resolve to native raw LF40. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23881,
+      "source_line_sha256": "82f4efde49c98c21fbbad523ae56400ee278127c07ef19a4a0e28068790c93d5",
+      "native_page": 580,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23882,
+      "source_line_sha256": "b9639e18c5f9141aaad6b71292615f5f06eefe20963fe24ea8ed7e70a9e30e5a",
+      "native_page": 580,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23910; both resolve to native raw LF42. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23883,
+      "source_line_sha256": "52f4b23a9629400a49c81f84f3a2928978d1f818028d084968e066d70a2380bf",
+      "native_page": 580,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23904,
+      "source_line_sha256": "b47812a4a15529033b36690b4950715ab966af3a8306660e445d3043bd7f6ff6",
+      "native_page": 580,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23870; both resolve to native raw LF36. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23906,
+      "source_line_sha256": "fd65188b78296e0121232ff76bef0c19d723609aeef95950ed8650a7ef91babe",
+      "native_page": 580,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23876; both resolve to native raw LF38. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23908,
+      "source_line_sha256": "92d6f94574b83cb00a4ed9ca68e9f86f31c4fcf6ea076e59b0a525ad15240495",
+      "native_page": 580,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23880; both resolve to native raw LF40. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23910,
+      "source_line_sha256": "708cd92c26dc4b95cc1adb9a6fa631631bbb16e6d54fe7b8a48f7ad0ab83bc9d",
+      "native_page": 580,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23882; both resolve to native raw LF42. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23930,
+      "source_line_sha256": "b47812a4a15529033b36690b4950715ab966af3a8306660e445d3043bd7f6ff6",
+      "native_page": 581,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23944; both resolve to native raw LF31. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    },
+    {
+      "source_line": 23931,
+      "source_line_sha256": "96683ee7638a8a651497f0f12b769af7cedbdacfaeb77c51f9847dcf0cf7697f",
+      "native_page": 581,
+      "reason": "No exact same-page native raw LF match; native body/superscript or stray-glyph grouping differs. Retain this entire original LF record unchanged rather than regroup or relocate glyphs."
+    },
+    {
+      "source_line": 23944,
+      "source_line_sha256": "e6eeb4cb3a8d11c59199e56f464167953c92287f81b801f18f0b43dbc83ff1e4",
+      "native_page": 581,
+      "reason": "Standalone reference digit has the same non-whitespace value as the other source marker at LF23930; both resolve to native raw LF31. Native geometry distinguishes body superscript from page-foot marker. Retain both original source LF records unchanged rather than reusing a native line or changing marker placement.",
+      "preserve_original": true,
+      "native_match_count": 1
+    }
+  ],
+  "retained_locus_inspection": "Every listed line was inspected against its same native page and raw extraction.35source lines have zero same-page raw matches because native grouping differs around superscript references or stray OCR glyphs, including source page570footnote debris and page574ex/superscript/hoc grouping.46further lines are both body and page-foot markers in23same-value reference-digit pairs; they retain their original bytes without claiming one raw numeral as two identities. All81records are retained byte-for-byte, with exact source-line hashes, native pages, reasons and candidate counts where opted in.",
+  "source_notes_original_physical_ranges": [
+    [
+      23273,
+      23274
+    ],
+    [
+      23313,
+      23318
+    ],
+    [
+      23356,
+      23357
+    ],
+    [
+      23397,
+      23412
+    ],
+    [
+      23452,
+      23459
+    ],
+    [
+      23500,
+      23506
+    ],
+    [
+      23545,
+      23546
+    ],
+    [
+      23621,
+      23622
+    ],
+    [
+      23661,
+      23668
+    ],
+    [
+      23707,
+      23708
+    ],
+    [
+      23782,
+      23785
+    ],
+    [
+      23823,
+      23826
+    ],
+    [
+      23863,
+      23864
+    ],
+    [
+      23904,
+      23911
+    ],
+    [
+      23944,
+      23945
+    ]
+  ],
+  "raster_sha256": {
+    "565": "9f4a9e5b898c92ceb88635e5d2ce4e3551c04112c004eea27e5008129247a160",
+    "566": "29436620663770c25011e412f2cc0544e4b18f7474d5540c79734effa9a4d2cd",
+    "567": "2ec999ee517ed0465197ceb43162422ab3d186f98f7a8a9560455de985504c30",
+    "568": "15b18b8b6f9cdb6b4751020ffa3e6b1ec73b45cc5d09998d94a5753a4d5769fc",
+    "569": "20433a3a165d4c3f74e15d54dd53624c9cce256e9131b2a22beeb2866add157d",
+    "570": "bf5bab0867ff951c26c2fd334b456663e0cfdb0448bc25061d5508ea89db92ef",
+    "571": "2e739a6c5ec908a5e66dbabbbecc9c915e28827a7fa4fde03363e7ebfe259d8c",
+    "572": "909cc8a53544dda313211dfc6824a444c9437f4eea994bd1c7eda7ce450446c3",
+    "573": "b2423591ad3eb5951c1beb8f742c38c990a4035b0a9c4df95c6e471449c0b5f6",
+    "574": "f5ceee133607de732046a6520680de5446e97c3a87308d98fedc2dcc5512f264",
+    "575": "ca07a905d7682867e275e622cc22090be55878160ce5705a4508cedac8aeeda1",
+    "576": "db52f23289c008e42230a200075e28c628acb11e3a457b6b8656c79adac31a35",
+    "577": "46c75c6685243d72b620aca3c4b637eb3fe7c88119290201c1b175d9a5845174",
+    "578": "9db3b68d5dcef17b84057de14831635bb4277a3002987d94fd9f5058db2b4a50",
+    "579": "10b0148453036b44d2f1104f6eadaabe816eb8bf09bac19e0c747e1633c3e4c7",
+    "580": "0910d33a46cd089ce966653ad937d474bf506b65dea76f2be1a2eb50cfe90445",
+    "581": "dea2ad87bb0f5d367c14782375ae1b53cfcbabc82f2124d40c901b1c2db2ba9e"
+  },
+  "limitations": "Vatican OCR reconstruction only. Literal glyph errors, reference-mark placement and source hard-line hyphens remain; no original-print or lexical collation. Original whitespace remains at35unmatched lines and46reference-marker lines."
+}

@@ -1,5 +1,17 @@
 # Source Schema Changelog
 
+## Bounded English source-admission inventory ownership — added 2026-10-30
+
+The papal collection owns exactly `historical-english-source-intake-02.json`,
+`historical-english-source-intake-03.json` and their `-scope.json` inputs,
+with their independently recorded three-act audit envelopes. These are
+source-admission judgments, separate from PDF-layout review. Recognizing their
+metadata creates no source records, verified passages, bindings or review
+states. Unknown filenames, wrong envelopes and missing typed fields remain
+rejected; existing source, fingerprint, rights and search semantics are unchanged.
+The internal library-cache namespace advances to `2` so a prior validator's
+cached rejection cannot survive the new ownership envelopes.
+
 ## Papal collection inventory ownership — added 2026-10-26
 
 The source-tree validator recognizes the exact catalog, archive, source-link,

@@ -1,0 +1,103 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "historical-editor-annotation-derivative",
+   "byte_size": 154,
+   "edition_owned": true,
+   "id": "artifact.robert-james-mcghee.nullity-government-queen-victoria-ireland.1839.elapso-editor-notes-988ebe707d03b370",
+   "media_type": "text/plain",
+   "notes": "M‘Ghee editorial interjection in section3 and two explanatory parentheses in section4. These are historical translator/editor words, not Benedict XIV words.",
+   "page_count": null,
+   "retrieved": "2026-10-30",
+   "rights": "public-domain",
+   "rights_basis": "United States public domain: the historical English translation was printed in Robert J. M‘Ghee, The Nullity of the Government of Queen Victoria in Ireland (Dublin: Richard Moore Tims; London: Simpkin, Marshall and Co., 1839), pp. 209–214. The native title/imprint on PDF page 7 and all translation-bearing native pages 263–268 were visually inspected on 2026-10-30. The 1839 printing supplies this translation's publication evidence independently of the act's 1751 date. The maximum historical term has expired under the repository's United States rights position in src/sources/inventories/papal-documents-rights-v1.toml (17 U.S.C. 304–305; 104A remainder where applicable). This derivative excludes modern digitization furniture and separately identified surrounding polemical commentary. Historical source wording is excluded from Triptych's CC BY 4.0.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/OfQueenVictoriaInIreland/OfQueenVictoriaInIreland.pdf",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "historical-selection-recipe",
+   "byte_size": 3316,
+   "edition_owned": true,
+   "id": "artifact.robert-james-mcghee.nullity-government-queen-victoria-ireland.1839.elapso-recipe-db45b3dbae0ec207",
+   "media_type": "application/json",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-10-30",
+   "rights": "project-created",
+   "rights_basis": "Project-created exact-source-boundary and transformation recipe; historical delimiters are short source identifications.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/OfQueenVictoriaInIreland/OfQueenVictoriaInIreland.pdf",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "historical-translation-derivative",
+   "byte_size": 8519,
+   "edition_owned": true,
+   "id": "artifact.robert-james-mcghee.nullity-government-queen-victoria-ireland.1839.elapso-text-5ca9eba70ed98d9d",
+   "media_type": "text/plain",
+   "notes": "Complete historical English papal body: translated subject heading/protocol, preamble, numbered sections1–5, blessing and date. Translator annotations separately retained under artifact.robert-james-mcghee.nullity-government-queen-victoria-ireland.1839.elapso-editor-notes-988ebe707d03b370. Surrounding polemical caption and excursus excluded. Native spelling and mistranslations retained. Native word “commuicated” is retained as printed; no n supplied.",
+   "page_count": null,
+   "retrieved": "2026-10-30",
+   "rights": "public-domain",
+   "rights_basis": "United States public domain: the historical English translation was printed in Robert J. M‘Ghee, The Nullity of the Government of Queen Victoria in Ireland (Dublin: Richard Moore Tims; London: Simpkin, Marshall and Co., 1839), pp. 209–214. The native title/imprint on PDF page 7 and all translation-bearing native pages 263–268 were visually inspected on 2026-10-30. The 1839 printing supplies this translation's publication evidence independently of the act's 1751 date. The maximum historical term has expired under the repository's United States rights position in src/sources/inventories/papal-documents-rights-v1.toml (17 U.S.C. 304–305; 104A remainder where applicable). This derivative excludes modern digitization furniture and separately identified surrounding polemical commentary. Historical source wording is excluded from Triptych's CC BY 4.0.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/OfQueenVictoriaInIreland/OfQueenVictoriaInIreland.pdf",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "complete-pdf-layout-extraction",
+   "byte_size": 665103,
+   "edition_owned": true,
+   "id": "artifact.robert-james-mcghee.nullity-government-queen-victoria-ireland.1839.layout-5bdd9d1694ec6dfb",
+   "media_type": "text/plain",
+   "page_count": null,
+   "retrieved": "2026-10-30",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://archive.org/download/OfQueenVictoriaInIreland/OfQueenVictoriaInIreland.pdf",
+   "storage": "restricted"
+  },
+  {
+   "artifact_type": "facsimile-pdf",
+   "byte_size": 13650586,
+   "edition_owned": true,
+   "id": "artifact.robert-james-mcghee.nullity-government-queen-victoria-ireland.1839.scan-31cb39239ad8da40",
+   "media_type": "application/pdf",
+   "page_count": 296,
+   "retrieved": "2026-10-30",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://archive.org/download/OfQueenVictoriaInIreland/OfQueenVictoriaInIreland.pdf",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": "Robert James M‘Ghee (historical compiler and translator)",
+  "date": "1839",
+  "editors": [],
+  "id": "edition.robert-james-mcghee.nullity-government-queen-victoria-ireland.1839-tims-dublin",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "Dublin: Richard Moore Tims, Grafton Street; London: Simpkin, Marshall and Co., 1839. Printed by Thomas L. White, Fleet Street, Dublin.",
+  "title": "The Nullity of the Government of Queen Victoria in Ireland",
+  "translators": [
+   "Robert James M‘Ghee"
+  ],
+  "year": 1839
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Robert James M‘Ghee",
+  "category": "historical-document-collection",
+  "description": "Historical anti-Catholic polemical compilation with Latin documents and English human translations. Container authorship and commentary belong to M‘Ghee; papal constituents retain their own issuer.",
+  "id": "work.robert-james-mcghee.nullity-government-queen-victoria-ireland",
+  "languages": [
+   "en",
+   "la"
+  ],
+  "title": "The Nullity of the Government of Queen Victoria in Ireland; or, the Pope, the Virtual Ruler of the Land"
+ }
+}
