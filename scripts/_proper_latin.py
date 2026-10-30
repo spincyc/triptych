@@ -1120,10 +1120,10 @@ def sanitize_proper(
     def sanitize(owner: dict, key: LatinKey) -> None:
         unpublished = _is_held_unpublished_body_owner(owner)
         if unpublished or _is_removed_body_owner(owner):
-            if unpublished:
-                # Invalid resident text is rejected by the source checker;
-                # this boundary still cannot emit it before validation.
-                owner.pop("text", None)
+            # Invalid resident text under either private marker is rejected
+            # by the source checker; this boundary must also remove it before
+            # validation, including an explicitly removed owner's payload.
+            owner.pop("text", None)
             # No retained hash, witness, reason source, or wording crosses the
             # public boundary.  `withheld` records only the public-safe cause
             # of this typed absence, allowing readers to distinguish it from a
