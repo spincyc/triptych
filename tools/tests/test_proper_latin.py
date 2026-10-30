@@ -64,9 +64,16 @@ LEGACY_QUALIFIED_KEYS = {
 }
 
 
-CURRENT_AUTHORITY_PATH = ROOT / "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json"
+HISTORICAL_FINITE_AUTHORITY_RAW = (ROOT / "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json").read_bytes()
+if hashlib.sha256(HISTORICAL_FINITE_AUTHORITY_RAW).hexdigest() != "920299972ab84575183de8c84adcd3f7418bdc46304fbe1d6a4435fad1103ee3":
+    raise AssertionError("exact original sixteen-scope authority")
+HISTORICAL_FINITE_SCOPES = {
+    LatinKey(*scope["key"]): scope
+    for scope in json.loads(HISTORICAL_FINITE_AUTHORITY_RAW)["scopes"]
+}
+CURRENT_AUTHORITY_PATH = ROOT / "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json"
 CURRENT_AUTHORITY_RAW = CURRENT_AUTHORITY_PATH.read_bytes()
-if hashlib.sha256(CURRENT_AUTHORITY_RAW).hexdigest() != "920299972ab84575183de8c84adcd3f7418bdc46304fbe1d6a4435fad1103ee3":
+if hashlib.sha256(CURRENT_AUTHORITY_RAW).hexdigest() != "495e5b3672cccb8f2c3ea07398104c4b72026ffb7139de21d25087edcab1f48e":
     raise AssertionError("exact adopted finite Latin authority")
 CURRENT_QUALIFIED_SCOPES = {
     LatinKey(*scope["key"]): scope
@@ -1074,8 +1081,11 @@ class ProductionLedgerTests(unittest.TestCase):
         self.assertEqual({("roman-1962", LatinKey("s-ignatii-episcopi-martyris", "", "Postcommunion", "", "", 1))},
                          ignatius_witnessed)
         self.assertEqual(2, len(LEGACY_QUALIFIED_KEYS))
-        self.assertEqual(16, len(CURRENT_QUALIFIED_SCOPES))
-        self.assertEqual(18, len(QUALIFIED_KEYS))
+        self.assertEqual(16, len(HISTORICAL_FINITE_SCOPES))
+        for key, scope in HISTORICAL_FINITE_SCOPES.items():
+            self.assertEqual(scope, CURRENT_QUALIFIED_SCOPES[key])
+        self.assertEqual(22, len(CURRENT_QUALIFIED_SCOPES))
+        self.assertEqual(24, len(QUALIFIED_KEYS))
         # The same kind of tripwire as the permitted count: a further witness
         # beside the pinned one is rare, so each is a visible edit here.
         # 30 since 2026-10-01: the 29 KI-054 rows resting on the 1862 name its
@@ -1190,7 +1200,9 @@ class ProductionLedgerTests(unittest.TestCase):
             self.assertEqual(row["text_sha256"], text_sha256(projected_body))
         self.assertEqual(MARIAN_WRAPPER_KEYS, marian_wrappers)
         # Preserve the post-Anthony historical348 control independently of the
-        # current epoch, which also restores Silvester and Palm ordinals5/6.
+        # current epoch, which also restores Silvester, Palm ordinals5/6,
+        # the Lighted Candle blessing, Palm blessing, Improperia and
+        # the three-antiphon Good Friday transfer bundle.
         historical_nonpermitted = []
         anthony_key = LatinKey("s-antonii-padua-confessoris-ecclesiae-doctoris", "", "Collect", "", "", 1)
         for calendar in ("postconciliar", "roman-1962"):
@@ -1203,7 +1215,7 @@ class ProductionLedgerTests(unittest.TestCase):
                 and not (calendar == "roman-1962" and LatinKey.from_mapping(row) == anthony_key)
             )
         self.assertEqual(348, len(historical_nonpermitted))
-        self.assertEqual(345, len(nonpermitted))
+        self.assertEqual(341, len(nonpermitted))
         collated = [
             item for item in nonpermitted if item[2]["provenance_status"] == "collated"
         ]
@@ -1261,7 +1273,7 @@ class ProductionLedgerTests(unittest.TestCase):
         # The same historical post-Anthony345 remains a separate exact control.
         self.assertEqual(345, sum(row["provenance_status"] == "unresolved"
                                   for row in historical_nonpermitted))
-        self.assertEqual(342, len(unresolved))
+        self.assertEqual(338, len(unresolved))
         self.assertTrue(all(row["publication_basis"] == "unresolved" for row in unresolved))
         postconciliar = [
             row for calendar, _, row in nonpermitted if calendar == "postconciliar"

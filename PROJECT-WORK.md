@@ -114,8 +114,40 @@ browser contracts pass 136 assertions; unchanged reader and annual-render code
 retain the earlier broader structural evidence with its original limits. The
 stale ignored All Saints PDFs are restored byte-for-byte from the already
 accepted builds and their existing full-page review records; no new document
-content or PDF acceptance is inferred. Publication and live verification remain
-pending. Final merged evidence is retained in the same reconciliation namespace.
+content or PDF acceptance is inferred. Checkpoint `702f650020` is pushed to
+`origin/main`; the exact outgoing-object audit passes. Pages and repository
+hygiene both succeed on that exact commit. All 58 targeted live HTTPS responses
+match the verified artifact, including the reader routes and code, all three
+Proper datasets, Ordinary data, source index and historical Nativity source.
+The corrected English and its source/target qualifications remain intact.
+Final merged evidence is retained in the same reconciliation namespace.
+
+The next bounded source cohort has actual finite source/English adoption for
+seven Roman uses and eighteen postconciliar uses. The former includes six
+qualified adaptations and a separately sourced old three-antiphon bundle; the
+latter includes ten qualified English uses, five literal historical translations
+and three ordinary public-domain study translations. The complete later
+contributions, strongest contrary arguments, exact bodies, source bindings and
+surfaces were assessed separately. Current-book fidelity, approved translations
+and wider book arrangements are not inferred. Canonical source integration,
+finite-authority activation and owner generation are installed. Composed English
+is now 1,414/1,448 Roman targets, 1,374/1,391 Bonn witness study targets and
+173/574 modern Roman targets; the corresponding gaps are 34, 17 and 401. These
+remain represented-body counts, including the seventy earlier drafts with open
+review debt. Ten new Sources reading passages expose already accepted Ordinary
+English without adding new wording. The independently reviewed source epoch
+binds 7,264 exact inputs, preserves all seventeen original raw replay streams
+and retains historical refusals separately from the current admissions.
+Canonical source consumers pass through the recorded full runs and corrected
+executions; the six census-number collision subcases retain their explicit
+short-number skips. The corrections preserve earlier English admissions and
+source refusals rather than adding texts. Reconciliation with newer main, the
+separately reviewed sanitizer correction, final artifact checks and publication
+remain required before counting this cohort as delivered. Exact local evidence
+is retained in `next-english-2026-10-30/local-source-validation.json` under the
+same review namespace.
+The actual seven-case decision and its source bindings are retained under
+`workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/`.
 The existing real-terminal maintainer acceptance and broader product promises
 retain their own requirements.
 

@@ -1,0 +1,35 @@
+{
+  "schema": "triptych-bounded-metadata-successor-review/v1",
+  "recorded_on": "2026-10-30",
+  "scope": "Pentecost simple Vigil Collect occurrence2 relation label only. No source, ancient body, English, conclusion, locator or recipient reconsideration.",
+  "verdict": "accept-conservative-whole-prayer-relation-variant-successor",
+  "base_source_English_review_sha256": "bf2e4449ced7c9ed61c13cc261f95fa3d01a49a2fd2ea74a37a688128e46c7be",
+  "frozen_manifest_sha256": "138f89b58d46ec03584eae4b04e7dc4d0e23a2e03b0ee766129e3e187017b61a",
+  "frozen_entries_sha256": "2c70b1fba9c8628fd38c624b902a601296b05bb025d950ec8133533e9ed4c3c7",
+  "identity": [
+    "pentecost",
+    "vigil",
+    "Collect",
+    "all",
+    2
+  ],
+  "authorized_successor_delta": {
+    "field": "relation",
+    "before": "verbatim",
+    "after": "variant"
+  },
+  "reason": "The petition is word-exact after received inlustratione/illustratione spelling and two explicitly disclosed local word-order changes. The existing project-created verbatim definition expressly permits word order; those moves alone are not a lexical variant. The complete recorded old prayer also has a longer conclusion, while the selected secondary comparison uses only its directly witnessed Per Dominum. first two words. A conservative whole-prayer variant label qualifies that fully disclosed comparison and avoids implying identical complete forms. It does not say the old petition contains substituted words, nor that a shortened generic conclusion adds authored expression.",
+  "preserved_facts": [
+    "Old per gratiam tuam renati sunt versus comparison per tuam gratiam sunt renati.",
+    "Old per dominum nostrum iesum christum in unitate eiusdem. versus selected directly witnessed two-word Per Dominum. cue.",
+    "Every petition word remains independently established in Hadrianum Wilson1915 printed77/AP135; no petition word added, substituted or omitted.",
+    "Draft English remains exactly accepted source/English hash372110d4166c08feb6198da4db8185c3313fd35477ad3391996e43d9d8e45d37 with finalLF.",
+    "Bounded secondary2002 comparison only; no printed2002 or authenticated2008 fullbody upgrade."
+  ],
+  "integration_limits": [
+    "Prepare a new separately pinned successor; do not overwrite immutable package-v1, candidate-four or original review.",
+    "Keep the existing detailed divergence rather than replacing it with the broad relation word.",
+    "Any extendedVigil recipient mapping and root whole-expression adoption remain separate, finite source decisions."
+  ],
+  "tracked_mutations": []
+}

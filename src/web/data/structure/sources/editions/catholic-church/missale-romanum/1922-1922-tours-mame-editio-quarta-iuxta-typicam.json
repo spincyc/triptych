@@ -811,6 +811,36 @@
    "storage": "tracked"
   },
   {
+   "artifact_type": "checked-transcription",
+   "byte_size": 234,
+   "edition_owned": true,
+   "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.queen-introit-gaudeamus-latin-20261029",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-10-29",
+   "rights": "public-domain",
+   "rights_basis": "The complete bounded Gaudeamus Introit wording of the Tours Mame 1922 printing is independently public domain in the United States by publication date. No Reginae addition, conditional Paschal Alleluia or revised Psalm 44 rendering is supplied in this historical transcription.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "facsimile-pdf-excerpt",
+   "byte_size": 388563,
+   "edition_owned": true,
+   "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.queen-introit-gaudeamus-pages-20261029",
+   "media_type": "application/pdf",
+   "notes": null,
+   "page_count": 2,
+   "retrieved": "2026-10-29",
+   "rights": "public-domain",
+   "rights_basis": "These two complete pages are mechanically extracted from the identified Tours Mame 1922 printing, independently public domain in the United States by publication date. Mechanical reproduction and extraction add no new human authorship. No later Queenship wording is included in this historical source artifact.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
    "artifact_type": "facsimile-extract-pdf",
    "byte_size": 52059,
    "edition_owned": true,
@@ -1040,6 +1070,32 @@
    "text_path": "structure/sources/text/passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.theodore-two-own-orations-checked-2026-10-20.json",
    "verified_on": "2026-10-20",
    "words": 42
+  },
+  {
+   "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.queen-introit-gaudeamus-latin-20261029",
+   "artifact_type": "checked-transcription",
+   "context": "The complete earlier Gaudeamus arrangement, including its old Psalm 44:2 clause and abbreviated Gloria Patri cue. It is not a Queenship appointment and is not an exact source for the later Reginae, Paschal cues or revised Psalm Latin.",
+   "id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.queen-introit-carmel-gaudeamus-base-20261029",
+   "locus": "16 July Carmel Marian Introit, printed p. 656, artifact p. 770, extracted p. 1, right column; normalized text physical line 1. Corroborating 7 October Rosary Introit: printed p. 731, artifact p. 845, extracted p. 2.",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The source images show no Reginae epithet and no Paschal Alleluia addition. The Psalm clause is Eructavit ... opera mea, rather than Effundit ... carmen meum. These substantive differences remain explicit.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The complete bounded Gaudeamus Introit wording of the Tours Mame 1922 printing is independently public domain in the United States by publication date. No Reginae addition, conditional Paschal Alleluia or revised Psalm 44 rendering is supplied in this historical transcription.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.queen-introit-carmel-gaudeamus-base-20261029.json",
+   "verified_on": "2026-10-29",
+   "words": 37
   },
   {
    "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",

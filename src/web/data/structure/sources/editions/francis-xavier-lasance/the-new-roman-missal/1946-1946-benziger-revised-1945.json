@@ -1,6 +1,21 @@
 {
  "artifacts": [
   {
+   "artifact_type": "normalized-text",
+   "byte_size": 1398,
+   "edition_owned": true,
+   "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.english-completion-20261029-postconciliar-phase2-pange-historical-selections-en",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "notes": "Two exact historical human-English recipient rows, jointly quoting all six source stanzas without the between-selection blank-line separator. Amen occurs only in the closing selection. The complete Roman-owned source artifact is a dependency, remains unchanged and is not duplicated.",
+   "page_count": null,
+   "retrieved": "2026-10-30",
+   "rights": "public-domain",
+   "rights_basis": "Only the original historical 1937/1945 human English on the actual 1946 printing's ordinary pages is retained, under the existing registration-level United States nonrenewal finding. Faithful transcription adds no authorship; this English is excluded from the project CC BY 4.0 offer. Neither whole scan, Google framing, source image, lettered insert, modern rubric nor modern liturgical wording is retained.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
    "artifact_type": "checked-bilingual-transcription",
    "byte_size": 788,
    "edition_owned": true,
@@ -497,6 +512,94 @@
    ],
    "storage": "remote",
    "verified_on": "2026-10-23",
+   "withheld": "rights"
+  },
+  {
+   "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.english-completion-20261029-postconciliar-phase2-pange-historical-selections-en",
+   "artifact_type": "normalized-text",
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-chant-at-the-place-of-reposition-all-1-publication",
+   "locus": "Holy Thursday / Pange lingua / closing Tantum ergo and Genitori stanzas with Amen / printed p. 455",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-30",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d",
+   "artifact_type": "facsimile-pdf",
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-chant-at-the-place-of-reposition-all-1-source",
+   "locus": "Holy Thursday / Pange lingua / closing Tantum ergo and Genitori stanzas with Amen / printed p. 455",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "The rights position for this artifact has not been settled, and an unsettled question is not a permission.",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/the-new-roman-missal/The%20New%20Roman%20Missal%20%281945%29_text.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-10-30",
+   "withheld": "rights"
+  },
+  {
+   "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.english-completion-20261029-postconciliar-phase2-pange-historical-selections-en",
+   "artifact_type": "normalized-text",
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-hymn-at-the-transfer-of-the-blessed-sacrament-all-1-publication",
+   "locus": "Holy Thursday / Pange lingua / first four historical stanzas / printed pp. 454-455",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-30",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d",
+   "artifact_type": "facsimile-pdf",
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-hymn-at-the-transfer-of-the-blessed-sacrament-all-1-source",
+   "locus": "Holy Thursday / Pange lingua / first four historical stanzas / printed pp. 454-455",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "The rights position for this artifact has not been settled, and an unsettled question is not a permission.",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/the-new-roman-missal/The%20New%20Roman%20Missal%20%281945%29_text.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-10-30",
    "withheld": "rights"
   },
   {

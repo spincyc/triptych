@@ -89,6 +89,21 @@
    "rights_jurisdiction": "United States",
    "source_url": null,
    "storage": "tracked"
+  },
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 198,
+   "edition_owned": true,
+   "id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-phase2-otherseasonal-bute-historical-en",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "notes": "1 complete historical human English bodies, unchanged from the independently accepted frozen packet 11c4c137fd60453e0a00f38ea8066f6b7dd93ea9721af57cd271061a68c85d00. Verification and publication passages use exactly the same source locus. The comparison is bounded to the directly inspected secondary digitally typeset 2002 reproduction. Its fidelity to printed 2002 and correspondence to the authenticated 2008 reimpressio remain unresolved. No approved modern English, ICEL wording, recitation authority, protected modern Latin payload or modern source image is supplied.",
+   "page_count": null,
+   "retrieved": "2026-10-29",
+   "rights": "public-domain",
+   "rights_basis": "The identified English book was published by William Blackwood and Sons in 1908. Its 1908 printed contents have no remaining United States copyright term in 2026: a 95-year maximum term ended before 2026, and any URAA restoration supplies only the remainder of the otherwise applicable United States term. Faithful mechanical scans and project transcription of those public-domain English words add no human authorship. The stated basis is publication date and mechanical reproduction, not Internet Archive availability or a host label. This covers the historical human translation, not approved modern English or any modern editorial addition. Faithful transcription adds no new authorship. The historical human wording is excluded from Triptych’s CC BY 4.0 offer. No approved contemporary English, modern Latin, OCR wrapper, source image, publisher furniture or translated rubric is included.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
   }
  ],
  "edition": {
@@ -104,6 +119,50 @@
   "year": 1908
  },
  "passages": [
+  {
+   "artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-phase2-otherseasonal-bute-historical-en",
+   "artifact_type": "normalized-text",
+   "id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-phase2-otherseasonal-advent-december-18-main-entrance-antiphon-all-1-publication",
+   "locus": "Wednesday / First Responsory, initial complete body, printed p. 222",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-29",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf",
+   "artifact_type": "page-image-scan-pdf",
+   "id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-phase2-otherseasonal-advent-december-18-main-entrance-antiphon-all-1-source",
+   "locus": "Wednesday / First Responsory, initial complete body, printed p. 222",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "The exact bytes are not retained in this repository; the record keeps their retrieval location, hash and rights instead.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/romanbreviaryref01cathuoft/romanbreviaryref01cathuoft.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-10-29",
+   "withheld": "storage"
+  },
   {
    "artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-ordinary-apostles-english",
    "artifact_type": "normalized-text",

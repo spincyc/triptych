@@ -12,12 +12,22 @@ from collections.abc import Mapping
 
 BASIS = "qualified-nonoriginal-adaptation"
 METHOD_ID = "english-completion-20261029-finite-latin-v1"
-ADOPTION_PATH = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json"
+ADOPTION_PATH = 'workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json'
 # Set only to the actual independently reviewed root adoption's byte digest.
-ADOPTION_SHA256 = '920299972ab84575183de8c84adcd3f7418bdc46304fbe1d6a4435fad1103ee3'
+ADOPTION_SHA256 = '495e5b3672cccb8f2c3ea07398104c4b72026ffb7139de21d25087edcab1f48e'
 # These recognition pins survive missing authority data. They classify copied
 # bodies for refusal; only the exact authority below can authorize new wording.
-RECOGNITION = ({'key': ['beatae-mariae-virginis-reginae', '', 'Offertory', '', '', 1],
+RECOGNITION = ({'key': ['beatae-mariae-virginis-reginae', '', 'Alleluia', '', '', 1],
+  'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-regular-alleluia-qualified',
+  'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-regular-alleluia-qualified-01c6691e',
+  'body_sha256': '01c6691e3d76f113226e381bcb55c959ab40f630541c544fbbfadb0a110f2071',
+  'artifact_payload_sha256': '01c6691e3d76f113226e381bcb55c959ab40f630541c544fbbfadb0a110f2071'},
+ {'key': ['beatae-mariae-virginis-reginae', '', 'Introit', '', '', 1],
+  'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-introit-qualified',
+  'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-introit-qualified-62bc1f50',
+  'body_sha256': '62bc1f505027f3ba9f914511ae9c836b6b460068c08409677226a16ff44de459',
+  'artifact_payload_sha256': '62bc1f505027f3ba9f914511ae9c836b6b460068c08409677226a16ff44de459'},
+ {'key': ['beatae-mariae-virginis-reginae', '', 'Offertory', '', '', 1],
   'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-offertory-qualified',
   'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-offertory-qualified-f4e866f4',
   'body_sha256': 'f4e866f44553d4181484958a6e4d79ffe7d1e560a4a56f39c298b877093de446',
@@ -37,6 +47,11 @@ RECOGNITION = ({'key': ['beatae-mariae-virginis-reginae', '', 'Offertory', '', '
   'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.comm-s-zephyrini-papae-martyris--collect--1',
   'body_sha256': 'f8732dcb77e4139160ed879dc19947b26595c5d3541442c3f9ec67cc5bf774ad',
   'artifact_payload_sha256': 'f8732dcb77e4139160ed879dc19947b26595c5d3541442c3f9ec67cc5bf774ad'},
+ {'key': ['commune-summorum-pontificum', '', 'Collect (in plurali)', '', '', 1],
+  'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-plural-collect-qualified',
+  'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-plural-collect-qualified-77215320',
+  'body_sha256': '77215320cce36c1a3823c3643d63bac8f3f98579ded3eb454c1fead0f6abf440',
+  'artifact_payload_sha256': '77215320cce36c1a3823c3643d63bac8f3f98579ded3eb454c1fead0f6abf440'},
  {'key': ['commune-summorum-pontificum', '', 'Postcommunion', '', '', 1],
   'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-postcommunion-qualified',
   'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-two-qualified-3920bd77',
@@ -47,11 +62,21 @@ RECOGNITION = ({'key': ['beatae-mariae-virginis-reginae', '', 'Offertory', '', '
   'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-two-qualified-3920bd77',
   'body_sha256': '513de5a7dff9120d02f2fcc6cbc4c5a9d19a69ffd18e9075c5325885a98e43ab',
   'artifact_payload_sha256': '3920bd772a32ebba24b336a71f9bcd30eeff745c60630d5fe20739609e58a75b'},
+ {'key': ['easter-vigil', '', 'Blessing of the Lighted Candle', '', '', 1],
+  'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.lighted-candle-qualified',
+  'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.lighted-candle-qualified-05954809',
+  'body_sha256': '0595480950da324de25ef33113f56537a979517bd4bd23beb75d7643f3310b5f',
+  'artifact_payload_sha256': '0595480950da324de25ef33113f56537a979517bd4bd23beb75d7643f3310b5f'},
  {'key': ['exaltatione-s-crucis', '', 'Offertory', '', '', 1],
   'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.cross-offertory-qualified',
   'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.cross-offertory-qualified-18060fef',
   'body_sha256': '18060fef847e0615136dba2a6e73b16797e3b944665c4e1475dc8643be33fa79',
   'artifact_payload_sha256': '18060fef847e0615136dba2a6e73b16797e3b944665c4e1475dc8643be33fa79'},
+ {'key': ['good-friday', '', 'Improperia', '', '', 1],
+  'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.improperia-whole-qualified',
+  'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.improperia-whole-qualified-83cbd703',
+  'body_sha256': '83cbd70391a22369245ab9c1019d3d25db59e02b5b267474f3b039130d40a616',
+  'artifact_payload_sha256': '83cbd70391a22369245ab9c1019d3d25db59e02b5b267474f3b039130d40a616'},
  {'key': ['immaculati-cordis-beatae-mariae-virginis', '', 'Collect', '', '', 1],
   'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.immaculati-cordis-beatae-mariae-virginis--collect--1',
   'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.immaculati-cordis-beatae-mariae-virginis--collect--1',
@@ -62,6 +87,11 @@ RECOGNITION = ({'key': ['beatae-mariae-virginis-reginae', '', 'Offertory', '', '
   'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.immaculati-cordis-beatae-mariae-virginis--postcommunion--1',
   'body_sha256': '6c81c9d5ef0912c0e01fc911ab4dc9fe86648e27e49651092086e38d2ca17795',
   'artifact_payload_sha256': '6c81c9d5ef0912c0e01fc911ab4dc9fe86648e27e49651092086e38d2ca17795'},
+ {'key': ['palm-sunday', '', 'Blessing of the Palms', '', '', 1],
+  'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.palm-blessing-qualified',
+  'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.palm-blessing-qualified-800c4d2c',
+  'body_sha256': '800c4d2cbcdd38b63a488b726080ae2c8497cd882d277602dd389a396c01f31e',
+  'artifact_payload_sha256': '800c4d2cbcdd38b63a488b726080ae2c8497cd882d277602dd389a396c01f31e'},
  {'key': ['s-clementis-i-papae-martyris', '', 'Collect', '', '', 1],
   'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-clementis-i-papae-martyris--collect--1',
   'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-clementis-i-papae-martyris--collect--1',
@@ -97,7 +127,7 @@ RECOGNITION = ({'key': ['beatae-mariae-virginis-reginae', '', 'Offertory', '', '
   'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1',
   'body_sha256': '9d2e1a29fd2df2395e01d7078745f77af00df9a266f597ea9b822c49d4eb8005',
   'artifact_payload_sha256': '9d2e1a29fd2df2395e01d7078745f77af00df9a266f597ea9b822c49d4eb8005'})
-PRIOR_ROUTES = {"row_sha256": [], "artifacts": [], "readings": []}
+PRIOR_ROUTES = {'row_sha256': [], 'artifacts': [], 'readings': []}
 TRUSTED_ROOT = Path(__file__).resolve().parents[1]
 KEY_FIELDS = ("mass", "form", "proper", "course", "cycle", "occurrence")
 _UNSELECTED_TEXT = object()
@@ -278,6 +308,21 @@ def _selected_sha256(text):
 
 def claims_row(row):
     if not isinstance(row, Mapping):
+        return False
+    # A pure quarantine retains only a former hash, with no body or permission.
+    if (set(row) == set(KEY_FIELDS) | {
+            "body_status", "text_sha256", "provenance_status",
+            "publication_status", "publication_basis", "surfaces"}
+            and row["body_status"] == "removed"
+            and all(isinstance(row[field], str) and not _marker(row[field])
+                    for field in KEY_FIELDS[:-1])
+            and all(row[field].strip() for field in ("mass", "proper"))
+            and isinstance(row["occurrence"], int)
+            and not isinstance(row["occurrence"], bool) and row["occurrence"] > 0
+            and _hex_digest(row["text_sha256"])
+            and all(row[field] == "unresolved" for field in
+                    ("provenance_status", "publication_status", "publication_basis"))
+            and row["surfaces"] == []):
         return False
     if prior_row_exact(row):
         return False

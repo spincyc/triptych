@@ -1,0 +1,225 @@
+{
+  "schema": "triptych-independent-source-and-translation-review/v1",
+  "reviewed_on": "2026-10-30",
+  "reviewed_at_utc": "2026-10-30T05:58:01Z",
+  "decision": "accepted-source-facts-and-original-study-english-fidelity",
+  "accepted": true,
+  "identity": [
+    "easter-vigil",
+    "main",
+    "Blessing of the Lighted Candle",
+    "all",
+    1
+  ],
+  "candidate_plan_path": ".scratch/roman-english-completion-20261029/temporal/lighted-candle-oldwhole/install-plan-draft-v2.json",
+  "candidate_plan_sha256": "ad620b1ddba510ae104c96b58f698a5abd082558b9ba2a76145d6c9ec1ff9ed4",
+  "supersedes_review_target_sha256": "bb9828454099ae70bb5b4e14bbf5f16703bdf8ef07496e280c54fffdf4044509",
+  "target_latin_sha256": "0595480950da324de25ef33113f56537a979517bd4bd23beb75d7643f3310b5f",
+  "english_sha256": "5abfe150d6bf4f25b8a84197cec8f653b6399ee5cf1b00fa9a55a59a93b3cc90",
+  "old_pustet_latin_sha256": "be854aa4a99d23f87f6cac2fbd494aac99df3bdb74d1b4d97520080562f5165c",
+  "source_files": [
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lighted-candle-old-prayer-latin-20261029-be854aa4/artifact.toml",
+      "sha256": "3bdfda9bd5282bf7eb2f44635f291e34a7928584bad6bc2f62caa2f27e75d63f",
+      "byte_size": 1988
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lighted-candle-old-prayer-latin-20261029-be854aa4/latin.txt",
+      "sha256": "be854aa4a99d23f87f6cac2fbd494aac99df3bdb74d1b4d97520080562f5165c",
+      "byte_size": 430
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lighted-candle-old-prayer-page-20261029-0e5057cc/artifact.toml",
+      "sha256": "a9cbfc7a8cbd6dcda2dd5595da0bff5cff165289085d675319317e76325dad36",
+      "byte_size": 1655
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lighted-candle-old-prayer-page-20261029-0e5057cc/page.pdf",
+      "sha256": "0e5057cc5e3af1f377068dbfab96d99b64f3b95736400715ed9d4e346beb25c0",
+      "byte_size": 142717
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/lighted-candle-old-prayer-checked-20261029.toml",
+      "sha256": "6435a0180306e4f2499741fa20e8321b6c21a805adc8f2d99ff3eeb2ed88f669",
+      "byte_size": 987
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/lighted-candle-old-prayer-image-20261029.toml",
+      "sha256": "1a25e579b192653405353ac82c0fc06671d40fcaae3f0c2d7ab250868f89f65e",
+      "byte_size": 1032
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/lighted-candle-target-word-collation-20261029.toml",
+      "sha256": "af22d7b3e46caa2bd1e6e45e127c08d6b277a6a64888326f947263278dd9227b",
+      "byte_size": 1191
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/lighted-candle-old-prayer-latin-20261029-1334bce8/artifact.toml",
+      "sha256": "e79a99bf99ae9439e276699a23d7798aa13859e32706ea7ee9988d248abdff8d",
+      "byte_size": 1921
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/lighted-candle-old-prayer-latin-20261029-1334bce8/latin.txt",
+      "sha256": "1334bce8473c9265d2547c8052ebc2af3972a0d62952d0ff2e6d90a4fde7e674",
+      "byte_size": 530
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/lighted-candle-old-prayer-pages-20261029-eb290d46/artifact.toml",
+      "sha256": "910a0f4040e6a51bf6d097f51b06b34f05eafd349382d7dbc66369ce357139eb",
+      "byte_size": 2013
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/lighted-candle-old-prayer-pages-20261029-eb290d46/pages.pdf",
+      "sha256": "eb290d46293f2889b2d089b16aae0f744deb1c085f34b5ba0325b1202c20aa43",
+      "byte_size": 294829
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/lighted-candle-old-prayer-checked-20261029.toml",
+      "sha256": "1c67b922cb63fdbf0ee9c4e5597f3f8a77a4ef254986e913aedb76599f1016f1",
+      "byte_size": 980
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/lighted-candle-old-prayer-image-20261029.toml",
+      "sha256": "baba94e18218c621bd259ad3fea03c5ce4ea66de0b2bfd69997fec632ad0a2dd",
+      "byte_size": 1142
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/lighted-candle-intende-whole-image-20261029.toml",
+      "sha256": "54457e10784cfa8d6009c4a1c6dc8670de1a893eb040a28a7c04bde2aca84a28",
+      "byte_size": 1225
+    },
+    {
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/lighted-candle-qualified-05954809/artifact.toml",
+      "sha256": "6fae476734384faf987105380b7984260225e59791f25f17d39244a47584de31",
+      "byte_size": 2811
+    },
+    {
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/lighted-candle-qualified-05954809/latin.txt",
+      "sha256": "0595480950da324de25ef33113f56537a979517bd4bd23beb75d7643f3310b5f",
+      "byte_size": 440
+    },
+    {
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/lighted-candle-qualified.toml",
+      "sha256": "aeba8581345727f0977b170fbe45759e6f8695f8ba41d6bb3c93251d592e7423",
+      "byte_size": 1432
+    }
+  ],
+  "source_controllers": [
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+      "path": ".scratch/resume-postconciliar-orations/pustet-1862.pdf",
+      "sha256": "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3",
+      "path": ".scratch/roman-phase4-discovery-20261022T123009Z/gelasian1894-local-only-whole.pdf",
+      "sha256": "006a38a39250d39c9745acfb4f4a098374027e719dc7ad7e32972fa6a82489bc"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7",
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/ia-pdf-96fd93c7/source.pdf",
+      "sha256": "96fd93c73f8c9df47b6911981155b8b02cf2f2183ca6e87baad15128682d8681"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+      "path": ".scratch/c1-retry-1962/missale62.pdf",
+      "sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+    }
+  ],
+  "inspected_rasters": [
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/lighted-candle-oldwhole/pages/gregorian-212-200.png",
+      "sha256": "90f49eea144d4da241ef40e5242ec239c5b8d07af851d0c9de44af4e4a57942f"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/lighted-candle-oldwhole/pages/gregorian-212-400.png",
+      "sha256": "8fa3a08697f880f60fe3c118311a637e053278647d0890dceb23ca2360081740"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/lighted-candle-oldwhole/pages/pustet-266-200.png",
+      "sha256": "7102f843541bc9bd9a7e909d9972fe8fb82b957c545bf75d1be746c80c4646e7"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/lighted-candle-oldwhole/pages/pustet-266-400.png",
+      "sha256": "a744b4683d006ecc6a52eb79bdaa47bab7d5d364420eb3774e9ee1b3703908fe"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/lighted-candle-oldwhole/pages/target-264-200.png",
+      "sha256": "dce2412a4a4f3b23efefd736ea0d6f318dfb38e0352ed9115d9d38289e4cd597"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/lighted-candle-oldwhole/pages/target-264-400.png",
+      "sha256": "690e94f1624cd75919839923950d061011d170bc37bc3f0fd5b71c34b89d2b8f"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/lighted-candle-oldwhole/pages/wilson-174-200.png",
+      "sha256": "db000f7a24db54fe7fb1282c70f8ccfd8d8c184cd69aee63d0e372f50acb6c82"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/lighted-candle-oldwhole/pages/wilson-174-400.png",
+      "sha256": "4b628f648df22b9c94fc9b193a95c236f8d0ba4e36d4f0ba4a10be7c47432d81"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/lighted-candle-oldwhole/pages/wilson-175-200.png",
+      "sha256": "c6c5a304f81cb4b6f74950a6842decfa54807eac8f3d3fe012ee26baeee29bc6"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/lighted-candle-oldwhole/pages/wilson-175-400.png",
+      "sha256": "e3c97aecb607f01abeaf8497a8e45db1cd74939ba528502abda4e7c7d8420aed"
+    }
+  ],
+  "checks": [
+    "All17 exact proposed-v2 source pins match both draft and bounded graph",
+    "Every proposed TOML parses with schema1/2; all declared payload sizes and hashes match",
+    "All4 whole-source controller hashes match",
+    "Target and English bytes equal v2 row and declared body hashes",
+    "Normalized old Pustet/target word delta independently reproduced"
+  ],
+  "source_graph": {
+    "records": 26,
+    "errors": []
+  },
+  "normalized_word_diff": [
+    {
+      "op": "replace",
+      "old_tokens": [
+        "hoc"
+      ],
+      "new_tokens": [
+        "hunc"
+      ]
+    },
+    {
+      "op": "insert",
+      "old_tokens": [],
+      "new_tokens": [
+        "cereum"
+      ]
+    },
+    {
+      "op": "replace",
+      "old_tokens": [
+        "accende"
+      ],
+      "new_tokens": [
+        "intende"
+      ]
+    }
+  ],
+  "findings": [
+    "Independently inspected all ten full-page rasters at200/400dpi: target PDF264/printed183 no975, Pustet PDF266/printed180, Wilson1894 PDF174-175/printed81-82, Gregorian1915 PDF212/Supplement printed154. Complete target/Pustet words, order and endings agree after the declared normalization except hoc→hunc, added cereum, accende→intende. Pustet visibly prints deportatum; target visibly prints regenerator. Both Missals print the complete Per Christum Dominum nostrum.",
+    "Target body boundaries are faithful: Veniat through nostrum, excluding prior dialogue and Oremus, separate R.Amen, rubrics and adjacent formulas. Stress accents, ligatures, line-end joins, i/j orthography and omitted blessing cross are declared transformations. Target pointing is retained.",
+    "Wilson1894 whole old prayer visibly prints regnator/intende, ergo, no cereum, no in before quocumque, the recorded different word order and diabolica, followed by its entire longer ending and Amen. Normalized old transcription matches the inspected page. Printed82 apparatus confirms footnote35 Gerb.omission and footnote36 Mur.virtutis tuae maiestas.",
+    "Gregorian1915 Supplement whole paragraph visibly prints inuisibilis regnator intende, older order, uirtutis with footnote proposing uirtus, and per dominum. The full paragraph follows the candle/bees exposition and precedes Oratio post benedictionem cerei. This context does not supply an old exact cereum reading. Wilson1894 heads its paragraph Benedictio super incensum. Pustet actual neighboring rubric expressly blesses incense grains; the modern retargeting remains substantive.",
+    "Original study English is semantically faithful throughout: hunc incensum cereum→this lighted candle, invisibilis regenerator→unseen giver of new birth, intende→increase, arcana luminis tui admixtione→hidden mingling of your light, deportatum→is carried, expulsa...nequitia→wickedness...may be driven out, assistat→may be present, and the full short conclusion→Through Christ our Lord. No clause is omitted and no historical-human-English donor body or splice is represented in this packet. Its new English has been assessed as one fresh complete rendering; this is not an exhaustive claim that no earlier translator ever used a shared phrase."
+  ],
+  "defects": [],
+  "rights_and_publication_review": {
+    "adopted": false,
+    "approved": false,
+    "scope": "Excluded. Source facts and English fidelity only; no permission or rights adoption is granted.",
+    "pending_authority_path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json",
+    "method": "english-completion-20261029-finite-latin-v1",
+    "strongest_contrary": "Retargeting incense to a lighted candle and selecting intende may be intentional modern redaction. Old words or variant old prayers do not by themselves prove the complete modern expression publishable. Exact whole-expression rights adoption remains with root translation-policy authority."
+  }
+}

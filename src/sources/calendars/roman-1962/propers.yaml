@@ -9039,21 +9039,16 @@ sections:
           - begin: {chapter: 21, verse: 9}
             end: {chapter: 21, verse: 9}
           ref: Matthew 21:9
-      - name: Blessing of the Palms
-        ordinary_disposition:
-          kind: unplaced
-          group: blessing-and-procession-of-palms
-          region: before-frame
-          basis: The source places this unit in the contiguous palm rite before the Mass Introit.
-        incipit: Benedic, quaesumus, Domine
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
-        notes: The celebrant then sprinkles and incenses the branches in silence.
+      - "name": "Blessing of the Palms"
+        "ordinary_disposition":
+          "kind": "unplaced"
+          "group": "blessing-and-procession-of-palms"
+          "region": "before-frame"
+          "basis": "The source places this unit in the contiguous palm rite before the Mass Introit."
+        "incipit": "Benedic, quaesumus, Domine"
+        "source": "composed"
+        "notes": "The celebrant then sprinkles and incenses the branches in silence."
+        "text": "Benedic, quaesumus, Domine, hos palmarum (seu olivarum aut aliarum arborum) ramos: et praesta; ut, quod populus tuus in tui venerationem hodierno die corporaliter agit, hoc spiritualiter summa devotione perficiat, de hoste victoriam reportando et opus misericordiae summopere diligendo. Per Christum Dominum nostrum.\n"
       - name: First Antiphon at the Distribution of Palms
         ordinary_disposition:
           kind: unplaced
@@ -10313,43 +10308,261 @@ sections:
           unveiled.
         text: |
           Ecce lignum Crucis, in quo salus mundi pependit. Omnes R. Venite, adoremus.
-      - name: Improperia
-        incipit: Popule meus, quid feci tibi?
-        source: mixed
-        verses:
-        - book: Micah
-          ranges:
-          - begin: {chapter: 6, verse: 3}
-            end: {chapter: 6, verse: 4}
-          ref: Micah 6:3-4
-        - book: Isaiah
-          ranges:
-          - begin: {chapter: 5, verse: 4}
-            end: {chapter: 5, verse: 4}
-          ref: Isaiah 5:4
-        - book: Psalms
-          ranges:
-          - begin: {chapter: 66, verse: 2}
-            end: {chapter: 66, verse: 2}
-          ref: Psalm 66:2
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
-        notes: The chant is prolonged as the number of those adoring requires, but always concludes
-          with the doxology Sempiterna sit beatae Trinitati gloria; the two choirs alternate the
-          reproaches and the antiphons Crux fidelis and Dulce lignum between the stanzas.
-      - name: Antiphons at the Translation of the Blessed Sacrament
-        incipit: Adoramus te, Christe
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+      - "name": "Improperia"
+        "incipit": "Popule meus, quid feci tibi?"
+        "source": "mixed"
+        "verses":
+        - "book": "Micah"
+          "ranges":
+          - "begin":
+              "chapter": 6
+              "verse": 3
+            "end":
+              "chapter": 6
+              "verse": 4
+          "ref": "Micah 6:3-4"
+        - "book": "Isaiah"
+          "ranges":
+          - "begin":
+              "chapter": 5
+              "verse": 4
+            "end":
+              "chapter": 5
+              "verse": 4
+          "ref": "Isaiah 5:4"
+        - "book": "Psalms"
+          "ranges":
+          - "begin":
+              "chapter": 66
+              "verse": 2
+            "end":
+              "chapter": 66
+              "verse": 2
+          "ref": "Psalm 66:2"
+        "notes": "Choir labels and directions are nonspoken actions. The chant may be prolonged as the number adoring requires; the doxology is not omitted."
+        "text": "Partes quae ad singulos choros spectant, indicantur numeris 1 (chorus primus), et 2 (chorus secundus); quae autem ab utroque choro simul cantanda sunt, indicantur hoc modo: 1 et 2.\n\nI\n\n1 et 2\n\nPopule meus, quid feci tibi? Aut in quo contristavi te? Responde mihi! V. Quia eduxi te de terra Aegypti: parasti Crucem Salvatori tuo.\n\n1\n\nHagios o Theos.\n\n2\n\nSanctus Deus.\n\n1\n\nHagios Ischyros.\n\n2\n\nSanctus Fortis.\n\n1\n\nHagios Athanatos, eleison himas.\n\n2\n\nSanctus Immortalis, miserere nobis.\n\n1 et 2\n\nQuia eduxi te per desertum quadraginta annis, et manna cibavi te, et introduxi te in terram satis bonam: parasti Crucem Salvatori tuo.\n\n1\n\nHagios o Theos.\n\n2\n\nSanctus Deus.\n\n1\n\nHagios Ischyros.\n\n2\n\nSanctus Fortis.\n\n1\n\nHagios Athanatos, eleison himas.\n\n2\n\nSanctus Immortalis, miserere nobis.\n\n1 et 2\n\nQuid ultra debui facere tibi, et non feci? Ego quidem plantavi te vineam electam meam speciosissimam: et tu facta es mihi nimis amara: aceto namque sitim meam potasti, et lancea perforasti latus Salvatori tuo.\n\n1\n\nHagios o Theos.\n\n2\n\nSanctus Deus.\n\n1\n\nHagios Ischyros.\n\n2\n\nSanctus Fortis.\n\n1\n\nHagios Athanatos, eleison himas.\n\n2\n\nSanctus Immortalis, miserere nobis.\n\nII\n\n1\n\nEgo propter te flagellavi Aegyptum cum primogenitis suis: et tu me flagellatum tradidisti.\n\n2\n\nPopule meus, quid feci tibi? Aut in quo contristavi te? Responde mihi!\n\n1\n\nEgo eduxi te de Aegypto, demerso Pharaone in Mare Rubrum: et tu me tradidisti principibus sacerdotum.\n\n2\n\nPopule meus, quid feci tibi? Aut in quo contristavi te? Responde mihi!\n\n1\n\nEgo ante te aperui mare: et tu aperuisti lancea latus meum.\n\n2\n\nPopule meus, quid feci tibi? Aut in quo contristavi te? Responde mihi!\n\n1\n\nEgo ante te praeivi in columna nubis: et tu me duxisti ad praetorium Pilati.\n\n2\n\nPopule meus, quid feci tibi? Aut in quo contristavi te? Responde mihi!\n\n1\n\nEgo te pavi manna per desertum: et tu me cecidisti alapis et flagellis.\n\n2\n\nPopule meus, quid feci tibi? Aut in quo contristavi te? Responde mihi!\n\n1\n\nEgo te potavi aqua salutis de petra: et tu me potasti felle et aceto.\n\n2\n\nPopule meus, quid feci tibi? Aut in quo contristavi te? Responde mihi!\n\n1\n\nEgo propter te Chananaeorum reges percussi: et tu percussisti arundine caput meum.\n\n2\n\nPopule meus, quid feci tibi? Aut in quo contristavi te? Responde mihi!\n\n1\n\nEgo dedi tibi sceptrum regale: et tu dedisti capiti meo spineam coronam.\n\n2\n\nPopule meus, quid feci tibi? Aut in quo contristavi te? Responde mihi!\n\n1\n\nEgo te exaltavi magna virtute: et tu me suspendisti in patibulo Crucis.\n\n2\n\nPopule meus, quid feci tibi? Aut in quo contristavi te? Responde mihi!\n\nIII\n\n1 et 2 Antiphona:\n\nCrucem tuam adoramus, Domine, et sanctam resurrectionem tuam laudamus, et glorificamus: ecce enim propter lignum venit gaudium in universo mundo.\n\n1 Psalmus 66, 2:\n\nDeus misereatur nostri, et benedicat nobis.\n\n2\n\nIlluminet vultum suum super nos, et misereatur nostri.\n\n1 et 2 Antiphona:\n\nCrucem tuam adoramus, Domine, et sanctam resurrectionem tuam laudamus, et glorificamus: ecce enim propter lignum venit gaudium in universo mundo.\n\nIV\n\n1 et 2 Antiphona:\n\nCrux fidelis, inter omnes arbor una nobilis; Nulla silva talem profert, fronde, flore, germine. Dulce lignum, dulces clavos, dulce pondus sustinet.\n\n1 Hymnus:\n\nPange, lingua, gloriosi lauream certaminis, Et super Crucis trophaeo dic triumphum nobilem: Qualiter Redemptor orbis immolatus vicerit.\n\n2\n\nCrux fidelis, inter omnes arbor una nobilis; Nulla silva talem profert, fronde, flore, germine.\n\n1\n\nDe parentis protoplasti fraude Factor condolens, Quando pomi noxialis in necem morsu ruit: Ipse lignum tunc notavit, damna ligni ut solveret.\n\n2\n\nDulce lignum, dulces clavos, dulce pondus sustinet.\n\n1\n\nHoc opus nostrae salutis ordo depoposcerat: Multiformis proditoris ars ut artem falleret, Et medelam ferret inde, hostis unde laeserat.\n\n2\n\nCrux fidelis, inter omnes arbor una nobilis; Nulla silva talem profert, fronde, flore, germine.\n\n1\n\nQuando venit ergo sacri plenitudo temporis, Missus est ab arce Patris Natus, orbis Conditor, Atque ventre virginali carne amictus prodiit.\n\n2\n\nDulce lignum, dulces clavos, dulce pondus sustinet.\n\n1\n\nVagit infans inter arcta conditus praesepia, Membra pannis involuta Virgo Mater alligat, Et Dei manus pedesque stricta cingit fascia.\n\n2\n\nCrux fidelis, inter omnes arbor una nobilis; Nulla silva talem profert, fronde, flore, germine.\n\n1\n\nLustra sex qui iam peregit, tempus implens corporis, Sponte libera Redemptor passioni deditus, Agnus in Crucis levatur immolandus stipite.\n\n2\n\nDulce lignum, dulces clavos, dulce pondus sustinet.\n\n1\n\nFelle potus ecce languet; spina, clavi, lancea Mite corpus perforarunt, unda manat et cruor; Terra, pontus, astra, mundus quo lavantur flumine!\n\n2\n\nCrux fidelis, inter omnes arbor una nobilis; Nulla silva talem profert, fronde, flore, germine.\n\n1\n\nFlecte ramos, arbor alta, tensa laxa viscera, Et rigor lentescat ille, quem dedit nativitas, Et superni membra Regis tende miti stipite.\n\n2\n\nDulce lignum, dulces clavos, dulce pondus sustinet.\n\n1\n\nSola digna tu fuisti ferre mundi victimam, Atque portum praeparare arca mundo naufrago, Quam sacer cruor perunxit, fusus Agni corpore.\n\n2\n\nCrux fidelis, inter omnes arbor una nobilis; Nulla silva talem profert, fronde, flore, germine.\n\nConclusio numquam omittenda:\n\n1\n\nSempiterna sit beatae Trinitati gloria; Aequa Patri Filioque, par decus Paraclito; Unius Trinique nomen laudet universitas. Amen.\n\n2\n\nDulce lignum, dulces clavos, dulce pondus sustinet.\n"
+        "text_structure":
+          "text_sha256": "83cbd70391a22369245ab9c1019d3d25db59e02b5b267474f3b039130d40a616"
+          "checked": "Complete four-section Improperia checked against the 1962 page images. Choir indicators, section headings, labels, functional instructions, and the V. marker are nonspoken actions; all nine principal hymn stanzas, the doxology, and the printed full responses are retained."
+          "actions":
+          - "kind": "rubric"
+            "offset": 0
+            "text": "Partes quae ad singulos choros spectant, indicantur numeris 1 (chorus primus), et 2 (chorus secundus); quae autem ab utroque choro simul cantanda sunt, indicantur hoc modo: 1 et 2."
+          - "kind": "rubric"
+            "offset": 182
+            "text": "I"
+          - "kind": "rubric"
+            "offset": 185
+            "text": "1 et 2"
+          - "kind": "rubric"
+            "offset": 264
+            "text": "V."
+          - "kind": "rubric"
+            "offset": 330
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 350
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 368
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 389
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 409
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 446
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 486
+            "text": "1 et 2"
+          - "kind": "rubric"
+            "offset": 630
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 650
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 668
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 689
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 709
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 746
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 786
+            "text": "1 et 2"
+          - "kind": "rubric"
+            "offset": 1005
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 1025
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 1043
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 1064
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 1084
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 1121
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 1161
+            "text": "II"
+          - "kind": "rubric"
+            "offset": 1165
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 1260
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 1335
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 1441
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 1516
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 1580
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 1655
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 1736
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 1811
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 1887
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 1962
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 2036
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 2111
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 2198
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 2273
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 2350
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 2425
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 2501
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 2576
+            "text": "III"
+          - "kind": "rubric"
+            "offset": 2581
+            "text": "1 et 2 Antiphona:"
+          - "kind": "rubric"
+            "offset": 2747
+            "text": "1 Psalmus 66, 2:"
+          - "kind": "rubric"
+            "offset": 2810
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 2869
+            "text": "1 et 2 Antiphona:"
+          - "kind": "rubric"
+            "offset": 3035
+            "text": "IV"
+          - "kind": "rubric"
+            "offset": 3039
+            "text": "1 et 2 Antiphona:"
+          - "kind": "rubric"
+            "offset": 3207
+            "text": "1 Hymnus:"
+          - "kind": "rubric"
+            "offset": 3355
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 3455
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 3601
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 3657
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 3797
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 3897
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 4040
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 4096
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 4234
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 4334
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 4477
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 4533
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 4681
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 4781
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 4922
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 4978
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 5117
+            "text": "2"
+          - "kind": "rubric"
+            "offset": 5217
+            "text": "Conclusio numquam omittenda:"
+          - "kind": "rubric"
+            "offset": 5247
+            "text": "1"
+          - "kind": "rubric"
+            "offset": 5381
+            "text": "2"
+      - "name": "Antiphons at the Translation of the Blessed Sacrament"
+        "incipit": "Adoramus te, Christe"
+        "source": "composed"
+        "text": "Adoramus te, Christe, et benedicimus tibi, quia per Crucem tuam redemisti mundum.\n\nPer lignum servi facti sumus, et per sanctam Crucem liberati sumus: fructus arboris seduxit nos, Filius Dei redemit nos.\n\nSalvator mundi, salva nos: qui per Crucem et Sanguinem tuum redemisti nos, auxiliare nobis, te deprecamur, Deus noster.\n"
+        "notes": "Three antiphons at the transfer of the Blessed Sacrament."
       - name: Psalm at the Communion
         incipit: Deus, Deus meus, respice in me
         source: scripture
@@ -10428,15 +10641,11 @@ sections:
         notes: The three formulas accompany the incising of the cross, Alpha and Omega and the
           current year, the fixing of the five grains of incense, and the lighting of the candle
           from the new fire.
-      - name: Blessing of the Lighted Candle
-        incipit: Veniat, quaesumus, omnipotens Deus
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+      - "name": "Blessing of the Lighted Candle"
+        "source": "composed"
+        "incipit": "Veniat, quaesumus, omnipotens Deus"
+        "text": "Veniat, quaesumus, omnipotens Deus, super hunc incensum cereum larga tuae benedictionis infusio: et hunc nocturnum splendorem, invisibilis regenerator, intende; ut non solum sacrificium, quod hac nocte litatum est, arcana luminis tui admixtione refulgeat; sed in quocumque loco ex hujus sanctificationis mysterio aliquid fuerit deportatum, expulsa diabolicae fraudis nequitia, virtus tuae majestatis assistat. Per Christum Dominum nostrum.\n"
+        "notes": "Blessing of the lighted Paschal candle."
       - name: Lumen Christi
         incipit: Lumen Christi
         source: composed
@@ -18119,16 +18328,11 @@ sections:
         notes: Printed p. [1], no. 4176.
         text: |
           Gregem tuum, Pastor aeterne, placatus intende: et per beatum N. (Martyrem tuum atque) Summum Pontificem perpetua protectione custodi; quem totius Ecclesiae praestitisti esse pastorem. Per Dominum.
-      - name: Collect (in plurali)
-        incipit: Gregem tuum, Pastor
-        source: composed
-        notes: Printed p. [2], no. 4177.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf
+      - "name": "Collect (in plurali)"
+        "incipit": "Gregem tuum, Pastor"
+        "source": "composed"
+        "notes": "Plural form for two or more Supreme Pontiffs."
+        "text": "Gregem tuum, Pastor aeterne, placatus intende: et per beatos N. et N. (Martyres tuos atque) Summos Pontifices perpetua protectione custodi; quos totius Ecclesiae praestitisti esse pastores. Per Dominum.\n"
       - name: Collect (Altera oratio)
         incipit: Deus, qui Ecclesiam
         source: composed
@@ -26621,30 +26825,27 @@ sections:
       ordinary_appointments:
         preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 622 / printed p. 541, raw page-local line 55; Praefatio de beata Maria Virgine Et te; expected-target row roman-1962:sanctoral-form:p621-l16:preface:p622-l55"}
       propers:
-      - name: Introit
-        source: mixed
-        verses:
-        - book: Psalms
-          ranges:
-          - begin:
-              chapter: 44
-              verse: 2
-            end:
-              chapter: 44
-              verse: 2
-          ref: Psalms 44:2
-        notes: >-
-          Registered 1962 CMAA facsimile, artifact621/printed540, unit2681;
-          the dated feast has its own uncited antiphon with Psalm44:2, not
-          the separate votive Introit2682. The Psalm companion alone is not
-          the complete Introit. Page images checked on 2026-10-23; no body
-          collation or independent publication basis is established here.
-        text_status:
-          state: "unavailable"
-          scope: "proper-body"
-          reasons:
-          - kind: "witness-gap"
-            source_id: "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      - "name": "Introit"
+        "source": "mixed"
+        "verses":
+        - "book": "Psalms"
+          "ranges":
+          - "begin":
+              "chapter": 44
+              "verse": 2
+            "end":
+              "chapter": 44
+              "verse": 2
+          "ref": "Psalms 44:2"
+        "incipit": "Gaudeamus omnes in Domino"
+        "text": "Gaudeamus omnes in Domino, diem festum celebrantes sub honore beatae Mariae Virginis Reginae: de cujus solemnitate gaudent Angeli, et collaudant Filium Dei. (T. P. Alleluia, alleluia.) Ps. 44, 2 Effundit cor meum verbum bonum: dico ego carmen meum Regi. V. Gloria Patri.\n"
+        "text_structure":
+          "text_sha256": "62bc1f505027f3ba9f914511ae9c836b6b460068c08409677226a16ff44de459"
+          "checked": "The 1962 target facsimile, artifact p. 621, printed p. 540, no. 2681, was read at 200 and 400 dpi on 2026-10-29. The original study English renders the same conditional rubric."
+          "actions":
+          - "kind": "rubric"
+            "offset": 157
+            "text": "(T. P. Alleluia, alleluia.)"
       - name: "Collect"
         source: "composed"
         notes: >-
@@ -26748,35 +26949,25 @@ sections:
           when:
             fact: "roman-1962-common-chant-regime"
             in: ["advent", "regular"]
-      - name: "Alleluia"
-        source: "composed"
-        notes: >-
-          Registered 1962 CMAA facsimile, artifact622/printed541, unit2688; appointment read on the page
-          images on 2026-10-23. No complete earlier-witness word collation or
-          independent publication basis is established here; no body is supplied.
-        text_status:
-          state: "unavailable"
-          scope: "proper-body"
-          reasons:
-          - kind: "witness-gap"
-            source_id: "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-        ordinary_disposition:
-          kind: "alternative"
-          group: "queenship-post-epistle"
-          basis: >-
-            Registered 1962 CMAA facsimile, artifact621-622/printed540-541,
-            units2686-2688: the dated May31 Mass appoints unit2686 in Paschal
-            time and units2687-2688 outside it. The separately marked votive
-            post-Septuagesima Tract2689 is outside this dated feast record.
-          when:
-            fact: "roman-1962-common-chant-regime"
-            in: ["advent", "regular"]
-          option: "regular"
-          anchor:
-            mass: "beatae-mariae-virginis-reginae"
-            form_id: "main"
-            proper: "Alleluia"
-            occurrence: 1
+      - "name": "Alleluia"
+        "source": "composed"
+        "ordinary_disposition":
+          "kind": "alternative"
+          "group": "queenship-post-epistle"
+          "basis": "Registered 1962 CMAA facsimile, artifact621-622/printed540-541, units2686-2688: the dated May31 Mass appoints unit2686 in Paschal time and units2687-2688 outside it. The separately marked votive post-Septuagesima Tract2689 is outside this dated feast record."
+          "when":
+            "fact": "roman-1962-common-chant-regime"
+            "in":
+            - "advent"
+            - "regular"
+          "option": "regular"
+          "anchor":
+            "mass": "beatae-mariae-virginis-reginae"
+            "form_id": "main"
+            "proper": "Alleluia"
+            "occurrence": 1
+        "incipit": "Salve, Regina misericordiae"
+        "text": "Alleluia, alleluia. V. Salve, Regina misericordiae, tu nos ab hoste protege, et mortis hora suscipe. Alleluia.\n"
       - name: Gospel
         source: scripture
         verses:

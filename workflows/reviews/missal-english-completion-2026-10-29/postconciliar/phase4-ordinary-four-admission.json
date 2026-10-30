@@ -1,0 +1,255 @@
+{
+  "schema": "triptych-proper-source-admission/v1",
+  "recorded_on": "2026-10-30",
+  "state": "Source-qualified historical/study English admitted by exact root2026-10-30 decision; no approved English or modern Latin permission created.",
+  "package": "ordinary-seasonal-four",
+  "targets": [
+    [
+      "ot-11",
+      "main",
+      "Collect",
+      "all",
+      1
+    ],
+    [
+      "ot-31",
+      "main",
+      "Prayer after Communion",
+      "all",
+      1
+    ],
+    [
+      "pentecost",
+      "vigil",
+      "Collect",
+      "all",
+      1
+    ],
+    [
+      "pentecost",
+      "vigil",
+      "Collect",
+      "all",
+      2
+    ]
+  ],
+  "superseded_unavailable_dictionaries": [
+    {
+      "mass": "ot-31",
+      "form_id": "main",
+      "proper": "Prayer after Communion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "The antecedent reads `divinis vegetati sacramentis`, while the target reads `refecti caelestibus sacramentis`; its English renders divine rather than heavenly. The substantive variant is not an exact target translation. No English wording is retained."
+    },
+    {
+      "mass": "ot-11",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "rights-withheld",
+        "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+        "surfaces": [
+          "corpus-data",
+          "public-git",
+          "command-line",
+          "download"
+        ]
+      },
+      "rights": "permission",
+      "witness": "fdlc-mystagogy-2016",
+      "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+      "witness_artifact_id": "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion.combo-col-pac-78b-ordinary-trinity-13",
+      "verified_on_page": "2026-08-26",
+      "verified_artifact_page": 14,
+      "verified_printed_page": "14",
+      "verified_heading": "ELEVENTH SUNDAY IN ORDINARY TIME / Collect:",
+      "verified_url": "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78b_ORDINARY_Trin-13_SPI2016.pdf",
+      "quarantined_text_sha256": [
+        "bad1c573fbc23a6c76bf922a79fff554bcaa184e2834d70c6a516e72e825c131"
+      ],
+      "note": "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
+    },
+    {
+      "mass": "pentecost",
+      "form_id": "vigil",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No authoritative exemplar establishing the exact approved English for this first source-owned Collect is held. No English wording is retained."
+    },
+    {
+      "mass": "pentecost",
+      "form_id": "vigil",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 2,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No authoritative exemplar establishing the exact approved English for this second source-owned Collect is held. It remains distinct from the first occurrence. No English wording is retained."
+    }
+  ],
+  "source_files": [
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-ot-11-collect-study-comparison.toml",
+      "sha256": "617a9a21d64474f3745e56ec091fb8c40313c0f53013f5fa8d99eb4eda1bfdf8",
+      "byte_size": 2053
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-ot-31-after-communion-study-comparison.toml",
+      "sha256": "689674a598a2a80932646130c53d2efc2e791cea47bffa35f2d43d10f70cea12",
+      "byte_size": 2279
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-pentecost-vigil-collect-1-study-comparison.toml",
+      "sha256": "45e73d7bfe196bae3f283fb01897d1b0bd9c5c4e34394e0b196ffaada092125b",
+      "byte_size": 2299
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-pentecost-vigil-collect-2-study-comparison.toml",
+      "sha256": "840bd6fbc7120c369b56badaae505ab17148866d4288467868c9f1c30b06037e",
+      "byte_size": 2024
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-ordinary-four-gelasian-pages-c4d7d3c1/artifact.toml",
+      "sha256": "fc2ef0aaf9ac2dc554e609df81009ccf4bdca39068e6231252960f4915e42b77",
+      "byte_size": 2548
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-ordinary-four-gelasian-pages-c4d7d3c1/wilson-1894-pp106-122-123.pdf",
+      "sha256": "c4d7d3c11ff5fd9d0545ff9c0185f4bcbaf855f5f5c13b9ae027bae8d72d48f5",
+      "byte_size": 414988
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-ordinary-four-short-conclusion-cues-source.toml",
+      "sha256": "edbf7ca01a9ad7408cca30293156081f5e4716d2bb6c657d1e623bcca7231f80",
+      "byte_size": 1277
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-ot-11-collect-study-source.toml",
+      "sha256": "c0fa3935c853505d82332a20be0e34aa5dbf8e1e85b75d3cecbd7bd81bd5d483",
+      "byte_size": 1838
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-ot-31-after-communion-study-source.toml",
+      "sha256": "fd6b9a18b6e33c9a03081b9896a1dcf28c1761aca43f160ff79e008b11707444",
+      "byte_size": 1836
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-pentecost-vigil-collect-1-study-source.toml",
+      "sha256": "847e4a6cf499e33a872e33959f8abba8de8e5e2fbdffdc424530cdd531db7b0e",
+      "byte_size": 1901
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/english-completion-20261029-postconciliar-pentecost-vigil-collect-2-study-source.toml",
+      "sha256": "f2d998d82070a5152c25f3bf68a3bb7b51f1738594fdd395665bcbff2c263628",
+      "byte_size": 1771
+    }
+  ],
+  "package_manifest": {
+    "path": ".scratch/postconciliar-english-completion-20261029/ancient-sources/secondpass-ordinary/package-v1/manifest.json",
+    "sha256": "138f89b58d46ec03584eae4b04e7dc4d0e23a2e03b0ee766129e3e187017b61a"
+  },
+  "source_and_English_reviews": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-03-bf2e4449ced7.json",
+      "sha256": "bf2e4449ced7c9ed61c13cc261f95fa3d01a49a2fd2ea74a37a688128e46c7be"
+    }
+  ],
+  "prepared_entry_blocks_sha256": "2c70b1fba9c8628fd38c624b902a601296b05bb025d950ec8133533e9ed4c3c7",
+  "normalized_entry_blocks_sha256": "75b0a105d0e5948ea93d39734ebf797e5144b9ad1753050080382574ea501877",
+  "assembly_normalization": "Only optional empty form labels removed; exact form_id and every translation dictionary retained.",
+  "source_policy": {
+    "literal_PD_uses": 0,
+    "project_study_uses": 4,
+    "no_approved_English_or_modern_Latin_payload": true,
+    "root_finite_adoption_not_implied_by_dryrun": true
+  },
+  "all_prior_positive_and_unselected_absence_dictionaries_exact": true,
+  "metadata_successor": {
+    "prior_dryrun_receipt_sha256": "b7e56c068e9571380958583eedd756b702516f3a8dd7c67e213e8afd94131eab",
+    "exact_field_changes": [
+      {
+        "target": [
+          "pentecost",
+          "vigil",
+          "Collect",
+          "all",
+          2
+        ],
+        "field": "relation",
+        "before": "verbatim",
+        "after": "variant"
+      }
+    ],
+    "English_and_all_other_entry_fields_unchanged": true,
+    "incipit_review": [],
+    "relation_review": "Accepted exact label-only successor 2a8ad2a63b4cba9b4018439d5f6f5d893d3dcebe2a5c894a4c091bb3a07e91d1; no English/source changes."
+  },
+  "checkpoint_refresh": {
+    "state": "Exact root-adopted source/English installation at checkpoint702; prior155positives preserved.",
+    "checkpoint_commit": "702f650020d69a45aa747b1c5b5e30be6c42ca59",
+    "sidecar_preimage_sha256": "57123fdfb8472718679284f93698912c296e85fa7e78245554956f3890bc3e6d",
+    "predecessor_proposed_receipt_sha256": "a3d2fd479f286101928dd8b506f81ca7d1ce6b737d534dfbf48836fb6498dd3f",
+    "all155_existing_positive_dictionaries_preserved": true,
+    "metadata_successor_seals": [
+      {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-09-9b0215d8be44.json",
+        "sha256": "9b0215d8be44bd02ff8b3cdba8dd7876f39ad9e68fa02cbfbabe32bc49116744"
+      },
+      {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-10-2a8ad2a63b4c.json",
+        "sha256": "2a8ad2a63b4cba9b4018439d5f6f5d893d3dcebe2a5c894a4c091bb3a07e91d1"
+      }
+    ],
+    "finite_recommendation_index": {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/source-expression-recommendation-index.json",
+      "sha256": "b9bd060281b8ab9f165ff85b3c2e16bbe06dd4d89935b46581de424422b4dd97"
+    },
+    "recommendation_is_not_root_adoption": false,
+    "root_adoption": {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/root-decision.json",
+      "sha256": "6bac2ac5d0de5c2e9d50a654e5cb923721efdeac87a23bd9524922ef346b4943"
+    }
+  },
+  "root_adoption": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/root-decision.json",
+    "sha256": "6bac2ac5d0de5c2e9d50a654e5cb923721efdeac87a23bd9524922ef346b4943"
+  },
+  "retained_source_expression_recommendations": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/source-expression-recommendation-index.json",
+    "sha256": "b9bd060281b8ab9f165ff85b3c2e16bbe06dd4d89935b46581de424422b4dd97"
+  },
+  "retained_metadata_successor_reviews": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-09-9b0215d8be44.json",
+      "sha256": "9b0215d8be44bd02ff8b3cdba8dd7876f39ad9e68fa02cbfbabe32bc49116744"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-10-2a8ad2a63b4c.json",
+      "sha256": "2a8ad2a63b4cba9b4018439d5f6f5d893d3dcebe2a5c894a4c091bb3a07e91d1"
+    }
+  ],
+  "predecessor_dryrun_receipt_sha256": "a6eb831d08f7bd40bb020ed3fe0e42093860e4a0bd05d0de4629ca10f9c0cc6a"
+}

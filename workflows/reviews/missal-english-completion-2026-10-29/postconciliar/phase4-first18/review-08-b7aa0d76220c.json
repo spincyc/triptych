@@ -1,0 +1,109 @@
+{
+  "schema": 1,
+  "id": "english-completion-20261030-goodfriday-opening-two-source-assembly-successor-review",
+  "recorded_on": "2026-10-30",
+  "reviewer": "/root/translation_policy",
+  "state": "accept exact eight-file assembly and exact two English sidecar blocks; source registration and integration remain parent/root owned",
+  "manifest": {
+    "path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/goodfriday-opening-prayers/proposal/manifest.json",
+    "sha256": "849ae0ebce96bdfe1fc59e83258be962a6b565fddf74feb9391151fc3b99bfd3"
+  },
+  "prior_manifest": {
+    "path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/goodfriday-opening-prayers/proposal/manifest-source-review-round1.json",
+    "sha256": "6d3b82a84a4b681b0fd21b447214b31b08f28bd3cdfe387f9db6efff47e050fd"
+  },
+  "metadata_correction": {
+    "old": "Dependency metadata only. Whole Wilson digitiser matter remains excluded; only three old printed pages are retained.",
+    "corrected": "Dependency metadata only. The mixed whole Lasance book and its excluded lettered inserts are not newly retained by this package; only ordinary printed217 is retained as a mechanical page derivative.",
+    "conservation": "Independent parsed comparison shows only this Lasance retention sentence and an explicit metadata_successor lineage object change; all eight source records/payloads, entry blocks, accepted candidate/review and body/English hashes remain exact."
+  },
+  "accepted_whole_source_english_and_finite_policy_review": {
+    "path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/goodfriday-opening-prayers/review/REVIEW.json",
+    "sha256": "d3a9cff835690c1d79da83f34a37c34d0004b014cd948c875e5063819158ac3a"
+  },
+  "mechanical_receipt": {
+    "path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/goodfriday-opening-prayers/proposal/review/raster-and-conservation-check.json",
+    "sha256": "b8d33dcc4b09344d757f700b0d35ad64604984f69b20b0c92aab358d07f8aeda",
+    "scope": "Originally binds prior manifest; its eight source files, body/hash/joins and raster checks remain unchanged in corrected manifest."
+  },
+  "checks": [
+    "All eight proposed canonical files hashed/sized exactly; every destination was absent when reviewed. Six manifest records have proper edition, artifact, source-parent and payload ownership.",
+    "Wilson derivative pages1/2/3 independently rendered pixel-for-pixel equal to parent145/154/168 at72dpi; Lasance derivative1 equals parent217. No digitizer notice, lettered insert, modern page, crop, or modern full-Latin artifact enters these retained page scopes.",
+    "Read all six proposed TOML records completely and checked against actual installed parent artifact records, including their unresolved whole-file boundaries, exact URLs, hashes and old-page basis. The whole files remain remote/unredistributed; bounded historical derivatives alone are proposed.",
+    "Both ancient_passage_id values join the correct proposed passage, witness artifact, source edition and derivative hash. Both complete ancient_reading strings match the independently accepted source bodies including actual old concluding cues.",
+    "Both complete study-English strings and hashes exactly equal candidate6820cd0d; both remain lang en, rights project-created, with distinct R. Amen lines and no invented historical human source.",
+    "The two separately complete common-conclusion passages bind the correct old artifacts and derivative loci. WilsonAP145 is only a complete formula witness, not the old Reminiscere whole ending or an Amen witness; Lasance217 prints the complete Per Christum formula and distinct response.",
+    "Two original absence dictionaries are retained as separate preimage data; no new project English edition/artifact or unverified full2008 claim is introduced."
+  ],
+  "limitations": [
+    "This is focused source assembly conservation plus the earlier exact source/English/policy review. Parent owns actual registration, full source-library and reader integration checks, and root-directed release HOLD.",
+    "No modern Latin payload, modern facsimile distribution, approved current English, complete2008 fidelity, unrelated unit or changed-string permission follows. No additional optional peer gate is created."
+  ],
+  "source_files": [
+    {
+      "candidate_path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/goodfriday-opening-prayers/proposal/proposed/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-opening2-wilson-pages52-61-75-9ea0918d/artifact.toml",
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-opening2-wilson-pages52-61-75-9ea0918d/artifact.toml",
+      "sha256": "e6690facf70cfac99878e532bd0ef998e72dab9e2003400528d2b83308dd6e52",
+      "bytes": 2246,
+      "ownership": "new exclusive PC opening2 historical source artifact/passages; no existing canonical file replaced"
+    },
+    {
+      "candidate_path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/goodfriday-opening-prayers/proposal/proposed/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-opening2-wilson-pages52-61-75-9ea0918d/pages.pdf",
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-opening2-wilson-pages52-61-75-9ea0918d/pages.pdf",
+      "sha256": "9ea0918d6a9ee489ccd4aa70c23b2d6e87162e4e93c6c4bfdf2b216156f1aac3",
+      "bytes": 470709,
+      "ownership": "new exclusive PC opening2 historical source artifact/passages; no existing canonical file replaced"
+    },
+    {
+      "candidate_path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/goodfriday-opening-prayers/proposal/proposed/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-opening2-deus-qui-peccati-source.toml",
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-opening2-deus-qui-peccati-source.toml",
+      "sha256": "19071fafbe8097b47b000bd5a31c03088f147ebec47ebf50c1537e165394ae65",
+      "bytes": 2363,
+      "ownership": "new exclusive PC opening2 historical source artifact/passages; no existing canonical file replaced"
+    },
+    {
+      "candidate_path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/goodfriday-opening-prayers/proposal/proposed/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-opening2-qui-vivit-conclusion.toml",
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-opening2-qui-vivit-conclusion.toml",
+      "sha256": "39c81f55fbdd6b518c8994e6e449b8c73c6780002e81358dbf418e0235ce1dea",
+      "bytes": 1184,
+      "ownership": "new exclusive PC opening2 historical source artifact/passages; no existing canonical file replaced"
+    },
+    {
+      "candidate_path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/goodfriday-opening-prayers/proposal/proposed/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-opening2-reminiscere-source.toml",
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-opening2-reminiscere-source.toml",
+      "sha256": "16ff87e456d98d649eb9690e578e9e8d8b803adab2b687689c6949042684a5fb",
+      "bytes": 1902,
+      "ownership": "new exclusive PC opening2 historical source artifact/passages; no existing canonical file replaced"
+    },
+    {
+      "candidate_path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/goodfriday-opening-prayers/proposal/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/artifact.toml",
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/artifact.toml",
+      "sha256": "617e48d287ca3a1b6409d74e9adf1cc8faad0e97bc52fe02706ed4f257b45252",
+      "bytes": 2121,
+      "ownership": "new exclusive PC opening2 historical source artifact/passages; no existing canonical file replaced"
+    },
+    {
+      "candidate_path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/goodfriday-opening-prayers/proposal/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/pages.pdf",
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/pages.pdf",
+      "sha256": "d85c36fbb0e7acebc16ddacd55fc7a38419c01400d0eb24132e20d748fb473e8",
+      "bytes": 502778,
+      "ownership": "new exclusive PC opening2 historical source artifact/passages; no existing canonical file replaced"
+    },
+    {
+      "candidate_path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/goodfriday-opening-prayers/proposal/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-opening2-per-christum-conclusion.toml",
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-opening2-per-christum-conclusion.toml",
+      "sha256": "d380657fdad6aa7a98b1e62f2ea4b8bd6247703e089e98a5ba8ea47754105974",
+      "bytes": 1226,
+      "ownership": "new exclusive PC opening2 historical source artifact/passages; no existing canonical file replaced"
+    }
+  ],
+  "entry_blocks": {
+    "path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/goodfriday-opening-prayers/proposal/candidate-entries.toml",
+    "sha256": "acba835d0f3d34db1e9370d63e6077ad6f49d8f7ff209abf0f74f6f22639ed09",
+    "count": 2
+  },
+  "english_hashes": [
+    "253eb52f17597424fcd0ed772956c008126c2efed10fbef9d0440b47aa3cf121",
+    "259ffb9853436f8b1b77c80178366f36ca9b77860657c308e5eff74f52f1ee61"
+  ]
+}

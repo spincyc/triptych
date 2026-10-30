@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.queen-introit-gaudeamus-latin-20261029"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The complete bounded Gaudeamus Introit wording of the Tours Mame 1922 printing is independently public domain in the United States by publication date. No Reginae addition, conditional Paschal Alleluia or revised Psalm 44 rendering is supplied in this historical transcription."
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.queen-introit-gaudeamus-pages-20261029"
+provenance = "Read directly on 2026-10-29 from the source images: printed p. 656, artifact p. 770, right column, the 16 July Carmel Marian Introit. The same complete arrangement is corroborated at printed p. 731, artifact p. 845, for the 7 October Rosary feast. The source body and Psalm clause are transcribed as printed outside the explicitly normalized typography."
+retrieved = "2026-10-29"
+sha256 = "544780624845b97099cee3df0bace07b8c6d0d4044a03f7af84053e474f5bb64"
+byte_size = 234
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/queen-introit-gaudeamus-latin-20261029/latin.txt"
+indexable = true
+encoding = "utf-8"
+transformation = "Join printed wraps and dehyphenate line ends; remove stress accents and expand ae/oe ligatures; normalize the printed versicle sign to V.; use sentence case for the drop-cap opening. Retain source words, Psalm clause, pointing and capitalization, including lowercase regi."

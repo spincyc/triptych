@@ -1,0 +1,152 @@
+{
+  "schema": 1,
+  "id": "english-completion-20261030-goodfriday-opening-two-independent-review",
+  "recorded_on": "2026-10-30",
+  "reviewer": "/root/translation_policy",
+  "state": "immutable independent source, English and bounded policy recommendation; not canonical installation or root adoption",
+  "input": {
+    "path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/goodfriday-opening-prayers/candidate-two.json",
+    "sha256": "6820cd0dab291b98e7872d2f7955a7bbf141a670a32f905901ee018834587eb8"
+  },
+  "decision": "accept exact two original project study English candidates under the existing independently lawful underlying-Latin route, with the explicit qualifications below",
+  "method": {
+    "actual_pages_visually_read": [
+      "Wilson1894 artifact154/printed61 whole page",
+      "Wilson1894 artifact145/printed52 whole page",
+      "Wilson1894 artifact168/printed75 whole page",
+      "Lasance1945 artifact217/printed217 whole page",
+      "secondary digital2002 artifact191 whole page"
+    ],
+    "integrity": "Recomputed the packet, three whole held PDF, five image, two source-Latin and two English hashes; all match the frozen packet.",
+    "comparison": "Read the complete two modern comparator prayers privately against the complete old petitions and the two separately witnessed full conclusions. The enumerated petition differences are exhaustive for these displayed readings after stress, spelling, capitalization and pointing normalization. No independent printed2002 or2008 comparison is claimed."
+  },
+  "cases": [
+    {
+      "target": {
+        "mass": "good-friday",
+        "form_id": "main",
+        "proper": "Prayer",
+        "cycle": "all",
+        "occurrence": 1
+      },
+      "relation": "abridged",
+      "source_latin_sha256": "37b8f6cd7f0addcc1cc9ab9e62966b8a14e1408ecab828824c4ce7047e3f6b4a",
+      "english_sha256": "253eb52f17597424fcd0ed772956c008126c2efed10fbef9d0440b47aa3cf121",
+      "source_artifact": {
+        "edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+        "artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3",
+        "sha256": "006a38a39250d39c9745acfb4f4a098374027e719dc7ad7e32972fa6a82489bc",
+        "full_pdf_path": ".scratch/roman-phase4-discovery-20261022T123009Z/gelasian1894-local-only-whole.pdf",
+        "rights": "1894 publication, public domain United States; source words independently image-read; OCR only locator"
+      },
+      "source_pdf_pages": [
+        154
+      ],
+      "source_printed_pages": [
+        "61"
+      ],
+      "conclusion_witness": {
+        "artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3",
+        "sha256": "006a38a39250d39c9745acfb4f4a098374027e719dc7ad7e32972fa6a82489bc",
+        "artifact_page": 145,
+        "printed_page": "52",
+        "heading": "BookI, sectionxxxiv, Exposition of the Gospels; close of John exposition",
+        "literal_latin": "Qui vivit et regnat in saecula saeculorum.",
+        "response": "Amen is the separate common response, not part of this quoted formula",
+        "scope": "Separately witnessed common formula; not claimed as part of the ancient Reminiscere unit or a whole modern arrangement copied from this source."
+      },
+      "source_facts": "accept for the exact inspected old and secondary readings",
+      "source_reason": "The sole petition omission is nobis after cruorem. The actual ancient Per Dominum nostrum ending is not silently expanded: WilsonAP145/p52 independently prints the entire Qui vivit et regnat in saecula saeculorum formula at the close of the John exposition. That is a formula witness, not an earlier complete Reminiscere arrangement. Source footnote markers16 and17 are apparatus. The exact target retains Christus without Iesus, matching the main old text.",
+      "english_fidelity": "accept exact candidate",
+      "english_reason": "The English is faithful as a fresh study rendering: mercies, everlasting protection, your servants, Christ your Son and the Paschal mystery through his own blood are all represented; it correctly does not add the omitted nobis. He lives and reigns is an acceptable standalone English rendering of the complete relative conclusion. R. Amen remains separately marked.",
+      "finite_policy_verdict": "accept, qualified; existing whole-old-expression tiny-variant route",
+      "classification": "abridged ancient petition with separately old whole generic conclusion"
+    },
+    {
+      "target": {
+        "mass": "good-friday",
+        "form_id": "main",
+        "proper": "Prayer (alternative)",
+        "cycle": "all",
+        "occurrence": 1
+      },
+      "relation": "variant",
+      "source_latin_sha256": "ccd0853171da6edced1abbace816df7977ac9ae5a90f84f17ca3fa5b30d6a7cc",
+      "english_sha256": "259ffb9853436f8b1b77c80178366f36ca9b77860657c308e5eff74f52f1ee61",
+      "source_artifact": {
+        "edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+        "artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3",
+        "sha256": "006a38a39250d39c9745acfb4f4a098374027e719dc7ad7e32972fa6a82489bc",
+        "full_pdf_path": ".scratch/roman-phase4-discovery-20261022T123009Z/gelasian1894-local-only-whole.pdf",
+        "rights": "1894 publication, public domain United States; source words independently image-read; OCR only locator"
+      },
+      "source_pdf_pages": [
+        168
+      ],
+      "source_printed_pages": [
+        "75"
+      ],
+      "conclusion_witness": {
+        "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+        "sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+        "full_pdf_path": ".scratch/resume-next-english-temporal/sealed-v2/source/lasance1945.pdf",
+        "artifact_page": 217,
+        "printed_page": "217",
+        "literal_latin": "Per Christum Dominum nostrum. R. Amen.",
+        "literal_human_english": "Through Christ our Lord. R. Amen.",
+        "scope": "Only the common formula and distinct marked response, not the AshWednesday petition; no edited human-English hybrid is proposed."
+      },
+      "source_facts": "accept for the exact inspected old and secondary readings",
+      "source_reason": "Filii after Christi and hominis after terreni are genuine explicit relationship/ellipsis additions, not orthography. Dona to da is a synonymous imperative replacement, not an inflection. The full ancient argument (inherited death, Christ Passion, likeness to earthly and heavenly images) and its order remain. The ancient final Christi Domini nostri. Qui tecum vivit cue is recorded as actually printed; it is omitted rather than expanded. LasanceAP217/p217 independently supplies the complete replacement Per Christum Dominum nostrum and separate response. Haereditariam/hereditariam is the spelling difference;8-10 are apparatus.",
+      "english_fidelity": "accept exact candidate",
+      "english_reason": "The English faithfully renders the actual finite variant, including Christ your Son, our Lord, earthly man, grant, and the contrast of inherited human mortality and grace. Whole human race had fallen is a defensible idiomatic rendering of posteritatis genus omne successerat in this death context; heavenly one makes the substantival caelestis explicit without adding a new petition. The common ending is a new study rendering that naturally agrees with conventional older English, not an edited historical-English body or transfer of an excluded insert.",
+      "finite_policy_verdict": "accept, qualified; existing whole-old-expression tiny-variant route",
+      "classification": "finite variant of whole ancient petition with separately old whole short conclusion"
+    }
+  ],
+  "policy_basis": {
+    "policy": "guidance/liturgical-text-publication-policy.md sections1(6) and8.2; existing original study-English route",
+    "test": "The controlling question is whether the later contribution, assessed as the whole resulting expression, supplies a protectable new authorship contribution; a numerical small-word ceiling or a closed list of substitution operations is not the rule.",
+    "strongest_counterargument": "The low creativity threshold applies, and a modern liturgical editor deliberately selected an ancient prayer, changed words and endings, and placed it in a modern Good Friday ritual. Old ingredients alone would not clear a genuinely new arrangement. Relationship nouns can add meaning; an ending is not authorized merely because its opening cue was old.",
+    "resolution": "Here each complete ordered petition and its distinctive theological content is independently printed in1894. The first loses one recipient pronoun. The second adds two conventional nouns that make existing personal and Pauline elliptical referents explicit, and substitutes an imperative synonym without changing the request. Neither imports a new petition, links disparate theological passages, or changes the inherited internal argument or word order. Each modern ending is itself a separately witnessed complete old common formula. Assessed jointly with that ordinary formula substitution, the later contribution in these exact two whole expressions does not reasonably appear to supply sufficient new expression to bar a clearly labelled fresh study translation. This is a qualified finite project judgment, not a blanket copyright clearance, holder permission, court conclusion, or authorization of the whole modern rite."
+  },
+  "source_boundaries": {
+    "old_source_texts": "The actual old conclusions remain part of the source transcriptions. The separately witnessed target-like complete conclusions have their own loci and must remain separately identified.",
+    "responses": "The two R. Amen responses on secondary AP191 are separate marked responses, not petition words. WilsonAP145 ends with the complete Qui vivit formula and does not establish an Amen there. LasanceAP217 independently prints the complete Per Christum formula followed by a distinct marked Amen; the English candidates preserve the separate R. Amen role.",
+    "edition": "Only the inspected secondary digital2002 reading is compared. Printed2002 fidelity and2008 correspondence are unestablished.",
+    "retention": "Modern comparator PDF/page/full Latin remain scratch-only. Preserve lawful bounded old source-page derivatives and exact old text/provenance at integration; this review does not authorize retention of the entire held Wilson digitization or modern whole PDF.",
+    "scope": "No target Latin body or modern Latin source artifact is admitted by this receipt. The packet has no full target-body SHA; exact input and English hashes plus the identified inspected page and exhaustive changes bind this English-only assessment."
+  },
+  "publication_conditions": [
+    "Use lang en / rights project-created and explicit study-English qualification; no invented human witness or approved current liturgical-English claim.",
+    "Keep each exact ancient petition, actual ancient ending cue, separately complete conclusion source, source-page artifact and response distinction in provenance.",
+    "Ordinary source-graph, manifest and project-specific integration checks still apply. This receipt imposes no optional extra peer-review gate and grants no other units or future changed strings."
+  ],
+  "evidence_images": [
+    {
+      "path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/wilson1894-154.png",
+      "sha256": "2757bfecde29b6ea240bd195f37da260584a639aca60e7f66010de0f3e404ec2",
+      "public_retention": "lawful historical source image; canonical retained source-page derivative required at integration"
+    },
+    {
+      "path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/wilson1894-145.png",
+      "sha256": "6cf57ccb1dae2f022317993f4b56bc1b1c394868c2352b191ef2a46d5daadd73",
+      "public_retention": "lawful historical source image; canonical retained source-page derivative required at integration"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/goodfriday-ancient/gelasian-168.png",
+      "sha256": "16f2411c88c9cce86dfe9983991320c09b038e2f1f223273f9affc76c650c4de",
+      "public_retention": "lawful historical source image; canonical retained source-page derivative required at integration"
+    },
+    {
+      "path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/goodfriday-intercessions/lasance217.png",
+      "sha256": "648085a2dec6c495d7f5bee47c9349bed63a15892c20f81b222c9874596f5624",
+      "public_retention": "lawful historical source image; canonical retained source-page derivative required at integration"
+    },
+    {
+      "path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/secondary191.png",
+      "sha256": "437b5424416d548f019caf618d29d10dcc8ee9a996d2f1609a37f4e20df4c4ff",
+      "public_retention": "scratch-only modern comparison"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "acceptance": "Only root may accept/install this pending candidate after independent exact review.",
+  "adapter_sha256": "23391e404ec941d3057070c48da95fb538698fb9ce9f0777ab688034c0443a09",
+  "canonical_writes": 0,
+  "compatibility_note": "Legacy V4-named proof keys emitted by immutable derive describe this exact accepted7071 parent, not a new claim about the old5615 state.",
+  "declaration_sha256": "b05cc94593171cea71c6568d512fbf4ab7a6b3443eed42efedb2e197ea3bf26f",
+  "finite_helper_successor": {
+    "after_sha256": "aa925ac3883a807498b0596ce1535a4c2b93bbc2d49913782d49ea7e4736d9f5",
+    "before_sha256": "34c7ea2520f0917108495ea333323c33e4eb3b6993aba2e10c91fc49385dfb40",
+    "independent_reviews": [
+      {
+        "path": ".scratch/roman-english-completion-20261029/v2-consolidation/pure-quarantine-review-v1/review.json",
+        "sha256": "b2f859809819b9a24e3a1f488bcd136cae87bcf0b918375244f5c2a349881105"
+      },
+      {
+        "path": ".scratch/roman-english-completion-20261029/v2-consolidation/pure-quarantine-regression-v1/receipt.json",
+        "sha256": "dc5542cdc8bdfc5040f98d650a01376fd74dbc2a25512cd2a193a28224a8e030"
+      }
+    ],
+    "intermediate_activation": {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/actual-authority-activation.json",
+      "sha256": "55a3ea92a0d4892607d7376bf16c339b7fc5e1aeb6b82fd1a4af663ded7fadff"
+    },
+    "intermediate_sha256": "ecca66760debc9c0451e1b6743883c55d59390f575b4503b6af27d9923117fd3",
+    "kind": "finite22-quarantine-claim-successor"
+  },
+  "immutable_compiler_sha256": "29d0add9b330248b4047881310175614d91adc82688bfc695451318696c0865b",
+  "immutable_support_sha256": "6fd8b3552071f4ef479bbdc6c4d693331b8ceb91e48dcb016e91033fd6ba03fc",
+  "new_publication_permission": false,
+  "parent": {
+    "fixture_sha256": "11a3eee509b55233556f89a60d4ce978264ab215e483f354b2bcbad9b39304ee",
+    "git_revision": "702f650020d69a45aa747b1c5b5e30be6c42ca59",
+    "historical_fields": [
+      "schema",
+      "baseline_revision",
+      "baseline_roman_document_sha256",
+      "latin_baseline_rows",
+      "latin_baseline_bodies",
+      "latin_baseline_present_keys",
+      "latin_baseline_supplemented_keys",
+      "projection_baseline_source_files",
+      "english_219_keys",
+      "english_baseline_source_files",
+      "english_historical_source_files",
+      "english_historical_absence_scope"
+    ],
+    "manifest_sha256": "6956adb9fc4336282ade4bce43015d51bb2b73ef9a2ccce1d62e90226022693c",
+    "original17_before": {
+      "src/sources/calendars/postconciliar/propers.yaml": "69731f40de5d8c4539c4660f7035681ba3429beffd447ac6e29a5c1b98b6829d",
+      "src/sources/calendars/roman-1962/propers.yaml": "018642eee26d09e3bb014fa60baa0f820ab3637c9d6e349378c696a7b79d6877",
+      "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml": "5943f9788ff9ebe3b614086d824039a2993039f58d3819e85f26ffafb3c38a58",
+      "src/sources/inventories/postconciliar-proper-translations-v1.toml": "9bf6fe5ecc3b397888a0316f7b5c06e40f65e9dfc1eb96c3bc78d111e7c41597",
+      "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml": "c2bf07d5551fbe7ae2748ce7390c37b0d707df7cf275d400126b04cacd8600f0",
+      "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml": "560e82057dc0480a5b1fe835304ba57ed476b346a38cab6fac550298582016ea",
+      "src/sources/inventories/roman-1962-proper-translations-v1.toml": "79946d1bc6e015d8624d67ce243b59cf3ee634fc5997310aa6d764953349d815",
+      "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml": "465e15d42b7301b22c2d93be1b95b00eb326ee0cd2ad1f928520952a89e89faa",
+      "tools/tests/test_proper_latin.py": "98daa1922358c0d977ddfc97352812d395c6f578591e48691bc1393c6b1ace8d",
+      "tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py": "bc3ec297a6ca1edd3f155ccc29381526fee006d2e39a2c43bc0ce06fb81a51d4",
+      "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py": "ddb972cdd5fe9651d1ecc0b33bbc1bf4deca7f1b5f5c7d75b87bc03c54603f9e",
+      "tools/tests/test_roman_1962_english13_phase5.py": "dedf9a58d3f9e6b311bf5caf8f7aa7c51dcc9543d6ee17e4288e834c8cdc0215",
+      "tools/tests/test_roman_1962_english31_phase4.py": "86b29add67ac575fb147300f4ab6e66c47863a16c4cf5166896a88e710f5335c",
+      "tools/tests/test_roman_1962_lasance_commons_easter_phase3.py": "9c11f0b870c14916dfa2530c1e733f262a5c9f526cd613744a06ea7ce3c05190",
+      "tools/tests/test_roman_1962_latin22_phase5.py": "7dc3a1569140e14f32fa2c98e607577b05871f3c197a307db67107d731d6afca",
+      "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py": "c13d838baf217cf25be163e465a4f90322d8ecf04e89322f237eec105764686e",
+      "tools/tests/test_roman_1962_winter_ursula_source_repair.py": "e7354e1d015919cc47f235fca3aa1f5134afc8fe250765eb24b6d2eafbc71f05"
+    },
+    "receipt_path": "workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/source-batch-classification-acceptance.json",
+    "receipt_sha256": "2c05072109012b7da86c21da2ab23a1b5c89c317cc6be1c21b3f70acfe8e2cca",
+    "schema": "triptych-bounded-source-guard-current-parent/v1",
+    "source_epoch_paths": 7071,
+    "strict_helper_sha256": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1",
+    "support_sha256": "6fd8b3552071f4ef479bbdc6c4d693331b8ceb91e48dcb016e91033fd6ba03fc"
+  },
+  "replaced_in_memory_functions": [
+    "parent_state",
+    "scope_paths"
+  ],
+  "runtime_code_sha256": {
+    "scripts/_bible_artifacts.py": "b662b5f65144af78c7d708627963f16e4aafdd254ed128c51d927984354c4069",
+    "scripts/_bible_editions.py": "31202019c51aed4d251a6d4abdedc36119aeeed46dedeb1a4bc79c4e86debc3d",
+    "scripts/_calendars.py": "54f37042b07ae107a9bea59fe6080d5699f70290335ae7ddee453752f35eb7d4",
+    "scripts/_lasance_publication.py": "c56117d625a887f98804268fa9f6d9876a5164e0ea9b5b37b0124e4154e7c93d",
+    "scripts/_loci.py": "75f85aa6bf7dd5231959b346a8db0bb42ad33d2ff37ee9be5171b9d5185b355e",
+    "scripts/_missal_coverage.py": "10dbc61463d145cb642d52829be8e026e4fee46720b2f3e9221fe3f6ff397f70",
+    "scripts/_name_execution.py": "15a6c35b338123569c674aee3a3158ecf5318cf87b56520b947473680734c7b6",
+    "scripts/_oration_execution.py": "34dda1349096fa9d7fc7fea37e2cf9d0c8fb7e3d536ff7bbd0e1beac445c120a",
+    "scripts/_proper_finite_latin_20261029.py": "aa925ac3883a807498b0596ce1535a4c2b93bbc2d49913782d49ea7e4736d9f5",
+    "scripts/_proper_latin.py": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376",
+    "scripts/_proper_qualified_latin.py": "0136f6bb020938867d4ca1e75816c56c363a15603a8fede2aee9126c96b24949",
+    "scripts/_proper_target_overrides.py": "5f002ec8ee444c26c17399f5dcf7c761203d099bcd42a871d5fbf112bb4b1e66",
+    "scripts/_psalms.py": "87312f2aef24dfa0990bceec392f6d8ec264a2593555fe46ff72ec80849bacf7",
+    "scripts/_tooling.py": "f42654633791efe86a5222e7d2c1e80a75bfbcec94f2d34c4d06ad57e186af60",
+    "tools/mass-propers": "976939c81f4fc1fa9bd7de5eadf518514c1f71bba8aefc755ba922c67f5aa310",
+    "tools/source-library": "ff27c29238af76100b01047dfdeb9f2a808c0937089bd61d1bdecb6d2a7b45f0",
+    "tools/source-reader": "ba07b2f8269ad402edf608f45e6f9e94d92680fd16168b765b3e15e7746ad199",
+    "workflows/reviews/missal-english-completion-2026-10-29/source-guard/support_v3.py": "6fd8b3552071f4ef479bbdc6c4d693331b8ceb91e48dcb016e91033fd6ba03fc"
+  },
+  "schema": "triptych-reviewed-current-parent-semantic-adapter-proof/v1",
+  "source_input_count": 7264,
+  "status": "pending-independent-candidate-review",
+  "strict_helper_sha256": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1"
+}

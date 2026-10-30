@@ -1079,6 +1079,26 @@ class RecoveredCummiskeyAntecedentProductionTests(unittest.TestCase):
         ),
     }
 
+    # These three historical Cummiskey refusals remain in QUARANTINED.
+    # Their current positive rows are separately adopted project study English.
+    STUDY_SUCCESSORS = {
+        ("ot-31", "Prayer after Communion"): (
+            "004802315f46cc6d36672dbd525be25583fc487cb37a83db2a071fe2c1340c1b",
+            "phase4-ordinary-four-admission.json",
+            "2444876431e1613dbc366c6898626857f661721e784abd7f61eb00cc5eccda0f",
+        ),
+        ("mary-mother-of-god", "Collect"): (
+            "66d25bf48bd38e85a5d84e16bab3a4cf31372fdb863f56d77a2d6225f462cbd8",
+            "phase4-remaining-three-admission.json",
+            "0ad9032760edc2264256541c6b204f731aa7dcbc00034cce0b8808b6a26193fb",
+        ),
+        ("mary-holy-mother-god", "Collect"): (
+            "b03cb91797b87665e0579551972e38c6f051d52304870e7e40b81f12709551b2",
+            "phase4-remaining-three-admission.json",
+            "7ed2607710f15370a39ed8f57ab638d73ddb8d6c55d4054059e1e4bd829cc63a",
+        ),
+    }
+
     def setUp(self) -> None:
         with self.INVENTORY.open("rb") as handle:
             self.data = tomllib.load(handle)
@@ -1094,6 +1114,9 @@ class RecoveredCummiskeyAntecedentProductionTests(unittest.TestCase):
         self.assertEqual(len(self.QUARANTINED), 16)
         self.assertLessEqual(self.UNBOUND, self.BOUND)
         self.assertLessEqual(set(self.RECOVERED), self.QUARANTINED)
+        self.assertEqual(len(self.STUDY_SUCCESSORS), 3)
+        self.assertLessEqual(set(self.STUDY_SUCCESSORS), self.QUARANTINED)
+        self.assertFalse(set(self.STUDY_SUCCESSORS) & set(self.RECOVERED))
         for key in (self.BOUND - self.UNBOUND) | set(self.RECOVERED):
             self.assertIn(key, positives)
             self.assertNotIn(key, gaps)
@@ -1110,12 +1133,61 @@ class RecoveredCummiskeyAntecedentProductionTests(unittest.TestCase):
                 "publication_passage_id",
             ):
                 self.assertTrue(row.get(field), (key, field))
-        for key in (self.QUARANTINED - set(self.RECOVERED)) | self.UNBOUND:
+        for key in ((self.QUARANTINED - set(self.RECOVERED)
+                     - set(self.STUDY_SUCCESSORS)) | self.UNBOUND):
             self.assertNotIn(key, positives)
             self.assertIn(key, gaps)
             self.assertEqual(gaps[key]["availability"], "unavailable")
             self.assertEqual(gaps[key]["reason"]["kind"], "no-exemplar")
             self.assertNotIn("text", gaps[key])
+
+    def test_exact_study_successors_preserve_rejected_cummiskey_routes(self) -> None:
+        review_dir = ROOT / "workflows/reviews/missal-english-completion-2026-10-29/postconciliar"
+        decision_path = review_dir / "phase4-first18/root-decision.json"
+        decision_sha256 = "6bac2ac5d0de5c2e9d50a654e5cb923721efdeac87a23bd9524922ef346b4943"
+        self.assertEqual(hashlib.sha256(decision_path.read_bytes()).hexdigest(), decision_sha256)
+        decision = json.loads(decision_path.read_text())
+        cases = {tuple(case["target"]): case for case in decision["cases"]}
+        positives = {self.key(row): row for row in self.data["entries"]}
+        gaps = {self.key(row): row for row in self.data["untranslated"]}
+        canonical = lambda value: hashlib.sha256(json.dumps(
+            value, sort_keys=True, ensure_ascii=False, separators=(",", ":")
+        ).encode()).hexdigest()
+        for key, (entry_sha256, admission_name, old_gap_sha256) in self.STUDY_SUCCESSORS.items():
+            with self.subTest(target=key):
+                self.assertIn(key, positives)
+                self.assertNotIn(key, gaps)
+                row = positives[key]
+                target = (key[0], "main", key[1], "all", 1)
+                case = cases[target]
+                self.assertEqual(canonical(row), entry_sha256)
+                self.assertEqual(entry_sha256, case["complete_positive_dictionary_sha256"])
+                self.assertEqual(case["decision"], "adopt exact finite English/source scope")
+                self.assertEqual(row["relation"], "variant")
+                self.assertEqual(len(row["translations"]), 1)
+                translation = row["translations"][0]
+                self.assertEqual((translation["lang"], translation["rights"]),
+                                 ("en", "project-created"))
+                self.assertNotIn("source_id", translation)
+                self.assertNotIn("publication_artifact_id", row)
+                self.assertEqual(hashlib.sha256(translation["text"].encode()).hexdigest(),
+                                 case["English_sha256_raw_UTF8"])
+                self.assertEqual(hashlib.sha256(row["ancient_reading"].encode()).hexdigest(),
+                                 case["old_reading_sha256_raw_UTF8"])
+                for field, value in case["source_binding_fields"].items():
+                    self.assertEqual(row[field], value)
+                admission = json.loads((review_dir / admission_name).read_text())
+                self.assertEqual(admission["root_adoption"], {
+                    "path": str(decision_path.relative_to(ROOT)), "sha256": decision_sha256,
+                })
+                old = next(one for one in admission["superseded_unavailable_dictionaries"]
+                           if self.key(one) == key)
+                self.assertEqual(canonical(old), old_gap_sha256)
+                self.assertEqual(old["reason"], {"kind": "no-exemplar"})
+                self.assertNotIn("text", old)
+                if key[0].startswith("mary-"):
+                    self.assertEqual(row["target_qualification"], "official-2008-closing-excerpt-only")
+                    self.assertTrue(translation["text"].endswith("Who with you."))
 
     def test_overbroad_ot25_page_proof_survives_without_a_body(self) -> None:
         proof = (

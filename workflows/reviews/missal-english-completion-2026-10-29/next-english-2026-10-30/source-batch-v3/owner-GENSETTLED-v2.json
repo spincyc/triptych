@@ -1,0 +1,184 @@
+{
+  "actual_fresh_source_or_English_availability_change": false,
+  "actual_projection_outcome": "NOOP: every registered projection current; no regeneration needed.",
+  "all_586_prior_generation_postimages_byte_exact": true,
+  "all_590_before_paths_byte_exact": true,
+  "changed_counter_tools": [],
+  "changed_served_paths": [],
+  "changed_source_records": [],
+  "commentary_corpus_unchanged": true,
+  "current_act_files": 557,
+  "current_proper_files": 499,
+  "current_sources_files": 18392,
+  "family_164_pending_rows_and_empty_families_unchanged": true,
+  "finite_authority_unchanged": {
+    "byte_size": 211550,
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json",
+    "sha256": "495e5b3672cccb8f2c3ea07398104c4b72026ffb7139de21d25087edcab1f48e"
+  },
+  "prior_generation_evidence": {
+    "path": ".scratch/english-integration-20261029/next-english-cohort-v1/GENSETTLED.json",
+    "retained_immutable_as_historical": true,
+    "sha256": "3a05c340f9ffcb3b0b91e5b2c141e1491d9a8ae4545d78505c7ce165e13cece0"
+  },
+  "remaining_controls": "Root owns semantic source-epoch declaration/adoption, release bindings and final artifact gates.",
+  "root_guard_correction": {
+    "before_sha256": "ecca66760debc9c0451e1b6743883c55d59390f575b4503b6af27d9923117fd3",
+    "byte_size": 29530,
+    "implementation_or_mutation_by_this_lane": false,
+    "path": "scripts/_proper_finite_latin_20261029.py",
+    "sha256": "aa925ac3883a807498b0596ce1535a4c2b93bbc2d49913782d49ea7e4736d9f5"
+  },
+  "schema": "triptych-next-english-generation-settlement/v2",
+  "scope": "Fresh read-only owning currentness after root-owned claims_row correction; no source-body, rights, target-English fidelity, new source epoch, deployment or completion claim.",
+  "status": "GENSETTLED-v2",
+  "three_tools_exact": {
+    "tools/mass-propers": {
+      "byte_size": 269817,
+      "sha256": "976939c81f4fc1fa9bd7de5eadf518514c1f71bba8aefc755ba922c67f5aa310"
+    },
+    "tools/source-library": {
+      "byte_size": 134050,
+      "sha256": "ff27c29238af76100b01047dfdeb9f2a808c0937089bd61d1bdecb6d2a7b45f0"
+    },
+    "tools/source-reader": {
+      "byte_size": 62761,
+      "sha256": "ba07b2f8269ad402edf608f45e6f9e94d92680fd16168b765b3e15e7746ad199"
+    }
+  },
+  "unchanged_English_availability": {
+    "postconciliar": {
+      "available_targets": 173,
+      "exact_target_targets": 0,
+      "targets": 574
+    },
+    "roman-1962": {
+      "available_targets": 1414,
+      "exact_target_targets": 0,
+      "targets": 1448
+    },
+    "roman-pre-1955": {
+      "available_targets": 1374,
+      "exact_target_targets": 0,
+      "targets": 1391
+    }
+  },
+  "unchanged_readability": {
+    "existing_4108_prose_payloads_exact": true,
+    "files": 18392,
+    "new_readability_by_cohort_and_language": {
+      "Ordinary10 metadata cohort / en": 10,
+      "PC18 source cohort / la": 2,
+      "Roman7 source/qualification cohort / en": 2,
+      "Roman7 source/qualification cohort / it": 1,
+      "Roman7 source/qualification cohort / la": 14
+    },
+    "new_readable": 29,
+    "readable": 4137
+  },
+  "unchanged_source_extent": {
+    "artifact": 10568,
+    "bindings": 4398,
+    "corpus": 5,
+    "edition": 14254,
+    "passage": 9612,
+    "segment": 10738,
+    "work": 10936
+  },
+  "verification": {
+    "act-projection": {
+      "command": [
+        ".scratch/pc-quarantine-conservation-20261029/venv/bin/python",
+        "-B",
+        "tools/tpt",
+        "act-history",
+        "structure",
+        "--check"
+      ],
+      "elapsed_seconds": 136.939,
+      "exit_code": 0,
+      "log_sha256": "53c6ca5b20ee2f55f53919f2be4c520fedc7772b1e464aa3808add6a95b435cf",
+      "result_sha256": "29a2843ac0d79c71400df65a731d2b7cd08b42c7dcbb04be76b3451288799403"
+    },
+    "family": {
+      "command": [
+        ".scratch/pc-quarantine-conservation-20261029/venv/bin/python",
+        "-B",
+        "tools/tpt",
+        "source-family-migration",
+        "check"
+      ],
+      "elapsed_seconds": 8.606,
+      "exit_code": 0,
+      "log_sha256": "e53dba3336baaaa615f39d69ab2e20b794eae4b17c41449ef33632b1fe2bc371",
+      "result_sha256": "80aee9ba87aef6915419d84e04d03fcf1d7c9d7f3fdbb5b379b065c443b594a0"
+    },
+    "ordinary": {
+      "command": [
+        ".scratch/pc-quarantine-conservation-20261029/venv/bin/python",
+        "-B",
+        "tools/tpt",
+        "mass-ordinary",
+        "check"
+      ],
+      "elapsed_seconds": 2.065,
+      "exit_code": 0,
+      "log_sha256": "55999aab83aa926c9d28a3fd2ecadd65a5da02efcc7899abe70bf36c760c9520",
+      "result_sha256": "edc8160fa847cbbe18b9d2a3b0c986b4ae2d4ec9adaa455e68ee791aba5734c8"
+    },
+    "propers": {
+      "command": [
+        ".scratch/pc-quarantine-conservation-20261029/venv/bin/python",
+        "-B",
+        "tools/tpt",
+        "mass-propers",
+        "structure",
+        "--check"
+      ],
+      "elapsed_seconds": 11.695,
+      "exit_code": 0,
+      "log_sha256": "d3f8117d4c8bfd753ba614d84c61a8784e90ed7442b11e25937c785674f74218",
+      "result_sha256": "cb6fe930d07de806607333f5266b2229ee109c316f43d4aca87d2c05acdbca77"
+    },
+    "rubrics": {
+      "command": [
+        ".scratch/pc-quarantine-conservation-20261029/venv/bin/python",
+        "-B",
+        "tools/tpt",
+        "calendar-rubrics",
+        "check"
+      ],
+      "elapsed_seconds": 0.423,
+      "exit_code": 0,
+      "log_sha256": "a7cfff63618db55155695f9204a0772347d46d97600ca23b222a4467e46aef6a",
+      "result_sha256": "fa4a5b2860267c63509b8fb38e650e2f2646bced6b97a47ada2a10302d4c4cf0"
+    },
+    "sources-projection": {
+      "command": [
+        ".scratch/pc-quarantine-conservation-20261029/venv/bin/python",
+        "-B",
+        "tools/tpt",
+        "source-reader",
+        "structure",
+        "--check"
+      ],
+      "elapsed_seconds": 6.985,
+      "exit_code": 0,
+      "log_sha256": "ed97d665cb648d3d0d7902b1b1dff3da26bb77cd75b6888d6c2e0eb71d0bc57f",
+      "result_sha256": "35a8ab269fc10384680022bc6c7fca1661e5bf2b5e2233de0fffd506b25648c9"
+    },
+    "sources-rights": {
+      "command": [
+        ".scratch/pc-quarantine-conservation-20261029/venv/bin/python",
+        "-B",
+        "tools/tpt",
+        "source-reader",
+        "check"
+      ],
+      "elapsed_seconds": 5.737,
+      "exit_code": 0,
+      "log_sha256": "8e639cf19bbd4d547bccbe7074278e12d10f76fc90cbe86945a50fee43530498",
+      "result_sha256": "e668ac82967ef26c4914cb6c7ccae257e079de594bc5a991c27f66c41884be0b"
+    }
+  }
+}

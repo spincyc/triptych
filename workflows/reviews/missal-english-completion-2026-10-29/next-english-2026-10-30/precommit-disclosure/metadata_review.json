@@ -1,0 +1,818 @@
+{
+  "all_cohort_paths_at_snapshot": 825,
+  "base_commit": "702f650020d69a45aa747b1c5b5e30be6c42ca59",
+  "checks": [
+    {
+      "check": "ordinary UTF-8 metadata file: PROJECT-WORK.md",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: release/public-alpha.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: release/rights/public-alpha-2026-07-15.md",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: scripts/_proper_finite_latin_20261029.py",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: tools/mass-propers",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: tools/source-library",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: tools/source-reader",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: tools/tests/fixtures/missal-source-batch-20261023.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: tools/tests/test_calendar_translation_overlay.py",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: tools/tests/test_current_source_batch_latin.py",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: tools/tests/test_proper_latin.py",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/final-published-commit-disclosure.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/live-702-verification.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/ordinary/source-reader-english-delivery.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/ordinary/source-reader-independent-metadata-review.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/ordinary/source-reader-metadata-adoption.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/ordinary/source-reader-metadata-files.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/activation-independent-review.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/actual-authority-activation.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/finite-helper-ecca.py",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/pure-quarantine-code-review.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/pure-quarantine-regressions.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/root-seven-decision-binding.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/root-seven-decision.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-acceptance.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-independent-review.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/GENSETTLED.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/SOURCESETTLED.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/actual-installation.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/adapter-independent-review.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/adapter-proof.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/base-English_conservation-review.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/base-data-independent-review.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/base-data_core-review.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/base-finite_guards_and_inherited_finding-review.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/base-source_scope-review.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/data-proof.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/declaration.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/owner-GENSETTLED-v2.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/pc-source-installation.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/physical-scope-independent-review.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/previous-GENSETTLED-v2.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/retention-map.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/roman-source-application.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/semantic-adapter.py",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/source-delta.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/transition-contract.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/test-successors/actual-application.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/test-successors/independent-review.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-extra-two-admission.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-01-cff977a5cd64.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-02-79362b72f99c.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-03-bf2e4449ced7.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-04-a0f77ead71f3.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-05-9ae0bc10b3de.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-06-cf7c9a7bfc58.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-07-d3a9cff83569.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-08-b7aa0d76220c.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-09-9b0215d8be44.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-10-2a8ad2a63b4c.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/root-decision.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/source-expression-recommendation-index.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-good-friday-opening-two-admission.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-ordinary-four-admission.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-pange-two-admission.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-remaining-three-admission.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-seasonal-five-admission.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-01a03e183b94872e.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-06325027601a1cc3.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-107329b343472b93.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-30ba22065d321290.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-3f0e3efae65382c1.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-ababd1f3c1d308b2.json",
+      "pass": true
+    },
+    {
+      "check": "ordinary UTF-8 metadata file: workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-df319c65bab50adb.json",
+      "pass": true
+    },
+    {
+      "check": "approved exact digest: scripts/_proper_finite_latin_20261029.py",
+      "pass": true,
+      "sha256": "aa925ac3883a807498b0596ce1535a4c2b93bbc2d49913782d49ea7e4736d9f5"
+    },
+    {
+      "check": "approved exact digest: tools/tests/test_proper_latin.py",
+      "pass": true,
+      "sha256": "c49c297448306c07ab5eed605ddce48894a2e2f3bda1783966e498ffb70eb997"
+    },
+    {
+      "check": "approved exact digest: tools/tests/test_current_source_batch_latin.py",
+      "pass": true,
+      "sha256": "08f442f03f0f99b994c298e5f647c4f22dd31de2022b923e79f1a8d8c9aefb7b"
+    },
+    {
+      "check": "approved exact digest: tools/tests/test_calendar_translation_overlay.py",
+      "pass": true,
+      "sha256": "ca62b45f00dbe2811c08cd77e60d82a910d653f29d58622d60a882e3049919cc"
+    },
+    {
+      "check": "approved exact digest: tools/mass-propers",
+      "pass": true,
+      "sha256": "976939c81f4fc1fa9bd7de5eadf518514c1f71bba8aefc755ba922c67f5aa310"
+    },
+    {
+      "check": "approved exact digest: tools/source-library",
+      "pass": true,
+      "sha256": "ff27c29238af76100b01047dfdeb9f2a808c0937089bd61d1bdecb6d2a7b45f0"
+    },
+    {
+      "check": "approved exact digest: tools/source-reader",
+      "pass": true,
+      "sha256": "ba07b2f8269ad402edf608f45e6f9e94d92680fd16168b765b3e15e7746ad199"
+    },
+    {
+      "check": "approved exact digest: workflows/reviews/missal-english-completion-2026-10-29/source-guard/compile_successor_v3.py",
+      "pass": true,
+      "sha256": "29d0add9b330248b4047881310175614d91adc82688bfc695451318696c0865b"
+    },
+    {
+      "check": "approved exact digest: workflows/reviews/missal-english-completion-2026-10-29/source-guard/support_v3.py",
+      "pass": true,
+      "sha256": "6fd8b3552071f4ef479bbdc6c4d693331b8ceb91e48dcb016e91033fd6ba03fc"
+    },
+    {
+      "check": "approved exact digest: tools/tests/_source_batch_guards.py",
+      "pass": true,
+      "sha256": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1"
+    },
+    {
+      "check": "approved exact digest: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/semantic-adapter.py",
+      "pass": true,
+      "sha256": "23391e404ec941d3057070c48da95fb538698fb9ce9f0777ab688034c0443a09"
+    },
+    {
+      "check": "approved exact digest: workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json",
+      "pass": true,
+      "sha256": "495e5b3672cccb8f2c3ea07398104c4b72026ffb7139de21d25087edcab1f48e"
+    },
+    {
+      "check": "approved exact digest: workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/final-published-commit-disclosure.json",
+      "pass": true,
+      "sha256": "d1a2fcc8b10cc59c389a2da2b8bfaa0a26c2b3fe62fa8752136793ff49cfdbdb"
+    },
+    {
+      "check": "approved exact digest: workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/live-702-verification.json",
+      "pass": true,
+      "sha256": "ac991781093567f8aec02e8363adb49d4d50730f0b12db0152e12abd10fafce9"
+    },
+    {
+      "check": "EXAMPLES-only immutable exterior: tools/mass-propers",
+      "pass": true
+    },
+    {
+      "check": "EXAMPLES-only immutable exterior: tools/source-library",
+      "pass": true
+    },
+    {
+      "check": "EXAMPLES-only immutable exterior: tools/source-reader",
+      "pass": true
+    },
+    {
+      "check": "retained original byte exact: tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+      "pass": true
+    },
+    {
+      "check": "retained original byte exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/data-proof.json",
+      "pass": true
+    },
+    {
+      "check": "retained original byte exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/adapter-proof.json",
+      "pass": true
+    },
+    {
+      "check": "retained original byte exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/transition-contract.json",
+      "pass": true
+    },
+    {
+      "check": "retained original byte exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/semantic-adapter.py",
+      "pass": true
+    },
+    {
+      "check": "retained original byte exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/declaration.json",
+      "pass": true
+    },
+    {
+      "check": "retained original byte exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/source-delta.json",
+      "pass": true
+    },
+    {
+      "check": "retained original byte exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/SOURCESETTLED.json",
+      "pass": true
+    },
+    {
+      "check": "retained original byte exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/GENSETTLED.json",
+      "pass": true
+    },
+    {
+      "check": "retained original byte exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/owner-GENSETTLED-v2.json",
+      "pass": true
+    },
+    {
+      "check": "retained original byte exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/adapter-independent-review.json",
+      "pass": true
+    },
+    {
+      "check": "retained original byte exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/finite-helper-ecca.py",
+      "pass": true
+    },
+    {
+      "check": "retained original byte exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/pure-quarantine-code-review.json",
+      "pass": true
+    },
+    {
+      "check": "retained original byte exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/pure-quarantine-regressions.json",
+      "pass": true
+    },
+    {
+      "check": "retained original byte exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/roman-source-application.json",
+      "pass": true
+    },
+    {
+      "check": "retained original byte exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/pc-source-installation.json",
+      "pass": true
+    },
+    {
+      "check": "retained original byte exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/previous-GENSETTLED-v2.json",
+      "pass": true
+    },
+    {
+      "check": "retained original byte exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/test-successors/actual-application.json",
+      "pass": true
+    },
+    {
+      "check": "retained original byte exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/test-successors/independent-review.json",
+      "pass": true
+    },
+    {
+      "check": "retained independent review byte exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/base-data-independent-review.json",
+      "pass": true
+    },
+    {
+      "check": "retained independent review byte exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-independent-review.json",
+      "pass": true
+    },
+    {
+      "check": "retained independent review byte exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/physical-scope-independent-review.json",
+      "pass": true
+    },
+    {
+      "check": "retained independent review byte exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/base-English_conservation-review.json",
+      "pass": true
+    },
+    {
+      "check": "retained independent review byte exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/base-data_core-review.json",
+      "pass": true
+    },
+    {
+      "check": "retained independent review byte exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/base-finite_guards_and_inherited_finding-review.json",
+      "pass": true
+    },
+    {
+      "check": "retained independent review byte exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/base-source_scope-review.json",
+      "pass": true
+    },
+    {
+      "check": "already durable hash: workflows/reviews/missal-english-completion-2026-10-29/source-guard/compile_successor_v3.py",
+      "pass": true
+    },
+    {
+      "check": "already durable hash: workflows/reviews/missal-english-completion-2026-10-29/source-guard/support_v3.py",
+      "pass": true
+    },
+    {
+      "check": "already durable hash: tools/tests/_source_batch_guards.py",
+      "pass": true
+    },
+    {
+      "check": "already durable hash: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/actual-authority-activation.json",
+      "pass": true
+    },
+    {
+      "check": "accepted fixture core be05 exact",
+      "pass": true
+    },
+    {
+      "check": "accepted fixture envelope binds actual root receipt",
+      "pass": true
+    },
+    {
+      "check": "pending V3 reconstructs f051 exact",
+      "pass": true
+    },
+    {
+      "check": "receipt exact manifest and source count",
+      "pass": true
+    },
+    {
+      "check": "receipt remains source accounting without new permission",
+      "pass": true
+    },
+    {
+      "check": "root receipt reference exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/transition-contract.json",
+      "pass": true,
+      "reference_revision": "current-filesystem"
+    },
+    {
+      "check": "root receipt reference exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/data-proof.json",
+      "pass": true,
+      "reference_revision": "current-filesystem"
+    },
+    {
+      "check": "root receipt reference exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/adapter-proof.json",
+      "pass": true,
+      "reference_revision": "current-filesystem"
+    },
+    {
+      "check": "root receipt reference exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/declaration.json",
+      "pass": true,
+      "reference_revision": "current-filesystem"
+    },
+    {
+      "check": "root receipt reference exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/semantic-adapter.py",
+      "pass": true,
+      "reference_revision": "current-filesystem"
+    },
+    {
+      "check": "root receipt reference exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/adapter-independent-review.json",
+      "pass": true,
+      "reference_revision": "current-filesystem"
+    },
+    {
+      "check": "root receipt reference exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/pure-quarantine-code-review.json",
+      "pass": true,
+      "reference_revision": "current-filesystem"
+    },
+    {
+      "check": "root receipt reference exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/pure-quarantine-regressions.json",
+      "pass": true,
+      "reference_revision": "current-filesystem"
+    },
+    {
+      "check": "root receipt reference exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/actual-authority-activation.json",
+      "pass": true,
+      "reference_revision": "current-filesystem"
+    },
+    {
+      "check": "root receipt reference exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-independent-review.json",
+      "pass": true,
+      "reference_revision": "current-filesystem"
+    },
+    {
+      "check": "root receipt reference exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/base-data-independent-review.json",
+      "pass": true,
+      "reference_revision": "current-filesystem"
+    },
+    {
+      "check": "root receipt reference exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/physical-scope-independent-review.json",
+      "pass": true,
+      "reference_revision": "current-filesystem"
+    },
+    {
+      "check": "root receipt reference exact: tools/tests/fixtures/missal-source-batch-20261023.json",
+      "pass": true,
+      "reference_revision": "702f650020d69a45aa747b1c5b5e30be6c42ca59"
+    },
+    {
+      "check": "root receipt reference exact: tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+      "pass": true,
+      "reference_revision": "702f650020d69a45aa747b1c5b5e30be6c42ca59"
+    },
+    {
+      "check": "root receipt reference exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/retention-map.json",
+      "pass": true,
+      "reference_revision": "current-filesystem"
+    },
+    {
+      "check": "root receipt reference exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/test-successors/actual-application.json",
+      "pass": true,
+      "reference_revision": "current-filesystem"
+    },
+    {
+      "check": "root receipt reference exact: workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/test-successors/independent-review.json",
+      "pass": true,
+      "reference_revision": "current-filesystem"
+    },
+    {
+      "check": "release all permission terms unchanged",
+      "pass": true
+    },
+    {
+      "check": "rights record all nonbinding prose unchanged",
+      "pass": true
+    },
+    {
+      "check": "release rights hash exact",
+      "pass": true
+    },
+    {
+      "check": "promise ledger byte identical published702",
+      "pass": true
+    },
+    {
+      "check": "project honest open state: 1,414/1,448",
+      "pass": true
+    },
+    {
+      "check": "project honest open state: 1,374/1,391",
+      "pass": true
+    },
+    {
+      "check": "project honest open state: 173/574",
+      "pass": true
+    },
+    {
+      "check": "project honest open state: seventy earlier drafts with open",
+      "pass": true
+    },
+    {
+      "check": "project honest open state: publication remain required",
+      "pass": true
+    },
+    {
+      "check": "bounded metadata disclosure scan clear",
+      "hits": [],
+      "pass": true
+    },
+    {
+      "check": "snapshot only three reviewed test successors",
+      "pass": true,
+      "paths": [
+        "tools/tests/test_calendar_translation_overlay.py",
+        "tools/tests/test_current_source_batch_latin.py",
+        "tools/tests/test_proper_latin.py"
+      ]
+    }
+  ],
+  "content_manifest_sha256": "ee04ce1cf3ee75522b494097ab3c83575a67199136d4010e37b46fbf5e0530b0",
+  "findings": [],
+  "inherited_consumer_finding": "Injected-only removed-marker sanitizer gap remains open for the separately reviewed narrow repair before final merged publication. No actual candidate payload is inferred.",
+  "limits": [
+    "Read-only canonical review; no index, refs, commit, source acceptance or deployment actions.",
+    "Source-body, generated served outputs and binary payloads have separate owner lanes.",
+    "Exact outgoing Git-object graph must be reviewed after the cohort commit; this report covers current filesystem content only.",
+    "Retained historical review state fields remain historical statements; the actual acceptance receipt binds the accepted successor."
+  ],
+  "metadata_paths": 76,
+  "retention_rows": [
+    {
+      "byte_exact_to_original": true,
+      "path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+      "sha256": "13505e8e805b221f78f8004586ca2b4e8f2f2de0c20a2a5e28799af589464e84"
+    },
+    {
+      "byte_exact_to_original": true,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/data-proof.json",
+      "sha256": "68325b619038d8e9872f2c2a468f0a04a01ce1bc57a5a6b35f341cfc1a05d60b"
+    },
+    {
+      "byte_exact_to_original": true,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/adapter-proof.json",
+      "sha256": "68961eb740d38fd7639a32f2100a5e63d7ffbe0d8753d77a7cbd92d84b3a61b1"
+    },
+    {
+      "byte_exact_to_original": true,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/transition-contract.json",
+      "sha256": "7495dee6d0d191b9f376d6494e8323dd47a1869a0636deaac0a0c4f1d6a11755"
+    },
+    {
+      "byte_exact_to_original": true,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/semantic-adapter.py",
+      "sha256": "23391e404ec941d3057070c48da95fb538698fb9ce9f0777ab688034c0443a09"
+    },
+    {
+      "byte_exact_to_original": true,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/declaration.json",
+      "sha256": "b05cc94593171cea71c6568d512fbf4ab7a6b3443eed42efedb2e197ea3bf26f"
+    },
+    {
+      "byte_exact_to_original": true,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/source-delta.json",
+      "sha256": "e7e1eb6be7b0e44e0158bafef38afbc0515dece27c1809650934c27d86e6c07c"
+    },
+    {
+      "byte_exact_to_original": true,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/SOURCESETTLED.json",
+      "sha256": "32a27a9c8c6ecd9ab19c4eb5c7d677326e227eabb03088c1d0d9b2a185020d53"
+    },
+    {
+      "byte_exact_to_original": true,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/GENSETTLED.json",
+      "sha256": "e3871f1e2260bcadad4565002a502504f9f5d666b7bffd8b2d7a2c6fdb19773c"
+    },
+    {
+      "byte_exact_to_original": true,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/owner-GENSETTLED-v2.json",
+      "sha256": "b37bddc8e9ffd464da8ef139d26b4b3c0ba6b471afed0fd9f6d2dcdddb50b14b"
+    },
+    {
+      "byte_exact_to_original": true,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/adapter-independent-review.json",
+      "sha256": "052cce2b141a2a8e3172b196f8ecf8b6b80242a721511826d1577c35d648c9eb"
+    },
+    {
+      "byte_exact_to_original": true,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/finite-helper-ecca.py",
+      "sha256": "ecca66760debc9c0451e1b6743883c55d59390f575b4503b6af27d9923117fd3"
+    },
+    {
+      "byte_exact_to_original": true,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/pure-quarantine-code-review.json",
+      "sha256": "b2f859809819b9a24e3a1f488bcd136cae87bcf0b918375244f5c2a349881105"
+    },
+    {
+      "byte_exact_to_original": true,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/pure-quarantine-regressions.json",
+      "sha256": "dc5542cdc8bdfc5040f98d650a01376fd74dbc2a25512cd2a193a28224a8e030"
+    },
+    {
+      "byte_exact_to_original": true,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/roman-source-application.json",
+      "sha256": "3a8bdbdc6873021e37fd7beb1cc0344826af6ac3be49107837e31bafd1a49969"
+    },
+    {
+      "byte_exact_to_original": true,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/pc-source-installation.json",
+      "sha256": "9375764ee0a7a08a2d56bbaa60f09d041698547248b4e8aa9bbb2cba342d1183"
+    },
+    {
+      "byte_exact_to_original": true,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/previous-GENSETTLED-v2.json",
+      "sha256": "529fc3ccff92c6cd0702a5c7f6d91d1fe958fe0350536478c1efec37b69fb6f7"
+    },
+    {
+      "byte_exact_to_original": true,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/test-successors/actual-application.json",
+      "sha256": "6e0377d845368085d1a23e74f6b7e5db2c396d942cc43b579b1b4e0a33f9223a"
+    },
+    {
+      "byte_exact_to_original": true,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/test-successors/independent-review.json",
+      "sha256": "01e832f44734f02058a9599485818b69462bc8959244c34befdb9a8b93fa7d14"
+    },
+    {
+      "byte_exact_to_original": true,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/base-data-independent-review.json",
+      "sha256": "b34480695b287ab4779693888828c67b7834c4ce6fd49a8c6498a17d65af7967"
+    },
+    {
+      "byte_exact_to_original": true,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-independent-review.json",
+      "sha256": "bebf620edc65ef674a6e7d70134e3cfc0779a778a2e0b7b8cddaf93b9356547c"
+    },
+    {
+      "byte_exact_to_original": true,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/physical-scope-independent-review.json",
+      "sha256": "e4307811f2e6b735b80a77a2cf4b2230c8dbc7e6c57e6a013477dd31faa90a55"
+    },
+    {
+      "byte_exact_to_original": true,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/base-English_conservation-review.json",
+      "sha256": "03da9962e670de081e63bde7e591cdcb78995a8c3c5ddb63aa6d8c0cca84e693"
+    },
+    {
+      "byte_exact_to_original": true,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/base-data_core-review.json",
+      "sha256": "a6b194c6f80b509697042b97f2e0f0d2035b5ba955b5970e0df1531141afa844"
+    },
+    {
+      "byte_exact_to_original": true,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/base-finite_guards_and_inherited_finding-review.json",
+      "sha256": "9b266b18b1a64f83cc03f0b53529aac43f92710e2a4698109944e744552e2e60"
+    },
+    {
+      "byte_exact_to_original": true,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/base-source_scope-review.json",
+      "sha256": "3b400a5b29ce50181faba4a0e8b641b4a571f7d1469f1406dc2bbf244dc6d1b5"
+    }
+  ],
+  "schema": "triptych-independent-precommit-cohort-metadata-disclosure/v1",
+  "status": "PASS-bounded-metadata-snapshot",
+  "test_execution_boundary": {
+    "all_tests_pass_claim": false,
+    "cause": "Old Common-acclamation expected gaps for four newly accepted historical English entries.",
+    "initial_actual_tests_run": 144,
+    "initial_subtest_failures": 8,
+    "late_Common_test_successor": "Not present in this frozen metadata snapshot; requires its own exact postimage and peer-review binding if added."
+  }
+}

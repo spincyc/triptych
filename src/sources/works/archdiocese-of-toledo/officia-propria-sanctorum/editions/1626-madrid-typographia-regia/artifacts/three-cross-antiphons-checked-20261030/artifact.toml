@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia.three-cross-antiphons-checked-20261030"
+edition_id = "edition.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "United States: this identified Madrid Typographia Regia printing was published in 1626, long before 1931, and its publication term has expired. The retained historical title, license and office pages contain no modern editorial contribution. A faithful mechanical scan adds no authorship to those historical words or pages. Received Latin remains public domain and is excluded from Triptych project licensing. No blanket assessment of the modern complete PDF delivery is asserted."
+rights_jurisdiction = "United States"
+provenance = "The full first, second and third Cross antiphons of the third nocturn were read on printed55-56, complete PDF71-72, at both 200 and 400 dpi. The first full occurrence of Adoramus and Per lignum on printed55 and the clearest full repetition of Salvator on printed56 control the transcription. The entire second source body retains its final Alleluia. No raw OCR reading supplies a word."
+retrieved = "2026-10-30"
+sha256 = "64b648ba6faf6e07d44d20de2a0d3a25fb84968b52f975905bfb17983f634d24"
+byte_size = 330
+path = "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/artifacts/three-cross-antiphons-checked-20261030/text.txt"
+indexable = true
+derived_from = "artifact.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia.title-license-and-cross-pages"
+transformation = "Transcribe each complete antiphon once, excluding the Antiphona markers, Psalm texts, running titles and repeated antiphons after the Psalms. Join source line wraps, regularize typographic long-s to s, expand no lexical abbreviation in the selected complete right-column Salvator repetition, and retain ampersands and the old serui/Saluator/salua spellings. Preserve source pointing and its explicit final Alleluia on Per lignum. Blank lines separate the three full antiphons in their historical office order. No 1962 target pointing, word order or omitted suffix is silently substituted."
+encoding = "utf-8"

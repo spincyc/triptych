@@ -983,6 +983,29 @@ class EnglishCoverageTests(unittest.TestCase):
         ]
         self.assertEqual(len(recovered), len(recovered_targets))
         expected += recovered
+        # Four exact Lasance publication bindings already present at 702f650.
+        # Keep their target scope independent of the carriers' own row counts.
+        earlier_bound_scopes = {
+            "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pontiff-two-en-20261029-dc95b61f": {
+                ("commune-summorum-pontificum", "main", "Secret", "all", 1),
+                ("commune-summorum-pontificum", "main", "Postcommunion", "all", 1),
+            },
+            "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.holyweek-hymn-ubi-caritas-en-20261029-b736c65c": {
+                ("mass-of-the-lords-supper", "main", "Mandatum Antiphon 8", "all", 1),
+            },
+            "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.holyweek-hymn-gloria-laus-en-20261029-4363e40f": {
+                ("palm-sunday", "main", "Hymn to Christ the King", "all", 1),
+            },
+        }
+        for artifact_id, targets in earlier_bound_scopes.items():
+            bound = [row for row in document["entries"]
+                     if row.get("publication_artifact_id") == artifact_id]
+            self.assertEqual(
+                {(row["mass"], row["form_id"], row["proper"], row["cycle"], row["occurrence"])
+                 for row in bound}, targets,
+            )
+            self.assertEqual(len(bound), len(targets))
+            expected += bound
         self.assertEqual(
             {
                 (

@@ -181,6 +181,21 @@
    "storage": "tracked"
   },
   {
+   "artifact_type": "facsimile-excerpt",
+   "byte_size": 502778,
+   "edition_owned": true,
+   "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb",
+   "media_type": "application/pdf",
+   "notes": "Derivative page1 equals parent PDF217, printed217, ordinary AshWednesday source page. Only the complete common formula and its marked response are relied on; no whole AshWednesday prayer is attached to GoodFriday.",
+   "page_count": 1,
+   "retrieved": "2026-10-30",
+   "rights": "public-domain",
+   "rights_basis": "Mechanical extraction of independently image-checked ordinary printed pages of the identified public-domain historical book. No modern text is included. The old book is United States public domain by publication date for Wilson1894, and the separately verified Lasance1945 nonrenewal finding for the ordinary Lasance page. No digitiser notice or lettered insert is retained.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf",
+   "storage": "tracked"
+  },
+  {
    "artifact_type": "normalized-text",
    "byte_size": 2876,
    "edition_owned": true,
@@ -221,6 +236,21 @@
    "retrieved": "2026-10-29",
    "rights": "public-domain",
    "rights_basis": "Only the identified Lasance and Walsh revised-1945 human English verse bodies are retained, under the source printing's separately registered United States nonrenewal basis. Faithful transcription adds no authorship; the historical wording is excluded from the project CC BY 4.0 offer. No modern Latin, approved modern English, source image, source rubric, OCR furniture or lettered insert is included.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 434,
+   "edition_owned": true,
+   "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-otherseasonal-lasance-historical-en",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "notes": "2 complete historical human English bodies, unchanged from the independently accepted frozen packet 11c4c137fd60453e0a00f38ea8066f6b7dd93ea9721af57cd271061a68c85d00. Verification and publication passages use exactly the same source locus. The comparison is bounded to the directly inspected secondary digitally typeset 2002 reproduction. Its fidelity to printed 2002 and correspondence to the authenticated 2008 reimpressio remain unresolved. No approved modern English, ICEL wording, recitation authority, protected modern Latin payload or modern source image is supplied.",
+   "page_count": null,
+   "retrieved": "2026-10-29",
+   "rights": "public-domain",
+   "rights_basis": "The identified Lasance and Walsh revised-1945 original English has the separately registered United States nonrenewal basis in lasance-new-roman-missal-rights-v1.toml. Only the two complete image-checked ordinary-page antiphon bodies are retained; excluded lettered inserts, post-1954 new matter and the unresolved whole scan are not redistributed. Faithful transcription adds no new authorship. The historical human wording is excluded from Triptych’s CC BY 4.0 offer. No approved contemporary English, modern Latin, OCR wrapper, source image, publisher furniture or translated rubric is included.",
    "rights_jurisdiction": "United States",
    "source_url": null,
    "storage": "tracked"
@@ -516,7 +546,7 @@
    "page_count": null,
    "retrieved": "2026-10-29",
    "rights": "public-domain",
-   "rights_basis": "Only underlyingLasance/Walsh1937/1945originalEnglish on ordinaryprinted1286–1287 is retained, under establishedUnitedStatesnonrenewalfindingA110108/A192159 in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. Englishrenewal finding does not independently clear laterVaticanLatin contribution; the exactLatinform requires separatefiniteauthority workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json, method english-completion-20261029-finite-latin-v1.",
+   "rights_basis": "English-only checked transcription of the ordinary St Martin Secret and Postcommunion at printed pp. 1286-1287 (PDF pp. 1287-1288), from registered source artifact artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0 (SHA256 6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70), a later printing of the revised 1945 edition. The underlying English of the 1937 and 1945 registered editions is in the United States public domain under the established nonrenewal findings for A 110108 and A 192159 in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml, holding, registrations, and layers_freed/english-translation. This artifact contains only those two literal English prayers, including their actual short conclusions. The excluded appendix at printed pp. 1298a-1298n and inserted pp. 1302a-1302d are outside these ordinary-page selections. This basis applies only to that English wording; it makes no rights determination for Latin, another text, or the complete facsimile.",
    "rights_jurisdiction": "United States",
    "source_url": "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf",
    "storage": "tracked"
@@ -20706,6 +20736,28 @@
    "withheld": "rights"
   },
   {
+   "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb",
+   "artifact_type": "facsimile-excerpt",
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion",
+   "locus": "Lasance printed217; parentPDF217; retained derivative page1; common short endings in AshWednesday prayers",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-30",
+   "withheld": "no-transcription"
+  },
+  {
    "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.holyweek-hymn-gloria-laus-en-20261029-4363e40f",
    "artifact_type": "checked-bilingual-transcription",
    "context": "Exact bounded original-expression TSV data row; English and opposite Latin carried separately.",
@@ -27092,14 +27144,17 @@
   {
    "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pontiff-two-en-20261029-dc95b61f",
    "artifact_type": "checked-english-transcription",
+   "context": "ExactliteralEnglishselectedfrom independentlyverifiedordinary1945page;tsvphysicalrow3.",
    "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pontiff-postcommunion-publish-20261029",
    "locus": "Lasance/Walshrevised1945ordinaryStMartin Postcommunion, Lasance/Walsh revised1945 ordinary printed1287, PDF1288, November12 StMartinPope, Postcommunion at pagehead.",
    "media_type": "text/plain; charset=utf-8",
-   "readable": false,
-   "reason": "finite Latin carrier is outside the exact adopted artifact scope; finite Latin reading requires its exact adopted passage/controller/ranges",
+   "notes": "UnderlyinglaterLatinqualification separatelyrequired; sourceEnglish is not upgradedtoapprovedcurrentEnglish.",
+   "readable": true,
    "rights": "public-domain",
+   "rights_basis": "English-only checked transcription of the ordinary St Martin Secret and Postcommunion at printed pp. 1286-1287 (PDF pp. 1287-1288), from registered source artifact artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0 (SHA256 6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70), a later printing of the revised 1945 edition. The underlying English of the 1937 and 1945 registered editions is in the United States public domain under the established nonrenewal findings for A 110108 and A 192159 in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml, holding, registrations, and layers_freed/english-translation. This artifact contains only those two literal English prayers, including their actual short conclusions. The excluded appendix at printed pp. 1298a-1298n and inserted pp. 1302a-1302d are outside these ordinary-page selections. This basis applies only to that English wording; it makes no rights determination for Latin, another text, or the complete facsimile.",
    "rights_jurisdiction": "United States",
    "segment_id": null,
+   "source": "physical-lines",
    "source_url": "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf",
    "states": [
     "cataloged",
@@ -27108,8 +27163,9 @@
     "verified"
    ],
    "storage": "tracked",
+   "text_path": "structure/sources/text/passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pontiff-postcommunion-publish-20261029.json",
    "verified_on": "2026-10-29",
-   "withheld": "rights"
+   "words": 47
   },
   {
    "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
@@ -27136,14 +27192,17 @@
   {
    "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pontiff-two-en-20261029-dc95b61f",
    "artifact_type": "checked-english-transcription",
+   "context": "ExactliteralEnglishselectedfrom independentlyverifiedordinary1945page;tsvphysicalrow2.",
    "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pontiff-secret-publish-20261029",
    "locus": "Lasance/Walshrevised1945ordinaryStMartin Secret, Lasance/Walsh revised1945 ordinary printed1286-1287, PDF1287-1288, November12 StMartinPope, Secret across pagebreak.",
    "media_type": "text/plain; charset=utf-8",
-   "readable": false,
-   "reason": "finite Latin carrier is outside the exact adopted artifact scope; finite Latin reading requires its exact adopted passage/controller/ranges",
+   "notes": "UnderlyinglaterLatinqualification separatelyrequired; sourceEnglish is not upgradedtoapprovedcurrentEnglish. Move the vocative Domine from after Ecclesiam tuam in the older prayer to before Ecclesiam tuam in the target; this routinewordorder change is explicit and not literal whole-sequence identity.",
+   "readable": true,
    "rights": "public-domain",
+   "rights_basis": "English-only checked transcription of the ordinary St Martin Secret and Postcommunion at printed pp. 1286-1287 (PDF pp. 1287-1288), from registered source artifact artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0 (SHA256 6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70), a later printing of the revised 1945 edition. The underlying English of the 1937 and 1945 registered editions is in the United States public domain under the established nonrenewal findings for A 110108 and A 192159 in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml, holding, registrations, and layers_freed/english-translation. This artifact contains only those two literal English prayers, including their actual short conclusions. The excluded appendix at printed pp. 1298a-1298n and inserted pp. 1302a-1302d are outside these ordinary-page selections. This basis applies only to that English wording; it makes no rights determination for Latin, another text, or the complete facsimile.",
    "rights_jurisdiction": "United States",
    "segment_id": null,
+   "source": "physical-lines",
    "source_url": "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf",
    "states": [
     "cataloged",
@@ -27152,8 +27211,9 @@
     "verified"
    ],
    "storage": "tracked",
+   "text_path": "structure/sources/text/passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pontiff-secret-publish-20261029.json",
    "verified_on": "2026-10-29",
-   "withheld": "rights"
+   "words": 47
   },
   {
    "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
@@ -42823,6 +42883,94 @@
    ],
    "storage": "remote",
    "verified_on": "2026-10-23",
+   "withheld": "rights"
+  },
+  {
+   "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-otherseasonal-lasance-historical-en",
+   "artifact_type": "normalized-text",
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-otherseasonal-lent-3-thursday-main-entrance-antiphon-all-1-publication",
+   "locus": "Thursday, Third Week of Lent / Introit antiphon, printed p. 310",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-29",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+   "artifact_type": "facsimile-pdf",
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-otherseasonal-lent-3-thursday-main-entrance-antiphon-all-1-source",
+   "locus": "Thursday, Third Week of Lent / Introit antiphon, printed p. 310",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "The rights position for this artifact has not been settled, and an unsettled question is not a permission.",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-10-29",
+   "withheld": "rights"
+  },
+  {
+   "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-otherseasonal-lasance-historical-en",
+   "artifact_type": "normalized-text",
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-otherseasonal-most-holy-trinity-main-entrance-antiphon-all-1-publication",
+   "locus": "Trinity Sunday / Offertory antiphon, printed p. 628",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-29",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+   "artifact_type": "facsimile-pdf",
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-otherseasonal-most-holy-trinity-main-entrance-antiphon-all-1-source",
+   "locus": "Trinity Sunday / Offertory antiphon, printed p. 628",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "The rights position for this artifact has not been settled, and an unsettled question is not a permission.",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-10-29",
    "withheld": "rights"
   },
   {
