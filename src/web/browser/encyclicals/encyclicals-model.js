@@ -42,10 +42,13 @@
 
   const TEXT_FILTERS = [
     { value: '', label: 'Any, or none' },
-    { value: 'la', label: 'Latin held here' },
-    { value: 'en', label: 'English held here' },
-    { value: 'la-or-en', label: 'Latin or English held here' },
-    { value: 'none', label: 'No text held here' }
+    { value: 'en-complete', label: 'Complete English' },
+    { value: 'en', label: 'English PDF, any extent' },
+    { value: 'en-external', label: 'English online, any extent' },
+    { value: 'en-missing', label: 'English gaps' },
+    { value: 'la', label: 'Latin source PDF' },
+    { value: 'la-or-en', label: 'Latin or English source PDF' },
+    { value: 'none', label: 'No source PDF here' }
   ];
 
   const SORTS = [
@@ -103,6 +106,20 @@
     return (row.readers || []).filter(function (reader) { return reader.language === code; });
   }
 
+  /** Completeness belongs to an identified delivery, never just its language. */
+  function englishAvailability(row) {
+    const sources = readersIn(row, 'en');
+    const external = row.english_routes || [];
+    const complete = (entries) => entries.some((entry) => entry.extent === 'complete');
+    const sourceComplete = complete(sources);
+    const externalComplete = complete(external);
+    const allComplete = sourceComplete || externalComplete;
+    const any = Boolean(sources.length || external.length);
+    return { complete: allComplete, source_complete: sourceComplete,
+      external_complete: externalComplete,
+      incomplete_only: any && !allComplete, unavailable: !any };
+  }
+
   /** "15 May 1891", or null for an undated row. Written here, not by the locale. */
   function longDate(date) {
     const match = /^([0-9]{4})-([0-9]{2})-([0-9]{2})$/.exec(String(date || ''));
@@ -116,6 +133,9 @@
     for (const reader of row.readers || []) {
       parts.push(reader.witness, reader.extent, labels[reader.language] || reader.language);
     }
+    for (const route of row.english_routes || []) {
+      parts.push('English external', route.label, route.extent, route.authority, route.verification_note);
+    }
     return fold(parts.filter(function (part) { return part !== null && part !== undefined; }).join('   '));
   }
 
@@ -124,6 +144,9 @@
     switch (state.text) {
       case 'la': if (!hasLanguage(row, 'la')) return false; break;
       case 'en': if (!hasLanguage(row, 'en')) return false; break;
+      case 'en-complete': if (!englishAvailability(row).complete) return false; break;
+      case 'en-external': if (!(row.english_routes || []).length) return false; break;
+      case 'en-missing': if (englishAvailability(row).complete) return false; break;
       case 'la-or-en':
         if (!hasLanguage(row, 'la') && !hasLanguage(row, 'en')) return false;
         break;
@@ -232,8 +255,14 @@
   /** What the narrowed list amounts to. Counted, never assumed. */
   function tally(rows) {
     const counted = { encyclicals: rows.length, withText: 0, without: 0, readers: 0, byLanguage: {},
-      first: null, last: null, undated: 0 };
+      first: null, last: null, undated: 0,
+      english: { complete: 0, source_complete: 0, external_complete: 0,
+        incomplete_only: 0, unavailable: 0, source_readers: 0, external_routes: 0 } };
     for (const row of rows) {
+      const english = englishAvailability(row);
+      for (const key of Object.keys(english)) counted.english[key] += Number(english[key]);
+      counted.english.source_readers += readersIn(row, 'en').length;
+      counted.english.external_routes += (row.english_routes || []).length;
       if ((row.readers || []).length) counted.withText += 1;
       else counted.without += 1;
       for (const reader of row.readers || []) {
@@ -259,6 +288,7 @@
     languagesOf: languagesOf,
     languageColumns: languageColumns,
     readersIn: readersIn,
+    englishAvailability: englishAvailability,
     longDate: longDate,
     matches: matches,
     narrow: narrow,

@@ -5,7 +5,49 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-28.
+Last reconciled: 2026-10-30.
+
+## Encyclical completion and English coverage, 2026-10-29
+
+<!-- promised-deliverable: encyclicals-completion-2026-10-29 -->
+
+**In progress.** The maintainer resumed the encyclical work, requested English
+translations of all catalogued acts, a classic TeX appearance for the two-column
+PDFs, maximum useful parallel work and independent cold review. Existing human
+English sources take priority. This pass has introduced no AI-translated
+encyclical bodies; catalogue descriptions remain separately identified AI work.
+
+The catalogue checkpoint contains 322 distinct Vatican-indexed acts and 304
+external English links: 283 acts have a complete English route, 14 have only
+partial or damaged English, and 25 have no located English route. All 91 acts
+after 1930 have complete external English routes. These are bounded identity
+and extent findings, not claims of translation accuracy or local republication
+permission. Thirty-nine complete-English gaps remain open. The local release
+still contains 4,808 readers, including complete English for 41 acts; the 327
+existing encyclical source links retain their exact installed PDF identities.
+
+All 322 descriptions are present. Their attribution records Claude's 255 and
+Codex's 67 contributions; the new descriptions use 66 official English texts
+and the explicitly identified Italian Orientales Ecclesias text. The browser
+separates complete English, local PDFs, external links and remaining gaps. Its
+full method is available in a keyboard-accessible disclosure.
+
+Catalogue validation passes 20 tests including two Chromium checks, all 149
+public-alpha test identities, the full source gate, exact release bindings,
+site build and independent GitHub Pages artifact verification. Actual built
+routes pass six viewport and text-reflow cases, filters and keyboard disclosure
+checks. Thirty-one comparison projections change only the source-library tool
+hash; comparison content and source evidence are identical. The source-family
+bootstrap checkpoint is current while all 164 owner review units remain
+honestly pending; no completed family screening is claimed.
+
+Historical English intake, source-preserving note and spacing repairs, classic
+reader installation and the remaining cold-review dispositions continue. A
+successful render or producer review does not establish independent page
+acceptance. The English coverage, classic-reader and overall completion
+requirements below remain open. On 2026-10-30 the maintainer requested regular
+coherent commits reconciled and pushed to main; this workspace retains
+feature/encyclicals locally and publishes validated checkpoints to origin/main.
 
 ## Claude Four Last Things correction, 2026-10-27
 

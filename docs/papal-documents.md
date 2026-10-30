@@ -12,6 +12,22 @@ editions, artifact hashes, rights, and evidence states. Generated two-column
 readers use the retained source artifacts; the project does not author a new
 translation to fill a language gap.
 
+The [encyclicals browser](../src/web/browser/encyclicals/index.html) distinguishes
+historical source PDFs held here from existing English translations on external
+sites. **Complete English** selects acts with at least one explicitly complete
+English text in either location. **English PDF, any extent** selects local human
+translations; **English online, any extent** selects external links; **English
+gaps** retains acts for which no complete English text is recorded. A fragment,
+damaged text or unreviewed extent does not fill a complete-English gap. Counts
+for local and external availability can overlap for the same act.
+
+`src/sources/papal-documents/encyclicals-index.json` owns those links under its
+v2 `english_routes` field. Each route records its URL, source label, English
+language, extent, official or third-party status, check date, discovery source
+and verification note. A checked external route does not establish a right to
+retain its wording or generate a local PDF. Local `readers` still require exact
+membership in the reviewed source release, independently of external links.
+
 ## Find a document
 
 Run these commands from the repository root:

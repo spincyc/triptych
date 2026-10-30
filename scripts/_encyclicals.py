@@ -8,6 +8,13 @@ language and the Vatican page. This module checks that file against its schema
 and against `release/papal-documents.json`, and writes the one data file the
 browser fetches, `src/web/data/encyclicals/index.json`.
 
+The v2 index also records existing external English translations in
+`english_routes`, independently of local source readers and their distribution
+basis. Each route names its source, authority, checked date, extent and review
+qualification. Only an explicitly complete English reader or route counts as
+complete English; fragments, damaged texts and unreviewed extents remain gaps.
+The external route never adds an installed PDF or changes a source-rights claim.
+
 Three things it refuses, because a catalogue that quietly repairs its input is
 a catalogue nobody can trust:
 
@@ -43,6 +50,7 @@ import json
 import re
 import sys
 from pathlib import Path
+from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 INDEX_RELATIVE = Path("src/sources/papal-documents/encyclicals-index.json")
@@ -50,19 +58,24 @@ RELEASE_RELATIVE = Path("release/papal-documents.json")
 DATA_ROOT_RELATIVE = Path("src/web/data")
 OUTPUT_RELATIVE = Path("encyclicals/index.json")
 
-INDEX_SCHEMA = "triptych-encyclicals-index/v1"
-OUTPUT_SCHEMA = "triptych-encyclicals-browser/v1"
+INDEX_SCHEMA = "triptych-encyclicals-index/v2"
+OUTPUT_SCHEMA = "triptych-encyclicals-browser/v2"
 RELEASE_SCHEMA = "triptych-papal-release/v1"
 
 ROW_FIELDS = frozenset((
     "id", "pope", "pope_id", "pontificate_index", "date", "year", "title",
     "subject", "description", "description_basis", "readers", "links",
     "no_local_text_reason",
+    "english_routes",
 ))
 READER_FIELDS = frozenset((
     "language", "release_id", "pdf", "pdf_sha256", "pages", "witness", "extent",
 ))
 PROVENANCE_FIELDS = frozenset(("author", "method", "written_on"))
+ENGLISH_ROUTE_FIELDS = frozenset((
+    "url", "label", "language", "extent", "authority", "checked_on",
+    "source_index_url", "verification_note",
+))
 EXTENTS = ("complete", "fragment", "damaged")
 DESCRIPTION_LIMIT = 160
 
@@ -178,6 +191,41 @@ def _valid_date(value: str) -> bool:
     except ValueError:
         return False
     return True
+
+
+def _https_url(value: object) -> bool:
+    if not isinstance(value, str) or not HTTPS_RE.fullmatch(value):
+        return False
+    try:
+        parsed = urlsplit(value)
+        return bool(parsed.hostname) and parsed.username is None and parsed.password is None
+    except ValueError:
+        return False
+
+
+def _check_english_route(errors: list[str], where: str, route: object) -> None:
+    if not isinstance(route, dict) or set(route) != ENGLISH_ROUTE_FIELDS:
+        errors.append(f"{where}: English route fields differ from the schema")
+        return
+    for field in ("url", "source_index_url"):
+        if not _https_url(route[field]):
+            errors.append(f"{where}: {field} must be an https URL without credentials")
+    for field in ("label", "verification_note"):
+        if not _text(route[field]) or "\n" in route[field]:
+            errors.append(f"{where}: {field} must be a stated single line")
+    if route["language"] != "en":
+        errors.append(f"{where}: an English route must have language 'en'")
+    if route["extent"] not in EXTENTS + ("unreviewed",):
+        errors.append(f"{where}: extent must be complete, fragment, damaged or unreviewed")
+    if route["authority"] not in ("official", "third-party"):
+        errors.append(f"{where}: authority must be official or third-party")
+    elif route["authority"] == "official" and (
+        not _https_url(route["url"]) or urlsplit(route["url"]).hostname != "www.vatican.va"
+    ):
+        errors.append(f"{where}: an official route must be on www.vatican.va")
+    checked = route["checked_on"]
+    if not isinstance(checked, str) or not DATE_RE.fullmatch(checked) or not _valid_date(checked):
+        errors.append(f"{where}: checked_on must be a YYYY-MM-DD date")
 
 
 def _check_reader(
@@ -355,6 +403,19 @@ def validate_index(index: object, documents: dict[tuple[str, str], dict]) -> lis
                     errors.append(f"{reader_where}: {key[0]} in {key[1]!r} is listed twice")
                 reader_keys.add(key)
                 reader_ids.append(reader["release_id"])
+        routes = row["english_routes"]
+        if not isinstance(routes, list):
+            errors.append(f"{where}: english_routes must be a list")
+        else:
+            seen_routes = set()
+            for route_position, route in enumerate(routes):
+                route_where = f"{where} english_routes[{route_position}]"
+                _check_english_route(errors, route_where, route)
+                url = route.get("url") if isinstance(route, dict) else None
+                if isinstance(url, str):
+                    if url in seen_routes:
+                        errors.append(f"{route_where}: duplicate english_routes identity {url!r}")
+                    seen_routes.add(url)
         basis = row["description_basis"]
         match = BASIS_RE.fullmatch(basis) if isinstance(basis, str) else None
         if description is None and basis is None:
@@ -419,6 +480,18 @@ def language_order(codes: set[str]) -> list[str]:
     return leading + sorted(code for code in codes if code not in LEADING_LANGUAGES)
 
 
+def english_availability(row: dict) -> dict[str, bool]:
+    sources = [reader for reader in row["readers"] if reader["language"] == "en"]
+    external = row["english_routes"]
+    source_complete = any(reader["extent"] == "complete" for reader in sources)
+    external_complete = any(route["extent"] == "complete" for route in external)
+    complete = source_complete or external_complete
+    any_english = bool(sources or external)
+    return {"complete": complete, "source_complete": source_complete,
+            "external_complete": external_complete,
+            "incomplete_only": any_english and not complete, "unavailable": not any_english}
+
+
 def browser_catalogue(index: dict, index_bytes: bytes) -> dict:
     """What the page fetches: the index rows, plus arithmetic over them."""
     rows = index["encyclicals"]
@@ -427,7 +500,14 @@ def browser_catalogue(index: dict, index_bytes: bytes) -> dict:
     with_text = 0
     pages = 0
     reader_count = 0
+    english = dict.fromkeys(("complete", "source_complete",
+                             "external_complete", "incomplete_only", "unavailable"), 0)
+    english.update({"source_readers": 0, "external_routes": 0})
     for row in rows:
+        for field, present in english_availability(row).items():
+            english[field] += int(present)
+        english["source_readers"] += sum(reader["language"] == "en" for reader in row["readers"])
+        english["external_routes"] += len(row["english_routes"])
         entry = popes.setdefault(row["pope_id"], {
             "id": row["pope_id"],
             "name": row["pope"],
@@ -471,6 +551,7 @@ def browser_catalogue(index: dict, index_bytes: bytes) -> dict:
             "without_local_text": len(rows) - with_text,
             "readers": reader_count,
             "pages": pages,
+            "english": english,
         },
         "encyclicals": rows,
     }

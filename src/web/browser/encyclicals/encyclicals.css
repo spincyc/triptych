@@ -39,6 +39,15 @@
 }
 
 .enc-notice strong { color: var(--ink); }
+.enc-notice p { margin: 0; }
+
+#enc-summary-method { margin-top: 0.3rem; }
+#enc-summary-method summary {
+  min-height: 2.75rem;
+  padding-block: 0.45rem;
+  cursor: pointer;
+}
+#enc-summary-method p { margin-top: 0.3rem; }
 
 #enc-provenance:not(:empty) {
   display: block;
@@ -55,6 +64,9 @@
    the table scrolls inside its own box rather than widening the page, and the
    script says so above it while it does. */
 .enc-scroll {
+  /* Keep absolute screen-reader labels inside the scroll region too. Without
+     a containing block they can widen the document beyond the clipped table. */
+  position: relative;
   overflow-x: auto;
   max-width: 100%;
 }
@@ -184,6 +196,33 @@
   color: var(--ink-faint);
 }
 
+.enc-source-absence,
+.enc-english-gap {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-style: normal;
+}
+
+.enc-online {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.75rem;
+  font-weight: 600;
+}
+
+.enc-route-details {
+  margin-top: 0.2rem;
+  font-size: 0.76rem;
+  color: var(--ink-soft);
+  overflow-wrap: anywhere;
+}
+
+.enc-route-details summary { cursor: pointer; }
+.enc-route-details p { margin: 0.25rem 0; }
+.enc-external .enc-extent { display: table; }
+
 /* Fragment and damaged printings say so in words; the box is emphasis only,
    and survives forced colours as a border. */
 .enc-extent {
@@ -201,17 +240,6 @@
 }
 
 .enc-none { color: var(--ink-faint); }
-
-.enc-absent {
-  color: var(--ink-soft);
-  font-style: italic;
-}
-
-.enc-absent-label {
-  font-style: normal;
-  font-weight: 600;
-  color: var(--ink-soft);
-}
 
 .enc-vatican { min-width: 4.6rem; }
 
@@ -244,7 +272,7 @@
 /* The column headings leave the screen and each cell prints its own label,
    so a row reads as a coherent entry:
    title, year and pope, the AI summary, then each language's editions. */
-@media (max-width: 48rem) {
+@media (max-width: 48rem), print {
   .enc-scroll { overflow: visible; }
 
   .encyclicals-page .enc-table,
@@ -298,7 +326,7 @@
   .encyclicals-page .enc-table .enc-year-figure { display: inline; }
   .encyclicals-page .enc-table .enc-date { display: inline; margin-left: 0.35rem; }
 
-  .encyclicals-page .enc-table :is(.enc-summary, .enc-language, .enc-absent, .enc-vatican) {
+  .encyclicals-page .enc-table :is(.enc-summary, .enc-language, .enc-vatican) {
     grid-column: 1 / -1;
   }
 
@@ -317,10 +345,16 @@
 
   .encyclicals-page .enc-table :is(.enc-year, .enc-pope)::before { display: none; }
 
-  .encyclicals-page .enc-table .enc-absent-label { display: none; }
-
   .enc-pdf,
+  .enc-online,
   .enc-vatican-link { min-height: 2.75rem; }
+
+  .enc-pdf { max-width: 100%; white-space: normal; }
+}
+
+@media (max-width: 24rem) {
+  .encyclicals-page .enc-table tbody tr { grid-template-columns: minmax(0, 1fr); }
+  .encyclicals-page .enc-table :is(.enc-year, .enc-pope) { grid-column: 1 / -1; }
 }
 
 /* --- Print: the list, without its controls ----------------------------- */
@@ -328,10 +362,18 @@
 @media print {
   .encyclicals-page .controls,
   .encyclicals-page .banner,
+  .enc-scroll-hint,
   .enc-sort-mark,
   .enc-reset { display: none !important; }
 
   .enc-scroll { overflow: visible; }
+
+  /* Reuse the labelled narrow rows instead of squeezing every language into
+     a paper-width table. The individual source PDFs remain the print editions. */
+  .encyclicals-page .enc-table { font-size: 8pt; }
+  .enc-pdf,
+  .enc-online,
+  .enc-vatican-link { min-height: 0; }
 
   .enc-sort {
     padding: 0;

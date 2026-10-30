@@ -1,6 +1,36 @@
 schema_version = 1
 
 [[deliverables]]
+id = "encyclicals-completion-2026-10-29"
+owner = "PROJECT-WORK.md"
+promise = "Complete the resumed encyclical work, provide complete English translations across the catalogue, give the two-column reading PDFs a classic TeX appearance, and resolve independent cold-review findings."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "encyclicals-english-coverage"
+  criterion = "Every catalogued encyclical has an identified complete English translation, with lawful local readers where distributable and an explicit external English route for protected editions; fragments, damaged printings, Latin-only links and metadata do not satisfy English coverage."
+  status = "open"
+  evidence = ["src/sources/papal-documents/encyclicals-index.json", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "encyclicals-classic-tex"
+  criterion = "The two-column readers use the reviewed classic TeX design; affected installed encyclical readers preserve their source text, pass every-page visual and mechanical review and match current release and catalogue records."
+  status = "open"
+  evidence = ["scripts/_typeset_papal.py", "release/papal-documents.json"]
+
+  [[deliverables.requirements]]
+  id = "encyclicals-cold-review"
+  criterion = "Independent cold review covers English completeness and provenance, source fidelity, typography and publication integrity, with every material finding resolved and exact reviewed scope recorded."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "encyclicals-completion-integration"
+  criterion = "The affected source, renderer, installed-reader, browser and release checks pass; the coherent result is committed on feature/encyclicals, reconciled with origin/main and pushed to origin/main in regular validated checkpoints, and the owning records accurately state any remaining unmet work."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "promised-deliverables.toml"]
+
+[[deliverables]]
 id = "claude-flt-correction-2026-10-27"
 owner = "PROJECT-WORK.md"
 promise = "Redo with fresh Claude workers every Four Last Things step that a substituted model performed on 2026-10-26, repair what the repeated reviews find, including the title-page epigraph missing from all four web editions and the italics lost from four Latin lemmas in the Heaven web edition, correct the records and generation metadata to list only Claude work by exact model identifier with the substitution named once in a correction note, and publish the corrected essays and web editions to main with live verification."

@@ -3660,18 +3660,27 @@ class PublicAlphaTest(unittest.TestCase):
             }
 
         catalogue = {
-            "schema": "triptych-encyclicals-browser/v1",
+            "schema": "triptych-encyclicals-browser/v2",
             "encyclicals": [
                 {
                     "id": "papal.leo-xiii.rerum-novarum", "title": "Rerum novarum",
                     "readers": [reader(release["documents"][0], "complete"),
                                 reader(release["documents"][1], "fragment")],
+                    "english_routes": [],
                     "links": {"vatican": "https://www.vatican.va/rerum.html"},
                     "no_local_text_reason": None,
                 },
                 {
                     "id": "papal.pius-xii.humani-generis", "title": "Humani generis",
                     "readers": [], "links": {"vatican": None},
+                    "english_routes": [{
+                        "url": "https://www.vatican.va/humani-generis-en.html",
+                        "label": "Holy See English text", "language": "en",
+                        "extent": "complete", "authority": "official",
+                        "checked_on": "2026-10-30",
+                        "source_index_url": "https://www.vatican.va/encyclicals.html",
+                        "verification_note": "English body and closing checked.",
+                    }],
                     "no_local_text_reason": "Published after 1930: protected text not offered",
                 },
             ],
@@ -3813,6 +3822,10 @@ class PublicAlphaTest(unittest.TestCase):
 
         links = [reader["pdf"] for row in projected["encyclicals"] for reader in row["readers"]]
         self.assertEqual([aliases[self.PAPAL_LATIN], aliases[self.PAPAL_ENGLISH]], links)
+        # External English access stays metadata; it adds no PDF alias and its
+        # route is preserved while only installed source-reader paths change.
+        self.assertEqual(fixture["catalogue"]["encyclicals"][1]["english_routes"],
+                         projected["encyclicals"][1]["english_routes"])
         self.assertEqual(source.read_bytes(), original)
         self.assertIsNone(
             self.tool.projected_encyclicals_catalogue("browse/other.json", source, aliases)

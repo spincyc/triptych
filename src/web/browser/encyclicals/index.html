@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Papal Encyclicals</title>
 <!-- The shared machinery first, then this section's own. Both are local;
-     the page makes no external request until a reader follows a Vatican link. -->
+     the page makes no external request until a reader follows a source link. -->
 <link rel="stylesheet" href="../shared/browser-core.css">
 <link rel="stylesheet" href="encyclicals.css">
 </head>
@@ -16,26 +16,30 @@
   <h1><span class="page-mark" aria-hidden="true">✠</span>Papal Encyclicals</h1>
   <p class="lede">
     Every encyclical this project has catalogued, one row each: sort by pope,
-    year or title, and open the Latin or English reading edition where one is
-    held here, or the Vatican’s own page.
+    year or title, and find historical source PDFs and existing English
+    translations on other sites.
   </p>
   <p class="tally" id="tally"></p>
+  <p class="tally enc-english-tally" id="enc-english-tally"></p>
 </header>
 
 <!-- Both notices are in the markup, not written by the script: they must be
      true of the page before anything loads, and with no script at all. -->
 <section class="enc-notices" aria-label="Before you rely on this list">
-  <p class="enc-notice" data-notice="ai-summaries">
-    <strong>The summaries are AI-written.</strong> Claude, an AI model made by
-    Anthropic, wrote each one from the encyclical’s own text. They are a finding
-    aid, not papal wording; read the encyclical before relying on one.
-    <span id="enc-provenance"></span>
-  </p>
-  <p class="enc-notice" data-notice="after-1930">
-    <strong>No text published after 1930 is offered here.</strong> Only Latin
-    printed by 1930, and identified human English translations printed by 1930,
-    are linked. Every other row gives the Vatican’s page and the reason. No
-    modern or AI translation is offered.
+  <div class="enc-notice" data-notice="ai-summaries">
+    <p><strong>The summaries are AI-written.</strong> They are a finding aid,
+      not papal wording; read the encyclical before relying on one.</p>
+    <p id="enc-provenance">Written by Claude (Anthropic) and Codex (OpenAI).</p>
+    <details id="enc-summary-method" hidden>
+      <summary>How summaries were written</summary>
+      <p id="enc-provenance-method"></p>
+    </details>
+  </div>
+  <p class="enc-notice" data-notice="english-availability">
+    <strong>English texts may be local or external.</strong> Source PDFs reproduce
+    identified historical printings. English online links open external texts,
+    whose availability does not grant permission to copy them here.
+    Fragments, damaged texts and unreviewed extents do not count as complete English.
   </p>
 </section>
 
@@ -77,7 +81,7 @@
 <main id="reading" class="enc-catalogue" tabindex="-1" aria-busy="true">
   <noscript>
     <p>The sortable list needs JavaScript. Without it, the same rows — each
-      encyclical with its reading editions and Vatican page — are in one data
+      encyclical with its source PDFs and external links — are in one data
       file: <a href="../browse/encyclicals/index.json">encyclicals/index.json</a>.</p>
   </noscript>
   <p class="placeholder" id="enc-placeholder">Loading the encyclicals…</p>
@@ -99,17 +103,21 @@
     A <strong>reading edition</strong> is a two-column setting of one identified
     historical printing — the Latin as printed by 1930, or an English translation
     printed by 1930 — whose every page was reviewed before it was installed. Each
-    link names the printing it was set from. <strong>Fragment</strong>
+    source PDF link names the printing it was set from. <strong>Fragment</strong>
     marks an edition of a printing that holds only part of the act;
     <strong>damaged printing</strong> marks one whose source is defective in
-    places. The edition itself says what is missing.
+    places. The edition itself says what is missing. A complete label describes
+    the text’s extent, not word-for-word collation or an endorsement of the
+    translation.
   </p>
   <p>
     The papal wording in these editions is historical text, in the public domain
     in the United States on its identified printing by 1930; its status
     elsewhere may differ, and it is excluded from this project’s licence. See
     <a href="../third-party.html">Third-party material</a>. A Vatican link opens
-    the Holy See’s own site, which this project does not control.
+    the Holy See’s own site. English online links may also open identified
+    third-party sites. This project does not control those sites or republish
+    their modern translations.
   </p>
   <p>
     The list is one generated file, written by

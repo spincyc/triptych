@@ -13,6 +13,9 @@
  * survives a stylesheet that never loads and a narrow screen that drops the
  * column headings.
  *
+ * Existing English translations on other sites are explicit external routes,
+ * never local source readers. Their checked extent controls complete-English
+ * availability; neither a fragment nor an unreviewed route fills that gap.
  * All output is built with createElement/textContent, never innerHTML.
  */
 (function () {
@@ -32,8 +35,11 @@
   const scroller = document.getElementById('enc-scroll');
   const scrollHint = document.getElementById('enc-scroll-hint');
   const tally = document.getElementById('tally');
+  const englishTally = document.getElementById('enc-english-tally');
   const banner = document.getElementById('banner');
   const provenance = document.getElementById('enc-provenance');
+  const provenanceMethod = document.getElementById('enc-provenance-method');
+  const summaryMethod = document.getElementById('enc-summary-method');
   const popeSelect = document.getElementById('pope-select');
   const textSelect = document.getElementById('text-select');
   const sortSelect = document.getElementById('sort-select');
@@ -140,7 +146,7 @@
     link.hreflang = reader.language;
     link.appendChild(T.el('span', 'visually-hidden', labelOf(reader.language) + ' reading edition of ' + row.title + ', '));
     link.appendChild(document.createTextNode(
-      'PDF, ' + reader.pages + (reader.pages === 1 ? ' page' : ' pp')));
+      'Source PDF, ' + reader.pages + (reader.pages === 1 ? ' page' : ' pp')));
     item.appendChild(link);
     if (reader.extent !== 'complete') {
       /* In words, not only a colour: a fragment or a damaged printing is a
@@ -155,19 +161,59 @@
     return item;
   }
 
+  function markExtent(item, extent) {
+    if (extent === 'complete') return;
+    const label = extent === 'fragment' ? 'Fragment' :
+      extent === 'damaged' ? 'Damaged text' : 'Extent unreviewed';
+    item.appendChild(T.el('span', 'enc-extent', label));
+  }
+
+  function externalItem(row, route) {
+    const item = T.el('li', 'enc-reader enc-external');
+    item.setAttribute('data-extent', route.extent);
+    const link = T.el('a', 'enc-online');
+    link.href = route.url;
+    link.hreflang = 'en';
+    link.rel = 'noopener';
+    link.textContent = 'English online';
+    link.appendChild(T.el('span', 'visually-hidden', ' for ' + row.title + ' (external site)'));
+    item.appendChild(link);
+    markExtent(item, route.extent);
+    item.appendChild(T.el('span', 'enc-witness', route.label +
+      (route.authority === 'official' ? ' · Official site' : ' · Third-party site')));
+    const details = T.el('details', 'enc-route-details');
+    details.appendChild(T.el('summary', '', 'Link details'));
+    details.appendChild(T.el('p', '', route.verification_note + ' Checked ' + route.checked_on + '.'));
+    const source = T.el('a', '', 'Discovery source');
+    source.href = route.source_index_url;
+    source.rel = 'noopener';
+    details.appendChild(source);
+    item.appendChild(details);
+    return item;
+  }
+
   function languageCell(row, column) {
     const node = cell(column.label, 'enc-language');
     node.setAttribute('data-language', column.code);
     const readers = M.readersIn(row, column.code);
-    if (!readers.length) {
+    const routes = column.code === 'en' ? row.english_routes || [] : [];
+    if (!readers.length && !routes.length) {
+      if (column.code === 'en') {
+        node.appendChild(T.el('span', 'enc-english-gap', 'No English text recorded'));
+        return node;
+      }
       node.classList.add('enc-empty');
       node.appendChild(T.el('span', 'enc-none', '—'));
-      node.appendChild(T.el('span', 'visually-hidden', 'No ' + column.label + ' text here'));
+      node.appendChild(T.el('span', 'visually-hidden', 'No ' + column.label + ' text recorded'));
       return node;
     }
     const list = T.el('ul', 'enc-readers');
     for (const reader of readers) list.appendChild(readerItem(row, reader));
+    for (const route of routes) list.appendChild(externalItem(row, route));
     node.appendChild(list);
+    if (column.code === 'en' && !M.englishAvailability(row).complete) {
+      node.appendChild(T.el('span', 'enc-english-gap', 'Complete English not recorded'));
+    }
     return node;
   }
 
@@ -196,6 +242,9 @@
     title.setAttribute('role', 'rowheader');
     title.appendChild(T.el('span', 'enc-incipit', row.title));
     if (row.subject) title.appendChild(T.el('span', 'enc-subject', row.subject));
+    if (!(row.readers || []).length) {
+      title.appendChild(T.el('span', 'enc-source-absence', 'No source PDF here: ' + row.no_local_text_reason));
+    }
     tr.appendChild(title);
 
     /* A summary not yet written is null in the data and a blank cell here:
@@ -205,15 +254,7 @@
     else summary.classList.add('enc-empty');
     tr.appendChild(summary);
 
-    if ((row.readers || []).length) {
-      for (const column of columns) tr.appendChild(languageCell(row, column));
-    } else {
-      const absent = cell('Text here', 'enc-absent');
-      absent.colSpan = columns.length;
-      absent.appendChild(T.el('span', 'enc-absent-label', 'No text here: '));
-      absent.appendChild(document.createTextNode(row.no_local_text_reason));
-      tr.appendChild(absent);
-    }
+    for (const column of columns) tr.appendChild(languageCell(row, column));
 
     const vatican = cell('Vatican', 'enc-vatican');
     if (row.links && row.links.vatican) {
@@ -271,14 +312,25 @@
     const all = M.tally(catalogue.encyclicals || []);
     const range = all.first !== null ? ', ' + all.first + '–' + all.last : '';
     let text = count(whole.encyclicals || 0, 'encyclical') + range + ' · ' +
-      count(whole.with_local_text || 0, 'with a text here', 'with a text here') + ' · ' +
+      count(whole.with_local_text || 0, 'with a source PDF here', 'with a source PDF here') + ' · ' +
       columns.map(function (column) {
         return (all.byLanguage[column.code] || 0) + ' ' + column.label;
-      }).join(', ') + ' reading editions';
+      }).join(', ') + ' source reading editions';
     if (counted.encyclicals !== (whole.encyclicals || 0)) {
       text += ' · showing ' + count(counted.encyclicals, 'row');
     }
     return text;
+  }
+
+  function showEnglishTally() {
+    if (!englishTally) return;
+    const all = M.tally(catalogue.encyclicals || []);
+    const english = all.english;
+    englishTally.textContent = english.complete + ' of ' + all.encyclicals + ' have complete English: ' +
+      english.source_complete + ' with a source PDF, ' +
+      english.external_complete + ' online (these groups can overlap). ' +
+      english.incomplete_only + ' have only partial or unreviewed English; ' +
+      english.unavailable + ' have no English text recorded.';
   }
 
   function render() {
@@ -426,7 +478,7 @@
       return;
     }
     T.doneBootstrapping();
-    if (!catalogue || catalogue.schema !== 'triptych-encyclicals-browser/v1' ||
+    if (!catalogue || ['triptych-encyclicals-browser/v1', 'triptych-encyclicals-browser/v2'].indexOf(catalogue.schema) < 0 ||
         !Array.isArray(catalogue.encyclicals)) {
       if (placeholder) placeholder.remove();
       T.fail('The list of encyclicals is not in the form this page reads.', region);
@@ -437,10 +489,14 @@
     const provenanceRecord = catalogue.description_provenance || {};
     if (provenance && provenanceRecord.author) {
       provenance.textContent = 'Written by ' + provenanceRecord.author +
-        (provenanceRecord.written_on ? ', ' + provenanceRecord.written_on : '') +
-        (provenanceRecord.method ? '. ' + provenanceRecord.method : '.');
+        (provenanceRecord.written_on ? ', ' + provenanceRecord.written_on : '') + '.';
+    }
+    if (provenanceMethod && summaryMethod && provenanceRecord.method) {
+      provenanceMethod.textContent = provenanceRecord.method;
+      summaryMethod.hidden = false;
     }
     buildHead();
+    showEnglishTally();
     fill();
     restore();
     for (const control of controls) {

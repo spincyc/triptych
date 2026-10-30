@@ -251,7 +251,7 @@ PAPAL_READER_RIGHTS = frozenset(("public-domain",))
 # The encyclicals catalogue, relative to the data root; scripts/_encyclicals.py
 # writes it from src/sources/papal-documents/encyclicals-index.json.
 ENCYCLICALS_DATA_RELATIVE = PurePosixPath("encyclicals/index.json")
-ENCYCLICALS_DATA_SCHEMA = "triptych-encyclicals-browser/v1"
+ENCYCLICALS_DATA_SCHEMA = "triptych-encyclicals-browser/v2"
 # The corpus is served once, under a name meant for the reader rather than for
 # the data, and both reading pages resolve it with ../browse.
 SITE_DATA_ROOT = PurePosixPath("browse")

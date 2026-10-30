@@ -36,6 +36,15 @@ def load_generator():
     return module
 
 
+def load_browser_driver():
+    spec = importlib.util.spec_from_file_location(
+        "encyclicals_browser_driver", REPOSITORY / "tools/tests/test_browser_truthfulness.py"
+    )
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
 def digest(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
@@ -62,7 +71,7 @@ class EncyclicalsIndexTest(unittest.TestCase):
             })
         self.release = {"schema": "triptych-papal-release/v1", "documents": self.documents}
         self.index = {
-            "schema": "triptych-encyclicals-index/v1",
+            "schema": "triptych-encyclicals-index/v2",
             "revision": "2026-10-28T12:00:00Z",
             "scope": "Synthetic test index.",
             "description_provenance": {
@@ -103,6 +112,7 @@ class EncyclicalsIndexTest(unittest.TestCase):
                 else "vatican-page:https://www.vatican.va/content/example.html"
             ),
             "readers": readers,
+            "english_routes": [],
             "links": {"vatican": "https://www.vatican.va/content/example.html"},
             "no_local_text_reason": None if readers else "No qualifying historical printing acquired yet",
         }
@@ -126,7 +136,7 @@ class EncyclicalsIndexTest(unittest.TestCase):
 
     def test_a_valid_index_becomes_the_browser_catalogue(self) -> None:
         catalogue = self.render()
-        self.assertEqual("triptych-encyclicals-browser/v1", catalogue["schema"])
+        self.assertEqual("triptych-encyclicals-browser/v2", catalogue["schema"])
         self.assertEqual(self.index["encyclicals"], catalogue["encyclicals"])
         self.assertEqual(
             ["gregorius-xvi", "pius-ix", "leo-xiii", "pius-xii"],
@@ -135,7 +145,10 @@ class EncyclicalsIndexTest(unittest.TestCase):
         self.assertEqual(["la", "en"], [language["code"] for language in catalogue["languages"]])
         self.assertEqual(
             {"encyclicals": 4, "with_local_text": 2, "without_local_text": 2,
-             "readers": 3, "pages": 29},
+             "readers": 3, "pages": 29,
+             "english": {"complete": 0, "source_complete": 0,
+                         "external_complete": 0, "incomplete_only": 1, "unavailable": 3,
+                         "source_readers": 1, "external_routes": 0}},
             catalogue["counts"],
         )
         index_bytes = (self.root / "index.json").read_bytes()
@@ -246,7 +259,7 @@ class EncyclicalsIndexTest(unittest.TestCase):
                 {"vatican": "https://example.org/mirari"}), "www.vatican.va"),
             (lambda: self.index["encyclicals"][0].update({"year": 1833}),
              "does not match date"),
-            (lambda: self.index.update({"schema": "triptych-encyclicals-index/v2"}),
+            (lambda: self.index.update({"schema": "triptych-encyclicals-index/v3"}),
              "schema must be"),
             (lambda: self.index["encyclicals"][0].update({"subject": ""}),
              "subject must be text or null"),
@@ -260,6 +273,49 @@ class EncyclicalsIndexTest(unittest.TestCase):
         self.documents[2]["language"] = "xx"
         self.index["encyclicals"][0]["readers"][0]["language"] = "xx"
         self.refused("has no reader-facing label")
+
+    def route(self, extent="complete", **changes) -> dict:
+        return dict({"url": "https://www.vatican.va/content/example-en.html",
+                     "label": "Holy See English text", "language": "en", "extent": extent,
+                     "authority": "official", "checked_on": "2026-10-29",
+                     "source_index_url": "https://www.vatican.va/content/index.html",
+                     "verification_note": "English body and closing checked."}, **changes)
+
+    def test_external_english_does_not_claim_a_local_reader_or_complete_a_fragment(self) -> None:
+        self.index["encyclicals"][0]["english_routes"] = [self.route("fragment")]
+        self.index["encyclicals"][2]["english_routes"] = [self.route()]
+        catalogue = self.render()
+        self.assertEqual(2, catalogue["counts"]["with_local_text"])
+        self.assertEqual(3, catalogue["counts"]["readers"])
+        self.assertEqual({"complete": 1, "source_complete": 0,
+                          "external_complete": 1, "incomplete_only": 2, "unavailable": 1,
+                          "source_readers": 1, "external_routes": 2},
+                         catalogue["counts"]["english"])
+        self.assertIsNotNone(catalogue["encyclicals"][2]["no_local_text_reason"])
+
+    def test_external_route_identity_extent_and_check_are_explicit(self) -> None:
+        for changes, expected in (
+            ({"url": "javascript:alert(1)"}, "https URL"),
+            ({"url": "https://user:secret@www.vatican.va/a"}, "without credentials"),
+            ({"url": "https://example.org/a"}, "official route must be"),
+            ({"language": "la"}, "language 'en'"),
+            ({"checked_on": "2026-02-30"}, "checked_on"),
+            ({"extent": "excerpt"}, "extent must be"),
+            ({"verification_note": ""}, "verification_note"),
+        ):
+            with self.subTest(changes=changes):
+                self.index["encyclicals"][2]["english_routes"] = [self.route(**changes)]
+                self.refused(expected)
+        self.index["encyclicals"][2]["english_routes"] = [self.route(), self.route()]
+        self.refused("duplicate english_routes identity")
+
+    def test_partial_damaged_and_unreviewed_external_english_never_count_as_complete(self) -> None:
+        for extent in ("fragment", "damaged", "unreviewed"):
+            with self.subTest(extent=extent):
+                self.index["encyclicals"][2]["english_routes"] = [self.route(extent)]
+                english = self.render()["counts"]["english"]
+                self.assertEqual(0, english["complete"])
+                self.assertEqual(2, english["incomplete_only"])
 
     def test_strict_json_refuses_duplicate_keys(self) -> None:
         path = self.root / "index.json"
@@ -370,6 +426,107 @@ class EncyclicalsModelTest(unittest.TestCase):
         self.assertEqual(set(report["text:none"]), set(rows) - with_text)
         self.assertLessEqual(set(report["text:la-or-en"]), with_text)
         self.assertEqual(catalogue["counts"]["with_local_text"], report["tally"]["withText"])
+        self.assertEqual(catalogue["counts"]["english"], report["tally"]["english"])
+
+    def test_complete_english_excludes_fragments_and_counts_overlapping_routes_once(self) -> None:
+        fixture = EncyclicalsIndexTest("test_a_valid_index_becomes_the_browser_catalogue")
+        fixture.setUp()
+        self.addCleanup(fixture.doCleanups)
+        rows = fixture.index["encyclicals"]
+        rows[0]["english_routes"] = [fixture.route("fragment")]
+        rows[1]["english_routes"] = [fixture.route()]
+        rows[1]["readers"][1]["extent"] = "complete"
+        rows[2]["english_routes"] = [fixture.route()]
+        catalogue = fixture.render()
+        path = fixture.write("mixed-catalogue.json", catalogue)
+        report = self.replay(path, "English external")
+        self.assertEqual([rows[1]["id"], rows[2]["id"]], report["text:en-complete"])
+        self.assertEqual([rows[1]["id"]], report["text:en"])
+        self.assertEqual([row["id"] for row in rows[:3]], report["text:en-external"])
+        self.assertEqual([rows[0]["id"], rows[3]["id"]], report["text:en-missing"])
+        self.assertEqual(catalogue["counts"]["english"], report["tally"]["english"])
+        self.assertEqual(2, report["tally"]["english"]["complete"])
+        self.assertEqual(1, report["tally"]["english"]["incomplete_only"])
+
+
+@unittest.skipIf(NODE is None, "node is not installed")
+class EncyclicalsBrowserTest(unittest.TestCase):
+    def test_external_source_and_missing_english_are_distinct_in_the_page(self) -> None:
+        fixture = EncyclicalsIndexTest("test_a_valid_index_becomes_the_browser_catalogue")
+        fixture.setUp()
+        self.addCleanup(fixture.doCleanups)
+        rows = fixture.index["encyclicals"]
+        rows[0]["english_routes"] = [fixture.route("fragment")]
+        rows[2]["english_routes"] = [fixture.route()]
+        rows[1]["readers"][1]["extent"] = "complete"
+        catalogue = fixture.render()
+        # Reuse the repository's real Chromium runner; response replacement
+        # leaves the production page/controller/model unchanged.
+        driver = load_browser_driver()
+        report = driver.drive({
+            "responses": {"src/web/data/encyclicals/index.json": json.dumps(catalogue)},
+            "acts": [
+                {"do": "navigate", "url": driver.page("encyclicals")},
+                {"do": "wait", "until": "document.querySelectorAll('tr.enc-row').length === 4"},
+                {"do": "eval", "name": "initial", "expression": """(() => ({
+                  rows: Array.from(document.querySelectorAll('tr.enc-row')).map(row => ({
+                    id: row.dataset.id, text: row.textContent,
+                    pdfs: Array.from(row.querySelectorAll('a[type="application/pdf"]')).map(a => a.getAttribute('href')),
+                    online: Array.from(row.querySelectorAll('a.enc-online')).map(a => a.href)
+                  })), english: document.getElementById('enc-english-tally').textContent,
+                  viewport: innerWidth, document: document.documentElement.scrollWidth
+                }))()"""},
+                {"do": "eval", "expression": """(() => {
+                  const select = document.getElementById('text-select');
+                  select.value = 'en-complete'; select.dispatchEvent(new Event('change'));
+                })()"""},
+                {"do": "eval", "name": "complete", "expression":
+                 "Array.from(document.querySelectorAll('tr.enc-row')).map(row => row.dataset.id)"},
+                {"do": "eval", "name": "hash", "expression": "location.hash"},
+            ],
+        })
+        by_id = {row["id"]: row for row in report["initial"]["rows"]}
+        self.assertIn("Fragment", by_id[rows[0]["id"]]["text"])
+        self.assertIn("Complete English not recorded", by_id[rows[0]["id"]]["text"])
+        self.assertIn("Source PDF", by_id[rows[1]["id"]]["text"])
+        self.assertTrue(all(path.startswith("../pdf/papal-documents/") for path in by_id[rows[1]["id"]]["pdfs"]))
+        self.assertEqual([], by_id[rows[2]["id"]]["pdfs"])
+        self.assertEqual([fixture.route()["url"]], by_id[rows[2]["id"]]["online"])
+        self.assertIn("No source PDF here", by_id[rows[2]["id"]]["text"])
+        self.assertIn("No English text recorded", by_id[rows[3]["id"]]["text"])
+        self.assertIn("2 of 4 have complete English", report["initial"]["english"])
+        self.assertLessEqual(report["initial"]["document"], report["initial"]["viewport"])
+        self.assertEqual([rows[1]["id"], rows[2]["id"]], report["complete"])
+        self.assertEqual("#text=en-complete", report["hash"])
+
+    def test_narrow_pdf_labels_and_pope_names_reflow_at_200_percent_text(self) -> None:
+        fixture = EncyclicalsIndexTest("test_a_valid_index_becomes_the_browser_catalogue")
+        fixture.setUp()
+        self.addCleanup(fixture.doCleanups)
+        driver = load_browser_driver()
+        seam = "await cdp.send('Runtime.enable');"
+        self.assertIn(seam, driver.HARNESS)
+        driver.HARNESS = driver.HARNESS.replace(seam, seam + """
+          await cdp.send('Emulation.setDeviceMetricsOverride', {
+            width: 320, height: 852, deviceScaleFactor: 1, mobile: false
+          });
+        """)
+        report = driver.drive({
+            "responses": {"src/web/data/encyclicals/index.json": json.dumps(fixture.render())},
+            "acts": [
+                {"do": "navigate", "url": driver.page("encyclicals")},
+                {"do": "wait", "until": "document.querySelectorAll('tr.enc-row').length === 4"},
+                {"do": "eval", "expression": "document.documentElement.style.fontSize = '200%'"},
+                {"do": "eval", "name": "layout", "expression": """({
+                  viewport: innerWidth, document: document.documentElement.scrollWidth,
+                  popeLines: Array.from(document.querySelectorAll('.enc-pope')).map(e =>
+                    e.getBoundingClientRect().height / parseFloat(getComputedStyle(e).lineHeight))
+                })"""},
+            ],
+        })["layout"]
+        self.assertEqual(320, report["viewport"])
+        self.assertLessEqual(report["document"], report["viewport"])
+        self.assertTrue(all(lines <= 3 for lines in report["popeLines"]), report)
 
 
 if __name__ == "__main__":
