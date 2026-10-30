@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.acta-papal-archives.ass.023.native-spacing-helper-b67f55a5075a"
+edition_id = "edition.acta-papal-archives.ass.023.1890-acta-ass-023"
+artifact_type = "source-replay-implementation"
+media_type = "text/x-python"
+storage = "tracked"
+retrieved = "2026-10-30"
+rights_status = "licensed"
+rights_basis = "Exact archived project-created replay implementation from scripts/, licensed under MIT by LICENSE and LICENSES/MIT.txt; contains no historical source wording."
+license = "MIT"
+provenance = "Exact b67 implementation retained before introducing opt-in original-line preservation with explicit native-match counts. Registered recipes pin this historical code version. Unchanged earlier recipe outputs, full maps and dispositions are independently identical under its compatible successor. Replay with PYTHONPATH=scripts for the shared CLI formatting helper."
+sha256 = "b67f55a5075a11a43f23766d477b32c5209a1144262790476e31c4fde2362b49"
+byte_size = 12657
+path = "src/sources/works/holy-see/acta-sanctae-sedis/editions/1890-acta-ass-023/artifacts/native-spacing-helper-b67f55a5075a/helper.py"
+indexable = false
+notes = "The MIT software license governs this archived implementation. Historical source text processed by the code retains its separately recorded rights; separate project-created research and recipe records retain their own declared terms."

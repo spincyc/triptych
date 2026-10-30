@@ -34,8 +34,12 @@
   \FourLastThingsLink{four-last-things-04-heaven}{IV.\ Heaven}%
 }
 
-% #1 numeral, #2 title, #3 subtitle, #4 epigraph, #5 epigraph source.
+% #1 numeral, #2 title, #3 subtitle, #4 epigraph, #5 epigraph source. The web
+% edition takes its title and subtitle from the PDF metadata, so its branch
+% sets only the epigraph.
 \newcommand{\FourLastThingsTitlePage}[5]{%
+  \ifdefined\TriptychPrintEdition
+  \hypersetup{pageanchor=false}%
   \begin{titlepage}
   \thispagestyle{empty}
   \centering
@@ -53,6 +57,14 @@
   \end{minipage}
   \vfill
   \end{titlepage}
+  \hypersetup{pageanchor=true}%
+  \pagenumbering{roman}%
+  \else
+  \begin{quote}
+  \itshape #4\par
+  \upshape #5\par
+  \end{quote}
+  \fi
 }
 
 \newcommand{\FourLastThingsNavigation}{%

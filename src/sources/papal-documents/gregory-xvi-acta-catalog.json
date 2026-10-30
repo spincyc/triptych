@@ -134398,6 +134398,283 @@
       "work_id": "work.gregory-xvi-acta.volume-02.line-00050052"
     },
     {
+      "act_number": 226,
+      "act_number_raw": "CCXXVI",
+      "artifact_id": "artifact.gregory-xvi-acta.volume-02.1901-rome-mul.ocr-6348406cc83a",
+      "artifact_pages": [
+        351,
+        352,
+        353
+      ],
+      "artifact_sha256": "6348406cc83a0885ac0b4839910b0ed689fe73085c432d15c738c2edcf11a5df",
+      "boundary_evidence": {
+        "body_range": [
+          317,
+          58375
+        ],
+        "next_heading_line": 50365
+      },
+      "date": null,
+      "date_raw": [],
+      "edition_id": "edition.gregory-xvi-acta.volume-02.line-00050052.1901-gregory-xvi-acta-volume-02-la",
+      "heading_line": 50052,
+      "hold_reasons": [],
+      "id": "gregory-xvi-acta.volume-02.line-00050052.page-furniture-omitted-v2",
+      "line_map_id": "artifact.gregory-xvi-acta.volume-02.1901-rome-mul.line-map-b837a7c44d9d",
+      "parent_id": "gregory-xvi-acta.volume-02.line-00050052",
+      "physical_line_ranges": [
+        [
+          50079,
+          50099
+        ],
+        [
+          50101,
+          50159
+        ],
+        [
+          50168,
+          50228
+        ],
+        [
+          50234,
+          50298
+        ],
+        [
+          50304,
+          50362
+        ],
+        [
+          50371,
+          50377
+        ]
+      ],
+      "protocol": {
+        "line": 50079,
+        "raw": "Venerabiles fratres"
+      },
+      "render_revision": "2026-10-28T19:34:08Z",
+      "review": {
+        "artifact_sha256": "6348406cc83a0885ac0b4839910b0ed689fe73085c432d15c738c2edcf11a5df",
+        "boundary_review": "Actual address/protocol begins at LF50079; the independently closed instrument ends at LF50377. Allocution CCXXVI renews the protests over the Cologne affair and declares Martin von Dunin still true archbishop of Gnesen and Posen despite his condemnation and deposition by Prussian judges; LF50159 → LF50168 across own provenance LF50162 and page number 342 LF50165; LF50228 → LF50234 across running title LF50231; LF50298 → LF50304 across the left half ANNO of the page-343 running title LF50301; LF50362 → LF50371 across its right half MDCCCXXXIX, LF50365 (same baseline) and page number 343 LF50368; ends at LF50377 before CCXXVII LF50380.",
+        "date": "1839-07-08",
+        "date_evidence": {
+          "basis": "Exact source dating clause, or explicitly dated allocution caption; Roman inclusive calendar reckoning where applicable. Postridie nonas iulias = 8 July.",
+          "literal": "HABITA IN CONSISTORIO SECRETO POSTRIDIE NONAS IULIL MILLESIMO OCTINGENTESIMO TRIGESIMO NONO",
+          "physical_lines": [
+            50072,
+            50076
+          ]
+        },
+        "decision": "admit",
+        "document_id": "gregory-xvi-acta.volume-02.line-00050052.page-furniture-omitted-v2",
+        "editorial_omission_review": {
+          "basis": "Current source review identifies each omitted block as Bernasconi edition heading matter, running titles, page numbers, printer’s signatures, bibliographical provenance or isolated non-text OCR marks, independently of the actual instrument. Actual addresses, body, dating clauses and subscriptions remain selected; substantive historical notes, where present, are retained with their owner. Reader variant v2 also excludes the page-review loci listed last: whole raw OCR lines that are page furniture or a duplicated scan, positively located by native XML geometry (and page images where doubtful); no papal wording, dating, subscription or historical note is excluded.",
+          "finding": "non-substantive-publishing-furniture",
+          "not_substantive_historical_note": true,
+          "omitted_loci": [
+            {
+              "basis": "Bernasconi numeral CCXXVI, synopsis and the edition’s caption ALLOCUTIO HABITA IN CONSISTORIO SECRETO POSTRIDIE NONAS IULII MILLESIMO OCTINGENTESIMO TRIGESIMO NONO; edition furniture, used only as date evidence.",
+              "literal": "CCXXVI. Post commemorata quae contra archiepisco- pos Coloniensem et Gnesnensem a gubernio Borussico gesta sunt ob causam mixtorum connubiorum, novas iniurias archiepiscopo Gnesnensi, iudiciali sententia damnato, per sex menses in munito castro detento, atque a pastorali et metropolitano munere depo- sito, illatas, vehementer dolet. De violato iure ecclesiastici regiminis conqueritur. Lo- quitur de doctrina catholica ab archiepiscopo Gnesnensi circa mixtas nuplias exposita, eum- que defendit in eius iuribus '. ALLOCUTIO HABITA IN CONSISTORIO SECRETO POSTRIDIE NONAS IULIL MILLESIMO OCTINGENTESIMO TRIGESIMO NONO",
+              "physical_lines": [
+                50052,
+                50076
+              ]
+            },
+            {
+              "basis": "Separate source running title, page number, printer’s signature line or bibliographical provenance citation (Ex Bullario Romano / Ex Iure Pontificio de P. F. / Ex Archivio … and the like), outside the papal wording and containing no substantive historical annotation.",
+              "literal": "t Ex opere existente in Bibliotheca Casanatensi Urbis, cui titulus « Editti del 1839» vol. 2, doc. 17, 342",
+              "physical_lines": [
+                50162,
+                50165
+              ]
+            },
+            {
+              "basis": "Separate source running title, page number, printer’s signature line or bibliographical provenance citation (Ex Bullario Romano / Ex Iure Pontificio de P. F. / Ex Archivio … and the like), outside the papal wording and containing no substantive historical annotation.",
+              "literal": "ACTA GREGORII PP. XVI.",
+              "physical_lines": [
+                50231,
+                50231
+              ]
+            },
+            {
+              "basis": "Separate source running title, page number, printer’s signature line or bibliographical provenance citation (Ex Bullario Romano / Ex Iure Pontificio de P. F. / Ex Archivio … and the like), outside the papal wording and containing no substantive historical annotation.",
+              "literal": "ANNO",
+              "physical_lines": [
+                50301,
+                50301
+              ]
+            },
+            {
+              "basis": "Separate source running title, page number, printer’s signature line or bibliographical provenance citation (Ex Bullario Romano / Ex Iure Pontificio de P. F. / Ex Archivio … and the like), outside the papal wording and containing no substantive historical annotation.",
+              "literal": "MDCCCXXXIX, 343",
+              "physical_lines": [
+                50365,
+                50368
+              ]
+            },
+            {
+              "basis": "Page number (folio) printed alone in the page-head band above the first body line; its native XML LINE carries only these tokens. Not papal wording, dating, subscription or note.",
+              "classification": "folio",
+              "literal": "341",
+              "physical_lines": [
+                50100,
+                50100
+              ]
+            }
+          ],
+          "outside_papal_text": true
+        },
+        "genre": "consistorial-allocution",
+        "language": "la",
+        "parent_id": "gregory-xvi-acta.volume-02.line-00050052",
+        "physical_line_ranges": [
+          [
+            50079,
+            50099
+          ],
+          [
+            50101,
+            50159
+          ],
+          [
+            50168,
+            50228
+          ],
+          [
+            50234,
+            50298
+          ],
+          [
+            50304,
+            50362
+          ],
+          [
+            50371,
+            50377
+          ]
+        ],
+        "printed_attribution": "ACTA GREGORII PP. XVI.",
+        "reader_source_note": "Uncorrected OCR of the papal text; edition numerals, genre labels, synopses, running titles, page numbers, printer’s signatures and provenance citations omitted. The edition’s allocution caption is omitted; it supplies the date. Additional standalone page furniture (gathering signatures, folios, running titles, page-foot marks or stamps) found in page review is omitted.",
+        "reading_order_review": "Full source text was read in acquired LF order and checked against the pinned native DjVu XML LINE/WORD geometry (whole-source TXT/XML token identity, plus back-jump, same-baseline split-line, line-start indent and inter-word gap scans over the whole claim span). Selected body continues left column to right column and across page breaks; running titles, page numbers, printer’s signatures, provenance notes and marks interleaved by the OCR stream are excluded by the exact bounds below. No displaced, interleaved or misordered body fragment and no OCR-dropped printed word was found in the selected extent; OCR marks fused inside a selected body line (e.g. a trailing |) remain literal.",
+        "review_note": "Allocution CCXXVI renews the protests over the Cologne affair and declares Martin von Dunin still true archbishop of Gnesen and Posen despite his condemnation and deposition by Prussian judges; LF50159 → LF50168 across own provenance LF50162 and page number 342 LF50165; LF50228 → LF50234 across running title LF50231; LF50298 → LF50304 across the left half ANNO of the page-343 running title LF50301; LF50362 → LF50371 across its right half MDCCCXXXIX, LF50365 (same baseline) and page number 343 LF50368; ends at LF50377 before CCXXVII LF50380. Refined body and full surrounding frame read literally. Issuer evidence is ACTA GREGORII PP. XVI. at LF50231–50231; the source closing at LF50356–50377 reads: deant. Haec sunt, quae in gravissimo quod ex- plicavimus negotio, vobiscum, venerabiles fra- tres, hunc in locum congregatis communicanda censuimus. De reliquo ne intermittamus, venn. fratres, miisericordiarum Patrem in gemitu et lacrymis per merita Jesu Christi suppliciter ob- secrare, Ut memoratis archiepiscopis, nec non MDCCCXXXIX, 343 praesulibus ceteris et omni Porussiae clero fi- delique populo perseverantem tribuat in volun- tate sua famulatum, atque ut serenissimum re- gem ad praestandam subditis suis plenam ca- tholicae religionis libertatem inclinet; denique ut quae inibi adversus Ecclesiae ius cogitata gestaque sunt, in eiusdem bonum convertat. Project reader selection variant narrows the admitted selection by whole raw OCR lines only: LF50100 (folio). Every retained character, its order and the historical controller are unchanged.",
+        "reviewed_extent": "Complete refined source extent and at least twenty literal-LF lines of surrounding context read within this lane’s literal read of LF43440–58500 (the claim LF43543–58373 plus the preceding act CC of lane volume-02-b03 and the opening of the volume index). Selected bounds [[50079, 50159], [50168, 50228], [50234, 50298], [50304, 50362], [50371, 50377]]. Whole-source TXT/XML token correspondence (294804 tokens) and native LINE/WORD geometry for the claim span were checked (back-jump, same-baseline split-line, line-start indent and inter-word gap scans). No page-image collation is claimed.",
+        "source_attribution_context": {
+          "artifact_sha256": "6348406cc83a0885ac0b4839910b0ed689fe73085c432d15c738c2edcf11a5df",
+          "basis": "The literal running title ACTA GREGORII PP. XVI. LF50231 heads the right column of artifact page 352 inside this uninterrupted consistorial allocution (LF50079–50377); the speaker protests in the first person against the Prussian sentence on the archbishop of Gnesen and Posen, with no competing author.",
+          "kind": "shared-running-header",
+          "page_evidence": [
+            {
+              "artifact_page": 352,
+              "basis": "Exact registered line map binds running title LF50231 to artifact page 352 (printed page 342); native XML places it in the page head zone.",
+              "leaf": 352
+            }
+          ],
+          "protocol_and_closing_review": {
+            "basis": "Venerabiles fratres LF50079 opens a first-person papal speech (reclamavimus hoc ipso in loco LF50084–50085; auctoritate Nostra apostolica declaramus atque decernimus LF50261–50262) that ends with the prayer for the archbishops and the king LF50356–50377 (closing lines after the page break LF50371–50377). No conflicting issuer.",
+            "closing_lines": [
+              50371,
+              50377
+            ],
+            "conflicting_issuer": false,
+            "finding": "consistent",
+            "protocol_lines": [
+              50079,
+              50086
+            ]
+          },
+          "scope_line_ranges": [
+            [
+              50079,
+              50377
+            ]
+          ]
+        },
+        "source_attribution_lines": [
+          50231,
+          50231
+        ],
+        "source_extent_review": "Complete papal body, actual address, protocol and source closing retained. No omitted proem, substantive body, annex or subscription is indicated in this printing. The selected text remains rough, literal OCR, not an autograph reconstruction; conventional chancery formulae remain literal. Reader variant v2 selected bounds: [[50079, 50099], [50101, 50159], [50168, 50228], [50234, 50298], [50304, 50362], [50371, 50377]]; the added exclusions are listed in editorial_omission_review.",
+        "title": "Officii memores tuendorum Ecclesiae iurium — Allocutio de archiepiscopo Gnesnensi et Posnaniensi a Borussico gubernio damnato"
+      },
+      "scan_leaf_ids": [
+        351,
+        352,
+        353
+      ],
+      "segment_id": "segment.gregory-xvi-acta.volume-02.line-00050052.1901-gregory-xvi-acta-volume-02-la.source-ocr.reader-v2",
+      "segment_path": "src/sources/works/gregory-xvi-acta/volume-02-line-00050052/editions/1901-gregory-xvi-acta-volume-02-la/segments/source-ocr-reader-v2.toml",
+      "selection_start": 50052,
+      "selection_variant_of": "gregory-xvi-acta.volume-02.line-00050052",
+      "selection_variant_review": {
+        "block_breaks_added": [],
+        "classified_source_loci": [
+          {
+            "basis": "Page number (folio) printed alone in the page-head band above the first body line; its native XML LINE carries only these tokens. Not papal wording, dating, subscription or note.",
+            "classification": "folio",
+            "literal": "341",
+            "physical_lines": [
+              50100,
+              50100
+            ]
+          }
+        ],
+        "native_evidence": {
+          "lines": [
+            {
+              "artifact_page": 351,
+              "leaf": 351,
+              "native_line_box": [
+                2219,
+                214,
+                2285,
+                261
+              ],
+              "native_line_tokens": [
+                "341"
+              ],
+              "other_tokens_on_native_line": [],
+              "page_body_text_band_y": [
+                290,
+                3567
+              ],
+              "page_dimensions": [
+                2584,
+                3968
+              ],
+              "physical_line": 50100
+            }
+          ],
+          "method": "exact-whitespace-token-equality-v1 (raw OCR token index to native DjVu XML WORD/LINE)",
+          "xml_filename": "actagregoriipapa0002vinc_djvu.xml",
+          "xml_sha256": "ae0989763a5e0c7668cbfd6c0f084e2ad8b12999f4f52f730a0b2bdfa9460ba6"
+        },
+        "page_review": {
+          "audit": "src/sources/papal-documents/gregory-0005-visual-review.json",
+          "audit_sha256": "6ab2bbee3440fd0fc19e639335a6a2f0d647e906ad33bea69a16bfaf5a15f504",
+          "blocking_findings": [],
+          "report": "src/sources/papal-documents/gregory-0005-visual-01.md",
+          "report_sha256": "0a0462a58d8e8a91016160c6da0e7e51fe911d601c6b7a53fb9a36e10cbb6307",
+          "status": "CHANGES_REQUIRED"
+        },
+        "prior_pdf": {
+          "pages": 3,
+          "pdf_sha256": "e28c1b78c24afff3b5e3663f66ab1dfb7b0b659c1d5c4484a18529acc1c0d8f1",
+          "receipt_path": "release/papal-documents/inputs/cd5071d397d7adeac276474d46e57c48ab0c04055df92a44b6405ab673f6059b.json",
+          "receipt_sha256": "cd5071d397d7adeac276474d46e57c48ab0c04055df92a44b6405ab673f6059b"
+        },
+        "prior_reader_id": "gregory-xvi-acta.volume-02.line-00050052",
+        "prior_row_sha256": "247c03faa6f2af3b62f52065c779328c5a639c34cc74159dd35c130427299421",
+        "range_continuation_finding": "No new block break: each excluded run is blank-delimited or abuts a range boundary on at least one side, so retained paragraph boundaries are those of the prior selection.",
+        "reason": "Project reader selection variant narrows the admitted selection by whole raw OCR lines only: LF50100 (folio). Every retained character, its order and the historical controller are unchanged.",
+        "whitespace_only_lines_dropped": []
+      },
+      "source_heading_raw": "CCXXVI. ",
+      "status": "reader-selection-variant",
+      "title_raw": "CCXXVI. Post commemorata quae contra archiepisco- pos Coloniensem et Gnesnensem a gubernio Borussico gesta sunt ob causam mixtorum connubiorum, novas iniurias archiepiscopo Gnesnensi, iudiciali sententia damnato, per sex menses in munito castro detento, atque a pastorali et metropolitano munere depo- sito, illatas, vehementer dolet. De violato iure ecclesiastici regiminis conqueritur. Lo- quitur de doctrina catholica ab archiepiscopo Gnesnensi circa mixtas nuplias exposita, eum- que defendit in eius iuribus '. ALLOCUTIO",
+      "volume_key": "volume-02",
+      "work_id": "work.gregory-xvi-acta.volume-02.line-00050052"
+    },
+    {
       "act_number": 1839,
       "act_number_raw": "MDCCCXXXIX",
       "artifact_id": "artifact.gregory-xvi-acta.volume-02.1901-rome-mul.ocr-6348406cc83a",
@@ -158952,6 +159229,473 @@
       "selection_start": 20298,
       "source_heading_raw": "Venerabili fratri Michaeli ",
       "status": "admitted-complete",
+      "title_raw": "Venerabili fratri Michaeli ",
+      "volume_key": "volume-03",
+      "work_id": "work.gregory-xvi-acta.volume-03.line-00020298.part-04"
+    },
+    {
+      "act_number": null,
+      "act_number_raw": null,
+      "artifact_id": "artifact.gregory-xvi-acta.volume-03.1902-rome-mul.ocr-323a14120941",
+      "artifact_pages": [
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161
+      ],
+      "artifact_sha256": "323a141209419f4d5ba846bba4381470bb7576e7c54206e5a013da13d94e062e",
+      "boundary_evidence": {
+        "body_range": [
+          291,
+          77175
+        ],
+        "next_heading_line": 21663
+      },
+      "date": null,
+      "date_raw": [
+        {
+          "line": 20511,
+          "raw": "Datum Romae apud sanctam Mariam Maio- \nrem sub annulo piscatoris die decima tertia iul. \nmillesimo octingentesimo quadragesimo primo, \npontificatus Nostri anno decimo primo. \n\n"
+        },
+        {
+          "line": 20903,
+          "raw": "Datum Romae apud s. Mariam Maiorem anno \nincarnationis dominicae millesimo octingente- \nsimo quadragesimo primo idibus iulii, ponti- \nficatus Nostri anno decimo primo. \n\n"
+        },
+        {
+          "line": 20985,
+          "raw": "Datum Romae apud sanctam Mariam Maio- \nrem sub annulo piscatoris die decima sexta iul. \nmillesimo octingentesimo quadragesimo primo, \npontificatus Nostri anno decimo primo. \n\n"
+        },
+        {
+          "line": 21025,
+          "raw": "storalis, datae a te die decima mensis martii \nhuius anni, qua id tibi propositum fuit, ven. \n\n\n147 \nfrater, ut clero tuarum dioecesium, ac per eum "
+        },
+        {
+          "line": 21085,
+          "raw": "peramanter impertimur. Datum Romae apud S. Ma- \nriam Maiorem die xvur sept. MDCCLI, pontificatus \nnostri anno x1 ». \n\nSed SS. Pont. hoc finale decretum nunquam edi- \ndit, quia rex et epp. Lat. r. restiterunt, Etenim nun- "
+        },
+        {
+          "line": 21131,
+          "raw": "tem dispersos data definire voluit. Quodsi in his litte- \nris utroque decreto Urbani VIII (die vir febr. et vir \njulii mpcxxrv) demonstrare nititur, S. Sedem, etsi li- \nbere affirmari potest, transitum huiusmodi (ad L. r.) \nnon aeque ac primum (ad Gr. r.) interdici, tamen etiam \neundem improbare: optimo quidem iure id facit, quum "
+        },
+        {
+          "line": 21239,
+          "raw": "Datum Romae ex aedibus dictae S. Congregationis \ndie et anno quibus supra. \n\n\nDominicus Archiep. Myren., Secret. ». \n"
+        },
+        {
+          "line": 21653,
+          "raw": "Datum Romae apud sanctam Mariam Maio- \nrem sub annulo piscatoris die decima septima \niulii millesimo .octingentesimo quadragesimo \nprimo, pontificatus Nostri anno decimo primo. \n\n"
+        }
+      ],
+      "edition_id": "edition.gregory-xvi-acta.volume-03.line-00020298.part-04.1902-gregory-xvi-acta-volume-03-la",
+      "heading_line": 21011,
+      "hold_reasons": [],
+      "id": "gregory-xvi-acta.volume-03.line-00020298.part-04.page-furniture-omitted-v2",
+      "line_map_id": "artifact.gregory-xvi-acta.volume-03.1902-rome-mul.line-map-4119aba0a748",
+      "parent_id": "gregory-xvi-acta.volume-03.line-00020298.part-04",
+      "physical_line_ranges": [
+        [
+          21011,
+          21028
+        ],
+        [
+          21030,
+          21146
+        ],
+        [
+          21152,
+          21173
+        ],
+        [
+          21179,
+          21307
+        ],
+        [
+          21313,
+          21366
+        ],
+        [
+          21368,
+          21447
+        ],
+        [
+          21453,
+          21505
+        ],
+        [
+          21507,
+          21595
+        ],
+        [
+          21604,
+          21656
+        ],
+        [
+          21724,
+          21738
+        ]
+      ],
+      "protocol": null,
+      "render_revision": "2026-10-28T19:34:08Z",
+      "review": {
+        "artifact_sha256": "323a141209419f4d5ba846bba4381470bb7576e7c54206e5a013da13d94e062e",
+        "boundary_review": "Actual address/intitulation or spoken protocol begins at LF21011; the instrument’s own closing ends at LF21656 (owned notes retained through LF21738). Letter CVI to Metropolitan Michael Lewicki praises his pastoral letter on papal primacy from the Ruthenian liturgical books and instructs him on preserving the Ruthenian rite and resisting schismatic books; address, intitulation, body, blessing and dating clause (17 July 1841) survive. Its notes are retained in source order: the edition’s note1 on the synopsis (provenance fused with a long historical note quoting Collectio Lacensis, LF21057–21146 and LF21202–21307), and the letter’s own numbered reference notes (LF21424–21447, LF21562–21595, LF21724–21738, the last printed at the foot of leaf 161 after CVII begins).",
+        "date": "1841-07-17",
+        "date_evidence": {
+          "basis": "Exact source dating clause; Roman inclusive calendar reckoning where applicable.",
+          "literal": "Datum Romae apud sanctam Mariam Maio- rem sub annulo piscatoris die decima septima iulii millesimo .octingentesimo quadragesimo primo, pontificatus Nostri anno decimo primo.",
+          "physical_lines": [
+            21653,
+            21656
+          ]
+        },
+        "decision": "admit",
+        "document_id": "gregory-xvi-acta.volume-03.line-00020298.part-04.page-furniture-omitted-v2",
+        "editorial_omission_review": {
+          "basis": "Current source review identifies each omitted block as Bernasconi 1902 edition apparatus — edition numeral, genre label, descriptive synopsis and allocution date caption, running title, folio, signature line, provenance citation (Ex Archivio/Ex Iure/Ex Collectanea or equivalent) or an isolated margin mark — independently of the instrument. Addresses, body, dating clauses and subscriptions remain selected; substantive historical notes owned by the act are retained. Reader variant v2 also excludes the page-review loci listed last: whole raw OCR lines that are page furniture or a duplicated scan, positively located by native XML geometry (and page images where doubtful); no papal wording, dating, subscription or historical note is excluded.",
+          "finding": "non-substantive-publishing-furniture",
+          "not_substantive_historical_note": true,
+          "omitted_loci": [
+            {
+              "basis": "Running title of leaf 157 (LF20994) with the Bernasconi numeral (OCR “CVI;”), genre label and synopsis; no papal wording.",
+              "literal": "ANNO MDCCCXLI, CVI; EPISTOLA Michaeli Lewicki metropolitae , Ruthenorum unitorum gratulatur de Romani Pontificis primatu vindicato ex libris liturgicis, quibus Graeco—Russi et Rutheni utuntur; calum- niam refellit eorum, qui asserunt Ecclesiam catholicam latini ritus, avertere orientales a propriis ritibus, et de transitu ad alienum ritum docet '.",
+              "physical_lines": [
+                20994,
+                21008
+              ]
+            },
+            {
+              "basis": "Source running title, folio number or signature line only (with any isolated top/bottom-margin OCR mark in the same band); outside the papal wording, no substantive annotation.",
+              "literal": "148",
+              "physical_lines": [
+                21149,
+                21149
+              ]
+            },
+            {
+              "basis": "Source running title, folio number or signature line only (with any isolated top/bottom-margin OCR mark in the same band); outside the papal wording, no substantive annotation.",
+              "literal": "ACTA GREGORII PP. XVI.",
+              "physical_lines": [
+                21176,
+                21176
+              ]
+            },
+            {
+              "basis": "Source running title, folio number or signature line only (with any isolated top/bottom-margin OCR mark in the same band); outside the papal wording, no substantive annotation.",
+              "literal": "ANNO MDCCCXLI,",
+              "physical_lines": [
+                21310,
+                21310
+              ]
+            },
+            {
+              "basis": "Source running title, folio number or signature line only (with any isolated top/bottom-margin OCR mark in the same band); outside the papal wording, no substantive annotation.",
+              "literal": "150",
+              "physical_lines": [
+                21450,
+                21450
+              ]
+            },
+            {
+              "basis": "Isolated top-margin mark OCR’d “cs” (LF21598, leaf 161 y140) and running title (LF21601); no papal wording.",
+              "literal": "cs ANNO MDCCCXLI,",
+              "physical_lines": [
+                21598,
+                21601
+              ]
+            },
+            {
+              "basis": "Page number (folio) printed alone in the page-head band above the first body line; its native XML LINE carries only these tokens. Not papal wording, dating, subscription or note.",
+              "classification": "folio",
+              "literal": "147",
+              "physical_lines": [
+                21029,
+                21029
+              ]
+            },
+            {
+              "basis": "Page number (folio) printed alone in the page-head band above the first body line; its native XML LINE carries only these tokens. Not papal wording, dating, subscription or note.",
+              "classification": "folio",
+              "literal": "149",
+              "physical_lines": [
+                21367,
+                21367
+              ]
+            },
+            {
+              "basis": "Volume running title printed in the page-head band above the first body line of the page; its native XML LINE carries only these tokens. Edition furniture, not papal wording.",
+              "classification": "running-head",
+              "literal": "ACTA GREGORII PP. XVI.",
+              "physical_lines": [
+                21506,
+                21506
+              ]
+            }
+          ],
+          "outside_papal_text": true
+        },
+        "genre": "papal-letter",
+        "language": "la",
+        "parent_id": "gregory-xvi-acta.volume-03.line-00020298.part-04",
+        "physical_line_ranges": [
+          [
+            21011,
+            21028
+          ],
+          [
+            21030,
+            21146
+          ],
+          [
+            21152,
+            21173
+          ],
+          [
+            21179,
+            21307
+          ],
+          [
+            21313,
+            21366
+          ],
+          [
+            21368,
+            21447
+          ],
+          [
+            21453,
+            21505
+          ],
+          [
+            21507,
+            21595
+          ],
+          [
+            21604,
+            21656
+          ],
+          [
+            21724,
+            21738
+          ]
+        ],
+        "printed_attribution": "GREGORIUS PP. XVI.",
+        "reader_source_note": "Uncorrected OCR of the papal text; edition headings, running titles, folios and provenance citations omitted. The edition’s substantive notes owned by this act are retained literally in source order. The fused edition note1 contains 1902 editorial history (citing Collectio Lacensis and later events) and quoted curial texts; it is printed apparatus retained literally as the act’s note, not papal wording. Additional standalone page furniture (gathering signatures, folios, running titles, page-foot marks or stamps) found in page review is omitted.",
+        "reading_order_review": "Selected text was read in acquired order against native LINE geometry: each page reads running title, left column, right column, then foot-notes; body text continues left to right column and across page breaks at whole-line boundaries. Running titles, folios, signatures, provenance notes and isolated margin marks that the OCR emits between body lines are removed by the exact exclusions below; no mixed-stream WORD inversion or unresolved substantive order defect was identified in the selected act. The long note1 occupies the lower band of leaves 157–158 (left y1724→, right y1728→ on 157; left y1466→, right y1460→ on 158) below the letter’s upper columns; the reader keeps acquired source order at whole-line boundaries.",
+        "retained_substantive_historical_notes": [
+          {
+            "literal_start": "1 Ex lure Pontificio de P. F. — Pro historia allat. lit., quaedam transcribimus ex notis optimae Collectio-",
+            "ownership_basis": "Edition note1 answers the synopsis marker at LF21008; its first line fuses the provenance citation with “Pro historia allat. lit., quaedam transcribimus ex notis … Collectionis Lacensis vol. I, p. 606”, followed by quoted Benedict XIV, Propaganda (1802) and later historical material printed in the lower band of leaves 157–158. The provenance cannot be separated at line level from this substantive editorial-historical note, so the whole note is retained, not attributed to the pope.",
+            "physical_line_ranges": [
+              [
+                21057,
+                21146
+              ],
+              [
+                21202,
+                21307
+              ]
+            ]
+          },
+          {
+            "literal_start": "1 Penes imperatores potestas non est, ut Ecclesiis leges sanciant. Attende quid dicat Apostolus: « Et",
+            "ownership_basis": "Notes1–3 of leaf 159 answer markers LF21316, LF21334, LF21371 in the letter (Damascene/Athanasius, Clement VIII/Paul V constitutions, Bullarium Benedicti XIV).",
+            "physical_line_ranges": [
+              [
+                21424,
+                21447
+              ]
+            ]
+          },
+          {
+            "literal_start": "1 Ad Hebraeos X, 38.",
+            "ownership_basis": "Notes1–7 of leaf 160 answer markers LF21477–21547 (Hebrews, Chalcedon, Irenaeus, Jerome, Russian conversion, Latin missionaries, Trent).",
+            "physical_line_ranges": [
+              [
+                21562,
+                21595
+              ]
+            ]
+          },
+          {
+            "literal_start": "1 Ex symbolo Quicunque in princ.",
+            "ownership_basis": "Notes1–3 of leaf 161 answer markers LF21605, LF21607, LF21612 near the letter’s end (Quicunque, Council of Zerta, formula of Hormisdas); note4 LF21740 is CVII’s provenance and is not selected.",
+            "physical_line_ranges": [
+              [
+                21724,
+                21738
+              ]
+            ]
+          }
+        ],
+        "review_note": "Letter CVI to Metropolitan Michael Lewicki praises his pastoral letter on papal primacy from the Ruthenian liturgical books and instructs him on preserving the Ruthenian rite and resisting schismatic books; address, intitulation, body, blessing and dating clause (17 July 1841) survive. Its notes are retained in source order: the edition’s note1 on the synopsis (provenance fused with a long historical note quoting Collectio Lacensis, LF21057–21146 and LF21202–21307), and the letter’s own numbered reference notes (LF21424–21447, LF21562–21595, LF21724–21738, the last printed at the foot of leaf 161 after CVII begins). Issuer evidence: GREGORIUS PP. XVI. at LF21017–21017; the source dating clause at LF21653–21656 reads: Datum Romae apud sanctam Mariam Maio- rem sub annulo piscatoris die decima septima iulii millesimo .octingentesimo quadragesimo primo, pontificatus Nostri anno decimo primo. The fused edition note1 contains 1902 editorial history (citing Collectio Lacensis and later events) and quoted curial texts; it is printed apparatus retained literally as the act’s note, not papal wording. Project reader selection variant narrows the admitted selection by whole raw OCR lines only: LF21029 (folio); LF21367 (folio); LF21506 (running-head). Every retained character, its order and the historical controller are unchanged.",
+        "reviewed_extent": "Complete selected extent and at least twenty literal-LF lines of context on each side were read in this lane’s exhaustive in-order read of LF11760–23900 (claim LF11798–23843). Every nonblank LF line of the span maps 1:1 to a native XML LINE (zero token mismatches; line-geometry.json), and leaf/column/back-jump, indent, intra-line gap and short-line geometry screens were dispositioned; no general image collation is claimed. Selected bounds [[21011, 21146], [21152, 21173], [21179, 21307], [21313, 21447], [21453, 21595], [21604, 21656], [21724, 21738]].",
+        "source_attribution_lines": [
+          21017,
+          21017
+        ],
+        "source_extent_review": "Complete papal body with its printed address/intitulation, protocol and source dating clause retained. No omitted proem, substantive body, annex or subscription is indicated in this printing. The selected text remains rough literal OCR, not an autograph reconstruction. The fused edition note1 contains 1902 editorial history (citing Collectio Lacensis and later events) and quoted curial texts; it is printed apparatus retained literally as the act’s note, not papal wording. Reader variant v2 selected bounds: [[21011, 21028], [21030, 21146], [21152, 21173], [21179, 21307], [21313, 21366], [21368, 21447], [21453, 21505], [21507, 21595], [21604, 21656], [21724, 21738]]; the added exclusions are listed in editorial_omission_review.",
+        "title": "Perlatum ad Nos est — Michaeli Lewicki archiepiscopo Leopoliensi Rutheni ritus de primatu et ritibus"
+      },
+      "scan_leaf_ids": [
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161
+      ],
+      "segment_id": "segment.gregory-xvi-acta.volume-03.line-00020298.part-04.1902-gregory-xvi-acta-volume-03-la.source-ocr.reader-v2",
+      "segment_path": "src/sources/works/gregory-xvi-acta/volume-03-line-00020298-part-04/editions/1902-gregory-xvi-acta-volume-03-la/segments/source-ocr-reader-v2.toml",
+      "selection_start": 20298,
+      "selection_variant_of": "gregory-xvi-acta.volume-03.line-00020298.part-04",
+      "selection_variant_review": {
+        "block_breaks_added": [],
+        "classified_source_loci": [
+          {
+            "basis": "Page number (folio) printed alone in the page-head band above the first body line; its native XML LINE carries only these tokens. Not papal wording, dating, subscription or note.",
+            "classification": "folio",
+            "literal": "147",
+            "physical_lines": [
+              21029,
+              21029
+            ]
+          },
+          {
+            "basis": "Page number (folio) printed alone in the page-head band above the first body line; its native XML LINE carries only these tokens. Not papal wording, dating, subscription or note.",
+            "classification": "folio",
+            "literal": "149",
+            "physical_lines": [
+              21367,
+              21367
+            ]
+          },
+          {
+            "basis": "Volume running title printed in the page-head band above the first body line of the page; its native XML LINE carries only these tokens. Edition furniture, not papal wording.",
+            "classification": "running-head",
+            "literal": "ACTA GREGORII PP. XVI.",
+            "physical_lines": [
+              21506,
+              21506
+            ]
+          }
+        ],
+        "native_evidence": {
+          "lines": [
+            {
+              "artifact_page": 157,
+              "leaf": 157,
+              "native_line_box": [
+                2132,
+                233,
+                2202,
+                274
+              ],
+              "native_line_tokens": [
+                "147"
+              ],
+              "other_tokens_on_native_line": [],
+              "page_body_text_band_y": [
+                308,
+                3571
+              ],
+              "page_dimensions": [
+                2520,
+                3980
+              ],
+              "physical_line": 21029
+            },
+            {
+              "artifact_page": 159,
+              "leaf": 159,
+              "native_line_box": [
+                2138,
+                220,
+                2207,
+                258
+              ],
+              "native_line_tokens": [
+                "149"
+              ],
+              "other_tokens_on_native_line": [],
+              "page_body_text_band_y": [
+                281,
+                3545
+              ],
+              "page_dimensions": [
+                2520,
+                3980
+              ],
+              "physical_line": 21367
+            },
+            {
+              "artifact_page": 160,
+              "leaf": 160,
+              "native_line_box": [
+                1151,
+                190,
+                1640,
+                221
+              ],
+              "native_line_tokens": [
+                "ACTA",
+                "GREGORII",
+                "PP.",
+                "XVI."
+              ],
+              "other_tokens_on_native_line": [],
+              "page_body_text_band_y": [
+                255,
+                3525
+              ],
+              "page_dimensions": [
+                2580,
+                3964
+              ],
+              "physical_line": 21506
+            }
+          ],
+          "method": "exact-whitespace-token-equality-v1 (raw OCR token index to native DjVu XML WORD/LINE)",
+          "xml_filename": "actagregoriipapa0003vinc_djvu.xml",
+          "xml_sha256": "444021d5ec6727a14a1da02f8b40afd8ebe4229a8b84b797356b5ecd3201aa2f"
+        },
+        "page_review": {
+          "audit": "src/sources/papal-documents/gregory-0003-visual-review.json",
+          "audit_sha256": "d4250df6bf137e914859668af6f8ec7b21e3efba0757c4d55a91ec004c02a7af",
+          "blocking_findings": [
+            "p1: BLOCKING: page 1, left column upper third: source folio '147' left in the body, sharing a line with body words ('147 frater, ut clero ...').",
+            "p3: BLOCKING: page 3, right column middle: source folio '149' left inside the body, splitting the word 'vige-/sima'.",
+            "p4: BLOCKING: page 4, right column middle: volume running head 'ACTA GREGORII PP. XVI.' left inside the body sentence ('scissionis,' / 'nisi Michaelem')."
+          ],
+          "report": "src/sources/papal-documents/gregory-0003-visual-04.md",
+          "report_sha256": "45f2ab66cdd7316dff3d722c2c4b4e2c8e0d741be9c1be2ed29f91f6d648b8d7",
+          "status": "CHANGES_REQUIRED"
+        },
+        "prior_pdf": {
+          "pages": 5,
+          "pdf_sha256": "7a999f1967a075fbbf0863405a8d164ccec6a9636acf4f3778922b9c0d66abd7",
+          "receipt_path": "release/papal-documents/inputs/577919974e1a28297556b1831218679f679e3d9ca177dfdb0e06dd61d494cdd0.json",
+          "receipt_sha256": "577919974e1a28297556b1831218679f679e3d9ca177dfdb0e06dd61d494cdd0"
+        },
+        "prior_reader_id": "gregory-xvi-acta.volume-03.line-00020298.part-04",
+        "prior_row_sha256": "be347215474ab8fdf43531c75322b36e59b2c21bbd358a367a939b09267759c7",
+        "range_continuation_finding": "No new block break: each excluded run is blank-delimited or abuts a range boundary on at least one side, so retained paragraph boundaries are those of the prior selection.",
+        "reason": "Project reader selection variant narrows the admitted selection by whole raw OCR lines only: LF21029 (folio); LF21367 (folio); LF21506 (running-head). Every retained character, its order and the historical controller are unchanged.",
+        "whitespace_only_lines_dropped": []
+      },
+      "source_heading_raw": "Venerabili fratri Michaeli ",
+      "status": "reader-selection-variant",
       "title_raw": "Venerabili fratri Michaeli ",
       "volume_key": "volume-03",
       "work_id": "work.gregory-xvi-acta.volume-03.line-00020298.part-04"
@@ -234232,7 +234976,12 @@
     }
   ],
   "method": "configured-papal-series-raw-lines-v1",
-  "revision": "2026-10-28T16:29:21Z",
+  "reader_selection_coverage": {
+    "note": "Reader-format/selection variants do not increase complete historical-witness counts. Frozen base rows remain resolvable historical components.",
+    "variants": 2,
+    "withdrawals": 0
+  },
+  "revision": "2026-10-28T19:36:58Z",
   "schema": "triptych-papal-series-catalog/v1",
   "scope": "Configured historical source containers and proposed constituents; no complete historical papal-act census or authenticity determination.",
   "series_id": "gregory-xvi-acta",

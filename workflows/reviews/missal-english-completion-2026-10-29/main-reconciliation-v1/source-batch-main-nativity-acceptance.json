@@ -1,0 +1,108 @@
+{
+  "accepted_by": "coordinating AI contributor under the maintainer-authorized completion, reconciliation and main-publication task",
+  "accepted_fixture_core_sha256": "3b44f7e9c9c724591124438264db09063354e2e7e12b8b3b95723ea5182e2c5a",
+  "accepted_on": "2026-10-30",
+  "actual_source_checker_and_quarantine": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/nativity-actual-source-checks.json",
+    "sha256": "9f9a803d1f36e4048ed17f9c4d50c41167c5c1d662fe33ad10f8154005f76e8e"
+  },
+  "added_source_paths": [
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261030-pc-nativity-day-punctuation-0d801929/artifact.toml",
+      "sha256": "2310118fd5a9a43bb689b5721a0638241a1a13fa8249148c4190e807906fbf81"
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261030-pc-nativity-day-punctuation-0d801929/text.tsv",
+      "sha256": "0d801929b436514d5db46b3dfbda469c56c88a81bf3cfb342901cd76fafa8576"
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261030-pc-nativity-day-punctuation-0d801929.toml",
+      "sha256": "767aad0cb7c9f2b1a3a75650ea58f9158afbb10a11874ce80f09ba3ad2d4cdba"
+    }
+  ],
+  "all_other_fixture_fields_exact": true,
+  "boundaries": [
+    "The exact image-confirmed colon-to-semicolon correction uses the same historical human English and public-domain source basis, with a fresh immutable derivative and publication passage. Prior artifacts, source evidence and phase1 admission remain unchanged.",
+    "The publication inventory changes exactly its audit date; all other bytes,152document rows,2885source-file hashes and12owners remain unchanged.",
+    "No word, target/model count, Latin availability, ICEL restriction, source/target correspondence, original positive dictionary or prior publication permission is altered. Source/source-English fidelity and rights remain owned by the separate exact source reviews.",
+    "This is not complete English, full2008 correspondence, whole-rite completion, human terminal acceptance or deployment."
+  ],
+  "changed_kept_inputs": [
+    {
+      "after_sha256": "57123fdfb8472718679284f93698912c296e85fa7e78245554956f3890bc3e6d",
+      "before_sha256": "32632b026ac4f06ceeff9a7cec18586e619659b2b44ecc52247a58ca67a2ea5d",
+      "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml"
+    },
+    {
+      "after_sha256": "37674eb1bd4fc5b6aec26da6923a07fce9c1313d23c0bca8e5458eb51a439676",
+      "before_sha256": "515a842731a43cd6cf099c044f995425de07e4f9aa28432841204d8defdd913b",
+      "path": "src/sources/inventories/publications-v1.toml"
+    }
+  ],
+  "consumer_tests": "Required after this source-accounting installation; no pass is predicted by this receipt.",
+  "dropped_parent_paths": [],
+  "fixture_core_serialization": "UTF8 json.dumps(indent=2,sort_keys=True,ensure_ascii=False) plus LF, excluding acceptance/state.",
+  "historical_English_correction": {
+    "after_entry_sha256": "422509d9181b119590f62d345caf1fa829c2849a9844866c77cd5eea5ff6f0e5",
+    "all_other154_positives_and419_absences_exact": true,
+    "before_entry_sha256": "3b692c6384e7e4484ac0416fb41609476c02fa070c683ab9c4ded1047324c819",
+    "new_English_sha256": "935ddab7999ced30303b493dbaabfc2121d6a586f3dd40b260cd11ce4d451bfb",
+    "original116_positives_byte_exact": true,
+    "receipt_path": "workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/nativity-day-punctuation-correction.json",
+    "receipt_sha256": "6e61be68d708b5ec1fd2a509d43d2a16b1d16a24d883838bab2dbd7e9e639887",
+    "target": [
+      "nativity",
+      "day",
+      "Entrance Antiphon",
+      "all",
+      1
+    ]
+  },
+  "independent_accounting_review": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/source-batch-main-nativity-independent-review.json",
+    "sha256": "f968f70d8b6b11ab6e309de67436c346b8e629d26e92f98efdc027e108fce41b"
+  },
+  "independent_inventory_semantic_review": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/publication-inventory-date-review.json",
+    "sha256": "859f905f4ffbb08da80f9719f8759fb18fefab94256f4e12cdea4bdd3145869c"
+  },
+  "inventory_date_delta": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/publication-inventory-date-delta.json",
+    "sha256": "b380630320763352dc1f0789bb1252a38fbe763d8be9f4d16cace3608e0fc173"
+  },
+  "kept_parent_paths": 7068,
+  "original116_postconciliar_positives_exact": true,
+  "original_replay_streams_preserved": 17,
+  "other154_current_positives_and419_absences_exact": true,
+  "parent_acceptance": {
+    "receipt_path": "workflows/reviews/missal-english-completion-2026-10-29/source-batch-test-code-successor-v3.json",
+    "receipt_sha256": "10ee0a41cd88dd3b59119529a678858d8e7602301a9da812e5facd80416d9bf9",
+    "status": "accepted"
+  },
+  "parent_fixture": {
+    "git_revision": "0b7da814a9c3d0bbf721565ceac1abc6898faa2a",
+    "path": "tools/tests/fixtures/missal-source-batch-20261023.json",
+    "sha256": "21fad5aaa93882037b5203807889d9c87557d62313e70cb7b7aba5926c3b0a5d"
+  },
+  "parent_git_revision": "0b7da814a9c3d0bbf721565ceac1abc6898faa2a",
+  "parent_input_manifest": {
+    "git_revision": "0b7da814a9c3d0bbf721565ceac1abc6898faa2a",
+    "path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+    "sha256": "bfd171773b03ac0930666aad30af43552bd6e90832797bac10c642469c9e6e86"
+  },
+  "proposal": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/source-batch-main-nativity-proposal.json",
+    "sha256": "8f92ee59550fdb53b85d07981f78929ab6aed677a4e5b366012a4a20cb63371f"
+  },
+  "replay_support_sha256": "6fd8b3552071f4ef479bbdc6c4d693331b8ceb91e48dcb016e91033fd6ba03fc",
+  "schema": "triptych-source-batch-acceptance/v1",
+  "scope": "missal-source-batch",
+  "source_epoch_paths": 7071,
+  "source_input_manifest_path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+  "source_input_manifest_sha256": "e9cd39f351b23206c7d812c854cbfaaa593b45c3a795c8b53164bb66917da9bd",
+  "source_permission_created_by_this_receipt": false,
+  "status": "accepted",
+  "strict_runtime_helper_sha256": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1",
+  "successor_kind": "one-historical-English-punctuation-correction-and-inventory-audit-date",
+  "unchanged_inverse_specifications": 16
+}

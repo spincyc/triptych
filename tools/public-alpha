@@ -256,6 +256,26 @@ _HELD_WEB_DATA_FILES: list[dict[str, dict[str, Path]]] = []
 # beside them.
 READING_PDF_ROOT_RELATIVE = PurePosixPath("pdf/reading-plans")
 READING_PDF_STEM_RE = re.compile(r"^[a-z0-9][a-z0-9-]*$")
+# Papal source readers: the reviewed two-column reading PDFs installed under
+# pdf/papal-documents/ and owned, path by path and hash by hash, by
+# release/papal-documents.json (guidance/papal-documents.md, "Installed source
+# readers"). That tree is a release record, not a site directory, so it is
+# never walked for what to serve. The encyclicals catalogue the browser reads
+# names the readers it links, and exactly those are served: each one only after
+# the data, the release record and the bytes on disk agree on its id, language,
+# path, SHA-256, size and page count, and the release row is still a PASS
+# public-domain installation. A reader the catalogue does not name is not
+# served even though it sits in the tree; a reader it names that fails any of
+# those comparisons stops the build.
+PAPAL_PDF_PROVIDER = "papal-documents"
+PAPAL_PDF_PATH_RE = re.compile(r"^pdf/papal-documents/[a-z0-9][a-z0-9.-]*\.pdf$")
+PAPAL_RELEASE_RELATIVE = PurePosixPath("release/papal-documents.json")
+PAPAL_RELEASE_SCHEMA = "triptych-papal-release/v1"
+PAPAL_READER_RIGHTS = frozenset(("public-domain",))
+# The encyclicals catalogue, relative to the data root; scripts/_encyclicals.py
+# writes it from src/sources/papal-documents/encyclicals-index.json.
+ENCYCLICALS_DATA_RELATIVE = PurePosixPath("encyclicals/index.json")
+ENCYCLICALS_DATA_SCHEMA = "triptych-encyclicals-browser/v2"
 # The corpus is served once, under a name meant for the reader rather than for
 # the data, and both reading pages resolve it with ../browse.
 SITE_DATA_ROOT = PurePosixPath("browse")
@@ -264,7 +284,7 @@ SITE_DATA_ROOT = PurePosixPath("browse")
 # may drift on live once, in shared. The fixture beside them is a development
 # aid and is not published.
 # The reading pages a reader is sent to; `shared` carries no page of its own.
-WEB_BROWSER_ENTRANCES = ("liturgy", "scripture", "catena", "history", "texts", "sources", "law")
+WEB_BROWSER_ENTRANCES = ("liturgy", "scripture", "catena", "history", "texts", "sources", "law", "encyclicals")
 # Derived, never restated. These were two hand-kept lists, and adding a section
 # to one and not the other shipped a page whose stylesheet and script were left
 # out of the artifact — the build passed and the link check caught it.
@@ -1107,6 +1127,167 @@ def reading_plan_pdfs() -> dict[str, Path]:
     return found
 
 
+def encyclicals_catalogue_path() -> Path:
+    return ROOT / WEB_DATA_ROOT_RELATIVE / ENCYCLICALS_DATA_RELATIVE
+
+
+def _papal_release_documents(errors: list[str]) -> tuple[dict, set[str]]:
+    """The papal release record's installed rows by (id, language), and its retired paths."""
+    label = PAPAL_RELEASE_RELATIVE.as_posix()
+    path = ROOT / PAPAL_RELEASE_RELATIVE
+    if path.is_symlink() or not path.is_file():
+        raise ReleaseError(
+            f"the encyclicals catalogue links papal readers, but {label} is missing; "
+            "a reader the release record does not own may not be served"
+        )
+    release = load_json_file(path, label)
+    if (
+        not isinstance(release, dict)
+        or release.get("schema") != PAPAL_RELEASE_SCHEMA
+        or not isinstance(release.get("documents"), list)
+    ):
+        raise ReleaseError(f"{label} is not a {PAPAL_RELEASE_SCHEMA} record")
+    documents: dict[tuple[str, str], dict] = {}
+    for position, document in enumerate(release["documents"]):
+        if not isinstance(document, dict):
+            errors.append(f"{label} documents[{position}] is not an object")
+            continue
+        key = (document.get("id"), document.get("language"))
+        if key in documents:
+            errors.append(f"{label} records {key[0]!r} in {key[1]!r} twice")
+            continue
+        documents[key] = document
+    retired: set[str] = set()
+    for entry in release.get("obsolete") or []:
+        if not isinstance(entry, dict) or not isinstance(entry.get("pdf"), str):
+            continue
+        current = documents.get((entry.get("id"), entry.get("language")))
+        prior_sha = entry.get("pdf_sha256")
+        replaced = (
+            entry.get("reason") == "replaced-by-current-pass"
+            and current is not None
+            and current.get("pdf") == entry["pdf"]
+            and isinstance(prior_sha, str)
+            and SHA256_RE.fullmatch(prior_sha) is not None
+            and isinstance(current.get("pdf_sha256"), str)
+            and SHA256_RE.fullmatch(current["pdf_sha256"]) is not None
+            and current["pdf_sha256"] != prior_sha
+        )
+        if not replaced:
+            retired.add(entry["pdf"])
+    return documents, retired
+
+
+def papal_reader_pdfs() -> dict[str, Path]:
+    """Every papal reader the encyclicals catalogue links, by the path that serves it.
+
+    Absent, as the reading pages are, when the repository carries no data root
+    or no encyclicals catalogue. Otherwise every reader the catalogue names is
+    compared with its row of `release/papal-documents.json` and with the bytes
+    on disk, and any disagreement stops the build: an unrecorded or retired
+    reader, a path outside the release tree, a symlink, a changed hash, size or
+    page count, a release row without a PASS review or a public-domain basis,
+    or one path the catalogue describes two ways. Every problem is reported at
+    once, because the person fixing one usually has the next in the same file.
+
+    The page count is compared as recorded. The release record states it for
+    exactly the bytes it reviewed, and the hash on disk is proved equal to those
+    bytes, so the file's own count is the recorded one without opening the PDF.
+    """
+    if not web_data_manifest_path().is_file():
+        return {}
+    catalogue_path = encyclicals_catalogue_path()
+    label = (WEB_DATA_ROOT_RELATIVE / ENCYCLICALS_DATA_RELATIVE).as_posix()
+    if catalogue_path.is_symlink():
+        raise ReleaseError(f"{label} is a symlink")
+    if not catalogue_path.is_file():
+        return {}
+    catalogue = load_json_file(catalogue_path, label)
+    if (
+        not isinstance(catalogue, dict)
+        or catalogue.get("schema") != ENCYCLICALS_DATA_SCHEMA
+        or not isinstance(catalogue.get("encyclicals"), list)
+    ):
+        raise ReleaseError(f"{label} is not a {ENCYCLICALS_DATA_SCHEMA} catalogue")
+    errors: list[str] = []
+    referenced: dict[str, dict] = {}
+    for position, row in enumerate(catalogue["encyclicals"]):
+        readers = row.get("readers") if isinstance(row, dict) else None
+        if not isinstance(readers, list):
+            errors.append(f"{label} encyclicals[{position}] has no readers list")
+            continue
+        for reader_position, reader in enumerate(readers):
+            where = f"{label} encyclicals[{position}].readers[{reader_position}]"
+            pdf = reader.get("pdf") if isinstance(reader, dict) else None
+            if not isinstance(pdf, str) or not PAPAL_PDF_PATH_RE.fullmatch(pdf):
+                errors.append(f"{where}: not a reader path under pdf/papal-documents/: {pdf!r}")
+                continue
+            earlier = referenced.setdefault(pdf, reader)
+            if any(
+                earlier.get(field) != reader.get(field)
+                for field in ("release_id", "language", "pdf_sha256", "pages")
+            ):
+                errors.append(f"{where}: {pdf} is described two different ways")
+    if not referenced and not errors:
+        return {}
+    documents, retired = _papal_release_documents(errors)
+    found: dict[str, Path] = {}
+    for pdf, reader in sorted(referenced.items()):
+        key = (reader.get("release_id"), reader.get("language"))
+        document = documents.get(key)
+        if document is None:
+            errors.append(
+                f"{pdf}: {key[0]!r} in {key[1]!r} is not a reader "
+                f"{PAPAL_RELEASE_RELATIVE.as_posix()} installs"
+            )
+            continue
+        if pdf in retired:
+            errors.append(f"{pdf}: retired by {PAPAL_RELEASE_RELATIVE.as_posix()}")
+        for field in ("pdf", "pdf_sha256", "pages"):
+            if document.get(field) != reader.get(field):
+                errors.append(
+                    f"{pdf}: the catalogue's {field} {reader.get(field)!r} is not the "
+                    f"release record's {document.get(field)!r}"
+                )
+        review = document.get("review")
+        if not isinstance(review, dict) or review.get("status") != "PASS":
+            errors.append(f"{pdf}: the release record shows no PASS review")
+        source = document.get("source")
+        if not isinstance(source, dict) or source.get("rights_status") not in PAPAL_READER_RIGHTS:
+            errors.append(f"{pdf}: the release record gives no public-domain distribution basis")
+        path = ROOT
+        unsafe = False
+        for component in PurePosixPath(pdf).parts:
+            path /= component
+            if path.is_symlink():
+                errors.append(f"{pdf}: the installed reader path is a symlink")
+                unsafe = True
+                break
+        if unsafe:
+            continue
+        if not path.is_file():
+            errors.append(f"{pdf}: the release record installs it, and it is not on disk")
+            continue
+        if path.stat().st_size != document.get("bytes"):
+            errors.append(
+                f"{pdf}: {path.stat().st_size} bytes on disk, "
+                f"{document.get('bytes')!r} recorded"
+            )
+        actual = sha256(path)
+        if actual != document.get("pdf_sha256"):
+            errors.append(
+                f"{pdf}: SHA-256 on disk {actual} is not the reviewed "
+                f"{document.get('pdf_sha256')!r}"
+            )
+        found[pdf] = path
+    if errors:
+        raise ReleaseError(
+            "the encyclicals catalogue links papal readers that may not be served:\n- "
+            + "\n- ".join(errors)
+        )
+    return found
+
+
 def public_pdf_path(provider: str, leaf: str) -> str:
     """A stable public filename bound to the full publication identity.
 
@@ -1126,6 +1307,8 @@ def public_pdf_aliases(included_ids: Iterable[tuple[str, str]]) -> dict[str, str
     """Map the admitted canonical PDFs to unique public filenames."""
     keys = set(included_ids) | {
         ("reading-plans", PurePosixPath(path).stem) for path in reading_plan_pdfs()
+    } | {
+        (PAPAL_PDF_PROVIDER, PurePosixPath(path).stem) for path in papal_reader_pdfs()
     }
     aliases = {
         f"pdf/{provider}/{leaf}.pdf": public_pdf_path(provider, leaf)
@@ -1178,6 +1361,40 @@ def projected_document_catalogue(
                 if canonical in aliases:
                     issue["pdf"] = aliases[canonical]
     return json.dumps(corpus, ensure_ascii=False, indent=1, sort_keys=True) + "\n"
+
+
+def projected_encyclicals_catalogue(
+    relative: str, source: Path, aliases: dict[str, str]
+) -> str | None:
+    """Point the served catalogue's reader links at their public aliases.
+
+    The tracked file keeps the canonical release paths, because those are what
+    `release/papal-documents.json` owns and what `papal_reader_pdfs` compares.
+    A reader with no alias was not admitted, and the served copy is refused
+    rather than left naming a path the artifact may not carry.
+    """
+    if relative != (SITE_DATA_ROOT / ENCYCLICALS_DATA_RELATIVE).as_posix():
+        return None
+    catalogue = load_json_file(source, source.relative_to(ROOT).as_posix())
+    for row in catalogue.get("encyclicals", []):
+        for reader in row.get("readers", []):
+            canonical = reader.get("pdf")
+            if canonical not in aliases:
+                raise ReleaseError(
+                    f"{relative}: {canonical!r} has no public alias; it was not admitted"
+                )
+            reader["pdf"] = aliases[canonical]
+    return json.dumps(catalogue, ensure_ascii=False, indent=1, sort_keys=True) + "\n"
+
+
+def projected_web_data(
+    relative: str, source: Path, aliases: dict[str, str]
+) -> str | None:
+    """The served form of a data file whose PDF links move to public aliases."""
+    projection = projected_document_catalogue(relative, source, aliases)
+    if projection is None:
+        projection = projected_encyclicals_catalogue(relative, source, aliases)
+    return projection
 
 
 def web_browser_pages() -> dict[str, Path]:
@@ -2465,13 +2682,17 @@ def site_source_paths(manifest: dict | None = None) -> set[str]:
     )
     # Reading-plan PDFs remain independently bound as published volumes. Their
     # exact derived bytes are served outside the browser data copy, so they join
-    # the same authorization closure explicitly here.
+    # the same authorization closure explicitly here. The papal readers the
+    # encyclicals catalogue links are third-party historical wording served
+    # as exact bytes, and join it for the same reason: the approval names each
+    # one by hash, so a reader added, dropped or rebuilt moves the record.
     return (
         set(SITE_SOURCE_PATHS)
         | set(included_document_pages(set(included)))
         | pictorial_gallery_source_paths()
         | browser
         | set(reading_plan_pdfs())
+        | set(papal_reader_pdfs())
     )
 
 
@@ -3632,6 +3853,8 @@ def source_to_output(
             destination = resolved_text
     if destination is None and resolved_text in reading_plan_pdfs():
         destination = public_pdf_path("reading-plans", resolved.stem)
+    if destination is None and resolved_text in papal_reader_pdfs():
+        destination = public_pdf_path(PAPAL_PDF_PROVIDER, resolved.stem)
     if destination is None:
         pdf_match = re.fullmatch(r"pdf/([a-z0-9-]+)/(.+)\.pdf", resolved_text)
         if pdf_match and (pdf_match.group(1), pdf_match.group(2)) in included_ids:
@@ -4319,6 +4542,11 @@ BROWSER_SECTION_COLOURS = {
     # are the marks of a code before they are the marks of a catalogue. Values
     # here are not required to be distinct; only the presence of one is.
     "law": "black",
+    # The encyclicals take white beside the source library, for the source
+    # library's reason: the page lists other people's words — the popes' — and
+    # links their historical printings rather than writing any of its own. Its
+    # one sentence of project prose per row is labelled as such on the page.
+    "encyclicals": "white",
 }
 
 # An entrance with no colour raised KeyError deep inside the build, and only in
@@ -4616,7 +4844,7 @@ def verify_web_data(
         # check independently authenticates every copied byte, including JS and
         # CSS outside the data root; regenerating artifact-local checksums must
         # not make a modified browser program acceptable.
-        projection = projected_document_catalogue(relative, source, pdf_aliases)
+        projection = projected_web_data(relative, source, pdf_aliases)
         expected_hash = (
             hashlib.sha256(projection.encode("utf-8")).hexdigest()
             if projection is not None else sha256(source)
@@ -5153,6 +5381,10 @@ def _verify_snapshot_contents(
         *[
             (source, output / destination_relative)
             for destination_relative, source in sorted(reading_plan_pdfs().items())
+        ],
+        *[
+            (source, output / destination_relative)
+            for destination_relative, source in sorted(papal_reader_pdfs().items())
         ],
     ]
     for source_path, artifact_path in static_sources:
@@ -5695,7 +5927,7 @@ def assemble_web_data(
     if pdf_aliases is None:
         pdf_aliases = public_pdf_aliases(())
     for destination_relative, source in sorted(web_data_files().items()):
-        projection = projected_document_catalogue(destination_relative, source, pdf_aliases)
+        projection = projected_web_data(destination_relative, source, pdf_aliases)
         if projection is None:
             writer.copy(source, destination_relative)
         else:

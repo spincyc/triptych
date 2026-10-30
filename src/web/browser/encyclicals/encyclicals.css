@@ -1,0 +1,384 @@
+/* Papal Encyclicals. A list to scan, sort and narrow, so it drops the shared
+   reading measure and takes the width a table of eight or more columns needs.
+   No colour is declared here: the section palette arrives from the site
+   stylesheet, which the build selects by entrance (white, as for the source
+   library). Every class this page owns starts `enc-`; a shared component it
+   retunes is reached from inside `.encyclicals-page`, never by its bare name. */
+
+/* The site frames reading browsers at 60rem. A row here carries a year, a pope,
+   a title, a summary, a column per language and a Vatican link, and squeezed to
+   60rem every summary becomes a ribbon two words wide. */
+#main-content.encyclicals-page { max-width: 86rem; }
+
+.enc-catalogue {
+  max-width: none;
+}
+
+.enc-catalogue:focus { outline: none; }
+.enc-catalogue[aria-busy="true"] { opacity: 0.6; }
+
+/* --- The two notices --------------------------------------------------- */
+
+.enc-notices {
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(24rem, 100%), 1fr));
+  margin: 0 0 1.25rem;
+}
+
+.enc-notice {
+  margin: 0;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--section-line);
+  border-left: 0.3rem solid var(--section-accent);
+  border-radius: 4px;
+  background: var(--panel);
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.enc-notice strong { color: var(--ink); }
+.enc-notice p { margin: 0; }
+
+#enc-summary-method { margin-top: 0.3rem; }
+#enc-summary-method summary {
+  min-height: 2.75rem;
+  padding-block: 0.45rem;
+  cursor: pointer;
+}
+#enc-summary-method p { margin-top: 0.3rem; }
+
+#enc-provenance:not(:empty) {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+}
+
+.encyclicals-page .field { flex: 1 1 12rem; }
+
+/* --- The table --------------------------------------------------------- */
+
+/* Between the card layout below and a desktop wide enough for every column,
+   the table scrolls inside its own box rather than widening the page, and the
+   script says so above it while it does. */
+.enc-scroll {
+  /* Keep absolute screen-reader labels inside the scroll region too. Without
+     a containing block they can widen the document beyond the clipped table. */
+  position: relative;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.enc-scroll-hint {
+  margin: 0 0 0.5rem;
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+}
+
+.encyclicals-page .enc-table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  line-height: 1.42;
+}
+
+.encyclicals-page .enc-table :is(th, td) {
+  padding: 0.45rem 0.45rem;
+  vertical-align: top;
+  text-align: left;
+}
+
+.encyclicals-page .enc-table thead th {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-bottom: 2px solid var(--section-accent);
+}
+
+.encyclicals-page .enc-table tbody th {
+  background: transparent;
+  color: var(--ink);
+  font-weight: 400;
+}
+
+.enc-sort {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.75rem;
+  padding: 0.1rem 0.25rem;
+  margin: -0.1rem -0.25rem;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.enc-sort:hover { text-decoration: underline; }
+.enc-sort-mark { white-space: pre; }
+.enc-sort-idle { opacity: 0.55; }
+
+.enc-year { width: 5.4rem; }
+
+.enc-year-figure {
+  display: block;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.enc-date,
+.enc-undated {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+}
+
+.enc-pope { min-width: 5.5rem; }
+
+.enc-title { min-width: 8.5rem; }
+
+.enc-incipit {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.02rem;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--section-ink);
+}
+
+.enc-subject {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.enc-summary {
+  min-width: 11rem;
+  color: var(--ink-soft);
+}
+
+.enc-language { min-width: 5.6rem; }
+/* Latin and English carry most of the editions; a column for a language that
+   holds a handful is narrower, and its witness label wraps. */
+.enc-language:not([data-language="la"]):not([data-language="en"]) { min-width: 4.4rem; }
+
+.enc-readers {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.enc-reader + .enc-reader { margin-top: 0.45rem; }
+
+/* A reading edition is a target, not a word in prose: big enough to hit on a
+   phone without zooming. */
+.enc-pdf {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.75rem;
+  padding: 0.05rem 0;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.enc-witness {
+  display: block;
+  font-size: 0.76rem;
+  line-height: 1.35;
+  color: var(--ink-faint);
+}
+
+.enc-source-absence,
+.enc-english-gap {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-style: normal;
+}
+
+.enc-online {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.75rem;
+  font-weight: 600;
+}
+
+.enc-route-details {
+  margin-top: 0.2rem;
+  font-size: 0.76rem;
+  color: var(--ink-soft);
+  overflow-wrap: anywhere;
+}
+
+.enc-route-details summary { cursor: pointer; }
+.enc-route-details p { margin: 0.25rem 0; }
+.enc-external .enc-extent { display: table; }
+
+/* Fragment and damaged printings say so in words; the box is emphasis only,
+   and survives forced colours as a border. */
+.enc-extent {
+  display: inline-block;
+  padding: 0 0.3rem;
+  border: 1px solid var(--notice);
+  border-radius: 3px;
+  color: var(--notice);
+  background: var(--notice-bg);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  vertical-align: 0.1em;
+}
+
+.enc-none { color: var(--ink-faint); }
+
+.enc-vatican { min-width: 4.6rem; }
+
+.enc-vatican-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.75rem;
+}
+
+.enc-message .placeholder { margin-bottom: 0.6rem; }
+
+.enc-reset {
+  min-height: 2.75rem;
+  padding: 0.5rem 0.9rem;
+  font: inherit;
+  color: var(--ink);
+  background: var(--page);
+  border: 1px solid var(--section-line);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.enc-reset:hover {
+  border-color: var(--section-accent);
+  background: var(--section-row);
+}
+
+/* --- Narrow screens: each row becomes one card ------------------------- */
+
+/* The column headings leave the screen and each cell prints its own label,
+   so a row reads as a coherent entry:
+   title, year and pope, the AI summary, then each language's editions. */
+@media (max-width: 48rem), print {
+  .enc-scroll { overflow: visible; }
+
+  .encyclicals-page .enc-table,
+  .encyclicals-page .enc-table tbody,
+  .encyclicals-page .enc-table tr,
+  .encyclicals-page .enc-table :is(th, td) {
+    display: block;
+    width: auto;
+    min-width: 0;
+  }
+
+  .encyclicals-page .enc-table { overflow: visible; }
+
+  /* Gone, not clipped: its sort buttons would otherwise stay in the tab order
+     with nothing on screen to show where focus went. The Order control above
+     sorts on a phone, and every cell prints its own label. */
+  .encyclicals-page .enc-table thead { display: none; }
+
+  .encyclicals-page .enc-table tbody tr {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 0.75rem;
+    margin: 0 0 0.8rem;
+    padding: 0.7rem 0.8rem;
+    border: 1px solid var(--section-line);
+    border-left: 0.25rem solid var(--section-accent);
+    border-radius: 5px;
+    background: var(--panel);
+  }
+
+  .encyclicals-page .enc-table tbody tr.enc-message {
+    display: block;
+    border-left-width: 1px;
+  }
+
+  .encyclicals-page .enc-table :is(th, td) {
+    padding: 0.2rem 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .encyclicals-page .enc-table .enc-title {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    padding-bottom: 0.25rem;
+  }
+
+  .encyclicals-page .enc-table .enc-year { grid-column: 1; }
+  .encyclicals-page .enc-table .enc-pope { grid-column: 2; align-self: start; }
+
+  .encyclicals-page .enc-table .enc-year-figure { display: inline; }
+  .encyclicals-page .enc-table .enc-date { display: inline; margin-left: 0.35rem; }
+
+  .encyclicals-page .enc-table :is(.enc-summary, .enc-language, .enc-vatican) {
+    grid-column: 1 / -1;
+  }
+
+  /* An empty language cell says nothing a reader needs on a card. */
+  .encyclicals-page .enc-table :is(.enc-language, .enc-summary).enc-empty { display: none; }
+
+  .encyclicals-page .enc-table [data-label]::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--section-ink);
+  }
+
+  .encyclicals-page .enc-table :is(.enc-year, .enc-pope)::before { display: none; }
+
+  .enc-pdf,
+  .enc-online,
+  .enc-vatican-link { min-height: 2.75rem; }
+
+  .enc-pdf { max-width: 100%; white-space: normal; }
+}
+
+@media (max-width: 24rem) {
+  .encyclicals-page .enc-table tbody tr { grid-template-columns: minmax(0, 1fr); }
+  .encyclicals-page .enc-table :is(.enc-year, .enc-pope) { grid-column: 1 / -1; }
+}
+
+/* --- Print: the list, without its controls ----------------------------- */
+
+@media print {
+  .encyclicals-page .controls,
+  .encyclicals-page .banner,
+  .enc-scroll-hint,
+  .enc-sort-mark,
+  .enc-reset { display: none !important; }
+
+  .enc-scroll { overflow: visible; }
+
+  /* Reuse the labelled narrow rows instead of squeezing every language into
+     a paper-width table. The individual source PDFs remain the print editions. */
+  .encyclicals-page .enc-table { font-size: 8pt; }
+  .enc-pdf,
+  .enc-online,
+  .enc-vatican-link { min-height: 0; }
+
+  .enc-sort {
+    padding: 0;
+    margin: 0;
+  }
+
+  .encyclicals-page .enc-table tr { break-inside: avoid; }
+}

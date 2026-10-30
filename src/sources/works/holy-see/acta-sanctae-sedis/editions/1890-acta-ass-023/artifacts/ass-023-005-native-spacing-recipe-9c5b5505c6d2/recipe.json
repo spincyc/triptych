@@ -1,0 +1,71 @@
+{
+  "helper": {
+    "path": "scripts/_papal_native_spacing.py",
+    "sha256": "c3f13e34101ea360aa9dafb3e6d92723c001ce4286bf32ef03e837597b68e41c"
+  },
+  "native_first_page": 257,
+  "native_pdf": {
+    "artifact_id": "artifact.acta-papal-archives.ass.023.vatican-pdf-db86af2e",
+    "artifact_pages": [
+      257,
+      260
+    ],
+    "sha256": "db86af2e261f732f9b958dd0f7dd5e34739b5c0939d4dd8580339af642e3fa89"
+  },
+  "native_raw": {
+    "artifact_id": "artifact.acta-papal-archives.ass.023.ass-023-005-native-raw-61599cc6f461",
+    "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1890-acta-ass-023/artifacts/ass-023-005-native-raw-61599cc6f461/text.txt",
+    "sha256": "61599cc6f461f9ad5db94e3f280c418c4ddb5482c51a73f9ccfe73a443051e5c"
+  },
+  "output_sha256": "ee020878a6b744bb626492b6ef9a31b485fb9f36f60bbeef32454f8fb771b071",
+  "parent": {
+    "artifact_id": "artifact.acta-papal-archives.ass.023.historical-text-2ed2fb06",
+    "path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/1890-acta-ass-023/artifacts/acta-historical-text-2ed2fb06/historical.txt",
+    "sha256": "2ed2fb06999a29e2791c1f8f58acf69590b4a12449217d5b6b3debfb7dd2355b"
+  },
+  "review": {
+    "artifact_id": "artifact.acta-papal-archives.ass.023.ass-023-005-native-spacing-review-6bff8f8c9e77",
+    "native_pages_inspected": [
+      257,
+      258,
+      259,
+      260
+    ],
+    "raw_order_policy": "Project only whitespace from one uniquely matching native raw line on the same exact PDF page onto each original selected source LF line; retain original source line/range order.",
+    "sha256": "6bff8f8c9e778253224a02b8ba099fce60dc1fea43fb4e8d7dbc624fe512f970"
+  },
+  "reviewed_stream_order_pages": [],
+  "schema": "triptych-papal-native-spacing/v1",
+  "selections": [
+    {
+      "native_page": 257,
+      "source_range": [
+        10032,
+        10072
+      ]
+    },
+    {
+      "native_page": 258,
+      "source_range": [
+        10075,
+        10115
+      ]
+    },
+    {
+      "native_page": 259,
+      "source_range": [
+        10117,
+        10157
+      ]
+    },
+    {
+      "native_page": 260,
+      "source_range": [
+        10159,
+        10192
+      ]
+    }
+  ],
+  "source_id": "acta.ass.023.ass-023-005",
+  "stream_order_difference_pages": []
+}

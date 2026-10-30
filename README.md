@@ -32,6 +32,7 @@ authors, its extent, and when it was last revised — open
 | [The Code, Canon by Canon](law/) | Look up a canon, read what it said before, and see which act changed it. |
 | [Every Document](texts/) | The whole corpus, filtered by author, edition or section. |
 | [The Source Library](sources/) | The works this project reads from, passage by passage — and, where a text may not be served here, the reason. |
+| [Papal Encyclicals](encyclicals/) | Every catalogued encyclical, sortable by pope, year or title, with the Latin and English printed by 1930 where held here. |
 
 ## How this was built
 

@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261030-pc-nativity-day-punctuation-0d801929"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Faithful transcription of the separately registered United States public-domain Lasance and Walsh revised-1945 printing. This exact old human English is excluded from the project CC BY4.0 offer. The correction adds no authorship, modern Latin, ICEL English, image or publisher furniture."
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+transformation = "Retain the complete historical antiphon only, join printed line wraps, and render initial ornamental small capitals as ordinary initial capitalization. Preserve actual source punctuation: the source prints a semicolon after given to us and before Whose. The previous colon is a transcription error, not source wording. The following Psalm verse and Gloria remain outside this body. TSV receiving coordinates identify bounded historical antecedent study use, not the source book appointment or authenticated2008 wording."
+retrieved = "2026-10-30"
+sha256 = "0d801929b436514d5db46b3dfbda469c56c88a81bf3cfb342901cd76fafa8576"
+byte_size = 238
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261030-pc-nativity-day-punctuation-0d801929/text.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "Exactly one corrected historical English body. Prior artifact artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase1-lasance-fresh and its source passages/admission remain unchanged as history. Source printedp144, artifactpage145, IAleaf144; independent direct-image correction review retained separately."

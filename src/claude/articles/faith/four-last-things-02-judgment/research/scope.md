@@ -5,7 +5,9 @@
 The maintainer asked that the 21 October guidance ("Say what the texts say,
 plainly") and the Catholic voice rule be applied to this essay. Prose only:
 quotations, notes, headings, appendices, references and bindings are
-unchanged. The record is `research/revision-2026-10-26.md`.
+unchanged. The record is `research/revision-2026-10-26.md`. On 27 October
+2026 two phrases that gave the Lyons profession of 1274 a defining degree
+were corrected; the same record describes the correction.
 
 ## PDF layout revision — 2026-10-26
 

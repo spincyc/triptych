@@ -130,12 +130,19 @@ whitespace change. Pages whose geometry is uncertain are held and keep their
 raw OCR bytes. Readers keep marginal summaries as separate TAB-led blocks, each
 emitted at its anchor beside the section it annotates and never fused into a
 body line; this is how the continuation series already retains its own
-historical marginal summaries literally. A single OCR WORD that joins marginal
+historical marginal summaries literally. The printing's page-foot footnotes
+are likewise kept as separate blocks at the page break. A footnote set as its
+own block is acceptable; a footnote run into a body, synopsis or protocol
+paragraph blocks the reader. A single OCR WORD that joins marginal
 and body glyphs is an inseparable mixture. Any unit containing one stays held
 for a character-geometry pass and is not admitted with a disclosure. Only a
 unit whose prior reviewed extent maps cleanly and contiguously through WORD
 identity is registered, as a new reading selection of the same work that
-preserves its withdrawn predecessor. Each volume must first pass an evidence
+preserves its withdrawn predecessor. A reading selection found defective is
+replaced by a later derivative's selection that explicitly supersedes it;
+the earlier derivative, selection and document remain as historical records.
+A fragment's extent statement from the earlier raw-OCR review identifies its
+raw OCR line numbers as such. Each volume must first pass an evidence
 gate of at least twelve native page images, at least half of them held out
 from the proposal's tuning, with the running-head rows of every page listed
 for a quick scan. Every page of every repaired PDF is still visually reviewed
@@ -177,6 +184,36 @@ output hash. Record unknown facts as unknown. Identify mechanical typesetting
 and project-created apparatus without assigning papal wording to an AI
 provider. Source-library evidence states retain their existing meanings;
 rendering a source does not promote it to `verified`.
+
+### Classic reading typography
+
+The current reader design uses Latin Modern Roman at 10.5pt with 13pt leading,
+indented paragraphs without extra paragraph gaps, a restrained roman title,
+and a short rule above the smaller terminal apparatus. English and Latin are
+justified with their own Babel hyphenation patterns. Other identified languages
+retain ragged-right composition rather than inheriting English patterns.
+Babel shorthands are disabled so literal source quotation marks and adjoining
+characters cannot become language-specific markup in either body or title.
+Short all-capital source paragraphs use flush-left composition to avoid
+stretched heading words, without becoming newly invented semantic headings.
+Historical notes remain in their source order; typography does not infer new
+note anchors, rewrite OCR word divisions, or move notes into invented footnotes.
+
+XeLaTeX needs the Latin Modern OpenType fonts and Babel's English and Latin
+support. A TeX Live installation requires `babel-english`, `babel-latin` and
+`hyphen-latin`; rebuild its XeLaTeX format after enabling the Latin patterns.
+Arch packages supply the additional Latin support through `texlive-langother`.
+Missing Latin patterns stop compilation rather than silently substituting
+English patterns. Junicode and FreeSerif remain character-specific fallbacks.
+
+Generator version 2 records this design and its transformation options. Its
+text-fidelity check permits an added visible hyphen only at a physical line or
+page ending between source letters. Every original source hyphen must still
+match; the check does not remove all hyphens from either text. Whitespace,
+soft-hyphen and Unicode compatibility normalization retain their previous
+declared meanings. Old frozen receipts and reviewed PDFs remain records of
+their original generator; a typography change requires new byte-bound review
+before replacing any installed reader.
 
 ## Review and use in larger projects
 

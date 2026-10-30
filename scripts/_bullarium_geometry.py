@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import bisect
+import copy
 from collections import Counter, defaultdict
 import gzip
 import hashlib
@@ -25,10 +26,10 @@ SCHEMA = "triptych-bullarium-geometry-recipe/v1"
 SCHEMA_V2 = "triptych-bullarium-geometry-recipe/v2"
 # v2 rows name their role by code; the replay contract (ROLES) is unchanged.
 ROLE_CODES = {"H": "header", "L": "body-left", "R": "body-right", "ML": "margin-left", "MR": "margin-right",
-              "F": "footer", "G": "gutter-ocr"}
+              "NL": "notes-left", "NR": "notes-right", "F": "footer", "G": "gutter-ocr"}
 V2_PAGE_FIELDS = {"leaf", "object_ordinal_1", "status"}
 V2_PAGE_OPTIONAL = {"rows", "hold", "measurements", "role_WORD_counts", "inseparable_WORDs", "margin_blocks",
-                    "header_rows", "paragraph_breaks", "source_word_range_1", "source_lf_range_1"}
+                    "header_rows", "notes_blocks", "note_suspects", "paragraph_breaks", "source_word_range_1", "source_lf_range_1"}
 ROLES = {"header", "body-left", "body-right", "margin-left", "margin-right",
          "notes-left", "notes-right", "footer", "uncertain", "gutter-ocr"}
 SHA = re.compile(r"[a-f0-9]{64}")
@@ -254,9 +255,12 @@ def _xml_pages(xml, raw, tokens, changed):
             _require([t[2] for t in matched] == parts, "whole raw TXT/XML WORD token mismatch")
             if page["leaf"] in changed:
                 coords = word["attrs"].get("coords")
-                _require(isinstance(coords, str) and re.fullmatch(r"-?\d+,-?\d+,-?\d+,-?\d+", coords),
+                # DjVu writes x0,y1,x1,y0 and, in some deliveries, a fifth baseline
+                # value.  The exact attribute string stays pinned in `coords`;
+                # geometry uses the box only.
+                _require(isinstance(coords, str) and re.fullmatch(r"-?\d+,-?\d+,-?\d+,-?\d+(?:,-?\d+)?", coords),
                          "changed WORD requires exact integer coordinates")
-                x0, y0, x1, y1 = map(int, coords.split(","))
+                x0, y0, x1, y1 = map(int, coords.split(",")[:4])
                 stop = word["tag_end"] if word["selfclosing"] else _tag_end(xml, parser.CurrentByteIndex)
                 page["words"].append({**{k: word[k] for k in ("source_word_global_1", "source_word_page_1", "source_line_global_1", "source_line_page_1")},
                     "source_xml_byte_range_0": [word["start"], stop], "value": value, "coords": coords,
@@ -647,13 +651,79 @@ PROPOSAL_PARAMS = {
     "right_margin_tol_M": 4 / 750, "gutter_tol_M": 6 / 750, "right_start_tol_M": 14 / 750,
     "gutter_ocr_max_chars": 2, "last_word_hang_M": 24 / 750, "merged_line_indent_M": 140 / 750,
     "margin_absorb_indent_M": 140 / 750, "margin_min_char_M": 5 / 750, "body_min_char_M": 8 / 750,
-    "margin_body_min_gap_M": 8 / 750, "header_band_H": 0.16, "header_row_tol_P": 0.5,
+    "margin_body_min_gap_M": 8 / 750, "straddle_M": 50 / 750, "straddle_indent_M": 70 / 750,
+    "straddle_resume_M": 120 / 750, "straddle_height_ratio": 0.75, "straddle_row_height_ratio": 0.55,
+    "straddle_merged_ratio": 1.3,
+    "header_band_H": 0.16, "header_row_tol_P": 0.5,
     "header_isolation_P": 1.2, "text_top_min_tokens": 4, "text_top_min_width_M": 0.4,
     "text_top_min_height": 0.85, "footer_band_H": 0.88, "footer_gap_P": 1.6, "row_merge_P": 0.45,
     "margin_row_merge_P": 0.3, "margin_block_gap_factor": 1.5, "margin_block_gap_default_P": 0.9,
     "margin_block_max_gap_P": 3.0, "margin_anchor_back_rows": 2, "paragraph_indent_M": 22 / 750,
     "paragraph_short_M": 45 / 750,
+    "note_band_C": 0.5, "note_max_rows": 15, "note_gap_P": 0.9, "note_strong_gap_P": 1.5,
+    "note_strong_min_rows": 3, "note_suspect_gap_P": 1.2, "note_tight_gap_P": 0.6, "note_advance_ratio": 0.88, "note_height_ratio": 0.9,
+    "note_cue_rows": 3, "note_continuation_gap_P": 1.05, "missing_row_gap_P": [1.75, 2.35],
 }
+# A footnote's first WORD often opens with its reference mark: (1), (t), (I) ...
+# A footnote reference mark as OCR renders it: "(1)", "(t)", "(I)", "(1;", "()j",
+# "<1)", "(!)", "1)", "H)", "ri)", ")" ...
+NOTE_MARK = re.compile(r"[\(\[<{][^\s]{0,2}[\)\]}>;j]|[^\s(\[]{0,2}[\)\]]")
+# ... or a bare mark set as its own WORD: 1-9, or "1" misread as I, l, i, ì, t, !, { or \\, or "1."
+BARE_MARK = re.compile(r"[1-9Ilit!{\\]|[ìí]|1\.")
+# ... and "1" misread as f or d, which counts only with editorial wording: a lone
+# "f" opening a row is more often the cross before a subscription ("f Ego ...")
+CUED_MARK = re.compile(r"[fd]")
+# OCR specks printed before a mark (". „, ■ I Cherub."); never a section sign "§"
+SPECK = re.compile(r"[.,„■•●·'\"`:;_~*\-—–]+")
+# a section number after a bare-mark-like token: "§ 2." read as "8 2." or "I 2."
+SECTION_NUMBER = re.compile(r"\d+[.,]?")
+# Editorial-note wording that corroborates a footnote: the editors' sigla "(R. T.)"
+# in OCR variants, register sources and the editions the notes cite.
+NOTE_CUE = re.compile(r"[\(\'\"«]?\s*[RrBbKkHhNnUuPp«»]\s*[\.,]{0,2}\s*[TtIi]\s*[\.,]?\s*[\)\}\]]|\bEx\s+R[eo]g|[RKUH][ce]g[ce]st|Itegest|\bResesi|"
+                      r"\b[Aa]r[cl][hl]i?[il]?v\.|\bAicliiv|"
+                      r"Cherub|Cher\.|Mainard|Raynald|Ughell|Wadd|Rymer|Baluz|\bLegimus\b|\bLeg\.|"
+                      r"\bForsan\b|\bForsitan\b|\b[Ee]dit\.|\bVide\b")
+
+
+def _note_mark(words, cue=False):
+    """A row opens with a footnote reference mark.
+
+    A bare mark counts only when it is a WORD of its own followed by a WORD
+    that opens with a capital, as a note does (a numbered synopsis range such
+    as "1 ad 4." does not), or when editorial-note wording corroborates it.
+    """
+    # tokens, skipping specks OCR'd before the mark (". „, ■" ...); a WORD can
+    # hold the mark and the note's first word together ("ti) Legitur")
+    tokens = [t for w in words for t in w["value"].split()]
+    bullet = False
+    while tokens and SPECK.fullmatch(tokens[0]):
+        bullet = bullet or tokens[0] in ("■", "•", "●")
+        tokens.pop(0)
+    if not tokens:
+        return False
+    first = tokens[0].lstrip("■•●,")
+    if NOTE_MARK.fullmatch(first):
+        return True
+    if bullet and first[:1].isupper() and sum(c.isalpha() for c in first) >= 2 and not BARE_MARK.fullmatch(first):
+        return True      # the mark printed as a lone square or bullet: "■ Haec moderatio ..."
+    # a mark run into its note's first word, "(1)Ex", but not "(juomodolibet":
+    # a "j" or ";" read as the closing bracket must end the WORD
+    prefix = NOTE_MARK.match(first)
+    rest = first[prefix.end():].lstrip("'\"`") if prefix else ""   # "(l)'Leg."
+    if prefix and first[:1] in "([<{" and prefix.group()[-1] in ")]}>" and rest[:1].isupper():
+        return True      # not "[)at." (a dating line's "Dat.")
+    if cue and first[:1] in "([<{" and len(first) <= 3:      # "(IJ Ex Regest." lost its closing bracket
+        return True
+    if first == "1.":       # also how a synopsis numbers its first item: needs editorial wording
+        return cue and len(tokens) > 1
+    if len(tokens) > 2 and tokens[1] in (".", ","):     # "1 . Ex Regest.": the mark's period set apart
+        return cue and BARE_MARK.fullmatch(first) is not None and any(c.isalpha() for c in tokens[2])
+    if len(tokens) < 2 or SECTION_NUMBER.fullmatch(tokens[1]) or not any(c.isalpha() for c in tokens[1]):
+        return False     # "8 2. Cum autem" is a section; a mark is followed by the note's words
+    if CUED_MARK.fullmatch(first):
+        return cue
+    return BARE_MARK.fullmatch(first) is not None and (cue or tokens[1][:1].isupper())
+
 CODE_OF = {role: code for code, role in ROLE_CODES.items()}
 CATALOG = "src/sources/papal-documents/bullarium-catalog.json"
 WITHDRAWALS = "src/sources/papal-documents/bullarium-active-withdrawals.json"
@@ -692,6 +762,28 @@ def _ntok(words):
 
 def _nchars(word):
     return len("".join(word["value"].split()))
+
+
+# OCR renderings of marginal glyphs run on after a body word: quotes, carets, low quotes.
+# (A square or a trade-mark sign is more often an ink blot than a marginal glyph.)
+STRADDLE_JUNK = "'\"`^*°„"
+
+
+def _junk_run_on(value):
+    """A body WORD that carries marginal glyphs after its letters ('operis""\'', 'aliquot^^se,',
+    'pro-„em,', 'eis-mo'), not an ordinary word or a line-end hyphenation ('Iu-')."""
+    core = value.strip().rstrip(".,;:")
+    if sum(c.isalpha() for c in core) < 2 or core.endswith("-"):
+        return False
+    tail = len(core) - len(core.rstrip(STRADDLE_JUNK))
+    return (tail >= 2 or any(c in core for c in "^°«»")
+            or re.search(r"[-„][a-zA-Z„,.]*[„,][a-zA-Z„,.]*$", core) is not None
+            or re.search(r"[a-zA-Z]-[a-z]{1,6}$", core) is not None)     # "eis-" and the margin's "mo"
+
+
+def _garbled(value):
+    """OCR of two printed rows merged into one WORD shows glyphs no Latin word has."""
+    return any(not (c.isalnum() or c in ".,;:-") for c in value.strip())
 
 
 def _theil_sen(points):
@@ -924,10 +1016,64 @@ def propose_page(page, m, p=PROPOSAL_PARAMS):
             inseparable.append((wid, "multitoken-WORD-body-and-right-margin"))
         else:
             uncertain.append((wid, "multitoken-WORD-crosses-" + name))
+    # A WORD box crossing the outer body edge is usually padding (into the inter-line gap,
+    # a paragraph indent, blank margin or a marginal block's indented first line).  It
+    # holds text from both sides only with glyph evidence, and the WORD is then recorded
+    # as inseparable (its unit held) without changing its role:
+    # - a margin WORD in body-size type, its OCR LINE resuming body WORDs within a few
+    #   characters of the box's end, the box covering more than a paragraph indent's
+    #   width of the body's start alone -- beyond the widest indent, or with OCR of
+    #   merged rows (a box taller than body type, or glyphs no Latin word has);
+    # - a body WORD whose box runs past the edge into a marginal row printed on its line
+    #   (beyond where the marginal block's other rows start), with marginal glyphs read
+    #   after its letters or a box spanning the whole column ("Tmodj": a line's first
+    #   letter and the margin's glyphs in one WORD).
+    body_words = [w for w in words if str(role.get(w["source_word_global_1"])).startswith("body")]
+    body_h = statistics.median(w["source_bbox"][3] - w["source_bbox"][1] for w in body_words) if body_words else 0
+    # each marginal OCR LINE with lettered text: its start (first marginal WORD) and lettered box
+    margin_rows, margin_any = [], []
+    for line in lines:
+        marginal = [w for w in line if role.get(w["source_word_global_1"]) == "margin-right"]
+        lettered = [w for w in marginal if sum(c.isalpha() for c in w["value"]) >= 2]
+        margin_rows += [(marginal[0]["source_bbox"][0], lettered[0]["source_bbox"])] if lettered else []
+        margin_any += [w["source_bbox"] for w in marginal]
     for line in lines:
         for i, word in enumerate(line):
             wid, r, y = word["source_word_global_1"], role.get(word["source_word_global_1"]), _yc(word)
             last = i == len(line) - 1
+            x0, top, x1, bottom = word["source_bbox"]
+            if (r == "margin-left" and not last and bottom - top >= p["straddle_height_ratio"] * body_h
+                    and sum(c.isalpha() for c in word["value"]) >= 2):
+                L0 = _at(E["L0"], y)
+                # the body row printed at this WORD's y-centre: lettered WORDs of its LINE spanning
+                # that height in body type -- a word without ascenders ("unum") is shorter, a speck
+                # strewn across an inter-line gap ("i-i") is short and nearly letterless
+                def body_glyphs(w):
+                    letters, h = sum(c.isalpha() for c in w["value"]), w["source_bbox"][3] - w["source_bbox"][1]
+                    return (letters >= 2 and h >= p["straddle_row_height_ratio"] * body_h
+                            and (letters >= 3 or h >= p["straddle_height_ratio"] * body_h))
+                row = [w["source_bbox"] for w in line[i + 1:] if str(role.get(w["source_word_global_1"])).startswith("body")
+                       and body_glyphs(w) and w["source_bbox"][1] <= y <= w["source_bbox"][3]]
+                start = min((b[0] for b in row), default=x1)
+                reach = min(x1, start) - L0
+                if (row and start - x1 <= px["straddle_resume"] and reach > px["straddle"]
+                        and (reach > px["straddle_indent"] or bottom - top > p["straddle_merged_ratio"] * body_h
+                             or _garbled(word["value"]))):
+                    inseparable.append((wid, "margin-WORD-box-holds-body-start"))
+            if (r == "body-right" and not last and role.get(line[i + 1]["source_word_global_1"]) == "margin-right"
+                    and x1 > _at(E["R1"], y) + px["last_word_hang"]):
+                beside = lambda b: top <= (b[1] + b[3]) / 2 <= bottom
+                others = [x for x, b in margin_rows if not beside(b) and abs(_yc({"source_bbox": b}) - y) <= 3 * pitch]
+                past = bool(others) and x1 > statistics.median(others) + px["margin_body_min_gap"]
+                # junk after the letters, beside the marginal row it came from (often read as specks);
+                # a whole-measure box only beside a lettered marginal row
+                # a whole-measure box must also leave a gap of at least a marginal glyph between the
+                # block's edge and where the marginal row beside it is read to start
+                swallowed = bool(others) and x1 > statistics.median(others) + px["last_word_hang"]
+                if past and (_junk_run_on(word["value"]) and any(beside(b) for b in margin_any)
+                             or swallowed and sum(c.isalpha() for c in word["value"]) >= 2 and x1 - x0 >= measure
+                             and any(beside(b) and b[0] >= x1 - px["margin_body_min_gap"] for _, b in margin_rows)):
+                    inseparable.append((wid, "body-WORD-box-runs-into-right-margin"))
             following = None if last else role.get(line[i + 1]["source_word_global_1"])
             if last and r == "body-right" and word["source_bbox"][2] > _at(E["R1"], y) + px["last_word_hang"]:
                 inseparable.append((wid, "line-final-body-WORD-overhangs-right-edge"))
@@ -971,6 +1117,124 @@ def propose_page(page, m, p=PROPOSAL_PARAMS):
             zones[r].append((statistics.median(_yc(w) for w in fragment), fragment[0]["source_bbox"][0], fragment))
     rows = {r: _group_rows(f, (p["margin_row_merge_P"] if r.startswith("margin") else p["row_merge_P"]) * pitch)
             for r, f in zones.items()}
+    # Page-foot footnotes.  A note block is the tail of a column from a row
+    # that opens with a reference mark -- (1), (t), (I) ... -- in the lower
+    # half of the column, below at least note_gap_P of a line pitch, with the tail set in
+    # smaller type than the body above it (fewer pixels per character, or
+    # shorter WORD boxes).  A right-column tail without a mark
+    # is a note's continuation only when the left column of the same page
+    # ends in marked notes, the gap above it is wide, it has at least three
+    # small-type rows and its first row starts at the column edge.  Notes are
+    # emitted at the page break, so no body paragraph runs into one.
+    notes_found, note_suspects, marked_left = [], [], False
+    def advance(row):
+        """Pixels per character: small type sets more characters in the same width."""
+        return (row["x1"] - row["x0"]) / max(1, len(" ".join(w["value"].strip() for w in row["words"])))
+
+    def word_height(row):
+        """WORD box height; bracketed WORDs (reference marks) are tall in any size."""
+        plain = [w for w in row["words"] if not set(w["value"]) & set("()[]")] or row["words"]
+        return statistics.median(w["source_bbox"][3] - w["source_bbox"][1] for w in plain)
+
+    def smaller(tail, above):
+        """Either size measure shows the tail set in smaller type than the body above."""
+        return any(statistics.median(f(r) for r in tail) <= ratio * statistics.median(f(r) for r in above)
+                   for f, ratio in ((advance, p["note_advance_ratio"]), (word_height, p["note_height_ratio"])))
+    for column, side, e0 in (("body-left", "notes-left", E["L0"]), ("body-right", "notes-right", E["R0"])):
+        body = rows.get(column, [])
+        start, floor = max(2, len(body) - p["note_max_rows"]), len(body) - 1
+        while True:
+            marked, continued, suspect, area = None, None, None, None
+            # a note opens in the lower part of the column above the notes found so far
+            lower = body[0]["yc"] + p["note_band_C"] * (body[floor]["yc"] - body[0]["yc"]) if body else 0
+            for i in range(start, len(body)):
+                gap = body[i]["yc"] - body[i - 1]["yc"]
+                if gap < p["note_tight_gap_P"] * pitch or body[i]["yc"] < lower:
+                    continue
+                wide = gap >= p["note_gap_P"] * pitch
+                tail, above = body[i:], body[:i]
+                small = smaller(tail, above)
+                # editorial wording in the candidate row itself, or in the row after a mark
+                text = lambda r: " ".join(w["value"].strip() for w in r["words"])
+                cue_here = NOTE_CUE.search(text(body[i])) is not None
+                # editorial wording in the next row, or a few rows down in small type,
+                # corroborates a mark (a note's sigla usually close it), but only
+                # within this note: the rows below up to the next marked row
+                own = []
+                for r in body[i + 2:i + 1 + p["note_cue_rows"]]:
+                    if _note_mark(r["words"]):
+                        break
+                    own.append(r)
+                cue_tail = (i + 1 < len(body) and NOTE_CUE.search(text(body[i + 1])) is not None
+                            or small and any(NOTE_CUE.search(text(r)) for r in own))
+                mark = _note_mark(body[i]["words"], cue_here or cue_tail)
+                cue = cue_here or (mark and cue_tail)
+                first = body[i]["words"][0]["value"].strip().lstrip("■•●,")
+                if area is None and wide and small and gap >= p["note_suspect_gap_P"] * pitch:
+                    area = i         # small type below a rule's space: a possible note area
+                    if len(first) <= 2 or first[:1] in "([<{":
+                        suspect = i  # opening on a short token, perhaps a garbled mark
+                # A note: a mark in small type, a mark with editorial wording, or small
+                # type with editorial wording (its mark lost entirely).  Below body
+                # leading only a small-type mark with editorial wording counts.
+                # editorial wording alone must also start below a note rule's space
+                cue_start = cue and gap >= p["note_suspect_gap_P"] * pitch
+                if wide and (small and (mark or cue_start) or mark and cue) or small and mark and cue:
+                    marked = marked if marked is not None else i
+                elif (wide and small and column == "body-right" and marked_left and gap >= p["note_strong_gap_P"] * pitch
+                      and len(tail) >= p["note_strong_min_rows"]
+                      and abs(body[i]["x0"] - _at(e0, body[i]["yc"])) <= px["full_line_tol"]
+                      and (continued is None or gap > continued[0])):
+                    continued = (gap, i)
+            # A note area taller than the window: its first marked row opens the
+            # window, or only small-type note lines lie above that row in the
+            # window -- look further up the column with the same tests.
+            if (marked is not None and start > 2
+                    and (marked == start or smaller(body[start:marked], body[:start]))):
+                start, floor = max(2, start - p["note_max_rows"]), marked
+                continue
+            break
+        split = marked if marked is not None else (continued[1] if continued else None)
+        if split is None and area is not None and any(_note_mark(r["words"]) for r in body[area + 1:]):
+            # A note continued from the previous page heads the note area;
+            # the page's own marked notes follow it at note leading.
+            split = area
+        elif (split is not None and area is not None and area < split and split == marked
+              and abs(body[area]["x0"] - _at(e0, body[area]["yc"])) <= px["full_line_tol"]
+              and all(body[k]["yc"] - body[k - 1]["yc"] < p["note_continuation_gap_P"] * pitch
+                      for k in range(area + 1, split + 1))
+              and smaller(body[area:split], body[:area])
+              and NOTE_CUE.search(" ".join(w["value"] for w in body[split - 1]["words"]))):
+            # ... and when that continuation -- a run-on line at the column edge,
+            # at note leading down to the marked notes -- closes with editorial
+            # wording it belongs to the note block too, not to the body above.
+            # (A synopsis closing with the editors' sigla sits below its heading
+            # and above the notes' rule space, so it fails the leading test.)
+            split = area
+        if split is None and suspect is not None:
+            # small type below a wide gap at a column foot, but no reference
+            # mark: listed for review, never split by guess
+            note_suspects.append({"side": side, "first_WORD": body[suspect]["words"][0]["source_word_global_1"],
+                                  "rows": len(body) - suspect})
+        if split is not None:
+            rows[side], rows[column] = body[split:], body[:split]
+            marked_left = marked_left or (column == "body-left" and marked is not None)
+            notes_found.append({"side": side, "rows": len(rows[side]), "marked": split == marked,
+                                "first_WORD": rows[side][0]["words"][0]["source_word_global_1"]})
+    # A printed body row the OCR never read leaves about two line pitches between a full
+    # justified row whose sentence runs on and the column-edge row that continues it
+    # ("eccle-" ... "sub invocatione"): the text is lost, so the page is held.
+    for column, e0, e1 in (("body-left", E["L0"], E["L1"]), ("body-right", E["R0"], E["R1"])):
+        body = rows.get(column, [])
+        for above, below in zip(body, body[1:]):
+            gap = below["yc"] - above["yc"]
+            last = next((w["value"].strip() for w in reversed(above["words"]) if any(c.isalnum() for c in w["value"])), "")
+            if (p["missing_row_gap_P"][0] * pitch <= gap <= p["missing_row_gap_P"][1] * pitch
+                    and above["x1"] >= _at(e1, above["yc"]) - px["full_line_tol"]
+                    and abs(below["x0"] - _at(e0, below["yc"])) <= px["full_line_tol"]
+                    and (last.endswith("-") or last[-1:].isalnum() or last.endswith(","))):
+                raise Hold("body-row-without-WORDs", WORDs=[above["words"][-1]["source_word_global_1"],
+                                                            below["words"][0]["source_word_global_1"]])
     para_start, previous = {}, None
     for column in ("body-left", "body-right"):
         e0 = E["L0"] if column == "body-left" else E["R0"]
@@ -1037,6 +1301,10 @@ def propose_page(page, m, p=PROPOSAL_PARAMS):
         for block in tails.get(column, []):
             for j, mrow in enumerate(block):
                 emit(side, "l" if j else "p", mrow["words"])
+    for side in ("notes-left", "notes-right"):      # at the page break, never inside a paragraph
+        for j, row in enumerate(rows.get(side, [])):
+            marked = _note_mark(row["words"])
+            emit(side, "p" if j == 0 or marked else "l", row["words"])
     for r in ("gutter-ocr", "footer"):
         for row in rows.get(r, []):
             emit(r, "p", row["words"])
@@ -1053,7 +1321,8 @@ def propose_page(page, m, p=PROPOSAL_PARAMS):
         counts[ROLE_CODES[code]] += len(ids)
     return {"rows": [[code, brk, _runs(ids)] for code, brk, ids in plan], "role_WORD_counts": dict(sorted(counts.items())),
             "inseparable_WORDs": sorted(recorded), "margin_blocks": block_records,
-            "header_rows": [_runs(ids) for code, _, ids in plan if code == "H"],
+            "header_rows": [_runs(ids) for code, _, ids in plan if code == "H"], "notes_blocks": notes_found,
+            "note_suspects": note_suspects,
             "paragraph_breaks": sum(1 for key, value in para_start.items() if value) - (1 if para_start else 0)}
 
 
@@ -1118,7 +1387,7 @@ def propose(root, out_dir, *, volume=None, source_txt_record=None, source_xml_re
     pages, count = _xml_pages(xml, raw, _tokens(raw), _All())
     measure = volume_measure(pages)
     entries, statuses = [], Counter()
-    heads = []
+    heads, suspects = [], []
     for page in pages:
         entry = {"leaf": page["leaf"], "object_ordinal_1": page["artifact_page"],
                  "source_lf_range_1": page["source_lf_range_1"]}
@@ -1140,6 +1409,10 @@ def propose(root, out_dir, *, volume=None, source_txt_record=None, source_xml_re
         else:
             head = "(page " + entry["status"] + ")"
         heads.append(f"{page['leaf']}\t{entry['status']}\t{head}")
+        for suspect in entry.get("note_suspects", []):
+            row = next(r for r in entry["rows"] if any(a <= suspect["first_WORD"] <= z for a, z in r[2]))
+            suspects.append(f"{page['leaf']}\t{suspect['side']}\t{suspect['rows']}\t"
+                            + " ".join(values[i].strip() for a, z in row[2] for i in range(a, z + 1)))
     # A page sharing a raw LF line with its neighbour cannot be replaced by an
     # LF-enclosed span; the replay would refuse it, so it is held here.
     spans = [(i, e["source_lf_range_1"]) for i, e in enumerate(entries) if e["source_lf_range_1"]]
@@ -1161,7 +1434,8 @@ def propose(root, out_dir, *, volume=None, source_txt_record=None, source_xml_re
     if volume_key is not None:
         recipe["volume"] = volume_key
     products = {"recipe.json": (json.dumps(recipe, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n").encode(),
-                "running-heads.tsv": ("\n".join(heads) + "\n").encode()}
+                "running-heads.tsv": ("\n".join(heads) + "\n").encode(),
+                "note-suspects.tsv": ("\n".join(suspects) + "\n").encode()}
     out.mkdir(parents=True, exist_ok=True)
     for name, data in products.items():
         path = out / name
@@ -1169,7 +1443,9 @@ def propose(root, out_dir, *, volume=None, source_txt_record=None, source_xml_re
         if not path.exists():
             path.write_bytes(data)
     return {"recipe_sha256": _sha(products["recipe.json"]), "page_status_counts": recipe["proposal"]["page_status_counts"],
-            "measure_px": measure, "inseparable_WORDs": sum(len(e.get("inseparable_WORDs", [])) for e in entries)}
+            "measure_px": measure, "inseparable_WORDs": sum(len(e.get("inseparable_WORDs", [])) for e in entries),
+            "note_blocks": sum(len(e.get("notes_blocks", [])) for e in entries),
+            "note_suspects": len(suspects)}
 
 
 def _replay_products(root, replay_dir):
@@ -1198,6 +1474,8 @@ def map_units(root, recipe_path, replay_dir, out_path, *, catalog_path=CATALOG, 
     withdrawals_bytes = _path(root, withdrawals_path, True).read_bytes()
     catalog, withdrawals = json.loads(catalog_bytes), json.loads(withdrawals_bytes)
     inseparable = {wid for page in recipe["pages"] for wid, _ in page.get("inseparable_WORDs", [])}
+    # rows that look like a note with a garbled mark but were not split
+    note_suspects = {s["first_WORD"] for page in recipe["pages"] for s in page.get("note_suspects", [])}
     by_raw, by_out = defaultdict(list), defaultdict(list)
     for word in words:
         item = {"id": word["source_word_global_1"], "role": word["role"], "ol": word["output_lf_range_1"][0], "leaf": word["leaf"],
@@ -1213,6 +1491,9 @@ def map_units(root, recipe_path, replay_dir, out_path, *, catalog_path=CATALOG, 
                 by_raw[n].append(item)
                 by_out[n + delta].append(item)
     body_roles, margin_roles = {"body-left", "body-right", "unchanged"}, {"margin-left", "margin-right"}
+    # Ownership of separately emitted apparatus (marginal summaries and
+    # page-foot notes) follows the same contiguity rule.
+    apparatus_roles = margin_roles | {"notes-left", "notes-right"}
     affected = {a["unit_id"]: a for a in withdrawals["affected_units"]}
     sha_txt = recipe["source_txt"]["sha256"]
     out_lines = sorted(by_out)
@@ -1238,7 +1519,7 @@ def map_units(root, recipe_path, replay_dir, out_path, *, catalog_path=CATALOG, 
                     selected[item["id"]] = item
         partial = sorted(i["id"] for i in selected.values() if not all(inside(n) for n in i["sl"]))
         body = [i for i in selected.values() if i["role"] in body_roles]
-        margin = [i for i in selected.values() if i["role"] in margin_roles]
+        margin = [i for i in selected.values() if i["role"] in apparatus_roles]
         if not body:
             results.append({**row, "category": "hold:no-body-WORDs"})
             continue
@@ -1252,14 +1533,46 @@ def map_units(root, recipe_path, replay_dir, out_path, *, catalog_path=CATALOG, 
                         continue
                     if item["role"] in body_roles:
                         foreign_body += 1
-                    elif item["role"] in margin_roles:
+                    elif item["role"] in apparatus_roles:
                         foreign_margin += 1
                     else:
                         furniture.add(n)
-        lead = [i for i in margin if i["ol"] < lo and all(x["id"] in selected or x["role"] not in body_roles | margin_roles
+        lead = [i for i in margin if i["ol"] < lo and all(x["id"] in selected or x["role"] not in body_roles | apparatus_roles
                                                           for n in out_lines if i["ol"] <= n < lo for x in by_out[n])]
-        escaped = [i for i in margin if not lo <= i["ol"] <= hi and i not in lead]
+        trail = [i for i in margin if i["ol"] > hi and all(x["id"] in selected or x["role"] not in body_roles | apparatus_roles
+                                                            for n in out_lines if hi < n <= i["ol"] for x in by_out[n])]
+        escaped = [i for i in margin if not lo <= i["ol"] <= hi and i not in lead and i not in trail]
         start = min([lo] + [i["ol"] for i in lead])
+        hi = max([hi] + [i["ol"] for i in trail])    # page-foot notes right after the unit's last body row
+        # The unit's own page-foot notes printed after the next unit begins are
+        # selected as an extra range when their lines hold nothing else.
+        note_lines = sorted({i["ol"] for i in escaped})
+        extra = []
+        if escaped and all(i["role"] in {"notes-left", "notes-right"} for i in escaped) and all(
+                x["id"] in selected for n in note_lines for x in by_out[n]):
+            for n in note_lines:
+                k = out_lines.index(n)
+                if extra and out_lines[k - 1] == extra[-1][1]:
+                    extra[-1][1] = n
+                else:
+                    extra.append([n, n])
+            escaped = []
+        # Another unit's page-foot notes emitted at a page break inside this
+        # span are cut out of it (they become that unit's extra range).
+        foreign_note_lines = sorted({n for n in out_lines if start <= n <= hi and by_out[n]
+                                     and all(x["id"] not in selected and x["role"] in {"notes-left", "notes-right"}
+                                             for x in by_out[n])})
+        if foreign_margin and foreign_margin == sum(len(by_out[n]) for n in foreign_note_lines):
+            foreign_margin = 0
+        else:
+            foreign_note_lines = []
+        spans, cursor = [], start
+        for n in foreign_note_lines:
+            if cursor < n:
+                spans.append([cursor, n - 1])
+            cursor = n + 1
+        if cursor <= hi:
+            spans.append([cursor, hi])
         mixed = sorted(i["id"] for i in selected.values() if i["id"] in inseparable)
         held = sorted({i["leaf"] for i in selected.values() if i["role"] == "unchanged"})
         loci = []
@@ -1276,12 +1589,15 @@ def map_units(root, recipe_path, replay_dir, out_path, *, catalog_path=CATALOG, 
             category = "hold:inseparable-WORD"
         elif foreign_margin or escaped:
             category = "review:margin-ownership-at-boundary"
+        elif note_suspects & set(selected):
+            category = "review:possible-unsplit-note"
         else:
             category = "clean-with-unchanged-pages" if held else "clean"
-        results.append({**row, "category": category, "new_physical_line_ranges": [[start, hi]],
+        results.append({**row, "category": category, "new_physical_line_ranges": spans + extra,
                         "furniture_lines_inside": sorted(furniture), "foreign_body_WORDs": foreign_body,
                         "foreign_margin_WORDs": foreign_margin, "escaped_margin_WORDs": len(escaped),
                         "partial_WORDs": partial, "inseparable_WORDs": mixed, "unchanged_leaves": held,
+                        "note_suspect_WORDs": sorted(note_suspects & set(selected)),
                         "reviewed_fusion_lines_on_held_pages": sorted(set(loci))})
     loci_report = Counter()
     for unit_id, a in affected.items():
@@ -1341,7 +1657,84 @@ def _map_lines(raw_lines, by_raw, ranges):
     return [out[0], out[-1]]
 
 
-def register(root, recipe_path, replay_dir, mapping_path, units_path, revision, *, input_map=None):
+READING_ORDER_CORRECTIONS = "src/sources/papal-documents/bullarium-reading-order-corrections-manifest.json"
+READER_NOTE = ("Reading order follows native word coordinates; the printing's marginal summaries are kept as separate "
+               "blocks beside the sections they annotate and its page-foot notes as separate blocks at the page break; "
+               "held pages, if any, keep raw OCR order.")
+RAW_LINE_DISCLOSURE = ("The extent statement below comes from the earlier raw-OCR review; its line numbers refer to the raw "
+                       "OCR text, not to this reading-order text: ")
+
+
+def _raw_line_note(text):
+    """Label raw OCR line numbers that a review ran into words or labels."""
+    text = re.sub(r"\bLF (\d{4,}(?:[–-]\d{4,})?)", r"raw OCR line \1", text)
+    text = re.sub(r"(?<=[A-Za-z§)])(\d{4,}(?:[–-]\d{4,})?)", r" (raw OCR line \1)", text)
+    return re.sub(r"(?<=[a-z])(?=[IVXLC]{2,}\b)", " ", text)
+
+
+TITLE_NOTE = ("The reader's title is taken from the act's heading rows in this reading-order text: the earlier "
+              "raw-OCR title was marginal-summary text read beside the heading.")
+ACT_NUMBER = re.compile(r"(?:[IVXLCDM]+|[0-9]+)\s*\.?")
+SUMMARY_HEAD = re.compile(r"S[UVL]MM[A-Z]{2,6}\.?")
+
+
+def _title_is_marginal(unit, title, by_raw_words):
+    """The prior title was read from raw lines below the act number whose WORDs the
+    derivative sets as marginal summary (at least half of them)."""
+    norm = lambda text: re.sub(r"\s+", "", text or "")
+    target, heading = norm(title), unit.get("heading_line")
+    if not target or not isinstance(heading, int):
+        return False
+    words, seen = [], ""
+    for n in range(heading + 1, heading + 41):
+        line = by_raw_words.get(n)
+        if not line:          # blank raw lines between the act number and its title are skipped
+            if words or n > heading + 5:
+                break
+            continue
+        text = norm("".join(value for value, _ in line))
+        if not text or text not in target[len(seen):]:
+            break
+        words += line
+        seen += text
+    margin = sum(role in {"margin-left", "margin-right"} for _, role in words)
+    return bool(words) and len(seen) >= len(target) / 2 and 2 * margin >= len(words)
+
+
+def _heading_title(ranges, hybrid_lines, out_roles, stop):
+    """The act's title as the reading-order text prints it: the body rows after the act
+    number and before the attribution, past any marginal block, up to a synopsis heading."""
+    parts = []
+    for n in range(ranges[0][0], min(stop, ranges[0][1] + 1)):
+        text = hybrid_lines[n - 1] if 0 < n <= len(hybrid_lines) else ""
+        roles = out_roles.get(n, set())
+        if not text.strip() or text.startswith("\t") or (roles and not roles & {"body-left", "body-right"}):
+            continue
+        text = " ".join(text.split())
+        if not parts and ACT_NUMBER.fullmatch(text):
+            continue
+        if SUMMARY_HEAD.fullmatch(text.upper()) or len(parts) == 8:
+            break
+        parts.append(text)
+    title = " ".join(parts)
+    return title if len(re.sub("[^A-Za-zÀ-ÿ]", "", title)) >= 18 else None
+
+
+def _reading_versions(units, unit_id):
+    """Existing reading selections of a unit, oldest first: .reading-order, .reading-order-v2, ..."""
+    found = []
+    for key, unit in units.items():
+        if key == unit_id + ".reading-order":
+            found.append((1, unit))
+        else:
+            match = re.fullmatch(re.escape(unit_id) + r"\.reading-order-v(\d+)", key)
+            if match:
+                found.append((int(match[1]), unit))
+    return sorted(found, key=lambda item: item[0])
+
+
+def register(root, recipe_path, replay_dir, mapping_path, units_path, revision, *, input_map=None,
+             supersede=False, reason=None):
     """Register the derivative and admit explicitly selected clean units through `bullarium admit`.
 
     Writes are append-only: artifact payloads and records are absent-or-identical;
@@ -1425,12 +1818,16 @@ def register(root, recipe_path, replay_dir, mapping_path, units_path, revision, 
         _require(container["artifacts"].get(key, declaration) == declaration, "a container declaration already differs: " + key)
         declarations[key] = declaration
     order_record = pieces["order"][0]
-    by_raw = defaultdict(list)
+    by_raw, by_raw_words, out_roles = defaultdict(list), defaultdict(list), defaultdict(set)
     with gzip.open(replay / "changed-word-map.jsonl.gz", "rt", encoding="utf-8") as stream:
         for line in stream:
             word = json.loads(line)
             for n in word["source_txt_physical_lines"]:
                 by_raw[n].append((word["output_lf_range_1"][0], word["role"]))
+            by_raw_words[word["source_txt_physical_lines"][0]].append((word["value"], word["role"]))
+            for n in range(word["output_lf_range_1"][0], word["output_lf_range_1"][1] + 1):
+                out_roles[n].add(word["role"])
+    hybrid_lines = pieces["order"][3].decode("utf-8").split("\n")
     units = {u["id"]: u for u in catalog["units"]}
     reviews = []
     for unit_id in selected["units"]:
@@ -1439,6 +1836,15 @@ def register(root, recipe_path, replay_dir, mapping_path, units_path, revision, 
                    if isinstance(r, dict) and r.get("decision") in {"admit", "fragment"} and r.get("source_attribution_lines")]
         _require(history, "a registered unit requires its prior admitted boundary review: " + unit_id)
         prior = history[0]
+        if not supersede:
+            # bullarium admit keys a reading selection's edition as
+            # <printing>-bullarium-volume-NN-<language>; a unit already joined to
+            # a canonical work holds that key, so it needs a separately keyed path.
+            printing = Path(container["edition_path"]).name
+            volume_key = "appendix-01" if recipe["volume"] == "appendix" else f"volume-{int(recipe['volume']):02d}"
+            target = printing.removesuffix("-latin") + f"-bullarium-{volume_key}-latin"
+            _require(not str(unit.get("edition_id", "")).endswith("." + target),
+                     "unit already holds this printing's canonical edition key; register it separately: " + unit_id)
         ranges = row["new_physical_line_ranges"]
         a, z = prior["source_attribution_lines"]
         item = {"unit_id": unit_id + ".reading-order", "parent_unit_id": unit_id, "reading_selection_variant_of": unit_id,
@@ -1455,16 +1861,23 @@ def register(root, recipe_path, replay_dir, mapping_path, units_path, revision, 
                                "marginal WORD inside, no partial or inseparable WORD. " + prior.get("review_note", ""),
                 "reviewed_extent": "WORD-identity mapping of the prior reviewed extent; volume evidence gate on native page "
                                    "images; no whole-act image collation.",
-                "reader_source_note": "Reading order follows native word coordinates; the printing's marginal summaries are "
-                                      "kept as separate blocks beside the sections they annotate; held pages, if any, keep "
-                                      "raw OCR order."}
+                "reader_source_note": READER_NOTE}
         for key in ("language", "language_label", "document_type", "extent_kind", "source_extent_limit"):
             if key in prior:
                 item[key] = prior[key]
+        if _title_is_marginal(unit, prior["title"], by_raw_words):
+            heading = _heading_title(ranges, hybrid_lines, out_roles, item["source_attribution_lines"][0])
+            if heading:
+                item["title"] = heading
+                item["reader_source_note"] = item["reader_source_note"] + " " + TITLE_NOTE
         if prior["decision"] == "fragment":     # the missing-content statement stays first
-            item["reader_source_note"] = " ".join(filter(None, [prior.get("reader_source_note", prior.get("source_extent_limit")),
+            extent = prior.get("reader_source_note", prior.get("source_extent_limit"))
+            item["reader_source_note"] = " ".join(filter(None, [extent and RAW_LINE_DISCLOSURE + _raw_line_note(extent),
                                                                 item["reader_source_note"]]))
         reviews.append(item)
+    if supersede:
+        return _supersede(root, catalog, catalog_file, container, units, rows, reviews, order_record, pieces,
+                          staged, declarations, revision, reason)
     review_bytes = bullarium.json_bytes({"schema": "triptych-bullarium-boundary-reviews/v1", "reviews": reviews})
     review_path = replay / "register-review.json"
     _require(not review_path.exists() or review_path.read_bytes() == review_bytes, "a differing register review already exists")
@@ -1485,6 +1898,269 @@ def register(root, recipe_path, replay_dir, mapping_path, units_path, revision, 
 class _Parser(argparse.ArgumentParser):
     def error(self, message):
         raise GeometryError(message)
+
+
+OLD_READER_NOTE = ("Reading order follows native word coordinates; the printing's marginal summaries are kept as "
+                   "separate blocks beside the sections they annotate; held pages, if any, keep raw OCR order.")
+
+
+def _replacement_note(note, prior_key, new_key, ranges, pages, fragment):
+    """The prior reader's source note, re-pointed at the replacement selection."""
+    note = note.replace(prior_key, new_key)
+    note = re.sub(r"Source-derived reading-order LF lines [0-9;\- ]+\.",
+                  "Source-derived reading-order LF lines " + "; ".join(f"{a}-{z}" for a, z in ranges) + ".", note)
+    if pages:
+        note = re.sub(r"Exact scan leaf bounds \d+-\d+;", f"Exact scan leaf bounds {pages[0]['leaf']}-{pages[-1]['leaf']};", note)
+    note = note.replace(" " + OLD_READER_NOTE, "").replace(" " + READER_NOTE, "")
+    marker = "no normalized act date is supplied."
+    if fragment and marker in note:
+        head, tail = note.split(marker, 1)
+        tail = tail.strip()
+        if tail and not tail.startswith(RAW_LINE_DISCLOSURE):
+            tail = RAW_LINE_DISCLOSURE + _raw_line_note(tail)
+        note = head + marker + (" " + tail if tail else "")
+    return note + " " + READER_NOTE
+
+
+def _supersede(root, catalog, catalog_file, container, units, rows, reviews, order_record, pieces, staged,
+               declarations, revision, reason):
+    """Register replacement reading selections that explicitly supersede the newest prior ones.
+
+    Append-only: the prior reading selection's unit, edition, segment, document
+    and artifact stay byte-identical.  Each replacement gets a new edition key
+    (``…-reading-order-vN-<language>``) under the same work, a catalog unit
+    ``<unit>.reading-order-vN`` pointing at its predecessor, a document row and
+    a supersession row in the reading-order corrections manifest.
+    """
+    import _bullarium as bullarium
+    _require(isinstance(reason, str) and reason.strip(), "a superseding registration requires an explicit --reason")
+    manifests = {}
+    for path in (GEOMETRY_MANIFEST, GEOMETRY_FRAGMENT_MANIFEST, READING_ORDER_CORRECTIONS):
+        target = _path(root, path, True)
+        if target.exists():
+            manifests[path] = json.loads(target.read_bytes())
+    documents = {d["id"]: d for m in manifests.values() for d in m["documents"]}
+    corrections_file = _path(root, READING_ORDER_CORRECTIONS, True)
+    corrections = manifests.get(READING_ORDER_CORRECTIONS, {"schema": "triptych-papal-typeset/v1", "documents": [],
+                                                            "supersessions": []})
+    _require(corrections.get("schema") == "triptych-papal-typeset/v1", "unknown reading-order corrections manifest")
+    hybrid_lines = pieces["order"][3].decode("utf-8").split("\n")
+    page_map = json.loads(pieces["page_map"][3])["pages"]
+    records, new_units, new_docs, new_supersessions = {}, [], [], []
+    for item in reviews:
+        base_id = item["parent_unit_id"]
+        versions = _reading_versions(units, base_id)
+        _require(versions, "nothing to supersede: no prior reading selection of " + base_id)
+        if versions[-1][1]["artifact_sha256"] == order_record["sha256"]:     # replay of this registration
+            _require(len(versions) >= 2, "a replayed replacement has no predecessor: " + base_id)
+            new_version, prior = versions[-1][0], versions[-2][1]
+        else:
+            new_version, prior = versions[-1][0] + 1, versions[-1][1]
+        _require(prior.get("segment_path") and prior.get("status") in {"admitted-mechanical-ocr-extent", "admitted-fragment"},
+                 "only an admitted reading selection can be superseded: " + prior["id"])
+        _require(prior["artifact_sha256"] != order_record["sha256"], "a replacement needs a different derivative")
+        fragment = prior["status"] == "admitted-fragment"
+        prior_doc_id = prior["id"] + (".fragment" if fragment else "")
+        prior_doc = documents.get(prior_doc_id)
+        _require(prior_doc is not None and prior_doc.get("segment_id") == prior["segment_id"],
+                 "prior reading document is absent or disagrees with its unit: " + prior_doc_id)
+        new_id = f"{base_id}.reading-order-v{new_version}"
+        prior_segment_path = _path(root, prior["segment_path"], True)
+        prior_edition_dir = prior_segment_path.parents[1]
+        prior_key = prior_edition_dir.name
+        stem, language_suffix = re.sub(r"-reading-order-v\d+", "", prior_key).rsplit("-", 1)
+        new_key = f"{stem}-reading-order-v{new_version}-{language_suffix}"
+        namespace = prior["edition_id"].removeprefix("edition.").removesuffix("." + prior_key)
+        new_edition_dir = prior_edition_dir.parent / new_key
+        edition = tomllib.loads((prior_edition_dir / "edition.toml").read_text())
+        edition.update(id=f"edition.{namespace}.{new_key}", title=edition["title"].replace(" — " + prior_key, " — " + new_key))
+        segment = tomllib.loads(prior_segment_path.read_text())
+        new_segment_id = f"segment.{namespace}.{new_key}.source-ocr"
+        ranges = item["physical_line_ranges"]
+        segment.update(id=new_segment_id, edition_id=edition["id"], artifact_id=order_record["id"],
+                       artifact_sha256=order_record["sha256"], physical_line_ranges=ranges,
+                       context=f"Replacement reading selection superseding {prior['segment_id']}. " + segment.get("context", ""))
+        new_segment_path = new_edition_dir / "segments" / "source-ocr.toml"
+        records[new_edition_dir / "edition.toml"] = edition
+        records[new_segment_path] = segment
+        a, z = item["source_attribution_lines"]
+        pages = [pg for pg in page_map if pg.get("output_lf_range_1")
+                 and any(pg["output_lf_range_1"][0] <= e and pg["output_lf_range_1"][1] >= s for s, e in ranges)]
+        review = {key: value for key, value in item.items()
+                  if key not in {"parent_unit_id", "canonical_work_id", "identity_evidence", "source_artifact_id"}}
+        review.update(unit_id=new_id, reading_selection_variant_of=prior["id"],
+                      review_note=f"Replacement reading selection superseding {prior['id']}. " + item["review_note"])
+        unit = copy.deepcopy(prior)
+        unit.update(id=new_id, artifact_id=order_record["id"], artifact_sha256=order_record["sha256"],
+                    physical_line_ranges=ranges, heading_line=ranges[0][0], edition_id=edition["id"],
+                    segment_id=new_segment_id, segment_path=str(new_segment_path.relative_to(root)),
+                    review=bullarium.durable_review(review),
+                    review_history=list(prior.get("review_history", [])) + [prior["review"]],
+                    reading_selection_variant_of=prior["id"],
+                    prior_reading_selection={key: prior[key] for key in ("id", "artifact_id", "artifact_sha256",
+                                                                          "segment_id", "segment_path")},
+                    reviewed_scan_leaf_ids=[pg["leaf"] for pg in pages],
+                    reviewed_artifact_pages=[pg["artifact_page"] for pg in pages],
+                    reviewed_protocol={"physical_line_ranges": [[a, z]], "artifact_sha256": order_record["sha256"],
+                                       "literal": " ".join(" ".join(hybrid_lines[a - 1:z]).split())})
+        _require(units.get(new_id, unit) == unit, "a differing replacement reading selection already exists: " + new_id)
+        new_units.append(unit)
+        document = copy.deepcopy(prior_doc)
+        new_doc_id = new_id + (".fragment" if fragment else "")
+        source_note = _replacement_note(prior_doc["source_note"], prior_key, new_key, ranges, pages, fragment)
+        retitled = TITLE_NOTE in item["reader_source_note"]
+        if retitled and TITLE_NOTE not in source_note:
+            source_note += " " + TITLE_NOTE
+        document.update(id=new_doc_id, artifact_id=order_record["id"], sha256=order_record["sha256"],
+                        text_path=order_record["path"], segment_id=new_segment_id,
+                        title=item["title"] if retitled else prior_doc["title"],
+                        segment_path=str(new_segment_path.relative_to(root)), physical_line_ranges=ranges,
+                        revision=revision, source_note=source_note)
+        existing = next((d for d in corrections["documents"] if d["id"] == new_doc_id), None)
+        if existing is not None:      # a replay keeps the row it already wrote
+            _require({k: v for k, v in existing.items() if k != "revision"} == {k: v for k, v in document.items() if k != "revision"},
+                     "a differing replacement document already exists: " + new_doc_id)
+            document = existing
+        new_docs.append(document)
+        supersession = {"prior": {"id": prior_doc_id, "language": prior_doc["language"], "artifact_id": prior_doc["artifact_id"],
+                                  "source_sha256": prior_doc["sha256"], "segment_id": prior_doc["segment_id"]},
+                        "replacement": {"id": new_doc_id, "language": document["language"], "artifact_id": document["artifact_id"],
+                                        "source_sha256": document["sha256"], "segment_id": document["segment_id"]},
+                        "reason": reason}
+        earlier = [x for x in corrections["supersessions"] if x["prior"]["id"] == prior_doc_id]
+        _require(not earlier or earlier == [supersession], "the prior reading is already superseded differently: " + prior_doc_id)
+        new_supersessions.append(supersession)
+    for path, record in records.items():          # every check before any write
+        bullarium.check_source_write(path, bullarium.record_bytes(record))
+    for payload_path, payload, record_path, record in staged:
+        bullarium.write_source(payload_path, payload)
+        bullarium.record(record_path, record)
+    for path, record in records.items():
+        bullarium.record(path, record)
+    container["artifacts"].update(declarations)
+    by_id = {u["id"]: u for u in catalog["units"]}
+    by_id.update({u["id"]: u for u in new_units})
+    catalog["units"] = sorted(by_id.values(), key=lambda u: u["id"])
+    catalog["coverage"]["additional_reading_selections"] = sum(bool(u.get("reading_selection_variant_of"))
+                                                                for u in catalog["units"])
+    bullarium.write(catalog_file, bullarium.json_bytes(catalog))
+    ids = {d["id"] for d in corrections["documents"]}
+    corrections["documents"] += [d for d in new_docs if d["id"] not in ids]
+    priors = {x["prior"]["id"] for x in corrections["supersessions"]}
+    corrections["supersessions"] += [x for x in new_supersessions if x["prior"]["id"] not in priors]
+    corrections["revision"] = max([corrections.get("revision", revision), revision])
+    bullarium.write(corrections_file, bullarium.json_bytes(corrections))
+    return {"derivative_artifact_id": order_record["id"], "derivative_sha256": order_record["sha256"],
+            "artifacts": [record["id"] for _, _, _, record in staged], "superseded_readings": len(new_docs),
+            "corrections_manifest": READING_ORDER_CORRECTIONS}
+
+
+READING_ORDER_WITHDRAWALS = "src/sources/papal-documents/bullarium-reading-order-withdrawals-manifest.json"
+RELEASE = "release/papal-documents.json"
+WITHDRAWAL_SELECTION_SCHEMA = "triptych-bullarium-reading-withdrawal-selection/v1"
+
+
+def withdraw(root, units_path, revision, reason, evidence_sha256):
+    """Withdraw registered reading selections with an explicit prior-to-null supersession.
+
+    For each selected reading document: its catalog unit becomes specifically
+    held, with the admission review archived in ``review_history``, a hold
+    review stating the reason and evidence, ``reader_withdrawal`` (the action)
+    and ``reader_withdrawal_evidence_sha256``; the action
+    ``{"prior": <exact pins>, "reason": ..., "replacement": null}`` goes into the
+    reading-order withdrawals manifest, which the source plan reads after the
+    reading-order corrections manifest (so a replacement reading can itself be
+    withdrawn).  An installed reading (a row in release/papal-documents.json) is
+    pinned by its PDF SHA-256; an uninstalled one carries no PDF pin.  Records,
+    segments, artifacts and the base manifests stay byte-identical; an identical
+    rerun changes nothing.
+    """
+    import _bullarium as bullarium
+    _require(re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z", str(revision)), "revision requires explicit whole-second UTC")
+    _require(isinstance(reason, str) and reason.strip(), "a withdrawal requires an explicit --reason")
+    _require(isinstance(evidence_sha256, str) and re.fullmatch(r"[0-9a-f]{64}", evidence_sha256),
+             "a withdrawal requires --evidence-sha256 (64 lowercase hex)")
+    root = Path(root).resolve()
+    selection = json.loads(_path(root, units_path, True).read_bytes())
+    readings = selection.get("readings") if isinstance(selection, dict) else None
+    _require(selection.get("schema") == WITHDRAWAL_SELECTION_SCHEMA and isinstance(readings, list) and readings
+             and all(isinstance(r, dict) and isinstance(r.get("id"), str) for r in readings)
+             and len({r["id"] for r in readings}) == len(readings), "withdrawal selection requires an explicit nonempty reading list")
+    manifests = {}
+    for path in (GEOMETRY_MANIFEST, GEOMETRY_FRAGMENT_MANIFEST, READING_ORDER_CORRECTIONS):
+        target = _path(root, path, True)
+        if target.exists():
+            manifests[path] = json.loads(target.read_bytes())
+    documents = {d["id"]: d for m in manifests.values() for d in m["documents"]}
+    superseded = {x["prior"]["id"] for x in manifests.get(READING_ORDER_CORRECTIONS, {}).get("supersessions", [])}
+    withdrawals_file = _path(root, READING_ORDER_WITHDRAWALS, True)
+    withdrawals = (json.loads(withdrawals_file.read_bytes()) if withdrawals_file.exists()
+                   else {"schema": "triptych-papal-typeset/v1", "revision": revision, "documents": [], "supersessions": []})
+    _require(withdrawals.get("schema") == "triptych-papal-typeset/v1" and withdrawals.get("documents") == []
+             and isinstance(withdrawals.get("supersessions"), list), "unknown reading-order withdrawals manifest")
+    release_file = root / RELEASE
+    installed = ({(d["id"], d["language"]): d for d in json.loads(release_file.read_bytes())["documents"]}
+                 if release_file.exists() else {})
+    catalog_file = _path(root, CATALOG, True)
+    catalog = json.loads(catalog_file.read_bytes())
+    units = {u["id"]: u for u in catalog["units"]}
+    actions, changed = [], 0
+    for item in readings:
+        doc_id = item["id"]
+        document = documents.get(doc_id)
+        _require(document is not None, "no registered reading document " + doc_id)
+        unit = units.get(doc_id.removesuffix(".fragment"))
+        _require(unit is not None and unit.get("reading_selection_variant_of") and unit.get("segment_id") == document["segment_id"]
+                 and unit.get("artifact_sha256") == document["sha256"], "reading document disagrees with its catalog unit: " + doc_id)
+        _require(doc_id not in superseded, "a superseded reading is withdrawn through its replacement: " + doc_id)
+        release_row = installed.get((doc_id, document["language"]))
+        pdf = item.get("pdf_sha256")
+        if release_row is not None:
+            _require(pdf == release_row.get("pdf_sha256"), "installed reading requires its exact release PDF SHA-256: " + doc_id)
+        else:
+            _require(pdf is None, "an uninstalled reading has no PDF to pin: " + doc_id)
+        prior = {"id": doc_id, "language": document["language"], "artifact_id": document["artifact_id"],
+                 "source_sha256": document["sha256"], "segment_id": document["segment_id"],
+                 "physical_line_ranges": document["physical_line_ranges"]}
+        if pdf is not None:
+            prior["pdf_sha256"] = pdf
+        action = {"prior": prior, "reason": reason, "replacement": None}
+        earlier = [x for x in withdrawals["supersessions"] if x["prior"]["id"] == doc_id]
+        _require(not earlier or earlier == [action], "the reading is already withdrawn differently: " + doc_id)
+        if unit.get("reader_withdrawal") is not None:     # a replay of this withdrawal
+            _require(unit["reader_withdrawal"] == action and unit.get("reader_withdrawal_evidence_sha256") == evidence_sha256
+                     and earlier, "the reading's unit is already withdrawn differently: " + doc_id)
+            continue
+        _require(unit["status"] in {"admitted-mechanical-ocr-extent", "admitted-fragment"},
+                 "only an admitted reading selection can be withdrawn: " + doc_id)
+        note = f"Reader withdrawn by an explicit prior-to-null supersession: {reason.strip()} Evidence SHA-256 {evidence_sha256}."
+        if isinstance(item.get("note"), str) and item["note"].strip():
+            note += " " + item["note"].strip()
+        unit["review_history"] = list(unit.get("review_history", [])) + [unit["review"]]
+        unit["review"] = bullarium.durable_review({
+            "artifact_sha256": unit["artifact_sha256"], "decision": "hold", "document_id": doc_id,
+            "physical_line_ranges": document["physical_line_ranges"], "review_note": note,
+            "title": unit["review"].get("title")})
+        unit["status"] = "specifically-held"
+        unit["reader_withdrawal"] = action
+        unit["reader_withdrawal_evidence_sha256"] = evidence_sha256
+        if not earlier:
+            actions.append(action)
+        changed += 1
+    if changed or actions:
+        coverage = catalog["coverage"]
+        values = units.values()
+        coverage.update(independent_papal_acts_admitted=sum(u["status"] == "admitted-mechanical-ocr-extent" for u in values),
+                        fragment_witnesses_admitted=sum(u["status"] == "admitted-fragment" for u in values),
+                        units_held=sum(u["status"] in {"held", "specifically-held"} for u in values),
+                        specifically_reviewed_holds=sum(u["status"] == "specifically-held" for u in values))
+        catalog["units"] = sorted(values, key=lambda u: u["id"])
+        withdrawals["supersessions"] += actions
+        withdrawals["revision"] = max(withdrawals.get("revision", revision), revision)
+        bullarium.write(withdrawals_file, bullarium.json_bytes(withdrawals))
+        bullarium.write(catalog_file, bullarium.json_bytes(catalog))
+    return {"withdrawn_readings": changed, "withdrawals_manifest": READING_ORDER_WITHDRAWALS,
+            "manifest_supersessions": len(withdrawals["supersessions"])}
 
 
 VERB_EXAMPLES = {
@@ -1512,11 +2188,20 @@ VERB_EXAMPLES = {
                 ("bullarium geometry register: revision requires explicit whole-second UTC",),
                 "The same refusal in ordinary text."),
     ),
+    "withdraw": (
+        Example("tools/bullarium geometry withdraw --units .scratch/absent/withdraw.json --revision invalid --reason x --evidence-sha256 x --json",
+                ('{"code":"input","error":"revision requires explicit whole-second UTC","status":"error","v":1}',),
+                "An invalid revision is refused before the selection, catalog or any manifest is read."),
+        Example("tools/bullarium geometry withdraw --units .scratch/absent/withdraw.json --revision invalid --reason x --evidence-sha256 x",
+                ("bullarium geometry withdraw: revision requires explicit whole-second UTC",),
+                "The same refusal in ordinary text."),
+    ),
 }
 VERB_HELP = {
     "propose": "Propose an explicit v2 reading-order recipe from native WORD geometry (scratch/build output only).",
     "map-units": "Map every catalog unit of the volume onto a replayed derivative through WORD identity.",
     "register": "Register a replayed derivative and admit explicitly selected 'clean' units via bullarium admit.",
+    "withdraw": "Withdraw registered reading selections by explicit prior-to-null supersessions (no replacement).",
 }
 
 
@@ -1538,10 +2223,16 @@ def _verb_main(verb, argv, examples):
         parser.add_argument("--out", required=True)
         parser.add_argument("--catalog", default=CATALOG)
         parser.add_argument("--withdrawals", default=WITHDRAWALS)
+    elif verb == "withdraw":
+        for name in ("units", "revision", "reason", "evidence-sha256"):
+            parser.add_argument("--" + name, required=True)
     else:
         for name in ("recipe", "replay", "mapping", "units", "revision"):
             parser.add_argument("--" + name, required=True)
         parser.add_argument("--input-map")
+        parser.add_argument("--supersede", action="store_true",
+                            help="replace each unit's newest reading selection (append-only; see the corrections manifest)")
+        parser.add_argument("--reason", help="supersession reason recorded for every replaced reading (with --supersede)")
     try:
         args = parser.parse_args(argv)
         if verb == "propose":
@@ -1551,9 +2242,11 @@ def _verb_main(verb, argv, examples):
         elif verb == "map-units":
             info = map_units(args.root, args.recipe, args.replay, args.out, catalog_path=args.catalog,
                              withdrawals_path=args.withdrawals)
+        elif verb == "withdraw":
+            info = withdraw(args.root, args.units, args.revision, args.reason, args.evidence_sha256)
         else:
             info = register(args.root, args.recipe, args.replay, args.mapping, args.units, args.revision,
-                            input_map=args.input_map)
+                            input_map=args.input_map, supersede=args.supersede, reason=args.reason)
         result = {"v": 1, "status": "ok", **info}
         print(json.dumps(result, sort_keys=True, separators=(",", ":")) if args.json else
               "\n".join(f"{key}: {value}" for key, value in result.items()))

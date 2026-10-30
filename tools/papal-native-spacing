@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+"""Replay explicit native whitespace projections without generating source words."""
+from pathlib import Path
+import json
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+import _papal_native_spacing as native_spacing
+from _papal_native_spacing import main
+from _tooling import Example
+
+
+EXAMPLES = {"": (
+        Example('tools/papal-native-spacing --recipe src/sources/works/holy-see/acta-sanctae-sedis/editions/1890-acta-ass-023/artifacts/rerum-novarum-native-spacing-recipe-dc192a445cd4/recipe.json --out src/sources/works/holy-see/acta-sanctae-sedis/editions/1890-acta-ass-023/artifacts/rerum-novarum-native-spacing-e1de8d5325c3/text.txt --check --json', ('{"matched_source_lines":1178,"retained_source_lines":[],"sha256":"e1de8d5325c3d76a8b7826d8ca0ecde983ef6849c3a8be8691efab7b90828dcf","status":"pass","stream_order_difference_pages":[647,648,651,653,654,656,662,664,670],"v":1}',), "Read-only replay of the retained Rerum novarum whitespace derivative."),
+        Example('tools/papal-native-spacing --recipe src/sources/works/holy-see/acta-sanctae-sedis/editions/1890-acta-ass-023/artifacts/rerum-novarum-native-spacing-recipe-dc192a445cd4/recipe.json --out src/sources/works/holy-see/acta-sanctae-sedis/editions/1890-acta-ass-023/artifacts/rerum-novarum-native-spacing-e1de8d5325c3/text.txt --check', ('{"matched_source_lines":1178,"retained_source_lines":[],"sha256":"e1de8d5325c3d76a8b7826d8ca0ecde983ef6849c3a8be8691efab7b90828dcf","status":"pass","stream_order_difference_pages":[647,648,651,653,654,656,662,664,670],"v":1}',), "Read-only replay of the retained Rerum novarum whitespace derivative."),
+)}
+native_spacing.EXAMPLES = EXAMPLES[""]
+
+if __name__ == "__main__":
+    try:
+        raise SystemExit(main())
+    except (OSError, ValueError, TypeError, KeyError) as error:
+        if "--json" in sys.argv:
+            print(json.dumps({"v": 1, "status": "error", "code": "input", "error": str(error)},
+                sort_keys=True, separators=(",", ":")), file=sys.stderr)
+        else:
+            print(f"papal-native-spacing: {error}", file=sys.stderr)
+        raise SystemExit(2)

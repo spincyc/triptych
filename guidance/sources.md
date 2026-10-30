@@ -788,8 +788,11 @@ For an ordinary source-bearing change, refresh and review in this order:
    manually review any new family presence rather than expecting refresh to
    infer it;
 4. use `--accept-canonical-catalog` only after the source library validates and
-   every family with canonical IDs has received the ledger review required
-   below, including families whose own manifests did not change; and
+   changed canonical records and affected family memberships have been reviewed
+   under the ledger rules in `src/sources/inventories/README.md`. Unchanged
+   `membership_snapshot` pins retain their prior review; a bootstrap ledger with
+   `families = []` may accept catalog drift while owner reviews remain pending;
+   and
 5. run `make check-sources` before finalizing the change.
 
 `make check-sources` is the normal, non-completion gate: it validates the

@@ -39,7 +39,7 @@ EXAMPLES = {
         Example(
             "tools/source-library validate",
             (
-                "source-library valid: artifact=10381 corpus=5 edition=13738 passage=9531 segment=10186 work=1075... [+15 chars]",
+                "source-library valid: artifact=10470 corpus=5 edition=14250 passage=9532 segment=10723 work=1093... [+15 chars]",
             ),
         ),
         Example(
@@ -2021,11 +2021,15 @@ def _owned_papal_inventory(library: Library, entry: Path, relative: Path) -> boo
         return True
     envelopes = {
         "catalog.json": ("triptych-papal-documents/v1", {"documents": list, "coverage": list, "scope": dict}),
+        "encyclicals-index.json": ("triptych-encyclicals-index/v2", {"encyclicals": list, "revision": str, "scope": str, "description_provenance": dict}),
         "archives.json": ("triptych-papal-archives/v1", {"volumes": list, "index_receipts": list, "coverage": dict}),
         "source-links.json": ("triptych-papal-source-links/v1", {"documents": list}),
         "publication-approvals.json": ("triptych-papal-publication-approvals/v1", {"documents": dict}),
         "overrides.json": ("triptych-papal-overrides/v1", {"aliases": list, "records": dict}),
         "typeset-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
+        "encyclicals-classic-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str, "supersessions": list}),
+        "encyclicals-source-corrections-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str, "supersessions": list}),
+        "encyclicals-classic-visual-review.json": ("triptych-papal-visual-review/v1", {"documents": list, "frozen_receipt_sha256": str}),
         "vatican-corrections-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str, "supersessions": list}),
         "historical-english-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
         "historical-english-supplement-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
@@ -2033,6 +2037,8 @@ def _owned_papal_inventory(library: Library, entry: Path, relative: Path) -> boo
         "historical-english-journal-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
         "historical-english-journal-fragment-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
         "historical-english-book-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
+        "historical-english-completion-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
+        "historical-english-completion-visual-review.json": ("triptych-papal-visual-review/v1", {"documents": list, "frozen_receipt_sha256": str}),
         "historical-english-book-fragment-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
         "historical-english-corrections-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
         "english-encoding-raster-comparison.json": ("triptych-english-page-raster-comparison/v1", {"documents": list, "source_receipt_sha256": str, "total_documents": int, "total_pages": int}),
@@ -2051,6 +2057,8 @@ def _owned_papal_inventory(library: Library, entry: Path, relative: Path) -> boo
         "bullarium-active-withdrawals.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str, "supersessions": list, "affected_units": list}),
         "bullarium-geometry-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
         "bullarium-geometry-fragment-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
+        "bullarium-reading-order-corrections-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str, "supersessions": list}),
+        "bullarium-reading-order-withdrawals-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str, "supersessions": list}),
         "acta-catalog.json": ("triptych-papal-acta-catalog/v1", {"volumes": list, "documents": list}),
         "acta-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
         "acta-title-corrections.json": ("triptych-papal-acta-title-corrections/v1", {"rows": list, "revision": str, "base_manifest": dict}),

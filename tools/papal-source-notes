@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+"""Replay explicit source LF note partitions without changing source words."""
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+from _papal_source_notes import main
+from _tooling import Example
+
+EXAMPLES = {
+    "check": (
+        Example("tools/papal-source-notes check --spec src/sources/works/holy-see/acta-apostolicae-sedis/editions/1914-acta-aas-006/artifacts/ad-beatissimi-de-note-spec-a12ff048cdba/spec.json --out src/sources/works/holy-see/acta-apostolicae-sedis/editions/1914-acta-aas-006/artifacts/ad-beatissimi-de-note-blocks-179739b82709/text.txt --json",
+                ('{"actual_sha256":"179739b82709d95141434929879c74c310454e796992fe3e83b5b730d253b148","bytes":44207,"physical_lines":795,"schema":"triptych-papal-source-notes/v1","selected_non_lf_bytes_preserved":true,"selected_non_lf_sha256":"49f0310abca289c92cffe7294b937d7a943cca54c1ad544dfa71a32bb67d77cd","sha256":"179739b82709d95141434929879c74c310454e796992fe3e83b5b730d253b148","source_artifact_id":"artifact.acta-papal-archives.aas.006.historical-text-fb3b4bd1","source_note_groups":14,"source_order_preserved":true,"source_sha256":"fb3b4bd1a8d41392dc06fc705d97bac09d7aee15780990391456a948f9ea3c67","spec_sha256":"a12ff048cdba2f3c16fd522ec3fb114903d90b4b85244642fd798613ff00614a","status":"pass","v":1}',),
+                "read-only exact replay of the retained German note blocks"),
+        Example("tools/papal-source-notes check --spec src/sources/works/holy-see/acta-apostolicae-sedis/editions/1914-acta-aas-006/artifacts/ad-beatissimi-de-note-spec-a12ff048cdba/spec.json --out src/sources/works/holy-see/acta-apostolicae-sedis/editions/1914-acta-aas-006/artifacts/ad-beatissimi-de-note-blocks-179739b82709/text.txt",
+                ("check: pass; 14 note groups; 179739b82709d95141434929879c74c310454e796992fe3e83b5b730d253b148",),
+                "read-only; exit 0"),
+    ),
+    "derive": (
+        Example("tools/papal-source-notes derive --spec src/sources/works/holy-see/acta-apostolicae-sedis/editions/1914-acta-aas-006/artifacts/ad-beatissimi-de-note-spec-a12ff048cdba/spec.json --out src/sources/works/holy-see/acta-apostolicae-sedis/editions/1914-acta-aas-006/artifacts/ad-beatissimi-de-note-blocks-179739b82709/text.txt --json",
+                ('{"code":"input","error":"derive output must remain under the supplied root\'s .scratch/ or build/","status":"error","v":1}',),
+                "exit 64; refuses a canonical output; use .scratch/ or build/ for a new derivative"),
+        Example("tools/papal-source-notes derive --spec src/sources/works/holy-see/acta-apostolicae-sedis/editions/1914-acta-aas-006/artifacts/ad-beatissimi-de-note-spec-a12ff048cdba/spec.json --out src/sources/works/holy-see/acta-apostolicae-sedis/editions/1914-acta-aas-006/artifacts/ad-beatissimi-de-note-blocks-179739b82709/text.txt",
+                ("papal-source-notes: derive output must remain under the supplied root's .scratch/ or build/",),
+                "exit 64; preserves the retained file"),
+    ),
+}
+
+if __name__ == "__main__":
+    if sys.argv[1:] in (["--help"], ["-h"]):
+        try:
+            main(examples=EXAMPLES)
+        finally:
+            print("\nEach command has its own help: tools/papal-source-notes <verb> --help")
+    else:
+        raise SystemExit(main(examples=EXAMPLES))

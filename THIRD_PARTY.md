@@ -761,7 +761,9 @@ The PDFs embed subsetted font programs. TeX packages and other build
 dependencies are external software governed by their own licenses; they are
 not vendored merely because the build invokes them.
 
-The papal source readers use TeX Gyre Pagella by B. Jackowski, J. M. Nowacki
+The classic encyclical readers use Latin Modern Roman under the
+[GUST Font License](https://www.gust.org.pl/projects/e-foundry/licenses/GUST-FONT-LICENSE.txt).
+Earlier papal source readers use TeX Gyre Pagella by B. Jackowski, J. M. Nowacki
 and contributors on behalf of the TeX user groups, under the
 [GUST Font License](https://www.gust.org.pl/projects/e-foundry/licenses/GUST-FONT-LICENSE.txt).
 Where source characters require them, the readers also embed portions of

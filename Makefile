@@ -60,7 +60,7 @@ ARCH_CORE_PACKAGES := make bash findutils coreutils diffutils
 ARCH_PYTHON_PACKAGES := python tzdata python-markdown python-yaml
 ARCH_TEX_PACKAGES := texlive-bin texlive-basic texlive-latex \
 	texlive-latexrecommended texlive-latexextra texlive-pictures \
-	texlive-fontsrecommended texlive-fontsextra
+	texlive-fontsrecommended texlive-fontsextra texlive-langother
 ARCH_PDF_PACKAGES := poppler imagemagick
 ARCH_WEB_PACKAGES := pandoc
 # The browser's own derivation, replayed under node against each source's
@@ -264,7 +264,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-public-alpha prepare-public-alpha \
 	check-pdf-review check-curriculum-rights check-curriculum-sources \
 	check-curriculum-structure check-source-reader source-projection \
-	check-document-catalogue document-catalogue \
+	check-document-catalogue document-catalogue encyclicals-catalogue \
 	public-site public-preview \
 	dependencies-arch dependencies-arch-browser dependencies-arch-tui install-dependencies-arch \
 	verify-public-site verify-public-preview \
@@ -646,6 +646,7 @@ help:
 		'make check-document-catalogue  Confirm each derived title against its PDF and the catalogue against the sources' \
 		'make document-catalogue  Rewrite the browser catalogue of every document' \
 		'make source-projection  Rewrite the browser reading of the source library' \
+		'make encyclicals-catalogue [INDEX=<path>]  Rewrite the browser catalogue of encyclicals from its index' \
 		'make check-source-reader  Prove no withheld source text is served, and no reading is stale' \
 		'make check-public-alpha  Validate the exhaustive public-release policy' \
 		'make prepare-public-alpha  Print current candidate hashes; grants no approval' \
@@ -1932,6 +1933,13 @@ document-catalogue:
 source-projection:
 	@$(PYTHON) $(SOURCE_READER_TOOL) structure
 
+# The catalogue of every encyclical, rewritten from the tracked index and
+# checked reader by reader against release/papal-documents.json. Tracked under
+# src/web/data and served to the `encyclicals` reading page, which reads it and
+# walks nothing itself. INDEX=<path> reads another index, for a trial run.
+encyclicals-catalogue:
+	@$(PYTHON) scripts/_encyclicals.py structure $(if $(INDEX),--index '$(INDEX)',)
+
 $(READING_BUILD_ROOT)/%.tex: $(BIBLE_TYPESET_IMPL) FORCE_BIBLE_RENDER
 	@$(PYTHON) $(BIBLE_TYPESET_TOOL) render --volume '$*' --out '$(READING_BUILD_ROOT)'
 
@@ -1991,7 +1999,7 @@ PAPAL_OUT ?= .scratch/papal-pdfs
 PAPAL_JOBS ?= 4
 PAPAL_MANIFEST_ROOT ?= src/sources/papal-documents
 PAPAL_HISTORICAL_SERIES := bullarium-continuatio benedict-xiv-bullarium gregory-xvi-acta pius-ix-acta
-PAPAL_ENGLISH_ADDITIONS := historical-english-supplement historical-english-journal historical-english-book
+PAPAL_ENGLISH_ADDITIONS := historical-english-supplement historical-english-journal historical-english-book historical-english-completion
 PAPAL_BASE_MANIFESTS ?= latin=typeset-manifest.json \
 	english=historical-english-manifest.json \
 	quanta-syllabus=quanta-syllabus-manifest.json \
@@ -2014,7 +2022,11 @@ PAPAL_CORRECTION_MANIFESTS ?= \
 	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/acta-layout-corrections-manifest.json),acta-layout-corrections=acta-layout-corrections-manifest.json) \
 	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/acta-visual-corrections-manifest.json),acta-visual-corrections=acta-visual-corrections-manifest.json) \
 	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/historical-series-corrections-manifest.json),historical-series-corrections=historical-series-corrections-manifest.json) \
-	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-active-withdrawals.json),bullarium-active-withdrawals=bullarium-active-withdrawals.json)
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-reading-order-corrections-manifest.json),bullarium-reading-order-corrections=bullarium-reading-order-corrections-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-reading-order-withdrawals-manifest.json),bullarium-reading-order-withdrawals=bullarium-reading-order-withdrawals-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/bullarium-active-withdrawals.json),bullarium-active-withdrawals=bullarium-active-withdrawals.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/encyclicals-classic-manifest.json),encyclicals-classic=encyclicals-classic-manifest.json) \
+	$(if $(wildcard $(PAPAL_MANIFEST_ROOT)/encyclicals-source-corrections-manifest.json),encyclicals-source-corrections=encyclicals-source-corrections-manifest.json)
 PAPAL_CURRENT_MANIFEST ?= $(PAPAL_OUT)/current-manifest.json
 PAPAL_CURRENT_BATCH ?= $(PAPAL_OUT)/current
 PAPAL_COLLECTION_OUT ?= $(PAPAL_OUT)/collection

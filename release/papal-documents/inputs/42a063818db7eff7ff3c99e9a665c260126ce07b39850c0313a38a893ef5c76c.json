@@ -1,0 +1,68 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "824d24cdc7affde12ac8b1357b18d697f248ae3fc196d223008f00018b737e5e",
+  "documents": [
+    {
+      "id": "acta.ass.006.ass-006-act-006",
+      "language": "la",
+      "pdf_sha256": "d41c0a4c00042619528b9aa67836e6b4a63e41b17ef213b8216af5994ae31b71",
+      "pages": 5,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "description": "Seven historical note groups are separate indented source-order blocks on pages 1, 3, 4 and 5. Page 1 historical Redactoris ephemeridum note is visually separate from both interrupted body continuations, and terminal source apparatus explicitly attributes it to the historical editor. OCR-spaced numerals/letters remain literal and readable. Page 5 has substantive continuation, blessing, date, PIUS PP. IX subscription and historical citation before project apparatus."
+        }
+      ],
+      "limitations": "Visual layout and bounded source-repair invariant review. All final-reader pages inspected at contact and full size. Native evidence is Vatican OCR reconstruction, not original-print facsimile. No lexical collation, word reconstruction, OCR accuracy certification, translation equivalence review, independent rights determination or source-state promotion. Generator PDF/source fidelity algorithm was not independently rerun; its PASS receipts were checked.",
+      "receipt_sha256": "824d24cdc7affde12ac8b1357b18d697f248ae3fc196d223008f00018b737e5e",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-19.md",
+      "report_sha256": "f9674bf0dfb2813239acca5174a44f96a9a18856819fdfcc956197eb4727ad08"
+    },
+    {
+      "id": "acta.ass.022.ass-022-003",
+      "language": "la",
+      "pdf_sha256": "e470b6eefdb82041a8483a6de03b6de4ac23f54f3f67bb745dbac54dea080d37",
+      "pages": 3,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2,
+            3
+          ],
+          "description": "The inherited con-/stantesque source-page split remains visible as a separate paragraph start near reader page 1 end, with no printer/fascicle text interleaved. Page 3 retains substantial source ending, blessing, Roman-numeral date and LEO P P . X I I I . subscription before ruled apparatus. Literal OCR-spaced title and numerals remain; no clipping, note/body fusion or isolated apparatus page found."
+        }
+      ],
+      "limitations": "Visual layout and bounded source-repair invariant review. All final-reader pages inspected at contact and full size. Native evidence is Vatican OCR reconstruction, not original-print facsimile. No lexical collation, word reconstruction, OCR accuracy certification, translation equivalence review, independent rights determination or source-state promotion. Generator PDF/source fidelity algorithm was not independently rerun; its PASS receipts were checked.",
+      "receipt_sha256": "824d24cdc7affde12ac8b1357b18d697f248ae3fc196d223008f00018b737e5e",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-19.md",
+      "report_sha256": "f9674bf0dfb2813239acca5174a44f96a9a18856819fdfcc956197eb4727ad08"
+    }
+  ]
+}

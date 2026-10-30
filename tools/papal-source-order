@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+"""Replay explicitly reviewed source note-column byte slices."""
+from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+from _papal_source_order import main
+from _tooling import Example
+
+EXAMPLES = {
+    "derive": (
+        Example("tools/papal-source-order derive --spec .scratch/source-order-missing.json --out .scratch/source-order-proof.txt --json",
+                ('{"error": "source-order spec is not readable JSON", "status": "error"}',), "exit 1; explicit refusal without writing"),
+        Example("tools/papal-source-order derive --spec .scratch/source-order-missing.json --out .scratch/source-order-proof.txt",
+                ("papal-source-order: source-order spec is not readable JSON",), "exit 1; explicit refusal without writing"),
+    ),
+    "check": (
+        Example("tools/papal-source-order check --spec .scratch/source-order-missing.json --out .scratch/source-order-proof.txt --json",
+                ('{"error": "source-order spec is not readable JSON", "status": "error"}',), "exit 1; explicit refusal without writing"),
+        Example("tools/papal-source-order check --spec .scratch/source-order-missing.json --out .scratch/source-order-proof.txt",
+                ("papal-source-order: source-order spec is not readable JSON",), "exit 1; explicit refusal without writing"),
+    ),
+}
+
+if __name__ == "__main__":
+    if sys.argv[1:] in (["--help"], ["-h"]):
+        try:
+            main(examples=EXAMPLES)
+        finally:
+            print("\nEach command has its own help: tools/papal-source-order <verb> --help")
+    else:
+        raise SystemExit(main(examples=EXAMPLES))

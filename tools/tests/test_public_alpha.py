@@ -3589,5 +3589,343 @@ class PublicAlphaTest(unittest.TestCase):
         )
 
 
+    # --- The papal readers the encyclicals catalogue links ------------------
+
+    PAPAL_LATIN = "pdf/papal-documents/1891-05-15--papal.leo-xiii.rerum-novarum--la--0123456789abcdef.pdf"
+    PAPAL_ENGLISH = "pdf/papal-documents/1891-05-15--papal.leo-xiii.rerum-novarum--en--fedcba9876543210.pdf"
+    PAPAL_UNLINKED = "pdf/papal-documents/1832-08-15--papal.gregory-xvi.mirari-vos--la--00112233445566aa.pdf"
+
+    def papal_document(self, identity: str, language: str, pdf: str, data: bytes) -> dict:
+        return {
+            "id": identity, "language": language, "pdf": pdf,
+            "pdf_sha256": digest(data), "pages": 3, "bytes": len(data),
+            "review": {"status": "PASS"},
+            "source": {"rights_status": "public-domain"},
+        }
+
+    def make_encyclicals_fixture(self) -> dict:
+        """A served data root, every entrance page, and two linked readers of three installed."""
+        self.write_json("src/web/data/bibles.json", {
+            "bibles": [{"id": "offered", "numbering": "vulgate"}],
+        })
+        self.write("src/sources/bibles/offered/chapters/Ps/1.json", b"{}\n")
+        self.write("src/web/browser/shared/browser-core.js", b"// shared\n")
+        for entrance in self.tool.WEB_BROWSER_ENTRANCES:
+            self.write(
+                f"src/web/browser/{entrance}/index.html",
+                (
+                    '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">'
+                    f"<title>{entrance}</title>"
+                    f'<link rel="stylesheet" href="{entrance}.css"></head>'
+                    f'<body class="{entrance}-page"><main id="reading">'
+                    '<p class="lede">A reading page fixture with a lede long enough '
+                    "to describe it in a link preview.</p></main>"
+                    f'<script src="{entrance}.js"></script></body></html>\n'
+                ).encode(),
+            )
+            self.write(f"src/web/browser/{entrance}/{entrance}.css", b"/* fixture */\n")
+            self.write(f"src/web/browser/{entrance}/{entrance}.js", b"// fixture\n")
+        payloads = {
+            self.PAPAL_LATIN: b"%PDF-1.7 latin reader\n",
+            self.PAPAL_ENGLISH: b"%PDF-1.7 english reader\n",
+            self.PAPAL_UNLINKED: b"%PDF-1.7 installed and not linked\n",
+        }
+        for path, data in payloads.items():
+            self.write(path, data)
+        release = {
+            "schema": "triptych-papal-release/v1",
+            "documents": [
+                self.papal_document("papal.leo-xiii.rerum-novarum", "la",
+                                    self.PAPAL_LATIN, payloads[self.PAPAL_LATIN]),
+                self.papal_document("papal.leo-xiii.rerum-novarum", "en",
+                                    self.PAPAL_ENGLISH, payloads[self.PAPAL_ENGLISH]),
+                self.papal_document("papal.gregory-xvi.mirari-vos", "la",
+                                    self.PAPAL_UNLINKED, payloads[self.PAPAL_UNLINKED]),
+            ],
+            "obsolete": [],
+        }
+        self.write_json("release/papal-documents.json", release)
+
+        def reader(document: dict, extent: str) -> dict:
+            return {
+                "language": document["language"], "release_id": document["id"],
+                "pdf": document["pdf"], "pdf_sha256": document["pdf_sha256"],
+                "pages": document["pages"], "witness": "Acta Sanctae Sedis 23",
+                "extent": extent,
+            }
+
+        catalogue = {
+            "schema": "triptych-encyclicals-browser/v2",
+            "encyclicals": [
+                {
+                    "id": "papal.leo-xiii.rerum-novarum", "title": "Rerum novarum",
+                    "readers": [reader(release["documents"][0], "complete"),
+                                reader(release["documents"][1], "fragment")],
+                    "english_routes": [],
+                    "links": {"vatican": "https://www.vatican.va/rerum.html"},
+                    "no_local_text_reason": None,
+                },
+                {
+                    "id": "papal.pius-xii.humani-generis", "title": "Humani generis",
+                    "readers": [], "links": {"vatican": None},
+                    "english_routes": [{
+                        "url": "https://www.vatican.va/humani-generis-en.html",
+                        "label": "Holy See English text", "language": "en",
+                        "extent": "complete", "authority": "official",
+                        "checked_on": "2026-10-30",
+                        "source_index_url": "https://www.vatican.va/encyclicals.html",
+                        "verification_note": "English body and closing checked.",
+                    }],
+                    "no_local_text_reason": "Published after 1930: protected text not offered",
+                },
+            ],
+        }
+        self.write_json("src/web/data/encyclicals/index.json", catalogue)
+        return {"release": release, "catalogue": catalogue, "payloads": payloads}
+
+    def rewrite_encyclicals(self, fixture: dict, change) -> None:
+        catalogue = json.loads(json.dumps(fixture["catalogue"]))
+        change(catalogue)
+        self.write_json("src/web/data/encyclicals/index.json", catalogue)
+
+    def rewrite_papal_release(self, fixture: dict, change) -> None:
+        release = json.loads(json.dumps(fixture["release"]))
+        change(release)
+        self.write_json("release/papal-documents.json", release)
+
+    def test_papal_readers_are_exactly_the_ones_the_catalogue_links(self) -> None:
+        self.make_encyclicals_fixture()
+
+        served = self.tool.papal_reader_pdfs()
+
+        self.assertEqual({self.PAPAL_LATIN, self.PAPAL_ENGLISH}, set(served))
+        recognized = self.tool.site_source_paths()
+        self.assertIn(self.PAPAL_LATIN, recognized)
+        self.assertIn(self.PAPAL_ENGLISH, recognized)
+        self.assertIn("src/web/data/encyclicals/index.json", recognized)
+        self.assertIn("src/web/browser/encyclicals/index.html", recognized)
+        # Installed and reviewed, but linked by nothing: never served, never bound.
+        self.assertNotIn(self.PAPAL_UNLINKED, recognized)
+        aliases = self.tool.public_pdf_aliases(())
+        self.assertNotIn(self.PAPAL_UNLINKED, aliases)
+        alias = aliases[self.PAPAL_LATIN]
+        self.assertEqual(
+            alias, self.tool.public_pdf_path("papal-documents", Path(self.PAPAL_LATIN).stem)
+        )
+        self.assertNotEqual(Path(alias).name, Path(self.PAPAL_LATIN).name)
+
+    def test_papal_readers_are_absent_without_a_catalogue_or_a_data_root(self) -> None:
+        self.make_encyclicals_fixture()
+        (self.root / "src/web/data/encyclicals/index.json").unlink()
+        self.assertEqual({}, self.tool.papal_reader_pdfs())
+        self.make_encyclicals_fixture()
+        (self.root / "src/web/data/bibles.json").unlink()
+        self.assertEqual({}, self.tool.papal_reader_pdfs())
+
+    def test_papal_reader_whose_bytes_changed_stops_the_build(self) -> None:
+        self.make_encyclicals_fixture()
+        self.write(self.PAPAL_LATIN, b"%PDF-1.7 latin reader, rebuilt\n")
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.papal_reader_pdfs()
+
+        message = str(failure.exception)
+        self.assertIn(self.PAPAL_LATIN, message)
+        self.assertIn("SHA-256 on disk", message)
+        self.assertIn("bytes on disk", message)
+        # The build asks for its aliases before it copies anything.
+        with self.assertRaises(self.tool.ReleaseError):
+            self.tool.public_pdf_aliases(())
+
+    def test_papal_reader_the_release_record_does_not_install_stops_the_build(self) -> None:
+        fixture = self.make_encyclicals_fixture()
+        stray = "pdf/papal-documents/1900-01-01--papal.unrecorded--la--aaaaaaaaaaaaaaaa.pdf"
+        self.write(stray, b"%PDF-1.7 nobody reviewed this\n")
+
+        def link_stray(catalogue: dict) -> None:
+            catalogue["encyclicals"][1]["readers"] = [{
+                "language": "la", "release_id": "papal.unrecorded", "pdf": stray,
+                "pdf_sha256": digest(b"%PDF-1.7 nobody reviewed this\n"), "pages": 1,
+                "witness": "nowhere", "extent": "complete",
+            }]
+
+        self.rewrite_encyclicals(fixture, link_stray)
+        with self.assertRaisesRegex(
+            self.tool.ReleaseError, "is not a reader release/papal-documents.json installs"
+        ):
+            self.tool.papal_reader_pdfs()
+
+    def test_papal_reader_fields_must_match_the_release_record(self) -> None:
+        fixture = self.make_encyclicals_fixture()
+        cases = (
+            ("pages", lambda c: c["encyclicals"][0]["readers"][0].update({"pages": 4}),
+             "the catalogue's pages 4"),
+            ("hash", lambda c: c["encyclicals"][0]["readers"][0].update({"pdf_sha256": "f" * 64}),
+             "the catalogue's pdf_sha256"),
+            ("language", lambda c: c["encyclicals"][0]["readers"][0].update({"language": "it"}),
+             "is not a reader"),
+            ("outside", lambda c: c["encyclicals"][0]["readers"][0].update(
+                {"pdf": "pdf/gpt/work.pdf"}), "not a reader path under pdf/papal-documents/"),
+            ("traversal", lambda c: c["encyclicals"][0]["readers"][0].update(
+                {"pdf": "pdf/papal-documents/../gpt/work.pdf"}), "not a reader path"),
+            ("twice", lambda c: c["encyclicals"][1]["readers"].append(
+                dict(c["encyclicals"][0]["readers"][0], pages=9)), "described two different ways"),
+        )
+        for name, change, expected in cases:
+            with self.subTest(case=name):
+                self.rewrite_encyclicals(fixture, change)
+                with self.assertRaises(self.tool.ReleaseError) as failure:
+                    self.tool.papal_reader_pdfs()
+                self.assertIn(expected, str(failure.exception))
+
+    def test_papal_reader_needs_a_current_reviewed_public_domain_release_row(self) -> None:
+        fixture = self.make_encyclicals_fixture()
+        cases = (
+            ("review", lambda r: r["documents"][0]["review"].update({"status": "FAIL"}),
+             "no PASS review"),
+            ("rights", lambda r: r["documents"][0]["source"].update({"rights_status": "licensed"}),
+             "no public-domain distribution basis"),
+            ("retired", lambda r: r["obsolete"].append({"pdf": self.PAPAL_LATIN}),
+             "retired by release/papal-documents.json"),
+            ("schema", lambda r: r.update({"schema": "something-else/v1"}),
+             "is not a triptych-papal-release/v1 record"),
+        )
+        for name, change, expected in cases:
+            with self.subTest(case=name):
+                self.rewrite_papal_release(fixture, change)
+                with self.assertRaises(self.tool.ReleaseError) as failure:
+                    self.tool.papal_reader_pdfs()
+                self.assertIn(expected, str(failure.exception))
+
+    def test_papal_reader_replacement_history_preserves_the_current_stable_path(self) -> None:
+        fixture = self.make_encyclicals_fixture()
+        current = fixture["release"]["documents"][0]
+        history = {
+            "id": current["id"], "language": current["language"],
+            "pdf": current["pdf"], "pdf_sha256": digest(b"prior reviewed PDF"),
+            "reason": "replaced-by-current-pass",
+        }
+        self.rewrite_papal_release(fixture, lambda release: release["obsolete"].append(history))
+        self.assertEqual({self.PAPAL_LATIN, self.PAPAL_ENGLISH}, set(self.tool.papal_reader_pdfs()))
+        self.assertIn(self.PAPAL_LATIN, self.tool.site_source_paths())
+        self.write(self.PAPAL_LATIN, b"prior reviewed PDF")
+        with self.assertRaisesRegex(self.tool.ReleaseError, "bytes on disk|SHA-256"):
+            self.tool.papal_reader_pdfs()
+
+    def test_papal_reader_replacement_history_requires_distinct_exact_prior_identity(self) -> None:
+        fixture = self.make_encyclicals_fixture()
+        current = fixture["release"]["documents"][0]
+        history = {
+            "id": current["id"], "language": current["language"],
+            "pdf": current["pdf"], "pdf_sha256": digest(b"prior reviewed PDF"),
+            "reason": "replaced-by-current-pass",
+        }
+        cases = (
+            {"reason": "withdrawn-or-no-longer-ready"},
+            {"reason": None},
+            {"pdf_sha256": current["pdf_sha256"]},
+            {"pdf_sha256": "not-an-exact-hash"},
+            {"pdf_sha256": None},
+            {"id": "another.act"},
+            {"language": "another-language"},
+        )
+        for change in cases:
+            with self.subTest(change=change):
+                retired = dict(history, **change)
+                self.rewrite_papal_release(fixture, lambda release: release["obsolete"].append(retired))
+                with self.assertRaisesRegex(self.tool.ReleaseError, "retired by release/papal-documents.json"):
+                    self.tool.papal_reader_pdfs()
+
+    def test_papal_reader_reached_through_a_symlink_is_refused(self) -> None:
+        self.make_encyclicals_fixture()
+        target = self.root / self.PAPAL_LATIN
+        held = self.root / "held-reader.pdf"
+        target.rename(held)
+        os.symlink(held, target)
+        with self.assertRaisesRegex(self.tool.ReleaseError, "path is a symlink"):
+            self.tool.papal_reader_pdfs()
+
+    def test_served_encyclicals_catalogue_links_only_public_aliases(self) -> None:
+        fixture = self.make_encyclicals_fixture()
+        aliases = self.tool.public_pdf_aliases(())
+        relative = "browse/encyclicals/index.json"
+        source = self.root / "src/web/data/encyclicals/index.json"
+        original = source.read_bytes()
+
+        projected = json.loads(self.tool.projected_web_data(relative, source, aliases))
+
+        links = [reader["pdf"] for row in projected["encyclicals"] for reader in row["readers"]]
+        self.assertEqual([aliases[self.PAPAL_LATIN], aliases[self.PAPAL_ENGLISH]], links)
+        # External English access stays metadata; it adds no PDF alias and its
+        # route is preserved while only installed source-reader paths change.
+        self.assertEqual(fixture["catalogue"]["encyclicals"][1]["english_routes"],
+                         projected["encyclicals"][1]["english_routes"])
+        self.assertEqual(source.read_bytes(), original)
+        self.assertIsNone(
+            self.tool.projected_encyclicals_catalogue("browse/other.json", source, aliases)
+        )
+        unadmitted = dict(aliases)
+        del unadmitted[self.PAPAL_ENGLISH]
+        with self.assertRaisesRegex(self.tool.ReleaseError, "has no public alias"):
+            self.tool.projected_web_data(relative, source, unadmitted)
+        self.assertEqual(fixture["catalogue"], json.loads(original))
+
+    def test_artifact_serves_linked_papal_readers_and_refuses_any_other(self) -> None:
+        self.make_encyclicals_fixture()
+        publications, output = self.build_verified_artifact()
+        aliases = self.tool.public_pdf_aliases(())
+        papal = sorted(
+            path.relative_to(output).as_posix()
+            for path in (output / "pdf/papal-documents").iterdir()
+        )
+        self.assertEqual(
+            sorted([self.PAPAL_LATIN, self.PAPAL_ENGLISH,
+                    aliases[self.PAPAL_LATIN], aliases[self.PAPAL_ENGLISH]]),
+            papal,
+        )
+        served = json.loads((output / "browse/encyclicals/index.json").read_text())
+        self.assertNotIn(self.PAPAL_LATIN, json.dumps(served))
+        self.assertIn(aliases[self.PAPAL_LATIN], json.dumps(served))
+
+        # An installed reader the catalogue does not link, planted in the artifact.
+        planted = output / self.PAPAL_UNLINKED
+        planted.write_bytes((self.root / self.PAPAL_UNLINKED).read_bytes())
+        self.tool.write_checksums(output)
+        with self.assertRaisesRegex(self.tool.ReleaseError, "artifact PDF mismatch") as failure:
+            self.tool.verify_output(self.manifest, publications, output, preview=False)
+        self.assertIn(self.PAPAL_UNLINKED, str(failure.exception))
+        planted.unlink()
+
+        for served_path, expected in (
+            (self.PAPAL_LATIN, "static file does not match its repository source"),
+            (aliases[self.PAPAL_LATIN], "public PDF does not match its canonical source"),
+        ):
+            with self.subTest(served=served_path):
+                artifact = output / served_path
+                approved = artifact.read_bytes()
+                artifact.write_bytes(b"%PDF-1.7 substituted\n")
+                self.tool.write_checksums(output)
+                with self.assertRaisesRegex(self.tool.ReleaseError, expected):
+                    self.tool.verify_output(self.manifest, publications, output, preview=False)
+                artifact.write_bytes(approved)
+        self.tool.write_checksums(output)
+        self.tool.verify_output(self.manifest, publications, output, preview=False)
+
+    def test_adding_a_linked_papal_reader_moves_the_authorization(self) -> None:
+        fixture = self.make_encyclicals_fixture()
+        self.authorize_current_inputs()
+        self.assertEqual([], self.tool.site_source_binding_errors(self.manifest))
+
+        def unlink_english(catalogue: dict) -> None:
+            catalogue["encyclicals"][0]["readers"].pop()
+
+        self.rewrite_encyclicals(fixture, unlink_english)
+        errors = self.tool.site_source_binding_errors(self.manifest)
+        self.assertTrue(
+            any(self.PAPAL_ENGLISH in error and "no longer reads it" in error for error in errors),
+            errors,
+        )
+
+
 if __name__ == "__main__":
     unittest.main()

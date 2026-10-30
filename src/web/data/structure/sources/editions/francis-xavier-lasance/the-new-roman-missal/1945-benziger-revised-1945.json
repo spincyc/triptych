@@ -226,6 +226,21 @@
    "storage": "tracked"
   },
   {
+   "artifact_type": "normalized-text",
+   "byte_size": 238,
+   "edition_owned": true,
+   "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261030-pc-nativity-day-punctuation-0d801929",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "notes": "Exactly one corrected historical English body. Prior artifact artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase1-lasance-fresh and its source passages/admission remain unchanged as history. Source printedp144, artifactpage145, IAleaf144; independent direct-image correction review retained separately.",
+   "page_count": null,
+   "retrieved": "2026-10-30",
+   "rights": "public-domain",
+   "rights_basis": "Faithful transcription of the separately registered United States public-domain Lasance and Walsh revised-1945 printing. This exact old human English is excluded from the project CC BY4.0 offer. The correction adds no authorship, modern Latin, ICEL English, image or publisher furniture.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
    "artifact_type": "facsimile-excerpt",
    "byte_size": 718753,
    "edition_owned": true,
@@ -45426,6 +45441,28 @@
    ],
    "storage": "tracked",
    "verified_on": "2026-10-29",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261030-pc-nativity-day-punctuation-0d801929",
+   "artifact_type": "normalized-text",
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261030-pc-nativity-day-punctuation-0d801929",
+   "locus": "historical-body/nativity/Entrance Antiphon",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-30",
    "withheld": "not-prose"
   },
   {

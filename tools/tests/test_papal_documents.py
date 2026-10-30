@@ -141,7 +141,7 @@ class DateAndIdentityTests(unittest.TestCase):
 class FetchTests(unittest.TestCase):
     def test_cache_must_be_under_scratch(self):
         with self.assertRaisesRegex(ValueError, "scratch"):
-            p.Fetcher(ROOT / "src")
+            p.Fetcher(Path("/invalid-papal-cache"))
 
     def test_whole_bytes_are_hashed_and_cache_is_verified(self):
         with tempfile.TemporaryDirectory(dir=ROOT / ".scratch") as temp:

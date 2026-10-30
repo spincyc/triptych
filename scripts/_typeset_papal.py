@@ -239,7 +239,7 @@ TEX_SPECIAL = {"\\": r"\textbackslash{}", "{": r"\{", "}": r"\}", "$": r"\$",
                "^": r"\textasciicircum{}", "~": r"\textasciitilde{}", "\f": " "}
 CYRILLIC_RUN = re.compile(r"[\u0400-\u052f\u1c80-\u1c8f\u2de0-\u2dff\ua640-\ua69f]")
 UNICODE_RUN = re.compile(r"[\u0370-\u052f\u1f00-\u1fff\u1c80-\u1c8f\u2de0-\u2dff\ua640-\ua69f][\u0370-\u052f\u1f00-\u1fff\u1c80-\u1c8f\u2de0-\u2dff\ua640-\ua69f\u0300-\u036f]*|.[\u0300-\u036f]+|[\u0300-\u036f]+")
-SYMBOL_RUN = re.compile(r"[\u25ba]")
+SYMBOL_RUN = re.compile(r"[\u2015\u25a0\u25ba\u2666]")
 FONT_RUN = re.compile(UNICODE_RUN.pattern + "|" + SYMBOL_RUN.pattern)
 
 
@@ -272,7 +272,7 @@ def body_tex_escape(text: str, allow_long_token_breaks=False) -> str:
     if not allow_long_token_breaks:
         return source_tex_escape(text)
     parts, offset = [], 0
-    for match in re.finditer(r"\S{48,}", text):
+    for match in re.finditer(r"\S{48,}|_{24,}", text):
         parts.append(source_tex_escape(text[offset:match.start()]))
         clusters = []
         for char in match.group():
@@ -521,7 +521,14 @@ def render_body(document: dict, start=0, end=None, include_label=True, no_break_
         if index in keep and (first_line or index - 1 not in keep):
             output.append(r"\begin{samepage}")
         value = body_tex_escape(block["text"], document.get("allow_long_token_breaks", False))
-        output.append(r"\subsection*{" + value + "}" if block["kind"] == "heading" else value + "\n\\par")
+        if block["kind"] == "heading":
+            output.append(r"\subsection*{" + value + "}")
+        elif len(block["text"]) <= 160 and block["text"].isupper():
+            # Short capitalized source furniture stays a paragraph; avoid
+            # stretching its few words across the full justified measure.
+            output.append(r"{\raggedright\noindent " + value + "\n\\par}")
+        else:
+            output.append(value + "\n\\par")
         if first_line:
             if index in keep:
                 output.extend([r"\end{samepage}", r"\nopagebreak[4]"])
@@ -556,6 +563,13 @@ def render_tex(document: dict, revision: str) -> str:
     language, metadata_language = source_tex_escape(language_text), tex_escape(language_text)
     date = document.get("date")
     identification = " · ".join([pope] + ([date] if date else []) + [language])
+    hyphenated = document["language"] in {"la", "en"}
+    language_setup = (r"\usepackage[shorthands=off," + ("latin" if document["language"] == "la" else "english") + r"]{babel}" + "\n"
+                      if hyphenated else "")
+    if document["language"] == "la":
+        language_setup += (r"\makeatletter\ifnum\l@latin=0\PackageError{typeset-papal}{Latin hyphenation patterns are required}"
+                           r"{Install TeX Live hyphen-latin and rebuild the XeLaTeX format.}\fi\makeatother" + "\n")
+    body_alignment = "" if hyphenated else "\\raggedright\n\\hyphenpenalty=10000\n"
     pdf_date = "D:" + re.sub(r"[^0-9]", "", revision) + "Z"
     terminal = document.get("terminal_keep_blocks", 0)
     body_input = r"\input{" + stem + ".body.tex}\n"
@@ -568,29 +582,36 @@ def render_tex(document: dict, revision: str) -> str:
         apparatus_keep = "\\nopagebreak[4]\n"
     trailer = "0" * 32
     source = r"""\documentclass[10pt,twocolumn]{article}
-\usepackage[letterpaper,margin=0.7in,columnsep=0.26in]{geometry}
+\usepackage[letterpaper,margin=0.75in,columnsep=0.3in]{geometry}
 \usepackage{fontspec}
-\setmainfont[Ligatures=TeXOff]{TeX Gyre Pagella}
-""" + font_setup + r"""\usepackage{microtype}
+\setmainfont[Ligatures=TeXOff]{Latin Modern Roman}
+""" + font_setup + language_setup + r"""\usepackage{microtype}
 \usepackage[unicode,hidelinks,breaklinks]{hyperref}
 \usepackage{xurl}
-\setlength{\parindent}{1em}
-\setlength{\parskip}{2pt}
-\setlength{\emergencystretch}{3em}
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\tolerance=2500
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
 \raggedbottom
-\hyphenpenalty=10000
+\hyphenpenalty=250
+\doublehyphendemerits=10000
+\finalhyphendemerits=5000
 \hypersetup{pdftitle={""" + metadata_title + r"""},pdfauthor={""" + metadata_pope + r"""},pdfsubject={Papal source edition; """ + metadata_language + r"""},pdfcreationdate={},pdfmoddate={""" + pdf_date + r"""}}
 \special{pdf:trailerid [<""" + trailer + "><" + trailer + r""">]}
 \begin{document}
 \twocolumn[\begin{center}
-{\LARGE\bfseries """ + title + r"""\par}
+{\fontsize{18}{21}\selectfont """ + title + r"""\par}
 \medskip
 {""" + identification + r"""\par}
-\end{center}\bigskip]
-\raggedright
-\setlength{\parindent}{1em}
-""" + body_input + r"""\smallskip
-\begingroup\footnotesize\raggedright\setlength{\parindent}{0pt}\setlength{\parskip}{2pt}
+\end{center}\medskip]
+\fontsize{10.5}{13}\selectfont
+\setlength{\parindent}{1.2em}
+""" + body_alignment + body_input + r"""\par\medskip
+\noindent\rule{0.25\columnwidth}{0.3pt}\par\smallskip
+\begingroup\fontsize{8}{10}\selectfont\raggedright\setlength{\parindent}{0pt}\setlength{\parskip}{2pt}
 \textbf{Source.} \href{""" + tex_escape(document["source_url"]) + r"""}{Open the source witness}. """ + source_tex_escape(document.get("rights_notice", document["rights_basis"])) + " " + source_tex_escape(document.get("source_note", "Text reproduced from the identified source witness. Its wording and numbering are preserved.")) + " Revision: " + revision + r""".
 
 """ + apparatus_keep + r"""\smallskip
@@ -600,10 +621,10 @@ Triptych organization and typesetting: CC BY 4.0. Source text retains its own ri
 """ + terminal_end + r"""\end{document}
 """
     if document.get("compact_layout", False):
-        # A selected layout remedy keeps the body at 10pt and preserves all text.
+        # Selected remedies reduce margins/leading, retaining the same body type.
         margin = format(document.get("compact_margin", 0.65), "g")
-        source = source.replace("margin=0.7in,columnsep=0.26in", f"margin={margin}in,columnsep=0.24in", 1)
-        source = source.replace(r"\setlength{\parskip}{2pt}", r"\setlength{\parskip}{1pt}", 1)
+        source = source.replace("margin=0.75in,columnsep=0.3in", f"margin={margin}in,columnsep=0.24in", 1)
+        source = source.replace(r"\fontsize{10.5}{13}\selectfont", r"\fontsize{10.5}{12.5}\selectfont", 1)
     identity_body = render_body(document) + (f"\0terminal_keep_blocks={terminal}" if terminal else "")
     identifier = hashlib.sha256((source + "\0" + identity_body).encode("utf-8")).hexdigest()[:32]
     old_line = r"\special{pdf:trailerid [<" + trailer + "><" + trailer + ">]}"
@@ -640,7 +661,7 @@ def pdf_body_fidelity(pdf: Path, document: dict, pages: int) -> dict:
         raise PapalTypesetError("PDF extraction page extent disagrees with pdfinfo")
     body = []
     for number, section in enumerate(sections, 1):
-        clean, count = re.subn(r"(?:^|\n)" + str(number) + r"\s*$", "", section)
+        clean, count = re.subn(r"(?:^|\n)" + str(number) + r"\s*$", "\n", section)
         if count != 1:
             raise PapalTypesetError(f"generated page footer is absent on page {number}")
         body.append(clean)
@@ -649,12 +670,46 @@ def pdf_body_fidelity(pdf: Path, document: dict, pages: int) -> dict:
         return re.sub(r"\s+", "", unicodedata.normalize("NFKC", value).replace("\u00ad", ""))
 
     expected = normalize(document["text"])
-    normalized_pages = [normalize(page) for page in body]
+    # Keep a line-ending hyphen distinguishable until it has matched either
+    # an original source hyphen or an added break between two source letters.
+    discretionary = "\U000f0000"
+    if discretionary in document["text"] or discretionary in run.stdout:
+        raise PapalTypesetError("source/PDF contains the reserved line-break marker")
+    normalized_pages = [normalize(re.sub(r"(?<=\w)-(?=[ \t\r]*\n)", discretionary, page)) for page in body]
     actual = "".join(normalized_pages)
-    offset = actual.find(expected)
-    if offset < 0:
+    searchable, positions = [], []
+    for position, char in enumerate(actual):
+        if char not in {"-", discretionary}:
+            searchable.append(char)
+            positions.append(position)
+    searchable = "".join(searchable)
+    prefix = expected.replace("-", "")[:96]
+    candidate, offset, source_end, inserted_hyphens = 0, actual.find(expected), None, 0
+    if offset >= 0:
+        source_end = offset + len(expected)
+    else:
+        offset = None
+    leading_hyphens = len(expected) - len(expected.lstrip("-"))
+    while offset is None and prefix and (candidate := searchable.find(prefix, candidate)) >= 0:
+        at, extra = positions[candidate] - leading_hyphens, 0
+        if at < 0:
+            candidate += 1
+            continue
+        start = at
+        for index, char in enumerate(expected):
+            if (at < len(actual) and actual[at] == discretionary and char != "-"
+                    and index and expected[index - 1].isalpha() and char.isalpha()):
+                at += 1
+                extra += 1
+            if at >= len(actual) or ("-" if actual[at] == discretionary else actual[at]) != char:
+                break
+            at += 1
+        else:
+            offset, source_end, inserted_hyphens = start, at, extra
+            break
+        candidate += 1
+    if offset is None:
         raise PapalTypesetError("PDF body differs from the complete source text after whitespace/Unicode compatibility normalization")
-    source_end = offset + len(expected)
     extent, source_first_page, source_last_page = 0, None, None
     for number, page in enumerate(normalized_pages, 1):
         extent += len(page)
@@ -667,8 +722,9 @@ def pdf_body_fidelity(pdf: Path, document: dict, pages: int) -> dict:
         raise PapalTypesetError("typeset title creates a page before the complete source body")
     if source_last_page != pages:
         raise PapalTypesetError("terminal apparatus creates a page after the complete source body")
-    return {"status": "pass", "method": "pdf-raw-whitespace-soft-hyphen-nfkc-v2", "pages": pages,
+    return {"status": "pass", "method": "pdf-raw-source-aware-line-hyphen-nfkc-v3", "pages": pages,
             "source_characters": len(document["text"]), "source_normalized_characters": len(expected),
+            "layout_hyphens": inserted_hyphens,
             "source_first_page": source_first_page, "source_last_page": source_last_page}
 
 
@@ -809,8 +865,13 @@ def render_documents(manifest: dict, documents: list[dict], out: Path, compile_p
                     item.update(status="failed", error=str(error))
                     errors.append({"id": item["id"], "language": item["language"], "error": str(error)})
     receipt = {"schema": "triptych-papal-typeset-receipt/v1", "revision": manifest["revision"],
-               "generator": "typeset-papal", "generator_version": 1,
-               "options": {"columns": 2, "body_alignment": "ragged-right", "punctuation": "literal", "automatic_hyphenation": False, "soft_hyphen": "nonprinting", "form_feed": "layout-whitespace", "unicode_text_mapping": "xetex-native"},
+               "generator": "typeset-papal", "generator_version": 2,
+               "options": {"columns": 2, "body_font": "Latin Modern Roman", "body_size_pt": 10.5,
+                           "body_leading_pt": 13, "body_alignment": "justified-en-la; ragged-right-other-languages",
+                           "punctuation": "literal", "automatic_hyphenation": "babel-english-latin",
+                           "babel_shorthands": False,
+                           "layout_hyphen_fidelity": "source-aware-line-end-only", "soft_hyphen": "nonprinting",
+                           "form_feed": "layout-whitespace", "unicode_text_mapping": "xetex-native"},
                "index": "index.html", "receipt": "receipt.json",
                "input_manifest": "frozen-manifest.json", "input_manifest_sha256": hashlib.sha256(snapshot).hexdigest(),
                "documents": results, "errors": errors,

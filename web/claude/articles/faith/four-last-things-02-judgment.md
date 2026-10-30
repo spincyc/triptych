@@ -4,6 +4,10 @@
 
 [TOC]
 
+> *For we must all be manifested before the judgment seat of Christ, that every one may receive the proper things of the body, according as he hath done, whether it be good or evil.*
+>
+> 2 Corinthians 5:10
+
 [I. Death](four-last-things-01-death.html) · [II. Judgment](four-last-things-02-judgment.html) · [III. Hell](four-last-things-03-hell.html) · [IV. Heaven](four-last-things-04-heaven.html)
 
 ## The Son of Man in His Majesty {#sec:majesty}
@@ -48,7 +52,7 @@ Alphonsus Liguori, writing his considerations on the particular judgment, record
 
 The Church teaches that the Christian stands before Christ the Judge twice. The first time is at the moment of death, alone, when the soul leaves the body and its whole life is set at once in the light of Christ: this the Church calls the particular judgment. The second is at his coming in glory, when all the dead shall rise in their own bodies and the whole human race shall stand together before the seat of his majesty: this is the general or last judgment. Between them lies, for many of the saved, the purification the Church calls purgatory, and the living help the dead with prayer, alms, and above all the Sacrifice of the altar.
 
-The sentence passed at death is final, and the judgment at the end of the world is no less real. The Church holds both with the same firmness, and in the acts that define them she joins them with one word: *nihilominus*, “nonetheless.” Both judgments await every Christian, who must one day stand before the Son of Man and does not know the day or the hour.
+The sentence passed at death is final, and the judgment at the end of the world is no less real. The Church holds both with the same firmness, and in her teaching she joins them with one word: *nihilominus*, “nonetheless.” Both judgments await every Christian, who must one day stand before the Son of Man and does not know the day or the hour.
 
 ## At the Evening of Life {#sec:particular}
 
@@ -78,7 +82,7 @@ From this the masters of the spiritual life drew a practical conclusion: to be j
 
 ## Nonetheless, on the Day of Judgment {#sec:general}
 
-If the soul’s case is closed at death and its sentence carried out at once, the Christian may well ask what remains for the last day. The profession of faith received at Lyons and the constitution of Benedict XII, having defined the immediacy of the first judgment, both go on at once to confess the second.
+If the soul’s case is closed at death and its sentence carried out at once, the Christian may well ask what remains for the last day. The profession of faith received at Lyons and the constitution of Benedict XII, having taught the immediacy of the first judgment, both go on at once to confess the second.
 
 The profession of faith of the emperor Michael Palaeologus, received at the Second Council of Lyons in 1274, first teaches that the souls of the just, purified if they need it, are received into heaven *mox*, straightway, and that the souls of those who die in mortal sin go down *mox* into hell. Then it continues: *Eadem sacrosancta Ecclesia Romana firmiter credit et firmiter asseverat, quod nihilominus in die iudicii omnes homines ante tribunal Christi cum suis corporibus comparebunt, reddituri de propriis factis rationem*. The same holy Roman Church firmly believes and firmly asserts that *nonetheless* on the day of judgment all men will appear with their bodies before the tribunal of Christ, to render an account of their own deeds.[^19] Some sixty years later *Benedictus Deus*, having defined the immediate vision of the blessed and the immediate descent of the damned, uses the same word again: *et quod nihilominus in die iudicii omnes homines “ante tribunal Christi” cum suis corporibus comparebunt, reddituri de factis propriis rationem, “ut referat unusquisque propria corporis, prout gessit, sive bonum sive malum”*.[^20] The words it takes from Paul are those of the second letter to the Corinthians: “For we must all be manifested before the judgment seat of Christ, that every one may receive the proper things of the body, according as he hath done, whether it be good or evil” (2 Cor 5:10).
 
@@ -508,7 +512,7 @@ The texts named above are in the public domain in the United States. The *Catech
 
 - John of the Cross, *Dichos* 64, as quoted in the *Catechism*, 1022.
 
-**Last revised (UTC):** 2026-10-26T23:08:05Z
+**Last revised (UTC):** 2026-10-27T16:55:31Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

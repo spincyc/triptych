@@ -79,6 +79,8 @@ FILESYSTEM_PATH = re.compile(
     r"|(?<!\w)[A-Za-z]:[\\/]"
     r"|(?<![\w./\\])\\{2,}[^\s\\/]+"
     r"|\bfile://", re.I)
+# A packet header line whose value is JSON: REVIEW_INPUTS, PRIOR_FINDINGS, ...
+PACKET_JSON_LINE = re.compile(r"([A-Z][A-Z0-9_]*): ([\[{].*)")
 
 # The archive's layout, which the committed archives already have. A reader
 # who has opened one leaf's archive can open every other, and the reproduction
@@ -351,6 +353,29 @@ def json_strings(value):
             yield from json_strings(item)
 
 
+def packet_strings(text: str):
+    """A packet's lines, with each JSON header value decoded to its strings.
+
+    JSON escaping doubles a backslash, so a TeX control sequence that a
+    finding quotes (`\\,` or `\\Needspace`) reads, in the raw line, as the
+    leading separator of a UNC path. The values are audited as the strings
+    they encode, as a `.json` file's are; a line that does not decode is
+    audited raw.
+    """
+    for line in text.split("\n"):
+        match = PACKET_JSON_LINE.fullmatch(line)
+        if match is None:
+            yield line
+            continue
+        try:
+            value = json.loads(match.group(2))
+        except ValueError:
+            yield line
+            continue
+        yield match.group(1)
+        yield from json_strings(value)
+
+
 def public_files(files: dict[str, bytes], root: Path) -> None:
     """Refuse local absolute paths while preserving source URLs and templates.
 
@@ -362,7 +387,7 @@ def public_files(files: dict[str, bytes], root: Path) -> None:
             strings = json_strings(json_value(data, name))
         else:
             try:
-                strings = (data.decode("utf-8"),)
+                strings = packet_strings(data.decode("utf-8"))
             except UnicodeError as error:
                 raise ArchiveError(f"cannot privacy-audit {name}: invalid UTF-8") from error
         if any(root.resolve().as_posix() in value

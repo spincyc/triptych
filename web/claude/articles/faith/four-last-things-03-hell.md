@@ -4,6 +4,10 @@
 
 [TOC]
 
+> *Where their worm dieth not, and the fire is not extinguished.*
+>
+> Mark 9:47
+
 [I. Death](four-last-things-01-death.html) · [II. Judgment](four-last-things-02-judgment.html) · [III. Hell](four-last-things-03-hell.html) · [IV. Heaven](four-last-things-04-heaven.html)
 
 ## Depart from Me
@@ -495,7 +499,7 @@ The doctrinal history of the eternity of punishment, the debates of the schools,
 
 - Alphonsus Liguori, *Preparation for Death; or, Considerations on the Eternal Maxims* (Dublin: James Duffy, 1843). Public domain.
 
-**Last revised (UTC):** 2026-10-26T18:16:42Z
+**Last revised (UTC):** 2026-10-27T16:55:31Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

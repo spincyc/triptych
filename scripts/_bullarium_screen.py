@@ -394,7 +394,8 @@ def _native_pages(root, out, pins, locations, line_map, line_pin, leaves, frozen
                     raise ScreenError("native cache XML WORD byte mapping mismatch") from error
                 _require(node.tag == "WORD" and not list(node) and (node.text or "") == word["value"]
                          and node.get("coords") == word["coords"], "native cache XML WORD value/coords mismatch")
-                x0, y0, x1, y1 = map(int, word["coords"].split(","))
+                # Some DjVu deliveries append a fifth (baseline) value; the box is the first four.
+                x0, y0, x1, y1 = map(int, word["coords"].split(",")[:4])
                 _require(word["source_bbox"] == [min(x0, x1), min(y0, y1), max(x0, x1), max(y0, y1)],
                          "native cache normalized bbox mismatch")
     _write(index_path, _bytes(index))

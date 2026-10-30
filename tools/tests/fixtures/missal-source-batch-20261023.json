@@ -1,7 +1,7 @@
 {
   "acceptance": {
-    "receipt_path": "workflows/reviews/missal-english-completion-2026-10-29/source-batch-test-code-successor-v3.json",
-    "receipt_sha256": "10ee0a41cd88dd3b59119529a678858d8e7602301a9da812e5facd80416d9bf9",
+    "receipt_path": "workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/source-batch-main-nativity-acceptance.json",
+    "receipt_sha256": "e572987bd7e3d5089fc634c8975551e388f66ecfcf58f4da8d0e86ac9b861e85",
     "status": "accepted"
   },
   "baseline_revision": "2e030b564f4413b735ddbea3061082ebe981b11a",
@@ -6939,7 +6939,7 @@
       "hunks": []
     },
     "src/sources/inventories/postconciliar-proper-translations-v1.toml": {
-      "after_sha256": "32632b026ac4f06ceeff9a7cec18586e619659b2b44ecc52247a58ca67a2ea5d",
+      "after_sha256": "57123fdfb8472718679284f93698912c296e85fa7e78245554956f3890bc3e6d",
       "before_sha256": "9bf6fe5ecc3b397888a0316f7b5c06e40f65e9dfc1eb96c3bc78d111e7c41597",
       "hunks": [
         {
@@ -7019,7 +7019,7 @@
             6694,
             7719
           ],
-          "after_slice_sha256": "7dba485db304d53dbbee7cd37cb0a1a0bf256ae1e5d4cdab3645f891eb3702cf",
+          "after_slice_sha256": "b717f355d071b250e09d6ae63abb6d284c2362c079a88ea249ed2e5f1d7520e2",
           "before_utf8": ""
         },
         {
@@ -30529,7 +30529,7 @@
     "[\"nativity\",\"dawn\",\"Prayer over the Offerings\",\"all\",1]": "fe5cae46228f0ee93a2c640fbebe6ca34809d0e997f73cccebc88e55c460e5e4",
     "[\"nativity\",\"day\",\"Collect\",\"all\",1]": "cc00b202f28cfcfbe8f363f9c129939fd0cbee3fc43688e72a1cb3c3a4a3f897",
     "[\"nativity\",\"day\",\"Communion Antiphon\",\"all\",1]": "49a87217f6c584fe99b7947e6f4c5be38525517bb3d1ce509f47b80fd08fdcbf",
-    "[\"nativity\",\"day\",\"Entrance Antiphon\",\"all\",1]": "3b692c6384e7e4484ac0416fb41609476c02fa070c683ab9c4ded1047324c819",
+    "[\"nativity\",\"day\",\"Entrance Antiphon\",\"all\",1]": "422509d9181b119590f62d345caf1fa829c2849a9844866c77cd5eea5ff6f0e5",
     "[\"nativity\",\"day\",\"Gospel Acclamation\",\"all\",1]": "617265300811e54649d945a6aa6f939eef97e58a8dfafb7d1a1c4abb81971ad0",
     "[\"nativity\",\"day\",\"Prayer after Communion\",\"all\",1]": "615f5611cd1fa31339be2efcb201d54a998144f3866c74751eb5988768354165",
     "[\"nativity\",\"day\",\"Prayer over the Offerings\",\"all\",1]": "31310d315c92fc713621eac471a1d718146454fe401dc2218e76b3b3a94501fd",
@@ -34972,6 +34972,6 @@
   ],
   "schema": "triptych-test-source-batch/v1",
   "source_input_manifest_path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
-  "source_input_manifest_sha256": "bfd171773b03ac0930666aad30af43552bd6e90832797bac10c642469c9e6e86",
+  "source_input_manifest_sha256": "e9cd39f351b23206c7d812c854cbfaaa593b45c3a795c8b53164bb66917da9bd",
   "state": "Accepted bounded English-source cohort; full English, exact target correspondence, human review and product completion remain separate."
 }

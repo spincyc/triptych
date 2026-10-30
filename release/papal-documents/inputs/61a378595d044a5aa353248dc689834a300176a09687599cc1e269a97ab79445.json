@@ -1,0 +1,45 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "464bd9e32165a813d6aef9a1c5b862977d11548691fe70c1583b0b036e7e0178",
+  "documents": [
+    {
+      "id": "acta.aas.006.archive.aas.006.054",
+      "language": "fr",
+      "pdf_sha256": "de3e67cba010140f01386f1bb16c84faf354cb8d8856b73dc39e7787458146db",
+      "pages": 8,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "description": "The 14 historical citation-note groups are now separate source paragraph blocks. Every French page was also viewed full-size: each note begins on its own line, including citation groups interrupting a continued body sentence at a historical source-page boundary. No note text is fused into a body line. Literal OCR reference marks, hard-line hyphens, scattered letterspacing in the opening protocol and the awkward final date spelling remain visible. Page 8 preserves the continuing papal text, dated closing, final Isaiah citation and BENEDICTUS PP. XV subscription before the ruled project apparatus. That apparatus continues into the right column of the same physical page; its reduced type, rule and Source label distinguish it clearly."
+        }
+      ],
+      "limitations": "Visual layout, source-note separation and the explicitly bounded transformation invariants only. No original-print image collation, whole-book collation, independent translation-equivalence judgment, textual-completeness finding, or independent rights determination was performed. All pages were inspected on bounded contact sheets; full-resolution views are limited to the pages explicitly listed. No page-review reuse.",
+      "receipt_sha256": "464bd9e32165a813d6aef9a1c5b862977d11548691fe70c1583b0b036e7e0178",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-18.md",
+      "report_sha256": "62f0587c1d7fe7f2cfea422186c07ff179b6b4dd5ab1327df1ba36822a0d0168"
+    }
+  ]
+}

@@ -12,6 +12,22 @@ editions, artifact hashes, rights, and evidence states. Generated two-column
 readers use the retained source artifacts; the project does not author a new
 translation to fill a language gap.
 
+The [encyclicals browser](../src/web/browser/encyclicals/index.html) distinguishes
+historical source PDFs held here from existing English translations on external
+sites. **Complete English** selects acts with at least one explicitly complete
+English text in either location. **English PDF, any extent** selects local human
+translations; **English online, any extent** selects external links; **English
+gaps** retains acts for which no complete English text is recorded. A fragment,
+damaged text or unreviewed extent does not fill a complete-English gap. Counts
+for local and external availability can overlap for the same act.
+
+`src/sources/papal-documents/encyclicals-index.json` owns those links under its
+v2 `english_routes` field. Each route records its URL, source label, English
+language, extent, official or third-party status, check date, discovery source
+and verification note. A checked external route does not establish a right to
+retain its wording or generate a local PDF. Local `readers` still require exact
+membership in the reviewed source release, independently of external links.
+
 ## Find a document
 
 Run these commands from the repository root:
@@ -169,8 +185,10 @@ Latin/English parallel translation. The tool also emits a `.body.tex` fragment b
 the standalone `.tex`. Its output receipt gives the exact filenames, source
 hash, and compiled PDF identity.
 
-Rendering requires Python 3.11 or later and XeLaTeX, with TeX Gyre Pagella,
-Junicode and FreeSerif available to the font loader. PDF checks use Poppler's `pdfinfo`,
+Rendering requires Python 3.11 or later and XeLaTeX, with Latin Modern Roman,
+Junicode and FreeSerif available to the font loader. English and Latin readers
+use Babel's language-specific hyphenation; Latin requires TeX Live's
+`hyphen-latin` patterns and `babel-latin` support. PDF checks use Poppler's `pdfinfo`,
 `pdffonts` and `pdftotext`. The generated TeX retains its font declarations;
 keep the standalone file and any support files beside its body fragment.
 
@@ -375,17 +393,29 @@ tools/bullarium geometry --recipe .scratch/reading-order/v04/recipe.json --input
 tools/bullarium geometry map-units --recipe .scratch/reading-order/v04/recipe.json --replay .scratch/reading-order/v04/replay --out .scratch/reading-order/v04/unit-mapping.json
 ```
 
-`propose` writes an explicit v2 recipe and `running-heads.tsv`, which lists
-every page's running-head row for a quick scan. The recipe records each page
+`propose` writes an explicit v2 recipe, `running-heads.tsv`, which lists
+every page's running-head row for a quick scan, and `note-suspects.tsv`. That
+second file lists small-type rows below a rule's space at a column foot that
+open on a short token but were not split as notes. The recipe records each page
 as reordered, held (with its reason) or empty, and each reordered page's rows
-of native WORD ordinals. It also records page measurements and any
-inseparable mixed WORDs. Its thresholds are fractions of the measured column
+of native WORD ordinals. Rows carry a role: running head, body column,
+marginal summary (a TAB-led block at the section it annotates), page-foot note
+(a separate block at the page break), gutter OCR or footer. A note starts at
+a reference mark in small type, or at a mark or small type corroborated by
+editorial wording ("(R. T.)", "Ex Regest.", "Cherub.", "Mainardus" and similar).
+OCR-garbled marks such as `i`, `t`, `{`, `I)` or `1.` count only with that
+support. It also records page measurements and any inseparable mixed
+WORDs. Its thresholds are fractions of the measured column
 width and line pitch. The replay expands the rows into the explicit v1 recipe
 and proves that every WORD appears exactly once, unchanged. `map-units` places
 every catalog unit in the derivative through WORD identity and assigns one
 category: `clean`, `review:margin-ownership-at-boundary`,
-`hold:inseparable-WORD`, `hold:body-not-contiguous` or another hold. Only
-`clean` units can be registered. Name them explicitly in a selection file,
+`hold:inseparable-WORD`, `hold:body-not-contiguous`,
+`review:possible-unsplit-note` (the unit contains a listed note suspect) or
+another hold. Only
+`clean` units can be registered. A unit's own page-foot notes printed after
+the next unit begins form an extra range of its selection. Name the units
+explicitly in a selection file,
 `{"schema": "triptych-bullarium-reading-order-selection/v1", "units": [...]}`:
 
 ```sh
@@ -397,8 +427,17 @@ the gzip recipe, the page map and the replay receipt. It declares them in the
 volume container and then admits each selected unit through `bullarium admit`
 as `<unit>.reading-order`, a new reading selection of the same work, into
 `bullarium-geometry-manifest.json`. Every write is append-only. Raw artifacts,
-prior segments and the withdrawal inventory are not touched. Admission is not
-installation: a volume must first pass its native-image evidence gate, and
+prior segments and the withdrawal inventory are not touched.
+
+To replace defective reading selections, register a corrected derivative with
+`--supersede --reason "..."`. Each unit's newest reading selection is
+superseded by `<unit>.reading-order-vN`, a new edition and segment of the same
+work on the new derivative. Its document row and the supersession row go to
+`bullarium-reading-order-corrections-manifest.json`, which the source plan
+reads as a correction manifest. Earlier derivatives, selections and documents
+are kept unchanged.
+
+Admission is not installation: a volume must first pass its native-image evidence gate, and
 every page of every repaired PDF is reviewed before install.
 
 ## Coverage

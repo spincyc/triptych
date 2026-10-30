@@ -94,13 +94,21 @@ revision:
 | — | derive-synthesis 0 | The first dispatch ended with a rejected model request before writing anything; a fresh worker took the same packet. |
 | — | install-publication 0 | The brief reserved git to the driver, so the installer left the installed web Markdown unstaged. The driver checked its bytes against the reviewed conversion (`2fd1fa16…`) and staged it before running `publication-gates`. |
 
-**Model provenance.** Every agent stage ran as `Opus 5.5`, the model the
-host labels, at the packet-declared effort: `high` for the author, derive,
-build, web and install stages, `xhigh` for the twelve reviews. The exact
-API model identifier, reasoning budget, sampling configuration and server
-revision are unexposed by the host (Factory Droid CLI 0.249.0); the leaf's
-`generation-metadata.tex` declares this form for each authoring stage. No
-other agent contributed.
+**Model provenance: correction of 27 October 2026.** This paragraph first
+said that every agent stage ran as `Opus 5.5`, the reviews at `xhigh`, and
+that no other agent contributed. That was wrong. The host switched part of the
+driver's session, which wrote this record, and some workers from the Claude
+model to kimi-k3; the switch was announced inside those sessions but was not
+acted on. The substituted model ran all of source-registration 0, the
+first dispatch of research-review 0, part of research 0 and of
+source-registration 3, and every dispatch from research-review 3 onward.
+The Claude workers ran as `claude-opus-5-5` at reasoning effort `high`, the
+reviews included. On the maintainer's decision of that day the run is
+superseded. The study goes back to its text after author-study 1, and a new
+run rebuilds the research and makes every later revision; its
+[handoff](../claude-1962-f02-revision-2026-10-27/HANDOFF.md) says what
+carries over. This record and the archived run stay as the account of this
+run and are not evidence.
 
 The host carries Python Markdown 3.11, and `requirements-public-alpha.txt`
 pins 3.10.3. Every web, probe, install and gate command therefore ran under
