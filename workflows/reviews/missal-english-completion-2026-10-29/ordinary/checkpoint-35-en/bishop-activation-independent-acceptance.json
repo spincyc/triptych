@@ -1,0 +1,285 @@
+{
+  "state": "accepted-source-and-browser-consumer",
+  "shadow_inventory_sha256": "b74537312fd12a7f423978a0d391cf7dcf821cd07313e3cf9b9e4de78150f609",
+  "inventory_preimage_sha256": "d2972c77f396e3370082de5da87164ad04c4327b3ca606818e2b07d68ea60e99",
+  "activation_candidate_sha256": "084e7dbbae2b4b2dfced4ef550945ce0858d84d7f6a8099549471e6a60322bb3",
+  "original_accepted_source_candidate_sha256": "167adbfd5fc8b1d3c3ce58cad858ae5c0ee124c19e5707850f1ee20ff9c48d74",
+  "prior_source_and_shape_reviews": [
+    "REVIEW.json",
+    "CONSUMER-SHAPE-ACCEPTANCE.json"
+  ],
+  "findings": [],
+  "finite_kind_corrections": [
+    {
+      "target": "ritus-initiales/greeting-bishop",
+      "initial_candidate_kind": "form",
+      "accepted_kind": "dialogue",
+      "reason": "This is the episcopal greeting within the common greeting dialogue, not a sacramental-effect form."
+    },
+    {
+      "target": "ritus-communionis/offerte-vobis-pacem",
+      "preimage_kind": "form",
+      "accepted_kind": "dialogue",
+      "reason": "The peace invitation is a dialogue utterance, not a sacramental-effect form. Every other source/actor/turn/reading-note field is conserved."
+    }
+  ],
+  "source_disposition": "Accept the unchanged independently verified John20:19 direct-speech fragment and unchanged fresh study English under the explicitly named bishop-only nondefault variant. No whole2008 or approved-English identity is asserted.",
+  "actor_context": "Root explicitly authorizes the already existing named-variant selection as the user-provided contextual fact. It supplies no clock, calendar, rank or automatic bishop inference and adds no new public role picker/query contract.",
+  "source_metadata_review": {
+    "record": {
+      "path": "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-greeting-bishop-la/artifact.toml",
+      "preimage_sha256": "143ba187a3914f39e3c07d96f9b8344433bbd56b0aa773aafb66122e4cd31331",
+      "postimage_sha256": "86a01146337c98748469fbe60deeb212cc448123b485b3875dc70359671faa9f"
+    },
+    "delta": "notes only; all IDs, derivation, rights, source transformations, payload hashes and body bytes remain exact. The obsolete unrepresentable-role hold is replaced by an explicit-selection-only qualification."
+  },
+  "source_proof": "The prior independent source/English review and fresh target2002n2 image inspection remain controlling; no new source word, source acquisition or translation is introduced.",
+  "mechanical_checks": {
+    "state": "pass",
+    "source_candidate_sha256": "167adbfd5fc8b1d3c3ce58cad858ae5c0ee124c19e5707850f1ee20ff9c48d74",
+    "activation_candidate_sha256": "084e7dbbae2b4b2dfced4ef550945ce0858d84d7f6a8099549471e6a60322bb3",
+    "preimage_sha256": "d2972c77f396e3370082de5da87164ad04c4327b3ca606818e2b07d68ea60e99",
+    "shadow_sha256": "b74537312fd12a7f423978a0d391cf7dcf821cd07313e3cf9b9e4de78150f609",
+    "new_element": "ritus-initiales/greeting-bishop",
+    "greeting_kind": "dialogue",
+    "new_actor": "bishop",
+    "activation": "Explicit existing-group named nondefault variant; no new query, clock or rank inference.",
+    "old_three_options_and_defaults_exact": true,
+    "common_response_element_exact": true,
+    "old_31_held_elements_exact_except_Offerte_kind_repair": true,
+    "old_69_original_keys_retained": true,
+    "Offerte_kind_repair": {
+      "old": "form",
+      "new": "dialogue",
+      "all_other_fields_exact": true
+    },
+    "source_bodies_changed": 0,
+    "source_metadata_record_changes": {
+      "count": 1,
+      "field": "notes",
+      "preimage_sha256": "143ba187a3914f39e3c07d96f9b8344433bbd56b0aa773aafb66122e4cd31331",
+      "postimage_sha256": "86a01146337c98748469fbe60deeb212cc448123b485b3875dc70359671faa9f"
+    },
+    "all_other20_source_postimages_exact": true,
+    "slots_appointments_restricted_witnesses_and_old_groups_exact": true,
+    "consumer_cases": 20
+  },
+  "production_consumer_probe": {
+    "state": "pass",
+    "scope": "Production adapters and nativeDOMrenderer; realservedproperrows with syntheticcalendarbranchfacts, no calendarclaim orChromiumlayoutclaim.",
+    "staged_projected_sha256": "4928ecba295324dcd26f6c2c82729c8620432263b5cb4a70a27d2a79e77cab45",
+    "baseline_projected_sha256": "fe57cf4a9cfcd1366a063d344641fab389847e98bdcc6b8b8fd318a7c262c036",
+    "propers_sha256": "fce904a8627e0acb3983e64f532cacc297523aaecb7234fb777b425143b72075",
+    "code_hashes": {
+      "src/web/browser/liturgy/reader-state-adapters.js": "48450211a3dae3e720d29563648e830da78ad50e74d84675f2534e6be9059ff7",
+      "src/web/browser/liturgy/reader-state.js": "bc0f8e646bfa506289fe27ab88618cf6940eda88fa715be1d71a8fa4b48895e3",
+      "src/web/browser/liturgy/ordinary-seating.js": "dc98ea446ec029edb85f2f5bf9104a8b2230cf0ad501581614e2bdba30a84ad9",
+      "src/web/browser/liturgy/day.js": "dc45b3f062cd05109f424a7ebeb56375f649063746c417855960aeaad6b5db18",
+      "src/web/browser/shared/browser-core.js": "d02f2693c32f9c228c51e8a330a01e5822cfd6735e6de85683088785bad73cd8",
+      "scripts/lectern/dom.js": "94dd50f260f01692edc06ce9fb9479c6f756016093da5bc41bd368413a0dbb89"
+    },
+    "cases": [
+      {
+        "lang": "en",
+        "option": "default",
+        "display": "selected",
+        "selected": "greeting-trinitarian",
+        "bishop_cue": null,
+        "common_response_once": true
+      },
+      {
+        "lang": "en",
+        "option": "default",
+        "display": "latin-and-selected",
+        "selected": "greeting-trinitarian",
+        "bishop_cue": null,
+        "common_response_once": true
+      },
+      {
+        "lang": "en",
+        "option": "greeting-trinitarian",
+        "display": "selected",
+        "selected": "greeting-trinitarian",
+        "bishop_cue": null,
+        "common_response_once": true
+      },
+      {
+        "lang": "en",
+        "option": "greeting-trinitarian",
+        "display": "latin-and-selected",
+        "selected": "greeting-trinitarian",
+        "bishop_cue": null,
+        "common_response_once": true
+      },
+      {
+        "lang": "en",
+        "option": "greeting-grace-peace",
+        "display": "selected",
+        "selected": "greeting-grace-peace",
+        "bishop_cue": null,
+        "common_response_once": true
+      },
+      {
+        "lang": "en",
+        "option": "greeting-grace-peace",
+        "display": "latin-and-selected",
+        "selected": "greeting-grace-peace",
+        "bishop_cue": null,
+        "common_response_once": true
+      },
+      {
+        "lang": "en",
+        "option": "greeting-lord",
+        "display": "selected",
+        "selected": "greeting-lord",
+        "bishop_cue": null,
+        "common_response_once": true
+      },
+      {
+        "lang": "en",
+        "option": "greeting-lord",
+        "display": "latin-and-selected",
+        "selected": "greeting-lord",
+        "bishop_cue": null,
+        "common_response_once": true
+      },
+      {
+        "lang": "en",
+        "option": "greeting-bishop",
+        "display": "selected",
+        "selected": "greeting-bishop",
+        "bishop_cue": "B / Bishop",
+        "common_response_once": true
+      },
+      {
+        "lang": "en",
+        "option": "greeting-bishop",
+        "display": "latin-and-selected",
+        "selected": "greeting-bishop",
+        "bishop_cue": "B / Bishop",
+        "common_response_once": true
+      },
+      {
+        "lang": "la",
+        "option": "default",
+        "display": "selected",
+        "selected": "greeting-trinitarian",
+        "bishop_cue": null,
+        "common_response_once": true
+      },
+      {
+        "lang": "la",
+        "option": "default",
+        "display": "latin-and-selected",
+        "selected": "greeting-trinitarian",
+        "bishop_cue": null,
+        "common_response_once": true
+      },
+      {
+        "lang": "la",
+        "option": "greeting-trinitarian",
+        "display": "selected",
+        "selected": "greeting-trinitarian",
+        "bishop_cue": null,
+        "common_response_once": true
+      },
+      {
+        "lang": "la",
+        "option": "greeting-trinitarian",
+        "display": "latin-and-selected",
+        "selected": "greeting-trinitarian",
+        "bishop_cue": null,
+        "common_response_once": true
+      },
+      {
+        "lang": "la",
+        "option": "greeting-grace-peace",
+        "display": "selected",
+        "selected": "greeting-grace-peace",
+        "bishop_cue": null,
+        "common_response_once": true
+      },
+      {
+        "lang": "la",
+        "option": "greeting-grace-peace",
+        "display": "latin-and-selected",
+        "selected": "greeting-grace-peace",
+        "bishop_cue": null,
+        "common_response_once": true
+      },
+      {
+        "lang": "la",
+        "option": "greeting-lord",
+        "display": "selected",
+        "selected": "greeting-lord",
+        "bishop_cue": null,
+        "common_response_once": true
+      },
+      {
+        "lang": "la",
+        "option": "greeting-lord",
+        "display": "latin-and-selected",
+        "selected": "greeting-lord",
+        "bishop_cue": null,
+        "common_response_once": true
+      },
+      {
+        "lang": "la",
+        "option": "greeting-bishop",
+        "display": "selected",
+        "selected": "greeting-bishop",
+        "bishop_cue": "B / Bishop",
+        "common_response_once": true
+      },
+      {
+        "lang": "la",
+        "option": "greeting-bishop",
+        "display": "latin-and-selected",
+        "selected": "greeting-bishop",
+        "bishop_cue": "B / Bishop",
+        "common_response_once": true
+      }
+    ],
+    "clock_and_rank_do_not_select_bishop": true,
+    "explicit_only_bishop_activation": true,
+    "unknownoption_rejected": true,
+    "baseline_bishop_option_rejected": true,
+    "old3defaults_and_selected_events_exact": true
+  },
+  "probe_cases": 20,
+  "accepted_behavior": [
+    "Default and all three old explicit options emit no bishop body and retain exact prior selected events.",
+    "Explicit Bishoponlyoption emits exactly one episcopal greeting followed by the existing common response once.",
+    "Both languages and selected/paired presentation preserve John20:19/Bishop-only qualifications; English remains visibly nonapproved/nonrecitation.",
+    "Actual production renderer gives B with accessibleBishop, source speakerbishop, and no invented versicle/response glyph.",
+    "Synthetic date/rank variations cannot activate the bishop option; explicit selection works independently of them.",
+    "Unknownoption rejects; previous baseline rejects bishopoption before activation.",
+    "All31previousheldsourcebody/provenance/turnobjects remain exact except the separately identified Offertekind correction; all69oldIDs retained.",
+    "Slots, appointments, restricted-witness metadata, old groups and old three greeting defaults remain exact."
+  ],
+  "artifacts": [
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/bishop-mechanical-checks.json",
+      "sha256": "f384e86b01afab3e3cac69b7ed0a11581e7aa57c71b1054a8ddbbb8a1663aa09"
+    },
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/bishop-consumer-probe.cjs",
+      "sha256": "9fa37487e2bb0cf18985ed04d5cc61d32f950f16d4cdeb422a7cec2b31f0576b"
+    },
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/bishop-consumer-probe.json",
+      "sha256": "d34ee81e7c9380b2f95993425a4aec3308f2f671b93ad4afdde29caa84f7207b"
+    },
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames/bishop-activation/candidate.json",
+      "sha256": "084e7dbbae2b4b2dfced4ef550945ce0858d84d7f6a8099549471e6a60322bb3"
+    }
+  ],
+  "limits": [
+    "No Chromium visual/layout acceptance is claimed; this is production-code adapter plus repository nativeDOM functional evidence.",
+    "RealservedProperrows use explicitly synthetic calendarbranch facts for functional selection only; no actual date/observance judgment is made.",
+    "CLIactorlabel gate remains with the assigned CLIowner; this receipt does not certify that pending consumer gate.",
+    "Canonical source installation, fullsource/publication/release binding adoption, finalgeneration/currentness and integratedtests remain coordinator work."
+  ],
+  "tracked_writes": []
+}

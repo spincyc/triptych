@@ -1,0 +1,33 @@
+{
+  "record_type": "source-overlay-proposal-validation",
+  "recorded_on": "2026-10-29",
+  "manifest_sha256": "2fcfc88466d57089511b40aa8c7443dd44547cbe38c318ae87f86f832b7f8797",
+  "canonical_source_records": 20,
+  "source_library_exit_code": 0,
+  "source_library_stdout": "source-library valid: artifact=7 corpus=0 edition=5 passage=8 segment=1 work=4 bindings=0",
+  "source_library_stderr": "",
+  "validation_method": "Actual source-library --root isolated fixture validate; exact unchanged canonical dependencies copied alongside proposed records. Whole retained artifact bytes, passage text/line bounds, segment page containment, ID ownership, rights fields and dependency graph checked by the existing validator. The mass-propers translation payload validator also accepted both project-created rows. No new source_latin_* target-body binding is required by this proposal because target Latin is absent; the existing historical/ancient witness route is preserved. Root owns shared inventory joins and any later target-Latin publication/adoption.",
+  "file_hashes_and_sizes": "Every file in manifest rechecked exact; TOML/JSON overlay postimages compare equal; both historical Latin and original English fields remain identical to the accepted candidate packet.",
+  "source_fingerprints": {
+    "artifact.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-commemoratio-et-suffragia-sanctorum.mexico-1815.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-friday-communion-historical-la-f5195f15": "sha256:1538cd932ded17df1d7668a9f7c8a30e7567a05b93eef443ed8637048ad0a41e",
+    "artifact.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-officia-novissima.mexico-1815.english-completion-20261029-postconciliar-phase2-late-easter-wikimedia-1815-full-pdf-78b296aa": "sha256:bef11967f43b7dc6659d08129a7ef16cbf6adf0dc15a5f15aec863ae84b672c9",
+    "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-wednesday-communion-historical-la-54b9b8b5": "sha256:0d87d3d9b44899bac6d71553aeb3fcafe8b32aa4418c7754d187c400eda400d8",
+    "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-late-easter-pustet-ap373-image-94c7e041": "sha256:ac19e1cb82cd9ac68eff696379801aacb642fc08d42ee0d106cd5d16dc89b502",
+    "artifact.triptych.english-completion-20261029-postconciliar-phase2-late-easter-study-english.2026-10-29.english-completion-20261029-postconciliar-phase2-late-easter-study-en-9695a7ce": "sha256:680cccf01931cff0863ecae035f028b2a82d2e2560875316916c49b0d048fbc1",
+    "edition.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-commemoratio-et-suffragia-sanctorum.mexico-1815": "sha256:06a93a706dcda02aeb1e2641e39bda9ff6e052f989be17e7bcea7beb364648bb",
+    "edition.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-officia-novissima.mexico-1815": "sha256:0a5c70c346a1812699ce2a9adee97ff62ac26280475439921648d75cdffa7bf4",
+    "edition.triptych.english-completion-20261029-postconciliar-phase2-late-easter-study-english.2026-10-29": "sha256:559181ca1480af12cd0c8fbea741a1c19ffbfe4c0d75c67bfc5bec9b80649aaa",
+    "passage.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-commemoratio-et-suffragia-sanctorum.mexico-1815.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-friday-communion-historical-page": "sha256:1b2063997cf3d382456f032c7becfbafa6f934ad447bff9925cc7f1243c45e4b",
+    "passage.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-commemoratio-et-suffragia-sanctorum.mexico-1815.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-friday-communion-historical-text": "sha256:8a20b557fd461552b100878aeeb95b4d6aade8b6e741e71adefbdeea3ad6896c",
+    "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-wednesday-communion-historical-page": "sha256:8dc7f2ff45e2c063ba39317642637d4830a11fafe475019a13c5345b703a518d",
+    "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-wednesday-communion-historical-text": "sha256:e4d9263130a91905778801e3354d136a0774a6593df288373c3890f16183a586",
+    "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-friday-communion-secondary2002-comparison": "sha256:960a239026e6691db0a5d8f49de69b65481921fe41f5c1d776fd1ba2a0f4cd2b",
+    "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-wednesday-communion-secondary2002-comparison": "sha256:7364856b014c3bb1090eca43500132dca56fb535f487f2cd041cca6c22b211d6",
+    "passage.triptych.english-completion-20261029-postconciliar-phase2-late-easter-study-english.2026-10-29.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-friday-communion-study-english": "sha256:37b133613f0a4763911b1357082230ab9838cb89a746fb1bede25f6f0f6126f0",
+    "passage.triptych.english-completion-20261029-postconciliar-phase2-late-easter-study-english.2026-10-29.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-wednesday-communion-study-english": "sha256:a7f893eb647cc0772ada9de73c01fcb51c7ea69e7f98cab2a2376fb581dc3919",
+    "segment.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-commemoratio-et-suffragia-sanctorum.mexico-1815.english-completion-20261029-postconciliar-phase2-late-easter-1815-constituent-ap103-128": "sha256:81f650364c0c66c3423e2fe654e1146f5a0cbe856ad83ac3119bef98d9b43dc1",
+    "work.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-commemoratio-et-suffragia-sanctorum": "sha256:c2aafbfab7955b0d2a6d74ab87ff484991d479204ab7f8a8a42eb0fa956d95fb",
+    "work.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-officia-novissima": "sha256:27e68a962d6b2665ba7fdf68714765344e235bd48b2ccfd43c57e0306d595622",
+    "work.triptych.english-completion-20261029-postconciliar-phase2-late-easter-study-english": "sha256:1e36407edbc625295a29fb022f80084e78066a7a152ce73b8fc79ddb48e32871"
+  }
+}

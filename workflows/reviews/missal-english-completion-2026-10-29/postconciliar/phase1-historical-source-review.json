@@ -1,0 +1,161 @@
+{
+  "schema": "triptych-scratch-postconciliar-cold-source-review/v1",
+  "reviewed_on": "2026-10-29",
+  "scope": "Thirteen finite historical-English candidates; source identity and bounded modern-comparison review only; no new2008 or approvedEnglish claim.",
+  "packet_sha256": {
+    ".scratch/postconciliar-english-completion-20261029/historical-donors/packet.json": "d46182dda4d4a8035a88af3123fc63a9b7c3bc871c84d34047569430c79cb43c",
+    ".scratch/postconciliar-english-completion-20261029/historical-donors/proposed-entry-blocks.toml": "20cd39583ffbb8ceb701921b3b31cb6f43607e1e6523b64f9b842fddee077894",
+    ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/palm-two-candidates.json": "cc6d22ec1de7668cbddd369093b852cdf6da5f6d6b66d2258b3c2026685fd045",
+    ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/three-new-source-candidates.json": "735610d3b815b71531b63b709feea77e045641328be5a4391af867a5ae84f4f3",
+    ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/nativity-five-candidates.json": "3aaa8b6fc9ccc3446efcdbfa6326f1670b15563287ca5021583056f1a19feec3"
+  },
+  "source_sha256": {
+    ".scratch/resume-postconciliar-orations/latin-missal2002.pdf": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+    ".scratch/resume-postconciliar-orations/missale-romanum-1970.pdf": "7680979121176c0e78b383ee9601afb43addc2543f2957c56cdb1634a106b5ba",
+    ".scratch/resume-postconciliar-orations/cummiskey-1861.pdf": "85034c90d5cbfe891f4359fb2faff907d217dbd11a30458b55e4c48eae028898",
+    ".scratch/resume-postconciliar-orations/pustet-1862.pdf": "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474",
+    ".scratch/resume-next-english-temporal/sealed-v2/source/lasance1945.pdf": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+    ".scratch/reader-completion-20261026-latin-absent-nodes/private/lasance1946-4573991d.pdf": "4573991d962eb6a6391bc2555b8445bdfebd84de1ccffd7828f84e74d308ca77",
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ia-bookreader-leaf-722-ca6809d2/page-722.jpg": "ca6809d25e94a91942f5757aff1ced24624eae6c98fd05b0fcf4fc5ff1eb705a"
+  },
+  "existing_publication_checks": [
+    {
+      "donor_target": [
+        "easter-vigil",
+        "main",
+        "Lumen Christi",
+        "all",
+        1
+      ],
+      "publication_artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-recovered-en",
+      "publication_passage_id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-roman-1962-easter-vigil--main--lumen-christi--all--1",
+      "publication_tsv_line": 97,
+      "publication_sha256": "c61752839c8b04282bac27592749d63a4f0227d3fa051e62418f609c562eb54a",
+      "exact_existing_body": true
+    },
+    {
+      "donor_target": [
+        "good-friday",
+        "main",
+        "Showing of the Cross",
+        "all",
+        1
+      ],
+      "publication_artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-recovered-en",
+      "publication_passage_id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-roman-1962-good-friday--main--showing-of-the-cross--all--1",
+      "publication_tsv_line": 94,
+      "publication_sha256": "c61752839c8b04282bac27592749d63a4f0227d3fa051e62418f609c562eb54a",
+      "exact_existing_body": true
+    },
+    {
+      "donor_target": [
+        "missa-de-s-maria-in-sabbato-3",
+        "main",
+        "Introit",
+        "all",
+        1
+      ],
+      "publication_artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.common-marian-verified-en",
+      "publication_passage_id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-missa-de-s-maria-in-sabbato-3-introit",
+      "publication_tsv_line": 9,
+      "publication_sha256": "1c414c2fb24abd25f211841302a0b4ac95ff89d47a998afbefd2b9a323896851",
+      "exact_existing_body": true
+    },
+    {
+      "donor_target": [
+        "palm-sunday",
+        "main",
+        "First Antiphon at the Distribution of Palms",
+        "all",
+        1
+      ],
+      "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-append209-strict165-2026-10-23-2de93984",
+      "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-append209-strict165-2026-10-23-publish-palm-sunday--main--first-antiphon-at-the-distribution-of-palms--all--1",
+      "publication_tsv_line": 107,
+      "publication_sha256": "2de939841af3d8f329a47db94216969354ed775f62de5cd0241132f5817e095e",
+      "exact_existing_body": true
+    },
+    {
+      "donor_target": [
+        "palm-sunday",
+        "main",
+        "Second Antiphon at the Distribution of Palms",
+        "all",
+        1
+      ],
+      "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-append209-strict165-2026-10-23-2de93984",
+      "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-append209-strict165-2026-10-23-publish-palm-sunday--main--second-antiphon-at-the-distribution-of-palms--all--1",
+      "publication_tsv_line": 108,
+      "publication_sha256": "2de939841af3d8f329a47db94216969354ed775f62de5cd0241132f5817e095e",
+      "exact_existing_body": true
+    }
+  ],
+  "decision": "source-accepted-with-explicit-corrections-before-integration",
+  "required_corrections": [
+    {
+      "target": [
+        "mary-mother-of-god",
+        "main",
+        "Entrance Antiphon",
+        "all",
+        1
+      ],
+      "correction": "Enumerate historical coelum versus modern caelum spelling in addition to accents/ligatures/pointing."
+    },
+    {
+      "target": [
+        "easter-vigil",
+        "main",
+        "Acclamation in the Procession",
+        "all",
+        1
+      ],
+      "correction": "Reuse established donor body unchanged, but disclose inherited standalone punctuation: source embeds quoted Behold the light of Christ, with a comma while the admitted standalone donor body has a full stop. Do not claim fresh verbatim source punctuation."
+    },
+    {
+      "target": [
+        "palm-sunday",
+        "main",
+        "Procession Antiphon 1",
+        "all",
+        1
+      ],
+      "correction": "Fresh literal source transcription uses olive branches without hyphen. Existing Roman donor has olive-branches; retain donor unchanged but record its discrepancy and make a new dated source proof for the PC transcription."
+    },
+    {
+      "target": [
+        "nativity",
+        "vigil",
+        "Entrance Antiphon",
+        "all",
+        1
+      ],
+      "correction": "Restore the source comma in will come, and save us:."
+    },
+    {
+      "target": [
+        "palm-sunday",
+        "main",
+        "Hymn to Christ the King",
+        "all",
+        1
+      ],
+      "correction": "Record small scan mark after Thou before acceptedst as image noise, corroborated by independently hash-checked1946printing AP409/printed399; retain all1945punctuation elsewhere, including comma after exalted."
+    }
+  ],
+  "accepted_boundaries": [
+    "Whole LumenChristi and EcceLignum responses included; changing surrounding ceremonial rubrics excluded.",
+    "SalveSanctaParens and fiveNativity/Palm2 antiphons end before labelledPsalm or Gloria; their Bible spans are not supplied by the historical composed body.",
+    "Ingrediente retains the historical abbreviated final repeated clause, without expanding it.",
+    "Crucemtuam excludes the separately labelledPsalm66verse and repeat direction.",
+    "GloriaLaus uses all six original source couplets and literal abbreviated responses; no extra verse or refrain expansion."
+  ],
+  "remaining_gates": [
+    "Parent must apply explicit corrections, retain prior ICEL refusals as historical provenance, create exact source/publication records and bind recipient TSV rows.",
+    "Calendar validator/source graph and generated reader paths remain integration gates.",
+    "Secondary2002 reproduction remains of unestablished printed2002fidelity; neither1970 nor this comparison authenticates2008 target wording."
+  ],
+  "operational_notes": [
+    "Initial direct raster script could not import fitz; no output source excerpt was produced by it. Used pdfseparate plus registered pdf-review helper to reopen five historical source pages instead. No tracked file was changed by reviewer."
+  ]
+}

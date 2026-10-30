@@ -1,0 +1,2036 @@
+{
+  "schema": "triptych-finite-activation-preparation/v1",
+  "state": "pending-root-adoption",
+  "compiler_sha256": "53eb75950f8bf58d48cbbc09e4f555638c65f7189881333b32dcf915d051e6c1",
+  "current_metadata_snapshot": {
+    "selection": "Every recursive *.toml regular nonsymlink file below src/sources, keyed by repository-relative POSIX path; values are exact file-byte SHA256; map serialized as sorted compact ensure_ascii=False UTF8 JSON.",
+    "file_count": 54535,
+    "canonical_path_sha256_map_sha256": "9b977477f553d34fc20e1411e7bf8f06a6235ab0befcf39bf99bbb0123cd7228"
+  },
+  "current_metadata_final_inventory_and_content_recheck": true,
+  "inputs": [
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/finite3-final/body-index.json",
+      "sha256": "eae81a04be03411b59964b6b1171035b6c4fbecad7917719e83a86e81ce84345"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/finite3-final/conditional-structure-check.json",
+      "sha256": "cf7b756552a3976dc0a4b4aac3d50c12995f03ce84305e1c4d79a701e9954656"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/finite3-final/mechanical-check.json",
+      "sha256": "674807b41b759773373809f94989f3f9bf28df8546a12d4e624e6946a196dc1d"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/finite3-final/postimages/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/finite-cross-offertory-target-20261029.toml",
+      "sha256": "69999a8da594b8c32790a5a986289ad4f6c75653a1a4dd94b4d385c68200787c"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/finite3-final/postimages/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/finite-damascene-paschal-offertory-target-20261029.toml",
+      "sha256": "9f1bbf6bd87b4674d22ca0f6bd85ca482868fc2ea6f12669adc0c14feb0f9d4d"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/finite3-final/postimages/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/finite-queenship-offertory-target-20261029.toml",
+      "sha256": "d0938bcbdb2186304a00d3ce135994dd2e5c635b3a0d5213dbc28013288a97b3"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/finite3-final/postimages/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/cross-offertory-qualified-18060fef/artifact.toml",
+      "sha256": "9aaec287b29d59a0e8738803fa1472ca21bba2ac55c54972be44175d3081d5f0"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/finite3-final/postimages/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/cross-offertory-qualified-18060fef/latin.txt",
+      "sha256": "18060fef847e0615136dba2a6e73b16797e3b944665c4e1475dc8643be33fa79"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/finite3-final/postimages/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/damascene-paschal-offertory-qualified-e88531b6/artifact.toml",
+      "sha256": "93632ce542a22691f908e2994113f657cc99713c1d086ef03dfa462d8a98f43c"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/finite3-final/postimages/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/damascene-paschal-offertory-qualified-e88531b6/latin.txt",
+      "sha256": "e88531b6aff711ffb42e4d411fc44e81d0f07c5836d36e34fe3570b33a8a3c96"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/finite3-final/postimages/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-offertory-qualified-f4e866f4/artifact.toml",
+      "sha256": "21204c15341245443d3764a6c629e1b0e0f782e10c36516168a5694b47f512aa"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/finite3-final/postimages/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-offertory-qualified-f4e866f4/latin.txt",
+      "sha256": "f4e866f44553d4181484958a6e4d79ffe7d1e560a4a56f39c298b877093de446"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/finite3-final/postimages/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/cross-offertory-qualified.toml",
+      "sha256": "d8639a56178895f6cda9ad578fa8bdd52399d380ffd3e78ca0eb8f05ba7f2863"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/finite3-final/postimages/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/damascene-paschal-offertory-qualified.toml",
+      "sha256": "cbeed2b32ee8edf1a3bfe9afde6e5f9e492e961775e1b93b01eb4a35cb17deae"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/finite3-final/postimages/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/queenship-offertory-qualified.toml",
+      "sha256": "d9d00451a88b6d5d6b0c2c2a624a84612100bc60ee5dc7ea92f3e1ec49d74079"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/late-marian/assumption/offertory-base-review/source_review.json",
+      "sha256": "61c77363de07e6487a7146b0836455d33282cbf5b37fb18b81d1ff9d9fee7dc7"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/late-marian/offertory/postimages/src/sources/works/catholic-church/breviarium-monasticum/editions/1690-venice-baglioni/artifacts/erara-whole-pdf-6fb9cd28/artifact.toml",
+      "sha256": "acf0dfc7287d2faabfe443a39b1df5f5a661aafda9676dba451f92bd6013ebef"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/late-marian/offertory/postimages/src/sources/works/catholic-church/breviarium-monasticum/editions/1690-venice-baglioni/artifacts/queenship-offertory-base-latin-20261029/artifact.toml",
+      "sha256": "5f0072e9c83f926d7b8259131790b8039d2958a74fe7c2bdaa0056cd12063c96"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/late-marian/offertory/postimages/src/sources/works/catholic-church/breviarium-monasticum/editions/1690-venice-baglioni/artifacts/queenship-offertory-base-latin-20261029/latin.txt",
+      "sha256": "dd345ee2fcab6b3974007069754a1ae6974851a5276af44fac6133b329655c77"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/late-marian/offertory/postimages/src/sources/works/catholic-church/breviarium-monasticum/editions/1690-venice-baglioni/artifacts/queenship-offertory-base-pages-20261029/artifact.toml",
+      "sha256": "48067747e3f703690e2b1fb2169bc597ff929eaca3aeb230d792a83fe71e6810"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/late-marian/offertory/postimages/src/sources/works/catholic-church/breviarium-monasticum/editions/1690-venice-baglioni/artifacts/queenship-offertory-base-pages-20261029/source.pdf",
+      "sha256": "9853d5a5e49dfe4891a6614be3e1cab50dbdd599c3908da04019b00d7bc37262"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/late-marian/offertory/postimages/src/sources/works/catholic-church/breviarium-monasticum/editions/1690-venice-baglioni/edition.toml",
+      "sha256": "063c4e3262e09523b67c07b760f9183c18848108d2b042c1fc1ec7deb7f561ba"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/late-marian/offertory/postimages/src/sources/works/catholic-church/breviarium-monasticum/editions/1690-venice-baglioni/passages/queenship-offertory-responsory-base-20261029.toml",
+      "sha256": "690557cdf3e7fd112682422cc0316eebdee9ac35982df75f3e048326a5ff2af6"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/late-marian/offertory/postimages/src/sources/works/catholic-church/breviarium-monasticum/work.toml",
+      "sha256": "a411c5c80f2a9e12801d6348ae4f9e6191eea2a61b56a32ab17cff4a1f7d8262"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/saints/finite-source-postimages/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-finite-cross-passion-page-ff164f57/artifact.toml",
+      "sha256": "f9fec5bcb38b181a2db749ca3d2647c0f2d9db529c70d82620a1de8b78eab396"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/saints/finite-source-postimages/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-finite-cross-passion-page-ff164f57/source.pdf",
+      "sha256": "ff164f574b5e2bb6ef5d1b94f97f60df671a4d27fbbc4e7702f9d43025fc02e0"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/saints/finite-source-postimages/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-finite-saints-bases-2be6c708/artifact.toml",
+      "sha256": "9b18f8c7e1593d0b2decca73d4a5fa0714c2083d9574814dc22114b25f523b33"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/saints/finite-source-postimages/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-finite-saints-bases-2be6c708/latin.txt",
+      "sha256": "2be6c7089fade3e9ae6399f63a18064915b4ee3c13b4f3712ca6442d35ad11ab"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/saints/finite-source-postimages/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-finite-cross-feast-base.toml",
+      "sha256": "beb9b85c77523e4bd5c15fe124de047d113a929540de885f0c953ce3ee81e890"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/saints/finite-source-postimages/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-finite-cross-passion-alternate.toml",
+      "sha256": "ed811a9bf1fca033dc2c46186a1b8e0d799d2b0790274b9c41d49ce6e7ff62a4"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/saints/finite-source-postimages/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-finite-damascene-non-paschal-base.toml",
+      "sha256": "83eedac29670a0eb94f4233db65c09d1e216e4c0e14b62ca197094c74795da4b"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/saints/independent-review/finite-source-controller-review.json",
+      "sha256": "a2195e06f231727c5fd6cd843c271fc9f78003156f90152e635ae208628ff729"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/saints/independent-review/finite-two-source-only-review.json",
+      "sha256": "ea7206c52f4737cd1e268fd17f6a40228e011568d5c12e2bc1f75090ea3e1186"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/finite-guard/frozen-sixteen-evidence-preflight-v3.json",
+      "sha256": "8d457ac274fce70723e4f827f3cb2a47922bf093ee279ecc0bcbe6fcf8e90cd4"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/finite-guard/stable-sixteen-plan-inputs-v1.json",
+      "sha256": "bf5d751c7c5ccb81969d79751cd5be3785b0f7988f410033b7bbfcebd29b656b"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/bosco-secret-public-domain-v1/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-bosco-secret-public-domain/artifacts/s-ioannis-bosco-confessoris--secret--1/artifact.toml",
+      "sha256": "9c98f547dbebc3aa9c1f49361aa41ca4e035b1f15fd4dd8f4b96dff3f54b069f"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/bosco-secret-public-domain-v1/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-bosco-secret-public-domain/artifacts/s-ioannis-bosco-confessoris--secret--1/latin.txt",
+      "sha256": "db67a20c9856f185be4d0784326f5f7ab5906ce09c079c05ca7ec2a6c8541225"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/bosco-secret-public-domain-v1/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-bosco-secret-public-domain/edition.toml",
+      "sha256": "04d20e93e5542057f2a39b741861d975a8563db6ebe2a774e52291a93dc69d7a"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/bosco-secret-public-domain-v1/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-bosco-secret-public-domain/passages/s-ioannis-bosco-confessoris--secret--1.toml",
+      "sha256": "d4da7e9923c29ca52fa2c487dc16d9a9dd1ac7cc2db7cfddf8977e4e87277811"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/finite-source-review/review.json",
+      "sha256": "d5755810808b4a744a5eef1af562fcb4f6376622d18fc119e3c82c1dc4cb323b"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-control-pages/artifact.toml",
+      "sha256": "29fc4baed38f824ae26c3fa9ca7f4db1be6387769742976f577f94d81e540a16"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-control-pages/source.pdf",
+      "sha256": "fe425c3ced93d5d48bc9d64af1a83d646035ae60715c33021931179d25169c2a"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-historical-prayers/artifact.toml",
+      "sha256": "d633bb457718a0fa58abfcbc0d6477c4cbab60425ffcaa2d04f47557a94bbdee"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-historical-prayers/latin.txt",
+      "sha256": "834d0e60236511a5ff7f3d4f9186ea1188791eab9706277e7bb488d52f6b6cff"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-controls-20261029-976afd49/artifact.toml",
+      "sha256": "8eec30c80657798ee7a4495654a26ce86cd00f52da22268b037d3ebec68c8dee"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-controls-20261029-976afd49/source.pdf",
+      "sha256": "976afd4964a6b833ec2bf92ee5cb00825be96a4d7bc789acf34fde0bacac3b6b"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-historical-latin-20261029-5602f33a/artifact.toml",
+      "sha256": "2a85a0437f586455b6317121b9b190ea39737db0c959d587c0dad1653b8d996d"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-historical-latin-20261029-5602f33a/source.txt",
+      "sha256": "5602f33a0dc7039761adac78d736fdb286ea1261404cd7cdd3a0c5bdb9fd66f2"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/heart-two-20261029-collect-images.toml",
+      "sha256": "b5bb3adcacdd8ba07deb9a3b91c6eb3d54418a6b29bfedae15064316bdfd5744"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/heart-two-20261029-collect.toml",
+      "sha256": "5c9208770e496f9a97cf6efc8a2b9e8062e744f8559675a442205a70422209ac"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/heart-two-20261029-postcommunion-images.toml",
+      "sha256": "aa457b5be0d2b9961ebfb622c4cdf1bf7e61d4251f9411b858ce5048d4fabf1e"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/heart-two-20261029-postcommunion.toml",
+      "sha256": "39e9be89666133deb91a0f5e9d8a16a142a6c1ff52f7071ed327e516648660c6"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/reader-lawrence-conclusion-prefix-20261029.toml",
+      "sha256": "0112c46dfcea6dc6edc66e41e4d234d3dfcf0075970d2bcfdc434e8346e3d46e"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/reader-lawrence-historical-page-20261029.toml",
+      "sha256": "83e262e5e4e12b0ccc0b0c88dd0269f26de1d80f06682e1e890edd8e8a3347a9"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/reader-lawrence-historical-text-20261029.toml",
+      "sha256": "bd34f0536e2a4911dc184a62893d0abda05090aa25afc5b5250b4d763bda13bc"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/heart-two-20261029-collect.toml",
+      "sha256": "16f25ae3261b8483aa6c46cbf2e5a71671ddc662d0b13eb452b8bf7942f7b1d3"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/heart-two-20261029-postcommunion.toml",
+      "sha256": "9bcd42ca2a91aae4d2e3365e3c0bf603b3d3fe29d8d7f3f79258d9b53237fbe3"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/artifacts/bosco-orations-checked-20261029/artifact.toml",
+      "sha256": "7b34447b050985a11b075cd9b394bc72c0ff819b39f0197d6b22780bcd032120"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/artifacts/bosco-orations-checked-20261029/latin.txt",
+      "sha256": "82a011c5e4207cab295d68f4f922440a74894d8522865e2ca28ef0df34f08b03"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/artifacts/official-asc-scan-93b726ae/artifact.toml",
+      "sha256": "434f260653da24bc0b41877f19e71aee3a8d0c53776d3a1b07b25e1e0e7692b7"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/artifacts/official-asc-scan-93b726ae/source.pdf",
+      "sha256": "93b726aeb737cddcc5a71650cee028a45af501074c017e8b9ce1496d2728f6a2"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/edition.toml",
+      "sha256": "aed3789690a2e194116711f3fce17024fbe34ee68ae5d6783ee494944d5cbd33"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/passages/bosco-collect-image-20261029.toml",
+      "sha256": "c7e3d5e7f42349e934f852ed39cd22608cd24a240f6d1de65a384b189c56b4b0"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/passages/bosco-collect-text-20261029.toml",
+      "sha256": "87e8ae371cb02c360637b784b3cd9b005be3b6272e1d40161b5bdd39b99285e1"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/passages/bosco-postcommunion-image-20261029.toml",
+      "sha256": "d8384136d9a1ac34a0e8f80a4629e132627a74ec6157d790551989ae3c8a919a"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/passages/bosco-postcommunion-text-20261029.toml",
+      "sha256": "d121e57dc8d1d245ac5da26f5b17dd73a4794a4cc3295e29ca654ec3eee92a93"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/passages/bosco-secret-image-20261029.toml",
+      "sha256": "b19771deac9c06f2d092653c0bc1557c3f0ad0acea1e04578b0669c3ceeaee33"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/passages/bosco-secret-text-20261029.toml",
+      "sha256": "1e8e8893fef426fed06ad169ae4d45330f9f0e316e0f4100ec74c0d1d387fff9"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/salesian-society/atti-del-capitolo-superiore/work.toml",
+      "sha256": "35a36fba86a92c0875d56bf1a02fb02da0b9090a0d1c5ff940d255b8bebb6506"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/comm-s-silvestri-i-papae-confessoris--collect--1/artifact.toml",
+      "sha256": "2aa765a31552c624ab49fc116a59360a85131028cc21535d632cd140c7b3d0c2"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/comm-s-silvestri-i-papae-confessoris--collect--1/latin.txt",
+      "sha256": "61fa6b8ea693b00660f9d11521ac5f6330018be9982109845a252f53cd056f53"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/comm-s-zephyrini-papae-martyris--collect--1/artifact.toml",
+      "sha256": "5b1d4a8416437478731b5253aaf9f1c45fd2a968378c34448764068d82071ceb"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/comm-s-zephyrini-papae-martyris--collect--1/latin.txt",
+      "sha256": "f8732dcb77e4139160ed879dc19947b26595c5d3541442c3f9ec67cc5bf774ad"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/immaculati-cordis-beatae-mariae-virginis--collect--1/artifact.toml",
+      "sha256": "f0a1b926d9a05757007b13d62243a4a7a51e5f7c27d37b7d3dbd01df3b45c0b9"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/immaculati-cordis-beatae-mariae-virginis--collect--1/latin.txt",
+      "sha256": "c8b53661561aac747517845360d96151db5afb6707c0c3b798b8de710559395a"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/immaculati-cordis-beatae-mariae-virginis--postcommunion--1/artifact.toml",
+      "sha256": "906d1840aef2e08162fad2daa05fc267a5bcca7b051441fee805cf3de30433f0"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/immaculati-cordis-beatae-mariae-virginis--postcommunion--1/latin.txt",
+      "sha256": "6c81c9d5ef0912c0e01fc911ab4dc9fe86648e27e49651092086e38d2ca17795"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-clementis-i-papae-martyris--collect--1/artifact.toml",
+      "sha256": "5b477e81d329255b09101f01ebd9fda8b77836bf1935629be67e67d5192509e0"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-clementis-i-papae-martyris--collect--1/latin.txt",
+      "sha256": "d57235904e4e32436dfda5e58d4ac5c98822e784725000a41d75bbc1a24d4aa8"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-clementis-i-papae-martyris--postcommunion--1/artifact.toml",
+      "sha256": "f882fbc8ff44ef3bec3f89f39b4fbe55dbdbad021b7fc18e024d207902063fa2"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-clementis-i-papae-martyris--postcommunion--1/latin.txt",
+      "sha256": "bfd0be06cd5ff6e036d7a9e22ee73a2bec99a413c24cc12baefc939a3db52bce"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-clementis-i-papae-martyris--secret--1/artifact.toml",
+      "sha256": "c9ab080494cafef116da79508660eddfde229d2fea1c1a0e6c5fe998a1a69e1d"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-clementis-i-papae-martyris--secret--1/latin.txt",
+      "sha256": "85e15b6f86d5c6f8c122d9c2c70203102ad0659a6006d502467d9e1afb0628de"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-ioannis-bosco-confessoris--collect--1/artifact.toml",
+      "sha256": "6071ce4e2fec0be5abc7139aade946aea82b50ae865373242e9d92c6e7962515"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-ioannis-bosco-confessoris--collect--1/latin.txt",
+      "sha256": "20e15f699f0c8c1a9538024049d905c97a6d86577e24a2f5d3cae4a9c9b60155"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-ioannis-bosco-confessoris--postcommunion--1/artifact.toml",
+      "sha256": "943b2f33a4af82b31f83ed6bc0bc2d4109c05c076e1dc9eafe4be14148a56057"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-ioannis-bosco-confessoris--postcommunion--1/latin.txt",
+      "sha256": "4f47d9dd70abae1166e980d2935e2a4552abd9e65d7105af44e7f8909fce62ea"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1/artifact.toml",
+      "sha256": "f1093bb4544af8aa0ea0aabf10492967f9e5579d60be07a45bac9cfc662cbac2"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1/latin.txt",
+      "sha256": "9d2e1a29fd2df2395e01d7078745f77af00df9a266f597ea9b822c49d4eb8005"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/edition.toml",
+      "sha256": "ec3153b2574d1fb18f52ef4ead2d7aeba837d078f6bae3471b0d6fa096483a09"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/comm-s-silvestri-i-papae-confessoris--collect--1.toml",
+      "sha256": "05fb3d5e6a0b24f687ff8387298208a2f9eaae0cdfc926956c44bef4e1b554ab"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/comm-s-zephyrini-papae-martyris--collect--1.toml",
+      "sha256": "87ceadd0018ba206f5d7d06bef41fb2080394ead94495f44308deb4b5d333ec1"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/immaculati-cordis-beatae-mariae-virginis--collect--1.toml",
+      "sha256": "7b75ec071e929b1fbb0e962a971cb7e172a73e7fd89b8550e57fccda2dcc5687"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/immaculati-cordis-beatae-mariae-virginis--postcommunion--1.toml",
+      "sha256": "418cbf9ffe5df9b5712172eff23cac4173e6aec0ba686e0af97bb19305154a4b"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/s-clementis-i-papae-martyris--collect--1.toml",
+      "sha256": "0944f415ca454250cfe5675a5e9625217ab09b76da57e2122641688ec0ef3c2f"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/s-clementis-i-papae-martyris--postcommunion--1.toml",
+      "sha256": "290eb6dd12268257457147de977e7718c01ca02616a29d9a82a4c9795557833e"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/s-clementis-i-papae-martyris--secret--1.toml",
+      "sha256": "6d99f1e9d4a39e488e040cb5df0282b3619819740a9bae1b54f2020b52e9be1c"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/s-ioannis-bosco-confessoris--collect--1.toml",
+      "sha256": "5012af9a6a8c8f5acd4f17465e5f9bb01963849afaafaa293a5cb0ba5a648bb2"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/s-ioannis-bosco-confessoris--postcommunion--1.toml",
+      "sha256": "e57b9cafd46100e452535b66c10fcd005386cba1d033d7dba164c4f44e7e0b30"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/passages/s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1.toml",
+      "sha256": "ad6c7662d2ea6816f869795237708c0627ba49e934d0c376d4d6b64784ce04f2"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/review.json",
+      "sha256": "1842100692792b1924396dc44245dc97413d2d7c18c75b6246f3c4c01bc96635"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/target-schema-transport-repair-v1/tree/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/bosco-three-orations-target-20261029.toml",
+      "sha256": "aff60ac728844c8622a425415bc6ea3d3174a610e91502393c68c8fe0c7396f6"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/target-schema-transport-repair-v1/tree/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-comm-s-silvestri-i-papae-confessoris--collect--1.toml",
+      "sha256": "17cf2e24755f9c8435edf0549d475fbbf7ff0f4aac68d1e9c923bbb5d0bc575e"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/target-schema-transport-repair-v1/tree/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-comm-s-zephyrini-papae-martyris--collect--1.toml",
+      "sha256": "53488bae36aba1bf01148f29f66f4d22e5c637a8630659f48479bb8d1c7df7ba"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/target-schema-transport-repair-v1/tree/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-s-clementis-i-papae-martyris--collect--1.toml",
+      "sha256": "e9ec9b3acedf9ef52adb949a072f4cb4020439f46d859777abf43db20b25fe42"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/target-schema-transport-repair-v1/tree/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-s-clementis-i-papae-martyris--postcommunion--1.toml",
+      "sha256": "b2be333e52b57362bb79df840428dc6e37fb404a098ede22076b2da2ee1d8491"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/target-schema-transport-repair-v1/tree/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-s-clementis-i-papae-martyris--secret--1.toml",
+      "sha256": "0ad00ae23895d5e89964a40c435ab3b4e444227a827694365f31b758a626532a"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/target-schema-transport-repair-v1/tree/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1.toml",
+      "sha256": "89feee2dfab5257899407c15ce45210a7f90fbc9740d163aee74402f6d783878"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/finite-collect-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/chrism-collect-qualified-100ae514/artifact.toml",
+      "sha256": "01989a359709ec335f622e4b8ccaddbe5e46a840b867b43322411a3fe410275e"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/finite-collect-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/chrism-collect-qualified-100ae514/latin.txt",
+      "sha256": "100ae514cc635ab67fa0b2f223954bbb9053f77c01dead58eb11309c16815d33"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/finite-collect-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/chrism-collect-qualified.toml",
+      "sha256": "40aeac125436ef89707d46546758626fde57f0f54a0709b2123a0599aee3e979"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/holyweek-four/chrism-review/review.json",
+      "sha256": "3fe5122a42a83baf422843bafa4c9b07b48b7f1efa6555a8c772366050c8fa71"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/holyweek-four/common-two-review/review.json",
+      "sha256": "d85ba6a4b9c3df6ba52f8501a2e5cc50b0d9b336d053f7763d071b0e224e160d"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/pontiff-secret-postcommunion-collation-20261029.toml",
+      "sha256": "a540cbe01394bd0a09f75060e8e7cef082d3b78e84c57a2b4ef498efb4b289c3"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/pontiff-common-postcommunion-whole-foundation-20261029.toml",
+      "sha256": "3aaa57840d3ff3f7efebd917c888f9f74b28c12c148d383dad8193065dfdb6ff"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/pontiff-common-secret-whole-foundation-20261029.toml",
+      "sha256": "154022bad8b6eeaf91209881c6edf62848e58749dcf40889554dc927237fae51"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/pontiff-two-en-20261029-dc95b61f/artifact.toml",
+      "sha256": "b4a8a78095b4661ddf0398c35d748f90c79c08e9712dcfeff81c3888e071f486"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/pontiff-two-en-20261029-dc95b61f/english.tsv",
+      "sha256": "dc95b61f0a85f8b3f73f383b0d2b705a5c785e61eedc54b13596dae7daf383bd"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/pontiff-postcommunion-publish-20261029.toml",
+      "sha256": "7134b2d46a62f0ab7009c2b8b55ba9f71e850cb0e46ee63f8dbb380ca138b6fc"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/pontiff-postcommunion-verify-20261029.toml",
+      "sha256": "0c0945b3ff81ee712fdf7e51f8eef7123ce294b4fe36208cf83be38b6a4d0580"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/pontiff-secret-publish-20261029.toml",
+      "sha256": "cab13e69590815941d5eed6472985e7c2d086ace4e6404a8f3d8a6b62661c606"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/pontiff-secret-verify-20261029.toml",
+      "sha256": "6671b1390e38b46088b8af80638e2ba876b365a9ed54a076176e536b39fbbc99"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pontiff-two-qualified-3920bd77/artifact.toml",
+      "sha256": "5ef1d38cadfc5cee6acbf0c7a8ecccce406834c4e26a1934e25746b5da09d223"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pontiff-two-qualified-3920bd77/latin.txt",
+      "sha256": "3920bd772a32ebba24b336a71f9bcd30eeff745c60630d5fe20739609e58a75b"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pontiff-postcommunion-qualified.toml",
+      "sha256": "c510207c1e56a72c358913f839192f73cc2cd59f0fba6ec65ab41c269d1e6d43"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/standardized-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pontiff-secret-qualified.toml",
+      "sha256": "aa72bfe94da5f95123b6fee091fa5b8df94733fb322d12d1f2d05ad3f6967339"
+    },
+    {
+      "path": ".scratch/translation-policy-20261029/finite3-final-surface/REVIEW.json",
+      "sha256": "cafcae080f5716b0b177c28db3158fbb8b0a6343e8535931ce5e9c28c0964997"
+    },
+    {
+      "path": ".scratch/translation-policy-20261029/sanctoral-rights3/CHANT-V2-CONTROLLER-SUCCESSOR-REVIEW.json",
+      "sha256": "1f0d83b277cad947579908274b714985d5ab0b9c9d2f439dae2964e56cfd0ada"
+    },
+    {
+      "path": ".scratch/translation-policy-20261029/sanctoral-rights3/CHRISM-CHANT-FOUR-RECOMMENDATION.json",
+      "sha256": "fe1f06208f67865a47312a5675cc10ecabe09c62871e73122685ecba9bc86b59"
+    },
+    {
+      "path": ".scratch/translation-policy-20261029/sanctoral-rights3/CLEMENT-COMMON-FOUR-RECOMMENDATION.json",
+      "sha256": "1d0e395d41de0c7a0f0ed2a52a17b990e0fcc6d00cd6f5bbb6e757028d73e3ff"
+    },
+    {
+      "path": ".scratch/translation-policy-20261029/sanctoral-rights3/HEART-LINEAGE-SUCCESSOR-REVIEW.json",
+      "sha256": "ff5f4fea37246777bb4d75df3800ccb59665d1dcce800e01dab8b6042bf1814c"
+    },
+    {
+      "path": ".scratch/translation-policy-20261029/sanctoral-rights3/RECOMMENDATION.json",
+      "sha256": "7d48a4214f1fe486cc72f90e291e66cf7bb1bd9b4af7dc34c74ca93abd7c715d"
+    },
+    {
+      "path": "scripts/_proper_finite_latin_20261029.py",
+      "sha256": "a98b0178ea31f5cefd9a0ee78bea1e00f62e9d7788f81a46f5d892d99d71f998"
+    },
+    {
+      "path": "scripts/_proper_latin.py",
+      "sha256": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376"
+    },
+    {
+      "path": "scripts/_proper_qualified_latin.py",
+      "sha256": "0136f6bb020938867d4ca1e75816c56c363a15603a8fede2aee9126c96b24949"
+    },
+    {
+      "path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+      "sha256": "1a66f51b5d66fc6945c2a9bfcb44471068523c5f85a361a9a28c72ca628a5e1d"
+    },
+    {
+      "path": "src/sources/works/abbey-of-saint-gall/hartker-antiphonary/editions/1900-solesmes-facsimile/artifacts/fulgentibus-latin-checked-20261029/text.txt",
+      "sha256": "c2bf21a76718a0f00eda5c79a7a00f92cada8447efb0234fb92b4b5a8f042166"
+    },
+    {
+      "path": "src/sources/works/anonymous/de-vera-et-falsa-poenitentia/editions/1845-migne-pl-40-corpus-corporum/artifacts/10.25-checked-text/de-vera-et-falsa-poenitentia-10.25.txt",
+      "sha256": "785288ac8c9077408f120efbf95f6e126a50884991df2295ea02903b2f210a0d"
+    },
+    {
+      "path": "src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/artifacts/christ-the-king-orations-la-checked-32eecc40/christ-the-king-orations-la.txt",
+      "sha256": "32eecc403c48f085aa8a195c963c6939b221102a8811d846eb84f7b6095915c4"
+    },
+    {
+      "path": "src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/artifacts/phase5-latin22-seven-historical-prayers-20261022/latin-only.txt",
+      "sha256": "ba9e819046bfea45167b7ba99f4fbd9b0fc8d0e69cc70adc9a6113dd59febc34"
+    },
+    {
+      "path": "src/sources/works/ante-nicene-fathers/volume-1/editions/2026-10-13-ccel-web-2026-10-13/artifacts/ccel-text-ee9c7f0a/source.txt",
+      "sha256": "ee9c7f0ac3f4df08d07ddf81cd7e061e82a35e0d27de611cae06f1e05b2fb991"
+    },
+    {
+      "path": "src/sources/works/ante-nicene-fathers/volume-1/editions/buffalo-1887/artifacts/ia-djvu-ocr-12cdc519/antenicenefathers01robe_djvu.txt",
+      "sha256": "12cdc519c642b446cb4c6c3ba0bad9a2288687937975df6ca4c8b42aa6d92d84"
+    },
+    {
+      "path": "src/sources/works/ante-nicene-fathers/volume-5/editions/2026-10-13-ccel-web-2026-10-13/artifacts/ccel-text-a02b61c3/source.txt",
+      "sha256": "a02b61c36f07edd406a08138b9797151d6e808cb1618f1cc282fe9db5f6a87f8"
+    },
+    {
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/artifacts/benedictio-panis-checked/benedictio-panis.txt",
+      "sha256": "de272dc92fc46da7d096e59a0a3a95d9900233fe3d1cc03796a5fb80129273d9"
+    },
+    {
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-fulgoni-1804/artifacts/ordo-missae-checked/ordo-missae.txt",
+      "sha256": "1eafbd52ca4ef22422e07da69cfe25ce2a5a454949ab17ab0351209092be268f"
+    },
+    {
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/benedictio-panis-checked/benedictio-panis.txt",
+      "sha256": "fd364b6f3c2fd5f2127c8dce780d99df56368a5913dd336b44d529162217606b"
+    },
+    {
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/rome-monaldini-1755/artifacts/ordo-missae-checked/ordo-missae.txt",
+      "sha256": "53aafb397584b8fe66692ab002111714ec9ad8679cda446599231df7f42bf44f"
+    },
+    {
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/benedictio-panis-checked/benedictio-panis.txt",
+      "sha256": "443342e10cec49650fa8d2c0d8ff2ab6a75b18ab1ff05bf18c7c7d04224529dd"
+    },
+    {
+      "path": "src/sources/works/archdiocese-of-toledo/missale-mixtum-mozarabicum/editions/toledo-hagenbach-1500/artifacts/ordo-missae-checked/ordo-missae.txt",
+      "sha256": "74b7e42df7ab15341f2f342be29fe0803a7a1b0883a149560ac231243393e5c2"
+    },
+    {
+      "path": "src/sources/works/augustine/de-civitate-dei/editions/dods-1871/artifacts/pg45304-body-lf/city-of-god-volume-1.txt",
+      "sha256": "5aa1e8ef6d07980146bdbe11426095da959cd9e217c7b76f0fcbda6c95cea349"
+    },
+    {
+      "path": "src/sources/works/bonaventure/opera-omnia-quaracchi/editions/1893-volume-6/artifacts/wisdom-16.20-21-checked-text/bonaventure-commentarius-in-sapientiam-16-20-21.txt",
+      "sha256": "a506e1b741b3d696a173ae0a61ed5a251f8eb1a34f73588c0d3fddb2113376bd"
+    },
+    {
+      "path": "src/sources/works/carmelite-order/missale/editions/1574-venice-giunta/artifacts/october-05-calendar-entry-checked-latin-f0b5c2c2/text.txt",
+      "sha256": "f0b5c2c2211c8d67ed15e75e656c7862d086e9245420892a7de62cd9ec582a06"
+    },
+    {
+      "path": "src/sources/works/carmelite-order/missale/editions/1621-venice-giunta/artifacts/october-05-calendar-entry-checked-latin-3033d681/text.txt",
+      "sha256": "3033d68160b4daab7e8bac6786064538cf353db0a4467235575753b069b7a020"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/adapted-primary-readings-la-checked-e3a67098/adapted-primary-readings-la.txt",
+      "sha256": "e3a67098717cbea591040e4b7e96207d9b983dc1c739bc7dfcb73b6aea275463"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/advent-lent-ember-orations-la-checked-39b0b0aa/advent-lent-ember-orations-la.txt",
+      "sha256": "39b0b0aa30f03ed3ecad53520b095c551ffc1fe28237635d8d16cea35160eab1"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/all-saints-four-propers-la-checked-82edd79a/all-saints-four-propers-la.txt",
+      "sha256": "82edd79a9096f329601d709160bd26f60911792846a3b7c39d42fe0a8657d144"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/all-souls-twelve-bodies-la-checked-4a41c7e8/all-souls-twelve-bodies-la.txt",
+      "sha256": "4a41c7e84507299a829be1359dd51d5bf19447277e1aace8714d08740979349c"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/christmas-nine-orations-la-checked-825c69f4/christmas-nine-orations-la.txt",
+      "sha256": "825c69f40d0a0ff95b5f38a3b39592e908ff188100998dceea460ad3fad89122"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/cosmas-complete-prayer-20261026/latin-only.txt",
+      "sha256": "01ac30620b95c8dfbb01aab088fd2eb598319f18bc00c998d99242ab592447d3"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ember-pentecost-september-la-checked-ea162251/ember-pentecost-september-la.txt",
+      "sha256": "ea16225176113c4be2fc090f6c256010a49994278aed86c14e4d702b9df06541"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-ordinary-joseph-preface-may1-source-body/text.txt",
+      "sha256": "235844b4188dc771ca3e0b33065bf4072f4cb58d118d00742ef48b8bc62417e8"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-temporal4-lent1-ember-saturday-hymn/latin.txt",
+      "sha256": "39d5da4829bc7b527d62c1b4e0824033499b866469d84e070325c131aac5a52e"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-temporal4-lent3-thursday-introit/latin.txt",
+      "sha256": "1d4a94ffd65472aee0499469153e1f9e9f4781c043c5879d2936631dd96f7fab"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/five-residual-20261023-complete-prayers/latin-only.txt",
+      "sha256": "9ad72077e409ea0f95752b0c1237d7b08bf984f0e45ef6959d840807df57d504"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ia-scan-pdf-9873693a/artifact.toml",
+      "sha256": "ca4b224874d452a269befb56edcb56b1ffd06e62b9a6c067b718054e7e8ba116"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/immaculate-conception-four-propers-la-checked-18084e74/immaculate-conception-four-propers-la.txt",
+      "sha256": "18084e74e99af80af96f5879b9392fa5ab29b84a1cea955eef36604621a14c82"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/josaphat-prayer-and-rule-20261026/latin-only.txt",
+      "sha256": "7ca411e3bb3e1de3169bf407bc550bafb15558a245ea152680e8aed6cd662afb"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/latin-five-20261026/latin-only.txt",
+      "sha256": "b5c77d8c5c6d8eb71d4a0f914aa9df808fb00536bc5c263cdd61ba5d33d5713b"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/latin-five-support-pages-20261026/artifact.toml",
+      "sha256": "b79d59e12cfc4459b13119ead0065f42f9c204b546d082de794eb2de0de65f51"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/latin-five-support-pages-20261026/source.pdf",
+      "sha256": "d79410cf7b26b3dde9de6e117eb1c5ebc7cf1a174f006b4b5024fc7d462e4fc7"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/latin-seven-20261026-historical-prayers/latin.txt",
+      "sha256": "c95c8d9644fb04be9be0b8eca63331f7f90cb3bbbfad11178f1abbca8a94425c"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/next-leads-2-complete-petitions-20261023/latin-only.txt",
+      "sha256": "3d286daeb858ab5ef21e5edfd99c786ef2be7c4f8b7f74d898c3292cfe8c762d"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/philip-secret-prayer-and-rule-20261026/latin-only.txt",
+      "sha256": "81dd43c9a6f2ff27269d010d3e1e21f7712062974523a76013b068ee9e65c3ff"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-completion-seven-founders-prayer-20261026/latin-only.txt",
+      "sha256": "bd026ec0167047cb34a82fa74f7777e7e56bf9123c4c500050fa9961fa5c2d76"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/september-ember-wednesday-collect-la-checked-ddf31f59/september-ember-wednesday-collect-la.txt",
+      "sha256": "ddf31f59d694ac6c7873d657d3ff89f28d0e0be682f321eeaa20710a6178b0a1"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/theodore-two-orations-la-checked-638fc0c5/theodore-two-orations-la.txt",
+      "sha256": "638fc0c5b458745ea2e565ae2cf3800a0a1882856854e7caf9b2404a721ddeb1"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/uncited-eight-chants-la-checked-d05badcc/uncited-eight-chants-la.txt",
+      "sha256": "d05badcc137eed18b8d4b4653e81d6560e0e6071c1dafea0aeee7f45c25547c4"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/edition.toml",
+      "sha256": "c5570791955722356a338b95201c30372b26a9fa44e82882e504daa7a23b7b89"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-five-christ-conclusion-20261026.toml",
+      "sha256": "3e031f7e30c97c9107e446fcd394f9ffed1c0de002752df1634b7d621f9e0463"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-five-conclusion-rule-20261026.toml",
+      "sha256": "035b8ac2191627ddbd7889f70164925a76fc958b6b2f1fb4b060c22d7e0bd2d8"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/latin-five-father-conclusion-20261026.toml",
+      "sha256": "f3bb729eda76519264d5fda879083b248adb32b61db75fcaeb72dc0aeb9d515e"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/assumption-chants-latin-20261029/latin.txt",
+      "sha256": "b78600e93d7718a29710c7d460193abd439192939b03fa40eb2dc015a21069f1"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/common-damage-petitions-20261023/latin-only.txt",
+      "sha256": "c60ca67a6141d8b51a9a3cd06f44e5cf20d40d7958f45eaa99aefb314309997e"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/damage-supplement-petitions-20261023/latin-only.txt",
+      "sha256": "1f3293565f11db435d9a1bc48aa6c9c4fd14b672f39dd80afda79e107e27ea7d"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/english-completion-20261029-temporal4-ascension-vigil-alleluia/latin.txt",
+      "sha256": "32693e80d4ae708b0574e7a439521fe98588b6efae2fdd2158e526e645c4f850"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/english-completion-20261029-temporal4-epiphany-ferial-introit/latin.txt",
+      "sha256": "2c3d02a567f2dccb58accebea18e01648e543c6f01c73394d9f19177a53a51d0"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/five-residual-20261023-complete-prayers/latin-only.txt",
+      "sha256": "287354af03854357855eafc19b2b22e2779ac4c3ebed99ca26fbcc256dec1ceb"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ignatius-petition-formula-text-20261026/latin.txt",
+      "sha256": "e085b59f15592f63937a0a9665b9ac228b96a32295d7c4116a054dc177c8f602"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/late-marian-two-chants-latin-20261029/latin.txt",
+      "sha256": "195521e5df0bcdafd28e38962272ed1027990687b5b9808865779898b90f260d"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/missale-romanum-1862-text-f34bc7cf/missale-romanum-1862-text.txt",
+      "sha256": "f34bc7cf9293ffb353159e94118f4316bb4cc0a60230b315904dc77ba2502162"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/next-leads-2-complete-petitions-20261023/latin-only.txt",
+      "sha256": "8af0a06f09d95afa9a187a0d588b7cad37f8b6a1944f4c666cebdbdb124e6504"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/next-leads-3-complete-petitions-20261023/latin-only.txt",
+      "sha256": "62242400a27c2eca9c06524fded9429dc4ac028cc96ca565ed34070e18d09416"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/next-leads-petitions-formula-20261023/latin-only.txt",
+      "sha256": "0e0b599f7faa94db966dc2f0acae0021237d997b8b9f19eb99b0b6708dc32872"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/paul-june30-primary-petitions-20261023/latin-only.txt",
+      "sha256": "98e336fafd1b8ae660697a187c88bb2429ee31b2878a4a63b915b95e9a373f13"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/phase5-latin22-conclusion-authority-20261022/latin-only.txt",
+      "sha256": "45634a9b0825436ff735d14d49b10634cb6ffde35196bba28bf5795a56079ad8"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/reader-completion-20261026-absent-nodes-historical-3bec4485/latin-only.txt",
+      "sha256": "3bec448575341bec1e270476c6ea4f22ad53cc8ec81d621ab64fd26ec6c0d311"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/sanctoral-repair-complete-prayers-20261026/latin-only.txt",
+      "sha256": "611103bd7b073f4dbbbe2cfb6d30880b8e0cf4f688e11ac8d3173932f3fc16cb"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/rome-faletti-varisco-1570/artifacts/canon-reading-0c33d78a/canon-reading.txt",
+      "sha256": "0c33d78a64fe8b2cd9a7ab76e0cb5b79384703485567227e7c8cf9102d291ec0"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/unidentified-pre-1955-witness-ia-1947/artifacts/latin-seven-20261026-philip-historical-prayer/latin.txt",
+      "sha256": "799378bbde82ce5eaab33385b1dac3edb4c2819e917f16c48b3285a9cd75d1a1"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1604/artifacts/canon-reading-38b1f81b/canon-reading.txt",
+      "sha256": "38b1f81b65a25c776dec864395ce6f32517f9191ac16f47dd8aff4d05577fe8e"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "sha256": "9e2440cfcf8fd3a0bc86dfc57bd9871992b9bca4fd5baced4ce07c7c06c48fbf"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/edition.toml",
+      "sha256": "2d629ce174b247c8d624b41f9061efe8c7bdf9ea29fcee0a2aec18db2d78bd10"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/chrism-three-orations-word-collation-20261029.toml",
+      "sha256": "0dc482f9bc9f268c8c963cced10c89a4a882c84d357522ee23a9214e09fbbe90"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-urbanian-1635/artifacts/canon-reading-4c671eae/canon-reading.txt",
+      "sha256": "4c671eae9178c75966d1bcb10a77a9a2bd3e4a5bcecbba4bc62e9a310e83a9cb"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/work.toml",
+      "sha256": "ae029277a68493ed903cd608cd7abdb91797aaff614ab5646f7c6a2dbeaa2ffd"
+    },
+    {
+      "path": "src/sources/works/catholic-church/pontificale-romanum/editions/1859-paris-jouby/artifacts/english-completion-20261029-ordinary-chrism-petition/text.txt",
+      "sha256": "b158eef9d0867b4a99570a9991aa4e43c26baf51fff4baeef9d930e644ac4bed"
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/canon-hanc-igitur-checked-latin-75df4acf/text.txt",
+      "sha256": "75df4acff246918a08cf9d2d7c8089c6bb560e76e0f76e3a79669c9bb07e762c"
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/canon-quam-oblationem-checked-latin-e01e1083/text.txt",
+      "sha256": "e01e1083c750fdc4a7c74a7e37c092e8989a9d3427292b5c6fba29f36698b327"
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/chrism-orations-pages-69-73-16f98b4d/artifact.toml",
+      "sha256": "0edfcb8c11324bf95c4db52fb7cf311f2fe6502f41174ad12baacdeb8371d556"
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/chrism-orations-pages-69-73-16f98b4d/pages.pdf",
+      "sha256": "16f98b4d2706347825ab8156e7e5dc83ccab68502326c9540dfb42ec3070360f"
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/chrism-three-oration-readings-20261029-33c7ecdf/artifact.toml",
+      "sha256": "bf3e37cd5f0e780fe5f96c1a9a6c6c9573e86649b4f5515ee35113d174fa386e"
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/chrism-three-oration-readings-20261029-33c7ecdf/latin.tsv",
+      "sha256": "33c7ecdffc2d25aec50dbf79361a4bf7fb092a25086f7e3f8ac71f7fa08de654"
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/internet-archive-pdf-006a38a3/artifact.toml",
+      "sha256": "10a439e18ff4e2740f398e77088902d20650102f20bb7a9b012ba0f0e1f0b030"
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/edition.toml",
+      "sha256": "7bb097f4c19699a224a5bf589d039b7b39a3aad66d9db0e3d70845f353df5670"
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/chrism-collect-checked-20261029.toml",
+      "sha256": "99de14ef63e9a43ce684b337fbaf63733f6a62aa34058a7bb031680563f663a5"
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/work.toml",
+      "sha256": "034be9e2898ee8994a5aa64c1d4316d18271274e68532d1e37b0ba576071a618"
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/canon-hanc-igitur-checked-latin-b46e0e89/text.txt",
+      "sha256": "b46e0e89dd83e69c5befee20965e19263ec54c8ee8742720b941d962eabf83a4"
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/canon-memento-checked-latin-784ee4c8/text.txt",
+      "sha256": "784ee4c890ecfc846d774736dab9d80b0a80b0dded874df046eb7762a41f5d9f"
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/canon-quam-oblationem-checked-latin-94b63de8/text.txt",
+      "sha256": "94b63de805aa0998d0dde05f03dd0c7d9909de4bcff585545f7434e501fd4bbc"
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/internet-archive-pdf-3b991b13/artifact.toml",
+      "sha256": "2c4de2bcfc11bb17dfebc7864b0e7e931aab080e19b65855e0af7276753eb30e"
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/internet-archive-pdf-3b991b13/sacramentariumle00cath.pdf",
+      "sha256": "3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a"
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/edition.toml",
+      "sha256": "f0ebf83f41a990aadc97d01235f9363d55af048b6b90d8a1bf10bfccf50fdc82"
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/work.toml",
+      "sha256": "2d80345a423741a9979991b5218eb2b42ae3a3599631a864de39e4afffe16826"
+    },
+    {
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/canon-hanc-igitur-checked-latin-7465da67/text.txt",
+      "sha256": "7465da67befc59c3576681e5001d1bb33a03b3f72f80a2d513c3b165a5b9dd67"
+    },
+    {
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/canon-quam-oblationem-checked-latin-e404c122/text.txt",
+      "sha256": "e404c122389466c12f7c79304c991aae3a05d8b13297c37ed45bf221cc01727c"
+    },
+    {
+      "path": "src/sources/works/catholic-church/stowe-missal/editions/1915-warner-vol-2/artifacts/sanctus-checked-latin-27b79875/text.txt",
+      "sha256": "27b798758bef32f11d5fa4bd1dbe2608c74a6efa14e6f5ad68b9c1ebe66e726a"
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-13/editions/new-york-1912/artifacts/newadvent-13722a-1a2aa30b-article-text/newadvent-13722a-1a2aa30b-article-text.txt",
+      "sha256": "df642f8477d7664ba0ed1179959e07b1848f35593fceeaefad50b6068827d62f"
+    },
+    {
+      "path": "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/artifacts/newadvent-08377a-f81e2c23-article-text/newadvent-08377a-f81e2c23-article-text.txt",
+      "sha256": "88b1d692d90f6a5bc1855e93d624844b3925437134f7349da0a0db415e3d58d7"
+    },
+    {
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/canon-normalized-latin-fe84fc55/text.txt",
+      "sha256": "fe84fc55cab4c323370a8f0bc02ef513d3ed3121819a5d76ab6a2717604b1ba0"
+    },
+    {
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/confiteor-checked-latin-b2321dac/text.txt",
+      "sha256": "b2321dacd6474a64480fe0cdfeb18fc5c51c7a12e34fb72c3834a00f2e48790f"
+    },
+    {
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/offertory-normalized-latin-6bcf4c42/text.txt",
+      "sha256": "6bcf4c42c4dfe5627a064af5a399ff43fd83d3efb1666b4bc74b33e146aa9201"
+    },
+    {
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/orate-response-checked-latin-a362cf3f/text.txt",
+      "sha256": "a362cf3fe48e850d3503d560e34c4daeb88726f271f7308cacd720f5ce93a796"
+    },
+    {
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/pater-normalized-latin-d84644c4/text.txt",
+      "sha256": "d84644c461efd1de17ba4398a4f6932c6651fe597af25e0bbf99aa3e151c796c"
+    },
+    {
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-cramoisy-1657/artifacts/suscipe-trinitas-checked-latin-6da6f1b5/text.txt",
+      "sha256": "6da6f1b5e8b8d559d239ab61d991a45be84dbd50ef3060e95ece5f18884c4d5e"
+    },
+    {
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/canon-checked-latin-ffa3e1be/text.txt",
+      "sha256": "ffa3e1be8edb198a983a22e69ffb9fc5a4d30de38f6d79bb17ebeb39c310a83f"
+    },
+    {
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/confiteor-checked-latin-60e1426e/text.txt",
+      "sha256": "60e1426e08a9e75ef042f2e9a70103e74a6edea9a66c1a6f59a6e07b51735cd7"
+    },
+    {
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/offertory-checked-latin-9c003023/text.txt",
+      "sha256": "9c003023910561e31e5c59c4e37aa5550994cf04633e856dbb3d5222b728d537"
+    },
+    {
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/orate-response-checked-latin-2bab0892/text.txt",
+      "sha256": "2bab089289b6bbbdd52fdfdc62149db24d1f0135dc1f94164430e236cbc9a195"
+    },
+    {
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/post-canon-checked-latin-89a7bff4/text.txt",
+      "sha256": "89a7bff491a488493934fc94db4c22a63fa34b469a48f6253ee57bfdf15d9047"
+    },
+    {
+      "path": "src/sources/works/cistercian-order/missale-cisterciense/editions/paris-marnef-cavellat-1606/artifacts/suscipe-trinitas-checked-latin-0c61e53d/text.txt",
+      "sha256": "0c61e53dbefbeac73599036df993c0330a28920f3cea81e23c0ca2d62ec3a849"
+    },
+    {
+      "path": "src/sources/works/coptic-catholic-church/missale-copto-arabicum/editions/1736-rome-tuki/artifacts/creed-checked-arabic-79536f9c/text.txt",
+      "sha256": "79536f9cec56d16b9a1740b9baf9db7353b435577320b60983ffa674b4f9563e"
+    },
+    {
+      "path": "src/sources/works/diocese-of-york/manuale-et-processionale/editions/1875-henderson/artifacts/ave-rex-latin-checked-20261029/text.txt",
+      "sha256": "56c4adfe058846548747de3a360ca186ca1b09178961d9723772fde08bfb79f7"
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/pentecost-19-checked-english/text.tsv",
+      "sha256": "e13f1baaafdf562493c8efeb9d7307d9367c331c2743af7d8609af5fe0802abe"
+    },
+    {
+      "path": "src/sources/works/francis-de-sales/introduction-a-la-vie-devote/editions/1876-rivingtons-1876/artifacts/historical-ocr-8159693d/source.txt",
+      "sha256": "8159693db79b26fb8bb02daca693a87ec8816e09aec0511b19c34c5d5f06e0a4"
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/holy-wednesday-two-orations-bilingual-20261023/bilingual.txt",
+      "sha256": "097dcb7bffcd0b92338f41ddd70d774501209a7b3cd0f2f1d82761e14bcec4e8"
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/holyweek-hymn-ubi-caritas-en-20261029-b736c65c/bilingual.tsv",
+      "sha256": "b736c65ce8fa607f765fbb747857d88f87cf28d85216208614ba5cb7fd32bc63"
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/pange-lingua-historical-en-20261029-7dc5b07e/bilingual.tsv",
+      "sha256": "7dc5b07e7cf017028acf80b5d40971d9a71747e94f036ae85e48a1b6fe0724be"
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/holyweek-hymn-gloria-laus-en-20261029-4363e40f/bilingual.tsv",
+      "sha256": "4363e40f424419f977659a98c75b2a293ed9c19950af7758b1394daf5f894f92"
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/holyweek-seven-primary-bilingual-20261023/bilingual.txt",
+      "sha256": "c415f3f83f54b5d1b066fc55cfab298021107b121055e0abd9d608fda35a1837"
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/work.toml",
+      "sha256": "c40e462e77cb754586a920072d53280e7a39f4c9090d12e8a92de31fa33d5a05"
+    },
+    {
+      "path": "src/sources/works/frank-edward-brightman/liturgies-eastern-and-western/editions/1896-oxford-clarendon-volume-1/artifacts/basil-anamnesis-oblation-checked-greek-e123ebb5/text.txt",
+      "sha256": "e123ebb5346fadee0375a7deb13a49e1c048a1846283efe989c0bb36efb3c24e"
+    },
+    {
+      "path": "src/sources/works/frank-edward-brightman/liturgies-eastern-and-western/editions/1896-oxford-clarendon-volume-1/artifacts/basil-invocation-gifts-checked-greek-e4935cb8/text.txt",
+      "sha256": "e4935cb89a06e91586d02baf787d575c9f574497409889f917f3677fc888a8dc"
+    },
+    {
+      "path": "src/sources/works/frank-edward-brightman/liturgies-eastern-and-western/editions/1896-oxford-clarendon-volume-1/artifacts/chrysostom-anamnesis-oblation-checked-greek-3c396481/text.txt",
+      "sha256": "3c39648174e9b087727f09a824b84d6e0fdb9b8d8117806acf278a8cdb7471e5"
+    },
+    {
+      "path": "src/sources/works/frank-edward-brightman/liturgies-eastern-and-western/editions/1896-oxford-clarendon-volume-1/artifacts/chrysostom-invocation-gifts-checked-greek-68a9876c/text.txt",
+      "sha256": "68a9876c01c7ed9bbb6a5b007a784533e1f84fb7b9dabd3e65a7aa330bd158f3"
+    },
+    {
+      "path": "src/sources/works/frank-edward-brightman/liturgies-eastern-and-western/editions/1896-oxford-clarendon-volume-1/artifacts/james-anamnesis-oblation-checked-greek-9e6745c8/text.txt",
+      "sha256": "9e6745c8b060e869d2762e57b36e97e64369d89e663544c6224d3d66f0d89a73"
+    },
+    {
+      "path": "src/sources/works/frank-edward-brightman/liturgies-eastern-and-western/editions/1896-oxford-clarendon-volume-1/artifacts/james-invocation-gifts-checked-greek-0844d792/text.txt",
+      "sha256": "0844d792bb427de62859981bcd99b2c1dc2d860cf9e29818493a2710ff07e9db"
+    },
+    {
+      "path": "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/artifacts/complete-extracted-text-dc25dd69/gregory-whole.txt",
+      "sha256": "dc25dd691b3ed44100e8417b7cdad9e6120753cf60bc59b80c7c3239471e618d"
+    },
+    {
+      "path": "src/sources/works/gregory-the-great/homiliae-in-hiezechihelem-prophetam/editions/1849-migne-pl-76-corpus-corporum/artifacts/i.10.20-checked-text/gregory-homiliae-in-hiezechihelem-i-10-20.txt",
+      "sha256": "6c396be390ea6c11e09245384023e19333935abf1bda42c6b45d0f34c65066c8"
+    },
+    {
+      "path": "src/sources/works/honorius-augustodunensis/gemma-animae/editions/1854-migne-pl-172/artifacts/iv.65-68-checked-text/honorius-gemma-animae-iv-65-68.txt",
+      "sha256": "f79ab8a895b7f785d4fd90ddc0d232d59c62d547638b653879ea27e90fc6059e"
+    },
+    {
+      "path": "src/sources/works/ignatius-of-loyola/exercitia-spiritualia/editions/1914-mullan-1914/artifacts/historical-ocr-fe256c5b/source.txt",
+      "sha256": "fe256c5b17dd9d828bbc5fd19dcf47ff905b413fa32cd2be83e909b8d6048bad"
+    },
+    {
+      "path": "src/sources/works/jerome/commentaria-in-danielem/editions/1845-migne-pl-25-wikisource/artifacts/latin-text-3fe4ba4f/source.txt",
+      "sha256": "3fe4ba4f9f3fe24f1bf0024f89cf470ee77a06591ee7b05b965ac0e4d47ad1c4"
+    },
+    {
+      "path": "src/sources/works/maximus-of-turin/homiliae/editions/1862-migne-pl-57/artifacts/ia-djvu-ocr-acb74efb/patrologiaecur57mign_djvu.txt",
+      "sha256": "acb74efb7afa349363d797fb5ff07cfb86cbf46f5a74e600cf6fafdee7536679"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-10/editions/2026-09-17-ccel-web/artifacts/ccel-text-adb8f1c9/source.txt",
+      "sha256": "adb8f1c9a988c5050a20fb9fdbf75143dcb227e95e3dad2f560a63b757923648"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-11/editions/2026-09-17-ccel-web/artifacts/ccel-text-8bdb50c6/source.txt",
+      "sha256": "8bdb50c6fd132a9558cbd16808ae05000ddcc7059cfd6c1d282f4f734e539c15"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-2/editions/2026-09-17-ccel-web/artifacts/ccel-text-5c973fed/source.txt",
+      "sha256": "5c973feda803f3e58a88ed7df210b42d436f5466741eb8dbeae713ab56dedae4"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-5/editions/2026-09-17-ccel-web/artifacts/ccel-text-bf3dd167/source.txt",
+      "sha256": "bf3dd167062eb4e9f4f193b4957df6973df0321fb5448c157c735309c9c6b40b"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-6/editions/2026-09-17-ccel-web/artifacts/ccel-text-ce371798/source.txt",
+      "sha256": "ce37179876e5e5c9d8e7a6f1f17b8796c4fdf3ffd2815acb82a1c734c57ecd18"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-7/editions/2026-09-17-ccel-web/artifacts/ccel-text-266502c9/source.txt",
+      "sha256": "266502c9bc5da73981217fc536682b999fc7a09da50255477ed4bcbdad1363e3"
+    },
+    {
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/artifacts/canon-reading-e6d0e91f/canon-reading.txt",
+      "sha256": "e6d0e91f2ee6a0d81851801d35065fbd9d6f4b9e8472627eef28efa851e309cc"
+    },
+    {
+      "path": "src/sources/works/order-of-preachers/missale/editions/1550-venice/artifacts/suscepimus-collect-checked-latin-d5fb591c/text.txt",
+      "sha256": "d5fb591c1e67891577853a284c1e12dd4117e36f6fb03e0f1a359275cfe6d77c"
+    },
+    {
+      "path": "src/sources/works/order-of-preachers/missale/editions/1553-venice-giunta/artifacts/canon-reading-4ce34b72/canon-reading.txt",
+      "sha256": "4ce34b7217f9c2930d1a456c058e1e9832c09369b50c22c120def00250075af5"
+    },
+    {
+      "path": "src/sources/works/order-of-preachers/missale/editions/1603-rome-ciacconi/artifacts/canon-reading-ba247899/canon-reading.txt",
+      "sha256": "ba2478994fb023899be640404cd3d52089e8f6d4fa4a7d3ae920dd7a47f85615"
+    },
+    {
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/artifacts/canon-reading-4676dff6/canon-reading.txt",
+      "sha256": "4676dff6bd7b44aceb12aebd01b705e6f0bba99e91c0d8a74da14ac1f7d49358"
+    },
+    {
+      "path": "src/sources/works/order-of-preachers/missale/editions/1604-rome-xavierre/artifacts/suscepimus-collect-checked-latin-72fc670a/text.txt",
+      "sha256": "72fc670a8b9f1688878529f80d9288ae502e4eef878cbcb675b788dc6e60e437"
+    },
+    {
+      "path": "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1879-volume-10/artifacts/pange-lingua-latin-checked-20261029-15c03ec1/latin.txt",
+      "sha256": "15c03ec1c4929c2fb54f32f5e4930d80917f90c0ebeb6f9f660cf6b508a50f76"
+    },
+    {
+      "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/artifacts/bosco-orations-checked-20261029/latin.txt",
+      "sha256": "82a011c5e4207cab295d68f4f922440a74894d8522865e2ca28ef0df34f08b03"
+    },
+    {
+      "path": "src/sources/works/teresa-of-avila/libro-de-la-vida/editions/1904-lewis-zimmerman-1904/artifacts/ia-ocr-3b63bc87/source.txt",
+      "sha256": "3b63bc87297fe5befeaf421420f33f7e63c842920b77e934940a353c788bc5db"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/opera-omnia-volume-14/editions/1863-parma/artifacts/ia-complete-ocr-02c6dc25/aquinas-parma14.txt",
+      "sha256": "02c6dc25802b1964948ba9ab48dcd91eb89c102381a6401c737eecb902153855"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/artifacts/pg19950-body-4597132e/source.txt",
+      "sha256": "4597132e2dfd680253f4a52977af25245b61406d2325480f5a7308bc50265efd"
+    },
+    {
+      "path": "src/sources/works/triptych/bonn-pre-1955-pentecost-latin-projection/editions/2026-10-26-editorial-projection/artifacts/three-prayers-90ea7729/three-prayers.txt",
+      "sha256": "90ea7729be19c33f7eabba7b800d1a5fc33b44dbc61b90b72feb38faa3cb303c"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-08-27-editorial-projection/artifacts/normalized-latin-propers-0bf4adcc/normalized-latin-propers.txt",
+      "sha256": "0bf4adcc3a40ed86e04a1272ec13fb6dab0ef11306dbf7a4a6af4464de3786de"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-08-28-editorial-projection/artifacts/augustine-orations-8a2a938d/augustine-orations.txt",
+      "sha256": "8a2a938da792cde681fb7242d8478665dd81fa4cff7ddd73b0222cfcc427ec23"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/advent-orations-f0d916fd/advent-orations-f0d916fd.txt",
+      "sha256": "f0d916fdcbc699973eafc949b7acd615471eabe6773a0b4a0578f8fbcbf872fd"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/after-pentecost-1-orations-3866bc7e/after-pentecost-1-orations-3866bc7e.txt",
+      "sha256": "3866bc7e72d522575c2b568caf4b5e21671289772bb9af4dcc911c642c9bf15e"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/after-pentecost-2-orations-9321d81c/after-pentecost-2-orations-9321d81c.txt",
+      "sha256": "9321d81c018c35a751464ef08a34eb676253d46dfc54293b694c73ac7d5bffc3"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/after-pentecost-3-orations-186645e7/after-pentecost-3-orations-186645e7.txt",
+      "sha256": "186645e7c8f1e0dc1b3a8cb0b693d6c240bf27ddb6243260348841eb7e1ae5b4"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/angela-merici-orations-7c08ded8/angela-merici-orations-7c08ded8.txt",
+      "sha256": "7c08ded86d626a1400363274eb0ef64b39542db06bf4bffb83ad75b22dd7bf64"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/audit-repair-orations-355618d4/audit-repair-orations-355618d4.txt",
+      "sha256": "355618d4661aa795abef35c2d66b8521431bde2c956d4ab103af094eef1077aa"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/chant-vigil-orations-da6ca22d/chant-vigil-orations-da6ca22d.txt",
+      "sha256": "da6ca22d1df3cb6c735978f9bce42e4196582adbc40b64f631ae8bcb9ad06e4c"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/christmastide-orations-08d2b1f9/christmastide-orations-08d2b1f9.txt",
+      "sha256": "08d2b1f9dc2d774355c0cb3a7b5daca433cfb94cf4836da7bc4f77e3da8e75a0"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/christological-orations-a1c65ca5/christological-orations-a1c65ca5.txt",
+      "sha256": "a1c65ca514dd2a5bc56284bd52599340201accca70cbe77897439ff486efa8d2"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/commons-1-orations-349a24c2/commons-1-orations-349a24c2.txt",
+      "sha256": "349a24c28f58cae96a86412a5d4620b405df6951f8ef38a8a120cbf1faac3591"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/commons-2-orations-8f0f1a33/commons-2-orations-8f0f1a33.txt",
+      "sha256": "8f0f1a33bcd92be8742d2d69e89ddd5c455c180f33c64f1f584f40638e087995"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/corpus-christi-orations-6462b919/corpus-christi-orations-6462b919.txt",
+      "sha256": "6462b9199d0c999e036d18a511186f479b7c8544ef0cac640ac4c4a0e139df96"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/epiphanytide-orations-25a0ede9/epiphanytide-orations-25a0ede9.txt",
+      "sha256": "25a0ede93d9658f0224623b1c6010f02584faed09e287ba593dbe25c0965424a"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/gap-marian-orations-94a91c93/gap-marian-orations-94a91c93.txt",
+      "sha256": "94a91c93801ba1909576d92e53ebafd6bbb07b0d17633fa3e9c0a5f596f43ba0"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/gap-sanctoral-1-orations-09719423/gap-sanctoral-1-orations-09719423.txt",
+      "sha256": "09719423ae47bf3c3a7673f1dde17048afea405c207e8714bc7ffde26a7b9240"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/gap-sanctoral-2-orations-b44831ee/gap-sanctoral-2-orations-b44831ee.txt",
+      "sha256": "b44831ee8d2047cbf3a8e0bb1cf16175501a0f765325cfe34783ac16fcf493b7"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/gap-sanctoral-3-orations-b43e63f0/gap-sanctoral-3-orations-b43e63f0.txt",
+      "sha256": "b43e63f0ec0b3fec2b25d124c8f8f15164c68cf5832490d4b4a579c3c39d845b"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/gap-sanctoral-4-orations-219ac7b1/gap-sanctoral-4-orations-219ac7b1.txt",
+      "sha256": "219ac7b1aac3841ce99b5d61c29570d79b8c9fcae3401679bb916ca6630756f8"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/gap-seasonal-1-orations-33ba218a/gap-seasonal-1-orations-33ba218a.txt",
+      "sha256": "33ba218a46b3eee7d604389073db330c2bf43a2f9e62b18de3d9724becacde8b"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/gap-seasonal-2-orations-7f669120/gap-seasonal-2-orations-7f669120.txt",
+      "sha256": "7f66912037e93998541350bf1597d8f8c9af94a5de3f6abe1149b445e4064509"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/ki054-page-reading-orations-7d558094/ki054-page-reading-orations-7d558094.txt",
+      "sha256": "7d558094a337af14a24ef7e5d4d9ae7b62543c94c55f5db7f4f9c1001b80ce61"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/lauda-sion-orations-c28eb776/lauda-sion-orations-c28eb776.txt",
+      "sha256": "c28eb776b1408e69a3257a839b9a2724a1234127f3bf03a3efc95c375a26947b"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/lent-orations-87e207e0/lent-orations-87e207e0.txt",
+      "sha256": "87e207e0c381ebd3504c28ee69fa66efd4d21cba68ae6aabda318c3e3a10bec5"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/mame-seventeen-orations-fb21bf16/mame-seventeen-orations-fb21bf16.txt",
+      "sha256": "fb21bf160c2de3a0b12403aabedaf332e7b33c4702c944966c1ccceb115412bc"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/marian-orations-93c63bef/marian-orations-93c63bef.txt",
+      "sha256": "93c63befe0087367c52ecc58bb90eb45b6232674f6eb003327a5344fc2e6dfb7"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/paschaltide-orations-1c865518/paschaltide-orations-1c865518.txt",
+      "sha256": "1c86551851f560b46b0238ed676624f8d175420b8986226fed39dd2e4b4aabe2"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/passiontide-orations-800ff4a3/passiontide-orations-800ff4a3.txt",
+      "sha256": "800ff4a3abfbef322e95e4efb185be4d365defd841daae1ba47dd437d271c36a"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/pentecost-chants-readings-bc484a90/pentecost-chants-readings-bc484a90.txt",
+      "sha256": "bc484a907184a1f5a2ff03203cc973a1fd5018523270885b9b0175e60f561ad1"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/post-pentecosten-14-orations-8ad972fc/post-pentecosten-14-orations.txt",
+      "sha256": "8ad972fcc20d13e1598cbcefa41427c4119c75534174aacbdff6ac8508abda78"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/recovery-page-reading-orations-f5b13d07/recovery-page-reading-orations-f5b13d07.txt",
+      "sha256": "f5b13d076714bfdea8e8e0474cc0d11a8872adbbfee8357be61f01d19b4ed8d0"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/repair-1-orations-d8781e74/repair-1-orations-d8781e74.txt",
+      "sha256": "d8781e74bcbb3e27b4bceedf84f672e4d697245d6a1fbb871b2e9ecb882763c4"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/repair-2-orations-bd3c92ec/repair-2-orations-bd3c92ec.txt",
+      "sha256": "bd3c92ec616d47f3eb748654d13b315ec5d6606941e61241654208c9ad4b9478"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/s-antonii-offertory-28fd4214/s-antonii-offertory-28fd4214.txt",
+      "sha256": "28fd421413e4c729c7d4e071e5d5135289a2edd8346b6bf7c92f61ec644c613a"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/s-luciae-communion-34fdfea7/s-luciae-communion-34fdfea7.txt",
+      "sha256": "34fdfea7d8689465a61b2ac84a5ecbabb8e2665cab9ae93f4f73ca1ee10668d6"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/s-michaelis-introit-dfe07c30/s-michaelis-introit-dfe07c30.txt",
+      "sha256": "dfe07c307ea3c845795f8808ad7178cd221e95e847b0e30fb89d30abd880c070"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/s-thomae-introit-74c5a893/s-thomae-introit-74c5a893.txt",
+      "sha256": "74c5a89365b78f178d50a9ae23c42a7936675d22ed686fb979c02db66d340062"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/sanctoral-w-1-orations-2e477eea/sanctoral-w-1-orations-2e477eea.txt",
+      "sha256": "2e477eea12d3316cdfdeb2445422e85baaf0c48be9800b2555946eee3f19671c"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/sanctoral-w-2-orations-f26ac956/sanctoral-w-2-orations-f26ac956.txt",
+      "sha256": "f26ac956893280f92e216ea7ec1dcdfef5868da9e0ed302df559696de0f70e0a"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/sanctoral-w-3-orations-98936698/sanctoral-w-3-orations-98936698.txt",
+      "sha256": "989366986defa06e99200c383b06394d434a8745af641bf19d9bd6c1a8bbbafe"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/septuagesima-orations-04c4c47e/septuagesima-orations-04c4c47e.txt",
+      "sha256": "04c4c47eddb8d8f55c54b39c831bb38043facf3684f230282531ad2167f825bf"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/triduum-orations-21aa7a98/triduum-orations-21aa7a98.txt",
+      "sha256": "21aa7a98079e7a845e4a316ce18030a77bf531f7ed38639c3dc6fd0b4e522d78"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-20-editorial-projection/artifacts/adapted-primary-readings-76d61000/adapted-primary-readings.txt",
+      "sha256": "76d610008540bce0bd1f72a7f0977945a9bb56f0a2d2283f89cd2df080c387f8"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-20-editorial-projection/artifacts/advent-lent-ember-orations-4ba2f77c/advent-lent-ember-orations.txt",
+      "sha256": "4ba2f77c6cf32006f61e1867ec0a8a57d82639168cb44a0d640ce9ef8c13313e"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-20-editorial-projection/artifacts/all-saints-four-propers-adfda498/all-saints-four-propers.txt",
+      "sha256": "adfda4982075177af64d285989ed9d1737beb78d948575f11cfa75eb100fa8bd"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-20-editorial-projection/artifacts/all-souls-sixteen-bodies-871dadab/all-souls-sixteen-bodies.txt",
+      "sha256": "871dadab9079a7a876f653a57f16f12d05b9d5bb61ceed68ecf3c6c41a110182"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-20-editorial-projection/artifacts/christ-the-king-orations-dc4287d2/christ-the-king-orations.txt",
+      "sha256": "dc4287d2d8c1cc5c97c3b9c9b85b9fd097751fb756d66cf20cb010af7d8ab081"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-20-editorial-projection/artifacts/christmas-nine-orations-00f947d9/christmas-nine-orations.txt",
+      "sha256": "00f947d9d6609eb03e21e1c841d0d9e9d00a56d81a7451bbc793d6e09c7a7a44"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-20-editorial-projection/artifacts/ember-pentecost-september-5fdd4f00/ember-pentecost-september.txt",
+      "sha256": "5fdd4f0011a7efe02d41e71c0b6e624a2026d551cc16d43cdc4fddaa38297240"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-20-editorial-projection/artifacts/immaculate-conception-four-propers-5f582ed9/immaculate-conception-four-propers.txt",
+      "sha256": "5f582ed9c64b038b3488141c1fc251fc8a7b6d9d20076162673a606e0605a563"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-20-editorial-projection/artifacts/theodore-own-orations-0c381c32/theodore-own-orations.txt",
+      "sha256": "0c381c3216bddd7e41508682bb8d46cefc20323e183f952a15b6f78c0d4d61ec"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-20-editorial-projection/artifacts/uncited-eight-chants-a4fbf91f/uncited-eight-chants.txt",
+      "sha256": "a4fbf91fd6774e0ff323e185e6202e17d22ab4c8f618fc38d6d54e6175a23660"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-21-editorial-projection/artifacts/september-ember-wednesday-collect-7124589a/september-ember-wednesday-collect.txt",
+      "sha256": "7124589a58d990e82bde57e5490109b76db17d82ab7d9af302f13b94d51f8793"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-22-editorial-projection/artifacts/boniface-three-orations-ae811235/boniface-three-orations.txt",
+      "sha256": "ae81123525827b67576e175b54004653cce51016d900716364650afe56b5e74f"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-22-editorial-projection/artifacts/phase2-octnov-commemorations-20261022/phase2-octnov-commemorations.txt",
+      "sha256": "cfb24c25cfb2496837f71eda4551e785e12f682075416d244aabffbf6aa44bd5"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-22-editorial-projection/artifacts/phase3-ursula-postcommunion-20261022/phase3-ursula-postcommunion.txt",
+      "sha256": "5a5b9ed5c33e154ea2ca35320f7447da49d6100622ca563537e849b60d0137d2"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-22-editorial-projection/artifacts/phase3-winter-eighteen-orations-20261022/phase3-winter-eighteen-orations.txt",
+      "sha256": "3f31c1eef89a6baa0dbbb26b6616f89dc2edf003b6a080680d9517f843a81146"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-22-editorial-projection/artifacts/phase4-common-virgin-ii-two-word-repair-ce623d9f/common-virgin-ii-collect-secret.txt",
+      "sha256": "ce623d9f71e6021c3e7121f910ef5f7adce6122d6e007eb5905ec50834a6841e"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-22-editorial-projection/artifacts/phase4-hilary-postcommunion-20261022/phase4-hilary-postcommunion.txt",
+      "sha256": "7037ccdbaacb3debd53b93d275f320b12899fb9c5f7fbf98b2526dd8c497fab0"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-22-editorial-projection/artifacts/phase4-mayoct-alexander-twentytwo-orations-20261022/phase4-mayoct-alexander-twentytwo-orations.txt",
+      "sha256": "dd94f56f258e665930043284c747c41852bb47371aa2fda01337a58bb459dc11"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-22-editorial-projection/artifacts/phase5-latin22-pustet-projection-20261022/latin.txt",
+      "sha256": "f6993617fed59176e4e527f4c47c853b3e80b01f3e4fd61dfc41e68c8ef7661d"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-22-editorial-projection/artifacts/phase5-latin22-schott-projection-20261022/latin.txt",
+      "sha256": "dab1c4edc0d73c87a91406deb5c6e2178f8bd6ace6b505932ff7b615f47431d4"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection-next-leads-2/artifacts/four-target-damage-repairs-20261023/latin-only.txt",
+      "sha256": "2f26a3911507cac5a403ae3588eccb8e736fdd6090ce89ecf97dcd50c936e12b"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection-next-leads-3/artifacts/two-target-damage-repairs-20261023/latin-only.txt",
+      "sha256": "c7aeebd999a12f5ba34e89f8404161b6fa8dd01dea81990322b97bc1fca965cf"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection-next-leads/artifacts/next-leads-two-collect-repairs-20261023/latin-only.txt",
+      "sha256": "2f0e96d72072b5ac54511f3e3b2849f433768bb47080b3615b91ec0ceca0c4d8"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection-paul-june30/artifacts/three-primary-petitions-20261023/latin-only.txt",
+      "sha256": "0d1949eab2397dfd284714aa9914161fe8b9762e43bcc04bc526e1e236915524"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection-supplement/artifacts/two-damage-supplement-20261023/latin-only.txt",
+      "sha256": "8b75446c496ccf6feb97b4279670e2bd9a02ce130f936b122098cdb12fb2dfdf"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/artifacts/annual-oratio-early-20261023/latin.txt",
+      "sha256": "d2a7263379b4e8cc2904f31a5cac7f9fb479392c67853473111038abf5f7059c"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/artifacts/common-five-damage-repairs-20261023/latin-only.txt",
+      "sha256": "83298af7a7630bb9cab769bdcf718323e6f7d835b365960b66882a874e2bdff3"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/artifacts/damascene-offertory-non-paschal-base-20261023/latin.txt",
+      "sha256": "b06720237c7314a55174aecedcabdbac4dbbbbd6fa43b11c160c689b703340b4"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/artifacts/five-residual-20261023-projection/latin.txt",
+      "sha256": "25c7202d38046e4562d75ac3f5389789623d01a6241592f0582f7f58e2208197"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/artifacts/resume-oratio-late-mame-projection-20261023/latin.txt",
+      "sha256": "c70245597e876ef731230f29b12e22724ce65feb0576d98f07717fa2c4e9c397"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/artifacts/september-dolors-orations-20261023/latin.txt",
+      "sha256": "ba8adcff0f8fc26a62a6de035bd698c2e5d68191c96a281581a702ecaeaee7ad"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-absent-nodes/artifacts/reader-completion-20261026-absent-nodes-projection-967cb7ab/latin-only.txt",
+      "sha256": "967cb7ab73cb8066fe3662e8fef1203674eb21689f469ff92752d602c26b08cd"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-cosmas-chain/artifacts/cosmas-collect-unchanged-20261026/latin-only.txt",
+      "sha256": "c767db70fa4486fbeedb5a3dba2e9a15c5313133a4ef671d361fc0c4439db840"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-josaphat-chain/artifacts/josaphat-collect-unchanged-20261026/latin-only.txt",
+      "sha256": "8ac5c63a4f70f545c337ffb3ccf2a36223df16945211944a2ec31db59c72c0f0"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-latin-five/artifacts/latin-five-20261026/latin-only.txt",
+      "sha256": "d82591596f919bc18834804124b9efbe0f81f383b4cceeb08583035d158b76b0"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-latin-seven/artifacts/latin-seven-20261026/latin.txt",
+      "sha256": "5385ed3800db33ef4565996473243adab7aec14cdc924dffe1dec816c98cff70"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-philip-secret-chain/artifacts/philip-secret-unchanged-20261026/latin-only.txt",
+      "sha256": "9986096a174e08922b5fbd98884cfea3f36e1905b96f17017776f09d2c3c6a8b"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-sanctoral-repairs/artifacts/three-reviewed-bodies-20261026/latin-only.txt",
+      "sha256": "ce303bc47e7a37b777c7bfabb9750e69b6212c19433fc47c7ba3b5647963d354"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-editorial-projection-seven-founders/artifacts/seven-founders-complete-20261026/latin-only.txt",
+      "sha256": "58883b38d04a0503f279b6752f8be4f0653efb980ac5a44a94519238e307ee5b"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-gregem-qualified/artifacts/common-gregem-collect-e520fa2e/latin.txt",
+      "sha256": "e520fa2e88c8241c62b0ab06171beb2da1532bb39d25b2b7059a6dd80b2f1bd4"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-26-gregem-qualified/artifacts/damasus-gregem-collect-8be4980d/latin.txt",
+      "sha256": "8be4980dfd10f7a70ea1e0674d51271639d7f187b2013678d884a52f51d1bef5"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-bosco-secret-public-domain/artifacts/s-ioannis-bosco-confessoris--secret--1/latin.txt",
+      "sha256": "db67a20c9856f185be4d0784326f5f7ab5906ce09c079c05ca7ec2a6c8541225"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/assumption-chants-four-20261029/latin.txt",
+      "sha256": "abad99ac630d2a9c5e37a91f5e38be515bf0ad6cc7e8d40f8b387662f7797037"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/chrism-two-orations-9b3148f9/latin.txt",
+      "sha256": "9b3148f940dd5a2d1f36e9ed88a560b2a36667503e1a0e39560364034fac0346"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/dolors-chants-20261029/latin.txt",
+      "sha256": "d03aec4448d8e29a415a62c4cc032721e4b3582e0b733121d2f1d6b146e32e03"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/english-completion-20261029-common-paschal/latin.txt",
+      "sha256": "51e71a00ee2df641e678e26e136d5645602b6dde98b20e3e74b64c849083e005"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/english-completion-20261029-saints-chant-latin-10b19922/latin.txt",
+      "sha256": "10b19922a2fc07cd74be90ae8832d093e705247b93491fa155bf9a1090635e82"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/english-completion-20261029-temporal4-ascension-vigil-alleluia/latin.txt",
+      "sha256": "1c9cd92566a9c66be51406f5333a197b1cd7f97cb91434ab8d1116e6a16d8a45"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/english-completion-20261029-temporal4-epiphany-ferial-introit/latin.txt",
+      "sha256": "b88ee0082ae7dc4b9d8199df2660d98c9f31ac691153825b791eccbe898973a1"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/english-completion-20261029-temporal4-lent1-ember-saturday-hymn/latin.txt",
+      "sha256": "3c7101578472c4ffbd39978633095d9e77760331d06227e692815ae1a15edf63"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/late-marian-two-chants-projection-20261029/latin.txt",
+      "sha256": "a6406eff476911cdbd16e301edf7eba52aa6c19afe058e8aebcd90c50805be60"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/marian-ancient-chants-20261029/latin-only.txt",
+      "sha256": "94e82bd101d9f2b2251f8e48acc72e3aed0b9332975128b9fe162802e0782935"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pange-source-prescribed-assembly-53086b37/latin.txt",
+      "sha256": "53086b37a090275ba11b1a8053054ba39c95fd3dc475aabf9c8f5206167d6379"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pentecost-four-chants-20261029-d074f957/latin.txt",
+      "sha256": "d074f957761fb3fbfab186eb899a2ab096ffd62e9ce03e51f776be56dee64f16"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/visitation-five-chants-20261029/latin.txt",
+      "sha256": "68feee0ed77ad5c2695ab4498b3b110142f5ea251f91afaab8b3cbece361963c"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/edition.toml",
+      "sha256": "ee2bd5610f0fcdcf6d7b566961b9d997a902c2f4af79480073c07eb5c57313ae"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-holyweek-antiphons/artifacts/ave-rex-60e6fd51/latin.txt",
+      "sha256": "60e6fd51bdd407c32bf4b59928c45c249956b404d22469311dd8b7c835139cc3"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-holyweek-antiphons/artifacts/fulgentibus-0916383d/latin.txt",
+      "sha256": "0916383d240a773024be9918e843dacd452f1ceb7456adb3a6d12747dfd95b53"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/work.toml",
+      "sha256": "ec158d3a6a6b806eae829bf0ee477f401ef7bcf848cb831e3a286d2e96e291a5"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-pange-reading-assembly/editions/2026-10-29-english-assembly/artifacts/pange-cue-and-original-hymn-5e4b22f6/english.txt",
+      "sha256": "5e4b22f6ba9a372b240daa866558fdba02df2b66073716ca8c6d1a0132749e2b"
+    },
+    {
+      "path": "tools/source-library",
+      "sha256": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3"
+    },
+    {
+      "path": "tools/source-reader",
+      "sha256": "6add9dc673943c8589cf511cee004f922566d1c4aa68038b923d74c30270801c"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/pope-three-rights-assessment.json",
+      "sha256": "a0d49c755d32455eda8e14ab13f4b862a6bbac446a23991deaa97548df355c1b"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/bosco-final-source-review.json",
+      "sha256": "c8f21b503aad214e85d0a3a3ca52c0db7e7e9da7f4438ca23c3257bf1c2ae2b2"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-ea83abec30446f37.json",
+      "sha256": "6b478c729ae79f8f3514289de66bfc8447155d6e0edffe8eaf8eefe489ee5d58"
+    }
+  ],
+  "plans": [
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/target-schema-transport-repair-v1/finite10-install-plan.json",
+      "sha256": "0c261361b242d36acb1b7d436b0ba4c6227a940d21776820cc2c96731f52ec16",
+      "state": "finite-ten-proposal-after-direct-public-domain-secret-awaiting-root-adoption"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/pontiff-common/finite-common-reviewed-install-plan.json",
+      "sha256": "06b8209ec05d518ff662c9546b643fc0662a27c93ee3d1ce7a8a0073704c58c3",
+      "state": "source-and-historical-English-reviewed-root-rights-adoption-pending"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/finite-chrism-collect-install-plan.json",
+      "sha256": "0fea972fe4dfd1b20f081dc089603d47fbdb639fd96e4bfa7f8be312e24d54d2",
+      "state": "source-facts-and-study-English-reviewed-root-rights-adoption-pending"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/finite3-final/install-plan.json",
+      "sha256": "dce120cc6f348cc1d24ce99baeb3e7b5da3985ed4e0779e5c68910b09a6975a3",
+      "state": "candidate-only; complete accepted actual-source/target, finite rights recommendation and exact original study-English evidence preserved; root finite adoption and integration checks remain required before installation"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/target-schema-transport-repair-v1/secret-install-plan.json",
+      "sha256": "f3a948b8912ada0f207ffb74291c770965f7383ed38d7d5b06c1aa1274b00ad8",
+      "state": "source-reviewed-direct-public-domain-proposal-not-installed"
+    }
+  ],
+  "receipts": [
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/finite3-final/body-index.json",
+      "sha256": "eae81a04be03411b59964b6b1171035b6c4fbecad7917719e83a86e81ce84345"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/finite3-final/conditional-structure-check.json",
+      "sha256": "cf7b756552a3976dc0a4b4aac3d50c12995f03ce84305e1c4d79a701e9954656"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/finite3-final/mechanical-check.json",
+      "sha256": "674807b41b759773373809f94989f3f9bf28df8546a12d4e624e6946a196dc1d"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/late-marian/assumption/offertory-base-review/source_review.json",
+      "sha256": "61c77363de07e6487a7146b0836455d33282cbf5b37fb18b81d1ff9d9fee7dc7"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/saints/independent-review/finite-source-controller-review.json",
+      "sha256": "a2195e06f231727c5fd6cd843c271fc9f78003156f90152e635ae208628ff729"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/saints/independent-review/finite-two-source-only-review.json",
+      "sha256": "ea7206c52f4737cd1e268fd17f6a40228e011568d5c12e2bc1f75090ea3e1186"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/finite-guard/frozen-sixteen-evidence-preflight-v3.json",
+      "sha256": "8d457ac274fce70723e4f827f3cb2a47922bf093ee279ecc0bcbe6fcf8e90cd4"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/finite-guard/stable-sixteen-plan-inputs-v1.json",
+      "sha256": "bf5d751c7c5ccb81969d79751cd5be3785b0f7988f410033b7bbfcebd29b656b"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/finite-source-review/review.json",
+      "sha256": "d5755810808b4a744a5eef1af562fcb4f6376622d18fc119e3c82c1dc4cb323b"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/papal-source-review/review.json",
+      "sha256": "1842100692792b1924396dc44245dc97413d2d7c18c75b6246f3c4c01bc96635"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/holyweek-four/chrism-review/review.json",
+      "sha256": "3fe5122a42a83baf422843bafa4c9b07b48b7f1efa6555a8c772366050c8fa71"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/holyweek-four/common-two-review/review.json",
+      "sha256": "d85ba6a4b9c3df6ba52f8501a2e5cc50b0d9b336d053f7763d071b0e224e160d"
+    },
+    {
+      "path": ".scratch/translation-policy-20261029/finite3-final-surface/REVIEW.json",
+      "sha256": "cafcae080f5716b0b177c28db3158fbb8b0a6343e8535931ce5e9c28c0964997"
+    },
+    {
+      "path": ".scratch/translation-policy-20261029/sanctoral-rights3/CHANT-V2-CONTROLLER-SUCCESSOR-REVIEW.json",
+      "sha256": "1f0d83b277cad947579908274b714985d5ab0b9c9d2f439dae2964e56cfd0ada"
+    },
+    {
+      "path": ".scratch/translation-policy-20261029/sanctoral-rights3/CHRISM-CHANT-FOUR-RECOMMENDATION.json",
+      "sha256": "fe1f06208f67865a47312a5675cc10ecabe09c62871e73122685ecba9bc86b59"
+    },
+    {
+      "path": ".scratch/translation-policy-20261029/sanctoral-rights3/CLEMENT-COMMON-FOUR-RECOMMENDATION.json",
+      "sha256": "1d0e395d41de0c7a0f0ed2a52a17b990e0fcc6d00cd6f5bbb6e757028d73e3ff"
+    },
+    {
+      "path": ".scratch/translation-policy-20261029/sanctoral-rights3/HEART-LINEAGE-SUCCESSOR-REVIEW.json",
+      "sha256": "ff5f4fea37246777bb4d75df3800ccb59665d1dcce800e01dab8b6042bf1814c"
+    },
+    {
+      "path": ".scratch/translation-policy-20261029/sanctoral-rights3/RECOMMENDATION.json",
+      "sha256": "7d48a4214f1fe486cc72f90e291e66cf7bb1bd9b4af7dc34c74ca93abd7c715d"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/pope-three-rights-assessment.json",
+      "sha256": "a0d49c755d32455eda8e14ab13f4b862a6bbac446a23991deaa97548df355c1b"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/bosco-final-source-review.json",
+      "sha256": "c8f21b503aad214e85d0a3a3ca52c0db7e7e9da7f4438ca23c3257bf1c2ae2b2"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-ea83abec30446f37.json",
+      "sha256": "6b478c729ae79f8f3514289de66bfc8447155d6e0edffe8eaf8eefe489ee5d58"
+    }
+  ],
+  "controller_payload_checks": [
+    {
+      "id": "artifact.catholic-church.breviarium-monasticum.1690-venice-baglioni.erara-whole-pdf-6fb9cd28",
+      "record_sha256": "17dfcc53a0165f2bfd0934dcecc511987fc1f43ed5200070eec8e1432d1b3add",
+      "storage": "remote",
+      "registered_payload_sha256": "6fb9cd281ab4372ac9ad2de20e1a2dc9b37051bbd6112c3bf18da92dedef6277",
+      "registered_byte_size": 409425773,
+      "state": "registered-remote-metadata-pinned-no-byte-verification-claim"
+    },
+    {
+      "id": "artifact.catholic-church.breviarium-monasticum.1690-venice-baglioni.queenship-offertory-base-latin-20261029",
+      "record_sha256": "74d1fad9639cc62029e1cc3e92da26782e5ef61714e9f76817f96b3957d42cef",
+      "storage": "tracked",
+      "registered_payload_sha256": "dd345ee2fcab6b3974007069754a1ae6974851a5276af44fac6133b329655c77",
+      "registered_byte_size": 109,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/catholic-church/breviarium-monasticum/editions/1690-venice-baglioni/artifacts/queenship-offertory-base-latin-20261029/latin.txt",
+      "actual_payload_sha256": "dd345ee2fcab6b3974007069754a1ae6974851a5276af44fac6133b329655c77",
+      "actual_byte_size": 109
+    },
+    {
+      "id": "artifact.catholic-church.breviarium-monasticum.1690-venice-baglioni.queenship-offertory-base-pages-20261029",
+      "record_sha256": "b7c993501b4340545ff4421eda4233ac83e6cc54fd61f380c070cb520d6b99fc",
+      "storage": "tracked",
+      "registered_payload_sha256": "9853d5a5e49dfe4891a6614be3e1cab50dbdd599c3908da04019b00d7bc37262",
+      "registered_byte_size": 995897,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/catholic-church/breviarium-monasticum/editions/1690-venice-baglioni/artifacts/queenship-offertory-base-pages-20261029/source.pdf",
+      "actual_payload_sha256": "9853d5a5e49dfe4891a6614be3e1cab50dbdd599c3908da04019b00d7bc37262",
+      "actual_byte_size": 995897
+    },
+    {
+      "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-saints-bases-2be6c708",
+      "record_sha256": "01d16b11dc9cb9a75dd8f87e53a62a623857a70c34cc8229197a78354162edd6",
+      "storage": "tracked",
+      "registered_payload_sha256": "2be6c7089fade3e9ae6399f63a18064915b4ee3c13b4f3712ca6442d35ad11ab",
+      "registered_byte_size": 458,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-finite-saints-bases-2be6c708/latin.txt",
+      "actual_payload_sha256": "2be6c7089fade3e9ae6399f63a18064915b4ee3c13b4f3712ca6442d35ad11ab",
+      "actual_byte_size": 458
+    },
+    {
+      "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.heart-two-20261029-control-pages",
+      "record_sha256": "18bdf6f5592e646e31e3b0bafe0e3665729fc528598e27369a9762c8764c721f",
+      "storage": "tracked",
+      "registered_payload_sha256": "fe425c3ced93d5d48bc9d64af1a83d646035ae60715c33021931179d25169c2a",
+      "registered_byte_size": 410906,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-control-pages/source.pdf",
+      "actual_payload_sha256": "fe425c3ced93d5d48bc9d64af1a83d646035ae60715c33021931179d25169c2a",
+      "actual_byte_size": 410906
+    },
+    {
+      "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.heart-two-20261029-historical-prayers",
+      "record_sha256": "9297cea52c267d890e35895c6368deef36c668411f3f5f43ab4dd5eb25b76e1c",
+      "storage": "tracked",
+      "registered_payload_sha256": "834d0e60236511a5ff7f3d4f9186ea1188791eab9706277e7bb488d52f6b6cff",
+      "registered_byte_size": 501,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-historical-prayers/latin.txt",
+      "actual_payload_sha256": "834d0e60236511a5ff7f3d4f9186ea1188791eab9706277e7bb488d52f6b6cff",
+      "actual_byte_size": 501
+    },
+    {
+      "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+      "record_sha256": "2f678647fd7e4c62f263650880fab4cc0559036bdfd9ebc75c0b90a2f71c216a",
+      "storage": "remote",
+      "registered_payload_sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+      "registered_byte_size": 51720493,
+      "state": "registered-remote-metadata-pinned-no-byte-verification-claim"
+    },
+    {
+      "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-support-pages-20261026",
+      "record_sha256": "c5d8d3ea6ca0854b1277c3a47d39bd3c70ba2b74cbf21ca124f74053b6b9ec0b",
+      "storage": "tracked",
+      "registered_payload_sha256": "d79410cf7b26b3dde9de6e117eb1c5ebc7cf1a174f006b4b5024fc7d462e4fc7",
+      "registered_byte_size": 617459,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/latin-five-support-pages-20261026/source.pdf",
+      "actual_payload_sha256": "d79410cf7b26b3dde9de6e117eb1c5ebc7cf1a174f006b4b5024fc7d462e4fc7",
+      "actual_byte_size": 617459
+    },
+    {
+      "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49",
+      "record_sha256": "ffaa8ef3b5b506899626f56383d71f0dd9a6e6afc7c640a0fa8a41b346dbaff5",
+      "storage": "tracked",
+      "registered_payload_sha256": "976afd4964a6b833ec2bf92ee5cb00825be96a4d7bc789acf34fde0bacac3b6b",
+      "registered_byte_size": 411321,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-controls-20261029-976afd49/source.pdf",
+      "actual_payload_sha256": "976afd4964a6b833ec2bf92ee5cb00825be96a4d7bc789acf34fde0bacac3b6b",
+      "actual_byte_size": 411321
+    },
+    {
+      "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-historical-latin-20261029-5602f33a",
+      "record_sha256": "f9c73a0811daa584bb89f2f4e31eab1ece1a8ddbde12a77e44b2091a2f1097bc",
+      "storage": "tracked",
+      "registered_payload_sha256": "5602f33a0dc7039761adac78d736fdb286ea1261404cd7cdd3a0c5bdb9fd66f2",
+      "registered_byte_size": 260,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-historical-latin-20261029-5602f33a/source.txt",
+      "actual_payload_sha256": "5602f33a0dc7039761adac78d736fdb286ea1261404cd7cdd3a0c5bdb9fd66f2",
+      "actual_byte_size": 260
+    },
+    {
+      "id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+      "record_sha256": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+      "storage": "remote",
+      "registered_payload_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "registered_byte_size": 82815941,
+      "state": "registered-remote-metadata-pinned-no-byte-verification-claim"
+    },
+    {
+      "id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.chrism-orations-pages-69-73-16f98b4d",
+      "record_sha256": "1f6a038fd4ac6da5908ae265472de2ced999c7874e520e67cd968b04e6a6c86c",
+      "storage": "tracked",
+      "registered_payload_sha256": "16f98b4d2706347825ab8156e7e5dc83ccab68502326c9540dfb42ec3070360f",
+      "registered_byte_size": 308155,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/chrism-orations-pages-69-73-16f98b4d/pages.pdf",
+      "actual_payload_sha256": "16f98b4d2706347825ab8156e7e5dc83ccab68502326c9540dfb42ec3070360f",
+      "actual_byte_size": 308155
+    },
+    {
+      "id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.chrism-three-oration-readings-20261029-33c7ecdf",
+      "record_sha256": "7ac3f76df73514344d9e627db4577236087944f6cb164a9f9201e3a4afd031d8",
+      "storage": "tracked",
+      "registered_payload_sha256": "33c7ecdffc2d25aec50dbf79361a4bf7fb092a25086f7e3f8ac71f7fa08de654",
+      "registered_byte_size": 567,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/chrism-three-oration-readings-20261029-33c7ecdf/latin.tsv",
+      "actual_payload_sha256": "33c7ecdffc2d25aec50dbf79361a4bf7fb092a25086f7e3f8ac71f7fa08de654",
+      "actual_byte_size": 567
+    },
+    {
+      "id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3",
+      "record_sha256": "99cf50d7b8ebc5410e229374868a2367ad221602e09e4dbeff5fd9b9f91acd45",
+      "storage": "remote",
+      "registered_payload_sha256": "006a38a39250d39c9745acfb4f4a098374027e719dc7ad7e32972fa6a82489bc",
+      "registered_byte_size": 13625474,
+      "state": "registered-remote-metadata-pinned-no-byte-verification-claim"
+    },
+    {
+      "id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+      "record_sha256": "813839a6047816716e979576044f6b3836640e91b5ee2ee3326e939684c89784",
+      "storage": "tracked",
+      "registered_payload_sha256": "3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a",
+      "registered_byte_size": 19868448,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/internet-archive-pdf-3b991b13/sacramentariumle00cath.pdf",
+      "actual_payload_sha256": "3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a",
+      "actual_byte_size": 19868448
+    },
+    {
+      "id": "artifact.salesian-society.atti-del-capitolo-superiore.1930-02-24-n52.official-asc-scan-93b726ae",
+      "record_sha256": "e1e96d1e0ae9d99b5d769d7b88f29b2e30882970d56610b4ab7080ffd8447bef",
+      "storage": "tracked",
+      "registered_payload_sha256": "93b726aeb737cddcc5a71650cee028a45af501074c017e8b9ce1496d2728f6a2",
+      "registered_byte_size": 2478922,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/salesian-society/atti-del-capitolo-superiore/editions/1930-02-24-n52/artifacts/official-asc-scan-93b726ae/source.pdf",
+      "actual_payload_sha256": "93b726aeb737cddcc5a71650cee028a45af501074c017e8b9ce1496d2728f6a2",
+      "actual_byte_size": 2478922
+    },
+    {
+      "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.comm-s-silvestri-i-papae-confessoris--collect--1",
+      "record_sha256": "fbae1f454d37fa66d032a39f04fe038748afe5ebbcd54c0921a26737f10e1714",
+      "storage": "tracked",
+      "registered_payload_sha256": "61fa6b8ea693b00660f9d11521ac5f6330018be9982109845a252f53cd056f53",
+      "registered_byte_size": 191,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/comm-s-silvestri-i-papae-confessoris--collect--1/latin.txt",
+      "actual_payload_sha256": "61fa6b8ea693b00660f9d11521ac5f6330018be9982109845a252f53cd056f53",
+      "actual_byte_size": 191
+    },
+    {
+      "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.comm-s-zephyrini-papae-martyris--collect--1",
+      "record_sha256": "97c2a258c6eb94e98fcc8bdf835e7a81dc282c0858d38121510a9c3ec6ad9382",
+      "storage": "tracked",
+      "registered_payload_sha256": "f8732dcb77e4139160ed879dc19947b26595c5d3541442c3f9ec67cc5bf774ad",
+      "registered_byte_size": 205,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/comm-s-zephyrini-papae-martyris--collect--1/latin.txt",
+      "actual_payload_sha256": "f8732dcb77e4139160ed879dc19947b26595c5d3541442c3f9ec67cc5bf774ad",
+      "actual_byte_size": 205
+    },
+    {
+      "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.immaculati-cordis-beatae-mariae-virginis--collect--1",
+      "record_sha256": "d97a19d2bf941bef7090dcb561336dc01180a8123138debfb4963bf5a0877273",
+      "storage": "tracked",
+      "registered_payload_sha256": "c8b53661561aac747517845360d96151db5afb6707c0c3b798b8de710559395a",
+      "registered_byte_size": 296,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/immaculati-cordis-beatae-mariae-virginis--collect--1/latin.txt",
+      "actual_payload_sha256": "c8b53661561aac747517845360d96151db5afb6707c0c3b798b8de710559395a",
+      "actual_byte_size": 296
+    },
+    {
+      "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.immaculati-cordis-beatae-mariae-virginis--postcommunion--1",
+      "record_sha256": "7f4a0a72c506f5ac3d9362461b5f084fd1d1cfd427c076ccc1fa62ddbb52b32b",
+      "storage": "tracked",
+      "registered_payload_sha256": "6c81c9d5ef0912c0e01fc911ab4dc9fe86648e27e49651092086e38d2ca17795",
+      "registered_byte_size": 246,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/immaculati-cordis-beatae-mariae-virginis--postcommunion--1/latin.txt",
+      "actual_payload_sha256": "6c81c9d5ef0912c0e01fc911ab4dc9fe86648e27e49651092086e38d2ca17795",
+      "actual_byte_size": 246
+    },
+    {
+      "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-clementis-i-papae-martyris--collect--1",
+      "record_sha256": "1bb00ba4c1d7d02e64b615df64d9da1de23da4dc8dc4831bf6ddc2d757b897ac",
+      "storage": "tracked",
+      "registered_payload_sha256": "d57235904e4e32436dfda5e58d4ac5c98822e784725000a41d75bbc1a24d4aa8",
+      "registered_byte_size": 204,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-clementis-i-papae-martyris--collect--1/latin.txt",
+      "actual_payload_sha256": "d57235904e4e32436dfda5e58d4ac5c98822e784725000a41d75bbc1a24d4aa8",
+      "actual_byte_size": 204
+    },
+    {
+      "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-clementis-i-papae-martyris--postcommunion--1",
+      "record_sha256": "d205bcb4d0cf7078ee1be5dbbb1ee1ad0d68316584b54fd87b934bc7cce10636",
+      "storage": "tracked",
+      "registered_payload_sha256": "bfd0be06cd5ff6e036d7a9e22ee73a2bec99a413c24cc12baefc939a3db52bce",
+      "registered_byte_size": 201,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-clementis-i-papae-martyris--postcommunion--1/latin.txt",
+      "actual_payload_sha256": "bfd0be06cd5ff6e036d7a9e22ee73a2bec99a413c24cc12baefc939a3db52bce",
+      "actual_byte_size": 201
+    },
+    {
+      "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-clementis-i-papae-martyris--secret--1",
+      "record_sha256": "c05e7054c95d260a6aa1135c4b0545e0bdf3028f798fe2a8d1927fd2f960ca10",
+      "storage": "tracked",
+      "registered_payload_sha256": "85e15b6f86d5c6f8c122d9c2c70203102ad0659a6006d502467d9e1afb0628de",
+      "registered_byte_size": 256,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-clementis-i-papae-martyris--secret--1/latin.txt",
+      "actual_payload_sha256": "85e15b6f86d5c6f8c122d9c2c70203102ad0659a6006d502467d9e1afb0628de",
+      "actual_byte_size": 256
+    },
+    {
+      "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-ioannis-bosco-confessoris--collect--1",
+      "record_sha256": "c9c0ffe9e7845eea4c4df02a73ed508bd8104f6b605faaf9dfbe4de7d2e3a4fc",
+      "storage": "tracked",
+      "registered_payload_sha256": "20e15f699f0c8c1a9538024049d905c97a6d86577e24a2f5d3cae4a9c9b60155",
+      "registered_byte_size": 303,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-ioannis-bosco-confessoris--collect--1/latin.txt",
+      "actual_payload_sha256": "20e15f699f0c8c1a9538024049d905c97a6d86577e24a2f5d3cae4a9c9b60155",
+      "actual_byte_size": 303
+    },
+    {
+      "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-ioannis-bosco-confessoris--postcommunion--1",
+      "record_sha256": "120793690d6023b600e28112ffd17e0b60a936166629b3ba63ba8c7cc4836f27",
+      "storage": "tracked",
+      "registered_payload_sha256": "4f47d9dd70abae1166e980d2935e2a4552abd9e65d7105af44e7f8909fce62ea",
+      "registered_byte_size": 201,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-ioannis-bosco-confessoris--postcommunion--1/latin.txt",
+      "actual_payload_sha256": "4f47d9dd70abae1166e980d2935e2a4552abd9e65d7105af44e7f8909fce62ea",
+      "actual_byte_size": 201
+    },
+    {
+      "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1",
+      "record_sha256": "6e9d9d2edee0c5278f018f252fe7b9bf6bdae4bb805e41b6048a1e9a3bd3defa",
+      "storage": "tracked",
+      "registered_payload_sha256": "9d2e1a29fd2df2395e01d7078745f77af00df9a266f597ea9b822c49d4eb8005",
+      "registered_byte_size": 343,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1/latin.txt",
+      "actual_payload_sha256": "9d2e1a29fd2df2395e01d7078745f77af00df9a266f597ea9b822c49d4eb8005",
+      "actual_byte_size": 343
+    },
+    {
+      "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.chrism-collect-qualified-100ae514",
+      "record_sha256": "bef5f7ea2c8a0812afb0173f7da21999402b8e67c8144c5ba0faf47459d58c5c",
+      "storage": "tracked",
+      "registered_payload_sha256": "100ae514cc635ab67fa0b2f223954bbb9053f77c01dead58eb11309c16815d33",
+      "registered_byte_size": 240,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/chrism-collect-qualified-100ae514/latin.txt",
+      "actual_payload_sha256": "100ae514cc635ab67fa0b2f223954bbb9053f77c01dead58eb11309c16815d33",
+      "actual_byte_size": 240
+    },
+    {
+      "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.cross-offertory-qualified-18060fef",
+      "record_sha256": "a4152de1bf690cee788456894d56a73a987ab7ca0938b34379c3594f5de28ba6",
+      "storage": "tracked",
+      "registered_payload_sha256": "18060fef847e0615136dba2a6e73b16797e3b944665c4e1475dc8643be33fa79",
+      "registered_byte_size": 183,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/cross-offertory-qualified-18060fef/latin.txt",
+      "actual_payload_sha256": "18060fef847e0615136dba2a6e73b16797e3b944665c4e1475dc8643be33fa79",
+      "actual_byte_size": 183
+    },
+    {
+      "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.damascene-paschal-offertory-qualified-e88531b6",
+      "record_sha256": "f53c8b8f82864a18db5bb3f57bd795bce4c6cbf1778b6937ceb82e00f0250582",
+      "storage": "tracked",
+      "registered_payload_sha256": "e88531b6aff711ffb42e4d411fc44e81d0f07c5836d36e34fe3570b33a8a3c96",
+      "registered_byte_size": 91,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/damascene-paschal-offertory-qualified-e88531b6/latin.txt",
+      "actual_payload_sha256": "e88531b6aff711ffb42e4d411fc44e81d0f07c5836d36e34fe3570b33a8a3c96",
+      "actual_byte_size": 91
+    },
+    {
+      "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-two-qualified-3920bd77",
+      "record_sha256": "0e122663dd9004e459a2b22db91f21e624ec24d63b8e2568d2d15045892bc711",
+      "storage": "tracked",
+      "registered_payload_sha256": "3920bd772a32ebba24b336a71f9bcd30eeff745c60630d5fe20739609e58a75b",
+      "registered_byte_size": 392,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pontiff-two-qualified-3920bd77/latin.txt",
+      "actual_payload_sha256": "3920bd772a32ebba24b336a71f9bcd30eeff745c60630d5fe20739609e58a75b",
+      "actual_byte_size": 392
+    },
+    {
+      "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-offertory-qualified-f4e866f4",
+      "record_sha256": "74ecf40d3b196e4719b885d9b8120961b8406fe47234218abb30bacc356ed757",
+      "storage": "tracked",
+      "registered_payload_sha256": "f4e866f44553d4181484958a6e4d79ffe7d1e560a4a56f39c298b877093de446",
+      "registered_byte_size": 128,
+      "state": "actual-postimage-bytes-verified",
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-offertory-qualified-f4e866f4/latin.txt",
+      "actual_payload_sha256": "f4e866f44553d4181484958a6e4d79ffe7d1e560a4a56f39c298b877093de446",
+      "actual_byte_size": 128
+    }
+  ],
+  "outputs": [
+    {
+      "path": ".scratch/roman-english-completion-20261029/finite-guard/proposed-activation-16-v5/candidate-authority.json",
+      "sha256": "f491fe023beedb25a7f51b58d97974f5d39fd0674a921d7ca11eb0b73670a270"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/finite-guard/proposed-activation-16-v5/current-route-diagnosis.json",
+      "sha256": "67b1fdbf76e23f68ce678205f02f33062f56af05c4a5644c94664f02fac4093e"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/finite-guard/proposed-activation-16-v5/prior-route-proof.json",
+      "sha256": "a82a09becf3c0083f7e48ef22d300b99cf8b8f509afa0e1750a0f2a6763f3d15"
+    }
+  ],
+  "qualified_scopes": 16,
+  "outside_qualified_scope": 1,
+  "prior_routes": {
+    "row_sha256": 0,
+    "artifacts": 0,
+    "readings": 0
+  },
+  "activation_performed": false,
+  "code_or_authority_mutation": false,
+  "allow_pending_receipts": false,
+  "pending_source_reviews": [],
+  "unbound_body_receipts": [],
+  "receipt_binding_boundary": "Exact body-hash pointer links only. Neither file names, generic row review pins nor matching hashes infer a receipt role, completed source review, rights recommendation, or adoption."
+}

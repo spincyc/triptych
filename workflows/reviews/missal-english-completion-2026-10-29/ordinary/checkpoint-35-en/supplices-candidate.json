@@ -1,0 +1,79 @@
+{
+  "target": "prex-eucharistica/supplices",
+  "scope": "source-contiguous prayer body with conclusion omitted, not whole2008 collation",
+  "latin": {
+    "witness": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+    "artifact": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-ordinary-supplices-la",
+    "elements": [
+      "supplices-body"
+    ],
+    "column": "latin",
+    "relation": "antecedent",
+    "collation": "uncollated",
+    "reading_note": "Historical Latin prayer body (Mame,1922). Its separate conclusion is omitted here; this is not a complete authenticated2008 collation.",
+    "note": "The checked1922 Mame source prints perferri, correcting the earlier different-witness blocker. Its complete source prayer body through repleamur agrees lexically with the registered secondary2002 n.94 after declared spelling/typographic normalization. The full older conclusion remains separately retained. The selected prefix corresponds to the conclusion-omitted form which the2002 source permits; complete controlling2008 wording and marks remain unestablished."
+  },
+  "english": {
+    "witness": "edition.triptych.postconciliar-ordinary-supplices-study-english-20261030.study-english-20261030",
+    "artifact": "artifact.triptych.postconciliar-ordinary-supplices-study-english-20261030.study-english-20261030.supplices-body-study-en",
+    "elements": [
+      "supplices-body"
+    ],
+    "column": "english",
+    "relation": "own",
+    "reading_note": "Triptych study translation from the1922 prayer body, with its separate conclusion omitted. Not approved for liturgical use or recitation.",
+    "note": "New English from the checked public-domain1922 source body only. No English witness or approval is claimed; the separate old conclusion is outside the joined prefix. The secondary2002 n.94 permits omission of its parenthesised conclusion, but this source comparison does not establish a complete authenticated2008 edition state."
+  },
+  "files": {
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261030-ordinary-supplices.toml": {
+      "sha256": "52420ad71a874fc3145b966f589434d462c6acabb5065528f655d64d47a838b5",
+      "bytes": 1399
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-supplices-la/artifact.toml": {
+      "sha256": "5951548aa298df8ea4d76c792c39141a9ad41d57338b65a8c613f78964f8e19b",
+      "bytes": 3147
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-supplices-la/text.tsv": {
+      "sha256": "bd34c9727a10001f04842878ffb079e2078f0209fd3d36aee470b3a69f03b2f6",
+      "bytes": 432
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-supplices-pages/artifact.toml": {
+      "sha256": "232b5596ca1ff0c1b8b4dc23d0c184e6691fd9e1a80f60214e109a9809e9b08e",
+      "bytes": 2396
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-supplices-pages/source.pdf": {
+      "sha256": "3a175d49a8d8b140e9a2d2564114b9ef24c39647de1ddf7b48a0c4dc6f6e8985",
+      "bytes": 341986
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-supplices-study-english-20261030/work.toml": {
+      "sha256": "d9df20c2314ed9d466e9af088a301b7b2cdde26f87086dab304d08dcf48c3535",
+      "bytes": 767
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-supplices-study-english-20261030/editions/2026-10-30-study-english/edition.toml": {
+      "sha256": "7521d51f748bc6060e6bdfe3db5a2afac6e48db274b77538e90e96a4a79cb4e8",
+      "bytes": 776
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-supplices-study-english-20261030/editions/2026-10-30-study-english/artifacts/supplices-body-study-en/artifact.toml": {
+      "sha256": "787ef5eab26e3e2ceda245fe1caa3963f1d822520aa59afed97ade59ad802672",
+      "bytes": 2254
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-supplices-study-english-20261030/editions/2026-10-30-study-english/artifacts/supplices-body-study-en/text.tsv": {
+      "sha256": "041ebf5a31a4b58b95958f9d08d222bd16b9b92576fe93b420a037a3e7e9f25d",
+      "bytes": 675
+    }
+  },
+  "source_page_images": [
+    "central/mame-0457.jpg",
+    "central/mame-0458.jpg"
+  ],
+  "target_evidence": {
+    "artifact": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+    "pages": [
+      352,
+      353
+    ],
+    "wording_state": "secondary2002, not authenticated2008"
+  },
+  "source_latin": "Supplices te rogamus, omnipotens Deus: jube haec perferri per manus sancti Angeli tui in sublime altare tuum, in conspectu divinae majestatis tuae: ut quotquot, ex hac altaris participatione sacrosanctum Filii tui, Corpus, et Sanguinem sumpserimus, omni benedictione caelesti et gratia repleamur.",
+  "study_english": "In humility we ask you, almighty God: command that these offerings be carried by the hands of your holy Angel to your altar on high, in the presence of your divine majesty, so that all of us who, by sharing in this altar, have received the most holy Body and Blood of your Son may be filled with every heavenly blessing and grace."
+}

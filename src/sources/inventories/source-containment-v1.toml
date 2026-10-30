@@ -65141,3 +65141,18 @@ title = "Elapso Proxime Anno"
 work_id = "work.papal.benedictus-xiv.enciclica-i-elapso-proxime-anno-i-20-febbraio-1751-il-ponte"
 locator = "Elapso proxime anno: historical English translation: physical_line_ranges=[[1, 23]]; controller artifact.robert-james-mcghee.nullity-government-queen-victoria-ireland.1839.elapso-text-5ca9eba70ed98d9d SHA-256 5ca9eba70ed98d9d74520b03f0f02c9b22e2eb04cceafe4cc173a8c45fb14ff5"
 basis = "Exact segments segment.papal.benedictus-xiv.elapso-proxime-anno.1839-mcghee-english identify this constituent, its printing and bounded artifact extent. Segment context and edition notes qualify source completeness and OCR; no wider collation is asserted."
+
+[[containers]]
+id = "work.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-officia-novissima"
+manifest_sha256 = "0d6fb9d4b033c90514ab10c5aa2f2785e14778aca2d68da3eedea64879a17396"
+status = "partial"
+basis = "Dated 2026-10-30: read the existing container work and Mexico 1815 edition manifests, the separately titled constituent work/edition and its inspected version 2 segment. The container description identifies the first title at physical PDF page 3 and a separately owned Commemoratio et suffragia constituent; the exact acquired 166-page artifact is held under the container. This records that already established ownership edge without changing any source record."
+unresolved = "Only the named, bounded Commemoratio et suffragia constituent is entered by this review. No exhaustive inventory of the remaining bound delivery is established; the segment range does not establish the complete constituent extent or inspection of every page."
+
+[[containers.constituents]]
+author = "Franciscan Province of Saint Didacus of Mexico"
+title = "Commemoratio, et suffragia sanctorum, juxta usum hujus almae Provinciae Sancti Didaci de Mexico"
+work_id = "work.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-commemoratio-et-suffragia-sanctorum"
+locator = "Physical PDF pages 103-128 of the exact 166-page bound artifact; separate constituent title at AP 103 and inspected AD LAUDES antiphon at AP 114 (printed 114)."
+extent_unresolved = "AP 103-128 is the registered segment's deliberately bounded evidentiary extent, not a complete-work or scripture-wide extent. No IA leaf correspondence or inspection of every intervening page is asserted."
+basis = "The constituent work and edition expressly distinguish their own title at AP 103 from the Officia container. Registered segment segment.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-commemoratio-et-suffragia-sanctorum.mexico-1815.english-completion-20261029-postconciliar-phase2-late-easter-1815-constituent-ap103-128 assigns that constituent to artifact artifact.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-officia-novissima.mexico-1815.english-completion-20261029-postconciliar-phase2-late-easter-wikimedia-1815-full-pdf-78b296aa (SHA-256 78b296aa96f9121e0e12a8695cda4087b97f8018a4fffe01645b4dbea947eda1) over physicalPDF pages 103-128; its context identifies the separate title and the complete antiphon at AP 114. The province is the responsibility named in the source; no individual authorship is inferred from the title's request by Fr. Mariano Estada."

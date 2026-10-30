@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-29"
+id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-s-agathae-virginis-martyris-introit-1"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29"
+artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-chant-latin-10b19922"
+artifact_sha256 = "10b19922a2fc07cd74be90ae8832d093e705247b93491fa155bf9a1090635e82"
+locus = "s-agathae-virginis-martyris / Introit occurrence 1; project physical lines 8-8; Tours Mame 1922, artifact pages 642; printed 528; 1962 Vatican target, artifact p. 550, printed p. 469, unit 2124"
+physical_line_ranges = [[8, 8]]
+context = "Complete target-bound Latin chant, independently source-qualified; original study English remains separately identified and unapproved."
+notes = "Exact canonical UTF-8 body including terminal LF SHA-256 ab73acc887d97d6c0b1fea0cabe6c4fe0476098cb267d8aeb4601b10d432b470. Declared transformations: [\"Join printed line wraps and discard solely line-end hyphens; preserve every chant word and printed ending/cue.\", \"Remove stress accents; expand ae/oe ligatures as ae/oe.\", \"Canonical punctuation/case follow the 1962 target; normalize consonantal i/j to the declared calendar orthography (j retained).\", \"Exclude printed nonrecited citation labels and heading names from canonicalLatin/studyEnglish; retain the complete quoted Psalm words and explicit Gloria Patri cue.\"]. Exact differences: [\"The complete Introit antiphon, Psalm verse, and printed Gloria Patri cue agree in words.\", \"Mame cujus corresponds to target cuius; Mame regi corresponds to target Regi; target marks Ángeli while Mame prints Angeli.\", \"Both print the Psalm citation as apparatus: source Ps. 44, 2. and target Ps. 44, 2; omit the whole citation label from canonicalLatin and studyEnglish, retaining Eructavit through Regi.\", \"Spacing around pointing differs; no clause or word is added or dropped.\"]"

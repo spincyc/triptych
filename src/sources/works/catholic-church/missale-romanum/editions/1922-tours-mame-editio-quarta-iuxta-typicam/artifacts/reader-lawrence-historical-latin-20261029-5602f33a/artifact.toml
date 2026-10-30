@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-historical-latin-20261029-5602f33a"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "checked-normalized-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "United States: the identified Tours 1922 printed words and page images have no remaining copyright term in 2026. Mechanical extraction and machine image/OCR layers add no new human authorship. This basis is the identified printing and mechanical reproduction; it does not rely on a host licence or clear the 1962 target contribution. Underlying historical Latin and images remain excluded from the project CC BY 4.0 grant."
+sha256 = "5602f33a0dc7039761adac78d736fdb286ea1261404cd7cdd3a0c5bdb9fd66f2"
+byte_size = 260
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-historical-latin-20261029-5602f33a/source.txt"
+encoding = "utf-8"
+indexable = true
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49"
+retrieved = "2026-10-29"
+provenance = "Complete historical Lawrence Collect read directly from the 1922 page image at wholePDF1082/printed[52], both 200 and 400 dpi. Optical text used only to locate the page. The displayed words, punctuation and actual conclusion were transcribed from the image."
+transformation = "Join printed wraps; remove stress accents; expand printed ae/oe ligatures; retain source consonantal j and source pointing. No Doctor title, wisdom substitution, gloriam inflection or target conclusion is introduced."
+notes = "Historical source only. Its Per Dominum nostrum. is short. This is not a literal whole1962 target, which has different words."

@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pontiff-two-en-20261029-dc95b61f"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "checked-english-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Only underlyingLasance/Walsh1937/1945originalEnglish on ordinaryprinted1286–1287 is retained, under establishedUnitedStatesnonrenewalfindingA110108/A192159 in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. Englishrenewal finding does not independently clear laterVaticanLatin contribution; the exactLatinform requires separatefiniteauthority workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json, method english-completion-20261029-finite-latin-v1."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf"
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+transformation = "Direct wholeEnglishprayerpage-image transcription; join columnlinewraps and dividehyphens only; preserve actualEnglishwords, pointing, capitals, and shortconclusion. TSVJSON escapes only, no Englishcomposition or inferred expansion. SourceLatincounterpart is checked privately and hashbound in verificationnotes; no laterLatinpayload enters thisEnglishartifact."
+provenance = "SelectedordinaryStMartinSecret/Postcommunion atPDF1287–1288/printed1286–1287 read directly on exactregistered1945facsimile; entireEnglish prayers independently reviewed before adoption."
+retrieved = "2026-10-29"
+sha256 = "dc95b61f0a85f8b3f73f383b0d2b705a5c785e61eedc54b13596dae7daf383bd"
+byte_size = 645
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/pontiff-two-en-20261029-dc95b61f/english.tsv"
+indexable = true
+encoding = "utf-8"

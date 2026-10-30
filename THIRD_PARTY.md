@@ -325,6 +325,37 @@ Their inclusion as evidence or text for study is not a representation that
 they may be extracted and redistributed independently. Their redistribution
 status must be established from the governing source and jurisdiction.
 
+### May 1 Saint Joseph Preface study English
+
+The newly composed English is Triptych study text under CC BY 4.0. Its complete
+historical Latin foundation is the Tours: Alfred Mame 1922 *Missale Romanum*,
+printed p. 337 (original PDF p. 451). The retained old-source page and checked
+historical body, including both printed options, remain public-domain underlying
+matter excluded from Triptych's license. The May 1 feast designation uses only
+the exact qualified source-and-one-word assessment adopted in
+`workflows/reviews/missal-english-completion-2026-10-29/ordinary/joseph-may1-rights-adoption-v2.json`.
+The accompanying comparison and independent rights, source and fidelity receipts
+retain that boundary and the explicit source-glyph correction. No historical
+May 1 source-exact identity is claimed. No selected modern Latin body, target
+image, historical English or modern English translation is republished. This
+English has no liturgical approval and is not for recitation.
+
+### Roman Pontifical, Paris 1859
+
+The Chrism Preface source projection uses the *Pontificale Romanum* (Paris:
+A. Jouby, 1859), printed p. 398, with its title page retained for printing
+identity. The historical Latin and faithful bounded page reproductions have
+an elapsed-publication-term United States public-domain basis and are excluded
+from Triptych's CC BY 4.0 grant. Harvard's copy was digitized by Google and
+delivered by Internet Archive item `pontificaleroma00churgoog`; producer
+attribution remains intact. The whole Google-wrapped PDF is hash-identified
+without a retained payload, under its separate unresolved wrapper status.
+
+The separately identified Triptych Latin projection and fresh English study
+translation are project-created editorial contributions under CC BY 4.0, with
+no exclusive claim in the underlying Latin. The English has no liturgical
+approval and is not offered for recitation.
+
 ## Ecclesiastical, Canonical, and Other Official Texts
 
 Magisterial documents, canons, decrees, judgments, diocesan acts, official

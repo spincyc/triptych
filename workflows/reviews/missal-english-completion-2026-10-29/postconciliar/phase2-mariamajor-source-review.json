@@ -1,0 +1,121 @@
+{
+  "schema": "independent-cold-source-review/v1",
+  "reviewed_on": "2026-10-29",
+  "reviewer": "pc_nativity_review",
+  "target": {
+    "mass": "dedication-basilica-saint-mary-major",
+    "form_id": "main",
+    "proper": "Collect",
+    "cycle": "all",
+    "occurrence": 1
+  },
+  "input": {
+    "path": ".scratch/postconciliar-english-completion-20261029/nonseasonal-sources/orations-secondpass/mariamajor-candidate.json",
+    "sha256": "1aa51263ef2fd0d8853970bd829cced1559b3fb59d5d0387d732a08f16605297"
+  },
+  "decision": "ACCEPT complete1915 historical Latin and historical human English prayer as source-qualified antecedent evidence; HOLD target2008 whole-body and target English completion claims",
+  "source_identity": {
+    "title_page_artifact_page": 9,
+    "approval_artifact_page": 10,
+    "title_identity": "The Little Office of the Blessed Virgin Mary, COMFORMABLE to the Recent Pontifical Decrees, and the Office of the Dead, in Latin and English",
+    "imprint": "Benziger Brothers, New York, Cincinnati, Chicago,1915",
+    "approval": "Nihil obstat Remigius Lafort,S.T.D.; Imprimatur John Cardinal Farley,Archbishop of New York; New York,June10,1915",
+    "copyright_leaf": "Copyright1915byBenzigerBrothers; Cl.A416191",
+    "translator": "Not named on inspected title or approval leaves; do not invent attribution",
+    "whole_pdf_sha256": "26530fac6a18a0b0065827dfda4e7d9ed1a3e7bfae7ca7b1f22017b766703a62",
+    "whole_pdf_bytes": 25569037,
+    "artifact_page_count": 444,
+    "IA_metadata_sha1": "c36ae96a4bf0e5849d55d68c27ff394c547a1d1d",
+    "rights_scope": "Historical1915US printing, within standing US pre1931 public-domain publication basis. Bounded inspected leaves show no later textual matter. No whole-book absence assertion and no ICEL identity."
+  },
+  "direct_visual_collation": {
+    "pages": [
+      {
+        "artifact_page": 258,
+        "printed_page": "252",
+        "language": "la",
+        "scope": "I.Extra Adventum/Oremus: complete petition and opening Qui of conclusion at bottom"
+      },
+      {
+        "artifact_page": 260,
+        "printed_page": "254",
+        "language": "la",
+        "scope": "conclusion continuation tecum through saeculorum; separate R.Amen response"
+      },
+      {
+        "artifact_page": 259,
+        "printed_page": "253",
+        "language": "en",
+        "scope": "From Candlemas until Advent/Let us pray: prayer beginning at bottom"
+      },
+      {
+        "artifact_page": 261,
+        "printed_page": "255",
+        "language": "en",
+        "scope": "prayer continuation Mother of Thy Son, Our Lord, Who... through world without end.; separate R.Amen response"
+      }
+    ],
+    "english_fidelity": "Whole English petition and same-book conclusion match all words, capitalization, and punctuation in candidate. In particular source has semicolon after servants, comma after actions, comma after Our Lord, capital Who, and final period after end. No substituted or expanded ending. R.Amen and following office versicles are outside retained prayer.",
+    "latin_fidelity": "Whole petition and same-book Qui tecum conclusion match historical words. This is a reading transcription with ae ligatures expanded, line wrapping joined, and stress-accent/display conventions; do not describe its stored strings as diplomatic scan bytes. Genitricis is the historical spelling; modern comparison uses Genetricis.",
+    "meaning": "English is the actual historical human rendering of the adjacent Latin; do not modernize its style or reconcile punctuation silently."
+  },
+  "comparison_limits": [
+    {
+      "source": "Official Notitiae2008,nos503-504",
+      "sha256": "74c8d1740284984d0f4d64b2223edf805dadfa55aec8a92f8cfba9ab901eca0f",
+      "artifact_page": 55,
+      "printed_page": "373",
+      "scope": "p799,Ad diem5augusti: official precise tail correction changes de nostris actibus to de actibus nostris, adds Domini nostri, and replaces Per Dominum by Qui tecum. This tail agrees with the1915wording apart from historical Genitricis/modern Genetricis spelling and display conventions. This page does not witness full2008 prayer opening/body or its expanded conclusion."
+    },
+    {
+      "source": "Secondary digitally typeset2002Missal",
+      "sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "artifact_page": 474,
+      "scope": "Full source-local August5Collect and heading directly inspected. Its tail has old de nostris actibus, omits Domini nostri, and ends Per Dominum. It is secondary2002, with unestablished printed-book fidelity, and cannot authenticate2008fullbody."
+    },
+    {
+      "source": "Photographed Vatican1970Missal",
+      "sha256": "7680979121176c0e78b383ee9601afb43addc2543f2957c56cdb1634a106b5ba",
+      "artifact_page": 572,
+      "printed_page": "586",
+      "scope": "Full1970ownCollect directly inspected; oldtail is superseded by exact2008correction.1970is primary for its own state only."
+    },
+    {
+      "source": "Pustet1888Breviary",
+      "sha256": "a8a789d4c48003cbfaeb440cc22a6970b96d18d9cb19ea60b2a02c83a53582f0",
+      "artifact_page": 718,
+      "printed_page": "[156]",
+      "scope": "Historical whole petition independently inspected, agrees at word level with1915historical prayer and carries Qui tecum vivit et regnat cue. The1915samebook supplies its own full expansion."
+    }
+  ],
+  "preserved_refusals": [
+    {
+      "source": "Bute1908BreviaryEnglish",
+      "sha256": "6792c0e56d581081e12420e5fddde82a86802c6bbdb4970a947981d04f8ce6b5",
+      "artifact_page": 902,
+      "printed_page": "818",
+      "decision": "REFUSE as Qui tecum donor: actual whole source English begins ending Through the Same our Lord Jesus Christ Thy Son,...; no ending substitution."
+    },
+    {
+      "source": "Cummiskey1861",
+      "decision": "No new image collation claimed by this reviewer. Preserve worker discovery/refusal boundary; OCR alone is not exact historical evidence."
+    }
+  ],
+  "required_source_publication_joins": [
+    "Truthful new LittleOffice work and Benziger1915edition; do not attach prayer to Missal, Lasance, or Bute records.",
+    "Whole scan artifact has measured SHA/size and source URL; bounded LatinAP258/260 and EnglishAP259/261 proof artifacts/passages must bind the complete bodies, with transcribed reading conventions explicit.",
+    "Retain historicalEnglish payload with supported TSV english or english_json column, exact target tuple, independent passage record, payload SHA and exact publication-artifact join. English whole-prayer SHA is7fc7c2650428066c6d58a7b47e1efca29a6d44f3091b7120ba6ac00950a66570.",
+    "Use source-qualified historical human English label and preserve same-book full conclusion. Keep R.Amen separate or explicitly bounded; no silent append.",
+    "Do not invent Missal act edge from LittleOffice title/approval. An unestablished attests value with truthful title-page-statement basis is available if source metadata requires a horizon.",
+    "Preserve official2008tail proof and modern edition qualifications. No complete2008Latin body authentication, no approved contemporaryEnglish identity, no target2008completion promotion from this receipt alone."
+  ],
+  "validation": {
+    "candidate_text_hashes": "All5stored Latin/English paragraph hashes independently recomputed and match.",
+    "whole_source_integrity": "Measured historical PDF SHA256+byte size match candidate, and IAmetadata SHA1+size match entire retained PDF. Official2008 and secondary2002wholePDFSHA256 independently match registered identities.",
+    "independent_rasters": "Eight pages freshly rendered from exact complete PDFs at scale-to2000 and directly opened: historical title/approval+four bilingualprayerpages; official2008AP55; secondary2002AP474.",
+    "check_receipt": ".scratch/postconciliar-english-completion-20261029/nativity-review/mariamajor-round/byte-and-render-check.json",
+    "check_receipt_sha256": "892851274b2ff0188063757268dee85b910d8431c00b16c83022c2c099e2f6bc",
+    "tracked_mutations": "none",
+    "source_manifest_validation": "No new LittleOffice source/publication proposal existed in this frozen candidate; required joins above remain integration prerequisites."
+  }
+}

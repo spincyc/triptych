@@ -17,7 +17,7 @@ merge = "Inherit the roman-1962 translation ledger, then suppress only the exact
 verification = "Text-free recension accounting. Every target is an inherited parent record, its raw child mass is a source-authored departure whose exact type is named by reason, and its exact identity is absent from the effective child source slots."
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "chrism-mass"
 form_id = "main"
 proper = "Collect"
@@ -57,7 +57,7 @@ reason = "recension-absent"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "chrism-mass"
 form_id = "main"
 proper = "Secret"
@@ -67,7 +67,7 @@ reason = "recension-absent"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "chrism-mass"
 form_id = "main"
 proper = "Postcommunion"
@@ -87,7 +87,7 @@ reason = "recension-replaced"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "palm-sunday"
 form_id = "main"
 proper = "Collect"
@@ -267,7 +267,7 @@ reason = "recension-replaced"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "easter-vigil"
 form_id = "main"
 proper = "Postcommunion"
@@ -327,7 +327,7 @@ reason = "recension-replaced"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "palm-sunday"
 form_id = "main"
 proper = "Procession Antiphon"
@@ -337,7 +337,7 @@ reason = "recension-replaced"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "palm-sunday"
 form_id = "main"
 proper = "Procession Antiphon"
@@ -347,7 +347,7 @@ reason = "recension-replaced"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "palm-sunday"
 form_id = "main"
 proper = "Hymn to Christ the King"
@@ -457,7 +457,7 @@ reason = "recension-replaced"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "easter-vigil"
 form_id = "main"
 proper = "Litany of the Saints, first part"
@@ -467,7 +467,7 @@ reason = "recension-replaced"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "easter-vigil"
 form_id = "main"
 proper = "Litany of the Saints, second part"
@@ -477,7 +477,7 @@ reason = "recension-replaced"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "easter-vigil"
 form_id = "main"
 proper = "Prayer at the Font"
@@ -500,7 +500,7 @@ basis = "calendar-departure"
 # This child already declares the whole Joseph the Worker Mass absent; suppress
 # only that exact inherited record, without changing either recension's text.
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "s-ioseph-opificis-sponsi-beatae-mariae"
 form_id = "main"
 proper = "Alleluia"
@@ -540,7 +540,7 @@ reason = "recension-absent"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "beatae-mariae-virginis-reginae"
 form_id = "main"
 proper = "Communion"
@@ -560,7 +560,7 @@ reason = "recension-absent"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "beatae-mariae-virginis-reginae"
 form_id = "main"
 proper = "Offertory"

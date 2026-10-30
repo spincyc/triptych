@@ -1,0 +1,225 @@
+{
+  "accepted_fixture_core_sha256": "3b44f7e9c9c724591124438264db09063354e2e7e12b8b3b95723ea5182e2c5a",
+  "actual_current_physical_pins_verified": 7071,
+  "added_inputs": [
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261030-pc-nativity-day-punctuation-0d801929/artifact.toml",
+      "sha256": "2310118fd5a9a43bb689b5721a0638241a1a13fa8249148c4190e807906fbf81"
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261030-pc-nativity-day-punctuation-0d801929/text.tsv",
+      "sha256": "0d801929b436514d5db46b3dfbda469c56c88a81bf3cfb342901cd76fafa8576"
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261030-pc-nativity-day-punctuation-0d801929.toml",
+      "sha256": "767aad0cb7c9f2b1a3a75650ea58f9158afbb10a11874ce80f09ba3ad2d4cdba"
+    }
+  ],
+  "all_other_fixture_semantic_fields_exact": true,
+  "broad_consumer_or_build_run_claimed": false,
+  "changed_inverse_specifications": 1,
+  "changed_kept_inputs": [
+    {
+      "after_sha256": "57123fdfb8472718679284f93698912c296e85fa7e78245554956f3890bc3e6d",
+      "before_sha256": "32632b026ac4f06ceeff9a7cec18586e619659b2b44ecc52247a58ca67a2ea5d",
+      "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml"
+    },
+    {
+      "after_sha256": "37674eb1bd4fc5b6aec26da6923a07fce9c1313d23c0bca8e5458eb51a439676",
+      "before_sha256": "515a842731a43cd6cf099c044f995425de07e4f9aa28432841204d8defdd913b",
+      "path": "src/sources/inventories/publications-v1.toml"
+    }
+  ],
+  "dropped_inputs": 0,
+  "independent_page_image_inspection_claimed": false,
+  "issues": [],
+  "literal_parent_and_successor_replays_to_actual_original_git": [
+    {
+      "original_sha256": "69731f40de5d8c4539c4660f7035681ba3429beffd447ac6e29a5c1b98b6829d",
+      "path": "src/sources/calendars/postconciliar/propers.yaml",
+      "rebased": false
+    },
+    {
+      "original_sha256": "018642eee26d09e3bb014fa60baa0f820ab3637c9d6e349378c696a7b79d6877",
+      "path": "src/sources/calendars/roman-1962/propers.yaml",
+      "rebased": false
+    },
+    {
+      "original_sha256": "5943f9788ff9ebe3b614086d824039a2993039f58d3819e85f26ffafb3c38a58",
+      "path": "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml",
+      "rebased": false
+    },
+    {
+      "original_sha256": "9bf6fe5ecc3b397888a0316f7b5c06e40f65e9dfc1eb96c3bc78d111e7c41597",
+      "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+      "rebased": true
+    },
+    {
+      "original_sha256": "c2bf07d5551fbe7ae2748ce7390c37b0d707df7cf275d400126b04cacd8600f0",
+      "path": "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml",
+      "rebased": false
+    },
+    {
+      "original_sha256": "560e82057dc0480a5b1fe835304ba57ed476b346a38cab6fac550298582016ea",
+      "path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+      "rebased": false
+    },
+    {
+      "original_sha256": "79946d1bc6e015d8624d67ce243b59cf3ee634fc5997310aa6d764953349d815",
+      "path": "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+      "rebased": false
+    },
+    {
+      "original_sha256": "465e15d42b7301b22c2d93be1b95b00eb326ee0cd2ad1f928520952a89e89faa",
+      "path": "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml",
+      "rebased": false
+    },
+    {
+      "original_sha256": "98daa1922358c0d977ddfc97352812d395c6f578591e48691bc1393c6b1ace8d",
+      "path": "tools/tests/test_proper_latin.py",
+      "rebased": false
+    },
+    {
+      "original_sha256": "bc3ec297a6ca1edd3f155ccc29381526fee006d2e39a2c43bc0ce06fb81a51d4",
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py",
+      "rebased": false
+    },
+    {
+      "original_sha256": "ddb972cdd5fe9651d1ecc0b33bbc1bf4deca7f1b5f5c7d75b87bc03c54603f9e",
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py",
+      "rebased": false
+    },
+    {
+      "original_sha256": "dedf9a58d3f9e6b311bf5caf8f7aa7c51dcc9543d6ee17e4288e834c8cdc0215",
+      "path": "tools/tests/test_roman_1962_english13_phase5.py",
+      "rebased": false
+    },
+    {
+      "original_sha256": "86b29add67ac575fb147300f4ab6e66c47863a16c4cf5166896a88e710f5335c",
+      "path": "tools/tests/test_roman_1962_english31_phase4.py",
+      "rebased": false
+    },
+    {
+      "original_sha256": "9c11f0b870c14916dfa2530c1e733f262a5c9f526cd613744a06ea7ce3c05190",
+      "path": "tools/tests/test_roman_1962_lasance_commons_easter_phase3.py",
+      "rebased": false
+    },
+    {
+      "original_sha256": "7dc3a1569140e14f32fa2c98e607577b05871f3c197a307db67107d731d6afca",
+      "path": "tools/tests/test_roman_1962_latin22_phase5.py",
+      "rebased": false
+    },
+    {
+      "original_sha256": "c13d838baf217cf25be163e465a4f90322d8ecf04e89322f237eec105764686e",
+      "path": "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py",
+      "rebased": false
+    },
+    {
+      "original_sha256": "e7354e1d015919cc47f235fca3aa1f5134afc8fe250765eb24b6d2eafbc71f05",
+      "path": "tools/tests/test_roman_1962_winter_ursula_source_repair.py",
+      "rebased": false
+    }
+  ],
+  "negative_controls": [
+    {
+      "control": "third kept-input mutation",
+      "refused": true
+    },
+    {
+      "control": "dropped physical owner",
+      "refused": true
+    },
+    {
+      "control": "duplicate physical owner",
+      "refused": true
+    },
+    {
+      "control": "Roman semantic mutation",
+      "refused": true
+    },
+    {
+      "control": "wrong Nativity positive hash",
+      "refused": true
+    },
+    {
+      "control": "second inverse mutation",
+      "refused": true
+    },
+    {
+      "control": "premature source-accounting acceptance",
+      "refused": true
+    },
+    {
+      "control": "whole source byte mutation",
+      "refused": true
+    },
+    {
+      "control": "inverse current slice mutation",
+      "refused": true
+    },
+    {
+      "control": "inverse historical literal mutation",
+      "refused": true
+    },
+    {
+      "control": "English refusal deletion",
+      "refused": true
+    },
+    {
+      "control": "other English body mutation",
+      "refused": true
+    },
+    {
+      "control": "historical admission deletion",
+      "refused": true
+    }
+  ],
+  "packet_sha256": {
+    "manifest.json": "e9cd39f351b23206c7d812c854cbfaaa593b45c3a795c8b53164bb66917da9bd",
+    "parent-fixture.json": "21fad5aaa93882037b5203807889d9c87557d62313e70cb7b7aba5926c3b0a5d",
+    "parent-inputs.json": "bfd171773b03ac0930666aad30af43552bd6e90832797bac10c642469c9e6e86",
+    "pending-fixture.json": "c7b6752bcfafe4e6374d10cbc350c4ac01dee30887f0532c155e493cfc2d83c1",
+    "proposal.json": "8f92ee59550fdb53b85d07981f78929ab6aed677a4e5b366012a4a20cb63371f"
+  },
+  "parent_bytes_verified_against_reachable_git": true,
+  "parent_git_revision": "0b7da814a9c3d0bbf721565ceac1abc6898faa2a",
+  "parent_inputs_retained": 7068,
+  "pending_accounting_activation_claimed": false,
+  "postconciliar_positive_delta": {
+    "after_entry_sha256": "422509d9181b119590f62d345caf1fa829c2849a9844866c77cd5eea5ff6f0e5",
+    "before_entry_sha256": "3b692c6384e7e4484ac0416fb41609476c02fa070c683ab9c4ded1047324c819",
+    "only_body_change": "One colon becomes the separately confirmed printed semicolon; all words, remaining punctuation and extent exact.",
+    "quarantine_tables_entirely_exact": true,
+    "retained_admission_receipts": 8,
+    "retained_quarantine_rows": 174,
+    "target": [
+      "nativity",
+      "day",
+      "Entrance Antiphon",
+      "all",
+      1
+    ],
+    "unchanged_absence_dictionaries": 419,
+    "unchanged_original_positive_dictionaries": 116,
+    "unchanged_other_positive_dictionaries": 154
+  },
+  "publication_inventory_change": "Single audited_on date string only, 2026-10-26 to 2026-10-30.",
+  "reviewed_on": "2026-10-30",
+  "schema": "triptych-independent-main-nativity-source-successor-review/v1",
+  "scope": "Installed 7071 source inputs and pending exact accounting successor only. This review does not validate the entire main merge, other main source-generation paths, compiler output, aggregate coverage or publication build.",
+  "separate_source_page_confirmation_sha256": "8e9d3b6e940a2c3cf41df0e891309a6d8f1ac6143cbab07645f9d721fcd7ba10",
+  "source_merits_review_sha256": "5878e435813859efa34307b2d04fd6e8c39c85bc881b3b40b51d475f2382bb84",
+  "source_specific_new_payload": {
+    "bytes": 238,
+    "edition_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+    "historical_english_rows": 1,
+    "modern_restricted_body_added": false,
+    "new_rights_authority_created": false,
+    "physical_tsv_lines": 2,
+    "rights_status": "public-domain"
+  },
+  "status": "PASS-bounded-source-accounting-successor",
+  "strict_runtime_helper_and_replay_support_unchanged": true,
+  "unchanged_inverse_specifications": 16,
+  "unchanged_kept_inputs": 7066
+}

@@ -449,11 +449,10 @@
     const cycle = selection ? selection.key : null;
     const cycleRows = selection && selection.dimension === 'sunday' ? [cycle] : [];
     const weekdayCycleRows = selection && selection.dimension === 'weekday' ? [cycle] : [];
-    const citations = (proper.citations || []).slice();
+    const citations = Seating.properCitations(proper, selection);
     let cycleText = null;
     if (selection) {
       const row = (proper[selection.family] || {})[cycle] || {};
-      for (const citation of row.citations || []) citations.push(citation);
       if (row.text) cycleText = row.text;
     }
     const references = citations.map(function (one) { return one.ref; }).filter(Boolean);
@@ -602,9 +601,7 @@
     const wanted = request.languages && request.languages.orations || 'la';
     if ((owner.source || proper.source) !== 'mixed' &&
         !languageBodyAbsence(proper, wanted, selection, request)) return material;
-    const citations = (proper.citations || []).concat(
-      owner === proper ? [] : owner.citations || []
-    );
+    const citations = Seating.properCitations(proper, selection);
     // Scripture references identify components of this exact mixed body. They
     // cannot supply its composed portion or make an unavailable witness held.
     material.scriptureComponents = {
@@ -721,11 +718,45 @@
     const candidates = (element.translations || []).filter(function (one) {
       return one && one.lang === language && one.text;
     });
-    const found = witness ? candidates.find(function (one) {
+    const assessed = candidates.map(function (translation) {
+      return { translation: translation,
+        state: Object.prototype.hasOwnProperty.call(translation, 'applicability')
+          ? ordinaryTranslationApplicability(translation.applicability, context) : 'applicable' };
+    });
+    function applicabilityAbsence(state) {
+      const applicability = { state: state,
+        context: state === 'unresolved' ? null : { calendar: context.calendar, formulary: context.formulary } };
+      if (candidates.length === 1) applicability.scope = candidates[0].applicability;
+      else applicability.candidates = assessed.map(function (one) {
+        return { sourceId: one.translation.source_id || one.translation.source || null,
+          scope: one.translation.applicability || null, state: one.state };
+      }).sort(function (left, right) {
+        return String(left.sourceId || '').localeCompare(String(right.sourceId || ''));
+      });
+      return {
+        kind: 'ordinary-text', language: language, sourceId: null, rights: null,
+        absenceKey: null, availability: 'unavailable', text: null,
+        reason: 'applicability-' + state, unavailableState: state === 'unresolved' ? 'unresolved' : 'unavailable',
+        applicability: applicability
+      };
+    }
+    let found = witness ? candidates.find(function (one) {
       return (one.source_id || one.source || null) === witness;
-    }) : (candidates.length === 1 ? candidates[0] : null);
+    }) : null;
     if (witness && candidates.length && !found) {
       throw new Error('explicit Ordinary witness is not held for an appointed element');
+    }
+    let applicableCandidates = candidates;
+    if (!witness && candidates.length) {
+      applicableCandidates = assessed.filter(function (one) {
+        return one.state === 'applicable';
+      }).map(function (one) { return one.translation; });
+      // An unknown competitor prevents an implicit unique-witness claim.
+      if (applicableCandidates.length < 2 && assessed.some(function (one) {
+        return one.state === 'unresolved';
+      })) return applicabilityAbsence('unresolved');
+      if (!applicableCandidates.length) return applicabilityAbsence('inapplicable');
+      if (applicableCandidates.length === 1) found = applicableCandidates[0];
     }
     if (found) {
       if (Object.prototype.hasOwnProperty.call(found, 'applicability')) {
@@ -755,8 +786,8 @@
         text: found.text
       };
     }
-    if (!witness && candidates.length > 1) {
-      const ids = candidates.map(function (one) {
+    if (!witness && applicableCandidates.length > 1) {
+      const ids = applicableCandidates.map(function (one) {
         return one.source_id || one.source || null;
       });
       if (ids.every(Boolean)) {
@@ -827,8 +858,22 @@
     return Seating.selectionMap(ordinary, wanted);
   }
 
-  function ordinaryElements(ordinary, request, propers, predicateFacts) {
+  function calendarCyclesFor(request) {
+    return request.lectionary ? {
+      sunday: request.lectionary.sunday,
+      weekday: request.lectionary.weekday
+    } : {
+      sunday: SUNDAY_CYCLE_KEYS.indexOf(request.cycle) >= 0 ? request.cycle : null,
+      weekday: WEEKDAY_CYCLE_KEYS.indexOf(request.cycle) >= 0 ? request.cycle : null
+    };
+  }
+
+  function ordinaryElements(ordinary, request, propers, predicateFacts, appointments, sourceRows) {
     const predicates = Object.assign({}, predicateFacts || {});
+    Object.assign(predicates, Seating.predicateFacts({
+      properAppointments: appointments, properRows: sourceRows,
+      calendarCycles: calendarCyclesFor(request)
+    }));
     if ((propers || []).some(function (proper) {
       return proper && proper.name === 'Second Reading';
     })) predicates['second-reading-appointed'] = true;
@@ -1040,13 +1085,7 @@
       mass: mass.key,
       formId: properRows.length ? properRows[0].proper.form_id || 'main' : request.form || 'main',
       sourcePaths: hasOwn(mass, 'proper_source_paths') ? mass.proper_source_paths : [],
-      calendarCycles: request.lectionary ? {
-        sunday: request.lectionary.sunday,
-        weekday: request.lectionary.weekday
-      } : {
-        sunday: SUNDAY_CYCLE_KEYS.indexOf(request.cycle) >= 0 ? request.cycle : null,
-        weekday: WEEKDAY_CYCLE_KEYS.indexOf(request.cycle) >= 0 ? request.cycle : null
-      },
+      calendarCycles: calendarCyclesFor(request),
       conditionFacts: dayContext ? dayContext.conditionFacts : undefined,
       date: dayContext && dayContext.date || null,
       season: dayContext && dayContext.season || null,
@@ -1143,6 +1182,7 @@
     mass, properRows, request, structure, ordinary, cycleMode, predicateFacts, dayContext
   ) {
     const prepared = prepareAppointments(mass, properRows, request, structure, dayContext);
+    const sourceRows = properRows;
     properRows = prepared.rows;
     if (!ordinary) {
       const unframed = Seating.unframedEvents(
@@ -1165,7 +1205,7 @@
     }
     const resolution = ordinaryElements(
       ordinary, request, properRows.map(function (row) { return row.proper; }),
-      predicateFacts
+      predicateFacts, prepared, sourceRows
     );
     const placed = Seating.seatPropers(
       properRows,
@@ -1372,8 +1412,23 @@
     }
     const relations = ordinaryRelationRows(ordinary, language);
     const relationCount = relations.reduce(function (count, row) { return count + row.count; }, 0);
-    if (relationCount !== declared.held) {
-      throw new Error('Ordinary relation grades contradict held language coverage');
+    let sourceOffers = 0;
+    let heldElements = 0;
+    for (const section of ordinary.sections || []) {
+      for (const element of section.elements || []) {
+        const offers = (element.translations || []).filter(function (one) {
+          return one && one.lang === language && one.text;
+        });
+        sourceOffers += offers.length;
+        if (offers.length) heldElements += 1;
+      }
+    }
+    // Alternative witnesses add source offers, not another held element.
+    if (relationCount !== sourceOffers) {
+      throw new Error('Ordinary relation grades contradict source offers');
+    }
+    if (heldElements !== declared.held) {
+      throw new Error('Ordinary held elements contradict language coverage');
     }
     const absenceReasons = ordinaryAbsenceReasons(ordinary, languageDeclaration, language);
     const absenceCount = absenceReasons.reduce(function (count, reason) {
@@ -3104,7 +3159,7 @@
             input.derived.liturgicalYear.anchors || null,
           appointments: formularyAppointments(
             generatedMass, formSelection.form, branch.winner)
-        })
+        }), prepared, generatedRows
       );
       ordinaryUnresolved = resolution.unresolved;
       const placed = Seating.seatPropers(

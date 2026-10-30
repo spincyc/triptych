@@ -354,7 +354,13 @@ class PageImageProvenanceGate(unittest.TestCase):
         ]
         self.assertEqual(len(shared), 2)
 
-    def test_supreme_pontiff_insert_and_vianney_remain_refused(self):
+    def test_historical_insert_refusals_and_separate_current_witnesses(self):
+        historical = tomllib.loads(G.historical_text(SIDECAR.relative_to(ROOT).as_posix()))
+        old_supreme = [row for row in historical["entries"]
+                       if row["mass"] == "commune-summorum-pontificum"
+                       and row.get("artifact_id", "").endswith("internet-archive-facsimile-pdf-6cf3c3d0")]
+        self.assertEqual([(row["proper"], row["printed_page"]) for row in old_supreme],
+                         [("Collect", "1302")])
         supreme = [
             row
             for row in self.bound
@@ -362,8 +368,10 @@ class PageImageProvenanceGate(unittest.TestCase):
         ]
         self.assertEqual(
             [(row["proper"], row["printed_page"]) for row in supreme],
-            [("Collect", "1302")],
+            [("Collect", "1302"), ("Secret", "1286-1287"), ("Postcommunion", "1287")],
         )
+        historical_unavailable = {(row["mass"], row["proper"], row["reason"]["kind"])
+                                  for row in historical["untranslated"]}
         unavailable = {
             (
                 row["mass"],
@@ -381,12 +389,37 @@ class PageImageProvenanceGate(unittest.TestCase):
         ):
             self.assertIn(
                 ("commune-summorum-pontificum", proper, "rights-withheld"),
-                unavailable,
+                historical_unavailable,
             )
+            if proper not in {"Secret", "Postcommunion"}:
+                self.assertIn(("commune-summorum-pontificum", proper, "rights-withheld"), unavailable)
         self.assertIn(
             ("s-ioannis-mariae-vianney-confessoris", "Collect", "witness-gap"),
-            unavailable,
+            historical_unavailable,
         )
+        # These later witnesses use ordinary Lasance pages, never the excluded
+        # lettered insert. Their complete publication joins remain mandatory.
+        hashes = {"Secret": "ade3795a41a53771bb17b5f259548f24e444f9f7d3446ac9b7978481138cbaae",
+                  "Postcommunion": "17708c81cefb954dbe3d980b8daf0583083ee9b1e039547a6f434a3f51a509c2"}
+        for row in supreme:
+            if row["proper"] not in hashes:
+                continue
+            self.assertEqual(row["publication_artifact_id"],
+                "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.pontiff-two-en-20261029-dc95b61f")
+            self.assertEqual(hashlib.sha256(row["translations"][0]["text"].encode()).hexdigest(), hashes[row["proper"]])
+            propers.validate_translation_publication_binding(
+                row, propers.DEFAULT_ROOT, SIDECAR, self.witnesses)
+            changed = copy.deepcopy(row)
+            changed["translations"][0]["text"] += " Amen."
+            with self.assertRaises(ValueError):
+                propers.validate_translation_publication_binding(
+                    changed, propers.DEFAULT_ROOT, SIDECAR, self.witnesses)
+        vianney = next(row for row in self.document["entries"]
+                       if row["mass"] == "s-ioannis-mariae-vianney-confessoris" and row["proper"] == "Collect")
+        self.assertEqual(vianney["translations"][0]["rights"], "project-created")
+        self.assertEqual(hashlib.sha256(vianney["translations"][0]["text"].encode()).hexdigest(),
+                         "91deab7c4d6de7a0dfc1f6f8673f1f4222ca3c63145d356de7ab0fc4d0297090")
+        propers.validate_study_translation_binding(vianney, "roman-1962", propers.DEFAULT_ROOT, SIDECAR)
 
     def test_safe_nineteen_inherit_into_pre_1955_without_suppression(self):
         import tomllib
@@ -730,24 +763,36 @@ class TheCorpusItself(unittest.TestCase):
         self.assertTrue(all("text" not in row for row in unavailable))
 
     def test_holy_week_is_outside_the_second_witness(self):
-        """The gap the sibling could not close, and which the page closed instead.
+        """Historical page collations and later study sources remain separate.
 
         The artifact excludes Palm Sunday, the rest of Holy Week and the Easter
-        Vigil by its own record, which is exactly where the seven orations with
-        no evidence of any kind sat. They are not evidence-less now — every one
-        was read on a page image — but no second witness reaches them, so the
-        detector is silent there and a reader should not read silence as assent.
+        Vigil by its own record. Replay the original page-image obligations;
+        later independently sourced studies do not become this second reading
+        or borrow its detector verdict.
         """
         import tomllib
 
         document = tomllib.loads(SIDECAR.read_text(encoding="utf-8"))
         holy_week = {"palm-sunday", "mass-of-the-lords-supper", "good-friday", "easter-vigil"}
-        for row in document["entries"]:
+        historical = tomllib.loads(G.historical_text(SIDECAR.relative_to(ROOT).as_posix()))
+        for row in historical["entries"]:
             if row["mass"] not in holy_week:
                 continue
             sources = {t.get("source_id") for t in row["translations"]}
             self.assertNotIn(ARTIFACT, sources)
             self.assertTrue(str(row.get("collated") or "").strip(), row["mass"])
+        context = propers.study_translation_source_context("roman-1962", propers.DEFAULT_ROOT)
+        for row in document["entries"]:
+            if row["mass"] not in holy_week:
+                continue
+            self.assertNotIn(ARTIFACT, {t.get("source_id") for t in row["translations"]})
+            if row.get("collated"):
+                self.assertTrue(str(row["collated"]).strip())
+            else:
+                self.assertTrue(row["translation_review"])
+                self.assertTrue(all(t["rights"] == "project-created" for t in row["translations"]))
+                propers.validate_study_translation_binding(
+                    row, "roman-1962", propers.DEFAULT_ROOT, SIDECAR, context=context)
 
 
 if __name__ == "__main__":

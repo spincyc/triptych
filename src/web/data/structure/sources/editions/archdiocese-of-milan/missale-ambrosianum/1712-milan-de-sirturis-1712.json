@@ -1,6 +1,49 @@
 {
  "artifacts": [
   {
+   "artifact_type": "normalized-text",
+   "byte_size": 129,
+   "edition_owned": true,
+   "id": "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.english-completion-20261030-peace-invitation-la",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "notes": "One header and two rows. Only row1, offerte-vobis-pacem, supplies the complete selected invitation; row2 preserves the actual different-rite response. The modern assignment and conditional use are established independently by the registered secondary2002 n128; no complete authenticated2008 wording claim is made.",
+   "page_count": null,
+   "retrieved": "2026-10-30",
+   "rights": "public-domain",
+   "rights_basis": "The underlying 1712 Milan printing, with separately bound 1733 matter, has the affirmative United States public-domain basis recorded on artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.missale-ambrosianum-1712-text-a1319e20 and in src/sources/inventories/ambrosian-and-mozarabic-rights-v1.toml. A faithful mechanical image reproduction and machine text overlay create no new exclusive right in those historical pages. The faithful source transcription claims no new exclusive right in the historical words.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "bounded-facsimile-page",
+   "byte_size": 121403,
+   "edition_owned": true,
+   "id": "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.english-completion-20261030-peace-invitation-page",
+   "media_type": "application/pdf",
+   "notes": "Retained packet page1 is whole original artifact193, printed155. Only the invitation and its distinct source response are transcribed; the surrounding older embolism, chant and rubrics remain source context, not admitted target counterparts.",
+   "page_count": 1,
+   "retrieved": "2026-10-30",
+   "rights": "public-domain",
+   "rights_basis": "The underlying 1712 Milan printing, with separately bound 1733 matter, has the affirmative United States public-domain basis recorded on artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.missale-ambrosianum-1712-text-a1319e20 and in src/sources/inventories/ambrosian-and-mozarabic-rights-v1.toml. A faithful mechanical image reproduction and machine text overlay create no new exclusive right in those historical pages. This derivative retains only the complete historical book page printed155; it contains no modern library card, website wrapper or target-Missal page.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/10869665bsb/10869665bsb_text.pdf",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "facsimile-pdf-with-ocr-overlay",
+   "byte_size": 99996171,
+   "edition_owned": true,
+   "id": "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.ia-text-pdf-180769e3",
+   "media_type": "application/pdf",
+   "page_count": 625,
+   "retrieved": "2026-10-30",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/10869665bsb/10869665bsb_text.pdf",
+   "storage": "remote"
+  },
+  {
    "artifact_type": "ocr-text",
    "byte_size": 1868008,
    "edition_owned": true,
@@ -28,7 +71,30 @@
   "translators": [],
   "year": 1712
  },
- "passages": [],
+ "passages": [
+  {
+   "artifact_id": "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.english-completion-20261030-peace-invitation-page",
+   "artifact_type": "bounded-facsimile-page",
+   "id": "passage.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.english-completion-20261030-peace-invitation",
+   "locus": "Ordinarium Missae, peace invitation and response, printed p155; original artifact193, retained packet1",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/10869665bsb/10869665bsb_text.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-30",
+   "withheld": "no-transcription"
+  }
+ ],
  "schema": "triptych-source-reader/v1",
  "work": {
   "alternate_titles": [

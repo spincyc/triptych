@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.pentecost-four-chants-20261029-checked-latin-0097a922"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The registered Tours Mame1922 printing has no remaining United States copyright term. This bounded mechanical extract and page-checked transcription carry only its preexisting public-domain words; no authority derives from online availability. No1962 image or protected new composition is distributed."
+rights_jurisdiction = "United States"
+provenance = "Direct page-image transcription by Triptych on2026-10-29 from the four retained Mame1922 pages. Source spelling Alleluja, source pointing and complete two-versicle extent retained; stress accents and ligatures normalized explicitly. No OCR supplied a reading."
+retrieved = "2026-10-29"
+sha256 = "0097a9225773e8c7539c88ef30c292cd0dcdb6daa0bd70a30829338b4282ece8"
+byte_size = 812
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/pentecost-four-chants-20261029-checked-latin-0097a922/latin.txt"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.pentecost-four-chants-20261029-pages"
+transformation = "Select complete four Alleluias in original page order; omit headings/citations/numbers; join wraps; remove stress; expand ae ligatures; represent versicle signs V.; retain source j-forms, pointing and parenthetic rubric. Empty line separates source units."
+indexable = true
+encoding = "utf-8"

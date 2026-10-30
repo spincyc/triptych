@@ -1,0 +1,18 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-ordinary-apostles-english"
+edition_id = "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The identified English book was published by William Blackwood and Sons in 1908. Its 1908 printed contents have no remaining United States copyright term in 2026: a 95-year maximum term ended before 2026, and any URAA restoration supplies only the remainder of the otherwise applicable United States term. Faithful mechanical scans and project transcription of those public-domain English words add no human authorship. The stated basis is publication date and mechanical reproduction, not Internet Archive availability or a host label. This covers the historical human translation, not approved modern English or any modern editorial addition."
+rights_jurisdiction = "United States"
+derived_from = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-ordinary-apostles-page2"
+transformation = "Direct image transcription of the complete historical human English Apostles Creed on printed p. 2, opening left-column paragraph, ending Amen. Printed line wraps and line-end hyphens are joined; drop I becomes ordinary I; small capitals BELIEVE and JESUS are represented in uppercase. Spaces before punctuation are closed without changing punctuation marks. All wording, capitalization, source pronouns, commas, colons, and the complete Amen ending remain. The following Then is said aloud rubric, versicles, Psalm and footnotes are excluded. No new English or modern approved wording is supplied."
+retrieved = "2026-10-29"
+sha256 = "afa44c2416ef5fc374505f27bc2e7e6b797ab57624789cabc59d2d2c6e3ba270"
+byte_size = 967
+path = "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/english-completion-20261029-ordinary-apostles-english/text.tsv"
+indexable = true
+encoding = "utf-8"

@@ -1,0 +1,23 @@
+{
+  "schema": "triptych-bounded-source-ancestry-code-successor-review/v1",
+  "reviewed_on_utc": "2026-10-30",
+  "decision": "accept-exact-scalar-and-list-ancestry-normalization",
+  "scope": "Only the source ancestry normalization in scripture_body_translation_problems and its two new complete-source/malformed-type regression tests. The separately retained independent seventeen-control review remains unchanged.",
+  "subjects": {
+    "tools/mass-propers": "cd79724ae6ecbe9629cfb12cbe5084bab3f45ce9022e85cfa5a65f54052900fd",
+    "tools/tests/test_scripture_body_translation_accounting.py": "0398427df69c40c6fecef8606a7d6c51a5ed26ca24fc9ccc676299668f846b90"
+  },
+  "exact_successor_diff_sha256": "2c94710b2e5cd2f422e431fb27994a040a841e5e12a9cae075405a305aefcd73",
+  "finding_and_correction": "The actual retained Bible source uses a scalar derived_from artifact ID. Converting it with list() split that ID into characters and falsely rejected a complete source graph. The successor accepts a nonblank scalar ID as one ancestor, preserves explicit lists, and rejects other types or malformed members. Every actual ancestor still requires its exact pinned record; no source edge or source permission is waived.",
+  "independent_root_validation": {
+    "command": ".scratch/pc-quarantine-conservation-20261029/venv/bin/python -m unittest tools.tests.test_scripture_body_translation_accounting -v",
+    "result": "19 tests pass, no skips",
+    "checks": "Root read the exact complete two-file diff and independently ran the complete nineteen-control module. Tests include actual scalar/list graph shape, both producer and checker, each missing ancestor, malformed field types, child scope, exact exclusions and tamper refusal."
+  },
+  "preserved_limits": [
+    "Both production admission maps remain empty; no actual English body, target witness, source arrangement or rights permission is admitted by this code review.",
+    "The prior independent review owns the accounting and inheritance findings. This successor changes only typed ancestry parsing and the two new regressions.",
+    "All source metadata, body bytes, coverage identities and Latin Bible carrier semantics remain unchanged.",
+    "This is an AI code review, not source fidelity, approved English, human review, terminal acceptance or completion of the full-English promise."
+  ]
+}

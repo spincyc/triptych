@@ -12,6 +12,11 @@ import tempfile
 import unittest
 from unittest import mock
 
+try:
+    from .test_public_alpha_quarantine import install_test_quarantine
+except ImportError:
+    from test_public_alpha_quarantine import install_test_quarantine
+
 
 REPOSITORY = Path(__file__).resolve().parents[2]
 
@@ -35,8 +40,9 @@ class PublicAlphaFontTest(unittest.TestCase):
         self.tool = importlib.util.module_from_spec(spec)
         loader.exec_module(self.tool)
         self.tool.ROOT = self.root
-        quarantine = self.tool.POSTCONCILIAR_TRANSLATIONS_RELATIVE
-        self.write(quarantine.as_posix(), (REPOSITORY / quarantine).read_bytes())
+        install_test_quarantine(
+            self.tool, self.root, "PROJECT-CREATED PUBLIC-ALPHA FONT QUARANTINE"
+        )
         for directory in self.tool.WEB_BROWSER_DIRECTORIES:
             self.write(f"src/web/browser/{directory}/fixture.css", b"/* fixture */\n")
         self.core = self.write(

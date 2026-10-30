@@ -16,6 +16,21 @@
    "storage": "tracked"
   },
   {
+   "artifact_type": "checked-bilingual-transcription",
+   "byte_size": 1387,
+   "edition_owned": true,
+   "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.holyweek-hymn-ubi-caritas-en-20261029-b736c65c",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-10-29",
+   "rights": "public-domain",
+   "rights_basis": "Only the underlying ordinary-page original Lasance/Walsh1937/1945 English expression is retained, under the established United States nonrenewal finding for A110108/A192159 in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. The independently preexisting Latin words accompany their historical translation. No facsimile images, publisher or host framing, scan stamp, annotations, excluded lettered inserts or whole-book scan clearance is claimed.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
    "artifact_type": "facsimile-pdf",
    "byte_size": 135628123,
    "edition_owned": true,
@@ -27,6 +42,21 @@
    "rights_jurisdiction": "United States",
    "source_url": "https://archive.org/download/the-new-roman-missal/The%20New%20Roman%20Missal%20%281945%29_text.pdf",
    "storage": "remote"
+  },
+  {
+   "artifact_type": "checked-bilingual-transcription",
+   "byte_size": 2204,
+   "edition_owned": true,
+   "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.pange-lingua-historical-en-20261029-7dc5b07e",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "HistoricalEnglishSHA256d9902364371c5968b871f9ce724d04f8d78801c526dfbcb1d2b75bf5a9b7969c. SourceEnglish firststanza has lowercaseking, fourthstanzaByHisword haslowercaseword; sourceEnglish differs in those capitals from the other registeredlater1945scan. HistoricalEnglish is not official1962English. SourceLatin apparentlinqua/Vrgine errors are recorded explicitly and do not control independent1879Latin.",
+   "page_count": null,
+   "retrieved": "2026-10-29",
+   "rights": "public-domain",
+   "rights_basis": "Only the ordinary-page historical1937/1945English expression of the1946printing is retained under the registered UnitedStatesnonrenewal finding forA110108/A192159. Ancient Latin poem is independently attested in registered1879Guéranger whole witness; later translation registration is not used to clear later Latin. No whole-bookPDF,Google framing,scan watermark,lettered inserts or new liturgical composition is retained.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/the-new-roman-missal/The%20New%20Roman%20Missal%20%281945%29_text.pdf",
+   "storage": "tracked"
   },
   {
    "artifact_type": "checked-conclusion-table-transcription",
@@ -467,6 +497,102 @@
    ],
    "storage": "remote",
    "verified_on": "2026-10-23",
+   "withheld": "rights"
+  },
+  {
+   "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.pange-lingua-historical-en-20261029-7dc5b07e",
+   "artifact_type": "checked-bilingual-transcription",
+   "context": "Complete historical English hymn from printed 454-455, artifact PDF pages 464–465. Exact literal English and separately transcribed facing Latin are retained in bilingual.tsv physical line 2.",
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.pange-lingua-six-stanzas-publish-20261029",
+   "locus": "Holy Thursday, Pange lingua, complete six-stanza historical hymn, printed 454-455.",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "EnglishSHA256d9902364371c5968b871f9ce724d04f8d78801c526dfbcb1d2b75bf5a9b7969c; underlying source image controllerpassage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.pange-lingua-six-stanzas-verify-20261029. Preserve historical attribution and typedantecedentrelationship; the1962rubric supplies assignmentbyname only.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "Only the ordinary-page historical1937/1945English expression of the1946printing is retained under the registered UnitedStatesnonrenewal finding forA110108/A192159. Ancient Latin poem is independently attested in registered1879Guéranger whole witness; later translation registration is not used to clear later Latin. No whole-bookPDF,Google framing,scan watermark,lettered inserts or new liturgical composition is retained.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": "https://archive.org/download/the-new-roman-missal/The%20New%20Roman%20Missal%20%281945%29_text.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.pange-lingua-six-stanzas-publish-20261029.json",
+   "verified_on": "2026-10-29",
+   "words": 256
+  },
+  {
+   "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d",
+   "artifact_type": "facsimile-pdf",
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.pange-lingua-six-stanzas-verify-20261029",
+   "locus": "Holy Thursday, Pange lingua, complete six-stanza historical hymn, printed 454-455.",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "The rights position for this artifact has not been settled, and an unsettled question is not a permission.",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/the-new-roman-missal/The%20New%20Roman%20Missal%20%281945%29_text.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-10-29",
+   "withheld": "rights"
+  },
+  {
+   "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.holyweek-hymn-ubi-caritas-en-20261029-b736c65c",
+   "artifact_type": "checked-bilingual-transcription",
+   "context": "Exact bounded original-expression TSV data row; English and opposite Latin carried separately.",
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.holyweek-hymn-ubi-caritas-publish-20261029",
+   "locus": "Lasance/Walsh revised1945, printed468, artifact pages[478, 478]; Mandatum Antiphon 8",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Source image proof passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.holyweek-hymn-ubi-caritas-verify-20261029; exact EnglishSHA256 5e160254f2d9d1782e835fbe6dc64ad126a21d598634e70786ea8b49bd8f42da. All three strophes and repeated antiphons were read in the intact1946 page-image witness, not supplied from the damaged1945 PDF466/printed468 page whose horizontal strip omits the third antiphon ending and opening verse. The target marks the antiphon repetition by an instruction before writing its words; the historical source simply prints the antiphon with Ant. markers. Latin words agree apart from pointing and stress accents. The neighboring Mandatum versicles and following Adesto prayer are excluded.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "Only the underlying ordinary-page original Lasance/Walsh1937/1945 English expression is retained, under the established United States nonrenewal finding for A110108/A192159 in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. The independently preexisting Latin words accompany their historical translation. No facsimile images, publisher or host framing, scan stamp, annotations, excluded lettered inserts or whole-book scan clearance is claimed.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.holyweek-hymn-ubi-caritas-publish-20261029.json",
+   "verified_on": "2026-10-29",
+   "words": 233
+  },
+  {
+   "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d",
+   "artifact_type": "facsimile-pdf",
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.holyweek-hymn-ubi-caritas-verify-20261029",
+   "locus": "Lasance/Walsh revised1945, printed468, artifact pages[478, 478]; Mandatum Antiphon 8",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "The rights position for this artifact has not been settled, and an unsettled question is not a permission.",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/the-new-roman-missal/The%20New%20Roman%20Missal%20%281945%29_text.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-10-29",
    "withheld": "rights"
   },
   {

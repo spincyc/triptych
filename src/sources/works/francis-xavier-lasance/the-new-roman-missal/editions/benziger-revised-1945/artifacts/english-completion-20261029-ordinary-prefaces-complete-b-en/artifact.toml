@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-b-en"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Only the historical prayer-text bodies on ordinary numbered pages 805, 807, 814–817 of the Lasance 1945 revision, outside both excluded later lettered insert ranges. United States nonrenewal of registrations A110108 and A192159 is established in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. No rights conclusion is made for later Holy Week material or separately dated images. No new exclusive right is asserted in these underlying words."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf"
+provenance = "The source owner directly read all four complete historical English bodies against original PDF pages 804,806,813–816 of the whole-PDF hash 6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70. The admitting agent separately checked these source images and all six retained proof pages. Independent literal source review accepted exact TSV SHA-256 2894c6e547aafe3fd42688ac97173717fdea8b66842a1ac2172b926677beec6c; review receipt SHA-256 1200654b8ba4967b7aeba136d2f37b68e3ed2345407766689ebb92788fa2e56f. No source words were generated, translated or modernized."
+retrieved = "2026-10-30"
+sha256 = "2894c6e547aafe3fd42688ac97173717fdea8b66842a1ac2172b926677beec6c"
+byte_size = 3483
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-ordinary-prefaces-complete-b-en/text.tsv"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-b-facsimile-text-regions"
+transformation = "Transcribe each complete source English Preface body from its own opening through the colon before the separately printed Sanctus. Join physical wraps and discretionary line-end hyphens only; retain intrinsic hyphens, words, capitals and punctuation. Exclude headings, dialogue, applicability rubrics and Sanctus, and add source metadata columns. No Cummiskey opening or conclusion is spliced into any body."
+notes = "Historical antecedent human English, not approved target English or an exact-target collation. Easter retains printed day (in these days) alternatives without selection; no English night body is supplied from the preceding rubric. Mary retains the printed festival blank . . . and lowercase thee/whom/thy; no feast insertion is supplied. Source Ascension available and Apostles theological rendering remain unchanged. Apostles source comma before capital And in its pastors under Thee, And therefore is retained literally, after independent high-resolution review corrected the candidate period to the source comma. The body admission does not establish a calendar appointment or complete target branch execution."

@@ -1,0 +1,196 @@
+{
+  "schema": "triptych-independent-finite-source-controller-review/v1",
+  "status": "accepted-source-only-controller-proposal",
+  "scope": "Three previously page-verified complete historical source utterances only; five new manifests and two payloads. No target-qualified carrier, rights adaptation decision, English adoption or change to the existing whole-target holds. The accepted twenty were not re-reviewed or modified.",
+  "evidence": {
+    "proposal": {
+      "path": ".scratch/roman-english-completion-20261029/chants/saints/finite-source-controllers.json",
+      "sha256": "deb77b5a57eb370cf088354426ef2053ce5e998576a7e4fc5694b0db2a077d7a"
+    },
+    "previousCompleteReview": {
+      "path": ".scratch/roman-english-completion-20261029/chants/saints/independent-review/REVIEW.json",
+      "sha256Before": "4c4bdec54b9fe14f40ddc6096bc2ec5c56f572515f1da6e53ac016d2eceb0ce6",
+      "sha256After": "4c4bdec54b9fe14f40ddc6096bc2ec5c56f572515f1da6e53ac016d2eceb0ce6",
+      "unchanged": true
+    },
+    "previousFiniteTwoSourceOnlyReview": {
+      "path": ".scratch/roman-english-completion-20261029/chants/saints/independent-review/finite-two-source-only-review.json",
+      "sha256": "ea7206c52f4737cd1e268fd17f6a40228e011568d5c12e2bc1f75090ea3e1186"
+    },
+    "heldSourceRecords": [
+      {
+        "path": ".scratch/roman-english-completion-20261029/chants/saints/cross-michael/hold-offertory.json",
+        "sha256": "941466a86cda3103e310d557f539b113db827b75dfc8b6eb81bc96c962cc30cc"
+      },
+      {
+        "path": ".scratch/roman-english-completion-20261029/chants/saints/doctors-saints/hold-damascene-offertory.json",
+        "sha256": "9581176d752bd4aaa157b295b5878eae72796df0b776821f8f3b44b5dae849f3"
+      }
+    ],
+    "manifestRecords": [
+      {
+        "path": ".scratch/roman-english-completion-20261029/chants/saints/finite-source-postimages/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-finite-saints-bases-2be6c708/artifact.toml",
+        "fileSHA256": "9b18f8c7e1593d0b2decca73d4a5fa0714c2083d9574814dc22114b25f523b33",
+        "canonicalRecordSHA256": "01d16b11dc9cb9a75dd8f87e53a62a623857a70c34cc8229197a78354162edd6",
+        "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-saints-bases-2be6c708",
+        "parsedFieldsEqualProposal": true
+      },
+      {
+        "path": ".scratch/roman-english-completion-20261029/chants/saints/finite-source-postimages/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-finite-cross-feast-base.toml",
+        "fileSHA256": "beb9b85c77523e4bd5c15fe124de047d113a929540de885f0c953ce3ee81e890",
+        "canonicalRecordSHA256": "1aa53752cc1800a31c60320f6e52b4c9ef089f6ce37f60cd0e38ace0c4b0d41c",
+        "id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-cross-feast-base",
+        "parsedFieldsEqualProposal": true
+      },
+      {
+        "path": ".scratch/roman-english-completion-20261029/chants/saints/finite-source-postimages/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-finite-cross-passion-alternate.toml",
+        "fileSHA256": "ed811a9bf1fca033dc2c46186a1b8e0d799d2b0790274b9c41d49ce6e7ff62a4",
+        "canonicalRecordSHA256": "fc1e22776240be23c05b8e2ff4b135406986a386d37a2c97fab5fbc88132ec29",
+        "id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-cross-passion-alternate",
+        "parsedFieldsEqualProposal": true
+      },
+      {
+        "path": ".scratch/roman-english-completion-20261029/chants/saints/finite-source-postimages/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-finite-damascene-non-paschal-base.toml",
+        "fileSHA256": "83eedac29670a0eb94f4233db65c09d1e216e4c0e14b62ca197094c74795da4b",
+        "canonicalRecordSHA256": "c86cfae3754fd48b5ba400ca69dfc4f921288fa271c5a7a81c71037db84fbb96",
+        "id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-damascene-non-paschal-base",
+        "parsedFieldsEqualProposal": true
+      },
+      {
+        "path": ".scratch/roman-english-completion-20261029/chants/saints/finite-source-postimages/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-finite-cross-passion-page-ff164f57/artifact.toml",
+        "fileSHA256": "f9fec5bcb38b181a2db749ca3d2647c0f2d9db529c70d82620a1de8b78eab396",
+        "canonicalRecordSHA256": "7fb0890fdeb787bb9727fb49549f53515b56ce0b30cd32380fd82af9b7470069",
+        "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-cross-passion-page-ff164f57",
+        "parsedFieldsEqualProposal": true
+      }
+    ],
+    "payloads": [
+      {
+        "path": ".scratch/roman-english-completion-20261029/chants/saints/finite-source-postimages/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-finite-saints-bases-2be6c708/latin.txt",
+        "sha256": "2be6c7089fade3e9ae6399f63a18064915b4ee3c13b4f3712ca6442d35ad11ab",
+        "bytes": 458
+      },
+      {
+        "path": ".scratch/roman-english-completion-20261029/chants/saints/finite-source-postimages/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-finite-cross-passion-page-ff164f57/source.pdf",
+        "sha256": "ff164f574b5e2bb6ef5d1b94f97f60df671a4d27fbbc4e7702f9d43025fc02e0",
+        "bytes": 54145
+      }
+    ],
+    "sourceAncestors": [
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/work.toml",
+        "sha256": "ae029277a68493ed903cd608cd7abdb91797aaff614ab5646f7c6a2dbeaa2ffd"
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/edition.toml",
+        "sha256": "c5570791955722356a338b95201c30372b26a9fa44e82882e504daa7a23b7b89"
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ia-scan-pdf-9873693a/artifact.toml",
+        "sha256": "ca4b224874d452a269befb56edcb56b1ffd06e62b9a6c067b718054e7e8ba116"
+      }
+    ],
+    "controllers": [
+      {
+        "name": "cross-feast-base",
+        "passageID": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-cross-feast-base",
+        "sourceArtifactPage": 828,
+        "sourcePrintedPage": "714",
+        "sourceLineSHA256WithLF": "90099afff86b22b0f9a4194e5eed4646a4f27cfd257e0e15950c0cc3519f0829",
+        "checks": {
+          "exactHeldDiplomaticBytesPlusLF": true,
+          "sourceWordingEqualsHeld": true,
+          "exactOnePhysicalLine": true,
+          "passageRangeMatches": true,
+          "oneCorrectArtifactController": true,
+          "controllerPayloadHashMatches": true,
+          "selectedLineHashMatches": true,
+          "passageCanonicalHashMatches": true,
+          "sameEdition": true,
+          "sameHistoricalSource": true,
+          "sameHistoricalSourcePage": true,
+          "samePrintedPage": true,
+          "rightsPendingWholeTargetExplicit": true
+        }
+      },
+      {
+        "name": "cross-passion-alternate",
+        "passageID": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-cross-passion-alternate",
+        "sourceArtifactPage": 952,
+        "sourcePrintedPage": "74*",
+        "sourceLineSHA256WithLF": "a8dc2ce73823bfeccacb8e8bbab75fab76164aaf9cbb584cb3a95620df98fc80",
+        "checks": {
+          "exactHeldDiplomaticBytesPlusLF": true,
+          "sourceWordingEqualsHeld": true,
+          "exactOnePhysicalLine": true,
+          "passageRangeMatches": true,
+          "oneCorrectArtifactController": true,
+          "controllerPayloadHashMatches": true,
+          "selectedLineHashMatches": true,
+          "passageCanonicalHashMatches": true,
+          "sameEdition": true,
+          "sameHistoricalSource": true,
+          "sameHistoricalSourcePage": true,
+          "samePrintedPage": true,
+          "rightsPendingWholeTargetExplicit": true
+        }
+      },
+      {
+        "name": "damascene-non-paschal-base",
+        "passageID": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-damascene-non-paschal-base",
+        "sourceArtifactPage": 673,
+        "sourcePrintedPage": "559",
+        "sourceLineSHA256WithLF": "457e0d1efcc368929a5bf7ca9b29c023318037db6fa867f4fd42cc52816efa8c",
+        "checks": {
+          "exactHeldDiplomaticBytesPlusLF": true,
+          "sourceWordingEqualsHeld": true,
+          "exactOnePhysicalLine": true,
+          "passageRangeMatches": true,
+          "oneCorrectArtifactController": true,
+          "controllerPayloadHashMatches": true,
+          "selectedLineHashMatches": true,
+          "passageCanonicalHashMatches": true,
+          "sameEdition": true,
+          "sameHistoricalSource": true,
+          "sameHistoricalSourcePage": true,
+          "samePrintedPage": true,
+          "rightsPendingWholeTargetExplicit": true
+        }
+      }
+    ],
+    "fullMameSource": {
+      "path": ".scratch/c1-pre1955/download/mame1922.pdf",
+      "sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005"
+    },
+    "supplementaryPDFPageCheck": {
+      "excerptPage": 1,
+      "originalPage": 952,
+      "pageCount": 1,
+      "renderMethod": "pdftoppm72dpi-grayscale",
+      "excerptPixelBytesSHA256": "83562954fb35b42035d1625ec4677203443cd76f688f20edff174eda5397e6f7",
+      "originalPixelBytesSHA256": "83562954fb35b42035d1625ec4677203443cd76f688f20edff174eda5397e6f7",
+      "identical": true
+    },
+    "validationRoot": ".scratch/roman-english-completion-20261029/chants/saints/independent-review/finite-source-validation-root",
+    "errors": []
+  },
+  "schemaValidation": {
+    "command": "TRIPTYCH_LIBRARY_CACHE=0 tools/source-library --root .scratch/roman-english-completion-20261029/chants/saints/independent-review/finite-source-validation-root validate",
+    "exitStatus": 0,
+    "result": "source-library valid: artifact=3 corpus=0 edition=1 passage=3 segment=0 work=1 bindings=0",
+    "scope": "Finite graph of the five proposals plus unchanged canonical Mame work, edition and full-source artifact. No wider library validation claimed."
+  },
+  "findings": [
+    "All458 UTF-8 payload bytes equal the three previously reviewed diplomatic bodies, each on its own LF-terminated physical line. No normalization, combination, added quantifier or acclamation was introduced.",
+    "The Cross feast base is line1, the separate Passion alternate is line2, and the Damascene historical non-Paschal base is line3. Each passage has one correct text artifact controller, exact complete artifact hash, and exactly its own one-line range.",
+    "The supplementary PDF is one complete mechanically reproduced historical page: derivative1 maps to full Mame952/printed74*. Its72dpi grayscale raster is byte-identical to the full-source rendering. It remains contrary evidence, without assigning its votive context to the Cross feast.",
+    "All5 actual TOML files parse identically to the proposed records, and both their file hashes and canonical-record hashes match. Both artifact payload hashes and byte counts match.",
+    "The source-only metadata explicitly retains a non-exact, rights-pending whole-target relation; no new target or English is admitted."
+  ],
+  "rightsClearanceForTargetVariants": null,
+  "targetOrEnglishAdoption": false,
+  "priorAcceptedTwentyReReview": false,
+  "previousCompleteReviewPreserved": true,
+  "newTrackedMutations": false,
+  "errors": []
+}

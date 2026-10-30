@@ -1,6 +1,60 @@
 schema_version = 1
 
 [[deliverables]]
+id = "missal-reader-english-completion-2026-10-29"
+owner = "PROJECT-WORK.md"
+promise = "Drive the missal reader to completion with English translations of all texts, using maximum useful parallel source and implementation work, preserving edition, source and publication distinctions and the existing annual-content requirements. Represented-body counts do not exclude genuine source or rite-model gaps from the completion scope."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "english-text-coverage"
+  criterion = "Every represented Proper and Ordinary text has source-supported English, with exact historical wording and original project study translations distinguished, and no missing or withheld body counted as translated. Genuine unmodeled source and rite contexts are also resolved or individually identified; historical nonapplicability is distinguished from missing text. Every remaining source or distribution blocker is identified individually."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "src/sources/inventories/roman-1962-proper-translations-v1.toml", "src/sources/inventories/postconciliar-proper-translations-v1.toml"]
+
+  [[deliverables.requirements]]
+  id = "english-source-review"
+  criterion = "New English and historical source associations pass independent fidelity and source/publication review; target Latin, conclusion cues, edition qualifications and existing accepted records are preserved without inventing approval or verification."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/missal-english-completion-2026-10-29/ordinary/roman-english-source-prose-delivery-successor.json", "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-sixteen-rights-assessment.json", "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json"]
+
+  [[deliverables.requirements]]
+  id = "english-reader-integration"
+  criterion = "The canonical source owners regenerate current browser and terminal data, source-batch pins and release bindings; focused regression, the annual structural matrix, affected native reading paths and applicable publication checks pass, with inherited failures explicitly distinguished."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "tools/tests/test_complete_missal_year.py"]
+
+  [[deliverables.requirements]]
+  id = "english-integrated-delivery"
+  criterion = "Independent integrated review accepts the completed scope and coherent commits on feature/missal-reader; the existing annual-content and real-terminal acceptance promises are reconciled separately and remain open until their own evidence establishes completion."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
+id = "missal-version-nomenclature-2026-10-30"
+owner = "PROJECT-WORK.md"
+promise = "Establish well-sourced names and firm versioning nomenclature for each missal point in time across the project, replace the vague current Pre-1955 label, and include in the reader only missals with actual contributed content."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "missal-version-primary-sources"
+  criterion = "Every represented missal version has an explicit source-supported name and version identity distinguishing edition, reform horizon, language and the actual contributing witnesses; uncertain exact correspondence is stated."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "guidance/missals.md"]
+
+  [[deliverables.requirements]]
+  id = "missal-version-consistent-consumers"
+  criterion = "Current reader, CLI, source and generated metadata, project prose and governing guidance consistently use the accepted nomenclature; stable-ID compatibility and historical audit evidence are preserved explicitly."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "missal-reader-contribution-filter"
+  criterion = "The reader includes only missal versions with actual contributed content, determined from canonical text or source data rather than placeholder or empty records, with affected navigation and rendering checks passing."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "encyclicals-completion-2026-10-29"
 owner = "PROJECT-WORK.md"
 promise = "Complete the resumed encyclical work, provide complete English translations across the catalogue, give the two-column reading PDFs a classic TeX appearance, and resolve independent cold-review findings."

@@ -1,0 +1,106 @@
+{
+  "schema": "independent-full-ending-source-review/v1",
+  "reviewed_on": "2026-10-29",
+  "reviewer": "pc_nativity_review",
+  "purpose": "Separate successor evidence for independently witnessed conventional endings. Does not mutate or erase the temporal-five review405900ef; closes the specific absence of an independently read full ending behind its Lent5 conclusion.",
+  "source": {
+    "edition_id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+    "artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+    "whole_pdf_sha256": "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474",
+    "whole_pdf_bytes": 102880787,
+    "rights_scope": "Identified Pustet Ratisbon1862 printing is public domain in the United States by publication date under existing source finding. The complete digitized PDF remains subject to its registered retention limits; supplied single-page mechanical extractions bind historical printed text only and are not a new edition."
+  },
+  "findings": [
+    {
+      "kind": "complete-long-ending",
+      "decision": "SOURCE AND STUDY-ENGLISH SUPPORTED; root adoption and source registration remain separate",
+      "witnesses": [
+        {
+          "artifact_page": 351,
+          "printed_page": "265",
+          "locus": "Canon Missae, top-left column: the complete ending follows the preceding prayer continuation; all ending words are present on this page",
+          "normalised_exact_ending": "Qui vivis et regnas in saecula saeculorum.",
+          "separate_response": "Amen.",
+          "response_marker": "No R. marker before Amen at this locus; do not claim one."
+        },
+        {
+          "artifact_page": 776,
+          "printed_page": "[106]",
+          "locus": "Benedictio Candelarum, left column: complete ending at bottom after omnipotenti Deo",
+          "normalised_exact_ending": "Qui vivis et regnas in saecula saeculorum.",
+          "separate_response": "R. Amen."
+        }
+      ],
+      "reading_transformations": "Join printer hyphenation and line wraps, expand ae ligatures, omit stress accents. No ending word is inserted, dropped, reordered or silently replaced in the quoted historical reading.",
+      "derived_latin_variant": "Qui vivit et regnat in saecula saeculorum.",
+      "entire_difference": [
+        "vivis -> vivit",
+        "regnas -> regnat"
+      ],
+      "relation": "variant",
+      "english": "Who lives and reigns for ever and ever.",
+      "english_sha256": "bb27f0278227dbc5d7d69a5fbbdd874de621a0dcfa9d7fdfc4149197f42af0a9",
+      "finite_policy_judgment": "Two explicitly disclosed inflections of independently read public-domain Latin fit the existing project-created variant route. The English follows the third-person inflections and is new study English. Its entire word chain is independently sourced; it is not an expansion inferred from per. or Per Dominum. Neither source Amen is part of this selected ending.",
+      "intended_recipient_bindings": [
+        {
+          "identity": [
+            "lent-5",
+            "main",
+            "Prayer after Communion",
+            "all",
+            1
+          ],
+          "body_review_sha256": "405900ef6814404a7f8cdfe89ee303ae057b045bb64d025a898cfb583977e566",
+          "target_source": "Registered secondary digitally typeset2002 artifact0b458944, AP158, directly read in temporal-five review; no authenticated2008 claim."
+        },
+        {
+          "identity": [
+            "epiphany",
+            "day",
+            "Prayer over the Offerings",
+            "all",
+            1
+          ],
+          "binding_status": "Ending witness reuse only; exact target/body/English binding belongs to independent pc_extra_two_review receipt and root adoption, not a body verification asserted by this ending-only receipt."
+        }
+      ]
+    },
+    {
+      "kind": "complete-short-target-cue-and-response",
+      "decision": "SOURCE SUPPORTED for extended-Pentecost-Vigil Domine study ending, pending independent exact target binding in its own shape/body review",
+      "witness": {
+        "artifact_page": 776,
+        "printed_page": "[106]",
+        "locus": "Benedictio domus novae, bottom-right column; preceding top-left blessing continuation independently repeats same cue",
+        "normalised_exact_cue": "Per Christum Dominum nostrum.",
+        "separate_response": "R. Amen."
+      },
+      "entire_difference": "None beyond accents, printer line-wrap joining and display normalization.",
+      "english": "Through Christ our Lord.\nR. Amen.",
+      "purpose": "Supplies an independent old word-chain basis for the actual short official2008 cue+response in extended Vigil Domine, without expanding its historical petition donor Per Dominum."
+    }
+  ],
+  "required_integration": [
+    "Retain an exact mechanical historical page artifact and source passage for AP351 and/or AP776; record selected formula boundary and source response marker truthfully. WholePDF identity alone is not a retained-page publication join.",
+    "For Lent5 and EpiphanyDay offerings, attach full-ending witness and precisely vivis/vivit plus regnas/regnat differences to each entry. Preserve original per./per dominum body-source cue as a different reading, not authority for expansion.",
+    "Keep study-English authorship/notice and no-recitation status. The source supplies no approved English, authenticated2008 body identity, target appointment or ecclesiastical approval.",
+    "Response Amen is outside the selected long ending. For extendedVigil short cue, separately sourced R.Amen may remain visibly on its own line.",
+    "Rights/root adoption are separate from this source and English-fidelity judgment; policy correspondence is not represented as exact-candidate source review or a rights grant."
+  ],
+  "independent_companion_review": {
+    "path": ".scratch/postconciliar-english-completion-20261029/extra-two-review/ending-successor-review.json",
+    "sha256": "79362b72f99cf8f5801f82db3d3a7a24cdd5676c2ce1881bd8ddc1800f3ca822",
+    "scope": "Companion reviewer independently rendered/read AP351 and776 for Epiphany; message supplied exact receipt/hash. This receipt does not duplicate that reviewer attribution."
+  },
+  "validation": {
+    "whole_bytes_hash_checked_before_use": true,
+    "fresh_complete_page_rasters_directly_read": [
+      351,
+      776
+    ],
+    "mechanical_page_extractions_retained": true,
+    "byte_and_render_check": ".scratch/postconciliar-english-completion-20261029/nativity-review/full-ending-round/byte-and-render-check.json",
+    "byte_and_render_check_sha256": "3d0e977e851d7e2dd4b0ae4e24e48345ddea35e9bd704a2c42d6b9a3f3aa3023",
+    "tracked_mutations": "none"
+  }
+}

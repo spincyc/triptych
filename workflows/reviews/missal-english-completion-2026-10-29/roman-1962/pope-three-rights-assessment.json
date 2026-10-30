@@ -1,0 +1,69 @@
+{
+  "schema": "triptych-exact-qualified-latin-rights-assessment/v1",
+  "state": "adopted-basis-pending-exact-source-assembly",
+  "recorded_at_utc": "2026-10-30T03:42:39Z",
+  "jurisdiction": "United States civil copyright",
+  "policy": "guidance/liturgical-text-publication-policy.md section 1(6)",
+  "basis": "qualified-nonoriginal-adaptation",
+  "confidence": "moderate; qualified project judgment, not a court finding, holder permission or human legal approval",
+  "source_English_review_sha256": "1842100692792b1924396dc44245dc97413d2d7c18c75b6246f3c4c01bc96635",
+  "source_and_English_conservation_in_proposal_v3_sha256": "d217dab054e604da1fdb7a1c7f6aa6605d11c23f74ada62d21ecd859b00b724a",
+  "scopes": [
+    {
+      "target": ["s-clementis-i-papae-martyris", "main", "Collect", "all", 1],
+      "latin_sha256_with_final_lf": "d57235904e4e32436dfda5e58d4ac5c98822e784725000a41d75bbc1a24d4aa8",
+      "study_english_sha256": "b6ef950e9c018c37eb66d0b55dfd99897c89571af088cc5064a2a5a4731275b0",
+      "target_locus": "1962 artifact page 805, printed 724, unit 4145",
+      "name_and_office": "Clementem, Martyrem tuum atque Summum Pontificem",
+      "actual_conclusion": "Per Dominum."
+    },
+    {
+      "target": ["comm-s-zephyrini-papae-martyris", "main", "Collect", "all", 1],
+      "latin_sha256_with_final_lf": "f8732dcb77e4139160ed879dc19947b26595c5d3541442c3f9ec67cc5bf774ad",
+      "study_english_sha256": "61c79d48d465c680752abb21b09fc108917ab200570a3840f9eea6c14ea30337",
+      "target_locus": "1962 artifact page 719, printed 638, unit 3465",
+      "name_and_office": "Zephyrinum, Martyrem tuum atque Summum Pontificem",
+      "actual_conclusion": "Per Dominum."
+    },
+    {
+      "target": ["comm-s-silvestri-i-papae-confessoris", "main", "Collect", "all", 1],
+      "latin_sha256_with_final_lf": "61fa6b8ea693b00660f9d11521ac5f6330018be9982109845a252f53cd056f53",
+      "study_english_sha256": "ade447541d35d66591e06aafaba4bfc9e9f20bb633e004a2a051256a9d8e1868",
+      "target_locus": "1962 artifact page 112, printed 31, unit 220",
+      "name_and_office": "Silvestrum Summum Pontificem",
+      "actual_conclusion": "Per Dominum nostrum."
+    }
+  ],
+  "whole_foundation": {
+    "artifact_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+    "artifact_sha256": "3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a",
+    "locus": "Printed 42, lines 8-10, artifact page 66, corrected by the same edition's erratum on artifact page 24 from Pater to Pastor.",
+    "normalized_foundation_sha256_without_final_lf": "8a39ba82e96ddf5c1c465a8d793313f53d3e3091e29d41708cacc467bc6dc446",
+    "scope": "One complete continuous older prayer, not a reconstruction from unrelated fragments or a manuscript diplomatic claim."
+  },
+  "measured_changes": [
+    "Pastor bone becomes Pastor aeterne.",
+    "The plural apostles become each exact named Supreme Pontiff, with the factual martyr designation present only for Clement and Zephyrinus.",
+    "Necessary relative/predicate agreement becomes singular and Filii tui vicarios is omitted.",
+    "The older per. abbreviation is distinct from the actual received conclusion. The exact target stops, including Sylvester's nostrum, must remain source-controlled and unexpanded.",
+    "Declared pointing, case, accent and orthographic transformations are not claimed as literal typography."
+  ],
+  "whole_contribution_judgment": "For each of these three independently verified recipients, the complete older prayer supplies the continuous petition and sequence: look upon the flock and protect it through its appointed shepherds. The measured epithet, named office, optional martyr designation, agreement and conclusion changes retain that sequence and add no independently developed petition or juxtaposition of separate prayers. Assessed together in these exact bodies, the contribution is routine rather than sufficiently original expression. The independently measured names, ranks and actual endings make these separate per-target judgments; no old grant is being applied automatically to recipients.",
+  "strongest_contrary_argument": "The shift from apostles and vicars of the Son to named Supreme Pontiffs is a theological redaction, not wholly mechanical grammar. The low originality threshold could protect the aggregate adaptation. No cited authority adjudicates these prayers. That objection remains live and explains the qualified basis and moderate confidence rather than an unqualified historical public-domain identity.",
+  "standing_analysis_used_as_analogy_only": {
+    "path": "workflows/reviews/missal-reader-completion-2026-10-26/gregem-damasus-qualified-rights-adoption.json",
+    "sha256": "652f44afd2c566e48391c7b249137eab32a483ace0346f751059ac8c842fad9c",
+    "limit": "Its two exact authorizations remain unchanged and do not grant recipient fanout or English rights. The present judgment separately measures each of these three forms."
+  },
+  "primary_source_boundary": "The standing analysis identifies 17 USC 101-103 and 104A, the Copyright Office Compendium and Feist's low originality threshold. The Copyright Office Circular 14 was independently fetched whole and read again during this work (SHA-256 928aa3a506f94d5772bad430bbb01ff54aec812194aff33d3aab6b95a2ceffc1). General short-phrase guidance does not decide the originality of these whole arrangements.",
+  "surfaces": ["web", "corpus-data", "public-git", "download", "print", "cli"],
+  "required_before_canonical_admission": [
+    "Compile and independently review the exact body, row, artifact, passage, source-controller, actual-ending and surface hashes in the new finite authority.",
+    "Preserve all original two-scope code authorities and every unrelated body, proof, language and refusal. Reject copied or renamed finite payloads outside their exact authority.",
+    "Retain the modern target and older independent foundation distinctly, the contrary originality argument, and a truthful qualified public notice. No whole modern missal, AAS or scan-wrapper public-domain claim follows.",
+    "Retain source and original study-English acceptance separately; publish no approved or historical human-English identity for these new translations.",
+    "Complete source validation, generated-currentness, runtime and independent integrated review before representing this source assembly as delivered."
+  ],
+  "excluded": ["all other recipients or forms", "all other Common prayers", "whole modern books or images", "unprinted conclusion expansion", "other languages or unreviewed English", "canonical or foreign-law permission adjudication"],
+  "overturning_evidence": ["a material source mismatch", "a specific enforceable reservation concerning the measured new contribution", "a stronger whole-arrangement originality analysis establishing protected expressive authorship"]
+}

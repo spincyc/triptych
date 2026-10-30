@@ -593,7 +593,7 @@ async function testConditionedOrdinaryGroups(cdp, base) {
   const held = await snapshot(cdp);
   assert.equal(held.outcome, 'unresolved', JSON.stringify(held.error));
   assert.deepEqual(held.ordinaryOptionGroups,
-    ['penitential-act', 'creed', 'eucharistic-prayer']);
+    ['salutatio-form', 'penitential-act', 'creed', 'eucharistic-prayer']);
   assert.ok(held.ordinaryChecked.includes('eucharistic-prayer:ep-iv'));
   assert.deepEqual(held.ordinaryUnresolved, [
     'ritus-initiales/gloria-in-excelsis',
@@ -649,6 +649,7 @@ async function testTranslationWitnesses(cdp, base) {
     'edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861';
   const lasanceWitness =
     'edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945';
+  const studyWitness = 'project-created';
   const baseState = state({
     date: '2026-09-15', missal: 'roman-1962',
     mass: 'septem-dolorum-beatae-mariae-virginis', orations: 'en'
@@ -657,9 +658,11 @@ async function testTranslationWitnesses(cdp, base) {
   const held = await snapshot(cdp);
   assert.equal(held.outcome, 'ready', JSON.stringify(held.error));
   assert.deepEqual(held.witnessChoices, ['mass/roman-1962/septem-dolorum-beatae-mariae-virginis']);
-  assert.deepEqual([...new Set(held.witnessOptions)].sort(), [editionWitness, lasanceWitness].sort());
-  // Three source-appointed Nicomedes prayers now accompany the four principal English texts.
-  assert.equal(held.englishComposed, 7);
+  assert.deepEqual([...new Set(held.witnessOptions)].sort(),
+    [editionWitness, lasanceWitness, studyWitness].sort());
+  // Four study chants join the four historical principal texts and the
+  // three source-appointed Nicomedes prayers.
+  assert.equal(held.englishComposed, 11);
   for (const witness of [editionWitness, artifactWitness]) {
     await navigate(cdp, base, baseState + '&translation-witness=' + witness);
     const alias = await snapshot(cdp);
@@ -681,6 +684,21 @@ async function testTranslationWitnesses(cdp, base) {
     `(dayReaderDebug.semantic.events || []).find(row => row.editionSlotLabel === 'Sequence').selected`);
   assert.equal(sequence.reason, 'absent-in-witness');
   assert.equal(sequence.text, null);
+
+  await navigate(cdp, base, baseState + '&translation-witness=' + studyWitness);
+  const study = await snapshot(cdp);
+  assert.equal(study.outcome, 'ready', JSON.stringify(study.error));
+  assert.deepEqual(study.witnessChoices, []);
+  assert.equal(study.englishComposed, 4);
+  assert.match(study.coverageNotice, /4\/11 uses available from the selected witness/);
+  const studyBodies = await evaluate(cdp,
+    `(dayReaderDebug.semantic.events || []).filter(row => row.selected?.kind === 'composed' && row.selected.language === 'en' && !row.selected.missing).map(row => [row.editionSlotLabel, row.selected.sourceId, row.selected.rights])`);
+  assert.deepEqual(studyBodies, ['Gradual', 'Alleluia', 'Offertory', 'Communion']
+    .map(name => [name, studyWitness, 'project-created']));
+  const studyAbsences = await evaluate(cdp,
+    `(dayReaderDebug.semantic.events || []).filter(row => ['Collect', 'Secret', 'Postcommunion', 'Sequence'].includes(row.editionSlotLabel)).map(row => [row.editionSlotLabel, row.selected.reason, row.selected.text])`);
+  assert.deepEqual(studyAbsences, ['Collect', 'Sequence', 'Secret', 'Postcommunion']
+    .map(name => [name, 'absent-in-witness', null]));
 
   await navigate(cdp, base, baseState + '&translation-witness=foreign');
   const invalid = await snapshot(cdp);

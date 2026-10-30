@@ -1,0 +1,50 @@
+{
+  "schema": "triptych-independent-source-candidate-review/v1",
+  "candidate": "Ave, Rex noster",
+  "reviewed_on": "2026-10-29",
+  "approve": true,
+  "scope": "Historical Latin source, exact target relation, original study English, and proposed nine source files only; integration and public-surface checks remain with the parent.",
+  "target": [
+    "palm-sunday",
+    "main",
+    "Procession Antiphon",
+    "all",
+    7
+  ],
+  "checks": {
+    "direct_images": "Read supplied source and target images at 200/400 dpi; independently rendered York PDF10 (1875 title), PDF11 (Henderson council order), and PDF186/printed151 (whole Ave rex). The actual target PDF hash matches its manifest; independently rendered/read target PDF215-216, printed134-135, no841.",
+    "lexical_identity": "All 45 words correspond in order after expectabant/exspectabant and both Osanna/Hosanna spellings. Ligature expansion, wraps, capitals and pointing are typographical transformations. No lexical addition, omission or replacement.",
+    "translation": "The complete proposed original study English is faithful. As a saving victim correctly renders ad salutarem victimam; no wording change is required. No claim of liturgical approval.",
+    "ownership_rights": "York work and Henderson1875 edition own the evidence truthfully. The retained historical page and checked antiphon have separate affirmative United States public-domain bases; the complete wrapper remains remote/unresolved.",
+    "hashes": "York whole PDF matches 2c41bbf181c1fb4f03858bb02539ed0226219fb970e22f560a150fe89f3867df, 20507794 bytes, 479 pages. Both retained payload hashes/sizes and canonical Latin hash match.",
+    "derivative": "Independent pdfseparate extraction of PDF186 has the identical retained JP2 image stream.",
+    "schema": "source-library valid: artifact=6 corpus=0 edition=2 passage=4 segment=0 work=2 bindings=0",
+    "final_combined_schema": "source-library valid: artifact=6 corpus=0 edition=2 passage=4 segment=0 work=2 bindings=0"
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "blocking": false,
+      "resolved": true,
+      "field": "checked-text artifact rights_basis",
+      "finding": "PDF description copied into checked-text rights prose.",
+      "resolution": "Final manifest independently read: identifies only the complete Ave rex antiphon from historical printed151 and excludes other page content and the modern wrapper."
+    }
+  ],
+  "tracked_mutations": false,
+  "candidate_json_sha256": "2087ea73e60820c13fb9b63cd840aad5bc1e5676646925325b00c88ddf112565",
+  "candidate_files_bundle_sha256": "6ed4624af9fd06fff55bf4e7f5c59cdb8b1e1517d3a123cb11de44688c414357",
+  "final_file_sha256": {
+    "src/sources/works/diocese-of-york/manuale-et-processionale/editions/1875-henderson/artifacts/ave-rex-latin-checked-20261029/artifact.toml": "4014b627cb95ca3c0f41e9e8c141e08b969a1f9867fc92b4236ce2b493deaecf",
+    "src/sources/works/diocese-of-york/manuale-et-processionale/editions/1875-henderson/artifacts/ave-rex-latin-checked-20261029/text.txt": "56c4adfe058846548747de3a360ca186ca1b09178961d9723772fde08bfb79f7",
+    "src/sources/works/diocese-of-york/manuale-et-processionale/editions/1875-henderson/artifacts/ave-rex-page-151-facsimile/artifact.toml": "5bb7f2e51bd0107964b3114917cd85799dcc2345c51bbf58604bffa6cb7b2b16",
+    "src/sources/works/diocese-of-york/manuale-et-processionale/editions/1875-henderson/artifacts/ave-rex-page-151-facsimile/source.pdf": "fa088f496196e9b3131a5079b03fbfd7c0f3fc49c4e36a99848d63f59daf1c45",
+    "src/sources/works/diocese-of-york/manuale-et-processionale/editions/1875-henderson/artifacts/ia-complete-facsimile/artifact.toml": "7db5e30a798ff6aceb4141d0987eaeeab1a1ff80a4ddc6c6e60233a7acb170e4",
+    "src/sources/works/diocese-of-york/manuale-et-processionale/editions/1875-henderson/edition.toml": "38f0419d5996935eea774e60a9a7c902e0487f9a5252622d1c7481de7dd2f9f3",
+    "src/sources/works/diocese-of-york/manuale-et-processionale/editions/1875-henderson/passages/ave-rex-latin-checked-20261029.toml": "7333a7bd1b87b53ad5d0bba78bf0049a73ebb1fc2cd08d1b854e4dfb96c9a4c6",
+    "src/sources/works/diocese-of-york/manuale-et-processionale/editions/1875-henderson/passages/ave-rex-page-151-checked-20261029.toml": "fa4567daa843715d93cd5beb88f36d51d189c52bd57c5b6a88c5b7d186204306",
+    "src/sources/works/diocese-of-york/manuale-et-processionale/work.toml": "3a5d2cf45d03716e990c0a2c8d112b3e4d5c56871e63b60144eb78244ed2002d"
+  },
+  "study_english_sha256": "6597be73e93f82509d1357d9210eb62ceedcb6b9802de2568b083fe5ac3355f1",
+  "projection_review": "projection-review.json"
+}

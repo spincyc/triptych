@@ -194,7 +194,8 @@ def unit(owner: dict, *, target_id: str, occurrence_id: str,
          latin_inherited: bool = False,
          translation_relation: str | None = None,
          ordinary_absences: dict[str, str] | None = None,
-         absence_kinds: dict[str, list[str]] | None = None) -> dict:
+         absence_kinds: dict[str, list[str]] | None = None,
+         translation_body_languages: list[str] | None = None) -> dict:
     """Classify one body or Scripture owner after its publication filter.
 
     The Latin body's relationship, collation and publication basis come from
@@ -202,11 +203,17 @@ def unit(owner: dict, *, target_id: str, occurrence_id: str,
     the relationship, for a caller that already holds a classified report.
     """
     witnesses = witnesses or {}
+    if translation_body_languages is not None and translation_body_languages != ["en"]:
+        raise ValueError("explicit translation body scope must be ['en']")
     if component is None:
         component = "scripture" if owner.get("source") == "scripture" else "proper-body"
     body_languages = None
     if component == "scripture":
-        scoped = set()
+        # The producer validates a positive body's source binding before it
+        # supplies this scope. A Bible citation or an unscoped translation is
+        # never sufficient. Keep the same complete-body coordinate when an
+        # exact negative record is replaced by that independently sourced body.
+        scoped = set(translation_body_languages or [])
         for row in owner.get("untranslated") or []:
             target = row.get("target") or {}
             prefix = unquote(target_id.split(":")[0]).split(":")[:2]

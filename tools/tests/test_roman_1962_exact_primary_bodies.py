@@ -213,16 +213,28 @@ class ExactPrimaryBodiesTests(unittest.TestCase):
 
     def assert_english_owner(self, row, ledger):
         key = self.english_key(row)
+        advent = key == ("advent-1", "main", "Epistle", "all", 1)
         owned = assert_current_english_owner(
             self, key, ledger, self.propers, self.english_overlay, self.witnesses,
-            latin_sha256=row["text_sha256"], independent_oracles=ENGLISH_RECOVERIES)
-        if key == ("advent-1", "main", "Epistle", "all", 1):
-            self.assertEqual(("untranslated", self.historical_absence(row)), owned)
+            latin_sha256=row["text_sha256"], independent_oracles=() if advent else ENGLISH_RECOVERIES)
+        if advent:
+            historical = tomllib.loads(source_batch.historical_text(ENGLISH_LEDGER.relative_to(ROOT).as_posix()))
+            self.assertEqual([self.historical_absence(row)],
+                [r for r in historical["untranslated"]
+                 if self.propers.translation_record_identity(r, self.document) == key])
+            group, entry = owned
+            self.assertEqual(group, "entries")
+            self.assertEqual(entry["source_latin_sha256"], row["text_sha256"])
+            self.assertEqual(entry["translations"][0]["rights"], "project-created")
+            self.assertEqual(hashlib.sha256(entry["translations"][0]["text"].encode()).hexdigest(),
+                             "e01bdf783feb78b7d0622dd02fd901a0e54046f69de309491194b4651f6bef03")
+            self.propers.validate_study_translation_binding(entry, "roman-1962", CALENDARS, ENGLISH_LEDGER)
         return owned
 
     def test_exact_english_absences_and_coverage_do_not_borrow_bible_english(self):
-        # These ten recoveries are bound to accepted source bytes and independent
-        # literal Latin/English oracles. Advent I remains an exact, explicit gap.
+        # The ten historical recoveries retain their literal source oracles;
+        # Advent I now has separately reviewed original study English. The
+        # original exact absence remains an immutable historical obligation.
         source_batch.assert_current_english_entries(self.english_overlay)
         child = tomllib.loads((ROOT / "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml").read_text())
         identity = lambda r: (r["mass"], r.get("form_id", "main"), r["proper"], r.get("cycle", "all"), r.get("occurrence",1), r.get("lang","en"), r.get("extent","body"))
@@ -264,6 +276,11 @@ class ExactPrimaryBodiesTests(unittest.TestCase):
     def test_recovered_english_rejects_changed_body_and_publication_proof(self):
         for row in self.fixture["rows"]:
             if row["mass"] == "advent-1":
+                _, entry = self.assert_english_owner(row, self.english_ledger)
+                changed = copy.deepcopy(entry)
+                changed["source_latin_sha256"] = "0" * 64
+                with self.assertRaises(ValueError):
+                    self.propers.validate_study_translation_binding(changed, "roman-1962", CALENDARS, ENGLISH_LEDGER)
                 continue
             _, entry = self.assert_english_owner(row, self.english_ledger)
             for defect in ("body", "proof"):
@@ -300,9 +317,14 @@ class ExactPrimaryBodiesTests(unittest.TestCase):
         self.assertEqual(0,result.returncode,result.stderr)
         epistle = result.stdout.split("\nEpistle\n",1)[1].split("\nGradual\n",1)[0]
         self.assertIn("Romans 13:11-14",epistle)
-        self.assertIn("Bible reconstruction · Missal wording not established",epistle)
+        self.assertIn("Bible text · douay-rheims · shown separately from the Missal text",epistle)
         self.assertIn("provision for the flesh in its concupiscences.",epistle)
-        self.assertIn("en translation unavailable: not yet sourced",epistle)
+        self.assertNotIn("en translation unavailable: not yet sourced",epistle)
+        self.assertNotIn("Missal wording not established",epistle)
+        entry = self.english_overlay[("advent-1", "main", "Epistle", "all", 1)]
+        self.assertEqual(hashlib.sha256(entry["translations"][0]["text"].encode()).hexdigest(),
+                         "e01bdf783feb78b7d0622dd02fd901a0e54046f69de309491194b4651f6bef03")
+        self.assertIn(" ".join(entry["translations"][0]["text"].split()), " ".join(epistle.split()))
         self.assertNotIn("Fratres:",epistle)
 
 

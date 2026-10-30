@@ -15,6 +15,21 @@
   },
   {
    "artifact_type": "normalized-text",
+   "byte_size": 9000,
+   "edition_owned": true,
+   "id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.english-completion-20261029-ordinary-proper-canon",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "notes": "Historical human English; source-only witness, not approved liturgical English or exact 1920/Bonn text. Independent cold source review on 2026-10-29 accepted all five exact payload rows at SHA-256 fe936369edc0160e59336d9cf4ff89d12544c2c6e6b9eecb22d4e91026966059 after independent image review of source PDF pp. 93–95 and accepted Bonn pp. 440–441. The review accepted literal English and source bounds, not an exact-target or civil-date execution claim.",
+   "page_count": null,
+   "retrieved": "2026-10-29",
+   "rights": "public-domain",
+   "rights_basis": "Underlying historical human English prayer text from continuous ordinary printed pp.59–61 of the early Saint-Andre/Lohmann expression. As recorded by the independently reviewed 2026-10-26 proper-head artifact, 1925 is an edition-identification inference, while the positive 20 January 1927 accession stamp independently bounds publication before 1931. These underlying words are public domain in the United States by 2026. The unnamed historical English translator remains unnamed; neither Lefebvre nor William Busch is asserted as translator. This derivative retains only checked historical prayer words; the Google scan, host wrapper, typography and illustrations remain remote/unresolved.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.ccwatershed.org/media/pdfs/21/02/16/05-35-23_0.pdf",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "normalized-text",
    "byte_size": 873,
    "edition_owned": true,
    "id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.oration-execution-whole-source-20261026-b62140f7",
@@ -1513,6 +1528,28 @@
    ],
    "storage": "remote",
    "verified_on": "2026-10-26",
+   "withheld": "rights"
+  },
+  {
+   "artifact_id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf",
+   "artifact_type": "scan-pdf",
+   "id": "passage.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.english-completion-20261029-ordinary-proper-canon",
+   "locus": "ordinary-proper-communicantes-and-continuation",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "The rights position for this artifact has not been settled, and an unsettled question is not a permission.",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "segment_id": null,
+   "source_url": "https://archive.ccwatershed.org/media/pdfs/21/02/16/05-35-23_0.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-10-29",
    "withheld": "rights"
   },
   {

@@ -40,6 +40,16 @@ def load_propers():
     return module
 
 
+def load_ordinary():
+    path = ROOT / "tools/mass-ordinary"
+    loader = SourceFileLoader("calendar_translation_overlay_ordinary", str(path))
+    spec = spec_from_loader(loader.name, loader)
+    module = module_from_spec(spec)
+    sys.modules[spec.name] = module
+    loader.exec_module(module)
+    return module
+
+
 def record(record_type: str, **data):
     return SimpleNamespace(record_type=record_type, data=data)
 
@@ -1060,6 +1070,13 @@ class RecoveredCummiskeyAntecedentProductionTests(unittest.TestCase):
             "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861."
             "postconciliar-advent4-antecedent-en-20261023"
         ),
+        # The Cummiskey whole-Introit refusal remains intact.  The successor
+        # is a fresh, separately checked Lasance antiphon, not that payload.
+        ("ot-25", "Entrance Antiphon"): (
+            "artifact.francis-xavier-lasance.the-new-roman-missal."
+            "benziger-revised-1945."
+            "english-completion-20261029-postconciliar-phase1-lasance-fresh"
+        ),
     }
 
     def setUp(self) -> None:
@@ -1112,6 +1129,191 @@ class RecoveredCummiskeyAntecedentProductionTests(unittest.TestCase):
         self.assertEqual(record["artifact_page_ranges"], [[454, 455]])
         self.assertIn("printed pp. 445-446", record["context"])
         self.assertEqual(record["states"][-2:], ["inspected", "verified"])
+
+    def test_ot25_successor_preserves_the_rejected_cummiskey_route(self) -> None:
+        receipt = json.loads((
+            ROOT / "workflows/reviews/missal-english-completion-2026-10-29/"
+            "postconciliar/phase1-admission.json"
+        ).read_text())
+        old = next(row for row in receipt["superseded_unavailable_dictionaries"]
+                   if self.key(row) == ("ot-25", "Entrance Antiphon"))
+        self.assertEqual(old["reason"]["kind"], "no-exemplar")
+        self.assertNotIn("text", old)
+        row = next(row for row in self.data["entries"]
+                   if self.key(row) == ("ot-25", "Entrance Antiphon"))
+        self.assertEqual(row["witness"], "lasance-1945")
+        self.assertEqual(row["printed_page"], "310")
+        self.assertIn("dixit/dicit", row["witness_note"])
+        self.assertNotIn("cummiskey", row["publication_artifact_id"])
+        checker = load_checker()
+        witnesses = {source["id"]: source for source in self.data["sources"]}
+        self.assertEqual(checker.overlay_entry_source_problems(
+            "ot25-successor", row, witnesses), [])
+        self.assertEqual(checker.overlay_entry_publication_problems(
+            "ot25-successor", row, witnesses), [])
+
+    def test_new_historical_bindings_pass_the_readers_own_contract(self) -> None:
+        receipt = json.loads((
+            ROOT / "workflows/reviews/missal-english-completion-2026-10-29/"
+            "postconciliar/phase1-admission.json"
+        ).read_text())
+        keys = ("mass", "form_id", "proper", "cycle", "occurrence")
+        targets = {tuple(target) for target in receipt["new_targets"]}
+        propers = load_propers()
+        witnesses = {source["id"]: source for source in self.data["sources"]}
+        checked = 0
+        for row in self.data["entries"]:
+            target = tuple(row.get(key) for key in keys)
+            if target not in targets or not row.get("publication_artifact_id"):
+                continue
+            with self.subTest(target=target):
+                propers.validate_translation_publication_binding(
+                    row, ROOT / "src/sources/calendars", self.INVENTORY,
+                    witnesses)
+                checked += 1
+        self.assertEqual(checked, 17)
+
+
+class HistoricalAcclamationVerseSuccessorTests(unittest.TestCase):
+    INVENTORY = ROOT / "src/sources/inventories/postconciliar-proper-translations-v1.toml"
+    REVIEW_DIR = ROOT / "workflows/reviews/missal-english-completion-2026-10-29/postconciliar"
+
+    def test_exact_reviewed_verses_pass_the_readers_own_binding_contract(self) -> None:
+        data = tomllib.loads(self.INVENTORY.read_text())
+        review = json.loads((self.REVIEW_DIR / "phase2-acclamations-source-review.json").read_text())
+        fields = ("mass", "form_id", "proper", "cycle", "occurrence")
+        key = lambda row: tuple(row.get(field) for field in fields)
+        entries = {key(row): row for row in data["entries"]}
+        witnesses = {source["id"]: source for source in data["sources"]}
+        propers = load_propers()
+        self.assertEqual(len(review["reviews"]), 5)
+        self.assertEqual(review["distinct_english_body_count"], 3)
+        for accepted in review["reviews"]:
+            with self.subTest(target=accepted["target"]):
+                row = entries[key(accepted["target"])]
+                translation = row["translations"][0]
+                self.assertEqual(hashlib.sha256(translation["text"].encode()).hexdigest(),
+                                 accepted["english_sha256"])
+                self.assertEqual(translation["rights"], "public-domain")
+                propers.validate_translation_publication_binding(
+                    row, ROOT / "src/sources/calendars", self.INVENTORY, witnesses)
+
+    def test_dated_absence_survives_while_its_calendar_note_names_the_successor(self) -> None:
+        receipt = json.loads((self.REVIEW_DIR / "phase2-acclamations-admission.json").read_text())
+        old = next(row for row in receipt["superseded_unavailable_dictionaries"]
+                   if row["mass"] == "easter-2-saturday")
+        self.assertEqual(old["reason"], {"kind": "no-exemplar"})
+        self.assertNotIn("text", old)
+        self.assertIn("No exact English whole-unit exemplar", old["note"])
+        document = yaml.safe_load((ROOT / "src/sources/calendars/postconciliar/propers.yaml").read_text())
+        mass = next(mass for section in document["sections"].values()
+                    for mass in section["masses"] if mass["key"] == "easter-2-saturday")
+        proper = next(row for row in mass["propers"] if row["name"] == "Gospel Acclamation")
+        self.assertIn("Dated 2026-10-29 successor", proper["notes"])
+        self.assertIn("independently image-checked", proper["notes"])
+        self.assertEqual(proper["text_status"]["state"], "unavailable")
+        self.assertNotIn("text", proper)
+        self.assertNotIn("incipit", proper)
+
+
+class Official2008September8OfferingTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.document = yaml.safe_load((
+            ROOT / "src/sources/calendars/postconciliar/propers.yaml"
+        ).read_text())
+        cls.mass = next(mass for section in cls.document["sections"].values()
+                        for mass in section["masses"]
+                        if mass["key"] == "nativity-blessed-virgin-mary")
+        cls.rows = [proper for proper in cls.mass["propers"]
+                    if proper.get("ordinary_disposition", {}).get("group")
+                    == "september-8-offerings"]
+        cls.overlay = tomllib.loads((ROOT / "src/sources/inventories/"
+                                    "postconciliar-proper-translations-v1.toml").read_text())
+        cls.entry = next(row for row in cls.overlay["entries"]
+                         if row["mass"] == cls.mass["key"]
+                         and row["proper"] == "Prayer over the Offerings")
+        cls.review = json.loads((
+            ROOT / "workflows/reviews/missal-english-completion-2026-10-29/"
+            "postconciliar/phase2-september8-source-review.json"
+        ).read_text())
+
+    def test_official_vel_retains_an_explicit_untranslated_option(self) -> None:
+        self.assertEqual(len(self.rows), 2)
+        self.assertEqual([row["ordinary_disposition"]["option"] for row in self.rows],
+                         ["supplementum-2008", "retained-earlier-option"])
+        self.assertEqual({row["ordinary_disposition"]["kind"] for row in self.rows},
+                         {"alternative"})
+        self.assertEqual(len({row["ordinary_disposition"]["basis"] for row in self.rows}), 1)
+        self.assertIn("bounded minimum", self.rows[0]["ordinary_disposition"]["basis"])
+        retained = self.rows[1]
+        self.assertNotIn("text", retained)
+        self.assertNotIn("incipit", retained)
+        self.assertEqual(retained["text_status"]["reasons"], [{"kind": "no-exemplar"}])
+        gap = next(row for row in self.overlay["untranslated"]
+                   if row["mass"] == self.mass["key"] and row["proper"] == retained["name"])
+        self.assertEqual(gap["reason"], {"kind": "no-exemplar"})
+        self.assertNotIn("text", gap)
+
+    def test_the_body_and_ancient_reading_match_the_independent_review(self) -> None:
+        self.assertEqual(hashlib.sha256(self.entry["translations"][0]["text"].encode()).hexdigest(),
+                         self.review["draft_english_sha256"])
+        self.assertEqual(hashlib.sha256(self.entry["ancient_reading"].encode()).hexdigest(),
+                         self.review["ancient_reading_sha256"])
+        self.assertEqual(self.entry["translations"][0]["rights"], "project-created")
+        self.assertNotIn("source_id", self.entry["translations"][0])
+        self.assertIn("both C and O", self.entry["divergence"])
+
+    def test_exact_2008_claim_is_bounded_to_the_official_excerpt(self) -> None:
+        path = ROOT / "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/passages/english-completion-20261029-postconciliar-phase2-sept8-offering-and-insertion.toml"
+        record = tomllib.loads(path.read_text())
+        self.assertEqual(record["id"], self.entry["target_witness_passage_id"])
+        self.assertEqual(record["artifact_page_ranges"], [[55, 56], [67, 67]])
+        self.assertEqual(record["artifact_sha256"], self.review["verified_sources"][0]["sha256"])
+        self.assertEqual(self.entry["target_qualification"], "official-2008-bounded-excerpt")
+        self.assertIn("No whole-book authentication", record["notes"])
+        self.assertNotIn("text", record)
+
+    def test_new_offering_choices_stay_between_gospel_and_communion(self) -> None:
+        names = [proper["name"] for proper in self.mass["propers"]]
+        first = names.index("Prayer over the Offerings")
+        self.assertEqual(names[first - 1], "Gospel (shorter form)")
+        self.assertEqual(names[first + 1], "Prayer over the Offerings (retained option)")
+        self.assertEqual(names[first + 2], "Communion Antiphon")
+        self.assertTrue(all("text" not in row for row in self.rows))
+
+    def offering_seating(self):
+        ordinary = load_ordinary()
+        inventory = tomllib.loads((ROOT / "src/sources/inventories/"
+                                   "postconciliar-ordo-missae-v1.toml").read_text())
+        return ordinary, {"slots": inventory["slots"]}
+
+    def test_current_source_declares_the_exact_retained_offering_seat(self) -> None:
+        ordinary, model = self.offering_seating()
+        slot = next(row for row in model["slots"] if row["key"] == "super-oblata")
+        self.assertEqual(slot["propers"], [row["name"] for row in self.rows])
+        self.assertFalse(slot.get("qualified", False))
+        self.assertIn("artifact pp. 55-56", slot["locus"])
+        ordinary._check_legacy_form_seating(model, self.rows, "September8", full=True)
+        self.assertEqual(len({ordinary.proper_slot(model["slots"], row["name"])
+                              for row in self.rows}), 1)
+
+    def test_unknown_offering_qualifier_remains_unseated(self) -> None:
+        ordinary, model = self.offering_seating()
+        rows = copy.deepcopy(self.rows)
+        rows[1]["name"] = "Prayer over the Offerings (unproved option)"
+        with self.assertRaisesRegex(ordinary.SourceError, "no usable Ordinary seat"):
+            ordinary._check_legacy_form_seating(model, rows, "September8", full=True)
+
+    def test_retained_offering_cannot_move_to_another_ordinary_seat(self) -> None:
+        ordinary, model = self.offering_seating()
+        retained_name = self.rows[1]["name"]
+        offering = next(row for row in model["slots"] if row["key"] == "super-oblata")
+        after_communion = next(row for row in model["slots"] if row["key"] == "post-communionem")
+        offering["propers"].remove(retained_name)
+        after_communion["propers"].append(retained_name)
+        with self.assertRaisesRegex(ordinary.SourceError, "spans Ordinary slots"):
+            ordinary._check_legacy_form_seating(model, self.rows, "September8", full=True)
 
 
 if __name__ == "__main__":

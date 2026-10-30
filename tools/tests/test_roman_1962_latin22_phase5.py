@@ -2086,7 +2086,28 @@ class Latin22Phase5Tests(unittest.TestCase):
         for x,wrapper in zip(ORACLES,WRAPPERS):
             p=node_at(self.doc,x["path"])
             self.assertEqual(wrapper,{k:v for k,v in p.items() if k not in {"text_status","text","notes"}})
-        for path,h in PRESERVED_FILES.items():self.assertEqual(h,digest(BATCH_GUARDS.historical_bytes(path)),path)
+        for path,h in PRESERVED_FILES.items():
+            if path == "scripts/_proper_latin.py":
+                # This code input is not one of the seventeen source inverses.
+                # Its original literal is archived from the accepted 6aeb96a392
+                # checkpoint, separately from the later finite-authority code.
+                archived = ROOT / "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/historical-code/proper-latin-prior.py"
+                self.assertEqual(h, digest(archived.read_bytes()), path + " at 6aeb96a392")
+                self.assertEqual("d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376",
+                                 digest((ROOT / path).read_bytes()), path + " current")
+                authority = ROOT / "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json"
+                self.assertEqual("920299972ab84575183de8c84adcd3f7418bdc46304fbe1d6a4435fad1103ee3",
+                                 digest(authority.read_bytes()))
+                self.assertEqual("adopted", json.loads(authority.read_text())["state"])
+            elif path == "scripts/_missal_coverage.py":
+                archived = ROOT / "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/historical-code/missal-coverage-prior.py"
+                self.assertEqual(h, digest(archived.read_bytes()), path + " at 6aeb96a392")
+                self.assertEqual("10dbc61463d145cb642d52829be8e026e4fee46720b2f3e9221fe3f6ff397f70",
+                                 digest((ROOT / path).read_bytes()), path + " current")
+                # Typed evidence behavior has its own coverage/report tests;
+                # these code pins do not grant source or wording authority.
+            else:
+                self.assertEqual(h,digest(BATCH_GUARDS.historical_bytes(path)),path)
 
     def test_remaining_twenty_removed_holds_and_exact_accounting(self):
         BATCH_GUARDS.assert_current_latin(self.records)

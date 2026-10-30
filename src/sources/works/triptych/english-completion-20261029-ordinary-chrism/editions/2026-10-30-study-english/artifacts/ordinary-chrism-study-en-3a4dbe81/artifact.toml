@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.triptych.english-completion-20261029-ordinary-chrism.study-english-20261030.ordinary-chrism-study-en-3a4dbe81"
+edition_id = "edition.triptych.english-completion-20261029-ordinary-chrism.study-english-20261030"
+artifact_type = "project-study-translation"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "New Triptych AI-authored study English under CC BY 4.0, drafted from the separately identified distributable Latin projection. It copies no historical or approved English translation. The Latin column preserves only independently witnessed public-domain words; Triptych claims no exclusive right in those underlying words."
+rights_jurisdiction = "United States"
+provenance = "The complete new English was drafted from the bounded Latin projection and independently compared clause by clause. The one review finding was corrected: perfusi is rendered having been endowed before they may be clothed, preserving its prior passive-participle relation. The exact corrected combined candidate SHA-256 3a4dbe81ee6b6e83d978f0ab981bfb79af5f3f272c5497de70ea9a54459dc7e9 was accepted for semantic fidelity. This is independent AI review, not human review or approval for recitation."
+retrieved = "2026-10-30"
+sha256 = "3a4dbe81ee6b6e83d978f0ab981bfb79af5f3f272c5497de70ea9a54459dc7e9"
+byte_size = 2036
+path = "src/sources/works/triptych/english-completion-20261029-ordinary-chrism/editions/2026-10-30-study-english/artifacts/ordinary-chrism-study-en-3a4dbe81/text.tsv"
+indexable = true
+encoding = "utf-8"
+projected_from = ["artifact.triptych.english-completion-20261029-ordinary-chrism.latin-projection-20261030.ordinary-chrism-latin-babd71a3"]
+transformation = "Translate the complete declared Latin body into new English for study only. Preserve all petitions, recipient and temporal relations, the royal/priestly/prophetic distinction, incorruptible gift, entire Christological/angelic conclusion and final humble-confession cue. Add no Sanctus or Amen and borrow no current or historical English wording. Preserve the exact reviewed Latin in a separate column."
+notes = "This artifact is study English of the Chrism Preface, not an historical English witness, approved Missal wording or a text for recitation. The candidate preserves perfusi as a completed passive participle. Any renderer must retain a body-specific study/non-recitation reading_note. All source-text and target-collation qualifications remain on the Latin artifact."

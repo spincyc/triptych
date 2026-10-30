@@ -1,0 +1,173 @@
+{
+  "accepted_fixture_core_sha256": "d83fd2c8a2e750475965e50b00078bac3e6d0e1fecc994fdb7410cab7e611122",
+  "all_semantic_fields_exact": true,
+  "candidate_merits_review": ".scratch/main-reconcile-review-20261030/final-two-merits/RESULT.json",
+  "canonical_activation_claimed": false,
+  "canonical_parent_inputs_verified": 7068,
+  "changed_after_pins": 2,
+  "changed_inverse_specs": 2,
+  "consumer_tests_claimed": false,
+  "issues": [],
+  "negative_controls": [
+    {
+      "control": "candidate whole-byte mutation",
+      "refused": true
+    },
+    {
+      "control": "current-slice hash mutation",
+      "refused": true
+    },
+    {
+      "control": "historical literal mutation",
+      "refused": true
+    },
+    {
+      "control": "negative inverse bounds",
+      "refused": true
+    },
+    {
+      "control": "undeclared third physical pin change",
+      "refused": true
+    },
+    {
+      "control": "dropped manifest path",
+      "refused": true
+    },
+    {
+      "control": "duplicate manifest owner",
+      "refused": true
+    },
+    {
+      "control": "semantic body-partition field mutation",
+      "refused": true
+    },
+    {
+      "control": "third inverse alteration",
+      "refused": true
+    },
+    {
+      "control": "premature activation state",
+      "refused": true
+    }
+  ],
+  "new_source_or_permission_authority": false,
+  "original_git_replays": [
+    {
+      "changed_inverse": false,
+      "original_sha256": "69731f40de5d8c4539c4660f7035681ba3429beffd447ac6e29a5c1b98b6829d",
+      "path": "src/sources/calendars/postconciliar/propers.yaml"
+    },
+    {
+      "changed_inverse": false,
+      "original_sha256": "018642eee26d09e3bb014fa60baa0f820ab3637c9d6e349378c696a7b79d6877",
+      "path": "src/sources/calendars/roman-1962/propers.yaml"
+    },
+    {
+      "changed_inverse": false,
+      "original_sha256": "5943f9788ff9ebe3b614086d824039a2993039f58d3819e85f26ffafb3c38a58",
+      "path": "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml"
+    },
+    {
+      "changed_inverse": false,
+      "original_sha256": "9bf6fe5ecc3b397888a0316f7b5c06e40f65e9dfc1eb96c3bc78d111e7c41597",
+      "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml"
+    },
+    {
+      "changed_inverse": false,
+      "original_sha256": "c2bf07d5551fbe7ae2748ce7390c37b0d707df7cf275d400126b04cacd8600f0",
+      "path": "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml"
+    },
+    {
+      "changed_inverse": false,
+      "original_sha256": "560e82057dc0480a5b1fe835304ba57ed476b346a38cab6fac550298582016ea",
+      "path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml"
+    },
+    {
+      "changed_inverse": false,
+      "original_sha256": "79946d1bc6e015d8624d67ce243b59cf3ee634fc5997310aa6d764953349d815",
+      "path": "src/sources/inventories/roman-1962-proper-translations-v1.toml"
+    },
+    {
+      "changed_inverse": false,
+      "original_sha256": "465e15d42b7301b22c2d93be1b95b00eb326ee0cd2ad1f928520952a89e89faa",
+      "path": "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml"
+    },
+    {
+      "changed_inverse": true,
+      "original_sha256": "98daa1922358c0d977ddfc97352812d395c6f578591e48691bc1393c6b1ace8d",
+      "path": "tools/tests/test_proper_latin.py"
+    },
+    {
+      "changed_inverse": false,
+      "original_sha256": "bc3ec297a6ca1edd3f155ccc29381526fee006d2e39a2c43bc0ce06fb81a51d4",
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py"
+    },
+    {
+      "changed_inverse": false,
+      "original_sha256": "ddb972cdd5fe9651d1ecc0b33bbc1bf4deca7f1b5f5c7d75b87bc03c54603f9e",
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py"
+    },
+    {
+      "changed_inverse": false,
+      "original_sha256": "dedf9a58d3f9e6b311bf5caf8f7aa7c51dcc9543d6ee17e4288e834c8cdc0215",
+      "path": "tools/tests/test_roman_1962_english13_phase5.py"
+    },
+    {
+      "changed_inverse": false,
+      "original_sha256": "86b29add67ac575fb147300f4ab6e66c47863a16c4cf5166896a88e710f5335c",
+      "path": "tools/tests/test_roman_1962_english31_phase4.py"
+    },
+    {
+      "changed_inverse": false,
+      "original_sha256": "9c11f0b870c14916dfa2530c1e733f262a5c9f526cd613744a06ea7ce3c05190",
+      "path": "tools/tests/test_roman_1962_lasance_commons_easter_phase3.py"
+    },
+    {
+      "changed_inverse": true,
+      "original_sha256": "7dc3a1569140e14f32fa2c98e607577b05871f3c197a307db67107d731d6afca",
+      "path": "tools/tests/test_roman_1962_latin22_phase5.py"
+    },
+    {
+      "changed_inverse": false,
+      "original_sha256": "c13d838baf217cf25be163e465a4f90322d8ecf04e89322f237eec105764686e",
+      "path": "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py"
+    },
+    {
+      "changed_inverse": false,
+      "original_sha256": "e7354e1d015919cc47f235fca3aa1f5134afc8fe250765eb24b6d2eafbc71f05",
+      "path": "tools/tests/test_roman_1962_winter_ursula_source_repair.py"
+    }
+  ],
+  "parent_fixture_sha256": "d7894d8cd47c3891bc1dd52ce9de90be97f32fdc3580cf0cb979afdac299bcba",
+  "parent_manifest_sha256": "a0e3d98e0bb4de8f9f0509701550ff71312d5c1c11b81fac3ccf0f00a80f8baa",
+  "parent_receipt_sha256": "82c7006d6e9705cae50f40140905188c63b47fc6978b6a5ac4754b11dccdfa08",
+  "pending_fixture_sha256": "dcb00aebadf141102d2e294202319990bb55189116da77a5336c11f138d198a6",
+  "proposal_sha256": "2cf5f422f8f9a212b2c5cc4319de446ba74cb25e0033559d4e5140cc8989687d",
+  "proposed_manifest_sha256": "bfd171773b03ac0930666aad30af43552bd6e90832797bac10c642469c9e6e86",
+  "prospective_after_inputs_verified": 7068,
+  "prospective_overrides": [
+    {
+      "candidate_after_sha256": "d13ba84c2d93b9ca77b68e9a4746bcdff9ff6d23c42be57a9c508d86e329f464",
+      "canonical_before_sha256": "eeabd808b92cb4754b102a700897bf758c0abcc1f656bfb059de70e56d884982",
+      "path": "tools/tests/test_proper_latin.py"
+    },
+    {
+      "candidate_after_sha256": "01d6e0490f4b84683823795b2917a8804d17b8b32b38af49b2caa97fca0f015d",
+      "canonical_before_sha256": "6eac69145f33bca64ea050e95a1c41c2dcea12ced488a002fc64fcd8e56d4a0c",
+      "path": "tools/tests/test_roman_1962_latin22_phase5.py"
+    }
+  ],
+  "replay_support_unchanged": true,
+  "root_installation_contract": {
+    "accepted_receipt": "workflows/reviews/missal-english-completion-2026-10-29/source-batch-test-code-successor-v3.json",
+    "exact_parent_fixture_retention": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/test-code-successor-v3/parent-fixture.json",
+    "exact_parent_manifest_retention": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/test-code-successor-v3/parent-inputs.json",
+    "pending": "Root adoption and atomic code/receipt/fixture installation, actual affected methods and strict source-guard controls."
+  },
+  "schema": "triptych-independent-prospective-test-pin-review/v1",
+  "scope": "Exact two merit-reviewed candidate test bytes substituted prospectively; canonical fixture, manifest and two tests retain their accepted parent bytes. No source or runtime-helper mutation.",
+  "status": "PASS-prospective-two-code-pin-and-inverse-mechanics",
+  "strict_runtime_helper_unchanged": true,
+  "unchanged_canonical_inputs_verified": 7066,
+  "unchanged_inverse_specs": 15
+}

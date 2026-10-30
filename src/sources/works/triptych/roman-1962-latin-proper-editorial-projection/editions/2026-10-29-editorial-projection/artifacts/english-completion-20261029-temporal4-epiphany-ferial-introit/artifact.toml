@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-temporal4-epiphany-ferial-introit"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Project normalization/layout under CC BY4.0; underlying independently public-domain Latin remains public domain under17USC103(b). No modern edition or new source wording clearance is inferred."
+rights_jurisdiction = "United States"
+provenance = "2026-10-29 complete target/historical page-image comparison; source Latin, target identity check and declared transformations remain distinct. Candidate awaits independent source review and integration."
+retrieved = "2026-10-29"
+sha256 = "b88ee0082ae7dc4b9d8199df2660d98c9f31ac691153825b791eccbe898973a1"
+byte_size = 204
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/english-completion-20261029-temporal4-epiphany-ferial-introit/latin.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-temporal4-epiphany-ferial-introit", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Pustet prints cujus and Jubilate where the target prints cuius and Iubilate; the projection retains the calendar-declared consonantal j. Target adds a comma after Angelorum and after Deo; Pustet has neither. Printed Psalm reference label is apparatus, excluded from the literal body; its complete following verse is retained. Join wraps, remove stress, expand ligatures and retain full body order; no words are supplied, omitted or replaced."
+indexable = true
+encoding = "utf-8"
+notes = "Only this exact complete Introit body; no frame, new appointment, English approval or whole-form completeness."

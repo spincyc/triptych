@@ -10,6 +10,14 @@ from tools.tests import _source_batch_guards as G
 QUALIFIED=json.loads((ROOT/'workflows/reviews/missal-reader-completion-2026-10-26/gregem-damasus-qualified-rights-adoption.json').read_text())
 QUALIFIED_IDENTITIES={G.canonical({'course':'','cycle':'','form':'','mass':m,'occurrence':o,'proper':p})
  for m,f,p,c,o in(s['target']for s in QUALIFIED['exact_scopes'])if f=='main'and c=='all'}
+FINITE_QUALIFIED=json.loads((ROOT/'workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json').read_text())
+QUALIFIED_IDENTITIES.update(G.key_string(LatinKey(*scope['key']))
+ for scope in FINITE_QUALIFIED['scopes'])
+RESTORED_IDENTITIES={G.key_string(LatinKey(m,'',p,'','',o)) for m,p,o in (
+ ('s-antonii-padua-confessoris-ecclesiae-doctoris','Collect',1),
+ ('comm-s-silvestri-i-papae-confessoris','Collect',1),
+ ('palm-sunday','Procession Antiphon',5),
+ ('palm-sunday','Procession Antiphon',6))}
 class CurrentSourceBatchLatinTests(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
@@ -29,14 +37,17 @@ class CurrentSourceBatchLatinTests(unittest.TestCase):
     _,body,state=self.bodies[identity];self.assertEqual({'state':state,'body_sha256':G.digest(body)if body is not None else None},want)
   removed={identity for identity,v in baseline.items()if v['state']=='removed'}
   self.assertEqual(len(removed),20)
-  # The accepted successor restores Anthony's previously removed Collect.
-  # All other removed owners retain their original refusal contract.
+  # Anthony's prior restoration remains. The finite-sixteen adoption adds
+  # Silvester; the two accepted Palm source reviews restore direct-Latin
+  # ordinals5/6 (English target ordinals6/7 include an earlier Scripture node).
+  # Every other original removed owner retains its refusal contract.
   restored=removed & corrected
-  self.assertEqual({json.loads(identity)['mass'] for identity in restored},
-                   {'s-antonii-padua-confessoris-ecclesiae-doctoris'})
+  self.assertEqual(restored,RESTORED_IDENTITIES)
   for identity in removed-restored:
    key,body,state=self.bodies[identity];self.assertEqual(state,'removed');self.assertFalse(decision_for(key,'Invented body.',self.validated).permits(SURFACES))
  def test_every_explicit_new_or_corrected_body_has_current_six_surface_proof(self):
+  self.assertEqual(len(FINITE_QUALIFIED['scopes']),16)
+  self.assertEqual(len(QUALIFIED_IDENTITIES),18)
   for identity in self.frozen['new_latin_keys']+self.frozen['corrected_latin_keys']:
    with self.subTest(identity=identity):
     key,body,state=self.bodies[identity];self.assertEqual(state,'present')
@@ -57,7 +68,7 @@ class CurrentSourceBatchLatinTests(unittest.TestCase):
     key,current,state=self.bodies[identity]
     baseline=self.frozen['latin_baseline_bodies'][identity]
     if baseline['state']=='removed':
-     self.assertNotIn(identity,prior);restored.add(json.loads(identity)['mass']);continue
+     self.assertNotIn(identity,prior);restored.add(identity);continue
     before=prior[identity]
     self.assertEqual(G.digest(before),baseline['body_sha256'])
     if before==current:
@@ -78,5 +89,5 @@ class CurrentSourceBatchLatinTests(unittest.TestCase):
   self.assertEqual(proof_only,{'s-iosephi-calasanctii-confessoris','ss-septem-fundatorum-ordinis-servorum-beatae',
    's-philippi-nerii-confessoris','s-ignatii-episcopi-martyris','s-iosaphat-episcopi-martyris',
    's-damasi-i-papae-confessoris','ss-cosmae-damiani-martyrum'})
-  self.assertEqual(restored,{'s-antonii-padua-confessoris-ecclesiae-doctoris'})
+  self.assertEqual(restored,RESTORED_IDENTITIES)
 if __name__=='__main__':unittest.main()

@@ -2034,7 +2034,7 @@ class ParityTests(unittest.TestCase):
         self.assertEqual(event["selected"]["relation"], "antecedent")
         self.assertEqual(event["selected"]["collation"], "uncollated")
 
-    def test_ordinary_unavailable_language_preserves_typed_absence_states(self) -> None:
+    def test_ordinary_held_english_preserves_remaining_typed_absence_states(self) -> None:
         request = copy.deepcopy(
             fixture_named("day-postconciliar-2026-11-29")["requested"]
         )
@@ -2046,7 +2046,38 @@ class ParityTests(unittest.TestCase):
             row for row in result["coverage"]
             if row["scope"] == "ordinary:postconciliar:en"
         )
-        self.assertEqual(coverage["state"], "unavailable")
+        self.assertEqual(coverage["state"], "supported")
+        self.assertEqual(coverage["completeness"], "partial")
+        # A real newly served English body must match its historical source,
+        # while the independent restricted and witness-gap assertions below
+        # remain in force for the unfilled elements.
+        import csv
+        import tomllib
+        inventory = tomllib.loads((ROOT / "src/sources/inventories/"
+            "postconciliar-ordo-missae-v1.toml").read_text())
+        source = next(element for section in inventory["sections"]
+                      for element in section["elements"]
+                      if section["key"] + "/" + element["key"] ==
+                      "prex-eucharistica/sanctus")["english"]
+        artifact = ROOT / ("src/sources/works/eugene-cummiskey/"
+            "roman-missal-english-laity/editions/philadelphia-1861/artifacts/"
+            "praefationes-en/artifact.toml")
+        record = tomllib.loads(artifact.read_text())
+        with (ROOT / record["path"]).open(encoding="utf-8", newline="") as handle:
+            rows = list(csv.DictReader(handle, delimiter="\t"))
+        expected = "\n".join(row[source["column"]]
+            for key in source["elements"] for row in rows
+            if row["element_key"] == key)
+        historical = next(event["selected"] for event in result["events"]
+            if event["id"] == "ordinary-element/prex-eucharistica/sanctus")
+        self.assertEqual(historical["language"], "en")
+        self.assertEqual(historical["availability"], "held")
+        self.assertEqual(historical["sourceId"], source["witness"])
+        self.assertEqual(historical["rights"], "public-domain")
+        self.assertEqual(historical["relation"], "antecedent")
+        self.assertEqual(historical["collation"], "uncollated")
+        self.assertTrue(expected)
+        self.assertEqual(historical["text"], expected)
         self.assertNotIn("language-missing", {
             reason["kind"] for reason in coverage["reasons"]
         })

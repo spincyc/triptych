@@ -1,0 +1,103 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "scan-pdf",
+   "byte_size": 409425773,
+   "edition_owned": true,
+   "id": "artifact.catholic-church.breviarium-monasticum.1690-venice-baglioni.erara-whole-pdf-6fb9cd28",
+   "media_type": "application/pdf",
+   "notes": "Remote storage is earned by the409425773byte whole-source size. Offline consumers can reopen the two complete supporting source pages4and955 in the separately tracked bounded facsimile extract, and the checked normalized responsory base in its distinct textartifact. No whole-work wording or negative-search completeness is claimed.",
+   "page_count": 1331,
+   "retrieved": "2026-10-29",
+   "rights": "public-domain",
+   "rights_basis": "The underlying identified printing was published in Venice in1690. No UnitedStates copyright term remains in that printing. Faithful mechanical page reproduction and machine OCR add no new human authorship; the basis is the1690printing and reproduction character, not host availability or a host licence label.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://www.e-rara.ch/download/pdf/8325160.pdf",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 109,
+   "edition_owned": true,
+   "id": "artifact.catholic-church.breviarium-monasticum.1690-venice-baglioni.queenship-offertory-base-latin-20261029",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-10-29",
+   "rights": "public-domain",
+   "rights_basis": "Bounded complete responsorybase transcribed from1690VeniceBaglioni printing, independently in the UnitedStates publicdomain. No targetseasonal Alleluia is appended here.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "facsimile-pdf-excerpt",
+   "byte_size": 995897,
+   "edition_owned": true,
+   "id": "artifact.catholic-church.breviarium-monasticum.1690-venice-baglioni.queenship-offertory-base-pages-20261029",
+   "media_type": "application/pdf",
+   "notes": null,
+   "page_count": 2,
+   "retrieved": "2026-10-29",
+   "rights": "public-domain",
+   "rights_basis": "Complete printed titlepage and one1690BreviariumMonasticum sourcepage, publicdomain in the UnitedStates by publication date. Faithful mechanical page extraction adds no human authorship; no modern source commentary is included.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://www.e-rara.ch/download/pdf/8325160.pdf",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1690",
+  "editors": [],
+  "id": "edition.catholic-church.breviarium-monasticum.1690-venice-baglioni",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Venetiis: sumptibus Pauli Balleonii, 1690. Title: Breviarium monasticum Pauli V. ac Urbani VIII. summorum pontificum auctoritate recognitum, pro omnibus sub regula SS. P. Benedicti militantibus; cum officiis Sanctorum sub SS. D. N. Alexandro VIII. novissime emanatis.",
+  "title": "Breviarium monasticum, Venice Baglioni 1690",
+  "translators": [],
+  "year": 1690
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.catholic-church.breviarium-monasticum.1690-venice-baglioni.queenship-offertory-base-latin-20261029",
+   "artifact_type": "checked-transcription",
+   "context": "The entire responsorybase Regali ex progenie through poscimus. The following Corde et animo versicle is outside this textualextent. This source proves the ancientbase, not the full1962conditionalPaschalvariant or its Missal appointment.",
+   "id": "passage.catholic-church.breviarium-monasticum.1690-venice-baglioni.queenship-offertory-responsory-base-20261029",
+   "locus": "Nativity of the Blessed Virgin Mary, ResponsoryIV; printed912,leftlowercolumn; wholeartifactpage955, extractedsourcepage2; normalizedtextphysical-line1.",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Target1962QueenshipOffertory2691atartifact622/printed541 has the same fullbase words outside declared orthography/pointing, but adds a conditionalTPAlleluia cue. No permission decision on the whole targetbody follows from this sourcebase alone.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "Bounded complete responsorybase transcribed from1690VeniceBaglioni printing, independently in the UnitedStates publicdomain. No targetseasonal Alleluia is appended here.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.catholic-church.breviarium-monasticum.1690-venice-baglioni.queenship-offertory-responsory-base-20261029.json",
+   "verified_on": "2026-10-29",
+   "words": 15
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "The Monastic Breviary"
+  ],
+  "author": "Catholic Church",
+  "category": "liturgical-book",
+  "description": "The Divine Office book for communities following the Rule of Saint Benedict. Editions and particular printings remain distinct; loci identify feast, hour, lesson or responsory.",
+  "id": "work.catholic-church.breviarium-monasticum",
+  "languages": [
+   "la"
+  ],
+  "title": "Breviarium monasticum"
+ }
+}

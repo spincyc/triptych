@@ -628,9 +628,9 @@ carries the identical block.
 | roman-1962 | marian | 18 | 163 | 0 |
 | roman-1962 | sanctoral | 307 | 1685 | 0 |
 | roman-1962 | common | 30 | 382 | 0 |
-| postconciliar | seasonal | 390 | 2465 | 0 |
+| postconciliar | seasonal | 390 | 2483 | 0 |
 | postconciliar | christological | 7 | 79 | 0 |
-| postconciliar | marian | 14 | 70 | 0 |
+| postconciliar | marian | 14 | 72 | 0 |
 | postconciliar | sanctoral | 201 | 903 | 0 |
 | postconciliar | common | 7 | 0 | 0 |
 
@@ -654,19 +654,19 @@ carries the identical block.
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
 | Masses | 8 | 491 | 619 |
-| Propers | 0 | 3753 | 3517 |
+| Propers | 0 | 3753 | 3537 |
 | — named `Placeholder` | 0 | 0 | 0 |
-| — inside a `forms` block | 0 | 211 | 204 |
+| — inside a `forms` block | 0 | 211 | 222 |
 | — carrying a `cycles` mapping | 0 | 0 | 306 |
 | — carrying a `weekday_cycles` mapping | 0 | 0 | 410 |
 | Masses holding only placeholders | 0 | 0 | 0 |
 | Masses taking a formulary from another entry | 0 | 166 | 0 |
 | Propers taking their text from another entry | 0 | 101 | 51 |
-| Propers that are not placeholders | 0 | 3753 | 3517 |
-| — of those, scripture-bearing | 0 | 2270 | 3051 |
-| Encoded passages | 0 | 2757 | 4030 |
+| Propers that are not placeholders | 0 | 3753 | 3537 |
+| — of those, scripture-bearing | 0 | 2270 | 3061 |
+| Encoded passages | 0 | 2757 | 4040 |
 | Distinct books cited | 0 | 58 | 73 |
-| Distinct slot names | 0 | 128 | 100 |
+| Distinct slot names | 0 | 128 | 108 |
 
 Counted from `src/sources/calendars/*/propers.yaml` and written here by
 `tools/mass-propers census --write`, which is the only thing that writes the

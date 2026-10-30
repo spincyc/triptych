@@ -1,0 +1,325 @@
+{
+  "candidate_sha256": "167adbfd5fc8b1d3c3ce58cad858ae5c0ee124c19e5707850f1ee20ff9c48d74",
+  "inventory_preimage_sha256": "1e7b0cb5737ef6817b1e110b5f58437fa08e8e9fb58093f1529853a5d901ebba",
+  "inventory_postimage_sha256": "d2972c77f396e3370082de5da87164ad04c4327b3ca606818e2b07d68ea60e99",
+  "parent_to_children": {
+    "ritus-initiales/introitus": [
+      "ritus-initiales/signum-crucis"
+    ],
+    "ritus-initiales/salutatio": [
+      "ritus-initiales/greeting-trinitarian",
+      "ritus-initiales/greeting-grace-peace",
+      "ritus-initiales/greeting-lord",
+      "ritus-initiales/greeting-response"
+    ],
+    "ritus-communionis/ecce-agnus-dei": [
+      "ritus-communionis/ecce-agnus",
+      "ritus-communionis/beati-ad-cenam",
+      "ritus-communionis/domine-non-sum-dignus"
+    ]
+  },
+  "held_bishop": "source-only; no invented universal option",
+  "element_count": 69,
+  "coverage": {
+    "schema": "triptych-missal-coverage/v1",
+    "scope": "ordinary",
+    "denominator": "represented-units",
+    "count_basis": {
+      "canonical_targets": "distinct source-owned targets within this recension",
+      "occurrences": "appointed units, including distinct cycle owners",
+      "witness_alternatives": "distinct published translation witnesses per target and language"
+    },
+    "counts": {
+      "canonical_targets": 69,
+      "occurrences": 69,
+      "witness_alternatives": 62
+    },
+    "languages": [
+      {
+        "lang": "la",
+        "targets": 69,
+        "occurrences": 69,
+        "available": 31,
+        "available_targets": 31,
+        "exact_target": 0,
+        "exact_target_targets": 0,
+        "scripture_targets": 0,
+        "scripture_occurrences": 0,
+        "mixed_targets": 0,
+        "mixed_occurrences": 0,
+        "availability": {
+          "available": 31,
+          "not-publishable": 15,
+          "not-sourced": 0,
+          "unresolved": 7,
+          "inapplicable": 14,
+          "absent-in-witness": 2
+        },
+        "relationships": {
+          "exact-target": 0,
+          "historical-antecedent": 31,
+          "study-translation": 0,
+          "bible-reconstruction": 0,
+          "unresolved": 38
+        },
+        "collations": {
+          "collated": 5,
+          "uncollated": 26,
+          "not-applicable": 0,
+          "unresolved": 38
+        },
+        "witnesses": [
+          {
+            "id": "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712",
+            "source_id": "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712",
+            "label": "Historical Ambrosian Latin (Milan,1712), not a controlling2008 exemplar",
+            "aliases": [
+              "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712"
+            ],
+            "relationships": [
+              "historical-antecedent"
+            ],
+            "publication_bases": [
+              "public-domain"
+            ],
+            "collations": [
+              "uncollated"
+            ],
+            "targets": 1,
+            "available_targets": 1,
+            "occurrences": 1,
+            "available": 1
+          },
+          {
+            "id": "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888",
+            "source_id": "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888",
+            "label": "Historical Latin antecedent (NOT the controlling Missal): Roman Breviary, Pustet, 1888",
+            "aliases": [
+              "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888"
+            ],
+            "relationships": [
+              "historical-antecedent"
+            ],
+            "publication_bases": [
+              "public-domain"
+            ],
+            "collations": [
+              "uncollated"
+            ],
+            "targets": 1,
+            "available_targets": 1,
+            "occurrences": 1,
+            "available": 1
+          },
+          {
+            "id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+            "source_id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+            "label": "Historical Latin antecedent (Mame, 1922), not the controlling 2008 Missal",
+            "aliases": [
+              "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+            ],
+            "relationships": [
+              "historical-antecedent"
+            ],
+            "publication_bases": [
+              "public-domain"
+            ],
+            "collations": [
+              "uncollated"
+            ],
+            "targets": 2,
+            "available_targets": 2,
+            "occurrences": 2,
+            "available": 2
+          },
+          {
+            "id": "edition.catholic-church.vulgata-clementina.ebible-latvuc",
+            "source_id": "edition.catholic-church.vulgata-clementina.ebible-latvuc",
+            "label": "Historical Latin antecedent: Clementine Vulgate (eBible latVUC), not the controlling 2008 Missal",
+            "aliases": [
+              "edition.catholic-church.vulgata-clementina.ebible-latvuc"
+            ],
+            "relationships": [
+              "historical-antecedent"
+            ],
+            "publication_bases": [
+              "public-domain"
+            ],
+            "collations": [
+              "uncollated"
+            ],
+            "targets": 3,
+            "available_targets": 3,
+            "occurrences": 3,
+            "available": 3
+          },
+          {
+            "id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+            "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+            "label": "Antecedent Latin (NOT the Missale Romanum's text): the facing Latin column of The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861)",
+            "aliases": [
+              "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+            ],
+            "relationships": [
+              "historical-antecedent"
+            ],
+            "publication_bases": [
+              "public-domain"
+            ],
+            "collations": [
+              "collated",
+              "uncollated"
+            ],
+            "targets": 24,
+            "available_targets": 24,
+            "occurrences": 24,
+            "available": 24
+          }
+        ]
+      },
+      {
+        "lang": "en",
+        "targets": 69,
+        "occurrences": 69,
+        "available": 31,
+        "available_targets": 31,
+        "exact_target": 0,
+        "exact_target_targets": 0,
+        "scripture_targets": 0,
+        "scripture_occurrences": 0,
+        "mixed_targets": 0,
+        "mixed_occurrences": 0,
+        "availability": {
+          "available": 31,
+          "not-publishable": 13,
+          "not-sourced": 4,
+          "unresolved": 3,
+          "inapplicable": 12,
+          "absent-in-witness": 6
+        },
+        "relationships": {
+          "exact-target": 0,
+          "historical-antecedent": 25,
+          "study-translation": 6,
+          "bible-reconstruction": 0,
+          "unresolved": 38
+        },
+        "collations": {
+          "collated": 0,
+          "uncollated": 25,
+          "not-applicable": 6,
+          "unresolved": 38
+        },
+        "witnesses": [
+          {
+            "id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
+            "source_id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
+            "label": "Historical English antecedent (NOT approved Missal English): Bute Roman Breviary, 1908",
+            "aliases": [
+              "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+            ],
+            "relationships": [
+              "historical-antecedent"
+            ],
+            "publication_bases": [
+              "public-domain"
+            ],
+            "collations": [
+              "uncollated"
+            ],
+            "targets": 1,
+            "available_targets": 1,
+            "occurrences": 1,
+            "available": 1
+          },
+          {
+            "id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+            "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+            "label": "Historical English antecedent (NOT the approved Roman Missal English): The Roman Missal translated into the English language for the use of the laity (Philadelphia: Eugene Cummiskey, 1861)",
+            "aliases": [
+              "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+            ],
+            "relationships": [
+              "historical-antecedent"
+            ],
+            "publication_bases": [
+              "public-domain"
+            ],
+            "collations": [
+              "uncollated"
+            ],
+            "targets": 24,
+            "available_targets": 24,
+            "occurrences": 24,
+            "available": 24
+          },
+          {
+            "id": "edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030",
+            "source_id": "edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030",
+            "label": "Triptych study English of ancient source fragments (not approved liturgical English)",
+            "aliases": [
+              "edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030"
+            ],
+            "relationships": [
+              "study-translation"
+            ],
+            "publication_bases": [
+              "project-created"
+            ],
+            "collations": [
+              "not-applicable"
+            ],
+            "targets": 4,
+            "available_targets": 4,
+            "occurrences": 4,
+            "available": 4
+          },
+          {
+            "id": "edition.triptych.postconciliar-ordinary-peace-invitation-study-english-20261030.study-english-20261030",
+            "source_id": "edition.triptych.postconciliar-ordinary-peace-invitation-study-english-20261030.study-english-20261030",
+            "label": "Triptych study English of the historical peace invitation (not approved liturgical English)",
+            "aliases": [
+              "edition.triptych.postconciliar-ordinary-peace-invitation-study-english-20261030.study-english-20261030"
+            ],
+            "relationships": [
+              "study-translation"
+            ],
+            "publication_bases": [
+              "project-created"
+            ],
+            "collations": [
+              "not-applicable"
+            ],
+            "targets": 1,
+            "available_targets": 1,
+            "occurrences": 1,
+            "available": 1
+          },
+          {
+            "id": "edition.triptych.postconciliar-ordinary-supplices-study-english-20261030.study-english-20261030",
+            "source_id": "edition.triptych.postconciliar-ordinary-supplices-study-english-20261030.study-english-20261030",
+            "label": "Triptych study English of the historical Supplices body (not approved liturgical English)",
+            "aliases": [
+              "edition.triptych.postconciliar-ordinary-supplices-study-english-20261030.study-english-20261030"
+            ],
+            "relationships": [
+              "study-translation"
+            ],
+            "publication_bases": [
+              "project-created"
+            ],
+            "collations": [
+              "not-applicable"
+            ],
+            "targets": 1,
+            "available_targets": 1,
+            "occurrences": 1,
+            "available": 1
+          }
+        ]
+      }
+    ]
+  },
+  "unchanged_slots": true,
+  "unchanged_appointments": true
+}

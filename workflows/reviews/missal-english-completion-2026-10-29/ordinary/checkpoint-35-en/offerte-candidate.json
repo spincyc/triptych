@@ -1,0 +1,143 @@
+{
+  "target": "ritus-communionis/offerte-vobis-pacem",
+  "scope": "Complete historical three-word invitation only; no historical response or rubrics; no modern whole2008 collation",
+  "files": {
+    "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/artifacts/english-completion-20261030-peace-invitation-la/artifact.toml": {
+      "sha256": "61cd467a2d855cf8c9bd68c62a061e5702d6f54b7d560e0eb6cf2f4049084e65",
+      "bytes": 2652
+    },
+    "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/artifacts/english-completion-20261030-peace-invitation-la/text.tsv": {
+      "sha256": "215af41bb9ec4395307523a7278387bcdf2350c563debc5f402287b8875b0b79",
+      "bytes": 129
+    },
+    "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/artifacts/english-completion-20261030-peace-invitation-page/artifact.toml": {
+      "sha256": "0d200efaa833f4d875218e40cdf9f7252eb8760c2b74273bf0c3e8840b656609",
+      "bytes": 2380
+    },
+    "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/artifacts/english-completion-20261030-peace-invitation-page/source.pdf": {
+      "sha256": "f9b4ff58a75abc23c180637a198f773c9681e48967b90028adbcb8fef71b36da",
+      "bytes": 121403
+    },
+    "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/artifacts/ia-text-pdf-180769e3/artifact.toml": {
+      "sha256": "f55f5965ff3b52642a870bc0bb617f0f857e32554ec4f90fe1d0d101d5dc703c",
+      "bytes": 2428
+    },
+    "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/passages/english-completion-20261030-peace-invitation.toml": {
+      "sha256": "ae876dac416bd73f0192e3fd314acb3857f9835ad12592f6f0776de5537791c4",
+      "bytes": 1451
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-peace-invitation-study-english-20261030/editions/2026-10-30-study-english/artifacts/peace-invitation-study-en/artifact.toml": {
+      "sha256": "0d34a008b0f0eaea22252bb64b0f7b7bb4c574366d0631fe2c987b228d14ce5c",
+      "bytes": 1958
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-peace-invitation-study-english-20261030/editions/2026-10-30-study-english/artifacts/peace-invitation-study-en/text.tsv": {
+      "sha256": "171a9fbbf2026f6385526bf17140a42d6f62dd7f9245eb72c3d961cf850a8d3f",
+      "bytes": 101
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-peace-invitation-study-english-20261030/editions/2026-10-30-study-english/edition.toml": {
+      "sha256": "4de82672927f53f9d5ec1b5203f23100f85d84b839eb2db6f3860cbb219e156b",
+      "bytes": 781
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-peace-invitation-study-english-20261030/work.toml": {
+      "sha256": "cf0b4e79f7f564711a6f5948962a46ef06ac6390acde763c9fc5ead0f3dd8208",
+      "bytes": 770
+    }
+  },
+  "latin": {
+    "witness": "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712",
+    "artifact": "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.english-completion-20261030-peace-invitation-la",
+    "elements": [
+      "offerte-vobis-pacem"
+    ],
+    "column": "latin",
+    "relation": "antecedent",
+    "collation": "uncollated",
+    "reading_note": "Historical Ambrosian invitation (Milan,1712). Its separate source response is omitted here; no complete authenticated2008 collation is claimed.",
+    "note": "The complete historical invitation on printed155, original193, is selected literally. Its separate Deo-gratias response and Ambrosian conditions remain source context and are not imported. Secondary2002 n128, original367, independently establishes the modern conditional invitation and has the same three words apart from its tonic accent. This is historical source wording, not a complete controlling2008 exemplar."
+  },
+  "english": {
+    "witness": "edition.triptych.postconciliar-ordinary-peace-invitation-study-english-20261030.study-english-20261030",
+    "artifact": "artifact.triptych.postconciliar-ordinary-peace-invitation-study-english-20261030.study-english-20261030.peace-invitation-study-en",
+    "elements": [
+      "offerte-vobis-pacem"
+    ],
+    "column": "english",
+    "relation": "own",
+    "reading_note": "Triptych study English of a historical Ambrosian invitation (1712). Not approved for liturgical use or recitation.",
+    "note": "New English directly from the checked public-domain three-word1712 source invitation. Its old response and rubrics are outside the selected body. The modern assignment and conditional use have a separate secondary2002 source; no approved English or human review is claimed."
+  },
+  "witnesses": [
+    {
+      "id": "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712",
+      "lang": "la",
+      "label": "Historical Ambrosian Latin (Milan,1712), not a controlling2008 exemplar",
+      "rights": "public-domain",
+      "caution": "An independently checked complete old invitation, from a different rite. No old response, rubrics or assignment is transferred. No complete2008 collation or recitation authority is claimed.",
+      "artifacts": [
+        "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.english-completion-20261030-peace-invitation-la"
+      ]
+    },
+    {
+      "id": "edition.triptych.postconciliar-ordinary-peace-invitation-study-english-20261030.study-english-20261030",
+      "lang": "en",
+      "label": "Triptych study English of the historical peace invitation (not approved liturgical English)",
+      "rights": "project-created",
+      "caution": "New AI-authored English from the independently checked1712 invitation only. Not approved for liturgical use or recitation; no human review is claimed.",
+      "artifacts": [
+        "artifact.triptych.postconciliar-ordinary-peace-invitation-study-english-20261030.study-english-20261030.peace-invitation-study-en"
+      ]
+    }
+  ],
+  "source_evidence": {
+    "whole_pdf": {
+      "sha256": "180769e3a6989ee863bf6404090ab430fd786fa10def1442485cc8537beaf4ce",
+      "byte_size": 99996171
+    },
+    "whole_page_count": 625,
+    "source_pages": [
+      193,
+      194
+    ],
+    "printed_pages": [
+      155,
+      156
+    ],
+    "retained_page": 193,
+    "identity_pages_inspected": [
+      11,
+      625
+    ],
+    "images": {
+      "ambrosian1712-193.jpg": {
+        "sha256": "f3cb249d37b5d9695022a107745d4e4d267f01e8835637b19afabaf321c8db7b",
+        "byte_size": 490349
+      },
+      "ambrosian1712-194.jpg": {
+        "sha256": "12681d1b0aca0f812ba11be93b6863f89be027e0ebd2a31703a3f713b6558700",
+        "byte_size": 539801
+      },
+      "ambrosian1712-11.jpg": {
+        "sha256": "043187766e6211b52985739f6f3bba1c55e87db01d9793e74c7f4e9cddb954e1",
+        "byte_size": 241430
+      },
+      "ambrosian1712-625.jpg": {
+        "sha256": "8d57e2af9928bec2fc6e60a8814f6d2dd81de2835e373c0304de4eac8e68820b",
+        "byte_size": 62823
+      }
+    }
+  },
+  "target_evidence": {
+    "artifact": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+    "sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+    "page": 367,
+    "number": 128,
+    "image": {
+      "sha256": "05766ca0d02a5bb48c245b6853c56f440cedc44baeb9b5d1766530d3d8f2e4b6",
+      "byte_size": 231206
+    },
+    "status": "secondary digitally reset2002 witness, not authenticated complete2008"
+  },
+  "source_latin": "Offerte vobis pacem.",
+  "study_english": "Offer peace to one another.",
+  "canonical_parent_ocr_record_sha256": "3bd129f73bb3e8193ff06f5ed8ebeca5637712434559a9e779b3eaba6faa0752"
+}

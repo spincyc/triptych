@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.heart-two-20261029-historical-prayers"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "United States: identified Tours 1922 printed words and pages have no remaining copyright term in 2026. Faithful mechanical extraction adds no new human authorship. Historical Latin and source images are excluded from the project CC BY 4.0 offer; no modern target words occur in this historical artifact."
+sha256 = "834d0e60236511a5ff7f3d4f9186ea1188791eab9706277e7bb488d52f6b6cff"
+byte_size = 501
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/heart-two-20261029-historical-prayers/latin.txt"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.heart-two-20261029-control-pages"
+retrieved = "2026-10-29"
+encoding = "utf-8"
+indexable = true
+provenance = "Two complete historical prayers read on 200 and 400 dpi page images of registered Mame 1922 whole-PDF pages 1048-1049, printed [18]-[19], with own historical heading and full actual conclusion cues. Line 1 Collect; line 2 Postcommunion."
+transformation = "Join physical line wraps and word-division hyphens; expand ligatures and remove stress accents. Preserve historical purissimi, pointing, cor casing and actual conclusion cues. No modern immaculati, parenthetical alternatives or nostrum added."

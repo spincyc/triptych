@@ -44,6 +44,36 @@
    "rights_jurisdiction": "United States",
    "source_url": "https://archive.org/download/liturgicalyear10gu/liturgicalyear10gu.pdf",
    "storage": "remote"
+  },
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 818,
+   "edition_owned": true,
+   "id": "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1879-volume-10.pange-lingua-latin-checked-20261029-15c03ec1",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "42physical lines including5blank stanza separators. Stanza starts physical1,8,15,22,29,36. Amen belongs to final stanza. Exact bodyLatinSHA25615c03ec1c4929c2fb54f32f5e4930d80917f90c0ebeb6f9f660cf6b508a50f76.",
+   "page_count": null,
+   "retrieved": "2026-10-29",
+   "rights": "public-domain",
+   "rights_basis": "The complete selected Latin hymn is present in the independently public-domain Dublin1879 printing. No claim on later Latin contribution or English translation rights is made through this old witness.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/liturgicalyear10gu/liturgicalyear10gu.pdf",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "facsimile-excerpt",
+   "byte_size": 213677,
+   "edition_owned": true,
+   "id": "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1879-volume-10.pange-lingua-pages-301-302-69fd77df",
+   "media_type": "application/pdf",
+   "notes": "Derivativepages1–2=parent315–316=printed301–302; complete six-stanza Latin hymn under CorpusChristiSecondVespersHymn heading. Introductory prose and following Panemversicle are context only, not part of selected hymn.",
+   "page_count": 2,
+   "retrieved": "2026-10-29",
+   "rights": "public-domain",
+   "rights_basis": "Exact mechanical extraction of two printed pages from the Dublin Duffy1879 volume, independently public domain in the United States by publication date under the registered parent rights basis. Neither modern text nor scan-host framing is added.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/liturgicalyear10gu/liturgicalyear10gu.pdf",
+   "storage": "tracked"
   }
  ],
  "edition": {
@@ -60,7 +90,56 @@
   ],
   "year": 1879
  },
- "passages": [],
+ "passages": [
+  {
+   "artifact_id": "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1879-volume-10.pange-lingua-latin-checked-20261029-15c03ec1",
+   "artifact_type": "checked-transcription",
+   "context": "Whole received hymn; literal independent1879Latin witness with declared typographic transformation.",
+   "id": "passage.prosper-gueranger.the-liturgical-year.english-duffy-1879-volume-10.pange-lingua-six-stanzas-checked-20261029",
+   "locus": "vol-x-p-301",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "This passage establishes whole source wording, not a direct full-body1962Missal collation. Its6stanzas are the historical text selected to answer the separate source-named hymn referral. Full printed range301–302 and PDF315–316 are stated in context and physical/page bounds; canonical work locus names first page.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The complete selected Latin hymn is present in the independently public-domain Dublin1879 printing. No claim on later Latin contribution or English translation rights is made through this old witness.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": "https://archive.org/download/liturgicalyear10gu/liturgicalyear10gu.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.prosper-gueranger.the-liturgical-year.english-duffy-1879-volume-10.pange-lingua-six-stanzas-checked-20261029.json",
+   "verified_on": "2026-10-29",
+   "words": 114
+  },
+  {
+   "artifact_id": "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1879-volume-10.pange-lingua-pages-301-302-69fd77df",
+   "artifact_type": "facsimile-excerpt",
+   "id": "passage.prosper-gueranger.the-liturgical-year.english-duffy-1879-volume-10.pange-lingua-six-stanzas-image-20261029",
+   "locus": "vol-x-p-301",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/liturgicalyear10gu/liturgicalyear10gu.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-29",
+   "withheld": "no-transcription"
+  }
+ ],
  "schema": "triptych-source-reader/v1",
  "work": {
   "alternate_titles": [

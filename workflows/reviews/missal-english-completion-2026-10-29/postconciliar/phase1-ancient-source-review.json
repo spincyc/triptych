@@ -1,0 +1,116 @@
+{
+  "schema": "triptych-independent-source-review/v1",
+  "recorded_on": "2026-10-29",
+  "scope": "Five finite ancient-derived postconciliar study-English candidates only",
+  "verdict": "accept-source-routes-and-draft-translations-with-metadata-corrections",
+  "packets": {
+    "candidate-three.json": "23d81b13ddae4996e2acd4da32095faf6cc315ec54740e30a9a003568730243e",
+    "candidate-additional-two.json": "f34897f7bf46f033031528d6ba289f434bc0ea1c4e9aabbb1e7df673cd85b94e"
+  },
+  "methods": [
+    "Read14 complete page images independently, covering5 ancient prayer pages and9 target/context pages.",
+    "Recomputed all4 complete controlling PDF hashes against registered artifact records.",
+    "Independently extracted and rendered all14 pages from controlling complete PDFs through pdfseparate and tools/pdf-review; each image equals the supplied candidate image byte for byte.",
+    "Compared complete actual petitions, conclusions and appointment headings; inspected ancient apparatus markers and modern parenthetical phrase.",
+    "Checked exact5 receiving calendar identities/incipits and each draft English for fidelity."
+  ],
+  "source_pdf_sha256": [
+    "006a38a39250d39c9745acfb4f4a098374027e719dc7ad7e32972fa6a82489bc",
+    "96fd93c73f8c9df47b6911981155b8b02cf2f2183ca6e87baad15128682d8681",
+    "3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a",
+    "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7"
+  ],
+  "candidates": [
+    {
+      "identity": [
+        "second-sunday-after-nativity",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "verdict": "accept-bounded-ancient-source-and-study-english",
+      "relation": "abridged",
+      "draft_english_sha256": "a4a9e0408e17fe0b32c283db9c9312a39a0893c28dead1adbfcf12699f0af9f8",
+      "ancient_reading_sha256": "829a36d828b9e2cf3eade3d32af4cbe4ce646cefe42e5c845aea5b471dbad0b1",
+      "canonical_incipit_for_installation": "Domine Deus noster, suppliciter te rogamus",
+      "differences_confirmed": "The bounded secondary2002 reading moves Domine Deus noster before Suppliciter te rogamus; omits the first et immediately before vitia; changes pointing/capitalization and prints the generic conclusion cue Per Christum. where the ancient source has Per Dominum. No new petition or distinctive expression is added. The prior0.82 alignment score counted moved opening words as unmatched.",
+      "source_qualification": "Ancient edition reading directly inspected; modern comparison is bounded to the actual registered secondary2002 reproduction, not authenticated printed2002 fidelity or2008 wording."
+    },
+    {
+      "identity": [
+        "ot-6",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "verdict": "accept-bounded-ancient-source-and-study-english",
+      "relation": "variant",
+      "draft_english_sha256": "4e22b199a5ded204bfb1a12e8706347f1edbf6d945fc78856e0ae6ad894fa727",
+      "ancient_reading_sha256": "c0a9ed1167dd414219d7de6284baf4e437d43cbf7ecaae610c5cb29d1c75f4de",
+      "canonical_incipit_for_installation": "Deus, qui te in rectis",
+      "differences_confirmed": "The bounded secondary2002 reading adds the preposition in before rectis and substitutes et for ac; exsistere/existere is a spelling variant, with pointing/capitalization/accents different. The ancient footnote4 is an apparatus marker after te, not prayer wording. The printed Per Dominum cue agrees.",
+      "source_qualification": "Ancient edition reading directly inspected; modern comparison is bounded to the actual registered secondary2002 reproduction, not authenticated printed2002 fidelity or2008 wording."
+    },
+    {
+      "identity": [
+        "ot-4",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "verdict": "accept-bounded-ancient-source-and-study-english",
+      "relation": "variant",
+      "draft_english_sha256": "dbc95b5310ac4a01094baa7bbcf452b022cf721c352b108deffc54b9a07dbd10",
+      "ancient_reading_sha256": "15b531baa4f8ac697ea59c130e481f199cc2e376c4491360493821a835149045",
+      "canonical_incipit_for_installation": "Redemptionis nostrae munere vegetati",
+      "differences_confirmed": "The bounded secondary2002 reading substitutes auxilio for auxilium and proficiat for perficiat; all other petition words agree after v/u and ae-ligature spelling, accents/capitalization/pointing. The generic conclusion is Per Christum rather than ancient per dominum. Both substantive replacements must remain explicit; the English renders the bounded secondary reading rather than the ancient inflections.",
+      "source_qualification": "Ancient edition reading directly inspected; modern comparison is bounded to the actual registered secondary2002 reproduction, not authenticated printed2002 fidelity or2008 wording."
+    },
+    {
+      "identity": [
+        "ot-25",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "verdict": "accept-bounded-ancient-source-and-study-english",
+      "relation": "verbatim",
+      "draft_english_sha256": "56f787905e2ff9610a67ad8e8048f526bb5621df0a9c8c1ff644bdcbb554192f",
+      "ancient_reading_sha256": "6acf4f97cedf658dc84f12c43b0147123ada945cbcbbe6d378d56768aafac984",
+      "canonical_incipit_for_installation": "Munera, quaesumus, Domine, tuae plebis",
+      "differences_confirmed": "Entire petition words agree. Ancient Dne is explicit Domine abbreviation; adsume/assume and adprehendant/apprehendant are received assimilated spellings of the same words. Ancient adpre-hendant linebreak is mechanical. Pointing/case/accents differ. Ancient literal conclusion cue per. is not silently expanded; bounded secondary2002 prints Per Christum. No distinct modern petition expression.",
+      "source_qualification": "Ancient edition reading directly inspected; modern comparison is bounded to the actual registered secondary2002 reproduction, not authenticated printed2002 fidelity or2008 wording."
+    },
+    {
+      "identity": [
+        "easter-2",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "verdict": "accept-bounded-ancient-source-and-study-english",
+      "relation": "variant",
+      "draft_english_sha256": "5289df7ad2b47c505f57b8b21557b75401b587779d5c523e1a773a8167810b5d",
+      "ancient_reading_sha256": "17956272eb92b561cb16c9483f8cc1737853076399911cd22913ec923d484e06",
+      "canonical_incipit_for_installation": "Suscipe, quaesumus, Domine, plebis tuae",
+      "differences_confirmed": "The bounded secondary2002 reading substitutes oblationes for hostias and places that noun after renatorum instead of before; omits the first et before plebis and the et after ut; brackets et tuorum renatorum as an optional source-owned phrase. All remaining petition words agree after pointing/capitalization/accents. Generic conclusion cue Per Christum. replaces ancient Per Dominum. The draft preserves the source optional phrase as parentheses.",
+      "source_qualification": "Ancient edition reading directly inspected; modern comparison is bounded to the actual registered secondary2002 reproduction, not authenticated printed2002 fidelity or2008 wording."
+    }
+  ],
+  "required_installation_corrections": [
+    "Use canonical full incipits recorded per candidate; the first3 source packets use shorter discovery incipits.",
+    "For Easter2 preserve actual source parentheses around the newly reborn phrase in English; describe the source typography as parentheses, not square brackets, and infer no applicability rule without separate evidence.",
+    "Retain all literal ancient conclusion cues in source transcription and describe their differing modern generic cues; do not label an expansion as source text.",
+    "Register exact independently retained lawful ancient evidence and text-free modern comparison passages; do not retain protected modernPDF/images in Git or public artifact."
+  ],
+  "limits": [
+    "Study English only, project-created, no human or ecclesiastical approval claimed; unavailable approvedEnglish and authentic2008 target state are not cleared.",
+    "This review does not establish wholeMissal completeness, annual appointments, final renderer behavior, generated data freshness, or source release epoch approval."
+  ],
+  "tracked_mutations": []
+}

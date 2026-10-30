@@ -20,6 +20,7 @@ const SOURCE_PROPERS = (process.env.TRIPTYCH_SOURCE_PROPERS ||
   'src/web/data/structure/propers').replace(/^\/+|\/+$/g, '');
 const CYCLE_UNTRANSLATED_DATA = DATA + '-cycle-untranslated';
 const NO_WITNESS_DATA = DATA + '-no-witness';
+const COLLECT_UNTRANSLATED_DATA = DATA + '-collect-untranslated';
 const BAD_SPLIT_DATA = DATA + '-bad-split';
 const captureAt = process.argv.indexOf('--capture-dir');
 const captureDir = captureAt >= 0 ? resolve(process.argv[captureAt + 1]) : null;
@@ -110,16 +111,16 @@ function withCycleUntranslated(body) {
   return refreshCoverage(payload, ROOT);
 }
 
-function withoutWitness(body) {
+function withoutWitness(body, properNames = null,
+  massKey = 's-hilarii-episcopi-confessoris-ecclesiae-doctoris') {
   const payload = JSON.parse(body);
-  const mass = payload.masses.find((row) =>
-    row.key === 's-hilarii-episcopi-confessoris-ecclesiae-doctoris');
+  const mass = payload.masses.find(row => row.key === massKey);
   if (!mass) throw new Error('no-witness fixture target is absent');
   const occurrences = new Map();
   mass.propers.forEach((proper) => {
     proper.form_id = 'main';
     delete proper.form;
-    if (!proper.text) return;
+    if (!proper.text || (properNames && !properNames.includes(proper.name))) return;
     const occurrence = (occurrences.get(proper.name) || 0) + 1;
     occurrences.set(proper.name, occurrence);
     proper.translations = [];
@@ -174,6 +175,9 @@ function server() {
           ? relative.replace('/data-no-witness/', '/data/')
           : relative.replace('/browse-no-witness/', '/browse/');
       }
+      const collectUntranslated = relative.startsWith(COLLECT_UNTRANSLATED_DATA.slice(1) + '/');
+      if (collectUntranslated) relative = relative.replace(
+        COLLECT_UNTRANSLATED_DATA.slice(1) + '/', DATA.slice(1) + '/');
       const badSplit = relative.startsWith(BAD_SPLIT_DATA.slice(1) + '/');
       if (badSplit) relative = relative.replace(BAD_SPLIT_DATA.slice(1) + '/', DATA.slice(1) + '/');
       if (SOURCE_ONLY && /^src\/web\/data\/[^/]+\/chapters\//.test(relative)) {
@@ -191,7 +195,10 @@ function server() {
       if (noWitness && relative.endsWith('/structure/propers/roman-1962.json')) {
         body = Buffer.from(JSON.stringify(withoutWitness(body.toString('utf8'))));
       }
-      if (noWitness && relative.endsWith('/structure/propers/index.json')) {
+      if (collectUntranslated && relative.endsWith('/structure/propers/roman-1962.json')) {
+        body = Buffer.from(JSON.stringify(withoutWitness(body.toString('utf8'), ['Collect'], 'trinity')));
+      }
+      if ((noWitness || collectUntranslated) && relative.endsWith('/structure/propers/index.json')) {
         const index = JSON.parse(body);
         delete index.missals.find(row => row.id === 'roman-1962').read_payload;
         body = Buffer.from(JSON.stringify(index));
@@ -311,7 +318,7 @@ const STATES = Object.freeze({
   fast: hash({ missal: 'postconciliar', type: 'marian', mass: 'visitation-blessed-virgin-mary', bible: 'douay-rheims', orations: 'la' }),
   englishMultiple: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 'commemoratione-omnium-fidelium-defunctorum', form: 'first', bible: 'douay-rheims', orations: 'en' }),
   englishWitness: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 'commemoratione-omnium-fidelium-defunctorum', form: 'first', bible: 'douay-rheims', orations: 'en', 'translation-witness': MULTIPLE_TRANSLATION_WITNESS }),
-  englishOne: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 'comm-s-eusebii-confessoris', bible: 'douay-rheims', orations: 'en' }),
+  englishOne: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 'comm-s-pii-i-papae-martyris', bible: 'douay-rheims', orations: 'en' }),
   englishNone: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 's-hilarii-episcopi-confessoris-ecclesiae-doctoris', bible: 'douay-rheims', orations: 'en' }),
   romanChristmasForms: hash({ missal: 'roman-1962', type: 'christological', mass: 'nativitate-domini-octave', bible: 'douay-rheims', orations: 'la' }),
   romanChristmasNight: hash({ missal: 'roman-1962', type: 'christological', mass: 'nativitate-domini-octave', bible: 'douay-rheims', orations: 'la', form: 'night' }),
@@ -1505,19 +1512,17 @@ async function assertions(cdp, base) {
     await current(cdp, base, route);
     assert.deepEqual(await evaluate(cdp, 'propersReaderDebug.semantic'), projection);
 
-    // The ninth Sunday after Pentecost retains a ledgered English Collect gap.
-    // Keep that unavailable side alongside complete Trinity parity; Lent I
-    // now has independently reviewed historical English.
-    const unavailableRoute = new URLSearchParams(STATES.englishNone.slice(1));
-    unavailableRoute.set('mass', 'pentecost-9');
-    unavailableRoute.set('type', 'seasonal');
+    // The controlled partial fixture preserves the held Latin and other
+    // English prayers, removing only the Collect's English side.
+    const unavailableRoute = new URLSearchParams(STATES.romanTrinity.slice(1));
     unavailableRoute.set('orations', 'la');
     unavailableRoute.set('mode', 'compare');
     unavailableRoute.set('compare', 'oration-language');
     unavailableRoute.set('peer-orations', 'en');
-    await candidate(cdp, base, '#' + unavailableRoute);
+    await candidate(cdp, base, '#' + unavailableRoute, COLLECT_UNTRANSLATED_DATA);
     const unavailable = await evaluate(cdp, `({
       outcome: propersReaderDebug.outcome,
+      error: propersReaderDebug.error,
       state: propersReaderDebug.state,
       semantic: propersReaderDebug.semantic,
       sides: [...document.querySelectorAll('#reader-document [data-semantic-event-id="compare/proper/collect"] .compare-side')]
@@ -1526,7 +1531,7 @@ async function assertions(cdp, base) {
     assert.equal(unavailable.outcome, 'ready', JSON.stringify(unavailable));
     assert.equal(unavailable.state.civilDate, null);
     assert.equal(unavailable.semantic.anchor.correspondingFormulary,
-      'pentecost-9');
+      'trinity');
     assert.deepEqual(unavailable.semantic.units.find(row => row.semanticSlot === 'collect').sides
       .map(row => row.status), ['text-held', 'text-unavailable']);
     assert.deepEqual(unavailable.sides, ['text-held', 'text-unavailable']);
@@ -1807,7 +1812,7 @@ async function assertions(cdp, base) {
     assert.ok(value.ordinary > 40);
     assert.equal(value.properChoice, true);
     assert.equal(value.calendarResult, null);
-    assert.deepEqual(value.choices.sort(), ['creed', 'eucharistic-prayer', 'penitential-act']);
+    assert.deepEqual(value.choices.sort(), ['creed', 'eucharistic-prayer', 'penitential-act', 'salutatio-form']);
     assert.ok(value.unresolved.includes('ritus-initiales/gloria-in-excelsis'));
     assert.ok(value.unresolved.includes('symbolum/symbolum-nicaenum'));
   });
@@ -2149,7 +2154,7 @@ async function assertions(cdp, base) {
     await candidate(cdp, base, STATES.englishOne);
     const state = await evaluate(cdp, 'propersReaderDebug.state');
     assert.equal(state.languages.translationWitness,
-      'edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861');
+      'edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945');
     await click(cdp, '[data-reader-action="browse"]');
     const form = await browseSnapshot(cdp);
     assert.equal(form.witnessHidden, true); assert.equal(form.witnessDisplay, 'none');
@@ -2714,6 +2719,13 @@ if (process.argv.includes('--check-fixtures')) {
   const emptyBodies = emptyResult.events.filter(row => row.selected?.kind === 'composed');
   assert.ok(emptyBodies.length > 0);
   assert.ok(emptyBodies.every(row => row.selected.missing));
+  const partial = withoutWitness(roman, ['Collect'], 'trinity');
+  const partialMass = partial.masses.find(row => row.key === 'trinity');
+  const partialCollect = partialMass.propers.find(row => row.name === 'Collect');
+  assert.equal(T.orationFor(partialCollect, 'la').missing, false);
+  assert.equal(T.orationFor(partialCollect, 'en').missing, true);
+  assert.ok(partialMass.propers.some(row => row.name !== 'Collect' &&
+    !T.orationFor(row, 'en').missing));
   const cycles = withCycleUntranslated(await read('postconciliar'));
   const mass = cycles.masses.find(row => row.key === 'transfiguration-lord');
   const proper = mass.propers[0];

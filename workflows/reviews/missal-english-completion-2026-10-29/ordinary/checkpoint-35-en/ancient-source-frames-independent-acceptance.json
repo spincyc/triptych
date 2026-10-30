@@ -1,0 +1,211 @@
+{
+  "state": "accepted",
+  "candidate_sha256": "167adbfd5fc8b1d3c3ce58cad858ae5c0ee124c19e5707850f1ee20ff9c48d74",
+  "predecessor_review": "review-d161-changes-requested.json",
+  "predecessor_candidate_sha256": "d161678c3e38c115bb642d8d4eb5437ffe17787581c708a52b8385dddc7536ba",
+  "initial_candidate_sha256": "56e5cb4da7e9b17612dc2e263e8c25f26da433d322961bbf9e32d13a4bcd81a3",
+  "disposition": "Accept all finite source bodies, all five new study English renderings, eight eligible source/turn blocks and the proposed source-proved child boundaries. Bishop wording is accepted as source-only, explicitly ineligible for a general reader choice.",
+  "required_corrections": [
+    {
+      "id": "beati-latin-default-qualification",
+      "status": "resolved",
+      "evidence": "Latin reading_note now explicitly states nuptiarum omission; English reading_note already states it."
+    },
+    {
+      "id": "body-specific-bishop-caution",
+      "status": "resolved",
+      "evidence": "Three nonbishop artifact notes carry no bishop caution; the bishop record explicitly identifies itself as the bishop-only source candidate."
+    }
+  ],
+  "successor_conservation": {
+    "all_source_payloads_unchanged": true,
+    "all_English_unchanged": true,
+    "all_source_recipes_and_parent_pins_unchanged": true,
+    "all_turns_and_source_boundaries_unchanged": true,
+    "changed_surface": "Four artifact notes and one Latin reading_note only, plus dependent pins."
+  },
+  "source_review": {
+    "exact_postimages": 21,
+    "exact_parent_payloads": 9,
+    "replayed_recipes": 6,
+    "independent_source_images": [
+      "Mame1922 artifact84, printedlxxiv, RitusservandusX.6"
+    ],
+    "independent_target_images": [
+      "secondarydigital2002 artifact303,nn1–2",
+      "secondarydigital2002 artifact368,n132"
+    ],
+    "retained_Mame_page_pixel_parity": true,
+    "historical_Cummiskey_parent_image_review": "Inherited exact existing registered source transcription review; no new scan examination or permission for its unresolved scan wrapper asserted.",
+    "biblical_boundaries": "2Cor13:13 source prefix omits complete finalAmen;1Cor1:3 whole;John20:19 complete direct-speech sentence only;Apoc19:9 exactblessing spans with explicit nuptiarum deletion and source semicolon retained.",
+    "Ecce": "Mame source independently supplies both ecce clauses and plural peccata; John1:29 singular peccatum is not used."
+  },
+  "English_review": {
+    "new_study_rows": 5,
+    "semantics": "Faithful and complete within the finite selected source fragments, with no added conclusion/Amen, narrative, wedding qualification or modern approved-English source.",
+    "historical_rows": "Cummiskey source fragments and Domine whole row remain verbatim; old threefold rubric is excluded rather than expanded or imported."
+  },
+  "model_review": {
+    "eligible_source_blocks": 8,
+    "eligible_language_joins": 16,
+    "bishop_source_only_blocks": 1,
+    "bishop_role_hold": true,
+    "source_turn_parser_replayed": true,
+    "printed_P_R": "source-only printed_marker; no invented dialogue_role",
+    "source_side_join_scope": "Each child owns its complete selected source body and exact row partition; no entire coarse parent is claimed held by these fragments."
+  },
+  "source_graph_validation": {
+    "command": "tools/source-library --root .scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames/validation-root validate",
+    "status": 0,
+    "result": "source-library valid: artifact=10313 corpus=5 edition=13724 passage=9414 segment=10185 work=10745 bindings=0",
+    "qualification": "Isolated source graph; empty publication root/bindings0. This is not a full release/publication gate."
+  },
+  "file_pins": {
+    "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/english-completion-20261030-ordinary-ancient-frames-en/text.tsv": {
+      "sha256": "83ebd927f2999d55921a871bfecd79eee13fab46718279ef05d1a2b16f1c927d",
+      "bytes": 807
+    },
+    "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/english-completion-20261030-ordinary-ancient-frames-en/artifact.toml": {
+      "sha256": "21809121e9f28bb4ea5734c01d8ec1f7b509112e921544d5ff8ac7342f8bd915",
+      "bytes": 2468
+    },
+    "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/english-completion-20261030-ordinary-ancient-frames-la/text.tsv": {
+      "sha256": "84ee5ca584b27a273b339fc13058991161636c487c4b4e06a596c1b7b4ff7181",
+      "bytes": 782
+    },
+    "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/english-completion-20261030-ordinary-ancient-frames-la/artifact.toml": {
+      "sha256": "cc9c34ca0bf54b512b6d6b7e8475225a91931c31337ea0192e3e1c18c9e36dc9",
+      "bytes": 2468
+    },
+    "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-greeting-trinitarian-la/text.tsv": {
+      "sha256": "1b064cae8a965c287212b5c385871a6d384985d7d7191b0260030e1c721d8bc9",
+      "bytes": 313
+    },
+    "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-greeting-trinitarian-la/artifact.toml": {
+      "sha256": "5b2e6398cf0a04a92e4cada06573e8bfea3cad9274f3d7a9ed1eb75014d26070",
+      "bytes": 2363
+    },
+    "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-greeting-grace-peace-la/text.tsv": {
+      "sha256": "011831ec8aef16b5c47f5e7df0a3ed383e33e317e82dbe0185f21c6d1afae471",
+      "bytes": 193
+    },
+    "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-greeting-grace-peace-la/artifact.toml": {
+      "sha256": "bf51cb8dfa87179f4acbb3240aaede222682e9d429fc075ee3e2e12502866604",
+      "bytes": 2283
+    },
+    "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-greeting-bishop-la/text.tsv": {
+      "sha256": "f0518b2c6e3de4f9c67c9da4cc60b52b395dae36bd0d6c8cdd04054ec645c24d",
+      "bytes": 189
+    },
+    "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-greeting-bishop-la/artifact.toml": {
+      "sha256": "143ba187a3914f39e3c07d96f9b8344433bbd56b0aa773aafb66122e4cd31331",
+      "bytes": 2455
+    },
+    "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-beati-ad-cenam-la/text.tsv": {
+      "sha256": "74cc53dfe96933c28e3e87f004eb40592e468efc586fbf6b770363369fd9a0c0",
+      "bytes": 378
+    },
+    "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-beati-ad-cenam-la/artifact.toml": {
+      "sha256": "9ea277810ce7e1aef0150a8e779a23cced22b19cdbdc4d2aed9ee505dd93cb3d",
+      "bytes": 2494
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-ecce-page/source.pdf": {
+      "sha256": "fd551fe7b0ba168630bf04302df888708f58709a9368746fde8bacfff9a388e1",
+      "bytes": 71627
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-ecce-page/artifact.toml": {
+      "sha256": "4d04cc79752317f916386ec0ac685d822e182d5808dc3dececc43dae92da4040",
+      "bytes": 2180
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-ecce-la/text.tsv": {
+      "sha256": "a3cab73275a00e1be80c8c46642c6a746de1bef11c0c56d6b85c04a20c1cbb1b",
+      "bytes": 259
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-ecce-la/artifact.toml": {
+      "sha256": "08590e622b94f70e96036a03c64aca86a960a00be9a94b2ab56afb7ff2949a7c",
+      "bytes": 2344
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261030-ordinary-ecce.toml": {
+      "sha256": "0490de7bfee31f261e006cfcbbdded2ffbfc1be72990791eb03dca8686d1af42",
+      "bytes": 1190
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/work.toml": {
+      "sha256": "e42d2084d04d734104da56410252bc4c4105ba00a9af7b376e082d45b92ba378",
+      "bytes": 780
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/edition.toml": {
+      "sha256": "ebadd5197a68f833a4b1e81395291f37bac5f40c1d76a150303b55dde0312b12",
+      "bytes": 835
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/artifacts/ancient-frames-study-en/text.tsv": {
+      "sha256": "f21219d72d3f0fb36b021f6ad1875d22f2c35d2af77f44e26f77baf750490037",
+      "bytes": 2063
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/artifacts/ancient-frames-study-en/artifact.toml": {
+      "sha256": "1ad4d5545d325f64d25dbe90f0495a03efb059648384114259420be1a3f4ae5f",
+      "bytes": 2554
+    }
+  },
+  "evidence_receipts": [
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/mame84-0084.png",
+      "sha256": "b8d0ee9d09c8a15b479faf3473b7cc956e42594e801d6fd798fdcb4b09029286"
+    },
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/mechanical-checks.json",
+      "sha256": "dd00557b8c8c3fe61ff38c05f74eb0455cc1042761044ad4e0582fe89665a5bb"
+    },
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/render-mame84.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/render-retained.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/render-target303.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/render-target368.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/retained-mame84-1.png",
+      "sha256": "b8d0ee9d09c8a15b479faf3473b7cc956e42594e801d6fd798fdcb4b09029286"
+    },
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/review-d161-changes-requested.json",
+      "sha256": "795d556b614d0b89afec72b61299eaee2b5294d9f437c0bffb6f2fb19162dfd7"
+    },
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/source-library-validation-successor.log",
+      "sha256": "7dc39c3905bcb407a4f47df3a4ea438cac4594835d61d2e22e62a04edd3bb17a"
+    },
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/source-library-validation.log",
+      "sha256": "7dc39c3905bcb407a4f47df3a4ea438cac4594835d61d2e22e62a04edd3bb17a"
+    },
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/source-side-selection.json",
+      "sha256": "8e7a582f3cc62126be7dfd3f4a4053fb1575b39cf3115f80ac0291cba6e07b6a"
+    },
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/target303-303.png",
+      "sha256": "27ca2e22803371d0242afc8ccf73a530db138a2d559f2f188ff3f40c715bf555"
+    },
+    {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/ancient-frames-review/target368-368.png",
+      "sha256": "7713403d3d70be269639a32d80aa3571f93d047566904c84474210ce89d2ea5d"
+    }
+  ],
+  "integration_limits": [
+    "No authenticated whole2008 collation, approvedEnglish clearance or whole-coarse-parent completion accepted.",
+    "Coordinator must preserve original parent semantic anchors, map them to actual children, carry numbering and truthful nontext absences, and retain the bishop source hold.",
+    "Actual inventory witness declarations, conditions/choices, appointment/seating anchors and renderer/order tests require coordinator review after installation.",
+    "Do not install Cummiskey scan extracts or any protected target/approvedEnglish bytes.",
+    "Root owns publication-surface bindings and release/generation adoption."
+  ],
+  "tracked_writes": []
+}

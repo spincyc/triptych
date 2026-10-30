@@ -1,0 +1,184 @@
+{
+  "record_type": "independent-cold-source-review",
+  "reviewed_on": "2026-10-29",
+  "reviewer": "/root/postconciliar_english_completion/pc_source_review",
+  "candidate_packet": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/all-acclamations/candidate-five-verses.json",
+  "candidate_packet_sha256": "d03165ec428b95eead683843886b053f2eabaa185f3b7a1a2cd3b625fcead2bd",
+  "supersedes_queue": "candidate-three-verses.json was a preliminary3-slot queue; this review covers all5 entries in candidate-five-verses.json together.",
+  "disposition": "accept-all-five-source-qualified-historical-English-verse-uses",
+  "distinct_english_body_count": 3,
+  "method": "Downloaded whole OLM source PDF independently from its registered source URL and matched21,487,058-byte artifact SHA. Recomputed whole Lasance PDF SHA. Independently rendered and opened7 complete source/comparison pages at2200px using pdftoppm. Compared all complete verse words and literal historical English punctuation; checked adjacent rubric, Psalm verse, Alleluia wrapper and Sequence boundaries. Also opened sibling prepared images; OCR not used as text authority.",
+  "whole_artifacts": [
+    {
+      "path": ".scratch/postconciliar-english-completion-20261029/cold-review/acclamations/olm1981.pdf",
+      "byte_size": 21487058,
+      "sha256": "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d"
+    },
+    {
+      "path": ".scratch/resume-next-english-temporal/sealed-v2/source/lasance1945.pdf",
+      "byte_size": 75268976,
+      "sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70"
+    }
+  ],
+  "independent_raster_sha256": {
+    "lasance-146.png": "3b32f09d8f1871873a2f2a00f85b4457f745be75128c0edd90f3a2c8039b1d6e",
+    "lasance-553.png": "870041ce34bdfd4ed0d89371fc2c4952f9ec93c747a1a5ddfdfbb6aee22f05bc",
+    "lasance-597.png": "e5809ff5078b4fe21aa7132702aa22b243daad8b16f56965bbc7c1c320a2f115",
+    "olm-202.png": "3f6434ea3c80c2271ca4f4ae925e309297f9ab6e77bd9011092fa843ed8993a7",
+    "olm-66.png": "fb780e57660425594d32232ea9d0f1bbfa8396540bf66006df4dca214fa72137",
+    "olm-88.png": "c8c96e9bf9016f90521b2d9f5f31772f606ac0fd14192e0939351fb1f67be530",
+    "olm-95.png": "3b85b7e3a0dc5ea808e3fe3c15770208e0fbf6a040c2763bab4e64ef61bf07a9"
+  },
+  "reviews": [
+    {
+      "target": {
+        "mass": "pentecost",
+        "form_id": "vigil",
+        "proper": "Gospel Acclamation",
+        "cycle": "all",
+        "occurrence": 1
+      },
+      "disposition": "accept",
+      "english": "Come, O Holy Spirit, fill the hearts of Thy faithful: and kindle in them the fire of Thy love.",
+      "english_sha256": "885a5136d1f867d0691a9a096e9af7e05580d16e14ed9049f8a0fe017e6f511c",
+      "source_pdf_pages": [
+        597
+      ],
+      "source_printed_pages": [
+        "599"
+      ],
+      "source_complete_latin_verse": "Veni, Sancte Spiritus, reple tuorum corda fidelium: et tui amoris in eis ignem accende.",
+      "comparison_locus": "OLM1981 n62 fullverse; n63 explicitly refers to n62",
+      "comparison_pages": [
+        95
+      ],
+      "retained_word_count": 14,
+      "whole_body_lexical_comparison": "Every Latin word agrees, in order, after declared stress/punctuation/display normalization; no omission, addition or lexical substitution."
+    },
+    {
+      "target": {
+        "mass": "pentecost",
+        "form_id": "day",
+        "proper": "Gospel Acclamation",
+        "cycle": "all",
+        "occurrence": 1
+      },
+      "disposition": "accept",
+      "english": "Come, O Holy Spirit, fill the hearts of Thy faithful: and kindle in them the fire of Thy love.",
+      "english_sha256": "885a5136d1f867d0691a9a096e9af7e05580d16e14ed9049f8a0fe017e6f511c",
+      "source_pdf_pages": [
+        597
+      ],
+      "source_printed_pages": [
+        "599"
+      ],
+      "source_complete_latin_verse": "Veni, Sancte Spiritus, reple tuorum corda fidelium: et tui amoris in eis ignem accende.",
+      "comparison_locus": "OLM1981 n62 fullverse; n63 explicitly refers to n62",
+      "comparison_pages": [
+        95
+      ],
+      "retained_word_count": 14,
+      "whole_body_lexical_comparison": "Every Latin word agrees, in order, after declared stress/punctuation/display normalization; no omission, addition or lexical substitution."
+    },
+    {
+      "target": {
+        "mass": "nativity",
+        "form_id": "day",
+        "proper": "Gospel Acclamation",
+        "cycle": "all",
+        "occurrence": 1
+      },
+      "disposition": "accept",
+      "english": "A hallowed day hath dawned for us: come, ye Gentiles, and adore the Lord; for this day a great light hath descended upon the earth.",
+      "english_sha256": "60fff024d7b543e76876749940e2e1c9419ff008e6be17887f1bb7ee828d6ad4",
+      "source_pdf_pages": [
+        146
+      ],
+      "source_printed_pages": [
+        "145"
+      ],
+      "source_complete_latin_verse": "Dies sanctificatus illuxit nobis: venite, gentes, et adorate Dominum: quia hodie descendit lux magna super terram.",
+      "comparison_locus": "OLM1981 n16 Alleluia verse",
+      "comparison_pages": [
+        66
+      ],
+      "retained_word_count": 16,
+      "whole_body_lexical_comparison": "Every Latin word agrees, in order, after declared stress/punctuation/display normalization; no omission, addition or lexical substitution."
+    },
+    {
+      "target": {
+        "mass": "easter-3",
+        "form_id": "main",
+        "proper": "Gospel Acclamation",
+        "cycle": "C",
+        "occurrence": 1
+      },
+      "disposition": "accept",
+      "english": "Christ is risen, Who created all things, and Who has had pity upon mankind.",
+      "english_sha256": "388998c78ec3888ea0fb40a8b18d432c5a84fced0534245d734d379883c29690",
+      "source_pdf_pages": [
+        553
+      ],
+      "source_printed_pages": [
+        "555"
+      ],
+      "source_complete_latin_verse": "Surrexit Christus, qui creavit omnia: et misertus est humano generi.",
+      "comparison_locus": "OLM1981n48YearC",
+      "comparison_pages": [
+        88
+      ],
+      "retained_word_count": 10,
+      "whole_body_lexical_comparison": "Every Latin word agrees, in order, after declared stress/punctuation/display normalization; no omission, addition or lexical substitution."
+    },
+    {
+      "target": {
+        "mass": "easter-2-saturday",
+        "form_id": "main",
+        "proper": "Gospel Acclamation",
+        "cycle": "all",
+        "occurrence": 1
+      },
+      "disposition": "accept",
+      "english": "Christ is risen, Who created all things, and Who has had pity upon mankind.",
+      "english_sha256": "388998c78ec3888ea0fb40a8b18d432c5a84fced0534245d734d379883c29690",
+      "source_pdf_pages": [
+        553
+      ],
+      "source_printed_pages": [
+        "555"
+      ],
+      "source_complete_latin_verse": "Surrexit Christus, qui creavit omnia: et misertus est humano generi.",
+      "comparison_locus": "OLM1981n272",
+      "comparison_pages": [
+        202
+      ],
+      "retained_word_count": 10,
+      "whole_body_lexical_comparison": "Every Latin word agrees, in order, after declared stress/punctuation/display normalization; no omission, addition or lexical substitution."
+    }
+  ],
+  "source_local_boundary_findings": [
+    "Pentecost Lasance AP597/printed599: the selected whole second verse begins Come after a separately parenthesized here all kneel direction, and ends Thy love. before Sequence. The first Psalm103 verse, its Alleluia framing, second versicle mark and kneeling rubric are excluded apparatus/other verse. The selected unit is not the Veni Sancte Spiritus Sequence immediately below.",
+    "Nativity Lasance AP146/printed145: whole verse starts A hallowed day after initial Alleluia, alleluia./versicle and ends earth. before a separately printed final Alleluia. Fresh verse-only quotation is exactly bounded; no altered older whole-chanted-unit payload is being passed as intact.",
+    "Surrexit Lasance AP553/printed555: whole verse starts Christ is risen after Alleluia, alleluia./versicle; ends mankind. before separate Sequence referral. The source has no further final Alleluia to supply. Historical occurrence is Thursday in Easter Week, not asserted as any modern slot appointment."
+  ],
+  "exact_pointing_and_display_findings": [
+    "Pentecost old Latin colon after fidelium is OLM semicolon; stress marks and line-break hyphenation differ. All14 words match. Literal English retains colon after faithful and capital Thy exactly.",
+    "Nativity Latin verse pointing agrees in the two colons and final period; old Latin stress marks and line-break hyphenation are source typography. All16 words match. Literal English retains colon after us and semicolon after Lord, and initial A hallowed day.",
+    "Surrexit old Latin comma after Christus and colon after omnia differ from n48C comma after Christus with no mark after omnia, and n272 no comma after Christus with comma after omnia. Old stress marks/line-break hyphenation differ. All10 words match. Literal English retains risen, Who, things, and Who and final mankind. exactly."
+  ],
+  "appointment_findings": [
+    "Actual OLM AP95/printed41 n62 names Pentecost vigil and prints complete Veni verse. n63 on same page names Pentecost day and says Ut supra, n.62 for Alleluia, an explicit source-local referral.",
+    "Actual OLM AP66/printed12 n16 names Nativity Ad Missam in die and prints complete Dies sanctificatus verse.",
+    "Actual OLM AP88/printed34 n48 C prints complete Surrexit verse for YearC; do not extend to A/B, which have different scriptural acclamations.",
+    "Actual OLM AP202/printed148 n272 Sabbato prints complete Surrexit verse in the second Easter week course. Target already explicitly records this source-local appointment; this review supplies the new independent historical-English whole-verse evidence."
+  ],
+  "rights_and_identity": "Reuse the established Lasance revised1945 ordinary-source United States nonrenewal finding for these fully image-checked pre1955 seasonal verse bodies; whole later-printing scan/lettered inserts remain outside published artifact boundary. Literal human historical English must retain public-domain rights and its actual Lasance source attribution, never project-created authorship. OLM1981 whole scan remains restricted scratch-only; modern comparisons/appointments do not establish approved English or authenticated2008 correspondence.",
+  "integration_prerequisites": [
+    "Create fresh exact verse-body derived source artifacts/publication and verification passages for all3 distinct source bodies; bind all5 exact recipient identities including easter3 cycleC only.",
+    "Keep antecedent/historical qualification explicit and separate the source-owned verse body from any common acclamation wrapper supplied elsewhere.",
+    "Preserve old10-22easter2Saturday absence/refusal as a dated prior finding but make this10-29whole-unit source successor clear; otherwise the target note saying no English whole-unit exemplar held will appear to contradict the new source.",
+    "Final source graph, finite rights adoption, sidecar binding, generation and user-surface validation remain parent/root responsibilities."
+  ],
+  "findings_requiring_english_changes": [],
+  "tracked_mutations": "none"
+}

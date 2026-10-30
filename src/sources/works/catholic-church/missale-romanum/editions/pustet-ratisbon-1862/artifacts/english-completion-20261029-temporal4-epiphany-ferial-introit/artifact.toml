@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-temporal4-epiphany-ferial-introit"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_type = "image-checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Complete bounded Latin of the identified 1862 public-domain printing; source wording is excluded from project licensing. This faithful transcription adds no new liturgical words."
+rights_jurisdiction = "United States"
+provenance = "2026-10-29 direct page-image reading, including complete body extent. OCR only located candidates; it supplied no textual authority."
+retrieved = "2026-10-29"
+sha256 = "2c3d02a567f2dccb58accebea18e01648e543c6f01c73394d9f19177a53a51d0"
+byte_size = 202
+path = "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/english-completion-20261029-temporal4-epiphany-ferial-introit/latin.txt"
+derived_from = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-temporal4-pages"
+transformation = "Join physical wraps and break hyphens; expand ligatures; remove stress accents; normalize decorative initial capitalization and versicle glyph to V.; omit printed heading/citation labels while retaining the complete body and its actual verse/cue extent. Keep historical spelling and pointing."
+indexable = true
+encoding = "utf-8"
+notes = "Extract page 1 corresponds to original PDF page 121. No neighboring rubrics, orations or other chant bodies enter this derivative."

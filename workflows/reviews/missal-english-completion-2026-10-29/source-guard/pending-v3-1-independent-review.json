@@ -1,0 +1,54 @@
+{
+  "candidate": {
+    "contract_sha256": "04b8448f2bc13e5e79bc2593b9be10c624ef38f7a30bcfebb49392815285e9eb",
+    "manifest_sha256": "a842b22712bce139398aa6e5b86cfd662cfb14ab46de510e5c241265440324fd",
+    "operator_packet_sha256": "88bab2fb63337cb5e33e8c7af1007d0fd4cb6d0fd509e2677578017067e86917",
+    "pending_fixture_sha256": "45a367707a9b6d36328235f09821bf467d8b4fee205917840ebb7cf76bce753c",
+    "proof_sha256": "1667f10f0a0bf951e02db251f3954a429aa857c1becb3cce21224004a547a718"
+  },
+  "canonical_mutations": "This new text-free review JSON only.",
+  "compiler_review": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/compiler-v3-independent-review.json",
+    "sha256": "574467f95411fdcb96bbc11e93edb3aaad71e54009d439fbee28d9a8cb0d92a3"
+  },
+  "completed_mechanical_review": {
+    "checks_passed": 23319,
+    "findings": [],
+    "path": ".scratch/checkpoint-independent-review-20261030/pending-v3-1-mechanical-result.json",
+    "sha256": "631a020d051f74e0bedf8d54f084ecea5127437e1ef92c83e110ca03b3315d5b"
+  },
+  "decision": "ACCEPT_EXACT_PENDING_CANDIDATE_FOR_ROOT_ADOPTION",
+  "findings": [],
+  "independent": true,
+  "limits": [
+    "No source-body publication permission, source-rights extension, human review, liturgical approval, whole-English completion, annual textual completeness, deployment or installation is granted.",
+    "Reported integration gates are separate from this independent candidate verdict; this review reuses its completed durable checks without repeating them."
+  ],
+  "remaining_required_before_installation": [
+    "Root must separately adopt the exact candidate and allocate the fresh acceptance receipt.",
+    "Installation and affected consumer verification remain root-owned operations."
+  ],
+  "review_kind": "independent-AI-code-hash-and-conservation-review",
+  "reviewed_on": "2026-10-30",
+  "schema": "triptych-independent-bounded-pending-source-candidate-review/v1",
+  "source_qualification_scope": "The exact source epoch includes separately accepted source cohorts, finite authority and preserved typed qualifications. This review verifies their candidate bindings and conservation; it does not repeat source-image audits or establish new body rights.",
+  "verified_boundaries": {
+    "all_prior_positive_and_refusal_complements_remain_governed_by_reviewed_compiler": true,
+    "compiler_publication_permission_claimed": false,
+    "compiler_source_acceptance_claimed": false,
+    "current_English_positive_and_absence_dictionaries_match_fixture": true,
+    "direct_proof_targets_exact": 25,
+    "dropped_parent_paths": 0,
+    "entire_live_source_hashes_match_manifest": true,
+    "exact_delta_files": 1464,
+    "exact_explicit_extras": 713,
+    "fresh_acceptance_receipt_absent_at_completed_review": true,
+    "historical_fields_exact": 12,
+    "live_fixtures_remain_parent_bytes_at_completed_review": true,
+    "original_raw_inverse_objects_exact": 17,
+    "retained_parent_paths": 5615,
+    "single_prior_positive_correction_is_exact_declared_Palm_exception": true,
+    "source_epoch_paths": 7068,
+    "strict_helper_unchanged": true
+  }
+}

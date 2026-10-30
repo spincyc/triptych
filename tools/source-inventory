@@ -35,13 +35,13 @@ EXAMPLES = {
         Example(
             "tools/source-inventory check",
             (
-                "source-inventory valid: publications=150 source_surface_files=2747 owners=12",
+                "source-inventory valid: publications=152 source_surface_files=2885 owners=12",
             ),
         ),
         Example(
             "tools/source-inventory --root . check",
             (
-                "source-inventory valid: publications=150 source_surface_files=2747 owners=12",
+                "source-inventory valid: publications=152 source_surface_files=2885 owners=12",
             ),
             "--root belongs before the verb: it selects the repository the inventory describes",
         ),
@@ -78,7 +78,7 @@ EXAMPLES = {
         Example(
             "tools/source-inventory check",
             (
-                "source-inventory valid: publications=150 source_surface_files=2747 owners=12",
+                "source-inventory valid: publications=152 source_surface_files=2885 owners=12",
             ),
             "read-only first: `check` reports the inventory `classify` reads",
         ),
@@ -93,7 +93,7 @@ EXAMPLES = {
         Example(
             "tools/source-inventory check",
             (
-                "source-inventory valid: publications=150 source_surface_files=2747 owners=12",
+                "source-inventory valid: publications=152 source_surface_files=2885 owners=12",
             ),
             "read-only first: `check` says whether a refresh would change anything",
         ),

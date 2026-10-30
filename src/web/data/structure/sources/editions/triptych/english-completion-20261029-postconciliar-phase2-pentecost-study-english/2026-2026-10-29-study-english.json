@@ -1,0 +1,68 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "project-study-translation",
+   "byte_size": 400,
+   "edition_owned": true,
+   "id": "artifact.triptych.english-completion-20261029-postconciliar-phase2-pentecost-study-english.2026-10-29.study-english",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "notes": "One header and one recipient row. english_json is a JSON string preserving the logical newlines. Original AI-authored Triptych study English, independently source/English reviewed; no human or liturgical approval. Not for recitation. No received modern English source was used.",
+   "page_count": null,
+   "retrieved": "2026-10-29",
+   "rights": "project-created",
+   "rights_basis": "New Triptych study English under CC BY 4.0 from the independently public-domain 1862 petition and the separately witnessed old Per Christum Dominum nostrum formula/response. No exclusive right is claimed in the old Latin. Original AI-authored Triptych study English, independently source/English reviewed; no human or liturgical approval. Not for recitation. No received modern English source was used.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": "Project study English; no liturgical approval",
+  "date": "2026-10-29",
+  "editors": [
+   "Triptych contributors"
+  ],
+  "id": "edition.triptych.english-completion-20261029-postconciliar-phase2-pentecost-study-english.2026-10-29",
+  "jurisdiction": "United States",
+  "language": "en",
+  "publication": "Triptych project study translation",
+  "title": "Extended Pentecost Vigil prayer, Triptych study English, 29 October 2026",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.triptych.english-completion-20261029-postconciliar-phase2-pentecost-study-english.2026-10-29.study-english",
+   "artifact_type": "project-study-translation",
+   "id": "passage.triptych.english-completion-20261029-postconciliar-phase2-pentecost-study-english.2026-10-29.domine-deus-virtutum",
+   "locus": "pentecost/extended-vigil/prayer-after-third-reading/occurrence1/study-english",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "project-created",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-29",
+   "withheld": "not-prose"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Triptych contributors",
+  "category": "study-translation",
+  "description": "Original AI-authored Triptych study English, independently source/English reviewed; no human or liturgical approval. Not for recitation. No received modern English source was used.",
+  "id": "work.triptych.english-completion-20261029-postconciliar-phase2-pentecost-study-english",
+  "languages": [
+   "en"
+  ],
+  "title": "Study English of Domine Deus virtutum in the extended Pentecost Vigil"
+ }
+}

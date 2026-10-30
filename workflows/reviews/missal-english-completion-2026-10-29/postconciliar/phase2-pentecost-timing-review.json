@@ -1,0 +1,53 @@
+{
+  "schema": "independent-extended-vigil-timing-successor/v1",
+  "reviewed_on": "2026-10-29",
+  "reviewer": "pc_nativity_review",
+  "decision": "SUPPORTED celebrated.when=evening-before for the independently identified extended form of the Pentecost Vigil",
+  "frozen_base_preserved": {
+    "manifest_sha256": "8833ec8ad4393da6925babff4ecc68f76a4bde38d9777ce2a142304b16972c33",
+    "source_shape_review_sha256": "54bf2fb4129a47643453afdec096093f348e90cfa77e5e525868ecf73bda9366"
+  },
+  "source_argument": [
+    {
+      "source": "Official Notitiae2008AP62/printed380",
+      "sha256": "74c8d1740284984d0f4d64b2223edf805dadfa55aec8a92f8cfba9ab901eca0f",
+      "fact": "The actual title AdMissaminVigiliaPentecostes(p443), and n1 same Missa vigiliae in forma protracta, expressly identify this as the extended form of the named Pentecost VigilMass, not an unrelated Sunday-day form. This primary source also points both opening branches to the same Missa in Vigilia atp443."
+    },
+    {
+      "source": "Normae universales n11, registered secondary2002AP65",
+      "sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "fact": "Fresh complete page directly read: proper vigil Masses supplied for some solemnities are to be used on the evening of the preceding day if Mass is celebrated at evening hours. Rule concerns proper vigil-Mass timing; this receipt does not treat all anticipatory Masses as proper vigils.",
+      "registered_passage": "passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002.complete-text"
+    },
+    {
+      "source": "Same named Pentecost Vigil, registered secondary2002AP265",
+      "sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "fact": "Directly read in mapping round: actual rubric appoints this Mass Saturday evening, before or after FirstVespers of PentecostSunday. It corroborates the general rule in the source-local exact named Mass; no other Vigilform field was merely copied."
+    }
+  ],
+  "finite_inference": "The official extended module explicitly belongs to the same proper Pentecost VigilMass; applying the independently read general proper-vigil timing rule therefore supports evening-before. This is a reasoned timing inference from source identity and a stated rule, not an inferred ceremony or completeform identity.",
+  "boundaries": [
+    "No Vespers or usual-opening branch selected.",
+    "No psalm-to-silence branch, duration,past-midnight ending or optional ceremony inferred.",
+    "No complete2008body/English, normalOrdinaryframe or wholeVigilcompletion promotion.",
+    "The prior frozen packet remains intact; add only an independently sourced celebrated field as a separate successor."
+  ],
+  "proposed_field": {
+    "path": ".scratch/postconciliar-english-completion-20261029/nativity-review/pentecost-timing-round/proposed-celebrated.yaml",
+    "sha256": "d3a8807c06f15814d9c42ac53709758c4a62ad09c1616b339ef396442a604ae4",
+    "contents": {
+      "celebrated": {
+        "when": "evening-before",
+        "locus": "Official 2008 Supplementum, Notitiae nos.503-504, artifact p.62 / printed p.380, passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.pentecost-extended-vigil-module-20261029: the title names Ad Missam in Vigilia Pentecostes(p.443) and n.1 explicitly describes this same vigil Mass in its extended form. Normae universales de anno liturgico et de calendario n.11, passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002.complete-text, registered secondary2002 artifact0b458944, p.65: a proper vigil Mass is used on the preceding day's evening when celebrated in evening hours. The same named Pentecost Vigil's secondary source-local rubric at p.265 explicitly names Saturday evening, before or after Sunday First Vespers. This records timing only, without selecting an opening, Vespers, silence or other ceremony branch, and without authenticating complete2008 prayer bodies."
+      }
+    }
+  },
+  "validation": {
+    "fresh_normae_page_rendered_and_read": 65,
+    "render_check": ".scratch/postconciliar-english-completion-20261029/nativity-review/pentecost-timing-round/render-check.json",
+    "render_check_sha256": "8c4c3a48163b8244a52fb420630dfbd794d4d3ea0129160dbdf522fd1cc3dc59",
+    "check_form_celebrated_problems": [],
+    "field_shape": "Exactly when and locus; when is existing evening-before vocabulary.",
+    "tracked_mutations": "none"
+  }
+}

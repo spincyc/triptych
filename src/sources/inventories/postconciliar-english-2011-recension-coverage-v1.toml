@@ -3,7 +3,7 @@ id = "roman-missal-en-us-2011-propers"
 recension_id = "roman-missal-en-us-2011"
 calendar = "postconciliar"
 language = "en-US"
-as_of = "2026-10-26"
+as_of = "2026-10-30"
 status = "incomplete"
 record_kind = "finding-aid"
 overlay_ref = "src/sources/inventories/postconciliar-proper-translations-v1.toml"
@@ -80,6 +80,32 @@ source_record_id = "lasance-1945"
 entry_witness = "lasance-1945"
 source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
 translation_source_ids = ["edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"]
+identity_relation = "historical-antecedent-english"
+exemplar_tier = "historical"
+verified_identity = false
+active_entries = true
+text_held = true
+currently_servable = true
+corpus_disposition = "not-2011-recension"
+
+[[source_classes]]
+source_record_id = "bute-1908-breviary"
+entry_witness = "bute-1908-breviary"
+source_id = "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+translation_source_ids = ["edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"]
+identity_relation = "historical-antecedent-english"
+exemplar_tier = "historical"
+verified_identity = false
+active_entries = true
+text_held = true
+currently_servable = true
+corpus_disposition = "not-2011-recension"
+
+[[source_classes]]
+source_record_id = "benziger-little-office-1915"
+entry_witness = "benziger-little-office-1915"
+source_id = "edition.catholic-church.little-office-and-office-of-the-dead.benziger-latin-english-1915"
+translation_source_ids = ["edition.catholic-church.little-office-and-office-of-the-dead.benziger-latin-english-1915"]
 identity_relation = "historical-antecedent-english"
 exemplar_tier = "historical"
 verified_identity = false

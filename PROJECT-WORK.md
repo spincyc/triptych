@@ -7,6 +7,136 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-10-30.
 
+## Missal reader English completion, 2026-10-29
+
+<!-- promised-deliverable: missal-reader-english-completion-2026-10-29 -->
+
+**In progress.** The maintainer requests completion of the missal reader,
+English translations of all its texts, and maximum useful parallel agent work.
+This extends the existing annual-content promise; it does not replace its
+appointment, wording, source, review or annual-render requirements. Work
+continues on `feature/missal-reader`, preserving all existing accepted text
+and source qualifications. The current recovery and source receipts supersede
+older numerical summaries in the roadmap.
+
+On 2026-10-30 the maintainer expressly requested coherent commits, regular
+reconciliation with current `main`, and pushes to `main`. Keep the workspace
+branch name; integrate current main by ordinary merges and publish the verified
+result to `origin/main` without force or history rewriting. The rejected old
+remote feature history remains excluded. Publication of a validated checkpoint
+does not mark the complete-English promise fulfilled.
+
+At intake, fresh owning-report audits identified Roman 1962 composed English availability
+of 1,188/1,448 canonical targets, inherited pre-1955 availability of
+1,168/1,391, and postconciliar availability of 116/564. These are represented
+full-text targets, distinct from Bible-citation rendering availability and
+not whole-Missal completeness denominators. English
+Ordinary availability is 191/196 modeled Roman elements, 196/206 pre-1955
+elements and 0/61 postconciliar elements; modeled placeholders do not all
+represent missing translation bodies.
+
+Independent lanes own the fresh census, source/publication-policy review,
+Roman Proper recovery and study translations, postconciliar Proper recovery,
+each Ordinary family, and reader verification. Exact identified historical
+English and original project study English remain distinct. Original study
+translations require independently established distributable source wording;
+they confer no official liturgical approval. Protected modern originals or
+translations require their own distribution basis. Typed gaps and passing
+structural renders do not fulfill the requested complete English text.
+
+The Roman Ordinary source lane now supplies English for every currently
+represented text body in both historical frames; the three remaining records
+in each are appointment stand-ins. Seven new direct English source passages
+also have verified prose delivery through the Source Library. The exact
+source manifest and delivery successor are retained under
+`workflows/reviews/missal-english-completion-2026-10-29/ordinary/`.
+Sixteen additional Roman Proper bodies have separately measured, qualified
+publication authorities and independent source, English and installed-guard
+checks. Their fourteen study translations and two historical translations
+remain distinct; the exact authority and receipts are retained under that
+review namespace's `roman-1962/` directory. These are bounded accepted
+cohorts, not completion of this promise.
+
+Postconciliar availability includes seventy earlier project-study drafts whose
+fidelity and underlying-source review remains explicitly open. Independent
+acceptance of the new admissions does not retrospectively review those drafts,
+approve liturgical use or establish exact 2008 correspondence.
+
+The scope audit also distinguishes real older Holy Week work from historical
+nonapplicability. Pre-1955 has four effectively empty rite contexts (Palm
+Sunday, its overlapping standalone blessing, Good Friday and the Easter
+Vigil). The Lord's Supper still inherits nineteen later-frame Propers despite
+its raw unavailable marker; it needs actual older-recension collation and
+assembly qualification. Independent source packages and an explicit older
+rite model are in progress. A separate pre-1955 Chrism Mass is explicitly
+absent and is not missing English work. Postconciliar Common catalogues,
+antiphon-only directions and partial formularies also require source-extent
+and target correspondence before any fixed number of missing prayers can be
+asserted. Complete English cannot be inferred from represented-body counts.
+
+The first accepted source cohort provides composed English for 1,407/1,448
+Roman 1962 Proper targets, 1,373/1,391 inherited pre-1955 targets and 155/574
+postconciliar targets. The corresponding gaps are 41, 18 and 419; all 57
+pre-1955 inapplicability masks remain accounted. Postconciliar Ordinary English
+is available for 35/70 modeled elements. Its remaining records include twelve
+structural or appointment placeholders and twenty-three represented text gaps.
+These counts include the seventy earlier postconciliar drafts with open review
+debt and exclude unmodeled whole-book or rite requirements.
+
+The source aggregate, public and preview build verification, all twelve required
+browser contracts (259 assertions), and the annual structural rendering audit
+pass. The latter covers 1,464 date/calendar coordinates and 5,856 JSON/text
+renderings; it does not establish wording or textual completeness. Exact
+source, browser, Ordinary and historical-conservation evidence is retained in
+`workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/`.
+The source-batch epoch and its bounded test-code successors have been separately
+accepted with 7,068 exact input pins and all seventeen original replay streams
+preserved. All 257 current source-consumer/report tests have canonical passing
+executions across the full run and corrected reruns; the exact composed evidence
+is retained in `checkpoint-v1/root-validation.json`. Historical refusals, source
+confidence and original code bytes remain distinct from later admissions.
+The validated cohort is committed as `0b7da814a9`. The first main reconciliation
+preserves checkpoint `ac620e2f8b` and corrects one new Nativity English
+transcription from a colon to the semicolon printed in its historical source.
+The bounded successor retains all historical replay streams and binds 7,071
+exact source inputs; its seventeen controls pass. Evidence is retained in
+`workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/`.
+The successor also corrects the English finding aid's omission of two historical
+source classes covering three already accepted entries. All previous classes,
+English bodies, permissions and target counts remain exact. The seventeen source
+controls and seventeen affected English tests pass together; 233 publication,
+Source Library and encyclical tests also pass. Their earlier failed attempts
+remain distinguished from the corrected executions.
+
+Main checkpoint `f955c512ac` is reconciled. The final full source aggregate and
+all four public/preview build and verification gates pass. Fresh affected native
+browser contracts pass 136 assertions; unchanged reader and annual-render code
+retain the earlier broader structural evidence with its original limits. The
+stale ignored All Saints PDFs are restored byte-for-byte from the already
+accepted builds and their existing full-page review records; no new document
+content or PDF acceptance is inferred. Publication and live verification remain
+pending. Final merged evidence is retained in the same reconciliation namespace.
+The existing real-terminal maintainer acceptance and broader product promises
+retain their own requirements.
+
+## Missal version names and reader inclusion, 2026-10-30
+
+<!-- promised-deliverable: missal-version-nomenclature-2026-10-30 -->
+
+**In progress.** The maintainer requests source-supported names for every
+historical point represented by a missal, a firm versioning nomenclature across
+the project, retirement of the vague current label “Pre-1955,” and reader
+options only for missals with actual contributed content. A dedicated source
+and implementation lane is establishing edition, reform horizon, language and
+witness distinctions before applying the names consistently. A structural
+placeholder alone does not establish contributed text; actual Latin or English
+content does. Existing source and completeness qualifications remain binding.
+
+The naming matrix, primary-source citations, consumer inventory and inclusion
+rules remain pending. Historical audit bytes and quoted historical labels
+remain evidence of their original state; stable-ID migrations need explicit
+compatibility handling rather than rewriting accepted source receipts.
+
 ## Encyclical completion and English coverage, 2026-10-29
 
 <!-- promised-deliverable: encyclicals-completion-2026-10-29 -->

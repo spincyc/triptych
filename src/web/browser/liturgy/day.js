@@ -1245,7 +1245,7 @@
       const body = renderElement(element, file, { language: lang, held: raw || null,
         selected: selected, suppressHeading: true, suppressIncipit: lang !== 'la' });
       side.appendChild(body);
-      if (raw && witness) side.appendChild(T.el('p', 'composed-note',
+      if (raw && witness && !raw.reading_note) side.appendChild(T.el('p', 'composed-note',
         'Source: ' + (witness.label || raw.source_id)));
       pair.appendChild(side);
     }
@@ -1280,6 +1280,11 @@
       : (options ? explicit.held : (language
         ? translations.find((one) => one.lang === language.lang) || null : null));
     if (held) {
+      if (held.reading_note) {
+        const note = T.el('p', 'composed-note ordinary-reading-note', held.reading_note);
+        note.lang = 'en';
+        section.appendChild(note);
+      }
       // No label above the words. "Composed text — not scripture" is true of
       // every element of an Ordinary, so saying it 195 times said nothing 194
       // of those times; what distinguishes a rubric from a prayer here is how
@@ -1289,6 +1294,17 @@
       markConditionalWords(section, body, held);
 
       const witness = witnessNote(file, held.source_id, held.lang);
+      if (held.reading_note && held.source_id) {
+        const source = T.el('p', 'composed-note ordinary-reading-source',
+          'Source: ' + (witness && witness.label || held.source_id));
+        source.lang = 'en';
+        section.appendChild(source);
+      }
+      if (held.reading_note && held.note && state.why) {
+        const note = T.el('p', 'composed-note element-apparatus', held.note);
+        note.lang = 'en';
+        section.appendChild(note);
+      }
       if (witness) {
         // The condition the licence attaches travels with the words it
         // licenses. Printing it once at the foot of the page would let the two

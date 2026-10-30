@@ -16,6 +16,11 @@ import tempfile
 import unittest
 from unittest import mock
 
+try:
+    from .test_public_alpha_quarantine import install_test_quarantine
+except ImportError:
+    from test_public_alpha_quarantine import install_test_quarantine
+
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 TOOL_PATH = REPOSITORY_ROOT / "tools/public-alpha"
@@ -45,18 +50,8 @@ class PublicAlphaTest(unittest.TestCase):
         self.tool.MANIFEST_PATH = self.root / "release/public-alpha.json"
         self.tool.TEMPLATE_ROOT = self.root / "release/public-alpha"
         self.tool.OUTPUT_ROOT = self.root / "build/public-alpha"
-        self.tool.POSTCONCILIAR_QUARANTINE_BASELINE_ROWS = 1
         self.quarantine_marker = "PROJECT-CREATED PUBLIC-ALPHA QUARANTINE MUTATION"
-        quarantine_hash = digest(self.quarantine_marker.encode())
-        self.write(
-            self.tool.POSTCONCILIAR_TRANSLATIONS_RELATIVE.as_posix(),
-            (
-                "[[untranslated]]\n"
-                'lang = "en"\n'
-                'extent = "body"\n'
-                f'quarantined_text_sha256 = ["{quarantine_hash}"]\n'
-            ).encode(),
-        )
+        install_test_quarantine(self.tool, self.root, self.quarantine_marker)
         self.tool.PAGE_MAP = {
             "README.md": "index.html",
             "library/curriculums.md": "library/curriculums.html",

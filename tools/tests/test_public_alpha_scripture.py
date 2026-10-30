@@ -13,6 +13,11 @@ import tempfile
 import unittest
 from unittest import mock
 
+try:
+    from .test_public_alpha_quarantine import install_test_quarantine
+except ImportError:
+    from test_public_alpha_quarantine import install_test_quarantine
+
 
 REPOSITORY = Path(__file__).resolve().parents[2]
 
@@ -36,13 +41,8 @@ class PublicAlphaScriptureTest(unittest.TestCase):
         self.tool = importlib.util.module_from_spec(spec)
         loader.exec_module(self.tool)
         self.tool.ROOT = self.root
-        self.tool.POSTCONCILIAR_QUARANTINE_BASELINE_ROWS = 1
         self.quarantined = "PROJECT-CREATED QUARANTINED SCRIPTURE TEST PAYLOAD"
-        quarantine_hash = hashlib.sha256(self.quarantined.encode()).hexdigest()
-        self.write(self.tool.POSTCONCILIAR_TRANSLATIONS_RELATIVE.as_posix(), (
-            '[[untranslated]]\nlang = "en"\nextent = "body"\n'
-            f'quarantined_text_sha256 = ["{quarantine_hash}"]\n'
-        ).encode())
+        install_test_quarantine(self.tool, self.root, self.quarantined)
         for directory in self.tool.WEB_BROWSER_DIRECTORIES:
             self.write(f"src/web/browser/{directory}/fixture.css", b"/* fixture */\n")
         self.write_json("src/web/data/bibles.json", {"bibles": [

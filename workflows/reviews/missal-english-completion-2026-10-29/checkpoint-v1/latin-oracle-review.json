@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "issues": [],
+  "scope": "Static source-grounded test-oracle review; no test run against old live fixture; no pending-v3-1 acceptance review duplicated",
+  "canonical_sha256": "b4aa175b0a70b6e61d613d70cdf31f97ef51a07560bdf20ef533de4f8bacd174",
+  "proposal_sha256": "c26a17afd887543e44b6d10eeada1b2aa431d306265fd308d8de56291edbd954",
+  "unified_diff_sha256": "e5694953661fe74ca32f7bb7c5358a8636729c3a6cb32ee50f94752caf908b76",
+  "unified_diff_bytes": 3575,
+  "finite_authority_sha256": "920299972ab84575183de8c84adcd3f7418bdc46304fbe1d6a4435fad1103ee3",
+  "prior_two_literal_code_preserved": true,
+  "qualified_identity_count": 18,
+  "qualified_new_finite_identity_count": 16,
+  "restored_exact_triples": [
+    [
+      "comm-s-silvestri-i-papae-confessoris",
+      "Collect",
+      1
+    ],
+    [
+      "palm-sunday",
+      "Procession Antiphon",
+      5
+    ],
+    [
+      "palm-sunday",
+      "Procession Antiphon",
+      6
+    ],
+    [
+      "s-antonii-padua-confessoris-ecclesiae-doctoris",
+      "Collect",
+      1
+    ]
+  ],
+  "original_negative_partition": {
+    "removed": 20,
+    "restored": 4,
+    "remaining_refusals": 16
+  },
+  "proof_only_original_seven_assertion_exact": true,
+  "six_surface_and_body_tamper_controls_exact": true,
+  "palm_source_to_latin_ordinal_mapping": [
+    {
+      "source_target": [
+        "palm-sunday",
+        "main",
+        "Procession Antiphon",
+        "all",
+        6
+      ],
+      "direct_latin_identity": {
+        "mass": "palm-sunday",
+        "form": "",
+        "proper": "Procession Antiphon",
+        "course": "",
+        "cycle": "",
+        "occurrence": 5
+      },
+      "source_review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-ba782943dae6c318.json",
+      "review_sha256": "ba782943dae6c3187e21cab434d37352e11a3d1b06c187a2817fd71d32767c35",
+      "approved": true
+    },
+    {
+      "source_target": [
+        "palm-sunday",
+        "main",
+        "Procession Antiphon",
+        "all",
+        7
+      ],
+      "direct_latin_identity": {
+        "mass": "palm-sunday",
+        "form": "",
+        "proper": "Procession Antiphon",
+        "course": "",
+        "cycle": "",
+        "occurrence": 6
+      },
+      "source_review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-60ee0a69f72b5999.json",
+      "review_sha256": "60ee0a69f72b59990552ad0c2d814ef9301bd57302324290ab767d569a400543",
+      "approved": true
+    }
+  ],
+  "silvester_installation_receipt": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/installation-159af855bad2214a.json"
+}

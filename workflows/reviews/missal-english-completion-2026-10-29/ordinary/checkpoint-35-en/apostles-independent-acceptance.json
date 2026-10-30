@@ -1,0 +1,48 @@
+{
+  "schema": "triptych-finite-source-install-acceptance/v1",
+  "reviewed_on": "2026-10-29",
+  "decision": "accepted-for-coordinator-installation",
+  "scope": "Exactly the twelve new Apostles-only canonical source postimages and the proposed witness/Latin/English side blocks, as independently reviewed. This is source packaging acceptance, not integrated publication or generation acceptance.",
+  "predecessor_review": ".scratch/postconciliar-ordinary-20261029/second-pass/dialogue-review/REVIEW.json",
+  "predecessor_review_sha256": "21355a85dd73913b42e1f784e0e2f289bbd2dc65aa9bff8ed8fcc48f15047acf",
+  "predecessor_24_row_acceptance": "Preserved unchanged. This successor narrows installation to the two complete Apostles Creed source bodies; it neither installs nor newly certifies any of the other 22 finite candidate rows.",
+  "accepted_input": {
+    "candidate": ".scratch/postconciliar-ordinary-20261029/second-pass/dialogues/apostles-install/candidate.json",
+    "candidate_sha256": "02e9c64a3a96f898627c4e9f550ad89bee844ea4f3e4ec19b54cbda447e575ba",
+    "postimage_manifest": ".scratch/postconciliar-ordinary-20261029/second-pass/dialogues/apostles-install/candidate-files.json",
+    "postimage_manifest_sha256": "b2e272155f06855727f8d1c548f3790421a8cebc1af6955a4a9bfc5b0fc178f2",
+    "postimage_count": 12,
+    "frozen_review_manifest_sha256": "32ad02e2db99a195edf94803357fa21b7e140bf9947cbc24ddc4480a986733e1",
+    "proposed_inventory_blocks_sha256": "1490f7130c5f0766149a2f3148986809be60fa6a82b8ccc1d3201c6c97c633f3",
+    "source_v2_tsv_sha256": "1c6cb0b96308828f7a9f3a7720ad1eca6ae878c00b30d7d140dd055d8905a13d"
+  },
+  "independent_checks": {
+    "postimage_integrity": "Passed. All twelve paths are unique, the complete file set equals the manifest, and each byte size and SHA256 equals its pin. All twelve canonical destination files were absent at review; null preimages are truthful.",
+    "inherited_graph_records": "Passed. The five inherited records in the isolated graph, comprising one work, two editions and the two whole-PDF parent artifacts, are byte-identical to the actual canonical records. No inherited source-record edits are needed.",
+    "source_text_identity": "Passed. Both sole TSV data-row body cells equal the accepted corrected-v2 Latin/English cells byte-for-byte. The Latin retains lowercase sanctorum; the English retains the complete Bute paragraph through Amen. Headers, row key, selected column, printed page and viewer leaf are consistent.",
+    "source_graph_identity": "Passed. Each text artifact derives from its same-edition retained complete-page PDF; each complete-page artifact derives from the exact registered same-edition whole-PDF parent. All IDs, edition ownership, artifact hashes, payload paths, sizes and one-page counts agree. Each page-verification passage controls retained artifact page1; each publication passage controls the corresponding TSV physical line2. The locus identifies the source Breviary Psalter/Matins context rather than claiming a Missal source.",
+    "rights": "Passed. Each of the four new artifact records copies its own canonical parent's affirmative United States public-domain rights status, jurisdiction and exact basis string. Latin1888 and Bute1908 are kept distinct. No historical rights basis is transferred to a modern Missal or ICEL payload.",
+    "transformation_and_bounds": "Passed. Full historical pages are retained. Latin acute-accent removal, drop-capital representation and joined line wrapping are explicit; old ligatures, j, words, capitalization and punctuation are preserved. Bute small capitals, drop I, joined line-end hyphens and closed compositor spacing are declared, with the following rubric, versicles, Psalm and footnotes excluded from the Creed transcription.",
+    "source_library": {"command":"PYTHONDONTWRITEBYTECODE=1 TRIPTYCH_LIBRARY_CACHE=0 tools/source-library --root .scratch/postconciliar-ordinary-20261029/second-pass/dialogue-review/apostles-validation-root validate","exit_status":0,"result":"source-library valid: artifact=6 corpus=0 edition=2 passage=4 segment=0 work=1 bindings=0"},
+    "actual_side_resolvers": "Passed. Independently loaded tools/mass-ordinary artifact_records, witness_table and side_text against the copied exact isolated graph and the proposed blocks. Both languages emitted their exact expected complete body with public-domain rights and antecedent/uncollated relationship.",
+    "page_image_parity": "Passed. Independently rendered each new retained PDF at scale-to2200 and cmp compared its bytes with the previously directly inspected independent whole-parent page render. Both cmp commands exited0. This proves the install-ready page extracts preserve the exact historical images already reviewed.",
+    "check_receipt": ".scratch/postconciliar-ordinary-20261029/second-pass/dialogue-review/apostles-package-checks.json",
+    "check_receipt_sha256": "6696304758305db3ab45a81543106096c255b146f7275723ce5bfc1a730a66de"
+  },
+  "accepted_bodies": [
+    {"language":"la","source_edition":"edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888","original_parent_sha256":"a8a789d4c48003cbfaeb440cc22a6970b96d18d9cb19ea60b2a02c83a53582f0","original_artifact_page":55,"printed_page":"1","ia_leaf":"n54","retained_pdf_sha256":"3b16b8bb6958885dfcce614f7bb34f3e91bbc779fe4c911d0fbb3fd410fd81b0","retained_render_sha256":"8ee65bddc3e636d9dfd023467aab276c1ff1e439dc0018665eaad75ecfe5ef7a","text_artifact_sha256":"c898da39031fdc0ccab706274d884c5fb8277fd5d1096968f8ea362f1fcca479","text_body_sha256":"2016bd81e880a7626d7ea97491ff0ac4c675ab38b858fef702d5ae95175636dd"},
+    {"language":"en","source_edition":"edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908","original_parent_sha256":"6792c0e56d581081e12420e5fddde82a86802c6bbdb4970a947981d04f8ce6b5","original_artifact_page":86,"printed_page":"2","ia_leaf":"n85","retained_pdf_sha256":"e4a2b34692692aa297afe80d8830793c3c4bec280bb63e1bc69f86dccfce44e8","retained_render_sha256":"349a31de23ad40e4683bc58d6151e7cc74162c993ec189f32bb63b23eafbcef9","text_artifact_sha256":"afa44c2416ef5fc374505f27bc2e7e6b797ab57624789cabc59d2d2c6e3ba270","text_body_sha256":"c308f9d877e9485e9d83e522ea505cab7ab039b9b0c23f281b34ee770af16f52"}
+  ],
+  "consumer_operation_acceptance": {
+    "target": "symbolum/symbolum-apostolicum only",
+    "add": "The two proposed witness declarations and exact Latin/English side blocks.",
+    "remove": "Only absent_latin=no-antecedent-witness on this target, because a complete source antecedent has now been recovered.",
+    "preserve": "absent_english=approved-english-publication-restriction; all existing element metadata, numbering, conditions and creed-apostles option membership.",
+    "relationship": "antecedent/uncollated in both languages. Wording in labels, cautions, reading notes and side notes correctly identifies normalized historical Latin and historical human English, not controlling2008 or approved2011 text.",
+    "modern_comparison_ceiling": "Checked secondary2002 plus the explicit official2008 opening correction is bounded comparison evidence only. No authenticated full2008 identity, approved English or source-body promotion occurs.",
+    "publication_ledger_and_attribution": "Root coordinator retains responsibility for source/publication/third-party ledger updates and integrated gates; this source-only packet neither modifies nor certifies those later changes."
+  },
+  "findings_requiring_correction": [],
+  "reviewer_mutations": "Only exclusive reviewer scratch, including a copied isolated validation root and local page rasters. No tracked writes, source installation, served generation, commits or pushes.",
+  "availability": "Reviewer remains available for subsequent finite source and shape reviews."
+}

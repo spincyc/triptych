@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.cross-offertory-qualified-18060fef"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "Prospective finite qualified-nonoriginal-adaptation assessment under workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json, method english-completion-20261029-finite-latin-v1. Exact complete old source base plus the expressly measured limited later contribution; no holder permission or unqualified whole-target public-domain claim. Triptych offers only its editorial carrier under CC BY4.0. Candidate only; installation requires separate root adoption."
+provenance = "Exact complete target Latin selected from the independently reviewed1962page-image reading, with the complete independently checked historical source base preserved separately. All source/target nonidentity and contrary findings remain explicit."
+retrieved = "2026-10-29"
+sha256 = "18060fef847e0615136dba2a6e73b16797e3b944665c4e1475dc8643be33fa79"
+byte_size = 183
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/cross-offertory-qualified-18060fef/latin.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-saints-bases-2be6c708", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "The complete same-feast Mame1922 Offertory already includes the final Alleluia. The1962target adds omnibus before insidiis, a universal quantifier changing the expressed scope. The distinct Passion votive version has omnibus but no final Alleluia; it is contrary/corroborating evidence and is not spliced into an alleged exact historical donor."
+encoding = "utf-8"
+indexable = true
+notes = "Finite candidate only; Both independently inspected1922and1862same-feast bodies omit omnibus. No exact pre1931whole target sequence or first-publication date was established. The quantifier can be deliberate semantic broadening and even a short addition must be judged in the whole expression; this finite proposal rests on the complete feast base plus its limited ordinary quantifier, not a universal short-word exemption. No authority-file SHA is included in this controller; the authority may independently pin this full dictionary."

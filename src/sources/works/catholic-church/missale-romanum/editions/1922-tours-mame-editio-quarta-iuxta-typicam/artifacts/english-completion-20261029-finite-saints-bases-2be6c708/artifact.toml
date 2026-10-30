@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-saints-bases-2be6c708"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "page-checked-latin-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Only complete independently page-checked Latin printed in Tours Mame 1922, whose registered full scan carries the United States publication-date public-domain basis. No target-only addition or proposed qualified adaptation is retained in this payload."
+provenance = "Three complete historical Latin bases transcribed directly from the registered full-source page images and independently rechecked on 2026-10-29. Physical line1 is the September14 Offertory on source artifact828/printed714; line2 is the separate Passion votive Offertory on artifact952/printed74*; line3 is the JohnDamascene non-Paschal Offertory on artifact673/printed559. The distinct utterances are not combined, and none is labelled an exact whole target chant."
+retrieved = "2026-10-29"
+sha256 = "2be6c7089fade3e9ae6399f63a18064915b4ee3c13b4f3712ca6442d35ad11ab"
+byte_size = 458
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-finite-saints-bases-2be6c708/latin.txt"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Transcribe each complete historical body with its actual words, stress accents, ligatures, punctuation and short cues; join typographic line wraps only; append one terminal LF to each separate body. Add no target quantifier or seasonal acclamation."
+encoding = "utf-8"
+indexable = true

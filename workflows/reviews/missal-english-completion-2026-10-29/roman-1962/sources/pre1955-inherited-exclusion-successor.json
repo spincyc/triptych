@@ -1,0 +1,1276 @@
+{
+  "schema": "triptych-pre1955-inherited-exclusion-kind-successor/v1",
+  "recorded_on": "2026-10-29",
+  "scope": "Only exact inherited parent-kind successors. No child calendar departure, source scope, English body, refusal reason, basis, identity, ordering, or exclusion membership changes.",
+  "target": "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml",
+  "before_sha256": "c50695190d7a5b0a42ddc80569ac9a08483fb36a87bae17b98050a545af3933b",
+  "after_sha256": "5150ab0261a9c765906fcff03ef7282b7a30937a572958afb8256d1718adc6ac",
+  "parent_ledger_sha256": "87b7f1e9ef3f66c2d601c33139ab8b50aca738597da8e235741980ca5ebe2802",
+  "owning_implementation": {
+    "path": "tools/mass-propers",
+    "sha256": "ff739cf04a75d2b0de097fe38d51e9e1a60edd03c7784d243f829fda97ae54b7",
+    "identity": "inherited_inapplicable_identity; translation_record_identity; untranslated_record_identity; source_slot_identity",
+    "effective_slots": "_calendars.load_document(effective=True), appointed_propers, source_slot_identity; Bonn three-body overrides preserve source/English identities by contract"
+  },
+  "checked_exclusions": [
+    {
+      "identity": [
+        "chrism-mass",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "parent_record": "untranslated",
+      "child_departure": "absent",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "s-ioseph-opificis-sponsi-beatae-mariae",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "parent_record": "untranslated",
+      "child_departure": "absent",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "s-ioseph-opificis-sponsi-beatae-mariae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "parent_record": "untranslated",
+      "child_departure": "absent",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "s-ioseph-opificis-sponsi-beatae-mariae",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "parent_record": "untranslated",
+      "child_departure": "absent",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "chrism-mass",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "absent",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "chrism-mass",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "absent",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "palm-sunday",
+        "main",
+        "Blessing of the Palms",
+        "all",
+        1
+      ],
+      "parent_record": "untranslated",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "palm-sunday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "palm-sunday",
+        "main",
+        "First Antiphon at the Distribution of Palms",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "palm-sunday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "palm-sunday",
+        "main",
+        "Responsory at the Entrance into the Church",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "palm-sunday",
+        "main",
+        "Second Antiphon at the Distribution of Palms",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "palm-sunday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "palm-sunday",
+        "main",
+        "Versicle at the Beginning of the Procession",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "good-friday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "good-friday",
+        "main",
+        "Improperia",
+        "all",
+        1
+      ],
+      "parent_record": "untranslated",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "good-friday",
+        "main",
+        "Showing of the Cross",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Blessing of the Baptismal Water",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Blessing of the New Fire",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Lumen Christi",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Oration after the First Prophecy",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Oration after the Fourth Prophecy",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Oration after the Second Prophecy",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Oration after the Third Prophecy",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "palm-sunday",
+        "main",
+        "Procession Antiphon",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "palm-sunday",
+        "main",
+        "Procession Antiphon",
+        "all",
+        2
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "palm-sunday",
+        "main",
+        "Procession Antiphon",
+        "all",
+        3
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "palm-sunday",
+        "main",
+        "Procession Antiphon",
+        "all",
+        5
+      ],
+      "parent_record": "untranslated",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "palm-sunday",
+        "main",
+        "Procession Antiphon",
+        "all",
+        6
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "palm-sunday",
+        "main",
+        "Procession Antiphon",
+        "all",
+        7
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "palm-sunday",
+        "main",
+        "Hymn to Christ the King",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "palm-sunday",
+        "main",
+        "Oration to Conclude the Procession",
+        "all",
+        1
+      ],
+      "parent_record": "untranslated",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "good-friday",
+        "main",
+        "Antiphons at the Translation of the Blessed Sacrament",
+        "all",
+        1
+      ],
+      "parent_record": "untranslated",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "good-friday",
+        "main",
+        "First Prayer after Communion",
+        "all",
+        1
+      ],
+      "parent_record": "untranslated",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "good-friday",
+        "main",
+        "Prayer after the Prostration",
+        "all",
+        1
+      ],
+      "parent_record": "untranslated",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "good-friday",
+        "main",
+        "Second Prayer after Communion",
+        "all",
+        1
+      ],
+      "parent_record": "untranslated",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "good-friday",
+        "main",
+        "Solemn Intercessions",
+        "all",
+        1
+      ],
+      "parent_record": "untranslated",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "good-friday",
+        "main",
+        "Third Prayer after Communion",
+        "all",
+        1
+      ],
+      "parent_record": "untranslated",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Blessing of the Lighted Candle",
+        "all",
+        1
+      ],
+      "parent_record": "untranslated",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Blessing of the Paschal Candle",
+        "all",
+        1
+      ],
+      "parent_record": "untranslated",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Exsultet (Praeconium paschale)",
+        "all",
+        1
+      ],
+      "parent_record": "untranslated",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Litany of the Saints, first part",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Litany of the Saints, second part",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Prayer at the Font",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Renewal of Baptismal Promises",
+        "all",
+        1
+      ],
+      "parent_record": "untranslated",
+      "child_departure": "replaced",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "s-ioseph-opificis-sponsi-beatae-mariae",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "absent",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "beatae-mariae-virginis-reginae",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "parent_record": "untranslated",
+      "child_departure": "absent",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "beatae-mariae-virginis-reginae",
+        "main",
+        "Alleluia (Tempore paschali)",
+        "all",
+        1
+      ],
+      "parent_record": "untranslated",
+      "child_departure": "absent",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "beatae-mariae-virginis-reginae",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "parent_record": "untranslated",
+      "child_departure": "absent",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "beatae-mariae-virginis-reginae",
+        "main",
+        "Communion",
+        "all",
+        1
+      ],
+      "parent_record": "entry",
+      "child_departure": "absent",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "beatae-mariae-virginis-reginae",
+        "main",
+        "Introit",
+        "all",
+        1
+      ],
+      "parent_record": "untranslated",
+      "child_departure": "absent",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "beatae-mariae-virginis-reginae",
+        "main",
+        "Offertory",
+        "all",
+        1
+      ],
+      "parent_record": "untranslated",
+      "child_departure": "absent",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "beatae-mariae-virginis-reginae",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "parent_record": "untranslated",
+      "child_departure": "absent",
+      "absent_from_effective_child_slots": true
+    },
+    {
+      "identity": [
+        "beatae-mariae-virginis-reginae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "parent_record": "untranslated",
+      "child_departure": "absent",
+      "absent_from_effective_child_slots": true
+    }
+  ],
+  "changes": [
+    {
+      "identity": [
+        "chrism-mass",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "before": {
+        "record": "untranslated",
+        "mass": "chrism-mass",
+        "form_id": "main",
+        "proper": "Secret",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-absent",
+        "basis": "calendar-departure"
+      },
+      "after": {
+        "record": "entry",
+        "mass": "chrism-mass",
+        "form_id": "main",
+        "proper": "Secret",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-absent",
+        "basis": "calendar-departure"
+      },
+      "historical_parent_absence": {
+        "mass": "chrism-mass",
+        "form_id": "main",
+        "proper": "Secret",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+      },
+      "current_parent_entry_sha256": "a2160f70504cc505b2315caa529a40a157c23ef7aafc483267939fd783aace53",
+      "change": "Retain exact calendar-departure suppression; update only its actual inherited parent record kind."
+    },
+    {
+      "identity": [
+        "chrism-mass",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "before": {
+        "record": "untranslated",
+        "mass": "chrism-mass",
+        "form_id": "main",
+        "proper": "Postcommunion",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-absent",
+        "basis": "calendar-departure"
+      },
+      "after": {
+        "record": "entry",
+        "mass": "chrism-mass",
+        "form_id": "main",
+        "proper": "Postcommunion",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-absent",
+        "basis": "calendar-departure"
+      },
+      "historical_parent_absence": {
+        "mass": "chrism-mass",
+        "form_id": "main",
+        "proper": "Postcommunion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+      },
+      "current_parent_entry_sha256": "235df14f21e5792693f9f152e2d8c6b37adf2eb7b28f937654704992de5771bb",
+      "change": "Retain exact calendar-departure suppression; update only its actual inherited parent record kind."
+    },
+    {
+      "identity": [
+        "palm-sunday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "before": {
+        "record": "untranslated",
+        "mass": "palm-sunday",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-replaced",
+        "basis": "calendar-departure"
+      },
+      "after": {
+        "record": "entry",
+        "mass": "palm-sunday",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-replaced",
+        "basis": "calendar-departure"
+      },
+      "historical_parent_absence": {
+        "mass": "palm-sunday",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
+      },
+      "current_parent_entry_sha256": "24454caa2487ae003a64fe3a299b2e4baab479382deccc6b5647f642006f592a",
+      "change": "Retain exact calendar-departure suppression; update only its actual inherited parent record kind."
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "before": {
+        "record": "untranslated",
+        "mass": "easter-vigil",
+        "form_id": "main",
+        "proper": "Postcommunion",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-replaced",
+        "basis": "calendar-departure"
+      },
+      "after": {
+        "record": "entry",
+        "mass": "easter-vigil",
+        "form_id": "main",
+        "proper": "Postcommunion",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-replaced",
+        "basis": "calendar-departure"
+      },
+      "historical_parent_absence": {
+        "mass": "easter-vigil",
+        "form_id": "main",
+        "proper": "Postcommunion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
+      },
+      "current_parent_entry_sha256": "32e6c5376aae4fabcfae671221265d69ae68aacf222e1eedb0eb8cb00fd357e8",
+      "change": "Retain exact calendar-departure suppression; update only its actual inherited parent record kind."
+    },
+    {
+      "identity": [
+        "palm-sunday",
+        "main",
+        "Procession Antiphon",
+        "all",
+        6
+      ],
+      "before": {
+        "record": "untranslated",
+        "mass": "palm-sunday",
+        "form_id": "main",
+        "proper": "Procession Antiphon",
+        "cycle": "all",
+        "occurrence": 6,
+        "reason": "recension-replaced",
+        "basis": "calendar-departure"
+      },
+      "after": {
+        "record": "entry",
+        "mass": "palm-sunday",
+        "form_id": "main",
+        "proper": "Procession Antiphon",
+        "cycle": "all",
+        "occurrence": 6,
+        "reason": "recension-replaced",
+        "basis": "calendar-departure"
+      },
+      "historical_parent_absence": {
+        "mass": "palm-sunday",
+        "form_id": "main",
+        "proper": "Procession Antiphon",
+        "cycle": "all",
+        "occurrence": 6,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "witness-gap",
+          "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+        },
+        "note": "The 1861 Cummiskey and 1862 Pustet witnesses both pass directly from the three historical procession antiphons now attached as occurrences 1-3 to the Gloria, laus hymn. This 1955 addition appears in neither witness, so no English body is attached."
+      },
+      "current_parent_entry_sha256": "fe2da47305fd32d8e97b0cb6b026bf1115e8810aa651aa7b58dde84abb8b1926",
+      "change": "Retain exact calendar-departure suppression; update only its actual inherited parent record kind."
+    },
+    {
+      "identity": [
+        "palm-sunday",
+        "main",
+        "Procession Antiphon",
+        "all",
+        7
+      ],
+      "before": {
+        "record": "untranslated",
+        "mass": "palm-sunday",
+        "form_id": "main",
+        "proper": "Procession Antiphon",
+        "cycle": "all",
+        "occurrence": 7,
+        "reason": "recension-replaced",
+        "basis": "calendar-departure"
+      },
+      "after": {
+        "record": "entry",
+        "mass": "palm-sunday",
+        "form_id": "main",
+        "proper": "Procession Antiphon",
+        "cycle": "all",
+        "occurrence": 7,
+        "reason": "recension-replaced",
+        "basis": "calendar-departure"
+      },
+      "historical_parent_absence": {
+        "mass": "palm-sunday",
+        "form_id": "main",
+        "proper": "Procession Antiphon",
+        "cycle": "all",
+        "occurrence": 7,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "witness-gap",
+          "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+        },
+        "note": "The 1861 Cummiskey and 1862 Pustet witnesses both pass directly from the three historical procession antiphons now attached as occurrences 1-3 to the Gloria, laus hymn. This 1955 addition appears in neither witness, so no English body is attached."
+      },
+      "current_parent_entry_sha256": "eecfe8d09b7f4e45de695abac9c0fae3cd150a6cc1596301372110f0ddf0bdc6",
+      "change": "Retain exact calendar-departure suppression; update only its actual inherited parent record kind."
+    },
+    {
+      "identity": [
+        "palm-sunday",
+        "main",
+        "Hymn to Christ the King",
+        "all",
+        1
+      ],
+      "before": {
+        "record": "untranslated",
+        "mass": "palm-sunday",
+        "form_id": "main",
+        "proper": "Hymn to Christ the King",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-replaced",
+        "basis": "calendar-departure"
+      },
+      "after": {
+        "record": "entry",
+        "mass": "palm-sunday",
+        "form_id": "main",
+        "proper": "Hymn to Christ the King",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-replaced",
+        "basis": "calendar-departure"
+      },
+      "historical_parent_absence": {
+        "mass": "palm-sunday",
+        "form_id": "main",
+        "proper": "Hymn to Christ the King",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "Cummiskey printed pp. 238-239 and Lasance pp. 398-399 have the complete six-couplet English Gloria, laus et honor matching the target hymn. It remains text-free only until exact Lasance visual and tracked-publication passages are registered. Until they are, no exact exemplar is bound and the slot is not sourced. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): Lasance 1945 is public domain, and nothing about this slot is rights restricted; the binding is C3 work."
+      },
+      "current_parent_entry_sha256": "e7c0c2ce9fea42d272f9d4de3b51e291ffed40f858ae952a8cfd423e3b7e3826",
+      "change": "Retain exact calendar-departure suppression; update only its actual inherited parent record kind."
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Litany of the Saints, first part",
+        "all",
+        1
+      ],
+      "before": {
+        "record": "untranslated",
+        "mass": "easter-vigil",
+        "form_id": "main",
+        "proper": "Litany of the Saints, first part",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-replaced",
+        "basis": "calendar-departure"
+      },
+      "after": {
+        "record": "entry",
+        "mass": "easter-vigil",
+        "form_id": "main",
+        "proper": "Litany of the Saints, first part",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-replaced",
+        "basis": "calendar-departure"
+      },
+      "historical_parent_absence": {
+        "mass": "easter-vigil",
+        "form_id": "main",
+        "proper": "Litany of the Saints, first part",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "witness-gap",
+          "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+        },
+        "note": "Cummiskey refers to an old full, unsplit, Latin-only Rogation Litany with a different roster. It supplies no exact English for the 1962 split first part."
+      },
+      "current_parent_entry_sha256": "7a3e4dd1ef2ee6d4341dccf0055a94a5dcce086a4a1cb3a09936f346068f49e4",
+      "change": "Retain exact calendar-departure suppression; update only its actual inherited parent record kind."
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Litany of the Saints, second part",
+        "all",
+        1
+      ],
+      "before": {
+        "record": "untranslated",
+        "mass": "easter-vigil",
+        "form_id": "main",
+        "proper": "Litany of the Saints, second part",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-replaced",
+        "basis": "calendar-departure"
+      },
+      "after": {
+        "record": "entry",
+        "mass": "easter-vigil",
+        "form_id": "main",
+        "proper": "Litany of the Saints, second part",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-replaced",
+        "basis": "calendar-departure"
+      },
+      "historical_parent_absence": {
+        "mass": "easter-vigil",
+        "form_id": "main",
+        "proper": "Litany of the Saints, second part",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "witness-gap",
+          "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+        },
+        "note": "Cummiskey refers to an old full, unsplit, Latin-only Rogation Litany with a different roster and petitions. It supplies no exact English for the 1962 split continuation."
+      },
+      "current_parent_entry_sha256": "f540d40596f1ae2d44eade8a61d406dfbea806a1baec078cfd1dbcb943815113",
+      "change": "Retain exact calendar-departure suppression; update only its actual inherited parent record kind."
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Prayer at the Font",
+        "all",
+        1
+      ],
+      "before": {
+        "record": "untranslated",
+        "mass": "easter-vigil",
+        "form_id": "main",
+        "proper": "Prayer at the Font",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-replaced",
+        "basis": "calendar-departure"
+      },
+      "after": {
+        "record": "entry",
+        "mass": "easter-vigil",
+        "form_id": "main",
+        "proper": "Prayer at the Font",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-replaced",
+        "basis": "calendar-departure"
+      },
+      "historical_parent_absence": {
+        "mass": "easter-vigil",
+        "form_id": "main",
+        "proper": "Prayer at the Font",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "witness-gap",
+          "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+        },
+        "note": "At the font Cummiskey prints a different Concede prayer about thirsting after the fountain of life, not the 1962 Omnipotens prayer. This is a substantive text mismatch."
+      },
+      "current_parent_entry_sha256": "050ec72535470f278a8252032dc2df720fb4871af356f410458c7983b03cd271",
+      "change": "Retain exact calendar-departure suppression; update only its actual inherited parent record kind."
+    },
+    {
+      "identity": [
+        "s-ioseph-opificis-sponsi-beatae-mariae",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "before": {
+        "record": "untranslated",
+        "mass": "s-ioseph-opificis-sponsi-beatae-mariae",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-absent",
+        "basis": "calendar-departure"
+      },
+      "after": {
+        "record": "entry",
+        "mass": "s-ioseph-opificis-sponsi-beatae-mariae",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-absent",
+        "basis": "calendar-departure"
+      },
+      "historical_parent_absence": {
+        "mass": "s-ioseph-opificis-sponsi-beatae-mariae",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "The controlling 1962 Missal appoints this exact body at printed p.516, unit2485. No exact shared English whole-body exemplar/publication binding is attached to this seat."
+      },
+      "current_parent_entry_sha256": "46864bbd287d854342c2408284dec45079fde0760f5936a4dbd37d4f1c143fa5",
+      "change": "Retain exact calendar-departure suppression; update only its actual inherited parent record kind."
+    },
+    {
+      "identity": [
+        "beatae-mariae-virginis-reginae",
+        "main",
+        "Communion",
+        "all",
+        1
+      ],
+      "before": {
+        "record": "untranslated",
+        "mass": "beatae-mariae-virginis-reginae",
+        "form_id": "main",
+        "proper": "Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-absent",
+        "basis": "calendar-departure"
+      },
+      "after": {
+        "record": "entry",
+        "mass": "beatae-mariae-virginis-reginae",
+        "form_id": "main",
+        "proper": "Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-absent",
+        "basis": "calendar-departure"
+      },
+      "historical_parent_absence": {
+        "mass": "beatae-mariae-virginis-reginae",
+        "form_id": "main",
+        "proper": "Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "The source appointment is established by the registered 1962 CMAA facsimile, artifact621-622/printed540-541. No exact human English exemplar/publication binding is established for this owner; no English is supplied and no whole-witness absence is asserted."
+      },
+      "current_parent_entry_sha256": "393986b258a8be713d43159ed6eb9abf19967bae4c89220754005d94d7850043",
+      "change": "Retain exact calendar-departure suppression; update only its actual inherited parent record kind."
+    }
+  ],
+  "conservation": {
+    "exclusions_before": 57,
+    "exclusions_after": 57,
+    "all_non_record_fields_exact": true,
+    "all_other_top_level_values_exact": true,
+    "parent_ledger_unchanged": true,
+    "calendars_changed": false,
+    "new_English_text": false
+  },
+  "verification": {
+    "status": "passed-current-parent-frontier",
+    "owning_calendar_check": {
+      "command": "tools/check-calendar-masses --calendar roman-pre-1955",
+      "exit_code": 0,
+      "stdout": "src/sources/calendars/roman-pre-1955/propers.yaml\t8 masses\t0 propers"
+    },
+    "owning_census": {
+      "command": "tools/mass-propers census --calendar roman-pre-1955 --json",
+      "exit_code": 0,
+      "full_output_sha256": "e2afa73d87632923833ce9c1ccb9702ff5dae8497dc56b8025e09d11a78e6a99",
+      "stderr_empty": true,
+      "calendar": "roman-pre-1955",
+      "inherited_inapplicable_records": 57,
+      "unmatched_records": 0,
+      "unaccounted": 0
+    },
+    "scope_boundary": "These checks apply to the exact parent ledger SHA above. Subsequent upstream recoveries require a new exact kind successor, not speculative changes here."
+  }
+}

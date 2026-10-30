@@ -1,0 +1,23 @@
+{
+  "active_source_batch_pins": 7068,
+  "all152_document_classification_rows_exact": true,
+  "all2885_file_rows_exact_including_sha256": true,
+  "all_other_metadata_snapshot_counts_exact": true,
+  "delta_only_audited_on": {
+    "after": "2026-10-30",
+    "before": "2026-10-26"
+  },
+  "inventory_sha256": "37674eb1bd4fc5b6aec26da6923a07fce9c1313d23c0bca8e5458eb51a439676",
+  "owners12_exact": true,
+  "owning_check": "publication-inventory-check.result.json",
+  "sole_current_pin_mismatch": [
+    {
+      "actual": "37674eb1bd4fc5b6aec26da6923a07fce9c1313d23c0bca8e5458eb51a439676",
+      "expected": "515a842731a43cd6cf099c044f995425de07e4f9aa28432841204d8defdd913b",
+      "path": "src/sources/inventories/publications-v1.toml"
+    }
+  ],
+  "source_library_is_pinned": false,
+  "source_reader_is_pinned": false,
+  "worktree_equals_incoming": true
+}

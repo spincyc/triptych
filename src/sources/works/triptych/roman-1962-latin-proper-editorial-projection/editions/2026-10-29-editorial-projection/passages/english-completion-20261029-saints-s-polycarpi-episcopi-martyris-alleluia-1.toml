@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-29"
+id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-s-polycarpi-episcopi-martyris-alleluia-1"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29"
+artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-chant-latin-10b19922"
+artifact_sha256 = "10b19922a2fc07cd74be90ae8832d093e705247b93491fa155bf9a1090635e82"
+locus = "s-polycarpi-episcopi-martyris / Alleluia occurrence 1; project physical lines 16-16; Tours Mame 1922, artifact pages 631; printed 517; 1962 Vatican target, artifact p. 537, printed p. 456, unit 2030"
+physical_line_ranges = [[16, 16]]
+context = "Complete target-bound Latin chant, independently source-qualified; original study English remains separately identified and unapproved."
+notes = "Exact canonical UTF-8 body including terminal LF SHA-256 04cb875c5ae8e287c78bae2c1ea45fa6e1a3b7b83b0da5ec97426707f3ce8f99. Declared transformations: [\"Join printed line wraps and discard solely line-end hyphens; preserve every chant word and printed ending/cue.\", \"Remove stress accents; expand ae/oe ligatures as ae/oe.\", \"Canonical punctuation/case follow the 1962 target; normalize consonantal i/j to the declared calendar orthography (j retained).\", \"Exclude printed nonrecited citation labels and heading names from canonicalLatin/studyEnglish; retain the complete quoted Psalm words and explicit Gloria Patri cue.\"]. Exact differences: [\"Every word agrees. All three Mame Alleluja forms correspond to target Alleluia by received spelling; canonicalLatin retains the calendar Alleluia convention.\", \"No biblical reference is printed or inferred; no citation apparatus is removed.\"]"

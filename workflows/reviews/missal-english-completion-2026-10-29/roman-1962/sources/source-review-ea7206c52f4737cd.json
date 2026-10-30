@@ -1,0 +1,229 @@
+{
+  "schema": "triptych-independent-source-only-variant-review/v1",
+  "packet": {
+    "path": ".scratch/roman-english-completion-20261029/chants/saints/finite-rights-candidates-two.json",
+    "sha256": "0301b7d374ef30b8037339bd7f7234f5e577bc4fa36c5c02e798bbce179ac3d8"
+  },
+  "scope": "Only source words, exact deltas, contrary evidence and old dictionaries for two separate rights-pending candidates. No legal or publication clearance; no merger into accepted twenty.",
+  "rows": [
+    {
+      "identity": {
+        "mass": "exaltatione-s-crucis",
+        "form_id": "main",
+        "proper": "Offertory",
+        "cycle": "all",
+        "occurrence": 1
+      },
+      "sourceOnlyVerdict": "confirmed-precise-variant-and-bounded-contrary-evidence",
+      "wholeBodyPDMatch": false,
+      "rightsVerdict": null,
+      "studyEnglishVerdict": null,
+      "selectedTargetLatinSHA256": "18060fef847e0615136dba2a6e73b16797e3b944665c4e1475dc8643be33fa79",
+      "calculatedPrimaryDelta": [
+        {
+          "kind": "insert",
+          "source_tokens": [],
+          "target_tokens": [
+            "omnibus"
+          ],
+          "source_token_range_zero_based": [
+            9,
+            9
+          ],
+          "target_token_range_zero_based": [
+            9,
+            10
+          ]
+        }
+      ],
+      "alternateSourceChecks": [
+        {
+          "artifactID": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+          "artifactPage": 828,
+          "calculatedDelta": [
+            {
+              "kind": "insert",
+              "source_tokens": [],
+              "target_tokens": [
+                "omnibus"
+              ],
+              "source_token_range_zero_based": [
+                9,
+                9
+              ],
+              "target_token_range_zero_based": [
+                9,
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "artifactID": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+          "artifactPage": 952,
+          "calculatedDelta": [
+            {
+              "kind": "insert",
+              "source_tokens": [],
+              "target_tokens": [
+                "alleluia"
+              ],
+              "source_token_range_zero_based": [
+                23,
+                23
+              ],
+              "target_token_range_zero_based": [
+                23,
+                24
+              ]
+            }
+          ]
+        },
+        {
+          "artifactID": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+          "artifactPage": 626,
+          "calculatedDelta": [
+            {
+              "kind": "insert",
+              "source_tokens": [],
+              "target_tokens": [
+                "omnibus"
+              ],
+              "source_token_range_zero_based": [
+                9,
+                9
+              ],
+              "target_token_range_zero_based": [
+                9,
+                10
+              ]
+            }
+          ]
+        }
+      ],
+      "oldProperAndEnglishAbsenceMatchCurrentCanonical": true,
+      "oldAbsenceRetained": true
+    },
+    {
+      "identity": {
+        "mass": "s-ioannis-damasceni-confessoris-ecclesiae-doctoris",
+        "form_id": "main",
+        "proper": "Offertory",
+        "cycle": "all",
+        "occurrence": 2
+      },
+      "sourceOnlyVerdict": "confirmed-precise-variant-and-bounded-contrary-evidence",
+      "wholeBodyPDMatch": false,
+      "rightsVerdict": null,
+      "studyEnglishVerdict": null,
+      "selectedTargetLatinSHA256": "e88531b6aff711ffb42e4d411fc44e81d0f07c5836d36e34fe3570b33a8a3c96",
+      "calculatedPrimaryDelta": [
+        {
+          "kind": "insert",
+          "source_tokens": [],
+          "target_tokens": [
+            "alleluia"
+          ],
+          "source_token_range_zero_based": [
+            12,
+            12
+          ],
+          "target_token_range_zero_based": [
+            12,
+            13
+          ]
+        }
+      ],
+      "alternateSourceChecks": [
+        {
+          "artifactID": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+          "artifactPage": 673,
+          "calculatedDelta": [
+            {
+              "kind": "insert",
+              "source_tokens": [],
+              "target_tokens": [
+                "alleluia"
+              ],
+              "source_token_range_zero_based": [
+                12,
+                12
+              ],
+              "target_token_range_zero_based": [
+                12,
+                13
+              ]
+            }
+          ]
+        }
+      ],
+      "oldProperAndEnglishAbsenceMatchCurrentCanonical": true,
+      "oldAbsenceRetained": true
+    }
+  ],
+  "directlyInspectedImages": [
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/saints/cross-michael/images/target-200-0736.png",
+      "sha256": "8b4e72d6edc02bc8e653bbae364e372799beb39d54c3f74d51e0d5bd2834ce68"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/saints/cross-michael/images/target-400-0736.png",
+      "sha256": "8874aacb8dd71723ac596e9ae68f767762a687057ac159b05e6c42ba79e738ab"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/saints/cross-michael/images/mame-200-0828.png",
+      "sha256": "62e2fa21ab317d1dac1aa2593816308b95825181d731803c0918b96c04d89842"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/saints/cross-michael/images/mame-400-0828.png",
+      "sha256": "4a7c453f53883a1283a71b4d0b9b3e0b0593c1c655282b571429d2fade568e36"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/saints/cross-michael/images/mame-200-0952.png",
+      "sha256": "ad133b225fd1409df2b74f7dd5bc1c0a8662592ea65ecfe7bbbaaba2c30e8de4"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/saints/cross-michael/images/mame-400-0952.png",
+      "sha256": "cae4482de8c3d9191acf4944c1833128062054c573556a5ff6ef41d16b261f2c"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/saints/cross-michael/images/pustet-scale2800-626.png",
+      "sha256": "4d2e943baf791c3413c5ae3bcaf488014a08f4f491272aa7f15ff1664c9005ff"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/saints/doctors-saints/images/target-579.png",
+      "sha256": "b50b9156eea4ccb3517b83167a1238b85440bef445cd9fcd4f644711e3a7fcb7"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/saints/doctors-saints/images/mame-673.png",
+      "sha256": "68d94674d6370da03dc1f3ac61aa64cdd5c1f5249bd845b084d303fd0acf98d7"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/saints/doctors-saints/images/target-577.png",
+      "sha256": "d2ff004d132c5a5d9da510653495d579fd593de4526e16a4c220a5ae670132b0"
+    }
+  ],
+  "fullSourcesIndependentlyHashed": [
+    {
+      "path": ".scratch/c1-retry-1962/missale62.pdf",
+      "sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+    },
+    {
+      "path": ".scratch/c1-pre1955/download/mame1922.pdf",
+      "sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005"
+    },
+    {
+      "path": ".scratch/resume-postconciliar-orations/pustet-1862.pdf",
+      "sha256": "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474"
+    }
+  ],
+  "findings": [
+    "Cross feast1922 and1862 both omit first omnibus. Passion1922 carries omnibus in the same stem but ends at nostrum with no final acclamation. These distinct utterances do not establish a whole-body match.",
+    "Damascene target2342 prints the exact base plus parenthesized T.P. Alleluia. The selected Paschal body adds only Alleluia at zero-based token12; T.P. is instructional apparatus and excluded. Historical local673 ends at pullulant and carries no continuation.",
+    "Strongest contrary evidence is accurately bounded to the inspected complete utterances; earliest publication and wider historical absence remain unestablished."
+  ],
+  "errors": [],
+  "trackedMutations": false,
+  "rightsClearance": null,
+  "publicationAdmission": false
+}

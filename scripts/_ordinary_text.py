@@ -54,6 +54,11 @@ WIDTH = 88
 # Which kinds are words that are said. Everything else is printed matter about
 # the Mass rather than words of it, and is set apart.
 SPOKEN = ("prayer", "form", "dialogue")
+SPEAKER_LABELS = {
+    "priest": "Priest", "server": "Server", "all": "All",
+    "bishop": "Bishop", "communicant": "Communicant",
+    "deacon-or-priest": "Deacon or priest", "lector": "Reader", "deacon": "Deacon",
+}
 
 
 def wrap(text: str, indent: str, width: int = WIDTH) -> list[str]:
@@ -78,6 +83,18 @@ def absence_side(lang: str) -> str:
     return {"en": "english", "la": "latin"}.get(lang, lang)
 
 
+def source_note_lines(
+    translation: dict, style: Style, indent: str, *, why: bool = False,
+) -> list[str]:
+    """Keep source-owned reading qualifications separate from spoken text."""
+    note = translation.get("note") if why else None
+    if not isinstance(note, str) or not note.strip():
+        note = translation.get("reading_note")
+    if not isinstance(note, str) or not note.strip():
+        return []
+    return [style.note(line) for line in wrap(f"[ Source note: {note} ]", indent)]
+
+
 def translation_applicability(translation: dict, context: dict | None = None) -> str:
     """Source heldness does not authorize executing a scoped language body."""
     if "applicability" not in translation:
@@ -99,6 +116,21 @@ def translation_applicability(translation: dict, context: dict | None = None) ->
         return "unresolved"
     return ("applicable" if context["calendar"] == scope["calendar"]
             and context["formulary"] in scope["formularies"] else "inapplicable")
+
+
+def applicable_translation(
+    translations: list[dict], context: dict | None = None,
+) -> tuple[dict | None, str]:
+    """A source-order position cannot choose between language alternatives."""
+    scoped = [(row, translation_applicability(row, context)) for row in translations]
+    applicable = [row for row, state in scoped if state == "applicable"]
+    if len(applicable) > 1:
+        return None, "ambiguous"
+    if any(state == "unresolved" for _, state in scoped):
+        return None, "unresolved"
+    if applicable:
+        return applicable[0], "applicable"
+    return None, "inapplicable"
 
 
 def element_lines(
@@ -136,20 +168,23 @@ def element_lines(
 
     named = element.get("name") or element.get("latin_incipit")
     lines: list[str] = []
+    selected, applicability = applicable_translation(held, context)
 
     if kind == "heading":
-        applicability = translation_applicability(held[0], context)
-        if applicability != "applicable":
+        if selected is None:
             return [indent + style.note(f"[held source text; applicability {applicability} for this formulary context]")]
         lines.append("")
-        lines.extend(indent + one for one in style.heading(str(held[0]["text"]).strip(), rule="-"))
+        lines.extend(indent + one for one in style.heading(str(selected["text"]).strip(), rule="-"))
+        lines.extend(source_note_lines(selected, style, indent, why=why))
         if why and element.get("locus"):
             lines.append(indent + style.note(f"[{element['locus']}]"))
         return lines
 
     if named:
         speaker = element.get("speaker")
-        title = str(named) + (f" ({speaker})" if speaker else "")
+        header_speaker = (speaker if speaker in ("priest", "server", "all")
+                          else SPEAKER_LABELS.get(speaker))
+        title = str(named) + (f" ({header_speaker})" if header_speaker else "")
         lines.append("")
         lines.extend(indent + one for one in style.heading(title))
         if why and element.get("locus"):
@@ -159,18 +194,18 @@ def element_lines(
 
     body = indent + "  "
     if held:
-        applicability = translation_applicability(held[0], context)
-        if applicability != "applicable":
+        if selected is None:
             lines.append(body + style.note(f"[held source text; applicability {applicability} for this formulary context]"))
             return lines
-        text = str(held[0].get("text") or "")
+        lines.extend(source_note_lines(selected, style, body, why=why))
+        text = str(selected.get("text") or "")
         if kind == "rubric":
             # Bracketed in every tier. The brackets are the distinction; the
             # dimming, where a terminal has it, is only ease.
             for line in wrap(f"[ {' '.join(text.split())} ]", body):
                 lines.append(style.note(line))
         elif kind in SPOKEN:
-            turns = held[0].get("turns") or []
+            turns = selected.get("turns") or []
             if turns:
                 for turn in turns:
                     words = str(turn.get("text") or "")
@@ -180,7 +215,7 @@ def element_lines(
                         if show_rubrics:
                             lines.extend(style.note(line) for line in wrap(f"[ {words} ]", body))
                     else:
-                        speaker = {"priest": "Priest", "server": "Server", "all": "All"}.get(turn.get("speaker"))
+                        speaker = SPEAKER_LABELS.get(turn.get("speaker"))
                         role = {"versicle": "℣", "response": "℟"}.get(turn.get("dialogue_role"))
                         cue = (role + (" — " + speaker if speaker else "")) if role else speaker
                         marker = turn.get("printed_marker")

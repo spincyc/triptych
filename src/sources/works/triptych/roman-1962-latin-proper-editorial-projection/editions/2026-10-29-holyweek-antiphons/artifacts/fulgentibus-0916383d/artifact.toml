@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.holyweek-antiphons-2026-10-29.fulgentibus-0916383d"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.holyweek-antiphons-2026-10-29"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych offers only its bounded editorial selection, spelling normalization and target-relation record under CC BY 4.0. The historical Latin words have their independently registered public-domain source basis; no exclusive right in those words is claimed."
+rights_jurisdiction = "United States"
+provenance = "Complete historical and target bodies read on source page images at 200 and 400 dpi on 29 October 2026, with source/target separation and explicit orthographic transformations."
+retrieved = "2026-10-29"
+sha256 = "0916383d240a773024be9918e843dacd452f1ceb7456adb3a6d12747dfd95b53"
+byte_size = 150
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-holyweek-antiphons/artifacts/fulgentibus-0916383d/latin.txt"
+projected_from = ["artifact.abbey-of-saint-gall.hartker-antiphonary.1900-solesmes-facsimile.fulgentibus-latin-checked-20261029", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Expand manuscript contractions Fulgentib[us] and p[ro]sternimur and et signs. Manuscript aduenienti/ymnis -> target advenienti/hymnis; orthography only. Target pointing/capitals, join original two text lines, omit musical neumes and mode annotations."
+indexable = true
+encoding = "utf-8"
+notes = "This artifact contains only the exact calendar Latin projection. Original source spelling remains in its own checked transcription. No target image, heading, rubric or other protected apparatus is copied."

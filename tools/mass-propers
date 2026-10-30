@@ -26,6 +26,7 @@ import _calendars  # noqa: E402
 import _missal_coverage  # noqa: E402
 import _oration_execution  # noqa: E402
 import _name_execution  # noqa: E402
+import _proper_qualified_latin  # noqa: E402
 from _psalms import (  # noqa: E402
     PSALMS,
     SYSTEMS,
@@ -47,6 +48,7 @@ from _lasance_publication import (  # noqa: E402
 from _proper_latin import (  # noqa: E402
     CLI_SURFACES,
     STRUCTURE_SURFACES,
+    SURFACES,
     LatinKey,
     body_owners,
     publication_records,
@@ -69,17 +71,17 @@ EXAMPLES = {
         Example(
             "tools/mass-propers list --calendar roman-1962",
             (
+                "# roman-1962: 491 masses",
                 "roman-1962\t08\tchristological\t10\toctava-nativitatis-domini\tOctava Nativitatis Domini",
                 "roman-1962\t10\tchristological\t10\tepiphania-domini\tIn Epiphania Domini",
-                "roman-1962\t12\tchristological\t10\tcommemoratione-baptismatis-domini-nostri-iesu-christi\tIn Commemoratione Baptismatis Domini Nostri Iesu Christi",
-                "roman-1962\t1962-07-01\tchristological\t10\tpretiosissimi-sanguinis-domini-nostri-iesu-christi\tPreti... [+45 chars]",
+                "roman-1962\t12\tchristological\t10\tcommemoratione-baptismatis-domini-nostri-iesu-christi\tIn Commemo... [+46 chars]",
                 "... 488 more lines",
             ),
         ),
         Example(
             "tools/mass-propers list --calendar postconciliar --format json",
             (
-                "{\"calendars\":{\"postconciliar\":[{\"key\":\"most-holy-name-jesus\",\"kind\":\"christological\",\"name\":\"The... [+84849 chars]",
+                "{\"calendars\":{\"postconciliar\":[{\"key\":\"most-holy-name-jesus\",\"kind\":\"christological\",\"name\":\"The... [+84866 chars]",
             ),
         ),
     ),
@@ -110,7 +112,7 @@ EXAMPLES = {
                 "  key: advent-1",
                 "  name: First Sunday of Advent",
                 "  registry: '01'",
-                "... 1144 more lines",
+                "... 1146 more lines",
             ),
         ),
     ),
@@ -118,9 +120,9 @@ EXAMPLES = {
         Example(
             "tools/mass-propers list --calendar roman-1962",
             (
+                "# roman-1962: 491 masses",
                 "roman-1962\t08\tchristological\t10\toctava-nativitatis-domini\tOctava Nativitatis Domini",
                 "roman-1962\t10\tchristological\t10\tepiphania-domini\tIn Epiphania Domini",
-                "roman-1962\t12\tchristological\t10\tcommemoratione-baptismatis-domini-nostri-iesu-christi\tIn Commemoratione Baptismatis Domini Nostri Iesu Christi",
                 "... 489 more lines",
             ),
             "read-only first: `list` names the masses `structure` will write",
@@ -128,9 +130,9 @@ EXAMPLES = {
         Example(
             "tools/mass-propers structure --out build/example-propers",
             (
-                "postconciliar: 619 masses, 4040 citations",
-                "roman-1962: 491 masses, 4720 citations",
-                "roman-pre-1955: 489 masses, 4658 citations",
+                "postconciliar: 619 masses, 4076 citations",
+                "roman-1962: 491 masses, 4729 citations",
+                "roman-pre-1955: 489 masses, 4667 citations",
                 "  -> build/example-propers/structure/propers/postconciliar.json",
                 "  -> build/example-propers/structure/propers/search/postconciliar.json",
                 "  -> build/example-propers/structure/propers/roman-1962.json",
@@ -142,9 +144,9 @@ EXAMPLES = {
         Example(
             "tools/mass-propers structure --check",
             (
-                "postconciliar: 619 masses, 4040 citations",
-                "roman-1962: 491 masses, 4720 citations",
-                "roman-pre-1955: 489 masses, 4658 citations",
+                "postconciliar: 619 masses, 4076 citations",
+                "roman-1962: 491 masses, 4729 citations",
+                "roman-pre-1955: 489 masses, 4667 citations",
                 "  499 tracked file(s) are current",
             ),
             "writes nothing: exits 1 naming each tracked file the sources no longer produce. The calendar-Mass check target runs this",
@@ -154,10 +156,10 @@ EXAMPLES = {
         Example(
             "tools/mass-propers census",
             (
-                "# roman-pre-1955 English orations: 1378 slots appointed, 110 public-available, 0 held rights-restricted, 1268 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
-                "# roman-1962 English orations: 1427 slots appointed, 123 public-available, 0 held rights-restricted, 1304 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
-                "# postconciliar English orations: 509 slots appointed, 113 public-available, 0 held rights-restricted, 396 ledgered untranslated, 0 unaccounted; 3 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
-                "# postconciliar Latin recension: 372 unique non-scriptural slots, 0 bodies resident; 0 explicitly antecedent substitutes, 0 other bodies with antecedent-relation metadata, 0 without per-slot Latin relation; direct target-edition artifact attestation not-represented",
+                "# roman-pre-1955 English orations: 1391 slots appointed, 1373 public-available, 0 held rights-restricted, 18 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
+                "# roman-1962 English orations: 1448 slots appointed, 1407 public-available, 0 held rights-restricted, 41 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
+                "# postconciliar English orations: 574 slots appointed, 155 public-available, 0 held rights-restricted, 419 ledgered untranslated, 0 unaccounted; 2 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
+                "# postconciliar Latin recension: 434 unique non-scriptural slots, 0 bodies resident; 0 explicitly antecedent substitutes, 0 other bodies with antecedent-relation metadata, 0 without per-slot Latin relation; direct target-edition artifact attestation not-represented",
                 "<!-- census:begin — derived; edit nothing between these markers -->",
                 "",
                 "... 95 more lines",
@@ -528,11 +530,8 @@ def public_latin_state(latin: dict, target: str) -> dict:
             return latin
         # The full comparison proof remains source-owned. An assembled prayer
         # carries only its exact normalized controller and public qualification.
-        from _proper_qualified_latin import SCOPES
         provenance = latin.get("provenance") or {}
-        scope = next((one for one in SCOPES
-                      if one["body_sha256"] == latin.get("text_sha256")
-                      and one["source_id"] == provenance.get("source_id")), None)
+        scope = _proper_qualified_latin.public_scope(latin)
         if (scope is not None and publication.get("status") == "permitted"
                 and provenance.get("status") == "collated"):
             return {
@@ -543,7 +542,7 @@ def public_latin_state(latin: dict, target: str) -> dict:
                     "status": "permitted", "basis": publication["basis"],
                     "surfaces": list(publication.get("surfaces") or []),
                     "source_ids": [scope["artifact_id"]],
-                    "notice": "Qualified United States editorial assessment under publication policy section 1 priority 6; moderate confidence. The later form is assessed as a nonoriginal adaptation of an older public-domain whole prayer. The theological-redaction originality objection remains. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier.",
+                    "notice": scope["notice"],
                 },
                 "withheld": False, "reason": None,
             }
@@ -1685,6 +1684,128 @@ def validate_translation_payload(
         seen.add(identity)
 
 
+STUDY_TRANSLATION_SOURCE_FIELDS = frozenset(
+    {
+        "source_latin_sha256",
+        "source_latin_passage_id",
+        "source_latin_publication_source_ids",
+    }
+)
+
+
+def study_translation_source_context(calendar: str, root: Path) -> tuple[dict, dict, dict]:
+    """Read the canonical Latin and its independently validated source decisions."""
+
+    sources, trouble = _source_library_records(root)
+    if trouble:
+        raise ValueError("study translation source library: " + "; ".join(trouble))
+    records, trouble = publication_records(root, calendar, registered_sources=sources)
+    if trouble:
+        raise ValueError("study translation Latin provenance: " + "; ".join(trouble))
+    document = target_document(root, calendar, load_calendar(root, calendar))
+    return document, records, sources
+
+
+def validate_study_translation_binding(
+    entry: dict,
+    calendar: str,
+    root: Path,
+    path: Path,
+    *,
+    context: tuple[dict, dict, dict] | None = None,
+) -> None:
+    """A bound study translation cannot silently survive changes to its Latin.
+
+    Legacy unbound studies retain their existing meaning. Supplying any of the
+    binding fields opts into the whole contract, checked against source owners
+    rather than a generated browser snapshot or a same-word occurrence.
+    """
+
+    present = STUDY_TRANSLATION_SOURCE_FIELDS & set(entry)
+    if not present:
+        return
+    if present != STUDY_TRANSLATION_SOURCE_FIELDS:
+        raise ValueError(
+            f"{path}: partial study translation source binding; missing "
+            f"{sorted(STUDY_TRANSLATION_SOURCE_FIELDS - present)!r}"
+        )
+    expected_sha = entry["source_latin_sha256"]
+    if not isinstance(expected_sha, str) or re.fullmatch(r"[0-9a-f]{64}", expected_sha) is None:
+        raise ValueError(f"{path}: source_latin_sha256 must be 64 lowercase hex digits")
+    passage_id = entry["source_latin_passage_id"]
+    if not isinstance(passage_id, str) or not passage_id.strip():
+        raise ValueError(f"{path}: source_latin_passage_id must be a nonempty passage id")
+    source_ids = entry["source_latin_publication_source_ids"]
+    if (not isinstance(source_ids, list) or not source_ids
+            or any(not isinstance(one, str) or not one.strip() for one in source_ids)
+            or len(source_ids) != len(set(source_ids))):
+        raise ValueError(f"{path}: source_latin_publication_source_ids must be nonempty unique source ids")
+    studies = [one for one in entry.get("translations") or []
+               if isinstance(one, dict) and one.get("rights") == "project-created"]
+    if not studies or any("source_id" in one for one in studies):
+        raise ValueError(f"{path}: bound study English requires a project-created translation without source_id")
+
+    document, records, sources = context or study_translation_source_context(calendar, root)
+    identity = translation_record_identity(entry, document)
+    mass_key, form_id, name, cycle, occurrence = identity
+    mass = _calendars.mass_index(document).get(mass_key)
+    if mass is None:
+        raise ValueError(f"{path}: study translation names no Latin source mass {mass_key!r}")
+    form = ""
+    if form_id != FORM_ID_MAIN:
+        forms = [one for one in mass.get("forms") or [] if one.get("id") == form_id]
+        if len(forms) != 1:
+            raise ValueError(f"{path}: study translation has no exact Latin source form {form_id!r}")
+        form = str(forms[0].get("name") or "")
+    rows, trouble = _calendars._form_propers(mass, form)
+    if trouble:
+        raise ValueError(f"{path}: {trouble}")
+    owners = [one for one in rows if not one.get(_calendars.TAKES_FROM) and one.get("name") == name]
+    if not 1 <= occurrence <= len(owners):
+        raise ValueError(f"{path}: study translation has no exact Latin source occurrence {identity!r}")
+    proper = owners[occurrence - 1]
+    carried = sanitize_source_proper(
+        document, (mass_key, form, name), (*identity[:3], occurrence),
+        proper, records, SURFACES,
+    )
+    candidates = ([carried] if cycle == CYCLE_ALL else
+                  [one for _, key, one in cycle_owners(carried) if key == cycle])
+    if len(candidates) != 1 or not isinstance(candidates[0].get("text"), str) or not candidates[0]["text"].strip():
+        raise ValueError(f"{path}: study translation requires a complete publishable Latin source body for {identity!r}")
+    selected = candidates[0]
+    if hashlib.sha256(selected["text"].encode("utf-8")).hexdigest() != expected_sha:
+        raise ValueError(f"{path}: study translation source Latin hash is stale for {identity!r}")
+    latin = selected.get("latin") or {}
+    provenance = latin.get("provenance") or {}
+    publication = latin.get("publication") or {}
+    basis = publication.get("basis")
+    if (provenance.get("status") != "collated"
+            or basis not in {"public-domain", _proper_qualified_latin.BASIS}):
+        raise ValueError(f"{path}: bound study translation requires collated public-domain or independently qualified Latin")
+    if (provenance.get("source_id") != passage_id
+            or (sources.get(passage_id) or {}).get("record_type") != "passage"):
+        raise ValueError(f"{path}: study translation Latin passage differs from its exact source provenance")
+    if (set(publication.get("source_ids") or []) != set(source_ids)
+            or any(one not in sources for one in source_ids)):
+        raise ValueError(f"{path}: study translation publication sources differ from its Latin decision")
+    if basis == _proper_qualified_latin.BASIS:
+        # This basis is a finite adoption, not a generic permission to translate
+        # modern Latin. Keep its exact owner/proof/authority checks in its owner.
+        qualified = [row for row in records.values()
+                     if row.get("source_id") == passage_id
+                     and row.get("text_sha256") == expected_sha
+                     and row.get("publication_basis") == basis]
+        trouble = (["no exact qualified Latin decision"] if len(qualified) != 1 else
+                   _proper_qualified_latin.source_problems(
+                       qualified[0], sources, effective_calendar=calendar))
+        if not trouble:
+            trouble = _proper_qualified_latin.authority_problems(
+                root.resolve().parents[2], row=qualified[0],
+            )
+        if trouble:
+            raise ValueError(f"{path}: study translation qualified Latin authority: " + "; ".join(trouble))
+
+
 def ledger_rows(document: dict, field: str, path: Path) -> list:
     """One TOML array-of-tables, never truthy scalar iteration."""
 
@@ -2458,6 +2579,166 @@ def scripture_body_absence_problems(record: dict, calendar: str, records: dict) 
     return errors
 
 
+# An admission pins a separately reviewed, finite source packet, never a method
+# name supplied by a data row. No production Scripture body has been admitted.
+# Each future value is (repository-relative packet path, exact SHA-256).
+SCRIPTURE_BODY_TRANSLATION_ADMISSIONS: dict[str, tuple[str, str]] = {}
+# An inherited positive needs a separate exact target-recension packet. Its
+# explicit edge is (source admission id, requested calendar) -> child admission
+# id. Parent English and matching Bible assignments never create this edge.
+SCRIPTURE_BODY_TRANSLATION_RECENSION_ADMISSIONS: dict[tuple[str, str], str] = {}
+
+
+def scripture_translation_targets(document: dict) -> set[tuple[str, str, str, str, int]]:
+    """Exact Scripture owners in one calendar, with no empty cycle container."""
+
+    targets = set()
+    for _, mass in masses_of(document):
+        for form, proper, taken_from in appointed_propers(document, mass):
+            identity = source_slot_identity(document, mass, form, proper, taken_from)
+            owners = cycle_owners(proper)
+            if not owners and proper.get("source") == "scripture":
+                targets.add((*identity[:3], CYCLE_ALL, identity[3]))
+            for _, cycle, child in owners:
+                if (child.get("source") or proper.get("source")) == "scripture":
+                    targets.add((*identity[:3], cycle, identity[3]))
+    return targets
+
+
+def scripture_body_translation_problems(
+    entry: dict, calendar: str, root: Path, *, records: dict | None = None,
+) -> list[str]:
+    """A positive Scripture body needs its own closed, source-pinned admission.
+
+    A source:scripture node continues to own a Bible assignment, not Latin
+    words. The approved whole-English target witness and the independently
+    held public-domain source of a fresh study translation are separate proof
+    objects. Their complete arrangement/variant assessment is reviewed in the
+    exact packet; neither a citation nor a self-asserted assessment admits one.
+    """
+
+    try:
+        if not {"mass", "form_id", "proper", "cycle", "occurrence"} <= set(entry):
+            raise ValueError("requires an explicit exact target including form, cycle and occurrence")
+        if "form" in entry:
+            raise ValueError("uses stable form_id without a legacy display form")
+        identity = translation_record_identity(entry)
+        if entry.get("extent") != "body":
+            raise ValueError("requires explicit extent 'body'")
+        if STUDY_TRANSLATION_SOURCE_FIELDS & set(entry):
+            raise ValueError("cannot borrow the canonical Latin study-binding contract")
+        translations = entry.get("translations")
+        if (not isinstance(translations, list) or len(translations) != 1
+                or not isinstance(translations[0], dict)
+                or translations[0].get("lang") != "en"
+                or translations[0].get("rights") != "project-created"
+                or "source_id" in translations[0]
+                or not isinstance(translations[0].get("text"), str)
+                or not translations[0]["text"].strip()):
+            raise ValueError("requires one complete project-created English study translation")
+        binding = entry.get("scripture_body_source")
+        if (not isinstance(binding, dict) or set(binding) != {"admission_id"}
+                or not isinstance(binding.get("admission_id"), str)):
+            raise ValueError("requires only a closed scripture_body_source.admission_id binding")
+        admission_id = binding["admission_id"]
+        admitted = SCRIPTURE_BODY_TRANSLATION_ADMISSIONS.get(admission_id)
+        if admitted is None:
+            raise ValueError("requires an exact reviewed finite admission")
+        repository = root.resolve().parents[2]
+
+        def checked_bytes(relative: str, expected: str) -> bytes:
+            if (not isinstance(relative, str) or not relative
+                    or not isinstance(expected, str)
+                    or re.fullmatch(r"[0-9a-f]{64}", expected) is None):
+                raise ValueError("has an invalid source packet path/hash")
+            path = repository / relative
+            if (Path(relative).is_absolute() or path.is_symlink()
+                    or not path.resolve().is_relative_to(repository)):
+                raise ValueError("source packet path escapes its repository")
+            value = path.read_bytes()
+            if hashlib.sha256(value).hexdigest() != expected:
+                raise ValueError(f"source packet or payload is missing or changed: {relative}")
+            return value
+
+        packet = json.loads(checked_bytes(*admitted))
+        expected_target = dict(zip(("mass", "form_id", "proper", "cycle", "occurrence"), identity),
+                               extent="body", lang="en")
+        if (not isinstance(packet, dict)
+                or packet.get("schema") != "triptych-scripture-body-translation-admission/v1"
+                or packet.get("id") != admission_id or packet.get("calendar") != calendar
+                or packet.get("target") != expected_target
+                or packet.get("english_sha256") != hashlib.sha256(
+                    translations[0]["text"].encode("utf-8")).hexdigest()):
+            raise ValueError("admission differs from its exact target or English body")
+        if not isinstance(packet.get("assessment"), dict) or not packet["assessment"]:
+            raise ValueError("admission lacks its reviewed whole-body arrangement/variant assessment")
+        if records is None:
+            records, trouble = _source_library_records(root)
+            if trouble:
+                raise ValueError("; ".join(trouble))
+        sources = {key: value.data if hasattr(value, "data") else value
+                   for key, value in records.items()}
+        pins = packet.get("source_record_sha256")
+        payloads = packet.get("source_payload_sha256")
+        if not isinstance(pins, dict) or not pins or not isinstance(payloads, dict) or not payloads:
+            raise ValueError("admission requires exact source records and held source payloads")
+        for source_id, expected in pins.items():
+            source = sources.get(source_id)
+            if (not isinstance(source, dict) or hashlib.sha256(json.dumps(
+                    source, sort_keys=True, ensure_ascii=False, separators=(",", ":")
+            ).encode("utf-8")).hexdigest() != expected):
+                raise ValueError(f"admission source record is missing or changed: {source_id}")
+            # Every ancestor used by a pinned record remains pinned too. A
+            # passage cannot keep a permission while its controlling edition,
+            # artifact or derivation changes behind the packet.
+            parents = [source.get(field) for field in
+                       ("edition_id", "work_id", "artifact_id", "segment_id")]
+            for field in ("derived_from", "projected_from"):
+                if field not in source:
+                    continue
+                ancestors = source[field]
+                if isinstance(ancestors, str):
+                    ancestors = [ancestors]
+                if (not isinstance(ancestors, list)
+                        or any(not isinstance(parent, str) or not parent.strip()
+                               for parent in ancestors)):
+                    raise ValueError(f"admission has malformed source ancestry: {source_id}.{field}")
+                parents.extend(ancestors)
+            if any(parent not in pins for parent in parents if parent):
+                raise ValueError(f"admission omits a source ancestor of {source_id}")
+            if source.get("record_type") == "artifact" and source.get("storage") == "tracked":
+                relative = source.get("path")
+                if payloads.get(relative) != source.get("sha256"):
+                    raise ValueError(f"admission omits the exact held payload of {source_id}")
+        for relative, expected in payloads.items():
+            checked_bytes(relative, expected)
+        witness = packet.get("target_witness")
+        if (not isinstance(witness, dict)
+                or untranslated_record_identity(witness) != identity):
+            raise ValueError("admission lacks its exact whole-English target witness")
+        trouble = scripture_body_absence_problems(witness, calendar, sources)
+        if trouble:
+            raise ValueError("; ".join(trouble))
+        if any(witness.get(field) not in pins for field in ("witness_artifact_id", "witness_passage_id")):
+            raise ValueError("admission target witness is not source-pinned")
+        passages = packet.get("source_passage_ids")
+        if not isinstance(passages, list) or not passages:
+            raise ValueError("admission lacks its independently held public-domain source passages")
+        for source_id in passages:
+            passage = sources.get(source_id) or {}
+            artifact = sources.get(passage.get("artifact_id")) or {}
+            edition = sources.get(passage.get("edition_id")) or {}
+            if (source_id not in pins or passage.get("record_type") != "passage"
+                    or not {"inspected", "verified"} <= set(passage.get("states") or [])
+                    or artifact.get("record_type") != "artifact" or artifact.get("storage") != "tracked"
+                    or artifact.get("rights_status") != "public-domain" or edition.get("language") != "la"
+                    or passage.get("artifact_sha256") != artifact.get("sha256")):
+                raise ValueError("admission source passage is not an inspected held public-domain Latin witness")
+    except (ValueError, TypeError, KeyError, OSError, IndexError) as error:
+        return ["Scripture body translation " + str(error)]
+    return []
+
+
 def translation_overlay(
     calendar: str, root: Path = DEFAULT_ROOT
 ) -> tuple[dict, dict, list, dict]:
@@ -2488,16 +2769,9 @@ def translation_overlay(
     owners = translation_ledger_calendars(calendar, root)
     if not owners:
         return {}, {}, [], {}
-    scripture_targets = set()
     document = load_calendar(root, calendar)
-    for _, mass in masses_of(document):
-        for form, proper, taken_from in appointed_propers(document, mass):
-            identity = source_slot_identity(document, mass, form, proper, taken_from)
-            if proper.get("source") == "scripture":
-                scripture_targets.add((*identity[:3], CYCLE_ALL, identity[3]))
-            for _, cycle, child in cycle_owners(proper):
-                if (child.get("source") or proper.get("source")) == "scripture":
-                    scripture_targets.add((*identity[:3], cycle, identity[3]))
+    scripture_targets = scripture_translation_targets(document)
+    owner_scripture_targets = {calendar: scripture_targets}
     overlay: dict[tuple[str, str, str, str, int], dict] = {}
     stale = []
     untranslated: dict[tuple[str, str, str], list[dict]] = {}
@@ -2521,6 +2795,9 @@ def translation_overlay(
         path = inventory_root(root) / f"{owner}-proper-translations-v1.toml"
         document = _calendars.read_toml(path)
         owner_document = _calendars.load_document(root, owner, effective=False)
+        study_context = None
+        if owner not in owner_scripture_targets:
+            owner_scripture_targets[owner] = scripture_translation_targets(load_calendar(root, owner))
 
         # A translation may cite either the conceptual edition or the exact
         # expression artifact whose bytes were transcribed. Both identifiers
@@ -2641,7 +2918,17 @@ def translation_overlay(
                 raise ValueError(f"{path}: every entries row must be a table")
             validate_translation_payload(entry, path, witnesses)
             validate_translation_publication_binding(entry, root, path, witnesses)
+            if STUDY_TRANSLATION_SOURCE_FIELDS & set(entry):
+                if study_context is None:
+                    study_context = study_translation_source_context(owner, root)
+                validate_study_translation_binding(entry, owner, root, path, context=study_context)
             identity = translation_record_identity(entry, owner_document)
+            if identity in owner_scripture_targets[owner] or "scripture_body_source" in entry:
+                if identity not in owner_scripture_targets[owner]:
+                    raise ValueError(f"{path}: Scripture body translation has no exact Scripture target")
+                problems = scripture_body_translation_problems(entry, owner, root)
+                if problems:
+                    raise ValueError(f"{path}: " + "; ".join(problems))
             if identity in entry_owners:
                 raise ValueError(f"{path}: duplicate translation entry target {identity!r}")
             languages = {
@@ -2690,6 +2977,27 @@ def translation_overlay(
             key = identity[:3]
             untranslated.setdefault(key, []).append(carried)
             untranslated_owners[identity] = owner
+
+    # Exclusions must get their ordinary chance to remove exact ancestor
+    # records before this check. A surviving ancestor body still has no whole
+    # body claim for the child recension until its own closed packet proves it.
+    for identity, entry in list(overlay.items()):
+        binding = entry.get("scripture_body_source")
+        if not isinstance(binding, dict) or entry_owners[identity] == calendar:
+            continue
+        child_id = SCRIPTURE_BODY_TRANSLATION_RECENSION_ADMISSIONS.get(
+            (binding.get("admission_id"), calendar)
+        )
+        if child_id is None or identity not in scripture_targets:
+            raise ValueError(
+                f"inherited Scripture body translation {identity!r} requires "
+                f"an exact closed admission for requested recension {calendar!r}"
+            )
+        projected = dict(entry, scripture_body_source={"admission_id": child_id})
+        problems = scripture_body_translation_problems(projected, calendar, root)
+        if problems:
+            raise ValueError("; ".join(problems))
+        overlay[identity] = projected
 
     return overlay, untranslated, stale, witnesses
 
@@ -2979,6 +3287,16 @@ def body_absence_kinds(
     return kinds
 
 
+def study_translation_matches_body(entry: dict, proper: dict) -> bool:
+    """A descendant may not inherit bound English over a different Latin body."""
+
+    if not STUDY_TRANSLATION_SOURCE_FIELDS & set(entry):
+        return True
+    text = proper.get("text")
+    return (isinstance(text, str) and hashlib.sha256(text.encode("utf-8")).hexdigest()
+            == entry.get("source_latin_sha256"))
+
+
 def translation_answers(entry: dict, proper: dict, language: str) -> bool:
     """A language body whose recorded incipit still matches the live slot."""
 
@@ -2986,9 +3304,9 @@ def translation_answers(entry: dict, proper: dict, language: str) -> bool:
     live = str(proper.get("incipit") or "").strip()
     # A recorded nonempty incipit can be compared only where the resolved
     # Proper also records one. Absence of a live incipit is not disagreement.
-    return (not recorded or not live or recorded == live) and has_translation(
-        entry, language
-    )
+    return ((not recorded or not live or recorded == live)
+            and study_translation_matches_body(entry, proper)
+            and has_translation(entry, language))
 
 
 def translation_entry_for(
@@ -3092,6 +3410,12 @@ def carry_translations(
                     f"{recorded['incipit']!r} does not match {live_incipit!r}"
                 )
                 recorded = None
+        if recorded and not study_translation_matches_body(recorded, owner):
+            stale.append(
+                f"{calendar} {key[0]}/{key[2]}: study translation source Latin "
+                "does not match the effective Proper body"
+            )
+            recorded = None
         carried_owner = dict(owner)
         if not recorded:
             return carried_owner
@@ -3103,7 +3427,7 @@ def carry_translations(
             item = dict(translation)
             source_id = str(item.get("source_id") or "")
             witness = (witnesses or {}).get(source_id) or {}
-            if source_id:
+            if source_id or str(witness.get("label") or "").strip():
                 item["source_label"] = str(witness.get("label") or source_id)
             cautions = []
             for caution in (
@@ -3168,6 +3492,7 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
     name_sources = _name_execution.load_name_sources(root, calendar, sys.modules.get(__name__) or __import__("types").SimpleNamespace(**globals()))
     joined_orations = oration_relations(root, calendar)
     overlay, untranslated, stale, witnesses = translation_overlay(calendar, root)
+    body_targets = english_body_targets(overlay, untranslated)
     latin_records, _ = publication_records(root, calendar)
     source = document.get("psalm_numbering")
     if source not in SYSTEMS:
@@ -3449,6 +3774,10 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
                     translation_relation=relation,
                     latin_inherited=latin_inherited and not _missal_coverage.is_witness_state_body(owner.get("latin")),
                     absence_kinds=absence_kinds,
+                    translation_body_languages=(
+                        ["en"] if owner_identity in body_targets
+                        and source_owner.get("source") == "scripture" else None
+                    ),
                 )
             propers.append(built_proper)
         built = {
@@ -4307,13 +4636,13 @@ def coverage_slot_units(
     proper: dict, identity: tuple[str, str, str, int],
     body_targets: set[tuple[str, str, str, str, int]] | None = None,
 ) -> list[tuple[tuple[str, str, str, str, int], dict]]:
-    """Composed body units owned by one appointed Proper.
+    """Body units owned by one appointed Proper, with exact language-only scope.
 
     A cycle-bearing Lectionary Proper is not one undifferentiated body.  Only
-    its composed cycle owners belong to this translation ledger; scripture
-    cycles remain delegated to the Bible.  A cycle-specific absence can then
-    close only that unit, while an ``all`` row remains the identity of a real
-    top-level, non-cycle body.
+    its composed cycle owners and explicitly witnessed English bodies belong
+    to this translation ledger. Other Scripture cycles remain delegated to the
+    Bible. A cycle-specific record can close only that unit; an ``all`` row
+    remains the identity of a real top-level, non-cycle body.
     """
 
     owners = cycle_owners(proper)
@@ -4340,6 +4669,25 @@ def coverage_slot_units(
     return units
 
 
+def english_body_targets(overlay: dict, untranslated: dict) -> set[tuple[str, str, str, str, int]]:
+    """Explicit whole English bodies from the source-validated overlay.
+
+    Positive and negative records own the same coordinate. Neither an ordinary
+    Bible citation nor an unscoped legacy positive row adds an English body.
+    Validation of an independently sourced Scripture body belongs to the
+    overlay loader, before either coverage consumer receives these records.
+    """
+
+    return {
+        identity for identity, entry in overlay.items()
+        if entry.get("extent") == "body" and has_translation(entry, "en")
+    } | {
+        untranslated_record_identity(row)
+        for rows in untranslated.values() for row in rows
+        if row.get("lang") == "en" and row.get("extent") == "body"
+    }
+
+
 def english_coverage(root: Path, calendar: str) -> dict | None:
     """How far a calendar's recorded English reaches, once `takes_from` resolves.
 
@@ -4358,9 +4706,10 @@ def english_coverage(root: Path, calendar: str) -> dict | None:
       silently failing to translate them. What that leaves out is counted too,
       as `outside_the_ledger`, so the narrower denominator cannot hide behind
       itself.
-    * Propers whose words are WHOLLY a bible's are excluded, and only those.
-      `source: scripture` carries citations and no text of its own, so its
-      English is the bible's and no ledger owes it one. `source: mixed` carries
+    * Bible-carrier units remain excluded unless an exact, source-validated
+      whole-English-body record establishes their separate body scope.
+      `source: scripture` ordinarily carries citations and no text of its own.
+      Its Bible component never proves the full Missal antiphon. `source: mixed` carries
       both, and the text half is the Missal's own words which no bible renders:
       the nineteenth Sunday after Pentecost prints `Salus populi ego sum` above
       its psalm verse, and a reader with a bible attached still saw that
@@ -4385,9 +4734,7 @@ def english_coverage(root: Path, calendar: str) -> dict | None:
     }
     # Only exact, producer-validated English body records extend Scripture's
     # otherwise excluded translation denominator.
-    body_targets = {untranslated_record_identity(row)
-                    for rows in untranslated.values() for row in rows
-                    if row.get("lang") == "en" and row.get("extent") == "body"}
+    body_targets = english_body_targets(overlay, untranslated)
     slots: dict[
         tuple[str, str, str, str, int],
         tuple[dict, dict, tuple[str, str, str]],

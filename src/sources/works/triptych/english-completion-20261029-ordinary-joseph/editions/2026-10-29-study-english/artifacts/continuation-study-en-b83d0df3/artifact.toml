@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.english-completion-20261029-ordinary-joseph.study-english-20261029.continuation-study-en-b83d0df3"
+edition_id = "edition.triptych.english-completion-20261029-ordinary-joseph.study-english-20261029"
+artifact_type = "project-study-translation"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "New Triptych-authored study English under CC BY 4.0. The English was drafted directly from the exact held Latin projection and copies no historical or approved English. The Latin column preserves only the independently distributable source rows: public-domain preexisting material witnessed by 1922 Tours Mame, 1862 Pustet and 1861 Cummiskey, plus the bounded Saint Joseph clause published under the maintainer-decided short-phrase basis recorded at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml [the_joseph_clause]. That source basis reaches no other 1962 matter. Triptych claims no exclusive right in underlying public-domain Latin."
+rights_jurisdiction = "United States"
+provenance = "Drafted on 2026-10-29 directly from rows 2, 3 and 4 of artifact.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19.canon-proper-forms-651e3482; source SHA-256 651e3482bd755a2e3ef46087eab2a734ea4f812ef1a0ee952863b31dade60fc6 was recomputed before drafting. The continuation, the source action rubric and the complete explicit conclusion remain separate rows. Independent AI semantic review on 2026-10-29 accepted every source part, saint-name and order, both same-Virgin and same-Christ modifiers, the relative petition and passive sense. No human review, historical English source, approved liturgical status or whole-Ordinary completeness is asserted."
+retrieved = "2026-10-29"
+sha256 = "b83d0df336dc1cd943a8b295d617c3325384492381a15d7f0426c3f322ff9d72"
+byte_size = 1869
+path = "src/sources/works/triptych/english-completion-20261029-ordinary-joseph/editions/2026-10-29-study-english/artifacts/continuation-study-en-b83d0df3/text.tsv"
+projected_from = ["artifact.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19.canon-proper-forms-651e3482"]
+transformation = "Translate only source rows 2, 3 and 4 into new English for study; preserve their exact Latin in a separate column, source-part distinction and order. The initial and also of is a dependent continuation of the preceding commemoration, not a complete new prayer. Preserve all saint names, repeated names and explicit concluding Amen. Keep Jungit manus as a nonspoken action. Copy no English from a historical or current liturgical translation; expand no conclusion or referral."
+indexable = true
+encoding = "utf-8"
+notes = "One header and three data rows; seq 1 continuatio, seq 2 rubrica, seq 3 conclusio, all element_key communicantes-continuatio. Source library passage records bounded inspection of this project translation; it does not claim a received human translation. Any reader offering this artifact must label it Triptych study English and keep its non-recitation qualification visible."

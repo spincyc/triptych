@@ -1,0 +1,353 @@
+{
+  "artifact_checksum_manifests_unchanged_during_reader_validation": true,
+  "artifact_identity": [
+    {
+      "artifact": "site",
+      "checksummed_rows": 38292,
+      "checksums_sha256": "113313260a1124f7353833b0d7b0a1ee579fffdae42973f81b96937eeb123b6e"
+    },
+    {
+      "artifact": "preview",
+      "checksummed_rows": 38293,
+      "checksums_sha256": "e4eb3b33faaaa3681f6a8fa471d2e29e8c3517eee02db0d36e91f79389ffb300"
+    }
+  ],
+  "canonical_source_code_fixture_artifact_index_ref_or_private_payload_writes": 0,
+  "checkpoint_commit": "0b7da814a9c3d0bbf721565ceac1abc6898faa2a",
+  "code_conservation": {
+    "all67_declared_file_hashes_rechecked_after_browser_run": true,
+    "annual_core_code_files_exact_checkpoint": 11,
+    "browser_files_exact_checkpoint": 56,
+    "proof_sha256": "e938c095813170134ba39332f4e475c4cd14b4d74a0602ead615336169cd244e",
+    "tooling_change_scope": {
+      "delta": "GROUPS/REACHES add three papal source-check tool names; existing definitions unchanged",
+      "functions_classes_exact": true,
+      "path": "scripts/_tooling.py",
+      "sha256": "f42654633791efe86a5222e7d2c1e80a75bfbcec94f2d34c4d06ad57e186af60"
+    }
+  },
+  "current_source_epoch_snapshot_only": {
+    "fixture_sha256": "11a3eee509b55233556f89a60d4ce978264ab215e483f354b2bcbad9b39304ee",
+    "input_manifest_sha256": "6956adb9fc4336282ade4bce43015d51bb2b73ef9a2ccce1d62e90226022693c",
+    "runtime_guard_or_fixture_modified": false
+  },
+  "final_owning_five_gate_results_sha256": "06075a9be4b645eb1142ceddebbb352700623c0abab65173d880c2f040974b5e",
+  "limits": [
+    "This is fresh validation of the three selected existing native contracts and bounded Nativity artifact sentinel; the earlier12harness/259assertion run is historical and is not reasserted as wholly fresh.",
+    "No source, English/Latin admission, publication rights, whole-Missal completeness, commit, deployment or push acceptance is created."
+  ],
+  "merged_main_commit": "f955c512ac5bb27ceaade50b3ad846a53dc2d410",
+  "native_contracts": {
+    "console_request_http_problems": 0,
+    "harnesses": 3,
+    "passed_assertions": 136,
+    "runs": [
+      {
+        "command": [
+          "node",
+          "tools/tests/day_reader_integration_browser.mjs"
+        ],
+        "exit_code": 0,
+        "expected": 57,
+        "harness": "tools/tests/day_reader_integration_browser.mjs",
+        "harness_sha256": "817a84fcb664e5dd15f55dd07d1f30c64cf10edde8261c13e65485d0fd8b403a",
+        "passed": 57,
+        "recorded_problems": {},
+        "report_sha256": "3516bf48f5c78fa426801738596176e1b9003744b4f259b7968467d35ca2c327",
+        "result_sha256": "291efcdf233101c861702d57eb1b6873e2899b78813fa9d7430d2cef281579f6",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "c605972a51f9ac56fdd7eeae18bea70302d3d3152685b8896327e9caf5e2223e",
+        "total": 57,
+        "wrapper_sha256": "0531a601ad7a68c80f934fbb29da1cbf4ce2bac58609314f5b287f51516e4071"
+      },
+      {
+        "command": [
+          "node",
+          "tools/tests/propers_reader_integration_browser.mjs"
+        ],
+        "exit_code": 0,
+        "expected": 71,
+        "harness": "tools/tests/propers_reader_integration_browser.mjs",
+        "harness_sha256": "ddad266de88ff7665d5d305faa1687ed650647e1145bf9dad89a661b70f9dd3a",
+        "passed": 71,
+        "recorded_problems": {},
+        "report_sha256": "318e414b73211d14abd71a99e5db490ae6b77415523aafd5f4e164cd82014f0f",
+        "result_sha256": "a0ca31046cecbac83d6ef89c072775b69de6d9dd443e25112a7bcbba712fe7f2",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "064d362b4ab8e39d6bdbde8ac84ec6c8c9d23e6c70ee6e97762f170440e926c9",
+        "total": 71,
+        "wrapper_sha256": "0531a601ad7a68c80f934fbb29da1cbf4ce2bac58609314f5b287f51516e4071"
+      },
+      {
+        "command": [
+          "node",
+          "tools/tests/day_reader_choices_browser.mjs"
+        ],
+        "exit_code": 0,
+        "expected": 8,
+        "harness": "tools/tests/day_reader_choices_browser.mjs",
+        "harness_sha256": "bbd9ee0858d1950d9c0f2a2e79d45f9c196bab2034dba128bcaa2d043fa39ebb",
+        "passed": 8,
+        "recorded_problems": {},
+        "report_sha256": "e1685f3d4b999935d8c152ace0a3012cd5f69cf12e681bcc3a92b19134714a9a",
+        "result_sha256": "40fca65d971adcc4be05aa53186e53b8f033fdd692a19d419409db29b162f2a3",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "9542c933e5ab63319f668d722ed6b2b95d0ad9ed9334ae15f1ac12cb955bafd3",
+        "total": 8,
+        "wrapper_sha256": "0531a601ad7a68c80f934fbb29da1cbf4ce2bac58609314f5b287f51516e4071"
+      }
+    ],
+    "total_assertions": 136,
+    "unchanged_wrapper_sha256": "0531a601ad7a68c80f934fbb29da1cbf4ce2bac58609314f5b287f51516e4071"
+  },
+  "nativity_built_artifact_sentinel": {
+    "artifact_rows": [
+      {
+        "artifact": "site",
+        "exactEnglishProjections": 4,
+        "path": "build/public-alpha/site/browse/structure/propers/postconciliar.json",
+        "sha256": "835e9621b5e95de89de83a39a1cda11ec9c23748ab968003b292dfd3014ca59a"
+      },
+      {
+        "artifact": "preview",
+        "exactEnglishProjections": 4,
+        "path": "build/public-alpha/preview/browse/structure/propers/postconciliar.json",
+        "sha256": "835e9621b5e95de89de83a39a1cda11ec9c23748ab968003b292dfd3014ca59a"
+      }
+    ],
+    "browser_cases": 8,
+    "cases": [
+      {
+        "artifact": "site",
+        "entrance": "day",
+        "exactCorrectedEnglishPresent": true,
+        "expectedBodySha256": "935ddab7999ced30303b493dbaabfc2121d6a586f3dd40b260cd11ce4d451bfb",
+        "form": "day",
+        "mass": "nativity",
+        "mode": "read",
+        "ordinary_qualification_elements": [],
+        "ordinary_qualification_metadata_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "outcome": "unresolved",
+        "status": "pass",
+        "supersededEnglishAbsent": true,
+        "unresolvedSourceGospelChoice": {
+          "id": "proper-choice/postconciliar/nativity/day/gospel",
+          "options": [
+            "longer",
+            "shorter"
+          ]
+        }
+      },
+      {
+        "artifact": "site",
+        "entrance": "day",
+        "exactCorrectedEnglishPresent": true,
+        "expectedBodySha256": "935ddab7999ced30303b493dbaabfc2121d6a586f3dd40b260cd11ce4d451bfb",
+        "form": "day",
+        "mass": "nativity",
+        "mode": "missal",
+        "ordinary_qualification_elements": [
+          "ritus-initiales/gloria-in-excelsis",
+          "symbolum/symbolum-nicaenum"
+        ],
+        "ordinary_qualification_metadata_sha256": "63791583debf6ff1029a8b9ef6b453130e0756ef2cca0682c01c619dd3d90936",
+        "outcome": "unresolved",
+        "status": "pass",
+        "supersededEnglishAbsent": true,
+        "unresolvedSourceGospelChoice": {
+          "id": "proper-choice/postconciliar/nativity/day/gospel",
+          "options": [
+            "longer",
+            "shorter"
+          ]
+        }
+      },
+      {
+        "artifact": "site",
+        "entrance": "propers",
+        "exactCorrectedEnglishPresent": true,
+        "expectedBodySha256": "935ddab7999ced30303b493dbaabfc2121d6a586f3dd40b260cd11ce4d451bfb",
+        "form": "day",
+        "mass": "nativity",
+        "mode": "read",
+        "ordinary_qualification_elements": [],
+        "ordinary_qualification_metadata_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "outcome": "ready",
+        "status": "pass",
+        "supersededEnglishAbsent": true,
+        "unresolvedSourceGospelChoice": {
+          "id": "proper-choice/postconciliar/nativity/day/gospel",
+          "options": [
+            "longer",
+            "shorter"
+          ]
+        }
+      },
+      {
+        "artifact": "site",
+        "entrance": "propers",
+        "exactCorrectedEnglishPresent": true,
+        "expectedBodySha256": "935ddab7999ced30303b493dbaabfc2121d6a586f3dd40b260cd11ce4d451bfb",
+        "form": "day",
+        "mass": "nativity-lord",
+        "mode": "read",
+        "ordinary_qualification_elements": [],
+        "ordinary_qualification_metadata_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "outcome": "ready",
+        "status": "pass",
+        "supersededEnglishAbsent": true,
+        "unresolvedSourceGospelChoice": {
+          "id": "proper-choice/postconciliar/nativity-lord/day/gospel",
+          "options": [
+            "longer",
+            "shorter"
+          ]
+        }
+      },
+      {
+        "artifact": "preview",
+        "entrance": "day",
+        "exactCorrectedEnglishPresent": true,
+        "expectedBodySha256": "935ddab7999ced30303b493dbaabfc2121d6a586f3dd40b260cd11ce4d451bfb",
+        "form": "day",
+        "mass": "nativity",
+        "mode": "read",
+        "ordinary_qualification_elements": [],
+        "ordinary_qualification_metadata_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "outcome": "unresolved",
+        "status": "pass",
+        "supersededEnglishAbsent": true,
+        "unresolvedSourceGospelChoice": {
+          "id": "proper-choice/postconciliar/nativity/day/gospel",
+          "options": [
+            "longer",
+            "shorter"
+          ]
+        }
+      },
+      {
+        "artifact": "preview",
+        "entrance": "day",
+        "exactCorrectedEnglishPresent": true,
+        "expectedBodySha256": "935ddab7999ced30303b493dbaabfc2121d6a586f3dd40b260cd11ce4d451bfb",
+        "form": "day",
+        "mass": "nativity",
+        "mode": "missal",
+        "ordinary_qualification_elements": [
+          "ritus-initiales/gloria-in-excelsis",
+          "symbolum/symbolum-nicaenum"
+        ],
+        "ordinary_qualification_metadata_sha256": "63791583debf6ff1029a8b9ef6b453130e0756ef2cca0682c01c619dd3d90936",
+        "outcome": "unresolved",
+        "status": "pass",
+        "supersededEnglishAbsent": true,
+        "unresolvedSourceGospelChoice": {
+          "id": "proper-choice/postconciliar/nativity/day/gospel",
+          "options": [
+            "longer",
+            "shorter"
+          ]
+        }
+      },
+      {
+        "artifact": "preview",
+        "entrance": "propers",
+        "exactCorrectedEnglishPresent": true,
+        "expectedBodySha256": "935ddab7999ced30303b493dbaabfc2121d6a586f3dd40b260cd11ce4d451bfb",
+        "form": "day",
+        "mass": "nativity",
+        "mode": "read",
+        "ordinary_qualification_elements": [],
+        "ordinary_qualification_metadata_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "outcome": "ready",
+        "status": "pass",
+        "supersededEnglishAbsent": true,
+        "unresolvedSourceGospelChoice": {
+          "id": "proper-choice/postconciliar/nativity/day/gospel",
+          "options": [
+            "longer",
+            "shorter"
+          ]
+        }
+      },
+      {
+        "artifact": "preview",
+        "entrance": "propers",
+        "exactCorrectedEnglishPresent": true,
+        "expectedBodySha256": "935ddab7999ced30303b493dbaabfc2121d6a586f3dd40b260cd11ce4d451bfb",
+        "form": "day",
+        "mass": "nativity-lord",
+        "mode": "read",
+        "ordinary_qualification_elements": [],
+        "ordinary_qualification_metadata_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "outcome": "ready",
+        "status": "pass",
+        "supersededEnglishAbsent": true,
+        "unresolvedSourceGospelChoice": {
+          "id": "proper-choice/postconciliar/nativity-lord/day/gospel",
+          "options": [
+            "longer",
+            "shorter"
+          ]
+        }
+      }
+    ],
+    "console_problems": [],
+    "data_projections_per_artifact": 4,
+    "exit_code": 0,
+    "failed_requests": [],
+    "final_probe_script_sha256": "3ba184b63f6f62b98e00fe749677cfc884609a2efd697a30e7f573ebe29a31a1",
+    "http_problems": [],
+    "qualification": "Day remains exactly unresolved because its untouched longer/shorter Gospel choice is open; Propers preserves its existing ready outcome and the same unselected source choice. No readiness, source or rights promotion.",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "b92d1a37f297d0fb89ccc03014bc826229ec42bba163d41b7214b2c0979eb637",
+    "total_exact_data_projections": 8
+  },
+  "prior_annual_evidence": {
+    "date_coordinates": 1464,
+    "elapsed_seconds": 1874.814,
+    "log_sha256": "6b65c74c77e63e34a6d024217a71d6a697faec7ca3b1f3b7e96b5de568a2f8e8",
+    "scope": "Retained pre-merge structural-renderability proof; not a fresh annual run.",
+    "tests": 7
+  },
+  "reviewed_on": "2026-10-30",
+  "schema": "triptych-final-built-reader-validation/v1",
+  "status": "pass",
+  "superseded_probe_attempts": [
+    {
+      "attempt_identifier": "nativity-sentinel",
+      "correction": "Incomplete probe: Chromium profile cleanup race masked the first diagnostic; bounded cleanup retries were added.",
+      "disposition": "superseded incomplete or diagnostic scratch probe; not a production or existing-harness failure",
+      "stderr_sha256": "0b2c13b32225752495022faa59eca5028fbf8b7f50874050ef9d0ca33148d98a",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "attempt_identifier": "nativity-sentinel-v2",
+      "correction": "Probe configuration correction: explicit Day nativity-lord alias was rejected as invalid; actual owning mass-today selected nativity/day.",
+      "disposition": "superseded incomplete or diagnostic scratch probe; not a production or existing-harness failure",
+      "stderr_sha256": "85088cb3dd00b83b76aa9f17913ab0576b88f1bd4f493851e4865278ebc33d78",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "attempt_identifier": "nativity-sentinel-v3",
+      "correction": "Probe expectation correction: valid Day rendered exact corrected English with outcome unresolved because the source Gospel choice remained open.",
+      "disposition": "superseded incomplete or diagnostic scratch probe; not a production or existing-harness failure",
+      "stderr_sha256": "4c6a578fe6afd9f8efa9e3bff3275f5175e71bf9256272a54ce4e7f80ded2df2",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "attempt_identifier": "nativity-sentinel-v4-diagnostic",
+      "correction": "Diagnostic-only run identified exact unresolved authorized Gospel choice and longer/shorter options; no production failure.",
+      "disposition": "superseded incomplete or diagnostic scratch probe; not a production or existing-harness failure",
+      "stderr_sha256": "7f35aaa862e12d28c49f51441b1f4e463ba0cb6c2a7dcdf539ff1b5155285080",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "attempt_identifier": "nativity-sentinel-v5",
+      "correction": "Probe expectation correction: Propers nativity-lord preserves its distinct source alias qualification prose; its exact separate basis is now asserted.",
+      "disposition": "superseded incomplete or diagnostic scratch probe; not a production or existing-harness failure",
+      "stderr_sha256": "cfd1905273f9f03ea0ea647a242d6e6d3fb6569e50d30d8348713308d570b3e5",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

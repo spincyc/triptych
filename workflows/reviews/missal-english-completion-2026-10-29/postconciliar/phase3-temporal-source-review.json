@@ -1,0 +1,180 @@
+{
+  "schema": "independent-cold-source-review/v1",
+  "reviewed_on": "2026-10-29",
+  "reviewer": "pc_nativity_review",
+  "input": {
+    "path": ".scratch/postconciliar-english-completion-20261029/ancient-sources/secondpass-temporal/candidate-five.json",
+    "sha256": "ead09a06ff3ffcf60e1a8e6418f7873494d9a30a6b0511f9978d25a0b3101b95"
+  },
+  "scope": "Exactly five identified temporal orations; full old prayer bodies, all secondary target form headings and conclusion cues, and original English fidelity. No similarity score or source-incipit shortcut used.",
+  "decisions": [
+    {
+      "identity": [
+        "advent-1",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "source_decision": "ACCEPT",
+      "policy_decision": "SUPPORTED variant: one inflectional correction; conventional short-cue difference explicit",
+      "old_pages": {
+        "artifact": [
+          98
+        ],
+        "printed": [
+          "74"
+        ]
+      },
+      "target_pages": [
+        82,
+        83
+      ],
+      "complete_body_findings": [
+        "Veronense section XXVIIII,lines 5–7,marginal 372: whole petition inspected. Printed Dne abbreviation expanded to Domine. Ancient temporalis is actual; secondary target temporali is actual. All other petition words agree after recorded spelling/case/stress/pointing conventions.",
+        "Ancient final per. differs from target Per Christum.; English retains target short cue only. Adjacent prayers, marginal number372 and liturgical sigla P.F.E.SP. are outside selected prayer."
+      ],
+      "english_fidelity": "Faithful. English in time conveys the temporal qualification; no historical human English used. Through Christ. is only the target short cue."
+    },
+    {
+      "identity": [
+        "nativity",
+        "night",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_decision": "ACCEPT",
+      "policy_decision": "SUPPORTED variant: one lexical replacement plus word order and spelling; shared short cue",
+      "old_pages": {
+        "artifact": [
+          67
+        ],
+        "printed": [
+          "9"
+        ]
+      },
+      "target_pages": [
+        103,
+        104
+      ],
+      "complete_body_findings": [
+        "Hadrianum Natali Domini ad sanctam Mariam maiorem prayer before Super oblata inspected in full. Plural mysteria is actual in old source and target. Old cognouimus versus target agnovimus is the only lexical replacement.",
+        "Old cuius lucis mysteria in terra cognouimus differs by word order from target cuius in terra mysteria lucis agnovimus; old eius quoque gaudiis in caelo perfruamur differs by word order from target eius quoque gaudiis perfruamur in caelo. All other words agree under recorded u/v, e-caudata/ae and inlustratione/illustratione conventions.",
+        "Both old and target end in short qui tecum/Qui tecum. Body is fully on AP104; AP103 and AP104 establish Nativity and night-form context. No apparatus variant is silently substituted for main-text cue."
+      ],
+      "english_fidelity": "Faithful new study English. Recognized answers agnovimus; Who with you. is an intentionally incomplete literal rendering of the held short cue, not an invented complete conclusion."
+    },
+    {
+      "identity": [
+        "lent-1",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_decision": "ACCEPT",
+      "policy_decision": "SUPPORTED variant: affectus/effectus lexical replacement plus received spelling and short-cue difference",
+      "old_pages": {
+        "artifact": [
+          110,
+          111
+        ],
+        "printed": [
+          "17",
+          "18"
+        ]
+      },
+      "target_pages": [
+        128
+      ],
+      "complete_body_findings": [
+        "The full ancient first prayer under I. XVIII begins at bottom AP110 / printed17 and ends at top AP111 / printed18; crossing was independently inspected. Reading is affectus, not effectus; its footnote 2 marker and following apparatus are not prayer words.",
+        "Ancient intelligendum versus target intellegendum is received spelling; affectus versus target effectus is one lexical replacement. Every remaining petition word agrees, including first et before ad intelligendum and second et before affectus/effectus.",
+        "Old Per. versus target Per Dominum. is explicit; English uses the target short cue only. Marginal source sigla and headers are excluded."
+      ],
+      "english_fidelity": "Faithful new study English. Its effects follows actual target effectus, while ancient affectus remains recorded without normalization. Through our Lord. translates only held target short cue."
+    },
+    {
+      "identity": [
+        "lent-5",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "source_decision": "ACCEPT",
+      "policy_decision": "SUPPORTED tiny variant under existing no-new-authorship criterion: exactly one formulaic added word, semper, plus separately recorded conventional conclusion difference",
+      "old_pages": {
+        "artifact": [
+          166
+        ],
+        "printed": [
+          "142"
+        ]
+      },
+      "target_pages": [
+        156,
+        157,
+        158
+      ],
+      "complete_body_findings": [
+        "Whole Veronense lines 24–25 in Mense Octobri,XXXII De siccitate temporis read. Actual words have corpori and sanguini; manuscript apparatus note 11 sangui is not substituted into the main printed text. Printed omp/Ds abbreviations are expanded explicitly.",
+        "Entire target petition agrees except one added semper immediately before numeremur. There is no hidden rephrasing or omitted clause. Gelasian sibling atAP111 / printed18 uses corpore and reordered membra; it is not the controlling source and is not silently substituted.",
+        "Actual old cue is per.; target actual conclusion is Qui vivit et regnat in saecula saeculorum. Conventional conclusion difference must remain explicit, and source may not be described as printing target formula. AP156 establishes Sunday V heading, AP157 continues the same form, AP158 supplies complete Postcommunion prayer."
+      ],
+      "english_fidelity": "Faithful to finite target variant, including always for added semper and the conventional target conclusion. No English correction required.",
+      "policy_issue": "The added semper is an addition, not a substitution. Its one-word formulaic use adds no protectable composition. This applies the governing no-new-authorship criterion and existing local practice: the admitted NativityNight offering prayer expressly adds the interjected quaesumus while dropping tua gratia largiente (postconciliar-proper-translations-v1.toml, entry Grata tibi sit, Domine). The variant category must preserve the precise added word and this finite judgment, not imply verbatim body identity or permit recompositions."
+    },
+    {
+      "identity": [
+        "baptism-of-the-lord",
+        "main",
+        "Collect",
+        "all",
+        2
+      ],
+      "source_decision": "ACCEPT",
+      "policy_decision": "SUPPORTED verbatim petition; different conventional conclusion cues explicitly outside body identity",
+      "old_pages": {
+        "artifact": [
+          75,
+          76
+        ],
+        "printed": [
+          "17",
+          "18"
+        ]
+      },
+      "target_pages": [
+        120
+      ],
+      "complete_body_findings": [
+        "Complete Hadrianum Alia prayer begins at bottom AP75 / printed17 and continues at top AP76 / printed18. Main text has foris, not foras; entire petition is word-identical under presta/praesta,u/v,e-caudata/ae,stress,case and pointing conventions.",
+        "Old main-text cue is per eundem.; actual apparatus note 1 supplies qui tecum uiuit in witness O, while target prints Qui tecum. only. No full formula is invented or alleged as target.",
+        "Secondary target heading In Baptismate Domini, first principal Collect, Vel:, then this prayer directly establish occurrence 2. Relation verbatim is a petition/body relation, not identity of all printed conclusion bytes."
+      ],
+      "english_fidelity": "Faithful new study English. It retains outwardly/within contrast, transformation request and target short Who with you. cue."
+    }
+  ],
+  "common_limits": [
+    "Comparison target is only registered secondary digitally typeset 2002 artifact 0b458944. Printed 2002 fidelity and2008 correspondence remain unresolved; no source can be relabeled authenticated 2008.",
+    "English is project-created unapproved study English, not historical human English, ICEL, approved liturgical English or for recitation. Preserve all original withheld/quarantined absence records in the reviewed refusal record, not as newly approved English.",
+    "Public-domain ancient edition identity is independently fixed by exact whole PDF SHA256 and source records: Feltoe 1896 Veronense,Wilson 1894 Gelasian andWilson 1915 Hadrianum. Whole Gelasian PDF carries unresolved digitizer matter; retain only allowed bounded mechanical page extractions and source proof, not whole PDF in publicsource tree.",
+    "Ancient reading fields must preserve source words, expand abbreviations only explicitly, and state spelling/word-order/pointing transformations. Old cue must remain distinct from rendered target cue or conventional formula.",
+    "Source integration requires retained exact bounded page artifacts and passage joins to the ancient witness and target comparison; no admission claims are made for a future source packet not reviewed here. Project-created translation row omits human-source_id and uses project-created rights/notice."
+  ],
+  "validation": {
+    "whole_source_integrity": "All 4 complete source PDF SHA256 matched exact registered identities before independent rendering.",
+    "fresh_visual_pages": 16,
+    "fresh_raster_check": ".scratch/postconciliar-english-completion-20261029/nativity-review/temporal-five-round/render-check.json",
+    "fresh_raster_check_sha256": "c8e633c81900a65226c50c9a396971bd7f8cab4105f5a868560bda7a0d7834a6",
+    "frozen_evidence_hash_check": ".scratch/postconciliar-english-completion-20261029/nativity-review/temporal-five-round/packet-check.json",
+    "frozen_evidence_hash_check_sha256": "fcb94d732981fd4f43c48624be5251f721913dcf0dafa9b23ea80da795e2d818",
+    "all64candidate_evidence_hashes_match": true,
+    "no_human_review_or_approval_claim": true,
+    "tracked_mutations": "none"
+  },
+  "conclusion": "All five source/English candidates are supported for unapproved project-created study English with all finite body and conclusion differences explicit. No English correction required. Exact authenticated 2008 claims remain unsupported.",
+  "policy_interpretation": "Variant examples list substitutions and inflections; the governing criterion and existing formulaic-addition precedent permit the single explicit semper addition without new authorship. This is a bounded editorial application, not a new general similarity threshold or a reproduction grant for protected modern compositions."
+}

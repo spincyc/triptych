@@ -1,0 +1,44 @@
+{
+  "applicability_probe": {
+    "command": "node tools/tests/ordinary_translation_applicability.mjs",
+    "exit_status": 0,
+    "log_sha256": "77a87c0b2543861242d8c88216ca95ee38c656f2d6006618b668ae080ea38534"
+  },
+  "code_sha256": {
+    "src/web/browser/liturgy/ordinary-seating.js": "90467f26022701a79cfee246c131de8776a6226f208cde0c5bc30010aaa3b5ba",
+    "src/web/browser/liturgy/reader-state-adapters.js": "8dfa04ac0d4dd56a80aef3cefdbdd3d3d18a61cb6de444af50888ee8a307723f",
+    "tools/mass-today": "5786300fa910d5011e85a4dffd985da8dab8a3f8ab2d58d1254e833d3182fa45",
+    "tools/tests/gospel_book_facts.mjs": "effa4917976c02baf9020836211b195ef5a0aa884af90b0dc44172520f44fa13",
+    "tools/tests/test_gospel_book_facts.py": "05064c9ffed968ae95cb945ec7bacd18d9eb1782a215feb7f4546cadd3535c8b"
+  },
+  "focused_validation": {
+    "command": "python3 -m unittest tools.tests.test_gospel_book_facts tools.tests.test_mass_form_reader tools.tests.test_ordinary_scoped_witness_selection tools.tests.test_ordinary_text_qualification tools.tests.test_ordinary_browser_qualification tools.tests.test_proper_source_paths tools.tests.test_proper_source_path_cli tools.tests.test_ordinary_source_path_transport -v",
+    "errors": 0,
+    "exit_status": 0,
+    "failures": 0,
+    "log_sha256": "1c349537eec368668beb4a01d0dfea8f1396b240bac224468019501be556f408",
+    "skipped": 1,
+    "tests": 98
+  },
+  "independent_review_sha256": "daffc0f3ce61ca77193196fb9de8d9ab64fc46c8732c545cf522c502f905bbbb",
+  "initial_source_sensitive_run": {
+    "exit_status": 1,
+    "failure_entries": 17,
+    "log_sha256": "2adbf4e980e18619f0624d2ddc8daafae4e4a9e26b12ae3be2e47a38863edbf4",
+    "qualification": "Ten explicit in-progress Bosco source-page-count refusals, six unavailable-form refusals during that source failure, and one old all-English-unavailable oracle. The latter is separately corrected by its owning lane. This run is retained as failed, and is not replaced by narrower passing controls.",
+    "skipped": 1,
+    "tests": 168
+  },
+  "schema": "triptych-bounded-gospel-book-facts-validation/v1",
+  "seating_validation": {
+    "exit_status": 0,
+    "log_sha256": "6ce61a6d1aeee2357640c0f7b0e10a65dc8dd88b567169edc7ed9c2fed53c08c",
+    "tests": 10
+  },
+  "state": "implementation-accepted-source-integration-open",
+  "still_required": [
+    "actual four-heading source and slot verification after independent source acceptance and owner generation",
+    "fresh affected source-sensitive full parity run on settled inputs",
+    "coordinator annual, native browser and publication gates"
+  ]
+}

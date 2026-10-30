@@ -71,14 +71,100 @@
     return predicates[key] === true ? true : predicates[key] === false ? false : null;
   }
 
+  function properCitations(proper, selection) {
+    const citations = (proper.citations || []).slice();
+    const owner = selection && (proper[selection.family] || {})[selection.key];
+    for (const citation of owner && owner.citations || []) citations.push(citation);
+    return citations;
+  }
+
+  function gospelBookFacts(context) {
+    const books = {Matthew: 'matthew', Mark: 'mark', Luke: 'luke', John: 'john'};
+    const facts = Object.fromEntries(Object.values(books).map((book) => ['gospel-book-' + book, null]));
+    const prepared = context && context.properAppointments;
+    if (!prepared || !Array.isArray(prepared.rows) ||
+        !prepared.selections || typeof prepared.selections !== 'object') return facts;
+    const gospel = (proper) => semanticProperId(proper, true) === 'gospel';
+    if ((prepared.unresolved || []).some((row) => gospel({name: row.appointment && row.appointment.proper}))) return facts;
+    for (const unresolved of prepared.sourcePathUnresolved || []) {
+      const source = context.properRows;
+      if (!Array.isArray(source)) return facts;
+      const members = source.map(properRow).filter((row) =>
+        row.proper.source_path_relation === unresolved.relation &&
+        formIdOf(row.proper) === unresolved.form_id);
+      if (!members.length || members.some((row) => gospel(row.proper))) return facts;
+    }
+    const byIndex = new Map(prepared.rows.map((row, index) => {
+      const normalized = properRow(row, index);
+      return [normalized.sourceIndex, row];
+    }));
+    const sources = Array.isArray(context.properRows)
+      ? context.properRows.map(properRow) : prepared.rows.map(properRow);
+    const sourceByIndex = new Map(sources.map((row) => [row.sourceIndex, row.proper]));
+    if (byIndex.size !== prepared.rows.length || sourceByIndex.size !== sources.length) return facts;
+    const appointed = [];
+    for (const unit of properUnits(prepared.rows, null, null, prepared.selections)) {
+      if (unit.kind === 'proper') {
+        if (gospel(unit.proper)) appointed.push(byIndex.get(unit.sourceIndex));
+      } else if ((unit.options || []).some((option) => option.rows.some((row) => gospel(row.proper)))) {
+        if (!unit.selection || unit.selection.state !== 'selected') return facts;
+        const selected = unit.options.find((option) => option.id === unit.selection.option);
+        if (!selected || selected.rows.some((row) => !gospel(row.proper))) return facts;
+        appointed.push(...selected.rows.map((row) => byIndex.get(row.sourceIndex)));
+      }
+    }
+    if (!appointed.length) return facts;
+    const held = new Set();
+    for (const row of appointed) {
+      const normalized = properRow(row);
+      const proper = sourceByIndex.get(normalized.sourceIndex);
+      if (!proper || !gospel(proper)) return facts;
+      const choices = properCycleSelections(proper);
+      const material = row.materialCycle || (prepared.materialSelections || {})[normalized.sourceIndex];
+      let owner = proper;
+      let citationSelection = null;
+      if (material) {
+        if (material.family === null) {
+          if (material.cycle !== 'all' || choices.length) return facts;
+        } else {
+          if (!choices.some((one) => one.family === material.family && one.key === material.cycle)) return facts;
+          owner = proper[material.family][material.cycle];
+          citationSelection = {family: material.family, key: material.cycle};
+        }
+      } else if (choices.length) {
+        if (new Set(choices.map((one) => one.dimension)).size !== 1) return facts;
+        const dimension = choices[0].dimension;
+        const requested = context.calendarCycles && context.calendarCycles[dimension];
+        const selected = requested == null
+          ? choices.length === 1 ? choices[0] : null
+          : choices.find((one) => one.key === requested);
+        if (!selected) return facts;
+        owner = proper[selected.family][selected.key];
+        citationSelection = selected;
+      }
+      if ((proper.citations != null && !Array.isArray(proper.citations)) ||
+          (owner.citations != null && !Array.isArray(owner.citations))) return facts;
+      const citations = properCitations(proper, citationSelection);
+      if (!citations.length) return facts;
+      for (const citation of citations) {
+        if (!citation || (citation.unresolved !== undefined && citation.unresolved !== null) ||
+            typeof citation.book !== 'string' || !Object.prototype.hasOwnProperty.call(books, citation.book)) return facts;
+        held.add(books[citation.book]);
+      }
+    }
+    if (held.size !== 1) return facts;
+    const book = held.values().next().value;
+    Object.keys(facts).forEach((key) => { facts[key] = key === 'gospel-book-' + book; });
+    return facts;
+  }
+
   /**
-   * Derive only applicability facts the settled calendar result states. The
-   * input is deliberately small so browser and terminal cannot grow separate
-   * rank/name heuristics. Local solemnity and proper-Preface facts are not in
-   * this calendar context and therefore remain unknown.
+   * Prepared readings supply their book; the settled calendar supplies only
+   * its own applicability facts. Browser and terminal share this derivation.
+   * Local solemnity and proper-Preface facts remain unknown here.
    */
   function predicateFacts(context) {
-    const facts = {};
+    const facts = gospelBookFacts(context);
     // The appointment inputs travel with the facts so one call site feeds
     // both: the formulary's printed appointments (null where the day borrows
     // its formulary), the civil date and the owning year's anchors.
@@ -1688,6 +1774,7 @@
     chosenOption: chosenOption,
     selectionMap: selectionMap,
     predicateFacts: predicateFacts,
+    properCitations: properCitations,
     appointmentsFor: appointmentsFor,
     conditionsShow: conditionsShow,
     resolveElements: resolveElements,

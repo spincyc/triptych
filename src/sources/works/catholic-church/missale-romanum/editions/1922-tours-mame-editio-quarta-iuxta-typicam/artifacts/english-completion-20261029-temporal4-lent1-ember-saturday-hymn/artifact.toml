@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-temporal4-lent1-ember-saturday-hymn"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "image-checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Complete bounded Latin of the identified 1922 public-domain printing; source wording is excluded from project licensing. This faithful transcription adds no new liturgical words."
+rights_jurisdiction = "United States"
+provenance = "2026-10-29 direct page-image reading, including complete body extent. OCR only located candidates; it supplied no textual authority."
+retrieved = "2026-10-29"
+sha256 = "39d5da4829bc7b527d62c1b4e0824033499b866469d84e070325c131aac5a52e"
+byte_size = 1113
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-temporal4-lent1-ember-saturday-hymn/latin.txt"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-temporal4-pages"
+transformation = "Join physical wraps and break hyphens; expand ligatures; remove stress accents; normalize decorative initial capitalization and versicle glyph to V.; omit printed heading/citation labels while retaining the complete body and its actual verse/cue extent. Keep historical spelling and pointing."
+indexable = true
+encoding = "utf-8"
+notes = "Extract page 1 corresponds to original PDF page 210. No neighboring rubrics, orations or other chant bodies enter this derivative."

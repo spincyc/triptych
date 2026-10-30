@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-29"
+id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-s-francisci-paula-confessoris-alleluia-tempore-paschali-1"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29"
+artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-chant-latin-10b19922"
+artifact_sha256 = "10b19922a2fc07cd74be90ae8832d093e705247b93491fa155bf9a1090635e82"
+locus = "s-francisci-paula-confessoris / Alleluia (Tempore paschali) occurrence 1; project physical lines 12-12; Tours Mame 1922, artifact pages 908; printed ['30*']; 1962 Vatican target, artifact p. 583, printed p. 502, unit 2375"
+physical_line_ranges = [[12, 12]]
+context = "Complete target-bound Latin chant, independently source-qualified; original study English remains separately identified and unapproved."
+notes = "Exact canonical UTF-8 body including terminal LF SHA-256 24251ebd2ac9f5250ed0312c80595c37b309bf2486c1c0304518237ba9062688. Declared transformations: [\"Join typographic line breaks and line-end hyphenation; restore the printed drop capital where applicable.\", \"Remove stress accents; expand ae/oe ligatures to digraphs; retain j in the declared calendar orthography (with Alleluia as the calendar spelling).\", \"Preserve the complete recited body, all Alleluia repetitions, verse signs and the printed Gloria Patri cue where present; no formula expansion.\", \"Exclude only the identified nonrecited printed citation apparatus from canonicalLatin and studyEnglish.\"]. Exact differences: [\"Mame Allelúja/ejus/Justus against target Allelúia/eius/Iustus: consonantal j/i spelling only.\", \"Target inserts a comma after vir; Mame prints none. Mame spaces colons and prints full stops after its citation labels. No substantive variation.\"]"

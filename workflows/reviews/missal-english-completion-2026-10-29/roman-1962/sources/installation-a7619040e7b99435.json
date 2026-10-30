@@ -1,0 +1,263 @@
+{
+  "schema": "triptych-reviewed-source-installation/v1",
+  "recorded_on": "2026-10-29",
+  "source_plans": [
+    {
+      "plan_sha256": "267621050cb02a8e24ad0276b3a293d8931d7052081062994294b58403b33a78",
+      "plan_name": "install-plan.json",
+      "targets": [
+        [
+          "palm-sunday",
+          "main",
+          "Procession Antiphon",
+          "all",
+          6
+        ],
+        [
+          "palm-sunday",
+          "main",
+          "Procession Antiphon",
+          "all",
+          7
+        ]
+      ],
+      "source_files": [
+        {
+          "path": "src/sources/works/abbey-of-saint-gall/hartker-antiphonary/editions/1900-solesmes-facsimile/artifacts/fulgentibus-latin-checked-20261029/artifact.toml",
+          "sha256": "b19162bfe1810fb0aa9f4ddb7f4d20a40261616b7f4e0e039bad0c357dbd344f"
+        },
+        {
+          "path": "src/sources/works/abbey-of-saint-gall/hartker-antiphonary/editions/1900-solesmes-facsimile/artifacts/fulgentibus-latin-checked-20261029/text.txt",
+          "sha256": "c2bf21a76718a0f00eda5c79a7a00f92cada8447efb0234fb92b4b5a8f042166"
+        },
+        {
+          "path": "src/sources/works/abbey-of-saint-gall/hartker-antiphonary/editions/1900-solesmes-facsimile/artifacts/fulgentibus-page-175-facsimile/artifact.toml",
+          "sha256": "05090275b0538f46fd879eccef2822dbd9c0eb21939c5cc3e12bd50a62fe7531"
+        },
+        {
+          "path": "src/sources/works/abbey-of-saint-gall/hartker-antiphonary/editions/1900-solesmes-facsimile/artifacts/fulgentibus-page-175-facsimile/source.pdf",
+          "sha256": "031f2f80af392701064f05149be2da429958a2ceed82ebf3a3fff044c9a6a69f"
+        },
+        {
+          "path": "src/sources/works/abbey-of-saint-gall/hartker-antiphonary/editions/1900-solesmes-facsimile/artifacts/ia-facsimile-116c6821/artifact.toml",
+          "sha256": "b8017cabd9dc79b5f1c07e9ba6f63b43020e1b86f2ace855a57e94d4131b6e57"
+        },
+        {
+          "path": "src/sources/works/abbey-of-saint-gall/hartker-antiphonary/editions/1900-solesmes-facsimile/edition.toml",
+          "sha256": "a7b8de5775488a872ac386dfc0dbaf55db14ef704d8c8b5f043459542337569e"
+        },
+        {
+          "path": "src/sources/works/abbey-of-saint-gall/hartker-antiphonary/editions/1900-solesmes-facsimile/passages/fulgentibus-latin-checked-20261029.toml",
+          "sha256": "57664b5d7fd5ddbc093edc32e6042feb377788e2ba911836cad846be816313eb"
+        },
+        {
+          "path": "src/sources/works/abbey-of-saint-gall/hartker-antiphonary/editions/1900-solesmes-facsimile/passages/fulgentibus-page-175-checked-20261029.toml",
+          "sha256": "8a4bdcf04ce98ae786fb3fc664d479fbb0c23a6da986bd18e51feee5ccbcded9"
+        },
+        {
+          "path": "src/sources/works/abbey-of-saint-gall/hartker-antiphonary/work.toml",
+          "sha256": "d47886830fd76722a2dd60dd8353a97431c9b71fc5e53ac1a62db5f5445c9881"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/palm-ave-rex-checked-20261029.toml",
+          "sha256": "acea8fcce0079504423e96bb2d6827b2a0a17804ed1875c25e5a08898cdd2b21"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/palm-fulgentibus-checked-20261029.toml",
+          "sha256": "09a5040970eadb26c9e619a036cb245f70eadd793434548aa1c0759d5f426a7c"
+        },
+        {
+          "path": "src/sources/works/diocese-of-york/manuale-et-processionale/editions/1875-henderson/artifacts/ave-rex-latin-checked-20261029/artifact.toml",
+          "sha256": "4014b627cb95ca3c0f41e9e8c141e08b969a1f9867fc92b4236ce2b493deaecf"
+        },
+        {
+          "path": "src/sources/works/diocese-of-york/manuale-et-processionale/editions/1875-henderson/artifacts/ave-rex-latin-checked-20261029/text.txt",
+          "sha256": "56c4adfe058846548747de3a360ca186ca1b09178961d9723772fde08bfb79f7"
+        },
+        {
+          "path": "src/sources/works/diocese-of-york/manuale-et-processionale/editions/1875-henderson/artifacts/ave-rex-page-151-facsimile/artifact.toml",
+          "sha256": "5bb7f2e51bd0107964b3114917cd85799dcc2345c51bbf58604bffa6cb7b2b16"
+        },
+        {
+          "path": "src/sources/works/diocese-of-york/manuale-et-processionale/editions/1875-henderson/artifacts/ave-rex-page-151-facsimile/source.pdf",
+          "sha256": "fa088f496196e9b3131a5079b03fbfd7c0f3fc49c4e36a99848d63f59daf1c45"
+        },
+        {
+          "path": "src/sources/works/diocese-of-york/manuale-et-processionale/editions/1875-henderson/artifacts/ia-complete-facsimile/artifact.toml",
+          "sha256": "7db5e30a798ff6aceb4141d0987eaeeab1a1ff80a4ddc6c6e60233a7acb170e4"
+        },
+        {
+          "path": "src/sources/works/diocese-of-york/manuale-et-processionale/editions/1875-henderson/edition.toml",
+          "sha256": "38f0419d5996935eea774e60a9a7c902e0487f9a5252622d1c7481de7dd2f9f3"
+        },
+        {
+          "path": "src/sources/works/diocese-of-york/manuale-et-processionale/editions/1875-henderson/passages/ave-rex-latin-checked-20261029.toml",
+          "sha256": "7333a7bd1b87b53ad5d0bba78bf0049a73ebb1fc2cd08d1b854e4dfb96c9a4c6"
+        },
+        {
+          "path": "src/sources/works/diocese-of-york/manuale-et-processionale/editions/1875-henderson/passages/ave-rex-page-151-checked-20261029.toml",
+          "sha256": "fa4567daa843715d93cd5beb88f36d51d189c52bd57c5b6a88c5b7d186204306"
+        },
+        {
+          "path": "src/sources/works/diocese-of-york/manuale-et-processionale/work.toml",
+          "sha256": "3a5d2cf45d03716e990c0a2c8d112b3e4d5c56871e63b60144eb78244ed2002d"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-holyweek-antiphons/artifacts/ave-rex-60e6fd51/artifact.toml",
+          "sha256": "63de5acf8a679b9b9e4c4960130fbc3a4b0906a207b56cb06e690859b02c04e9"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-holyweek-antiphons/artifacts/ave-rex-60e6fd51/latin.txt",
+          "sha256": "60e6fd51bdd407c32bf4b59928c45c249956b404d22469311dd8b7c835139cc3"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-holyweek-antiphons/artifacts/fulgentibus-0916383d/artifact.toml",
+          "sha256": "57e8ece132bb967fae9bd986ac0da3516979a7bc3d5a2674517f9c705c6160e3"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-holyweek-antiphons/artifacts/fulgentibus-0916383d/latin.txt",
+          "sha256": "0916383d240a773024be9918e843dacd452f1ceb7456adb3a6d12747dfd95b53"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-holyweek-antiphons/edition.toml",
+          "sha256": "4c0610872476f645b708ae52698390bc1cdbc897d7f56521b2d5ddcdec3a36f5"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-holyweek-antiphons/passages/ave-rex.toml",
+          "sha256": "fe0fe5a168f6b2e8d232e89009c47e27a580157a425219c31397ca218c7a70c9"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-holyweek-antiphons/passages/fulgentibus.toml",
+          "sha256": "8ba18cc4cae152d73772b9e838a4b7783c0f7f8a58dca66aa3a71d5c8781f5f7"
+        }
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "target": [
+        "palm-sunday",
+        "main",
+        "Procession Antiphon",
+        "all",
+        6
+      ],
+      "old_proper": {
+        "name": "Procession Antiphon",
+        "ordinary_disposition": {
+          "kind": "unplaced",
+          "group": "blessing-and-procession-of-palms",
+          "region": "before-frame",
+          "basis": "The source places this unit in the contiguous palm rite before the Mass Introit."
+        },
+        "incipit": "Fulgentibus palmis",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-1962"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "palm-sunday",
+        "form_id": "main",
+        "proper": "Procession Antiphon",
+        "cycle": "all",
+        "occurrence": 6,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "witness-gap",
+          "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+        },
+        "note": "The 1861 Cummiskey and 1862 Pustet witnesses both pass directly from the three historical procession antiphons now attached as occurrences 1-3 to the Gloria, laus hymn. This 1955 addition appears in neither witness, so no English body is attached."
+      },
+      "old_latin_provenance": [
+        {
+          "mass": "palm-sunday",
+          "form": "",
+          "proper": "Procession Antiphon",
+          "course": "",
+          "cycle": "",
+          "occurrence": 5,
+          "text_sha256": "3f45a777373ace21cbeceee20f8bf20a2a6254830ed583dd71449b46959529d2",
+          "body_status": "removed"
+        }
+      ],
+      "new_proper_sha256": "40b82cee8f117745584c2f56e2f15873d155f6f2059be3d26bc1267ce036daee",
+      "new_english_sha256": "460724bb3f57fb9b78c1fb560306c495bc4b471b1d99eeb7333552c3d2faa6bf",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-ba782943dae6c318.json"
+    },
+    {
+      "target": [
+        "palm-sunday",
+        "main",
+        "Procession Antiphon",
+        "all",
+        7
+      ],
+      "old_proper": {
+        "name": "Procession Antiphon",
+        "ordinary_disposition": {
+          "kind": "unplaced",
+          "group": "blessing-and-procession-of-palms",
+          "region": "before-frame",
+          "basis": "The source places this unit in the contiguous palm rite before the Mass Introit."
+        },
+        "incipit": "Ave, Rex noster",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-1962"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "palm-sunday",
+        "form_id": "main",
+        "proper": "Procession Antiphon",
+        "cycle": "all",
+        "occurrence": 7,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "witness-gap",
+          "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+        },
+        "note": "The 1861 Cummiskey and 1862 Pustet witnesses both pass directly from the three historical procession antiphons now attached as occurrences 1-3 to the Gloria, laus hymn. This 1955 addition appears in neither witness, so no English body is attached."
+      },
+      "old_latin_provenance": [
+        {
+          "mass": "palm-sunday",
+          "form": "",
+          "proper": "Procession Antiphon",
+          "course": "",
+          "cycle": "",
+          "occurrence": 6,
+          "text_sha256": "a688650a13dc6845e131d135eca3a536ea9b34b6eee1077a39999331225bf49d",
+          "body_status": "removed"
+        }
+      ],
+      "new_proper_sha256": "ac20ffa748d539e53972aead04a448e27e2bf34ec46be851f80af9f0f43adff0",
+      "new_english_sha256": "6597be73e93f82509d1357d9210eb62ceedcb6b9802de2568b083fe5ac3355f1",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-60ee0a69f72b5999.json"
+    }
+  ],
+  "after_hashes": {
+    "src/sources/calendars/roman-1962/propers.yaml": "37fe72dbcde00e9c4b2f1a4a723000b337e0208566e0a0d0337530bdf6a37cd4",
+    "src/sources/inventories/roman-1962-proper-translations-v1.toml": "705568ec774a24e2a5d3426600d6a886fe5be0402f4e2f21eaba23e4d394bdeb",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml": "e9b4e13a123767758fc235b83c9a5b2560ebf3ef01a2119a76387adbd17c213b"
+  }
+}

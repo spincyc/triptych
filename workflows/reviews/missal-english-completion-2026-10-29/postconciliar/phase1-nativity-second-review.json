@@ -1,0 +1,190 @@
+{
+  "recorded_on": "2026-10-29",
+  "review_scope": "Five finite Nativity historical-English antecedent candidates only",
+  "packet_sha256": "3aaa8b6fc9ccc3446efcdbfa6326f1670b15563287ca5021583056f1a19feec3",
+  "source_whole_pdf_sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+  "comparison_whole_pdf_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+  "method": "Whole PDF hashes independently checked; all ten historical/comparison page images directly opened and read; independent pdftoppm 1800-pixel renders of the ten exact PDF pages reproduce every inspected candidate image byte for byte. Complete antiphon words and human English were compared, with adjacent psalms, doxologies, prayers and rubrics excluded.",
+  "evidence_render_checks": [
+    {
+      "kind": "lasance",
+      "artifact_page": 134,
+      "independent_sha256": "554f859969954e7332b2d2fc17046999d034a98dce24dddd856f3ddec7ec8d05",
+      "same_bytes": true
+    },
+    {
+      "kind": "lasance",
+      "artifact_page": 136,
+      "independent_sha256": "b5174a372ca1f10af80731aa09a9f7e48f326aafd36e7b21448d77c8a117428a",
+      "same_bytes": true
+    },
+    {
+      "kind": "lasance",
+      "artifact_page": 141,
+      "independent_sha256": "90920c3d82c149432414962318c0445fd4a8440a16904de3af79050a868dedeb",
+      "same_bytes": true
+    },
+    {
+      "kind": "lasance",
+      "artifact_page": 145,
+      "independent_sha256": "d3d3f2cebbac592fc91336b29a26c407739b4851ad4d7a29c06cc7611a6b5fb4",
+      "same_bytes": true
+    },
+    {
+      "kind": "lasance",
+      "artifact_page": 147,
+      "independent_sha256": "99880874262df61b4f586af64cdf4ad9453715832ea197a30ddce2ecae9b0935",
+      "same_bytes": true
+    },
+    {
+      "kind": "secondary",
+      "artifact_page": 103,
+      "independent_sha256": "421e324f538758d624ecc7910dae7e30d54d9338aa461f578204d3b83a487584",
+      "same_bytes": true
+    },
+    {
+      "kind": "secondary",
+      "artifact_page": 104,
+      "independent_sha256": "5f91b8ac32e69e598db73c16a9d61bca81bf5cc94714d0775b5d6dd980d9328a",
+      "same_bytes": true
+    },
+    {
+      "kind": "secondary",
+      "artifact_page": 105,
+      "independent_sha256": "f32cb30f11fb48f810c7aac81ed227f2ac9a66e13f1723813c5d4d77ce77680f",
+      "same_bytes": true
+    },
+    {
+      "kind": "secondary",
+      "artifact_page": 106,
+      "independent_sha256": "5f6ad191a58c6396e33459f1deda77ee46adf2c33848602a9cdd0c15fe07b5c9",
+      "same_bytes": true
+    },
+    {
+      "kind": "secondary",
+      "artifact_page": 107,
+      "independent_sha256": "f1afd3db98fdf3f38376bf29729e4f765681c46183862fe881c7ec6dfafd5a7c",
+      "same_bytes": true
+    }
+  ],
+  "verdicts": [
+    {
+      "target": {
+        "mass": "nativity",
+        "form_id": "vigil",
+        "proper": "Entrance Antiphon",
+        "cycle": "all",
+        "occurrence": 1
+      },
+      "source_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+      "source_sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+      "source_pdf_pages": [
+        134
+      ],
+      "comparison_artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+      "comparison_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "comparison_pages": [
+        103
+      ],
+      "verdict": "accept-after-literal-source-correction",
+      "conditions": [
+        "Restore source comma after come: the Lord will come, and save us:",
+        "Enumerate historical ejus versus modern eius explicitly."
+      ]
+    },
+    {
+      "target": {
+        "mass": "nativity",
+        "form_id": "vigil",
+        "proper": "Communion Antiphon",
+        "cycle": "all",
+        "occurrence": 1
+      },
+      "source_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+      "source_sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+      "source_pdf_pages": [
+        136
+      ],
+      "comparison_artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+      "comparison_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "comparison_pages": [
+        104
+      ],
+      "verdict": "accept-historical-antecedent",
+      "conditions": []
+    },
+    {
+      "target": {
+        "mass": "nativity",
+        "form_id": "dawn",
+        "proper": "Entrance Antiphon",
+        "cycle": "all",
+        "occurrence": 1
+      },
+      "source_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+      "source_sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+      "source_pdf_pages": [
+        141
+      ],
+      "comparison_artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+      "comparison_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "comparison_pages": [
+        105
+      ],
+      "verdict": "accept-historical-antecedent",
+      "conditions": [
+        "Enumerate historical cujus/cuius and, for the Day entrance, ejus/eius spelling explicitly."
+      ]
+    },
+    {
+      "target": {
+        "mass": "nativity",
+        "form_id": "day",
+        "proper": "Entrance Antiphon",
+        "cycle": "all",
+        "occurrence": 1
+      },
+      "source_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+      "source_sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+      "source_pdf_pages": [
+        145
+      ],
+      "comparison_artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+      "comparison_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "comparison_pages": [
+        106
+      ],
+      "verdict": "accept-historical-antecedent",
+      "conditions": [
+        "Enumerate historical cujus/cuius and, for the Day entrance, ejus/eius spelling explicitly."
+      ]
+    },
+    {
+      "target": {
+        "mass": "nativity",
+        "form_id": "day",
+        "proper": "Communion Antiphon",
+        "cycle": "all",
+        "occurrence": 1
+      },
+      "source_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+      "source_sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+      "source_pdf_pages": [
+        147
+      ],
+      "comparison_artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+      "comparison_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "comparison_pages": [
+        107
+      ],
+      "verdict": "accept-historical-antecedent",
+      "conditions": []
+    }
+  ],
+  "limits": [
+    "No authenticated printed-2002 fidelity or 2008 correspondence is established.",
+    "No approved modern English is imported or cleared.",
+    "No adjacent psalm, doxology or rubric is included in these historical antiphon bodies.",
+    "A supplementary image-comparison attempt using Pillow failed because Pillow is unavailable; standard-library byte comparison after independent exact-page rendering succeeded and is the recorded check."
+  ]
+}

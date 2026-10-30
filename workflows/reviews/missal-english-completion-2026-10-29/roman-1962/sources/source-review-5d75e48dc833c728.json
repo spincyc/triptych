@@ -1,0 +1,312 @@
+{
+  "schema": "triptych-visitation-notes-correction-acceptance/v1",
+  "recorded_on": "2026-10-29",
+  "status": "accepted",
+  "decision": "Final independent source and study-English review acceptance for the corrected five-chant candidate. The sole prior blocker is resolved by exact approved note replacements. No further Latin, English, source or metadata fixes are required within this bounded lane.",
+  "scope": "Independent review of exactly Visitation 2 July, Roman 1962, main/all/occurrence 1, Introit, Gradual, Alleluia, Offertory, Communion. No broader corpus, recension, annual completeness, or approved-English claim.",
+  "previous_review": {
+    "path": ".scratch/roman-english-completion-20261029/chants/marian/visitation/review/independent-review.json",
+    "sha256": "f53d0c857a2821078e3fc62333a911334cca66614ee36879d5a14efa178d4098",
+    "accepted_latin_and_english_retained": true,
+    "sole_prior_blocker": "stale-new-proper-notes",
+    "blocker_resolution": "All five new_proper.notes now match the exact acceptable_replacement strings in the original independent review."
+  },
+  "snapshots": {
+    "old_candidate_path": ".scratch/roman-english-completion-20261029/chants/marian/visitation/candidate-reviewed-v1.json",
+    "old_candidate_sha256": "f586473ee01eb0acd5f031d43eb01e35c54620d6f5fa2bfe341100a93fc774d2",
+    "new_candidate_path": ".scratch/roman-english-completion-20261029/chants/marian/visitation/candidate.json",
+    "new_candidate_sha256": "0223560421a282976d5e63b4bff3c86a8635c26cda114053df25d2590096f383",
+    "postimage_manifest_sha256": "6fe989fd96ffcb16ba072abdd8aacd61a0438f7a17a12c3b771f71ee1337a642",
+    "unchanged_source_file_count": 20,
+    "changed_fields": [
+      "rows[0].new_proper.notes",
+      "rows[1].new_proper.notes",
+      "rows[2].new_proper.notes",
+      "rows[3].new_proper.notes",
+      "rows[4].new_proper.notes"
+    ]
+  },
+  "method": "Fresh recursive semantic comparison of the conserved exact reviewed JSON and corrected JSON; exact hash/size verification of all twenty proposed source files; fresh canonical-input, old-node, translation-label, Latin/English body-hash and projection-line checks. Image rereading was not repeated because every source image, body, witness, transformation and proposed source byte is conserved from the earlier independent 200/400dpi whole-page review.",
+  "checks": [
+    {
+      "check": "prior reviewed exact candidate bytes conserved",
+      "pass": true
+    },
+    {
+      "check": "new exact candidate bytes pinned",
+      "pass": true
+    },
+    {
+      "check": "exactly five authorized changed fields",
+      "pass": true
+    },
+    {
+      "check": "source postimage manifest unchanged",
+      "pass": true
+    },
+    {
+      "check": "source postimage unchanged src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/visitation-five-chants-20261029-pages/artifact.toml",
+      "pass": true
+    },
+    {
+      "check": "source postimage unchanged src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/visitation-five-chants-20261029-pages/source.pdf",
+      "pass": true
+    },
+    {
+      "check": "source postimage unchanged src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/visitation-five-chants-20261029-alleluia.toml",
+      "pass": true
+    },
+    {
+      "check": "source postimage unchanged src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/visitation-five-chants-20261029-communion.toml",
+      "pass": true
+    },
+    {
+      "check": "source postimage unchanged src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/visitation-five-chants-20261029-gradual.toml",
+      "pass": true
+    },
+    {
+      "check": "source postimage unchanged src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/visitation-five-chants-20261029-introit.toml",
+      "pass": true
+    },
+    {
+      "check": "source postimage unchanged src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/visitation-five-chants-20261029-offertory.toml",
+      "pass": true
+    },
+    {
+      "check": "source postimage unchanged src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/visitation-five-chants-20261029-alleluia.toml",
+      "pass": true
+    },
+    {
+      "check": "source postimage unchanged src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/visitation-five-chants-20261029-communion.toml",
+      "pass": true
+    },
+    {
+      "check": "source postimage unchanged src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/visitation-five-chants-20261029-gradual.toml",
+      "pass": true
+    },
+    {
+      "check": "source postimage unchanged src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/visitation-five-chants-20261029-introit.toml",
+      "pass": true
+    },
+    {
+      "check": "source postimage unchanged src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/visitation-five-chants-20261029-offertory.toml",
+      "pass": true
+    },
+    {
+      "check": "source postimage unchanged src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/visitation-five-chants-20261029/artifact.toml",
+      "pass": true
+    },
+    {
+      "check": "source postimage unchanged src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/visitation-five-chants-20261029/latin.txt",
+      "pass": true
+    },
+    {
+      "check": "source postimage unchanged src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/edition.toml",
+      "pass": true
+    },
+    {
+      "check": "source postimage unchanged src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/visitation-five-chants-20261029-alleluia.toml",
+      "pass": true
+    },
+    {
+      "check": "source postimage unchanged src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/visitation-five-chants-20261029-communion.toml",
+      "pass": true
+    },
+    {
+      "check": "source postimage unchanged src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/visitation-five-chants-20261029-gradual.toml",
+      "pass": true
+    },
+    {
+      "check": "source postimage unchanged src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/visitation-five-chants-20261029-introit.toml",
+      "pass": true
+    },
+    {
+      "check": "source postimage unchanged src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/visitation-five-chants-20261029-offertory.toml",
+      "pass": true
+    },
+    {
+      "check": "Introit exact authorized replacement note",
+      "pass": true
+    },
+    {
+      "check": "Introit no stale unavailable note",
+      "pass": true
+    },
+    {
+      "check": "Gradual exact authorized replacement note",
+      "pass": true
+    },
+    {
+      "check": "Gradual no stale unavailable note",
+      "pass": true
+    },
+    {
+      "check": "Alleluia exact authorized replacement note",
+      "pass": true
+    },
+    {
+      "check": "Alleluia no stale unavailable note",
+      "pass": true
+    },
+    {
+      "check": "Offertory exact authorized replacement note",
+      "pass": true
+    },
+    {
+      "check": "Offertory no stale unavailable note",
+      "pass": true
+    },
+    {
+      "check": "Communion exact authorized replacement note",
+      "pass": true
+    },
+    {
+      "check": "Communion no stale unavailable note",
+      "pass": true
+    },
+    {
+      "check": "whole input still exact src/sources/calendars/roman-1962/propers.yaml",
+      "pass": true
+    },
+    {
+      "check": "whole input still exact src/sources/inventories/roman-1962-proper-translations-v1.toml",
+      "pass": true
+    },
+    {
+      "check": "whole projection hash and size",
+      "pass": true
+    },
+    {
+      "check": "exact five projection lines",
+      "pass": true
+    },
+    {
+      "check": "Introit exact old Latin node and canonical hash",
+      "pass": true
+    },
+    {
+      "check": "Introit exact old English absence node and canonical hash",
+      "pass": true
+    },
+    {
+      "check": "Introit exact accepted Latin line/hash",
+      "pass": true
+    },
+    {
+      "check": "Introit exact accepted English hash",
+      "pass": true
+    },
+    {
+      "check": "Introit exact unapproved study English labels",
+      "pass": true
+    },
+    {
+      "check": "Introit exact projection line mapping",
+      "pass": true
+    },
+    {
+      "check": "Gradual exact old Latin node and canonical hash",
+      "pass": true
+    },
+    {
+      "check": "Gradual exact old English absence node and canonical hash",
+      "pass": true
+    },
+    {
+      "check": "Gradual exact accepted Latin line/hash",
+      "pass": true
+    },
+    {
+      "check": "Gradual exact accepted English hash",
+      "pass": true
+    },
+    {
+      "check": "Gradual exact unapproved study English labels",
+      "pass": true
+    },
+    {
+      "check": "Gradual exact projection line mapping",
+      "pass": true
+    },
+    {
+      "check": "Alleluia exact old Latin node and canonical hash",
+      "pass": true
+    },
+    {
+      "check": "Alleluia exact old English absence node and canonical hash",
+      "pass": true
+    },
+    {
+      "check": "Alleluia exact accepted Latin line/hash",
+      "pass": true
+    },
+    {
+      "check": "Alleluia exact accepted English hash",
+      "pass": true
+    },
+    {
+      "check": "Alleluia exact unapproved study English labels",
+      "pass": true
+    },
+    {
+      "check": "Alleluia exact projection line mapping",
+      "pass": true
+    },
+    {
+      "check": "Offertory exact old Latin node and canonical hash",
+      "pass": true
+    },
+    {
+      "check": "Offertory exact old English absence node and canonical hash",
+      "pass": true
+    },
+    {
+      "check": "Offertory exact accepted Latin line/hash",
+      "pass": true
+    },
+    {
+      "check": "Offertory exact accepted English hash",
+      "pass": true
+    },
+    {
+      "check": "Offertory exact unapproved study English labels",
+      "pass": true
+    },
+    {
+      "check": "Offertory exact projection line mapping",
+      "pass": true
+    },
+    {
+      "check": "Communion exact old Latin node and canonical hash",
+      "pass": true
+    },
+    {
+      "check": "Communion exact old English absence node and canonical hash",
+      "pass": true
+    },
+    {
+      "check": "Communion exact accepted Latin line/hash",
+      "pass": true
+    },
+    {
+      "check": "Communion exact accepted English hash",
+      "pass": true
+    },
+    {
+      "check": "Communion exact unapproved study English labels",
+      "pass": true
+    },
+    {
+      "check": "Communion exact projection line mapping",
+      "pass": true
+    },
+    {
+      "check": "all checks pass",
+      "pass": true
+    }
+  ],
+  "pass_count": 69,
+  "fail_count": 0,
+  "approval_boundary": "Acceptance is a bounded source/translation judgment for original project-created unapproved study English, not ritual approval, a historical-English attribution, a 1962 public-domain declaration, an annual-completeness finding, or runtime/integration acceptance. Integration and publication-path gates remain with the parent.",
+  "changes_made": "Only review/notes-correction-acceptance.json written. No candidate, source record, tracked content, commit or push changed."
+}

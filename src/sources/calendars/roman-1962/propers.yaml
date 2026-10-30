@@ -2353,23 +2353,21 @@ sections:
         Epiphanytide and not when it is used after 13 January, the Credo is not said, and
         the preface is of the Epiphany within that season and otherwise the common preface.'
       propers:
-      - name: Introit
-        incipit: In excelso throno vidi sedere virum
-        source: mixed
-        verses:
-        - book: Psalms
-          ranges:
-          - begin: {chapter: 99, verse: 1}
-            end: {chapter: 99, verse: 1}
-          ref: Psalm 99:1
-        notes: 'Missale Romanum 1962, artifact p. 121, printed p. 40, unit 273: the principal antiphon In excelso throno
-          is uncited literal wording; only its following psalm verse is cited as Ps. 99, 1. The whole literal body is unavailable
-          and must not be replaced by the psalm companion alone.'
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
+      - "name": "Introit"
+        "incipit": "In excelso throno vidi sedere virum"
+        "source": "mixed"
+        "verses":
+        - "book": "Psalms"
+          "ranges":
+          - "begin":
+              "chapter": 99
+              "verse": 1
+            "end":
+              "chapter": 99
+              "verse": 1
+          "ref": "Psalm 99:1"
+        "notes": "Missale Romanum 1962, artifact p. 121, printed p. 40, unit 273: the principal antiphon In excelso throno is uncited literal wording; only its following psalm verse is cited as Ps. 99, 1. The complete literal body includes the uncited antiphon and its psalm companion. Complete target wording image-checked on 29 October 2026 against the separately retained public-domain Pustet Ratisbon1862 witness. The exact target projection and independent Latin provenance record own its permitted orthography/pointing changes."
+        "text": "In excelso throno vidi sedere virum, quem adorat multitudo Angelorum, psallentes in unum: ecce cujus imperii nomen est in aeternum. Jubilate Deo, omnis terra: servite Domino in laetitia. V. Gloria Patri.\n"
       - name: Collect
         incipit: Vota, quaesumus, Domine
         source: composed
@@ -5106,24 +5104,21 @@ sections:
             - begin: {chapter: 3, verse: 47}
               end: {chapter: 3, verse: 51}
             ref: Daniel 3:47-51
-        - name: Hymn (Benedictus es)
-          incipit: Benedictus es, Domine Deus patrum nostrorum
-          source: mixed
-          verses:
-          - book: Daniel
-            ranges:
-            - begin: {chapter: 3, verse: 52}
-              end: {chapter: 3, verse: 56}
-            ref: Daniel 3:52-56
-          notes: Missale Romanum 1962, Proprium de tempore, printed p. 75, artifact PDF p. 156, numbered unit 508, R column.
-            The Hymnus continues beyond its printed Daniel 3:52-56 citation with additional acclamations and a doxology; the
-            complete literal hymn is not supplied by that citation.
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        - "name": "Hymn (Benedictus es)"
+          "incipit": "Benedictus es, Domine Deus patrum nostrorum"
+          "source": "mixed"
+          "verses":
+          - "book": "Daniel"
+            "ranges":
+            - "begin":
+                "chapter": 3
+                "verse": 52
+              "end":
+                "chapter": 3
+                "verse": 56
+            "ref": "Daniel 3:52-56"
+          "notes": "Missale Romanum 1962, Proprium de tempore, printed p. 75, artifact PDF p. 156, numbered unit 508, R column. The Hymnus continues beyond its printed Daniel 3:52-56 citation with additional acclamations and a doxology; the complete literal hymn is not supplied by that citation. Complete target wording image-checked on 29 October 2026 against the separately retained public-domain Tours Mame1922 witness. The exact target projection and independent Latin provenance record own its permitted orthography/pointing changes."
+          "text": "Benedictus es, Domine Deus patrum nostrorum. Et laudabilis, et gloriosus in saecula.\nEt benedictum nomen gloriae tuae, quod est sanctum. Et laudabile, et gloriosum in saecula.\nBenedictus es in templo sancto gloriae tuae. Et laudabilis, et gloriosus in saecula.\nBenedictus es super thronum sanctum regni tui. Et laudabilis, et gloriosus in saecula.\nBenedictus es super sceptrum divinitatis tuae. Et laudabilis, et gloriosus in saecula.\nBenedictus es, qui sedes super Cherubim, intuens abyssos. Et laudabilis, et gloriosus in saecula.\nBenedictus es, qui ambulas super pennas ventorum, et super undas maris. Et laudabilis, et gloriosus in saecula.\nBenedicant te omnes Angeli et Sancti tui. Et laudent te, et glorificent in saecula.\nBenedicant te caeli, terra, mare, et omnia quae in eis sunt. Et laudent te, et glorificent in saecula.\nGloria Patri, et Filio, et Spiritui Sancto. Et laudabili, et glorioso in saecula.\nSicut erat in principio, et nunc, et semper: et in saecula saeculorum. Amen. Et laudabili, et glorioso in saecula.\nBenedictus es, Domine Deus patrum nostrorum. Et laudabilis, et gloriosus in saecula.\n"
         - name: "Oratio"
           source: "composed"
           notes: >-
@@ -6849,31 +6844,23 @@ sections:
       rank: III
       ordinary_appointments:
         preface: {option: quadragesima, locus: "Missale Romanum 1962, registered CMAA facsimile; printed p. 99; PDF physical p. 180; unnumbered Praefatio de Quadragesima appointment following Secreta; preface body is referred to, not printed within this formulary; expected-target row roman-1962:temporal:slot:feria-5-post-dominicam-3-in-quadragesima:preface"}
-      notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
-        orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
-        to the controlling 1962 edition, each on the public-domain witness its row in
-        src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names; the day''s other
-        composed chants are appointed but not yet transcribed. The Missal prints no scriptural
-        reference for the Introit antiphon Salus populi, only for its psalm verse.'
+      notes: "The scripture-bearing propers are recorded by their printed citations, and the day's orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated to the controlling 1962 edition, each on the public-domain witness its row in src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names. The Missal prints no scriptural reference for the Introit antiphon Salus populi, only for its psalm verse."
       propers:
-      - name: Introit
-        incipit: Salus populi ego sum
-        source: mixed
-        verses:
-        - book: Psalms
-          ranges:
-          - begin: {chapter: 77, verse: 1}
-            end: {chapter: 77, verse: 1}
-          ref: Psalm 77:1
-        notes: Missale Romanum 1962, Proprium de tempore, printed p. 98, artifact PDF p. 179, numbered unit 646, L column.
-          The Introit prints an uncited literal antiphon before its Psalm 77:1 verse; that antiphon is not supplied by the
-          Scripture citation.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+      - "name": "Introit"
+        "incipit": "Salus populi ego sum"
+        "source": "mixed"
+        "verses":
+        - "book": "Psalms"
+          "ranges":
+          - "begin":
+              "chapter": 77
+              "verse": 1
+            "end":
+              "chapter": 77
+              "verse": 1
+          "ref": "Psalm 77:1"
+        "notes": "Missale Romanum 1962, Proprium de tempore, printed p. 98, artifact PDF p. 179, numbered unit 646, L column. The Introit prints an uncited literal antiphon before its Psalm 77:1 verse; that antiphon is not supplied by the Scripture citation. Complete target wording image-checked on 29 October 2026 against the separately retained public-domain Tours Mame1922 witness. The complete historical transcription is also the normalized target body; its source passage and independent Latin provenance record own the evidence."
+        "text": "Salus populi ego sum, dicit Dominus: de quacumque tribulatione clamaverint ad me, exaudiam eos: et ero illorum Dominus in perpetuum. Attendite, popule meus, legem meam: inclinate aurem vestram in verba oris mei. V. Gloria Patri.\n"
       - name: Collect
         source: composed
         notes: >-
@@ -9292,34 +9279,26 @@ sections:
           reasons:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
-      - name: Procession Antiphon
-        ordinary_disposition:
-          kind: unplaced
-          group: blessing-and-procession-of-palms
-          region: before-frame
-          basis: The source places this unit in the contiguous palm rite before the Mass Introit.
-        incipit: Fulgentibus palmis
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
-      - name: Procession Antiphon
-        ordinary_disposition:
-          kind: unplaced
-          group: blessing-and-procession-of-palms
-          region: before-frame
-          basis: The source places this unit in the contiguous palm rite before the Mass Introit.
-        incipit: Ave, Rex noster
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+      - "name": "Procession Antiphon"
+        "ordinary_disposition":
+          "kind": "unplaced"
+          "group": "blessing-and-procession-of-palms"
+          "region": "before-frame"
+          "basis": "The source places this unit in the contiguous palm rite before the Mass Introit."
+        "incipit": "Fulgentibus palmis"
+        "source": "composed"
+        "text": "Fulgentibus palmis prosternimur advenienti Domino: huic omnes occurramus cum hymnis et canticis, glorificantes et dicentes: « Benedictus Dominus ».\n"
+        "notes": "Independently witnessed complete Latin body recovered on 2026-10-29 from 1900 Solesmes facsimile of historical Saint Gall antiphonary; target relation CMAA1962 PDF215, printed134, no840. Only recorded orthographic and abbreviation transformations apply."
+      - "name": "Procession Antiphon"
+        "ordinary_disposition":
+          "kind": "unplaced"
+          "group": "blessing-and-procession-of-palms"
+          "region": "before-frame"
+          "basis": "The source places this unit in the contiguous palm rite before the Mass Introit."
+        "incipit": "Ave, Rex noster"
+        "source": "composed"
+        "text": "Ave, Rex noster, Fili David, Redemptor mundi, quem prophetae praedixerunt Salvatorem domui Israel esse venturum. Te enim ad salutarem victimam Pater misit in mundum, quem exspectabant omnes sancti ab origine mundi, et nunc: « Hosanna Filio David. Benedictus qui venit in nomine Domini. Hosanna in excelsis ».\n"
+        "notes": "Independently witnessed complete Latin body recovered on 2026-10-29 from 1875 Henderson York manual/processional; target relation CMAA1962 PDF215-216,printed 134-135, no. 841. Only recorded orthographic and abbreviation transformations apply."
       - name: Responsory at the Entrance into the Church
         ordinary_disposition:
           kind: unplaced
@@ -9909,14 +9888,11 @@ sections:
           - begin: {chapter: 88, verse: 2}
             end: {chapter: 88, verse: 2}
           ref: Psalm 88:2
-      - name: Collect
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+      - "name": "Collect"
+        "source": "composed"
+        "incipit": "Domine, Deus, qui in regenerandis"
+        "text": "Domine, Deus, qui in regenerandis plebibus tuis ministerio uteris sacerdotum: tribue nobis perseverantem in tua voluntate famulatum; ut dono gratiae tuae, in diebus nostris, et meritis et numero sacratus tibi populus augeatur. Per Dominum.\n"
+        "notes": "1962artifact233/printed152Oratio892. WholecontinuousoldCollectindependentlyreadWilson1894printed69; apparatusprinted73footnote2 attestsministerio. Modernmeritisplural differsoldmeritosingular. Finitequalifiedadaptationunder workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json, method english-completion-20261029-finite-latin-v1; moderateconfidence, original-redactionobjectionretained, noholderpermissionorunqualifiedPDclaim."
       - name: Epistle
         source: scripture
         verses:
@@ -9951,14 +9927,11 @@ sections:
           - begin: {chapter: 44, verse: 7}
             end: {chapter: 44, verse: 7}
           ref: Psalm 44:7
-      - name: Secret
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+      - "name": "Secret"
+        "source": "composed"
+        "text": "Huius sacrificii potentia, Domine, quaesumus, et vetustatem nostram clementer abstergat, et novitatem nobis augeat et salutem. Per Dominum nostrum.\n"
+        "incipit": "Huius sacrificii potentia"
+        "notes": "1962 artifact234/printed153, unit897; entire Latin petition independently read in Wilson1894Gelasian printed69. Actual sourcePer. and targetconclusionlength remain separate; target pointing and linewrap normalization explicitly recorded in owning source projection. Original English is project-created unapproved study translation."
       - name: Communion
         incipit: Praedicabant Apostoli
         source: scripture
@@ -9968,14 +9941,11 @@ sections:
           - begin: {chapter: 6, verse: 12}
             end: {chapter: 6, verse: 13}
           ref: Mark 6:12-13
-      - name: Postcommunion
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+      - "name": "Postcommunion"
+        "source": "composed"
+        "text": "Praesta, quaesumus, Domine: ut, sicut de praeteritis ad nova transimus; ita, vetustate deposita, sanctificatis mentibus innovemur. Per Dominum.\n"
+        "incipit": "Praesta, quaesumus, Domine"
+        "notes": "1962 artifact234/printed153, unit899; entire Latin petition independently read in Wilson1894Gelasian printed73. Actual sourcePer. and targetconclusionlength remain separate; target pointing and linewrap normalization explicitly recorded in owning source projection. Original English is project-created unapproved study translation."
     - key: mass-of-the-lords-supper
       name: Mass of the Lord's Supper
       registry: '27'
@@ -10224,22 +10194,18 @@ sections:
           Refecti vitalibus alimentis, quaesumus, Domine Deus noster: ut, quod tempore
           nostrae mortalitatis exsequimur, immortalitatis tuae munere consequamur. Per
           Dominum.
-      - name: Hymn at the Translation of the Blessed Sacrament
-        incipit: Pange lingua, gloriosi Corporis mysterium
-        source: composed
-        notes: >-
-          Printed locus printed p. 160, DE SOLEMNI TRANSLATIONE AC REPOSITIONE
-          SACRAMENTI, rubric n. 3; artifact PDF p. 241. No marginal number: the cue
-          stands inside a rubric, not as a numbered text.. Preexisting material under
-          17 U.S.C. 103(b), corroborated in the tracked public-domain Pustet Ratisbon
-          1862 at printed p. 162 (Feria V. in Coena Domini, rubric for the procession
-          to the repository); text-layer lines 31630-31633.
-          The hymn is sung as far as Tantum ergo during the procession, and repeated if
-          need be; Tantum ergo is sung at the place of reposition.
-        text: |
-          Dum fit processio, cantatur hymnus Pange, lingua, gloriosi Corporis
-          mysterium, usque ad verba Tantum ergo; si vero opus sit, idem hymnus
-          repetitur.
+      - "name": "Hymn at the Translation of the Blessed Sacrament"
+        "incipit": "Pange lingua, gloriosi Corporis mysterium"
+        "source": "composed"
+        "notes": "The complete six-stanza Pange lingua hymn follows the retained nonspoken instruction. Historical Latin: Guéranger, Duffy 1879, volume 10, pages 301–302. The 1962 Missal, PDF page 241 / printed page 160, rubrics 3–4, appoints the hymn by name: first four stanzas during the procession, repeated if needed; last two, beginning Tantum ergo, at the repository. This is a source-prescribed historical text; its full wording was not collated against a printed 1962 hymn body."
+        "text": "Dum fit processio, cantatur hymnus Pange, lingua, gloriosi Corporis\nmysterium, usque ad verba Tantum ergo; si vero opus sit, idem hymnus\nrepetitur.\n\nPange, lingua, gloriosi\nCorporis mysterium,\nSanguinisque pretiosi,\nQuem in mundi pretium,\nFructus ventris generosi,\nRex effudit gentium.\n\nNobis datus, nobis natus\nEx intacta Virgine,\nEt in mundo conversatus,\nSparso verbi semine,\nSui moras incolatus\nMiro clausit ordine.\n\nIn supremae nocte coenae\nRecumbens cum fratribus,\nObservata lege plene\nCibis in legalibus,\nCibum turbae duodenae\nSe dat suis manibus.\n\nVerbum caro, panem verum\nVerbo carnem efficit:\nFitque sanguis Christi merum:\nEt si sensus deficit,\nAd firmandum cor sincerum\nSola fides sufficit.\n\nTantum ergo Sacramentum\nVeneremur cernui:\nEt antiquum documentum\nNovo cedat ritui:\nPraestet fides supplementum\nSensuum defectui.\n\nGenitori, Genitoque\nLaus et jubilatio,\nSalus, honor, virtus quoque\nSit et benedictio:\nProcedenti ab utroque\nCompar sit laudatio.\nAmen.\n"
+        "text_structure":
+          "text_sha256": "53086b37a090275ba11b1a8053054ba39c95fd3dc475aabf9c8f5206167d6379"
+          "checked": "Composite structure checked 2026-10-29: the exact prior source-owned cue is a nonspoken action. The complete six-stanza 1879 hymn follows verbatim; its checked stanza boundaries remain in the historical source record. Composite metadata supplies no stanza marker at offset zero because that offset belongs to the instruction."
+          "actions":
+          - "kind": "rubric"
+            "offset": 0
+            "text": "Dum fit processio, cantatur hymnus Pange, lingua, gloriosi Corporis\nmysterium, usque ad verba Tantum ergo; si vero opus sit, idem hymnus\nrepetitur."
     - key: good-friday
       name: Solemn Liturgical Action of the Passion and Death of the Lord
       registry: '28'
@@ -12449,11 +12415,7 @@ sections:
       rank: II
       ordinary_appointments:
         preface: {option: paschalis, locus: "Missale Romanum 1962, registered CMAA facsimile, physical PDF p. 431, printed p. 350; explicit Preface rubric; appointed text is referred material; expected-target row roman-1962.temporal.ascension-vigil:preface:1"}
-      notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
-        orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
-        to the controlling 1962 edition, each on the public-domain witness its row in
-        src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names; the day''s other
-        composed chants are appointed but not yet transcribed.'
+      notes: "The scripture-bearing propers are recorded by their printed citations, and the day's orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated to the controlling 1962 edition, each on the public-domain witness its row in src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names."
       propers:
       - name: Introit
         incipit: Vocem jucunditatis annuntiate
@@ -12487,22 +12449,21 @@ sections:
           - begin: {chapter: 4, verse: 7}
             end: {chapter: 4, verse: 13}
           ref: Ephesians 4:7-13
-      - name: Alleluia
-        incipit: Surrexit Christus, et illuxit nobis
-        source: mixed
-        verses:
-        - book: John
-          ranges:
-          - begin: {chapter: 16, verse: 28}
-            end: {chapter: 16, verse: 28}
-          ref: John 16:28
-        notes: Missale Romanum 1962, artifact p. 431, printed p. 350, numbered unit 1276; this normal Alleluia also appoints
-          a separate uncited verse. Its biblical citation is retained; the uncited wording remains unavailable.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
+      - "name": "Alleluia"
+        "incipit": "Surrexit Christus, et illuxit nobis"
+        "source": "mixed"
+        "verses":
+        - "book": "John"
+          "ranges":
+          - "begin":
+              "chapter": 16
+              "verse": 28
+            "end":
+              "chapter": 16
+              "verse": 28
+          "ref": "John 16:28"
+        "notes": "Missale Romanum 1962, artifact p. 431, printed p. 350, numbered unit 1276; this normal Alleluia also appoints a separate uncited verse. The complete literal body includes its biblical and uncited verses. Complete target wording image-checked on 29 October 2026 against the separately retained public-domain Pustet Ratisbon1862 witness. The exact target projection and independent Latin provenance record own its permitted orthography/pointing changes."
+        "text": "Alleluia, alleluia. V. Surrexit Christus, et illuxit nobis, quos redemit sanguine suo. Alleluia. V. Exivi a Patre, et veni in mundum: iterum relinquo mundum, et vado ad Patrem. Alleluia.\n"
       - name: Gospel
         source: scripture
         verses:
@@ -13116,11 +13077,7 @@ sections:
       registry: '1962-T-pentecost-monday'
       season: paschaltide
       rank: I
-      notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
-        orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
-        to the controlling 1962 edition, each on the public-domain witness its row in
-        src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names; the day''s other
-        composed chants are appointed but not yet transcribed.'
+      notes: "The scripture-bearing propers are recorded by their printed citations, and the day's orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated to the controlling 1962 edition, each on the public-domain witness its row in src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names; the complete two-versicle Alleluia now has its own independently source-qualified Latin body, while scriptural citation availability and full Missal wording remain separate."
       ordinary_appointments:
         preface: {option: spiritu-sancto, locus: "Missale Romanum 1962, artifact PDF p. 440, printed p. 359, the rubric after the Secret: 'Praefatio, Communicantes et Hanc igitur, ut in die Pentecostes'; read at 200 dpi page images of the registered CMAA facsimile (sha256 648fdb8f...) on 2026-10-19"}
         communicantes: {option: pentecoste, locus: "Missale Romanum 1962, artifact PDF p. 440, printed p. 359, the rubric after the Secret: 'Praefatio, Communicantes et Hanc igitur, ut in die Pentecostes'; read at 200 dpi page images of the registered CMAA facsimile (sha256 648fdb8f...) on 2026-10-19"}
@@ -13161,22 +13118,28 @@ sections:
           - begin: {chapter: 10, verse: 42}
             end: {chapter: 10, verse: 48}
           ref: Acts 10:34, 42-48
-      - name: Alleluia
-        incipit: Loquebantur variis linguis Apostoli
-        source: mixed
-        verses:
-        - book: Acts
-          ranges:
-          - begin: {chapter: 2, verse: 4}
-            end: {chapter: 2, verse: 4}
-          ref: Acts 2:4
-        notes: Missale Romanum 1962, artifact p. 439, printed p. 358, numbered unit 1323; this normal Alleluia also appoints
-          a separate uncited verse. Its biblical citation is retained; the uncited wording remains unavailable.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
+      - "name": "Alleluia"
+        "incipit": "Loquebantur variis linguis Apostoli"
+        "source": "mixed"
+        "verses":
+        - "book": "Acts"
+          "ranges":
+          - "begin":
+              "chapter": 2
+              "verse": 4
+            "end":
+              "chapter": 2
+              "verse": 4
+          "ref": "Acts 2:4"
+        "notes": "1962 target artifact439/printed358, numberedunit1323; right lower; follows Lesson1322, before Sequence1324. Complete independent PD historical body Mame1922 artifact516/printed402; left lower; after LessonAct10:42-48, before Sequence referral; both page images directly inspected, including the second uncited Veni verse and actual ending ignem accende. No terminal Alleluia follows the Veni verse. The parenthetical Hic genuflectitur is a rubric, explicitly marked as an action. Only orthography, printed pointing and verse-marker normalization differ; no clause supplied. The separate source and publication records own the exact evidence."
+        "text": "Alleluia, alleluia. V. Loquebantur variis linguis Apostoli magnalia Dei. Alleluia. (Hic genuflectitur) V. Veni, Sancte Spiritus, reple tuorum corda fidelium: et tui amoris in eis ignem accende.\n"
+        "text_structure":
+          "text_sha256": "0367bd2e0df88cd1676668e882362427a809d1ce324571383b2b7ff7038290c5"
+          "checked": "1962 artifact439/printed358, unit1323, read on page images on2026-10-29. The parenthetical direction before Veni is a genuflection rubric rather than words said. Complete unit includes both versicles and no final Alleluia."
+          "actions":
+          - "kind": "rubric"
+            "offset": 83
+            "text": "(Hic genuflectitur)"
       - name: Sequence
         takes_from: {mass: pentecost}
       - name: Gospel
@@ -13231,11 +13194,7 @@ sections:
       registry: '1962-T-pentecost-tuesday'
       season: paschaltide
       rank: I
-      notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
-        orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
-        to the controlling 1962 edition, each on the public-domain witness its row in
-        src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names; the day''s other
-        composed chants are appointed but not yet transcribed.'
+      notes: "The scripture-bearing propers are recorded by their printed citations, and the day's orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated to the controlling 1962 edition, each on the public-domain witness its row in src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names; the complete two-versicle Alleluia now has its own independently source-qualified Latin body, while scriptural citation availability and full Missal wording remain separate."
       ordinary_appointments:
         preface: {option: spiritu-sancto, locus: "Missale Romanum 1962, artifact PDF p. 442, printed p. 361, the rubric after the Secret: 'Praefatio, Communicantes et Hanc igitur, ut in die Pentecostes'; read at 200 dpi page images of the registered CMAA facsimile (sha256 648fdb8f...) on 2026-10-19"}
         communicantes: {option: pentecoste, locus: "Missale Romanum 1962, artifact PDF p. 442, printed p. 361, the rubric after the Secret: 'Praefatio, Communicantes et Hanc igitur, ut in die Pentecostes'; read at 200 dpi page images of the registered CMAA facsimile (sha256 648fdb8f...) on 2026-10-19"}
@@ -13273,22 +13232,28 @@ sections:
           - begin: {chapter: 8, verse: 14}
             end: {chapter: 8, verse: 17}
           ref: Acts 8:14-17
-      - name: Alleluia
-        incipit: Spiritus Sanctus docebit vos
-        source: mixed
-        verses:
-        - book: John
-          ranges:
-          - begin: {chapter: 14, verse: 26}
-            end: {chapter: 14, verse: 26}
-          ref: John 14:26
-        notes: Missale Romanum 1962, artifact p. 441, printed p. 360, numbered unit 1333; this normal Alleluia also appoints
-          a separate uncited verse. Its biblical citation is retained; the uncited wording remains unavailable.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
+      - "name": "Alleluia"
+        "incipit": "Spiritus Sanctus docebit vos"
+        "source": "mixed"
+        "verses":
+        - "book": "John"
+          "ranges":
+          - "begin":
+              "chapter": 14
+              "verse": 26
+            "end":
+              "chapter": 14
+              "verse": 26
+          "ref": "John 14:26"
+        "notes": "1962 target artifact441/printed360, numberedunit1333; left bottom continuing right top; after Lesson1332 and before Sequence1334. Complete independent PD historical body Mame1922 artifact517/printed403; right lower; after LessonAct8:14-17, before Sequence referral; both page images directly inspected, including the second uncited Veni verse and actual ending ignem accende. No terminal Alleluia follows the Veni verse. The parenthetical Hic genuflectitur is a rubric, explicitly marked as an action. Only orthography, printed pointing and verse-marker normalization differ; no clause supplied. The separate source and publication records own the exact evidence."
+        "text": "Alleluia, alleluia. V. Spiritus Sanctus docebit vos quaecumque dixero vobis. Alleluia. (Hic genuflectitur) V. Veni, Sancte Spiritus, reple tuorum corda fidelium: et tui amoris in eis ignem accende.\n"
+        "text_structure":
+          "text_sha256": "fbf79f5d5b08dac49fa0ec75941e1eb118cae38f61e7ce0e78073d4649e6eca0"
+          "checked": "1962 artifact441/printed360, unit1333, read on page images on2026-10-29. The parenthetical direction before Veni is a genuflection rubric rather than words said. Complete unit includes both versicles and no final Alleluia."
+          "actions":
+          - "kind": "rubric"
+            "offset": 87
+            "text": "(Hic genuflectitur)"
       - name: Sequence
         takes_from: {mass: pentecost}
       - name: Gospel
@@ -13483,11 +13448,7 @@ sections:
       registry: '1962-T-pentecost-thursday'
       season: paschaltide
       rank: I
-      notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
-        orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
-        to the controlling 1962 edition, each on the public-domain witness its row in
-        src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names; the day''s other
-        composed chants are appointed but not yet transcribed.'
+      notes: "The scripture-bearing propers are recorded by their printed citations, and the day's orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated to the controlling 1962 edition, each on the public-domain witness its row in src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names; the complete two-versicle Alleluia now has its own independently source-qualified Latin body, while scriptural citation availability and full Missal wording remain separate."
       ordinary_appointments:
         preface: {option: spiritu-sancto, locus: "Missale Romanum 1962, artifact PDF p. 445, printed p. 364, the rubric after the Secret: 'Praefatio, Communicantes et Hanc igitur, ut in die Pentecostes'; read at 200 dpi page images of the registered CMAA facsimile (sha256 648fdb8f...) on 2026-10-19"}
         communicantes: {option: pentecoste, locus: "Missale Romanum 1962, artifact PDF p. 445, printed p. 364, the rubric after the Secret: 'Praefatio, Communicantes et Hanc igitur, ut in die Pentecostes'; read at 200 dpi page images of the registered CMAA facsimile (sha256 648fdb8f...) on 2026-10-19"}
@@ -13526,22 +13487,28 @@ sections:
           - begin: {chapter: 8, verse: 5}
             end: {chapter: 8, verse: 8}
           ref: Acts 8:5-8
-      - name: Alleluia
-        incipit: Emitte Spiritum tuum, et creabuntur
-        source: mixed
-        verses:
-        - book: Psalms
-          ranges:
-          - begin: {chapter: 103, verse: 30}
-            end: {chapter: 103, verse: 30}
-          ref: Psalm 103:30
-        notes: Missale Romanum 1962, artifact p. 445, printed p. 364, numbered unit 1356; this normal Alleluia also appoints
-          a separate uncited verse. Its biblical citation is retained; the uncited wording remains unavailable.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
+      - "name": "Alleluia"
+        "incipit": "Emitte Spiritum tuum, et creabuntur"
+        "source": "mixed"
+        "verses":
+        - "book": "Psalms"
+          "ranges":
+          - "begin":
+              "chapter": 103
+              "verse": 30
+            "end":
+              "chapter": 103
+              "verse": 30
+          "ref": "Psalm 103:30"
+        "notes": "1962 target artifact445/printed364, numberedunit1356; left middle; after Lesson1355, before Sequence1357. Complete independent PD historical body Mame1922 artifact522/printed408; left upper; after LessonAct8:5-8, before Sequence referral; both page images directly inspected, including the second uncited Veni verse and actual ending ignem accende. No terminal Alleluia follows the Veni verse. The parenthetical Hic genuflectitur is a rubric, explicitly marked as an action. Only orthography, printed pointing and verse-marker normalization differ; no clause supplied. The separate source and publication records own the exact evidence."
+        "text": "Alleluia, alleluia. V. Emitte Spiritum tuum, et creabuntur: et renovabis faciem terrae. Alleluia. (Hic genuflectitur) V. Veni, Sancte Spiritus, reple tuorum corda fidelium: et tui amoris in eis ignem accende.\n"
+        "text_structure":
+          "text_sha256": "07a11efbf246ebc70e8cca88745bf63c55a9a6fddeba17516254f3ecfc83d924"
+          "checked": "1962 artifact445/printed364, unit1356, read on page images on2026-10-29. The parenthetical direction before Veni is a genuflection rubric rather than words said. Complete unit includes both versicles and no final Alleluia."
+          "actions":
+          - "kind": "rubric"
+            "offset": 98
+            "text": "(Hic genuflectitur)"
       - name: Sequence
         takes_from: {mass: pentecost}
       - name: Gospel
@@ -13595,11 +13562,7 @@ sections:
       registry: '1962-T-pentecost-ember-friday'
       season: paschaltide
       rank: I
-      notes: 'The scripture-bearing propers are recorded by their printed citations, and the day''s
-        orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated
-        to the controlling 1962 edition, each on the public-domain witness its row in
-        src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names; the day''s other
-        composed chants are appointed but not yet transcribed.'
+      notes: "The scripture-bearing propers are recorded by their printed citations, and the day's orations, the Collect, the Secret and the Postcommunion, carry published Latin bodies collated to the controlling 1962 edition, each on the public-domain witness its row in src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names; the complete two-versicle Alleluia now has its own independently source-qualified Latin body, while scriptural citation availability and full Missal wording remain separate."
       ordinary_appointments:
         preface: {option: spiritu-sancto, locus: "Missale Romanum 1962, artifact PDF p. 447, printed p. 366, the rubric after the Secret: 'Praefatio, Communicantes et Hanc igitur, ut in die Pentecostes'; read at 200 dpi page images of the registered CMAA facsimile (sha256 648fdb8f...) on 2026-10-19"}
         communicantes: {option: pentecoste, locus: "Missale Romanum 1962, artifact PDF p. 447, printed p. 366, the rubric after the Secret: 'Praefatio, Communicantes et Hanc igitur, ut in die Pentecostes'; read at 200 dpi page images of the registered CMAA facsimile (sha256 648fdb8f...) on 2026-10-19"}
@@ -13641,22 +13604,28 @@ sections:
           - begin: {chapter: 2, verse: 26}
             end: {chapter: 2, verse: 27}
           ref: Joel 2:23-24, 26-27
-      - name: Alleluia
-        incipit: O quam bonus et suavis est, Domine, Spiritus tuus in nobis
-        source: mixed
-        verses:
-        - book: Wisdom
-          ranges:
-          - begin: {chapter: 12, verse: 1}
-            end: {chapter: 12, verse: 1}
-          ref: Wisdom 12:1
-        notes: Missale Romanum 1962, artifact p. 446, printed p. 365, numbered unit 1366; this normal Alleluia also appoints
-          a separate uncited verse. Its biblical citation is retained; the uncited wording remains unavailable.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
+      - "name": "Alleluia"
+        "incipit": "O quam bonus et suavis est, Domine, Spiritus tuus in nobis"
+        "source": "mixed"
+        "verses":
+        - "book": "Wisdom"
+          "ranges":
+          - "begin":
+              "chapter": 12
+              "verse": 1
+            "end":
+              "chapter": 12
+              "verse": 1
+          "ref": "Wisdom 12:1"
+        "notes": "1962 target artifact446/printed365, numberedunit1366; left bottom continuing right top; after Lesson1365, before Sequence1367. Complete independent PD historical body Mame1922 artifact523/printed409; left bottom continuing right top; after LessonJoel2, before Sequence referral; both page images directly inspected, including the second uncited Veni verse and actual ending ignem accende. No terminal Alleluia follows the Veni verse. The parenthetical Hic genuflectitur is a rubric, explicitly marked as an action. Only orthography, printed pointing and verse-marker normalization differ; no clause supplied. The separate source and publication records own the exact evidence."
+        "text": "Alleluia, alleluia. V. O quam bonus et suavis est, Domine, Spiritus tuus in nobis! Alleluia. (Hic genuflectitur) V. Veni, Sancte Spiritus, reple tuorum corda fidelium: et tui amoris in eis ignem accende.\n"
+        "text_structure":
+          "text_sha256": "650d8c57cb2e5b76b60e20c1353b70209bb36567cae0fbd4cd125533ec50f51f"
+          "checked": "1962 artifact446/printed365, unit1366, read on page images on2026-10-29. The parenthetical direction before Veni is a genuflection rubric rather than words said. Complete unit includes both versicles and no final Alleluia."
+          "actions":
+          - "kind": "rubric"
+            "offset": 93
+            "text": "(Hic genuflectitur)"
       - name: Sequence
         takes_from: {mass: pentecost}
       - name: Gospel
@@ -18350,16 +18319,11 @@ sections:
               chapter: 1
               verse: 10
           ref: Jeremiah 1:9-10
-      - name: Secret
-        incipit: Oblatis muneribus, quaesumus
-        source: composed
-        notes: Printed p. [3], no. 4187.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf
+      - "name": "Secret"
+        "incipit": "Oblatis muneribus, quaesumus"
+        "source": "composed"
+        "notes": "Printed p. [3], no. 4187. Entiretargetbody is a finite qualifiednonoriginaladaptation of a continuousFeltoe1896wholeprayer; see exactauthority workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json method english-completion-20261029-finite-latin-v1. Moderateconfidence; theologicalredactionoriginality objection retained; no holderpermission or unqualifiedPDclaim."
+        "text": "Oblatis muneribus, quaesumus, Domine, Ecclesiam tuam benignus illumina: ut et gregis tui proficiat ubique successus, et grati fiant nomini tuo, te gubernante, pastores. Per Dominum nostrum.\n"
       - name: Secret (Altera secreta)
         incipit: Munera, quae tibi
         source: composed
@@ -18382,16 +18346,11 @@ sections:
               chapter: 16
               verse: 18
           ref: Matthew 16:18
-      - name: Postcommunion
-        incipit: Refectione sancta enutritam
-        source: composed
-        notes: Printed p. [3], no. 4190.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf
+      - "name": "Postcommunion"
+        "incipit": "Refectione sancta enutritam"
+        "source": "composed"
+        "notes": "Printed p. [3], no. 4190. Entiretargetbody is a finite qualifiednonoriginaladaptation of a continuousFeltoe1896wholeprayer; see exactauthority workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json method english-completion-20261029-finite-latin-v1. Moderateconfidence; theologicalredactionoriginality objection retained; no holderpermission or unqualifiedPDclaim."
+        "text": "Refectione sancta enutritam guberna, quaesumus, Domine, tuam placatus Ecclesiam: ut, potenti moderatione directa, et incrementa libertatis accipiat et in religionis integritate persistat. Per Dominum.\n"
       - name: Postcommunion (Altera postcommunio)
         incipit: Multiplica, quaesumus, Domine
         source: composed
@@ -20941,43 +20900,34 @@ sections:
               chapter: 111
               verse: 3
           ref: Psalms 111:1-3
-      - name: Alleluia (Tempore paschali)
-        source: mixed
-        verses:
-        - book: Psalms
-          ranges:
-          - begin:
-              chapter: 109
-              verse: 4
-            end:
-              chapter: 109
-              verse: 4
-          ref: Psalm 109:4
-        notes: 1962 CMAA facsimile, artifact p. 827, printed [19]; raw text page line 60; Printed text unit
-          4312; distinct Paschal appointment, with Bible reconstruction only for its cited components. Its second
-          verse is the uncited Hic est sacerdos chant; the whole exact body remains unavailable. Psalm109:4
-          is a component, not the whole appointment.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        ordinary_disposition:
-          kind: alternative
-          group: confessoris-pontificis-1-post-epistle
-          option: paschal
-          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 827, printed
-            [19]; raw text page line 1 and the numbered local chant cues
-          anchor:
-            mass: commune-confessoris-pontificis-1
-            form_id: main
-            proper: Alleluia
-            occurrence: 1
-          when:
-            fact: roman-1962-common-chant-regime
-            in:
-            - paschal
+      - "name": "Alleluia (Tempore paschali)"
+        "source": "mixed"
+        "verses":
+        - "book": "Psalms"
+          "ranges":
+          - "begin":
+              "chapter": 109
+              "verse": 4
+            "end":
+              "chapter": 109
+              "verse": 4
+          "ref": "Psalm 109:4"
+        "notes": "1962 CMAA facsimile, artifact p. 827, printed [19], complete text unit 4312. This distinct Paschal appointment contains two printed versicles and all its Alleluias. The full Latin body was read on target and independent Mame 1922 page images at 200 and 400 dpi on 2026-10-29; Mame original artifact p. 900, printed 22*. Exact source/projection evidence is in the Latin provenance sidecar. The cited Psalm is a component, not a reconstruction of the whole body. Existing source-owned seasonal choice is retained."
+        "ordinary_disposition":
+          "kind": "alternative"
+          "group": "confessoris-pontificis-1-post-epistle"
+          "option": "paschal"
+          "basis": "1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 827, printed [19]; raw text page line 1 and the numbered local chant cues"
+          "anchor":
+            "mass": "commune-confessoris-pontificis-1"
+            "form_id": "main"
+            "proper": "Alleluia"
+            "occurrence": 1
+          "when":
+            "fact": "roman-1962-common-chant-regime"
+            "in":
+            - "paschal"
+        "text": "Alleluia, alleluia. V. Tu es sacerdos in aeternum, secundum ordinem Melchisedech. Alleluia. V. Hic est sacerdos, quem coronavit Dominus. Alleluia.\n"
       - name: Gospel
         source: scripture
         verses:
@@ -23968,43 +23918,34 @@ sections:
               chapter: 44
               verse: 5
           ref: Psalms 44:5
-      - name: Alleluia (Tempore paschali)
-        source: mixed
-        verses:
-        - book: Psalms
-          ranges:
-          - begin:
-              chapter: 44
-              verse: 5
-            end:
-              chapter: 44
-              verse: 5
-          ref: Psalm 44:5
-        notes: 1962 CMAA facsimile, artifact p. 843, printed [35]; raw text page line 71; Printed text unit
-          4438; distinct Paschal appointment, with Bible reconstruction only for its cited components. The two
-          liturgical segments share Psalm44:5 but differ from the regular first hemistich; the exact two-verse
-          body remains unavailable. A whole Bible verse does not encode those segments.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        ordinary_disposition:
-          kind: alternative
-          group: non-virginum-1-post-epistle
-          option: paschal
-          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 843, printed
-            [35]; raw text page line 1 and the numbered local chant cues
-          anchor:
-            mass: commune-non-virginum-1
-            form_id: main
-            proper: Alleluia
-            occurrence: 1
-          when:
-            fact: roman-1962-common-chant-regime
-            in:
-            - paschal
+      - "name": "Alleluia (Tempore paschali)"
+        "source": "mixed"
+        "verses":
+        - "book": "Psalms"
+          "ranges":
+          - "begin":
+              "chapter": 44
+              "verse": 5
+            "end":
+              "chapter": 44
+              "verse": 5
+          "ref": "Psalm 44:5"
+        "notes": "1962 CMAA facsimile, artifact p. 843, printed [35], complete text unit 4438. This distinct Paschal appointment contains two printed versicles and all its Alleluias. The full Latin body was read on target and independent Mame 1922 page images at 200 and 400 dpi on 2026-10-29; Mame original artifact p. 920, printed 42*. Exact source/projection evidence is in the Latin provenance sidecar. The cited Psalm is a component, not a reconstruction of the whole body. Existing source-owned seasonal choice is retained."
+        "ordinary_disposition":
+          "kind": "alternative"
+          "group": "non-virginum-1-post-epistle"
+          "option": "paschal"
+          "basis": "1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 843, printed [35]; raw text page line 1 and the numbered local chant cues"
+          "anchor":
+            "mass": "commune-non-virginum-1"
+            "form_id": "main"
+            "proper": "Alleluia"
+            "occurrence": 1
+          "when":
+            "fact": "roman-1962-common-chant-regime"
+            "in":
+            - "paschal"
+        "text": "Alleluia, alleluia. V. Specie tua et pulchritudine tua intende, prospere procede, et regna. Alleluia. V. Propter veritatem, et mansuetudinem, et justitiam: et deducet te mirabiliter dextera tua. Alleluia.\n"
       - name: Gospel
         source: scripture
         verses:
@@ -24312,43 +24253,34 @@ sections:
               chapter: 44
               verse: 5
           ref: Psalms 44:5
-      - name: Alleluia (Tempore paschali)
-        source: mixed
-        verses:
-        - book: Psalms
-          ranges:
-          - begin:
-              chapter: 44
-              verse: 5
-            end:
-              chapter: 44
-              verse: 5
-          ref: Psalm 44:5
-        notes: 1962 CMAA facsimile, artifact p. 846, printed [38]; raw text page line 4; Printed text unit 4453;
-          distinct Paschal appointment, with Bible reconstruction only for its cited components. The two liturgical
-          segments share Psalm44:5 but differ from the regular first hemistich; the exact two-verse body remains
-          unavailable. A whole Bible verse does not encode those segments.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        ordinary_disposition:
-          kind: alternative
-          group: non-virginum-2-post-epistle
-          option: paschal
-          basis: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 845, printed
-            [37]; raw text page line 2 and the numbered local chant cues
-          anchor:
-            mass: commune-non-virginum-2
-            form_id: main
-            proper: Alleluia
-            occurrence: 1
-          when:
-            fact: roman-1962-common-chant-regime
-            in:
-            - paschal
+      - "name": "Alleluia (Tempore paschali)"
+        "source": "mixed"
+        "verses":
+        - "book": "Psalms"
+          "ranges":
+          - "begin":
+              "chapter": 44
+              "verse": 5
+            "end":
+              "chapter": 44
+              "verse": 5
+          "ref": "Psalm 44:5"
+        "notes": "1962 CMAA facsimile, artifact p. 846, printed [38], complete text unit 4453. This distinct Paschal appointment contains two printed versicles and all its Alleluias. The full Latin body was read on target and independent Mame 1922 page images at 200 and 400 dpi on 2026-10-29; Mame original artifact p. 922, printed 44*. Exact source/projection evidence is in the Latin provenance sidecar. The cited Psalm is a component, not a reconstruction of the whole body. Existing source-owned seasonal choice is retained."
+        "ordinary_disposition":
+          "kind": "alternative"
+          "group": "non-virginum-2-post-epistle"
+          "option": "paschal"
+          "basis": "1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 845, printed [37]; raw text page line 2 and the numbered local chant cues"
+          "anchor":
+            "mass": "commune-non-virginum-2"
+            "form_id": "main"
+            "proper": "Alleluia"
+            "occurrence": 1
+          "when":
+            "fact": "roman-1962-common-chant-regime"
+            "in":
+            - "paschal"
+        "text": "Alleluia, alleluia. V. Specie tua et pulchritudine tua intende, prospere procede, et regna. Alleluia. V. Propter veritatem, et mansuetudinem, et justitiam: et deducet te mirabiliter dextera tua. Alleluia.\n"
       - name: Gospel
         source: scripture
         verses:
@@ -25807,32 +25739,25 @@ sections:
               chapter: 47
               verse: 9
           ref: Psalms 47:10-11, 9
-      - name: Alleluia
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, CMAA facsimile, artifact p. 548 / printed p. 467, right column, no. 2111. No biblical
-          reference is printed; none is inferred.
-        ordinary_disposition:
-          kind: alternative
-          group: purification-post-epistle
-          option: regular
-          basis: 'Missale Romanum 1962, CMAA facsimile, artifact p. 548 / printed p. 467, nn. 2111-2112: after Septuagesima
-            the Alleluia and its verse are omitted and the printed Tract is said.'
-          anchor:
-            mass: purificatione-beatae-mariae-virginis
-            form_id: main
-            proper: Alleluia
-            occurrence: 1
-          when:
-            fact: roman-1962-common-chant-regime
-            in:
-            - advent
-            - regular
+      - "name": "Alleluia"
+        "source": "composed"
+        "notes": "1962 printed p.467, no.2111; artifact page548; Alleluia. Complete body image-collated2026-10-29 against Tours Mame1922 printed p.526, original artifact page640, extract page1; right column, below Graduale. Mame spells Alleluja with j and sets both puerum and puer in lower case; target has Alleluia and Puerum/Puer. No word is added, removed or replaced. Existing source-owned Scripture references and conditional appointment data are retained separately."
+        "ordinary_disposition":
+          "kind": "alternative"
+          "group": "purification-post-epistle"
+          "option": "regular"
+          "basis": "Missale Romanum 1962, CMAA facsimile, artifact p. 548 / printed p. 467, nn. 2111-2112: after Septuagesima the Alleluia and its verse are omitted and the printed Tract is said."
+          "anchor":
+            "mass": "purificatione-beatae-mariae-virginis"
+            "form_id": "main"
+            "proper": "Alleluia"
+            "occurrence": 1
+          "when":
+            "fact": "roman-1962-common-chant-regime"
+            "in":
+            - "advent"
+            - "regular"
+        "text": "Alleluia, alleluia. V. Senex Puerum portabat: Puer autem senem regebat. Alleluia.\n"
       - name: Tract
         source: scripture
         verses:
@@ -26022,76 +25947,62 @@ sections:
               chapter: 2
               verse: 14
           ref: Song of Songs 2:10, 14
-      - name: Alleluia
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, CMAA facsimile, artifact p. 555 / printed p. 474, left column, no. 2168. No biblical
-          reference is printed; none is inferred.
-        ordinary_disposition:
-          kind: alternative
-          group: apparition-post-epistle
-          option: regular
-          basis: 'Missale Romanum 1962, CMAA facsimile, artifact p. 555 / printed p. 474, nn. 2168-2169: after Septuagesima
-            the Alleluia and its verse are omitted and the printed Tract is said.'
-          anchor:
-            mass: apparitione-beatae-mariae-virginis-immaculatae
-            form_id: main
-            proper: Alleluia
-            occurrence: 1
-          when:
-            fact: roman-1962-common-chant-regime
-            in:
-            - advent
-            - regular
-      - name: Tract
-        source: mixed
-        verses:
-        - book: Judith
-          ranges:
-          - begin:
-              chapter: 15
-              verse: 10
-            end:
-              chapter: 15
-              verse: 10
-          ref: Judith 15:10
-        - book: Song of Songs
-          ranges:
-          - begin:
-              chapter: 4
-              verse: 7
-            end:
-              chapter: 4
-              verse: 7
-          ref: Song of Songs 4:7
-        notes: Missale Romanum 1962, CMAA facsimile, artifact p. 555 / printed p. 474, left column, no. 2169. Printed biblical
-          references are retained; the uncited chant wording remains a separate unavailable body.
-        ordinary_disposition:
-          kind: alternative
-          group: apparition-post-epistle
-          option: tract
-          basis: 'Missale Romanum 1962, CMAA facsimile, artifact p. 555 / printed p. 474, nn. 2168-2169: after Septuagesima
-            the Alleluia and its verse are omitted and the printed Tract is said.'
-          anchor:
-            mass: apparitione-beatae-mariae-virginis-immaculatae
-            form_id: main
-            proper: Alleluia
-            occurrence: 1
-          when:
-            fact: roman-1962-common-chant-regime
-            in:
-            - tract
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+      - "name": "Alleluia"
+        "source": "composed"
+        "notes": "1962 printed p.474, no.2168; artifact page555; Alleluia. Complete body image-collated2026-10-29 against Tours Mame1922 printed p.533, original artifact page647, extract page2; right column, between Graduale and Tractus. Mame spells Alleluja with j; target Alleluia uses i. Words and pointing otherwise agree after typography normalization. Existing source-owned Scripture references and conditional appointment data are retained separately."
+        "ordinary_disposition":
+          "kind": "alternative"
+          "group": "apparition-post-epistle"
+          "option": "regular"
+          "basis": "Missale Romanum 1962, CMAA facsimile, artifact p. 555 / printed p. 474, nn. 2168-2169: after Septuagesima the Alleluia and its verse are omitted and the printed Tract is said."
+          "anchor":
+            "mass": "apparitione-beatae-mariae-virginis-immaculatae"
+            "form_id": "main"
+            "proper": "Alleluia"
+            "occurrence": 1
+          "when":
+            "fact": "roman-1962-common-chant-regime"
+            "in":
+            - "advent"
+            - "regular"
+        "text": "Alleluia, alleluia. V. Ostende mihi faciem tuam, sonet vox tua in auribus meis: vox enim tua dulcis, et facies tua decora. Alleluia.\n"
+      - "name": "Tract"
+        "source": "mixed"
+        "verses":
+        - "book": "Judith"
+          "ranges":
+          - "begin":
+              "chapter": 15
+              "verse": 10
+            "end":
+              "chapter": 15
+              "verse": 10
+          "ref": "Judith 15:10"
+        - "book": "Song of Songs"
+          "ranges":
+          - "begin":
+              "chapter": 4
+              "verse": 7
+            "end":
+              "chapter": 4
+              "verse": 7
+          "ref": "Song of Songs 4:7"
+        "notes": "1962 printed p.474, no.2169; artifact page555; Tract. Complete body image-collated2026-10-29 against Tours Mame1922 printed p.533, original artifact page647, extract page2; right column, complete Tractus before Gospel. No lexical or punctuation difference after typography normalization. Target Ierusalem projects to calendar Jerusalem; printed biblical citation labels are metadata rather than words of the chant. Existing source-owned Scripture references and conditional appointment data are retained separately."
+        "ordinary_disposition":
+          "kind": "alternative"
+          "group": "apparition-post-epistle"
+          "option": "tract"
+          "basis": "Missale Romanum 1962, CMAA facsimile, artifact p. 555 / printed p. 474, nn. 2168-2169: after Septuagesima the Alleluia and its verse are omitted and the printed Tract is said."
+          "anchor":
+            "mass": "apparitione-beatae-mariae-virginis-immaculatae"
+            "form_id": "main"
+            "proper": "Alleluia"
+            "occurrence": 1
+          "when":
+            "fact": "roman-1962-common-chant-regime"
+            "in":
+            - "tract"
+        "text": "Tu gloria Jerusalem, tu laetitia Israel, tu honorificentia populi nostri. V. Tota pulchra es, Maria: et macula originalis non est in te. V. Felix es, sacra Virgo Maria, et omni laude dignissima, quae serpentis caput virgineo pede contrivisti.\n"
       - name: Gospel
         source: scripture
         verses:
@@ -26299,42 +26210,35 @@ sections:
             - advent
             - regular
             - tract
-      - name: Alleluia
-        source: mixed
-        verses:
-        - book: Luke
-          ranges:
-          - begin:
-              chapter: 1
-              verse: 28
-            end:
-              chapter: 1
-              verse: 28
-          ref: Luke 1:28
-        incipit: Alleluia, alleluia; Ave, Maria; Virga Jesse floruit
-        notes: CMAA artifact p. 576 / printed p. 495, no. 2328. Luke 1:28 is the first cited verse; the second verse, identified
-          by Virga Jesse floruit, has no printed Scripture citation. The whole mixed Latin body is unavailable.
-        ordinary_disposition:
-          kind: alternative
-          group: annunciation-post-epistle
-          option: paschal
-          basis: 'Missale Romanum 1962, CMAA artifact p. 576 / printed p. 495, units 2326-2328: the normal Gradual and Tract
-            are omitted in paschal time and replaced by the printed double Alleluia; the second Alleluia verse has no printed
-            Scripture citation.'
-          anchor:
-            mass: annuntiatio-beatae-mariae-virginis
-            form_id: main
-            proper: Tract
-            occurrence: 1
-          when:
-            fact: roman-1962-common-chant-regime
-            in:
-            - paschal
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
+      - "name": "Alleluia"
+        "source": "mixed"
+        "verses":
+        - "book": "Luke"
+          "ranges":
+          - "begin":
+              "chapter": 1
+              "verse": 28
+            "end":
+              "chapter": 1
+              "verse": 28
+          "ref": "Luke 1:28"
+        "incipit": "Alleluia, alleluia; Ave, Maria; Virga Jesse floruit"
+        "notes": "1962 printed p.495, no.2328; artifact page576; Alleluia. Complete body image-collated2026-10-29 against Pustet Ratisbon1862 printed418, IA leaf503, left column complete Paschal Alleluia. Publication rests on the complete Pustet1862 chant, which prints ima exactly. Mame prints imma, a contrary spelling not silently corrected or used as sole authority. Against Pustet, target adds the comma after Ave, capitalizes Virgo and spells Alleluia with i. Pustet Jesse agrees with calendar Jesse, target Iesse is the declared consonantal-j projection. Printed Scripture citation labels are metadata, not chant words. Existing source-owned Scripture references and conditional appointment data are retained separately."
+        "ordinary_disposition":
+          "kind": "alternative"
+          "group": "annunciation-post-epistle"
+          "option": "paschal"
+          "basis": "Missale Romanum 1962, CMAA artifact p. 576 / printed p. 495, units 2326-2328: the normal Gradual and Tract are omitted in paschal time and replaced by the printed double Alleluia; the second Alleluia verse has no printed Scripture citation."
+          "anchor":
+            "mass": "annuntiatio-beatae-mariae-virginis"
+            "form_id": "main"
+            "proper": "Tract"
+            "occurrence": 1
+          "when":
+            "fact": "roman-1962-common-chant-regime"
+            "in":
+            - "paschal"
+        "text": "Alleluia, alleluia. V. Ave, Maria, gratia plena: Dominus tecum: benedicta tu in mulieribus. Alleluia. V. Virga Jesse floruit: Virgo Deum et hominem genuit: pacem Deus reddidit, in se reconcilians ima summis. Alleluia.\n"
       - name: Gospel
         source: scripture
         verses:
@@ -26641,28 +26545,21 @@ sections:
           ref: John 19:25-27
         notes: Printed p. 501 = digital p. 582, n. 2365, printed reference Io. 19, 25-27.
           September prints the same Gospel and then Credo; this day does not.
-      - name: Offertory
-        incipit: Recordare, Virgo Mater Dei, dum steteris in conspectu Domini
-        source: mixed
-        verses:
-        - book: Jeremiah
-          ranges:
-          - begin:
-              chapter: 18
-              verse: 20
-            end:
-              chapter: 18
-              verse: 20
-          ref: Jeremiah 18:20
-        notes: Printed p. 501 = digital p. 582, n. 2366, headed Ant. ad Offertorium, printed reference Ierem. 18, 20. The
-          printed Virgin-addressed antiphon is a liturgical adaptation; the biblical reference does not supply the complete
-          proper body.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+      - "name": "Offertory"
+        "incipit": "Recordare, Virgo Mater Dei, dum steteris in conspectu Domini"
+        "source": "mixed"
+        "verses":
+        - "book": "Jeremiah"
+          "ranges":
+          - "begin":
+              "chapter": 18
+              "verse": 20
+            "end":
+              "chapter": 18
+              "verse": 20
+          "ref": "Jeremiah 18:20"
+        "notes": "Missale Romanum 1962, printed p. 501, artifact PDF p. 582, numbered unit 2366. Complete body read on target page images at 200 and 400 dpi on 2026-10-29 and independently matched to Pustet Ratisbon 1862 page-image evidence (Pustet1862 printed421, Offertorium, left column; originalPDF507). Declared orthography, target pointing, received-spelling differences and any source-directed ending are explicit on the project projection. For the mixed Offertory, the Jeremiah citation alone does not supply the printed Marian adaptation."
+        "text": "Recordare, Virgo Mater Dei, dum steteris in conspectu Domini, ut loquaris\npro nobis bona, et ut avertat indignationem suam a nobis.\n"
       - name: Secret
         incipit: Offerimus tibi preces et hostias, Domine Jesu Christe
         source: composed
@@ -26892,18 +26789,18 @@ sections:
               chapter: 1
               verse: 33
           ref: Luke 1:26-33
-      - name: "Offertory"
-        source: "composed"
-        notes: >-
-          Registered 1962 CMAA facsimile, artifact622/printed541, unit2691; appointment read on the page
-          images on 2026-10-23. No complete earlier-witness word collation or
-          independent publication basis is established here; no body is supplied.
-        text_status:
-          state: "unavailable"
-          scope: "proper-body"
-          reasons:
-          - kind: "witness-gap"
-            source_id: "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      - "name": "Offertory"
+        "source": "composed"
+        "incipit": "Regali ex progenie Maria exorta refulget"
+        "text": "Regali ex progenie Maria exorta refulget; cujus precibus nos adjuvari, mente et spiritu devotissime poscimus. (T. P. Alleluia.)\n"
+        "notes": "1962artifact622/printed541unit2691. Independently checked complete historical base: VeniceBaglioni1690BreviariumMonasticumartifact955/printed912, NativityBVMResponsoryIV; checked source physical line1. The complete1690NativityBVM ResponsoryIVbase from Regali through poscimus has the same whole target base words in the same order. Target pointing/case changes are colon to semicolon after refulget, Cujus to cujus, and a comma after adjuvari. Target alone appends the exact conditional apparatus (T. P. Alleluia.); only Alleluia is the added spoken invocation, limited to Paschal time. Finite qualified-adaptation candidate under workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json, method english-completion-20261029-finite-latin-v1; strongest originality objection retained, root adoption required. This supersedes only the old unavailable-body statement for this exact owner."
+        "text_structure":
+          "text_sha256": "f4e866f44553d4181484958a6e4d79ffe7d1e560a4a56f39c298b877093de446"
+          "checked": "Exact source-owned conditional Paschal invocation marked as a rubric action; preserve the whole literal span, with Alleluia selected only in its Paschal context."
+          "actions":
+          - "kind": "rubric"
+            "offset": 110
+            "text": "(T. P. Alleluia.)"
       - name: "Secret"
         source: "composed"
         notes: >-
@@ -26916,18 +26813,17 @@ sections:
           reasons:
           - kind: "witness-gap"
             source_id: "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-      - name: "Communion"
-        source: "composed"
-        notes: >-
-          Registered 1962 CMAA facsimile, artifact622/printed541, unit2694; appointment read on the page
-          images on 2026-10-23. No complete earlier-witness word collation or
-          independent publication basis is established here; no body is supplied.
-        text_status:
-          state: "unavailable"
-          scope: "proper-body"
-          reasons:
-          - kind: "witness-gap"
-            source_id: "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      - "name": "Communion"
+        "source": "composed"
+        "notes": "Whole chant collated on the 1962 target page images and independently witnessed in Pustet Ratisbon1862 at printedp.[137]; exact Latin publication evidence is recorded in roman-1962-proper-latin-provenance-v1.toml. No historical English is inferred."
+        "text": "Regina mundi dignissima, Maria Virgo perpetua, intercede pro nostra pace et salute, quae genuisti Christum Dominum, Salvatorem omnium. (T. P. Alleluia.)\n"
+        "text_structure":
+          "text_sha256": "5756d2b31524aa2fdfe302d01f877bfdcd7ab158791f28f9966c072e31130186"
+          "checked": "1962 target facsimile artifact622/printed541 unit2694, page images at200 and400dpi read2026-10-29; original study English renders the same printed conditional rubric."
+          "actions":
+          - "kind": "rubric"
+            "offset": 135
+            "text": "(T. P. Alleluia.)"
       - name: "Postcommunion"
         source: "composed"
         notes: >-
@@ -26976,26 +26872,20 @@ sections:
         655), not from the facsimile images, and that reading was not visually
         collated.'
       propers:
-      - name: Introit
-        source: mixed
-        verses:
-        - book: Psalms
-          ranges:
-          - begin:
-              chapter: 44
-              verse: 2
-            end:
-              chapter: 44
-              verse: 2
-          ref: Psalms 44:2
-        notes: The printed Introit combines a non-biblical antiphon attributed to Sedulius with Psalm 44:2. Its own non-biblical
-          body remains unavailable; the Psalm companion is not the complete Introit.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+      - "name": "Introit"
+        "source": "mixed"
+        "verses":
+        - "book": "Psalms"
+          "ranges":
+          - "begin":
+              "chapter": 44
+              "verse": 2
+            "end":
+              "chapter": 44
+              "verse": 2
+          "ref": "Psalms 44:2"
+        "notes": "The printed Introit combines a non-biblical antiphon attributed to Sedulius with Psalm 44:2 and the printed Gloria Patri cue. Complete Latin independently witnessed in the Tours Mame 1922 printing and collated with 1962 page images; see exact Latin-provenance row."
+        "text": "Salve, sancta parens, enixa puerpera Regem: qui caelum terramque regit in saecula saeculorum. Eructavit cor meum verbum bonum: dico ego opera mea Regi. V. Gloria Patri.\n"
       - name: Collect
         source: composed
         notes: >-
@@ -27019,26 +26909,14 @@ sections:
               chapter: 2
               verse: 14
           ref: Song of Songs 2:8-14
-      - name: Gradual
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: 'Source-established own appointment: Missale Romanum 1962, printed p. 575, marginal no. 2953. Exact body
-          wording is not supplied here.'
-      - name: Alleluia
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: 'Source-established own appointment: Missale Romanum 1962, printed p. 575, marginal no. 2954. Exact body
-          wording is not supplied here.'
+      - "name": "Gradual"
+        "source": "composed"
+        "notes": "Source-established own appointment: Missale Romanum 1962, printed p. 575, marginal no. 2953. Complete Latin now independently witnessed in Mame Tours1922 and collated on page images with1962; see exact Latin-provenance row."
+        "text": "Benedicta et venerabilis es, Virgo Maria: quae sine tactu pudoris inventa es mater Salvatoris. V. Virgo Dei Genetrix, quem totus non capit orbis, in tua se clausit viscera factus homo.\n"
+      - "name": "Alleluia"
+        "source": "composed"
+        "notes": "Source-established own appointment: Missale Romanum 1962, printed p. 575, marginal no. 2954. Complete Latin now independently witnessed in Mame Tours1922 and collated on page images with1962; see exact Latin-provenance row."
+        "text": "Alleluia, alleluia. V. Felix es, sacra Virgo Maria, et omni laude dignissima: quia ex te ortus est sol justitiae, Christus Deus noster. Alleluia.\n"
       - name: Gospel
         source: scripture
         verses:
@@ -27051,16 +26929,10 @@ sections:
               chapter: 1
               verse: 47
           ref: Luke 1:39-47
-      - name: Offertory
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: 'Source-established own appointment: Missale Romanum 1962, printed p. 575, marginal no. 2956. Exact body
-          wording is not supplied here.'
+      - "name": "Offertory"
+        "source": "composed"
+        "notes": "Source-established own appointment: Missale Romanum 1962, printed p. 575, marginal no. 2956. Complete Latin now independently witnessed in Mame Tours1922 and collated on page images with1962; see exact Latin-provenance row."
+        "text": "Beata es, Virgo Maria, quae omnium portasti Creatorem: genuisti qui te fecit, et in aeternum permanes Virgo.\n"
       - name: Secret
         source: composed
         notes: >-
@@ -27074,16 +26946,10 @@ sections:
           solemniis, nostris nos piaculis exuens, oblationem nostram tibi faciat
           acceptam Jesus Christus Dominus noster: Qui tecum vivit et regnat in
           unitate.
-      - name: Communion
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: 'Source-established own appointment: Missale Romanum 1962, printed p. 576, marginal no. 2959. Exact body
-          wording is not supplied here.'
+      - "name": "Communion"
+        "source": "composed"
+        "notes": "Source-established own appointment: Missale Romanum 1962, printed p. 576, marginal no. 2959. Complete Latin now independently witnessed in Mame Tours1922 and collated on page images with1962; see exact Latin-provenance row."
+        "text": "Beata viscera Mariae Virginis, quae portaverunt aeterni Patris Filium.\n"
       - name: Postcommunion
         source: composed
         notes: >-
@@ -27263,16 +27129,10 @@ sections:
               chapter: 24
               verse: 31
           ref: Sirach 24:23-31
-      - name: Gradual
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: 'Source-established own appointment: Missale Romanum 1962, printed p. 625, marginal no. 3369. Exact body
-          wording is not supplied here.'
+      - "name": "Gradual"
+        "source": "composed"
+        "notes": "Whole chant collated on the 1962 target page images and independently witnessed in Pustet Ratisbon1862 at printedp.517; exact Latin publication evidence is recorded in roman-1962-proper-latin-provenance-v1.toml. No historical English is inferred."
+        "text": "Benedicta et venerabilis es, Virgo Maria: quae sine tactu pudoris inventa es mater Salvatoris. V. Virgo Dei Genetrix, quem totus non capit orbis, in tua se clausit viscera factus homo.\n"
       - name: Gospel
         source: scripture
         verses:
@@ -27285,16 +27145,10 @@ sections:
               chapter: 11
               verse: 28
           ref: Luke 11:27-28
-      - name: Offertory
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: 'Source-established own appointment: Missale Romanum 1962, printed p. 625, marginal no. 3371. Exact body
-          wording is not supplied here.'
+      - "name": "Offertory"
+        "source": "composed"
+        "notes": "Whole chant collated on the 1962 target page images and independently witnessed in Pustet Ratisbon1862 at printedp.518; exact Latin publication evidence is recorded in roman-1962-proper-latin-provenance-v1.toml. No historical English is inferred."
+        "text": "Beata es, Virgo Maria, quae omnium portasti Creatorem: genuisti qui te fecit, et in aeternum permanes Virgo.\n"
       - name: Secret
         source: composed
         notes: >-
@@ -27307,16 +27161,10 @@ sections:
           quam idcirco de praesenti saeculo transtulisti; ut pro peccatis nostris apud
           te fiducialiter intercedat. Per eundem Dominum nostrum Jesum Christum,
           Filium tuum: Qui tecum vivit et regnat in unitate.
-      - name: Communion
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: 'Source-established own appointment: Missale Romanum 1962, printed p. 626, marginal no. 3374. Exact body
-          wording is not supplied here.'
+      - "name": "Communion"
+        "source": "composed"
+        "notes": "Whole chant collated on the 1962 target page images and independently witnessed in Pustet Ratisbon1862 at printedp.518; exact Latin publication evidence is recorded in roman-1962-proper-latin-provenance-v1.toml. No historical English is inferred."
+        "text": "Beata viscera Mariae Virginis, quae portaverunt aeterni Patris Filium.\n"
       - name: Postcommunion
         source: composed
         notes: >-
@@ -27408,16 +27256,10 @@ sections:
               chapter: 44
               verse: 14
           ref: Psalms 44:11-12, 14
-      - name: Alleluia
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: 'Source-established own appointment: Missale Romanum 1962, printed p. 628, marginal no. 3382. Exact body
-          wording is not supplied here.'
+      - "name": "Alleluia"
+        "source": "composed"
+        "notes": "Whole chant collated on the 1962 target page images and independently witnessed in Pustet Ratisbon1862 at printedp.520; exact Latin publication evidence is recorded in roman-1962-proper-latin-provenance-v1.toml. No historical English is inferred."
+        "text": "Alleluia, alleluia. V. Assumpta est Maria in caelum: gaudet exercitus Angelorum. Alleluia.\n"
       - name: Gospel
         source: scripture
         verses:
@@ -27478,16 +27320,7 @@ sections:
       kind: marian
       ordinary_appointments:
         preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 715 / printed p. 634, raw page-local line 41; Praefatio de beata Maria Virgine Et te in; expected-target row roman-1962:sanctoral-form:p714-l10:preface:p715-l41"}
-      notes: The scripture-bearing propers are recorded by their printed citations. Of the orations the Missal prints
-        for this day, the Secret now carries a published Latin body collated to the controlling 1962 edition, on the public-domain
-        witness its row in src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names; the Collect and the
-        Postcommunion still carry a typed witness-gap state and no body. Identity, rank and the printed citations were
-        read on 2026-08-01 from the embedded text layer of the CMAA facsimile of the controlling edition at printed p.
-        633 (digital p. 714), not from the facsimile images, and that reading was not visually collated. Normal-form source
-        appointments and printed citation constituents were collated against the held 1962 page images at artifact pp.
-        714, 715. This establishes appointments and order; it does not verify every word of existing bodies. The separately
-        printed votive Tract and related Paschal continuation are not cumulative normal-feast appointments; their complete
-        conditions remain outside this normal form.
+      notes: "The Collect, Postcommunion now carry complete source-qualified Latin bodies compared with the actual 1962 page images and separately retained historical foundations. The exact source-specific contributions and publication qualifications are recorded in the per-body Latin provenance ledger; these targets are not represented as word-for-word identical to their older sources. Source controls: Collect: 1922 Mame artifact page1048, printed[18]; historical source keeps its own full prayer and actual cue.; Postcommunion: 1922 Mame artifact page1049, printed[19]; historical source keeps its own full prayer and actual cue. The previous unavailable-body and acquisition claims are retained in the source recovery receipt. This correction claims no new collation of other readings, chants or appointments. The existing Secret and normal-form source appointments remain unchanged. The separately printed votive Tract and related Paschal continuation are not cumulative normal-feast appointments; their complete conditions remain outside this normal form."
       propers:
       - name: Introit
         source: scripture
@@ -27510,14 +27343,10 @@ sections:
               chapter: 44
               verse: 2
           ref: Psalms 44:2
-      - name: Collect
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+      - "name": "Collect"
+        "source": "composed"
+        "text": "Omnipotens sempiterne Deus, qui in Corde beatae Mariae Virginis dignum Spiritus Sancti habitaculum praeparasti: concede propitius; ut, ejusdem immaculati Cordis festivitatem (commemorationem) devota mente recolentes, secundum Cor tuum vivere valeamus. Per Dominum nostrum ... in unitate ejusdem.\n"
+        "notes": "1962 target printed \"633\", marginal unit 3424. Complete actual Latin body independently compared with the separately retained historical source; see passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.immaculati-cordis-beatae-mariae-virginis--collect--1. Historical source and target differences: Replace historical purissimi with immaculati; add functional parenthetical (commemorationem); add nostrum to the actual Per Dominum ... in unitate ejusdem. conclusion prefix; add target comma after ut and capitalise Cor. No other word changes after declared i/j, accent, ligature and line-wrap normalization. Publication basis qualified-nonoriginal-adaptation; the later contribution is separately qualified, not described as whole-word historical identity. The previous unavailable-body note is preserved in the source recovery receipt."
       - name: Lesson
         source: scripture
         verses:
@@ -27618,14 +27447,10 @@ sections:
               chapter: 19
               verse: 27
           ref: John 19:26-27
-      - name: Postcommunion
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+      - "name": "Postcommunion"
+        "source": "composed"
+        "text": "Divinis refecti muneribus te, Domine, suppliciter exoramus: ut beatae Mariae Virginis intercessione, cujus immaculati Cordis solemnia (memoriam) venerando egimus, a praesentibus periculis liberati, aeternae vitae gaudia consequamur. Per Dominum.\n"
+        "notes": "1962 target printed \"634\", marginal unit 3436. Complete actual Latin body independently compared with the separately retained historical source; see passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.immaculati-cordis-beatae-mariae-virginis--postcommunion--1. Historical source and target differences: Replace historical purissimi with immaculati; add functional parenthetical (memoriam). Historical cujus and target cuius are the declared calendar consonantal-j normalization; no other words or actual conclusion differ. Publication basis qualified-nonoriginal-adaptation; the later contribution is separately qualified, not described as whole-word historical identity. The previous unavailable-body note is preserved in the source recovery receipt."
     - key: nativitate-beatae-mariae-virginis
       name: In Nativitate Beatae Mariae Virginis
       registry: '1962-09-08'
@@ -27885,28 +27710,14 @@ sections:
               chapter: 24
               verse: 31
           ref: Sirach 24:23-31
-      - name: Gradual
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, registered CMAA facsimile, artifact page 734, printed page 653, numbered unit 3595;
-          normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source
-          record.
-      - name: Alleluia
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, registered CMAA facsimile, artifact page 734, printed page 653, numbered unit 3596;
-          normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source
-          record.
+      - "name": "Gradual"
+        "source": "composed"
+        "notes": "1962 printed p.653, no.3595; artifact page734; Gradual. Complete body image-collated2026-10-29 against Tours Mame1922 printed p.712, original artifact page826, extract page4; Mame left column bottom continuing at right column top. Mame Genitrix versus target Genetrix is the explicitly allowed received-spelling pair. Target adds comma after orbis and omits Mame comma before factus homo. No lexical variant. Existing source-owned Scripture references and conditional appointment data are retained separately."
+        "text": "Benedicta et venerabilis es, Virgo Maria: quae sine tactu pudoris inventa es mater Salvatoris. V. Virgo Dei Genetrix, quem totus non capit orbis, in tua se clausit viscera factus homo.\n"
+      - "name": "Alleluia"
+        "source": "composed"
+        "notes": "1962 printed p.653, no.3596; artifact page734; Alleluia. Complete body image-collated2026-10-29 against Tours Mame1922 printed p.712, original artifact page826, extract page4; right column upper, after continued Graduale. Mame Alleluja versus target Alleluia and Mame Genitrix versus target Genetrix are explicit received orthographic changes. No word is added or omitted. Existing source-owned Scripture references and conditional appointment data are retained separately."
+        "text": "Alleluia, alleluia. V. Post partum, Virgo, inviolata permansisti: Dei Genetrix, intercede pro nobis. Alleluia.\n"
       - name: Gospel
         source: scripture
         verses:
@@ -27949,17 +27760,10 @@ sections:
           ad perpetuam atque praesentem haec oblatio nobis proficiat prosperitatem et
           pacem. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et
           regnat in unitate.
-      - name: Communion
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, registered CMAA facsimile, artifact page 735, printed page 654, numbered unit 3603;
-          normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source
-          record.
+      - "name": "Communion"
+        "source": "composed"
+        "notes": "1962 printed p.654, no.3603; artifact page735; Communion. Complete body image-collated2026-10-29 against Tours Mame1922 printed p.712, original artifact page826, extract page4; right column lower, after Preface and before Postcommunio. No word or pointing difference after typography normalization. Existing source-owned Scripture references and conditional appointment data are retained separately."
+        "text": "Beata viscera Mariae Virginis, quae portaverunt aeterni Patris Filium.\n"
       - name: Postcommunion
         source: composed
         notes: >-
@@ -28030,28 +27834,14 @@ sections:
               chapter: 13
               verse: 25
           ref: Judith 13:22, 23-25
-      - name: Gradual
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, registered CMAA facsimile, artifact page 737, printed page 656, numbered unit 3620;
-          normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source
-          record.
-      - name: Alleluia
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, registered CMAA facsimile, artifact page 737, printed page 656, numbered unit 3621;
-          normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source
-          record.
+      - "name": "Gradual"
+        "source": "composed"
+        "notes": "Missale Romanum 1962, printed p. 656, artifact PDF p. 737, numbered unit 3620. Complete body read on target page images at 200 and 400 dpi on 2026-10-29 and independently matched to Pustet Ratisbon 1862 page-image evidence (Pustet1862 printed419-420, Graduale, beginning right column419 and continued left column420; originalPDF505-506). Declared orthography, target pointing, received-spelling differences and any source-directed ending are explicit on the project projection. For the mixed Offertory, the Jeremiah citation alone does not supply the printed Marian adaptation."
+        "text": "Dolorosa et lacrimabilis es, Virgo Maria, stans juxta Crucem Domini Jesu,\nFilii tui, Redemptoris. V. Virgo Dei Genetrix, quem totus non capit orbis,\nhoc crucis fert supplicium, auctor vitae factus homo.\n"
+      - "name": "Alleluia"
+        "source": "composed"
+        "notes": "Missale Romanum 1962, printed p. 656, artifact PDF p. 737, numbered unit 3621. Complete body read on target page images at 200 and 400 dpi on 2026-10-29 and independently matched to Pustet Ratisbon 1862 page-image evidence (Pustet1862 printed420, In Missis Votivis per annum Alleluja and verse, and printed541 September referral to the March Mass with finalGradualAlleluia explicitly omitted; originalPDF506,627). Declared orthography, target pointing, received-spelling differences and any source-directed ending are explicit on the project projection. For the mixed Offertory, the Jeremiah citation alone does not supply the printed Marian adaptation."
+        "text": "Alleluia, alleluia. V. Stabat sancta Maria, caeli Regina et mundi Domina,\njuxta Crucem Domini nostri Jesu Christi dolorosa.\n"
       - name: Sequence
         incipit: Stabat Mater dolorosa
         source: composed
@@ -28121,27 +27911,20 @@ sections:
               chapter: 19
               verse: 27
           ref: John 19:25-27
-      - name: Offertory
-        source: mixed
-        verses:
-        - book: Jeremiah
-          ranges:
-          - begin:
-              chapter: 18
-              verse: 20
-            end:
-              chapter: 18
-              verse: 20
-          ref: Jeremiah 18:20
-        notes: Missale Romanum 1962, registered CMAA facsimile, artifact page 739, printed page 658, numbered unit 3626;
-          Printed Marian adaptation with Jeremiah 18:20. The retained citations do not supply the complete literal Offertory;
-          that body is unavailable in this source record.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+      - "name": "Offertory"
+        "source": "mixed"
+        "verses":
+        - "book": "Jeremiah"
+          "ranges":
+          - "begin":
+              "chapter": 18
+              "verse": 20
+            "end":
+              "chapter": 18
+              "verse": 20
+          "ref": "Jeremiah 18:20"
+        "notes": "Missale Romanum 1962, printed p. 658, artifact PDF p. 739, numbered unit 3626. Complete body read on target page images at 200 and 400 dpi on 2026-10-29 and independently matched to Pustet Ratisbon 1862 page-image evidence (Pustet1862 printed421, Offertorium, left column; originalPDF507). Declared orthography, target pointing, received-spelling differences and any source-directed ending are explicit on the project projection. For the mixed Offertory, the Jeremiah citation alone does not supply the printed Marian adaptation."
+        "text": "Recordare, Virgo Mater Dei, dum steteris in conspectu Domini, ut loquaris\npro nobis bona, et ut avertat indignationem suam a nobis.\n"
       - name: Secret
         incipit: "Offerimus tibi preces et hostias"
         source: composed
@@ -28152,17 +27935,10 @@ sections:
           tuae precibus recensemus; suo suorumque sub Cruce Sanctorum consortium
           multiplicato piissimo interventu, meritis mortis tuae, meritum cum beatis
           habeamus: Qui vivis et regnas cum Deo Patre in unitate.
-      - name: Communion
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, registered CMAA facsimile, artifact page 739, printed page 658, numbered unit 3629;
-          normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source
-          record.
+      - "name": "Communion"
+        "source": "composed"
+        "notes": "Missale Romanum 1962, printed p. 658, artifact PDF p. 739, numbered unit 3629. Complete body read on target page images at 200 and 400 dpi on 2026-10-29 and independently matched to Pustet Ratisbon 1862 page-image evidence (Pustet1862 printed421, Communio, foot of left column; originalPDF507). Declared orthography, target pointing, received-spelling differences and any source-directed ending are explicit on the project projection. For the mixed Offertory, the Jeremiah citation alone does not supply the printed Marian adaptation."
+        "text": "Felices sensus beatae Mariae Virginis, qui sine morte meruerunt martyrii\npalmam sub Cruce Domini.\n"
       - name: Postcommunion
         incipit: "Sacrificia, quae sumpsimus"
         source: composed
@@ -28236,27 +28012,20 @@ sections:
         758), not from the facsimile images, and that reading was not visually
         collated.'
       propers:
-      - name: Introit
-        source: mixed
-        verses:
-        - book: Psalms
-          ranges:
-          - begin:
-              chapter: 44
-              verse: 2
-            end:
-              chapter: 44
-              verse: 2
-          ref: Psalms 44:2
-        notes: Missale Romanum 1962, registered CMAA facsimile, artifact page 758, printed page 677, numbered unit 3786;
-          Uncited antiphon plus Psalm 44:2. The retained citations do not supply the complete literal Introit; that body
-          is unavailable in this source record.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+      - "name": "Introit"
+        "source": "mixed"
+        "verses":
+        - "book": "Psalms"
+          "ranges":
+          - "begin":
+              "chapter": 44
+              "verse": 2
+            "end":
+              "chapter": 44
+              "verse": 2
+          "ref": "Psalms 44:2"
+        "notes": "1962 printed p.677, no.3786; artifact page758; Introit. Complete body image-collated2026-10-29 against Tours Mame1922 printed p.731, original artifact page845, extract page5; right column, complete feast Introit above Oratio. Mame lower-cases regi and abbreviates the terminal doxology cue as Gloria.; target capitalizes Regi and prints Gloria Patri. The same Mame volume supplies the explicit full Gloria Patri. cue on artifact640/printed526, retained in this extract. Target cuius projects to calendar cujus. No full doxology or later words are supplied. Existing source-owned Scripture references and conditional appointment data are retained separately."
+        "text": "Gaudeamus omnes in Domino, diem festum celebrantes sub honore beatae Mariae Virginis: de cujus solemnitate gaudent Angeli, et collaudant Filium Dei. Eructavit cor meum verbum bonum: dico ego opera mea Regi. V. Gloria Patri.\n"
       - name: Collect
         source: composed
         notes: >-
@@ -28311,17 +28080,10 @@ sections:
               chapter: 44
               verse: 12
           ref: Psalms 44:5, 11, 12
-      - name: Alleluia
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, registered CMAA facsimile, artifact page 759, printed page 678, numbered unit 3792;
-          normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source
-          record.
+      - "name": "Alleluia"
+        "source": "composed"
+        "notes": "1962 printed p.678, no.3792; artifact page759; Alleluia. Complete body image-collated2026-10-29 against Tours Mame1922 printed p.732, original artifact page846, extract page6; left column, after Graduale and before Gospel. Mame Alleluja versus target Alleluia and target Iuda versus calendar Juda are declared consonantal-i/j spelling changes. No lexical or pointing difference. Existing source-owned Scripture references and conditional appointment data are retained separately."
+        "text": "Alleluia, alleluia. V. Solemnitas gloriosae Virginis Mariae ex semine Abrahae, ortae de tribu Juda, clara ex stirpe David. Alleluia.\n"
       - name: Gospel
         source: scripture
         verses:
@@ -29614,36 +29376,29 @@ sections:
         735), not from the facsimile images, and that reading was not visually
         collated.'
       propers:
-      - name: Introit
-        source: mixed
-        verses:
-        - book: Galatians
-          ranges:
-          - begin:
-              chapter: 6
-              verse: 14
-            end:
-              chapter: 6
-              verse: 14
-          ref: Galatians 6:14
-        - book: Psalms
-          ranges:
-          - begin:
-              chapter: 66
-              verse: 2
-            end:
-              chapter: 66
-              verse: 2
-          ref: Psalms 66:2
-        notes: Missale Romanum 1962, registered CMAA facsimile, artifact page 735, printed page 654, numbered unit 3605;
-          Printed adaptation with Galatians 6:14 and Psalm 66:2. The retained citations do not supply the complete literal
-          Introit; that body is unavailable in this source record.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+      - "name": "Introit"
+        "source": "mixed"
+        "verses":
+        - "book": "Galatians"
+          "ranges":
+          - "begin":
+              "chapter": 6
+              "verse": 14
+            "end":
+              "chapter": 6
+              "verse": 14
+          "ref": "Galatians 6:14"
+        - "book": "Psalms"
+          "ranges":
+          - "begin":
+              "chapter": 66
+              "verse": 2
+            "end":
+              "chapter": 66
+              "verse": 2
+          "ref": "Psalms 66:2"
+        "notes": "Complete literal chant body page-collated on 2026-10-29: 1962 Vatican target, artifact p. 735, printed p. 654, unit 3605; independently public-domain Tours Mame 1922, artifact pages 827; printed 713. Source and target words agree after explicitly recorded typography/spelling transformations. Printed biblical citation locators are apparatus; any retained Scripture citations are components rather than substitutes for this whole chant."
+        "text": "Nos autem gloriari oportet in Cruce Domini nostri Jesu Christi: in quo est salus, vita et resurrectio nostra: per quem salvati et liberati sumus.\nDeus misereatur nostri, et benedicat nobis: illuminet vultum suum super nos, et misereatur nostri. ℣. Gloria Patri.\n"
       - name: Collect
         source: composed
         notes: >-
@@ -29686,17 +29441,10 @@ sections:
         notes: Missale Romanum 1962, registered CMAA facsimile, artifact page 736, printed page 655, numbered unit 3608;
           normal feast Mass appointment, checked on the page image. The printed numeric reference is retained without
           substituting a Bible for the Missal wording.
-      - name: Alleluia
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, registered CMAA facsimile, artifact page 736, printed page 655, numbered unit 3609;
-          normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source
-          record.
+      - "name": "Alleluia"
+        "source": "composed"
+        "notes": "Complete literal chant body page-collated on 2026-10-29: 1962 Vatican target, artifact p. 736, printed p. 655, unit 3609; independently public-domain Tours Mame 1922, artifact pages 827; printed 713. Source and target words agree after explicitly recorded typography/spelling transformations. Printed biblical citation locators are apparatus; any retained Scripture citations are components rather than substitutes for this whole chant."
+        "text": "Alleluia, alleluia. ℣. Dulce lignum, dulces clavos, dulcia ferens pondera: quae sola fuisti digna sustinere Regem caelorum et Dominum. Alleluia.\n"
       - name: Gospel
         source: scripture
         verses:
@@ -29709,17 +29457,11 @@ sections:
               chapter: 12
               verse: 36
           ref: John 12:31-36
-      - name: Offertory
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, registered CMAA facsimile, artifact page 736, printed page 655, numbered unit 3611;
-          normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source
-          record.
+      - "name": "Offertory"
+        "source": "composed"
+        "incipit": "Protege, Domine, plebem tuam"
+        "text": "Protege, Domine, plebem tuam per signum sanctae Crucis ab omnibus insidiis inimicorum omnium: ut tibi gratam exhibeamus servitutem, et acceptabile fiat sacrificium nostrum, alleluia.\n"
+        "notes": "1962artifact736/printed655unit3611. Independently checked complete historical base: Mame1922artifact828/printed714, complete September14Offertory; checked diplomatic source physical line1. The complete same-feast Mame1922 Offertory already includes the final Alleluia. The1962target adds omnibus before insidiis, a universal quantifier changing the expressed scope. The distinct Passion votive version has omnibus but no final Alleluia; it is contrary/corroborating evidence and is not spliced into an alleged exact historical donor. Finite qualified-adaptation candidate under workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json, method english-completion-20261029-finite-latin-v1; strongest originality objection retained, root adoption required. This supersedes only the old unavailable-body statement for this exact owner."
       - name: Secret
         source: composed
         notes: >-
@@ -29735,17 +29477,10 @@ sections:
           adorare meruimus, ita perenniter ejus gloriae salutaris potiamur effectu.
           Per eundem Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et
           regnat in unitate.
-      - name: Communion
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, registered CMAA facsimile, artifact page 736, printed page 655, numbered unit 3613;
-          normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source
-          record.
+      - "name": "Communion"
+        "source": "composed"
+        "notes": "Complete literal chant body page-collated on 2026-10-29: 1962 Vatican target, artifact p. 736, printed p. 655, unit 3613; independently public-domain Tours Mame 1922, artifact pages 828; printed 714. Source and target words agree after explicitly recorded typography/spelling transformations. Printed biblical citation locators are apparatus; any retained Scripture citations are components rather than substitutes for this whole chant."
+        "text": "Per signum Crucis de inimicis nostris libera nos, Deus noster.\n"
       - name: Postcommunion
         source: composed
         notes: >-
@@ -31500,50 +31235,43 @@ sections:
             in:
             - advent
             - regular
-      - name: Tract
-        source: mixed
-        verses:
-        - book: Psalms
-          ranges:
-          - begin:
-              chapter: 44
-              verse: 8
-            end:
-              chapter: 44
-              verse: 8
-          ref: Psalms 44:8
-        - book: Psalms
-          ranges:
-          - begin:
-              chapter: 44
-              verse: 5
-            end:
-              chapter: 44
-              verse: 5
-          ref: Psalms 44:5
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, CMAA facsimile, artifact p. 531 / printed p. 450, right column, no. 1986. Printed
-          biblical references are retained; the uncited chant wording remains a separate unavailable body.
-        ordinary_disposition:
-          kind: alternative
-          group: agnes-post-epistle
-          option: tract
-          basis: 'Missale Romanum 1962, CMAA facsimile, artifact p. 531 / printed p. 450, nn. 1985-1986: after Septuagesima
-            the Alleluia and its verse are omitted and the printed Tract is said.'
-          anchor:
-            mass: s-agnetis-virginis-martyris
-            form_id: main
-            proper: Alleluia
-            occurrence: 1
-          when:
-            fact: roman-1962-common-chant-regime
-            in:
-            - tract
+      - "name": "Tract"
+        "source": "mixed"
+        "verses":
+        - "book": "Psalms"
+          "ranges":
+          - "begin":
+              "chapter": 44
+              "verse": 8
+            "end":
+              "chapter": 44
+              "verse": 8
+          "ref": "Psalms 44:8"
+        - "book": "Psalms"
+          "ranges":
+          - "begin":
+              "chapter": 44
+              "verse": 5
+            "end":
+              "chapter": 44
+              "verse": 5
+          "ref": "Psalms 44:5"
+        "notes": "Complete literal chant body page-collated on 2026-10-29: 1962 Vatican target, artifact p. 531, printed p. 450, unit 1986; independently public-domain Tours Mame 1922, artifact pages 911; printed 33*. Source and target words agree after explicitly recorded typography/spelling transformations. Printed biblical citation locators are apparatus; any retained Scripture citations are components rather than substitutes for this whole chant."
+        "ordinary_disposition":
+          "kind": "alternative"
+          "group": "agnes-post-epistle"
+          "option": "tract"
+          "basis": "Missale Romanum 1962, CMAA facsimile, artifact p. 531 / printed p. 450, nn. 1985-1986: after Septuagesima the Alleluia and its verse are omitted and the printed Tract is said."
+          "anchor":
+            "mass": "s-agnetis-virginis-martyris"
+            "form_id": "main"
+            "proper": "Alleluia"
+            "occurrence": 1
+          "when":
+            "fact": "roman-1962-common-chant-regime"
+            "in":
+            - "tract"
+        "text": "Veni, Sponsa Christi, accipe coronam, quam tibi Dominus praeparavit in aeternum: pro cujus amore sanguinem tuum fudisti. ℣. Dilexisti justitiam, et odisti iniquitatem: propterea unxit te Deus, Deus tuus, oleo laetitiae prae consortibus tuis. ℣. Specie tua et pulchritudine tua intende, prospere procede, et regna.\n"
       - name: Gospel
         source: scripture
         verses:
@@ -32205,33 +31933,26 @@ sections:
               chapter: 8
               verse: 7
           ref: Psalms 8:6-7
-      - name: Alleluia
-        source: composed
-        incipit: Hic est sacerdos
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, CMAA facsimile, artifact p.537 / printed p.456, right column, no.2030. No biblical
-          citation is printed; none is inferred.
-        ordinary_disposition:
-          kind: alternative
-          group: polycarp-post-epistle
-          option: regular
-          basis: 'Missale Romanum 1962, CMAA facsimile, artifact p.537 / printed p.456, nn.2030-2031: after Septuagesima
-            the Alleluia and its verse are omitted and the printed Tract is said.'
-          anchor:
-            mass: s-polycarpi-episcopi-martyris
-            form_id: main
-            proper: Alleluia
-            occurrence: 1
-          when:
-            fact: roman-1962-common-chant-regime
-            in:
-            - advent
-            - regular
+      - "name": "Alleluia"
+        "source": "composed"
+        "incipit": "Hic est sacerdos"
+        "notes": "Complete literal chant body page-collated on 2026-10-29: 1962 Vatican target, artifact p. 537, printed p. 456, unit 2030; independently public-domain Tours Mame 1922, artifact pages 631; printed 517. Source and target words agree after explicitly recorded typography/spelling transformations. Printed biblical citation locators are apparatus; any retained Scripture citations are components rather than substitutes for this whole chant."
+        "ordinary_disposition":
+          "kind": "alternative"
+          "group": "polycarp-post-epistle"
+          "option": "regular"
+          "basis": "Missale Romanum 1962, CMAA facsimile, artifact p.537 / printed p.456, nn.2030-2031: after Septuagesima the Alleluia and its verse are omitted and the printed Tract is said."
+          "anchor":
+            "mass": "s-polycarpi-episcopi-martyris"
+            "form_id": "main"
+            "proper": "Alleluia"
+            "occurrence": 1
+          "when":
+            "fact": "roman-1962-common-chant-regime"
+            "in":
+            - "advent"
+            - "regular"
+        "text": "Alleluia, alleluia. ℣. Hic est sacerdos, quem coronavit Dominus. Alleluia.\n"
       - name: Tract
         source: scripture
         verses:
@@ -32801,12 +32522,7 @@ sections:
       date: 01-31
       rank: III
       kind: sanctoral
-      notes: Only the scripture-bearing propers are recorded; the orations the Missal prints for this day are appointed
-        and not transcribed here. Identity, rank and the printed citations were read on 2026-08-01 from the embedded text
-        layer of the CMAA facsimile of the controlling edition at printed p. 461 (digital p. 542), not from the facsimile
-        images, and nothing here has been visually collated. The separate Paschal votive direction at artifact p. 543,
-        printed p. 462, left column, no. 2077 requires votive use as well as Paschal season. It is retained as an unsupported
-        source eligibility obligation, not appointed by season alone in this normal Mass.
+      notes: "The Collect, Secret, Postcommunion now carry complete source-qualified Latin bodies compared with the actual 1962 page images and separately retained historical foundations. The exact source-specific contributions and publication qualifications are recorded in the per-body Latin provenance ledger; these targets are not represented as word-for-word identical to their older sources. Source controls: Collect: Atti del Capitolo Superiore52(24February1930), sourcePDFpage6; own1930prayer, historical source cue unchanged. Standard conclusion controls: passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-conclusion-rule-20261026, passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-father-conclusion-20261026; Secret: Atti del Capitolo Superiore52(24February1930), sourcePDFpage7; own1930prayer, historical source cue unchanged. Standard conclusion controls: passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-conclusion-rule-20261026, passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-father-conclusion-20261026; Postcommunion: Atti del Capitolo Superiore52(24February1930), sourcePDFpage7; own1930prayer, historical source cue unchanged. Standard conclusion controls: passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-conclusion-rule-20261026, passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-christ-conclusion-20261026 The previous unavailable-body and acquisition claims are retained in the source recovery receipt. This correction claims no new collation of other readings, chants or appointments. The separate Paschal votive direction at artifact p. 543, printed p. 462, left column, no. 2077 requires votive use as well as Paschal season. It remains an unsupported source eligibility obligation, not appointed by season alone in the normal Mass."
       propers:
       - name: Introit
         source: scripture
@@ -32829,14 +32545,10 @@ sections:
               chapter: 112
               verse: 1
           ref: Psalms 112:1
-      - name: Collect
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+      - "name": "Collect"
+        "source": "composed"
+        "text": "Deus, qui sanctum Joannem Confessorem tuum adulescentium patrem et magistrum\nexcitasti, ac per eum, auxiliatrice Virgine Maria, novas in Ecclesia tua\nfamilias florescere voluisti: concede, quaesumus; ut, eodem caritatis igne\nsuccensi, animas quaerere tibique soli servire valeamus. Per Dominum\nnostrum.\n"
+        "notes": "1962 target printed \"461\", marginal unit 2072. Complete actual Latin body independently compared with the separately retained historical source; see passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-ioannis-bosco-confessoris--collect--1. Historical source and target differences: [\"Beátum -> sanctum (factual canonisation title)\", \"adolescéntium -> adulescentium (received spelling of same word)\"] Actual target conclusion: Per Dominum nostrum.; literal old conclusion: Per Dóminum.; independently controlled by passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-conclusion-rule-20261026, passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-father-conclusion-20261026 Publication basis qualified-nonoriginal-adaptation; the later contribution is separately qualified, not described as whole-word historical identity. The previous unavailable-body note is preserved in the source recovery receipt."
       - name: Epistle
         source: scripture
         verses:
@@ -32940,14 +32652,10 @@ sections:
               chapter: 33
               verse: 12
           ref: Psalms 33:12
-      - name: Secret
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+      - "name": "Secret"
+        "source": "composed"
+        "text": "Suscipe, Domine, oblationem mundam salutaris hostiae et praesta: ut, te in\nomnibus et super omnia diligentes, in gloriae tuae laudem vivere mereamur.\nPer Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat\nin unitate.\n"
+        "notes": "1962 target printed p. 462, marginal unit 2080. Complete actual Latin body compared with the independently retained 24 February 1930 Salesian Secret and literal 1922 Mame conclusion controls; see passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-bosco-secret-public-domain.s-ioannis-bosco-confessoris--secret--1. The full historical petition is unchanged after declared orthography and pointing normalization. The actual target conclusion stops at in unitate; no further words are inferred. Publication basis public-domain. Source and study-English review: workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/bosco-final-source-review.json SHA-256 c8f21b503aad214e85d0a3a3ca52c0db7e7e9da7f4438ca23c3257bf1c2ae2b2. The earlier unavailable-body note is preserved in the source recovery receipt."
       - name: Communion
         source: scripture
         verses:
@@ -32960,14 +32668,10 @@ sections:
               chapter: 4
               verse: 18
           ref: Romans 4:18
-      - name: Postcommunion
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+      - "name": "Postcommunion"
+        "source": "composed"
+        "text": "Corporis et Sanguinis tui, Domine, mysterio satiatis, concede, quaesumus;\nut, intercedente sancto Joanne Confessore, in gratiarum semper actione\nmaneamus: Qui vivis et regnas cum Deo Patre in unitate.\n"
+        "notes": "1962 target printed \"462\", marginal unit 2082. Complete actual Latin body independently compared with the separately retained historical source; see passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-ioannis-bosco-confessoris--postcommunion--1. Historical source and target differences: [\"Beáto -> sancto (factual canonisation title)\", \"omit source tuo after Confessore (one possessive pronoun)\"] Actual target conclusion: Qui vivis et regnas cum Deo Patre in unitate.; literal old conclusion: Qui vivis.; independently controlled by passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-conclusion-rule-20261026, passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-christ-conclusion-20261026 Publication basis qualified-nonoriginal-adaptation; the later contribution is separately qualified, not described as whole-word historical identity. The previous unavailable-body note is preserved in the source recovery receipt."
     - key: s-ignatii-episcopi-martyris
       name: S. Ignatii Episcopi et Martyris
       registry: '1962-02-01'
@@ -33184,26 +32888,20 @@ sections:
         pp. 469-470 at the same time and agreed. So this entry no longer stands on a text layer alone. The uncited Communion
         at no. 2133 is carried as an unavailable composed appointment; no biblical reference is inferred for it.
       propers:
-      - name: Introit
-        source: mixed
-        verses:
-        - book: Psalms
-          ranges:
-          - begin:
-              chapter: 44
-              verse: 2
-            end:
-              chapter: 44
-              verse: 2
-          ref: Psalms 44:2
-        notes: Missale Romanum 1962, CMAA facsimile, artifact p. 550 / printed p. 469, left column, no. 2124. Printed biblical
-          references are retained; the uncited chant wording remains a separate unavailable body.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+      - "name": "Introit"
+        "source": "mixed"
+        "verses":
+        - "book": "Psalms"
+          "ranges":
+          - "begin":
+              "chapter": 44
+              "verse": 2
+            "end":
+              "chapter": 44
+              "verse": 2
+          "ref": "Psalms 44:2"
+        "notes": "Complete literal chant body page-collated on 2026-10-29: 1962 Vatican target, artifact p. 550, printed p. 469, unit 2124; independently public-domain Tours Mame 1922, artifact pages 642; printed 528. Source and target words agree after explicitly recorded typography/spelling transformations. Printed biblical citation locators are apparatus; any retained Scripture citations are components rather than substitutes for this whole chant."
+        "text": "Gaudeamus omnes in Domino, diem festum celebrantes sub honore beatae Agathae Virginis et Martyris: de cujus passione gaudent Angeli, et collaudant Filium Dei. Eructavit cor meum verbum bonum: dico ego opera mea Regi. ℣. Gloria Patri.\n"
       - name: Collect
         source: composed
         notes: >-
@@ -33342,16 +33040,10 @@ sections:
           Suscipe, Domine, munera, quae in beatae Agathae Virginis et Martyris tuae
           solemnitate deferimus: cujus nos confidimus patrocinio liberari. Per Dominum
           nostrum.
-      - name: Communion
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, CMAA facsimile, artifact p. 551 / printed p. 470, left column, no. 2133. No biblical
-          reference is printed; none is inferred.
+      - "name": "Communion"
+        "source": "composed"
+        "notes": "Complete literal chant body page-collated on 2026-10-29: 1962 Vatican target, artifact p. 551, printed p. 470, unit 2133; independently public-domain Tours Mame 1922, artifact pages 643; printed 529. Source and target words agree after explicitly recorded typography/spelling transformations. Printed biblical citation locators are apparatus; any retained Scripture citations are components rather than substitutes for this whole chant."
+        "text": "Qui me dignatus est ab omni plaga curare, et mamillam meam meo pectori restituere, ipsum invoco Deum vivum.\n"
       - name: Postcommunion
         source: composed
         notes: >-
@@ -36221,64 +35913,49 @@ sections:
             form_id: "main"
             proper: "Tract"
             occurrence: 1
-      - name: "Alleluia (Tempore paschali)"
-        source: "mixed"
-        verses:
-        - book: "1 Samuel"
-          ranges:
-          - begin:
-              chapter: 25
-              verse: 26
-            end:
-              chapter: 25
-              verse: 26
-          - begin:
-              chapter: 25
-              verse: 28
-            end:
-              chapter: 25
-              verse: 28
-          ref: "1 Samuel 25:26, 28"
-        - book: "Psalms"
-          ranges:
-          - begin:
-              chapter: 143
-              verse: 1
-            end:
-              chapter: 143
-              verse: 1
-          ref: "Psalm 143:1"
-        notes: >-
-          Registered 1962 CMAA facsimile, artifact577-579/printed496-498, heading Die27martii; Gradual2337
-          and Tract2338 are replaced together by Paschal Alleluia2339. The separate votive ante-Septuagesima
-          or post-Pentecost provision2340 is outside this dated feast record. Appointments and full
-          local directive context checked on page images on2026-10-23; citations are factual components,
-          not a word-collated chant body. The Missal's uncaptured complete chant expression remains
-          a typed body gap beside these cited Bible components; no selected Bible is claimed to reproduce
-          that expression.
-        text_status:
-          state: "unavailable"
-          scope: "proper-body"
-          reasons:
-          - kind: "witness-gap"
-            source_id: "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-        ordinary_disposition:
-          kind: "alternative"
-          group: "john-damascene-post-epistle"
-          basis: >-
-            Registered 1962 CMAA facsimile, artifact577-579/printed496-498, heading Die27martii; Gradual2337
-            and Tract2338 are replaced together by Paschal Alleluia2339. The separate votive ante-Septuagesima
-            or post-Pentecost provision2340 is outside this dated feast record.
-          when:
-            fact: "roman-1962-common-chant-regime"
-            in:
+      - "name": "Alleluia (Tempore paschali)"
+        "source": "mixed"
+        "verses":
+        - "book": "1 Samuel"
+          "ranges":
+          - "begin":
+              "chapter": 25
+              "verse": 26
+            "end":
+              "chapter": 25
+              "verse": 26
+          - "begin":
+              "chapter": 25
+              "verse": 28
+            "end":
+              "chapter": 25
+              "verse": 28
+          "ref": "1 Samuel 25:26, 28"
+        - "book": "Psalms"
+          "ranges":
+          - "begin":
+              "chapter": 143
+              "verse": 1
+            "end":
+              "chapter": 143
+              "verse": 1
+          "ref": "Psalm 143:1"
+        "notes": "Complete literal chant body page-collated on 2026-10-29: 1962 Vatican target, artifact p. 578, printed p. 497, unit 2339; independently public-domain Tours Mame 1922, artifact pages 672; printed ['558']. Source and target words agree after explicitly recorded typography/spelling transformations. Printed biblical citation locators are apparatus; any retained Scripture citations are components rather than substitutes for this whole chant."
+        "ordinary_disposition":
+          "kind": "alternative"
+          "group": "john-damascene-post-epistle"
+          "basis": "Registered 1962 CMAA facsimile, artifact577-579/printed496-498, heading Die27martii; Gradual2337 and Tract2338 are replaced together by Paschal Alleluia2339. The separate votive ante-Septuagesima or post-Pentecost provision2340 is outside this dated feast record."
+          "when":
+            "fact": "roman-1962-common-chant-regime"
+            "in":
             - "paschal"
-          option: "paschal"
-          anchor:
-            mass: "s-ioannis-damasceni-confessoris-ecclesiae-doctoris"
-            form_id: "main"
-            proper: "Tract"
-            occurrence: 1
+          "option": "paschal"
+          "anchor":
+            "mass": "s-ioannis-damasceni-confessoris-ecclesiae-doctoris"
+            "form_id": "main"
+            "proper": "Tract"
+            "occurrence": 1
+        "text": "Alleluia, alleluia. ℣. Dominus salvavit manum tuam tibi: quia proelia Domini tu proeliaris. Alleluia. ℣. Benedictus Dominus Deus meus, qui docet manus meas ad proelium, et digitos meos ad bellum. Alleluia.\n"
       - name: Gospel
         source: scripture
         verses:
@@ -36310,8 +35987,7 @@ sections:
           kind: "alternative"
           group: "john-damascene-offertory"
           option: "non-paschal-base"
-          basis: >-
-            1962 artifact577-579/printed496-498 establishes the dated March27 Mass and unit2342 with its explicitly marked optional Paschal continuation. The base choice is limited to the source-proved dated non-Paschal tract regime; the Paschal complete-body choice remains a witness gap. No ordinary-season, unknown-season or Triduum applicability is inferred.
+          basis: "1962artifact577-579/printed496-498 establishes the dated March27Mass and unit2342 with its explicitly marked optional Paschal continuation. This complete selected Paschal body includes final Alleluia under the independently source-reviewed target reading and separate finite publication assessment. The existing non-Paschal base owner remains limited to its source-proved dated tract regime. No ordinary-season, unknown-season or Triduum applicability is inferred."
           anchor:
             mass: "s-ioannis-damasceni-confessoris-ecclesiae-doctoris"
             form_id: "main"
@@ -36320,40 +35996,35 @@ sections:
           when:
             fact: "roman-1962-common-chant-regime"
             in: ["tract"]
-      - name: "Offertory"
-        source: "mixed"
-        verses:
-        - book: "Job"
-          ranges:
-          - begin: {chapter: 14, verse: 7}
-            end: {chapter: 14, verse: 7}
-          ref: "Job 14:7"
-        notes: >-
-          The same1962 unit2342 adds a separately marked optional Paschal
-          clause after the matched base. Mame1922's local Offertory does not
-          print that continuation; no complete independent Paschal-body
-          publication proof is established here. The complete selected body
-          remains unavailable, not a Bible substitution or a truncated base.
-        text_status:
-          state: "unavailable"
-          scope: "proper-body"
-          reasons:
-          - kind: "witness-gap"
-            source_id: "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-        ordinary_disposition:
-          kind: "alternative"
-          group: "john-damascene-offertory"
-          option: "paschal-body-gap"
-          basis: >-
-            1962 artifact577-579/printed496-498 establishes the dated March27 Mass and unit2342 with its explicitly marked optional Paschal continuation. The base choice is limited to the source-proved dated non-Paschal tract regime; the Paschal complete-body choice remains a witness gap. No ordinary-season, unknown-season or Triduum applicability is inferred.
-          anchor:
-            mass: "s-ioannis-damasceni-confessoris-ecclesiae-doctoris"
-            form_id: "main"
-            proper: "Offertory"
-            occurrence: 1
-          when:
-            fact: "roman-1962-common-chant-regime"
-            in: ["paschal"]
+      - "name": "Offertory"
+        "source": "mixed"
+        "verses":
+        - "book": "Job"
+          "ranges":
+          - "begin":
+              "chapter": 14
+              "verse": 7
+            "end":
+              "chapter": 14
+              "verse": 7
+          "ref": "Job 14:7"
+        "ordinary_disposition":
+          "kind": "alternative"
+          "group": "john-damascene-offertory"
+          "option": "paschal-body-gap"
+          "basis": "1962artifact577-579/printed496-498 establishes the dated March27Mass and unit2342 with its explicitly marked optional Paschal continuation. This complete selected Paschal body includes final Alleluia under the independently source-reviewed target reading and separate finite publication assessment. The existing non-Paschal base owner remains limited to its source-proved dated tract regime. No ordinary-season, unknown-season or Triduum applicability is inferred."
+          "anchor":
+            "mass": "s-ioannis-damasceni-confessoris-ecclesiae-doctoris"
+            "form_id": "main"
+            "proper": "Offertory"
+            "occurrence": 1
+          "when":
+            "fact": "roman-1962-common-chant-regime"
+            "in":
+            - "paschal"
+        "incipit": "Lignum habet spem"
+        "text": "Lignum habet spem, si praecisum fuerit, rursum virescit, et rami ejus pullulant. Alleluia.\n"
+        "notes": "1962artifact579/printed498unit2342. Independently checked complete historical base: Mame1922artifact673/printed559, complete non-Paschal Offertory; checked diplomatic source physical line3. The complete Mame1922 non-Paschal Offertory ends at pullulant. The separately appointed1962Paschal Offertory occurrence2 adds final Alleluia. The source-owned T.P. cue is selected through the already represented occurrence2 seasonal option and is not recited. Consonantal ejus/eius is a declared spelling difference; no base prayer word/order changes. Finite qualified-adaptation candidate under workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json, method english-completion-20261029-finite-latin-v1; strongest originality objection retained, root adoption required. This supersedes only the old unavailable-body statement for this exact owner."
       - name: Secret
         source: composed
         notes: >-
@@ -36595,58 +36266,43 @@ sections:
               chapter: 3
               verse: 12
           ref: Philippians 3:7-12
-      - name: "Alleluia (Tempore paschali)"
-        source: "mixed"
-        verses:
-        - book: "Psalms"
-          ranges:
-          - begin:
-              chapter: 111
-              verse: 1
-            end:
-              chapter: 111
-              verse: 1
-          ref: "Psalm 111:1"
-        - book: "Hosea"
-          ranges:
-          - begin:
-              chapter: 14
-              verse: 6
-            end:
-              chapter: 14
-              verse: 6
-          ref: "Hosea 14:6"
-        notes: >-
-          Registered 1962 CMAA facsimile, artifact583-584/printed502-503, heading Die2aprilis; Tempore
-          paschali appoints Alleluia2375; Extra tempus paschale appoints Gradual2376 and Tract2377.
-          The dated feast's Lent/Passiontide and Paschal provisions are non-cumulative. Appointments
-          and full local directive context checked on page images on2026-10-23; citations are factual
-          components, not a word-collated chant body. The Missal's uncaptured complete chant expression
-          remains a typed body gap beside these cited Bible components; no selected Bible is claimed
-          to reproduce that expression.
-        text_status:
-          state: "unavailable"
-          scope: "proper-body"
-          reasons:
-          - kind: "witness-gap"
-            source_id: "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-        ordinary_disposition:
-          kind: "alternative"
-          group: "francis-paola-post-epistle"
-          basis: >-
-            Registered 1962 CMAA facsimile, artifact583-584/printed502-503, heading Die2aprilis; Tempore
-            paschali appoints Alleluia2375; Extra tempus paschale appoints Gradual2376 and Tract2377.
-            The dated feast's Lent/Passiontide and Paschal provisions are non-cumulative.
-          when:
-            fact: "roman-1962-common-chant-regime"
-            in:
+      - "name": "Alleluia (Tempore paschali)"
+        "source": "mixed"
+        "verses":
+        - "book": "Psalms"
+          "ranges":
+          - "begin":
+              "chapter": 111
+              "verse": 1
+            "end":
+              "chapter": 111
+              "verse": 1
+          "ref": "Psalm 111:1"
+        - "book": "Hosea"
+          "ranges":
+          - "begin":
+              "chapter": 14
+              "verse": 6
+            "end":
+              "chapter": 14
+              "verse": 6
+          "ref": "Hosea 14:6"
+        "notes": "Complete literal chant body page-collated on 2026-10-29: 1962 Vatican target, artifact p. 583, printed p. 502, unit 2375; independently public-domain Tours Mame 1922, artifact pages 908; printed ['30*']. Source and target words agree after explicitly recorded typography/spelling transformations. Printed biblical citation locators are apparatus; any retained Scripture citations are components rather than substitutes for this whole chant."
+        "ordinary_disposition":
+          "kind": "alternative"
+          "group": "francis-paola-post-epistle"
+          "basis": "Registered 1962 CMAA facsimile, artifact583-584/printed502-503, heading Die2aprilis; Tempore paschali appoints Alleluia2375; Extra tempus paschale appoints Gradual2376 and Tract2377. The dated feast's Lent/Passiontide and Paschal provisions are non-cumulative."
+          "when":
+            "fact": "roman-1962-common-chant-regime"
+            "in":
             - "paschal"
-          option: "paschal"
-          anchor:
-            mass: "s-francisci-paula-confessoris"
-            form_id: "main"
-            proper: "Tract"
-            occurrence: 1
+          "option": "paschal"
+          "anchor":
+            "mass": "s-francisci-paula-confessoris"
+            "form_id": "main"
+            "proper": "Tract"
+            "occurrence": 1
+        "text": "Alleluia, alleluia. ℣. Beatus vir, qui timet Dominum: in mandatis ejus cupit nimis. Alleluia. ℣. Justus germinabit sicut lilium: et florebit in aeternum ante Dominum. Alleluia.\n"
       - name: Gradual
         source: scripture
         verses:
@@ -38535,21 +38191,18 @@ sections:
               chapter: 3
               verse: 24
           ref: Colossians 3:14-15, 17, 23-24
-      - name: Alleluia
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
-        ordinary_disposition:
-          kind: conditional
-          group: own-paschal-alleluia
-          basis: The controlling 1962 Missal, artifact pp. 597-598, explicitly prints this chant under its seasonal heading.
-          when:
-            fact: roman-1962-common-chant-regime
-            in:
-            - paschal
+      - "name": "Alleluia"
+        "source": "composed"
+        "ordinary_disposition":
+          "kind": "conditional"
+          "group": "own-paschal-alleluia"
+          "basis": "The controlling 1962 Missal, artifact pp. 597-598, explicitly prints this chant under its seasonal heading."
+          "when":
+            "fact": "roman-1962-common-chant-regime"
+            "in":
+            - "paschal"
+        "text": "Alleluia, alleluia. V. De quacumque tribulatione clamaverint ad me, exaudiam eos, et ero protector eorum semper. Alleluia. V. Fac nos innocuam, Joseph, decurrere vitam: sitque tuo semper tuta patrocinio. Alleluia.\n"
+        "notes": "Whole chant collated on the 1962 target page images and independently witnessed in Pustet Ratisbon1862 at printedp.433; exact Latin publication evidence is recorded in roman-1962-proper-latin-provenance-v1.toml. No historical English is inferred."
       - name: Gospel
         source: scripture
         verses:
@@ -40016,51 +39669,43 @@ sections:
             - advent
             - regular
             - tract
-      - name: Alleluia
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
-        ordinary_disposition:
-          kind: alternative
-          group: own-post-epistle
-          option: paschal
-          basis: The controlling 1962 Missal, artifact pp. 607-609, prints mutually exclusive Tempore paschali and Extra
-            tempus paschale appointments.
-          anchor:
-            mass: ss-nerei-achillei-domitillae-virginis-atque
-            form_id: main
-            proper: Alleluia
-            occurrence: 1
-          when:
-            fact: roman-1962-common-chant-regime
-            in:
-            - paschal
-      - name: Alleluia
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
-        ordinary_disposition:
-          kind: alternative
-          group: own-post-epistle
-          option: outside-paschal
-          basis: The controlling 1962 Missal, artifact pp. 607-609, prints mutually exclusive Tempore paschali and Extra
-            tempus paschale appointments.
-          anchor:
-            mass: ss-nerei-achillei-domitillae-virginis-atque
-            form_id: main
-            proper: Alleluia
-            occurrence: 1
-          when:
-            fact: roman-1962-common-chant-regime
-            in:
-            - advent
-            - regular
+      - "name": "Alleluia"
+        "source": "composed"
+        "ordinary_disposition":
+          "kind": "alternative"
+          "group": "own-post-epistle"
+          "option": "paschal"
+          "basis": "The controlling 1962 Missal, artifact pp. 607-609, prints mutually exclusive Tempore paschali and Extra tempus paschale appointments."
+          "anchor":
+            "mass": "ss-nerei-achillei-domitillae-virginis-atque"
+            "form_id": "main"
+            "proper": "Alleluia"
+            "occurrence": 1
+          "when":
+            "fact": "roman-1962-common-chant-regime"
+            "in":
+            - "paschal"
+        "text": "Alleluia, alleluia. ℣. Haec est vera fraternitas, quae vicit mundi crimina: Christum secuta est, inclita tenens regna caelestia. Alleluia. ℣. Te Martyrum candidatus laudat exercitus, Domine. Alleluia.\n"
+        "notes": "Complete literal chant body page-collated on 2026-10-29: 1962 Vatican target, artifact p. 608, printed p. 527, unit 2571; independently public-domain Tours Mame 1922, artifact pages 708, 709; printed ['594', '595']. Source and target words agree after explicitly recorded typography/spelling transformations. Printed biblical citation locators are apparatus; any retained Scripture citations are components rather than substitutes for this whole chant."
+      - "name": "Alleluia"
+        "source": "composed"
+        "ordinary_disposition":
+          "kind": "alternative"
+          "group": "own-post-epistle"
+          "option": "outside-paschal"
+          "basis": "The controlling 1962 Missal, artifact pp. 607-609, prints mutually exclusive Tempore paschali and Extra tempus paschale appointments."
+          "anchor":
+            "mass": "ss-nerei-achillei-domitillae-virginis-atque"
+            "form_id": "main"
+            "proper": "Alleluia"
+            "occurrence": 1
+          "when":
+            "fact": "roman-1962-common-chant-regime"
+            "in":
+            - "advent"
+            - "regular"
+        "text": "Alleluia, alleluia. ℣. Haec est vera fraternitas, quae vicit mundi crimina: Christum secuta est, inclita tenens regna caelestia. Alleluia.\n"
+        "notes": "Complete literal chant body page-collated on 2026-10-29: 1962 Vatican target, artifact p. 609, printed p. 528, unit 2581; independently public-domain Tours Mame 1922, artifact pages 709; printed ['595']. Source and target words agree after explicitly recorded typography/spelling transformations. Printed biblical citation locators are apparatus; any retained Scripture citations are components rather than substitutes for this whole chant."
       - name: Gospel
         source: scripture
         verses:
@@ -44305,13 +43950,10 @@ sections:
               chapter: 132
               verse: 2
           ref: Psalms 132:1-2
-      - name: Alleluia
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
+      - "name": "Alleluia"
+        "source": "composed"
+        "text": "Alleluia, alleluia. ℣. Haec est vera fraternitas, quae vicit mundi crimina: Christum secuta est, inclita tenens regna caelestia. Alleluia.\n"
+        "notes": "Complete literal chant body page-collated on 2026-10-29: 1962 Vatican target, artifact p. 646, printed p. 565, unit 2885; independently public-domain Tours Mame 1922, artifact pages 746; printed ['632']. Source and target words agree after explicitly recorded typography/spelling transformations. Printed biblical citation locators are apparatus; any retained Scripture citations are components rather than substitutes for this whole chant."
       - name: Gospel
         source: scripture
         verses:
@@ -44713,13 +44355,10 @@ sections:
               chapter: 15
               verse: 10
           ref: 1 Corinthians 15:10
-      - name: Alleluia
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
+      - "name": "Alleluia"
+        "source": "composed"
+        "text": "Alleluia, alleluia. ℣. Sancte Paule Apostole, praedicator veritatis et doctor gentium, intercede pro nobis. Alleluia.\n"
+        "notes": "Complete literal chant body page-collated on 2026-10-29: 1962 Vatican target, artifact p. 653, printed p. 572, unit 2927; independently public-domain Tours Mame 1922, artifact pages 755; printed ['641']. Source and target words agree after explicitly recorded typography/spelling transformations. Printed biblical citation locators are apparatus; any retained Scripture citations are components rather than substitutes for this whole chant."
       - name: Gospel
         source: scripture
         verses:
@@ -45558,16 +45197,10 @@ sections:
               chapter: 123
               verse: 8
           ref: Psalms 123:7-8
-      - name: Alleluia
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: 'Source-established own appointment: Missale Romanum 1962, printed p. 583, marginal no. 3015. Exact body
-          wording is not supplied here.'
+      - "name": "Alleluia"
+        "source": "composed"
+        "notes": "Complete literal chant body page-collated on 2026-10-29: 1962 Vatican target, artifact p. 664, printed p. 583, unit 3015; independently public-domain Tours Mame 1922, artifact pages 767; printed ['653']. Source and target words agree after explicitly recorded typography/spelling transformations. Printed biblical citation locators are apparatus; any retained Scripture citations are components rather than substitutes for this whole chant."
+        "text": "Alleluia, alleluia. ℣. Haec est vera fraternitas, quae vicit mundi crimina: Christum secuta est, inclita tenens regna caelestia. Alleluia.\n"
       - name: Gospel
         source: scripture
         verses:
@@ -46732,25 +46365,12 @@ sections:
         citation: 'Missa In medio, de Communi Doctorum [22], praeter orationem sequentem'
         note: The locally printed Secret and Postcommunion name the saint as Confessor and Doctor, corresponding to the
           non-bishop Doctor prayer form; the own Collect is retained.
-      notes: 'The controlling Missal appoints Missa In medio from the Common of Doctors, except for the following prayer.
-        Read on 2026-08-26 from the page images of the registered CMAA facsimile at printed pp. 594-595 (digital pp. 675-676):
-        the day''s Collect at no. 3117 is marked P, while its Secret and Postcommunion at nos. 3119 and 3121 are marked
-        C and therefore resolve from the Common. No registered public-domain witness currently supports the day''s own
-        Collect, and the controlling facsimile''s artifact record leaves rights unresolved, so that text is not published
-        here. The own Collect retains its existing rights-withheld disposition as an explicit text-free Proper, replacing
-        the Common''s different Collect without placeholder prose.'
+      notes: "The Collect now carries complete source-qualified Latin bodies compared with the actual 1962 page images and separately retained historical foundations. The exact source-specific contributions and publication qualifications are recorded in the per-body Latin provenance ledger; these targets are not represented as word-for-word identical to their older sources. Source controls: Collect: 1922 Mame PDF1082/printed[52] for complete Lawrence prayer; PDF368/printed254 for literal contiguous standard conclusion prefix ending in unitate. The previous unavailable-body and acquisition claims are retained in the source recovery receipt. This correction claims no new collation of other readings, chants or appointments. The existing formulary referral remains controlling; the source-qualified own prayer overrides only its own named seat."
       propers:
-      - name: Collect
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          body_status: held-unpublished
-          reasons:
-          - kind: rights-withheld
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: 'Source-established own appointment: Missale Romanum 1962, printed p. 594, marginal no. 3117. Exact body
-          wording is not supplied here.'
+      - "name": "Collect"
+        "source": "composed"
+        "notes": "1962 target printed [\"594\", \"595\"], marginal unit 3117. Complete actual Latin body independently compared with the separately retained historical source; see passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1. Historical source and target differences: [{\"kind\": \"substantive-lexical\", \"historical\": \"consilii\", \"target\": \"sapientiae\", \"explanation\": \"Counsel changes to wisdom. This is not an orthographic or simply functional change.\"}, {\"kind\": \"factual-title-addition\", \"historical\": \"Confessori tuo\", \"target\": \"Confessori tuo atque Doctori\"}, {\"kind\": \"inflection\", \"historical\": \"gloria\", \"target\": \"gloriam\", \"explanation\": \"The target page image really prints gloriam, despite its grammatical incongruity; no silent repair.\"}, {\"kind\": \"independently-controlled-conclusion-prefix\", \"historical\": \"Per Dominum nostrum.\", \"target\": \"Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.\", \"source\": \"1922 wholePDF368 actual contiguous full formula, stop after in unitate\"}, {\"kind\": \"pointing-and-orthography\", \"explanation\": \"Target omits source comma after qui and salute; adds commas enclosing Confessori...Doctori; replaces source semicolon after cognoscere with comma; declared calendar consonantal-j and accent/ligature normalization.\"}] Publication basis qualified-nonoriginal-adaptation; the later contribution is separately qualified, not described as whole-word historical identity. The previous unavailable-body note is preserved in the source recovery receipt."
+        "text": "Deus, qui ad ardua quaeque pro nominis tui gloriam et animarum salute beato Laurentio, Confessori tuo atque Doctori, spiritum sapientiae et fortitudinis contulisti: da nobis in eodem spiritu et agenda cognoscere, et cognita, ejus intercessione, perficere. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.\n"
     - key: comm-s-praxedis-virginis
       name: Comm. S. Praxedis Virginis
       registry: '1962-07-21-comm'
@@ -50416,33 +50036,25 @@ sections:
             - advent
             - regular
             - tract
-      - name: Alleluia
-        source: composed
-        notes: Printed p. 636 / artifact p. 717, marginal no. 3448, between the Gradual continuation and Gospel. The source
-          gives no biblical citation; the exact uncited chant body remains unavailable.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        ordinary_disposition:
-          kind: alternative
-          group: bartholomew-alleluia
-          option: non-paschal
-          basis: '1962 Missal, printed p. 636 / artifact p. 717, independent Tempore paschali paragraph: Missa Protexisti,
-            Common of Martyrs I [15], retaining the local orations, Epistle and Gospel. The local non-Paschal chants and
-            referred Paschal chants are mutually exclusive.'
-          anchor:
-            mass: s-bartholomaei-apostoli
-            form_id: main
-            proper: Alleluia
-            occurrence: 1
-          when:
-            fact: roman-1962-common-chant-regime
-            in:
-            - advent
-            - regular
+      - "name": "Alleluia"
+        "source": "composed"
+        "notes": "Complete literal chant body page-collated on 2026-10-29: 1962 Vatican target, artifact p. 717, printed p. 636, unit 3448; independently public-domain Tours Mame 1922, artifact pages 813; printed 699. Source and target words agree after explicitly recorded typography/spelling transformations. Printed biblical citation locators are apparatus; any retained Scripture citations are components rather than substitutes for this whole chant."
+        "ordinary_disposition":
+          "kind": "alternative"
+          "group": "bartholomew-alleluia"
+          "option": "non-paschal"
+          "basis": "1962 Missal, printed p. 636 / artifact p. 717, independent Tempore paschali paragraph: Missa Protexisti, Common of Martyrs I [15], retaining the local orations, Epistle and Gospel. The local non-Paschal chants and referred Paschal chants are mutually exclusive."
+          "anchor":
+            "mass": "s-bartholomaei-apostoli"
+            "form_id": "main"
+            "proper": "Alleluia"
+            "occurrence": 1
+          "when":
+            "fact": "roman-1962-common-chant-regime"
+            "in":
+            - "advent"
+            - "regular"
+        "text": "Alleluia, alleluia. ℣. Te gloriosus Apostolorum chorus laudat, Domine. Alleluia.\n"
       - name: Gospel
         source: scripture
         verses:
@@ -50779,14 +50391,10 @@ sections:
       rank: Comm.
       kind: sanctoral
       propers:
-      - name: Collect
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf
+      - "name": "Collect"
+        "source": "composed"
+        "text": "Gregem tuum, Pastor aeterne, placatus intende: et per beatum Zephyrinum, Martyrem tuum atque Summum Pontificem, perpetua protectione custodi; quem totius Ecclesiae praestitisti esse pastorem. Per Dominum.\n"
+        "notes": "1962 target printed \"638\", marginal unit 3465. Complete actual Latin body independently compared with the separately retained historical source; see passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.comm-s-zephyrini-papae-martyris--collect--1. Historical source and target differences: [\"bone→aeterne\", \"beatos apostolos→named single SupremePontiff and Martyr\", \"quos→quem and pastores→pastorem agreement; remove Filii tui vicarios\", \"Expand literal per. cue only to actual target Per Dominum.\"] Publication basis qualified-nonoriginal-adaptation; the later contribution is separately qualified, not described as whole-word historical identity. The previous unavailable-body note is preserved in the source recovery receipt."
       takes_from:
         mass: commune-summorum-pontificum
         common_sets:
@@ -50794,15 +50402,7 @@ sections:
             state: selected
             option: c1-singular
         citation: Commune Sanctorum [1]
-      notes: 'Read on 2026-08-08 from the embedded text layer of the CMAA facsimile of the controlling edition,
-        at this day''s own heading, and nothing has been visually collated. Only the printed scripture citations
-        are recorded: the facsimile sets each oration under a drop capital that the text layer renders as
-        wreckage, so the orations the Missal prints here are appointed and not transcribed. Every citation
-        was re-parsed against the repository''s own canonical book list before it was written. The day''s
-        own Collect was read on 2026-08-08 from the PAGE IMAGE of leaf n613 of Internet Archive item bub_gb_E7sPAAAAIAAJ,
-        the Pustet Ratisbon 1862 printing the source library already tracks as public domain, and not from
-        any optical text layer -- that printing''s own OCR corrupts roughly one word in three. The wording
-        is the 1862''s; the 1962 Missal is not quoted for it, and the two books are not asserted to agree.'
+      notes: "The Collect now carries complete source-qualified Latin bodies compared with the actual 1962 page images and separately retained historical foundations. The exact source-specific contributions and publication qualifications are recorded in the per-body Latin provenance ledger; these targets are not represented as word-for-word identical to their older sources. Source controls: Collect: Feltoe1896 printed42 lines8-10/PDF66 corrected by same-edition erratumPDF24:42 line8 Pater→Pastor. Both full pageimages freshly rechecked400dpi. The previous unavailable-body and acquisition claims are retained in the source recovery receipt. This correction claims no new collation of other readings, chants or appointments. The existing formulary referral remains controlling; the source-qualified own prayer overrides only its own named seat."
     - key: s-iosephi-calasanctii-confessoris
       name: S. Iosephi Calasanctii Confessoris
       registry: '1962-08-27'
@@ -52763,14 +52363,10 @@ sections:
               chapter: 33
               verse: 19
           ref: Psalms 33:18-19
-      - name: Alleluia
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
-        notes: Printed uncited chant, artifact PDF p. 744, printed p. 663, no. 3670; its exact wording remains unavailable.
+      - "name": "Alleluia"
+        "source": "composed"
+        "notes": "Complete literal chant body page-collated on 2026-10-29: 1962 Vatican target, artifact p. 744, printed p. 663, unit 3670; independently public-domain Tours Mame 1922, artifact pages 892; printed ['14*']. Source and target words agree after explicitly recorded typography/spelling transformations. Printed biblical citation locators are apparatus; any retained Scripture citations are components rather than substitutes for this whole chant."
+        "text": "Alleluia, alleluia. ℣. Te Martyrum candidatus laudat exercitus, Domine. Alleluia.\n"
       - name: Gospel
         source: scripture
         verses:
@@ -53524,17 +53120,10 @@ sections:
               chapter: 102
               verse: 1
           ref: Psalms 102:20, 1
-      - name: Alleluia
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
-        notes: Missale Romanum 1962, registered CMAA facsimile, artifact page 751, printed page 670, numbered unit 3730;
-          normal feast Mass appointment, checked on the page image. The uncited literal body is unavailable in this source
-          record.
+      - "name": "Alleluia"
+        "source": "composed"
+        "notes": "Complete literal chant body page-collated on 2026-10-29: 1962 Vatican target, artifact p. 751, printed p. 670, unit 3730; independently public-domain Tours Mame 1922, artifact pages 840; printed None. Source and target words agree after explicitly recorded typography/spelling transformations. Printed biblical citation locators are apparatus; any retained Scripture citations are components rather than substitutes for this whole chant."
+        "text": "Alleluia, alleluia. ℣. Sancte Michael Archangele, defende nos in praelio: ut non pereamus in tremendo judicio. Alleluia.\n"
       - name: Gospel
         source: scripture
         verses:
@@ -58036,25 +57625,20 @@ sections:
         come from Missa Protexisti, Common of Martyrs I [15]; the other proper parts are retained (artifact p. 800, printed
         p. 719).
       propers:
-      - name: Introit
-        source: mixed
-        verses:
-        - book: Psalms
-          ranges:
-          - begin:
-              chapter: 32
-              verse: 1
-            end:
-              chapter: 32
-              verse: 1
-          ref: Psalms 32:1
-        notes: Printed Introit, artifact PDF p. 799, printed p. 718, no. 4096; the principal antiphon is uncited composed
-          wording, followed by the separately cited Ps. 32, 1. The principal antiphon wording remains unavailable.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
+      - "name": "Introit"
+        "source": "mixed"
+        "verses":
+        - "book": "Psalms"
+          "ranges":
+          - "begin":
+              "chapter": 32
+              "verse": 1
+            "end":
+              "chapter": 32
+              "verse": 1
+          "ref": "Psalms 32:1"
+        "notes": "Complete literal chant body page-collated on 2026-10-29: 1962 Vatican target, artifact p. 799, printed p. 718, unit 4096; independently public-domain Tours Mame 1922, artifact pages 870, 871; printed ['756', '757']. Source and target words agree after explicitly recorded typography/spelling transformations. Printed biblical citation locators are apparatus; any retained Scripture citations are components rather than substitutes for this whole chant."
+        "text": "Gaudeamus omnes in Domino, diem festum celebrantes sub honore beati Josaphat Martyris: de cujus passione gaudent Angeli, et collaudant Filium Dei. Exsultate, justi, in Domino: rectos decet collaudatio. ℣. Gloria Patri.\n"
       - name: Collect
         source: composed
         notes: >-
@@ -58092,14 +57676,10 @@ sections:
               chapter: 88
               verse: 23
           ref: Psalms 88:21-23
-      - name: Alleluia
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
-        notes: Printed uncited chant, artifact PDF p. 799, printed p. 718, no. 4100; its exact wording remains unavailable.
+      - "name": "Alleluia"
+        "source": "composed"
+        "notes": "Complete literal chant body page-collated on 2026-10-29: 1962 Vatican target, artifact p. 799, printed p. 718, unit 4100; independently public-domain Tours Mame 1922, artifact pages 871; printed ['757']. Source and target words agree after explicitly recorded typography/spelling transformations. Printed biblical citation locators are apparatus; any retained Scripture citations are components rather than substitutes for this whole chant."
+        "text": "Alleluia, alleluia. ℣. Hic est sacerdos, quem coronavit Dominus. Alleluia.\n"
       - name: Gospel
         source: scripture
         verses:
@@ -58659,12 +58239,7 @@ sections:
       date: 11-23
       rank: III
       kind: sanctoral
-      notes: Only the scripture-bearing propers are recorded; the orations the Missal
-        prints for this day are appointed and not transcribed here. Identity, rank and
-        the printed citations were read on 2026-08-01 from the embedded text layer of
-        the CMAA facsimile of the controlling edition at printed p. 724 (digital p.
-        805), not from the facsimile images, and nothing here has been visually
-        collated.
+      notes: "The Collect, Secret, Postcommunion now carry complete source-qualified Latin bodies compared with the actual 1962 page images and separately retained historical foundations. The exact source-specific contributions and publication qualifications are recorded in the per-body Latin provenance ledger; these targets are not represented as word-for-word identical to their older sources. Source controls: Collect: Feltoe1896 printed42 lines8-10/PDF66 corrected by same-edition erratumPDF24:42 line8 Pater→Pastor. Both full pageimages freshly rechecked400dpi.; Secret: Feltoe1896 printed131 lines1-3; PDF155, September episcopal formularies, continuous three-line prayer at top.; Postcommunion: Feltoe1896 printed132 lines9-11; PDF156, September X Itemalia, continuous three-line prayer before XI Itemalia. The previous unavailable-body and acquisition claims are retained in the source recovery receipt. This correction claims no new collation of other readings, chants or appointments."
       propers:
       - name: Introit
         source: scripture
@@ -58696,14 +58271,10 @@ sections:
               chapter: 111
               verse: 1
           ref: Psalms 111:1
-      - name: Collect
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+      - "name": "Collect"
+        "source": "composed"
+        "text": "Gregem tuum, Pastor aeterne, placatus intende: et per beatum Clementem, Martyrem tuum atque Summum Pontificem, perpetua protectione custodi; quem totius Ecclesiae praestitisti esse pastorem. Per Dominum.\n"
+        "notes": "1962 target printed \"724\", marginal unit 4145. Complete actual Latin body independently compared with the separately retained historical source; see passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-clementis-i-papae-martyris--collect--1. Historical source and target differences: [\"bone→aeterne\", \"beatos apostolos→named single SupremePontiff and Martyr\", \"quos→quem and pastores→pastorem agreement; remove Filii tui vicarios\", \"Expand literal per. cue only to actual target Per Dominum.\"] Publication basis qualified-nonoriginal-adaptation; the later contribution is separately qualified, not described as whole-word historical identity. The previous unavailable-body note is preserved in the source recovery receipt."
       - name: Epistle
         source: scripture
         verses:
@@ -58779,14 +58350,10 @@ sections:
               chapter: 1
               verse: 10
           ref: Jeremiah 1:9-10
-      - name: Secret
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+      - "name": "Secret"
+        "source": "composed"
+        "text": "Oblatis muneribus, quaesumus, Domine, Ecclesiam tuam benignus illumina: ut et gregis tui proficiat ubique successus, et grati fiant nomini tuo, te gubernante, pastores. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.\n"
+        "notes": "1962 target printed \"725\", marginal unit 4152. Complete actual Latin body independently compared with the separately retained historical source; see passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-clementis-i-papae-martyris--secret--1. Historical source and target differences: [\"Prepend conventional sacrificial adjunct Oblatis muneribus and supplication quaesumus to the same continuous old prayer.\", \"Move Domine from older Ecclesiam tuam Domine benignus inlumina to target quaesumus, Domine, Ecclesiam tuam benignus illumina. The normalized older transcription expands the printed Dne abbreviation to Domine; this is an explicitly recorded source transformation.\", \"Expand old conventional per. cue only to the actual complete Clement prefix Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate. The literal contiguous long formula is independently controlled by Mame1922 PDF368; no words beyond target in unitate are supplied.\", \"Inlumina/illumina spelling, stress accents, case, pointing and layout differ.\"] Publication basis qualified-nonoriginal-adaptation; the later contribution is separately qualified, not described as whole-word historical identity. The previous unavailable-body note is preserved in the source recovery receipt."
       - name: Communion
         source: scripture
         verses:
@@ -58799,14 +58366,10 @@ sections:
               chapter: 16
               verse: 18
           ref: Matthew 16:18
-      - name: Postcommunion
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+      - "name": "Postcommunion"
+        "source": "composed"
+        "text": "Refectione sancta enutritam guberna, quaesumus, Domine, tuam placatus Ecclesiam: ut, potenti moderatione directa, et incrementa libertatis accipiat et in religionis integritate persistat. Per Dominum.\n"
+        "notes": "1962 target printed \"725\", marginal unit 4155. Complete actual Latin body independently compared with the separately retained historical source; see passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-clementis-i-papae-martyris--postcommunion--1. Historical source and target differences: [\"Prepend conventional sacramental participial adjunct Refectione sancta enutritam to the unchanged connected old prayer.\", \"Reorder Guberna Domine quaesumus to guberna quaesumus Domine.\", \"Expand conventional conclusion per. to Per Dominum.; stress accents, case, pointing and linewrap differ.\"] Publication basis qualified-nonoriginal-adaptation; the later contribution is separately qualified, not described as whole-word historical identity. The previous unavailable-body note is preserved in the source recovery receipt."
     - key: comm-s-felicitatis-martyris
       name: Comm. S. Felicitatis Martyris
       registry: 1962-11-23-comm
@@ -59224,14 +58787,10 @@ sections:
               chapter: 44
               verse: 18
           ref: Psalms 44:17-18
-      - name: Alleluia
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: no-exemplar
-        notes: Printed uncited chant, artifact PDF p. 510, printed p. 429, no. 1816; its exact wording remains unavailable.
+      - "name": "Alleluia"
+        "source": "composed"
+        "notes": "Complete literal chant body page-collated on 2026-10-29: 1962 Vatican target, artifact p. 510, printed p. 429, unit 1816; independently public-domain Tours Mame 1922, artifact pages 598; printed 484. Source and target words agree after explicitly recorded typography/spelling transformations. Printed biblical citation locators are apparatus; any retained Scripture citations are components rather than substitutes for this whole chant."
+        "text": "Alleluia, alleluia. ℣. Dilexit Andream Dominus in odorem suavitatis. Alleluia.\n"
       - name: Gospel
         source: scripture
         verses:
@@ -61076,29 +60635,11 @@ sections:
         preface: {option: nativitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 113, printed p. 32; explicit Nativity Preface or referral to first Christmas Mass; expected-target row roman-1962.temporal.sylvester:preface-nativity"}
         communicantes: {option: nativitate, locus: "Missale Romanum 1962, registered CMAA facsimile, Proprium de tempore, artifact PDF p. 113, printed p. 32; explicit proper Communicantes or referral to first Christmas Mass; night/day wording distinguished by artifact99 rubric; expected-target row roman-1962.temporal.sylvester:communicantes-nativity"}
       propers:
-      - name: Collect
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
-      notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
-        carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
-        CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
-        itself prints -- Commune unius aut plurium Summorum Pontificum -- which is unambiguous where the
-        Introit incipit is not, two Commons sharing `Os iusti` and two more sharing `Me exspectaverunt`.
-        THE DAY''S OWN COLLECT IS NOT TRANSCRIBED. The Missal prints one and this pass read it, but the
-        facsimile sets each oration under a drop capital that the text layer renders as wreckage and glues
-        marginal section numbers to the words -- `Cyrilluui`, `quivere earn`, `Ecclesise2517` -- so what
-        was read is not of publishable quality and is not recorded. The Collect slot therefore carries a typed unavailable proper-body state
-        while every other slot is the Common''s, which is what the Missal appoints. Nothing here has been
-        visually collated. The day''s own Collect was read on 2026-08-08 from the PAGE IMAGE of leaf n114
-        of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet Ratisbon 1862 printing the source library
-        already tracks as public domain, and not from any optical text layer -- that printing''s own OCR
-        corrupts roughly one word in three. The wording is the 1862''s; the 1962 Missal is not quoted for
-        it, and the two books are not asserted to agree.'
+      - "name": "Collect"
+        "source": "composed"
+        "text": "Gregem tuum, Pastor aeterne, placatus intende: et per beatum Silvestrum Summum Pontificem perpetua protectione custodi; quem totius Ecclesiae praestitisti esse pastorem. Per Dominum nostrum.\n"
+        "notes": "1962 target printed \"31\", marginal unit 220. Complete actual Latin body independently compared with the separately retained historical source; see passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.comm-s-silvestri-i-papae-confessoris--collect--1. Historical source and target differences: [\"bone→aeterne\", \"beatos apostolos→named single SupremePontiff\", \"quos→quem and pastores→pastorem agreement; remove Filii tui vicarios\", \"Expand literal per. cue only to actual target Per Dominum nostrum.\"] Publication basis qualified-nonoriginal-adaptation; the later contribution is separately qualified, not described as whole-word historical identity. The previous unavailable-body note is preserved in the source recovery receipt."
+      notes: "The Collect now carries complete source-qualified Latin bodies compared with the actual 1962 page images and separately retained historical foundations. The exact source-specific contributions and publication qualifications are recorded in the per-body Latin provenance ledger; these targets are not represented as word-for-word identical to their older sources. Source controls: Collect: Feltoe1896 printed42 lines8-10/PDF66 corrected by same-edition erratumPDF24:42 line8 Pater→Pastor. Both full pageimages freshly rechecked400dpi. The previous unavailable-body and acquisition claims are retained in the source recovery receipt. This correction claims no new collation of other readings, chants or appointments. The existing formulary referral remains controlling; the source-qualified own prayer overrides only its own named seat."
       takes_from:
         mass: commune-summorum-pontificum
         common_sets:
