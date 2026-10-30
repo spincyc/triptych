@@ -1,0 +1,725 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "cab939749aa60b62b150e19f8c6882328e2af7ed1be880a1080f7ec6a0171102",
+  "documents": [
+    {
+      "id": "acta.aas.015.archive.aas.015.l013172",
+      "language": "la",
+      "pdf_sha256": "15d28f6665fed59c7ae18ea5a417b31b92bd01773294de3cf42bf03a00feb96d",
+      "pages": 8,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            8
+          ],
+          "description": "The final page retains the papal closing/signature and the ORATIO with its text above the colophon. Extensive source OCR letter spacing and damaged words remain; the notes on pages 1 and 7 are in separate blocks."
+        }
+      ],
+      "limitations": [
+        "Visual review only; no complete source/facsimile collation, translation accuracy or rights certification.",
+        "AAS 15 (1923). Whole-volume Vatican OCR extraction; no facsimile collation or silent textual correction."
+      ],
+      "receipt_sha256": "cab939749aa60b62b150e19f8c6882328e2af7ed1be880a1080f7ec6a0171102",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-13.md",
+      "report_sha256": "00062db25fd7787daa27fada664b71f61d30587d1c203268b2aa4c017811aff6"
+    },
+    {
+      "id": "acta.aas.020.aas-020-l11951",
+      "language": "la",
+      "pdf_sha256": "9606ca4259f2370631b4f384ce985e61a4c86dfc29221cd2d3437ced97c21030",
+      "pages": 5,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": [
+        "Visual review only; no whole-source/facsimile or translation collation, rights clearance, font audit or mechanical text-fidelity audit.",
+        "AAS 20 (1928). Exact mechanical UTF-8 pdftotext -layout ranges. Original OCR spelling, spacing, internal source notes, signatures and dating clauses retained. No facsimile collation; printed page labels left unknown rather than inferred from PDF page ordinals. Boundaries and every interior excluded gap received independent review; exact source rows were restored where an earlier header classifier had omitted semantic text.",
+        "Long source title fits. Historical reference blocks on p2–3 remain separate from resumed body paragraphs; literal OCR spacing and corruption remain visible. All five pages were opened full size. Final5 retains blessing, date and papal subscription; terminal source paragraph continues into the second column."
+      ],
+      "receipt_sha256": "cab939749aa60b62b150e19f8c6882328e2af7ed1be880a1080f7ec6a0171102",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-14.md",
+      "report_sha256": "f6f10a3761563bdd37fe12354d684d3df58a3a97b93050d3a49e97f508ba59b2"
+    },
+    {
+      "id": "acta.ass.006.ass-006-act-014",
+      "language": "la",
+      "pdf_sha256": "567c8647b1bc31dc54af9a059521d442e7de5d547a88a952517a85b91bf8c29c",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            2
+          ],
+          "description": "Both pages are source-bearing. Page 2 ends with historical dating before the compact colophon. Literal OCR artifacts, including a numeral within the opening caption, remain a source limitation."
+        }
+      ],
+      "limitations": [
+        "Visual review only; no complete source/facsimile collation, translation accuracy or rights certification.",
+        "ASS 6 (1870), printed pages 269–273. Whole act from source-supported heading through dating/signature; historical source notes within bounds retained. OCR is not facsimile collation."
+      ],
+      "receipt_sha256": "cab939749aa60b62b150e19f8c6882328e2af7ed1be880a1080f7ec6a0171102",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-13.md",
+      "report_sha256": "00062db25fd7787daa27fada664b71f61d30587d1c203268b2aa4c017811aff6"
+    },
+    {
+      "id": "acta.ass.033.ass-033-l15404",
+      "language": "la",
+      "pdf_sha256": "5a1d2a9f52937078aaee4656a116b7edd98aeee2ea4186da9cf40acc24b80413",
+      "pages": 5,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": [
+        "Visual review only; no whole-source/facsimile or translation collation, rights clearance, font audit or mechanical text-fidelity audit.",
+        "ASS 33 (1900). Mechanically selected historical papal instrument; OCR spelling and spacing retained without silent correction.",
+        "Frequent inherited letter spacing and retained word divisions disrupt words but prose remains readable overall. Historical references at source page breaks are separate blocks. P5 retains source conclusion, dating clause and LEO PP. XIII."
+      ],
+      "receipt_sha256": "cab939749aa60b62b150e19f8c6882328e2af7ed1be880a1080f7ec6a0171102",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-14.md",
+      "report_sha256": "f6f10a3761563bdd37fe12354d684d3df58a3a97b93050d3a49e97f508ba59b2"
+    },
+    {
+      "id": "acta.ass.035.ass-035-l010320",
+      "language": "it",
+      "pdf_sha256": "68ff27560eee4dbf1030cebaa9c0a4880d932446f71ae5a07283279589d1dfc9",
+      "pages": 5,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            5
+          ],
+          "description": "Substantial OCR letter spacing and word fragmentation make reading slower throughout. This is the disclosed historical OCR limitation rather than a newly introduced typography defect. The source-note blocks sampled on pages 2, 3 and 5 are separate from body continuations. Page 5 retains the conclusion, date and signature in the left column; the colophon starts in the right column."
+        }
+      ],
+      "limitations": [
+        "Visual review only; no complete source/facsimile collation, translation accuracy or rights certification.",
+        "ASS 35 (1902). Mechanical ranges over the exact whole-volume UTF-8 LF/formfeed derivative. Historical notes and terminal apparatus retained where bounded; running heads and journal issue footer lines omitted. OCR limitations remain; no facsimile or full-work textual collation."
+      ],
+      "receipt_sha256": "cab939749aa60b62b150e19f8c6882328e2af7ed1be880a1080f7ec6a0171102",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-13.md",
+      "report_sha256": "00062db25fd7787daa27fada664b71f61d30587d1c203268b2aa4c017811aff6"
+    },
+    {
+      "id": "acta.ass.036.ass-036-l005290",
+      "language": "it",
+      "pdf_sha256": "1321e32525bc55169720e78bd7bf143499401532abccd5d767832b019b463f43",
+      "pages": 5,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": [
+        "Visual review only; no whole-source/facsimile or translation collation, rights clearance, font audit or mechanical text-fidelity audit.",
+        "ASS 36 (1903). Mechanical exact-byte ranges from whole-volume Vatican OCR; historical notes and subscriptions retained, no facsimile or full-work image/text-collation claim.",
+        "Italian text uses the requested ragged-right composition. Historical reference blocks remain separately set at source breaks. Retained OCR hyphenation/spacing remain visible. P5 contains genuine conclusion, blessing, dating clause and PIO PP. X."
+      ],
+      "receipt_sha256": "cab939749aa60b62b150e19f8c6882328e2af7ed1be880a1080f7ec6a0171102",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-14.md",
+      "report_sha256": "f6f10a3761563bdd37fe12354d684d3df58a3a97b93050d3a49e97f508ba59b2"
+    },
+    {
+      "id": "acta.ass.040.ass-040-l022854",
+      "language": "la",
+      "pdf_sha256": "7c673340d7e3632828652a7c4d14a07e454f98faf94bc08e996b6ad9ea166d90",
+      "pages": 21,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            21
+          ],
+          "description": "Page 21 is very sparse: it retains the historical signature PIUS PP. X above the project colophon. It therefore has source-bearing final-page coverage. Notes sampled at full size on pages 1, 6 and 20 are separate indented blocks, although they interrupt sentences in retained historical order. OCR letter spacing, broken words and stray marks remain prominent."
+        }
+      ],
+      "limitations": [
+        "Visual review only; no complete source/facsimile collation, translation accuracy or rights certification.",
+        "ASS 40 (1907). Mechanical ranges over the exact whole-volume UTF-8 LF/formfeed derivative. Historical notes and terminal apparatus retained where bounded; running heads and journal issue footer lines omitted. OCR limitations remain; no facsimile or full-work textual collation. An explicit source-selector revision excludes only the positively identified journal furniture at retained LF 24857,24934. All historical body text, citations and notes remain literal."
+      ],
+      "receipt_sha256": "cab939749aa60b62b150e19f8c6882328e2af7ed1be880a1080f7ec6a0171102",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-13.md",
+      "report_sha256": "00062db25fd7787daa27fada664b71f61d30587d1c203268b2aa4c017811aff6"
+    },
+    {
+      "id": "gregory-xvi-acta.volume-01.line-00005594",
+      "language": "mul",
+      "pdf_sha256": "2285464af06eed26e33e70746a3d8b1e01500fe21ba07232fff952ccf64196b5",
+      "pages": 1,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            1
+          ],
+          "description": "The one page preserves the Latin synopsis and Italian body, identifies the language as Multilingual, and retains the historical source citation \"2 Ex Bullario Romano.\" as a separate block within source order. The dating clause precedes the terminal colophon."
+        }
+      ],
+      "limitations": [
+        "Visual review only; no complete source/facsimile collation, translation accuracy or rights certification.",
+        "Rome: Ex Typographia Polyglotta S. C. de Propaganda Fide, 1901. Uncorrected, uncollated OCR transcription of the identified constituent. Historical synopsis, source notes, dating and subscriptions are retained as this witness gives them; literal abbreviations are not expanded. The source prints an Italian encyclical with Latin synopsis; uncorrected OCR and its own source citation are retained."
+      ],
+      "receipt_sha256": "cab939749aa60b62b150e19f8c6882328e2af7ed1be880a1080f7ec6a0171102",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-13.md",
+      "report_sha256": "00062db25fd7787daa27fada664b71f61d30587d1c203268b2aa4c017811aff6"
+    },
+    {
+      "id": "gregory-xvi-acta.volume-02.line-00004663.part-02",
+      "language": "la",
+      "pdf_sha256": "fca56f4b39628fa4ab423fcee98e8d7aba36e354360bc0ea064208362d8e49da",
+      "pages": 4,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            4
+          ],
+          "description": "Page 4 retains substantial source text and dating before the terminal apparatus. The source-derived issuer spelling/punctuation and OCR word breaks remain literal."
+        }
+      ],
+      "limitations": [
+        "Visual review only; no complete source/facsimile collation, translation accuracy or rights certification.",
+        "Rome: Ex Typographia Polyglotta S. C. de Propaganda Fide, 1901. Uncorrected, uncollated OCR transcription of the identified constituent. Complete papal body; editorial caption or non-substantive publishing furniture omitted as separately identified in the source review. Uncorrected OCR of the papal text; edition numerals, genre labels, synopses, running titles, page numbers and provenance citations omitted."
+      ],
+      "receipt_sha256": "cab939749aa60b62b150e19f8c6882328e2af7ed1be880a1080f7ec6a0171102",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-13.md",
+      "report_sha256": "00062db25fd7787daa27fada664b71f61d30587d1c203268b2aa4c017811aff6"
+    },
+    {
+      "id": "papal.benedict-xv.hf-ben-xv-enc-01111914-ad-beatissimi-apostolorum",
+      "language": "la",
+      "pdf_sha256": "f8ef02a7a427025d66b29ffe7fab8dd0dfd4f8335d1c7d0413af19c018531d2e",
+      "pages": 6,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            6
+          ],
+          "description": "Page 6 contains the complete visible closing, dating and subscription in the left column, and separately addressable numbered source references [1]–[37] followed by the colophon in the right column."
+        }
+      ],
+      "limitations": [
+        "Visual review only; no complete source/facsimile collation, translation accuracy or rights certification.",
+        "Historical witness: Acta Apostolicae Sedis 6 (1914), pp. 565–581. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions."
+      ],
+      "receipt_sha256": "cab939749aa60b62b150e19f8c6882328e2af7ed1be880a1080f7ec6a0171102",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-13.md",
+      "report_sha256": "00062db25fd7787daa27fada664b71f61d30587d1c203268b2aa4c017811aff6"
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-08091894-iucunda-semper-expectatione",
+      "language": "la",
+      "pdf_sha256": "807c27de8c13f0c055edc96d243af03c08672ed08dbcfd1d8da65a6caa0d476f",
+      "pages": 3,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": [
+        "Visual review only; no whole-source/facsimile or translation collation, rights clearance, font audit or mechanical text-fidelity audit.",
+        "Historical witness: Acta Sanctae Sedis 27 (1894-1895), pp. 177-184. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions.",
+        "Three-page Latin body has clear two-column order and genuine ending, date and subscription before compact apparatus."
+      ],
+      "receipt_sha256": "cab939749aa60b62b150e19f8c6882328e2af7ed1be880a1080f7ec6a0171102",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-14.md",
+      "report_sha256": "f6f10a3761563bdd37fe12354d684d3df58a3a97b93050d3a49e97f508ba59b2"
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-18011901-graves-de-communi-re",
+      "language": "en",
+      "pdf_sha256": "424d77d50bd94999f9213fc01f7866771df4c96134d0b7021b306df6c11b4f0b",
+      "pages": 6,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": [
+        "Visual review only; no whole-source/facsimile or translation collation, rights clearance, font audit or mechanical text-fidelity audit.",
+        "Historical English web transcription of the 1903 Benziger edition; individual translator unidentified. Encoding-only repair of 6 spans (5 intact reversals; 1 partial marker repairs), each corroborated by independent OCR of this printing. OCR word and source-date errors remain uncorrected; full print collation is outstanding.",
+        "Inherited OCR spelling, mid-word spaces and paragraph splits remain visible. P6 contains substantive conclusion and Apostolic Blessing before apparatus, whose paragraph continues in the second column."
+      ],
+      "receipt_sha256": "cab939749aa60b62b150e19f8c6882328e2af7ed1be880a1080f7ec6a0171102",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-14.md",
+      "report_sha256": "f6f10a3761563bdd37fe12354d684d3df58a3a97b93050d3a49e97f508ba59b2"
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-29061896-satis-cognitum",
+      "language": "en",
+      "pdf_sha256": "9c910fe116d8d207f228a4561b091cf006c30c9e3cd7627dd9826d186a521309",
+      "pages": 15,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": [
+        "Visual review only; no whole-source/facsimile or translation collation, rights clearance, font audit or mechanical text-fidelity audit.",
+        "Historical English web transcription of the 1903 Benziger edition; individual translator unidentified. Encoding-only repair of 75 spans (69 intact reversals; 6 partial marker repairs), each corroborated by independent OCR of this printing. OCR word and source-date errors remain uncorrected; full print collation is outstanding. The web transcription heading prints June 20, 1896; the official work catalog dates the act June 29, 1896.",
+        "Visible inherited OCR corruption is substantial (p1 forms such as Goaj and sfjyjri hml, stray punctuation and mid-word spaces). The p1 source heading dates June 20 while compact identification dates June 29; the terminal note explicitly explains this discrepancy. Numbered historical endnotes remain separate and p15 contains source body plus notes1–31. These are source limitations, not certification of wording."
+      ],
+      "receipt_sha256": "cab939749aa60b62b150e19f8c6882328e2af7ed1be880a1080f7ec6a0171102",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-14.md",
+      "report_sha256": "f6f10a3761563bdd37fe12354d684d3df58a3a97b93050d3a49e97f508ba59b2"
+    },
+    {
+      "id": "papal.pius-ix.epistola-encyclica-beneficia-dei-4-iunii-1871",
+      "language": "la",
+      "pdf_sha256": "290a59cd3607b378146174033ffb38ffc457ec8c2d4220dc6fe5a3d91a89eebe",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": [
+        "Visual review only; no whole-source/facsimile or translation collation, rights clearance, font audit or mechanical text-fidelity audit.",
+        "Historical witness: Acta Sanctae Sedis 6 (1870–1871), pp. 269–273. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions.",
+        "Two-page Latin body has clear two-column order and genuine ending/date before compact apparatus."
+      ],
+      "receipt_sha256": "cab939749aa60b62b150e19f8c6882328e2af7ed1be880a1080f7ec6a0171102",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-14.md",
+      "report_sha256": "f6f10a3761563bdd37fe12354d684d3df58a3a97b93050d3a49e97f508ba59b2"
+    },
+    {
+      "id": "papal.pius-x.hf-p-x-enc-02021904-ad-diem-illum-laetissimum",
+      "language": "la",
+      "pdf_sha256": "e7746a36a77cabe80f44aa7756a5dcd74c199b00fb27bc683a7bdad3a658d241",
+      "pages": 6,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            6
+          ],
+          "description": "The final page retains substantial concluding text, blessing, dating and PIUS PP. X before the colophon. The ragged-looking inherited abbreviations and spacing do not cause clipping."
+        }
+      ],
+      "limitations": [
+        "Visual review only; no complete source/facsimile collation, translation accuracy or rights certification.",
+        "Historical witness: Acta Sanctae Sedis 36 (1903–1904), pp. 449–462. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions. Publication is bounded by the identified volume's final year; its first issue date is unrecorded."
+      ],
+      "receipt_sha256": "cab939749aa60b62b150e19f8c6882328e2af7ed1be880a1080f7ec6a0171102",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-13.md",
+      "report_sha256": "00062db25fd7787daa27fada664b71f61d30587d1c203268b2aa4c017811aff6"
+    },
+    {
+      "id": "papal.pius-x.hf-p-x-enc-05041906-tribus-circiter",
+      "language": "la",
+      "pdf_sha256": "ccfbce04af19eab386dd07b594189bbda7c645878dab6e9ccac87ea2836e7069",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            2
+          ],
+          "description": "Both pages maintain clear two-column reading order; page 2 retains dating and PIUS PP. X followed by the compact terminal source/rights colophon."
+        }
+      ],
+      "limitations": [
+        "Visual review only; no complete source/facsimile collation, translation accuracy or rights certification.",
+        "Historical witness: Acta Sanctae Sedis 39 (1906), pp. 129–134. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions."
+      ],
+      "receipt_sha256": "cab939749aa60b62b150e19f8c6882328e2af7ed1be880a1080f7ec6a0171102",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-13.md",
+      "report_sha256": "00062db25fd7787daa27fada664b71f61d30587d1c203268b2aa4c017811aff6"
+    },
+    {
+      "id": "papal.pius-x.hf-p-x-enc-12031904-iucunda-sane.acqr-1904-english",
+      "language": "en",
+      "pdf_sha256": "2116899ed77df7709a1ef4000ec23b072503748e10d349a1a734af997d7ff77c",
+      "pages": 8,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            8
+          ],
+          "description": "The final page retains the closing, date, papal subscription and historical note 26. Historical notes sampled on pages 1–2 are separate blocks; source OCR breaks and malformed note marks remain."
+        }
+      ],
+      "limitations": [
+        "Visual review only; no complete source/facsimile collation, translation accuracy or rights certification.",
+        "Historical English translation in The American Catholic Quarterly Review 29 (1904), pp. 588–603. Translator unrecorded. All 26 historical notes are retained, including note 26 after the papal signature. OCR recognition errors, punctuation, broken words and historical source order remain. Full selected OCR extents and outer boundaries were read; no complete word-for-word print-image collation or corrected text is claimed."
+      ],
+      "receipt_sha256": "cab939749aa60b62b150e19f8c6882328e2af7ed1be880a1080f7ec6a0171102",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-13.md",
+      "report_sha256": "00062db25fd7787daa27fada664b71f61d30587d1c203268b2aa4c017811aff6"
+    },
+    {
+      "id": "papal.pius-x.hf-p-x-enc-19070908-pascendi-dominici-gregis",
+      "language": "la",
+      "pdf_sha256": "063d4be031575e9d87c3dcfd4e4be55f1a263d54ac478e51041a9df2e2ae24dc",
+      "pages": 19,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": [
+        "Visual review only; no whole-source/facsimile or translation collation, rights clearance, font audit or mechanical text-fidelity audit.",
+        "Historical witness: Acta Sanctae Sedis 40 (1907), pp. 593-650. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions.",
+        "Dense 19-page body remains clear; p19 retains the dating clause and PIVS PP. X before terminal apparatus."
+      ],
+      "receipt_sha256": "cab939749aa60b62b150e19f8c6882328e2af7ed1be880a1080f7ec6a0171102",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-14.md",
+      "report_sha256": "f6f10a3761563bdd37fe12354d684d3df58a3a97b93050d3a49e97f508ba59b2"
+    },
+    {
+      "id": "papal.pius-x.hf-p-x-enc-24091912-singulari-quadam",
+      "language": "la",
+      "pdf_sha256": "546ccfd81b85f94c5355698c45f485dd47faec9727f3bac069a15f1e1ab99adf",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": [
+        "Visual review only; no whole-source/facsimile or translation collation, rights clearance, font audit or mechanical text-fidelity audit.",
+        "Historical witness: Acta Apostolicae Sedis 4 (1912), pp. 657–662. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions. Web bibliographic footer incorrectly repeats AAS 3 (1911), pp. 217–224 for Iamdudum. The actual printing is AAS 4 (1912), no. 20, pages 657–662; the historical reference note on page 659 is retained.",
+        "Both pages are cleanly composed; p2 retains closing, date, subscription and the historical reference to Graves de communi. Terminal note explains the erroneous web bibliographic footer."
+      ],
+      "receipt_sha256": "cab939749aa60b62b150e19f8c6882328e2af7ed1be880a1080f7ec6a0171102",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-14.md",
+      "report_sha256": "f6f10a3761563bdd37fe12354d684d3df58a3a97b93050d3a49e97f508ba59b2"
+    },
+    {
+      "id": "papal.pius-xi.hf-p-xi-enc-19231112-ecclesiam-dei",
+      "language": "la",
+      "pdf_sha256": "24337f02d1db5649ff1ad37367e0af2d85debc8354660624c80e7746c1a9d8ff",
+      "pages": 4,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": [
+        "Visual review only; no whole-source/facsimile or translation collation, rights clearance, font audit or mechanical text-fidelity audit.",
+        "Historical witness: Acta Apostolicae Sedis 15 (1923), pp. 573-582. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions. The web dating clause reads MDCCCCXVIII although the contemporary AAS 15 (1923) act and index identify 12 November 1923. The web transcription error is preserved and not treated as a new date for the act.",
+        "Final4 retains the historical conclusion, subscription and numbered notes1–19. Source dating clause MDCCCCXVIII conflicts with compact1923 date; the terminal note explicitly states and preserves the web transcription error."
+      ],
+      "receipt_sha256": "cab939749aa60b62b150e19f8c6882328e2af7ed1be880a1080f7ec6a0171102",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-14.md",
+      "report_sha256": "f6f10a3761563bdd37fe12354d684d3df58a3a97b93050d3a49e97f508ba59b2"
+    },
+    {
+      "id": "papal.pius-xi.hf-p-xi-enc-19291220-mens-nostra",
+      "language": "la",
+      "pdf_sha256": "5add24754bc3aa0469301ac880eafebcfd0464ac14f9c965d7a3e56273ec0aa6",
+      "pages": 8,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": [
+        "Visual review only; no whole-source/facsimile or translation collation, rights clearance, font audit or mechanical text-fidelity audit.",
+        "Historical witness: Acta Apostolicae Sedis 21 (1929), pp. 689-706. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions.",
+        "P1–2 have short columns and generous lower whitespace around source headings; each contains substantive source prose and headings continue with text. P8 contains historical notes12–43; colophon continuation at the right top does not make it an apparatus-only page."
+      ],
+      "receipt_sha256": "cab939749aa60b62b150e19f8c6882328e2af7ed1be880a1080f7ec6a0171102",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-14.md",
+      "report_sha256": "f6f10a3761563bdd37fe12354d684d3df58a3a97b93050d3a49e97f508ba59b2"
+    },
+    {
+      "id": "papal.pius-xi.hf-p-xi-enc-19300420-ad-salutem-humani",
+      "language": "la",
+      "pdf_sha256": "ee034ccc20f2d64b639fb8a0726323f99d7ec2c4258ca7904516e1ede12301fb",
+      "pages": 13,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            13
+          ],
+          "description": "Page 13 retains historical references [56]–[82] above the colophon. It is a legitimate source-note continuation, with an empty right column, rather than a project-apparatus-only final page. Notes on pages 12–13 are distinct and readable."
+        }
+      ],
+      "limitations": [
+        "Visual review only; no complete source/facsimile collation, translation accuracy or rights certification.",
+        "Historical witness: Acta Apostolicae Sedis 22 (1930), pp. 201-234. Uncollated normalized web transcription; source wording and numbering retained apart from the explicitly recorded corrections and apparatus exclusions."
+      ],
+      "receipt_sha256": "cab939749aa60b62b150e19f8c6882328e2af7ed1be880a1080f7ec6a0171102",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-13.md",
+      "report_sha256": "00062db25fd7787daa27fada664b71f61d30587d1c203268b2aa4c017811aff6"
+    },
+    {
+      "id": "pius-ix-acta.volume-03.line-00000167.part-08",
+      "language": "la",
+      "pdf_sha256": "b61a710998af703bc148d92727bb44dff77d3378208aa4cde9e1567a698a1feb",
+      "pages": 1,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": [
+        "Visual review only; no whole-source/facsimile or translation collation, rights clearance, font audit or mechanical text-fidelity audit.",
+        "Pii IX Pontificis Maximi Acta, pars prima, volume III. Rome: Ex Typographia Bonarum Artium, habita facultate, 1864. Uncorrected, uncollated OCR transcription of the identified constituent. Complete papal body; editorial caption or non-substantive publishing furniture omitted as separately identified in the source review. Uncorrected OCR of the act as printed in Pii IX Pontificis Maximi Acta, pars prima; edition genre labels, synopses, page numbers, gathering signatures and scan watermarks are omitted.",
+        "Single-page uncollated OCR reader retains body, blessing and dating clause before compact apparatus. Initial OCR punctuation in issuer line and word-division noise remain literal. The source note explicitly qualifies omitted editorial/publishing furniture."
+      ],
+      "receipt_sha256": "cab939749aa60b62b150e19f8c6882328e2af7ed1be880a1080f7ec6a0171102",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-14.md",
+      "report_sha256": "f6f10a3761563bdd37fe12354d684d3df58a3a97b93050d3a49e97f508ba59b2"
+    },
+    {
+      "id": "pius-ix-acta.volume-03.line-00016060.part-02",
+      "language": "la",
+      "pdf_sha256": "978bdef6dd0f7dcbd59105509a78bb488ac6edc449bd667fbd89e664800997e2",
+      "pages": 4,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            4
+          ],
+          "description": "Source references sampled on pages 1–2 are separate blocks, including multi-line notes. Page 4 retains the closing, date and pontificate line before the colophon. OCR word divisions and punctuation remain."
+        }
+      ],
+      "limitations": [
+        "Visual review only; no complete source/facsimile collation, translation accuracy or rights certification.",
+        "Pii IX Pontificis Maximi Acta, pars prima, volume III. Rome: Ex Typographia Bonarum Artium, habita facultate, 1864. Uncorrected, uncollated OCR transcription of the identified constituent. Complete papal body; editorial caption or non-substantive publishing furniture omitted as separately identified in the source review. Uncorrected OCR of the act as printed in Pii IX Pontificis Maximi Acta, pars prima; edition genre labels, synopses, page numbers, gathering signatures and scan watermarks are omitted."
+      ],
+      "receipt_sha256": "cab939749aa60b62b150e19f8c6882328e2af7ed1be880a1080f7ec6a0171102",
+      "report": "src/sources/papal-documents/encyclicals-classic-visual-13.md",
+      "report_sha256": "00062db25fd7787daa27fada664b71f61d30587d1c203268b2aa4c017811aff6"
+    }
+  ]
+}

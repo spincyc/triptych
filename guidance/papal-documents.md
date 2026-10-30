@@ -122,6 +122,14 @@ Character-encoding repair does not establish word-level collation. Preserve
 the prior artifact and reviewed consumer pins; superseding an incomplete
 selection requires an explicit disposition before its PDF can be installed.
 
+Reusable replay helpers are tracked software: pin their repository path and
+exact SHA-256 in transformation evidence and reuse that implementation. Do not
+copy a current helper into every source container solely to create an artifact
+ID. When a retained recipe needs older implementation bytes, retain them or
+identify an immutable repository revision and an exact replay command. Record
+the implementation's actual license separately from historical source wording;
+an archive copied from `scripts/` preserves its MIT grant under `LICENSE`.
+
 Where an OCR text stream fuses a printing's marginal summaries into body
 lines, a whole-volume coordinate reading-order derivative may restore source
 order. It is such a separately identified derivative. Every native WORD appears

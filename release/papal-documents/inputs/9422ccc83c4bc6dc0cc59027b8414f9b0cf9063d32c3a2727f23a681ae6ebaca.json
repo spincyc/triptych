@@ -1,0 +1,33 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "5d74d051a6b699831b8b682d7bc8a0fbe67a1fd45a956e94d6221e722df342e9",
+  "documents": [
+    {
+      "id": "acta.ass.034.ass-034-l012846",
+      "language": "la",
+      "pdf_sha256": "ef5b60185786fb97439ea286994d7f4120fc80a0fb3a6e2714842e3e1251999f",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2
+          ],
+          "description": "Both note groups distinct (page 1 right below seminary paragraph; page 2 after closing). Preserved letterspaced unum and fragmented lines remain readable. Page 2 sparse but has continued body, blessing, dated clause and final historical notes above project apparatus. No separate subscription appears. Clear gutter, no clipping or overlap."
+        }
+      ],
+      "limitations": "Independent full-page reader layout and bounded native source-boundary/repair acceptance. Every actual reader page inspected in contact overview and individually at original raster resolution. Native evidence is OCR reconstruction geometry, not original-print glyph or lexical collation; no translation accuracy, rights certification, exhaustive discovery or whole-volume completeness claim. No page reuse.",
+      "receipt_sha256": "5d74d051a6b699831b8b682d7bc8a0fbe67a1fd45a956e94d6221e722df342e9",
+      "report": "src/sources/papal-documents/encyclicals-repair-cold-23-b.md",
+      "report_sha256": "9ba9210c7b168137e68adc7d5ec7ea53a4a0535aae45a45f2f5e9ec500378318"
+    }
+  ]
+}

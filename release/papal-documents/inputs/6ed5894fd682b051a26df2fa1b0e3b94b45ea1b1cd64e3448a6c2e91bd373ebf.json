@@ -1,0 +1,41 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "144477ea1b59b430fcc5c0c7b461fe9037315d66cdb31dcccc383936162301a3",
+  "documents": [
+    {
+      "id": "acta.ass.034.ass-034-l025902",
+      "language": "la",
+      "pdf_sha256": "23703acb1b4938e0a3c51bfc8641fb605a621b2753eec8657d43b0a5715a3d8a",
+      "pages": 6,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "description": "Latin two-column text remains readable. Note sets on pages 1–5 have separate indented starts and ends; final page retains source exhortation, blessing, date and LEO PP. XIII subscription before ruled apparatus which continues in right column. Some literal internal hard-line hyphens and isolated native letterspaced words remain, without sustained unreadability."
+        }
+      ],
+      "limitations": "Independent full-page reader layout and bounded native source-boundary/repair acceptance. Every actual reader page inspected in contact overview and individually at original raster resolution. Native evidence is OCR reconstruction geometry, not original-print glyph or lexical collation; no translation accuracy, rights certification, exhaustive discovery or whole-volume completeness claim. No page reuse.",
+      "receipt_sha256": "144477ea1b59b430fcc5c0c7b461fe9037315d66cdb31dcccc383936162301a3",
+      "report": "src/sources/papal-documents/encyclicals-repair-cold-23-b.md",
+      "report_sha256": "9ba9210c7b168137e68adc7d5ec7ea53a4a0535aae45a45f2f5e9ec500378318"
+    }
+  ]
+}

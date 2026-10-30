@@ -1,0 +1,65 @@
+{
+  "documents": [
+    {
+      "artifact_id": "artifact.acta-papal-archives.aas.021.historical-text-c3e4af8a.divini-geometry-3e088ce582c3",
+      "body_tex": "1929-12-31-acta-aas-021-aas-021-l29292-a0c4798e-it/1929-12-31-acta-aas-021-aas-021-l29292-a0c4798e-it.body.tex",
+      "changed": true,
+      "id": "acta.aas.021.aas-021-l29292",
+      "language": "it",
+      "pages": 18,
+      "pdf": "1929-12-31-acta-aas-021-aas-021-l29292-a0c4798e-it/1929-12-31-acta-aas-021-aas-021-l29292-a0c4798e-it.pdf",
+      "pdf_sha256": "a38a976ff997df18e671a1d00cda65fd29fea324f4f736b0c04baf03803f6698",
+      "physical_line_ranges": [
+        [
+          1,
+          1836
+        ]
+      ],
+      "render_revision": "2026-10-30T10:02:42Z",
+      "segment_id": "segment.acta-papal-archives.aas.021.aas-021-l29292.geometry-3e088ce582c3",
+      "source_sha256": "3e088ce582c38096992fd738dd66246440b3dcfcfcd1068bfd911824c91a4834",
+      "status": "compiled",
+      "stem": "1929-12-31-acta-aas-021-aas-021-l29292-a0c4798e-it",
+      "tex": "1929-12-31-acta-aas-021-aas-021-l29292-a0c4798e-it/1929-12-31-acta-aas-021-aas-021-l29292-a0c4798e-it.tex",
+      "text_fidelity": {
+        "layout_hyphens": 0,
+        "method": "pdf-raw-source-aware-line-hyphen-nfkc-v3",
+        "pages": 18,
+        "source_characters": 90188,
+        "source_first_page": 1,
+        "source_last_page": 18,
+        "source_normalized_characters": 74703,
+        "status": "pass"
+      },
+      "warnings": []
+    }
+  ],
+  "errors": [],
+  "generator": "typeset-papal",
+  "generator_version": 2,
+  "index": "index.html",
+  "input_manifest": "frozen-manifest.json",
+  "input_manifest_sha256": "3284e54ed51fcc480d56ac745eee459b5e3fdcfc210b4f9abba2bf050bb45097",
+  "options": {
+    "automatic_hyphenation": "babel-english-latin",
+    "babel_shorthands": false,
+    "body_alignment": "justified-en-la; ragged-right-other-languages",
+    "body_font": "Latin Modern Roman",
+    "body_leading_pt": 13,
+    "body_size_pt": 10.5,
+    "columns": 2,
+    "form_feed": "layout-whitespace",
+    "layout_hyphen_fidelity": "source-aware-line-end-only",
+    "punctuation": "literal",
+    "soft_hyphen": "nonprinting",
+    "unicode_text_mapping": "xetex-native"
+  },
+  "receipt": "receipt.json",
+  "revision": "2026-10-30T10:02:42Z",
+  "schema": "triptych-papal-typeset-receipt/v1",
+  "summary": {
+    "compiled": 1,
+    "failed": 0,
+    "selected": 1
+  }
+}

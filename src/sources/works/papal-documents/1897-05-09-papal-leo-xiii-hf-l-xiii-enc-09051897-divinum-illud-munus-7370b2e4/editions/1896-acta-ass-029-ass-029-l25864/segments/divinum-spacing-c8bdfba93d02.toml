@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.ass.029.ass-029-l25864.divinum-spacing-c8bdfba93d02"
+edition_id = "edition.acta-papal-archives.ass.029.ass-029-l25864"
+artifact_id = "artifact.acta-papal-archives.ass.029.historical-text-864fa26a.divinum-spacing-text-c8bdfba93d02"
+artifact_sha256 = "c8bdfba93d02fbf3a28f950cb3093d26c2b5c8cc96c16c4c912725f449b90642"
+segment_type = "constituent-work"
+states = ["cataloged", "acquired", "inspected"]
+physical_line_ranges = [[1, 644]]
+context = "Same complete prior constituent as segment.acta-papal-archives.ass.029.ass-029-l25864; exact prior source artifact.acta-papal-archives.ass.029.historical-text-864fa26a SHA-256 864fa26a5142712ddc93b24966f859459ba06804ca8508c6c3d4b6cc766925d4, original LF ranges [[25858, 25898], [25900, 25940], [25942, 25982], [25984, 26026], [26028, 26070], [26072, 26113], [26115, 26155], [26157, 26199], [26201, 26243], [26245, 26286], [26288, 26328], [26330, 26370], [26372, 26414], [26416, 26457], [26460, 26502]]. Replay spec artifact.acta-papal-archives.ass.029.historical-text-864fa26a.divinum-spacing-spec-311c578784a0 (311c578784a0845e7b9f72bd3baf3daa6ce7969233891eaa4643d83f68df44b3); native review artifact.acta-papal-archives.ass.029.historical-text-864fa26a.divinum-spacing-review-6023430a3d1a (6023430a3d1aa3d7b410c1ee93170ed118b74aac8b5277e9100554f523006d5c)."
+notes = "A separately pinned native-spacing derivative projects whitespace from583unique same-page native raw lines while preserving every original non-whitespace character and its order. Twelve explicitly hashed superscript/note LF records with zero native-line matches remain byte-for-byte unchanged. The native raw stream order on pages651,656,657 is not adopted. Literal source hyphens, superscript debris and OCR errors remain; no lexical repair or original-print collation is claimed."

@@ -1,0 +1,124 @@
+{
+  "document_id": "acta.ass.010.ass-010-act-001",
+  "source_artifact_id": "artifact.acta-papal-archives.ass.010.historical-text-8a558d38",
+  "source_sha256": "8a558d38c66f7b61de3e81b1efe1af7d9d1b9456251a0469edf77918b8132d0e",
+  "native_pdf_artifact_id": "artifact.acta-papal-archives.ass.010.vatican-pdf-5e4948a4",
+  "native_pdf_sha256": "5e4948a4a916d488169fb7dd5822b05f6d40872c7865f970c6f5fb892fb2ab65",
+  "native_artifact_pages_inspected": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37
+  ],
+  "inspection": "All assigned native pages inspected as bounded contact sheets; full-size source pages checked for multi-note sets, continuation and printing-footer boundary. One body column and separate page-foot source-note groups. No marginal/body mixture or two-column note interleave was observed in these selected acts.",
+  "native_raw_stream_order_adopted": false,
+  "source_note_line_ranges": [
+    [
+      191,
+      191
+    ],
+    [
+      306,
+      306
+    ],
+    [
+      379,
+      381
+    ],
+    [
+      419,
+      420
+    ],
+    [
+      496,
+      496
+    ],
+    [
+      536,
+      536
+    ],
+    [
+      613,
+      613
+    ],
+    [
+      848,
+      848
+    ],
+    [
+      1113,
+      1114
+    ],
+    [
+      1152,
+      1152
+    ],
+    [
+      1305,
+      1305
+    ]
+  ],
+  "excluded_publishing_furniture_lines": [],
+  "excluded_furniture_basis": "",
+  "retained_zero_match_source_lines": [
+    {
+      "source_line": 663,
+      "source_line_sha256": "db68589c6ed2ec5591e79a27bb51ce7167565737697f8d7d72459719522d6d52",
+      "native_page": 20,
+      "reason": "Native page 20 was inspected as a single body column with separately placed reference figures/page-foot notes. The native raw extractor has no whole-line match for this original layout LF record at the inline-reference/line-grouping locus. Preserve its exact bytes, including original spacing, instead of inferring word divisions or replacing glyphs."
+    },
+    {
+      "source_line": 664,
+      "source_line_sha256": "e7368fd1b345330900f8ddb028cf4955a2a14f1fb3d37afd05d3cadba7b5ad59",
+      "native_page": 20,
+      "reason": "Native page 20 was inspected as a single body column with separately placed reference figures/page-foot notes. The native raw extractor has no whole-line match for this original layout LF record at the inline-reference/line-grouping locus. Preserve its exact bytes, including original spacing, instead of inferring word divisions or replacing glyphs."
+    },
+    {
+      "source_line": 736,
+      "source_line_sha256": "cce6496f0ef4c7caa293d3afb7f82135a645d7a2f8db615a8f17137628e3f904",
+      "native_page": 22,
+      "reason": "Native page 22 was inspected as a single body column with separately placed reference figures/page-foot notes. The native raw extractor has no whole-line match for this original layout LF record at the inline-reference/line-grouping locus. Preserve its exact bytes, including original spacing, instead of inferring word divisions or replacing glyphs."
+    },
+    {
+      "source_line": 737,
+      "source_line_sha256": "6e5e77f5face21deedd7e96b821fb90618e0f99cbb7c20305ffef2526f2d8e8a",
+      "native_page": 22,
+      "reason": "Native page 22 was inspected as a single body column with separately placed reference figures/page-foot notes. The native raw extractor has no whole-line match for this original layout LF record at the inline-reference/line-grouping locus. Preserve its exact bytes, including original spacing, instead of inferring word divisions or replacing glyphs."
+    }
+  ],
+  "retained_ambiguous_source_lines": [],
+  "source_nonwhitespace_order_preserved": true,
+  "source_nonwhitespace_sha256": "4bc1a0b6e005897ec404c097fe7c4f7ca885906c395cd7f59d6feb293ae37323",
+  "limitations": "Native artifact is a Vatican OCR reconstruction. No original-print image collation or lexical OCR correction is claimed. Literal hard-line hyphens, source marks and explicitly retained unmatched layout lines remain."
+}

@@ -1,0 +1,47 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "4454ea328b884a827e03e14581afc289db1110222a4e0baee89cd01a91ae50f6",
+  "documents": [
+    {
+      "id": "acta.aas.018.aas-018-l06278",
+      "language": "la",
+      "pdf_sha256": "1dec676b7156442427f2a87844acf5b5a401f7d1b8947ca9e333b7329031db86",
+      "pages": 9,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "description": "Long literal OCR title remains readable; wide gutter and unclipped columns. Citation notes on pages 2–8 are distinct indented paragraph blocks at historical source breaks, sometimes interrupting a divided body word. Inherited internal hyphens, scattered letterspacing and OCR glyphs reduce polish but no sustained unreadability. Page 9 sparse yet contains blessing, dated clause and PIUS PP. XI subscription above ruled apparatus."
+        }
+      ],
+      "limitations": "Independent full-page reader layout and bounded native source-boundary/repair acceptance. Every actual reader page inspected in contact overview and individually at original raster resolution. Native evidence is OCR reconstruction geometry, not original-print glyph or lexical collation; no translation accuracy, rights certification, exhaustive discovery or whole-volume completeness claim. No page reuse.",
+      "receipt_sha256": "4454ea328b884a827e03e14581afc289db1110222a4e0baee89cd01a91ae50f6",
+      "report": "src/sources/papal-documents/encyclicals-repair-cold-23-b.md",
+      "report_sha256": "9ba9210c7b168137e68adc7d5ec7ea53a4a0535aae45a45f2f5e9ec500378318"
+    }
+  ]
+}
