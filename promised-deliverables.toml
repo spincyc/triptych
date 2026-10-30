@@ -1,6 +1,36 @@
 schema_version = 1
 
 [[deliverables]]
+id = "missal-reader-english-completion-2026-10-29"
+owner = "PROJECT-WORK.md"
+promise = "Drive the missal reader to completion with English translations of all represented texts, using maximum useful parallel source and implementation work, preserving edition, source and publication distinctions and the existing annual-content requirements."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "english-text-coverage"
+  criterion = "Every represented Proper and Ordinary text has source-supported English, with exact historical wording and original project study translations distinguished, and no missing or withheld body counted as translated. Every remaining source or distribution blocker is identified individually."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "src/sources/inventories/roman-1962-proper-translations-v1.toml", "src/sources/inventories/postconciliar-proper-translations-v1.toml"]
+
+  [[deliverables.requirements]]
+  id = "english-source-review"
+  criterion = "New English and historical source associations pass independent fidelity and source/publication review; target Latin, conclusion cues, edition qualifications and existing accepted records are preserved without inventing approval or verification."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "english-reader-integration"
+  criterion = "The canonical source owners regenerate current browser and terminal data, source-batch pins and release bindings; focused regression, the annual structural matrix, affected native reading paths and applicable publication checks pass, with inherited failures explicitly distinguished."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "tools/tests/test_complete_missal_year.py"]
+
+  [[deliverables.requirements]]
+  id = "english-integrated-delivery"
+  criterion = "Independent integrated review accepts the completed scope and coherent commits on feature/missal-reader; the existing annual-content and real-terminal acceptance promises are reconciled separately and remain open until their own evidence establishes completion."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "papal-documents-2026-10-25"
 owner = "PROJECT-WORK.md"
 promise = "Source, catalogue, and organize papal encyclicals, bulls, and related formal documents; create two-column TeX/PDF editions of each sourced document and a concrete reuse path into larger presentation projects, retaining explicit historical, edition, and rights gaps."

@@ -5,7 +5,41 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-28.
+Last reconciled: 2026-10-29.
+
+## Missal reader English completion, 2026-10-29
+
+<!-- promised-deliverable: missal-reader-english-completion-2026-10-29 -->
+
+**In progress.** The maintainer requests completion of the missal reader,
+English translations of all its texts, and maximum useful parallel agent work.
+This extends the existing annual-content promise; it does not replace its
+appointment, wording, source, review or annual-render requirements. Work
+continues on `feature/missal-reader`, preserving all existing accepted text
+and source qualifications. The current recovery and source receipts supersede
+older numerical summaries in the roadmap.
+
+Fresh owning-report audits identify Roman 1962 composed English availability
+of 1,188/1,448 canonical targets, inherited pre-1955 availability of
+1,168/1,391, and postconciliar availability of 116/564. These are represented
+non-scriptural targets, not whole-Missal completeness denominators. English
+Ordinary availability is 191/196 modeled Roman elements, 196/206 pre-1955
+elements and 0/61 postconciliar elements; modeled placeholders do not all
+represent missing translation bodies.
+
+Independent lanes own the fresh census, source/publication-policy review,
+Roman Proper recovery and study translations, postconciliar Proper recovery,
+each Ordinary family, and reader verification. Exact identified historical
+English and original project study English remain distinct. Original study
+translations require independently established distributable source wording;
+they confer no official liturgical approval. Protected modern originals or
+translations require their own distribution basis. Typed gaps and passing
+structural renders do not fulfill the requested complete English text.
+
+Source acceptance, generated browser/terminal integration, frozen source-batch
+reconciliation, independent review, required checks, coherent commits and
+publication remain pending. The existing real-terminal maintainer acceptance
+and broader product promises retain their own requirements.
 
 ## Claude 1962 All Saints, 2026-11-01
 
