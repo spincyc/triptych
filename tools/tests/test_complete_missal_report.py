@@ -618,10 +618,13 @@ class CompleteMissalReportTests(unittest.TestCase):
         # Collect, Secret and Postcommunion; Lasance Introit, Gospel, Offertory
         # and Communion) are inherited too, giving 106; the Lasance Pentecost
         # Alleluia bound the same day (G14 lane) gives 107. The 2026-10-21..26
-        # English recoveries give 1168, as the accepted receipt
+        # English recoveries gave 1168, as the accepted receipt
         # workflows/reviews/missal-reader-completion-2026-10-26/
         # source-review-final-source180-presentation-v2.json records.
-        self.assertEqual(english["with_english"], 1168)
+        # The accepted source-batch-checkpoint-v1.json epoch now binds 1373
+        # inherited uses; pre1955-inherited-exclusion-successor-v2.json
+        # (ec4ce81a...) conserves the exact inherited exclusion scope.
+        self.assertEqual(english["with_english"], 1373)
         self.assertEqual(
             english["translation_ledger_calendars"],
             ["roman-1962", "roman-pre-1955"],

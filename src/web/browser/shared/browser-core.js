@@ -1898,8 +1898,15 @@ window.Triptych = (function () {
    * Nothing upstream is edited: the artifacts keep what the book prints.
    * --------------------------------------------------------------------- */
 
-  const SPEAKER_WORDS = { priest: 'Priest', server: 'Server', all: 'All' };
-  const SPEAKER_CUES = { priest: 'P', server: 'S', all: 'All' };
+  const SPEAKER_WORDS = {
+    priest: 'Priest', server: 'Server', all: 'All', bishop: 'Bishop',
+    communicant: 'Communicant', 'deacon-or-priest': 'Deacon or priest',
+    lector: 'Reader', deacon: 'Deacon'
+  };
+  const SPEAKER_CUES = {
+    priest: 'P', server: 'S', all: 'All', bishop: 'B',
+    communicant: 'C', 'deacon-or-priest': 'D/P', lector: 'L', deacon: 'D'
+  };
   const DIALOGUE_ROLE_WORDS = { versicle: 'Versicle', response: 'Response' };
   const DIALOGUE_ROLE_CUES = { versicle: '℣', response: '℟' };
   const MARK_WORDS = { 'P.': 'Priest', 'R.': 'Response' };
@@ -2774,8 +2781,10 @@ window.Triptych = (function () {
   function translationCredits(oration, options) {
     const credits = el('div', 'translation-credits');
     const presentation = TRANSLATION_PRESENTATIONS[oration.source];
-    if (oration.source) credits.appendChild(el('p', 'composed-note translation-credit',
-      'Translation: ' + (presentation ? presentation.label : oration.sourceLabel || oration.source)));
+    if (oration.source || (typeof oration.sourceLabel === 'string' && oration.sourceLabel.trim())) {
+      credits.appendChild(el('p', 'composed-note translation-credit',
+        'Translation: ' + (presentation ? presentation.label : oration.sourceLabel || oration.source)));
+    }
     if (presentation && oration.caution) {
       credits.appendChild(el('p', 'composed-note translation-qualification', presentation.qualification));
       const details = el('details', 'translation-apparatus');

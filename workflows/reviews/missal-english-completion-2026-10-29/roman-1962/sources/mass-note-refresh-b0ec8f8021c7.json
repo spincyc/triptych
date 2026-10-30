@@ -1,0 +1,126 @@
+{
+  "schema": "triptych-source-mass-notes-refresh/v1",
+  "recorded_on": "2026-10-29",
+  "before_sha256": "8e3ff366af9a728868f688bf7e62272a034353fe723b828d00eb92d3599922fb",
+  "after_sha256": "1286ce9396f7952060fbf1a0a37405e59255dae2ce6e02dabbae6e2158bbaabe",
+  "changes": [
+    {
+      "mass": "immaculati-cordis-beatae-mariae-virginis",
+      "old_notes": "The scripture-bearing propers are recorded by their printed citations. Of the orations the Missal prints for this day, the Secret now carries a published Latin body collated to the controlling 1962 edition, on the public-domain witness its row in src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml names; the Collect and the Postcommunion still carry a typed witness-gap state and no body. Identity, rank and the printed citations were read on 2026-08-01 from the embedded text layer of the CMAA facsimile of the controlling edition at printed p. 633 (digital p. 714), not from the facsimile images, and that reading was not visually collated. Normal-form source appointments and printed citation constituents were collated against the held 1962 page images at artifact pp. 714, 715. This establishes appointments and order; it does not verify every word of existing bodies. The separately printed votive Tract and related Paschal continuation are not cumulative normal-feast appointments; their complete conditions remain outside this normal form.",
+      "new_notes": "The Collect, Postcommunion now carry complete source-qualified Latin bodies compared with the actual 1962 page images and separately retained historical foundations. The exact source-specific contributions and publication qualifications are recorded in the per-body Latin provenance ledger; these targets are not represented as word-for-word identical to their older sources. Source controls: Collect: 1922 Mame artifact page1048, printed[18]; historical source keeps its own full prayer and actual cue.; Postcommunion: 1922 Mame artifact page1049, printed[19]; historical source keeps its own full prayer and actual cue. The previous unavailable-body and acquisition claims are retained in the source recovery receipt. This correction claims no new collation of other readings, chants or appointments. The existing Secret and normal-form source appointments remain unchanged. The separately printed votive Tract and related Paschal continuation are not cumulative normal-feast appointments; their complete conditions remain outside this normal form.",
+      "old_notes_sha256": "26504edf448a49a1dd025a5e2950e3e1e1c73699c5afd092d80964d4f8527e08",
+      "conditional_on_admitted_targets": [
+        [
+          "immaculati-cordis-beatae-mariae-virginis",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        [
+          "immaculati-cordis-beatae-mariae-virginis",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ]
+      ]
+    },
+    {
+      "mass": "s-clementis-i-papae-martyris",
+      "old_notes": "Only the scripture-bearing propers are recorded; the orations the Missal prints for this day are appointed and not transcribed here. Identity, rank and the printed citations were read on 2026-08-01 from the embedded text layer of the CMAA facsimile of the controlling edition at printed p. 724 (digital p. 805), not from the facsimile images, and nothing here has been visually collated.",
+      "new_notes": "The Collect, Secret, Postcommunion now carry complete source-qualified Latin bodies compared with the actual 1962 page images and separately retained historical foundations. The exact source-specific contributions and publication qualifications are recorded in the per-body Latin provenance ledger; these targets are not represented as word-for-word identical to their older sources. Source controls: Collect: Feltoe1896 printed42 lines8-10/PDF66 corrected by same-edition erratumPDF24:42 line8 Pater→Pastor. Both full pageimages freshly rechecked400dpi.; Secret: Feltoe1896 printed131 lines1-3; PDF155, September episcopal formularies, continuous three-line prayer at top.; Postcommunion: Feltoe1896 printed132 lines9-11; PDF156, September X Itemalia, continuous three-line prayer before XI Itemalia. The previous unavailable-body and acquisition claims are retained in the source recovery receipt. This correction claims no new collation of other readings, chants or appointments.",
+      "old_notes_sha256": "7d6cf04cbad0b34382056828a0424c756a6d3159e623519793038b9d8b1df634",
+      "conditional_on_admitted_targets": [
+        [
+          "s-clementis-i-papae-martyris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        [
+          "s-clementis-i-papae-martyris",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        [
+          "s-clementis-i-papae-martyris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ]
+      ]
+    },
+    {
+      "mass": "comm-s-zephyrini-papae-martyris",
+      "old_notes": "Read on 2026-08-08 from the embedded text layer of the CMAA facsimile of the controlling edition, at this day's own heading, and nothing has been visually collated. Only the printed scripture citations are recorded: the facsimile sets each oration under a drop capital that the text layer renders as wreckage, so the orations the Missal prints here are appointed and not transcribed. Every citation was re-parsed against the repository's own canonical book list before it was written. The day's own Collect was read on 2026-08-08 from the PAGE IMAGE of leaf n613 of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet Ratisbon 1862 printing the source library already tracks as public domain, and not from any optical text layer -- that printing's own OCR corrupts roughly one word in three. The wording is the 1862's; the 1962 Missal is not quoted for it, and the two books are not asserted to agree.",
+      "new_notes": "The Collect now carries complete source-qualified Latin bodies compared with the actual 1962 page images and separately retained historical foundations. The exact source-specific contributions and publication qualifications are recorded in the per-body Latin provenance ledger; these targets are not represented as word-for-word identical to their older sources. Source controls: Collect: Feltoe1896 printed42 lines8-10/PDF66 corrected by same-edition erratumPDF24:42 line8 Pater→Pastor. Both full pageimages freshly rechecked400dpi. The previous unavailable-body and acquisition claims are retained in the source recovery receipt. This correction claims no new collation of other readings, chants or appointments. The existing formulary referral remains controlling; the source-qualified own prayer overrides only its own named seat.",
+      "old_notes_sha256": "ebf9fc0521bfd2b7234818e3d304bcc830b9f5e276d57ccb63789e7b59d0d5f0",
+      "conditional_on_admitted_targets": [
+        [
+          "comm-s-zephyrini-papae-martyris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ]
+      ]
+    },
+    {
+      "mass": "comm-s-silvestri-i-papae-confessoris",
+      "old_notes": "The Missal does not print a formulary for this day: it prints a directive, and this entry carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the CMAA facsimile at the day's own heading, joined to the Common by the BRACKETED NUMBER the Missal itself prints -- Commune unius aut plurium Summorum Pontificum -- which is unambiguous where the Introit incipit is not, two Commons sharing `Os iusti` and two more sharing `Me exspectaverunt`. THE DAY'S OWN COLLECT IS NOT TRANSCRIBED. The Missal prints one and this pass read it, but the facsimile sets each oration under a drop capital that the text layer renders as wreckage and glues marginal section numbers to the words -- `Cyrilluui`, `quivere earn`, `Ecclesise2517` -- so what was read is not of publishable quality and is not recorded. The Collect slot therefore carries a typed unavailable proper-body state while every other slot is the Common's, which is what the Missal appoints. Nothing here has been visually collated. The day's own Collect was read on 2026-08-08 from the PAGE IMAGE of leaf n114 of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet Ratisbon 1862 printing the source library already tracks as public domain, and not from any optical text layer -- that printing's own OCR corrupts roughly one word in three. The wording is the 1862's; the 1962 Missal is not quoted for it, and the two books are not asserted to agree.",
+      "new_notes": "The Collect now carries complete source-qualified Latin bodies compared with the actual 1962 page images and separately retained historical foundations. The exact source-specific contributions and publication qualifications are recorded in the per-body Latin provenance ledger; these targets are not represented as word-for-word identical to their older sources. Source controls: Collect: Feltoe1896 printed42 lines8-10/PDF66 corrected by same-edition erratumPDF24:42 line8 Pater→Pastor. Both full pageimages freshly rechecked400dpi. The previous unavailable-body and acquisition claims are retained in the source recovery receipt. This correction claims no new collation of other readings, chants or appointments. The existing formulary referral remains controlling; the source-qualified own prayer overrides only its own named seat.",
+      "old_notes_sha256": "a019cae72b1e76a9aea5fe10f48ed75cf242709e12421e6564901b97d9241155",
+      "conditional_on_admitted_targets": [
+        [
+          "comm-s-silvestri-i-papae-confessoris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ]
+      ]
+    },
+    {
+      "mass": "s-laurentii-brundusio-confessoris-ecclesiae-doctoris",
+      "old_notes": "The controlling Missal appoints Missa In medio from the Common of Doctors, except for the following prayer. Read on 2026-08-26 from the page images of the registered CMAA facsimile at printed pp. 594-595 (digital pp. 675-676): the day's Collect at no. 3117 is marked P, while its Secret and Postcommunion at nos. 3119 and 3121 are marked C and therefore resolve from the Common. No registered public-domain witness currently supports the day's own Collect, and the controlling facsimile's artifact record leaves rights unresolved, so that text is not published here. The own Collect retains its existing rights-withheld disposition as an explicit text-free Proper, replacing the Common's different Collect without placeholder prose.",
+      "new_notes": "The Collect now carries complete source-qualified Latin bodies compared with the actual 1962 page images and separately retained historical foundations. The exact source-specific contributions and publication qualifications are recorded in the per-body Latin provenance ledger; these targets are not represented as word-for-word identical to their older sources. Source controls: Collect: 1922 Mame PDF1082/printed[52] for complete Lawrence prayer; PDF368/printed254 for literal contiguous standard conclusion prefix ending in unitate. The previous unavailable-body and acquisition claims are retained in the source recovery receipt. This correction claims no new collation of other readings, chants or appointments. The existing formulary referral remains controlling; the source-qualified own prayer overrides only its own named seat.",
+      "old_notes_sha256": "81b36aea7984e1e5ec3e9ff66db1b1a7356232677439797b752b3800e1d3d4aa",
+      "conditional_on_admitted_targets": [
+        [
+          "s-laurentii-brundusio-confessoris-ecclesiae-doctoris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ]
+      ]
+    },
+    {
+      "mass": "s-ioannis-bosco-confessoris",
+      "old_notes": "The Secret now carries its complete source-qualified Latin body from the independently witnessed 24 February 1930 Salesian petition and literal 1922 Mame conclusion controls, compared with the actual 1962 target. The source-specific public-domain proof preserves the actual conclusion stop and credits English separately as a project-created study translation. The Collect and Postcommunion retain their existing typed source/publication dispositions pending their separate review decision. The previous unavailable-body and acquisition claims are retained as audit history in the source recovery receipt. The separate Paschal votive direction at artifact p. 543, printed p. 462, left column, no. 2077 requires votive use as well as Paschal season. It remains an unsupported source eligibility obligation, not appointed by season alone in the normal Mass.",
+      "new_notes": "The Collect, Secret, Postcommunion now carry complete source-qualified Latin bodies compared with the actual 1962 page images and separately retained historical foundations. The exact source-specific contributions and publication qualifications are recorded in the per-body Latin provenance ledger; these targets are not represented as word-for-word identical to their older sources. Source controls: Collect: Atti del Capitolo Superiore52(24February1930), sourcePDFpage6; own1930prayer, historical source cue unchanged. Standard conclusion controls: passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-conclusion-rule-20261026, passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-father-conclusion-20261026; Secret: Atti del Capitolo Superiore52(24February1930), sourcePDFpage7; own1930prayer, historical source cue unchanged. Standard conclusion controls: passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-conclusion-rule-20261026, passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-father-conclusion-20261026; Postcommunion: Atti del Capitolo Superiore52(24February1930), sourcePDFpage7; own1930prayer, historical source cue unchanged. Standard conclusion controls: passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-conclusion-rule-20261026, passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-christ-conclusion-20261026 The previous unavailable-body and acquisition claims are retained in the source recovery receipt. This correction claims no new collation of other readings, chants or appointments. The separate Paschal votive direction at artifact p. 543, printed p. 462, left column, no. 2077 requires votive use as well as Paschal season. It remains an unsupported source eligibility obligation, not appointed by season alone in the normal Mass.",
+      "old_notes_sha256": "a989df2072c80804bea5b623031a9704290649a59b0dfa9f0b00f5045975a7cd",
+      "conditional_on_admitted_targets": [
+        [
+          "s-ioannis-bosco-confessoris",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        [
+          "s-ioannis-bosco-confessoris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ]
+      ]
+    }
+  ]
+}

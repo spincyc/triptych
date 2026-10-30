@@ -149,6 +149,30 @@ POSTCONCILIAR_TRANSLATIONS_RELATIVE = PurePosixPath(
     "src/sources/inventories/postconciliar-proper-translations-v1.toml"
 )
 POSTCONCILIAR_QUARANTINE_BASELINE_ROWS = 172
+POSTCONCILIAR_QUARANTINE_BASELINE_TARGETS = 174
+POSTCONCILIAR_QUARANTINE_BASELINE_COMMIT = "6aeb96a392a61e216310c3bf71834863afb229f8"
+POSTCONCILIAR_QUARANTINE_BASELINE_INVENTORY_SHA256 = (
+    "f06a68826790a3b828d0f44cccecd52d09ff12c828a01dd330391636bf086128"
+)
+# Canonical, sorted text-free target/provenance/hash records from that snapshot.
+# A row count alone permitted substitution, and current availability loses old
+# negative fingerprints whenever a different English source is admitted.
+POSTCONCILIAR_QUARANTINE_BASELINE_SHA256 = (
+    "ba1bb392b8c1ce8803dbc0b0c5794ad58a1faebf73ee7de54d302db990e1ebd9"
+)
+POSTCONCILIAR_ADMISSION_RECEIPTS_RELATIVE = PurePosixPath(
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar"
+)
+POSTCONCILIAR_QUARANTINE_TARGET_FIELDS = (
+    "mass", "form_id", "proper", "cycle", "occurrence", "lang", "extent",
+)
+POSTCONCILIAR_QUARANTINE_SOURCE_FIELDS = frozenset((
+    "antecedent_calendar", "antecedent_mass", "antecedent_proper",
+    "rejected_detectors", "relation", "rights", "source_id",
+    "verified_artifact_page", "verified_heading", "verified_on_page",
+    "verified_printed_page", "verified_url", "witness", "witness_artifact_id",
+    "witness_passage_id",
+))
 # Rights recorded as `permission` are not automatically grants for every
 # public surface.  ICEL's standing web-display permission, in particular, does
 # not cover the downloadable JSON, public Git corpus, CLI or PDFs assembled by
@@ -217,7 +241,7 @@ _PROTECTED_IDENTITY_MARKERS: dict[str, tuple[int, tuple[str, ...], tuple[str, ..
 # Short enough that every identity has one, long enough to be rare in prose.
 MARKER_LENGTH = 8
 _POSTCONCILIAR_QUARANTINE_HASHES: dict[
-    tuple[str, int, int], frozenset[str]
+    tuple, tuple[tuple[Path, ...], tuple, frozenset[str]]
 ] = {}
 # One command's held map of the copied browser/data inputs; see
 # `held_repository_inputs`. Empty outside a command, so a caller that is not
@@ -1308,51 +1332,197 @@ def protected_source_identity_markers() -> tuple[int, tuple[str, ...], tuple[str
     return _PROTECTED_IDENTITY_MARKERS.get(cache_key, (0, (), ()))
 
 
+def _quarantine_canonical(value: object) -> str:
+    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+
+
+def _quarantine_record(row: object, label: str, *, archived: bool = False) -> dict:
+    """Project only an exact English target, negative hashes and old provenance."""
+    if not isinstance(row, dict):
+        raise ReleaseError(f"{label}: quarantine row is not a table")
+    target = {}
+    for field in POSTCONCILIAR_QUARANTINE_TARGET_FIELDS:
+        value = row.get(field)
+        valid = (
+            type(value) is int and value > 0 if field == "occurrence"
+            else isinstance(value, str) and bool(value.strip())
+        )
+        if not valid:
+            raise ReleaseError(f"{label}: quarantine target has invalid {field}")
+        target[field] = value
+    if target["lang"] != "en" or target["extent"] != "body":
+        raise ReleaseError(f"{label}: quarantine hashes a non-English body")
+    raw = row.get("quarantined_text_sha256")
+    if (not isinstance(raw, list) or not raw
+        or any(not isinstance(digest, str) or SHA256_RE.fullmatch(digest) is None
+               for digest in raw) or len(set(raw)) != len(raw)):
+        raise ReleaseError(f"{label}: quarantine row has malformed exact hashes")
+    if archived:
+        expected = set(POSTCONCILIAR_QUARANTINE_TARGET_FIELDS) | {
+            "quarantined_text_sha256", "source_provenance",
+        }
+        if set(row) != expected:
+            raise ReleaseError(f"{label}: quarantine baseline has unknown or missing fields")
+        provenance = row.get("source_provenance")
+    else:
+        allowed = set(POSTCONCILIAR_QUARANTINE_TARGET_FIELDS) | {
+            "quarantined_text_sha256", "availability", "reason", "note",
+        } | POSTCONCILIAR_QUARANTINE_SOURCE_FIELDS
+        if set(row) - allowed:
+            raise ReleaseError(f"{label}: quarantine row has unknown fields")
+        provenance = {key: row[key] for key in POSTCONCILIAR_QUARANTINE_SOURCE_FIELDS
+                      if key in row}
+    if (not isinstance(provenance, dict) or not provenance
+        or set(provenance) - POSTCONCILIAR_QUARANTINE_SOURCE_FIELDS
+        or not set(provenance) & {"rejected_detectors", "source_id", "witness",
+                                  "witness_artifact_id", "witness_passage_id"}):
+        raise ReleaseError(f"{label}: quarantine source provenance is ambiguous")
+    for field, value in provenance.items():
+        if field == "rejected_detectors":
+            valid = (isinstance(value, list) and bool(value)
+                     and all(isinstance(item, str) and item.strip() for item in value))
+        elif field == "verified_artifact_page":
+            valid = type(value) is int and value > 0
+        else:
+            valid = isinstance(value, str) and bool(value.strip())
+        if not valid:
+            raise ReleaseError(f"{label}: quarantine has invalid source provenance {field}")
+    return {**target, "quarantined_text_sha256": raw, "source_provenance": provenance}
+
+
+def _quarantine_file_signature(path: Path) -> tuple:
+    metadata = path.stat()
+    if path.resolve() != path.absolute() or not path.is_file():
+        raise ReleaseError("postconciliar quarantine inputs must be regular files")
+    return (str(path.resolve()), metadata.st_ino, metadata.st_mtime_ns,
+            metadata.st_ctime_ns, metadata.st_size)
+
+
+def _quarantine_receipt_signature(roots: tuple[Path, ...]) -> tuple:
+    """Include directory membership as well as bytes' change metadata in caching."""
+    return tuple(_quarantine_file_signature(path)
+                 for root in roots for path in sorted(root.glob("*admission.json")))
+
+
 def postconciliar_quarantined_text_hashes() -> frozenset[str]:
-    """Load the ledger's exact English body hashes; never retain the bodies."""
+    """Conserve baseline, active and admitted old hashes without retaining bodies.
+
+    This is an independent negative scanner. Historical fingerprints and source
+    routes never confer rights or make an English translation available.
+    """
     inventory = ROOT / POSTCONCILIAR_TRANSLATIONS_RELATIVE
     label = POSTCONCILIAR_TRANSLATIONS_RELATIVE.as_posix()
     try:
-        stat = inventory.stat()
-        cache_key = (str(inventory.resolve()), stat.st_mtime_ns, stat.st_size)
+        cache_key = _quarantine_file_signature(inventory)
         if cache_key in _POSTCONCILIAR_QUARANTINE_HASHES:
-            return _POSTCONCILIAR_QUARANTINE_HASHES[cache_key]
+            roots, signature, hashes = _POSTCONCILIAR_QUARANTINE_HASHES[cache_key]
+            if signature == _quarantine_receipt_signature(roots):
+                return hashes
         document = tomllib.loads(inventory.read_text(encoding="utf-8"))
     except (OSError, UnicodeError, tomllib.TOMLDecodeError) as exc:
         raise ReleaseError(f"cannot read postconciliar quarantine ledger {label}: {exc}") from exc
-    rows = document.get("untranslated")
-    if not isinstance(rows, list):
-        raise ReleaseError(f"postconciliar quarantine ledger {label} has no row list")
-    values: list[str] = []
-    for index, row in enumerate(rows):
-        if not isinstance(row, dict):
-            raise ReleaseError(f"postconciliar quarantine row {index} is not a table")
-        raw = row.get("quarantined_text_sha256")
-        if raw is None:
-            continue
-        if row.get("lang") != "en" or row.get("extent") != "body":
-            raise ReleaseError(
-                f"postconciliar quarantine row {index} hashes a non-English body"
-            )
-        if (
-            not isinstance(raw, list)
-            or not raw
-            or any(
-                not isinstance(digest, str) or SHA256_RE.fullmatch(digest) is None
-                for digest in raw
-            )
-        ):
-            raise ReleaseError(
-                f"postconciliar quarantine row {index} has malformed exact hashes"
-            )
-        values.extend(raw)
+    registry = document.get("english_quarantine")
+    if (not isinstance(registry, dict)
+        or set(registry) - {"schema", "baseline_commit", "baseline_inventory_sha256",
+                            "baseline", "admission_receipts"}
+        or type(registry.get("schema")) is not int or registry.get("schema") != 1
+        or registry.get("baseline_commit") != POSTCONCILIAR_QUARANTINE_BASELINE_COMMIT
+        or registry.get("baseline_inventory_sha256")
+            != POSTCONCILIAR_QUARANTINE_BASELINE_INVENTORY_SHA256):
+        raise ReleaseError("postconciliar English quarantine has no valid active baseline registry")
+    baseline = registry.get("baseline")
+    if not isinstance(baseline, list):
+        raise ReleaseError("postconciliar English quarantine has no baseline row list")
+    baseline = [_quarantine_record(row, f"quarantine baseline {index}", archived=True)
+                for index, row in enumerate(baseline)]
+    baseline.sort(key=_quarantine_canonical)
+    baseline_digest = hashlib.sha256(_quarantine_canonical(baseline).encode("utf-8")).hexdigest()
+    if (len(baseline) != POSTCONCILIAR_QUARANTINE_BASELINE_TARGETS
+        or baseline_digest != POSTCONCILIAR_QUARANTINE_BASELINE_SHA256):
+        raise ReleaseError("postconciliar English quarantine baseline records changed")
+    values = {digest for row in baseline for digest in row["quarantined_text_sha256"]}
     if len(values) < POSTCONCILIAR_QUARANTINE_BASELINE_ROWS:
         raise ReleaseError(
             "postconciliar English quarantine lost baseline hashes: expected at least "
             f"{POSTCONCILIAR_QUARANTINE_BASELINE_ROWS}, found {len(values)}"
         )
+    baseline_by_target = {
+        tuple(row[field] for field in POSTCONCILIAR_QUARANTINE_TARGET_FIELDS): row
+        for row in baseline
+    }
+    if len(baseline_by_target) != len(baseline):
+        raise ReleaseError("postconciliar English quarantine has ambiguous baseline targets")
+
+    def conserve(row: object, where: str) -> None:
+        record = _quarantine_record(row, where)
+        target = tuple(record[field] for field in POSTCONCILIAR_QUARANTINE_TARGET_FIELDS)
+        original = baseline_by_target.get(target)
+        if original is not None and record != original:
+            raise ReleaseError(f"{where}: quarantine baseline source or hashes changed")
+        values.update(record["quarantined_text_sha256"])
+
+    rows = document.get("untranslated")
+    if not isinstance(rows, list):
+        raise ReleaseError(f"postconciliar quarantine ledger {label} has no row list")
+    for index, row in enumerate(rows):
+        if not isinstance(row, dict):
+            raise ReleaseError(f"postconciliar quarantine row {index} is not a table")
+        if "quarantined_text_sha256" in row:
+            conserve(row, f"quarantine active row {index}")
+
+    receipts = registry.get("admission_receipts", [])
+    if not isinstance(receipts, list):
+        raise ReleaseError("postconciliar quarantine admission receipts must be a row list")
+    registered: dict[Path, str] = {}
+    roots = {ROOT / POSTCONCILIAR_ADMISSION_RECEIPTS_RELATIVE}
+    for receipt in receipts:
+        if not isinstance(receipt, dict) or set(receipt) != {"path", "sha256"}:
+            raise ReleaseError("postconciliar quarantine admission receipt has invalid fields")
+        relative = receipt["path"]
+        expected = receipt["sha256"]
+        if not isinstance(relative, str) or not isinstance(expected, str) or not SHA256_RE.fullmatch(expected):
+            raise ReleaseError("postconciliar quarantine admission receipt has invalid path or hash")
+        parts = PurePosixPath(relative).parts
+        if (len(parts) != 5 or parts[:2] != ("workflows", "reviews")
+            or parts[3] != "postconciliar" or not parts[4].endswith("admission.json")
+            or "/".join(parts) != relative or any(part in (".", "..") for part in parts)):
+            raise ReleaseError("postconciliar quarantine admission receipt path is not canonical")
+        path = ROOT / relative
+        if path in registered:
+            raise ReleaseError("postconciliar quarantine admission receipt is duplicated")
+        registered[path] = expected
+        roots.add(path.parent)
+    ordered_roots = tuple(sorted(roots))
+    try:
+        signature = _quarantine_receipt_signature(ordered_roots)
+        discovered = {Path(item[0]) for item in signature}
+        if discovered != {path.resolve() for path in registered}:
+            raise ReleaseError("postconciliar quarantine admission receipt inventory changed")
+        for path, expected in registered.items():
+            raw = path.read_bytes()
+            if hashlib.sha256(raw).hexdigest() != expected:
+                raise ReleaseError("postconciliar quarantine admission receipt hash changed")
+            receipt = json.loads(raw)
+
+            def visit(value: object) -> None:
+                if isinstance(value, dict):
+                    if "quarantined_text_sha256" in value:
+                        conserve(value, f"quarantine receipt {path.name}")
+                    for item in value.values():
+                        visit(item)
+                elif isinstance(value, list):
+                    for item in value:
+                        visit(item)
+
+            visit(receipt)
+        if signature != _quarantine_receipt_signature(ordered_roots):
+            raise ReleaseError("postconciliar quarantine admission receipts changed while reading")
+        if cache_key != _quarantine_file_signature(inventory):
+            raise ReleaseError("postconciliar quarantine ledger changed while reading")
+    except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+        raise ReleaseError(f"cannot read postconciliar quarantine admission receipts: {exc}") from exc
     hashes = frozenset(values)
-    _POSTCONCILIAR_QUARANTINE_HASHES[cache_key] = hashes
+    _POSTCONCILIAR_QUARANTINE_HASHES[cache_key] = ordered_roots, signature, hashes
     return hashes
 
 

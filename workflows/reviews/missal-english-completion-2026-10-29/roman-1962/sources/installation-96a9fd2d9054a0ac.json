@@ -1,0 +1,182 @@
+{
+  "schema": "triptych-reviewed-source-installation/v1",
+  "recorded_on": "2026-10-29",
+  "source_plans": [
+    {
+      "plan_sha256": "2e5be67be00ddac9b2ed53203f673388c0387d7d3659b9625d5a00de062acd75",
+      "plan_name": "pange-install-plan.json",
+      "targets": [
+        [
+          "mass-of-the-lords-supper",
+          "main",
+          "Hymn at the Translation of the Blessed Sacrament",
+          "all",
+          1
+        ]
+      ],
+      "source_files": [
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/holy-thursday-pange-hymn-referral-20261029.toml",
+          "sha256": "4c10e02a058adac7d35508326c51ca397930ab79421e0928f50eac67a85ff9ca"
+        },
+        {
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/pange-lingua-historical-en-20261029-7dc5b07e/artifact.toml",
+          "sha256": "d56fe3835578dbdfcc7b84cc94cd9aae5a9a4c2091f402bc6c9192d5e5af9a62"
+        },
+        {
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/pange-lingua-historical-en-20261029-7dc5b07e/bilingual.tsv",
+          "sha256": "7dc5b07e7cf017028acf80b5d40971d9a71747e94f036ae85e48a1b6fe0724be"
+        },
+        {
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/pange-lingua-six-stanzas-publish-20261029.toml",
+          "sha256": "94675a2ff5444d5b11b3a1769352a78af9fb2e01cfd48bd1d2b3aea71b2f2114"
+        },
+        {
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/pange-lingua-six-stanzas-verify-20261029.toml",
+          "sha256": "701d1f7a0c50dda17a68bee70ee6ddd270774a8d034b50f97588787984dd7cfe"
+        },
+        {
+          "path": "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1879-volume-10/artifacts/pange-lingua-latin-checked-20261029-15c03ec1/artifact.toml",
+          "sha256": "cb55e216662b591f2d5581c6dbc0cef3256af8f60a15479adc46cedb648c9ee3"
+        },
+        {
+          "path": "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1879-volume-10/artifacts/pange-lingua-latin-checked-20261029-15c03ec1/latin.txt",
+          "sha256": "15c03ec1c4929c2fb54f32f5e4930d80917f90c0ebeb6f9f660cf6b508a50f76"
+        },
+        {
+          "path": "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1879-volume-10/artifacts/pange-lingua-pages-301-302-69fd77df/artifact.toml",
+          "sha256": "cb15c49a12b126e6caae42efdb30db3e73d3d3e718a853a02142e541eaf95a85"
+        },
+        {
+          "path": "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1879-volume-10/artifacts/pange-lingua-pages-301-302-69fd77df/pages.pdf",
+          "sha256": "69fd77df32441bc239a2a18fc2858b669bf3ed21c8da5162531e688f4a281f51"
+        },
+        {
+          "path": "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1879-volume-10/passages/pange-lingua-six-stanzas-checked-20261029.toml",
+          "sha256": "79e952f6a342764cadbf7eef953356d264593f54372f4bb3d7ea152fda6861ff"
+        },
+        {
+          "path": "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1879-volume-10/passages/pange-lingua-six-stanzas-image-20261029.toml",
+          "sha256": "b6ceb3e4219761d9b040af595ef0441993f24a72c74003ce2d8781e63610e6b6"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pange-source-prescribed-assembly-53086b37/artifact.toml",
+          "sha256": "322692cb0b12c6ac7689eb65cd265bc26a0528e5a03c2d772c452d5f50239ae3"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pange-source-prescribed-assembly-53086b37/latin.txt",
+          "sha256": "53086b37a090275ba11b1a8053054ba39c95fd3dc475aabf9c8f5206167d6379"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pange-source-prescribed-assembly.toml",
+          "sha256": "e4892c39dfe80c85b0b247706d5fceab8d616e55ba475b6a1e9391f8c41c0943"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-pange-reading-assembly/editions/2026-10-29-english-assembly/artifacts/pange-cue-and-original-hymn-5e4b22f6/artifact.toml",
+          "sha256": "69405556b8e93e96b7a9326d5229f36aa56aafb2a28c388942d86e7e4f5c0166"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-pange-reading-assembly/editions/2026-10-29-english-assembly/artifacts/pange-cue-and-original-hymn-5e4b22f6/english.txt",
+          "sha256": "5e4b22f6ba9a372b240daa866558fdba02df2b66073716ca8c6d1a0132749e2b"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-pange-reading-assembly/editions/2026-10-29-english-assembly/edition.toml",
+          "sha256": "342eb10bc5343f1479ed81dbe156bf652aea11c675d7c95b866c294dcc41c37a"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-pange-reading-assembly/editions/2026-10-29-english-assembly/passages/pange-cue-and-original-hymn.toml",
+          "sha256": "3dadaa3e8b0d74b1334fe1b32e4482ae9e98fb376142583541d8802e2c092a11"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-pange-reading-assembly/work.toml",
+          "sha256": "ee08146f3570e61c3f420700c97683a8d6be4529d6b97c2620383fb7f6566af3"
+        }
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "target": [
+        "mass-of-the-lords-supper",
+        "main",
+        "Hymn at the Translation of the Blessed Sacrament",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Hymn at the Translation of the Blessed Sacrament",
+        "incipit": "Pange lingua, gloriosi Corporis mysterium",
+        "source": "composed",
+        "notes": "Printed locus printed p. 160, DE SOLEMNI TRANSLATIONE AC REPOSITIONE SACRAMENTI, rubric n. 3; artifact PDF p. 241. No marginal number: the cue stands inside a rubric, not as a numbered text.. Preexisting material under 17 U.S.C. 103(b), corroborated in the tracked public-domain Pustet Ratisbon 1862 at printed p. 162 (Feria V. in Coena Domini, rubric for the procession to the repository); text-layer lines 31630-31633. The hymn is sung as far as Tantum ergo during the procession, and repeated if need be; Tantum ergo is sung at the place of reposition.",
+        "text": "Dum fit processio, cantatur hymnus Pange, lingua, gloriosi Corporis\nmysterium, usque ad verba Tantum ergo; si vero opus sit, idem hymnus\nrepetitur.\n"
+      },
+      "old_untranslated": {
+        "mass": "mass-of-the-lords-supper",
+        "form_id": "main",
+        "proper": "Hymn at the Translation of the Blessed Sacrament",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "Cummiskey printed p. 275 gives Pange lingua in Latin only, but Lasance printed pp. 454-455 has the full facing Latin and English hymn. The slot remains text-free only until exact Lasance visual and tracked-publication passages are registered. Until they are, no exact exemplar is bound and the slot is not sourced. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): Lasance 1945 is public domain, and nothing about this slot is rights restricted; the binding is C3 work."
+      },
+      "old_latin_provenance": [
+        {
+          "mass": "mass-of-the-lords-supper",
+          "form": "",
+          "proper": "Hymn at the Translation of the Blessed Sacrament",
+          "course": "",
+          "cycle": "",
+          "occurrence": 1,
+          "text_sha256": "d07c74cfec3dc6001fb0299c455b420849559908b105d5f70bf2dd5d17894d8f",
+          "provenance_status": "collated",
+          "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mass-of-the-lords-supper-hymn-at-the-translation-of-the-blessed-sacrament",
+          "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+          "locator": "editorial-projection artifact physical lines 33-35; antecedent printed p. 162 (Feria V. in Coena Domini, rubric for the procession to the repository); text-layer lines 31630-31633",
+          "relationship": "editorial-projection-exact-to-target",
+          "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-mass-of-the-lords-supper-orations",
+          "verification_locator": "printed p. 160, DE SOLEMNI TRANSLATIONE AC REPOSITIONE SACRAMENTI, rubric n. 3; artifact PDF p. 241. No marginal number: the cue stands inside a rubric, not as a numbered text.",
+          "transformations": [
+            "join printed line wraps",
+            "remove stress accents",
+            "expand printed ae/oe ligatures to ae/oe",
+            "normalise consonantal i to the calendar's j orthography",
+            "apply the target printing's punctuation",
+            "carry the target's conclusion at its printed length"
+          ],
+          "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: 1962 adds the extent (`usque ad verba Tantum ergo`) and the repetition clause; 1862 gives the cue bare. That is rubric, not hymn text.; 1962 points the incipit `Pange, lingua, gloriosi Corporis mysterium`; 1862 sets it unpointed. Corroboration: none attempted.",
+          "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+          "provenance_confidence": "high",
+          "publication_status": "permitted",
+          "publication_basis": "public-domain",
+          "surfaces": [
+            "web",
+            "download",
+            "print",
+            "cli",
+            "corpus-data",
+            "public-git"
+          ],
+          "publication_source_ids": [
+            "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.triduum-orations-21aa7a98",
+            "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+          ],
+          "publication_locator": "Pustet Ratisbon 1862, printed p. 162 (Feria V. in Coena Domini, rubric for the procession to the repository); text-layer lines 31630-31633; artifact rights_status public-domain on a book first published in 1862",
+          "publication_evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
+        }
+      ],
+      "new_proper_sha256": "fa8aa56e9c0ecabe22a313d60765f0bb66f70b06a482251681f939039a3481e1",
+      "new_english_sha256": "5e4b22f6ba9a372b240daa866558fdba02df2b66073716ca8c6d1a0132749e2b",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-7e5ddbe30004c407.json"
+    }
+  ],
+  "after_hashes": {
+    "src/sources/calendars/roman-1962/propers.yaml": "9f497a39f9eee8888cd4880cffb933e9e5bf5032bb36c78078110c2faab87a62",
+    "src/sources/inventories/roman-1962-proper-translations-v1.toml": "a3109155a0081926ac576d2b3209324debc3a7d47cf14987774e4964886d14c3",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml": "9b66ea341d0dbd744c9b55ffea51a285a2f9366caa6d042b50bbc12f733a5465"
+  }
+}

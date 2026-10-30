@@ -1,0 +1,53 @@
+{
+  "schema": "triptych-finite-source-install-acceptance/v1",
+  "decision": "accepted-corrected-source-packaging-and-complete-study-English",
+  "reviewed_on": "2026-10-29",
+  "scope": "Exactly ten corrected Offerte source postimages and the candidate's witness/side block proposals. Only the complete three-word invitation is selected; no source response or historical Ambrosian rubric/appointment is transferred.",
+  "candidate": ".scratch/postconciliar-ordinary-20261029/second-pass/peace-prayers/offerte-candidate/candidate.json",
+  "accepted_candidate_sha256": "310908c1049c67aa08e73f887d7e8e26bd8df82cd4ecfabd35e7618ee166f932",
+  "original_candidate_sha256": "caa3f10a8abd7c1938b36fee7e59c0f5b72a30205a6bb47e48586bedda96e0bf",
+  "original_preserved_at": ".scratch/postconciliar-ordinary-20261029/second-pass/peace-prayers/offerte-frozen-v1/candidate.json",
+  "correction": {
+    "finding": "The exact whole PDF contains a modern BSB/MDZ digitisation card and logos at AP625. Its original public-domain artifact status exceeded the stated basis, which covered only the historical book and disclaimed the card.",
+    "verified_successor": "Only the whole-PDF artifact's rights_status and rights_basis changed. It is now unresolved/remote and explicitly separates the independently public-domain historical printing from the uncleared modern card/logos. The other nine postimages, including both source bodies and the bounded historical page PDF, are byte-identical to v1.",
+    "disposition": "Resolved. The bounded historical page and its transcription retain their own affirmative underlying-public-domain/mechanical-reproduction basis; the whole mixed container remains untracked."
+  },
+  "checks": {
+    "integrity": "All ten corrected candidate postimage hashes/sizes match, the complete postimage file set equals the candidate paths, and all ten canonical destination paths were absent at review. All four inherited files in the isolated graph are byte-identical to actual canonical records/payload.",
+    "graph": "Existing Ambrosian work/edition and canonical historical OCR parent remain unchanged. Exact whole-PDF hash, remote disposition, bounded-page derivation, same-edition source transcription, passage page bounds, project English work/edition and projected_from testimony are correctly separated. The new English is project-created; its source Latin remains historical wording.",
+    "source_library_command": "PYTHONDONTWRITEBYTECODE=1 TRIPTYCH_LIBRARY_CACHE=0 tools/source-library --root .scratch/postconciliar-ordinary-20261029/second-pass/dialogue-review/offerte-validation-root validate",
+    "source_library_exit_status": 0,
+    "source_library_result": "source-library valid: artifact=5 corpus=0 edition=2 passage=1 segment=0 work=2 bindings=0",
+    "side_selection": "Independently exercised actual mass-ordinary artifact_records, witness_table and side_text. Latin selects only offerte-vobis-pacem, omitting the separate Deo-gratias response. English selects exactly the single fresh study invitation. Both selected body hashes agree with independently computed values below.",
+    "source_images": "Directly inspected original AP193 printed155, adjacent AP194 printed156, title AP11 and terminal AP625. Recomputed the exact whole-PDF SHA256. Fresh scale-to2200 render of whole-parent AP193 and retained one-page PDF are byte-identical; cmp exited0. Directly opened the fresh whole-parent render and fresh secondary2002 AP367 target render.",
+    "receipt": ".scratch/postconciliar-ordinary-20261029/second-pass/dialogue-review/offerte-package-checks.json",
+    "receipt_sha256": "c04ce2ec1861946583f380b992858dda7b832dd7391efff0f80f5956bc64dd56"
+  },
+  "source_and_English_findings": {
+    "identity": "The primary title identifies the 1712 Milan Beniamin and brothers de Sirturis printing under Cardinal Archinto. The existing edition truthfully records separately bound1733 matter; this Ordinary locus at printed155 belongs to the historical1712 body, not the later fascicles.",
+    "whole_pdf_sha256": "180769e3a6989ee863bf6404090ab430fd786fa10def1442485cc8537beaf4ce",
+    "whole_pdf_bytes": 99996171,
+    "whole_pdf_pages": 625,
+    "retained_pdf_sha256": "f9b4ff58a75abc23c180637a198f773c9681e48967b90028adbcb8fef71b36da",
+    "retained_page": "Whole original artifact193, printed155, retained artifact1",
+    "retained_render_sha256": "320f5c1d4280287b5a070a7762c965a59c77950768812ae71f2935ff3b55337f",
+    "latin": "Offerte vobis pacem.",
+    "latin_body_sha256": "1017753b9bd587cccf568fd9f079077fdb1dfe554abeb83b79a42b4d2e7617af",
+    "latin_finding": "Complete separately printed invitation, exact words, capital and full stop, with typographic long s represented as ordinary s. It has no stress accent or drop-cap transformation. The red speaker rubric and separate response sign are apparatus. A separate Deo gratias row accurately preserves source context and is unselected.",
+    "english": "Offer peace to one another.",
+    "english_body_sha256": "b89ee5cc31cea74863da2af1a5f0af45d4028947b1a9a78dac20f321e496610b",
+    "english_finding": "Complete faithful study rendering: Offer preserves the plural imperative, peace renders pacem, and to one another expresses the reciprocal plural recipient vobis in the exchange-of-peace context. No sign wording, first-person exhortation, response or rubric is added. Project AI-authored identity, lack of human review and absence of liturgical approval remain explicit.",
+    "historical_context": "AP194 expressly omits the invitation in Masses for the Dead and repeats it for other Masses. Those Ambrosian conditions, the separate source response and neighboring older prayers remain source apparatus and are not modern Roman appointments.",
+    "target_comparison": "The checked restricted secondary2002 AP367 n128 independently prints the same three invitation words apart from tonic accent and supplies a conditional modern frame. Its role is bounded comparison/assignment evidence, not source-body ownership or an authenticated complete2008 exemplar.",
+    "target_render_sha256": "0285c03129956691507aaded39360a8830e513067cbffadb52fb9d07fa1cf02c"
+  },
+  "consumer_boundaries": [
+    "Only ritus-communionis/offerte-vobis-pacem. Preserve the modern frame's existing conditional use separately from the historical source words.",
+    "Latin remains public-domain antecedent/uncollated; English remains own/project-created study English. This source recovery does not clear the approved-English publication restriction or introduce an ICEL/modern target payload.",
+    "Do not render the source's separate Deo-gratias response as modern Roman execution. Do not transfer historical Masses-for-the-Dead omission or neighboring prayers.",
+    "Whole mixed PDF stays unresolved/remote; only the bounded historical page/text are distributable on their stated basis. No source-ledger, publication-ledger, integrated generation or browser gate is certified here."
+  ],
+  "remaining_corrections": [],
+  "predecessor_acceptances": "Existing 24-row, Apostles-only and simple-blessing source acceptances are unaffected.",
+  "reviewer_mutations": "Exclusive reviewer scratch only; no tracked writes, installation, served generation, commits or pushes."
+}

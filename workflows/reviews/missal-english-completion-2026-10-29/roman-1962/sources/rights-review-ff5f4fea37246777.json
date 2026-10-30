@@ -1,0 +1,131 @@
+{
+  "schema": "triptych-independent-heart-conclusion-lineage-successor-review/v1",
+  "reviewed_utc": "2026-10-30T03:21:28.451036+00:00",
+  "status": "ACCEPT_METADATA_SUCCESSOR_CONDITION_FULFILLED_FOR_ROOT_ADOPTION",
+  "prior_rights_recommendation": {
+    "path": ".scratch/translation-policy-20261029/sanctoral-rights3/RECOMMENDATION.json",
+    "sha256": "7d48a4214f1fe486cc72f90e291e66cf7bb1bd9b4af7dc34c74ca93abd7c715d",
+    "preserved": true
+  },
+  "plan_before": {
+    "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v2/install-plan.json",
+    "sha256": "49b991d946aac52018017451f2a97d3da6c81d1bd32159db007b550cd0604fd6"
+  },
+  "plan_after": {
+    "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/install-plan.json",
+    "sha256": "d217dab054e604da1fdb7a1c7f6aa6605d11c23f74ada62d21ecd859b00b724a"
+  },
+  "correction_receipt": {
+    "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-pending-v3/heart-conclusion-lineage-correction.json",
+    "sha256": "b32796a14dee978860d4df15726210d4dda4f6d20d8ef240a5e2bab78bc2675f"
+  },
+  "scope": "Only closure of the separate1922 Mame PDF368/printed254 conclusion-control edge for Heart Collect nostrum, plus conservation of the prior three exact rights-review cases. Other v2 metadata or plan candidates receive no new rights review here.",
+  "condition_fulfilled": true,
+  "evidence": {
+    "conclusion_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-conclusion-prefix-20261029",
+    "conclusion_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49",
+    "conclusion_artifact_sha256": "976afd4964a6b833ec2bf92ee5cb00825be96a4d7bc789acf34fde0bacac3b6b",
+    "raw_conclusion_controller": {
+      "passage_record": {
+        "schema": 2,
+        "record_type": "passage",
+        "id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-conclusion-prefix-20261029",
+        "edition_id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+        "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49",
+        "artifact_sha256": "976afd4964a6b833ec2bf92ee5cb00825be96a4d7bc789acf34fde0bacac3b6b",
+        "locus": "1922 Tours Mame, printed254, SabbatoSancto, fontblessing prayer Omnipotens...adesto; wholePDF368; extract1",
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "verified_on": "2026-10-29",
+        "context": "Complete historical source control; rights qualification of the modern target is separate.",
+        "notes": "Actual contiguous full formula contains Per Dominum nostrum Jesum Christum Filium tuum: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus: followed by a rubric and the sung Per omnia. The target ends after in unitate; only that literal contiguous prefix is used, with target pointing and no continuation.",
+        "artifact_page_ranges": [
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      "artifact_record": {
+        "schema": 2,
+        "record_type": "artifact",
+        "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49",
+        "edition_id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+        "artifact_type": "facsimile-page-extract",
+        "media_type": "application/pdf",
+        "storage": "tracked",
+        "rights_status": "public-domain",
+        "rights_jurisdiction": "United States",
+        "rights_basis": "United States: the identified Tours 1922 printed words and page images have no remaining copyright term in 2026. Mechanical extraction and machine image/OCR layers add no new human authorship. This basis is the identified printing and mechanical reproduction; it does not rely on a host licence or clear the 1962 target contribution. Underlying historical Latin and images remain excluded from the project CC BY 4.0 grant.",
+        "sha256": "976afd4964a6b833ec2bf92ee5cb00825be96a4d7bc789acf34fde0bacac3b6b",
+        "byte_size": 411321,
+        "page_count": 2,
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/reader-lawrence-controls-20261029-976afd49/source.pdf",
+        "derived_from": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+        "retrieved": "2026-10-29",
+        "provenance": "Mechanically extracted from the already acquired exact whole 1922 Tours Mame PDF, 51720493 bytes, SHA256 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005. Both complete pages independently read at 200 and 400 dpi on 29 October 2026.",
+        "transformation": "pdfseparate then pdfunite; extract page 1 = whole PDF368/printed254 (actual long conclusion); extract page2 = wholePDF1082/printed[52] (complete historical Lawrence Collect). Full page boxes and original image streams retained.",
+        "notes": "No target1962 image or modern Latin contribution is included. The actual historical petition has consilii, no Doctor title and gloria; it is not represented as the complete modern target prayer.",
+        "indexable": false
+      }
+    },
+    "parent_control_now_in_projected_from": true,
+    "parent_control_now_in_publication_source_ids": true,
+    "carrier_TOML_matches_plan_source_record": true,
+    "source_files_verified": 70,
+    "conserved_source_file_count": 69,
+    "changed_source_file": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/immaculati-cordis-beatae-mariae-virginis--collect--1/artifact.toml",
+    "changed_source_file_before_sha256": "b9af81cbd60481425a9cbde6c2543fe87aab0ef449af4dc2fb62c7426de4147a",
+    "changed_source_file_after_sha256": "f0a1b926d9a05757007b13d62243a4a7a51e5f7c27d37b7d3dbd01df3b45c0b9",
+    "all11_Latin_English_proper_absence_and_review_fields_exact_v2_to_v3": true,
+    "all3_prior_review_cases_exact_v1_to_v3": true
+  },
+  "three_prior_cases": [
+    {
+      "identity": [
+        "immaculati-cordis-beatae-mariae-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "Latin_sha256_including_LF": "c8b53661561aac747517845360d96151db5afb6707c0c3b798b8de710559395a",
+      "English_sha256_no_added_LF": "0cb90b2744188032f1232cf3e8a165a6d1c9a04d4ba9b19adad607cb66d19917"
+    },
+    {
+      "identity": [
+        "immaculati-cordis-beatae-mariae-virginis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "Latin_sha256_including_LF": "6c81c9d5ef0912c0e01fc911ab4dc9fe86648e27e49651092086e38d2ca17795",
+      "English_sha256_no_added_LF": "5313dcbd2b70bbd5afe7cb21803276343442ad3a9d561ec7bfd47e18ef90fafe"
+    },
+    {
+      "identity": [
+        "s-laurentii-brundusio-confessoris-ecclesiae-doctoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "Latin_sha256_including_LF": "9d2e1a29fd2df2395e01d7078745f77af00df9a266f597ea9b822c49d4eb8005",
+      "English_sha256_no_added_LF": "f915dcad95b7217e16c83e3f1d8c6ee756d1378adc0518b403ac277aafcdecfb"
+    }
+  ],
+  "source_usage_limit": "The shared passage was originally the Lawrence conclusion control. Its descriptive statement about a target stopping after in unitate does not become a statement about the Heart Collect, whose actual target prefix remains Per Dominum nostrum ... in unitate ejusdem. The Heart use proves the independently printed nostrum; the existing Heart source supplies its own actual abbreviated cue and ejusdem stop. No complete Heart conclusion is inferred from the Lawrence note.",
+  "effect": "The prior qualified three-case section1(6) recommendation remains unchanged for the exact full-body/English hashes. Its missing-conclusion-controller condition is now fulfilled by the first-class artifact lineage and publication evidence. This review is an additive metadata successor, not root rights adoption or canonical admission.",
+  "limits": [
+    "No image audit or English fidelity review was repeated. Existing source/English verdict d5755810808b4a744a5eef1af562fcb4f6376622d18fc119e3c82c1dc4cb323b is preserved and freshly hash-checked.",
+    "No broader conclusion expansion, root grant, source payload change, new modern public-domain claim or additional target is authorised.",
+    "Root adoption, closed tuple/hash/source guard and final canonical source/publication validation remain required."
+  ],
+  "canonical_files_modified": false,
+  "root_adoption_performed": false
+}

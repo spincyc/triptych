@@ -177,8 +177,45 @@ class CommonVirginIIWordRepairTests(unittest.TestCase):
         owners = list(body_owners(BATCH_GUARDS.historical_document(self.document)))
         self.assertEqual((1289,1269,20),(len(prior_records),sum(s=="present" for _,_,s in owners),sum(s=="removed" for _,_,s in owners)))
         self.assertEqual(1244,sum(s=="present" and (k.mass,k.proper) not in ALL_KEYS for k,p,s in owners))
-        # Anthony Collect removed->permitted by accepted latin-seven-rights-adoption.json (2026-10-26).
-        self.assertEqual((1270,16,3),(sum(r["publication_status"]=="permitted" for r in prior_records.values()),sum(r["provenance_status"]=="unresolved" for r in prior_records.values()),sum(r["publication_status"]=="withheld" for r in prior_records.values())))
+        # historical_latin_records selects original owner IDs but keeps their
+        # CURRENT rows. Replay raw statuses separately, applying only the
+        # original declared defaults rather than current admission validation.
+        original = tomllib.loads(BATCH_GUARDS.historical_text(BATCH_GUARDS.LATIN_PATH))
+        raw_records = {LatinKey.from_mapping(row): {**original["defaults"], **row}
+                       for row in original["entries"]}
+        self.assertEqual(set(raw_records), set(prior_records))
+        counts = lambda rows: (sum(r["publication_status"] == "permitted" for r in rows.values()),
+                               sum(r["provenance_status"] == "unresolved" for r in rows.values()),
+                               sum(r["publication_status"] == "withheld" for r in rows.values()))
+        self.assertEqual((1269,17,3), counts(raw_records))
+        removed = {k for k, _, state in owners if state == "removed"}
+        self.assertEqual(removed, {k for k, r in raw_records.items() if r.get("body_status") == "removed"})
+        self.assertTrue(all(raw_records[k]["publication_status"] != "permitted" for k in removed))
+        # The accepted 26 October latin-seven-rights-adoption restores only
+        # Anthony's Collect. Preserve that intermediate status-count contract.
+        anthony = LatinKey("s-antonii-padua-confessoris-ecclesiae-doctoris", "", "Collect", "", "", 1)
+        later = {LatinKey("comm-s-silvestri-i-papae-confessoris", "", "Collect", "", "", 1),
+                 LatinKey("palm-sunday", "", "Procession Antiphon", "", "", 5),
+                 LatinKey("palm-sunday", "", "Procession Antiphon", "", "", 6)}
+        restored = {k for k in removed if prior_records[k]["publication_status"] == "permitted"}
+        self.assertEqual(restored, {anthony} | later)
+        legacy = dict(raw_records)
+        legacy[anthony] = prior_records[anthony]
+        self.assertEqual((1270,16,3), counts(legacy))
+        self.assertEqual(removed - {anthony}, {k for k, r in legacy.items() if r.get("body_status") == "removed"})
+        self.assertEqual(removed - restored, {k for k, r in prior_records.items() if r.get("body_status") == "removed"})
+        # The finite-sixteen authority restores Silvester; installation-a7619040
+        # and its two source reviews map Palm English ordinals 6/7 to Latin 5/6.
+        status = lambda row: (row["publication_status"], row["provenance_status"])
+        self.assertEqual(later, {k for k in prior_records if status(prior_records[k]) != status(legacy[k])})
+        bodies = {k: body for k, body, state in body_owners(self.document) if state == "present"}
+        for k in restored:
+            self.assertEqual(("permitted", "collated"), status(prior_records[k]))
+            self.assertTrue(decision_for(k, bodies[k], self.records).permits(SURFACES))
+        for k in removed - restored:
+            self.assertEqual(status(raw_records[k]), status(prior_records[k]))
+            self.assertFalse(decision_for(k, "Invented body.", self.records).permits(SURFACES))
+        self.assertEqual((1273,13,3), counts(prior_records))
     def test_inherited_two_word_corrections_are_not_pre1955_target_attestation(self):
         pre = C.load_document(ROOT/"src/sources/calendars","roman-pre-1955")
         index = C.mass_index(pre)

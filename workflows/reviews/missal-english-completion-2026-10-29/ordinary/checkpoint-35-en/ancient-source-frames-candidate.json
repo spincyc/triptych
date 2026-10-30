@@ -1,0 +1,912 @@
+{
+  "scope": "Finite ancient-source candidate only; no tracked inventory mutation, no whole-parent partial-English claim, no approved English or authenticated2008 collation",
+  "source_target_evidence": {
+    "artifact": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+    "sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+    "pages": {
+      "n1-sign-cross": 303,
+      "n2-greetings": 303,
+      "n132-communion": 368
+    },
+    "state": "Checked secondary digital2002 images, not authenticated2008. Target words are not copied into the proposed source payloads."
+  },
+  "preserved_parent_anchors": [
+    {
+      "key": "ritus-initiales/introitus",
+      "proposed_kind": "rubric",
+      "retained_responsibility": "entrance action and original semantic anchor; SignCross child after it",
+      "children": [
+        "ritus-initiales/signum-crucis"
+      ]
+    },
+    {
+      "key": "ritus-initiales/salutatio",
+      "proposed_kind": "rubric",
+      "retained_responsibility": "greeting action, source range and original semantic anchor",
+      "children": [
+        "ritus-initiales/greeting-trinitarian",
+        "ritus-initiales/greeting-grace-peace",
+        "ritus-initiales/greeting-lord",
+        "ritus-initiales/greeting-response"
+      ],
+      "held_child": "ritus-initiales/greeting-bishop"
+    },
+    {
+      "key": "ritus-communionis/ecce-agnus-dei",
+      "proposed_kind": "rubric",
+      "retained_responsibility": "showing the host and common once-only invitation, original semantic anchor",
+      "children": [
+        "ritus-communionis/ecce-agnus",
+        "ritus-communionis/beati-ad-cenam",
+        "ritus-communionis/domine-non-sum-dignus"
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "target": "ritus-initiales/signum-crucis",
+      "parent": "ritus-initiales/introitus",
+      "title": "Sign of the Cross",
+      "kind": "dialogue",
+      "latin": {
+        "witness": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+        "artifact": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-ancient-frames-la",
+        "elements": [
+          "signum-crucis"
+        ],
+        "column": "latin",
+        "relation": "antecedent",
+        "collation": "uncollated",
+        "reading_note": "Historical Latin source wording; no complete authenticated2008 collation is claimed.",
+        "note": "Source seq3 is split before its terminal Amen, with its entire source text retained. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+      },
+      "english": {
+        "witness": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+        "artifact": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-ancient-frames-en",
+        "elements": [
+          "signum-crucis"
+        ],
+        "column": "english",
+        "relation": "antecedent",
+        "collation": "uncollated",
+        "reading_note": "Historical English (Cummiskey,1861); this is not approved postconciliar English. The source’s older wording and spelling are retained.",
+        "note": "The1861 source assigns the original whole block to the priest. The target priest/people division is separately evidenced, not misattributed to the source. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+      },
+      "turns": [
+        {
+          "seq": 1,
+          "speaker": "priest",
+          "source_seq": "3-prefix",
+          "target_basis": "secondary2002 n1,PDF303"
+        },
+        {
+          "seq": 2,
+          "speaker": "all",
+          "source_seq": "3-terminal-Amen",
+          "target_basis": "secondary2002 n1,PDF303"
+        }
+      ],
+      "latin_turns": [
+        {
+          "key": "priest-sign-cross",
+          "seq": [
+            1
+          ],
+          "speaker": "priest"
+        },
+        {
+          "key": "people-amen",
+          "seq": [
+            2
+          ],
+          "speaker": "all"
+        }
+      ],
+      "english_turns": [
+        {
+          "key": "priest-sign-cross",
+          "seq": [
+            1
+          ],
+          "speaker": "priest"
+        },
+        {
+          "key": "people-amen",
+          "seq": [
+            2
+          ],
+          "speaker": "all"
+        }
+      ],
+      "turns_basis": "Direct inspection of registered secondary digital2002 PDF303 n1 supplies speaker rubrics only; no target versicle/response mark is invented from historical source P./R. Parent whole-source actor and old repetitions do not control this target placement. Full authenticated2008 collation remains unestablished."
+    },
+    {
+      "target": "ritus-initiales/greeting-trinitarian",
+      "parent": "ritus-initiales/salutatio",
+      "title": "Trinitarian greeting",
+      "kind": "dialogue",
+      "latin": {
+        "witness": "edition.catholic-church.vulgata-clementina.ebible-latvuc",
+        "artifact": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-greeting-trinitarian-la",
+        "elements": [
+          "greeting-trinitarian"
+        ],
+        "column": "latin",
+        "relation": "antecedent",
+        "collation": "uncollated",
+        "reading_note": "Historical Latin source wording; no complete authenticated2008 collation is claimed.",
+        "note": "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+      },
+      "english": {
+        "witness": "edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030",
+        "artifact": "artifact.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030.ancient-frames-study-en",
+        "elements": [
+          "greeting-trinitarian"
+        ],
+        "column": "english",
+        "relation": "own",
+        "reading_note": "Triptych study English from the specified ancient source fragment. Not approved for liturgical use or recitation.",
+        "note": "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+      },
+      "speaker": "priest",
+      "target_basis": "secondary2002 n2,PDF303",
+      "variant": {
+        "group": "salutatio-form",
+        "option": "greeting-trinitarian",
+        "default": true,
+        "default_meaning": "display selection among the three ordinary options, not a compulsory liturgical form"
+      },
+      "latin_turns": [
+        {
+          "key": "greeting-trinitarian",
+          "seq": [
+            1
+          ],
+          "speaker": "priest"
+        }
+      ],
+      "english_turns": [
+        {
+          "key": "greeting-trinitarian",
+          "seq": [
+            1
+          ],
+          "speaker": "priest"
+        }
+      ],
+      "turns_basis": "Direct inspection of registered secondary digital2002 PDF303 n2 supplies speaker rubrics only; no target versicle/response mark is invented from historical source P./R. Parent whole-source actor and old repetitions do not control this target placement. Full authenticated2008 collation remains unestablished."
+    },
+    {
+      "target": "ritus-initiales/greeting-grace-peace",
+      "parent": "ritus-initiales/salutatio",
+      "title": "Grace and peace",
+      "kind": "dialogue",
+      "latin": {
+        "witness": "edition.catholic-church.vulgata-clementina.ebible-latvuc",
+        "artifact": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-greeting-grace-peace-la",
+        "elements": [
+          "greeting-grace-peace"
+        ],
+        "column": "latin",
+        "relation": "antecedent",
+        "collation": "uncollated",
+        "reading_note": "Historical Latin source wording; no complete authenticated2008 collation is claimed.",
+        "note": "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+      },
+      "english": {
+        "witness": "edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030",
+        "artifact": "artifact.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030.ancient-frames-study-en",
+        "elements": [
+          "greeting-grace-peace"
+        ],
+        "column": "english",
+        "relation": "own",
+        "reading_note": "Triptych study English from the specified ancient source fragment. Not approved for liturgical use or recitation.",
+        "note": "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+      },
+      "speaker": "priest",
+      "target_basis": "secondary2002 n2,PDF303",
+      "variant": {
+        "group": "salutatio-form",
+        "option": "greeting-grace-peace",
+        "default": false,
+        "default_meaning": "display selection among the three ordinary options, not a compulsory liturgical form"
+      },
+      "latin_turns": [
+        {
+          "key": "greeting-grace-peace",
+          "seq": [
+            1
+          ],
+          "speaker": "priest"
+        }
+      ],
+      "english_turns": [
+        {
+          "key": "greeting-grace-peace",
+          "seq": [
+            2
+          ],
+          "speaker": "priest"
+        }
+      ],
+      "turns_basis": "Direct inspection of registered secondary digital2002 PDF303 n2 supplies speaker rubrics only; no target versicle/response mark is invented from historical source P./R. Parent whole-source actor and old repetitions do not control this target placement. Full authenticated2008 collation remains unestablished."
+    },
+    {
+      "target": "ritus-initiales/greeting-lord",
+      "parent": "ritus-initiales/salutatio",
+      "title": "The Lord be with you",
+      "kind": "dialogue",
+      "latin": {
+        "witness": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+        "artifact": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-ancient-frames-la",
+        "elements": [
+          "greeting-lord"
+        ],
+        "column": "latin",
+        "relation": "antecedent",
+        "collation": "uncollated",
+        "reading_note": "Historical Latin source wording; no complete authenticated2008 collation is claimed.",
+        "note": "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+      },
+      "english": {
+        "witness": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+        "artifact": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-ancient-frames-en",
+        "elements": [
+          "greeting-lord"
+        ],
+        "column": "english",
+        "relation": "antecedent",
+        "collation": "uncollated",
+        "reading_note": "Historical English (Cummiskey,1861); this is not approved postconciliar English. The source’s older wording and spelling are retained.",
+        "note": "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+      },
+      "speaker": "priest",
+      "target_basis": "secondary2002 n2,PDF303",
+      "variant": {
+        "group": "salutatio-form",
+        "option": "greeting-lord",
+        "default": false,
+        "default_meaning": "display selection among the three ordinary options, not a compulsory liturgical form"
+      },
+      "latin_turns": [
+        {
+          "key": "greeting-lord",
+          "seq": [
+            3
+          ],
+          "speaker": "priest",
+          "printed_marker": "P."
+        }
+      ],
+      "english_turns": [
+        {
+          "key": "greeting-lord",
+          "seq": [
+            3
+          ],
+          "speaker": "priest",
+          "printed_marker": "P."
+        }
+      ],
+      "turns_basis": "Direct inspection of registered secondary digital2002 PDF303 n2 supplies speaker rubrics only; no target versicle/response mark is invented from historical source P./R. Parent whole-source actor and old repetitions do not control this target placement. Full authenticated2008 collation remains unestablished."
+    },
+    {
+      "target": "ritus-initiales/greeting-response",
+      "parent": "ritus-initiales/salutatio",
+      "title": "Common greeting response",
+      "kind": "dialogue",
+      "latin": {
+        "witness": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+        "artifact": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-ancient-frames-la",
+        "elements": [
+          "greeting-response"
+        ],
+        "column": "latin",
+        "relation": "antecedent",
+        "collation": "uncollated",
+        "reading_note": "Historical Latin source wording; no complete authenticated2008 collation is claimed.",
+        "note": "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+      },
+      "english": {
+        "witness": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+        "artifact": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-ancient-frames-en",
+        "elements": [
+          "greeting-response"
+        ],
+        "column": "english",
+        "relation": "antecedent",
+        "collation": "uncollated",
+        "reading_note": "Historical English (Cummiskey,1861); this is not approved postconciliar English. The source’s older wording and spelling are retained.",
+        "note": "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+      },
+      "speaker": "all",
+      "target_basis": "secondary2002 n2,PDF303",
+      "latin_turns": [
+        {
+          "key": "greeting-response",
+          "seq": [
+            4
+          ],
+          "speaker": "all",
+          "printed_marker": "R."
+        }
+      ],
+      "english_turns": [
+        {
+          "key": "greeting-response",
+          "seq": [
+            4
+          ],
+          "speaker": "all",
+          "printed_marker": "R."
+        }
+      ],
+      "turns_basis": "Direct inspection of registered secondary digital2002 PDF303 n2 supplies speaker rubrics only; no target versicle/response mark is invented from historical source P./R. Parent whole-source actor and old repetitions do not control this target placement. Full authenticated2008 collation remains unestablished."
+    },
+    {
+      "target": "ritus-initiales/greeting-bishop",
+      "parent": "ritus-initiales/salutatio",
+      "title": "Bishop greeting: Peace to you",
+      "kind": "dialogue",
+      "latin": {
+        "witness": "edition.catholic-church.vulgata-clementina.ebible-latvuc",
+        "artifact": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-greeting-bishop-la",
+        "elements": [
+          "greeting-bishop"
+        ],
+        "column": "latin",
+        "relation": "antecedent",
+        "collation": "uncollated",
+        "reading_note": "Historical Latin source wording; no complete authenticated2008 collation is claimed.",
+        "note": "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+      },
+      "english": {
+        "witness": "edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030",
+        "artifact": "artifact.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030.ancient-frames-study-en",
+        "elements": [
+          "greeting-bishop"
+        ],
+        "column": "english",
+        "relation": "own",
+        "reading_note": "Triptych study English from the specified ancient source fragment. Not approved for liturgical use or recitation.",
+        "note": "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+      },
+      "speaker": "bishop-required-unrepresentable",
+      "target_basis": "secondary2002 n2,PDF303",
+      "eligible": false,
+      "blocked_by": "The source rubric requires the bishop at this first greeting. Existing condition predicates have no celebrant-role predicate, and TURN_SPEAKERS has no bishop. A universal fourth option or inferred bishop/priest default would erase that condition.",
+      "proposed_activation": "After explicit role-model support; retain a bishop-only label and never make this a universal option.",
+      "held_turn_shape": {
+        "source_latin_seq": [
+          1
+        ],
+        "source_english_seq": [
+          3
+        ],
+        "required_speaker": "bishop",
+        "eligible": false
+      }
+    },
+    {
+      "target": "ritus-communionis/ecce-agnus",
+      "parent": "ritus-communionis/ecce-agnus-dei",
+      "title": "Behold the Lamb of God",
+      "kind": "prayer",
+      "latin": {
+        "witness": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+        "artifact": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-ordinary-ecce-la",
+        "elements": [
+          "ecce-agnus"
+        ],
+        "column": "latin",
+        "relation": "antecedent",
+        "collation": "uncollated",
+        "reading_note": "Historical Latin source wording; no complete authenticated2008 collation is claimed.",
+        "note": "Complete directly checked1922 source sentence; plural peccata and both ecce words are retained. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+      },
+      "english": {
+        "witness": "edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030",
+        "artifact": "artifact.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030.ancient-frames-study-en",
+        "elements": [
+          "ecce-agnus"
+        ],
+        "column": "english",
+        "relation": "own",
+        "reading_note": "Triptych study English from the specified ancient source fragment. Not approved for liturgical use or recitation.",
+        "note": "Complete directly checked1922 source sentence; plural peccata and both ecce words are retained. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+      },
+      "speaker": "priest",
+      "target_basis": "secondary2002 n132,PDF368",
+      "repetitions": 1,
+      "latin_turns": [
+        {
+          "key": "ecce-agnus",
+          "seq": [
+            1
+          ],
+          "speaker": "priest"
+        }
+      ],
+      "english_turns": [
+        {
+          "key": "ecce-agnus",
+          "seq": [
+            4
+          ],
+          "speaker": "priest"
+        }
+      ],
+      "turns_basis": "Direct inspection of registered secondary digital2002 PDF368 n132 supplies speaker rubrics only; no target versicle/response mark is invented from historical source P./R. Parent whole-source actor and old repetitions do not control this target placement. Full authenticated2008 collation remains unestablished."
+    },
+    {
+      "target": "ritus-communionis/beati-ad-cenam",
+      "parent": "ritus-communionis/ecce-agnus-dei",
+      "title": "Blessed are those invited",
+      "kind": "prayer",
+      "latin": {
+        "witness": "edition.catholic-church.vulgata-clementina.ebible-latvuc",
+        "artifact": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-beati-ad-cenam-la",
+        "elements": [
+          "beati-ad-cenam"
+        ],
+        "column": "latin",
+        "relation": "antecedent",
+        "collation": "uncollated",
+        "reading_note": "Historical biblical blessing (Apoc19:9), with source nuptiarum ('of the wedding') omitted. No complete authenticated2008 collation.",
+        "note": "Source Apoc19:9 quoted blessing, with only nuptiarum omitted. The source cœnam ligature and semicolon remain; this does not relabel the whole verse as a target quotation. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+      },
+      "english": {
+        "witness": "edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030",
+        "artifact": "artifact.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030.ancient-frames-study-en",
+        "elements": [
+          "beati-ad-cenam"
+        ],
+        "column": "english",
+        "relation": "own",
+        "reading_note": "Triptych study English from the specified ancient source fragment. Not approved for liturgical use or recitation. The Revelation source’s “of the wedding” is expressly omitted.",
+        "note": "Source Apoc19:9 quoted blessing, with only nuptiarum omitted. The source cœnam ligature and semicolon remain; this does not relabel the whole verse as a target quotation. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+      },
+      "speaker": "priest",
+      "target_basis": "secondary2002 n132,PDF368",
+      "repetitions": 1,
+      "latin_turns": [
+        {
+          "key": "beati-ad-cenam",
+          "seq": [
+            1
+          ],
+          "speaker": "priest"
+        }
+      ],
+      "english_turns": [
+        {
+          "key": "beati-ad-cenam",
+          "seq": [
+            5
+          ],
+          "speaker": "priest"
+        }
+      ],
+      "turns_basis": "Direct inspection of registered secondary digital2002 PDF368 n132 supplies speaker rubrics only; no target versicle/response mark is invented from historical source P./R. Parent whole-source actor and old repetitions do not control this target placement. Full authenticated2008 collation remains unestablished."
+    },
+    {
+      "target": "ritus-communionis/domine-non-sum-dignus",
+      "parent": "ritus-communionis/ecce-agnus-dei",
+      "title": "Lord, I am not worthy",
+      "kind": "prayer",
+      "latin": {
+        "witness": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+        "artifact": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la",
+        "elements": [
+          "domine-non-sum-dignus"
+        ],
+        "column": "latin",
+        "relation": "antecedent",
+        "collation": "uncollated",
+        "reading_note": "Historical Latin source wording; no complete authenticated2008 collation is claimed.",
+        "note": "Only the source prayer row18 is joined; its separate older threefold rubric is not joined. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+      },
+      "english": {
+        "witness": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+        "artifact": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en",
+        "elements": [
+          "domine-non-sum-dignus"
+        ],
+        "column": "english",
+        "relation": "antecedent",
+        "collation": "uncollated",
+        "reading_note": "Historical English (Cummiskey,1861); this is not approved postconciliar English. The source’s older wording and spelling are retained. The separate older threefold instruction is not joined.",
+        "note": "Complete source prayer row18, word for word. Its once-only priest-and-people assignment comes from target n132, not the older priest-only source rubric. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+      },
+      "speaker": "all",
+      "target_basis": "secondary2002 n132,PDF368",
+      "repetitions": 1,
+      "latin_turns": [
+        {
+          "key": "domine-non-sum-dignus",
+          "seq": [
+            18
+          ],
+          "speaker": "all"
+        }
+      ],
+      "english_turns": [
+        {
+          "key": "domine-non-sum-dignus",
+          "seq": [
+            18
+          ],
+          "speaker": "all"
+        }
+      ],
+      "turns_basis": "Direct inspection of registered secondary digital2002 PDF368 n132 supplies speaker rubrics only; no target versicle/response mark is invented from historical source P./R. Parent whole-source actor and old repetitions do not control this target placement. Full authenticated2008 collation remains unestablished."
+    }
+  ],
+  "data_fit": {
+    "current_model_fits": [
+      "single-artifact side_text via these element-keyed derivatives",
+      "two exact source-fragment turns for SignCross; target roles explicitly independent of source",
+      "three ordinary greeting options in existing one-of group, followed by a common response",
+      "three complete Communion children, not one patched source artifact"
+    ],
+    "requires_integration_review": [
+      "whether converting original coarse keys to structural rubrics is permitted without changing anchor identity",
+      "preserve target option order and a clearly display-only default",
+      "split source and target actor evidence; source P./R. letters remain source text, not target turn marks"
+    ],
+    "bishop_blocker": "Source proved but ineligible until explicit celebrant-role conditions and speaker representation exist; no new condition or role is invented by this packet."
+  },
+  "source_parents": {
+    "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20": {
+      "manifest": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-praeparatio-en-turn-divided-complete-2026-10-20/artifact.toml",
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-praeparatio-en-turn-divided-complete-2026-10-20/ordinarium-praeparatio-en-turn-divided-complete-2026-10-20.tsv",
+      "sha256": "c9d7cdfcbb57437a6896b64358749771a56db244d3a1781a241d773f4428db8f",
+      "bytes": 20998
+    },
+    "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la-turn-divided-complete-2026-10-20": {
+      "manifest": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-praeparatio-la-turn-divided-complete-2026-10-20/artifact.toml",
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-praeparatio-la-turn-divided-complete-2026-10-20/ordinarium-praeparatio-la-turn-divided-complete-2026-10-20.tsv",
+      "sha256": "2c5f7a2e4faf87599b1bf47643c2e777d023a0d5e818e4146104d0c6913ddf15",
+      "bytes": 14061
+    },
+    "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en": {
+      "manifest": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-communio-en/artifact.toml",
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-communio-en/ordinarium-communio-en.tsv",
+      "sha256": "f35d635ec2311ade057558ad1531bc6e007126311acc9a554b4b662dfacd0ccc",
+      "bytes": 11675
+    },
+    "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la": {
+      "manifest": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-communio-la/artifact.toml",
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-communio-la/ordinarium-communio-la.tsv",
+      "sha256": "8a58f98ad38a0733f8b6b7645ef0f7ccc2a95995d28478d87aa351a7d87fe67d",
+      "bytes": 5423
+    },
+    "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-54-2-corinthians-3f55ae7b": {
+      "manifest": "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/verse-text-54-2-corinthians-3f55ae7b/artifact.toml",
+      "path": "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/verse-text-54-2-corinthians-3f55ae7b/54-2-corinthians.tsv",
+      "sha256": "3f55ae7bf8b54012b120f3eeac4900a1777aa43a54c8e27e75d3a95e71b1ebe7",
+      "bytes": 31060
+    },
+    "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-53-1-corinthians-82f86d50": {
+      "manifest": "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/verse-text-53-1-corinthians-82f86d50/artifact.toml",
+      "path": "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/verse-text-53-1-corinthians-82f86d50/53-1-corinthians.tsv",
+      "sha256": "82f86d50b5d85bdc8f2e3237be8cd229511f6f77dd7079c11675726544d74f59",
+      "bytes": 47070
+    },
+    "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-50-john-1542486b": {
+      "manifest": "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/verse-text-50-john-1542486b/artifact.toml",
+      "path": "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/verse-text-50-john-1542486b/50-john.tsv",
+      "sha256": "1542486b92076807c978539845d189be3a28cd8f288eaad0f90a3da4ec1e8016",
+      "bytes": 95783
+    },
+    "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-73-apocalypse-8f990cb5": {
+      "manifest": "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/verse-text-73-apocalypse-8f990cb5/artifact.toml",
+      "path": "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/verse-text-73-apocalypse-8f990cb5/73-apocalypse.tsv",
+      "sha256": "8f990cb5a0802df65ba86bc8a25a5a3625d9ff156b79b288d4979d82ac145da7",
+      "bytes": 57646
+    },
+    "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a": {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/dialogues/mame1922-whole.pdf",
+      "sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+      "bytes": 51720493
+    }
+  },
+  "recipes": [
+    {
+      "kind": "partition-and-select",
+      "child": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-ancient-frames-en",
+      "parent": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20",
+      "source_sequences": [
+        "3",
+        "3201",
+        "3202"
+      ],
+      "partition": "seq3 at final ASCII space; concatenation exact",
+      "text_column": "english",
+      "fragments": [
+        {
+          "seq": 1,
+          "element_key": "signum-crucis",
+          "source_seq": "3",
+          "printed_page": "xv",
+          "ia_leaf": "25",
+          "english": "IN the Name of the Father, and of the Son, and of the Holy Ghost.",
+          "notes": "Exact source text partition before terminal Amen.; source assigns the original whole block to the priest, not these target turns."
+        },
+        {
+          "seq": 2,
+          "element_key": "signum-crucis",
+          "source_seq": "3",
+          "printed_page": "xv",
+          "ia_leaf": "25",
+          "english": "Amen.",
+          "notes": "Exact source text partition before terminal Amen.; source assigns the original whole block to the priest, not these target turns."
+        },
+        {
+          "seq": 3,
+          "element_key": "greeting-lord",
+          "source_seq": "3201",
+          "printed_page": "xix",
+          "ia_leaf": "29",
+          "english": "P. The Lord be with you.",
+          "notes": "Whole exact registered source turn; printed P./R. is retained. Its placement here is not the historical placement after Gloria."
+        },
+        {
+          "seq": 4,
+          "element_key": "greeting-response",
+          "source_seq": "3202",
+          "printed_page": "xix",
+          "ia_leaf": "29",
+          "english": "R. And with thy spirit.",
+          "notes": "Whole exact registered source turn; printed P./R. is retained. Its placement here is not the historical placement after Gloria."
+        }
+      ]
+    },
+    {
+      "kind": "partition-and-select",
+      "child": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-ancient-frames-la",
+      "parent": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la-turn-divided-complete-2026-10-20",
+      "source_sequences": [
+        "3",
+        "3201",
+        "3202"
+      ],
+      "partition": "seq3 at final ASCII space; concatenation exact",
+      "text_column": "latin",
+      "fragments": [
+        {
+          "seq": 1,
+          "element_key": "signum-crucis",
+          "source_seq": "3",
+          "printed_page": "xv",
+          "ia_leaf": "25",
+          "latin": "IN Nomine Patris, et Filii, et Spiritus Sancti.",
+          "notes": "Exact source text partition before terminal Amen.; source assigns the original whole block to the priest, not these target turns."
+        },
+        {
+          "seq": 2,
+          "element_key": "signum-crucis",
+          "source_seq": "3",
+          "printed_page": "xv",
+          "ia_leaf": "25",
+          "latin": "Amen.",
+          "notes": "Exact source text partition before terminal Amen.; source assigns the original whole block to the priest, not these target turns."
+        },
+        {
+          "seq": 3,
+          "element_key": "greeting-lord",
+          "source_seq": "3201",
+          "printed_page": "xix",
+          "ia_leaf": "29",
+          "latin": "P. Dominus vobiscum.",
+          "notes": "Whole exact registered source turn; printed P./R. is retained. Its placement here is not the historical placement after Gloria."
+        },
+        {
+          "seq": 4,
+          "element_key": "greeting-response",
+          "source_seq": "3202",
+          "printed_page": "xix",
+          "ia_leaf": "29",
+          "latin": "R. Et cum spiritu tuo.",
+          "notes": "Whole exact registered source turn; printed P./R. is retained. Its placement here is not the historical placement after Gloria."
+        }
+      ]
+    },
+    {
+      "kind": "exact-retained-spans",
+      "child": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-greeting-trinitarian-la",
+      "parent": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-54-2-corinthians-3f55ae7b",
+      "source_reference": {
+        "book": "2Cor",
+        "chapter": "13",
+        "verse": "13"
+      },
+      "source_text": "Gratia Domini nostri Jesu Christi, et caritas Dei, et communicatio Sancti Spiritus sit cum omnibus vobis. Amen.",
+      "retained_spans": [
+        [
+          0,
+          105
+        ]
+      ],
+      "omitted": [
+        {
+          "span": [
+            105,
+            111
+          ],
+          "text": " Amen."
+        }
+      ],
+      "selected_text": "Gratia Domini nostri Jesu Christi, et caritas Dei, et communicatio Sancti Spiritus sit cum omnibus vobis.",
+      "outside_selected_quote_omitted": false
+    },
+    {
+      "kind": "exact-retained-spans",
+      "child": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-greeting-grace-peace-la",
+      "parent": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-53-1-corinthians-82f86d50",
+      "source_reference": {
+        "book": "1Cor",
+        "chapter": "1",
+        "verse": "3"
+      },
+      "source_text": "Gratia vobis, et pax a Deo Patre nostro, et Domino Jesu Christo.",
+      "retained_spans": [
+        [
+          0,
+          64
+        ]
+      ],
+      "omitted": [],
+      "selected_text": "Gratia vobis, et pax a Deo Patre nostro, et Domino Jesu Christo.",
+      "outside_selected_quote_omitted": false
+    },
+    {
+      "kind": "exact-retained-spans",
+      "child": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-greeting-bishop-la",
+      "parent": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-50-john-1542486b",
+      "source_reference": {
+        "book": "John",
+        "chapter": "20",
+        "verse": "19"
+      },
+      "source_text": "Cum ergo sero esset die illo, una sabbatorum, et fores essent clausæ, ubi erant discipuli congregati propter metum Judæorum: venit Jesus, et stetit in medio, et dixit eis: Pax vobis.",
+      "retained_spans": [
+        [
+          172,
+          182
+        ]
+      ],
+      "omitted": [
+        {
+          "span": [
+            0,
+            172
+          ],
+          "text": "Cum ergo sero esset die illo, una sabbatorum, et fores essent clausæ, ubi erant discipuli congregati propter metum Judæorum: venit Jesus, et stetit in medio, et dixit eis: "
+        }
+      ],
+      "selected_text": "Pax vobis.",
+      "outside_selected_quote_omitted": false
+    },
+    {
+      "kind": "exact-retained-spans",
+      "child": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-beati-ad-cenam-la",
+      "parent": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-73-apocalypse-8f990cb5",
+      "source_reference": {
+        "book": "Apoc",
+        "chapter": "19",
+        "verse": "9"
+      },
+      "source_text": "Et dixit mihi: Scribe: Beati qui ad cœnam nuptiarum Agni vocati sunt; et dixit mihi: Hæc verba Dei vera sunt.",
+      "retained_spans": [
+        [
+          23,
+          42
+        ],
+        [
+          52,
+          69
+        ]
+      ],
+      "omitted": [
+        {
+          "span": [
+            42,
+            52
+          ],
+          "text": "nuptiarum "
+        }
+      ],
+      "selected_text": "Beati qui ad cœnam Agni vocati sunt;",
+      "outside_selected_quote_omitted": true
+    }
+  ],
+  "files": {
+    "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/english-completion-20261030-ordinary-ancient-frames-en/text.tsv": {
+      "sha256": "83ebd927f2999d55921a871bfecd79eee13fab46718279ef05d1a2b16f1c927d",
+      "bytes": 807
+    },
+    "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/english-completion-20261030-ordinary-ancient-frames-en/artifact.toml": {
+      "sha256": "21809121e9f28bb4ea5734c01d8ec1f7b509112e921544d5ff8ac7342f8bd915",
+      "bytes": 2468
+    },
+    "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/english-completion-20261030-ordinary-ancient-frames-la/text.tsv": {
+      "sha256": "84ee5ca584b27a273b339fc13058991161636c487c4b4e06a596c1b7b4ff7181",
+      "bytes": 782
+    },
+    "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/english-completion-20261030-ordinary-ancient-frames-la/artifact.toml": {
+      "sha256": "cc9c34ca0bf54b512b6d6b7e8475225a91931c31337ea0192e3e1c18c9e36dc9",
+      "bytes": 2468
+    },
+    "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-greeting-trinitarian-la/text.tsv": {
+      "sha256": "1b064cae8a965c287212b5c385871a6d384985d7d7191b0260030e1c721d8bc9",
+      "bytes": 313
+    },
+    "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-greeting-trinitarian-la/artifact.toml": {
+      "sha256": "5b2e6398cf0a04a92e4cada06573e8bfea3cad9274f3d7a9ed1eb75014d26070",
+      "bytes": 2363
+    },
+    "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-greeting-grace-peace-la/text.tsv": {
+      "sha256": "011831ec8aef16b5c47f5e7df0a3ed383e33e317e82dbe0185f21c6d1afae471",
+      "bytes": 193
+    },
+    "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-greeting-grace-peace-la/artifact.toml": {
+      "sha256": "bf51cb8dfa87179f4acbb3240aaede222682e9d429fc075ee3e2e12502866604",
+      "bytes": 2283
+    },
+    "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-greeting-bishop-la/text.tsv": {
+      "sha256": "f0518b2c6e3de4f9c67c9da4cc60b52b395dae36bd0d6c8cdd04054ec645c24d",
+      "bytes": 189
+    },
+    "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-greeting-bishop-la/artifact.toml": {
+      "sha256": "143ba187a3914f39e3c07d96f9b8344433bbd56b0aa773aafb66122e4cd31331",
+      "bytes": 2455
+    },
+    "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-beati-ad-cenam-la/text.tsv": {
+      "sha256": "74cc53dfe96933c28e3e87f004eb40592e468efc586fbf6b770363369fd9a0c0",
+      "bytes": 378
+    },
+    "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/english-completion-20261030-ordinary-beati-ad-cenam-la/artifact.toml": {
+      "sha256": "9ea277810ce7e1aef0150a8e779a23cced22b19cdbdc4d2aed9ee505dd93cb3d",
+      "bytes": 2494
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-ecce-page/source.pdf": {
+      "sha256": "fd551fe7b0ba168630bf04302df888708f58709a9368746fde8bacfff9a388e1",
+      "bytes": 71627
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-ecce-page/artifact.toml": {
+      "sha256": "4d04cc79752317f916386ec0ac685d822e182d5808dc3dececc43dae92da4040",
+      "bytes": 2180
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-ecce-la/text.tsv": {
+      "sha256": "a3cab73275a00e1be80c8c46642c6a746de1bef11c0c56d6b85c04a20c1cbb1b",
+      "bytes": 259
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-ecce-la/artifact.toml": {
+      "sha256": "08590e622b94f70e96036a03c64aca86a960a00be9a94b2ab56afb7ff2949a7c",
+      "bytes": 2344
+    },
+    "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261030-ordinary-ecce.toml": {
+      "sha256": "0490de7bfee31f261e006cfcbbdded2ffbfc1be72990791eb03dca8686d1af42",
+      "bytes": 1190
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/work.toml": {
+      "sha256": "e42d2084d04d734104da56410252bc4c4105ba00a9af7b376e082d45b92ba378",
+      "bytes": 780
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/edition.toml": {
+      "sha256": "ebadd5197a68f833a4b1e81395291f37bac5f40c1d76a150303b55dde0312b12",
+      "bytes": 835
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/artifacts/ancient-frames-study-en/text.tsv": {
+      "sha256": "f21219d72d3f0fb36b021f6ad1875d22f2c35d2af77f44e26f77baf750490037",
+      "bytes": 2063
+    },
+    "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/artifacts/ancient-frames-study-en/artifact.toml": {
+      "sha256": "1ad4d5545d325f64d25dbe90f0495a03efb059648384114259420be1a3f4ae5f",
+      "bytes": 2554
+    }
+  },
+  "review_state": "Awaiting independent source and English review; project English is AI-authored and no human review is claimed."
+}

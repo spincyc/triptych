@@ -8,6 +8,7 @@ carrier never supplies rights in the underlying third-party Latin.
 from hashlib import sha256
 import json
 from pathlib import Path
+import _proper_finite_latin_20261029 as finite_20261029
 
 BASIS = "qualified-nonoriginal-adaptation"
 KEY_FIELDS = ("mass", "form", "proper", "course", "cycle", "occurrence")
@@ -42,7 +43,35 @@ def _qualified_row(row):
             any(isinstance(one, str) and one in ARTIFACT_SHA256 for one in publication_ids))
 
 
+def _legacy_row_exact(row, *, inherited=False):
+    try:
+        key = tuple(row.get(field) for field in KEY_FIELDS)
+        expected = (INHERITED_ROW_SHA256 if inherited else ROW_SHA256).get(key)
+    except (AttributeError, TypeError):
+        return False
+    return expected is not None and _digest(row) == expected
+
+
+def _legacy_artifact_exact(artifact):
+    try:
+        expected = ARTIFACT_SHA256.get(artifact.get("id"))
+    except (AttributeError, TypeError):
+        return False
+    return expected is not None and _digest(artifact) == expected
+
+
+def _legacy_passage_exact(passage, artifact):
+    try:
+        expected = CONTROLLER_SHA256.get(passage.get("id"))
+    except (AttributeError, TypeError):
+        return False
+    return (_legacy_artifact_exact(artifact) and expected is not None
+            and _digest(passage) == expected)
+
+
 def row_problems(row):
+    if not _legacy_row_exact(row) and finite_20261029.claims_row(row):
+        return finite_20261029.row_problems(row)
     if not _qualified_row(row):
         return []
     key = tuple(row.get(field) for field in KEY_FIELDS)
@@ -55,7 +84,11 @@ def row_problems(row):
     return []
 
 
-def authority_problems(root):
+def authority_problems(root, *, row=None):
+    if (row is not None and not _legacy_row_exact(row)
+            and not _legacy_row_exact(row, inherited=True)
+            and finite_20261029.claims_row(row)):
+        return finite_20261029.authority_problems(root)
     problems = []
     root = Path(root).resolve()
     for relative, expected in ((ADOPTION_PATH, ADOPTION_SHA256),
@@ -82,6 +115,12 @@ INHERITED_ROW_SHA256 = {('commune-summorum-pontificum', '', 'Collect', '', '', 1
 
 
 def inherited_row_exact(row):
+    if _legacy_row_exact(row, inherited=True):
+        return True
+    if _legacy_row_exact(row):
+        return False
+    if finite_20261029.claims_row(row):
+        return finite_20261029.inherited_row_exact(row)
     key = tuple(row.get(field) for field in KEY_FIELDS)
     try:
         expected = INHERITED_ROW_SHA256.get(key)
@@ -91,6 +130,11 @@ def inherited_row_exact(row):
 
 
 def source_problems(row, sources, *, effective_calendar=""):
+    if (not _legacy_row_exact(row)
+            and not _legacy_row_exact(row, inherited=True)
+            and finite_20261029.claims_row(row)):
+        return finite_20261029.source_problems(
+            row, sources, effective_calendar=effective_calendar)
     if not _qualified_row(row):
         return []
     if effective_calendar == "roman-pre-1955" and inherited_row_exact(row):
@@ -123,6 +167,8 @@ def source_problems(row, sources, *, effective_calendar=""):
 
 def artifact_problems(root, artifact, *, sources=None):
     """Keep the normal Sources reader inside the same finite authority."""
+    if not _legacy_artifact_exact(artifact) and finite_20261029.claims_artifact(artifact):
+        return finite_20261029.artifact_problems(root, artifact, sources=sources)
     if (artifact.get("id") not in ARTIFACT_SHA256 and
             artifact.get("edition_id") != EDITION_ID and
             BASIS not in str(artifact.get("rights_basis") or "")):
@@ -163,6 +209,14 @@ def reading_problems(root, passage, artifact, *, sources=None, text=_UNSELECTED_
     range under that carrier. Only the two original passage dictionaries and
     their full physical-line bodies are inside this finite assessment.
     """
+    arguments = {"sources": sources}
+    selected = {}
+    if text is not _UNSELECTED_TEXT:
+        arguments["text"] = selected["text"] = text
+    legacy_passage = _legacy_passage_exact(passage, artifact)
+    if (not legacy_passage
+            and finite_20261029.claims_reading(passage, artifact, **selected)):
+        return finite_20261029.reading_problems(root, passage, artifact, **arguments)
     artifact = artifact or {}
     passage_id = passage.get("id")
     scope = next((one for one in SCOPES if one["source_id"] == passage_id), None)
@@ -185,6 +239,21 @@ def reading_problems(root, passage, artifact, *, sources=None, text=_UNSELECTED_
     return problems
 
 
+def public_scope(latin):
+    """Public qualification for an already validated exact Latin body."""
+    provenance = latin.get("provenance") or {}
+    scope = next((one for one in SCOPES
+                  if one["body_sha256"] == latin.get("text_sha256")
+                  and one["source_id"] == provenance.get("source_id")), None)
+    if scope is not None:
+        return {
+            "source_id": scope["source_id"], "artifact_id": scope["artifact_id"],
+            "body_sha256": scope["body_sha256"],
+            "notice": "Qualified United States editorial assessment under publication policy section 1 priority 6; moderate confidence. The later form is assessed as a nonoriginal adaptation of an older public-domain whole prayer. The theological-redaction originality objection remains. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier.",
+        }
+    return finite_20261029.public_scope(latin)
+
+
 def cache_fingerprint(root):
     """Inputs outside the source tree must invalidate readable corpus caches."""
     root = Path(root).resolve()
@@ -197,4 +266,5 @@ def cache_fingerprint(root):
         except (OSError, ValueError):
             value = "missing-or-invalid"
         digest.update((str(path) + "\0" + value + "\0").encode("utf-8"))
+    digest.update(finite_20261029.cache_fingerprint(root).encode("ascii"))
     return digest.hexdigest()

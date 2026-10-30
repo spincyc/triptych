@@ -1,0 +1,74 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "project-study-translation",
+   "byte_size": 2036,
+   "edition_owned": true,
+   "id": "artifact.triptych.english-completion-20261029-ordinary-chrism.study-english-20261030.ordinary-chrism-study-en-3a4dbe81",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "notes": "This artifact is study English of the Chrism Preface, not an historical English witness, approved Missal wording or a text for recitation. The candidate preserves perfusi as a completed passive participle. Any renderer must retain a body-specific study/non-recitation reading_note. All source-text and target-collation qualifications remain on the Latin artifact.",
+   "page_count": null,
+   "retrieved": "2026-10-30",
+   "rights": "project-created",
+   "rights_basis": "New Triptych AI-authored study English under CC BY 4.0, drafted from the separately identified distributable Latin projection. It copies no historical or approved English translation. The Latin column preserves only independently witnessed public-domain words; Triptych claims no exclusive right in those underlying words.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": "Project study material; no liturgical approval or authority",
+  "date": "2026-10-30",
+  "editors": [
+   "Triptych contributors"
+  ],
+  "id": "edition.triptych.english-completion-20261029-ordinary-chrism.study-english-20261030",
+  "jurisdiction": "United States",
+  "language": "en",
+  "publication": "Triptych project editorial work",
+  "title": "Chrism Preface, Triptych study English,30 October 2026",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.triptych.english-completion-20261029-ordinary-chrism.study-english-20261030.ordinary-chrism-study-en-3a4dbe81",
+   "artifact_type": "project-study-translation",
+   "context": "The complete bounded row was inspected against its declared Latin source pieces and separately reviewed. Four contiguous public-domain spans supply all Latin words; no single old book is represented as printing the assembled Preface. The English retains the prior passive perfusi relation and entire conclusion; it is new project study text only.",
+   "id": "passage.triptych.english-completion-20261029-ordinary-chrism.study-english-20261030.ordinary-chrism-preface",
+   "locus": "Roman 1962 Chrism Preface body before Sanctus; complete new study English row",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "notes": "No target rubric, appointment, Sanctus, historical English or approval-for-recitation claim. Target n1047 was read on its actual page images; exact prayer-word identity ignores only named orthographic/capitalization/pointing/stress/chant-syllable differences.",
+   "readable": true,
+   "rights": "project-created",
+   "rights_basis": "New Triptych AI-authored study English under CC BY 4.0, drafted from the separately identified distributable Latin projection. It copies no historical or approved English translation. The Latin column preserves only independently witnessed public-domain words; Triptych claims no exclusive right in those underlying words.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.triptych.english-completion-20261029-ordinary-chrism.study-english-20261030.ordinary-chrism-preface.json",
+   "verified_on": "2026-10-30",
+   "words": 155
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Triptych contributors",
+  "category": "editorial-projection-and-study-translation",
+  "description": "A project-created source assembly and new English study translation, separately identified from all external books. The Latin words are witnessed by three older public-domain sources and compared with the 1962 target. No claim that a single older witness prints the entire assembled Preface; no historical English, liturgical approval or recitation authority is asserted.",
+  "id": "work.triptych.english-completion-20261029-ordinary-chrism",
+  "languages": [
+   "la",
+   "en"
+  ],
+  "title": "Roman 1962 Chrism Preface: public-domain Latin basis and study English"
+ }
+}

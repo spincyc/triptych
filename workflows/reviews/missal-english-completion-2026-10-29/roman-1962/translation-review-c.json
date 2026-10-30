@@ -1,0 +1,993 @@
+{
+  "schema": "triptych-independent-study-translation-review/v1",
+  "reviewer": "review-c",
+  "date": "2026-10-29",
+  "scope": {
+    "packets": [
+      "packet-07",
+      "packet-08",
+      "packet-09"
+    ],
+    "rows": 46,
+    "posture": "Independent cold semantic review against every supplied Latin word; only review-c scratch files written. No draft or tracked source changed.",
+    "translation_class": "New project-created CC BY 4.0 English STUDY translations; not approved liturgical English or historical human witness translations."
+  },
+  "outcome": "accepted-with-one-explicit-correction",
+  "counts": {
+    "read_in_full": 46,
+    "target_and_latin_bindings_passed": 46,
+    "accepted_original": 45,
+    "accepted_corrected": 1,
+    "accepted_total": 46,
+    "material_findings": 1,
+    "resolved_initial_concerns": 1,
+    "unresolved_blockers": 0
+  },
+  "method": [
+    "Read all 46 complete Latin and English pairs, including all long hymn/antiphon/Litany units; no length-only or sample acceptance.",
+    "Compared clause content, names/titles, agency, requests, source conclusions, response extent, cue/rubric scope, and contemporary English meaning.",
+    "Recomputed exact UTF-8 Latin SHA-256 values; matched input/output target tuples and provenance text hashes.",
+    "Verified all 46 input Latin/provenance snapshots remain byte-for-byte equal to the named current generated source-data targets; all have permitted/public-domain, collated, editorial-projection-exact-to-target and withheld=false records.",
+    "Read publication-policy sections8.2 and15.3 and editorial evidence/source-integrity requirements; relied on supplied independently proved PD Latin records without claiming a new facsimile collation.",
+    "Read the complete corrected second Litany again before accepting its exact text bytes."
+  ],
+  "packet_snapshots": [
+    {
+      "packet": "packet-07",
+      "input_sha256": "d7e609599a8466d291ccd2c4fa1fa14477922f6dfdb7acdf733d59aaec57a371",
+      "output_sha256": "6862671b8900a1347a9bf36f3fd7f2e31347abba9fc541cb9169a8a8fffdd15b",
+      "rows": 16
+    },
+    {
+      "packet": "packet-08",
+      "input_sha256": "fc1faf03e1a063a0cdf738c18de1c230d2cb4bc48e5d89f81fa81cee5522a41c",
+      "output_sha256": "69dbe268b5cc44cf746b3f848dac01e74e67c47e3489c1904e1e51711e3b45eb",
+      "rows": 16
+    },
+    {
+      "packet": "packet-09",
+      "input_sha256": "a6e4b34f6bd095f63e84f1dc09b738bfee818a172f61b9ec8d7a5ca35c9a8efa",
+      "output_sha256": "8fa2c4c3eba6a0b8d8c994d20c7b3aaac80e7568c6e5861b8c19c6befb9b26d8",
+      "rows": 14
+    }
+  ],
+  "material_findings": [
+    {
+      "id": "C-M1",
+      "packet": "packet-09",
+      "row": 2,
+      "target": [
+        "easter-vigil",
+        "main",
+        "Litany of the Saints, second part",
+        "all",
+        1
+      ],
+      "severity": "material-reader-clarity",
+      "latin_excerpt": "Ut domnum apostolicum et omnes ecclesiasticos ordines in sancta religione conservare digneris, te rogamus.",
+      "original_excerpt": "Graciously keep the apostolic lord and all ecclesiastical orders in holy religion, we ask you.",
+      "exact_replacement": "Graciously keep the pope and all ecclesiastical orders in holy religion, we ask you.",
+      "reason": "Domnum apostolicum is the papal title in this Litany. The opaque calque the apostolic lord does not communicate that referent naturally to a contemporary English reader. The pope gives the title's actual referent without adding a name or response.",
+      "lexical_basis": [
+        {
+          "url": "https://logeion.org/dominus",
+          "locus": "DMLBS sense8a (honorific of pope); cites Bede HE IV1 with domnus apostolicus",
+          "used_as": "lexical identification of title only; not as a newly verified missal witness"
+        }
+      ],
+      "original_text_sha256": "49bdeb8b085104791052e2dab7d33b0b70b91cbc06f7d508e4ee888b3b940b90",
+      "corrected_text_sha256": "b340dfbd5fae6a52bc9eb605fe962abd11deb47d486f7ae489b214f0b0c23811",
+      "corrected_text": "Be gracious; spare us, Lord.\nBe gracious; answer us, Lord.\nFrom every evil, deliver us, Lord.\nFrom every sin, deliver.\nFrom everlasting death, deliver.\nThrough the mystery of your holy incarnation, deliver.\nThrough your coming, deliver.\nThrough your birth, deliver.\nThrough your baptism and holy fasting, deliver.\nThrough your cross and passion, deliver.\nThrough your death and burial, deliver.\nThrough your holy resurrection, deliver.\nThrough your wondrous ascension, deliver.\nThrough the coming of the Holy Spirit, the Paraclete, deliver.\nOn the day of judgment, deliver.\nWe sinners ask you: hear us.\nSpare us, we ask you: hear us.\nGraciously govern and preserve your holy Church, we ask you: hear us.\nGraciously keep the pope and all ecclesiastical orders in holy religion, we ask you.\nGraciously humble the enemies of holy Church, we ask you.\nGraciously give peace and true harmony to Christian kings and princes, we ask you.\nGraciously strengthen and preserve us ourselves in your holy service, we ask you.\nRepay all our benefactors with everlasting good things, we ask you.\nGraciously give and preserve the fruits of the earth, we ask you.\nGraciously give eternal rest to all the faithful departed, we ask you.\nGraciously answer us, we ask you.\nLamb of God, who take away the sins of the world, spare us, Lord.\nLamb of God, who take away the sins of the world, answer us, Lord.\nLamb of God, who take away the sins of the world, have mercy on us.\nChrist, hear us.\nChrist, answer us.\n",
+      "disposition": "The complete exact corrected text is accepted in accepted_records. Original packet draft is preserved and requires this replacement before installation."
+    }
+  ],
+  "resolved_findings": [
+    {
+      "id": "C-R1",
+      "packet": "packet-07",
+      "row": 3,
+      "target": [
+        "s-margaritae-mariae-alacoque-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "initial_concern": "investigabiles divitias appeared to conflict with unfathomable riches if investigabilis were taken only as searchable.",
+      "resolution": "Withdrawn after lexical verification. Lewis & Short has a separate negative in-vestigabilis meaning unsearchable and explicitly cites divitiae Christi at Vulgate Eph3:8. This biblical/ecclesiastical use supports the draft's unfathomable in this closely corresponding riches-of-Christ phrase. No Latin emendation or English correction is warranted.",
+      "support": [
+        {
+          "url": "https://alatius.com/ls/index.php?met=up&ord=investiger",
+          "locus": "Lewis & Short: separate entries1 and2 for investigabilis; entry2 cites Eph3:8 and Rom11:33"
+        },
+        {
+          "path": "src/sources/bibles/clementine-vulgate/chapters/Eph/3.json",
+          "locus": "verse8 has investigabiles divitias Christi",
+          "used_as": "local lexical parallel only, not a new verification of the missal source"
+        }
+      ],
+      "disposition": "accepted-original"
+    }
+  ],
+  "source_adequacy": {
+    "unresolved": [],
+    "qualification": "The supplied exact source/provenance records are adequate for this bounded translation review. No new page-image research was performed, and the review does not independently recertify those prior collations."
+  },
+  "blockers": [],
+  "accepted_records": [
+    {
+      "packet": "packet-07",
+      "row": 1,
+      "target": [
+        "s-francisci-borgiae-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "a38026d2ecc085e3af8696e19a7979d14ca4ac63525c9c3f552df7b004a953df",
+      "text_sha256": "e58e7bac84385ace47da7605650b682606bf540e9043d5d654c36d8b929c24eb",
+      "original_text_sha256": "e58e7bac84385ace47da7605650b682606bf540e9043d5d654c36d8b929c24eb",
+      "decision": "accepted-original",
+      "text": "Lord, may blessed Francis, by interceding for us, join the reception of your sacrament in protecting us, so that we may experience the excellence of his way of life and receive the help of his intercession. Through the Lord.",
+      "full_read_note": "Francis, the sacrament, intercession, exemplary life, and both resulting benefits are all present; short conclusion preserved.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-francisci-borgiae-confessoris.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-s-francisci-borgiae-confessoris-postcommunion"
+    },
+    {
+      "packet": "packet-07",
+      "row": 2,
+      "target": [
+        "s-teresiae-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "c4f0dd127033ab6842554d9ae3f39bf267cad403effd276c9b02d46a692f299a",
+      "text_sha256": "32899a7861e6f3ef13520e0eb16b09ea5aba82de5726bb896fff7112219d20bc",
+      "original_text_sha256": "32899a7861e6f3ef13520e0eb16b09ea5aba82de5726bb896fff7112219d20bc",
+      "decision": "accepted-original",
+      "text": "Hear us, God our savior, so that, just as we rejoice in the feast of blessed Teresa, your virgin, we may be nourished by the food of her heavenly teaching and be schooled in the spirit of reverent devotion. Through our Lord Jesus Christ, your Son, who lives and reigns with you in unity.",
+      "full_read_note": "Teresa, rejoicing, heavenly teaching as nourishment, devotion, and the actual in-unitate stop are all present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-teresiae-virginis.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-teresiae-virginis-collect"
+    },
+    {
+      "packet": "packet-07",
+      "row": 3,
+      "target": [
+        "s-margaritae-mariae-alacoque-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "6f1bb0e4d3ddb56e423b325a2fc225b1c520ec998c27a22a90c7be337a44b35b",
+      "text_sha256": "8fa49b6e72294bcd55ae01199f09d1d37046a3fa7d61fa1c57875568adbe39a5",
+      "original_text_sha256": "8fa49b6e72294bcd55ae01199f09d1d37046a3fa7d61fa1c57875568adbe39a5",
+      "decision": "accepted-original",
+      "text": "Lord Jesus Christ, who wonderfully revealed the unfathomable riches of your Heart to blessed Margaret Mary, virgin, grant us, through her merits and by imitating her, that, loving you in all things and above all things, we may be worthy to have a lasting home in that same Heart of yours: who live and reign with God the Father in unity.",
+      "full_read_note": "All petitions and Christ-directed conclusion are present. The negative biblical sense of investigabiles supports unfathomable; see resolved finding C-R1.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-margaritae-mariae-alacoque-virginis.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-margaritae-mariae-alacoque-virginis-collect"
+    },
+    {
+      "packet": "packet-07",
+      "row": 4,
+      "target": [
+        "s-margaritae-mariae-alacoque-virginis",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "746dc899e3096006ad0a6e9513bea40fc84dee6fa88315ff70494bfdc917ee74",
+      "text_sha256": "ef2706857a9f027a939cfac627508d42b9b9c93e182157b78d22f56d6b1a4c9a",
+      "original_text_sha256": "ef2706857a9f027a939cfac627508d42b9b9c93e182157b78d22f56d6b1a4c9a",
+      "decision": "accepted-original",
+      "text": "May the gifts of your people be acceptable to you, Lord; and grant that the divine fire sent forth from the Heart of your Son, with which blessed Margaret Mary burned so intensely, may set us aflame. Through the same Lord of ours.",
+      "full_read_note": "Gifts, the divine fire sent from the Son's Heart, Margaret Mary's ardor, and the request that it inflame us are all present; same-Lord ending preserved.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-margaritae-mariae-alacoque-virginis.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-margaritae-mariae-alacoque-virginis-secret"
+    },
+    {
+      "packet": "packet-07",
+      "row": 5,
+      "target": [
+        "s-petri-alcantara-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "b69aa35a317bd084e9fb316758e297d7c072ed367258c09be42bcbeca84ff794",
+      "text_sha256": "f4f895d5e2c2cab0cb6dfaa1b5ff25aa0201c7d2597ef4b456ecf2b74600d2bf",
+      "original_text_sha256": "f4f895d5e2c2cab0cb6dfaa1b5ff25aa0201c7d2597ef4b456ecf2b74600d2bf",
+      "decision": "accepted-original",
+      "text": "We ask, almighty God, that we who have received heavenly nourishment may, through the intercession of blessed Peter, your confessor, be fortified by it against every adversity. Through the Lord.",
+      "full_read_note": "Heavenly nourishment, Peter's intercession, and protection against every adversity are present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-petri-alcantara-confessoris.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-petri-alcantara-confessoris-postcommunion"
+    },
+    {
+      "packet": "packet-07",
+      "row": 6,
+      "target": [
+        "comm-ss-ursulae-ac-sociarum-virginum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "7139a7c7c404dd2114066d8590a6464dedea04cf96a19363a032d188ea828790",
+      "text_sha256": "73a1965d0edc12ebd20fdccdcefd59fffc17a612f5eb1fd8fe838612039f9a7a",
+      "original_text_sha256": "73a1965d0edc12ebd20fdccdcefd59fffc17a612f5eb1fd8fe838612039f9a7a",
+      "decision": "accepted-original",
+      "text": "Grant us, we ask, Lord our God, to venerate with unceasing devotion the palms of victory of your holy virgins and martyrs Ursula and her companions, so that, since we cannot celebrate them with a worthy mind, we may at least honor them assiduously with humble acts of service. Through the Lord.",
+      "full_read_note": "Ursula and her companions, virgins and martyrs, their palms, continual devotion, unworthiness, and humble service are all present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/comm-ss-ursulae-ac-sociarum-virginum.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-ursulae-ac-sociarum-virginum-collect"
+    },
+    {
+      "packet": "packet-07",
+      "row": 7,
+      "target": [
+        "comm-ss-ursulae-ac-sociarum-virginum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "e5f7bdf9955b0c3ff263081dc4e3b3b6b3dd44536443d2a7c58bcb9e5382e012",
+      "text_sha256": "ad79c400b8d2af186cada6358bba2d3eaa9c3f1bf4110ab58e7d356e4adde7f4",
+      "original_text_sha256": "ad79c400b8d2af186cada6358bba2d3eaa9c3f1bf4110ab58e7d356e4adde7f4",
+      "decision": "accepted-original",
+      "text": "Look, we ask, Lord, upon the gifts set on your altars for the feast of your holy virgins and martyrs Ursula and her companions, so that, as through these blessed mysteries you bestowed glory on them, you may likewise grant us forgiveness. Through the Lord.",
+      "full_read_note": "Ursula and her companions, altar gifts for the feast, their glory through the mysteries, and forgiveness for us are all present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/comm-ss-ursulae-ac-sociarum-virginum.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase2-comm-ss-ursulae-ac-sociarum-virginum-secret"
+    },
+    {
+      "packet": "packet-07",
+      "row": 8,
+      "target": [
+        "comm-ss-ursulae-ac-sociarum-virginum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "5a5b9ed5c33e154ea2ca35320f7447da49d6100622ca563537e849b60d0137d2",
+      "text_sha256": "a9955d7a23769cf3bf24ff81d7e552995c0e8a9bc5ab00e54d14ff78ae87525f",
+      "original_text_sha256": "a9955d7a23769cf3bf24ff81d7e552995c0e8a9bc5ab00e54d14ff78ae87525f",
+      "decision": "accepted-original",
+      "text": "Grant us, we ask, Lord, through the intercession of your holy virgins and martyrs Ursula and her companions, to receive with a pure mind what we touch with our mouth. Through our Lord Jesus Christ.",
+      "full_read_note": "Ursula and her companions and the contrast of the mouth with pure-minded reception are present; actual Jesus-Christ stop preserved.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/comm-ss-ursulae-ac-sociarum-virginum.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-comm-ss-ursulae-ac-sociarum-virginum-postcommunion"
+    },
+    {
+      "packet": "packet-07",
+      "row": 9,
+      "target": [
+        "comm-ss-chrysanthi-dariae-martyrum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "f67d7c89af69dc6aa9c51f20f3ee1897254fd806b06790d87c26bbb62b5db05b",
+      "text_sha256": "21ce1563507c5409f589564eb527f0f8ae3abcc8d30b6f8787cfcffe69d6b6f3",
+      "original_text_sha256": "21ce1563507c5409f589564eb527f0f8ae3abcc8d30b6f8787cfcffe69d6b6f3",
+      "decision": "accepted-original",
+      "text": "We ask, Lord, that the sacrifice of your people, solemnly offered at the anniversary feast of your holy martyrs Chrysanthus and Daria, may be pleasing to you. Through the Lord.",
+      "full_read_note": "Chrysanthus and Daria, their anniversary feast, the people's sacrificial offering, and acceptance are all present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/comm-ss-chrysanthi-dariae-martyrum.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-chrysanthi-dariae-martyrum-secret"
+    },
+    {
+      "packet": "packet-07",
+      "row": 10,
+      "target": [
+        "s-andreae-avellini-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "00a3bd39d4a3d45786fa0bdcf235b9e93d516da6e5fcbe4f84f26578d7b8530c",
+      "text_sha256": "4d4bb7d4f1ff4d2e0307e6a6a5579cf6932fc30e84cfc4fc1e2848e5a9439d2f",
+      "original_text_sha256": "4d4bb7d4f1ff4d2e0307e6a6a5579cf6932fc30e84cfc4fc1e2848e5a9439d2f",
+      "decision": "accepted-original",
+      "text": "God, who set wondrous ascents to yourself in the heart of blessed Andrew, your confessor, through his demanding vow to advance daily in the virtues, grant that through his merits and intercession we may share in that same grace in such a way that, always doing what is more perfect, we may happily be led to the summit of your glory. Through the Lord.",
+      "full_read_note": "Andrew's arduous daily-progress vow, ascents to God, shared grace through merit/intercession, more-perfect actions, and summit of glory are all present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-andreae-avellini-confessoris.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-andreae-avellini-confessoris-collect"
+    },
+    {
+      "packet": "packet-07",
+      "row": 11,
+      "target": [
+        "comm-s-mennae-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "b46f82f52e55aae42bbe21de5555d90065a8ecfd874f099ec3c959d9121fdaee",
+      "text_sha256": "8f6f3474f4b4fac745adf0eaaf0439428362c7bf90968bd7a666fb49e8da9ceb",
+      "original_text_sha256": "8f6f3474f4b4fac745adf0eaaf0439428362c7bf90968bd7a666fb49e8da9ceb",
+      "decision": "accepted-original",
+      "text": "Grant, we ask, almighty God, that we who celebrate the anniversary feast of blessed Mennas, your martyr, may through his intercession be strengthened in love for your name. Through our Lord.",
+      "full_read_note": "Mennas, martyrdom, anniversary feast, intercession, and strengthening in love of the divine name are all present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/comm-s-mennae-martyris.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-s-mennae-martyris-collect"
+    },
+    {
+      "packet": "packet-07",
+      "row": 12,
+      "target": [
+        "s-gregorii-thaumaturgi-episcopi-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "188d2be3aa23062412ef633dbae62f8b1b909a29203f6b734a4cdc9b6b232cb1",
+      "text_sha256": "bd58f645a44bfd40ccfecd0a7bc13b9b72932466f9d5ad2dd711da74ca57c25d",
+      "original_text_sha256": "bd58f645a44bfd40ccfecd0a7bc13b9b72932466f9d5ad2dd711da74ca57c25d",
+      "decision": "accepted-original",
+      "text": "Grant, we ask, almighty God, that the revered feast of blessed Gregory, your confessor and bishop, may increase our devotion and advance our salvation. Through the Lord.",
+      "full_read_note": "Gregory's confessor/bishop titles and both devotion and salvation are present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-gregorii-thaumaturgi-episcopi-confessoris.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-gregorii-thaumaturgi-episcopi-confessoris-collect"
+    },
+    {
+      "packet": "packet-07",
+      "row": 13,
+      "target": [
+        "s-gregorii-thaumaturgi-episcopi-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "b00c49c8034c401d96de8232bfa5c7aaab3d852f634f52a70f218ce829e82a17",
+      "text_sha256": "75463b96f79c1705b4c64332607c483b07538de2af0f4df08bafa3fe8ae58873",
+      "original_text_sha256": "75463b96f79c1705b4c64332607c483b07538de2af0f4df08bafa3fe8ae58873",
+      "decision": "accepted-original",
+      "text": "Grant, we ask, almighty God, that, as we give thanks for the gifts we have received, we may, through the intercession of blessed Gregory, your confessor and bishop, receive greater benefits. Through our Lord.",
+      "full_read_note": "Thanksgiving for gifts received, Gregory's titles/intercession, and greater benefits are all present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-gregorii-thaumaturgi-episcopi-confessoris.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-gregorii-thaumaturgi-episcopi-confessoris-postcommunion"
+    },
+    {
+      "packet": "packet-07",
+      "row": 14,
+      "target": [
+        "comm-s-chrysogoni-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "a61cd82cc930a26f0cfde418e0d9d0fbf4a6db87a7ffca3ce0501a32e1f3ec3e",
+      "text_sha256": "5c5dfc568b291320ce5bb020200fc400f6d25fb5aa11365d6913f830e68886e6",
+      "original_text_sha256": "5c5dfc568b291320ce5bb020200fc400f6d25fb5aa11365d6913f830e68886e6",
+      "decision": "accepted-original",
+      "text": "Lord, through receiving your sacrament, may we be both cleansed of our hidden sins and freed from the snares of our enemies. Through the Lord.",
+      "full_read_note": "Reception of the sacrament, hidden sins, and enemy snares are all present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/comm-s-chrysogoni-martyris.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase2-comm-s-chrysogoni-martyris-postcommunion"
+    },
+    {
+      "packet": "packet-07",
+      "row": 15,
+      "target": [
+        "s-catharinae-virginis-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "416fe94212bfa59cdb3a933da0ebcb77f1bcf9fd66dabc9d1d772453bb512ced",
+      "text_sha256": "d0b6ae9a72bf6a9b8f93cf2bf087db7f0b743717c6643747edc64ba3cfe871db",
+      "original_text_sha256": "d0b6ae9a72bf6a9b8f93cf2bf087db7f0b743717c6643747edc64ba3cfe871db",
+      "decision": "accepted-original",
+      "text": "God, who gave the law to Moses at the summit of Mount Sinai and who, through your holy angels, wondrously placed the body of blessed Catherine, your virgin and martyr, in that same place, grant, we ask, that by her merits and intercession we may be able to reach the mountain that is Christ, who lives and reigns with you in unity.",
+      "full_read_note": "Moses, Sinai, giving of the law, Catherine's body and angels, and Christ as the mountain to reach are all present; actual in-unitate stop preserved.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-catharinae-virginis-martyris.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-sanctoral-repairs.s-catharinae-virginis-martyris-collect"
+    },
+    {
+      "packet": "packet-07",
+      "row": 16,
+      "target": [
+        "s-bibianae-virginis-martyris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "25ab0bc6af50bda4876ef38d7e9b9d85887f39d6554d1ee20eecf63a3c0b302b",
+      "text_sha256": "2e3546a41f9919ee83dbd5320860ad3ca8f28b6b1a218b8d931d1674e53633bc",
+      "original_text_sha256": "2e3546a41f9919ee83dbd5320860ad3ca8f28b6b1a218b8d931d1674e53633bc",
+      "decision": "accepted-original",
+      "text": "Lord, graciously accept the sacrificial offerings dedicated to you on account of the merits of blessed Bibiana, your virgin and martyr, and grant that they may become an everlasting help to us. Through the Lord.",
+      "full_read_note": "Bibiana's titles/merits, the dedicated sacrificial offerings, gracious acceptance, and enduring help are all present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-bibianae-virginis-martyris.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-s-bibianae-virginis-martyris-secret"
+    },
+    {
+      "packet": "packet-08",
+      "row": 1,
+      "target": [
+        "s-bibianae-virginis-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "8b3e5ff4a7563bbbd49521b0161a00c7a15bf94803fba18d9a103669b3f07495",
+      "text_sha256": "f761b494bb851a0c9d225942126406138232faa1962b617d83f11e7e0c15653a",
+      "original_text_sha256": "f761b494bb851a0c9d225942126406138232faa1962b617d83f11e7e0c15653a",
+      "decision": "accepted-original",
+      "text": "Having been filled by the abundance of the divine gift, we ask, Lord our God, that, through the intercession of blessed Bibiana, your virgin and martyr, we may always live by partaking of it. Through the Lord.\n",
+      "full_read_note": "Divine-gift abundance, Bibiana's intercession, and continued life in participation are present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-bibianae-virginis-martyris.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-s-bibianae-virginis-martyris-postcommunion"
+    },
+    {
+      "packet": "packet-08",
+      "row": 2,
+      "target": [
+        "s-petri-chrysologi-episcopi-confessoris-ecclesiae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "ae32997c5f58c0f16e8f6a49045a7b55f6414a1fefbe3676d0255375a87c239d",
+      "text_sha256": "16b93229217dbe811c1ecca8b27262e77f9e64d40afb87b6b0a90a41169a9556",
+      "original_text_sha256": "16b93229217dbe811c1ecca8b27262e77f9e64d40afb87b6b0a90a41169a9556",
+      "decision": "accepted-original",
+      "text": "Lord, may we never lack the devout prayer of Saint Peter Chrysologus, your bishop and teacher; may it win acceptance for our gifts and always obtain your pardon for us. Through our Lord Jesus Christ, your Son, who lives and reigns with you.\n",
+      "full_read_note": "Peter Chrysologus's titles, his prayer, acceptance of the gifts, and pardon are all present; conclusion stops at with you as supplied.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-petri-chrysologi-episcopi-confessoris-ecclesiae.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-petri-chrysologi-episcopi-confessoris-ecclesiae-secret"
+    },
+    {
+      "packet": "packet-08",
+      "row": 3,
+      "target": [
+        "s-petri-chrysologi-episcopi-confessoris-ecclesiae",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "1d92213456735f1d25223bb80ba90f80a65baeaa31219c9a0f11bbfc1fdb8584",
+      "text_sha256": "205f9633c7ccb2f00218c3cc36666bd37d70a279f208a17517ae9da7e365caf0",
+      "original_text_sha256": "205f9633c7ccb2f00218c3cc36666bd37d70a279f208a17517ae9da7e365caf0",
+      "decision": "accepted-original",
+      "text": "Lord, we ask that blessed Peter Chrysologus, your bishop and distinguished teacher, may come forward as an intercessor, so that your sacrifices may bring us salvation. Through the Lord.\n",
+      "full_read_note": "Peter Chrysologus's titles and distinguished teaching, his intercession, and salvation through the sacrifices are all present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-petri-chrysologi-episcopi-confessoris-ecclesiae.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-petri-chrysologi-episcopi-confessoris-ecclesiae-postcommunion"
+    },
+    {
+      "packet": "packet-08",
+      "row": 4,
+      "target": [
+        "comm-s-sabbae-abbatis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "74502b8c7c784423dc10e8c2bd4fae0dfe865c7301ade470b17a3c53210fc3fb",
+      "text_sha256": "afebf6a88019bd34473ca706ccc663985f6759e3fcdb6bf921bde50937f9cffe",
+      "original_text_sha256": "afebf6a88019bd34473ca706ccc663985f6759e3fcdb6bf921bde50937f9cffe",
+      "decision": "accepted-original",
+      "text": "Lord, we ask that the intercession of blessed Sabbas the abbot may commend us to you, so that through his protection we may attain what we cannot achieve by our own merits. Through our Lord.\n",
+      "full_read_note": "Sabbas's abbatial title, commendation by intercession, insufficiency of our merits, and attainment by his patronage are all present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/comm-s-sabbae-abbatis.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-comm-s-sabbae-abbatis-collect"
+    },
+    {
+      "packet": "packet-08",
+      "row": 5,
+      "target": [
+        "comm-s-sabbae-abbatis",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "148a642ee692c936b0b4c839149f324bb749a27d790646ed791cc3f31fd8a5da",
+      "text_sha256": "3f233f9f48bdcf938fe7851cdbba47384668dbe1b5cebe9dd0ea59befe5b980e",
+      "original_text_sha256": "3f233f9f48bdcf938fe7851cdbba47384668dbe1b5cebe9dd0ea59befe5b980e",
+      "decision": "accepted-original",
+      "text": "Lord, we ask that Saint Sabbas may earnestly plead that the sacrificial offerings placed upon the holy altars may bring us salvation. Through our Lord Jesus Christ, your Son: who with you.\n",
+      "full_read_note": "Sabbas, offerings on the holy altars, their salvific effect, and his prayer are all present; incomplete Qui tecum rendered only who with you.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/comm-s-sabbae-abbatis.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-comm-s-sabbae-abbatis-secret"
+    },
+    {
+      "packet": "packet-08",
+      "row": 6,
+      "target": [
+        "comm-s-sabbae-abbatis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "aa4f312160889b7632924f4cb6b1060a87cd9462dd158898f7ecbc6d829e56ca",
+      "text_sha256": "8b559ab4b9f1de261080b582ba7889572898cefc6f4481276600000068fa26d6",
+      "original_text_sha256": "8b559ab4b9f1de261080b582ba7889572898cefc6f4481276600000068fa26d6",
+      "decision": "accepted-original",
+      "text": "Lord, may blessed Sabbas protect us, together with the reception of your sacrament, by interceding for us, so that we may experience what distinguished his way of life and receive the help of his intercession. Through the Lord.\n",
+      "full_read_note": "Sabbas's protection alongside reception of the sacrament, intercession, distinction of life, and help are all present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/comm-s-sabbae-abbatis.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase3-comm-s-sabbae-abbatis-postcommunion"
+    },
+    {
+      "packet": "packet-08",
+      "row": 7,
+      "target": [
+        "advent-1",
+        "main",
+        "Epistle",
+        "all",
+        1
+      ],
+      "latin_sha256": "9e3bdf2b62a9048c4261cb60dd9c9e6ae33919ee36a1b9b21d06de0075144115",
+      "text_sha256": "e01bdf783feb78b7d0622dd02fd901a0e54046f69de309491194b4651f6bef03",
+      "original_text_sha256": "e01bdf783feb78b7d0622dd02fd901a0e54046f69de309491194b4651f6bef03",
+      "decision": "accepted-original",
+      "text": "Brothers: knowing that it is now time for us to rise from sleep. For our salvation is now nearer than when we came to believe. The night has passed, and the day has drawn near. So let us cast away the works of darkness and put on the armor of light. Let us walk honorably, as in the day: not in revelry and drunkenness, not in sexual indulgence and shameless acts, not in strife and jealousy, but put on the Lord Jesus Christ.\n",
+      "full_read_note": "Complete supplied Epistle fragment read, including wakefulness, nearer salvation, night/day, works/armor, all three vice pairs, and putting on Christ; no verse continuation added.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/advent-1.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.primary-advent-1-epistle"
+    },
+    {
+      "packet": "packet-08",
+      "row": 8,
+      "target": [
+        "thursday-after-ash-wednesday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "e3f22028bc7f70842c060833f18f87c518ce1ee70d573bf01f4fe671b8078463",
+      "text_sha256": "1dd824ce0fb76698c07d40f703e20086a0ce7fd91cd49ae6d4d5a0f4c28fc292",
+      "original_text_sha256": "1dd824ce0fb76698c07d40f703e20086a0ce7fd91cd49ae6d4d5a0f4c28fc292",
+      "decision": "accepted-original",
+      "text": "God, whom sin offends and penance appeases, look favorably upon the prayers of your people who plead with you, and turn away the scourges of your anger that we deserve for our sins. Through the Lord.\n",
+      "full_read_note": "Offense by sin, appeasement by penance, supplicant people, deserved scourges, and their removal are all present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/thursday-after-ash-wednesday.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.thursday-after-ash-wednesday-collect"
+    },
+    {
+      "packet": "packet-08",
+      "row": 9,
+      "target": [
+        "friday-after-ash-wednesday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "ac408697159e9eaa194807a8f126766c6fb09171ab795e0a3aaade8b7203d579",
+      "text_sha256": "500e0a98ccf4540b5f25120bb89dbf5c123dbb0ce41119614b126209a400ad08",
+      "original_text_sha256": "500e0a98ccf4540b5f25120bb89dbf5c123dbb0ce41119614b126209a400ad08",
+      "decision": "accepted-original",
+      "text": "Lord, pour into us the Spirit of your love, so that through your loving kindness you may make those whom you have satisfied with the one heavenly bread one in heart. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the same Holy Spirit.\n",
+      "full_read_note": "Spirit of charity, one heavenly bread, concord by divine kindness, and explicitly supplied same Holy Spirit conclusion are present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/friday-after-ash-wednesday.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.friday-after-ash-wednesday-postcommunion"
+    },
+    {
+      "packet": "packet-08",
+      "row": 10,
+      "target": [
+        "passion-thursday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "8c7e08c0ffc0bd8075c41458d91567cfda3a7f73f1395b3ae59b9d0d67cfe49d",
+      "text_sha256": "f3f3fe26a0ce5842ad3a43ecdfeb244824771fc7e6222f2e12e5e2020253ca8b",
+      "original_text_sha256": "f3f3fe26a0ce5842ad3a43ecdfeb244824771fc7e6222f2e12e5e2020253ca8b",
+      "decision": "accepted-original",
+      "text": "Almighty God, grant, we ask, that the dignity of the human condition, wounded by excess, may be restored through the diligent practice of healing restraint. Through our Lord.\n",
+      "full_read_note": "Human dignity wounded by excess and restoration through medicinal restraint are present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/passion-thursday.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.passion-thursday-collect"
+    },
+    {
+      "packet": "packet-08",
+      "row": 11,
+      "target": [
+        "palm-sunday",
+        "main",
+        "Hymn to Christ the King",
+        "all",
+        1
+      ],
+      "latin_sha256": "9fa9831f22966a3865ea1ce602c66e8647751848917715e71c3f8dd655f10a24",
+      "text_sha256": "5c65092cb62e75565515dbe8b395c4e7b5587d4c1c1af8f7afdda5e1fb094ad0",
+      "original_text_sha256": "5c65092cb62e75565515dbe8b395c4e7b5587d4c1c1af8f7afdda5e1fb094ad0",
+      "decision": "accepted-original",
+      "text": "May glory, praise, and honor be yours, Christ the King and Redeemer, to whom the splendor of childhood uttered a devout Hosanna. / You are Israel's King and David's renowned offspring, blessed King, who come in the Lord's name. / The whole heavenly assembly praises you on high, and mortal humanity and all created things together. / The Hebrew people came to meet you with palms; here we stand before you with prayer, vows, and hymns. / They offered you tributes of praise as you were about to suffer; here we sing a song for you as you reign. / They pleased you; may our devotion please you, good King, merciful King, whom all good things please.\n",
+      "full_read_note": "All six supplied hymn units are present: childlike splendor/Hosanna; Israel/David; heavenly and earthly creation; palms and prayer; suffering/reigning praise; and pleasing devotion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/palm-sunday.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.palm-sunday-hymn-to-christ-the-king"
+    },
+    {
+      "packet": "packet-08",
+      "row": 12,
+      "target": [
+        "palm-sunday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "b7594bdb1016aaf99032a79c08e1e8c85d5fe11fd5c51aa6a9e51e10422738d3",
+      "text_sha256": "44511d08ce01661da913863c23038a6fd188122540291616d2f500096f3c7550",
+      "original_text_sha256": "44511d08ce01661da913863c23038a6fd188122540291616d2f500096f3c7550",
+      "decision": "accepted-original",
+      "text": "Almighty, everlasting God, who made our Savior take flesh and undergo the cross so that the human race might have an example of humility to imitate, graciously grant that we may merit both the lessons of his endurance and a share in his resurrection. Through the same Lord.\n",
+      "full_read_note": "Incarnation and cross as humility's example, patience/endurance instruction, resurrection share, and same-Lord conclusion are present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/palm-sunday.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.palm-sunday-collect"
+    },
+    {
+      "packet": "packet-08",
+      "row": 13,
+      "target": [
+        "mass-of-the-lords-supper",
+        "main",
+        "Mandatum Antiphon 8",
+        "all",
+        1
+      ],
+      "latin_sha256": "952817e214d3a295524d676d08112cc1e5d11e4078ca45d6321cf42241407899",
+      "text_sha256": "8657cf22bbb2a83a847830eacad7407f804fd84838009ca4f84f1b7191be59d4",
+      "original_text_sha256": "8657cf22bbb2a83a847830eacad7407f804fd84838009ca4f84f1b7191be59d4",
+      "decision": "accepted-original",
+      "text": "Where charity and love are, God is there.\nV. Christ's love has gathered us into one.\nV. Let us exult and rejoice in him.\nV. Let us fear and love the living God.\nV. And let us love one another with a sincere heart.\n\nAnd the antiphon is repeated:\nWhere charity and love are, God is there.\nV. Therefore, as we gather together into one,\nV. let us take care that we are not divided in mind.\nV. Let malicious quarrels cease, let disputes cease.\nV. And may Christ, God, be in our midst.\n\nAnd the antiphon is repeated:\nWhere charity and love are, God is there.\nV. May we also, together with the blessed, see\nV. your face in glory, Christ, God:\nV. a joy that is boundless and good,\nV. through endless ages of ages. Amen.\n",
+      "full_read_note": "All three Mandatum antiphon units and each supplied V. and repeat cue are present, including sincere love, unity of mind, quarrels/disputes, Christ in the midst, beatific sight, and endless joy.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/mass-of-the-lords-supper.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mass-of-the-lords-supper-mandatum-antiphon-8"
+    },
+    {
+      "packet": "packet-08",
+      "row": 14,
+      "target": [
+        "mass-of-the-lords-supper",
+        "main",
+        "Prayer of the Mandatum",
+        "all",
+        1
+      ],
+      "latin_sha256": "e7a248d3cc2d928604efa1643f210e155cff3c9f87ad9e8a2caaebcf11a6bc1f",
+      "text_sha256": "2a619186033b47a1c8504d5599678dabe54614690be32ef3bc9df5df44a3b481",
+      "original_text_sha256": "2a619186033b47a1c8504d5599678dabe54614690be32ef3bc9df5df44a3b481",
+      "decision": "accepted-original",
+      "text": "Be present, Lord, we ask, in the duty of our service; and because you deigned to wash your disciples' feet, do not disdain the works of your hands, which you commanded us to keep, so that, just as outward stains are washed away here for us and by us, so the inward sins of us all may be washed away by you. May you yourself be pleased to grant this, you who live and reign for ages of ages.\nR. Amen.\n",
+      "full_read_note": "Entire Mandatum prayer read; service, foot washing, works/command, exterior/interior cleansing, and supplied full response retained.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/mass-of-the-lords-supper.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mass-of-the-lords-supper-prayer-of-the-mandatum"
+    },
+    {
+      "packet": "packet-08",
+      "row": 15,
+      "target": [
+        "mass-of-the-lords-supper",
+        "main",
+        "Hymn at the Translation of the Blessed Sacrament",
+        "all",
+        1
+      ],
+      "latin_sha256": "d07c74cfec3dc6001fb0299c455b420849559908b105d5f70bf2dd5d17894d8f",
+      "text_sha256": "2ad6c458fa65317d7e8c5634621c01cf31d6ea763538aa324ea532ab5af97190",
+      "original_text_sha256": "2ad6c458fa65317d7e8c5634621c01cf31d6ea763538aa324ea532ab5af97190",
+      "decision": "accepted-original",
+      "text": "During the procession, the hymn \"Sing, tongue, the mystery of the glorious Body\" is sung, up to the words \"So great, therefore\"; if necessary, the same hymn is repeated.\n",
+      "full_read_note": "Rubric-only source translated as a rubric; Pange lingua and Tantum ergo are translated only to their actual incipit/cue extent, with repetition instruction; no full hymn invented.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/mass-of-the-lords-supper.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mass-of-the-lords-supper-hymn-at-the-translation-of-the-blessed-sacrament"
+    },
+    {
+      "packet": "packet-08",
+      "row": 16,
+      "target": [
+        "easter-vigil",
+        "main",
+        "Litany of the Saints, first part",
+        "all",
+        1
+      ],
+      "latin_sha256": "58091155464c7022bca2c0ade8d97015ba9bc44b13fb7864d42e2c64da1665e8",
+      "text_sha256": "3fd346704ded693238c6474ea62a3fe07fccea6a03fe6a00bc961420e0fac3f6",
+      "original_text_sha256": "3fd346704ded693238c6474ea62a3fe07fccea6a03fe6a00bc961420e0fac3f6",
+      "decision": "accepted-original",
+      "text": "Lord, have mercy.\nChrist, have mercy.\nLord, have mercy.\nChrist, hear us.\nChrist, heed us.\nGod the Father in heaven, have mercy on us.\nGod the Son, Redeemer of the world, have mercy on us.\nGod the Holy Spirit, have mercy on us.\nHoly Trinity, one God, have mercy on us.\nHoly Mary, pray for us.\nHoly Mother of God, pray.\nHoly Virgin of virgins, pray.\nSaint Michael, pray.\nSaint Gabriel, pray.\nSaint Raphael, pray.\nAll holy angels and archangels, pray for us.\nAll holy orders of blessed spirits, pray.\nSaint John the Baptist, pray.\nSaint Joseph, pray.\nAll holy patriarchs and prophets, pray.\nSaint Peter, pray.\nSaint Paul, pray.\nSaint Andrew, pray.\nSaint John, pray.\nAll holy apostles and evangelists, pray.\nAll holy disciples of the Lord, pray.\nSaint Stephen, pray.\nSaint Lawrence, pray.\nSaint Vincent, pray.\nAll holy martyrs, pray.\nSaint Sylvester, pray.\nSaint Gregory, pray.\nSaint Augustine, pray.\nAll holy bishops and confessors, pray.\nAll holy teachers, pray.\nSaint Anthony, pray.\nSaint Benedict, pray.\nSaint Dominic, pray.\nSaint Francis, pray.\nAll holy priests and Levites, pray.\nAll holy monks and hermits, pray.\nSaint Mary Magdalene, pray.\nSaint Agnes, pray.\nSaint Cecilia, pray.\nSaint Agatha, pray.\nSaint Anastasia, pray.\nAll holy virgins and widows, pray.\nAll holy men and women of God, intercede for us.\n",
+      "full_read_note": "Entire first Litany read item by item; every named saint/group and opening invocation retained in order; shortened ora/orate remains pray with no unsupplied for us.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/easter-vigil.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-vigil-litany-of-the-saints-first-part"
+    },
+    {
+      "packet": "packet-09",
+      "row": 1,
+      "target": [
+        "easter-vigil",
+        "main",
+        "Prayer at the Font",
+        "all",
+        1
+      ],
+      "latin_sha256": "ae7f12dec913d798932f0694e31a97bb70e876ba180e80073bbbb090b0a7c8c8",
+      "text_sha256": "aa464edccdd0bf2dce0976b4209943aa5daabc2a2b6cc885c5f88e6c6104362e",
+      "original_text_sha256": "aa464edccdd0bf2dce0976b4209943aa5daabc2a2b6cc885c5f88e6c6104362e",
+      "decision": "accepted-original",
+      "text": "Almighty, everlasting God, look favorably upon the devotion of the people being born anew, who, like a deer, long for the spring of your waters; and graciously grant that the thirst of their faith may sanctify soul and body through the mystery of baptism. Through Christ our Lord,\n",
+      "full_read_note": "Rebirth, people/deer/spring image, faith's thirst, baptism, soul/body sanctification, and actual trailing-comma conclusion are present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/easter-vigil.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-vigil-prayer-at-the-font"
+    },
+    {
+      "packet": "packet-09",
+      "row": 2,
+      "target": [
+        "easter-vigil",
+        "main",
+        "Litany of the Saints, second part",
+        "all",
+        1
+      ],
+      "latin_sha256": "85892ee559b2b905765fe535493694c66ded107a240cf2ea72217fbf84882159",
+      "text_sha256": "b340dfbd5fae6a52bc9eb605fe962abd11deb47d486f7ae489b214f0b0c23811",
+      "original_text_sha256": "49bdeb8b085104791052e2dab7d33b0b70b91cbc06f7d508e4ee888b3b940b90",
+      "decision": "accepted-corrected",
+      "text": "Be gracious; spare us, Lord.\nBe gracious; answer us, Lord.\nFrom every evil, deliver us, Lord.\nFrom every sin, deliver.\nFrom everlasting death, deliver.\nThrough the mystery of your holy incarnation, deliver.\nThrough your coming, deliver.\nThrough your birth, deliver.\nThrough your baptism and holy fasting, deliver.\nThrough your cross and passion, deliver.\nThrough your death and burial, deliver.\nThrough your holy resurrection, deliver.\nThrough your wondrous ascension, deliver.\nThrough the coming of the Holy Spirit, the Paraclete, deliver.\nOn the day of judgment, deliver.\nWe sinners ask you: hear us.\nSpare us, we ask you: hear us.\nGraciously govern and preserve your holy Church, we ask you: hear us.\nGraciously keep the pope and all ecclesiastical orders in holy religion, we ask you.\nGraciously humble the enemies of holy Church, we ask you.\nGraciously give peace and true harmony to Christian kings and princes, we ask you.\nGraciously strengthen and preserve us ourselves in your holy service, we ask you.\nRepay all our benefactors with everlasting good things, we ask you.\nGraciously give and preserve the fruits of the earth, we ask you.\nGraciously give eternal rest to all the faithful departed, we ask you.\nGraciously answer us, we ask you.\nLamb of God, who take away the sins of the world, spare us, Lord.\nLamb of God, who take away the sins of the world, answer us, Lord.\nLamb of God, who take away the sins of the world, have mercy on us.\nChrist, hear us.\nChrist, answer us.\n",
+      "full_read_note": "Entire second Litany read item by item; all deliverance bases, petitions, Christian rulers, benefactors, fruits, departed, Agnus Dei clauses, and terminal Christ invocations are present. Abbreviated responses remain abbreviated. Corrected pope terminology reviewed in full; see C-M1.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/easter-vigil.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-vigil-litany-of-the-saints-second-part"
+    },
+    {
+      "packet": "packet-09",
+      "row": 3,
+      "target": [
+        "easter-vigil",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "2cf4e6e15b85ceb2096ef7ed4324892b04f9a80a7cfbc7b200e7b3f9674514b1",
+      "text_sha256": "bb081387a70febf3b81ef29414152c27b3a786cd003d4460d532d5d4de99563c",
+      "original_text_sha256": "bb081387a70febf3b81ef29414152c27b3a786cd003d4460d532d5d4de99563c",
+      "decision": "accepted-original",
+      "text": "Pour into us, Lord, the Spirit of your love, so that in your loving kindness you may bring into harmony those whom you have satisfied with the paschal sacraments. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the same Holy Spirit, God, for all ages of ages.\n",
+      "full_read_note": "Paschal sacraments, poured Spirit of love, concord, and entire explicitly printed Holy-Spirit/God/ages conclusion are present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/easter-vigil.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-vigil-postcommunion"
+    },
+    {
+      "packet": "packet-09",
+      "row": 4,
+      "target": [
+        "easter-sunday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "c13aa5025088ad089560514702aabe243398a51a3125a7d9ed94c9aee0572595",
+      "text_sha256": "afcec4c7eec00cb69418e251ef72cd2012a25d8c34e31b7113c63d4d2c8f443e",
+      "original_text_sha256": "afcec4c7eec00cb69418e251ef72cd2012a25d8c34e31b7113c63d4d2c8f443e",
+      "decision": "accepted-original",
+      "text": "Pour into us, Lord, the Spirit of your love, so that in your loving kindness you may bring into harmony those whom you have satisfied with the paschal sacraments. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the same.\n",
+      "full_read_note": "Same petition present; conclusion deliberately retains of the same without inventing Holy Spirit after ejusdem.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/easter-sunday.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-sunday-postcommunion"
+    },
+    {
+      "packet": "packet-09",
+      "row": 5,
+      "target": [
+        "easter-monday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "cd1322688c8967f077e8f449d647025a488c01110222d49a9d9e988a9fde30ee",
+      "text_sha256": "edd5e4bebe959dce02c6d68de92e83b5f16be10beffedf1af8906a8731cf0829",
+      "original_text_sha256": "edd5e4bebe959dce02c6d68de92e83b5f16be10beffedf1af8906a8731cf0829",
+      "decision": "accepted-original",
+      "text": "Pour into us, Lord, the Spirit of your love, so that in your loving kindness you may bring into harmony those whom you have satisfied with the paschal sacraments. Through the Lord ... in the unity of the same.\n",
+      "full_read_note": "Same petition present; actual ellipsis and in-unitate-ejusdem extent preserved without filling words.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/easter-monday.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-monday-postcommunion"
+    },
+    {
+      "packet": "packet-09",
+      "row": 6,
+      "target": [
+        "pentecost-monday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "503da04d12a5de1922d1a7963afb953d76fb928cce98b76c3b93c1338c73ee48",
+      "text_sha256": "ee9b88c013fa29630907c86f249f7e7d92bebc0b8a19cb0d81e07c993125625f",
+      "original_text_sha256": "ee9b88c013fa29630907c86f249f7e7d92bebc0b8a19cb0d81e07c993125625f",
+      "decision": "accepted-original",
+      "text": "Graciously sanctify these gifts, Lord, we ask; and, having accepted the offering of the spiritual victim, make us ourselves into a perfect, everlasting gift to you. Through our Lord.\n",
+      "full_read_note": "Gifts sanctified, accepted spiritual-victim offering, and our being made a perfect everlasting gift are present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/pentecost-monday.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-monday-secret"
+    },
+    {
+      "packet": "packet-09",
+      "row": 7,
+      "target": [
+        "pentecost-monday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "d43135c6c7d92a6c067eb119edf55b4b5771f1ded959afbc140c9d311c7ff679",
+      "text_sha256": "71581756f95d14ca7bfee69cd08a371f109b207c6b66e74e53c09cb7c05370bc",
+      "original_text_sha256": "71581756f95d14ca7bfee69cd08a371f109b207c6b66e74e53c09cb7c05370bc",
+      "decision": "accepted-original",
+      "text": "Be present to your people, Lord, we ask, and defend those whom you have imbued with heavenly mysteries from the fury of enemies. Through the Lord.\n",
+      "full_read_note": "People imbued with heavenly mysteries and defense from enemy fury are present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/pentecost-monday.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-monday-postcommunion"
+    },
+    {
+      "packet": "packet-09",
+      "row": 8,
+      "target": [
+        "pentecost-tuesday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "c764d47ce5afcfd6cea8cb16477945c2c66ad38c34e550975173811a8b9937ae",
+      "text_sha256": "ffab1081d3cbdb1d481bdde70ce55c45e6dd94996fe9df6bc50241132270bbf2",
+      "original_text_sha256": "ffab1081d3cbdb1d481bdde70ce55c45e6dd94996fe9df6bc50241132270bbf2",
+      "decision": "accepted-original",
+      "text": "May the offering of the present gift purify us, Lord, we ask, and make us worthy of sacred participation. Through our Lord.\n",
+      "full_read_note": "Offering of the present gift, purification, and worthiness for sacred participation are present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/pentecost-tuesday.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-tuesday-secret"
+    },
+    {
+      "packet": "packet-09",
+      "row": 9,
+      "target": [
+        "pentecost-ember-wednesday",
+        "main",
+        "Second Alleluia",
+        "all",
+        1
+      ],
+      "latin_sha256": "ffb81b41664b394f896ca1e4a08258361e4e605285923035f1d2f65a154ba51c",
+      "text_sha256": "9d0540b2b9cb9a42730296ed4704247e1e3a6ca8adac3e64b947801c91cc724b",
+      "original_text_sha256": "9d0540b2b9cb9a42730296ed4704247e1e3a6ca8adac3e64b947801c91cc724b",
+      "decision": "accepted-original",
+      "text": "Alleluia, alleluia. V. Come, Holy Spirit, fill the hearts of your faithful, and light in them the fire of your love.\n",
+      "full_read_note": "Both Alleluias, V., Holy Spirit, hearts of the faithful, and kindling of love are present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/pentecost-ember-wednesday.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-pentecost-ember-wednesday-second-alleluia"
+    },
+    {
+      "packet": "packet-09",
+      "row": 10,
+      "target": [
+        "pentecost-ember-friday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "eb1ce08f4fc787f02ee9b3b870cc0f6803ece64342bfaca942633feb1809031f",
+      "text_sha256": "101b291facb4d914afd5bb322f7494dc06cf8fa74c3007181ada52e448d24820",
+      "original_text_sha256": "101b291facb4d914afd5bb322f7494dc06cf8fa74c3007181ada52e448d24820",
+      "decision": "accepted-original",
+      "text": "May that divine fire, which through the Holy Spirit kindled the hearts of the disciples of Christ your Son, consume the sacrifices offered in your sight, Lord. Through the same Lord of ours ... in the unity of the same.\n",
+      "full_read_note": "Offered sacrifices, consuming divine fire, disciples of Christ the Son, Holy Spirit, and actual abbreviated same-Lord/ellipsis/ejusdem conclusion are present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/pentecost-ember-friday.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-ember-friday-secret"
+    },
+    {
+      "packet": "packet-09",
+      "row": 11,
+      "target": [
+        "pentecost-2",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "c70bcf3d765c2038d1af873167d6a0ba7fb6b18327ed38e8ddcb0ce9fa8e780b",
+      "text_sha256": "b4350b043ef01b09c641a22c8042e9454011f3bb4dc452b316b34bc5a9761822",
+      "original_text_sha256": "b4350b043ef01b09c641a22c8042e9454011f3bb4dc452b316b34bc5a9761822",
+      "decision": "accepted-original",
+      "text": "Make us always have both fear and love of your holy name, Lord, for you never leave without your guidance those whom you establish in the steadfastness of your love. Through our Lord.\n",
+      "full_read_note": "Perpetual fear and love of the divine name, unfailing guidance, and establishment in firm divine love are present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/pentecost-2.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-2-collect"
+    },
+    {
+      "packet": "packet-09",
+      "row": 12,
+      "target": [
+        "pentecost-9",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "f655e30a1e543e2f361fad5014b481f80c8e8d5c0dacc1f7ac94b555d0d80494",
+      "text_sha256": "374caea45fee5a42695981ed7b2ca96eef45550b2420c7974fa346130e575e03",
+      "original_text_sha256": "374caea45fee5a42695981ed7b2ca96eef45550b2420c7974fa346130e575e03",
+      "decision": "accepted-original",
+      "text": "May the ears of your mercy be open, Lord, to the prayers of those who plead; and, so that you may grant those who ask what they desire, make them ask for what pleases you. Through our Lord.\n",
+      "full_read_note": "Merciful hearing, petitioners' desires, and the request that they ask what pleases God are present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/pentecost-9.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-9-collect"
+    },
+    {
+      "packet": "packet-09",
+      "row": 13,
+      "target": [
+        "september-ember-wednesday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "7124589a58d990e82bde57e5490109b76db17d82ab7d9af302f13b94d51f8793",
+      "text_sha256": "d0cdfb34058c533f3b5e450d5d6046381eb351e85ac57592149c5e98a45b3623",
+      "original_text_sha256": "d0cdfb34058c533f3b5e450d5d6046381eb351e85ac57592149c5e98a45b3623",
+      "decision": "accepted-original",
+      "text": "May our frailty be upheld by the remedies of your mercy, Lord, we ask, so that, worn down by its own condition, it may be restored by your kindness. Through our Lord.\n",
+      "full_read_note": "Frailty, remedies of mercy, attrition by its own condition, and restoration by clemency are present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/september-ember-wednesday.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-21.september-ember-wednesday-collect"
+    },
+    {
+      "packet": "packet-09",
+      "row": 14,
+      "target": [
+        "pentecost-18",
+        "main",
+        "Offertory",
+        "all",
+        1
+      ],
+      "latin_sha256": "983f64453c4dff583f429312c9947c71c46c316ff76f97d9546c761375a33187",
+      "text_sha256": "49ced703772be770054b94fffa12ad4f57623c9952808996621d7cb9220fd528",
+      "original_text_sha256": "49ced703772be770054b94fffa12ad4f57623c9952808996621d7cb9220fd528",
+      "decision": "accepted-original",
+      "text": "Moses consecrated the altar to the Lord, offering whole burnt offerings upon it and sacrificing victims; he offered an evening sacrifice as a sweet fragrance to the Lord God, in the sight of the children of Israel.\n",
+      "full_read_note": "Moses, altar consecration, whole burnt offerings/victims, evening sacrifice, sweet fragrance, Lord God, and Israelite witnesses are all present.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/pentecost-18.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-18-offertory"
+    }
+  ]
+}

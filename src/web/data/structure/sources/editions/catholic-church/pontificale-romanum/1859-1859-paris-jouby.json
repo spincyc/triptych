@@ -1,0 +1,101 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "facsimile-pdf",
+   "byte_size": 226802,
+   "edition_owned": true,
+   "id": "artifact.catholic-church.pontificale-romanum.paris-jouby-1859.english-completion-20261029-ordinary-chrism-facsimile",
+   "media_type": "application/pdf",
+   "notes": "Retained page 1 is the actual 1859 Paris: A. Jouby title page. Retained page 2 is original printed398, including the complete contiguous petition from ut spiritualis lavacri through vestimento incorrupti muneris induantur in its older chrism-consecration context.",
+   "page_count": 2,
+   "retrieved": "2026-10-30",
+   "rights": "public-domain",
+   "rights_basis": "Only the actual 1859 title page and ordinary printed398 are retained. This historical publication is United States public domain by expiration of its publication term; faithful mechanical page extraction adds no new authorship. Google/Harvard/InternetArchive producer attribution remains as provenance, not as authority or a rights grant. The separate whole-file wrapper remains unresolved and untracked; no modern introductory matter is included. Underlying source matter is excluded from Triptych CC BY 4.0.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/pontificaleroma00churgoog/pontificaleroma00churgoog.pdf",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 413,
+   "edition_owned": true,
+   "id": "artifact.catholic-church.pontificale-romanum.paris-jouby-1859.english-completion-20261029-ordinary-chrism-petition",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The actual 1859 source supplies Baptismo and innocentiae odore, with its original ligature spelling. It is not a repair of Wilson 1894 baptismum or innocens odor. The full older consecration prayer continues ut sit his after this bounded cut; no claim is made that the 1859 source prints the later assembled Missal Preface whole.",
+   "page_count": null,
+   "retrieved": "2026-10-30",
+   "rights": "public-domain",
+   "rights_basis": "Exact historical Latin of the 1859 Paris: A. Jouby Roman Pontifical, printed398, public domain in the United States by expiration of its publication term. A faithful transcription originates no exclusive right in the underlying words and is excluded from Triptych CC BY 4.0. No 1955/1962-only wording or modern translation is supplied.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/pontificaleroma00churgoog/pontificaleroma00churgoog.pdf",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "facsimile-pdf",
+   "byte_size": 20368767,
+   "edition_owned": true,
+   "id": "artifact.catholic-church.pontificale-romanum.paris-jouby-1859.english-completion-20261029-ordinary-chrism-whole-pdf",
+   "media_type": "application/pdf",
+   "page_count": 613,
+   "retrieved": "2026-10-30",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/pontificaleroma00churgoog/pontificaleroma00churgoog.pdf",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": "Historical printing of the Roman Pontifical; no current authority claimed",
+  "date": "1859",
+  "editors": [],
+  "id": "edition.catholic-church.pontificale-romanum.paris-jouby-1859",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Paris: A. Jouby,1859",
+  "title": "Pontificale Romanum Clementis VIII ac Urbani VIII jussu editum et a Benedicto XIV recognitum et castigatum, juxta recentiorem editionem Romanam ac demum in commodiorem formam redactum",
+  "translators": [],
+  "year": 1859
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.catholic-church.pontificale-romanum.paris-jouby-1859.english-completion-20261029-ordinary-chrism-petition",
+   "artifact_type": "normalized-text",
+   "context": "De officio in Feria V Coenae Domini, chrism-consecration prayer; printed398 / whole PDF 411 / retained facsimile2; ut spiritualis through induantur. The contiguous petition is printed within the longer consecratory Preface for chrism. The 1859 title page was independently read for printing identity. Literal Baptismo and innocentiae odore are positively present here; no Wilson reading is silently corrected.",
+   "id": "passage.catholic-church.pontificale-romanum.paris-jouby-1859.english-completion-20261029-ordinary-chrism-petition",
+   "locus": "de-officio-feria-quinta-coenae-domini-chrism-petition",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Independent AI source review read all three older witnesses and the 1962 target images and found every proposed target prayer word accounted for by explicit contiguous spans. This passage verifies only this 1859 source span, not the whole-book text, later appointment or an old human English translation.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "Exact historical Latin of the 1859 Paris: A. Jouby Roman Pontifical, printed398, public domain in the United States by expiration of its publication term. A faithful transcription originates no exclusive right in the underlying words and is excluded from Triptych CC BY 4.0. No 1955/1962-only wording or modern translation is supplied.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": "https://archive.org/download/pontificaleroma00churgoog/pontificaleroma00churgoog.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.catholic-church.pontificale-romanum.paris-jouby-1859.english-completion-20261029-ordinary-chrism-petition.json",
+   "verified_on": "2026-10-30",
+   "words": 44
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Roman Pontifical"
+  ],
+  "author": "Catholic Church",
+  "category": "liturgical-book",
+  "description": "The Roman liturgical book for rites ordinarily celebrated by a bishop, transmitted through materially different editions and reforms. Edition records must identify the promulgating authority, date, title architecture, and textual state; one edition cannot be projected backward onto medieval pontificals or forward into current discipline.",
+  "id": "work.catholic-church.pontificale-romanum",
+  "languages": [
+   "la"
+  ],
+  "title": "Pontificale Romanum"
+ }
+}

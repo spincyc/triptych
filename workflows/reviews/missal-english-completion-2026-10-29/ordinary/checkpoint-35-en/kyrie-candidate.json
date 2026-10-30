@@ -1,0 +1,102 @@
+{
+  "state": "prepared-for-independent-review",
+  "component": "explicit-sixfold-study-arrangement-not-ninefold-sourcebody",
+  "source_manifest_sha256": "bd74b1f4286354767651f012dd64729a265e87810f0785259dbd458c19746def",
+  "source_postimages": 11,
+  "passages": [
+    "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-kyrie-glosses-source-page",
+    "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-kyrie-glosses-parent-fragments",
+    "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-kyrie-glosses-publish",
+    "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-kyrie-glosses-litany-corroboration",
+    "passage.triptych.english-completion-20261030-kyrie-sixfold-study-arrangement.study-arrangement-20261030.sixfold-english-gloss-arrangement-publish"
+  ],
+  "source_gloss_artifact": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-kyrie-glosses",
+  "project_witness_proposal": {
+    "id": "edition.triptych.english-completion-20261030-kyrie-sixfold-study-arrangement.study-arrangement-20261030",
+    "lang": "en",
+    "label": "Triptych sixfold study arrangement of 1861 Kyrie glosses (not approved English)",
+    "rights": "project-created",
+    "caution": "Six study utterances arranged from two exact historical English glosses. The 1861 Mass itself is ninefold and does not print this complete arrangement. Its older P./R. actors are not inherited. This is not approved English or a text for recitation.",
+    "artifacts": [
+      "artifact.triptych.english-completion-20261030-kyrie-sixfold-study-arrangement.study-arrangement-20261030.sixfold-english-gloss-arrangement"
+    ]
+  },
+  "english": {
+    "witness": "edition.triptych.english-completion-20261030-kyrie-sixfold-study-arrangement.study-arrangement-20261030",
+    "artifact": "artifact.triptych.english-completion-20261030-kyrie-sixfold-study-arrangement.study-arrangement-20261030.sixfold-english-gloss-arrangement",
+    "elements": [
+      "kyrie-sixfold"
+    ],
+    "column": "english",
+    "relation": "antecedent",
+    "collation": "uncollated",
+    "reading_note": "Sixfold Triptych study arrangement of the exact 1861 English glosses; not a verbatim 1861 Mass body or approved Missal English.",
+    "note": "Six project utterances repeat the two exact 1861 gloss phrases in K, K, C, C, K, K order. The older Mass prints nine Greek calls and one English gloss per set; that source body is not pasted or relabelled here. The 2002 n. 7 sixfold pattern supplies structural comparison evidence only. Printed V./R. boundaries support the declared dialogue roles. No older P./R. actor or priest/cantor allocation is imported. Complete authenticated 2008 fidelity and approved English remain unestablished. This is study material, not a text for recitation."
+  },
+  "target_turn_proposal": {
+    "basis": "Secondary 2002 artifact page 305, n. 7 visibly prints three pairs: V. Kyrie/R. Kyrie; V. Christe/R. Christe; V. Kyrie/R. Kyrie. These printed boundaries support alternating versicle/response roles, without assigning priest or cantor actors. The 1861 source P./R. cues belong to a different ninefold Mass context and are not reused as target role proof.",
+    "english_turns": [
+      {
+        "key": "call-1",
+        "seq": [
+          1
+        ],
+        "dialogue_role": "versicle"
+      },
+      {
+        "key": "call-2",
+        "seq": [
+          2
+        ],
+        "dialogue_role": "response"
+      },
+      {
+        "key": "call-3",
+        "seq": [
+          3
+        ],
+        "dialogue_role": "versicle"
+      },
+      {
+        "key": "call-4",
+        "seq": [
+          4
+        ],
+        "dialogue_role": "response"
+      },
+      {
+        "key": "call-5",
+        "seq": [
+          5
+        ],
+        "dialogue_role": "versicle"
+      },
+      {
+        "key": "call-6",
+        "seq": [
+          6
+        ],
+        "dialogue_role": "response"
+      }
+    ]
+  },
+  "preserve_conditions_exact": [
+    {
+      "kind": "omit-when-option",
+      "group": "penitential-act",
+      "options": [
+        "pa-iii"
+      ],
+      "basis": "Ordo Missae n. 7 and IGMR 51, as transcribed and sourced in src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/10-introductory-rites.tex:96-103."
+    }
+  ],
+  "preserve_absent_english": "approved-english-publication-restriction",
+  "latin_disposition": "No newLatinbody proposed; existing Latinabsence remains separate from this Englishstudyprojection.",
+  "no_cummiskey_scan_payload": true,
+  "no_protected_target_payload": true,
+  "publication_ledger_owner": "root coordinator",
+  "verification_sha256": "04bbfb893246acfaf89e9aac0d49bfe11bf2d243baf5bb8e7dd83a2b0c79a70a",
+  "version": 2,
+  "supersedes_candidate_sha256": "935182d13cb6a2ae28ad9bdfda82214a32d1cdbf18e5d9514d611922abff4d9c",
+  "finite_v2_changes": "Reader-facing witness label/caution and English reading_note/note polished to normal word spacing; target turn-basis prose likewise spaced. All 11 source postimages, every word cell, source manifest, conditions and six-turn selector are unchanged."
+}

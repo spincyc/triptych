@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-common-paschal"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych offers only its bounded editorial transcription and normalization under CC BY 4.0. Every underlying Latin word is independently witnessed in the named United States public-domain 1922 Mame pages; no exclusive right in that received wording or general clearance of the 1962 edition is claimed."
+rights_jurisdiction = "United States"
+provenance = "Fresh full-body page-image collation on 29 October 2026: all three 1962 controls and all three Mame historical pages were directly read at 200 and 400 dpi. Original complete source PDF hashes were rechecked. OCR located pages only; no text layer supplied a reading."
+retrieved = "2026-10-29"
+sha256 = "51e71a00ee2df641e678e26e136d5645602b6dde98b20e3e74b64c849083e005"
+byte_size = 557
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/english-completion-20261029-common-paschal/latin.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-common-paschal-pages", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Join printed wraps; remove stress accents; expand ae/oe ligatures; use V. for each printed versicle sign; omit printed bibliographic citation labels from the recited body. Normalize historical Alleluja to target Alleluia. Keep the calendar consonantal-j spelling justitiam where target prints iustitiam and historical Mame prints justitiam. Apply the target punctuation and capitals. No word, clause, seasonal addition or conclusion is supplied."
+indexable = true
+encoding = "utf-8"
+notes = "One complete body per physical line: Confessor Bishop I, Non-Virgins I, Non-Virgins II. Both non-virgin bodies carry their two printed versicles. These Paschal bodies remain separate from regular Alleluia and Tract alternatives, and from their cited Bible components."

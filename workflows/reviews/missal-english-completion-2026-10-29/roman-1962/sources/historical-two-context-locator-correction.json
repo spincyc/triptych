@@ -1,0 +1,21 @@
+{
+  "schema": "triptych-source-metadata-correction/v1",
+  "recorded_on": "2026-10-29",
+  "finding": "The owning calendar checker requires the source passage context to repeat the exact printed-page locator retained by the receiving entry; the reviewed passage already records those pages in its locus and page-range proof.",
+  "correction": "Repeat only the existing printed-page locator in context. Historical English, page evidence, literal Latin, source identities and artifact hashes remain unchanged.",
+  "initial_failed_check": "tools/check-calendar-masses --calendar roman-1962",
+  "changes": [
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/holyweek-hymn-gloria-laus-verify-20261029.toml",
+      "before_sha256": "eabfa95dc83c9591d7b098a61906b7412a00eac22e54b698e98ecf939824d4c6",
+      "after_sha256": "95a294f1dee3f9ab996c2bc07109c2a0ad06554164e105e4e28b499e4aed2144",
+      "added_literal_locator": "Source printed pp. 398-399."
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/holyweek-hymn-ubi-caritas-verify-20261029.toml",
+      "before_sha256": "1611bfa9a159be2e47ddae9eb5ed6054ab7d6b65c5a97ba2f059e236e13fea93",
+      "after_sha256": "71da135c8c2ebd1480920f08074c19bcf8048ed7657afe7409ea5d895e609e24",
+      "added_literal_locator": "Source printed p. 468."
+    }
+  ]
+}

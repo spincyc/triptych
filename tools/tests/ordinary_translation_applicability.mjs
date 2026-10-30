@@ -15,6 +15,15 @@ const ordinary = JSON.parse(fs.readFileSync(process.env.TRIPTYCH_ORDINARY_DATA |
 const structure = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/web/data/structure/propers/roman-1962.json'), 'utf8'));
 const head = ordinary.sections.flatMap(s => s.elements).find(e => e.key === 'canon/communicantes-pascha');
 const source = head.translations.find(t => t.lang === 'en');
+const continuation = ordinary.sections.flatMap(s => s.elements)
+  .find(e => e.key === 'canon/communicantes-continuatio');
+const studyContinuation = continuation.translations.find(t => t.lang === 'en');
+assert.equal(studyContinuation.source_id,
+  'edition.triptych.english-completion-20261029-ordinary-joseph.study-english-20261029');
+assert.equal(studyContinuation.rights, 'project-created');
+assert.equal(studyContinuation.reading_note,
+  'Triptych study translation. This English is not approved for liturgical use or recitation.');
+assert.equal(studyContinuation.turns.find(turn => turn.action === true).text, 'He joins his hands.');
 assert.equal(source.applicability.kind, 'formulary');
 assert.equal(source.applicability.calendar, 'roman-1962');
 assert.deepEqual(source.applicability.formularies, ['easter-sunday', 'easter-monday', 'easter-tuesday',
@@ -55,7 +64,9 @@ for (const key of ['easter-sunday', 'easter-monday', 'easter-saturday', 'easter-
   if (key === 'easter-vigil') assert.equal(events.length, 0);
   else {
     assert.ok(events.length > 0);
-    assert.equal(events.find(e => e.id.endsWith('/communicantes-continuatio')).selected.text, null);
+    const selectedContinuation = events.find(e => e.id.endsWith('/communicantes-continuatio')).selected;
+    assert.equal(selectedContinuation.text, studyContinuation.text);
+    assert.equal(selectedContinuation.sourceId, studyContinuation.source_id);
     const selected = events.find(e => e.id.endsWith('/communicantes-pascha'))?.selected;
     if (key.startsWith('easter-')) assert.equal(selected.text, source.text);
   }

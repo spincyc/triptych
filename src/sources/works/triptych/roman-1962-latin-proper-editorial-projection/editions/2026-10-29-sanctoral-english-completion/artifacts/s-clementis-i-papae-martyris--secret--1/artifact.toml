@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-clementis-i-papae-martyris--secret--1"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "The independently identified complete historical prayer and standard conclusion sources remain public domain in the United States. Only the exact measured contribution for this tuple may be used under workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json method english-completion-20261029-finite-latin-v1. The canonical finite coordinator decision and the closed source guard alone authorize this exact tuple; no prior grant fanout or universal short-word exemption is asserted. Project editorial layout alone is offered under CC BY 4.0; underlying received Latin is excluded. No whole modern edition, scan, image or unrelated act is cleared."
+sha256 = "85e15b6f86d5c6f8c122d9c2c70203102ad0659a6006d502467d9e1afb0628de"
+byte_size = 256
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-sanctoral-english-completion/artifacts/s-clementis-i-papae-martyris--secret--1/latin.txt"
+retrieved = "2026-10-29"
+encoding = "utf-8"
+indexable = true
+projected_from = ["artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+provenance = "Exact target body received from paired historical and target page-image source checks and independent source/English review workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json method english-completion-20261029-finite-latin-v1. Source/target/cue distinctions and the measured later contribution remain explicit."
+transformation = "Preserve the actual target body and conclusion extent; declared calendar consonantal-j orthography, stress/ligature/line-wrap normalization and pointing are recorded. Exact source/target contribution: [\"Prepend conventional sacrificial adjunct Oblatis muneribus and supplication quaesumus to the same continuous old prayer.\", \"Move Domine from older Ecclesiam tuam Domine benignus inlumina to target quaesumus, Domine, Ecclesiam tuam benignus illumina. The normalized older transcription expands the printed Dne abbreviation to Domine; this is an explicitly recorded source transformation.\", \"Expand old conventional per. cue only to the actual complete Clement prefix Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate. The literal contiguous long formula is independently controlled by Mame1922 PDF368; no words beyond target in unitate are supplied.\", \"Inlumina/illumina spelling, stress accents, case, pointing and layout differ.\"]"
+notes = "This source record defines exact scope and source control; rights follow separately from the canonical finite authority. Source and translation review does not itself grant rights or liturgical approval."

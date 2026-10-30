@@ -138,8 +138,8 @@ EXAMPLES = {
                 "      by Thee, obtain our salvation. Who livest.",
                 "",
                 "    Epistle — Romans 13:11-14",
-                "      Fratres: Scientes quia hora est jam nos de somno surgere. Nunc enim propior est",
-                "... 55 more lines",
+                "      Brothers: knowing that it is now time for us to rise from sleep. For our salvation",
+                "... 56 more lines",
             ),
             "read-only; with no --date it resolves today. Two Masses fall on this "
             "date and both are listed",
@@ -156,10 +156,10 @@ EXAMPLES = {
                 "    Introit — Philippians 2:10-11; Psalms 5:12-13",
                 "",
                 "    Collect",
-                "      Deus, qui ad majorem tui nominis gloriam propagandam, novo per beatum Ignatium",
-                "      subsidio militantem Ecclesiam roborasti: concede; ut, ejus auxilio et imitatione",
-                "      certantes in terris, coronari cum ipso mereamur in caelis. Per Dominum.",
-                "      (no en translation recorded; showing Latin)",
+                "      O God, Who, to spread abroad the greater glory of Thy name, didst, through blessed",
+                "      Ignatius, strengthen the Church militant with a new reinforcement, grant that we,",
+                "      who are fighting on earth by his help and after his example, may deserve to be",
+                "      crowned with him in heaven. Through our Lord.",
                 "",
                 "    Epistle — 2 Timothy 2:8-10; 3:10-12",
                 "",
@@ -172,19 +172,51 @@ EXAMPLES = {
                 "    Offertory — Psalms 88:25",
                 "",
                 "    Secret",
-                "      Adsint, Domine Deus, oblationibus nostris sancti Ignatii benigna suffragia: ut",
-                "      sacrosancta mysteria, in quibus omnis sanctitatis fontem constituisti, nos quoque",
-                "      in veritate sanctificent. Per Dominum nostrum Jesum Christum, Filium tuum: Qui",
-                "      tecum vivit et regnat in unitate.",
-                "      (no en translation recorded; showing Latin)",
+                "      May the kind intercessions of St. Ignatius be with our offerings, O Lord God, that",
+                "      the most holy mysteries, in which Thou hast established the fountain of all",
+                "      sanctity, may in very truth sanctify us likewise. Through our Lord.",
                 "",
                 "    Communion — Luke 12:49",
                 "",
                 "    Postcommunion",
-                "      Laudis hostia, Domine, quam pro sancto Ignatio gratias agentes obtulimus: ad",
-                "      perpetuam nos majestatis tuae laudationem, ejus intercessione, perducat. Per",
-                "      Dominum.",
-                "      (no en translation recorded; showing Latin)",
+                "      May the sacrifice of praise, O Lord, which with thanksgiving we have offered Thee,",
+                "      in honor of St. Ignatius, bring us, by his intercession, to the everlasting praise",
+                "      of Thy majesty. Through our Lord.",
+                "",
+                "  a feria after Pentecost  — NOT said today; displaced by the Mass above",
+                "",
+                "    Introit — Psalm 53:6-7; Psalm 53:3",
+                "      Latin incipit only; no en rendering recorded: Ecce, Deus adjuvat me…",
+                "",
+                "    Collect",
+                "      May the ears of your mercy be open, Lord, to the prayers of those who plead; and,",
+                "      so that you may grant those who ask what they desire, make them ask for what",
+                "      pleases you. Through our Lord.",
+                "",
+                "    Epistle — 1 Corinthians 10:6-13",
+                "",
+                "    Gradual — Psalm 8:2",
+                "      Latin incipit only; no en rendering recorded: Domine, Dominus noster…",
+                "",
+                "    Alleluia — Psalm 58:2",
+                "      Latin incipit only; no en rendering recorded: Eripe me de inimicis meis…",
+                "",
+                "    Gospel — Luke 19:41-47",
+                "",
+                "    Offertory — Psalm 18:9-12",
+                "      Latin incipit only; no en rendering recorded: Justitiae Domini rectae…",
+                "",
+                "    Secret",
+                "      Grant us, we beseech Thee, O Lord, worthily to frequent these mysteries, for as",
+                "      often as the commemoration of this victim is celebrated, the work of our",
+                "      redemption is performed. Through our Lord.",
+                "",
+                "    Communion — John 6:57",
+                "      Latin incipit only; no en rendering recorded: Qui manducat meam carnem…",
+                "",
+                "    Postcommunion",
+                "      Let the communion of Thy sacrament, we beseech Thee, O Lord, both cleanse us from",
+                "      sin and make us of one mind and one heart in Thy service. Through our Lord.",
             ),
             "a Mass whose text is not yet transcribed says so; the placeholder is "
             "never printed as the prayer",
@@ -206,7 +238,7 @@ EXAMPLES = {
                 "",
                 "      THE ORDINARY OF THE MASS.",
                 "      -------------------------",
-                "... 888 more lines",
+                "... 903 more lines",
             ),
             "the whole Mass in one piece: scripture in words under a named "
             "edition, and the propers set into the Ordinary at the slots the "
@@ -924,10 +956,12 @@ def propers_of(
 
     entries = []
     source_indices: dict[int, int] = {}
+    ordinary_source_rows: dict[int, dict] = {}
     for source_index, row in enumerate(payload.get("appointed") or []):
         if not isinstance(row, dict) or not isinstance(row.get("proper"), dict):
             continue
         proper = copy.deepcopy(row["proper"]) if mass.get("proper_source_paths") else dict(row["proper"])
+        ordinary_source_rows[source_index] = copy.deepcopy(row["proper"])
         selected_cycle = None
         if _calendars.SOURCE_PATH_RELATION not in proper:
             for variants, cycle in (
@@ -970,6 +1004,7 @@ def propers_of(
         source_indices[id(proper)] = source_index
         proper["form"] = form_name
         proper["form_id"] = form_id
+        ordinary_source_rows[source_index]["form_id"] = form_id
         proper["taken_from"] = row.get("taken_from")
         # The words behind each citation, from the resolution `mass-propers`
         # performed. A verse the bible does not carry keeps its reference and
@@ -1045,6 +1080,8 @@ def propers_of(
         # its own rows would silently turn Day's 015-026 into 001-012.
         "_proper_source_indices": [source_indices[id(p)] for p in selected_propers],
         "_oration_source_rows": [{"proper": p, "sourceIndex": source_indices[id(p)]} for p in entries if not is_placeholder(p)],
+        "_ordinary_source_rows": [{"proper": ordinary_source_rows[source_indices[id(p)]],
+                                   "sourceIndex": source_indices[id(p)]} for p in selected_propers],
         "forms": forms,
         "selected_form": selected_form,
         "form_choice_required": bool(forms and selected_form is None),
@@ -1261,6 +1298,11 @@ def run_show(arguments: argparse.Namespace) -> dict:
                 )
             )
             entry._oration_source_rows = entry.pop("_oration_source_rows", [])
+            entry._ordinary_source_rows = entry.pop("_ordinary_source_rows", [])
+            entry._calendar_cycles = {
+                family: day["lectionary"].get(family)
+                for family in ("sunday", "weekday")
+            } if isinstance(day.get("lectionary"), dict) else {}
             if entry.get("refused"):
                 record_problem({
                     "component": "mass-propers",
@@ -1791,13 +1833,17 @@ def mass_events(
         "process.stdin.on('data', (chunk) => { raw += chunk; });\n"
         "process.stdin.on('end', () => {\n"
         "  const input = JSON.parse(raw);\n"
+        "  const appointments = model.prepareProperAppointments(\n"
+        "    input.propers, input.proper_appointment_context);\n"
+        "  const predicateContext = Object.assign({}, input.predicate_context, {\n"
+        "    properAppointments: appointments, properRows:\n"
+        "      input.predicate_context && input.predicate_context.properRows || input.propers\n"
+        "  });\n"
         "  const predicates = Object.assign(\n"
-        "    {}, model.predicateFacts(input.predicate_context), input.predicates);\n"
+        "    {}, model.predicateFacts(predicateContext), input.predicates);\n"
         "  const resolved = input.ordinary ? model.resolveElements(\n"
         "    input.ordinary, input.wanted, predicates) : {shown:[],unresolved:[],selected:{}};\n"
         "  const shown = resolved.shown;\n"
-        "  const appointments = model.prepareProperAppointments(\n"
-        "    input.propers, input.proper_appointment_context);\n"
         "  const placed = input.ordinary ? model.seatPropers(\n"
         "    appointments.rows, model.seats(input.ordinary, shown), null, appointments.selections) : null;\n"
         "  const events = input.ordinary ? model.massEvents(shown, placed) :\n"
@@ -1972,6 +2018,8 @@ def ordinary_predicate_context_for(day: dict, mass: dict, date: str) -> dict:
         "nature": winner.get("nature") if isinstance(winner, dict) else None,
         "date": date,
         "anchors": day.get("anchors"),
+        "calendarCycles": getattr(mass, "_calendar_cycles", mass.get("_calendar_cycles") or {}),
+        "properRows": getattr(mass, "_ordinary_source_rows", None),
         # A borrowed formulary's own variables are not today's appointments.
         "appointments": (
             {} if mass.get("borrowed") else mass.get("ordinary_appointments") or {}

@@ -1,0 +1,118 @@
+{
+  "state": "SANITIZED_SOURCE_COMPARISON_WITH_EXPLICIT_TRANSCRIPTION_CORRECTION",
+  "scope": "Complete Preface body from Vere through dicentes; opening dialogue and following separately printed Sanctus excluded. No target rubric is republished by this private comparison.",
+  "source_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+  "source_whole_sha256_recorded": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+  "source_locus": "Mame Tours1922, printed337, originalPDF451; following Sanctus explicitly refers to printed336/originalPDF450.",
+  "target_artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+  "target_whole_sha256_recorded": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+  "target_locus": "1962 typical edition, n1084, printed295, originalPDF376; source rubric chooses solemnitate for May1.",
+  "normalization_for_comparison_only": [
+    "case folding",
+    "stress accents omitted in both research transcriptions",
+    "Latin j/i",
+    "ae/oe ligatures opened",
+    "pointing omitted for word comparison",
+    "select old printed Festivitate branch, preserving Veneratione as the separate historical source option"
+  ],
+  "normalized_source_word_count": 99,
+  "normalized_target_word_count": 99,
+  "differences": [
+    {
+      "word_index_one_based": 25,
+      "old_source_word": "festivitate",
+      "selected_target_word": "solemnitate"
+    }
+  ],
+  "target_source_form_choices": [
+    "festivitate for March19",
+    "solemnitate for May1",
+    "veneratione for votiveMasses"
+  ],
+  "contrary_facts": [
+    "Old1922Mame PatronageSolemnity still appoints Festivitate; feast title is not a solemnitate-body witness.",
+    "No pre1931solemnitate-body witness found in two bounded exactquery passes.",
+    "The existing CommunicantesJoseph-clause rights decision is expressly nontransferable.",
+    "The source1922prayer is not claimed to print the full selectedMay1wordsequence.",
+    "FreshEnglish must be newly translated from the independently established Latin plus any separatelyadopted exactonewordbasis; no adaptation of historicalEnglish."
+  ],
+  "presentation_differences": [
+    "Mame justum/justus/Joseph/Jesum/majestatem/jubeas versus targetiustum/iustus/Ioseph/Iesum/maiestatem/iubeas.",
+    "Source and target printed stress accents, capitals and pointing are each retained by their exact pageimages; the research transcriptions omit stress accents explicitly.",
+    "Mame Domine sancte, Pater... and target Domine, sancte Pater,... differ in pointing only.",
+    "Mame datus: et and targetdatus, et differ in pointing only.",
+    "Mame jubeas deprecamur and targetiubeas, deprecamur differ in pointing only."
+  ],
+  "frozen_files": [
+    {
+      "file": "mame-0450.png",
+      "sha256": "f4b67d3f94096d28ab70e58056af9c01f962cd37b28b652e281210dba75ebaf3",
+      "bytes": 902872
+    },
+    {
+      "file": "mame-0451.png",
+      "sha256": "ee6c61feac34b069b9328d3037b9252b4333d4e173997a8c4244d01ee82951bb",
+      "bytes": 751217
+    },
+    {
+      "file": "target376.png",
+      "sha256": "55eaf09e2cfc90d25ef3b8d6441af26b3cf75720cbece0ce4f094f3a7d2f53ff",
+      "bytes": 144875
+    },
+    {
+      "file": "circ33.pdf",
+      "sha256": "4abb8e07b87a560612f11839fabe7c066afeffc8bdb8816c755f7e47fa07dbf2",
+      "bytes": 115541
+    },
+    {
+      "file": "37cfr202-1.html",
+      "sha256": "550a8131ceaae45be3e138ae11947a8c252f1cfa6e44f973d1a3023a0233107d",
+      "bytes": 30076
+    }
+  ],
+  "independent_reading": "The earlier independent source/rights review read complete source and target images and replayed the frozen comparison. A separate admission source-correction receipt resolves the frozen ligature transcription. Both are AI review, not human approval.",
+  "supersedes_metadata_only": {
+    "prior_file": "frozen-word-comparison.json",
+    "prior_sha256": "2a9f3fdf02256ee216b2aaae063adfd545a7b82a15205759f8632b15f90e00e4",
+    "correction": "Actual old Mame image prints Cæli cælorumque, not Cœli cœlorumque. The earlier oe transcription and oe-to-ae spelling declaration are withdrawn. No other source/target word, source boundary, word count, selected target context or word25 replacement changes. Earlier source readings/review snapshots remain evidence of their own bytes and are not described as having checked this correction."
+  },
+  "glyph_correction_evidence": {
+    "source_image": "mame-0451.png",
+    "source_image_sha256": "ee6c61feac34b069b9328d3037b9252b4333d4e173997a8c4244d01ee82951bb",
+    "native_crop": "mame-caeli-source-crop.png",
+    "native_crop_sha256": "6aa188e09657bd7a11274cdad6ed9d7230416bc4d0e21189823273f1286c03a4",
+    "crop_box_original_pixels": {
+      "x": 595,
+      "y": 385,
+      "width": 580,
+      "height": 300
+    },
+    "transformation": "Exact pixel crop, no resampling. The separate2xdisplaycrop is research presentation only. Both oldsource occurrences show æ; targetalsohasæ.",
+    "independent_review": "Correction-specific independent source review is recorded separately and must bind this exact successor hash."
+  },
+  "schema": "triptych-source-bounded-study-english-comparison/v1",
+  "sanitization": "Both full research body strings are omitted. The actual old source body is retained under its own source owner. No modern target Latin or image payload is copied here. This derivative is not byte-identical to the frozen private packet.",
+  "frozen_private_comparison_sha256": "a08b68725876e8b224f2da98dc16721486b7d156e52e9e852044d2ac82539310",
+  "historical_source_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-ordinary-joseph-preface-may1-source-body",
+  "historical_source_body_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-ordinary-joseph-preface-may1-source-body",
+  "historical_source_body_sha256": "235844b4188dc771ca3e0b33065bf4072f4cb58d118d00742ef48b8bc62417e8",
+  "historical_source_facsimile_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-ordinary-joseph-preface-may1-facsimile",
+  "historical_source_facsimile_sha256": "9724743c3f1bfed03bc44472731885a43769b1a41eab3666b94504a7cfb70e27",
+  "target_research_body_sha256_utf8_without_final_lf": "526099a01ae7ae49394d1c2684a89e6d8c60cefd6c5a0a61eea150824b6a346d",
+  "admission_correction": "Fresh actual-source reading finds Cæli cælorumque, not frozen Cœli cœlorumque. Thus the coeli/caeli comparison transformation and contrary spelling claim are unnecessary and withdrawn for this body. This orthographic research-transcription correction does not change the 99-word counts, sole lexical change at word 25, exact selected target research identity, rights-adopted scope or new English.",
+  "root_adoption_path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/joseph-may1-rights-adoption-v2.json",
+  "root_adoption_sha256": "7ae1b0c2cd7acfa62777d7acc0b09b33c37212c7fbcd6c0b410f669ac76e43e6",
+  "independent_correction_review_sha256": "76852c4cca3ebcbbe4ca68a6a397dde60a83ad13f0fd8042cfd482226955fe51",
+  "immutable_prior_metadata": {
+    "adoption_path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/joseph-may1-rights-adoption.json",
+    "adoption_sha256": "f5893ad8948f13c3740efc8839f7a327d942e3bf0b2d65ed801f6855c39579fe",
+    "comparison_sha256": "2a9f3fdf02256ee216b2aaae063adfd545a7b82a15205759f8632b15f90e00e4",
+    "review_sha256": "7d0ee61f74a2019a786a3ddef91d993436aa9bc5731a973413057e38bd9e68c8"
+  },
+  "formulary_scope": {
+    "calendar": "roman-1962",
+    "formulary_key": "s-ioseph-opificis-sponsi-beatae-mariae",
+    "date": "05-01",
+    "option": "sancto-ioseph"
+  }
+}

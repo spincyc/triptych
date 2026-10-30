@@ -1,0 +1,132 @@
+{
+  "schema": "triptych-reviewed-source-installation/v1",
+  "recorded_on": "2026-10-29",
+  "source_plans": [
+    {
+      "plan_sha256": "0cbde914151a57acc7dd35b2ab84b161ea0a71fdafc26446d1f51f2c9a3d4c11",
+      "plan_name": "historical-two-install-plan.json",
+      "targets": [
+        [
+          "palm-sunday",
+          "main",
+          "Hymn to Christ the King",
+          "all",
+          1
+        ],
+        [
+          "mass-of-the-lords-supper",
+          "main",
+          "Mandatum Antiphon 8",
+          "all",
+          1
+        ]
+      ],
+      "source_files": [
+        {
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/holyweek-hymn-ubi-caritas-en-20261029-b736c65c/artifact.toml",
+          "sha256": "d733e8ba06d5e0aba1fef23a49e02feae0b7956a2c323ae3d7cc79e8a008430f"
+        },
+        {
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/holyweek-hymn-ubi-caritas-en-20261029-b736c65c/bilingual.tsv",
+          "sha256": "b736c65ce8fa607f765fbb747857d88f87cf28d85216208614ba5cb7fd32bc63"
+        },
+        {
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/holyweek-hymn-ubi-caritas-publish-20261029.toml",
+          "sha256": "4048db5316a55a392e0aa98b9f61471790fc210e41faa1614dfee0aea08a0864"
+        },
+        {
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/holyweek-hymn-ubi-caritas-verify-20261029.toml",
+          "sha256": "1611bfa9a159be2e47ddae9eb5ed6054ab7d6b65c5a97ba2f059e236e13fea93"
+        },
+        {
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/holyweek-hymn-gloria-laus-en-20261029-4363e40f/artifact.toml",
+          "sha256": "6d9ec5f6dfb5c636a904c12c6428871247fc1e3c15dca97859b8d7de21102305"
+        },
+        {
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/holyweek-hymn-gloria-laus-en-20261029-4363e40f/bilingual.tsv",
+          "sha256": "4363e40f424419f977659a98c75b2a293ed9c19950af7758b1394daf5f894f92"
+        },
+        {
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/holyweek-hymn-gloria-laus-publish-20261029.toml",
+          "sha256": "0b56dedc1c417d69b1ff6c91479a0aaa577f50b0f49895d90e5daf2da62aeefb"
+        },
+        {
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/holyweek-hymn-gloria-laus-verify-20261029.toml",
+          "sha256": "eabfa95dc83c9591d7b098a61906b7412a00eac22e54b698e98ecf939824d4c6"
+        }
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "target": [
+        "palm-sunday",
+        "main",
+        "Hymn to Christ the King",
+        "all",
+        1
+      ],
+      "old_project_entry": {
+        "mass": "palm-sunday",
+        "form_id": "main",
+        "proper": "Hymn to Christ the King",
+        "cycle": "all",
+        "occurrence": 1,
+        "source_latin_sha256": "9fa9831f22966a3865ea1ce602c66e8647751848917715e71c3f8dd655f10a24",
+        "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.palm-sunday-hymn-to-christ-the-king",
+        "source_latin_publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.passiontide-orations-800ff4a3",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+        ],
+        "translation_review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/translation-review.json",
+        "translation_note": "Puerile decus is rendered with its compact image, 'the splendor of childhood,' rather than supplying an unprinted choir or company.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "May glory, praise, and honor be yours, Christ the King and Redeemer, to whom the splendor of childhood uttered a devout Hosanna. / You are Israel's King and David's renowned offspring, blessed King, who come in the Lord's name. / The whole heavenly assembly praises you on high, and mortal humanity and all created things together. / The Hebrew people came to meet you with palms; here we stand before you with prayer, vows, and hymns. / They offered you tributes of praise as you were about to suffer; here we sing a song for you as you reign. / They pleased you; may our devotion please you, good King, merciful King, whom all good things please.\n"
+          }
+        ]
+      },
+      "replacement": "checked historical English",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-f76ae4fce9a3a9dd.json"
+    },
+    {
+      "target": [
+        "mass-of-the-lords-supper",
+        "main",
+        "Mandatum Antiphon 8",
+        "all",
+        1
+      ],
+      "old_project_entry": {
+        "mass": "mass-of-the-lords-supper",
+        "form_id": "main",
+        "proper": "Mandatum Antiphon 8",
+        "cycle": "all",
+        "occurrence": 1,
+        "source_latin_sha256": "952817e214d3a295524d676d08112cc1e5d11e4078ca45d6321cf42241407899",
+        "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mass-of-the-lords-supper-mandatum-antiphon-8",
+        "source_latin_publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.triduum-orations-21aa7a98",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+        ],
+        "translation_review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/translation-review.json",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "Where charity and love are, God is there.\nV. Christ's love has gathered us into one.\nV. Let us exult and rejoice in him.\nV. Let us fear and love the living God.\nV. And let us love one another with a sincere heart.\n\nAnd the antiphon is repeated:\nWhere charity and love are, God is there.\nV. Therefore, as we gather together into one,\nV. let us take care that we are not divided in mind.\nV. Let malicious quarrels cease, let disputes cease.\nV. And may Christ, God, be in our midst.\n\nAnd the antiphon is repeated:\nWhere charity and love are, God is there.\nV. May we also, together with the blessed, see\nV. your face in glory, Christ, God:\nV. a joy that is boundless and good,\nV. through endless ages of ages. Amen.\n"
+          }
+        ]
+      },
+      "replacement": "checked historical English",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-f76ae4fce9a3a9dd.json"
+    }
+  ],
+  "after_hashes": {
+    "src/sources/calendars/roman-1962/propers.yaml": "14b48f9ed76ba2c9a1d2fc789872f58bb55dc8cd835854505beff752a4bdd5c5",
+    "src/sources/inventories/roman-1962-proper-translations-v1.toml": "6098be1241ca866963bd4a583bc4933865843136dd015d0763f96fb4f9b83004",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml": "6eb188d9c150f9a7cabda1ecbbbb260c52da6758738058aeb7622eadace379a7"
+  }
+}

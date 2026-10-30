@@ -52,6 +52,13 @@ def current_english_owners():
     return partitions
 
 
+@lru_cache(maxsize=1)
+def current_study_source():
+    propers = tool("mass-propers")
+    return propers, propers.study_translation_source_context(
+        "roman-1962", ROOT / "src/sources/calendars")
+
+
 def assert_current_english_owner(test, identity):
     """An original owner may be filled only by its exact accepted source row."""
     positive, absent = current_english_owners()
@@ -64,9 +71,47 @@ def assert_current_english_owner(test, identity):
         translations = [value for value in row["translations"] if value["lang"] == "en"]
         test.assertTrue(translations, identity)
         for value in translations:
-            test.assertEqual(value["rights"], "public-domain", identity)
             test.assertTrue(value["text"].strip(), identity)
-            test.assertTrue(value["source_id"], identity)
+            if value["rights"] == "public-domain":
+                test.assertTrue(value["source_id"], identity)
+            else:
+                test.assertEqual(value["rights"], "project-created", identity)
+                test.assertNotIn("source_id", value, identity)
+                propers, context = current_study_source()
+                test.assertLessEqual(propers.STUDY_TRANSLATION_SOURCE_FIELDS, set(row))
+                propers.validate_study_translation_binding(
+                    row, "roman-1962", ROOT / "src/sources/calendars",
+                    Path("accepted-study-source-control"), context=context)
+                # An updated provenance hash cannot let this English survive
+                # a change to the actual source body it was accepted against.
+                document, records, sources = context
+                changed_document = copy.deepcopy(document)
+                original_hash = row["source_latin_sha256"]
+                changed_hashes = set()
+
+                def change_source(owner):
+                    if isinstance(owner, dict):
+                        text = owner.get("text")
+                        if isinstance(text, str) and G.digest(text) == original_hash:
+                            owner["text"] = text + " TEST SOURCE MUTATION"
+                            changed_hashes.add(G.digest(owner["text"]))
+                        for child in owner.values():
+                            change_source(child)
+                    elif isinstance(owner, list):
+                        for child in owner:
+                            change_source(child)
+
+                change_source(changed_document)
+                test.assertEqual(len(changed_hashes), 1, identity)
+                changed_records = copy.deepcopy(records)
+                for record in changed_records.values():
+                    if record.get("text_sha256") == original_hash:
+                        record["text_sha256"] = next(iter(changed_hashes))
+                with test.assertRaises(ValueError):
+                    propers.validate_study_translation_binding(
+                        row, "roman-1962", ROOT / "src/sources/calendars",
+                        Path("changed-study-source-control"),
+                        context=(changed_document, changed_records, sources))
         return translations
     row = absent[identity]
     test.assertEqual(G.digest(G.canonical(row)), frozen["roman_current_english_absence"][key])
@@ -686,7 +731,26 @@ class RealCorpusCoverageTests(unittest.TestCase):
                                .read_text(encoding="utf-8"))
         withheld = [row for row in ledger["untranslated"] if row["reason"]["kind"] == "rights-withheld"]
         self.assertEqual({row["mass"] for row in withheld}, {"commune-summorum-pontificum"})
-        self.assertEqual(len(withheld), 5)
+        historical = tomllib.loads(G.historical_text(
+            "src/sources/inventories/roman-1962-proper-translations-v1.toml"))
+        old_withheld = [row for row in historical["untranslated"]
+                        if row["reason"]["kind"] == "rights-withheld"]
+        self.assertEqual(len(old_withheld), 5)
+        self.assertEqual({row["mass"] for row in old_withheld}, {"commune-summorum-pontificum"})
+        self.assertEqual({row["proper"] for row in withheld}, {
+            "Collect (Altera oratio)", "Secret (Altera secreta)",
+            "Postcommunion (Altera postcommunio)",
+        })
+        old_ids = {self.propers.translation_record_identity(row) for row in old_withheld}
+        current_ids = {self.propers.translation_record_identity(row) for row in withheld}
+        self.assertLess(current_ids, old_ids)
+        for identity in old_ids - current_ids:
+            self.assertTrue(assert_current_english_owner(self, identity))
+        for row in withheld:
+            identity = self.propers.translation_record_identity(row)
+            self.assertEqual(G.digest(G.canonical(row)),
+                             G.fixture()["roman_current_english_absence"][G.canonical(identity)])
+            self.assertNotIn("text", row)
         retyped = [row for row in ledger["untranslated"] if "(C2 gap G3)" in row["note"]]
         # Accepted bindings can fill these former gaps. Each remaining row
         # retains the exact reviewed absence record, never a rights restriction.
@@ -882,14 +946,21 @@ state = "unenumerated"
         # not new pre-1955 wording, calendar scope, or witness acceptance.
         root = ROOT / "src/sources/calendars"
         child = tomllib.loads((ROOT / "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml").read_text())
-        wanted = {"record": "untranslated", "mass": "s-ioseph-opificis-sponsi-beatae-mariae",
+        wanted = {"record": "entry", "mass": "s-ioseph-opificis-sponsi-beatae-mariae",
                   "form_id": "main", "proper": "Alleluia", "cycle": "all", "occurrence": 1,
                   "reason": "recension-absent", "basis": "calendar-departure"}
         self.assertEqual([row for row in child["inherited_inapplicable"]
                           if row["mass"] == wanted["mass"] and row["proper"] == "Alleluia"],
                          [wanted])
         parent = tomllib.loads((ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml").read_text())
-        records = [row for row in parent["untranslated"]
+        historical_child = tomllib.loads(G.historical_text(
+            "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml"))
+        self.assertEqual([row for row in historical_child["inherited_inapplicable"]
+                          if row["mass"] == wanted["mass"] and row["proper"] == "Alleluia"],
+                         [dict(wanted, record="untranslated")])
+        historical_parent = tomllib.loads(G.historical_text(
+            "src/sources/inventories/roman-1962-proper-translations-v1.toml"))
+        records = [row for row in historical_parent["untranslated"]
                    if (row["mass"], row["form_id"], row["proper"], row["cycle"], row["occurrence"])
                    == (wanted["mass"], "main", "Alleluia", "all", 1)]
         self.assertEqual(len(records), 1)
@@ -897,6 +968,11 @@ state = "unenumerated"
                          ("en", "body", {"kind": "no-exemplar"}))
         self.assertNotIn("text", records[0])
         propers = tool("mass-propers")
+        identity = (wanted["mass"], "main", "Alleluia", "all", 1)
+        self.assertTrue(assert_current_english_owner(self, identity))
+        self.assertEqual(len([row for row in parent["entries"]
+                             if row["mass"] == wanted["mass"]
+                             and propers.translation_record_identity(row) == identity]), 1)
         raw = propers.load_calendar(root, "roman-pre-1955", effective=False)
         departure = next(mass for _, mass in propers.masses_of(raw)
                          if mass["key"] == wanted["mass"])
@@ -1343,8 +1419,8 @@ state = "unenumerated"
                     self.assertEqual(key, (mass_key, "", proper["name"]))
                     carried = propers.carry_translations(calendar, key, proper, overlay, stale, identity, witnesses)
                     actual = [row for row in carried.get("translations") or [] if row.get("lang") == "en"]
-                    self.assertEqual([(row["text"], row["source_id"], row["rights"]) for row in actual],
-                                     [(row["text"], row["source_id"], row["rights"]) for row in expected])
+                    self.assertEqual([(row["text"], row.get("source_id"), row["rights"]) for row in actual],
+                                     [(row["text"], row.get("source_id"), row["rights"]) for row in expected])
                     records = propers.matching_untranslated_records(
                         carried, absent.get(propers.untranslated_key(identity)) or [], identity[3])
                     self.assertEqual(len(records), 0 if expected else 1)

@@ -1,0 +1,85 @@
+{
+  "accepted_by": "coordinating AI contributor under the maintainer-authorized completion and publication task",
+  "accepted_fixture_core_sha256": "82ef4bc442eceee37b5dab50f9016ecb206e805fe4c1da9da827947c0b6ac224",
+  "accepted_on": "2026-10-30",
+  "added_paths": [],
+  "all_original_replay_streams_preserved": 17,
+  "all_source_and_semantic_partitions_unchanged": true,
+  "boundaries": [
+    "This successor changes two test-code pins and their after-byte inverse representations only. Every reconstructed original byte stream remains exact.",
+    "The predecessor source acceptance and its separate source, rights and fidelity authorities remain unchanged. No new source body, translation, owner, coverage or publication permission is admitted here.",
+    "Complete English, whole-book correspondence, human acceptance and deployment remain separate obligations."
+  ],
+  "changed_test_pins": [
+    {
+      "after_sha256": "0149bd4a6c9ed10d975d17bf91863c06dd86632ff8b42a9680054bffc933fcf4",
+      "before_sha256": "31957a3789b2f6291700098bdb7683fc4d0a19e3e4094c3e8f48ab45395302d6",
+      "path": "tools/tests/test_proper_latin.py"
+    },
+    {
+      "after_sha256": "cb9265ac684392086cfb9347cb9c5e778fda2563e48b5f5d431ed811ae15fa6d",
+      "before_sha256": "208dc6448c764907e500be197f6e112ebd10e4807f1a84eef5c884ba10228dbd",
+      "path": "tools/tests/test_roman_1962_english13_phase5.py"
+    }
+  ],
+  "consumer_tests": "Pending after this separate acceptance and installation; no pass is asserted by this receipt.",
+  "dropped_paths": [],
+  "fixture_core_serialization": "UTF-8 json.dumps(indent=2, sort_keys=True, ensure_ascii=False), followed by LF; omit acceptance and state.",
+  "historical_fields_preserved": [
+    "schema",
+    "baseline_revision",
+    "baseline_roman_document_sha256",
+    "latin_baseline_rows",
+    "latin_baseline_bodies",
+    "latin_baseline_present_keys",
+    "latin_baseline_supplemented_keys",
+    "projection_baseline_source_files",
+    "english_219_keys",
+    "english_baseline_source_files",
+    "english_historical_source_files",
+    "english_historical_absence_scope"
+  ],
+  "independent_mechanical_review": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/test-code-pin-successor-review.json",
+    "sha256": "1ee2f8e0fb5e5f00df0f930145c5bfdfeab133405fe3dfd2d981c9d337716cb0"
+  },
+  "original_before_hashes_preserved": true,
+  "original_revision": "2e030b564f4413b735ddbea3061082ebe981b11a",
+  "parent_acceptance": {
+    "receipt_path": "workflows/reviews/missal-english-completion-2026-10-29/source-batch-checkpoint-v1.json",
+    "receipt_sha256": "341942539fe1292753f059df0f487c30588ee864c87b923218b3440ffd8a860a",
+    "status": "accepted"
+  },
+  "proposal": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/test-code-pin-successor-proposal.json",
+    "sha256": "d9712c5b1eacbb17d2db5074d8f111022e74ca9f4640742dd0395f626fa340bb"
+  },
+  "replay_support_sha256": "6fd8b3552071f4ef479bbdc6c4d693331b8ceb91e48dcb016e91033fd6ba03fc",
+  "retained_exact_parent_inputs": {
+    "fixture": {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/source-epoch-fixture-v1.json",
+      "sha256": "ed919d8d549395ee3d8736fa2cd3ced903e1cccb98fd72a101b25dad8eba00c1"
+    },
+    "inputs": {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/source-epoch-inputs-v1.json",
+      "sha256": "a842b22712bce139398aa6e5b86cfd662cfb14ab46de510e5c241265440324fd"
+    }
+  },
+  "root_test_code_review": [
+    "The exact twenty-five direct-public-domain targets have separate artifact/body/record/production-decision and mutation checks; every legacy projection assertion remains active.",
+    "The original two qualified scopes remain explicit; the separately adopted finite sixteen are hash-bound, giving eighteen current scopes.",
+    "September 8 asserts only the admitted bounded minimum, its option seating, the retained unknown wording, and the three unchanged Collect refusals.",
+    "The Rosary historical human-English withdrawal remains exact; current original study English has its own exact body, source binding and changed-source refusal."
+  ],
+  "schema": "triptych-source-batch-acceptance/v1",
+  "scope": "missal-source-batch",
+  "source_epoch_paths": 7068,
+  "source_input_manifest_path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+  "source_input_manifest_sha256": "b30da8a83c979b551250899aa4b5068ce32ade331b168c5cf2a94da81c428ebd",
+  "source_permission_created_by_this_receipt": false,
+  "status": "accepted",
+  "strict_runtime_helper_sha256": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1",
+  "successor_kind": "exact-two-reviewed-test-code-pins-and-original-inverse-rebinding",
+  "unchanged_inverse_specifications": 15,
+  "unchanged_manifest_rows": 7066
+}

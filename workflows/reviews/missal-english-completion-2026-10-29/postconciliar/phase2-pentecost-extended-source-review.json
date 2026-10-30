@@ -1,0 +1,121 @@
+{
+  "schema": "independent-cold-extended-vigil-review/v1",
+  "reviewed_on": "2026-10-29",
+  "reviewer": "pc_nativity_review",
+  "frozen_input": {
+    "manifest": ".scratch/postconciliar-english-completion-20261029/historical-donors/pentecost-extended-vigil-2008/manifest.json",
+    "sha256": "8833ec8ad4393da6925babff4ecc68f76a4bde38d9777ce2a142304b16972c33"
+  },
+  "decision": "PASS source, partial-module shape and proposed study-English fidelity; source/publication integration prerequisites below remain parent-owned",
+  "scope": "Exactly the frozen18-row extended-vigil module and eight composed coordinates: one study-English candidate and seven explicit English gaps. Potential two Collect referral studies require a separate successor mapping/body review and are not silently added here.",
+  "source_visual_checks": [
+    {
+      "source": "Official Notitiae2008,nos503-504",
+      "whole_pdf_sha256": "74c8d1740284984d0f4d64b2223edf805dadfa55aec8a92f8cfba9ab901eca0f",
+      "artifact_pages": [
+        62,
+        63,
+        64,
+        65,
+        66
+      ],
+      "printed_pages": [
+        "380",
+        "381",
+        "382",
+        "383",
+        "384"
+      ],
+      "extent": "Complete Supplementum Ad Missam in Vigilia Pentecostes module nn1–13, ending before Ad n144 Ordinis Missae on AP66. Six fresh rasters from whole exact bytes include these five pages and oldAP382."
+    },
+    {
+      "source": "Pustet Ratisbon1862MissaleRomanum",
+      "whole_pdf_sha256": "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474",
+      "artifact_pages": [
+        382
+      ],
+      "printed_pages": [
+        "296"
+      ],
+      "extent": "Complete historical Domine Deus virtutum prayer, after Prophetia sexta: starts bottom-left and continues top-right through actual Per Dominum. Following His expletis rubrics are outside prayer."
+    }
+  ],
+  "shape_findings": {
+    "counts": {
+      "proper_rows": 18,
+      "scripture_rows": 10,
+      "composed_coordinates": 8,
+      "after_reading_prayer_options": 6,
+      "after_reading_prayer_seats": 4,
+      "study_english_candidates": 1,
+      "english_gaps": 7
+    },
+    "order": "Praesta pointer before readings; Genesis/Psalm32/prayer; Exodus/Daniel3-or-Psalm18/prayer; Ezekiel/Psalm106/one-of-three prayers; Joel/Psalm103/prayer; delayed Gloria then Omnipotens pointer; Romans8:22–27 then usual continuation. Each bounded source appointment is represented in this order.",
+    "mutual_alternatives": "Two psalm choices after Exodus are one alternative group with no default. Three prayers after Ezekiel are one alternative group with no default. Distinct occurrences map to first Domine, second Deus qui nos verbo vitae, third Semper exsultet exactly.",
+    "ordinary_scope": "ordinary_frame unavailable is appropriate. Neither Vespers-joined nor usual opening is selected; hymn body, optional psalm-to-silence branch, joined Magnificat/antiphon, complete Mass continuation, blessing and dismissal choices are not inferred. Candidate is explicitly partial and supplies no default normal frame.",
+    "ad_libitum_limit": "AP63 n4 describes readings proposed ad libitum in the Lectionary. Four displayed source appointments and their order do not prove all four must be taken in every celebration. Retain this qualification if describing applicability; no source or shape correction is needed to the bounded appointment inventory."
+  },
+  "scripture_facts": {
+    "verified_exact_citations": [
+      "Genesis11:1–9",
+      "Psalm32:10–11,12–13,14–15; refrain12b",
+      "Exodus19:3–8,16–20b, without invented8a",
+      "Daniel3:52,53,54,55,56; refrain52b OR Psalm18:8,9,10,11; refrainJohn6:68c",
+      "Ezekiel37:1–14",
+      "Psalm106:2–3,4–5,6–7,8–9; refrain1orAlleluia",
+      "Joel3:1–5",
+      "Psalm103:1–2a,24and35c,27–28,29bc–30; refrain30orAlleluia",
+      "Romans8:22–27"
+    ],
+    "numbering": "Printed psalm references are Vulgate-numbered and are explicitly marked on each psalm proper. Joel3 is retained as the official source citation; existing calendar citation_divergences independently maps it to VulgateJoel2:28–32. This review does not invent a new mapping or infer an English Bible text from the official Latin excerpt."
+  },
+  "domine_study_english": {
+    "identity": [
+      "pentecost",
+      "extended-vigil",
+      "Prayer after the Third Reading",
+      "all",
+      1
+    ],
+    "source_petition_relation": "All petition words agree between oldAP382 and officialAP64 after stress,case,pointing and printer-wrap conventions. No petition word is added, omitted or substituted. Source period/colon/semicolon pointing is not silently ascribed to target.",
+    "source_ending_difference": "Old petition donor prints Per Dominum. Target actual short ending is Per Christum Dominum nostrum., followed by separately marked R.Amen. The old Per Dominum cue alone is not used to license a longer ending.",
+    "independent_ending_basis": {
+      "source_edition": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+      "whole_pdf_sha256": "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474",
+      "artifact_page": 776,
+      "printed_page": "[106]",
+      "locus": "Benedictio domus novae bottom-right, and preceding top-left blessing continuation",
+      "complete_historical_cue": "Per Christum Dominum nostrum.",
+      "separate_historical_response": "R. Amen.",
+      "entire_target_difference": "None beyond stress,case,display and line-wrap joining. The independently read old AP776 formula and response supply the complete target word chain; they are distinct from old AP382 petition donor.",
+      "ending_review": ".scratch/postconciliar-english-completion-20261029/nativity-review/full-ending-round/review.json",
+      "ending_review_sha256": "a25767be4606a288ff9168c5d4fc80526a6bdcc232238fd23c5130102957998a"
+    },
+    "english_fidelity": "Faithful original study rendering of independently established old petition plus independently established exact short formula and response. Through Christ our Lord. is not an expansion inferred from Per Dominum. R.Amen remains on its own marked line; preceding Oremus is outside prayer body. No English wording correction.",
+    "english_sha256": "17a0ab2147bdb4b40d675d2bac515f0551c624224677ec22b321488a3524b671",
+    "label_limit": "Project-created unapproved study English; not adapted historical human English, approved contemporaryEnglish, or complete extendedVigil. Official2008 qualification is bounded to inspected module and this exact quoted prayer, not fullMissal authentication."
+  },
+  "source_metadata_and_privacy": {
+    "passages": "All3proposed TOML passages parse; edition/artifact/segment references, whole hashes, page ranges and described prayer/module boundaries agree with actual source pages. Final source-library registration remains parent-owned.",
+    "publication": "No full protected modern Latin or approved English body appears in proposed calendar or sidecar. Calendar retains incipits/status/citation facts only. The complete Latin quoted in source evidence is the independently old Domine body. New English has project-created rights and no human translation source_id.",
+    "receipt_privacy": "Acquisition-disposition receipt contains source titles/URLs/hashes/access dispositions and no raw response headers, uploader/scanner emails, scanner hostnames or private runtime identifiers. Its separate new-sacramentary acquisitions are not source-identity/image-collation claims by this reviewer."
+  },
+  "required_integration": [
+    "Bind Domine short ending and separate R.Amen to a focused independently old AP776/[106] formula passage as well as the AP382 petition passage. Add explicit provenance to entry and official/body notes without rewriting frozen input.",
+    "Register the three reviewed proposed passages and any retained old-page artifact/source proof needed for public audit. Keep official protected PDF and modern page images out of publicGit.",
+    "Install exact English publication payload/artifact/passage with supported english or english_json field, exact recipient tuple and SHA17a0ab2147bdb4b40d675d2bac515f0551c624224677ec22b321488a3524b671; preserve new study label and separate response.",
+    "Preserve seven frozen gaps and two incomplete Collect-pointer boundaries in the original receipt. Any later recipient English use needs separate explicit source-local mapping and body/conclusion review, not an incipit transfer.",
+    "Run consolidated source/translation/calendar checks after source registration. No three expected unregistered-source-ID messages may remain in final integrated state."
+  ],
+  "validation": {
+    "frozen_manifest_and_10file_hashes_sizes_match": true,
+    "whole_official_and_old_pdf_hashes_match": true,
+    "fresh_complete_page_rasters_directly_read": 6,
+    "byte_and_render_check": ".scratch/postconciliar-english-completion-20261029/nativity-review/pentecost-extended-round/byte-and-render-check.json",
+    "byte_and_render_check_sha256": "402599741b73555c2de9515c11a086943da748388617e640f265f75206a4f792",
+    "independent_focused_shape_check": ".scratch/postconciliar-english-completion-20261029/nativity-review/pentecost-extended-round/focused-shape-check.json",
+    "independent_focused_shape_check_sha256": "f58782b44563bcbc0f56ec46de52bef71c22b6a2062a47ae3226e1b88cd29898",
+    "focused_checker_result": "No unexpected problems; exactly3expected proposed source-passage registration gaps.18rows,8composedcoordinates,2+3alternativegroups,1Englishcandidate+7gaps independently counted.",
+    "tracked_mutations": "none"
+  }
+}

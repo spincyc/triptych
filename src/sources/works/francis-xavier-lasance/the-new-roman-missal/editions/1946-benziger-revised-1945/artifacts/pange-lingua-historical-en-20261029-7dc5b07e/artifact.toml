@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.pange-lingua-historical-en-20261029-7dc5b07e"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+artifact_type = "checked-bilingual-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Only the ordinary-page historical1937/1945English expression of the1946printing is retained under the registered UnitedStatesnonrenewal finding forA110108/A192159. Ancient Latin poem is independently attested in registered1879Guéranger whole witness; later translation registration is not used to clear later Latin. No whole-bookPDF,Google framing,scan watermark,lettered inserts or new liturgical composition is retained."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/the-new-roman-missal/The%20New%20Roman%20Missal%20%281945%29_text.pdf"
+provenance = "Exact registered wholePDF4573991d962eb6a6391bc2555b8445bdfebd84de1ccffd7828f84e74d308ca77 checked before complete two-page200/400dpiimage reading on2026-10-29. Selected1946PDF464–465/printed454–455 contains all six English stanzas intact.1945PDF452/printed454 has a missing strip through firststanzaEnglishline4 and was rejected as whole-bodytranscriptioncontroller."
+retrieved = "2026-10-29"
+sha256 = "7dc5b07e7cf017028acf80b5d40971d9a71747e94f036ae85e48a1b6fe0724be"
+byte_size = 2204
+indexable = true
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+transformation = "Transcribe literal English and separately preserve facing sourceLatin; join physicalcolumnwraps and line-enddivisionhyphens; retain stanza,logicalverse boundaries,actualwording,pointing and capitalisation. Latinligatures expanded and stressaccents omitted only. Preserve sourceLatinlinqua andVrgine apparenttypographicerrors; no silent restoration. Omit adjacentrubric,heading,Postcommunion,Vespers and followingversicle. Typographic curly apostrophes in the print are represented consistently as ASCII apostrophes in the retained transcription; this character-level normalization is explicit and changes no word, contraction or punctuation function."
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/pange-lingua-historical-en-20261029-7dc5b07e/bilingual.tsv"
+encoding = "utf-8"
+notes = "HistoricalEnglishSHA256d9902364371c5968b871f9ce724d04f8d78801c526dfbcb1d2b75bf5a9b7969c. SourceEnglish firststanza has lowercaseking, fourthstanzaByHisword haslowercaseword; sourceEnglish differs in those capitals from the other registeredlater1945scan. HistoricalEnglish is not official1962English. SourceLatin apparentlinqua/Vrgine errors are recorded explicitly and do not control independent1879Latin."

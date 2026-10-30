@@ -1,0 +1,94 @@
+{
+  "accepted_by": "coordinating AI contributor under the maintainer's authorized completion task",
+  "accepted_fixture_core_sha256": "5a6e50e55d8f63308cbe4d6e632ada92945c06c97df266693562596d3f95ef95",
+  "accepted_on": "2026-10-30",
+  "accepted_state": "Accepted bounded English-source cohort; full English, exact target correspondence, human review and product completion remain separate.",
+  "boundaries": [
+    "Exact source accounting and test-input epoch only. Source rights and English/source fidelity remain owned by the separately retained admissions and finite authorities.",
+    "All original positive dictionaries remain exact except the single separately reviewed Palm hyphen correction; prior refusals remain active or retained by their exact admissions.",
+    "The seventy preexisting postconciliar study drafts retain their explicit unreviewed debt. Availability is not exact 2008 wording, human review or liturgical approval.",
+    "This is not whole-Missal English completeness, annual textual completeness, real-terminal maintainer acceptance or deployment."
+  ],
+  "compiler": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/compile_successor_v3.py",
+    "sha256": "29d0add9b330248b4047881310175614d91adc82688bfc695451318696c0865b"
+  },
+  "consumer_tests": "Required after this installation; no pass is asserted here.",
+  "direct_public_domain_proof_targets": 25,
+  "dropped_parent_paths": 0,
+  "english_coverage": {
+    "postconciliar": {
+      "ledgered_untranslated": 419,
+      "slots": 574,
+      "with_english": 155
+    },
+    "roman-1962": {
+      "ledgered_untranslated": 41,
+      "slots": 1448,
+      "with_english": 1407
+    },
+    "roman-pre-1955": {
+      "inherited_inapplicable_records": 57,
+      "ledgered_untranslated": 18,
+      "slots": 1391,
+      "with_english": 1373
+    }
+  },
+  "historical_fields_preserved": [
+    "schema",
+    "baseline_revision",
+    "baseline_roman_document_sha256",
+    "latin_baseline_rows",
+    "latin_baseline_bodies",
+    "latin_baseline_present_keys",
+    "latin_baseline_supplemented_keys",
+    "projection_baseline_source_files",
+    "english_219_keys",
+    "english_baseline_source_files",
+    "english_historical_source_files",
+    "english_historical_absence_scope"
+  ],
+  "independent_candidate_review": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/pending-v3-1-independent-review.json",
+    "sha256": "10575f8a978646eb59ec674e25e1c7adc0b1d698523c1dea95437c008ba8b0f1"
+  },
+  "independent_compiler_review": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/compiler-v3-independent-review.json",
+    "sha256": "574467f95411fdcb96bbc11e93edb3aaad71e54009d439fbee28d9a8cb0d92a3"
+  },
+  "parent_fixture_sha256": "9c5c00d4c4c4820c70d294ec0b3b22faf931bc8da172daea417ccd63a2e9cb20",
+  "parent_git_revision": "6aeb96a392a61e216310c3bf71834863afb229f8",
+  "parent_manifest_sha256": "40552d0fc0099216b7c3c299985430a3a2f19db35742db6a8db4c25804ccf1cd",
+  "pending_fixture_sha256": "45a367707a9b6d36328235f09821bf467d8b4fee205917840ebb7cf76bce753c",
+  "pending_state": "Bounded source successor candidate; independent source and fixture acceptance pending",
+  "preserved_parent_paths": 5615,
+  "raw_original_replay_objects_preserved": 17,
+  "retained_reproduction_inputs": {
+    "source-data-proof.json": {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/source-data-proof.json",
+      "sha256": "1667f10f0a0bf951e02db251f3954a429aa857c1becb3cce21224004a547a718"
+    },
+    "source-input-declaration.json": {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/source-input-declaration.json",
+      "sha256": "6c4d3f90fd10952ac40507034d5baefb7e4597a5838e192485f09743da55efa9"
+    },
+    "source-input-delta.json": {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/source-input-delta.json",
+      "sha256": "f07876d93b4dba02e0562fb7ee73e3d1233848ac62dfabca082fd36795b49378"
+    },
+    "source-transition-contract.json": {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/source-transition-contract.json",
+      "sha256": "04b8448f2bc13e5e79bc2593b9be10c624ef38f7a30bcfebb49392815285e9eb"
+    }
+  },
+  "schema": "triptych-source-batch-acceptance/v1",
+  "scope": "missal-source-batch",
+  "source_epoch_paths": 7068,
+  "source_input_manifest_path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+  "source_input_manifest_sha256": "a842b22712bce139398aa6e5b86cfd662cfb14ab46de510e5c241265440324fd",
+  "source_permission_created_by_this_receipt": false,
+  "status": "accepted",
+  "strict_runtime_helper_sha256": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1",
+  "successor_kind": "bounded-english-source-completion-cohort",
+  "support_sha256": "6fd8b3552071f4ef479bbdc6c4d693331b8ceb91e48dcb016e91033fd6ba03fc"
+}

@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-ordinary-supplices-la"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The 1922 Tours Mame printing and its faithful mechanical reproduction have the affirmative United States public-domain basis already recorded on artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a. These two historical book pages reproduce that public-domain printing only; no modern target book, website wrapper or editorial apparatus is retained. The faithful source transcription claims no new exclusive right in the prayer words."
+rights_jurisdiction = "United States"
+provenance = "Direct source-image transcription of Supplices from artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-ordinary-supplices-pages, packet pages1-2, original457-458, printed343-344, inspected on 2026-10-30. The printed verb is perferri, not the different praeferri in the Cummiskey1861 source previously blocking this element. No OCR supplies any word."
+retrieved = "2026-10-30"
+sha256 = "bd34c9727a10001f04842878ffb079e2078f0209fd3d36aee470b3a69f03b2f6"
+byte_size = 432
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-supplices-la/text.tsv"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-ordinary-supplices-pages"
+transformation = "Retain the complete source prayer body through repleamur as one row and its complete separately printed Per eumdem Christum Dominum nostrum. Amen. as a second row. Join line-ending hyphenation and page continuation; expand printed ae ligatures to ae; remove stress accents; preserve source j spelling and pointing apart from closing compositor spacing before colons; render the opening typographic drop capital S plus small-cap UPPLICES in conventional sentence case Supplices. Other source capitalization is retained. Omit the source red ceremonial rubrics and two interleaved cross signs from spoken prayer rows; neither is represented as spoken wording. No word or conclusion is expanded, changed or supplied. The first row is a source-contiguous prayer-body prefix; the older full conclusion remains separately retained and is not silently deleted from the source record."
+indexable = true
+encoding = "utf-8"
+notes = "One header and two physical TSV rows. supplices-body is the body alone, ending repleamur; supplices-source-conclusion preserves the source conclusion. The 2002 secondary target witness permits omission of its parenthesised conclusion at n.94. That bounded comparison is not an authenticated full2008 collation, and the source is not relabelled as the modern book."

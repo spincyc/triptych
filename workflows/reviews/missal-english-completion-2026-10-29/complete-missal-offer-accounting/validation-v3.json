@@ -1,0 +1,90 @@
+{
+  "checkpoint_derivation_performed": false,
+  "contract": [
+    "Unique language held plus missing equals modeled elements; absent equals missing.",
+    "Validated typed Ordinary available and occurrences equal unique held and modeled elements.",
+    "Per-witness typed available equals raw coverage witness held for each source and language.",
+    "Relation buckets exactly partition summed source offers, independently of unique held.",
+    "Original untyped single-offer contract retains exact equality.",
+    "Exact-target grades, existing qualifiers, source permissions and denominator ownership are unchanged.",
+    "Raw relation collation totals must fit the forced/possible offer counts of the typed witnesses; this retains mixed witness grades without inventing a per-offer collation.",
+    "On the typed path, only typed exact_target counts exact target wording once per modeled element; raw own offers include study translations and cannot supply target confidence or inflate filled lower bound."
+  ],
+  "existing_live_expectation_update": {
+    "accepted_current": 1373,
+    "authorized_by_root": true,
+    "old": 1168,
+    "source_receipt": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/pre1955-inherited-exclusion-successor-v2.json",
+    "source_receipt_sha256": "ec4ce81ac2f93db38a01b7d4558559b74b3944a9e0aec8ddbdd3cc1a07bfc250",
+    "status": "reserved until accepted source-batch checkpoint record is present; existing test not yet edited"
+  },
+  "existing_report_suite": {
+    "failed": 1,
+    "failure": "Existing live inherited pre-1955 English assertion expects1168, current accepted source reports1373. No fixture edited.",
+    "log": ".scratch/checkpoint-source-batch-20261030/complete-missal-existing-report-tests-v3.log",
+    "log_sha256": "3ef0010ea4e891a45cbd31943bc258115e8440b72cb95d1e1b45e44d69ba503e",
+    "passed": 20,
+    "tests": 21
+  },
+  "focused_tests": {
+    "failed": 0,
+    "invocations": [
+      {
+        "log": ".scratch/checkpoint-source-batch-20261030/complete-missal-package-focused-v3.log",
+        "log_sha256": "04e35f0a1383efef3b9260a7afda3a1bc21c7e08111408410c6997b80b54d87c",
+        "passed": 10,
+        "style": "package",
+        "tests": 10
+      },
+      {
+        "log": ".scratch/checkpoint-source-batch-20261030/complete-missal-discover-focused-v3.log",
+        "log_sha256": "02bfdcf1225e8291421296c03dd3430eae800e544bc5a8147eed99a5fc32633d",
+        "passed": 10,
+        "style": "discover",
+        "tests": 10
+      }
+    ],
+    "passed": 10,
+    "tests": 10
+  },
+  "independent_acceptance_claimed": false,
+  "new_test": {
+    "path": "tools/tests/test_complete_missal_source_offers.py",
+    "sha256": "e853c9a442a949b4f40161db90b622759dc7a335625cddc71d031264c43c2e58"
+  },
+  "predecessor_validation": {
+    "path": ".scratch/checkpoint-source-batch-20261030/complete-missal-consumer-validation-v2.json",
+    "sha256": "5c04aa77ebe6f8a0dfa932ca6ddec936fb720f95a9af1adfa226ce26aaa9a76a",
+    "successor_change": "Independent review corrected residual own-offer confidence inflation; typed exact_target now supplies unique target-held counts and raw collation offers require compatible typed witness evidence."
+  },
+  "saved_real_report_validation": {
+    "Roman1962": {
+      "held_English": 197,
+      "modeled": 200,
+      "offered_English": 198,
+      "raw_own_English_offers": 3,
+      "relation_English": 198,
+      "unique_exact_target_English": 0,
+      "unique_exact_target_Latin": 103
+    },
+    "exact_target_English": {
+      "postconciliar": 0,
+      "roman-1962": 0,
+      "roman-pre-1955": 0
+    },
+    "path": ".scratch/checkpoint-source-batch-20261030/complete-missal-real-offer-validation-v3.json",
+    "postconciliar": {
+      "held_English": 35,
+      "raw_own_English_offers": 9,
+      "unique_exact_target_English": 0
+    },
+    "sha256": "58235ccae3fb07013b43a55d67fde29dd7e1ca2fe641ddaff381cab76a7d5e3f"
+  },
+  "schema": "triptych-bounded-complete-missal-offer-accounting-validation/v1",
+  "scope": "Consumer accounting only; no producer, source, admission, generation, release or fixture edits by this lane.",
+  "tool": {
+    "path": "tools/complete-missal",
+    "preimage_sha256": "ec015c7d6ce62d7407d8245b3e667ee0aabb985fa249dd5a5e4c6ff996721654",
+    "sha256": "29e923e3a80f5f56727edde1a3a009947558396fc4b2cc27226eca48ca486263"
+  }
+}

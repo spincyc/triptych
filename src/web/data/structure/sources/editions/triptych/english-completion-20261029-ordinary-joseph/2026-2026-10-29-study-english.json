@@ -1,0 +1,73 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "project-study-translation",
+   "byte_size": 1869,
+   "edition_owned": true,
+   "id": "artifact.triptych.english-completion-20261029-ordinary-joseph.study-english-20261029.continuation-study-en-b83d0df3",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "notes": "One header and three data rows; seq 1 continuatio, seq 2 rubrica, seq 3 conclusio, all element_key communicantes-continuatio. Source library passage records bounded inspection of this project translation; it does not claim a received human translation. Any reader offering this artifact must label it Triptych study English and keep its non-recitation qualification visible.",
+   "page_count": null,
+   "retrieved": "2026-10-29",
+   "rights": "project-created",
+   "rights_basis": "New Triptych-authored study English under CC BY 4.0. The English was drafted directly from the exact held Latin projection and copies no historical or approved English. The Latin column preserves only the independently distributable source rows: public-domain preexisting material witnessed by 1922 Tours Mame, 1862 Pustet and 1861 Cummiskey, plus the bounded Saint Joseph clause published under the maintainer-decided short-phrase basis recorded at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml [the_joseph_clause]. That source basis reaches no other 1962 matter. Triptych claims no exclusive right in underlying public-domain Latin.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": "Project study translation; no liturgical approval or authority",
+  "date": "2026-10-29",
+  "editors": [
+   "Triptych contributors"
+  ],
+  "id": "edition.triptych.english-completion-20261029-ordinary-joseph.study-english-20261029",
+  "jurisdiction": "United States",
+  "language": "en",
+  "publication": "Triptych project study translation",
+  "title": "Communicantes continuation, Triptych study English, 29 October 2026",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.triptych.english-completion-20261029-ordinary-joseph.study-english-20261029.continuation-study-en-b83d0df3",
+   "artifact_type": "project-study-translation",
+   "context": "All three project English rows were read against the exact pinned Latin source rows 2–4. Independent AI semantic review on 2026-10-29 accepted the dependent genitive construction, Joseph as spouse of the same Virgin, every saint-name in source order, the merits-and-prayers relative petition, passive fortified sense, nonspoken action and complete same-Christ conclusion with its source Amen. This is verification of the new study translation against its source, not historical transcription or human review.",
+   "id": "passage.triptych.english-completion-20261029-ordinary-joseph.study-english-20261029.communicantes-continuation",
+   "locus": "Communicantes shared continuation, nonspoken hand-joining rubric and explicit conclusion; TSV rows1–3",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "notes": "The underlying Latin projection retains its separate source witnesses and rights limits. No new target-edition Latin collation, full Communicantes translation, date appointment or approved English claim is made.",
+   "readable": true,
+   "rights": "project-created",
+   "rights_basis": "New Triptych-authored study English under CC BY 4.0. The English was drafted directly from the exact held Latin projection and copies no historical or approved English. The Latin column preserves only the independently distributable source rows: public-domain preexisting material witnessed by 1922 Tours Mame, 1862 Pustet and 1861 Cummiskey, plus the bounded Saint Joseph clause published under the maintainer-decided short-phrase basis recorded at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml [the_joseph_clause]. That source basis reaches no other 1962 matter. Triptych claims no exclusive right in underlying public-domain Latin.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "transcription",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.triptych.english-completion-20261029-ordinary-joseph.study-english-20261029.communicantes-continuation.json",
+   "verified_on": "2026-10-29",
+   "words": 81
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Triptych contributors",
+  "category": "study-translation",
+  "description": "A bounded project study translation of the shared Communicantes continuation, its nonspoken hand-joining rubric and its explicit conclusion. Neither an historical English witness nor an approved liturgical translation; not for recitation. No human review is claimed.",
+  "id": "work.triptych.english-completion-20261029-ordinary-joseph",
+  "languages": [
+   "en"
+  ],
+  "title": "Study English of the Roman 1962 Communicantes continuation"
+ }
+}

@@ -1,0 +1,53 @@
+{
+  "recorded_on": "2026-10-29",
+  "scope": "Pre-publication schema assembly correction only; independent source/English review and immutable artifact payloads unchanged.",
+  "source_context_corrections": [
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-acclamations-veni-sancte-spiritus-verse-source.toml",
+      "preimage_sha256": "a8e14e24a79beb55c60c9fed02468e7e8f84e617c50ba952447de05a7a3ffee0",
+      "sha256": "4ac95848b498b2936155c7fc8556b28485e8a1b13c440627e4fd460cb076baa5",
+      "byte_size": 1552,
+      "old_context": "Complete historical human-English verse and its facing Latin were inspected at PDF pages [597], printed pages ['599'], IA leaves [596]. The complete historical English verse begins Come after the separately parenthesized kneeling direction and ends Thy love. before the Sequence. The preceding Psalm verse, both versicle signs, Alleluia framing and nonspoken kneeling direction are outside this retained body.",
+      "new_context": "Complete historical human-English verse and its facing Latin were inspected at PDF pages [597], printed pages ['599'], IA leaves [596]. The complete historical English verse begins Come after the separately parenthesized kneeling direction and ends Thy love. before the Sequence. The preceding Psalm verse, both versicle signs, Alleluia framing and nonspoken kneeling direction are outside this retained body. Exact printed locus: printed p. 599."
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-acclamations-dies-sanctificatus-verse-source.toml",
+      "preimage_sha256": "375a3c141fe5b8b7f5b1c5e0d0e4d9c6c56030060f90403642ca668b65da174a",
+      "sha256": "f5b2e10f21c075fe8328547ecc28e712c1f35024c8f915a94d48b23ba2117f58",
+      "byte_size": 1545,
+      "old_context": "Complete historical human-English verse and its facing Latin were inspected at PDF pages [146], printed pages ['145'], IA leaves [145]. The complete historical English verse begins A hallowed day after the initial Alleluia framing and versicle sign, and ends earth. before the separately printed final Alleluia. The fresh retained body quotes only the complete verse, preserving its own colon and semicolon.",
+      "new_context": "Complete historical human-English verse and its facing Latin were inspected at PDF pages [146], printed pages ['145'], IA leaves [145]. The complete historical English verse begins A hallowed day after the initial Alleluia framing and versicle sign, and ends earth. before the separately printed final Alleluia. The fresh retained body quotes only the complete verse, preserving its own colon and semicolon. Exact printed locus: printed p. 145."
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-acclamations-surrexit-christus-verse-source.toml",
+      "preimage_sha256": "2777df7da9df1d118377b59ff7b100fd3f11698b62e8201497f9e02a91877a43",
+      "sha256": "e1e086d76e5c2b9a79bc86e20d4236b3daaa3920b46aad09ab5f9c1aa96fc981",
+      "byte_size": 1583,
+      "old_context": "Complete historical human-English verse and its facing Latin were inspected at PDF pages [553], printed pages ['555'], IA leaves [552]. The complete historical English verse begins Christ is risen after the initial Alleluia framing and versicle sign, and ends mankind. before the separate Sequence referral. No following Alleluia is present to expand or supply. The historical occurrence is not asserted to be any modern recipient appointment.",
+      "new_context": "Complete historical human-English verse and its facing Latin were inspected at PDF pages [553], printed pages ['555'], IA leaves [552]. The complete historical English verse begins Christ is risen after the initial Alleluia framing and versicle sign, and ends mankind. before the separate Sequence referral. No following Alleluia is present to expand or supply. The historical occurrence is not asserted to be any modern recipient appointment. Exact printed locus: printed p. 555."
+    }
+  ],
+  "omitted_empty_optional_incipit_keys": [
+    [
+      "easter-3",
+      "main",
+      "Gospel Acclamation",
+      "C",
+      1
+    ],
+    [
+      "easter-2-saturday",
+      "main",
+      "Gospel Acclamation",
+      "all",
+      1
+    ]
+  ],
+  "reason": "Owner requires exact printed p. text in passage context itself and rejects optional incipit keys with empty values; source calendar intentionally retains no Latin incipit for these two recipients. No Latin incipit was invented.",
+  "all_English_translation_dictionaries_exact": true,
+  "all_unavailable_dictionaries_exact": true,
+  "artifact_payloads_unchanged": true,
+  "frozen_preparation_sha256": "47645be7f0bb6df83cce27da00e2da0d04ac12af535f20d62d90b22e6cc140e3",
+  "overlay_preimage_sha256": "1a62c49db7a46f17cfc30c0b993d5cc89246633a42a272380a269b0610f5752f",
+  "overlay_postimage_sha256": "bf3728737fcf40b46ab86688afede28f30f2750d019be4d57c85a12a74475089"
+}

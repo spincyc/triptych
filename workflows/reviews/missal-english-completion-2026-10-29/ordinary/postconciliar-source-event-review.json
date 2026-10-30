@@ -1,0 +1,534 @@
+{
+  "schema": "missal-reader-english-ordinary-review/v1",
+  "baseline_commit": "6aeb96a392a61e216310c3bf71834863afb229f8",
+  "disposition": "accepted twenty historical English antecedents with source-specific reading qualifications",
+  "postimage_sha256": "d85e87ae491b0da21168c0b6de00bf9f31bda7d51c6646f36fa484fe43433237",
+  "scope": {
+    "english_held": 20,
+    "represented_elements": 61,
+    "approved_2011_english_bodies": 0,
+    "new_facsimile_collations": 0,
+    "new_rights_findings": 0,
+    "source_route": "Nine already registered public-domain United States Cummiskey 1861 English artifacts; reuse of their existing page-image transcription evidence."
+  },
+  "independent_source_review": {
+    "initial_source_candidate": "ff7b8aa1fb93f44455442174500d263e59e61f0eebc61abb51eecaf545e6bee3",
+    "successor": "d85e87ae491b0da21168c0b6de00bf9f31bda7d51c6646f36fa484fe43433237",
+    "result": "accepted",
+    "invariants": [
+      "All 20 English bodies and 4 source turn partitions equal selected registered TSV rows.",
+      "All prior Latin text and its 5 collated and 15 uncollated grades remain exact.",
+      "Restricted witness, all existing element fields, absences, appointments, slots and variants remain exact.",
+      "The 41 elements receiving no English retain their original generated records.",
+      "All 20 concise reading_notes project literally and retain historical/nonapproved/source-only differences."
+    ]
+  },
+  "accepted_joins": [
+    {
+      "element": "ritus-initiales/gloria-in-excelsis",
+      "source_edition": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en",
+      "artifact_elements": [
+        "gloria-in-excelsis"
+      ],
+      "body_sha256": "2d0bd80c6c953a84c3e3d13262e82c08231ea494c04782cfb285d7bff7ff4f12",
+      "reading_note_sha256": "9c9aaca7c067e56e5e2873b6b8a0ee8c9c4767a45a975d177eec70498d2e1d24",
+      "rights": "public-domain",
+      "relation": "antecedent",
+      "collation": "uncollated"
+    },
+    {
+      "element": "symbolum/symbolum-nicaenum",
+      "source_edition": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en",
+      "artifact_elements": [
+        "credo-in-unum-deum",
+        "et-in-unum-dominum",
+        "et-in-spiritum-sanctum"
+      ],
+      "body_sha256": "2035c0452e5d5d8e5b2719e4084b2e0f2c17b0656dc7c43cffb39e55431fca30",
+      "reading_note_sha256": "e83ff4be21f0518dc85ee3891e4fdaf9673cf1d7b0fba31c84da0ff4af4d7777",
+      "rights": "public-domain",
+      "relation": "antecedent",
+      "collation": "uncollated"
+    },
+    {
+      "element": "praeparatio-donorum/in-spiritu-humilitatis",
+      "source_edition": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en",
+      "artifact_elements": [
+        "in-spiritu-humilitatis"
+      ],
+      "body_sha256": "21b8e62e5264185c7049624a498793b2a23972a43c834aaf4e1bdb92f5e0a4f7",
+      "reading_note_sha256": "290cfb90c421953e88d53f43e764d94c70b86d7e558ee56ec4223384918549e8",
+      "rights": "public-domain",
+      "relation": "antecedent",
+      "collation": "uncollated"
+    },
+    {
+      "element": "praeparatio-donorum/orate-fratres",
+      "source_edition": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en",
+      "artifact_elements": [
+        "orate-fratres",
+        "suscipiat-dominus"
+      ],
+      "body_sha256": "69dd4bfe04a77882a2d4f227eb9e3daa7a8eff83b85d7da8f431416c86aa9ba8",
+      "reading_note_sha256": "711fb32cb149db1a06de5cc6531a84be29762b2683772ef16efb902ecd6a312c",
+      "rights": "public-domain",
+      "relation": "antecedent",
+      "collation": "uncollated"
+    },
+    {
+      "element": "prex-eucharistica/praefationis-dialogus",
+      "source_edition": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided",
+      "artifact_elements": [
+        "sursum-corda"
+      ],
+      "body_sha256": "37eaf8a708485ca5eb01f02aaaa7a5498f584530466191555a8a1fbc8ef600f0",
+      "reading_note_sha256": "d59ffc48dd67bc9b80cd7073d1f3a440611f68ede5df66d2c4c1de0200e84a3f",
+      "rights": "public-domain",
+      "relation": "antecedent",
+      "collation": "uncollated"
+    },
+    {
+      "element": "prex-eucharistica/sanctus",
+      "source_edition": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en",
+      "artifact_elements": [
+        "sanctus"
+      ],
+      "body_sha256": "802ecf89906bfffb158b2960b1e1db574d3d2ebc95095b2c3af5ccf23b83fca1",
+      "reading_note_sha256": "9f465a8b4daa0632121cfe2f896fb2e73948a457b3c6765e3c5c3a8b5770ff63",
+      "rights": "public-domain",
+      "relation": "antecedent",
+      "collation": "uncollated"
+    },
+    {
+      "element": "prex-eucharistica/te-igitur",
+      "source_edition": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en",
+      "artifact_elements": [
+        "te-igitur",
+        "te-igitur-cultoribus"
+      ],
+      "body_sha256": "c454ae41c9d9048ddfe62bdac7801d96035c6498d7af073ed63c3d4126777394",
+      "reading_note_sha256": "9c0d759424a3af3f0714bf4a9de8ed980cd55d9ae311215e7d5f5093d4f19068",
+      "rights": "public-domain",
+      "relation": "antecedent",
+      "collation": "uncollated"
+    },
+    {
+      "element": "prex-eucharistica/memento-domine",
+      "source_edition": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en",
+      "artifact_elements": [
+        "memento-domine",
+        "et-omnium-circumstantium"
+      ],
+      "body_sha256": "cbf472c8e801bbbce0fa2fa74dcc55e3748d42089872b12987f299c2a62eee7a",
+      "reading_note_sha256": "ba22fd3875ea8e832db6df18de937edcfe709731b2b21df510b5b4eda89b0b79",
+      "rights": "public-domain",
+      "relation": "antecedent",
+      "collation": "uncollated"
+    },
+    {
+      "element": "prex-eucharistica/hanc-igitur",
+      "source_edition": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en",
+      "artifact_elements": [
+        "hanc-igitur"
+      ],
+      "body_sha256": "a0c9c14fe80d5fd7f939187b535f178c8bf95c12774722809cc5e1f9c93e578f",
+      "reading_note_sha256": "694a215a00ba617063820235df455b62807436858f3d5223f27aaaac58912827",
+      "rights": "public-domain",
+      "relation": "antecedent",
+      "collation": "uncollated"
+    },
+    {
+      "element": "prex-eucharistica/quam-oblationem",
+      "source_edition": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en",
+      "artifact_elements": [
+        "quam-oblationem"
+      ],
+      "body_sha256": "de8c857982440143ee199d9c87d2ed49a7b4d0af182d83139aff6cfaf33f5199",
+      "reading_note_sha256": "00523fba3c67299d06e96fbe4dd54910a8d6f652729051afbe2d8f8b0af06563",
+      "rights": "public-domain",
+      "relation": "antecedent",
+      "collation": "uncollated"
+    },
+    {
+      "element": "prex-eucharistica/unde-et-memores",
+      "source_edition": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en",
+      "artifact_elements": [
+        "unde-et-memores"
+      ],
+      "body_sha256": "f0f45deb1d8f91f3d5f10210c53a5c49a28b149720069a791b585f8111ed3378",
+      "reading_note_sha256": "e78db9fcf838e8f2dc9f88c2f25fb6cfae7a5fec8c668d2c53db4e3bfab54fb0",
+      "rights": "public-domain",
+      "relation": "antecedent",
+      "collation": "uncollated"
+    },
+    {
+      "element": "prex-eucharistica/supra-quae",
+      "source_edition": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en",
+      "artifact_elements": [
+        "supra-quae"
+      ],
+      "body_sha256": "8f58f8cf485a9e1a080823f7e10e5fd8da2eea11a45be98f861287f3a4f31114",
+      "reading_note_sha256": "93956656460cbc91a20b8af5b825bc7541f015d9827b0bf0d69b40ca5b2e6b78",
+      "rights": "public-domain",
+      "relation": "antecedent",
+      "collation": "uncollated"
+    },
+    {
+      "element": "prex-eucharistica/memento-etiam",
+      "source_edition": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en",
+      "artifact_elements": [
+        "memento-etiam",
+        "ipsis-domine"
+      ],
+      "body_sha256": "dfaf963463fc16b0d8ff545eb560bb0dabcccf807a5058ae15033fe488baac57",
+      "reading_note_sha256": "7a12ef62d09850d849187cf5e88b5102a6f5b60b49da33e4781279258997ee33",
+      "rights": "public-domain",
+      "relation": "antecedent",
+      "collation": "uncollated"
+    },
+    {
+      "element": "prex-eucharistica/nobis-quoque",
+      "source_edition": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en",
+      "artifact_elements": [
+        "nobis-quoque"
+      ],
+      "body_sha256": "f574c8ce9ac9ba9052e257b747a26018f6024d63b0a44397050b5a7f34365016",
+      "reading_note_sha256": "c448d147af250ee2e2167f9e9b71c285c48459d8401646400924f65f8a7eafdf",
+      "rights": "public-domain",
+      "relation": "antecedent",
+      "collation": "uncollated"
+    },
+    {
+      "element": "prex-eucharistica/per-quem",
+      "source_edition": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en",
+      "artifact_elements": [
+        "per-quem"
+      ],
+      "body_sha256": "64fadca9ae64a2ed9f669c0badd70b6774959f00a054ae34b43a51b5ce02fa79",
+      "reading_note_sha256": "e45c34bfd6b043f158ccdee4c146d968ac631a110af5da5c252291a05fbeae05",
+      "rights": "public-domain",
+      "relation": "antecedent",
+      "collation": "uncollated"
+    },
+    {
+      "element": "prex-eucharistica/doxologia",
+      "source_edition": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20",
+      "artifact_elements": [
+        "per-ipsum",
+        "per-omnia-saecula"
+      ],
+      "body_sha256": "f82adc07702f343b84654baf4f0a93be0e7b7d282f516ef4db050a9dc9fa0c95",
+      "reading_note_sha256": "b6bce084beb1915fbbdc1196fb6b6994e3b180c642f6e4a6b923ffcf2a5da52b",
+      "rights": "public-domain",
+      "relation": "antecedent",
+      "collation": "uncollated"
+    },
+    {
+      "element": "ritus-communionis/pater-noster",
+      "source_edition": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en",
+      "artifact_elements": [
+        "praeceptis-salutaribus",
+        "pater-noster"
+      ],
+      "body_sha256": "30e5d9a61e62b6ea8016dfa61f7b7d7ba60818239d40d99b893b17a6d95010c8",
+      "reading_note_sha256": "d1d2ea2c4fc86d974e3d75854acfeebf896106f58bae27060e1c6ed56148e815",
+      "rights": "public-domain",
+      "relation": "antecedent",
+      "collation": "uncollated"
+    },
+    {
+      "element": "ritus-communionis/pax-domini",
+      "source_edition": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided",
+      "artifact_elements": [
+        "pax-domini"
+      ],
+      "body_sha256": "0461fd60879a61bac7609b3a264f4ff1d62088a3a610540fff4476649ec93b36",
+      "reading_note_sha256": "8b506029fba09705fd7d8e3c419551d6c5fcf4b5516729e9db2ed7d84a49a6a5",
+      "rights": "public-domain",
+      "relation": "antecedent",
+      "collation": "uncollated"
+    },
+    {
+      "element": "ritus-communionis/agnus-dei",
+      "source_edition": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en",
+      "artifact_elements": [
+        "agnus-dei"
+      ],
+      "body_sha256": "2b1f3862c537ec0be0a8bf32f173d2ec5b5d2a56e5c5fcec581e109b27a529d5",
+      "reading_note_sha256": "0f183673e3a46e97170a6ebdcde8510bbaffb7ad1544b0a6996bebb943aec3bf",
+      "rights": "public-domain",
+      "relation": "antecedent",
+      "collation": "uncollated"
+    },
+    {
+      "element": "ritus-communionis/purificatio",
+      "source_edition": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en",
+      "artifact_elements": [
+        "quod-ore-sumpsimus"
+      ],
+      "body_sha256": "3873e7d213c176ea9de9855a6b327485274b9e80f574b20acd13e408fdfdf85d",
+      "reading_note_sha256": "7136a0fd57d1dc370db6d9aeaff8e801604360e153eec0f0a9e1962b999a9792",
+      "rights": "public-domain",
+      "relation": "antecedent",
+      "collation": "uncollated"
+    }
+  ],
+  "remaining_english_absences": {
+    "approved-english-publication-restriction": 18,
+    "official-exemplar-not-carried": 7,
+    "priest-prayer-said-quietly": 4,
+    "element-spans-mixed-availability": 3,
+    "proper-text-outside-ordinary": 6,
+    "no-fixed-text": 3
+  },
+  "event_text_review": {
+    "pentecost_10_text": {
+      "baseline": {
+        "count": 178,
+        "sha256": "1edc606286d8f909b86af9fa6f2de2c54ade781f731dcf0fed1044d657b19384"
+      },
+      "source-only": {
+        "count": 178,
+        "sha256": "6e5908b1aecd76f66e186d493f852d17698a4ba99d203c611f00df5a84e926db"
+      },
+      "current": {
+        "count": 178,
+        "sha256": "4e0a78e2bf7e33e8effdd6601a2ce6ce6941342388ebf3e83a688c67c8487b9a"
+      },
+      "changed_ordinals": [
+        109
+      ],
+      "changes": [
+        {
+          "ordinal": 109,
+          "event": "ordinary_element:canon/communicantes-continuatio",
+          "before_sha256": "c70c1fbc2b00776fb926405a34f1ea3d12d50a07178fcc0b11717c9e8d10ad37",
+          "source_only_sha256": "931fd552a540ee2ea8a09ef97b3be6b81e8f8236b4fe238f7b05f3425588f026",
+          "after_sha256": "e130f809c0f8f5d291923b6e852e49f585b10c9d934fd57fa731219edc47a684"
+        }
+      ]
+    },
+    "ot_18_text": {
+      "baseline": {
+        "count": 67,
+        "sha256": "f59b35a245b8078c33787bd79148c88d260e27a84a8decc9487842f016bf0b15"
+      },
+      "source-only": {
+        "count": 67,
+        "sha256": "8c4ef9703c733fb7b88271071063cbee759d155eff90256857c6669afe27dc6d"
+      },
+      "current": {
+        "count": 67,
+        "sha256": "b2f168aa13366beb1e2043cd3d6499df7ab59bf265ab1584f0101ff03bcade5a"
+      },
+      "changed_ordinals": [
+        25,
+        27,
+        31,
+        33,
+        34,
+        35,
+        37,
+        38,
+        41,
+        42,
+        44,
+        45,
+        46,
+        47,
+        49,
+        52,
+        55,
+        60
+      ],
+      "changes": [
+        {
+          "ordinal": 25,
+          "event": "ordinary_element:praeparatio-donorum/in-spiritu-humilitatis",
+          "before_sha256": "150b6cc5cfb385add8fd321e95473b743037100f09037262eefaeb1725883430",
+          "source_only_sha256": "ba44e293eeeea2b23d1e0230481207412d623d3baa63f4b5cbc3aed6f235b522",
+          "after_sha256": "34f1f6bf5be31ab5fd961628042308203a6518297d6bbd7acde5f8e4eefd1afd"
+        },
+        {
+          "ordinal": 27,
+          "event": "ordinary_element:praeparatio-donorum/orate-fratres",
+          "before_sha256": "31b96ed5943c77e78fb8694149482e86299aa83b11ce53dd330ee6d8bf767d22",
+          "source_only_sha256": "b054224daa93f8bac6b1337c8ae9faba696ff7a11f3487db87818444127eed85",
+          "after_sha256": "0c33d9bc2c23cb0f4a5fe14c317cdcac803fb00613b35cf99273499c24e388e3"
+        },
+        {
+          "ordinal": 31,
+          "event": "ordinary_element:prex-eucharistica/praefationis-dialogus",
+          "before_sha256": "eae7cd4b7535ea853ad994b247ecd1adea03199ce385323094bc245dc2ecf9e9",
+          "source_only_sha256": "7571ac0bee5d855e95d58e7e55fb118d9cdf2161b39e344bf67d5aab469bbf92",
+          "after_sha256": "8b6d8a9b3bff31e607a7f9828ee77e85d2228e3f35eb8f2b9b101f75ffa04c73"
+        },
+        {
+          "ordinal": 33,
+          "event": "ordinary_element:prex-eucharistica/sanctus",
+          "before_sha256": "0c78c0b943ba5eb83e30bfabadf86f881328f388ff581ba60783c07b67b3b09d",
+          "source_only_sha256": "b1d4db313fd8935f1d8cff232449b7e69c788a03bae70ea273276c00fc45fa0d",
+          "after_sha256": "9ad14d7c44de74f14b2ce7abb2a0b7f6d961d944ea7e12c443972ef635cbf3c8"
+        },
+        {
+          "ordinal": 34,
+          "event": "ordinary_element:prex-eucharistica/te-igitur",
+          "before_sha256": "15cf50d3c974e7fa32dd8b20c33bc5f19297ad1643f28bad076e2d984cc10d6e",
+          "source_only_sha256": "3d168288382f3e20f54200da604accdb3398d5a18fe5b0e2a14c251e058d07b3",
+          "after_sha256": "3ca1b1298a7e6f05a1c1015e1fd5260908958f65a4b0e51d7ce1a4885e2df0db"
+        },
+        {
+          "ordinal": 35,
+          "event": "ordinary_element:prex-eucharistica/memento-domine",
+          "before_sha256": "b0979df12013c1c576bbb10e2a6884760242a73c5b6bf9f874f2a0b2254149e1",
+          "source_only_sha256": "bc7384249a91d072fac2caf72135d7d9af79cee37f67516ed85da02d5cb4ba63",
+          "after_sha256": "ef1de0f9089f14cd8d7c8708d76c914a7118f0fe2f47e5c93baa3b873baef415"
+        },
+        {
+          "ordinal": 37,
+          "event": "ordinary_element:prex-eucharistica/hanc-igitur",
+          "before_sha256": "664de0cc3dcd8831441facdd3c5e0ef9f9c93f9b8a589ab426f51d23f91726de",
+          "source_only_sha256": "a08ecf6861306fa1166260a1691d797f53eeede0bb58efe6c20535a61c8a2e72",
+          "after_sha256": "2317f6cb596b2dee3ff61c00a746a98e34722eb244b5b276a7fb5077aa84b966"
+        },
+        {
+          "ordinal": 38,
+          "event": "ordinary_element:prex-eucharistica/quam-oblationem",
+          "before_sha256": "e9e2637e9693146957903f711f178d8062031ab4914ae85ba8d1277d1f7318f8",
+          "source_only_sha256": "da0e6fe98cf23efbfe875bc16d43c8caa2eb3eb511296d404cb75ef840307c34",
+          "after_sha256": "389c08648c5d0d55826509dcbafd282b9b8cee59f8c906bc1f0df3e2fdfd3a43"
+        },
+        {
+          "ordinal": 41,
+          "event": "ordinary_element:prex-eucharistica/unde-et-memores",
+          "before_sha256": "3b4b3caaacec73dab51f24d2f72de486e0ceea948c7289c830259076756f7728",
+          "source_only_sha256": "5b3b33aaf11c891f069b476a7f7daa88219e4ac020b0596c8458fbb9cb2add61",
+          "after_sha256": "29d8fca4cefeb91325327202f7b377de55cefd4b6af7e47f11f51fe6d039ab19"
+        },
+        {
+          "ordinal": 42,
+          "event": "ordinary_element:prex-eucharistica/supra-quae",
+          "before_sha256": "7bd81f39397db835d35262d9e448114586154bc9ab2b8f53b65e37b82d5483ee",
+          "source_only_sha256": "7b5b67118d177007f7fdc53dce613db7e8e13b689975bce9c7e62282968ba6c0",
+          "after_sha256": "cf90d726e214ecfc294e097f248c23bda4b12e01be916a1793b94ac25f2ac854"
+        },
+        {
+          "ordinal": 44,
+          "event": "ordinary_element:prex-eucharistica/memento-etiam",
+          "before_sha256": "92748d4a4a93906f8aae31347c5eb9bb7a6af11281b6f81ef601177d317b3b4c",
+          "source_only_sha256": "cee9ef6ee4ee626609ecb29290fe7b413ba2d63bf98e77b08c210e4d9906b398",
+          "after_sha256": "07906df882d3bda8e9af7da2597ea36a1c48132a5a9c43812386453b65381f53"
+        },
+        {
+          "ordinal": 45,
+          "event": "ordinary_element:prex-eucharistica/nobis-quoque",
+          "before_sha256": "7803341e7546ad91815b9d2c0fe06e8b308827f1ff2a17adb3784872d28d9292",
+          "source_only_sha256": "1ac6e015ec37154a0421ccdae6a88d50e7a9bcc8dc3c7365eaa1fe162b2e0b4f",
+          "after_sha256": "f5f602abc0119440cf58b77307631eda80a03642315119bd944296f530eb60b5"
+        },
+        {
+          "ordinal": 46,
+          "event": "ordinary_element:prex-eucharistica/per-quem",
+          "before_sha256": "9bacdb622b4595cb605d2383f6d768f99b5fd1e0646f62012d1686571139529b",
+          "source_only_sha256": "9ed02794563994270933f48fdb3b407ce86c05e45e2e2afdf9b68b05c8ce7c26",
+          "after_sha256": "8edb5289b2fcab8a2e02b2e91667de107a3e7c495d7ef0177a78e03f687c1f1e"
+        },
+        {
+          "ordinal": 47,
+          "event": "ordinary_element:prex-eucharistica/doxologia",
+          "before_sha256": "84743760f33ff1181570e3e58291de05be2a2d57d1754bc0c718247a7048b31c",
+          "source_only_sha256": "96174de449c2c4207239be03cda996ca93595f094b16b0b4a196317cbacac09f",
+          "after_sha256": "56956e04b9c52c169a757c6899628142a004f946372026e094917df56cf4269f"
+        },
+        {
+          "ordinal": 49,
+          "event": "ordinary_element:ritus-communionis/pater-noster",
+          "before_sha256": "1cfb69241d053f8c88caf6a675c9d07658bbd570e0d51307f748fa2b50de2319",
+          "source_only_sha256": "b2cd210eb008a4d4257b098579f82e269630959b1e1eb7e78babd53cc996928d",
+          "after_sha256": "ac5f485968a8cc8dc3d708ae7c6057c9d1939ad6dc3323bdac4080f12937fa53"
+        },
+        {
+          "ordinal": 52,
+          "event": "ordinary_element:ritus-communionis/pax-domini",
+          "before_sha256": "b4273cf65e175f4ce1971aeef2f64472eb149b7f2bb6a4d52c9d71cc9421172b",
+          "source_only_sha256": "35e9de51b1e99647b94ba8dc5f34545e78636e774e219e4f6d418acdcbdd3ff3",
+          "after_sha256": "49f6e3ef72741bb8fd89e0bf5f7106f7f723785cb61a548f1d0d1f5805e47079"
+        },
+        {
+          "ordinal": 55,
+          "event": "ordinary_element:ritus-communionis/agnus-dei",
+          "before_sha256": "a0068776a87af01d34b52cce564bec1f43d24dcf78a8d56f0e45fffd7736c977",
+          "source_only_sha256": "d5a087c5371ceaf18be8e5c1e68c8dd8ffd4b8a7064006dc443abe53c0f65741",
+          "after_sha256": "bf76feb7c1b365457cba216e3b2f0d99be20e2bb010e8721a09c447f1039fcdd"
+        },
+        {
+          "ordinal": 60,
+          "event": "ordinary_element:ritus-communionis/purificatio",
+          "before_sha256": "8f3d9977d9cdd04331a2fb9f89f7a92e7f74071e67c26ec021a44fc7ca553a61",
+          "source_only_sha256": "eb4c2b74d9df07e4817ee7a61758856a58dce38f942b756ddfae5f655d956e7b",
+          "after_sha256": "beb803348b239401ab682dd23075ca61246c2eda381d47e1e296649b45c2c4f8"
+        }
+      ]
+    }
+  },
+  "event_sequences": {
+    "pentecost_10_sequence": {
+      "baseline": {
+        "count": 178,
+        "sha256": "6946cf74b2cbf867cb89304e47784ba7fff0bbed3611c81d799e4567b9f2348f"
+      },
+      "source-only": {
+        "count": 178,
+        "sha256": "6946cf74b2cbf867cb89304e47784ba7fff0bbed3611c81d799e4567b9f2348f"
+      },
+      "current": {
+        "count": 178,
+        "sha256": "6946cf74b2cbf867cb89304e47784ba7fff0bbed3611c81d799e4567b9f2348f"
+      },
+      "changed_ordinals": []
+    },
+    "ot_18_sequence": {
+      "baseline": {
+        "count": 67,
+        "sha256": "ea501e6d426d345d30e217f61395d54801d69f339f2fa1c24927cf6ef1325abd"
+      },
+      "source-only": {
+        "count": 67,
+        "sha256": "ea501e6d426d345d30e217f61395d54801d69f339f2fa1c24927cf6ef1325abd"
+      },
+      "current": {
+        "count": 67,
+        "sha256": "ea501e6d426d345d30e217f61395d54801d69f339f2fa1c24927cf6ef1325abd"
+      },
+      "changed_ordinals": []
+    }
+  },
+  "validation": {
+    "command": "python3 -m unittest tools.tests.test_mass_ordinary tools.tests.test_postconciliar_ordinary_divergence_recovery -v",
+    "tests": 83,
+    "passed": true,
+    "skips": 0,
+    "initial_failures": 4,
+    "failure_disposition": "Intended source additions changed language counts, typed absence counters and text-event currentness oracles. Both old pins were reproduced exactly against the baseline; every event position was conserved, and only one Roman study-English event plus 18 postconciliar historical-English events changed. The exact source-specific notes account for their presentation deltas."
+  }
+}

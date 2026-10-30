@@ -9,12 +9,14 @@ import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { extname, join, resolve, sep } from 'node:path';
 import process from 'node:process';
 import { gzipSync } from 'node:zlib';
+import { refreshCoverage } from './reader_coverage_fixture.mjs';
 
 const ROOT = resolve(process.env.TRIPTYCH_REVIEW_ROOT || resolve(import.meta.dirname, '../..'));
 const ROUTE = '/src/web/browser/liturgy/day-reader.html';
 const CURRENT = '/src/web/browser/liturgy/day.html';
 const SOURCE_ONLY = process.env.TRIPTYCH_SOURCE_ONLY === '1';
 const DATA = SOURCE_ONLY ? '/src/web/data' : '/build/public-alpha/preview/browse';
+const MISSING_ENGLISH_DATA = DATA + '-missing-english';
 const SOURCE_PROPERS = (process.env.TRIPTYCH_SOURCE_PROPERS ||
   '.scratch/day-source-structure/structure/propers').replace(/^\/+|\/+$/g, '');
 const captureAt = process.argv.indexOf('--capture-dir');
@@ -83,6 +85,21 @@ async function listen(server) {
   return server.address().port;
 }
 
+function withMissingEnglish(body) {
+  const payload = JSON.parse(body);
+  const mass = payload.masses.find(row => row.key === 'pentecost-2');
+  const proper = mass?.propers.find(row => row.name === 'Collect');
+  assert.ok(proper?.text && proper.translations.some(row => row.lang === 'en'),
+    'negative fixture starts with independently held Latin and English');
+  proper.translations = proper.translations.filter(row => row.lang !== 'en');
+  proper.untranslated = [...(proper.untranslated || []).filter(row => row.lang !== 'en'), {
+    target: { mass: mass.key, form_id: 'main', proper: 'Collect', cycle: 'all',
+      occurrence: 1, extent: 'body' },
+    lang: 'en', state: 'unavailable'
+  }];
+  return refreshCoverage(payload, ROOT);
+}
+
 function staticServer() {
   return createServer(async (request, response) => {
     let claimedGate = null;
@@ -106,6 +123,9 @@ function staticServer() {
         response.end('{');
         return;
       }
+      const missingEnglish = relative.startsWith(MISSING_ENGLISH_DATA.slice(1) + '/');
+      if (missingEnglish) relative = relative.replace(
+        MISSING_ENGLISH_DATA.slice(1) + '/', DATA.slice(1) + '/');
       if (/^src\/web\/data\/[^/]+\/chapters\//.test(relative)) {
         relative = relative.replace(/^src\/web\/data\//, 'src/sources/bibles/');
       }
@@ -114,7 +134,15 @@ function staticServer() {
       }
       const file = resolve(ROOT, relative || 'README.md');
       if (file !== ROOT && !file.startsWith(ROOT + sep)) throw new Error('outside root');
-      const body = await readFile(file);
+      let body = await readFile(file);
+      if (missingEnglish && relative.endsWith('/structure/propers/roman-1962.json')) {
+        body = Buffer.from(JSON.stringify(withMissingEnglish(body.toString('utf8'))));
+      }
+      if (missingEnglish && relative.endsWith('/structure/propers/index.json')) {
+        const index = JSON.parse(body);
+        delete index.missals.find(row => row.id === 'roman-1962').read_payload;
+        body = Buffer.from(JSON.stringify(index));
+      }
       response.writeHead(200, {
         'content-type': mime(file), 'cache-control': 'no-store',
         'x-robots-tag': 'noindex, nofollow'
@@ -321,9 +349,9 @@ const DUPLICATE_ORDINARY_STATES = Object.freeze({
   missalThenRead: STATES.roman + '&ordinary=1&ordinary=0'
 });
 
-function candidateUrl(base, state = STATES.roman, nonce = null) {
+function candidateUrl(base, state = STATES.roman, nonce = null, data = DATA) {
   const review = nonce === null ? '' : `&review-document=${encodeURIComponent(nonce)}`;
-  return `${base}${ROUTE}?data=${DATA}${review}${state}`;
+  return `${base}${ROUTE}?data=${data}${review}${state}`;
 }
 
 function currentUrl(base, state = STATES.roman, nonce = null) {
@@ -501,9 +529,9 @@ async function awaitFreshDocumentCommit(cdp, target, previousToken, label) {
   };
 }
 
-async function navigateCandidate(cdp, base, state = STATES.roman) {
+async function navigateCandidate(cdp, base, state = STATES.roman, data = DATA) {
   freshNavigationSequence += 1;
-  const target = candidateUrl(base, state, `source-${freshNavigationSequence}`);
+  const target = candidateUrl(base, state, `source-${freshNavigationSequence}`, data);
   return navigateFreshDocument(cdp, target, 'Day reader candidate');
 }
 
@@ -1873,7 +1901,7 @@ async function runAssertions(cdp, base) {
       // common Communicantes with canon/communicantes-continuatio, one more
       // Ordinary event.
       [STATES.romanMissal, 178, 6, 162, 10, 'proper/roman-1962/pentecost-10/010'],
-      [STATES.postMissal, 58, 7, 41, 10, 'proper/postconciliar/advent-1/010']
+      [STATES.postMissal, 64, 7, 47, 10, 'proper/postconciliar/advent-1/010']
     ];
     for (const [state, total, sections, ordinary, propers, lastProper] of cases) {
       await navigateCandidate(cdp, base, state);
@@ -2098,7 +2126,15 @@ async function runAssertions(cdp, base) {
         assert.equal(day.ids.indexOf('ordinary-element/canon/communicantes-pentecoste') + 1,
           day.ids.indexOf('ordinary-element/canon/communicantes-continuatio'));
         assert.doesNotMatch(day.text, /The appointed proper Canon form is not held here \(witness gap\)/);
-        assert.match(day.text, /Held English lacks the 1962 Saint Joseph clause \(witness gap\)/);
+        assert.doesNotMatch(day.text, /Held English lacks the 1962 Saint Joseph clause \(witness gap\)/);
+        const continuation = await evaluate(cdp,
+          `dayReaderDebug.semantic.events.find(row => row.id === 'ordinary-element/canon/communicantes-continuatio').selected`);
+        assert.equal(continuation.availability, 'held');
+        assert.equal(continuation.sourceId,
+          'edition.triptych.english-completion-20261029-ordinary-joseph.study-english-20261029');
+        assert.equal(continuation.rights, 'project-created');
+        assert.match(day.text, /blessed Joseph, spouse of the same Virgin/);
+        assert.match(day.text, /Triptych study translation/);
         const preface = await evaluate(cdp, `(() => {
           const node = document.querySelector('[data-semantic-event-id="ordinary-element/praefatio/praefatio-de-spiritu-sancto"]');
           const mark = node && node.querySelector('.ordinary-conditional');
@@ -2114,7 +2150,14 @@ async function runAssertions(cdp, base) {
         assert.match(preface.note[0], /vigil of Pentecost/);
         assert.ok(preface.opening > 40, JSON.stringify(preface));
       } else {
-        assert.match(day.text, /The appointed proper Canon form is not held here \(witness gap\)/);
+        assert.doesNotMatch(day.text, /The appointed proper Canon form is not held here \(witness gap\)/);
+        const properCanon = await evaluate(cdp,
+          `dayReaderDebug.semantic.events.find(row => row.id === 'ordinary-element/canon/communicantes-pentecoste').selected`);
+        assert.equal(properCanon.availability, 'held');
+        assert.equal(properCanon.sourceId,
+          'edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925');
+        assert.equal(properCanon.rights, 'public-domain');
+        assert.match(day.text, /Communicating, and keeping the most holy day of Pentecost/);
       }
     }
     await navigateCandidate(cdp, base, STATES.pentecostPostDefaultMissal);
@@ -2476,7 +2519,7 @@ async function runAssertions(cdp, base) {
       assert.equal(before.state.edition.id, 'postconciliar');
       assert.equal(before.state.requestedMode, 'missal');
       assert.equal(before.semantic.resolved.formulary, 'advent-1');
-      assert.equal(before.semantic.events.length, 58);
+      assert.equal(before.semantic.events.length, 64);
       await settleResponseGate(cdp, gate);
       const after = await candidateOutcomeSnapshot(cdp);
       assert.deepEqual(after, before);
@@ -2721,7 +2764,9 @@ async function runAssertions(cdp, base) {
   });
 
   await test('C2 G10: a missing translation leaves the held Latin original visible with its typed absence', async () => {
-    await navigateCandidate(cdp, base, STATES.missingEnglish1962);
+    // Remove one English side only in the served test fixture. Keep the real
+    // source Latin, the other held English bodies and authoritative coverage.
+    await navigateCandidate(cdp, base, STATES.missingEnglish1962, MISSING_ENGLISH_DATA);
     const rows = await unitAbsenceAudit(cdp, 'roman-1962');
     const missing = rows.filter(row => row.requested !== 'available');
     assert.ok(missing.some(row => row.la === 'available'), 'exemplar has a held Latin body without English: ' +
@@ -3688,7 +3733,7 @@ async function runAssertions(cdp, base) {
       actions: getComputedStyle(document.querySelector('.reader-actions')).display
     })`);
     assert.match(missal.option, /Eucharistic Prayer: II/);
-    assert.equal(missal.ordinary, 41);
+    assert.equal(missal.ordinary, 47);
     assert.equal(missal.propers, 10);
     assert.equal(missal.choice, 'none');
     assert.equal(missal.actions, 'none');

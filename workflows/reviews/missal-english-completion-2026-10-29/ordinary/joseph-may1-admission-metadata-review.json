@@ -1,0 +1,156 @@
+{
+  "schema": "triptych-bounded-study-english-admission-metadata-review/v1",
+  "decision": "ACCEPT_EXACT_METADATA_AND_PRIVACY_HANDOFF_PARENT_INTEGRATION_PENDING",
+  "reviewed_at_utc": "2026-10-30T03:18:30Z",
+  "scope": "Independent final metadata, payload-identity, source-boundary and privacy review of the exact ten proposed new source files and five sanitized receipt drafts listed below. This acceptance is for this handoff; installation, source-library validation, Ordinary generation, applicability and reader rendering remain parent-owned gates.",
+  "current_basis": {
+    "root_adoption_path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/joseph-may1-rights-adoption-v2.json",
+    "root_adoption_sha256": "7ae1b0c2cd7acfa62777d7acc0b09b33c37212c7fbcd6c0b410f669ac76e43e6",
+    "corrected_frozen_comparison_sha256": "a08b68725876e8b224f2da98dc16721486b7d156e52e9e852044d2ac82539310",
+    "independent_correction_review_sha256": "76852c4cca3ebcbbe4ca68a6a397dde60a83ad13f0fd8042cfd482226955fe51",
+    "target_research_body_sha256_utf8_without_final_lf": "526099a01ae7ae49394d1c2684a89e6d8c60cefd6c5a0a61eea150824b6a346d"
+  },
+  "preserved_prior_identities": {
+    "initial_root_adoption_sha256": "f5893ad8948f13c3740efc8839f7a327d942e3bf0b2d65ed801f6855c39579fe",
+    "initial_frozen_comparison_sha256": "2a9f3fdf02256ee216b2aaae063adfd545a7b82a15205759f8632b15f90e00e4",
+    "initial_independent_source_rights_review_sha256": "7d0ee61f74a2019a786a3ddef91d993436aa9bc5731a973413057e38bd9e68c8",
+    "original_independent_English_fidelity_receipt_sha256": "07fa7aac938a7d25d08422614c1eded5b1e18d3db650b4f386133777e451082f",
+    "disposition": "These remain truthful prior identities. The current English wrapper retains the exact original semantic receipt as a nested record and separately binds the correction-specific successor; no retrospective glyph check or new rights review is attributed to the original English acceptance."
+  },
+  "formulary_scope": {
+    "calendar": "roman-1962",
+    "formulary_key": "s-ioseph-opificis-sponsi-beatae-mariae",
+    "date": "05-01",
+    "option": "sancto-ioseph"
+  },
+  "required_visible_reading_note": "Triptych study translation for the May 1 Preface of Saint Joseph. This English has no liturgical approval and is not for recitation.",
+  "checks": [
+    {
+      "check": "exact-new-file-set-and-graph",
+      "result": "PASS",
+      "detail": "Exactly ten new files: seven unique parseable TOML records and three payloads. All payload SHA-256 values, byte sizes, relative paths and source-admission file hashes match. New source identities retain the historical Mame owner; new English retains its separate Triptych owner."
+    },
+    {
+      "check": "historical-complete-body-and-transformations",
+      "result": "PASS",
+      "detail": "The source body retains the complete actual historical VERE-through-dicentes body, both Festivitate and parenthesized Veneratione alternatives, and actual Cæli/cælorumque. Stress accents, physical wraps, discretionary hyphens, pointing spacing, decorative small capitals and the nonspoken reference asterisk are handled explicitly. No later solemnity word is inserted into the historical Latin payload."
+    },
+    {
+      "check": "corrected-comparison-and-successor",
+      "result": "PASS",
+      "detail": "The corrected comparison and independent correction review exactly match the root successor hashes. The private target research bytes are unchanged. Selecting the historical Festivitate branch gives 99 source and 99 target words, with only the separately adopted feast designation at one-based word25 different; no coeli-to-caeli rewrite is needed."
+    },
+    {
+      "check": "exact-English-fidelity-identity",
+      "result": "PASS",
+      "detail": "The complete English TSV remains SHA-256240fd17875204a9b6902a60f5b7ed46929ff36a463c7b0569c8c4426dea0a0b5 and its English body remains ffc6b83414c853963c1381227e3f32c7b08afe271872be212b752d43420d9b72. It is English-only, retains the complete accepted opening and conclusion, and adds no historical-English identity, target Latin column, Sanctus or Amen."
+    },
+    {
+      "check": "metadata-correction-history",
+      "result": "PASS",
+      "detail": "Original comparison/adoption/review hashes remain explicitly prior identities. Current metadata and sanitized wrappers bind the v2 adoption and corrected comparison. The separate earlier source-correction receipt is unchanged."
+    },
+    {
+      "check": "publication-and-privacy-boundary",
+      "result": "PASS",
+      "detail": "The only Latin payload is the actual old historical body with both alternatives; the only PDF payload is the exact one-page 1922 Mame extraction SHA-2569724743c3f1bfed03bc44472731885a43769b1a41eab3666b94504a7cfb70e27. The ten files and five sanitized drafts contain no full modern target body, modern target image, private filesystem path or scratch path. Full private target strings are omitted from the sanitized comparison."
+    },
+    {
+      "check": "bounded-use-and-visible-qualification",
+      "result": "PASS",
+      "detail": "Metadata consistently restricts use to calendar roman-1962, formulary s-ioseph-opificis-sponsi-beatae-mariae, May1, Preface option sancto-ioseph. The required body-specific study/non-recitation note remains explicit. This check does not prove the eventual runtime mapping or visible rendering."
+    }
+  ],
+  "findings": [],
+  "new_source_files": [
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-ordinary-joseph-preface-may1-facsimile/artifact.toml",
+      "sha256": "5541a927ed4b8e81fa31a555bd931570b76e4334a0659741fa3b6a01fd54ac81",
+      "bytes": 2439
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-ordinary-joseph-preface-may1-facsimile/source.pdf",
+      "sha256": "9724743c3f1bfed03bc44472731885a43769b1a41eab3666b94504a7cfb70e27",
+      "bytes": 51055
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-ordinary-joseph-preface-may1-source-body/artifact.toml",
+      "sha256": "6569754c2567243b6ec203ed97797b4085feaa4820213ab2816d3b46e7c94a92",
+      "bytes": 2794
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-ordinary-joseph-preface-may1-source-body/text.txt",
+      "sha256": "235844b4188dc771ca3e0b33065bf4072f4cb58d118d00742ef48b8bc62417e8",
+      "bytes": 737
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/english-completion-20261029-ordinary-joseph-preface-may1-source-body.toml",
+      "sha256": "ec6db283f18bc693d5b5ac78bdb832c064a15f892acb2971fb652873109f79ae",
+      "bytes": 1454
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261029-ordinary-joseph-preface-may1/editions/2026-10-30-study-english/artifacts/joseph-preface-may1-study-en-240fd178/artifact.toml",
+      "sha256": "0b932def1c2aaae38f28bfdefef957f9c6ff6a29430717b015b0b9d6e4ba6c87",
+      "bytes": 3870
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261029-ordinary-joseph-preface-may1/editions/2026-10-30-study-english/artifacts/joseph-preface-may1-study-en-240fd178/text.tsv",
+      "sha256": "240fd17875204a9b6902a60f5b7ed46929ff36a463c7b0569c8c4426dea0a0b5",
+      "bytes": 1208
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261029-ordinary-joseph-preface-may1/editions/2026-10-30-study-english/edition.toml",
+      "sha256": "3cae8295c4b0c6d033e081a4b96545e2e43b6ad1949d99302cc8d70533ef3d8c",
+      "bytes": 836
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261029-ordinary-joseph-preface-may1/editions/2026-10-30-study-english/passages/joseph-preface-may1.toml",
+      "sha256": "d2298be08f70e5735e33754164a4465f451d9cd39ac3a79ac7f74479fba79b59",
+      "bytes": 1348
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261029-ordinary-joseph-preface-may1/work.toml",
+      "sha256": "4e7d41f2341afe11e9154d43b1a9a18ddfb0d8c13d00e5cf88e1af718e311bd6",
+      "bytes": 1067
+    }
+  ],
+  "sanitized_drafts": [
+    {
+      "draft_name": "joseph-may1-english-fidelity-review.json",
+      "sha256": "1eeef6dd4c978062050f4156b0b1b4a878defc48bf530fd7f6d7d509872f920f",
+      "bytes": 5609
+    },
+    {
+      "draft_name": "joseph-may1-independent-rights-review.json",
+      "sha256": "b9cdf2675885448fb8b91b9dcb93907b8d15cf7f188000937cf637dd7cce52f2",
+      "bytes": 13260
+    },
+    {
+      "draft_name": "joseph-may1-source-admission.json",
+      "sha256": "d1fa9a6e95a3c21f8ae8532a820b7d8f608468f1ca576a49fdb440c4d7ff75e2",
+      "bytes": 7592
+    },
+    {
+      "draft_name": "joseph-may1-source-comparison.json",
+      "sha256": "53561e88041cca19a9310c7e36ee2857ef2b322d73584e197dc7d33db550006f",
+      "bytes": 7895
+    },
+    {
+      "draft_name": "joseph-may1-source-correction-review.json",
+      "sha256": "47b55b51bbb681d4be8ffca3a8d4479c629b8b89677375c91a696d2606bedbf5",
+      "bytes": 2452
+    }
+  ],
+  "pending_parent_gates": [
+    "Install canonical sanitized review records and preserve immutable rights adoption",
+    "Map new English only to the exact May 1 formulary and retain visible reading_note",
+    "Validate source library, Ordinary generation, applicability and both reader surfaces",
+    "Refresh shared publication-source and release records as required"
+  ],
+  "limits": [
+    "No new rights expansion or legal survey was performed. The correction-specific root adoption supplies the bounded basis only.",
+    "This review rehashed the proposed payloads and listed evidence files, not the whole source or target PDFs.",
+    "No tracked file was edited by this reviewer. No target Latin body or target image is copied into this receipt.",
+    "Acceptance is not installation, whole-Missal completion, human review, ecclesiastical approval or authority for recitation."
+  ]
+}

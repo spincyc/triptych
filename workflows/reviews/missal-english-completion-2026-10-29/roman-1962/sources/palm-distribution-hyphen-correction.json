@@ -1,0 +1,75 @@
+{
+  "schema": "triptych-historical-translation-correction/v1",
+  "recorded_on": "2026-10-29",
+  "target": [
+    "palm-sunday",
+    "main",
+    "First Antiphon at the Distribution of Palms",
+    "all",
+    1
+  ],
+  "old_entry": {
+    "mass": "palm-sunday",
+    "form_id": "main",
+    "proper": "First Antiphon at the Distribution of Palms",
+    "cycle": "all",
+    "occurrence": 1,
+    "witness": "lasance-1945",
+    "printed_page": "396",
+    "ia_leaf": 395,
+    "ia_leaf_range": [
+      395,
+      395
+    ],
+    "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+    "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-append209-strict165-2026-10-23-verify-palm-sunday--main--first-antiphon-at-the-distribution-of-palms--all--1",
+    "collated": "page-image, same-witness conclusion table where needed, and bounded tracked transcription, 2026-10-23",
+    "collation_result": "confirmed",
+    "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-append209-strict165-2026-10-23-2de93984",
+    "publication_artifact_sha256": "2de939841af3d8f329a47db94216969354ed775f62de5cd0241132f5817e095e",
+    "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-append209-strict165-2026-10-23-publish-palm-sunday--main--first-antiphon-at-the-distribution-of-palms--all--1",
+    "witness_note": "Historical source palm-sunday/main/First Antiphon at the Distribution of Palms/all/1; strict. Complete Latin word sequence and actual ending equal under typography only. Cross-owner reuse requires entire literal canonical Latin equality including conclusion, punctuation, wraps and final LF, SHA256 03d5b8eaad119118676899fbbf03939fdde266978e5ca8dc35b074b1dac2b49e. Original target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-palm-sunday-orations retained. No source-recipient calendar attestation or official 1962 English claimed.",
+    "translations": [
+      {
+        "lang": "en",
+        "rights": "public-domain",
+        "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+        "text": "The children of the Hebrews, bearing olive-branches, went to meet the Lord, crying aloud and saying, Hosanna in the highest."
+      }
+    ]
+  },
+  "new_entry": {
+    "mass": "palm-sunday",
+    "form_id": "main",
+    "proper": "First Antiphon at the Distribution of Palms",
+    "cycle": "all",
+    "occurrence": 1,
+    "witness": "lasance-1945",
+    "printed_page": "396",
+    "ia_leaf": 395,
+    "ia_leaf_range": [
+      395,
+      395
+    ],
+    "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+    "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase1-palm-sunday-main-procession-antiphon-1-all-1-source",
+    "collated": "Historical source image independently re-inspected and reviewed on 2026-10-29; receiving columns mechanically rebound to the literal corrected source.",
+    "collation_result": "corrected-source-hyphen",
+    "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-palm-distribution-correction",
+    "publication_artifact_sha256": "989dd33e692e100ef135d80d1f73d6dfe4447cd9763b951636267948b1344010",
+    "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-palm-distribution-correction",
+    "witness_note": "Historical Lasance English from printed p. 396. The source reads olive branches without a hyphen; the earlier receiving transcription is superseded. Complete canonical Latin relation and target proof remain unchanged; no approved 1962 English is claimed.",
+    "translations": [
+      {
+        "lang": "en",
+        "rights": "public-domain",
+        "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+        "text": "The children of the Hebrews, bearing olive branches, went to meet the Lord, crying aloud and saying, Hosanna in the highest."
+      }
+    ]
+  },
+  "changed_text": "olive-branches → olive branches",
+  "source_review": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase1-historical-source-review.json",
+  "source_review_sha256": "e9f2985aad413b8add1800b50b156b717de1232cef5648dff19d82897ade9c19",
+  "scope": "One explicit exception to existing-positive dictionary conservation, supported by fresh independent source inspection and review; old artifacts remain exact."
+}

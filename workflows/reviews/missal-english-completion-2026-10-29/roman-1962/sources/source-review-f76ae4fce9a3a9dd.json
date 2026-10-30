@@ -1,0 +1,87 @@
+{
+  "schema": "triptych-independent-source-review/v1",
+  "reviewed_on": "2026-10-29",
+  "disposition": "accepted-after-bounded-metadata-correction",
+  "scope": "Two historical-English source candidates and their eight exact proposed source files; no installation, generated projection, annual textual completeness or new Latin publication approval.",
+  "candidate_path": ".scratch/roman-english-completion-20261029/temporal/holyweek-four/candidates.json",
+  "candidate_sha256": "5354ce49414d2038aa0fff8f1d6c2a638f734987df6e55d6b859b1ec4efa8290",
+  "source_file_pins": {
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/holyweek-hymn-gloria-laus-en-20261029-4363e40f/bilingual.tsv": "4363e40f424419f977659a98c75b2a293ed9c19950af7758b1394daf5f894f92",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/holyweek-hymn-gloria-laus-en-20261029-4363e40f/artifact.toml": "6d9ec5f6dfb5c636a904c12c6428871247fc1e3c15dca97859b8d7de21102305",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/holyweek-hymn-gloria-laus-verify-20261029.toml": "eabfa95dc83c9591d7b098a61906b7412a00eac22e54b698e98ecf939824d4c6",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/holyweek-hymn-gloria-laus-publish-20261029.toml": "0b56dedc1c417d69b1ff6c91479a0aaa577f50b0f49895d90e5daf2da62aeefb",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/holyweek-hymn-ubi-caritas-en-20261029-b736c65c/bilingual.tsv": "b736c65ce8fa607f765fbb747857d88f87cf28d85216208614ba5cb7fd32bc63",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/holyweek-hymn-ubi-caritas-en-20261029-b736c65c/artifact.toml": "d733e8ba06d5e0aba1fef23a49e02feae0b7956a2c323ae3d7cc79e8a008430f",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/holyweek-hymn-ubi-caritas-verify-20261029.toml": "1611bfa9a159be2e47ddae9eb5ed6054ab7d6b65c5a97ba2f059e236e13fea93",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/holyweek-hymn-ubi-caritas-publish-20261029.toml": "4048db5316a55a392e0aa98b9f61471790fc210e41faa1614dfee0aea08a0864"
+  },
+  "source_pdf_pins": {
+    "1945": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+    "1946": "4573991d962eb6a6391bc2555b8445bdfebd84de1ccffd7828f84e74d308ca77"
+  },
+  "independently_rendered_images": {
+    "lasance1945-0398.png": "f61d35943192ac15705a41d4628ce66528192ecbd7ae90d548d1b888ffe9ccf1",
+    "lasance1945-0399.png": "b66465f0f411739e62266c7ccba3575c35d808478d7702988f9b3d3b5fbac3da",
+    "lasance1945-damaged466.png": "a3fe74ee8e004226095d717e63456fe06502e26fb7752a9bd641333a5521dcbb",
+    "lasance1946-478.png": "e8c5f8e64479806a16acf0156a882f284f64e8340f5e81c192c7e42a17d65a5b"
+  },
+  "checks": {
+    "source_images": "Complete English and facing Latin read independently from exact whole-PDF source bytes; source headings and adjacent text excluded. Gloria1945 PDF398\u2013399/printed398\u2013399; Ubi1946 PDF478/printed468; damaged1945 PDF466/printed468 separately inspected.",
+    "literal_english": "All words, source punctuation, sacred-name capitals and short response cues match the images; Gloria dehyphenation joins physical wraps, six couplet groups remain. Ubi has all three repeated antiphons and all twelve V. clauses plus Amen.",
+    "latin_relation": "All84 Gloria lexical tokens match target after declared received spelling inclyta/inclita and response cue treatment; all87 Ubi lexical tokens match after source Ant. and canonical repetition-rubric marker treatment. No target/source words were filled. Stored source punctuation and cues remain unchanged.",
+    "target_qualification": "Both exact canonical target hashes join independently permitted public-domain Latin provenance rows; this review grants no new Latin permission.",
+    "source_schema": "13-record closed source graph validates without errors, including manifest payload hashes, owners, derived_from and page/line ranges.",
+    "owning_consumer": "Registered mass-propers validate_translation_payload and validate_translation_publication_binding pass for both candidates against exact source graph; allTSV bodies/hash/identity joins pass."
+  },
+  "body_hashes": [
+    {
+      "target": [
+        "palm-sunday",
+        "main",
+        "Hymn to Christ the King",
+        "all",
+        1
+      ],
+      "publication_sha256": "4363e40f424419f977659a98c75b2a293ed9c19950af7758b1394daf5f894f92",
+      "english_sha256": "5c4d842e0df0c4ac9a8e6f930a2912733a19d2062efb0493ae3a62806f7132bf",
+      "source_latin_sha256": "a048f26c75cc6a38082c8a8c6d7b9c4570c5265d9e17be8d1e8027654adf255b",
+      "registered_payload_and_publication_binding": "pass"
+    },
+    {
+      "target": [
+        "mass-of-the-lords-supper",
+        "main",
+        "Mandatum Antiphon 8",
+        "all",
+        1
+      ],
+      "publication_sha256": "b736c65ce8fa607f765fbb747857d88f87cf28d85216208614ba5cb7fd32bc63",
+      "english_sha256": "5e160254f2d9d1782e835fbe6dc64ad126a21d598634e70786ea8b49bd8f42da",
+      "source_latin_sha256": "d479c412753c68eaa81d57dfc9b46fc31ea0b7e7706d4bdaf725046fc138b131",
+      "registered_payload_and_publication_binding": "pass"
+    }
+  ],
+  "resolved_findings": [
+    {
+      "finding": "Publication-passage locus differed from verification-passage locus; owning consumer requires exact equality.",
+      "correction_receipt": ".scratch/roman-english-completion-20261029/temporal/holyweek-four/binding-locus-correction.json",
+      "correction_receipt_sha256": "4033a2caffd74bc0fc4a49362aa780395fe2dced89a65bf00ee8f9153bf8ee88",
+      "resolution": "Author corrected only two publication passage locus strings. All payloads, translation texts, IDs and hashes remain unchanged; fresh source graph and registered consumer checks pass."
+    }
+  ],
+  "remaining_findings": [],
+  "preserved_holds": [
+    "1945Ubi page466 has a missing horizontal strip and cannot supply a complete body; the candidate uses only the separately verified intact1946 printing.",
+    "Mandatum Adesto actual historical conclusion differs; no whole-body source attachment accepted.",
+    "Pange-lingua-named canonical unit is a rubric cue rather than a full hymn; no full historical hymn attachment accepted."
+  ],
+  "evidence_pins": {
+    "mechanical-checks.json": "d86e175298cda05e319c9589282e49e0370b53d9f19ef0c49aa856dd6396b4b7",
+    "target-proofs.json": "7e6f371573132c34924b379190495ecd9b34f9ab6b301ee0810e8176de608bc0",
+    "word-comparison.json": "1c7b804e6411a449e964a6e42aa0519a268310ca9efba6c93af249c44d7008cd"
+  },
+  "tool_pins": {
+    "tools/mass-propers": "8b2d747f02880836b4d657878ca7c28573491848e2c6c673858c2a260199ec53",
+    "tools/source-library": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3"
+  }
+}

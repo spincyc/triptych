@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-en"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Historical human English of the Lasance 1945 revision at ordinary printed pages 812-818, outside the excluded later lettered inserts. United States nonrenewal of registrations A110108 and A192159 is established in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. This artifact retains no approved modern translation and asserts no new exclusive right in the source wording."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf"
+provenance = "Read all seven original PDF pages 811-817 directly on rendered images after hashing the complete registered facsimile; the bounded seven-page facsimile derivative was independently rendered and every page re-opened. A separate source-fidelity review read all seven original pages at 160/400 dpi and the disputed Christ-the-King punctuation at 800 dpi, then accepted these exact English bytes after repairing for us; to retain the source semicolon. No source words were generated, modernized or translated."
+retrieved = "2026-10-30"
+sha256 = "076d0b81a5729aa921f7e11de604d86c2d2a5c74a085dfecdbaf55d1dbef1597"
+byte_size = 5131
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-ordinary-prefaces-en/text.tsv"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-facsimile"
+transformation = "Transcribe four complete historical English Preface prayer bodies from IT IS through the colon before the separate Sanctus. Join physical wraps and discretionary line-end hyphenation only, retaining intrinsic compound hyphens, source words, capitals, alternatives and punctuation. Exclude the separately printed opening dialogue, headings, applicability rubrics and Sanctus; add metadata columns. No common opening or conclusion is borrowed from the Cummiskey witness."
+notes = "Historical antecedent English, not approved 1962 English or a complete execution assembly. St Joseph retains the source festivity (veneration) alternatives and lacks the May 1 solemnity reading; no internal alternative may be silently selected. The Dead source English says dominions and powers where the facing Latin and 1962 have Thronis et Dominationibus. Preserve both historical variants without an exact-target English grade. No Chrism Preface is supplied. All four source bodies were separately checked against their printed pages; no source-wide review is asserted."

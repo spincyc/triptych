@@ -3,12 +3,12 @@ schema_version = 1
 [[deliverables]]
 id = "missal-reader-english-completion-2026-10-29"
 owner = "PROJECT-WORK.md"
-promise = "Drive the missal reader to completion with English translations of all represented texts, using maximum useful parallel source and implementation work, preserving edition, source and publication distinctions and the existing annual-content requirements."
+promise = "Drive the missal reader to completion with English translations of all texts, using maximum useful parallel source and implementation work, preserving edition, source and publication distinctions and the existing annual-content requirements. Represented-body counts do not exclude genuine source or rite-model gaps from the completion scope."
 state = "in_progress"
 
   [[deliverables.requirements]]
   id = "english-text-coverage"
-  criterion = "Every represented Proper and Ordinary text has source-supported English, with exact historical wording and original project study translations distinguished, and no missing or withheld body counted as translated. Every remaining source or distribution blocker is identified individually."
+  criterion = "Every represented Proper and Ordinary text has source-supported English, with exact historical wording and original project study translations distinguished, and no missing or withheld body counted as translated. Genuine unmodeled source and rite contexts are also resolved or individually identified; historical nonapplicability is distinguished from missing text. Every remaining source or distribution blocker is identified individually."
   status = "open"
   evidence = ["PROJECT-WORK.md", "src/sources/inventories/roman-1962-proper-translations-v1.toml", "src/sources/inventories/postconciliar-proper-translations-v1.toml"]
 
@@ -16,7 +16,7 @@ state = "in_progress"
   id = "english-source-review"
   criterion = "New English and historical source associations pass independent fidelity and source/publication review; target Latin, conclusion cues, edition qualifications and existing accepted records are preserved without inventing approval or verification."
   status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/missal-english-completion-2026-10-29/ordinary/roman-english-source-prose-delivery-successor.json", "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-sixteen-rights-assessment.json", "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json"]
 
   [[deliverables.requirements]]
   id = "english-reader-integration"

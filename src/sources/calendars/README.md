@@ -121,6 +121,51 @@ Until a calendar's translations can move into its propers they are recorded in
 `src/sources/inventories/<calendar>-proper-translations-v1.toml`, and
 `check-calendar-masses` holds that sidecar to every rule above.
 
+An original study translation may bind its exact Latin source with the three
+entry fields `source_latin_sha256`, `source_latin_passage_id`, and
+`source_latin_publication_source_ids`. Supply all three together: the exact
+UTF-8 body hash, the Latin provenance's registered passage, and its nonempty,
+unique publication-source IDs. The translation remains `project-created`
+without a human translation `source_id`. The checker and reader resolve its
+stable source form, cycle and occurrence against the canonical calendar and
+Latin provenance, require a collated public-domain body or an exact finite
+qualified Latin adoption permitted on every served surface, and reject changed
+wording or source associations. A qualified basis must pass its owning
+authority's complete body, source, proof and scope checks. Inherited entries
+also stop carrying English when the effective child's Latin body differs. These
+fields do not establish the English's fidelity or approval; its independent
+translation review remains in the owning research record. Older unbound study
+translations retain their existing qualifications.
+
+A separately sourced whole English body on a `source: scripture` owner uses an
+exact positive overlay target (`mass`, `form_id`, `proper`, `cycle`,
+`occurrence`), `extent = "body"`, one `project-created` English translation,
+and `scripture_body_source = { admission_id = "..." }`. Its admission must be
+an exact finite packet path and SHA-256 registered in `mass-propers`; the
+production registry currently admits none. The packet's
+`triptych-scripture-body-translation-admission/v1` contract pins its exact
+target and English SHA-256, complete official English `target_witness`, ordered
+independent Latin `source_passage_ids`, all `source_record_sha256` ancestors,
+held `source_payload_sha256` bytes, and reviewed whole-body variant and
+arrangement `assessment`. The checker and overlay producer both refuse an
+unknown admission, changed evidence or text, missing target witness, or an
+unheld or non-public-domain Latin source. A citation and a self-asserted method
+establish no whole body. This route does not reuse `source_latin_*` for absent
+canonical Latin. Positive and negative whole-English-body records keep the
+same coverage coordinate and denominator; only English acquires body scope,
+while the Latin Bible carrier and separate Scripture component retain their
+existing meaning. Admission proof stays source-owned and is not projected into
+the public translation.
+
+An inherited whole-body positive is first validated against its actual source
+calendar, and exact `inherited_inapplicable` exclusions are applied normally.
+Any surviving body needs a separately registered target-recension admission,
+selected by the closed `(source admission_id, requested calendar)` mapping in
+`mass-propers`. That child packet is rechecked against its own complete target
+witness and the exact English body; matching citations never establish child
+agreement. The effective-calendar checker enforces this even when the child
+has no local translation sidecar.
+
 An unavailable translation may still have an exact official witness. Record it
 without its wording: `witness_artifact_id` and `witness_passage_id` identify the
 registered artifact and verified passage, while `verified_on_page`,
@@ -989,9 +1034,9 @@ owns the canon. Both run inside `make check` and need PyYAML
 | roman-1962 | marian | 18 | 163 | 0 |
 | roman-1962 | sanctoral | 307 | 1685 | 0 |
 | roman-1962 | common | 30 | 382 | 0 |
-| postconciliar | seasonal | 390 | 2465 | 0 |
+| postconciliar | seasonal | 390 | 2483 | 0 |
 | postconciliar | christological | 7 | 79 | 0 |
-| postconciliar | marian | 14 | 70 | 0 |
+| postconciliar | marian | 14 | 72 | 0 |
 | postconciliar | sanctoral | 201 | 903 | 0 |
 | postconciliar | common | 7 | 0 | 0 |
 
@@ -1015,19 +1060,19 @@ owns the canon. Both run inside `make check` and need PyYAML
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
 | Masses | 8 | 491 | 619 |
-| Propers | 0 | 3753 | 3517 |
+| Propers | 0 | 3753 | 3537 |
 | — named `Placeholder` | 0 | 0 | 0 |
-| — inside a `forms` block | 0 | 211 | 204 |
+| — inside a `forms` block | 0 | 211 | 222 |
 | — carrying a `cycles` mapping | 0 | 0 | 306 |
 | — carrying a `weekday_cycles` mapping | 0 | 0 | 410 |
 | Masses holding only placeholders | 0 | 0 | 0 |
 | Masses taking a formulary from another entry | 0 | 166 | 0 |
 | Propers taking their text from another entry | 0 | 101 | 51 |
-| Propers that are not placeholders | 0 | 3753 | 3517 |
-| — of those, scripture-bearing | 0 | 2270 | 3051 |
-| Encoded passages | 0 | 2757 | 4030 |
+| Propers that are not placeholders | 0 | 3753 | 3537 |
+| — of those, scripture-bearing | 0 | 2270 | 3061 |
+| Encoded passages | 0 | 2757 | 4040 |
 | Distinct books cited | 0 | 58 | 73 |
-| Distinct slot names | 0 | 128 | 100 |
+| Distinct slot names | 0 | 128 | 108 |
 
 Counted from `src/sources/calendars/*/propers.yaml` and written here by
 `tools/mass-propers census --write`, which is the only thing that writes the

@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-b-facsimile-text-regions"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "facsimile-pdf"
+media_type = "application/pdf"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Only the historical prayer-text bodies on ordinary numbered pages 805, 807, 814–817 of the Lasance 1945 revision, outside both excluded later lettered insert ranges. United States nonrenewal of registrations A110108 and A192159 is established in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. No rights conclusion is made for later Holy Week material or separately dated images. No new exclusive right is asserted in these underlying words."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf"
+provenance = "Reused the complete registered facsimile after recomputing whole-PDF SHA-256 6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70 on 2026-10-30. Original PDF pages 804,806,813–816 and each of the six retained proof regions were directly read. Independent literal source review accepted the exact four-body TSV SHA-256 2894c6e547aafe3fd42688ac97173717fdea8b66842a1ac2172b926677beec6c; its receipt SHA-256 is 1200654b8ba4967b7aeba136d2f37b68e3ed2345407766689ebb92788fa2e56f."
+retrieved = "2026-10-30"
+sha256 = "65a4b84622b12803e54f114b9c92d1a0930a5116104260e66b3727deeb14f9fb"
+byte_size = 754100
+page_count = 6
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-ordinary-prefaces-complete-b-facsimile-text-regions/source.pdf"
+indexable = false
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+transformation = "Rasterize original PDF pages with pdftoppm at scale-to 2300, retaining only exact pixel regions (page,x,y,W,H): [[804, 100, 180, 1220, 815], [806, 100, 1300, 1220, 850], [813, 70, 1260, 1250, 900], [814, 70, 175, 1250, 215], [815, 70, 1530, 1250, 640], [816, 70, 195, 1250, 130]]. Combine the six cropped images losslessly into a PDF. Extracting every embedded image and comparing it against its source crop gives pixel difference zero for all six images. Every selected prayer word, capital and punctuation mark is unchanged. Exclude surrounding later Easter-night and Holy Week rubrics, illustrations and footer material. Small nonselected dialogue-edge fragments may remain as context; no such fragment enters the selected English TSV."
+notes = "Six prayer-text regions, not six whole original pages. Retained 1 = Paschal Preface printed 805 (PDF 804); retained 2 = Ascension printed 807 (PDF 806); retained 3–4 = Blessed Virgin Mary printed 814–815 (PDF 813–814); retained 5–6 = Apostles printed 816–817 (PDF 815–816). The selected Paschal body contains its printed day (in these days) alternatives; the preceding source rubric directs a night substitution but no English night wording is imported or invented. The Marian festival blank remains literally . . .; no feast-specific insertion is inferred."

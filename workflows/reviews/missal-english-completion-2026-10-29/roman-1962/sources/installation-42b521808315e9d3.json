@@ -1,0 +1,361 @@
+{
+  "schema": "triptych-reviewed-source-installation/v1",
+  "recorded_on": "2026-10-29",
+  "source_plans": [
+    {
+      "plan_sha256": "1b578198cee9e3bfe867e0f36dcc033187fe4b9c3b2ace03660ed9327acfc528",
+      "plan_name": "install-plan-delta-pentecost4.json",
+      "targets": [
+        [
+          "pentecost-monday",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        [
+          "pentecost-tuesday",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        [
+          "pentecost-thursday",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ],
+        [
+          "pentecost-ember-friday",
+          "main",
+          "Alleluia",
+          "all",
+          1
+        ]
+      ],
+      "source_files": [
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/pentecost-four-chants-20261029-checked-latin-0097a922/artifact.toml",
+          "sha256": "c03a0f811a47c33cac43a85006d83be90614a6d1d5ab939d75c3d15fb41a343d"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/pentecost-four-chants-20261029-checked-latin-0097a922/latin.txt",
+          "sha256": "0097a9225773e8c7539c88ef30c292cd0dcdb6daa0bd70a30829338b4282ece8"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/pentecost-four-chants-20261029-pages/artifact.toml",
+          "sha256": "9c4a14fc396462bb56099c24a6a9d42e126d131993426fd001b34bee6d8c1728"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/pentecost-four-chants-20261029-pages/source.pdf",
+          "sha256": "755f8c2b697bcd75574833f0d4ed5d7339691c230f335287e34fa2579130307a"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/pentecost-four-chants-20261029-pentecost-ember-friday-alleluia-source.toml",
+          "sha256": "142c38843a345b24701be3a1923a49a1d97bafeaa059de200e8b2ee4c162c92a"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/pentecost-four-chants-20261029-pentecost-monday-alleluia-source.toml",
+          "sha256": "2fefd775d4c79469854743ea29634735c144b494ce8dd3c6f3594ff94a128606"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/pentecost-four-chants-20261029-pentecost-thursday-alleluia-source.toml",
+          "sha256": "65c4bbb7757ce64afa8e9826bbe4d40b90d98400395648eb151d52e6b532f395"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/pentecost-four-chants-20261029-pentecost-tuesday-alleluia-source.toml",
+          "sha256": "7f6e5383bef6de38234c1d3152db64d4086ed6af8734c4b4c3b98813200d8a35"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/pentecost-four-chants-20261029-pentecost-ember-friday-alleluia-target.toml",
+          "sha256": "4cdd88b738d57f73064bf70685a7fb2b04d29eb1da55b8b44bc349cabb246f2b"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/pentecost-four-chants-20261029-pentecost-monday-alleluia-target.toml",
+          "sha256": "05d7abd937dde141ae835dae30d8df694df2494f42540192962c68cdc6432d29"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/pentecost-four-chants-20261029-pentecost-thursday-alleluia-target.toml",
+          "sha256": "d7bee57f6a93dd6a121694bfc7dd8844794a7287059fe37b723946f10eb07f3d"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/pentecost-four-chants-20261029-pentecost-tuesday-alleluia-target.toml",
+          "sha256": "086cff05dab33c9f8a209b7fd135d616871ba68ef607e3e65afd332245aaa894"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pentecost-four-chants-20261029-d074f957/artifact.toml",
+          "sha256": "5eec1a3327ac90a9dcc6f7ea9aad6a5f7bb430f60427ca9e82a2a820ef2ca986"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pentecost-four-chants-20261029-d074f957/latin.txt",
+          "sha256": "d074f957761fb3fbfab186eb899a2ab096ffd62e9ce03e51f776be56dee64f16"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pentecost-four-chants-20261029-pentecost-ember-friday-alleluia.toml",
+          "sha256": "b6fe905b3cb5f80ad2728434c17c0781fab33079ec2018af08a6361a9406cf5f"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pentecost-four-chants-20261029-pentecost-monday-alleluia.toml",
+          "sha256": "68b9b978e5057bdab081fdc63316f19d7379046063651514bd7e5d1fa5cd54f4"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pentecost-four-chants-20261029-pentecost-thursday-alleluia.toml",
+          "sha256": "7ddc791659ed1ee0ee763b6bf2d47792083de09c9826f77400a1022567b49c24"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pentecost-four-chants-20261029-pentecost-tuesday-alleluia.toml",
+          "sha256": "e317b32cbebd9a42f31b58f62431e4fc05ad0f7459cf83099adb689f8063b23e"
+        }
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "target": [
+        "pentecost-monday",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "incipit": "Loquebantur variis linguis Apostoli",
+        "source": "mixed",
+        "verses": [
+          {
+            "book": "Acts",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 2,
+                  "verse": 4
+                },
+                "end": {
+                  "chapter": 2,
+                  "verse": 4
+                }
+              }
+            ],
+            "ref": "Acts 2:4"
+          }
+        ],
+        "notes": "Missale Romanum 1962, artifact p. 439, printed p. 358, numbered unit 1323; this normal Alleluia also appoints a separate uncited verse. Its biblical citation is retained; the uncited wording remains unavailable.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "no-exemplar"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "pentecost-monday",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English whole-body exemplar is bound to this source-established normal appointment. Its Scripture component does not supply the uncited Missal wording."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "25ba3fa4aad12b080159468d96eaa51109670ba86e7cde4c64fe851acec7444f",
+      "new_english_sha256": "cb86c1f1c312417d8d7a7c89acf590f901aa6cae6019f830a58891e1ee65c07b",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-1c335bcfb01efaf2.json"
+    },
+    {
+      "target": [
+        "pentecost-tuesday",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "incipit": "Spiritus Sanctus docebit vos",
+        "source": "mixed",
+        "verses": [
+          {
+            "book": "John",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 14,
+                  "verse": 26
+                },
+                "end": {
+                  "chapter": 14,
+                  "verse": 26
+                }
+              }
+            ],
+            "ref": "John 14:26"
+          }
+        ],
+        "notes": "Missale Romanum 1962, artifact p. 441, printed p. 360, numbered unit 1333; this normal Alleluia also appoints a separate uncited verse. Its biblical citation is retained; the uncited wording remains unavailable.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "no-exemplar"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "pentecost-tuesday",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English whole-body exemplar is bound to this source-established normal appointment. Its Scripture component does not supply the uncited Missal wording."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "662d6935dc83ac7f5ccdaad4844758fb891f50566b21b79e47211ecc4e20009c",
+      "new_english_sha256": "f162543c22cdcc9b2fff88790dc5c92f4296dac0e9397162cf547ad24eb6f904",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-1c335bcfb01efaf2.json"
+    },
+    {
+      "target": [
+        "pentecost-thursday",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "incipit": "Emitte Spiritum tuum, et creabuntur",
+        "source": "mixed",
+        "verses": [
+          {
+            "book": "Psalms",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 103,
+                  "verse": 30
+                },
+                "end": {
+                  "chapter": 103,
+                  "verse": 30
+                }
+              }
+            ],
+            "ref": "Psalm 103:30"
+          }
+        ],
+        "notes": "Missale Romanum 1962, artifact p. 445, printed p. 364, numbered unit 1356; this normal Alleluia also appoints a separate uncited verse. Its biblical citation is retained; the uncited wording remains unavailable.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "no-exemplar"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "pentecost-thursday",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English whole-body exemplar is bound to this source-established normal appointment. Its Scripture component does not supply the uncited Missal wording."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "905c0ecfc8618df5b272dba5dc7cdf06914eca5143fd57319fd71e781e02884a",
+      "new_english_sha256": "248589bce014b7628f00df6bada37436473ddecbe0ad018be0d705c817865c98",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-1c335bcfb01efaf2.json"
+    },
+    {
+      "target": [
+        "pentecost-ember-friday",
+        "main",
+        "Alleluia",
+        "all",
+        1
+      ],
+      "old_proper": {
+        "name": "Alleluia",
+        "incipit": "O quam bonus et suavis est, Domine, Spiritus tuus in nobis",
+        "source": "mixed",
+        "verses": [
+          {
+            "book": "Wisdom",
+            "ranges": [
+              {
+                "begin": {
+                  "chapter": 12,
+                  "verse": 1
+                },
+                "end": {
+                  "chapter": 12,
+                  "verse": 1
+                }
+              }
+            ],
+            "ref": "Wisdom 12:1"
+          }
+        ],
+        "notes": "Missale Romanum 1962, artifact p. 446, printed p. 365, numbered unit 1366; this normal Alleluia also appoints a separate uncited verse. Its biblical citation is retained; the uncited wording remains unavailable.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "no-exemplar"
+            }
+          ]
+        }
+      },
+      "old_untranslated": {
+        "mass": "pentecost-ember-friday",
+        "form_id": "main",
+        "proper": "Alleluia",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No exact English whole-body exemplar is bound to this source-established normal appointment. Its Scripture component does not supply the uncited Missal wording."
+      },
+      "old_latin_provenance": [],
+      "new_proper_sha256": "a8bac014ff64619bfbbfae469a127779c253d115538772c9458245d4b197367c",
+      "new_english_sha256": "a05cf68975c03c775ce83ecd3fb6236f05c6c0c7bdced93516c7ebe6b179ec74",
+      "review": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-1c335bcfb01efaf2.json"
+    }
+  ],
+  "after_hashes": {
+    "src/sources/calendars/roman-1962/propers.yaml": "5f5b3329bdfbbdcc507a75922c7e6578d51619d4e2b8228e501360c487ab7839",
+    "src/sources/inventories/roman-1962-proper-translations-v1.toml": "650757d3f53c54dd13f646f2525a32d478e5385fb16a3c892d3543b3cb8ae0f3",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml": "933071bf662fc4d9466f53e35956e5f0c7e6c44017bf18942d3fe08dbbdf1d40"
+  }
+}

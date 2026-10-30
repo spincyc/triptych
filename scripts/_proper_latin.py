@@ -892,7 +892,7 @@ def _source_record_problems(
         row, sources, effective_calendar=effective_calendar)]
     if row.get("publication_basis") == qualified.BASIS:
         problems.extend(f"{where}: {one}" for one in qualified.authority_problems(
-            authority_root or TRUSTED_REPOSITORY))
+            authority_root or TRUSTED_REPOSITORY, row=row))
     for field in ("source_id", "verification_source_id"):
         source_id = str(row.get(field) or "")
         if not source_id:

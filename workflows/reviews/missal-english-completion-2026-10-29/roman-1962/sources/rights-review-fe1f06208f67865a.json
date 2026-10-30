@@ -1,0 +1,391 @@
+{
+  "schema": "triptych-independent-Chrism-and-three-chants-specific-rights-recommendation/v1",
+  "reviewed_utc": "2026-10-30T03:28:05.160055+00:00",
+  "jurisdiction": "United States",
+  "status": "RECOMMEND_ACCEPT_FOUR_EXACT_QUALIFIED_LATIN_BASES_ROOT_ADOPTION_REQUIRED",
+  "scope": "Exactly Chrism Collect plus Cross Offertory occurrence1, Damascene Paschal Offertory occurrence2 and Queenship Offertory occurrence1 at the recorded whole-body hashes and conditions. Damascene is an Offertory with added Alleluia, not a Proper named Alleluia.",
+  "inputs": {
+    "Chrism_plan": {
+      "path": ".scratch/roman-english-completion-20261029/temporal/finite-chrism-collect-install-plan.json",
+      "sha256": "0fea972fe4dfd1b20f081dc089603d47fbdb639fd96e4bfa7f8be312e24d54d2"
+    },
+    "Chrism_source_English_review": {
+      "path": ".scratch/roman-english-completion-20261029/temporal/holyweek-four/chrism-review/review.json",
+      "sha256": "3fe5122a42a83baf422843bafa4c9b07b48b7f1efa6555a8c772366050c8fa71"
+    },
+    "chant_finite_candidate_index": {
+      "path": ".scratch/roman-english-completion-20261029/chants/finite-rights-candidate-index.json",
+      "sha256": "624e35d1b4e0e51249a74de5ca15dc61f9bf33aaa128812604f6ff13f98fcca0"
+    },
+    "chant_original_input_packets": [
+      {
+        "path": ".scratch/roman-english-completion-20261029/chants/saints/finite-rights-candidates-two.json",
+        "sha256": "0301b7d374ef30b8037339bd7f7234f5e577bc4fa36c5c02e798bbce179ac3d8"
+      },
+      {
+        "path": ".scratch/roman-english-completion-20261029/chants/late-marian/offertory/finite-rights-candidate.json",
+        "sha256": "1450165dd9c6dc356795483f46f561a77f65d1bf45b377a297ed945769fa96da"
+      }
+    ],
+    "chant_source_only_reviews": [
+      {
+        "path": ".scratch/roman-english-completion-20261029/chants/saints/independent-review/finite-two-source-only-review.json",
+        "sha256": "ea7206c52f4737cd1e268fd17f6a40228e011568d5c12e2bc1f75090ea3e1186"
+      },
+      {
+        "path": ".scratch/roman-english-completion-20261029/chants/saints/independent-review/finite-source-controller-review.json",
+        "sha256": "a2195e06f231727c5fd6cd843c271fc9f78003156f90152e635ae208628ff729"
+      },
+      {
+        "path": ".scratch/roman-english-completion-20261029/chants/late-marian/assumption/offertory-base-review/source_review.json",
+        "sha256": "61c77363de07e6487a7146b0836455d33282cbf5b37fb18b81d1ff9d9fee7dc7"
+      }
+    ],
+    "Chrism_candidate_source_files_verified": [
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/finite-collect-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/chrism-collect-qualified-100ae514/artifact.toml",
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/chrism-collect-qualified-100ae514/artifact.toml",
+        "sha256": "01989a359709ec335f622e4b8ccaddbe5e46a840b867b43322411a3fe410275e"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/finite-collect-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/chrism-collect-qualified-100ae514/latin.txt",
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/chrism-collect-qualified-100ae514/latin.txt",
+        "sha256": "100ae514cc635ab67fa0b2f223954bbb9053f77c01dead58eb11309c16815d33"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/temporal/finite-collect-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/chrism-collect-qualified.toml",
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/chrism-collect-qualified.toml",
+        "sha256": "40aeac125436ef89707d46546758626fde57f0f54a0709b2123a0599aee3e979"
+      }
+    ],
+    "chant_index_all5_candidate_source_file_hashes_verified": [
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/chants/finite-source-postimages/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/finite-cross-offertory-base-20261029/artifact.toml",
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/finite-cross-offertory-base-20261029/artifact.toml",
+        "sha256": "f59ddfa65bef5cc3f9c1fbd8b6cf00cd9fddc8e1bb893af65d4449f60e7729ab"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/chants/finite-source-postimages/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/finite-cross-offertory-base-20261029/latin.txt",
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/finite-cross-offertory-base-20261029/latin.txt",
+        "sha256": "78960a368fed60b2ac3c90dbf8afa3b042da6b7745bc89573806610d3c601db5"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/chants/finite-source-postimages/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/finite-cross-offertory-base-20261029-image.toml",
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/finite-cross-offertory-base-20261029-image.toml",
+        "sha256": "70b5df827e96cb9075276b71162ad63f8fe67e2455cbbb15d3d14add91d2ce18"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/chants/finite-source-postimages/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/finite-cross-offertory-base-20261029.toml",
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/finite-cross-offertory-base-20261029.toml",
+        "sha256": "5452677354ef1881ced2cf9b3a48ed58589eaf7e1b89b83ad8dfd0487577eb3e"
+      },
+      {
+        "candidate_path": ".scratch/roman-english-completion-20261029/chants/finite-source-postimages/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/finite-cross-offertory-target-20261029.toml",
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/finite-cross-offertory-target-20261029.toml",
+        "sha256": "abfd5f9944a89470516279eb469fc0c07cc58e87899c74a19edaf36d7cd47730"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "identity": [
+        "chrism-mass",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "recommendation": "ACCEPT_EXACT_QUALIFIED_SECTION1_6_BASIS_FOR_ROOT_ADOPTION",
+      "Latin_sha256_UTF8_including_terminal_LF": "100ae514cc635ab67fa0b2f223954bbb9053f77c01dead58eb11309c16815d33",
+      "English_sha256_UTF8_no_added_LF": "349d86f852ad183d4454042e8c27be173e5593acfa2f9af688ac6a8c44f0411a",
+      "English_review": "Accepted source/fidelity verdict preserved in3fe512 receipt; project-created study English, not historical or approved translation.",
+      "older_whole_sha256": "80403a92bb8c274489ebc3b63db44db4fb11513fe365933a0a98f3cc3e4b5620",
+      "older_source_artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.chrism-three-oration-readings-20261029-33c7ecdf",
+      "older_source_passage_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.chrism-collect-checked-20261029",
+      "older_locus": "Wilson1894printed69Collect/printed73apparatusfootnote2",
+      "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.chrism-three-orations-word-collation-20261029",
+      "target_locus": "1962artifact233/printed152Oratio892",
+      "all_measured_deltas": [
+        "Wilson main text ministerium vs target ministerio; Wilson footnote2 on printed73 explicitly witnesses ministerio in S and Gerb.",
+        "Wilson merito vs target meritis: one singular-to-plural inflection, no other petition-word change.",
+        "Pointing and stress accents differ. Both actual conclusions read Per Dominum.",
+        "Target source image at400dpi confirms comma after opening Domine; sourceWilson has no comma there. This is newly recovered target pointing, not an inherited calendarbody."
+      ],
+      "assessment": "Wilson1894 has the complete continuous prayer. Its same-edition apparatus independently records ministerio, so that reading is not simply a modern invented change. Target meritis differs from the old merito by number/case inflection in the existing et ... et numero construction. Read together with the recorded comma/pointing and actual Per Dominum stop, the contribution introduces no new petition, clause or nontrivial expressive arrangement. A qualified insufficient-originality basis is defensible for this exact whole body. This is not a claim that the main text itself prints the entire target sequence.",
+      "strongest_counterargument": "The choice of plural merits may express deliberate theological redaction, and a critical text plus apparatus is not an already printed full target sequence. A low originality threshold requires considering the combined selection, not automatically exempting a short grammatical change. Here one reading is explicitly old and the remaining inflection is conventional within an otherwise unchanged complete source prayer; the limited expressive contribution supports policy1(6), with that uncertainty retained.",
+      "confidence": "qualified, moderate-to-high; root judgment required"
+    },
+    {
+      "identity": [
+        "exaltatione-s-crucis",
+        "main",
+        "Offertory",
+        "all",
+        1
+      ],
+      "recommendation": "ACCEPT_EXACT_QUALIFIED_SECTION1_6_LATIN_BASIS_FOR_ROOT_ADOPTION",
+      "Latin_sha256_UTF8_including_terminal_LF": "18060fef847e0615136dba2a6e73b16797e3b944665c4e1475dc8643be33fa79",
+      "source_base_sha256_UTF8_including_terminal_LF": "78960a368fed60b2ac3c90dbf8afa3b042da6b7745bc89573806610d3c601db5",
+      "source_base_controller_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.finite-cross-offertory-base-20261029",
+      "source_base_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.finite-cross-offertory-base-20261029",
+      "target_controller_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.finite-cross-offertory-target-20261029",
+      "raw_source_target_range_controls": {
+        "source_text": {
+          "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.finite-cross-offertory-base-20261029",
+          "artifact_sha256": "78960a368fed60b2ac3c90dbf8afa3b042da6b7745bc89573806610d3c601db5",
+          "physical_line_ranges": [
+            [
+              1,
+              1
+            ]
+          ],
+          "text_sha256": "78960a368fed60b2ac3c90dbf8afa3b042da6b7745bc89573806610d3c601db5"
+        },
+        "source_page": {
+          "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-saints-chant-pages-59c31d7f",
+          "artifact_sha256": "59c31d7fe87648bcc0d55635c2d902b3054d9c5eb826357802ea426ea7f62077",
+          "artifact_page_ranges": [
+            [
+              13,
+              13
+            ]
+          ],
+          "original_artifact_page": 828
+        },
+        "target": {
+          "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+          "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+          "artifact_pages": [
+            736
+          ],
+          "printed_pages": [
+            "655"
+          ],
+          "unit": 3611
+        }
+      },
+      "candidate_index_original_source_path": ".scratch/roman-english-completion-20261029/chants/saints/cross-michael/hold-offertory.json",
+      "candidate_index_original_source_sha256": "941466a86cda3103e310d557f539b113db827b75dfc8b6eb81bc96c962cc30cc",
+      "all_measured_deltas": [
+        {
+          "kind": "insert",
+          "source_tokens": [],
+          "target_tokens": [
+            "omnibus"
+          ],
+          "source_token_range_zero_based": [
+            9,
+            9
+          ],
+          "target_token_range_zero_based": [
+            9,
+            10
+          ]
+        }
+      ],
+      "whole_contribution_assessment": "Use the complete same-feast1922 Offertory as the historical foundation, already including the final Alleluia. The only later lexical addition is omnibus before insidiis, a conventional universal quantifier in the same preserved complete prayer. It extends the expressed scope and is not erased as spelling. In the exact unchanged old syntax this one ordinary quantifier adds insufficient independently creative expression to defeat the old foundation. The separate Passion version is corroborating contrary evidence, not a second donor spliced into an asserted old whole.",
+      "strongest_counterargument_and_limit": "Direct1922 and1862 feast bodies omit omnibus; the Passion body includes it but lacks the final acclamation. No exact pre1931 full selected target utterance or first-publication date is established. Semantic broadening can be deliberate and the whole combined expression matters; the recommendation rests on the complete feast source plus the limited ordinary quantifier, not on merging distinct source utterances or a universal short-word exemption.",
+      "English_review": "No complete newly proposed chant English is accepted by this rights review. Cross and Damascene index entries have no English draft. Queenship supplies conditional candidate English but its referenced independent review covers the old base only. A subsequent complete English source/fidelity review and exact English hash are required before English admission.",
+      "English_hash_accepted_here": null,
+      "whole_target_historical_word_identity": false
+    },
+    {
+      "identity": [
+        "s-ioannis-damasceni-confessoris-ecclesiae-doctoris",
+        "main",
+        "Offertory",
+        "all",
+        2
+      ],
+      "recommendation": "ACCEPT_EXACT_QUALIFIED_SECTION1_6_LATIN_BASIS_FOR_ROOT_ADOPTION",
+      "Latin_sha256_UTF8_including_terminal_LF": "e88531b6aff711ffb42e4d411fc44e81d0f07c5836d36e34fe3570b33a8a3c96",
+      "source_base_sha256_UTF8_including_terminal_LF": "b06720237c7314a55174aecedcabdbac4dbbbbd6fa43b11c160c689b703340b4",
+      "source_base_controller_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23.damascene-offertory-non-paschal-base-20261023",
+      "source_base_artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23.damascene-offertory-non-paschal-base-20261023",
+      "target_controller_id": null,
+      "raw_source_target_range_controls": {
+        "source_text": {
+          "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23.damascene-offertory-non-paschal-base-20261023",
+          "artifact_sha256": "b06720237c7314a55174aecedcabdbac4dbbbbd6fa43b11c160c689b703340b4",
+          "physical_line_ranges": [
+            [
+              1,
+              1
+            ]
+          ],
+          "text_sha256": "b06720237c7314a55174aecedcabdbac4dbbbbd6fa43b11c160c689b703340b4"
+        },
+        "source_page": {
+          "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.damascene-offertory-page-20261023",
+          "artifact_sha256": "0715d39b0115d211d29c547aca00642c933e0fa23ded993610c0a5f2e4d86b25",
+          "artifact_page_ranges": [
+            [
+              1,
+              1
+            ]
+          ],
+          "original_artifact_page": 673
+        },
+        "target": {
+          "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+          "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+          "artifact_pages": [
+            579
+          ],
+          "printed_pages": [
+            "498"
+          ],
+          "unit": 2342,
+          "variant": "OnlyPaschalOffertory occurrence2; do not extend base occurrence1 authority"
+        }
+      },
+      "candidate_index_original_source_path": ".scratch/roman-english-completion-20261029/chants/saints/doctors-saints/hold-damascene-offertory.json",
+      "candidate_index_original_source_sha256": "9581176d752bd4aaa157b295b5878eae72796df0b776821f8f3b44b5dae849f3",
+      "all_measured_deltas": [
+        {
+          "kind": "insert",
+          "source_tokens": [],
+          "target_tokens": [
+            "alleluia"
+          ],
+          "source_token_range_zero_based": [
+            12,
+            12
+          ],
+          "target_token_range_zero_based": [
+            12,
+            13
+          ]
+        }
+      ],
+      "whole_contribution_assessment": "The independently established full non-Paschal Offertory base remains unchanged in its words/order. The actual separately appointed Paschal occurrence2 adds only the standard acclamation Alleluia at the end. The T.P. marker is an execution instruction, not recited text. For this exact old whole body and proved seasonal occurrence the conventional appended invocation adds no independently creative petition or arrangement; a qualified basis is defensible.",
+      "strongest_counterargument_and_limit": "The old1922 local source ends at pullulant and carries no Paschal continuation. The already accepted non-Paschal occurrence1 supplies no automatic rights or appointment for occurrence2. A new selection/arrangement can be original, so the added acclamation must be assessed with the complete old base and actual source-owned seasonal condition. No grant is made for another acclamation, position, chant or occurrence.",
+      "English_review": "No complete newly proposed chant English is accepted by this rights review. Cross and Damascene index entries have no English draft. Queenship supplies conditional candidate English but its referenced independent review covers the old base only. A subsequent complete English source/fidelity review and exact English hash are required before English admission.",
+      "English_hash_accepted_here": null,
+      "whole_target_historical_word_identity": false
+    },
+    {
+      "identity": [
+        "beatae-mariae-virginis-reginae",
+        "main",
+        "Offertory",
+        "all",
+        1
+      ],
+      "recommendation": "ACCEPT_EXACT_QUALIFIED_SECTION1_6_LATIN_BASIS_FOR_ROOT_ADOPTION",
+      "Latin_sha256_UTF8_including_terminal_LF": "f4e866f44553d4181484958a6e4d79ffe7d1e560a4a56f39c298b877093de446",
+      "source_base_sha256_UTF8_including_terminal_LF": "dd345ee2fcab6b3974007069754a1ae6974851a5276af44fac6133b329655c77",
+      "source_base_controller_id": "passage.catholic-church.breviarium-monasticum.1690-venice-baglioni.queenship-offertory-responsory-base-20261029",
+      "source_base_artifact_id": "artifact.catholic-church.breviarium-monasticum.1690-venice-baglioni.erara-whole-pdf-6fb9cd28",
+      "target_controller_id": null,
+      "raw_source_target_range_controls": {
+        "source_passage_physical_line_ranges": [
+          [
+            1,
+            1
+          ]
+        ],
+        "checked_text_lines": 1,
+        "source_excerpt_artifact_pages": [
+          [
+            2,
+            2
+          ]
+        ],
+        "whole_parent_artifact_pages": [
+          [
+            955,
+            955
+          ]
+        ],
+        "printed_page": "912",
+        "title_excerpt_artifact_page": 1,
+        "title_whole_parent_artifact_page": 4,
+        "target_page": [
+          [
+            622,
+            622
+          ]
+        ],
+        "target_printed_page": "541",
+        "target_unit": 2691,
+        "proposed_target_projection_physical_line_ranges": [
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      "candidate_index_original_source_path": ".scratch/roman-english-completion-20261029/chants/late-marian/offertory/source-candidate.json",
+      "candidate_index_original_source_sha256": "920d4775e089b39878605cff7197d40045faf85332f3dc02c30722498dfcd125",
+      "all_measured_deltas": {
+        "only_added_invocation": {
+          "word": "Alleluia",
+          "target_start": 117,
+          "target_end": 125,
+          "semantic_role": "Conditional Paschal addition to the independently witnessed whole base; absent from this complete earlier responsory base."
+        },
+        "only_added_apparatus": {
+          "text": "(T. P. Alleluia.)",
+          "target_start": 110,
+          "target_end": 127,
+          "semantic_role": "Source-owned standard cue restricting Alleluia to Paschal time, not a new Latin prayer clause."
+        },
+        "typography": [
+          {
+            "operation": "replace",
+            "source_start": 40,
+            "source_end": 41,
+            "target_start": 40,
+            "target_end": 41,
+            "source": ":",
+            "target": ";"
+          },
+          {
+            "operation": "replace",
+            "source_start": 42,
+            "source_end": 43,
+            "target_start": 42,
+            "target_end": 43,
+            "source": "C",
+            "target": "c"
+          },
+          {
+            "operation": "insert",
+            "source_start": 69,
+            "source_end": 69,
+            "target_start": 69,
+            "target_end": 70,
+            "source": "",
+            "target": ","
+          }
+        ]
+      },
+      "whole_contribution_assessment": "The full1690 responsory base from Regali through poscimus already supplies the continuous target expression. Its use as the Queenship Offertory does not create new wording in that old base. The only added spoken word is the standard Alleluia, under the short conventional T.P. conditional apparatus. Combined with unchanged base word order and explicitly declared pointing/case, this is a slight conventional seasonal addition rather than a newly authored petition or meaningful new literary arrangement. The isolated exact body-plus-cue has a defensible qualified basis.",
+      "strongest_counterargument_and_limit": "The full1962 edition remains unresolved/protected and no older complete same-body Paschal ending was found in this bounded source work. A modern choice of an old responsory for a new feast and its seasonal form could be creative selection/arrangement; the1690base alone does not prove the entire later body. This recommendation concerns only the exact single chant and standard conditional invocation, not the book arrangement, celebration compilation, rubric corpus, or every ancient word placed in a new context.",
+      "English_review": "No complete newly proposed chant English is accepted by this rights review. Cross and Damascene index entries have no English draft. Queenship supplies conditional candidate English but its referenced independent review covers the old base only. A subsequent complete English source/fidelity review and exact English hash are required before English admission.",
+      "English_hash_accepted_here": null,
+      "whole_target_historical_word_identity": false
+    }
+  ],
+  "shared_policy_assessment": [
+    "Apply liturgical-text-publication-policy section1(6) as a qualified finite project judgment, not a blanket copyright clearance or an assertion that every old phrase can be assembled into a free modern prayer.",
+    "Each candidate has a complete continuous independently established old underlying expression. Its whole measured contribution is assessed in context: old-attested grammatical form/one inflection, one quantifier, or a standard final seasonal invocation with actual source-owned condition. No unrelated old fragments are stitched into a claimed historical whole.",
+    "The CopyrightOffice individual-word/short-expression and derivative-work originality principles support a defensible limited-contribution argument, while their low creativity threshold and possible originality of selection/arrangement remain explicit. Semantic significance alone is not equivalent to protectable added expression, but shortness alone is not immunity either.",
+    "All prior finite authorities are analogies only. No previous grant, accepted base-only body, human-English nonrenewal finding or Bible status silently travels to these complete targets."
+  ],
+  "conditions": [
+    "Root must separately adopt the exact four tuple/body/source/control/condition records in a closed authority before canonical/public admission. This is a rights recommendation only.",
+    "Chrism retains all source-main/apparatus distinctions, actual opening comma and meritis plural. Its accepted exact study-English hash may be carried after the underlying finite basis and final assembly are validated.",
+    "All three chant source-only verdicts and existing absence histories remain accurate. The finite rights decision must be followed by exact full-target projection/source-graph verification and complete new English fidelity review. No unseen English wording is approved by this recommendation.",
+    "Cross uses one complete feast body plus explicitly assessed omnibus; the distinct Passion body is never presented as an exact full target donor.",
+    "Damascene applies only to the proved Paschal Offertory occurrence2. T.P. is apparatus and never recited as part of the chant. The separate existing occurrence1 remains its own source owner.",
+    "Queenship retains the exact conditional T.P. Alleluia apparatus; that cue restricts the invocation to its actual Paschal context. Do not print the invocation cumulatively or treat the cue as words for recitation. Final conditional-span/renderer checks remain separate.",
+    "No complete1962/1955book, modern arrangement, larger rubric corpus, other prayer, new modern English, existing human English, additional season or target is cleared. Source/publication/runtime checks and source privacy boundaries remain required."
+  ],
+  "legal_source_currency": "Uses the same previously read CopyrightOffice202.1/Circular33/Circular14 primary support and its explicit2025-03-14 regulatory-page data-as-of/circular-overview limits; no new legal survey or human/court approval claimed.",
+  "evidence_ceiling": "This turn read exact candidate bodies, full measured deltas, contrary facts and independent source/source-English receipts; rechecked frozen index and both original packets, all5 index source-file hashes, Chrism candidate files and all4 Latin/base hashes. It did not repeat prior image audits, rehash source whole books or accept absent chant-English drafts.",
+  "canonical_files_modified": false,
+  "root_adoption_performed": false,
+  "new_English_wording_reviewed": false
+}

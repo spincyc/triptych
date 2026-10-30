@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-wednesday-communion-historical-la-54b9b8b5"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_type = "checked-latin-transcription"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Complete independently public-domain source-local Latin body from the identified 1862 printing; mechanical transcription adds no human authorship. No modern target body or approved English is retained."
+rights_jurisdiction = "United States"
+provenance = "Literal Latin unit read from the opened complete source page at physical PDF page 373 / printed 287 on 2026-10-29 and independently source-reviewed. OCR served only as a locator. The same-edition retained source-page image controls this derivative."
+retrieved = "2026-10-29"
+sha256 = "54b9b8b57a76fb064fb0cb442980f8312a8b5d0a0825e36d552cb942ebc6b24a"
+byte_size = 922
+path = "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/english-completion-20261029-postconciliar-phase2-late-easter-easter-5-wednesday-communion-historical-la-54b9b8b5/text.tsv"
+derived_from = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-late-easter-pustet-ap373-image-94c7e041"
+transformation = "Transcribe only the complete independently held historical Latin body into one UTF-8 TSV data row; join visual line wrapping with spaces, retain source punctuation and words, and preserve its original final Alleluia count. Do not substitute the modern reading into the historical Latin column."
+indexable = true
+encoding = "utf-8"
+notes = "The one lexical variation is historical Christus against Dominus in the inspected secondary 2002 reproduction; the study English renders the latter common divine title as Lord. Every other body word agrees. The historical Greater Alleluia verse is a complete source-local unit: the leading two Alleluias and V. are chant framing, and the following Exivi a Patre / John 16:28 verse is separate. The historical comma after Christus, full stop before final Alleluja and final capital differ from the modern pointing and case; stress accents and final Alleluja / allelúia spelling differ. These are fully disclosed differences, not an exact historical English transfer. The comparison is bounded to the exact secondary digitally typeset 2002 reproduction; fidelity to printed 2002 and agreement with the 2008 reimpressio remain unresolved. New Triptych study English, not historical human English, not approved liturgical English, and not for recitation. No ICEL English source was used."

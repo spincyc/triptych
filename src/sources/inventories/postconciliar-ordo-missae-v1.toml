@@ -3,29 +3,19 @@ calendar = "postconciliar"
 title = "The Order of Mass"
 
 advisory = """
-A finding aid for the shape of the rite, and never a book to celebrate from. \
-Most of this Order of Mass is missing here, and every element says which of its \
-two texts is missing and why, because they are not missing for one reason. The \
-English side has six reasons. Twenty-seven elements record a rights absence \
-rather than text on this distribution surface. Sixteen modelled elements \
-have official exemplars registered but no tracked payload this generator may \
-join to them. Six variable \
-texts belong to the Propers rather than this frame. Three elements have no fixed \
-words, three span parts with different availability, and six are prayers the \
-Priest says quietly for which no exact exemplar is held. The Latin side \
-has seven reasons, and they run from the reform's own new matter, which is the \
-Holy See's and is withheld, to a rubric that has no words in any book. Where a \
-text is missing what stands in its place is the element's received Latin \
-incipit, which is a reference and not the prayer. THE LATIN THAT IS HERE IS NOT \
-THIS MISSAL'S. Twenty elements carry Latin, and at every one of them it is the \
-facing column of an 1861 Philadelphia lay hand missal printing the ancient \
-prayer this Order of Mass received. The controlling 2008 Latin is not \
-distributable on this surface and is not served as an element text anywhere on \
-this page. Each of the twenty says beside its own words which prayer of that older book \
-it is, at which printed page and leaf, which accidents of that printing it \
-carries unnormalised, and whether its identity with the controlling edition has \
-been established by a collation this repository holds or is so far only \
-asserted. Five are established; fifteen are not, and they say so.
+A study reading frame for the shape of the rite, never a book to celebrate from. \
+Each element either carries a separately identified historical witness or project \
+study translation, or states why its words are unavailable here. The approved \
+2011 English is registered as restricted provenance and is not published in this \
+tracked corpus. Historical English and new study English do not replace or clear it. \
+The historical Latin is independently sourced ancient wording, not a reproduction \
+of the controlling 2008 Missal. Its spelling, source extent, optional configurations \
+and relation to the target are stated separately for each join. The repository \
+holds a verified secondary digital 2002 Ordo and the official bounded 2008 variation \
+list, but no complete authenticated 2008 exemplar. An uncollated relation makes no \
+claim of complete target identity. Concise source qualifications accompany held \
+bodies; their full evidence remains in the source notes. Proper texts belong to \
+the day's formulary, and locally composed words have no fixed body to supply.
 """
 
 derived_from = """
@@ -48,8 +38,12 @@ carrying its own printed page, Internet Archive leaf and transcriber's note. \
 Those artifacts are already the Latin of this project's 1962 frame; here they \
 are joined to a second calendar, element by element, because the older book \
 prints the ancient prayer the postconciliar Missal received and for no other \
-reason. Nothing is transcribed afresh for this file and nothing is normalised: \
-the join names artifact rows that already exist and already carry their hash.
+reason. Those original Cummiskey joins name unchanged artifact rows already held by \
+the project. Additional independently checked historical witnesses and finite \
+project study translations are identified in their own witness and element \
+blocks. Their retained source pages, exact selectors, normalization and source \
+boundaries are recorded in the corresponding hashed artifacts and passages; \
+none is silently assigned the controlling book's identity.
 """
 
 slots_derived_from = """
@@ -65,10 +59,10 @@ slot below anchors to an element whose number this file already carries.
 
 not_decided_here = [
   "Which Eucharistic Prayer a priest should use. The Missal offers four and the choice is his; the option this file marks default is simply the first the Missal prints.",
-  "Whether the Latin editio typica itself may be republished. That question is open, this file does not answer it, and nothing here depends on the answer. Of the sixty-one elements, sixteen are empty in Latin because their target wording is the Holy See's post-1929 matter and is withheld; twenty-three are empty because of a witness or a modelling gap and no rightsholder has refused them; two are a formulary's appointed Preface and dismissal, printed with that formulary, whose publication basis is unresolved; and twenty carry Latin that is not the editio typica's at all, but an 1861 lay printing's of the ancient prayer this Order received. No word of the editio typica is reproduced here, in any element.",
+  "Whether the Latin editio typica itself may be republished. This inventory records an independent historical-source basis only for its named joined words. Unfilled elements retain their individual witness, wording, model or publication-surface limits. No source verification transfers the controlling book's authority, and no approved English is published by this frame.",
   "The Prefaces, of which the Missal prints fifty; they are proper to the day and belong to the propers layer, not to the invariant frame.",
   "Where a proper stands that this file does not seat. The chants of the Paschal Triduum and the whole of the Good Friday liturgy are left unplaced; a page reading this file must show them in the Missal's own order beside the proper they follow rather than invent a seat for them.",
-  "Whether the fifteen elements carried here at the `uncollated` grade are word-identical with the editio typica. They are carried because the words themselves are attested in a public-domain witness this project has read at a named leaf, never because an older text has been silently relabelled as the target. That is not an established identity and it is not written down as one. At the Pax the study quotes the target versicle but does not establish the response at n. 127; eight Roman Canon children each name the untested extent or configuration that keeps the complete older row uncollated; and the other six state their own exact evidence bounds beside their words. The repository's verified 2002 Ordo evidence plus the official bounded 2008 variation list does not by itself establish all fifteen identities; settling them requires the missing word-level comparisons.",
+  "Whether elements carried here at the `uncollated` grade are word-identical with the editio typica. They are carried because the words themselves are attested in a public-domain witness this project has read at a named leaf, never because an older text has been silently relabelled as the target. That is not an established identity and it is not written down as one. At the Pax the study quotes the target versicle but does not establish the response at n. 127; eight Roman Canon children each name the untested extent or configuration that keeps the complete older row uncollated; and the other six state their own exact evidence bounds beside their words. The repository's verified 2002 Ordo evidence plus the official bounded 2008 variation list does not by itself establish all those identities; settling them requires the missing word-level comparisons.",
   "Whether an antecedent witness's spelling should ever be brought toward the controlling edition's. It is not, anywhere here. The 1861 column prints justum for iustum, Jesu for Iesu, the ae- and oe-ligatures, Et expecto for Et exspecto, and at least one plain misprint - nodie for hodie - and every one of them is carried as printed and named in the element's own note. Smoothing them would manufacture a target witness this project has not established; carrying them silently under a heading naming the editio typica would attribute a lay printer's misprints to the Holy See. Naming them is the only honest third option and it is what this file does.",
 ]
 
@@ -112,6 +106,29 @@ artifacts = [
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la-turn-divided",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la-turn-divided",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la-turn-divided-2026-10-20",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-ancient-frames-la",
+]
+
+
+# Historical English is a separate language witness of the same 1861 printing.
+# Its per-element antecedent relation never clears the approved English.
+[[witnesses]]
+id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+lang = "en"
+label = "Historical English antecedent (NOT the approved Roman Missal English): The Roman Missal translated into the English language for the use of the laity (Philadelphia: Eugene Cummiskey, 1861)"
+rights = "public-domain"
+caution = "The English of an 1861 lay hand missal, not the approved 2011 English and never an altar book. It supplies only explicitly joined historical antecedents beside the older Latin already carried here. Its own spelling, printed cues, abbreviations, speaker allocation and optional-text configuration are preserved; the historical Our Father has an additional priest Amen and the Agnus Dei retains continuation asterisks. Every English body remains uncollated against approved target English. Nothing here may be used for recitation."
+artifacts = [
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-ancient-frames-en",
 ]
 
 # ICEL's own free chant library, Music for the Roman Missal, as the rightsholder
@@ -154,6 +171,104 @@ artifacts = [
   "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.blessing",
   "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.dismissal",
 ]
+
+[[witnesses]]
+id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+lang = "la"
+label = "Historical Latin antecedent (Mame, 1922), not the controlling 2008 Missal"
+rights = "public-domain"
+caution = "A checked historical printing of the ancient prayer, with source spelling and explicit bounded source selection. It is not an authenticated complete 2008 target witness and is not a text for recitation."
+artifacts = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-ordinary-supplices-la",
+  "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-ordinary-ecce-la",
+]
+
+[[witnesses]]
+id = "edition.triptych.postconciliar-ordinary-supplices-study-english-20261030.study-english-20261030"
+lang = "en"
+label = "Triptych study English of the historical Supplices body (not approved liturgical English)"
+rights = "project-created"
+caution = "New AI-authored study English from the independently checked public-domain 1922 prayer-body prefix, without its separate old conclusion. No approved English or human review is claimed. Not approved for liturgical use or recitation."
+artifacts = ["artifact.triptych.postconciliar-ordinary-supplices-study-english-20261030.study-english-20261030.supplices-body-study-en"]
+
+[[witnesses]]
+id = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888"
+lang = "la"
+label = "Historical Latin antecedent (NOT the controlling Missal): Roman Breviary, Pustet, 1888"
+rights = "public-domain"
+caution = "The complete ancient Apostles Creed from an 1888 Roman Breviary, not the controlling 2008 Missal. Acute accents are explicitly omitted in this normalized study transcription; source ligatures, j, capitals and punctuation remain. Source verification does not establish authenticated complete2008 identity or permission to recite from this finding aid."
+artifacts = ["artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-ordinary-apostles-latin"]
+
+[[witnesses]]
+id = "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+lang = "en"
+label = "Historical English antecedent (NOT approved Missal English): Bute Roman Breviary, 1908"
+rights = "public-domain"
+caution = "The complete historical human English of the Apostles Creed in Bute's 1908 Roman Breviary, not approved2011 Roman Missal English. Source wording, capitals, pronouns, pointing and complete Amen ending remain; typographic small capitals are represented as uppercase. This study witness does not clear or replace the approved English and is not for recitation."
+artifacts = ["artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-ordinary-apostles-english"]
+
+[[witnesses]]
+id = "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712"
+lang = "la"
+label = "Historical Ambrosian Latin (Milan,1712), not a controlling2008 exemplar"
+rights = "public-domain"
+caution = "An independently checked complete old invitation, from a different rite. No old response, rubrics or assignment is transferred. No complete2008 collation or recitation authority is claimed."
+artifacts = ["artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.english-completion-20261030-peace-invitation-la"]
+
+[[witnesses]]
+id = "edition.triptych.postconciliar-ordinary-peace-invitation-study-english-20261030.study-english-20261030"
+lang = "en"
+label = "Triptych study English of the historical peace invitation (not approved liturgical English)"
+rights = "project-created"
+caution = "New AI-authored English from the independently checked1712 invitation only. Not approved for liturgical use or recitation; no human review is claimed."
+artifacts = ["artifact.triptych.postconciliar-ordinary-peace-invitation-study-english-20261030.study-english-20261030.peace-invitation-study-en"]
+
+[[witnesses]]
+id = "edition.catholic-church.vulgata-clementina.ebible-latvuc"
+lang = "la"
+label = "Historical Latin antecedent: Clementine Vulgate (eBible latVUC), not the controlling 2008 Missal"
+rights = "public-domain"
+caution = "Independently identified historical source wording with explicit selections and source spelling. This is not an authenticated complete 2008 target witness or approved liturgical English, and is not for recitation."
+artifacts = ["artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-greeting-trinitarian-la", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-greeting-grace-peace-la", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-greeting-bishop-la", "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-beati-ad-cenam-la"]
+
+[[witnesses]]
+id = "edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030"
+lang = "en"
+label = "Triptych study English of ancient source fragments (not approved liturgical English)"
+rights = "project-created"
+caution = "New AI-authored study English from the individually identified public-domain source spans. Not approved for liturgical use or recitation; no human review is claimed."
+artifacts = ["artifact.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030.ancient-frames-study-en"]
+
+[[witnesses]]
+id = "edition.triptych.english-completion-20261030-kyrie-sixfold-study-arrangement.study-arrangement-20261030"
+lang = "en"
+label = "Triptych sixfold study arrangement of 1861 Kyrie glosses (not approved English)"
+rights = "project-created"
+caution = "Six study utterances arranged from two exact historical English glosses. The 1861 Mass itself is ninefold and does not print this complete arrangement. Its older P./R. actors are not inherited. This is not approved English or a text for recitation."
+artifacts = ["artifact.triptych.english-completion-20261030-kyrie-sixfold-study-arrangement.study-arrangement-20261030.sixfold-english-gloss-arrangement"]
+
+[[witnesses]]
+id = "edition.triptych.postconciliar-ordinary-domine-qui-dixisti-study-english-20261030.study-english-20261030"
+lang = "en"
+label = "Triptych study English with explicit communal revision (not approved liturgical English)"
+rights = "project-created"
+caution = "New AI-authored study English of a checked old main prayer, one explicit communal possessive revision and a separately witnessed ancient short conclusion. Not approved for liturgical use or recitation; no human review or complete2008target grade is claimed."
+artifacts = ["artifact.triptych.postconciliar-ordinary-domine-qui-dixisti-study-english-20261030.study-english-20261030.domine-qui-dixisti-study-en"]
+
+[[witnesses]]
+id = "edition.triptych.postconciliar-common-communicantes-study-english-20261030.study-english-20261030"
+lang = "en"
+rights = "project-created"
+artifacts = ["artifact.triptych.postconciliar-common-communicantes-study-english-20261030.study-english-20261030.common-full-names-conclusion-omitted-study-en"]
+label = "Triptych study English of common Communicantes (not approved Missal English)"
+caution = "Common form only, with full saints list and omitted conclusion; seasonal proper forms remain unfilled. New AI-authored study English from the separately identified source body and exact Joseph clause. No approved translation, human review, whole2008 identity or recitation authority is claimed."
+
+[[witnesses]]
+id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+lang = "en"
+label = "Complete historical English (Lasance, 1945), not approved postconciliar Missal English"
+rights = "public-domain"
+caution = "An independently checked historical English witness of the complete printed threefold Agnus Dei. The old source actor and ceremonial context are not assigned to the postconciliar setting. No approved translation, authenticated complete2008 identity or recitation authority is claimed."
+artifacts = ["artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"]
 
 # ---------------------------------------------------------------- absences
 
@@ -279,19 +394,204 @@ name = "Entrance and veneration of the altar"
 latin_incipit = "Populo congregato"
 missal_number = "n. 1"
 absent_latin = "not-a-text"
-note = "The entrance chant, the procession, the veneration of the altar, and the sign of the cross said by priest and people together."
-absent_english = "approved-english-publication-restriction"
+note = "Structural action and preserved semantic anchor. Its fixed spoken spans are separately represented by ritus-initiales/signum-crucis. No fixed spoken body is assigned to this structural parent."
+absent_english = "not-a-text"
+
+[[sections.elements]]
+key = "signum-crucis"
+kind = "dialogue"
+name = "Sign of the Cross"
+missal_number = "n. 1"
+note = "Complete source-defined spoken span refining ritus-initiales/introitus. Its source and target-role evidence are separate; no complete authenticated2008 wording identity is claimed."
+latin_turns = [{ key = "priest-sign-cross", seq = [1], speaker = "priest" }, { key = "people-amen", seq = [2], speaker = "all" }]
+english_turns = [{ key = "priest-sign-cross", seq = [1], speaker = "priest" }, { key = "people-amen", seq = [2], speaker = "all" }]
+turns_basis = "Direct inspection of registered secondary digital2002 PDF303 n1 supplies speaker rubrics only; no target versicle/response mark is invented from historical source P./R. Parent whole-source actor and old repetitions do not control this target placement. Full authenticated2008 collation remains unestablished."
+
+[sections.elements.latin]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-ancient-frames-la"
+elements = ["signum-crucis"]
+column = "latin"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Historical Latin source wording; no complete authenticated2008 collation is claimed."
+note = "Source seq3 is split before its terminal Amen, with its entire source text retained. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+
+[sections.elements.english]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-ancient-frames-en"
+elements = ["signum-crucis"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Historical English (Cummiskey,1861); this is not approved postconciliar English. The source’s older wording and spelling are retained."
+note = "The1861 source assigns the original whole block to the priest. The target priest/people division is separately evidenced, not misattributed to the source. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
 
 [[sections.elements]]
 key = "salutatio"
-kind = "dialogue"
-speaker = "all"
+kind = "rubric"
 name = "The Greeting"
 latin_incipit = "Dominus vobiscum"
 missal_number = "n. 2"
-absent_latin = "element-spans-mixed-matter"
-note = "Three forms; a bishop greets Pax vobis."
-absent_english = "approved-english-publication-restriction"
+absent_latin = "not-a-text"
+note = "Structural action and preserved semantic anchor. Its fixed spoken spans are separately represented by ritus-initiales/greeting-trinitarian, ritus-initiales/greeting-grace-peace, ritus-initiales/greeting-lord, ritus-initiales/greeting-bishop, ritus-initiales/greeting-response. The bishop-only Pax-vobis source is available solely by explicit selection of that named variant; it is never a default or an inferred rank."
+absent_english = "not-a-text"
+
+[[sections.elements]]
+key = "greeting-trinitarian"
+kind = "dialogue"
+name = "Trinitarian greeting"
+missal_number = "n. 2"
+speaker = "priest"
+alternatives = [{ group = "salutatio-form", option = "greeting-trinitarian" }]
+note = "Complete source-defined spoken span refining ritus-initiales/salutatio. Its source and target-role evidence are separate; no complete authenticated2008 wording identity is claimed."
+latin_turns = [{ key = "greeting-trinitarian", seq = [1], speaker = "priest" }]
+english_turns = [{ key = "greeting-trinitarian", seq = [1], speaker = "priest" }]
+turns_basis = "Direct inspection of registered secondary digital2002 PDF303 n2 supplies speaker rubrics only; no target versicle/response mark is invented from historical source P./R. Parent whole-source actor and old repetitions do not control this target placement. Full authenticated2008 collation remains unestablished."
+
+[sections.elements.latin]
+witness = "edition.catholic-church.vulgata-clementina.ebible-latvuc"
+artifact = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-greeting-trinitarian-la"
+elements = ["greeting-trinitarian"]
+column = "latin"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Historical Latin source wording; no complete authenticated2008 collation is claimed."
+note = "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+
+[sections.elements.english]
+witness = "edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030"
+artifact = "artifact.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030.ancient-frames-study-en"
+elements = ["greeting-trinitarian"]
+column = "english"
+relation = "own"
+reading_note = "Triptych study English from the specified ancient source fragment. Not approved for liturgical use or recitation."
+note = "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+
+[[sections.elements]]
+key = "greeting-grace-peace"
+kind = "dialogue"
+name = "Grace and peace"
+missal_number = "n. 2"
+speaker = "priest"
+alternatives = [{ group = "salutatio-form", option = "greeting-grace-peace" }]
+note = "Complete source-defined spoken span refining ritus-initiales/salutatio. Its source and target-role evidence are separate; no complete authenticated2008 wording identity is claimed."
+latin_turns = [{ key = "greeting-grace-peace", seq = [1], speaker = "priest" }]
+english_turns = [{ key = "greeting-grace-peace", seq = [2], speaker = "priest" }]
+turns_basis = "Direct inspection of registered secondary digital2002 PDF303 n2 supplies speaker rubrics only; no target versicle/response mark is invented from historical source P./R. Parent whole-source actor and old repetitions do not control this target placement. Full authenticated2008 collation remains unestablished."
+
+[sections.elements.latin]
+witness = "edition.catholic-church.vulgata-clementina.ebible-latvuc"
+artifact = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-greeting-grace-peace-la"
+elements = ["greeting-grace-peace"]
+column = "latin"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Historical Latin source wording; no complete authenticated2008 collation is claimed."
+note = "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+
+[sections.elements.english]
+witness = "edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030"
+artifact = "artifact.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030.ancient-frames-study-en"
+elements = ["greeting-grace-peace"]
+column = "english"
+relation = "own"
+reading_note = "Triptych study English from the specified ancient source fragment. Not approved for liturgical use or recitation."
+note = "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+
+[[sections.elements]]
+key = "greeting-lord"
+kind = "dialogue"
+name = "The Lord be with you"
+missal_number = "n. 2"
+speaker = "priest"
+alternatives = [{ group = "salutatio-form", option = "greeting-lord" }]
+note = "Complete source-defined spoken span refining ritus-initiales/salutatio. Its source and target-role evidence are separate; no complete authenticated2008 wording identity is claimed."
+latin_turns = [{ key = "greeting-lord", seq = [3], speaker = "priest", printed_marker = "P." }]
+english_turns = [{ key = "greeting-lord", seq = [3], speaker = "priest", printed_marker = "P." }]
+turns_basis = "Direct inspection of registered secondary digital2002 PDF303 n2 supplies speaker rubrics only; no target versicle/response mark is invented from historical source P./R. Parent whole-source actor and old repetitions do not control this target placement. Full authenticated2008 collation remains unestablished."
+
+[sections.elements.latin]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-ancient-frames-la"
+elements = ["greeting-lord"]
+column = "latin"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Historical Latin source wording; no complete authenticated2008 collation is claimed."
+note = "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+
+[sections.elements.english]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-ancient-frames-en"
+elements = ["greeting-lord"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Historical English (Cummiskey,1861); this is not approved postconciliar English. The source’s older wording and spelling are retained."
+note = "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+
+[[sections.elements]]
+key = "greeting-bishop"
+kind = "dialogue"
+name = "Bishop only — Pax vobis"
+speaker = "bishop"
+missal_number = "n. 2"
+alternatives = [{ group = "salutatio-form", option = "greeting-bishop" }]
+note = "This bishop-only greeting is shown solely through the explicitly selected bishop-form variant. Selection supplies the contextual fact; the calendar and date supply no rank. The three existing ordinary greeting defaults and their common response remain unchanged."
+latin_turns = [{ key = "bishop-greeting", seq = [1], speaker = "bishop" }]
+english_turns = [{ key = "bishop-greeting", seq = [3], speaker = "bishop" }]
+turns_basis = "Secondary digital2002 Ordo n.2, registered whole-PDF hash0b458944, artifact303 directly inspected: the episcopal greeting is Pax vobis. The Bishop-only variant is explicit user-provided context, never a date-derived appointment. Historical Bible wording is independent of this actor and seating evidence; no complete authenticated2008 identity is claimed."
+
+[sections.elements.latin]
+witness = "edition.catholic-church.vulgata-clementina.ebible-latvuc"
+artifact = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-greeting-bishop-la"
+elements = ["greeting-bishop"]
+column = "latin"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Historical scriptural greeting from John 20:19. Bishop-only form; no complete authenticated2008 collation is claimed."
+note = "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+
+[sections.elements.english]
+witness = "edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030"
+artifact = "artifact.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030.ancient-frames-study-en"
+elements = ["greeting-bishop"]
+column = "english"
+relation = "own"
+reading_note = "Triptych study English from John 20:19. Bishop-only form; not approved for liturgical use or recitation."
+note = "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+
+[[sections.elements]]
+key = "greeting-response"
+kind = "dialogue"
+name = "Common greeting response"
+missal_number = "n. 2"
+speaker = "all"
+note = "Complete source-defined spoken span refining ritus-initiales/salutatio. Its source and target-role evidence are separate; no complete authenticated2008 wording identity is claimed."
+latin_turns = [{ key = "greeting-response", seq = [4], speaker = "all", printed_marker = "R." }]
+english_turns = [{ key = "greeting-response", seq = [4], speaker = "all", printed_marker = "R." }]
+turns_basis = "Direct inspection of registered secondary digital2002 PDF303 n2 supplies speaker rubrics only; no target versicle/response mark is invented from historical source P./R. Parent whole-source actor and old repetitions do not control this target placement. Full authenticated2008 collation remains unestablished."
+
+[sections.elements.latin]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-ancient-frames-la"
+elements = ["greeting-response"]
+column = "latin"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Historical Latin source wording; no complete authenticated2008 collation is claimed."
+note = "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+
+[sections.elements.english]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-ancient-frames-en"
+elements = ["greeting-response"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Historical English (Cummiskey,1861); this is not approved postconciliar English. The source’s older wording and spelling are retained."
+note = "Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
 
 [[sections.elements]]
 key = "actus-paenitentialis-i"
@@ -331,7 +631,6 @@ absent_english = "approved-english-publication-restriction"
 [[sections.elements]]
 key = "kyrie"
 kind = "dialogue"
-speaker = "all"
 name = "Kyrie eleison"
 latin_incipit = "Kyrie, eleison"
 missal_number = "n. 7"
@@ -339,6 +638,18 @@ absent_latin = "antecedent-held-not-carried"
 absent_english = "approved-english-publication-restriction"
 conditions = [{ kind = "omit-when-option", group = "penitential-act", options = ["pa-iii"], basis = "Ordo Missae n. 7 and IGMR 51, as transcribed and sourced in src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/10-introductory-rites.tex:96-103." }]
 note = "The Missal prints the Kyrie in Greek and in the sixfold form, two acclamations to each invocation, and omits it where the third form of the Penitential Act has been used."
+turns_basis = "Secondary 2002 artifact page 305, n. 7 visibly prints three pairs: V. Kyrie/R. Kyrie; V. Christe/R. Christe; V. Kyrie/R. Kyrie. These printed boundaries support alternating versicle/response roles, without assigning priest or cantor actors. The 1861 source P./R. cues belong to a different ninefold Mass context and are not reused as target role proof."
+english_turns = [{ key = "call-1", seq = [1], dialogue_role = "versicle" }, { key = "call-2", seq = [2], dialogue_role = "response" }, { key = "call-3", seq = [3], dialogue_role = "versicle" }, { key = "call-4", seq = [4], dialogue_role = "response" }, { key = "call-5", seq = [5], dialogue_role = "versicle" }, { key = "call-6", seq = [6], dialogue_role = "response" }]
+
+[sections.elements.english]
+witness = "edition.triptych.english-completion-20261030-kyrie-sixfold-study-arrangement.study-arrangement-20261030"
+artifact = "artifact.triptych.english-completion-20261030-kyrie-sixfold-study-arrangement.study-arrangement-20261030.sixfold-english-gloss-arrangement"
+elements = ["kyrie-sixfold"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Sixfold Triptych study arrangement of the exact 1861 English glosses; not a verbatim 1861 Mass body or approved Missal English."
+note = "Six project utterances repeat the two exact 1861 gloss phrases in K, K, C, C, K, K order. The older Mass prints nine Greek calls and one English gloss per set; that source body is not pasted or relabelled here. The 2002 n. 7 sixfold pattern supplies structural comparison evidence only. Printed V./R. boundaries support the declared dialogue roles. No older P./R. actor or priest/cantor allocation is imported. Complete authenticated 2008 fidelity and approved English remain unestablished. This is study material, not a text for recitation."
 
 [[sections.elements]]
 key = "gloria-in-excelsis"
@@ -356,6 +667,17 @@ note = "Said on Sundays outside Advent and Lent, on solemnities and feasts, and 
 # identity here and quotes no 2002 Latin to set beside the witness. The note
 # says which of those two things it rests on, because they are not the same
 # thing.
+
+[sections.elements.english]
+reading_note = "Historical English (Cummiskey, 1861), not the approved 2011 translation. The source abbreviation H. Ghost is retained."
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en"
+elements = ["gloria-in-excelsis"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. The English column of the 1861 Philadelphia Cummiskey hand missal, printed pages xix, Internet Archive leaves 29, read from the already registered page-checked transcription. The source abbreviation H. Ghost and its original capitals and pointing are retained. All source spelling, capitals, punctuation, abbreviations and printed cues remain unchanged. UNCOLLATED as English: no identity with the approved 2011 English or complete controlling-2008 wording is claimed; the existing Latin relation and its own collation limits remain separate. This historical study witness is not a text for recitation."
+
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la"
@@ -478,6 +800,17 @@ note = "Said on Sundays and solemnities, with a bow prescribed at et homo factus
 # the older book sets it as three blocks, breaking at Et in unum Dominum and Et
 # in Spiritum Sanctum. The join is stated here rather than worked out anywhere
 # downstream.
+
+[sections.elements.english]
+reading_note = "Historical English (Cummiskey, 1861), not the approved 2011 translation. The source spelling and AND WAS MADE MAN.* footnote cue remain unchanged; its footnote is not part of this prayer body."
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en"
+elements = ["credo-in-unum-deum", "et-in-unum-dominum", "et-in-spiritum-sanctum"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. The English column of the 1861 Philadelphia Cummiskey hand missal, printed pages xxi, xxi-xxii, xxii, Internet Archive leaves 31, 31-32, 32, read from the already registered page-checked transcription. The three source blocks are joined in their printed order. The source prints AND WAS MADE MAN.* with its footnote cue and retains its own forms consubstantial to the Father and I expect; no source footnote or modern target wording is supplied. All source spelling, capitals, punctuation, abbreviations and printed cues remain unchanged. UNCOLLATED as English: no identity with the approved 2011 English or complete controlling-2008 wording is claimed; the existing Latin relation and its own collation limits remain separate. This historical study witness is not a text for recitation."
+
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la"
@@ -520,11 +853,30 @@ speaker = "all"
 name = "The Apostles' Creed"
 latin_incipit = "Credo in Deum"
 missal_number = "n. 19"
-absent_latin = "no-antecedent-witness"
 absent_english = "approved-english-publication-restriction"
 alternatives = [{ group = "creed", option = "creed-apostles" }]
 conditions = [{ kind = "include-when-any", predicates = ["sunday-or-solemnity", "particular-celebration-of-more-solemn-character"], basis = "IGMR 67 and Ordo Missae nn. 18-19, as transcribed and sourced in src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/30-creed-and-universal-prayer.tex:9-24." }]
 note = "May be used in place of the Nicene Creed, especially in Lent and Eastertide. The 2008 emended reprint corrected its opening from Credo in unum Deum to Credo in Deum."
+
+[sections.elements.latin]
+witness = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888"
+artifact = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-ordinary-apostles-latin"
+elements = ["symbolum-apostolicum"]
+column = "latin"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Historical Latin antecedent (1888 Roman Breviary), not the controlling Missal. Acute accents are omitted; the source ligatures, j and pointing are retained."
+note = "The complete Apostles Creed on printed p. 1, original whole-PDF artifact p. 55, IA leaf n54, verified on a retained complete source-page derivative. This explicitly normalized historical-source transcription omits acute accents while retaining source words, ligatures, j, capitalization and punctuation, including lowercase sanctorum. The old opening agrees with the explicit2008 correction; the complete body was compared lexically with the secondary2002 reproduction. That evidence is bounded and does not establish identity with an authenticated complete2008 Missal; the target relation remains uncollated. The controlling2008 body is not carried here."
+
+[sections.elements.english]
+witness = "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+artifact = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-ordinary-apostles-english"
+elements = ["symbolum-apostolicum"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Complete historical English (Bute, 1908), not approved Roman Missal English. Source wording, capitals, pointing and Amen remain."
+note = "Complete historical human English of the Apostles Creed, Bute Roman Breviary1908 printed p. 2, original whole-PDF artifact p. 86, IA leaf n85, opening left-column paragraph through Amen. A retained complete source-page derivative controls the text. Printed line wraps and line-end hyphens are joined, the drop I is an ordinary I, small-cap BELIEVE and JESUS are uppercase, and spaces before punctuation are closed. Wording, pronouns, source capitals, punctuation and the complete Amen ending remain; the following rubric, versicles, Psalm and footnotes are excluded. This is a complete historical antecedent, not approved2011 English or a claim of target2008 fidelity. The separate approved-English publication restriction remains."
 
 [[sections.elements]]
 key = "oratio-universalis"
@@ -585,6 +937,17 @@ absent_english = "priest-prayer-said-quietly"
 # the 2002 Latin of the first clause only, that clause agrees, and the witness's
 # own misprint stands in the part nobody has compared. Grading this collated
 # would let a reader take `nodie` for the editio typica's reading.
+
+[sections.elements.english]
+reading_note = "Historical English (Cummiskey, 1861), not the approved 2011 translation. The complete older English prayer is retained without an added Amen."
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en"
+elements = ["in-spiritu-humilitatis"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. The English column of the 1861 Philadelphia Cummiskey hand missal, printed pages xxiv, Internet Archive leaves 34, read from the already registered page-checked transcription. The complete English prayer has no Amen. Its facing Latin has the independently recorded nodie misprint; the English remains its own source column and does not repair that Latin. All source spelling, capitals, punctuation, abbreviations and printed cues remain unchanged. UNCOLLATED as English: no identity with the approved 2011 English or complete controlling-2008 wording is claimed; the existing Latin relation and its own collation limits remain separate. This historical study witness is not a text for recitation."
+
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la"
@@ -652,6 +1015,21 @@ latin_turns = [
   { key = "priest-summons", seq = [52], speaker = "priest" },
   { key = "people-response", seq = [53], speaker = "all", printed_marker = "R." },
 ]
+english_turns = [
+  { key = "priest-summons", seq = [52], speaker = "priest" },
+  { key = "people-response", seq = [53], speaker = "all", printed_marker = "R." },
+]
+
+[sections.elements.english]
+reading_note = "Historical English (Cummiskey, 1861), not the approved 2011 translation. The source answer retains R.; displayed speakers follow the separately checked target rubrics."
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en"
+elements = ["orate-fratres", "suscipiat-dominus"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. The English column of the 1861 Philadelphia Cummiskey hand missal, printed pages xxvii, Internet Archive leaves 37, read from the already registered page-checked transcription. The source summons has no P. mark; the answer retains its literal R. and the absence of a comma after name. The older source assigns its answer to the server; any displayed target speakers stand only on the separately cited turn basis, not on those source letters. All source spelling, capitals, punctuation, abbreviations and printed cues remain unchanged. UNCOLLATED as English: no identity with the approved 2011 English or complete controlling-2008 wording is claimed; the existing Latin relation and its own collation limits remain separate. This historical study witness is not a text for recitation."
+
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la"
@@ -716,6 +1094,25 @@ latin_turns = [
   { key = "priest-3", seq = [5905], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
   { key = "all-3", seq = [5906], speaker = "all", dialogue_role = "response", printed_marker = "R." },
 ]
+english_turns = [
+  { key = "priest-1", seq = [5901], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "all-1", seq = [5902], speaker = "all", dialogue_role = "response", printed_marker = "R." },
+  { key = "priest-2", seq = [5903], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "all-2", seq = [5904], speaker = "all", dialogue_role = "response", printed_marker = "R." },
+  { key = "priest-3", seq = [5905], speaker = "priest", dialogue_role = "versicle", printed_marker = "P." },
+  { key = "all-3", seq = [5906], speaker = "all", dialogue_role = "response", printed_marker = "R." },
+]
+
+[sections.elements.english]
+reading_note = "Historical English (Cummiskey, 1861), not the approved 2011 translation. The source response It is meet and just and all printed cues remain unchanged."
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided"
+elements = ["sursum-corda"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. The English column of the 1861 Philadelphia Cummiskey hand missal, printed pages xxvii, Internet Archive leaves 37, read from the already registered page-checked transcription. The six source P./R. fragments are joined in printed order without changing words. Their received source response is It is meet and just. The existing target dialogue findings support only the separately declared speaker and role metadata, not an approved-English identity. All source spelling, capitals, punctuation, abbreviations and printed cues remain unchanged. UNCOLLATED as English: no identity with the approved 2011 English or complete controlling-2008 wording is claimed; the existing Latin relation and its own collation limits remain separate. This historical study witness is not a text for recitation."
+
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la-turn-divided"
@@ -775,6 +1172,17 @@ latin_incipit = "Sanctus, Sanctus, Sanctus Dominus Deus Sabaoth"
 missal_number = "n. 31"
 absent_english = "approved-english-publication-restriction"
 
+
+[sections.elements.english]
+reading_note = "Historical English (Cummiskey, 1861), not the approved 2011 translation. The source forms Sabaoth, thy glory and cometh remain unchanged."
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en"
+elements = ["sanctus"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. The English column of the 1861 Philadelphia Cummiskey hand missal, printed pages xxviii, Internet Archive leaves 38, read from the already registered page-checked transcription. The source prints this complete block once, with Lord God of Sabaoth, thy glory and cometh; the unexpanded cues following the other Prefaces are not used. All source spelling, capitals, punctuation, abbreviations and printed cues remain unchanged. UNCOLLATED as English: no identity with the approved 2011 English or complete controlling-2008 wording is claimed; the existing Latin relation and its own collation limits remain separate. This historical study witness is not a text for recitation."
+
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la"
@@ -814,6 +1222,17 @@ missal_number = "n. 84"
 absent_english = "official-exemplar-not-carried"
 alternatives = [{ group = "eucharistic-prayer", option = "ep-i" }]
 
+
+[sections.elements.english]
+reading_note = "Historical English (Cummiskey, 1861), not the approved 2011 translation. English of the older Roman Canon, not a translation of postconciliar Eucharistic Prayer I. The source placeholders N. our pope N. our Bishop remain unfilled."
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en"
+elements = ["te-igitur", "te-igitur-cultoribus"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. The English column of the 1861 Philadelphia Cummiskey hand missal, printed pages xxxiii, Internet Archive leaves 43, read from the already registered page-checked transcription. The two source blocks retain N. our pope N. our Bishop and the separate lower-case continuation. No current personal name is supplied and no target ceremonial sign is introduced. All source spelling, capitals, punctuation, abbreviations and printed cues remain unchanged. UNCOLLATED as English: no identity with the approved 2011 English or complete controlling-2008 wording is claimed; the existing Latin relation and its own collation limits remain separate. This historical study witness is not a text for recitation."
+
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la"
@@ -832,6 +1251,17 @@ latin_incipit = "Memento, Domine, famulorum famularumque tuarum"
 missal_number = "n. 85"
 absent_english = "official-exemplar-not-carried"
 alternatives = [{ group = "eucharistic-prayer", option = "ep-i" }]
+
+
+[sections.elements.english]
+reading_note = "Historical English (Cummiskey, 1861), not the approved 2011 translation. English of the older Roman Canon, not a translation of postconciliar Eucharistic Prayer I. The two older prayer blocks retain their source punctuation and commemoration break."
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en"
+elements = ["memento-domine", "et-omnium-circumstantium"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. The English column of the 1861 Philadelphia Cummiskey hand missal, printed pages xxxiii, xxxiii-xxxiv, Internet Archive leaves 43, 43-44, read from the already registered page-checked transcription. The two source blocks preserve their printed break around the commemoration and the source full stop before lower-case or who offer. No intervening source rubric is turned into prayer text. All source spelling, capitals, punctuation, abbreviations and printed cues remain unchanged. UNCOLLATED as English: no identity with the approved 2011 English or complete controlling-2008 wording is claimed; the existing Latin relation and its own collation limits remain separate. This historical study witness is not a text for recitation."
 
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
@@ -852,7 +1282,16 @@ missal_number = "n. 86"
 absent_english = "official-exemplar-not-carried"
 absent_latin = "element-spans-mixed-matter"
 alternatives = [{ group = "eucharistic-prayer", option = "ep-i" }]
-note = "The 1861 antecedent at printed p. xxxiv, leaf 44, predates the insertion of Saint Joseph and has no clause naming him; it also prints the whole saints list and conclusion obligatorily and has none of the target's proper Communicantes forms. The registered target passage verifies Saint Joseph, the parenthesised optional extent, and the proper forms. This composite cannot carry the older row without misrepresenting the target."
+note = "The carried English is a project study rendering of the common form only, with every saint named and the whole older conclusion omitted. It combines the separately sourced historical body with the exact authorized Joseph clause; it supplies none of the seasonal proper heads or their appointments and establishes no complete authenticated2008 or approved English identity."
+
+[sections.elements.english]
+witness = "edition.triptych.postconciliar-common-communicantes-study-english-20261030.study-english-20261030"
+artifact = "artifact.triptych.postconciliar-common-communicantes-study-english-20261030.study-english-20261030.common-full-names-conclusion-omitted-study-en"
+elements = ["communicantes-common-full-names-conclusion-omitted"]
+column = "english"
+relation = "own"
+reading_note = "Triptych study English: common form only, full saints list, conclusion omitted. Seasonal proper forms remain unfilled. Not approved for liturgical use or recitation."
+note = "SOURCE-ONLY COMMON FORM; UNCOLLATED to complete controlling2008 wording. Fresh project English from the complete historical Mame common body and the separately authorized exact Joseph clause, with every source name retained and the whole older conclusion excluded. It is not an English witness of any seasonal proper Communicantes, an approved translation, or an appointment ruling. The clause short-phrase basis supplies no English permission; this English has the independent project-created study-translation route."
 
 [[sections.elements]]
 key = "hanc-igitur"
@@ -863,6 +1302,17 @@ latin_incipit = "Hanc igitur oblationem servitutis nostrae"
 missal_number = "n. 87"
 absent_english = "official-exemplar-not-carried"
 alternatives = [{ group = "eucharistic-prayer", option = "ep-i" }]
+
+
+[sections.elements.english]
+reading_note = "Historical English (Cummiskey, 1861), not the approved 2011 translation. English of the older Roman Canon, not a translation of postconciliar Eucharistic Prayer I. The older common form and mandatory conclusion remain; the target makes the conclusion optional and has a separate Easter form."
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en"
+elements = ["hanc-igitur"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. The English column of the 1861 Philadelphia Cummiskey hand missal, printed pages xxxiv-xxxv, Internet Archive leaves 44-45, read from the already registered page-checked transcription. The source prints its complete common form and Through Christ our Lord. Amen. obligatorily. The target has a parenthesised conclusion and a proper Easter form; this older block establishes neither target option nor appointment. All source spelling, capitals, punctuation, abbreviations and printed cues remain unchanged. UNCOLLATED as English: no identity with the approved 2011 English or complete controlling-2008 wording is claimed; the existing Latin relation and its own collation limits remain separate. This historical study witness is not a text for recitation."
 
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
@@ -882,6 +1332,17 @@ latin_incipit = "Quam oblationem tu, Deus, in omnibus"
 missal_number = "n. 88"
 absent_english = "official-exemplar-not-carried"
 alternatives = [{ group = "eucharistic-prayer", option = "ep-i" }]
+
+
+[sections.elements.english]
+reading_note = "Historical English (Cummiskey, 1861), not the approved 2011 translation. English of the older Roman Canon, not a translation of postconciliar Eucharistic Prayer I. The complete older English prayer is retained; the separate Latin collation does not establish approved English identity."
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en"
+elements = ["quam-oblationem"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. The English column of the 1861 Philadelphia Cummiskey hand missal, printed pages xxxv, Internet Archive leaves 45, read from the already registered page-checked transcription. The source English preserves bless, approve, ratify, and accept and its full ending. The separate collated Latin finding is not a collation of this historical English with approved English. All source spelling, capitals, punctuation, abbreviations and printed cues remain unchanged. UNCOLLATED as English: no identity with the approved 2011 English or complete controlling-2008 wording is claimed; the existing Latin relation and its own collation limits remain separate. This historical study witness is not a text for recitation."
 
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
@@ -963,6 +1424,17 @@ missal_number = "n. 92"
 absent_english = "official-exemplar-not-carried"
 alternatives = [{ group = "eucharistic-prayer", option = "ep-i" }]
 
+
+[sections.elements.english]
+reading_note = "Historical English (Cummiskey, 1861), not the approved 2011 translation. English of the older Roman Canon, not a translation of postconciliar Eucharistic Prayer I. The complete older English body is retained; the bounded Latin comparison leaves internal target extents uncollated."
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en"
+elements = ["unde-et-memores"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. The English column of the 1861 Philadelphia Cummiskey hand missal, printed pages xxxvi, Internet Archive leaves 46, read from the already registered page-checked transcription. The source body and all its capitals are retained, including pure Host, holy Host and unspotted Host; the existing Latin comparison elides internal target extents and does not establish a complete target identity. All source spelling, capitals, punctuation, abbreviations and printed cues remain unchanged. UNCOLLATED as English: no identity with the approved 2011 English or complete controlling-2008 wording is claimed; the existing Latin relation and its own collation limits remain separate. This historical study witness is not a text for recitation."
+
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la"
@@ -982,6 +1454,17 @@ missal_number = "n. 93"
 absent_english = "official-exemplar-not-carried"
 alternatives = [{ group = "eucharistic-prayer", option = "ep-i" }]
 
+
+[sections.elements.english]
+reading_note = "Historical English (Cummiskey, 1861), not the approved 2011 translation. English of the older Roman Canon, not a translation of postconciliar Eucharistic Prayer I. The complete older English body is retained; the target comparison establishes only bounded Latin extents."
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en"
+elements = ["supra-quae"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. The English column of the 1861 Philadelphia Cummiskey hand missal, printed pages xxxvi-xxxvii, Internet Archive leaves 46-47, read from the already registered page-checked transcription. The source body is retained across its own page break, with the source names Abel, Abraham and Melchisedech; the existing target comparison quotes only bounded Latin extents. All source spelling, capitals, punctuation, abbreviations and printed cues remain unchanged. UNCOLLATED as English: no identity with the approved 2011 English or complete controlling-2008 wording is claimed; the existing Latin relation and its own collation limits remain separate. This historical study witness is not a text for recitation."
+
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la"
@@ -998,10 +1481,28 @@ speaker = "priest"
 name = "Eucharistic Prayer I — Supplices te rogamus"
 latin_incipit = "Supplices te rogamus, omnipotens Deus"
 missal_number = "n. 94"
-absent_english = "official-exemplar-not-carried"
-absent_latin = "element-spans-mixed-matter"
 alternatives = [{ group = "eucharistic-prayer", option = "ep-i" }]
-note = "No older text is carried. The 1861 row at pp. xxxvii-xxxviii, leaves 47-48, reads praeferri where the checked target quotation reads perferri, and prints its conclusion obligatorily where the registered target passage records it in parentheses. The source also carries its own sacro-sanctum hyphen, ligatures and capitalization. This is a named textual and configuration divergence, not an orthographic identity."
+note = "The 1861 Cummiskey source at pp. xxxvii-xxxviii reads praeferri rather than perferri and remains unjoined here. A separately checked 1922 Mame source prints perferri and supplies the source-contiguous prayer body through repleamur. Its full older Per eumdem conclusion is retained separately in the source record and omitted from this selected body. The secondary 2002 n.94 permits omission of its parenthesised shorter conclusion. Neither this lexical comparison nor the bounded official variation list establishes a complete controlling-2008 collation."
+
+
+[sections.elements.english]
+witness = "edition.triptych.postconciliar-ordinary-supplices-study-english-20261030.study-english-20261030"
+artifact = "artifact.triptych.postconciliar-ordinary-supplices-study-english-20261030.study-english-20261030.supplices-body-study-en"
+elements = ["supplices-body"]
+column = "english"
+relation = "own"
+reading_note = "Triptych study translation from the1922 prayer body, with its separate conclusion omitted. Not approved for liturgical use or recitation."
+note = "New English from the checked public-domain1922 source body only. No English witness or approval is claimed; the separate old conclusion is outside the joined prefix. The secondary2002 n.94 permits omission of its parenthesised conclusion, but this source comparison does not establish a complete authenticated2008 edition state."
+
+[sections.elements.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-ordinary-supplices-la"
+elements = ["supplices-body"]
+column = "latin"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Historical Latin prayer body (Mame,1922). Its separate conclusion is omitted here; this is not a complete authenticated2008 collation."
+note = "The checked1922 Mame source prints perferri, correcting the earlier different-witness blocker. Its complete source prayer body through repleamur agrees lexically with the registered secondary2002 n.94 after declared spelling/typographic normalization. The full older conclusion remains separately retained. The selected prefix corresponds to the conclusion-omitted form which the2002 source permits; complete controlling2008 wording and marks remain unestablished."
 
 [[sections.elements]]
 key = "memento-etiam"
@@ -1012,6 +1513,17 @@ latin_incipit = "Memento etiam, Domine, famulorum famularumque tuarum"
 missal_number = "n. 95"
 absent_english = "official-exemplar-not-carried"
 alternatives = [{ group = "eucharistic-prayer", option = "ep-i" }]
+
+
+[sections.elements.english]
+reading_note = "Historical English (Cummiskey, 1861), not the approved 2011 translation. English of the older Roman Canon, not a translation of postconciliar Eucharistic Prayer I. The source mandatory conclusion and Amen remain; the target makes that conclusion optional."
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en"
+elements = ["memento-etiam", "ipsis-domine"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. The English column of the 1861 Philadelphia Cummiskey hand missal, printed pages xxxviii, Internet Archive leaves 48, read from the already registered page-checked transcription. The two source prayer blocks retain the complete printed conclusion through the same Christ our Lord. Amen. The target makes that conclusion parenthesised; no target optional configuration or omission is inferred. All source spelling, capitals, punctuation, abbreviations and printed cues remain unchanged. UNCOLLATED as English: no identity with the approved 2011 English or complete controlling-2008 wording is claimed; the existing Latin relation and its own collation limits remain separate. This historical study witness is not a text for recitation."
 
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
@@ -1032,6 +1544,17 @@ missal_number = "n. 96"
 absent_english = "official-exemplar-not-carried"
 alternatives = [{ group = "eucharistic-prayer", option = "ep-i" }]
 
+
+[sections.elements.english]
+reading_note = "Historical English (Cummiskey, 1861), not the approved 2011 translation. English of the older Roman Canon, not a translation of postconciliar Eucharistic Prayer I. The source full saints list and its Marcelline and Cecily remain; the target makes part of that list optional."
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en"
+elements = ["nobis-quoque"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. The English column of the 1861 Philadelphia Cummiskey hand missal, printed pages xxxviii, Internet Archive leaves 48, read from the already registered page-checked transcription. The source full saints list, including Marcelline and Cecily, and its conclusion without Amen are retained. The target makes part of this list optional; no modern option is selected or reconstructed. All source spelling, capitals, punctuation, abbreviations and printed cues remain unchanged. UNCOLLATED as English: no identity with the approved 2011 English or complete controlling-2008 wording is claimed; the existing Latin relation and its own collation limits remain separate. This historical study witness is not a text for recitation."
+
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la"
@@ -1050,6 +1573,17 @@ latin_incipit = "Per quem haec omnia, Domine, semper bona creas"
 missal_number = "n. 97"
 absent_english = "official-exemplar-not-carried"
 alternatives = [{ group = "eucharistic-prayer", option = "ep-i" }]
+
+
+[sections.elements.english]
+reading_note = "Historical English (Cummiskey, 1861), not the approved 2011 translation. English of the older Roman Canon, not a translation of postconciliar Eucharistic Prayer I. The older English body remains unchanged; no complete target wording identity is established."
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en"
+elements = ["per-quem"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. The English column of the 1861 Philadelphia Cummiskey hand missal, printed pages xxxviii, Internet Archive leaves 48, read from the already registered page-checked transcription. The source English create remains unchanged; the facing Latin source misprint ereas is separately recorded and is not a reason to rewrite either column. All source spelling, capitals, punctuation, abbreviations and printed cues remain unchanged. UNCOLLATED as English: no identity with the approved 2011 English or complete controlling-2008 wording is claimed; the existing Latin relation and its own collation limits remain separate. This historical study witness is not a text for recitation."
 
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
@@ -1085,6 +1619,22 @@ latin_turns = [
   { key = "priest-conclusion", seq = [3001], speaker = "priest", printed_marker = "P." },
   { key = "people-amen", seq = [3002], speaker = "all", printed_marker = "R." },
 ]
+english_turns = [
+  { key = "priest-doxology", seq = [29], speaker = "priest" },
+  { key = "priest-conclusion", seq = [3001], speaker = "priest", printed_marker = "P." },
+  { key = "people-amen", seq = [3002], speaker = "all", printed_marker = "R." },
+]
+
+[sections.elements.english]
+reading_note = "Historical English (Cummiskey, 1861), not the approved 2011 translation. The source honour and printed P./R. marks remain; displayed speakers follow the separately checked target boundary."
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20"
+elements = ["per-ipsum", "per-omnia-saecula"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. The English column of the 1861 Philadelphia Cummiskey hand missal, printed pages xxxviii, xxxix, Internet Archive leaves 48, 49, read from the already registered page-checked transcription. The three immutable source fragments retain the source honour and its printed P./R. marks. The separately established target speaker boundary keeps the priest material contiguous through For ever and ever, followed by the people Amen, without importing an approved target translation. All source spelling, capitals, punctuation, abbreviations and printed cues remain unchanged. UNCOLLATED as English: no identity with the approved 2011 English or complete controlling-2008 wording is claimed; the existing Latin relation and its own collation limits remain separate. This historical study witness is not a text for recitation."
+
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la-turn-divided-2026-10-20"
@@ -1156,6 +1706,17 @@ note = "The Roman Rite does not say the prayer continuously: the doxology follow
 # has no counterpart between this prayer and n. 125. It remains source-only.
 # No exact target-turn partition can cover this unchanged antecedent extent
 # until the model can distinguish an excess source fragment from a target turn.
+
+[sections.elements.english]
+reading_note = "Historical English (Cummiskey, 1861), not the approved 2011 translation. SOURCE-ONLY DIVISION AND ENDING: the older priest/server split and additional priest Amen remain. The target assigns the prayer to priest and people and proceeds to the embolism without this Amen."
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en"
+elements = ["praeceptis-salutaribus", "pater-noster"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. The English column of the 1861 Philadelphia Cummiskey hand missal, printed pages xxxix, Internet Archive leaves 49, read from the already registered page-checked transcription. SOURCE EXTENT AND SPEAKERS DIFFER: the older invitation and whole prayer are retained, including its server response R. But deliver us from evil. and additional priest P. Amen. The target assigns the prayer to priest and people and proceeds to the embolism without this Amen. The added Amen remains source-only; these complete older blocks cannot acquire a target-turn partition or claim complete target execution. All source spelling, capitals, punctuation, abbreviations and printed cues remain unchanged. UNCOLLATED as English: no identity with the approved 2011 English or complete controlling-2008 wording is claimed; the existing Latin relation and its own collation limits remain separate. This historical study witness is not a text for recitation."
+
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la"
@@ -1220,6 +1781,18 @@ latin_incipit = "Domine Iesu Christe, qui dixisti Apostolis tuis"
 missal_number = "n. 126"
 absent_latin = "antecedent-diverges-at-named-words"
 absent_english = "approved-english-publication-restriction"
+note = "The source-English study rendering explicitly applies the communal possessive revision and an independently witnessed whole ancient short conclusion under the recorded finite basis. The older singular source, both historical conclusions and all source words remain separately retained. The Latin side keeps its exact-source gap; no complete authenticated2008 or approved English identity is claimed."
+english_turns = [{ key = "priest-prayer", seq = [1], speaker = "priest" }, { key = "people-amen", seq = [2], speaker = "all", dialogue_role = "response" }]
+turns_basis = "Registered secondary digitally reset2002 Missal artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944, SHA-2560b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7, original artifact367, n126, freshly rendered and directly inspected. The priest says the full prayer and short conclusion; Populus respondet assigns Amen to the people. No P/R letters are printed on this target span. This evidence establishes those actor boundaries only and does not authenticate complete2008 wording or marks."
+
+[sections.elements.english]
+witness = "edition.triptych.postconciliar-ordinary-domine-qui-dixisti-study-english-20261030.study-english-20261030"
+artifact = "artifact.triptych.postconciliar-ordinary-domine-qui-dixisti-study-english-20261030.study-english-20261030.domine-qui-dixisti-study-en"
+elements = ["domine-qui-dixisti-priest", "domine-qui-dixisti-amen"]
+column = "english"
+relation = "own"
+reading_note = "Triptych study translation. The older prayer’s “my sins” becomes “our sins,” followed by a separately witnessed ancient short conclusion. Not approved for liturgical use or recitation."
+note = "New study English from the whole checked1922 old petition, with the substantive mea-to-nostra communal revision expressly declared and the complete ancient short conclusion independently witnessed at Mameoriginal1022. Modern priest/people boundaries are separately read at secondary2002 n126, original367. Root finite section1(6) adoption in workflows/reviews/missal-english-completion-2026-10-29/ordinary/domine-rights-adoption.json (SHA-256 6bfe83b76107281005c660733522e4c077f52b225b79418b04bf9fcd07f98381), not a blanket ancient-word claim, governs the minimal revised expression; no complete controlling2008 collation, approved English or human review is claimed."
 
 [[sections.elements]]
 key = "pax-domini"
@@ -1237,6 +1810,21 @@ latin_turns = [
   { key = "priest-1", seq = [601], speaker = "priest", printed_marker = "P." },
   { key = "all-1", seq = [602], speaker = "all", printed_marker = "R." },
 ]
+english_turns = [
+  { key = "priest-1", seq = [601], speaker = "priest", printed_marker = "P." },
+  { key = "all-1", seq = [602], speaker = "all", printed_marker = "R." },
+]
+
+[sections.elements.english]
+reading_note = "Historical English (Cummiskey, 1861), not the approved 2011 translation. The older two source turns and their printed P./R. cues remain; their wording is not approved target English."
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided"
+elements = ["pax-domini"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. The English column of the 1861 Philadelphia Cummiskey hand missal, printed pages xl, Internet Archive leaves 50, read from the already registered page-checked transcription. The two source fragments preserve P. May the peace of the Lord be always with you. and R. And with thy spirit. The checked target speakers do not establish identity with an approved English translation or complete target Latin response collation. All source spelling, capitals, punctuation, abbreviations and printed cues remain unchanged. UNCOLLATED as English: no identity with the approved 2011 English or complete controlling-2008 wording is claimed; the existing Latin relation and its own collation limits remain separate. This historical study witness is not a text for recitation."
+
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la-turn-divided"
@@ -1263,13 +1851,34 @@ identity is claimed.
 [[sections.elements]]
 key = "offerte-vobis-pacem"
 kind = "dialogue"
-speaker = "all"
-name = "The invitation and exchange of peace"
+speaker = "deacon-or-priest"
+name = "The invitation to exchange peace"
 latin_incipit = "Offerte vobis pacem"
 missal_number = "n. 128"
-absent_latin = "no-antecedent-witness"
-note = "Expressly conditional, pro opportunitate. The older witnesses instead print the distinct clerical pax Pax tecum; their words are not this invitation."
 absent_english = "approved-english-publication-restriction"
+note = "An optional invitation, pro opportunitate, given by the deacon or priest. The following exchange has no fixed words. The complete invitation is independently printed by the 1712 Ambrosian witness; its own separate Deo gratias response and different ritual conditions are not transferred."
+turns_basis = "Registered secondary digital 2002 Ordo Missae n.128, artifact PDF367, directly inspected in the exact whole-PDF hash0b458944. The book explicitly gives this optional invitation to the deacon or priest; it prints no fixed response. This is actor and boundary evidence only, not an authenticated complete2008 collation."
+latin_turns = [{ key = "invitation", seq = [1], speaker = "deacon-or-priest" }]
+english_turns = [{ key = "invitation", seq = [1], speaker = "deacon-or-priest" }]
+
+[sections.elements.latin]
+witness = "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712"
+artifact = "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.english-completion-20261030-peace-invitation-la"
+elements = ["offerte-vobis-pacem"]
+column = "latin"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Historical Ambrosian invitation (Milan,1712). Its separate source response is omitted here; no complete authenticated2008 collation is claimed."
+note = "The complete historical invitation on printed155, original193, is selected literally. Its separate Deo-gratias response and Ambrosian conditions remain source context and are not imported. Secondary2002 n128, original367, independently establishes the modern conditional invitation and has the same three words apart from its tonic accent. This is historical source wording, not a complete controlling2008 exemplar."
+
+[sections.elements.english]
+witness = "edition.triptych.postconciliar-ordinary-peace-invitation-study-english-20261030.study-english-20261030"
+artifact = "artifact.triptych.postconciliar-ordinary-peace-invitation-study-english-20261030.study-english-20261030.peace-invitation-study-en"
+elements = ["offerte-vobis-pacem"]
+column = "english"
+relation = "own"
+reading_note = "Triptych study English of a historical Ambrosian invitation (1712). Not approved for liturgical use or recitation."
+note = "New English directly from the checked public-domain three-word1712 source invitation. Its old response and rubrics are outside the selected body. The modern assignment and conditional use have a separate secondary2002 source; no approved English or human review is claimed."
 
 [[sections.elements]]
 key = "fractio"
@@ -1284,16 +1893,24 @@ absent_latin = "no-antecedent-witness"
 [[sections.elements]]
 key = "agnus-dei"
 kind = "prayer"
-speaker = "all"
 name = "Agnus Dei"
 latin_incipit = "Agnus Dei, qui tollis peccata mundi"
 missal_number = "n. 130"
 absent_english = "approved-english-publication-restriction"
 note = "Repeatable as long as the fraction lasts."
+english_turns = [{ key = "invocation-1", seq = [4201] }, { key = "invocation-2", seq = [4202] }, { key = "invocation-3", seq = [4203] }]
+turns_basis = "Three whole independently checked Lasance source rows form the printed threefold prayer. Source priest labels are not inherited. The secondary2002 n130 prints the three invocations, while IGMR83 permits chant-leading and answering allocation; no actor or functional role is assigned by this source projection."
 
-# The Latin of the Agnus Dei is carried here and NOWHERE ELSE in this file. The
-# Missal prints one Latin text, and printing it twice under two keys would
-# assert a Latin variant that does not exist.
+[sections.elements.english]
+witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+elements = ["agnus-dei"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Complete threefold historical English (Lasance, 1945), not approved Missal English. The source words remain unchanged; its priest actor is not imported into this setting."
+note = "The exact three independently checked Lasance English invocations, source seq4201–4203, replace the abbreviated Cummiskey English rendering for this element only. The historical source artifacts remain immutable, including the Cummiskey three-asterisk body and the separate Latin column. Full older Latin at Mame1922 artifact464/printed350 and secondary2002 n130 artifact367 establish the same printed threefold wording; this is not an authenticated whole2008 collation. The modern chant/cantor/people performance allocation and additional permitted repetitions are not inferred from the older source priest labels."
+
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la"
@@ -1301,27 +1918,7 @@ elements = ["agnus-dei"]
 column = "latin"
 relation = "antecedent"
 collation = "uncollated"
-note = """
-ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing column of \
-the 1861 Philadelphia Cummiskey hand missal at its Agnus Dei, printed page xl, \
-Internet Archive leaf 50. The controlling 2008 text is not distributable on this \
-surface and is not served here. The repository holds and has read a verified \
-2002 Ordo witness and the official bounded 2008 variation list, but that evidence \
-does not establish this word identity; these are the 1861 printing's words. Carried \
-as printed and normalised nowhere: the book does not write the invocation out \
-three times. It sets three asterisks at the head of three short lines, \
-* miserere nobis, twice and then * dona nobis pacem., the asterisk marking where \
-Agnus Dei, qui tollis peccata mundi is resumed, and they are run in here as the \
-sibling English row runs them. A reader must expand them as the book intends and \
-not read four clauses where the rite has three invocations. \
-UNCOLLATED: the identity of this text with the controlling edition's is not \
-established here. This repository's study of this Order of Mass describes n. 130 \
-at 00-order-of-mass/sections/70-communion-rite.tex:86-91 and names the Agnus Dei \
-among the texts retained with little or no change of wording, on a comparison \
-for which it states that both books were read directly; it quotes the 2002 Latin \
-of the ending dona nobis pacem only, which this witness matches. The invocation \
-itself has been compared with nothing.
-"""
+note = "ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing column of the 1861 Philadelphia Cummiskey hand missal at its Agnus Dei, printed page xl, Internet Archive leaf 50. The controlling 2008 text is not distributable on this surface and is not served here. The repository holds and has read a verified 2002 Ordo witness and the official bounded 2008 variation list, but that evidence does not establish this word identity; these are the 1861 printing's words. Carried as printed and normalised nowhere: the book does not write the invocation out three times. It sets three asterisks at the head of three short lines, * miserere nobis, twice and then * dona nobis pacem., the asterisk marking where Agnus Dei, qui tollis peccata mundi is resumed, and they are run in here as the sibling English row runs them. A reader must expand them as the book intends and not read four clauses where the rite has three invocations. UNCOLLATED: the identity of this text with the controlling edition's is not established here. This repository's study of this Order of Mass describes n. 130 at 00-order-of-mass/sections/70-communion-rite.tex:86-91 and names the Agnus Dei among the texts retained with little or no change of wording, on a comparison for which it states that both books were read directly; it quotes the 2002 Latin of the ending dona nobis pacem only, which this witness matches. The invocation itself has been compared with nothing.\n"
 
 [[sections.elements]]
 key = "praeparatio-sacerdotis"
@@ -1336,14 +1933,104 @@ note = "Two forms; the priest chooses one and says it inaudibly."
 
 [[sections.elements]]
 key = "ecce-agnus-dei"
-kind = "dialogue"
-speaker = "all"
+kind = "rubric"
 name = "The invitation to Communion"
 latin_incipit = "Ecce Agnus Dei"
 missal_number = "n. 132"
-absent_latin = "editio-typica-new-matter"
-note = "The people answer Domine, non sum dignus, once, with the priest."
-absent_english = "approved-english-publication-restriction"
+absent_latin = "not-a-text"
+note = "Structural action and preserved semantic anchor. Its fixed spoken spans are separately represented by ritus-communionis/ecce-agnus, ritus-communionis/beati-ad-cenam, ritus-communionis/domine-non-sum-dignus. No fixed spoken body is assigned to this structural parent."
+absent_english = "not-a-text"
+
+[[sections.elements]]
+key = "ecce-agnus"
+kind = "prayer"
+name = "Behold the Lamb of God"
+missal_number = "n. 132"
+speaker = "priest"
+note = "Complete source-defined spoken span refining ritus-communionis/ecce-agnus-dei. Its source and target-role evidence are separate; no complete authenticated2008 wording identity is claimed."
+latin_turns = [{ key = "ecce-agnus", seq = [1], speaker = "priest" }]
+english_turns = [{ key = "ecce-agnus", seq = [4], speaker = "priest" }]
+turns_basis = "Direct inspection of registered secondary digital2002 PDF368 n132 supplies speaker rubrics only; no target versicle/response mark is invented from historical source P./R. Parent whole-source actor and old repetitions do not control this target placement. Full authenticated2008 collation remains unestablished."
+
+[sections.elements.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-ordinary-ecce-la"
+elements = ["ecce-agnus"]
+column = "latin"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Historical Latin source wording; no complete authenticated2008 collation is claimed."
+note = "Complete directly checked1922 source sentence; plural peccata and both ecce words are retained. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+
+[sections.elements.english]
+witness = "edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030"
+artifact = "artifact.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030.ancient-frames-study-en"
+elements = ["ecce-agnus"]
+column = "english"
+relation = "own"
+reading_note = "Triptych study English from the specified ancient source fragment. Not approved for liturgical use or recitation."
+note = "Complete directly checked1922 source sentence; plural peccata and both ecce words are retained. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+
+[[sections.elements]]
+key = "beati-ad-cenam"
+kind = "prayer"
+name = "Blessed are those invited"
+missal_number = "n. 132"
+speaker = "priest"
+note = "Complete source-defined spoken span refining ritus-communionis/ecce-agnus-dei. Its source and target-role evidence are separate; no complete authenticated2008 wording identity is claimed."
+latin_turns = [{ key = "beati-ad-cenam", seq = [1], speaker = "priest" }]
+english_turns = [{ key = "beati-ad-cenam", seq = [5], speaker = "priest" }]
+turns_basis = "Direct inspection of registered secondary digital2002 PDF368 n132 supplies speaker rubrics only; no target versicle/response mark is invented from historical source P./R. Parent whole-source actor and old repetitions do not control this target placement. Full authenticated2008 collation remains unestablished."
+
+[sections.elements.latin]
+witness = "edition.catholic-church.vulgata-clementina.ebible-latvuc"
+artifact = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-beati-ad-cenam-la"
+elements = ["beati-ad-cenam"]
+column = "latin"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Historical biblical blessing (Apoc19:9), with source nuptiarum ('of the wedding') omitted. No complete authenticated2008 collation."
+note = "Source Apoc19:9 quoted blessing, with only nuptiarum omitted. The source cœnam ligature and semicolon remain; this does not relabel the whole verse as a target quotation. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+
+[sections.elements.english]
+witness = "edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030"
+artifact = "artifact.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030.ancient-frames-study-en"
+elements = ["beati-ad-cenam"]
+column = "english"
+relation = "own"
+reading_note = "Triptych study English from the specified ancient source fragment. Not approved for liturgical use or recitation. The Revelation source’s “of the wedding” is expressly omitted."
+note = "Source Apoc19:9 quoted blessing, with only nuptiarum omitted. The source cœnam ligature and semicolon remain; this does not relabel the whole verse as a target quotation. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+
+[[sections.elements]]
+key = "domine-non-sum-dignus"
+kind = "prayer"
+name = "Lord, I am not worthy"
+missal_number = "n. 132"
+speaker = "all"
+note = "Complete source-defined spoken span refining ritus-communionis/ecce-agnus-dei. Its source and target-role evidence are separate; no complete authenticated2008 wording identity is claimed."
+latin_turns = [{ key = "domine-non-sum-dignus", seq = [18], speaker = "all" }]
+english_turns = [{ key = "domine-non-sum-dignus", seq = [18], speaker = "all" }]
+turns_basis = "Direct inspection of registered secondary digital2002 PDF368 n132 supplies speaker rubrics only; no target versicle/response mark is invented from historical source P./R. Parent whole-source actor and old repetitions do not control this target placement. Full authenticated2008 collation remains unestablished."
+
+[sections.elements.latin]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la"
+elements = ["domine-non-sum-dignus"]
+column = "latin"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Historical Latin source wording; no complete authenticated2008 collation is claimed."
+note = "Only the source prayer row18 is joined; its separate older threefold rubric is not joined. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
+
+[sections.elements.english]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en"
+elements = ["domine-non-sum-dignus"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Historical English (Cummiskey,1861); this is not approved postconciliar English. The source’s older wording and spelling are retained. The separate older threefold instruction is not joined."
+note = "Complete source prayer row18, word for word. Its once-only priest-and-people assignment comes from target n132, not the older priest-only source rubric. Independent secondary2002 target images supply only this proposed placement and speaker mapping. They do not supply published source wording or establish a complete authenticated2008 edition state."
 
 [[sections.elements]]
 key = "communio"
@@ -1363,6 +2050,17 @@ name = "The purification"
 latin_incipit = "Quod ore sumpsimus, Domine"
 missal_number = "n. 137"
 absent_english = "priest-prayer-said-quietly"
+
+
+[sections.elements.english]
+reading_note = "Historical English (Cummiskey, 1861), not the approved 2011 translation. The complete older English prayer remains unchanged; its Latin collation does not establish approved English identity."
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en"
+elements = ["quod-ore-sumpsimus"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. The English column of the 1861 Philadelphia Cummiskey hand missal, printed pages xlii-xliii, Internet Archive leaves 52-53, read from the already registered page-checked transcription. The complete source English prayer is retained across its own page break. The separately collated ancient Latin prayer does not establish this wording as approved target English. All source spelling, capitals, punctuation, abbreviations and printed cues remain unchanged. UNCOLLATED as English: no identity with the approved 2011 English or complete controlling-2008 wording is claimed; the existing Latin relation and its own collation limits remain separate. This historical study witness is not a text for recitation."
 
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
@@ -1522,8 +2220,8 @@ locus = "Ordo Missae nn. 14-16"
 [[slots]]
 key = "super-oblata"
 after = "praeparatio-donorum/super-oblata"
-propers = ["Prayer over the Offerings"]
-locus = "Ordo Missae n. 30"
+propers = ["Prayer over the Offerings", "Prayer over the Offerings (retained option)"]
+locus = "Ordo Missae n. 30. The exact retained-option label represents the source index's bounded minimum of at least one earlier offering option after the 2008 September 8 Superoblata insertion and Vel: Notitiae 503-504, artifact pp. 55-56 / printed pp. 373-374; added prayer repeated at artifact p. 67 / printed p. 385. Both alternatives occupy the offering-prayer seat; prior-option wording and total extent remain unresolved. No other qualified label is admitted."
 
 [[slots]]
 key = "antiphona-ad-communionem"
@@ -1623,4 +2321,30 @@ default = false
 [[variants.options]]
 id = "ep-iv"
 name = "IV"
+default = false
+
+[[variants]]
+group = "salutatio-form"
+name = "Opening greeting"
+what = "The three ordinary greetings printed at Ordo Missae n.2 are alternatives, followed by one common response. The first printed form is only the display default. The bishop-only greeting is a nondefault option shown only by explicit selection of that named form; no date or formulary infers a bishop's presence."
+
+[[variants.options]]
+id = "greeting-trinitarian"
+name = "Trinitarian greeting"
+default = true
+
+[[variants.options]]
+id = "greeting-grace-peace"
+name = "Grace and peace"
+default = false
+
+[[variants.options]]
+id = "greeting-lord"
+name = "The Lord be with you"
+default = false
+
+
+[[variants.options]]
+id = "greeting-bishop"
+name = "Bishop only — Pax vobis"
 default = false

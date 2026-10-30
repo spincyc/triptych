@@ -946,41 +946,27 @@ def text_units(value: str, path: Path | None = None) -> list[str]:
     return list(dict.fromkeys(units))
 
 
+@functools.lru_cache(maxsize=4)
+def postconciliar_quarantine_owner(inventory: Path):
+    loader = importlib.machinery.SourceFileLoader(
+        "rights_surface_public_alpha", str(ROOT / "tools/public-alpha")
+    )
+    spec = importlib.util.spec_from_loader(loader.name, loader)
+    module = importlib.util.module_from_spec(spec)
+    loader.exec_module(module)
+    module.POSTCONCILIAR_TRANSLATIONS_RELATIVE = inventory
+    return module
+
+
 def postconciliar_quarantine_hash_values(
     inventory: Path = FDLC_INVENTORY,
 ) -> tuple[str, ...]:
-    """Derive every exact English quarantine hash from the current ledger."""
-    document = tomllib.loads(inventory.read_text(encoding="utf-8"))
-    values: list[str] = []
-    for index, row in enumerate(document.get("untranslated") or []):
-        if not isinstance(row, dict):
-            raise ValueError(f"postconciliar untranslated row {index} is not a table")
-        raw = row.get("quarantined_text_sha256")
-        if raw is None:
-            continue
-        if row.get("lang") != "en" or row.get("extent") != "body":
-            raise ValueError(
-                f"postconciliar untranslated row {index} hashes a non-English body"
-            )
-        if (
-            not isinstance(raw, list)
-            or not raw
-            or any(
-                not isinstance(digest, str)
-                or re.fullmatch(r"[0-9a-f]{64}", digest) is None
-                for digest in raw
-            )
-        ):
-            raise ValueError(
-                f"postconciliar untranslated row {index} has malformed quarantine hashes"
-            )
-        values.extend(raw)
-    if len(values) < POSTCONC_QUARANTINE_BASELINE_ROWS:
-        raise ValueError(
-            "postconciliar English quarantine lost baseline hashes: "
-            f"expected at least {POSTCONC_QUARANTINE_BASELINE_ROWS}, found {len(values)}"
-        )
-    return tuple(values)
+    """Use the validated baseline/active/admission union on every rights surface."""
+    owner = postconciliar_quarantine_owner(inventory)
+    try:
+        return tuple(sorted(owner.postconciliar_quarantined_text_hashes()))
+    except owner.ReleaseError as exc:
+        raise ValueError(str(exc)) from exc
 
 
 def postconciliar_quarantine_hashes(

@@ -760,6 +760,12 @@ proper_order_exceptions:
     Responsorial Psalm and Collect, before the Epistle and the Gospel, so psalms
     and orations stand among readings rather than in the Ordinary's frame. That
     is the rite's own arrangement, stated in the Missal, and not a filing error.
+- mass: pentecost
+  form: Vigil Mass, extended form
+  reason: 'Official2008 Supplementum, Notitiae AP62-66/printed380-384, places the extended Vigil readings and
+    their prayers before Gloria and the after-Gloria Collect; Romans8:22-27 follows. This source-specific form
+    does not follow the ordinary Collect-before-readings seat. Exact source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module.
+    Existing simple Vigil and Day forms have no exception.'
 sections:
   seasonal:
     kind: seasonal
@@ -22118,6 +22124,427 @@ sections:
             reasons:
             - kind: rights-withheld
               source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+      - id: extended-vigil
+        name: Vigil Mass, extended form
+        ordinary_frame:
+          applicability: unavailable
+          basis: 'passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module,
+            official 2008 Supplementum, artifact pp. 62-66 / printed pp. 380-384, nn. 1-13. This is a finite partial
+            module for the extended Pentecost Vigil: the before-reading Collect, four ordered Old Testament readings
+            and corresponding prayers, after-Gloria Collect, and Romans 8:22-27 continuation are represented. Six
+            after-reading prayer options occupy four prayer seats, with three mutually exclusive options after Ezekiel.
+            The opening admits either Vespers joined to Mass or the usual Mass opening; Gloria and the second Collect
+            follow the four Old Testament readings. The special Ordinary frame, the optional replacement of psalmody
+            with silence, and the unselected Vespers branches remain unmodeled. No normal frame, opening branch or
+            complete Vigil formulary is inferred from this excerpt. The Lectionary readings are appointed ad libitum:
+            this records the source order, not an obligation to use all four. Reading-omission pathways remain unmodeled.'
+        propers:
+        - name: Collect (before the readings)
+          source: composed
+          incipit: Praesta, quaesumus
+          text_status:
+            state: unavailable
+            scope: proper-body
+            reasons:
+            - kind: witness-gap
+              source_id: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module
+          notes: 'Official 2008 Supplementum, Notitiae artifact p. 62 / printed p. 380, nn. 2-3. The excerpt appoints
+            this Collect by a short incipit and a pointer to Missal p. 443; its complete target body is not reproduced
+            by this finite witness. The two opening branches appoint the same incipit; neither branch is selected
+            in this partial form. Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module'
+        - name: First Reading
+          source: scripture
+          verses:
+          - book: Genesis
+            ranges:
+            - begin:
+                chapter: 11
+                verse: 1
+              end:
+                chapter: 11
+                verse: 9
+            ref: Genesis 11:1-9
+          notes: 'Official 2008 Supplementum, Notitiae artifact p. 63 / printed p. 381, n. 5; exact printed citation
+            facts only.  Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module'
+        - name: Responsorial Psalm after the First Reading
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin:
+                chapter: 32
+                verse: 10
+              end:
+                chapter: 32
+                verse: 11
+            - begin:
+                chapter: 32
+                verse: 12
+              end:
+                chapter: 32
+                verse: 13
+            - begin:
+                chapter: 32
+                verse: 14
+              end:
+                chapter: 32
+                verse: 15
+            ref: Psalm 32:10-11, 12-13, 14-15
+          psalm_numbering: vulgate
+          notes: 'Official 2008 Supplementum, Notitiae artifact p. 63 / printed p. 381, n. 5; exact printed citation
+            facts only. Refrain pointer: verse 12b. The refrain wording is not transcribed. The general source provision
+            allows a time of silence in place of a responsorial psalm; that branch is not implemented. Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module'
+        - name: Prayer after the First Reading
+          source: composed
+          incipit: Concede, quaesumus, omnipotens Deus, ut Ecclesia tua semper
+          text_status:
+            state: unavailable
+            scope: proper-body
+            body_status: held-unpublished
+            reasons:
+            - kind: rights-withheld
+              source_id: artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174
+          notes: 'Official 2008 Supplementum, Notitiae artifact p. 63 / printed p. 381, n. 5. The complete modern
+            Latin body was inspected but is not copied into the calendar. No qualifying independently sourced whole-body
+            publication basis or exact English exemplar is established here.  Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module'
+        - name: Second Reading
+          source: scripture
+          verses:
+          - book: Exodus
+            ranges:
+            - begin:
+                chapter: 19
+                verse: 3
+              end:
+                chapter: 19
+                verse: 8
+            - begin:
+                chapter: 19
+                verse: 16
+              end:
+                chapter: 19
+                part: b
+                verse: 20
+            ref: Exodus 19:3-8, 16-20b
+          notes: 'Official 2008 Supplementum, Notitiae artifact pp. 63-64 / printed pp. 381-382, n. 6; exact printed
+            citation facts only. The source prints 3-8 without the part-a suffix used in the existing simple Vigil
+            form. No silent harmonization is made. Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module'
+        - name: Responsorial Psalm after the Second Reading
+          source: scripture
+          verses:
+          - book: Daniel
+            ranges:
+            - begin:
+                chapter: 3
+                verse: 52
+              end:
+                chapter: 3
+                verse: 52
+            - begin:
+                chapter: 3
+                verse: 53
+              end:
+                chapter: 3
+                verse: 53
+            - begin:
+                chapter: 3
+                verse: 54
+              end:
+                chapter: 3
+                verse: 54
+            - begin:
+                chapter: 3
+                verse: 55
+              end:
+                chapter: 3
+                verse: 55
+            - begin:
+                chapter: 3
+                verse: 56
+              end:
+                chapter: 3
+                verse: 56
+            ref: Daniel 3:52, 53, 54, 55, 56
+          notes: 'Official 2008 Supplementum, Notitiae artifact pp. 63-64 / printed pp. 381-382, n. 6; exact printed
+            citation facts only. Refrain pointer: Daniel 3:52b; no refrain wording is transcribed. Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module'
+          ordinary_disposition:
+            kind: alternative
+            group: psalm-after-second-reading
+            option: daniel-3
+            basis: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module,
+              artifact pp. 63-64 / printed pp. 381-382, n. 6, explicitly offers the Daniel canticle or Psalm 18 after
+              the second reading. These two options have no implicit default.
+        - name: Responsorial Psalm after the Second Reading
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin:
+                chapter: 18
+                verse: 8
+              end:
+                chapter: 18
+                verse: 8
+            - begin:
+                chapter: 18
+                verse: 9
+              end:
+                chapter: 18
+                verse: 9
+            - begin:
+                chapter: 18
+                verse: 10
+              end:
+                chapter: 18
+                verse: 10
+            - begin:
+                chapter: 18
+                verse: 11
+              end:
+                chapter: 18
+                verse: 11
+            ref: Psalm 18:8, 9, 10, 11
+          psalm_numbering: vulgate
+          notes: 'Official 2008 Supplementum, Notitiae artifact pp. 63-64 / printed pp. 381-382, n. 6; exact printed
+            citation facts only. Refrain pointer: John 6:68c; no refrain wording is transcribed. Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module'
+          ordinary_disposition:
+            kind: alternative
+            group: psalm-after-second-reading
+            option: psalm-18
+            basis: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module,
+              artifact pp. 63-64 / printed pp. 381-382, n. 6, explicitly offers the Daniel canticle or Psalm 18 after
+              the second reading. These two options have no implicit default.
+        - name: Prayer after the Second Reading
+          source: composed
+          incipit: Deus, qui in fulgure ignis in monte Sinai
+          text_status:
+            state: unavailable
+            scope: proper-body
+            body_status: held-unpublished
+            reasons:
+            - kind: rights-withheld
+              source_id: artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174
+          notes: 'Official 2008 Supplementum, Notitiae artifact p. 64 / printed p. 382, n. 6. The complete modern
+            Latin body was inspected but is not copied into the calendar. No qualifying independently sourced whole-body
+            publication basis or exact English exemplar is established here.  Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module'
+        - name: Third Reading
+          source: scripture
+          verses:
+          - book: Ezekiel
+            ranges:
+            - begin:
+                chapter: 37
+                verse: 1
+              end:
+                chapter: 37
+                verse: 14
+            ref: Ezekiel 37:1-14
+          notes: 'Official 2008 Supplementum, Notitiae artifact p. 64 / printed p. 382, n. 7; exact printed citation
+            facts only.  Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module'
+        - name: Responsorial Psalm after the Third Reading
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin:
+                chapter: 106
+                verse: 2
+              end:
+                chapter: 106
+                verse: 3
+            - begin:
+                chapter: 106
+                verse: 4
+              end:
+                chapter: 106
+                verse: 5
+            - begin:
+                chapter: 106
+                verse: 6
+              end:
+                chapter: 106
+                verse: 7
+            - begin:
+                chapter: 106
+                verse: 8
+              end:
+                chapter: 106
+                verse: 9
+            ref: Psalm 106:2-3, 4-5, 6-7, 8-9
+          psalm_numbering: vulgate
+          notes: 'Official 2008 Supplementum, Notitiae artifact p. 64 / printed p. 382, n. 7; exact printed citation
+            facts only. Refrain pointer: verse 1 or Alleluia; no refrain wording is transcribed. Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module'
+        - name: Prayer after the Third Reading
+          source: composed
+          incipit: Domine, Deus virtutum
+          text_status:
+            state: unavailable
+            scope: proper-body
+            reasons:
+            - kind: witness-gap
+              source_id: passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-pentecost-domine-deus-virtutum
+          notes: 'Official 2008 Supplementum, Notitiae artifact p. 64 / printed p. 382, n. 7, first prayer. The petition
+            is independently established in the public-domain 1862 source. This Latin status records the missing
+            exact independently publishable Latin projection, not an absent official exemplar or a blanket restriction
+            on ancient expression. The separately proposed study English includes only the actual official short
+            cue and an explicitly marked response.  Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module'
+          ordinary_disposition:
+            kind: alternative
+            group: prayer-after-third-reading
+            option: domine-deus-virtutum
+            basis: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module,
+              artifact pp. 64-65 / printed pp. 382-383, n. 7, explicitly prints three prayers separated by Vel after
+              Ezekiel 37:1-14. All three are alternatives; none is an implicit default.
+        - name: Prayer after the Third Reading
+          source: composed
+          incipit: Deus, qui nos verbo vitae regenerasti
+          text_status:
+            state: unavailable
+            scope: proper-body
+            body_status: held-unpublished
+            reasons:
+            - kind: rights-withheld
+              source_id: artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174
+          notes: 'Official 2008 Supplementum, Notitiae artifact pp. 64-65 / printed pp. 382-383, n. 7, second prayer.
+            The complete modern Latin body was inspected but is not copied into the calendar. No qualifying independently
+            sourced whole-body publication basis or exact English exemplar is established here.  Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module'
+          ordinary_disposition:
+            kind: alternative
+            group: prayer-after-third-reading
+            option: deus-qui-nos-verbo-vitae
+            basis: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module,
+              artifact pp. 64-65 / printed pp. 382-383, n. 7, explicitly prints three prayers separated by Vel after
+              Ezekiel 37:1-14. All three are alternatives; none is an implicit default.
+        - name: Prayer after the Third Reading
+          source: composed
+          incipit: Semper exsultet populus tuus, Deus
+          text_status:
+            state: unavailable
+            scope: proper-body
+            body_status: held-unpublished
+            reasons:
+            - kind: rights-withheld
+              source_id: artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174
+          notes: 'Official 2008 Supplementum, Notitiae artifact p. 65 / printed p. 383, n. 7, third prayer. The complete
+            modern Latin body was inspected but is not copied into the calendar. No qualifying independently sourced
+            whole-body publication basis or exact English exemplar is established here.  Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module'
+          ordinary_disposition:
+            kind: alternative
+            group: prayer-after-third-reading
+            option: semper-exsultet
+            basis: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module,
+              artifact pp. 64-65 / printed pp. 382-383, n. 7, explicitly prints three prayers separated by Vel after
+              Ezekiel 37:1-14. All three are alternatives; none is an implicit default.
+        - name: Fourth Reading
+          source: scripture
+          verses:
+          - book: Joel
+            ranges:
+            - begin:
+                chapter: 3
+                verse: 1
+              end:
+                chapter: 3
+                verse: 5
+            ref: Joel 3:1-5
+          notes: 'Official 2008 Supplementum, Notitiae artifact p. 65 / printed p. 383, n. 8; exact printed citation
+            facts only. This is the source printed Joel 3 citation, not a newly established cross-numbering or translation-text
+            identity. Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module'
+        - name: Responsorial Psalm after the Fourth Reading
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin:
+                chapter: 103
+                verse: 1
+              end:
+                chapter: 103
+                part: a
+                verse: 2
+            - begin:
+                chapter: 103
+                verse: 24
+              end:
+                chapter: 103
+                verse: 24
+            - begin:
+                chapter: 103
+                part: c
+                verse: 35
+              end:
+                chapter: 103
+                part: c
+                verse: 35
+            - begin:
+                chapter: 103
+                verse: 27
+              end:
+                chapter: 103
+                verse: 28
+            - begin:
+                chapter: 103
+                part: bc
+                verse: 29
+              end:
+                chapter: 103
+                verse: 30
+            ref: Psalm 103:1-2a, 24, 35c, 27-28, 29bc-30
+          psalm_numbering: vulgate
+          notes: 'Official 2008 Supplementum, Notitiae artifact p. 65 / printed p. 383, n. 8; exact printed citation
+            facts only. Refrain pointer: verse 30 or Alleluia; no refrain wording is transcribed. Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module'
+        - name: Prayer after the Fourth Reading
+          source: composed
+          incipit: Promissionem tuam, quaesumus, Domine
+          text_status:
+            state: unavailable
+            scope: proper-body
+            body_status: held-unpublished
+            reasons:
+            - kind: rights-withheld
+              source_id: artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174
+          notes: 'Official 2008 Supplementum, Notitiae artifact p. 65 / printed p. 383, n. 8. The complete modern
+            Latin body was inspected but is not copied into the calendar. No qualifying independently sourced whole-body
+            publication basis or exact English exemplar is established here.  Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module'
+        - name: Collect (after Gloria)
+          source: composed
+          incipit: Omnipotens sempiterne Deus
+          text_status:
+            state: unavailable
+            scope: proper-body
+            reasons:
+            - kind: witness-gap
+              source_id: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module
+          notes: 'Official 2008 Supplementum, Notitiae artifact p. 65 / printed p. 383, nn. 9-10. The excerpt appoints
+            this Collect by a short incipit and a pointer to Missal p. 443; its complete target body is not reproduced
+            by this finite witness. The source places Gloria before this Collect; the hymn body and its Ordinary
+            placement are not fabricated in this partial form. Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module'
+        - name: Reading from the Apostle
+          source: scripture
+          verses:
+          - book: Romans
+            ranges:
+            - begin:
+                chapter: 8
+                verse: 22
+              end:
+                chapter: 8
+                verse: 27
+            ref: Romans 8:22-27
+          notes: 'Official 2008 Supplementum, Notitiae artifact p. 66 / printed p. 384, n. 11; exact printed citation
+            facts only. The source then directs the Mass to continue in the usual way. This partial form does not
+            infer the remaining Gospel, offering, Communion, Ordinary, Vespers, blessing or dismissal appointments.
+            Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module'
+        celebrated:
+          when: evening-before
+          locus: 'Official 2008 Supplementum, Notitiae nos.503-504, artifact p.62 / printed p.380, passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module:
+            the title names Ad Missam in Vigilia Pentecostes(p.443) and n.1 explicitly describes this same vigil
+            Mass in its extended form. Normae universales de anno liturgico et de calendario n.11, passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002.complete-text,
+            registered secondary2002 artifact0b458944, p.65: a proper vigil Mass is used on the preceding day''s
+            evening when celebrated in evening hours. The same named Pentecost Vigil''s secondary source-local rubric
+            at p.265 explicitly names Saturday evening, before or after Sunday First Vespers. This records timing
+            only, without selecting an opening, Vespers, silence or other ceremony branch, and without authenticating
+            complete2008 prayer bodies.'
     - key: easter-monday
       name: Monday within the Octave of Easter
       registry: 'pc-T-easter-monday'
@@ -23226,7 +23653,12 @@ sections:
           The underlying biblical material is not assigned new Latin ownership. No independent lawful whole-unit witness/publication
           basis for the adapted or composed unit has been established; the held source artifact remains non-indexable
           and restricted. No text, incipit, removed-body hash or Latin publication-ledger entry is supplied. No exact
-          English whole-unit exemplar is held.'
+          English whole-unit exemplar is held. Dated 2026-10-29 successor: a complete historical Lasance1945
+          human-English verse has now been independently image-checked and bound for this exact OLM1981
+          verse recipient. Alleluia framing and adjacent material are outside that quotation. The earlier
+          no-exemplar finding and its unavailable dictionary are preserved in the dated admission receipt;
+          no approved-English or authenticated2008 claim, target Latin body, or restricted-image publication
+          is supplied. Source and admission: workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-acclamations-admission.json.'
       - name: Gospel
         source: scripture
         verses:
@@ -52565,8 +52997,10 @@ sections:
         The preceding description records the Lectionary inspection. The Entrance and Communion Antiphon
         appointments and citations were subsequently checked in the registered 2010 ICEL Antiphonary,
         artifact page 131, printed page 123, and are now carried below. Exact target 2008 Latin antiphon
-        wording remains unestablished, the held English remains restricted, and the three oration bodies
-        are not supplied here. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
+        wording remains unestablished and the held approved English remains restricted. The Collect,
+        earlier offering-prayer option(s), and Prayer after Communion remain untranscribed. The bounded
+        official 2008 added offering prayer and its retained-option minimum are modeled below; a fresh
+        independently sourced study English supplies only that added option. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: Entrance Antiphon
         source: composed
@@ -52643,6 +53077,45 @@ sections:
           - begin: {chapter: 1, verse: 18}
             end: {chapter: 1, verse: 23}
           ref: Matthew 1:18-23
+      - name: "Prayer over the Offerings"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "september-8-offerings"
+          option: "supplementum-2008"
+          basis: "The official 2008 Supplementum inserts this prayer after the September 8 Super oblata heading and before\
+            \ Vel; it therefore retains at least one older offering-prayer option. The two modeled nodes are a bounded\
+            \ minimum, not a census or transcription of every prior option."
+        source: "composed"
+        incipit: "Unigeniti tui, Domine, nobis succurrat humanitas"
+        text_status:
+          state: "unavailable"
+          scope: "proper-body"
+          reasons:
+          - kind: "witness-gap"
+            source_id: "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.english-completion-20261029-postconciliar-phase2-sept8-ancient-source"
+        notes: "The full added target prayer is directly witnessed in the official 2008 Supplementum, Notitiae pp. 373-374\
+          \ and 385 / artifact pp. 55-56 and 67, Missal p. 823. Independent Hadrianum 1915 printed p. 100 supplies the\
+          \ old expression with two word substitutions and one omitted clause. The Latin status records the missing exact\
+          \ independently publishable Latin projection, not an absent official exemplar or a blanket restriction on old\
+          \ wording. A separately reviewed project study English is carried. Exact target source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-sept8-offering-and-insertion"
+      - name: "Prayer over the Offerings (retained option)"
+        ordinary_disposition:
+          kind: "alternative"
+          group: "september-8-offerings"
+          option: "retained-earlier-option"
+          basis: "The official 2008 Supplementum inserts this prayer after the September 8 Super oblata heading and before\
+            \ Vel; it therefore retains at least one older offering-prayer option. The two modeled nodes are a bounded\
+            \ minimum, not a census or transcription of every prior option."
+        source: "composed"
+        text_status:
+          state: "unavailable"
+          scope: "proper-body"
+          reasons:
+          - kind: "no-exemplar"
+        notes: "Official Notitiae 2008 printed pp. 373-374 and 385 establish the new added offering prayer followed by\
+          \ Vel, hence at least one retained earlier option. They do not reproduce its complete wording or establish the\
+          \ full prior option count. This node represents a bounded minimum retained-option gap; no incipit, body or English\
+          \ is inferred."
       - name: Communion Antiphon
         source: scripture
         verses:

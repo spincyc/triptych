@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pange-source-prescribed-assembly-53086b37"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29"
+artifact_type = "editorial-source-assembly"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych offers only its bounded source selection, assembly and qualification under CC BY4.0. The unchanged leading instruction retains its independently recorded prior public-domain publication basis, and the whole Latin hymn is independently witnessed in Duffy1879. No exclusive right is claimed in those old words. No target facsimile or unexamined modern text is retained."
+rights_jurisdiction = "United States"
+provenance = "Direct source and target page-image checks at200/400dpi on2026-10-29 establish a named hymn prescription. Preserve the prior whole instruction bytes, append the separately retained complete six-stanza1879hymn. This is a source-prescribed reading assembly, not a literal six-stanza transcription from the1962Missal."
+retrieved = "2026-10-29"
+sha256 = "53086b37a090275ba11b1a8053054ba39c95fd3dc475aabf9c8f5206167d6379"
+byte_size = 967
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pange-source-prescribed-assembly-53086b37/latin.txt"
+projected_from = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.triduum-orations-21aa7a98", "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1879-volume-10.pange-lingua-latin-checked-20261029-15c03ec1", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Retain prior cue Unicode bytes verbatim, then one separator newline and independently checked whole hymn from1879. Do not import a protected full modern hymn rendering. Preserve six poem stanzas and actual finalAmen. Source-owned metadata marks the entire leading instruction nonspoken; no new Proper identity, actor, repetition count or stanza wording is invented."
+indexable = true
+encoding = "utf-8"
+notes = "Whole assembly SHA25653086b37a090275ba11b1a8053054ba39c95fd3dc475aabf9c8f5206167d6379. Old cue hashd07c74cfec3dc6001fb0299c455b420849559908b105d5f70bf2dd5d17894d8f. Hymn-only hash15c03ec1c4929c2fb54f32f5e4930d80917f90c0ebeb6f9f660cf6b508a50f76. The target prescribes first four stanzas during procession, repetition if needed, then last two at repository. Full hymn Latin remains historical-source-exact; target full-word qualification stays unresolved."

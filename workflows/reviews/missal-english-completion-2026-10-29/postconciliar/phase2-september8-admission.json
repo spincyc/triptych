@@ -1,0 +1,45 @@
+{
+  "recorded_on": "2026-10-29",
+  "state": "source-and-English-reviewed-installed-awaiting-owner-validation",
+  "known_target": [
+    "nativity-blessed-virgin-mary",
+    "main",
+    "Prayer over the Offerings",
+    "all",
+    1
+  ],
+  "retained_minimum_gap": [
+    "nativity-blessed-virgin-mary",
+    "main",
+    "Prayer over the Offerings (retained option)",
+    "all",
+    1
+  ],
+  "source_passage": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.english-completion-20261029-postconciliar-phase2-sept8-ancient-source",
+  "target_passage": "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-sept8-offering-and-insertion",
+  "scope": "One exact official-2008 offering-prayer excerpt plus at least one untranscribed retained option; no whole-form or whole-book completion",
+  "conservation": "No prior target, body, translation, absence or source record will be overwritten.",
+  "source_review_sha256": "70762de809d318f2570bd9535c325cb6bdf4b7dbfdf288434a4afe897ac664fc",
+  "human_English_donor_refusal": "The 1962/1922 Nativity Secret differs in substantive petitions and its conclusion; its human English is not transferred or adapted.",
+  "apparatus_correction": "Hadrianum footnote 6 attributes per. to C and O (CO.), while main text remains qui tecum.",
+  "calendar_before_sha256": "3a625e5939895bd596cbacea8df1d0f1b501ffc22916ac0e16aedebb42786179",
+  "calendar_after_sha256": "4f2ab3a78e54a3d36e2c003444d22121a323c5187ef8ca5d91182f1e4925e43d",
+  "overlay_before_sha256": "05686eaf89f85d19d82befcc6fccfcc1014f8cee01336d40e9c23a435c900308",
+  "overlay_after_sha256": "8bc79167a748b1416e71ef4f86ddf43201c3504261a55db005349c257e36fff6",
+  "previous_positive_dictionaries_exact": true,
+  "previous_unavailable_dictionaries_exact": true,
+  "all_other_masses_and_previous_propers_exact": true,
+  "source_files": [
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/english-completion-20261029-postconciliar-phase2-sept8-ancient-source.toml",
+      "sha256": "8d999d74b2bb976340747469bfc68881c0c0a9e8876d61b8e2922832d45a379e"
+    },
+    {
+      "path": "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/passages/english-completion-20261029-postconciliar-phase2-sept8-offering-and-insertion.toml",
+      "sha256": "f6d6e59cb6bba28a6a89d33273245a8930a579af3844405538fefd1f25d935a6"
+    }
+  ],
+  "new_minimum_proper_targets": 2,
+  "new_study_English_targets": 1,
+  "new_unavailable_English_targets": 1
+}

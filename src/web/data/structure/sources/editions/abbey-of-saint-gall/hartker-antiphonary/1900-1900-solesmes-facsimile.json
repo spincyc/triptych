@@ -1,0 +1,125 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 139,
+   "edition_owned": true,
+   "id": "artifact.abbey-of-saint-gall.hartker-antiphonary.1900-solesmes-facsimile.fulgentibus-latin-checked-20261029",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-10-29",
+   "rights": "public-domain",
+   "rights_basis": "United States: the identified facsimile printing was published at Solesmes in 1900, before 1931, and its publication term has expired. The underlying manuscript chant is earlier still. Faithful mechanical reproduction adds no authorship to the historical page. This checked transcription contains only the complete Fulgentibus palmis antiphon from historical manuscript page 175, excludes the other page contents and modern Internet Archive wrapper and collection matter, and does not assert rights over the modern complete PDF wrapper. Received Latin remains public domain and is excluded from Triptych project licensing.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "facsimile-pdf",
+   "byte_size": 66076,
+   "edition_owned": true,
+   "id": "artifact.abbey-of-saint-gall.hartker-antiphonary.1900-solesmes-facsimile.fulgentibus-page-175-facsimile",
+   "media_type": "application/pdf",
+   "notes": null,
+   "page_count": 1,
+   "retrieved": "2026-10-29",
+   "rights": "public-domain",
+   "rights_basis": "United States: the identified facsimile printing was published at Solesmes in 1900, before 1931, and its publication term has expired. The underlying manuscript chant is earlier still. Faithful mechanical reproduction adds no authorship to the historical page. This derivative contains the historical page alone, excludes modern Internet Archive wrapper and collection matter, and does not assert rights over the modern complete PDF wrapper. Received Latin remains public domain and is excluded from Triptych project licensing.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "facsimile-pdf",
+   "byte_size": 33381274,
+   "edition_owned": true,
+   "id": "artifact.abbey-of-saint-gall.hartker-antiphonary.1900-solesmes-facsimile.ia-facsimile-116c6821",
+   "media_type": "application/pdf",
+   "page_count": 518,
+   "retrieved": "2026-10-29",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/antiphonaleoffic00cath/antiphonaleoffic00cath.pdf",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1900",
+  "editors": [],
+  "id": "edition.abbey-of-saint-gall.hartker-antiphonary.1900-solesmes-facsimile",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Solesmes: Imprimerie Saint-Pierre par Sablé (Sarthe), 1900. Facsimile published by the Benedictines of Solesmes.",
+  "title": "Paléographie musicale, deuxième série (monumentale), I: Antiphonale du B. Hartker",
+  "translators": [],
+  "year": 1900
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.abbey-of-saint-gall.hartker-antiphonary.1900-solesmes-facsimile.fulgentibus-page-175-facsimile",
+   "artifact_type": "facsimile-pdf",
+   "id": "passage.abbey-of-saint-gall.hartker-antiphonary.1900-solesmes-facsimile.fulgentibus-page-175-checked-20261029",
+   "locus": "Full manuscript page 175; Fulgentibus palmis occupies the top two text lines. Full parent PDF229; retained one-page derivative PDF1.",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-29",
+   "withheld": "no-transcription"
+  },
+  {
+   "artifact_id": "artifact.abbey-of-saint-gall.hartker-antiphonary.1900-solesmes-facsimile.fulgentibus-latin-checked-20261029",
+   "artifact_type": "checked-transcription",
+   "context": "Checked expanded manuscript transcription; neumes and marginal mode data excluded.",
+   "id": "passage.abbey-of-saint-gall.hartker-antiphonary.1900-solesmes-facsimile.fulgentibus-latin-checked-20261029",
+   "locus": "Physical lines1-2; complete Fulgentibus palmis antiphon, manuscript page175 / full facsimile PDF229.",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The artifact transformation declares every expansion and retained manuscript spelling. This is source text, not the modern target projection.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "United States: the identified facsimile printing was published at Solesmes in 1900, before 1931, and its publication term has expired. The underlying manuscript chant is earlier still. Faithful mechanical reproduction adds no authorship to the historical page. This checked transcription contains only the complete Fulgentibus palmis antiphon from historical manuscript page 175, excludes the other page contents and modern Internet Archive wrapper and collection matter, and does not assert rights over the modern complete PDF wrapper. Received Latin remains public domain and is excluded from Triptych project licensing.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.abbey-of-saint-gall.hartker-antiphonary.1900-solesmes-facsimile.fulgentibus-latin-checked-20261029.json",
+   "verified_on": "2026-10-29",
+   "words": 17
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Antiphonale du B. Hartker",
+   "Sankt Gallen, Stiftsbibliothek, Codices 390-391",
+   "Hartker Antiphonary"
+  ],
+  "author": "Abbey of Saint Gall; manuscript attributed to Hartker",
+  "category": "antiphonary",
+  "description": "Historical monastic antiphonary witnessed by the Saint Gall manuscripts reproduced in the 1900 Solesmes facsimile. This record identifies the collection; the bounded passage checks only Fulgentibus palmis on manuscript page 175.",
+  "id": "work.abbey-of-saint-gall.hartker-antiphonary",
+  "languages": [
+   "la"
+  ],
+  "title": "Antiphonale officii monastici: Hartker Antiphonary"
+ }
+}

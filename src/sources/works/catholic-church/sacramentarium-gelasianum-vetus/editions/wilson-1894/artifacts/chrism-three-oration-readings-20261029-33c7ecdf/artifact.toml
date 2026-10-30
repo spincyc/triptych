@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.chrism-three-oration-readings-20261029-33c7ecdf"
+edition_id = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Literal old printed readings of Wilson1894, public domain in the United States by publication date. No1962 variant is silently inserted into this transcription."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/LiberSacramentorumRomanaeEcclesiae/LiberSacramentorumRomanaeEcclesiae.pdf"
+provenance = "Whole parent PDF digest and three complete prayer readings checked on rendered page images on2026-10-29. Printed69 main Collect keeps ministerium and merito; Secret and printed73 Ad populum retain actual Per. cues."
+retrieved = "2026-10-29"
+sha256 = "33c7ecdffc2d25aec50dbf79361a4bf7fb092a25086f7e3f8ac71f7fa08de654"
+byte_size = 567
+indexable = true
+derived_from = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.chrism-orations-pages-69-73-16f98b4d"
+transformation = "Manual page-image transcription, join printed line wraps and remove syllable line-break hyphenation; keep actual wording, pointing, capitalisation and conclusion cues; TSV fields identify own prayer/source page. Marginal sigla and footnote numerals remain apparatus, not Latin prayer words."
+path = "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/chrism-three-oration-readings-20261029-33c7ecdf/latin.tsv"
+notes = "One header and three source-reading rows; no target variants are represented as Wilson main text. Gregorian/Gelasian attribution remains edition-specific. The modern target assignment is outside this source record."
+encoding = "utf-8"

@@ -66,6 +66,15 @@ source coverage still counts it as held. Consumers require the closed context
 {calendar, formulary}; absent, malformed or unmatched context never authorizes
 its words. Civil clock time supplies no source appointment.
 
+An inline or inserted element may also declare a nonempty
+`english_alternatives` array beside `english`. Each entry is another closed
+language block, with its own explicit witness, artifact, source element(s),
+column, relation and applicability. The primary English and every alternative
+must name distinct witnesses, the same calendar and disjoint formulary sets;
+there is no unrestricted fallback. Primary `english_turns` apply only to the
+primary body. Language coverage counts an element once; witness and relation
+coverage count the separately offered source bodies.
+
 Two languages do not imply one provenance. The artifact-backed Roman frames join
 the facing columns of one printing and may therefore assume only a shared key
 space. Each carried column still declares an `english` or `latin` provenance
@@ -102,6 +111,11 @@ and then two further things are required of it and refused without:
 `collation = "collated"` additionally requires `collation_finding`, a citation to
 the tracked finding. Without it the grade is an assertion, and the whole point of
 having two grades is that one of them is not.
+
+A language block may also declare a nonempty `reading_note`: a concise,
+source-owned qualification shown beside the body during ordinary reading. The
+generator preserves it literally and never derives it from the longer research
+`note`, which remains available to Study and verbose consumers.
 
 What is NOT modelled here, deliberately: the witness's own spelling is never
 normalised toward the target's. The 1861 column prints `justum`, `coelis`,
@@ -202,9 +216,9 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary check",
             (
-                "postconciliar: 7 sections, 61 elements, 1 witness, 3 variants, 12 slots; en 0 held/61 missing, la 20 held/41 missing; relations la antecedent/collated 5, la antecedent/uncollated 15; 0 target-recension exclusions",
-                "roman-1962: 6 sections, 196 elements, 5 witnesses, 0 variants, 9 slots; en 186 held/10 missing, la 120 held/76 missing; relations en antecedent/collated 1, en antecedent/uncollated 185, la antecedent/collated 118, la antecedent/uncollated 2; 12 target-recension exclusions",
-                "roman-pre-1955: 6 sections, 206 elements, 2 witnesses, 0 variants, 9 slots; en 196 held/10 missing, la 113 held/93 missing; relations en antecedent/uncollated 196, la antecedent/uncollated 113; 0 target-recension exclusions",
+                "postconciliar: 7 sections, 70 elements, 14 witnesses, 4 variants, 12 slots; en 35 held/35 missing, la 32 held/38 missing; relations en antecedent/uncollated 26, en own/not-applicable 9, la antecedent/collated 5, la antecedent/uncollated 27; 0 target-recension exclusions",
+                "roman-1962: 6 sections, 200 elements, 10 witnesses, 0 variants, 9 slots; en 197 held/3 missing, la 126 held/74 missing; relations en antecedent/collated 1, en antecedent/uncollated 194, en own/not-applicable 3, la antecedent/collated 124, la antecedent/uncollated 2; 12 target-recension exclusions",
+                "roman-pre-1955: 6 sections, 209 elements, 4 witnesses, 0 variants, 9 slots; en 206 held/3 missing, la 113 held/96 missing; relations en antecedent/uncollated 206, la antecedent/uncollated 113; 0 target-recension exclusions",
                 "the written files are current",
             ),
             "check reads the inventories, joins the artifacts, and reports whether the tracked output is current; it writes nothing",
@@ -212,7 +226,7 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary check --calendar roman-1962 --json",
             (
-                "{\"calendars\":[{\"absent\":10,\"calendar\":\"roman-1962\",\"elements\":196,\"exclusions\":12,\"language_coverage... [+29021 chars]",
+                "{\"calendars\":[{\"absent\":3,\"calendar\":\"roman-1962\",\"elements\":200,\"exclusions\":12,\"language_coverage\"... [+29503 chars]",
             ),
         ),
     ),
@@ -251,16 +265,16 @@ EXAMPLES = {
                 "----------------------",
                 "",
                 "  Entrance and veneration of the altar",
-                "    [absent: approved-english-publication-restriction]",
+                "    [absent: not-a-text]",
                 "    opens Populo congregato",
                 "",
-                "  The Greeting (all)",
-                "    [absent: approved-english-publication-restriction]",
-                "    opens Dominus vobiscum",
+                "  Sign of the Cross",
+                "    [ Source note: Historical English (Cummiskey,1861); this is not approved",
+                "    postconciliar English. The source’s older wording and spelling are retained. ]",
+                "    Priest: IN the Name of the Father, and of the Son, and of the Holy Ghost.",
+                "    All: Amen.",
                 "",
-                "  Penitential Act, form I (all)",
-                "    [absent: official-exemplar-not-carried]",
-                "... 204 more lines",
+                "... 364 more lines",
             ),
             "an element no witness reaches names the reason rather than printing a gap",
         ),
@@ -269,32 +283,53 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary coverage --calendar postconciliar",
             (
-                "postconciliar: 61 elements",
-                "  en coverage: 0 held, 61 missing",
-                "  la coverage: 20 held, 41 missing",
+                "postconciliar: 70 elements",
+                "  en coverage: 35 held, 35 missing",
+                "  la coverage: 32 held, 38 missing",
+                "  en provenance: antecedent/uncollated 26",
+                "  en provenance: own/not-applicable 9",
                 "  la provenance: antecedent/collated 5",
-                "  la provenance: antecedent/uncollated 15",
-                "  la  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  20 elements  public-domain",
-                "  absent: antecedent-diverges-at-named-words 3 rights-restricted/rights-withheld, antecedent-held-not-carried 1 unavailable/witness-gap, appointed-text-printed-with-formulary 2 unresolved/rights-unresolved, approved-english-publication-restriction 27 rights-restricted/rights-withheld, editio-typica-new-matter 13 rights-restricted/rights-withheld, element-spans-mixed-availability 3 unavailable/model-gap, element-spans-mixed-matter 7 unavailable/model-gap, no-antecedent-witness 3 unavailable/witness-gap, no-fixed-text 3 unavailable/not-applicable, not-a-text 12 unavailable/not-applicable, official-exemplar-not-carried 16 unavailable/witness-gap, priest-prayer-said-quietly 6 unavailable/no-exemplar, proper-text-outside-ordinary 6 unavailable/outside-layer",
+                "  la provenance: antecedent/uncollated 27",
+                "  en  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  23 elements  public-domain",
+                "  en  edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030  5 elements  project-created",
+                "  en  edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908  1 elements  public-domain",
+                "  en  edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945  1 elements  public-domain",
+                "  en  edition.triptych.english-completion-20261030-kyrie-sixfold-study-arrangement.study-arrangement-20261030  1 elements  project-created",
+                "  en  edition.triptych.postconciliar-common-communicantes-study-english-20261030.study-english-20261030  1 elements  project-created",
+                "  en  edition.triptych.postconciliar-ordinary-domine-qui-dixisti-study-english-20261030.study-english-20261030  1 elements  project-created",
+                "  en  edition.triptych.postconciliar-ordinary-peace-invitation-study-english-20261030.study-english-20261030  1 elements  project-created",
+                "  en  edition.triptych.postconciliar-ordinary-supplices-study-english-20261030.study-english-20261030  1 elements  project-created",
+                "  la  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  24 elements  public-domain",
+                "  la  edition.catholic-church.vulgata-clementina.ebible-latvuc  4 elements  public-domain",
+                "  la  edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam  2 elements  public-domain",
+                "  la  edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712  1 elements  public-domain",
+                "  la  edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888  1 elements  public-domain",
+                "  absent: antecedent-diverges-at-named-words 3 rights-restricted/rights-withheld, antecedent-held-not-carried 1 unavailable/witness-gap, appointed-text-printed-with-formulary 2 unresolved/rights-unresolved, approved-english-publication-restriction 11 rights-restricted/rights-withheld, editio-typica-new-matter 12 rights-restricted/rights-withheld, element-spans-mixed-availability 3 unavailable/model-gap, element-spans-mixed-matter 5 unavailable/model-gap, no-antecedent-witness 1 unavailable/witness-gap, no-fixed-text 3 unavailable/not-applicable, not-a-text 17 unavailable/not-applicable, official-exemplar-not-carried 5 unavailable/witness-gap, priest-prayer-said-quietly 4 unavailable/no-exemplar, proper-text-outside-ordinary 6 unavailable/outside-layer",
             ),
             "read-only: what each publishable witness reaches and what is absent; restricted provenance remains source-only",
         ),
         Example(
             "tools/mass-ordinary coverage --calendar roman-1962",
             (
-                "roman-1962: 196 elements",
-                "  en coverage: 186 held, 10 missing",
-                "  la coverage: 120 held, 76 missing",
+                "roman-1962: 200 elements",
+                "  en coverage: 197 held, 3 missing",
+                "  la coverage: 126 held, 74 missing",
                 "  en provenance: antecedent/collated 1",
-                "  en provenance: antecedent/uncollated 185",
-                "  la provenance: antecedent/collated 118",
+                "  en provenance: antecedent/uncollated 194",
+                "  en provenance: own/not-applicable 3",
+                "  la provenance: antecedent/collated 124",
                 "  la provenance: antecedent/uncollated 2",
-                "  en  edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945  102 elements  public-domain",
-                "  en  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  84 elements  public-domain",
+                "  en  edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945  118 elements  public-domain",
+                "  en  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  75 elements  public-domain",
+                "  en  edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925  2 elements  public-domain",
+                "  en  edition.triptych.english-completion-20261029-ordinary-chrism.study-english-20261030  1 elements  project-created",
+                "  en  edition.triptych.english-completion-20261029-ordinary-joseph-preface-may1.study-english-20261030  1 elements  project-created",
+                "  en  edition.triptych.english-completion-20261029-ordinary-joseph.study-english-20261029  1 elements  project-created",
                 "  la  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  114 elements  public-domain",
-                "  la  edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam  3 elements  public-domain",
-                "  la  edition.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19  3 elements  project-created",
-                "  absent: appointment-not-established 6 unavailable/model-gap, communicantes-continuation-english-lacks-1962-clause 1 unavailable/witness-gap, no-facing-latin 5 unavailable/witness-gap, not-in-the-1962-ordo 0 unavailable/witness-gap, preface-not-in-witness 2 unavailable/witness-gap, proper-canon-form-not-held 8 unavailable/witness-gap, proper-communicantes-english-variant 1 unavailable/witness-gap, witness-own-english 63 unavailable/witness-gap",
+                "  la  edition.triptych.roman-1962-ordinary-editorial-projection.editorial-projection-2026-10-19  7 elements  project-created",
+                "  la  edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam  4 elements  public-domain",
+                "  la  edition.triptych.english-completion-20261029-ordinary-chrism.latin-projection-20261030  1 elements  project-created",
+                "  absent: appointment-not-established 6 unavailable/model-gap, communicantes-continuation-english-lacks-1962-clause 0 unavailable/witness-gap, no-facing-latin 4 unavailable/witness-gap, not-in-the-1962-ordo 0 unavailable/witness-gap, preface-not-in-witness 4 unavailable/witness-gap, proper-canon-form-not-held 0 unavailable/witness-gap, proper-communicantes-english-variant 0 unavailable/witness-gap, witness-own-english 63 unavailable/witness-gap",
                 "  target-recension exclusions: conclusio/et-famulos, conclusio/oratio-et-famulos-heading, conclusio/postcommunio-mundet, conclusio/rubrica-oratio-addita, conclusio/rubrica-postcommunio-paschalis, conclusio/rubrica-postcommunio-secunda, oblatio/a-cunctis, oblatio/nota-incarnationis, oblatio/rubrica-collecta-concede, oblatio/rubrica-secreta, oblatio/rubrica-secreta-concede, oblatio/secreta-ii",
             ),
             "the 1962 Ordinary is held whole in English and partly in facing Latin; every remaining Latin absence is recorded, not inferred",
@@ -304,9 +339,9 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary check",
             (
-                "postconciliar: 7 sections, 61 elements, 1 witness, 3 variants, 12 slots; en 0 held/61 missing, la 20 held/41 missing; relations la antecedent/collated 5, la antecedent/uncollated 15; 0 target-recension exclusions",
-                "roman-1962: 6 sections, 196 elements, 5 witnesses, 0 variants, 9 slots; en 186 held/10 missing, la 120 held/76 missing; relations en antecedent/collated 1, en antecedent/uncollated 185, la antecedent/collated 118, la antecedent/uncollated 2; 12 target-recension exclusions",
-                "roman-pre-1955: 6 sections, 206 elements, 2 witnesses, 0 variants, 9 slots; en 196 held/10 missing, la 113 held/93 missing; relations en antecedent/uncollated 196, la antecedent/uncollated 113; 0 target-recension exclusions",
+                "postconciliar: 7 sections, 70 elements, 14 witnesses, 4 variants, 12 slots; en 35 held/35 missing, la 32 held/38 missing; relations en antecedent/uncollated 26, en own/not-applicable 9, la antecedent/collated 5, la antecedent/uncollated 27; 0 target-recension exclusions",
+                "roman-1962: 6 sections, 200 elements, 10 witnesses, 0 variants, 9 slots; en 197 held/3 missing, la 126 held/74 missing; relations en antecedent/collated 1, en antecedent/uncollated 194, en own/not-applicable 3, la antecedent/collated 124, la antecedent/uncollated 2; 12 target-recension exclusions",
+                "roman-pre-1955: 6 sections, 209 elements, 4 witnesses, 0 variants, 9 slots; en 206 held/3 missing, la 113 held/96 missing; relations en antecedent/uncollated 206, la antecedent/uncollated 113; 0 target-recension exclusions",
                 "the written files are current",
             ),
             "read-only first: `check` validates the inventories and reports whether tracked output is current",
@@ -314,9 +349,9 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary structure --out build/example-ordinary",
             (
-                "postconciliar: 7 sections, 61 elements, 1 witness, 3 variants, 12 slots; en 0 held/61 missing, la 20 held/41 missing; relations la antecedent/collated 5, la antecedent/uncollated 15; 0 target-recension exclusions",
-                "roman-1962: 6 sections, 196 elements, 5 witnesses, 0 variants, 9 slots; en 186 held/10 missing, la 120 held/76 missing; relations en antecedent/collated 1, en antecedent/uncollated 185, la antecedent/collated 118, la antecedent/uncollated 2; 12 target-recension exclusions",
-                "roman-pre-1955: 6 sections, 206 elements, 2 witnesses, 0 variants, 9 slots; en 196 held/10 missing, la 113 held/93 missing; relations en antecedent/uncollated 196, la antecedent/uncollated 113; 0 target-recension exclusions",
+                "postconciliar: 7 sections, 70 elements, 14 witnesses, 4 variants, 12 slots; en 35 held/35 missing, la 32 held/38 missing; relations en antecedent/uncollated 26, en own/not-applicable 9, la antecedent/collated 5, la antecedent/uncollated 27; 0 target-recension exclusions",
+                "roman-1962: 6 sections, 200 elements, 10 witnesses, 0 variants, 9 slots; en 197 held/3 missing, la 126 held/74 missing; relations en antecedent/collated 1, en antecedent/uncollated 194, en own/not-applicable 3, la antecedent/collated 124, la antecedent/uncollated 2; 12 target-recension exclusions",
+                "roman-pre-1955: 6 sections, 209 elements, 4 witnesses, 0 variants, 9 slots; en 206 held/3 missing, la 113 held/96 missing; relations en antecedent/uncollated 206, la antecedent/uncollated 113; 0 target-recension exclusions",
                 "wrote 4 files",
                 "  -> build/example-ordinary/structure/ordinary/index.json",
             ),
@@ -400,7 +435,10 @@ SIDE_BLOCKS = {one["lang"]: one["absent"] for one in LANGUAGES}
 # A turn is an inventory-owned reading of rows the selected text artifact
 # already exposes.  These closed vocabularies keep speaker and dialogue role
 # independent: a priest can answer, and a server can initiate a prayer.
-TURN_SPEAKERS = ("all", "priest", "server")
+# Additional actors are source-explicit only: individual Communion response,
+# pontifical utterances, and the book's deacon-or-priest alternatives.
+TURN_SPEAKERS = ("all", "priest", "server", "bishop", "communicant", "deacon-or-priest",
+                 "lector", "deacon")
 TURN_DIALOGUE_ROLES = ("versicle", "response")
 # A printed marker is the book's own cue letter at the head of a turn row
 # ("P. I confess", "R. Suscipiat").  It stays in `text`, which remains the
@@ -470,6 +508,12 @@ CONDITION_PREDICATES = (
     "particular-celebration-of-more-solemn-character",
     "mass-has-no-proper-preface",
     "second-reading-appointed",
+    # Exact Gospel headings are selected only from the appointed reading's
+    # resolved canonical book; unknown or conflicting citations stay unknown.
+    "gospel-book-matthew",
+    "gospel-book-mark",
+    "gospel-book-luke",
+    "gospel-book-john",
     # The pre-1955 seasonal orations.  Each is established FALSE only outside
     # the dates its rubric names (see `predicateFacts` in ordinary-seating.js
     # for the windows and their loci) and is never established true: inside
@@ -504,7 +548,7 @@ INSERTED_FIELDS = {
     # An inserted element may instead carry its own text from any declared,
     # publishable witness, exactly as an inline element does (`side_text`):
     # the 1962 Canon's proper forms are printed by no row of the 1861 book.
-    "english", "latin", "english_turns", "latin_turns",
+    "english", "latin", "english_turns", "latin_turns", "english_alternatives",
 }
 
 # A printed junction: where a target edition continues a witness's row with
@@ -524,7 +568,7 @@ JUNCTION_FIELDS = {"element", "through", "basis"}
 # and language here, with the same closed fields, and replaces the section's
 # block for that element alone.
 ELEMENT_PROVENANCE_FIELDS = {"element", "lang", "relation", "collation",
-                             "collation_finding", "target_wording", "note"}
+                             "collation_finding", "target_wording", "note", "reading_note"}
 
 # Artifact sections may fill one missing language of an existing source row
 # from another explicitly declared artifact. The base artifact and its absence
@@ -533,7 +577,7 @@ ADDITIONAL_TEXT_FIELDS = {"element", "english", "latin", "english_turns",
                           "latin_turns", "turns_basis"}
 ADDITIONAL_SIDE_FIELDS = {"witness", "artifact", "element", "elements", "column",
                           "relation", "collation", "collation_finding",
-                          "target_wording", "note", "applicability"}
+                          "target_wording", "note", "reading_note", "applicability"}
 
 # A complete, separately witnessed English body may replace a defective or
 # abbreviated base rendering. The old source artifact remains immutable, and
@@ -585,7 +629,7 @@ RELATIONS = ("own", "antecedent")
 COLLATIONS = ("collated", "uncollated")
 NEEDS_RELATION_NOTE = ("antecedent",)
 ARTIFACT_PROVENANCE_FIELDS = {
-    "relation", "collation", "collation_finding", "note", "target_wording",
+    "relation", "collation", "collation_finding", "note", "reading_note", "target_wording",
 }
 
 
@@ -1431,7 +1475,7 @@ def artifact_provenance(section: dict, lang: str, key: str, name: str) -> dict:
         )
     relation = relation_of(block, key, lang, name)
     if block["relation"] == "own":
-        extras = set(block) - {"relation"}
+        extras = set(block) - {"relation", "reading_note"}
         if extras:
             raise SourceError(
                 f"{name}: section {section['key']} [{side}] relation is own but "
@@ -1975,6 +2019,8 @@ def artifact_inserted(
             )
         text_of = entry.get("text_of")
         own_text = [lang for lang, side in SIDE_BLOCKS.items() if entry.get(side)]
+        if "english_alternatives" in entry and not own_text:
+            scoped_english_blocks(entry, section["key"] + "/" + key, name)
         translations = None
         if text_of is not None and own_text:
             raise SourceError(
@@ -2009,13 +2055,9 @@ def artifact_inserted(
             # declared, publishable witness and checked exactly as an inline
             # element's: each language either reaches a text or names why not.
             where = section["key"] + "/" + key
-            translations = [
-                row for row in (
-                    side_text(entry, language["lang"], witnesses or {}, restricted or {},
-                              library or {}, where, name)
-                    for language in LANGUAGES
-                ) if row
-            ]
+            translations = element_texts(
+                entry, witnesses or {}, restricted or {}, library or {}, where, name
+            )
             absent = absent_pair(entry, {}, absences, key, name)
             for language in LANGUAGES:
                 if any(row["lang"] == language["lang"] for row in translations):
@@ -2574,16 +2616,24 @@ def relation_of(block: dict, key: str, lang: str, name: str) -> dict:
     and 63 translations served under a bare dotted id with no label and no
     caution.
     """
+    out = {}
+    if "reading_note" in block:
+        reading_note = block["reading_note"]
+        if not isinstance(reading_note, str) or not reading_note.strip():
+            raise SourceError(
+                f"{name}: element {key} declares an empty or malformed reading_note for {lang}"
+            )
+        out["reading_note"] = reading_note
     relation = block.get("relation")
     if relation is None:
-        return {"relation": "own"}
+        return out | {"relation": "own"}
     if relation not in RELATIONS:
         raise SourceError(
             f"{name}: element {key} declares relation {relation!r} for {lang}; "
             f"one of {', '.join(RELATIONS)} is required"
         )
     if relation not in NEEDS_RELATION_NOTE:
-        return {"relation": relation}
+        return out | {"relation": relation}
     collation = block.get("collation")
     if collation not in COLLATIONS:
         raise SourceError(
@@ -2597,7 +2647,7 @@ def relation_of(block: dict, key: str, lang: str, name: str) -> dict:
             f"{name}: element {key} is {relation} for {lang} and states no note; "
             "a relation nobody can check is a claim nobody made"
         )
-    out = {"relation": relation, "collation": collation, "note": note}
+    out |= {"relation": relation, "collation": collation, "note": note}
     finding = (block.get("collation_finding") or "").strip()
     if collation == "collated":
         if not finding:
@@ -2931,6 +2981,61 @@ def side_text(entry: dict, lang: str, witnesses: dict, restricted: dict, library
     return translation
 
 
+def scoped_english_blocks(entry: dict, key: str, name: str) -> list[dict]:
+    """Validate finite source alternatives without changing legacy side blocks."""
+    if "english_alternatives" not in entry:
+        return []
+    declared = entry["english_alternatives"]
+    where = f"{name}: element {key} english_alternatives"
+    if not isinstance(declared, list) or not declared:
+        raise SourceError(f"{where} must be a nonempty array of language blocks")
+    scopes = set()
+    witnesses = set()
+    calendar = None
+    for block in [entry.get("english"), *declared]:
+        if not isinstance(block, dict) or not block:
+            raise SourceError(f"{where} requires a primary English block and table alternatives")
+        unknown = set(block) - ADDITIONAL_SIDE_FIELDS
+        required = {"witness", "artifact", "column", "relation", "applicability"}
+        if unknown or required - set(block):
+            raise SourceError(f"{where} has unknown fields or lacks explicit source, relation or applicability")
+        for field, value in block.items():
+            if field not in {"elements", "applicability"} and (
+                    not isinstance(value, str) or not value.strip()):
+                raise SourceError(f"{where} has malformed {field}")
+        if ("element" in block) == ("elements" in block):
+            raise SourceError(f"{where} must select exactly one of element or elements")
+        if "elements" in block:
+            selected = block["elements"]
+            if (not isinstance(selected, list) or not selected
+                    or any(not isinstance(one, str) or not one.strip() for one in selected)
+                    or len(selected) != len(set(selected))):
+                raise SourceError(f"{where} has malformed elements")
+        scope = translation_applicability(block, key, "en", name)
+        if calendar is not None and scope["calendar"] != calendar:
+            raise SourceError(f"{where} must scope every English body to the same calendar")
+        calendar = scope["calendar"]
+        if block["witness"] in witnesses:
+            raise SourceError(f"{where} repeats an English witness")
+        witnesses.add(block["witness"])
+        if scopes.intersection(scope["formularies"]):
+            raise SourceError(f"{where} has overlapping formulary scopes")
+        scopes.update(scope["formularies"])
+    return declared
+
+
+def element_texts(entry: dict, witnesses: dict, restricted: dict, library: dict,
+                  key: str, name: str) -> list[dict]:
+    """Resolve the original sides and any bounded English source offers."""
+    alternatives = scoped_english_blocks(entry, key, name)
+    held = [row for language in LANGUAGES
+            if (row := side_text(entry, language["lang"], witnesses, restricted,
+                                 library, key, name))]
+    held.extend(side_text({"english": block}, "en", witnesses, restricted,
+                          library, key, name) for block in alternatives)
+    return held
+
+
 def from_inventory(
     section: dict, witnesses: dict, restricted: dict, absences: dict,
     options: dict, library: dict, name: str, appointments: dict | None = None,
@@ -2966,16 +3071,7 @@ def from_inventory(
                     f"{name}: element {key} states a turns_basis but declares no turns"
                 )
 
-        held = [
-            row
-            for row in (
-                side_text(
-                    entry, language["lang"], witnesses, restricted, library, key, name
-                )
-                for language in LANGUAGES
-            )
-            if row
-        ]
+        held = element_texts(entry, witnesses, restricted, library, key, name)
         translations = held or None
 
         absent = absent_pair(entry, section, absences, key, name)
@@ -3126,10 +3222,11 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
     relation_counts: dict[tuple[str, str, str], int] = {}
     for section in sections:
         for element in section["elements"]:
+            element_languages = set()
             for translation in element["translations"] or []:
                 reach = (translation["source_id"], translation["lang"])
                 held[reach] = held.get(reach, 0) + 1
-                by_lang[translation["lang"]] = by_lang.get(translation["lang"], 0) + 1
+                element_languages.add(translation["lang"])
                 relation = translation.get("relation")
                 if relation not in RELATIONS:
                     raise SourceError(
@@ -3143,6 +3240,8 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
                 )
                 bucket = (translation["lang"], relation, collation)
                 relation_counts[bucket] = relation_counts.get(bucket, 0) + 1
+            for lang in element_languages:
+                by_lang[lang] = by_lang.get(lang, 0) + 1
             for language in LANGUAGES:
                 reason = element["absent"][language["absent"]]
                 if reason:
@@ -3212,10 +3311,12 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
             row["count"] for row in language_absences
             if row["lang"] == language["lang"]
         )
-        if relation_total != language["held"] or absence_total != language["missing"]:
+        source_offers = sum(count for (_, lang), count in held.items()
+                            if lang == language["lang"])
+        if relation_total != source_offers or absence_total != language["missing"]:
             raise SourceError(
                 f"{name}: {language['lang']} coverage does not partition its "
-                "held and missing elements"
+                "source offers and missing elements"
             )
     for absence in absence_rows:
         partitioned = sum(

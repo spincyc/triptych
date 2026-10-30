@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-29.
+Last reconciled: 2026-10-30.
 
 ## Missal reader English completion, 2026-10-29
 
@@ -19,10 +19,18 @@ continues on `feature/missal-reader`, preserving all existing accepted text
 and source qualifications. The current recovery and source receipts supersede
 older numerical summaries in the roadmap.
 
-Fresh owning-report audits identify Roman 1962 composed English availability
+On 2026-10-30 the maintainer expressly requested coherent commits, regular
+reconciliation with current `main`, and pushes to `main`. Keep the workspace
+branch name; integrate current main by ordinary merges and publish the verified
+result to `origin/main` without force or history rewriting. The rejected old
+remote feature history remains excluded. Publication of a validated checkpoint
+does not mark the complete-English promise fulfilled.
+
+At intake, fresh owning-report audits identified Roman 1962 composed English availability
 of 1,188/1,448 canonical targets, inherited pre-1955 availability of
 1,168/1,391, and postconciliar availability of 116/564. These are represented
-non-scriptural targets, not whole-Missal completeness denominators. English
+full-text targets, distinct from Bible-citation rendering availability and
+not whole-Missal completeness denominators. English
 Ordinary availability is 191/196 modeled Roman elements, 196/206 pre-1955
 elements and 0/61 postconciliar elements; modeled placeholders do not all
 represent missing translation bodies.
@@ -36,10 +44,60 @@ they confer no official liturgical approval. Protected modern originals or
 translations require their own distribution basis. Typed gaps and passing
 structural renders do not fulfill the requested complete English text.
 
-Source acceptance, generated browser/terminal integration, frozen source-batch
-reconciliation, independent review, required checks, coherent commits and
-publication remain pending. The existing real-terminal maintainer acceptance
-and broader product promises retain their own requirements.
+The Roman Ordinary source lane now supplies English for every currently
+represented text body in both historical frames; the three remaining records
+in each are appointment stand-ins. Seven new direct English source passages
+also have verified prose delivery through the Source Library. The exact
+source manifest and delivery successor are retained under
+`workflows/reviews/missal-english-completion-2026-10-29/ordinary/`.
+Sixteen additional Roman Proper bodies have separately measured, qualified
+publication authorities and independent source, English and installed-guard
+checks. Their fourteen study translations and two historical translations
+remain distinct; the exact authority and receipts are retained under that
+review namespace's `roman-1962/` directory. These are bounded accepted
+cohorts, not completion of this promise.
+
+Postconciliar availability includes seventy earlier project-study drafts whose
+fidelity and underlying-source review remains explicitly open. Independent
+acceptance of the new admissions does not retrospectively review those drafts,
+approve liturgical use or establish exact 2008 correspondence.
+
+The scope audit also distinguishes real older Holy Week work from historical
+nonapplicability. Pre-1955 has four effectively empty rite contexts (Palm
+Sunday, its overlapping standalone blessing, Good Friday and the Easter
+Vigil). The Lord's Supper still inherits nineteen later-frame Propers despite
+its raw unavailable marker; it needs actual older-recension collation and
+assembly qualification. Independent source packages and an explicit older
+rite model are in progress. A separate pre-1955 Chrism Mass is explicitly
+absent and is not missing English work. Postconciliar Common catalogues,
+antiphon-only directions and partial formularies also require source-extent
+and target correspondence before any fixed number of missing prayers can be
+asserted. Complete English cannot be inferred from represented-body counts.
+
+The first accepted source cohort provides composed English for 1,407/1,448
+Roman 1962 Proper targets, 1,373/1,391 inherited pre-1955 targets and 155/574
+postconciliar targets. The corresponding gaps are 41, 18 and 419; all 57
+pre-1955 inapplicability masks remain accounted. Postconciliar Ordinary English
+is available for 35/70 modeled elements. Its remaining records include twelve
+structural or appointment placeholders and twenty-three represented text gaps.
+These counts include the seventy earlier postconciliar drafts with open review
+debt and exclude unmodeled whole-book or rite requirements.
+
+The source aggregate, public and preview build verification, all twelve required
+browser contracts (259 assertions), and the annual structural rendering audit
+pass. The latter covers 1,464 date/calendar coordinates and 5,856 JSON/text
+renderings; it does not establish wording or textual completeness. Exact
+source, browser, Ordinary and historical-conservation evidence is retained in
+`workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/`.
+The source-batch epoch and its bounded test-code successors have been separately
+accepted with 7,068 exact input pins and all seventeen original replay streams
+preserved. All 257 current source-consumer/report tests have canonical passing
+executions across the full run and corrected reruns; the exact composed evidence
+is retained in `checkpoint-v1/root-validation.json`. Historical refusals, source
+confidence and original code bytes remain distinct from later admissions.
+The coherent checkpoint commit, main reconciliation and publication are next.
+The existing real-terminal maintainer acceptance and broader product promises
+retain their own requirements.
 
 ## Claude 1962 All Saints, 2026-11-01
 

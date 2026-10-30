@@ -88,7 +88,7 @@ EXAMPLES = {
         Example(
             "tools/check-calendar-masses check --calendar roman-1962",
             (
-                "src/sources/calendars/roman-1962/propers.yaml\t491 masses\t3730 propers",
+                "src/sources/calendars/roman-1962/propers.yaml\t491 masses\t3753 propers",
                 "src/sources/inventories/roman-1962-proper-translations-v1.toml\t6 read twice\t5 agree\t1 disagree",
             ),
         ),
@@ -3619,6 +3619,40 @@ def witness_problems(where: str, entry: dict, payload: object) -> tuple[list[str
     return problems, verdict
 
 
+def scripture_body_inheritance_problems(path: Path, study_tool=None) -> list[str]:
+    """Apply the producer's closed whole-body contract to effective children."""
+
+    try:
+        study_tool = study_tool or sibling("mass-propers")
+        root = path.parent.parent
+        ledger_owners = study_tool.translation_ledger_calendars(path.parent.name, root)
+        has_scripture_body = False
+        for owner in ledger_owners:
+            entries = study_tool._calendars.read_toml(
+                study_tool.inventory_root(root) / f"{owner}{OVERLAY_SUFFIX}"
+            ).get("entries") or []
+            # Missing required binding/extent fields must not conceal a
+            # positive Scripture claim from a checker scoped to its child.
+            # The owning calendar determines the source type, never metadata
+            # that the malformed positive may have omitted.
+            scripture_names = {
+                (target[0], target[2]) for target in study_tool.scripture_translation_targets(
+                    study_tool.load_calendar(root, owner)
+                )
+            } if entries else set()
+            if any(isinstance(entry, dict) and (
+                    "scripture_body_source" in entry
+                    or (entry.get("mass"), entry.get("proper")) in scripture_names
+            ) for entry in entries):
+                has_scripture_body = True
+                break
+        if has_scripture_body:
+            study_tool.translation_overlay(path.parent.name, root)
+    except (ValueError, KeyError, TypeError, OSError) as error:
+        return [f"{path}: {error}"]
+    return []
+
+
 def overlay_problems(paths: list[Path]) -> tuple[list[str], list[dict]]:
     """Hold the translation sidecars to the same rules as an inline translation.
 
@@ -3651,6 +3685,7 @@ def overlay_problems(paths: list[Path]) -> tuple[list[str], list[dict]]:
     for path in paths:
         sidecar = root / f"{path.parent.name}{OVERLAY_SUFFIX}"
         if not sidecar.is_file():
+            problems.extend(scripture_body_inheritance_problems(path))
             continue
         try:
             document = tomllib.loads(sidecar.read_text(encoding="utf-8"))
@@ -3740,6 +3775,8 @@ def overlay_problems(paths: list[Path]) -> tuple[list[str], list[dict]]:
         disagree: list[str] = []
         active_targets: set[tuple[object, ...]] = set()
         active_entries: list[tuple[str, dict]] = []
+        study_tool = sibling("mass-propers")
+        study_context = None
         entry_payload = document.get("entries") or []
         if not isinstance(entry_payload, list):
             problems.append(f"{sidecar}: entries must be an array of tables")
@@ -3802,6 +3839,18 @@ def overlay_problems(paths: list[Path]) -> tuple[list[str], list[dict]]:
                     )
             problems.extend(overlay_entry_source_problems(where, entry, source_rows))
             problems.extend(overlay_entry_publication_problems(where, entry, source_rows))
+            if study_tool.STUDY_TRANSLATION_SOURCE_FIELDS & set(entry):
+                try:
+                    if study_context is None:
+                        study_context = study_tool.study_translation_source_context(
+                            path.parent.name, path.parent.parent,
+                        )
+                    study_tool.validate_study_translation_binding(
+                        entry, path.parent.name, path.parent.parent, Path(where),
+                        context=study_context,
+                    )
+                except (ValueError, KeyError, TypeError, OSError) as error:
+                    problems.append(str(error))
             found, verdict = witness_problems(where, entry, payload)
             problems.extend(found)
             if verdict is not None:
@@ -3927,7 +3976,18 @@ def overlay_problems(paths: list[Path]) -> tuple[list[str], list[dict]]:
                 problems.append(
                     f"{where}: Placeholder is not a translatable source-owned Proper"
                 )
-            if not live.get("body"):
+            body_problems = []
+            if live.get("source") == "scripture":
+                records, trouble = source_records()
+                body_problems = study_tool.scripture_body_translation_problems(
+                    entry, path.parent.name, path.parent.parent, records=records or {},
+                )
+                problems.extend(f"{where}: {error}" for error in body_problems)
+                if trouble:
+                    problems.append(f"{where}: {trouble}")
+            elif "scripture_body_source" in entry:
+                problems.append(f"{where}: Scripture body translation has no exact Scripture target")
+            if not live.get("body") and (live.get("source") != "scripture" or body_problems):
                 problems.append(
                     f"{where}: translation target {target!r} owns no composed body "
                     "or typed removed-body state"
@@ -4307,6 +4367,10 @@ def overlay_problems(paths: list[Path]) -> tuple[list[str], list[dict]]:
                     for target in sorted(positive_unavailable_collisions)
                 )
             )
+        # A child with no local positive can still inherit a newly admitted
+        # whole English body. Reuse the producer's owner/exclusion/recension
+        # admission sequence; matching citations cannot supply a child proof.
+        problems.extend(scripture_body_inheritance_problems(path, study_tool))
         if agree or disagree:
             witnessed.append(
                 {

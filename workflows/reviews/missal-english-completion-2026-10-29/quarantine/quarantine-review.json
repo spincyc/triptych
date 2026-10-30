@@ -1,0 +1,47 @@
+{
+  "schema": "triptych-independent-quarantine-conservation-review/v1",
+  "reviewed_on": "2026-10-29",
+  "decision": "accept-bounded-code-and-installed-quarantine-registry",
+  "review_kind": "independent-AI-code-data-and-control-review",
+  "subjects": {
+    "tools/public-alpha": "be3439932971aa0dd0aec482a598351812aab9ece44704440640df84d627434a",
+    "tools/tests/test_public_alpha_quarantine.py": "7cd894b17e714ff13c78e27fc9ec02e56e905c06baae0991c362790b5efe6092",
+    "tools/tests/test_liturgical_rights_surfaces.py": "b38ff784634c5591d532307c7c9502070973270695b1b5aef53e00cfc73727d5",
+    "tools/tests/test_public_alpha.py": "97e44aefd8fd20ee99590f2239a32994e51a68fb6102a7db42a6b9ad556a4ca8",
+    "tools/tests/test_public_alpha_fonts.py": "bdc1eb5dfab747c2051a680e8467d1f56341192a07848f7987172531e4141913",
+    "tools/tests/test_public_alpha_scripture.py": "6bb490548cdf8bfbff79005c8d9f3f08eef5444b6e63df286371981f4315526f",
+    "src/sources/inventories/postconciliar-proper-translations-v1.toml": "9d3d4542d77cd6b4ca939b28e7b8fa612dadb48fe4cde89c00303b7d8a6c0fee",
+    "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/english-quarantine-conservation.json": "55866eb537f4941bfcbaeec425843c56a0b60f8036e0b563c65c1e3947810f42"
+  },
+  "independent_baseline": {
+    "git_commit": "6aeb96a392a61e216310c3bf71834863afb229f8",
+    "inventory_sha256": "f06a68826790a3b828d0f44cccecd52d09ff12c828a01dd330391636bf086128",
+    "target_records": 174,
+    "unique_hashes": 172,
+    "canonical_projection_sha256": "ba1bb392b8c1ce8803dbc0b0c5794ad58a1faebf73ee7de54d302db990e1ebd9",
+    "installed_registry_canonical_sha256": "ce137a066538325b65962f763951c92eafaa9a07fcfa0e9c47fcc68c102bd596",
+    "method": "Read the old inventory directly from the named Git object, independently project target/hash/source-provenance fields, sort canonical dictionaries, and compare the entire installed baseline without invoking the new projection helper.",
+    "refusal_history": "All 448 old untranslated dictionaries remain exact: 417 active and 31 complete admission-receipt preimages. Of the 174 quarantined rows, 151 remain active and 23 remain exact receipt preimages. No old target, hash, provenance or refusal dictionary is unaccounted.",
+    "receipt_closure": "All six discovered admission receipts equal the declared set and their declared byte hashes. The independent baseline/active/all-preimage union contains exactly 172 distinct fingerprints, matching the real runtime loader.",
+    "evidence": ".scratch/final-integrated-review-20261029/quarantine-final-baseline.json"
+  },
+  "code_judgment": [
+    "The existing 172 floor remains; the code additionally requires exact baseline identity, 174 target records, canonical digest, nonambiguous source routes and unique targets. Equal-count substitution no longer satisfies conservation.",
+    "Current availability cannot discard the old baseline. Active extras and recursively retained admission preimages join the negative set; they do not replace it.",
+    "Receipt membership and byte hashes are checked, and inventory/receipt signatures include inode, size, nanosecond modification and change times. Warm-cache receipt removal, mutation, omission, addition and symlink controls fail closed.",
+    "The raw and normalized metadata-free public JSON detector remains unchanged. Rights surfaces now consume the same validated union; existing negative assertions are preserved and fixture-only synthetic registries supply explicit test baselines.",
+    "The retained fingerprints identify rejected expressions. They do not authenticate an exemplar, grant rights, establish source inspection, admit English, or turn a historical refusal into permission."
+  ],
+  "controls": {
+    "independently_executed": "All 9 focused tests pass, including the installed real registry; 2 additional warm-cache tests reject an unregistered receipt addition and symlinked receipt. Only the test scratch destination was redirected into the review's exclusive directory; assertions and subject bytes were unchanged.",
+    "exit_status": 0,
+    "log": ".scratch/final-integrated-review-20261029/quarantine-final-controls.log",
+    "owner_results_inspected": "The retained logs report 165/165 public-alpha tests and 14/14 quarantine-helper/RightsMutationBoundary tests passing. These broader runs were inspected, not independently rerun by this reviewer."
+  },
+  "findings": [],
+  "limits": [
+    "This disposition accepts the exact bounded conservation change and installed registry only. Final source-batch fixture acceptance, owner generation, integrated reader/publication checks and release remain the coordinator's existing work.",
+    "This is independent AI review, not human review, real-terminal maintainer acceptance, full-English completion or approval of any retained expression for publication."
+  ],
+  "canonical_mutations": 0
+}

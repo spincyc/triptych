@@ -1,0 +1,1003 @@
+{
+  "schema": "triptych-independent-translation-review/v1",
+  "review_date": "2026-10-29",
+  "review_id": "roman-english-completion-20261029-review-a",
+  "scope": {
+    "packets": [
+      "packet-01",
+      "packet-03",
+      "packet-06"
+    ],
+    "row_count": 48,
+    "kind": "independent cold full-text linguistic review against supplied exact Latin",
+    "reading": "All 48 Latin bodies and all 48 complete draft English bodies were read and compared substantively. Mechanical checks supplemented this reading.",
+    "standards_read": [
+      "guidance/editorial.md",
+      "guidance/liturgical-text-publication-policy.md §§8.2,15.3"
+    ],
+    "acceptance_boundary": "Original project STUDY translations, not approved liturgical English or received historical English. All existing study-use and non-approval cautions must remain. Acceptance does not authorize vocal prayer or ritual recitation.",
+    "rights_boundary": "New project English is within the task's CC BY 4.0 study-translation route; underlying Latin retains its separately recorded basis. This is not a fresh legal or facsimile-source audit."
+  },
+  "summary": {
+    "reviewed": 48,
+    "accepted": 48,
+    "translation_defects": 0,
+    "target_or_hash_defects": 0,
+    "proposed_translation_corrections": 0,
+    "translation_blockers": []
+  },
+  "packet_bindings": [
+    {
+      "packet": "packet-01",
+      "input_sha256": "8c3ea7081c78aef2971434a395dc9c1fea910b7654374c576695a2de6568f8d1",
+      "output_sha256": "dc2c2869cce19960849815d04ef346d49654ec4519d017d4f9c9765dfccfe1d3",
+      "input_rows": 16,
+      "output_rows": 16,
+      "all_target_latin_hash_and_source_data_bindings_match": true
+    },
+    {
+      "packet": "packet-03",
+      "input_sha256": "eebd4fe36673ca4d84f6dd271e26d4e3333d70a122a8867dbd84116d6816cc01",
+      "output_sha256": "031aba36811b89a0526c27a75e73cc4565e90d68137b8522ee4dd3589074a109",
+      "input_rows": 16,
+      "output_rows": 16,
+      "all_target_latin_hash_and_source_data_bindings_match": true
+    },
+    {
+      "packet": "packet-06",
+      "input_sha256": "30021c892b65727b462abd1afae35ea0ce62d664df4337a391877af9d294ec8b",
+      "output_sha256": "ce9c327a3800ff54ec24b451fc8651f539762a9a3e17b29d6d3beb0c1a194ab6",
+      "input_rows": 16,
+      "output_rows": 16,
+      "all_target_latin_hash_and_source_data_bindings_match": true
+    }
+  ],
+  "accepted": [
+    {
+      "packet": "packet-01",
+      "row": 1,
+      "target": [
+        "epiphania-domini",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "ed4359d8a448e3b060be85eac19eef773e1a8090c9aeba62cc7fce4e0520a3a0",
+      "text_sha256": "9b2fd263394c5a518567647ec4789de9179fe3a288a7968c379af5771221cc3f",
+      "text": "Grant, we ask, almighty God, that with purified minds we may understand what we celebrate in solemn worship. Through the Lord.\n",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves solemn worship, purified understanding, and the short Per Dominum conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/epiphania-domini.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.epiphania-domini-postcommunion"
+    },
+    {
+      "packet": "packet-01",
+      "row": 2,
+      "target": [
+        "transfiguratione-domini-nostri-iesu-christi",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "88a6a3fc61575d142e7cda68d82daa43f4a02e94d73bbce8ff5545fc329a2166",
+      "text_sha256": "7b5c3ec0edf016c8cc0248d593d42a7c430e835f569b105ecd2228c5a20a3830",
+      "text": "Grant, we ask, almighty God, that with purified minds we may understand the most sacred mysteries of your Son’s Transfiguration, which we celebrate in solemn worship. Through the same Lord of ours.\n",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves the Son's Transfiguration and most sacred mysteries; retains eundem and nostrum without expansion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/transfiguratione-domini-nostri-iesu-christi.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.transfiguratione-domini-nostri-iesu-christi-postcommunion"
+    },
+    {
+      "packet": "packet-01",
+      "row": 3,
+      "target": [
+        "nativitate-domini-octave",
+        "dawn",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "7c0c7d86dc2da4c2c0ec3c46de1517efd96080bbd0f15c7128e04e72b122dee2",
+      "text_sha256": "6ef2f05e5c9f469f75e7141bca3329726e7996698db150535c7a725929fc2357",
+      "text": "Lord, we ask that our gifts may prove fitting for the mysteries of today’s Nativity and always fill us with peace, so that, as the one born a man also shone forth as God, so this earthly substance may impart to us what is divine. Through the same Jesus Christ our Lord.\n",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves both petitions and the full human/divine and earthly/divine analogy, with the actual named conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/nativitate-domini-octave.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.christmas-dawn-secret"
+    },
+    {
+      "packet": "packet-01",
+      "row": 4,
+      "target": [
+        "commune-unius-martyris-1",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "cbfe896505fd560a713fcfdc4bf0fbea2f01768b17d5429d965e6afe25ada8f4",
+      "text_sha256": "6b2e8c7a8532eeb5de88b6a3186b59330733e52181d57b17d3849e005fffdb36",
+      "text": "Graciously accept, Lord, the sacrifices dedicated to you in honor of the merits of blessed N., your Martyr and Bishop, and grant that they may provide us with lasting help. Through our Lord Jesus Christ, your Son, who lives and reigns with you in unity.\n",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves N., Martyr and Bishop, merits, gracious acceptance, lasting help, and the conclusion ending in unity.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/commune-unius-martyris-1.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commune-unius-martyris-1-secret"
+    },
+    {
+      "packet": "packet-01",
+      "row": 5,
+      "target": [
+        "commune-doctorum-non-pontificis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "6911e4704ca86b71ac314baa9ac7eb099c411b91614ecd67c9fa9c3c1416d699",
+      "text_sha256": "c80612ba8ff1b2786342512c5dd023369f29bc44071f89a5377a6c1725010cbb",
+      "text": "So that your sacrifices may bring us salvation, Lord, we ask that blessed N., your Confessor and a distinguished Doctor, may come forward to intercede. Through the Lord.\n",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves N., Confessor and distinguished Doctor, the sacrificial salvation petition, and the short conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/commune-doctorum-non-pontificis.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commune-doctorum-non-pontificis-postcommunion"
+    },
+    {
+      "packet": "packet-01",
+      "row": 6,
+      "target": [
+        "missa-de-s-maria-in-sabbato-4",
+        "main",
+        "Introit",
+        "all",
+        1
+      ],
+      "latin_sha256": "453bdfb331b795e7445e62ee7214af18e292b1e35ea800295dee42770a329461",
+      "text_sha256": "b79265d278728238bbc440b11c4c1599f600e0004956ebf883808b0f7fe5f506",
+      "text": "Hail, holy Mother, who have given birth to the King, who rules heaven and earth for ever and ever, alleluia, alleluia. My heart has poured out a good word: I recount my works to the King.\nV. Glory to the Father.\n",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves maternal birth, royal rule over heaven and earth, both alleluias, the psalm sentence, and only the printed Gloria Patri cue.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/missa-de-s-maria-in-sabbato-4.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.missa-de-s-maria-in-sabbato-4-introit"
+    },
+    {
+      "packet": "packet-01",
+      "row": 7,
+      "target": [
+        "missa-de-s-maria-in-sabbato-4",
+        "main",
+        "Communion",
+        "all",
+        1
+      ],
+      "latin_sha256": "c23ff184fe80655f5c6ad5dfce4da35ba62cd05776f4553079aab0d2766d04e4",
+      "text_sha256": "8b731ff3a0680e85a371223dbaf1148b3d1fefe085b1885b781bff49e23aef92",
+      "text": "Blessed is the womb of the Virgin Mary, which carried the Son of the eternal Father, alleluia.\n",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves the Virgin Mary, the womb, the eternal Father's Son, and the single alleluia.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/missa-de-s-maria-in-sabbato-4.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.missa-de-s-maria-in-sabbato-4-communion"
+    },
+    {
+      "packet": "packet-01",
+      "row": 8,
+      "target": [
+        "immaculati-cordis-beatae-mariae-virginis",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "7f5b044d27f4c84141bb492ef88677e94c98dd3e279f4cdba95fd58615a032eb",
+      "text_sha256": "3e4d1c0b374370384063910bc5fa673a5ae32135d75d895a26d4845c2acfb979",
+      "text": "As we offer the immaculate Lamb to your majesty, Lord, we ask that the divine fire that ineffably inflamed the Heart of the Blessed Virgin Mary may kindle our hearts. Through the same Lord of ours.\n",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves the spotless Lamb, divine majesty, divine fire, both hearts, ineffability, and the actual short conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/immaculati-cordis-beatae-mariae-virginis.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.immaculati-cordis-beatae-mariae-virginis-secret"
+    },
+    {
+      "packet": "packet-01",
+      "row": 9,
+      "target": [
+        "nativitate-beatae-mariae-virginis",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "f5a44beaf03daa19a63cf286a2980d772fa6bb1b9544d22949cc0dd83e9b1945",
+      "text_sha256": "e75d04f0e0706f1d1002b3f73987c486bbd3972cd5e232d2e47bc17300c282d9",
+      "text": "May the humanity of your Only Begotten come to our aid, Lord, so that Jesus Christ our Lord, who was born of the Virgin and did not impair his mother’s integrity but consecrated it, may make our offering acceptable to you at the solemn celebration of her Nativity, freeing us from our sins. He lives and reigns with you in unity.\n",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves the Only Begotten's humanity, the Virgin birth, undiminished and consecrated integrity, Mary's Nativity, release from sins, offering, and abbreviated conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/nativitate-beatae-mariae-virginis.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.nativitate-beatae-mariae-virginis-secret"
+    },
+    {
+      "packet": "packet-01",
+      "row": 10,
+      "target": [
+        "beatae-mariae-virginis-a-rosario",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "e1181b3b428cc4d74b431ba38cbbbe9c0d59ca11cce04cf579fbd67ab0a0de52",
+      "text_sha256": "198f1387d8cea84eccdf910df0c0f8b87560d6c94dd12508afb3d91272327b11",
+      "text": "God, whose Only Begotten, through his life, death, and resurrection, won for us the rewards of eternal salvation, grant, we ask, that as we recall these mysteries in the most sacred Rosary of the Blessed Virgin Mary, we may both imitate what they contain and attain what they promise. Through the same Lord.\n",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves life, death, resurrection, eternal salvation, the most sacred Rosary, remembering, imitation, attainment, and the same-Lord conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/beatae-mariae-virginis-a-rosario.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.beatae-mariae-virginis-a-rosario-collect"
+    },
+    {
+      "packet": "packet-01",
+      "row": 11,
+      "target": [
+        "praesentatione-beatae-mariae-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "69368314bd2f511650f63b67318340c5408ca6a2edcbefcc456772e96f1ae349",
+      "text_sha256": "4b8ba96d6b138ded27055713ca749c7ec147007f5373ebda13e3f7587b6d3603",
+      "text": "God, you willed that blessed Mary, ever Virgin, the dwelling place of the Holy Spirit, should be presented in the temple on this day. Grant, we ask, that through her intercession we may be found worthy to be presented in the temple of your glory. Through the Lord ... in the unity of the same Holy Spirit.\n",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves ever Virgin, Holy Spirit's dwelling, today's temple presentation, intercession, worthiness, and the source's explicit ellipsis and same-Spirit ending.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/praesentatione-beatae-mariae-virginis.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.praesentatione-beatae-mariae-virginis-collect"
+    },
+    {
+      "packet": "packet-01",
+      "row": 12,
+      "target": [
+        "s-hilarii-episcopi-confessoris-ecclesiae-doctoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "ec82651ee4df7823190f3ac86681e551ed52873c3e0d5643acde77f17ecfb860",
+      "text_sha256": "b469d2df5ece7222049feffd5e81bd1b5fa16a8f091ab930bd2bb48714f87086",
+      "text": "God, you gave blessed Hilary to your people as a minister of eternal salvation. Grant, we ask, that we may be found worthy to have as our intercessor in heaven the one we had as a teacher of life on earth. Through our Lord Jesus Christ, your Son, who lives and reigns with you in unity.\n",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves Hilary, the people, ministry of eternal salvation, teacher on earth and intercessor in heaven, and the actual conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-hilarii-episcopi-confessoris-ecclesiae-doctoris.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-hilarii-episcopi-confessoris-ecclesiae-doctoris-collect"
+    },
+    {
+      "packet": "packet-01",
+      "row": 13,
+      "target": [
+        "s-hilarii-episcopi-confessoris-ecclesiae-doctoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "e61da33f435c15f26b3da3eaca2f6e8ba90ce42ec38e709610252bc2699277bd",
+      "text_sha256": "b416db985a294f25c3b24d691ae484a5865fb70f701374b03e8c9d1b5ef19b89",
+      "text": "Lord, may the devout prayer of Saint Hilary, your Bishop and Doctor, never fail us; may it win acceptance for our gifts and always obtain your forgiveness for us. Through our Lord Jesus Christ, your Son, who lives and reigns with you in unity.\n",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves Hilary as Bishop and Doctor, devout and unfailing prayer, acceptance of gifts, continual forgiveness, and the actual conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-hilarii-episcopi-confessoris-ecclesiae-doctoris.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-hilarii-episcopi-confessoris-ecclesiae-doctoris-secret"
+    },
+    {
+      "packet": "packet-01",
+      "row": 14,
+      "target": [
+        "s-hilarii-episcopi-confessoris-ecclesiae-doctoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "7037ccdbaacb3debd53b93d275f320b12899fb9c5f7fbf98b2526dd8c497fab0",
+      "text_sha256": "482d89b2f2eef3aa1b9d759b10e667d4f314fbb7317137841cbd4bb4eaa7c883",
+      "text": "So that your sacrifices may bring us salvation, Lord, we ask that blessed Hilary, your Bishop and a distinguished Doctor, may come forward to intercede. Through our Lord.\n",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves Hilary as Bishop and distinguished Doctor and the intercession for sacrificial salvation, ending Through our Lord.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-hilarii-episcopi-confessoris-ecclesiae-doctoris.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-s-hilarii-episcopi-confessoris-ecclesiae-doctoris-postcommunion"
+    },
+    {
+      "packet": "packet-01",
+      "row": 15,
+      "target": [
+        "s-antonii-abbatis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "097f7c0cb294df064889d63fd91d1c7b76d468c3cc8774a11e011601ebe0db24",
+      "text_sha256": "a6681d8f96079bb41d80b212e5316aa4f6de0921b004eeb53dccc299d132eb7e",
+      "text": "Lord, we ask that the intercession of blessed Anthony the Abbot may commend us, so that we may attain through his protection what we cannot achieve by our own merits. Through our Lord Jesus Christ, your Son, who lives and reigns with you in unity.\n",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves Anthony the Abbot, intercession, our inability by our merits, attainment through his protection, and the actual conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-antonii-abbatis.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-antonii-abbatis-collect"
+    },
+    {
+      "packet": "packet-01",
+      "row": 16,
+      "target": [
+        "s-antonii-abbatis",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "577749bce12f009f7c775e2cdb0f63733ddb14e950403581c28e7aca0d8caa15",
+      "text_sha256": "046ddfbf9908e60ca0662c785b54df94b4fd67b2a6fd25c51beaeb9b538dc339",
+      "text": "Lord, we ask that Saint Anthony the Abbot may plead for the sacrifices placed upon the holy altars to bring us salvation. Through our Lord Jesus Christ, your Son, who lives and reigns with you in unity.\n",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves Anthony the Abbot's plea, offerings on holy altars, salvation, and the actual conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-antonii-abbatis.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-antonii-abbatis-secret"
+    },
+    {
+      "packet": "packet-03",
+      "row": 1,
+      "target": [
+        "cathedrae-s-petri-apostoli",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "b9705f22cc638c2208054d5a70b84d759f4149ae40c61629861eef2beca5224f",
+      "text_sha256": "0e0102d25bd3bdd650ad825a59f8970c0b5f3663117ea022c8c352d90e509909",
+      "text": "May the gift offered bring us joy, Lord, so that, just as we proclaim how wondrous you are in your Apostle Peter, so through him we may receive the abundance of your pardon.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves offered gift, joy, God's wonder in Peter, Peter's mediation and abundant pardon; correctly adds no conclusion to a source without one.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/cathedrae-s-petri-apostoli.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.cathedrae-s-petri-apostoli-postcommunion"
+    },
+    {
+      "packet": "packet-03",
+      "row": 2,
+      "target": [
+        "s-thomae-aquino-confessoris-ecclesiae-doctoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "5a107c46ab1aa7a3e0be8b7313dc3607057cbd702b2c8bd34913470cdc82242c",
+      "text_sha256": "1e14090ccef63a1626b9152d07b7644071222106f52de95238f4810cb9eeb92a",
+      "text": "Lord, may the devout prayer of Saint Thomas, your Confessor and Doctor, never fail us; may it make our gifts acceptable and always obtain your pardon for us. Through the Lord.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves Thomas as Confessor and Doctor, devout and unfailing prayer, acceptance of gifts, continual pardon, and the short conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-thomae-aquino-confessoris-ecclesiae-doctoris.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-thomae-aquino-confessoris-ecclesiae-doctoris-secret"
+    },
+    {
+      "packet": "packet-03",
+      "row": 3,
+      "target": [
+        "s-thomae-aquino-confessoris-ecclesiae-doctoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "11bf239f0a9a48dbcbb031e008af1a30fba455891d34315f76f9dc513d6df29b",
+      "text_sha256": "b44d9f0eb5f9273a36e2005a053c7e918e6127652eea2aa0d0a78e3648bdf918",
+      "text": "Lord, so that your sacrifices may bring us salvation, we ask that blessed Thomas, your Confessor and eminent Doctor, come forward to intercede. Through our Lord.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves Thomas as Confessor and eminent Doctor and the salvation/intercession relation, ending Through our Lord.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-thomae-aquino-confessoris-ecclesiae-doctoris.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-thomae-aquino-confessoris-ecclesiae-doctoris-postcommunion"
+    },
+    {
+      "packet": "packet-03",
+      "row": 4,
+      "target": [
+        "s-gabrielis-archangeli",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "56f05e4960a0785f4be4b48de2e9af25afb372a0ab0a7f8e6d95df0c09b6be96",
+      "text_sha256": "30956688fb6442042dc8e95acaf5a1d239255c64ed0c02f3e08e55f6e1fd9126",
+      "text": "God, who chose the Archangel Gabriel from among the other angels to announce the mystery of your Incarnation, mercifully grant that we who celebrate his feast (commemoration) on earth may experience his protection in heaven. You who live and reign with God the Father in unity.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves Gabriel's choice among the angels, the addressee's Incarnation, feast/commemoration option, earthly celebration and heavenly protection, with the Son-directed conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-gabrielis-archangeli.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-gabrielis-archangeli-collect"
+    },
+    {
+      "packet": "packet-03",
+      "row": 5,
+      "target": [
+        "s-iustini-martyris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "2ad3805147f750c328259c3ccdbd19d18d606638bd900f8e77a1409d12b4c825",
+      "text_sha256": "1b2f350b6a6918d06051ca18ccf560697b52caf8da109365359e68fa2ae744d5",
+      "text": "Lord God, kindly receive our gifts, whose wondrous mystery Saint Justin the Martyr staunchly defended against the slanders of the ungodly. Through our Lord Jesus Christ, your Son, who lives and reigns with you in unity.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves Justin's saint and martyr titles, God's reception of gifts, wondrous mystery, staunch defense, slanders of the ungodly, and the actual conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-iustini-martyris.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-iustini-martyris-secret"
+    },
+    {
+      "packet": "packet-03",
+      "row": 6,
+      "target": [
+        "s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "db2acad96f9efb74abfd4319632cb286bdd284c6be79685ff37069e49c6254b9",
+      "text_sha256": "da0d26c400a116525f0b1dc4abae85c1384133890e562cc53839be062d70a740",
+      "text": "God, who gave blessed Gregory to your people as a minister of eternal salvation, grant, we ask, that we may be worthy to have as an intercessor in heaven the one we had as a teacher of life on earth. Through the Lord.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves Gregory, the people, ministry of eternal salvation, teacher of life on earth and intercessor in heaven, and the short conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae-collect"
+    },
+    {
+      "packet": "packet-03",
+      "row": 7,
+      "target": [
+        "s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "803dce597b0b2c97a2bc4e9e525470442c5f26393014f7d15a5c4ee3a02f6808",
+      "text_sha256": "29066eb2bd155ff11886071758e878b33b396d91e6c6cf012d959ac2f68c3410",
+      "text": "Lord, may the devout prayer of Saint Gregory, your Bishop and Doctor, never fail us; may it make our gifts acceptable and always obtain your pardon for us. Through the Lord.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves Gregory as Bishop and Doctor, devout and unfailing prayer, acceptable gifts, continual pardon, and the short conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae-secret"
+    },
+    {
+      "packet": "packet-03",
+      "row": 8,
+      "target": [
+        "s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "07e9140718f6f035f6358a7b9d4a84a973b3a5b68675ce06ed061202510b99eb",
+      "text_sha256": "724bbfce8de8432054b4c1ba9c35df995f8abaeef5b3130414aa92fdf2124342",
+      "text": "Lord, so that your sacrifices may bring us salvation, we ask that blessed Gregory, your Bishop and eminent Doctor, come forward to intercede. Through the Lord.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves Gregory as Bishop and eminent Doctor and the sacrificial salvation/intercession relation, with the short conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae-postcommunion"
+    },
+    {
+      "packet": "packet-03",
+      "row": 9,
+      "target": [
+        "s-antonini-episcopi-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "89be9fd9128546b0108e5ff09eaf198d674fedc7c95a7ef83e794c1f073dd3dc",
+      "text_sha256": "edbaecc8a8dfa58770cf8c4b7d070e3a7e9d0bb2f73fc7f429a5d6b24b3805a2",
+      "text": "Almighty God, grant, we ask, that as we give thanks for the gifts we have received, we may receive greater blessings through the intercession of blessed Antoninus, your Confessor and Bishop. Through our Lord.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves received gifts, thanksgiving, greater benefits and Antoninus as Confessor and Bishop, ending Through our Lord.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-antonini-episcopi-confessoris.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-antonini-episcopi-confessoris-postcommunion"
+    },
+    {
+      "packet": "packet-03",
+      "row": 10,
+      "target": [
+        "ss-philippi-iacobi-apostolorum",
+        "main",
+        "Collect",
+        "all",
+        2
+      ],
+      "latin_sha256": "d501d42fdc12584740a5f9f42844705335ff64d181f58b91c51506b54e056b87",
+      "text_sha256": "e17c86d4b56977b619c47cb562ca54dc512814b306e659f4b59cf372f3124af5",
+      "text": "God, who give us joy in the solemn celebration (commemoration) of your Apostles Philip and James, grant, we ask, that we may be taught by the examples of those in whose merits we rejoice. Through our Lord.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves both Philip and James, Apostle titles, solemnity/commemoration option, joy in merits and instruction by examples; no annua is invented.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/ss-philippi-iacobi-apostolorum.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026-ss-philippi-iacobi-apostolorum-collect-2"
+    },
+    {
+      "packet": "packet-03",
+      "row": 11,
+      "target": [
+        "comm-s-bonifatii-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "5003e0531a176d0ce4d3d1dd0c3476e3a178d3355acbc09b08985dd2386be0c7",
+      "text_sha256": "ace5300d28b53ad91ae6f71b085f3dbfc94fd4e13b55aa099b8f5678d9fce7bd",
+      "text": "Nourished by sharing in the sacred gift, we ask, Lord our God, that through the intercession of blessed Boniface, your Martyr, we may experience the effect of what we celebrate in worship. Through the Lord.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves nourishment by participation, the sacred gift, Boniface's intercession and martyr title, worship and its effect, and the short conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/comm-s-bonifatii-martyris.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.boniface-postcommunion"
+    },
+    {
+      "packet": "packet-03",
+      "row": 12,
+      "target": [
+        "s-antonii-padua-confessoris-ecclesiae-doctoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "477fc3ccb5b28d6c984eb149d9150b2beac0f0c263bbf7fce39682f2e0ae505e",
+      "text_sha256": "a7ea1cc7a1187310450e327b7c369bbec4c1aacc9bafd660123353567c62430a",
+      "text": "God, may the devout celebration of the feast of blessed Anthony, your Confessor and Doctor, gladden your Church, so that she may always be strengthened by spiritual help and be worthy to enjoy eternal joys. Through our Lord.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves Anthony as Confessor and Doctor, the devout feast, the Church's gladness, spiritual protection and worthiness for eternal joy, ending Through our Lord.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-antonii-padua-confessoris-ecclesiae-doctoris.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026-s-antonii-padua-confessoris-ecclesiae-doctoris-collect"
+    },
+    {
+      "packet": "packet-03",
+      "row": 13,
+      "target": [
+        "s-antonii-padua-confessoris-ecclesiae-doctoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "ce4bddd814e9b99aee80ed02a901551ed8f949f13c48662f3c9d4c54770a0696",
+      "text_sha256": "ccb6ec4e8862b3c01bc00e999ce34d1c05e7c8eb7063da63bab7f8007db26bac",
+      "text": "Filled with divine gifts, Lord, we ask that through the merits and intercession of blessed Anthony, your Confessor and Doctor, we may experience the effect of the saving sacrifice. Through the Lord.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves divine gifts, Anthony as Confessor and Doctor, merits and intercession, and the effect of the saving sacrifice.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-antonii-padua-confessoris-ecclesiae-doctoris.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-26-latin-seven.latin-seven-20261026-s-antonii-padua-confessoris-ecclesiae-doctoris-postcommunion"
+    },
+    {
+      "packet": "packet-03",
+      "row": 14,
+      "target": [
+        "comm-ss-gervasii-protasii-martyrum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "9c4186a011b85c436d2ec1c8f1c25fee8f93938628d2be8b855ffe238afd2ff0",
+      "text_sha256": "6d2f7314c157da0389617a602cc63458e7ecd6854bb43a394688d98525f29035",
+      "text": "God, who give us joy in the yearly solemn celebration of your holy Martyrs Gervasius and Protasius, mercifully grant that we may be set aflame by the examples of those in whose merits we rejoice. Through our Lord.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves yearly solemn celebration, Gervasius and Protasius as holy Martyrs, mercy, joy in merits and kindling by examples.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/comm-ss-gervasii-protasii-martyrum.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-gervasii-protasii-martyrum-collect"
+    },
+    {
+      "packet": "packet-03",
+      "row": 15,
+      "target": [
+        "comm-ss-gervasii-protasii-martyrum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "61c5935b561740e2c82b40ae4a937be45255fd33fdf1321e1ceda190cefee413",
+      "text_sha256": "4bd8db8eaf0735bb788aedb2b9101a277022bf5ccd98e6a712baa3c035d6d911",
+      "text": "Be appeased, we ask, Lord, by the gifts offered, and through the intercession of your holy Martyrs defend us from every danger. Through the Lord.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves appeasement through offered gifts, the unnamed holy Martyrs' intercession and defense from every danger; no names are inserted.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/comm-ss-gervasii-protasii-martyrum.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-gervasii-protasii-martyrum-secret"
+    },
+    {
+      "packet": "packet-03",
+      "row": 16,
+      "target": [
+        "comm-ss-gervasii-protasii-martyrum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "b65ad782b16de0754e32cca614016a404ade0cd42950c13e01f7f8bfc371848b",
+      "text_sha256": "2cf1053fd4b9fafa35bb4de667747b379037b60e097093a0ee9a94171034f987",
+      "text": "Lord, may this communion cleanse us of sin and, through the intercession of your holy Martyrs Gervasius and Protasius, make us sharers in the heavenly remedy. Through the Lord.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves cleansing from sin, Gervasius and Protasius and their intercession, sharing in the heavenly remedy, and the short conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/comm-ss-gervasii-protasii-martyrum.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-gervasii-protasii-martyrum-postcommunion"
+    },
+    {
+      "packet": "packet-06",
+      "row": 1,
+      "target": [
+        "s-stephani-regis-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "d5cf241c48cd261dea6b506b9b9997bd1aba91561fb7164f29469dc5221e4183",
+      "text_sha256": "2498a8655cbb6777a4afeda1e73c08ec1833590ae351c83f9c9fc14debf86c4e",
+      "text": "Almighty God, look upon the sacrificial offerings we bring, and grant that we who celebrate the mysteries of the Lord's Passion may imitate what we enact. Through the same Lord.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves sacrificial offerings, the Lord's Passion, celebration of its mysteries, imitation of what is enacted, and the same-Lord conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-stephani-regis-confessoris.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-stephani-regis-confessoris-secret"
+    },
+    {
+      "packet": "packet-06",
+      "row": 2,
+      "target": [
+        "ss-cornelii-papae-cypriani-episcopi-martyrum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "38338d123fc18f177746ac09a8651960d22560343e9956d117a92a0eae8d556f",
+      "text_sha256": "f8ed4f4fff3dd8b9a795d740dc36bc8928a11061c43e3fe741958772a301502f",
+      "text": "May the feasts of the blessed martyrs and bishops Cornelius and Cyprian protect us, we pray, Lord, and may their venerable prayer commend us. Through the Lord.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves both Cornelius and Cyprian as martyrs and bishops, protecting feasts, venerable prayer, commendation, and the short conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/ss-cornelii-papae-cypriani-episcopi-martyrum.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.ss-cornelii-papae-cypriani-episcopi-martyrum-collect"
+    },
+    {
+      "packet": "packet-06",
+      "row": 3,
+      "target": [
+        "ss-ianuarii-episcopi-sociorum-martyrum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "bd88a2926799b70fd97b32ecbf58cc1267415a570ac12add7c0605cef1cedf59",
+      "text_sha256": "a76c937531d59c10f3fd649d1c42b6efd5890a53b8df536dd4c93e2cf8abc08c",
+      "text": "God, you gladden us with the yearly solemnity of your holy martyrs Januarius and his companions; graciously grant that we who rejoice in their merits may be set aflame by their examples. Through the Lord.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves Januarius and companions, yearly solemnity, mercy, joy in merits and kindling by examples.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/ss-ianuarii-episcopi-sociorum-martyrum.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.ss-ianuarii-episcopi-sociorum-martyrum-collect"
+    },
+    {
+      "packet": "packet-06",
+      "row": 4,
+      "target": [
+        "ss-ianuarii-episcopi-sociorum-martyrum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "01d6c2376c9d9cabae4923398739d9620d739e25f88366c0dad1dfb1e0033415",
+      "text_sha256": "9b7499cbd7933cbf48e2126ce78123d81a53613f835b0d027fa9a99eea276c9f",
+      "text": "Lord, we pray, be appeased by the gifts we have offered, and, through the intercession of your holy martyrs Januarius and his companions, defend us from every danger. Through the Lord.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves appeasement through offered gifts, Januarius and companions, intercession and defense from every danger.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/ss-ianuarii-episcopi-sociorum-martyrum.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.ss-ianuarii-episcopi-sociorum-martyrum-secret"
+    },
+    {
+      "packet": "packet-06",
+      "row": 5,
+      "target": [
+        "ss-ianuarii-episcopi-sociorum-martyrum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "1d963594140173db87bd916c94f32daf9ceaf57cf92643f5a2d878ed08fb222c",
+      "text_sha256": "2c6e6103d004b7193e084c2c3509ce8386352766c3f8fbe564f94a63d639324c",
+      "text": "Lord, may this communion cleanse us of sin and, through the intercession of your holy martyrs Januarius and his companions, make us sharers in the heavenly remedy. Through the Lord.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves communion, cleansing of sin, Januarius and companions, intercession and sharing in the heavenly remedy.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/ss-ianuarii-episcopi-sociorum-martyrum.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.ss-ianuarii-episcopi-sociorum-martyrum-postcommunion"
+    },
+    {
+      "packet": "packet-06",
+      "row": 6,
+      "target": [
+        "comm-ss-mauritii-sociorum-martyrum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "c00f6db7981e55c9684f49ea310d96f63a7e2c18532380116a00f5b9fb566b7c",
+      "text_sha256": "f24e63e933b881877c5be2b2132f504ef513637bf16073d907dabad608cd1154",
+      "text": "Almighty God, we pray, grant that the festive solemnity of your holy martyrs Maurice and his companions may gladden us, so that we may glory in the birthday feasts of those on whose intercession we rely. Through the Lord.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves Maurice and companions, festive solemnity, joy, dependence on intercession and glorying in natal feasts.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/comm-ss-mauritii-sociorum-martyrum.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-mauritii-sociorum-martyrum-collect"
+    },
+    {
+      "packet": "packet-06",
+      "row": 7,
+      "target": [
+        "comm-s-theclae-virginis-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "29304d753509157c946b09013cd2ec748a01e12bf0e12f0df3d8d29efff8fcf5",
+      "text_sha256": "360084a7ac7bb83b05fb2ec68d25c6b98cdd54b54e8509a7df9470279ca552ab",
+      "text": "Grant, we pray, almighty God, that we who celebrate the birthday feast of blessed Thecla, your virgin and martyr, may both rejoice in her yearly solemnity and grow through the example of such great faith. Through our Lord Jesus Christ, your Son, who lives and reigns with you in unity.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves Thecla as virgin and martyr, natal feast, annual rejoicing, progress through great faith's example, and the actual conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/comm-s-theclae-virginis-martyris.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-s-theclae-virginis-martyris-collect"
+    },
+    {
+      "packet": "packet-06",
+      "row": 8,
+      "target": [
+        "comm-ss-cypriani-iustinae-virginis-martyrum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "5dcb665efc9a7fb369dc109c432ff63a537ac19e59cee8373c2de3df8bfbd5a8",
+      "text_sha256": "f5892965f3a4f4a97a91e9e4612e17bece39a276bcc11a859e95241162ec11ff",
+      "text": "Grant us, we pray, Lord, through the intercession of your holy martyrs Cyprian and Justina, to receive with pure minds what we touch with our mouths. Through the Lord.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves Cyprian and Justina as martyrs, intercession, the mouth/pure-mind contrast, and the short conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/comm-ss-cypriani-iustinae-virginis-martyrum.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-cypriani-iustinae-virginis-martyrum-postcommunion"
+    },
+    {
+      "packet": "packet-06",
+      "row": 9,
+      "target": [
+        "s-teresiae-a-iesu-infante-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "af5711fcc13cd77c33978d3406ffa1cb0295a737023cbb6ca95c31531e62c66f",
+      "text_sha256": "f12f93cecac14e3328620bcadd64b8f10bcdc15e0676e3f399eea5b19fee965e",
+      "text": "Lord, you said, \"Unless you become like little children, you will not enter the kingdom of heaven.\" Grant us, we pray, to follow in the footsteps of Saint Thérèse the virgin in humility and simplicity of heart, so that we may attain eternal rewards, you who live and reign with God the Father in unity.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves Christ's quoted condition and exclusion, Thérèse as virgin, humility and simplicity of heart, eternal rewards, and the Son-directed conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-teresiae-a-iesu-infante-virginis.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-s-teresiae-a-iesu-infante-virginis-collect"
+    },
+    {
+      "packet": "packet-06",
+      "row": 10,
+      "target": [
+        "s-teresiae-a-iesu-infante-virginis",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "44ae620a19de8395079129c2c441a1d94df62b63057d618cf37682b000ee32f1",
+      "text_sha256": "9169f6731e03534c4c5116bbedb0fa0b3f0df7da78e60e8fda5e8942f8e55fc3",
+      "text": "Lord, we pray, may the holy prayer of Saint Thérèse, your virgin, win your favor for our sacrifice, so that what is solemnly offered in her honor may be made acceptable by her merits. Through our Lord.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves Thérèse as God's virgin, holy intercession, sacrifice, solemn offering in her honor and acceptance by her merits.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-teresiae-a-iesu-infante-virginis.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-s-teresiae-a-iesu-infante-virginis-secret"
+    },
+    {
+      "packet": "packet-06",
+      "row": 11,
+      "target": [
+        "s-teresiae-a-iesu-infante-virginis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "bd156cf03db2181218acba1a033684509dd2867ea60aeedcd169291c1f9e7e15",
+      "text_sha256": "f694252b29f78926ef72f7599fec5de649a14d9e41508ed6bb07db684b5a1b29",
+      "text": "Lord, may the heavenly mystery inflame us with that fire of love by which Saint Thérèse, your virgin, devoted herself to you for humankind as a sacrificial victim of love. Through our Lord.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves the heavenly mystery, fire of love, Thérèse as God's virgin, self-offering to God for humanity, and victim of charity.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-teresiae-a-iesu-infante-virginis.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase5-latin22-s-teresiae-a-iesu-infante-virginis-postcommunion"
+    },
+    {
+      "packet": "packet-06",
+      "row": 12,
+      "target": [
+        "comm-ss-placidi-sociorum-martyrum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "6d377f03ec531164457e7e3f466323c7866027887e9c9efefd6db37d437c8ba0",
+      "text_sha256": "d3eb083be8cd2bcc6e25eb57b3bbd924bd2e005a84ca7b9c4d54156bb44cb33b",
+      "text": "God, you grant us to celebrate the birthday feasts of your holy martyrs Placid and his companions; grant us to rejoice in their company in eternal blessedness. Through the Lord.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves Placid and companions as holy martyrs, natal feasts, their company and eternal blessedness.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/comm-ss-placidi-sociorum-martyrum.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-placidi-sociorum-martyrum-collect"
+    },
+    {
+      "packet": "packet-06",
+      "row": 13,
+      "target": [
+        "comm-ss-placidi-sociorum-martyrum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "ea157130c019122e5a4884a3eb868edb0d28364f8f2ee2dba49795a68f9abf21",
+      "text_sha256": "5fde796843b7d1c26e4f0f8b0cc19ee6181caed22d81995e7dd8bb467625a981",
+      "text": "Grant us, we pray, Lord, through the intercession of your holy martyrs Placid and his companions, to receive with pure minds what we touch with our mouths. Through our Lord Jesus Christ, your Son, who lives and reigns with you in unity.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves Placid and companions as martyrs, intercession, the mouth/pure-mind contrast, and the actual longer conclusion ending in unity.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/comm-ss-placidi-sociorum-martyrum.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-placidi-sociorum-martyrum-postcommunion"
+    },
+    {
+      "packet": "packet-06",
+      "row": 14,
+      "target": [
+        "s-brunonis-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_sha256": "fb74a2c272ed52c93d30ff0b79aa0b4c9640f936955798d723b97830b98ca387",
+      "text_sha256": "4d6989dcdb15dcef0b3167498be508e6c1d91ee902f8a7f09b0aefb6cd84b869",
+      "text": "Almighty God, we pray that we who have received heavenly nourishment may, through the intercession of blessed Bruno, your confessor, be fortified by it against every adversity. Through our Lord Jesus Christ, your Son, who lives and reigns with you in unity.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves heavenly nourishment, Bruno as Confessor, intercession, protection by that nourishment from all adversity, and the actual conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-brunonis-confessoris.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-s-brunonis-confessoris-postcommunion"
+    },
+    {
+      "packet": "packet-06",
+      "row": 15,
+      "target": [
+        "s-birgittae-viduae",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_sha256": "cc0f5aa6ac798063ee2ff4dbb84cd3080d9ce68a39721b913c5a2a1a5783d28e",
+      "text_sha256": "a39e10c1271a3797e3b9870a9c518cfd4f6040d1fd2f0dc807c99a35a5d17cee",
+      "text": "Lord our God, you revealed heavenly secrets to blessed Bridget through your only-begotten Son; through her devout intercession grant us, your servants, to rejoice with gladness at the revelation of your everlasting glory. Through the same Lord.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves Bridget, revelation of heavenly secrets through the Only Begotten Son, devout intercession, servants, joy and everlasting glory, with the same-Lord conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-birgittae-viduae.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-birgittae-viduae-collect"
+    },
+    {
+      "packet": "packet-06",
+      "row": 16,
+      "target": [
+        "s-francisci-borgiae-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_sha256": "f64aafc8a077836085f6dd5c33464883b5d17116d39ca3242f920eda4017b71b",
+      "text_sha256": "ebb29f6c79c42f2cb668eb523a967ab3eda896630b9120f76a093d27ec8a178c",
+      "text": "Lord, we pray, may Saint Francis earnestly ask that the sacrificial offerings placed upon the sacred altars bring us salvation. Through our Lord Jesus Christ, your Son, who lives and reigns with you in unity.",
+      "decision": "accepted-as-supplied-study-translation",
+      "fidelity_note": "Preserves Francis, earnest intercession, sacrificial offerings on sacred altars, salvation, and the actual conclusion.",
+      "source_data_path": "src/web/data/structure/propers/mass/roman-1962/s-francisci-borgiae-confessoris.json",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-22.phase4-s-francisci-borgiae-confessoris-secret"
+    }
+  ],
+  "material_translation_findings": [],
+  "proposed_corrections": [],
+  "source_observations": [
+    {
+      "kind": "inherited-evidence-limit",
+      "severity": "source-baseline-caution",
+      "examples": [
+        {
+          "packet": "packet-03",
+          "row": 5,
+          "target": [
+            "s-iustini-martyris",
+            "main",
+            "Secret",
+            "all",
+            1
+          ]
+        },
+        {
+          "packet": "packet-06",
+          "row": 12,
+          "target": [
+            "comm-ss-placidi-sociorum-martyrum",
+            "main",
+            "Collect",
+            "all",
+            1
+          ]
+        }
+      ],
+      "finding": "The Justin Secret source record says Munera was not recovered from its antecedent optical layer and no corroboration reached that lane's alignment floor. The Placid Collect says the saint's prayer-body name was inferred from the heading and 1962 target. Several other inherited records explicitly describe optical-text-only or target-guided repairs. These limitations are part of the supplied evidence and must not become claims that this English review independently verified the historical page images.",
+      "disposition": "English accepted against the supplied exact Latin. Retain the inherited source limitations and rely only on the coordinator's separately established source baseline; no new source verification is claimed."
+    },
+    {
+      "kind": "inherited-provenance-documentation-inconsistency",
+      "severity": "source-record-advisory",
+      "examples": [
+        {
+          "packet": "packet-01",
+          "row": 11,
+          "target": [
+            "praesentatione-beatae-mariae-virginis",
+            "main",
+            "Collect",
+            "all",
+            1
+          ]
+        }
+      ],
+      "finding": "The Presentation Collect provenance/locator describes the 1862 reading as text-layer-only and its images as unavailable, but its evidence paragraph ends by claiming both public-domain printings were read on page images. This review cannot resolve that internal record inconsistency.",
+      "disposition": "Do not repeat the broad both-images-read claim as a finding of this review. Exact supplied-Latin fidelity is unaffected."
+    },
+    {
+      "kind": "finite-rights-scope-retained",
+      "severity": "scope-note",
+      "examples": [
+        {
+          "packet": "packet-03",
+          "row": 10
+        },
+        {
+          "packet": "packet-03",
+          "row": 12
+        },
+        {
+          "packet": "packet-03",
+          "row": 13
+        }
+      ],
+      "finding": "The Philip/James option union and Anthony Doctor-title rows carry an explicit 26 October finite coordinator adoption rather than a claim that a historical witness literally prints every target option or honorific.",
+      "disposition": "That bounded provenance remains the source baseline; this acceptance neither broadens its rights judgment nor asserts literal old-source identity."
+    }
+  ],
+  "conclusion_handling": "Printed short cues, in unitate endings, the Presentation ellipsis, and the Peter Postcommunion's lack of conclusion were preserved in English. No generic long ending was supplied.",
+  "remaining_blockers_in_assigned_linguistic_scope": [],
+  "unperformed_checks": [
+    "No new page-image collation, external source research, rights adjudication, or rendering review."
+  ],
+  "changed_resources": [
+    "review-a/review.json"
+  ],
+  "tracked_or_draft_edits": false
+}

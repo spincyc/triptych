@@ -1,0 +1,183 @@
+{
+  "schema": "triptych-independent-QuiPridie-specific-whole-arrangement-rights-recommendation/v1",
+  "reviewed_utc": "2026-10-30T04:19:59.900489+00:00",
+  "jurisdiction": "United States",
+  "status": "RECOMMEND_ACCEPT_EXACT_QUALIFIED_WHOLE_ARRANGEMENT_BASIS_FOR_ROOT_DECISION_ONLY",
+  "confidence": "moderate; material selection/arrangement counterargument retained",
+  "scope": {
+    "target_key": "prex-eucharistica/qui-pridie",
+    "locus": "Secondary digitally reset2002 OrdoMissae nn89–90, black spoken words only",
+    "word_count": 103,
+    "comparison_word_sequence_sha256_space_joined_with_final_LF": "c32fb97a340d238c92573816fdfa8dbe27a77e64519fd744efb15049f5cc4ba4",
+    "exclusions": "All red rubrics/crosses, pointing/lineation claims, n91Mysterium/people acclamation, authenticated2008 status, English drafting and canonical/public admission."
+  },
+  "inputs": {
+    "private_map": {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/canon-map/private-arrangement-map.json",
+      "sha256": "ce4b638fc4873494c5ff8e610351a3af7dfd0b2641639a082f2ccf4894153efd"
+    },
+    "independently_accepted_source_facts": {
+      "path": ".scratch/postconciliar-ordinary-20261029/second-pass/canon-map-source-review/REVIEW.json",
+      "sha256": "7ace4a4727262d1822e2ff1c0a057f959cd89987bc1a410208e8dc8ba99d87be",
+      "verdict_preserved": "source-facts-verified-only; no prior arrangement/rights/English approval"
+    },
+    "directly_read_Bible_TSV": {
+      "path": "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/verse-text-53-1-corinthians-82f86d50/53-1-corinthians.tsv",
+      "sha256": "82f86d50b5d85bdc8f2e3237be8cd229511f6f77dd7079c11675726544d74f59"
+    }
+  },
+  "complete_expression_read_privately": true,
+  "exact_five_blocks": [
+    {
+      "key": "bread-narrative",
+      "word_count": 43,
+      "word_sequence_sha256": "b8d2e94b2a93e68469a8dbca6e7fe09d3e677367ba47beb3b50ea158708dee05",
+      "target_token_range_0based_halfopen": [
+        0,
+        43
+      ],
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+      "source_locus": "Canon Missae, printed pp.342-343",
+      "source_token_range_0based_halfopen": [
+        0,
+        43
+      ],
+      "verse_token_range_0based_halfopen": null
+    },
+    {
+      "key": "bread-added-scripture",
+      "word_count": 4,
+      "word_sequence_sha256": "08d0fc5823f49e93768df6112eede80718a3c446e60827efe2e881bd32a8c5a1",
+      "target_token_range_0based_halfopen": [
+        43,
+        47
+      ],
+      "source_artifact_id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-53-1-corinthians-82f86d50",
+      "source_locus": "1 Corinthians 11:24",
+      "source_token_range_0based_halfopen": null,
+      "verse_token_range_0based_halfopen": [
+        13,
+        17
+      ]
+    },
+    {
+      "key": "chalice-before-mysterium",
+      "word_count": 41,
+      "word_sequence_sha256": "554e6eb0b0e713254300c998be53bffc7cabbc13a9341597dd8e9f96d505d3f3",
+      "target_token_range_0based_halfopen": [
+        47,
+        88
+      ],
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+      "source_locus": "Canon Missae, printed pp.342-343",
+      "source_token_range_0based_halfopen": [
+        43,
+        84
+      ],
+      "verse_token_range_0based_halfopen": null
+    },
+    {
+      "key": "chalice-after-mysterium",
+      "word_count": 10,
+      "word_sequence_sha256": "558d86ae8e5455cddf0a4be984a334ac776f1125e49fbf508cd0b19451701533",
+      "target_token_range_0based_halfopen": [
+        88,
+        98
+      ],
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+      "source_locus": "Canon Missae, printed pp.342-343",
+      "source_token_range_0based_halfopen": [
+        86,
+        96
+      ],
+      "verse_token_range_0based_halfopen": null
+    },
+    {
+      "key": "modern-memorial-command",
+      "word_count": 5,
+      "word_sequence_sha256": "9bc8f76bcf29aa25c5e0e554091aa40e441f3ab6f0fca1d9eef17222821f1aa0",
+      "target_token_range_0based_halfopen": [
+        98,
+        103
+      ],
+      "source_artifact_id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-53-1-corinthians-82f86d50",
+      "source_locus": "1 Corinthians 11:24",
+      "source_token_range_0based_halfopen": null,
+      "verse_token_range_0based_halfopen": [
+        17,
+        22
+      ]
+    }
+  ],
+  "source_omissions": [
+    {
+      "key": "mysterium-fidei",
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+      "source_token_range_0based_halfopen": [
+        84,
+        86
+      ],
+      "source_pages": [
+        457
+      ],
+      "words": [
+        "mysterium",
+        "fidei"
+      ],
+      "disposition": "Absent from target n90 chalice form; exactly the same two lexical words appear as a separate priest utterance at n91 on target AP351, outside this map target. This is relocation in the wider rite, not a claim of total suppression."
+    },
+    {
+      "key": "old-memorial-command",
+      "source_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+      "source_token_range_0based_halfopen": [
+        96,
+        103
+      ],
+      "source_pages": [
+        457
+      ],
+      "words": [
+        "haec",
+        "quotiescumque",
+        "feceritis",
+        "in",
+        "mei",
+        "memoriam",
+        "facietis"
+      ],
+      "disposition": "Whole separate older command after the chalice form is absent; the target has the different biblical command represented by the final segment. Not a spelling difference or translation-equivalent substitution."
+    }
+  ],
+  "whole_arrangement_assessment": [
+    "The old foundation is one complete two-part RomanCanon institution narrative, already bread then chalice and already followed by a memorial command. The103-word target retains94old words in precisely that narrative order. The affirmative basis does not follow from94/103or the ages of ingredients; that count only identifies the measured expression under examination.",
+    "The first new join inserts the contiguous four-word Pauline clause quod pro vobis tradetur immediately after the existing Hoc est enim corpus meum declaration. It completes that same institution declaration rather than introducing a new petition, event, narrative episode or independently written bridge. It is quoted from the fixed old institution passage, not modern authored connective prose.",
+    "The second join removes mysterium fidei between testamenti and qui pro vobis; both retained sides and their order are already the continuous old chalice formula. The map independently verifies the phrase is present separately at modern n91 outside this exact scope, so no whole-rite deletion or n91 rights/arrangement claim is made.",
+    "The third join replaces the existing seven-word Haec memorial command with the five-word literal Pauline command. The place and memorial function of an instruction after the chalice are already present in the complete old Canon. The target does not create a novel final prayer or new literary progression by placing a memorial command there.",
+    "The primary map obtains the final command contiguously from1Cor11:24. Its placement after the chalice is not that verse’s immediate textual context; that is an actual new cross-source join, not historical identity. The explicitly mapped1Cor11:25alternative independently supplies the command in its chalice context only after omitting quotiescumque bibetis. This alternative is corroborating order evidence, not a silent claim that the five-word command is contiguous in verse25 or permission to omit any biblical words generally.",
+    "Viewed as a whole, the relevant expressive architecture—bread action/declaration, chalice action/declaration and memorial instruction—is inherited from the same old complete narrative, and the inserted/substituted clauses are fixed Pauline institution wording serving those existing statement/command slots. Their joins do not add a new main petition, new episode or substantial independently creative literary architecture. This narrow, constrained scriptural-form revision supports a defensible insufficient-new-originality assessment under policy1(6), with uncertainty explicit.",
+    "This is a new finite whole-arrangement assessment, not the ordinary verbatim/abridged/word-variant route and not an automatic extension of the finite-seven, one-word or Joseph decisions. Policy8.2still bars treating a catalogue of old pieces as sufficient for any modern recomposition. The positive finding here rests on the particular inherited whole narrative and command architecture plus the exact fixed scriptural insertions in those inherited slots."
+  ],
+  "strongest_protectable_arrangement_counterargument": {
+    "argument": "Modern redactors deliberately select two Pauline excerpts, change the bread declaration, relocate Mysterium outside the chalice formula and replace the memorial command. They create a whole wording sequence printed by neither the1922Canon nor a single biblical verse. Even wholly public-domain words may be coordinated/selected into a protected derivative or compilation, and originality has a low threshold. The choices’ central sacramental/theological significance and their use across modern EucharisticPrayers strengthen the argument for deliberate authored redaction; source-token coverage cannot defeat it mechanically.",
+    "response": "The recommendation does not deny those choices or assume public-domain ingredients immunise an arrangement. It distinguishes the exact new expression from the old architecture already governing the entire passage. No retained old clause is moved relative to another; the order of bread/chalice actions is inherited; an existing memorial-command place receives canonical command wording; and the new bread subordinate clause is direct fixed institution text in its corresponding existing declaration. Within this precisely measured expression the choices are sufficiently constrained/formulaic and add sufficiently little independent literary expression to support a qualified1(6)basis. A different factfinder could reach a different originality conclusion, so no court/holder/human-legal approval or universal rule is asserted.",
+    "distinction_from_Libera_map": "The earlier Libera map appends a separate eschatological expectation clause from selectedTitus spans as a new combined closing progression. This QuiPridie map instead keeps the old complete institution narrative and an already present memorial-instruction slot, with scriptural wording at corresponding institution slots. Accepting this case does not decide or reverse the Libera whole-arrangement hold."
+  },
+  "policy_basis": "guidance/liturgical-text-publication-policy.md section1(6), applied with8.2and13 to this exact expression; CopyrightOffice individual-word/derivative/compilation originality guidance previously read. Those sources supply principles, not an adjudication of this liturgical text. Same202.1page2025-03-14data-as-of and circular-overview limitations remain.",
+  "required_root_disposition_and_limits": [
+    "Root must make its own exact finite whole-arrangement decision and record the source dependencies, word/body/context/surface limits in a closed authority before any English or tracked body-source authoring/admission permitted by that decision. This recommendation is not adoption.",
+    "Final candidate must preserve the five exact mapped blocks, all omissions, coenatum/cenatum comparison qualification and actual target boundary. If using the verse25command alternative in a source controller, explicitly bind its two retained ranges and exact omitted words; do not relabel the verse24span or silently change the donor operation.",
+    "No claim that the whole103-word target is printed in any one old source. No authenticated2008, official/approved English, complete modern RomanMissal or broader EucharisticPrayer right is established.",
+    "Final exact pointings/body bytes, speaker/action boundaries and source-controller graph require their own actual source/assembly checks. This comparison is lexical and does not prove rubric/turn/paragraph identity.",
+    "No English has been authored, read, approved or admitted here. Any future fresh English is an independently reviewed project-study rendering under its explicit qualified underlying-Latin basis, not a human historical translation or ICEL payload.",
+    "A different join, modern clause, removed/added word, target scope, edition grade or arrangement requires new review; ordinary old-Bible/Canon source status alone is insufficient."
+  ],
+  "independent_replays": [
+    "Full map and independent source-facts receipts hashed and read. The complete103-word joined private sequence was read and its final-LF hash recomputed.",
+    "All5 target ranges concatenate exactly; each block count and word-sequence hash matches; the exact Bible11:24slices and verse25alternative omission were replayed directly against the held47KBTSV.",
+    "No repeated whole-PDF image audit is claimed; the23pin/complete-source image fact checks remain the cited independent reviewer’s evidence."
+  ],
+  "canonical_files_modified": false,
+  "English_authored": false,
+  "root_adoption_performed": false,
+  "publication_admission_performed": false
+}

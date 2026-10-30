@@ -1,0 +1,21 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-a-en"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Historical human English of the registered Lasance 1945 revision on ordinary numbered pages 773–774,798,800–801,803–804, outside both excluded later lettered inserts. United States nonrenewal of registrations A110108 and A192159 is established in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. No new exclusive right is asserted in these underlying words."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf"
+provenance = "Source owner directly read every selected English word on the hash-verified complete facsimile page images. Independent source review on 2026-10-30 accepted exact TSV SHA-256 7161b9dba1175c18457a3ec5fb756ce989e024c5f97d1ac824c06636d3cb7b3c without corrections after hashing the whole PDF and reading ten freshly rendered pages at 180 dpi. The review verified complete own openings and conclusions, all pre-Sanctus colon boundaries, duplicate Trinity occurrence, Lent identity and alternating source columns. No source words were generated, translated or modernized."
+retrieved = "2026-10-30"
+sha256 = "7161b9dba1175c18457a3ec5fb756ce989e024c5f97d1ac824c06636d3cb7b3c"
+byte_size = 4735
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-ordinary-prefaces-complete-a-en/text.tsv"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-a-facsimile-text-regions"
+transformation = "Transcribe each complete source English Preface body from its own opening through the colon before separately printed Sanctus. Join physical wraps and discretionary line-end hyphens only, retaining intrinsic hyphens, words, capitals and punctuation. Exclude headings, dialogue, applicability rubrics, bell rubric and Sanctus; add source metadata columns. No Cummiskey opening or conclusion is spliced into these bodies."
+notes = "Historical antecedent English, not approved target English or an exact-target collation. Source Nativity English dominions and powers is retained as a historical variant against facing Latin Thronis et Dominationibus. Trinity selects original PDF 772 for printed 773; preceding PDF 771 is duplicate scan context, not a second body. Lent at printed 803 is identified by its own prayer and preceding Preface of Lent heading at printed 802, despite the running Holy Cross title. No calendar appointment or complete execution assembly follows."

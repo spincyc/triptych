@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1879-volume-10.pange-lingua-latin-checked-20261029-15c03ec1"
+edition_id = "edition.prosper-gueranger.the-liturgical-year.english-duffy-1879-volume-10"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The complete selected Latin hymn is present in the independently public-domain Dublin1879 printing. No claim on later Latin contribution or English translation rights is made through this old witness."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/liturgicalyear10gu/liturgicalyear10gu.pdf"
+provenance = "Complete six stanzas directly transcribed after source-page image reading at200and400dpi on2026-10-29; every lexical word and stanza boundary checked. OCR used for location only."
+retrieved = "2026-10-29"
+sha256 = "15c03ec1c4929c2fb54f32f5e4930d80917f90c0ebeb6f9f660cf6b508a50f76"
+byte_size = 818
+indexable = true
+derived_from = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1879-volume-10.pange-lingua-pages-301-302-69fd77df"
+transformation = "Join physical line-wrap hyphenation, including verum and merum across the page break; expand ae/oe ligatures; retain source wording, capitalisation, pointing and six stanza boundaries. Omit footnote marker, unrelated responsory, following versicle and surrounding English prose translation. Source French spaces before punctuation not significant text."
+path = "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1879-volume-10/artifacts/pange-lingua-latin-checked-20261029-15c03ec1/latin.txt"
+encoding = "utf-8"
+notes = "42physical lines including5blank stanza separators. Stanza starts physical1,8,15,22,29,36. Amen belongs to final stanza. Exact bodyLatinSHA25615c03ec1c4929c2fb54f32f5e4930d80917f90c0ebeb6f9f660cf6b508a50f76."

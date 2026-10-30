@@ -1,0 +1,47 @@
+{
+  "schema": "triptych-scratch-postconciliar-cold-source-review/v1",
+  "reviewed_on": "2026-10-29",
+  "scope": "One finite OrdinaryTime25 EntranceAntiphon, independent full source/body review.",
+  "packet": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/ot-entrance/candidate.json",
+  "packet_sha256": "4adf5af201d912dc0077aee8987d8672261a704e32580c3be908ab27a3f42340",
+  "target": {
+    "mass": "ot-25",
+    "form_id": "main",
+    "proper": "Entrance Antiphon",
+    "cycle": "all",
+    "occurrence": 1
+  },
+  "decision": "source-accepted-with-collateral-note-correction",
+  "historical_source": {
+    "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+    "sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+    "pdf_pages": [
+      310
+    ],
+    "printed_pages": [
+      "310"
+    ],
+    "inspection": "Read complete historicalLatin and English antiphon directly from opened full page image. Antiphon ends forever. before explicitPs77:1marker. All source words, pointing and capitalization in candidateEnglish match; ornamentalAM treated typographically as declared.",
+    "original_appointment": "Historical ThursdayThirdWeekLent; no current appointment inferred."
+  },
+  "modern_comparison": {
+    "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+    "sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+    "pdf_pages": [
+      288
+    ],
+    "inspection": "Read complete actual secondary2002 antiphon; entire oldLatin words agree under stated accent, punctuation, capitalization and display differences.",
+    "qualification": "Secondary digital2002 reading only; not authenticated printed2002 or2008wording."
+  },
+  "english_sha256": "5b168c961ec155c57ff09ecfacf3e9a35f19bb5d711954ae481ff9ca82102d2b",
+  "prior_refusal": "Prior completeCummiskeyIntroit-with-Psalm/Gloria scope objection remains valid. This new explicitly bounded sourceantiphon is independently transcribed; it does not trim the prior held payload silently.",
+  "collateral_correction": {
+    "field": "negative_control",
+    "observed_source": "Cummiskey1861AP454Latin",
+    "correction": "The page prints dixit Dominus, not dixit Domimus. Preserve substantive historicaldixit versus moderndicit difference; correct only the misspelling ofDominus in note."
+  },
+  "remaining_gates": [
+    "Parent records literal source and exact recipientpublication joins, source validation, projection and integrated checks."
+  ],
+  "tracked_changes": []
+}

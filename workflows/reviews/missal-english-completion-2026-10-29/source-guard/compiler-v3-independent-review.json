@@ -1,0 +1,74 @@
+{
+  "canonical_mutations": "This new text-free review JSON only; no source, fixture, runtime helper or existing compiler/support edits.",
+  "controls": {
+    "failed": 0,
+    "independently_executed": true,
+    "log": ".scratch/checkpoint-independent-review-20261030/compiler-v3-independent-controls.log",
+    "log_sha256": "349bda72eb539386b315fb3a4adf607dd60159658d518086abec7361e3cc1ac1",
+    "negative_controls": [
+      "All25 body-tamper production refusals and oracle refusals.",
+      "All25 basis, surface and publication-status changes.",
+      "All25 forced actual-production refusals.",
+      "Closed membership, retargeted proof and artifact/payload drift.",
+      "Missing, altered or undeclared exact declaration.",
+      "Prior positive/refusal/domain changes and wrong-language or empty admissions.",
+      "Shared registry, executable/unrelated extras, symlinked sources and exact declared-delta changes."
+    ],
+    "passed": 23,
+    "scratch_isolation": "Only the test module scratch destination was redirected into the independent review scratch directory; subject bytes and assertions were unchanged.",
+    "tests": 23
+  },
+  "decision": "accept-pending-candidate-compiler-only",
+  "findings": [],
+  "immutable_inputs": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/compile_successor_v2.py",
+      "sha256": "4907f5295301cfe7c614e44ee30d80984f98d2308a2b5de5e17ed4bac1724b93"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/support.py",
+      "sha256": "3622fc1bcbf6e21e09e65be3cff50786930564de6be8640edd72b5be279d95ae"
+    },
+    {
+      "path": "tools/tests/_source_batch_guards.py",
+      "sha256": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1"
+    }
+  ],
+  "independent": true,
+  "limits": [
+    "This accepts only the exact compiler/support/declaration for pending preparation. No pending source epoch, fixture, source text, source rights, release or deployment is accepted or installed.",
+    "The earlier pre-corpus inspection is not authority for a later changed epoch. A fresh final declaration/delta and actual pending postimages require independent review before root adoption.",
+    "No human acceptance, full English completion, annual textual completeness or liturgical approval is claimed."
+  ],
+  "review_kind": "independent-AI-code-and-control-review",
+  "reviewed_on": "2026-10-30",
+  "schema": "triptych-independent-bounded-compiler-review/v1",
+  "scope": [
+    "V3 adds a separate exact direct-source proof class; it neither reinterprets the legacy projection class nor grants publication permission.",
+    "The external declaration fixes25 complete proof dictionaries, target/body hashes, production-decision projections and exactly3 primary artifact records/payloads. Every declared dependency must be explicitly source-epoch pinned and byte-exact.",
+    "All currently permitted nonlegacy records must equal the closed declaration target set. Missing, additional, retargeted, changed-body or changed-proof records refuse.",
+    "Actual publication_records validation and decision_for results are required for all25 targets on all6 supported surfaces. A declared oracle cannot override a production refusal.",
+    "Legacy projection/oracle logic is unchanged and receives only the legacy subset. Historical maps and raw replay complements retain their original meaning.",
+    "The complete parent source domain remains5615 paths; all12 historical fields and17 original inverse Git objects are checked. The strict runtime helper is byte-exact.",
+    "Prior positive dictionaries remain exact except the separately fixed and code-pinned Palm correction. Refusals can change only through their exact body-bearing admissions.",
+    "Input scope remains bounded to retained parent pins, changed/new sources and explicitly declared same-task JSON authorities; shared-registry exclusions, symlink/path refusals, exact source delta and end-of-derive drift checks remain active."
+  ],
+  "subjects": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/compile_successor_v3.py",
+      "sha256": "29d0add9b330248b4047881310175614d91adc82688bfc695451318696c0865b"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/support_v3.py",
+      "sha256": "6fd8b3552071f4ef479bbdc6c4d693331b8ceb91e48dcb016e91033fd6ba03fc"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/test_compile_successor_v3.py",
+      "sha256": "0be297e97e011db8b0ef80f39c8c452a61dc02aa76d71b663d60cb8af10fae40"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/direct-pd-latin-proof-declaration-v1.json",
+      "sha256": "70716afc9012297f8600c837b129332a1b924b9520b8861d9d6ad33ae4f47752"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "schema": "triptych-source-metadata-correction/v1",
+  "recorded_on": "2026-10-29",
+  "finding": "New version-2 artifact_page_ranges require a controlling artifact with page_count; the existing exact CMAA artifact is version1 and declares no page_count.",
+  "correction": "Use the established version1 text-free passage format; complete literal page/unit locators, artifact identity/hash, dates, inspected wording and all other metadata remain exact. No old artifact or rights record changed.",
+  "initial_failed_check": "tools/check-calendar-masses --calendar roman-1962",
+  "changes": [
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/assumption-chants-20261029-assumptione-beatae-mariae-virginis-alleluia.toml",
+      "before_sha256": "5dd13e6775f1bb17872b88eca1cd1c92698f55df42363cf338b579ecbb95672a",
+      "after_sha256": "4b0352ba29571654cf54d5acca30c7c392fdb45280851489fb358e2ed0bbf8f3",
+      "removed_artifact_page_ranges": [
+        [
+          709,
+          709
+        ]
+      ],
+      "unchanged_literal_locator": "1962 Vatican typical edition printedp.628, artifactpage709, marginalunit3382"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/assumption-chants-20261029-vigil-assumption-communion.toml",
+      "before_sha256": "6b9bc919b02f893e2c38401d70963d4bc8ddc30bb53a25629c8c18aa750671b4",
+      "after_sha256": "5b73729cd7e55c31ce942f104564b64dc6605d0a383352a7dc8ff20c37d2ef73",
+      "removed_artifact_page_ranges": [
+        [
+          707,
+          707
+        ]
+      ],
+      "unchanged_literal_locator": "1962 Vatican typical edition printedp.626, artifactpage707, marginalunit3374"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/assumption-chants-20261029-vigil-assumption-gradual.toml",
+      "before_sha256": "f9eba771c14165e28530ab3e5405a37bc1585aab04294b81146efeedb49d8c52",
+      "after_sha256": "8bc47f5fec1502138505bf7f5c526f669a69413ae3f4d2ced129b0be0e310d68",
+      "removed_artifact_page_ranges": [
+        [
+          706,
+          706
+        ]
+      ],
+      "unchanged_literal_locator": "1962 Vatican typical edition printedp.625, artifactpage706, marginalunit3369"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/assumption-chants-20261029-vigil-assumption-offertory.toml",
+      "before_sha256": "b230473966c5c407576b92853e14604fc81bfd3d55862ae6f024cd5a6d6c03c5",
+      "after_sha256": "138a7de7afdce33b9b2fb79854f18e07949899cb96bf5ad5e5bf37267f0240b6",
+      "removed_artifact_page_ranges": [
+        [
+          706,
+          706
+        ]
+      ],
+      "unchanged_literal_locator": "1962 Vatican typical edition printedp.625, artifactpage706, marginalunit3371"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/dolors-chants-20261029-friday-offertory.toml",
+      "before_sha256": "354d340d1920d7280b8bd06a688f2a51076005a63513c00a72c34b5da92c30c2",
+      "after_sha256": "ab5d2639b073aca6248da2289dce21550018ee04c43bcddfe3a51dc0fe7d03b6",
+      "removed_artifact_page_ranges": [
+        [
+          582,
+          582
+        ]
+      ],
+      "unchanged_literal_locator": "Missale Romanum1962, printed501, originalPDF582, unit2366, left column"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/dolors-chants-20261029-september-alleluia.toml",
+      "before_sha256": "b925dc4a92ca71722cabcd8b875dc1e21f18024f15685aabc60daebddd15a072",
+      "after_sha256": "dda71da266d2720e07494387800c0a8bc91f84f172e0ef13c695fbb588734994",
+      "removed_artifact_page_ranges": [
+        [
+          737,
+          737
+        ]
+      ],
+      "unchanged_literal_locator": "Missale Romanum1962, printed656, originalPDF737, unit3621, right column"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/dolors-chants-20261029-september-communion.toml",
+      "before_sha256": "3f14916a9bcaa4ffee4c6e690643549ad6bb006399b4eabaf7a032645a9b104d",
+      "after_sha256": "652f623db5b29d39bcf00f6c21387da3b55fd7a5150a235aed1506723aa9c31c",
+      "removed_artifact_page_ranges": [
+        [
+          739,
+          739
+        ]
+      ],
+      "unchanged_literal_locator": "Missale Romanum1962, printed658, originalPDF739, unit3629, left column"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/dolors-chants-20261029-september-gradual.toml",
+      "before_sha256": "6e7a90fcf53ae3ca8b9aff5396b7f711eaa461f56c18b1d6695e5eac122696fc",
+      "after_sha256": "1b65c89984efc5e03b8bb9464ece15515e9d3de0c1fa024f4b01ce67c401cc7e",
+      "removed_artifact_page_ranges": [
+        [
+          737,
+          737
+        ]
+      ],
+      "unchanged_literal_locator": "Missale Romanum1962, printed656, originalPDF737, unit3620, right column"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/dolors-chants-20261029-september-offertory.toml",
+      "before_sha256": "9f2b46014173a96ab36e5a0389ffec116b00aeb4c5483b43032446aad69f3171",
+      "after_sha256": "6119cbfb133b32ab3975347c4f946ceb397228116731316c912cff73fb2f4286",
+      "removed_artifact_page_ranges": [
+        [
+          739,
+          739
+        ]
+      ],
+      "unchanged_literal_locator": "Missale Romanum1962, printed658, originalPDF739, unit3626, left column"
+    }
+  ]
+}

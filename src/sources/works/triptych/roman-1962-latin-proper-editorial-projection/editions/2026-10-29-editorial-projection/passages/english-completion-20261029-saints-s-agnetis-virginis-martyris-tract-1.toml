@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-10-29"
+id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-s-agnetis-virginis-martyris-tract-1"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29"
+artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-chant-latin-10b19922"
+artifact_sha256 = "10b19922a2fc07cd74be90ae8832d093e705247b93491fa155bf9a1090635e82"
+locus = "s-agnetis-virginis-martyris / Tract occurrence 1; project physical lines 9-9; Tours Mame 1922, artifact pages 911; printed 33*; 1962 Vatican target, artifact p. 531, printed p. 450, unit 1986"
+physical_line_ranges = [[9, 9]]
+context = "Complete target-bound Latin chant, independently source-qualified; original study English remains separately identified and unapproved."
+notes = "Exact canonical UTF-8 body including terminal LF SHA-256 a64d9dbe246d814837f4846854a35330e28b67aff941db93e800252afe4ce4de. Declared transformations: [\"Join printed line wraps and discard solely line-end hyphens; preserve every chant word and printed ending/cue.\", \"Remove stress accents; expand ae/oe ligatures as ae/oe.\", \"Canonical punctuation/case follow the 1962 target; normalize consonantal i/j to the declared calendar orthography (j retained).\", \"Exclude printed nonrecited citation labels and heading names from canonicalLatin/studyEnglish; retain the complete quoted Psalm words and explicit Gloria Patri cue.\"]. Exact differences: [\"The complete Tract agrees in all words; the historical proper refers to its full printed Common body rather than reprinting it.\", \"Mame sponsa/cujus/justitiam correspond to target Sponsa/cuius/iustitiam; the differences are case and consonantal i/j only.\", \"Omit nonrecited citation apparatus Ps. 44, 8 and Ibid., 5 (source prints terminal full stops) from canonicalLatin/studyEnglish, retaining both verse markers and every Psalm word.\", \"Spaces before colons and other pointing typography differ; no textual addition or omission.\"]"

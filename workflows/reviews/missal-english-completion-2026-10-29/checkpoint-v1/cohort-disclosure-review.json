@@ -1,0 +1,61 @@
+{
+  "recorded_utc": "2026-10-30T10:19:16.757865+00:00",
+  "status": "PASS for the supplied 1666-path cohort snapshot; no disclosure blocker identified",
+  "scope": "Read-only outgoing-content review, applying existing source/publication rights settlements; not new legal or fidelity approval and not final post-commit range approval.",
+  "snapshot": "snapshot.json",
+  "binary_result": {
+    "count": 53,
+    "bytes": 40010309,
+    "exact_hash_size_path_manifest_matches": 53,
+    "recorded_public_domain_bases": 53,
+    "source_editions": 17,
+    "modern_restricted_pdf_payloads": 0
+  },
+  "all_new_artifacts_result": {
+    "registered_manifests": 155,
+    "tracked_exact_hash_and_size_matches": 147,
+    "tracked_public_domain": 103,
+    "tracked_project_created": 44,
+    "remote_metadata_only_no_payload_path": 8,
+    "remote_unresolved_metadata_only": 4
+  },
+  "review_retention_result": {
+    "task_review_paths": 199,
+    "parsed_json": 181,
+    "json_parse_errors": 0,
+    "private_host_session_credential_fields": 0,
+    "encoded_pdf_image_payload_candidates": 0,
+    "checkpoint24_rehashed": 24,
+    "canonical_seal_rehashed": true,
+    "original_private_common_candidate_absent": true,
+    "common_summary_has_distinct_identity": true
+  },
+  "modern_comparison_passage_result": {
+    "total": 104,
+    "roman1962": 74,
+    "secondary2002": 27,
+    "official2008": 3,
+    "body_payload_fields": 0,
+    "scope": "Identified source/target edition, hash/locus, bounded comparison, source facts and qualifications only."
+  },
+  "common_settlement_result": {
+    "disposition_sha256": "f803c560381406ded4a6ef839572a5d26e60156309fcea11da7696c211e186d4",
+    "existing_grant_preserved": true,
+    "old_source_words": 67,
+    "retained_proof_words": 73,
+    "retained_proof_chars": 557,
+    "authorized_replay_exact": true,
+    "old_artifact_study_artifact_latin_and_english_hashes_match": true,
+    "new_modern_whole_body_authority_created": false
+  },
+  "private_scan_result": {
+    "actual_hits": 0,
+    "disposed_false_positive": "Existing example.invalid/home/records HTML test fixture in tools/tests/test_public_alpha.py, also present at HEAD; no new machine reference."
+  },
+  "blockers": [],
+  "pending_outside_this_snapshot": [
+    "Root active guard/compiler/test/audit additions and later generated/integration changes require the planned final committed-range disclosure check.",
+    "Existing prepublished reachable-history qualifications remain unchanged; this review does not clear all historical repository objects."
+  ],
+  "written_resources": "Only .scratch/main-reconcile-review-20261030/cohort-disclosure/; no source/index/ref changes."
+}

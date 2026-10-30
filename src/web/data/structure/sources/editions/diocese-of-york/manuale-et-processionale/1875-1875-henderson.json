@@ -1,0 +1,124 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 301,
+   "edition_owned": true,
+   "id": "artifact.diocese-of-york.manuale-et-processionale.1875-henderson.ave-rex-latin-checked-20261029",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-10-29",
+   "rights": "public-domain",
+   "rights_basis": "United States: this identified historical edition was first published in 1875, before 1931, and its publication term has expired. The faithful mechanical page extraction adds no new authorship. This checked transcription contains only the complete Ave rex antiphon from historical printed page 151, excludes the other page contents and modern Google wrapper matter, and asserts no rights over the complete delivery wrapper. Historical source wording remains public domain and is excluded from Triptych project licensing.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "facsimile-pdf",
+   "byte_size": 57583,
+   "edition_owned": true,
+   "id": "artifact.diocese-of-york.manuale-et-processionale.1875-henderson.ave-rex-page-151-facsimile",
+   "media_type": "application/pdf",
+   "notes": null,
+   "page_count": 1,
+   "retrieved": "2026-10-29",
+   "rights": "public-domain",
+   "rights_basis": "United States: this identified historical edition was first published in 1875, before 1931, and its publication term has expired. The faithful mechanical page extraction adds no new authorship. The derivative retains one historical page, excluding modern Google wrapper matter. Historical source wording remains public domain and is excluded from Triptych project licensing.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "facsimile-pdf",
+   "byte_size": 20507794,
+   "edition_owned": true,
+   "id": "artifact.diocese-of-york.manuale-et-processionale.1875-henderson.ia-complete-facsimile",
+   "media_type": "application/pdf",
+   "page_count": 479,
+   "retrieved": "2026-10-29",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/manualeetproces01minsgoog/manualeetproces01minsgoog.pdf",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1875",
+  "editors": [],
+  "id": "edition.diocese-of-york.manuale-et-processionale.1875-henderson",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Published for the Surtees Society by Andrews and Co., Durham; Whittaker and Co., London; Bernard Quaritch, London; Blackwood and Sons, Edinburgh, 1875.",
+  "title": "Manuale et processionale ad usum insignis ecclesiae Eboracensis, edited by William George Henderson",
+  "translators": [],
+  "year": 1875
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.diocese-of-york.manuale-et-processionale.1875-henderson.ave-rex-latin-checked-20261029",
+   "artifact_type": "checked-transcription",
+   "context": "The source paragraph alone, with declared typographical joining and ligature expansion.",
+   "id": "passage.diocese-of-york.manuale-et-processionale.1875-henderson.ave-rex-latin-checked-20261029",
+   "locus": "Physical line 1; complete Ave rex antiphon, York 1875 printed 151/full PDF 186.",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "This source artifact retains historical expectabant and Osanna rather than the target spellings. The independent target projection must record these spelling transformations explicitly.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "United States: this identified historical edition was first published in 1875, before 1931, and its publication term has expired. The faithful mechanical page extraction adds no new authorship. This checked transcription contains only the complete Ave rex antiphon from historical printed page 151, excludes the other page contents and modern Google wrapper matter, and asserts no rights over the complete delivery wrapper. Historical source wording remains public domain and is excluded from Triptych project licensing.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.diocese-of-york.manuale-et-processionale.1875-henderson.ave-rex-latin-checked-20261029.json",
+   "verified_on": "2026-10-29",
+   "words": 45
+  },
+  {
+   "artifact_id": "artifact.diocese-of-york.manuale-et-processionale.1875-henderson.ave-rex-page-151-facsimile",
+   "artifact_type": "facsimile-pdf",
+   "id": "passage.diocese-of-york.manuale-et-processionale.1875-henderson.ave-rex-page-151-checked-20261029",
+   "locus": "Printed151; whole Ave rex paragraph. Full parent PDF 186; retained one-page derivative PDF 1.",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-29",
+   "withheld": "no-transcription"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "York Manual and Processional",
+   "Manuale et processionale Eboracense"
+  ],
+  "author": "Cathedral Church of York",
+  "category": "ritual-and-processional",
+  "description": "Historical York ritual and processional collection. The identified 1875 printing also contains separately labelled comparative Sarum material; the admitted Ave rex source is the York Palm Sunday procession at printed 151, not its Sarum appendix.",
+  "id": "work.diocese-of-york.manuale-et-processionale",
+  "languages": [
+   "la"
+  ],
+  "title": "Manuale et processionale ad usum insignis ecclesiae Eboracensis"
+ }
+}

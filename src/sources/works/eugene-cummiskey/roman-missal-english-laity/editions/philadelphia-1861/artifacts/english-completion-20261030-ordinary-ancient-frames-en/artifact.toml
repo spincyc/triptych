@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-ancient-frames-en"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The underlying 1861 Philadelphia printing is public domain in the United States. This finite source-fragment derivative retains the exact words and punctuation of the separately checked registered transcription; the existing public-domain basis covers these historical words. No modern target wording or apparatus is introduced."
+rights_jurisdiction = "United States"
+retrieved = "2026-10-30"
+sha256 = "83ebd927f2999d55921a871bfecd79eee13fab46718279ef05d1a2b16f1c927d"
+byte_size = 807
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/english-completion-20261030-ordinary-ancient-frames-en/text.tsv"
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20"
+provenance = "Derived only from the exact retained 1861 transcription artifact. Its earlier source-image checks are inherited as evidence, not re-described as a fresh inspection of the 1861 scan."
+transformation = "Select parent rows seq3,3201,3202, from exact parent artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en-turn-divided-complete-2026-10-20, SHA256 c9d7cdfcbb57437a6896b64358749771a56db244d3a1781a241d773f4428db8f. Split seq3 at its last ASCII space, producing two text cells whose one-space join exactly recovers the parent cell; copy seq3201 and3202 whole. Preserve every character of the selected text, including initial IN, historical spelling, printed P./R. and punctuation. Assign finite fragment keys and source_seq reference columns; no historical turn speaker is reassigned. The original parent and its source notes remain unchanged."
+indexable = true
+encoding = "utf-8"
+notes = "Four rows: source Sign of the Cross prayer, its original terminal Amen, one complete P. greeting, one complete R. response. Independent secondary2002 target evidence supplies the new placement and target speaker mapping; this historical source does not supply a postconciliar or approved English witness."

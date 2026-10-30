@@ -1,0 +1,440 @@
+{
+  "schema": "triptych-sanctoral-target-schema-transport-correction/v1",
+  "reason": "Actual registered1962CMAA controller is schema1 with no page_count. Preserve every literal artifact/PDF/printed/unit locator and all wording; use schema1 target passage records without redundant artifact_page_ranges.",
+  "controller": {
+    "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+    "record_sha256": "9e2440cfcf8fd3a0bc86dfc57bd9871992b9bca4fd5baced4ce07c7c06c48fbf",
+    "id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+    "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+    "schema": 1,
+    "page_count_present": false
+  },
+  "source_target_passages": [
+    {
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.bosco-three-orations-target-20261029",
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/bosco-three-orations-target-20261029.toml",
+      "before_sha256": "0bf3c946bd9dae441d69a75f24c5bacc74b9dff8f57a3b976f5752ad7be2109e",
+      "after_sha256": "aff60ac728844c8622a425415bc6ea3d3174a610e91502393c68c8fe0c7396f6",
+      "before_record": {
+        "schema": 2,
+        "record_type": "passage",
+        "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.bosco-three-orations-target-20261029",
+        "edition_id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
+        "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+        "locus": "Printed pp.461-462, units2072,2080,2082; artifact pages542-543, right columns",
+        "artifact_page_ranges": [
+          [
+            542,
+            543
+          ]
+        ],
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "verified_on": "2026-10-29",
+        "context": "Text-free target comparison of the three own orations for31JanuarySaintJohnBosco. Complete page images read at200and400dpi, including exact short and long conclusion stops.",
+        "notes": "Compared against ACS52,24February1930,pp849-850. Collect changes factual Beatum to sanctum and adolescentium to adulescentium; Postcommunion changes Beato to sancto and omits tuo after Confessore; Secret petition agrees word for word. Pointing, capitals, stress accents and conclusion lengths differ separately. This passage establishes readings only, not modern-edition permission."
+      },
+      "after_record": {
+        "schema": 1,
+        "record_type": "passage",
+        "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.bosco-three-orations-target-20261029",
+        "edition_id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
+        "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+        "locus": "Printed pp.461-462, units2072,2080,2082; artifact pages542-543, right columns",
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "verified_on": "2026-10-29",
+        "context": "Text-free target comparison of the three own orations for31JanuarySaintJohnBosco. Complete page images read at200and400dpi, including exact short and long conclusion stops.",
+        "notes": "Compared against ACS52,24February1930,pp849-850. Collect changes factual Beatum to sanctum and adolescentium to adulescentium; Postcommunion changes Beato to sancto and omits tuo after Confessore; Secret petition agrees word for word. Pointing, capitals, stress accents and conclusion lengths differ separately. This passage establishes readings only, not modern-edition permission."
+      },
+      "changed_fields": [
+        "schema",
+        "artifact_page_ranges"
+      ]
+    },
+    {
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-s-clementis-i-papae-martyris--collect--1",
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-s-clementis-i-papae-martyris--collect--1.toml",
+      "before_sha256": "21dbc3e020b538d3c5ddd2545ccac009e21906336ba931e1210242d9ff78d122",
+      "after_sha256": "e9ec9b3acedf9ef52adb949a072f4cb4020439f46d859777abf43db20b25fe42",
+      "before_record": {
+        "schema": 2,
+        "record_type": "passage",
+        "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-s-clementis-i-papae-martyris--collect--1",
+        "edition_id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
+        "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+        "locus": "1962 target artifact pages [805], printed \"724\", unit 4145; s-clementis-i-papae-martyris Collect",
+        "artifact_page_ranges": [
+          [
+            805,
+            805
+          ]
+        ],
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "verified_on": "2026-10-29",
+        "context": "Text-free target comparison controlled by the exact page-image source and the independently accepted source review. This passage grants no permission.",
+        "notes": "Whole actual target body including actual conclusion stop is bound by canonical Latin SHA-256 d57235904e4e32436dfda5e58d4ac5c98822e784725000a41d75bbc1a24d4aa8. Independent source/translation review workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json method english-completion-20261029-finite-latin-v1. Exact source/target contribution: [\"bone→aeterne\", \"beatos apostolos→named single SupremePontiff and Martyr\", \"quos→quem and pastores→pastorem agreement; remove Filii tui vicarios\", \"Expand literal per. cue only to actual target Per Dominum.\"]"
+      },
+      "after_record": {
+        "schema": 1,
+        "record_type": "passage",
+        "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-s-clementis-i-papae-martyris--collect--1",
+        "edition_id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
+        "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+        "locus": "1962 target artifact pages [805], printed \"724\", unit 4145; s-clementis-i-papae-martyris Collect",
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "verified_on": "2026-10-29",
+        "context": "Text-free target comparison controlled by the exact page-image source and the independently accepted source review. This passage grants no permission.",
+        "notes": "Whole actual target body including actual conclusion stop is bound by canonical Latin SHA-256 d57235904e4e32436dfda5e58d4ac5c98822e784725000a41d75bbc1a24d4aa8. Independent source/translation review workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json method english-completion-20261029-finite-latin-v1. Exact source/target contribution: [\"bone→aeterne\", \"beatos apostolos→named single SupremePontiff and Martyr\", \"quos→quem and pastores→pastorem agreement; remove Filii tui vicarios\", \"Expand literal per. cue only to actual target Per Dominum.\"]"
+      },
+      "changed_fields": [
+        "schema",
+        "artifact_page_ranges"
+      ]
+    },
+    {
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-comm-s-zephyrini-papae-martyris--collect--1",
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-comm-s-zephyrini-papae-martyris--collect--1.toml",
+      "before_sha256": "92d64bb8956f659f77b912b688e0b40ebbde8e2d85f6ca9065f86ac797fef329",
+      "after_sha256": "53488bae36aba1bf01148f29f66f4d22e5c637a8630659f48479bb8d1c7df7ba",
+      "before_record": {
+        "schema": 2,
+        "record_type": "passage",
+        "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-comm-s-zephyrini-papae-martyris--collect--1",
+        "edition_id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
+        "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+        "locus": "1962 target artifact pages [719], printed \"638\", unit 3465; comm-s-zephyrini-papae-martyris Collect",
+        "artifact_page_ranges": [
+          [
+            719,
+            719
+          ]
+        ],
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "verified_on": "2026-10-29",
+        "context": "Text-free target comparison controlled by the exact page-image source and the independently accepted source review. This passage grants no permission.",
+        "notes": "Whole actual target body including actual conclusion stop is bound by canonical Latin SHA-256 f8732dcb77e4139160ed879dc19947b26595c5d3541442c3f9ec67cc5bf774ad. Independent source/translation review workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json method english-completion-20261029-finite-latin-v1. Exact source/target contribution: [\"bone→aeterne\", \"beatos apostolos→named single SupremePontiff and Martyr\", \"quos→quem and pastores→pastorem agreement; remove Filii tui vicarios\", \"Expand literal per. cue only to actual target Per Dominum.\"]"
+      },
+      "after_record": {
+        "schema": 1,
+        "record_type": "passage",
+        "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-comm-s-zephyrini-papae-martyris--collect--1",
+        "edition_id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
+        "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+        "locus": "1962 target artifact pages [719], printed \"638\", unit 3465; comm-s-zephyrini-papae-martyris Collect",
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "verified_on": "2026-10-29",
+        "context": "Text-free target comparison controlled by the exact page-image source and the independently accepted source review. This passage grants no permission.",
+        "notes": "Whole actual target body including actual conclusion stop is bound by canonical Latin SHA-256 f8732dcb77e4139160ed879dc19947b26595c5d3541442c3f9ec67cc5bf774ad. Independent source/translation review workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json method english-completion-20261029-finite-latin-v1. Exact source/target contribution: [\"bone→aeterne\", \"beatos apostolos→named single SupremePontiff and Martyr\", \"quos→quem and pastores→pastorem agreement; remove Filii tui vicarios\", \"Expand literal per. cue only to actual target Per Dominum.\"]"
+      },
+      "changed_fields": [
+        "schema",
+        "artifact_page_ranges"
+      ]
+    },
+    {
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-comm-s-silvestri-i-papae-confessoris--collect--1",
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-comm-s-silvestri-i-papae-confessoris--collect--1.toml",
+      "before_sha256": "85c7e8ba8b4fe6187004b36dd109d99f7b94640f3bed2adc26960421bca6857c",
+      "after_sha256": "17cf2e24755f9c8435edf0549d475fbbf7ff0f4aac68d1e9c923bbb5d0bc575e",
+      "before_record": {
+        "schema": 2,
+        "record_type": "passage",
+        "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-comm-s-silvestri-i-papae-confessoris--collect--1",
+        "edition_id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
+        "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+        "locus": "1962 target artifact pages [112], printed \"31\", unit 220; comm-s-silvestri-i-papae-confessoris Collect",
+        "artifact_page_ranges": [
+          [
+            112,
+            112
+          ]
+        ],
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "verified_on": "2026-10-29",
+        "context": "Text-free target comparison controlled by the exact page-image source and the independently accepted source review. This passage grants no permission.",
+        "notes": "Whole actual target body including actual conclusion stop is bound by canonical Latin SHA-256 61fa6b8ea693b00660f9d11521ac5f6330018be9982109845a252f53cd056f53. Independent source/translation review workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json method english-completion-20261029-finite-latin-v1. Exact source/target contribution: [\"bone→aeterne\", \"beatos apostolos→named single SupremePontiff\", \"quos→quem and pastores→pastorem agreement; remove Filii tui vicarios\", \"Expand literal per. cue only to actual target Per Dominum nostrum.\"]"
+      },
+      "after_record": {
+        "schema": 1,
+        "record_type": "passage",
+        "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-comm-s-silvestri-i-papae-confessoris--collect--1",
+        "edition_id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
+        "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+        "locus": "1962 target artifact pages [112], printed \"31\", unit 220; comm-s-silvestri-i-papae-confessoris Collect",
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "verified_on": "2026-10-29",
+        "context": "Text-free target comparison controlled by the exact page-image source and the independently accepted source review. This passage grants no permission.",
+        "notes": "Whole actual target body including actual conclusion stop is bound by canonical Latin SHA-256 61fa6b8ea693b00660f9d11521ac5f6330018be9982109845a252f53cd056f53. Independent source/translation review workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json method english-completion-20261029-finite-latin-v1. Exact source/target contribution: [\"bone→aeterne\", \"beatos apostolos→named single SupremePontiff\", \"quos→quem and pastores→pastorem agreement; remove Filii tui vicarios\", \"Expand literal per. cue only to actual target Per Dominum nostrum.\"]"
+      },
+      "changed_fields": [
+        "schema",
+        "artifact_page_ranges"
+      ]
+    },
+    {
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-s-clementis-i-papae-martyris--secret--1",
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-s-clementis-i-papae-martyris--secret--1.toml",
+      "before_sha256": "9f1e458f5c36aa60d838a435dfe438af654766c95f11f5b07943bd147128a706",
+      "after_sha256": "0ad00ae23895d5e89964a40c435ab3b4e444227a827694365f31b758a626532a",
+      "before_record": {
+        "schema": 2,
+        "record_type": "passage",
+        "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-s-clementis-i-papae-martyris--secret--1",
+        "edition_id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
+        "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+        "locus": "1962 target artifact pages [806], printed \"725\", unit 4152; s-clementis-i-papae-martyris Secret",
+        "artifact_page_ranges": [
+          [
+            806,
+            806
+          ]
+        ],
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "verified_on": "2026-10-29",
+        "context": "Text-free target comparison controlled by the exact page-image source and the independently accepted source review. This passage grants no permission.",
+        "notes": "Whole actual target body including actual conclusion stop is bound by canonical Latin SHA-256 85e15b6f86d5c6f8c122d9c2c70203102ad0659a6006d502467d9e1afb0628de. Independent source/translation review workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json method english-completion-20261029-finite-latin-v1. Exact source/target contribution: [\"Prepend conventional sacrificial adjunct Oblatis muneribus and supplication quaesumus to the same continuous old prayer.\", \"Move Domine from older Ecclesiam tuam Domine benignus inlumina to target quaesumus, Domine, Ecclesiam tuam benignus illumina. The normalized older transcription expands the printed Dne abbreviation to Domine; this is an explicitly recorded source transformation.\", \"Expand old conventional per. cue only to the actual complete Clement prefix Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate. The literal contiguous long formula is independently controlled by Mame1922 PDF368; no words beyond target in unitate are supplied.\", \"Inlumina/illumina spelling, stress accents, case, pointing and layout differ.\"]"
+      },
+      "after_record": {
+        "schema": 1,
+        "record_type": "passage",
+        "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-s-clementis-i-papae-martyris--secret--1",
+        "edition_id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
+        "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+        "locus": "1962 target artifact pages [806], printed \"725\", unit 4152; s-clementis-i-papae-martyris Secret",
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "verified_on": "2026-10-29",
+        "context": "Text-free target comparison controlled by the exact page-image source and the independently accepted source review. This passage grants no permission.",
+        "notes": "Whole actual target body including actual conclusion stop is bound by canonical Latin SHA-256 85e15b6f86d5c6f8c122d9c2c70203102ad0659a6006d502467d9e1afb0628de. Independent source/translation review workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json method english-completion-20261029-finite-latin-v1. Exact source/target contribution: [\"Prepend conventional sacrificial adjunct Oblatis muneribus and supplication quaesumus to the same continuous old prayer.\", \"Move Domine from older Ecclesiam tuam Domine benignus inlumina to target quaesumus, Domine, Ecclesiam tuam benignus illumina. The normalized older transcription expands the printed Dne abbreviation to Domine; this is an explicitly recorded source transformation.\", \"Expand old conventional per. cue only to the actual complete Clement prefix Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate. The literal contiguous long formula is independently controlled by Mame1922 PDF368; no words beyond target in unitate are supplied.\", \"Inlumina/illumina spelling, stress accents, case, pointing and layout differ.\"]"
+      },
+      "changed_fields": [
+        "schema",
+        "artifact_page_ranges"
+      ]
+    },
+    {
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-s-clementis-i-papae-martyris--postcommunion--1",
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-s-clementis-i-papae-martyris--postcommunion--1.toml",
+      "before_sha256": "00f0f1dffb267fe87bc72c81e282ce809f8409014bafd105e91907ea46062a9f",
+      "after_sha256": "b2be333e52b57362bb79df840428dc6e37fb404a098ede22076b2da2ee1d8491",
+      "before_record": {
+        "schema": 2,
+        "record_type": "passage",
+        "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-s-clementis-i-papae-martyris--postcommunion--1",
+        "edition_id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
+        "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+        "locus": "1962 target artifact pages [806], printed \"725\", unit 4155; s-clementis-i-papae-martyris Postcommunion",
+        "artifact_page_ranges": [
+          [
+            806,
+            806
+          ]
+        ],
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "verified_on": "2026-10-29",
+        "context": "Text-free target comparison controlled by the exact page-image source and the independently accepted source review. This passage grants no permission.",
+        "notes": "Whole actual target body including actual conclusion stop is bound by canonical Latin SHA-256 bfd0be06cd5ff6e036d7a9e22ee73a2bec99a413c24cc12baefc939a3db52bce. Independent source/translation review workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json method english-completion-20261029-finite-latin-v1. Exact source/target contribution: [\"Prepend conventional sacramental participial adjunct Refectione sancta enutritam to the unchanged connected old prayer.\", \"Reorder Guberna Domine quaesumus to guberna quaesumus Domine.\", \"Expand conventional conclusion per. to Per Dominum.; stress accents, case, pointing and linewrap differ.\"]"
+      },
+      "after_record": {
+        "schema": 1,
+        "record_type": "passage",
+        "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-s-clementis-i-papae-martyris--postcommunion--1",
+        "edition_id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
+        "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+        "locus": "1962 target artifact pages [806], printed \"725\", unit 4155; s-clementis-i-papae-martyris Postcommunion",
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "verified_on": "2026-10-29",
+        "context": "Text-free target comparison controlled by the exact page-image source and the independently accepted source review. This passage grants no permission.",
+        "notes": "Whole actual target body including actual conclusion stop is bound by canonical Latin SHA-256 bfd0be06cd5ff6e036d7a9e22ee73a2bec99a413c24cc12baefc939a3db52bce. Independent source/translation review workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json method english-completion-20261029-finite-latin-v1. Exact source/target contribution: [\"Prepend conventional sacramental participial adjunct Refectione sancta enutritam to the unchanged connected old prayer.\", \"Reorder Guberna Domine quaesumus to guberna quaesumus Domine.\", \"Expand conventional conclusion per. to Per Dominum.; stress accents, case, pointing and linewrap differ.\"]"
+      },
+      "changed_fields": [
+        "schema",
+        "artifact_page_ranges"
+      ]
+    },
+    {
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1",
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1.toml",
+      "before_sha256": "77b99cefba1fda6c72943a71d3c57d1e3e4515c837173e851e20cd338fed286f",
+      "after_sha256": "89feee2dfab5257899407c15ce45210a7f90fbc9740d163aee74402f6d783878",
+      "before_record": {
+        "schema": 2,
+        "record_type": "passage",
+        "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1",
+        "edition_id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
+        "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+        "locus": "1962 target artifact pages [675, 676], printed [\"594\", \"595\"], unit 3117; s-laurentii-brundusio-confessoris-ecclesiae-doctoris Collect",
+        "artifact_page_ranges": [
+          [
+            675,
+            676
+          ]
+        ],
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "verified_on": "2026-10-29",
+        "context": "Text-free target comparison controlled by the exact page-image source and the independently accepted source review. This passage grants no permission.",
+        "notes": "Whole actual target body including actual conclusion stop is bound by canonical Latin SHA-256 9d2e1a29fd2df2395e01d7078745f77af00df9a266f597ea9b822c49d4eb8005. Independent source/translation review workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json method english-completion-20261029-finite-latin-v1. Exact source/target contribution: [{\"kind\": \"substantive-lexical\", \"historical\": \"consilii\", \"target\": \"sapientiae\", \"explanation\": \"Counsel changes to wisdom. This is not an orthographic or simply functional change.\"}, {\"kind\": \"factual-title-addition\", \"historical\": \"Confessori tuo\", \"target\": \"Confessori tuo atque Doctori\"}, {\"kind\": \"inflection\", \"historical\": \"gloria\", \"target\": \"gloriam\", \"explanation\": \"The target page image really prints gloriam, despite its grammatical incongruity; no silent repair.\"}, {\"kind\": \"independently-controlled-conclusion-prefix\", \"historical\": \"Per Dominum nostrum.\", \"target\": \"Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.\", \"source\": \"1922 wholePDF368 actual contiguous full formula, stop after in unitate\"}, {\"kind\": \"pointing-and-orthography\", \"explanation\": \"Target omits source comma after qui and salute; adds commas enclosing Confessori...Doctori; replaces source semicolon after cognoscere with comma; declared calendar consonantal-j and accent/ligature normalization.\"}]"
+      },
+      "after_record": {
+        "schema": 1,
+        "record_type": "passage",
+        "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1",
+        "edition_id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
+        "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+        "locus": "1962 target artifact pages [675, 676], printed [\"594\", \"595\"], unit 3117; s-laurentii-brundusio-confessoris-ecclesiae-doctoris Collect",
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "verified_on": "2026-10-29",
+        "context": "Text-free target comparison controlled by the exact page-image source and the independently accepted source review. This passage grants no permission.",
+        "notes": "Whole actual target body including actual conclusion stop is bound by canonical Latin SHA-256 9d2e1a29fd2df2395e01d7078745f77af00df9a266f597ea9b822c49d4eb8005. Independent source/translation review workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json method english-completion-20261029-finite-latin-v1. Exact source/target contribution: [{\"kind\": \"substantive-lexical\", \"historical\": \"consilii\", \"target\": \"sapientiae\", \"explanation\": \"Counsel changes to wisdom. This is not an orthographic or simply functional change.\"}, {\"kind\": \"factual-title-addition\", \"historical\": \"Confessori tuo\", \"target\": \"Confessori tuo atque Doctori\"}, {\"kind\": \"inflection\", \"historical\": \"gloria\", \"target\": \"gloriam\", \"explanation\": \"The target page image really prints gloriam, despite its grammatical incongruity; no silent repair.\"}, {\"kind\": \"independently-controlled-conclusion-prefix\", \"historical\": \"Per Dominum nostrum.\", \"target\": \"Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.\", \"source\": \"1922 wholePDF368 actual contiguous full formula, stop after in unitate\"}, {\"kind\": \"pointing-and-orthography\", \"explanation\": \"Target omits source comma after qui and salute; adds commas enclosing Confessori...Doctori; replaces source semicolon after cognoscere with comma; declared calendar consonantal-j and accent/ligature normalization.\"}]"
+      },
+      "changed_fields": [
+        "schema",
+        "artifact_page_ranges"
+      ]
+    }
+  ],
+  "already_valid_target_passage_ids": [
+    "passage.catholic-church.missale-romanum.vatican-typica-1962.heart-two-20261029-collect",
+    "passage.catholic-church.missale-romanum.vatican-typica-1962.heart-two-20261029-postcommunion"
+  ],
+  "wrappers": {
+    "all11": {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/target-schema-transport-repair-v1/all11-install-plan.json",
+      "sha256": "23716dfcb7f37934ba27ab7c5bee9530966a9db3b111a236bc9e71291d5b680c",
+      "changed_source_files": [
+        "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/bosco-three-orations-target-20261029.toml",
+        "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-s-clementis-i-papae-martyris--collect--1.toml",
+        "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-comm-s-zephyrini-papae-martyris--collect--1.toml",
+        "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-comm-s-silvestri-i-papae-confessoris--collect--1.toml",
+        "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-s-clementis-i-papae-martyris--secret--1.toml",
+        "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-s-clementis-i-papae-martyris--postcommunion--1.toml",
+        "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1.toml"
+      ]
+    },
+    "secret": {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/target-schema-transport-repair-v1/secret-install-plan.json",
+      "sha256": "f3a948b8912ada0f207ffb74291c770965f7383ed38d7d5b06c1aa1274b00ad8",
+      "changed_source_files": [
+        "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/bosco-three-orations-target-20261029.toml"
+      ]
+    },
+    "finite10": {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/target-schema-transport-repair-v1/finite10-install-plan.json",
+      "sha256": "0c261361b242d36acb1b7d436b0ba4c6227a940d21776820cc2c96731f52ec16",
+      "changed_source_files": [
+        "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-s-clementis-i-papae-martyris--collect--1.toml",
+        "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-comm-s-zephyrini-papae-martyris--collect--1.toml",
+        "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-comm-s-silvestri-i-papae-confessoris--collect--1.toml",
+        "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-s-clementis-i-papae-martyris--secret--1.toml",
+        "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-s-clementis-i-papae-martyris--postcommunion--1.toml",
+        "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/english-completion-20261029-s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1.toml"
+      ]
+    }
+  },
+  "predecessors": {
+    "all11": {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/normalized-proposal-final-v1/install-plan.json",
+      "sha256": "d607dccaa3c238334d5a67cc9d048b06a7dc931e1b7f33ab1daa97549933a575"
+    },
+    "secret": {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/bosco-secret-public-domain-v1/install-plan.json",
+      "sha256": "9fab950e8bc019c3dde79d2a87b7cb5fd55825b6863e043b2583e19e9f072273"
+    },
+    "finite10": {
+      "path": ".scratch/roman-english-completion-20261029/sanctoral-sources/finite-ten-after-secret-v1/install-plan.json",
+      "sha256": "3ac05eae691bfe56765f084ad2f16d08a1967abe46c1d7467750a5f5c0f63635"
+    }
+  },
+  "all_latin_english_preimages_and_raw_ten_finite_dictionaries_conserved": true,
+  "all_source_control_ids_hashes_literal_loci_dates_and_wording_conserved": true,
+  "changes_only": [
+    "target passage schema2 to schema1",
+    "remove redundant artifact_page_ranges",
+    "wrapper source-file and dependency pins"
+  ],
+  "source_or_english_judgment_changed": false,
+  "root_rights_adoption": false,
+  "tracked_mutation_performed_by_this_lane": false
+}

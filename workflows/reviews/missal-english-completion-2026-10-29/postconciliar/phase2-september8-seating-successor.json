@@ -1,0 +1,65 @@
+{
+  "recorded_on": "2026-10-30",
+  "scope": "Existing exact retained offering-option identity acquires its independently established Ordinary seat; no text or availability change.",
+  "mass": "nativity-blessed-virgin-mary",
+  "form_id": "main",
+  "target_proper_name": "Prayer over the Offerings (retained option)",
+  "source_role": "Prayer over the Offerings",
+  "ordinary_slot_key": "super-oblata",
+  "ordinary_anchor": "praeparatio-donorum/super-oblata",
+  "source_review": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-september8-source-review.json",
+  "source_review_sha256": "70762de809d318f2570bd9535c325cb6bdf4b7dbfdf288434a4afe897ac664fc",
+  "source_passage_id": "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-sept8-offering-and-insertion",
+  "source_fact": "Official2008 correction at NotitiaeAP55-56/printed373-374 inserts the new prayer after the Superoblata title and follows it with Vel. AP67/printed385 prints the added prayer. At least one earlier offering option remains, without this excerpt determining its words or total number.",
+  "proposed_source_claim": "Add only the exact complete retained-option label to the postconciliar Ordo super-oblata slot propers list; do not enable generic qualifier stripping.",
+  "unchanged": [
+    "full target name and identity",
+    "both coequal source options",
+    "all English and Latin availability",
+    "retained minimum/wider uncertainty",
+    "no default option"
+  ],
+  "required_checks": [
+    "current source two-option group seats in one offering slot",
+    "unknown qualified name remains unseated/refused",
+    "moving retained exact label to another slot refuses mixed-seat group"
+  ],
+  "state": "source-backed-exact-role-claim-validated",
+  "source_change": {
+    "path": "src/sources/inventories/postconciliar-ordo-missae-v1.toml",
+    "preimage_sha256": "00b26c7b6133bd769fe1270c7e626eb924db3848f1e271435b54e45142373fea",
+    "postimage_sha256": "c9babb91ea80c4b1fb192693a8c2027c7fce114dfea4ab23eb149f872990246e",
+    "old_slot": {
+      "key": "super-oblata",
+      "after": "praeparatio-donorum/super-oblata",
+      "propers": [
+        "Prayer over the Offerings"
+      ],
+      "locus": "Ordo Missae n. 30"
+    },
+    "new_slot": {
+      "key": "super-oblata",
+      "after": "praeparatio-donorum/super-oblata",
+      "propers": [
+        "Prayer over the Offerings",
+        "Prayer over the Offerings (retained option)"
+      ],
+      "locus": "Ordo Missae n. 30. The exact retained-option label represents the source index's bounded minimum of at least one earlier offering option after the 2008 September 8 Superoblata insertion and Vel: Notitiae 503-504, artifact pp. 55-56 / printed pp. 373-374; added prayer repeated at artifact p. 67 / printed p. 385. Both alternatives occupy the offering-prayer seat; prior-option wording and total extent remain unresolved. No other qualified label is admitted."
+    }
+  },
+  "test_change": {
+    "path": "tools/tests/test_calendar_translation_overlay.py",
+    "preimage_sha256": "4db06eab62a253406afca1733342b9874bde681fb6e9c3d99e5b4521cf985f1d",
+    "postimage_sha256": "2730511674d6e86e3e04da759e7fe4bf6e7f453f988586e4a85c38a3cac70233"
+  },
+  "validation": {
+    "focused_7_pass": true,
+    "related_79_pass": true,
+    "related_log_sha256": "2a957b14f50885c0e55da4df1d39b60be2a5820e6dc9056b03b45ffaea8df71d",
+    "mass_ordinary_check": "All semantic/source seating checks pass; only one stale served Ordinary file would be rewritten. No retained-option seat error remains.",
+    "mass_ordinary_log_sha256": "41b15e75f2dcd538bb875fe73caa24dbac926f659cbedb7356038a9976b4148f"
+  },
+  "all_other_ordinary_source_fields_exact": true,
+  "English_availability_and_body_unchanged": true,
+  "quarantine_baseline_and_8_receipts_unchanged": true
+}

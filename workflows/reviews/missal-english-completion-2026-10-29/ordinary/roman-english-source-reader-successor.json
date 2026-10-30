@@ -1,0 +1,354 @@
+{
+  "schema": "triptych-ordinary-study-english-source-reader-successor/v1",
+  "state": "ACCEPTED_METADATA_SUCCESSOR_ACTUAL_SOURCE_READER_POINT_READ_PASSES",
+  "scope": "Only the Roman1962 May1 SaintJoseph Preface new study-English source owner; no change to the accepted translation, Latin publication authority, dates, options, Ordinary bodies, target grades or source/actor allocation.",
+  "predecessor_audit": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/roman-english-source-completion.json",
+    "sha256": "b57f730a755f26dab9772fb61ced69b68cde85cf9240bd38a8e75d148b13b1a8",
+    "disposition": "Preserved byte-for-byte as its earlier observed source/runtime boundary."
+  },
+  "predecessor_manifest": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/roman-english-source-files.json",
+    "sha256": "1fff56ff250a1ec737fbea9a178bffe9bd5da5963851cf8f32a37ebc36bfcbd3",
+    "disposition": "Preserved byte-for-byte as the prior71-file snapshot; only the two listed metadata rows differ in the successor."
+  },
+  "successor_manifest": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/roman-english-source-files-v3.json",
+    "sha256": "aeb5820130b1f5ce67f441a6ff3ec49d6ffeca8cf74658be2e369ea5e540780c",
+    "entries": 71
+  },
+  "metadata_changes": [
+    {
+      "path": "src/sources/works/triptych/english-completion-20261029-ordinary-joseph-preface-may1/editions/2026-10-30-study-english/artifacts/joseph-preface-may1-study-en-240fd178/artifact.toml",
+      "before_sha256": "0b932def1c2aaae38f28bfdefef957f9c6ff6a29430717b015b0b9d6e4ba6c87",
+      "after_sha256": "a0261a93eaff7fa688f6cf8df2825c0d0f8c01f42be859b9819954479cafa9da"
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261029-ordinary-joseph-preface-may1/editions/2026-10-30-study-english/passages/joseph-preface-may1.toml",
+      "before_sha256": "d2298be08f70e5735e33754164a4465f451d9cd39ac3a79ac7f74479fba79b59",
+      "after_sha256": "3050ebc9207fede9bf31321ec14aabe5222641f63a62de880825b4a7e8f9eb8f"
+    }
+  ],
+  "artifact_rights_type_correction": {
+    "changed_field": "rights_basis",
+    "before": "New Triptych AI-authored study English under CC BY 4.0. Exact source-and-one-functional-word basis adopted only for this new English by workflows/reviews/missal-english-completion-2026-10-29/ordinary/joseph-may1-rights-adoption-v2.json, SHA-256 7ae1b0c2cd7acfa62777d7acc0b09b33c37212c7fbcd6c0b410f669ac76e43e6, under liturgical-text-publication-policy section 1(6), qualified-nonoriginal-adaptation. The 1922 Mame whole expression is public domain; its Festivitate to May 1 solemnitate designation receives the separately recorded finite limited-originality judgment. This is not holder permission, adjudication, human legal approval or a claim that the 1962 edition is public domain. The target Latin body is not admitted for publication. No historical, ICEL or other modern English was adapted.",
+    "after": "New Triptych AI-authored study English under CC BY 4.0. Exact source-and-one-functional-word basis adopted only for this new English by workflows/reviews/missal-english-completion-2026-10-29/ordinary/joseph-may1-rights-adoption-v2.json, SHA-256 7ae1b0c2cd7acfa62777d7acc0b09b33c37212c7fbcd6c0b410f669ac76e43e6, under liturgical-text-publication-policy section 1(6), as a qualified assessment of the source expression underlying this project-created English. The 1922 Mame whole expression is public domain; its Festivitate to May 1 solemnitate designation receives the separately recorded finite limited-originality judgment. This is not holder permission, adjudication, human legal approval or a claim that the 1962 edition is public domain. The target Latin body is not admitted for publication. No historical, ICEL or other modern English was adapted.",
+    "reason": "The qualified-Latin machine token incorrectly classified a newly created English artifact as a Latin carrier. The replacement retains the qualified underlying-source argument and exact English-only root adoption while accurately identifying this artifact as project-created English. No classifier or guard is changed.",
+    "unchanged_rights_status": "project-created"
+  },
+  "checked_prose_transcription": {
+    "added_fields": [
+      "text",
+      "transcription_segments"
+    ],
+    "physical_line": 2,
+    "column": "english",
+    "words": 145,
+    "payload_sha256": "240fd17875204a9b6902a60f5b7ed46929ff36a463c7b0569c8c4426dea0a0b5",
+    "english_body_sha256_utf8_without_final_lf": "ffc6b83414c853963c1381227e3f32c7b08afe271872be212b752d43420d9b72",
+    "conservation": "Exact accepted English cell, with one exact contiguous occurrence in controlling TSV line2; no new words or body normalization. Every original passage field and original byte prefix remains. The line map is required by the existing source-library schema; no TSV keys, pagination or Latin body are presented as prose."
+  },
+  "unchanged_bounded_adoptions": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/joseph-may1-rights-adoption.json",
+      "sha256": "f5893ad8948f13c3740efc8839f7a327d942e3bf0b2d65ed801f6855c39579fe",
+      "note": "The original canonical adoption retains the literal qualified-nonoriginal-adaptation case label. It is preserved as prior evidence."
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/joseph-may1-rights-adoption-v2.json",
+      "sha256": "7ae1b0c2cd7acfa62777d7acc0b09b33c37212c7fbcd6c0b410f669ac76e43e6",
+      "note": "The effective correction-specific adoption retains the controlling qualified source-plus-one-word and English-only limits; it grants no target-Latin publication and is unchanged."
+    }
+  ],
+  "independent_metadata_reviews": [
+    {
+      "original_receipt_sha256": "fb8b9e52ed5c78728397a4b223223f603ae344e75646121d86ad1e34f57fb772",
+      "sanitized_record": {
+        "decision": "ACCEPT_EXACT_METADATA_POSTIMAGE",
+        "reviewed_at_utc": "2026-10-30T03:56:53Z",
+        "scope": "Independent metadata-conservation review of the frozen artifact before/after and proposal only. This is a new review of later metadata, not a retrospective extension of earlier source, English fidelity, rights, or admission receipts.",
+        "reviewer_canonical_edits": false,
+        "before": {
+          "path": "[private research path omitted]",
+          "sha256": "0b932def1c2aaae38f28bfdefef957f9c6ff6a29430717b015b0b9d6e4ba6c87"
+        },
+        "after": {
+          "path": "[private research path omitted]",
+          "sha256": "a0261a93eaff7fa688f6cf8df2825c0d0f8c01f42be859b9819954479cafa9da"
+        },
+        "proposal": {
+          "path": "[private research path omitted]",
+          "sha256": "9cf8c3b690fac9228acf91fb16af28ccd2c15c814733d5c6f2aea0402d1b26d7"
+        },
+        "canonical_artifact_path": "src/sources/works/triptych/english-completion-20261029-ordinary-joseph-preface-may1/editions/2026-10-30-study-english/artifacts/joseph-preface-may1-study-en-240fd178/artifact.toml",
+        "canonical_current_metadata_matches_before_at_review": true,
+        "changed_fields": [
+          "rights_basis"
+        ],
+        "single_literal_rephrase_only": true,
+        "root_adoption": {
+          "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/joseph-may1-rights-adoption-v2.json",
+          "sha256": "7ae1b0c2cd7acfa62777d7acc0b09b33c37212c7fbcd6c0b410f669ac76e43e6",
+          "english_only": true,
+          "target_latin_publication_adopted": false
+        },
+        "original_root_adoption": {
+          "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/joseph-may1-rights-adoption.json",
+          "sha256": "f5893ad8948f13c3740efc8839f7a327d942e3bf0b2d65ed801f6855c39579fe",
+          "qualified_basis_token_retained": true,
+          "successor_extent": "The successor replaces only corrected comparison, review and source-glyph declarations; prior scope, contrary evidence, limited confidence and qualifications remain controlling."
+        },
+        "english_payload": {
+          "path": "src/sources/works/triptych/english-completion-20261029-ordinary-joseph-preface-may1/editions/2026-10-30-study-english/artifacts/joseph-preface-may1-study-en-240fd178/text.tsv",
+          "sha256": "240fd17875204a9b6902a60f5b7ed46929ff36a463c7b0569c8c4426dea0a0b5",
+          "byte_size": 1208,
+          "unchanged": true
+        },
+        "findings": [
+          {
+            "check": "rights_basis_only",
+            "result": "PASS",
+            "finding": "Parsed TOML comparison changes only rights_basis; exact textual comparison is one literal phrase replacement. All provenance, payload, projected_from, transformation, indexability, identifiers and applicability notes are byte-identical."
+          },
+          {
+            "check": "qualified_underlying_expression_assessment",
+            "result": "PASS",
+            "finding": "The rephrase accurately distinguishes the qualified assessment of the underlying source expression from the new project-created English artifact. It retains the finite feast-word judgment, section 1(6), precise successor adoption path and hash, and all explicit limits."
+          },
+          {
+            "check": "no_permission_or_rights_expansion",
+            "result": "PASS",
+            "finding": "The postimage still denies holder permission, adjudication, human legal approval, a public-domain claim for the 1962 edition and publication admission of the target Latin body. It does not claim historical or modern English adaptation."
+          },
+          {
+            "check": "project_created_english_status",
+            "result": "PASS",
+            "finding": "The unchanged project-created status and project-study-translation type accurately describe newly AI-authored English under the separately adopted English-only basis; they do not classify the target Latin as public domain."
+          },
+          {
+            "check": "adoption_basis_conserved",
+            "result": "PASS",
+            "finding": "The canonical original adoption retains the exact qualified-nonoriginal-adaptation token. The referenced correction-specific successor preserves the original controlling scope and qualifications; neither canonical adoption was edited by this review."
+          },
+          {
+            "check": "payload_and_selector_scope",
+            "result": "PASS",
+            "finding": "The exact accepted English payload, its byte size and hash, private-comparison provenance, May 1 solemnity-only formulary/Preface option, complete-body extent, boundary before Sanctus, and visible study/non-recitation requirement are unchanged."
+          },
+          {
+            "check": "historical_review_truthfulness",
+            "result": "PASS",
+            "finding": "Existing earlier receipts remain prior identities. This receipt accepts the precise later metadata postimage without claiming earlier reviewers inspected it."
+          }
+        ],
+        "defects": [],
+        "not_asserted": [
+          "No new source collation or rights determination.",
+          "No classifier or permission-policy change reviewed or authorized here.",
+          "Actual Source Reader visibility and whole-body rendering, Ordinary conservation, installation and repository validation remain for the integrating parent."
+        ]
+      },
+      "record_qualification": "Parsed independent AI metadata-conservation receipt with private research paths omitted. Original byte hash retained; this nested serialization is not the original receipt bytes. No retroactive acceptance is attributed to earlier reviewers."
+    },
+    {
+      "original_receipt_sha256": "c9fe1cc3cbc987aa99a0bb1844962a98abaa74d242a58f4b92e2b016d6c26953",
+      "sanitized_record": {
+        "decision": "ACCEPT_EXACT_FINAL_PASSAGE_METADATA_POSTIMAGE",
+        "scope": "Independent metadata-conservation successor review of the final inline-text plus transcription-segment mapping, compared with the original passage. This receipt does not retroactively extend any earlier review to later metadata or claim that the prior text-only postimage passed source-library schema validation.",
+        "reviewer_canonical_edits": false,
+        "original_before": {
+          "path": "[private research path omitted]",
+          "sha256": "d2298be08f70e5735e33754164a4465f451d9cd39ac3a79ac7f74479fba79b59"
+        },
+        "final_after": {
+          "path": "[private research path omitted]",
+          "sha256": "3050ebc9207fede9bf31321ec14aabe5222641f63a62de880825b4a7e8f9eb8f"
+        },
+        "proposal": {
+          "path": "[private research path omitted]",
+          "sha256": "d78b34e02193526a4fae0a7e3ba9299cad780e673d4628f0f5378aec0185a0e1"
+        },
+        "canonical_passage": {
+          "path": "src/sources/works/triptych/english-completion-20261029-ordinary-joseph-preface-may1/editions/2026-10-30-study-english/passages/joseph-preface-may1.toml",
+          "sha256": "3050ebc9207fede9bf31321ec14aabe5222641f63a62de880825b4a7e8f9eb8f",
+          "matches_final_after_at_review": true
+        },
+        "prior_text_only_postimage": {
+          "path": "[private research path omitted]",
+          "sha256": "7de37a8a9fad525e0fab6e53e5dd4e17f2438ab5d5ed2a6c83e2b7c522b13dba",
+          "role": "Historical intermediate postimage only; no schema-validation acceptance is claimed."
+        },
+        "prior_text_only_review": {
+          "path": "[private research path omitted]",
+          "sha256": "e3eba437dea306c5e0b0deb0c701d3570249c8afbb50414f60a0add0369d0de3",
+          "unchanged": true,
+          "role": "Prior narrow metadata-conservation receipt, not a source-library schema validation receipt."
+        },
+        "added_fields": [
+          "text",
+          "transcription_segments"
+        ],
+        "changed_or_removed_original_fields": [],
+        "all_original_bytes_retained_as_prefix": true,
+        "english_payload": {
+          "path": "src/sources/works/triptych/english-completion-20261029-ordinary-joseph-preface-may1/editions/2026-10-30-study-english/artifacts/joseph-preface-may1-study-en-240fd178/text.tsv",
+          "sha256": "240fd17875204a9b6902a60f5b7ed46929ff36a463c7b0569c8c4426dea0a0b5",
+          "byte_size": 1208,
+          "unchanged": true
+        },
+        "checked_text": {
+          "column": "english",
+          "tsv_data_row": 1,
+          "physical_line": 2,
+          "sha256_utf8_without_final_lf": "ffc6b83414c853963c1381227e3f32c7b08afe271872be212b752d43420d9b72",
+          "whitespace_word_count": 145,
+          "exact_accepted_cell_equal_to_text_and_segment_text": true
+        },
+        "transcription_mapping": {
+          "segment_count": 1,
+          "line": 2,
+          "within_unchanged_physical_line_ranges": true,
+          "exact_ordered_raw_line_substring": true,
+          "raw_line_substring_occurrences": 1,
+          "segment_reconstructs_text_exactly": true
+        },
+        "controller": {
+          "artifact_id": "artifact.triptych.english-completion-20261029-ordinary-joseph-preface-may1.study-english-20261030.joseph-preface-may1-study-en-240fd178",
+          "artifact_sha256": "240fd17875204a9b6902a60f5b7ed46929ff36a463c7b0569c8c4426dea0a0b5",
+          "physical_line_ranges": [
+            [
+              2,
+              2
+            ]
+          ],
+          "unchanged": true
+        },
+        "findings": [
+          {
+            "check": "original_metadata_conserved",
+            "result": "PASS",
+            "finding": "Only text and transcription_segments are added to the original parsed record. Every original field and all original bytes remain unchanged, including controller, hash, line range, verification states, context, applicability and nonapproval notes."
+          },
+          {
+            "check": "exact_english_mapping",
+            "result": "PASS",
+            "finding": "The 145-word inline English and sole segment text exactly equal the accepted English TSV cell. The segment locates that same text exactly once as a contiguous substring of raw physical line 2, within the unchanged declared range. No wording, Latin payload, source-language column, normalization or body extension is added."
+          },
+          {
+            "check": "schema_mapping_requirements",
+            "result": "PASS_BOUNDED_INSPECTION",
+            "finding": "The inspected source-library rules require segments for inline text, reviewed status, an indexable tracked UTF-8 controller, positive in-range line numbers, exact ordered raw-line substrings, and reconstruction of the inline text. This final mapping meets those inspected conditions. The parent is running the full schema check separately."
+          },
+          {
+            "check": "rights_scope_and_approval_conserved",
+            "result": "PASS",
+            "finding": "The qualified English-only artifact rights basis and the May 1 solemnity-only scope are unchanged. The added mapping grants no Latin publication, additional English rights, historical identity, liturgical approval or recitation authority."
+          },
+          {
+            "check": "guarded_reader_path",
+            "result": "PASS",
+            "finding": "The current unchanged Source Reader still checks the controller, qualified-source rules, distributable rights and tracked storage before using passage text, and applies _qualified_reading to the selected result. This metadata-only proposal does not modify or exempt those checks."
+          },
+          {
+            "check": "review_history",
+            "result": "PASS",
+            "finding": "Earlier text-only and artifact-metadata receipts remain historical identities. This separate successor accepts only the exact final postimage and mapping reviewed now."
+          }
+        ],
+        "inspected_tools": [
+          {
+            "path": "tools/source-reader",
+            "sha256": "6add9dc673943c8589cf511cee004f922566d1c4aa68038b923d74c30270801c",
+            "loci": [
+              "reading_of",
+              "_qualified_reading"
+            ]
+          },
+          {
+            "path": "tools/source-library",
+            "sha256": "0946880a6a707babf0c29a7ad4a743256d734aee082db6251efa8148e87f22c3",
+            "locus": "passage text/transcription_segments checks"
+          }
+        ],
+        "defects": [],
+        "limits": [
+          "No canonical file was edited by this reviewer.",
+          "No new source collation, rights determination or semantic English translation review is asserted.",
+          "Full source-library validation, final Source Reader visibility, Ordinary conservation and integrated checks remain with the parent."
+        ]
+      },
+      "record_qualification": "Parsed independent AI metadata-conservation receipt with private research paths omitted. Original byte hash retained; this nested serialization is not the original receipt bytes. No retroactive acceptance is attributed to earlier reviewers."
+    }
+  ],
+  "actual_point_read": {
+    "command": "tools/source-reader show --edition edition.triptych.english-completion-20261029-ordinary-joseph-preface-may1.study-english-20261030 --plain --strict",
+    "exit_code": 0,
+    "readable": 1,
+    "passages": 1,
+    "successful_stdout_sha256": "38426d17ca1a98107e928b9636bbb50509e4eb5e923812ef0708b4323a8e9397",
+    "production_reading_of": "PASS: with a freshly loaded valid canonical library, the unchanged production function returns readable=true, source=transcription, rights=project-created and the entire exact accepted English cell.",
+    "production_reading_result_sha256": "984b263ffec0f62f27b49787c787288df17e32b4cb1133d93427cae012cd7ab9"
+  },
+  "source_library_validation": {
+    "result": "PASS",
+    "recorded_stdout": "source-library valid: artifact=10330 corpus=5 edition=13730 passage=9448 segment=10186 work=10751 bindings=4311",
+    "stdout_sha256": "4cc8503becdea5d960ce9d6165b6a4d46a6ad5d744fc98f8089f7768d9308c8b"
+  },
+  "ordinary_source_build_conservation": [
+    {
+      "calendar": "roman-1962",
+      "result": "BYTE_IDENTICAL",
+      "source_build_sha256": "59d7c990a6e0a7d541898acf05e55cfc9d98ce79889750494dbf6fcaefd12624"
+    },
+    {
+      "calendar": "roman-pre-1955",
+      "result": "BYTE_IDENTICAL",
+      "source_build_sha256": "01c4c738f0a3fe3ef791c18cad9ce2ea8fcadf7b0f0b957ddffd38db69ad214e"
+    }
+  ],
+  "unchanged_code_adoption_and_served_ordinary_pins": [
+    {
+      "path": "scripts/_proper_qualified_latin.py",
+      "sha256": "0136f6bb020938867d4ca1e75816c56c363a15603a8fede2aee9126c96b24949"
+    },
+    {
+      "path": "scripts/_proper_finite_latin_20261029.py",
+      "sha256": "a98b0178ea31f5cefd9a0ee78bea1e00f62e9d7788f81a46f5d892d99d71f998"
+    },
+    {
+      "path": "tools/source-reader",
+      "sha256": "6add9dc673943c8589cf511cee004f922566d1c4aa68038b923d74c30270801c"
+    },
+    {
+      "path": "src/web/data/structure/ordinary/roman-1962.json",
+      "sha256": "6b000650b33634c49d8384c75b45661bd539a9c7e2b8f4b65f46aa65713f04ec"
+    },
+    {
+      "path": "src/web/data/structure/ordinary/roman-pre-1955.json",
+      "sha256": "a5b297db7f9e500dbf3791d59baa8377e783b941f0001d2243a51f66ffcebfbd"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/ordinary/joseph-may1-rights-adoption-v2.json",
+      "sha256": "7ae1b0c2cd7acfa62777d7acc0b09b33c37212c7fbcd6c0b410f669ac76e43e6"
+    }
+  ],
+  "concurrent_ordinary_tool_boundary": {
+    "initial_tool_sha256": "c9aac7fe04b8698f15ad26cab51622d8577616ea2865e7ea1c2cf6ce1b2bdd3e",
+    "tool_path": "tools/mass-ordinary",
+    "tool_sha256_during_final_builds": "4fc67cfe87581f9f9b24b624c126a8608329bf8e55415e894e36d520a6370430",
+    "both_roman_source_builds_byte_identical_to_pre_fix": true,
+    "concurrent_owner_change_since_initial_pin": true,
+    "qualification": "The owning postconciliar lane changed the shared Ordinary tool independently during this source fix. Final two Roman builds were rerun under an unchanged exact tool hash and stayed byte-identical to the pre-fix builds. No Ordinary-tool edit is made or approved by this metadata successor."
+  },
+  "intermediate_check_dispositions": [
+    "Removing the inaccurate English artifact machine token cleared the Latin-rights refusal and exposed the existing TSV not-prose refusal.",
+    "The exact inline English text made the passage readable but full source-library validation required transcription_segments. The final successor supplies its exact line2 mapping; full validation and strict Source Reader now pass.",
+    "Earlier metadata-only receipts remain historical and are not described as having validated the later line-map field or final integrated runtime."
+  ],
+  "remaining_integration": "The owning source-integration lane must refresh the shared Sources catalogue/edition/text projection to publish this newly readable passage. Both Roman Ordinary source builds and already served Ordinary files remain byte-identical; no Ordinary regeneration is required for this metadata-only successor.",
+  "no_new_claims": [
+    "No permission, legal authority, source-language publication, human review or liturgical approval.",
+    "No weakening of qualified-source/rights/storage/result-specific reading gates.",
+    "No transfer to March19, votive contexts or another edition; no private modern Latin body or image copied."
+  ]
+}

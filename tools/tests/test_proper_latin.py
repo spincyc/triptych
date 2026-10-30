@@ -1,6 +1,7 @@
 """Latin Proper provenance is per text; publication is a separate decision."""
 from __future__ import annotations
 
+import hashlib
 import json
 import argparse
 import subprocess
@@ -23,6 +24,7 @@ from tools.tests.test_roman_1962_octnov_commemoration_source_repair import (
 )
 from tools.tests import _source_batch_guards as BATCH_GUARDS
 import _calendars  # noqa: E402
+from _missal_coverage import latin_evidence  # noqa: E402
 from _proper_latin import (  # noqa: E402
     CLI_SURFACES,
     POLICY,
@@ -50,9 +52,8 @@ EDITORIAL_PROJECTION = (
     ROOT
     / "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection"
 )
-# Only the finite Gregem/Damasus adoption's exact scopes carry the qualified
-# basis, with its disclosed source and target attestations as supplements.
-QUALIFIED_KEYS = {
+# Preserve the original two qualified scopes as their own historical control.
+LEGACY_QUALIFIED_KEYS = {
     LatinKey(mass, "", proper, "", "", occurrence)
     for mass, form, proper, cycle, occurrence in (
         scope["target"] for scope in json.loads(
@@ -60,6 +61,61 @@ QUALIFIED_KEYS = {
              "gregem-damasus-qualified-rights-adoption.json").read_text()
         )["exact_scopes"])
     if form == "main" and cycle == "all"
+}
+
+
+CURRENT_AUTHORITY_PATH = ROOT / "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json"
+CURRENT_AUTHORITY_RAW = CURRENT_AUTHORITY_PATH.read_bytes()
+if hashlib.sha256(CURRENT_AUTHORITY_RAW).hexdigest() != "920299972ab84575183de8c84adcd3f7418bdc46304fbe1d6a4435fad1103ee3":
+    raise AssertionError("exact adopted finite Latin authority")
+CURRENT_QUALIFIED_SCOPES = {
+    LatinKey(*scope["key"]): scope
+    for scope in json.loads(CURRENT_AUTHORITY_RAW)["scopes"]
+}
+QUALIFIED_KEYS = LEGACY_QUALIFIED_KEYS | set(CURRENT_QUALIFIED_SCOPES)
+DIRECT_DECLARATION_PATH = ROOT / "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/direct-pd-latin-proof-declaration-v1.json"
+DIRECT_DECLARATION_RAW = DIRECT_DECLARATION_PATH.read_bytes()
+if hashlib.sha256(DIRECT_DECLARATION_RAW).hexdigest() != "70716afc9012297f8600c837b129332a1b924b9520b8861d9d6ad33ae4f47752":
+    raise AssertionError("exact25 direct public-domain proof declaration")
+DIRECT_DECLARATION = json.loads(DIRECT_DECLARATION_RAW)
+DIRECT_SOURCE_SPECS = {
+    LatinKey(**spec["key"]): spec for spec in DIRECT_DECLARATION["records"]
+}
+PANGE_ASSEMBLY_KEY = LatinKey(
+    "mass-of-the-lords-supper", "",
+    "Hymn at the Translation of the Blessed Sacrament", "", "", 1,
+)
+DIRECT_PROOF_ARTIFACTS = {
+    "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.english-completion-20261029-saints-chant-latin-10b19922": {
+        "sha256": "10b19922a2fc07cd74be90ae8832d093e705247b93491fa155bf9a1090635e82",
+        "projected_from": {
+            "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-saints-chant-pages-59c31d7f",
+            "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+            "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        },
+    },
+    "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pentecost-four-chants-20261029-d074f957": {
+        "sha256": "d074f957761fb3fbfab186eb899a2ab096ffd62e9ce03e51f776be56dee64f16",
+        "projected_from": {
+            "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.pentecost-four-chants-20261029-checked-latin-0097a922",
+            "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.pentecost-four-chants-20261029-pages",
+            "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        },
+    },
+}
+MARIAN_WRAPPER_KEYS = {
+    LatinKey(mass, "", proper, "", "", 1)
+    for mass, proper in (
+        ("purificatione-beatae-mariae-virginis", "Alleluia"),
+        ("apparitione-beatae-mariae-virginis-immaculatae", "Alleluia"),
+        ("apparitione-beatae-mariae-virginis-immaculatae", "Tract"),
+        ("annuntiatio-beatae-mariae-virginis", "Alleluia"),
+        ("sanctissimi-nominis-beatae-mariae-virginis", "Gradual"),
+        ("sanctissimi-nominis-beatae-mariae-virginis", "Alleluia"),
+        ("sanctissimi-nominis-beatae-mariae-virginis", "Communion"),
+        ("beatae-mariae-virginis-a-rosario", "Introit"),
+        ("beatae-mariae-virginis-a-rosario", "Alleluia"),
+    )
 }
 
 
@@ -471,8 +527,48 @@ class ProductionLedgerTests(unittest.TestCase):
                 self.assertEqual({"kind": "no-exemplar"}, row["reason"])
                 self.assertIn("Latin source body is privately held", row["note"])
         sept8 = masses["nativity-blessed-virgin-mary"]
-        self.assertFalse(any(p["name"] == "Prayer over the Offerings" for p in sept8["propers"]),
-                         "the unresolved two-option source packet is outside these three Collects")
+        # This separately admitted module supersedes the earlier two-option
+        # packet's source gap; it does not change the three Collect refusals.
+        review_root = ROOT / "workflows/reviews/missal-english-completion-2026-10-29/postconciliar"
+        admission_raw = (review_root / "phase2-september8-admission.json").read_bytes()
+        self.assertEqual("d9ec4ff8b7f8637068025635c394b4b88c2caaf9e848298231b022e828d1326c",
+                         hashlib.sha256(admission_raw).hexdigest())
+        admission = json.loads(admission_raw)
+        names = [admission["known_target"][2], admission["retained_minimum_gap"][2]]
+        offerings = [p for p in sept8["propers"] if p["name"].startswith("Prayer over the Offerings")]
+        self.assertEqual(names, [p["name"] for p in offerings])
+        self.assertEqual(["supplementum-2008", "retained-earlier-option"],
+                         [p["ordinary_disposition"]["option"] for p in offerings])
+        self.assertTrue(all(p["ordinary_disposition"]["kind"] == "alternative"
+                            and p["ordinary_disposition"]["group"] == "september-8-offerings"
+                            for p in offerings))
+        for proper in offerings:
+            self.assertEqual("composed", proper["source"])
+            self.assertEqual(("unavailable", "proper-body"),
+                             (proper["text_status"]["state"], proper["text_status"]["scope"]))
+            self.assertTrue({"text", "text_sha256", "provenance"}.isdisjoint(proper))
+        self.assertEqual("Unigeniti tui, Domine, nobis succurrat humanitas", offerings[0]["incipit"])
+        self.assertNotIn("incipit", offerings[1])
+        self.assertEqual([{"kind": "witness-gap", "source_id": admission["source_passage"]}],
+                         offerings[0]["text_status"]["reasons"])
+        self.assertEqual([{"kind": "no-exemplar"}], offerings[1]["text_status"]["reasons"])
+        self.assertIn(admission["target_passage"], offerings[0]["notes"])
+        self.assertEqual(1, len([r for r in english["entries"]
+                                if r["mass"] == sept8["key"] and r["proper"] == names[0]]))
+        retained = [r for r in english["untranslated"]
+                    if r["mass"] == sept8["key"] and r["proper"] == names[1]]
+        self.assertEqual(1, len(retained))
+        self.assertEqual({"kind": "no-exemplar"}, retained[0]["reason"])
+        # Superoblata followed by Vel establishes a bounded minimum, not the
+        # complete prior option count or wording of a whole Mass.
+        seat_raw = (review_root / "phase2-september8-seating-successor.json").read_bytes()
+        self.assertEqual("01108c4a0e946781be94d118e3bfbd80f78d89c10fae83702267aa0f3eed96e0",
+                         hashlib.sha256(seat_raw).hexdigest())
+        seat = json.loads(seat_raw)
+        ordinary = tomllib.loads((INVENTORIES / "postconciliar-ordo-missae-v1.toml").read_text())
+        slot = next(row for row in ordinary["slots"] if row["key"] == seat["ordinary_slot_key"])
+        self.assertEqual(seat["ordinary_anchor"], slot["after"])
+        self.assertEqual(names, slot["propers"])
 
     def test_ledgers_cover_every_direct_text_without_name_collapse(self) -> None:
         paths = [
@@ -544,6 +640,106 @@ class ProductionLedgerTests(unittest.TestCase):
             records = BATCH_GUARDS.historical_latin_records(records, calendar)
             self.assertEqual(count, len(records))
 
+    def test_exact25_direct_sources_have_distinct_records_and_production_decisions(self) -> None:
+        self.assertEqual(25, len(DIRECT_SOURCE_SPECS))
+        self.assertEqual(3, len(DIRECT_DECLARATION["primary_artifacts"]))
+        self.assertEqual(
+            {BATCH_GUARDS.key_string(key): spec for key, spec in DIRECT_SOURCE_SPECS.items()},
+            BATCH_GUARDS.fixture()["direct_pd_permitted_specs"],
+        )
+        records, problems = publication_records(CALENDARS, "roman-1962", INVENTORIES)
+        self.assertEqual([], problems)
+        bodies = {key: text for key, text, state in body_owners(
+            _calendars.load_document(CALENDARS, "roman-1962")) if state == "present"}
+        for key, expected in DIRECT_SOURCE_SPECS.items():
+            with self.subTest(key=key):
+                row, text = records[key], bodies[key]
+                self.assertEqual(expected["record"], row)
+                self.assertEqual(expected["body_sha256"], hashlib.sha256(text.encode()).hexdigest())
+                decision = decision_for(key, text, records)
+                self.assertTrue(decision.permits(SURFACES))
+                self.assertEqual(expected["production_decision"], decision.projection(SURFACES))
+                self.assertFalse(decision_for(key, text + " changed", records).permits(SURFACES))
+                for field, value in (("publication_basis", "unresolved"), ("surfaces", []),
+                                     ("publication_status", "unresolved")):
+                    changed = dict(records)
+                    changed[key] = dict(row, **{field: value})
+                    self.assertFalse(decision_for(key, text, changed).permits(SURFACES))
+        for expected in DIRECT_DECLARATION["primary_artifacts"]:
+            with self.subTest(artifact=expected["id"]):
+                self.assertEqual(expected["record"], registered_artifact(expected["id"]))
+                self.assertEqual(expected["sha256"], hashlib.sha256((ROOT / expected["path"]).read_bytes()).hexdigest())
+                self.assertEqual(expected["payload_sha256"], hashlib.sha256((ROOT / expected["payload_path"]).read_bytes()).hexdigest())
+                self.assertEqual("public-domain", expected["record"]["rights_status"])
+
+    def assert_pange_source_assembly(self, row: dict) -> None:
+        # This exact reviewed assembly is source-exact; the named 1962 referral
+        # does not supply a full-word target collation or a new cue permission.
+        review_raw = (ROOT / "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-7e5ddbe30004c407.json").read_bytes()
+        self.assertEqual("7e5ddbe30004c40786311c8914bc394ebfa6f2e0d3c0de1a1ae8c9395ca4b67b", hashlib.sha256(review_raw).hexdigest())
+        review = json.loads(review_raw)
+        hashes = review["candidate"]["body_sha256"]
+        grade = review["acceptance"]["vocabulary_and_source_grade"]
+        ids = [
+            "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pange-source-prescribed-assembly-53086b37",
+            "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.triduum-orations-21aa7a98",
+            "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1879-volume-10.pange-lingua-latin-checked-20261029-15c03ec1",
+        ]
+        self.assertEqual(ids, row["publication_source_ids"])
+        self.assertEqual(hashes["latin_composite"], row["text_sha256"])
+        self.assertEqual("exact-transcription", row["relationship"])
+        self.assertEqual(grade["latin_relationship"], row["relationship"])
+        self.assertEqual("passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pange-source-prescribed-assembly", row["source_id"])
+        self.assertEqual("passage.catholic-church.missale-romanum.vatican-typica-1962.holy-thursday-pange-hymn-referral-20261029", row["verification_source_id"])
+        self.assertEqual("public-domain", row["publication_basis"])
+        self.assertEqual(set(SURFACES), set(row["surfaces"]))
+        self.assertTrue(row["transformations"])
+        # Recheck the accepted Latin carrier/passage and inherited cue metadata;
+        # the latter is a project carrier, not an independent PD printing.
+        project_prefix = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/"
+        latin_prefix = "src/sources/works/prosper-gueranger/"
+        for source in (review["candidate"]["source_files"] + review["existing_key_ancestors"]):
+            path = source.get("repository_path", source.get("path"))
+            if path.startswith((project_prefix, latin_prefix)):
+                self.assertEqual(source["sha256"], hashlib.sha256((ROOT / path).read_bytes()).hexdigest(), path)
+        carrier = tomllib.loads((EDITORIAL_PROJECTION / "editions/2026-10-29-editorial-projection/artifacts/pange-source-prescribed-assembly-53086b37/artifact.toml").read_text())
+        cue_carrier = tomllib.loads((EDITORIAL_PROJECTION / "editions/2026-09-03-editorial-projection/artifacts/triduum-orations-21aa7a98/artifact.toml").read_text())
+        hymn = registered_artifact(ids[2])
+        self.assertEqual(ids[0], carrier["id"])
+        self.assertEqual(ids[1], cue_carrier["id"])
+        self.assertEqual("project-created", carrier["rights_status"])
+        self.assertEqual("project-created", cue_carrier["rights_status"])
+        self.assertEqual("public-domain", hymn["rights_status"])
+        self.assertEqual(ids[1:] + ["artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"], carrier["projected_from"])
+        assembled = (ROOT / carrier["path"]).read_bytes()
+        hymn_bytes = (ROOT / hymn["path"]).read_bytes()
+        cue_bytes = assembled.removesuffix(b"\n" + hymn_bytes)
+        self.assertEqual(hashes["latin"], hashlib.sha256(hymn_bytes).hexdigest())
+        self.assertEqual(hashes["old_cue"], hashlib.sha256(cue_bytes).hexdigest())
+        self.assertEqual(cue_bytes + b"\n" + hymn_bytes, assembled)
+        self.assertEqual(hashes["latin_composite"], hashlib.sha256(assembled).hexdigest())
+        self.assertEqual(6, len(hymn_bytes.decode().strip().split("\n\n")))
+        document = _calendars.load_document(CALENDARS, "roman-1962")
+        text = next(text for key, text, state in body_owners(document)
+                    if key == PANGE_ASSEMBLY_KEY and state == "present")
+        self.assertEqual(assembled.decode(), text)
+        mass = next(mass for _, _, mass in _calendars.departures_of(document)
+                    if mass["key"] == PANGE_ASSEMBLY_KEY.mass)
+        proper = next(proper for proper in mass["propers"]
+                      if proper["name"] == PANGE_ASSEMBLY_KEY.proper)
+        self.assertEqual([{"kind": "rubric", "offset": 0,
+                           "text": cue_bytes.decode().removesuffix("\n")}],
+                         proper["text_structure"]["actions"])
+        self.assertEqual(147, len(proper["text_structure"]["actions"][0]["text"]))
+        records, problems = publication_records(CALENDARS, "roman-1962", INVENTORIES)
+        self.assertEqual([], problems)
+        self.assertEqual(row, records[PANGE_ASSEMBLY_KEY])
+        decision = decision_for(PANGE_ASSEMBLY_KEY, text, records)
+        self.assertTrue(decision.permits(SURFACES))
+        self.assertEqual({"relationship": "unresolved", "collation": "collated", "publication_basis": "public-domain"}, latin_evidence(decision.projection(SURFACES)))
+        self.assertEqual(grade["actual_latin_coverage"], latin_evidence(decision.projection(SURFACES)))
+        self.assertFalse(decision_for(PANGE_ASSEMBLY_KEY, text + " changed", records).permits(SURFACES))
+
     def test_production_ledgers_publish_only_the_exact_historical_recoveries(self) -> None:
         permitted = []
         nonpermitted = []
@@ -556,7 +752,9 @@ class ProductionLedgerTests(unittest.TestCase):
                     (calendar, key, row)
                 )
         roman = {key for calendar, key, _ in permitted if calendar == "roman-1962"}
-        # Every permitted body is pinned by SHAPE rather than by key. Pinning
+        # The exact25 direct-source proofs are a separate closed partition;
+        # legacy project bodies retain every namespace and shape check below.
+        # Every legacy body is pinned by SHAPE rather than by key. Pinning
         # keys stopped scaling when the 2026-09-03 backfill took the publishable
         # set from 13 to 290 across all five sections of the calendar, and a
         # list nobody can read is not a guard. What actually protects the set is
@@ -586,6 +784,16 @@ class ProductionLedgerTests(unittest.TestCase):
         # full bodies (fifteen new ledger rows, three restored Saturninus rows).
         # Phase 3 adds nineteen complete bodies on two artifact-specific pairs.
         BATCH_GUARDS.assert_permitted_owners(permitted)
+        direct = [(calendar, key, row) for calendar, key, row in permitted
+                  if not row["publication_source_ids"][0].startswith(
+                      "artifact.triptych.roman-1962-latin-proper-editorial-projection.")]
+        self.assertEqual({("roman-1962", key) for key in DIRECT_SOURCE_SPECS},
+                         {(calendar, key) for calendar, key, _ in direct})
+        self.assertEqual(25, len(direct))
+        projection_permitted = [item for item in permitted if item not in direct]
+        self.assertEqual(len(permitted), len(projection_permitted) + len(direct))
+        self.assertEqual(QUALIFIED_KEYS, {key for _, key, row in permitted
+                                        if row["publication_basis"] == "qualified-nonoriginal-adaptation"})
         self.assertEqual(1269, len({BATCH_GUARDS.key_string(k) for k in roman} & set(BATCH_GUARDS.fixture()["latin_baseline_present_keys"])))
         target_artifact = (
             "artifact.catholic-church.missale-romanum."
@@ -741,7 +949,7 @@ class ProductionLedgerTests(unittest.TestCase):
         used_projection_editions = set()
         supplemented = []
         ignatius_witnessed = set()
-        for calendar, key, row in permitted:
+        for calendar, key, row in projection_permitted:
             with self.subTest(calendar=calendar, key=key):
                 matches = [
                     edition
@@ -755,6 +963,11 @@ class ProductionLedgerTests(unittest.TestCase):
                 self.assertEqual("roman-1962", calendar)
                 self.assertIsNone(row.get("body_status"))
                 self.assertEqual("collated", row["provenance_status"])
+                if key == PANGE_ASSEMBLY_KEY:
+                    self.assertEqual("editorial-projection-2026-10-29", edition)
+                    self.assert_pange_source_assembly(row)
+                    supplemented.append((key, row["publication_source_ids"][2:]))
+                    continue
                 # One reviewed dated-feast selection has a conservative grade;
                 # every other legacy row still satisfies the exact-target rule.
                 if key == LatinKey('conceptione-immaculata-beatae-mariae-virginis', "", "Secret", "", "", 1):
@@ -776,6 +989,13 @@ class ProductionLedgerTests(unittest.TestCase):
                     "qualified-nonoriginal-adaptation" if key in QUALIFIED_KEYS else "public-domain",
                     row["publication_basis"])
                 self.assertEqual(set(SURFACES), set(row["surfaces"]))
+                if key in CURRENT_QUALIFIED_SCOPES:
+                    scope = CURRENT_QUALIFIED_SCOPES[key]
+                    self.assertEqual(scope["row_sha256"], hashlib.sha256(canonical(row).encode()).hexdigest())
+                    self.assertEqual(scope["body_sha256"], row["text_sha256"])
+                    self.assertEqual(scope["source_id"], row["source_id"])
+                    self.assertEqual(scope["verification_source_id"], row["verification_source_id"])
+                    self.assertEqual(scope["publication_source_ids"], row["publication_source_ids"])
                 # The 2026-09-03 edition carries one projection artifact per
                 # backfill lane, so a row names an artifact *of* that edition
                 # rather than one fixed id; the public-domain witness beside it
@@ -853,7 +1073,9 @@ class ProductionLedgerTests(unittest.TestCase):
         # The 2026-09-03 edition admits the Ignatius artifact for one row only.
         self.assertEqual({("roman-1962", LatinKey("s-ignatii-episcopi-martyris", "", "Postcommunion", "", "", 1))},
                          ignatius_witnessed)
-        self.assertEqual(2, len(QUALIFIED_KEYS))
+        self.assertEqual(2, len(LEGACY_QUALIFIED_KEYS))
+        self.assertEqual(16, len(CURRENT_QUALIFIED_SCOPES))
+        self.assertEqual(18, len(QUALIFIED_KEYS))
         # The same kind of tripwire as the permitted count: a further witness
         # beside the pinned one is rare, so each is a visible edit here.
         # 30 since 2026-10-01: the 29 KI-054 rows resting on the 1862 name its
@@ -864,7 +1086,15 @@ class ProductionLedgerTests(unittest.TestCase):
         # Seven further cold-review repairs bind the 1862 page image as well.
         # 44 since 2026-10-19 (C3): the five Pentecost rows name the 1862
         # page-image leaves n384-n386 they were read on.
-        BATCH_GUARDS.assert_supplemented_owners(supplemented)
+        # Direct-source proofs also retain independently declared project
+        # supplements; account for them without applying projection shape rules.
+        direct_supplements = [(key, row["publication_source_ids"][2:])
+                              for _, key, row in direct
+                              if len(row["publication_source_ids"]) > 2]
+        self.assertEqual(24, len(direct_supplements))
+        self.assertEqual(set(DIRECT_PROOF_ARTIFACTS),
+                         {artifact for _, ids in direct_supplements for artifact in ids})
+        BATCH_GUARDS.assert_supplemented_owners(supplemented + direct_supplements)
         historical_rows = tomllib.loads(BATCH_GUARDS.historical_text(BATCH_GUARDS.LATIN_PATH))["entries"]
         historical_supplemented = [(LatinKey.from_mapping(row), row["publication_source_ids"][2:]) for row in historical_rows if row.get("publication_status") == "permitted" and len(row.get("publication_source_ids", [])) > 2]
         self.assertEqual(52, len(historical_supplemented), historical_supplemented)
@@ -897,6 +1127,18 @@ class ProductionLedgerTests(unittest.TestCase):
                 own = [a for i, a in artifacts.items() if f".{edition}." in i]
                 self.assertTrue(own, edition)
                 for artifact in own:
+                    if artifact["id"] in DIRECT_PROOF_ARTIFACTS:
+                        # These two carriers supplement the exact direct-PD
+                        # proofs; neither serves as a primary publication body.
+                        proof = DIRECT_PROOF_ARTIFACTS[artifact["id"]]
+                        self.assertNotIn(artifact["id"],
+                                         {row["publication_source_ids"][0] for _, _, row in permitted})
+                        self.assertEqual("project-created", artifact["rights_status"])
+                        self.assertTrue(artifact["transformation"].strip())
+                        self.assertEqual(proof["projected_from"], set(artifact["projected_from"]))
+                        self.assertEqual(proof["sha256"], artifact["sha256"])
+                        self.assertEqual(proof["sha256"], hashlib.sha256((ROOT / artifact["path"]).read_bytes()).hexdigest())
+                        continue
                     artifact_spec = spec
                     if edition in BATCH_GUARDS.projection_specs():
                         self.assertIn(artifact["id"], batch_artifact_specs)
@@ -919,7 +1161,10 @@ class ProductionLedgerTests(unittest.TestCase):
                     self.assertIn(target_artifact, stands_on)
                     if edition == "editorial-projection-2026-10-22":
                         self.assertEqual(artifact_spec["projected_from"], stands_on)
-        for _, _, row in permitted:
+        # Direct25 payloads and actual decisions are checked separately above;
+        # this range projection applies only to the project passage namespace.
+        marian_wrappers = set()
+        for _, key, row in projection_permitted:
             passage = passages[row["source_id"]]
             self.assertEqual(row["publication_source_ids"][0], passage["artifact_id"])
             artifact = artifacts[passage["artifact_id"]]
@@ -931,10 +1176,34 @@ class ProductionLedgerTests(unittest.TestCase):
                 for start, end in passage["physical_line_ranges"]
                 for line in payload[start - 1 : end]
             )
+            if artifact["id"] == "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.marian-ancient-chants-20261029":
+                # This exact nine-body carrier records one identity line before
+                # each Latin body. The identity line is not prayer wording.
+                self.assertIn(key, MARIAN_WRAPPER_KEYS)
+                marian_wrappers.add(key)
+                self.assertEqual("94e82bd101d9f2b2251f8e48acc72e3aed0b9332975128b9fe162802e0782935",
+                                 hashlib.sha256((ROOT / artifact["path"]).read_bytes()).hexdigest())
+                selected = projected_body.splitlines(keepends=True)
+                self.assertEqual(2, len(selected))
+                self.assertEqual(f"{key.mass} | main | {key.proper} | all | 1\n", selected[0])
+                projected_body = selected[1]
             self.assertEqual(row["text_sha256"], text_sha256(projected_body))
-        # 348 since St Anthony's removed Collect became permitted under the
-        # accepted latin-seven-rights-adoption.json (2026-10-26).
-        self.assertEqual(348, len(nonpermitted))
+        self.assertEqual(MARIAN_WRAPPER_KEYS, marian_wrappers)
+        # Preserve the post-Anthony historical348 control independently of the
+        # current epoch, which also restores Silvester and Palm ordinals5/6.
+        historical_nonpermitted = []
+        anthony_key = LatinKey("s-antonii-padua-confessoris-ecclesiae-doctoris", "", "Collect", "", "", 1)
+        for calendar in ("postconciliar", "roman-1962"):
+            archived = tomllib.loads(BATCH_GUARDS.historical_text(
+                f"src/sources/inventories/{calendar}{SIDECAR_SUFFIX}"))
+            historical_nonpermitted.extend(
+                row for entry in archived["entries"]
+                for row in [{**archived["defaults"], **entry}]
+                if row["publication_status"] != "permitted"
+                and not (calendar == "roman-1962" and LatinKey.from_mapping(row) == anthony_key)
+            )
+        self.assertEqual(348, len(historical_nonpermitted))
+        self.assertEqual(345, len(nonpermitted))
         collated = [
             item for item in nonpermitted if item[2]["provenance_status"] == "collated"
         ]
@@ -989,8 +1258,10 @@ class ProductionLedgerTests(unittest.TestCase):
         unresolved = [
             row for _, _, row in nonpermitted if row["provenance_status"] == "unresolved"
         ]
-        # 345 since the same St Anthony Collect (latin-seven) left this set.
-        self.assertEqual(345, len(unresolved))
+        # The same historical post-Anthony345 remains a separate exact control.
+        self.assertEqual(345, sum(row["provenance_status"] == "unresolved"
+                                  for row in historical_nonpermitted))
+        self.assertEqual(342, len(unresolved))
         self.assertTrue(all(row["publication_basis"] == "unresolved" for row in unresolved))
         postconciliar = [
             row for calendar, _, row in nonpermitted if calendar == "postconciliar"

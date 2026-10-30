@@ -115,14 +115,19 @@ export function verifyRealWitnesses(structure, root) {
   const alias = 'artifact.edward-caswall.lyra-catholica.london-1849.missal-sequences-en';
   const cummiskey = 'edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861';
   const lasance = 'edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945';
+  const study = 'project-created';
   const sept15 = structure.masses.find(row => row.key === 'septem-dolorum-beatae-mariae-virginis');
   const sequence = sept15.propers.find(row => row.name === 'Sequence');
   assert.equal(sequence.translations.filter(row => row.lang === 'en').length, 2);
   const dolorsWitnesses = T.coverageWitnesses(sept15.coverage, 'en');
   assert.deepEqual(dolorsWitnesses.map(row => [row.id, row.available]),
-    [[caswall, 1], [lasance, 3]]);
+    [[caswall, 1], [lasance, 3], [study, 4]]);
+  const studyChants = ['Gradual', 'Alleluia', 'Offertory', 'Communion'];
+  assert.deepEqual(sept15.propers.filter(row => (row.translations || []).some(
+    translation => translation.lang === 'en' && !translation.source_id
+  )).map(row => row.name), studyChants);
   const orations = ['Collect', 'Secret', 'Postcommunion'];
-  for (const witness of [null, caswall, alias, lasance]) {
+  for (const witness of [null, caswall, alias, lasance, study]) {
     const request = fixtureRequest(structure, sept15, {
       languages: { orations: 'en', ...(witness ? { translationWitness: witness } : {}) }
     });
@@ -130,7 +135,7 @@ export function verifyRealWitnesses(structure, root) {
     assert.ok(!result.unresolvedChoices.some(row => row.id.startsWith('translation-witness:')));
     const selectedSequence = result.events.find(row => row.editionSlotLabel === 'Sequence').selected;
     const sequenceBody = T.orationFor(sequence, 'en', witness);
-    if (witness === lasance) {
+    if (witness === lasance || witness === study) {
       assert.equal(selectedSequence.reason, 'absent-in-witness');
       assert.equal(selectedSequence.text, null);
       assert.ok(sequenceBody.missing && !sequenceBody.fallback);
@@ -144,7 +149,7 @@ export function verifyRealWitnesses(structure, root) {
       const proper = sept15.propers.find(row => row.name === name);
       const selected = result.events.find(row => row.editionSlotLabel === name).selected;
       const body = T.orationFor(proper, 'en', witness);
-      if (witness === caswall || witness === alias) {
+      if (witness === caswall || witness === alias || witness === study) {
         assert.equal(selected.reason, 'absent-in-witness');
         assert.equal(selected.text, null);
         assert.ok(body.missing && !body.fallback);
@@ -155,6 +160,19 @@ export function verifyRealWitnesses(structure, root) {
         assert.equal(selected.sourceId, lasance);
         assert.equal(selected.text, source.text);
         assert.equal(body.text, source.text);
+      }
+    }
+    if (witness === study) {
+      for (const name of studyChants) {
+        const proper = sept15.propers.find(row => row.name === name);
+        const source = proper.translations.find(row => row.lang === 'en' && !row.source_id);
+        const selected = result.events.find(row => row.editionSlotLabel === name).selected;
+        const body = T.orationFor(proper, 'en', witness);
+        assert.equal(source.rights, 'project-created');
+        assert.equal(selected.text, source.text);
+        assert.equal(body.text, source.text);
+        assert.equal(body.missing, false);
+        assert.equal(body.rights, 'project-created');
       }
     }
   }

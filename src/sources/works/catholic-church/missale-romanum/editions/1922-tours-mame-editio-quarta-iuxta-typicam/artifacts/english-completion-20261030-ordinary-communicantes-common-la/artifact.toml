@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-ordinary-communicantes-common-la"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The 1922 Tours Mame printing has the affirmative United States publication-date and faithful-mechanical-reproduction basis recorded on artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a. This bounded artifact retains one complete historical book page only; it contains no modern target book or newly composed modern insertion. The faithful historical-word transcription claims no newexclusive right in those words."
+rights_jurisdiction = "United States"
+provenance = "Direct image transcription from artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-ordinary-communicantes-common-pages, packet page 1, original artifact 455, printed 341; read independently on 2026-10-30. The source has no Joseph clause, prints the entire saints list obligatorily, prints Genitricis withi, and has the complete Per eumdem conclusion. These source facts are preserved, not harmonized with the comparison target."
+retrieved = "2026-10-30"
+sha256 = "2a07ceacafa17667e2c5d7e371b06c300f495e0d8a787407324460ddca738e9a"
+byte_size = 673
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261030-ordinary-communicantes-common-la/text.tsv"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-ordinary-communicantes-common-pages"
+transformation = "Retain complete historical prayer body through auxilio in row1 and its complete separately printed Per eumdem Christum Dominum nostrum. Amen. in row2. Join line-end hyphenation and the left→right column continuation; expand printed ae ligatures to ae; remove stress accents; render initial drop capital C plus small capitals OMMUNICANTES in conventional sentence case Communicantes. Preserve source j spellings, Genitricis, Thaddaei, other capitals and pointing apart from compositor space before colons. Exclude the red heading Infra Actionem and inline red ceremonial rubric Jungit manus from spoken rows. Add no Joseph clause, target optional parentheses or changed conclusion."
+indexable = true
+encoding = "utf-8"
+notes = "One header and two physical TSV rows. The first row is a complete historical sourcebody prefix, not the complete modern target. No English is authored here. The source no Joseph clause, mandatory fullnames and older conclusion remain discoverable facts. This does not supply seasonal proper forms or authenticate complete 2008 wording."

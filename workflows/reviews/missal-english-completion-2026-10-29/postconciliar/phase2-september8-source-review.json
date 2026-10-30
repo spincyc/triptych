@@ -1,0 +1,71 @@
+{
+  "schema": "triptych-independent-source-and-study-english-review/v1",
+  "recorded_on": "2026-10-29",
+  "scope": "One newly documented September8 offering-prayer option in the official2008 Missal reimpressio; independently sourced older Latin and a new project-created study English body.",
+  "verdict": "accepted-with-one-source-apparatus-precision-correction",
+  "candidate_packet_sha256": "5e37d145f3fe0114a43880e3b05015746339c06b62e5aed4e4fef87943b7d9a8",
+  "canonical_receiving_mass": "nativity-blessed-virgin-mary",
+  "draft_english_sha256": "7e71297a2330cb112e27f41b7d8cd9838e6186bd4fa322107aa2ad9ca011a9bb",
+  "ancient_reading_sha256": "da9d7c69569cc09704ba23cb898945fb1d5c571be64fcdef018ec0bbc90c9bab",
+  "verified_sources": [
+    {
+      "artifact_id": "artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174",
+      "sha256": "74c8d1740284984d0f4d64b2223edf805dadfa55aec8a92f8cfba9ab901eca0f",
+      "page_count": 132,
+      "pages_inspected": [
+        49,
+        55,
+        56,
+        67
+      ],
+      "printed_pages": [
+        "367",
+        "373",
+        "374",
+        "385"
+      ]
+    },
+    {
+      "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7",
+      "sha256": "96fd93c73f8c9df47b6911981155b8b02cf2f2183ca6e87baad15128682d8681",
+      "pages_inspected": [
+        157,
+        158
+      ],
+      "printed_pages": [
+        "99",
+        "100"
+      ]
+    }
+  ],
+  "methods": [
+    "Independently recomputed the two complete PDF hashes and compared them with canonical registered artifact records.",
+    "Independently extracted all six pages from complete controlling PDFs and rendered them through tools/pdf-review in a dedicated review directory.",
+    "Directly read the complete official notice, insertion wording and final Vel marker, repeated supplement body and short conclusion cue.",
+    "Directly read the ancient prayer and its preceding September8 heading, main conclusion cue and manuscript apparatus; compared every body word against the official excerpt.",
+    "Checked the complete new English clause by clause against the independently established old prayer and enumerated official variants."
+  ],
+  "source_findings": {
+    "edition_identity": "Official Notitiae printed367 explicitly identifies the Missal reimpressio emendata2008, distinguishes it from a new typical edition, and describes the reproduced variations and supplement.",
+    "own_appointment": "Printed385 explicitly places this complete Super oblata under Ad diem8septembris(p823). Printed373-374 explicitly inserts it after that p823 heading and ends the inserted text with Per Christum. Vel:.",
+    "choice_fact": "The insertion establishes a new prayer option plus the retained pre-existing offering-prayer option. The excerpt does not itself reproduce or exhaustively count all wording/options previously on p823; model a bounded minimum and keep the other wording unavailable rather than inventing it.",
+    "ancient_appointment": "Wilson printed99/PDF157 explicitly heads the September8 Nativity of SaintMary section; its Super oblata continues at printed100/PDF158 before the next September11 heading.",
+    "body_comparison": "Ancient body otherwise agrees after declared u/v, capitalization, pointing and line-wrap comparison; official2008 omits the old occasion phrase in natiuitatis eius solemniis, changes sibi to tibi, and faciat to reddat. Ancient already prints a nostris; it is not a modern addition in this independent witness.",
+    "actual_cues": "Ancient main reading qui tecum.; official excerpt Per Christum. The new English renders only the actual short official cue, without expanding it or adding Amen.",
+    "apparatus_precision_correction": "Wilson printed100 footnote6 reads qui tecum per. CO.: the per. variant belongs to both C and O, not O alone. Keep that exact attribution in downstream metadata."
+  },
+  "policy_verdict": "This finite case fits the existing project-created variant and abridged study route: one independently established older prayer, one omission, two explicitly documented word substitutions, and a separately disclosed generic conclusion-cue difference. This permits the fresh study translation in the finite reviewed scope; it does not authorize adapting an existing historical human English body or generalize to newly composed or recentonized prayers.",
+  "english_verdict": {
+    "verdict": "accepted-without-wording-correction",
+    "text": "Lord, may the humanity of your Only Begotten come to our aid, so that he who was born of the Virgin and did not diminish his mother’s integrity, but consecrated it, may make our offering acceptable to you, freeing us from our sins. Through Christ.\n",
+    "notes": "The humanity of the OnlyBegotten as aid, birth from the Virgin, maternal integrity preserved and consecrated, freedom from sins, and the offering made acceptable to you are faithfully represented. The actual short Through Christ. cue is accurately retained."
+  },
+  "required_limits": [
+    "Study English only; project-created, not received or approved liturgical English and not for recitation.",
+    "Official2008 authentication is finite to this reproduced prayer and insertion/choice facts; no wholeMissal, otheroration, annual appointment or completeness claim follows.",
+    "Keep the separate historical whole-human-English donor refusal unchanged; no old English is trimmed, retargeted or modernized.",
+    "The official fullPDF and its images remain private evidence; retain only lawful independently sourced old Latin, project English and text-free official witness metadata in tracked/public outputs.",
+    "Any added alternative node must retain the source-owned choice and the unresolved wording of the older retained option. Source registration, publication authorization and renderer qualification remain integration checks."
+  ],
+  "tracked_mutations": []
+}

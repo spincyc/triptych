@@ -1,0 +1,46 @@
+{
+  "schema": "triptych-independent-scripture-body-accounting-review/v1",
+  "reviewed_on": "2026-10-29",
+  "decision": "accept-bounded-accounting-and-closed-empty-admission-gates",
+  "review_kind": "independent-AI-code-and-control-review",
+  "declared_base_commit": "e1d0ee4b11a9c04a9ba142d53c10213ace0474f8",
+  "subjects": {
+    "tools/mass-propers": "175bae3c59f9f748aa42844748532b56a39fe50d143b92341e583b5d9f0dad54",
+    "tools/check-calendar-masses": "7df67dcc0823d284ec5cf4804b32e20c7a2b7e5808d13987f1eedc6f73e70f2e",
+    "scripts/_missal_coverage.py": "10dbc61463d145cb642d52829be8e026e4fee46720b2f3e9221fe3f6ff397f70",
+    "tools/tests/test_scripture_body_translation_accounting.py": "794c70c0f9ed555be224bca036143c4875c9dcf6e61006581b7bd102b8909551",
+    "src/sources/calendars/README.md": "9a5fe33e246d829ee5d5898144225a2c35fb98ea74677d0f3affbf238f66977d"
+  },
+  "judgment": [
+    "Positive extent=body and negative whole-English-body records retain the same canonical source target, appointed occurrence, component and denominator. Repeated names, forms, cycles and borrowers do not acquire another body's scope from a shared citation.",
+    "Only English acquires literal-body scope. Latin remains Bible reconstruction, and the separate Scripture component keeps its original meaning. Unscoped or non-English positive rows do not establish body coverage.",
+    "Both the checker and producer require the closed exact admission_id path/hash dispatcher. The production source-admission map and target-recension edge map are both empty; no actual positive Scripture body is authorized.",
+    "The pinned packet must bind exact English and target identity, its complete separately verified target witness, independently held public-domain Latin passages, source-record ancestors, payload hashes and a whole-body arrangement/variant assessment. A citation, method label or data-row assertion cannot register an admission.",
+    "A parent is validated against its own source calendar. Exact child exclusions run before residual inherited bodies are considered. Matching citations or English never establish child agreement: a remaining body requires an independently closed child packet, which is revalidated against child evidence.",
+    "Prior source_latin study-binding protections remain operational. The coverage change is limited to unit(); every other _missal_coverage AST node is exact to the declared base, including the separately owned bounded-form accounting."
+  ],
+  "resolved_finding": {
+    "initial_subjects": {
+      "tools/mass-propers": "175bae3c59f9f748aa42844748532b56a39fe50d143b92341e583b5d9f0dad54",
+      "tools/check-calendar-masses": "726f646b289ac6556483b7eada973796e1f5e8fe8d9f7b54826e2a848aa330e8"
+    },
+    "finding": "A child-only checker skipped an inherited positive Scripture body if its required scripture_body_source field was missing, while the producer refused it.",
+    "correction": "The checker identifies relevant positive claims from the owning calendar's actual Scripture targets even when binding and extent fields are both absent, then invokes the same full producer sequence. New controls cover present and absent local child sidecars.",
+    "disposition": "resolved",
+    "original_counterexample": ".scratch/final-integrated-review-20261029/scripture-child-checker-counterexample.json"
+  },
+  "independent_validation": {
+    "exit_status": 0,
+    "tests": "43/43 pass: all 17 accounting/admission/inheritance controls plus all 26 prior study-binding tests. Only scratch destinations were redirected into this review's exclusive area; subject code and assertions were unchanged.",
+    "additional_checks": "Both production admission maps are empty. AST outside _missal_coverage.unit() matches the declared base. All exact subject hashes remained stable throughout the test run.",
+    "log": ".scratch/final-integrated-review-20261029/scripture-body-accounting-final-controls.log"
+  },
+  "remaining_findings": [],
+  "limits": [
+    "This accepts code and accounting only. No actual source packet or positive English body has been reviewed or admitted through this route.",
+    "Future packet fidelity, whole-arrangement identity, source authority and publication rights require their existing exact source review and deliberate code-owned pins; the empty dispatcher grants none of them.",
+    "Final source-batch acceptance, generation, integrated browser/terminal/publication checks and release remain separate coordinator work.",
+    "This is independent AI review, not human review, real-terminal maintainer acceptance or completion of the full-English or annual textual promises."
+  ],
+  "canonical_mutations": 0
+}
