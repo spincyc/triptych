@@ -1,0 +1,129 @@
+{
+  "schema": "triptych-public-source-reader-metadata-review-summary/v1",
+  "original_independent_receipt_sha256": "c1f3fd687830bed64c1a7bc635f1958f01f360a8a706003a16832f573bce6b1c",
+  "accepted_candidate_sha256": "37974e30277e8592ba0f5332333ecf8fb9c2401f07294a69f23a25f051920ee4",
+  "summary_identity": "Selected parsed review fields with private research paths omitted; this is a new public summary, not the original receipt bytes. No new source/fidelity or human approval is asserted.",
+  "review": {
+    "decision": "ACCEPT_EXACT_SCRATCH_METADATA_CANDIDATE_ONLY_NO_INSTALL",
+    "scope": "Cold bounded review of ten new passage TOMLs, exact selected original English cells, qualification/provenance notes and old-record conservation. No full graph, CLI, generated browser payload or main Ordinary parity checks were rerun.",
+    "counts": {
+      "new_passage_TOMLs": 10,
+      "existing_accepted_English_editions": 6,
+      "complete_English_cells_selected": 16,
+      "new_Ancient_Frames_passages": 5,
+      "Kyrie_paragraphs": 6,
+      "Domine_paragraphs": 2,
+      "existing_scoped_files_conserved": 33
+    },
+    "exact_cell_findings": {
+      "all_ten_postimage_file_hashes_and_byte_sizes_checked": true,
+      "all_selected_physical_rows_exclude_header_and_match_exact_element_keys": true,
+      "every_transcription_segment_equals_the_whole_English_column_cell_on_its_declared_physical_line": true,
+      "all_ten_texts_equal_ordered_cells_joined_with_exact_blank_paragraph_boundaries": true,
+      "no_Latin_source_body_proof_column_revision_prose_keys_or_notes_enter_reading_text": true,
+      "all_artifact_ID_edition_ID_controller_hashes_match_existing_canonical_artifacts": true,
+      "all_existing_artifact_metadata_and_payload_bytes_remain_exact": true,
+      "all_new_paths_absent_from_canonical_tree_at_review": true
+    },
+    "qualification_findings": {
+      "Supplices": "Complete selected historical prayer-body prefix only, through repleamur; independent new study English; old Per eumdem conclusion excluded and no whole Eucharistic Prayer or target2008 claim.",
+      "Common_Communicantes": "Common form only, full saint names, whole old conclusion omitted; Joseph clause basis remains separately scoped; no seasonal proper forms, calendar appointment, assembled Latin or approved-English expansion.",
+      "Domine": "Accepted prayer with old short conclusion and separate people Amen remain two paragraphs. Notes disclose singular-to-communal source revision and exact adopted basis; no actor labels inferred by the transcription.",
+      "Peace_invitation": "Only accepted study English of the whole old1712 Ambrosian invitation; old response and conditional rubrics are excluded; no new actor or appointment allocation.",
+      "Ancient_Frames": "Five distinct utterances remain separate passages. Alternative greetings are not concatenated; Ecce and Beati are not flattened with greetings. Source omissions of greeting Amen and Beati nuptiarum are explicit; Ecce plural sins preserved.",
+      "Bishop_greeting": "Explicitly constrained nondefault Bishop-only Ordinary option, with no automatic bishop/calendar inference; notes correctly limit the actor constraint to use as that greeting option.",
+      "Kyrie": "Six distinct cells and paragraphs retain K,K,C,C,K,K. Exact historical human English gloss phrases belong to the1861 Cummiskey edition; Triptych records the accepted arrangement. No fresh-translation, personal publisher authorship, exclusive ownership, verbatim old whole-Mass, ninefold execution, old actor/cue or new inferred actor claim is introduced.",
+      "Shared_limits": "Study/nonrecitation, no human review and no authenticated complete2008/approved-English identity are preserved. Metadata adds no rights basis or extension."
+    },
+    "successor_conservation": {
+      "predecessor_sha256": "52b6ca5c9a7d1c31b81aadf1419ff86c69f84672b1639c86c97c1153d10d685b",
+      "only_changed_new_record_field": "Kyrie context",
+      "all_ten_text_segment_locus_bytes_unchanged": true,
+      "ambiguity_resolved": "Edition wording and records arrangement replace publisher-authorship and owns wording.",
+      "old_evidence_record_conservation": "All33 pinned scoped existing files remain exact, including old Kyrie evidence; this review adds no prose to that record."
+    },
+    "grammar_and_precedent": {
+      "read_only_inspected": [
+        "tools/source-reader reading_of prose/rights/controller rule",
+        "tools/source-library passage transcription/physical-line substring rules",
+        "src/sources/works/triptych/english-completion-20261029-ordinary-joseph/editions/2026-10-29-study-english/passages/communicantes-continuation.toml"
+      ],
+      "finding": "Existing schema2 passage text with exact ordered physical-line transcription segments is the established route. Proposed records follow that grammar without generic code changes."
+    },
+    "reviewed_note_locations": [
+      {
+        "path": "src/sources/works/triptych/postconciliar-ordinary-supplices-study-english-20261030/editions/2026-10-30-study-english/passages/supplices-body-english-reading.toml",
+        "sha256": "0d914b46b40291f6303a7caefcc9c048b7e3d27d141d563ab1f106b972a5576f",
+        "context_line": 10,
+        "notes_line": 12,
+        "text_line": 13
+      },
+      {
+        "path": "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/editions/2026-10-30-study-english/passages/common-communicantes-english-reading.toml",
+        "sha256": "e91d4c5591c0ea58e887f7f26adf4fab8e3173134d0aac61fa65fbddad7c13c2",
+        "context_line": 10,
+        "notes_line": 12,
+        "text_line": 13
+      },
+      {
+        "path": "src/sources/works/triptych/postconciliar-ordinary-domine-qui-dixisti-study-english-20261030/editions/2026-10-30-study-english/passages/domine-qui-dixisti-english-reading.toml",
+        "sha256": "1c63171d9fa23b00a15845a98f841d92c8a5b5b1b2f90cf0d771eaf05c28f738",
+        "context_line": 10,
+        "notes_line": 12,
+        "text_line": 13
+      },
+      {
+        "path": "src/sources/works/triptych/postconciliar-ordinary-peace-invitation-study-english-20261030/editions/2026-10-30-study-english/passages/peace-invitation-english-reading.toml",
+        "sha256": "98b1d11ba6ed008190090b2568d4c34be6d3a76aef5adaafad20930528f990cd",
+        "context_line": 10,
+        "notes_line": 12,
+        "text_line": 13
+      },
+      {
+        "path": "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/passages/greeting-trinitarian-english-reading.toml",
+        "sha256": "7ce3b521162f0b2706114fa300d61c37b1d5c184d79d5b859d76d5cf7a7d03a6",
+        "context_line": 10,
+        "notes_line": 12,
+        "text_line": 13
+      },
+      {
+        "path": "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/passages/greeting-grace-peace-english-reading.toml",
+        "sha256": "c820379101553c35a905c321e485ba18dac5ed68775dd44cb3dd18ca9e4b4046",
+        "context_line": 10,
+        "notes_line": 12,
+        "text_line": 13
+      },
+      {
+        "path": "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/passages/greeting-bishop-english-reading.toml",
+        "sha256": "8323b99c45614fef2146485d9acdaed36f175c8993d52a47759054851374cf31",
+        "context_line": 10,
+        "notes_line": 12,
+        "text_line": 13
+      },
+      {
+        "path": "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/passages/ecce-agnus-english-reading.toml",
+        "sha256": "645fc0b9aa2c28e7750e16ae130615a501df40234e6cb15d13c07537b4ea10b5",
+        "context_line": 10,
+        "notes_line": 12,
+        "text_line": 13
+      },
+      {
+        "path": "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/passages/beati-ad-cenam-english-reading.toml",
+        "sha256": "98bfdcc5dea151567f20b475a70069a420dd572bbcae5be01a233ebd828ffff8",
+        "context_line": 10,
+        "notes_line": 12,
+        "text_line": 13
+      },
+      {
+        "path": "src/sources/works/triptych/english-completion-20261030-kyrie-sixfold-study-arrangement/editions/2026-10-30-study-arrangement/passages/sixfold-kyrie-english-reading.toml",
+        "sha256": "e3cd60ead4f60a68609f3f0cf52501a47749de24ba68522140c641a376f4a8fa",
+        "context_line": 10,
+        "notes_line": 12,
+        "text_line": 13
+      }
+    ],
+    "integration_boundary": "Coordinator-owned full graph, strict edition CLI, generated Source Reader text/default entry point and served Main Ordinary parity evidence are reported separately and were not duplicated or independently claimed here. Canonical install and source epoch/release remain root-owned.",
+    "defects": [],
+    "canonical_writes": 0
+  }
+}

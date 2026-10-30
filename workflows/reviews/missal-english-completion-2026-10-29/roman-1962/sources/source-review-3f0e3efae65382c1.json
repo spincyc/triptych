@@ -1,0 +1,87 @@
+{
+  "schema": "triptych-independent-source-translation-review/v1",
+  "reviewed_on": "2026-10-30",
+  "disposition": "accepted-source-facts-and-original-study-English-fidelity",
+  "reviewed_install_plan_sha256": "3821abb99b3a8f72b67bd5ab137fba645bde1825c576398dd59d12408599a8be",
+  "scope": "One exact Roman1962Common pluralCollect4177; no authority inferred from singular Common/Damasus or other Commons. Source facts, fullold/source/targetcomparisons, originalEnglish fidelity and fiveproposedfile mechanics only. No rights, installation, integratedreader or publication acceptance.",
+  "target": [
+    "commune-summorum-pontificum",
+    "main",
+    "Collect (in plurali)",
+    "all",
+    1
+  ],
+  "target_latin_sha256": "77215320cce36c1a3823c3643d63bac8f3f98579ded3eb454c1fead0f6abf440",
+  "original_study_english_sha256": "5e1806df9e092a2efbba787595792ee945b76a2f68e4138bdc5724627e1182d0",
+  "corrected_older_whole_sha256": "8a39ba82e96ddf5c1c465a8d793313f53d3e3091e29d41708cacc467bc6dc446",
+  "source_fact_disposition": "accepted",
+  "English_fidelity_disposition": "accepted; every targetpetition/title/placeholder/optionalphrase/pluralrelation/actualshortconclusion faithfully represented",
+  "source_observations": [
+    "Feltoe1896PDF66/printed42lines8-10 is a complete connected prayer immediately before the following Itemalia heading. It prints Pater, beatosapostolos, quos and pastores; its own AddendaandCorrigendaPDF24 explicitly directs Pater to Pastor at42line8.",
+    "The oldbase is alreadyplural; the later target does not derive its pluralgrammar from the separately reviewed singularCommon.",
+    "Target810/printed[2]4177 independently prints Pastor aeterne, beatosN.etN.(Martyrestuosatque)SummosPontifices, quos...essepastores and PerDominum.",
+    "Every finite delta is exposed: ownolderPater/Pastorerratum; bone/aeterne; apostolos replaced by exactN.andN./optionalMartyr/SupremePontiffobject; olderFiliituivicarios removed; actualconclusionlength and pointing/ligature/accent/layout changes. No omitted wordorder or grammarchange found.",
+    "OriginalstudyEnglish keeps both N.placeholders, optionalyourMartyrsand, pluralSupremePontiffs and whomyouappointedasshepherdsofthewholeChurch; it adds no Son/vicarclause, name, response or expandedconclusion."
+  ],
+  "findings": [
+    {
+      "id": "PL1",
+      "state": "resolved",
+      "finding": "Optionaltargetartifactpagerange required page_count absent on frozenCMAAartifact. Removed optionalrange while keeping exacttargetlocator; Feltoe24/66bounds retained againstpage_count278."
+    },
+    {
+      "id": "PL2",
+      "state": "resolved",
+      "finding": "Oldsource locator initially placedGregem at endofXIIIItemalia although that heading follows the prayer. Finalmetadata now narrowly identifies completeGregem immediatelybeforefollowingItemalia."
+    }
+  ],
+  "unresolved_source_or_English_blockers": [],
+  "checks": {
+    "five_file_pins": "pass",
+    "all_four_TOML_records": "parse; schema-sensitive indexableencoding/pagebound/ownership/pinnedcontrollerfields inspected",
+    "projection_payload_hash_size_UTF8_and_line1passage": "pass",
+    "targetEnglisholderbodySHAjoins": "pass",
+    "fullsourceimages": "Direct400namedtarget810/Feltoe66/ownerratum24 images inspected wholeprayersandcontext; no OCRsuppliedwords",
+    "whole_source_graph": "not claimed; parentcombinedgate remains required after rootscopeadoption"
+  },
+  "per_file_pins": [
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/pontiff-plural-collect-collation-20261029.toml",
+      "sha256": "8d1d9b6331b0a956f5e053043d2d987c90c15deeb54a32338165ac6ecfe5783b",
+      "byte_size": 1193,
+      "toml_parses": true
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/pontiff-plural-collect-whole-foundation-20261029.toml",
+      "sha256": "d3023827cacaf9ac07409cbdd3241d53acaf47fd45767cb3d402f4406111aa5b",
+      "byte_size": 1626,
+      "toml_parses": true
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pontiff-plural-collect-qualified-77215320/artifact.toml",
+      "sha256": "1cb07af8726493f3aa0a8d66cb2b954c4bdf1e683271ee7b7fbd46c9ae8fb80d",
+      "byte_size": 2873,
+      "toml_parses": true,
+      "artifact_body_hash_size_encoding_match": true
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pontiff-plural-collect-qualified-77215320/latin.txt",
+      "sha256": "77215320cce36c1a3823c3643d63bac8f3f98579ded3eb454c1fead0f6abf440",
+      "byte_size": 203
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pontiff-plural-collect-qualified.toml",
+      "sha256": "491771a1b1618ede8b06d3170d0c183643cc1d55a1050725f7126183b5b96814",
+      "byte_size": 3544,
+      "toml_parses": true
+    }
+  ],
+  "finite_authority": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json",
+    "method": "english-completion-20261029-finite-latin-v1",
+    "state": "separate rootadoption PENDING; identity references consistent",
+    "required_target_latin_sha256": "77215320cce36c1a3823c3643d63bac8f3f98579ded3eb454c1fead0f6abf440",
+    "limitation": "This receipt does not adopt the qualified-nonoriginal-adaptation assessment or authorize publication. The cumulative theologicalredaction originality objection remains material and explicit."
+  },
+  "strongest_contrary_retained": "Replacing apostles with named Supreme Pontiffs, adding the optional martyr designation, changing good to eternal and omitting vicars of your Son is theological redaction. The cumulative adaptation might satisfy the low originality threshold even though the connected older arrangement is retained. The prior singular Common/Damasus judgment does not authorize this plural target, and no holder permission or court judgment for this exact form is asserted."
+}

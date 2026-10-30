@@ -1,0 +1,212 @@
+{
+  "schema": "triptych-proper-source-admission/v1",
+  "recorded_on": "2026-10-30",
+  "state": "Source-qualified historical/study English admitted by exact root2026-10-30 decision; no approved English or modern Latin permission created.",
+  "package": "good-friday-opening-two",
+  "targets": [
+    [
+      "good-friday",
+      "main",
+      "Prayer",
+      "all",
+      1
+    ],
+    [
+      "good-friday",
+      "main",
+      "Prayer (alternative)",
+      "all",
+      1
+    ]
+  ],
+  "superseded_unavailable_dictionaries": [
+    {
+      "mass": "good-friday",
+      "form_id": "main",
+      "proper": "Prayer",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "rejected_detectors": [
+        "liturgies-net-2026-08-22"
+      ],
+      "quarantined_text_sha256": [
+        "36cfb2333570c70f79b08ed591cea045e9c0ff4122cd9dd2ccb1459f8647a680"
+      ],
+      "note": "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+    },
+    {
+      "mass": "good-friday",
+      "form_id": "main",
+      "proper": "Prayer (alternative)",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "rejected_detectors": [
+        "liturgies-net-2026-08-22"
+      ],
+      "quarantined_text_sha256": [
+        "1899b26cb81ce996335599b49d84708dc60b6d75546b79962d0262513214e08d"
+      ],
+      "note": "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+    }
+  ],
+  "source_files": [
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-opening2-wilson-pages52-61-75-9ea0918d/artifact.toml",
+      "sha256": "e6690facf70cfac99878e532bd0ef998e72dab9e2003400528d2b83308dd6e52",
+      "byte_size": 2246
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-opening2-wilson-pages52-61-75-9ea0918d/pages.pdf",
+      "sha256": "9ea0918d6a9ee489ccd4aa70c23b2d6e87162e4e93c6c4bfdf2b216156f1aac3",
+      "byte_size": 470709
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-opening2-deus-qui-peccati-source.toml",
+      "sha256": "19071fafbe8097b47b000bd5a31c03088f147ebec47ebf50c1537e165394ae65",
+      "byte_size": 2363
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-opening2-qui-vivit-conclusion.toml",
+      "sha256": "39c81f55fbdd6b518c8994e6e449b8c73c6780002e81358dbf418e0235ce1dea",
+      "byte_size": 1184
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-opening2-reminiscere-source.toml",
+      "sha256": "16ff87e456d98d649eb9690e578e9e8d8b803adab2b687689c6949042684a5fb",
+      "byte_size": 1902
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/artifact.toml",
+      "sha256": "617e48d287ca3a1b6409d74e9adf1cc8faad0e97bc52fe02706ed4f257b45252",
+      "byte_size": 2121
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/pages.pdf",
+      "sha256": "d85c36fbb0e7acebc16ddacd55fc7a38419c01400d0eb24132e20d748fb473e8",
+      "byte_size": 502778
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-opening2-per-christum-conclusion.toml",
+      "sha256": "d380657fdad6aa7a98b1e62f2ea4b8bd6247703e089e98a5ba8ea47754105974",
+      "byte_size": 1226
+    }
+  ],
+  "package_manifest": {
+    "path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/goodfriday-opening-prayers/proposal/manifest.json",
+    "sha256": "849ae0ebce96bdfe1fc59e83258be962a6b565fddf74feb9391151fc3b99bfd3"
+  },
+  "source_and_English_reviews": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-07-d3a9cff83569.json",
+      "sha256": "d3a9cff835690c1d79da83f34a37c34d0004b014cd948c875e5063819158ac3a"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-08-b7aa0d76220c.json",
+      "sha256": "b7aa0d76220cbf32c4414bc9d79b6a0c4df169c0fbed4e190c1f2c33c10ef8c3"
+    }
+  ],
+  "prepared_entry_blocks_sha256": "acba835d0f3d34db1e9370d63e6077ad6f49d8f7ff209abf0f74f6f22639ed09",
+  "normalized_entry_blocks_sha256": "d9dc1a3eb34ce3c1cc06b58fa255b1fd2bedadf1aefa1e15229f240d872a7dd2",
+  "assembly_normalization": "Only optional empty form labels removed; exact form_id and every translation dictionary retained.",
+  "source_policy": {
+    "literal_PD_uses": 0,
+    "project_study_uses": 2,
+    "no_approved_English_or_modern_Latin_payload": true,
+    "root_finite_adoption_not_implied_by_dryrun": true
+  },
+  "all_prior_positive_and_unselected_absence_dictionaries_exact": true,
+  "metadata_successor": {
+    "prior_dryrun_receipt_sha256": "4e3c87b9d318190fe338bd1cb32c97ef1d5759dddd241abeb2837fe56c365824",
+    "exact_field_changes": [
+      {
+        "target": [
+          "good-friday",
+          "main",
+          "Prayer",
+          "all",
+          1
+        ],
+        "field": "incipit",
+        "before": "Reminiscere miserationum tuarum",
+        "after": "Reminiscere miserationum tuarum, Domine"
+      },
+      {
+        "target": [
+          "good-friday",
+          "main",
+          "Prayer (alternative)",
+          "all",
+          1
+        ],
+        "field": "incipit",
+        "before": "Deus, qui peccati veteris",
+        "after": "Deus, qui peccati veteris hereditariam mortem"
+      }
+    ],
+    "English_and_all_other_entry_fields_unchanged": true,
+    "incipit_review": [
+      {
+        "path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/goodfriday-opening-prayers/proposal/review/INCIPIT-METADATA-ACCEPTANCE.json",
+        "sha256": "9b0215d8be44bd02ff8b3cdba8dd7876f39ad9e68fa02cbfbabe32bc49116744"
+      }
+    ],
+    "relation_review": "Accepted exact label-only successor 2a8ad2a63b4cba9b4018439d5f6f5d893d3dcebe2a5c894a4c091bb3a07e91d1; no English/source changes."
+  },
+  "checkpoint_refresh": {
+    "state": "Exact root-adopted source/English installation at checkpoint702; prior155positives preserved.",
+    "checkpoint_commit": "702f650020d69a45aa747b1c5b5e30be6c42ca59",
+    "sidecar_preimage_sha256": "57123fdfb8472718679284f93698912c296e85fa7e78245554956f3890bc3e6d",
+    "predecessor_proposed_receipt_sha256": "b35e74a5e4f5ef3c7547d750663724fdcd182b813e41d374ce2f461a058b1c3d",
+    "all155_existing_positive_dictionaries_preserved": true,
+    "metadata_successor_seals": [
+      {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-09-9b0215d8be44.json",
+        "sha256": "9b0215d8be44bd02ff8b3cdba8dd7876f39ad9e68fa02cbfbabe32bc49116744"
+      },
+      {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-10-2a8ad2a63b4c.json",
+        "sha256": "2a8ad2a63b4cba9b4018439d5f6f5d893d3dcebe2a5c894a4c091bb3a07e91d1"
+      }
+    ],
+    "finite_recommendation_index": {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/source-expression-recommendation-index.json",
+      "sha256": "b9bd060281b8ab9f165ff85b3c2e16bbe06dd4d89935b46581de424422b4dd97"
+    },
+    "recommendation_is_not_root_adoption": false,
+    "root_adoption": {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/root-decision.json",
+      "sha256": "6bac2ac5d0de5c2e9d50a654e5cb923721efdeac87a23bd9524922ef346b4943"
+    }
+  },
+  "root_adoption": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/root-decision.json",
+    "sha256": "6bac2ac5d0de5c2e9d50a654e5cb923721efdeac87a23bd9524922ef346b4943"
+  },
+  "retained_source_expression_recommendations": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/source-expression-recommendation-index.json",
+    "sha256": "b9bd060281b8ab9f165ff85b3c2e16bbe06dd4d89935b46581de424422b4dd97"
+  },
+  "retained_metadata_successor_reviews": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-09-9b0215d8be44.json",
+      "sha256": "9b0215d8be44bd02ff8b3cdba8dd7876f39ad9e68fa02cbfbabe32bc49116744"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-10-2a8ad2a63b4c.json",
+      "sha256": "2a8ad2a63b4cba9b4018439d5f6f5d893d3dcebe2a5c894a4c091bb3a07e91d1"
+    }
+  ],
+  "predecessor_dryrun_receipt_sha256": "f3891f988491a335c3e7a0e25be88f99eadb9f7427593271cb80c2356f7e7415"
+}

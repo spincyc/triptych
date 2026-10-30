@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-introit-qualified-62bc1f50"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "Prospective qualified-nonoriginal-adaptation under workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json, method english-completion-20261029-finite-latin-v1. Exact finite whole-expression recommendation exists, but root adoption remains pending. Project authorship covers only this editorial carrier; it supplies no independent rights in the inherited Latin and makes no whole modern edition public-domain claim."
+provenance = "Exact complete modern target wording conserved byte-for-byte from the independently source-reviewed candidate. Historical source testimony, full-source contexts, precise later contributions and contrary findings remain separately addressable. No earlier complete joined target donor or historical English translation is invented."
+retrieved = "2026-10-30"
+sha256 = "62bc1f505027f3ba9f914511ae9c836b6b460068c08409677226a16ff44de459"
+byte_size = 271
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-introit-qualified-62bc1f50/latin.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.queen-introit-gaudeamus-latin-20261029", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "The complete old Gaudeamus arrangement remains in the same order. The antiphon differs by the short Queenship title; the target also adds standard conditional Paschal cues and changes its Psalm clause. All three changes require assessment. A finding limited to the added title cannot silently clear the Psalm translation. Add the conventional title Reginae and conditional double Alleluia. The Psalm component changes Eructavit to Effundit and opera mea to carmen meum, plus final regi to Regi; these are substantive lexical changes, not spelling normalization. The exact word/character spans remain in the frozen source candidate."
+encoding = "utf-8"
+indexable = true
+notes = "Scratch-only prospective carrier; exact root finite authority adoption is still required. Strongest contrary: The target Psalm wording is not word-identical to the earlier complete Gaudeamus body. Effundit and carmen meum are content changes, rather than spelling changes or a filled saint-name blank. The new 1945 Latin Psalter is a real new translation category, confirmed by the official 1947 Pontifical Biblical Commission text. A new translation may contain protected expression even when the underlying Hebrew Psalm is public domain. The bounded search did not establish a complete pre-1931 antecedent for the target Psalm clause. Exactness or public-domain status cannot be inferred merely because two changes are short. The 1962 typical-edition source artifact retains unresolved rights. Existing finite qualified cases do not extend automatically to this new owner, body, proof or wording. No authority-file hash is embedded; authority may independently pin this dictionary without a self-cycle."

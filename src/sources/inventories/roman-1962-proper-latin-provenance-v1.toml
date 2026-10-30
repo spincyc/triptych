@@ -5863,6 +5863,7 @@ publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-p
 publication_locator = "Pustet Ratisbon 1862, printed p. 201-202 (folio marker 201 at line 35748); text-layer lines 35794-35802; artifact rights_status public-domain on a book first published in 1862"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
+
 [[entries]]
 mass = "easter-vigil"
 form = ""
@@ -5870,9 +5871,24 @@ proper = "Blessing of the Lighted Candle"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "60b503ba9006dcb3f74b49fa7cf3cdebaaacbea23d68e829ef59b4e99f7209c4"
-body_status = "removed"
-
+text_sha256 = "0595480950da324de25ef33113f56537a979517bd4bd23beb75d7643f3310b5f"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.lighted-candle-qualified"
+source_date = "2026-10-29 editorial projection; Pustet1862 whole prayer with older Wilson1894/Gregorian1915 variant witnesses"
+locator = "Qualified projection latin.txt physical1; Pustet1862 printed180/PDF266; Wilson1894 printed81/PDF174; Gregorian1915 Supplement printed154/PDF212."
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.lighted-candle-target-word-collation-20261029"
+verification_locator = "1962 printed183 no975; artifact PDF264."
+transformations = ["Pustet1862 hoc incensum becomes target hunc incensum cereum: hoc to hunc agrees with new masculine noun cereum; incensum is retained and now functions adjectivally as lighted/burning. Old object incense is retargeted to a lighted candle. Exactly one added word and one changed demonstrative, not an orthographic normalization.", "Pustet1862 regenerator accende becomes target regenerator, intende: verb replacement kindle to increase/intensify. Intende is already printed in two independently acquired whole older prayers: Wilson1894 printed81/PDF174 and Wilson1915 Supplement printed154/PDF212. Those witnesses are variant whole prayers, not whole-word-identical target donors.", "All remaining Pustet petition words, their order and the full printed conclusion Per Christum Dominum nostrum agree with target after declared stress-accent/ligature/i-j normalization. Actual deportatum is present in Pustet; the earlier text-layer doubt was an OCR issue, not a missing word.", "Target pointing inserts commas around invisibilis regenerator and changes the colon after accende to semicolon after intende. SourcePustet hujus/majestatis and target huius/maiestatis become calendar hujus/majestatis. Blessing cross inside benedictionis is a nonspoken action sign in both witnesses; omitted from body in the stated projection.", "Wilson1894 whole alternative differs from target at ergo/quaesumus, absent cereum, regnator/regenerator, absent in before quocumque, order ex huius aliquid sanctificationis fuerit mysterio, diabolica/diabolicae and its long written-out conclusion. None of those source readings is silently substituted into the target.", "Gregorian1915 whole alternative substantially follows that older Wilson1894 order and regnator/intende, prints uirtutis tuę maiestatis with footnote1 proposing uirtus, and ends per dominum. It confirms old intende only within a complete old paragraph, not an exact target relation.", "No modern surrounding rubrics, invocation dialogue, response Amen or full1962 ceremonial arrangement is incorporated into this one prayer-body candidate. R.Amen remains separately adjacent in both Missal images."]
+provenance_evidence = "Complete target and continuous old Pustet prayer read independently on actual200/400dpi page images. Exactly three substantive targetword changes, old intende witnesses, old/target endings and body scope all explicit."
+provenance_authority = "Triptych direct page-image collation and bounded finite projection"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "qualified-nonoriginal-adaptation"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.lighted-candle-qualified-05954809", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.lighted-candle-old-prayer-latin-20261029-be854aa4", "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.lighted-candle-old-prayer-latin-20261029-1334bce8", "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7"]
+publication_locator = "Pustet1862 printed180 whole prayer; Wilson1894 printed81 and Gregorian1915 printed154 old intende paragraphs; exact qualified source passage physical1."
+publication_evidence = "Prospective exact whole-expression assessment under workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json, method english-completion-20261029-finite-latin-v1; this source packet does not itself adopt that authority. Complete old prayer plus one object noun, agreement and independently old verb reading; no new clause. Contrary: retargeting the object and selecting a different verb may constitute modern redaction. Parent finite rights decision required."
 [[entries]]
 mass = "easter-vigil"
 form = ""
@@ -6543,6 +6559,7 @@ publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-p
 publication_locator = "Pustet Ratisbon 1862, printed fol. 45; text-layer lines 18333-18336; artifact rights_status public-domain on a book first published in 1862"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
+
 [[entries]]
 mass = "good-friday"
 form = ""
@@ -6550,9 +6567,24 @@ proper = "Antiphons at the Translation of the Blessed Sacrament"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "cf6998f6e26d8ed9b51fc9226fd6d7d880c3cb2cfba14b17c8e8c760264c9fba"
-body_status = "removed"
-
+text_sha256 = "0911d4eb3eb4f93de9ed5a26db304906b9675a8b4f47f971e19ca15165c5b28a"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.goodfriday-transfer-2026-10-30.three-antiphons"
+source_date = "1626 Madrid TypographiaRegia proper-office printing; bounded2026-10-30 project projection"
+locator = "Exact projection physical lines1,3,5; source printed55-56/PDF71-72; targetPDF261/printed180/nos956-958"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.good-friday-transfer-antiphons-checked-20261030"
+verification_locator = "CMAA1962 PDF261, printed180, nos956-958"
+transformations = ["Join source line wraps; normalize typographic long-s, source serui/Saluator/salua to target servi/Salvator/salva, and ampersands to et.", "Use the target punctuation and capitals; remove target stress accents in the canonical calendar convention.", "Select the complete first and third source antiphons. Select the complete contiguous second source expression ending Filius Dei redemit nos; the full historical second antiphon then adds Alleluia, retained in its source artifact. No seasonal omission rule is inferred.", "Keep three separate full target paragraphs in their 1962 transfer order. The historical source has these antiphons in the same order within the July16 third nocturn, separated by Psalms95-97; it does not witness the historical Good Friday transfer placement."]
+provenance_evidence = "Every target lexical word is independently attested in the full1626 source expressions, in order, after the declared spelling/ampersand normalization. Source2 includes its complete target as a contiguous prefix and then adds Alleluia. The source words, source suffix and historical office arrangement remain fully recorded; no modern protected source image or rubric is copied. Image passage passage.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia.three-cross-antiphons-page-images-20261030."
+provenance_authority = "Triptych direct page-image collation and bounded editorial projection"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.goodfriday-transfer-2026-10-30.three-antiphons-0911d4eb", "artifact.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia.three-cross-antiphons-checked-20261030"]
+publication_locator = "1626 Madrid proper-office printing, printed55-56/PDF71-72; source passage passage.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia.three-cross-antiphons-checked-20261030"
+publication_evidence = "The full three target expressions are already present in independently held 1626 public-domain source bodies. Target2 selects the complete contiguous expression ending redemit nos before the explicit old source suffix Alleluia. Source arrangement and modern placement remain separate. No general cento or inferred seasonal-suffix rule is asserted; only this exact finite per-expression/prefix relation is proposed."
 [[entries]]
 mass = "good-friday"
 form = ""
@@ -6589,6 +6621,7 @@ occurrence = 1
 text_sha256 = "667bd7ff547b9d972a1e4af9b0b897a18d3e47f467ff20f78f1bbefa9aed9e89"
 body_status = "removed"
 
+
 [[entries]]
 mass = "good-friday"
 form = ""
@@ -6596,9 +6629,24 @@ proper = "Improperia"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "dc76fa149743742f7d0ce72e5ee61e94ce3a7c322f470d8436cef0b9862ea08e"
-body_status = "removed"
-
+text_sha256 = "83cbd70391a22369245ab9c1019d3d25db59e02b5b267474f3b039130d40a616"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.improperia-whole-qualified"
+source_date = "2026-10-29 editorialprojection; independently checked whole Pustet1862 arrangement"
+locator = "Editorial whole targetphysical1-267; oldsource printed174-176/PDF260-262"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.improperia-whole-collation-20261029"
+verification_locator = "1962 printed177-179/PDF258-260 nos952-955"
+transformations = ["One substantive sung-word addition: old Ego quidem plantavi te vineam meam speciosissimam; target Ego quidem plantavi te vineam electam meam speciosissimam. Electam follows vineam in the actual1962 page, not before it.", "Greek transliteration old Agios/o Theos/ischyros/athanatos/eleison imas versus target Hagios/o Theos/Ischyros/Athanatos/eleison himas; the same six-part Greek-and-Latin Trisagion and its three occurrences are retained.", "Orthographic forms: old caecidisti vs modern cecidisti; old jam vs modern iam. These are expressly exposed; no sung-word order or clause substitution was observed elsewhere.", "SectionII modern writes the whole Popule meus refrain after each of nine verses. Old source prints Popule meus cues and explicitly prescribes repetition through (exclusive) Quia eduxi te de terra Aegypti; the cue expansion therefore stops at responde mihi.", "SectionIII modern writes the full repeated Crucem tuam antiphon after the complete Psalm66:2 verse. Old source prints the antiphon once and explicitly prescribes its immediate repetition. Same words and order.", "SectionIV modern writes the alternating four-line Crux fidelis half-refrain and two-line Dulce lignum half-refrain after the nine full hymn stanzas and doxology. Oldsource explicitly prescribes Crux fidelis usque ad Dulce lignum and et sic fit quoties repetitur; the identical sequence of five Crux and five Dulce responses is retained.", "Modern opening functional rubric explains numerical choir labels1/2/1et2. Source uses words/duo-cantores roles instead. Modern sectionI gives the three addresses to1et2; older source gives the first to two singers in the middle, second to two of choir2, third to two of choir1. Trisagion role1/2sequence stays the same.", "SectionII modern assigns all nine verses to choir1 and responses to choir2. Oldsource alternates pairs of singers from choir2/1 and directs bothchoirs to repeat the refrain. SectionIII modern splits Psalm66:2 between choir1/2, while oldsource prints it continuously under common singing. SectionIV old generic hymn/refrain prescription becomes numeric choir1/2labels. These are measured functional arrangement changes, not oldsource words.", "Target newly prints Conclusio numquam omittenda before the doxology. Old source fully prints the same doxology but does not print that mandatory-conclusion rule in these pages. This short functional instruction is separately included in the candidate finite judgment, not falsely inherited from the oldsource.", "Stress accents removed, ae/oe ligatures expanded, printed line wraps joined. Capitalization and punctuation differ throughout, including comma-to-colon at bonam, sitim-meam potasti colon-to-comma, exclamation in Responde mihi, and doxology pointing. No words are supplied from the score or a reconstructed cento."]
+provenance_evidence = "Complete old and target page bodies read independently; all source-prescribed cue expansions, sole substantive sung-word addition, and functional arrangement changes measured. Nine principal hymn stanzas plus doxology fully printed in both."
+provenance_authority = "Triptych direct page-image collation and bounded finite projection"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "qualified-nonoriginal-adaptation"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.improperia-whole-qualified-83cbd703", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.improperia-whole-checked-20261029-b8728178"]
+publication_locator = "Pustet1862 printed174-176; complete checked oldbody and complete pageimages; exact target carrier and finite authority."
+publication_evidence = "The whole old chant sequence, every principal hymn stanza and doxology, and the very same response sequence are independently proved in one1862 printing. No new sung clause, verse, stanza, or source selection appears: the sole substantive sung-word addition is the conventional adjective electam; choir changes and short instructions are functional, with response expansions expressly prescribed by the old whole source. This supports a separately bounded qualified-nonoriginal-adaptation proposal with moderate confidence, subject to root adoption after reviewing the entire modern arrangement and the strongest contrary. Namedauthority workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json method english-completion-20261029-finite-latin-v1. Strongest contrary: Electam is an added descriptive word, not mere pointing or inflection. A modern edition may deliberately reshape performance by reassigning choir roles, expanding prescribed responses, splitting the psalm, and making the doxology mandatory; the overall selection/arrangement and concise new rubric wording must be assessed together for originality. An old complete sequence plus a one-word sung difference does not automatically prove that all modern editorial contributions are unprotected. No exact old printing of the target whole arrangement has been found in this bounded comparison; no holder permission is asserted."
 [[entries]]
 mass = "good-friday"
 form = ""
@@ -7861,6 +7909,7 @@ publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-p
 publication_locator = "Pustet Ratisbon 1862, printed p. 379; text-layer lines 55018-55030 (heading 'Secreta.' at 55018, text 55020-55030); artifact rights_status public-domain on a book first published in 1862"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
+
 [[entries]]
 mass = "palm-sunday"
 form = ""
@@ -7868,9 +7917,24 @@ proper = "Blessing of the Palms"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "682fe28904c60a97cf5ff20ccb54745aa05e98d3b7fdd3ccf8aa40e5e3863eac"
-body_status = "removed"
-
+text_sha256 = "800c4d2cbcdd38b63a488b726080ae2c8497cd882d277602dd389a396c01f31e"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.palm-blessing-qualified"
+source_date = "2026-10-29 editorial projection; complete PustetRatisbon1862whole prayer"
+locator = "Editorial carrier physical line1; complete1862printed134/originalPDF220."
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.palm-blessing-collation-20261029"
+verification_locator = "Palm Sunday, opening unnumbered page [130] / PDF p.211, no.827, right column, complete blessing prayer after rubric7 and before rubric8."
+transformations = ["The complete ordered older prayer is retained except the following finite word changes, pointing and printed conclusion.", "The older hos palmarum seu olivarum ramos becomes hos palmarum (seu olivarum aut aliarum arborum) ramos: the olive alternative is parenthesized and the ordinary plant-class alternative aut aliarum arborum is added. No species or theological predicate is added. The immediately preceding complete 1862 prayer on the same page already blesses hos olivae, ceterarumque arborum ramos; it is a comparative controller for the class of other trees, not an exact lexical donor for aliarum.", "The older hodierna die becomes hodierno die. Both are ablative expressions for on this day; only the grammatical gender of hodiernus changes. Every surrounding petition word and its order is retained.", "The older printed conclusion Per Dominum. becomes the target printed Per Christum Dominum nostrum. The immediately preceding whole 1862 prayer on the same page prints exactly Per Christum Dominum nostrum. No joint conclusion is inferred or expanded beyond the actual target.", "Add target comma after quaesumus and omit the old comma after reportando. Add the target option parentheses. Preserve target colon, semicolon and other pointing. Join physical line wraps and decorative initial, remove stress accents and expand ae/oe ligatures. The cross within Bene-dic is an action sign omitted from the text carrier under the existing canonical transcription convention; no new rubric or liturgical words are supplied."]
+provenance_evidence = "The complete target prayer was directly read, not constructed from older words. Whole old controller passage.catholic-church.missale-romanum.pustet-ratisbon-1862.palm-blessing-whole-20261029. The complete ordered older prayer is retained except the following finite word changes, pointing and printed conclusion. The older hos palmarum seu olivarum ramos becomes hos palmarum (seu olivarum aut aliarum arborum) ramos: the olive alternative is parenthesized and the ordinary plant-class alternative aut aliarum arborum is added. No species or theological predicate is added. The immediately preceding complete 1862 prayer on the same page already blesses hos olivae, ceterarumque arborum ramos; it is a comparative controller for the class of other trees, not an exact lexical donor for aliarum. The older hodierna die becomes hodierno die. Both are ablative expressions for on this day; only the grammatical gender of hodiernus changes. Every surrounding petition word and its order is retained. The older printed conclusion Per Dominum. becomes the target printed Per Christum Dominum nostrum. The immediately preceding whole 1862 prayer on the same page prints exactly Per Christum Dominum nostrum. No joint conclusion is inferred or expanded beyond the actual target. Add target comma after quaesumus and omit the old comma after reportando. Add the target option parentheses. Preserve target colon, semicolon and other pointing. Join physical line wraps and decorative initial, remove stress accents and expand ae/oe ligatures. The cross within Bene-dic is an action sign omitted from the text carrier under the existing canonical transcription convention; no new rubric or liturgical words are supplied."
+provenance_authority = "Triptych boundedpageimage collation; finite publication assessment remains separately root-owned"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "qualified-nonoriginal-adaptation"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.palm-blessing-qualified-800c4d2c", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.palm-blessing-whole-latin-20261029", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.palm-blessing-whole-page-20261029"]
+publication_locator = "Dominica in Palmis, printed p.134 / original PDF p.220, right column: complete Benedic prayer with actual Per Dominum. ending."
+publication_evidence = "The later whole body preserves the connected 1862 prayer: blessing branches, asking that bodily veneration be accomplished spiritually through devotion, victory over the enemy, and earnest love of mercy. Its entire petition arrangement is independently held before modern copyright. The finite adaptation consists of an ordinary alternative for other trees, a Latin ablative gender variant with the same meaning, punctuation and an independently held conventional conclusion. These differences are proposed together as a qualified nonoriginal adaptation under policy section 1 priority 6, rather than as literal whole-word identity. This exact target requires its own root assessment; no previous finite scope is extended. Authority workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json; method english-completion-20261029-finite-latin-v1. Strongest contrary: The choice to widen the selectable object beyond palm and olive branches and to present a parenthesized formula is an editorial intervention in the ritual wording. A low originality threshold could protect a sufficiently creative selection or arrangement even where its nouns and formula are commonplace. No court ruling or holder permission for this exact later prayer is asserted, and the proposal therefore remains qualified and pending separate root adoption."
 [[entries]]
 mass = "palm-sunday"
 form = ""
@@ -36812,3 +36876,81 @@ surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
 publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-offertory-qualified-f4e866f4", "artifact.catholic-church.breviarium-monasticum.1690-venice-baglioni.queenship-offertory-base-latin-20261029"]
 publication_locator = "VeniceBaglioni1690BreviariumMonasticumartifact955/printed912, NativityBVMResponsoryIV; checked source physical line1"
 publication_evidence = "Prospective exact finite judgment under workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json, method english-completion-20261029-finite-latin-v1. The complete1690NativityBVM ResponsoryIVbase from Regali through poscimus has the same whole target base words in the same order. Target pointing/case changes are colon to semicolon after refulget, Cujus to cujus, and a comma after adjuvari. Target alone appends the exact conditional apparatus (T. P. Alleluia.); only Alleluia is the added spoken invocation, limited to Paschal time. Strongest contrary: The identified1962whole edition remains protected/unresolved. No earlier complete same-body Paschal ending was proved in this bounded work. Selecting an old responsory for a new feast and adding a seasonal form may contribute creative arrangement. The proposed finite judgment covers this exact single chant plus conventional conditional invocation, not the book, feast compilation, rubric corpus or other Marian chants. This prospective row remains unadmitted until the separately adopted closed authority pins it."
+
+[[entries]]
+mass = "commune-summorum-pontificum"
+form = ""
+proper = "Collect (in plurali)"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "77215320cce36c1a3823c3643d63bac8f3f98579ded3eb454c1fead0f6abf440"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-plural-collect-qualified"
+source_date = "2026-10-29 editorial projection; Feltoe 1896 corrected whole foundation"
+locator = "Editorial carrier physical line 1; Feltoe 1896 printed p. 42 lines 8-10 / PDF p. 66, corrected by PDF p. 24."
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.pontiff-plural-collect-collation-20261029"
+verification_locator = "1962 PDF p. 810 / printed p. [2], no. 4177."
+transformations = ["Apply the older edition's own correction Pater to Pastor at printed p. 42 line 8, expressly directed by its errata at PDF p. 24. This is an internal correction of the older base, not a later adaptation.", "Replace the vocative epithet bone with aeterne: good Shepherd becomes eternal Shepherd.", "Replace the old object beatos apostolos with beatos N. et N. (Martyres tuos atque) Summos Pontifices. The two N. placeholders, their joining et, the optional Martyr title and the Supreme Pontiff title are all directly printed by the 1962 target; no name or title is inferred.", "Retain the older prayer's plural grammar: beatos, quos and pastores. Unlike the independently assessed singular form, this plural target requires no singular/plural adjustment of those words.", "Remove Filii tui vicarios from the older relative clause. The later version says whom you appointed as shepherds of the whole Church, without the older vicars of your Son clause.", "Retain the target's actual conventional conclusion Per Dominum. The older edition prints the shorter cue per.; no longer conclusion or response is supplied.", "Project the target's capitals, commas, colon, semicolon, periods, parentheses, and N. placeholders; remove stress accents and expand ae ligatures; join line wraps and decorative initials. These do not turn the older and later whole words into literal identity."]
+provenance_evidence = "The complete later target was read independently, not constructed from the old prayer. The older corrected whole source is directly bound at passage.catholic-church.sacramentarium-veronense.feltoe-1896.pontiff-plural-collect-whole-foundation-20261029. Apply the older edition's own correction Pater to Pastor at printed p. 42 line 8, expressly directed by its errata at PDF p. 24. This is an internal correction of the older base, not a later adaptation. Replace the vocative epithet bone with aeterne: good Shepherd becomes eternal Shepherd. Replace the old object beatos apostolos with beatos N. et N. (Martyres tuos atque) Summos Pontifices. The two N. placeholders, their joining et, the optional Martyr title and the Supreme Pontiff title are all directly printed by the 1962 target; no name or title is inferred. Retain the older prayer's plural grammar: beatos, quos and pastores. Unlike the independently assessed singular form, this plural target requires no singular/plural adjustment of those words. Remove Filii tui vicarios from the older relative clause. The later version says whom you appointed as shepherds of the whole Church, without the older vicars of your Son clause. Retain the target's actual conventional conclusion Per Dominum. The older edition prints the shorter cue per.; no longer conclusion or response is supplied. Project the target's capitals, commas, colon, semicolon, periods, parentheses, and N. placeholders; remove stress accents and expand ae ligatures; join line wraps and decorative initials. These do not turn the older and later whole words into literal identity."
+provenance_authority = "Triptych bounded page-image collation; finite publication assessment remains separately root-owned"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "qualified-nonoriginal-adaptation"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-plural-collect-qualified-77215320", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13"]
+publication_locator = "Feltoe 1896 printed p. 42 lines 8-10 / PDF p. 66; own erratum PDF p. 24; exact target 1962 PDF p. 810 no. 4177."
+publication_evidence = "The corrected older whole prayer supplies the continuous arrangement of looking upon the flock, keeping it under perpetual protection through appointed shepherds, and recalling their appointment over the whole Church. This exact plural later form retains that connected arrangement. The epithet, finite name/title/martyr option, omission of the vicar clause and conventional conclusion are assessed together as a limited routine adaptation for this exact target. It is proposed under policy section 1 priority 6, with moderate confidence, rather than under an unqualified public-domain identity claim. Adoption remains root-owned and pending. Authority workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json; method english-completion-20261029-finite-latin-v1. Strongest contrary: Replacing apostles with named Supreme Pontiffs, adding the optional martyr designation, changing good to eternal and omitting vicars of your Son is theological redaction. The cumulative adaptation might satisfy the low originality threshold even though the connected older arrangement is retained. The prior singular Common/Damasus judgment does not authorize this plural target, and no holder permission or court judgment for this exact form is asserted."
+
+[[entries]]
+mass = "beatae-mariae-virginis-reginae"
+form = ""
+proper = "Introit"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "62bc1f505027f3ba9f914511ae9c836b6b460068c08409677226a16ff44de459"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-introit-qualified"
+source_date = "2026-10-30 editorial carrier with separately identified historical testimony"
+locator = "Complete projection latin.txt physical line1; historical controls: Complete Gaudeamus Introit of 16 July Carmel, Mame 1922, printed p. 656, artifact p. 770; corroborating 7 October Rosary, printed p. 731, artifact p. 845."
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.queen-introit-full-target-control-20261029"
+verification_locator = "1962 artifact621/printed540, unit2681; exact dated Queenship Introit owner only."
+transformations = ["The complete old Gaudeamus arrangement remains in the same order. The antiphon differs by the short Queenship title; the target also adds standard conditional Paschal cues and changes its Psalm clause. All three changes require assessment. A finding limited to the added title cannot silently clear the Psalm translation.", "Add the conventional title Reginae and conditional double Alleluia. The Psalm component changes Eructavit to Effundit and opera mea to carmen meum, plus final regi to Regi; these are substantive lexical changes, not spelling normalization. The exact word/character spans remain in the frozen source candidate."]
+provenance_evidence = "Actual full target and historical source image readings accepted in independently pinned source/fidelity receipts. This complete carrier conserves their target Latin exactly; no lexical material is generated from source ingredients. The complete old Gaudeamus arrangement remains in the same order. The antiphon differs by the short Queenship title; the target also adds standard conditional Paschal cues and changes its Psalm clause. All three changes require assessment. A finding limited to the added title cannot silently clear the Psalm translation. Add the conventional title Reginae and conditional double Alleluia. The Psalm component changes Eructavit to Effundit and opera mea to carmen meum, plus final regi to Regi; these are substantive lexical changes, not spelling normalization. The exact word/character spans remain in the frozen source candidate."
+provenance_authority = "Triptych independently reviewed page-image collation; finite whole-expression publication adoption remains root-owned"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "qualified-nonoriginal-adaptation"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-introit-qualified-62bc1f50", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.queen-introit-gaudeamus-latin-20261029"]
+publication_locator = "Complete Gaudeamus Introit of 16 July Carmel, Mame 1922, printed p. 656, artifact p. 770; corroborating 7 October Rosary, printed p. 731, artifact p. 845."
+publication_evidence = "Prospective conditional permitted postimage only: exact whole-expression qualified recommendation under workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json, method english-completion-20261029-finite-latin-v1. The actual complete earlier expression is available, not just isolated ingredients or a shared topic. Even when the Psalm component is assessed independently, the later contribution consists of two ordinary dictionary-level lexical replacements and the resulting noun agreement inside the same inherited short clause, with its syntax, biblical subject, imagery and succession intact. These specific substitutions convey the same underlying public-domain Psalm thought in commonplace diction; they do not contribute a new extended formulation or original arrangement. Taken jointly with the conventional Queen title and conditional ritual acclamation, the whole later contribution is sufficiently slight and formulaic that the project can reasonably treat it as outside protectable new authorship for this exact short bounded body. The low originality threshold makes this qualified rather than certain. Policy1(6) prefers publication where that concrete argument is defensible. The basis is a scoped judgment about this actual later expression; it is not a finding that the1945 Psalter, the1962 book, all biblical translations, all three-word changes, or all short verses are public domain. Strongest contrary: The target Psalm wording is not word-identical to the earlier complete Gaudeamus body. Effundit and carmen meum are content changes, rather than spelling changes or a filled saint-name blank. The new 1945 Latin Psalter is a real new translation category, confirmed by the official 1947 Pontifical Biblical Commission text. A new translation may contain protected expression even when the underlying Hebrew Psalm is public domain. The bounded search did not establish a complete pre-1931 antecedent for the target Psalm clause. Exactness or public-domain status cannot be inferred merely because two changes are short. The 1962 typical-edition source artifact retains unresolved rights. Existing finite qualified cases do not extend automatically to this new owner, body, proof or wording. Root adoption has not occurred; current v1 guard must refuse this candidate."
+
+[[entries]]
+mass = "beatae-mariae-virginis-reginae"
+form = ""
+proper = "Alleluia"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "01c6691e3d76f113226e381bcb55c959ab40f630541c544fbbfadb0a110f2071"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-regular-alleluia-qualified"
+source_date = "2026-10-30 editorial carrier with separately identified historical testimony"
+locator = "Complete projection latin.txt physical line1; historical controls: Acta Sanctorum1866 complete invocation at artifact682/printed671, annotationf; Bollettino Salesiano April1892 complete stanza at artifact13/printed77; Pustet1862 conventional chant frame at artifact519/printed433."
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.queen-regular-alleluia-full-target-control-20261030"
+verification_locator = "1962 artifact622/printed541, unit2688; exact dated Queenship Alleluia owner only."
+transformations = ["Choose thethreewordinvocationSalveReginamisericordiae fromthe1866printededitorialnote; noMaterisinsertedorremovedfromthatselectedspan.", "Select thecontiguousninewordTu...suscipe tail fromthecomplete1892receivedhymnstanza, omittingthatstanza's differentopeningMaria...clementiae; that omittedopeningisnot claimed tobe thetargethead.", "Join thoseindependentlypreexistingheadandtailspans in the order printedbythe1962target; neitheroldsourceestablishes the completejoinedarrangement.", "Target insertsacomma afterSalve and aftermisericordiae, lowercasesTutotu, and wraps thejoinedwordspans inthestandardthreeAlleluiaframeandversiclemarker. NootherLatinlexemeisnewwithinthisfinitewordaccount.", "Keep thecasebounded toregularAlleluiaunit2688; thePaschalAlleluiaunit2686,QueenshipIntroit and everyotherownerretainindependentholds.", "Remove stress accents from the inspected1962target for the calendar's declared unaccentedLatin representation.", "Expand the oldsource's printed ae-ligature to ae; do not change its Latin lexemes.", "Join printed linewraps and line-ending hyphenation in the source and target text representations.", "Represent the printed versicle glyph as V.; the glyph is not a new lexical word.", "The independently printed Pustet1862 chantframe uses Alleluja; represent its consonantal j as i in target Alleluia, the repository's recorded received-spelling normalization.", "Target punctuation and capitalization changes are separately explicit in finite_deltas; none establishes an older completejoinedarrangement."]
+provenance_evidence = "Actual full target and historical source image readings accepted in independently pinned source/fidelity receipts. This complete carrier conserves their target Latin exactly; no lexical material is generated from source ingredients. Choose thethreewordinvocationSalveReginamisericordiae fromthe1866printededitorialnote; noMaterisinsertedorremovedfromthatselectedspan. Select thecontiguousninewordTu...suscipe tail fromthecomplete1892receivedhymnstanza, omittingthatstanza's differentopeningMaria...clementiae; that omittedopeningisnot claimed tobe thetargethead. Join thoseindependentlypreexistingheadandtailspans in the order printedbythe1962target; neitheroldsourceestablishes the completejoinedarrangement. Target insertsacomma afterSalve and aftermisericordiae, lowercasesTutotu, and wraps thejoinedwordspans inthestandardthreeAlleluiaframeandversiclemarker. NootherLatinlexemeisnewwithinthisfinitewordaccount. Keep thecasebounded toregularAlleluiaunit2688; thePaschalAlleluiaunit2686,QueenshipIntroit and everyotherownerretainindependentholds. Remove stress accents from the inspected1962target for the calendar's declared unaccentedLatin representation. Expand the oldsource's printed ae-ligature to ae; do not change its Latin lexemes. Join printed linewraps and line-ending hyphenation in the source and target text representations. Represent the printed versicle glyph as V.; the glyph is not a new lexical word. The independently printed Pustet1862 chantframe uses Alleluja; represent its consonantal j as i in target Alleluia, the repository's recorded received-spelling normalization. Target punctuation and capitalization changes are separately explicit in finite_deltas; none establishes an older completejoinedarrangement."
+provenance_authority = "Triptych independently reviewed page-image collation; finite whole-expression publication adoption remains root-owned"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "qualified-nonoriginal-adaptation"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-regular-alleluia-qualified-01c6691e", "artifact.society-of-bollandists.acta-sanctorum.1866-paris-rome-palme-october-2.queenship-invocation-text-20261029", "artifact.salesian-society.bollettino-salesiano.1892-april-issue-4.queenship-hymn-stanza-text-20261029", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"]
+publication_locator = "Acta Sanctorum1866 complete invocation at artifact682/printed671, annotationf; Bollettino Salesiano April1892 complete stanza at artifact13/printed77; Pustet1862 conventional chant frame at artifact519/printed433."
+publication_evidence = "Prospective conditional permitted postimage only: exact whole-expression qualified recommendation under workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json, method english-completion-20261029-finite-latin-v1. The operative foundation is the complete1892stanza, not looseingredients. It already addresses the sameMary under mercy/gracetitles and supplies both complete retained requests, in exactly the targetorder and words: protection from the enemy and reception at death. The target preserves this entire invocation-to-two-petition architecture, without combining unrelatedepisodes, movingpetitions, or adding a new request, narrativeproposition, image or theologicalprogression. The replacement is a separately witnessed commonplace three-word Marian greeting/title, performing the same invocational role; all retained petitionwords are one contiguous sourcespan. The separately oldAlleluiaframe andVsign are ordinary functionalchantform, adding no literaryargument. Assessed jointly, this exact genericaddress substitution and traditionalframing of the inherited complete shortprayer do not supply sufficient new creativeexpression. Policy1(6) supports qualifiedpublication. This depends on the actual completeoldpetition, commonhead and functionalframe relationship; no numericalsafeharbor, percentage, generalcentopermission or rule that alloldclausejoins are free is inferred. Strongest contrary: No earlier complete joined head-tail-frame arrangement is established. The target selects one old invocation and replaces the complete old stanza opening while retaining its contiguous two-petition tail; a modern cento/adaptation can be original despite old ingredients and a low creativity threshold. The1690 hora mortis contrary remains true for that different witness. Root adoption has not occurred; current v1 guard must refuse this candidate."

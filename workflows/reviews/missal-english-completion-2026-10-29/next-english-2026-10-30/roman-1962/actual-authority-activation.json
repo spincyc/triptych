@@ -1,0 +1,20 @@
+{
+  "schema": "triptych-root-exact-finite-v2-activation/v1",
+  "status": "applied-exact-reviewed-two-paths",
+  "parent": "702f650020d69a45aa747b1c5b5e30be6c42ca59",
+  "review_sha256": "92d1933b2f6778c37059a9de6375fe79eb70dd070c96477307b69ba81915cab9",
+  "root_decision_sha256": "d0802309d2518db774c3ad352f2eba03605e67cad735959444b422233ffd4874",
+  "paths": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json",
+      "before_sha256": null,
+      "after_sha256": "495e5b3672cccb8f2c3ea07398104c4b72026ffb7139de21d25087edcab1f48e"
+    },
+    {
+      "path": "scripts/_proper_finite_latin_20261029.py",
+      "before_sha256": "34c7ea2520f0917108495ea333323c33e4eb3b6993aba2e10c91fc49385dfb40",
+      "after_sha256": "ecca66760debc9c0451e1b6743883c55d59390f575b4503b6af27d9923117fd3"
+    }
+  ],
+  "source_epoch_and_owner_generation_pending": true
+}

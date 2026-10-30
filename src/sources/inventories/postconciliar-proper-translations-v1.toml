@@ -3204,6 +3204,46 @@ sha256 = "f39ab5cf702893080063dfd8d53bbf3a23b23f1fe701706c12446b31ab25ca97"
 path = "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase3-temporal-admission.json"
 sha256 = "34a509c1e266f7f2bb3e5e1cac679839bc6160e409e37af6792ae5e058003211"
 
+[[english_quarantine.admission_receipts]]
+path = "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-extra-two-admission.json"
+sha256 = "7a58224decae8b70bc8b80059c65d2fef910e61fca194cf9a02dfe7eada41324"
+
+[[english_quarantine.admission_receipts]]
+path = "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-ordinary-four-admission.json"
+sha256 = "2e0d3516ee8e095ac4197d23222258f38b264ad5eef04aad0a92914e6283870b"
+
+[[english_quarantine.admission_receipts]]
+path = "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-remaining-three-admission.json"
+sha256 = "89d8b0f274abd76eb09c4b555f547bec0112531eaac099ce19230833e946ea27"
+
+[[english_quarantine.admission_receipts]]
+path = "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-seasonal-five-admission.json"
+sha256 = "4fbe06443c355f25da591d7233041460b2f1515db3d7ed2c1e138286381d8d0b"
+
+[[english_quarantine.admission_receipts]]
+path = "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-pange-two-admission.json"
+sha256 = "549f477cecaabfe64fbda5f3dd070231c2196a070d26ba3c5cb2c8a35a0326e6"
+
+[[english_quarantine.admission_receipts]]
+path = "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-good-friday-opening-two-admission.json"
+sha256 = "159c5d14dc1cb1ab090358abd47f2ad9fa44070adfd5d51c13598ee47274c1cf"
+
+[[sources]]
+id = "lasance-1945-printing-1946"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.new-roman-missal-text-80b34759"
+label = "Historical antecedent English: Lasance and Walsh, revised 1945 expression, actual 1946 Benziger printing"
+attests = "editio-typica-1920"
+attests_kind = "date-bound"
+attests_basis = "This physical printing is title-dated 1946 and its copyright leaf names 1937 and 1945. It carries the pre-1955 Holy Week and is treated only as a dated antecedent witness of the 1945 hand-missal revision. No particular Latin exemplar or act of conformity to the 1962 Missal is inferred from the printing date. Each selected actual prayer, role/referral context and conclusion is checked independently on this printing's own page images and, where needed, its own printed conclusion table."
+witness_relation = "antecedent"
+witness_relation_basis = "Literal human English from the independently identified 1946 printing. Each entry states its named-work or body relation and its exact source and recipient binding. This row establishes neither approved contemporary English nor complete target-edition wording."
+rights = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Only underlying original 1937/1945 ordinary-page English under the existing United States nonrenewal finding for A110108 and A192159 at src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. The exact 1946 title and copyright pages and each selected ordinary prayer/table page were independently read. The artifact_id here is the established original-expression rights anchor; it is not a claim that the 1945 OCR represents these 1946 page bytes. Every English publication derivative must name this exact 1946 edition and its own exact page-image/controller identity. No new legal claim or right to the complete mixed scan is inferred."
+caution = "Historical human English for study from the actual 1946 printing, under the original 1937/1945 United States nonrenewal boundary. Whole-scan rights, later inserts and source images are excluded. The named-work options and historical stanza selections are qualified per entry; approved contemporary English and authenticated 2008 correspondence remain unestablished. This is not a text for recitation."
+role = "The source language and printing are the actual 1946 historical hand missal. The artifact_id is the settled shared original-expression rights anchor, not a claim that its 1945 OCR supplies the 1946 text. The complete six-stanza English source is independently retained at artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.pange-lingua-historical-en-20261029-7dc5b07e with SHA-256 7dc5b07e7cf017028acf80b5d40971d9a71747e94f036ae85e48a1b6fe0724be and its own exact 1946 source verification and publication passages. The two postconciliar quotations retain their own recipient rows and exact stanza boundaries; the full source is unchanged."
+
 [[sources]]
 id = "benziger-little-office-1915"
 source_id = "edition.catholic-church.little-office-and-office-of-the-dead.benziger-latin-english-1915"
@@ -7717,47 +7757,395 @@ lang = "en"
 rights = "project-created"
 text = "O God, whose Only-Begotten appeared in the substance of our flesh, grant, we ask, that through him whom we have recognized as outwardly like us, we may be worthy to be transformed within. Who with you."
 
-# --- Protected or unofficial English quarantined as text-free audit metadata ---
-#
-# `quarantined_text_sha256` hashes the exact UTF-8 TOML string value that was
-# removed. It proves identity for review without retaining or publishing the
-# wording. A rejected detector is a lead only, never an authoritative source.
+# Eighteen reviewed source-qualified English uses; coordinated 2026-10-30 increment.
+[[entries]]
+mass = "epiphany"
+form_id = "day"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "variant"
+ancient_reading = "Ecclesiae tuae quaesumus domine dona propitius intuere. quibus non iam. aurum. thus. et myrra profertur. sed quod eisdem muneribus declaratur immolatur et sumitur. per dominum."
+divergence = "The complete Hadrianum petition is retained word for word after declared e-caudata/ae, accents, capitalization and pointing normalization. Ancient myrra becomes received myrrha. The target adds exactly the generic sacred name Iesus Christus, making the existing sacramental referent explicit; the independent finite body review admits these exact strings as a variant, not as historical-English transfer or a general numerical rule. The petition source literally prints per dominum.; it does not print the full target conclusion. The complete separate older formula is independently witnessed by passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase3-conventional-qui-vivis-source, controlled by artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3 (SHA256 363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474), Pustet Ratisbon 1862, artifact page 351/printed p. 265, corroborated on artifact page 776/printed [106]: Qui vivis et regnas in saecula saeculorum. Exactly two verb-person inflections produce the bounded third-person formula: vivis to vivit, and regnas to regnat. No formula word is added, dropped or reordered; the neighboring Amen. and R. Amen. are excluded, and the English contains no Amen. This is a separately source-reviewed formula, never an expansion inferred from the petition cue. Body review SHA256 cff977a5cd64495ec1f09cb39fd04c553a300b33b3ce7f9b8d46782e06b19ef7; exact Epiphany ending successor review SHA256 79362b72f99cf8f5801f82db3d3a7a24cdd5676c2ce1881bd8ddc1800f3ca822; shared full-ending source review SHA256 a25767be4606a288ff9168c5d4fc80526a6bdcc232238fd23c5130102957998a. The comparison is bounded to the inspected secondary digitally typeset 2002 reproduction; printed-2002 fidelity and correspondence to 2008 remain unresolved. The English is new project-created study English from independently witnessed public-domain expression with the exact separately assessed differences, never approved liturgical English or a text for recitation. The separate approved-English unavailable dictionary and all restriction metadata must be preserved in the dated root review receipt; the approved-English restriction remains applicable. No current Latin body or approved English payload is supplied by this entry."
+form = "Mass during the Day"
+incipit = "Ecclesiae tuae, quaesumus, Domine"
+ancient_witness = "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915; VIII Idus Ianuarias, id est VI die mensis Ianuarii; Epiphania ad Sanctum Petrum; Super oblata"
+witness_edition_id = "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915"
+witness_artifact_id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7"
+ancient_passage_id = "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.english-completion-20261029-postconciliar-phase3-extra-epiphany-day-offerings-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Look graciously, we ask, O Lord, upon the gifts of your Church,\nin which gold, incense and myrrh are no longer offered,\nbut what those gifts proclaim is sacrificed and received:\nJesus Christ.\nWho lives and reigns for ever and ever."
 
-[[untranslated]]
-mass = "mary-mother-of-god"
+[[entries]]
+mass = "ot-25"
+form_id = "main"
+proper = "Prayer after Communion"
+cycle = "all"
+occurrence = 1
+relation = "variant"
+ancient_reading = "Hos, Domine, quos reficis sacramentis, attolle benignus auxiliis, ut tuae redemptionis effectum et mysteriis capiamus et moribus. Per."
+divergence = "The actual complete older source is Wilson 1894 printed p. 36/artifact page 129, whose ut matches the bounded secondary 2002 reading; the p. 30 et parallel is not substituted. The target omits initial Hos and the possessive tuae before redemptionis, adds tuis agreeing with sacramentis and continuis agreeing with auxiliis, and reorders the vocative Domine within the same opening clause. Every remaining petition word agrees after typography normalization. All omissions, additions and reordering are retained in the independent finite judgment, never collapsed into an identical or automatic two-word relation. The added possessive and continuing-help adjective supply no new clause on these exact compared strings. The ancient literal conclusion is Per.; the bounded secondary target prints only the conventional short cue Per Christum., rendered Through Christ. without a full expansion. The old source is not claimed to print Christum. Independent body and original-study-English review SHA256 cff977a5cd64495ec1f09cb39fd04c553a300b33b3ce7f9b8d46782e06b19ef7. The comparison is bounded to the inspected secondary digitally typeset 2002 reproduction; printed-2002 fidelity and correspondence to 2008 remain unresolved. The English is new project-created study English from independently witnessed public-domain expression with the exact separately assessed differences, never approved liturgical English or a text for recitation. The separate approved-English unavailable dictionary and all restriction metadata must be preserved in the dated root review receipt; the approved-English restriction remains applicable. No current Latin body or approved English payload is supplied by this entry."
+incipit = "Quos tuis, Domine, reficis sacramentis"
+ancient_witness = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894; Book I, section XXVI; Feria vi Hebdom. tertia; Postcommun., bottom of page near marginal 525"
+witness_edition_id = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894"
+witness_artifact_id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3"
+ancient_passage_id = "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-phase3-extra-ot25-postcommunion-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Those whom you refresh with your sacraments, O Lord,\ngraciously lift up with continual help,\nso that we may receive the effect of redemption\nboth in the mysteries and in our conduct.\nThrough Christ."
+[[entries]]
+mass = "pentecost"
+form_id = "vigil"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+relation = "variant"
+ancient_reading = "Omnipotens sempiterne Deus, qui paschale sacramentum quinquaginta dierum voluisti mysterio contineri, praesta ut gentium facta dispersio divisione linguarum ad unam confessionem tui nominis caelesti munere congregetur. Per."
+divergence = "All petition lexical words preexist. There are three linked grammatical inflection changes: ancient dispersio divisione ... congregetur becomes bounded-secondary dispersione divisiones ... congregentur. Wilson p.123 note 2 independently prints the ancient V reading divisiones, and note 4 prints congregentur V; his main text follows the other cited witnesses. The new English follows the bounded-secondary grammar. Pointing, capitalization and accents also differ. The main ancient cue is literally Per.; the generic short cue Per Dominum. is separately printed in this edition at p.106, parent artifact p.199, and is not expanded here. Independently printed short-cue source: passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-ordinary-four-short-conclusion-cues-source. The comparison is bounded to the inspected secondary digitally typeset 2002 reproduction; printed-2002 fidelity and correspondence to 2008 remain unresolved. The English is new project study English from the independently witnessed ancient expression with only the explicitly described changes, never approved liturgical English or a text for recitation. The separate approved-English or historical-antecedent unavailable record is retained exactly in the dated review receipt; its witness-specific restriction remains applicable. No ICEL wording was consulted for the drafts."
+incipit = "Omnipotens sempiterne Deus, qui paschale sacramentum"
+ancient_witness = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894; BookI, sectionLXXX, Orationes et Preces Dominica Pentecosten, first prayer; p123 apparatus notes2and4"
+witness_edition_id = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894"
+witness_artifact_id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-ordinary-four-gelasian-pages-c4d7d3c1"
+ancient_passage_id = "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-pentecost-vigil-collect-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Almighty, everlasting God, who willed the paschal sacrament to be contained within the mystery of fifty days, grant that, after the scattering of the nations, the divisions of tongues may be gathered by a heavenly gift into one confession of your name. Through our Lord."
+
+[[entries]]
+mass = "pentecost"
+form_id = "vigil"
+proper = "Collect"
+cycle = "all"
+occurrence = 2
+relation = "variant"
+ancient_reading = "Praesta quaesumus omnipotens deus. ut claritatis tuae super nos splendor effulgeat. et lux tuae lucis corda eorum qui per gratiam tuam renati sunt. sancti spiritus inlustratione confirmet. per dominum nostrum iesum christum in unitate eiusdem."
+divergence = "Every petition word agrees after received inlustratione/illustratione spelling and the two local word-order changes per gratiam tuam renati sunt to per tuam gratiam sunt renati. Pointing, capitalization and accents differ. The older conclusion prints per dominum nostrum iesum christum in unitate eiusdem.; the bounded-secondary short cue Per Dominum. takes only its directly witnessed first two words. No full conclusion is supplied or silently harmonized. Printed e-caudata is transcribed ae; apparatus markers 3 and 4 are excluded from the prayer words. The comparison is bounded to the inspected secondary digitally typeset 2002 reproduction; printed-2002 fidelity and correspondence to 2008 remain unresolved. The English is new project study English from the independently witnessed ancient expression with only the explicitly described changes, never approved liturgical English or a text for recitation. The separate approved-English or historical-antecedent unavailable record is retained exactly in the dated review receipt; its witness-specific restriction remains applicable. No ICEL wording was consulted for the drafts."
+incipit = "Praesta, quaesumus, omnipotens Deus, ut claritatis tuae"
+ancient_witness = "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915; Orationes ad Missam in Sabbato Pentecosten post ascensum fontis, first prayer"
+witness_edition_id = "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915"
+witness_artifact_id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7"
+ancient_passage_id = "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.english-completion-20261029-postconciliar-pentecost-vigil-collect-2-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Grant, we ask, almighty God, that the splendor of your glory may shine upon us, and that the light of your light may strengthen, through the illumination of the Holy Spirit, the hearts of those who have been reborn by your grace. Through our Lord."
+
+[[entries]]
+mass = "ot-11"
 form_id = "main"
 proper = "Collect"
 cycle = "all"
 occurrence = 1
+relation = "variant"
+ancient_reading = "Deus, in te sperantium fortitudo, adesto propitius invocationibus nostris; et quia sine te nihil potest mortalis infirmitas, praesta auxilium gratiae tuae, ut in exequendis mandatis tuis et voluntate tibi et actione placeamus. Per Dominum."
+divergence = "The bounded-secondary reading adds the single adverb semper before auxilium, moves invocationibus nostris before adesto propitius, and moves gratiae tuae before praesta auxilium. The exequendis/exsequendis difference is received spelling; pointing, capitalization and accents also differ. All other petition words and the literal short conclusion agree. The new English renders the added adverb as always. The existing approved ICEL English absence remains true for that witness and the stated surfaces; this independently authored study translation does not lift that restriction or reuse its wording. The comparison is bounded to the inspected secondary digitally typeset 2002 reproduction; printed-2002 fidelity and correspondence to 2008 remain unresolved. The English is new project study English from the independently witnessed ancient expression with only the explicitly described changes, never approved liturgical English or a text for recitation. The separate approved-English or historical-antecedent unavailable record is retained exactly in the dated review receipt; its witness-specific restriction remains applicable. No ICEL wording was consulted for the drafts."
+incipit = "Deus, in te sperantium fortitudo"
+ancient_witness = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894; BookI, sectionLXII, Sexta Dominica post clausum Paschae, first prayer"
+witness_edition_id = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894"
+witness_artifact_id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-ordinary-four-gelasian-pages-c4d7d3c1"
+ancient_passage_id = "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-ot-11-collect-study-source"
+[[entries.translations]]
 lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "The historical witness is truncated at the page break after `thy Son, who,` and follows the antecedent word order rather than the target's reordered close. It is not an exact complete target body. No English wording is retained."
+rights = "project-created"
+text = "O God, strength of those who hope in you, graciously attend to our pleas; and, because mortal weakness can do nothing without you, always grant the help of your grace, so that in carrying out your commandments we may please you in both will and deed. Through our Lord."
 
-[[untranslated]]
+[[entries]]
 mass = "ot-31"
 form_id = "main"
 proper = "Prayer after Communion"
 cycle = "all"
 occurrence = 1
+relation = "variant"
+ancient_reading = "Augeatur in nobis, Domine, quaesumus, tuae virtutis operatio; ut, divinis vegetati sacramentis, ad eorum promissa capienda tuo munere praeparemur. Per."
+divergence = "The bounded-secondary reading has refecti caelestibus where the ancient reading has divinis vegetati; these are two substituted words and their local order. Domine and quaesumus exchange order; pointing, capitalization and accents also differ. Every other petition word agrees. The ancient cue is literally Per.; Per Christum. is independently printed in this edition at p.106, parent artifact p.199, and is not expanded here. The new English follows refreshed/heavenly and does not transfer the older human English rendering divine. The historical-antecedent refusal remains correct for that different witness. Independently printed short-cue source: passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-ordinary-four-short-conclusion-cues-source. The comparison is bounded to the inspected secondary digitally typeset 2002 reproduction; printed-2002 fidelity and correspondence to 2008 remain unresolved. The English is new project study English from the independently witnessed ancient expression with only the explicitly described changes, never approved liturgical English or a text for recitation. The separate approved-English or historical-antecedent unavailable record is retained exactly in the dated review receipt; its witness-specific restriction remains applicable. No ICEL wording was consulted for the drafts."
+incipit = "Augeatur in nobis"
+ancient_witness = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894; Book III, appended Postcommunions after Canon Actionis, first prayer on printed p.237; running header III.xvi (the footnote distinguishes the appended series from the numbered sections in V)"
+witness_edition_id = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894"
+witness_artifact_id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.page-237-facsimile-b12b37cd"
+ancient_passage_id = "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-ot-31-after-communion-study-source"
+[[entries.translations]]
 lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "The antecedent reads `divinis vegetati sacramentis`, while the target reads `refecti caelestibus sacramentis`; its English renders divine rather than heavenly. The substantive variant is not an exact target translation. No English wording is retained."
+rights = "project-created"
+text = "May the working of your power increase in us, we ask, O Lord, so that, refreshed by the heavenly sacraments, we may by your gift be prepared to receive what they promise. Through Christ."
 
-[[untranslated]]
+# Independently source-reviewed study English: two source candidates and an explicit January 1 duplicate use.
+
+[[entries]]
+mass = "mary-mother-of-god"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+relation = "variant"
+ancient_reading = "Deus qui salutis aeternae beatae Mariae virginitate fecunda humano generi praemia prestitisti tribue quaesumus ut ipsam pro nobis intercedere sentiamus per quam meruimus auctorem vitae suscipere dominum nostrum iesum christum qui tecum vivit."
+divergence = "Hadrianum Wilson 1915 printed page 16 / artifact page 74 carries the complete prayer and the explicit Christ reference following suscipere. Secondary 2002 instead moves Filium tuum before auctorem vitae and abbreviates the close. The official 2008 variation list, Notitiae printed page 370 / artifact page 52, positively replaces that secondary close with the older order and explicit Lord Jesus Christ reference followed by Filium tuum. Against the independently witnessed ancient main reading, the corrected 2008 close therefore adds only the two words Filium tuum after Christum; the remaining petition words agree after e-caudata/ae, u/v, the historical prestitisti/praestitisti vowel spelling, capitalisation, accents and pointing. Hadrianum apparatus note 1 already attests these two words in witness O, but that apparatus is recorded separately and is not spliced into the main reading. The new study English follows the finite official 2008 correction, not the obsolete secondary 2002 close. The variation entry prints only the changed closing excerpt, not a complete 2008 prayer or its full conclusion cue. The final Who with you. is the deliberately incomplete cue read as Qui tecum. in the secondary 2002 reproduction; the official 2008 variation entry does not print a complete conclusion cue. No expanded conclusion, Amen or complete English execution is supplied. The petition is read on the registered secondary digitally typeset 2002 reproduction, while its close is corrected from the official 2008 variation entry on Notitiae artifact page 52 / printed page 370. This is a finite positive 2008 change witness, not authentication of a complete 2008 altar-book page or the remaining whole prayer. Fresh unapproved study English, not for recitation; no approved English reproduced. The separate approved-English unavailable record, including its source and restriction evidence, is preserved in the dated package receipt; this study English does not acquire or clear approved English. The ancient conclusion cue is 'qui tecum vivit'; the secondary reproduction reads 'Qui tecum.', explicitly omitting 'vivit'. The official 2008 change-list excerpt does not print that cue, so its 2008 form remains unknown here."
+incipit = "Deus, qui salutis aeternae"
+ancient_witness = "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915; January 1 octave, opening prayer, printed p. 16 / full artifact page 74"
+witness_edition_id = "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915"
+witness_artifact_id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7"
+ancient_passage_id = "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.english-completion-20261029-postconciliar-phase3-remaining-mary-collect-source"
+target_witness_passage_id = "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase3-remaining-mary-collect-close"
+target_qualification = "official-2008-closing-excerpt-only"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "O God, who through the fruitful virginity of blessed Mary bestowed on the human race the rewards of eternal salvation, grant, we ask, that we may experience her intercession for us, through whom we merited to receive the author of life, our Lord Jesus Christ, your Son. Who with you."
+
+[[entries]]
+mass = "easter-sunday"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+relation = "variant"
+ancient_reading = "Sacrificia, Domine, paschalibus gaudiis immolamus, quibus ecclesia tua mirabiliter renascitur et nutritur. [Per.]"
+divergence = "The bounded secondary 2002 reading replaces the single ancient verb immolamus with exsultantes offerimus. Every other petition word agrees after case, accents and pointing. The old source prints a bracketed [Per.] cue; the secondary reproduction prints Per Christum. The source cue is not expanded in the ancient reading. The English follows only this two-word variant and the secondary short generic cue, without supplying an expanded conclusion or Amen. Bounded direct image reading of the registered secondary digitally typeset2002 reproduction. No authenticated printed2002 fidelity or complete2008 correspondence is established. Fresh studyEnglish, unapproved and not forrecitation; no ICELwording acquired. The separate approved-English unavailable record, including its source and restriction evidence, is preserved in the dated package receipt; this study English does not acquire or clear approved English."
+incipit = "Sacrificia, Domine, paschalibus gaudiis"
+ancient_witness = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894; Book I section XLVII, Feria Secunda, Secreta, printed p. 91 / full artifact page 184"
+witness_edition_id = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894"
+witness_artifact_id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-phase3-remaining-gelasian-p91-facsimile-57614b82"
+ancient_passage_id = "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-phase3-remaining-easter-offerings-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Exulting in Easter gladness, O Lord, we offer sacrifices by which your Church is wonderfully born anew and nourished. Through Christ."
+
+[[entries]]
 mass = "mary-holy-mother-god"
 form_id = "main"
 proper = "Collect"
 cycle = "all"
 occurrence = 1
+relation = "variant"
+ancient_reading = "Deus qui salutis aeternae beatae Mariae virginitate fecunda humano generi praemia prestitisti tribue quaesumus ut ipsam pro nobis intercedere sentiamus per quam meruimus auctorem vitae suscipere dominum nostrum iesum christum qui tecum vivit."
+divergence = "Hadrianum Wilson 1915 printed page 16 / artifact page 74 carries the complete prayer and the explicit Christ reference following suscipere. Secondary 2002 instead moves Filium tuum before auctorem vitae and abbreviates the close. The official 2008 variation list, Notitiae printed page 370 / artifact page 52, positively replaces that secondary close with the older order and explicit Lord Jesus Christ reference followed by Filium tuum. Against the independently witnessed ancient main reading, the corrected 2008 close therefore adds only the two words Filium tuum after Christum; the remaining petition words agree after e-caudata/ae, u/v, the historical prestitisti/praestitisti vowel spelling, capitalisation, accents and pointing. Hadrianum apparatus note 1 already attests these two words in witness O, but that apparatus is recorded separately and is not spliced into the main reading. The new study English follows the finite official 2008 correction, not the obsolete secondary 2002 close. The variation entry prints only the changed closing excerpt, not a complete 2008 prayer or its full conclusion cue. The final Who with you. is the deliberately incomplete cue read as Qui tecum. in the secondary 2002 reproduction; the official 2008 variation entry does not print a complete conclusion cue. No expanded conclusion, Amen or complete English execution is supplied. The petition is read on the registered secondary digitally typeset 2002 reproduction, while its close is corrected from the official 2008 variation entry on Notitiae artifact page 52 / printed page 370. This is a finite positive 2008 change witness, not authentication of a complete 2008 altar-book page or the remaining whole prayer. Fresh unapproved study English, not for recitation; no approved English reproduced. The separate approved-English unavailable record, including its source and restriction evidence, is preserved in the dated package receipt; this study English does not acquire or clear approved English. This fixed-date January 1 key shares the source appointment with mary-mother-of-god under the explicit rubrics.yaml same_celebration group; propers.yaml independently names the January 1 Solemnity of Mary, the Holy Mother of God. The shared use is based on that appointment evidence, not identity of removed target Latin-body hashes, which differed. The ancient conclusion cue is 'qui tecum vivit'; the secondary reproduction reads 'Qui tecum.', explicitly omitting 'vivit'. The official 2008 change-list excerpt does not print that cue, so its 2008 form remains unknown here."
+incipit = "Deus, qui salutis aeternae"
+ancient_witness = "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915; January 1 octave, opening prayer, printed p. 16 / full artifact page 74"
+witness_edition_id = "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915"
+witness_artifact_id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7"
+ancient_passage_id = "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.english-completion-20261029-postconciliar-phase3-remaining-mary-collect-source"
+target_witness_passage_id = "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase3-remaining-mary-collect-close"
+target_qualification = "official-2008-closing-excerpt-only"
+[[entries.translations]]
 lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "The antecedent reorders the close and the witness body ends mid-conclusion at a page break. It is neither complete nor exact for this target. No English wording is retained."
+rights = "project-created"
+text = "O God, who through the fruitful virginity of blessed Mary bestowed on the human race the rewards of eternal salvation, grant, we ask, that we may experience her intercession for us, through whom we merited to receive the author of life, our Lord Jesus Christ, your Son. Who with you."
+[[entries]]
+mass = "most-holy-trinity"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "628"
+ia_leaf = 625
+ia_leaf_range = [625, 625]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-otherseasonal-most-holy-trinity-main-entrance-antiphon-all-1-source"
+collated = "page-image, complete historical body, 2026-10-29"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-otherseasonal-lasance-historical-en"
+publication_artifact_sha256 = "d9d904bf162f620bee49d16f058422e1b9f151e1227fbd6382a5dd9cfb394726"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-otherseasonal-most-holy-trinity-main-entrance-antiphon-all-1-publication"
+witness_note = "Historical human English for study, independently read in its complete bounded source body at printed p. 628, PDF pages [626], IA leaves [625]. The complete historical Offertory antiphon begins Blessed be God and ends mercy toward us.; the adjacent Secret and its heading remain outside the selected body. The source says Holy Spirit and toward us, not the separate votive variant Holy Ghost and to us. Whole historical TrinitySundayOffertory antiphon is the complete secondary2002TrinityEntrancebody after accent/pointing/display-only normalization. No syllable added or removed. This source uses Holy Spirit/toward us; the separate votiveMass variant Holy Ghost/to us is not substituted. English independently read as image; a sourceOffertory is not sourceevidence of2008Entranceappointment. The comparison is bounded to the directly inspected secondary digitally typeset 2002 reproduction. Its fidelity to printed 2002 and correspondence to the authenticated 2008 reimpressio remain unresolved. No approved modern English, ICEL wording, recitation authority, protected modern Latin payload or modern source image is supplied. The separate prior unavailable record and any quarantine fingerprints remain in the preparation receipt; the distinct approved-English restriction is unchanged."
+incipit = "Benedictus sit Deus Pater"
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "Blessed be God the Father, and the only-begotten Son of God, and also the Holy Spirit; because He hath shown His mercy toward us."
+
+[[entries]]
+mass = "lent-3-thursday"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "310"
+ia_leaf = 309
+ia_leaf_range = [309, 309]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-otherseasonal-lent-3-thursday-main-entrance-antiphon-all-1-source"
+collated = "page-image, complete historical body, 2026-10-29"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-otherseasonal-lasance-historical-en"
+publication_artifact_sha256 = "d9d904bf162f620bee49d16f058422e1b9f151e1227fbd6382a5dd9cfb394726"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-otherseasonal-lent-3-thursday-main-entrance-antiphon-all-1-publication"
+witness_note = "Historical human English for study, independently read in its complete bounded source body at printed p. 310, PDF pages [310], IA leaves [309]. The complete historical Introit antiphon begins I am the salvation and ends forever.; the following separately labelled Ps.77,1 verse and Glory cue are excluded. Only ornamental initial AM typography is represented as ordinary prose. Exact entire historical Latin antiphon body matches the actual secondary2002 body word for word under stress accents, capitalization, pointing and display lineation only. Source English quoted from the explicitly bounded antiphon before Ps.77,1, retaining actual source words and punctuation. Initial ornamental AM small capitals rendered as ordinary sentence typography. Adjacent Psalm77verse and Gloria cue excluded rather than silently imported. The comparison is bounded to the directly inspected secondary digitally typeset 2002 reproduction. Its fidelity to printed 2002 and correspondence to the authenticated 2008 reimpressio remain unresolved. No approved modern English, ICEL wording, recitation authority, protected modern Latin payload or modern source image is supplied. The separate prior unavailable record and any quarantine fingerprints remain in the preparation receipt; the distinct approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = "I am the salvation of the people, saith the Lord: from whatever tribulation they shall cry to Me, I will hear them; and I will be their Lord forever."
+
+[[entries]]
+mass = "advent-december-18"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "bute-1908-breviary"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "222"
+ia_leaf = 305
+ia_leaf_range = [305, 305]
+artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf"
+passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-phase2-otherseasonal-advent-december-18-main-entrance-antiphon-all-1-source"
+collated = "page-image, complete historical body, 2026-10-29"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-phase2-otherseasonal-bute-historical-en"
+publication_artifact_sha256 = "42b0f6c167257ddbc567930cf376825312b9434f5cf63ba41953a85698e7d43e"
+publication_passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-phase2-otherseasonal-advent-december-18-main-entrance-antiphon-all-1-publication"
+witness_note = "Historical human English for study, independently read in its complete bounded source body at printed p. 222, PDF pages [306], IA leaves [305]. The complete initial First Responsory body begins Christ our King and ends should come! The superscript4 is source apparatus. Following Verse and repeated Answer are outside this selected complete initial body. The historical Wednesday role is not transferred to the modern recipient date. Modernsecondary2002wholeantiphon equals the1888FirstResponsoryhead+response throughesseventurum afterJoannes/Ioannes,accent/pointing/display normalization. Actual1908English FirstResponsory completebody throughcome! quoted as read; footnote4 belongs to sourceapparatus and is not a liturgicalbody word; followingVerse/Answer not imported. Exact entirebody rather than removal of any internalwords. Bute source rendered printedfuture withcometh; no modernEnglishapproval claim. The comparison is bounded to the directly inspected secondary digitally typeset 2002 reproduction. Its fidelity to printed 2002 and correspondence to the authenticated 2008 reimpressio remain unresolved. No approved modern English, ICEL wording, recitation authority, protected modern Latin payload or modern source image is supplied. The separate prior unavailable record and any quarantine fingerprints remain in the preparation receipt; the distinct approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+text = "Christ our King cometh. And John hath testified of Him, that He is the Lamb that should come!"
+
+[[entries]]
+mass = "advent-1-friday"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "abridged"
+ancient_witness = "Breviarium Romanum, Pustet Ratisbon 1888, Pars hiemalis, Dominica II Adventus, Ninth Responsory, complete initial body; printed p. 146 / PDF artifact p. 200"
+witness_edition_id = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888"
+witness_artifact_id = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf"
+ancient_passage_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-phase2-otherseasonal-ecce-dominus-ninth-responsory-source"
+ancient_reading = "Ecce Dominus veniet cum splendore descendens, et virtus ejus cum eo, Visitare populum suum in pace, et constituere super eum vitam sempiternam."
+divergence = "Actual1888NinthResponsorybody (LatinPDF200/printed146) contains et virtus ejus cum eo immediately afterdescendens; secondary2002omits exactly thatfive-wordclause and adds noLatinword. Every retainedbodyword remains in originalorder; accents/pointing/display removed for recordedstudyLatin. The originalEnglish is freshly translated fromthis independentlyPDLatin abridgment under existingprojectcreatedstudyroute, not trimmed fromButeEnglish and not derived fromICEL. Bute1908PDF314/printed230 contains the longer historicalEnglish including and His host is with Him, which is an independently read counterexample to wholehumantranslation transfer. New original studyEnglish; no receivedhumantranslation, approval, target2008 or recitation claim. Singularpopulum/eum names the collectivepeople; English them retains thecollective referent. The comparison is bounded to the directly inspected secondary digitally typeset 2002 reproduction. Its fidelity to printed 2002 and correspondence to the authenticated 2008 reimpressio remain unresolved. No approved modern English, ICEL wording, recitation authority, protected modern Latin payload or modern source image is supplied. The whole initial old responsory has22 words; omit only words7-11, et virtus ejus cum eo, to retain17 in exactly the same order. No Latin word is added or substituted. The following versicle, Gloria Patri cue and repeated response are outside the selected initial body. The original study English is unchanged from the accepted frozen packet; its translation row has no source_id. The prior approved-English absence and any quarantine fingerprints remain in the preparation receipt."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Behold, the Lord will come, descending in splendor to visit his people in peace and to establish everlasting life for them."
+
+[[entries]]
+mass = "advent-2-friday"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "abridged"
+ancient_witness = "Breviarium Romanum, Pustet Ratisbon 1888, Pars hiemalis, Dominica II Adventus, Ninth Responsory, complete initial body; printed p. 146 / PDF artifact p. 200"
+witness_edition_id = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888"
+witness_artifact_id = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf"
+ancient_passage_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-phase2-otherseasonal-ecce-dominus-ninth-responsory-source"
+ancient_reading = "Ecce Dominus veniet cum splendore descendens, et virtus ejus cum eo, Visitare populum suum in pace, et constituere super eum vitam sempiternam."
+divergence = "Actual1888NinthResponsorybody (LatinPDF200/printed146) contains et virtus ejus cum eo immediately afterdescendens; secondary2002omits exactly thatfive-wordclause and adds noLatinword. Every retainedbodyword remains in originalorder; accents/pointing/display removed for recordedstudyLatin. The originalEnglish is freshly translated fromthis independentlyPDLatin abridgment under existingprojectcreatedstudyroute, not trimmed fromButeEnglish and not derived fromICEL. Bute1908PDF314/printed230 contains the longer historicalEnglish including and His host is with Him, which is an independently read counterexample to wholehumantranslation transfer. New original studyEnglish; no receivedhumantranslation, approval, target2008 or recitation claim. Singularpopulum/eum names the collectivepeople; English them retains thecollective referent. The comparison is bounded to the directly inspected secondary digitally typeset 2002 reproduction. Its fidelity to printed 2002 and correspondence to the authenticated 2008 reimpressio remain unresolved. No approved modern English, ICEL wording, recitation authority, protected modern Latin payload or modern source image is supplied. The whole initial old responsory has22 words; omit only words7-11, et virtus ejus cum eo, to retain17 in exactly the same order. No Latin word is added or substituted. The following versicle, Gloria Patri cue and repeated response are outside the selected initial body. The original study English is unchanged from the accepted frozen packet; its translation row has no source_id. The prior approved-English absence and any quarantine fingerprints remain in the preparation receipt."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Behold, the Lord will come, descending in splendor to visit his people in peace and to establish everlasting life for them."
+
+[[entries]]
+mass = "mass-of-the-lords-supper"
+form_id = "main"
+proper = "Hymn at the Transfer of the Blessed Sacrament"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "454-455"
+ia_leaf = 463
+ia_leaf_range = [463, 464]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-hymn-at-the-transfer-of-the-blessed-sacrament-all-1-source"
+collated = "historical page-image selection and named-work appointment; full modern body not collated"
+collation_result = "qualified historical named-work selection"
+witness_note = "Actual 1946 Lasance and Walsh historical English, printed pp. 454-455, PDF pages [464, 465], IA leaves [463, 464]. The secondary 2002 reproduction at artifact p. 190, n. 38 explicitly names the Eucharistic Pange lingua and excludes its last two stanzas during transfer. This quotation is exactly the first four stanzas of the independently complete historical hymn and contains no Amen. Both numbered directions permit another Eucharistic chant; this entry represents the specifically named-work option, not a mandatory sole performance choice. The actual page prints no complete hymn body and has no visible printed page number. No full modern-word collation, printed-2002 fidelity or authenticated 2008 correspondence is asserted. This is historical antecedent human English for study, not approved contemporary English, the separately authored Roman project study translation, or a text for recitation. Exact characters [0, 780] of the independently verified complete source English are quoted without word, case, contraction, punctuation or Amen changes. Full source artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.pange-lingua-historical-en-20261029-7dc5b07e, SHA-256 7dc5b07e7cf017028acf80b5d40971d9a71747e94f036ae85e48a1b6fe0724be, verification passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.pange-lingua-six-stanzas-verify-20261029, publication passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.pange-lingua-six-stanzas-publish-20261029; those existing records remain unchanged. The independent 1879 Latin witness passage.prosper-gueranger.the-liturgical-year.english-duffy-1879-volume-10.pange-lingua-six-stanzas-checked-20261029 establishes the complete ancient named hymn, not modern target wording. The previous unavailable record and approved-English restriction remain separately retained in the dated preparation receipt."
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.english-completion-20261029-postconciliar-phase2-pange-historical-selections-en"
+publication_artifact_sha256 = "421b84c0761c4c8cc37f3f83e4c528b6e6ee2974279c71308333a7166304771c"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-hymn-at-the-transfer-of-the-blessed-sacrament-all-1-publication"
+incipit = "Pange, lingua, gloriosi Corporis mysterium"
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Sing, my tongue, the Saviour's glory,\nOf His flesh, the mystery sing;\nOf His blood, all price exceeding,\nShed by our immortal king.\nDestin'd for the world's redemption,\nFrom a noble womb to spring.\n\nOf a pure and spotless virgin\nBorn for us on earth below,\nHe, as man with man conversing,\nStay'd the seeds of truth to sow;\nThen He closed in solemn order\nWondrously His life of woe.\n\nOn the night of that Last Supper,\nSeated with His chosen band,\nHe the paschal victim eating,\nFirst fulfills the Lord's command;\nThen as food to all His brethren,\nGives Himself with His own hand.\n\nWord made flesh, the bread of nature\nBy His word to flesh He turns;\nWine into His blood He changes;\nWhat though sense no change discerns!\nOnly be the heart in earnest,\nFaith her lessons quickly learns."
+
+[[entries]]
+mass = "mass-of-the-lords-supper"
+form_id = "main"
+proper = "Chant at the Place of Reposition"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "455"
+ia_leaf = 464
+ia_leaf_range = [464, 464]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-chant-at-the-place-of-reposition-all-1-source"
+collated = "historical page-image selection and named-work appointment; full modern body not collated"
+collation_result = "qualified historical named-work selection"
+witness_note = "Actual 1946 Lasance and Walsh historical English, printed p. 455, PDF pages [465], IA leaves [464]. The secondary 2002 reproduction at artifact p. 190, n. 39 names Tantum ergo sacramentum at reposition. It does not literally specify a two-stanza count: the following Genitori stanza and Amen belong to the closing section of the independently complete historical hymn and are retained as a bounded named-work selection interpretation. Both numbered directions permit another Eucharistic chant; this entry represents the specifically named-work option, not a mandatory sole performance choice. The actual page prints no complete hymn body and has no visible printed page number. No full modern-word collation, printed-2002 fidelity or authenticated 2008 correspondence is asserted. This is historical antecedent human English for study, not approved contemporary English, the separately authored Roman project study translation, or a text for recitation. Exact characters [782, 1146] of the independently verified complete source English are quoted without word, case, contraction, punctuation or Amen changes. Full source artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.pange-lingua-historical-en-20261029-7dc5b07e, SHA-256 7dc5b07e7cf017028acf80b5d40971d9a71747e94f036ae85e48a1b6fe0724be, verification passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.pange-lingua-six-stanzas-verify-20261029, publication passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.pange-lingua-six-stanzas-publish-20261029; those existing records remain unchanged. The independent 1879 Latin witness passage.prosper-gueranger.the-liturgical-year.english-duffy-1879-volume-10.pange-lingua-six-stanzas-checked-20261029 establishes the complete ancient named hymn, not modern target wording. The previous unavailable record and approved-English restriction remain separately retained in the dated preparation receipt."
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.english-completion-20261029-postconciliar-phase2-pange-historical-selections-en"
+publication_artifact_sha256 = "421b84c0761c4c8cc37f3f83e4c528b6e6ee2974279c71308333a7166304771c"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-chant-at-the-place-of-reposition-all-1-publication"
+incipit = "Tantum ergo Sacramentum"
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Down in adoration falling,\nLo! the sacred host we hail!\nLo! o'er ancient forms departing\nNewer rites of grace prevail;\nFaith for all defects supplying,\nWhere the feebler senses fail.\n\nTo the everlasting Father,\nAnd the Son who reigns on high,\nWith the Holy Ghost proceeding\nForth from each eternally,\nBe salvation, honor, blessing,\nMight and endless majesty.\nAmen."
+
+[[entries]]
+mass = "good-friday"
+form_id = "main"
+proper = "Prayer"
+cycle = "all"
+occurrence = 1
+incipit = "Reminiscere miserationum tuarum, Domine"
+relation = "abridged"
+ancient_witness = "Wilson1894; printed61; Feria ii Hebdom. sexta"
+witness_edition_id = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894"
+witness_artifact_id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-opening2-wilson-pages52-61-75-9ea0918d"
+ancient_passage_id = "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-opening2-reminiscere-source"
+ancient_reading = "Reminiscere miserationum tuarum, Domine, et famulos tuos aeterna protectione sanctifica, pro quibus Christus Filius tuus per suum cruorem nobis instituit paschale mysterium. Per Dominum nostrum."
+divergence = "The secondary2002 petition omits exactly nobis between cruorem and instituit. Every other petition word agrees after stress accents, punctuation and capitalization. The old generic conclusion Per Dominum nostrum. is replaced by Qui vivit et regnat in saecula saeculorum. with a separate R. Amen. The complete third-person conclusion is independently image-witnessed in the same1894 source at artifact145/printed52; this is a common formula, not a newly composed petition. The response remains a marked separate response in study English. Ancient source footnote16 is apparatus after quibus, and17 follows Per; neither is wording. Apparatus16 records other witnesses with Iesus, while Wilson maintext and inspected secondary both Christus without Iesus. Study English only. Independently witnessed ancient petition with enumerated omission/grammatical variants and independently witnessed generic conclusion; not approved current liturgical English, not authenticated2008 correspondence, not an instruction for recitation. Complete old conclusion proof: passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-opening2-qui-vivit-conclusion."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Remember your mercies, Lord, and sanctify your servants with everlasting protection, for whom Christ your Son established the Paschal mystery through his own blood. He lives and reigns for ever and ever.\nR. Amen."
+
+[[entries]]
+mass = "good-friday"
+form_id = "main"
+proper = "Prayer (alternative)"
+cycle = "all"
+occurrence = 1
+incipit = "Deus, qui peccati veteris hereditariam mortem"
+relation = "variant"
+ancient_witness = "Wilson1894; printed75; BookI, sectionxli, second prayer before Passion, following Iterum dicit sacerdos: Oremus"
+witness_edition_id = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894"
+witness_artifact_id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-opening2-wilson-pages52-61-75-9ea0918d"
+ancient_passage_id = "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-opening2-deus-qui-peccati-source"
+ancient_reading = "Deus, qui peccati veteris haereditariam mortem, in qua posteritatis genus omne successerat, Christi tui Domini nostri passione solvisti, dona ut conformes eidem facti, sicut imaginem terreni naturae necessitate portavimus, ita imaginem caelestis gratiae sanctificatione portemus, Christi Domini nostri. Qui tecum vivit"
+divergence = "The secondary2002 petition inserts Filii immediately after Christi before tui; substitutes da for dona; inserts hominis after terreni. These are explicit small grammatical/relationship clarifications of the same old petition, not silently declared orthography. The secondary2002 omits the ancient closing Christi Domini nostri. Qui tecum vivit, and supplies the common short conclusion Per Christum Dominum nostrum. with a separately marked R. Amen. The complete short formula and marked response are independently image-witnessed in old Lasance at artifact217/printed217. haereditariam/hereditariam is spelling; stress accents, capitalization and pointing differ. Ancient footnote markers8–10 are apparatus, not wording. No modern fullbody is retained in this proposal. The complete finite relationship, including all three small clarifications and common conclusion change, requires independent source and rights review before admission; no exact whole-word target fidelity or authenticated2008 reading is claimed. Study English only. Independently witnessed ancient petition with enumerated omission/grammatical variants and independently witnessed generic conclusion; not approved current liturgical English, not authenticated2008 correspondence, not an instruction for recitation. Complete old conclusion proof: passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion."
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "O God, who through the Passion of Christ your Son, our Lord, have undone the death inherited from ancient sin, into which the whole human race had fallen, grant that, made like him, as we have borne the image of the earthly man by the necessity of nature, so we may bear the image of the heavenly one through sanctification by grace. Through Christ our Lord.\nR. Amen."
+
+# --- Protected or unofficial English quarantined as text-free audit metadata ---
+#
+# `quarantined_text_sha256` hashes the exact UTF-8 TOML string value that was
+# removed. It proves identity for review without retaining or publishing the
+# wording. A rejected detector is a lead only, never an authoritative source.
 
 [[untranslated]]
 mass = "saint-raymond-penyafort-priest"
@@ -8088,20 +8476,6 @@ quarantined_text_sha256 = ["2bc8ddc402b84913a8453a541eb2c1ee93258fb203c7e9dd4d07
 note = "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright. The approved English is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. Absence within a declared boundary is not proof of absence from the tradition. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
 
 [[untranslated]]
-mass = "easter-sunday"
-form_id = "main"
-proper = "Prayer over the Offerings"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-rejected_detectors = ["liturgies-net-2026-08-22"]
-quarantined_text_sha256 = ["9bead87f48e487d607d1bfb1ed28415a8f3c2bf13ae9a1c9fc036464d4b5a7e2"]
-note = "an ancient ancestor was identified in the Gelasianum Vetus at 0.85 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
-
-[[untranslated]]
 mass = "easter-vigil"
 form_id = "main"
 proper = "Blessing of Baptismal Water"
@@ -8309,34 +8683,6 @@ availability = "unavailable"
 reason = { kind = "no-exemplar" }
 rejected_detectors = ["liturgies-net-2026-08-22"]
 quarantined_text_sha256 = ["1d288501bc66d9c61c7882f9dbcefdc273fad3073d9bc68d617bd05a551d3766"]
-note = "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
-
-[[untranslated]]
-mass = "good-friday"
-form_id = "main"
-proper = "Prayer"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-rejected_detectors = ["liturgies-net-2026-08-22"]
-quarantined_text_sha256 = ["36cfb2333570c70f79b08ed591cea045e9c0ff4122cd9dd2ccb1459f8647a680"]
-note = "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
-
-[[untranslated]]
-mass = "good-friday"
-form_id = "main"
-proper = "Prayer (alternative)"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-rejected_detectors = ["liturgies-net-2026-08-22"]
-quarantined_text_sha256 = ["1899b26cb81ce996335599b49d84708dc60b6d75546b79962d0262513214e08d"]
 note = "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
 
 [[untranslated]]
@@ -8580,20 +8926,6 @@ note = "an ancient ancestor was identified in the Veronense at 0.73 word coverag
 [[untranslated]]
 mass = "mass-of-the-lords-supper"
 form_id = "main"
-proper = "Chant at the Place of Reposition"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-rejected_detectors = ["liturgies-net-2026-08-22"]
-quarantined_text_sha256 = ["c06ef7e40579197785d5a42ba0e22b7cc12e515ac0e20d1d083531743511387a"]
-note = "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
-
-[[untranslated]]
-mass = "mass-of-the-lords-supper"
-form_id = "main"
 proper = "Collect"
 cycle = "all"
 occurrence = 1
@@ -8604,20 +8936,6 @@ reason = { kind = "no-exemplar" }
 rejected_detectors = ["liturgies-net-2026-08-22"]
 quarantined_text_sha256 = ["d40a6c4226f231143f4f8d4505f8e29a245b0bba2f19fef7490af4c5c7621e58"]
 note = "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright. The approved English is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. Absence within a declared boundary is not proof of absence from the tradition. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
-
-[[untranslated]]
-mass = "mass-of-the-lords-supper"
-form_id = "main"
-proper = "Hymn at the Transfer of the Blessed Sacrament"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-rejected_detectors = ["liturgies-net-2026-08-22"]
-quarantined_text_sha256 = ["7896fdd64b9546357ec7a57836089e0eae6cd3fc5fe0dc16c14c293d2f647ae8"]
-note = "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
 
 [[untranslated]]
 mass = "mass-of-the-lords-supper"
@@ -9433,27 +9751,6 @@ reason = { kind = "no-exemplar" }
 note = "The candidate artifact does not match this source-owned Latin slot exactly (gloriae in the candidate, gloriose here), so it establishes neither this target's exact English nor a slot-specific publication basis. No English wording is retained."
 
 [[untranslated]]
-mass = "epiphany"
-form_id = "day"
-proper = "Prayer over the Offerings"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", surfaces = ["corpus-data", "public-git", "command-line", "download"] }
-rights = "permission"
-witness = "icel-music-2010"
-source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
-witness_artifact_id = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.presidential-tones"
-verified_on_page = "2026-08-21"
-verified_artifact_page = 2
-verified_heading = "Tones for the Presidential Prayers / Solemn Tone / Prayer over the Offerings (The Epiphany of the Lord, The Mass during the Day)"
-verified_url = "https://www.icelweb.org/musicfolder/PresidentialTones.pdf"
-quarantined_text_sha256 = ["410fcea9a4b127bcddfdefffea3e598154e3bf67514481ae3b3fa14a3714e22e"]
-note = "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
-
-[[untranslated]]
 mass = "good-friday"
 form_id = "main"
 proper = "Solemn Intercession I: For Holy Church"
@@ -9835,28 +10132,6 @@ quarantined_text_sha256 = ["3fdf6b96f0eb7769b83f8970a55b4477300e35caf1188437ff1a
 note = "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
 
 [[untranslated]]
-mass = "most-holy-trinity"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary", surfaces = ["corpus-data", "public-git", "command-line", "download"] }
-rights = "permission"
-witness = "icel-antiphonary-2010"
-source_id = "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-verified_on_page = "2026-08-21"
-verified_artifact_page = 92
-verified_printed_page = "84"
-verified_heading = "ORDINARY TIME (running head) / THE SOLEMNITIES OF THE LORD DURING ORDINARY TIME / First Sunday after Pentecost / THE MOST HOLY TRINITY / Solemnity"
-verified_url = "https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf"
-quarantined_text_sha256 = ["5b4ac95b0c438bb0368393ed6c0cb2a5afedb8dcd67175fb90a2a0bcf834e517"]
-note = "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
-
-[[untranslated]]
 mass = "nativity"
 form_id = "dawn"
 proper = "Communion Antiphon"
@@ -9898,28 +10173,6 @@ verified_printed_page = "12"
 verified_heading = "CHRISTMAS TIME / THE NATIVITY OF THE LORD / At the Mass during the Night"
 verified_url = "https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf"
 quarantined_text_sha256 = ["776d39a0073db7f9b41051ba241db989307ea7cc84a24eb269a1aaa4af801d90"]
-note = "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
-
-[[untranslated]]
-mass = "ot-11"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion", surfaces = ["corpus-data", "public-git", "command-line", "download"] }
-rights = "permission"
-witness = "fdlc-mystagogy-2016"
-source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
-witness_artifact_id = "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion.combo-col-pac-78b-ordinary-trinity-13"
-verified_on_page = "2026-08-26"
-verified_artifact_page = 14
-verified_printed_page = "14"
-verified_heading = "ELEVENTH SUNDAY IN ORDINARY TIME / Collect:"
-verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78b_ORDINARY_Trin-13_SPI2016.pdf"
-quarantined_text_sha256 = ["bad1c573fbc23a6c76bf922a79fff554bcaa184e2834d70c6a516e72e825c131"]
 note = "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
 
 [[untranslated]]
@@ -10275,28 +10528,6 @@ quarantined_text_sha256 = ["dd326076826bef5923f93fd821361dc3914109227628db106046
 note = "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
 
 [[untranslated]]
-mass = "ot-25"
-form_id = "main"
-proper = "Prayer after Communion"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion", surfaces = ["corpus-data", "public-git", "command-line", "download"] }
-rights = "permission"
-witness = "fdlc-mystagogy-2016"
-source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
-witness_artifact_id = "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion.combo-col-pac-78d-ordinary-24-30"
-verified_on_page = "2026-08-26"
-verified_artifact_page = 7
-verified_printed_page = "7"
-verified_heading = "TWENTY-FIFTH SUNDAY IN ORDINARY TIME / Prayer after Communion:"
-verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78d_ORDINARY_24-30_SPI2016.pdf"
-quarantined_text_sha256 = ["9ff20d4c276242b1a77d071c3cab70134ccbb6836cf7fe3a9c61ef854a72ad59"]
-note = "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
-
-[[untranslated]]
 mass = "ot-26"
 form_id = "main"
 proper = "Prayer after Communion"
@@ -10589,30 +10820,6 @@ extent = "body"
 availability = "unavailable"
 reason = { kind = "no-exemplar" }
 note = "No authoritative exemplar establishing the exact approved English for this source-owned slot is held. No English wording is retained."
-
-[[untranslated]]
-mass = "pentecost"
-form_id = "vigil"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No authoritative exemplar establishing the exact approved English for this first source-owned Collect is held. No English wording is retained."
-
-[[untranslated]]
-mass = "pentecost"
-form_id = "vigil"
-proper = "Collect"
-cycle = "all"
-occurrence = 2
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No authoritative exemplar establishing the exact approved English for this second source-owned Collect is held. It remains distinct from the first occurrence. No English wording is retained."
 
 [[untranslated]]
 mass = "pentecost"
@@ -11411,86 +11618,6 @@ verified_printed_page = 143
 verified_on_page = "2026-10-21"
 note = "Exact adapted English source-second Entrance Antiphon body held/restricted in registered ICEL2010 AP151, printed143, directly re-viewed2026-10-21. The literal Cf Sir15:5 names a Vulgate whole-verse component; the English body adapts its grammatical person and tense. This source occurrence2 remains an unselected same-seat alternative unless explicitly chosen. No English wording, Latin2008 body classification, Bible offset/part cut, or publication rights are supplied."
 verified_heading = "SAINT JOHN, APOSTLE AND EVANGELIST"
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "advent-december-18"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-verified_artifact_page = 17
-verified_printed_page = 9
-verified_heading = "18 December"
-verified_on_page = "2026-10-21"
-note = "The exact uncited English antiphon exemplar is positively held in the registered ICEL 2010 Antiphonary, artifact page 17, printed page 9; the 2026-10-20/21 seasonal source audit viewed the actual page image. This source-order Entrance Antiphon occurrence 1 adds no English wording. The restricted artifact and the registered ICEL rights inventory establish no unconditional publication basis for this clonable/downloadable route. No no-exemplar claim, removed-body hash, Latin provenance row, or exact 2008 Latin-body claim is made."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "advent-1-friday"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-verified_artifact_page = 12
-verified_printed_page = 4
-verified_heading = "Friday of the First Week of Advent"
-verified_on_page = "2026-10-21"
-note = "The exact uncited English antiphon exemplar is positively held in the registered ICEL 2010 Antiphonary, artifact page 12, printed page 4; the 2026-10-20/21 seasonal source audit viewed the actual page image. This source-order Entrance Antiphon occurrence 1 adds no English wording. The restricted artifact and the registered ICEL rights inventory establish no unconditional publication basis for this clonable/downloadable route. No no-exemplar claim, removed-body hash, Latin provenance row, or exact 2008 Latin-body claim is made."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "advent-2-friday"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-verified_artifact_page = 14
-verified_printed_page = 6
-verified_heading = "Friday of the Second Week of Advent"
-verified_on_page = "2026-10-21"
-note = "The exact uncited English antiphon exemplar is positively held in the registered ICEL 2010 Antiphonary, artifact page 14, printed page 6; the 2026-10-20/21 seasonal source audit viewed the actual page image. This source-order Entrance Antiphon occurrence 1 adds no English wording. The restricted artifact and the registered ICEL rights inventory establish no unconditional publication basis for this clonable/downloadable route. No no-exemplar claim, removed-body hash, Latin provenance row, or exact 2008 Latin-body claim is made."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "lent-3-thursday"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-verified_artifact_page = 34
-verified_printed_page = 26
-verified_heading = "Thursday of the Third Week of Lent"
-verified_on_page = "2026-10-21"
-note = "The exact uncited English antiphon exemplar is positively held in the registered ICEL 2010 Antiphonary, artifact page 34, printed page 26; the 2026-10-20/21 seasonal source audit viewed the actual page image. This source-order Entrance Antiphon occurrence 1 adds no English wording. The restricted artifact and the registered ICEL rights inventory establish no unconditional publication basis for this clonable/downloadable route. No no-exemplar claim, removed-body hash, Latin provenance row, or exact 2008 Latin-body claim is made."
 [untranslated.reason]
 kind = "rights-withheld"
 source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"

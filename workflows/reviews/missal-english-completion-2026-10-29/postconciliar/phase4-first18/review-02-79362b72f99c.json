@@ -1,0 +1,93 @@
+{
+  "schema": "triptych-finite-study-ending-source-review/v1",
+  "reviewed_on": "2026-10-29",
+  "scope": "Separate companion-source review for the exact Epiphany Day Offerings candidate ending; no change to the immutable preceding body review, no historical-English transfer, and no target-Latin body publication.",
+  "body_review_sha256": "cff977a5cd64495ec1f09cb39fd04c553a300b33b3ce7f9b8d46782e06b19ef7",
+  "candidate_packet_sha256": "817143a1baa1ebf49a420636fd96652ea78cb4f1f0bfb5d46e37c4bc60791482",
+  "target": [
+    "epiphany",
+    "day",
+    "Prayer over the Offerings",
+    "all",
+    1
+  ],
+  "full_draft_english_sha256": "8fdb0dab3b3d917888285c24b04c77fd720123ee6f1c261024163c011c7cc957",
+  "old_petition_reading_sha256": "2151d080a05d38b5897b1b99dcfea1009737338a013090f213e9880efa3d7f69",
+  "source": {
+    "edition_id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+    "artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+    "artifact_sha256": "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474",
+    "byte_size": 102880787,
+    "artifact_page_ranges": [
+      [
+        351,
+        351
+      ],
+      [
+        776,
+        776
+      ]
+    ],
+    "loci": [
+      {
+        "artifact_page": 351,
+        "printed_page": "265",
+        "context": "Canon Missae, top-left conclusion of Corpus tuum prayer; entire seven-word formula and following Amen are visible."
+      },
+      {
+        "artifact_page": 776,
+        "printed_page": "[106]",
+        "context": "Benedictiones diversae, Benedictio Candelarum; entire ending is at left-column bottom, followed by separate R.Amen."
+      }
+    ],
+    "canonical_formula": "Qui vivis et regnas in saecula saeculorum.",
+    "canonical_formula_sha256": "ae138329e45dd2e21ce5235def96bafaec6d4822b54be5a59923c8bdb2732017",
+    "transformations": [
+      "Expand printed ae ligatures to ae.",
+      "Omit stress accents in the declared canonical comparison transcription.",
+      "Join printed wordbreak and linewrap only; retain every formula word."
+    ],
+    "excluded_after_formula": "Amen. is adjacent in the Canon source; R.Amen. is a separate response in the candle blessing. Neither is part of this target ending or English draft."
+  },
+  "bounded_target": {
+    "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+    "artifact_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+    "artifact_page": 114,
+    "canonical_formula": "Qui vivit et regnat in saecula saeculorum.",
+    "canonical_formula_sha256": "c0b7301a64197d675b0da2ae95236ab19b797a201799f262f38a33ed1ec0e084",
+    "qualification": "Secondary digitally typeset2002 reproduction only; printed2002 fidelity and2008 correspondence remain unestablished."
+  },
+  "differences": [
+    {
+      "source": "vivis",
+      "target": "vivit",
+      "type": "second-person-to-third-person-verb-inflection"
+    },
+    {
+      "source": "regnas",
+      "target": "regnat",
+      "type": "second-person-to-third-person-verb-inflection"
+    }
+  ],
+  "fresh_study_english": {
+    "text": "Who lives and reigns for ever and ever.",
+    "sha256": "bb27f0278227dbc5d7d69a5fbbdd874de621a0dcfa9d7fdfc4149197f42af0a9",
+    "source": "New project-created translation of independently witnessed complete public-domain formula with exactly two disclosed grammatical inflections; not a quotation of historical or approved English."
+  },
+  "review_judgment": "The complete older formula is independently established before any ending is supplied. The target contributes only two verb-person inflections to that same seven-word formula; there is no added word, omitted formula word or new clause. Under the existing narrowly qualified variant route, this is supported as an original study-English ending for this exact hashed candidate. It is not permission to expand per., Per Dominum. or any other cue by memory, nor a claim that the old source prints the third-person forms. The final source records must bind this companion formula and record both changes separately from the ancient petition and its actual per dominum. cue.",
+  "admission_boundary": "Parent/root retains finite adoption and publication; source/English review supports joint use of this ending proof with the immutable body review. No other target inherits adoption by a shared formula or incipit.",
+  "pages": [
+    {
+      "path": ".scratch/postconciliar-english-completion-20261029/extra-two-review/ending-round/rendered/.scratch/postconciliar-english-completion-20261029/extra-two-review/ending-round/pustet1862-ap351/pages/page-1.png",
+      "sha256": "0514f78876e60e4be15120943be767e9b96de409a5de6dd1169630f25e6ae107",
+      "directly_inspected": true
+    },
+    {
+      "path": ".scratch/postconciliar-english-completion-20261029/extra-two-review/ending-round/rendered/.scratch/postconciliar-english-completion-20261029/extra-two-review/ending-round/pustet1862-ap776/pages/page-1.png",
+      "sha256": "94af9a4b894aedf4b9f42322927d207b259c49b71891eb861b11fdf7c6e185a5",
+      "directly_inspected": true
+    }
+  ],
+  "render_receipt_sha256": "1fdf8e8f39717113e79b2e11c4a589af205694ea05e0eccf8ae4236e3016a9aa",
+  "tracked_files_changed": []
+}

@@ -114,8 +114,63 @@ browser contracts pass 136 assertions; unchanged reader and annual-render code
 retain the earlier broader structural evidence with its original limits. The
 stale ignored All Saints PDFs are restored byte-for-byte from the already
 accepted builds and their existing full-page review records; no new document
-content or PDF acceptance is inferred. Publication and live verification remain
-pending. Final merged evidence is retained in the same reconciliation namespace.
+content or PDF acceptance is inferred. Checkpoint `702f650020` is pushed to
+`origin/main`; the exact outgoing-object audit passes. Pages and repository
+hygiene both succeed on that exact commit. All 58 targeted live HTTPS responses
+match the verified artifact, including the reader routes and code, all three
+Proper datasets, Ordinary data, source index and historical Nativity source.
+The corrected English and its source/target qualifications remain intact.
+Final merged evidence is retained in the same reconciliation namespace.
+
+The next bounded source cohort has actual finite source/English adoption for
+seven Roman uses and eighteen postconciliar uses. The former includes six
+qualified adaptations and a separately sourced old three-antiphon bundle; the
+latter includes ten qualified English uses, five literal historical translations
+and three ordinary public-domain study translations. The complete later
+contributions, strongest contrary arguments, exact bodies, source bindings and
+surfaces were assessed separately. Current-book fidelity, approved translations
+and wider book arrangements are not inferred. Canonical source integration,
+finite-authority activation and owner generation are installed. Composed English
+is now 1,414/1,448 Roman targets, 1,374/1,391 Bonn witness study targets and
+173/574 modern Roman targets; the corresponding gaps are 34, 17 and 401. These
+remain represented-body counts, including the seventy earlier drafts with open
+review debt. Ten new Sources reading passages expose already accepted Ordinary
+English without adding new wording. The independently reviewed source epoch
+binds 7,264 exact inputs, preserves all seventeen original raw replay streams
+and retains historical refusals separately from the current admissions.
+Canonical source consumers pass through the recorded full runs and corrected
+executions; the six census-number collision subcases retain their explicit
+short-number skips. The corrections preserve earlier English admissions and
+source refusals rather than adding texts. The cohort is committed as
+`4403b11f98`; the separately reviewed removed-owner sanitizer correction is
+committed as `61a2b2ae6a`. Main `2827cb6b55` is reconciled in the working tree.
+All five final source/public/preview gates pass. The merged source-consumer run
+found one stale current-code checksum assertion; its reviewed test and source
+epoch successor preserve all seventeen raw replay streams, and all 24 source
+guard and affected phase5 tests pass. The 171 publication and encyclical tests
+also pass. These are composed executions, not a claim that the initial
+292-test run passed. Exact merged evidence is retained under
+`next-english-2026-10-30/main-reconciliation-v2/` in the same review namespace.
+The older Common remains blocked by its existing source-applicability condition;
+generated English availability does not override that reader restriction.
+Fresh browser validation passes 136 native assertions, 68 materialization cases
+(62 visible English bodies and six expected older applicability refusals),
+14 affected Day cases, eight Nativity regressions and 24 exact Sources English
+selections across the public and preview artifacts. Complete Improperia,
+print and actual clipboard checks also pass, with clean final diagnostics.
+The ordinary merge is committed as `b658058df2`; its exact outgoing-object
+audit passes, excluding the obsolete feature history and both rejected blobs.
+The maintainer requested a coherent stop, a persisted handoff, and publication
+of this checkpoint. The handoff and unapplied candidate evidence are retained
+in [the stop handoff](workflows/reviews/missal-english-completion-2026-10-29/stop-handoff-2026-10-30.json).
+Final handoff-commit audit, push and exact deployment verification remain the
+publication steps; this record does not predict their outcome. No additional
+translation, naming or rite integration is authorized during the stop.
+Exact local evidence
+is retained in `next-english-2026-10-30/local-source-validation.json` under the
+same review namespace.
+The actual seven-case decision and its source bindings are retained under
+`workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/`.
 The existing real-terminal maintainer acceptance and broader product promises
 retain their own requirements.
 
@@ -132,10 +187,18 @@ witness distinctions before applying the names consistently. A structural
 placeholder alone does not establish contributed text; actual Latin or English
 content does. Existing source and completeness qualifications remain binding.
 
-The naming matrix, primary-source citations, consumer inventory and inclusion
-rules remain pending. Historical audit bytes and quoted historical labels
-remain evidence of their original state; stable-ID migrations need explicit
-compatibility handling rather than rewriting accepted source receipts.
+The sourced matrix and implementation have independent bounded review. The
+proposed current reader names are “Roman Missal — Bonn 2004 witness study,”
+“Roman Missal — 1962 typical edition,” and “Roman Missal — 2008 base with
+recorded additions.” The first identifies the actual reprint witness rather
+than treating an inferred calendar horizon as an edition; the last distinguishes
+the 2008 emended reprint of the third typical edition from its recorded later
+additions. The 1962 reader qualification must distinguish the June edition from
+the separately decreed December insertion of Saint Joseph in the Canon.
+Application and final consumer validation remain pending after the current
+English checkpoint. Historical audit bytes and quoted historical labels remain
+evidence of their original state; compatibility preserves opaque existing IDs
+while current public labels and new reader keys use the sourced nomenclature.
 
 ## Encyclical completion and English coverage, 2026-10-29
 

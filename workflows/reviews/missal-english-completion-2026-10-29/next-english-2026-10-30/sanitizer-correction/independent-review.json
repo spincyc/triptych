@@ -1,0 +1,35 @@
+{
+  "after_sha256": "852acb6a88084aba5729e5f60e807ca4e10f9c4436f5db2b23a9fdd3fbe2da1a",
+  "before_sha256": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376",
+  "canonical_index_or_ref_writes": 0,
+  "changed_scope": "Unconditionally remove resident text in the existing held-unpublished/removed-owner early branch. All other function and module ASTs are exact.",
+  "controls": {
+    "English_fixture_translation_preserved": true,
+    "actual_candidate_effective_mass_outputs_byte_semantically_equal": {
+      "postconciliar": 619,
+      "roman-1962": 491,
+      "roman-pre-1955": 489
+    },
+    "actual_marked_injected_owner_old_retains_new_removes": true,
+    "actual_nonempty_marked_owners_found": [],
+    "actual_output_shape_changes": [],
+    "foreign_unknown_owner_refused": true,
+    "held_unpublished_owner_behavior_exact": true,
+    "known_finite_hash_removed_owner_controls": 22,
+    "nested_cycle_markers_scrubbed": 3,
+    "unavailable_public_metadata_unchanged": true,
+    "unmarked_unresolved_owner_behavior_exact": true,
+    "valid_actual_removed_owner_output_exact": true
+  },
+  "limits": [
+    "Comparison uses the same actual direct sidecar dictionaries for both sanitizers, with inherited permission resets for the older frame; it is a consumer transformation equivalence check, not a fresh target-override or source-publication review.",
+    "Canonical application, actual owning regressions, regeneration and release verification remain root-owned after the current source cohort commit."
+  ],
+  "patch_path": "sanitizer-fix/sanitizer.patch",
+  "patch_sha256": "9189087195f2064582e1c4e2a914605234bd654ad0af47f683ac3755dffa3dd7",
+  "postimage_path": "sanitizer-fix/postimages/scripts/_proper_latin.py",
+  "root_application_pending": true,
+  "schema": "triptych-scratch-removed-marker-sanitizer-correction-review/v1",
+  "source_or_model_wording_changed": false,
+  "status": "PASS-scratch-minimal-consumer-correction-not-applied"
+}

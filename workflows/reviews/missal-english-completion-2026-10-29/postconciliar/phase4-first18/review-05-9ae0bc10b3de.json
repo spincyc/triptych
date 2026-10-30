@@ -1,0 +1,61 @@
+{
+  "schema": "triptych-independent-source-package-review/v1",
+  "recorded_on": "2026-10-30",
+  "verdict": "accepted-without-corrections",
+  "scope": "Mechanical canonical records and overlay for already independently accepted five seasonal bodies; no new source or English judgment implied beyond frozen review.",
+  "candidate_entries_sha256": "64db56eab52a8fdc1c4f9e271979cbfcda57ece6b67795a4b9ec487d17413c15",
+  "manifest_sha256": "8b2b20d6355fb9cbc6647ed1689f2eedd590fcc7249b196966ef1c3f227e1508",
+  "preparation_receipt_sha256": "5ff3b67ad3e3b4b7b3788437275c20ade483f8882202ce2306bd0d5bfbe28aff",
+  "preparer_validation_sha256": "6a982d5cbd8d8c2ccb9ffe8a4dea3d225eca16c8283036702bef19776f12a87b",
+  "frozen_source_English_review_sha256": "c561e8d598cbc1b323fe729df2bf529288ba49acf5889be0462195948690f224",
+  "independently_rehashed_postimages": 29,
+  "independently_parsed_source_records": 23,
+  "findings": [
+    {
+      "mass": "most-holy-trinity",
+      "payload": "exact frozen human English",
+      "same_edition_visual_ancestry": true,
+      "identical_source_publication_locus": true,
+      "exact_single_recipient_tsv_row": true
+    },
+    {
+      "mass": "lent-3-thursday",
+      "payload": "exact frozen human English",
+      "same_edition_visual_ancestry": true,
+      "identical_source_publication_locus": true,
+      "exact_single_recipient_tsv_row": true
+    },
+    {
+      "mass": "advent-december-18",
+      "payload": "exact frozen human English",
+      "same_edition_visual_ancestry": true,
+      "identical_source_publication_locus": true,
+      "exact_single_recipient_tsv_row": true
+    },
+    {
+      "mass": "advent-1-friday",
+      "payload": "exact frozen fresh study English and complete old Latin",
+      "pure_study_without_target_binding_or_translation_source_id": true
+    },
+    {
+      "mass": "advent-2-friday",
+      "payload": "exact frozen fresh study English and complete old Latin",
+      "pure_study_without_target_binding_or_translation_source_id": true
+    }
+  ],
+  "additional_checks": [
+    "All29 manifest postimages rehashed, sized and all TOML records parsed independently.",
+    "Both retained1888 proof PNGs match exact image hashes from the immutable independent source review.",
+    "Five modern comparison passages contain metadata only and no text payload.",
+    "Only Trinity existing incipit is retained; four optional absent keys remain absent.",
+    "Three historical human publication artifacts derive from the exact whole visual source artifact used by their source verification passage, within the same edition. Printed p. and identical source/publication loci are explicit.",
+    "All three historical recipient row extracts reproduce the exact accepted English and target identity.",
+    "Both pure study entries keep the established generic project-created route and complete1888 source identity/body without an invented English work or target Latin binding.",
+    "Preparer isolated graph baseline and candidate both have zero errors; all five strict entry checks passed in its pinned validation record."
+  ],
+  "remaining_parent_gates": [
+    "Actual source-family, publication graph and strict consumer checks after integration.",
+    "Generated outputs and final source-install frontier."
+  ],
+  "tracked_mutations": []
+}

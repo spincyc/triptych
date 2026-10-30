@@ -1,0 +1,168 @@
+{
+  "acceptance_conditions": [
+    "Use the separately reviewed V3 successor if its announced test-code change is applied; do not install this superseded V2 against changed source bytes.",
+    "Root alone creates the exact accepted receipt and installs its bound fixture/manifest.",
+    "Run actual canonical source-guard consumers after root installation.",
+    "Retain the inherited marked-quarantine sanitizer counterexample and resolve the narrow consumer fix before final merged publication, as root has specified."
+  ],
+  "actual_semantic_rederive_performed": false,
+  "added_paths": 193,
+  "all_seven_Roman_Latin_transitions_match_exact_adopted_body_and_row_hashes": true,
+  "all_seven_new_bodies_stay_in_project_projection_partition": true,
+  "candidate_hashes": {
+    "adapter-proof.json": "36822732d6b17a7b67c485c2cc796d556623e6fc8b46c795ca56622af94455da",
+    "data-proof.json": "a14356e8335ab8f1a56e9f235c36e9c76ab467dae8ddae9f4108c2f526ed62fe",
+    "tools/tests/fixtures/missal-source-batch-20261023-inputs.json": "7845e413fbdfc00b426412413a3416c1b53cbea2208f6ab3e6802051003467db",
+    "tools/tests/fixtures/missal-source-batch-20261023.json": "1ddc1aaca776d6bf10de4a1b5e86994beda323db20828f3586e2850bc0265c68",
+    "transition-contract.json": "a378e7ab8d12876e50946054673f5305af11c11ab43c444ecb445752f11dcb7f"
+  },
+  "canonical_fixture_and_manifest_remain_published_parent": true,
+  "canonical_index_or_ref_writes": 0,
+  "changed_kept_paths": 7,
+  "direct_PD25_entire_specs_exact_and_actual_production_decisions_pass": true,
+  "findings_in_actual_V2_data": [],
+  "historical_projection_and_cross_witness_oracles_retained": true,
+  "new_acceptance_receipt_absent": true,
+  "old16_protected_raw_source_files_exact": 113,
+  "old16_v1_authority_bytes_exact_to702": true,
+  "original17_actual_Git_replays": [
+    {
+      "actual_original_Git_sha256": "69731f40de5d8c4539c4660f7035681ba3429beffd447ac6e29a5c1b98b6829d",
+      "current_sha256": "35964d2d20f339f7201153bae4a7900ebe572c4d12fc67136169059b18952ae7",
+      "path": "src/sources/calendars/postconciliar/propers.yaml"
+    },
+    {
+      "actual_original_Git_sha256": "018642eee26d09e3bb014fa60baa0f820ab3637c9d6e349378c696a7b79d6877",
+      "current_sha256": "bb53c726e652fc20b4aab7f253031521bf42794d3726af50fe4bcd9d2c31fe8f",
+      "path": "src/sources/calendars/roman-1962/propers.yaml"
+    },
+    {
+      "actual_original_Git_sha256": "5943f9788ff9ebe3b614086d824039a2993039f58d3819e85f26ffafb3c38a58",
+      "current_sha256": "5943f9788ff9ebe3b614086d824039a2993039f58d3819e85f26ffafb3c38a58",
+      "path": "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml"
+    },
+    {
+      "actual_original_Git_sha256": "9bf6fe5ecc3b397888a0316f7b5c06e40f65e9dfc1eb96c3bc78d111e7c41597",
+      "current_sha256": "88e54e407656a75ee00dab1ac029cf960612c65aabbcde78d4e82236486b3d27",
+      "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml"
+    },
+    {
+      "actual_original_Git_sha256": "c2bf07d5551fbe7ae2748ce7390c37b0d707df7cf275d400126b04cacd8600f0",
+      "current_sha256": "6b9b70f19e7d1473619a18022ce91ca430df36485b776933b4313ec85116ce57",
+      "path": "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml"
+    },
+    {
+      "actual_original_Git_sha256": "560e82057dc0480a5b1fe835304ba57ed476b346a38cab6fac550298582016ea",
+      "current_sha256": "59deb71b22cb457873a56a91b6044f295934c59acb044eb7d701d38547b09ff9",
+      "path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml"
+    },
+    {
+      "actual_original_Git_sha256": "79946d1bc6e015d8624d67ce243b59cf3ee634fc5997310aa6d764953349d815",
+      "current_sha256": "9dffc512b5ba43699f9d72dc3624e1cfe148ff262ff9ddd1acd41bc2e6f3a1fc",
+      "path": "src/sources/inventories/roman-1962-proper-translations-v1.toml"
+    },
+    {
+      "actual_original_Git_sha256": "465e15d42b7301b22c2d93be1b95b00eb326ee0cd2ad1f928520952a89e89faa",
+      "current_sha256": "87be6b440b449f41b13b758a1a68d4a0e561b1cd6e2e45ae5b6002c59118edcb",
+      "path": "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml"
+    },
+    {
+      "actual_original_Git_sha256": "98daa1922358c0d977ddfc97352812d395c6f578591e48691bc1393c6b1ace8d",
+      "current_sha256": "d13ba84c2d93b9ca77b68e9a4746bcdff9ff6d23c42be57a9c508d86e329f464",
+      "path": "tools/tests/test_proper_latin.py"
+    },
+    {
+      "actual_original_Git_sha256": "bc3ec297a6ca1edd3f155ccc29381526fee006d2e39a2c43bc0ce06fb81a51d4",
+      "current_sha256": "69530f60a46c22ec5e8e2b3a1ed2338695e605abb2f370e20618b7c47c95646d",
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py"
+    },
+    {
+      "actual_original_Git_sha256": "ddb972cdd5fe9651d1ecc0b33bbc1bf4deca7f1b5f5c7d75b87bc03c54603f9e",
+      "current_sha256": "e9bf4075f1529b48682b6e64363e0d67492b0e5fb12fdb99a2e08ea9cf14db0f",
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py"
+    },
+    {
+      "actual_original_Git_sha256": "dedf9a58d3f9e6b311bf5caf8f7aa7c51dcc9543d6ee17e4288e834c8cdc0215",
+      "current_sha256": "cb9265ac684392086cfb9347cb9c5e778fda2563e48b5f5d431ed811ae15fa6d",
+      "path": "tools/tests/test_roman_1962_english13_phase5.py"
+    },
+    {
+      "actual_original_Git_sha256": "86b29add67ac575fb147300f4ab6e66c47863a16c4cf5166896a88e710f5335c",
+      "current_sha256": "e7067e3fc899d473c2619da91789893b102960e88531eafb3fb5114d9aa4627f",
+      "path": "tools/tests/test_roman_1962_english31_phase4.py"
+    },
+    {
+      "actual_original_Git_sha256": "9c11f0b870c14916dfa2530c1e733f262a5c9f526cd613744a06ea7ce3c05190",
+      "current_sha256": "e61a6847c080ba9ee4d922339ec05f20cbc98da4d289f3d54f1b47b6018edb91",
+      "path": "tools/tests/test_roman_1962_lasance_commons_easter_phase3.py"
+    },
+    {
+      "actual_original_Git_sha256": "7dc3a1569140e14f32fa2c98e607577b05871f3c197a307db67107d731d6afca",
+      "current_sha256": "01d6e0490f4b84683823795b2917a8804d17b8b32b38af49b2caa97fca0f015d",
+      "path": "tools/tests/test_roman_1962_latin22_phase5.py"
+    },
+    {
+      "actual_original_Git_sha256": "c13d838baf217cf25be163e465a4f90322d8ecf04e89322f237eec105764686e",
+      "current_sha256": "cdc06660f2be35e40f94acb44d72c3a9d6cd679089d640e3486256044db5b994",
+      "path": "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py"
+    },
+    {
+      "actual_original_Git_sha256": "e7354e1d015919cc47f235fca3aa1f5134afc8fe250765eb24b6d2eafbc71f05",
+      "current_sha256": "5e04878938801451c88c2d5b0c81afdfffa99bfda4f64f9025d1a8d7de6d5075",
+      "path": "tools/tests/test_roman_1962_winter_ursula_source_repair.py"
+    }
+  ],
+  "original_historical_fields_exact": [
+    "schema",
+    "baseline_revision",
+    "baseline_roman_document_sha256",
+    "latin_baseline_rows",
+    "latin_baseline_bodies",
+    "latin_baseline_present_keys",
+    "latin_baseline_supplemented_keys",
+    "projection_baseline_source_files",
+    "english_219_keys",
+    "english_baseline_source_files",
+    "english_historical_source_files",
+    "english_historical_absence_scope"
+  ],
+  "postconciliar_raw_Latin_rows_and_bodies_exact_to702": true,
+  "prospective_frozen_G_checks": {
+    "actual_pending_acceptance_gate": "REFUSED as required",
+    "binding": "Only in a private loaded module, replace fixture accessor with the independently checked pending value and route manifest/fixture/replay owners to exact private V2 postimages/snapshots. No accepted receipt or canonical installation is fabricated.",
+    "helper_sha256": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1",
+    "historical17_replay_current_Latin3families_body_partition_projection_and_English_namespaces_English_dictionary_and_coverage_permitted_owner_checks": "PASS",
+    "negative_controls_refused": [
+      "whole replay input mutation src/sources/calendars/postconciliar/propers.yaml",
+      "whole replay input mutation src/sources/calendars/roman-1962/propers.yaml",
+      "whole replay input mutation src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml",
+      "whole replay input mutation src/sources/inventories/postconciliar-proper-translations-v1.toml",
+      "whole replay input mutation src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml",
+      "whole replay input mutation src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+      "whole replay input mutation src/sources/inventories/roman-1962-proper-translations-v1.toml",
+      "whole replay input mutation src/sources/inventories/roman-pre-1955-proper-translations-v1.toml",
+      "whole replay input mutation tools/tests/test_proper_latin.py",
+      "whole replay input mutation tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py",
+      "whole replay input mutation tools/tests/test_roman_1962_common_virgin_ii_word_repair.py",
+      "whole replay input mutation tools/tests/test_roman_1962_english13_phase5.py",
+      "whole replay input mutation tools/tests/test_roman_1962_english31_phase4.py",
+      "whole replay input mutation tools/tests/test_roman_1962_lasance_commons_easter_phase3.py",
+      "whole replay input mutation tools/tests/test_roman_1962_latin22_phase5.py",
+      "whole replay input mutation tools/tests/test_roman_1962_octnov_commemoration_source_repair.py",
+      "whole replay input mutation tools/tests/test_roman_1962_winter_ursula_source_repair.py",
+      "warm manifest replacement",
+      "Latin dictionary mutation",
+      "Latin body identity mutation",
+      "English positive dictionary mutation"
+    ]
+  },
+  "published_parent_paths": 7071,
+  "schema": "triptych-independent-English25-candidate-V2-data-core-review/v1",
+  "scope_limits": [
+    "Frozen V2 data review. Root has announced a narrow V3 test-expectation/source-pin successor; that successor requires its own exact delta review before acceptance.",
+    "Stronger marked-owner sanitizer injection exposed an inherited702 consumer gap, tracked separately. These successful data checks do not relabel that failed adversarial consumer control.",
+    "Source wording, English fidelity and rights judgments remain owned by the exact adopted source reviews; this checks their exact data bindings, preservation and production guard decisions."
+  ],
+  "source_paths": 7264,
+  "status": "PASS-frozen-V2-data-core-conservation-with-separate-inherited-consumer-finding"
+}

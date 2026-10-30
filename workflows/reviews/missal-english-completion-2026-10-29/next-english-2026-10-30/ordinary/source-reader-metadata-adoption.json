@@ -1,0 +1,237 @@
+{
+  "schema": "triptych-root-adopted-source-reader-english-metadata/v1",
+  "state": "ROOT_ADOPTED_TEN_EXACT_METADATA_FILES_CANONICALLY_INSTALLED",
+  "root_authorization": "Root explicitly adopted the exact ten Source Reader metadata files from candidate37974 and independent reviewc1f3 under final-window binding8c16, after reporting successful remote checkpoint, Pages/Hygiene and58 live hashes. Root authorized canonical installation of only these ten new source passage records plus public-safe adoption/delivery evidence, with no whole-graph/generation/build/index/ref/source-fixture writes.",
+  "scope": "Previously admitted English only: ten exact reading passages in six existing editions, sixteen whole English cells. This adoption creates no English wording, artifact or permission and grants no new Latin scope.",
+  "accepted_candidate_sha256": "37974e30277e8592ba0f5332333ecf8fb9c2401f07294a69f23a25f051920ee4",
+  "original_independent_metadata_review_sha256": "c1f3fd687830bed64c1a7bc635f1958f01f360a8a706003a16832f573bce6b1c",
+  "accepted_final_window_binding_sha256": "8c16a3726e8dc2474a9de362e20c349493989200d4504196f6fe5ed75871d39f",
+  "exact_file_manifest": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/ordinary/source-reader-metadata-files.json",
+    "sha256": "bf1a28a336cfcc16647d702fef672dea74257a627d5a63f0619be2ac434151a5"
+  },
+  "public_independent_review_summary": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/ordinary/source-reader-independent-metadata-review.json",
+    "sha256": "b298ccd6e27ad7aefff9a562c5429b0287f4a484f05a38722fa65624004e0070"
+  },
+  "actual_selected_english_delivery": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/ordinary/source-reader-english-delivery.json",
+    "sha256": "1adbcd1af5f180545201178c8f93beccb6afb62d3f14ab6d26e76d5749461843"
+  },
+  "thirty_three_scoped_input_preconditions": [
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-supplices-study-english-20261030/work.toml",
+      "sealed_sha256": "d9df20c2314ed9d466e9af088a301b7b2cdde26f87086dab304d08dcf48c3535",
+      "actual_before_sha256": "d9df20c2314ed9d466e9af088a301b7b2cdde26f87086dab304d08dcf48c3535",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-supplices-study-english-20261030/editions/2026-10-30-study-english/edition.toml",
+      "sealed_sha256": "7521d51f748bc6060e6bdfe3db5a2afac6e48db274b77538e90e96a4a79cb4e8",
+      "actual_before_sha256": "7521d51f748bc6060e6bdfe3db5a2afac6e48db274b77538e90e96a4a79cb4e8",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-supplices-study-english-20261030/editions/2026-10-30-study-english/artifacts/supplices-body-study-en/artifact.toml",
+      "sealed_sha256": "787ef5eab26e3e2ceda245fe1caa3963f1d822520aa59afed97ade59ad802672",
+      "actual_before_sha256": "787ef5eab26e3e2ceda245fe1caa3963f1d822520aa59afed97ade59ad802672",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-supplices-study-english-20261030/editions/2026-10-30-study-english/artifacts/supplices-body-study-en/text.tsv",
+      "sealed_sha256": "041ebf5a31a4b58b95958f9d08d222bd16b9b92576fe93b420a037a3e7e9f25d",
+      "actual_before_sha256": "041ebf5a31a4b58b95958f9d08d222bd16b9b92576fe93b420a037a3e7e9f25d",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/work.toml",
+      "sealed_sha256": "bc7dc9922d69539f210999e749cc6143e3940f93b49bb9eb7bb9e6cdcf06d6a3",
+      "actual_before_sha256": "bc7dc9922d69539f210999e749cc6143e3940f93b49bb9eb7bb9e6cdcf06d6a3",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/editions/2026-10-30-study-english/edition.toml",
+      "sealed_sha256": "24c15362a2d6f48bf641cfafec1b173cf1f653ed4f4c202138bf3a4c9ac5dab2",
+      "actual_before_sha256": "24c15362a2d6f48bf641cfafec1b173cf1f653ed4f4c202138bf3a4c9ac5dab2",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/editions/2026-10-30-study-english/artifacts/common-full-names-conclusion-omitted-study-en/artifact.toml",
+      "sealed_sha256": "c6a1bf3a61413bbbaf46db8f619e69fe413062fd8350e3b2e57f3b344d7696d5",
+      "actual_before_sha256": "c6a1bf3a61413bbbaf46db8f619e69fe413062fd8350e3b2e57f3b344d7696d5",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-common-communicantes-study-english-20261030/editions/2026-10-30-study-english/artifacts/common-full-names-conclusion-omitted-study-en/text.tsv",
+      "sealed_sha256": "72d5e9a3546b78cdef41bc61180c2c6453b930698c78c49700e787233518c882",
+      "actual_before_sha256": "72d5e9a3546b78cdef41bc61180c2c6453b930698c78c49700e787233518c882",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-domine-qui-dixisti-study-english-20261030/work.toml",
+      "sealed_sha256": "671f06e3165103bcd79493d5e6575e520a677618af5eb19bd662b192e8d2b5ce",
+      "actual_before_sha256": "671f06e3165103bcd79493d5e6575e520a677618af5eb19bd662b192e8d2b5ce",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-domine-qui-dixisti-study-english-20261030/editions/2026-10-30-study-english/edition.toml",
+      "sealed_sha256": "e5adf166015ca1558db3908b98a274b97e3ad6ff1c4c3b12c5491d9aee243734",
+      "actual_before_sha256": "e5adf166015ca1558db3908b98a274b97e3ad6ff1c4c3b12c5491d9aee243734",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-domine-qui-dixisti-study-english-20261030/editions/2026-10-30-study-english/artifacts/domine-qui-dixisti-study-en/artifact.toml",
+      "sealed_sha256": "ce444b2b7a09e3349fbd3979567303978e80e08f007226a270ca4b7f11feaaed",
+      "actual_before_sha256": "ce444b2b7a09e3349fbd3979567303978e80e08f007226a270ca4b7f11feaaed",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-domine-qui-dixisti-study-english-20261030/editions/2026-10-30-study-english/artifacts/domine-qui-dixisti-study-en/text.tsv",
+      "sealed_sha256": "dd4e3f58bf11acba57c5247b582cc112728bf3d0b74ab9eef907e8a5b9ecf859",
+      "actual_before_sha256": "dd4e3f58bf11acba57c5247b582cc112728bf3d0b74ab9eef907e8a5b9ecf859",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-peace-invitation-study-english-20261030/work.toml",
+      "sealed_sha256": "cf0b4e79f7f564711a6f5948962a46ef06ac6390acde763c9fc5ead0f3dd8208",
+      "actual_before_sha256": "cf0b4e79f7f564711a6f5948962a46ef06ac6390acde763c9fc5ead0f3dd8208",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-peace-invitation-study-english-20261030/editions/2026-10-30-study-english/edition.toml",
+      "sealed_sha256": "4de82672927f53f9d5ec1b5203f23100f85d84b839eb2db6f3860cbb219e156b",
+      "actual_before_sha256": "4de82672927f53f9d5ec1b5203f23100f85d84b839eb2db6f3860cbb219e156b",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-peace-invitation-study-english-20261030/editions/2026-10-30-study-english/artifacts/peace-invitation-study-en/artifact.toml",
+      "sealed_sha256": "0d34a008b0f0eaea22252bb64b0f7b7bb4c574366d0631fe2c987b228d14ce5c",
+      "actual_before_sha256": "0d34a008b0f0eaea22252bb64b0f7b7bb4c574366d0631fe2c987b228d14ce5c",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-peace-invitation-study-english-20261030/editions/2026-10-30-study-english/artifacts/peace-invitation-study-en/text.tsv",
+      "sealed_sha256": "171a9fbbf2026f6385526bf17140a42d6f62dd7f9245eb72c3d961cf850a8d3f",
+      "actual_before_sha256": "171a9fbbf2026f6385526bf17140a42d6f62dd7f9245eb72c3d961cf850a8d3f",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/work.toml",
+      "sealed_sha256": "e42d2084d04d734104da56410252bc4c4105ba00a9af7b376e082d45b92ba378",
+      "actual_before_sha256": "e42d2084d04d734104da56410252bc4c4105ba00a9af7b376e082d45b92ba378",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/edition.toml",
+      "sealed_sha256": "ebadd5197a68f833a4b1e81395291f37bac5f40c1d76a150303b55dde0312b12",
+      "actual_before_sha256": "ebadd5197a68f833a4b1e81395291f37bac5f40c1d76a150303b55dde0312b12",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/artifacts/ancient-frames-study-en/artifact.toml",
+      "sealed_sha256": "1ad4d5545d325f64d25dbe90f0495a03efb059648384114259420be1a3f4ae5f",
+      "actual_before_sha256": "1ad4d5545d325f64d25dbe90f0495a03efb059648384114259420be1a3f4ae5f",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-ordinary-ancient-frames-study-english-20261030/editions/2026-10-30-study-english/artifacts/ancient-frames-study-en/text.tsv",
+      "sealed_sha256": "f21219d72d3f0fb36b021f6ad1875d22f2c35d2af77f44e26f77baf750490037",
+      "actual_before_sha256": "f21219d72d3f0fb36b021f6ad1875d22f2c35d2af77f44e26f77baf750490037",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261030-kyrie-sixfold-study-arrangement/work.toml",
+      "sealed_sha256": "68afe003e2eed7f802ae9c3b649b9f1deca6aa9cd6f039426ba31994706c6fdf",
+      "actual_before_sha256": "68afe003e2eed7f802ae9c3b649b9f1deca6aa9cd6f039426ba31994706c6fdf",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261030-kyrie-sixfold-study-arrangement/editions/2026-10-30-study-arrangement/edition.toml",
+      "sealed_sha256": "60d9c8abcf22b0d9e24db0cc9194c71e26bd19c82b152d47f545b72834116ee3",
+      "actual_before_sha256": "60d9c8abcf22b0d9e24db0cc9194c71e26bd19c82b152d47f545b72834116ee3",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261030-kyrie-sixfold-study-arrangement/editions/2026-10-30-study-arrangement/passages/sixfold-english-gloss-arrangement-publish.toml",
+      "sealed_sha256": "fd32b795940c6dc7f0d9b2fc069bdd65affe087fb4f6dc3409c4bfe272a0fe71",
+      "actual_before_sha256": "fd32b795940c6dc7f0d9b2fc069bdd65affe087fb4f6dc3409c4bfe272a0fe71",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261030-kyrie-sixfold-study-arrangement/editions/2026-10-30-study-arrangement/artifacts/sixfold-english-gloss-arrangement/artifact.toml",
+      "sealed_sha256": "10b7a6adbd9ba3051ed887c43fbbf6ce3113b41fb341eb3c2646b20230b2b4c5",
+      "actual_before_sha256": "10b7a6adbd9ba3051ed887c43fbbf6ce3113b41fb341eb3c2646b20230b2b4c5",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/sources/works/triptych/english-completion-20261030-kyrie-sixfold-study-arrangement/editions/2026-10-30-study-arrangement/artifacts/sixfold-english-gloss-arrangement/text.tsv",
+      "sealed_sha256": "0eace201927e0b1f690657f8618b339ee46c96512fd001bf9048518af7c3bc8d",
+      "actual_before_sha256": "0eace201927e0b1f690657f8618b339ee46c96512fd001bf9048518af7c3bc8d",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/sources/inventories/postconciliar-ordo-missae-v1.toml",
+      "sealed_sha256": "c9babb91ea80c4b1fb192693a8c2027c7fce114dfea4ab23eb149f872990246e",
+      "actual_before_sha256": "c9babb91ea80c4b1fb192693a8c2027c7fce114dfea4ab23eb149f872990246e",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "tools/mass-ordinary",
+      "sealed_sha256": "c0cfd8354d72a8a2be29020a2cc0299fce21b27bf6576ac20591d6bfa1d3dcb9",
+      "actual_before_sha256": "c0cfd8354d72a8a2be29020a2cc0299fce21b27bf6576ac20591d6bfa1d3dcb9",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "tools/source-library",
+      "sealed_sha256": "b6327d428d75d897840c413f9a8db6ed62f6c9413b7c1678b9658da625b78102",
+      "actual_before_sha256": "b6327d428d75d897840c413f9a8db6ed62f6c9413b7c1678b9658da625b78102",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "tools/source-reader",
+      "sealed_sha256": "ff16f35d8febcecdb57770f03d80ecf210d26c43d7d8e50b67a5b01b91e2fe13",
+      "actual_before_sha256": "ff16f35d8febcecdb57770f03d80ecf210d26c43d7d8e50b67a5b01b91e2fe13",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "scripts/_proper_qualified_latin.py",
+      "sealed_sha256": "0136f6bb020938867d4ca1e75816c56c363a15603a8fede2aee9126c96b24949",
+      "actual_before_sha256": "0136f6bb020938867d4ca1e75816c56c363a15603a8fede2aee9126c96b24949",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "scripts/_proper_finite_latin_20261029.py",
+      "sealed_sha256": "34c7ea2520f0917108495ea333323c33e4eb3b6993aba2e10c91fc49385dfb40",
+      "actual_before_sha256": "ecca66760debc9c0451e1b6743883c55d59390f575b4503b6af27d9923117fd3",
+      "disposition": "ROOT_ACCEPTED_UNRELATED_ROMAN_ACTIVATION",
+      "accepted_activation_review": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/activation-independent-review.json",
+      "accepted_activation_review_sha256": "92d1933b2f6778c37059a9de6375fe79eb70dd070c96477307b69ba81915cab9"
+    },
+    {
+      "path": "src/web/browser/sources/sources.js",
+      "sealed_sha256": "45c86252478782dd5a0cae6bf11c278b2c2fcdfb3aa9f303f9f93ee684fe7d2c",
+      "actual_before_sha256": "45c86252478782dd5a0cae6bf11c278b2c2fcdfb3aa9f303f9f93ee684fe7d2c",
+      "disposition": "EXACT"
+    },
+    {
+      "path": "src/web/data/structure/ordinary/postconciliar.json",
+      "sealed_sha256": "1935141cdffc8084e214822a4b6ca7f2eb9ac87ffef47868b9b2e68a83fd934f",
+      "actual_before_sha256": "1935141cdffc8084e214822a4b6ca7f2eb9ac87ffef47868b9b2e68a83fd934f",
+      "disposition": "EXACT"
+    }
+  ],
+  "parallel_source_change_disposition": "Exactly one scoped preimage differs from final binding8c16: the unrelated Roman finite helper successor is independently pinned in its canonical activation review. The32 other scoped files are exact. Actual owning predicates explicitly reject Roman ownership of these ten readings; no new grant is inherited. No global conservation assertion is made for the separately authorized Roman/PC source batches.",
+  "source_owned_qualifications": [
+    "Five Ancient Frames remain separate readings, including explicitly constrained Bishop-only greeting context; no flattened prayer or inferred role.",
+    "Kyrie retains six exact old human English gloss utterances as the separately identified project arrangement. The publisher is not relabelled a translator and no exclusive ownership of historical wording is claimed.",
+    "Supplices, common-only Communicantes, Domine and peace invitation retain exact accepted source boundaries, omissions, conclusions/responses and study/non-recitation qualifications.",
+    "The earlier five zero-passage findings and Kyrie evidence-not-prose state remain recorded as actual preinstallation facts; no retrospective English delivery claim is made."
+  ],
+  "exclusions": [
+    "StageA quiet+QuiPridie34 source files remain scratch only.",
+    "Word-frame source/data and ordinary/Passion applicability remain separate.",
+    "No modern Latin whole body or target image, approved English, new translation, human review, liturgical approval or target2008 exactness is supplied.",
+    "No canonical index, generated Sources/Ordinary projection, build, source fixture or Git ref was touched."
+  ],
+  "remaining_integration": "Root combines this declared source change with the two disjoint source writers and owns regeneration/checks only after all three report SOURCESETTLED."
+}

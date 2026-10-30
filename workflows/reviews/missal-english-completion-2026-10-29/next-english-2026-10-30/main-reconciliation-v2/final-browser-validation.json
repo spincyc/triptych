@@ -1,0 +1,845 @@
+{
+  "actual_artifacts": {
+    "preview": {
+      "bytes": 6303195,
+      "manifest_entries": 38351,
+      "sha256": "5e8d21312f73995f8bbc433485b52e608ef056cdf6a2f3984e5c5ed4f15a48f8"
+    },
+    "site": {
+      "bytes": 6303120,
+      "manifest_entries": 38350,
+      "sha256": "1911710b6a4bf3d1c4c1033c7f98b1fc282c378e23d4da264b93f739fd56c724"
+    }
+  },
+  "as_of": "2026-10-30",
+  "availability_qualification": {
+    "English_exact_target_or_approved_2011_promotion": false,
+    "older_generated_body_held_is_not_whole_form_Read_eligibility": true,
+    "project_study_and_historical_human_English_kept_distinct": true,
+    "retained_older_refusal_cases": [
+      {
+        "EnglishSha256": "5e1806df9e092a2efbba787595792ee945b76a2f68e4138bdc5724627e1182d0",
+        "artifact": "site",
+        "calendar": "roman-pre-1955",
+        "form": "main",
+        "mass": "commune-summorum-pontificum",
+        "proper": "Collect (in plurali)",
+        "sourceApplicabilityRefusal": [
+          {
+            "code": "unsupported-selection",
+            "message": "unsupported foreign-source Proper applicability from roman-1962 in roman-pre-1955; source condition remains unresolved: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 809, printed [1]; raw text page line 13 and the numbered local chant cues",
+            "path": ""
+          }
+        ],
+        "staleEnglishAbsent": true
+      },
+      {
+        "EnglishSha256": "5e1806df9e092a2efbba787595792ee945b76a2f68e4138bdc5724627e1182d0",
+        "artifact": "site",
+        "calendar": "roman-pre-1955",
+        "form": "main",
+        "mass": "ss-soteris-caii-paparum-martyrum",
+        "proper": "Collect (in plurali)",
+        "sourceApplicabilityRefusal": [
+          {
+            "code": "unsupported-selection",
+            "message": "unsupported foreign-source Proper applicability from roman-1962 in roman-pre-1955; source condition remains unresolved: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 809, printed [1]; raw text page line 13 and the numbered local chant cues",
+            "path": ""
+          }
+        ],
+        "staleEnglishAbsent": true
+      },
+      {
+        "EnglishSha256": "5e1806df9e092a2efbba787595792ee945b76a2f68e4138bdc5724627e1182d0",
+        "artifact": "site",
+        "calendar": "roman-pre-1955",
+        "form": "main",
+        "mass": "ss-cleti-marcellini-paparum-martyrum",
+        "proper": "Collect (in plurali)",
+        "sourceApplicabilityRefusal": [
+          {
+            "code": "unsupported-selection",
+            "message": "unsupported foreign-source Proper applicability from roman-1962 in roman-pre-1955; source condition remains unresolved: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 809, printed [1]; raw text page line 13 and the numbered local chant cues",
+            "path": ""
+          }
+        ],
+        "staleEnglishAbsent": true
+      },
+      {
+        "EnglishSha256": "5e1806df9e092a2efbba787595792ee945b76a2f68e4138bdc5724627e1182d0",
+        "artifact": "preview",
+        "calendar": "roman-pre-1955",
+        "form": "main",
+        "mass": "commune-summorum-pontificum",
+        "proper": "Collect (in plurali)",
+        "sourceApplicabilityRefusal": [
+          {
+            "code": "unsupported-selection",
+            "message": "unsupported foreign-source Proper applicability from roman-1962 in roman-pre-1955; source condition remains unresolved: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 809, printed [1]; raw text page line 13 and the numbered local chant cues",
+            "path": ""
+          }
+        ],
+        "staleEnglishAbsent": true
+      },
+      {
+        "EnglishSha256": "5e1806df9e092a2efbba787595792ee945b76a2f68e4138bdc5724627e1182d0",
+        "artifact": "preview",
+        "calendar": "roman-pre-1955",
+        "form": "main",
+        "mass": "ss-soteris-caii-paparum-martyrum",
+        "proper": "Collect (in plurali)",
+        "sourceApplicabilityRefusal": [
+          {
+            "code": "unsupported-selection",
+            "message": "unsupported foreign-source Proper applicability from roman-1962 in roman-pre-1955; source condition remains unresolved: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 809, printed [1]; raw text page line 13 and the numbered local chant cues",
+            "path": ""
+          }
+        ],
+        "staleEnglishAbsent": true
+      },
+      {
+        "EnglishSha256": "5e1806df9e092a2efbba787595792ee945b76a2f68e4138bdc5724627e1182d0",
+        "artifact": "preview",
+        "calendar": "roman-pre-1955",
+        "form": "main",
+        "mass": "ss-cleti-marcellini-paparum-martyrum",
+        "proper": "Collect (in plurali)",
+        "sourceApplicabilityRefusal": [
+          {
+            "code": "unsupported-selection",
+            "message": "unsupported foreign-source Proper applicability from roman-1962 in roman-pre-1955; source condition remains unresolved: 1962 Common opening, artifact p.809/[1], plus 1962 CMAA facsimile, artifact p. 809, printed [1]; raw text page line 13 and the numbered local chant cues",
+            "path": ""
+          }
+        ],
+        "staleEnglishAbsent": true
+      }
+    ]
+  },
+  "current_source_epoch_inputs": {
+    "tools/tests/fixtures/missal-source-batch-20261023-inputs.json": {
+      "bytes": 2029314,
+      "sha256": "ea29e0b2f4ae20bb73626f88070608a5a7b76a2dead18a3d7daee32ebc3c9f2b"
+    },
+    "tools/tests/fixtures/missal-source-batch-20261023.json": {
+      "bytes": 4797721,
+      "sha256": "3bcf736daf2c6afd3eabb2bfd3f3e8528beddb513d1c496051a25255b9b933b3"
+    },
+    "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/sanitizer-correction/source-batch-acceptance.json": {
+      "bytes": 4736,
+      "sha256": "4d35419fbb3f7a9cf59c2e2934addfeba0327f832f436d3f9fe0de83a4c23871"
+    }
+  },
+  "evidence_reports": {
+    "data-parity/BUNDLE.json": {
+      "bytes": 1987,
+      "sha256": "0d901c66fd95964b64fb858d300756680229f70c986a006fc8324c3cc6c37f71"
+    },
+    "data-parity/IMPROPERIA.json": {
+      "bytes": 22603,
+      "sha256": "1f921b8eb069ffdfea592b9af23fb3e611875db7100cbba5e0ce4bd7b75bdd0e"
+    },
+    "data-parity/REPORT.json": {
+      "bytes": 91526,
+      "sha256": "d525f7f97c6266293d212fab61539855a8deda7071192f1a1b2753bf2bb8cbab"
+    },
+    "day-targets/report.json": {
+      "bytes": 18687,
+      "sha256": "3923812d678eafe7f73b8f07a64079696deeb0de621a3f801ea9827c89bb844b"
+    },
+    "nativity-stdout.log": {
+      "bytes": 4985,
+      "sha256": "da209bfc315b581ad409548dd5db6c333ea3dc5c015cc95f9606db501f72d9a4"
+    },
+    "paired-improperia/report.json": {
+      "bytes": 2639,
+      "sha256": "3017d51ed2db71c87385a7416034dc960fd222784a9aff9bd135ae66b33aabd2"
+    },
+    "source-reader-recovery/report.json": {
+      "bytes": 24278,
+      "sha256": "0ccbdfc19f7a4e1c1604ed68597b364267c18332fbf0d50a24efefac32aec7d8"
+    },
+    "target-browser/report.json": {
+      "bytes": 165821,
+      "sha256": "27cc3f9abe3d181a83daf4303430ce5fbbae570db48e850c8aed7350b8780db7"
+    }
+  },
+  "execution_environment": {
+    "Chromium": "system pinned Chromium used by existing browser fixtures",
+    "Markdown": "3.10.3",
+    "Node": "26.12.1",
+    "PyYAML": "6.0.3",
+    "Python": "3.14.8"
+  },
+  "fresh_verification": {
+    "Nativity_regression": {
+      "canonical_and_retained_aliases": true,
+      "cases": 8,
+      "exact_body_locations_per_artifact": 4,
+      "longer_shorter_Gospel_choice_retained": true,
+      "superseded_colon_English_absent": true
+    },
+    "SourceReader": {
+      "English_payloads_per_artifact": 12,
+      "Ordinary_metadata_only_passages_per_artifact": 10,
+      "exact_payload_text_edition_passage_controller_rights_context_and_notes": true,
+      "existing_Ordinary_English_cells": 16,
+      "no_sibling_TSV_or_Latin_permission_inferred": true,
+      "passage_only_pointer_routes": 4,
+      "qualified_historical_Roman_English_passages_per_artifact": 2,
+      "selected_English_cases": 24,
+      "sixfold_Kyrie_six_paragraphs_K_K_C_C_K_K": true,
+      "structured_sibling_refusals_and_stale_English_clearance": 2
+    },
+    "affected_Day": {
+      "cases": 14,
+      "cases_summary": [
+        {
+          "artifact": "site",
+          "calendar": "roman-1962",
+          "date": "2026-03-29",
+          "exactVisibleEnglish": [
+            {
+              "proper": "Blessing of the Palms",
+              "sha256": "22c7315d204930624fb95d56b8aed271dae87a2efba6a2ffaeba63ea2a2d58b5"
+            }
+          ],
+          "mass": "palm-sunday",
+          "outcome": "ready"
+        },
+        {
+          "artifact": "site",
+          "calendar": "roman-1962",
+          "date": "2026-04-03",
+          "exactVisibleEnglish": [
+            {
+              "proper": "Improperia",
+              "sha256": "916522d1fdd8d57ee78be2d2a3cb698c3858cd84a66f63fbcbab9a03836f4606"
+            },
+            {
+              "proper": "Antiphons at the Translation of the Blessed Sacrament",
+              "sha256": "4853a3fb4e06853fbde934bffefb7678bb63013cb86d5b79ff309029b35a039c"
+            }
+          ],
+          "mass": "good-friday",
+          "outcome": "ready"
+        },
+        {
+          "artifact": "site",
+          "calendar": "roman-1962",
+          "date": "2026-04-04",
+          "exactVisibleEnglish": [
+            {
+              "proper": "Blessing of the Lighted Candle",
+              "sha256": "5abfe150d6bf4f25b8a84197cec8f653b6399ee5cf1b00fa9a55a59a93b3cc90"
+            }
+          ],
+          "mass": "easter-vigil",
+          "outcome": "ready"
+        },
+        {
+          "artifact": "site",
+          "calendar": "postconciliar",
+          "date": "2026-04-02",
+          "exactVisibleEnglish": [
+            {
+              "proper": "Hymn at the Transfer of the Blessed Sacrament",
+              "sha256": "2af99ec30a2e741d5138a647db979320eb968b336c6b067aa4454d72af69679a"
+            },
+            {
+              "proper": "Chant at the Place of Reposition",
+              "sha256": "fde699664599d7a55bb0662729cf4683c920c7b6a293548b2d57ac71a8155ac0"
+            }
+          ],
+          "mass": "mass-of-the-lords-supper",
+          "outcome": "ready"
+        },
+        {
+          "artifact": "site",
+          "calendar": "postconciliar",
+          "date": "2026-04-03",
+          "exactVisibleEnglish": [
+            {
+              "proper": "Prayer",
+              "sha256": "253eb52f17597424fcd0ed772956c008126c2efed10fbef9d0440b47aa3cf121"
+            },
+            {
+              "proper": "Prayer (alternative)",
+              "sha256": "259ffb9853436f8b1b77c80178366f36ca9b77860657c308e5eff74f52f1ee61"
+            }
+          ],
+          "mass": "good-friday",
+          "outcome": "unresolved"
+        },
+        {
+          "artifact": "site",
+          "calendar": "postconciliar",
+          "date": "2026-04-05",
+          "exactVisibleEnglish": [
+            {
+              "proper": "Prayer over the Offerings",
+              "sha256": "6586216e37912d36fc0f7adde9bc2d747ba399e244de98476560035f78de1e63"
+            }
+          ],
+          "mass": "easter-sunday",
+          "outcome": "unresolved"
+        },
+        {
+          "artifact": "site",
+          "calendar": "postconciliar",
+          "date": "2026-05-31",
+          "exactVisibleEnglish": [
+            {
+              "proper": "Entrance Antiphon",
+              "sha256": "c5a625d6e04c4d11df921a9353779ba8cde9142726abd2f351dbf22c7172a21a"
+            }
+          ],
+          "mass": "most-holy-trinity",
+          "outcome": "ready"
+        },
+        {
+          "artifact": "preview",
+          "calendar": "roman-1962",
+          "date": "2026-03-29",
+          "exactVisibleEnglish": [
+            {
+              "proper": "Blessing of the Palms",
+              "sha256": "22c7315d204930624fb95d56b8aed271dae87a2efba6a2ffaeba63ea2a2d58b5"
+            }
+          ],
+          "mass": "palm-sunday",
+          "outcome": "ready"
+        },
+        {
+          "artifact": "preview",
+          "calendar": "roman-1962",
+          "date": "2026-04-03",
+          "exactVisibleEnglish": [
+            {
+              "proper": "Improperia",
+              "sha256": "916522d1fdd8d57ee78be2d2a3cb698c3858cd84a66f63fbcbab9a03836f4606"
+            },
+            {
+              "proper": "Antiphons at the Translation of the Blessed Sacrament",
+              "sha256": "4853a3fb4e06853fbde934bffefb7678bb63013cb86d5b79ff309029b35a039c"
+            }
+          ],
+          "mass": "good-friday",
+          "outcome": "ready"
+        },
+        {
+          "artifact": "preview",
+          "calendar": "roman-1962",
+          "date": "2026-04-04",
+          "exactVisibleEnglish": [
+            {
+              "proper": "Blessing of the Lighted Candle",
+              "sha256": "5abfe150d6bf4f25b8a84197cec8f653b6399ee5cf1b00fa9a55a59a93b3cc90"
+            }
+          ],
+          "mass": "easter-vigil",
+          "outcome": "ready"
+        },
+        {
+          "artifact": "preview",
+          "calendar": "postconciliar",
+          "date": "2026-04-02",
+          "exactVisibleEnglish": [
+            {
+              "proper": "Hymn at the Transfer of the Blessed Sacrament",
+              "sha256": "2af99ec30a2e741d5138a647db979320eb968b336c6b067aa4454d72af69679a"
+            },
+            {
+              "proper": "Chant at the Place of Reposition",
+              "sha256": "fde699664599d7a55bb0662729cf4683c920c7b6a293548b2d57ac71a8155ac0"
+            }
+          ],
+          "mass": "mass-of-the-lords-supper",
+          "outcome": "ready"
+        },
+        {
+          "artifact": "preview",
+          "calendar": "postconciliar",
+          "date": "2026-04-03",
+          "exactVisibleEnglish": [
+            {
+              "proper": "Prayer",
+              "sha256": "253eb52f17597424fcd0ed772956c008126c2efed10fbef9d0440b47aa3cf121"
+            },
+            {
+              "proper": "Prayer (alternative)",
+              "sha256": "259ffb9853436f8b1b77c80178366f36ca9b77860657c308e5eff74f52f1ee61"
+            }
+          ],
+          "mass": "good-friday",
+          "outcome": "unresolved"
+        },
+        {
+          "artifact": "preview",
+          "calendar": "postconciliar",
+          "date": "2026-04-05",
+          "exactVisibleEnglish": [
+            {
+              "proper": "Prayer over the Offerings",
+              "sha256": "6586216e37912d36fc0f7adde9bc2d747ba399e244de98476560035f78de1e63"
+            }
+          ],
+          "mass": "easter-sunday",
+          "outcome": "unresolved"
+        },
+        {
+          "artifact": "preview",
+          "calendar": "postconciliar",
+          "date": "2026-05-31",
+          "exactVisibleEnglish": [
+            {
+              "proper": "Entrance Antiphon",
+              "sha256": "c5a625d6e04c4d11df921a9353779ba8cde9142726abd2f351dbf22c7172a21a"
+            }
+          ],
+          "mass": "most-holy-trinity",
+          "outcome": "ready"
+        }
+      ],
+      "dates_per_artifact": 7,
+      "exact_new_English_bodies": true,
+      "selected_identities_source_offered": true,
+      "unresolved_choices_and_ordinary_qualifications_retained": true
+    },
+    "diagnostics": {
+      "HTTP_errors": 0,
+      "console_errors": 0,
+      "failed_requests": 0
+    },
+    "new_Proper_English": {
+      "Roman": 7,
+      "Roman_lazy_payloads_exact": true,
+      "all_body_source_basis_coverage_form_occurrence_and_flat_grouped_projections_exact": true,
+      "browser_materialization_cases": 68,
+      "canonical_new_rows": 25,
+      "exact_visible_English_cases": 62,
+      "expected_retained_older_whole_form_refusals": 6,
+      "per_artifact_materializations": {
+        "postconciliar": 22,
+        "roman-1962": 9,
+        "roman-pre-1955": 3
+      },
+      "postconciliar": 18
+    },
+    "production_JS_unchanged_from_702": [
+      {
+        "byte_size": 83806,
+        "path": "src/web/browser/liturgy/assembly-model.js",
+        "sha256": "f35e647872f998b6e54a3916e55ae4512834f1ad034f3ab5fef8163a7c8e52e3"
+      },
+      {
+        "byte_size": 17126,
+        "path": "src/web/browser/liturgy/day-compare.js",
+        "sha256": "2df5a26d27b666f25b469b5eb2b0f2191da50cecfeb1f5b3d32adc93911cbffe"
+      },
+      {
+        "byte_size": 3172,
+        "path": "src/web/browser/liturgy/day-read-payload.js",
+        "sha256": "aa00a8f20f06390f4005618120b738239ba38a04748d7b65693f7bb8a948cb7d"
+      },
+      {
+        "byte_size": 123723,
+        "path": "src/web/browser/liturgy/day-reader.js",
+        "sha256": "a5bb7d4c9afeab6d2c6cd1809c6ba74e8a4dd7dfd92dd05052afcffa35a23bc9"
+      },
+      {
+        "byte_size": 1959,
+        "path": "src/web/browser/liturgy/day-study.js",
+        "sha256": "063aaf59eb5e9afcd500be4a4e3129ca4c7135d9e605f848bb2b5eee6ebc8780"
+      },
+      {
+        "byte_size": 92461,
+        "path": "src/web/browser/liturgy/day.js",
+        "sha256": "dc45b3f062cd05109f424a7ebeb56375f649063746c417855960aeaad6b5db18"
+      },
+      {
+        "byte_size": 29516,
+        "path": "src/web/browser/liturgy/liturgy.js",
+        "sha256": "b6a2ca7e2bf3b5966855312569092a3b6c3f32435cf73e4d04cf14fc801feabf"
+      },
+      {
+        "byte_size": 92365,
+        "path": "src/web/browser/liturgy/ordinary-seating.js",
+        "sha256": "90467f26022701a79cfee246c131de8776a6226f208cde0c5bc30010aaa3b5ba"
+      },
+      {
+        "byte_size": 2745,
+        "path": "src/web/browser/liturgy/proper-placement-notes.js",
+        "sha256": "dd02a28ab4a922adbac69b26e53566e0dde23610f09359cd4377893b37f5fe6b"
+      },
+      {
+        "byte_size": 3382,
+        "path": "src/web/browser/liturgy/proper-search-controller.js",
+        "sha256": "100623fb2ba56e461a4962332bae9b137fab6fb5b811f9b4ee3752cde0f7a091"
+      },
+      {
+        "byte_size": 8513,
+        "path": "src/web/browser/liturgy/proper-search.js",
+        "sha256": "659389ce4823a1981318d0150d2cde593005799be98957bc981b0b2b41b2946b"
+      },
+      {
+        "byte_size": 25979,
+        "path": "src/web/browser/liturgy/propers-compare.js",
+        "sha256": "f14198a06636c95919439afaf71a7033181cd8d79025f03b188b46f427e6e5c8"
+      },
+      {
+        "byte_size": 19728,
+        "path": "src/web/browser/liturgy/propers-events.js",
+        "sha256": "fff3d7bda72dabdb9bd786e5e316cf0a651f418c5ee68e53e6f9db05056a5d3e"
+      },
+      {
+        "byte_size": 2535,
+        "path": "src/web/browser/liturgy/propers-read-payload.js",
+        "sha256": "94ceb053aae20f897f381459bffdb0eeda40550cc781cd5c6543e86788408c90"
+      },
+      {
+        "byte_size": 75775,
+        "path": "src/web/browser/liturgy/propers-reader.js",
+        "sha256": "d6db9ab38ba58b962ce23d689ef471c50e14cf76b71ead005eb1b0829e509718"
+      },
+      {
+        "byte_size": 2205,
+        "path": "src/web/browser/liturgy/propers-study.js",
+        "sha256": "75bc604e0fcb7553e13bd8068e23320652d8c0096e9d47622c4f0d65dfdf0e24"
+      },
+      {
+        "byte_size": 15836,
+        "path": "src/web/browser/liturgy/reader-compare-view.js",
+        "sha256": "7edfb7600f8298fccaddc7822de5d4e36bb5a2b1059e0a0bef6d2336ce77eee1"
+      },
+      {
+        "byte_size": 17110,
+        "path": "src/web/browser/liturgy/reader-comparison.js",
+        "sha256": "4b402415fa4968aebadf12403b9e7887f1c72e951d6c99322c09b1a7ab1f22ca"
+      },
+      {
+        "byte_size": 3905,
+        "path": "src/web/browser/liturgy/reader-mode-keyboard.js",
+        "sha256": "d08caa562d75f51b3a256c7bd3090cb0f1a2ace36066c5f97db1134fa6de1d33"
+      },
+      {
+        "byte_size": 2714,
+        "path": "src/web/browser/liturgy/reader-optional-runtime.js",
+        "sha256": "1505c30b1d35ad5a0c1ec81cb3d9925f2505646a8cb66b81af338fed60f3058b"
+      },
+      {
+        "byte_size": 11711,
+        "path": "src/web/browser/liturgy/reader-proper-payload.js",
+        "sha256": "993c7432383b6e46acd6cce811cb9d45972136d914ca05be88fb710421bcef7e"
+      },
+      {
+        "byte_size": 20853,
+        "path": "src/web/browser/liturgy/reader-share-print.js",
+        "sha256": "c047ecff988a572ab10251f1fc6f91a22a38832993a75539098a3695d351a89a"
+      },
+      {
+        "byte_size": 17996,
+        "path": "src/web/browser/liturgy/reader-shell.js",
+        "sha256": "c621b8d1e31a1f9b3abeb3e752c00429b25a50f1fd915bd0abab419e1b53d532"
+      },
+      {
+        "byte_size": 166530,
+        "path": "src/web/browser/liturgy/reader-state-adapters.js",
+        "sha256": "8dfa04ac0d4dd56a80aef3cefdbdd3d3d18a61cb6de444af50888ee8a307723f"
+      },
+      {
+        "byte_size": 94241,
+        "path": "src/web/browser/liturgy/reader-state.js",
+        "sha256": "bc0f8e646bfa506289fe27ab88618cf6940eda88fa715be1d71a8fa4b48895e3"
+      },
+      {
+        "byte_size": 24518,
+        "path": "src/web/browser/liturgy/reader-study-view.js",
+        "sha256": "8a10b10fe42d397f5612a5cbd60c5599d5b3ae9ec91fe1142bc508b17cdd32cb"
+      },
+      {
+        "byte_size": 8360,
+        "path": "src/web/browser/liturgy/reader-text-size.js",
+        "sha256": "60dd0a38800dc8f04e9594e534a9dd002aa5a0a45a9771f7ca329887e2ee0a69"
+      },
+      {
+        "byte_size": 8310,
+        "path": "src/web/browser/liturgy/reader-visual-reset.js",
+        "sha256": "eb1c1dd5c0c9c7076b74f2187627dc56e39963429212c0a51872df0ea98a9679"
+      },
+      {
+        "byte_size": 3785,
+        "path": "src/web/browser/liturgy/reading-contents.js",
+        "sha256": "01067b1208dc6468aecd278328043acc83d3c2de31bd149b66f1ac0383340f3d"
+      },
+      {
+        "byte_size": 18544,
+        "path": "src/web/browser/liturgy/source-choice-controls.js",
+        "sha256": "ec7f25140b4692433c81bc2a61d01e84a858eb672ab5f902c20271d03b1cf596"
+      },
+      {
+        "byte_size": 149469,
+        "path": "src/web/browser/shared/browser-core.js",
+        "sha256": "64d34d185b5d3c7690f5b0e262862fbbb72478312e05ec84f352428a10c09a6d"
+      }
+    ],
+    "unchanged_native_contracts": {
+      "data": "actual preview artifact; unchanged canonical route code, separately byte-matched to both built artifacts",
+      "expected": 136,
+      "harnesses": [
+        {
+          "command": [
+            "node",
+            "tools/tests/day_reader_integration_browser.mjs"
+          ],
+          "exit_code": 0,
+          "expected": 57,
+          "harness": "tools/tests/day_reader_integration_browser.mjs",
+          "harness_sha256": "817a84fcb664e5dd15f55dd07d1f30c64cf10edde8261c13e65485d0fd8b403a",
+          "passed": 57,
+          "recorded_problems": {},
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "84e0f782886dadde0f8cf3009f705eef7a3c0a43151309eb6c5c5ca38aecb178",
+          "total": 57,
+          "wrapper_sha256": "0531a601ad7a68c80f934fbb29da1cbf4ce2bac58609314f5b287f51516e4071"
+        },
+        {
+          "command": [
+            "node",
+            "tools/tests/propers_reader_integration_browser.mjs"
+          ],
+          "exit_code": 0,
+          "expected": 71,
+          "harness": "tools/tests/propers_reader_integration_browser.mjs",
+          "harness_sha256": "ddad266de88ff7665d5d305faa1687ed650647e1145bf9dad89a661b70f9dd3a",
+          "passed": 71,
+          "recorded_problems": {},
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "ba5fd88fc3b9b25120e217131c62a0416c53724b4e45c923921139d74fdf37db",
+          "total": 71,
+          "wrapper_sha256": "0531a601ad7a68c80f934fbb29da1cbf4ce2bac58609314f5b287f51516e4071"
+        },
+        {
+          "command": [
+            "node",
+            "tools/tests/day_reader_choices_browser.mjs"
+          ],
+          "exit_code": 0,
+          "expected": 8,
+          "harness": "tools/tests/day_reader_choices_browser.mjs",
+          "harness_sha256": "bbd9ee0858d1950d9c0f2a2e79d45f9c196bab2034dba128bcaa2d043fa39ebb",
+          "passed": 8,
+          "recorded_problems": {},
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "9542c933e5ab63319f668d722ed6b2b95d0ad9ed9334ae15f1ac12cb955bafd3",
+          "total": 8,
+          "wrapper_sha256": "0531a601ad7a68c80f934fbb29da1cbf4ce2bac58609314f5b287f51516e4071"
+        }
+      ],
+      "passed": 136
+    },
+    "whole_Improperia": {
+      "English_sha256": "916522d1fdd8d57ee78be2d2a3cb698c3858cd84a66f63fbcbab9a03836f4606",
+      "Good_Friday_action_qualifications_retained": true,
+      "Read_Study_print_cases": 4,
+      "actual_clipboard_checks": 4,
+      "all_generated_start_end_and_UTF16_boundaries_exact": true,
+      "characters": 6065,
+      "full_body_rubrics_and_end_conserved": true,
+      "no_fixed_height_or_overflow_truncation": true,
+      "no_source_declared_stanza_or_speaker_arrays_inferred": true,
+      "offered_Latin_pair_and_print_cases": 2,
+      "qualified_Latin_sha256": "83cbd70391a22369245ab9c1019d3d25db59e02b5b267474f3b039130d40a616",
+      "rubrics_nonspoken_italic_English_interface_labels": true,
+      "section_offsets": {
+        "I": 173,
+        "II": 1228,
+        "III": 2725,
+        "IV": 3163
+      },
+      "source_rubric_actions": 71
+    }
+  },
+  "frozen_English_expectation_sha256": "301881bd821ca6bf85e7bac01d407529302a557f98f90de2f1d96b156f04c901",
+  "historical_evidence_not_reasserted_as_fresh": [
+    "prior full12-harness259 browser assertions",
+    "prior full annual7-test matrix"
+  ],
+  "mutations": {
+    "artifact_tree": 0,
+    "canonical_source_code_fixtures_release_index_refs": 0,
+    "owned_scratch_only": true
+  },
+  "operation_state": "All browser, server, Chromium and native-contract execution handles closed; no pending duplicate run.",
+  "prepared_plan_sha256": "76ffc1c1f505e9786c29ca44a6e95b14765b170126396c4952c535891d7ea876",
+  "probe_corrections": [
+    "Initial explicit form=main on a mass without authored forms was correctly rejected; probe now omits that unsupported selector.",
+    "Initial older-body display expectation encountered retained foreign-source applicability refusal; final probes assert the exact refusal and absence of stale body, with generated body holding proved separately.",
+    "Scratch clipboard evaluation initially lacked the native harness userGesture flag; final actual clipboard checks use that established evaluation context.",
+    "Scratch readiness initially read a previous document, then used navigation performance identity across same-document hash changes; final probes force unique query navigations and bind exact document/semantic identity.",
+    "Scratch bilingual probe initially named the setting paired; final probe uses the offered control and its existing latin-and-selected state.",
+    "Delegated SourceReader execution did not start; no browser process or assigned directory existed, the peer was interrupted, and a single recovery operation completed all checks."
+  ],
+  "raw_diagnostics": {
+    "data-parity/improperia.log": {
+      "bytes": 187,
+      "sha256": "3f93972390c23bac7fff8667596950344775cb7868a844852b939855b83cdfbc"
+    },
+    "data-parity/run.log": {
+      "bytes": 257,
+      "sha256": "24c1e951e927805f62220cfaf5b066b3ea83bf12eeb1948ed97df0a2329809d1"
+    },
+    "day-targets/stderr-v1.log": {
+      "bytes": 946,
+      "sha256": "3da76ebbfac52a93a0be456171ce39ee7673215d32971b1d3d41db18a2d0741a"
+    },
+    "day-targets/stderr-v2.log": {
+      "bytes": 888,
+      "sha256": "31d4e11761cfed5a827f6ddda295a23dc4410d19bf85de01ac911abe9db2c9be"
+    },
+    "day-targets/stderr-v3.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "day-targets/stdout-v1.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "day-targets/stdout-v2.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "day-targets/stdout-v3.log": {
+      "bytes": 11979,
+      "sha256": "a1eba8007b52e61ec28ae159a40709fa08a1187a66bb69c2ffaaeb45c00caaeb"
+    },
+    "native/day_reader_choices_browser/stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "native/day_reader_choices_browser/stdout.log": {
+      "bytes": 445,
+      "sha256": "9542c933e5ab63319f668d722ed6b2b95d0ad9ed9334ae15f1ac12cb955bafd3"
+    },
+    "native/day_reader_integration_browser/stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "native/day_reader_integration_browser/stdout.log": {
+      "bytes": 13685,
+      "sha256": "84e0f782886dadde0f8cf3009f705eef7a3c0a43151309eb6c5c5ca38aecb178"
+    },
+    "native/propers_reader_integration_browser/stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "native/propers_reader_integration_browser/stdout.log": {
+      "bytes": 9596,
+      "sha256": "ba5fd88fc3b9b25120e217131c62a0416c53724b4e45c923921139d74fdf37db"
+    },
+    "nativity-stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "nativity-stdout.log": {
+      "bytes": 4985,
+      "sha256": "da209bfc315b581ad409548dd5db6c333ea3dc5c015cc95f9606db501f72d9a4"
+    },
+    "paired-improperia/stderr-v1.log": {
+      "bytes": 820,
+      "sha256": "1b182db563eac7e439121486d59822b9f8f713d3e15a4b54ea0a9956e3aaca50"
+    },
+    "paired-improperia/stderr-v2.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "paired-improperia/stdout-v1.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "paired-improperia/stdout-v2.log": {
+      "bytes": 1967,
+      "sha256": "3af2e077dbd003e7ae9eb9387b02077a903ae21fa526e03b1076de0665e06fa4"
+    },
+    "source-reader-recovery/stderr-v1.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source-reader-recovery/stdout-v1.log": {
+      "bytes": 21278,
+      "sha256": "a078e1d681318bf34c562ef99bff8c6351ea456db446c820f031dba12b55c9b3"
+    },
+    "target-browser/stderr-v1.log": {
+      "bytes": 1786,
+      "sha256": "111f5d5b624b858b878fe498e9f0375856a5de96aef650e94d0be6da46215b0b"
+    },
+    "target-browser/stderr-v2.log": {
+      "bytes": 2217,
+      "sha256": "61d9fd59368a5ed8bbae5d1764df6e2dab4f3c1fb8f4d0b54073b10567b6ebad"
+    },
+    "target-browser/stderr-v3.log": {
+      "bytes": 833,
+      "sha256": "044ee36ad18a3d8f659e38bd13091b990f8f632a510945dacf4b95f805bc73dc"
+    },
+    "target-browser/stderr-v4.log": {
+      "bytes": 1315,
+      "sha256": "1124a324217f1b4ea630605feb98b97d4dd3eb1ec56ec1729d8b991eb0da2aa9"
+    },
+    "target-browser/stderr-v5.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target-browser/stdout-v1.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target-browser/stdout-v2.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target-browser/stdout-v3.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target-browser/stdout-v4.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target-browser/stdout-v5.log": {
+      "bytes": 110037,
+      "sha256": "44c45e8e5a37072d34d48e35142ff345381b7933a6ff157615b27280bf55d70a"
+    }
+  },
+  "reproduction_scripts": {
+    "data-parity/check.py": {
+      "bytes": 9541,
+      "sha256": "b16f76d3b2f299123ebbb4cbd4742a4acf573cf6d9eb93633e0b980268a805fa"
+    },
+    "data-parity/improperia.py": {
+      "bytes": 4406,
+      "sha256": "d14baf2858a56e43a1c837dddd4a1d96945008de3c8214d59b9c2fca96d9696c"
+    },
+    "day-targets/day-targets-v3.mjs": {
+      "bytes": 8893,
+      "sha256": "6e90e4ac1f82fcc4d69daf47fae371ed549d2b983cedc55c64ba822e657288e1"
+    },
+    "native/run_existing_contract.py": {
+      "bytes": 2671,
+      "sha256": "e2104ec7694a46ef32ab70ef5bec934f8360c8e7ee32d31f0517d6a486886a97"
+    },
+    "paired-improperia/paired-improperia-v2.mjs": {
+      "bytes": 16043,
+      "sha256": "7368d77ed853854ae45f57a34e37c021ca23c2c2a13af6cd59948063281e06da"
+    },
+    "source-reader-recovery/source-reader.mjs": {
+      "bytes": 11543,
+      "sha256": "41d3bd58778334681d661a3d81bbe9f8f700be5a936b745d9dd93143a8d45bda"
+    },
+    "target-browser/target-browser-v5.mjs": {
+      "bytes": 15433,
+      "sha256": "1968cf3c2613cad20db77a0425b4b2124e5f473735bc6416b1d62d0497469315"
+    }
+  },
+  "schema": "triptych-next-english-affected-browser-validation/v1",
+  "scope": "Affected English delivery verification on actual rebuilt public and preview artifacts; no complete-book acceptance or new permission is asserted.",
+  "status": "PASS"
+}

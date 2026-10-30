@@ -1,0 +1,237 @@
+{
+  "schema": "triptych-independent-source-fidelity-review/v1",
+  "reviewed_on": "2026-10-30T07:34:45.731834+00:00",
+  "reviewer_role": "Independent cold source and original-study-English reviewer",
+  "status": "accepted-source-and-fidelity; root-publication-adoption-pending",
+  "identity": [
+    "good-friday",
+    "main",
+    "Antiphons at the Translation of the Blessed Sacrament",
+    "all",
+    1
+  ],
+  "proof_path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/proof.json",
+  "proof_sha256": "8a1713cdb18508773c443d6d7df2afed9a2589bf5dcc7beab56c82db77c9377d",
+  "reviewed_install_plan_path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/install-plan.json",
+  "reviewed_install_plan_pre_receipt_sha256": "758413b71189a8e394fe04c47fc5d9da16ee558ba2b57671c0b01e5f76649b81",
+  "install_plan_post_review_rule": "The coordinator may append this receipt pointer/hash and pending v2 authority metadata. This receipt pins the source files, source proof, target Latin and English below; a change to any of those bytes requires a separately named successor review.",
+  "target_latin_sha256": "0911d4eb3eb4f93de9ed5a26db304906b9675a8b4f47f971e19ca15165c5b28a",
+  "source_latin_sha256": "64b648ba6faf6e07d44d20de2a0d3a25fb84968b52f975905bfb17983f634d24",
+  "english_sha256": "4853a3fb4e06853fbde934bffefb7678bb63013cb86d5b79ff309029b35a039c",
+  "source_files": [
+    {
+      "candidate_path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/candidate/src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/artifacts/idus-complete-773d2c56/artifact.toml",
+      "repository_path": "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/artifacts/idus-complete-773d2c56/artifact.toml",
+      "sha256": "18e1d63f7fb38f2dd889488bdbcb075903d3d645c6eaecedc9ed958837e30747",
+      "bytes": 1713
+    },
+    {
+      "candidate_path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/candidate/src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/artifacts/three-cross-antiphons-checked-20261030/artifact.toml",
+      "repository_path": "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/artifacts/three-cross-antiphons-checked-20261030/artifact.toml",
+      "sha256": "e471aee200d86ff041ad1ed08a54ad143b4e9e214ba757af5c3284ba2d114325",
+      "bytes": 2407
+    },
+    {
+      "candidate_path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/candidate/src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/artifacts/three-cross-antiphons-checked-20261030/text.txt",
+      "repository_path": "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/artifacts/three-cross-antiphons-checked-20261030/text.txt",
+      "sha256": "64b648ba6faf6e07d44d20de2a0d3a25fb84968b52f975905bfb17983f634d24",
+      "bytes": 330
+    },
+    {
+      "candidate_path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/candidate/src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/artifacts/title-license-and-cross-pages/artifact.toml",
+      "repository_path": "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/artifacts/title-license-and-cross-pages/artifact.toml",
+      "sha256": "addf1f88c8727bb44030bff878263bcf40fa4a09548910fcb40d9a999c4e4ce6",
+      "bytes": 1969
+    },
+    {
+      "candidate_path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/candidate/src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/artifacts/title-license-and-cross-pages/source.pdf",
+      "repository_path": "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/artifacts/title-license-and-cross-pages/source.pdf",
+      "sha256": "981ac4aed0eef481f6c8521c7d8d458eba8454c214527c649f5f354db1935100",
+      "bytes": 542251
+    },
+    {
+      "candidate_path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/candidate/src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/edition.toml",
+      "repository_path": "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/edition.toml",
+      "sha256": "7fc43450c797503a8bdd268cbb87c09d41bda6f3bf14af0090a355fdc171c840",
+      "bytes": 994
+    },
+    {
+      "candidate_path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/candidate/src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/passages/three-cross-antiphons-checked-20261030.toml",
+      "repository_path": "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/passages/three-cross-antiphons-checked-20261030.toml",
+      "sha256": "2501ad9c86638e724e5a7656a17065bcb5bc73857a260ef7fcbb8f61063a54f5",
+      "bytes": 1278
+    },
+    {
+      "candidate_path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/candidate/src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/passages/three-cross-antiphons-page-images-20261030.toml",
+      "repository_path": "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/passages/three-cross-antiphons-page-images-20261030.toml",
+      "sha256": "71b6828f09bfaa371ba2f042de7a3ccd0e53fb1e3e5fe1c901de741dc1f5f99c",
+      "bytes": 1425
+    },
+    {
+      "candidate_path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/candidate/src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/work.toml",
+      "repository_path": "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/work.toml",
+      "sha256": "ce13564d85dca6f58e55d40a98b0d62172728115e997e99b74757652d0237bb6",
+      "bytes": 735
+    },
+    {
+      "candidate_path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/candidate/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/good-friday-transfer-antiphons-checked-20261030.toml",
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/good-friday-transfer-antiphons-checked-20261030.toml",
+      "sha256": "f663b8b7926d8ce552f49dcb37ae46ff7bc41b47c5616e0bebf4a088fd17db07",
+      "bytes": 1241
+    },
+    {
+      "candidate_path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/candidate/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-30-goodfriday-transfer/artifacts/three-antiphons-0911d4eb/artifact.toml",
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-30-goodfriday-transfer/artifacts/three-antiphons-0911d4eb/artifact.toml",
+      "sha256": "84fb75d96acc3dd0efbb1083bee3b468f268fce2c251b1179508101bc231ef38",
+      "bytes": 2800
+    },
+    {
+      "candidate_path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/candidate/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-30-goodfriday-transfer/artifacts/three-antiphons-0911d4eb/latin.txt",
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-30-goodfriday-transfer/artifacts/three-antiphons-0911d4eb/latin.txt",
+      "sha256": "0911d4eb3eb4f93de9ed5a26db304906b9675a8b4f47f971e19ca15165c5b28a",
+      "bytes": 325
+    },
+    {
+      "candidate_path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/candidate/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-30-goodfriday-transfer/edition.toml",
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-30-goodfriday-transfer/edition.toml",
+      "sha256": "38b5d8456bed286acae54a455eb049fbcdf752ae7bb9173a608ddade93802f19",
+      "bytes": 1033
+    },
+    {
+      "candidate_path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/candidate/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-30-goodfriday-transfer/passages/three-antiphons.toml",
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-30-goodfriday-transfer/passages/three-antiphons.toml",
+      "sha256": "a6d3dfbdeed4db48938744196748ac5452b1290134e8db4fcb0abd3aa6f5b3d4",
+      "bytes": 1690
+    }
+  ],
+  "source_graph_parent_records": [
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/work.toml",
+      "sha256": "ae029277a68493ed903cd608cd7abdb91797aaff614ab5646f7c6a2dbeaa2ffd"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/edition.toml",
+      "sha256": "2d629ce174b247c8d624b41f9061efe8c7bdf9ea29fcee0a2aec18db2d78bd10"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "sha256": "9e2440cfcf8fd3a0bc86dfc57bd9871992b9bca4fd5baced4ce07c7c06c48fbf"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/work.toml",
+      "sha256": "ec158d3a6a6b806eae829bf0ee477f401ef7bcf848cb831e3a286d2e96e291a5"
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/work.toml",
+      "sha256": "c40e462e77cb754586a920072d53280e7a39f4c9090d12e8a92de31fa33d5a05"
+    }
+  ],
+  "opened_page_images": [
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/title-001.png",
+      "sha256": "bb33cd06252e009057d7f83606e88b99f455e61b470f84b65a6fd9be12f28c04"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/title-002.png",
+      "sha256": "889a8ae11072beca5154f297a9813485fc4266430d2da87e36af6ea3fa40a0bc"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/toledo-071.png",
+      "sha256": "0844dbf3a9de34b117b28aa420fe90394133c258a77ad31c49af0b0ad8f0e5e0"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/toledo-072.png",
+      "sha256": "0801c247ed6e3f035d8bb7d45f2cfd6cbae6e46d97c38a708948a89e8e0ebd69"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/toledo-400-071.png",
+      "sha256": "96c5c3e109afe7f6c7905d4d904bfd6031e10c843aeb54ba7651bae8e4eb6688"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/toledo-400-072.png",
+      "sha256": "1458bbd644d6f0662fadb3afbda1165a0af4b6e3cb792537741050e0410ca2af"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/target-261.png",
+      "sha256": "0a258d31ec6c5ab943afbe179cfb7abdc2de81fb930023d1fbfda7ee90006f6d"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/target-261-400.png",
+      "sha256": "c15adbd85d1a74510d19dfa6c954af1999ff68293c9d68ad9a482e3e7ae70a58"
+    }
+  ],
+  "direct_image_findings": [
+    "The original title page reads Officia propria Sanctorum Toletanae Eccl. et Dioecesis and Matriti, Ex Typographia Regia, M.DC.XXVI. The license visibly dates 7 July 1626. The printing is 1626, not the OCR license misreading 1616.",
+    "The source is the Roman-Breviary proper-office collection of Toledo. Printed55-56 / wholePDF71-72 carries these antiphons in third-nocturn office order, before and after Psalms95,96,97. The running date is16July. It is not a GoodFriday transfer witness.",
+    "Adoramus te Christe, & benedicimus tibi: quia per Crucem tuam redemisti mundum. is complete in the source and carries all12 target words in order; there is no added sanctam.",
+    "Per lignum serui facti sumus: & per sanctam Crucem liberati sumus. Fructus arboris seduxit nos: Filius Dei redemit nos. Alleluia. is the complete historical body. Its first19 words are the entire target expression; the source then adds Alleluia. The word order Filius Dei redemit nos is directly visible, not imported from the1962 target.",
+    "Saluator mundi salua nos, qui per Crucem & sanguinem tuum redemisti nos: auxiliare nobis, te deprecamur, Deus noster. is complete in the clearer printed56 right-column repetition and carries all18 target words in order, including tuum.",
+    "The target1962 page is printed180 / wholePDF261, marginal956-958. All three entire target bodies were read at200and400dpi; the second has no Alleluia. The target spelling, capitals, stress accents and punctuation are distinguished from source wording.",
+    "The source transcription preserves source ampersands and serui/Saluator/salua spellings, expands no uncertain lexical abbreviation in the selected Salvator occurrence, and explicitly retains source2 final Alleluia. Declared target normalizations account for the orthographic and pointing differences."
+  ],
+  "original_english_review": {
+    "verdict": "accepted for fidelity and clear study-English status",
+    "text": "We adore you, Christ, and we bless you, because by your Cross you redeemed the world.\n\nBy a tree we were made slaves, and by the holy Cross we were freed: the fruit of a tree led us astray, the Son of God redeemed us.\n\nSavior of the world, save us: you who redeemed us by the Cross and your Blood, help us, we beg you, our God.",
+    "findings": [
+      "First-person plural adoration and blessing, vocative Christ, the causal quia clause, Cross and redemption of the world are preserved.",
+      "The second English paragraph preserves both tree/Cross clauses, passive enslavement and liberation, the fruit leading us astray, and the Son of God redeeming us. It contains no Alleluia because the complete target expression contains none; the old suffix is retained in source apparatus.",
+      "The third English paragraph preserves Savior of the world, save us, the relative redemption clause, Cross and your Blood, help us, the explicit we beg you, and our God. The wording by the Cross and your Blood follows the immediate grammatical extent of tuum.",
+      "This is identified as a new project-created study translation, with no source_id and no claim to historical received English, official translation, liturgical approval or ecclesiastical endorsement."
+    ],
+    "required_corrections_remaining": []
+  },
+  "checks": {
+    "command": "python3 .scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/review/audit.py",
+    "exit_status": 0,
+    "receipt_path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/review/mechanical-checks.json",
+    "receipt_sha256": "5039f7f6563087c7dac14091c383e1e8959693a1cfa83ca55f02dfd1e1ae72db",
+    "script_path": ".scratch/roman-english-completion-20261029/temporal/holyweek-antiphons/followup/transfer-three/review/audit.py",
+    "script_sha256": "2f35c07eefe882017b4719bb9a1d717749358d3d80b254a46fd852f839aa23b0",
+    "source_file_pins": "All14 listed source files match their exact bytes, sizes and SHA256 pins.",
+    "source_graph": "The owning source-library implementation validates16 records in an isolated source root with all transitive parent records; no errors.",
+    "retained_pages": "Four retained PDF pages match renders of complete-source PDF1,2,71,72 respectively. Title/license and both consequential historical pages remain reopenable offline.",
+    "word_sequence": [
+      {
+        "antiphon": 1,
+        "source_words": 12,
+        "target_words": 12,
+        "source_only_suffix": []
+      },
+      {
+        "antiphon": 2,
+        "source_words": 20,
+        "target_words": 19,
+        "source_only_suffix": [
+          "alleluia"
+        ]
+      },
+      {
+        "antiphon": 3,
+        "source_words": 18,
+        "target_words": 18,
+        "source_only_suffix": []
+      }
+    ],
+    "latin_row_and_source_join": "The actual _proper_latin row and source-record validators return no problems for the proposed row.",
+    "english_shape_and_binding": "The actual translation-list validator and mass-propers validate_study_translation_binding pass for this exact owner, occurrence, Latin hash, passage and publication-source list, using the proposed permission row as test data.",
+    "old_proper_guard": "The proposed old proper equals the live canonical proper checked during this review.",
+    "qualification": "Validation exercises the proposed Latin permission row as data. It does not adopt the unresolved finite per-expression/prefix rights decision or publish any candidate."
+  },
+  "publication_boundary": {
+    "adopted_by_this_review": false,
+    "root_decision_required": "Whether this exact three-expression target may be published on the independently sourced1626 per-expression/prefix basis, with the second source body retained including Alleluia and source office placement distinguished from modernFriday placement.",
+    "no_general_rule_inferred": [
+      "No general cento clearance.",
+      "No inferred seasonal rule for dropping Alleluia.",
+      "No assertion that the1626 source already carried the1955/1962 GoodFriday transfer arrangement.",
+      "No blanket rights clearance of the modern1962 facsimile or whole modern institutional PDF delivery."
+    ],
+    "operational_limit": "No source file, calendar body, English overlay, Latin ledger or public projection was installed or published by this reviewer."
+  },
+  "bounded_evidence_preservation": "The earlier1862 first-antiphon attestation and bounded failures/near-witnesses in selected RomanMissals, Solesmes1893, Sarum1882 and York1875 remain recorded in the source proof. This new exact source does not retrospectively broaden those searches.",
+  "remaining_source_or_fidelity_blockers": [],
+  "remaining_integration_and_policy_work": [
+    "Root finite per-expression/prefix publication disposition and exact authority metadata, if adopted.",
+    "Coordinator-only tracked integration, conservation and generated-reader checks."
+  ]
+}

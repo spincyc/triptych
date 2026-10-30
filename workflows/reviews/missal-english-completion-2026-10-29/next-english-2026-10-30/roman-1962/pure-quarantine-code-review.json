@@ -1,0 +1,39 @@
+{
+  "schema": "triptych-independent-pure-quarantine-review/v1",
+  "state": "PASS",
+  "subject_sha256": {
+    "postimages/scripts/_proper_finite_latin_20261029.py": "aa925ac3883a807498b0596ce1535a4c2b93bbc2d49913782d49ea7e4736d9f5",
+    "pure-quarantine.patch": "e134142d88ede7e49078122e550f50067ab51f090ccd68855d4be1c7dfaecd0e",
+    "postimage-manifest.json": "2ef288590dd82bb25db589543e6c4c5c1dc735f1ef740293d4dfc15856b79a5d"
+  },
+  "canonical_before_sha256": {
+    "scripts/_proper_finite_latin_20261029.py": "ecca66760debc9c0451e1b6743883c55d59390f575b4503b6af27d9923117fd3",
+    "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml": "5943f9788ff9ebe3b614086d824039a2993039f58d3819e85f26ffafb3c38a58",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml": "59deb71b22cb457873a56a91b6044f295934c59acb044eb7d701d38547b09ff9",
+    "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json": "495e5b3672cccb8f2c3ea07398104c4b72026ffb7139de21d25087edcab1f48e",
+    "scripts/_proper_latin.py": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376",
+    "scripts/_proper_qualified_latin.py": "0136f6bb020938867d4ca1e75816c56c363a15603a8fede2aee9126c96b24949"
+  },
+  "fifteen_line_only_insertion_byte_conservation": true,
+  "actual_PC91_old_false_positive_reproduced_and_candidate_excluded": true,
+  "raw_eight_field_row_still_claimed": true,
+  "actual_22scope_authority_loaded_without_override": true,
+  "pure_absences_same_finite_hashes": 22,
+  "different_valid_hash_absence": true,
+  "absence_does_not_grant_direct_finite_authority": true,
+  "forged_or_malformed_rows_refused": 18,
+  "exact_finite_positive_rows_preserved": 22,
+  "finite_row_mutants_preserved_and_refused": 110,
+  "legacy_two_rows_preserved": 2,
+  "actual_L_Q_closed_owner_integration": {
+    "removed_owner_and_removed_row_valid": true,
+    "reintroduced_present_body_refused": true,
+    "unresolved_absence_never_permits_and_sanitizes_body": true
+  },
+  "canonical_scoped_bytes_unchanged": true,
+  "canonical_writes": false,
+  "global_source_walk_or_generation": false,
+  "authority_or_guard_overrides": false,
+  "findings": [],
+  "limits": "Bounded code and closed fixture review; no new source, rights, semantic, adoption, or publication verdict. Identity-marker fallback outside the adopted coordinate remains the prior behavior."
+}

@@ -1,0 +1,57 @@
+{
+  "schema": "triptych-holy-week-source-stop-receipt/v1",
+  "status": "stopped-at-user-request",
+  "canonical_changes_from_this_lane": false,
+  "source_publication_or_native_admission": false,
+  "owned_live_execution_handles": [],
+  "root_interrupted_children": [
+    "/root/pre1955_rites_completion/mame_thursday_main_english_b",
+    "/root/pre1955_rites_completion/thursday_units_b",
+    "/root/pre1955_rites_completion/thursday_units_c"
+  ],
+  "child_process_status": "No further collection or relaunch. Root owns any final process snapshot; interrupted partial reviews are not promoted to acceptance.",
+  "packages": [
+    {
+      "day": "Palm Sunday",
+      "index": "palm/PALM-37-TARGET-SOURCE-INDEX-v1.json",
+      "sha256": "50d66947476bc97b2ba3022eda24f3fbacbff972b7def414262f12bd7d45717f",
+      "passion_review": "palm/cold-review-passion/30-final-source-fidelity.json",
+      "passion_review_sha256": "75fc6df708e6d09f4d1b8cf098c8b3d46d374d7a1bcf6f9bb9136e261cbdb071",
+      "limits": "37 source candidates and independent source-review lanes are retained. Fourteen additional study-English bodies are authored; their interrupted fidelity reviews remain partial. Cross-preface is a separately proved named referral. No whole-rite or Bonn-exact acceptance."
+    },
+    {
+      "day": "Thursday",
+      "mandatum_reading_only": "thursday/native-source-view-candidate-v1/candidate-reading-only-v1/READING-ONLY-HANDOFF-v2.json",
+      "mandatum_sha256": "6cef383b7baf811774dcb17636456237f3465289833310656a95310f12fc42f6",
+      "mandatum_files": "73 metadata plus 6 payloads; 24 exact source readings",
+      "main_reading_only": "thursday/main-mass-source-reading-candidate-v1/READING-HANDOFF-v2.json",
+      "main_sha256": "44e4a2f7b17497fff7cf0dc108ac6957a6380b1662afa40838ee46e7f01f229a",
+      "main_files": "51 metadata plus 4 payloads; 28 source readings",
+      "limits": "Both reading plans use unchanged normal SourceReader/SourceLibrary guards. The main candidate independent audit was interrupted. Selected printed extents, partial incipit, named referral and complete formulas remain distinct. The inherited19 are not retargeted or qualified. No whole Mass or new accepted Bonn collation."
+    },
+    {
+      "day": "Friday",
+      "handoff": "friday/native-compilation-next-epoch-v1/COMPILATION-HANDOFF-v4.json",
+      "sha256": "a9bb71206a661bcb04c9a702df3c2bd419d248352946d5cbd1687ab7975468a2",
+      "independent_conservation": "friday-parent-review/native-conservation-review-v1.json",
+      "independent_conservation_sha256": "2d43f4711ed803ce204194f0ecf22d4386aefdef0172ae519b4e39a25faebbbe",
+      "limits": "71 literal source units plus 7 constituents; partial execution has 67 literal nodes, 8 unavailable referrals and 1 unresolved choice. Repetitions, internal transitions, hymn/Office referrals and finite publication/admission remain separate."
+    },
+    {
+      "day": "Saturday",
+      "index": "saturday/FINAL-55-TARGET-JOIN-INDEX-v1.json",
+      "sha256": "6bc5e8d6ce6913832de712aed154533fa2c51a8038d12e014274178d101df0fd",
+      "complete_study_two": "saturday/FINAL-STUDY-VI-XII-HANDOFF-v1.json",
+      "complete_study_two_sha256": "b4c63bcc4e8464bc3b54b281186967c7dbd5e1586e1ae837b2701b8eeaf7ec4e",
+      "limits": "55 source joins retained; all12 complete Mame readings have source review. VI/XII complete study English is independently accepted, while historical variants remain unchanged. Other source, font/action, night/Ordinary and whole-assembly ceilings remain."
+    }
+  ],
+  "prerequisites": [
+    "Lasance attribution repair: thursday/attribution-metadata-successor-v1/PROPOSAL-v2.json (92d95262139aa86b4af85f832c25231401ca80b4be7d201a08f1033e8dade55e); supported conditionally by thursday/attribution-metadata-successor-independent-review-v1/HANDOFF-v1.json (d76e11612612761236ad266e49855387aea06b9f407523cee2f11cae8ceffea3). Fresh stable impact pins and root metadata/source-epoch successor are required.",
+    "New human-label field proposal and independent review remain additive and unadopted. Opaque compatibility IDs and historical body bytes remain unchanged; future canonical code must use the central version descriptor.",
+    "Native indexable NDJSON remains unsupported by the unchanged library. Reading-only variants retain raw structured artifacts as non-indexable and omit native selector passages; no native admission follows from normal prose readback.",
+    "All source/English fidelity, rights, publication, calendar context and actual execution claims retain their separate review ceilings. No current25-cohort expansion, fixture mutation, new body work or admission occurs after stop."
+  ],
+  "private_payloads_embedded": false,
+  "path_base": ".scratch/pre1955-rites-completion-20261029/"
+}

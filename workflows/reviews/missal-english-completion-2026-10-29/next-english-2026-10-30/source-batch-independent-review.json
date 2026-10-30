@@ -1,0 +1,146 @@
+{
+  "V3_adapter_proof_sha256": "68961eb740d38fd7639a32f2100a5e63d7ffbe0d8753d77a7cbd92d84b3a61b1",
+  "V3_data_proof_sha256": "68325b619038d8e9872f2c2a468f0a04a01ce1bc57a5a6b35f341cfc1a05d60b",
+  "V3_declaration_sha256": "b05cc94593171cea71c6568d512fbf4ab7a6b3443eed42efedb2e197ea3bf26f",
+  "V3_fixture_sha256": "f0510da7466a3c79b05c90f038d9b0eea5f3d81e66d8787b6d1538719c07085d",
+  "V3_manifest_sha256": "13505e8e805b221f78f8004586ca2b4e8f2f2de0c20a2a5e28799af589464e84",
+  "V3_pending_core_excluding_acceptance_and_state_sha256": "be05e5928b8be8dd59c23dc8401c431e616ca605ea138dd0bf465d7a18330e3a",
+  "V3_transition_contract_sha256": "7495dee6d0d191b9f376d6494e8323dd47a1869a0636deaac0a0c4f1d6a11755",
+  "acceptance_conditions": [
+    "Root may adopt only these exactV3 bytes and their new pending core, with the retained V2 data review and this narrow successor review.",
+    "Root must then run actual canonical source-guard consumers and required checks; this review has not installed an accepted receipt or relabelled any pending fixture.",
+    "Retain and resolve the separately reviewed consumer sanitizer repair before final merged publication."
+  ],
+  "all17_original_Git_replays_exact": [
+    {
+      "inverse_changed": false,
+      "original_Git_sha256": "69731f40de5d8c4539c4660f7035681ba3429beffd447ac6e29a5c1b98b6829d",
+      "path": "src/sources/calendars/postconciliar/propers.yaml"
+    },
+    {
+      "inverse_changed": false,
+      "original_Git_sha256": "018642eee26d09e3bb014fa60baa0f820ab3637c9d6e349378c696a7b79d6877",
+      "path": "src/sources/calendars/roman-1962/propers.yaml"
+    },
+    {
+      "inverse_changed": false,
+      "original_Git_sha256": "5943f9788ff9ebe3b614086d824039a2993039f58d3819e85f26ffafb3c38a58",
+      "path": "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml"
+    },
+    {
+      "inverse_changed": false,
+      "original_Git_sha256": "9bf6fe5ecc3b397888a0316f7b5c06e40f65e9dfc1eb96c3bc78d111e7c41597",
+      "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml"
+    },
+    {
+      "inverse_changed": false,
+      "original_Git_sha256": "c2bf07d5551fbe7ae2748ce7390c37b0d707df7cf275d400126b04cacd8600f0",
+      "path": "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml"
+    },
+    {
+      "inverse_changed": false,
+      "original_Git_sha256": "560e82057dc0480a5b1fe835304ba57ed476b346a38cab6fac550298582016ea",
+      "path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml"
+    },
+    {
+      "inverse_changed": false,
+      "original_Git_sha256": "79946d1bc6e015d8624d67ce243b59cf3ee634fc5997310aa6d764953349d815",
+      "path": "src/sources/inventories/roman-1962-proper-translations-v1.toml"
+    },
+    {
+      "inverse_changed": false,
+      "original_Git_sha256": "465e15d42b7301b22c2d93be1b95b00eb326ee0cd2ad1f928520952a89e89faa",
+      "path": "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml"
+    },
+    {
+      "inverse_changed": true,
+      "original_Git_sha256": "98daa1922358c0d977ddfc97352812d395c6f578591e48691bc1393c6b1ace8d",
+      "path": "tools/tests/test_proper_latin.py"
+    },
+    {
+      "inverse_changed": false,
+      "original_Git_sha256": "bc3ec297a6ca1edd3f155ccc29381526fee006d2e39a2c43bc0ce06fb81a51d4",
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py"
+    },
+    {
+      "inverse_changed": false,
+      "original_Git_sha256": "ddb972cdd5fe9651d1ecc0b33bbc1bf4deca7f1b5f5c7d75b87bc03c54603f9e",
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py"
+    },
+    {
+      "inverse_changed": false,
+      "original_Git_sha256": "dedf9a58d3f9e6b311bf5caf8f7aa7c51dcc9543d6ee17e4288e834c8cdc0215",
+      "path": "tools/tests/test_roman_1962_english13_phase5.py"
+    },
+    {
+      "inverse_changed": false,
+      "original_Git_sha256": "86b29add67ac575fb147300f4ab6e66c47863a16c4cf5166896a88e710f5335c",
+      "path": "tools/tests/test_roman_1962_english31_phase4.py"
+    },
+    {
+      "inverse_changed": false,
+      "original_Git_sha256": "9c11f0b870c14916dfa2530c1e733f262a5c9f526cd613744a06ea7ce3c05190",
+      "path": "tools/tests/test_roman_1962_lasance_commons_easter_phase3.py"
+    },
+    {
+      "inverse_changed": false,
+      "original_Git_sha256": "7dc3a1569140e14f32fa2c98e607577b05871f3c197a307db67107d731d6afca",
+      "path": "tools/tests/test_roman_1962_latin22_phase5.py"
+    },
+    {
+      "inverse_changed": false,
+      "original_Git_sha256": "c13d838baf217cf25be163e465a4f90322d8ecf04e89322f237eec105764686e",
+      "path": "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py"
+    },
+    {
+      "inverse_changed": false,
+      "original_Git_sha256": "e7354e1d015919cc47f235fca3aa1f5134afc8fe250765eb24b6d2eafbc71f05",
+      "path": "tools/tests/test_roman_1962_winter_ursula_source_repair.py"
+    }
+  ],
+  "canonical_fixture_and_manifest_still_published_parent": true,
+  "canonical_index_or_ref_writes": 0,
+  "findings": [],
+  "fixture_only_changed_fields": [
+    "files",
+    "source_input_manifest_sha256",
+    "reviewed_transition_contract_sha256"
+  ],
+  "non_test_semantics_and_all_oracles_and_original12_fields_exact_V2": true,
+  "only_source_pin_change": {
+    "before_sha256": "d13ba84c2d93b9ca77b68e9a4746bcdff9ff6d23c42be57a9c508d86e329f464",
+    "path": "tools/tests/test_proper_latin.py",
+    "post_sha256": "c49c297448306c07ab5eed605ddce48894a2e2f3bda1783966e498ffb70eb997"
+  },
+  "parent_data_review": {
+    "path": ".scratch/merged-publication-audit-20261030/candidate-v2-integrated/review.json",
+    "sha256": "b34480695b287ab4779693888828c67b7834c4ce6fd49a8c6498a17d65af7967"
+  },
+  "proper_test_before_original_Git_preserved": "98daa1922358c0d977ddfc97352812d395c6f578591e48691bc1393c6b1ace8d",
+  "proper_test_inverse_hunks": {
+    "V2": 29,
+    "V3": 29
+  },
+  "runtime_adapter_proof_difference": "Only root declaration digest changes; all18 consumed runtime bindings, exact finite chain and original parent proof remain exact.",
+  "schema": "triptych-independent-English25-candidate-V3-incremental-review/v1",
+  "scope_limits": [
+    "Reuses the completed frozenV2 data review without repeating historical collation, English fidelity or rights decisions.",
+    "Inherited injected-only marked-owner sanitizer failure remains separately recorded and must be repaired before final merged publication as root has specified."
+  ],
+  "source_English_rights_or_actual_candidate_rederive_performed": false,
+  "source_G_acceptance_pending_until_root": true,
+  "source_paths_exactly_same7264": true,
+  "status": "PASS-exact-one-test-pin-and-inverse-successor-over-accepted-frozen-V2-data-base",
+  "test_expectation_review": {
+    "all3_actual_postimages_exact_to_reviewed_bytes": true,
+    "application_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/test-successors/actual-application.json",
+    "application_sha256": "6e0377d845368085d1a23e74f6b7e5db2c396d942cc43b579b1b4e0a33f9223a",
+    "historical16_plus2_and348_345_refusals_remain_explicit": true,
+    "new_source_or_publication_permission": false,
+    "other2_test_paths_not_source_pinned": true,
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/test-successors/independent-review.json",
+    "sha256": "01e832f44734f02058a9599485818b69462bc8959244c34befdb9a8b93fa7d14"
+  },
+  "transition_contract_difference": "Exactly the one additional kept test-code delta and its new explicit-delta digest; all actual data transitions and parent proof remain exact.",
+  "unchanged_other16_streams_and_specs": true
+}

@@ -1,0 +1,171 @@
+{
+  "schema": "triptych-proper-source-admission/v1",
+  "recorded_on": "2026-10-30",
+  "state": "Source-qualified historical/study English admitted by exact root2026-10-30 decision; no approved English or modern Latin permission created.",
+  "package": "pange-two",
+  "targets": [
+    [
+      "mass-of-the-lords-supper",
+      "main",
+      "Chant at the Place of Reposition",
+      "all",
+      1
+    ],
+    [
+      "mass-of-the-lords-supper",
+      "main",
+      "Hymn at the Transfer of the Blessed Sacrament",
+      "all",
+      1
+    ]
+  ],
+  "superseded_unavailable_dictionaries": [
+    {
+      "mass": "mass-of-the-lords-supper",
+      "form_id": "main",
+      "proper": "Chant at the Place of Reposition",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "rejected_detectors": [
+        "liturgies-net-2026-08-22"
+      ],
+      "quarantined_text_sha256": [
+        "c06ef7e40579197785d5a42ba0e22b7cc12e515ac0e20d1d083531743511387a"
+      ],
+      "note": "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+    },
+    {
+      "mass": "mass-of-the-lords-supper",
+      "form_id": "main",
+      "proper": "Hymn at the Transfer of the Blessed Sacrament",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "rejected_detectors": [
+        "liturgies-net-2026-08-22"
+      ],
+      "quarantined_text_sha256": [
+        "7896fdd64b9546357ec7a57836089e0eae6cd3fc5fe0dc16c14c293d2f647ae8"
+      ],
+      "note": "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+    }
+  ],
+  "source_files": [
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-chant-at-the-place-of-reposition-all-1-named-work-appointment.toml",
+      "sha256": "a65092a559cfa757b9a33e5e52a085bc0950124e427aac9a8c87cdecd755fca8",
+      "byte_size": 1949
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-hymn-at-the-transfer-of-the-blessed-sacrament-all-1-named-work-appointment.toml",
+      "sha256": "e844010da5fc737b6e44bd037dda57bd4a46f49cad99272daddb00baa891e4eb",
+      "byte_size": 1899
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-phase2-pange-historical-selections-en/artifact.toml",
+      "sha256": "bba05801c695681e4d109c8d4a006437d87554de58d2afb7bc243f2b15883457",
+      "byte_size": 3301
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-phase2-pange-historical-selections-en/text.tsv",
+      "sha256": "421b84c0761c4c8cc37f3f83e4c528b6e6ee2974279c71308333a7166304771c",
+      "byte_size": 1398
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-chant-at-the-place-of-reposition-all-1-publication.toml",
+      "sha256": "c0d16bf83dd6d5319fb2132db03ff2c8d1f40063c6c7df110d2599795a0fd07b",
+      "byte_size": 1741
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-chant-at-the-place-of-reposition-all-1-source.toml",
+      "sha256": "85869829c02d11128834089d375235e41743cb130a0a046db0bc8240ef89d16e",
+      "byte_size": 3507
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-hymn-at-the-transfer-of-the-blessed-sacrament-all-1-publication.toml",
+      "sha256": "e6d5d931bab0e57acee639b4b4aee16f3841e92986339e5187f274e2a6305cd8",
+      "byte_size": 1769
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-hymn-at-the-transfer-of-the-blessed-sacrament-all-1-source.toml",
+      "sha256": "5aaa872fbc4fbed4f34e97726833de479f22d1533a870dbdb580afd4484adce3",
+      "byte_size": 3474
+    }
+  ],
+  "package_manifest": {
+    "path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/pange-namedwork/phase2-proposal/receipt.json",
+    "sha256": "81e4f8590db7c23d97b18b1a87669c67b6ab5d4b8103cb3760b8084d2158d96a"
+  },
+  "source_and_English_reviews": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-06-cf7c9a7bfc58.json",
+      "sha256": "cf7c9a7bfc58afd1c5dd4e77a5991df06f195094c50346aa69152cab2b89827f"
+    }
+  ],
+  "prepared_entry_blocks_sha256": "136be7e001312eafdde32df49827c3e20c3c633ea6b123faf9c646ee29d6737d",
+  "normalized_entry_blocks_sha256": "136be7e001312eafdde32df49827c3e20c3c633ea6b123faf9c646ee29d6737d",
+  "assembly_normalization": "Only optional empty form labels removed; exact form_id and every translation dictionary retained.",
+  "source_policy": {
+    "literal_PD_uses": 2,
+    "project_study_uses": 0,
+    "no_approved_English_or_modern_Latin_payload": true,
+    "root_finite_adoption_not_implied_by_dryrun": true
+  },
+  "all_prior_positive_and_unselected_absence_dictionaries_exact": true,
+  "checkpoint_refresh": {
+    "state": "Exact root-adopted source/English installation at checkpoint702; prior155positives preserved.",
+    "checkpoint_commit": "702f650020d69a45aa747b1c5b5e30be6c42ca59",
+    "sidecar_preimage_sha256": "57123fdfb8472718679284f93698912c296e85fa7e78245554956f3890bc3e6d",
+    "predecessor_proposed_receipt_sha256": "83ddc7860102e3d37ff91e3a58bfd59a3eba4b5b0e27d28ff1aab9f5d22b37af",
+    "all155_existing_positive_dictionaries_preserved": true,
+    "metadata_successor_seals": [
+      {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-09-9b0215d8be44.json",
+        "sha256": "9b0215d8be44bd02ff8b3cdba8dd7876f39ad9e68fa02cbfbabe32bc49116744"
+      },
+      {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-10-2a8ad2a63b4c.json",
+        "sha256": "2a8ad2a63b4cba9b4018439d5f6f5d893d3dcebe2a5c894a4c091bb3a07e91d1"
+      }
+    ],
+    "finite_recommendation_index": {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/source-expression-recommendation-index.json",
+      "sha256": "b9bd060281b8ab9f165ff85b3c2e16bbe06dd4d89935b46581de424422b4dd97"
+    },
+    "recommendation_is_not_root_adoption": false,
+    "root_adoption": {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/root-decision.json",
+      "sha256": "6bac2ac5d0de5c2e9d50a654e5cb923721efdeac87a23bd9524922ef346b4943"
+    }
+  },
+  "root_adoption": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/root-decision.json",
+    "sha256": "6bac2ac5d0de5c2e9d50a654e5cb923721efdeac87a23bd9524922ef346b4943"
+  },
+  "retained_source_expression_recommendations": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/source-expression-recommendation-index.json",
+    "sha256": "b9bd060281b8ab9f165ff85b3c2e16bbe06dd4d89935b46581de424422b4dd97"
+  },
+  "retained_metadata_successor_reviews": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-09-9b0215d8be44.json",
+      "sha256": "9b0215d8be44bd02ff8b3cdba8dd7876f39ad9e68fa02cbfbabe32bc49116744"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-10-2a8ad2a63b4c.json",
+      "sha256": "2a8ad2a63b4cba9b4018439d5f6f5d893d3dcebe2a5c894a4c091bb3a07e91d1"
+    }
+  ],
+  "predecessor_dryrun_receipt_sha256": "e1d08bc2e6df30d14b95d4436c8c79d6515258bf8eda7e7bf9a06c477fc80260"
+}

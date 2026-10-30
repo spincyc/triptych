@@ -1,0 +1,63 @@
+{
+  "additional_semantic_review_sha256": "a2ef858bd7a3791af6e51d90209c0ff50bd8ba6f6c0fbdb9f1d9bd9115470be1",
+  "all_new_blobs_UTF8_text": true,
+  "blockers": [],
+  "classification_epoch_review_sha256": "d4400d7f75e2a1a9a247cebfdef46beacf95e94e589a7ae2ed47712e6bc082e2",
+  "classification_review_sha256": "f53d3a71a03c0592e163303e000b6064d3442d174553d2c4bcbeb2b23039823e",
+  "commit": "702f650020d69a45aa747b1c5b5e30be6c42ca59",
+  "commit_tree": "2b91fc219a71a60ca918b55b7def672ebf5f36e3",
+  "comparison_main": "f955c512ac5bb27ceaade50b3ad846a53dc2d410",
+  "final_merge_authority_and_code_conservation": {
+    "all_release_authority_terms_and_rights_non_table_prose_exact_both_parents": true,
+    "missal_publication_and_consumer_code_exact_to_accepted_first_merge": true,
+    "source_library_and_reader_only_examples_may_change": true
+  },
+  "final_source_metadata_conservation": {
+    "Act31_comparison_semantics_exact_only_source_library_tool_pin_changed": true,
+    "all164_family_review_units_exact_and_pending": true
+  },
+  "limits": [
+    "Publication build, test outcomes and live deployment remain owned by their recorded gates, not this disclosure audit.",
+    "Preexisting public-history qualifications remain unchanged; this bounded review does not clear unrelated historical repository objects."
+  ],
+  "new_outgoing_blobs_beyond_prior_reviewed_checkpoint": 118,
+  "novel_blob_inventory_sha256": "bd579c4dcd2c9bc5214e44ed30c5977073dde9c9db14913e167120baa002ba10",
+  "obsolete_commits_reconnected": [],
+  "obsolete_feature_only_commits": 62,
+  "outgoing_commits": [
+    "702f650020d69a45aa747b1c5b5e30be6c42ca59",
+    "4e8e9fcf7d8947d5b99068d8f05b21156f70abe4",
+    "0b7da814a9c3d0bbf721565ceac1abc6898faa2a",
+    "e1d0ee4b11a9c04a9ba142d53c10213ace0474f8"
+  ],
+  "outgoing_object_count": 2399,
+  "outgoing_object_types": {
+    "blob": 1873,
+    "commit": 4,
+    "tree": 522
+  },
+  "prior_checkpoint_disclosure_review": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/checkpoint-commit-disclosure.json",
+    "sha256": "4974d5137768129e1ea00644bdc02dc634855bc399032d721fdd5bd83223a283",
+    "source_revision": "0b7da814a9c3d0bbf721565ceac1abc6898faa2a"
+  },
+  "private_credentials_or_encoded_payload_hits": [],
+  "promise_conservation": {
+    "all101_parent_dictionaries_exact": true,
+    "new_nomenclature_promise": "in_progress-with-three-open-requirements",
+    "total": 102
+  },
+  "reconciliation_semantic_review_sha256": "fc9302c788f0ef64da19d7d1f445c2304c2f3d9bb12c0096cb5d53580dc25c4b",
+  "rejected_blobs_reachable": [],
+  "schema": "triptych-final-merge-outgoing-disclosure-review/v1",
+  "source_epoch_exact_committed_pins": 7071,
+  "source_fixture_acceptance": {
+    "receipt_path": "workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/source-batch-classification-acceptance.json",
+    "receipt_sha256": "2c05072109012b7da86c21da2ab23a1b5c89c317cc6be1c21b3f70acfe8e2cca",
+    "status": "accepted"
+  },
+  "source_input_manifest_sha256": "6956adb9fc4336282ade4bce43015d51bb2b73ef9a2ccce1d62e90226022693c",
+  "status": "PASS-exact-outgoing-graph-source-pins-and-bounded-public-disclosure",
+  "strict_source_guard_unchanged": true,
+  "upstream158_integrity_review_sha256": "72709c07dfe84491e0ab28a526bad5d35a2c8b6f05b1430ce4b5853105122ad1"
+}

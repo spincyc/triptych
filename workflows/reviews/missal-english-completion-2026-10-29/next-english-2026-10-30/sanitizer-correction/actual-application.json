@@ -1,0 +1,29 @@
+{
+  "canonical_regressions": {
+    "exit": 0,
+    "log_sha256": "c9b895309e835a109d1b0722c3848ec6253963b1a4293625cff1a1edfe77ff0f",
+    "tests": 36
+  },
+  "change": "Remove any resident text in both existing unpublished-held and explicitly removed-owner branches; preserve English and valid-source behavior.",
+  "date": "2026-10-30",
+  "independent_review_sha256": "af6ea28741bbd51f518865e87f807e499c43f98775df3a317fda92db8b959244",
+  "owning_projection_currentness": {
+    "exit": 0,
+    "files": 499,
+    "log_sha256": "d3f8117d4c8bfd753ba614d84c61a8784e90ed7442b11e25937c785674f74218"
+  },
+  "schema": "triptych-root-removed-marker-sanitizer-correction/v1",
+  "source": {
+    "after_sha256": "852acb6a88084aba5729e5f60e807ca4e10f9c4436f5db2b23a9fdd3fbe2da1a",
+    "before_sha256": "d94a4301e865dc7d7f9fc8d657761201675e0123041e3ef00973b36565199376",
+    "path": "scripts/_proper_latin.py"
+  },
+  "source_fixture_sha256_unchanged": "ae34d8450f42835523ee6c5c2ec44cf5d99f6289adc83654853aa47c3fbe1b97",
+  "source_or_permission_or_fixture_change": false,
+  "status": "applied and verified on canonical code",
+  "test": {
+    "methods": 5,
+    "path": "tools/tests/test_removed_marker_sanitization.py",
+    "sha256": "e67e48b8380dbe0eb76d84dc297ba1d86cf3b9aa869e00b266fb0c333c019de9"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "adapter_sha256": "23391e404ec941d3057070c48da95fb538698fb9ce9f0777ab688034c0443a09",
+  "parent_acceptance_sha256": "2c05072109012b7da86c21da2ab23a1b5c89c317cc6be1c21b3f70acfe8e2cca",
+  "parent_fixture_sha256": "11a3eee509b55233556f89a60d4ce978264ab215e483f354b2bcbad9b39304ee",
+  "parent_git_revision": "702f650020d69a45aa747b1c5b5e30be6c42ca59",
+  "parent_manifest_sha256": "6956adb9fc4336282ade4bce43015d51bb2b73ef9a2ccce1d62e90226022693c",
+  "runtime_successors": {
+    "scripts/_proper_finite_latin_20261029.py": {
+      "after_sha256": "aa925ac3883a807498b0596ce1535a4c2b93bbc2d49913782d49ea7e4736d9f5",
+      "before_sha256": "34c7ea2520f0917108495ea333323c33e4eb3b6993aba2e10c91fc49385dfb40",
+      "independent_reviews": [
+        {
+          "path": ".scratch/roman-english-completion-20261029/v2-consolidation/pure-quarantine-review-v1/review.json",
+          "sha256": "b2f859809819b9a24e3a1f488bcd136cae87bcf0b918375244f5c2a349881105"
+        },
+        {
+          "path": ".scratch/roman-english-completion-20261029/v2-consolidation/pure-quarantine-regression-v1/receipt.json",
+          "sha256": "dc5542cdc8bdfc5040f98d650a01376fd74dbc2a25512cd2a193a28224a8e030"
+        }
+      ],
+      "intermediate_activation": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/actual-authority-activation.json",
+        "sha256": "55a3ea92a0d4892607d7376bf16c339b7fc5e1aeb6b82fd1a4af663ded7fadff"
+      },
+      "intermediate_sha256": "ecca66760debc9c0451e1b6743883c55d59390f575b4503b6af27d9923117fd3",
+      "kind": "finite22-quarantine-claim-successor"
+    },
+    "tools/mass-propers": {
+      "after_sha256": "976939c81f4fc1fa9bd7de5eadf518514c1f71bba8aefc755ba922c67f5aa310",
+      "before_sha256": "47a90640129df0060b673607638f579b4f2c20c5faff0287010f3b21357fd0d0",
+      "kind": "examples-only"
+    },
+    "tools/source-library": {
+      "after_sha256": "ff27c29238af76100b01047dfdeb9f2a808c0937089bd61d1bdecb6d2a7b45f0",
+      "before_sha256": "b6327d428d75d897840c413f9a8db6ed62f6c9413b7c1678b9658da625b78102",
+      "kind": "examples-only"
+    },
+    "tools/source-reader": {
+      "after_sha256": "ba07b2f8269ad402edf608f45e6f9e94d92680fd16168b765b3e15e7746ad199",
+      "before_sha256": "ff16f35d8febcecdb57770f03d80ecf210d26c43d7d8e50b67a5b01b91e2fe13",
+      "kind": "examples-only"
+    }
+  },
+  "schema": "triptych-settled-next-english-semantic-inputs/v1",
+  "settlement": {
+    "generators": {
+      "path": ".scratch/root-next-english-adoptions-20261030/settled-epoch-v3/GENSETTLED.json",
+      "sha256": "e3871f1e2260bcadad4565002a502504f9f5d666b7bffd8b2d7a2c6fdb19773c"
+    },
+    "sources": {
+      "path": ".scratch/root-next-english-adoptions-20261030/SOURCESETTLED.json",
+      "sha256": "32a27a9c8c6ecd9ab19c4eb5c7d677326e227eabb03088c1d0d9b2a185020d53"
+    }
+  },
+  "source_delta": {
+    "path": ".scratch/root-next-english-adoptions-20261030/settled-epoch-v3/source-delta.json",
+    "sha256": "e7e1eb6be7b0e44e0158bafef38afbc0515dece27c1809650934c27d86e6c07c"
+  },
+  "source_input_rows": {
+    "path": ".scratch/root-next-english-adoptions-20261030/settled-epoch-v3/source-inputs.json",
+    "sha256": "13505e8e805b221f78f8004586ca2b4e8f2f2de0c20a2a5e28799af589464e84"
+  }
+}

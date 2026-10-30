@@ -1,0 +1,53 @@
+{
+  "schema": "independent-pange-final-publication-join-review/v1",
+  "reviewed_on": "2026-10-30",
+  "reviewer": "pc_nativity_review",
+  "decision": "ACCEPT exact two-recipient source and publication joins; no source/text/pagination correction requested. Root adoption and canonical installation remain separate and currently held.",
+  "frozen_preparation": {
+    "path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/pange-namedwork/phase2-proposal/receipt.json",
+    "sha256": "81e4f8590db7c23d97b18b1a87669c67b6ab5d4b8103cb3760b8084d2158d96a",
+    "candidate_entries_sha256": "136be7e001312eafdde32df49827c3e20c3c633ea6b123faf9c646ee29d6737d",
+    "candidate_sources_sha256": "809cf739178a87a6e07a8d818442c5cd9ab566cf84e3a818dd0958810c82cb7b",
+    "publication_artifact_sha256": "421b84c0761c4c8cc37f3f83e4c528b6e6ee2974279c71308333a7166304771c"
+  },
+  "prior_source_relation_seal": {
+    "path": ".scratch/postconciliar-english-completion-20261029/nativity-review/pange-namedwork-round/review.json",
+    "sha256": "c2a598abe4fff3f64283f8fd18e1041e517375fc0863743815bbb61b1b96436d",
+    "unchanged_namedwork_packet_sha256": "74dcd75429d512bac963cb22dc4f101a62942fd41f28eec81db95c1b6d602af0"
+  },
+  "source_selection_pages": {
+    "whole_1946_pdf_sha256": "4573991d962eb6a6391bc2555b8445bdfebd84de1ccffd7828f84e74d308ca77",
+    "fresh_rasters": "AP464and465 independently rendered at200dpi from measured whole exact PDF and directly opened.",
+    "first_four": "Whole selected stanzas1–4 start AP464/printed454 and continue on AP465/printed455. The third stanza crosses the page; fourth ends Faith her lessons quickly learns. before Down in adoration. Exact source/page/publication bounds464–465,454-455,IA463–464 are correct.",
+    "last_two": "Both stanzas5–6 and actual Amen are wholly on AP465/printed455/IA464. Adjacent preceding hymn stanzas and following return-to-choir/Vespers rubric are excluded.",
+    "pointing_fidelity": "All exact English body hashes equal the prior accepted character slices. Source lowercase king and word, contractions and punctuation remain; declared ASCIIapostrophe transformation remains. No Amen added to first selection."
+  },
+  "join_findings": [
+    "New artifact421b84c0has exactly two independently addressed recipient rows, not a reused full-hymn Roman recipient. english_json cells equal sidecar texts and previously accepted quotation bodies byte-for-byte.",
+    "Both source passages name the actual1946edition and actual1946wholePDF4573991d with correct narrower page ranges. The publication derivative is derived_from that same scan, with fullsource7dc5b07e provenance explicit.",
+    "Both source/publication passage loci exactly equal; physicalTSVline2 and3 bind the right recipients. Printed-page locator454-455forfirst4and455forclosing2 passes owning strict predicates.",
+    "The1946source row transparently uses shared original1937/1945expression rights anchor80b34759, preserving the distinct actual1946printing/controller. It does not claim the1945OCR is the1946page source.",
+    "Both metadata precision requirements are incorporated: n39 names closingTantumsection rather than a literal two-stanza count, and both named-work selections are optional with another Eucharistic chant possible.",
+    "No modern rubric body,image,approvedEnglish,fullmodernword identity or authenticated2008claim is introduced. HistoricalLatin remains independently1879witnessed and separate from moderntarget body."
+  ],
+  "owning_validation": {
+    "independently_replayed": true,
+    "baseline_source_records": 54598,
+    "combined_source_records": 54605,
+    "baseline_source_graph_errors": [],
+    "both_overlay_entry_source_problems": [],
+    "both_overlay_entry_publication_problems": [],
+    "all8proposed_file_sha_and_size_checks_pass": true,
+    "candidate_entries_sources_receipt_hashes_match": true,
+    "validation_receipt": ".scratch/postconciliar-english-completion-20261029/nativity-review/pange-phase2-joins-round/validation.json",
+    "validation_receipt_sha256": "7a66fc34b458e241973464837a79163a6b2fb8544d846c1a9f72df2faae06b85"
+  },
+  "integration_limits": [
+    "Canonical writes remain on HOLD; this is source/publication readiness, not permission to install during the checkpoint.",
+    "After release, parent installs exactly the reviewed8files and two entry/source overlays while preserving dated old-absence dictionaries in receipt81e4f859. Root runs consolidated checks/generation later.",
+    "Existing full-hymn Roman dependency files remain unchanged and must not be duplicated or mutated.",
+    "This source-only join replay does not claim final integrated consumer output or completeMissal/wholeform coverage."
+  ],
+  "existing_same_source_id_count": 0,
+  "canonical_mutations": "none"
+}

@@ -1,0 +1,78 @@
+{
+  "accepted_by": "root coordinator",
+  "accepted_fixture_core_sha256": "89c924185f6eb4e72f8a5a0c2b1e460fac86638ac89792e16ea1889a1b759fb0",
+  "accepted_on": "2026-10-30",
+  "accepted_sanitizer_application": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/sanitizer-correction/actual-application.json",
+    "sha256": "5d8c6804c0c2b83dca5d0f08b4ee0b91df1aaa72a26ac0c837ba2b5ab79fded4"
+  },
+  "all_other7263_source_pins_exact": true,
+  "all_other_semantic_oracle_fields_exact": true,
+  "bookkeeping_proof": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/sanitizer-correction/source-batch-bookkeeping-proof.json",
+    "sha256": "39b69386d94c68c50427163590beaeeff91007ff72588f9b01f07789f4970097"
+  },
+  "boundaries": [
+    "Root accepts only this exact one-test checksum/inverse bookkeeping successor after independent all-pin and original-Git-replay review; the committed sanitizer correction retains its own code and regression authority.",
+    "Exactly one current checksum AST literal changes from d94 to852; original historical code references and all other assertion logic remain exact.",
+    "No production runtime is imported or rederived, no source/body/right/controller judgment is reopened, and no Names changes are included.",
+    "Root accepted the exact independent accounting review; the fixture now binds this final receipt. Actual canonical source controls and corrected phase5 execution follow."
+  ],
+  "driver": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/sanitizer-correction/derive-one-test-successor.py",
+    "sha256": "aef240ed7b90607ebe91814ccbfc845af6b794467406d48c62d5d5eccf959f30"
+  },
+  "fixture_core_serialization": "UTF-8 json.dumps(indent=2,sort_keys=True,ensure_ascii=False,allow_nan=False) plus LF, excluding exactly acceptance and state.",
+  "independent_accounting_review": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/sanitizer-correction/source-batch-independent-review.json",
+    "sha256": "87b31142a4e5f8f51e6ce0899365bb4dd7a638cd78ca8dde2a055b7daa8e8d58",
+    "status": "accepted"
+  },
+  "original_replay_streams_preserved": 17,
+  "other16_inverse_specifications_exact": true,
+  "parent_acceptance": {
+    "receipt_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-acceptance.json",
+    "receipt_sha256": "5ae2464f2e7a73218262bf91473de8cbcc98e54840dc19d22b02dcb89b110072",
+    "status": "accepted"
+  },
+  "parent_fixture": {
+    "path": "tools/tests/fixtures/missal-source-batch-20261023.json",
+    "sha256": "ae34d8450f42835523ee6c5c2ec44cf5d99f6289adc83654853aa47c3fbe1b97"
+  },
+  "parent_git_revision": "61a2b2ae6a80d61b19f409097d07016b50fb8f48",
+  "parent_input_manifest": {
+    "path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+    "sha256": "13505e8e805b221f78f8004586ca2b4e8f2f2de0c20a2a5e28799af589464e84"
+  },
+  "pending_fixture_reconstruction": {
+    "duplicate_pending_fixture_archive_required": false,
+    "expected_pending_fixture_sha256": "96bfe6b1cd2103d99732faff05939b119f6122db724082d6ae28dc37106d431e",
+    "replace_exact_top_level_fields": {
+      "acceptance": {
+        "receipt_path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/sanitizer-correction/source-batch-acceptance.json",
+        "receipt_sha256": null,
+        "status": "pending"
+      },
+      "state": "One current sanitizer-checksum test input successor; independent accounting acceptance pending"
+    }
+  },
+  "pending_fixture_sha256": "96bfe6b1cd2103d99732faff05939b119f6122db724082d6ae28dc37106d431e",
+  "root_acceptance_pending": false,
+  "schema": "triptych-source-batch-acceptance/v1",
+  "scope": "missal-source-batch",
+  "source_delta": [
+    {
+      "before_sha256": "01d6e0490f4b84683823795b2917a8804d17b8b32b38af49b2caa97fca0f015d",
+      "path": "tools/tests/test_roman_1962_latin22_phase5.py",
+      "post_sha256": "9414a3119e435fd016ff4f6354650440a065c38d86b5dfab0d7052c16c5aaa09"
+    }
+  ],
+  "source_epoch_paths": 7264,
+  "source_input_manifest_path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+  "source_input_manifest_sha256": "ea29e0b2f4ae20bb73626f88070608a5a7b76a2dead18a3d7daee32ebc3c9f2b",
+  "source_permission_created_by_this_receipt": false,
+  "status": "accepted",
+  "strict_runtime_helper_sha256": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1",
+  "successor_kind": "one-current-sanitizer-checksum-test-pin-and-raw-inverse",
+  "unchanged_semantic_transition_contract_sha256": "7495dee6d0d191b9f376d6494e8323dd47a1869a0636deaac0a0c4f1d6a11755"
+}

@@ -1,0 +1,953 @@
+{
+  "Lasance1945": {
+    "retained_extent": "Only parentPDF217/ordinary printed217. No later lettered insert or digitiser notice.",
+    "retained_payload": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/pages.pdf",
+    "rights_basis": "Existing registration-level nonrenewal finding for underlying1937/1945 text; exact ordinary historical page separately image-checked and admitted.",
+    "rights_record": {
+      "path": "src/sources/inventories/lasance-new-roman-missal-rights-v1.toml",
+      "sha256": "2125b5c00cfec520ec15ccb50d6935375c5180df20f64cac22a478ec411154b1"
+    },
+    "rights_record_byte_exact_to_published702_parent": true,
+    "rights_record_in7264_fixture_scope": false,
+    "sha256": "d85c36fbb0e7acebc16ddacd55fc7a38419c01400d0eb24132e20d748fb473e8",
+    "whole_parent": "Remote mixed/unresolved75,268,976byte PDF remains untracked; this review does not clear it."
+  },
+  "PDF_payloads": 13,
+  "PNG_payloads": 2,
+  "Salesian1892": {
+    "bytes": 5212472,
+    "identity": "Bollettino Salesiano, anno XVI, no. 4, April 1892; Torino, Direzione nell’Oratorio Salesiano.",
+    "identity_evidence": "Prior independent review read the issue title/date on PDF1 and quotation on PDF13/printed77; retained full-issue PDF13 was also independently rendered and opened.",
+    "limits": "No claim that this reviewer visually read the issue, that all19 pages were independently inspected in earlier review, or that any modern complete periodical is cleared.",
+    "pages": 19,
+    "payload_sha256": "d7c7795c05c44aae9b68bdd59f13db9d626bd2a89de9a44d8287dfcb7f1cc6ca",
+    "rights_basis": "Exact artifact records the historical April1892 publication and expired UnitedStates term, plus faithful mechanical scan/OCR without new authorship. Publisher hosting is explicitly not its rights basis.",
+    "source_packet": {
+      "path": ".scratch/roman-english-completion-20261029/chants/late-marian/queen-three/roman-hymn/source-file-pins-v3.json",
+      "sha256": "488e6b6d6e250692dfdec5d4ce71bbddcc4358c958e54befd8e2799a34f30558"
+    }
+  },
+  "acceptance": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-acceptance.json",
+    "sha256": "5ae2464f2e7a73218262bf91473de8cbcc98e54840dc19d22b02dcb89b110072"
+  },
+  "actual_HEAD_at_review": "702f650020d69a45aa747b1c5b5e30be6c42ca59",
+  "all13_PDF_page_counts_match_metadata": true,
+  "all15_explicitly_among193_new_source_inputs": true,
+  "all15_metadata_hash_size_path_rights_and_MIME_exact": true,
+  "all15_writer_payloads_byte_exact": true,
+  "base_HEAD": "702f650020d69a45aa747b1c5b5e30be6c42ca59",
+  "binary_payload_count": 15,
+  "binary_payloads": [
+    {
+      "admission": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/root-seven-decision.json",
+        "sha256": "d0802309d2518db774c3ad352f2eba03605e67cad735959444b422233ffd4874"
+      },
+      "artifact_id": "artifact.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia.title-license-and-cross-pages",
+      "bytes": 542251,
+      "edition": {
+        "path": "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/edition.toml",
+        "sha256": "7fc43450c797503a8bdd268cbb87c09d41bda6f3bf14af0090a355fdc171c840"
+      },
+      "edition_date": "1626",
+      "edition_id": "edition.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia",
+      "edition_publication": "Matriti: Ex Typographia Regia, 1626.",
+      "edition_title": "Officia propria Sanctorum Toletanae Eccl. et Dioecesis",
+      "git_blob_sha1": "9c0eb209d7d15dedfeacfd17fb00b4e5bece10ca",
+      "media_type": "application/pdf",
+      "metadata_and_payload_hash_size_path_exact": true,
+      "new_explicit_7264_source_pin": true,
+      "owning_artifact": {
+        "path": "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/artifacts/title-license-and-cross-pages/artifact.toml",
+        "sha256": "addf1f88c8727bb44030bff878263bcf40fa4a09548910fcb40d9a999c4e4ce6"
+      },
+      "path": "src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/artifacts/title-license-and-cross-pages/source.pdf",
+      "physical_page_count": 4,
+      "prior_review_evidence": [
+        {
+          "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-30ba22065d321290.json",
+          "sha256": "30ba22065d32129062e87d8bdf820f2abe9e8a66bf0315485610cd303085bc5b"
+        }
+      ],
+      "review_scope": "Identity/hash/size/rights-basis/admission reuse only; no new visual inspection.",
+      "rights_basis": "United States: this identified Madrid Typographia Regia printing was published in 1626, long before 1931, and its publication term has expired. The retained historical title, license and office pages contain no modern editorial contribution. A faithful mechanical scan adds no authorship to those historical words or pages. Received Latin remains public domain and is excluded from Triptych project licensing. No blanket assessment of the modern complete PDF delivery is asserted.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "981ac4aed0eef481f6c8521c7d8d458eba8454c214527c649f5f354db1935100",
+      "signature": "PDF",
+      "source_basis": {
+        "derived_from": "artifact.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia.idus-complete-773d2c56",
+        "provenance": "Exact historical page extraction from the independently fetched and hash-bound complete University of Seville PDF. The retained four pages are the original title, dated license, printed 55, and printed 56; no modern wrappers, text rewriting, or image generation are included.",
+        "transformation": "Run pdfseparate for complete parent PDF pages 1, 2, 71 and 72, then pdfunite in exactly that order. Retained derivative PDF1=parentPDF1 (title), PDF2=parentPDF2 (license), PDF3=parentPDF71 (printed55), PDF4=parentPDF72 (printed56). This is an exact-page derivative, not a byte substring of the parent."
+      },
+      "writer_manifest": {
+        "path": ".scratch/roman-english-completion-20261029/v2-consolidation/frozen-seven-v1/manifest.json",
+        "sha256": "4800a24a1616f3eaf0e551f98bc64625567e5d25bf68273da42e022e137408ee"
+      },
+      "writer_payload_bytes_exact": true,
+      "writer_payload_path": ".scratch/roman-english-completion-20261029/v2-consolidation/frozen-seven-v1/source-postimages/src/sources/works/archdiocese-of-toledo/officia-propria-sanctorum/editions/1626-madrid-typographia-regia/artifacts/title-license-and-cross-pages/source.pdf"
+    },
+    {
+      "admission": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-seasonal-five-admission.json",
+        "sha256": "4fbe06443c355f25da591d7233041460b2f1515db3d7ed2c1e138286381d8d0b"
+      },
+      "artifact_id": "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-phase2-otherseasonal-ecce-dominus-ninth-responsory-page",
+      "bytes": 1302313,
+      "edition": {
+        "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/edition.toml",
+        "sha256": "39c835e448f867a979441f4ddaf7534582f47305f7b658aaee0b499f6afff675"
+      },
+      "edition_date": "1888",
+      "edition_id": "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888",
+      "edition_publication": "Ratisbonae, Neo Eboraci et Cincinnati: Sumptibus et typis Friderici Pustet, 1888. Title page directly read at PDF artifact page 11, including EDITIO PRIMA POST TYPICAM and MDCCCLXXXVIII.",
+      "edition_title": "Breviarium Romanum, editio prima post typicam, pars hiemalis",
+      "git_blob_sha1": "4db9fcf89e164d86ecc07cbf38fdd272d479492a",
+      "media_type": "image/png",
+      "metadata_and_payload_hash_size_path_exact": true,
+      "new_explicit_7264_source_pin": true,
+      "owning_artifact": {
+        "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-ecce-dominus-ninth-responsory-page/artifact.toml",
+        "sha256": "e07f50c3271d8e5dde851dfea86b984e134c6b93d491e7fe9662cd597da17774"
+      },
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-ecce-dominus-ninth-responsory-page/source-page.png",
+      "physical_page_count": null,
+      "prior_review_evidence": [
+        {
+          "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-05-9ae0bc10b3de.json",
+          "sha256": "9ae0bc10b3de3156ea88c330ce5cae812c1a35a3817fd1559424ee9c1a98ad1e"
+        }
+      ],
+      "review_scope": "Identity/hash/size/rights-basis/admission reuse only; no new visual inspection.",
+      "rights_basis": "The identified printed book was published by Friedrich Pustet in 1888. Its 1888 printed contents have no remaining United States copyright term in 2026: a 95-year maximum term ended before 2026, and any URAA restoration supplies only the remainder of the otherwise applicable United States term. Faithful mechanical scans and project transcription of those public-domain words add no human authorship. The stated basis is publication date and mechanical reproduction, not Internet Archive availability or a host label. Only one complete mechanical page image from that1888 source is retained; no modern source image is included.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "158dbf8112fbd94280bc0b4dd831c0e3081042660b7ad1df4d67e1fc3ff7e96f",
+      "signature": "PNG",
+      "source_basis": {
+        "derived_from": "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf",
+        "notes": "Whole historical printed p. 146, from original whole-PDF artifact p. 200. The complete initial responsory body has22 words and ends vitam sempiternam.; the following versicle, Gloria Patri and Visitare repetitions are excluded. The study route explicitly omits only et virtus ejus cum eo (words7-11), retaining17 words in unchanged order. No historical human English is edited or attributed to this Latin-only source. The PNG itself has one artifact page; original PDF and printed locators remain separate.",
+        "transformation": "Extract full one-based PDF artifact p. 200 with pdfseparate, then mechanically render the whole page through tools/pdf-review at the renderer dimensions recorded in the independent review. The retained bytes exactly match the independently inspected full-page PNG; no crop, annotation, retouching or compositing."
+      },
+      "writer_manifest": {
+        "path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/other-seasonal-antiphons/phase2-proposal/manifest.json",
+        "sha256": "8b2b20d6355fb9cbc6647ed1689f2eedd590fcc7249b196966ef1c3f227e1508"
+      },
+      "writer_payload_bytes_exact": true,
+      "writer_payload_path": ".scratch/postconciliar-english-completion-20261029/first18-authorized-install-v1/canonical/src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-ecce-dominus-ninth-responsory-page/source-page.png"
+    },
+    {
+      "admission": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-seasonal-five-admission.json",
+        "sha256": "4fbe06443c355f25da591d7233041460b2f1515db3d7ed2c1e138286381d8d0b"
+      },
+      "artifact_id": "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-phase2-otherseasonal-rex-noster-first-responsory-page",
+      "bytes": 1354029,
+      "edition": {
+        "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/edition.toml",
+        "sha256": "39c835e448f867a979441f4ddaf7534582f47305f7b658aaee0b499f6afff675"
+      },
+      "edition_date": "1888",
+      "edition_id": "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888",
+      "edition_publication": "Ratisbonae, Neo Eboraci et Cincinnati: Sumptibus et typis Friderici Pustet, 1888. Title page directly read at PDF artifact page 11, including EDITIO PRIMA POST TYPICAM and MDCCCLXXXVIII.",
+      "edition_title": "Breviarium Romanum, editio prima post typicam, pars hiemalis",
+      "git_blob_sha1": "c4d0f359a4c9c77b1364d931548aa0cd9db09a19",
+      "media_type": "image/png",
+      "metadata_and_payload_hash_size_path_exact": true,
+      "new_explicit_7264_source_pin": true,
+      "owning_artifact": {
+        "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-rex-noster-first-responsory-page/artifact.toml",
+        "sha256": "a3225718e498ff9a71e955ae2edebe5201d0cfadca36f23bfa20093f10b45bb8"
+      },
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-rex-noster-first-responsory-page/source-page.png",
+      "physical_page_count": null,
+      "prior_review_evidence": [
+        {
+          "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-05-9ae0bc10b3de.json",
+          "sha256": "9ae0bc10b3de3156ea88c330ce5cae812c1a35a3817fd1559424ee9c1a98ad1e"
+        }
+      ],
+      "review_scope": "Identity/hash/size/rights-basis/admission reuse only; no new visual inspection.",
+      "rights_basis": "The identified printed book was published by Friedrich Pustet in 1888. Its 1888 printed contents have no remaining United States copyright term in 2026: a 95-year maximum term ended before 2026, and any URAA restoration supplies only the remainder of the otherwise applicable United States term. Faithful mechanical scans and project transcription of those public-domain words add no human authorship. The stated basis is publication date and mechanical reproduction, not Internet Archive availability or a host label. Only one complete mechanical page image from that1888 source is retained; no modern source image is included.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "f3aa78e216a333e5aaee4b531d4b8764c22faf71b7e8a83344c37f89ebfdfc08",
+      "signature": "PNG",
+      "source_basis": {
+        "derived_from": "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf",
+        "notes": "Whole historical printed p. 140, from original whole-PDF artifact p. 194. The complete initial response head plus response ends esse venturum.; the following Super ipsum versicle and Quem repetition are excluded. The displayed accents, Joannes/Ioannes and pointing are disclosed comparison differences, not changed words. The PNG itself has one artifact page; original PDF and printed locators remain separate.",
+        "transformation": "Extract full one-based PDF artifact p. 194 with pdfseparate, then mechanically render the whole page through tools/pdf-review at the renderer dimensions recorded in the independent review. The retained bytes exactly match the independently inspected full-page PNG; no crop, annotation, retouching or compositing."
+      },
+      "writer_manifest": {
+        "path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/other-seasonal-antiphons/phase2-proposal/manifest.json",
+        "sha256": "8b2b20d6355fb9cbc6647ed1689f2eedd590fcc7249b196966ef1c3f227e1508"
+      },
+      "writer_payload_bytes_exact": true,
+      "writer_payload_path": ".scratch/postconciliar-english-completion-20261029/first18-authorized-install-v1/canonical/src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-phase2-otherseasonal-rex-noster-first-responsory-page/source-page.png"
+    },
+    {
+      "admission": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/root-seven-decision.json",
+        "sha256": "d0802309d2518db774c3ad352f2eba03605e67cad735959444b422233ffd4874"
+      },
+      "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.queen-introit-gaudeamus-pages-20261029",
+      "bytes": 388563,
+      "edition": {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/edition.toml",
+        "sha256": "c5570791955722356a338b95201c30372b26a9fa44e82882e504daa7a23b7b89"
+      },
+      "edition_date": "1922",
+      "edition_id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+      "edition_publication": "Missale Romanum ex decreto sacrosancti Concilii Tridentini restitutum, S. Pii V Pontificis Maximi jussu editum, aliorum Pontificum cura recognitum, a Pio X reformatum et Benedicti XV auctoritate vulgatum. Editio quarta juxta typicam Vaticanam. Turonibus: Sumptibus et typis Alfred Mame et Filiorum, 1922. Internet Archive item missaleromanum0000unse.",
+      "edition_title": "Missale Romanum, Tours: Alfred Mame, 1922, editio quarta iuxta typicam Vaticanam",
+      "git_blob_sha1": "e39cf1b06b4f8fb0acff5060f7c1c6dc0c0d88d5",
+      "media_type": "application/pdf",
+      "metadata_and_payload_hash_size_path_exact": true,
+      "new_explicit_7264_source_pin": true,
+      "owning_artifact": {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/queen-introit-gaudeamus-pages-20261029/artifact.toml",
+        "sha256": "a4dfb145f0f7ff3c8d63ee602f9c30d8ad29ac4af8a72f9f44ee8f03fc0650b7"
+      },
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/queen-introit-gaudeamus-pages-20261029/source.pdf",
+      "physical_page_count": 2,
+      "prior_review_evidence": [
+        {
+          "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-df319c65bab50adb.json",
+          "sha256": "df319c65bab50adb6ece2c3552f1461c61956786018a14fddb158c979c0b2063"
+        },
+        {
+          "path": ".scratch/roman-english-completion-20261029/v2-consolidation/frozen-seven-v1/evidence/fbb77043afd40e44-source_review_v2.json",
+          "sha256": "fbb77043afd40e440f72e435043f0a45782f19625b131fc3e63061a4ac73da90"
+        }
+      ],
+      "review_scope": "Identity/hash/size/rights-basis/admission reuse only; no new visual inspection.",
+      "rights_basis": "These two complete pages are mechanically extracted from the identified Tours Mame 1922 printing, independently public domain in the United States by publication date. Mechanical reproduction and extraction add no new human authorship. No later Queenship wording is included in this historical source artifact.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "440c4b2be360272c0762bb3e9eab2b2651f518c7d4a07dc452bee482b8e0b8ad",
+      "signature": "PDF",
+      "source_basis": {
+        "derived_from": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+        "provenance": "The whole registered 1,162-page, 51,720,493-byte 1922 PDF was rehashed on 2026-10-29. pdfseparate extracted complete pages 770 and 845; pdfunite joined them in that order without cropping or reconstruction. Printed p. 656 contains the Carmel Marian Introit; printed p. 731 contains the Rosary Marian Introit.",
+        "transformation": "Select complete source pages 770 and 845. No 1962 source image or later Psalm rendering is distributed."
+      },
+      "writer_manifest": {
+        "path": ".scratch/roman-english-completion-20261029/v2-consolidation/frozen-seven-v1/manifest.json",
+        "sha256": "4800a24a1616f3eaf0e551f98bc64625567e5d25bf68273da42e022e137408ee"
+      },
+      "writer_payload_bytes_exact": true,
+      "writer_payload_path": ".scratch/roman-english-completion-20261029/v2-consolidation/frozen-seven-v1/source-postimages/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/queen-introit-gaudeamus-pages-20261029/source.pdf"
+    },
+    {
+      "admission": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/root-seven-decision.json",
+        "sha256": "d0802309d2518db774c3ad352f2eba03605e67cad735959444b422233ffd4874"
+      },
+      "artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.improperia-whole-pages-20261029-04a3ab17",
+      "bytes": 596044,
+      "edition": {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/edition.toml",
+        "sha256": "fa9da57d68f8c80a51376a87dbeed3b19c1d1d0043a4a9b202a3c8de9e1dd7ad"
+      },
+      "edition_date": "1862",
+      "edition_id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+      "edition_publication": "The title page reads MISSALE ROMANUM EX DECRETO SACROSANCTI CONCILII TRIDENTINI RESTITUTUM, S. PII V. PONTIFICIS MAXIMI JUSSU EDITUM, CLEMENTIS VIII. ET URBANI VIII. AUCTORITATE RECOGNITUM, then ACCURATISSIMA EDITIO CUM ADDITAMENTIS NOVISSIMIS, CUM APPROBATIONE SACRORUM RITUUM CONGREGATIONIS, and beneath that RATISBONAE, MDCCCLXII, SUMTIBUS CHARTIS ET TYPIS FRIDERICI PUSTET. The colophon after the appendix reads Ratisbonae: Ex Officina Fr. Pustet, S. Sedis Apostolicae Typographi. Internet Archive item bub_gb_E7sPAAAAIAAJ, a Google digitisation of the New York Public Library's copy; LCCN 33036844, OCLC 7426908.",
+      "edition_title": "Missale Romanum, the Pustet printing of Ratisbon, 1862: a commercial hand-format printing conformed to the Roman text, NOT a typical edition",
+      "git_blob_sha1": "22535cd266a8c2b2dde2ddf96576214475a5376b",
+      "media_type": "application/pdf",
+      "metadata_and_payload_hash_size_path_exact": true,
+      "new_explicit_7264_source_pin": true,
+      "owning_artifact": {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/improperia-whole-pages-20261029-04a3ab17/artifact.toml",
+        "sha256": "6776803166e727c5b68788ef34fab91421fd7c84013b6a90e8c222a3b1b0b402"
+      },
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/improperia-whole-pages-20261029-04a3ab17/source.pdf",
+      "physical_page_count": 3,
+      "prior_review_evidence": [
+        {
+          "path": ".scratch/roman-english-completion-20261029/v2-consolidation/frozen-seven-v1/evidence/31afb36e43b2eb65-source-review.json",
+          "sha256": "31afb36e43b2eb652ea1c840bb721367479bae2ae97bea43b0f826cb698f8d69"
+        },
+        {
+          "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-01a03e183b94872e.json",
+          "sha256": "01a03e183b94872e9c1adb53c04d711cb6bfebe844c3d8b6021f299bdfad70cc"
+        }
+      ],
+      "review_scope": "Identity/hash/size/rights-basis/admission reuse only; no new visual inspection.",
+      "rights_basis": "The complete Pustet Ratisbon 1862 printing is public domain in the United States by publication date. Mechanical extraction of three complete pages introduces no new textual authorship. This basis is independent of modern target-edition rights.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "04a3ab17ee92a718deecebaa3f520df70fe7d4b21559be81fffae90d5310aa96",
+      "signature": "PDF",
+      "source_basis": {
+        "derived_from": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+        "provenance": "Parent full PDF rehashed 363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474; original PDF pages260-262 extracted by pdfseparate and joined by pdfunite in original order, without crop or re-encoding. Original publication folios174-176 were read visually at scale-to3000; PDF metadata has tiny erroneous page boxes, so nominal dpi is not asserted.",
+        "source_url": "https://archive.org/download/bub_gb_E7sPAAAAIAAJ/bub_gb_E7sPAAAAIAAJ.pdf",
+        "transformation": "Extract pages1-3 are original PDF pages260-262, printed174-176, in order. Complete pages include the opening Improperia rubric through the whole hymn doxology and final Dulce lignum cue."
+      },
+      "writer_manifest": {
+        "path": ".scratch/roman-english-completion-20261029/v2-consolidation/frozen-seven-v1/manifest.json",
+        "sha256": "4800a24a1616f3eaf0e551f98bc64625567e5d25bf68273da42e022e137408ee"
+      },
+      "writer_payload_bytes_exact": true,
+      "writer_payload_path": ".scratch/roman-english-completion-20261029/v2-consolidation/frozen-seven-v1/source-postimages/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/improperia-whole-pages-20261029-04a3ab17/source.pdf"
+    },
+    {
+      "admission": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/root-seven-decision.json",
+        "sha256": "d0802309d2518db774c3ad352f2eba03605e67cad735959444b422233ffd4874"
+      },
+      "artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.lighted-candle-old-prayer-page-20261029-0e5057cc",
+      "bytes": 142717,
+      "edition": {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/edition.toml",
+        "sha256": "fa9da57d68f8c80a51376a87dbeed3b19c1d1d0043a4a9b202a3c8de9e1dd7ad"
+      },
+      "edition_date": "1862",
+      "edition_id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+      "edition_publication": "The title page reads MISSALE ROMANUM EX DECRETO SACROSANCTI CONCILII TRIDENTINI RESTITUTUM, S. PII V. PONTIFICIS MAXIMI JUSSU EDITUM, CLEMENTIS VIII. ET URBANI VIII. AUCTORITATE RECOGNITUM, then ACCURATISSIMA EDITIO CUM ADDITAMENTIS NOVISSIMIS, CUM APPROBATIONE SACRORUM RITUUM CONGREGATIONIS, and beneath that RATISBONAE, MDCCCLXII, SUMTIBUS CHARTIS ET TYPIS FRIDERICI PUSTET. The colophon after the appendix reads Ratisbonae: Ex Officina Fr. Pustet, S. Sedis Apostolicae Typographi. Internet Archive item bub_gb_E7sPAAAAIAAJ, a Google digitisation of the New York Public Library's copy; LCCN 33036844, OCLC 7426908.",
+      "edition_title": "Missale Romanum, the Pustet printing of Ratisbon, 1862: a commercial hand-format printing conformed to the Roman text, NOT a typical edition",
+      "git_blob_sha1": "c8436a3e52ccae8e3c1ff8eddc884949a60c5c8e",
+      "media_type": "application/pdf",
+      "metadata_and_payload_hash_size_path_exact": true,
+      "new_explicit_7264_source_pin": true,
+      "owning_artifact": {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lighted-candle-old-prayer-page-20261029-0e5057cc/artifact.toml",
+        "sha256": "a9cbfc7a8cbd6dcda2dd5595da0bff5cff165289085d675319317e76325dad36"
+      },
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lighted-candle-old-prayer-page-20261029-0e5057cc/page.pdf",
+      "physical_page_count": 1,
+      "prior_review_evidence": [
+        {
+          "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-107329b343472b93.json",
+          "sha256": "107329b343472b934104c1dec18e22991c36f5efd970ee31069061252094b774"
+        }
+      ],
+      "review_scope": "Identity/hash/size/rights-basis/admission reuse only; no new visual inspection.",
+      "rights_basis": "Mechanical extraction of the old Pustet Ratisbon1862 printed page180, public domain in the United States by publication date. No modern authored wrapper or target1962 page is retained.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "0e5057cc5e3af1f377068dbfab96d99b64f3b95736400715ed9d4e346beb25c0",
+      "signature": "PDF",
+      "source_basis": {
+        "derived_from": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+        "notes": "Derivative page1 is parent PDF266/printed180. The upper-left column holds the complete Veniat incense blessing and actual Per Christum Dominum nostrum ending; adjacent R.Amen is separately printed. Full page context retained.",
+        "provenance": "Previously acquired whole922page parent PDF hash363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474 rechecked on2026-10-29 before pdfseparate extraction of physical page266. No fresh retrieval or wholebook inspection is claimed.",
+        "source_url": "https://archive.org/download/bub_gb_E7sPAAAAIAAJ/bub_gb_E7sPAAAAIAAJ.pdf",
+        "transformation": "pdfseparate -f266 -l266; no image or text editing."
+      },
+      "writer_manifest": {
+        "path": ".scratch/roman-english-completion-20261029/v2-consolidation/frozen-seven-v1/manifest.json",
+        "sha256": "4800a24a1616f3eaf0e551f98bc64625567e5d25bf68273da42e022e137408ee"
+      },
+      "writer_payload_bytes_exact": true,
+      "writer_payload_path": ".scratch/roman-english-completion-20261029/v2-consolidation/frozen-seven-v1/source-postimages/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lighted-candle-old-prayer-page-20261029-0e5057cc/page.pdf"
+    },
+    {
+      "admission": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/root-seven-decision.json",
+        "sha256": "d0802309d2518db774c3ad352f2eba03605e67cad735959444b422233ffd4874"
+      },
+      "artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.palm-blessing-whole-page-20261029",
+      "bytes": 121105,
+      "edition": {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/edition.toml",
+        "sha256": "fa9da57d68f8c80a51376a87dbeed3b19c1d1d0043a4a9b202a3c8de9e1dd7ad"
+      },
+      "edition_date": "1862",
+      "edition_id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+      "edition_publication": "The title page reads MISSALE ROMANUM EX DECRETO SACROSANCTI CONCILII TRIDENTINI RESTITUTUM, S. PII V. PONTIFICIS MAXIMI JUSSU EDITUM, CLEMENTIS VIII. ET URBANI VIII. AUCTORITATE RECOGNITUM, then ACCURATISSIMA EDITIO CUM ADDITAMENTIS NOVISSIMIS, CUM APPROBATIONE SACRORUM RITUUM CONGREGATIONIS, and beneath that RATISBONAE, MDCCCLXII, SUMTIBUS CHARTIS ET TYPIS FRIDERICI PUSTET. The colophon after the appendix reads Ratisbonae: Ex Officina Fr. Pustet, S. Sedis Apostolicae Typographi. Internet Archive item bub_gb_E7sPAAAAIAAJ, a Google digitisation of the New York Public Library's copy; LCCN 33036844, OCLC 7426908.",
+      "edition_title": "Missale Romanum, the Pustet printing of Ratisbon, 1862: a commercial hand-format printing conformed to the Roman text, NOT a typical edition",
+      "git_blob_sha1": "129ca28a83676a1e61c52ab1e89954eece343c5c",
+      "media_type": "application/pdf",
+      "metadata_and_payload_hash_size_path_exact": true,
+      "new_explicit_7264_source_pin": true,
+      "owning_artifact": {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/palm-blessing-whole-page-20261029/artifact.toml",
+        "sha256": "007189bee5eb0ce46a3973b0a20b9d37e05b19975b1ea5c0b1c878f14ffa9ca2"
+      },
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/palm-blessing-whole-page-20261029/source.pdf",
+      "physical_page_count": 1,
+      "prior_review_evidence": [
+        {
+          "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-ababd1f3c1d308b2.json",
+          "sha256": "ababd1f3c1d308b2b45bd254272a2452de6c14d7127b6194fba00d0749f1ccf8"
+        }
+      ],
+      "review_scope": "Identity/hash/size/rights-basis/admission reuse only; no new visual inspection.",
+      "rights_basis": "The Pustet Ratisbon printing was published in 1862 and is in the United States public domain by publication date. Faithful mechanical page extraction and a checked transcription add no new prayer wording. This basis does not clear any later target contribution.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "ae48dd3e6d235cba87dbe8836ab5d3d4b95d3b73752801f0a0251b23e262ee30",
+      "signature": "PDF",
+      "source_basis": {
+        "derived_from": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+        "provenance": "The complete already-held 102880787-byte parent PDF was rehashed as 363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474. Complete original PDF page 220 was mechanically extracted with pdfseparate; no crop or image reencoding. The entire old prayer and the adjacent complete prayer were directly read at scale-to2000 and400dpi on 2026-10-29.",
+        "source_url": "https://archive.org/download/bub_gb_E7sPAAAAIAAJ/bub_gb_E7sPAAAAIAAJ.pdf",
+        "transformation": "Mechanical extraction of complete original PDF page220, printed134. Bounded source evidence, not a complete edition."
+      },
+      "writer_manifest": {
+        "path": ".scratch/roman-english-completion-20261029/v2-consolidation/frozen-seven-v1/manifest.json",
+        "sha256": "4800a24a1616f3eaf0e551f98bc64625567e5d25bf68273da42e022e137408ee"
+      },
+      "writer_payload_bytes_exact": true,
+      "writer_payload_path": ".scratch/roman-english-completion-20261029/v2-consolidation/frozen-seven-v1/source-postimages/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/palm-blessing-whole-page-20261029/source.pdf"
+    },
+    {
+      "admission": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-good-friday-opening-two-admission.json",
+        "sha256": "159c5d14dc1cb1ab090358abd47f2ad9fa44070adfd5d51c13598ee47274c1cf"
+      },
+      "artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-opening2-wilson-pages52-61-75-9ea0918d",
+      "bytes": 470709,
+      "edition": {
+        "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/edition.toml",
+        "sha256": "7bb097f4c19699a224a5bf589d039b7b39a3aad66d9db0e3d70845f353df5670"
+      },
+      "edition_date": "1894",
+      "edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+      "edition_publication": "Oxford: at the Clarendon Press, 1894. Edited by Henry Austin Wilson from Vatican, Reg. lat. 316, with the readings of the eighth-century Gelasians in the margins and apparatus.",
+      "edition_title": "The Gelasian Sacramentary: Liber sacramentorum Romanae ecclesiae, edited with introduction, critical notes and appendix by H. A. Wilson",
+      "git_blob_sha1": "12254b91a5c57cac6ef20308372f11afd2917e65",
+      "media_type": "application/pdf",
+      "metadata_and_payload_hash_size_path_exact": true,
+      "new_explicit_7264_source_pin": true,
+      "owning_artifact": {
+        "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-opening2-wilson-pages52-61-75-9ea0918d/artifact.toml",
+        "sha256": "e6690facf70cfac99878e532bd0ef998e72dab9e2003400528d2b83308dd6e52"
+      },
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-opening2-wilson-pages52-61-75-9ea0918d/pages.pdf",
+      "physical_page_count": 3,
+      "prior_review_evidence": [
+        {
+          "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-07-d3a9cff83569.json",
+          "sha256": "d3a9cff835690c1d79da83f34a37c34d0004b014cd948c875e5063819158ac3a"
+        },
+        {
+          "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-08-b7aa0d76220c.json",
+          "sha256": "b7aa0d76220cbf32c4414bc9d79b6a0c4df169c0fbed4e190c1f2c33c10ef8c3"
+        }
+      ],
+      "review_scope": "Identity/hash/size/rights-basis/admission reuse only; no new visual inspection.",
+      "rights_basis": "Mechanical extraction of independently image-checked ordinary printed pages of the identified public-domain historical book. No modern text is included. The old book is United States public domain by publication date for Wilson1894, and the separately verified Lasance1945 nonrenewal finding for the ordinary Lasance page. No digitiser notice or lettered insert is retained.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "9ea0918d6a9ee489ccd4aa70c23b2d6e87162e4e93c6c4bfdf2b216156f1aac3",
+      "signature": "PDF",
+      "source_basis": {
+        "derived_from": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3",
+        "notes": "Derivative pages1,2,3 retain parent PDF145/printed52, PDF154/printed61, PDF168/printed75 respectively. Page1 establishes the complete common conclusion; pages2 and3 establish complete old prayers with their actual conclusion cues. All apparatus markers remain visibly separate from prayer wording.",
+        "provenance": "Exact registered whole-source bytes were hash-verified locally before selected pages were mechanically extracted with pdfseparate/pdfunite on2026-10-30. Direct complete-page image inspection and independent source/English review are recorded by candidate6820cd0d and acceptance d3a9cff8. This records local reuse, not a new network acquisition or whole-book inspection.",
+        "source_url": "https://archive.org/download/LiberSacramentorumRomanaeEcclesiae/LiberSacramentorumRomanaeEcclesiae.pdf",
+        "transformation": "pdfseparate parent145,154,168; pdfunite those three mechanically extracted pages in that order; no textual or image editing."
+      },
+      "writer_manifest": {
+        "path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/goodfriday-opening-prayers/proposal/manifest.json",
+        "sha256": "849ae0ebce96bdfe1fc59e83258be962a6b565fddf74feb9391151fc3b99bfd3"
+      },
+      "writer_payload_bytes_exact": true,
+      "writer_payload_path": ".scratch/postconciliar-english-completion-20261029/first18-authorized-install-v1/canonical/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-opening2-wilson-pages52-61-75-9ea0918d/pages.pdf"
+    },
+    {
+      "admission": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-ordinary-four-admission.json",
+        "sha256": "2e0d3516ee8e095ac4197d23222258f38b264ad5eef04aad0a92914e6283870b"
+      },
+      "artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-ordinary-four-gelasian-pages-c4d7d3c1",
+      "bytes": 414988,
+      "edition": {
+        "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/edition.toml",
+        "sha256": "7bb097f4c19699a224a5bf589d039b7b39a3aad66d9db0e3d70845f353df5670"
+      },
+      "edition_date": "1894",
+      "edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+      "edition_publication": "Oxford: at the Clarendon Press, 1894. Edited by Henry Austin Wilson from Vatican, Reg. lat. 316, with the readings of the eighth-century Gelasians in the margins and apparatus.",
+      "edition_title": "The Gelasian Sacramentary: Liber sacramentorum Romanae ecclesiae, edited with introduction, critical notes and appendix by H. A. Wilson",
+      "git_blob_sha1": "f30f26e8bfa2306e1f9ebdfccf41ef20e53650e4",
+      "media_type": "application/pdf",
+      "metadata_and_payload_hash_size_path_exact": true,
+      "new_explicit_7264_source_pin": true,
+      "owning_artifact": {
+        "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-ordinary-four-gelasian-pages-c4d7d3c1/artifact.toml",
+        "sha256": "fc2ef0aaf9ac2dc554e609df81009ccf4bdca39068e6231252960f4915e42b77"
+      },
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-ordinary-four-gelasian-pages-c4d7d3c1/wilson-1894-pp106-122-123.pdf",
+      "physical_page_count": 3,
+      "prior_review_evidence": [
+        {
+          "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-03-bf2e4449ced7.json",
+          "sha256": "bf2e4449ced7c9ed61c13cc261f95fa3d01a49a2fd2ea74a37a688128e46c7be"
+        }
+      ],
+      "review_scope": "Identity/hash/size/rights-basis/admission reuse only; no new visual inspection.",
+      "rights_basis": "Mechanical extraction of three printed pages of H. A. Wilson's edition (Oxford: Clarendon Press, 1894), public domain in the United States by publication date. A faithful photographic reproduction adds no original authorship; the retained pages contain the printed book and a small scanner credit, without the parent's Google notice or other front matter. The registered canonical page-237 excerpt applies the same per-page source distinction to this exact parent file.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "c4d7d3c11ff5fd9d0545ff9c0185f4bcbaf855f5f5c13b9ae027bae8d72d48f5",
+      "signature": "PDF",
+      "source_basis": {
+        "derived_from": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3",
+        "notes": "Bundle pages 1, 2 and 3 correspond respectively to parent artifact pages 199, 215 and 216 and printed pages 106, 122 and 123. They witness the complete OT11 ancient Collect, the complete first Pentecost prayer with its apparatus, and independently printed short conclusion cues. The modern target book is not present in this artifact.",
+        "provenance": "On 2026-10-29 the registered complete parent file was hash-checked before mechanical extraction of physical PDF pages 199, 215 and 216. Each complete extracted page was rasterized with tools/pdf-review and opened. The three-page bundle rasters have exactly the same SHA-256 hashes as those independently opened single-page rasters.",
+        "source_url": "https://archive.org/download/LiberSacramentorumRomanaeEcclesiae/LiberSacramentorumRomanaeEcclesiae.pdf",
+        "transformation": "/usr/bin/pdfseparate extracted parent artifact pages 199, 215 and 216. /usr/bin/pdfunite concatenated those exact page files in that order; no cropping, raster editing, textual rewriting or OCR correction. The resulting non-deterministic PDF container is identified by its own hash and reused without regeneration."
+      },
+      "writer_manifest": {
+        "path": ".scratch/postconciliar-english-completion-20261029/ancient-sources/secondpass-ordinary/package-v1/manifest.json",
+        "sha256": "138f89b58d46ec03584eae4b04e7dc4d0e23a2e03b0ee766129e3e187017b61a"
+      },
+      "writer_payload_bytes_exact": true,
+      "writer_payload_path": ".scratch/postconciliar-english-completion-20261029/first18-authorized-install-v1/canonical/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-ordinary-four-gelasian-pages-c4d7d3c1/wilson-1894-pp106-122-123.pdf"
+    },
+    {
+      "admission": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-extra-two-admission.json",
+        "sha256": "7a58224decae8b70bc8b80059c65d2fef910e61fca194cf9a02dfe7eada41324"
+      },
+      "artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-phase3-extra-gelasian-p36-facsimile-f20c91fa",
+      "bytes": 113330,
+      "edition": {
+        "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/edition.toml",
+        "sha256": "7bb097f4c19699a224a5bf589d039b7b39a3aad66d9db0e3d70845f353df5670"
+      },
+      "edition_date": "1894",
+      "edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+      "edition_publication": "Oxford: at the Clarendon Press, 1894. Edited by Henry Austin Wilson from Vatican, Reg. lat. 316, with the readings of the eighth-century Gelasians in the margins and apparatus.",
+      "edition_title": "The Gelasian Sacramentary: Liber sacramentorum Romanae ecclesiae, edited with introduction, critical notes and appendix by H. A. Wilson",
+      "git_blob_sha1": "713e791131cbc111807205336666ca4bb9c56820",
+      "media_type": "application/pdf",
+      "metadata_and_payload_hash_size_path_exact": true,
+      "new_explicit_7264_source_pin": true,
+      "owning_artifact": {
+        "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-phase3-extra-gelasian-p36-facsimile-f20c91fa/artifact.toml",
+        "sha256": "9f1696bcc4e0a6e7719002ca94f23abd6cfa8a316137fbabd3d7e446f517c575"
+      },
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-phase3-extra-gelasian-p36-facsimile-f20c91fa/wilson-1894-p36.pdf",
+      "physical_page_count": 1,
+      "prior_review_evidence": [
+        {
+          "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-01-cff977a5cd64.json",
+          "sha256": "cff977a5cd64495ec1f09cb39fd04c553a300b33b3ce7f9b8d46782e06b19ef7"
+        },
+        {
+          "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-02-79362b72f99c.json",
+          "sha256": "79362b72f99cf8f5801f82db3d3a7a24cdd5676c2ce1881bd8ddc1800f3ca822"
+        }
+      ],
+      "review_scope": "Identity/hash/size/rights-basis/admission reuse only; no new visual inspection.",
+      "rights_basis": "Mechanical extraction of one printed page of H. A. Wilson's edition (Oxford: Clarendon Press, 1894), which is in the United States public domain by date of publication (first published abroad before 1931, as derived for calendar year 2026 under guidance/missals.md). A faithful photographic reproduction adds no original authorship (Feist Publications, Inc. v. Rural Telephone Service Co., 499 U.S. 340, 345 (1991)); the page carries only the printed book and the scanner's small 'Digitized by Google' mark, as the retained leaf-322 image of the same item does. The parent's first page, Google's own notice, is not included.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "f20c91fa7d7ff60e2c43e898bbcd710bbc276601ec1bcb7c606078dbcc262217",
+      "signature": "PDF",
+      "source_basis": {
+        "derived_from": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3",
+        "notes": "Printed p. 36, Book I section XXVI. The selected ancient prayer is the Feria vi Hebdom. tertia Postcommun. at the bottom of the page near marginal 525, beginning Hos, Domine, quos reficis sacramentis and ending et moribus. Per. This p36 witness prints ut before tuae, unlike the weaker p30 parallel. Neighboring old prayers remain page context, not an additional target-text admission. The source is an 1894 historical page, not a published current Missal body.",
+        "provenance": "Mechanical extraction of original whole-artifact page 129, printed p. 36, with pdfseparate on 2026-10-29. The actual cached complete 13,625,474-byte parent PDF was rehashed to 006a38a39250d39c9745acfb4f4a098374027e719dc7ad7e32972fa6a82489bc before use; no new network retrieval is claimed. These exact extracted bytes were rendered with tools/pdf-review, directly inspected in full and independently re-read by the cold reviewer. The original Google notice/front matter is excluded.",
+        "source_url": "https://archive.org/download/LiberSacramentorumRomanaeEcclesiae/LiberSacramentorumRomanaeEcclesiae.pdf",
+        "transformation": "pdfseparate -f 129 -l 129 from the exact parent PDF. Single historical printed page only; no cropping, raster editing, OCR rewriting or prayer-word correction. The exact output bytes are reused, not regenerated."
+      },
+      "writer_manifest": {
+        "path": ".scratch/postconciliar-english-completion-20261029/ancient-sources/secondpass-extra-five/package-v1/manifest.json",
+        "sha256": "fdffaf88c8aa95912ef1ec84a44798a05847c0d547d60f3b070a50033131449a"
+      },
+      "writer_payload_bytes_exact": true,
+      "writer_payload_path": ".scratch/postconciliar-english-completion-20261029/first18-authorized-install-v1/canonical/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-phase3-extra-gelasian-p36-facsimile-f20c91fa/wilson-1894-p36.pdf"
+    },
+    {
+      "admission": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-remaining-three-admission.json",
+        "sha256": "89d8b0f274abd76eb09c4b555f547bec0112531eaac099ce19230833e946ea27"
+      },
+      "artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-phase3-remaining-gelasian-p91-facsimile-57614b82",
+      "bytes": 116843,
+      "edition": {
+        "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/edition.toml",
+        "sha256": "7bb097f4c19699a224a5bf589d039b7b39a3aad66d9db0e3d70845f353df5670"
+      },
+      "edition_date": "1894",
+      "edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+      "edition_publication": "Oxford: at the Clarendon Press, 1894. Edited by Henry Austin Wilson from Vatican, Reg. lat. 316, with the readings of the eighth-century Gelasians in the margins and apparatus.",
+      "edition_title": "The Gelasian Sacramentary: Liber sacramentorum Romanae ecclesiae, edited with introduction, critical notes and appendix by H. A. Wilson",
+      "git_blob_sha1": "6bc64c9834cb66d44926283dc2278e12f8542bfe",
+      "media_type": "application/pdf",
+      "metadata_and_payload_hash_size_path_exact": true,
+      "new_explicit_7264_source_pin": true,
+      "owning_artifact": {
+        "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-phase3-remaining-gelasian-p91-facsimile-57614b82/artifact.toml",
+        "sha256": "1977df8b9d1cc4697909adeefe5c9e588fee0f6736b6e74736bffd4456765a76"
+      },
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-phase3-remaining-gelasian-p91-facsimile-57614b82/wilson-1894-p91.pdf",
+      "physical_page_count": 1,
+      "prior_review_evidence": [
+        {
+          "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-04-a0f77ead71f3.json",
+          "sha256": "a0f77ead71f3ac6838360f960a96fac986930002462e7af3abc659c4e8cb3c0e"
+        }
+      ],
+      "review_scope": "Identity/hash/size/rights-basis/admission reuse only; no new visual inspection.",
+      "rights_basis": "Mechanical extraction of one printed page of H. A. Wilson's edition (Oxford: Clarendon Press, 1894), which is in the United States public domain by date of publication (first published abroad before 1931, as derived for calendar year 2026 under guidance/missals.md). A faithful photographic reproduction adds no original authorship (Feist Publications, Inc. v. Rural Telephone Service Co., 499 U.S. 340, 345 (1991)); the page carries only the printed book and the scanner's small 'Digitized by Google' mark, as the retained leaf-322 image of the same item does. The parent's first page, Google's own notice, is not included.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "57614b82108dc09ed60f91634f2d6938c1cfe8fc6ac769baa94b6855f4fe232c",
+      "signature": "PDF",
+      "source_basis": {
+        "derived_from": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3",
+        "notes": "Parent PDF artifact page 184 equals printed p. 91, Book I section XLVII. This retained printed page includes the complete ancient Secreta, its bracketed [Per.] cue and neighboring context. The original Google front-matter notice is excluded. This is historical page evidence, not a current Missal Latin body.",
+        "provenance": "Mechanical extraction of parent PDF artifact page 184, printed p. 91, with pdfseparate on 2026-10-29. The complete registered parent PDF cached by earlier research was rehashed to 006a38a39250d39c9745acfb4f4a098374027e719dc7ad7e32972fa6a82489bc before use; no new whole-file retrieval is asserted. These exact extracted bytes were rendered by tools/pdf-review and directly inspected. The bytes are copied unchanged into this package.",
+        "source_url": "https://archive.org/download/LiberSacramentorumRomanaeEcclesiae/LiberSacramentorumRomanaeEcclesiae.pdf",
+        "transformation": "pdfseparate -f 184 -l 184 from the exact parent PDF. No cropping, raster editing, OCR correction or source wording change; single-page excerpt only."
+      },
+      "writer_manifest": {
+        "path": ".scratch/postconciliar-english-completion-20261029/ancient-sources/secondpass-remaining/package-v1/manifest.json",
+        "sha256": "dd317624a46c5707ef8d088f330c2810b7e5ec24c95397bbb302160cf9a88f66"
+      },
+      "writer_payload_bytes_exact": true,
+      "writer_payload_path": ".scratch/postconciliar-english-completion-20261029/first18-authorized-install-v1/canonical/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-phase3-remaining-gelasian-p91-facsimile-57614b82/wilson-1894-p91.pdf"
+    },
+    {
+      "admission": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/root-seven-decision.json",
+        "sha256": "d0802309d2518db774c3ad352f2eba03605e67cad735959444b422233ffd4874"
+      },
+      "artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.lighted-candle-old-prayer-pages-20261029-eb290d46",
+      "bytes": 294829,
+      "edition": {
+        "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/edition.toml",
+        "sha256": "7bb097f4c19699a224a5bf589d039b7b39a3aad66d9db0e3d70845f353df5670"
+      },
+      "edition_date": "1894",
+      "edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+      "edition_publication": "Oxford: at the Clarendon Press, 1894. Edited by Henry Austin Wilson from Vatican, Reg. lat. 316, with the readings of the eighth-century Gelasians in the margins and apparatus.",
+      "edition_title": "The Gelasian Sacramentary: Liber sacramentorum Romanae ecclesiae, edited with introduction, critical notes and appendix by H. A. Wilson",
+      "git_blob_sha1": "35bb5ffc9ad2550a552983d5d9d5b5b594031cfe",
+      "media_type": "application/pdf",
+      "metadata_and_payload_hash_size_path_exact": true,
+      "new_explicit_7264_source_pin": true,
+      "owning_artifact": {
+        "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/lighted-candle-old-prayer-pages-20261029-eb290d46/artifact.toml",
+        "sha256": "910a0f4040e6a51bf6d097f51b06b34f05eafd349382d7dbc66369ce357139eb"
+      },
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/lighted-candle-old-prayer-pages-20261029-eb290d46/pages.pdf",
+      "physical_page_count": 2,
+      "prior_review_evidence": [
+        {
+          "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-107329b343472b93.json",
+          "sha256": "107329b343472b934104c1dec18e22991c36f5efd970ee31069061252094b774"
+        }
+      ],
+      "review_scope": "Identity/hash/size/rights-basis/admission reuse only; no new visual inspection.",
+      "rights_basis": "Mechanical extraction of Wilson Oxford Clarendon1894 printed pages81-82, public domain in the United States by publication date. The Google digitiser cover notice is excluded; retained page-foot scanner watermarks are mechanical. This is the same bounded oldbook extraction basis as the registered Chrism69/73 pages.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "eb290d46293f2889b2d089b16aae0f744deb1c085f34b5ba0325b1202c20aa43",
+      "signature": "PDF",
+      "source_basis": {
+        "derived_from": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3",
+        "notes": "Derivative page1 is parent PDF174/printed81, including the complete Benedictio super incensum Veniat ergo prayer and its ending. Derivative page2 is parent PDF175/printed82, retaining continuation of apparatus, including footnotes35-37. Footnote36 contrasts Mur. virtutis tuae maiestas with main-text virtus tuae maiestatis.",
+        "provenance": "Previously acquired whole497page parent PDF hash006a38a39250d39c9745acfb4f4a098374027e719dc7ad7e32972fa6a82489bc rechecked on2026-10-29 before pdfseparate/pdfunite extraction of physical pages174-175. No fresh retrieval or wholebook inspection is claimed.",
+        "source_url": "https://archive.org/download/LiberSacramentorumRomanaeEcclesiae/LiberSacramentorumRomanaeEcclesiae.pdf",
+        "transformation": "pdfseparate physical174 and175, then pdfunite those pages in that order; no text or image editing."
+      },
+      "writer_manifest": {
+        "path": ".scratch/roman-english-completion-20261029/v2-consolidation/frozen-seven-v1/manifest.json",
+        "sha256": "4800a24a1616f3eaf0e551f98bc64625567e5d25bf68273da42e022e137408ee"
+      },
+      "writer_payload_bytes_exact": true,
+      "writer_payload_path": ".scratch/roman-english-completion-20261029/v2-consolidation/frozen-seven-v1/source-postimages/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/lighted-candle-old-prayer-pages-20261029-eb290d46/pages.pdf"
+    },
+    {
+      "admission": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-good-friday-opening-two-admission.json",
+        "sha256": "159c5d14dc1cb1ab090358abd47f2ad9fa44070adfd5d51c13598ee47274c1cf"
+      },
+      "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb",
+      "bytes": 502778,
+      "edition": {
+        "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/edition.toml",
+        "sha256": "061025437feaa2dda34bf03c55921d6389e399c3a58d73f2457e3990f41f4eb7"
+      },
+      "edition_date": "1945",
+      "edition_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+      "edition_publication": "The new Roman missal in Latin and English, by F. X. Lasance and Francis Augustine Walsh. New York, Cincinnati [etc.]: Benziger Brothers, inc. Revised edition, copyright 1 November 1945, registered A 192159. The first edition of 1937 is a separate registration, A 110108, and is not this edition.",
+      "edition_title": "The New Roman Missal in Latin and English, revised edition",
+      "git_blob_sha1": "329b76d3197579d4b6fefe3c2a61f6ede5b08f96",
+      "media_type": "application/pdf",
+      "metadata_and_payload_hash_size_path_exact": true,
+      "new_explicit_7264_source_pin": true,
+      "owning_artifact": {
+        "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/artifact.toml",
+        "sha256": "617e48d287ca3a1b6409d74e9adf1cc8faad0e97bc52fe02706ed4f257b45252"
+      },
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/pages.pdf",
+      "physical_page_count": 1,
+      "prior_review_evidence": [
+        {
+          "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-07-d3a9cff83569.json",
+          "sha256": "d3a9cff835690c1d79da83f34a37c34d0004b014cd948c875e5063819158ac3a"
+        },
+        {
+          "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-08-b7aa0d76220c.json",
+          "sha256": "b7aa0d76220cbf32c4414bc9d79b6a0c4df169c0fbed4e190c1f2c33c10ef8c3"
+        }
+      ],
+      "review_scope": "Identity/hash/size/rights-basis/admission reuse only; no new visual inspection.",
+      "rights_basis": "Mechanical extraction of independently image-checked ordinary printed pages of the identified public-domain historical book. No modern text is included. The old book is United States public domain by publication date for Wilson1894, and the separately verified Lasance1945 nonrenewal finding for the ordinary Lasance page. No digitiser notice or lettered insert is retained.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "d85c36fbb0e7acebc16ddacd55fc7a38419c01400d0eb24132e20d748fb473e8",
+      "signature": "PDF",
+      "source_basis": {
+        "derived_from": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+        "notes": "Derivative page1 equals parent PDF217, printed217, ordinary AshWednesday source page. Only the complete common formula and its marked response are relied on; no whole AshWednesday prayer is attached to GoodFriday.",
+        "provenance": "Exact registered whole-source bytes were hash-verified locally before selected pages were mechanically extracted with pdfseparate/pdfunite on2026-10-30. Direct complete-page image inspection and independent source/English review are recorded by candidate6820cd0d and acceptance d3a9cff8. This records local reuse, not a new network acquisition or whole-book inspection.",
+        "source_url": "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf",
+        "transformation": "pdfseparate exact parent artifact page217; no textual or image editing."
+      },
+      "writer_manifest": {
+        "path": ".scratch/postconciliar-english-completion-20261029/seasonal-antiphons/goodfriday-opening-prayers/proposal/manifest.json",
+        "sha256": "849ae0ebce96bdfe1fc59e83258be962a6b565fddf74feb9391151fc3b99bfd3"
+      },
+      "writer_payload_bytes_exact": true,
+      "writer_payload_path": ".scratch/postconciliar-english-completion-20261029/first18-authorized-install-v1/canonical/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/pages.pdf"
+    },
+    {
+      "admission": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/root-seven-decision.json",
+        "sha256": "d0802309d2518db774c3ad352f2eba03605e67cad735959444b422233ffd4874"
+      },
+      "artifact_id": "artifact.salesian-society.bollettino-salesiano.1892-april-issue-4.publisher-whole-pdf-d7c7795c",
+      "bytes": 5212472,
+      "edition": {
+        "path": "src/sources/works/salesian-society/bollettino-salesiano/editions/1892-april-issue-4/edition.toml",
+        "sha256": "70641917e57025893723c685426aca1ef85e2d9957afa4e3ffb4a019875fdbc0"
+      },
+      "edition_date": "1892-04",
+      "edition_id": "edition.salesian-society.bollettino-salesiano.1892-april-issue-4",
+      "edition_publication": "Torino: Direzione nell'Oratorio Salesiano, April1892, annoXVI,n.4. Exact scanned monthlyissue served by the publisher's historicalarchive.",
+      "edition_title": "Bollettino Salesiano, annoXVI,n.4,Aprile1892",
+      "git_blob_sha1": "fa1ed9ff2802b8734bfc4f9f073ff2d4b7925553",
+      "media_type": "application/pdf",
+      "metadata_and_payload_hash_size_path_exact": true,
+      "new_explicit_7264_source_pin": true,
+      "owning_artifact": {
+        "path": "src/sources/works/salesian-society/bollettino-salesiano/editions/1892-april-issue-4/artifacts/publisher-whole-pdf-d7c7795c/artifact.toml",
+        "sha256": "95fd11b93a9dfc2eb4cdf13304a9a4306059eb9f70d6e3ddb6bdeb0feacfa979"
+      },
+      "path": "src/sources/works/salesian-society/bollettino-salesiano/editions/1892-april-issue-4/artifacts/publisher-whole-pdf-d7c7795c/source.pdf",
+      "physical_page_count": 19,
+      "prior_review_evidence": [
+        {
+          "path": ".scratch/roman-english-completion-20261029/chants/late-marian/queen-three/roman-hymn/review/independent-review-initial.json",
+          "sha256": "77bf43361b7f1c6783490455f7ac355ca5bc10c01ade40387415613156120ab5"
+        },
+        {
+          "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-06325027601a1cc3.json",
+          "sha256": "06325027601a1cc384a37c253b67e9e794d68c91b197704ede43bb89fe9dc17e"
+        }
+      ],
+      "review_scope": "Identity/hash/size/rights-basis/admission reuse only; no new visual inspection.",
+      "rights_basis": "The issueimage itself identifies firstpublication inApril1892, outside anyremainingUnitedStatescopyrightterm in2026. Faithful mechanical scan and OCR add no human authorship. The publisher's access does not replace this historicalpublication basis.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "d7c7795c05c44aae9b68bdd59f13db9d626bd2a89de9a44d8287dfcb7f1cc6ca",
+      "signature": "PDF",
+      "source_basis": {
+        "notes": "Fullissue retained for offlineverification. The page-image reading corrects the locatingOCR's poste to the actuallyprintedhoste; the acquiredPDFbytes remain exact. Nootherarticleinspection,completeperiodicalcoverage orofficialliturgicalstatus is claimed.",
+        "provenance": "Whole19page5212472bytePDF fetched directly from the publisher's archive overHTTPS on2026-10-29, hashed before reading. Exact acquired bytes retained unchanged; titlepage1 and Latinquotation onpage13/printed77 were read onactualpageimages. RawOCRservedonlyaslocatorandmisreadhosteasposte.",
+        "source_url": "https://bollettinosalesiano.it/archivio/1892/189204.pdf"
+      },
+      "writer_manifest": {
+        "path": ".scratch/roman-english-completion-20261029/v2-consolidation/frozen-seven-v1/manifest.json",
+        "sha256": "4800a24a1616f3eaf0e551f98bc64625567e5d25bf68273da42e022e137408ee"
+      },
+      "writer_payload_bytes_exact": true,
+      "writer_payload_path": ".scratch/roman-english-completion-20261029/v2-consolidation/frozen-seven-v1/source-postimages/src/sources/works/salesian-society/bollettino-salesiano/editions/1892-april-issue-4/artifacts/publisher-whole-pdf-d7c7795c/source.pdf"
+    },
+    {
+      "admission": {
+        "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/root-seven-decision.json",
+        "sha256": "d0802309d2518db774c3ad352f2eba03605e67cad735959444b422233ffd4874"
+      },
+      "artifact_id": "artifact.society-of-bollandists.acta-sanctorum.1866-paris-rome-palme-october-2.queenship-invocation-pages-20261029",
+      "bytes": 1259965,
+      "edition": {
+        "path": "src/sources/works/society-of-bollandists/acta-sanctorum/editions/1866-paris-rome-palme-october-2/edition.toml",
+        "sha256": "abf731ce53228d530ca72d587861a66c553f9183453fe632c1cceaff59f2cf02"
+      },
+      "edition_date": "1866",
+      "edition_id": "edition.society-of-bollandists.acta-sanctorum.1866-paris-rome-palme-october-2",
+      "edition_publication": "Parisiis et Romae: apud Victorem Palme, 1866. Octobris tomus secundus, quo dies tertius et quartus continentur; editio novissima curante Joanne Carnandet.",
+      "edition_title": "Acta Sanctorum, Octobris tomus secundus, editio novissima",
+      "git_blob_sha1": "cf8c8a8ba24de18cf0f0f29ebb50d8cde9ee2998",
+      "media_type": "application/pdf",
+      "metadata_and_payload_hash_size_path_exact": true,
+      "new_explicit_7264_source_pin": true,
+      "owning_artifact": {
+        "path": "src/sources/works/society-of-bollandists/acta-sanctorum/editions/1866-paris-rome-palme-october-2/artifacts/queenship-invocation-pages-20261029/artifact.toml",
+        "sha256": "abe4439ca86116d5a6510a4af24bd0f2ea3a22e769b5e1bf3a2fbae29da8c8c7"
+      },
+      "path": "src/sources/works/society-of-bollandists/acta-sanctorum/editions/1866-paris-rome-palme-october-2/artifacts/queenship-invocation-pages-20261029/source.pdf",
+      "physical_page_count": 2,
+      "prior_review_evidence": [
+        {
+          "path": ".scratch/roman-english-completion-20261029/chants/late-marian/queen-three/roman-hymn/review/independent-review-initial.json",
+          "sha256": "77bf43361b7f1c6783490455f7ac355ca5bc10c01ade40387415613156120ab5"
+        },
+        {
+          "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-06325027601a1cc3.json",
+          "sha256": "06325027601a1cc384a37c253b67e9e794d68c91b197704ede43bb89fe9dc17e"
+        }
+      ],
+      "review_scope": "Identity/hash/size/rights-basis/admission reuse only; no new visual inspection.",
+      "rights_basis": "Mechanical full-page extraction of an identified1866public-domainprinting. Its underlying printed text and faithful scanned reproduction have no UnitedStatescopyrightterm in2026; no new prose or modernization is introduced.",
+      "rights_jurisdiction": "United States",
+      "rights_status": "public-domain",
+      "sha256": "444d802dbfa5bbf2c5781ed6b059a3a65bebf682cc0e8d5b0b8bdcfa992abed1",
+      "signature": "PDF",
+      "source_basis": {
+        "derived_from": "artifact.society-of-bollandists.acta-sanctorum.1866-paris-rome-palme-october-2.paderborn-whole-pdf-1db9e816",
+        "provenance": "After wholePDF hash verification, pdfseparate selected original pages12(title) and682(printed671), then pdfunite joined them in that order. No cropping, rasterization or wording reconstruction.",
+        "transformation": "Mechanical selection of complete originalPDFpages12and682 only; outputpage1=title,outputpage2=printed671. Both pages retain the library's digitization footer as evidence; that footer is not an attribution of the old text to the library."
+      },
+      "writer_manifest": {
+        "path": ".scratch/roman-english-completion-20261029/v2-consolidation/frozen-seven-v1/manifest.json",
+        "sha256": "4800a24a1616f3eaf0e551f98bc64625567e5d25bf68273da42e022e137408ee"
+      },
+      "writer_payload_bytes_exact": true,
+      "writer_payload_path": ".scratch/roman-english-completion-20261029/v2-consolidation/frozen-seven-v1/source-postimages/src/sources/works/society-of-bollandists/acta-sanctorum/editions/1866-paris-rome-palme-october-2/artifacts/queenship-invocation-pages-20261029/source.pdf"
+    }
+  ],
+  "canonical_index_or_ref_writes": false,
+  "dirty_paths_at_final_review": 825,
+  "dirty_paths_at_initial_inventory": 825,
+  "findings": [],
+  "fixture": {
+    "path": "tools/tests/fixtures/missal-source-batch-20261023.json",
+    "sha256": "ae34d8450f42835523ee6c5c2ec44cf5d99f6289adc83654853aa47c3fbe1b97"
+  },
+  "limits": [
+    "This is a bounded pre-commit disclosure review of 15 newly retained binaries; it is not an outgoing Git graph or final merged-release audit.",
+    "No source image fidelity, translation semantics or new legal assessment was performed; exact prior source reviews and root admissions are reused and hash-checked.",
+    "Prior receipt images were rehashed where exactly referenced; hashing those images is not another visual inspection.",
+    "No whole remote source PDF was fetched, rendered or rehashed solely for this lane; the new retained payloads and their frozen writer copies were rehashed.",
+    "No owning test suite was run for this binary task. Root reported eight old CommonAcclamation expected-gap subtest failures in the first144-test run; no all-tests-pass claim is made.",
+    "The separately recorded inherited removed-owner sanitizer finding and proposed fix are outside this binary lane and remain root-owned before final publication.",
+    "Some immutable prior reviews remain available in exact frozen scratch packets and are hash-bound by the accepted source chain; this lane does not assert every original acquisition/visual receipt is newly retained publicly."
+  ],
+  "new_binary_matches_to_rejected_blobs": [],
+  "prior_image_hash_checks": {
+    "path": ".scratch/merged-publication-audit-20261030/next-cohort-disclosure/binary-review/prior-image-hash-checks.json",
+    "sha256": "20bc64a6f22f8b81844d62b49461cc81d7bab14ca3c54264624867ab419498c3"
+  },
+  "prior_review_evidence": [
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/late-marian/queen-three/roman-hymn/review/independent-review-initial.json",
+      "sha256": "77bf43361b7f1c6783490455f7ac355ca5bc10c01ade40387415613156120ab5"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/v2-consolidation/frozen-seven-v1/evidence/31afb36e43b2eb65-source-review.json",
+      "sha256": "31afb36e43b2eb652ea1c840bb721367479bae2ae97bea43b0f826cb698f8d69"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/v2-consolidation/frozen-seven-v1/evidence/fbb77043afd40e44-source_review_v2.json",
+      "sha256": "fbb77043afd40e440f72e435043f0a45782f19625b131fc3e63061a4ac73da90"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-01-cff977a5cd64.json",
+      "sha256": "cff977a5cd64495ec1f09cb39fd04c553a300b33b3ce7f9b8d46782e06b19ef7"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-02-79362b72f99c.json",
+      "sha256": "79362b72f99cf8f5801f82db3d3a7a24cdd5676c2ce1881bd8ddc1800f3ca822"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-03-bf2e4449ced7.json",
+      "sha256": "bf2e4449ced7c9ed61c13cc261f95fa3d01a49a2fd2ea74a37a688128e46c7be"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-04-a0f77ead71f3.json",
+      "sha256": "a0f77ead71f3ac6838360f960a96fac986930002462e7af3abc659c4e8cb3c0e"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-05-9ae0bc10b3de.json",
+      "sha256": "9ae0bc10b3de3156ea88c330ce5cae812c1a35a3817fd1559424ee9c1a98ad1e"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-07-d3a9cff83569.json",
+      "sha256": "d3a9cff835690c1d79da83f34a37c34d0004b014cd948c875e5063819158ac3a"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-08-b7aa0d76220c.json",
+      "sha256": "b7aa0d76220cbf32c4414bc9d79b6a0c4df169c0fbed4e190c1f2c33c10ef8c3"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-01a03e183b94872e.json",
+      "sha256": "01a03e183b94872e9c1adb53c04d711cb6bfebe844c3d8b6021f299bdfad70cc"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-06325027601a1cc3.json",
+      "sha256": "06325027601a1cc384a37c253b67e9e794d68c91b197704ede43bb89fe9dc17e"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-107329b343472b93.json",
+      "sha256": "107329b343472b934104c1dec18e22991c36f5efd970ee31069061252094b774"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-30ba22065d321290.json",
+      "sha256": "30ba22065d32129062e87d8bdf820f2abe9e8a66bf0315485610cd303085bc5b"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-ababd1f3c1d308b2.json",
+      "sha256": "ababd1f3c1d308b2b45bd254272a2452de6c14d7127b6194fba00d0749f1ccf8"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-df319c65bab50adb.json",
+      "sha256": "df319c65bab50adb6ece2c3552f1461c61956786018a14fddb158c979c0b2063"
+    }
+  ],
+  "protected_modern_whole_PDF_or_image_introduced": false,
+  "recorded_prior_image_hashes_all_exact": true,
+  "recorded_prior_image_references_checked": 100,
+  "rejected_bad_blob_ids": [
+    "72510abd2c0036f0f764fcb73fde6f95c155cf87",
+    "86325d81fbbc7e36c269bb8195251a7e64b7b8e7"
+  ],
+  "review_script_sha256": "64b50aa077fc2ccbd78eb7c1305f5201242a6b761e7de9187500752c137cd354",
+  "root_admissions": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/root-seven-decision.json",
+      "sha256": "d0802309d2518db774c3ad352f2eba03605e67cad735959444b422233ffd4874"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/root-decision.json",
+      "sha256": "6bac2ac5d0de5c2e9d50a654e5cb923721efdeac87a23bd9524922ef346b4943"
+    }
+  ],
+  "schema": "triptych-next-English-cohort-binary-disclosure-review/v1",
+  "scope": "Read-only current changed/untracked file union; all 15 binary payloads. No index, refs, canonical data, source derivation or adoption writes.",
+  "source_application_evidence": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/roman-source-application.json",
+      "sha256": "3a8bdbdc6873021e37fd7beb1cc0344826af6ac3be49107837e31bafd1a49969"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/source-batch-v3/pc-source-installation.json",
+      "sha256": "9375764ee0a7a08a2d56bbaa60f09d041698547248b4e8aa9bbb2cba342d1183"
+    }
+  ],
+  "source_epoch": {
+    "added": 193,
+    "changed_kept": 8,
+    "dropped": 0,
+    "parent_paths_kept": 7071,
+    "paths": 7264
+  },
+  "source_manifest": {
+    "path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+    "sha256": "13505e8e805b221f78f8004586ca2b4e8f2f2de0c20a2a5e28799af589464e84"
+  },
+  "status": "PASS_BOUNDED_BINARY_DISCLOSURE",
+  "total_payload_bytes": 12832936
+}

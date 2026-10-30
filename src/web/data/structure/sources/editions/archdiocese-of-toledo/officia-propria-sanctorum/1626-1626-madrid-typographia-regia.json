@@ -1,0 +1,124 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "facsimile-pdf",
+   "byte_size": 17693974,
+   "edition_owned": true,
+   "id": "artifact.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia.idus-complete-773d2c56",
+   "media_type": "application/pdf",
+   "page_count": 144,
+   "retrieved": "2026-10-30",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://idus.us.es/bitstreams/fe37734f-8f47-4993-812e-e7b2cdd10b13/download",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 330,
+   "edition_owned": true,
+   "id": "artifact.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia.three-cross-antiphons-checked-20261030",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-10-30",
+   "rights": "public-domain",
+   "rights_basis": "United States: this identified Madrid Typographia Regia printing was published in 1626, long before 1931, and its publication term has expired. The retained historical title, license and office pages contain no modern editorial contribution. A faithful mechanical scan adds no authorship to those historical words or pages. Received Latin remains public domain and is excluded from Triptych project licensing. No blanket assessment of the modern complete PDF delivery is asserted.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "facsimile-pdf",
+   "byte_size": 542251,
+   "edition_owned": true,
+   "id": "artifact.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia.title-license-and-cross-pages",
+   "media_type": "application/pdf",
+   "notes": null,
+   "page_count": 4,
+   "retrieved": "2026-10-30",
+   "rights": "public-domain",
+   "rights_basis": "United States: this identified Madrid Typographia Regia printing was published in 1626, long before 1931, and its publication term has expired. The retained historical title, license and office pages contain no modern editorial contribution. A faithful mechanical scan adds no authorship to those historical words or pages. Received Latin remains public domain and is excluded from Triptych project licensing. No blanket assessment of the modern complete PDF delivery is asserted.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": "Proper offices of the Church and Diocese of Toledo, revised to the Roman Breviary under Clement VIII as stated on the title page",
+  "date": "1626",
+  "editors": [],
+  "id": "edition.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia",
+  "jurisdiction": "Archdiocese of Toledo",
+  "language": "la",
+  "publication": "Matriti: Ex Typographia Regia, 1626.",
+  "title": "Officia propria Sanctorum Toletanae Eccl. et Dioecesis",
+  "translators": [],
+  "year": 1626
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia.three-cross-antiphons-checked-20261030",
+   "artifact_type": "checked-transcription",
+   "context": "Full checked historical antiphon bodies; the three lines are successive office antiphons separated in the original by Psalm95-97, not a copied historical Friday transfer bundle.",
+   "id": "passage.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia.three-cross-antiphons-checked-20261030",
+   "locus": "Physical lines1,3,5: complete Adoramus, complete Per lignum including Alleluia, complete Salvator; printed55-56, completePDF71-72.",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The transcription preserves all source words including the second antiphon ending Alleluia. The modern target differs by declared orthography/ampersands/pointing and selects the second body only through redemit nos. This source does not establish the historical Good Friday placement or an inferred seasonal omission rule.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "United States: this identified Madrid Typographia Regia printing was published in 1626, long before 1931, and its publication term has expired. The retained historical title, license and office pages contain no modern editorial contribution. A faithful mechanical scan adds no authorship to those historical words or pages. Received Latin remains public domain and is excluded from Triptych project licensing. No blanket assessment of the modern complete PDF delivery is asserted.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia.three-cross-antiphons-checked-20261030.json",
+   "verified_on": "2026-10-30",
+   "words": 50
+  },
+  {
+   "artifact_id": "artifact.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia.title-license-and-cross-pages",
+   "artifact_type": "facsimile-pdf",
+   "id": "passage.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia.three-cross-antiphons-page-images-20261030",
+   "locus": "Printed55-56, third nocturn antiphons of the 16 July Triumph of the Holy Cross office; complete parentPDF71-72, retained derivativePDF3-4.",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-10-30",
+   "withheld": "no-transcription"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Officia propria Sanctorum Toletanae Eccl. et Dioecesis",
+   "Toledo proper offices"
+  ],
+  "author": "Archdiocese of Toledo",
+  "category": "proper-office-collection",
+  "description": "Collection of proper saints offices for the Church and Diocese of Toledo, conforming to the Roman Breviary. The work composition date is not established here. The independently checked 1626 printing witnesses three Cross antiphons in the third nocturn of the 16 July Triumph of the Holy Cross office; this does not identify it as a Good Friday transfer rite.",
+  "id": "work.archdiocese-of-toledo.officia-propria-sanctorum",
+  "languages": [
+   "la"
+  ],
+  "title": "Officia propria Sanctorum Toletanae Ecclesiae et Dioecesis"
+ }
+}

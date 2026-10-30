@@ -1,0 +1,134 @@
+{
+  "schema": "triptych-finite28-coherent-stop-handoff/v1",
+  "state": "STOPPED_FROZEN_PENDING_ROOT_RESUME_NO_INSTALLATION_OR_ACTIVATION",
+  "subject": {
+    "path": ".scratch/roman-english-completion-20261029/finite-v3-preparation/code-freeze-28-v1/review-subject.json",
+    "sha256": "f60d81827e7c33f9b11e68e734ff3cf68f9be13b6d2b8ec433438f1afa5d42a7"
+  },
+  "pending_authority": {
+    "path": ".scratch/roman-english-completion-20261029/finite-v3-preparation/candidate-28-v1/candidate-authority-v3.json",
+    "sha256": "989bb04bba50160c01570c933616b841104b0d0f1313cce23cd6ee7bdd5592c6"
+  },
+  "apply": {
+    "path": ".scratch/roman-english-completion-20261029/finite-v3-preparation/candidate-28-v1/apply-manifest.json",
+    "sha256": "45c0a656a9ce3bc8564cb81ca96a920269683d1d6366331d1c2980f0158a82dc"
+  },
+  "inverse": {
+    "path": ".scratch/roman-english-completion-20261029/finite-v3-preparation/candidate-28-v1/inverse-manifest.json",
+    "sha256": "8345e1d7bb9e167cf1c9f47867b394178bb330f53aed305ccf532b4b37490502"
+  },
+  "preparation_receipt": {
+    "path": ".scratch/roman-english-completion-20261029/finite-v3-preparation/candidate-28-v1/preparation-receipt.json",
+    "sha256": "8703ee412cfd08ced9356e07977545139f8f97c8149b61835c1e1d2014826be0"
+  },
+  "actual_control_completion": {
+    "path": ".scratch/roman-english-completion-20261029/finite-v3-preparation/coherent-stop-28-control-completion-v1.json",
+    "sha256": "c6aa3d24be5ba033f1c0f40074727661d7291b7f5285f1c29023a5c933085caa"
+  },
+  "code": [
+    {
+      "path": ".scratch/roman-english-completion-20261029/finite-v3-preparation/prepare_v3_28.py",
+      "sha256": "7122b60cded4ca09386b681048fb1bbd8791dbd79d033c234b119f52d1b8500d",
+      "immutable_copy": ".scratch/roman-english-completion-20261029/finite-v3-preparation/code-freeze-28-v1/prepare_v3_28.py"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/finite-v3-preparation/verify_packet_28.py",
+      "sha256": "054b2cb3ff2563e341f97f2f84208ece55578b78d2111b1824d60403878521fa",
+      "immutable_copy": ".scratch/roman-english-completion-20261029/finite-v3-preparation/code-freeze-28-v1/verify_packet_28.py"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/finite-v3-preparation/test_finite28_packet.py",
+      "sha256": "920750b739aa5589e77611e8ed5fca97882349a98ab8e6d1531034befd3bf970",
+      "immutable_copy": ".scratch/roman-english-completion-20261029/finite-v3-preparation/code-freeze-28-v1/test_finite28_packet.py"
+    }
+  ],
+  "accepted_working_frontier": {
+    "path": ".scratch/roman-english-completion-20261029/finite-v3-preparation/candidate-28-v1/accepted-working-frontier.json",
+    "sha256": "a3dcf46a8729a52074206acd7d14eba718cfa646f1fd81309c5a9c9e13c8bedb"
+  },
+  "captured_code_pins": {
+    ".scratch/roman-english-completion-20261029/finite-guard/prepare_activation.py": "53eb75950f8bf58d48cbbc09e4f555638c65f7189881333b32dcf915d051e6c1",
+    ".scratch/roman-english-completion-20261029/v2-consolidation/prepare_installation_sequence.py": "54b71929bb23f2290a4f46d5a0c8073f1e96f437b548b76d0e56417443bc431f",
+    "tools/source-library": "aa7a6fef89c73e1bb20960e1d5a46d822af7bcac115bdc36dc5a48536e9843dd",
+    "tools/source-reader": "774edf3ddea2dd644e77d69609e8633850f4e1605f9e0cb2815ddd5812fca50b",
+    "tools/mass-propers": "976939c81f4fc1fa9bd7de5eadf518514c1f71bba8aefc755ba922c67f5aa310",
+    "scripts/_tooling.py": "f42654633791efe86a5222e7d2c1e80a75bfbcec94f2d34c4d06ad57e186af60",
+    "scripts/_proper_finite_latin_20261029.py": "aa925ac3883a807498b0596ce1535a4c2b93bbc2d49913782d49ea7e4736d9f5",
+    "scripts/_proper_qualified_latin.py": "0136f6bb020938867d4ca1e75816c56c363a15603a8fede2aee9126c96b24949",
+    "scripts/_proper_latin.py": "852acb6a88084aba5729e5f60e807ca4e10f9c4436f5db2b23a9fdd3fbe2da1a"
+  },
+  "captured_git_state": {
+    "start": {
+      "HEAD": "61a2b2ae6a80d61b19f409097d07016b50fb8f48",
+      "MERGE_HEAD": "2827cb6b555278b2cff28152e933d0656d513b68"
+    },
+    "end": {
+      "HEAD": "61a2b2ae6a80d61b19f409097d07016b50fb8f48",
+      "MERGE_HEAD": "2827cb6b555278b2cff28152e933d0656d513b68"
+    },
+    "working_merge_runtime_not_attributed_to_HEAD": true
+  },
+  "peer_status": {
+    "path": ".scratch/roman-english-completion-20261029/finite-v3-preparation-independent-review/coherent-stop-28-peer-status-v1.json",
+    "sha256": "fcf162f9d81bf5e2e86a58627ced492df8de76612b176f949b0ad31008124c00",
+    "scope": "Partial hash/diff review only; ZERO new28 peer tests/replays and no new28 acceptance. Prior v5/v6 static receipts remain historical.",
+    "live_handles": []
+  },
+  "counts": {
+    "old_qualified_scopes": 22,
+    "new_adopted_expression_cases": 6,
+    "pending_union_scopes": 28,
+    "legacy_scopes_separate": 2,
+    "source_effects": 91,
+    "closed_records": 185,
+    "explicit_visited_inputs": 324,
+    "LP_replacements": 3,
+    "LP_additions": 3,
+    "pre55_existing_record_token_changes": 5,
+    "actual_unittest_methods_passed": 18
+  },
+  "actual_current_canonical_authority": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json",
+    "sha256": "495e5b3672cccb8f2c3ea07398104c4b72026ffb7139de21d25087edcab1f48e",
+    "scopes": 22,
+    "changed_by_this_lane": false
+  },
+  "body_adoption_boundary": "Root separately adopted GF2,Queen2,Urban1,Omnes1 expressions and original study English for future installation. This pending28 assembled authority is not adopted/code-pinned; source and public availability remain unchanged.",
+  "excluded_pending_cases": [
+    "First Prayer",
+    "Second Prayer",
+    "Assumption"
+  ],
+  "preserved_old_frozen_records": [
+    "all old27/source72/static versions",
+    "original five-case collision446 and proof6a8",
+    "old179 protected source paths and original113 raw source paths",
+    "all existing canonical Latin and English positives and historical negatives"
+  ],
+  "omnes_collision": {
+    "capture_path": ".scratch/roman-english-completion-20261029/finite-v3-preparation/omnes-collision-worker/replay-1/collision-capture.json",
+    "capture_sha256": "ef2e55757b7080ea41aed48c1f9733ecb0f821d0005240f49356fbc74b576873",
+    "prior_route_proof_sha256": "c4387f71904c0234206c91f1cdc4b7be5c31cccc1d9b6dc8b150df4d530147ef",
+    "final_worker_receipt": {
+      "path": ".scratch/roman-english-completion-20261029/finite-v3-preparation/omnes-collision-worker/final-verification.json",
+      "sha256": "758ef16f53177d2bdaa45f8c5d5674a5fb7334f656f7ae2836c3ad3c55899ffe"
+    },
+    "historical_6aeb_only": true,
+    "prior_routes_empty": true,
+    "child_process_and_pipe_handles_closed": true
+  },
+  "metadata_reviews": {
+    "Urban935be": "included as exact raw canonical-retention postimage within91",
+    "Queen6129": "included as exact raw canonical-retention postimage within91",
+    "both_static_scope_not_postmerge_runtime_or_rights_grant": true
+  },
+  "resume_only_followup": [
+    "Recheck exact named preimages/code/frontier against then-current root state without broad rediscovery.",
+    "Finish independent28 tuple/source/runtime review; no new28 peer acceptance exists yet.",
+    "Root alone may adopt the exact compiled authority, create exact constant-only activation postimage and authorize source91 installation.",
+    "After any authorized installation, root owns source epoch, generation, currentness/fidelity gates and publication; none performed here."
+  ],
+  "active_operations": [],
+  "canonical_source_code_index_ref_writes_by_this_lane": false,
+  "new_work_reviews_or_captures_after_stop": false
+}

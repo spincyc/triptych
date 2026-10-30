@@ -1,0 +1,34 @@
+{
+  "owner_generation_authorized": true,
+  "parent_git_revision": "702f650020d69a45aa747b1c5b5e30be6c42ca59",
+  "root_adoptions": {
+    "PC_first18": "6bac2ac5d0de5c2e9d50a654e5cb923721efdeac87a23bd9524922ef346b4943",
+    "roman_seven": "d0802309d2518db774c3ad352f2eba03605e67cad735959444b422233ffd4874"
+  },
+  "schema": "triptych-next-english-source-settlement/v1",
+  "source_epoch_acceptance_or_complete_English_claimed": false,
+  "source_writers_closed": true,
+  "status": "SOURCESETTLED",
+  "writers": [
+    {
+      "path": ".scratch/roman-english-completion-20261029/v2-consolidation/actual-95-application-v1/application-receipt.json",
+      "role": "Roman95actualapplication",
+      "sha256": "3a8bdbdc6873021e37fd7beb1cc0344826af6ac3be49107837e31bafd1a49969"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/roman-1962/actual-authority-activation.json",
+      "role": "Root2actualactivation",
+      "sha256": "55a3ea92a0d4892607d7376bf16c339b7fc5e1aeb6b82fd1a4af663ded7fadff"
+    },
+    {
+      "path": ".scratch/postconciliar-english-completion-20261029/first18-authorized-install-v1/INSTALLED-SOURCE-MANIFEST.json",
+      "role": "PC18actualinstallation",
+      "sha256": "9375764ee0a7a08a2d56bbaa60f09d041698547248b4e8aa9bbb2cba342d1183"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/ordinary/source-reader-metadata-files.json",
+      "role": "Ordinary10metadata",
+      "sha256": "bf1a28a336cfcc16647d702fef672dea74257a627d5a63f0619be2ac434151a5"
+    }
+  ]
+}

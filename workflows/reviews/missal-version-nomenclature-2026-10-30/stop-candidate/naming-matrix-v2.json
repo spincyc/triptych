@@ -1,0 +1,393 @@
+{
+  "schema": "triptych-missal-version-nomenclature-proposal/v2",
+  "recorded_on": "2026-10-30",
+  "state": "SCRATCH DESIGN ONLY; root checkpoint/publication then canonical authorization required",
+  "baseline_head": "4e8e9fcf7d8947d5b99068d8f05b21156f70abe4",
+  "axes": [
+    "liturgical book-state/reform instrument and effective date",
+    "actual source manifestation, printing/reprint year, language, publisher",
+    "our reader projection with unit-specific attestation/rights/coverage"
+  ],
+  "key_rule": "Book keys roman-<language>[-<territory>]-<publication-year>-<edition-or-manifestation-qualifier>. Reader view keys identify the existing projection rather than pretend its mixed bodies are a complete book. Schema/asset revisions are separate from book dates. No key for an unidentified interval. Exact source-library edition/artifact/passage IDs remain unchanged.",
+  "current_reader_keys": [
+    "roman-bonn-2004-study",
+    "roman-1962",
+    "roman-2008-study"
+  ],
+  "correspondence_warnings": {
+    "roman-bonn-2004-study": "Partial study projection. Three Pentecost Latin prayers are collated to the Bonn2004reprint of edition28; other Proper/English material is inherited from the1962resident corpus and the Ordinary uses an1861lay witness. Those bodies are not thereby attested toBonn or an original1920/1948printing. Calendar appointments remain a finding aid.",
+    "roman-2008-study": "Partial study projection: 2008 book base with later source-recorded calendar additions; no single frozen or complete-current calendar horizon is established. Published wording comes from identified historical sources or original study translations; many comparisons use a secondary 2002 reproduction or the 1981 Lectionary. No complete 2008 altar book is held and no body is graded exact 2008 target. Later appointments, source distinctions and actual gaps remain unchanged.",
+    "roman-1962": "Partial source-qualified reader of the1962typical edition. Each body retains its actual original, historical-translation or project-study witness and rights evidence; the label does not turn partial coverage into a complete book."
+  },
+  "eligibility_rule": "Offer a view only after the actual publisher output or a supported connected source reading route contains a nonempty lawful body in any language. Do not require English or exact-target grade. Incipits, citation strings, title/index/decree metadata, empty translations, structural slots and absent records alone do not qualify. Actually served Bible/source bodies may be evidence of readable contribution only with their reconstruction/source qualification; they never prove exactMissalwording. Preserve scholarly metadata-only versions outside the selector. All3currentviews independently qualify via actual non-Bible bodies.",
+  "identity_migration_rule": "Legacy accepted inputs resolve to the same existing structure/source object. New human names/public keys do not rewrite source body bytes, source coordinates or historical receipts. Public-key normalization is lexical compatibility, not attestation. Preserve v1internal semantic edition/event IDs unless a deliberate reader-state v2 migration is adopted; any narrowed/new target identity requires that explicit version migration. Never alias abstract1920toBonn or2002to2008 as book equivalence.",
+  "rows": [
+    {
+      "old_catalog_id": "roman-1920",
+      "canonical_book_key": "roman-la-1920-typica",
+      "formal_name": "Missale Romanum, Vatican typical edition (1920)",
+      "language": "la",
+      "edition_kind": "typical-edition",
+      "publication_year": 1920,
+      "manifestation": "Exact Vatican impression unauthenticated; identifiable conformed1922Mame and2004Bonn witnesses remain distinct.",
+      "publisher": "Vatican printing; exact impression not in hand",
+      "declaration_date": "1920-07-25",
+      "source_basis": [
+        "bonn-title"
+      ],
+      "basis_limit": "1920decree reprinted in Bonn, independently read; not an original1920title-page authentication.",
+      "reader": "No separate reader option; remove mistaken calendar association without deleting this scholarly identity.",
+      "reader_view_key": null
+    },
+    {
+      "old_catalog_id": "roman-transition-1956-1960",
+      "canonical_book_key": null,
+      "formal_name": "Unidentified Roman Missal witness, 1956–1960 interval",
+      "language": "la",
+      "edition_kind": "research-gap-not-a-version",
+      "publication_year": null,
+      "manifestation": "No complete Missal printing has been identified for this interval. The1956OrdoHebdomadaeSanctaeinstauratus is a separate HolyWeek book.",
+      "publisher": "Unestablished for a complete Missal",
+      "source_basis": [
+        "maxima-redemptionis"
+      ],
+      "basis_limit": "Effective HolyWeek reform date does not create a Missal edition or establish one unchanged1956–1960state.",
+      "reader": "Excluded: no actual assembled or readable source body contributed under an identified complete Missal version.",
+      "reader_view_key": null
+    },
+    {
+      "old_catalog_id": "roman-1962",
+      "canonical_book_key": "roman-la-1962-typica",
+      "formal_name": "Missale Romanum, typical edition (1962)",
+      "english_display": "Roman Missal — 1962 typical edition",
+      "short_display": "1962 typical edition",
+      "language": "la",
+      "edition_kind": "typical-edition",
+      "publication_year": 1962,
+      "manifestation": "Vatican typical edition, separately from Benziger1962conformed printing and later digitizations.",
+      "publisher": "Typis Polyglottis Vaticanis, Vatican City (registered source edition); decree independently confirms Vatican printing",
+      "declaration_date": "1962-06-23",
+      "source_basis": [
+        "vatican-1962-decree"
+      ],
+      "basis_limit": "1960rubrics approval and1961effective year are separate from1962book year. Individual inherited/antecedent source qualifications remain.",
+      "reader": "Retain current populated view.",
+      "reader_view_key": "roman-1962",
+      "storage_calendar": "roman-1962",
+      "aliases": []
+    },
+    {
+      "old_catalog_id": "roman-1970",
+      "canonical_book_key": "roman-la-1970-typica1",
+      "formal_name": "Missale Romanum, first postconciliar typical edition (1970)",
+      "language": "la",
+      "edition_kind": "typical-edition",
+      "publication_year": 1970,
+      "manifestation": "First postconciliar Latin typical edition;1969constitution is a distinct act.",
+      "publisher": "Typis Polyglottis Vaticanis, Vatican City (registered bibliographic identity)",
+      "declaration_date": "1970-03-26",
+      "source_basis": [
+        "clerus-2002-frontmatter",
+        "vatican-2002-presentation"
+      ],
+      "basis_limit": "Six inspected1970passages are restricted, text-free metadata in this project, not an available complete reader or redistributable body.",
+      "reader": "Excluded as separate option pending actual supported contributed body route.",
+      "reader_view_key": null
+    },
+    {
+      "old_catalog_id": "roman-1971-reimpressio-emendata",
+      "canonical_book_key": "roman-la-1971-typica1-emended",
+      "formal_name": "Missale Romanum, emended reprint of the first postconciliar typical edition (1971)",
+      "language": "la",
+      "edition_kind": "emended-reprint",
+      "publication_year": 1971,
+      "manifestation": "1971emended reprint of1970edition; no inspected exact impression.",
+      "publisher": "Exact imprint/impression unverified; do not fill it from neighboring editions",
+      "source_basis": [
+        "clerus-2002-frontmatter"
+      ],
+      "basis_limit": "Positive printing-history identification only, no source body.",
+      "reader": "Excluded.",
+      "reader_view_key": null
+    },
+    {
+      "old_catalog_id": "roman-1975-editio-typica-altera",
+      "canonical_book_key": "roman-la-1975-typica2",
+      "formal_name": "Missale Romanum, second postconciliar typical edition (1975)",
+      "language": "la",
+      "edition_kind": "typical-edition",
+      "publication_year": 1975,
+      "manifestation": "Second typical edition: decree says altera;2002printing history also calls it secunda.",
+      "publisher": "Typis Polyglottis Vaticanis, Vatican City (registered bibliographic identity)",
+      "declaration_date": "1975-03-27",
+      "source_basis": [
+        "clerus-2002-frontmatter",
+        "vatican-2002-presentation"
+      ],
+      "basis_limit": "A small OrdoMissae fragment does not establish a complete Missal.",
+      "reader": "Excluded; no supported actual-body reader route under this version.",
+      "reader_view_key": null
+    },
+    {
+      "old_catalog_id": "roman-2002-editio-typica-tertia",
+      "canonical_book_key": "roman-la-2002-typica3",
+      "formal_name": "Missale Romanum, third postconciliar typical edition (2002)",
+      "language": "la",
+      "edition_kind": "typical-edition",
+      "publication_year": 2002,
+      "manifestation": "2002published book; approval/declaration in2000. Registered secondary digital reproduction0b458944is not an authenticated printed exemplar.",
+      "publisher": "Typis Vaticanis, Vatican City; sold by Libreria Editrice Vaticana",
+      "approval_date": "2000-04-10",
+      "declaration_date": "2000-04-20",
+      "source_basis": [
+        "clerus-2002-frontmatter",
+        "vatican-2002-presentation",
+        "ddw-current-catalogue"
+      ],
+      "basis_limit": "Do not date the book2000or equate secondary2002with2008. Existing secondary witness/source study contributions remain under explicit view provenance.",
+      "reader": "No separate current option; retain the source witness and concrete contributions without inventing a full2002reader.",
+      "reader_view_key": null
+    },
+    {
+      "old_catalog_id": "roman-2008-reimpressio-emendata",
+      "canonical_book_key": "roman-la-2008-typica3-emended",
+      "formal_name": "Missale Romanum, third typical edition, emended reprint (2008)",
+      "english_display": "Roman Missal — 2008 base with recorded additions",
+      "short_display": "2008 base + additions · study",
+      "language": "la",
+      "edition_kind": "emended-reprint",
+      "publication_year": 2008,
+      "manifestation": "Emended reprint of2002third typical edition, expressly not a fourth/new typical edition. No complete authenticated2008altar-book artifact is held.",
+      "publisher": "Typis Vaticanis; sale by Libreria Editrice Vaticana",
+      "source_basis": [
+        "ddw-current-catalogue",
+        "notitiae-2008-notice",
+        "usccb-teresa-current"
+      ],
+      "basis_limit": "Current view includes later calendar additions and has no established single frozen calendar horizon. Wording comes from historical/study sources, often compared with secondary 2002 or the 1981 Lectionary; bounded official 2008 variation evidence is separate. Zero bodies are exact 2008 target. No appointment is removed or upgraded by this naming change.",
+      "reader": "Retain populated explicitly qualified study view, not an authenticated2008source edition.",
+      "reader_view_key": "roman-2008-study",
+      "storage_calendar": "postconciliar",
+      "aliases": [
+        "postconciliar"
+      ],
+      "projection_calendar_horizon": {
+        "single_frozen_cutoff": null,
+        "complete_current_calendar_claim": false,
+        "statement": "The actual projection combines a 2008 book target identity with later source-recorded calendar additions. It is neither a calendar frozen at 2008 nor an authenticated complete current calendar. The book year, applied variation acts and dataset revision must be separate fields.",
+        "known_later_entry_examples": [
+          {
+            "key": "blessed-virgin-mary-mother-church",
+            "date": "2018-02-11",
+            "basis": "Official pinned Dicastery catalogue: inscription decree; current source entry begins line26476."
+          },
+          {
+            "key": "our-lady-loreto",
+            "date": "2019-10-07",
+            "basis": "Official pinned Dicastery catalogue: inscription decree; current source entry begins line53498."
+          },
+          {
+            "key": "saint-faustina-kowalska-virgin",
+            "date": "2020-05-18",
+            "basis": "Official pinned Dicastery catalogue: inscription decree; current source entry begins line66201."
+          },
+          {
+            "key": "saints-martha-mary-lazarus",
+            "date": "2021-01-26",
+            "basis": "Official pinned Dicastery catalogue: expanded memorial decree; current source entry begins line62453."
+          },
+          {
+            "key": "saint-teresa-calcutta-virgin",
+            "date": "2024-12-24",
+            "english_confirmation_date": "2025-06-24",
+            "basis": "Current source entry begins line64714 and cites USCCB; freshly re-opened current official USCCB page confirms inscription and Missal/Lectionary English dates. Later2026Liturgy-of-Hours approval is a different book and supplies no Missal version."
+          }
+        ],
+        "example_list_exhaustive": false
+      }
+    },
+    {
+      "old_catalog_id": "roman-missal-en-us-2011",
+      "canonical_book_key": "roman-en-us-2011-typica3",
+      "formal_name": "The Roman Missal, English for the United States according to the third typical edition (2011)",
+      "language": "en-US",
+      "edition_kind": "approved-territorial-expression",
+      "publication_year": 2011,
+      "manifestation": "CatholicBookPublishing altar printing, NewJersey,2011title date; publisher preview produced2018–2019and exact impression unestablished.",
+      "publisher": "Catholic Book Publishing Corp., New Jersey",
+      "source_basis": [
+        "cbp-2011-title"
+      ],
+      "basis_limit": "ApprovedU.S.English is separate from old human translations, project study English, other national expressions and Latin2008.15-pagepreview metadata does not authorize bundled body publication.",
+      "reader": "Excluded as standalone option; no approved bundled body contribution.",
+      "reader_view_key": null
+    },
+    {
+      "old_catalog_id": null,
+      "old_runtime_id": "roman-pre-1955",
+      "canonical_book_key": "roman-la-2004-bonn-ed28",
+      "formal_name": "Missale Romanum, Bonn2004reprint of the28th edition conformed to the Vatican typical edition",
+      "english_display": "Roman Missal — Bonn 2004 witness study",
+      "short_display": "Bonn 2004 witness study",
+      "language": "la",
+      "edition_kind": "conformed-printing-reprint",
+      "publication_year": 2004,
+      "manifestation": "AedibusPalmarum,Bonn; title explicitly ReimpressioeditionisXXVIIIjuxtatypicamVaticanam.1920decree is reprinted separately.",
+      "publisher": "Aedibus Palmarum, Bonn am Rhein",
+      "represented_liturgical_horizon": {
+        "date": "c.1954",
+        "precision": "inferred-and-composite",
+        "basis": "Registered source evidence includes StPiusX1954and lacks StJosephtheWorker1955; rubrics/internal layers do not attest one exact historical day."
+      },
+      "source_basis": [
+        "bonn-title"
+      ],
+      "basis_limit": "2004is the actual manifestation date, not the liturgical reform point. No1948printing is identified. Only3PentecostLatinbodies are exactlycollated toBonn; inherited1962English/proper residence and1861Ordinary are not thereby Bonn-attested.",
+      "reader": "Retain the same populated partial projection with explicit correspondence warning; do not silently retarget all loaded objects.",
+      "reader_view_key": "roman-bonn-2004-study",
+      "storage_calendar": "roman-pre-1955",
+      "aliases": [
+        "roman-pre-1955"
+      ]
+    }
+  ],
+  "primary_sources": [
+    {
+      "id": "bonn-title",
+      "url": "https://archive.org/download/MissaleRomanum1920/MissaleRomanum1920.pdf",
+      "local_path": ".scratch/reader-completion-20261026-pre1955/bonn-accepted-witness.pdf",
+      "sha256": "b676ce5c9598b434ac6b356dd48a49c7e864deb49a45480db1f2a5068738ca1d",
+      "bytes": 16787183,
+      "grade": "page-image-read",
+      "bounded_finding": "Artifact1 title page and3 decree; complete registered PDF rehashed, title raster independently image-read. Exact2004 reprint/editionXXVIII/Bonn/AedibusPalmarum; no exact original year is printed on title.",
+      "artifact_page": 1,
+      "raster": ".scratch/missal-version-nomenclature-20261030/evidence/bonn-title.png",
+      "raster_sha256": "2ab1135d44d2660b7e1d12b93a709d91a54d3432925187b8dd2b9c8ebdd2718c"
+    },
+    {
+      "id": "vatican-1962-decree",
+      "url": "https://media.churchmusicassociation.org/pdf/missale62.pdf",
+      "local_path": ".scratch/reader-completion-20261026-latin-absent-nodes/private/cmaa-1962-648fdb8f.pdf",
+      "sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "bytes": 82815941,
+      "grade": "page-image-read",
+      "bounded_finding": "Artifact2 complete23June1962 decree declares present Vatican printing typical; freshly image-read. Artifact1 is a CMAA cover, not a newly inspected original book title page. Publisher spelling in source edition catalogue remains recorded rather than newly proved from a title.",
+      "artifact_page": 2,
+      "raster": ".scratch/missal-version-nomenclature-20261030/evidence/vatican-1962-decree.png",
+      "raster_sha256": "c353ef40e35fd680ac5d927596b7208f9ac156a6b33ba01dd303b0571c918096"
+    },
+    {
+      "id": "ddw-current-catalogue",
+      "url": "https://www.cultodivino.va/en/formazione/pubblicazioni/libri-liturgici/missale/missale-romanum.html",
+      "local_path": ".scratch/missal-version-nomenclature-20261030/evidence/ddw-current-missale-catalogue.html",
+      "sha256": "61df0c94f42bf7c6caae77309a2c3a37a43b4096766314cd575f3ee196d56f49",
+      "bytes": 17651,
+      "grade": "official-page-read",
+      "bounded_finding": "Official current catalogue calls the book third typical edition2002, emended reprint2008; later variations are separate entries."
+    },
+    {
+      "id": "clerus-2002-frontmatter",
+      "url": "https://www.clerus.org/bibliaclerusonline/en%20/gkz.htm",
+      "local_path": ".scratch/missal-version-nomenclature-20261030/evidence/clerus-2002-frontmatter.html",
+      "sha256": "a4e073275289e4d64e69cb4c11af00d60cdb45c65f80e3c8df06981ebef768e4",
+      "bytes": 44680,
+      "grade": "official-transcription-read",
+      "bounded_finding": "Holy See clergy portal transcription of2002 title, printing history and1970/1975/2000 decrees. Distinguishes1970,1971reprint,1975second and2002third;1970decree26March,1975decree27March,2000approval10April/decree20April. This is an official-hosted transcription, not a newly authenticated page-image facsimile."
+    },
+    {
+      "id": "vatican-2002-presentation",
+      "url": "https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2002/03/22/0150/00449.html",
+      "local_path": ".scratch/missal-version-nomenclature-20261030/evidence/vatican-2002-presentation.html",
+      "sha256": "bbd782b7d050cc9d6cf0711eed0deb9f32480c902d42f95153f94b084f75210a",
+      "bytes": 35547,
+      "grade": "official-page-read",
+      "bounded_finding": "Official22March2002 presentation confirms publication of third typical edition, earlier1970/1975 editions and distinct approval/decree dates in2000."
+    },
+    {
+      "id": "notitiae-2008-notice",
+      "url": "https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2000/notitiae-44-%282008%29/Notitiae-505-506-2008.pdf",
+      "local_path": ".scratch/missal-version-nomenclature-20261030/evidence/notitiae-505-506-2008.pdf",
+      "sha256": "38234f79576bf63a23e63b6ebd20d294ddcdd0c91382ea379cff627c8a08b40a",
+      "bytes": 1205984,
+      "grade": "page-image-read",
+      "bounded_finding": "Complete2008 institutional notice at artifact131, independently image-read: emended reprint, expressly not a new typical edition; printed byTypisVaticanis and sold throughLEV.",
+      "artifact_page": 131,
+      "raster": ".scratch/missal-version-nomenclature-20261030/evidence/2008-reprint-notice.png",
+      "raster_sha256": "79ffa5ebec487737a9799118b6b39c222be8c7b5b9d249c2d782bf575bd609eb"
+    },
+    {
+      "id": "maxima-redemptionis",
+      "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_19551116_maxima-redemptionis_la.html",
+      "local_path": ".scratch/missal-version-nomenclature-20261030/evidence/1955-maxima-redemptionis.html",
+      "sha256": "20dee761075be774fd206a6f0f58eb7e0a944531f6faf97f931c91a837775752",
+      "bytes": 26954,
+      "grade": "official-page-read",
+      "bounded_finding": "Official1955decree n2 prescribes restored HolyWeek from25March1956. A reform/effective-date boundary does not identify any complete Missal printing."
+    },
+    {
+      "id": "cbp-2011-title",
+      "url": "https://b2c-cbp-assets.s3.amazonaws.com/pdfs/9780899420738.pdf",
+      "local_path": ".scratch/missal-version-nomenclature-20261030/evidence/cbp-2011-preview.pdf",
+      "sha256": "ab44fd0a3677874c78821934ddb460f12f75aea6172d2f1dd3ead6e98f2b2944",
+      "bytes": 1076966,
+      "grade": "page-image-read",
+      "bounded_finding": "Publisher preview complete artifact1 title image freshly read:2011, CatholicBookPublishingCorp.,NewJersey, approvedUS English according to third typical edition. PDF is only15pages and impression identity remains unestablished.",
+      "artifact_page": 1,
+      "raster": ".scratch/missal-version-nomenclature-20261030/evidence/cbp-2011-title.png",
+      "raster_sha256": "abc6a3031c3f91c94fa36a93747fca3f13894485c2a78ac5ceada7d125dfb19b"
+    },
+    {
+      "id": "usccb-teresa-current",
+      "url": "https://www.usccb.org/prayer-worship/liturgical-year/saint-teresa-of-calcutta",
+      "local_path": ".scratch/missal-version-nomenclature-20261030/evidence/usccb-teresa-current.html",
+      "sha256": "2a6c333466c67bc982db1c5c9b2b1792058e6504752ed92a115e606efe0b60aa",
+      "bytes": 50539,
+      "grade": "official-page-read",
+      "bounded_finding": "The source entry already carries this memorial. The current USCCB page records General Roman Calendar inscription ordered on24December2024 and Missal/Lectionary English confirmation on24June2025. Its2026Hours approval concerns another book. These facts prove a later-than2008 projection ingredient, not completeness through2025or2026. No protected English body is copied into the proposal."
+    }
+  ],
+  "independent_inventory": {
+    "path": ".scratch/missal-version-nomenclature-20261030/inventory/PACKET-SHA256.json",
+    "sha256": "2f72dc7261c127f64bb45a8584544a78b528edebf44184943cbdad83fa068f6e",
+    "report_path": ".scratch/missal-version-nomenclature-20261030/inventory/REPORT.md",
+    "report_sha256": "c79f0b128ed1a5e9d1ea6caecaadb53eebd06838252061d42e1d5440f68d2ca3"
+  },
+  "no_canonical_edits": true,
+  "future_required_guidance_reading": "Before canonical implementation, re-read remaining owning roadmap/web-data/source/schema and publication/build guidance in full as required, including any changed baseline. Current research fully read missals, recensions, reader vision, reader-state and Lectern guide; current roadmap completion-plan section read, historical remainder not newly reread in this lane.",
+  "successor": {
+    "predecessor_matrix": {
+      "path": ".scratch/missal-version-nomenclature-20261030/design/NAMING-MATRIX-v1.json",
+      "sha256": "c800778e9ebda1d6d297f03710b0fd5c9ee81892d7def70f11f7fb6dcc0c90aa"
+    },
+    "predecessor_plan": {
+      "path": ".scratch/missal-version-nomenclature-20261030/design/IMPLEMENTATION-PLAN-v1.md",
+      "sha256": "454104bc53827517f33beeaee451bd143d3e0be7faab5ea7df4a6536dcc439a3"
+    },
+    "cold_review": {
+      "path": ".scratch/missal-version-nomenclature-20261030/cold-review/REVIEW-RECEIPT-v1.json",
+      "sha256": "6d0064c3491325fe97e2d02d01f8f37f681fd487a4a1d1ceb91d186aa6791e9d"
+    },
+    "changes": [
+      "R1: make the post-2008 calendar mixture visible separately from wording uncertainty; no frozen/current calendar cutoff is asserted.",
+      "R2: specify the shared bidirectional URL encoder/decoder and CLI normalization before directory partitioning, preserving internal v1 identity."
+    ],
+    "body_source_or_rights_change": false
+  },
+  "lexical_compatibility_boundary": {
+    "owner": "src/web/browser/liturgy/reader-state.js: serializeLegacy(), with a descriptor-aware bidirectional public-key decoder/encoder or equivalent shared facade",
+    "production_callers": [
+      "src/web/browser/liturgy/day-reader.js:2399",
+      "src/web/browser/liturgy/day-reader.js:2781",
+      "src/web/browser/liturgy/propers-reader.js:684",
+      "scripts/lectern/adapters/liturgy.js:859"
+    ],
+    "cli_boundary": "Normalize public/legacy calendar keys before scripts/_calendars.partition() applies its directory-name filter; load_document()-only mapping is too late.",
+    "preservation": "Normalize only declared missal/peer-missal input and output fields, plus explicit selector/preference/CLI fields. Preserve v1 internal edition IDs, source/event IDs, semantic location, forms, opaque source-qualified choice IDs and unknown compatibility envelope values. No global substring replacement.",
+    "required_proof": [
+      "Old and new spellings produce equal normalized v1 states, exact body hashes and semantic event hashes.",
+      "Decode then encode emits canonical public keys in browser and Lectern Share, on both Compare sides.",
+      "Stored preferences and accepted CLI aliases select the same structure; unknown, ambiguous and duplicate aliases refuse.",
+      "A later-than2008 memorial opens through the new canonical study-view key and retains explicit temporal/correspondence limits in identity, Study, unavailable and print contexts."
+    ]
+  }
+}

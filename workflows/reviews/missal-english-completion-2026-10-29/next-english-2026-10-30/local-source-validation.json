@@ -1,0 +1,101 @@
+{
+  "English_coverage": {
+    "modern-Roman-study": {
+      "available": 173,
+      "gaps": 401,
+      "targets": 574
+    },
+    "roman-1962": {
+      "available": 1414,
+      "gaps": 34,
+      "targets": 1448
+    },
+    "roman-bonn-witness-study": {
+      "available": 1374,
+      "gaps": 17,
+      "inapplicability_masks": 57,
+      "targets": 1391
+    }
+  },
+  "date": "2026-10-30",
+  "exact2008_target_or_completeEnglish_or_legacy70_acceptance_claimed": false,
+  "inherited_consumer_finding": {
+    "actual_candidate_invalid_resident_marked_bodies": 0,
+    "source": "scripts/_proper_latin.py",
+    "status": "separately reviewed removed-marker sanitizer correction must be applied before final merged publication"
+  },
+  "parent_git_revision": "702f650020d69a45aa747b1c5b5e30be6c42ca59",
+  "promise_ledger": {
+    "complete": 80,
+    "no_new_completion_claim": true,
+    "tracked": 102
+  },
+  "release_binding_check": {
+    "exit": 0,
+    "log_sha256": "81b5c9979e16b7295a385dc9fd585e88bef46d1c28bd0643ee7e4e47dc373c3f",
+    "refreshed_only_reviewed_paths": 583,
+    "stale": 0
+  },
+  "remaining_publication_work": [
+    "Coherent source commit on feature/missal-reader",
+    "Separate narrow sanitizer correction",
+    "Ordinary merge of current origin/main; preserve incoming papal work",
+    "Fresh owning generation and scoped bindings for merged tree",
+    "Full merged source and public/preview artifact checks, affected native browser/source reading paths",
+    "Exact outgoing object audit, ordinary main push, CI and live verification"
+  ],
+  "schema": "triptych-next-English25-local-source-validation/v1",
+  "source_aggregate": {
+    "command": "make PYTHON=python check-sources",
+    "exit": 0,
+    "log_sha256": "c3c66fd5520c0e7f3cb9c6d51ff07c913d7cbe50b1dc52d8adeede3e96f60e6a"
+  },
+  "source_epoch": {
+    "acceptance_sha256": "5ae2464f2e7a73218262bf91473de8cbcc98e54840dc19d22b02dcb89b110072",
+    "added": 193,
+    "changed_kept": 8,
+    "fixture_sha256": "ae34d8450f42835523ee6c5c2ec44cf5d99f6289adc83654853aa47c3fbe1b97",
+    "manifest_sha256": "13505e8e805b221f78f8004586ca2b4e8f2f2de0c20a2a5e28799af589464e84",
+    "original_Git_replays_preserved": 17,
+    "original_fields_preserved": 12,
+    "paths": 7264,
+    "strict_helper_unchanged_sha256": "f60498c9c9f28f72d69d729b1d086044fa3877803327bb4e16d779c479ad55b1"
+  },
+  "status": "source cohort validated locally; main reconciliation, sanitizer repair, final artifact/browser gates and publication pending",
+  "test_evidence": {
+    "additional_consumers": {
+      "failed_methods": 1,
+      "log_sha256": "4b82968938940d069657e282895d6f3c69c777ed62f95dfd0757ba477ab52507",
+      "skip_reason": "One- or two-digit census totals cannot be distinguished from ordinary prose by the collision detector. No source-fidelity or translation check is waived.",
+      "skipped_census_number_collision_subcases": 6,
+      "tests_run": 77
+    },
+    "corrected_canonical_executions": [
+      {
+        "exit": 0,
+        "log_sha256": "93da03b9d08bbcdc8494acee487eef14286ff2196f2d87edd8f3600d9f6e7b25",
+        "module": "tools.tests.test_postconciliar_common_acclamation_english",
+        "tests_run": 4
+      },
+      {
+        "exit": 0,
+        "log_sha256": "2a6f9e0453ed9078d48bf45abc7de6f240a8ce4593159f4d8061590170c13877",
+        "test": "tools.tests.test_propers_census.EnglishCoverageTests.test_publication_bound_translations_fail_closed_on_any_stale_edge",
+        "tests_run": 1
+      }
+    ],
+    "current_methods": 222,
+    "current_modules": 13,
+    "evidence_kind": "composed canonical executions; not a fresh single clean 222-test run",
+    "expectation_findings": "Both omissions predate702: four Common English dictionaries already present unchanged (two Bute public-domain and two original Virgo study abridgments), and four existing Lasance publication bindings. Corrected tests preserve all historical gaps, remaining absences, Latin holds and stale-edge refusals.",
+    "historical_failures_retained": true,
+    "initial_source_consumers": {
+      "failed_methods": 2,
+      "failed_subcases": 8,
+      "log_sha256": "83dd967db92b74be5445f29f49f2a9e456b76fca1553d825d045a36947dca615",
+      "tests_run": 144
+    },
+    "unresolved_failures": []
+  },
+  "tmt_check": "PASS"
+}

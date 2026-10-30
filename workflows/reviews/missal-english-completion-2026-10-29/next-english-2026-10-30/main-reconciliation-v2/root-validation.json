@@ -1,0 +1,78 @@
+{
+  "all_five_release_gates_pass": true,
+  "browser_scope": {
+    "Nativity_cases": 8,
+    "SourceReader_exact_English_cases": 24,
+    "SourceReader_pointer_routes": 4,
+    "SourceReader_withheld_clear_cases": 2,
+    "affected_day_cases": 14,
+    "diagnostics": "zero HTTP, console and request problems in finalized executions; probe corrections retained separately",
+    "exact_English_visible": 62,
+    "expected_older_applicability_refusals": 6,
+    "fresh_native_assertions": 136,
+    "generated_materialization_cases": 68
+  },
+  "final_browser_report": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/main-reconciliation-v2/final-browser-validation.json",
+    "sha256": "16aa73b191e02b0d46a3c4ce10f713acacceb0a7f32b317afee78011574eb255"
+  },
+  "fixture_sha256": "3bcf736daf2c6afd3eabb2bfd3f3e8528beddb513d1c496051a25255b9b933b3",
+  "generated_English_availability": {
+    "roman-1962": [
+      1414,
+      1448
+    ],
+    "roman-2008-study": [
+      173,
+      574
+    ],
+    "roman-bonn-2004-study": [
+      1374,
+      1391
+    ]
+  },
+  "incoming_main": "2827cb6b555278b2cff28152e933d0656d513b68",
+  "limits": [
+    "Availability counts represented text targets, not complete books or current altar-book fidelity.",
+    "The older Common remains subject to existing source-applicability refusal; generated English availability does not override that reader restriction.",
+    "The70 earlier study-English drafts retain open fidelity/source debt.",
+    "Exact2008 book-body fidelity, modern source acquisition/distribution, broader rite modeling, and real maintainer terminal acceptance remain open.",
+    "New missal nomenclature is reviewed separately and is not installed in this checkpoint.",
+    "No new permission terms or release approval; only64 reviewed source bindings refreshed.",
+    "Builds used the resolved merged working tree before the ordinary merge commit. Audit metadata is not an artifact input.",
+    "The exact outgoing-object audit and push/deployment are separate post-commit closure evidence."
+  ],
+  "manifest_sha256": "ea29e0b2f4ae20bb73626f88070608a5a7b76a2dead18a3d7daee32ebc3c9f2b",
+  "original_raw_replay_streams": 17,
+  "release_gate_results": "final-release-gates.json",
+  "routine_checks": {
+    "git_diff_check": "PASS",
+    "promised_deliverables": "PASS:102 tracked,80 complete; English and nomenclature remain in_progress",
+    "tmt_check": "PASS"
+  },
+  "schema": "triptych-root-merged-next25-validation/v1",
+  "source_cohort_commit": "4403b11f9800f347a381c1b89d575a5dae7b79a5",
+  "source_epoch_acceptance": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/sanitizer-correction/source-batch-acceptance.json",
+  "source_inputs": 7264,
+  "source_parent": "61a2b2ae6a80d61b19f409097d07016b50fb8f48",
+  "test_executions": [
+    {
+      "limit": "Not a single clean 292-test run. Unchanged successful methods compose with the explicit corrected rerun.",
+      "private_log_sha256": "bedc63e9fc2b4f63d83099d5f7c0469d81e9323b89059d099b2e116db64f906c",
+      "result": "one stale current-helper checksum assertion failed; six numeric census collision subcases skipped",
+      "tests": 292
+    },
+    {
+      "limit": "Source guards plus complete affected phase5 module, after explicit reviewed test and source-epoch successor.",
+      "private_log_sha256": "e44dd9afc827494b3292b72d41c4300ba7220a43bf88d5a64bc8a10d27c4fe11",
+      "result": "PASS",
+      "tests": 24
+    },
+    {
+      "limit": "Publication and encyclical index modules, including incoming main tests.",
+      "private_log_sha256": "a5146851c06f3fa99b53e14af0cd27767abbe1cbdeafbb0225db7ffed4a56d29",
+      "result": "PASS",
+      "tests": 171
+    }
+  ]
+}

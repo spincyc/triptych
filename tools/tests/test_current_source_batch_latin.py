@@ -1,5 +1,5 @@
 """Current accepted body/permission partitions, separate from historical replay."""
-import json,sys,unittest
+import hashlib,json,sys,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2];sys.path[:0]=[str(ROOT),str(ROOT/'scripts')]
 import _calendars as C
@@ -10,14 +10,23 @@ from tools.tests import _source_batch_guards as G
 QUALIFIED=json.loads((ROOT/'workflows/reviews/missal-reader-completion-2026-10-26/gregem-damasus-qualified-rights-adoption.json').read_text())
 QUALIFIED_IDENTITIES={G.canonical({'course':'','cycle':'','form':'','mass':m,'occurrence':o,'proper':p})
  for m,f,p,c,o in(s['target']for s in QUALIFIED['exact_scopes'])if f=='main'and c=='all'}
-FINITE_QUALIFIED=json.loads((ROOT/'workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json').read_text())
+HISTORICAL_FINITE_RAW=(ROOT/'workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json').read_bytes()
+if hashlib.sha256(HISTORICAL_FINITE_RAW).hexdigest()!='920299972ab84575183de8c84adcd3f7418bdc46304fbe1d6a4435fad1103ee3':raise AssertionError('exact original sixteen-scope authority')
+HISTORICAL_FINITE=json.loads(HISTORICAL_FINITE_RAW)
+FINITE_RAW=(ROOT/'workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json').read_bytes()
+if hashlib.sha256(FINITE_RAW).hexdigest()!='495e5b3672cccb8f2c3ea07398104c4b72026ffb7139de21d25087edcab1f48e':raise AssertionError('exact adopted twenty-two-scope authority')
+FINITE_QUALIFIED=json.loads(FINITE_RAW)
 QUALIFIED_IDENTITIES.update(G.key_string(LatinKey(*scope['key']))
  for scope in FINITE_QUALIFIED['scopes'])
 RESTORED_IDENTITIES={G.key_string(LatinKey(m,'',p,'','',o)) for m,p,o in (
  ('s-antonii-padua-confessoris-ecclesiae-doctoris','Collect',1),
  ('comm-s-silvestri-i-papae-confessoris','Collect',1),
  ('palm-sunday','Procession Antiphon',5),
- ('palm-sunday','Procession Antiphon',6))}
+ ('palm-sunday','Procession Antiphon',6),
+ ('easter-vigil','Blessing of the Lighted Candle',1),
+ ('palm-sunday','Blessing of the Palms',1),
+ ('good-friday','Improperia',1),
+ ('good-friday','Antiphons at the Translation of the Blessed Sacrament',1))}
 class CurrentSourceBatchLatinTests(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
@@ -40,14 +49,18 @@ class CurrentSourceBatchLatinTests(unittest.TestCase):
   # Anthony's prior restoration remains. The finite-sixteen adoption adds
   # Silvester; the two accepted Palm source reviews restore direct-Latin
   # ordinals5/6 (English target ordinals6/7 include an earlier Scripture node).
-  # Every other original removed owner retains its refusal contract.
+  # The separately adopted next seven restore four further removed
+  # bundles above. Every other original removed owner keeps its refusal.
   restored=removed & corrected
   self.assertEqual(restored,RESTORED_IDENTITIES)
   for identity in removed-restored:
    key,body,state=self.bodies[identity];self.assertEqual(state,'removed');self.assertFalse(decision_for(key,'Invented body.',self.validated).permits(SURFACES))
  def test_every_explicit_new_or_corrected_body_has_current_six_surface_proof(self):
-  self.assertEqual(len(FINITE_QUALIFIED['scopes']),16)
-  self.assertEqual(len(QUALIFIED_IDENTITIES),18)
+  self.assertEqual(len(HISTORICAL_FINITE['scopes']),16)
+  current={tuple(s['key']):s for s in FINITE_QUALIFIED['scopes']}
+  for scope in HISTORICAL_FINITE['scopes']:self.assertEqual(scope,current[tuple(scope['key'])])
+  self.assertEqual(len(FINITE_QUALIFIED['scopes']),22)
+  self.assertEqual(len(QUALIFIED_IDENTITIES),24)
   for identity in self.frozen['new_latin_keys']+self.frozen['corrected_latin_keys']:
    with self.subTest(identity=identity):
     key,body,state=self.bodies[identity];self.assertEqual(state,'present')

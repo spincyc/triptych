@@ -1,0 +1,56 @@
+{
+  "schema": "triptych-independent-held-introit-source-fidelity-review/v1",
+  "reviewed_on": "2026-10-30",
+  "disposition": "ACCEPT_SOURCE_AND_FIDELITY",
+  "publication_status": "unresolved",
+  "whole_target_admission_authorized": false,
+  "candidate": {
+    "path": ".scratch/roman-english-completion-20261029/chants/late-marian/introit/candidate.json",
+    "sha256": "6147dfafc9a194a6b69637ec2a3e507c528f7f838d2401eaca67c9bb39480bf5"
+  },
+  "source_full_arrangement_sha256": "544780624845b97099cee3df0bace07b8c6d0d4044a03f7af84053e474f5bb64",
+  "target_latin_sha256": "62bc1f505027f3ba9f914511ae9c836b6b460068c08409677226a16ff44de459",
+  "english_sha256": "d27ed7afe836505a10030545626bc206d44e6e2158bf966e1834b263b9ff6898",
+  "images_inspected": [
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/late-marian/introit/target200-621.png",
+      "sha256": "a28e007bc7ca4269439933b5094856f3cd8c5b611a78708c7168d6198e1d7e40"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/late-marian/introit/target400-621.png",
+      "sha256": "d5b59342cc16c2382a533c6e396afbd760555624135cfbc99787c7c92af690ab"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/late-marian/introit/mame770.png",
+      "sha256": "4314b5ab6d45aa6205f742aa73a3654b78619662dfed36b547e56645fbda9fe8"
+    },
+    {
+      "path": ".scratch/roman-english-completion-20261029/chants/late-marian/queen-three/mame845.png",
+      "sha256": "9fedba2a725c460076292154c6877923bd3fe35a82b65cbaed65441c3c08d8d8"
+    }
+  ],
+  "findings": [],
+  "source_findings": [
+    "The target page is printed540/artifact621, marginal2681. Its separate votive Introit2682 is correctly excluded. Both200and400dpi target images were opened.",
+    "The complete earlier Carmel Gaudeamus Introit was independently read on Mame1922 artifact770/printed656, with corroboration on artifact845/printed731 for the Rosary feast. Source wording and order match the retained normalized source text outside declared typographical normalization.",
+    "The full target preserves the ordered old Gaudeamus arrangement but adds Reginae and conditional double Alleluia; its Psalm clause changes Eructavit to Effundit and opera mea to carmen meum. The packet records every substantive change rather than classifying the whole target as a name substitution.",
+    "The proposed target passage is schema1, controlled by the actual schema1 CMAA artifact, with literal page locators and no invalid formal page ranges. The isolated9record source closure passes the owning loader without errors.",
+    "All6postimages, their controller objects and file hashes, two artifact payload hashes/sizes and both full source PDF hashes match the frozen packet. No existing source artifact or rights record is migrated."
+  ],
+  "english_fidelity": [
+    "The complete original study English follows the actual target, including the Queen title, both conditional Alleluias, present Effundit and carmen meum as my song. It preserves the abbreviated Gloria Patri rather than supplying an unprinted doxology.",
+    "The Latin and English conditional Paschal instructions are typed rubrics with exact text hashes and character offsets. Both structures pass the owning validator.",
+    "The draft is expressly identified as original study English, with no historical-translator or approved-liturgical-translation attribution."
+  ],
+  "rights_boundary": [
+    "This review accepts source identity, the complete arrangement comparison and English fidelity only. It does not license the later Psalm rendering or adopt a publication basis for the full target.",
+    "The source packet does not establish a pre1931 exact ancestor for the target Psalm clause. The official1947 control confirms a new1945translation category but does not itself printPsalm44:2, and the packet preserves that evidentiary distinction.",
+    "The substantive Psalm differences and the separate exact-owner/body/proof/surface adoption requirement remain unresolved for the root finite-rights review."
+  ],
+  "mechanical_receipt": {
+    "path": ".scratch/roman-english-completion-20261029/chants/late-marian/introit/review/mechanical-checks.json",
+    "sha256": "03e8009b53f3d34ef6c56b0ac649108ecba88ebdfbbcbd38dca62e377d766c1b"
+  },
+  "tracked_changes": false,
+  "scope_limit": "No integrated calendar, reader, annual, publication or release acceptance is asserted."
+}

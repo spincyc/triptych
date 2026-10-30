@@ -1,0 +1,167 @@
+{
+  "Common_test_diagnostic_correction": "Four positives causing the original expected-gap failures already existed unchanged at702. Exact retained Common peer review and root application correct the earlier triage; historical failure records remain intact.",
+  "all7264_committed_source_pins_exact": true,
+  "all_newly_reachable_blobs_classified_and_hashed": true,
+  "all_outgoing_commit_tree_path_changes_classified_and_regular_modes_only": true,
+  "blob_classifications": {
+    "bounded-public-progress-review-or-validation-metadata": 15,
+    "exact-independently-reviewed-sanitizer-or-test-successor": 4,
+    "frozen-final-closure-and-resolved-merge-content": 60,
+    "frozen-next25-source-cohort-content": 823
+  },
+  "blob_inventory_sha256": "70dd411b5c208155b134b241aaa6e759404baba15e7d94fd19e8ff491ba574c0",
+  "blob_payload_kinds": {
+    "UTF8-text": 887,
+    "reviewed-binary": 15
+  },
+  "canonical_index_or_ref_writes": false,
+  "commit": "b658058df2b4dc330e9770aa8164749cc74ce646",
+  "committed_PROJECT_browser_status_supplement": {
+    "path": ".scratch/merged-publication-audit-20261030/final-next25-outgoing/merge-PROJECT-status-supplement.json",
+    "sha256": "b04ace4199bd4b76e547f911a582f731cf30f13a2ffbc22c2bce17a57bbc81bb"
+  },
+  "comparison_origin_main": "2827cb6b555278b2cff28152e933d0656d513b68",
+  "final_closure_review": {
+    "path": ".scratch/merged-publication-audit-20261030/final-next25-outgoing/closure-review.json",
+    "sha256": "2b04a2db0b3a1a3f6ce89934c83cfc152aff058535f2617fed8bc909e4bd70ea"
+  },
+  "final_content_inventory": {
+    "path": ".scratch/merged-publication-audit-20261030/final-next25-outgoing/committed-merge-content-inventory.json",
+    "sha256": "858082456a26282f74f6eecb7952e7e9fe239334b11d75eba90f2f8825025d88"
+  },
+  "findings": [],
+  "immutable_f604_helper_exact": true,
+  "limits": [
+    "Exact commit/object disclosure and retention check; no new build, browser, typography, source-fidelity or legal assessment.",
+    "Root final gates and live publication remain separate evidence; no all-English-complete claim."
+  ],
+  "new_source_permission_created": false,
+  "obsolete_feature_commits": 62,
+  "obsolete_feature_commits_reconnected": [],
+  "obsolete_feature_tip": "3b89c2a05bece2394942a0f8aa2cbcdad33ba33b",
+  "outgoing_commit_path_deltas_sha256": "8dc84f3b8e12ece533889fec2ecb14fc2bf3b06e6617834e29dd9a2f376bfffe",
+  "outgoing_commits": [
+    "4403b11f9800f347a381c1b89d575a5dae7b79a5",
+    "61a2b2ae6a80d61b19f409097d07016b50fb8f48",
+    "b658058df2b4dc330e9770aa8164749cc74ce646"
+  ],
+  "outgoing_object_listing_sha256": "7367c8447f4674525761c1b956c2bbee4bcb8709a6e8665d67a12fdd7583931f",
+  "outgoing_object_total": 1140,
+  "outgoing_object_types": {
+    "blob": 902,
+    "commit": 3,
+    "tree": 235
+  },
+  "parents": [
+    "61a2b2ae6a80d61b19f409097d07016b50fb8f48",
+    "2827cb6b555278b2cff28152e933d0656d513b68"
+  ],
+  "prior_content_review": {
+    "path": ".scratch/merged-publication-audit-20261030/merged-next25-disclosure/review.json",
+    "sha256": "cc293e59807c7022091dcd0dc2000de351565d7fb1685aa9b19d56bda8423e30"
+  },
+  "private_credential_encoded_payload_or_unreviewed_binary_findings": [],
+  "public_progress_review_and_validation_metadata": [
+    {
+      "bytes": 4262,
+      "git_blob": "44494e2a70e557fe839ce219860f2f0391ae1b9f",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/local-source-validation.json",
+      "sha256": "545e26ed95dba2fe1591e517a8d9154ce48aecac1c9ade6429900cc074caf533"
+    },
+    {
+      "bytes": 80110,
+      "git_blob": "6647a6ca91c75a8332672a636c7a66db86f4410e",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/precommit-disclosure/binary_review.json",
+      "sha256": "913aeb6877f24e5a7c334af59eb8d735b96059b9ca644005b26570889c2ba779"
+    },
+    {
+      "bytes": 363848,
+      "git_blob": "0f3fe722a929cd04c691cba9ea61cf71df2033a8",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/precommit-disclosure/full_content_inventory.json",
+      "sha256": "d8baf9eb4e5df896339a1de26585a0b5986a7fe42f0e4ad0bc9dc04d4d5df93e"
+    },
+    {
+      "bytes": 461,
+      "git_blob": "5f0496b35d82290a15e56a8f2b5341d0304c59ec",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/precommit-disclosure/metadata_final_recheck.json",
+      "sha256": "9fd0586e309f51d2f0d24e64c8443a50eefa9ea7b7680bdca468271f0737ce5c"
+    },
+    {
+      "bytes": 37566,
+      "git_blob": "c1988a8e0dd8a0da6dd2f172fa89b66699e44265",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/precommit-disclosure/metadata_review.json",
+      "sha256": "76b787a91d400d3ec4a6c7cc003629d09f0c1ea8f4cf982510d95f8257fec423"
+    },
+    {
+      "bytes": 1857,
+      "git_blob": "4747a81ab34b26a367eb52aa2b5786335de06c76",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/precommit-disclosure/retention-map.json",
+      "sha256": "13b4a5b6374f211e0ddaaafad6a0dd5a06287492c0d82812ee1cdd332d85f104"
+    },
+    {
+      "bytes": 6108,
+      "git_blob": "75ac5bc371b3da0bffcbfc06640cc872c76e4287",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/precommit-disclosure/review.json",
+      "sha256": "55bc7aa08d07481275c7ef835dbf72b599bb955fe2da95bdba69987c1c3e62ca"
+    },
+    {
+      "bytes": 4506,
+      "git_blob": "8ddb5724cd50f0fb8917a778d3c86c127f117b22",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/precommit-disclosure/snapshot.json",
+      "sha256": "5687240f0de6067932bdb29aca2ede58f534ea81cfdfa45ca4e24502ea006c86"
+    },
+    {
+      "bytes": 1286,
+      "git_blob": "6ca021d8d3e5f02554494010be146baa71b6a69a",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/sanitizer-correction/actual-application.json",
+      "sha256": "5d8c6804c0c2b83dca5d0f08b4ee0b91df1aaa72a26ac0c837ba2b5ab79fded4"
+    },
+    {
+      "bytes": 1964,
+      "git_blob": "d8d3245805a6113dcc79e858d34657fdd584b834",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/sanitizer-correction/independent-review.json",
+      "sha256": "af6ea28741bbd51f518865e87f807e499c43f98775df3a317fda92db8b959244"
+    },
+    {
+      "bytes": 747,
+      "git_blob": "c9b91840909467e97c738e1e26739a3f7eca6f6f",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/test-successors/census-binding-actual-application.json",
+      "sha256": "cd220683b110cc85193b70c54faf1a6105bfa9bd7b4cac1d68f5032e92f65f82"
+    },
+    {
+      "bytes": 21005,
+      "git_blob": "01a97324304d42a770aabfed99115147a578dc2a",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/test-successors/census-binding-independent-review.json",
+      "sha256": "a8ead569508d5bdaadaee6de15f7cfc2585e77e2c6488eece77014c71987b4d9"
+    },
+    {
+      "bytes": 1360,
+      "git_blob": "30db05658d1ec38bdb6bb7e2274a384d0f2f5826",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/test-successors/common-acclamation-actual-application.json",
+      "sha256": "582cf13c936b7cc44beef979f202168d187fe23e257e3ec59f15733a7304ca9b"
+    },
+    {
+      "bytes": 4403,
+      "git_blob": "b27ad2f8a53bf322b19c499f481c6bee95fc0a25",
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/test-successors/common-acclamation-independent-review.json",
+      "sha256": "19748cd1a5e0eb21f170fa25e1f648b0fd82bd998fc4bc859cbc65cd75ee0946"
+    },
+    {
+      "bytes": 750049,
+      "git_blob": "bcaeeda41086430fef8272cb0a72fe15c9c5cf38",
+      "path": "PROJECT-WORK.md",
+      "sha256": "af49cb1914a8c10f0368f110a3092c26cdef2db540a690b2ae4e6194651b189f"
+    }
+  ],
+  "rejected_bad_blobs": [
+    "72510abd2c0036f0f764fcb73fde6f95c155cf87",
+    "86325d81fbbc7e36c269bb8195251a7e64b7b8e7"
+  ],
+  "rejected_bad_blobs_reachable": [],
+  "reviewed_final_content_paths_exact_in_commit": 234,
+  "schema": "triptych-exact-next25-merged-commit-outgoing-disclosure-review/v1",
+  "source_acceptance_sha256": "4d35419fbb3f7a9cf59c2e2934addfeba0327f832f436d3f9fe0de83a4c23871",
+  "source_fixture_sha256": "3bcf736daf2c6afd3eabb2bfd3f3e8528beddb513d1c496051a25255b9b933b3",
+  "source_input_manifest_sha256": "ea29e0b2f4ae20bb73626f88070608a5a7b76a2dead18a3d7daee32ebc3c9f2b",
+  "status": "PASS_EXACT_COMMITTED_OUTGOING_GRAPH"
+}

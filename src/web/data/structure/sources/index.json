@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 10880,
-  "editions": 14297,
-  "passages": 9532,
-  "readable": 4108,
-  "works": 10941
+  "artifacts": 10917,
+  "editions": 14301,
+  "passages": 9612,
+  "readable": 4137,
+  "works": 10944
  },
  "facets": {
   "authors": [
@@ -855,7 +855,7 @@
    },
    {
     "id": "Archdiocese of Toledo",
-    "works": 1
+    "works": 2
    },
    {
     "id": "Arcidiocesi di Ravenna-Cervia",
@@ -8338,6 +8338,10 @@
     "works": 1
    },
    {
+    "id": "Salesian Society",
+    "works": 1
+   },
+   {
     "id": "Salesian Society of Saint Francis de Sales",
     "works": 1
    },
@@ -8703,6 +8707,10 @@
    },
    {
     "id": "Society of Biblical Literature and Logos Bible Software",
+    "works": 1
+   },
+   {
+    "id": "Society of Bollandists",
     "works": 1
    },
    {
@@ -10104,15 +10112,15 @@
     "works": 8
    },
    {
+    "id": "periodical",
+    "works": 8
+   },
+   {
     "id": "reference-encyclopedia",
     "works": 8
    },
    {
     "id": "papal-letter",
-    "works": 7
-   },
-   {
-    "id": "periodical",
     "works": 7
    },
    {
@@ -11056,6 +11064,10 @@
     "works": 1
    },
    {
+    "id": "hagiographical-collection",
+    "works": 1
+   },
+   {
     "id": "hellenistic-jewish-narrative",
     "works": 1
    },
@@ -11580,6 +11592,10 @@
     "works": 1
    },
    {
+    "id": "proper-office-collection",
+    "works": 1
+   },
+   {
     "id": "provisional-liturgical-study-text",
     "works": 1
    },
@@ -11782,7 +11798,7 @@
   ],
   "languages": [
    {
-    "editions": 10269,
+    "editions": 10272,
     "id": "la"
    },
    {
@@ -11790,7 +11806,7 @@
     "id": "en"
    },
    {
-    "editions": 1044,
+    "editions": 1045,
     "id": "it"
    },
    {
@@ -12046,7 +12062,7 @@
     "label": "16th century"
    },
    {
-    "editions": 33,
+    "editions": 34,
     "id": "1600",
     "label": "17th century"
    },
@@ -12056,7 +12072,7 @@
     "label": "18th century"
    },
    {
-    "editions": 4818,
+    "editions": 4820,
     "id": "1800",
     "label": "19th century"
    },
@@ -12066,7 +12082,7 @@
     "label": "20th century"
    },
    {
-    "editions": 5634,
+    "editions": 5635,
     "id": "2000",
     "label": "21st century"
    }
@@ -12078,13 +12094,13 @@
     "id": "restricted"
    },
    {
-    "artifacts": 3479,
-    "editions": 1058,
+    "artifacts": 3508,
+    "editions": 1061,
     "id": "public-domain"
    },
    {
-    "artifacts": 837,
-    "editions": 423,
+    "artifacts": 838,
+    "editions": 424,
     "id": "unresolved"
    },
    {
@@ -12093,8 +12109,8 @@
     "id": "licensed"
    },
    {
-    "artifacts": 230,
-    "editions": 71,
+    "artifacts": 237,
+    "editions": 72,
     "id": "project-created"
    },
    {
@@ -24342,6 +24358,36 @@
     "la"
    ],
    "title": "Missale mixtum secundum regulam beati Isidori dictum Mozarabes"
+  },
+  {
+   "alternate_titles": [
+    "Officia propria Sanctorum Toletanae Eccl. et Dioecesis",
+    "Toledo proper offices"
+   ],
+   "author": "Archdiocese of Toledo",
+   "category": "proper-office-collection",
+   "directory": "editions/archdiocese-of-toledo/officia-propria-sanctorum/",
+   "editions": [
+    {
+     "date": "1626",
+     "file": "1626-1626-madrid-typographia-regia.json",
+     "id": "edition.archdiocese-of-toledo.officia-propria-sanctorum.1626-madrid-typographia-regia",
+     "language": "la",
+     "passages": 2,
+     "readable": 1,
+     "rights": [
+      "public-domain",
+      "unresolved"
+     ],
+     "title": "Officia propria Sanctorum Toletanae Eccl. et Dioecesis",
+     "year": 1626
+    }
+   ],
+   "id": "work.archdiocese-of-toledo.officia-propria-sanctorum",
+   "languages": [
+    "la"
+   ],
+   "title": "Officia propria Sanctorum Toletanae Ecclesiae et Dioecesis"
   },
   {
    "alternate_titles": [],
@@ -57753,8 +57799,8 @@
      "file": "1888-1888-pustet-ratisbon-pars-hiemalis.json",
      "id": "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888",
      "language": "la",
-     "passages": 5,
-     "readable": 0,
+     "passages": 11,
+     "readable": 2,
      "rights": [
       "public-domain"
      ],
@@ -57766,7 +57812,7 @@
      "file": "1908-1908-blackwood-bute-winter.json",
      "id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
      "language": "en",
-     "passages": 5,
+     "passages": 7,
      "readable": 0,
      "rights": [
       "public-domain"
@@ -58140,8 +58186,8 @@
      "file": "1894-wilson-1894.json",
      "id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
      "language": "la",
-     "passages": 15,
-     "readable": 5,
+     "passages": 27,
+     "readable": 6,
      "rights": [
       "public-domain",
       "unresolved"
@@ -58264,8 +58310,8 @@
      "file": "1862-pustet-ratisbon-1862.json",
      "id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
      "language": "la",
-     "passages": 522,
-     "readable": 396,
+     "passages": 527,
+     "readable": 399,
      "rights": [
       "public-domain"
      ],
@@ -58316,8 +58362,8 @@
      "file": "1922-1922-tours-mame-editio-quarta-iuxta-typicam.json",
      "id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
      "language": "la",
-     "passages": 240,
-     "readable": 71,
+     "passages": 241,
+     "readable": 72,
      "rights": [
       "public-domain"
      ],
@@ -58369,7 +58415,7 @@
      "file": "1962-vatican-typica-1962.json",
      "id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
      "language": "la",
-     "passages": 721,
+     "passages": 728,
      "readable": 0,
      "rights": [
       "unresolved"
@@ -58447,7 +58493,7 @@
      "file": "2002-vatican-typica-tertia-2002.json",
      "id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002",
      "language": "la",
-     "passages": 69,
+     "passages": 80,
      "readable": 0,
      "rights": [
       "restricted"
@@ -58801,7 +58847,7 @@
      "file": "1915-wilson-1915.json",
      "id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
      "language": "la",
-     "passages": 15,
+     "passages": 19,
      "readable": 3,
      "rights": [
       "public-domain",
@@ -58833,7 +58879,7 @@
      "file": "1896-feltoe-1896.json",
      "id": "edition.catholic-church.sacramentarium-veronense.feltoe-1896",
      "language": "la",
-     "passages": 9,
+     "passages": 10,
      "readable": 0,
      "rights": [
       "public-domain",
@@ -80597,7 +80643,7 @@
      "file": "2008-latin-notitiae-503-504.json",
      "id": "edition.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504",
      "language": "la",
-     "passages": 6,
+     "passages": 7,
      "readable": 0,
      "rights": [
       "restricted"
@@ -100736,8 +100782,8 @@
      "file": "1945-benziger-revised-1945.json",
      "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
      "language": "en",
-     "passages": 2104,
-     "readable": 25,
+     "passages": 2109,
+     "readable": 27,
      "rights": [
       "project-created",
       "public-domain",
@@ -100751,7 +100797,7 @@
      "file": "1946-1946-benziger-revised-1945.json",
      "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946",
      "language": "en",
-     "passages": 28,
+     "passages": 32,
      "readable": 6,
      "rights": [
       "public-domain",
@@ -310190,6 +310236,35 @@
   },
   {
    "alternate_titles": [
+    "Bollettino salesiano"
+   ],
+   "author": "Salesian Society",
+   "category": "periodical",
+   "directory": "editions/salesian-society/bollettino-salesiano/",
+   "editions": [
+    {
+     "date": "1892-04",
+     "file": "1892-1892-april-issue-4.json",
+     "id": "edition.salesian-society.bollettino-salesiano.1892-april-issue-4",
+     "language": "it",
+     "passages": 1,
+     "readable": 1,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Bollettino Salesiano, annoXVI,n.4,Aprile1892",
+     "year": 1892
+    }
+   ],
+   "id": "work.salesian-society.bollettino-salesiano",
+   "languages": [
+    "it",
+    "la"
+   ],
+   "title": "Bollettino Salesiano"
+  },
+  {
+   "alternate_titles": [
     "Atti del Consiglio Generale della Società Salesiana",
     "Salesian Superior Chapter Acts"
    ],
@@ -314443,6 +314518,34 @@
   },
   {
    "alternate_titles": [
+    "Acta sanctorum quotquot toto orbe coluntur"
+   ],
+   "author": "Society of Bollandists",
+   "category": "hagiographical-collection",
+   "directory": "editions/society-of-bollandists/acta-sanctorum/",
+   "editions": [
+    {
+     "date": "1866",
+     "file": "1866-1866-paris-rome-palme-october-2.json",
+     "id": "edition.society-of-bollandists.acta-sanctorum.1866-paris-rome-palme-october-2",
+     "language": "la",
+     "passages": 1,
+     "readable": 1,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Acta Sanctorum, Octobris tomus secundus, editio novissima",
+     "year": 1866
+    }
+   ],
+   "id": "work.society-of-bollandists.acta-sanctorum",
+   "languages": [
+    "la"
+   ],
+   "title": "Acta Sanctorum"
+  },
+  {
+   "alternate_titles": [
     "Atti e Memorie della Società Savonese di Storia Patria, nuova serie 37"
    ],
    "author": "Società Savonese di Storia Patria",
@@ -318410,8 +318513,8 @@
      "file": "2026-2026-10-29-editorial-projection.json",
      "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29",
      "language": "la",
-     "passages": 63,
-     "readable": 63,
+     "passages": 69,
+     "readable": 69,
      "rights": [
       "project-created"
      ],
@@ -318442,6 +318545,19 @@
       "project-created"
      ],
      "title": "Roman 1962 Latin Proper editorial projections for eleven source-qualified English study translations",
+     "year": 2026
+    },
+    {
+     "date": "2026-10-30",
+     "file": "2026-2026-10-30-goodfriday-transfer.json",
+     "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.goodfriday-transfer-2026-10-30",
+     "language": "la",
+     "passages": 1,
+     "readable": 1,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman 1962 Good Friday transfer antiphons: bounded historical-expression projection, 30 October 2026",
      "year": 2026
     },
     {
@@ -318553,8 +318669,8 @@
      "file": "2026-2026-10-30-study-arrangement.json",
      "id": "edition.triptych.english-completion-20261030-kyrie-sixfold-study-arrangement.study-arrangement-20261030",
      "language": "en",
-     "passages": 1,
-     "readable": 0,
+     "passages": 2,
+     "readable": 1,
      "rights": [
       "project-created"
      ],
@@ -318605,8 +318721,8 @@
      "file": "2026-2026-10-30-study-english.json",
      "id": "edition.triptych.postconciliar-ordinary-domine-qui-dixisti-study-english-20261030.study-english-20261030",
      "language": "en",
-     "passages": 0,
-     "readable": 0,
+     "passages": 1,
+     "readable": 1,
      "rights": [
       "project-created"
      ],
@@ -318631,8 +318747,8 @@
      "file": "2026-2026-10-30-study-english.json",
      "id": "edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030",
      "language": "en",
-     "passages": 0,
-     "readable": 0,
+     "passages": 5,
+     "readable": 5,
      "rights": [
       "project-created"
      ],
@@ -318683,8 +318799,8 @@
      "file": "2026-2026-10-30-study-english.json",
      "id": "edition.triptych.postconciliar-ordinary-supplices-study-english-20261030.study-english-20261030",
      "language": "en",
-     "passages": 0,
-     "readable": 0,
+     "passages": 1,
+     "readable": 1,
      "rights": [
       "project-created"
      ],
@@ -318709,8 +318825,8 @@
      "file": "2026-2026-10-30-study-english.json",
      "id": "edition.triptych.postconciliar-common-communicantes-study-english-20261030.study-english-20261030",
      "language": "en",
-     "passages": 0,
-     "readable": 0,
+     "passages": 1,
+     "readable": 1,
      "rights": [
       "project-created"
      ],
@@ -318735,8 +318851,8 @@
      "file": "2026-2026-10-30-study-english.json",
      "id": "edition.triptych.postconciliar-ordinary-peace-invitation-study-english-20261030.study-english-20261030",
      "language": "en",
-     "passages": 0,
-     "readable": 0,
+     "passages": 1,
+     "readable": 1,
      "rights": [
       "project-created"
      ],

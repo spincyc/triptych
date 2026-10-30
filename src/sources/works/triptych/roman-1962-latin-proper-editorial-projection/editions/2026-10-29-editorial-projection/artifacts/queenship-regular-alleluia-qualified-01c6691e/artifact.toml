@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-regular-alleluia-qualified-01c6691e"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "Prospective qualified-nonoriginal-adaptation under workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json, method english-completion-20261029-finite-latin-v1. Exact finite whole-expression recommendation exists, but root adoption remains pending. Project authorship covers only this editorial carrier; it supplies no independent rights in the inherited Latin and makes no whole modern edition public-domain claim."
+provenance = "Exact complete modern target wording conserved byte-for-byte from the independently source-reviewed candidate. Historical source testimony, full-source contexts, precise later contributions and contrary findings remain separately addressable. No earlier complete joined target donor or historical English translation is invented."
+retrieved = "2026-10-30"
+sha256 = "01c6691e3d76f113226e381bcb55c959ab40f630541c544fbbfadb0a110f2071"
+byte_size = 111
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-regular-alleluia-qualified-01c6691e/latin.txt"
+projected_from = ["artifact.society-of-bollandists.acta-sanctorum.1866-paris-rome-palme-october-2.queenship-invocation-text-20261029", "artifact.salesian-society.bollettino-salesiano.1892-april-issue-4.queenship-hymn-stanza-text-20261029", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Choose thethreewordinvocationSalveReginamisericordiae fromthe1866printededitorialnote; noMaterisinsertedorremovedfromthatselectedspan. Select thecontiguousninewordTu...suscipe tail fromthecomplete1892receivedhymnstanza, omittingthatstanza's differentopeningMaria...clementiae; that omittedopeningisnot claimed tobe thetargethead. Join thoseindependentlypreexistingheadandtailspans in the order printedbythe1962target; neitheroldsourceestablishes the completejoinedarrangement. Target insertsacomma afterSalve and aftermisericordiae, lowercasesTutotu, and wraps thejoinedwordspans inthestandardthreeAlleluiaframeandversiclemarker. NootherLatinlexemeisnewwithinthisfinitewordaccount. Keep thecasebounded toregularAlleluiaunit2688; thePaschalAlleluiaunit2686,QueenshipIntroit and everyotherownerretainindependentholds. Remove stress accents from the inspected1962target for the calendar's declared unaccentedLatin representation. Expand the oldsource's printed ae-ligature to ae; do not change its Latin lexemes. Join printed linewraps and line-ending hyphenation in the source and target text representations. Represent the printed versicle glyph as V.; the glyph is not a new lexical word. The independently printed Pustet1862 chantframe uses Alleluja; represent its consonantal j as i in target Alleluia, the repository's recorded received-spelling normalization. Target punctuation and capitalization changes are separately explicit in finite_deltas; none establishes an older completejoinedarrangement."
+encoding = "utf-8"
+indexable = true
+notes = "Scratch-only prospective carrier; exact root finite authority adoption is still required. Strongest contrary: No earlier complete joined head-tail-frame arrangement is established. The target selects one old invocation and replaces the complete old stanza opening while retaining its contiguous two-petition tail; a modern cento/adaptation can be original despite old ingredients and a low creativity threshold. The1690 hora mortis contrary remains true for that different witness. No authority-file hash is embedded; authority may independently pin this dictionary without a self-cycle."
