@@ -1,0 +1,16 @@
+--- a/tools/tests/test_roman_1962_latin22_phase5.py
++++ b/tools/tests/test_roman_1962_latin22_phase5.py
+@@ -2101,6 +2101,13 @@
+                 self.assertEqual("920299972ab84575183de8c84adcd3f7418bdc46304fbe1d6a4435fad1103ee3",
+                                  digest(authority.read_bytes()))
+                 self.assertEqual("adopted", json.loads(authority.read_text())["state"])
++            elif path == "scripts/_calendars.py":
++                # Preserve the literal pre-Names code oracle on frozen bytes.
++                # The reviewed Names successor has a separate current-code pin.
++                archived = ROOT / "workflows/reviews/missal-version-nomenclature-2026-10-30/historical-code/calendars-before-names.py"
++                self.assertEqual(h, digest(archived.read_bytes()), path + " before Names")
++                self.assertEqual("ca1388f525f672bbc7e344daa45f783fecf8633db9fc49f844bb8da2947c31c0",
++                                 digest((ROOT / path).read_bytes()), path + " reviewed Names current")
+             elif path == "scripts/_missal_coverage.py":
+                 archived = ROOT / "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/historical-code/missal-coverage-prior.py"
+                 self.assertEqual(h, digest(archived.read_bytes()), path + " at 6aeb96a392")

@@ -158,8 +158,15 @@ Fresh browser validation passes 136 native assertions, 68 materialization cases
 14 affected Day cases, eight Nativity regressions and 24 exact Sources English
 selections across the public and preview artifacts. Complete Improperia,
 print and actual clipboard checks also pass, with clean final diagnostics.
-The merge commit, outgoing-object audit and publication remain required before
-counting this cohort as delivered. Exact local evidence
+The ordinary merge is committed as `b658058df2`; its exact outgoing-object
+audit passes, excluding the obsolete feature history and both rejected blobs.
+The maintainer requested a coherent stop, a persisted handoff, and publication
+of this checkpoint. The handoff and unapplied candidate evidence are retained
+in [the stop handoff](workflows/reviews/missal-english-completion-2026-10-29/stop-handoff-2026-10-30.json).
+Final handoff-commit audit, push and exact deployment verification remain the
+publication steps; this record does not predict their outcome. No additional
+translation, naming or rite integration is authorized during the stop.
+Exact local evidence
 is retained in `next-english-2026-10-30/local-source-validation.json` under the
 same review namespace.
 The actual seven-case decision and its source bindings are retained under

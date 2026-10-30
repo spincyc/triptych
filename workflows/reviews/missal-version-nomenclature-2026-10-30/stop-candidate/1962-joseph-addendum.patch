@@ -1,0 +1,17 @@
+--- a/src/sources/calendars/recensions.json
++++ b/src/sources/calendars/recensions.json
+@@ -939,11 +939,12 @@
+         "kind": "edition-reader",
+         "label": "Roman Missal — 1962 typical edition",
+         "short_label": "1962 typical edition",
+-        "correspondence": "Partial source-qualified reader of the 1962 typical edition. Each body retains its actual original, historical-translation or project-study witness and rights evidence; the label does not turn partial coverage into a complete book.",
++        "correspondence": "Partial source-qualified reader of the 1962 typical edition. Each body retains its actual original, historical-translation or project-study witness and rights evidence; the label does not turn partial coverage into a complete book. Its Ordinary includes the Saint Joseph Canon insertion (Novis hisce temporibus, 13 November 1962; effective 8 December 1962; AAS 54 [1962], p. 873). This records a textual variation within the same typical edition, not the exact impression date of the held CMAA witness.",
+         "aliases": []
+       },
+       "evidence_refs": [
+-        "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-1962-typica"
++        "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-1962-typica",
++        "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/canon-communicantes.toml"
+       ]
+     },
+     {

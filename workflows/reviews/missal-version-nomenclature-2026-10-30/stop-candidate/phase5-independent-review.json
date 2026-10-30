@@ -1,0 +1,97 @@
+{
+  "schema": "triptych-Names-phase5-code-currentness-cold-review/v1",
+  "recorded_at_utc": "2026-10-30T21:25:16.083482+00:00",
+  "status": "PASS",
+  "disposition": "Accept the exact additive test branch and exact historical code snapshot as a prepared Names currentness correction. No canonical application, whole-source-epoch acceptance, generation, source/rights/body permission or new runtime authority is granted.",
+  "proposal": {
+    "path": ".scratch/next-epoch-semantics-20261030/naming-phase5-code-expectation/PROPOSAL.json",
+    "sha256": "bb8069186f543bc222e8d48f34da4a40084b3d590d981911dc31cfb11da354a3",
+    "bytes": 2060
+  },
+  "test_before": {
+    "path": ".scratch/next-epoch-semantics-20261030/naming-phase5-code-expectation/before/tools/tests/test_roman_1962_latin22_phase5.py",
+    "sha256": "9414a3119e435fd016ff4f6354650440a065c38d86b5dfab0d7052c16c5aaa09",
+    "bytes": 109032
+  },
+  "test_after": {
+    "path": ".scratch/next-epoch-semantics-20261030/naming-phase5-code-expectation/postimages/tools/tests/test_roman_1962_latin22_phase5.py",
+    "sha256": "c52f31edba2f320b78916eab2e831b5ad59b3984450f181d331bd7a01e1317d1",
+    "bytes": 109670
+  },
+  "additive_patch": {
+    "path": ".scratch/next-epoch-semantics-20261030/naming-phase5-code-expectation/phase5-calendars-currentness.patch",
+    "sha256": "328a701406fe6010d80c5afcde0a578c57371d7e1664ad5844a2335edc55caeb",
+    "bytes": 1326
+  },
+  "historical_snapshot": {
+    "path": ".scratch/next-epoch-semantics-20261030/naming-phase5-code-expectation/postimages/workflows/reviews/missal-version-nomenclature-2026-10-30/historical-code/calendars-before-names.py",
+    "sha256": "54f37042b07ae107a9bea59fe6080d5699f70290335ae7ddee453752f35eb7d4",
+    "bytes": 142215
+  },
+  "current_calendars_pin": "ca1388f525f672bbc7e344daa45f783fecf8633db9fc49f844bb8da2947c31c0",
+  "independent_findings": [
+    "The proposed branch is dedicated to scripts/_calendars.py. It checks the retained historical h54f370 literal against the exact historical snapshot, then checks actual current code against the fixed reviewed Names ca1388 pin. It does not call generic historical_bytes for this un-inversed code input.",
+    "Removing only the added calendars elif from the after AST yields the entire before AST exactly. This preserves PRESERVED_FILES and every old literal/body/oracle, all other control flow, the existing L852 sanitizer pin/authority checks, the10db coverage pin, and the generic fallback.",
+    "The snapshot is byte-identical to scripts/_calendars.py in immutable702f6500 Git and has the retained54f370 hash. It is specifically the pre-Names checkpoint code, not a claim to be the earliest original2e code. The branch hashes its bytes and does not import or execute the snapshot.",
+    "Strict one-hunk replay of patch328a7014 over before9414a311 yields afterc52f31ed exactly without offset/fuzz. The current canonical test still matches the frozen before hash.",
+    "The old generic branch fails on Names current ca1388 because the code path is not an original17 source inverse. The new branch preserves the historical assertion and adds a separate current-code assertion instead of rewriting the literal oracle."
+  ],
+  "controls": {
+    "method": "Compile and execute only the exact PRESERVED_FILES loop extracted from before/after AST against in-memory file/guard doubles. No phase5 setUpClass, body resolver, source publication controller, source-epoch acceptance or CLI generation is invoked.",
+    "tests": 9,
+    "failures": 0,
+    "errors": 0,
+    "cases": [
+      "Exact archived54 plus currentca138 pass; only those two code inputs are read and generic replay is unused.",
+      "Mutated historical snapshot refuses.",
+      "Current Names code cannot substitute for the historical snapshot.",
+      "Missing historical snapshot refuses.",
+      "Old54 current code cannot satisfy the ca138 current pin.",
+      "Mutated/unreviewed current code refuses.",
+      "Missing current code refuses.",
+      "Before/generic branch reproduces the original Names currentness failure.",
+      "Unrelated generic fallback remains unchanged."
+    ],
+    "log": {
+      "path": ".scratch/next-epoch-semantics-20261030/naming-phase5-code-expectation/test-cold-review/branch-controls.log",
+      "sha256": "a887080413ba3e0e5a7f5dd1465d56ac002c55f271c020c0ac1a2eb9d61eb0c4",
+      "bytes": 1173
+    },
+    "verification": {
+      "path": ".scratch/next-epoch-semantics-20261030/naming-phase5-code-expectation/test-cold-review/verification.json",
+      "sha256": "5d66d9d0fbe41e735861d68ed29f92b6c0cef398381275d1f6bec6b22b22c6c8",
+      "bytes": 1015
+    }
+  },
+  "prior_preparation_unchanged": {
+    "metadata_driver": {
+      "path": ".scratch/next-epoch-semantics-20261030/naming-metadata-successor/names_metadata.py",
+      "sha256": "8cdbfab73005a7699897dc2bf939597dc68473e9c77efdeecce2cc753a35c146",
+      "bytes": 15909
+    },
+    "producer_verifier": {
+      "path": ".scratch/next-epoch-semantics-20261030/naming-metadata-successor/verify_producers.py",
+      "sha256": "d8fbe265171e8af64191e0e7c5656d957bfb82a94a733d976e9ce8f23cd673c1",
+      "bytes": 6272
+    },
+    "previous47_control_review": {
+      "path": ".scratch/next-epoch-semantics-20261030/naming-metadata-cold-review-v1/REVIEW-RECEIPT-v1.json",
+      "sha256": "b9e9ae8da2c3b2889b70936d05b848bb64b05383b76e7a8945f41e5713d2298b",
+      "bytes": 10156
+    }
+  },
+  "integration_boundary": [
+    "Root must retain the exact snapshot at the proposed workflow path together with the reviewed test branch. A generic receipt or historical hash cannot authorize other current code.",
+    "The existing source manifest/current fixture must be succeeded through the separately reviewed five-pin accounting proposal. Its current test pin and exact replay spec must use c52f31ed while preserving the original test Git-before7dc3a156 and the other original streams/oracles.",
+    "The separate metadata5-pin driver and actual source-epoch acceptance are outside this receipt. Original8cdb/d8fb preparation and the47-control receipt remain unchanged.",
+    "Registered owner generation, actual full phase5 tests, current source/body gates and Names/browser/release integration remain root followup after authorization."
+  ],
+  "mutation_boundary": {
+    "writes": "Only the assigned test-cold-review scratch directory.",
+    "canonical_or_proposal_edits": false,
+    "refs_or_index_changes": false,
+    "actual_source_epoch_acceptance_or_Names_generation": false,
+    "network_or_legal_work": false,
+    "Git_reads": "Only immutable git show702f6500:scripts/_calendars.py with GIT_OPTIONAL_LOCKS=0."
+  }
+}
