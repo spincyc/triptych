@@ -2043,6 +2043,19 @@ def _owned_papal_inventory(library: Library, entry: Path, relative: Path) -> boo
         "historical-english-source-intake-03.json": ("triptych-three-act-source-cold-audit-report/v1", {"documents": list, "scope_sha256": str, "expected_count": int, "expected_keys": list}),
         "historical-english-source-intake-02-scope.json": ("triptych-three-act-source-cold-audit/v1", {"documents": list, "packet": int, "expected_count": int, "expected_keys": list, "common_pins": dict, "scope_limits": str}),
         "historical-english-source-intake-03-scope.json": ("triptych-three-act-source-cold-audit/v1", {"documents": list, "packet": int, "expected_count": int, "expected_keys": list, "common_pins": dict, "scope_limits": str}),
+        "historical-english-source-intake-01.json": ("triptych-three-act-source-intake-report/v1", {"documents": list, "expected_count": int, "expected_keys": list, "scope_sha256": str}),
+        "historical-english-source-intake-01-scope.json": ("triptych-three-act-source-cold-audit/v1", {"documents": list, "expected_count": int, "expected_keys": list, "packet": int, "common_pins": dict, "scope_limits": str}),
+        "historical-english-source-intake-04.json": ("triptych-three-act-source-cold-audit-report/v1", {"documents": list, "expected_count": int, "expected_keys": list, "scope_sha256": str}),
+        "historical-english-source-intake-04-scope.json": ("triptych-three-act-source-cold-audit/v1", {"documents": list, "expected_count": int, "expected_keys": list, "packet": int, "common_pins": dict, "scope_limits": str}),
+        "historical-english-source-intake-05.json": ("triptych-three-act-source-cold-audit/v1", {"documents": list, "expected_count": int, "expected_keys": list, "scope_sha256": str}),
+        "historical-english-source-intake-05-scope.json": ("triptych-three-act-source-cold-audit/v1", {"documents": list, "expected_count": int, "expected_keys": list, "packet": int, "common_pins": dict, "scope_limits": str}),
+        "historical-english-source-intake-06.json": ("triptych-three-act-source-cold-audit-report/v1", {"documents": list, "expected_count": int, "expected_keys": list, "scope_sha256": str}),
+        "historical-english-source-intake-06-scope.json": ("triptych-three-act-source-cold-audit/v1", {"documents": list, "expected_count": int, "expected_keys": list, "packet": int, "common_pins": dict, "scope_limits": str}),
+        "historical-english-source-intake-07.json": ("triptych-three-act-source-cold-audit-report/v1", {"documents": list, "expected_count": int, "expected_keys": list, "scope_sha256": str}),
+        "historical-english-source-intake-07-scope.json": ("triptych-three-act-source-cold-audit/v1", {"documents": list, "expected_count": int, "expected_keys": list, "packet": int, "common_pins": dict, "scope_limits": str}),
+        "historical-english-source-intake-08.json": ("triptych-three-act-source-cold-audit/v1", {"documents": list, "expected_count": int, "expected_keys": list, "scope_sha256": str}),
+        "historical-english-source-intake-08-scope.json": ("triptych-three-act-source-cold-audit/v1", {"documents": list, "expected_count": int, "expected_keys": list, "packet": int, "common_pins": dict, "scope_limits": str}),
+        "historical-english-source-intake-supplement.json": ("triptych-papal-source-admission-supplement/v1", {"documents": list, "scope": str, "prior_blocked_Editae_source_stays_blocked": bool, "aggregate_control_exceptions": list}),
         "historical-english-book-fragment-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
         "historical-english-corrections-manifest.json": ("triptych-papal-typeset/v1", {"documents": list, "revision": str}),
         "english-encoding-raster-comparison.json": ("triptych-english-page-raster-comparison/v1", {"documents": list, "source_receipt_sha256": str, "total_documents": int, "total_pages": int}),
@@ -2518,7 +2531,7 @@ def _preflight_tree(library: Library, root: Path, label: str) -> bool:
 
 
 LIBRARY_CACHE_DIR = ROOT / "build" / "source-library"
-LIBRARY_CACHE_VERSION = "2"
+LIBRARY_CACHE_VERSION = "3"
 # A sandbox library is a handful of manifests; the real one is over 22,000
 # files. Below this the load is already cheap and the entry would never be read
 # twice, so the suite's throwaway trees leave nothing behind.

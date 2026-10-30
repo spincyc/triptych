@@ -1,0 +1,123 @@
+{
+  "schema": "triptych-papal-typeset/v1",
+  "revision": "2026-10-30T06:05:00Z",
+  "documents": [
+    {
+      "id": "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
+      "title": "Etsi multa",
+      "date": "1873-11-21",
+      "document_type": "encyclical",
+      "pope": "Pius IX",
+      "language": "en",
+      "completeness": "complete-within-identified-printed-witness",
+      "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.historical-ocr-with-address-94992a97e46c",
+      "sha256": "94992a97e46c8fe05150c4aa0cd998b28f754e8cceec6e8859797de3ed687097",
+      "text_path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/historical-ocr-with-address-94992a97e46c/text.txt",
+      "physical_line_ranges": [
+        [
+          1,
+          823
+        ]
+      ],
+      "segment_id": "segment.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.complete-english-with-address",
+      "segment_path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/segments/complete-english-with-address.toml",
+      "source_url": "https://archive.org/download/encyclicalletter00cath_6/encyclicalletter00cath_6_djvu.txt",
+      "source_note": "The 1874 Philadelphia title leaf prints the substantive recipient address, not repeated on body p.3: exact raw OCR LF14\u201315. This replacement includes those address lines and their adjacent blank lines LF16\u201317 before the unchanged complete former body selection LF38\u2013856. It retains source notes, 21 November 1873 dating clause and PIUS PP. IX subscription. Native title/body proof pages were checked against the exact address bounds. The prior selector omitted this address and is superseded; prior source payloads remain unchanged. The offered OCR still fails to recognize the ornamental issuer heading and initial A, and garbles the gothic salutation; no English wording or OCR words are corrected. Anonymous historical human translation, examined by the Bishop of Philadelphia and published with his approbation.",
+      "rights_status": "public-domain",
+      "rights_basis": "The identified Philadelphia McLaughlin Brothers English pamphlet is dated 1874 on its historical title leaf and in the State Library of Pennsylvania catalogue. Its English text and contemporary printed pages are public domain in the United States by expiration of publication term, under src/sources/inventories/papal-documents-rights-v1.toml. Automated OCR adds no original authorship. The modern Internet Archive funding/digitization leaf is excluded from retained native pages and text.",
+      "rights_notice": "This identified historical English printing is public domain in the United States; source wording retains its own status.",
+      "native_artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.historical-facsimile-597fbc3a7c70",
+      "native_sha256": "597fbc3a7c70e449bf5260b89167694ccb4e7e9d0f52be509f8f7401175a1cfa",
+      "native_path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/historical-facsimile-597fbc3a7c70/source.pdf",
+      "native_act_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "act_id": "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
+      "extent": "complete",
+      "witness": "Philadelphia: McLaughlin Brothers (1874), title-leaf address and pp.3\u201323",
+      "revision": "2026-10-30T06:05:00Z"
+    }
+  ],
+  "supersessions": [
+    {
+      "prior": {
+        "id": "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
+        "language": "en",
+        "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.historical-ocr-60d421ec40be",
+        "source_sha256": "60d421ec40be9be69192c0357a59bfdf73f1d3158cb4e7277ced0e4339b47459",
+        "segment_id": "segment.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.complete-english-ocr",
+        "pdf_sha256": "ca4c5e26924061b47ce7637b182a21e0da0d1329a96f256b271ff1157b932782"
+      },
+      "replacement": {
+        "id": "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
+        "language": "en",
+        "artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.historical-ocr-with-address-94992a97e46c",
+        "source_sha256": "94992a97e46c8fe05150c4aa0cd998b28f754e8cceec6e8859797de3ed687097",
+        "segment_id": "segment.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.complete-english-with-address"
+      },
+      "reason": "Restore the substantive historical recipient address printed on the title leaf at raw OCR LF14\u201315, which the prior LF38\u2013856 body selector omitted. Native body p.3 does not repeat it. Exact raw-parent lines are mechanically prepended; all former body bytes and prior artifacts remain unchanged."
+    }
+  ],
+  "source_correction_evidence": {
+    "raw_parent_artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.raw-ocr-5654c8ef2c54",
+    "raw_parent_sha256": "5654c8ef2c54c7ca102376fedc67d62551c52d61f9bc0914358c3eb437ed282d",
+    "raw_parent_byte_size": 40846,
+    "raw_parent_physical_line_ranges": [
+      [
+        14,
+        17
+      ],
+      [
+        38,
+        856
+      ]
+    ],
+    "added_address_physical_lines": [
+      14,
+      15
+    ],
+    "adjacent_blank_lines": [
+      16,
+      17
+    ],
+    "former_body_sha256": "60d421ec40be9be69192c0357a59bfdf73f1d3158cb4e7277ced0e4339b47459",
+    "former_body_byte_size": 40053,
+    "replacement_sha256": "94992a97e46c8fe05150c4aa0cd998b28f754e8cceec6e8859797de3ed687097",
+    "replacement_byte_size": 40194,
+    "replacement_physical_lines": 823,
+    "native_artifact_id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.historical-facsimile-597fbc3a7c70",
+    "native_sha256": "597fbc3a7c70e449bf5260b89167694ccb4e7e9d0f52be509f8f7401175a1cfa",
+    "native_title_pdf_page": 1,
+    "native_body_start_pdf_page": 2,
+    "cold_proof_title_page": 15,
+    "cold_proof_body_page": 16,
+    "checks": [
+      "Exact raw-parent SHA-256 matched registered parent.",
+      "Raw LF38\u2013856 equals the complete prior body payload byte-for-byte.",
+      "Replacement bytes equal raw LF14\u201317 followed by raw LF38\u2013856.",
+      "Added address matches native title leaf; native body start does not repeat it.",
+      "Prior body payload SHA-256 remains unchanged."
+    ]
+  }
+}

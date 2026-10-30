@@ -1,0 +1,37 @@
+{
+  "schema": "triptych-historical-english-line-selection/v1",
+  "source_url": "https://archive.org/download/IrishEcclesiasticalRecordV04-1883/IrishEcclesiasticalRecordV04-1883_djvu.txt",
+  "source_artifact_id": "artifact.journals.irish-ecclesiastical-record.1883-third-series-volume-4.source-ocr-d1531485ea5b",
+  "source_sha256": "d1531485ea5b039912e422b604a3339b160dfc54319cf14930a8f93cec5ca534",
+  "source_bytes": 2437647,
+  "physical_line_ranges": [
+    [
+      42337,
+      42356
+    ],
+    [
+      42368,
+      42418
+    ],
+    [
+      42430,
+      42479
+    ],
+    [
+      42491,
+      42540
+    ],
+    [
+      42552,
+      42603
+    ],
+    [
+      42615,
+      42662
+    ]
+  ],
+  "algorithm": "Decode UTF-8; split only at LF; take each inclusive 1-based physical-line range; strip outer whitespace from each selected range; join ranges with one LF; split paragraphs at a blank line (regex newline-whitespace-newline); replace each whitespace run within a paragraph by one space; join nonempty paragraphs by two LF and append one LF. No lexical, punctuation, numbering or date correction.",
+  "output_sha256": "84876b1b2d5b13b60b14d876d4140f8d4d41f5b97ea31c234ad2c775a351ce31",
+  "native_evidence_artifact_id": "artifact.journals.irish-ecclesiastical-record.1883-third-series-volume-4.native-source-evidence-12569f69f9f1",
+  "excluded": "Surrounding non-act text, running page heads/numbers and Google digitizer furniture. Supremi retains its terminal historical editorial note."
+}

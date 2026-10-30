@@ -1,0 +1,39 @@
+# Independent cold review 32 — Editae Saepe, historical English
+
+SOURCE ORDER: PASS for the replacement's two specified printed-page-404 moves only. PDF: PASS, all 10 new pages independently inspected. The prior source remains BLOCKED. There are no material findings within this bounded review.
+
+| Reviewed identity | Exact value |
+| --- | --- |
+| Document | `papal.pius-x.hf-p-x-enc-26051910-editae-saepe.acqr-1910-english` |
+| Language / printing | English; anonymous historical human translation, American Catholic Quarterly Review, 1910, pp. 394–412 |
+| Replacement source SHA-256 | `8aa2b82572e5c92c450d98cc980c757c835df11fe16d317d09be0f5ba597b6f9` |
+| PDF SHA-256 | `2f583ddb41710ade2538bbebdd4834d693df46b7b5e350e253f667aa9e124737` |
+| PDF extent | 10 pages; 78,870 bytes |
+| Receipt SHA-256 | `b34fb97521e8d87743bca7125a9fb77dd19fb58065c3f0cad25b8c3d97af2db5` |
+| Frozen manifest SHA-256 | `be4be9c5540b1eb91bb909ed638e5189e370e8116064375ead6a4519f6910fd4` |
+| Canonical report target | `src/sources/papal-documents/encyclicals-refinement-cold-32.md` |
+
+The exact pinned brief, packet, source payload, controller, artifact records and payloads, retained recipes/evidence/helper, PDF, receipt, frozen manifest, raster receipts, cache files and output rasters were checked independently. The packet source row equals the complete matching frozen row. The receipt binds that row's source/segment, exact PDF, 10 pages and revision. Controller and artifact TOML metadata equal the packet snapshots. Verification records 94 distinct file pins. Restricted wrapper-bearing parent deliveries were not read or treated as redistributable payloads.
+
+I opened the exact native image of printed page 404, native-print-proof artifact page 12, cached excerpt page 1, individually at original resolution with automatic display detail. The image visibly establishes both positions:
+
+| Parent physical LF | Independent image decision | Replacement PDF check |
+| --- | --- | --- |
+| 28794, literal `life.`, after 28750 | PASS. The native image ends the paragraph with “sound doctrine and good” followed by `life.`, before the indented “These same qualities” paragraph. | Page 6, left column: `good life.` closes that paragraph before “These same qualities.” |
+| 28797, literal OCR `ii.. 13)`, after 28780 | PASS. The native image continues the `(I. Thess.` citation immediately before the indented “Thus” paragraph. The printed punctuation does not authorize changing the literal OCR. | Page 6, right column: exact OCR `ii.. 13)` remains in the citation before the separate “Thus” paragraph. |
+
+I independently reconstructed the expected ordered list from prior bounds 28199–29205 and applied only these two moves. It equals every element of the new `ordered_physical_lines`: 1,007 unique physical-line identities, each exactly once, with none added or omitted. All 35 exclusions, input identity and whitespace-normalization declaration are unchanged. The new recipe differs only in ordered lines, declared moves and output hash. The exact retained helper `src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/selection-replay-efd0286bfaa7/extract.py`, SHA-256 `efd0286bfaa782818ce5cd27ccb58db9ec359754bcd35455e7dbfcd06f4f4ef6`, replayed the historical parent and new recipe into my scratch with exit 0 and exact replacement hash. No helper archive was created.
+
+A separate comparison of prior and replacement paragraph arrays reproduces exactly the two joins and removal of their former standalone paragraphs: 79 prior paragraphs become 77, two surviving paragraphs change, and the other 75 remain byte-identical and in order. All 9,115 whitespace-delimited tokens and the nonwhitespace character multiset are preserved. Historical OCR errors and word divisions remain literal.
+
+The original native excerpt retains SHA-256 `519fd62d07d2d44e3d22709a098444f32d38ca2217485355956b5d985f5e8c24`. I independently ran `pdfseparate` for artifact page 12 into my scratch. Its bytes, the original excerpt and the coordinator's pinned reconstruction match exactly after removing the single trailer `/ID` group using the pinned regex. The empty-removal common digest is `1f82c0596b37bedb11ece2a4eaa50c27f0450bee4ab4ba607d98755301426db2`. The mapping proof's digest `a27e0924c2ddf7eccc4fb47aa07bb4707ab4bd4f52e8046dd1fc81358fe7e5bf` is also independently reproduced using its coordinator-confirmed constant replacement `/ID [DOCUMENT-ID-OMITTED-ONLY-FOR-COMPARISON]`. The pinned pair is equal-sized; my fresh random IDs require escaping, accounting for a two-byte size difference. Every byte outside that trailer group is identical. The native PDF has image content and no nonwhitespace extracted text; empty text equality was not used as source-order evidence.
+
+The immutable prior blocker itself and its prior source, recipe and controller match their exact pins. Prior source `3598918606cc73f1630e383c00b8fc07f9b43b553c33333aed286e26ff599221` remains BLOCKED. This replacement PASS does not relabel it. The blocker's whole-manifest snapshot reference is historical: current historical-English manifest bytes differ from that old snapshot. The coordinator confirmed that reference is not an active gate after authorized integration; packet 32's exact frozen manifest and immutable source/controller pins pass separately. No frozen packet or proof was rewritten.
+
+For PDF acceptance I inspected the contact sheet and every new original full-page raster individually: pages 1, 2, 3, 4, 5, 6, 7, 8, 9 and 10. Each image was transferred singly using `view_image(detail="original")` followed by `image(detail="auto")`. Reused pages: none. Reuse proofs: none. Cached raster bytes were verified, but no previous visual coverage was inherited.
+
+Page 1 clearly identifies title, pope, date and language and retains the substantive protocol/address. Pages 2–5 and 7–9 have readable normal two-column order, stable margins and paragraph indents, with literal source word divisions and OCR defects preserved. Page 6 presents both repaired loci in their proper paragraphs. No material clipping, overlap, glyph loss, excessive gaps or note/body fusion was observed. Page 10 contains substantial source text through the dated closing and `PIUS X., POPE.`, followed by clearly separated terminal source apparatus and rights colophon. It is source-bearing, not an apparatus-only final page.
+
+The pinned current `scripts/_typeset_papal.py` passed independent `validate_document(source_row, root=repo_path)` and `pdf_body_fidelity(pdf_path, validated, 10)`. Fidelity reports 51,659 source characters, 42,469 normalized characters, 75 permitted layout hyphens, and source coverage from page 1 through page 10. PDF structure is 10 unencrypted letter pages, version 1.7, with no JavaScript. All four Latin Modern font subsets are embedded and have Unicode maps. Title, author and English subject agree with the edition. Creation/modification dates both equal the declared revision `2026-10-30T15:19:14Z`. The compile log has no fatal errors, undefined references or overfull warnings; its single underfull hbox (badness 2042, lines 198–199) has no material visual defect and is nonblocking.
+
+Acceptance is limited to the two image-established source-order moves and this exact 10-page PDF's mechanical fidelity and presentation. Native inspection covers printed page 404 and its surrounding paragraphs only. It does not certify translation accuracy, inferred lexical corrections, comprehensive original source order, whole-print lexical collation, new rights clearance, installation or deployment. All commands/imports used `PYTHONDONTWRITEBYTECODE=1` and `TRIPTYCH_LIBRARY_CACHE=0`. Only my exclusive scratch directory was written; no canonical, producer, source, PDF, shared-cache, release or Git state was mutated. Integration and global gates remain with the coordinator.

@@ -1,0 +1,123 @@
+{
+  "documents": [
+    {
+      "artifact_id": "artifact.papal-collections.quebec-turgeon-jubilee-pastoral-1852.1852-quebec-english.historical-ocr-71cb5eda16cd",
+      "body_tex": "1851-11-21-papal-pius-ix-enciclica-exultavit-cor-nostrum-21-novembre-1851-eb84a09b-en/1851-11-21-papal-pius-ix-enciclica-exultavit-cor-nostrum-21-novembre-1851-eb84a09b-en.body.tex",
+      "changed": true,
+      "id": "papal.pius-ix.enciclica-exultavit-cor-nostrum-21-novembre-1851",
+      "language": "en",
+      "pages": 2,
+      "pdf": "1851-11-21-papal-pius-ix-enciclica-exultavit-cor-nostrum-21-novembre-1851-eb84a09b-en/1851-11-21-papal-pius-ix-enciclica-exultavit-cor-nostrum-21-novembre-1851-eb84a09b-en.pdf",
+      "pdf_sha256": "a2a2fec1066b36352686d7f4dfe7abcb81715948d6eb8de9feb8c3f3ad18c2cd",
+      "physical_line_ranges": [
+        [
+          1,
+          36
+        ],
+        [
+          39,
+          76
+        ],
+        [
+          78,
+          116
+        ],
+        [
+          118,
+          119
+        ],
+        [
+          122,
+          154
+        ]
+      ],
+      "render_revision": "2026-10-30T15:20:25Z",
+      "segment_id": "segment.papal.pius-ix.enciclica-exultavit-cor-nostrum-21-novembre-1851.1852-quebec-english.complete-english-ocr",
+      "source_sha256": "71cb5eda16cd986141af79a0fbb14dfa181803f353eea3f4fd2afd7203dfaeef",
+      "status": "compiled",
+      "stem": "1851-11-21-papal-pius-ix-enciclica-exultavit-cor-nostrum-21-novembre-1851-eb84a09b-en",
+      "tex": "1851-11-21-papal-pius-ix-enciclica-exultavit-cor-nostrum-21-novembre-1851-eb84a09b-en/1851-11-21-papal-pius-ix-enciclica-exultavit-cor-nostrum-21-novembre-1851-eb84a09b-en.tex",
+      "text_fidelity": {
+        "layout_hyphens": 16,
+        "method": "pdf-raw-source-aware-line-hyphen-nfkc-v3",
+        "pages": 2,
+        "source_characters": 9197,
+        "source_first_page": 1,
+        "source_last_page": 2,
+        "source_normalized_characters": 7580,
+        "status": "pass"
+      },
+      "warnings": [
+        "Underfull \\hbox (badness 10000) in paragraph at lines 16--40",
+        "Underfull \\hbox (badness 2119) in paragraph at lines 16--40"
+      ]
+    },
+    {
+      "artifact_id": "artifact.papal-collections.kingston-horan-pastoral-1859.1859-kingston-english.historical-ocr-f72118610bfb",
+      "body_tex": "1859-04-27-papal-pius-ix-enciclica-cum-sancta-mater-27-aprile-1859-5a383236-en/1859-04-27-papal-pius-ix-enciclica-cum-sancta-mater-27-aprile-1859-5a383236-en.body.tex",
+      "changed": true,
+      "id": "papal.pius-ix.enciclica-cum-sancta-mater-27-aprile-1859",
+      "language": "en",
+      "pages": 2,
+      "pdf": "1859-04-27-papal-pius-ix-enciclica-cum-sancta-mater-27-aprile-1859-5a383236-en/1859-04-27-papal-pius-ix-enciclica-cum-sancta-mater-27-aprile-1859-5a383236-en.pdf",
+      "pdf_sha256": "9eb25fe87aedf6eceece6fcb6675450b3d9b724fcacd939e688e6006c4aa0e31",
+      "physical_line_ranges": [
+        [
+          28,
+          58
+        ],
+        [
+          64,
+          98
+        ]
+      ],
+      "render_revision": "2026-10-30T15:20:25Z",
+      "segment_id": "segment.papal.pius-ix.enciclica-cum-sancta-mater-27-aprile-1859.1859-kingston-english.complete-english-ocr",
+      "source_sha256": "f72118610bfb947ab078e3ac867cea0ffa8dcc0c3d474f237c05aa971614ea68",
+      "status": "compiled",
+      "stem": "1859-04-27-papal-pius-ix-enciclica-cum-sancta-mater-27-aprile-1859-5a383236-en",
+      "tex": "1859-04-27-papal-pius-ix-enciclica-cum-sancta-mater-27-aprile-1859-5a383236-en/1859-04-27-papal-pius-ix-enciclica-cum-sancta-mater-27-aprile-1859-5a383236-en.tex",
+      "text_fidelity": {
+        "layout_hyphens": 7,
+        "method": "pdf-raw-source-aware-line-hyphen-nfkc-v3",
+        "pages": 2,
+        "source_characters": 5082,
+        "source_first_page": 1,
+        "source_last_page": 2,
+        "source_normalized_characters": 4140,
+        "status": "pass"
+      },
+      "warnings": [
+        "Underfull \\hbox (badness 10000) in paragraph at lines 16--17"
+      ]
+    }
+  ],
+  "errors": [],
+  "generator": "typeset-papal",
+  "generator_version": 2,
+  "index": "index.html",
+  "input_manifest": "frozen-manifest.json",
+  "input_manifest_sha256": "20e6f12cc4b266108a7d44098d4c2a684c2bd6c6b7323c85be718b93493bb428",
+  "options": {
+    "automatic_hyphenation": "babel-english-latin",
+    "babel_shorthands": false,
+    "body_alignment": "justified-en-la; ragged-right-other-languages",
+    "body_font": "Latin Modern Roman",
+    "body_leading_pt": 13,
+    "body_size_pt": 10.5,
+    "columns": 2,
+    "form_feed": "layout-whitespace",
+    "layout_hyphen_fidelity": "source-aware-line-end-only",
+    "punctuation": "literal",
+    "soft_hyphen": "nonprinting",
+    "unicode_text_mapping": "xetex-native"
+  },
+  "receipt": "receipt.json",
+  "revision": "2026-10-30T15:20:25Z",
+  "schema": "triptych-papal-typeset-receipt/v1",
+  "summary": {
+    "compiled": 2,
+    "failed": 0,
+    "selected": 2
+  }
+}

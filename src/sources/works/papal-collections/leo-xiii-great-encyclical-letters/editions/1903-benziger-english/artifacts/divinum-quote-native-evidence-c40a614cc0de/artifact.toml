@@ -1,0 +1,16 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.divinum-quote-native-evidence-c40a614cc0de"
+edition_id = "edition.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english"
+artifact_type = "historical-source-evidence-package"
+media_type = "application/zip"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The bounded historical English printed by Benziger Brothers in the United States in 1903 and its faithful mechanical image/OCR evidence are public domain in the United States under the publication-term assessment in papal-documents-rights-v1.toml; the historical words are excluded from Triptych CC BY 4.0. Modern covers, library matter and creative revisions are excluded. Scan attribution: Gumberg Library, Duquesne University; Lyrasis Members and Sloan Foundation; Internet Archive. Project-created witness metadata in witness.json is CC BY 4.0, separate from the source words."
+rights_jurisdiction = "United States"
+retrieved = "2026-10-30"
+sha256 = "c40a614cc0deb4b209b0802c739bfe60652703a9b94706151d0a9a9711a997f7"
+byte_size = 716029
+derived_from = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.duquesne-facsimile-f422eae464c6"
+transformation = "Deterministic ZIP of exact source PDF443, two native crop PNGs, untouched fresh OCR TXT/TSV from full-page/context/tight runs, and exact model/tool/native hashes. PDF page copied without rasterization; crops derive from declared native coordinates. No model-generated wording."
+path = "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/divinum-quote-native-evidence-c40a614cc0de/evidence.zip"

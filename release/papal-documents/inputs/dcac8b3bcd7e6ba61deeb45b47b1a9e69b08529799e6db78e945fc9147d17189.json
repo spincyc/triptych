@@ -1,0 +1,25 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "d828f82f2408244d2b7cd32e0a2852bcd6d85e4639ba6b16ea89a8ec02ecfa48",
+  "documents": [
+    {
+      "id": "acta.ass.006.ass-006-act-011",
+      "language": "la",
+      "pdf_sha256": "bac451cad42c35f6a934b3fb7a061a2ac8a8d8c147fba0b95453e265ba31182b",
+      "pages": 3,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": "Independent exact-PDF visual/source-partition review. Reader pages 1–3 and native OCR parent pages 257–263 individually inspected at full resolution. All seven native parent/excerpt mappings verified. Existing selection starts at LF10174 EPISTOLA, excludes publisher supertitle LF10166–10172 and journal footer LF10205, and retains address/protocol/salutation/closing/terminal notes. Source interruptions glorioso-/rum and con-/sensione retained. No whole-volume lexical/original-print collation, translation certification, new rights/intake approval, installation or deployment.",
+      "receipt_sha256": "d828f82f2408244d2b7cd32e0a2852bcd6d85e4639ba6b16ea89a8ec02ecfa48",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-28.md",
+      "report_sha256": "48d818dec3fd2f756b72dc9ae1ad9f48e9ac1f42d8a1d6670bb9484ca06c7692"
+    }
+  ]
+}

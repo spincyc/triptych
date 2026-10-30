@@ -1,0 +1,123 @@
+{
+  "schema": "triptych-papal-note-geometry-evidence/v1",
+  "document_id": "acta.aas.021.aas-021-l28668",
+  "language": "la",
+  "native_artifact_id": "artifact.acta-papal-archives.aas.021.vatican-pdf-98b6d371",
+  "native_sha256": "98b6d3710f1934d977ed141c1e1271958ede5607b579b5e35ccba9897f60625b",
+  "measurement": "pdftotext -bbox-layout -enc UTF-8 over exact native PDF; bounds in PDF points; lines sorted only in this factual coordinate record, never in source output",
+  "inspected_native_artifact_pages": [
+    708,
+    714,
+    715
+  ],
+  "input_artifact_id": "artifact.acta-papal-archives.aas.021.historical-text-c3e4af8a",
+  "input_sha256": "c3e4af8a24386821d8b3827235c324e20a4a0a36c0f4dc88b017a3380400357c",
+  "note_physical_line_ranges": [
+    [
+      28749,
+      28750
+    ],
+    [
+      28981,
+      28982
+    ],
+    [
+      29021,
+      29022
+    ]
+  ],
+  "pages": [
+    {
+      "artifact_page": 708,
+      "page_width": 510.25,
+      "page_height": 737.0,
+      "bottom_lines": [
+        {
+          "xMin": 78.18,
+          "yMin": 643.6387,
+          "xMax": 435.921006,
+          "yMax": 653.6287,
+          "text": "omnes nationesque complectatur. At vero tum huius Principatus"
+        },
+        {
+          "xMin": 103.2,
+          "yMin": 663.247504,
+          "xMax": 104.97384,
+          "yMax": 666.048304,
+          "text": "1"
+        },
+        {
+          "xMin": 108.616995,
+          "yMin": 663.324032,
+          "xMax": 152.294689,
+          "yMax": 671.330432,
+          "text": "I AC. I, 17."
+        }
+      ]
+    },
+    {
+      "artifact_page": 714,
+      "page_width": 510.25,
+      "page_height": 737.0,
+      "bottom_lines": [
+        {
+          "xMin": 70.94,
+          "yMin": 646.9322,
+          "xMax": 428.413567,
+          "yMax": 658.2457,
+          "text": "mus non t a m doctis eruditisque viris cognitam atque perspe-"
+        },
+        {
+          "xMin": 204.536159,
+          "yMin": 670.6198,
+          "xMax": 306.206495,
+          "yMax": 679.0798,
+          "text": "Pastoralis sollicitudinis-"
+        },
+        {
+          "xMin": 96.32,
+          "yMin": 672.126745,
+          "xMax": 97.823425,
+          "yMax": 674.363245,
+          "text": "1"
+        },
+        {
+          "xMin": 102.582355,
+          "yMin": 672.1907,
+          "xMax": 199.097279,
+          "yMax": 678.5807,
+          "text": "Nicolaus II, Litt. decr."
+        }
+      ]
+    },
+    {
+      "artifact_page": 715,
+      "page_width": 510.25,
+      "page_height": 737.0,
+      "bottom_lines": [
+        {
+          "xMin": 72.24,
+          "yMin": 624.9787,
+          "xMax": 429.317645,
+          "yMax": 634.9687,
+          "text": "manam transiissent Ecclesiam, exsilio et iuris hereditarii amis-"
+        },
+        {
+          "xMin": 96.9,
+          "yMin": 647.986745,
+          "xMax": 98.328875,
+          "yMax": 650.223245,
+          "text": "2"
+        },
+        {
+          "xMin": 103.561375,
+          "yMin": 648.0507,
+          "xMax": 179.703795,
+          "yMax": 654.4407,
+          "text": "Litt. 10 febr. 1913"
+        }
+      ]
+    }
+  ],
+  "limitation": "Native archival OCR PDF reconstruction geometry; no facsimile or word-level collation. Page-foot membership checked visually at all listed pages. No source words changed, inferred, moved or expanded."
+}

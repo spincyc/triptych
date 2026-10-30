@@ -1,0 +1,68 @@
+{
+  "documents": [
+    {
+      "artifact_id": "artifact.papal.leo-xiii.hf-l-xiii-enc-02071894-litteras-a-vobis.2026-10-26-vatican-la.alien-act-excluded-bd08bc9d03f8",
+      "body_tex": "1894-07-02-papal-leo-xiii-hf-l-xiii-enc-02071894-litteras-a-vobis-e1b0c4ba-la/1894-07-02-papal-leo-xiii-hf-l-xiii-enc-02071894-litteras-a-vobis-e1b0c4ba-la.body.tex",
+      "changed": true,
+      "compact_layout": true,
+      "compact_margin": 0.65,
+      "id": "papal.leo-xiii.hf-l-xiii-enc-02071894-litteras-a-vobis",
+      "language": "la",
+      "pages": 2,
+      "pdf": "1894-07-02-papal-leo-xiii-hf-l-xiii-enc-02071894-litteras-a-vobis-e1b0c4ba-la/1894-07-02-papal-leo-xiii-hf-l-xiii-enc-02071894-litteras-a-vobis-e1b0c4ba-la.pdf",
+      "pdf_sha256": "a7da728d5adc70429992b507d79a97ce8d0320ba14fc05674bf9ac059da2c677",
+      "physical_line_ranges": [
+        [
+          1,
+          25
+        ]
+      ],
+      "render_revision": "2026-10-30T14:54:51Z",
+      "segment_id": "segment.papal.leo-xiii.hf-l-xiii-enc-02071894-litteras-a-vobis.vatican-la.alien-act-excluded-bd08bc9d03f8",
+      "source_sha256": "bd08bc9d03f8bfa572048c4a973fe6ea01be0022fb1f72750c5dfe3c6fc0f253",
+      "status": "compiled",
+      "stem": "1894-07-02-papal-leo-xiii-hf-l-xiii-enc-02071894-litteras-a-vobis-e1b0c4ba-la",
+      "terminal_keep_blocks": 3,
+      "tex": "1894-07-02-papal-leo-xiii-hf-l-xiii-enc-02071894-litteras-a-vobis-e1b0c4ba-la/1894-07-02-papal-leo-xiii-hf-l-xiii-enc-02071894-litteras-a-vobis-e1b0c4ba-la.tex",
+      "text_fidelity": {
+        "layout_hyphens": 57,
+        "method": "pdf-raw-source-aware-line-hyphen-nfkc-v3",
+        "pages": 2,
+        "source_characters": 9716,
+        "source_first_page": 1,
+        "source_last_page": 2,
+        "source_normalized_characters": 8416,
+        "status": "pass"
+      },
+      "warnings": []
+    }
+  ],
+  "errors": [],
+  "generator": "typeset-papal",
+  "generator_version": 2,
+  "index": "index.html",
+  "input_manifest": "frozen-manifest.json",
+  "input_manifest_sha256": "6c6aaa0b384dfe3639e668a45647435e6c6b873fe7087e594cffc305697fde2b",
+  "options": {
+    "automatic_hyphenation": "babel-english-latin",
+    "babel_shorthands": false,
+    "body_alignment": "justified-en-la; ragged-right-other-languages",
+    "body_font": "Latin Modern Roman",
+    "body_leading_pt": 13,
+    "body_size_pt": 10.5,
+    "columns": 2,
+    "form_feed": "layout-whitespace",
+    "layout_hyphen_fidelity": "source-aware-line-end-only",
+    "punctuation": "literal",
+    "soft_hyphen": "nonprinting",
+    "unicode_text_mapping": "xetex-native"
+  },
+  "receipt": "receipt.json",
+  "revision": "2026-10-30T14:54:51Z",
+  "schema": "triptych-papal-typeset-receipt/v1",
+  "summary": {
+    "compiled": 1,
+    "failed": 0,
+    "selected": 1
+  }
+}

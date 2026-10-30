@@ -1,0 +1,137 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "2944e41897681eb4afc0cc49ff8ea036f984f292b8367df4af483f0e3e4f46f5",
+  "documents": [
+    {
+      "id": "acta.aas.013.archive.aas.013.l008854",
+      "language": "la",
+      "pdf_sha256": "c97e343ec9ed6efe7c574917946610d4d95e1099ec02cba542d265f38e413cd3",
+      "pages": 4,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "description": "Every reader page was opened individually at original raster resolution, and the reader contact sheet was inspected. Identification, protocol/address, two-column flow, paragraph/note boundaries, closing and terminal source/rights apparatus are readable; no clipping, overlap or observed glyph loss."
+        },
+        {
+          "severity": "INFO",
+          "pages": [
+            2,
+            3
+          ],
+          "description": "The Mon./Conv. and Mon./Leo groups are distinct indented paragraphs with explicit TeX par boundaries. Native parent AAS212/214 and LF8995-9000/9080-9085 confirm separate smaller page-foot note blocks. Literal Chri-/note/slum and other source-order interruptions remain disclosed."
+        },
+        {
+          "severity": "INFO",
+          "pages": [
+            4
+          ],
+          "description": "Sparse final page retains substantive ending, benediction, dating clause, BENEDICTUS PP. XV subscription and the final Epist. X citation before apparatus and colophon; the page is source-bearing."
+        }
+      ],
+      "limitations": "Direct native inspection is bounded to AAS parent212 and214 and their note/adjacent body, with selected source opening/closing and generated TeX note-boundary checks. Full selected body mechanically compared and all reader pages visually inspected. Literal OCR and source-order limitations remain. No lexical/translation/whole-source word/original-print collation, new rights or source-intake clearance, installation or deployment certified.",
+      "receipt_sha256": "2944e41897681eb4afc0cc49ff8ea036f984f292b8367df4af483f0e3e4f46f5",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-26a.md",
+      "report_sha256": "93f1363bf741e978d9dcbb6f0ea11fc3d1921e40390f31622e441117b5b00344"
+    },
+    {
+      "id": "acta.aas.016.aas-016-l00032",
+      "language": "la",
+      "pdf_sha256": "d389df956a2410b8e8d804dc9858ca115468f46861fb99e828b0d30154ef72b6",
+      "pages": 3,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1
+          ],
+          "description": "The long initial all-capital protocol has wide justified spaces and 11 underfull hbox warnings. Direct full-resolution inspection found it legible with no clipping or overlap."
+        },
+        {
+          "severity": "INFO",
+          "pages": [
+            3
+          ],
+          "description": "Dating clause and PIUS PP. XI precede a visibly separate indented Hebr./Ps./Cor./Mach. historical-note paragraph. Native parent page 11 and exact LF282/283/293 anchors independently support the repaired boundary. The existing I PETR. note remains separate at the retained source-page break between vestro- and rum. Source text, terminal apparatus and rights colophon share this source-bearing final page."
+        }
+      ],
+      "limitations": "Independent cold review of exact assigned PDF bytes: reader pages 1–3 and native parent page 11 individually inspected at full raster resolution, with both contact sheets. Historical source LF 20–65 and 233–299, excluded interior page-head gaps, prior/selected controllers and complete generated body TeX inspected; entire selected text mechanically replayed against source and PDF. Native page 10 and other native pages were not visually collated. Archival OCR reconstruction; no translation certification, whole-source lexical or original-print collation, new identity/intake or rights clearance, installation or deployment certification. Literal OCR defects, word divisions, reference marks and source-page interruptions remain.",
+      "receipt_sha256": "2944e41897681eb4afc0cc49ff8ea036f984f292b8367df4af483f0e3e4f46f5",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-26b.md",
+      "report_sha256": "fdc6195fa09eb0ac931f273e299df9b906e08365c90b0b56c64b283b7a4f4fc0"
+    },
+    {
+      "id": "acta.ass.024.ass-024-010",
+      "language": "fr",
+      "pdf_sha256": "c0a8584c5aed915823df066e7360e65e16fc22f5c5631bd0b8c55072f45a73d2",
+      "pages": 7,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "description": "Every reader page was opened individually at original raster resolution, and the reader contact sheet was inspected. Identification, normal left-to-right two-column flow, paragraph/note boundaries, closing and terminal source/rights apparatus are readable; no clipping, overlap or observed glyph loss."
+        },
+        {
+          "severity": "INFO",
+          "pages": [
+            6
+          ],
+          "description": "The Aliquando/ENARRAT historical note is a distinct paragraph at the top of the right column, bounded by explicit TeX par breaks. Native parent ASS527 and LF20393-20400 independently confirm the smaller page-foot note and its adjacent body anchor."
+        },
+        {
+          "severity": "INFO",
+          "pages": [
+            7
+          ],
+          "description": "The final page retains substantial source ending, apostolic blessing, dating clause and literal LEO PP. XIIL subscription; it is source-bearing before apparatus and colophon."
+        }
+      ],
+      "limitations": "Direct native inspection is bounded to ASS parent527 and its note/adjacent body, with selected source opening/closing and generated TeX note-boundary checks. Full selected body mechanically compared and all reader pages visually inspected. Literal OCR and source-order limitations remain. No lexical/translation/whole-source word/original-print collation, new rights or source-intake clearance, installation or deployment certified.",
+      "receipt_sha256": "2944e41897681eb4afc0cc49ff8ea036f984f292b8367df4af483f0e3e4f46f5",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-26a.md",
+      "report_sha256": "93f1363bf741e978d9dcbb6f0ea11fc3d1921e40390f31622e441117b5b00344"
+    }
+  ]
+}

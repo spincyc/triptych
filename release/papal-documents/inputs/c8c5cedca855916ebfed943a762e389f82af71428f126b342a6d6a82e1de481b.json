@@ -1,0 +1,101 @@
+{
+  "documents": [
+    {
+      "artifact_id": "artifact.acta-papal-archives.aas.021.historical-text-c3e4af8a.note-blocks-quinquagesimo-la-56d4fc127381",
+      "body_tex": "undated-acta-aas-021-aas-021-l28668-680405d2-la/undated-acta-aas-021-aas-021-l28668-680405d2-la.body.tex",
+      "changed": true,
+      "id": "acta.aas.021.aas-021-l28668",
+      "language": "la",
+      "pages": 7,
+      "pdf": "undated-acta-aas-021-aas-021-l28668-680405d2-la/undated-acta-aas-021-aas-021-l28668-680405d2-la.pdf",
+      "pdf_sha256": "f088632ee71ade5e6a48bb14f187a23372db2f28065070dce8c9d995a4dac007",
+      "physical_line_ranges": [
+        [
+          1,
+          624
+        ]
+      ],
+      "render_revision": "2026-10-30T12:03:14Z",
+      "segment_id": "segment.acta-papal-archives.aas.021.aas-021-l28668.note-blocks-56d4fc127381",
+      "source_sha256": "56d4fc1273819ad637d2ff334a2bc5f6cbd569a57e259cfc4aa5cd720e17fbb4",
+      "status": "compiled",
+      "stem": "undated-acta-aas-021-aas-021-l28668-680405d2-la",
+      "tex": "undated-acta-aas-021-aas-021-l28668-680405d2-la/undated-acta-aas-021-aas-021-l28668-680405d2-la.tex",
+      "text_fidelity": {
+        "layout_hyphens": 195,
+        "method": "pdf-raw-source-aware-line-hyphen-nfkc-v3",
+        "pages": 7,
+        "source_characters": 34193,
+        "source_first_page": 1,
+        "source_last_page": 7,
+        "source_normalized_characters": 28784,
+        "status": "pass"
+      },
+      "warnings": []
+    },
+    {
+      "artifact_id": "artifact.acta-papal-archives.ass.039.historical-text-036e2b7e.note-blocks-vehementer-la-391d31e7a0a0",
+      "body_tex": "1906-02-11-acta-ass-039-ass-039-l000032-86c4caf1-la/1906-02-11-acta-ass-039-ass-039-l000032-86c4caf1-la.body.tex",
+      "changed": true,
+      "id": "acta.ass.039.ass-039-l000032",
+      "language": "la",
+      "pages": 6,
+      "pdf": "1906-02-11-acta-ass-039-ass-039-l000032-86c4caf1-la/1906-02-11-acta-ass-039-ass-039-l000032-86c4caf1-la.pdf",
+      "pdf_sha256": "a2bb45e3e258f7087070ec50f31dfa5f674a2534b33aa0402a0c366522f425b2",
+      "physical_line_ranges": [
+        [
+          1,
+          500
+        ]
+      ],
+      "render_revision": "2026-10-30T12:03:14Z",
+      "segment_id": "segment.acta-papal-archives.ass.039.ass-039-l000032.note-blocks-391d31e7a0a0",
+      "source_sha256": "391d31e7a0a0253312c0b588b9dfb024fdd82fdca47b3c312bebc365e17c2040",
+      "status": "compiled",
+      "stem": "1906-02-11-acta-ass-039-ass-039-l000032-86c4caf1-la",
+      "tex": "1906-02-11-acta-ass-039-ass-039-l000032-86c4caf1-la/1906-02-11-acta-ass-039-ass-039-l000032-86c4caf1-la.tex",
+      "text_fidelity": {
+        "layout_hyphens": 74,
+        "method": "pdf-raw-source-aware-line-hyphen-nfkc-v3",
+        "pages": 6,
+        "source_characters": 29128,
+        "source_first_page": 1,
+        "source_last_page": 6,
+        "source_normalized_characters": 22254,
+        "status": "pass"
+      },
+      "warnings": [
+        "Underfull \\hbox (badness 1533) in paragraph at lines 14--26",
+        "Underfull \\hbox (badness 1226) in paragraph at lines 14--26"
+      ]
+    }
+  ],
+  "errors": [],
+  "generator": "typeset-papal",
+  "generator_version": 2,
+  "index": "index.html",
+  "input_manifest": "frozen-manifest.json",
+  "input_manifest_sha256": "e05c8acb2ab97505ef91be1fb0d643fbb835e98dc56df97aa320160c24e4c49d",
+  "options": {
+    "automatic_hyphenation": "babel-english-latin",
+    "babel_shorthands": false,
+    "body_alignment": "justified-en-la; ragged-right-other-languages",
+    "body_font": "Latin Modern Roman",
+    "body_leading_pt": 13,
+    "body_size_pt": 10.5,
+    "columns": 2,
+    "form_feed": "layout-whitespace",
+    "layout_hyphen_fidelity": "source-aware-line-end-only",
+    "punctuation": "literal",
+    "soft_hyphen": "nonprinting",
+    "unicode_text_mapping": "xetex-native"
+  },
+  "receipt": "receipt.json",
+  "revision": "2026-10-30T12:03:14Z",
+  "schema": "triptych-papal-typeset-receipt/v1",
+  "summary": {
+    "compiled": 2,
+    "failed": 0,
+    "selected": 2
+  }
+}

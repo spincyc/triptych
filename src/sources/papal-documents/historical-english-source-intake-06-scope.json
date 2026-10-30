@@ -1,0 +1,99 @@
+{
+  "schema": "triptych-three-act-source-cold-audit/v1",
+  "packet": 6,
+  "expected_count": 3,
+  "expected_keys": [
+    [
+      "papal.pius-ix.enciclica-cum-sancta-mater-27-aprile-1859",
+      "en"
+    ],
+    [
+      "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
+      "en"
+    ],
+    [
+      "papal.pius-ix.enciclica-exultavit-cor-nostrum-21-novembre-1851",
+      "en"
+    ]
+  ],
+  "documents": [
+    {
+      "key": [
+        "papal.pius-ix.enciclica-cum-sancta-mater-27-aprile-1859",
+        "en"
+      ],
+      "title": "Cum Sancta Mater",
+      "row_sha256": "4bdb96168d16248cbaadda07afb2a95f86faccd99601ad74c3459edfbba53a07",
+      "source_sha256": "f72118610bfb947ab078e3ac867cea0ffa8dcc0c3d474f237c05aa971614ea68",
+      "evidence": {
+        "path": ".scratch/english-intake-recovery/packet-06/act-01-evidence.json",
+        "sha256": "9b9847df8008f507f920a4f51c0fe9ebc4bab1a3fc450652006f5fd87148a2a8",
+        "bytes": 23873
+      },
+      "selection": {
+        "path": ".scratch/english-intake-recovery/packet-06/act-01-selected.txt",
+        "sha256": "88e9ba1f864e7d962414bb2123deee3946e3f77504e644ba5b88386c7b703024",
+        "bytes": 5092
+      },
+      "controller_pin": {
+        "id": "segment.papal.pius-ix.enciclica-cum-sancta-mater-27-aprile-1859.1859-kingston-english.complete-english-ocr",
+        "record": "src/sources/works/papal-documents/1859-04-27-papal-pius-ix-enciclica-cum-sancta-mater-27-aprile-1859-5a383236/editions/1859-kingston-english/segments/complete-english-ocr.toml",
+        "sha256": "59679092d7e997837e2c4bfa4f44e80a7e1cf2d56d66a73cae4c06cf951efe54"
+      }
+    },
+    {
+      "key": [
+        "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
+        "en"
+      ],
+      "title": "Etsi multa",
+      "row_sha256": "9b020ee6af82bece0f45735c9f616664eaec0d1eafa251967eb6352d7237edcd",
+      "source_sha256": "94992a97e46c8fe05150c4aa0cd998b28f754e8cceec6e8859797de3ed687097",
+      "evidence": {
+        "path": ".scratch/english-intake-recovery/packet-06/act-02-evidence.json",
+        "sha256": "477f9a5c0d50b0117f7c5f8049f60004f93556e1013d4b9c0a82bb8647842f26",
+        "bytes": 40362
+      },
+      "selection": {
+        "path": ".scratch/english-intake-recovery/packet-06/act-02-selected.txt",
+        "sha256": "94992a97e46c8fe05150c4aa0cd998b28f754e8cceec6e8859797de3ed687097",
+        "bytes": 40194
+      },
+      "controller_pin": {
+        "id": "segment.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.complete-english-with-address",
+        "record": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/segments/complete-english-with-address.toml",
+        "sha256": "433e21040b685d454ae48ddd59715ad91b1c01ec0e0086b75bc180f5377434e3"
+      }
+    },
+    {
+      "key": [
+        "papal.pius-ix.enciclica-exultavit-cor-nostrum-21-novembre-1851",
+        "en"
+      ],
+      "title": "Exultavit cor nostrum",
+      "row_sha256": "e8840304fdbc6475a6a69c7c924ca11bf24dee77c14cfee562ff0b3051742f88",
+      "source_sha256": "71cb5eda16cd986141af79a0fbb14dfa181803f353eea3f4fd2afd7203dfaeef",
+      "evidence": {
+        "path": ".scratch/english-intake-recovery/packet-06/act-03-evidence.json",
+        "sha256": "9590d1040e438c8bfdbeb71839bb7aaa7869f2745d2512dbc2fb6e356723210d",
+        "bytes": 29765
+      },
+      "selection": {
+        "path": ".scratch/english-intake-recovery/packet-06/act-03-selected.txt",
+        "sha256": "e8fa5d8a5ec62c6805d2a9625ddd518b540d719c28b972a4410410f556d5ffbd",
+        "bytes": 9220
+      },
+      "controller_pin": {
+        "id": "segment.papal.pius-ix.enciclica-exultavit-cor-nostrum-21-novembre-1851.1852-quebec-english.complete-english-ocr",
+        "record": "src/sources/works/papal-documents/1851-11-21-papal-pius-ix-enciclica-exultavit-cor-nostrum-21-novembre-1851-eb84a09b/editions/1852-quebec-english/segments/complete-english-ocr.toml",
+        "sha256": "be01e237abe20182fb4125378f0aef7a03ec8c7de8e006ef0875cee72a32159a"
+      }
+    }
+  ],
+  "common_pins": {
+    "path": ".scratch/english-intake-recovery/common-pins.json",
+    "sha256": "17f8dc51ed96ec27c7b02254b4edac12df478c97a547e1660c27b8a0996921e9",
+    "bytes": 2847
+  },
+  "scope_limits": "Review source intake and exact selected historical human English witness. Fresh native image checks are required; prior visual claims are not inherited. No PDF compiler/layout review or lexical translation accuracy/full printing collation claimed."
+}

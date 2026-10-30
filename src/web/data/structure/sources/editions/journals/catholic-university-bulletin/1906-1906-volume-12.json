@@ -1,0 +1,60 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "whole-historical-printing-ocr",
+   "byte_size": 1583076,
+   "edition_owned": true,
+   "id": "artifact.journals.catholic-university-bulletin.1906-volume-12.source-ocr-39fc40d934c4",
+   "media_type": "text/plain",
+   "notes": "Uncorrected and uncollated OCR of the whole identified printing. No source words were generated, translated, reconstructed, or corrected by a model. Whole annual-volume scan and OCR; exact acquired bytes are retained without normalization. The identified complete English constituents are Tribus circiter and Gravissimo officii munere. The modern Google page and generated cover are separate from the historical printing. Translator unrecorded.",
+   "page_count": null,
+   "retrieved": "2026-10-30",
+   "rights": "public-domain",
+   "rights_basis": "Historical English translation and original printing text are public domain in the United States by expiration of the publication term of the identified pre-1931 printing, under src/sources/inventories/papal-documents-rights-v1.toml. Mechanical scanning and OCR add no original source wording. Historical/source wording is excluded from Triptych CC BY 4.0. The actual July and October 1906 issue covers, issue title/imprint pages and all nine constituent pages were inspected. Google usage guidelines at PDF page 1 and OCR physical LF lines 1–44, and recurring digitizer marks, are separately retained under the implied-license and independent fair-use assessment in src/sources/inventories/google-usage-guidelines-rights-v1.toml; they are not historical book text, not searched as book text, and not offered under the project license. Factual library/copy marks are distinct from the source body.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/CatholicUnivBulletinV12/CatholicUnivBulletinV12_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "whole-historical-printing-facsimile",
+   "byte_size": 19322546,
+   "edition_owned": true,
+   "id": "artifact.journals.catholic-university-bulletin.1906-volume-12.source-pdf-257bc6f9be92",
+   "media_type": "application/pdf",
+   "notes": "Whole annual-volume scan and OCR; exact acquired bytes are retained without normalization. The identified complete English constituents are Tribus circiter and Gravissimo officii munere. The modern Google page and generated cover are separate from the historical printing. Translator unrecorded.",
+   "page_count": 593,
+   "retrieved": "2026-10-30",
+   "rights": "public-domain",
+   "rights_basis": "Historical English translation and original printing text are public domain in the United States by expiration of the publication term of the identified pre-1931 printing, under src/sources/inventories/papal-documents-rights-v1.toml. Mechanical scanning and OCR add no original source wording. Historical/source wording is excluded from Triptych CC BY 4.0. The actual July and October 1906 issue covers, issue title/imprint pages and all nine constituent pages were inspected. Google usage guidelines at PDF page 1 and OCR physical LF lines 1–44, and recurring digitizer marks, are separately retained under the implied-license and independent fair-use assessment in src/sources/inventories/google-usage-guidelines-rights-v1.toml; they are not historical book text, not searched as book text, and not offered under the project license. Factual library/copy marks are distinct from the source body.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/CatholicUnivBulletinV12/CatholicUnivBulletinV12.pdf",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1906",
+  "editors": [],
+  "id": "edition.journals.catholic-university-bulletin.1906-volume-12",
+  "jurisdiction": null,
+  "language": "mul",
+  "publication": "The Catholic University Bulletin, volume XII (Lancaster, Pennsylvania, and Washington, D.C.: The Catholic University of America, 1906), no. 3 (July), pp. 391–395, and no. 4 (October), pp. 535–538.",
+  "title": "The Catholic University Bulletin — 1906 printing",
+  "translators": [],
+  "year": 1906
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "The Catholic University of America",
+  "category": "periodical",
+  "description": "Historical container for identified printed constituents; bounded papal acts retain their existing distinct work identities.",
+  "id": "work.journals.catholic-university-bulletin",
+  "languages": [
+   "en",
+   "la"
+  ],
+  "title": "The Catholic University Bulletin"
+ }
+}

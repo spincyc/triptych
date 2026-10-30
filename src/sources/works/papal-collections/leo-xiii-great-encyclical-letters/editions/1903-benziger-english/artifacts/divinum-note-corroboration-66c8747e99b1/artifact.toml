@@ -1,0 +1,18 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.divinum-note-corroboration-66c8747e99b1"
+edition_id = "edition.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english"
+artifact_type = "ocr-note-excerpt"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The bounded historical English and notes printed by Benziger Brothers in the United States in 1903 are public domain in the United States under the publication-term basis in papal-documents-rights-v1.toml. Historical source words remain excluded from Triptych CC BY 4.0. Modern wrappers, creative revisions and other printings are not admitted."
+rights_jurisdiction = "United States"
+retrieved = "2026-10-30"
+sha256 = "66c8747e99b18f60fc6c956f0d36d64502b27b24918718dbb9fbc96b5fb46388"
+byte_size = 50
+derived_from = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.divinum-boundary-facsimile-e378aa5f2cdf"
+transformation = "Exact complete matching line extracted from Tesseract 5.5.4 independent fresh OCR of Duquesne original PDF441/printed435; no wording edited. Input JPEG derives via pdftoppm -f 441 -l 441 -scale-to 2400 -jpeg -jpegopt quality=95. Model eng.traineddata SHA-256 8280aed0782fe27257a68ea10fe7ef324ca0f8d85bd2fd145d1c2b560bcb66ba. Only the vi byte pair corroborates the correction; surrounding OCR errors are not adopted."
+path = "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/divinum-note-corroboration-66c8747e99b1/ocr.txt"
+encoding = "utf-8"
+indexable = true

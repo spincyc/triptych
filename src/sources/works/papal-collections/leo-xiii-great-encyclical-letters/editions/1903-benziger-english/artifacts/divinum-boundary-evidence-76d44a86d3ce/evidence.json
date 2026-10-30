@@ -1,0 +1,86 @@
+{
+  "schema": "triptych-divinum-english-boundary-evidence/v1",
+  "source": {
+    "path": "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/ws-encoding-repaired-ed8e5a40/great-encyclical-letters-encoding-repaired.txt",
+    "sha256": "ed8e5a405701a51eec9124f0e63a4db7740ded35545fe5d99874ac9581541879",
+    "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-encoding-repaired-ed8e5a40"
+  },
+  "selection_physical_line_ranges": [
+    [
+      2609,
+      2771
+    ]
+  ],
+  "selection_absolute_byte_range": [
+    808254,
+    844710
+  ],
+  "selected_sha256": "b29c9835315ac75670f25f3ba997bf957aff84155bfb05794e156aa995a5ea7d",
+  "selected_byte_size": 36456,
+  "output_sha256": "05fccc3f45dcf497469491527999a6f0d3a8329cede1f3455f1536cdc15db75f",
+  "output_byte_size": 36440,
+  "changes": [
+    {
+      "kind": "exclude-proven-running-head",
+      "physical_line": 2709,
+      "start": 829808,
+      "end": 829824,
+      "before_hex": "49484520454f4c592053506d69542e20",
+      "replacement_hex": "",
+      "prefix_sha256": "acab157add1854768d3d78793ce82237863d7ae902bcdbd3f0624354397ad056",
+      "suffix_sha256": "f83f750040e22beefe8c9d31842b8bf5954077e46fea2a8248fe29d733fecfa4",
+      "left_context_hex": "20526f6d2e20766969692e2031352c2031362e205e204a6f686e206969692e20362e0a0a2753742e2054682c2033612c20712e2078787869692e2c20612e20312e203c20526f6d2e20762e20352e0a0a",
+      "right_context_hex": "70726573656e7420616e642065786973747320696e20616c6c207468696e67732c202262792048697320706f7765722c20696e20736f2066617220617320616c6c207468696e67732061726520737562"
+    },
+    {
+      "kind": "recover-corroborated-book-numeral",
+      "physical_line": 2721,
+      "start": 835808,
+      "end": 835810,
+      "before_hex": "5c5c",
+      "replacement_from": {
+        "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.divinum-note-corroboration-66c8747e99b1",
+        "path": "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/divinum-note-corroboration-66c8747e99b1/ocr.txt",
+        "sha256": "66c8747e99b18f60fc6c956f0d36d64502b27b24918718dbb9fbc96b5fb46388",
+        "byte_size": 50,
+        "record_path": "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/divinum-note-corroboration-66c8747e99b1/artifact.toml",
+        "start": 24,
+        "end": 26
+      },
+      "replacement_hex": "7669",
+      "left_context_hex": "53742e204175672e206465205472696e2e20312e20",
+      "right_context_hex": "2e2c20632e20392e20272041637473207869782e20322e0a0a616e6420"
+    }
+  ],
+  "native_facsimile": {
+    "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.divinum-boundary-facsimile-e378aa5f2cdf",
+    "path": "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/divinum-boundary-facsimile-e378aa5f2cdf/source.pdf",
+    "sha256": "e378aa5f2cdf10f3169dc4a59605e0a53e71a5a5b668ddd122709a5cda3c8989",
+    "byte_size": 282963,
+    "record_path": "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/divinum-boundary-facsimile-e378aa5f2cdf/artifact.toml"
+  },
+  "native_pages": [
+    {
+      "excerpt_page": 1,
+      "original_pdf_page": 439,
+      "printed_page": 433,
+      "finding": "THE HOLY SPIRIT. is a running head above the body beginning present and exists."
+    },
+    {
+      "excerpt_page": 2,
+      "original_pdf_page": 441,
+      "printed_page": 435,
+      "finding": "The source note prints l. vi., c. 9. The old transcription two-backslash marker is unreadable."
+    }
+  ],
+  "ocr_corroboration": {
+    "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.divinum-note-corroboration-66c8747e99b1",
+    "path": "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/divinum-note-corroboration-66c8747e99b1/ocr.txt",
+    "sha256": "66c8747e99b18f60fc6c956f0d36d64502b27b24918718dbb9fbc96b5fb46388",
+    "byte_size": 50,
+    "record_path": "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/divinum-note-corroboration-66c8747e99b1/artifact.toml"
+  },
+  "qualification": "Exactly one foreign running-head prefix is excluded and exactly two book-numeral bytes are recovered from independent OCR corroborated against two native copies. All other selected bytes and every LF boundary are retained. This is no all-bytes-preserved claim and no whole-source collation. Historical note paragraphs on former production pages 1 and 3 remain separate with unchanged boundaries; no invented anchors or lexical modernization.",
+  "predecessor_segment": "segment.papal.leo-xiii.hf-l-xiii-enc-09051897-divinum-illud-munus.1903-benziger-english.benziger-english-encoding-repaired-ed8e5a40",
+  "predecessor_pdf_sha256": "771b21e618dfa3640ad6d7ae368d7370170c70e9e7693f7fc9806fc2a9adb997"
+}

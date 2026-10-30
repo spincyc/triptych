@@ -1,0 +1,56 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "46f95d87d016efb95472e4d05d61aa0c4fefb73bc1d220142bd400fa137f4304",
+  "documents": [
+    {
+      "id": "papal.pius-xi.hf-p-xi-enc-19230629-studiorum-ducem",
+      "language": "en",
+      "pdf_sha256": "43c3054dc2a567c6febba74a1759d471e110b1efd03bfa2177a44a609955293e",
+      "pages": 9,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "info",
+          "pages": [
+            1,
+            2,
+            6,
+            8
+          ],
+          "description": "Disclosed ordinary OCR and punctuation artifacts remain; isolated nn on page6 is not a sustained unreadable span. No correction or lexical-collation claim."
+        },
+        {
+          "severity": "info",
+          "pages": [
+            9
+          ],
+          "description": "Sparse final page is source-bearing because it contains the historical PIUS XI. subscription, followed by compact legible terminal source/rights apparatus."
+        }
+      ],
+      "limitations": [
+        "Historical abridged Ryan/Herder 1927 human translation; appended prayer omitted by the translator. No complete-act English coverage.",
+        "Ordinary literal OCR, punctuation, printed hard line-end hyphens and source-page paragraph boundaries remain; no corrected transcription or whole-source lexical collation certified.",
+        "Native visual inspection: 120,122,128,129,132,133,134,135,148; crops122,134; directly parent-rendered identity leaves5,6,9. All29 pages mechanically replayed, not all29 visually or word-by-word collated.",
+        "No translation-accuracy audit, physical-original authentication, new rights clearance, source evidence-state promotion, installation or deployment."
+      ],
+      "receipt_sha256": "46f95d87d016efb95472e4d05d61aa0c4fefb73bc1d220142bd400fa137f4304",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-36.md",
+      "report_sha256": "61c479ce7e33c42acb671cefc0698bd751cccaf8c60da1ead298e3c96ead7bd1",
+      "source_recovery_status": "PASS",
+      "source_recovery_scope": "Bounded former sustained-noise spans128/129,132/133,134/135; crop safety122/134; opening120/closing148; identity5/6/9; all29 image/crop/TXT/TSV and independent assembly replay."
+    }
+  ]
+}

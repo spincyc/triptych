@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.ass.024.ass-024-010.note-blocks-b371b79b50cc"
+edition_id = "edition.acta-papal-archives.ass.024.ass-024-010"
+artifact_id = "artifact.acta-papal-archives.ass.024.historical-text-040fa780.note-blocks-au-milieu-fr-b371b79b50cc"
+artifact_sha256 = "b371b79b50cc5279f6a8782f842287d6642d452dfcd98ee36b520a084d436562"
+segment_type = "constituent-work"
+states = ["cataloged", "acquired", "inspected"]
+physical_line_ranges = [[1, 45], [47, 92], [94, 141], [143, 189], [191, 237], [239, 285], [287, 332], [334, 379], [381, 429], [431, 476], [478, 497]]
+context = "Same complete prior constituent as segment.acta-papal-archives.ass.024.ass-024-010, selected from exact parent artifact.acta-papal-archives.ass.024.historical-text-040fa780 at original physical LF [[19974, 20018], [20020, 20065], [20067, 20114], [20116, 20162], [20164, 20210], [20212, 20258], [20260, 20305], [20307, 20352], [20354, 20400], [20402, 20447], [20449, 20468]]. The explicit partition spec is artifact.acta-papal-archives.ass.024.historical-text-040fa780.note-spec-au-milieu-fr-cf7e51dc7fd1 (cf7e51dc7fd1e9313b2fd7e6496e85f2d8ea7da0061c12e42a9ecdede240d709). Original source selection pieces map separately to derivative LF ranges, preserving existing range boundaries and every existing separate note paragraph."
+notes = "Reading-only replacement preserves all selected non-LF bytes and their original order. Historical source-note groups at original LF [[20393, 20400]] occupy separate blocks at their existing source breaks. Prior source/segment remain retained; no lexical repair, reordered body/notes, or original-print collation is claimed."

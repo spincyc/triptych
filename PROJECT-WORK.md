@@ -147,54 +147,65 @@ work and independent cold review. Existing human English sources take priority.
 This pass has introduced no AI-translated encyclical bodies; catalogue
 descriptions remain separately identified AI work.
 
-The catalogue contains 322 distinct Vatican-indexed acts and 304 external
-English links. Complete English is available for 283 acts; 14 have only partial
-or damaged English and 25 have no located English route. All 91 acts after
+The catalogue contains 322 distinct Vatican-indexed acts and 305 external
+English links. Complete English is available for 284 acts; 14 have only partial
+or damaged English and 24 have no located English route. All 91 acts after
 1930 have complete external English routes. These are bounded identity and
 extent findings, not translation-accuracy or local-republication permissions.
-Thirty-nine complete-English gaps remain open.
+Thirty-eight complete-English gaps remain open.
 
-The accepted release contains 4,814 PDFs and 9,108 pages. Its six newly admitted
+The accepted release contains 4,831 PDFs and 9,206 pages. Seventeen more
 historical human English witnesses raise complete local English coverage from
-41 to 47 acts, with 51 local English readers in total. Source intake separately
+47 to 64 acts, with 68 local English readers in total. Source intake separately
 checks their editions, rights basis, extent and source boundaries; every
-installed PDF also has exact, independent every-page acceptance. Elapso retains
-and attributes the historical editor's parenthetical interventions. No new
-English act wording was authored for these additions.
+installed PDF also has exact, independent every-page acceptance. Qualified
+imprints and the corrected Editae source order remain explicit. Damaged Coyne
+Ubi is excluded; Studiorum remains a fragment. No new English act wording was
+authored for these additions.
 
-Three classic-reader checkpoints replace 176 of the original 327 encyclical
-source versions: nine source repairs, 158 further accepted readers, and nine
-more replacements. The six new English additions also use the classic design,
-for 182 classic versions among 333 linked readers. The remaining 151 original
-versions still need final acceptance or source repairs. Latin Modern Roman,
-language-specific hyphenation, indented paragraphs and restrained terminal
-apparatus implement the requested appearance. Note and native-spacing repairs
-preserve their declared source bytes and identify any explicit reordering.
+Four classic-reader checkpoints replace 230 of the original 327 encyclical
+source versions: nine source repairs and 221 further accepted readers. The
+23 new English additions also use the classic design, for 253 classic versions
+among 350 linked readers. The remaining 97 original versions still need final
+acceptance or source repairs. Latin Modern Roman, language-specific hyphenation,
+indented paragraphs and restrained terminal apparatus implement the requested
+appearance. Note and native-spacing repairs preserve their declared source
+bytes and identify any explicit reordering.
 
-The latest checkpoint replaces nine readers (36 prior pages with 38 reviewed
-pages) and adds six English readers (19 pages). All 4,799 other complete release
-rows and PDF bytes are unchanged. Constanti Hungarorum's date correction changes
-one owned filename from 11 September to 2 September 1893 under the same source
-key; no document keys are withdrawn. All 6,815 current source selections are
-accounted for. Historical receipts and audits admit only their exact selected
-readers; unrelated historical reviews grant no additional admissions.
+The latest checkpoint replaces 54 readers (257 prior pages with 283 reviewed
+pages) and adds 17 English readers (72 pages). All 4,760 other complete release
+rows and PDF bytes are unchanged. There are no withdrawals or filename
+retirements. All 6,832 current source selections are accounted for. Historical
+receipts and audits admit only their exact selected readers; unrelated
+historical reviews grant no additional admissions.
 
 All 322 descriptions remain present, with Claude's 255 and Codex's 67
-contributions explicitly credited. Summaries and all 304 external English routes
-are unchanged by this PDF checkpoint. The browser distinguishes complete
-English, local PDFs, external links and remaining gaps. Thirty-one comparison
-projections change only the source-library tool hash and size. All 164 source
-family owner review units remain pending; no completed family screening is
-claimed.
+contributions explicitly credited. The new complete external Levate route
+preserves the prior fragment link and explicitly records the host's 27 October,
+closing's 21 October and official 17 October 1867 dates. No external English
+body is retained. All prior routes, summaries and other index facts are
+unchanged. The browser distinguishes complete English, local PDFs, external
+links and remaining gaps. Thirty-one comparison projections change only the
+source-library tool hash and size. All 164 source family owner review units
+remain pending; no completed family screening is claimed.
 
-Validation passes the complete source and install/fidelity gates, 65
+Validation passes the complete source and install/fidelity gates, 67
 source-library tests, 243 papal tests, 20 catalogue tests, 151 public-alpha
 tests, exact scoped release bindings, site build and independent deployment
 artifact verification. Built routes pass six viewport and text-size states,
-keyboard and no-JavaScript checks; all six new English links resolve to the
-reviewed PDF bytes. Source-admission metadata owns four exact report/scope
-filenames without creating verified passages or PDF-layout approvals. The
-validator cache namespace changes to prevent stale prior ownership rejections.
+keyboard and no-JavaScript checks; all 17 new English links resolve to the
+reviewed PDF bytes. Thirteen additional exact source-admission metadata
+envelopes create no verified passages or PDF-layout approvals. The validator
+cache namespace changes to prevent stale prior ownership rejections.
+
+The historical native-spacing helper with hash prefix 8163 is retained as an
+exact hash-constrained recovery from the archived b67 implementation; no
+original file copy was located. Its MIT license and recovery provenance remain
+explicit. Three existing recipes replay exactly, without repinning historical
+evidence or granting another reader admission. Two intake reports have
+publication derivatives that change only 17 private diagnostic path values;
+current consumers pin those derivatives and distinguish the raw historical
+hashes. Source wording, source judgments and PDF bytes are unchanged.
 
 Additional English intake, source-preserving repairs and cold-review
 adjudication continue. A successful render or producer review does not establish

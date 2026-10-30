@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.divinum-quote-text-ba3ad11b1ec6"
+edition_id = "edition.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english"
+artifact_type = "source-ocr-quote-repaired-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The bounded historical English printed by Benziger Brothers in the United States in 1903 and its faithful mechanical image/OCR evidence are public domain in the United States under the publication-term assessment in papal-documents-rights-v1.toml; the historical words are excluded from Triptych CC BY 4.0. Modern covers, library matter and creative revisions are excluded. Scan attribution: Gumberg Library, Duquesne University; Lyrasis Members and Sloan Foundation; Internet Archive."
+rights_jurisdiction = "United States"
+retrieved = "2026-10-30"
+sha256 = "ba3ad11b1ec60e61cbd795d6ecabd15dfb13fce21c02c218f63c852f636447fa"
+byte_size = 36438
+derived_from = "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.divinum-boundary-text-05fccc3f45dc"
+transformation = "Replay artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.divinum-quote-recipe-515043936327 SHA-256 515043936327c67617dfc1d1a697d6d7471a9e35f20cdc4c9fec96a14c734e45. Replace only two declared malformed quote tokens by exact OCR slices from artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.divinum-quote-native-evidence-c40a614cc0de; retain every other byte/LF. The predecessor boundary repair, its candidate and held review remain unchanged."
+path = "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/divinum-quote-text-ba3ad11b1ec6/text.txt"
+encoding = "utf-8"
+indexable = true
+notes = "Limited same-printing OCR recovery of two quoted tokens only. Earlier running-head exclusion and vi recovery are inherited from the exact parent. Other OCR, reference marks, separated historical notes, source heading date and separate running-head paragraph remain literal. No full print collation claimed."

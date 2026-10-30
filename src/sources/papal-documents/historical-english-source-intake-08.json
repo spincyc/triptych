@@ -1,0 +1,1687 @@
+{
+  "schema": "triptych-three-act-source-cold-audit/v1",
+  "packet": 8,
+  "scope_sha256": "7e4175dfff7ed86bbe76d6f8db5565b4f9f05df6a60732e8b7bb8abd6ee24718",
+  "expected_count": 3,
+  "expected_keys": [
+    [
+      "papal.pius-x.hf-p-x-enc-24051911-iamdudum.acqr-1911-english",
+      "en"
+    ],
+    [
+      "papal.pius-x.hf-p-x-enc-26051910-editae-saepe.acqr-1910-english",
+      "en"
+    ],
+    [
+      "papal.pius-xi.hf-p-xi-enc-19291220-mens-nostra",
+      "en"
+    ]
+  ],
+  "actual_count": 3,
+  "counts": {
+    "PASS": 2,
+    "BLOCKED": 1,
+    "PENDING": 0
+  },
+  "selected_texts_read_complete": 3,
+  "supplied_images_opened": 19,
+  "actual_opened_images_count": 30,
+  "mechanical_all_checks_pass": true,
+  "documents": [
+    {
+      "id": "papal.pius-x.hf-p-x-enc-24051911-iamdudum.acqr-1911-english",
+      "language": "en",
+      "status": "PASS",
+      "source_acceptance": "PASS",
+      "row_sha256": "3d008cf6bb04b0e74a3835acdf6cb5816d01e36617f1933d384c60aa4323e017",
+      "source_sha256": "535f35980d469901f36340bc735ea185ecede480c4dc4984d49ffea4789307f7",
+      "source_scope_sha256": "7e4175dfff7ed86bbe76d6f8db5565b4f9f05df6a60732e8b7bb8abd6ee24718",
+      "selected_text_read_complete": true,
+      "selected_text_read_extent": "act-01-selected.txt lines 1–39, complete 15336 bytes",
+      "proof_pins": {
+        "source_manifest": {
+          "path": "src/sources/papal-documents/historical-english-completion-manifest.json",
+          "sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+          "bytes": 67917
+        },
+        "source_manifest_snapshot_pin": {
+          "path": "src/sources/papal-documents/historical-english-completion-manifest.json",
+          "sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+          "bytes": 67917
+        },
+        "source_artifact_record": {
+          "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1911-volume-36/artifacts/english-reading-535f35980d46/artifact.toml",
+          "sha256": "f0286eed9f998b270a793832243ded932c55799d8e24449acb1bc98ace22344b"
+        },
+        "controller": {
+          "path": "src/sources/works/papal-documents/1911-05-24-papal-pius-x-hf-p-x-enc-24051911-iamdudum-150928a9/editions/1911-acqr-volume-36-english/segments/complete-english-reading.toml",
+          "sha256": "727fe9d0bbb33f6a35f9564a9989f17bee57b1a8f69ee4b1a472dbd8aef03e04"
+        },
+        "constituent_edition": {
+          "path": "src/sources/works/papal-documents/1911-05-24-papal-pius-x-hf-p-x-enc-24051911-iamdudum-150928a9/editions/1911-acqr-volume-36-english/edition.toml",
+          "sha256": "127ab101617de3587e26d6d8dcb84b0a84225bcbd96dd69069c7799e39ba9158",
+          "data": {
+            "schema": 1,
+            "record_type": "edition",
+            "id": "edition.papal.pius-x.hf-p-x-enc-24051911-iamdudum.1911-acqr-volume-36-english",
+            "work_id": "work.papal.pius-x.hf-p-x-enc-24051911-iamdudum",
+            "title": "Iamdudum — historical English translation",
+            "language": "en",
+            "date": "1911",
+            "publication": "The American Catholic Quarterly Review 36 (1911), pp. 551–556.",
+            "authority": "Anonymous contemporary human translation",
+            "notes": "Native source title/cover and all selected act pages inspected; exact source identity and extent review: artifact.journals.american-catholic-quarterly-review.1911-volume-36.extent-review-ad425ab317e0."
+          }
+        },
+        "container_edition": {
+          "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1911-volume-36/edition.toml",
+          "sha256": "fe9358af9f89a317847840215526948effd93095229c3771b4498bf485e441bd",
+          "data": {
+            "schema": 1,
+            "record_type": "edition",
+            "id": "edition.journals.american-catholic-quarterly-review.1911-volume-36",
+            "work_id": "work.journals.american-catholic-quarterly-review",
+            "title": "The American Catholic Quarterly Review, volume 36 (1911)",
+            "language": "mul",
+            "date": "1911",
+            "publication": "Philadelphia; volume 36, January–October 1911.",
+            "authority": "Historical periodical printing; anonymous human English translation",
+            "notes": "Native historical title or issue cover and every selected English act page inspected. The whole acquisition includes other authors and Latin material. No historical translator is named for the selected act."
+          }
+        },
+        "evidence": {
+          "path": ".scratch/english-intake-recovery/packet-08/act-01-evidence.json",
+          "sha256": "57cb976b59294c81903a5c013a9cb03f6b05ac172b7210cfe64809cd1eb60a5c",
+          "bytes": 35224
+        },
+        "selection": {
+          "path": ".scratch/english-intake-recovery/packet-08/act-01-selected.txt",
+          "sha256": "535f35980d469901f36340bc735ea185ecede480c4dc4984d49ffea4789307f7",
+          "bytes": 15336
+        },
+        "selector": [
+          [
+            1,
+            39
+          ]
+        ],
+        "rights_policy": {
+          "path": "src/sources/inventories/papal-documents-rights-v1.toml",
+          "sha256": "2098d3cc15ef3439234033c7582fe4f17a726494008b25682a7f1b3a844454ea",
+          "bytes": 10179
+        },
+        "replay": {
+          "parent": {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1911-volume-36/artifacts/historical-ocr-87277e551201/historical.txt",
+            "sha256": "87277e551201a1cbf2c11c97554e894dcc78c1a7a290997b9a2664ca35d5a95e",
+            "bytes": 2499975
+          },
+          "recipe": {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1911-volume-36/artifacts/selection-recipe-b675ab6ce0d3/selection.json",
+            "sha256": "b675ab6ce0d3ec04f7a169bfdabf31cfd4fd638b4f4ee13f5aceca3313b4d14c",
+            "bytes": 6328
+          },
+          "helper": {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/selection-replay-efd0286bfaa7/extract.py",
+            "sha256": "efd0286bfaa782818ce5cd27ccb58db9ec359754bcd35455e7dbfcd06f4f4ef6",
+            "bytes": 624
+          },
+          "command": [
+            "/usr/bin/python",
+            "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/selection-replay-efd0286bfaa7/extract.py",
+            "src/sources/works/journals/american-catholic-quarterly-review/editions/1911-volume-36/artifacts/historical-ocr-87277e551201/historical.txt",
+            "src/sources/works/journals/american-catholic-quarterly-review/editions/1911-volume-36/artifacts/selection-recipe-b675ab6ce0d3/selection.json",
+            ".scratch/english-intake-recovery/packet-08/audit/current-helper-replay-01.txt"
+          ],
+          "exit_code": 0,
+          "output": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/current-helper-replay-01.txt",
+            "sha256": "535f35980d469901f36340bc735ea185ecede480c4dc4984d49ffea4789307f7",
+            "bytes": 15336
+          },
+          "independent_output_sha256": "535f35980d469901f36340bc735ea185ecede480c4dc4984d49ffea4789307f7",
+          "physical_line_ranges": [
+            [
+              33768,
+              34090
+            ]
+          ],
+          "native_order_moves": [],
+          "excluded_line_count": 19,
+          "exclusion_reasons": [
+            "isolated printed page label",
+            "printed running head",
+            "scan watermark"
+          ]
+        },
+        "fresh_observations": {
+          "path": ".scratch/english-intake-recovery/packet-08/audit/progress.json",
+          "sha256": "4a1b7e6aa14bf5c41e9aa370d7a409360037bcf15445d87a5e503d5721613234",
+          "bytes": 71161
+        },
+        "mechanical_results": {
+          "path": ".scratch/english-intake-recovery/packet-08/audit/mechanical-results.json",
+          "sha256": "e72987a15d8bfd00271a2608422a6bc80266db402118878a0f9f6d660d4e6bf8",
+          "bytes": 149951
+        },
+        "native_opened_image_count": 4,
+        "source_payload": {
+          "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1911-volume-36/artifacts/english-reading-535f35980d46/text.txt",
+          "sha256": "535f35980d469901f36340bc735ea185ecede480c4dc4984d49ffea4789307f7"
+        }
+      },
+      "affirmative_retained_artifact_basis": "Historical human English and original journal wording in the identified Philadelphia 1911 printing are public domain in the United States by expiration of the publication term. Modern Google introductory text and generated covers are excluded; faithful scan/OCR adds no original wording. This assessment concerns the actual historical printing, not merely the act date.",
+      "actual_opened_images": [
+        {
+          "observation": "Fresh title-page view: American Catholic Quarterly Review, volume XXXVI, From January to October 1911; Philadelphia, 610 South Washington Square. Modern Digitized by Google footer is separate from historical wording.",
+          "source_page": 1,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1452,
+            2200
+          ],
+          "proxy_dimensions": [
+            1452,
+            2200
+          ],
+          "crop_pixels": [
+            0,
+            0,
+            1452,
+            2200
+          ],
+          "source_pdf": {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1911-volume-36/artifacts/native-print-proof-f41dac4ad8d3/source.pdf",
+            "sha256": "f41dac4ad8d39e22ed528d2445f10b02d85f4744c0cd4762a98a2a98fcb27ec7"
+          },
+          "source_png": {
+            "path": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-09/pages/page-1.png",
+            "sha256": "118230c1a69ad42afceca925970b6cdf0c5695babe50eae3a7f1732663114110"
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/image-proxies/packet-08-act-01-sample-01-118230c1a69a.jpg",
+            "sha256": "3aed6e013a2118fb6afaf8cbbbd5e1c9e7a06359a522dd0f309bdaddfd6253cb"
+          }
+        },
+        {
+          "observation": "Printed p.551 opens On the Church in Portugal, identifies encyclical of Pius X, full patriarchs/primates/archbishops/bishops/other ordinaries address and salutation. Body begins WE THINK; the selected text includes these in native order. No translator attribution visible.",
+          "source_page": 2,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1452,
+            2200
+          ],
+          "proxy_dimensions": [
+            1452,
+            2200
+          ],
+          "crop_pixels": [
+            0,
+            0,
+            1452,
+            2200
+          ],
+          "source_pdf": {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1911-volume-36/artifacts/native-print-proof-f41dac4ad8d3/source.pdf",
+            "sha256": "f41dac4ad8d39e22ed528d2445f10b02d85f4744c0cd4762a98a2a98fcb27ec7"
+          },
+          "source_png": {
+            "path": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-09/pages/page-2.png",
+            "sha256": "6b45269f193d0304e0543e7b72ddd62747a5c594705c8ac1805245cce18e35e5"
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/image-proxies/packet-08-act-01-sample-02-6b45269f193d.jpg",
+            "sha256": "b5b87d84e72a9e92a41a003e35c1b65ac2d99c2dc55f318b10511da7f4bdf20e"
+          }
+        },
+        {
+          "observation": "Printed p.553 has continuous English body on Portuguese Church governance and legal restrictions, matching the selected mid-body sequence. No separate page-foot note is visible in this sample.",
+          "source_page": 4,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1452,
+            2200
+          ],
+          "proxy_dimensions": [
+            1452,
+            2200
+          ],
+          "crop_pixels": [
+            0,
+            0,
+            1452,
+            2200
+          ],
+          "source_pdf": {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1911-volume-36/artifacts/native-print-proof-f41dac4ad8d3/source.pdf",
+            "sha256": "f41dac4ad8d39e22ed528d2445f10b02d85f4744c0cd4762a98a2a98fcb27ec7"
+          },
+          "source_png": {
+            "path": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-09/pages/page-3.png",
+            "sha256": "806aa153427303ecc38f0bede21033e0d8a6dd31b95d2bc87e041eeca9662ae8"
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/image-proxies/packet-08-act-01-sample-03-806aa1534273.jpg",
+            "sha256": "8c2dabb848724d7ceae9b5347784f4ced8e2a074ab90d9099b9a509f3aa6c403"
+          }
+        },
+        {
+          "observation": "Printed p.556 concludes body, appeal to other bishops, apostolic benediction, Rome St Peter dating 24 May 1911/eighth pontifical year, and Pius X Pope subscription. Selection retains all. No neighboring article or page-foot notes below closing.",
+          "source_page": 7,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1452,
+            2200
+          ],
+          "proxy_dimensions": [
+            1452,
+            2200
+          ],
+          "crop_pixels": [
+            0,
+            0,
+            1452,
+            2200
+          ],
+          "source_pdf": {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1911-volume-36/artifacts/native-print-proof-f41dac4ad8d3/source.pdf",
+            "sha256": "f41dac4ad8d39e22ed528d2445f10b02d85f4744c0cd4762a98a2a98fcb27ec7"
+          },
+          "source_png": {
+            "path": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-09/pages/page-4.png",
+            "sha256": "e8b71f3c53b745266fe24d0157b356a1a3b28fc8d23bdab01ae8e80a02e7a80b"
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/image-proxies/packet-08-act-01-sample-04-e8b71f3c53b7.jpg",
+            "sha256": "fdf08c2a9debd2ce4cee27fc856b434b17146c96f311744b263d0b5022410881"
+          }
+        }
+      ],
+      "findings": [
+        {
+          "code": "HISTORICAL_HUMAN_EDITION",
+          "severity": "info",
+          "finding": "American Catholic Quarterly Review36(1911), Philadelphia, printed pp551–556 is the identified historical English human translation; individual translator unknown. Fresh volume title establishes1911 independently of act dating24May1911."
+        },
+        {
+          "code": "COMPLETE_SELECTED_EXTENT",
+          "severity": "info",
+          "finding": "The complete selected text contains title, full address, salutation, body, apostolic blessing, dated closing and PiusX subscription. Fresh native beginning, middle and closing samples agree; no neighboring act, excerpt label or modern wrapper enters selected text."
+        },
+        {
+          "code": "HISTORICAL_APPARATUS",
+          "severity": "info",
+          "finding": "No separate numbered source-note apparatus occurs in the complete selected text or inspected native samples. Literal range33768–34090 excludes only exactly identified folios/running heads/watermarks; it does not invent notes from a different printing."
+        },
+        {
+          "code": "OCR_LIMIT",
+          "severity": "qualification",
+          "finding": "Recognition damage and physical-line word divisions remain. Source PASS concerns identity, extent and ordering; four native samples are not an assertion of image collation of every printed word."
+        }
+      ],
+      "scope_limits": [
+        "Source intake, historical human English edition identity, selected extent, own-note membership/order and exact mechanical provenance only.",
+        "All three selected texts were actually read completely. Native inspection extent is enumerated per image; prior visual verdicts are not inherited.",
+        "JPEG95 display proxies were used one at a time; authoritative native PDFs/PNGs and crop coordinates are pinned. No OCR or source wording was generated from JPEG.",
+        "Uncorrected historical OCR remains, including recognition damage, hard-line hyphens and punctuation. No AI body translation or corrected transcription.",
+        "No Latin-versus-English lexical translation accuracy, full-printing glyph collation, compiler PDF/font/layout, installation or deployment claim.",
+        "Rights finding applies the existing United States papal-documents-rights-v1 policy to the identified historical English printing; no worldwide clearance or general host permission is asserted."
+      ]
+    },
+    {
+      "id": "papal.pius-x.hf-p-x-enc-26051910-editae-saepe.acqr-1910-english",
+      "language": "en",
+      "status": "BLOCKED",
+      "source_acceptance": "BLOCKED",
+      "row_sha256": "0a398352080c3cd32d226d878736f111564240b9ba316d3811f42428ae173b53",
+      "source_sha256": "3598918606cc73f1630e383c00b8fc07f9b43b553c33333aed286e26ff599221",
+      "source_scope_sha256": "7e4175dfff7ed86bbe76d6f8db5565b4f9f05df6a60732e8b7bb8abd6ee24718",
+      "selected_text_read_complete": true,
+      "selected_text_read_extent": "act-02-selected.txt lines 1–157, complete 51684 bytes",
+      "proof_pins": {
+        "source_manifest": {
+          "path": "src/sources/papal-documents/historical-english-completion-manifest.json",
+          "sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+          "bytes": 67917
+        },
+        "source_manifest_snapshot_pin": {
+          "path": "src/sources/papal-documents/historical-english-completion-manifest.json",
+          "sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+          "bytes": 67917
+        },
+        "source_artifact_record": {
+          "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1910-volume-35/artifacts/english-reading-3598918606cc/artifact.toml",
+          "sha256": "1ba2fcb0f12af6ea1476f420e15d6ca1e9a7754f7394932ac01ce7482d2bd06d"
+        },
+        "controller": {
+          "path": "src/sources/works/papal-documents/1910-05-26-papal-pius-x-hf-p-x-enc-26051910-editae-saepe-4203d7dc/editions/1910-acqr-volume-35-english/segments/complete-english-reading.toml",
+          "sha256": "0296bd1fdf4dff9e62a1b0ac0a03d316c889c6c5b2f7e9d7c841d24634b26f03"
+        },
+        "constituent_edition": {
+          "path": "src/sources/works/papal-documents/1910-05-26-papal-pius-x-hf-p-x-enc-26051910-editae-saepe-4203d7dc/editions/1910-acqr-volume-35-english/edition.toml",
+          "sha256": "b130cd2e6f88df4dcfdbab786be939b202bcb6d298d49ada2c72a19af18cfc1d",
+          "data": {
+            "schema": 1,
+            "record_type": "edition",
+            "id": "edition.papal.pius-x.hf-p-x-enc-26051910-editae-saepe.1910-acqr-volume-35-english",
+            "work_id": "work.papal.pius-x.hf-p-x-enc-26051910-editae-saepe",
+            "title": "Editae Saepe — historical English translation",
+            "language": "en",
+            "date": "1910",
+            "publication": "The American Catholic Quarterly Review 35 (1910), pp. 394–412.",
+            "authority": "Anonymous contemporary human translation",
+            "notes": "Native source title/cover and all selected act pages inspected; exact source identity and extent review: artifact.journals.american-catholic-quarterly-review.1910-volume-35.extent-review-cbabf7be7e06."
+          }
+        },
+        "container_edition": {
+          "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1910-volume-35/edition.toml",
+          "sha256": "15806c85cf1e2ac3d0ec3f5099733da6dec9e5bd938f454f77390dfc0f9e6cc7",
+          "data": {
+            "schema": 1,
+            "record_type": "edition",
+            "id": "edition.journals.american-catholic-quarterly-review.1910-volume-35",
+            "work_id": "work.journals.american-catholic-quarterly-review",
+            "title": "The American Catholic Quarterly Review, volume 35 (1910)",
+            "language": "mul",
+            "date": "1910",
+            "publication": "Philadelphia; volume 35, January–October 1910.",
+            "authority": "Historical periodical printing; anonymous human English translation",
+            "notes": "Native historical title or issue cover and every selected English act page inspected. The whole acquisition includes other authors and Latin material. No historical translator is named for the selected act."
+          }
+        },
+        "evidence": {
+          "path": ".scratch/english-intake-recovery/packet-08/act-02-evidence.json",
+          "sha256": "0a529800240936f3339c9e946c1bfd083ebcee2dd32afb146aafd0eb30009123",
+          "bytes": 38214
+        },
+        "selection": {
+          "path": ".scratch/english-intake-recovery/packet-08/act-02-selected.txt",
+          "sha256": "3598918606cc73f1630e383c00b8fc07f9b43b553c33333aed286e26ff599221",
+          "bytes": 51684
+        },
+        "selector": [
+          [
+            1,
+            157
+          ]
+        ],
+        "rights_policy": {
+          "path": "src/sources/inventories/papal-documents-rights-v1.toml",
+          "sha256": "2098d3cc15ef3439234033c7582fe4f17a726494008b25682a7f1b3a844454ea",
+          "bytes": 10179
+        },
+        "replay": {
+          "parent": {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1910-volume-35/artifacts/historical-ocr-b437c2e46869/historical.txt",
+            "sha256": "b437c2e468696968cc178e45cf7ad0e7dccedd4ffcb646231a2f55c4b6e81072",
+            "bytes": 2707017
+          },
+          "recipe": {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1910-volume-35/artifacts/selection-recipe-a76f3fb8e1c8/selection.json",
+            "sha256": "a76f3fb8e1c8da5957d666cf825e072cff2a017cd16bbc7f43c6ad5b9de00a84",
+            "bytes": 16090
+          },
+          "helper": {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/selection-replay-efd0286bfaa7/extract.py",
+            "sha256": "efd0286bfaa782818ce5cd27ccb58db9ec359754bcd35455e7dbfcd06f4f4ef6",
+            "bytes": 624
+          },
+          "command": [
+            "/usr/bin/python",
+            "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/selection-replay-efd0286bfaa7/extract.py",
+            "src/sources/works/journals/american-catholic-quarterly-review/editions/1910-volume-35/artifacts/historical-ocr-b437c2e46869/historical.txt",
+            "src/sources/works/journals/american-catholic-quarterly-review/editions/1910-volume-35/artifacts/selection-recipe-a76f3fb8e1c8/selection.json",
+            ".scratch/english-intake-recovery/packet-08/audit/current-helper-replay-02.txt"
+          ],
+          "exit_code": 0,
+          "output": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/current-helper-replay-02.txt",
+            "sha256": "3598918606cc73f1630e383c00b8fc07f9b43b553c33333aed286e26ff599221",
+            "bytes": 51684
+          },
+          "independent_output_sha256": "3598918606cc73f1630e383c00b8fc07f9b43b553c33333aed286e26ff599221",
+          "physical_line_ranges": [
+            [
+              28199,
+              29205
+            ]
+          ],
+          "native_order_moves": [],
+          "excluded_line_count": 35,
+          "exclusion_reasons": [
+            "isolated printed page label",
+            "printed running head",
+            "printed running head or page label, OCR-damaged",
+            "scan watermark"
+          ]
+        },
+        "fresh_observations": {
+          "path": ".scratch/english-intake-recovery/packet-08/audit/progress.json",
+          "sha256": "4a1b7e6aa14bf5c41e9aa370d7a409360037bcf15445d87a5e503d5721613234",
+          "bytes": 71161
+        },
+        "mechanical_results": {
+          "path": ".scratch/english-intake-recovery/packet-08/audit/mechanical-results.json",
+          "sha256": "e72987a15d8bfd00271a2608422a6bc80266db402118878a0f9f6d660d4e6bf8",
+          "bytes": 149951
+        },
+        "native_opened_image_count": 6,
+        "source_payload": {
+          "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1910-volume-35/artifacts/english-reading-3598918606cc/text.txt",
+          "sha256": "3598918606cc73f1630e383c00b8fc07f9b43b553c33333aed286e26ff599221"
+        }
+      },
+      "affirmative_retained_artifact_basis": "Historical human English and original journal wording in the identified Philadelphia 1910 printing are public domain in the United States by expiration of the publication term. Modern Google introductory text and generated covers are excluded; faithful scan/OCR adds no original wording. This assessment concerns the actual historical printing, not merely the act date.",
+      "actual_opened_images": [
+        {
+          "observation": "Historical cover identifies American Catholic Quarterly Review vol.XXXV, January 1910, no.137, Philadelphia. This is the volume opening cover, not the May act date or proof that the act appeared in January. Bounded act pages belong to the identified 1910 volume.",
+          "source_page": 1,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1478,
+            2200
+          ],
+          "proxy_dimensions": [
+            1478,
+            2200
+          ],
+          "crop_pixels": [
+            0,
+            0,
+            1478,
+            2200
+          ],
+          "source_pdf": {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1910-volume-35/artifacts/native-print-proof-1e317299a5d7/source.pdf",
+            "sha256": "1e317299a5d72d9353564029d8995e526c7d66fca94e77c75e25a58916964694"
+          },
+          "source_png": {
+            "path": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-10/pages/page-1.png",
+            "sha256": "810ed421ea52eff9dc3c7529cf55d63b50115d29b53bd45ae3acbca92e2fc8c1"
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/image-proxies/packet-08-act-02-sample-01-810ed421ea52.jpg",
+            "sha256": "b372baff8f7bb2257c64c5b7a5b6fe67d529a3afcb0c097908a90698045c9951"
+          }
+        },
+        {
+          "observation": "Printed p.394 opens encyclical of Pius X on tercentenary of canonization of Charles Borromeo. Full address, papal-name protocol, salutation and initial WHAT body are retained in selected text; this page has inline citation apparatus rather than separate footnotes.",
+          "source_page": 2,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1478,
+            2200
+          ],
+          "proxy_dimensions": [
+            1478,
+            2200
+          ],
+          "crop_pixels": [
+            0,
+            0,
+            1478,
+            2200
+          ],
+          "source_pdf": {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1910-volume-35/artifacts/native-print-proof-1e317299a5d7/source.pdf",
+            "sha256": "1e317299a5d72d9353564029d8995e526c7d66fca94e77c75e25a58916964694"
+          },
+          "source_png": {
+            "path": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-10/pages/page-2.png",
+            "sha256": "6f4bd9bf0278602b1283bdc9723ef3d0f302d8ffc7206ff9e651a9b82e199be9"
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/image-proxies/packet-08-act-02-sample-02-6f4bd9bf0278.jpg",
+            "sha256": "251a051ce208e393aa8df2e3872d41bba038f43d2d89d4101fe47ddb13bbaa76"
+          }
+        },
+        {
+          "observation": "Printed p.398 continues English body on reform and Charles Borromeo; inline scriptural citations remain within body paragraphs, with no separate numbered footnote apparatus on this sample. Sequence corresponds to selected text.",
+          "source_page": 6,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1478,
+            2200
+          ],
+          "proxy_dimensions": [
+            1478,
+            2200
+          ],
+          "crop_pixels": [
+            0,
+            0,
+            1478,
+            2200
+          ],
+          "source_pdf": {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1910-volume-35/artifacts/native-print-proof-1e317299a5d7/source.pdf",
+            "sha256": "1e317299a5d72d9353564029d8995e526c7d66fca94e77c75e25a58916964694"
+          },
+          "source_png": {
+            "path": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-10/pages/page-3.png",
+            "sha256": "1c3b0e917e0eff0ea484dbbe71ce20b182ccf428de25091cd5c01256a554f7e8"
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/image-proxies/packet-08-act-02-sample-03-1c3b0e917e0e.jpg",
+            "sha256": "02528920e8461d3dc4fc53f274762ee9d26dcc41b7aa6ff76e0a6f586c4e6381"
+          }
+        },
+        {
+          "observation": "Printed p.403 running head expressly labels Editae saepe (translation). Body and inline citations match selected sequence here; no translator named. The ordering concern lies on next printed p.404, outside supplied sample, requiring additional bounded native review.",
+          "source_page": 11,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1478,
+            2200
+          ],
+          "proxy_dimensions": [
+            1478,
+            2200
+          ],
+          "crop_pixels": [
+            0,
+            0,
+            1478,
+            2200
+          ],
+          "source_pdf": {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1910-volume-35/artifacts/native-print-proof-1e317299a5d7/source.pdf",
+            "sha256": "1e317299a5d72d9353564029d8995e526c7d66fca94e77c75e25a58916964694"
+          },
+          "source_png": {
+            "path": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-10/pages/page-4.png",
+            "sha256": "43c8f795fbeb80421c4ce1a9f32b771f868d94cc8bfff5491015b9c7a06f0cf0"
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/image-proxies/packet-08-act-02-sample-04-43c8f795fbeb.jpg",
+            "sha256": "b7d470e1cc8ff23b784011c6d62fc7a3777998d1b47e58c57bdfcabf113562dd"
+          }
+        },
+        {
+          "observation": "Printed p.412 finishes quotation, benediction to bishops/clergy/people, St Peter Rome dating 26 May 1910/seventh pontifical year and PIUS X POPE subscription. Selection includes each in native order. No following act or independent note below closing.",
+          "source_page": 20,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1478,
+            2200
+          ],
+          "proxy_dimensions": [
+            1478,
+            2200
+          ],
+          "crop_pixels": [
+            0,
+            0,
+            1478,
+            2200
+          ],
+          "source_pdf": {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1910-volume-35/artifacts/native-print-proof-1e317299a5d7/source.pdf",
+            "sha256": "1e317299a5d72d9353564029d8995e526c7d66fca94e77c75e25a58916964694"
+          },
+          "source_png": {
+            "path": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-10/pages/page-5.png",
+            "sha256": "4b6b9883911c312e22bb2fad75552eb94cf474ba18978b280927e2f1d6d86ed4"
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/image-proxies/packet-08-act-02-sample-05-4b6b9883911c.jpg",
+            "sha256": "b3c32fb2cfdb7099673ebbdc129eab2cb5690a0ee8a642ef9741032ba991b5c9"
+          }
+        },
+        {
+          "observation": "Native p.404 establishes a real source-order defect: terminal body word life. belongs before These same qualities; the I.Thess citation continuation ii.,13.) belongs before Thus the word of God. Selected physicalLF95 and97 instead place both after the later Here,too paragraph. These are substantive body/citation pieces, not excluded publishing furniture. Exact literal OCR replay alone does not restore native order.",
+          "source_page": 12,
+          "printed_page": "404",
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "crop_pixels": "full page; no crop",
+          "source_pdf": {
+            "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1910-volume-35/artifacts/native-print-proof-1e317299a5d7/source.pdf",
+            "sha256": "1e317299a5d72d9353564029d8995e526c7d66fca94e77c75e25a58916964694"
+          },
+          "source_png": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/rasters/.scratch/english-intake-recovery/packet-08/audit/editae-native-12/pages/page-1.png",
+            "sha256": "050c794c317630417e35361b60e322ba02a17d5f05e4b54ad0fe6ef140045d65",
+            "bytes": 380054
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/editae-p404.jpg",
+            "sha256": "a5242bb0c584713bca963827b81fedc8dfeb58d0d738f20de228e1484c8e7298",
+            "bytes": 801646
+          },
+          "sample_pdf": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/editae-native-12.pdf",
+            "sha256": "519fd62d07d2d44e3d22709a098444f32d38ca2217485355956b5d985f5e8c24",
+            "bytes": 124769
+          }
+        }
+      ],
+      "findings": [
+        {
+          "code": "NATIVE_BODY_ORDER",
+          "severity": "blocker",
+          "finding": "Current source3598918606cc displaces body word life. (selected physicalLF95,parentLF28794) and I.Thess citation continuation ii..13) (selectedLF97,parentLF28797) after the later Here,too paragraph. Native printed p404 places them after parentLF28750 and28780 respectively. The current recipe has zero native-order moves and exactly replays the defect. Current immutable selection is BLOCKED.",
+          "evidence": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/editae-order-blocker.json",
+            "sha256": "fbd3b2d803b87e48dcf61d0fbfa154efe27b7e60f9d9560005600153c0591c27",
+            "bytes": 12894
+          }
+        },
+        {
+          "code": "HISTORICAL_HUMAN_EDITION",
+          "severity": "info",
+          "finding": "American Catholic Quarterly Review35(1910), Philadelphia, pp394–412 is an anonymous historical human English translation. Printed running head expressly identifies it as a translation. January1910 opening cover establishes the volume/year; it is not claimed as the publication month of the May26 act."
+        },
+        {
+          "code": "BOUNDARIES_RETAINED",
+          "severity": "info",
+          "finding": "Selected title, full address/papal-name protocol, salutation, body, apostolic blessing, RomeMay26,1910 dating and PIUSX subscription are retained. The problem is native internal body/citation order, not an excerpt or neighboring article."
+        },
+        {
+          "code": "HISTORICAL_APPARATUS",
+          "severity": "info",
+          "finding": "This English printing uses inline citations. Existing parent/recipe preserves their literal OCR words but misplaces the specified citation continuation; mechanical hash PASS cannot establish native source order."
+        }
+      ],
+      "scope_limits": [
+        "Source intake, historical human English edition identity, selected extent, own-note membership/order and exact mechanical provenance only.",
+        "All three selected texts were actually read completely. Native inspection extent is enumerated per image; prior visual verdicts are not inherited.",
+        "JPEG95 display proxies were used one at a time; authoritative native PDFs/PNGs and crop coordinates are pinned. No OCR or source wording was generated from JPEG.",
+        "Uncorrected historical OCR remains, including recognition damage, hard-line hyphens and punctuation. No AI body translation or corrected transcription.",
+        "No Latin-versus-English lexical translation accuracy, full-printing glyph collation, compiler PDF/font/layout, installation or deployment claim.",
+        "Rights finding applies the existing United States papal-documents-rights-v1 policy to the identified historical English printing; no worldwide clearance or general host permission is asserted."
+      ]
+    },
+    {
+      "id": "papal.pius-xi.hf-p-xi-enc-19291220-mens-nostra",
+      "language": "en",
+      "status": "PASS",
+      "source_acceptance": "PASS",
+      "row_sha256": "2596593b767e0c62aea1b235c49c11c14528aac09dd7b45a6c183353832878ea",
+      "source_sha256": "de1e426c7a6c0eb99b247f598e800e4ec61c5c5e70fed3a18a4b67ee7fbc2f3b",
+      "source_scope_sha256": "7e4175dfff7ed86bbe76d6f8db5565b4f9f05df6a60732e8b7bb8abd6ee24718",
+      "selected_text_read_complete": true,
+      "selected_text_read_extent": "act-03-selected.txt lines 1–221, complete 38277 bytes",
+      "proof_pins": {
+        "source_manifest": {
+          "path": "src/sources/papal-documents/historical-english-completion-manifest.json",
+          "sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+          "bytes": 67917
+        },
+        "source_manifest_snapshot_pin": {
+          "path": "src/sources/papal-documents/historical-english-completion-manifest.json",
+          "sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+          "bytes": 67917
+        },
+        "source_artifact_record": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1930-02-08-volume-28-issue-3/artifacts/bounded-english-de1e426c7a6c/artifact.toml",
+          "sha256": "f41fbbea6b038343a708e382fc1ca39497a9b38db31fb4980bb95477e42dc832"
+        },
+        "controller": {
+          "path": "src/sources/works/papal-documents/1929-12-20-papal-pius-xi-hf-p-xi-enc-19291220-mens-nostra-3892b8f3/editions/1930-02-08-catholic-mind-english/segments/complete-english-text.toml",
+          "sha256": "19dc64df432e718c7a39f30109d6510864e4d43c0765ad04ef1f7c75397cec64"
+        },
+        "constituent_edition": {
+          "path": "src/sources/works/papal-documents/1929-12-20-papal-pius-xi-hf-p-xi-enc-19291220-mens-nostra-3892b8f3/editions/1930-02-08-catholic-mind-english/edition.toml",
+          "sha256": "46dcc4515d69fc0e4cb4a2abd3f51faaed24c3681b9b3a33c9ae2d82953842ce",
+          "data": {
+            "schema": 1,
+            "record_type": "edition",
+            "id": "edition.papal.pius-xi.hf-p-xi-enc-19291220-mens-nostra.1930-02-08-catholic-mind-english",
+            "work_id": "work.papal.pius-xi.hf-p-xi-enc-19291220-mens-nostra",
+            "title": "Mens nostra — historical Catholic Mind English translation",
+            "language": "en",
+            "date": "1930-02-08",
+            "publication": "The Catholic Mind 28, no. 3 (February 8, 1930), pp. 41–58",
+            "notes": "Historical human English translation reprinted from the London Tablet, January 4, 1930; individual translator unnamed. Complete native printed pp. 41–58, address, title, all 42 source notes, blessing and dated closing inspected. This printing supplies no separate papal-name subscription. Artifact pages 8–9 repeat printed pp. 46–47 and are omitted as duplicate scans, while their first scans remain. The independent Retreat Congress article begins below the closing on p. 58. The exact XML WORD selection retains OCR errors, lost drop-cap Y, original hard-line hyphens and source punctuation. One explicitly audited node permutation restores the native p. 42 note order without changing word strings. This is extent/identity review, not a corrected transcription or Latin-versus-English accuracy certification."
+          }
+        },
+        "container_edition": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1930-02-08-volume-28-issue-3/edition.toml",
+          "sha256": "51c7b02045734463820da592e546eea6c3d491b6439829a026fdf746bfe132f6",
+          "data": {
+            "schema": 1,
+            "record_type": "edition",
+            "id": "edition.journals.catholic-mind.1930-02-08-volume-28-issue-3",
+            "work_id": "work.journals.catholic-mind",
+            "title": "The Catholic Mind 28, no. 3 (February 8, 1930)",
+            "language": "en",
+            "publication": "The Catholic Mind, volume 28, number 3, February 8, 1930",
+            "date": "1930-02-08",
+            "notes": "Historical human English translation reprinted from the London Tablet, January 4, 1930; individual translator unnamed. Complete native printed pp. 41–58, address, title, all 42 source notes, blessing and dated closing inspected. This printing supplies no separate papal-name subscription. Artifact pages 8–9 repeat printed pp. 46–47 and are omitted as duplicate scans, while their first scans remain. The independent Retreat Congress article begins below the closing on p. 58. The exact XML WORD selection retains OCR errors, lost drop-cap Y, original hard-line hyphens and source punctuation. One explicitly audited node permutation restores the native p. 42 note order without changing word strings. This is extent/identity review, not a corrected transcription or Latin-versus-English accuracy certification. The whole 22-image issue controls its complete source artifacts."
+          }
+        },
+        "evidence": {
+          "path": ".scratch/english-intake-recovery/packet-08/act-03-evidence.json",
+          "sha256": "173b80a08f56f6f8563d9d126505a19df08c2fc63b1bbe411a42ad5991e6a596",
+          "bytes": 53296
+        },
+        "selection": {
+          "path": ".scratch/english-intake-recovery/packet-08/act-03-selected.txt",
+          "sha256": "de1e426c7a6c0eb99b247f598e800e4ec61c5c5e70fed3a18a4b67ee7fbc2f3b",
+          "bytes": 38277
+        },
+        "selector": [
+          [
+            1,
+            221
+          ]
+        ],
+        "rights_policy": {
+          "path": "src/sources/inventories/papal-documents-rights-v1.toml",
+          "sha256": "2098d3cc15ef3439234033c7582fe4f17a726494008b25682a7f1b3a844454ea",
+          "bytes": 10179
+        },
+        "replay": {
+          "helper": {
+            "path": "src/sources/works/journals/catholic-mind/editions/1930-02-08-volume-28-issue-3/artifacts/source-selection-recipe-879be0345b42/extract.py",
+            "sha256": "879be0345b4202fe2a35238cfe9bdbe452475ee2deac75a5e746ee0f8d2c4fc6",
+            "bytes": 6541
+          },
+          "xml_parent": {
+            "path": "src/sources/works/journals/catholic-mind/editions/1930-02-08-volume-28-issue-3/artifacts/ia-xml-d85c949a1c9a/sim_catholic-mind_1930-02-08_28_3_djvu.xml",
+            "sha256": "d85c949a1c9a7f8f57f0fca0923ba8d5e1506cd92e53fce1b5da4253928664e4",
+            "bytes": 661420
+          },
+          "pdf_parent": {
+            "path": "src/sources/works/journals/catholic-mind/editions/1930-02-08-volume-28-issue-3/artifacts/ia-facsimile-1e93c54004e9/sim_catholic-mind_1930-02-08_28_3.pdf",
+            "sha256": "1e93c54004e910d0f920c181b6e7bf52a39844582f132553e1de33cb3abbb39d",
+            "bytes": 4037614
+          },
+          "selection_ledger": {
+            "path": "src/sources/works/journals/catholic-mind/editions/1930-02-08-volume-28-issue-3/artifacts/word-geometry-selection-f4f1dc5bb83b/geometry-selection.json",
+            "sha256": "f4f1dc5bb83bf075d700ea26cd755391c8cffb3512f7b89b15a6770e2de06aa7",
+            "bytes": 238058
+          },
+          "command": [
+            "/usr/bin/python",
+            "src/sources/works/journals/catholic-mind/editions/1930-02-08-volume-28-issue-3/artifacts/source-selection-recipe-879be0345b42/extract.py",
+            "--input-dir",
+            ".scratch/english-intake-recovery/packet-08/audit/mens-input",
+            "--output-dir",
+            ".scratch/english-intake-recovery/packet-08/audit/mens-current-replay"
+          ],
+          "exit_code": 0,
+          "output": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-current-replay/mens-nostra-geometry-text.txt",
+            "sha256": "de1e426c7a6c0eb99b247f598e800e4ec61c5c5e70fed3a18a4b67ee7fbc2f3b",
+            "bytes": 38277
+          },
+          "word_count": 6499,
+          "selected_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "independent_output_sha256": "de1e426c7a6c0eb99b247f598e800e4ec61c5c5e70fed3a18a4b67ee7fbc2f3b",
+          "all_page_nodes_accounted_once": true,
+          "note_permutation_preserves_nodes": true
+        },
+        "fresh_observations": {
+          "path": ".scratch/english-intake-recovery/packet-08/audit/progress.json",
+          "sha256": "4a1b7e6aa14bf5c41e9aa370d7a409360037bcf15445d87a5e503d5721613234",
+          "bytes": 71161
+        },
+        "mechanical_results": {
+          "path": ".scratch/english-intake-recovery/packet-08/audit/mechanical-results.json",
+          "sha256": "e72987a15d8bfd00271a2608422a6bc80266db402118878a0f9f6d660d4e6bf8",
+          "bytes": 149951
+        },
+        "native_opened_image_count": 20,
+        "source_payload": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1930-02-08-volume-28-issue-3/artifacts/bounded-english-de1e426c7a6c/mens-nostra-geometry-text.txt",
+          "sha256": "de1e426c7a6c0eb99b247f598e800e4ec61c5c5e70fed3a18a4b67ee7fbc2f3b"
+        }
+      },
+      "affirmative_retained_artifact_basis": "The native masthead identifies this actual historical English United States journal printing as The Catholic Mind 28, no. 3, February 8, 1930. Its article expressly credits reprinting from the London Tablet of January 4, 1930; the individual translator is unnamed. The documented 1930 printing, independently of the 1929 act date, supplies the expired United States publication-term basis under the controlling papal-documents-rights-v1 record. Faithful scans, mechanical OCR and coordinate metadata add no identified creative revision. Modern delivery wrappers are excluded.",
+      "actual_opened_images": [
+        {
+          "observation": "Printed p.41 masthead directly identifies The Catholic Mind vol.XXVIII no.3 February 8,1930. Title On Promoting the Wider Use of Spiritual Exercises, Pope Pius XI attribution, Mens Nostra caption with 20 Dec1929 act date and reprint from London Tablet 4 Jan1930, full address/salutation, body and own source note1 visible. Individual translator unnamed. The selected OCR loses initial drop-cap Y as disclosed; no AI translation.",
+          "source_page": 1,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1456,
+            2200
+          ],
+          "proxy_dimensions": [
+            1456,
+            2200
+          ],
+          "crop_pixels": [
+            0,
+            0,
+            1456,
+            2200
+          ],
+          "source_pdf": {
+            "path": "src/sources/works/journals/catholic-mind/editions/1930-02-08-volume-28-issue-3/artifacts/ia-facsimile-1e93c54004e9/sim_catholic-mind_1930-02-08_28_3.pdf",
+            "sha256": "1e93c54004e910d0f920c181b6e7bf52a39844582f132553e1de33cb3abbb39d"
+          },
+          "source_png": {
+            "path": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-11/pages/page-01.png",
+            "sha256": "8bb44456829c90511e455475b1f7f31e948f07d47f9821cf044e04b441a04b64"
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/image-proxies/packet-08-act-03-sample-01-8bb44456829c.jpg",
+            "sha256": "83d3878f5a6d9e3328682ddc0d8cac2c5ed836b73a34b061c26ae032378ac423"
+          }
+        },
+        {
+          "observation": "Printed p.42 continues body and has two own footnotes, numbered2 then3, both below rule after body. Selected output preserves this body/notes order. Native note2 continuation precedes note3; current extractor permutation must be checked against this order.",
+          "source_page": 2,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1460,
+            2200
+          ],
+          "proxy_dimensions": [
+            1460,
+            2200
+          ],
+          "crop_pixels": [
+            0,
+            0,
+            1460,
+            2200
+          ],
+          "source_pdf": {
+            "path": "src/sources/works/journals/catholic-mind/editions/1930-02-08-volume-28-issue-3/artifacts/ia-facsimile-1e93c54004e9/sim_catholic-mind_1930-02-08_28_3.pdf",
+            "sha256": "1e93c54004e910d0f920c181b6e7bf52a39844582f132553e1de33cb3abbb39d"
+          },
+          "source_png": {
+            "path": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-11/pages/page-02.png",
+            "sha256": "bfcae634fc5f101eabd6bdf0b08ec92ab353df5ed6bcc500b4d6b1e0f87d8385"
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/image-proxies/packet-08-act-03-sample-02-bfcae634fc5f.jpg",
+            "sha256": "7197a760fba53bd1c140c1574a76e00408f9e8d9c31dfe0953a972c5a22a966f"
+          }
+        },
+        {
+          "observation": "Printed p.43 section heading and complete body continuation match selected order; no page-foot notes appear. The selected historical section heading belongs to this printing rather than a modern wrapper.",
+          "source_page": 3,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1460,
+            2200
+          ],
+          "proxy_dimensions": [
+            1460,
+            2200
+          ],
+          "crop_pixels": [
+            0,
+            0,
+            1460,
+            2200
+          ],
+          "source_pdf": {
+            "path": "src/sources/works/journals/catholic-mind/editions/1930-02-08-volume-28-issue-3/artifacts/ia-facsimile-1e93c54004e9/sim_catholic-mind_1930-02-08_28_3.pdf",
+            "sha256": "1e93c54004e910d0f920c181b6e7bf52a39844582f132553e1de33cb3abbb39d"
+          },
+          "source_png": {
+            "path": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-11/pages/page-03.png",
+            "sha256": "5c231e88c1c7eef6939dfa2013ee1962cbe51f38d3d1f26a6ee2da33c879bd18"
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/image-proxies/packet-08-act-03-sample-03-5c231e88c1c7.jpg",
+            "sha256": "c690a9d5ac218689eaf71d47b55281703c9ed0296fb131ac37f5fa32da5b689b"
+          }
+        },
+        {
+          "observation": "Native artifact page6 is printed p.46: continuous body, two historical section headings, own notes14–16 arranged left-to-right beneath rule. Selected notes retain this source order after the body; this first scan remains selected.",
+          "source_page": 6,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1451,
+            2200
+          ],
+          "proxy_dimensions": [
+            1451,
+            2200
+          ],
+          "crop_pixels": [
+            0,
+            0,
+            1451,
+            2200
+          ],
+          "source_pdf": {
+            "path": "src/sources/works/journals/catholic-mind/editions/1930-02-08-volume-28-issue-3/artifacts/ia-facsimile-1e93c54004e9/sim_catholic-mind_1930-02-08_28_3.pdf",
+            "sha256": "1e93c54004e910d0f920c181b6e7bf52a39844582f132553e1de33cb3abbb39d"
+          },
+          "source_png": {
+            "path": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-11/pages/page-04.png",
+            "sha256": "00f3bdf7e41e6b8f33c57f05439370fa8c35ba44efeab7cfd53be54f8dfef079"
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/image-proxies/packet-08-act-03-sample-04-00f3bdf7e41e.jpg",
+            "sha256": "1dbadbb9e8914efeb4fd6262f934ede0cbc3695452b8494cd62e1d697c5f12d9"
+          }
+        },
+        {
+          "observation": "Artifact page7 is printed p.47, continuing p.46 body, then historical Christ-example section and own notes17–18 below rule. Selected text follows that order and retains this first scan.",
+          "source_page": 7,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1451,
+            2200
+          ],
+          "proxy_dimensions": [
+            1451,
+            2200
+          ],
+          "crop_pixels": [
+            0,
+            0,
+            1451,
+            2200
+          ],
+          "source_pdf": {
+            "path": "src/sources/works/journals/catholic-mind/editions/1930-02-08-volume-28-issue-3/artifacts/ia-facsimile-1e93c54004e9/sim_catholic-mind_1930-02-08_28_3.pdf",
+            "sha256": "1e93c54004e910d0f920c181b6e7bf52a39844582f132553e1de33cb3abbb39d"
+          },
+          "source_png": {
+            "path": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-11/pages/page-05.png",
+            "sha256": "590e248f29e16af0f4a303b9b972e7cf11701b6e5f50150149484411b563003f"
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/image-proxies/packet-08-act-03-sample-05-590e248f29e1.jpg",
+            "sha256": "ed57f453e693bf8f724b9b23f0abcfb634ed09f96212307b38e598a1c8d085e9"
+          }
+        },
+        {
+          "observation": "Artifact page8 repeats printed p.46, the same body/section headings/notes14–16 seen on artifact page6. Excluding page8 avoids duplicate text and notes; it does not omit a different printed page.",
+          "source_page": 8,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1451,
+            2200
+          ],
+          "proxy_dimensions": [
+            1451,
+            2200
+          ],
+          "crop_pixels": [
+            0,
+            0,
+            1451,
+            2200
+          ],
+          "source_pdf": {
+            "path": "src/sources/works/journals/catholic-mind/editions/1930-02-08-volume-28-issue-3/artifacts/ia-facsimile-1e93c54004e9/sim_catholic-mind_1930-02-08_28_3.pdf",
+            "sha256": "1e93c54004e910d0f920c181b6e7bf52a39844582f132553e1de33cb3abbb39d"
+          },
+          "source_png": {
+            "path": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-11/pages/page-06.png",
+            "sha256": "0987b7369b9e6f72d03434ba2a4bac811ef9b71f49599dbd1c119eb114789ae9"
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/image-proxies/packet-08-act-03-sample-06-0987b7369b9e.jpg",
+            "sha256": "4d5b70ba9420b0e8339a3e211a3aae3b8694c9d2f91b72dc458e96316730daaf"
+          }
+        },
+        {
+          "observation": "Artifact page9 repeats printed p.47 including same body, heading and notes17–18 as artifact page7. Its exclusion is duplicate-scan suppression, with first instance retained.",
+          "source_page": 9,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1451,
+            2200
+          ],
+          "proxy_dimensions": [
+            1451,
+            2200
+          ],
+          "crop_pixels": [
+            0,
+            0,
+            1451,
+            2200
+          ],
+          "source_pdf": {
+            "path": "src/sources/works/journals/catholic-mind/editions/1930-02-08-volume-28-issue-3/artifacts/ia-facsimile-1e93c54004e9/sim_catholic-mind_1930-02-08_28_3.pdf",
+            "sha256": "1e93c54004e910d0f920c181b6e7bf52a39844582f132553e1de33cb3abbb39d"
+          },
+          "source_png": {
+            "path": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-11/pages/page-07.png",
+            "sha256": "439b7fa9d2fc75b2ba8d49b49fabc7c7a08130e65b710d87dccc86d436c2f5d0"
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/image-proxies/packet-08-act-03-sample-07-439b7fa9d2fc.jpg",
+            "sha256": "e9f693b942eab891e857be02ac6315c47e889f3e528b78c71cfa6bd2f9fc29e7"
+          }
+        },
+        {
+          "observation": "Artifact page10 advances to printed p.48 after duplicate scans. Two historical section headings, body and notes19–22 are present; source notes occupy page foot and remain after body in selected output, including multi-line note20 continuation.",
+          "source_page": 10,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1456,
+            2200
+          ],
+          "proxy_dimensions": [
+            1456,
+            2200
+          ],
+          "crop_pixels": [
+            0,
+            0,
+            1456,
+            2200
+          ],
+          "source_pdf": {
+            "path": "src/sources/works/journals/catholic-mind/editions/1930-02-08-volume-28-issue-3/artifacts/ia-facsimile-1e93c54004e9/sim_catholic-mind_1930-02-08_28_3.pdf",
+            "sha256": "1e93c54004e910d0f920c181b6e7bf52a39844582f132553e1de33cb3abbb39d"
+          },
+          "source_png": {
+            "path": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-11/pages/page-08.png",
+            "sha256": "7dac1e3ac8fa85ac52843298d31f2db53103438edb7d06d36751ad8fcb8cfe2b"
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/image-proxies/packet-08-act-03-sample-08-7dac1e3ac8fa.jpg",
+            "sha256": "7c05f1c63d7d01e7f832c0306117ce57b93c83f766e1807c0bc02c05d5d25542"
+          }
+        },
+        {
+          "observation": "Printed p.57 contains final main-body paragraphs and own historical source notes40–42 below rule. Note40 wraps to a second line, then41/42 occupy a row. Selected output retains note40 continuation before41/42; these are historical English printing notes, independently of Latin apparatus.",
+          "source_page": 19,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1460,
+            2200
+          ],
+          "proxy_dimensions": [
+            1460,
+            2200
+          ],
+          "crop_pixels": [
+            0,
+            0,
+            1460,
+            2200
+          ],
+          "source_pdf": {
+            "path": "src/sources/works/journals/catholic-mind/editions/1930-02-08-volume-28-issue-3/artifacts/ia-facsimile-1e93c54004e9/sim_catholic-mind_1930-02-08_28_3.pdf",
+            "sha256": "1e93c54004e910d0f920c181b6e7bf52a39844582f132553e1de33cb3abbb39d"
+          },
+          "source_png": {
+            "path": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-11/pages/page-09.png",
+            "sha256": "5d6a857f9c6b87cd6f65654b8f02219de539e043e1ce9e8d8ad6ea7f113d8b10"
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/image-proxies/packet-08-act-03-sample-09-5d6a857f9c6b.jpg",
+            "sha256": "f71c00673e45332e5deb45b6425b6f4b73994e22c9e8dc81eec71d6b27ebb2be"
+          }
+        },
+        {
+          "observation": "Printed p.58 ends Mens body with apostolic blessing and Rome20Dec1929/eighth pontifical year dating. No separate papal-name subscription intervenes before independent Retreat Congress article below. Current selection stops after dating and excludes the neighboring article, its heading and running head.",
+          "source_page": 20,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1455,
+            2200
+          ],
+          "proxy_dimensions": [
+            1455,
+            2200
+          ],
+          "crop_pixels": [
+            0,
+            0,
+            1455,
+            2200
+          ],
+          "source_pdf": {
+            "path": "src/sources/works/journals/catholic-mind/editions/1930-02-08-volume-28-issue-3/artifacts/ia-facsimile-1e93c54004e9/sim_catholic-mind_1930-02-08_28_3.pdf",
+            "sha256": "1e93c54004e910d0f920c181b6e7bf52a39844582f132553e1de33cb3abbb39d"
+          },
+          "source_png": {
+            "path": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-11/pages/page-10.png",
+            "sha256": "c60a7587427e8564e3e3375c675cb0f1bb809a82264795ef1b8d5d8aa734cdc1"
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/image-proxies/packet-08-act-03-sample-10-c60a7587427e.jpg",
+            "sha256": "98ebb02ce5a6b253ff1417b6228a1a38ce76c786eff8129056fa341e5325a20a"
+          }
+        },
+        {
+          "observation": "Native p.55 has body followed by own notes31–34. Selected source retains this note membership but OCR is seriously degraded in31–33. Full-page display leaves fine note details too small for a precise order judgment; bounded native footnote crop follows.",
+          "source_page": 17,
+          "printed_page": "55",
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1464,
+            2200
+          ],
+          "crop_pixels": [
+            0,
+            0,
+            1464,
+            2200
+          ],
+          "source_pdf": {
+            "path": "src/sources/works/journals/catholic-mind/editions/1930-02-08-volume-28-issue-3/artifacts/ia-facsimile-1e93c54004e9/sim_catholic-mind_1930-02-08_28_3.pdf",
+            "sha256": "1e93c54004e910d0f920c181b6e7bf52a39844582f132553e1de33cb3abbb39d"
+          },
+          "source_png": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-rasters/.scratch/english-intake-recovery/packet-08/audit/mens-native-17/pages/page-1.png",
+            "sha256": "689ad75412ae9a01f65bb4ca62e49251bd13708f3c74f4a99ef71faa02874fc4",
+            "bytes": 1894428
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-p55.jpg",
+            "sha256": "13f41220125a1be3f82bdbd90a629285ef396204edd2f3caa5eb43487d71964f",
+            "bytes": 958321
+          },
+          "sample_pdf": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-native-17.pdf",
+            "sha256": "fbfa2b0272313e6b19d54250be338a95c75dd5ee054315983fce598dc888e30f",
+            "bytes": 203821
+          }
+        },
+        {
+          "observation": "Bounded crop includes final body context, separator and full own note block31–34. Native notes follow31,32,33 with its two continuation lines,then34 with continuation. Membership/order is preserved by current selected OCR, though recognition is badly damaged in31–33. No wording is transcribed or corrected from JPEG; exact OCR WORD preservation is checked mechanically.",
+          "source_page": 17,
+          "printed_page": "55",
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1464,
+            2200
+          ],
+          "proxy_dimensions": [
+            1250,
+            620
+          ],
+          "crop_pixels": [
+            130,
+            1530,
+            1250,
+            620
+          ],
+          "source_png": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-p55-notes-native.png",
+            "sha256": "3ddb16920e64558356f6fcd91c1f161b8fff4ed27c6214a9f0adf84e9a1c225d",
+            "bytes": 269178
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-p55-notes.jpg",
+            "sha256": "4ef34a3ac0b36a5f58202e2c88362a6d1014b1530947eef528ad55eced6844be",
+            "bytes": 230330
+          },
+          "parent_raster": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-rasters/.scratch/english-intake-recovery/packet-08/audit/mens-native-17/pages/page-1.png",
+            "sha256": "689ad75412ae9a01f65bb4ca62e49251bd13708f3c74f4a99ef71faa02874fc4",
+            "bytes": 1894428
+          },
+          "controlling_source_pdf_sha256": "1e93c54004e910d0f920c181b6e7bf52a39844582f132553e1de33cb3abbb39d"
+        },
+        {
+          "observation": "Bounded native printed p44 note-context crop shows own notes4 then5, each with continuation. Current selected OCR contains each in this order after body; line breaks are mechanical OCR blocks. No model transcription.",
+          "source_page": 4,
+          "printed_page": 44,
+          "sample_page": 1,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1460,
+            2200
+          ],
+          "proxy_dimensions": [
+            1460,
+            850
+          ],
+          "crop_pixels": [
+            0,
+            1350,
+            1460,
+            850
+          ],
+          "source_png": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-native-04.png",
+            "sha256": "b78f07d3549ee2a583d277af9d1208fb5d8336cc06ab7fdf9ba9d36026a33ccb",
+            "bytes": 402891
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-04.jpg",
+            "sha256": "6f23af1b39023aa2fd27859556b90c5793a95b8150dd44ed9389710b68f57d32",
+            "bytes": 339969
+          },
+          "sample_pdf": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-bounded.pdf",
+            "sha256": "a013abeb9ee966af9f24eb264ab46d427e34edb9de43689dcd591d8c41c3ff4e",
+            "bytes": 1538580
+          },
+          "parent_raster": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-rasters/.scratch/english-intake-recovery/packet-08/audit/mens-notes-bounded/pages/page-1.png",
+            "sha256": "c3f97d81517d6fa1d8d13427d531a01efc8a81ab6767eab82e1711160ae30795",
+            "bytes": 1831116
+          },
+          "controlling_source_pdf_sha256": "1e93c54004e910d0f920c181b6e7bf52a39844582f132553e1de33cb3abbb39d"
+        },
+        {
+          "observation": "Bounded native printed p45 note-context crop shows notes6 and7 with continuations, followed by row8–10 and row11–13. Current selected OCR retains all in native row order below body, without introducing corrected words.",
+          "source_page": 5,
+          "printed_page": 45,
+          "sample_page": 2,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1460,
+            2200
+          ],
+          "proxy_dimensions": [
+            1460,
+            850
+          ],
+          "crop_pixels": [
+            0,
+            1350,
+            1460,
+            850
+          ],
+          "source_png": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-native-05.png",
+            "sha256": "6c8699d5d40905dade57d4e4f3f06467cc46438b748544949184396a57923ddd",
+            "bytes": 388029
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-05.jpg",
+            "sha256": "70a217b5ddad162813cf626ff216f9280f3ab08cc0036d680873dc34cd6fdc1c",
+            "bytes": 333709
+          },
+          "sample_pdf": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-bounded.pdf",
+            "sha256": "a013abeb9ee966af9f24eb264ab46d427e34edb9de43689dcd591d8c41c3ff4e",
+            "bytes": 1538580
+          },
+          "parent_raster": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-rasters/.scratch/english-intake-recovery/packet-08/audit/mens-notes-bounded/pages/page-2.png",
+            "sha256": "8ff129384927a15322b64ecaf5cabaec60257d92bc7b67235c508deaf74188fc",
+            "bytes": 1792486
+          },
+          "controlling_source_pdf_sha256": "1e93c54004e910d0f920c181b6e7bf52a39844582f132553e1de33cb3abbb39d"
+        },
+        {
+          "observation": "Bounded native printed p49 crop includes historical section/body context and own notes23–24, each with continuation. Selection retains both in this order at page break.",
+          "source_page": 11,
+          "printed_page": 49,
+          "sample_page": 3,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1456,
+            2200
+          ],
+          "proxy_dimensions": [
+            1456,
+            850
+          ],
+          "crop_pixels": [
+            0,
+            1350,
+            1456,
+            850
+          ],
+          "source_png": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-native-11.png",
+            "sha256": "3cb26dffe14a9e9d6d6e6099d97ab57643cdccaa0a996f7c63b284189ff4d7a1",
+            "bytes": 364974
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-11.jpg",
+            "sha256": "43a4011c361bea4841cf52d5133bd4b70259950e979108066789d9c5a9282462",
+            "bytes": 310046
+          },
+          "sample_pdf": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-bounded.pdf",
+            "sha256": "a013abeb9ee966af9f24eb264ab46d427e34edb9de43689dcd591d8c41c3ff4e",
+            "bytes": 1538580
+          },
+          "parent_raster": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-rasters/.scratch/english-intake-recovery/packet-08/audit/mens-notes-bounded/pages/page-3.png",
+            "sha256": "fd08e5000373c0cccd395055cb2bc88910d086b5568ae2f7f96709eca14e7fb9",
+            "bytes": 1823799
+          },
+          "controlling_source_pdf_sha256": "1e93c54004e910d0f920c181b6e7bf52a39844582f132553e1de33cb3abbb39d"
+        },
+        {
+          "observation": "Bounded native printed p51 crop has body context followed by own note25. Selection retains the note below body before next-page continuation.",
+          "source_page": 13,
+          "printed_page": 51,
+          "sample_page": 4,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1460,
+            2200
+          ],
+          "proxy_dimensions": [
+            1460,
+            850
+          ],
+          "crop_pixels": [
+            0,
+            1350,
+            1460,
+            850
+          ],
+          "source_png": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-native-13.png",
+            "sha256": "3e261be81292172e27b9d6ea95fd89fed3fcc6e0a1ab9ab52d7c9be83266d005",
+            "bytes": 407260
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-13.jpg",
+            "sha256": "6ce0112fbc9dd037067e332abc8f67cb3af5adbcba56f92e839cd8770b825bdc",
+            "bytes": 349217
+          },
+          "sample_pdf": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-bounded.pdf",
+            "sha256": "a013abeb9ee966af9f24eb264ab46d427e34edb9de43689dcd591d8c41c3ff4e",
+            "bytes": 1538580
+          },
+          "parent_raster": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-rasters/.scratch/english-intake-recovery/packet-08/audit/mens-notes-bounded/pages/page-4.png",
+            "sha256": "99d46be1e7ab8e7e9448749297b9265f3d6afca2c1cdd47e913eb33a3a78500c",
+            "bytes": 1848226
+          },
+          "controlling_source_pdf_sha256": "1e93c54004e910d0f920c181b6e7bf52a39844582f132553e1de33cb3abbb39d"
+        },
+        {
+          "observation": "Bounded native printed p52 crop includes body/section context and own notes26 then27 across the foot row. Selection preserves their order below body.",
+          "source_page": 14,
+          "printed_page": 52,
+          "sample_page": 5,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1464,
+            2200
+          ],
+          "proxy_dimensions": [
+            1464,
+            850
+          ],
+          "crop_pixels": [
+            0,
+            1350,
+            1464,
+            850
+          ],
+          "source_png": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-native-14.png",
+            "sha256": "96f7c45d4e445e486fea309fed23d2f72fb30fe48c8cfa976ab126ecdb97cdeb",
+            "bytes": 379793
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-14.jpg",
+            "sha256": "d6e53678a093dccc529376cbca26b7dd7b114f7f18b36de80c3e38dbbf921c06",
+            "bytes": 317404
+          },
+          "sample_pdf": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-bounded.pdf",
+            "sha256": "a013abeb9ee966af9f24eb264ab46d427e34edb9de43689dcd591d8c41c3ff4e",
+            "bytes": 1538580
+          },
+          "parent_raster": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-rasters/.scratch/english-intake-recovery/packet-08/audit/mens-notes-bounded/pages/page-5.png",
+            "sha256": "4f45c864047cbc13ac1623bd1cc1467ef7721a0fe56e4f3b115654eed90031f2",
+            "bytes": 1774541
+          },
+          "controlling_source_pdf_sha256": "1e93c54004e910d0f920c181b6e7bf52a39844582f132553e1de33cb3abbb39d"
+        },
+        {
+          "observation": "Bounded native printed p53 crop shows two historical notes28–29, each with continuation, separated from body by rule. Both remain in selected output in native order; OCR recognition defects in digits are retained.",
+          "source_page": 15,
+          "printed_page": 53,
+          "sample_page": 6,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1464,
+            2200
+          ],
+          "proxy_dimensions": [
+            1464,
+            850
+          ],
+          "crop_pixels": [
+            0,
+            1350,
+            1464,
+            850
+          ],
+          "source_png": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-native-15.png",
+            "sha256": "e3e726fb880359491faab48e9c0d7518086544449fdf5b01b6782bf0fa6a7535",
+            "bytes": 358209
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-15.jpg",
+            "sha256": "c2897c9e7cd593ba89f8e8cd032a5f95420c61bbd25df68bf268823adbeda1ed",
+            "bytes": 301012
+          },
+          "sample_pdf": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-bounded.pdf",
+            "sha256": "a013abeb9ee966af9f24eb264ab46d427e34edb9de43689dcd591d8c41c3ff4e",
+            "bytes": 1538580
+          },
+          "parent_raster": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-rasters/.scratch/english-intake-recovery/packet-08/audit/mens-notes-bounded/pages/page-6.png",
+            "sha256": "330a4f8a2f7bc9b4cee8ee2802b3505844bd46362e9f9218169fafb3e2bbee31",
+            "bytes": 1731383
+          },
+          "controlling_source_pdf_sha256": "1e93c54004e910d0f920c181b6e7bf52a39844582f132553e1de33cb3abbb39d"
+        },
+        {
+          "observation": "Bounded native printed p54 crop shows own note30 below rule and body context above. Selected output retains it (OCR renders number80), with no introduced correction.",
+          "source_page": 16,
+          "printed_page": 54,
+          "sample_page": 7,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1464,
+            2200
+          ],
+          "proxy_dimensions": [
+            1464,
+            850
+          ],
+          "crop_pixels": [
+            0,
+            1350,
+            1464,
+            850
+          ],
+          "source_png": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-native-16.png",
+            "sha256": "86d918ebb9663b17eddce79d208ce290c3b726233d7e4df29a4d0e362920c031",
+            "bytes": 409023
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-16.jpg",
+            "sha256": "d1cdc9d077b7d583bb55e7528a4fb169855bb74df935d41f08f239c86615542e",
+            "bytes": 341411
+          },
+          "sample_pdf": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-bounded.pdf",
+            "sha256": "a013abeb9ee966af9f24eb264ab46d427e34edb9de43689dcd591d8c41c3ff4e",
+            "bytes": 1538580
+          },
+          "parent_raster": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-rasters/.scratch/english-intake-recovery/packet-08/audit/mens-notes-bounded/pages/page-7.png",
+            "sha256": "1caba8a362e15ec30fd4db6c5adc6f4701918b8c6f3e1e99466b730e77b59790",
+            "bytes": 1865583
+          },
+          "controlling_source_pdf_sha256": "1e93c54004e910d0f920c181b6e7bf52a39844582f132553e1de33cb3abbb39d"
+        },
+        {
+          "observation": "Bounded native printed p56 crop includes body/heading context and complete own-note block35–39 in numerical order with continuations36,37,39. Selection keeps that order and all these notes. With supplied samples and other bounded crops, membership and order of all42 own historical notes have now been freshly inspected; no glyph-level or Latin/English lexical accuracy collation claimed.",
+          "source_page": 18,
+          "printed_page": 56,
+          "sample_page": 8,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "source_dimensions": [
+            1460,
+            2200
+          ],
+          "proxy_dimensions": [
+            1460,
+            850
+          ],
+          "crop_pixels": [
+            0,
+            1350,
+            1460,
+            850
+          ],
+          "source_png": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-native-18.png",
+            "sha256": "daac6da647e784086d8d779017f14a8c49ecf7ee1dcd40d9dabe1843b4ded7f6",
+            "bytes": 368157
+          },
+          "proxy": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-18.jpg",
+            "sha256": "2907447e83d3057dec6e26a3cdc021515cf90fbe3e8e843d0717815a1554d023",
+            "bytes": 312644
+          },
+          "sample_pdf": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-bounded.pdf",
+            "sha256": "a013abeb9ee966af9f24eb264ab46d427e34edb9de43689dcd591d8c41c3ff4e",
+            "bytes": 1538580
+          },
+          "parent_raster": {
+            "path": ".scratch/english-intake-recovery/packet-08/audit/mens-notes-rasters/.scratch/english-intake-recovery/packet-08/audit/mens-notes-bounded/pages/page-8.png",
+            "sha256": "f153d287b87a054888e6179adb1dadf26acc713ddda3e509298605cc12ff3808",
+            "bytes": 1790289
+          },
+          "controlling_source_pdf_sha256": "1e93c54004e910d0f920c181b6e7bf52a39844582f132553e1de33cb3abbb39d"
+        }
+      ],
+      "findings": [
+        {
+          "code": "HISTORICAL_HUMAN_EDITION",
+          "severity": "info",
+          "finding": "The Catholic Mind28,no3,February8,1930,pp41–58 is directly identified by native masthead. The native article credits reprinting from London Tablet,January4,1930. Individual translator unknown. This actual English publication date is distinct from act dateDecember20,1929."
+        },
+        {
+          "code": "COMPLETE_SELECTED_BOUNDARIES",
+          "severity": "info",
+          "finding": "Full selected title/attribution/reprint caption, address, salutation, body, historical section headings, own notes, apostolic blessing and dated closing are retained. Native p58 has no separate papal-name subscription and immediately begins an independent Retreat Congress article, which is excluded."
+        },
+        {
+          "code": "OWN_NOTES_1_TO_42",
+          "severity": "info",
+          "finding": "Fresh supplied samples and bounded native note crops establish membership and order of all42 own historical notes, including their continuations. Native p42 confirms the one explicit node permutation restores note2 then3. Notes31–33 remain badly recognized OCR; retention/order is verified without asserting character-correct wording."
+        },
+        {
+          "code": "DUPLICATE_SCAN_EXCLUSION",
+          "severity": "info",
+          "finding": "Fresh native images confirm artifact8 repeats printed46 from artifact6 and artifact9 repeats printed47 from artifact7. First scans, body and own notes remain. Selected artifact pages are1–7,10–20 of complete22-object parent; pages21–22 and lower independent article on20 are outside this act."
+        },
+        {
+          "code": "EXACT_WORD_NODE_REPLAY",
+          "severity": "info",
+          "finding": "The existing extractor is pinned by repository path and SHA879be0345b4202fe2a35238cfe9bdbe452475ee2deac75a5e746ee0f8d2c4fc6 and was freshly replayed. Independent reconstruction matches6499 literal XML WORD nodes, exact outputde1e426c7a6c, all selected-page nodes accounted once, and note permutation preserves every selected node."
+        },
+        {
+          "code": "OCR_LIMIT",
+          "severity": "qualification",
+          "finding": "Initial drop-cap Y is absent from OCR as disclosed. Other recognition errors, punctuation and hard-line hyphens remain. No Latin evidence establishes these English notes; the checks use this English printing directly."
+        }
+      ],
+      "scope_limits": [
+        "Source intake, historical human English edition identity, selected extent, own-note membership/order and exact mechanical provenance only.",
+        "All three selected texts were actually read completely. Native inspection extent is enumerated per image; prior visual verdicts are not inherited.",
+        "JPEG95 display proxies were used one at a time; authoritative native PDFs/PNGs and crop coordinates are pinned. No OCR or source wording was generated from JPEG.",
+        "Uncorrected historical OCR remains, including recognition damage, hard-line hyphens and punctuation. No AI body translation or corrected transcription.",
+        "No Latin-versus-English lexical translation accuracy, full-printing glyph collation, compiler PDF/font/layout, installation or deployment claim.",
+        "Rights finding applies the existing United States papal-documents-rights-v1 policy to the identified historical English printing; no worldwide clearance or general host permission is asserted."
+      ]
+    }
+  ],
+  "scope_limits": [
+    "Source intake, historical human English edition identity, selected extent, own-note membership/order and exact mechanical provenance only.",
+    "All three selected texts were actually read completely. Native inspection extent is enumerated per image; prior visual verdicts are not inherited.",
+    "JPEG95 display proxies were used one at a time; authoritative native PDFs/PNGs and crop coordinates are pinned. No OCR or source wording was generated from JPEG.",
+    "Uncorrected historical OCR remains, including recognition damage, hard-line hyphens and punctuation. No AI body translation or corrected transcription.",
+    "No Latin-versus-English lexical translation accuracy, full-printing glyph collation, compiler PDF/font/layout, installation or deployment claim.",
+    "Rights finding applies the existing United States papal-documents-rights-v1 policy to the identified historical English printing; no worldwide clearance or general host permission is asserted."
+  ],
+  "guidance": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "43b57f082a7db8e24385df2288b99631ed1004dfe77d53e17fea0d075576ad65",
+      "bytes": 16422
+    },
+    {
+      "path": "guidance/editorial.md",
+      "sha256": "22ce8aa5db32162f1552204e156eceeea57d214ced7118b7f31418b4cbc0dc8b",
+      "bytes": 40778
+    },
+    {
+      "path": "guidance/repository.md",
+      "sha256": "13764c3d8a694bac00c0c48a6fb5da3983d2052d77194476062e5d71e49f493d",
+      "bytes": 50399
+    },
+    {
+      "path": "guidance/sources.md",
+      "sha256": "d14e6562f92532bc7e92ba1ba743edb649bb111967f4cbac01019bfb30676209",
+      "bytes": 49532
+    },
+    {
+      "path": "guidance/papal-documents.md",
+      "sha256": "028eeb083e8eb27254a1986e42b427a2ce2cf6d070763b4b36cfb586f8455f3d",
+      "bytes": 18052
+    },
+    {
+      "path": ".scratch/english-intake-recovery/audit-brief.md",
+      "sha256": "5da20eacaf7ba621b89502d140cc65ab7053c086754273c0c9f297416d52fae7",
+      "bytes": 5659
+    }
+  ],
+  "assembly_implementation": {
+    "path": ".scratch/english-intake-recovery/packet-08/audit/finalize-audit.py",
+    "sha256": "4dd2430e9f11c2e19857aa7663638e65023749d00b7195fbf0a4261f96417f8a",
+    "bytes": 12455
+  }
+}

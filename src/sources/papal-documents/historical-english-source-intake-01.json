@@ -1,0 +1,3567 @@
+{
+  "schema": "triptych-three-act-source-intake-report/v1",
+  "packet": 1,
+  "scope_sha256": "c370ee4935b5bfe662b19378335c536508df3dfe6e1a3b2112f7257696b4f21f",
+  "source_scope_sha256_definition": "The immutable three-row packet scope. The full current source-manifest hash is separately pinned for every row.",
+  "expected_count": 3,
+  "expected_keys": [
+    [
+      "historical-english.pius-x.hf-p-x-enc-05041906-tribus-circiter.1906-07-catholic-university-bulletin-english",
+      "en"
+    ],
+    [
+      "historical-english.pius-x.hf-p-x-enc-10081906-gravissimo-officii-munere.1906-10-catholic-university-bulletin-english",
+      "en"
+    ],
+    [
+      "historical-english.pius-x.hf-p-x-enc-24091912-singulari-quadam.1920-ryan-husslein-church-and-labor-english",
+      "en"
+    ]
+  ],
+  "actual_count": 3,
+  "pass_count": 3,
+  "blocked_count": 0,
+  "pending_count": 0,
+  "documents": [
+    {
+      "id": "historical-english.pius-x.hf-p-x-enc-05041906-tribus-circiter.1906-07-catholic-university-bulletin-english",
+      "language": "en",
+      "title": "Tribus circiter",
+      "row_sha256": "04feaf57db90765f21fbc6a1e86f40001e8a7b7f4ff5d3e6d641b2705347edb0",
+      "source_sha256": "39fc40d934c4dff2b0ce7affa8dfb580792a3bb3374a6eb98ad8296234d5e83c",
+      "source_scope_sha256": "c370ee4935b5bfe662b19378335c536508df3dfe6e1a3b2112f7257696b4f21f",
+      "controller_pin": {
+        "path": "src/sources/works/papal-documents/1906-04-05-papal-pius-x-hf-p-x-enc-05041906-tribus-circiter-ff59a7f6/editions/1906-07-catholic-university-bulletin-english/segments/historical-english.toml",
+        "sha256": "c623660b02ce8680e1490a7dd19849c9babf270618c76c0a9faeba99d6120773",
+        "bytes": 1562
+      },
+      "metadata_pins": {
+        "segment": {
+          "path": "src/sources/works/papal-documents/1906-04-05-papal-pius-x-hf-p-x-enc-05041906-tribus-circiter-ff59a7f6/editions/1906-07-catholic-university-bulletin-english/segments/historical-english.toml",
+          "sha256": "c623660b02ce8680e1490a7dd19849c9babf270618c76c0a9faeba99d6120773",
+          "bytes": 1562
+        },
+        "constituent_edition": {
+          "path": "src/sources/works/papal-documents/1906-04-05-papal-pius-x-hf-p-x-enc-05041906-tribus-circiter-ff59a7f6/editions/1906-07-catholic-university-bulletin-english/edition.toml",
+          "sha256": "44f63fce917f84bbebb0bc715591851a98f14bc793ea9995d20b6bafc310c69b",
+          "bytes": 1002
+        },
+        "container_edition": {
+          "path": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/edition.toml",
+          "sha256": "22f4467a4d1894cd8993f11026a73e70eb4ac5cd9e2325daefcfca2369cd8267",
+          "bytes": 773
+        }
+      },
+      "proof_pins": {
+        "evidence": {
+          "path": ".scratch/english-intake-recovery/packet-01/act-01-evidence.json",
+          "sha256": "bfb7b3c7efb83603499defca23999f25ece6c0415917b161953b6edc2ed25b55",
+          "bytes": 36315
+        },
+        "selection": {
+          "path": ".scratch/english-intake-recovery/packet-01/act-01-selected.txt",
+          "sha256": "a8102525514a69a4f0080cfff806280dba270ef611941398be40844b09f24bff",
+          "bytes": 12806
+        },
+        "source_manifest": {
+          "path": "src/sources/papal-documents/historical-english-completion-manifest.json",
+          "sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+          "bytes": 67917
+        },
+        "source": {
+          "path": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-ocr-39fc40d934c4/ocr.txt",
+          "sha256": "39fc40d934c4dff2b0ce7affa8dfb580792a3bb3374a6eb98ad8296234d5e83c",
+          "bytes": 1583076
+        },
+        "controller": {
+          "path": "src/sources/works/papal-documents/1906-04-05-papal-pius-x-hf-p-x-enc-05041906-tribus-circiter-ff59a7f6/editions/1906-07-catholic-university-bulletin-english/segments/historical-english.toml",
+          "sha256": "c623660b02ce8680e1490a7dd19849c9babf270618c76c0a9faeba99d6120773",
+          "bytes": 1562
+        },
+        "metadata": {
+          "segment": {
+            "path": "src/sources/works/papal-documents/1906-04-05-papal-pius-x-hf-p-x-enc-05041906-tribus-circiter-ff59a7f6/editions/1906-07-catholic-university-bulletin-english/segments/historical-english.toml",
+            "sha256": "c623660b02ce8680e1490a7dd19849c9babf270618c76c0a9faeba99d6120773",
+            "bytes": 1562
+          },
+          "constituent_edition": {
+            "path": "src/sources/works/papal-documents/1906-04-05-papal-pius-x-hf-p-x-enc-05041906-tribus-circiter-ff59a7f6/editions/1906-07-catholic-university-bulletin-english/edition.toml",
+            "sha256": "44f63fce917f84bbebb0bc715591851a98f14bc793ea9995d20b6bafc310c69b",
+            "bytes": 1002
+          },
+          "container_edition": {
+            "path": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/edition.toml",
+            "sha256": "22f4467a4d1894cd8993f11026a73e70eb4ac5cd9e2325daefcfca2369cd8267",
+            "bytes": 773
+          }
+        },
+        "related_artifacts": [
+          {
+            "id": "artifact.journals.catholic-university-bulletin.1906-volume-12.source-ocr-39fc40d934c4",
+            "record_pin": {
+              "path": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-ocr-39fc40d934c4/artifact.toml",
+              "sha256": "4000a08473985a11c0ad2ca993a4358bea7029ccba68a799f9933ed68fc2db78",
+              "bytes": 2515
+            },
+            "payload_pin": {
+              "path": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-ocr-39fc40d934c4/ocr.txt",
+              "sha256": "39fc40d934c4dff2b0ce7affa8dfb580792a3bb3374a6eb98ad8296234d5e83c",
+              "bytes": 1583076
+            },
+            "type": "whole-historical-printing-ocr",
+            "rights_status": "public-domain",
+            "rights_basis": "Historical English translation and original printing text are public domain in the United States by expiration of the publication term of the identified pre-1931 printing, under src/sources/inventories/papal-documents-rights-v1.toml. Mechanical scanning and OCR add no original source wording. Historical/source wording is excluded from Triptych CC BY 4.0. The actual July and October 1906 issue covers, issue title/imprint pages and all nine constituent pages were inspected. Google usage guidelines at PDF page 1 and OCR physical LF lines 1–44, and recurring digitizer marks, are separately retained under the implied-license and independent fair-use assessment in src/sources/inventories/google-usage-guidelines-rights-v1.toml; they are not historical book text, not searched as book text, and not offered under the project license. Factual library/copy marks are distinct from the source body."
+          },
+          {
+            "id": "artifact.journals.catholic-university-bulletin.1906-volume-12.source-pdf-257bc6f9be92",
+            "record_pin": {
+              "path": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/artifact.toml",
+              "sha256": "2d0a7bfec49fc45bcb0e53e4d50362ee63be070078783bbb0b9f6901b72aaafa",
+              "bytes": 2202
+            },
+            "payload_pin": {
+              "path": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/source.pdf",
+              "sha256": "257bc6f9be92c42dc33cecbf31ecffa34b8b046bd6fe2140f78fda1118088cb4",
+              "bytes": 19322546
+            },
+            "type": "whole-historical-printing-facsimile",
+            "rights_status": "public-domain",
+            "rights_basis": "Historical English translation and original printing text are public domain in the United States by expiration of the publication term of the identified pre-1931 printing, under src/sources/inventories/papal-documents-rights-v1.toml. Mechanical scanning and OCR add no original source wording. Historical/source wording is excluded from Triptych CC BY 4.0. The actual July and October 1906 issue covers, issue title/imprint pages and all nine constituent pages were inspected. Google usage guidelines at PDF page 1 and OCR physical LF lines 1–44, and recurring digitizer marks, are separately retained under the implied-license and independent fair-use assessment in src/sources/inventories/google-usage-guidelines-rights-v1.toml; they are not historical book text, not searched as book text, and not offered under the project license. Factual library/copy marks are distinct from the source body."
+          },
+          {
+            "id": "artifact.journals.catholic-university-bulletin.1906-volume-12.extent-review-56a907a3c538",
+            "record_pin": {
+              "path": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/extent-review-56a907a3c538/artifact.toml",
+              "sha256": "40e81c6c0d2d5e614991de214d14eb21b28155be569d2e982c9261e0f4f1de64",
+              "bytes": 893
+            },
+            "payload_pin": {
+              "path": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/extent-review-56a907a3c538/review.json",
+              "sha256": "56a907a3c5382adb35c2173c08f56197c134cb5e3e64e177c0680b9d3c955f79",
+              "bytes": 3724
+            },
+            "type": "source-extent-review",
+            "rights_status": "project-created",
+            "rights_basis": "Project-created source identity, exact selection and native-page extent review metadata."
+          }
+        ],
+        "policy_records": [
+          {
+            "path": "guidance/editorial.md",
+            "sha256": "22ce8aa5db32162f1552204e156eceeea57d214ced7118b7f31418b4cbc0dc8b"
+          },
+          {
+            "path": "guidance/repository.md",
+            "sha256": "13764c3d8a694bac00c0c48a6fb5da3983d2052d77194476062e5d71e49f493d"
+          },
+          {
+            "path": "guidance/sources.md",
+            "sha256": "d14e6562f92532bc7e92ba1ba743edb649bb111967f4cbac01019bfb30676209"
+          },
+          {
+            "path": "guidance/papal-documents.md",
+            "sha256": "028eeb083e8eb27254a1986e42b427a2ce2cf6d070763b4b36cfb586f8455f3d"
+          },
+          {
+            "path": "src/sources/inventories/papal-documents-rights-v1.toml",
+            "sha256": "2098d3cc15ef3439234033c7582fe4f17a726494008b25682a7f1b3a844454ea"
+          },
+          {
+            "path": "src/sources/inventories/google-usage-guidelines-rights-v1.toml",
+            "sha256": "721d78d00a6d07a7562f6ea8d2c629d6e9fdbbdf14f4247e3a29af022ee5fd6f"
+          }
+        ],
+        "fresh_observations": {
+          "path": ".scratch/english-intake-recovery/packet-01/audit-jpeg/progress.json",
+          "sha256": "bc7b274b9c4f7516bb78e45587e894b9d6e98b34d01d77ede137535ac333244c"
+        },
+        "replay_implementation": {
+          "path": ".scratch/english-intake-recovery/packet-01/audit-jpeg/verify.py",
+          "sha256": "36a0da4b8f600c9d42cecd6ca9d896c17aa3e94788711462f462fd21bab02c84",
+          "method": "Exact current raw LF byte selection; no source-word transformations"
+        },
+        "native_raster_helper": {
+          "path": "tools/pdf-review",
+          "sha256": "0e6f688778216faeb02b3335e4467eb476c878cf94bd89e31af93f86e3a3ad3e"
+        }
+      },
+      "selected_text_read_complete": true,
+      "selector": {
+        "physical_line_ranges": [
+          [
+            21967,
+            22008
+          ],
+          [
+            22022,
+            22065
+          ],
+          [
+            22080,
+            22125
+          ],
+          [
+            22137,
+            22181
+          ],
+          [
+            22196,
+            22204
+          ]
+        ],
+        "range_continuations": [
+          0,
+          1,
+          2
+        ]
+      },
+      "actual_opened_images": [
+        {
+          "source_page": 408,
+          "source_pdf": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/source.pdf",
+          "source_pdf_sha256": "257bc6f9be92c42dc33cecbf31ecffa34b8b046bd6fe2140f78fda1118088cb4",
+          "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-03.png",
+          "source_png_sha256": "3d66edde8f1d6222c4515a0e5da662e9143411c1ffa1d1bbb204253ac0c218c0",
+          "source_bytes": 371124,
+          "source_dimensions": [
+            1400,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1400,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-01-sample-03-3d66edde8f1d.jpg",
+          "proxy_sha256": "1b61907994840437e5cfbf0b13e4ee139b4d6c0e74879f16e06f68dea7ad75f9",
+          "proxy_bytes": 825868,
+          "proxy_dimensions": [
+            1400,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-03.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-01-act-01-sample-03-3d66edde8f1d.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-01-sample-03-3d66edde8f1d.jpg",
+          "observation": "Fresh JPEG inspection succeeded. Native page 391 (PDF408) headed PIUS X AND POLAND; complete displayed addressee to Archbishops of Warsaw and Bishops of Plotsk and Lublin among the Poles, Pius X Pope; salutation and substantive English body on Mariavites, not an excerpt wrapper. No translator attribution on this page. Foot is folio 391 and printing mark, with Google digitization mark.",
+          "key": [
+            "historical-english.pius-x.hf-p-x-enc-05041906-tribus-circiter.1906-07-catholic-university-bulletin-english",
+            "en"
+          ]
+        },
+        {
+          "source_page": 328,
+          "source_pdf": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/source.pdf",
+          "source_pdf_sha256": "257bc6f9be92c42dc33cecbf31ecffa34b8b046bd6fe2140f78fda1118088cb4",
+          "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-02.png",
+          "source_png_sha256": "5d0cd84f82d18f41ad61f1edae0ff88ca9b06a2c69857e040d8141ec311a98eb",
+          "source_bytes": 117158,
+          "source_dimensions": [
+            1400,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1400,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-01-sample-02-5d0cd84f82d1.jpg",
+          "proxy_sha256": "9bbf725d4ea1512e9062dec226836f538c53f23933986b06beee0058413cba3c",
+          "proxy_bytes": 284869,
+          "proxy_dimensions": [
+            1400,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-02.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-01-act-01-sample-02-5d0cd84f82d1.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-01-sample-02-5d0cd84f82d1.jpg",
+          "key": [
+            "historical-english.pius-x.hf-p-x-enc-05041906-tribus-circiter.1906-07-catholic-university-bulletin-english",
+            "en"
+          ],
+          "observation": "Fresh native issue title/imprint shows Catholic University Bulletin, Vol XII, July 1906, No 3; published quarterly by Catholic University of America, Lancaster PA and Washington DC. This independently establishes historical July 1906 issue publication and English printing identity. No named translator appears. Modern digitizer mark is outside source body. Redundant noisy cover PDF326 need not be opened."
+        },
+        {
+          "source_page": 410,
+          "source_pdf": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/source.pdf",
+          "source_pdf_sha256": "257bc6f9be92c42dc33cecbf31ecffa34b8b046bd6fe2140f78fda1118088cb4",
+          "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-04.png",
+          "source_png_sha256": "62ac1b8f604ddef24eff41371bd0a3671972bf98937f708d0900ebb384700dfa",
+          "source_bytes": 417331,
+          "source_dimensions": [
+            1400,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1400,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-01-sample-04-62ac1b8f604d.jpg",
+          "proxy_sha256": "17112f4ed7f474dd9ea0dde72f030052bdb588a4c52db42bc37513dbb77a8ad5",
+          "proxy_bytes": 915618,
+          "proxy_dimensions": [
+            1400,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-04.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-01-act-01-sample-04-62ac1b8f604d.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-01-sample-04-62ac1b8f604d.jpg",
+          "key": [
+            "historical-english.pius-x.hf-p-x-enc-05041906-tribus-circiter.1906-07-catholic-university-bulletin-english",
+            "en"
+          ],
+          "observation": "Fresh native p393 has continuous English papal body and embedded quoted Mariavite profession; no separate historical notes or neighboring act. Running head and folio are furniture. Selected text includes quoted profession and continuation."
+        },
+        {
+          "source_page": 412,
+          "source_pdf": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/source.pdf",
+          "source_pdf_sha256": "257bc6f9be92c42dc33cecbf31ecffa34b8b046bd6fe2140f78fda1118088cb4",
+          "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-05.png",
+          "source_png_sha256": "5c537ced53b60e880d9d84a048dc14fd5e6b3636ab9e54caf8de07185cadb470",
+          "source_bytes": 96366,
+          "source_dimensions": [
+            1400,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1400,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-01-sample-05-5c537ced53b6.jpg",
+          "proxy_sha256": "7574a81418721e87a9860f9bae56ab295f79808c23db0a82d98e1a7a20d4ebe8",
+          "proxy_bytes": 229345,
+          "proxy_dimensions": [
+            1400,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-05.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-01-act-01-sample-05-5c537ced53b6.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-01-sample-05-5c537ced53b6.jpg",
+          "key": [
+            "historical-english.pius-x.hf-p-x-enc-05041906-tribus-circiter.1906-07-catholic-university-bulletin-english",
+            "en"
+          ],
+          "observation": "Fresh native p395 ends the papal act with Apostolic Benediction, Rome at St Peters fifth April MDCCCCVI, third pontificate year, and Pius X Pope subscription. All present in selected OCR. No neighboring text or historical note follows; digitizer mark excluded."
+        },
+        {
+          "act": 1,
+          "source_page": 409,
+          "source_pdf": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/source.pdf",
+          "source_pdf_sha256": "257bc6f9be92c42dc33cecbf31ecffa34b8b046bd6fe2140f78fda1118088cb4",
+          "bounded_pdf": ".scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-1-pdf-409.pdf",
+          "bounded_pdf_sha256": "20893bdd8030fe6fdccd6bcece781f0eb55476f36a5ee61d987f1a2ba93316e0",
+          "source_png": ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-rasters/.scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-1-pdf-409/pages/page-1.png",
+          "source_png_sha256": "5a1e2773b2c9e7b57260148af5611561433911a93bbf238690d8d64fa81ed923",
+          "proxy": ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-act-1-pdf-409.jpg",
+          "proxy_sha256": "ca32f8689ddec65d6d82a27b1c91d1856952349bb3967a64c8b74f2a3e51443f",
+          "source_dimensions": [
+            1400,
+            2200
+          ],
+          "proxy_dimensions": [
+            1400,
+            2200
+          ],
+          "crop_pixels": [
+            0,
+            0,
+            1400,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-rasters/.scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-1-pdf-409/pages/page-1.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-act-1-pdf-409.jpg"
+          ],
+          "key": [
+            "historical-english.pius-x.hf-p-x-enc-05041906-tribus-circiter.1906-07-catholic-university-bulletin-english",
+            "en"
+          ],
+          "observation": "Fresh p392 is continuous Tribus body, quoting petition and Ezechiel, continuing from p391 and into p393. Printed ellipsis belongs inside the quoted petition. No separate footnote; running head and digitizer footer separate. No source text corrected from JPEG."
+        },
+        {
+          "act": 1,
+          "source_page": 411,
+          "source_pdf": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/source.pdf",
+          "source_pdf_sha256": "257bc6f9be92c42dc33cecbf31ecffa34b8b046bd6fe2140f78fda1118088cb4",
+          "bounded_pdf": ".scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-1-pdf-411.pdf",
+          "bounded_pdf_sha256": "a9073a4d802141a17f71d46f549543cfce8183546c70a3ecf457d18961f9916f",
+          "source_png": ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-rasters/.scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-1-pdf-411/pages/page-1.png",
+          "source_png_sha256": "66aa91393d841a9690a0ca90fcabe0c1b86843085b6cf6a3d9db54cb0b008274",
+          "proxy": ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-act-1-pdf-411.jpg",
+          "proxy_sha256": "c494837acff3ca9ae55804c22ef0e83ed7bcd5f3decbe4bf181abb35583a67b6",
+          "source_dimensions": [
+            1400,
+            2200
+          ],
+          "proxy_dimensions": [
+            1400,
+            2200
+          ],
+          "crop_pixels": [
+            0,
+            0,
+            1400,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-rasters/.scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-1-pdf-411/pages/page-1.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-act-1-pdf-411.jpg"
+          ],
+          "key": [
+            "historical-english.pius-x.hf-p-x-enc-05041906-tribus-circiter.1906-07-catholic-university-bulletin-english",
+            "en"
+          ],
+          "observation": "Fresh p394 continues quoted Leo XIII text and confirms suppression of Mariavites; printed internal ellipsis retained in OCR. Continuous act body through final exhortation; no separate historical footnotes or neighbor. All five Tribus constituent pages now freshly observed, without word-level full collation."
+        }
+      ],
+      "excluded_interrange_lines": [
+        {
+          "line": 22009,
+          "source": ""
+        },
+        {
+          "line": 22010,
+          "source": "S5cms  391 "
+        },
+        {
+          "line": 22011,
+          "source": ""
+        },
+        {
+          "line": 22012,
+          "source": ""
+        },
+        {
+          "line": 22013,
+          "source": "Digitized  by "
+        },
+        {
+          "line": 22014,
+          "source": ""
+        },
+        {
+          "line": 22015,
+          "source": ""
+        },
+        {
+          "line": 22016,
+          "source": "Google "
+        },
+        {
+          "line": 22017,
+          "source": ""
+        },
+        {
+          "line": 22018,
+          "source": ""
+        },
+        {
+          "line": 22019,
+          "source": "392  CATHOLIC  UNIVERSITY  BULLETIN. "
+        },
+        {
+          "line": 22020,
+          "source": ""
+        },
+        {
+          "line": 22021,
+          "source": ""
+        },
+        {
+          "line": 22066,
+          "source": ""
+        },
+        {
+          "line": 22067,
+          "source": ""
+        },
+        {
+          "line": 22068,
+          "source": "Digitized  by "
+        },
+        {
+          "line": 22069,
+          "source": ""
+        },
+        {
+          "line": 22070,
+          "source": ""
+        },
+        {
+          "line": 22071,
+          "source": "Google "
+        },
+        {
+          "line": 22072,
+          "source": ""
+        },
+        {
+          "line": 22073,
+          "source": ""
+        },
+        {
+          "line": 22074,
+          "source": "PIUX  X  AND  POLAND. "
+        },
+        {
+          "line": 22075,
+          "source": ""
+        },
+        {
+          "line": 22076,
+          "source": ""
+        },
+        {
+          "line": 22077,
+          "source": "393 "
+        },
+        {
+          "line": 22078,
+          "source": ""
+        },
+        {
+          "line": 22079,
+          "source": ""
+        },
+        {
+          "line": 22126,
+          "source": ""
+        },
+        {
+          "line": 22127,
+          "source": ""
+        },
+        {
+          "line": 22128,
+          "source": "Digitized  by "
+        },
+        {
+          "line": 22129,
+          "source": ""
+        },
+        {
+          "line": 22130,
+          "source": ""
+        },
+        {
+          "line": 22131,
+          "source": "Google "
+        },
+        {
+          "line": 22132,
+          "source": ""
+        },
+        {
+          "line": 22133,
+          "source": ""
+        },
+        {
+          "line": 22134,
+          "source": "394  CATHOLIC  UNIVERSITY  BULLETIN. "
+        },
+        {
+          "line": 22135,
+          "source": ""
+        },
+        {
+          "line": 22136,
+          "source": ""
+        },
+        {
+          "line": 22182,
+          "source": ""
+        },
+        {
+          "line": 22183,
+          "source": ""
+        },
+        {
+          "line": 22184,
+          "source": "Digitized  by "
+        },
+        {
+          "line": 22185,
+          "source": ""
+        },
+        {
+          "line": 22186,
+          "source": ""
+        },
+        {
+          "line": 22187,
+          "source": "Google "
+        },
+        {
+          "line": 22188,
+          "source": ""
+        },
+        {
+          "line": 22189,
+          "source": ""
+        },
+        {
+          "line": 22190,
+          "source": "PIUX  X  AND  POLAND. "
+        },
+        {
+          "line": 22191,
+          "source": ""
+        },
+        {
+          "line": 22192,
+          "source": ""
+        },
+        {
+          "line": 22193,
+          "source": "395 "
+        },
+        {
+          "line": 22194,
+          "source": ""
+        },
+        {
+          "line": 22195,
+          "source": ""
+        }
+      ],
+      "publication": "The Catholic University Bulletin XII, no. 3 (July 1906), pp. 391–395.",
+      "translator": "Individual translator unrecorded; identified historical human English printing",
+      "rights_basis": "Historical English translation and original printing text are public domain in the United States by expiration of the publication term of the identified pre-1931 printing, under src/sources/inventories/papal-documents-rights-v1.toml. Mechanical scanning and OCR add no original source wording. Historical/source wording is excluded from Triptych CC BY 4.0. The actual July and October 1906 issue covers, issue title/imprint pages and all nine constituent pages were inspected. Google usage guidelines at PDF page 1 and OCR physical LF lines 1–44, and recurring digitizer marks, are separately retained under the implied-license and independent fair-use assessment in src/sources/inventories/google-usage-guidelines-rights-v1.toml; they are not historical book text, not searched as book text, and not offered under the project license. Factual library/copy marks are distinct from the source body.",
+      "status": "PASS",
+      "source_acceptance": "PASS",
+      "source_accepted": true,
+      "findings": [
+        {
+          "kind": "identity-publication",
+          "finding": "The Catholic University Bulletin XII no. 3, July 1906, pp. 391–395. Fresh PDF328 title/imprint independently identifies actual issue date, publisher Catholic University of America, Lancaster PA and Washington DC; redundant noisy cover326 was skipped."
+        },
+        {
+          "kind": "extent",
+          "finding": "Fresh PDF408–412, all five constituent pages, show full Warsaw/Plotsk/Lublin address and Pius X protocol, salutation, English Mariavite body, Apostolic Benediction, Rome/St. Peters 5 April 1906 third pontificate year and papal subscription. All retained in exact LF selection; no neighboring act or excerpt wrapper enters."
+        },
+        {
+          "kind": "own-notes-apparatus",
+          "finding": "No separate historical footnote appears in these five constituent pages. Embedded quotation ellipses are native and retained. Omitted lines are blanks, title/running head, folios/gathering signature, or Google digitizer matter; no substantive body/protocol/date/subscription/note omission identified."
+        },
+        {
+          "kind": "qualification",
+          "finding": "OCR misrecognitions remain literal, including op in the opening address; individual translator unrecorded. This source acceptance does not certify lexical translation accuracy or diplomatic transcription."
+        }
+      ],
+      "blockers": [],
+      "scope_limits": [
+        "Source intake of exact historical human English witness only.",
+        "All selected texts read completely; all fifteen constituent native pages and four publication/title/imprint pages freshly inspected via nineteen same-pixel JPEG 95 4:4:4 proxies. Source PNG and PDF bytes remain authoritative; no OCR or source-word extraction from JPEG.",
+        "Individual translators remain unrecorded; historical English edition identity is established. No AI body translation.",
+        "Literal uncorrected, uncollated OCR retained. No lexical translation accuracy review, whole-printing word-level collation, compiler/rendered-PDF/font/layout review, installation or deployment is asserted.",
+        "Prior visual verdicts are not inherited. Existing metadata records of earlier inspection are pinned as historical records only."
+      ],
+      "retention_assessment": {
+        "status": "PASS",
+        "jurisdiction": "United States",
+        "basis": "Existing repository expired-term policy applied to the exact identified 1906 or 1920 human English printing and its own historical apparatus, not to act date alone. Exact scans/OCR affirmatively recorded tracked/public-domain; historical wording excluded from project CC BY 4.0.",
+        "google_matter": "For Bulletin exact parent PDF/OCR, existing Google usage-guidelines record separately supplies affirmative retention basis; guidelines and digitizer marks are not book text and do not enter selections."
+      }
+    },
+    {
+      "id": "historical-english.pius-x.hf-p-x-enc-10081906-gravissimo-officii-munere.1906-10-catholic-university-bulletin-english",
+      "language": "en",
+      "title": "Gravissimo officii munere",
+      "row_sha256": "473e55aed2727ecb33c4c4ad083d7d7f0c5d1c32ded1a1783ad854a5bf598a30",
+      "source_sha256": "39fc40d934c4dff2b0ce7affa8dfb580792a3bb3374a6eb98ad8296234d5e83c",
+      "source_scope_sha256": "c370ee4935b5bfe662b19378335c536508df3dfe6e1a3b2112f7257696b4f21f",
+      "controller_pin": {
+        "path": "src/sources/works/papal-documents/1906-08-10-papal-pius-x-hf-p-x-enc-10081906-gravissimo-officii-munere-22797b1b/editions/1906-10-catholic-university-bulletin-english/segments/historical-english.toml",
+        "sha256": "7037fd496aad295fd3d7974af1c9032e02ff67b1242c43b122246ddf6267396c",
+        "bytes": 1554
+      },
+      "metadata_pins": {
+        "segment": {
+          "path": "src/sources/works/papal-documents/1906-08-10-papal-pius-x-hf-p-x-enc-10081906-gravissimo-officii-munere-22797b1b/editions/1906-10-catholic-university-bulletin-english/segments/historical-english.toml",
+          "sha256": "7037fd496aad295fd3d7974af1c9032e02ff67b1242c43b122246ddf6267396c",
+          "bytes": 1554
+        },
+        "constituent_edition": {
+          "path": "src/sources/works/papal-documents/1906-08-10-papal-pius-x-hf-p-x-enc-10081906-gravissimo-officii-munere-22797b1b/editions/1906-10-catholic-university-bulletin-english/edition.toml",
+          "sha256": "f2b10f08dda023b4f32998ca7094d42c0add5e095aafe2383444d5745b72149f",
+          "bytes": 1028
+        },
+        "container_edition": {
+          "path": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/edition.toml",
+          "sha256": "22f4467a4d1894cd8993f11026a73e70eb4ac5cd9e2325daefcfca2369cd8267",
+          "bytes": 773
+        }
+      },
+      "proof_pins": {
+        "evidence": {
+          "path": ".scratch/english-intake-recovery/packet-01/act-02-evidence.json",
+          "sha256": "9aab36777c338717f6ecb9ff0be4cf90f1af565878dd0f721368d18d66153098",
+          "bytes": 34601
+        },
+        "selection": {
+          "path": ".scratch/english-intake-recovery/packet-01/act-02-selected.txt",
+          "sha256": "859339a7376fb9416d0f7d2fb5e1f10990c18db036921fbd710ffa88fa81fda0",
+          "bytes": 10354
+        },
+        "source_manifest": {
+          "path": "src/sources/papal-documents/historical-english-completion-manifest.json",
+          "sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+          "bytes": 67917
+        },
+        "source": {
+          "path": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-ocr-39fc40d934c4/ocr.txt",
+          "sha256": "39fc40d934c4dff2b0ce7affa8dfb580792a3bb3374a6eb98ad8296234d5e83c",
+          "bytes": 1583076
+        },
+        "controller": {
+          "path": "src/sources/works/papal-documents/1906-08-10-papal-pius-x-hf-p-x-enc-10081906-gravissimo-officii-munere-22797b1b/editions/1906-10-catholic-university-bulletin-english/segments/historical-english.toml",
+          "sha256": "7037fd496aad295fd3d7974af1c9032e02ff67b1242c43b122246ddf6267396c",
+          "bytes": 1554
+        },
+        "metadata": {
+          "segment": {
+            "path": "src/sources/works/papal-documents/1906-08-10-papal-pius-x-hf-p-x-enc-10081906-gravissimo-officii-munere-22797b1b/editions/1906-10-catholic-university-bulletin-english/segments/historical-english.toml",
+            "sha256": "7037fd496aad295fd3d7974af1c9032e02ff67b1242c43b122246ddf6267396c",
+            "bytes": 1554
+          },
+          "constituent_edition": {
+            "path": "src/sources/works/papal-documents/1906-08-10-papal-pius-x-hf-p-x-enc-10081906-gravissimo-officii-munere-22797b1b/editions/1906-10-catholic-university-bulletin-english/edition.toml",
+            "sha256": "f2b10f08dda023b4f32998ca7094d42c0add5e095aafe2383444d5745b72149f",
+            "bytes": 1028
+          },
+          "container_edition": {
+            "path": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/edition.toml",
+            "sha256": "22f4467a4d1894cd8993f11026a73e70eb4ac5cd9e2325daefcfca2369cd8267",
+            "bytes": 773
+          }
+        },
+        "related_artifacts": [
+          {
+            "id": "artifact.journals.catholic-university-bulletin.1906-volume-12.source-ocr-39fc40d934c4",
+            "record_pin": {
+              "path": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-ocr-39fc40d934c4/artifact.toml",
+              "sha256": "4000a08473985a11c0ad2ca993a4358bea7029ccba68a799f9933ed68fc2db78",
+              "bytes": 2515
+            },
+            "payload_pin": {
+              "path": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-ocr-39fc40d934c4/ocr.txt",
+              "sha256": "39fc40d934c4dff2b0ce7affa8dfb580792a3bb3374a6eb98ad8296234d5e83c",
+              "bytes": 1583076
+            },
+            "type": "whole-historical-printing-ocr",
+            "rights_status": "public-domain",
+            "rights_basis": "Historical English translation and original printing text are public domain in the United States by expiration of the publication term of the identified pre-1931 printing, under src/sources/inventories/papal-documents-rights-v1.toml. Mechanical scanning and OCR add no original source wording. Historical/source wording is excluded from Triptych CC BY 4.0. The actual July and October 1906 issue covers, issue title/imprint pages and all nine constituent pages were inspected. Google usage guidelines at PDF page 1 and OCR physical LF lines 1–44, and recurring digitizer marks, are separately retained under the implied-license and independent fair-use assessment in src/sources/inventories/google-usage-guidelines-rights-v1.toml; they are not historical book text, not searched as book text, and not offered under the project license. Factual library/copy marks are distinct from the source body."
+          },
+          {
+            "id": "artifact.journals.catholic-university-bulletin.1906-volume-12.source-pdf-257bc6f9be92",
+            "record_pin": {
+              "path": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/artifact.toml",
+              "sha256": "2d0a7bfec49fc45bcb0e53e4d50362ee63be070078783bbb0b9f6901b72aaafa",
+              "bytes": 2202
+            },
+            "payload_pin": {
+              "path": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/source.pdf",
+              "sha256": "257bc6f9be92c42dc33cecbf31ecffa34b8b046bd6fe2140f78fda1118088cb4",
+              "bytes": 19322546
+            },
+            "type": "whole-historical-printing-facsimile",
+            "rights_status": "public-domain",
+            "rights_basis": "Historical English translation and original printing text are public domain in the United States by expiration of the publication term of the identified pre-1931 printing, under src/sources/inventories/papal-documents-rights-v1.toml. Mechanical scanning and OCR add no original source wording. Historical/source wording is excluded from Triptych CC BY 4.0. The actual July and October 1906 issue covers, issue title/imprint pages and all nine constituent pages were inspected. Google usage guidelines at PDF page 1 and OCR physical LF lines 1–44, and recurring digitizer marks, are separately retained under the implied-license and independent fair-use assessment in src/sources/inventories/google-usage-guidelines-rights-v1.toml; they are not historical book text, not searched as book text, and not offered under the project license. Factual library/copy marks are distinct from the source body."
+          },
+          {
+            "id": "artifact.journals.catholic-university-bulletin.1906-volume-12.extent-review-56a907a3c538",
+            "record_pin": {
+              "path": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/extent-review-56a907a3c538/artifact.toml",
+              "sha256": "40e81c6c0d2d5e614991de214d14eb21b28155be569d2e982c9261e0f4f1de64",
+              "bytes": 893
+            },
+            "payload_pin": {
+              "path": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/extent-review-56a907a3c538/review.json",
+              "sha256": "56a907a3c5382adb35c2173c08f56197c134cb5e3e64e177c0680b9d3c955f79",
+              "bytes": 3724
+            },
+            "type": "source-extent-review",
+            "rights_status": "project-created",
+            "rights_basis": "Project-created source identity, exact selection and native-page extent review metadata."
+          }
+        ],
+        "policy_records": [
+          {
+            "path": "guidance/editorial.md",
+            "sha256": "22ce8aa5db32162f1552204e156eceeea57d214ced7118b7f31418b4cbc0dc8b"
+          },
+          {
+            "path": "guidance/repository.md",
+            "sha256": "13764c3d8a694bac00c0c48a6fb5da3983d2052d77194476062e5d71e49f493d"
+          },
+          {
+            "path": "guidance/sources.md",
+            "sha256": "d14e6562f92532bc7e92ba1ba743edb649bb111967f4cbac01019bfb30676209"
+          },
+          {
+            "path": "guidance/papal-documents.md",
+            "sha256": "028eeb083e8eb27254a1986e42b427a2ce2cf6d070763b4b36cfb586f8455f3d"
+          },
+          {
+            "path": "src/sources/inventories/papal-documents-rights-v1.toml",
+            "sha256": "2098d3cc15ef3439234033c7582fe4f17a726494008b25682a7f1b3a844454ea"
+          },
+          {
+            "path": "src/sources/inventories/google-usage-guidelines-rights-v1.toml",
+            "sha256": "721d78d00a6d07a7562f6ea8d2c629d6e9fdbbdf14f4247e3a29af022ee5fd6f"
+          }
+        ],
+        "fresh_observations": {
+          "path": ".scratch/english-intake-recovery/packet-01/audit-jpeg/progress.json",
+          "sha256": "bc7b274b9c4f7516bb78e45587e894b9d6e98b34d01d77ede137535ac333244c"
+        },
+        "replay_implementation": {
+          "path": ".scratch/english-intake-recovery/packet-01/audit-jpeg/verify.py",
+          "sha256": "36a0da4b8f600c9d42cecd6ca9d896c17aa3e94788711462f462fd21bab02c84",
+          "method": "Exact current raw LF byte selection; no source-word transformations"
+        },
+        "native_raster_helper": {
+          "path": "tools/pdf-review",
+          "sha256": "0e6f688778216faeb02b3335e4467eb476c878cf94bd89e31af93f86e3a3ad3e"
+        }
+      },
+      "selected_text_read_complete": true,
+      "selector": {
+        "physical_line_ranges": [
+          [
+            29801,
+            29842
+          ],
+          [
+            29856,
+            29902
+          ],
+          [
+            29917,
+            29960
+          ],
+          [
+            29972,
+            29992
+          ]
+        ],
+        "range_continuations": [
+          1,
+          2
+        ]
+      },
+      "actual_opened_images": [
+        {
+          "source_page": 442,
+          "source_pdf": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/source.pdf",
+          "source_pdf_sha256": "257bc6f9be92c42dc33cecbf31ecffa34b8b046bd6fe2140f78fda1118088cb4",
+          "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-07.png",
+          "source_png_sha256": "5aa882a1d3f531545ab18e408b79166df3fe08b78163b124bd69a5329ff7daf2",
+          "source_bytes": 122464,
+          "source_dimensions": [
+            1400,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1400,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-02-sample-02-5aa882a1d3f5.jpg",
+          "proxy_sha256": "60bed88753d0c41dec271ff70683891ca7d17bcca091bd8e2b99e1268b0b5c60",
+          "proxy_bytes": 285854,
+          "proxy_dimensions": [
+            1400,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-07.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-01-act-02-sample-02-5aa882a1d3f5.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-02-sample-02-5aa882a1d3f5.jpg",
+          "key": [
+            "historical-english.pius-x.hf-p-x-enc-10081906-gravissimo-officii-munere.1906-10-catholic-university-bulletin-english",
+            "en"
+          ],
+          "observation": "Fresh issue imprint independently shows Catholic University Bulletin Vol XII October1906 No4, Catholic University of America, Lancaster PA and Washington DC. Actual publication/date basis for historical English printing established; noisy duplicate cover440 not needed. No translator named here."
+        },
+        {
+          "source_page": 556,
+          "source_pdf": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/source.pdf",
+          "source_pdf_sha256": "257bc6f9be92c42dc33cecbf31ecffa34b8b046bd6fe2140f78fda1118088cb4",
+          "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-08.png",
+          "source_png_sha256": "90033735eef62201138575736bbb4cd1de93808dd8c30069a832fe4f3700e36e",
+          "source_bytes": 360351,
+          "source_dimensions": [
+            1400,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1400,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-02-sample-03-90033735eef6.jpg",
+          "proxy_sha256": "cb51da9289376eef0d6f5656aabbe23f355b2dd75bb733c034c90a186c85a044",
+          "proxy_bytes": 821660,
+          "proxy_dimensions": [
+            1400,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-08.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-01-act-02-sample-03-90033735eef6.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-02-sample-03-90033735eef6.jpg",
+          "key": [
+            "historical-english.pius-x.hf-p-x-enc-10081906-gravissimo-officii-munere.1906-10-catholic-university-bulletin-english",
+            "en"
+          ],
+          "observation": "Fresh p535 begins PIUS X TO THE FRENCH HIERARCHY editorial title then full address to Archbishops and Bishops of France, Pius X Pope, salutation, substantive English body on French religious associations. Selected OCR starts exactly at full protocol; editorial title/folio/digitizer excluded. No historical footnote here."
+        },
+        {
+          "act": 2,
+          "source_page": 557,
+          "source_pdf": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/source.pdf",
+          "source_pdf_sha256": "257bc6f9be92c42dc33cecbf31ecffa34b8b046bd6fe2140f78fda1118088cb4",
+          "bounded_pdf": ".scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-2-pdf-557.pdf",
+          "bounded_pdf_sha256": "4db3261d53485a64432f6938e016f7c40d9ed5d3acc5f58426e5820890aa15fe",
+          "source_png": ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-rasters/.scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-2-pdf-557/pages/page-1.png",
+          "source_png_sha256": "a3fd12977439dc9d73b425f113e185373fefdf56bc4839befad8b3e0192816c4",
+          "proxy": ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-act-2-pdf-557.jpg",
+          "proxy_sha256": "7f46990acc3ebb6c23c059665dea24ce3039f93a585e377ed596323559d15895",
+          "source_dimensions": [
+            1400,
+            2200
+          ],
+          "proxy_dimensions": [
+            1400,
+            2200
+          ],
+          "crop_pixels": [
+            0,
+            0,
+            1400,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-rasters/.scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-2-pdf-557/pages/page-1.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-act-2-pdf-557.jpg"
+          ],
+          "key": [
+            "historical-english.pius-x.hf-p-x-enc-10081906-gravissimo-officii-munere.1906-10-catholic-university-bulletin-english",
+            "en"
+          ],
+          "observation": "Fresh p536 continues English Gravissimo body on French associations and hierarchy, through final line situations; next selected page continues were quite different. No separate historical notes, marginal summary, or neighboring act. Folio/running head/digitizer separate."
+        },
+        {
+          "source_page": 558,
+          "source_pdf": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/source.pdf",
+          "source_pdf_sha256": "257bc6f9be92c42dc33cecbf31ecffa34b8b046bd6fe2140f78fda1118088cb4",
+          "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-09.png",
+          "source_png_sha256": "fb9b056df1360ac0ccac5a0bb9e9f0f0eddf559dda3304b66a47a061740344a4",
+          "source_bytes": 411625,
+          "source_dimensions": [
+            1400,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1400,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-02-sample-04-fb9b056df136.jpg",
+          "proxy_sha256": "850788b08ee5b0f6712514a5a7a87e7a09672b9f5ac2a563a306638d0d98d42b",
+          "proxy_bytes": 944065,
+          "proxy_dimensions": [
+            1400,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-09.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-01-act-02-sample-04-fb9b056df136.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-02-sample-04-fb9b056df136.jpg",
+          "key": [
+            "historical-english.pius-x.hf-p-x-enc-10081906-gravissimo-officii-munere.1906-10-catholic-university-bulletin-english",
+            "en"
+          ],
+          "observation": "Fresh p537 is continuous English papal argument and exhortation, linking prior situations to next-page stigma. No separate historical footnote or neighbor. Selected text retains body; running head/folio/digitizer excluded."
+        },
+        {
+          "source_page": 559,
+          "source_pdf": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/source.pdf",
+          "source_pdf_sha256": "257bc6f9be92c42dc33cecbf31ecffa34b8b046bd6fe2140f78fda1118088cb4",
+          "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-10.png",
+          "source_png_sha256": "1e1e2745e84422d93bcaac1586301ffffeb94e21ca8e233df7845c46191e3396",
+          "source_bytes": 188316,
+          "source_dimensions": [
+            1400,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1400,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-02-sample-05-1e1e2745e844.jpg",
+          "proxy_sha256": "7ea19f23015dd4e8db37c42b4a46ca203935eb758e221a8523b124ba46971788",
+          "proxy_bytes": 455650,
+          "proxy_dimensions": [
+            1400,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-10.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-01-act-02-sample-05-1e1e2745e844.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-02-sample-05-1e1e2745e844.jpg",
+          "key": [
+            "historical-english.pius-x.hf-p-x-enc-10081906-gravissimo-officii-munere.1906-10-catholic-university-bulletin-english",
+            "en"
+          ],
+          "observation": "Fresh p538 contains continued last paragraph, Apostolic Benediction to bishops and French nation, Rome St Peters August10 Feast of StLawrence 1906 fourth pontificate year, Pius PP.X subscription. OCR subscription Pros is a disclosed recognition error; selected bytes uncorrected. No following neighbor or own note. All four constituent pages freshly observed."
+        }
+      ],
+      "excluded_interrange_lines": [
+        {
+          "line": 29843,
+          "source": ""
+        },
+        {
+          "line": 29844,
+          "source": "535 "
+        },
+        {
+          "line": 29845,
+          "source": ""
+        },
+        {
+          "line": 29846,
+          "source": ""
+        },
+        {
+          "line": 29847,
+          "source": "Digitized  by "
+        },
+        {
+          "line": 29848,
+          "source": ""
+        },
+        {
+          "line": 29849,
+          "source": ""
+        },
+        {
+          "line": 29850,
+          "source": "Google "
+        },
+        {
+          "line": 29851,
+          "source": ""
+        },
+        {
+          "line": 29852,
+          "source": ""
+        },
+        {
+          "line": 29853,
+          "source": "636  CATHOLIC  UNIVERSITY  BULLETIN. "
+        },
+        {
+          "line": 29854,
+          "source": ""
+        },
+        {
+          "line": 29855,
+          "source": ""
+        },
+        {
+          "line": 29903,
+          "source": ""
+        },
+        {
+          "line": 29904,
+          "source": ""
+        },
+        {
+          "line": 29905,
+          "source": "Digitized  by "
+        },
+        {
+          "line": 29906,
+          "source": ""
+        },
+        {
+          "line": 29907,
+          "source": ""
+        },
+        {
+          "line": 29908,
+          "source": "Google "
+        },
+        {
+          "line": 29909,
+          "source": ""
+        },
+        {
+          "line": 29910,
+          "source": ""
+        },
+        {
+          "line": 29911,
+          "source": "PIUS  X.  TO  THE  FRENCH  HIERARCHY. "
+        },
+        {
+          "line": 29912,
+          "source": ""
+        },
+        {
+          "line": 29913,
+          "source": ""
+        },
+        {
+          "line": 29914,
+          "source": "537 "
+        },
+        {
+          "line": 29915,
+          "source": ""
+        },
+        {
+          "line": 29916,
+          "source": ""
+        },
+        {
+          "line": 29961,
+          "source": ""
+        },
+        {
+          "line": 29962,
+          "source": ""
+        },
+        {
+          "line": 29963,
+          "source": "Digitized  by "
+        },
+        {
+          "line": 29964,
+          "source": ""
+        },
+        {
+          "line": 29965,
+          "source": ""
+        },
+        {
+          "line": 29966,
+          "source": "Google "
+        },
+        {
+          "line": 29967,
+          "source": ""
+        },
+        {
+          "line": 29968,
+          "source": ""
+        },
+        {
+          "line": 29969,
+          "source": "638  CATHOLIC  UNIVEB8ITY  BULLETIN. "
+        },
+        {
+          "line": 29970,
+          "source": ""
+        },
+        {
+          "line": 29971,
+          "source": ""
+        }
+      ],
+      "publication": "The Catholic University Bulletin XII, no. 4 (October 1906), pp. 535–538.",
+      "translator": "Individual translator unrecorded; identified historical human English printing",
+      "rights_basis": "Historical English translation and original printing text are public domain in the United States by expiration of the publication term of the identified pre-1931 printing, under src/sources/inventories/papal-documents-rights-v1.toml. Mechanical scanning and OCR add no original source wording. Historical/source wording is excluded from Triptych CC BY 4.0. The actual July and October 1906 issue covers, issue title/imprint pages and all nine constituent pages were inspected. Google usage guidelines at PDF page 1 and OCR physical LF lines 1–44, and recurring digitizer marks, are separately retained under the implied-license and independent fair-use assessment in src/sources/inventories/google-usage-guidelines-rights-v1.toml; they are not historical book text, not searched as book text, and not offered under the project license. Factual library/copy marks are distinct from the source body.",
+      "status": "PASS",
+      "source_acceptance": "PASS",
+      "source_accepted": true,
+      "findings": [
+        {
+          "kind": "identity-publication",
+          "finding": "The Catholic University Bulletin XII no. 4, October 1906, pp. 535–538. Fresh PDF442 title/imprint establishes actual issue publication independently of act date; publisher Catholic University of America, Lancaster PA and Washington DC. Redundant cover440 skipped."
+        },
+        {
+          "kind": "extent",
+          "finding": "Fresh PDF556–559, all four constituent pages, show full address to French archbishops/bishops and Pius X protocol, salutation, English body on religious associations, benediction, Rome/St. Peters 10 August 1906 Feast of St. Lawrence fourth pontificate year and Pius PPX subscription. Exact selected OCR includes all these components and no neighboring act."
+        },
+        {
+          "kind": "own-notes-apparatus",
+          "finding": "No separate historical footnote appears in these four constituent pages. Exact omissions are blanks, editorial title/running heads, folios and Google digitizer marks; no substantive note or body omission identified."
+        },
+        {
+          "kind": "qualification",
+          "finding": "Printed Pius subscription is OCR Pros PP.X; this disclosed raw OCR recognition error is retained without model correction. Other OCR errors remain. Individual translator unrecorded."
+        }
+      ],
+      "blockers": [],
+      "scope_limits": [
+        "Source intake of exact historical human English witness only.",
+        "All selected texts read completely; all fifteen constituent native pages and four publication/title/imprint pages freshly inspected via nineteen same-pixel JPEG 95 4:4:4 proxies. Source PNG and PDF bytes remain authoritative; no OCR or source-word extraction from JPEG.",
+        "Individual translators remain unrecorded; historical English edition identity is established. No AI body translation.",
+        "Literal uncorrected, uncollated OCR retained. No lexical translation accuracy review, whole-printing word-level collation, compiler/rendered-PDF/font/layout review, installation or deployment is asserted.",
+        "Prior visual verdicts are not inherited. Existing metadata records of earlier inspection are pinned as historical records only."
+      ],
+      "retention_assessment": {
+        "status": "PASS",
+        "jurisdiction": "United States",
+        "basis": "Existing repository expired-term policy applied to the exact identified 1906 or 1920 human English printing and its own historical apparatus, not to act date alone. Exact scans/OCR affirmatively recorded tracked/public-domain; historical wording excluded from project CC BY 4.0.",
+        "google_matter": "For Bulletin exact parent PDF/OCR, existing Google usage-guidelines record separately supplies affirmative retention basis; guidelines and digitizer marks are not book text and do not enter selections."
+      }
+    },
+    {
+      "id": "historical-english.pius-x.hf-p-x-enc-24091912-singulari-quadam.1920-ryan-husslein-church-and-labor-english",
+      "language": "en",
+      "title": "Singulari quadam",
+      "row_sha256": "6843623aa04d9a6c67e1cc8bd74a726f336d2591697efc0602bf269d4d1e856b",
+      "source_sha256": "64d9ff82d856c060530d199429cb4e40dc65cc81b0bdda407adb5df213bab371",
+      "source_scope_sha256": "c370ee4935b5bfe662b19378335c536508df3dfe6e1a3b2112f7257696b4f21f",
+      "controller_pin": {
+        "path": "src/sources/works/papal-documents/1912-09-24-papal-pius-x-hf-p-x-enc-24091912-singulari-quadam-c479e0b4/editions/1920-ryan-husslein-church-and-labor-english/segments/historical-english.toml",
+        "sha256": "d53c4a09804b6010e45ec4bc4447b910604a6e4a19d3f286b1e7971f88fdc504",
+        "bytes": 1944
+      },
+      "metadata_pins": {
+        "segment": {
+          "path": "src/sources/works/papal-documents/1912-09-24-papal-pius-x-hf-p-x-enc-24091912-singulari-quadam-c479e0b4/editions/1920-ryan-husslein-church-and-labor-english/segments/historical-english.toml",
+          "sha256": "d53c4a09804b6010e45ec4bc4447b910604a6e4a19d3f286b1e7971f88fdc504",
+          "bytes": 1944
+        },
+        "constituent_edition": {
+          "path": "src/sources/works/papal-documents/1912-09-24-papal-pius-x-hf-p-x-enc-24091912-singulari-quadam-c479e0b4/editions/1920-ryan-husslein-church-and-labor-english/edition.toml",
+          "sha256": "ed367eea7d0ece05b4a60857f420d99783740f11801cef7acd1fe3997be69891",
+          "bytes": 1256
+        },
+        "container_edition": {
+          "path": "src/sources/works/john-a-ryan-joseph-husslein/the-church-and-labor/editions/1920-new-york-macmillan-en/edition.toml",
+          "sha256": "368c972e69d9d634611f9d9726f34a3d904254996797f26abd9feb3a5ef6aea6",
+          "bytes": 866
+        }
+      },
+      "proof_pins": {
+        "evidence": {
+          "path": ".scratch/english-intake-recovery/packet-01/act-03-evidence.json",
+          "sha256": "20ddef07b42022660444fd9ee225eeebee65f7ccd88e150cde1d954fdeca3cae",
+          "bytes": 41411
+        },
+        "selection": {
+          "path": ".scratch/english-intake-recovery/packet-01/act-03-selected.txt",
+          "sha256": "fef8fc661cb99cde7b02891bb71c5d7c820d0005a34ef7b94758bb5cddfeff07",
+          "bytes": 13727
+        },
+        "source_manifest": {
+          "path": "src/sources/papal-documents/historical-english-completion-manifest.json",
+          "sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+          "bytes": 67917
+        },
+        "source": {
+          "path": "src/sources/works/john-a-ryan-joseph-husslein/the-church-and-labor/editions/1920-new-york-macmillan-en/artifacts/source-ocr-64d9ff82d856/ocr.txt",
+          "sha256": "64d9ff82d856c060530d199429cb4e40dc65cc81b0bdda407adb5df213bab371",
+          "bytes": 790921
+        },
+        "controller": {
+          "path": "src/sources/works/papal-documents/1912-09-24-papal-pius-x-hf-p-x-enc-24091912-singulari-quadam-c479e0b4/editions/1920-ryan-husslein-church-and-labor-english/segments/historical-english.toml",
+          "sha256": "d53c4a09804b6010e45ec4bc4447b910604a6e4a19d3f286b1e7971f88fdc504",
+          "bytes": 1944
+        },
+        "metadata": {
+          "segment": {
+            "path": "src/sources/works/papal-documents/1912-09-24-papal-pius-x-hf-p-x-enc-24091912-singulari-quadam-c479e0b4/editions/1920-ryan-husslein-church-and-labor-english/segments/historical-english.toml",
+            "sha256": "d53c4a09804b6010e45ec4bc4447b910604a6e4a19d3f286b1e7971f88fdc504",
+            "bytes": 1944
+          },
+          "constituent_edition": {
+            "path": "src/sources/works/papal-documents/1912-09-24-papal-pius-x-hf-p-x-enc-24091912-singulari-quadam-c479e0b4/editions/1920-ryan-husslein-church-and-labor-english/edition.toml",
+            "sha256": "ed367eea7d0ece05b4a60857f420d99783740f11801cef7acd1fe3997be69891",
+            "bytes": 1256
+          },
+          "container_edition": {
+            "path": "src/sources/works/john-a-ryan-joseph-husslein/the-church-and-labor/editions/1920-new-york-macmillan-en/edition.toml",
+            "sha256": "368c972e69d9d634611f9d9726f34a3d904254996797f26abd9feb3a5ef6aea6",
+            "bytes": 866
+          }
+        },
+        "related_artifacts": [
+          {
+            "id": "artifact.john-a-ryan-joseph-husslein.the-church-and-labor.1920-new-york-macmillan-en.source-pdf-ca642ef73b87",
+            "record_pin": {
+              "path": "src/sources/works/john-a-ryan-joseph-husslein/the-church-and-labor/editions/1920-new-york-macmillan-en/artifacts/source-pdf-ca642ef73b87/artifact.toml",
+              "sha256": "396528857476eba8e4ca94960e0142587a0532def6a89698a87ea940bc455ed1",
+              "bytes": 2064
+            },
+            "payload_pin": {
+              "path": "src/sources/works/john-a-ryan-joseph-husslein/the-church-and-labor/editions/1920-new-york-macmillan-en/artifacts/source-pdf-ca642ef73b87/source.pdf",
+              "sha256": "ca642ef73b870ce393dfc8b7c57e20e4d900f64461837ef1ae0b1c6d843eece7",
+              "bytes": 19216131
+            },
+            "type": "whole-historical-printing-facsimile",
+            "rights_status": "public-domain",
+            "rights_basis": "Historical English translation and original printing text are public domain in the United States by expiration of the publication term of the identified pre-1931 printing, under src/sources/inventories/papal-documents-rights-v1.toml. Mechanical scanning and OCR add no original source wording. Historical/source wording is excluded from Triptych CC BY 4.0. Native PDF page 7 identifies New York: The Macmillan Company, 1920; page 8 states copyright 1920 and publication October 1920. Both and all six constituent pages were inspected. The historical anthology headings, bracketed glosses and its two notes are included as historical editorial material, not newly attributed papal wording."
+          },
+          {
+            "id": "artifact.john-a-ryan-joseph-husslein.the-church-and-labor.1920-new-york-macmillan-en.source-ocr-64d9ff82d856",
+            "record_pin": {
+              "path": "src/sources/works/john-a-ryan-joseph-husslein/the-church-and-labor/editions/1920-new-york-macmillan-en/artifacts/source-ocr-64d9ff82d856/artifact.toml",
+              "sha256": "82cad1ae53447f177edfcb8b8bd7ae5ca2168073513e25e470f0f4a60ba0cf5c",
+              "bytes": 2408
+            },
+            "payload_pin": {
+              "path": "src/sources/works/john-a-ryan-joseph-husslein/the-church-and-labor/editions/1920-new-york-macmillan-en/artifacts/source-ocr-64d9ff82d856/ocr.txt",
+              "sha256": "64d9ff82d856c060530d199429cb4e40dc65cc81b0bdda407adb5df213bab371",
+              "bytes": 790921
+            },
+            "type": "whole-historical-printing-ocr",
+            "rights_status": "public-domain",
+            "rights_basis": "Historical English translation and original printing text are public domain in the United States by expiration of the publication term of the identified pre-1931 printing, under src/sources/inventories/papal-documents-rights-v1.toml. Mechanical scanning and OCR add no original source wording. Historical/source wording is excluded from Triptych CC BY 4.0. Native PDF page 7 identifies New York: The Macmillan Company, 1920; page 8 states copyright 1920 and publication October 1920. Both and all six constituent pages were inspected. The historical anthology headings, bracketed glosses and its two notes are included as historical editorial material, not newly attributed papal wording."
+          },
+          {
+            "id": "artifact.john-a-ryan-joseph-husslein.the-church-and-labor.1920-new-york-macmillan-en.extent-review-d704b486ad97",
+            "record_pin": {
+              "path": "src/sources/works/john-a-ryan-joseph-husslein/the-church-and-labor/editions/1920-new-york-macmillan-en/artifacts/extent-review-d704b486ad97/artifact.toml",
+              "sha256": "4c1544ad91f37bfc44b39aab7a99a01668a3c5e8aa16d851aa998785ecac1cd3",
+              "bytes": 962
+            },
+            "payload_pin": {
+              "path": "src/sources/works/john-a-ryan-joseph-husslein/the-church-and-labor/editions/1920-new-york-macmillan-en/artifacts/extent-review-d704b486ad97/review.json",
+              "sha256": "d704b486ad97ac07a2f12ebcfc90d003fa0bff845601cc89a295ca7b538729d8",
+              "bytes": 3310
+            },
+            "type": "source-extent-review",
+            "rights_status": "project-created",
+            "rights_basis": "Project-created source identity, exact selection and native-page extent review metadata."
+          }
+        ],
+        "policy_records": [
+          {
+            "path": "guidance/editorial.md",
+            "sha256": "22ce8aa5db32162f1552204e156eceeea57d214ced7118b7f31418b4cbc0dc8b"
+          },
+          {
+            "path": "guidance/repository.md",
+            "sha256": "13764c3d8a694bac00c0c48a6fb5da3983d2052d77194476062e5d71e49f493d"
+          },
+          {
+            "path": "guidance/sources.md",
+            "sha256": "d14e6562f92532bc7e92ba1ba743edb649bb111967f4cbac01019bfb30676209"
+          },
+          {
+            "path": "guidance/papal-documents.md",
+            "sha256": "028eeb083e8eb27254a1986e42b427a2ce2cf6d070763b4b36cfb586f8455f3d"
+          },
+          {
+            "path": "src/sources/inventories/papal-documents-rights-v1.toml",
+            "sha256": "2098d3cc15ef3439234033c7582fe4f17a726494008b25682a7f1b3a844454ea"
+          },
+          {
+            "path": "src/sources/inventories/google-usage-guidelines-rights-v1.toml",
+            "sha256": "721d78d00a6d07a7562f6ea8d2c629d6e9fdbbdf14f4247e3a29af022ee5fd6f"
+          }
+        ],
+        "fresh_observations": {
+          "path": ".scratch/english-intake-recovery/packet-01/audit-jpeg/progress.json",
+          "sha256": "bc7b274b9c4f7516bb78e45587e894b9d6e98b34d01d77ede137535ac333244c"
+        },
+        "replay_implementation": {
+          "path": ".scratch/english-intake-recovery/packet-01/audit-jpeg/verify.py",
+          "sha256": "36a0da4b8f600c9d42cecd6ca9d896c17aa3e94788711462f462fd21bab02c84",
+          "method": "Exact current raw LF byte selection; no source-word transformations"
+        },
+        "native_raster_helper": {
+          "path": "tools/pdf-review",
+          "sha256": "0e6f688778216faeb02b3335e4467eb476c878cf94bd89e31af93f86e3a3ad3e"
+        }
+      },
+      "selected_text_read_complete": true,
+      "selector": {
+        "physical_line_ranges": [
+          [
+            6373,
+            6373
+          ],
+          [
+            6375,
+            6377
+          ],
+          [
+            6378,
+            6379
+          ],
+          [
+            6380,
+            6408
+          ],
+          [
+            6413,
+            6454
+          ],
+          [
+            6455,
+            6455
+          ],
+          [
+            6460,
+            6460
+          ],
+          [
+            6461,
+            6497
+          ],
+          [
+            6502,
+            6536
+          ],
+          [
+            6537,
+            6537
+          ],
+          [
+            6542,
+            6582
+          ],
+          [
+            6587,
+            6612
+          ]
+        ],
+        "range_continuations": [
+          10
+        ]
+      },
+      "actual_opened_images": [
+        {
+          "source_page": 7,
+          "source_pdf": "src/sources/works/john-a-ryan-joseph-husslein/the-church-and-labor/editions/1920-new-york-macmillan-en/artifacts/source-pdf-ca642ef73b87/source.pdf",
+          "source_pdf_sha256": "ca642ef73b870ce393dfc8b7c57e20e4d900f64461837ef1ae0b1c6d843eece7",
+          "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-11.png",
+          "source_png_sha256": "ea0fa8e37cb4bf6c2c442e5fe97659d6d2565bab17d272f339f55183a0787241",
+          "source_bytes": 318105,
+          "source_dimensions": [
+            1386,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1386,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-01-ea0fa8e37cb4.jpg",
+          "proxy_sha256": "39b4922b56ca98b36e7f87209a35fde7d21bc4201d51c16dfeea272f05947241",
+          "proxy_bytes": 322550,
+          "proxy_dimensions": [
+            1386,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-11.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-01-ea0fa8e37cb4.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-01-ea0fa8e37cb4.jpg",
+          "key": [
+            "historical-english.pius-x.hf-p-x-enc-24091912-singulari-quadam.1920-ryan-husslein-church-and-labor-english",
+            "en"
+          ],
+          "observation": "Fresh title page identifies The Church and Labor, prepared and edited for Department of Social Action of National Catholic Welfare Council by John A Ryan and Joseph Husslein; NewYork The Macmillan Company1920. Editors clearly distinguished from individual translator, which remains unrecorded. All rights reserved historical notice does not change existing expired-term policy basis."
+        },
+        {
+          "source_page": 8,
+          "source_pdf": "src/sources/works/john-a-ryan-joseph-husslein/the-church-and-labor/editions/1920-new-york-macmillan-en/artifacts/source-pdf-ca642ef73b87/source.pdf",
+          "source_pdf_sha256": "ca642ef73b870ce393dfc8b7c57e20e4d900f64461837ef1ae0b1c6d843eece7",
+          "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-12.png",
+          "source_png_sha256": "4331e006c840f994db36869bf9f12bbc8288f1db345764fd0ac834be61959a8f",
+          "source_bytes": 196344,
+          "source_dimensions": [
+            1386,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1386,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-02-4331e006c840.jpg",
+          "proxy_sha256": "0f3a35554bed0e1f57c24d937137f42746bcc76691283f750c33cba9afe4f4e5",
+          "proxy_bytes": 179828,
+          "proxy_dimensions": [
+            1386,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-12.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-02-4331e006c840.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-02-4331e006c840.jpg",
+          "key": [
+            "historical-english.pius-x.hf-p-x-enc-24091912-singulari-quadam.1920-ryan-husslein-church-and-labor-english",
+            "en"
+          ],
+          "observation": "Fresh copyright/publication leaf identifies Copyright1920 MacmillanCompany, published October1920. Historical nihil obstat/imprimatur on leaf are edition facts, not new project approval. Confirms actual printing date independently of 1912 act date."
+        },
+        {
+          "source_page": 153,
+          "source_pdf": "src/sources/works/john-a-ryan-joseph-husslein/the-church-and-labor/editions/1920-new-york-macmillan-en/artifacts/source-pdf-ca642ef73b87/source.pdf",
+          "source_pdf_sha256": "ca642ef73b870ce393dfc8b7c57e20e4d900f64461837ef1ae0b1c6d843eece7",
+          "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-13.png",
+          "source_png_sha256": "8821d976aac47c3aadbcdada1146df2a2fde871d5f5b6260209a7232ab860681",
+          "source_bytes": 910529,
+          "source_dimensions": [
+            1386,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1386,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-03-8821d976aac4.jpg",
+          "proxy_sha256": "34181ff6ab357dda7e7767a3c43e08df07c8a16251c867d8da13f0d471a2468b",
+          "proxy_bytes": 896997,
+          "proxy_dimensions": [
+            1386,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-13.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-03-8821d976aac4.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-03-8821d976aac4.jpg",
+          "key": [
+            "historical-english.pius-x.hf-p-x-enc-24091912-singulari-quadam.1920-ryan-husslein-church-and-labor-english",
+            "en"
+          ],
+          "observation": "Fresh p127 begins THE LETTER with full protocol to George Cardinal Kopp Bishop of Breslau and German archbishops/bishops, Pius PPX, salutation, Singulari quadam incipit and English substantive body on labor unions. The letter heading retained; page running title LETTER TO THE GERMAN HIERARCHY and folio excluded. No historical footnote on this page."
+        },
+        {
+          "source_page": 154,
+          "source_pdf": "src/sources/works/john-a-ryan-joseph-husslein/the-church-and-labor/editions/1920-new-york-macmillan-en/artifacts/source-pdf-ca642ef73b87/source.pdf",
+          "source_pdf_sha256": "ca642ef73b870ce393dfc8b7c57e20e4d900f64461837ef1ae0b1c6d843eece7",
+          "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-14.png",
+          "source_png_sha256": "1eff435b47abca1c2cf564d1142fb7354f7aed5640a46d0570fc9d8a970ca150",
+          "source_bytes": 925313,
+          "source_dimensions": [
+            1386,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1386,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-04-1eff435b47ab.jpg",
+          "proxy_sha256": "13ee3cd02e573e051a7dd6095ce73e29289f0eaf266688f9c2d457df9e3e443b",
+          "proxy_bytes": 898730,
+          "proxy_dimensions": [
+            1386,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-14.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-04-1eff435b47ab.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-04-1eff435b47ab.jpg",
+          "key": [
+            "historical-english.pius-x.hf-p-x-enc-24091912-singulari-quadam.1920-ryan-husslein-church-and-labor-english",
+            "en"
+          ],
+          "observation": "Fresh p128 includes historical ASKED FOR OPINIONS heading and body; bottom has note6 Encyclical Graves de Communi with printed body marker6. Selected OCR retains note as separately selected line at original page break, though body marker misread as asterisk is disclosed. Bracketed social-question gloss is native historical apparatus. No neighbor."
+        },
+        {
+          "source_page": 155,
+          "source_pdf": "src/sources/works/john-a-ryan-joseph-husslein/the-church-and-labor/editions/1920-new-york-macmillan-en/artifacts/source-pdf-ca642ef73b87/source.pdf",
+          "source_pdf_sha256": "ca642ef73b870ce393dfc8b7c57e20e4d900f64461837ef1ae0b1c6d843eece7",
+          "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-15.png",
+          "source_png_sha256": "a66b36d0613f0e48bc19a1b543bda378c1d12734c7aee6b367d35b54d10980d1",
+          "source_bytes": 948537,
+          "source_dimensions": [
+            1386,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1386,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-05-a66b36d0613f.jpg",
+          "proxy_sha256": "25ab87af5c036f212c8aa72b7364cbab5bec4c62ab136adca0b31afd146fadb1",
+          "proxy_bytes": 935588,
+          "proxy_dimensions": [
+            1386,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-15.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-05-a66b36d0613f.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-05-a66b36d0613f.jpg",
+          "key": [
+            "historical-english.pius-x.hf-p-x-enc-24091912-singulari-quadam.1920-ryan-husslein-church-and-labor-english",
+            "en"
+          ],
+          "observation": "Fresh p129 is continuous body under historical WORKINGMENS SOCIETIES and THE CARTEL headings, both retained in selected OCR. No footnote on this page; running title/folio omitted. Shows own anthology apparatus distinct from papal authorship."
+        },
+        {
+          "act": 3,
+          "source_page": 156,
+          "source_pdf": "src/sources/works/john-a-ryan-joseph-husslein/the-church-and-labor/editions/1920-new-york-macmillan-en/artifacts/source-pdf-ca642ef73b87/source.pdf",
+          "source_pdf_sha256": "ca642ef73b870ce393dfc8b7c57e20e4d900f64461837ef1ae0b1c6d843eece7",
+          "bounded_pdf": ".scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-3-pdf-156.pdf",
+          "bounded_pdf_sha256": "fc14df4cde5b9ca52a4c63aee7695fffb6ee5c74b3cb0fbdb93029634a9c1d3a",
+          "source_png": ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-rasters/.scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-3-pdf-156/pages/page-1.png",
+          "source_png_sha256": "42b1d9af2c229efd9cb2374fca5cbd0f1894575d46adc1568f7bc987cadef68d",
+          "proxy": ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-act-3-pdf-156.jpg",
+          "proxy_sha256": "f39f261a3ed239ec5d196c3812049359eb6df0cd7e3e4e0ae91b4face91a7437",
+          "source_dimensions": [
+            1386,
+            2200
+          ],
+          "proxy_dimensions": [
+            1386,
+            2200
+          ],
+          "crop_pixels": [
+            0,
+            0,
+            1386,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-rasters/.scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-3-pdf-156/pages/page-1.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-act-3-pdf-156.jpg"
+          ],
+          "key": [
+            "historical-english.pius-x.hf-p-x-enc-24091912-singulari-quadam.1920-ryan-husslein-church-and-labor-english",
+            "en"
+          ],
+          "observation": "Fresh p130 shows CHRISTIAN SYNDICATES heading, historical bracketed English/German/Latin glosses, printed marker7 and footnote7 Christliche Gewerkschaften. Selected OCR retains note separately at page break; OCR reads note label1 and damaged marker, already disclosed. This is own historical apparatus, not modern wrapper. Body through Catholic teaching intact in selection."
+        },
+        {
+          "act": 3,
+          "source_page": 157,
+          "source_pdf": "src/sources/works/john-a-ryan-joseph-husslein/the-church-and-labor/editions/1920-new-york-macmillan-en/artifacts/source-pdf-ca642ef73b87/source.pdf",
+          "source_pdf_sha256": "ca642ef73b870ce393dfc8b7c57e20e4d900f64461837ef1ae0b1c6d843eece7",
+          "bounded_pdf": ".scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-3-pdf-157.pdf",
+          "bounded_pdf_sha256": "0b92dcab695b841333b7df7a754e4ed9d871e8e24960f0c1b6e5cf323b596211",
+          "source_png": ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-rasters/.scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-3-pdf-157/pages/page-1.png",
+          "source_png_sha256": "1aea03f6e44382ef8286ad98cbb940da6fcd5cad606816472d1ebb3b57c80edc",
+          "proxy": ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-act-3-pdf-157.jpg",
+          "proxy_sha256": "387b2792b449528cd014cf07a75dd7df9e62f490e5ec0b5e826d901f1a36d65c",
+          "source_dimensions": [
+            1386,
+            2200
+          ],
+          "proxy_dimensions": [
+            1386,
+            2200
+          ],
+          "crop_pixels": [
+            0,
+            0,
+            1386,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-rasters/.scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-3-pdf-157/pages/page-1.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-act-3-pdf-157.jpg"
+          ],
+          "key": [
+            "historical-english.pius-x.hf-p-x-enc-24091912-singulari-quadam.1920-ryan-husslein-church-and-labor-english",
+            "en"
+          ],
+          "observation": "Fresh p131 continues body under DUTIES OF BISHOPS then PEACE AND PROGRESS headings, both retained as historical anthology apparatus. Last line splits teachings across page break; selected next range continues ings. No separate footnote or neighbor. Folio/running title outside selection."
+        },
+        {
+          "source_page": 158,
+          "source_pdf": "src/sources/works/john-a-ryan-joseph-husslein/the-church-and-labor/editions/1920-new-york-macmillan-en/artifacts/source-pdf-ca642ef73b87/source.pdf",
+          "source_pdf_sha256": "ca642ef73b870ce393dfc8b7c57e20e4d900f64461837ef1ae0b1c6d843eece7",
+          "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-16.png",
+          "source_png_sha256": "cc5e45c880097c0e692611492d833e4b21cfc2207f2dfb8d1dfe29dcc33e3e45",
+          "source_bytes": 597959,
+          "source_dimensions": [
+            1386,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1386,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-06-cc5e45c88009.jpg",
+          "proxy_sha256": "db68f9d977d365370b9f27adfd8978c91d6a8e5ea648244c334dde123a01c540",
+          "proxy_bytes": 590994,
+          "proxy_dimensions": [
+            1386,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-16.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-06-cc5e45c88009.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-06-cc5e45c88009.jpg",
+          "key": [
+            "historical-english.pius-x.hf-p-x-enc-24091912-singulari-quadam.1920-ryan-husslein-church-and-labor-english",
+            "en"
+          ],
+          "observation": "Fresh p132 finishes continuous body, Apostolic Benediction to Kopp and bishops/clergy/people, Rome StPeters September24th1912 tenth pontificate year, PIUS PPX subscription. No neighbor or final historical note. Selected text includes entire closing. All six Singulari constituent pages freshly observed; no full-printing word-level collation claimed."
+        }
+      ],
+      "excluded_interrange_lines": [
+        {
+          "line": 6374,
+          "source": ""
+        },
+        {
+          "line": 6409,
+          "source": ""
+        },
+        {
+          "line": 6410,
+          "source": ""
+        },
+        {
+          "line": 6411,
+          "source": "128  CHURCH  AND  LABOR "
+        },
+        {
+          "line": 6412,
+          "source": ""
+        },
+        {
+          "line": 6456,
+          "source": ""
+        },
+        {
+          "line": 6457,
+          "source": ""
+        },
+        {
+          "line": 6458,
+          "source": "LETTER  TO  THE  GERMAI^T  HIERAECHY      129 "
+        },
+        {
+          "line": 6459,
+          "source": ""
+        },
+        {
+          "line": 6498,
+          "source": ""
+        },
+        {
+          "line": 6499,
+          "source": ""
+        },
+        {
+          "line": 6500,
+          "source": "130  CHUUCH  AKD  LABOR "
+        },
+        {
+          "line": 6501,
+          "source": ""
+        },
+        {
+          "line": 6538,
+          "source": ""
+        },
+        {
+          "line": 6539,
+          "source": ""
+        },
+        {
+          "line": 6540,
+          "source": "LETTER  TO  THE  GEEMAN  HIERAECHY     131 "
+        },
+        {
+          "line": 6541,
+          "source": ""
+        },
+        {
+          "line": 6583,
+          "source": ""
+        },
+        {
+          "line": 6584,
+          "source": ""
+        },
+        {
+          "line": 6585,
+          "source": "13\"2  CHUECH  AND  LABOR "
+        },
+        {
+          "line": 6586,
+          "source": ""
+        }
+      ],
+      "publication": "Ryan and Husslein, The Church and Labor (New York: Macmillan, 1920), pp. 127–132.",
+      "translator": "Individual translator unrecorded; identified historical human English printing",
+      "rights_basis": "Historical English translation and original printing text are public domain in the United States by expiration of the publication term of the identified pre-1931 printing, under src/sources/inventories/papal-documents-rights-v1.toml. Mechanical scanning and OCR add no original source wording. Historical/source wording is excluded from Triptych CC BY 4.0. Native PDF page 7 identifies New York: The Macmillan Company, 1920; page 8 states copyright 1920 and publication October 1920. Both and all six constituent pages were inspected. The historical anthology headings, bracketed glosses and its two notes are included as historical editorial material, not newly attributed papal wording.",
+      "status": "PASS",
+      "source_acceptance": "PASS",
+      "source_accepted": true,
+      "findings": [
+        {
+          "kind": "identity-publication",
+          "finding": "The Church and Labor, prepared and edited by John A. Ryan and Joseph Husslein for the National Catholic Welfare Council Department of Social Action, New York Macmillan 1920, pp. 127–132. Fresh PDF7 identifies title/editors/imprint 1920; PDF8 independently states copyright 1920 and publication October 1920. Editors are not asserted to be translators."
+        },
+        {
+          "kind": "extent",
+          "finding": "Fresh PDF153–158, all six constituent pages, show full protocol to George Cardinal Kopp Bishop of Breslau and German hierarchy, Pius PP. X, salutation/incipit, continuous English labor-union body, benediction, Rome/St. Peters 24 September 1912 tenth pontificate year, and PIUS PP. X subscription. Entire selected text was read; no adjacent essay or neighbor is selected."
+        },
+        {
+          "kind": "own-notes-apparatus",
+          "finding": "Historical THE LETTER and section headings and bracketed glosses are retained and correctly described as this anthology presentation. Native p128/PDF154 shows note 6, Encyclical Graves de Communi; p130/PDF156 shows note 7, Christliche Gewerkschaften. Both notes remain separately selected at the original page breaks. Neither is silently omitted or newly attributed as papal original apparatus."
+        },
+        {
+          "kind": "qualification",
+          "finding": "Raw OCR misreads the note 6 body marker as an asterisk and note 7 marker/label (label 1); heading/gloss and other OCR errors remain literal and disclosed. Range continuation 10 links the teachings word split across p131–132 while notes use separate ranges. Named translator remains unknown."
+        }
+      ],
+      "blockers": [],
+      "scope_limits": [
+        "Source intake of exact historical human English witness only.",
+        "All selected texts read completely; all fifteen constituent native pages and four publication/title/imprint pages freshly inspected via nineteen same-pixel JPEG 95 4:4:4 proxies. Source PNG and PDF bytes remain authoritative; no OCR or source-word extraction from JPEG.",
+        "Individual translators remain unrecorded; historical English edition identity is established. No AI body translation.",
+        "Literal uncorrected, uncollated OCR retained. No lexical translation accuracy review, whole-printing word-level collation, compiler/rendered-PDF/font/layout review, installation or deployment is asserted.",
+        "Prior visual verdicts are not inherited. Existing metadata records of earlier inspection are pinned as historical records only."
+      ],
+      "retention_assessment": {
+        "status": "PASS",
+        "jurisdiction": "United States",
+        "basis": "Existing repository expired-term policy applied to the exact identified 1906 or 1920 human English printing and its own historical apparatus, not to act date alone. Exact scans/OCR affirmatively recorded tracked/public-domain; historical wording excluded from project CC BY 4.0.",
+        "google_matter": "No modern body translation or revised edition is substituted; historical anthology apparatus is included under the identified 1920 printing basis."
+      }
+    }
+  ],
+  "actual_opened_images": [
+    {
+      "source_page": 408,
+      "source_pdf": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/source.pdf",
+      "source_pdf_sha256": "257bc6f9be92c42dc33cecbf31ecffa34b8b046bd6fe2140f78fda1118088cb4",
+      "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-03.png",
+      "source_png_sha256": "3d66edde8f1d6222c4515a0e5da662e9143411c1ffa1d1bbb204253ac0c218c0",
+      "source_bytes": 371124,
+      "source_dimensions": [
+        1400,
+        2200
+      ],
+      "source_mode": "srgb",
+      "crop_pixels": [
+        0,
+        0,
+        1400,
+        2200
+      ],
+      "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-01-sample-03-3d66edde8f1d.jpg",
+      "proxy_sha256": "1b61907994840437e5cfbf0b13e4ee139b4d6c0e74879f16e06f68dea7ad75f9",
+      "proxy_bytes": 825868,
+      "proxy_dimensions": [
+        1400,
+        2200
+      ],
+      "quality": 95,
+      "sampling_factor": "4:4:4",
+      "alpha_composite": "white, no resizing",
+      "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+      "command": [
+        "/usr/bin/magick",
+        "-limit",
+        "thread",
+        "1",
+        "-limit",
+        "memory",
+        "256MiB",
+        "-limit",
+        "map",
+        "512MiB",
+        ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-03.png",
+        "-background",
+        "white",
+        "-alpha",
+        "remove",
+        "-alpha",
+        "off",
+        "-sampling-factor",
+        "4:4:4",
+        "-quality",
+        "95",
+        "-strip",
+        ".scratch/english-intake-recovery/image-proxies/packet-01-act-01-sample-03-3d66edde8f1d.jpg"
+      ],
+      "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+      "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-01-sample-03-3d66edde8f1d.jpg",
+      "observation": "Fresh JPEG inspection succeeded. Native page 391 (PDF408) headed PIUS X AND POLAND; complete displayed addressee to Archbishops of Warsaw and Bishops of Plotsk and Lublin among the Poles, Pius X Pope; salutation and substantive English body on Mariavites, not an excerpt wrapper. No translator attribution on this page. Foot is folio 391 and printing mark, with Google digitization mark.",
+      "key": [
+        "historical-english.pius-x.hf-p-x-enc-05041906-tribus-circiter.1906-07-catholic-university-bulletin-english",
+        "en"
+      ]
+    },
+    {
+      "source_page": 328,
+      "source_pdf": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/source.pdf",
+      "source_pdf_sha256": "257bc6f9be92c42dc33cecbf31ecffa34b8b046bd6fe2140f78fda1118088cb4",
+      "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-02.png",
+      "source_png_sha256": "5d0cd84f82d18f41ad61f1edae0ff88ca9b06a2c69857e040d8141ec311a98eb",
+      "source_bytes": 117158,
+      "source_dimensions": [
+        1400,
+        2200
+      ],
+      "source_mode": "srgb",
+      "crop_pixels": [
+        0,
+        0,
+        1400,
+        2200
+      ],
+      "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-01-sample-02-5d0cd84f82d1.jpg",
+      "proxy_sha256": "9bbf725d4ea1512e9062dec226836f538c53f23933986b06beee0058413cba3c",
+      "proxy_bytes": 284869,
+      "proxy_dimensions": [
+        1400,
+        2200
+      ],
+      "quality": 95,
+      "sampling_factor": "4:4:4",
+      "alpha_composite": "white, no resizing",
+      "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+      "command": [
+        "/usr/bin/magick",
+        "-limit",
+        "thread",
+        "1",
+        "-limit",
+        "memory",
+        "256MiB",
+        "-limit",
+        "map",
+        "512MiB",
+        ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-02.png",
+        "-background",
+        "white",
+        "-alpha",
+        "remove",
+        "-alpha",
+        "off",
+        "-sampling-factor",
+        "4:4:4",
+        "-quality",
+        "95",
+        "-strip",
+        ".scratch/english-intake-recovery/image-proxies/packet-01-act-01-sample-02-5d0cd84f82d1.jpg"
+      ],
+      "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+      "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-01-sample-02-5d0cd84f82d1.jpg",
+      "key": [
+        "historical-english.pius-x.hf-p-x-enc-05041906-tribus-circiter.1906-07-catholic-university-bulletin-english",
+        "en"
+      ],
+      "observation": "Fresh native issue title/imprint shows Catholic University Bulletin, Vol XII, July 1906, No 3; published quarterly by Catholic University of America, Lancaster PA and Washington DC. This independently establishes historical July 1906 issue publication and English printing identity. No named translator appears. Modern digitizer mark is outside source body. Redundant noisy cover PDF326 need not be opened."
+    },
+    {
+      "source_page": 410,
+      "source_pdf": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/source.pdf",
+      "source_pdf_sha256": "257bc6f9be92c42dc33cecbf31ecffa34b8b046bd6fe2140f78fda1118088cb4",
+      "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-04.png",
+      "source_png_sha256": "62ac1b8f604ddef24eff41371bd0a3671972bf98937f708d0900ebb384700dfa",
+      "source_bytes": 417331,
+      "source_dimensions": [
+        1400,
+        2200
+      ],
+      "source_mode": "srgb",
+      "crop_pixels": [
+        0,
+        0,
+        1400,
+        2200
+      ],
+      "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-01-sample-04-62ac1b8f604d.jpg",
+      "proxy_sha256": "17112f4ed7f474dd9ea0dde72f030052bdb588a4c52db42bc37513dbb77a8ad5",
+      "proxy_bytes": 915618,
+      "proxy_dimensions": [
+        1400,
+        2200
+      ],
+      "quality": 95,
+      "sampling_factor": "4:4:4",
+      "alpha_composite": "white, no resizing",
+      "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+      "command": [
+        "/usr/bin/magick",
+        "-limit",
+        "thread",
+        "1",
+        "-limit",
+        "memory",
+        "256MiB",
+        "-limit",
+        "map",
+        "512MiB",
+        ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-04.png",
+        "-background",
+        "white",
+        "-alpha",
+        "remove",
+        "-alpha",
+        "off",
+        "-sampling-factor",
+        "4:4:4",
+        "-quality",
+        "95",
+        "-strip",
+        ".scratch/english-intake-recovery/image-proxies/packet-01-act-01-sample-04-62ac1b8f604d.jpg"
+      ],
+      "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+      "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-01-sample-04-62ac1b8f604d.jpg",
+      "key": [
+        "historical-english.pius-x.hf-p-x-enc-05041906-tribus-circiter.1906-07-catholic-university-bulletin-english",
+        "en"
+      ],
+      "observation": "Fresh native p393 has continuous English papal body and embedded quoted Mariavite profession; no separate historical notes or neighboring act. Running head and folio are furniture. Selected text includes quoted profession and continuation."
+    },
+    {
+      "source_page": 412,
+      "source_pdf": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/source.pdf",
+      "source_pdf_sha256": "257bc6f9be92c42dc33cecbf31ecffa34b8b046bd6fe2140f78fda1118088cb4",
+      "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-05.png",
+      "source_png_sha256": "5c537ced53b60e880d9d84a048dc14fd5e6b3636ab9e54caf8de07185cadb470",
+      "source_bytes": 96366,
+      "source_dimensions": [
+        1400,
+        2200
+      ],
+      "source_mode": "srgb",
+      "crop_pixels": [
+        0,
+        0,
+        1400,
+        2200
+      ],
+      "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-01-sample-05-5c537ced53b6.jpg",
+      "proxy_sha256": "7574a81418721e87a9860f9bae56ab295f79808c23db0a82d98e1a7a20d4ebe8",
+      "proxy_bytes": 229345,
+      "proxy_dimensions": [
+        1400,
+        2200
+      ],
+      "quality": 95,
+      "sampling_factor": "4:4:4",
+      "alpha_composite": "white, no resizing",
+      "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+      "command": [
+        "/usr/bin/magick",
+        "-limit",
+        "thread",
+        "1",
+        "-limit",
+        "memory",
+        "256MiB",
+        "-limit",
+        "map",
+        "512MiB",
+        ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-05.png",
+        "-background",
+        "white",
+        "-alpha",
+        "remove",
+        "-alpha",
+        "off",
+        "-sampling-factor",
+        "4:4:4",
+        "-quality",
+        "95",
+        "-strip",
+        ".scratch/english-intake-recovery/image-proxies/packet-01-act-01-sample-05-5c537ced53b6.jpg"
+      ],
+      "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+      "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-01-sample-05-5c537ced53b6.jpg",
+      "key": [
+        "historical-english.pius-x.hf-p-x-enc-05041906-tribus-circiter.1906-07-catholic-university-bulletin-english",
+        "en"
+      ],
+      "observation": "Fresh native p395 ends the papal act with Apostolic Benediction, Rome at St Peters fifth April MDCCCCVI, third pontificate year, and Pius X Pope subscription. All present in selected OCR. No neighboring text or historical note follows; digitizer mark excluded."
+    },
+    {
+      "act": 1,
+      "source_page": 409,
+      "source_pdf": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/source.pdf",
+      "source_pdf_sha256": "257bc6f9be92c42dc33cecbf31ecffa34b8b046bd6fe2140f78fda1118088cb4",
+      "bounded_pdf": ".scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-1-pdf-409.pdf",
+      "bounded_pdf_sha256": "20893bdd8030fe6fdccd6bcece781f0eb55476f36a5ee61d987f1a2ba93316e0",
+      "source_png": ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-rasters/.scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-1-pdf-409/pages/page-1.png",
+      "source_png_sha256": "5a1e2773b2c9e7b57260148af5611561433911a93bbf238690d8d64fa81ed923",
+      "proxy": ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-act-1-pdf-409.jpg",
+      "proxy_sha256": "ca32f8689ddec65d6d82a27b1c91d1856952349bb3967a64c8b74f2a3e51443f",
+      "source_dimensions": [
+        1400,
+        2200
+      ],
+      "proxy_dimensions": [
+        1400,
+        2200
+      ],
+      "crop_pixels": [
+        0,
+        0,
+        1400,
+        2200
+      ],
+      "quality": 95,
+      "sampling_factor": "4:4:4",
+      "command": [
+        "/usr/bin/magick",
+        "-limit",
+        "thread",
+        "1",
+        "-limit",
+        "memory",
+        "256MiB",
+        "-limit",
+        "map",
+        "512MiB",
+        ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-rasters/.scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-1-pdf-409/pages/page-1.png",
+        "-background",
+        "white",
+        "-alpha",
+        "remove",
+        "-alpha",
+        "off",
+        "-sampling-factor",
+        "4:4:4",
+        "-quality",
+        "95",
+        "-strip",
+        ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-act-1-pdf-409.jpg"
+      ],
+      "key": [
+        "historical-english.pius-x.hf-p-x-enc-05041906-tribus-circiter.1906-07-catholic-university-bulletin-english",
+        "en"
+      ],
+      "observation": "Fresh p392 is continuous Tribus body, quoting petition and Ezechiel, continuing from p391 and into p393. Printed ellipsis belongs inside the quoted petition. No separate footnote; running head and digitizer footer separate. No source text corrected from JPEG."
+    },
+    {
+      "act": 1,
+      "source_page": 411,
+      "source_pdf": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/source.pdf",
+      "source_pdf_sha256": "257bc6f9be92c42dc33cecbf31ecffa34b8b046bd6fe2140f78fda1118088cb4",
+      "bounded_pdf": ".scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-1-pdf-411.pdf",
+      "bounded_pdf_sha256": "a9073a4d802141a17f71d46f549543cfce8183546c70a3ecf457d18961f9916f",
+      "source_png": ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-rasters/.scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-1-pdf-411/pages/page-1.png",
+      "source_png_sha256": "66aa91393d841a9690a0ca90fcabe0c1b86843085b6cf6a3d9db54cb0b008274",
+      "proxy": ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-act-1-pdf-411.jpg",
+      "proxy_sha256": "c494837acff3ca9ae55804c22ef0e83ed7bcd5f3decbe4bf181abb35583a67b6",
+      "source_dimensions": [
+        1400,
+        2200
+      ],
+      "proxy_dimensions": [
+        1400,
+        2200
+      ],
+      "crop_pixels": [
+        0,
+        0,
+        1400,
+        2200
+      ],
+      "quality": 95,
+      "sampling_factor": "4:4:4",
+      "command": [
+        "/usr/bin/magick",
+        "-limit",
+        "thread",
+        "1",
+        "-limit",
+        "memory",
+        "256MiB",
+        "-limit",
+        "map",
+        "512MiB",
+        ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-rasters/.scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-1-pdf-411/pages/page-1.png",
+        "-background",
+        "white",
+        "-alpha",
+        "remove",
+        "-alpha",
+        "off",
+        "-sampling-factor",
+        "4:4:4",
+        "-quality",
+        "95",
+        "-strip",
+        ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-act-1-pdf-411.jpg"
+      ],
+      "key": [
+        "historical-english.pius-x.hf-p-x-enc-05041906-tribus-circiter.1906-07-catholic-university-bulletin-english",
+        "en"
+      ],
+      "observation": "Fresh p394 continues quoted Leo XIII text and confirms suppression of Mariavites; printed internal ellipsis retained in OCR. Continuous act body through final exhortation; no separate historical footnotes or neighbor. All five Tribus constituent pages now freshly observed, without word-level full collation."
+    },
+    {
+      "source_page": 442,
+      "source_pdf": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/source.pdf",
+      "source_pdf_sha256": "257bc6f9be92c42dc33cecbf31ecffa34b8b046bd6fe2140f78fda1118088cb4",
+      "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-07.png",
+      "source_png_sha256": "5aa882a1d3f531545ab18e408b79166df3fe08b78163b124bd69a5329ff7daf2",
+      "source_bytes": 122464,
+      "source_dimensions": [
+        1400,
+        2200
+      ],
+      "source_mode": "srgb",
+      "crop_pixels": [
+        0,
+        0,
+        1400,
+        2200
+      ],
+      "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-02-sample-02-5aa882a1d3f5.jpg",
+      "proxy_sha256": "60bed88753d0c41dec271ff70683891ca7d17bcca091bd8e2b99e1268b0b5c60",
+      "proxy_bytes": 285854,
+      "proxy_dimensions": [
+        1400,
+        2200
+      ],
+      "quality": 95,
+      "sampling_factor": "4:4:4",
+      "alpha_composite": "white, no resizing",
+      "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+      "command": [
+        "/usr/bin/magick",
+        "-limit",
+        "thread",
+        "1",
+        "-limit",
+        "memory",
+        "256MiB",
+        "-limit",
+        "map",
+        "512MiB",
+        ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-07.png",
+        "-background",
+        "white",
+        "-alpha",
+        "remove",
+        "-alpha",
+        "off",
+        "-sampling-factor",
+        "4:4:4",
+        "-quality",
+        "95",
+        "-strip",
+        ".scratch/english-intake-recovery/image-proxies/packet-01-act-02-sample-02-5aa882a1d3f5.jpg"
+      ],
+      "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+      "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-02-sample-02-5aa882a1d3f5.jpg",
+      "key": [
+        "historical-english.pius-x.hf-p-x-enc-10081906-gravissimo-officii-munere.1906-10-catholic-university-bulletin-english",
+        "en"
+      ],
+      "observation": "Fresh issue imprint independently shows Catholic University Bulletin Vol XII October1906 No4, Catholic University of America, Lancaster PA and Washington DC. Actual publication/date basis for historical English printing established; noisy duplicate cover440 not needed. No translator named here."
+    },
+    {
+      "source_page": 556,
+      "source_pdf": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/source.pdf",
+      "source_pdf_sha256": "257bc6f9be92c42dc33cecbf31ecffa34b8b046bd6fe2140f78fda1118088cb4",
+      "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-08.png",
+      "source_png_sha256": "90033735eef62201138575736bbb4cd1de93808dd8c30069a832fe4f3700e36e",
+      "source_bytes": 360351,
+      "source_dimensions": [
+        1400,
+        2200
+      ],
+      "source_mode": "srgb",
+      "crop_pixels": [
+        0,
+        0,
+        1400,
+        2200
+      ],
+      "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-02-sample-03-90033735eef6.jpg",
+      "proxy_sha256": "cb51da9289376eef0d6f5656aabbe23f355b2dd75bb733c034c90a186c85a044",
+      "proxy_bytes": 821660,
+      "proxy_dimensions": [
+        1400,
+        2200
+      ],
+      "quality": 95,
+      "sampling_factor": "4:4:4",
+      "alpha_composite": "white, no resizing",
+      "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+      "command": [
+        "/usr/bin/magick",
+        "-limit",
+        "thread",
+        "1",
+        "-limit",
+        "memory",
+        "256MiB",
+        "-limit",
+        "map",
+        "512MiB",
+        ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-08.png",
+        "-background",
+        "white",
+        "-alpha",
+        "remove",
+        "-alpha",
+        "off",
+        "-sampling-factor",
+        "4:4:4",
+        "-quality",
+        "95",
+        "-strip",
+        ".scratch/english-intake-recovery/image-proxies/packet-01-act-02-sample-03-90033735eef6.jpg"
+      ],
+      "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+      "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-02-sample-03-90033735eef6.jpg",
+      "key": [
+        "historical-english.pius-x.hf-p-x-enc-10081906-gravissimo-officii-munere.1906-10-catholic-university-bulletin-english",
+        "en"
+      ],
+      "observation": "Fresh p535 begins PIUS X TO THE FRENCH HIERARCHY editorial title then full address to Archbishops and Bishops of France, Pius X Pope, salutation, substantive English body on French religious associations. Selected OCR starts exactly at full protocol; editorial title/folio/digitizer excluded. No historical footnote here."
+    },
+    {
+      "act": 2,
+      "source_page": 557,
+      "source_pdf": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/source.pdf",
+      "source_pdf_sha256": "257bc6f9be92c42dc33cecbf31ecffa34b8b046bd6fe2140f78fda1118088cb4",
+      "bounded_pdf": ".scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-2-pdf-557.pdf",
+      "bounded_pdf_sha256": "4db3261d53485a64432f6938e016f7c40d9ed5d3acc5f58426e5820890aa15fe",
+      "source_png": ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-rasters/.scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-2-pdf-557/pages/page-1.png",
+      "source_png_sha256": "a3fd12977439dc9d73b425f113e185373fefdf56bc4839befad8b3e0192816c4",
+      "proxy": ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-act-2-pdf-557.jpg",
+      "proxy_sha256": "7f46990acc3ebb6c23c059665dea24ce3039f93a585e377ed596323559d15895",
+      "source_dimensions": [
+        1400,
+        2200
+      ],
+      "proxy_dimensions": [
+        1400,
+        2200
+      ],
+      "crop_pixels": [
+        0,
+        0,
+        1400,
+        2200
+      ],
+      "quality": 95,
+      "sampling_factor": "4:4:4",
+      "command": [
+        "/usr/bin/magick",
+        "-limit",
+        "thread",
+        "1",
+        "-limit",
+        "memory",
+        "256MiB",
+        "-limit",
+        "map",
+        "512MiB",
+        ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-rasters/.scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-2-pdf-557/pages/page-1.png",
+        "-background",
+        "white",
+        "-alpha",
+        "remove",
+        "-alpha",
+        "off",
+        "-sampling-factor",
+        "4:4:4",
+        "-quality",
+        "95",
+        "-strip",
+        ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-act-2-pdf-557.jpg"
+      ],
+      "key": [
+        "historical-english.pius-x.hf-p-x-enc-10081906-gravissimo-officii-munere.1906-10-catholic-university-bulletin-english",
+        "en"
+      ],
+      "observation": "Fresh p536 continues English Gravissimo body on French associations and hierarchy, through final line situations; next selected page continues were quite different. No separate historical notes, marginal summary, or neighboring act. Folio/running head/digitizer separate."
+    },
+    {
+      "source_page": 558,
+      "source_pdf": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/source.pdf",
+      "source_pdf_sha256": "257bc6f9be92c42dc33cecbf31ecffa34b8b046bd6fe2140f78fda1118088cb4",
+      "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-09.png",
+      "source_png_sha256": "fb9b056df1360ac0ccac5a0bb9e9f0f0eddf559dda3304b66a47a061740344a4",
+      "source_bytes": 411625,
+      "source_dimensions": [
+        1400,
+        2200
+      ],
+      "source_mode": "srgb",
+      "crop_pixels": [
+        0,
+        0,
+        1400,
+        2200
+      ],
+      "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-02-sample-04-fb9b056df136.jpg",
+      "proxy_sha256": "850788b08ee5b0f6712514a5a7a87e7a09672b9f5ac2a563a306638d0d98d42b",
+      "proxy_bytes": 944065,
+      "proxy_dimensions": [
+        1400,
+        2200
+      ],
+      "quality": 95,
+      "sampling_factor": "4:4:4",
+      "alpha_composite": "white, no resizing",
+      "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+      "command": [
+        "/usr/bin/magick",
+        "-limit",
+        "thread",
+        "1",
+        "-limit",
+        "memory",
+        "256MiB",
+        "-limit",
+        "map",
+        "512MiB",
+        ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-09.png",
+        "-background",
+        "white",
+        "-alpha",
+        "remove",
+        "-alpha",
+        "off",
+        "-sampling-factor",
+        "4:4:4",
+        "-quality",
+        "95",
+        "-strip",
+        ".scratch/english-intake-recovery/image-proxies/packet-01-act-02-sample-04-fb9b056df136.jpg"
+      ],
+      "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+      "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-02-sample-04-fb9b056df136.jpg",
+      "key": [
+        "historical-english.pius-x.hf-p-x-enc-10081906-gravissimo-officii-munere.1906-10-catholic-university-bulletin-english",
+        "en"
+      ],
+      "observation": "Fresh p537 is continuous English papal argument and exhortation, linking prior situations to next-page stigma. No separate historical footnote or neighbor. Selected text retains body; running head/folio/digitizer excluded."
+    },
+    {
+      "source_page": 559,
+      "source_pdf": "src/sources/works/journals/catholic-university-bulletin/editions/1906-volume-12/artifacts/source-pdf-257bc6f9be92/source.pdf",
+      "source_pdf_sha256": "257bc6f9be92c42dc33cecbf31ecffa34b8b046bd6fe2140f78fda1118088cb4",
+      "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-10.png",
+      "source_png_sha256": "1e1e2745e84422d93bcaac1586301ffffeb94e21ca8e233df7845c46191e3396",
+      "source_bytes": 188316,
+      "source_dimensions": [
+        1400,
+        2200
+      ],
+      "source_mode": "srgb",
+      "crop_pixels": [
+        0,
+        0,
+        1400,
+        2200
+      ],
+      "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-02-sample-05-1e1e2745e844.jpg",
+      "proxy_sha256": "7ea19f23015dd4e8db37c42b4a46ca203935eb758e221a8523b124ba46971788",
+      "proxy_bytes": 455650,
+      "proxy_dimensions": [
+        1400,
+        2200
+      ],
+      "quality": 95,
+      "sampling_factor": "4:4:4",
+      "alpha_composite": "white, no resizing",
+      "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+      "command": [
+        "/usr/bin/magick",
+        "-limit",
+        "thread",
+        "1",
+        "-limit",
+        "memory",
+        "256MiB",
+        "-limit",
+        "map",
+        "512MiB",
+        ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-10.png",
+        "-background",
+        "white",
+        "-alpha",
+        "remove",
+        "-alpha",
+        "off",
+        "-sampling-factor",
+        "4:4:4",
+        "-quality",
+        "95",
+        "-strip",
+        ".scratch/english-intake-recovery/image-proxies/packet-01-act-02-sample-05-1e1e2745e844.jpg"
+      ],
+      "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+      "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-02-sample-05-1e1e2745e844.jpg",
+      "key": [
+        "historical-english.pius-x.hf-p-x-enc-10081906-gravissimo-officii-munere.1906-10-catholic-university-bulletin-english",
+        "en"
+      ],
+      "observation": "Fresh p538 contains continued last paragraph, Apostolic Benediction to bishops and French nation, Rome St Peters August10 Feast of StLawrence 1906 fourth pontificate year, Pius PP.X subscription. OCR subscription Pros is a disclosed recognition error; selected bytes uncorrected. No following neighbor or own note. All four constituent pages freshly observed."
+    },
+    {
+      "source_page": 7,
+      "source_pdf": "src/sources/works/john-a-ryan-joseph-husslein/the-church-and-labor/editions/1920-new-york-macmillan-en/artifacts/source-pdf-ca642ef73b87/source.pdf",
+      "source_pdf_sha256": "ca642ef73b870ce393dfc8b7c57e20e4d900f64461837ef1ae0b1c6d843eece7",
+      "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-11.png",
+      "source_png_sha256": "ea0fa8e37cb4bf6c2c442e5fe97659d6d2565bab17d272f339f55183a0787241",
+      "source_bytes": 318105,
+      "source_dimensions": [
+        1386,
+        2200
+      ],
+      "source_mode": "srgb",
+      "crop_pixels": [
+        0,
+        0,
+        1386,
+        2200
+      ],
+      "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-01-ea0fa8e37cb4.jpg",
+      "proxy_sha256": "39b4922b56ca98b36e7f87209a35fde7d21bc4201d51c16dfeea272f05947241",
+      "proxy_bytes": 322550,
+      "proxy_dimensions": [
+        1386,
+        2200
+      ],
+      "quality": 95,
+      "sampling_factor": "4:4:4",
+      "alpha_composite": "white, no resizing",
+      "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+      "command": [
+        "/usr/bin/magick",
+        "-limit",
+        "thread",
+        "1",
+        "-limit",
+        "memory",
+        "256MiB",
+        "-limit",
+        "map",
+        "512MiB",
+        ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-11.png",
+        "-background",
+        "white",
+        "-alpha",
+        "remove",
+        "-alpha",
+        "off",
+        "-sampling-factor",
+        "4:4:4",
+        "-quality",
+        "95",
+        "-strip",
+        ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-01-ea0fa8e37cb4.jpg"
+      ],
+      "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+      "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-01-ea0fa8e37cb4.jpg",
+      "key": [
+        "historical-english.pius-x.hf-p-x-enc-24091912-singulari-quadam.1920-ryan-husslein-church-and-labor-english",
+        "en"
+      ],
+      "observation": "Fresh title page identifies The Church and Labor, prepared and edited for Department of Social Action of National Catholic Welfare Council by John A Ryan and Joseph Husslein; NewYork The Macmillan Company1920. Editors clearly distinguished from individual translator, which remains unrecorded. All rights reserved historical notice does not change existing expired-term policy basis."
+    },
+    {
+      "source_page": 8,
+      "source_pdf": "src/sources/works/john-a-ryan-joseph-husslein/the-church-and-labor/editions/1920-new-york-macmillan-en/artifacts/source-pdf-ca642ef73b87/source.pdf",
+      "source_pdf_sha256": "ca642ef73b870ce393dfc8b7c57e20e4d900f64461837ef1ae0b1c6d843eece7",
+      "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-12.png",
+      "source_png_sha256": "4331e006c840f994db36869bf9f12bbc8288f1db345764fd0ac834be61959a8f",
+      "source_bytes": 196344,
+      "source_dimensions": [
+        1386,
+        2200
+      ],
+      "source_mode": "srgb",
+      "crop_pixels": [
+        0,
+        0,
+        1386,
+        2200
+      ],
+      "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-02-4331e006c840.jpg",
+      "proxy_sha256": "0f3a35554bed0e1f57c24d937137f42746bcc76691283f750c33cba9afe4f4e5",
+      "proxy_bytes": 179828,
+      "proxy_dimensions": [
+        1386,
+        2200
+      ],
+      "quality": 95,
+      "sampling_factor": "4:4:4",
+      "alpha_composite": "white, no resizing",
+      "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+      "command": [
+        "/usr/bin/magick",
+        "-limit",
+        "thread",
+        "1",
+        "-limit",
+        "memory",
+        "256MiB",
+        "-limit",
+        "map",
+        "512MiB",
+        ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-12.png",
+        "-background",
+        "white",
+        "-alpha",
+        "remove",
+        "-alpha",
+        "off",
+        "-sampling-factor",
+        "4:4:4",
+        "-quality",
+        "95",
+        "-strip",
+        ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-02-4331e006c840.jpg"
+      ],
+      "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+      "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-02-4331e006c840.jpg",
+      "key": [
+        "historical-english.pius-x.hf-p-x-enc-24091912-singulari-quadam.1920-ryan-husslein-church-and-labor-english",
+        "en"
+      ],
+      "observation": "Fresh copyright/publication leaf identifies Copyright1920 MacmillanCompany, published October1920. Historical nihil obstat/imprimatur on leaf are edition facts, not new project approval. Confirms actual printing date independently of 1912 act date."
+    },
+    {
+      "source_page": 153,
+      "source_pdf": "src/sources/works/john-a-ryan-joseph-husslein/the-church-and-labor/editions/1920-new-york-macmillan-en/artifacts/source-pdf-ca642ef73b87/source.pdf",
+      "source_pdf_sha256": "ca642ef73b870ce393dfc8b7c57e20e4d900f64461837ef1ae0b1c6d843eece7",
+      "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-13.png",
+      "source_png_sha256": "8821d976aac47c3aadbcdada1146df2a2fde871d5f5b6260209a7232ab860681",
+      "source_bytes": 910529,
+      "source_dimensions": [
+        1386,
+        2200
+      ],
+      "source_mode": "srgb",
+      "crop_pixels": [
+        0,
+        0,
+        1386,
+        2200
+      ],
+      "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-03-8821d976aac4.jpg",
+      "proxy_sha256": "34181ff6ab357dda7e7767a3c43e08df07c8a16251c867d8da13f0d471a2468b",
+      "proxy_bytes": 896997,
+      "proxy_dimensions": [
+        1386,
+        2200
+      ],
+      "quality": 95,
+      "sampling_factor": "4:4:4",
+      "alpha_composite": "white, no resizing",
+      "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+      "command": [
+        "/usr/bin/magick",
+        "-limit",
+        "thread",
+        "1",
+        "-limit",
+        "memory",
+        "256MiB",
+        "-limit",
+        "map",
+        "512MiB",
+        ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-13.png",
+        "-background",
+        "white",
+        "-alpha",
+        "remove",
+        "-alpha",
+        "off",
+        "-sampling-factor",
+        "4:4:4",
+        "-quality",
+        "95",
+        "-strip",
+        ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-03-8821d976aac4.jpg"
+      ],
+      "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+      "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-03-8821d976aac4.jpg",
+      "key": [
+        "historical-english.pius-x.hf-p-x-enc-24091912-singulari-quadam.1920-ryan-husslein-church-and-labor-english",
+        "en"
+      ],
+      "observation": "Fresh p127 begins THE LETTER with full protocol to George Cardinal Kopp Bishop of Breslau and German archbishops/bishops, Pius PPX, salutation, Singulari quadam incipit and English substantive body on labor unions. The letter heading retained; page running title LETTER TO THE GERMAN HIERARCHY and folio excluded. No historical footnote on this page."
+    },
+    {
+      "source_page": 154,
+      "source_pdf": "src/sources/works/john-a-ryan-joseph-husslein/the-church-and-labor/editions/1920-new-york-macmillan-en/artifacts/source-pdf-ca642ef73b87/source.pdf",
+      "source_pdf_sha256": "ca642ef73b870ce393dfc8b7c57e20e4d900f64461837ef1ae0b1c6d843eece7",
+      "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-14.png",
+      "source_png_sha256": "1eff435b47abca1c2cf564d1142fb7354f7aed5640a46d0570fc9d8a970ca150",
+      "source_bytes": 925313,
+      "source_dimensions": [
+        1386,
+        2200
+      ],
+      "source_mode": "srgb",
+      "crop_pixels": [
+        0,
+        0,
+        1386,
+        2200
+      ],
+      "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-04-1eff435b47ab.jpg",
+      "proxy_sha256": "13ee3cd02e573e051a7dd6095ce73e29289f0eaf266688f9c2d457df9e3e443b",
+      "proxy_bytes": 898730,
+      "proxy_dimensions": [
+        1386,
+        2200
+      ],
+      "quality": 95,
+      "sampling_factor": "4:4:4",
+      "alpha_composite": "white, no resizing",
+      "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+      "command": [
+        "/usr/bin/magick",
+        "-limit",
+        "thread",
+        "1",
+        "-limit",
+        "memory",
+        "256MiB",
+        "-limit",
+        "map",
+        "512MiB",
+        ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-14.png",
+        "-background",
+        "white",
+        "-alpha",
+        "remove",
+        "-alpha",
+        "off",
+        "-sampling-factor",
+        "4:4:4",
+        "-quality",
+        "95",
+        "-strip",
+        ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-04-1eff435b47ab.jpg"
+      ],
+      "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+      "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-04-1eff435b47ab.jpg",
+      "key": [
+        "historical-english.pius-x.hf-p-x-enc-24091912-singulari-quadam.1920-ryan-husslein-church-and-labor-english",
+        "en"
+      ],
+      "observation": "Fresh p128 includes historical ASKED FOR OPINIONS heading and body; bottom has note6 Encyclical Graves de Communi with printed body marker6. Selected OCR retains note as separately selected line at original page break, though body marker misread as asterisk is disclosed. Bracketed social-question gloss is native historical apparatus. No neighbor."
+    },
+    {
+      "source_page": 155,
+      "source_pdf": "src/sources/works/john-a-ryan-joseph-husslein/the-church-and-labor/editions/1920-new-york-macmillan-en/artifacts/source-pdf-ca642ef73b87/source.pdf",
+      "source_pdf_sha256": "ca642ef73b870ce393dfc8b7c57e20e4d900f64461837ef1ae0b1c6d843eece7",
+      "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-15.png",
+      "source_png_sha256": "a66b36d0613f0e48bc19a1b543bda378c1d12734c7aee6b367d35b54d10980d1",
+      "source_bytes": 948537,
+      "source_dimensions": [
+        1386,
+        2200
+      ],
+      "source_mode": "srgb",
+      "crop_pixels": [
+        0,
+        0,
+        1386,
+        2200
+      ],
+      "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-05-a66b36d0613f.jpg",
+      "proxy_sha256": "25ab87af5c036f212c8aa72b7364cbab5bec4c62ab136adca0b31afd146fadb1",
+      "proxy_bytes": 935588,
+      "proxy_dimensions": [
+        1386,
+        2200
+      ],
+      "quality": 95,
+      "sampling_factor": "4:4:4",
+      "alpha_composite": "white, no resizing",
+      "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+      "command": [
+        "/usr/bin/magick",
+        "-limit",
+        "thread",
+        "1",
+        "-limit",
+        "memory",
+        "256MiB",
+        "-limit",
+        "map",
+        "512MiB",
+        ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-15.png",
+        "-background",
+        "white",
+        "-alpha",
+        "remove",
+        "-alpha",
+        "off",
+        "-sampling-factor",
+        "4:4:4",
+        "-quality",
+        "95",
+        "-strip",
+        ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-05-a66b36d0613f.jpg"
+      ],
+      "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+      "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-05-a66b36d0613f.jpg",
+      "key": [
+        "historical-english.pius-x.hf-p-x-enc-24091912-singulari-quadam.1920-ryan-husslein-church-and-labor-english",
+        "en"
+      ],
+      "observation": "Fresh p129 is continuous body under historical WORKINGMENS SOCIETIES and THE CARTEL headings, both retained in selected OCR. No footnote on this page; running title/folio omitted. Shows own anthology apparatus distinct from papal authorship."
+    },
+    {
+      "act": 3,
+      "source_page": 156,
+      "source_pdf": "src/sources/works/john-a-ryan-joseph-husslein/the-church-and-labor/editions/1920-new-york-macmillan-en/artifacts/source-pdf-ca642ef73b87/source.pdf",
+      "source_pdf_sha256": "ca642ef73b870ce393dfc8b7c57e20e4d900f64461837ef1ae0b1c6d843eece7",
+      "bounded_pdf": ".scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-3-pdf-156.pdf",
+      "bounded_pdf_sha256": "fc14df4cde5b9ca52a4c63aee7695fffb6ee5c74b3cb0fbdb93029634a9c1d3a",
+      "source_png": ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-rasters/.scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-3-pdf-156/pages/page-1.png",
+      "source_png_sha256": "42b1d9af2c229efd9cb2374fca5cbd0f1894575d46adc1568f7bc987cadef68d",
+      "proxy": ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-act-3-pdf-156.jpg",
+      "proxy_sha256": "f39f261a3ed239ec5d196c3812049359eb6df0cd7e3e4e0ae91b4face91a7437",
+      "source_dimensions": [
+        1386,
+        2200
+      ],
+      "proxy_dimensions": [
+        1386,
+        2200
+      ],
+      "crop_pixels": [
+        0,
+        0,
+        1386,
+        2200
+      ],
+      "quality": 95,
+      "sampling_factor": "4:4:4",
+      "command": [
+        "/usr/bin/magick",
+        "-limit",
+        "thread",
+        "1",
+        "-limit",
+        "memory",
+        "256MiB",
+        "-limit",
+        "map",
+        "512MiB",
+        ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-rasters/.scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-3-pdf-156/pages/page-1.png",
+        "-background",
+        "white",
+        "-alpha",
+        "remove",
+        "-alpha",
+        "off",
+        "-sampling-factor",
+        "4:4:4",
+        "-quality",
+        "95",
+        "-strip",
+        ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-act-3-pdf-156.jpg"
+      ],
+      "key": [
+        "historical-english.pius-x.hf-p-x-enc-24091912-singulari-quadam.1920-ryan-husslein-church-and-labor-english",
+        "en"
+      ],
+      "observation": "Fresh p130 shows CHRISTIAN SYNDICATES heading, historical bracketed English/German/Latin glosses, printed marker7 and footnote7 Christliche Gewerkschaften. Selected OCR retains note separately at page break; OCR reads note label1 and damaged marker, already disclosed. This is own historical apparatus, not modern wrapper. Body through Catholic teaching intact in selection."
+    },
+    {
+      "act": 3,
+      "source_page": 157,
+      "source_pdf": "src/sources/works/john-a-ryan-joseph-husslein/the-church-and-labor/editions/1920-new-york-macmillan-en/artifacts/source-pdf-ca642ef73b87/source.pdf",
+      "source_pdf_sha256": "ca642ef73b870ce393dfc8b7c57e20e4d900f64461837ef1ae0b1c6d843eece7",
+      "bounded_pdf": ".scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-3-pdf-157.pdf",
+      "bounded_pdf_sha256": "0b92dcab695b841333b7df7a754e4ed9d871e8e24960f0c1b6e5cf323b596211",
+      "source_png": ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-rasters/.scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-3-pdf-157/pages/page-1.png",
+      "source_png_sha256": "1aea03f6e44382ef8286ad98cbb940da6fcd5cad606816472d1ebb3b57c80edc",
+      "proxy": ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-act-3-pdf-157.jpg",
+      "proxy_sha256": "387b2792b449528cd014cf07a75dd7df9e62f490e5ec0b5e826d901f1a36d65c",
+      "source_dimensions": [
+        1386,
+        2200
+      ],
+      "proxy_dimensions": [
+        1386,
+        2200
+      ],
+      "crop_pixels": [
+        0,
+        0,
+        1386,
+        2200
+      ],
+      "quality": 95,
+      "sampling_factor": "4:4:4",
+      "command": [
+        "/usr/bin/magick",
+        "-limit",
+        "thread",
+        "1",
+        "-limit",
+        "memory",
+        "256MiB",
+        "-limit",
+        "map",
+        "512MiB",
+        ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-rasters/.scratch/english-intake-recovery/packet-01/audit-jpeg/bounded/act-3-pdf-157/pages/page-1.png",
+        "-background",
+        "white",
+        "-alpha",
+        "remove",
+        "-alpha",
+        "off",
+        "-sampling-factor",
+        "4:4:4",
+        "-quality",
+        "95",
+        "-strip",
+        ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-act-3-pdf-157.jpg"
+      ],
+      "key": [
+        "historical-english.pius-x.hf-p-x-enc-24091912-singulari-quadam.1920-ryan-husslein-church-and-labor-english",
+        "en"
+      ],
+      "observation": "Fresh p131 continues body under DUTIES OF BISHOPS then PEACE AND PROGRESS headings, both retained as historical anthology apparatus. Last line splits teachings across page break; selected next range continues ings. No separate footnote or neighbor. Folio/running title outside selection."
+    },
+    {
+      "source_page": 158,
+      "source_pdf": "src/sources/works/john-a-ryan-joseph-husslein/the-church-and-labor/editions/1920-new-york-macmillan-en/artifacts/source-pdf-ca642ef73b87/source.pdf",
+      "source_pdf_sha256": "ca642ef73b870ce393dfc8b7c57e20e4d900f64461837ef1ae0b1c6d843eece7",
+      "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-16.png",
+      "source_png_sha256": "cc5e45c880097c0e692611492d833e4b21cfc2207f2dfb8d1dfe29dcc33e3e45",
+      "source_bytes": 597959,
+      "source_dimensions": [
+        1386,
+        2200
+      ],
+      "source_mode": "srgb",
+      "crop_pixels": [
+        0,
+        0,
+        1386,
+        2200
+      ],
+      "proxy": ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-06-cc5e45c88009.jpg",
+      "proxy_sha256": "db68f9d977d365370b9f27adfd8978c91d6a8e5ea648244c334dde123a01c540",
+      "proxy_bytes": 590994,
+      "proxy_dimensions": [
+        1386,
+        2200
+      ],
+      "quality": 95,
+      "sampling_factor": "4:4:4",
+      "alpha_composite": "white, no resizing",
+      "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+      "command": [
+        "/usr/bin/magick",
+        "-limit",
+        "thread",
+        "1",
+        "-limit",
+        "memory",
+        "256MiB",
+        "-limit",
+        "map",
+        "512MiB",
+        ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-16.png",
+        "-background",
+        "white",
+        "-alpha",
+        "remove",
+        "-alpha",
+        "off",
+        "-sampling-factor",
+        "4:4:4",
+        "-quality",
+        "95",
+        "-strip",
+        ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-06-cc5e45c88009.jpg"
+      ],
+      "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+      "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-01-act-03-sample-06-cc5e45c88009.jpg",
+      "key": [
+        "historical-english.pius-x.hf-p-x-enc-24091912-singulari-quadam.1920-ryan-husslein-church-and-labor-english",
+        "en"
+      ],
+      "observation": "Fresh p132 finishes continuous body, Apostolic Benediction to Kopp and bishops/clergy/people, Rome StPeters September24th1912 tenth pontificate year, PIUS PPX subscription. No neighbor or final historical note. Selected text includes entire closing. All six Singulari constituent pages freshly observed; no full-printing word-level collation claimed."
+    }
+  ],
+  "blockers": [],
+  "source_acceptance": "PASS",
+  "verification_path": ".scratch/english-intake-recovery/packet-01/audit-jpeg/verification.json",
+  "scope_limits": [
+    "Source intake of exact historical human English witness only.",
+    "All selected texts read completely; all fifteen constituent native pages and four publication/title/imprint pages freshly inspected via nineteen same-pixel JPEG 95 4:4:4 proxies. Source PNG and PDF bytes remain authoritative; no OCR or source-word extraction from JPEG.",
+    "Individual translators remain unrecorded; historical English edition identity is established. No AI body translation.",
+    "Literal uncorrected, uncollated OCR retained. No lexical translation accuracy review, whole-printing word-level collation, compiler/rendered-PDF/font/layout review, installation or deployment is asserted.",
+    "Prior visual verdicts are not inherited. Existing metadata records of earlier inspection are pinned as historical records only."
+  ],
+  "display_rule": "Strict JPEG only; no PNG image was passed to view_image. MIME corrected to image/jpeg and explicit auto; no high/original forwarding. Native full page proxies; no text or JSON forwarding of image data.",
+  "skipped_redundant_images": [
+    {
+      "source_page": 326,
+      "reason": "July 1906 independently proved by issue imprint PDF328."
+    },
+    {
+      "source_page": 440,
+      "reason": "October 1906 independently proved by issue imprint PDF442."
+    }
+  ],
+  "extra_native_raster_map": {
+    "path": ".scratch/english-intake-recovery/packet-01/audit-jpeg/extra-native-map.json",
+    "sha256": "84f60f618282cd8711f38c00cf688e261d3a68cd243368993f966c010d654167"
+  },
+  "guidance_read_complete": true,
+  "policy_records": [
+    {
+      "path": "guidance/editorial.md",
+      "sha256": "22ce8aa5db32162f1552204e156eceeea57d214ced7118b7f31418b4cbc0dc8b"
+    },
+    {
+      "path": "guidance/repository.md",
+      "sha256": "13764c3d8a694bac00c0c48a6fb5da3983d2052d77194476062e5d71e49f493d"
+    },
+    {
+      "path": "guidance/sources.md",
+      "sha256": "d14e6562f92532bc7e92ba1ba743edb649bb111967f4cbac01019bfb30676209"
+    },
+    {
+      "path": "guidance/papal-documents.md",
+      "sha256": "028eeb083e8eb27254a1986e42b427a2ce2cf6d070763b4b36cfb586f8455f3d"
+    },
+    {
+      "path": "src/sources/inventories/papal-documents-rights-v1.toml",
+      "sha256": "2098d3cc15ef3439234033c7582fe4f17a726494008b25682a7f1b3a844454ea"
+    },
+    {
+      "path": "src/sources/inventories/google-usage-guidelines-rights-v1.toml",
+      "sha256": "721d78d00a6d07a7562f6ea8d2c629d6e9fdbbdf14f4247e3a29af022ee5fd6f"
+    }
+  ]
+}

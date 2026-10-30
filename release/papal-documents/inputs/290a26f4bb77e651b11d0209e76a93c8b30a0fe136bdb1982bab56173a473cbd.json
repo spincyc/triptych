@@ -1,0 +1,85 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "b8891ceec90545b36b6b9a763abe647c1381b41c51cefaf736269cb0baef0fa5",
+  "documents": [
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-09051897-divinum-illud-munus",
+      "language": "en",
+      "pdf_sha256": "3cb96b0916cdac84f454320046526c3292a3099a49016f0062934239eeb847f3",
+      "pages": 8,
+      "status": "PASS",
+      "review_type": "independent-cold-review",
+      "source_recovery_status": "PASS",
+      "source_recovery_scope": "Exactly two tokens at selected LF121, parentLF2729; all other bytes/LFs exact.",
+      "source_sha256": "ba3ad11b1ec60e61cbd795d6ecabd15dfb13fce21c02c218f63c852f636447fa",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "full_size_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "resolved",
+          "pages": [
+            6
+          ],
+          "description": "Exact two-token source recovery believe/shall independently passes guarded byte replay, direct native Duquesne parent443/printed437 glyph inspection, raw OCR slices and translated full-page/context TSV geometry. All other bytes and 163 LFs remain exact."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "description": "Inherited OCR wording, word divisions, reference marks, historical source-page note interruptions, and May4/May9 date discrepancy remain disclosed. This bounded acceptance makes no whole-print or translation-accuracy claim."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            7
+          ],
+          "description": "Historical folio/running-head is a separate source paragraph, visually distinct from body continuation."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            8
+          ],
+          "description": "Sparse final page retains genuine historical source notes [2]–[4] before terminal source and rights apparatus; source-bearing final-page criterion passes."
+        }
+      ],
+      "limitations": [
+        "Bounded source-glyph inspection: Duquesne parent439/printed433, parent441/printed435, parent443/printed437 and the two quote crops only.",
+        "No full-print lexical collation, translation verification, new rights clearance, installation or deployment certification.",
+        "Prior held 05fccc source, 8fdc PDF and 1f4403 report remain CHANGES_REQUIRED; this review accepts replacement ba3ad11b source and 3cb96 PDF only.",
+        "All eight PDF pages freshly inspected; no inherited page acceptance."
+      ],
+      "receipt_sha256": "b8891ceec90545b36b6b9a763abe647c1381b41c51cefaf736269cb0baef0fa5",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-37.md",
+      "report_sha256": "64122552f0e46cf94998f966107effedc63a05f588f117eaed9865b3cf39862e"
+    }
+  ]
+}

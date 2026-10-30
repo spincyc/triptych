@@ -1,0 +1,2005 @@
+{
+  "schema": "triptych-three-act-source-cold-audit/v1",
+  "packet": 5,
+  "scope_sha256": "89ef2fc0c9e324031cda1b7a10df0481a791d8f91e2438e09d0b3868c9a0b019",
+  "expected_count": 3,
+  "expected_keys": [
+    [
+      "papal.leo-xii.enciclica-ubi-primum-5-maggio-1824",
+      "en"
+    ],
+    [
+      "papal.leo-xiii.hf-l-xiii-enc-01091883-supremi-apostolatus-officio.1883-irish-ecclesiastical-record-english",
+      "en"
+    ],
+    [
+      "papal.leo-xiii.hf-l-xiii-enc-03081881-licet-multa.1881-10-dublin-review-english",
+      "en"
+    ]
+  ],
+  "status": "PASS",
+  "source_acceptance_counts": {
+    "PASS": 3,
+    "PENDING": 0,
+    "BLOCKED": 0
+  },
+  "selected_text_read_complete": true,
+  "actual_opened_image_count": 21,
+  "documents": [
+    {
+      "id": "papal.leo-xii.enciclica-ubi-primum-5-maggio-1824",
+      "language": "en",
+      "source_sha256": "699266d3b3844a8942afc96dd14c1445ae9faf70d4010786f455255081e8b090",
+      "row_sha256": "7298b70cc1ae13e2b107d79661ba24ab0910cab8cc1e3fe3fb923aa731d5362e",
+      "source_scope_sha256": "89ef2fc0c9e324031cda1b7a10df0481a791d8f91e2438e09d0b3868c9a0b019",
+      "controller_pin": {
+        "id": "segment.papal.leo-xii.enciclica-ubi-primum-5-maggio-1824.1824-coyne-dublin-english.complete-english-ocr",
+        "record": "src/sources/works/papal-documents/1824-05-05-papal-leo-xii-enciclica-ubi-primum-5-maggio-1824-fc9de02b/editions/1824-coyne-dublin-english/segments/complete-english.toml",
+        "sha256": "782fb4137c8b99df702ab4435dabaa5cf3ec07e1693bd1a6295a168a884cd4e7"
+      },
+      "proof_pins": [
+        {
+          "kind": "evidence",
+          "path": ".scratch/english-intake-recovery/packet-05/act-01-evidence.json",
+          "sha256": "753ebce1b3d4dc2edf1f950235e96fb9cea5a2c4b0e9307ccc1ba4ef8f2bacbd",
+          "bytes": 46834
+        },
+        {
+          "kind": "source_manifest",
+          "path": "src/sources/papal-documents/historical-english-completion-manifest.json",
+          "sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+          "bytes": 67917
+        },
+        {
+          "kind": "selected_text",
+          "path": ".scratch/english-intake-recovery/packet-05/act-01-selected.txt",
+          "sha256": "699266d3b3844a8942afc96dd14c1445ae9faf70d4010786f455255081e8b090",
+          "bytes": 20894
+        },
+        {
+          "kind": "source",
+          "path": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/artifacts/historical-english-699266d3b384/text.txt",
+          "sha256": "699266d3b3844a8942afc96dd14c1445ae9faf70d4010786f455255081e8b090",
+          "bytes": 20894
+        },
+        {
+          "kind": "segment",
+          "path": "src/sources/works/papal-documents/1824-05-05-papal-leo-xii-enciclica-ubi-primum-5-maggio-1824-fc9de02b/editions/1824-coyne-dublin-english/segments/complete-english.toml",
+          "sha256": "782fb4137c8b99df702ab4435dabaa5cf3ec07e1693bd1a6295a168a884cd4e7"
+        },
+        {
+          "kind": "constituent_edition",
+          "path": "src/sources/works/papal-documents/1824-05-05-papal-leo-xii-enciclica-ubi-primum-5-maggio-1824-fc9de02b/editions/1824-coyne-dublin-english/edition.toml",
+          "sha256": "f8ef0891e02a878a7f76eff9a9c476d56af68feb136d1ca81ab23c236044f850"
+        },
+        {
+          "kind": "container_edition",
+          "path": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/edition.toml",
+          "sha256": "a4d47165ab9f9b11e750663ef99a50085b8de04ca7201569c67bad11d5b79ec5"
+        },
+        {
+          "kind": "artifact_metadata",
+          "id": "artifact.papal-collections.leo-xii-irish-hierarchy-1824.1824-coyne-dublin-english.recipe-ee529242b870",
+          "path": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/artifacts/recipe-ee529242b870/artifact.toml",
+          "sha256": "148a2009b5de1c476d8a71af81d26f1ce57d1cb8438205bf53e61e7de90f151d"
+        },
+        {
+          "kind": "artifact_payload",
+          "id": "artifact.papal-collections.leo-xii-irish-hierarchy-1824.1824-coyne-dublin-english.recipe-ee529242b870",
+          "path": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/artifacts/recipe-ee529242b870/recipe.json",
+          "sha256": "ee529242b8705edc321b3182bdd78f1c224aeaba15a6a1705545663c6405494f"
+        },
+        {
+          "kind": "artifact_metadata",
+          "id": "artifact.papal-collections.leo-xii-irish-hierarchy-1824.1824-coyne-dublin-english.historical-page-subset-helper-d10b2c8e5fee",
+          "path": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/artifacts/historical-page-subset-helper-d10b2c8e5fee/artifact.toml",
+          "sha256": "022cf2fc1e0a40f113a05472f3f60acfac2b3525b6918c3ecf7993e1fd1d530c"
+        },
+        {
+          "kind": "artifact_payload",
+          "id": "artifact.papal-collections.leo-xii-irish-hierarchy-1824.1824-coyne-dublin-english.historical-page-subset-helper-d10b2c8e5fee",
+          "path": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/artifacts/historical-page-subset-helper-d10b2c8e5fee/derive.py",
+          "sha256": "d10b2c8e5fee1b04f6aa74129d4895166d7d10bbf85621cc2584eb591cde6ea5"
+        },
+        {
+          "kind": "artifact_metadata",
+          "id": "artifact.papal-collections.leo-xii-irish-hierarchy-1824.1824-coyne-dublin-english.raw-ocr-8d5391e70826",
+          "path": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/artifacts/raw-ocr-8d5391e70826/artifact.toml",
+          "sha256": "ffd3d1c0d300b0aafa2df6169e4cd20c34cf991053c1dda6d1d7d0c0af8da9ab"
+        },
+        {
+          "kind": "artifact_metadata",
+          "id": "artifact.papal-collections.leo-xii-irish-hierarchy-1824.1824-coyne-dublin-english.native-facsimile-503d536f3eb4",
+          "path": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/artifacts/native-facsimile-503d536f3eb4/artifact.toml",
+          "sha256": "48299883e98920237e6f993f4c90a30b0d55400ccb8f89468a09bad6238d02c8"
+        },
+        {
+          "kind": "artifact_metadata",
+          "id": "artifact.papal-collections.leo-xii-irish-hierarchy-1824.1824-coyne-dublin-english.historical-english-699266d3b384",
+          "path": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/artifacts/historical-english-699266d3b384/artifact.toml",
+          "sha256": "c4680dba3ff9b8e8778f138441fc5cda7b05f3039e80301c8faf7911342bbfbc"
+        },
+        {
+          "kind": "artifact_payload",
+          "id": "artifact.papal-collections.leo-xii-irish-hierarchy-1824.1824-coyne-dublin-english.historical-english-699266d3b384",
+          "path": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/artifacts/historical-english-699266d3b384/text.txt",
+          "sha256": "699266d3b3844a8942afc96dd14c1445ae9faf70d4010786f455255081e8b090"
+        },
+        {
+          "kind": "artifact_metadata",
+          "id": "artifact.papal-collections.leo-xii-irish-hierarchy-1824.1824-coyne-dublin-english.historical-page-subset-d26ce4a6e123",
+          "path": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/artifacts/historical-page-subset-d26ce4a6e123/artifact.toml",
+          "sha256": "6f1af6c5162dea8d6eb0cf506252872ea57dc14ba596bfd2f67b9d060c8c8dc6"
+        },
+        {
+          "kind": "artifact_payload",
+          "id": "artifact.papal-collections.leo-xii-irish-hierarchy-1824.1824-coyne-dublin-english.historical-page-subset-d26ce4a6e123",
+          "path": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/artifacts/historical-page-subset-d26ce4a6e123/historical-pages.pdf",
+          "sha256": "d26ce4a6e12376491a85956122839fc47760dcede71a13e73c2882605620eaa9"
+        },
+        {
+          "kind": "artifact_metadata",
+          "id": "artifact.papal-collections.leo-xii-irish-hierarchy-1824.1824-coyne-dublin-english.historical-page-subset-recipe-1988babc181f",
+          "path": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/artifacts/historical-page-subset-recipe-1988babc181f/artifact.toml",
+          "sha256": "9444cf8d0819d81a0934a4ee6066da687d2ef2f4d605a3de9ae82052ad74828b"
+        },
+        {
+          "kind": "artifact_payload",
+          "id": "artifact.papal-collections.leo-xii-irish-hierarchy-1824.1824-coyne-dublin-english.historical-page-subset-recipe-1988babc181f",
+          "path": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/artifacts/historical-page-subset-recipe-1988babc181f/recipe.json",
+          "sha256": "1988babc181f91a30f093d62e817f5eb742043a719edcfcb4e85a9e0c25a7b26"
+        },
+        {
+          "kind": "replay_parent",
+          "path": ".scratch/source-gap-plan/TheEncyclicalLetterOfPopeLeoTheXI_djvu.txt",
+          "sha256": "8d5391e7082670012ea8d7288da880e535c5e49bfb44d9b95d084a9d70d5b20a"
+        },
+        {
+          "kind": "recipe",
+          "path": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/artifacts/recipe-ee529242b870/recipe.json",
+          "sha256": "ee529242b8705edc321b3182bdd78f1c224aeaba15a6a1705545663c6405494f",
+          "physical_line_ranges": [
+            [
+              632,
+              670
+            ],
+            [
+              688,
+              741
+            ],
+            [
+              754,
+              804
+            ],
+            [
+              817,
+              866
+            ],
+            [
+              879,
+              927
+            ],
+            [
+              940,
+              993
+            ],
+            [
+              1006,
+              1055
+            ],
+            [
+              1070,
+              1113
+            ]
+          ]
+        }
+      ],
+      "selector": [
+        [
+          1,
+          399
+        ]
+      ],
+      "replay": {
+        "parent_path": ".scratch/source-gap-plan/TheEncyclicalLetterOfPopeLeoTheXI_djvu.txt",
+        "parent_sha256": "8d5391e7082670012ea8d7288da880e535c5e49bfb44d9b95d084a9d70d5b20a",
+        "recipe_path": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/artifacts/recipe-ee529242b870/recipe.json",
+        "recipe_sha256": "ee529242b8705edc321b3182bdd78f1c224aeaba15a6a1705545663c6405494f",
+        "physical_line_ranges": [
+          [
+            632,
+            670
+          ],
+          [
+            688,
+            741
+          ],
+          [
+            754,
+            804
+          ],
+          [
+            817,
+            866
+          ],
+          [
+            879,
+            927
+          ],
+          [
+            940,
+            993
+          ],
+          [
+            1006,
+            1055
+          ],
+          [
+            1070,
+            1113
+          ]
+        ],
+        "output_sha256": "699266d3b3844a8942afc96dd14c1445ae9faf70d4010786f455255081e8b090",
+        "pass": true
+      },
+      "title": "Ubi primum",
+      "status": "PASS",
+      "source_acceptance": "PASS",
+      "selected_text_read_complete": true,
+      "historical_human_translation": true,
+      "translator": "unrecorded; no named translator established",
+      "publication": "Dublin: Richard Coyne; London: Keating and Brown,1824",
+      "rights_basis": "United States public domain: this human English translation was published in Dublin by Richard Coyne in1824, as established by native title/imprint PDF6 and English pages16–23. Publication term has expired under the repository United States position in src/sources/inventories/papal-documents-rights-v1.toml (17 U.S.C.304–305;104A remainder where applicable). Mechanical OCR adds no original authorship. This historical-only text excludes modern Google front matter and digitization furniture. Historical source wording is excluded from Triptych project-content licence.",
+      "actual_opened_images": [
+        {
+          "source_page": 1,
+          "source_pdf": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/artifacts/historical-page-subset-d26ce4a6e123/historical-pages.pdf",
+          "source_pdf_sha256": "d26ce4a6e12376491a85956122839fc47760dcede71a13e73c2882605620eaa9",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-00/pages/page-1.png",
+          "source_png_sha256": "13f2034ab44738178b4ea76656b2b46df757baa1da013ac35111e8743875b7d0",
+          "source_bytes": 431452,
+          "source_dimensions": [
+            1416,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1416,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-05-act-01-sample-01-13f2034ab447.jpg",
+          "proxy_sha256": "59f34770799d9de8752953224eb806d35799fd54fd5087864cc67bbfbe65f261",
+          "proxy_bytes": 281069,
+          "proxy_dimensions": [
+            1416,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-00/pages/page-1.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-05-act-01-sample-01-13f2034ab447.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-05-act-01-sample-01-13f2034ab447.jpg",
+          "act": 1,
+          "sample": 1,
+          "id": "papal.leo-xii.enciclica-ubi-primum-5-maggio-1824",
+          "actual_opened_path": ".scratch/english-intake-recovery/image-proxies/packet-05-act-01-sample-01-13f2034ab447.jpg",
+          "observation": "Native historical title establishes Leo XII encyclical with an English translation; separate Irish bishops pastoral instructions annexed. Dublin Richard Coyne, London Keating and Brown, 1824 imprint visible. No named translator at this locus.",
+          "fresh_inspection": true,
+          "display_detail": "auto",
+          "source_authority": "source PNG and PDF; JPEG display only; no OCR/extraction from JPEG"
+        },
+        {
+          "source_page": 2,
+          "source_pdf": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/artifacts/historical-page-subset-d26ce4a6e123/historical-pages.pdf",
+          "source_pdf_sha256": "d26ce4a6e12376491a85956122839fc47760dcede71a13e73c2882605620eaa9",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-00/pages/page-2.png",
+          "source_png_sha256": "f46be6d1f9925bb5977a2d79405e39ab6df37e5056607e8b068f999d21475c0d",
+          "source_bytes": 284658,
+          "source_dimensions": [
+            1409,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1409,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-05-act-01-sample-02-f46be6d1f992.jpg",
+          "proxy_sha256": "43246d12d4214341d57c3240a7a4d0b6ccbcf40f563fcf9792852134af89e211",
+          "proxy_bytes": 188699,
+          "proxy_dimensions": [
+            1409,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-00/pages/page-2.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-05-act-01-sample-02-f46be6d1f992.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-05-act-01-sample-02-f46be6d1f992.jpg",
+          "act": 1,
+          "sample": 2,
+          "id": "papal.leo-xii.enciclica-ubi-primum-5-maggio-1824",
+          "actual_opened_path": ".scratch/english-intake-recovery/image-proxies/packet-05-act-01-sample-02-f46be6d1f992.jpg",
+          "observation": "Native Latin closing printed page10 has dating clause 3 May1824 and first pontificate year, then note(dd); no separate subscription visible. Confirms historical closing-date discrepancy already disclosed in current metadata.",
+          "fresh_inspection": true,
+          "display_detail": "auto",
+          "source_authority": "source PNG and PDF; JPEG display only; no OCR/extraction from JPEG"
+        },
+        {
+          "source_page": 3,
+          "source_pdf": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/artifacts/historical-page-subset-d26ce4a6e123/historical-pages.pdf",
+          "source_pdf_sha256": "d26ce4a6e12376491a85956122839fc47760dcede71a13e73c2882605620eaa9",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-00/pages/page-3.png",
+          "source_png_sha256": "c5daed9aef85d5d9723a9c3e716005908240eddafdccf28e08088934a89e72de",
+          "source_bytes": 771171,
+          "source_dimensions": [
+            1416,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1416,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-05-act-01-sample-03-c5daed9aef85.jpg",
+          "proxy_sha256": "2d9328a734857d3cd77f7b65a58e8f541dc27ce47f1cc37800a61dc818424c18",
+          "proxy_bytes": 496453,
+          "proxy_dimensions": [
+            1416,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-00/pages/page-3.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-05-act-01-sample-03-c5daed9aef85.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-05-act-01-sample-03-c5daed9aef85.jpg",
+          "act": 1,
+          "sample": 3,
+          "id": "papal.leo-xii.enciclica-ubi-primum-5-maggio-1824",
+          "actual_opened_path": ".scratch/english-intake-recovery/image-proxies/packet-05-act-01-sample-03-c5daed9aef85.jpg",
+          "observation": "Native English start is explicitly labeled Translation; protocol names patriarchs, primates, archbishops and bishops, Leo XII and salutation. Opening body and page-foot citation(a) correspond to selected text. The non-substantive Translation heading is omitted by selector; no omitted address detected.",
+          "fresh_inspection": true,
+          "display_detail": "auto",
+          "source_authority": "source PNG and PDF; JPEG display only; no OCR/extraction from JPEG"
+        },
+        {
+          "source_page": 6,
+          "source_pdf": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/artifacts/historical-page-subset-d26ce4a6e123/historical-pages.pdf",
+          "source_pdf_sha256": "d26ce4a6e12376491a85956122839fc47760dcede71a13e73c2882605620eaa9",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-00/pages/page-4.png",
+          "source_png_sha256": "769abce226ad656aa7ec88c0141c09b91bad5e35ed76f131c3c939e667b21093",
+          "source_bytes": 1134965,
+          "source_dimensions": [
+            1405,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1405,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-05-act-01-sample-04-769abce226ad.jpg",
+          "proxy_sha256": "538e186dc51fdaba96c9fbada77d3740131dd68a80c5ef3ed41416c8647b9997",
+          "proxy_bytes": 717790,
+          "proxy_dimensions": [
+            1405,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-00/pages/page-4.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-05-act-01-sample-04-769abce226ad.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-05-act-01-sample-04-769abce226ad.jpg",
+          "act": 1,
+          "sample": 4,
+          "id": "papal.leo-xii.enciclica-ubi-primum-5-maggio-1824",
+          "actual_opened_path": ".scratch/english-intake-recovery/image-proxies/packet-05-act-01-sample-04-769abce226ad.jpg",
+          "observation": "English printed p14: continuous body and five bottom citation notes(f,g,h,i,l) are present in selected OCR; ink strikes cross several words and visibly account for disclosed OCR damage. No new editorial matter in the act body detected; this is an uncorrected OCR witness.",
+          "fresh_inspection": true,
+          "display_detail": "auto",
+          "source_authority": "source PNG and PDF; JPEG display only; no OCR/extraction from JPEG"
+        },
+        {
+          "source_page": 10,
+          "source_pdf": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/artifacts/historical-page-subset-d26ce4a6e123/historical-pages.pdf",
+          "source_pdf_sha256": "d26ce4a6e12376491a85956122839fc47760dcede71a13e73c2882605620eaa9",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-00/pages/page-5.png",
+          "source_png_sha256": "02ccd7d42b0356bbbaf87942e18c48a81702731f7c9725b7e166fce4c6957fbb",
+          "source_bytes": 800997,
+          "source_dimensions": [
+            1405,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1405,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-05-act-01-sample-05-02ccd7d42b03.jpg",
+          "proxy_sha256": "93e90de7807c5355f2657d9640a4e96b2a8172e43efb47492a2a8939b4989474",
+          "proxy_bytes": 506299,
+          "proxy_dimensions": [
+            1405,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-00/pages/page-5.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-05-act-01-sample-05-02ccd7d42b03.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-05-act-01-sample-05-02ccd7d42b03.jpg",
+          "act": 1,
+          "sample": 5,
+          "id": "papal.leo-xii.enciclica-ubi-primum-5-maggio-1824",
+          "actual_opened_path": ".scratch/english-intake-recovery/image-proxies/packet-05-act-01-sample-05-02ccd7d42b03.jpg",
+          "observation": "English printed p18 ends with blessing, Rome/St Mary Major dating 3 May1824 and first pontificate year; three bottom notes(bb,cc,dd) retained. No separate papal subscription appears below closing. Selected text ends at final own note and excludes separate pastoral instructions.",
+          "fresh_inspection": true,
+          "display_detail": "auto",
+          "source_authority": "source PNG and PDF; JPEG display only; no OCR/extraction from JPEG"
+        },
+        {
+          "source_page": 4,
+          "source_pdf": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/artifacts/historical-page-subset-d26ce4a6e123/historical-pages.pdf",
+          "source_pdf_sha256": "d26ce4a6e12376491a85956122839fc47760dcede71a13e73c2882605620eaa9",
+          "source_png": ".scratch/english-intake-recovery/packet-05/audit/cache/objects/08/0838186dee1737c9ca5480276774b5f3ee00d97ea1446ba4e9b6b62ae259e0d7/pages/page-1.png",
+          "source_png_sha256": "1458d593d657156ec98c85e6def936c632e53bc7b02cd043d4839aac2be80328",
+          "source_dimensions": [
+            1416,
+            2200
+          ],
+          "source_bytes": 1107623,
+          "proxy": ".scratch/english-intake-recovery/packet-05/audit/ubi-notes-4.jpg",
+          "proxy_sha256": "9b189c4d5b65681a9bc70d437410fda35a39e43b6bebc2ac15a5f9e6370cf957",
+          "proxy_bytes": 697146,
+          "proxy_dimensions": [
+            1416,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            ".scratch/english-intake-recovery/packet-05/audit/cache/objects/08/0838186dee1737c9ca5480276774b5f3ee00d97ea1446ba4e9b6b62ae259e0d7/pages/page-1.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/packet-05/audit/ubi-notes-4.jpg"
+          ],
+          "purpose": "Review-only JPEG from freshly bounded canonical historical subset; no OCR/source extraction",
+          "bounded_sample_page": 1,
+          "bounded_sample_pdf": ".scratch/english-intake-recovery/packet-05/audit/ubi-note-pages.pdf",
+          "bounded_sample_pdf_sha256": "87a883d6974b4517baa76e39f9a235ea2817aa3cf8f6a31dd44cf5f5d9e179e0",
+          "act": 1,
+          "sample": 6,
+          "id": "papal.leo-xii.enciclica-ubi-primum-5-maggio-1824",
+          "actual_opened_path": ".scratch/english-intake-recovery/packet-05/audit/ubi-notes-4.jpg",
+          "observation": "Fresh supplementary printed p12 image: four page-foot citations(b,c,d,e) retained in selected OCR before continuation of Trent quotation. Page body and note blocks are distinct in OCR selection. No additional substantive note outside ranges detected.",
+          "fresh_inspection": true,
+          "display_detail": "auto",
+          "source_authority": "source PNG and PDF; JPEG display only; no OCR/extraction from JPEG"
+        },
+        {
+          "source_page": 5,
+          "source_pdf": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/artifacts/historical-page-subset-d26ce4a6e123/historical-pages.pdf",
+          "source_pdf_sha256": "d26ce4a6e12376491a85956122839fc47760dcede71a13e73c2882605620eaa9",
+          "source_png": ".scratch/english-intake-recovery/packet-05/audit/cache/objects/08/0838186dee1737c9ca5480276774b5f3ee00d97ea1446ba4e9b6b62ae259e0d7/pages/page-2.png",
+          "source_png_sha256": "09f577910e88382aa4a92facaed00c4ca6052b32f8edd747c926c30724ae3141",
+          "source_dimensions": [
+            1409,
+            2200
+          ],
+          "source_bytes": 1151393,
+          "proxy": ".scratch/english-intake-recovery/packet-05/audit/ubi-notes-5.jpg",
+          "proxy_sha256": "1a280e5b6113b711dee0215e29057a868f97569cab59e5f807d6e0d36b6e6541",
+          "proxy_bytes": 743411,
+          "proxy_dimensions": [
+            1409,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            ".scratch/english-intake-recovery/packet-05/audit/cache/objects/08/0838186dee1737c9ca5480276774b5f3ee00d97ea1446ba4e9b6b62ae259e0d7/pages/page-2.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/packet-05/audit/ubi-notes-5.jpg"
+          ],
+          "purpose": "Review-only JPEG from freshly bounded canonical historical subset; no OCR/source extraction",
+          "bounded_sample_page": 2,
+          "bounded_sample_pdf": ".scratch/english-intake-recovery/packet-05/audit/ubi-note-pages.pdf",
+          "bounded_sample_pdf_sha256": "87a883d6974b4517baa76e39f9a235ea2817aa3cf8f6a31dd44cf5f5d9e179e0",
+          "act": 1,
+          "sample": 7,
+          "id": "papal.leo-xii.enciclica-ubi-primum-5-maggio-1824",
+          "actual_opened_path": ".scratch/english-intake-recovery/packet-05/audit/ubi-notes-5.jpg",
+          "observation": "Supplementary printed p13 has body continuation from Trent quotation through episcopal residence/visitation and shepherd distinction. No footnote block appears on this page; selected text keeps corresponding body extent and order.",
+          "fresh_inspection": true,
+          "display_detail": "auto",
+          "source_authority": "source PNG and PDF; JPEG display only; no OCR/extraction from JPEG"
+        },
+        {
+          "source_page": 7,
+          "source_pdf": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/artifacts/historical-page-subset-d26ce4a6e123/historical-pages.pdf",
+          "source_pdf_sha256": "d26ce4a6e12376491a85956122839fc47760dcede71a13e73c2882605620eaa9",
+          "source_png": ".scratch/english-intake-recovery/packet-05/audit/cache/objects/08/0838186dee1737c9ca5480276774b5f3ee00d97ea1446ba4e9b6b62ae259e0d7/pages/page-3.png",
+          "source_png_sha256": "e53b20cbda76e22b5294d1779f2f94a782191b940a4a6a3f792a8aa1c8286e75",
+          "source_dimensions": [
+            1415,
+            2200
+          ],
+          "source_bytes": 1133536,
+          "proxy": ".scratch/english-intake-recovery/packet-05/audit/ubi-notes-7.jpg",
+          "proxy_sha256": "07ee0261f6f273c4bae4ad98dfe0067f100614619cb293f0ac85b9728ad215ab",
+          "proxy_bytes": 717277,
+          "proxy_dimensions": [
+            1415,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            ".scratch/english-intake-recovery/packet-05/audit/cache/objects/08/0838186dee1737c9ca5480276774b5f3ee00d97ea1446ba4e9b6b62ae259e0d7/pages/page-3.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/packet-05/audit/ubi-notes-7.jpg"
+          ],
+          "purpose": "Review-only JPEG from freshly bounded canonical historical subset; no OCR/source extraction",
+          "bounded_sample_page": 3,
+          "bounded_sample_pdf": ".scratch/english-intake-recovery/packet-05/audit/ubi-note-pages.pdf",
+          "bounded_sample_pdf_sha256": "87a883d6974b4517baa76e39f9a235ea2817aa3cf8f6a31dd44cf5f5d9e179e0",
+          "act": 1,
+          "sample": 8,
+          "id": "papal.leo-xii.enciclica-ubi-primum-5-maggio-1824",
+          "actual_opened_path": ".scratch/english-intake-recovery/packet-05/audit/ubi-notes-7.jpg",
+          "observation": "Supplementary printed p15 contains continuous body on Indifferentism and two bottom citations(m,n), both retained as own note block in selected OCR. No missing substantive note or foreign wrapper detected.",
+          "fresh_inspection": true,
+          "display_detail": "auto",
+          "source_authority": "source PNG and PDF; JPEG display only; no OCR/extraction from JPEG"
+        },
+        {
+          "source_page": 8,
+          "source_pdf": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/artifacts/historical-page-subset-d26ce4a6e123/historical-pages.pdf",
+          "source_pdf_sha256": "d26ce4a6e12376491a85956122839fc47760dcede71a13e73c2882605620eaa9",
+          "source_png": ".scratch/english-intake-recovery/packet-05/audit/cache/objects/08/0838186dee1737c9ca5480276774b5f3ee00d97ea1446ba4e9b6b62ae259e0d7/pages/page-4.png",
+          "source_png_sha256": "3df5564f7da2f2ed7b673b09f23645d978ea47f3336ef1561a5b649fba7a1737",
+          "source_dimensions": [
+            1416,
+            2200
+          ],
+          "source_bytes": 1148650,
+          "proxy": ".scratch/english-intake-recovery/packet-05/audit/ubi-notes-8.jpg",
+          "proxy_sha256": "4b43b4227696c1e5aa9016ece3a8e2c88e388ad7f0b78af1c5b341c507403281",
+          "proxy_bytes": 722249,
+          "proxy_dimensions": [
+            1416,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            ".scratch/english-intake-recovery/packet-05/audit/cache/objects/08/0838186dee1737c9ca5480276774b5f3ee00d97ea1446ba4e9b6b62ae259e0d7/pages/page-4.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/packet-05/audit/ubi-notes-8.jpg"
+          ],
+          "purpose": "Review-only JPEG from freshly bounded canonical historical subset; no OCR/source extraction",
+          "bounded_sample_page": 4,
+          "bounded_sample_pdf": ".scratch/english-intake-recovery/packet-05/audit/ubi-note-pages.pdf",
+          "bounded_sample_pdf_sha256": "87a883d6974b4517baa76e39f9a235ea2817aa3cf8f6a31dd44cf5f5d9e179e0",
+          "act": 1,
+          "sample": 9,
+          "id": "papal.leo-xii.enciclica-ubi-primum-5-maggio-1824",
+          "actual_opened_path": ".scratch/english-intake-recovery/packet-05/audit/ubi-notes-8.jpg",
+          "observation": "Supplementary printed p16 contains five bottom citations(o,p,q,r,s), all present in selected OCR despite glyph recognition defects. Body continues to next page at rashness-of-men passage. No historical note omitted by crop/range detected.",
+          "fresh_inspection": true,
+          "display_detail": "auto",
+          "source_authority": "source PNG and PDF; JPEG display only; no OCR/extraction from JPEG"
+        },
+        {
+          "source_page": 9,
+          "source_pdf": "src/sources/works/papal-collections/leo-xii-irish-hierarchy-1824/editions/1824-coyne-dublin-english/artifacts/historical-page-subset-d26ce4a6e123/historical-pages.pdf",
+          "source_pdf_sha256": "d26ce4a6e12376491a85956122839fc47760dcede71a13e73c2882605620eaa9",
+          "source_png": ".scratch/english-intake-recovery/packet-05/audit/cache/objects/08/0838186dee1737c9ca5480276774b5f3ee00d97ea1446ba4e9b6b62ae259e0d7/pages/page-5.png",
+          "source_png_sha256": "75ce3172eb58d3be75efc3a02a55b8e9524179a5eb9500951d06b5efbb1185f6",
+          "source_dimensions": [
+            1419,
+            2200
+          ],
+          "source_bytes": 1113161,
+          "proxy": ".scratch/english-intake-recovery/packet-05/audit/ubi-notes-9.jpg",
+          "proxy_sha256": "f31ffdcc6fa0588243d23d2bf22d15510863a0654633eb893cee48946b2202b5",
+          "proxy_bytes": 707481,
+          "proxy_dimensions": [
+            1419,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            ".scratch/english-intake-recovery/packet-05/audit/cache/objects/08/0838186dee1737c9ca5480276774b5f3ee00d97ea1446ba4e9b6b62ae259e0d7/pages/page-5.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/packet-05/audit/ubi-notes-9.jpg"
+          ],
+          "purpose": "Review-only JPEG from freshly bounded canonical historical subset; no OCR/source extraction",
+          "bounded_sample_page": 5,
+          "bounded_sample_pdf": ".scratch/english-intake-recovery/packet-05/audit/ubi-note-pages.pdf",
+          "bounded_sample_pdf_sha256": "87a883d6974b4517baa76e39f9a235ea2817aa3cf8f6a31dd44cf5f5d9e179e0",
+          "act": 1,
+          "sample": 10,
+          "id": "papal.leo-xii.enciclica-ubi-primum-5-maggio-1824",
+          "actual_opened_path": ".scratch/english-intake-recovery/packet-05/audit/ubi-notes-9.jpg",
+          "observation": "Supplementary printed p17 contains six bottom citations(t,u,x,y,z,aa) followed by printer signature C; selected text retains all six citations and omits only signature furniture. Body continues into p18. Every English page11-18 now freshly inspected for extant own-note completeness, alongside historical title and Latin closing.",
+          "fresh_inspection": true,
+          "display_detail": "auto",
+          "source_authority": "source PNG and PDF; JPEG display only; no OCR/extraction from JPEG"
+        }
+      ],
+      "actual_opened_image_count": 10,
+      "scope_limits": [
+        "Audit is limited to these three exact current historical human English witnesses.",
+        "Uncorrected mechanical OCR is retained; no lexical translation-accuracy certification or word-for-word image collation.",
+        "No full-printing collation beyond the bounded act and publication/identity loci; no compiler/PDF font/layout review, installation, or deployment claim.",
+        "JPEGs are review-only display proxies. Source PNG/PDF pins remain authoritative; no OCR/source extraction from JPEG.",
+        "Prior visual verdicts are not inherited."
+      ],
+      "findings": [
+        {
+          "severity": "info",
+          "code": "historical-human-edition",
+          "finding": "Native title expressly identifies an English translation of Leo XII encyclical, Dublin Richard Coyne; London Keating and Brown,1824. Translator is anonymous/unrecorded at checked loci; no named translator is invented."
+        },
+        {
+          "severity": "info",
+          "code": "complete-printed-papal-body-and-own-notes",
+          "finding": "Freshly checked every English page11-18, opening address/protocol, blessing and historical dating. All26 printed citation notes are retained across page-foot blocks; no separate papal subscription is printed. Notes/markers carry uncorrected OCR defects. Non-substantive Translation heading at original raw OCR line628 is excluded before selected line632; printed folios and signature C are furniture. Latin section, Irish bishops pastoral instructions and modern wrapper are outside selection."
+        },
+        {
+          "severity": "info",
+          "code": "historical-date-disagreement-preserved",
+          "finding": "Native English p18 and native Latin p10 print3 May1824. Current catalogue/Vatican date is5 May1824 as current metadata discloses. Historical wording and dates remain unchanged; this audit does not harmonize them."
+        },
+        {
+          "severity": "info",
+          "code": "exact-artifact-rights-boundary",
+          "finding": "The complete modern69-page PDF503d536f3eb4 remains restricted/rights-unresolved in current metadata. Acceptance covers historical English TXT699266d3b384 and separately retained ten-page historical facsimile subset d26ce4a6e123 under its own affirmative United States1824-publication basis. The current coyne-registration.json and parent/subset/recipe/helper hashes were checked; whole-delivery rights are not cleared."
+        },
+        {
+          "severity": "info",
+          "code": "ocr-defects-disclosed",
+          "finding": "Ink strikes on English p14 damage OCR words; historical metadata accurately discloses this. Literal OCR spelling, punctuation and line-end divisions are preserved, with no model reconstruction."
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-01091883-supremi-apostolatus-officio.1883-irish-ecclesiastical-record-english",
+      "language": "en",
+      "source_sha256": "84876b1b2d5b13b60b14d876d4140f8d4d41f5b97ea31c234ad2c775a351ce31",
+      "row_sha256": "ff47a6a13affb170584fb239d45b8deb00b45c580349c9450bfab91f19b59901",
+      "source_scope_sha256": "89ef2fc0c9e324031cda1b7a10df0481a791d8f91e2438e09d0b3868c9a0b019",
+      "controller_pin": {
+        "id": "segment.papal.leo-xiii.hf-l-xiii-enc-01091883-supremi-apostolatus-officio.1883-irish-ecclesiastical-record-english.complete-english",
+        "record": "src/sources/works/papal-documents/1883-09-01-papal-leo-xiii-hf-l-xiii-enc-01091883-supremi-apostolatus-officio-bf476759/editions/1883-irish-ecclesiastical-record-english/segments/complete-english.toml",
+        "sha256": "8cb5d79c86ed34da6256da00b6104051e1452a9074d7bc31a64676b21b8fa9af"
+      },
+      "proof_pins": [
+        {
+          "kind": "evidence",
+          "path": ".scratch/english-intake-recovery/packet-05/act-02-evidence.json",
+          "sha256": "2eb9d24963bae2e55a7c20131646e36875628f80ebcbfadaca79d1774aeef716",
+          "bytes": 35920
+        },
+        {
+          "kind": "source_manifest",
+          "path": "src/sources/papal-documents/historical-english-completion-manifest.json",
+          "sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+          "bytes": 67917
+        },
+        {
+          "kind": "selected_text",
+          "path": ".scratch/english-intake-recovery/packet-05/act-02-selected.txt",
+          "sha256": "84876b1b2d5b13b60b14d876d4140f8d4d41f5b97ea31c234ad2c775a351ce31",
+          "bytes": 15568
+        },
+        {
+          "kind": "source",
+          "path": "src/sources/works/journals/irish-ecclesiastical-record/editions/1883-third-series-volume-4/artifacts/historical-english-84876b1b2d5b/text.txt",
+          "sha256": "84876b1b2d5b13b60b14d876d4140f8d4d41f5b97ea31c234ad2c775a351ce31",
+          "bytes": 15568
+        },
+        {
+          "kind": "segment",
+          "path": "src/sources/works/papal-documents/1883-09-01-papal-leo-xiii-hf-l-xiii-enc-01091883-supremi-apostolatus-officio-bf476759/editions/1883-irish-ecclesiastical-record-english/segments/complete-english.toml",
+          "sha256": "8cb5d79c86ed34da6256da00b6104051e1452a9074d7bc31a64676b21b8fa9af"
+        },
+        {
+          "kind": "constituent_edition",
+          "path": "src/sources/works/papal-documents/1883-09-01-papal-leo-xiii-hf-l-xiii-enc-01091883-supremi-apostolatus-officio-bf476759/editions/1883-irish-ecclesiastical-record-english/edition.toml",
+          "sha256": "b82fedd55252300aad46c298c94a863e1fa89c5c9cf2c9f91f88def99e2bc5ad"
+        },
+        {
+          "kind": "container_edition",
+          "path": "src/sources/works/journals/irish-ecclesiastical-record/editions/1883-third-series-volume-4/edition.toml",
+          "sha256": "04cd2379168477f5e57978fe178b04d6b343fb9c1553cda3be05c0e3f32d014d"
+        },
+        {
+          "kind": "artifact_metadata",
+          "id": "artifact.journals.irish-ecclesiastical-record.1883-third-series-volume-4.extent-review-a9ee9382b6cb",
+          "path": "src/sources/works/journals/irish-ecclesiastical-record/editions/1883-third-series-volume-4/artifacts/extent-review-a9ee9382b6cb/artifact.toml",
+          "sha256": "682d52f6ad40cce7bec59a40981bc3e4c754fccd68f1d56b0c1a399c1ab0a08e"
+        },
+        {
+          "kind": "artifact_payload",
+          "id": "artifact.journals.irish-ecclesiastical-record.1883-third-series-volume-4.extent-review-a9ee9382b6cb",
+          "path": "src/sources/works/journals/irish-ecclesiastical-record/editions/1883-third-series-volume-4/artifacts/extent-review-a9ee9382b6cb/extent-review.json",
+          "sha256": "a9ee9382b6cb7b87d5b5491c8b9b87ffd41bd057b42c188adac5fe4853f561d6"
+        },
+        {
+          "kind": "artifact_metadata",
+          "id": "artifact.journals.irish-ecclesiastical-record.1883-third-series-volume-4.source-ocr-d1531485ea5b",
+          "path": "src/sources/works/journals/irish-ecclesiastical-record/editions/1883-third-series-volume-4/artifacts/source-ocr-d1531485ea5b/artifact.toml",
+          "sha256": "63584e0afbbffea670817cddb33e9744059ef0dafa13a99ba10cb721e75a07b8"
+        },
+        {
+          "kind": "artifact_metadata",
+          "id": "artifact.journals.irish-ecclesiastical-record.1883-third-series-volume-4.whole-facsimile-17a0ffa88be4",
+          "path": "src/sources/works/journals/irish-ecclesiastical-record/editions/1883-third-series-volume-4/artifacts/whole-facsimile-17a0ffa88be4/artifact.toml",
+          "sha256": "20c1b88622824e61b9d7cb2fa188f732deb72de73205a68d7aed68873da1b23a"
+        },
+        {
+          "kind": "artifact_metadata",
+          "id": "artifact.journals.irish-ecclesiastical-record.1883-third-series-volume-4.historical-english-84876b1b2d5b",
+          "path": "src/sources/works/journals/irish-ecclesiastical-record/editions/1883-third-series-volume-4/artifacts/historical-english-84876b1b2d5b/artifact.toml",
+          "sha256": "d47038792d4f4c41f6889960f32bc069dd29dc6b393b58049836031a12ad96af"
+        },
+        {
+          "kind": "artifact_payload",
+          "id": "artifact.journals.irish-ecclesiastical-record.1883-third-series-volume-4.historical-english-84876b1b2d5b",
+          "path": "src/sources/works/journals/irish-ecclesiastical-record/editions/1883-third-series-volume-4/artifacts/historical-english-84876b1b2d5b/text.txt",
+          "sha256": "84876b1b2d5b13b60b14d876d4140f8d4d41f5b97ea31c234ad2c775a351ce31"
+        },
+        {
+          "kind": "artifact_metadata",
+          "id": "artifact.journals.irish-ecclesiastical-record.1883-third-series-volume-4.selection-recipe-4613b2f8193b",
+          "path": "src/sources/works/journals/irish-ecclesiastical-record/editions/1883-third-series-volume-4/artifacts/selection-recipe-4613b2f8193b/artifact.toml",
+          "sha256": "b6c3201aa95fa26edc63ae460afd65014e55ff5a196c06d3967b9150853f18fd"
+        },
+        {
+          "kind": "artifact_payload",
+          "id": "artifact.journals.irish-ecclesiastical-record.1883-third-series-volume-4.selection-recipe-4613b2f8193b",
+          "path": "src/sources/works/journals/irish-ecclesiastical-record/editions/1883-third-series-volume-4/artifacts/selection-recipe-4613b2f8193b/selection.json",
+          "sha256": "4613b2f8193bbb0f32844574a24ee65c5e546dc511b5c4615ad6e0f30c061897"
+        },
+        {
+          "kind": "artifact_metadata",
+          "id": "artifact.journals.irish-ecclesiastical-record.1883-third-series-volume-4.native-source-evidence-12569f69f9f1",
+          "path": "src/sources/works/journals/irish-ecclesiastical-record/editions/1883-third-series-volume-4/artifacts/native-source-evidence-12569f69f9f1/artifact.toml",
+          "sha256": "fd1c7c4b31b91b83905698e3a79f3c58d6cdc48c2d04ecfbeafe72f352e2f7de"
+        },
+        {
+          "kind": "artifact_payload",
+          "id": "artifact.journals.irish-ecclesiastical-record.1883-third-series-volume-4.native-source-evidence-12569f69f9f1",
+          "path": "src/sources/works/journals/irish-ecclesiastical-record/editions/1883-third-series-volume-4/artifacts/native-source-evidence-12569f69f9f1/source-evidence.pdf",
+          "sha256": "12569f69f9f1a7532d04ae59c5281dc12db849b10f62a0e77b5aae7f8ff678e2"
+        },
+        {
+          "kind": "replay_parent",
+          "path": ".scratch/english-research-leo-xiii/IrishEcclesiasticalRecordV04-1883_djvu.txt",
+          "sha256": "d1531485ea5b039912e422b604a3339b160dfc54319cf14930a8f93cec5ca534"
+        },
+        {
+          "kind": "recipe",
+          "path": "src/sources/works/journals/irish-ecclesiastical-record/editions/1883-third-series-volume-4/artifacts/selection-recipe-4613b2f8193b/selection.json",
+          "sha256": "4613b2f8193bbb0f32844574a24ee65c5e546dc511b5c4615ad6e0f30c061897",
+          "physical_line_ranges": [
+            [
+              42337,
+              42356
+            ],
+            [
+              42368,
+              42418
+            ],
+            [
+              42430,
+              42479
+            ],
+            [
+              42491,
+              42540
+            ],
+            [
+              42552,
+              42603
+            ],
+            [
+              42615,
+              42662
+            ]
+          ]
+        }
+      ],
+      "selector": [
+        [
+          1,
+          37
+        ]
+      ],
+      "replay": {
+        "parent_path": ".scratch/english-research-leo-xiii/IrishEcclesiasticalRecordV04-1883_djvu.txt",
+        "parent_sha256": "d1531485ea5b039912e422b604a3339b160dfc54319cf14930a8f93cec5ca534",
+        "recipe_path": "src/sources/works/journals/irish-ecclesiastical-record/editions/1883-third-series-volume-4/artifacts/selection-recipe-4613b2f8193b/selection.json",
+        "recipe_sha256": "4613b2f8193bbb0f32844574a24ee65c5e546dc511b5c4615ad6e0f30c061897",
+        "physical_line_ranges": [
+          [
+            42337,
+            42356
+          ],
+          [
+            42368,
+            42418
+          ],
+          [
+            42430,
+            42479
+          ],
+          [
+            42491,
+            42540
+          ],
+          [
+            42552,
+            42603
+          ],
+          [
+            42615,
+            42662
+          ]
+        ],
+        "output_sha256": "84876b1b2d5b13b60b14d876d4140f8d4d41f5b97ea31c234ad2c775a351ce31",
+        "pass": true
+      },
+      "title": "Supremi Apostolatus Officio",
+      "status": "PASS",
+      "source_acceptance": "PASS",
+      "selected_text_read_complete": true,
+      "historical_human_translation": true,
+      "translator": "unrecorded; no named translator established",
+      "publication": "Dublin: Browne & Nolan, The Irish Ecclesiastical Record, third series, volume IV (1883), October issue, printed pp. 667–672",
+      "rights_basis": "The historical English translation, its terminal editorial note and the identified journal printing were published in Dublin in 1883, independently confirmed by the native title/imprint and complete act pages. Their United States publication term has expired under src/sources/inventories/papal-documents-rights-v1.toml, including its foreign-publication qualification. The bounded text excludes all Google wrapper and digitizer-furniture wording. Selected flat historical page reproductions preserve incidental Google attribution under the separately recorded treatment in src/sources/inventories/google-usage-guidelines-rights-v1.toml; no general Google license is asserted. Historical/source wording is excluded from Triptych CC BY 4.0.",
+      "actual_opened_images": [
+        {
+          "source_page": 1,
+          "source_pdf": "src/sources/works/journals/irish-ecclesiastical-record/editions/1883-third-series-volume-4/artifacts/native-source-evidence-12569f69f9f1/source-evidence.pdf",
+          "source_pdf_sha256": "12569f69f9f1a7532d04ae59c5281dc12db849b10f62a0e77b5aae7f8ff678e2",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-01/pages/page-1.png",
+          "source_png_sha256": "5254f1ac5b1d6a437e6150faa4342d98128b11dc35ad289235c0ec618df71a34",
+          "source_bytes": 102539,
+          "source_dimensions": [
+            1341,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1341,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-05-act-02-sample-01-5254f1ac5b1d.jpg",
+          "proxy_sha256": "bdda186807aaebb7c67fa72b7f25d6dbc1f13d8850f904196bacba8bd4123740",
+          "proxy_bytes": 331702,
+          "proxy_dimensions": [
+            1341,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-01/pages/page-1.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-05-act-02-sample-01-5254f1ac5b1d.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-01/pages/page-1.png",
+          "act": 2,
+          "sample": 1,
+          "id": "papal.leo-xiii.hf-l-xiii-enc-01091883-supremi-apostolatus-officio.1883-irish-ecclesiastical-record-english",
+          "actual_opened_path": ".scratch/english-intake-recovery/image-proxies/packet-05-act-02-sample-01-5254f1ac5b1d.jpg",
+          "observation": "Native volume title/imprint establishes Irish Ecclesiastical Record, Third Series Volume IV, Dublin Browne and Nolan,1883. Historical all-rights-reserved notice is present and does not negate recorded expired US publication term; incidental Google attribution visible at foot and governed separately.",
+          "fresh_inspection": true,
+          "display_detail": "auto",
+          "source_authority": "source PNG and PDF; JPEG display only; no OCR/extraction from JPEG"
+        },
+        {
+          "source_page": 2,
+          "source_pdf": "src/sources/works/journals/irish-ecclesiastical-record/editions/1883-third-series-volume-4/artifacts/native-source-evidence-12569f69f9f1/source-evidence.pdf",
+          "source_pdf_sha256": "12569f69f9f1a7532d04ae59c5281dc12db849b10f62a0e77b5aae7f8ff678e2",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-01/pages/page-2.png",
+          "source_png_sha256": "4a9f71feb6c2eeb6d873f29e2e1230c18aafabdf464170c5e0405f8e04d689da",
+          "source_bytes": 344102,
+          "source_dimensions": [
+            1325,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1325,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-05-act-02-sample-02-4a9f71feb6c2.jpg",
+          "proxy_sha256": "7b6ebecb8a480072dfb1f41fc22f3083d6db15377529313fda4bbb2f2c7e1812",
+          "proxy_bytes": 906230,
+          "proxy_dimensions": [
+            1325,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-01/pages/page-2.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-05-act-02-sample-02-4a9f71feb6c2.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-01/pages/page-2.png",
+          "act": 2,
+          "sample": 2,
+          "id": "papal.leo-xiii.hf-l-xiii-enc-01091883-supremi-apostolatus-officio.1883-irish-ecclesiastical-record-english",
+          "actual_opened_path": ".scratch/english-intake-recovery/image-proxies/packet-05-act-02-sample-02-4a9f71feb6c2.jpg",
+          "observation": "Printed p667 sharply separates prior Latin curial instrument and subscriptions from English encyclical title/protocol/address and opening. Selected witness begins at correct English title and retains full Catholic-world address and salutation; prior Latin instrument is excluded.",
+          "fresh_inspection": true,
+          "display_detail": "auto",
+          "source_authority": "source PNG and PDF; JPEG display only; no OCR/extraction from JPEG"
+        },
+        {
+          "source_page": 4,
+          "source_pdf": "src/sources/works/journals/irish-ecclesiastical-record/editions/1883-third-series-volume-4/artifacts/native-source-evidence-12569f69f9f1/source-evidence.pdf",
+          "source_pdf_sha256": "12569f69f9f1a7532d04ae59c5281dc12db849b10f62a0e77b5aae7f8ff678e2",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-01/pages/page-3.png",
+          "source_png_sha256": "cdd24fc39baecb4cc0f73b3eb68f8de9d74b3f19748be27172fe6c4194bb2d6c",
+          "source_bytes": 369157,
+          "source_dimensions": [
+            1330,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1330,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-05-act-02-sample-03-cdd24fc39bae.jpg",
+          "proxy_sha256": "dfafe9dbe0714ba9cbfa36dbad66cabf34a18a16230a1c83e8f5133402878191",
+          "proxy_bytes": 1004673,
+          "proxy_dimensions": [
+            1330,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-01/pages/page-3.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-05-act-02-sample-03-cdd24fc39bae.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-01/pages/page-3.png",
+          "act": 2,
+          "sample": 3,
+          "id": "papal.leo-xiii.hf-l-xiii-enc-01091883-supremi-apostolatus-officio.1883-irish-ecclesiastical-record-english",
+          "actual_opened_path": ".scratch/english-intake-recovery/image-proxies/packet-05-act-02-sample-03-cdd24fc39bae.jpg",
+          "observation": "Printed p669 continuous English body about Dominic and Rosary victories matches selected section order. No page-foot historical note; running heading and Google footer excluded from text. Column/order or neighboring-act contamination not detected at this body locus.",
+          "fresh_inspection": true,
+          "display_detail": "auto",
+          "source_authority": "source PNG and PDF; JPEG display only; no OCR/extraction from JPEG"
+        },
+        {
+          "source_page": 7,
+          "source_pdf": "src/sources/works/journals/irish-ecclesiastical-record/editions/1883-third-series-volume-4/artifacts/native-source-evidence-12569f69f9f1/source-evidence.pdf",
+          "source_pdf_sha256": "12569f69f9f1a7532d04ae59c5281dc12db849b10f62a0e77b5aae7f8ff678e2",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-01/pages/page-4.png",
+          "source_png_sha256": "ecc0cb9bd083c49970cd21b924e6269b2970dfaa8be6e74bf491d85074bb55ee",
+          "source_bytes": 343662,
+          "source_dimensions": [
+            1315,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1315,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-05-act-02-sample-04-ecc0cb9bd083.jpg",
+          "proxy_sha256": "41f855a70a44942dab694135faac4433980d7fcc3bf92bf7464b98423f14c01e",
+          "proxy_bytes": 884386,
+          "proxy_dimensions": [
+            1315,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-01/pages/page-4.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-05-act-02-sample-04-ecc0cb9bd083.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-01/pages/page-4.png",
+          "act": 2,
+          "sample": 4,
+          "id": "papal.leo-xiii.hf-l-xiii-enc-01091883-supremi-apostolatus-officio.1883-irish-ecclesiastical-record-english",
+          "actual_opened_path": ".scratch/english-intake-recovery/image-proxies/packet-05-act-02-sample-04-ecc0cb9bd083.jpg",
+          "observation": "Printed p672 retains full blessing, 1 September1883/sixth year closing, Leo PP XIII subscription, and bracketed historical editorial note explaining English printing for October instruction. Selected OCR contains all three, with disclosed 18S8/XIH OCR errors. No omitted own terminal apparatus detected.",
+          "fresh_inspection": true,
+          "display_detail": "auto",
+          "source_authority": "source PNG and PDF; JPEG display only; no OCR/extraction from JPEG"
+        },
+        {
+          "source_page": 3,
+          "source_pdf": "src/sources/works/journals/irish-ecclesiastical-record/editions/1883-third-series-volume-4/artifacts/native-source-evidence-12569f69f9f1/source-evidence.pdf",
+          "source_pdf_sha256": "12569f69f9f1a7532d04ae59c5281dc12db849b10f62a0e77b5aae7f8ff678e2",
+          "source_png": ".scratch/english-intake-recovery/packet-05/audit/supremi-cache/objects/78/787b85b7d3cd55679f2454096bd57e735ee9a97132c0eb1b9932fad48a304537/pages/page-1.png",
+          "source_png_sha256": "4ce436ddcec3789fb3c3cb9074528a7f0bc5503b92ee52841f6b2471cc15248b",
+          "source_dimensions": [
+            1322,
+            2200
+          ],
+          "source_bytes": 382677,
+          "proxy": ".scratch/english-intake-recovery/packet-05/audit/supremi-internal-3.jpg",
+          "proxy_sha256": "1906e2cc77d15e246612a93feae9131c655bccb8fe6aad60026b8bcd1be2544f",
+          "proxy_bytes": 968985,
+          "proxy_dimensions": [
+            1322,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            ".scratch/english-intake-recovery/packet-05/audit/supremi-cache/objects/78/787b85b7d3cd55679f2454096bd57e735ee9a97132c0eb1b9932fad48a304537/pages/page-1.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/packet-05/audit/supremi-internal-3.jpg"
+          ],
+          "purpose": "Review-only JPEG from freshly bounded canonical historical evidence; no OCR/source extraction",
+          "bounded_sample_page": 1,
+          "bounded_sample_pdf": ".scratch/english-intake-recovery/packet-05/audit/supremi-internal-pages.pdf",
+          "bounded_sample_pdf_sha256": "c0422e61ae4786b5cc572652c3a3971d6d8bb536162e9330dd098b81162472d1",
+          "act": 2,
+          "sample": 5,
+          "id": "papal.leo-xiii.hf-l-xiii-enc-01091883-supremi-apostolatus-officio.1883-irish-ecclesiastical-record-english",
+          "actual_opened_path": ".scratch/english-intake-recovery/packet-05/audit/supremi-internal-3.jpg",
+          "observation": "Supplementary printed p668 continues English text from protection/integrity prayer through Marian invocation and start of Albigensian narrative. No page-foot source note appears; selected paragraph stream follows this order, excluding page head and Google footer.",
+          "fresh_inspection": true,
+          "display_detail": "auto",
+          "source_authority": "source PNG and PDF; JPEG display only; no OCR/extraction from JPEG"
+        },
+        {
+          "source_page": 5,
+          "source_pdf": "src/sources/works/journals/irish-ecclesiastical-record/editions/1883-third-series-volume-4/artifacts/native-source-evidence-12569f69f9f1/source-evidence.pdf",
+          "source_pdf_sha256": "12569f69f9f1a7532d04ae59c5281dc12db849b10f62a0e77b5aae7f8ff678e2",
+          "source_png": ".scratch/english-intake-recovery/packet-05/audit/supremi-cache/objects/78/787b85b7d3cd55679f2454096bd57e735ee9a97132c0eb1b9932fad48a304537/pages/page-2.png",
+          "source_png_sha256": "118d1df0d9e2c5126c548a7dfa50d0d33f5f87f44259fcf4a0ca40553bad03eb",
+          "source_dimensions": [
+            1332,
+            2200
+          ],
+          "source_bytes": 382855,
+          "proxy": ".scratch/english-intake-recovery/packet-05/audit/supremi-internal-5.jpg",
+          "proxy_sha256": "f425caf1383c3d5673d2b37fbb9abb7c310ca65455526bfd270a0dc0cfbbedc3",
+          "proxy_bytes": 1030933,
+          "proxy_dimensions": [
+            1332,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            ".scratch/english-intake-recovery/packet-05/audit/supremi-cache/objects/78/787b85b7d3cd55679f2454096bd57e735ee9a97132c0eb1b9932fad48a304537/pages/page-2.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/packet-05/audit/supremi-internal-5.jpg"
+          ],
+          "purpose": "Review-only JPEG from freshly bounded canonical historical evidence; no OCR/source extraction",
+          "bounded_sample_page": 2,
+          "bounded_sample_pdf": ".scratch/english-intake-recovery/packet-05/audit/supremi-internal-pages.pdf",
+          "bounded_sample_pdf_sha256": "c0422e61ae4786b5cc572652c3a3971d6d8bb536162e9330dd098b81162472d1",
+          "act": 2,
+          "sample": 6,
+          "id": "papal.leo-xiii.hf-l-xiii-enc-01091883-supremi-apostolatus-officio.1883-irish-ecclesiastical-record-english",
+          "actual_opened_path": ".scratch/english-intake-recovery/packet-05/audit/supremi-internal-5.jpg",
+          "observation": "Supplementary printed p670 carries Rosary commendations and contemporary appeal in continuous body. No historical page-foot notes or additional apparatus. Current selection includes the body in printed order with disclosed uncorrected OCR defects.",
+          "fresh_inspection": true,
+          "display_detail": "auto",
+          "source_authority": "source PNG and PDF; JPEG display only; no OCR/extraction from JPEG"
+        },
+        {
+          "source_page": 6,
+          "source_pdf": "src/sources/works/journals/irish-ecclesiastical-record/editions/1883-third-series-volume-4/artifacts/native-source-evidence-12569f69f9f1/source-evidence.pdf",
+          "source_pdf_sha256": "12569f69f9f1a7532d04ae59c5281dc12db849b10f62a0e77b5aae7f8ff678e2",
+          "source_png": ".scratch/english-intake-recovery/packet-05/audit/supremi-cache/objects/78/787b85b7d3cd55679f2454096bd57e735ee9a97132c0eb1b9932fad48a304537/pages/page-3.png",
+          "source_png_sha256": "fed8e991ff09b5e755779caff77f252c2af8ab2a11d436b4ad7555024f2e32ee",
+          "source_dimensions": [
+            1333,
+            2200
+          ],
+          "source_bytes": 377046,
+          "proxy": ".scratch/english-intake-recovery/packet-05/audit/supremi-internal-6.jpg",
+          "proxy_sha256": "c43733039aaf069c330b9fcc09075ca305f667825a605435a0874e6786e438f2",
+          "proxy_bytes": 998800,
+          "proxy_dimensions": [
+            1333,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            ".scratch/english-intake-recovery/packet-05/audit/supremi-cache/objects/78/787b85b7d3cd55679f2454096bd57e735ee9a97132c0eb1b9932fad48a304537/pages/page-3.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/packet-05/audit/supremi-internal-6.jpg"
+          ],
+          "purpose": "Review-only JPEG from freshly bounded canonical historical evidence; no OCR/source extraction",
+          "bounded_sample_page": 3,
+          "bounded_sample_pdf": ".scratch/english-intake-recovery/packet-05/audit/supremi-internal-pages.pdf",
+          "bounded_sample_pdf_sha256": "c0422e61ae4786b5cc572652c3a3971d6d8bb536162e9330dd098b81162472d1",
+          "act": 2,
+          "sample": 7,
+          "id": "papal.leo-xiii.hf-l-xiii-enc-01091883-supremi-apostolatus-officio.1883-irish-ecclesiastical-record-english",
+          "actual_opened_path": ".scratch/english-intake-recovery/packet-05/audit/supremi-internal-6.jpg",
+          "observation": "Supplementary printed p671 has continuous Rosary directions and indulgence body, ending across page at sins-committed clause. No own footnotes or detached apparatus. All six English act pages667-672 now freshly inspected for body extent and own-note presence; sole detached historical editorial note is terminal and retained.",
+          "fresh_inspection": true,
+          "display_detail": "auto",
+          "source_authority": "source PNG and PDF; JPEG display only; no OCR/extraction from JPEG"
+        }
+      ],
+      "actual_opened_image_count": 7,
+      "scope_limits": [
+        "Audit is limited to these three exact current historical human English witnesses.",
+        "Uncorrected mechanical OCR is retained; no lexical translation-accuracy certification or word-for-word image collation.",
+        "No full-printing collation beyond the bounded act and publication/identity loci; no compiler/PDF font/layout review, installation, or deployment claim.",
+        "JPEGs are review-only display proxies. Source PNG/PDF pins remain authoritative; no OCR/source extraction from JPEG.",
+        "Prior visual verdicts are not inherited."
+      ],
+      "findings": [
+        {
+          "severity": "info",
+          "code": "historical-human-edition",
+          "finding": "Native title/imprint establishes Irish Ecclesiastical Record, Third Series VolumeIV, Dublin Browne and Nolan,1883. English act prints pp667-672; terminal historical editorial note expressly explains the decision to print in English. Individual translator unrecorded."
+        },
+        {
+          "severity": "info",
+          "code": "complete-printed-body-and-own-apparatus",
+          "finding": "All six English act pages667-672 freshly checked. Complete Catholic-world address, opening, body, blessing,1 September1883/sixth-year closing, Leo PP XIII subscription and bracketed historical editor note are retained. No other detached own notes appear on those pages. Prior Latin curial instrument, page heads and digitizer furniture are excluded."
+        },
+        {
+          "severity": "info",
+          "code": "ocr-defects-disclosed",
+          "finding": "Literal OCR18S8 and XIH differ from the native1883 and XIII. Current metadata states these errors and preserves the exact OCR; source intake acceptance is not correction or lexical collation."
+        },
+        {
+          "severity": "info",
+          "code": "affirmative-artifact-rights",
+          "finding": "Historical1883 English publication independently established from native printing supports current artifact-specific United States expired-term assessment. Retained bounded native evidence has its separate recorded basis, preserving incidental Google attribution under the named repository record; this grants no rights in whole modern journal delivery."
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-03081881-licet-multa.1881-10-dublin-review-english",
+      "language": "en",
+      "source_sha256": "a1b9a51509852951fe675dee5f7efc0bf869d8501e5915e746e16abd602b673b",
+      "row_sha256": "27647a31361dcdc94cbac432174547774e1ae56a82616e8072791b8ab829935d",
+      "source_scope_sha256": "89ef2fc0c9e324031cda1b7a10df0481a791d8f91e2438e09d0b3868c9a0b019",
+      "controller_pin": {
+        "id": "segment.papal.leo-xiii.hf-l-xiii-enc-03081881-licet-multa.1881-10-dublin-review-english.complete-english",
+        "record": "src/sources/works/papal-documents/1881-08-03-papal-leo-xiii-hf-l-xiii-enc-03081881-licet-multa-cafd7f84/editions/1881-10-dublin-review-english/segments/complete-english.toml",
+        "sha256": "b8eaa87ba8d062f2ba3769d4e75242a3e24ecb1a6643e940499871d2162e0f8e"
+      },
+      "proof_pins": [
+        {
+          "kind": "evidence",
+          "path": ".scratch/english-intake-recovery/packet-05/act-03-evidence.json",
+          "sha256": "de32e49c25bcb0b6fa08513fc2cbd3e1561a160ee66763eb40cd3ee316df21c4",
+          "bytes": 34805
+        },
+        {
+          "kind": "source_manifest",
+          "path": "src/sources/papal-documents/historical-english-completion-manifest.json",
+          "sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+          "bytes": 67917
+        },
+        {
+          "kind": "selected_text",
+          "path": ".scratch/english-intake-recovery/packet-05/act-03-selected.txt",
+          "sha256": "a1b9a51509852951fe675dee5f7efc0bf869d8501e5915e746e16abd602b673b",
+          "bytes": 7867
+        },
+        {
+          "kind": "source",
+          "path": "src/sources/works/journals/dublin-review/editions/1881-10-third-series-volume-6/artifacts/historical-english-a1b9a5150985/text.txt",
+          "sha256": "a1b9a51509852951fe675dee5f7efc0bf869d8501e5915e746e16abd602b673b",
+          "bytes": 7867
+        },
+        {
+          "kind": "segment",
+          "path": "src/sources/works/papal-documents/1881-08-03-papal-leo-xiii-hf-l-xiii-enc-03081881-licet-multa-cafd7f84/editions/1881-10-dublin-review-english/segments/complete-english.toml",
+          "sha256": "b8eaa87ba8d062f2ba3769d4e75242a3e24ecb1a6643e940499871d2162e0f8e"
+        },
+        {
+          "kind": "constituent_edition",
+          "path": "src/sources/works/papal-documents/1881-08-03-papal-leo-xiii-hf-l-xiii-enc-03081881-licet-multa-cafd7f84/editions/1881-10-dublin-review-english/edition.toml",
+          "sha256": "da977c080eb3af3e2098caf53662f616cda2673285e648e83fcefb4dce7d8deb"
+        },
+        {
+          "kind": "container_edition",
+          "path": "src/sources/works/journals/dublin-review/editions/1881-10-third-series-volume-6/edition.toml",
+          "sha256": "ed07fc3be4d07b41db21b8d4c3226583eda7ca719010db28fef1ce3586255b80"
+        },
+        {
+          "kind": "artifact_metadata",
+          "id": "artifact.journals.dublin-review.1881-10-third-series-volume-6.historical-english-a1b9a5150985",
+          "path": "src/sources/works/journals/dublin-review/editions/1881-10-third-series-volume-6/artifacts/historical-english-a1b9a5150985/artifact.toml",
+          "sha256": "3d1ab9ecb2197a1ecfcaca507d5aa0760a89d398de802c3b56dea2d4ca4a720c"
+        },
+        {
+          "kind": "artifact_payload",
+          "id": "artifact.journals.dublin-review.1881-10-third-series-volume-6.historical-english-a1b9a5150985",
+          "path": "src/sources/works/journals/dublin-review/editions/1881-10-third-series-volume-6/artifacts/historical-english-a1b9a5150985/text.txt",
+          "sha256": "a1b9a51509852951fe675dee5f7efc0bf869d8501e5915e746e16abd602b673b"
+        },
+        {
+          "kind": "artifact_metadata",
+          "id": "artifact.journals.dublin-review.1881-10-third-series-volume-6.native-source-evidence-980d830690ae",
+          "path": "src/sources/works/journals/dublin-review/editions/1881-10-third-series-volume-6/artifacts/native-source-evidence-980d830690ae/artifact.toml",
+          "sha256": "c0c353e8dd8dfcd290cb042e6dd7868ef7cec7d783769fa48d9459ef3dc9702c"
+        },
+        {
+          "kind": "artifact_payload",
+          "id": "artifact.journals.dublin-review.1881-10-third-series-volume-6.native-source-evidence-980d830690ae",
+          "path": "src/sources/works/journals/dublin-review/editions/1881-10-third-series-volume-6/artifacts/native-source-evidence-980d830690ae/source-evidence.pdf",
+          "sha256": "980d830690ae8a98493710c2d8dfd92502fd6d17162d50f387794176d7c09147"
+        },
+        {
+          "kind": "artifact_metadata",
+          "id": "artifact.journals.dublin-review.1881-10-third-series-volume-6.source-ocr-5f7772c6f76a",
+          "path": "src/sources/works/journals/dublin-review/editions/1881-10-third-series-volume-6/artifacts/source-ocr-5f7772c6f76a/artifact.toml",
+          "sha256": "9a2e0076d3c0ed087072a82c29bf8cf18917bb24cc821062b64d0bb4df208360"
+        },
+        {
+          "kind": "artifact_payload",
+          "id": "artifact.journals.dublin-review.1881-10-third-series-volume-6.source-ocr-5f7772c6f76a",
+          "path": "src/sources/works/journals/dublin-review/editions/1881-10-third-series-volume-6/artifacts/source-ocr-5f7772c6f76a/sim_dublin-review_1881-10_6_djvu.txt",
+          "sha256": "5f7772c6f76a5aa3b095a2e30e0fb35a92d2b0e12741a831a1763136143cf0f7"
+        },
+        {
+          "kind": "artifact_metadata",
+          "id": "artifact.journals.dublin-review.1881-10-third-series-volume-6.selection-recipe-6e6d1cfc5070",
+          "path": "src/sources/works/journals/dublin-review/editions/1881-10-third-series-volume-6/artifacts/selection-recipe-6e6d1cfc5070/artifact.toml",
+          "sha256": "ce6a82505c6d9a0d03dd2460f6119e1b1ea791baa49202bf9bba8f8815e13c08"
+        },
+        {
+          "kind": "artifact_payload",
+          "id": "artifact.journals.dublin-review.1881-10-third-series-volume-6.selection-recipe-6e6d1cfc5070",
+          "path": "src/sources/works/journals/dublin-review/editions/1881-10-third-series-volume-6/artifacts/selection-recipe-6e6d1cfc5070/selection.json",
+          "sha256": "6e6d1cfc50709ff1d3c961ed441f048998ebaf6202dfa60d64466a06d9a45b34"
+        },
+        {
+          "kind": "artifact_metadata",
+          "id": "artifact.journals.dublin-review.1881-10-third-series-volume-6.extent-review-b24709da3338",
+          "path": "src/sources/works/journals/dublin-review/editions/1881-10-third-series-volume-6/artifacts/extent-review-b24709da3338/artifact.toml",
+          "sha256": "29f6d531c9e16390df7be3972797a99194331245636171b9ba778b015992deb5"
+        },
+        {
+          "kind": "artifact_payload",
+          "id": "artifact.journals.dublin-review.1881-10-third-series-volume-6.extent-review-b24709da3338",
+          "path": "src/sources/works/journals/dublin-review/editions/1881-10-third-series-volume-6/artifacts/extent-review-b24709da3338/extent-review.json",
+          "sha256": "b24709da33383fd658ef5e6b3f10867069cb52546957e66942d7503bbac0bb33"
+        },
+        {
+          "kind": "artifact_metadata",
+          "id": "artifact.journals.dublin-review.1881-10-third-series-volume-6.whole-facsimile-ec089a4b9045",
+          "path": "src/sources/works/journals/dublin-review/editions/1881-10-third-series-volume-6/artifacts/whole-facsimile-ec089a4b9045/artifact.toml",
+          "sha256": "6ae0323e791357ff2326e14c409b4bd5221bec1cd93ebf222da15fd3858cb25d"
+        },
+        {
+          "kind": "replay_parent",
+          "path": "src/sources/works/journals/dublin-review/editions/1881-10-third-series-volume-6/artifacts/source-ocr-5f7772c6f76a/sim_dublin-review_1881-10_6_djvu.txt",
+          "sha256": "5f7772c6f76a5aa3b095a2e30e0fb35a92d2b0e12741a831a1763136143cf0f7"
+        },
+        {
+          "kind": "recipe",
+          "path": "src/sources/works/journals/dublin-review/editions/1881-10-third-series-volume-6/artifacts/selection-recipe-6e6d1cfc5070/selection.json",
+          "sha256": "6e6d1cfc50709ff1d3c961ed441f048998ebaf6202dfa60d64466a06d9a45b34",
+          "physical_line_ranges": [
+            [
+              10706,
+              10756
+            ],
+            [
+              10768,
+              10818
+            ],
+            [
+              10836,
+              10863
+            ]
+          ]
+        }
+      ],
+      "selector": [
+        [
+          1,
+          17
+        ]
+      ],
+      "replay": {
+        "parent_path": "src/sources/works/journals/dublin-review/editions/1881-10-third-series-volume-6/artifacts/source-ocr-5f7772c6f76a/sim_dublin-review_1881-10_6_djvu.txt",
+        "parent_sha256": "5f7772c6f76a5aa3b095a2e30e0fb35a92d2b0e12741a831a1763136143cf0f7",
+        "recipe_path": "src/sources/works/journals/dublin-review/editions/1881-10-third-series-volume-6/artifacts/selection-recipe-6e6d1cfc5070/selection.json",
+        "recipe_sha256": "6e6d1cfc50709ff1d3c961ed441f048998ebaf6202dfa60d64466a06d9a45b34",
+        "physical_line_ranges": [
+          [
+            10706,
+            10756
+          ],
+          [
+            10768,
+            10818
+          ],
+          [
+            10836,
+            10863
+          ]
+        ],
+        "output_sha256": "a1b9a51509852951fe675dee5f7efc0bf869d8501e5915e746e16abd602b673b",
+        "pass": true
+      },
+      "title": "Licet Multa",
+      "status": "PASS",
+      "source_acceptance": "PASS",
+      "selected_text_read_complete": true,
+      "historical_human_translation": true,
+      "translator": "unrecorded; no named translator established",
+      "publication": "The Dublin Review, third series, volume 6, no. 2 (October 1881), printed pp. 465–467",
+      "rights_basis": "The English translation and historical journal material were actually printed in the identified October 1881 issue, as confirmed by the native issue opening and all three constituent pages. Their United States publication term has expired under the recorded pre-1931 basis in src/sources/inventories/papal-documents-rights-v1.toml, including its foreign-publication qualification. Faithful mechanical OCR and flat-page reproduction add no new source wording. Historical/source wording is excluded from Triptych CC BY 4.0.",
+      "actual_opened_images": [
+        {
+          "source_page": 1,
+          "source_pdf": "src/sources/works/journals/dublin-review/editions/1881-10-third-series-volume-6/artifacts/native-source-evidence-980d830690ae/source-evidence.pdf",
+          "source_pdf_sha256": "980d830690ae8a98493710c2d8dfd92502fd6d17162d50f387794176d7c09147",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-02/pages/page-1.png",
+          "source_png_sha256": "6606b44dd6c1d856c54c3db018ca4ac426650045c8a5f9c4ddab6f0a4c4636f4",
+          "source_bytes": 1360267,
+          "source_dimensions": [
+            1400,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1400,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-05-act-03-sample-01-6606b44dd6c1.jpg",
+          "proxy_sha256": "7a00cdb21cff0c549c94b867a984a1410477aee71492440d314b5a28741033e3",
+          "proxy_bytes": 643600,
+          "proxy_dimensions": [
+            1400,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-02/pages/page-1.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-05-act-03-sample-01-6606b44dd6c1.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-05-act-03-sample-01-6606b44dd6c1.jpg",
+          "act": 3,
+          "sample": 1,
+          "id": "papal.leo-xiii.hf-l-xiii-enc-03081881-licet-multa.1881-10-dublin-review-english",
+          "actual_opened_path": ".scratch/english-intake-recovery/image-proxies/packet-05-act-03-sample-01-6606b44dd6c1.jpg",
+          "observation": "Native issue opening establishes The Dublin Review, October1881, Volume VI No II Third Series. This independently dates the journal English publication, rather than inferring publication from papal closing date.",
+          "fresh_inspection": true,
+          "display_detail": "auto",
+          "source_authority": "source PNG and PDF; JPEG display only; no OCR/extraction from JPEG"
+        },
+        {
+          "source_page": 2,
+          "source_pdf": "src/sources/works/journals/dublin-review/editions/1881-10-third-series-volume-6/artifacts/native-source-evidence-980d830690ae/source-evidence.pdf",
+          "source_pdf_sha256": "980d830690ae8a98493710c2d8dfd92502fd6d17162d50f387794176d7c09147",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-02/pages/page-2.png",
+          "source_png_sha256": "21fba0b5c8bb50b3efc58894335ff9a85229a73d389c86c4fa599af6d64b1ea7",
+          "source_bytes": 1933560,
+          "source_dimensions": [
+            1419,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1419,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-05-act-03-sample-02-21fba0b5c8bb.jpg",
+          "proxy_sha256": "b949021b03374e8adee5be45a2e3b852b765cf6b0978e7f974b323853887726d",
+          "proxy_bytes": 915141,
+          "proxy_dimensions": [
+            1419,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-02/pages/page-2.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-05-act-03-sample-02-21fba0b5c8bb.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-05-act-03-sample-02-21fba0b5c8bb.jpg",
+          "act": 3,
+          "sample": 2,
+          "id": "papal.leo-xiii.hf-l-xiii-enc-03081881-licet-multa.1881-10-dublin-review-english",
+          "actual_opened_path": ".scratch/english-intake-recovery/image-proxies/packet-05-act-03-sample-02-21fba0b5c8bb.jpg",
+          "observation": "Printed p465 in Prospects in Belgium separates article introduction from papal heading Leo XIII Pope, Dear Son/Venerable Brethren salutation and English body. The selected starts with heading/salutation, excludes introductory editorial identification only. No separate formal recipient address or historical footnote appears at this printed start.",
+          "fresh_inspection": true,
+          "display_detail": "auto",
+          "source_authority": "source PNG and PDF; JPEG display only; no OCR/extraction from JPEG"
+        },
+        {
+          "source_page": 3,
+          "source_pdf": "src/sources/works/journals/dublin-review/editions/1881-10-third-series-volume-6/artifacts/native-source-evidence-980d830690ae/source-evidence.pdf",
+          "source_pdf_sha256": "980d830690ae8a98493710c2d8dfd92502fd6d17162d50f387794176d7c09147",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-02/pages/page-3.png",
+          "source_png_sha256": "ff00d4ef7f26b09aafa9532bc4b55f89f220b813fec42f214ea8418ebcd51e4b",
+          "source_bytes": 1996043,
+          "source_dimensions": [
+            1405,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1405,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-05-act-03-sample-03-ff00d4ef7f26.jpg",
+          "proxy_sha256": "f9f4f8c19f4dd700797ab541e330e89c2642eee2a9c521d4e4aabd283ff0fb71",
+          "proxy_bytes": 938307,
+          "proxy_dimensions": [
+            1405,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-02/pages/page-3.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-05-act-03-sample-03-ff00d4ef7f26.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-05-act-03-sample-03-ff00d4ef7f26.jpg",
+          "act": 3,
+          "sample": 3,
+          "id": "papal.leo-xiii.hf-l-xiii-enc-03081881-licet-multa.1881-10-dublin-review-english",
+          "actual_opened_path": ".scratch/english-intake-recovery/image-proxies/packet-05-act-03-sample-03-ff00d4ef7f26.jpg",
+          "observation": "Printed p466 is continuous papal English body on Catholic public controversy and teaching. Selected body follows printed order through the page boundary. No footnote apparatus, body omission, or interleaved article text detected on this page.",
+          "fresh_inspection": true,
+          "display_detail": "auto",
+          "source_authority": "source PNG and PDF; JPEG display only; no OCR/extraction from JPEG"
+        },
+        {
+          "source_page": 4,
+          "source_pdf": "src/sources/works/journals/dublin-review/editions/1881-10-third-series-volume-6/artifacts/native-source-evidence-980d830690ae/source-evidence.pdf",
+          "source_pdf_sha256": "980d830690ae8a98493710c2d8dfd92502fd6d17162d50f387794176d7c09147",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-02/pages/page-4.png",
+          "source_png_sha256": "47182c4817d914e4a9a22c02a91289126f1ce08742ecea8030f1d7e9f25fc998",
+          "source_bytes": 1938668,
+          "source_dimensions": [
+            1405,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1405,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-05-act-03-sample-04-47182c4817d9.jpg",
+          "proxy_sha256": "ce345dcbffff5bff507995db6ae10c02b65c8b7e26ca8521ba46d95461f81b78",
+          "proxy_bytes": 927516,
+          "proxy_dimensions": [
+            1405,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-02/pages/page-4.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-05-act-03-sample-04-47182c4817d9.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-05-act-03-sample-04-47182c4817d9.jpg",
+          "act": 3,
+          "sample": 4,
+          "id": "papal.leo-xiii.hf-l-xiii-enc-03081881-licet-multa.1881-10-dublin-review-english",
+          "actual_opened_path": ".scratch/english-intake-recovery/image-proxies/packet-05-act-03-sample-04-47182c4817d9.jpg",
+          "observation": "Printed p467 finishes papal teaching, benediction, 3 August1881/fourth year dating and Leo XIII Pope subscription; selected stops at subscription. Subsequent article commentary clearly separated and excluded. No papal own footnote or terminal historical act note appears in complete three-page printing.",
+          "fresh_inspection": true,
+          "display_detail": "auto",
+          "source_authority": "source PNG and PDF; JPEG display only; no OCR/extraction from JPEG"
+        }
+      ],
+      "actual_opened_image_count": 4,
+      "scope_limits": [
+        "Audit is limited to these three exact current historical human English witnesses.",
+        "Uncorrected mechanical OCR is retained; no lexical translation-accuracy certification or word-for-word image collation.",
+        "No full-printing collation beyond the bounded act and publication/identity loci; no compiler/PDF font/layout review, installation, or deployment claim.",
+        "JPEGs are review-only display proxies. Source PNG/PDF pins remain authoritative; no OCR/source extraction from JPEG.",
+        "Prior visual verdicts are not inherited."
+      ],
+      "findings": [
+        {
+          "severity": "info",
+          "code": "historical-human-edition",
+          "finding": "Native issue opening identifies Dublin Review, October1881, VolumeVI NoII, Third Series. Its English translation of Leo XIII Licet Multa appears within Prospects in Belgium, pp465-467. Individual translator unrecorded."
+        },
+        {
+          "severity": "info",
+          "code": "complete-printed-body-and-own-apparatus",
+          "finding": "All three act pages freshly checked. Printed Leo XIII heading, Dear Son/Venerable Brethren salutation, complete body extent, blessing,3 August1881/fourth-year dating and subscription are retained. No separate formal recipient address or own footnote/endnote apparatus appears in this printing. Surrounding editorial introduction and subsequent article commentary are excluded."
+        },
+        {
+          "severity": "info",
+          "code": "affirmative-artifact-rights",
+          "finding": "Native October1881 publication identifies the actual historical English translation independently from act date. Current artifact-specific United States expired-term basis covers retained historical text and bounded native facsimile. Uncorrected OCR limitations remain explicit."
+        }
+      ],
+      "blockers": []
+    }
+  ],
+  "blockers": [],
+  "scope_limits": [
+    "Audit is limited to these three exact current historical human English witnesses.",
+    "Uncorrected mechanical OCR is retained; no lexical translation-accuracy certification or word-for-word image collation.",
+    "No full-printing collation beyond the bounded act and publication/identity loci; no compiler/PDF font/layout review, installation, or deployment claim.",
+    "JPEGs are review-only display proxies. Source PNG/PDF pins remain authoritative; no OCR/source extraction from JPEG.",
+    "Prior visual verdicts are not inherited."
+  ],
+  "mechanical_verification": {
+    "path": ".scratch/english-intake-recovery/packet-05/audit/mechanical-checks.json",
+    "sha256": "40f5acec52dcb9b8bcffcedfc5c5bd2388b9ad728102cb5fa5c3af6619690815",
+    "checks_executed": 316,
+    "all_checks_pass": true
+  }
+}

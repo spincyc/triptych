@@ -29,6 +29,36 @@
    "storage": "tracked"
   },
   {
+   "artifact_type": "bounded-source-note-block-derivative",
+   "byte_size": 16712,
+   "edition_owned": true,
+   "id": "artifact.acta-papal-archives.aas.013.historical-text-9bf27994.note-blocks-in-praeclara-la-87f0d8b56478",
+   "media_type": "text/plain",
+   "notes": "Bounded act text, not the whole containing volume. Literal OCR, source spacing, source notes, closing and subscription remain unchanged. No original-print image or whole-word collation is claimed. Replay helper scripts/_papal_source_notes.py SHA-256 at registration: a0b31d45f498bec3a12a29cdff28da38f3e01cc02c50e5de8a9a65e4a82a9d57.",
+   "page_count": null,
+   "retrieved": "2026-10-30",
+   "rights": "public-domain",
+   "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. {\"artifact_page_ranges\": [[1, 1]], \"completion_colophon_line_ranges\": [[27234, 27234]], \"completion_colophon_raw\": \"          ABSOLVITUR   DIE   29   DEC.   1921.   -   TYPIS   POLYGLOTTIS      VATICANIS\", \"evidence\": \"Title and imprint in the acquired Vatican OCR PDF identify Acta Apostolicae Sedis, the annual volume, ROMAE / TYPIS POLYGLOTTIS VATICANIS and its Roman-numeral publication year. This is edition provenance, not facsimile collation.\", \"physical_line_ranges\": [[1, 17]], \"publication_year\": 1921} The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "source-note-block-partition-spec",
+   "byte_size": 922,
+   "edition_owned": true,
+   "id": "artifact.acta-papal-archives.aas.013.historical-text-9bf27994.note-spec-in-praeclara-la-8094e4bb4b8f",
+   "media_type": "application/json",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-10-30",
+   "rights": "licensed",
+   "rights_basis": "Project-created exact source-selection and LF note-partition specification is licensed CC BY 4.0; historical source wording retains its separate rights.",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
    "artifact_type": "archival-ocr-pdf",
    "byte_size": 2731780,
    "edition_owned": true,

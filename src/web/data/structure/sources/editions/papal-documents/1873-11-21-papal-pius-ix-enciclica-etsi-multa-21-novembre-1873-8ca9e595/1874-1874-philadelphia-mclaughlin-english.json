@@ -1,0 +1,85 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "historical-native-pages",
+   "byte_size": 1079291,
+   "edition_owned": true,
+   "id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.historical-facsimile-597fbc3a7c70",
+   "media_type": "application/pdf",
+   "notes": "Anonymous historical English translation, examined by the Bishop of Philadelphia and published with his approbation according to the title page. Printed pp.3–23 contain the complete papal body, source notes, 21 November 1873 dating clause and PIUS PP. IX subscription. All 21 native act pages and the title leaf were inspected; the full OCR was read. The ornamental PIUS PP. IX heading above the salutation and the initial ornamental A are not recognized by the offered OCR; the gothic salutation is garbled. These are disclosed OCR defects, not supplied from memory; all are retained in the native facsimile. No word-for-word collation or corrected text is claimed.",
+   "page_count": 22,
+   "retrieved": "2026-10-29",
+   "rights": "public-domain",
+   "rights_basis": "The identified Philadelphia McLaughlin Brothers English pamphlet is dated 1874 on its historical title leaf and in the State Library of Pennsylvania catalogue. Its English text and contemporary printed pages are public domain in the United States by expiration of publication term, under src/sources/inventories/papal-documents-rights-v1.toml. Automated OCR adds no original authorship. The modern Internet Archive funding/digitization leaf is excluded from retained native pages and text.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/encyclicalletter00cath_6/encyclicalletter00cath_6.pdf",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "historical-ocr-with-recipient-address",
+   "byte_size": 40194,
+   "edition_owned": true,
+   "id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.historical-ocr-with-address-94992a97e46c",
+   "media_type": "text/plain",
+   "notes": "The 1874 Philadelphia title leaf prints the substantive recipient address, not repeated on body p.3: exact raw OCR LF14–15. This replacement includes those address lines and their adjacent blank lines LF16–17 before the unchanged complete former body selection LF38–856. It retains source notes, 21 November 1873 dating clause and PIUS PP. IX subscription. Native title/body proof pages were checked against the exact address bounds. The prior selector omitted this address and is superseded; prior source payloads remain unchanged. The offered OCR still fails to recognize the ornamental issuer heading and initial A, and garbles the gothic salutation; no English wording or OCR words are corrected. Anonymous historical human translation, examined by the Bishop of Philadelphia and published with his approbation.",
+   "page_count": null,
+   "retrieved": "2026-10-30",
+   "rights": "public-domain",
+   "rights_basis": "The identified Philadelphia McLaughlin Brothers English pamphlet is dated 1874 on its historical title leaf and in the State Library of Pennsylvania catalogue. Its English text and contemporary printed pages are public domain in the United States by expiration of publication term, under src/sources/inventories/papal-documents-rights-v1.toml. Automated OCR adds no original authorship. The modern Internet Archive funding/digitization leaf is excluded from retained native pages and text.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/encyclicalletter00cath_6/encyclicalletter00cath_6_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "offered-ocr",
+   "byte_size": 40846,
+   "edition_owned": true,
+   "id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.raw-ocr-5654c8ef2c54",
+   "media_type": "text/plain",
+   "page_count": null,
+   "retrieved": "2026-10-29",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/encyclicalletter00cath_6/encyclicalletter00cath_6_djvu.txt",
+   "storage": "restricted"
+  },
+  {
+   "artifact_type": "native-facsimile-delivery",
+   "byte_size": 976488,
+   "edition_owned": true,
+   "id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.raw-pdf-07fffb8c916a",
+   "media_type": "application/pdf",
+   "page_count": 24,
+   "retrieved": "2026-10-29",
+   "rights": "unresolved",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/encyclicalletter00cath_6/encyclicalletter00cath_6.pdf",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1874",
+  "editors": [],
+  "id": "edition.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "Philadelphia: McLaughlin Brothers, 112 and 114 South Third Street, 1874",
+  "title": "Etsi multa — 1874 Philadelphia historical English translation",
+  "translators": [],
+  "year": 1874
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Pius IX",
+  "category": "encyclical",
+  "description": "Papal act dated 1873-11-21; identified from the Holy See index. Index metadata establishes discovery identity, not whole-text verification. https://www.vatican.va/content/pius-ix/en.html https://www.vatican.va/content/pius-ix/it.html",
+  "id": "work.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
+  "languages": [
+   "it"
+  ],
+  "title": "Etsi multa"
+ }
+}

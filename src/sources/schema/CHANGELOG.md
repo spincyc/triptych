@@ -1,5 +1,23 @@
 # Source Schema Changelog
 
+## Further bounded English source-admission ownership — added 2026-10-30
+
+The papal inventory additionally owns the exact report/scope pairs
+`historical-english-source-intake-01.json` and `-01-scope.json`, the same
+pairs for packets `04` through `08`, and
+`historical-english-source-intake-supplement.json`. Each filename retains
+its own typed envelope; the existing `02` and `03` owners remain unchanged.
+The supplement records qualified-imprint and native-order successors,
+and distinguishes historical raw report hashes from the path-normalized
+publication copies that current consumers actually pin.
+
+These remain source-admission judgments. Recognition creates no source
+records, verified passages, bindings or PDF-layout acceptance. Unknown
+filenames, wrong schemas and missing or wrongly typed fields are rejected.
+The library-cache namespace advances from `2` to `3` so prior cached
+unknown-envelope rejections cannot survive this ownership update. Source
+fingerprints, rights, search and review-state meanings are unchanged.
+
 ## Bounded English source-admission inventory ownership — added 2026-10-30
 
 The papal collection owns exactly `historical-english-source-intake-02.json`,

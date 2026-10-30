@@ -1,0 +1,91 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "bounded-historical-english-ocr",
+   "byte_size": 12377,
+   "edition_owned": true,
+   "id": "artifact.journals.catholic-mind.1921-08-22-volume-19-issue-16.english-reading-65d6e7c7b07c",
+   "media_type": "text/plain",
+   "notes": "The printing credits the Boston Pilot translation. Exact complete printed act extent pp. 301–306. Source OCR recognition, punctuation and line-end hyphen fragments remain; no corrected translation or full lexical image collation is claimed. Historical notes remain distinct blank-line blocks.",
+   "page_count": null,
+   "retrieved": "2026-10-29",
+   "rights": "public-domain",
+   "rights_basis": "The native issue masthead identifies this United States printing as The Catholic Mind 19, no. 16, 1921-08-22. The historical English translation and contemporary issue material were published by 1930 and are public domain in the United States by expiration of the publication term. This applies to the identified printing, independently of the act date; modern host markup is excluded.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/sim_catholic-mind_1921-08-22_19_16/sim_catholic-mind_1921-08-22_19_16_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "source-extent-review",
+   "byte_size": 1620,
+   "edition_owned": true,
+   "id": "artifact.journals.catholic-mind.1921-08-22-volume-19-issue-16.extent-review-5fb0b41ac3b1",
+   "media_type": "application/json",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-10-29",
+   "rights": "licensed",
+   "rights_basis": "Project-created source identity, exact extent and inspection record.",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "whole-historical-issue-ocr",
+   "byte_size": 44910,
+   "edition_owned": true,
+   "id": "artifact.journals.catholic-mind.1921-08-22-volume-19-issue-16.ia-ocr-03571c2ca8fc",
+   "media_type": "text/plain",
+   "notes": "Complete exact openly offered issue OCR, unchanged. Recognition and occasional neighboring-page margin fragments remain in this parent.",
+   "page_count": null,
+   "retrieved": "2026-10-29",
+   "rights": "public-domain",
+   "rights_basis": "The native issue masthead identifies this United States printing as The Catholic Mind 19, no. 16, 1921-08-22. The historical English translation and contemporary issue material were published by 1930 and are public domain in the United States by expiration of the publication term. This applies to the identified printing, independently of the act date; modern host markup is excluded.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/sim_catholic-mind_1921-08-22_19_16/sim_catholic-mind_1921-08-22_19_16_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "literal-source-selection",
+   "byte_size": 4444,
+   "edition_owned": true,
+   "id": "artifact.journals.catholic-mind.1921-08-22-volume-19-issue-16.selection-recipe-a26f7e321abd",
+   "media_type": "application/json",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-10-29",
+   "rights": "licensed",
+   "rights_basis": "Project-created exact physical-line selectors and source-extent metadata; historical short quoted spans retain their source status.",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": "Contemporary historical English periodical printing",
+  "date": "1921-08-22",
+  "editors": [],
+  "id": "edition.journals.catholic-mind.1921-08-22-volume-19-issue-16",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "New York: The America Press; 1921-08-22.",
+  "title": "The Catholic Mind, volume 19, no. 16 (1921-08-22)",
+  "translators": [],
+  "year": 1921
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Catholic Mind"
+  ],
+  "author": "America Press",
+  "category": "periodical",
+  "description": "English Catholic periodical. Exact acquired issues own their original scans/OCR and bounded constituent acts; an issue date identifies its historical publication, not the date of an act reprinted within it.",
+  "id": "work.journals.catholic-mind",
+  "languages": [
+   "en"
+  ],
+  "title": "The Catholic Mind"
+ }
+}

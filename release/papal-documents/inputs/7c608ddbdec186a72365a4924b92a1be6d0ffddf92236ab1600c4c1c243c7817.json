@@ -1,0 +1,56 @@
+{
+  "schema": "triptych-papal-typeset/v1",
+  "revision": "2026-10-30T14:15:40Z",
+  "documents": [
+    {
+      "artifact_id": "artifact.acta-papal-archives.ass.006.historical-text-6f710d76.note-blocks-ubi-nos-32ae8d62360d",
+      "collection_corpus": "acta",
+      "date": "1871-05-15",
+      "document_type": "encyclical",
+      "edition_id": "edition.acta-papal-archives.ass.006.ass-006-act-011",
+      "id": "acta.ass.006.ass-006-act-011",
+      "language": "la",
+      "physical_line_ranges": [
+        [
+          1,
+          270
+        ]
+      ],
+      "pope": "Pius IX",
+      "revision": "2026-10-30T14:15:40Z",
+      "rights_basis": "United States public domain: identified historical printing published by 1930; expired maximum term under 17 U.S.C. 304–305, with 104A remainder where applicable. Title leaf Rome, Typis Polyglottae Officinae S.C. de Propaganda Fide, MDCCCLXX (OCR MDCC&LXX), lines31–35. Modern Johnson first reprinting1968 at56–57; historical ANIMADVERSIO42–51 retained. The mechanical historical-text derivative excludes separately identified modern wrappers and makes no claim over modern creative revision. Rights position: src/sources/inventories/papal-documents-rights-v1.toml. Source wording is excluded from Triptych's CC BY 4.0 license.",
+      "rights_notice": "Historical source wording is public domain in the United States on its identified pre-1931 publication basis; status elsewhere may differ. Source wording is excluded from Triptych's project license. Exact edition and rights evidence remain in the controlling source record.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.acta-papal-archives.ass.006.ass-006-act-011.note-blocks-32ae8d62360d",
+      "segment_path": "src/sources/works/papal-documents/1871-05-15-papal-pius-ix-epistola-encyclica-ubi-nos-15-maii-1871-093e217b/editions/1870-acta-ass-006-ass-006-act-011/segments/note-blocks-ubi-nos-32ae8d62360d.toml",
+      "sha256": "32ae8d62360d0e1aaff37690389cb3b6a4e3cd2fe523e7fda754bd081574fc38",
+      "source_note": "ASS 6 (1870), printed pages 257–263. Whole act from source-supported heading through dating/signature; historical source notes within bounds retained. OCR is not facsimile collation. Explicit LF-only source-note partition at existing source breaks; all source words, source furniture and order retained. Native OCR note geometry checked; no original-print or lexical collation.",
+      "source_url": "https://www.vatican.va/archive/ass/documents/ASS-06-1870-71-ocr.pdf",
+      "text_path": "src/sources/works/holy-see/acta-sanctae-sedis/editions/volume-6-1870-1871/artifacts/note-blocks-ubi-nos-32ae8d62360d/text.txt",
+      "title": "Ubi Nos",
+      "work_id": "work.papal.pius-ix.epistola-encyclica-ubi-nos-15-maii-1871",
+      "compact_layout": true
+    }
+  ],
+  "supersessions": [
+    {
+      "prior": {
+        "id": "acta.ass.006.ass-006-act-011",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.006.historical-text-6f710d76",
+        "segment_id": "segment.acta-papal-archives.ass.006.ass-006-act-011",
+        "source_sha256": "6f710d76d851369aa5ea49b7fefa65c2279ee93cf1c54f3555e5365f4fbb628a",
+        "pdf_sha256": "6a813d5aa891b75bc334192d8d994636e933c0b5493be641ebc97af3c665f7ba"
+      },
+      "replacement": {
+        "id": "acta.ass.006.ass-006-act-011",
+        "language": "la",
+        "artifact_id": "artifact.acta-papal-archives.ass.006.historical-text-6f710d76.note-blocks-ubi-nos-32ae8d62360d",
+        "segment_id": "segment.acta-papal-archives.ass.006.ass-006-act-011.note-blocks-32ae8d62360d",
+        "source_sha256": "32ae8d62360d0e1aaff37690389cb3b6a4e3cd2fe523e7fda754bd081574fc38",
+        "revision": "2026-10-30T14:15:40Z"
+      },
+      "reason": "LF-only note/body paragraph repair. Supersedes the exact classic PDF; the earlier installed reader sharing this source is also superseded as explicitly recorded in the source review. Prior records remain historical."
+    }
+  ]
+}

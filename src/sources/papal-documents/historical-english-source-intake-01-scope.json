@@ -1,0 +1,99 @@
+{
+  "schema": "triptych-three-act-source-cold-audit/v1",
+  "packet": 1,
+  "expected_count": 3,
+  "expected_keys": [
+    [
+      "historical-english.pius-x.hf-p-x-enc-05041906-tribus-circiter.1906-07-catholic-university-bulletin-english",
+      "en"
+    ],
+    [
+      "historical-english.pius-x.hf-p-x-enc-10081906-gravissimo-officii-munere.1906-10-catholic-university-bulletin-english",
+      "en"
+    ],
+    [
+      "historical-english.pius-x.hf-p-x-enc-24091912-singulari-quadam.1920-ryan-husslein-church-and-labor-english",
+      "en"
+    ]
+  ],
+  "documents": [
+    {
+      "key": [
+        "historical-english.pius-x.hf-p-x-enc-05041906-tribus-circiter.1906-07-catholic-university-bulletin-english",
+        "en"
+      ],
+      "title": "Tribus circiter",
+      "row_sha256": "04feaf57db90765f21fbc6a1e86f40001e8a7b7f4ff5d3e6d641b2705347edb0",
+      "source_sha256": "39fc40d934c4dff2b0ce7affa8dfb580792a3bb3374a6eb98ad8296234d5e83c",
+      "evidence": {
+        "path": ".scratch/english-intake-recovery/packet-01/act-01-evidence.json",
+        "sha256": "bfb7b3c7efb83603499defca23999f25ece6c0415917b161953b6edc2ed25b55",
+        "bytes": 36315
+      },
+      "selection": {
+        "path": ".scratch/english-intake-recovery/packet-01/act-01-selected.txt",
+        "sha256": "a8102525514a69a4f0080cfff806280dba270ef611941398be40844b09f24bff",
+        "bytes": 12806
+      },
+      "controller_pin": {
+        "id": "segment.papal.pius-x.hf-p-x-enc-05041906-tribus-circiter.1906-07-catholic-university-bulletin-english",
+        "record": "src/sources/works/papal-documents/1906-04-05-papal-pius-x-hf-p-x-enc-05041906-tribus-circiter-ff59a7f6/editions/1906-07-catholic-university-bulletin-english/segments/historical-english.toml",
+        "sha256": "c623660b02ce8680e1490a7dd19849c9babf270618c76c0a9faeba99d6120773"
+      }
+    },
+    {
+      "key": [
+        "historical-english.pius-x.hf-p-x-enc-10081906-gravissimo-officii-munere.1906-10-catholic-university-bulletin-english",
+        "en"
+      ],
+      "title": "Gravissimo officii munere",
+      "row_sha256": "473e55aed2727ecb33c4c4ad083d7d7f0c5d1c32ded1a1783ad854a5bf598a30",
+      "source_sha256": "39fc40d934c4dff2b0ce7affa8dfb580792a3bb3374a6eb98ad8296234d5e83c",
+      "evidence": {
+        "path": ".scratch/english-intake-recovery/packet-01/act-02-evidence.json",
+        "sha256": "9aab36777c338717f6ecb9ff0be4cf90f1af565878dd0f721368d18d66153098",
+        "bytes": 34601
+      },
+      "selection": {
+        "path": ".scratch/english-intake-recovery/packet-01/act-02-selected.txt",
+        "sha256": "859339a7376fb9416d0f7d2fb5e1f10990c18db036921fbd710ffa88fa81fda0",
+        "bytes": 10354
+      },
+      "controller_pin": {
+        "id": "segment.papal.pius-x.hf-p-x-enc-10081906-gravissimo-officii-munere.1906-10-catholic-university-bulletin-english",
+        "record": "src/sources/works/papal-documents/1906-08-10-papal-pius-x-hf-p-x-enc-10081906-gravissimo-officii-munere-22797b1b/editions/1906-10-catholic-university-bulletin-english/segments/historical-english.toml",
+        "sha256": "7037fd496aad295fd3d7974af1c9032e02ff67b1242c43b122246ddf6267396c"
+      }
+    },
+    {
+      "key": [
+        "historical-english.pius-x.hf-p-x-enc-24091912-singulari-quadam.1920-ryan-husslein-church-and-labor-english",
+        "en"
+      ],
+      "title": "Singulari quadam",
+      "row_sha256": "6843623aa04d9a6c67e1cc8bd74a726f336d2591697efc0602bf269d4d1e856b",
+      "source_sha256": "64d9ff82d856c060530d199429cb4e40dc65cc81b0bdda407adb5df213bab371",
+      "evidence": {
+        "path": ".scratch/english-intake-recovery/packet-01/act-03-evidence.json",
+        "sha256": "20ddef07b42022660444fd9ee225eeebee65f7ccd88e150cde1d954fdeca3cae",
+        "bytes": 41411
+      },
+      "selection": {
+        "path": ".scratch/english-intake-recovery/packet-01/act-03-selected.txt",
+        "sha256": "fef8fc661cb99cde7b02891bb71c5d7c820d0005a34ef7b94758bb5cddfeff07",
+        "bytes": 13727
+      },
+      "controller_pin": {
+        "id": "segment.papal.pius-x.hf-p-x-enc-24091912-singulari-quadam.1920-ryan-husslein-church-and-labor-english",
+        "record": "src/sources/works/papal-documents/1912-09-24-papal-pius-x-hf-p-x-enc-24091912-singulari-quadam-c479e0b4/editions/1920-ryan-husslein-church-and-labor-english/segments/historical-english.toml",
+        "sha256": "d53c4a09804b6010e45ec4bc4447b910604a6e4a19d3f286b1e7971f88fdc504"
+      }
+    }
+  ],
+  "common_pins": {
+    "path": ".scratch/english-intake-recovery/common-pins.json",
+    "sha256": "17f8dc51ed96ec27c7b02254b4edac12df478c97a547e1660c27b8a0996921e9",
+    "bytes": 2847
+  },
+  "scope_limits": "Review source intake and exact selected historical human English witness. Fresh native image checks are required; prior visual claims are not inherited. No PDF compiler/layout review or lexical translation accuracy/full printing collation claimed."
+}

@@ -1,0 +1,58 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "422d075bb37c5d21f55a3c4c7d48be9c3f522b5fbef3a85ea27f093c0ddad449",
+  "documents": [
+    {
+      "id": "acta.ass.013.ass-013-act-006",
+      "language": "la",
+      "pdf_sha256": "84b257b54d9bd60b480420a2de91eb7f0bac671beddf7665f626c4051f1fab2c",
+      "pages": 4,
+      "status": "PASS",
+      "source_order_status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "full_size_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "INFO",
+          "pages": [
+            1
+          ],
+          "description": "Source-order PASS independently established from native actual242: three left-column notes then two right-column notes; all25WORD boxes/values,80.904734pt empty gutter and8exhaustive unchanged byte slices match. Literal labels1,apostrophe,s,*,8 retained. Initial Isaias note and all five repaired notes have distinct TeX and visible paragraph boundaries."
+        },
+        {
+          "severity": "INFO",
+          "pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "description": "Four-page PDF PASS after fresh contact-sheet and individual original-resolution inspection of all four current pages. No observed clipping, overlap, glyph loss, column collision or note/body fusion; conspicuous literal OCR/interletter damage is retained and disclosed."
+        },
+        {
+          "severity": "INFO",
+          "pages": [
+            4
+          ],
+          "description": "Sparse final page retains substantial concluding source body, blessing, dating clause and LEO PP. XIII before legible terminal apparatus/rights colophon; it is source-bearing."
+        }
+      ],
+      "limitations": "Independent current-reader visual/source-order acceptance only. Full-size native inspection: actual241,242,248; native contact overview241–248; raw/bbox/extraction/selected-LF proofs independently replayed for all eight mapped pages. Disclosed OCR/interletter/reference damage remains. No whole-source lexical, translation, original-print facsimile/collation, new rights/intake, installation or deployment certification.",
+      "receipt_sha256": "422d075bb37c5d21f55a3c4c7d48be9c3f522b5fbef3a85ea27f093c0ddad449",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-35.md",
+      "report_sha256": "1161992224bef6b70daab6aff93f0cd7c99391ea43915146376f7dab0aaedd3e"
+    }
+  ]
+}

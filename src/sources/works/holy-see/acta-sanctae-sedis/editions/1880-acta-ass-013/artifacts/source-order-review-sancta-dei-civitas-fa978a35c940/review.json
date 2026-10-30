@@ -1,0 +1,59 @@
+{
+  "schema": "triptych-native-note-column-review/v1",
+  "revision": "2026-10-30T13:42:38Z",
+  "source_artifact_id": "artifact.acta-papal-archives.ass.013.historical-text-5e04a8b5.note-blocks-sancta-dei-civitas-la-f1534dd74c50",
+  "source_sha256": "f1534dd74c508578b768004f97918249b69457b7d789587c10364b54335fe40a",
+  "prior_segment_id": "segment.acta-papal-archives.ass.013.ass-013-act-006.note-blocks-f1534dd74c50",
+  "prior_pdf_sha256": "533c6bd830520d8cbbffcb9290eb47ae5b8de81c2fc823509be350e6d2106376",
+  "native_pdf_artifact_id": "artifact.acta-papal-archives.ass.013.vatican-pdf-4b841f73",
+  "native_pdf_sha256": "4b841f737ce46d8c98e0f22a74619ff4ab458d5b9fb500735c17ab7e5bee0f89",
+  "native_page": 242,
+  "native_full_size_pages_inspected": [
+    242
+  ],
+  "original_historical_lf_range": [
+    9273,
+    9278
+  ],
+  "lf_derivative_range": [
+    89,
+    94
+  ],
+  "native_word_geometry_artifact_id": "artifact.acta-papal-archives.ass.013.historical-text-5e04a8b5.note-blocks-sancta-dei-civitas-la-f1534dd74c50.native-note-geometry-2e1c0994a13f",
+  "native_word_geometry_sha256": "2e1c0994a13f9a874600670658da4bf1c39adab62496935956785409f000dd3f",
+  "word_count": 25,
+  "word_values_preserved": true,
+  "every_source_slice_once": true,
+  "every_note_byte_covered_once": true,
+  "body_lf_rows_byte_identical_and_in_order": true,
+  "body_without_group_sha256": "36a0b8282ce5c97d4009259abbf941b27b80658fdc6256e21d4d76a4814acd79",
+  "global_non_lf_order_preserved": false,
+  "source_unit_order": [
+    "left-marker1",
+    "left-note1",
+    "left-note2",
+    "left-marker3",
+    "left-note3",
+    "right-note4",
+    "right-marker5",
+    "right-note5"
+  ],
+  "reading_order": "Complete left note column from top to bottom, followed by complete right note column from top to bottom. Literal damaged source markers remain1,apostrophe,s,asterisk,8.",
+  "split_boundaries": [
+    {
+      "physical_line": 90,
+      "byte_offset": 48,
+      "line_sha256": "0a14eea7a101f72766f5be5c8c385fa2ab793818d9e4253716d390c67c166acc"
+    },
+    {
+      "physical_line": 91,
+      "byte_offset": 48,
+      "line_sha256": "be1b7113b544fcbfffce45fc86947a306e5886ba5bbf28b22675b43e6966365d"
+    }
+  ],
+  "gutter_word_ownership": "All25nativeWORDboxes lie wholly left or wholly right of x200pt; no token mixes columns. The two UTF8 cuts are at existingASCIIspace/rightmarker boundaries. All source spaces are assigned to exactly one retained slice. Native WORD strings in column order match the output slices with only ASCIIspaces ignored.",
+  "helper_path": "scripts/_papal_source_order.py",
+  "helper_sha256": "f0a3014db485ee25ffa7df013c81e600f8e4f9eccff76b5ac7daecbc1d6a9c86",
+  "output_sha256": "d85f33f3fdd01425f34066f2e3ce1cf68ef175dab51c55ae867a905db1075d5e",
+  "limit": "Official Vatican native OCR-PDF reconstruction geometry only; no original-print facsimile or lexical collation."
+}

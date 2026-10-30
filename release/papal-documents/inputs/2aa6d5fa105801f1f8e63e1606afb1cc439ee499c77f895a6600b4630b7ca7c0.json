@@ -1,0 +1,65 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "b3793282ebe2ad0262dffa94bdb71a612aa39a3bc00db17ae1d4201d3ef23b92",
+  "documents": [
+    {
+      "id": "papal.pius-ix.enciclica-cum-sancta-mater-27-aprile-1859",
+      "language": "en",
+      "pdf_sha256": "9eb25fe87aedf6eceece6fcb6675450b3d9b724fcacd939e688e6006c4aa0e31",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "info",
+          "pages": [
+            2
+          ],
+          "description": "Sparse final page retains the actual source closing and dating clause before apparatus; literal OCR year 185) is disclosed. The page is source-bearing and readable."
+        }
+      ],
+      "limitations": [
+        "Bounded metadata/apparatus qualification and fresh review of exact new PDF pages; prior packet06 root-owned body/extent/rights source PASS remains separate.",
+        "Native source inspection limited to the dated wrapper supporting the imprint qualification; no new translation, whole-print lexical collation, original-print identity or rights certification."
+      ],
+      "receipt_sha256": "b3793282ebe2ad0262dffa94bdb71a612aa39a3bc00db17ae1d4201d3ef23b92",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-31.md",
+      "report_sha256": "eee99b71b64b474c9874d600b3f3bbf15f5cf5dc0a47729c139181d288a97adb"
+    },
+    {
+      "id": "papal.pius-ix.enciclica-exultavit-cor-nostrum-21-novembre-1851",
+      "language": "en",
+      "pdf_sha256": "a2a2fec1066b36352686d7f4dfe7abcb81715948d6eb8de9feb8c3f3ad18c2cd",
+      "pages": 2,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "info",
+          "pages": [
+            1,
+            2
+          ],
+          "description": "Inherited OCR spelling and word/paragraph divisions remain literal and disclosed; all source text, closing and terminal apparatus are readable."
+        }
+      ],
+      "limitations": [
+        "Bounded metadata/apparatus qualification and fresh review of exact new PDF pages; prior packet06 root-owned body/extent/rights source PASS remains separate.",
+        "Native source inspection limited to the dated wrapper supporting the imprint qualification; no new translation, whole-print lexical collation, original-print identity or rights certification."
+      ],
+      "receipt_sha256": "b3793282ebe2ad0262dffa94bdb71a612aa39a3bc00db17ae1d4201d3ef23b92",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-31.md",
+      "report_sha256": "eee99b71b64b474c9874d600b3f3bbf15f5cf5dc0a47729c139181d288a97adb"
+    }
+  ]
+}

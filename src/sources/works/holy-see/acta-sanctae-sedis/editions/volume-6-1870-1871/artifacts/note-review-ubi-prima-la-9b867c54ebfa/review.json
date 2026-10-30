@@ -1,0 +1,88 @@
+{
+  "id": "acta.ass.006.ass-006-act-015",
+  "source_pdf_artifact_id": "artifact.holy-see.acta-sanctae-sedis.volume-6-1870-1871.vatican-ocr-pdf-7e480931",
+  "source_pdf_sha256": "7e480931ad07d3a53db391d2c26a69a256ca106719d0e7a6220415d3123eecca",
+  "native_extraction_sha256": "2eb61281439ebbf6343373d442c1259a8a99c3d551d1ef7e9be7a186c8613fa3",
+  "excerpt_sha256": "67ca5d92def4af1025795c0ee7701136df591ac9a8078d04e8e060851df3123b",
+  "native_pdf_pages": [
+    273,
+    274,
+    275,
+    276,
+    277
+  ],
+  "source_ranges": [
+    {
+      "physical_line_range": [
+        10812,
+        10826
+      ],
+      "native_pdf_page": 273
+    },
+    {
+      "physical_line_range": [
+        10829,
+        10867
+      ],
+      "native_pdf_page": 274
+    },
+    {
+      "physical_line_range": [
+        10869,
+        10907
+      ],
+      "native_pdf_page": 275
+    },
+    {
+      "physical_line_range": [
+        10909,
+        10946
+      ],
+      "native_pdf_page": 276
+    },
+    {
+      "physical_line_range": [
+        10948,
+        10958
+      ],
+      "native_pdf_page": 277
+    }
+  ],
+  "schema": "triptych-source-note-partition-review/v1",
+  "revision": "2026-10-30T11:52:14Z",
+  "language": "la",
+  "source_artifact_id": "artifact.acta-papal-archives.ass.006.historical-text-6f710d76",
+  "source_sha256": "6f710d76d851369aa5ea49b7fefa65c2279ee93cf1c54f3555e5365f4fbb628a",
+  "prior_segment_id": "segment.acta-papal-archives.ass.006.ass-006-act-015",
+  "prior_pdf_sha256": "9e32144606c49eb8e25b6ce0932b6672f6814fb12e66748405263b08fe666ee3",
+  "note_line_ranges": [
+    [
+      10826,
+      10826
+    ],
+    [
+      10945,
+      10946
+    ]
+  ],
+  "native_full_size_excerpt_pages": [
+    1,
+    4
+  ],
+  "native_contact_sheet_pages_inspected": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "geometry": "The repaired note groups occupy smaller-type page-foot blocks below a single body column. Exact LF bounds include the complete note markers and citation lines. No lexical repair, body/note reordering or margin reconstruction.",
+  "selected_non_lf_sha256": "0a978dc556863be488fa66dbe2b5531b48bcb7067ee6cbd6d9a413aaa9a8d998",
+  "selected_non_lf_bytes_preserved": true,
+  "source_order_preserved": true,
+  "derivative_artifact_id": "artifact.acta-papal-archives.ass.006.historical-text-6f710d76.note-blocks-ubi-prima-la-21c1bfbaae19",
+  "derivative_sha256": "21c1bfbaae19c96f6d6c4314458ecd18d39d979e6f7cc8092c63aa5e12fdd6e0",
+  "replay_helper_sha256": "a0b31d45f498bec3a12a29cdff28da38f3e01cc02c50e5de8a9a65e4a82a9d57",
+  "limit": "Official native archival OCR PDF reconstruction; no original-print image collation or lexical accuracy claim.",
+  "replay_helper_path": "scripts/_papal_source_notes.py"
+}

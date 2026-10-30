@@ -1,0 +1,77 @@
+{
+  "documents": [
+    {
+      "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.divinum-quote-text-ba3ad11b1ec6",
+      "body_tex": "1897-05-09-papal-leo-xiii-hf-l-xiii-enc-09051897-divinum-illud-munus-7370b2e4-en/1897-05-09-papal-leo-xiii-hf-l-xiii-enc-09051897-divinum-illud-munus-7370b2e4-en.body.tex",
+      "changed": true,
+      "id": "papal.leo-xiii.hf-l-xiii-enc-09051897-divinum-illud-munus",
+      "language": "en",
+      "layout": "closing-source-with-apparatus",
+      "pages": 8,
+      "pdf": "1897-05-09-papal-leo-xiii-hf-l-xiii-enc-09051897-divinum-illud-munus-7370b2e4-en/1897-05-09-papal-leo-xiii-hf-l-xiii-enc-09051897-divinum-illud-munus-7370b2e4-en.pdf",
+      "pdf_sha256": "3cb96b0916cdac84f454320046526c3292a3099a49016f0062934239eeb847f3",
+      "physical_line_ranges": [
+        [
+          1,
+          163
+        ]
+      ],
+      "render_revision": "2026-10-30T15:41:53Z",
+      "segment_id": "segment.papal.leo-xiii.hf-l-xiii-enc-09051897-divinum-illud-munus.1903-benziger-english.quote-recovery-ba3ad11b1ec6",
+      "source_ending_blocks": [
+        79,
+        81
+      ],
+      "source_sha256": "ba3ad11b1ec60e61cbd795d6ecabd15dfb13fce21c02c218f63c852f636447fa",
+      "status": "compiled",
+      "stem": "1897-05-09-papal-leo-xiii-hf-l-xiii-enc-09051897-divinum-illud-munus-7370b2e4-en",
+      "support_tex": [
+        "1897-05-09-papal-leo-xiii-hf-l-xiii-enc-09051897-divinum-illud-munus-7370b2e4-en/1897-05-09-papal-leo-xiii-hf-l-xiii-enc-09051897-divinum-illud-munus-7370b2e4-en.before-ending.tex",
+        "1897-05-09-papal-leo-xiii-hf-l-xiii-enc-09051897-divinum-illud-munus-7370b2e4-en/1897-05-09-papal-leo-xiii-hf-l-xiii-enc-09051897-divinum-illud-munus-7370b2e4-en.ending.tex"
+      ],
+      "terminal_keep_blocks": 3,
+      "tex": "1897-05-09-papal-leo-xiii-hf-l-xiii-enc-09051897-divinum-illud-munus-7370b2e4-en/1897-05-09-papal-leo-xiii-hf-l-xiii-enc-09051897-divinum-illud-munus-7370b2e4-en.tex",
+      "text_fidelity": {
+        "layout_hyphens": 33,
+        "method": "pdf-raw-source-aware-line-hyphen-nfkc-v3",
+        "pages": 8,
+        "source_characters": 36408,
+        "source_first_page": 1,
+        "source_last_page": 8,
+        "source_normalized_characters": 29680,
+        "status": "pass"
+      },
+      "warnings": [
+        "Underfull \\hbox (badness 3219) in paragraph at lines 171--172"
+      ]
+    }
+  ],
+  "errors": [],
+  "generator": "typeset-papal",
+  "generator_version": 2,
+  "index": "index.html",
+  "input_manifest": "frozen-manifest.json",
+  "input_manifest_sha256": "2717639208b3bc43ebb6e1fd233022114dd862e6fb3d7af33d3b5939220ad059",
+  "options": {
+    "automatic_hyphenation": "babel-english-latin",
+    "babel_shorthands": false,
+    "body_alignment": "justified-en-la; ragged-right-other-languages",
+    "body_font": "Latin Modern Roman",
+    "body_leading_pt": 13,
+    "body_size_pt": 10.5,
+    "columns": 2,
+    "form_feed": "layout-whitespace",
+    "layout_hyphen_fidelity": "source-aware-line-end-only",
+    "punctuation": "literal",
+    "soft_hyphen": "nonprinting",
+    "unicode_text_mapping": "xetex-native"
+  },
+  "receipt": "receipt.json",
+  "revision": "2026-10-30T15:41:53Z",
+  "schema": "triptych-papal-typeset-receipt/v1",
+  "summary": {
+    "compiled": 1,
+    "failed": 0,
+    "selected": 1
+  }
+}

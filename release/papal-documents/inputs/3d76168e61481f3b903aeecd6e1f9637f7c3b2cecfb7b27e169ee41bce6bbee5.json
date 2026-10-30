@@ -1,0 +1,58 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "2db70c1d5659f128f2bbe6a5bf2113c53c26727e7c1314812a50056b9b0bf549",
+  "documents": [
+    {
+      "id": "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
+      "language": "en",
+      "pdf_sha256": "25dfc7d1c6271f8ba501859c979836e07891ba15333334da6b1b5ac2bb7df7fa",
+      "pages": 7,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            4,
+            5
+          ],
+          "description": "Offered OCR retains garbled gothic salutation, missing ornamental opening/initial and isolated vertical stray-token runs. These remain disclosed; substantive body is continuously readable and source notes are separate."
+        },
+        {
+          "severity": "qualification",
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "description": "Fresh producer visual PASS is absent; all current pages received this independent review. Separate B2 cold source intake is still required before admission."
+        }
+      ],
+      "limitations": [
+        "Every reader page inspected afresh on contact sheets and at original raster resolution; no prior visual review reused.",
+        "No translation accuracy, whole-source lexical collation, new rights clearance, installation or deployment certification.",
+        "This PASS covers current-reader visuals and bounded address/body-preservation checks only; it does not close the separate B2 translation-edition, rights or completeness intake gate.",
+        "Native full-resolution checks were source PDF pages 1, 2 and 22; remaining English intake belongs to B2.",
+        "One retained underfull box (badness 1009) produced no material visual defect."
+      ],
+      "receipt_sha256": "2db70c1d5659f128f2bbe6a5bf2113c53c26727e7c1314812a50056b9b0bf549",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-25.md",
+      "report_sha256": "a32e53d4419b6ffc02451665b898987332415ebe217d703e8a310e2973dd9613"
+    }
+  ]
+}

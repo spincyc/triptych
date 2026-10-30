@@ -1,6 +1,36 @@
 {
  "artifacts": [
   {
+   "artifact_type": "source-boundary-corrected-transcription",
+   "byte_size": 9733,
+   "edition_owned": true,
+   "id": "artifact.papal.leo-xiii.hf-l-xiii-enc-02071894-litteras-a-vobis.2026-10-26-vatican-la.alien-act-excluded-bd08bc9d03f8",
+   "media_type": "text/plain",
+   "notes": "Vatican web transcription of ASS 27 (1894-1895), pp.3-7, with a mechanically bounded correction of web-witness contamination. Exactly 1,440 bytes from the neighboring letter to Thomas Coconnier are excluded; every retained Litteras byte and its order are unchanged. The Legatus,/qui continuation, complete blessing, 2 July dating, subscription and six historical reference-note contexts were checked in the retained facsimile. The web delivery places those reference notes inline; their spelling and references remain literal. Boundary and note-membership inspection is not full word-for-word collation; remaining transcription/OCR defects are uncorrected.",
+   "page_count": null,
+   "retrieved": "2026-10-30",
+   "rights": "public-domain",
+   "rights_basis": "Historical Latin of Litteras a vobis identified in Acta Sanctae Sedis 27 (1894-1895), printed pp.3-7, including its address, complete body, blessing, 2 July 1894 dating and subscription. The retained facsimile title establishes publication by 1895. United States expired publication-term basis under 17 U.S.C. 304-305, with 104A remainder where applicable and 103(b) for unchanged preexisting wording. This bounded derivative excludes one exactly identified foreign-act insertion from the normalized Vatican web transcription; it does not clear portal HTML, modern bibliography, later revisions or translations. Shared authorities and jurisdictional limits: src/sources/inventories/papal-documents-rights-v1.toml. Historical source wording is excluded from Triptych CC BY 4.0.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://www.vatican.va/content/leo-xiii/la/encyclicals/documents/hf_l-xiii_enc_02071894_litteras-a-vobis.html",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "exact-source-byte-exclusion-spec",
+   "byte_size": 3732,
+   "edition_owned": true,
+   "id": "artifact.papal.leo-xiii.hf-l-xiii-enc-02071894-litteras-a-vobis.2026-10-26-vatican-la.alien-act-exclusion-spec-17ca197eaacc",
+   "media_type": "application/json",
+   "notes": null,
+   "page_count": null,
+   "retrieved": "2026-10-30",
+   "rights": "licensed",
+   "rights_basis": "Project-created exact byte-selection specification and source-ownership evidence are licensed CC BY 4.0; quoted historical Latin retains its separate United States public-domain basis and is excluded from that grant.",
+   "rights_jurisdiction": null,
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
    "artifact_type": "official-html",
    "byte_size": 44511,
    "edition_owned": true,

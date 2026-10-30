@@ -1,0 +1,1824 @@
+{
+  "schema": "triptych-three-act-source-cold-audit-report/v1",
+  "packet": 4,
+  "scope_sha256": "b242164ffa16302e744c617e08f325aa1f1d39018a6ee034986dea62865cc804",
+  "expected_count": 3,
+  "expected_keys": [
+    [
+      "papal.benedict-xv.hf-ben-xv-enc-24111919-paterno-iam-diu.catholic-mind-1920-01-22-english",
+      "en"
+    ],
+    [
+      "papal.benedict-xv.hf-ben-xv-enc-29061921-fausto-appetente-die.catholic-mind-1921-08-22-english",
+      "en"
+    ],
+    [
+      "papal.benedict-xv.hf-ben-xv-enc-30041921-in-praeclara-summorum.catholic-mind-1921-07-08-english",
+      "en"
+    ]
+  ],
+  "document_count": 3,
+  "source_pass_count": 3,
+  "blocked_count": 0,
+  "pending_count": 0,
+  "actual_opened_image_count": 18,
+  "source_acceptance": "PASS",
+  "reviewed_at": "2026-10-30T14:14:42.012173+00:00",
+  "documents": [
+    {
+      "id": "papal.benedict-xv.hf-ben-xv-enc-24111919-paterno-iam-diu.catholic-mind-1920-01-22-english",
+      "language": "en",
+      "title": "Paterno Iam Diu",
+      "status": "PASS",
+      "source_acceptance": "PASS",
+      "source_sha256": "13c1f1df67465837622eea44033c3f0ed57c398234d3047f4bd06e9c8c639cd1",
+      "row_sha256": "2985b89a589db5b7e5b75780ff96e7da49232e5c6bcadbb16fa37813159ae7bb",
+      "source_scope_sha256": "b242164ffa16302e744c617e08f325aa1f1d39018a6ee034986dea62865cc804",
+      "controller_sha256": "6d2077f5154ef786bbddc330e61aa53bbf1c69ff6906adc81a3e5cad7ceb9276",
+      "selected_text_read_complete": true,
+      "selected_text_bytes": 5133,
+      "proof_pins": {
+        "scope": {
+          "path": ".scratch/english-intake-recovery/packet-04/scope.json",
+          "sha256": "b242164ffa16302e744c617e08f325aa1f1d39018a6ee034986dea62865cc804",
+          "bytes": 4857
+        },
+        "evidence": {
+          "path": ".scratch/english-intake-recovery/packet-04/act-01-evidence.json",
+          "sha256": "1673755b226ace25b283f2e3805dcbf3986cd3b91feeecf6a891441c3af5c494",
+          "bytes": 36042
+        },
+        "selected_text": {
+          "path": ".scratch/english-intake-recovery/packet-04/act-01-selected.txt",
+          "sha256": "13c1f1df67465837622eea44033c3f0ed57c398234d3047f4bd06e9c8c639cd1",
+          "bytes": 5133
+        },
+        "canonical_source": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1920-01-22-volume-18-issue-2/artifacts/english-reading-13c1f1df6746/text.txt",
+          "sha256": "13c1f1df67465837622eea44033c3f0ed57c398234d3047f4bd06e9c8c639cd1",
+          "bytes": 5133
+        },
+        "source_manifest": {
+          "path": "src/sources/papal-documents/historical-english-completion-manifest.json",
+          "sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+          "bytes": 67917
+        },
+        "row_sha256": "2985b89a589db5b7e5b75780ff96e7da49232e5c6bcadbb16fa37813159ae7bb",
+        "controller": {
+          "id": "segment.papal.benedict-xv.hf-ben-xv-enc-24111919-paterno-iam-diu.1920-01-22-catholic-mind-english.complete-english-reading",
+          "record": "src/sources/works/papal-documents/1919-11-24-papal-benedict-xv-hf-ben-xv-enc-24111919-paterno-iam-diu-1bed8491/editions/1920-01-22-catholic-mind-english/segments/complete-english-reading.toml",
+          "sha256": "6d2077f5154ef786bbddc330e61aa53bbf1c69ff6906adc81a3e5cad7ceb9276"
+        },
+        "metadata": {
+          "segment": {
+            "path": "src/sources/works/papal-documents/1919-11-24-papal-benedict-xv-hf-ben-xv-enc-24111919-paterno-iam-diu-1bed8491/editions/1920-01-22-catholic-mind-english/segments/complete-english-reading.toml",
+            "sha256": "6d2077f5154ef786bbddc330e61aa53bbf1c69ff6906adc81a3e5cad7ceb9276"
+          },
+          "constituent_edition": {
+            "path": "src/sources/works/papal-documents/1919-11-24-papal-benedict-xv-hf-ben-xv-enc-24111919-paterno-iam-diu-1bed8491/editions/1920-01-22-catholic-mind-english/edition.toml",
+            "sha256": "6519ca1584f4f7da3e5037cd6daa7b92a5192cfc84c3b49c6ca8780e99da1cdf"
+          },
+          "container_edition": {
+            "path": "src/sources/works/journals/catholic-mind/editions/1920-01-22-volume-18-issue-2/edition.toml",
+            "sha256": "8eec80cf60699143fe025bf6e7c08a598092b2019c412de8212ec24cb56718c1"
+          }
+        },
+        "artifacts": [
+          {
+            "record": "src/sources/works/journals/catholic-mind/editions/1920-01-22-volume-18-issue-2/artifacts/ia-facsimile-7401617bbd86/artifact.toml",
+            "record_sha256": "24a3b65a3b8ede7881aa1cc17f849cd6815466684929574056956e6e08de0279",
+            "path": "src/sources/works/journals/catholic-mind/editions/1920-01-22-volume-18-issue-2/artifacts/ia-facsimile-7401617bbd86/source.pdf",
+            "sha256": "7401617bbd862485800604ebcf385f0e657c1306b0899fe0f0ca9778397fa024",
+            "rights_status": "public-domain",
+            "storage": "tracked"
+          },
+          {
+            "record": "src/sources/works/journals/catholic-mind/editions/1920-01-22-volume-18-issue-2/artifacts/ia-ocr-6af84374e6eb/artifact.toml",
+            "record_sha256": "61a87918bdc6c1098ba6aac159e9d14270fcbc9fe212b8c15ba0012e55d9f4e0",
+            "path": "src/sources/works/journals/catholic-mind/editions/1920-01-22-volume-18-issue-2/artifacts/ia-ocr-6af84374e6eb/ocr.txt",
+            "sha256": "6af84374e6ebef82b6996a9113ffa6348ca2296c4b13dc419f86efba37e8aeee",
+            "rights_status": "public-domain",
+            "storage": "tracked"
+          },
+          {
+            "record": "src/sources/works/journals/catholic-mind/editions/1920-01-22-volume-18-issue-2/artifacts/extent-review-a4a4e417250f/artifact.toml",
+            "record_sha256": "96839f350d5e06fe0eb6a2a5328757d3d9d9e301d49c359294185841765cf139",
+            "path": "src/sources/works/journals/catholic-mind/editions/1920-01-22-volume-18-issue-2/artifacts/extent-review-a4a4e417250f/review.json",
+            "sha256": "a4a4e417250f7e6d48b0756121c4c228afd5980fcc813033afb1060fecbd9f78",
+            "rights_status": "licensed",
+            "storage": "tracked"
+          },
+          {
+            "record": "src/sources/works/journals/catholic-mind/editions/1920-01-22-volume-18-issue-2/artifacts/english-reading-13c1f1df6746/artifact.toml",
+            "record_sha256": "61c92c4e0489a977a2f538158a75c6cb32d63d227a126676be7a2ea3562556fe",
+            "path": "src/sources/works/journals/catholic-mind/editions/1920-01-22-volume-18-issue-2/artifacts/english-reading-13c1f1df6746/text.txt",
+            "sha256": "13c1f1df67465837622eea44033c3f0ed57c398234d3047f4bd06e9c8c639cd1",
+            "rights_status": "public-domain",
+            "storage": "tracked"
+          },
+          {
+            "record": "src/sources/works/journals/catholic-mind/editions/1920-01-22-volume-18-issue-2/artifacts/selection-recipe-c5135e94c3d0/artifact.toml",
+            "record_sha256": "89406b082dad54779ae3bb372f9cdaf1acf72f38c5bcb170379629fe57613b06",
+            "path": "src/sources/works/journals/catholic-mind/editions/1920-01-22-volume-18-issue-2/artifacts/selection-recipe-c5135e94c3d0/selection.json",
+            "sha256": "c5135e94c3d08f16a2209674c2e7f0561ceec0294b0110216611c00d1b6c67f1",
+            "rights_status": "licensed",
+            "storage": "tracked"
+          }
+        ],
+        "recipe_and_parent": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1920-01-22-volume-18-issue-2/artifacts/selection-recipe-c5135e94c3d0/selection.json",
+          "sha256": "c5135e94c3d08f16a2209674c2e7f0561ceec0294b0110216611c00d1b6c67f1",
+          "input_path": "src/sources/works/journals/catholic-mind/editions/1920-01-22-volume-18-issue-2/artifacts/ia-ocr-6af84374e6eb/ocr.txt",
+          "input_sha256": "6af84374e6ebef82b6996a9113ffa6348ca2296c4b13dc419f86efba37e8aeee",
+          "input_physical_line_ranges": [
+            [
+              1056,
+              1243
+            ]
+          ],
+          "native_pdf_pages": [
+            18,
+            20
+          ],
+          "printed_pages": [
+            44,
+            46
+          ],
+          "excluded_line_count": 43,
+          "independent_replay_sha256": "13c1f1df67465837622eea44033c3f0ed57c398234d3047f4bd06e9c8c639cd1"
+        },
+        "mechanical_checks": {
+          "path": ".scratch/english-intake-recovery/packet-04/audit/mechanical-checks.json",
+          "sha256": "30fa8f0eebfd9588eaa96fa322ffc95bddaf17684d442cfd2cf2bb26cc157d49",
+          "bytes": 208004
+        },
+        "native_display_proxy_map": {
+          "path": ".scratch/english-intake-recovery/image-proxies/proxy-map.json",
+          "sha256": "d45e3d467b78d50e9f0be6ee271dd24c04d6b2981c5540e4dc1ae62285882f16",
+          "bytes": 252137
+        }
+      },
+      "historical_human_english_edition": {
+        "schema": 1,
+        "record_type": "edition",
+        "id": "edition.papal.benedict-xv.hf-ben-xv-enc-24111919-paterno-iam-diu.1920-01-22-catholic-mind-english",
+        "work_id": "work.papal.benedict-xv.hf-ben-xv-enc-24111919-paterno-iam-diu",
+        "title": "Paterno Iam Diu — historical English translation",
+        "language": "en",
+        "date": "1920-01-22",
+        "publication": "The Catholic Mind 18, no. 2 (1920-01-22), pp. 44–46.",
+        "authority": "Historical contemporary human English translation",
+        "notes": "Anonymous contemporary translation. Exact complete printed act extent pp. 44–46. Source OCR recognition, punctuation and line-end hyphen fragments remain; no corrected translation or full lexical image collation is claimed. Historical notes remain distinct blank-line blocks. Native extent review: artifact.journals.catholic-mind.1920-01-22-volume-18-issue-2.extent-review-a4a4e417250f."
+      },
+      "native_extent": {
+        "source_pdf_pages": [
+          18,
+          20
+        ],
+        "printed_pages": [
+          44,
+          46
+        ],
+        "freshly_observed_pdf_pages": [
+          1,
+          18,
+          19,
+          20
+        ],
+        "all_act_pages_structurally_reviewed": true
+      },
+      "actual_opened_images": [
+        {
+          "source_page": 1,
+          "source_pdf": "src/sources/works/journals/catholic-mind/editions/1920-01-22-volume-18-issue-2/artifacts/ia-facsimile-7401617bbd86/source.pdf",
+          "source_pdf_sha256": "7401617bbd862485800604ebcf385f0e657c1306b0899fe0f0ca9778397fa024",
+          "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-41.png",
+          "source_png_sha256": "d4b209c4ee38b69c3427a4f0c0c2f052cf6ae6d8623af8c4da5888d135cb5979",
+          "source_bytes": 1969327,
+          "source_dimensions": [
+            1399,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1399,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-04-act-01-sample-01-d4b209c4ee38.jpg",
+          "proxy_sha256": "c7a2288d7a64e33c4283321adebab9fc8f186b9458092ab182d5d21b42940571",
+          "proxy_bytes": 946460,
+          "proxy_dimensions": [
+            1399,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-41.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-04-act-01-sample-01-d4b209c4ee38.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-04-act-01-sample-01-d4b209c4ee38.jpg",
+          "id": "papal.benedict-xv.hf-ben-xv-enc-24111919-paterno-iam-diu.catholic-mind-1920-01-22-english",
+          "language": "en",
+          "opened_path": ".scratch/english-intake-recovery/image-proxies/packet-04-act-01-sample-01-d4b209c4ee38.jpg",
+          "detail": "auto",
+          "actual_observation": "Freshly viewed the full-pixel JPEG95 proxy of native issue PDF page 1. The historical masthead visibly identifies Catholic Mind volume XVIII, number 2, January 22, 1920. The page is an unrelated teacher article with a named author, confirming container context rather than the selected papal act. No exact source words were transcribed or extracted from the JPEG; it is used only for edition identity and boundary judgment. Native PNG and PDF remain authoritative.",
+          "observed_at": "2026-10-30T14:00:51.591204+00:00"
+        },
+        {
+          "source_page": 18,
+          "source_pdf": "src/sources/works/journals/catholic-mind/editions/1920-01-22-volume-18-issue-2/artifacts/ia-facsimile-7401617bbd86/source.pdf",
+          "source_pdf_sha256": "7401617bbd862485800604ebcf385f0e657c1306b0899fe0f0ca9778397fa024",
+          "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-42.png",
+          "source_png_sha256": "d4b37aeab595ee48875c85158fd1f2ddc72aef6e59c783cce0750362c4b2ba41",
+          "source_bytes": 1937749,
+          "source_dimensions": [
+            1387,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1387,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-04-act-01-sample-02-d4b37aeab595.jpg",
+          "proxy_sha256": "560fe258c01ff5f0d7989284e24523ca42c08f6770ce5f59fb1e47ad4d452232",
+          "proxy_bytes": 926911,
+          "proxy_dimensions": [
+            1387,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-42.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-04-act-01-sample-02-d4b37aeab595.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-04-act-01-sample-02-d4b37aeab595.jpg",
+          "id": "papal.benedict-xv.hf-ben-xv-enc-24111919-paterno-iam-diu.catholic-mind-1920-01-22-english",
+          "language": "en",
+          "opened_path": ".scratch/english-intake-recovery/image-proxies/packet-04-act-01-sample-02-d4b37aeab595.jpg",
+          "detail": "auto",
+          "actual_observation": "Fresh full-page view of native PDF page 18 / printed p.44 through pinned same-pixel JPEG95. The papal appeal begins in the lower half after a separator; the preceding Eucharistic discussion is another article and is excluded. The appeal title/subtitle, initial episcopal salutation and beginning of the paternal appeal correspond structurally to the selected text. No translator credit or footnote apparatus appears at this start. The narrow adjacent-page sliver is outside the act's main page and explains the recipe's explicitly excluded margin fragments; source OCR retains damaged drop-cap recognition. No wording was extracted from the proxy.",
+          "observed_at": "2026-10-30T14:01:34.241040+00:00"
+        },
+        {
+          "source_page": 19,
+          "source_pdf": "src/sources/works/journals/catholic-mind/editions/1920-01-22-volume-18-issue-2/artifacts/ia-facsimile-7401617bbd86/source.pdf",
+          "source_pdf_sha256": "7401617bbd862485800604ebcf385f0e657c1306b0899fe0f0ca9778397fa024",
+          "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-43.png",
+          "source_png_sha256": "98c600cf104015097752a73ddf5c77a5e0f3bad1d283dd1697976cf18d11cf57",
+          "source_bytes": 2091509,
+          "source_dimensions": [
+            1387,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1387,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-04-act-01-sample-03-98c600cf1040.jpg",
+          "proxy_sha256": "90991c7ebb94674a2b1287b0476f659170a91b0cbee36ac329ace26464d8e8a2",
+          "proxy_bytes": 1008739,
+          "proxy_dimensions": [
+            1387,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-43.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-04-act-01-sample-03-98c600cf1040.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-04-act-01-sample-03-98c600cf1040.jpg",
+          "id": "papal.benedict-xv.hf-ben-xv-enc-24111919-paterno-iam-diu.catholic-mind-1920-01-22-english",
+          "language": "en",
+          "opened_path": ".scratch/english-intake-recovery/image-proxies/packet-04-act-01-sample-03-98c600cf1040.jpg",
+          "detail": "auto",
+          "actual_observation": "Fresh native PDF page 19 / printed p.45 via pinned full-pixel JPEG95. The appeal continues from the prior page and ends with the collection subheading and its first paragraph, matching the selected source's body order and retained historical subheading. This page has no separate footnote/endnote block or translator attribution. The running head is page furniture excluded by exact recipe; the left adjacent-page sliver is separate from the main act. No source wording was taken from the JPEG.",
+          "observed_at": "2026-10-30T14:02:05.483413+00:00"
+        },
+        {
+          "source_page": 20,
+          "source_pdf": "src/sources/works/journals/catholic-mind/editions/1920-01-22-volume-18-issue-2/artifacts/ia-facsimile-7401617bbd86/source.pdf",
+          "source_pdf_sha256": "7401617bbd862485800604ebcf385f0e657c1306b0899fe0f0ca9778397fa024",
+          "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-44.png",
+          "source_png_sha256": "ac2b2e826a3ade35d9f6e635a020d4e76fe2e03820be471860c90ae7a3b19665",
+          "source_bytes": 1887888,
+          "source_dimensions": [
+            1391,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1391,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-04-act-01-sample-04-ac2b2e826a3a.jpg",
+          "proxy_sha256": "c33fcc55f9e42ce025e851cbc17924227bf9092309533f2b5663ab6ebe4d508d",
+          "proxy_bytes": 910586,
+          "proxy_dimensions": [
+            1391,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-44.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-04-act-01-sample-04-ac2b2e826a3a.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-04-act-01-sample-04-ac2b2e826a3a.jpg",
+          "id": "papal.benedict-xv.hf-ben-xv-enc-24111919-paterno-iam-diu.catholic-mind-1920-01-22-english",
+          "language": "en",
+          "opened_path": ".scratch/english-intake-recovery/image-proxies/packet-04-act-01-sample-04-ac2b2e826a3a.jpg",
+          "detail": "auto",
+          "actual_observation": "Fresh native PDF page 20 / printed p.46 via pinned full-pixel JPEG95. It continues the collection appeal, retains the appeal to all humane readers and the papal contribution, then visibly ends with apostolic blessing, Rome/St Peter dating clause (24 November 1919, sixth pontifical year), and Benedict XV papal subscription. The selected source contains each of these structural parts and stops at the subscription. No distinct historical footnotes/endnotes appear on the three act pages freshly inspected. OCR case/recognition and hyphen fragments remain disclosed; no lexical collation or proxy-derived source transcription is claimed.",
+          "observed_at": "2026-10-30T14:02:46.654392+00:00"
+        }
+      ],
+      "actual_opened_image_count": 4,
+      "scope_limits": [
+        "Source intake of exactly the three pinned historical human English witnesses; no AI-translated body was created or accepted.",
+        "All selected UTF-8 act texts were actually read completely. All 17 act pages received fresh structural review plus one issue masthead. This is not lexical translation accuracy review or full-printing glyph-by-glyph collation.",
+        "Exact original PDF/PNG hashes remain authority; same-pixel JPEG95 4:4:4 proxies were used only for visual identity, membership, boundaries and structure, with explicit auto detail. No OCR or source-word extraction from JPEG.",
+        "Source OCR recognition, punctuation, case, drop-cap and line-end hyphen defects remain disclosed. No silently corrected translation is claimed.",
+        "The historical issue mastheads establish title, volume/number and publication date. Publisher/place are carried by the separately pinned edition metadata; no separate publisher imprint beyond those mastheads is claimed freshly inspected.",
+        "No compiler-generated PDF layout, fonts, whole-issue content review, or worldwide rights clearance is asserted. The existing repository United States artifact-specific historical-publication policy governs retention."
+      ],
+      "findings": [
+        {
+          "kind": "edition-identity",
+          "result": "PASS",
+          "detail": "Anonymous contemporary human English printing: The Catholic Mind 18, no. 2 (22 January 1920), printed pp.44–46. Native masthead independently verifies the issue date, volume and number; no translator is named at the act or its closing."
+        },
+        {
+          "kind": "exact-extraction",
+          "result": "PASS",
+          "detail": "Current parent OCR, literal recipe, selected derivative, complete segment controller and metadata pins match. Independent byte replay of parent physical lines 1056–1243, with exact excluded running heads and neighboring-page margin fragments, reproduces source SHA-256 13c1f1df67465837622eea44033c3f0ed57c398234d3047f4bd06e9c8c639cd1. The derivative controller selects LF lines 1–29."
+        },
+        {
+          "kind": "completeness-and-boundaries",
+          "result": "PASS",
+          "detail": "Fresh structural inspection of all printed act pages retains the salutation, substantive appeal, historical collection subheading, final blessing, Rome/St Peter dating clause of 24 November 1919, sixth pontifical year and papal subscription. The preceding Eucharistic article and neighboring-page slivers are excluded. No distinct historical footnotes or endnotes appear in this three-page act."
+        },
+        {
+          "kind": "rights-and-retention",
+          "result": "PASS",
+          "detail": "The native issue masthead identifies this United States printing as The Catholic Mind 18, no. 2, 1920-01-22. The historical English translation and contemporary issue material were published by 1930 and are public domain in the United States by expiration of the publication term. This applies to the identified printing, independently of the act date; modern host markup is excluded.",
+          "jurisdiction": "United States",
+          "policy_pin": {
+            "path": "src/sources/inventories/papal-documents-rights-v1.toml",
+            "sha256": "2098d3cc15ef3439234033c7582fe4f17a726494008b25682a7f1b3a844454ea",
+            "bytes": 10179
+          },
+          "qualification": "Exact identified 1920/1921 English printing, not the papal issuance date, supports the existing expired-term basis. Native full-issue PDFs, original OCR and bounded derivative each carry affirmative artifact-specific public-domain records; modern host wrapper is excluded. No new legal rule or worldwide claim is made."
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "id": "papal.benedict-xv.hf-ben-xv-enc-29061921-fausto-appetente-die.catholic-mind-1921-08-22-english",
+      "language": "en",
+      "title": "Fausto Appetente Die",
+      "status": "PASS",
+      "source_acceptance": "PASS",
+      "source_sha256": "65d6e7c7b07cd5afbe8c98136199b73c55326904390486a0e9e1677f744d9dcb",
+      "row_sha256": "d7696470d57b3b4ace65b5aacdd4f747bde583a73425ca654eb7f8594cbfef7f",
+      "source_scope_sha256": "b242164ffa16302e744c617e08f325aa1f1d39018a6ee034986dea62865cc804",
+      "controller_sha256": "6daac0c04de97622c3b91a2f221553e032e439fa312894981becace65f0343bc",
+      "selected_text_read_complete": true,
+      "selected_text_bytes": 12377,
+      "proof_pins": {
+        "scope": {
+          "path": ".scratch/english-intake-recovery/packet-04/scope.json",
+          "sha256": "b242164ffa16302e744c617e08f325aa1f1d39018a6ee034986dea62865cc804",
+          "bytes": 4857
+        },
+        "evidence": {
+          "path": ".scratch/english-intake-recovery/packet-04/act-02-evidence.json",
+          "sha256": "57e4a3acc9db6cc044e08106c7cddc54e062891dedabc8f9b3eeb276b17419a3",
+          "bytes": 30697
+        },
+        "selected_text": {
+          "path": ".scratch/english-intake-recovery/packet-04/act-02-selected.txt",
+          "sha256": "65d6e7c7b07cd5afbe8c98136199b73c55326904390486a0e9e1677f744d9dcb",
+          "bytes": 12377
+        },
+        "canonical_source": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1921-08-22-volume-19-issue-16/artifacts/english-reading-65d6e7c7b07c/text.txt",
+          "sha256": "65d6e7c7b07cd5afbe8c98136199b73c55326904390486a0e9e1677f744d9dcb",
+          "bytes": 12377
+        },
+        "source_manifest": {
+          "path": "src/sources/papal-documents/historical-english-completion-manifest.json",
+          "sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+          "bytes": 67917
+        },
+        "row_sha256": "d7696470d57b3b4ace65b5aacdd4f747bde583a73425ca654eb7f8594cbfef7f",
+        "controller": {
+          "id": "segment.papal.benedict-xv.hf-ben-xv-enc-29061921-fausto-appetente-die.1921-08-22-catholic-mind-english.complete-english-reading",
+          "record": "src/sources/works/papal-documents/1921-06-29-papal-benedict-xv-hf-ben-xv-enc-29061921-fausto-appetente-die-21f315f9/editions/1921-08-22-catholic-mind-english/segments/complete-english-reading.toml",
+          "sha256": "6daac0c04de97622c3b91a2f221553e032e439fa312894981becace65f0343bc"
+        },
+        "metadata": {
+          "segment": {
+            "path": "src/sources/works/papal-documents/1921-06-29-papal-benedict-xv-hf-ben-xv-enc-29061921-fausto-appetente-die-21f315f9/editions/1921-08-22-catholic-mind-english/segments/complete-english-reading.toml",
+            "sha256": "6daac0c04de97622c3b91a2f221553e032e439fa312894981becace65f0343bc"
+          },
+          "constituent_edition": {
+            "path": "src/sources/works/papal-documents/1921-06-29-papal-benedict-xv-hf-ben-xv-enc-29061921-fausto-appetente-die-21f315f9/editions/1921-08-22-catholic-mind-english/edition.toml",
+            "sha256": "53538f9d9311a30d1b831d0cba7db527939dad9fe07cd4f070987df2aea4bbe2"
+          },
+          "container_edition": {
+            "path": "src/sources/works/journals/catholic-mind/editions/1921-08-22-volume-19-issue-16/edition.toml",
+            "sha256": "936b056fb71755d54432bae70a490bd29e4fcdff7d8d4c310e19e33ab83e7f04"
+          }
+        },
+        "artifacts": [
+          {
+            "record": "src/sources/works/journals/catholic-mind/editions/1921-08-22-volume-19-issue-16/artifacts/selection-recipe-a26f7e321abd/artifact.toml",
+            "record_sha256": "9a48aa78a23c76ea4034e79dfaad49a329a19235b888fdbe89a3d9715583e0d2",
+            "path": "src/sources/works/journals/catholic-mind/editions/1921-08-22-volume-19-issue-16/artifacts/selection-recipe-a26f7e321abd/selection.json",
+            "sha256": "a26f7e321abd1d721fad1f0632f19f6ead0c96728c469c38214258d8e2a79ad0",
+            "rights_status": "licensed",
+            "storage": "tracked"
+          },
+          {
+            "record": "src/sources/works/journals/catholic-mind/editions/1921-08-22-volume-19-issue-16/artifacts/ia-facsimile-a124d6c87126/artifact.toml",
+            "record_sha256": "9d620bda7f9a45f9e9a3d33a106b7f044043837a2191cead15442e7e536abab6",
+            "path": "src/sources/works/journals/catholic-mind/editions/1921-08-22-volume-19-issue-16/artifacts/ia-facsimile-a124d6c87126/source.pdf",
+            "sha256": "a124d6c87126b89324af3b9e5b1ae4492104e92834ceb0d83a333133861e9916",
+            "rights_status": "public-domain",
+            "storage": "tracked"
+          },
+          {
+            "record": "src/sources/works/journals/catholic-mind/editions/1921-08-22-volume-19-issue-16/artifacts/extent-review-5fb0b41ac3b1/artifact.toml",
+            "record_sha256": "46b62400a835d442d1d2a5afe441410a17580f96fe44766af9ab2d0bb821ec99",
+            "path": "src/sources/works/journals/catholic-mind/editions/1921-08-22-volume-19-issue-16/artifacts/extent-review-5fb0b41ac3b1/review.json",
+            "sha256": "5fb0b41ac3b1d10d39133a57e560f490f84a05546fabeda49df349f659486866",
+            "rights_status": "licensed",
+            "storage": "tracked"
+          },
+          {
+            "record": "src/sources/works/journals/catholic-mind/editions/1921-08-22-volume-19-issue-16/artifacts/english-reading-65d6e7c7b07c/artifact.toml",
+            "record_sha256": "844b5c355233a19edd503f30e12b4b98069c2cbc09d697bebf415e7007ffc83d",
+            "path": "src/sources/works/journals/catholic-mind/editions/1921-08-22-volume-19-issue-16/artifacts/english-reading-65d6e7c7b07c/text.txt",
+            "sha256": "65d6e7c7b07cd5afbe8c98136199b73c55326904390486a0e9e1677f744d9dcb",
+            "rights_status": "public-domain",
+            "storage": "tracked"
+          },
+          {
+            "record": "src/sources/works/journals/catholic-mind/editions/1921-08-22-volume-19-issue-16/artifacts/ia-ocr-03571c2ca8fc/artifact.toml",
+            "record_sha256": "801ea8703883ab113ba3d75b6b886194b9020944ca52348302f6578a89d6d88f",
+            "path": "src/sources/works/journals/catholic-mind/editions/1921-08-22-volume-19-issue-16/artifacts/ia-ocr-03571c2ca8fc/ocr.txt",
+            "sha256": "03571c2ca8fc103a8a6f6a5ae85bd86aa66322c83e52dbdd4b4d2121150b12da",
+            "rights_status": "public-domain",
+            "storage": "tracked"
+          }
+        ],
+        "recipe_and_parent": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1921-08-22-volume-19-issue-16/artifacts/selection-recipe-a26f7e321abd/selection.json",
+          "sha256": "a26f7e321abd1d721fad1f0632f19f6ead0c96728c469c38214258d8e2a79ad0",
+          "input_path": "src/sources/works/journals/catholic-mind/editions/1921-08-22-volume-19-issue-16/artifacts/ia-ocr-03571c2ca8fc/ocr.txt",
+          "input_sha256": "03571c2ca8fc103a8a6f6a5ae85bd86aa66322c83e52dbdd4b4d2121150b12da",
+          "input_physical_line_ranges": [
+            [
+              15,
+              334
+            ]
+          ],
+          "native_pdf_pages": [
+            1,
+            6
+          ],
+          "printed_pages": [
+            301,
+            306
+          ],
+          "excluded_line_count": 6,
+          "independent_replay_sha256": "65d6e7c7b07cd5afbe8c98136199b73c55326904390486a0e9e1677f744d9dcb"
+        },
+        "mechanical_checks": {
+          "path": ".scratch/english-intake-recovery/packet-04/audit/mechanical-checks.json",
+          "sha256": "30fa8f0eebfd9588eaa96fa322ffc95bddaf17684d442cfd2cf2bb26cc157d49",
+          "bytes": 208004
+        },
+        "native_display_proxy_map": {
+          "path": ".scratch/english-intake-recovery/image-proxies/proxy-map.json",
+          "sha256": "d45e3d467b78d50e9f0be6ee271dd24c04d6b2981c5540e4dc1ae62285882f16",
+          "bytes": 252137
+        },
+        "extra_native_page_plan": {
+          "path": ".scratch/english-intake-recovery/packet-04/audit/extra-page-plan.json",
+          "sha256": "5fec2b7327ccd69a1b03919684a37b7e5286b2beb311704e8ff50659daedf9c5",
+          "bytes": 19653
+        }
+      },
+      "historical_human_english_edition": {
+        "schema": 1,
+        "record_type": "edition",
+        "id": "edition.papal.benedict-xv.hf-ben-xv-enc-29061921-fausto-appetente-die.1921-08-22-catholic-mind-english",
+        "work_id": "work.papal.benedict-xv.hf-ben-xv-enc-29061921-fausto-appetente-die",
+        "title": "Fausto Appetente Die — historical English translation",
+        "language": "en",
+        "date": "1921-08-22",
+        "publication": "The Catholic Mind 19, no. 16 (1921-08-22), pp. 301–306.",
+        "authority": "Historical contemporary human English translation",
+        "notes": "The printing credits the Boston Pilot translation. Exact complete printed act extent pp. 301–306. Source OCR recognition, punctuation and line-end hyphen fragments remain; no corrected translation or full lexical image collation is claimed. Historical notes remain distinct blank-line blocks. Native extent review: artifact.journals.catholic-mind.1921-08-22-volume-19-issue-16.extent-review-5fb0b41ac3b1."
+      },
+      "native_extent": {
+        "source_pdf_pages": [
+          1,
+          6
+        ],
+        "printed_pages": [
+          301,
+          306
+        ],
+        "freshly_observed_pdf_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "all_act_pages_structurally_reviewed": true
+      },
+      "actual_opened_images": [
+        {
+          "source_page": 1,
+          "source_pdf": "src/sources/works/journals/catholic-mind/editions/1921-08-22-volume-19-issue-16/artifacts/ia-facsimile-a124d6c87126/source.pdf",
+          "source_pdf_sha256": "a124d6c87126b89324af3b9e5b1ae4492104e92834ceb0d83a333133861e9916",
+          "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-45.png",
+          "source_png_sha256": "db28f6374d3abc18af2c4dc635296534311ff21ea4db799cbd9520a2a99584d3",
+          "source_bytes": 1959656,
+          "source_dimensions": [
+            1452,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1452,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-04-act-02-sample-01-db28f6374d3a.jpg",
+          "proxy_sha256": "95e1805bfd86bb2b708d0a1ef453684fca85510e9a70bf519622de0bb1020afb",
+          "proxy_bytes": 918352,
+          "proxy_dimensions": [
+            1452,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-45.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-04-act-02-sample-01-db28f6374d3a.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-04-act-02-sample-01-db28f6374d3a.jpg",
+          "id": "papal.benedict-xv.hf-ben-xv-enc-29061921-fausto-appetente-die.catholic-mind-1921-08-22-english",
+          "language": "en",
+          "opened_path": ".scratch/english-intake-recovery/image-proxies/packet-04-act-02-sample-01-db28f6374d3a.jpg",
+          "detail": "auto",
+          "actual_observation": "Fresh full-pixel JPEG95 of native PDF page 1 / printed p.301. Masthead visibly establishes Catholic Mind XIX no.16, August 22, 1921. The act is presented as the Holy Father's encyclical for Dominic's seventh centenary, with a conspicuous Boston Pilot translation credit between title and initial episcopal salutation. That historical attribution is retained in the selected text. The act begins here and has no separate introductory article or modern wrapper. No note block appears on this page. Source words were read from selected UTF-8 text, not extracted from this JPEG.",
+          "observed_at": "2026-10-30T14:03:19.527250+00:00"
+        },
+        {
+          "source_page": 3,
+          "source_pdf": "src/sources/works/journals/catholic-mind/editions/1921-08-22-volume-19-issue-16/artifacts/ia-facsimile-a124d6c87126/source.pdf",
+          "source_pdf_sha256": "a124d6c87126b89324af3b9e5b1ae4492104e92834ceb0d83a333133861e9916",
+          "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-46.png",
+          "source_png_sha256": "c572b30cdbbd3e28b0835c507cb73d747384f3c5fd7524855298abd08708b275",
+          "source_bytes": 1948333,
+          "source_dimensions": [
+            1460,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1460,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-04-act-02-sample-02-c572b30cdbbd.jpg",
+          "proxy_sha256": "eecc3796dda63d4f7be382461a732737950239849282ab910c398fb019304dd7",
+          "proxy_bytes": 938554,
+          "proxy_dimensions": [
+            1460,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-46.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-04-act-02-sample-02-c572b30cdbbd.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-04-act-02-sample-02-c572b30cdbbd.jpg",
+          "id": "papal.benedict-xv.hf-ben-xv-enc-29061921-fausto-appetente-die.catholic-mind-1921-08-22-english",
+          "language": "en",
+          "opened_path": ".scratch/english-intake-recovery/image-proxies/packet-04-act-02-sample-02-c572b30cdbbd.jpg",
+          "detail": "auto",
+          "actual_observation": "Fresh native PDF page 3 / printed p.303 through the pinned JPEG95. The page continues the preceding learning discussion, then introduces the section concerning the Order and the Holy See; this is the same sequence retained in the selected source. No independent footnote/endnote block is visible. The running head is distinct page furniture. This is a structural spot-check, not lexical translation checking or full-printing collation.",
+          "observed_at": "2026-10-30T14:03:51.314516+00:00"
+        },
+        {
+          "source_page": 6,
+          "source_pdf": "src/sources/works/journals/catholic-mind/editions/1921-08-22-volume-19-issue-16/artifacts/ia-facsimile-a124d6c87126/source.pdf",
+          "source_pdf_sha256": "a124d6c87126b89324af3b9e5b1ae4492104e92834ceb0d83a333133861e9916",
+          "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-47.png",
+          "source_png_sha256": "44dd377e5620468f99d9005f0eb63eaf1381de1068824db9f4796a087a9f1711",
+          "source_bytes": 1552628,
+          "source_dimensions": [
+            1452,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1452,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-04-act-02-sample-03-44dd377e5620.jpg",
+          "proxy_sha256": "33e6ed418daf653cfab73c9e9c431890068bf06d402f03fa0bf851a9394723ba",
+          "proxy_bytes": 723861,
+          "proxy_dimensions": [
+            1452,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-47.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-04-act-02-sample-03-44dd377e5620.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-04-act-02-sample-03-44dd377e5620.jpg",
+          "id": "papal.benedict-xv.hf-ben-xv-enc-29061921-fausto-appetente-die.catholic-mind-1921-08-22-english",
+          "language": "en",
+          "opened_path": ".scratch/english-intake-recovery/image-proxies/packet-04-act-02-sample-03-44dd377e5620.jpg",
+          "detail": "auto",
+          "actual_observation": "Fresh native PDF page 6 / printed p.306 via pinned full-pixel JPEG95. The closing portion continues the final centenary exhortation and Rosary appeal, then visibly includes the apostolic blessing, Rome/St Peter dating clause for June 29, 1921 with seventh pontifical year, and Benedictus PP. XV subscription. All are present in the selected historical English source, whose boundary ends at that subscription. The lower page is blank after the act; no endnote or neighboring article enters the selection. No exact wording was extracted from the proxy.",
+          "observed_at": "2026-10-30T14:04:31.709973+00:00"
+        },
+        {
+          "act": 2,
+          "source_pdf": "src/sources/works/journals/catholic-mind/editions/1921-08-22-volume-19-issue-16/artifacts/ia-facsimile-a124d6c87126/source.pdf",
+          "source_pdf_sha256": "a124d6c87126b89324af3b9e5b1ae4492104e92834ceb0d83a333133861e9916",
+          "source_page": 2,
+          "printed_page": 302,
+          "subset_page": 1,
+          "part_path": ".scratch/english-intake-recovery/packet-04/audit/extra-pages/act-02-native-02.pdf",
+          "part_sha256": "926d20d341ce0d12595e6dee450d13c306056db6a7c3fcb038f80c50152a0788",
+          "source_png": ".scratch/english-intake-recovery/packet-04/audit/rasters/.scratch/english-intake-recovery/packet-04/audit/extra-pages/remaining-act-pages/pages/page-1.png",
+          "source_png_sha256": "79d4d9cddea757c6203926e6c5b06187e39efa36700f6e8d314e6ec475caf3fd",
+          "source_dimensions": [
+            1460,
+            2200
+          ],
+          "source_bytes": 2014980,
+          "proxy": ".scratch/english-intake-recovery/packet-04/audit/display/act-02-native-02.jpg",
+          "proxy_sha256": "1b64d4729e034c9436a18f4c4bf0d6176d43470755cfc30d6d3b4034373ec99b",
+          "proxy_dimensions": [
+            1460,
+            2200
+          ],
+          "proxy_bytes": 954117,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "crop_pixels": [
+            0,
+            0,
+            1460,
+            2200
+          ],
+          "alpha_composite": "white; no resizing",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-recovery/packet-04/audit/rasters/.scratch/english-intake-recovery/packet-04/audit/extra-pages/remaining-act-pages/pages/page-1.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/packet-04/audit/display/act-02-native-02.jpg"
+          ],
+          "recommended_display": ".scratch/english-intake-recovery/packet-04/audit/display/act-02-native-02.jpg",
+          "purpose": "Review-only JPEG95 display proxy; native PNG/PDF remain authoritative. No source-word extraction from JPEG.",
+          "id": "papal.benedict-xv.hf-ben-xv-enc-29061921-fausto-appetente-die.catholic-mind-1921-08-22-english",
+          "language": "en",
+          "opened_path": ".scratch/english-intake-recovery/packet-04/audit/display/act-02-native-02.jpg",
+          "detail": "auto",
+          "actual_observation": "Fresh native PDF page 2 / printed p.302, prepared only through pinned pdf-review from an exact bounded subset and displayed through same-pixel JPEG95. Body continuation and the historical three-qualities section correspond structurally to the complete selected text. No distinct footnotes, endnotes, marginal summaries or translator addition appears; only the running head is separate page furniture. No source wording was extracted from the JPEG.",
+          "observed_at": "2026-10-30T14:08:19.534224+00:00"
+        },
+        {
+          "act": 2,
+          "source_pdf": "src/sources/works/journals/catholic-mind/editions/1921-08-22-volume-19-issue-16/artifacts/ia-facsimile-a124d6c87126/source.pdf",
+          "source_pdf_sha256": "a124d6c87126b89324af3b9e5b1ae4492104e92834ceb0d83a333133861e9916",
+          "source_page": 4,
+          "printed_page": 304,
+          "subset_page": 2,
+          "part_path": ".scratch/english-intake-recovery/packet-04/audit/extra-pages/act-02-native-04.pdf",
+          "part_sha256": "af914ee8ae94dba8bac82eccc6a6efcb05cb3d1f113956627a99bfa090826a8d",
+          "source_png": ".scratch/english-intake-recovery/packet-04/audit/rasters/.scratch/english-intake-recovery/packet-04/audit/extra-pages/remaining-act-pages/pages/page-2.png",
+          "source_png_sha256": "6b12b5e2e19af6412939a2104c5d64e61a4b3d76cc9e420eaffd440cf92ecb89",
+          "source_dimensions": [
+            1460,
+            2200
+          ],
+          "source_bytes": 2096755,
+          "proxy": ".scratch/english-intake-recovery/packet-04/audit/display/act-02-native-04.jpg",
+          "proxy_sha256": "09a49ebf53eef35d39ade2484209d35e8710571ef8d668132c137afda2d3f164",
+          "proxy_dimensions": [
+            1460,
+            2200
+          ],
+          "proxy_bytes": 981174,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "crop_pixels": [
+            0,
+            0,
+            1460,
+            2200
+          ],
+          "alpha_composite": "white; no resizing",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-recovery/packet-04/audit/rasters/.scratch/english-intake-recovery/packet-04/audit/extra-pages/remaining-act-pages/pages/page-2.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/packet-04/audit/display/act-02-native-04.jpg"
+          ],
+          "recommended_display": ".scratch/english-intake-recovery/packet-04/audit/display/act-02-native-04.jpg",
+          "purpose": "Review-only JPEG95 display proxy; native PNG/PDF remain authoritative. No source-word extraction from JPEG.",
+          "id": "papal.benedict-xv.hf-ben-xv-enc-29061921-fausto-appetente-die.catholic-mind-1921-08-22-english",
+          "language": "en",
+          "opened_path": ".scratch/english-intake-recovery/packet-04/audit/display/act-02-native-04.jpg",
+          "detail": "auto",
+          "actual_observation": "Fresh native PDF page 4 / printed p.304 via pinned JPEG95. The continuation about the Holy See and the historical Rosary section both correspond to the selected text's order. The quoted Marian prayer is embedded within the inherited English body and retained as such; no independent note apparatus or supplemental act is present. Only the running head is excluded furniture. No source-word extraction from JPEG.",
+          "observed_at": "2026-10-30T14:09:05.908470+00:00"
+        },
+        {
+          "act": 2,
+          "source_pdf": "src/sources/works/journals/catholic-mind/editions/1921-08-22-volume-19-issue-16/artifacts/ia-facsimile-a124d6c87126/source.pdf",
+          "source_pdf_sha256": "a124d6c87126b89324af3b9e5b1ae4492104e92834ceb0d83a333133861e9916",
+          "source_page": 5,
+          "printed_page": 305,
+          "subset_page": 3,
+          "part_path": ".scratch/english-intake-recovery/packet-04/audit/extra-pages/act-02-native-05.pdf",
+          "part_sha256": "0e7fb0eb6c670fcff07051f3459bbf1d6bbaaeee75871926c834ad9c3ffdd52d",
+          "source_png": ".scratch/english-intake-recovery/packet-04/audit/rasters/.scratch/english-intake-recovery/packet-04/audit/extra-pages/remaining-act-pages/pages/page-3.png",
+          "source_png_sha256": "5854162637f8270248ce2778eaac67afe3166c5f4589290229432628738b6c56",
+          "source_dimensions": [
+            1460,
+            2200
+          ],
+          "source_bytes": 2021548,
+          "proxy": ".scratch/english-intake-recovery/packet-04/audit/display/act-02-native-05.jpg",
+          "proxy_sha256": "5d3db75978ccaffad6410a6b8f4db476aa2397611aac1f17bc23bde13e6c392b",
+          "proxy_dimensions": [
+            1460,
+            2200
+          ],
+          "proxy_bytes": 963269,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "crop_pixels": [
+            0,
+            0,
+            1460,
+            2200
+          ],
+          "alpha_composite": "white; no resizing",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-recovery/packet-04/audit/rasters/.scratch/english-intake-recovery/packet-04/audit/extra-pages/remaining-act-pages/pages/page-3.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/packet-04/audit/display/act-02-native-05.jpg"
+          ],
+          "recommended_display": ".scratch/english-intake-recovery/packet-04/audit/display/act-02-native-05.jpg",
+          "purpose": "Review-only JPEG95 display proxy; native PNG/PDF remain authoritative. No source-word extraction from JPEG.",
+          "id": "papal.benedict-xv.hf-ben-xv-enc-29061921-fausto-appetente-die.catholic-mind-1921-08-22-english",
+          "language": "en",
+          "opened_path": ".scratch/english-intake-recovery/packet-04/audit/display/act-02-native-05.jpg",
+          "detail": "auto",
+          "actual_observation": "Fresh native PDF page 5 / printed p.305 through JPEG95. The Rosary argument continues and is followed by the Third Order section, then a paragraph continuing onto the closing page; the selected source retains all these structural portions. No separate historical note block, marginal summary or annex appears. All six Fausto act pages have now received fresh structural review; no substantive note apparatus was found to have been dropped. No source wording was extracted from the proxy and no full lexical collation is claimed.",
+          "observed_at": "2026-10-30T14:09:44.304722+00:00"
+        }
+      ],
+      "actual_opened_image_count": 6,
+      "scope_limits": [
+        "Source intake of exactly the three pinned historical human English witnesses; no AI-translated body was created or accepted.",
+        "All selected UTF-8 act texts were actually read completely. All 17 act pages received fresh structural review plus one issue masthead. This is not lexical translation accuracy review or full-printing glyph-by-glyph collation.",
+        "Exact original PDF/PNG hashes remain authority; same-pixel JPEG95 4:4:4 proxies were used only for visual identity, membership, boundaries and structure, with explicit auto detail. No OCR or source-word extraction from JPEG.",
+        "Source OCR recognition, punctuation, case, drop-cap and line-end hyphen defects remain disclosed. No silently corrected translation is claimed.",
+        "The historical issue mastheads establish title, volume/number and publication date. Publisher/place are carried by the separately pinned edition metadata; no separate publisher imprint beyond those mastheads is claimed freshly inspected.",
+        "No compiler-generated PDF layout, fonts, whole-issue content review, or worldwide rights clearance is asserted. The existing repository United States artifact-specific historical-publication policy governs retention."
+      ],
+      "findings": [
+        {
+          "kind": "edition-identity",
+          "result": "PASS",
+          "detail": "Contemporary human English printing: The Catholic Mind 19, no.16 (22 August 1921), printed pp.301–306. Native masthead verifies issue identity. Its explicit Boston Pilot translation credit is retained. No individual translator is named; none is invented."
+        },
+        {
+          "kind": "exact-extraction",
+          "result": "PASS",
+          "detail": "Current parent OCR, literal recipe, selected derivative, complete segment controller and edition pins match. Independent replay of parent physical lines 15–334 excluding only the six exact page-label/running-head lines reproduces source SHA-256 65d6e7c7b07cd5afbe8c98136199b73c55326904390486a0e9e1677f744d9dcb. Controller selects LF lines 1–49."
+        },
+        {
+          "kind": "completeness-and-boundaries",
+          "result": "PASS",
+          "detail": "Fresh structural inspection of all six act pages confirms the episcopal salutation, all body sections and embedded quotations, final blessing, Rome/St Peter dating clause of 29 June 1921, seventh pontifical year and Benedictus PP.XV subscription. Selection ends at the subscription. No distinct historical note block or omitted annex appears in this identified printing."
+        },
+        {
+          "kind": "rights-and-retention",
+          "result": "PASS",
+          "detail": "The native issue masthead identifies this United States printing as The Catholic Mind 19, no. 16, 1921-08-22. The historical English translation and contemporary issue material were published by 1930 and are public domain in the United States by expiration of the publication term. This applies to the identified printing, independently of the act date; modern host markup is excluded.",
+          "jurisdiction": "United States",
+          "policy_pin": {
+            "path": "src/sources/inventories/papal-documents-rights-v1.toml",
+            "sha256": "2098d3cc15ef3439234033c7582fe4f17a726494008b25682a7f1b3a844454ea",
+            "bytes": 10179
+          },
+          "qualification": "Exact identified 1920/1921 English printing, not the papal issuance date, supports the existing expired-term basis. Native full-issue PDFs, original OCR and bounded derivative each carry affirmative artifact-specific public-domain records; modern host wrapper is excluded. No new legal rule or worldwide claim is made."
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "id": "papal.benedict-xv.hf-ben-xv-enc-30041921-in-praeclara-summorum.catholic-mind-1921-07-08-english",
+      "language": "en",
+      "title": "In Praeclara Summorum",
+      "status": "PASS",
+      "source_acceptance": "PASS",
+      "source_sha256": "60800e9e1bba2b7622fb8a2c6a050201f566903ad89d599a666e8d8a62d0307c",
+      "row_sha256": "14a07f86fa00bf7f5e2eeb07b9a559b04a6e273b8641d7e058cb1d01e8f6e21f",
+      "source_scope_sha256": "b242164ffa16302e744c617e08f325aa1f1d39018a6ee034986dea62865cc804",
+      "controller_sha256": "ffae2f28ca2c83407fcd2b9a87452543403cd5f7b94c537b69be8a20bc522394",
+      "selected_text_read_complete": true,
+      "selected_text_bytes": 16872,
+      "proof_pins": {
+        "scope": {
+          "path": ".scratch/english-intake-recovery/packet-04/scope.json",
+          "sha256": "b242164ffa16302e744c617e08f325aa1f1d39018a6ee034986dea62865cc804",
+          "bytes": 4857
+        },
+        "evidence": {
+          "path": ".scratch/english-intake-recovery/packet-04/act-03-evidence.json",
+          "sha256": "88046a3c4672ff7da36a7c0da044e1a3da571c6d4f555c74d81c9dbcd5abea84",
+          "bytes": 29662
+        },
+        "selected_text": {
+          "path": ".scratch/english-intake-recovery/packet-04/act-03-selected.txt",
+          "sha256": "60800e9e1bba2b7622fb8a2c6a050201f566903ad89d599a666e8d8a62d0307c",
+          "bytes": 16872
+        },
+        "canonical_source": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1921-07-08-volume-19-issue-13/artifacts/english-reading-60800e9e1bba/text.txt",
+          "sha256": "60800e9e1bba2b7622fb8a2c6a050201f566903ad89d599a666e8d8a62d0307c",
+          "bytes": 16872
+        },
+        "source_manifest": {
+          "path": "src/sources/papal-documents/historical-english-completion-manifest.json",
+          "sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+          "bytes": 67917
+        },
+        "row_sha256": "14a07f86fa00bf7f5e2eeb07b9a559b04a6e273b8641d7e058cb1d01e8f6e21f",
+        "controller": {
+          "id": "segment.papal.benedict-xv.hf-ben-xv-enc-30041921-in-praeclara-summorum.1921-07-08-catholic-mind-english.complete-english-reading",
+          "record": "src/sources/works/papal-documents/1921-04-30-papal-benedict-xv-hf-ben-xv-enc-30041921-in-praeclara-summorum-05d26bb3/editions/1921-07-08-catholic-mind-english/segments/complete-english-reading.toml",
+          "sha256": "ffae2f28ca2c83407fcd2b9a87452543403cd5f7b94c537b69be8a20bc522394"
+        },
+        "metadata": {
+          "segment": {
+            "path": "src/sources/works/papal-documents/1921-04-30-papal-benedict-xv-hf-ben-xv-enc-30041921-in-praeclara-summorum-05d26bb3/editions/1921-07-08-catholic-mind-english/segments/complete-english-reading.toml",
+            "sha256": "ffae2f28ca2c83407fcd2b9a87452543403cd5f7b94c537b69be8a20bc522394"
+          },
+          "constituent_edition": {
+            "path": "src/sources/works/papal-documents/1921-04-30-papal-benedict-xv-hf-ben-xv-enc-30041921-in-praeclara-summorum-05d26bb3/editions/1921-07-08-catholic-mind-english/edition.toml",
+            "sha256": "711ff638f61a9a25aa113325b1a63f7ef7f60e97041614888c9a118b59d11b39"
+          },
+          "container_edition": {
+            "path": "src/sources/works/journals/catholic-mind/editions/1921-07-08-volume-19-issue-13/edition.toml",
+            "sha256": "9e9565a9c8ba73eb5580e20e8598e6f4f747f067e5a47d2795e9301f3a6f65f0"
+          }
+        },
+        "artifacts": [
+          {
+            "record": "src/sources/works/journals/catholic-mind/editions/1921-07-08-volume-19-issue-13/artifacts/ia-facsimile-bf24c2a5cf42/artifact.toml",
+            "record_sha256": "d9beba381ec17132db354a453873bbbebd2f2b1253abc3b9da92b1070b143611",
+            "path": "src/sources/works/journals/catholic-mind/editions/1921-07-08-volume-19-issue-13/artifacts/ia-facsimile-bf24c2a5cf42/source.pdf",
+            "sha256": "bf24c2a5cf420432b9caa70daeb6620cde3818b31d0aa7bd1769f482b7c05256",
+            "rights_status": "public-domain",
+            "storage": "tracked"
+          },
+          {
+            "record": "src/sources/works/journals/catholic-mind/editions/1921-07-08-volume-19-issue-13/artifacts/extent-review-e9a7ff019bf1/artifact.toml",
+            "record_sha256": "1ca6f4df9e5ce85e407d84b468d9449d869e0f5235684a911dcf030865689c52",
+            "path": "src/sources/works/journals/catholic-mind/editions/1921-07-08-volume-19-issue-13/artifacts/extent-review-e9a7ff019bf1/review.json",
+            "sha256": "e9a7ff019bf17b7b3762c6a1627bf57c7639c6e6a9414d9a6622902cafc873a9",
+            "rights_status": "licensed",
+            "storage": "tracked"
+          },
+          {
+            "record": "src/sources/works/journals/catholic-mind/editions/1921-07-08-volume-19-issue-13/artifacts/selection-recipe-75a81086aad6/artifact.toml",
+            "record_sha256": "5684bb47f1d3d4d11e0661c00b635f6c80007a15e744ca02d2cbcf5c0b511eaf",
+            "path": "src/sources/works/journals/catholic-mind/editions/1921-07-08-volume-19-issue-13/artifacts/selection-recipe-75a81086aad6/selection.json",
+            "sha256": "75a81086aad68469f6728e0f8fe4c15ae1b94ac9df5c0681b5ef3389f859faf4",
+            "rights_status": "licensed",
+            "storage": "tracked"
+          },
+          {
+            "record": "src/sources/works/journals/catholic-mind/editions/1921-07-08-volume-19-issue-13/artifacts/english-reading-60800e9e1bba/artifact.toml",
+            "record_sha256": "64c48cb09e2c7dec20834be0a01cbc0b8f2cba3b3abff2b91323c0fc3b88bfe8",
+            "path": "src/sources/works/journals/catholic-mind/editions/1921-07-08-volume-19-issue-13/artifacts/english-reading-60800e9e1bba/text.txt",
+            "sha256": "60800e9e1bba2b7622fb8a2c6a050201f566903ad89d599a666e8d8a62d0307c",
+            "rights_status": "public-domain",
+            "storage": "tracked"
+          },
+          {
+            "record": "src/sources/works/journals/catholic-mind/editions/1921-07-08-volume-19-issue-13/artifacts/ia-ocr-94492cb6e831/artifact.toml",
+            "record_sha256": "5cd4d69851a04c058eaa03e4580548ae4c1ab37e0119b63925c52fcae9f33154",
+            "path": "src/sources/works/journals/catholic-mind/editions/1921-07-08-volume-19-issue-13/artifacts/ia-ocr-94492cb6e831/ocr.txt",
+            "sha256": "94492cb6e831d87ed68932e9f084c8feabcc4a0327b30aa6cb62e0d5d06efc1c",
+            "rights_status": "public-domain",
+            "storage": "tracked"
+          }
+        ],
+        "recipe_and_parent": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1921-07-08-volume-19-issue-13/artifacts/selection-recipe-75a81086aad6/selection.json",
+          "sha256": "75a81086aad68469f6728e0f8fe4c15ae1b94ac9df5c0681b5ef3389f859faf4",
+          "input_path": "src/sources/works/journals/catholic-mind/editions/1921-07-08-volume-19-issue-13/artifacts/ia-ocr-94492cb6e831/ocr.txt",
+          "input_sha256": "94492cb6e831d87ed68932e9f084c8feabcc4a0327b30aa6cb62e0d5d06efc1c",
+          "input_physical_line_ranges": [
+            [
+              120,
+              577
+            ]
+          ],
+          "native_pdf_pages": [
+            1,
+            8
+          ],
+          "printed_pages": [
+            241,
+            248
+          ],
+          "excluded_line_count": 8,
+          "independent_replay_sha256": "60800e9e1bba2b7622fb8a2c6a050201f566903ad89d599a666e8d8a62d0307c"
+        },
+        "mechanical_checks": {
+          "path": ".scratch/english-intake-recovery/packet-04/audit/mechanical-checks.json",
+          "sha256": "30fa8f0eebfd9588eaa96fa322ffc95bddaf17684d442cfd2cf2bb26cc157d49",
+          "bytes": 208004
+        },
+        "native_display_proxy_map": {
+          "path": ".scratch/english-intake-recovery/image-proxies/proxy-map.json",
+          "sha256": "d45e3d467b78d50e9f0be6ee271dd24c04d6b2981c5540e4dc1ae62285882f16",
+          "bytes": 252137
+        },
+        "extra_native_page_plan": {
+          "path": ".scratch/english-intake-recovery/packet-04/audit/extra-page-plan.json",
+          "sha256": "5fec2b7327ccd69a1b03919684a37b7e5286b2beb311704e8ff50659daedf9c5",
+          "bytes": 19653
+        }
+      },
+      "historical_human_english_edition": {
+        "schema": 1,
+        "record_type": "edition",
+        "id": "edition.papal.benedict-xv.hf-ben-xv-enc-30041921-in-praeclara-summorum.1921-07-08-catholic-mind-english",
+        "work_id": "work.papal.benedict-xv.hf-ben-xv-enc-30041921-in-praeclara-summorum",
+        "title": "In Praeclara Summorum — historical English translation",
+        "language": "en",
+        "date": "1921-07-08",
+        "publication": "The Catholic Mind 19, no. 13 (1921-07-08), pp. 241–248.",
+        "authority": "Historical contemporary human English translation",
+        "notes": "Anonymous contemporary translation. The complete printed witness ends with blessing and papal subscription but contains no dating clause; none is supplied. Exact complete printed act extent pp. 241–248. Source OCR recognition, punctuation and line-end hyphen fragments remain; no corrected translation or full lexical image collation is claimed. Historical notes remain distinct blank-line blocks. Native extent review: artifact.journals.catholic-mind.1921-07-08-volume-19-issue-13.extent-review-e9a7ff019bf1."
+      },
+      "native_extent": {
+        "source_pdf_pages": [
+          1,
+          8
+        ],
+        "printed_pages": [
+          241,
+          248
+        ],
+        "freshly_observed_pdf_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "all_act_pages_structurally_reviewed": true
+      },
+      "actual_opened_images": [
+        {
+          "source_page": 1,
+          "source_pdf": "src/sources/works/journals/catholic-mind/editions/1921-07-08-volume-19-issue-13/artifacts/ia-facsimile-bf24c2a5cf42/source.pdf",
+          "source_pdf_sha256": "bf24c2a5cf420432b9caa70daeb6620cde3818b31d0aa7bd1769f482b7c05256",
+          "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-48.png",
+          "source_png_sha256": "255910598c3707e97901a0757c8667961d50c599012fcf832ed2f942afdc0a05",
+          "source_bytes": 1947749,
+          "source_dimensions": [
+            1452,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1452,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-04-act-03-sample-01-255910598c37.jpg",
+          "proxy_sha256": "44227f34d1872627c881342a470b6409e790feea706300f296285aa1ce5b1d02",
+          "proxy_bytes": 912845,
+          "proxy_dimensions": [
+            1452,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-48.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-04-act-03-sample-01-255910598c37.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-04-act-03-sample-01-255910598c37.jpg",
+          "id": "papal.benedict-xv.hf-ben-xv-enc-30041921-in-praeclara-summorum.catholic-mind-1921-07-08-english",
+          "language": "en",
+          "opened_path": ".scratch/english-intake-recovery/image-proxies/packet-04-act-03-sample-01-255910598c37.jpg",
+          "detail": "auto",
+          "actual_observation": "Fresh native PDF page 1 / printed p.241 through pinned full-pixel JPEG95. Historical masthead identifies Catholic Mind XIX no.13, July 8, 1921. The act starts here beneath its Dante centenary title and encyclical subtitle, with an address to professors/students of Catholic literary and higher institutions, an initial Benedict XV subscription, and the salutation before the body. Every such structural part is retained in the selected text despite OCR drop-cap/case defects. No named translator or separate explanatory introduction appears. This establishes the historical English printing; no exact wording was extracted from the proxy.",
+          "observed_at": "2026-10-30T14:05:00.072963+00:00"
+        },
+        {
+          "source_page": 4,
+          "source_pdf": "src/sources/works/journals/catholic-mind/editions/1921-07-08-volume-19-issue-13/artifacts/ia-facsimile-bf24c2a5cf42/source.pdf",
+          "source_pdf_sha256": "bf24c2a5cf420432b9caa70daeb6620cde3818b31d0aa7bd1769f482b7c05256",
+          "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-49.png",
+          "source_png_sha256": "58879e9fc7170c72793860c798b5037712dd8381770614d62f9f6146a00438d8",
+          "source_bytes": 2128245,
+          "source_dimensions": [
+            1456,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1456,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-04-act-03-sample-02-58879e9fc717.jpg",
+          "proxy_sha256": "347ffea6555121a767e1375bc6d7f15ec29851ae96ee4cab12b76869b608cd4d",
+          "proxy_bytes": 1008905,
+          "proxy_dimensions": [
+            1456,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-49.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-04-act-03-sample-02-58879e9fc717.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-04-act-03-sample-02-58879e9fc717.jpg",
+          "id": "papal.benedict-xv.hf-ben-xv-enc-30041921-in-praeclara-summorum.catholic-mind-1921-07-08-english",
+          "language": "en",
+          "opened_path": ".scratch/english-intake-recovery/image-proxies/packet-04-act-03-sample-02-58879e9fc717.jpg",
+          "detail": "auto",
+          "actual_observation": "Fresh native PDF page 4 / printed p.244 through pinned JPEG95. Historical source references to Dante's works appear inline in the body, and the smaller-type quotation is a distinct quoted paragraph continuing below the page. These references, quotation text and section heading are retained in the selected OCR in source order. No separate footnote/endnote apparatus is visible at this locus. This review checks membership and structure, not exact glyphs or translation accuracy; no words were extracted from the JPEG.",
+          "observed_at": "2026-10-30T14:05:27.245676+00:00"
+        },
+        {
+          "source_page": 8,
+          "source_pdf": "src/sources/works/journals/catholic-mind/editions/1921-07-08-volume-19-issue-13/artifacts/ia-facsimile-bf24c2a5cf42/source.pdf",
+          "source_pdf_sha256": "bf24c2a5cf420432b9caa70daeb6620cde3818b31d0aa7bd1769f482b7c05256",
+          "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-50.png",
+          "source_png_sha256": "2d5c661929f9503a240168f5e227acb764f7cfa1a1cad195282940ae0ae2a943",
+          "source_bytes": 2110124,
+          "source_dimensions": [
+            1469,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1469,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-04-act-03-sample-03-2d5c661929f9.jpg",
+          "proxy_sha256": "e4a17741b1afe2167efa006a4279b486ceeba2c1c822c7cbe006ed79869d4591",
+          "proxy_bytes": 985979,
+          "proxy_dimensions": [
+            1469,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-50.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-04-act-03-sample-03-2d5c661929f9.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-04-act-03-sample-03-2d5c661929f9.jpg",
+          "id": "papal.benedict-xv.hf-ben-xv-enc-30041921-in-praeclara-summorum.catholic-mind-1921-07-08-english",
+          "language": "en",
+          "opened_path": ".scratch/english-intake-recovery/image-proxies/packet-04-act-03-sample-03-2d5c661929f9.jpg",
+          "detail": "auto",
+          "actual_observation": "Fresh native PDF page 8 / printed p.248 via pinned full-pixel JPEG95. The act visibly ends with the appeal to students, apostolic blessing and Benedict XV papal subscription, immediately followed by a separator and a separately titled Unamuno article. There is no dating clause between the blessing and papal subscription in this printing. The selected source ends at that subscription and excludes the neighbor, including the neighbor's separately named translator; that credit cannot be transferred to this encyclical. No endnotes appear before the separator. No exact source wording was extracted from the JPEG.",
+          "observed_at": "2026-10-30T14:06:01.090812+00:00"
+        },
+        {
+          "act": 3,
+          "source_pdf": "src/sources/works/journals/catholic-mind/editions/1921-07-08-volume-19-issue-13/artifacts/ia-facsimile-bf24c2a5cf42/source.pdf",
+          "source_pdf_sha256": "bf24c2a5cf420432b9caa70daeb6620cde3818b31d0aa7bd1769f482b7c05256",
+          "source_page": 2,
+          "printed_page": 242,
+          "subset_page": 4,
+          "part_path": ".scratch/english-intake-recovery/packet-04/audit/extra-pages/act-03-native-02.pdf",
+          "part_sha256": "5ff01cfd9323745ec72149cab10b9464d4ec298d592fef5653be37bb399b9da6",
+          "source_png": ".scratch/english-intake-recovery/packet-04/audit/rasters/.scratch/english-intake-recovery/packet-04/audit/extra-pages/remaining-act-pages/pages/page-4.png",
+          "source_png_sha256": "450fa3af39cf6e2106d126dccfa06f507a31ad2e5dc58d4c4632fee657877042",
+          "source_dimensions": [
+            1452,
+            2200
+          ],
+          "source_bytes": 2188027,
+          "proxy": ".scratch/english-intake-recovery/packet-04/audit/display/act-03-native-02.jpg",
+          "proxy_sha256": "54ef87b19698d7577daffab7edeb9fb40537a4227567772c874774f2a3700e6a",
+          "proxy_dimensions": [
+            1452,
+            2200
+          ],
+          "proxy_bytes": 1034523,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "crop_pixels": [
+            0,
+            0,
+            1452,
+            2200
+          ],
+          "alpha_composite": "white; no resizing",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-recovery/packet-04/audit/rasters/.scratch/english-intake-recovery/packet-04/audit/extra-pages/remaining-act-pages/pages/page-4.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/packet-04/audit/display/act-03-native-02.jpg"
+          ],
+          "recommended_display": ".scratch/english-intake-recovery/packet-04/audit/display/act-03-native-02.jpg",
+          "purpose": "Review-only JPEG95 display proxy; native PNG/PDF remain authoritative. No source-word extraction from JPEG.",
+          "id": "papal.benedict-xv.hf-ben-xv-enc-30041921-in-praeclara-summorum.catholic-mind-1921-07-08-english",
+          "language": "en",
+          "opened_path": ".scratch/english-intake-recovery/packet-04/audit/display/act-03-native-02.jpg",
+          "detail": "auto",
+          "actual_observation": "Fresh native PDF page 2 / printed p.242 via same-pixel JPEG95. The historical Catholic-celebration heading and full-page prose match the selected text's structure between its opening and theological discussion. No printed footnote/endnote block or annex appears. The faint bottom mark is visually separate from typeset body and is not treated as source wording. No exact words were extracted from the proxy.",
+          "observed_at": "2026-10-30T14:10:38.721303+00:00"
+        },
+        {
+          "act": 3,
+          "source_pdf": "src/sources/works/journals/catholic-mind/editions/1921-07-08-volume-19-issue-13/artifacts/ia-facsimile-bf24c2a5cf42/source.pdf",
+          "source_pdf_sha256": "bf24c2a5cf420432b9caa70daeb6620cde3818b31d0aa7bd1769f482b7c05256",
+          "source_page": 3,
+          "printed_page": 243,
+          "subset_page": 5,
+          "part_path": ".scratch/english-intake-recovery/packet-04/audit/extra-pages/act-03-native-03.pdf",
+          "part_sha256": "282d7930cf5cd58e72d0e188288d5eace44207844d162aac75ec8a03ab1eb201",
+          "source_png": ".scratch/english-intake-recovery/packet-04/audit/rasters/.scratch/english-intake-recovery/packet-04/audit/extra-pages/remaining-act-pages/pages/page-5.png",
+          "source_png_sha256": "62f93352c457c45679383407ac4fdaa2dd958d06c289dd0a54810e63fb854ba5",
+          "source_dimensions": [
+            1452,
+            2200
+          ],
+          "source_bytes": 2094347,
+          "proxy": ".scratch/english-intake-recovery/packet-04/audit/display/act-03-native-03.jpg",
+          "proxy_sha256": "1ddaa3bf10cb3ae7d8ea189681d1abb87a6d1a38ee5e29565c722e9ea7058fd1",
+          "proxy_dimensions": [
+            1452,
+            2200
+          ],
+          "proxy_bytes": 992697,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "crop_pixels": [
+            0,
+            0,
+            1452,
+            2200
+          ],
+          "alpha_composite": "white; no resizing",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-recovery/packet-04/audit/rasters/.scratch/english-intake-recovery/packet-04/audit/extra-pages/remaining-act-pages/pages/page-5.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/packet-04/audit/display/act-03-native-03.jpg"
+          ],
+          "recommended_display": ".scratch/english-intake-recovery/packet-04/audit/display/act-03-native-03.jpg",
+          "purpose": "Review-only JPEG95 display proxy; native PNG/PDF remain authoritative. No source-word extraction from JPEG.",
+          "id": "papal.benedict-xv.hf-ben-xv-enc-30041921-in-praeclara-summorum.catholic-mind-1921-07-08-english",
+          "language": "en",
+          "opened_path": ".scratch/english-intake-recovery/packet-04/audit/display/act-03-native-03.jpg",
+          "detail": "auto",
+          "actual_observation": "Fresh native PDF page 3 / printed p.243 through JPEG95. The theological/cosmological discussion and the historical religious-truths heading continue in the order of the selected body, with prose continuing onto p.244. No separate notes, marginal summaries or annex appears; source references continue inline on the following inspected page. No words extracted from the display proxy.",
+          "observed_at": "2026-10-30T14:11:12.980883+00:00"
+        },
+        {
+          "act": 3,
+          "source_pdf": "src/sources/works/journals/catholic-mind/editions/1921-07-08-volume-19-issue-13/artifacts/ia-facsimile-bf24c2a5cf42/source.pdf",
+          "source_pdf_sha256": "bf24c2a5cf420432b9caa70daeb6620cde3818b31d0aa7bd1769f482b7c05256",
+          "source_page": 5,
+          "printed_page": 245,
+          "subset_page": 6,
+          "part_path": ".scratch/english-intake-recovery/packet-04/audit/extra-pages/act-03-native-05.pdf",
+          "part_sha256": "12cc50a7f1b64ab8319a40391efb1a47474c609422441f2edee5cf6c83c95258",
+          "source_png": ".scratch/english-intake-recovery/packet-04/audit/rasters/.scratch/english-intake-recovery/packet-04/audit/extra-pages/remaining-act-pages/pages/page-6.png",
+          "source_png_sha256": "d9a132d24bd7be5d3b63e695187ed3a68da1e25f3bddd679de7e6e6a21916b31",
+          "source_dimensions": [
+            1456,
+            2200
+          ],
+          "source_bytes": 2098705,
+          "proxy": ".scratch/english-intake-recovery/packet-04/audit/display/act-03-native-05.jpg",
+          "proxy_sha256": "3d7d61e869bffbddb37c73c6145835ab97fd995e66ba37582b93b2cc69b6d313",
+          "proxy_dimensions": [
+            1456,
+            2200
+          ],
+          "proxy_bytes": 1001559,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "crop_pixels": [
+            0,
+            0,
+            1456,
+            2200
+          ],
+          "alpha_composite": "white; no resizing",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-recovery/packet-04/audit/rasters/.scratch/english-intake-recovery/packet-04/audit/extra-pages/remaining-act-pages/pages/page-6.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/packet-04/audit/display/act-03-native-05.jpg"
+          ],
+          "recommended_display": ".scratch/english-intake-recovery/packet-04/audit/display/act-03-native-05.jpg",
+          "purpose": "Review-only JPEG95 display proxy; native PNG/PDF remain authoritative. No source-word extraction from JPEG.",
+          "id": "papal.benedict-xv.hf-ben-xv-enc-30041921-in-praeclara-summorum.catholic-mind-1921-07-08-english",
+          "language": "en",
+          "opened_path": ".scratch/english-intake-recovery/packet-04/audit/display/act-03-native-05.jpg",
+          "detail": "auto",
+          "actual_observation": "Fresh native PDF page 5 / printed p.245 via JPEG95. A smaller-type quotation continues from the prior page and ends with its inline reference before normal body resumes. Additional historical references are inline in that body, matching the selected source's retained quotation/reference structure. No separate footnote/endnote block or interleaved neighboring work appears. No source wording extracted from proxy.",
+          "observed_at": "2026-10-30T14:11:57.959249+00:00"
+        },
+        {
+          "act": 3,
+          "source_pdf": "src/sources/works/journals/catholic-mind/editions/1921-07-08-volume-19-issue-13/artifacts/ia-facsimile-bf24c2a5cf42/source.pdf",
+          "source_pdf_sha256": "bf24c2a5cf420432b9caa70daeb6620cde3818b31d0aa7bd1769f482b7c05256",
+          "source_page": 6,
+          "printed_page": 246,
+          "subset_page": 7,
+          "part_path": ".scratch/english-intake-recovery/packet-04/audit/extra-pages/act-03-native-06.pdf",
+          "part_sha256": "be89f25133aac20573eda8b3296632f8a50b91a323845a9308a249973011eebc",
+          "source_png": ".scratch/english-intake-recovery/packet-04/audit/rasters/.scratch/english-intake-recovery/packet-04/audit/extra-pages/remaining-act-pages/pages/page-7.png",
+          "source_png_sha256": "4602b6ea0a0716fc4766a6da5e4f1198441fdde0ced606c5bc850ee385b1869b",
+          "source_dimensions": [
+            1452,
+            2200
+          ],
+          "source_bytes": 2200256,
+          "proxy": ".scratch/english-intake-recovery/packet-04/audit/display/act-03-native-06.jpg",
+          "proxy_sha256": "af7bb328260657c1bb396909a8acffb092902b800afca1d0652a1a1c4627d26c",
+          "proxy_dimensions": [
+            1452,
+            2200
+          ],
+          "proxy_bytes": 1038386,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "crop_pixels": [
+            0,
+            0,
+            1452,
+            2200
+          ],
+          "alpha_composite": "white; no resizing",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-recovery/packet-04/audit/rasters/.scratch/english-intake-recovery/packet-04/audit/extra-pages/remaining-act-pages/pages/page-7.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/packet-04/audit/display/act-03-native-06.jpg"
+          ],
+          "recommended_display": ".scratch/english-intake-recovery/packet-04/audit/display/act-03-native-06.jpg",
+          "purpose": "Review-only JPEG95 display proxy; native PNG/PDF remain authoritative. No source-word extraction from JPEG.",
+          "id": "papal.benedict-xv.hf-ben-xv-enc-30041921-in-praeclara-summorum.catholic-mind-1921-07-08-english",
+          "language": "en",
+          "opened_path": ".scratch/english-intake-recovery/packet-04/audit/display/act-03-native-06.jpg",
+          "detail": "auto",
+          "actual_observation": "Fresh native PDF page 6 / printed p.246 through JPEG95. Inline Dante reference concludes the carried-over quotation, followed by the Catholic-doctrine section and continuous body. These are present in the selected UTF-8 source in the same order. No distinct note apparatus, annex or neighboring work appears. No exact wording extracted from display proxy.",
+          "observed_at": "2026-10-30T14:12:30.665342+00:00"
+        },
+        {
+          "act": 3,
+          "source_pdf": "src/sources/works/journals/catholic-mind/editions/1921-07-08-volume-19-issue-13/artifacts/ia-facsimile-bf24c2a5cf42/source.pdf",
+          "source_pdf_sha256": "bf24c2a5cf420432b9caa70daeb6620cde3818b31d0aa7bd1769f482b7c05256",
+          "source_page": 7,
+          "printed_page": 247,
+          "subset_page": 8,
+          "part_path": ".scratch/english-intake-recovery/packet-04/audit/extra-pages/act-03-native-07.pdf",
+          "part_sha256": "9efe08f319a5683be3e2ed24ec3b95c3f18a9ec2df6bde53fad5a19fa23b2892",
+          "source_png": ".scratch/english-intake-recovery/packet-04/audit/rasters/.scratch/english-intake-recovery/packet-04/audit/extra-pages/remaining-act-pages/pages/page-8.png",
+          "source_png_sha256": "bb54b31c9a7636c6767c4f8a822ecb0cfbcdec970947039f04cd8ef19696855b",
+          "source_dimensions": [
+            1452,
+            2200
+          ],
+          "source_bytes": 2101257,
+          "proxy": ".scratch/english-intake-recovery/packet-04/audit/display/act-03-native-07.jpg",
+          "proxy_sha256": "365e1aa1262d7ed9826848729608ecc1e5f38ac46f8e9f46b422029448e79a4c",
+          "proxy_dimensions": [
+            1452,
+            2200
+          ],
+          "proxy_bytes": 993693,
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "crop_pixels": [
+            0,
+            0,
+            1452,
+            2200
+          ],
+          "alpha_composite": "white; no resizing",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-recovery/packet-04/audit/rasters/.scratch/english-intake-recovery/packet-04/audit/extra-pages/remaining-act-pages/pages/page-8.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/packet-04/audit/display/act-03-native-07.jpg"
+          ],
+          "recommended_display": ".scratch/english-intake-recovery/packet-04/audit/display/act-03-native-07.jpg",
+          "purpose": "Review-only JPEG95 display proxy; native PNG/PDF remain authoritative. No source-word extraction from JPEG.",
+          "id": "papal.benedict-xv.hf-ben-xv-enc-30041921-in-praeclara-summorum.catholic-mind-1921-07-08-english",
+          "language": "en",
+          "opened_path": ".scratch/english-intake-recovery/packet-04/audit/display/act-03-native-07.jpg",
+          "detail": "auto",
+          "actual_observation": "Fresh native PDF page 7 / printed p.247 via JPEG95. The text continues the literary argument, introduces the Christian-ideals section and ends mid-body before the already inspected closing page. This sequence is retained in the complete selected source. No separate historical notes, marginal summaries or annex appears. All eight In Praeclara act pages have now received fresh structural review; its historical references are inline, with no separate note block found dropped. No source wording extracted from JPEG and no full lexical collation claimed.",
+          "observed_at": "2026-10-30T14:12:59.713031+00:00"
+        }
+      ],
+      "actual_opened_image_count": 8,
+      "scope_limits": [
+        "Source intake of exactly the three pinned historical human English witnesses; no AI-translated body was created or accepted.",
+        "All selected UTF-8 act texts were actually read completely. All 17 act pages received fresh structural review plus one issue masthead. This is not lexical translation accuracy review or full-printing glyph-by-glyph collation.",
+        "Exact original PDF/PNG hashes remain authority; same-pixel JPEG95 4:4:4 proxies were used only for visual identity, membership, boundaries and structure, with explicit auto detail. No OCR or source-word extraction from JPEG.",
+        "Source OCR recognition, punctuation, case, drop-cap and line-end hyphen defects remain disclosed. No silently corrected translation is claimed.",
+        "The historical issue mastheads establish title, volume/number and publication date. Publisher/place are carried by the separately pinned edition metadata; no separate publisher imprint beyond those mastheads is claimed freshly inspected.",
+        "No compiler-generated PDF layout, fonts, whole-issue content review, or worldwide rights clearance is asserted. The existing repository United States artifact-specific historical-publication policy governs retention."
+      ],
+      "findings": [
+        {
+          "kind": "edition-identity",
+          "result": "PASS",
+          "detail": "Anonymous contemporary human English printing: The Catholic Mind 19, no.13 (8 July 1921), printed pp.241–248. Native masthead verifies date, volume and number. No translator is named for this act. A translator credited to the next Unamuno article belongs to that neighbor and is excluded."
+        },
+        {
+          "kind": "exact-extraction",
+          "result": "PASS",
+          "detail": "Current parent OCR, literal recipe, selected derivative, complete segment controller and metadata pins match. Independent replay of parent physical lines 120–577 excluding only eight exact page-label/running-head lines reproduces source SHA-256 60800e9e1bba2b7622fb8a2c6a050201f566903ad89d599a666e8d8a62d0307c. Controller selects LF lines 1–59."
+        },
+        {
+          "kind": "completeness-and-boundaries",
+          "result": "PASS",
+          "detail": "Fresh structural inspection of all eight act pages confirms the full address to professors/students, initial papal subscription, salutation, all body sections, historical inline references and smaller-type quotation, final blessing and papal subscription. This exact printing has no dating clause at the close; none is supplied. The next separately titled article and its editorial/translator note are excluded. No distinct footnote/endnote block was found dropped."
+        },
+        {
+          "kind": "rights-and-retention",
+          "result": "PASS",
+          "detail": "The native issue masthead identifies this United States printing as The Catholic Mind 19, no. 13, 1921-07-08. The historical English translation and contemporary issue material were published by 1930 and are public domain in the United States by expiration of the publication term. This applies to the identified printing, independently of the act date; modern host markup is excluded.",
+          "jurisdiction": "United States",
+          "policy_pin": {
+            "path": "src/sources/inventories/papal-documents-rights-v1.toml",
+            "sha256": "2098d3cc15ef3439234033c7582fe4f17a726494008b25682a7f1b3a844454ea",
+            "bytes": 10179
+          },
+          "qualification": "Exact identified 1920/1921 English printing, not the papal issuance date, supports the existing expired-term basis. Native full-issue PDFs, original OCR and bounded derivative each carry affirmative artifact-specific public-domain records; modern host wrapper is excluded. No new legal rule or worldwide claim is made."
+        }
+      ],
+      "blockers": []
+    }
+  ],
+  "scope_limits": [
+    "Source intake of exactly the three pinned historical human English witnesses; no AI-translated body was created or accepted.",
+    "All selected UTF-8 act texts were actually read completely. All 17 act pages received fresh structural review plus one issue masthead. This is not lexical translation accuracy review or full-printing glyph-by-glyph collation.",
+    "Exact original PDF/PNG hashes remain authority; same-pixel JPEG95 4:4:4 proxies were used only for visual identity, membership, boundaries and structure, with explicit auto detail. No OCR or source-word extraction from JPEG.",
+    "Source OCR recognition, punctuation, case, drop-cap and line-end hyphen defects remain disclosed. No silently corrected translation is claimed.",
+    "The historical issue mastheads establish title, volume/number and publication date. Publisher/place are carried by the separately pinned edition metadata; no separate publisher imprint beyond those mastheads is claimed freshly inspected.",
+    "No compiler-generated PDF layout, fonts, whole-issue content review, or worldwide rights clearance is asserted. The existing repository United States artifact-specific historical-publication policy governs retention."
+  ],
+  "blockers": []
+}

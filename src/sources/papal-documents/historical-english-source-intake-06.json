@@ -1,0 +1,1353 @@
+{
+  "schema": "triptych-three-act-source-cold-audit-report/v1",
+  "packet": 6,
+  "scope_sha256": "4d69e066806a7bd3b5f55c18a27e15b6bb9cc93644bae45ff85eb495b8966195",
+  "expected_count": 3,
+  "expected_keys": [
+    [
+      "papal.pius-ix.enciclica-cum-sancta-mater-27-aprile-1859",
+      "en"
+    ],
+    [
+      "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
+      "en"
+    ],
+    [
+      "papal.pius-ix.enciclica-exultavit-cor-nostrum-21-novembre-1851",
+      "en"
+    ]
+  ],
+  "summary": {
+    "source_pass": 3,
+    "blocked": 0,
+    "pending": 0,
+    "selected_text_reads_complete": 3,
+    "fresh_native_images_opened": 14,
+    "metadata_qualifications": 2
+  },
+  "source_acceptance_scope": "Accept exact selected historical human English witness as uncorrected mechanical source text with disclosed limitations. Printing-place qualifiers below do not change the independently corroborated historical years or source-byte identities.",
+  "documents": [
+    {
+      "id": "papal.pius-ix.enciclica-cum-sancta-mater-27-aprile-1859",
+      "language": "en",
+      "key": [
+        "papal.pius-ix.enciclica-cum-sancta-mater-27-aprile-1859",
+        "en"
+      ],
+      "title": "Cum Sancta Mater",
+      "status": "PASS",
+      "source_acceptance": "PASS",
+      "row_sha256": "4bdb96168d16248cbaadda07afb2a95f86faccd99601ad74c3459edfbba53a07",
+      "source_sha256": "f72118610bfb947ab078e3ac867cea0ffa8dcc0c3d474f237c05aa971614ea68",
+      "source_scope_sha256": "4d69e066806a7bd3b5f55c18a27e15b6bb9cc93644bae45ff85eb495b8966195",
+      "controller_sha256": "59679092d7e997837e2c4bfa4f44e80a7e1cf2d56d66a73cae4c06cf951efe54",
+      "edition_sha256": "66c2109a32b964bc72c80d9464b63f6a473216744d24c57574e9c66d964f5380",
+      "proof_pins": {
+        "key": [
+          "papal.pius-ix.enciclica-cum-sancta-mater-27-aprile-1859",
+          "en"
+        ],
+        "row_sha256": "4bdb96168d16248cbaadda07afb2a95f86faccd99601ad74c3459edfbba53a07",
+        "source_sha256": "f72118610bfb947ab078e3ac867cea0ffa8dcc0c3d474f237c05aa971614ea68",
+        "source_scope_sha256": "4d69e066806a7bd3b5f55c18a27e15b6bb9cc93644bae45ff85eb495b8966195",
+        "source_manifest": {
+          "path": "src/sources/papal-documents/historical-english-completion-manifest.json",
+          "sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+          "bytes": 67917
+        },
+        "controller": {
+          "id": "segment.papal.pius-ix.enciclica-cum-sancta-mater-27-aprile-1859.1859-kingston-english.complete-english-ocr",
+          "record": "src/sources/works/papal-documents/1859-04-27-papal-pius-ix-enciclica-cum-sancta-mater-27-aprile-1859-5a383236/editions/1859-kingston-english/segments/complete-english-ocr.toml",
+          "sha256": "59679092d7e997837e2c4bfa4f44e80a7e1cf2d56d66a73cae4c06cf951efe54"
+        },
+        "source": {
+          "path": "src/sources/works/papal-collections/kingston-horan-pastoral-1859/editions/1859-kingston-english/artifacts/historical-ocr-f72118610bfb/text.txt",
+          "sha256": "f72118610bfb947ab078e3ac867cea0ffa8dcc0c3d474f237c05aa971614ea68",
+          "bytes": 7602
+        },
+        "selection": {
+          "path": ".scratch/english-intake-recovery/packet-06/act-01-selected.txt",
+          "sha256": "88e9ba1f864e7d962414bb2123deee3946e3f77504e644ba5b88386c7b703024",
+          "bytes": 5092
+        },
+        "edition": {
+          "record": "src/sources/works/papal-documents/1859-04-27-papal-pius-ix-enciclica-cum-sancta-mater-27-aprile-1859-5a383236/editions/1859-kingston-english/edition.toml",
+          "record_sha256": "66c2109a32b964bc72c80d9464b63f6a473216744d24c57574e9c66d964f5380",
+          "data": {
+            "schema": 1,
+            "record_type": "edition",
+            "id": "edition.papal.pius-ix.enciclica-cum-sancta-mater-27-aprile-1859.1859-kingston-english",
+            "work_id": "work.papal.pius-ix.enciclica-cum-sancta-mater-27-aprile-1859",
+            "title": "Cum Sancta Mater — historical English translation",
+            "language": "en",
+            "date": "1859",
+            "publication": "Kingston, Canada West: publisher not stated, 1859",
+            "notes": "Horan dates his pastoral 9 June 1859. The complete English Cum Sancta Mater is printed on pp.1–2, from its address and salutation through the dated 27 April 1859 closing; subsequent Horan commentary and prescriptions are separate. Translator unnamed. Native PDF pages 1–3 inspected, and the entire act OCR read. The source has no separate papal subscription. OCR retains word breaks and misreads the year as 185)."
+          }
+        },
+        "container_edition": {
+          "record": "src/sources/works/papal-collections/kingston-horan-pastoral-1859/editions/1859-kingston-english/edition.toml",
+          "record_sha256": "03880f7b1e97298d0b3c0e3c9ef93275edc3bdbbe0179d38845393f03d222cbd",
+          "data": {
+            "schema": 1,
+            "record_type": "edition",
+            "id": "edition.papal-collections.kingston-horan-pastoral-1859.1859-kingston-english",
+            "work_id": "work.papal-collections.kingston-horan-pastoral-1859",
+            "title": "Edward John, by the grace of God and the favor of the Apostolic See, Bishop of Kingston: to the clergy and laity of our diocess",
+            "language": "en",
+            "date": "1859",
+            "publication": "Kingston, Canada West: publisher not stated, 1859",
+            "notes": "Horan dates his pastoral 9 June 1859. The complete English Cum Sancta Mater is printed on pp.1–2, from its address and salutation through the dated 27 April 1859 closing; subsequent Horan commentary and prescriptions are separate. Translator unnamed. Native PDF pages 1–3 inspected, and the entire act OCR read. The source has no separate papal subscription. OCR retains word breaks and misreads the year as 185)."
+          }
+        },
+        "artifact": {
+          "record": "src/sources/works/papal-collections/kingston-horan-pastoral-1859/editions/1859-kingston-english/artifacts/historical-ocr-f72118610bfb/artifact.toml",
+          "record_sha256": "938e0431764ad464c1d6bead5ed0acc532882f06fde0aeb7821751ada1de683a",
+          "id": "artifact.papal-collections.kingston-horan-pastoral-1859.1859-kingston-english.historical-ocr-f72118610bfb",
+          "rights_status": "public-domain",
+          "storage": "tracked"
+        },
+        "evidence": {
+          "path": ".scratch/english-intake-recovery/packet-06/act-01-evidence.json",
+          "sha256": "9b9847df8008f507f920a4f51c0fe9ebc4bab1a3fc450652006f5fd87148a2a8",
+          "bytes": 23873
+        }
+      },
+      "selected_text_read_complete": true,
+      "actual_opened_images": [
+        {
+          "source_page": 1,
+          "source_pdf": "src/sources/works/papal-collections/kingston-horan-pastoral-1859/editions/1859-kingston-english/artifacts/native-facsimile-92aec2216d4a/source.pdf",
+          "source_pdf_sha256": "92aec2216d4a631b62eeae11939c94379112d42d72f5d6912e1c83c899b0c4be",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-03/pages/page-1.png",
+          "source_png_sha256": "f3115a06d5783f3d139c239b4d6061a7795eb99755532064355cfe039c401df4",
+          "source_bytes": 3313562,
+          "source_dimensions": [
+            1767,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1767,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-06-act-01-sample-01-f3115a06d578.jpg",
+          "proxy_sha256": "ed27a87aa15f001b7b13c49246f03afcf461b5b6c52cfa3dca661d94b408e635",
+          "proxy_bytes": 1533298,
+          "proxy_dimensions": [
+            1767,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-03/pages/page-1.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-06-act-01-sample-01-f3115a06d578.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-06-act-01-sample-01-f3115a06d578.jpg",
+          "observation": "Freshly opened native source p.1. Horan caption and introductory pastoral precede a ruled separation. Papal heading, full recipient address to patriarchs/primates/archbishops/bishops/other ordinaries, salutation and opening At a time are visible. Selected OCR begins at papal heading and excludes Horan introduction. No papal source note is visible on this page. Handwritten June 1859 annotation is not treated as printed imprint."
+        },
+        {
+          "source_page": 2,
+          "source_pdf": "src/sources/works/papal-collections/kingston-horan-pastoral-1859/editions/1859-kingston-english/artifacts/native-facsimile-92aec2216d4a/source.pdf",
+          "source_pdf_sha256": "92aec2216d4a631b62eeae11939c94379112d42d72f5d6912e1c83c899b0c4be",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-03/pages/page-2.png",
+          "source_png_sha256": "63203797bffabc7f63efcc9a8d28706ee1a6fe641c6303b8acf41a6f27ae96a0",
+          "source_bytes": 3580671,
+          "source_dimensions": [
+            1896,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1896,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-06-act-01-sample-02-63203797bffa.jpg",
+          "proxy_sha256": "0c76563e30f8d42a2bfde1ec26f82088d8ad98b4bff1cc535c493c62484586c3",
+          "proxy_bytes": 1642147,
+          "proxy_dimensions": [
+            1896,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-03/pages/page-2.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-06-act-01-sample-02-63203797bffa.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-06-act-01-sample-02-63203797bffa.jpg",
+          "observation": "Fresh native p.2 completes papal body continuously from p.1, includes final blessing and Rome/St Peter 27 April 1859, thirteenth pontificate year. No separate papal subscription or source footnotes appear before the ruled end boundary. Horan commentary starts As children of the Catholic Church below the rule and is excluded. Offered OCR year185) is an acknowledged misrecognition; no correction supplied."
+        },
+        {
+          "source_page": 3,
+          "source_pdf": "src/sources/works/papal-collections/kingston-horan-pastoral-1859/editions/1859-kingston-english/artifacts/native-facsimile-92aec2216d4a/source.pdf",
+          "source_pdf_sha256": "92aec2216d4a631b62eeae11939c94379112d42d72f5d6912e1c83c899b0c4be",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-03/pages/page-3.png",
+          "source_png_sha256": "2eb9c0b01b9147d78468be0fcc81b8eb03964d3fae355ca034d1041c79b68481",
+          "source_bytes": 2834081,
+          "source_dimensions": [
+            1896,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1896,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-06-act-01-sample-03-2eb9c0b01b91.jpg",
+          "proxy_sha256": "174a2e4aed5f89611932c02ece0a1de5223aa00a13530de9f5c32833507c8c71",
+          "proxy_bytes": 1256729,
+          "proxy_dimensions": [
+            1896,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-03/pages/page-3.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-06-act-01-sample-03-2eb9c0b01b91.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-06-act-01-sample-03-2eb9c0b01b91.jpg",
+          "observation": "Fresh native p.3 is Horan prescriptions and his signed Kingston dating clause9 June1859, followed by an1835 Latin rubric note. These belong to the pastoral wrapper, not the already closed papal letter. No printed publisher imprint appears on the three-page printing. The wrapper date independently establishes1859 historical matter; edition-specific CIHM51176 catalogue corroborates publication1859 with bracketed Kingston and no named publisher."
+        }
+      ],
+      "actual_opened_image_count": 3,
+      "historical_human_edition": {
+        "identity": "Cum Sancta Mater — historical English translation",
+        "container": "Edward John, by the grace of God and the favor of the Apostolic See, Bishop of Kingston: to the clergy and laity of our diocess",
+        "translator": "Unknown / unnamed in the identified historical printing.",
+        "attribution": "Pius IX is issuer; English is the identified historical human translation, mechanically acquired/OCRed, with no AI-translated body."
+      },
+      "historical_publication": {
+        "year": "1859",
+        "basis": "Native Horan pastoral wrapper dated 9 June 1859; edition-specific CIHM 51176 catalogue dates this original publication 1859. This is distinct from the encyclical act date 27 April 1859.",
+        "printed_imprint": "Not established.",
+        "printing_place": "Inferred Kingston; catalogue publisher [Kingston, Ont? : s.n.]. Kingston is certain as the wrapper issuer location.",
+        "publisher": "Unknown.",
+        "catalog_evidence": {
+          "path": ".scratch/english-intake-b2/cihm_51176-metadata.json",
+          "sha256": "55ceda09fd5938f26b04eedce44cd9d216c2f6d1e1b3118c342ebf2e99e6697e",
+          "bytes": 10730,
+          "whole_response_parsed": true,
+          "metadata": {
+            "title": "Edward John, by the grace of God and the favor of the Apostolic See, Bishop of Kingston [microform] : to the clergy and laity of our diocess [sic] health and benediction in the Lord",
+            "creator": [
+              "Catholic Church. Pope (1846-1878 : Pius IX)",
+              "Catholic Church. Diocese of Kingston. Bishop (1858-1874 : Horan)"
+            ],
+            "date": "1859",
+            "publisher": "[Kingston, Ont? : s.n.]",
+            "city": "[Kingston, Ont.?",
+            "language": "eng",
+            "description": [
+              "Caption title",
+              "\"Given at the Episcopal residence at Kingston ... this 9th of June, 1859. E.J., Bp. of Kingston.\"",
+              "Filmed from a copy of the original publication held by the Seminary of Quebec, Library",
+              "43"
+            ]
+          }
+        },
+        "native_date_locus": "Source PDF p.3, printed p.3.",
+        "current_metadata_qualification": "Current edition/container publication strings and artifact/row rights basis omit the catalogue place uncertainty. Qualify the place before describing it as an exact imprint; publication year 1859 remains corroborated."
+      },
+      "content_extent": {
+        "native_extent": "Printed pp.1–2, source PDF pp.1–2; wrapper p.3 checked for date/context.",
+        "start": "Papal heading, full address to patriarchs, primates, archbishops, bishops and other ordinaries, then salutation and At a time opening.",
+        "end": "Final apostolic blessing and Rome, St Peter, 27 April 1859, thirteenth pontificate year. No separate papal subscription printed before the rule.",
+        "historical_notes": "No own papal notes printed in this two-page letter. The 1835 Latin rubric note on wrapper p.3 belongs to Horan material and is excluded.",
+        "excluded": "Horan introduction before the papal heading, Horan commentary after the closing rule, Horan prescriptions/signature and rubric note.",
+        "selection": "Exact source LF28–58 and64–98; page boundary furniture omitted by declared selector."
+      },
+      "lawful_retained_artifact_basis": {
+        "policy_path": "src/sources/inventories/papal-documents-rights-v1.toml",
+        "policy_sha256": "2098d3cc15ef3439234033c7582fe4f17a726494008b25682a7f1b3a844454ea",
+        "jurisdiction": "United States",
+        "decision": "PASS under existing artifact-specific historical publication/expired-term policy.",
+        "evidence": "Identified English printing published 1859; exact native/source pins and mechanical boundaries checked. Publication year corroboration is independent of papal act date.",
+        "limitations": "No worldwide rights or general host licence asserted. Historical wording excluded from Triptych content licence.",
+        "Etsi_parent_boundary": null
+      },
+      "scope_limits": [
+        "Source intake only; no compiler PDF layout review, installation or deployment.",
+        "No lexical translation accuracy or whole-printing word-for-word collation.",
+        "All selected act texts were read completely; visual review extent is exactly the recorded native samples.",
+        "Prior visual verdicts were not inherited. Current mechanical evidence was reused only after exact pin checks; Exultavit OCR was freshly replayed.",
+        "Anonymous translator remains unknown; identified nineteenth-century English printing establishes the historical human expression."
+      ],
+      "findings": [
+        {
+          "severity": "qualification",
+          "category": "publication-metadata",
+          "finding": "Current edition/container and rights basis state Kingston as publication place without the catalogue uncertainty. Native wrapper identifies Kingston as issuing place; CIHM51176 publisher is [Kingston, Ont? : s.n.]. Qualify the printing place as inferred and publisher unknown; no printed imprint was established. The edition-specific1859 catalogue date and native9June1859 wrapper independently support the historical publication year."
+        },
+        {
+          "severity": "limitation",
+          "category": "ocr",
+          "finding": "Retain literal offered OCR defects, including185) for printed1859; source intake PASS is not corrected text or word-for-word collation."
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "id": "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
+      "language": "en",
+      "key": [
+        "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
+        "en"
+      ],
+      "title": "Etsi multa",
+      "status": "PASS",
+      "source_acceptance": "PASS",
+      "row_sha256": "9b020ee6af82bece0f45735c9f616664eaec0d1eafa251967eb6352d7237edcd",
+      "source_sha256": "94992a97e46c8fe05150c4aa0cd998b28f754e8cceec6e8859797de3ed687097",
+      "source_scope_sha256": "4d69e066806a7bd3b5f55c18a27e15b6bb9cc93644bae45ff85eb495b8966195",
+      "controller_sha256": "433e21040b685d454ae48ddd59715ad91b1c01ec0e0086b75bc180f5377434e3",
+      "edition_sha256": "55620b665f6bb8c348fc0de4815ba5a2973580bf15833fb129dc7939dc3fdbd7",
+      "proof_pins": {
+        "key": [
+          "papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
+          "en"
+        ],
+        "row_sha256": "9b020ee6af82bece0f45735c9f616664eaec0d1eafa251967eb6352d7237edcd",
+        "source_sha256": "94992a97e46c8fe05150c4aa0cd998b28f754e8cceec6e8859797de3ed687097",
+        "source_scope_sha256": "4d69e066806a7bd3b5f55c18a27e15b6bb9cc93644bae45ff85eb495b8966195",
+        "source_manifest": {
+          "path": "src/sources/papal-documents/encyclicals-source-corrections-manifest.json",
+          "sha256": "3dac79a5b3d1a5a040a18ec35d22105ecb030abea4fa47a6a8ea377cafba629b",
+          "bytes": 45532
+        },
+        "controller": {
+          "id": "segment.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.complete-english-with-address",
+          "record": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/segments/complete-english-with-address.toml",
+          "sha256": "433e21040b685d454ae48ddd59715ad91b1c01ec0e0086b75bc180f5377434e3"
+        },
+        "source": {
+          "path": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/historical-ocr-with-address-94992a97e46c/text.txt",
+          "sha256": "94992a97e46c8fe05150c4aa0cd998b28f754e8cceec6e8859797de3ed687097",
+          "bytes": 40194
+        },
+        "selection": {
+          "path": ".scratch/english-intake-recovery/packet-06/act-02-selected.txt",
+          "sha256": "94992a97e46c8fe05150c4aa0cd998b28f754e8cceec6e8859797de3ed687097",
+          "bytes": 40194
+        },
+        "edition": {
+          "record": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/edition.toml",
+          "record_sha256": "55620b665f6bb8c348fc0de4815ba5a2973580bf15833fb129dc7939dc3fdbd7",
+          "data": {
+            "schema": 1,
+            "record_type": "edition",
+            "id": "edition.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english",
+            "work_id": "work.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
+            "title": "Etsi multa — 1874 Philadelphia historical English translation",
+            "language": "en",
+            "date": "1874",
+            "publication": "Philadelphia: McLaughlin Brothers, 112 and 114 South Third Street, 1874",
+            "notes": "Anonymous historical English translation, examined by the Bishop of Philadelphia and published with his approbation according to the title page. Printed pp.3–23 contain the complete papal body, source notes, 21 November 1873 dating clause and PIUS PP. IX subscription. All 21 native act pages and the title leaf were inspected; the full OCR was read. The ornamental PIUS PP. IX heading above the salutation and the initial ornamental A are not recognized by the offered OCR; the gothic salutation is garbled. These are disclosed OCR defects, not supplied from memory; all are retained in the native facsimile. No word-for-word collation or corrected text is claimed."
+          }
+        },
+        "container_edition": {
+          "record": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/edition.toml",
+          "record_sha256": "55620b665f6bb8c348fc0de4815ba5a2973580bf15833fb129dc7939dc3fdbd7",
+          "data": {
+            "schema": 1,
+            "record_type": "edition",
+            "id": "edition.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english",
+            "work_id": "work.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873",
+            "title": "Etsi multa — 1874 Philadelphia historical English translation",
+            "language": "en",
+            "date": "1874",
+            "publication": "Philadelphia: McLaughlin Brothers, 112 and 114 South Third Street, 1874",
+            "notes": "Anonymous historical English translation, examined by the Bishop of Philadelphia and published with his approbation according to the title page. Printed pp.3–23 contain the complete papal body, source notes, 21 November 1873 dating clause and PIUS PP. IX subscription. All 21 native act pages and the title leaf were inspected; the full OCR was read. The ornamental PIUS PP. IX heading above the salutation and the initial ornamental A are not recognized by the offered OCR; the gothic salutation is garbled. These are disclosed OCR defects, not supplied from memory; all are retained in the native facsimile. No word-for-word collation or corrected text is claimed."
+          }
+        },
+        "artifact": {
+          "record": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/historical-ocr-with-address-94992a97e46c/artifact.toml",
+          "record_sha256": "82bdb176bf4eab0354b6217a2fc2e2b1d89105240dd99834a75ddbcaff9a7cce",
+          "id": "artifact.papal.pius-ix.enciclica-etsi-multa-21-novembre-1873.1874-philadelphia-mclaughlin-english.historical-ocr-with-address-94992a97e46c",
+          "rights_status": "public-domain",
+          "storage": "tracked"
+        },
+        "evidence": {
+          "path": ".scratch/english-intake-recovery/packet-06/act-02-evidence.json",
+          "sha256": "477f9a5c0d50b0117f7c5f8049f60004f93556e1013d4b9c0a82bb8647842f26",
+          "bytes": 40362
+        }
+      },
+      "selected_text_read_complete": true,
+      "actual_opened_images": [
+        {
+          "source_page": 1,
+          "source_pdf": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/historical-facsimile-597fbc3a7c70/source.pdf",
+          "source_pdf_sha256": "597fbc3a7c70e449bf5260b89167694ccb4e7e9d0f52be509f8f7401175a1cfa",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-04/pages/page-1.png",
+          "source_png_sha256": "9cf46a7c221392ac8eceb8d144f5130ded194724d08e684379954a2411ed7932",
+          "source_bytes": 309553,
+          "source_dimensions": [
+            1221,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1221,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-06-act-02-sample-01-9cf46a7c2213.jpg",
+          "proxy_sha256": "1e4786a602e98757993cea73cf549e56612d07776140a9a32c6d9b47285e112d",
+          "proxy_bytes": 285265,
+          "proxy_dimensions": [
+            1221,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-04/pages/page-1.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-06-act-02-sample-01-9cf46a7c2213.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-06-act-02-sample-01-9cf46a7c2213.jpg",
+          "observation": "Fresh title leaf identifies PiusIX, by Divine Providence Pope, full recipient address to patriarchs etc in grace/communion of Apostolic See. This address matches current restored selection start. Leaf states examined by Bishop of Philadelphia and published with his approbation, not translator authorship. Printed imprint Philadelphia, McLaughlin Brothers, printers,112/114 South Third Street,1874 visible. No named translator. Title/imprint/approbation are identified publishing apparatus outside selected papal body."
+        },
+        {
+          "source_page": 2,
+          "source_pdf": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/historical-facsimile-597fbc3a7c70/source.pdf",
+          "source_pdf_sha256": "597fbc3a7c70e449bf5260b89167694ccb4e7e9d0f52be509f8f7401175a1cfa",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-04/pages/page-2.png",
+          "source_png_sha256": "43c91b787911990c05240c44ec6a5f42437782a865377dd5a4c93832f4e4954c",
+          "source_bytes": 585046,
+          "source_dimensions": [
+            1221,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1221,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-06-act-02-sample-02-43c91b787911.jpg",
+          "proxy_sha256": "956854cd1f7f2cb714fe6c18016ac1f60c0ffadea667e2a0f0ef4c6c7fb17618",
+          "proxy_bytes": 557070,
+          "proxy_dimensions": [
+            1221,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-04/pages/page-2.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-06-act-02-sample-02-43c91b787911.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-06-act-02-sample-02-43c91b787911.jpg",
+          "observation": "Fresh body start printed p.3(source page2): ornamental PIUS PP. IX heading, gothic salutation and initial A in ALTHOUGH are visible. Offered OCR fails issuer heading/initial A and garbles salutation; these are explicitly disclosed in current edition/controller. First historical note Machab.iii.59 is a page-foot block matching selected text. Titleleaf recipient address is not repeated here."
+        },
+        {
+          "source_page": 5,
+          "source_pdf": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/historical-facsimile-597fbc3a7c70/source.pdf",
+          "source_pdf_sha256": "597fbc3a7c70e449bf5260b89167694ccb4e7e9d0f52be509f8f7401175a1cfa",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-04/pages/page-3.png",
+          "source_png_sha256": "52c8c6bda950d7adeadb93c3dcbfaf18152446b16b06eda56278aec1cc495edf",
+          "source_bytes": 755609,
+          "source_dimensions": [
+            1221,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1221,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-06-act-02-sample-03-52c8c6bda950.jpg",
+          "proxy_sha256": "ce684f96a1883edf0267a159a20d2a022eaa35b57b0ac6368a571ee12d1d4412",
+          "proxy_bytes": 795628,
+          "proxy_dimensions": [
+            1221,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-04/pages/page-3.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-06-act-02-sample-03-52c8c6bda950.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-06-act-02-sample-03-52c8c6bda950.jpg",
+          "observation": "Fresh printed p.6(source page5) is continuous papal discussion of Geneva legislation. Right edge shows an adjacent-page sliver; selected OCR has isolated s,(,(,I at early line ends. No complete neighboring act or wrapper words observed; these are scanning/OCR debris retained by exact raw selection. No footnote on this page. Main body remains readable and in order."
+        },
+        {
+          "source_page": 11,
+          "source_pdf": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/historical-facsimile-597fbc3a7c70/source.pdf",
+          "source_pdf_sha256": "597fbc3a7c70e449bf5260b89167694ccb4e7e9d0f52be509f8f7401175a1cfa",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-04/pages/page-4.png",
+          "source_png_sha256": "55f28ddc949d0ddf13a7ec1e00f1a8b6ac31545b245dbe166d9f3f6adef83fbd",
+          "source_bytes": 724858,
+          "source_dimensions": [
+            1221,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1221,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-06-act-02-sample-04-55f28ddc949d.jpg",
+          "proxy_sha256": "2bb17d3e42442ed6d4e0a703801f5d002e296d37b0fb11c31f1ecee63f05550a",
+          "proxy_bytes": 748768,
+          "proxy_dimensions": [
+            1221,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-04/pages/page-4.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-06-act-02-sample-04-55f28ddc949d.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-06-act-02-sample-04-55f28ddc949d.jpg",
+          "observation": "Fresh printed p.12(source page11) has four historical page-foot citations under a short rule: Tertullian Apolog.cap30; Rom.xiii.3;1StPeter.iv.15.16;Acts.xx.24. All four remain together in selected OCR after the body and before next page; OCR misreads Peter15 as13 and note marker forms. Adjacent-page narrow right strip accounts for isolated OCR glyph lines; no substantive neighboring words verified. Notes belong to historical printing, not modern wrapper."
+        },
+        {
+          "source_page": 22,
+          "source_pdf": "src/sources/works/papal-documents/1873-11-21-papal-pius-ix-enciclica-etsi-multa-21-novembre-1873-8ca9e595/editions/1874-philadelphia-mclaughlin-english/artifacts/historical-facsimile-597fbc3a7c70/source.pdf",
+          "source_pdf_sha256": "597fbc3a7c70e449bf5260b89167694ccb4e7e9d0f52be509f8f7401175a1cfa",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-04/pages/page-5.png",
+          "source_png_sha256": "6b470d59916130ea99d1786211e99009f9cc11030dffbdd33ac3fd54a4a57b77",
+          "source_bytes": 249434,
+          "source_dimensions": [
+            1221,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1221,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-06-act-02-sample-05-6b470d599161.jpg",
+          "proxy_sha256": "79279bbfdfac9f34bb05d7cddf08d64ca8d48626fb6f5a57de089d5917b85662",
+          "proxy_bytes": 251819,
+          "proxy_dimensions": [
+            1221,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-04/pages/page-5.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-06-act-02-sample-05-6b470d599161.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-06-act-02-sample-05-6b470d599161.jpg",
+          "observation": "Fresh final printed p.23(source page22) contains last apostolic blessing, complete Rome/St Peter21November1873 dating clause, twenty-eighth pontificate year and PIUS PP.IX subscription. Selected text ends after this subscription. No further substantive notes or neighboring matter are visible below."
+        }
+      ],
+      "actual_opened_image_count": 5,
+      "historical_human_edition": {
+        "identity": "Etsi multa — 1874 Philadelphia historical English translation",
+        "container": "Etsi multa — 1874 Philadelphia historical English translation",
+        "translator": "Unknown / unnamed in the identified historical printing.",
+        "attribution": "Pius IX is issuer; English is the identified historical human translation, mechanically acquired/OCRed, with no AI-translated body."
+      },
+      "historical_publication": {
+        "year": "1874",
+        "basis": "Native historical title leaf explicitly prints Philadelphia, McLaughlin Brothers, printers, Nos. 112 and 114 South Third Street, 1874. The papal act is dated 21 November 1873.",
+        "printed_imprint": "Philadelphia: McLaughlin Brothers, printers, Nos. 112 and 114 South Third Street, 1874.",
+        "printing_place": "Philadelphia.",
+        "publisher": "McLaughlin Brothers (printers as the leaf describes them).",
+        "translator": "Unknown. Examined by the Bishop of Philadelphia and published with his approbation is an approval statement, not a named translator attribution.",
+        "native_date_locus": "Retained historical PDF p.1, title leaf.",
+        "current_metadata_qualification": "No date/place qualification needed for the native printed imprint."
+      },
+      "content_extent": {
+        "native_extent": "Title leaf address plus printed pp.3–23; fresh images: retained source PDF pp.1,2,5,11,22. Full selected text read; no all-page visual collation claimed.",
+        "start": "Exact original OCR parent LF14–17 restores recipient address from title leaf, before the unchanged former body LF38–856.",
+        "end": "Final apostolic blessing, Rome, St Peter, 21 November 1873, twenty-eighth pontificate year, PIUS PP. IX.",
+        "historical_notes": "All source note text in unchanged complete parent body LF38–856 retained. Fresh native membership/placement checks include first Machab. iii.59 note and four printed-p.12 page-foot notes. Remaining selected citations were read in full OCR; not all separately image-collated.",
+        "excluded": "Title/imprint/approbation publishing apparatus beyond the substantive address; modern digitization/funding leaf; terminal blank. No neighboring act or modern body selected.",
+        "ocr_qualification": "Unrecognized ornamental issuer heading and initial A, garbled gothic salutation, misrecognitions and isolated facing-page glyph debris remain literal, as disclosed. No model-supplied repairs.",
+        "selection": "Current corrected source94992a97… is exactly raw LF14–17 + LF38–856; prior60d421ec… body-only selection superseded."
+      },
+      "lawful_retained_artifact_basis": {
+        "policy_path": "src/sources/inventories/papal-documents-rights-v1.toml",
+        "policy_sha256": "2098d3cc15ef3439234033c7582fe4f17a726494008b25682a7f1b3a844454ea",
+        "jurisdiction": "United States",
+        "decision": "PASS under existing artifact-specific historical publication/expired-term policy.",
+        "evidence": "Identified English printing published 1874; exact native/source pins and mechanical boundaries checked. Publication year corroboration is independent of papal act date.",
+        "limitations": "No worldwide rights or general host licence asserted. Historical wording excluded from Triptych content licence.",
+        "Etsi_parent_boundary": "For Etsi, whole raw 24-page delivery and raw OCR are restricted/unresolved; only separately identified historical 22-page PDF and exact historical text derivative have affirmative retained-artifact basis."
+      },
+      "scope_limits": [
+        "Source intake only; no compiler PDF layout review, installation or deployment.",
+        "No lexical translation accuracy or whole-printing word-for-word collation.",
+        "All selected act texts were read completely; visual review extent is exactly the recorded native samples.",
+        "Prior visual verdicts were not inherited. Current mechanical evidence was reused only after exact pin checks; Exultavit OCR was freshly replayed.",
+        "Anonymous translator remains unknown; identified nineteenth-century English printing establishes the historical human expression."
+      ],
+      "findings": [
+        {
+          "severity": "qualification",
+          "category": "ocr",
+          "finding": "Current corrected selection includes exact rawLF14–17 recipient address before unchangedLF38–856 body. Ornamental issuer heading/initial A are unrecognized and gothic salutation garbled in offered OCR, explicitly disclosed in current metadata; isolated facing-page glyph debris remains. Source accepted as uncorrected historical OCR with native facsimile, not as a clean diplomatic transcription."
+        },
+        {
+          "severity": "disposition",
+          "category": "supersession",
+          "finding": "Old60d421 body-only selection is superseded. No prior visual verdict or stale body-only mechanical check supplies this acceptance."
+        }
+      ],
+      "blockers": []
+    },
+    {
+      "id": "papal.pius-ix.enciclica-exultavit-cor-nostrum-21-novembre-1851",
+      "language": "en",
+      "key": [
+        "papal.pius-ix.enciclica-exultavit-cor-nostrum-21-novembre-1851",
+        "en"
+      ],
+      "title": "Exultavit cor nostrum",
+      "status": "PASS",
+      "source_acceptance": "PASS",
+      "row_sha256": "e8840304fdbc6475a6a69c7c924ca11bf24dee77c14cfee562ff0b3051742f88",
+      "source_sha256": "71cb5eda16cd986141af79a0fbb14dfa181803f353eea3f4fd2afd7203dfaeef",
+      "source_scope_sha256": "4d69e066806a7bd3b5f55c18a27e15b6bb9cc93644bae45ff85eb495b8966195",
+      "controller_sha256": "be01e237abe20182fb4125378f0aef7a03ec8c7de8e006ef0875cee72a32159a",
+      "edition_sha256": "cdd649ced16b1e8beadc64297f6dfd84867e56ac095c6149efa4c6cdc4b72fe1",
+      "proof_pins": {
+        "key": [
+          "papal.pius-ix.enciclica-exultavit-cor-nostrum-21-novembre-1851",
+          "en"
+        ],
+        "row_sha256": "e8840304fdbc6475a6a69c7c924ca11bf24dee77c14cfee562ff0b3051742f88",
+        "source_sha256": "71cb5eda16cd986141af79a0fbb14dfa181803f353eea3f4fd2afd7203dfaeef",
+        "source_scope_sha256": "4d69e066806a7bd3b5f55c18a27e15b6bb9cc93644bae45ff85eb495b8966195",
+        "source_manifest": {
+          "path": "src/sources/papal-documents/historical-english-completion-manifest.json",
+          "sha256": "8a0e25285e36af6f685dbfdb8d3c51f8bac50623cd7dd3b099f745f89cdc6627",
+          "bytes": 67917
+        },
+        "controller": {
+          "id": "segment.papal.pius-ix.enciclica-exultavit-cor-nostrum-21-novembre-1851.1852-quebec-english.complete-english-ocr",
+          "record": "src/sources/works/papal-documents/1851-11-21-papal-pius-ix-enciclica-exultavit-cor-nostrum-21-novembre-1851-eb84a09b/editions/1852-quebec-english/segments/complete-english-ocr.toml",
+          "sha256": "be01e237abe20182fb4125378f0aef7a03ec8c7de8e006ef0875cee72a32159a"
+        },
+        "source": {
+          "path": "src/sources/works/papal-collections/quebec-turgeon-jubilee-pastoral-1852/editions/1852-quebec-english/artifacts/historical-ocr-71cb5eda16cd/text.txt",
+          "sha256": "71cb5eda16cd986141af79a0fbb14dfa181803f353eea3f4fd2afd7203dfaeef",
+          "bytes": 9233
+        },
+        "selection": {
+          "path": ".scratch/english-intake-recovery/packet-06/act-03-selected.txt",
+          "sha256": "e8fa5d8a5ec62c6805d2a9625ddd518b540d719c28b972a4410410f556d5ffbd",
+          "bytes": 9220
+        },
+        "edition": {
+          "record": "src/sources/works/papal-documents/1851-11-21-papal-pius-ix-enciclica-exultavit-cor-nostrum-21-novembre-1851-eb84a09b/editions/1852-quebec-english/edition.toml",
+          "record_sha256": "cdd649ced16b1e8beadc64297f6dfd84867e56ac095c6149efa4c6cdc4b72fe1",
+          "data": {
+            "schema": 1,
+            "record_type": "edition",
+            "id": "edition.papal.pius-ix.enciclica-exultavit-cor-nostrum-21-novembre-1851.1852-quebec-english",
+            "work_id": "work.papal.pius-ix.enciclica-exultavit-cor-nostrum-21-novembre-1851",
+            "title": "Exultavit cor nostrum — historical English translation",
+            "language": "en",
+            "date": "1852",
+            "publication": "Quebec: publisher not stated, 1852",
+            "notes": "Turgeon dates his pastoral 23 April 1852. The complete English Exultavit cor nostrum is its appendix at printed pp.7–10 (PDF pages 8–11), including the otherwise often omitted opening Our heart rejoiced, dated 21 November 1851 closing and PIUS IX. Pope subscription. Translator unnamed. All four native act pages inspected at full size; the entire four-page OCR read against its boundaries. Raw offered OCR has displaced phrase fragments on printed p.9 and repeated adjacent-page strips; this separate mechanical re-OCR uses only primary-page regions and makes no word corrections."
+          }
+        },
+        "container_edition": {
+          "record": "src/sources/works/papal-collections/quebec-turgeon-jubilee-pastoral-1852/editions/1852-quebec-english/edition.toml",
+          "record_sha256": "a28e97d69a9cfbd78658f1863e92bdc4729942f4610141a8399da62925a0d543",
+          "data": {
+            "schema": 1,
+            "record_type": "edition",
+            "id": "edition.papal-collections.quebec-turgeon-jubilee-pastoral-1852.1852-quebec-english",
+            "work_id": "work.papal-collections.quebec-turgeon-jubilee-pastoral-1852",
+            "title": "Pastoral letter of His Grace the Archbishop of Quebec on the occasion of the jubilee granted by Pope Pius IX by his apostolic letters bearing date 21 November 1851",
+            "language": "en",
+            "date": "1852",
+            "publication": "Quebec: publisher not stated, 1852",
+            "notes": "Turgeon dates his pastoral 23 April 1852. The complete English Exultavit cor nostrum is its appendix at printed pp.7–10 (PDF pages 8–11), including the otherwise often omitted opening Our heart rejoiced, dated 21 November 1851 closing and PIUS IX. Pope subscription. Translator unnamed. All four native act pages inspected at full size; the entire four-page OCR read against its boundaries. Raw offered OCR has displaced phrase fragments on printed p.9 and repeated adjacent-page strips; this separate mechanical re-OCR uses only primary-page regions and makes no word corrections."
+          }
+        },
+        "artifact": {
+          "record": "src/sources/works/papal-collections/quebec-turgeon-jubilee-pastoral-1852/editions/1852-quebec-english/artifacts/historical-ocr-71cb5eda16cd/artifact.toml",
+          "record_sha256": "050ea834174d616fd05d96df9efc0a8f6301ca3e29a133bc2eed657c95fdfa8b",
+          "id": "artifact.papal-collections.quebec-turgeon-jubilee-pastoral-1852.1852-quebec-english.historical-ocr-71cb5eda16cd",
+          "rights_status": "public-domain",
+          "storage": "tracked"
+        },
+        "evidence": {
+          "path": ".scratch/english-intake-recovery/packet-06/act-03-evidence.json",
+          "sha256": "9590d1040e438c8bfdbeb71839bb7aaa7869f2745d2512dbc2fb6e356723210d",
+          "bytes": 29765
+        }
+      },
+      "selected_text_read_complete": true,
+      "actual_opened_images": [
+        {
+          "source_page": 1,
+          "source_pdf": "src/sources/works/papal-collections/quebec-turgeon-jubilee-pastoral-1852/editions/1852-quebec-english/artifacts/native-facsimile-6178fbc5bb88/source.pdf",
+          "source_pdf_sha256": "6178fbc5bb88f91cc5b6f5c2dec54e7520c0c09e4a28cef81494710e1d781360",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-05/pages/page-1.png",
+          "source_png_sha256": "3013abbf3129406cac3312af6ccb7eba8f0f0ce9725cf17939b743f06725d5d7",
+          "source_bytes": 1142435,
+          "source_dimensions": [
+            1753,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1753,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-06-act-03-sample-01-3013abbf3129.jpg",
+          "proxy_sha256": "c65bb196b34d66c54ced93bbd1d77e2c4558aec1edc7b5a3450f8837e65869d8",
+          "proxy_bytes": 473157,
+          "proxy_dimensions": [
+            1753,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-05/pages/page-1.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-06-act-03-sample-01-3013abbf3129.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-06-act-03-sample-01-3013abbf3129.jpg",
+          "observation": "Fresh source p.1 is a blank guard/leaf beside binding, with no printed title, imprint or publication date. It provides no edition-date evidence. Publication must be established from historical wrapper and edition-specific catalogue; do not claim an imprint here."
+        },
+        {
+          "source_page": 7,
+          "source_pdf": "src/sources/works/papal-collections/quebec-turgeon-jubilee-pastoral-1852/editions/1852-quebec-english/artifacts/native-facsimile-6178fbc5bb88/source.pdf",
+          "source_pdf_sha256": "6178fbc5bb88f91cc5b6f5c2dec54e7520c0c09e4a28cef81494710e1d781360",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-05/pages/page-2.png",
+          "source_png_sha256": "4c32adef111b350cbd76e9c7985afc2da142c2c01f78384fdda52ffb690f6cbd",
+          "source_bytes": 2071727,
+          "source_dimensions": [
+            1861,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1861,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-06-act-03-sample-02-4c32adef111b.jpg",
+          "proxy_sha256": "3e1f6208035f36afd76008398cd3bb8966b602d859eccca4b798bbf305fbfa78",
+          "proxy_bytes": 919210,
+          "proxy_dimensions": [
+            1861,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-05/pages/page-2.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-06-act-03-sample-02-4c32adef111b.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-06-act-03-sample-02-4c32adef111b.jpg",
+          "observation": "Fresh source p.7(printed6) is end of Turgeon pastoral, signed P.F.Archbishop of Quebec and secretary Edmond Langevin. Dating clause gives23April1852 at Archiepiscopal Palace of Quebec. This corroborates historical wrapper edition1852, distinct from papal act1851. It is excluded from papal selection. No publisher imprint shown; city in dating clause is not a printing imprint."
+        },
+        {
+          "source_page": 8,
+          "source_pdf": "src/sources/works/papal-collections/quebec-turgeon-jubilee-pastoral-1852/editions/1852-quebec-english/artifacts/native-facsimile-6178fbc5bb88/source.pdf",
+          "source_pdf_sha256": "6178fbc5bb88f91cc5b6f5c2dec54e7520c0c09e4a28cef81494710e1d781360",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-05/pages/page-3.png",
+          "source_png_sha256": "57c6d42bb0e893b9c9852285a3e5319b449f0a6f4ac230bba88b543fc0f1bf7d",
+          "source_bytes": 1903731,
+          "source_dimensions": [
+            1861,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1861,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-06-act-03-sample-03-57c6d42bb0e8.jpg",
+          "proxy_sha256": "609084b94f82c07530ad9fd3392e2e163fa8844630f2418cec8eee78f7227ad9",
+          "proxy_bytes": 880918,
+          "proxy_dimensions": [
+            1861,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-05/pages/page-3.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-06-act-03-sample-03-57c6d42bb0e8.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-06-act-03-sample-03-57c6d42bb0e8.jpg",
+          "observation": "Fresh source p.8(printed7) starts identified encyclical heading, Venerable Brothers salutation and Our heart rejoiced opening, all retained by selected OCR(Qur misread). No separate recipient address beyond this salutation is printed here. Leftmost strip is duplicate Turgeon preceding-page matter; declared left300pixel crop on2200pixel native raster ends in gutter and retains primary-page heading/body. No own notes visible."
+        },
+        {
+          "source_page": 9,
+          "source_pdf": "src/sources/works/papal-collections/quebec-turgeon-jubilee-pastoral-1852/editions/1852-quebec-english/artifacts/native-facsimile-6178fbc5bb88/source.pdf",
+          "source_pdf_sha256": "6178fbc5bb88f91cc5b6f5c2dec54e7520c0c09e4a28cef81494710e1d781360",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-05/pages/page-4.png",
+          "source_png_sha256": "7aef862b5ce5722e48cc484e116fdd9fb7b20a9d569cf64d7ea2d7292f9393c6",
+          "source_bytes": 2133207,
+          "source_dimensions": [
+            1849,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1849,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-06-act-03-sample-04-7aef862b5ce5.jpg",
+          "proxy_sha256": "9650eacc9e309996c2a1ba6eadaaa62176fff8034137c081b0e30a4341b4e87b",
+          "proxy_bytes": 946939,
+          "proxy_dimensions": [
+            1849,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-05/pages/page-4.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-06-act-03-sample-04-7aef862b5ce5.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-06-act-03-sample-04-7aef862b5ce5.jpg",
+          "observation": "Fresh source p.9(printed8) continues holy religion and civil society from previous page to re- at next-page break. Primary body order matches selected OCR sequence; no page-foot notes, separate address or subscription. No crop is declared for this primary-page image and no preceding-page text enters selected ranges."
+        },
+        {
+          "source_page": 10,
+          "source_pdf": "src/sources/works/papal-collections/quebec-turgeon-jubilee-pastoral-1852/editions/1852-quebec-english/artifacts/native-facsimile-6178fbc5bb88/source.pdf",
+          "source_pdf_sha256": "6178fbc5bb88f91cc5b6f5c2dec54e7520c0c09e4a28cef81494710e1d781360",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-05/pages/page-5.png",
+          "source_png_sha256": "758a0f5d898da2b4ac4ecf82cbedef6e747e16fded01c743b73a8cb784585481",
+          "source_bytes": 2086608,
+          "source_dimensions": [
+            1849,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1849,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-06-act-03-sample-05-758a0f5d898d.jpg",
+          "proxy_sha256": "c853a4f5df17de89fa959226229617544a8e69481206b78d0716bb3060956661",
+          "proxy_bytes": 931235,
+          "proxy_dimensions": [
+            1849,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-05/pages/page-5.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-06-act-03-sample-05-758a0f5d898d.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-06-act-03-sample-05-758a0f5d898d.jpg",
+          "observation": "Fresh source p.10(printed9) continues re-/gards at top, has uninterrupted prayer/intercession paragraphs and ends unite yourselves with the before next page. Selected OCR retains this order and these page boundaries. Left adjacent duplicate strip is outside declared300pixel crop; primary body begins safely beyond gutter. Bottom B is gathering signature/publishing furniture, not substantive note; no own footnotes visible."
+        },
+        {
+          "source_page": 11,
+          "source_pdf": "src/sources/works/papal-collections/quebec-turgeon-jubilee-pastoral-1852/editions/1852-quebec-english/artifacts/native-facsimile-6178fbc5bb88/source.pdf",
+          "source_pdf_sha256": "6178fbc5bb88f91cc5b6f5c2dec54e7520c0c09e4a28cef81494710e1d781360",
+          "source_png": ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-05/pages/page-6.png",
+          "source_png_sha256": "57220c9641ec86bb4d3637ccd5b0e8473215a972836b78ead2198e3284750955",
+          "source_bytes": 2315948,
+          "source_dimensions": [
+            1743,
+            2200
+          ],
+          "source_mode": "srgb",
+          "crop_pixels": [
+            0,
+            0,
+            1743,
+            2200
+          ],
+          "proxy": ".scratch/english-intake-recovery/image-proxies/packet-06-act-03-sample-06-57220c9641ec.jpg",
+          "proxy_sha256": "e7bd6ee49e477104dd111b275b27b65fab14994a7badc5db1122be67e2102d8a",
+          "proxy_bytes": 982420,
+          "proxy_dimensions": [
+            1743,
+            2200
+          ],
+          "quality": 95,
+          "sampling_factor": "4:4:4",
+          "alpha_composite": "white, no resizing",
+          "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+          "command": [
+            "/usr/bin/magick",
+            "-limit",
+            "thread",
+            "1",
+            "-limit",
+            "memory",
+            "256MiB",
+            "-limit",
+            "map",
+            "512MiB",
+            ".scratch/english-intake-b2/native-rasters/.scratch/english-intake-b2/native-05/pages/page-6.png",
+            "-background",
+            "white",
+            "-alpha",
+            "remove",
+            "-alpha",
+            "off",
+            "-sampling-factor",
+            "4:4:4",
+            "-quality",
+            "95",
+            "-strip",
+            ".scratch/english-intake-recovery/image-proxies/packet-06-act-03-sample-06-57220c9641ec.jpg"
+          ],
+          "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+          "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-06-act-03-sample-06-57220c9641ec.jpg",
+          "observation": "Fresh source p.11(printed10) continues people committed to your care, retains newJubilee instruction, final blessing, Rome/St Peter21November1851 dating clause/sixth pontificate year and PIUS IX.Pope subscription. No own source notes/annex on these four act pages; reference to other letters accompanying these does not print their text as part of this act. No neighboring body appended. Complete selected OCR read, with its uncorrected misrecognitions."
+        }
+      ],
+      "actual_opened_image_count": 6,
+      "historical_human_edition": {
+        "identity": "Exultavit cor nostrum — historical English translation",
+        "container": "Pastoral letter of His Grace the Archbishop of Quebec on the occasion of the jubilee granted by Pope Pius IX by his apostolic letters bearing date 21 November 1851",
+        "translator": "Unknown / unnamed in the identified historical printing.",
+        "attribution": "Pius IX is issuer; English is the identified historical human translation, mechanically acquired/OCRed, with no AI-translated body."
+      },
+      "historical_publication": {
+        "year": "1852",
+        "basis": "Native Turgeon pastoral wrapper dated 23 April 1852; edition-specific CIHM 52209 catalogue dates this original publication 1852 and names the included English encyclical. The papal act is dated 21 November 1851.",
+        "printed_imprint": "Not established.",
+        "printing_place": "Unknown; catalogue publisher [S.l. : s.n.] and tentative city [Quebec?. Quebec is certain as the wrapper issuer location.",
+        "publisher": "Unknown.",
+        "catalog_evidence": {
+          "path": ".scratch/english-intake-b2/cihm_52209-metadata.json",
+          "sha256": "31eaf9b916b483127b8fd11932786dfe6544dd82252ff24d4859226351492ee1",
+          "bytes": 13244,
+          "whole_response_parsed": true,
+          "metadata": {
+            "title": "Pastoral letter of His Grace the Archbishop of Quebec [microform] : on the occasion of the jubilee granted by O.H.F. Pope Pius IX, by his apostolic letters bearing date the 21 November, 1851 : Peter-Flavianus Turgeon, by the mercy of God and the grace of the Holy Apostolcic [sic] See Archbishop of Quebec .",
+            "creator": [
+              "Catholic Church. Archdiocese of Quebec. Archbishop (1850-1867 : Turgeon)",
+              "Turgeon, Pierre-Flavien, 1787-1867"
+            ],
+            "date": "1852",
+            "publisher": "[S.l. : s.n.]",
+            "city": "[Quebec?",
+            "language": "eng",
+            "description": [
+              "Caption title",
+              "\"Given at the Archiepiscopal Palace of Quebec ... the twenty-third of April, one thousand eight hundred and fifty-two\"--p. 6",
+              "Includes Encyclical letter of Our Holy Father Pope Pius IX ordering and announcing a new jubilee",
+              "Filmed from a copy of the original publication held by the Seminary of Quebec, Library",
+              "43"
+            ]
+          }
+        },
+        "native_date_locus": "Source PDF p.7, printed p.6.",
+        "current_metadata_qualification": "Current edition/container publication strings and artifact/row rights basis overstate Quebec as the printing place. Preserve the catalogue uncertainty; publication year 1852 remains corroborated."
+      },
+      "content_extent": {
+        "native_extent": "Printed pp.7–10, source PDF pp.8–11; all four act pages freshly inspected, plus blank source p.1 and dated wrapper p.7.",
+        "start": "Encyclical title, Venerable Brothers salutation and Our heart rejoiced opening are present. No separate recipient address printed beyond salutation on this act start.",
+        "end": "Final apostolic blessing; Rome, St Peter, 21 November 1851, sixth pontificate year; PIUS IX. Pope.",
+        "historical_notes": "No own source footnotes printed on the four act pages. Bottom B on printed p.9 is gathering furniture. Reference to other accompanying letters does not print an annex here.",
+        "excluded": "Turgeon pastoral and duplicate adjacent-page strips. Declared leftmost300-pixel crop on source pp.8/10 stops in gutter before primary body; source pp.9/11 uncropped. Page-number/gathering furniture excluded by exact line ranges.",
+        "selection": "Exact source LF1–36,39–76,78–116,118–119,122–154 from mechanical re-OCR71cb5eda…; fresh Tesseract5.5.4 replay with exact traineddata and native crop pixel comparisons reproduced complete source bytes."
+      },
+      "lawful_retained_artifact_basis": {
+        "policy_path": "src/sources/inventories/papal-documents-rights-v1.toml",
+        "policy_sha256": "2098d3cc15ef3439234033c7582fe4f17a726494008b25682a7f1b3a844454ea",
+        "jurisdiction": "United States",
+        "decision": "PASS under existing artifact-specific historical publication/expired-term policy.",
+        "evidence": "Identified English printing published 1852; exact native/source pins and mechanical boundaries checked. Publication year corroboration is independent of papal act date.",
+        "limitations": "No worldwide rights or general host licence asserted. Historical wording excluded from Triptych content licence.",
+        "Etsi_parent_boundary": null
+      },
+      "scope_limits": [
+        "Source intake only; no compiler PDF layout review, installation or deployment.",
+        "No lexical translation accuracy or whole-printing word-for-word collation.",
+        "All selected act texts were read completely; visual review extent is exactly the recorded native samples.",
+        "Prior visual verdicts were not inherited. Current mechanical evidence was reused only after exact pin checks; Exultavit OCR was freshly replayed.",
+        "Anonymous translator remains unknown; identified nineteenth-century English printing establishes the historical human expression."
+      ],
+      "findings": [
+        {
+          "severity": "qualification",
+          "category": "publication-metadata",
+          "finding": "Current edition/container and rights basis state Quebec as publication place too positively. Native wrapper identifies the issuing city, not an imprint. CIHM52209 publisher is [S.l. : s.n.] and city is [Quebec?; printing place and publisher are unestablished. Catalogue1852 and native23April1852 pastoral wrapper date corroborate publication year independently of papal act21November1851."
+        },
+        {
+          "severity": "limitation",
+          "category": "ocr",
+          "finding": "Exact mechanical re-OCR retains its uncorrected spelling and spacing errors. Freshly checked primary-page crop regions omit duplicated adjacent-page strips. No word-for-word printing collation or translation accuracy claimed."
+        }
+      ],
+      "blockers": []
+    }
+  ],
+  "source_metadata_followups": [
+    "Current edition/container publication strings and artifact/row rights basis omit the catalogue place uncertainty. Qualify the place before describing it as an exact imprint; publication year 1859 remains corroborated.",
+    "Current edition/container publication strings and artifact/row rights basis overstate Quebec as the printing place. Preserve the catalogue uncertainty; publication year 1852 remains corroborated."
+  ],
+  "scope_limits": [
+    "Source intake only; no compiler PDF layout review, installation or deployment.",
+    "No lexical translation accuracy or whole-printing word-for-word collation.",
+    "All selected act texts were read completely; visual review extent is exactly the recorded native samples.",
+    "Prior visual verdicts were not inherited. Current mechanical evidence was reused only after exact pin checks; Exultavit OCR was freshly replayed.",
+    "Anonymous translator remains unknown; identified nineteenth-century English printing establishes the historical human expression."
+  ],
+  "mechanical_verification": {
+    "path": ".scratch/english-intake-recovery/packet-06/audit/verification.json",
+    "initial_executed_gates": 177,
+    "fresh_exultavit_replay": "Exact combined71cb5eda16cd986141af79a0fbb14dfa181803f353eea3f4fd2afd7203dfaeef reproduced from four exact native PNG regions.",
+    "image_display_map": {
+      "path": ".scratch/english-intake-recovery/image-proxies/display-map-jpeg-only.json",
+      "sha256": "400812f7877d3b344967da24455891d29cc7d44e7c62982dd2356a581cedd3fd"
+    },
+    "audit_scripts": [
+      {
+        "path": ".scratch/english-intake-recovery/packet-06/audit/verify.py",
+        "sha256": "2ce1c39437426ce84af88c6f8057a1b52a0580a7344c588d2afed6e801729b75"
+      },
+      {
+        "path": ".scratch/english-intake-recovery/packet-06/audit/finalize.py",
+        "sha256": "aec3d55b52d7e24ae696db45b462cbb9cd5a91247499e5ddd21c5bd636f247b8"
+      }
+    ],
+    "qualification": "One initial pixel-comparison invocation used invalid ImageMagick syntax; it was corrected to compare decoded RGBA pixel bytes. All actual crop pixel comparisons and fresh OCR output comparisons then passed.",
+    "not_performed": "No compiler PDF layout re-audit, lexical translation certification, all-printing collation, canonical edits, Git mutations, installation or deployment."
+  }
+}

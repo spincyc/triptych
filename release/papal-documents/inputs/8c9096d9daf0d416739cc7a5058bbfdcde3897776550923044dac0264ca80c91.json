@@ -1,0 +1,42 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "6d29d318895fa65993772fd8c11155795b3647f4aeb8fefd7cba294bdc79de75",
+  "documents": [
+    {
+      "id": "papal.leo-xiii.hf-l-xiii-enc-02071894-litteras-a-vobis",
+      "language": "la",
+      "pdf_sha256": "a7da728d5adc70429992b507d79a97ce8d0320ba14fc05674bf9ac059da2c677",
+      "pages": 2,
+      "status": "PASS",
+      "source_ownership_extent_status": "PASS",
+      "source_ownership_extent_qualification": "Exact 1440-byte neighboring-act exclusion only, with all retained bytes and order unchanged.",
+      "individually_inspected_pages": [
+        1,
+        2
+      ],
+      "native_individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": [
+        "Normalized Vatican web transcription with exact foreign-act exclusion; remaining transcription and reference errors remain uncorrected.",
+        "Historical boundary and six reference-note memberships checked in all seven retained facsimile pages; no complete lexical collation or whole-volume verification.",
+        "Raster-cache reuse only; every visual page inspected freshly and independently.",
+        "Producer JSON is author proof only, independent false; separate producer reviews file is not expected.",
+        "No translation, new rights clearance, admission, installation or deployment verdict; canonical copying and admission remain coordinator owned.",
+        "Prior af7781f9a63066a0c052028c7d6a19068167f0b0a54d9f456278e4fe97e9c569 remains BLOCKED; packet 29 ASS-OCR acceptance is not inherited."
+      ],
+      "receipt_sha256": "6d29d318895fa65993772fd8c11155795b3647f4aeb8fefd7cba294bdc79de75",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-39.md",
+      "report_sha256": "b04cd3bcc8109983eed4d5f65d4600417f218516f95a685557309964d5c7048f"
+    }
+  ]
+}

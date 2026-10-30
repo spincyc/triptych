@@ -1,0 +1,27 @@
+{
+  "schema": "triptych-papal-visual-review/v1",
+  "frozen_receipt_sha256": "6e0e3507bf47c915e2a3b2c0d58e0545c4e952d52723c377ce92bcfb25e7bec7",
+  "documents": [
+    {
+      "id": "acta.ass.025.ass-025-007",
+      "language": "la",
+      "pdf_sha256": "3958cda4310ec831519f2397d5c270625d9104e078bd818ca0d7d01a67696c6c",
+      "pages": 5,
+      "status": "PASS",
+      "individually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reused_pages": [],
+      "reuse_proofs": [],
+      "findings": [],
+      "limitations": "Independent exact-PDF visual/source-partition review. Reader pages 1–5 and native OCR parent pages 139–148 individually inspected at full resolution. All ten native parent/excerpt mappings verified. Historical source hyphens, literal i and \\n, journal footer and source-page note interruptions retained. Source-bearing final left column accepted. No whole-volume lexical/original-print collation, translation certification, new rights/intake approval, installation or deployment.",
+      "receipt_sha256": "6e0e3507bf47c915e2a3b2c0d58e0545c4e952d52723c377ce92bcfb25e7bec7",
+      "report": "src/sources/papal-documents/encyclicals-refinement-cold-28.md",
+      "report_sha256": "48d818dec3fd2f756b72dc9ae1ad9f48e9ac1f42d8a1d6670bb9484ca06c7692"
+    }
+  ]
+}

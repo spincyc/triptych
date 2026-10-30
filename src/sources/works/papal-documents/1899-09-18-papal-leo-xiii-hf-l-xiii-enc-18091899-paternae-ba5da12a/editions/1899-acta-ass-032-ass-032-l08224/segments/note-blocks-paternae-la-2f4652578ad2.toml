@@ -1,0 +1,11 @@
+schema = 2
+record_type = "segment"
+id = "segment.acta-papal-archives.ass.032.ass-032-l08224.note-blocks-2f4652578ad2"
+edition_id = "edition.acta-papal-archives.ass.032.ass-032-l08224"
+artifact_id = "artifact.acta-papal-archives.ass.032.historical-text-c2a09d45.note-blocks-paternae-la-2f4652578ad2"
+artifact_sha256 = "2f4652578ad29c3940b86d138b0210fa6c3b3f32225306ca9842fcc60ccd3d9d"
+segment_type = "constituent-work"
+states = ["cataloged", "acquired", "inspected"]
+physical_line_ranges = [[1, 42], [44, 83], [85, 124], [126, 167]]
+context = "Same complete prior constituent as segment.acta-papal-archives.ass.032.ass-032-l08224, selected from exact parent artifact.acta-papal-archives.ass.032.historical-text-c2a09d45 at original physical LF [[8219, 8260], [8262, 8301], [8303, 8342], [8344, 8383]]. The explicit partition spec is artifact.acta-papal-archives.ass.032.historical-text-c2a09d45.note-spec-paternae-la-410f068a2ead (410f068a2eadc4ef9752fd9ff50374d3339a7e5ddba1472e996922a2047a7de2). Original selection pieces map separately to derivative LF ranges, preserving every existing range and paragraph boundary."
+notes = "Reading-only replacement preserves all selected non-LF bytes and their original order. Historical source-note groups at original LF [[8379, 8383]] occupy separate blocks at their existing source breaks. Prior source/segment remain retained; no lexical repair, reordered body/notes, or original-print collation is claimed."

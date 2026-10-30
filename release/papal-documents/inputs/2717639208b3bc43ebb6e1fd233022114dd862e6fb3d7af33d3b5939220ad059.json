@@ -1,0 +1,74 @@
+{
+  "schema": "triptych-papal-typeset/v1",
+  "revision": "2026-10-30T15:41:53Z",
+  "documents": [
+    {
+      "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.divinum-quote-text-ba3ad11b1ec6",
+      "chapter": 20,
+      "collection_corpus": "english",
+      "completeness": "complete-substantive-chapter-with-identified-running-head-excluded",
+      "date": "1897-05-09",
+      "document_type": "encyclical",
+      "id": "papal.leo-xiii.hf-l-xiii-enc-09051897-divinum-illud-munus",
+      "language": "en",
+      "physical_line_ranges": [
+        [
+          1,
+          163
+        ]
+      ],
+      "pope": "Leo XIII",
+      "revision": "2026-10-30T15:41:53Z",
+      "rights_basis": "The bounded historical English printed by Benziger Brothers in the United States in 1903 and its faithful mechanical image/OCR evidence are public domain in the United States under the publication-term assessment in papal-documents-rights-v1.toml; the historical words are excluded from Triptych CC BY 4.0. Modern covers, library matter and creative revisions are excluded. Scan attribution: Gumberg Library, Duquesne University; Lyrasis Members and Sloan Foundation; Internet Archive.",
+      "rights_notice": "The 1903 English translation is public domain in the United States; Triptych claims no exclusive right in its wording.",
+      "rights_status": "public-domain",
+      "segment_id": "segment.papal.leo-xiii.hf-l-xiii-enc-09051897-divinum-illud-munus.1903-benziger-english.quote-recovery-ba3ad11b1ec6",
+      "segment_path": "src/sources/works/papal-documents/1897-05-09-papal-leo-xiii-hf-l-xiii-enc-09051897-divinum-illud-munus-7370b2e4/editions/1903-benziger-english/segments/quote-recovery-ba3ad11b1ec6.toml",
+      "sha256": "ba3ad11b1ec60e61cbd795d6ecabd15dfb13fce21c02c218f63c852f636447fa",
+      "source_note": "Historical English web transcription of the 1903 Benziger edition; individual translator unidentified. Encoding-only repair of 16 spans (16 intact reversals; 0 partial marker repairs), each corroborated by independent OCR of this printing. OCR word and source-date errors remain uncorrected; full print collation is outstanding. The web transcription heading prints May 4, 1897; the official work catalog dates the act May 9, 1897. One proven running-head prefix is excluded; one unreadable two-byte book numeral is mechanically recovered as vi from fresh independent OCR corroborated against original-print page images. All other selected bytes and separate historical note paragraphs are retained. These bounded repairs do not establish full print collation. Two malformed quotation tokens are additionally recovered by exact raw OCR byte slices, with matching full-page/context-crop OCR and direct same-printing native image corroboration. All other words, punctuation and source LF boundaries remain unchanged.",
+      "source_url": "https://en.wikisource.org/wiki/The_Great_Encyclical_Letters_of_Pope_Leo_XIII/The_Holy_Spirit",
+      "text_path": "src/sources/works/papal-collections/leo-xiii-great-encyclical-letters/editions/1903-benziger-english/artifacts/divinum-quote-text-ba3ad11b1ec6/text.txt",
+      "title": "The Holy Spirit"
+    }
+  ],
+  "supersessions": [
+    {
+      "reason": "Cumulative same-printing repair: exclude the exact proven 16-byte running-head prefix, recover the exact two-byte vi numeral from corroborated OCR, and recover only the two separately bounded malformed quotation tokens from raw OCR byte slices. Every other selected byte and LF boundary remains exact; all original and intermediate artifact, segment, reader and hold evidence records remain unchanged.",
+      "prior": {
+        "id": "papal.leo-xiii.hf-l-xiii-enc-09051897-divinum-illud-munus",
+        "language": "en",
+        "pdf_sha256": "771b21e618dfa3640ad6d7ae368d7370170c70e9e7693f7fc9806fc2a9adb997",
+        "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.ws-encoding-repaired-ed8e5a40",
+        "source_sha256": "ed8e5a405701a51eec9124f0e63a4db7740ded35545fe5d99874ac9581541879",
+        "segment_id": "segment.papal.leo-xiii.hf-l-xiii-enc-09051897-divinum-illud-munus.1903-benziger-english.benziger-english-encoding-repaired-ed8e5a40"
+      },
+      "replacement": {
+        "id": "papal.leo-xiii.hf-l-xiii-enc-09051897-divinum-illud-munus",
+        "language": "en",
+        "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.divinum-quote-text-ba3ad11b1ec6",
+        "source_sha256": "ba3ad11b1ec60e61cbd795d6ecabd15dfb13fce21c02c218f63c852f636447fa",
+        "segment_id": "segment.papal.leo-xiii.hf-l-xiii-enc-09051897-divinum-illud-munus.1903-benziger-english.quote-recovery-ba3ad11b1ec6",
+        "revision": "2026-10-30T15:41:53Z"
+      }
+    },
+    {
+      "reason": "Exactly two malformed quoted token spans are replaced by raw OCR byte slices corroborated in the same 1903 printing native page and matching full-page/context TSV boxes. Every other source byte, punctuation, whitespace and LF boundary remains exact. No general proofreading, translation, lexical modernization or whole-source collation.",
+      "prior": {
+        "id": "papal.leo-xiii.hf-l-xiii-enc-09051897-divinum-illud-munus",
+        "language": "en",
+        "pdf_sha256": "8fdc6e4203514ae85f7befaa9cd8fbff6ad8d2942d4a0e8852a2680f5d793f8d",
+        "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.divinum-boundary-text-05fccc3f45dc",
+        "source_sha256": "05fccc3f45dcf497469491527999a6f0d3a8329cede1f3455f1536cdc15db75f",
+        "segment_id": "segment.papal.leo-xiii.hf-l-xiii-enc-09051897-divinum-illud-munus.1903-benziger-english.boundary-05fccc3f45dc"
+      },
+      "replacement": {
+        "id": "papal.leo-xiii.hf-l-xiii-enc-09051897-divinum-illud-munus",
+        "language": "en",
+        "artifact_id": "artifact.papal-collections.leo-xiii-great-encyclical-letters.1903-benziger-english.divinum-quote-text-ba3ad11b1ec6",
+        "source_sha256": "ba3ad11b1ec60e61cbd795d6ecabd15dfb13fce21c02c218f63c852f636447fa",
+        "segment_id": "segment.papal.leo-xiii.hf-l-xiii-enc-09051897-divinum-illud-munus.1903-benziger-english.quote-recovery-ba3ad11b1ec6",
+        "revision": "2026-10-30T15:41:53Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "schema": "triptych-three-act-source-cold-audit/v1",
+  "packet": 7,
+  "expected_count": 3,
+  "expected_keys": [
+    [
+      "papal.pius-ix.enciclica-ubi-primum-2-febbraio-1849",
+      "en"
+    ],
+    [
+      "papal.pius-x.hf-p-x-enc-07061912-lacrimabili-statu.acqr-1912-english",
+      "en"
+    ],
+    [
+      "papal.pius-x.hf-p-x-enc-21041909-communium-rerum.acqr-1909-english",
+      "en"
+    ]
+  ],
+  "documents": [
+    {
+      "key": [
+        "papal.pius-ix.enciclica-ubi-primum-2-febbraio-1849",
+        "en"
+      ],
+      "title": "Ubi primum",
+      "row_sha256": "f9ee989c083cddfebf0940508924bdf1fc94b7d5ed259763d4218b53b16271b9",
+      "source_sha256": "e735205405eef788604a529116453684aee5678d8d6b2361d84b69b2e1a31293",
+      "evidence": {
+        "path": ".scratch/english-intake-recovery/packet-07/act-01-evidence.json",
+        "sha256": "f2e6f2ede4e9764f420d60914587df77377ed794733627b4169c69638fef2bc9",
+        "bytes": 30837
+      },
+      "selection": {
+        "path": ".scratch/english-intake-recovery/packet-07/act-01-selected.txt",
+        "sha256": "e735205405eef788604a529116453684aee5678d8d6b2361d84b69b2e1a31293",
+        "bytes": 7947
+      },
+      "controller_pin": {
+        "id": "segment.papal.pius-ix.enciclica-ubi-primum-2-febbraio-1849.1852-catholic-layman-english.complete-english-ocr",
+        "record": "src/sources/works/papal-documents/1849-02-02-papal-pius-ix-enciclica-ubi-primum-2-febbraio-1849-97cd54dd/editions/1852-catholic-layman-english/segments/complete-english-ocr.toml",
+        "sha256": "c0beae2e6512e7cf4d83bb6049fcd56c3e195fd7c4b8c2549ed7e7ca3798403b"
+      }
+    },
+    {
+      "key": [
+        "papal.pius-x.hf-p-x-enc-07061912-lacrimabili-statu.acqr-1912-english",
+        "en"
+      ],
+      "title": "Lacrimabili Statu",
+      "row_sha256": "9014d68e4e741696579284e5d92bda9b3b03d1f9ac851bb539df52b5056d4aa4",
+      "source_sha256": "acf453149edbc189bf906da5a07cd29b25adffd56ebd0ad4e548a7fe48fac870",
+      "evidence": {
+        "path": ".scratch/english-intake-recovery/packet-07/act-02-evidence.json",
+        "sha256": "4430cdc3e7be01335f8c79457b52c013b6117f4e6d177dcca9cd574360ee8a91",
+        "bytes": 33567
+      },
+      "selection": {
+        "path": ".scratch/english-intake-recovery/packet-07/act-02-selected.txt",
+        "sha256": "acf453149edbc189bf906da5a07cd29b25adffd56ebd0ad4e548a7fe48fac870",
+        "bytes": 10194
+      },
+      "controller_pin": {
+        "id": "segment.papal.pius-x.hf-p-x-enc-07061912-lacrimabili-statu.1912-acqr-volume-37-english.complete-english-reading",
+        "record": "src/sources/works/papal-documents/1912-06-07-papal-pius-x-hf-p-x-enc-07061912-lacrimabili-statu-28074b3e/editions/1912-acqr-volume-37-english/segments/complete-english-reading.toml",
+        "sha256": "85ea0da84476ba4677f26756b7e172556726a61416df17beda4367ec6fbe027b"
+      }
+    },
+    {
+      "key": [
+        "papal.pius-x.hf-p-x-enc-21041909-communium-rerum.acqr-1909-english",
+        "en"
+      ],
+      "title": "Communium Rerum",
+      "row_sha256": "23e4aa37be9badf18eee74139abc8945ff279528b0e48a935e1d4e54181691ef",
+      "source_sha256": "255b537e8fbfc20e618c642379ac7351fe2b442be028377362f0baebf4c9cf45",
+      "evidence": {
+        "path": ".scratch/english-intake-recovery/packet-07/act-03-evidence.json",
+        "sha256": "0f8471c46f0a43bf209404bce8afd6ca66ded9f1ec228a2acc114e13e79e962f",
+        "bytes": 46341
+      },
+      "selection": {
+        "path": ".scratch/english-intake-recovery/packet-07/act-03-selected.txt",
+        "sha256": "255b537e8fbfc20e618c642379ac7351fe2b442be028377362f0baebf4c9cf45",
+        "bytes": 65494
+      },
+      "controller_pin": {
+        "id": "segment.papal.pius-x.hf-p-x-enc-21041909-communium-rerum.1909-acqr-volume-34-english.complete-english-reading",
+        "record": "src/sources/works/papal-documents/1909-04-21-papal-pius-x-hf-p-x-enc-21041909-communium-rerum-62878975/editions/1909-acqr-volume-34-english/segments/complete-english-reading.toml",
+        "sha256": "1cc24d78183108f69d95b0046ee3a6d57f5492da15e1f2710ef8bbc380aefebd"
+      }
+    }
+  ],
+  "common_pins": {
+    "path": ".scratch/english-intake-recovery/common-pins.json",
+    "sha256": "17f8dc51ed96ec27c7b02254b4edac12df478c97a547e1660c27b8a0996921e9",
+    "bytes": 2847
+  },
+  "scope_limits": "Review source intake and exact selected historical human English witness. Fresh native image checks are required; prior visual claims are not inherited. No PDF compiler/layout review or lexical translation accuracy/full printing collation claimed."
+}
