@@ -444,6 +444,24 @@ class SourceLibraryTests(unittest.TestCase):
                 SOURCE_LIBRARY.source_fingerprint(warm, PASSAGE_ID),
             )
 
+    def test_cache_namespace_change_does_not_replay_prior_validator_errors(self) -> None:
+        self.add_valid_vertical_fixture()
+        directory = self.root / ".scratch/versioned-source-cache"
+        with patch.dict(os.environ, {"TRIPTYCH_LIBRARY_CACHE": "1", "TRIPTYCH_LIBRARY_CACHE_DIR": str(directory)}), patch.object(
+            SOURCE_LIBRARY, "LIBRARY_CACHE_FLOOR", 0
+        ):
+            cold = SOURCE_LIBRARY.load_library(self.root)
+            entry = SOURCE_LIBRARY._library_cache_entry(self.root, True)
+            cached = json.loads(entry.read_text())
+            cached["errors"] = ["A prior validator rejected an inventory envelope."]
+            entry.write_text(json.dumps(cached))
+            self.assertEqual(cached["errors"], SOURCE_LIBRARY.load_library(self.root).errors)
+            with patch.object(SOURCE_LIBRARY, "LIBRARY_CACHE_VERSION", "new-ownership"):
+                self.assertNotEqual(entry, SOURCE_LIBRARY._library_cache_entry(self.root, True))
+                refreshed = SOURCE_LIBRARY.load_library(self.root)
+            self.assertEqual(refreshed.errors, [])
+            self.assertEqual(refreshed.records, cold.records)
+
     def test_relative_cache_override_uses_source_root_and_empty_override_keeps_default(self) -> None:
         self.add_valid_vertical_fixture()
         with patch.dict(os.environ, {"TRIPTYCH_LIBRARY_CACHE": "1", "TRIPTYCH_LIBRARY_CACHE_DIR": ".scratch/source-cache"}), patch.object(
@@ -1695,6 +1713,46 @@ class SourceLibraryTests(unittest.TestCase):
             self.assertIn("papal-documents/" + name + ": invalid papal inventory", joined)
         for name in rogue:
             self.assertIn("papal-documents/" + name + ": file is outside", joined)
+
+    def test_named_english_intake_audits_do_not_create_source_or_layout_records(self) -> None:
+        self.add_valid_vertical_fixture()
+        before = SOURCE_LIBRARY.load_library(self.root)
+        envelopes = {
+            "historical-english-source-intake-02.json": "triptych-three-act-source-cold-audit-recovery/v1",
+            "historical-english-source-intake-03.json": "triptych-three-act-source-cold-audit-report/v1",
+            "historical-english-source-intake-02-scope.json": "triptych-three-act-source-cold-audit/v1",
+            "historical-english-source-intake-03-scope.json": "triptych-three-act-source-cold-audit/v1",
+        }
+        for name, schema in envelopes.items():
+            self.write("src/sources/papal-documents/" + name, json.dumps({
+                "schema": schema, "scope_sha256": "a" * 64, "packet": 3 if "-03" in name else 2,
+                "expected_count": 3, "expected_keys": [[f"judgment.{i}", "en"] for i in range(3)],
+                "documents": [{"status": "PASS", "id": f"judgment.{i}"} for i in range(3)],
+                "common_pins": {}, "scope_limits": "Source admission only.",
+            }))
+        after = SOURCE_LIBRARY.load_library(self.root)
+        self.assertEqual(after.errors, [])
+        self.assertEqual(before.records, after.records)
+        self.assertEqual(before.bindings, after.bindings)
+
+    def test_english_intake_ownership_rejects_wrong_schema_missing_fields_and_other_names(self) -> None:
+        self.add_valid_vertical_fixture()
+        invalid = {
+            "historical-english-source-intake-02.json": {"schema": "triptych-papal-visual-review/v1", "documents": [], "scope_sha256": "a" * 64, "expected_count": 3, "expected_keys": []},
+            "historical-english-source-intake-03.json": {"schema": "triptych-three-act-source-cold-audit-report/v1", "documents": [], "expected_count": 3, "expected_keys": []},
+            "historical-english-source-intake-02-scope.json": {"schema": "triptych-three-act-source-cold-audit/v1", "documents": [], "packet": 2, "expected_count": 3, "expected_keys": [], "scope_limits": []},
+            "historical-english-source-intake-03-scope.json": {"schema": "triptych-three-act-source-cold-audit/v1", "documents": [], "packet": 3, "expected_count": 3, "expected_keys": [], "common_pins": {}, "scope_limits": []},
+        }
+        for name, data in invalid.items():
+            self.write("src/sources/papal-documents/" + name, json.dumps(data))
+        self.write("src/sources/papal-documents/historical-english-source-intake-04.json", json.dumps({
+            "schema": "triptych-three-act-source-cold-audit-report/v1", "documents": [],
+            "scope_sha256": "a" * 64, "expected_count": 3, "expected_keys": [],
+        }))
+        errors = "\n".join(SOURCE_LIBRARY.load_library(self.root).errors)
+        for name in invalid:
+            self.assertIn("papal-documents/" + name + ": invalid papal inventory", errors)
+        self.assertIn("historical-english-source-intake-04.json: file is outside", errors)
 
     def test_a_table_the_bible_tool_writes_and_gates_is_owned(self) -> None:
         """The derived trees keep their own formats; the suffix guard keeps out blobs.

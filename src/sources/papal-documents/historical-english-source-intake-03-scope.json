@@ -1,0 +1,99 @@
+{
+  "schema": "triptych-three-act-source-cold-audit/v1",
+  "packet": 3,
+  "expected_count": 3,
+  "expected_keys": [
+    [
+      "papal.benedict-xv.hf-ben-xv-enc-06011921-sacra-propediem.catholic-mind-1921-03-22-english",
+      "en"
+    ],
+    [
+      "papal.benedict-xv.hf-ben-xv-enc-15061917-humani-generis-redemptionem.catholic-mind-1917-09-08-english",
+      "en"
+    ],
+    [
+      "papal.benedict-xv.hf-ben-xv-enc-23051920-pacem-dei-munus-pulcherrimum.catholic-mind-1920-07-22-english",
+      "en"
+    ]
+  ],
+  "documents": [
+    {
+      "key": [
+        "papal.benedict-xv.hf-ben-xv-enc-06011921-sacra-propediem.catholic-mind-1921-03-22-english",
+        "en"
+      ],
+      "title": "Sacra Propediem",
+      "row_sha256": "ed1f56bd69c26a8bf87228bcff9d3d9c0cc37459f082caee79e66579822a755d",
+      "source_sha256": "ab86af829c4157feb46dc57b6e4e53ff1b57d8d668772601a88e46202ae7ef84",
+      "evidence": {
+        "path": ".scratch/english-intake-recovery/packet-03/act-01-evidence.json",
+        "sha256": "aea7daae5980f195040f42a8278b8d591a039d0d7f7694cc0ec093f100c547cf",
+        "bytes": 29415
+      },
+      "selection": {
+        "path": ".scratch/english-intake-recovery/packet-03/act-01-selected.txt",
+        "sha256": "ab86af829c4157feb46dc57b6e4e53ff1b57d8d668772601a88e46202ae7ef84",
+        "bytes": 18132
+      },
+      "controller_pin": {
+        "id": "segment.papal.benedict-xv.hf-ben-xv-enc-06011921-sacra-propediem.1921-03-22-catholic-mind-english.complete-english-reading",
+        "record": "src/sources/works/papal-documents/1921-01-06-papal-benedict-xv-hf-ben-xv-enc-06011921-sacra-propediem-0e46b83d/editions/1921-03-22-catholic-mind-english/segments/complete-english-reading.toml",
+        "sha256": "74561522c9a6e9f0eee600c370d188ea413aa2eca1fb1691bf8b1fdc513b1fc0"
+      }
+    },
+    {
+      "key": [
+        "papal.benedict-xv.hf-ben-xv-enc-15061917-humani-generis-redemptionem.catholic-mind-1917-09-08-english",
+        "en"
+      ],
+      "title": "Humani Generis Redemptionem",
+      "row_sha256": "6520afffad4e8b11cd64c42b5bf7513596c7e51f6e9e24858844c25ec97f9ead",
+      "source_sha256": "1b92394ad511e01736a15e11a374648f9c2fc7c7c03accc12af05773025907cb",
+      "evidence": {
+        "path": ".scratch/english-intake-recovery/packet-03/act-02-evidence.json",
+        "sha256": "0f1733316295fb355749ce05037016da48949efa616984d16616421210888dfd",
+        "bytes": 31437
+      },
+      "selection": {
+        "path": ".scratch/english-intake-recovery/packet-03/act-02-selected.txt",
+        "sha256": "1b92394ad511e01736a15e11a374648f9c2fc7c7c03accc12af05773025907cb",
+        "bytes": 27242
+      },
+      "controller_pin": {
+        "id": "segment.papal.benedict-xv.hf-ben-xv-enc-15061917-humani-generis-redemptionem.1917-09-08-catholic-mind-english.complete-english-reading",
+        "record": "src/sources/works/papal-documents/1917-06-15-papal-benedict-xv-hf-ben-xv-enc-15061917-humani-generis-redemptionem-ac6fb370/editions/1917-09-08-catholic-mind-english/segments/complete-english-reading.toml",
+        "sha256": "741aad6a91065e4a2b326deeefb26fd2ebab9976d3473b7e34b89ff3f8fabe57"
+      }
+    },
+    {
+      "key": [
+        "papal.benedict-xv.hf-ben-xv-enc-23051920-pacem-dei-munus-pulcherrimum.catholic-mind-1920-07-22-english",
+        "en"
+      ],
+      "title": "Pacem, Dei Munus Pulcherrimum",
+      "row_sha256": "187aca7e143182d36b7ef8a5040a6e3a7c5c19b35ea1f5121b97921ae075a8dc",
+      "source_sha256": "a64fb7b0de3e6ffae57b4485fd3917030d1acbb9f4201a9c3620f7435f771299",
+      "evidence": {
+        "path": ".scratch/english-intake-recovery/packet-03/act-03-evidence.json",
+        "sha256": "5da568f8acf96651429dad4941c5c2930ea5e509a9b57381742c153adf2cbfd6",
+        "bytes": 29598
+      },
+      "selection": {
+        "path": ".scratch/english-intake-recovery/packet-03/act-03-selected.txt",
+        "sha256": "a64fb7b0de3e6ffae57b4485fd3917030d1acbb9f4201a9c3620f7435f771299",
+        "bytes": 19098
+      },
+      "controller_pin": {
+        "id": "segment.papal.benedict-xv.hf-ben-xv-enc-23051920-pacem-dei-munus-pulcherrimum.1920-07-22-catholic-mind-english.complete-english-reading",
+        "record": "src/sources/works/papal-documents/1920-05-23-papal-benedict-xv-hf-ben-xv-enc-23051920-pacem-dei-munus-pulcherrimum-23c1df5d/editions/1920-07-22-catholic-mind-english/segments/complete-english-reading.toml",
+        "sha256": "7a0ac42caf9649bc25b9313b70e5df167f7d4be9627ed851e2a3832420516fb2"
+      }
+    }
+  ],
+  "common_pins": {
+    "path": ".scratch/english-intake-recovery/common-pins.json",
+    "sha256": "17f8dc51ed96ec27c7b02254b4edac12df478c97a547e1660c27b8a0996921e9",
+    "bytes": 2847
+  },
+  "scope_limits": "Review source intake and exact selected historical human English witness. Fresh native image checks are required; prior visual claims are not inherited. No PDF compiler/layout review or lexical translation accuracy/full printing collation claimed."
+}

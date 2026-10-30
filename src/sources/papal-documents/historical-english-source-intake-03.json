@@ -1,0 +1,1240 @@
+{
+  "schema": "triptych-three-act-source-cold-audit-report/v1",
+  "scope_sha256": "f5ce4f2235260ea513b1aeb85e34c8bbfb1af6d60f07a42ac229efff7a1a601d",
+  "expected_count": 3,
+  "expected_keys": [
+    [
+      "papal.benedict-xv.hf-ben-xv-enc-06011921-sacra-propediem.catholic-mind-1921-03-22-english",
+      "en"
+    ],
+    [
+      "papal.benedict-xv.hf-ben-xv-enc-15061917-humani-generis-redemptionem.catholic-mind-1917-09-08-english",
+      "en"
+    ],
+    [
+      "papal.benedict-xv.hf-ben-xv-enc-23051920-pacem-dei-munus-pulcherrimum.catholic-mind-1920-07-22-english",
+      "en"
+    ]
+  ],
+  "documents": [
+    {
+      "id": "papal.benedict-xv.hf-ben-xv-enc-06011921-sacra-propediem.catholic-mind-1921-03-22-english",
+      "language": "en",
+      "title": "Sacra Propediem",
+      "status": "PASS",
+      "source_sha256": "ab86af829c4157feb46dc57b6e4e53ff1b57d8d668772601a88e46202ae7ef84",
+      "row_sha256": "ed1f56bd69c26a8bf87228bcff9d3d9c0cc37459f082caee79e66579822a755d",
+      "source_scope_sha256": "f5ce4f2235260ea513b1aeb85e34c8bbfb1af6d60f07a42ac229efff7a1a601d",
+      "proof_pins": {
+        "scope": {
+          "path": ".scratch/english-intake-recovery/packet-03/scope.json",
+          "sha256": "f5ce4f2235260ea513b1aeb85e34c8bbfb1af6d60f07a42ac229efff7a1a601d",
+          "bytes": 4929
+        },
+        "evidence": {
+          "path": ".scratch/english-intake-recovery/packet-03/act-01-evidence.json",
+          "sha256": "aea7daae5980f195040f42a8278b8d591a039d0d7f7694cc0ec093f100c547cf",
+          "bytes": 29415
+        },
+        "selection": {
+          "path": ".scratch/english-intake-recovery/packet-03/act-01-selected.txt",
+          "sha256": "ab86af829c4157feb46dc57b6e4e53ff1b57d8d668772601a88e46202ae7ef84",
+          "bytes": 18132
+        },
+        "source": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1921-03-22-volume-19-issue-6/artifacts/english-reading-ab86af829c41/text.txt",
+          "sha256": "ab86af829c4157feb46dc57b6e4e53ff1b57d8d668772601a88e46202ae7ef84",
+          "bytes": 18132
+        },
+        "controller": {
+          "id": "segment.papal.benedict-xv.hf-ben-xv-enc-06011921-sacra-propediem.1921-03-22-catholic-mind-english.complete-english-reading",
+          "record": "src/sources/works/papal-documents/1921-01-06-papal-benedict-xv-hf-ben-xv-enc-06011921-sacra-propediem-0e46b83d/editions/1921-03-22-catholic-mind-english/segments/complete-english-reading.toml",
+          "sha256": "74561522c9a6e9f0eee600c370d188ea413aa2eca1fb1691bf8b1fdc513b1fc0"
+        },
+        "edition": {
+          "path": "src/sources/works/papal-documents/1921-01-06-papal-benedict-xv-hf-ben-xv-enc-06011921-sacra-propediem-0e46b83d/editions/1921-03-22-catholic-mind-english/edition.toml",
+          "sha256": "22f5dfff717f4b79695578ef47c06bf1f3a819d3989afddd0bbdee9c23d58f76"
+        },
+        "container_edition": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1921-03-22-volume-19-issue-6/edition.toml",
+          "sha256": "c18a225042ecf29f06e73a9a6329e70f4ee46408c0cb4a61f7cb220667b6bc0b"
+        },
+        "source_artifact_metadata": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1921-03-22-volume-19-issue-6/artifacts/english-reading-ab86af829c41/artifact.toml",
+          "sha256": "f1926276ce33115f1fd180684080c5497011dbbcb22865e45254b41a3d475b22"
+        },
+        "parent": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1921-03-22-volume-19-issue-6/artifacts/ia-ocr-f02d5a354b27/ocr.txt",
+          "sha256": "f02d5a354b27b5a2fca3c3734be9e1920e934358cc85309d4c3e26f65465b3f9",
+          "bytes": 45060
+        },
+        "recipe": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1921-03-22-volume-19-issue-6/artifacts/selection-recipe-68f8bd4270ee/selection.json",
+          "sha256": "68f8bd4270ee8070669f7aeececa20a53c996edcef6398b6d4e63cc3e7a54b4b",
+          "bytes": 6537
+        },
+        "replay_helper": {
+          "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/selection-replay-efd0286bfaa7/extract.py",
+          "sha256": "efd0286bfaa782818ce5cd27ccb58db9ec359754bcd35455e7dbfcd06f4f4ef6",
+          "bytes": 624
+        },
+        "replay_output": {
+          "path": ".scratch/english-intake-recovery/packet-03/audit-recovery/replayed-act-01.txt",
+          "sha256": "ab86af829c4157feb46dc57b6e4e53ff1b57d8d668772601a88e46202ae7ef84",
+          "bytes": 18132
+        },
+        "related_artifacts": [
+          {
+            "id": "artifact.journals.catholic-mind.1921-03-22-volume-19-issue-6.ia-facsimile-2bbeb815481e",
+            "path": "src/sources/works/journals/catholic-mind/editions/1921-03-22-volume-19-issue-6/artifacts/ia-facsimile-2bbeb815481e/artifact.toml",
+            "sha256": "75dad5e1633db803c6732bded50de23a1adab252190d581440e4535eec05b3bd",
+            "bytes": 1603,
+            "payload": {
+              "path": "src/sources/works/journals/catholic-mind/editions/1921-03-22-volume-19-issue-6/artifacts/ia-facsimile-2bbeb815481e/source.pdf",
+              "sha256": "2bbeb815481e6affaa53e3632626e1254aee20f84e876d92537108d96a4f2e1c"
+            }
+          },
+          {
+            "id": "artifact.journals.catholic-mind.1921-03-22-volume-19-issue-6.english-reading-ab86af829c41",
+            "path": "src/sources/works/journals/catholic-mind/editions/1921-03-22-volume-19-issue-6/artifacts/english-reading-ab86af829c41/artifact.toml",
+            "sha256": "f1926276ce33115f1fd180684080c5497011dbbcb22865e45254b41a3d475b22",
+            "bytes": 2356,
+            "payload": {
+              "path": "src/sources/works/journals/catholic-mind/editions/1921-03-22-volume-19-issue-6/artifacts/english-reading-ab86af829c41/text.txt",
+              "sha256": "ab86af829c4157feb46dc57b6e4e53ff1b57d8d668772601a88e46202ae7ef84"
+            }
+          },
+          {
+            "id": "artifact.journals.catholic-mind.1921-03-22-volume-19-issue-6.selection-recipe-68f8bd4270ee",
+            "path": "src/sources/works/journals/catholic-mind/editions/1921-03-22-volume-19-issue-6/artifacts/selection-recipe-68f8bd4270ee/artifact.toml",
+            "sha256": "423e27c4300c3e5056b4ec6fd53df8b0f5b991a1aedddbc89a89ec7f40374f5d",
+            "bytes": 1083,
+            "payload": {
+              "path": "src/sources/works/journals/catholic-mind/editions/1921-03-22-volume-19-issue-6/artifacts/selection-recipe-68f8bd4270ee/selection.json",
+              "sha256": "68f8bd4270ee8070669f7aeececa20a53c996edcef6398b6d4e63cc3e7a54b4b"
+            }
+          },
+          {
+            "id": "artifact.journals.catholic-mind.1921-03-22-volume-19-issue-6.extent-review-3509388445ba",
+            "path": "src/sources/works/journals/catholic-mind/editions/1921-03-22-volume-19-issue-6/artifacts/extent-review-3509388445ba/artifact.toml",
+            "sha256": "73837c7c09c20abc655352350b8971c51f34246c79978f1c13b1aee7426fdd14",
+            "bytes": 867,
+            "payload": {
+              "path": "src/sources/works/journals/catholic-mind/editions/1921-03-22-volume-19-issue-6/artifacts/extent-review-3509388445ba/review.json",
+              "sha256": "3509388445baeaa7fc5fb4f2c63f2c9c67d7525ffe9b7becf9a26dd518086e77"
+            }
+          },
+          {
+            "id": "artifact.journals.catholic-mind.1921-03-22-volume-19-issue-6.ia-ocr-f02d5a354b27",
+            "path": "src/sources/works/journals/catholic-mind/editions/1921-03-22-volume-19-issue-6/artifacts/ia-ocr-f02d5a354b27/artifact.toml",
+            "sha256": "aafa85ec2cd8a5fc2a83ab783086df8c81c24211a82c754c093f33ded7724507",
+            "bytes": 1533,
+            "payload": {
+              "path": "src/sources/works/journals/catholic-mind/editions/1921-03-22-volume-19-issue-6/artifacts/ia-ocr-f02d5a354b27/ocr.txt",
+              "sha256": "f02d5a354b27b5a2fca3c3734be9e1920e934358cc85309d4c3e26f65465b3f9"
+            }
+          }
+        ]
+      },
+      "publication": "The Catholic Mind 19, no. 6 (1921-03-22), pp. 101–109.",
+      "translation_attribution": "Historical English printing positively identified by Catholic Mind XIX/6 March22,1921 masthead; explicit Irish Catholic translation credit. Individual translator not named.",
+      "rights": {
+        "basis": "The native issue masthead identifies this United States printing as The Catholic Mind 19, no. 6, 1921-03-22. The historical English translation and contemporary issue material were published by 1930 and are public domain in the United States by expiration of the publication term. This applies to the identified printing, independently of the act date; modern host markup is excluded.",
+        "jurisdiction": "United States",
+        "governing_policy": {
+          "path": "src/sources/inventories/papal-documents-rights-v1.toml",
+          "sha256": "2098d3cc15ef3439234033c7582fe4f17a726494008b25682a7f1b3a844454ea",
+          "bytes": 10179
+        },
+        "result": "PASS under existing repository historical-publication policy"
+      },
+      "boundary_and_selector": {
+        "physical_line_ranges": [
+          [
+            5,
+            508
+          ]
+        ],
+        "native_pdf_pages": [
+          1,
+          9
+        ],
+        "printed_pages": [
+          101,
+          109
+        ],
+        "preceding_parent_context": "THE CATHOLIC MIND \nVol. XIX, No. 6, March 22, 1921 \n\n",
+        "following_parent_context": "\n\n\n\n",
+        "excluded_line_count": 9,
+        "excluded_line_reasons": [
+          "isolated page label",
+          "printed running head"
+        ]
+      },
+      "actual_opened_images": [
+        {
+          "raster": {
+            "path": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-31.png",
+            "sha256": "c00104496036a56cc46b93476c570f47d50e90f821b325dbc2f389978fb22f1a",
+            "bytes": 1956399
+          },
+          "detail": "auto",
+          "source_page": 1,
+          "printed_page": "101",
+          "observations": [
+            "Masthead reads THE CATHOLIC MIND, Vol. XIX, No. 6, March 22, 1921.",
+            "Title The Third Order of St. Francis; subtitle Papal Encyclical on Its Seventh Centenary.",
+            "Explicit Translation from the Irish Catholic credit.",
+            "Act begins BENEDICT XV. POPE, Venerable Brothers, Health and Apostolic Benediction, then We regard as most opportune; no preceding address is visibly missing on this first act page.",
+            "No footnote visible on this sampled first page."
+          ]
+        },
+        {
+          "image_pins": {
+            "act": 1,
+            "sample": 2,
+            "source_page": 5,
+            "source_pdf": "src/sources/works/journals/catholic-mind/editions/1921-03-22-volume-19-issue-6/artifacts/ia-facsimile-2bbeb815481e/source.pdf",
+            "source_pdf_sha256": "2bbeb815481e6affaa53e3632626e1254aee20f84e876d92537108d96a4f2e1c",
+            "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-32.png",
+            "source_png_sha256": "7b2bbeced8c24dd053108f10ca22b3312ac99f5eb3c47cb2f6329b558c52006d",
+            "source_bytes": 1986014,
+            "source_dimensions": [
+              1444,
+              2200
+            ],
+            "source_mode": "srgb",
+            "crop_pixels": [
+              0,
+              0,
+              1444,
+              2200
+            ],
+            "proxy": ".scratch/english-intake-recovery/image-proxies/packet-03-act-01-sample-02-7b2bbeced8c2.jpg",
+            "proxy_sha256": "c4314c4be07646c20b2055e1b53ba98d87c7cb25a0049f272eb8c8d1ba0e0786",
+            "proxy_bytes": 943158,
+            "proxy_dimensions": [
+              1444,
+              2200
+            ],
+            "quality": 95,
+            "sampling_factor": "4:4:4",
+            "alpha_composite": "white, no resizing",
+            "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+            "command": [
+              "/usr/bin/magick",
+              "-limit",
+              "thread",
+              "1",
+              "-limit",
+              "memory",
+              "256MiB",
+              "-limit",
+              "map",
+              "512MiB",
+              ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-32.png",
+              "-background",
+              "white",
+              "-alpha",
+              "remove",
+              "-alpha",
+              "off",
+              "-sampling-factor",
+              "4:4:4",
+              "-quality",
+              "95",
+              "-strip",
+              ".scratch/english-intake-recovery/image-proxies/packet-03-act-01-sample-02-7b2bbeced8c2.jpg"
+            ],
+            "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+            "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-03-act-01-sample-02-7b2bbeced8c2.jpg"
+          },
+          "detail": "auto",
+          "printed_page": "105",
+          "observations": [
+            "Native running head THE THIRD ORDER OF ST. FRANCIS, page105; body continues prior question, then The Order Promotes Morality.",
+            "John xiv:27, James iv:1, John xvii:16 and 1Cor.II:12 references are inline with body. No separate page-foot note block visible; selected text retains these references."
+          ]
+        },
+        {
+          "image_pins": {
+            "act": 1,
+            "sample": 3,
+            "source_page": 9,
+            "source_pdf": "src/sources/works/journals/catholic-mind/editions/1921-03-22-volume-19-issue-6/artifacts/ia-facsimile-2bbeb815481e/source.pdf",
+            "source_pdf_sha256": "2bbeb815481e6affaa53e3632626e1254aee20f84e876d92537108d96a4f2e1c",
+            "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-33.png",
+            "source_png_sha256": "bf0f798d8337b8219dc104c82defea9a25335eae96b178c160d9683321a16c3e",
+            "source_bytes": 1823965,
+            "source_dimensions": [
+              1444,
+              2200
+            ],
+            "source_mode": "srgb",
+            "crop_pixels": [
+              0,
+              0,
+              1444,
+              2200
+            ],
+            "proxy": ".scratch/english-intake-recovery/image-proxies/packet-03-act-01-sample-03-bf0f798d8337.jpg",
+            "proxy_sha256": "1508637965a7d30dd8cb4dbbedc961dc470a20f310203a6e93d48d3061336dc8",
+            "proxy_bytes": 855298,
+            "proxy_dimensions": [
+              1444,
+              2200
+            ],
+            "quality": 95,
+            "sampling_factor": "4:4:4",
+            "alpha_composite": "white, no resizing",
+            "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+            "command": [
+              "/usr/bin/magick",
+              "-limit",
+              "thread",
+              "1",
+              "-limit",
+              "memory",
+              "256MiB",
+              "-limit",
+              "map",
+              "512MiB",
+              ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-33.png",
+              "-background",
+              "white",
+              "-alpha",
+              "remove",
+              "-alpha",
+              "off",
+              "-sampling-factor",
+              "4:4:4",
+              "-quality",
+              "95",
+              "-strip",
+              ".scratch/english-intake-recovery/image-proxies/packet-03-act-01-sample-03-bf0f798d8337.jpg"
+            ],
+            "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+            "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-03-act-01-sample-03-bf0f798d8337.jpg"
+          },
+          "detail": "auto",
+          "printed_page": "109",
+          "observations": [
+            "Despite Religious Statistics in Ireland running head, top continues Apostolic Benediction to Venerable Brothers and Third Order, then Given at Rome near St.Peters, Feast of Epiphany1921, seventh pontifical year, Benedict XV., Pope.",
+            "Horizontal separator precedes neighboring Religious Statistics in Ireland by P.J.Gannon S.J.; selection ends at papal subscription, excluding neighbor.",
+            "No terminal source note after subscription before separator."
+          ]
+        }
+      ],
+      "selected_text_read_complete": true,
+      "findings": [
+        "Historical English printing positively identified by Catholic Mind XIX/6 March22,1921 masthead; explicit Irish Catholic translation credit. Individual translator not named.",
+        "Native address and opening agree in extent with selection. Closing and Benedict XV subscription continue onto p109 above unrelated article; full closing retained and neighbor excluded.",
+        "Sampled references are inline. Exact contiguous source-line recipe removes only running heads/page labels; no independent footnote block omitted by the selector."
+      ],
+      "scope_limits": "Source intake of exact identified historical human English witness only. Fresh native sampled identity, address, closing, subscription and note checks plus exact mechanical replay. Source OCR recognition, punctuation, damaged note markers and line-end hyphen fragments remain. No corrected translation, lexical translation accuracy, full printing collation, compiler/PDF layout, installation or deployment claim.",
+      "blockers": []
+    },
+    {
+      "id": "papal.benedict-xv.hf-ben-xv-enc-15061917-humani-generis-redemptionem.catholic-mind-1917-09-08-english",
+      "language": "en",
+      "title": "Humani Generis Redemptionem",
+      "status": "PASS",
+      "source_sha256": "1b92394ad511e01736a15e11a374648f9c2fc7c7c03accc12af05773025907cb",
+      "row_sha256": "6520afffad4e8b11cd64c42b5bf7513596c7e51f6e9e24858844c25ec97f9ead",
+      "source_scope_sha256": "f5ce4f2235260ea513b1aeb85e34c8bbfb1af6d60f07a42ac229efff7a1a601d",
+      "proof_pins": {
+        "scope": {
+          "path": ".scratch/english-intake-recovery/packet-03/scope.json",
+          "sha256": "f5ce4f2235260ea513b1aeb85e34c8bbfb1af6d60f07a42ac229efff7a1a601d",
+          "bytes": 4929
+        },
+        "evidence": {
+          "path": ".scratch/english-intake-recovery/packet-03/act-02-evidence.json",
+          "sha256": "0f1733316295fb355749ce05037016da48949efa616984d16616421210888dfd",
+          "bytes": 31437
+        },
+        "selection": {
+          "path": ".scratch/english-intake-recovery/packet-03/act-02-selected.txt",
+          "sha256": "1b92394ad511e01736a15e11a374648f9c2fc7c7c03accc12af05773025907cb",
+          "bytes": 27242
+        },
+        "source": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1917-09-08-volume-15-issue-17/artifacts/english-reading-1b92394ad511/text.txt",
+          "sha256": "1b92394ad511e01736a15e11a374648f9c2fc7c7c03accc12af05773025907cb",
+          "bytes": 27242
+        },
+        "controller": {
+          "id": "segment.papal.benedict-xv.hf-ben-xv-enc-15061917-humani-generis-redemptionem.1917-09-08-catholic-mind-english.complete-english-reading",
+          "record": "src/sources/works/papal-documents/1917-06-15-papal-benedict-xv-hf-ben-xv-enc-15061917-humani-generis-redemptionem-ac6fb370/editions/1917-09-08-catholic-mind-english/segments/complete-english-reading.toml",
+          "sha256": "741aad6a91065e4a2b326deeefb26fd2ebab9976d3473b7e34b89ff3f8fabe57"
+        },
+        "edition": {
+          "path": "src/sources/works/papal-documents/1917-06-15-papal-benedict-xv-hf-ben-xv-enc-15061917-humani-generis-redemptionem-ac6fb370/editions/1917-09-08-catholic-mind-english/edition.toml",
+          "sha256": "d9c4f0aa4fa9d97e465fbe10e44985aa9d3cb97fa33f245d3e20b5ee47bd8795"
+        },
+        "container_edition": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1917-09-08-volume-15-issue-17/edition.toml",
+          "sha256": "215b788ff34a4f06ad54671752622047c46361f9d05610090d03d5872deaf2c1"
+        },
+        "source_artifact_metadata": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1917-09-08-volume-15-issue-17/artifacts/english-reading-1b92394ad511/artifact.toml",
+          "sha256": "f0f38db298cfc311868a27bfb41af161fca6100503b3faf8e9b8e5e9a42a7fc3"
+        },
+        "parent": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1917-09-08-volume-15-issue-17/artifacts/ia-ocr-6b1ff9e35709/ocr.txt",
+          "sha256": "6b1ff9e35709d5a7b3bf413fdd70d312c75dca2f6ee2e678aa34e195337224d9",
+          "bytes": 51329
+        },
+        "recipe": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1917-09-08-volume-15-issue-17/artifacts/selection-recipe-93bc084cf3db/selection.json",
+          "sha256": "93bc084cf3db01f77c2764c9e943fd7c071345b3deb06687afac87209fda4858",
+          "bytes": 10428
+        },
+        "replay_helper": {
+          "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/selection-replay-efd0286bfaa7/extract.py",
+          "sha256": "efd0286bfaa782818ce5cd27ccb58db9ec359754bcd35455e7dbfcd06f4f4ef6",
+          "bytes": 624
+        },
+        "replay_output": {
+          "path": ".scratch/english-intake-recovery/packet-03/audit-recovery/replayed-act-02.txt",
+          "sha256": "1b92394ad511e01736a15e11a374648f9c2fc7c7c03accc12af05773025907cb",
+          "bytes": 27242
+        },
+        "related_artifacts": [
+          {
+            "id": "artifact.journals.catholic-mind.1917-09-08-volume-15-issue-17.selection-recipe-93bc084cf3db",
+            "path": "src/sources/works/journals/catholic-mind/editions/1917-09-08-volume-15-issue-17/artifacts/selection-recipe-93bc084cf3db/artifact.toml",
+            "sha256": "a2471a8fec377402343eac0ac27169753a7014a3aa46ea1b4bb7062bcc70fb9c",
+            "bytes": 1087,
+            "payload": {
+              "path": "src/sources/works/journals/catholic-mind/editions/1917-09-08-volume-15-issue-17/artifacts/selection-recipe-93bc084cf3db/selection.json",
+              "sha256": "93bc084cf3db01f77c2764c9e943fd7c071345b3deb06687afac87209fda4858"
+            }
+          },
+          {
+            "id": "artifact.journals.catholic-mind.1917-09-08-volume-15-issue-17.extent-review-e4608a6c2e2b",
+            "path": "src/sources/works/journals/catholic-mind/editions/1917-09-08-volume-15-issue-17/artifacts/extent-review-e4608a6c2e2b/artifact.toml",
+            "sha256": "fc6539744342b4ca432523ce284f8e5492e84a5872ff4a7f59d360370cb97501",
+            "bytes": 870,
+            "payload": {
+              "path": "src/sources/works/journals/catholic-mind/editions/1917-09-08-volume-15-issue-17/artifacts/extent-review-e4608a6c2e2b/review.json",
+              "sha256": "e4608a6c2e2b927cf20c8b0872d7365322e69ac2599a64e67eb1d88c404c7421"
+            }
+          },
+          {
+            "id": "artifact.journals.catholic-mind.1917-09-08-volume-15-issue-17.english-reading-1b92394ad511",
+            "path": "src/sources/works/journals/catholic-mind/editions/1917-09-08-volume-15-issue-17/artifacts/english-reading-1b92394ad511/artifact.toml",
+            "sha256": "f0f38db298cfc311868a27bfb41af161fca6100503b3faf8e9b8e5e9a42a7fc3",
+            "bytes": 2292,
+            "payload": {
+              "path": "src/sources/works/journals/catholic-mind/editions/1917-09-08-volume-15-issue-17/artifacts/english-reading-1b92394ad511/text.txt",
+              "sha256": "1b92394ad511e01736a15e11a374648f9c2fc7c7c03accc12af05773025907cb"
+            }
+          },
+          {
+            "id": "artifact.journals.catholic-mind.1917-09-08-volume-15-issue-17.ia-ocr-6b1ff9e35709",
+            "path": "src/sources/works/journals/catholic-mind/editions/1917-09-08-volume-15-issue-17/artifacts/ia-ocr-6b1ff9e35709/artifact.toml",
+            "sha256": "420a5ded59717c82bb792e86550a19fe891f760bd593232fd0a0decf1ac79928",
+            "bytes": 1539,
+            "payload": {
+              "path": "src/sources/works/journals/catholic-mind/editions/1917-09-08-volume-15-issue-17/artifacts/ia-ocr-6b1ff9e35709/ocr.txt",
+              "sha256": "6b1ff9e35709d5a7b3bf413fdd70d312c75dca2f6ee2e678aa34e195337224d9"
+            }
+          },
+          {
+            "id": "artifact.journals.catholic-mind.1917-09-08-volume-15-issue-17.ia-facsimile-0124c68348a5",
+            "path": "src/sources/works/journals/catholic-mind/editions/1917-09-08-volume-15-issue-17/artifacts/ia-facsimile-0124c68348a5/artifact.toml",
+            "sha256": "79230d28afc9719791ad675b31c9f9a03a3736c4007bfd407750ad03bb8e497a",
+            "bytes": 1610,
+            "payload": {
+              "path": "src/sources/works/journals/catholic-mind/editions/1917-09-08-volume-15-issue-17/artifacts/ia-facsimile-0124c68348a5/source.pdf",
+              "sha256": "0124c68348a5d458d96dc5296e16cae887740b6671219cb35abf4ceea6a6950a"
+            }
+          }
+        ]
+      },
+      "publication": "The Catholic Mind 15, no. 17 (1917-09-08), pp. 393–408.",
+      "translation_attribution": "Historical English printing positively identified by Catholic Mind XV/17 September8,1917 cover and p393 masthead; America Press New York imprint. Anonymous human English historical translation; individual translator unknown.",
+      "rights": {
+        "basis": "The native issue masthead identifies this United States printing as The Catholic Mind 15, no. 17, 1917-09-08. The historical English translation and contemporary issue material were published by 1930 and are public domain in the United States by expiration of the publication term. This applies to the identified printing, independently of the act date; modern host markup is excluded.",
+        "jurisdiction": "United States",
+        "governing_policy": {
+          "path": "src/sources/inventories/papal-documents-rights-v1.toml",
+          "sha256": "2098d3cc15ef3439234033c7582fe4f17a726494008b25682a7f1b3a844454ea",
+          "bytes": 10179
+        },
+        "result": "PASS under existing repository historical-publication policy"
+      },
+      "boundary_and_selector": {
+        "physical_line_ranges": [
+          [
+            297,
+            1110
+          ]
+        ],
+        "native_pdf_pages": [
+          3,
+          18
+        ],
+        "printed_pages": [
+          393,
+          408
+        ],
+        "preceding_parent_context": "Tue CatHoLic MiInpD \nVol. XV, No. 17. Sept. 8, 1917. \n\n",
+        "following_parent_context": "\n\nThe Holy Father’s Plea for Peace \n\n",
+        "excluded_line_count": 16,
+        "excluded_line_reasons": [
+          "isolated page label",
+          "printed running head",
+          "printed running head with OCR-damaged page numeral"
+        ]
+      },
+      "actual_opened_images": [
+        {
+          "image_pins": {
+            "act": 2,
+            "sample": 1,
+            "source_page": 1,
+            "source_pdf": "src/sources/works/journals/catholic-mind/editions/1917-09-08-volume-15-issue-17/artifacts/ia-facsimile-0124c68348a5/source.pdf",
+            "source_pdf_sha256": "0124c68348a5d458d96dc5296e16cae887740b6671219cb35abf4ceea6a6950a",
+            "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-34.png",
+            "source_png_sha256": "99605f608dc7a6070e750049d25738fd560768faa8c8bed9fa824700b572301a",
+            "source_bytes": 866127,
+            "source_dimensions": [
+              1561,
+              2200
+            ],
+            "source_mode": "srgb",
+            "crop_pixels": [
+              0,
+              0,
+              1561,
+              2200
+            ],
+            "proxy": ".scratch/english-intake-recovery/image-proxies/packet-03-act-02-sample-01-99605f608dc7.jpg",
+            "proxy_sha256": "52582faecf3515be05a0568a6cc35cd3840f1112d8d1ab508a57490d789c80cf",
+            "proxy_bytes": 410914,
+            "proxy_dimensions": [
+              1561,
+              2200
+            ],
+            "quality": 95,
+            "sampling_factor": "4:4:4",
+            "alpha_composite": "white, no resizing",
+            "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+            "command": [
+              "/usr/bin/magick",
+              "-limit",
+              "thread",
+              "1",
+              "-limit",
+              "memory",
+              "256MiB",
+              "-limit",
+              "map",
+              "512MiB",
+              ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-34.png",
+              "-background",
+              "white",
+              "-alpha",
+              "remove",
+              "-alpha",
+              "off",
+              "-sampling-factor",
+              "4:4:4",
+              "-quality",
+              "95",
+              "-strip",
+              ".scratch/english-intake-recovery/image-proxies/packet-03-act-02-sample-01-99605f608dc7.jpg"
+            ],
+            "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+            "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-03-act-02-sample-01-99605f608dc7.jpg"
+          },
+          "detail": "auto",
+          "printed_page": "cover",
+          "observations": [
+            "Cover: The Popes Letter on Preaching; The Holy Fathers Plea for Peace; The New Code of Canon Law.",
+            "The Catholic Mind, semi-monthly; Vol.XV No.17 September8,1917.",
+            "Imprint The America Press,59East83dStreet,New York. Historical issue date and publisher visible, independent of papal act date."
+          ]
+        },
+        {
+          "image_pins": {
+            "act": 2,
+            "sample": 2,
+            "source_page": 3,
+            "source_pdf": "src/sources/works/journals/catholic-mind/editions/1917-09-08-volume-15-issue-17/artifacts/ia-facsimile-0124c68348a5/source.pdf",
+            "source_pdf_sha256": "0124c68348a5d458d96dc5296e16cae887740b6671219cb35abf4ceea6a6950a",
+            "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-35.png",
+            "source_png_sha256": "0557b73abeb22dd30beeb1ab4dacc6a3485ac332b3d4903020e15f3bdec67d00",
+            "source_bytes": 1483083,
+            "source_dimensions": [
+              1570,
+              2200
+            ],
+            "source_mode": "srgb",
+            "crop_pixels": [
+              0,
+              0,
+              1570,
+              2200
+            ],
+            "proxy": ".scratch/english-intake-recovery/image-proxies/packet-03-act-02-sample-02-0557b73abeb2.jpg",
+            "proxy_sha256": "cf81d6354cdddbb23531b93f7707dfe1a3ead6fef9a49ab47bf50be5489a693b",
+            "proxy_bytes": 727415,
+            "proxy_dimensions": [
+              1570,
+              2200
+            ],
+            "quality": 95,
+            "sampling_factor": "4:4:4",
+            "alpha_composite": "white, no resizing",
+            "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+            "command": [
+              "/usr/bin/magick",
+              "-limit",
+              "thread",
+              "1",
+              "-limit",
+              "memory",
+              "256MiB",
+              "-limit",
+              "map",
+              "512MiB",
+              ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-35.png",
+              "-background",
+              "white",
+              "-alpha",
+              "remove",
+              "-alpha",
+              "off",
+              "-sampling-factor",
+              "4:4:4",
+              "-quality",
+              "95",
+              "-strip",
+              ".scratch/english-intake-recovery/image-proxies/packet-03-act-02-sample-02-0557b73abeb2.jpg"
+            ],
+            "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+            "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-03-act-02-sample-02-0557b73abeb2.jpg"
+          },
+          "detail": "auto",
+          "printed_page": "393",
+          "observations": [
+            "The Popes Letter on Preaching; subtitle An Encyclical Letter on Preaching the Word of God.",
+            "Full address To the Patriarchs, Primates, Archbishops, Bishops, and Other Ordinaries in Peace and Communion with the Apostolic See; Benedict XV,Pope; Venerable Brethren Health and the Apostolic Benediction.",
+            "Body starts It was the desire of Jesus Christ once He had wrought the Redemption of the human race. No named translator credit visible on this first act page.",
+            "First-page biblical references ICor.i:21, Markxvi15, Rom.x17 are inline."
+          ]
+        },
+        {
+          "image_pins": {
+            "act": 2,
+            "sample": 3,
+            "source_page": 10,
+            "source_pdf": "src/sources/works/journals/catholic-mind/editions/1917-09-08-volume-15-issue-17/artifacts/ia-facsimile-0124c68348a5/source.pdf",
+            "source_pdf_sha256": "0124c68348a5d458d96dc5296e16cae887740b6671219cb35abf4ceea6a6950a",
+            "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-36.png",
+            "source_png_sha256": "2fe2778362778900f08cc3e036bd4373dc2e4908612f0062a7253b15d9a0da33",
+            "source_bytes": 1711825,
+            "source_dimensions": [
+              1566,
+              2200
+            ],
+            "source_mode": "srgb",
+            "crop_pixels": [
+              0,
+              0,
+              1566,
+              2200
+            ],
+            "proxy": ".scratch/english-intake-recovery/image-proxies/packet-03-act-02-sample-03-2fe277836277.jpg",
+            "proxy_sha256": "704430f52391b2c6bc1b1bba4a99f987f0361b763a150bd8e23b84f67e90bb92",
+            "proxy_bytes": 863666,
+            "proxy_dimensions": [
+              1566,
+              2200
+            ],
+            "quality": 95,
+            "sampling_factor": "4:4:4",
+            "alpha_composite": "white, no resizing",
+            "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+            "command": [
+              "/usr/bin/magick",
+              "-limit",
+              "thread",
+              "1",
+              "-limit",
+              "memory",
+              "256MiB",
+              "-limit",
+              "map",
+              "512MiB",
+              ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-36.png",
+              "-background",
+              "white",
+              "-alpha",
+              "remove",
+              "-alpha",
+              "off",
+              "-sampling-factor",
+              "4:4:4",
+              "-quality",
+              "95",
+              "-strip",
+              ".scratch/english-intake-recovery/image-proxies/packet-03-act-02-sample-03-2fe277836277.jpg"
+            ],
+            "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+            "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-03-act-02-sample-03-2fe277836277.jpg"
+          },
+          "detail": "auto",
+          "printed_page": "400",
+          "observations": [
+            "Internal page400 begins Both these purposes; its Gillebertus Ab.In Cant.Canticor.Serm.xxvii2 and Matt.xi5 references are printed inline in square brackets.",
+            "These references are retained inline in the selected text; no independent page-foot note block visible in this sample."
+          ]
+        },
+        {
+          "image_pins": {
+            "act": 2,
+            "sample": 4,
+            "source_page": 18,
+            "source_pdf": "src/sources/works/journals/catholic-mind/editions/1917-09-08-volume-15-issue-17/artifacts/ia-facsimile-0124c68348a5/source.pdf",
+            "source_pdf_sha256": "0124c68348a5d458d96dc5296e16cae887740b6671219cb35abf4ceea6a6950a",
+            "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-37.png",
+            "source_png_sha256": "deb55a75fb25c683e3f5135b6483b6bb27867f88dbe408b58a1c482b4eff4725",
+            "source_bytes": 1530069,
+            "source_dimensions": [
+              1566,
+              2200
+            ],
+            "source_mode": "srgb",
+            "crop_pixels": [
+              0,
+              0,
+              1566,
+              2200
+            ],
+            "proxy": ".scratch/english-intake-recovery/image-proxies/packet-03-act-02-sample-04-deb55a75fb25.jpg",
+            "proxy_sha256": "6b60b60dccccca268232cc3d93e70cd2e8a86c8d6ea6fd663931d88d4ba61a1a",
+            "proxy_bytes": 774846,
+            "proxy_dimensions": [
+              1566,
+              2200
+            ],
+            "quality": 95,
+            "sampling_factor": "4:4:4",
+            "alpha_composite": "white, no resizing",
+            "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+            "command": [
+              "/usr/bin/magick",
+              "-limit",
+              "thread",
+              "1",
+              "-limit",
+              "memory",
+              "256MiB",
+              "-limit",
+              "map",
+              "512MiB",
+              ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-37.png",
+              "-background",
+              "white",
+              "-alpha",
+              "remove",
+              "-alpha",
+              "off",
+              "-sampling-factor",
+              "4:4:4",
+              "-quality",
+              "95",
+              "-strip",
+              ".scratch/english-intake-recovery/image-proxies/packet-03-act-02-sample-04-deb55a75fb25.jpg"
+            ],
+            "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+            "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-03-act-02-sample-04-deb55a75fb25.jpg"
+          },
+          "detail": "auto",
+          "printed_page": "408",
+          "observations": [
+            "Page408 under neighboring peace-plea running head begins continuation of preaching letter; II Tim.ii15 citation and Apostolic Benediction retained.",
+            "Dating clause Given at St.Peters,Rome,fifteenth June,Feast of Sacred Heart1917,third pontifical year.",
+            "No separate terminal papal subscription printed before blank gap and next heading The Holy Fathers Plea for Peace. Selection appropriately ends with dating clause; neighboring peace plea excluded."
+          ]
+        }
+      ],
+      "selected_text_read_complete": true,
+      "findings": [
+        "Historical English printing positively identified by Catholic Mind XV/17 September8,1917 cover and p393 masthead; America Press New York imprint. Anonymous human English historical translation; individual translator unknown.",
+        "Full address preserved. Native p408 closes with June15,1917 dating clause, with no separate printed papal subscription before neighboring peace plea; exact selection reflects that printing.",
+        "Sampled internal references printed inline and retained. OCR drop-cap recognition and punctuation defects remain; selection is not represented as a corrected text."
+      ],
+      "scope_limits": "Source intake of exact identified historical human English witness only. Fresh native sampled identity, address, closing, subscription and note checks plus exact mechanical replay. Source OCR recognition, punctuation, damaged note markers and line-end hyphen fragments remain. No corrected translation, lexical translation accuracy, full printing collation, compiler/PDF layout, installation or deployment claim.",
+      "blockers": []
+    },
+    {
+      "id": "papal.benedict-xv.hf-ben-xv-enc-23051920-pacem-dei-munus-pulcherrimum.catholic-mind-1920-07-22-english",
+      "language": "en",
+      "title": "Pacem, Dei Munus Pulcherrimum",
+      "status": "PASS",
+      "source_sha256": "a64fb7b0de3e6ffae57b4485fd3917030d1acbb9f4201a9c3620f7435f771299",
+      "row_sha256": "187aca7e143182d36b7ef8a5040a6e3a7c5c19b35ea1f5121b97921ae075a8dc",
+      "source_scope_sha256": "f5ce4f2235260ea513b1aeb85e34c8bbfb1af6d60f07a42ac229efff7a1a601d",
+      "proof_pins": {
+        "scope": {
+          "path": ".scratch/english-intake-recovery/packet-03/scope.json",
+          "sha256": "f5ce4f2235260ea513b1aeb85e34c8bbfb1af6d60f07a42ac229efff7a1a601d",
+          "bytes": 4929
+        },
+        "evidence": {
+          "path": ".scratch/english-intake-recovery/packet-03/act-03-evidence.json",
+          "sha256": "5da568f8acf96651429dad4941c5c2930ea5e509a9b57381742c153adf2cbfd6",
+          "bytes": 29598
+        },
+        "selection": {
+          "path": ".scratch/english-intake-recovery/packet-03/act-03-selected.txt",
+          "sha256": "a64fb7b0de3e6ffae57b4485fd3917030d1acbb9f4201a9c3620f7435f771299",
+          "bytes": 19098
+        },
+        "source": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1920-07-22-volume-18-issue-14/artifacts/english-reading-a64fb7b0de3e/text.txt",
+          "sha256": "a64fb7b0de3e6ffae57b4485fd3917030d1acbb9f4201a9c3620f7435f771299",
+          "bytes": 19098
+        },
+        "controller": {
+          "id": "segment.papal.benedict-xv.hf-ben-xv-enc-23051920-pacem-dei-munus-pulcherrimum.1920-07-22-catholic-mind-english.complete-english-reading",
+          "record": "src/sources/works/papal-documents/1920-05-23-papal-benedict-xv-hf-ben-xv-enc-23051920-pacem-dei-munus-pulcherrimum-23c1df5d/editions/1920-07-22-catholic-mind-english/segments/complete-english-reading.toml",
+          "sha256": "7a0ac42caf9649bc25b9313b70e5df167f7d4be9627ed851e2a3832420516fb2"
+        },
+        "edition": {
+          "path": "src/sources/works/papal-documents/1920-05-23-papal-benedict-xv-hf-ben-xv-enc-23051920-pacem-dei-munus-pulcherrimum-23c1df5d/editions/1920-07-22-catholic-mind-english/edition.toml",
+          "sha256": "8e712b7ed04339867a2bb5d0a6d793f78808355b65a6650954c333250bd55488"
+        },
+        "container_edition": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1920-07-22-volume-18-issue-14/edition.toml",
+          "sha256": "9a2e69622d2d1d313bd6234560ebb34dad41eb779686c0fd92a80ed999e9782b"
+        },
+        "source_artifact_metadata": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1920-07-22-volume-18-issue-14/artifacts/english-reading-a64fb7b0de3e/artifact.toml",
+          "sha256": "926abd84d2a5c329619191edcef4f8fb71aa94d6b9e76c6867eb1952d642c2fe"
+        },
+        "parent": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1920-07-22-volume-18-issue-14/artifacts/ia-ocr-52938d5e134d/ocr.txt",
+          "sha256": "52938d5e134d2a467dd21844835cd5c52cfc22aa8ff5dad40d320da589f38c7c",
+          "bytes": 44457
+        },
+        "recipe": {
+          "path": "src/sources/works/journals/catholic-mind/editions/1920-07-22-volume-18-issue-14/artifacts/selection-recipe-57ca866a06de/selection.json",
+          "sha256": "57ca866a06de39743a5d27e20f0b42bc848c885480c41f4d7b93d29dfd7e44a6",
+          "bytes": 6574
+        },
+        "replay_helper": {
+          "path": "src/sources/works/journals/american-catholic-quarterly-review/editions/1909-volume-34/artifacts/selection-replay-efd0286bfaa7/extract.py",
+          "sha256": "efd0286bfaa782818ce5cd27ccb58db9ec359754bcd35455e7dbfcd06f4f4ef6",
+          "bytes": 624
+        },
+        "replay_output": {
+          "path": ".scratch/english-intake-recovery/packet-03/audit-recovery/replayed-act-03.txt",
+          "sha256": "a64fb7b0de3e6ffae57b4485fd3917030d1acbb9f4201a9c3620f7435f771299",
+          "bytes": 19098
+        },
+        "related_artifacts": [
+          {
+            "id": "artifact.journals.catholic-mind.1920-07-22-volume-18-issue-14.selection-recipe-57ca866a06de",
+            "path": "src/sources/works/journals/catholic-mind/editions/1920-07-22-volume-18-issue-14/artifacts/selection-recipe-57ca866a06de/artifact.toml",
+            "sha256": "b78a97b631d7471e7491aa3c3895dee7789c222da02a093fd44830db76bc6c96",
+            "bytes": 1086,
+            "payload": {
+              "path": "src/sources/works/journals/catholic-mind/editions/1920-07-22-volume-18-issue-14/artifacts/selection-recipe-57ca866a06de/selection.json",
+              "sha256": "57ca866a06de39743a5d27e20f0b42bc848c885480c41f4d7b93d29dfd7e44a6"
+            }
+          },
+          {
+            "id": "artifact.journals.catholic-mind.1920-07-22-volume-18-issue-14.extent-review-a89ae501e8a3",
+            "path": "src/sources/works/journals/catholic-mind/editions/1920-07-22-volume-18-issue-14/artifacts/extent-review-a89ae501e8a3/artifact.toml",
+            "sha256": "addbce82900a12c01916ff6006852bc41e32ac9eabae153f1b9070981a29fe86",
+            "bytes": 870,
+            "payload": {
+              "path": "src/sources/works/journals/catholic-mind/editions/1920-07-22-volume-18-issue-14/artifacts/extent-review-a89ae501e8a3/review.json",
+              "sha256": "a89ae501e8a39ae32a0fe4d921dda9ff0f064a05f07800ec6e61e840a98eae72"
+            }
+          },
+          {
+            "id": "artifact.journals.catholic-mind.1920-07-22-volume-18-issue-14.english-reading-a64fb7b0de3e",
+            "path": "src/sources/works/journals/catholic-mind/editions/1920-07-22-volume-18-issue-14/artifacts/english-reading-a64fb7b0de3e/artifact.toml",
+            "sha256": "926abd84d2a5c329619191edcef4f8fb71aa94d6b9e76c6867eb1952d642c2fe",
+            "bytes": 2332,
+            "payload": {
+              "path": "src/sources/works/journals/catholic-mind/editions/1920-07-22-volume-18-issue-14/artifacts/english-reading-a64fb7b0de3e/text.txt",
+              "sha256": "a64fb7b0de3e6ffae57b4485fd3917030d1acbb9f4201a9c3620f7435f771299"
+            }
+          },
+          {
+            "id": "artifact.journals.catholic-mind.1920-07-22-volume-18-issue-14.ia-facsimile-fed671b44143",
+            "path": "src/sources/works/journals/catholic-mind/editions/1920-07-22-volume-18-issue-14/artifacts/ia-facsimile-fed671b44143/artifact.toml",
+            "sha256": "da51fc67d8d9c188eb5a00f9150ee70fe5a93139967c0ad33a5dfa1bd8e05042",
+            "bytes": 1609,
+            "payload": {
+              "path": "src/sources/works/journals/catholic-mind/editions/1920-07-22-volume-18-issue-14/artifacts/ia-facsimile-fed671b44143/source.pdf",
+              "sha256": "fed671b441433213aafbbfa13c132031880020864ce4ec568708d3157a74c399"
+            }
+          },
+          {
+            "id": "artifact.journals.catholic-mind.1920-07-22-volume-18-issue-14.ia-ocr-52938d5e134d",
+            "path": "src/sources/works/journals/catholic-mind/editions/1920-07-22-volume-18-issue-14/artifacts/ia-ocr-52938d5e134d/artifact.toml",
+            "sha256": "69812a82543ed0da1836d358bdf49b41460d869711c1886eeb52515ca59beb9d",
+            "bytes": 1539,
+            "payload": {
+              "path": "src/sources/works/journals/catholic-mind/editions/1920-07-22-volume-18-issue-14/artifacts/ia-ocr-52938d5e134d/ocr.txt",
+              "sha256": "52938d5e134d2a467dd21844835cd5c52cfc22aa8ff5dad40d320da589f38c7c"
+            }
+          }
+        ]
+      },
+      "publication": "The Catholic Mind 18, no. 14 (1920-07-22), pp. 267–275.",
+      "translation_attribution": "Historical English printing positively identified by Catholic Mind XVIII/14 July22,1920 masthead; historical title-star note explicitly credits London Tablet translation. Individual translator not named.",
+      "rights": {
+        "basis": "The native issue masthead identifies this United States printing as The Catholic Mind 18, no. 14, 1920-07-22. The historical English translation and contemporary issue material were published by 1930 and are public domain in the United States by expiration of the publication term. This applies to the identified printing, independently of the act date; modern host markup is excluded.",
+        "jurisdiction": "United States",
+        "governing_policy": {
+          "path": "src/sources/inventories/papal-documents-rights-v1.toml",
+          "sha256": "2098d3cc15ef3439234033c7582fe4f17a726494008b25682a7f1b3a844454ea",
+          "bytes": 10179
+        },
+        "result": "PASS under existing repository historical-publication policy"
+      },
+      "boundary_and_selector": {
+        "physical_line_ranges": [
+          [
+            5,
+            527
+          ]
+        ],
+        "native_pdf_pages": [
+          1,
+          9
+        ],
+        "printed_pages": [
+          267,
+          275
+        ],
+        "preceding_parent_context": "THE CATHOLIC MIND \nVol. XVIII, No. 14, July, 22, 1920 \n\n",
+        "following_parent_context": "\n\n\n\n",
+        "excluded_line_count": 9,
+        "excluded_line_reasons": [
+          "isolated page label",
+          "printed running head"
+        ]
+      },
+      "actual_opened_images": [
+        {
+          "image_pins": {
+            "act": 3,
+            "sample": 1,
+            "source_page": 1,
+            "source_pdf": "src/sources/works/journals/catholic-mind/editions/1920-07-22-volume-18-issue-14/artifacts/ia-facsimile-fed671b44143/source.pdf",
+            "source_pdf_sha256": "fed671b441433213aafbbfa13c132031880020864ce4ec568708d3157a74c399",
+            "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-38.png",
+            "source_png_sha256": "cf4a659a7b70502847f9d7f03ab6889dfb5982d516dc4d70e24dd9a9d8ce7e3e",
+            "source_bytes": 1804698,
+            "source_dimensions": [
+              1383,
+              2200
+            ],
+            "source_mode": "srgb",
+            "crop_pixels": [
+              0,
+              0,
+              1383,
+              2200
+            ],
+            "proxy": ".scratch/english-intake-recovery/image-proxies/packet-03-act-03-sample-01-cf4a659a7b70.jpg",
+            "proxy_sha256": "85e5a37d7aec56d388eeb9554343d6766ac86a7619ad7254780fcdcdb89bcc42",
+            "proxy_bytes": 883901,
+            "proxy_dimensions": [
+              1383,
+              2200
+            ],
+            "quality": 95,
+            "sampling_factor": "4:4:4",
+            "alpha_composite": "white, no resizing",
+            "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+            "command": [
+              "/usr/bin/magick",
+              "-limit",
+              "thread",
+              "1",
+              "-limit",
+              "memory",
+              "256MiB",
+              "-limit",
+              "map",
+              "512MiB",
+              ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-38.png",
+              "-background",
+              "white",
+              "-alpha",
+              "remove",
+              "-alpha",
+              "off",
+              "-sampling-factor",
+              "4:4:4",
+              "-quality",
+              "95",
+              "-strip",
+              ".scratch/english-intake-recovery/image-proxies/packet-03-act-03-sample-01-cf4a659a7b70.jpg"
+            ],
+            "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+            "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-03-act-03-sample-01-cf4a659a7b70.jpg"
+          },
+          "detail": "auto",
+          "printed_page": "267",
+          "observations": [
+            "Masthead Catholic Mind Vol.XVIII No.14 July22,1920. Title The Re-establishment of Christian Peace with star. Benedict XV,by Divine Providence Pope.",
+            "Address To the Patriarchs,Primates,Archbishops,Bishops and Ordinaries in Peace and Communion with the Holy See; Venerable Brethren,Health Apostolic Benediction; body starts Peace,the beautiful gift of God.",
+            "Title star footnote Translation from the London Tablet at page foot; body superscript1 after desirable possession. This is historical translation attribution, preserved separately in selection."
+          ]
+        },
+        {
+          "image_pins": {
+            "act": 3,
+            "sample": 2,
+            "source_page": 5,
+            "source_pdf": "src/sources/works/journals/catholic-mind/editions/1920-07-22-volume-18-issue-14/artifacts/ia-facsimile-fed671b44143/source.pdf",
+            "source_pdf_sha256": "fed671b441433213aafbbfa13c132031880020864ce4ec568708d3157a74c399",
+            "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-39.png",
+            "source_png_sha256": "9f9ce0f0fd9f633dd6ebbfa2653bca8783468ab21576a6f17eaf035c2f7d50e2",
+            "source_bytes": 1963586,
+            "source_dimensions": [
+              1375,
+              2200
+            ],
+            "source_mode": "srgb",
+            "crop_pixels": [
+              0,
+              0,
+              1375,
+              2200
+            ],
+            "proxy": ".scratch/english-intake-recovery/image-proxies/packet-03-act-03-sample-02-9f9ce0f0fd9f.jpg",
+            "proxy_sha256": "e64942b396ee098d6ec6f86d11667d7d828c8305c09486cd4124050b4f49158f",
+            "proxy_bytes": 945945,
+            "proxy_dimensions": [
+              1375,
+              2200
+            ],
+            "quality": 95,
+            "sampling_factor": "4:4:4",
+            "alpha_composite": "white, no resizing",
+            "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+            "command": [
+              "/usr/bin/magick",
+              "-limit",
+              "thread",
+              "1",
+              "-limit",
+              "memory",
+              "256MiB",
+              "-limit",
+              "map",
+              "512MiB",
+              ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-39.png",
+              "-background",
+              "white",
+              "-alpha",
+              "remove",
+              "-alpha",
+              "off",
+              "-sampling-factor",
+              "4:4:4",
+              "-quality",
+              "95",
+              "-strip",
+              ".scratch/english-intake-recovery/image-proxies/packet-03-act-03-sample-02-9f9ce0f0fd9f.jpg"
+            ],
+            "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+            "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-03-act-03-sample-02-9f9ce0f0fd9f.jpg"
+          },
+          "detail": "auto",
+          "printed_page": "271",
+          "observations": [
+            "Body begins Jesus,of whom the Samaritan was the figure,should lay His hands upon the wounds of society; Augustine quotation has superscript14 and all things to all men superscript15.",
+            "Distinct foot block at page foot:12 IJohniii16-18;13Lukex30etseq.;14Augustin de moribus Ecc.Cat.lib.i,c.30;15ICor.ix22.",
+            "Selected text contains all four note texts as separate blank-line block between page-end with pity and continuation kindness. OCR marker damage is visible in selected text and disclosed; notes are not omitted or fused into sentence."
+          ]
+        },
+        {
+          "image_pins": {
+            "act": 3,
+            "sample": 3,
+            "source_page": 9,
+            "source_pdf": "src/sources/works/journals/catholic-mind/editions/1920-07-22-volume-18-issue-14/artifacts/ia-facsimile-fed671b44143/source.pdf",
+            "source_pdf_sha256": "fed671b441433213aafbbfa13c132031880020864ce4ec568708d3157a74c399",
+            "source_png": ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-40.png",
+            "source_png_sha256": "3ff919561d8794cb0b5a1d8e98c1882bc70d27298d7d4f67c37ec07360ba6618",
+            "source_bytes": 1984795,
+            "source_dimensions": [
+              1395,
+              2200
+            ],
+            "source_mode": "srgb",
+            "crop_pixels": [
+              0,
+              0,
+              1395,
+              2200
+            ],
+            "proxy": ".scratch/english-intake-recovery/image-proxies/packet-03-act-03-sample-03-3ff919561d87.jpg",
+            "proxy_sha256": "db54b521d188115efdcc9245f5a1edfe66f0291c8f476b3ccb480f10b5623a71",
+            "proxy_bytes": 961525,
+            "proxy_dimensions": [
+              1395,
+              2200
+            ],
+            "quality": 95,
+            "sampling_factor": "4:4:4",
+            "alpha_composite": "white, no resizing",
+            "converter": "Version: ImageMagick 7.1.2-34 Q16-HDRI x86_64 c5d4ca8a0:20261014 https://imagemagick.org",
+            "command": [
+              "/usr/bin/magick",
+              "-limit",
+              "thread",
+              "1",
+              "-limit",
+              "memory",
+              "256MiB",
+              "-limit",
+              "map",
+              "512MiB",
+              ".scratch/english-intake-a2/rasters/.scratch/english-intake-a2/native-samples/pages/page-40.png",
+              "-background",
+              "white",
+              "-alpha",
+              "remove",
+              "-alpha",
+              "off",
+              "-sampling-factor",
+              "4:4:4",
+              "-quality",
+              "95",
+              "-strip",
+              ".scratch/english-intake-recovery/image-proxies/packet-03-act-03-sample-03-3ff919561d87.jpg"
+            ],
+            "purpose": "Review-only display proxy; source PNG remains authoritative. No OCR or source extraction from JPEG.",
+            "recommended_display": ".scratch/english-intake-recovery/image-proxies/packet-03-act-03-sample-03-3ff919561d87.jpg"
+          },
+          "detail": "auto",
+          "printed_page": "275",
+          "observations": [
+            "Closing includes Apostolic Benediction to Venerable Brethren,clergy and people; Given at St.Peters,Rome,May23,Feast of Pentecost1920,sixth pontifical year; Benedict XV,Pope subscription.",
+            "Separate page-foot notes20DeCivitateDei.lib.xixcap17;21DeMoribusEcc.Cat.icap30;22Eph.ii12etseq.;23Col.iii9-11;24Secreta in Solemn.CorpusChristi visible.",
+            "Selected text retains subscription and all five terminal note texts in final separate blank-line block. No neighboring article enters selected text."
+          ]
+        },
+        {
+          "image_pins": {
+            "act": 3,
+            "source_page": 3,
+            "printed_page": 269,
+            "source_pdf": "src/sources/works/journals/catholic-mind/editions/1920-07-22-volume-18-issue-14/artifacts/ia-facsimile-fed671b44143/source.pdf",
+            "source_pdf_sha256": "fed671b441433213aafbbfa13c132031880020864ce4ec568708d3157a74c399",
+            "bounded_pdf_sha256": "d4a032c43c0be1a34ab170b2551c6919c6a0bfd9e55b8a57a6dd46c5c4af63cc",
+            "source_png": ".scratch/english-intake-recovery/packet-03/audit-recovery/note-rasters/.scratch/english-intake-recovery/packet-03/audit-recovery/extra-notes/notes/pages/page-1.png",
+            "source_png_sha256": "aacea8022454dd033d8d66b139e3ae603b633665a60424bd4c677f924543745e",
+            "proxy": ".scratch/english-intake-recovery/packet-03/audit-recovery/extra-notes/note-foot-3.jpg",
+            "proxy_sha256": "209d380ebc7f193d9357ba723d80dbe4bed531e68934b7af0e8c09447cc84a46",
+            "command": [
+              "/usr/bin/magick",
+              "-limit",
+              "thread",
+              "1",
+              ".scratch/english-intake-recovery/packet-03/audit-recovery/note-rasters/.scratch/english-intake-recovery/packet-03/audit-recovery/extra-notes/notes/pages/page-1.png",
+              "-gravity",
+              "South",
+              "-crop",
+              "100%x30%+0+0",
+              "+repage",
+              "-background",
+              "white",
+              "-alpha",
+              "remove",
+              "-alpha",
+              "off",
+              "-sampling-factor",
+              "4:4:4",
+              "-quality",
+              "95",
+              "-strip",
+              ".scratch/english-intake-recovery/packet-03/audit-recovery/extra-notes/note-foot-3.jpg"
+            ],
+            "purpose": "Review-only bottom30percent crop of native page raster; no OCR from JPEG"
+          },
+          "detail": "auto",
+          "printed_page": "269 foot",
+          "observations": [
+            "Distinct page-foot note group1-11: Civitate Dei.l.xixc.II;Eph.vi15;Johnxvii21-23;1Peteriv8;Col.iii14;1Johniv7;Matt.v44-55;1Johniii15;Matt.vi12;Lukexxiii34;Actsx38.",
+            "All eleven citation texts appear in selected separate blank-line block. OCR numerals and markers are damaged but no substantive note omitted in this checked group."
+          ]
+        },
+        {
+          "image_pins": {
+            "act": 3,
+            "source_page": 7,
+            "printed_page": 273,
+            "source_pdf": "src/sources/works/journals/catholic-mind/editions/1920-07-22-volume-18-issue-14/artifacts/ia-facsimile-fed671b44143/source.pdf",
+            "source_pdf_sha256": "fed671b441433213aafbbfa13c132031880020864ce4ec568708d3157a74c399",
+            "bounded_pdf_sha256": "d4a032c43c0be1a34ab170b2551c6919c6a0bfd9e55b8a57a6dd46c5c4af63cc",
+            "source_png": ".scratch/english-intake-recovery/packet-03/audit-recovery/note-rasters/.scratch/english-intake-recovery/packet-03/audit-recovery/extra-notes/notes/pages/page-2.png",
+            "source_png_sha256": "d29015aff81ec2a0e3515c4bc5e398c8ca5bf95abf65678189189f14be89654d",
+            "proxy": ".scratch/english-intake-recovery/packet-03/audit-recovery/extra-notes/note-foot-7.jpg",
+            "proxy_sha256": "e863249b731e163daae05d92017edc56b22165699037d1488403865ac372d2ef",
+            "command": [
+              "/usr/bin/magick",
+              "-limit",
+              "thread",
+              "1",
+              ".scratch/english-intake-recovery/packet-03/audit-recovery/note-rasters/.scratch/english-intake-recovery/packet-03/audit-recovery/extra-notes/notes/pages/page-2.png",
+              "-gravity",
+              "South",
+              "-crop",
+              "100%x30%+0+0",
+              "+repage",
+              "-background",
+              "white",
+              "-alpha",
+              "remove",
+              "-alpha",
+              "off",
+              "-sampling-factor",
+              "4:4:4",
+              "-quality",
+              "95",
+              "-strip",
+              ".scratch/english-intake-recovery/packet-03/audit-recovery/extra-notes/note-foot-7.jpg"
+            ],
+            "purpose": "Review-only bottom30percent crop of native page raster; no OCR from JPEG"
+          },
+          "detail": "auto",
+          "printed_page": "273 foot",
+          "observations": [
+            "Separate notes16Col.iii12;17LitteraeApost.Diuturni,xvJul.MCMXIX;18Epist.AmorIlleSingularis,viiOct.MCMXIX;19Litt.Enc.AdBeatissimi,iNov.MCMXIV.",
+            "Selected text retains all four citation texts in the separate blank-line block after its page-end independence but also."
+          ]
+        }
+      ],
+      "selected_text_read_complete": true,
+      "findings": [
+        "Historical English printing positively identified by Catholic Mind XVIII/14 July22,1920 masthead; historical title-star note explicitly credits London Tablet translation. Individual translator not named.",
+        "Full address, May23,1920 dating clause and Benedict XV subscription retained. No neighboring text in selection.",
+        "Fresh source-page1,3,5,7,9 checks cover historical translation-credit star note and all numbered note-text groups1-24. Each note group remains a distinct blank-line block. OCR marker/numeral recognition defects remain and are disclosed."
+      ],
+      "scope_limits": "Source intake of exact identified historical human English witness only. Fresh native sampled identity, address, closing, subscription and note checks plus exact mechanical replay. Source OCR recognition, punctuation, damaged note markers and line-end hyphen fragments remain. No corrected translation, lexical translation accuracy, full printing collation, compiler/PDF layout, installation or deployment claim.",
+      "blockers": []
+    }
+  ],
+  "pass_count": 3,
+  "blocked_count": 0,
+  "fresh_native_image_count": 12,
+  "prior_visual_claims_inherited": false,
+  "scope_limits": "Source intake of exact identified historical human English witness only. Fresh native sampled identity, address, closing, subscription and note checks plus exact mechanical replay. Source OCR recognition, punctuation, damaged note markers and line-end hyphen fragments remain. No corrected translation, lexical translation accuracy, full printing collation, compiler/PDF layout, installation or deployment claim."
+}
