@@ -360,8 +360,9 @@ A driver archives a terminal run into its leaf with
 `tools/proper-study-run-archive <run-id> --cycles <cycles-record>`, which
 verifies every result and packet against the run's state before it writes.
 The default archive preserves those bytes exactly and refuses absolute
-filesystem paths. If a retained result's top-level `notes` string or list of
-strings names files under the current checkout, opt in with
+filesystem paths and recognized operation handles. If a retained result's
+top-level `notes` string or list of strings names files under the current
+checkout, opt in with
 `--redact-repository-paths`. This creates a declared public derivative after
 native hash verification: only the current repository-root prefix plus its
 separator is removed from path tokens in those notes. HTTP(S) source URLs,
@@ -373,6 +374,24 @@ archived file hashes, and every changed JSON pointer and replacement count,
 without recording private path values. `record.md` labels the derivative and
 retains both accepted-native and archived result hashes. Repeating the same
 command against the same native run reproduces the derivative exactly.
+
+`--redact-operation-handles` is a separate opt-in for a known execution-handle
+form: `aggregate session` followed by decimal digits, case-insensitive, with
+optional whitespace before the digits. Only a retained result's top-level
+`notes` string or string entries in its top-level `notes` list may replace that
+whole token with `<operation-handle>`. Other content and source URLs remain
+unchanged. A recognized handle in a substantive field, nested notes, packet,
+seed, intervention, terminal report, archive filename or cycles reference
+refuses the complete archive; this option does not authorize arbitrary privacy
+sanitization.
+
+Either or both redaction options may be selected. With the operation-handle
+option, receipt schema 2 lists the enabled policies and operations in fixed
+order and records each changed JSON pointer's replacement count by policy,
+alongside the native and archived hashes. The native files, acceptance and
+review seals remain unchanged. Without this new option, exports using only
+`--redact-repository-paths` retain their existing schema-1 receipt and bytes
+when no recognized operation handle is present.
 
 While a run is live, land nothing that its stages do not own. The
 `proper-study-v4` and `proper-study-v5` research seals cover every module the chronology

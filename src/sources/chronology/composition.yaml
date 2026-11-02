@@ -7,7 +7,7 @@ schema: triptych-chronology-composition/v1
 # scripts/_projection.py projects into. Declared here so that no row's
 # numbering is a thing the reader assumed.
 numbering: vulgate
-updated: '2026-09-21'
+updated: '2026-11-02'
 
 units:
   # --- nt-composition ----------------------------------------------------
@@ -1793,34 +1793,76 @@ units:
           label: "not long after ... the year 132 B.C."
 
   - id: composition.book-of-jeremias
-    title: The Book of Jeremias
+    title: The received Book of Jeremias after enlargement
+    relation: final-formation
     scope: {book: Jer}
     dates:
       - profile: catholic-traditional-v1
         disposition: preferred
         basis_class: traditional-catholic
         basis: >-
-          Faulhaber's "Jeremias" in the Catholic Encyclopedia states that "Jeremias is
-          directed to write down, either personally or by his scribe Baruch, the
-          discourses he had given up to the fourth year of Joakim (604 B.C. )," and
-          that "This first authentic recension of the prophecies forms the basis of the
-          present Book of Jeremias."
+          Faulhaber's "Jeremias" in the Catholic Encyclopedia states that
+          "This first authentic recension of the prophecies forms the basis
+          of the present Book of Jeremias", then that "the first transcript
+          was enlarged by various insertions and additions from the pen of
+          Baruch or of a later prophet". The received book's enlarged form
+          therefore follows that first recension; the article supplies no
+          terminal date for its formation.
         sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08334a-dd4ae528]
         note: >-
-          604 B.C. dates the FIRST authentic recension, which the article says forms
-          the basis of the present book; it does not date the finished book. The same
-          paragraph records growth after it — "the first transcript was enlarged by
-          various insertions and additions from the pen of Baruch or of a later
-          prophet" — and singles out the last chapter as "an addition of the
-          post-Jeremianic period based on 2 Kings 24:18 - 25:30 , on account of the
-          concluding statement of li: 'Thus far are the words of Jeremias.'" The article
-          arranges the book by reign, from Josias through the period after the
-          destruction of Jerusalem, so parts of it are later than 604 on the article's
-          own showing.
+          The stable unit id is retained, but its former whole-book composition
+          date was a scope error: 604 B.C. dates the first recension only. That
+          figure is now held on israel.exile.jeremias-first-scroll, with
+          Scripture's fourth year of Joakim preferred over the encyclopedia's
+          absolute year. The present book cannot be partitioned into that
+          scroll and later additions from this article's evidence: its outline
+          is partly qualified and it calls chapter 52 post-Jeremianic. No
+          constituent inherits 604 B.C. as its writing date. This one-sided
+          formation bound leaves the completion date open and does not date
+          the composition of the earlier discourses or the later additions.
         date:
-          precision: year
-          from: {year: 604, era: bc}
-          label: "the fourth year of Joakim (604 B.C.)"
+          precision: boundary
+          boundary:
+            direction: after
+            anchor: israel.exile.jeremias-first-scroll
+            statement: after the first authentic recension
+          label: "the first transcript was enlarged by various insertions and additions"
+
+  - id: composition.jeremias-letter-to-the-exiles
+    title: Jeremias's letter to the exiles after Jechonias's deportation
+    scope: {book: Jer, chapter: 29, first: 1, last: 23}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis_class: scripture
+        basis: >-
+          The Douay-Rheims text of Jeremias 29:1 introduces "the words of the
+          letter" sent by Jeremias from Jerusalem to the captives in Babylon.
+          Jeremias 29:2 places it "After that Jechonias the king ... were
+          departed out of Jerusalem". Jeremias 29:3 identifies its bearers,
+          sent by Sedecias to Babylon. The written letter thus follows the
+          deportation already held as israel.exile.second-captivity.
+        sources:
+          - bible:douay-rheims:Jer.29.1
+          - bible:douay-rheims:Jer.29.2
+          - bible:douay-rheims:Jer.29.3
+          - bible:douay-rheims:Jer.29.24
+        note: >-
+          This bounds the letter's writing, not the return promised in it or
+          the final editing of the book. The scope includes the letter's
+          introduction and words through verse 23. Verse 24 begins a distinct
+          address to Semeias; verses 25-29 concern his letters and verse 30
+          introduces a further word of the Lord. Those later exchanges do not
+          inherit the first letter's composition assertion. No absolute year
+          is inferred from the deportation or from the neighboring chapter's
+          heading, and no year is computed from the anchor's alternatives.
+        date:
+          precision: boundary
+          boundary:
+            direction: after
+            anchor: israel.exile.second-captivity
+            statement: after Jechonias and the deportees had departed from Jerusalem
+          label: "After that Jechonias the king ... were departed out of Jerusalem"
 
   - id: composition.book-of-daniel
     title: The Book of Daniel
@@ -2929,6 +2971,45 @@ units:
             endpoint: {year: 70, era: ad}
             statement: post-A.D. 70 date
           label: "post-A.D. 70 date"
+
+  - id: critical.gospel-of-mark
+    title: The Gospel of Mark under the NABRE's tentative modern dating proposal
+    scope: {book: Mark, chapter: 1, through: 16, last: 8}
+    dates:
+      - profile: catholic-critical-v1
+        disposition: preferred
+        basis_class: catholic-critical
+        basis: >-
+          The official NABRE Mark introduction, in its final historical
+          paragraph, reports a modern proposal of an unknown Hellenistic
+          Jewish Christian author, possibly in Syria, and dates that proposal
+          "perhaps shortly after the year 70". The complete introduction and
+          divisions were inspected in the registered 2026-11-02 web-tool text
+          extraction, whose source lines 62-63 distinguish the Gospel through
+          Mark 16:8 from endings attached by other hands, and whose source
+          lines 72-75 preserve the authorship, place and dating qualifications.
+        sources:
+          - artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-11-02.mark-introduction-web-text-272bcce7
+        note: >-
+          This is the introduction's tentative modern proposal, not a secure
+          date or a statement of consensus. The source gives no terminal year
+          for shortly after; the structured date therefore has one lower
+          boundary only, with perhaps and shortly retained in its display.
+          It dates the Gospel through 16:8, not the longer or other appended
+          endings that the same introduction assigns to other hands. No date
+          for a predecessor text or for those additions is inferred. The
+          introduction also reports the traditional Roman account separately;
+          the traditional corpus claims are unchanged and continue to supply
+          composition in the default cascade. The inspected representation
+          is extracted web-tool text, not acquired raw HTML or a print
+          collation; its protected bytes are not retained in Git.
+        date:
+          precision: boundary
+          boundary:
+            direction: after
+            endpoint: {year: 70, era: ad}
+            statement: perhaps shortly after A.D. 70
+          label: "perhaps shortly after the year 70"
 
   - id: critical.ephesians-later-disciple
     title: Ephesians under the later-disciple hypothesis (approximate)

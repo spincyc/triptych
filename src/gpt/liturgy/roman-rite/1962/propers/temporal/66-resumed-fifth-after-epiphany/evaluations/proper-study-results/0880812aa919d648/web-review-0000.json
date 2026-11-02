@@ -1,0 +1,25 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "WEB-001",
+      "location": "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany.md:181\u2013191; Preface of the Trinity; compare Research PDF p. 5 and sections/10-appointed-text.tex latinproper block",
+      "problem": "The Preface\u2019s Latin quotation is italic throughout in the canonical source and PDF, but the conversion italicizes only its first paragraph; the remaining dialogue, proper clause and Sanctus render upright. All words and the Latin/English quotation boundary remain intact, so this isolated formatting loss does not mislead the reader or block the edition.",
+      "required_result": "When the converter is next revised, preserve the Latin quotation\u2019s type treatment across every paragraph of latinproper, and verify the resulting Preface against PDF p. 5; retain its exact text and separation from the Cummiskey English witness.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "document": "liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany",
+    "files": {},
+    "provider": "gpt",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany.md": "c730f32518cf5e6f684b23313ed04f162241db25bb8b3aceaa5449267bc5de33"
+    }
+  },
+  "stage": "web-review",
+  "summary": "PASS for the canonical Resumed Fifth Sunday after the Epiphany web conversion, SHA-256 c730f32518cf5e6f684b23313ed04f162241db25bb8b3aceaa5449267bc5de33 from research/web-artifact.json: the complete Markdown was compared with the canonical TeX graph and 21-page Research PDF (94fd25fe31f1118927ebd03798c7e7b697fc3e692e548d4afd7f22f7d4ae7e4a), preserving eleven appointed texts, two interpretations with four senses each, chronology, thirty source notes, revision and rights text. Chromium checks using the site renderer and stylesheet at 1440 and 390 CSS-pixel widths verified heading/anchor navigation, notes and responsive tables, with primary spot-checks at Chrysostom XLVI.1, Augustine Sermon XXIII and Psalm 129, and Jerome PL 24 cols. 893\u2013894; limits are the bounded page preview rather than full-site acceptance, external USCCB access denials, and the isolated advisory typography loss below."
+}

@@ -72,6 +72,13 @@ RESULTS_DIR = PurePosixPath("evaluations") / "proper-study-results"
 RECORD = "record.md"
 REDACTION_RECEIPT = "redaction-receipt.json"
 REDACTION_POLICY = "repository-root-prefix-in-result-notes-v1"
+PATH_OPERATION = "remove current repository root plus separator from result notes path tokens"
+OPERATION_HANDLE_POLICY = "aggregate-session-handle-in-result-notes-v1"
+OPERATION_HANDLE_REPLACEMENT = "<operation-handle>"
+HANDLE_OPERATION = (
+    "replace aggregate session decimal handles in result notes with <operation-handle>"
+)
+OPERATION_HANDLE = re.compile(r"\baggregate\s+session\s*[0-9]+\b", re.I)
 HTTP_URL = re.compile(r"https?://[^\s<>\"'`]+", re.I)
 PLACEHOLDER_PATH = re.compile(r"<[A-Za-z_][A-Za-z0-9_-]*>/[^\s<>\"'`]*")
 FILESYSTEM_PATH = re.compile(
@@ -352,14 +359,17 @@ def json_strings(value):
 
 
 def public_files(files: dict[str, bytes], root: Path) -> None:
-    """Refuse local absolute paths while preserving source URLs and templates.
+    """Refuse local paths and known operation handles, preserving source URLs.
 
     This audits native payloads, not generated JSON-pointer receipt metadata.
     Unknown or substantive fields are never rewritten to pass this check.
     """
     for name, data in sorted(files.items()):
+        if OPERATION_HANDLE.search(name):
+            raise ArchiveError("private aggregate session operation handle in an archive filename; "
+                               "only top-level result notes support --redact-operation-handles")
         if name.endswith(".json"):
-            strings = json_strings(json_value(data, name))
+            strings = list(json_strings(json_value(data, name)))
         else:
             try:
                 strings = (data.decode("utf-8"),)
@@ -370,6 +380,9 @@ def public_files(files: dict[str, bytes], root: Path) -> None:
                for value in strings):
             raise ArchiveError(f"private absolute filesystem path in {name}; "
                                "only result notes support --redact-repository-paths")
+        if any(OPERATION_HANDLE.search(HTTP_URL.sub("", value)) for value in strings):
+            raise ArchiveError(f"private aggregate session operation handle in {name}; "
+                               "only top-level result notes support --redact-operation-handles")
 
 
 def redact_notes(value: str, prefix: str) -> tuple[str, int]:
@@ -394,11 +407,32 @@ def redact_notes(value: str, prefix: str) -> tuple[str, int]:
     return "".join([*pieces, text]), count + changed
 
 
-def derivative(root: Path, archive: Archive, files: dict[str, bytes]) -> tuple[dict[str, bytes], dict]:
+def redact_operation_notes(value: str) -> tuple[str, int]:
+    """Replace only recognized aggregate-session handles outside source URLs."""
+    pieces, count, start = [], 0, 0
+    for match in HTTP_URL.finditer(value):
+        text, changed = OPERATION_HANDLE.subn(OPERATION_HANDLE_REPLACEMENT,
+                                             value[start:match.start()])
+        pieces.extend((text, match.group()))
+        count += changed
+        start = match.end()
+    text, changed = OPERATION_HANDLE.subn(OPERATION_HANDLE_REPLACEMENT, value[start:])
+    return "".join([*pieces, text]), count + changed
+
+
+def derivative(root: Path, archive: Archive, files: dict[str, bytes], *,
+               redact_repository_paths: bool = True,
+               redact_operation_handles: bool = False) -> tuple[dict[str, bytes], dict]:
     """An explicit public derivative of verified native bytes, never a new verdict."""
     output = dict(files)
     changes = {}
     prefix = root.resolve().as_posix() + "/"
+    operations = []
+    if redact_repository_paths:
+        operations.append((REDACTION_POLICY, PATH_OPERATION,
+                           lambda value: redact_notes(value, prefix)))
+    if redact_operation_handles:
+        operations.append((OPERATION_HANDLE_POLICY, HANDLE_OPERATION, redact_operation_notes))
     for row in archive.rows:
         data = json_value(files[row.result_file], row.result_file)
         if not isinstance(data, dict):
@@ -411,14 +445,20 @@ def derivative(root: Path, archive: Archive, files: dict[str, bytes]) -> tuple[d
         for pointer, value in entries:
             if not isinstance(value, str):
                 continue
-            redacted, count = redact_notes(value, prefix)
-            if not count:
+            redacted = value
+            for policy, _description, transform in operations:
+                redacted, count = transform(redacted)
+                if count:
+                    change = {"json_pointer": pointer, "replacements": count}
+                    if redact_operation_handles:
+                        change["policy"] = policy
+                    changed.append(change)
+            if redacted == value:
                 continue
             if pointer == "/notes":
                 data["notes"] = redacted
             else:
                 data["notes"][int(pointer.rsplit("/", 1)[1])] = redacted
-            changed.append({"json_pointer": pointer, "replacements": count})
         if changed:
             output[row.result_file] = (json.dumps(data, ensure_ascii=False, sort_keys=True,
                                                  indent=2) + "\n").encode("utf-8")
@@ -427,11 +467,16 @@ def derivative(root: Path, archive: Archive, files: dict[str, bytes]) -> tuple[d
     receipt = {
         "schema": 1, "record_type": "proper-study-run-archive-derivative",
         "run_id": archive.run_id, "policy": REDACTION_POLICY,
-        "operation": "remove current repository root plus separator from result notes path tokens",
+        "operation": PATH_OPERATION,
         "files": [{"path": name, "native_sha256": sha256(files[name]),
                    "archived_sha256": sha256(output[name]), "changes": changes.get(name, [])}
                   for name in sorted(files)],
     }
+    if redact_operation_handles:
+        receipt["schema"] = 2
+        del receipt["policy"], receipt["operation"]
+        receipt["operations"] = [{"policy": policy, "operation": description}
+                                 for policy, description, _transform in operations]
     return output, receipt
 
 
@@ -439,6 +484,18 @@ def record_text(archive: Archive, cycles: str, receipt: dict | None = None) -> s
     """record.md: what the archive is, and one table row per result."""
     manifest = archive.manifest
     count = len(archive.rows)
+    redaction_note = ("Only current-repository-root prefixes in top-level "
+                      "`notes` strings were removed. ")
+    if receipt is not None and receipt["schema"] == 2:
+        policies = {operation["policy"] for operation in receipt["operations"]}
+        redaction_note = (
+            ("Only current-repository-root prefixes and recognized `aggregate session` "
+             "decimal handles in top-level `notes` strings were changed; operation "
+             "handles were replaced with `<operation-handle>`. ")
+            if REDACTION_POLICY in policies else
+            ("Only recognized `aggregate session` decimal handles in top-level `notes` "
+             "strings were replaced with `<operation-handle>`. ")
+        )
     lines = [
         "# Actual engine results",
         "",
@@ -448,8 +505,8 @@ def record_text(archive: Archive, cycles: str, receipt: dict | None = None) -> s
         f"disposition **{archive.disposition}**.",
         "",
         (("The result JSON files are explicitly declared public derivatives of the verified "
-          "engine-retained bytes. Only current-repository-root prefixes in top-level "
-          "`notes` strings were removed. The native run is unchanged; original and archived "
+          "engine-retained bytes. " + redaction_note +
+          "The native run is unchanged; original and archived "
           f"hashes and every changed JSON pointer/count are in `{REDACTION_RECEIPT}`. "
           "All other input files remain exact. A stage's PASS records only its own completed "
           "work; publication acceptance is the terminal gate's. The engine supplies any "
@@ -556,7 +613,8 @@ def shown(root: Path, path: Path) -> str:
 
 
 def archive_run(root: Path, run_id: str, cycles: str, output: str | None,
-                *, redact_repository_paths: bool = False) -> tuple[Path, Archive]:
+                *, redact_repository_paths: bool = False,
+                redact_operation_handles: bool = False) -> tuple[Path, Archive]:
     if Path(cycles).is_absolute() or ".." in PurePosixPath(cycles).parts or not cycles:
         raise ArchiveError(
             "--cycles must be a repository-relative path, because record.md is "
@@ -572,8 +630,10 @@ def archive_run(root: Path, run_id: str, cycles: str, output: str | None,
             root, archive.proper, verb, archive.run_id, archive.disposition
         )
     receipt = None
-    if redact_repository_paths:
-        files, receipt = derivative(root, archive, files)
+    if redact_repository_paths or redact_operation_handles:
+        files, receipt = derivative(root, archive, files,
+                                    redact_repository_paths=redact_repository_paths,
+                                    redact_operation_handles=redact_operation_handles)
         files[REDACTION_RECEIPT] = (json.dumps(receipt, ensure_ascii=False, sort_keys=True,
                                             indent=2) + "\n").encode("utf-8")
     else:
@@ -605,6 +665,11 @@ def main(argv: list[str] | None = None) -> int:
             "result notes becomes repository-relative. A deterministic receipt\n"
             "preserves original/archived hashes and every changed JSON pointer.\n"
             "Other fields and files stay exact; residual absolute paths refuse.\n\n"
+            "Recognized operation handles are also refused. --redact-operation-handles\n"
+            "separately replaces only aggregate session followed by decimal digits\n"
+            "(case-insensitive, optional whitespace before digits) in top-level result\n"
+            "notes with <operation-handle>. This is not arbitrary privacy sanitization.\n"
+            "Either or both flags may be used; native inputs and acceptance stay exact.\n\n"
             "--output DIR writes the same archive to DIR instead of the leaf, which\n"
             "is how an archive is checked: archive an already-archived run to a\n"
             "scratch directory and `diff -r` it against the committed copy."
@@ -629,6 +694,11 @@ def main(argv: list[str] | None = None) -> int:
         "record original/archived hashes and changed JSON pointers",
     )
     parser.add_argument(
+        "--redact-operation-handles", action="store_true",
+        help="replace recognized aggregate session decimal handles only in top-level "
+        "result notes with <operation-handle>; record per-policy counts and hashes",
+    )
+    parser.add_argument(
         "--root",
         metavar="DIR",
         default=str(ROOT),
@@ -640,7 +710,8 @@ def main(argv: list[str] | None = None) -> int:
     root = Path(args.root).resolve()
     try:
         dest, archive = archive_run(root, args.run_id, args.cycles, args.output,
-                                    redact_repository_paths=args.redact_repository_paths)
+                                    redact_repository_paths=args.redact_repository_paths,
+                                    redact_operation_handles=args.redact_operation_handles)
     except ArchiveError as error:
         print(f"{ERROR}{error}", file=sys.stderr)
         return 1

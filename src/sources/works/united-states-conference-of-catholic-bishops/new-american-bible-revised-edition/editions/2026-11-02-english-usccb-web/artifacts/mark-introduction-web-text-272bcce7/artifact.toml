@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-11-02.mark-introduction-web-text-272bcce7"
+edition_id = "edition.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-11-02"
+artifact_type = "browser-text-extraction"
+media_type = "text/plain; charset=utf-8"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "Modern USCCB NABRE introductory prose and website presentation; public consultation supplies no repository redistribution grant. Only identity, exact hash, native loci and bounded factual research are retained."
+rights_jurisdiction = "United States"
+source_url = "https://bible.usccb.org/bible/mark/0"
+provenance = "The complete official-page web-tool text result was saved automatically from the tool-return string, without model transcription or reconstruction, on 2 November 2026. It contains numbered source lines 0-87. Direct HTTP requests returned 403; raw HTML bytes were not obtained."
+retrieved = "2026-11-02"
+sha256 = "272bcce72d0d78287acadd7157648f2444589a4900f1433e148eb25a5410e44a"
+byte_size = 13635
+indexable = false
+notes = "Authenticated extracted-text delivery, not raw HTML or a print collation. Source lines 47-84 contain the complete introduction and divisions; lines 72-75 control authorship/place/dating qualifications. The captured envelope includes tool link markers. No exact earlier HTML artifact inherits this inspection. No source payload is redistributed."

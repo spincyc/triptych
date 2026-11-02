@@ -300,6 +300,26 @@ Publications remains a generated discovery view. It may expose metadata,
 browser-read links, canonical PDFs, and facets without creating a second owning
 catalogue or moving a publication's canonical home.
 
+Home and the library landings share compact rows, a consistent page measure,
+and table headings that remain visible while their table scrolls through the
+page. Preserve the seven portal identities and order. Narrow tables place the
+publication title above its actions; descriptive fields retain enough measure
+for prose. Proper calendars retain their ID, cycle and named provider columns.
+Keyboard focus clears the actual sticky heading and leaves its focus ring
+visible, including at enlarged text sizes.
+
+The renderer explicitly opts these tables into `catalogue-table`. Its spacing,
+heading-height and sticky-offset custom properties permit deliberate reuse by
+an app without applying the landing layout or navigation memory there. Apps
+remain unchanged until their owning work opts in. The small heading observer
+measures the focus clearance; CSS supplies a fallback without JavaScript.
+
+Moving between landings or publications preserves the landing position within
+the current session and each browser-history entry's position. An explicit
+section link on a new visit takes precedence; native history remains usable
+without JavaScript or storage. Landing navigation uses immediate scrolling so
+a fragment's animation cannot overtake native history restoration.
+
 ## Instrument archetype
 
 The Instrument couples one exact object, one primary interpretive plane, and

@@ -5,7 +5,185 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-10-26.
+Last reconciled: 2026-11-02.
+
+## GPT resumed Fifth Sunday and web catalogue, 2026-11-02
+
+<!-- promised-deliverable: gpt-resumed-fifth-and-catalogue-2026-11-02 -->
+
+**Candidate: accepted, installed and independently verified; workspace-branch
+publication pending.** The maintainer requested completion of the GPT 1962
+proper-study workflow for the upcoming Sunday, 8 November 2026, and a denser
+web catalogue with column headings that remain visible during page scrolling
+and reading-position preservation when navigating between proper studies.
+The calendar computation identifies the resumed Fifth Sunday after Epiphany,
+stable temporal identity `66`; the production workflow must independently
+verify the dated occurrence, appointed texts and governing rubrics.
+
+The native version-15 run is `0880812aa919d648`, using canonical identity
+`liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany`.
+Its cycle record is
+`workflows/reviews/gpt-1962-66-production-2026-11-02/CYCLES.md`.
+The context check confirms the dated Ordo's II-class green Sunday and the
+omission of the Four Crowned Martyrs under the governing rubrics. The Missal
+facsimile controls the eleven-element inventory, including the Trinity
+Preface; the arithmetic calendar's candidate list is not a commemoration
+decision.
+
+The document lane will produce the expansive study, concise study, homily and
+canonical web edition through the native workflow and fresh independent
+reviews. The web lane covers catalogue presentation and navigation to and
+from its proper-study readers. On 2 November the maintainer expanded this to
+the root and all library landing pages for a consistent presentation, while
+leaving the apps, including the Missal viewer, unchanged. The table design
+must be modular and opt-in so an app can reuse it later without automatically
+inheriting landing-page styles. Source, review and verification records will
+be reconciled here as each unit finishes. Existing publications and unrelated
+work remain outside this request.
+
+Initial checks of publication policy, the complete `make check-sources`
+aggregate, the tool registry and `tmt check` passed. The routine
+source-family gate permits its 164 honestly pending review units; this is no
+claim of source-family screening completion. Subsequent validation must cover
+the changed sources and generated records.
+
+The landing-page component is implemented and independently accepted. All 17
+static root/library landings explicitly opt into `catalogue-table`; apps
+retain their existing presentation and navigation. Shared spacing, heading
+measurement and sticky-offset properties support deliberate future reuse.
+Generated apps already load the shared stylesheet, so separate asset extraction
+adds no production isolation benefit now; reconsider it when an app adopts the
+component. The renderer retains the seven root portals and their order.
+
+Ten real Chromium tests pass, independently repeated against the final source
+snapshot. Across 51 landing/viewport combinations there is no page overflow;
+129 actual table-position checks and 480 Tab/Shift-Tab steps pass. A discovered
+sticky-header focus obstruction and its resize timing edge are repaired.
+Enlarged text, CSS-only fallback, blocked storage/history state, explicit
+anchors, ordinary return links, browser history and `/triptych/` deployment
+paths pass. All 13 generated app routes remain outside the new component and
+navigation helper. The focused suite is
+`tools/tests/test_catalogue_navigation.py`; 147 existing generator/static
+tests also pass, along with the JavaScript syntax and whitespace checks.
+
+At the same 1440-pixel desktop viewport, the tested TLM section displays 18
+complete rows instead of 10; the root displays 16 instead of 11. Phone layouts
+retain readable titles, actions and descriptions. Final reviewed source hashes
+begin `50414fb086e2` (generator), `8d03c9e69e51` (CSS), and `9b88efe16f0f`
+(navigation helper). Those reviewed UI inputs were rebound first. After cold
+research acceptance, the 21 changed or new Source/Catena projection inputs were
+also rebound under their two exact data subtrees. The scoped release-binding
+status is exact with zero stale entries; source and computation bytes were not
+changed by bookkeeping. Full-site validation still awaits the new publication.
+
+A final readability measurement found the compact Faith and Scripture table
+headings below the 4.5:1 normal-text contrast threshold (3.71:1 and 4.10:1);
+Faith's striped-row links were also below it. Independent measurement also
+found three Home portal links below the same threshold on their colored cells.
+The three component-only ink adjustments are independently accepted. All 1,782
+painted-background heading/link observations across 51 page/viewports exceed
+4.5:1; the minimum is 4.697:1. White headers and body links measure at least
+5.057:1 and 5.498:1; gold headers and links at least 4.697:1 and 5.854:1; all
+seven Home portal links at least 5.271:1. The full ten-test browser suite passes
+against the final CSS and tests, including the previous geometry/history/focus
+checks. Global palettes, app styling, table geometry and navigation remain
+unchanged by that repair.
+
+Before the first research seal, source checking found that Jeremiah 29
+inherited a 604 B.C. composition date whose cited Catholic Encyclopedia
+passage dates the first scroll. The scoped canonical correction is now
+independently accepted: the letter has a composition bound after Jechonias's
+deportation, the received book has an open formation bound, and the supported
+604 B.C. testimony remains on the first-scroll event. Evidence and scope are
+in `src/sources/chronology/jeremias-recension-correction-2026-11-02.md`.
+Only this new proper currently consumes the affected Jeremiah dates; its owner
+has regenerated both chronology artifacts from the canonical tools before
+research review. The Introit now names the letter's composition and the
+received book's formation as distinct assertions.
+
+Chronology validation, generated coverage and manifest currency, 26 focused
+regressions and independent public-query comparisons pass. At the Jeremias
+checkpoint, the 269-test suite had 268 passes and one inherited Psalm-attribution scope expectation
+failure, independently reproduced against the unchanged base. Regenerating
+the pending-review manifest records no global audit acceptance. The documented
+semantic-differ field omissions remain outside this correction; the review
+checked the actual YAML, source texts and public-query changes.
+
+The first native cold research review required a missing Catholic Encyclopedia
+rights dependency and the principal modern critical chronology comparisons.
+The research owner repaired those findings and three local source/text
+advisories. Matthew already has a canonical critical comparison. The official
+USCCB Mark introduction supplies a tentative modern temporal proposal that the
+corpus lacked. The bounded canonical Mark addition is now independently
+accepted; its evidence is
+`src/sources/chronology/mark-critical-horizon-extension-2026-11-02.md`.
+Its actual witness is a registered restricted web-text extraction, distinct
+from unavailable raw HTML. `critical.gospel-of-mark` preserves the tentative
+open lower bound and applies only through Mark 16:8. All 677 Mark loci retain
+their traditional/default answers, the later endings gain no new critical
+composition date, and the accepted Jeremias assertions are unchanged.
+Thirty-four focused tests and independent public-query comparisons pass; the
+full 271-test suite has 270 passes and the identical inherited Psalm failure.
+The owner has added the explicit Matthew and Mark comparisons and regenerated
+both chronology artifacts before resealing. Native research repair reports
+both blocking findings and all three advisories cleared. The fresh source
+registration audit and native research preflight pass; the second independent
+cold research review returns PASS with no findings. The native run has advanced
+through expansive-study authoring and preflight. The 21-page study contains
+6,026 substantive words; its proof builds without overflow or unresolved
+references and passes the web probe. Independent cold study review returns
+PASS with no findings. The native run has advanced to concise-study authoring;
+the research evidence, canonical inputs and accepted study prose remain sealed.
+The concise study is now 10 pages with 3,383 substantive words; exact physical
+opening markers, preflight and independent byte-identical rebuilding pass.
+Cold concise review returns PASS with no findings. The three-page homily has
+1,296 spoken words, estimated at 10.4–11.3 minutes; no timed human delivery is
+claimed. Its preflight and cold content review pass with no findings. All
+three documents are accepted for content. Their common 21/10/3-page build and
+native artifact gates now pass, including current content seals, settled
+references and metadata. Independent visual review of all 34 final pages
+returns PASS with no findings, including concrete chronology lookups. The
+73,696-byte canonical web conversion and its receipt pass their checks, and
+independent canonical web review returns PASS. Its nonblocking WEB-001
+advisory records lost italics after the first Latin Preface paragraph; all
+words and Latin/English boundaries remain intact. The three reviewed PDFs
+and exact canonical Markdown are installed, with the GPT catalogue row and
+three publication records. All final installation checks and the native
+terminal publication gate pass: the version-15 run is **ACCEPTED**, without
+escalations. The full `make check-sources` aggregate passes against 49,430
+unchanged inputs, including the deployment-source graph; its routine family
+gate honestly retains 165 pending units. The pinned web-currentness check and
+all five publication components and six accepted-review seals also pass.
+The final public-site build, GitHub Pages target verifier and all ten browser
+tests against the installed catalogue pass. Portable validation results are
+recorded in
+`workflows/reviews/gpt-1962-66-production-2026-11-02/final-validation.json`.
+The durable 58-file native archive is installed and independently reproduced
+byte for byte. Its explicit derivative omits one transient operation handle
+in a top-level result note; native result bytes, verdicts and seals remain
+unchanged. The narrowly scoped exporter extension passes independent code
+review and 53 tests, with one historical replay skipped because its ignored
+native runs are absent. Legacy path-only archive bytes remain unchanged.
+The exact policy, changed pointer and native/archived hashes are retained in
+the archive receipt and
+`workflows/reviews/gpt-1962-66-production-2026-11-02/archive-verification.json`;
+the code review is `archive-code-review.json` beside it. Final independent
+integration and public-disclosure review returns PASS with no open findings
+for the frozen 188-file snapshot. Its exact report is `final-review.json`
+beside those records; accepted source, UI, archive and release-binding bytes
+remain unchanged. Workspace-branch publication remains pending.
+Post-archive inventory reconciliation accounts for exactly 26 native packets
+and their record; only proper 66 gains the repository-internal stratum. Prior
+source paths and judgments are unchanged, all 97 leaf files remain identical,
+and final source-graph, inventory, family and catalogue currency checks pass.
+Scoped release bindings remain exact with zero stale inputs.
+Colossians's qualitative authorship and location alternatives introduce no
+uncatalogued date. Global chronology acceptance remains outside these two
+bounded source reviews.
+
+The workspace target is `feature/propers/codex`; validated work will be
+committed and pushed there. Main integration and live deployment are separate
+states and are not promised by this work unit.
 
 ## Four Last Things PDF layout, 2026-10-26
 

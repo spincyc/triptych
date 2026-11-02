@@ -5977,6 +5977,55 @@ events:
               same is the first year of Nabuchodonosor king of Babylon
           label: "the same is the first year of Nabuchodonosor king of Babylon"
 
+  - id: israel.exile.jeremias-first-scroll
+    title: The first recording of Jeremias's discourses by Baruch
+    note: >-
+      This event dates the first scroll narrated in Jeremias 36:1-4, not the
+      composition of every discourse copied into it or of the present book.
+      The received book was enlarged after this recension. Its precise
+      surviving constituent extent is not established by the inspected source.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis_class: scripture
+        basis: >-
+          The Douay-Rheims text of Jeremias 36:1 dates the command to record
+          the discourses "in the fourth year of Joakim the son of Josias king
+          of Juda". Jeremias 36:2 orders a roll containing the words spoken
+          "from the days of Josias even to this day", and Jeremias 36:4
+          records that "Baruch wrote from the mouth of Jeremias all the words
+          of the Lord, which he spoke to him, upon the roll of a book".
+        sources:
+          - bible:douay-rheims:Jer.36.1
+          - bible:douay-rheims:Jer.36.2
+          - bible:douay-rheims:Jer.36.4
+        date:
+          precision: relative
+          relative:
+            of: israel.exile.joakim-accession
+            statement: in the fourth year of Joakim the son of Josias king of Juda
+          label: "in the fourth year of Joakim the son of Josias king of Juda"
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        basis_class: traditional-catholic
+        basis: >-
+          Faulhaber's "Jeremias" in the Catholic Encyclopedia states that
+          "Jeremias is directed to write down, either personally or by his
+          scribe Baruch, the discourses he had given up to the fourth year of
+          Joakim (604 B.C.)" and calls this "first authentic recension" the
+          basis of the present book.
+        sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08334a-dd4ae528]
+        note: >-
+          The source's 604 B.C. dates this first recension only. Scripture's
+          explicit regnal statement is preferred under the profile's hierarchy;
+          the more precise encyclopedia year does not replace it. The fifth
+          year in Jeremias 36:9 dates the later public reading, not this first
+          recording, and is not harmonized into it.
+        date:
+          precision: year
+          from: {year: 604, era: bc}
+          label: "the fourth year of Joakim (604 B.C.)"
+
   - id: israel.exile.first-captivity
     title: "The first captivity of Juda, under Joakim"
     note: >-

@@ -88,6 +88,7 @@ editions are shown as `Planned`.
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king -->
 <!-- triptych-publication-id: claude:liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king -->
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/f02-all-saints -->
+<!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany -->
 
 | ID | Sunday | ChatGPT | Claude |
 | ---: | --- | --- | --- |
@@ -156,7 +157,7 @@ editions are shown as `Planned`.
 | 63 | **Twenty-third Sunday after Pentecost** | Planned | Planned |
 | 64 | **Resumed Third Sunday after the Epiphany** | Planned | Planned |
 | 65 | **Resumed Fourth Sunday after the Epiphany** | Planned | Planned |
-| 66 | **Resumed Fifth Sunday after the Epiphany** | Planned | Planned |
+| 66 | **Resumed Fifth Sunday after the Epiphany** | [Full PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany.pdf) · [Synthesis PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-synthesis.pdf) · [Homily PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-homily.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany.html) | Planned |
 | 67 | **Resumed Sixth Sunday after the Epiphany** | Planned | Planned |
 | 68 | **Twenty-fourth and Last Sunday after Pentecost** | Planned | Planned |
 

@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "scope": "GPT resumed Fifth Sunday for 8 November 2026 and shared static landing tables",
+  "workspace_branch": "feature/propers/codex",
+  "native_run": "0880812aa919d648",
+  "native_disposition": "ACCEPTED",
+  "integration_review": {
+    "verdict": "PASS",
+    "reviewed_tree": "c6fae714ba8d2f8cbfc9d460272749ed240f8e57",
+    "report": "workflows/reviews/gpt-1962-66-production-2026-11-02/final-review.json",
+    "report_sha256": "1037e49ff6a2224391d53be4a3d4a7ea1b1d8b2d7366ace2b04cb28b336f0e31",
+    "open_findings": 0,
+    "reconciliation": "Only the exact report and truthful verdict bookkeeping follow this reviewed tree; accepted source, UI, archive and release-binding bytes are unchanged."
+  },
+  "native_archive": {
+    "verification": "workflows/reviews/gpt-1962-66-production-2026-11-02/archive-verification.json",
+    "code_review": "workflows/reviews/gpt-1962-66-production-2026-11-02/archive-code-review.json",
+    "file_count": 58,
+    "reproduction": "byte-identical",
+    "native_run_modified": false
+  },
+  "checks": [
+    {
+      "command": "make check-sources PYTHON=.scratch/runtime-20261102/bin/python",
+      "exit_code": 0,
+      "log_sha256": "46151f2ede6432cad471994bcc133caee666811f8f4fc277d10dc15e9796623e",
+      "input_count": 49430,
+      "input_boundary_sha256": "b3ec20dc612b96346dc5391b18ef105f3cba1bf2535cbe9105a6dd43aa6734cc",
+      "boundary_changed_during_check": false,
+      "includes": "Complete check-deployment-sources graph and routine source-family gate; 165 family review units remain explicitly pending.",
+      "reuse_boundary": "Reused the completed installation aggregate, without a duplicate run. Subsequent archive-exporter, tests, usage and operator-documentation changes receive separate focused checks; accepted publication sources and source-check computation remain unchanged."
+    },
+    {
+      "command": "make check-publication-inventories check-source-family-migration check-document-catalogue PYTHON=.scratch/runtime-20261102/bin/python",
+      "scope": "Post-archive inventory reconciliation and currentness",
+      "exit_code": 0,
+      "log_sha256": "9fe1a74c401742beda0001a83e030176d14daa412cf7e47d1a96b30c0122fe3e",
+      "reconciliation": "Exactly 26 native packets and record.md added to the GPT source surface, 2921 to 2948 files. Only proper 66 gains repository-internal classification and its family surface snapshot changes. Existing paths and judgments remain unchanged; all 165 family units remain pending. All 97 canonical leaf files, including the 58-file archive, remain hash-identical."
+    },
+    {
+      "command": "make public-site PYTHON=.scratch/runtime-20261102/bin/python",
+      "runtime": "Pinned environment on PATH, including Markdown 3.10.3",
+      "exit_code": 0,
+      "log_sha256": "3e9c9f3c086f0540d3c13a38109c767e1d921ea130c099837d2752c021ec786a"
+    },
+    {
+      "command": "tools/public-alpha verify --deployment-target github-pages",
+      "runtime": "Pinned environment on PATH, including Markdown 3.10.3",
+      "exit_code": 0,
+      "repeated_after_archive_and_inventory_reconciliation": true,
+      "log_sha256": "b8dcb442f8587c1f6a2ca5328918e733ab0cd39794880f3c195805902e79ba14"
+    },
+    {
+      "command": "tools/release-bindings status",
+      "scope": "Final post-archive state",
+      "exit_code": 0,
+      "stale_bindings": 0,
+      "log_sha256": "81b5c9979e16b7295a385dc9fd585e88bef46d1c28bd0643ee7e4e47dc373c3f"
+    },
+    {
+      "command": "TRIPTYCH_CATALOGUE_BROWSER=1 python -m unittest discover -s tools/tests -p test_catalogue_navigation.py -v",
+      "runtime": "Pinned Python; Chromium with chromedriver; fresh generated landing pages after installation",
+      "exit_code": 0,
+      "tests": 10,
+      "seconds": 29.363,
+      "log_sha256": "bb80d0d33ea9bd9c71207e6363f6c91c61889f1e175d88fc1b0a30db8e17b237",
+      "coverage": "All 17 static landing pages, desktop/mobile, sticky geometry, history and ordinary return navigation, explicit anchors, subdirectory deployment, blocked state, enlarged text, no-script fallback, keyboard clearance, print and painted-background contrast. App opt-in boundaries remain intact."
+    },
+    {
+      "command": "python -m unittest tools.tests.test_public_alpha tools.tests.test_release_bindings tools.tests.test_browser_static -v",
+      "scope": "Existing public-alpha, release-binding and browser-static suites, repeated against final publication inputs",
+      "exit_code": 0,
+      "tests": 168,
+      "seconds": 7.680,
+      "log_sha256": "bd6b29f48bbcc4039e748701038484536d4b38310ffbbeb7fda1931625dc477a"
+    },
+    {
+      "command": "python -m unittest discover -s tools/tests -p test_proper_study_run_archive.py -v",
+      "exit_code": 0,
+      "tests": 54,
+      "passed": 53,
+      "skipped": 1,
+      "seconds": 3.494,
+      "log_sha256": "d638234e35b629206be10dd29acd275fc29caf2445da096f51f39cd0778efec6",
+      "skip_reason": "Historical ignored native runs are unavailable for their optional archive replay; the current accepted run was independently exported twice and reproduced exactly.",
+      "independent_review": "PASS: exact native hashes and substantive result fields preserved; only one top-level operation-note token changes in the current run, with an explicit hash/policy/pointer/count receipt. Legacy path-only exports remain byte-identical."
+    },
+    {
+      "command": "tools/tpt --check",
+      "exit_code": 0,
+      "registered_tools": 47,
+      "log_sha256": "2d04762435d316f2f5cbc550fda20811f22fffbf601b7f1f487620a309e9262f"
+    },
+    {
+      "command": "tmt check",
+      "exit_code": 0,
+      "log_sha256": "dc51b8c96c2d745df3bd5590d990230a482fd247123599548e0632fdbf97fc22"
+    }
+  ],
+  "known_limits": [
+    "The full chronology suite has 270 passing tests and one inherited Psalm-attribution scope expectation failure, reproduced independently against the unchanged base. Focused source regressions and independent Jeremiah/Mark source reviews pass; broader chronology acceptance is not claimed.",
+    "Canonical web review PASS includes nonblocking WEB-001: Latin Preface paragraphs after the first lose italics, with complete words and intact Latin/English boundaries.",
+    "The homily timing is a word-count estimate, not a timed human rehearsal.",
+    "A verified local GitHub Pages artifact is not a live deployment. Main integration and live deployment are outside the workspace-branch promise."
+  ],
+  "remaining": [
+    "Workspace-branch commit, push and remote verification"
+  ]
+}

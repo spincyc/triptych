@@ -102,7 +102,8 @@ class Fixture(unittest.TestCase):
     disposition = "ACCEPTED"
 
     def setUp(self) -> None:
-        scratch = ROOT / ".scratch/pc-r-workflow-support/archive/tests"
+        scratch = Path(os.environ.get("TRIPTYCH_ARCHIVE_TEST_SCRATCH",
+                                      ROOT / ".scratch/pc-r-workflow-support/archive/tests")).resolve()
         scratch.mkdir(parents=True, exist_ok=True)
         self.scratch = tempfile.TemporaryDirectory(dir=scratch)
         self.root = Path(self.scratch.name)
@@ -451,6 +452,170 @@ class PublicDerivativeTests(Fixture):
         self.assertEqual(list(empty.iterdir()), [])
 
 
+class OperationHandleTests(Fixture):
+    # Synthetic fixture identifiers, never live execution handles.
+    handle = "aggregate session12345"
+
+    def test_default_and_repository_path_option_refuse_operation_handles(self) -> None:
+        self.retained_result(notes=f"Completed through {self.handle}.")
+        for options in ({}, {"redact_repository_paths": True}):
+            with self.subTest(options=options):
+                self.assertIn("private aggregate session operation handle", self.refusal(**options))
+
+    def test_explicit_scalar_notes_have_a_hash_receipt_and_unchanged_native_seals(self) -> None:
+        notes = (f"Completed through {self.handle}; checked AGGREGATE SESSION 7. "
+                 "John 1:1; https://example.test/aggregate%20session12345.pdf.")
+        path, original = self.retained_result(
+            notes=notes, summary="The decision is unchanged.",
+            review_inputs={"schema": 5, "sha256": "b" * 64, "paths": ["src/sources/work.toml"]},
+            artifact_path="research/evidence.md", findings=[{"id": "F1", "severity": "accepted"}])
+        native, original_bytes = tree(self.run_dir), path.read_bytes()
+        dest = self.archived(redact_operation_handles=True)
+        result = json.loads((dest / path.name).read_bytes())
+        expected = notes.replace(self.handle, "<operation-handle>").replace(
+            "AGGREGATE SESSION 7", "<operation-handle>")
+        self.assertEqual(result, {**original, "notes": expected})
+        self.assertEqual(tree(self.run_dir), native)
+        receipt = json.loads((dest / ARCHIVER.REDACTION_RECEIPT).read_bytes())
+        self.assertEqual(receipt["schema"], 2)
+        self.assertEqual(receipt["operations"], [{
+            "policy": ARCHIVER.OPERATION_HANDLE_POLICY, "operation": ARCHIVER.HANDLE_OPERATION}])
+        row = next(item for item in receipt["files"] if item["path"] == path.name)
+        self.assertEqual(row, {"path": path.name, "native_sha256": sha(original_bytes),
+            "archived_sha256": sha((dest / path.name).read_bytes()), "changes": [{
+                "json_pointer": "/notes", "policy": ARCHIVER.OPERATION_HANDLE_POLICY,
+                "replacements": 2}]})
+        original_archive = ARCHIVER.collect(self.root, RUN).files
+        for item in receipt["files"]:
+            if item["path"] != path.name:
+                self.assertEqual(item["changes"], [])
+                self.assertEqual(item["native_sha256"], item["archived_sha256"])
+                if item["path"] in original_archive:
+                    self.assertEqual((dest / item["path"]).read_bytes(), original_archive[item["path"]])
+        record = (dest / ARCHIVER.RECORD).read_text()
+        self.assertIn("`<operation-handle>`", record)
+        self.assertIn(row["native_sha256"], record)
+        self.assertIn(row["archived_sha256"], record)
+        self.assertNotIn(self.handle, json.dumps(receipt))
+
+    def test_flat_list_notes_record_counts_at_each_changed_pointer(self) -> None:
+        notes = [f"Completed through {self.handle}.", "A council's session 12 is historical.",
+                 "aggregate session 1 and aggregate\nsession2."]
+        path, original = self.retained_result(notes=notes)
+        dest = self.archived(redact_operation_handles=True)
+        self.assertEqual(json.loads((dest / path.name).read_bytes()), {**original, "notes": [
+            "Completed through <operation-handle>.", notes[1],
+            "<operation-handle> and <operation-handle>."]})
+        receipt = json.loads((dest / ARCHIVER.REDACTION_RECEIPT).read_bytes())
+        row = next(item for item in receipt["files"] if item["path"] == path.name)
+        self.assertEqual(row["changes"], [
+            {"json_pointer": "/notes/0", "policy": ARCHIVER.OPERATION_HANDLE_POLICY, "replacements": 1},
+            {"json_pointer": "/notes/2", "policy": ARCHIVER.OPERATION_HANDLE_POLICY, "replacements": 2}])
+
+    def test_substantive_and_nested_fields_refuse_instead_of_being_rewritten(self) -> None:
+        original = (self.run_dir / "results/research-review-0001.json").read_bytes()
+        for field, value in (
+            ("summary", self.handle), ("artifact_path", self.handle),
+            ("review_inputs", {"notes": self.handle}),
+            ("findings", [{"notes": self.handle}]),
+            ("notes", {"text": self.handle}), ("notes", [{"text": self.handle}]),
+            (self.handle, "field names are audited too"),
+        ):
+            with self.subTest(field=field, value=value):
+                (self.run_dir / "results/research-review-0001.json").write_bytes(original)
+                self.retained_result(**{field: value})
+                self.assertIn("operation handle", self.refusal(redact_operation_handles=True))
+
+    def test_packets_seeds_interventions_and_terminal_reports_refuse(self) -> None:
+        for kind in ("packet", "bootstrap", "manifest", "intervention", "status", "replay"):
+            with self.subTest(kind=kind):
+                self.build()
+                if kind == "packet":
+                    path = self.run_dir / "packets/scope-gate-0000.txt"
+                    path.write_text(self.handle)
+                    self.state["packet_hashes"][0]["hash"] = sha(path.read_bytes())
+                    self.write_json("state.json", self.state)
+                elif kind == "bootstrap":
+                    path = self.run_dir / "bootstrap.json"
+                    path.write_text(json.dumps({"notes": self.handle}))
+                    self.manifest["bootstrap"]["sha256"] = sha(path.read_bytes())
+                    self.write_json("manifest.json", self.manifest)
+                elif kind == "manifest":
+                    self.manifest["notes"] = self.handle
+                    self.write_json("manifest.json", self.manifest)
+                elif kind == "intervention":
+                    (self.run_dir / "interventions/0000.json").write_text(json.dumps({"notes": self.handle}))
+                else:
+                    path = self.root / "engine" / f"{kind}.json"
+                    report = json.loads(path.read_text())
+                    report["notes"] = self.handle
+                    path.write_text(json.dumps(report))
+                self.assertIn("operation handle", self.refusal(redact_operation_handles=True))
+
+    def test_cycles_metadata_cannot_publish_a_recognized_handle(self) -> None:
+        self.assertIn("operation handle", self.refusal(
+            cycles=f"workflows/reviews/{self.handle}/CYCLES.md", redact_operation_handles=True))
+
+    def test_archive_filenames_cannot_publish_a_recognized_handle(self) -> None:
+        original = self.run_dir / "results/research-review-0001.json"
+        renamed = original.with_name(self.handle + ".json")
+        original.rename(renamed)
+        self.state["result_hashes"][-1]["path"] = f"build/tpt-runs/{RUN}/results/{renamed.name}"
+        self.write_json("state.json", self.state)
+        self.assertIn("operation handle in an archive filename",
+                      self.refusal(redact_operation_handles=True))
+
+    def test_each_flag_is_independent_and_the_combination_is_deterministic(self) -> None:
+        path, original = self.retained_result(notes=[
+            f"Read {self.root}/research/audit.md via {self.handle}.",
+            "https://example.test/aggregate%20session12345.pdf remains a citation."])
+        self.assertIn("absolute filesystem path", self.refusal(redact_operation_handles=True))
+        self.assertIn("operation handle", self.refusal(redact_repository_paths=True))
+        native = tree(self.run_dir)
+        first = self.archived(output=self.root / "first", redact_repository_paths=True,
+                              redact_operation_handles=True)
+        second = self.archived(output=self.root / "second", redact_repository_paths=True,
+                               redact_operation_handles=True)
+        self.assertEqual(tree(first), tree(second))
+        self.assertEqual(tree(self.run_dir), native)
+        self.assertEqual(json.loads((first / path.name).read_bytes()), {**original, "notes": [
+            "Read research/audit.md via <operation-handle>.", original["notes"][1]]})
+        receipt = json.loads((first / ARCHIVER.REDACTION_RECEIPT).read_bytes())
+        self.assertEqual([op["policy"] for op in receipt["operations"]],
+                         [ARCHIVER.REDACTION_POLICY, ARCHIVER.OPERATION_HANDLE_POLICY])
+        row = next(item for item in receipt["files"] if item["path"] == path.name)
+        self.assertEqual(row["changes"], [
+            {"json_pointer": "/notes/0", "policy": ARCHIVER.REDACTION_POLICY, "replacements": 1},
+            {"json_pointer": "/notes/0", "policy": ARCHIVER.OPERATION_HANDLE_POLICY, "replacements": 1}])
+
+    def test_handle_free_notes_and_source_urls_preserve_exact_result_bytes(self) -> None:
+        path, _ = self.retained_result(notes="Session 12; https://example.test/aggregate%20session12345.pdf")
+        expected = path.read_bytes()
+        dest = self.archived(redact_operation_handles=True)
+        self.assertEqual((dest / path.name).read_bytes(), expected)
+        receipt = json.loads((dest / ARCHIVER.REDACTION_RECEIPT).read_bytes())
+        self.assertTrue(all(not row["changes"] and row["native_sha256"] == row["archived_sha256"]
+                            for row in receipt["files"]))
+
+    def test_native_hash_is_verified_before_handle_redaction(self) -> None:
+        path, _ = self.retained_result(notes=self.handle)
+        path.write_bytes(path.read_bytes() + b"\n")
+        self.assertIn("result hash mismatch", self.refusal(redact_operation_handles=True))
+
+    def test_path_option_alone_preserves_legacy_archive_bytes(self) -> None:
+        path, _ = self.retained_result(
+            notes=f"Read {self.root}/research/audit.md; stable source https://example.test/source.pdf.",
+            summary="The decision remains unchanged.",
+            review_inputs={"sha256": "b" * 64, "paths": ["src/sources/work.toml"]})
+        native_hash = sha(path.read_bytes()).encode()
+        data = tree(self.archived(redact_repository_paths=True))
+        normalized = b"".join(name.encode() + b"\0" + raw.replace(
+            native_hash, b"<native-result-sha256>") + b"\0" for name, raw in sorted(data.items()))
+        # Captured from the preceding exporter; only the temporary-root-dependent
+        # native result hash is normalized. Other tests verify that hash exactly.
+        self.assertEqual(sha(normalized), "b174ffbad3cac4480dd3bfde9662eb10f5e4df0e9d034066720c368748024ba2")
+
+
 class PluralTests(Fixture):
     interventions = 2
 
@@ -574,6 +739,15 @@ class ExitStatusTests(Fixture):
         result = self.run_tool(RUN, "--cycles", CYCLES, "--redact-repository-paths")
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertTrue((self.leaf_archive / ARCHIVER.REDACTION_RECEIPT).is_file())
+
+    def test_explicit_operation_handle_option_and_combined_flag_order(self) -> None:
+        self.retained_result(notes=f"Read {self.root}/research/audit.md through aggregate session12345.")
+        first, second = self.root / "cli-first", self.root / "cli-second"
+        for output, flags in ((first, ["--redact-operation-handles", "--redact-repository-paths"]),
+                              (second, ["--redact-repository-paths", "--redact-operation-handles"])):
+            result = self.run_tool(RUN, "--cycles", CYCLES, "--output", str(output), *flags)
+            self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(tree(first), tree(second))
 
 
 class ReproductionTests(unittest.TestCase):

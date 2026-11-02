@@ -2704,6 +2704,70 @@ class TrackedHardCaseTests(unittest.TestCase):
         self.assertIn("narrated-event", self.relations("Is.36.1"))
         self.assertIn("prophetic-referent", self.relations("Is.53.5"))
 
+    def test_jeremias_first_scroll_does_not_date_the_received_books_composition(
+            self) -> None:
+        for locus in ("Jer.1.1", "Jer.29.11", "Jer.29.14", "Jer.52.34"):
+            for profile in (PROFILE, "catholic-comprehensive-v1"):
+                with self.subTest(locus=locus, profile=profile):
+                    answer = _chronology.chronology(locus, profile=profile)
+                    formation = [
+                        item for item in answer.assertions
+                        if item.subject == "composition.book-of-jeremias"
+                    ]
+                    self.assertEqual(len(formation), 1)
+                    self.assertEqual(formation[0].relation, "final-formation")
+                    date = formation[0].claim.date
+                    self.assertEqual(date.precision, "boundary")
+                    self.assertEqual(date.boundary["direction"], "after")
+                    self.assertEqual(date.anchor, "israel.exile.jeremias-first-scroll")
+                    self.assertFalse(any(
+                        item.relation == "composition"
+                        and item.claim.date.begin is not None
+                        and item.claim.date.begin.year == 604
+                        for item in answer.assertions
+                    ))
+
+    def test_jeremias_letter_bound_stops_before_the_semeias_correspondence(
+            self) -> None:
+        for verse in (1, 11, 12, 13, 14, 23, 24, 32):
+            with self.subTest(verse=verse):
+                answer = self.ask(f"Jer.29.{verse}")
+                letter = [
+                    item for item in answer.assertions
+                    if item.subject == "composition.jeremias-letter-to-the-exiles"
+                ]
+                self.assertEqual(len(letter), int(verse <= 23))
+                if letter:
+                    self.assertEqual(letter[0].relation, "composition")
+                    self.assertEqual(letter[0].claim.basis_class, "scripture")
+                    date = letter[0].claim.date
+                    self.assertEqual(date.precision, "boundary")
+                    self.assertEqual(date.boundary["direction"], "after")
+                    self.assertEqual(date.anchor, "israel.exile.second-captivity")
+                    self.assertIsNone(date.begin)
+                    self.assertIsNone(date.end)
+
+    def test_jeremias_first_scroll_keeps_its_regnal_and_absolute_testimony(
+            self) -> None:
+        for verse in (1, 2, 3, 4, 9, 32):
+            with self.subTest(verse=verse):
+                assertions = [
+                    item for item in self.ask(f"Jer.36.{verse}").assertions
+                    if item.subject == "israel.exile.jeremias-first-scroll"
+                ]
+                self.assertEqual(len(assertions), 2 if verse <= 4 else 0)
+                if not assertions:
+                    continue
+                self.assertTrue(all(item.relation == "narrated-event" for item in assertions))
+                preferred, alternate = assertions
+                self.assertEqual(preferred.claim.disposition, "preferred")
+                self.assertEqual(preferred.claim.basis_class, "scripture")
+                self.assertEqual(preferred.claim.date.precision, "relative")
+                self.assertEqual(preferred.claim.date.anchor, "israel.exile.joakim-accession")
+                self.assertEqual(alternate.claim.disposition, "alternate")
+                self.assertEqual(alternate.claim.date.begin.year, 604)
+                self.assertEqual(alternate.claim.date.begin.era, "bc")
+
     def test_late_exile_isaias_horizon_is_narrow_and_critical(self) -> None:
         for locus in ("Is.40.1", "Is.55.13"):
             answer = _chronology.chronology(locus)
@@ -2730,6 +2794,56 @@ class TrackedHardCaseTests(unittest.TestCase):
         self.assertEqual(len(composition), 1)
         self.assertEqual(composition[0].subject, "critical.gospel-of-matthew")
         self.assertEqual(composition[0].claim.date.label, "post-A.D. 70 date")
+
+    def test_mark_critical_proposal_keeps_uncertainty_and_default_alternatives(
+            self) -> None:
+        for locus in ("Mark.1.1", "Mark.11.24", "Mark.16.8"):
+            with self.subTest(locus=locus):
+                traditional = self.ask(locus)
+                self.assertEqual(
+                    _chronology.chronology(locus).assertions,
+                    traditional.assertions,
+                )
+                critical = _chronology.chronology(locus, profile=CRITICAL)
+                composition = [
+                    item for item in critical.assertions
+                    if item.relation == "composition"
+                ]
+                self.assertEqual(len(composition), 1)
+                item = composition[0]
+                self.assertEqual(item.subject, "critical.gospel-of-mark")
+                self.assertEqual(item.claim.profile, CRITICAL)
+                self.assertIn("tentative", item.title)
+                date = item.claim.date
+                self.assertEqual(date.precision, "boundary")
+                self.assertEqual(date.boundary["direction"], "after")
+                self.assertEqual(date.boundary["endpoint"].year, 70)
+                self.assertEqual(date.boundary["endpoint"].era, "ad")
+                self.assertEqual(date.label, "perhaps shortly after the year 70")
+                self.assertEqual(str(date), "perhaps shortly after A.D. 70")
+                self.assertEqual(date.begin, date.boundary["endpoint"])
+                self.assertEqual(date.end, date.begin)
+                self.assertEqual(
+                    set(date.boundary), {"direction", "endpoint", "statement"}
+                )
+
+    def test_mark_critical_gospel_date_does_not_reach_appended_ending(self) -> None:
+        for verse in (9, 20):
+            locus = f"Mark.16.{verse}"
+            with self.subTest(locus=locus):
+                critical = _chronology.chronology(locus, profile=CRITICAL)
+                self.assertNotIn(
+                    "critical.gospel-of-mark",
+                    {item.subject for item in critical.assertions},
+                )
+                self.assertNotIn(
+                    "composition", {item.relation for item in critical.assertions}
+                )
+                self.assertEqual(critical.status, "attestation-only")
+                self.assertEqual(
+                    _chronology.chronology(locus).assertions,
+                    self.ask(locus).assertions,
+                )
 
     def test_four_gospels_reach_one_crucifixion_with_one_set_of_claims(self) -> None:
         seen = []
@@ -4991,6 +5105,14 @@ class QuotedBasisTests(unittest.TestCase):
     # a fabricated claim with a fabricated quotation walked into, and it is why
     # an undeclared skip is now a failure.
     UNREOPENABLE = {
+        "unit:critical.gospel-of-mark#0": (1, (
+            "The NABRE Mark introduction was inspected in the exact restricted "
+            "web-tool text artifact mark-introduction-web-text-272bcce7, "
+            "SHA-256 272bcce72d0d78287acadd7157648f2444589a4900f1433e148eb25a5410e44a. "
+            "Its source line 75 supplies the one quoted dating phrase. The "
+            "complete extracted introduction was read on 2026-11-02; protected "
+            "source bytes are not retained in Git, and no raw HTML or print "
+            "collation is claimed.")),
         "event:israel.exile.second-isaias-oracles#0": (1, (
             "The NABRE Isaiah introduction, freshly acquired and read in full "
             "on 2026-09-21. Its restricted artifact records the exact hash and "

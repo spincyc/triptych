@@ -1,0 +1,182 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-body.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "homily-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "preface",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "John Chrysostom",
+            "Augustine of Hippo",
+            "Jerome",
+            "Bede",
+            "Thomas Aquinas"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "patience-and-conversion"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "patience-and-conversion",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "Augustine of Hippo",
+            "John Chrysostom",
+            "Robert Bellarmine",
+            "Bede",
+            "Thomas Aquinas"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "promise-prayer-and-pledge"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "promise-prayer-and-pledge",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany",
+    "files": {
+      "src/common/preamble.tex": "4471c68736e6d1bfd95032159e1aabd75f7d925b51a3b3dbfdb6e915eb79179b",
+      "src/common/propers-format.tex": "8812aa7462c29b9a06bb95534af422a4a244f4c40177834d43a20f7f93cf6f70",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/homily.tex": "67b55c3d7bcdf1bc89988e9e65e797ca3803b03c15a52a524eb31c075ca95437",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/interpretations.md": "bcb18e82ea67e6e2699b5b003becc0ac9a01bfe5d1d4492538dbc3692e191f07",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/scope.md": "6aee16e4aa6cfe5acd764d68c2bf50471b7877313e1c2b79f77ac71a2a1f179f",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/source-bindings.toml": "83c9315cdb3652c0a0190b624b337dc06ce6001906bfa8b1c38e83697e7a32ed",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/homily/10-body.tex": "801bdcc20d0e1c8ed11a16de1faff62b58ccc610ce675e96f130bb9f03c24fd6",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/homily/90-apparatus.tex": "9c90487d7d044161ca237a6d6b9bcabc55cfd26fa17ad373460f88433987f920"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "15",
+            "4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83",
+            "0880812aa919d648",
+            "7b10db216dc859dfb239b97f64671abb245243e3",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "PASS for People Who Can Still Change (homily.tex and its spoken body and terminal note): continuous reading and comparison with both study interpretations, the exact retained Challoner Matthew 13:24\u201330,36\u201343 and Colossians 3:12\u201317, Augustine Sermon XXIII [Benedictine LXXIII] \u00a7\u00a71\u20134 and Psalm 129 \u00a7\u00a71\u20138, Chrysostom Colossians VIII, and the hash-matched 1962 Missal images at printed pp. 420\u2013421 support its exegesis, attributions and meaningful use of prayer. The owner's concern for wheat changes recognition of wrongdoing into a question about the harm a remedy may do, which Augustine's possible conversion, Paul's forgiving admonition and the Secret's pardon and direction develop into a specific petition for an offender; unrelated readings would remove this reasoning, the 1,296 independently counted spoken words support the stated 10.4\u201311.3-minute estimate at 115\u2013125 words per minute, and the speech has a clear oral progression and conclusion without a recurring register defect, while no audible rehearsal, timed human delivery, original-language patristic collation or final visual acceptance is certified."
+}

@@ -5,7 +5,7 @@ schema: triptych-chronology-bindings/v1
 # scripts/_projection.py projects into. Declared here so that no row's
 # numbering is a thing the reader assumed.
 numbering: vulgate
-updated: '2026-10-19'
+updated: '2026-11-02'
 bindings:
   - relation: traditional-attribution
     event: israel.monarchy.david-traditional-era
@@ -1498,6 +1498,14 @@ bindings:
     sources: [bible:douay-rheims:4Kings.23.23, bible:douay-rheims:2Par.35.19]
 
   # --- The exile ------------------------------------------------------------
+  - relation: narrated-event
+    event: israel.exile.jeremias-first-scroll
+    scope: {book: Jer, chapter: 36, first: 1, last: 4}
+    note: >-
+      The fourth-year command and Baruch's recording of the first scroll.
+      The later reading, burning and replacement scroll are different events;
+      no present-book composition extent is inferred from this narrative.
+    sources: [bible:douay-rheims:Jer.36.1, bible:douay-rheims:Jer.36.4]
   - relation: narrated-event
     event: israel.exile.joakim-accession
     scope:

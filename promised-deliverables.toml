@@ -1,6 +1,60 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gpt-resumed-fifth-and-catalogue-2026-11-02"
+owner = "PROJECT-WORK.md"
+promise = "Complete the GPT 1962 proper-study workflow for Sunday 8 November 2026 with three independently reviewed PDFs and a canonical web edition; apply consistent compact tables, sticky headings and position preservation across landing pages through modular opt-in design without changing the apps; validate, commit and push the integrated work on feature/propers/codex."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "dated-identity-and-native-acceptance"
+  criterion = "The dated resumed Fifth Sunday identity and appointment are source-verified, and a real proper-study run reaches ACCEPTED with the required independent research, content, visual and web reviews and a durable native archive."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/gpt-1962-66-production-2026-11-02/RECORD.md", "workflows/reviews/gpt-1962-66-production-2026-11-02/archive-verification.json", "src/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/evaluations/proper-study-results/0880812aa919d648/record.md"]
+
+  [[deliverables.requirements]]
+  id = "reviewed-publication-artifacts"
+  criterion = "The expansive study, concise study and homily build, pass the owning checks and visual review, and are installed with exact reviewed bytes; the canonical web edition, catalogue, source projections and scoped publication records are current."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/gpt-1962-66-production-2026-11-02/RECORD.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/artifacts.json", "src/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/web-artifact.json", "web/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany.md"]
+
+  [[deliverables.requirements]]
+  id = "catalogue-density-headers-and-history"
+  criterion = "A real generated catalogue displays more rows at the same viewport, column headings remain visible during page scrolling, and catalogue and reader positions survive browser Back and Forward and ordinary navigation between proper studies, with usable mobile and keyboard behavior."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "tools/tests/test_catalogue_navigation.py", "src/web/browser/shared/catalogue-navigation.js"]
+
+  [[deliverables.requirements]]
+  id = "consistent-modular-landing-tables"
+  criterion = "The root and all library landing pages share consistent compact tables and page-sticky column headings where tables have headings; responsive, keyboard and navigation checks cover representative portal and detailed-catalogue layouts, and the design is opt-in and reusable without changing existing app presentation."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "guidance/corpus-browser-vision.md", "release/public-alpha/assets/site.css", "tools/public-alpha", "tools/tests/test_catalogue_navigation.py"]
+
+  [[deliverables.requirements]]
+  id = "jeremiah-chronology-source-correction"
+  criterion = "The discovered Jeremiah first-scroll date misapplication is corrected in the canonical chronology from inspected sources, affected consumers are accounted for, a focused regression and independent source review pass, and the proper study regenerates its dates from the corrected shared owner without a local override."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "src/sources/chronology/jeremias-recension-correction-2026-11-02.md", "tools/tests/test_chronology.py", "src/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/chronology.toml", "src/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/chronology-annotations.tex"]
+
+  [[deliverables.requirements]]
+  id = "critical-mark-canonical-comparison"
+  criterion = "The required modern Mark temporal proposal is represented once in the canonical critical chronology from its actual inspected registered source, with uncertainty and source-defined extent preserved, independent source review and focused regressions passing, traditional/default and accepted Jeremiah semantics unchanged, and the proper study's comparison regenerated from that owner."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "src/sources/chronology/mark-critical-horizon-extension-2026-11-02.md", "tools/tests/test_chronology.py", "src/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/chronology-profile-comparisons.toml", "src/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/chronology.toml", "src/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/chronology-annotations.tex"]
+
+  [[deliverables.requirements]]
+  id = "landing-table-readable-contrast"
+  criterion = "The actual compact landing table headings and action links meet at least 4.5:1 contrast on their painted backgrounds through component-scoped adjustments, with independent rendered checks and no global palette or app-style change."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "release/public-alpha/assets/site.css", "tools/tests/test_catalogue_navigation.py"]
+
+  [[deliverables.requirements]]
+  id = "validated-workspace-publication"
+  criterion = "The integrated requested change passes the affected checks, records inherited failures and material limitations accurately, receives final independent review, and is committed and pushed to feature/propers/codex without changing the workspace branch."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "four-last-things-pdf-layout-2026-10-26"
 owner = "PROJECT-WORK.md"
 promise = "Give all eight GPT and Claude Four Last Things PDFs two-column article bodies, a clean standalone title page and following contents, preserve their substantive text, review and install the PDFs, and publish to main with deployment verification."

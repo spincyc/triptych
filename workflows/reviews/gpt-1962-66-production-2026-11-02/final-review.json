@@ -1,0 +1,112 @@
+{
+  "schema": 1,
+  "review": "independent final integration and public-disclosure review",
+  "verdict": "PASS",
+  "reviewed_snapshot": {
+    "branch": "feature/propers/codex",
+    "base_commit": "7b10db216dc859dfb239b97f64671abb245243e3",
+    "staged_tree": "c6fae714ba8d2f8cbfc9d460272749ed240f8e57",
+    "changed_paths": 188,
+    "index_matches_tree": true,
+    "unstaged_changes": false,
+    "scope": "Requested GPT proper 66 production, bounded Jeremiah/Mark source corrections, all 17 static landing tables, required projections/release bindings and explicit public audit export."
+  },
+  "integration_findings": [
+    "All changed Git blobs were inventoried and reconciled with the supplied delivery path list. No unrelated source or app presentation change was identified.",
+    "Accepted native run 0880812aa919d648 and its 58-file canonical archive reproduce the independent scratch export byte for byte. Receipt hashes and terminal replay integrity match; only one top-level operational-note token is transformed under the declared policy.",
+    "The four auxiliary public evidence derivatives match their declared public hashes. Native provenance and original hashes remain explicit.",
+    "All three installed PDFs match their accepted artifact hashes and page counts; render input hashes, the 73,696-byte canonical web artifact, catalogue row and three alpha publication records agree.",
+    "UI and exporter source hashes remain exactly those independently reviewed. Final publication inputs receive the recorded browser, generator/static, release, source, registry and usage checks.",
+    "Post-archive reconciliation records only the bounded audit surfaces and proper 66 inventory/classification changes. Existing source-family judgments remain unchanged and all 165 review units remain explicitly pending."
+  ],
+  "public_disclosure": {
+    "result": "PASS",
+    "new_binary_source_payloads": {
+      "files": 4,
+      "pages": 17,
+      "bytes": 2762900,
+      "basis": "Bounded historical public-domain evidence PDFs; manifest provenance, payload hashes, sizes and page counts verified."
+    },
+    "new_served_source_passages": "Two public-domain Chrysostom Colossians passages and their owned source/catena projections.",
+    "restricted_material": "Eleven new modern-wrapper, Ordo and NABRE artifact records are metadata-only; protected bodies and unavailable raw HTML are withheld. Actual inspected Mark web-text evidence is distinguished from the unavailable HTML.",
+    "privacy_scan": "All changed text blobs scanned. Candidates were reviewed as validator literals, local loopback test addresses or explicitly synthetic fixture identifiers. No actual private paths, secrets or transient operation handles were found in the outgoing changed payloads.",
+    "archive_export": "Explicit deterministic derivative with original/archived hashes, policy, pointer and replacement count; original native run retained unchanged."
+  },
+  "landing_component": {
+    "pages": 17,
+    "page_viewports": 51,
+    "sticky_coordinate_checks": 129,
+    "real_keyboard_steps": 480,
+    "obscured_focused_links": 0,
+    "painted_contrast_targets": 1782,
+    "minimum_contrast_ratio": 4.697498,
+    "modularity": "Existing generated apps already load the shared site foundation. Explicit component classes and the reusable heading observer permit future adoption; no existing app opts into the component or navigation helper. A separate stylesheet is unnecessary for this accepted change and can be reconsidered if a future adoption requires different loading boundaries."
+  },
+  "publication_artifacts": {
+    "native_run": "0880812aa919d648",
+    "native_disposition": "ACCEPTED",
+    "pdfs": [
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-homily.pdf",
+        "pages": 3,
+        "sha256": "d9366042a9cfd13b205871caae258494dbe07fb86a96823e5972d2546b34825e"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-synthesis.pdf",
+        "pages": 10,
+        "sha256": "61b4288d51c5c14c5fbae9aa9882d979846a64024961ad6bb6960cc171d0eaaa"
+      },
+      {
+        "path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany.pdf",
+        "pages": 21,
+        "sha256": "94fd25fe31f1118927ebd03798c7e7b697fc3e692e548d4afd7f22f7d4ae7e4a"
+      }
+    ],
+    "canonical_web_bytes": 73696,
+    "canonical_web_sha256": "c730f32518cf5e6f684b23313ed04f162241db25bb8b3aceaa5449267bc5de33"
+  },
+  "reviewed_code_sha256": {
+    "release/public-alpha/assets/site.css": "8d03c9e69e515170383b7bd57850a653f0d48a66ef2bdb887e3e2468884472cb",
+    "src/web/browser/shared/catalogue-navigation.js": "9b88efe16f0f7c2cd6a25315031581571164a6cf8016d475e4f8873fd26b5559",
+    "tools/public-alpha": "50414fb086e261a20738a8a4120a402747ae29cff4913bca1aa0e3511a5035be",
+    "tools/tests/test_catalogue_navigation.py": "6c24817bf3db71f944db89297b0ad0f71ba1777baa41c97335a0fd8a60be17d4",
+    "tools/proper-study-run-archive": "dcab9ef20b8a2f47feb1a0255a7851088a61d6f3be16206b0f5198f3db3751bf",
+    "tools/tests/test_proper_study_run_archive.py": "0cabf040aeaa725e22d8f81eca583158de7bdfd404b563074b0dde0714fae25c",
+    "workflows/OPERATOR.md": "b733212a24944a44fee1ed415ff32e721b85f802def3627fe5172f6dbc66c19e",
+    "tmt.json": "fb4f4352ad99445f5d294c8d37889964f055168dde0bcf60dbc91a7b8b765ca5"
+  },
+  "validation_reconciliation": {
+    "all_10_recorded_log_hashes_match": true,
+    "source_aggregate_boundary_unchanged_during_check": true,
+    "browser_tests_passed": 10,
+    "existing_public_alpha_release_browser_tests_passed": 168,
+    "archive_tests_passed": 53,
+    "archive_tests_explicitly_skipped": 1,
+    "release_bindings_stale": 0,
+    "source_aggregate_and_post_archive_currency": "PASS within the declared reuse boundary",
+    "public_site_build_and_local_github_pages_verification": "PASS",
+    "tool_registry_and_tmt": "PASS",
+    "durable_summary": "workflows/reviews/gpt-1962-66-production-2026-11-02/final-validation.json",
+    "independent_review_reused": "Earlier independent final browser/contrast and bounded exporter test runs; final staged source hashes match those reviewed bytes."
+  },
+  "open_findings": [],
+  "limits": [
+    "The full chronology suite has 270 passing tests and one inherited Psalm-attribution scope expectation failure, reproduced independently against the unchanged base. Focused source regressions and independent Jeremiah/Mark source reviews pass; broader chronology acceptance is not claimed.",
+    "Canonical web review PASS includes nonblocking WEB-001: Latin Preface paragraphs after the first lose italics, with complete words and intact Latin/English boundaries.",
+    "The homily timing is a word-count estimate, not a timed human rehearsal.",
+    "A verified local GitHub Pages artifact is not a live deployment. Main integration and live deployment are outside the workspace-branch promise.",
+    "Optional replay of historical ignored native runs is unavailable; the current accepted run was independently exported twice and the canonical archive matches.",
+    "This is final integration and disclosure review using accepted independent content/source/visual/web evidence; it does not reopen or broaden those reviews.",
+    "No commit, push or remote verification had occurred at this reviewed snapshot. Root owns that remaining workspace-branch delivery."
+  ],
+  "post_review_reconciliation": {
+    "review_boundary": "This verdict covers the stated staged tree; the report cannot be part of the tree it reviews.",
+    "allowed_before_first_commit": [
+      "Add this exact report as workflows/reviews/gpt-1962-66-production-2026-11-02/final-review.json",
+      "Record the verdict truthfully in PROJECT-WORK.md, promised-deliverables.toml and workflows/reviews/gpt-1962-66-production-2026-11-02/final-validation.json"
+    ],
+    "allowed_after_verified_first_push": "A second metadata-only commit in those same three bookkeeping files may record the source commit/ref and complete the existing delivery promise.",
+    "required_reconciliation": "Root verifies exact final deltas and outgoing objects before each push. Accepted source, UI, archive and release-binding bytes remain unchanged; any substantive change requires renewed review of that change.",
+    "delivery_target": "Commit and push feature/propers/codex; main integration and live deployment are outside this verdict."
+  }
+}

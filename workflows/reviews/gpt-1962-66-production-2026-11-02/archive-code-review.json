@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "review": "independent bounded public-archive exporter review",
+  "verdict": "PASS",
+  "scope": [
+    "tools/proper-study-run-archive",
+    "tools/tests/test_proper_study_run_archive.py",
+    "workflows/OPERATOR.md",
+    "tmt.json"
+  ],
+  "reviewed_sha256": {
+    "tools/proper-study-run-archive": "dcab9ef20b8a2f47feb1a0255a7851088a61d6f3be16206b0f5198f3db3751bf",
+    "tools/tests/test_proper_study_run_archive.py": "0cabf040aeaa725e22d8f81eca583158de7bdfd404b563074b0dde0714fae25c",
+    "workflows/OPERATOR.md": "b733212a24944a44fee1ed415ff32e721b85f802def3627fe5172f6dbc66c19e",
+    "tmt.json": "fb4f4352ad99445f5d294c8d37889964f055168dde0bcf60dbc91a7b8b765ca5"
+  },
+  "contract_findings": [
+    "Native result and packet hashes are verified before any derivative is made.",
+    "The separate explicit option transforms only recognized aggregate-session decimal handles in a result's top-level notes string or string entries in its top-level notes list.",
+    "Recognized residuals in substantive fields, seals, nested notes, other input records, archive filenames or the cycles reference refuse the complete write.",
+    "Source URLs, stable run identities, decisions, findings, seals and every non-note field remain exact.",
+    "Receipt schema 2 declares enabled policies in fixed order, original and archived hashes, and per-policy replacement counts at exact JSON pointers without retaining the removed value.",
+    "Legacy repository-path-only exports retain schema 1 and reproduce the baseline export bytes exactly when no recognized operation handle is present.",
+    "Documentation, CLI help and registered usage accurately describe the narrow grammar, independent options, explicit derivative and residual refusals. This is not a general privacy sanitizer."
+  ],
+  "independent_checks": [
+    {
+      "command": "python3 -m unittest tools.tests.test_proper_study_run_archive -v",
+      "exit_status": 0,
+      "tests_run": 54,
+      "passed": 53,
+      "skipped": 1,
+      "seconds": 3.530,
+      "skip_reason": "Historical native-run directories required for replaying previously committed archives are absent.",
+      "scratch_isolation": "TRIPTYCH_ARCHIVE_TEST_SCRATCH and TMPDIR were assigned to the reviewer's scratch area."
+    },
+    {
+      "command": "sh tests/tools/proper-study-run-archive.test",
+      "exit_status": 0,
+      "result": "CLI smoke checks passed; the unavailable historical archive reproduction was explicitly skipped."
+    },
+    {
+      "command": "tools/proper-study-run-archive --help; parse tmt.json registered usage",
+      "exit_status": 0,
+      "result": "The exact explicit option is exposed by both interfaces."
+    },
+    {
+      "command": "git diff --check -- tools/proper-study-run-archive tools/tests/test_proper_study_run_archive.py workflows/OPERATOR.md tmt.json",
+      "exit_status": 0
+    },
+    {
+      "result": "Independent synthetic fixtures separately verified operation-only and combined exports, immutable native inputs, deterministic reproduction, atomic refusal in unsupported fields and a byte-for-byte comparison with the preceding exporter for path-only export."
+    }
+  ],
+  "actual_terminal_run_probe": {
+    "run_id": "0880812aa919d648",
+    "native_disposition": "ACCEPTED",
+    "command_shape": "tools/proper-study-run-archive RUN_ID --cycles workflows/reviews/gpt-1962-66-production-2026-11-02/CYCLES.md --output REVIEWER_SCRATCH --redact-repository-paths --redact-operation-handles",
+    "two_scratch_exports_identical": true,
+    "archive_files": 58,
+    "native_input_records_unchanged": true,
+    "native_input_records_hashed": 55,
+    "all_archived_receipt_hashes_match": true,
+    "all_result_fields_except_notes_unchanged": true,
+    "only_change": {
+      "file": "source-registration-0001.json",
+      "json_pointer": "/notes/5",
+      "policy": "aggregate-session-handle-in-result-notes-v1",
+      "replacements": 1
+    },
+    "removed_value_recorded_here": false
+  },
+  "open_findings": [],
+  "limits": [
+    "This review accepts the bounded exporter change and its scratch-only actual-run reproduction. It does not replace native content, visual or web acceptance or final staged public-disclosure review.",
+    "No source, release, record or index mutation, canonical archive installation, commit, push or global build was performed by this reviewer."
+  ]
+}

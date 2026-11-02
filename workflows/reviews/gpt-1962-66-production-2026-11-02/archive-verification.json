@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "run_id": "0880812aa919d648",
+  "disposition": "ACCEPTED",
+  "archive_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/evaluations/proper-study-results/0880812aa919d648",
+  "file_count": 58,
+  "results": 26,
+  "packets": 26,
+  "interventions": 0,
+  "independent_reproduction": "byte-identical",
+  "sorted_file_manifest_sha256": "bff854e18cdf17f06852050955373505e2a92e28dd75902a8608c7ffe46a1b12",
+  "redaction_receipt_sha256": "8304e1484d95ca18cdecf69f4037d82a18700d31b1fea5cdb66f94c3ed2f0afb",
+  "changed_exports": [
+    {
+      "path": "source-registration-0001.json",
+      "changes": [
+        {
+          "json_pointer": "/notes/5",
+          "policy": "aggregate-session-handle-in-result-notes-v1",
+          "replacements": 1
+        }
+      ],
+      "native_sha256": "6e6fb635b4c5b0309e58653600390942d3e0d975b6e3574bd26e77d777b8bf93",
+      "archived_sha256": "b5fcfbff0d1bae5c3a1e7e4cd30e238758136f579cc23677663b67bc8b917d6b"
+    }
+  ],
+  "native_run_modified": false
+}

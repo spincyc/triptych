@@ -1,10 +1,10 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 3850,
-  "editions": 1291,
-  "passages": 8780,
-  "readable": 3920,
+  "artifacts": 3865,
+  "editions": 1293,
+  "passages": 8782,
+  "readable": 3922,
   "works": 1074
  },
  "facets": {
@@ -4022,7 +4022,7 @@
   ],
   "languages": [
    {
-    "editions": 648,
+    "editions": 650,
     "id": "en"
    },
    {
@@ -4222,25 +4222,25 @@
     "label": "20th century"
    },
    {
-    "editions": 681,
+    "editions": 683,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 2167,
+    "artifacts": 2171,
     "editions": 491,
     "id": "public-domain"
    },
    {
-    "artifacts": 888,
-    "editions": 446,
+    "artifacts": 890,
+    "editions": 447,
     "id": "restricted"
    },
    {
-    "artifacts": 424,
-    "editions": 210,
+    "artifacts": 433,
+    "editions": 219,
     "id": "unresolved"
    },
    {
@@ -11926,7 +11926,8 @@
      "passages": 0,
      "readable": 0,
      "rights": [
-      "public-domain"
+      "public-domain",
+      "unresolved"
      ],
      "title": "The Catholic Encyclopedia, Volume 10",
      "year": 1911
@@ -11954,7 +11955,8 @@
      "passages": 0,
      "readable": 0,
      "rights": [
-      "public-domain"
+      "public-domain",
+      "unresolved"
      ],
      "title": "The Catholic Encyclopedia, Volume 12",
      "year": 1911
@@ -12039,7 +12041,8 @@
      "readable": 0,
      "rights": [
       "public-domain",
-      "restricted"
+      "restricted",
+      "unresolved"
      ],
      "title": "The Catholic Encyclopedia, Volume 4 (New York, 1908)",
      "year": 1908
@@ -12096,7 +12099,8 @@
      "readable": 0,
      "rights": [
       "public-domain",
-      "restricted"
+      "restricted",
+      "unresolved"
      ],
      "title": "The Catholic Encyclopedia, Volume 9",
      "year": 1910
@@ -12178,7 +12182,8 @@
      "passages": 0,
      "readable": 0,
      "rights": [
-      "public-domain"
+      "public-domain",
+      "unresolved"
      ],
      "title": "The Catholic Encyclopedia, Volume 11 (New York, 1911)",
      "year": 1911
@@ -12235,7 +12240,8 @@
      "passages": 0,
      "readable": 0,
      "rights": [
-      "public-domain"
+      "public-domain",
+      "unresolved"
      ],
      "title": "The Catholic Encyclopedia, Volume 14 (New York, 1912)",
      "year": 1912
@@ -12347,7 +12353,8 @@
      "passages": 3,
      "readable": 1,
      "rights": [
-      "public-domain"
+      "public-domain",
+      "unresolved"
      ],
      "title": "The Catholic Encyclopedia, Volume 8 (New York, 1910)",
      "year": 1910
@@ -21688,8 +21695,8 @@
      "file": "2026-2026-09-05-ccel-web.json",
      "id": "edition.john-chrysostom.homilies-on-colossians.ccel-web-2026-09-05",
      "language": "en",
-     "passages": 5,
-     "readable": 5,
+     "passages": 7,
+     "readable": 7,
      "rights": [
       "public-domain"
      ],
@@ -28754,6 +28761,19 @@
      ],
      "title": "Ordo: 1 November 2026, default English view, retrieved 25 October 2026",
      "year": 2026
+    },
+    {
+     "date": "2026-11-02",
+     "file": "2026-2026-11-02-web.json",
+     "id": "edition.fsspx.ordo.2026-11-02-web",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "unresolved"
+     ],
+     "title": "Ordo: 8 November 2026, default English view, retrieved 2 November 2026",
+     "year": 2026
     }
    ],
    "id": "work.fsspx.ordo",
@@ -35627,6 +35647,20 @@
       "restricted"
      ],
      "title": "New American Bible, Revised Edition: USCCB web state",
+     "year": 2026
+    },
+    {
+     "date": "2026-11-02",
+     "file": "2026-2026-11-02-english-usccb-web.json",
+     "id": "edition.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-11-02",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted",
+      "unresolved"
+     ],
+     "title": "New American Bible, Revised Edition: USCCB web state, 2 November 2026",
      "year": 2026
     }
    ],

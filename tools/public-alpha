@@ -3779,6 +3779,35 @@ def add_table_header_scopes(rendered_html: str) -> str:
     )
 
 
+def mark_catalogue_tables(rendered_html: str) -> str:
+    """Opt static landing tables into the shared component; retain every cell."""
+    def mark(match: re.Match) -> str:
+        headers = [html.unescape(re.sub(r"<[^>]*>", "", value)).strip()
+                   for value in re.findall(r"<th\b[^>]*>(.*?)</th>", match.group(2), re.DOTALL)]
+        classes = ["catalogue-table"]
+        has_id = headers[:1] == ["ID"]
+        if len(headers) > 2:
+            classes.append(f"catalogue-details-{len(headers) - (2 if has_id else 1)}")
+        if has_id:
+            classes.append("catalogue-table-id")
+        if headers and headers[-1] in {
+            "Focus", "Role", "Coverage", "Course", "Best for", "Books and territory",
+            "Contents", "Stable lessons and focus",
+        }:
+            classes.append("catalogue-table-notes")
+        proper = headers[-2:] == ["ChatGPT", "Claude"] and any(
+            label in headers for label in ("Sunday", "Celebration"))
+        if proper:
+            classes.append("catalogue-propers")
+        if proper and has_id:
+            classes.append("catalogue-propers-id")
+        if proper and "Cycle" in headers:
+            classes.append("catalogue-propers-cycle")
+        return '<table class="' + " ".join(classes) + '">' + match.group(2)
+
+    return re.sub(r"(<table>)(\s*<thead>.*?</thead>)", mark, rendered_html, flags=re.DOTALL)
+
+
 # The shape a fence leaves behind when it is not recognised as a fence: a code
 # span that opens a block — a paragraph, a list item, a quotation, a table cell
 # — and then runs onto a second line. A genuine inline code span may wrap across
@@ -3840,6 +3869,9 @@ def render_page(
         )))
     except MarkdownRenderError as exc:
         raise ReleaseError(str(exc)) from exc
+    catalogue = source_relative == "README.md" or source_relative.startswith("library/")
+    if catalogue:
+        content = mark_catalogue_tables(content)
     reject_unrendered_code_fences(source_relative, content)
     return wrap_in_layout(
         source_relative,
@@ -3850,6 +3882,10 @@ def render_page(
         content,
         preview,
         authorization,
+        body_extra=(
+            '<script src="' + relative_link(output_relative, "shared/catalogue-navigation.js")
+            + '"></script>' if catalogue else ""
+        ),
     )
 
 

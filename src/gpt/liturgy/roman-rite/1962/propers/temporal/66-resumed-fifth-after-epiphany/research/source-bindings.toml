@@ -1,0 +1,441 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = ["Printed420–421/PDF501–502 nos1749–1758", "Printed293/PDF374 no1082", "PDF10,16,20,32 RG18,109,111; RGMR298,494"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Complete cached PDF rehashed; target images and rubric pages independently read. Latin wording, boundaries and full Trinity Preface compared with identified public-domain antecedents. No public-domain status is claimed for the1962 edition. Checked native bounds: Printed420–421/PDF501–502 nos1749–1758; Printed293/PDF374 no1082; PDF10,16,20,32 RG18,109,111; RGMR298,494."
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+verified_on = "2026-11-02"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+loci = ["Printed42–44/PDF128–130 Epiphany5 own orations, Epistle and Gospel", "Printed357–358/PDF443–444 five resumed chants", "Printed239–240/PDF325–326 Trinity Preface"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Whole102880787-byte scan reacquired and hash matched. Word-level Latin antecedents independently image-read; orthography, punctuation and short conclusions remain separately recorded. Historical additional prayers and other lessons are excluded. Checked native bounds: Printed42–44/PDF128–130 Epiphany5 own orations, Epistle and Gospel; Printed357–358/PDF443–444 five resumed chants; Printed239–240/PDF325–326 Trinity Preface."
+source_fingerprint = "sha256:53cf8c027d0647a872a62d51ef6884807380f4b5050ae98f65506b3578ce4fd8"
+verified_on = "2026-11-02"
+
+[[bindings]]
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+loci = ["trinity-preface", "epiph-05"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Whole24767551-byte scan reacquired and hash matched; original page images compared with retained English/Latin TSV rows. Exact historical abbreviations retained; Google delivery rights unresolved independently of underlying1861 wording. Checked native bounds: Printed101–102/PDF112–113 own three orations; Printedxxvii–xxix/PDF38–40 dialogue, common opening, Trinity clause and Sanctus."
+source_fingerprint = "sha256:acbf74df2947911ea8c0a461b80cd025f440b94dad8a5be1829a6a50971c1655"
+verified_on = "2026-11-02"
+
+[[bindings]]
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+loci = ["epiph-05/collect", "epiph-05/secret", "epiph-05/postcommunion"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Retained historical transcription read with corresponding original page image. Use only the identified blocks; preserve own-witness insertion instructions and abbreviations. Checked native bounds: TSV47–49 epiph-05."
+source_fingerprint = "sha256:200494ff703c571c74a56a4a6c9a0c32279d2a9136280490748327dd9e1c538c"
+verified_on = "2026-11-02"
+
+[[bindings]]
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en"
+loci = ["trinity-preface", "epiph-05"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Retained historical transcription read with corresponding original page image. Use only the identified blocks; preserve own-witness insertion instructions and abbreviations. Checked native bounds: Rows3,4,6: common opening, Sanctus, Trinity clause."
+source_fingerprint = "sha256:228733d9248988b0eb27e84b159ee4053384eb72863134056c1c9ed115f753b5"
+verified_on = "2026-11-02"
+
+[[bindings]]
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la"
+loci = ["trinity-preface", "epiph-05"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Retained historical transcription read with corresponding original page image. Use only the identified blocks; preserve own-witness insertion instructions and abbreviations. Checked native bounds: Rows3,4,6: common opening, Sanctus, Trinity clause."
+source_fingerprint = "sha256:4dd570d15a594e4ab3b870a81e16e96c4802adaf6907f2f26dd29b76fdaae4ff"
+verified_on = "2026-11-02"
+
+[[bindings]]
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en"
+loci = ["ordinarium-oblatio"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Retained historical transcription read with corresponding original page image. Use only the identified blocks; preserve own-witness insertion instructions and abbreviations. Checked native bounds: Row59 Sursum corda, printedxxvii."
+source_fingerprint = "sha256:f8a1559f637999bed2fe05cdbbc842c4093fd4a022bad417a76077dfd512e839"
+verified_on = "2026-11-02"
+
+[[bindings]]
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la"
+loci = ["ordinarium-oblatio"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Retained historical transcription read with corresponding original page image. Use only the identified blocks; preserve own-witness insertion instructions and abbreviations. Checked native bounds: Row59 Sursum corda, printedxxvii."
+source_fingerprint = "sha256:9a4a40d9355f51a081b3c9739cd6806a0d0d35ec09d07a688e6913925ba8b775"
+verified_on = "2026-11-02"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.gutenberg-text-7d10da78"
+loci = ["Jer.29.1-32", "Ps.43.1-26", "Ps.84.1-14", "Ps.129.1-8", "Col.1.1-29", "Col.2.1-23", "Col.3.1-25", "Col.4.1-18", "Matt.13.1-58", "Mark.11.1-33"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Complete literary contexts independently read in this exact composite Challoner electronic witness. Appointed scriptural English is mechanically selected from it, without translating liturgical adaptations. Bible notes are distinguished from biblical text. Checked native bounds: Jer29 entire; Ps43,84,129 entire; Col1–4 entire; Matt13 entire; Mark11 entire."
+source_fingerprint = "sha256:192362da4273317daa469770d5b137a16215f015fc72fae410c0ece2bf70e03f"
+verified_on = "2026-11-02"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-10.ccel-web-2026-09-17.ccel-text-adb8f1c9"
+loci = ["Chrysostom Homily46.1; physical27066–27232; whole homily27066–27480"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Direct Matthew13:24–30 exegesis read in complete homily: heretics, watchfulness, prohibition of killing, collateral injury and possible conversion; his permission of nonlethal coercion retained as a material historical limit. Later mustard/leaven paragraphs are context, not appointed text. Checked native bounds: Chrysostom Homily46.1; physical27066–27232; whole homily27066–27480."
+source_fingerprint = "sha256:0209917237dc0599614ab5b3a70d1563de63045007c4a8d4eb7776dd6ec37992"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-13.english-ccel-web-2026-09-05.ccel-npnf113-text-54274dd9"
+loci = ["Chrysostom Colossians Homily8 on3:12–15, physical26680–26775", "Homily9 on3:16–17, physical27136–27305"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read the paragraphs on mercy, forgiveness, charity as bond, peace as umpire, and abundant indwelling Scripture/singing. Native homily numbering identifies Colossians, not other constituent works with the same number. This is a historical NPNF translation, not New Advent revision. Checked native bounds: Chrysostom Colossians Homily8 on3:12–15, physical26680–26775; Homily9 on3:16–17, physical27136–27305."
+source_fingerprint = "sha256:374d296602c0a52e4c252ad0e7704b9c9952d06f6b66b891bb391c8509c390db"
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.ccel-text-ce371798"
+loci = ["Augustine Sermon23 [Benedictine73], §§1–4, physical32064–32188"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete sermon body read. Direct Matthew13 reception: field is world, bad Christians among good, tares may become wheat, humans may err while angelic harvest does not; tares may be in clergy or laity. Checked native bounds: Augustine Sermon23 [Benedictine73], §§1–4, physical32064–32188."
+source_fingerprint = "sha256:7f21e16b88aa6eba6556891bfa99280fd5662bf42ef391de140ad6d2960b329a"
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
+loci = ["43.1-17", "84.1-13", "129.1-8", "128.1-8"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Numbering independently resolved by each NPNF footnote: printed English headings44/85/130 correspond to Latin43/84/129. Augustine on43 reads salvation prospectively amid persecution;84 captivity as sinful bondage;129 the sinner’s cry, sacrifice and resurrection. NPNF editorial abridgments are retained, never silently treated as unabridged Latin. Checked native bounds: Enarratio Ps43 §§1–17, NPNF Psalm44 physical14847–15213; Enarratio Ps84 §§1–13, NPNF Psalm85 physical41518–41952; Enarratio Ps129 §§1–8, NPNF Psalm130 physical62171–62334; Enarratio Ps128, NPNF Psalm129 physical61955–62170, inspected and omitted analogue."
+source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
+
+[[bindings]]
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+loci = ["Ps43 explanations1–8, physical1603–1624", "Ps84 explanations1–4, physical2987–3000", "Ps129 explanations1–8, physical4679–4695"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "O’Sullivan1866 abridged English as retained historical body; direct later saintly Psalm reception. Read pertinent explanations and immediate context; no quotation claimed collated against print. Bellarmine’s generic David language does not supply an occasion date. Checked native bounds: Ps43 explanations1–8, physical1603–1624; Ps84 explanations1–4, physical2987–3000; Ps129 explanations1–8, physical4679–4695."
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+
+[[bindings]]
+source_id = "artifact.bede.in-marci-evangelium-expositio.2026-10-13-latin-wikisource-migne.latin-text-b8197766"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Direct Latin Bede text independently read: perfect faith works through charity; imperfect hearers ask pardon and forgive. Source is a complete527-paragraph web transcription; this Mark11 locus was not newly collated against PL92 page images. Generated {1.11} locator is chapter, not bookI. Native Mark11 locus exceeds the current work record’s Mark10-only locus_pattern; registration must justify an extension before fragment admission. No false Mark10 locus is asserted. Checked native bounds: Mark11:20–26; physical338–339; context330–340."
+source_fingerprint = "sha256:838ec2d9bdd3872f40f104399e97325542dc20fc47dd3b1b4d576e018c618fc2"
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-24.paris-1865.internet-archive-pdf-e55e8bd2"
+loci = ["column-893", "column-894", "column-895", "column-896"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Whole67109688-byte facsimile reacquired and matched; native columns893–896 independently image-read after rawOCR lead. Promise opposes false immediate return; God urges prayer for the promised gift; Jerome’s anagogy and criticism of preexistent-soul interpretation kept distinct. Checked native bounds: Jerome In Ieremiam5,29:10–14, cols893–894/PDF451; contextcols895–896/PDF452."
+source_fingerprint = "sha256:c6fb33bd194ee93902e3c4fa9109a1ee8938e91070b51ef6794d8a119a51a682"
+verified_on = "2026-11-02"
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-24.paris-1865.ia-djvu-ocr-7be28ebd"
+loci = ["column-893", "column-894", "column-895", "column-896"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Raw OCR finding aid for Jerome’s29:10–14 locus; severe recognition damage; no quotation controlled by this layer. Checked native bounds: physical61920–62015."
+source_fingerprint = "sha256:80a89a5452671287575c7cc8f44008906ff16cbcc370048c23fe2db70bff2284"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-secunda-secundae.pg18755-body-13b14d17"
+loci = ["II-II.83.15.corpus", "II-II.83.15.reply-2", "II-II.83.15.reply-3", "II-II.83.16.corpus"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Doctrinal illumination of prayer; distinguishes merit from impetration, mercy toward sinner, saving good and perseverance. It is not presented as a direct commentary on Mark11:24; modern editorial attribution warnings remain. Checked native bounds: II-II q83 a15 corpus/ad2/ad3, a16 corpus; physical36406–36557."
+source_fingerprint = "sha256:a85980f155106dc475c0a698619c509a12e9ec9f175ff42dd4f11734323234e9"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.opera-editio-altera-veneta-tomus-3.venice-bettinelli-1745.ia-djvu-ocr-10aa155e"
+loci = ["Super Matthaeum13; physical24000–24120"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Inspected OCR lead only, including tares/heretics and comparison of Augustine/Chrysostom; not newly image-collated and not a carrying source. Registration should defer a fragment until the native page and clean text are checked. Checked native bounds: Super Matthaeum13; physical24000–24120."
+source_fingerprint = "sha256:9fcd48561f23ea12b2a7271b5cbcdeaee88f85652a5194fe6756bfb2b4aa558f"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.in-omnes-pauli-epistolas-commentaria.dessain-volume-2-1857.book-facsimile-e8b81493"
+loci = ["Super Colossenses3, lectio3 latter part, printed442/PDF446; contextual images PDF444,445,448,449,450"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Original image independently read at Col3:16–17: word produces instruction, devotion and direction of action; song belongs principally to the heart; ordinary acts refer to God habitually without requiring an unceasing explicit act. The complete offered derivative repeats printed438–439 at PDF444–445 and jumps to442 at446, omitting440–441; first part of lectio3 on3:12–15 was not read in this witness. Checked native bounds: Super Colossenses3, lectio3 latter part, printed442/PDF446; contextual images PDF444,445,448,449,450."
+source_fingerprint = "sha256:5993ed59d9e013a7b20933ea5af49aeb557c9f345062673f91248f15f9c67ebf"
+verified_on = "2026-11-02"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.in-omnes-pauli-epistolas-commentaria.dessain-volume-2-1857.book-ocr-2b7b11dc"
+loci = ["Super Colossenses3; physical46070–47360; appointed latter lectio3 after physical46771"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Raw OCR finding aid checked against printed442/PDF446; immediate earlier and later Col3–4 contexts read. The missing printed440–441 is a delivery gap, not proof that Aquinas omits those verses. Checked native bounds: Super Colossenses3; physical46070–47360; appointed latter lectio3 after physical46771."
+source_fingerprint = "sha256:fc0fe651fc1f34b1d124831a6538442a81cd47acb7ec6161c19a7bfb4269aadf"
+
+[[bindings]]
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-djvu-text-95cdb0fc"
+loci = ["vol-xi-p-524", "vol-xi-p-525", "vol-xi-p-526", "vol-xi-p-527", "vol-xi-p-528"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Fromage continuation translated by Shepherd, not Guéranger’s own composition. Target appendix prints matching proper bodies and additional-prayer crossreferences, with no developed exposition here; checked as compilation witness and bounded negative for commentary. Checked native bounds: Fifth Sunday after Epiphany pp524–528; physical31552–31905."
+source_fingerprint = "sha256:5704de4921a1ed8c6da6c88bc1235f8aa14d39ef3973edc2061508aaf727c16d"
+
+[[bindings]]
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-pdf-f1893738"
+loci = ["vol-xi-p-524", "vol-xi-p-525", "vol-xi-p-526", "vol-xi-p-527", "vol-xi-p-528"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Whole35074623-byte file reacquired and hash matched. Relevant page images independently inspected; continuation attribution follows its registered edition. Checked native bounds: pp524–528/PDF552–556."
+source_fingerprint = "sha256:180faa2feba4fd64d6c049b1361b8adddb9712fb6b990b7fcb4dc426ba725283"
+verified_on = "2026-11-02"
+
+[[bindings]]
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-4-1912.internet-archive-vatican-ocr-pdf-e071e825"
+loci = ["AAS4(1912) pp463–465, responsaI–IX; especiallyV–VI p464 and approval p465"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Whole3842356-byte official scan reacquired and hash matched. All three page images independently read; preserves Matthew/Mark/Luke relative order and rejection of composition as late as Jerusalem’s destruction, without silently turning either into an exact year. Checked native bounds: AAS4(1912) pp463–465, responsaI–IX; especiallyV–VI p464 and approval p465."
+source_fingerprint = "sha256:46757a7e52dba390f8e3054e0da5c2896688d183110222ffb1102f4dcf687721"
+verified_on = "2026-11-02"
+
+[[bindings]]
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la"
+loci = ["ordinarium-praeparatio"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Read historical doxology page images; Latin full form is available while the first English half remains abbreviated in this witness. No invented expansion is supplied. Checked native bounds: Printedxv–xvi/PDF26–27 Gloria Patri cue and doxology."
+source_fingerprint = "sha256:da8dfeefcadff34001c7364574e151c688732871c1587f4899c7e833154d162d"
+verified_on = "2026-11-02"
+
+[[bindings]]
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en"
+loci = ["ordinarium-praeparatio"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Read historical doxology page images; Latin full form is available while the first English half remains abbreviated in this witness. No invented expansion is supplied. Checked native bounds: Printedxv–xvi/PDF26–27 Gloria Patri cue and doxology."
+source_fingerprint = "sha256:a66401d7c054066ac495044bf22268e1f8f9d301b47589708812dac71d73392b"
+verified_on = "2026-11-02"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08334a-dd4ae528-article-text"
+loci = ["Chronology source’s composition/date/destination paragraphs named in research/chronology-notes.md"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Exact retained historical article derivative independently reopened for controlling chronology bounds. Dates are accepted only through the canonical chronology projection; the Jerome604BC scope defect is tracked separately. Fresh host HTML wrappers were acquired for delivery comparison but do not replace this exact retained witness. Checked native bounds: Chronology source’s composition/date/destination paragraphs named in research/chronology-notes.md."
+source_fingerprint = "sha256:69f374bd4cba29594ff367333d729ed1d4031dbdfe43df91f4f2e540b51b7334"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25-article-text"
+loci = ["Chronology source’s composition/date/destination paragraphs named in research/chronology-notes.md"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Exact retained historical article derivative independently reopened for controlling chronology bounds. Dates are accepted only through the canonical chronology projection; the Jerome604BC scope defect is tracked separately. Fresh host HTML wrappers were acquired for delivery comparison but do not replace this exact retained witness. Checked native bounds: Chronology source’s composition/date/destination paragraphs named in research/chronology-notes.md."
+source_fingerprint = "sha256:fb390d86dc25dc07c596f9fc077086505507490f09a054b5a5c25ff17ab4c7f7"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8-article-text"
+loci = ["Chronology source’s composition/date/destination paragraphs named in research/chronology-notes.md"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Exact retained historical article derivative independently reopened for controlling chronology bounds. Dates are accepted only through the canonical chronology projection; the Jerome604BC scope defect is tracked separately. Fresh host HTML wrappers were acquired for delivery comparison but do not replace this exact retained witness. Checked native bounds: Chronology source’s composition/date/destination paragraphs named in research/chronology-notes.md."
+source_fingerprint = "sha256:83263e9b6b864dbc2776538285f276ac7740d8e39098d077148ce421ca998f4f"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04131b-08367306-article-text"
+loci = ["Chronology source’s composition/date/destination paragraphs named in research/chronology-notes.md"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Exact retained historical article derivative independently reopened for controlling chronology bounds. Dates are accepted only through the canonical chronology projection; the Jerome604BC scope defect is tracked separately. Fresh host HTML wrappers were acquired for delivery comparison but do not replace this exact retained witness. Checked native bounds: Chronology source’s composition/date/destination paragraphs named in research/chronology-notes.md."
+source_fingerprint = "sha256:91a33dc8f172eab755c244ee0c93a4bad335ab7be33df8716c8264711389df78"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef-article-text"
+loci = ["Chronology source’s composition/date/destination paragraphs named in research/chronology-notes.md"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Exact retained historical article derivative independently reopened for controlling chronology bounds. Dates are accepted only through the canonical chronology projection; the Jerome604BC scope defect is tracked separately. Fresh host HTML wrappers were acquired for delivery comparison but do not replace this exact retained witness. Checked native bounds: Chronology source’s composition/date/destination paragraphs named in research/chronology-notes.md."
+source_fingerprint = "sha256:a5698ebe70292d9dc1c32df2c8cc440778cb8d0dc2f840f11d127482a4c4d5dd"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c-article-text"
+loci = ["Chronology source’s composition/date/destination paragraphs named in research/chronology-notes.md"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Exact retained historical article derivative independently reopened for controlling chronology bounds. Dates are accepted only through the canonical chronology projection; the Jerome604BC scope defect is tracked separately. Fresh host HTML wrappers were acquired for delivery comparison but do not replace this exact retained witness. Checked native bounds: Chronology source’s composition/date/destination paragraphs named in research/chronology-notes.md."
+source_fingerprint = "sha256:0a5a9e3b92db7d3a9953343ff8b1a04ec7baa2a01adbf31eadc28dc4e8f410d4"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09674b-f5a5a8a9-article-text"
+loci = ["Chronology source’s composition/date/destination paragraphs named in research/chronology-notes.md"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Exact retained historical article derivative independently reopened for controlling chronology bounds. Dates are accepted only through the canonical chronology projection; the Jerome604BC scope defect is tracked separately. Fresh host HTML wrappers were acquired for delivery comparison but do not replace this exact retained witness. Checked native bounds: Chronology source’s composition/date/destination paragraphs named in research/chronology-notes.md."
+source_fingerprint = "sha256:5946f7fd5d40591fa1d547bcb4dcb0573b720fb85502fb974a2f628c7129aabb"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04131b-html-20261102-cbddc95f"
+loci = ["Complete response identity and modern wrapper; historical article uses are separately bound"]
+role = "context"
+states = ["cataloged", "acquired"]
+context = "Acquisition/metadata comparison only; this fresh wrapper does not replace or confer new inspection on the separately bound historical article text."
+source_fingerprint = "sha256:0d48925f7b88cf947103d41fee5c68582ee3da12275823e46fcf82feb1328f74"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08334a-html-20261102-45bbe0b4"
+loci = ["Complete response identity and modern wrapper; historical article uses are separately bound"]
+role = "context"
+states = ["cataloged", "acquired"]
+context = "Acquisition/metadata comparison only; this fresh wrapper does not replace or confer new inspection on the separately bound historical article text."
+source_fingerprint = "sha256:4946f01730ea5b1dbe4ce0a8c8e5e4eff2bdb9beef2022f597ab25342b8a9b24"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09674b-html-20261102-c67844eb"
+loci = ["Complete response identity and modern wrapper; historical article uses are separately bound"]
+role = "context"
+states = ["cataloged", "acquired"]
+context = "Acquisition/metadata comparison only; this fresh wrapper does not replace or confer new inspection on the separately bound historical article text."
+source_fingerprint = "sha256:0db397dcc6a135893aa50364d7d71265818f84280f493cac792e2587a7829a7a"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-html-20261102-cb1ad8f4"
+loci = ["Complete response identity and modern wrapper; historical article uses are separately bound"]
+role = "context"
+states = ["cataloged", "acquired"]
+context = "Acquisition/metadata comparison only; this fresh wrapper does not replace or confer new inspection on the separately bound historical article text."
+source_fingerprint = "sha256:499e8ac1e2cd04de0de175e6a1379f3270ba259e9e68a36b02381678eac434c8"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-html-20261102-91f94e03"
+loci = ["Complete response identity and modern wrapper; historical article uses are separately bound"]
+role = "context"
+states = ["cataloged", "acquired"]
+context = "Acquisition/metadata comparison only; this fresh wrapper does not replace or confer new inspection on the separately bound historical article text."
+source_fingerprint = "sha256:b770a996ebaf1f019d6e0bfe3f6f72a6f12453fea9a95eed96054577b03c80bc"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-html-20261102-3c591620"
+loci = ["Complete response identity and modern wrapper; historical article uses are separately bound"]
+role = "context"
+states = ["cataloged", "acquired"]
+context = "Acquisition/metadata comparison only; this fresh wrapper does not replace or confer new inspection on the separately bound historical article text."
+source_fingerprint = "sha256:537b7157c003ef02c597d635f5840b3b58f947be11557e8ed96578bf6e98abb2"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-html-20261102-d4651010"
+loci = ["Complete response identity and modern wrapper; historical article uses are separately bound"]
+role = "context"
+states = ["cataloged", "acquired"]
+context = "Acquisition/metadata comparison only; this fresh wrapper does not replace or confer new inspection on the separately bound historical article text."
+source_fingerprint = "sha256:fadf521b9db4f6a00f3a0fce89f0b73b7467ab9fe4e794f651cc343e8b08a9db"
+
+[[bindings]]
+source_id = "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-11-02.psalms-introduction-082a312e"
+loci = ["Introduction: paragraph on individual Psalm dating and final collection"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "The paragraph on insecure individual Psalm dating and the pre-Maccabean bound was inspected in research; no other Psalm body is claimed read in this delivery."
+source_fingerprint = "sha256:a6bb8b01f635ed4f3da94d1d790130c930237fd3ae538c6aebaf67d1748a0969"
+
+[[bindings]]
+source_id = "artifact.fsspx.ordo.2026-11-02-web.default-2026-11-08-06f1d5a2"
+loci = ["8 November 2026 default heading, rank, color and celebration identity; Preface discrepancy"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "The date, resumed Fifth Sunday identity, rank and green color were checked. Its abbreviated Trinity Preface differs from the governing Missal and is not adopted as a text controller."
+source_fingerprint = "sha256:59360be19b875524586dfdc9cb4b5e47904383f8feba68a26ecb49658d6b65a7"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.resumed-epiphany-5-evidence-pages-20261102"
+loci = ["Pustet 1862 printed42–44,239–240,357–358: Epiphany5 orations and readings, Trinity Preface and resumed chants. Inherited undersized PDF page boxes remain unchanged."]
+role = "context"
+states = ["cataloged", "acquired"]
+context = "Pustet 1862 printed42–44,239–240,357–358: Epiphany5 orations and readings, Trinity Preface and resumed chants. Inherited undersized PDF page boxes remain unchanged. Mechanical retention from inspected parent pages; no separate new collation is claimed."
+source_fingerprint = "sha256:e192c1ed813d703af656e81fcc66ad77824be2d28251240860422118d7a1dff5"
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-24.paris-1865.jeremias-29-columns-893-896-20261102"
+loci = ["column-893", "column-894", "column-895", "column-896"]
+role = "context"
+states = ["cataloged", "acquired"]
+context = "Jerome In Ieremiam5 on29:10–14, PL24 columns893–894 with columns895–896 as context; original PDF451–452. Mechanical retention from inspected parent pages; no separate new collation is claimed."
+source_fingerprint = "sha256:50e906a89316fea82a50adc8f132a83f4df61e275f3e8477f59164a1e2ef5687"
+
+[[bindings]]
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.epiphany-5-appendix-pages-524-528-20261102"
+loci = ["vol-xi-p-524", "vol-xi-p-525", "vol-xi-p-526", "vol-xi-p-527", "vol-xi-p-528"]
+role = "context"
+states = ["cataloged", "acquired"]
+context = "Fromage continuation, Shepherd1883 volXI, Fifth Sunday after Epiphany, printed524–528/original PDF552–556; proper bodies without developed exposition. Mechanical retention from inspected parent pages; no separate new collation is claimed."
+source_fingerprint = "sha256:251dc76bbc17cbbe255e9af179cac1f5efbea4b60a6a9e976dbaff4171363ee9"
+
+[[bindings]]
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-4-1912.responsa-marci-lucae-pages-463-465-20261102"
+loci = ["AAS4(1912) pp463–465, PBC responsaI–IX and papal approval: bounded official chronology evidence, not biblical commentary."]
+role = "context"
+states = ["cataloged", "acquired"]
+context = "AAS4(1912) pp463–465, PBC responsaI–IX and papal approval: bounded official chronology evidence, not biblical commentary. Mechanical retention from inspected parent pages; no separate new collation is claimed."
+source_fingerprint = "sha256:65d51518f3c983f077dc1c830acc56feeef11639dff96c3e46e8e004a6a7124c"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.book-index-a7271aac"
+loci = ["Ps.43.8-9"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Book-index row21: Psalms, Vulgate/Septuagint numbering. Registration independently read the native words/numbering for the Gradual alignment; no source, verse table or fingerprint was rewritten."
+source_fingerprint = "sha256:da9e5e9f9e1cf2c72dfc65a0405dd3897912f471a484c7f34933ccaf9d369f47"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.psalm-numbering-ee3c7757"
+loci = ["Ps.43.8-9"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Psalm-numbering TSV rows69–70: Vulgate43:1 inscription and43:2–26; Hebrew/English Psalm44; English unnumbered-title offset is nonuniform. Registration independently read the native words/numbering for the Gradual alignment; no source, verse table or fingerprint was rewritten."
+source_fingerprint = "sha256:c3702f219d6641eb66186bd7d3d557375aec2843467d0d54aabe3397ec7e8fb7"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+loci = ["Ps.43.8-9"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "21-psalms.tsv rows658,665–666,683: native Ps43 title, verses8–9 and final26. Registration independently read the native words/numbering for the Gradual alignment; no source, verse table or fingerprint was rewritten."
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-aliases-ef2e05a5"
+loci = ["Ps.43.8-9"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete23-row verse-alias table: no departure for Ps43; only Psalm28:11 and150:6 are Psalm-specific override rows. Registration independently read the native words/numbering for the Gradual alignment; no source, verse table or fingerprint was rewritten."
+source_fingerprint = "sha256:c719e892d26c4cc42abf4be94c2db9034a37f50022132371ace68ec0e31daadd"
+
+[[bindings]]
+source_id = "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-11-02.matthew-introduction-39681443"
+loci = ["Introduction, final authorship/source/date/place paragraphs; complete introduction context read"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Probabilistic modern majority account of the received Greek Gospel and plausible Antioch setting. The existing canonical critical Matthew lower-bound subject is selected separately; no new date or Aramaic-predecessor date is authored."
+source_fingerprint = "sha256:9212f68a2aeb218001036cde91a699b4ba5e38a53056c4e3ec92147cd65e59d5"
+
+[[bindings]]
+source_id = "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-11-02.mark-introduction-web-text-272bcce7"
+loci = ["Web extraction source lines 72-75, with complete introduction and divisions at47-84 read"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Modern authorship and possible Syrian place qualify the John Mark/Petrine/Roman tradition. Reread source lines62-64,72-75,81-84: the tentative perhaps-shortly-after proposal dates the Gospel through16:8, with no secure date, terminal year or date for the added endings. The exact critical.gospel-of-mark composition comparison is selected separately for Communion Mark11:24 through the canonical owner; no local date is authored."
+source_fingerprint = "sha256:5d5a5693ad032b0bf4ba6b892dfa59537d60f6da8cf5bde42881b19476e5e5b9"
+
+[[bindings]]
+source_id = "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-10-20.colossians-introduction-34fce9b4"
+loci = ["Complete introduction HTML618-636; prison/authorship paragraphs620,626"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Preserved complete October20 HTML independently rehashed and reread on November2. The current official browser text agrees at the controlling paragraphs; direct current HTTP fetch returned403. The bound October artifact controls uncertain imprisonment site, Roman/Caesarea/Ephesus alternatives and the reported Pauline-pupil hypothesis; no numeric date is inferred."
+source_fingerprint = "sha256:c753ce17b25acb0de7c8dc718f16df1b97a43ac8490dca1c7f38aa9f4c8a6f53"

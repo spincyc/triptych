@@ -444,17 +444,46 @@ tbody tr:nth-child(even) { background: #fbf8f3; }
 }
 .section-toned tbody tr:nth-child(even) { background: var(--section-row); }
 
-.page-home table:first-of-type,
-.page-library-root table:first-of-type {
+/* Catalogue columns compare publications; give their format links room before
+   spending height on wrapping. Reading pages keep their own text measure. */
+html:has(.page-catalog, .page-home) { scroll-behavior: auto; }
+:is(.page-catalog, .page-home) {
+  max-width: var(--catalogue-measure, 94rem);
+  padding: clamp(1rem, 2.5vw, 2.5rem);
+}
+:is(.page-catalog, .page-home) > h1 { font-size: clamp(2rem, 5vw, 3rem); }
+:is(.page-catalog, .page-home) > p { max-width: 75ch; }
+/* Apps can opt a table into this component without adopting a landing layout.
+   The sticky offset accommodates an owning app's persistent navigation. */
+.catalogue-table {
+  --catalogue-cell-padding: 0.4rem 0.6rem;
+  display: table;
+  overflow: visible;
   border-collapse: separate;
-  border-spacing: 0 0.48rem;
+  border-spacing: 0;
+  line-height: 1.4;
 }
-/* The portal tables name a section and describe it, which the rows already
-   say; Markdown requires the header row, so it is written and not shown. */
-.page-home table:first-of-type thead,
-.page-library-root table:first-of-type thead {
-  display: none;
+.catalogue-table :is(th, td) {
+  padding: var(--catalogue-cell-padding);
+  border-width: 0 1px 1px 0;
 }
+.catalogue-table tr > :first-child { border-left-width: 1px; }
+.catalogue-table thead tr:first-child > th { border-top-width: 1px; }
+.catalogue-table thead {
+  position: sticky;
+  top: var(--catalogue-sticky-offset, 0px);
+  z-index: 2;
+}
+.catalogue-table th { background: var(--section-pale, #f1ebe2); }
+.section-white .catalogue-table { --section-ink: #70603a; }
+.section-gold .catalogue-table { --section-ink: #725000; }
+.page-home .catalogue-table:first-of-type a { color: var(--rubric-dark); }
+.catalogue-table td a {
+  display: inline-block;
+  scroll-margin-block: calc(var(--catalogue-heading-height, 10rem) + var(--catalogue-sticky-offset, 0px) + 0.5rem) 0.5rem;
+}
+.catalogue-table tbody td:has(> strong) { font-weight: 600; }
+.catalogue-table tbody td > strong { font-weight: inherit; }
 .page-home table:first-of-type td,
 .page-library-root table:first-of-type td {
   border-color: var(--line);
@@ -611,6 +640,70 @@ a.footnote-backref { text-decoration: none; }
   .site-footer a { display: inline-block; padding-block: 0.35rem; }
   .page-shell { margin-top: 0; border-left: 0; border-right: 0; border-radius: 0; box-shadow: none; }
   table { display: block; overflow-x: auto; }
+  .catalogue-table { --catalogue-cell-padding: 0.4rem 0.35rem; font-size: 0.875rem; }
+  .catalogue-table :is(th, td) {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .catalogue-table tr > [style*="text-align: right"] { white-space: nowrap; }
+  .catalogue-details-2 { --catalogue-detail-columns: 2; }
+  .catalogue-details-3 { --catalogue-detail-columns: 3; }
+  .catalogue-details-4 { --catalogue-detail-columns: 4; }
+  :is(.catalogue-details-2, .catalogue-details-3, .catalogue-details-4),
+  :is(.catalogue-details-2, .catalogue-details-3, .catalogue-details-4) :is(thead, tbody) { display: block; }
+  :is(.catalogue-details-2, .catalogue-details-3, .catalogue-details-4) tr {
+    display: grid;
+    grid-template-columns: repeat(var(--catalogue-detail-columns), minmax(0, 1fr));
+  }
+  :is(.catalogue-details-2, .catalogue-details-3, .catalogue-details-4) tr > :first-child { grid-column: 1 / -1; grid-row: 1; }
+  :is(.catalogue-details-2, .catalogue-details-3, .catalogue-details-4) tr > :nth-child(n + 2) { grid-row: 2; }
+  :is(.catalogue-details-2, .catalogue-details-3, .catalogue-details-4) tr > :nth-child(2) { border-left-width: 1px; }
+  .catalogue-table-id tr { grid-template-columns: 3rem repeat(var(--catalogue-detail-columns), minmax(0, 1fr)); }
+  .catalogue-table-id tr > :first-child { grid-column: 1; }
+  .catalogue-table-id tr > :nth-child(2) { grid-column: 2 / -1; grid-row: 1; }
+  .catalogue-table-id tr > :nth-child(3) { border-left-width: 1px; }
+  .catalogue-table-notes.catalogue-details-2 tr {
+    grid-template-columns: minmax(3rem, 1fr) minmax(0, 3fr);
+  }
+  .catalogue-table-notes.catalogue-details-3 tr {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .catalogue-table-notes.catalogue-details-3 tr > :last-child {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    border-left-width: 1px;
+  }
+  .catalogue-propers-cycle tr { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .catalogue-propers tr > :nth-last-child(2) { grid-column: 1; border-left-width: 1px; }
+  .catalogue-propers tr > :last-child { grid-column: 2; }
+  .catalogue-propers-id tr { grid-template-columns: 2.1rem repeat(2, minmax(0, 1fr)); }
+  .catalogue-propers-id tr > :first-child { grid-column: 1; }
+  .catalogue-propers-id tr > :nth-child(2) { grid-column: 2 / -1; grid-row: 1; }
+  .catalogue-propers-id tr > :nth-last-child(2) { grid-column: 2; }
+  .catalogue-propers-id tr > :last-child { grid-column: 3; }
+  .catalogue-propers-cycle tr > :first-child { padding-right: 3.2rem; }
+  .catalogue-propers-cycle tr > :nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    border-left-width: 0;
+  }
+  .catalogue-propers-id.catalogue-propers-cycle tr {
+    grid-template-columns: 3.7rem repeat(2, minmax(0, 1fr));
+  }
+  .catalogue-propers-id.catalogue-propers-cycle tr > :first-child { padding-right: 0.35rem; }
+  .catalogue-propers-id.catalogue-propers-cycle tr > :nth-child(2) {
+    grid-column: 2 / -1;
+    padding-right: 3.2rem;
+    justify-self: stretch;
+    border-left-width: 1px;
+  }
+  .catalogue-propers-id.catalogue-propers-cycle tr > :nth-child(3) {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+    border-left-width: 0;
+  }
   /* The dossier's four columns need up to about 570px of unbreakable words,
      against 342px of measure at a 390px phone, so each row is set as two lines
      of two: its unit and citation over its location and date, beneath a header
@@ -671,6 +764,7 @@ a.footnote-backref { text-decoration: none; }
   .site-header nav, .release-banner, .site-footer, .skip-link { display: none; }
   body, .page-shell { background: #fff; }
   .page-shell { max-width: none; margin: 0; padding: 0; border: 0; box-shadow: none; }
+  .catalogue-table thead { position: static; }
   .section-toned > h1::before,
   .section-toned > h2::before { color: #777; }
 }

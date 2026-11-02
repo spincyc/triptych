@@ -419,7 +419,7 @@
         "tpt"
       ],
       "stage": "draft",
-      "usage": "proper-study-run-archive RUN_ID --cycles PATH [--output DIR] [--root DIR] [--redact-repository-paths]"
+      "usage": "proper-study-run-archive RUN_ID --cycles PATH [--output DIR] [--root DIR] [--redact-repository-paths] [--redact-operation-handles]"
     },
     "public-alpha": {
       "idempotent": true,

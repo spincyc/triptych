@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v15
+WORKFLOW_DIGEST: 4218c6138a9943b56536f7736897e8aece682852d8a205a5454ab0d09ee52d83
+RUN_ID: 0880812aa919d648
+COMMIT: 7b10db216dc859dfb239b97f64671abb245243e3
+STAGE: research-preflight
+ITERATION: 1
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-08","proper":"liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany","provider":"gpt","research_handoff":"none"}
+DOCUMENT_ROOT: src/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"RES-003","location":"research/chronology-notes.md:23 and73","problem":"The Catholic Encyclopedia article 'Epistle to the Colossians' is credited to Joseph MacRory, including the shorthand MacRory3. Its exact bound article/delivery records identify Cornelius Aherne (newadvent-04131b-08367306-article-text/artifact.toml:21). MacRory is the checked Mark article's author. The Colossians date evidence itself remains identifiable and supported.","required_result":"Credit Cornelius Aherne for the Colossians article and replace the corresponding shorthand attribution, retaining the exact article identity and checked paragraph.","severity":"advisory"},{"id":"RES-004","location":"propers/verified.md:211, with declared transcription normalizations at11\u201312","problem":"The target-controlled Preface transcription has quotidie, whereas the independently inspected 1962 Missal printed293/PDF374 has cotidie, also captured in retrieved.txt:141. Quotidie agrees with the historical antecedents, but this orthographic substitution is not among the declared transcription normalizations. The meaning and appointed element are unaffected.","required_result":"Use the target witness's cotidie in the target transcription or explicitly record the adopted historical spelling as a normalization/collation decision.","severity":"advisory"},{"id":"RES-005","location":"research/source-dispositions.toml:100, control-09","problem":"The source-disposition locus still lists Ps.43.1\u201327. The checked Challoner Psalm43 ends at verse26, and the source binding has already been corrected to Ps.43.1\u201326 at source-bindings.toml:79. This is a stale audit bound; the Gradual's appointed verses8\u20139 are correct.","required_result":"Align the disposition row's Psalm43 context bound with the actual complete witness and current binding: Ps.43.1\u201326.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

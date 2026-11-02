@@ -1,0 +1,186 @@
+{
+  "reviewed_markdown": {
+    "path": "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany.md",
+    "sha256": "c730f32518cf5e6f684b23313ed04f162241db25bb8b3aceaa5449267bc5de33",
+    "lines": 611
+  },
+  "reviewed_pdf": {
+    "path": "build/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany.pdf",
+    "sha256": "94fd25fe31f1118927ebd03798c7e7b697fc3e692e548d4afd7f22f7d4ae7e4a",
+    "pages": 21,
+    "visual_spotcheck": "Research PDF p. 5, whole Latin Preface"
+  },
+  "source_scope": [
+    "main.tex",
+    "sections/00-opening.tex",
+    "sections/10-appointed-text.tex",
+    "sections/20-commentary.tex",
+    "sections/30-patience-and-conversion.tex",
+    "sections/40-promise-prayer-and-pledge.tex",
+    "sections/50-comparison.tex",
+    "sections/70-historical-appendix.tex",
+    "sections/90-apparatus.tex",
+    "research/chronology-annotations.tex",
+    "generation-metadata.tex"
+  ],
+  "primary_loci_actually_read": [
+    "Chrysostom, Homilies on Matthew XLVI.1, retained NPNF I.10 lines 27066–27232: concern without discretion, collateral injury, possible conversion, nonlethal suppression and final punishment all preserved.",
+    "Augustine Sermon XXIII [Benedictine LXXIII], sections 1–4, retained NPNF I.6 lines 32064–32188: fallible servants, unerring angelic reapers, changing wicked Christians, clergy and laity all preserved.",
+    "Augustine, Exposition of Psalm 129, sections 1–8, retained NPNF Psalm 130 lines 62171–62334: hopeful sinner, propitiatory sacrifice, risen Head and waiting body all preserved.",
+    "Jerome In Jeremiam V on 29:10–14, retained PL 24 page image cols. 893–894: promise despite false-prophet timetables, commanded prayer for the promised gift, and anagogical rest all preserved."
+  ],
+  "text_fidelity": "Entire canonical Markdown read, with source/PDF comparison; the 479-sentence normalized extraction cross-check matched 470 automatically and the remaining nine at inspected page continuations, with no substantive omission/addition found.",
+  "rendered_checks": {
+    "desktop": {
+      "css_viewport": [
+        1440,
+        857
+      ],
+      "body_width": 1425,
+      "tables": [
+        {
+          "columns": 3,
+          "left": 403.09375,
+          "right": 1021.90625,
+          "rows": 12,
+          "scrollWidth": 619,
+          "width": 618.8125
+        },
+        {
+          "columns": 3,
+          "left": 403.09375,
+          "right": 1021.90625,
+          "rows": 12,
+          "scrollWidth": 618,
+          "width": 618.8125
+        }
+      ],
+      "four_senses": [
+        {
+          "bodies": 4,
+          "terms": [
+            "Literal.",
+            "Allegorical.",
+            "Moral.",
+            "Anagogical."
+          ]
+        },
+        {
+          "bodies": 4,
+          "terms": [
+            "Literal.",
+            "Allegorical.",
+            "Moral.",
+            "Anagogical."
+          ]
+        }
+      ],
+      "note_count": 30,
+      "note_reference_count": 30,
+      "broken_fragments": [],
+      "duplicate_ids": [],
+      "tex_debris": null,
+      "toc_click": {
+        "found": true,
+        "hash": "#lane-promise-prayer-and-pledge",
+        "targetTop": -0.46875
+      },
+      "note_click": {
+        "hash": "#fn:1",
+        "targetExists": true
+      },
+      "note_return": {
+        "hash": "#fnref:1",
+        "targetExists": true
+      },
+      "inventory_horizontal_access": {
+        "clientWidth": 619,
+        "lastColumnRight": 1021.40625,
+        "mask": "none",
+        "scrollLeft": 0,
+        "scrollWidth": 619,
+        "tableRight": 1021.90625
+      },
+      "console_logs": []
+    },
+    "mobile": {
+      "css_viewport": [
+        390,
+        701
+      ],
+      "body_width": 375,
+      "tables": [
+        {
+          "columns": 3,
+          "left": 24,
+          "right": 351,
+          "rows": 12,
+          "scrollWidth": 408,
+          "width": 327
+        },
+        {
+          "columns": 3,
+          "left": 24,
+          "right": 351,
+          "rows": 12,
+          "scrollWidth": 327,
+          "width": 327
+        }
+      ],
+      "four_senses": [
+        {
+          "bodies": 4,
+          "terms": [
+            "Literal.",
+            "Allegorical.",
+            "Moral.",
+            "Anagogical."
+          ]
+        },
+        {
+          "bodies": 4,
+          "terms": [
+            "Literal.",
+            "Allegorical.",
+            "Moral.",
+            "Anagogical."
+          ]
+        }
+      ],
+      "note_count": 30,
+      "note_reference_count": 30,
+      "broken_fragments": [],
+      "duplicate_ids": [],
+      "tex_debris": null,
+      "toc_click": {
+        "found": true,
+        "hash": "#lane-promise-prayer-and-pledge",
+        "targetTop": 0.21875
+      },
+      "note_click": {
+        "hash": "#fn:1",
+        "targetExists": true
+      },
+      "note_return": {
+        "hash": "#fnref:1",
+        "targetExists": true
+      },
+      "inventory_horizontal_access": {
+        "clientWidth": 327,
+        "lastColumnRight": 350.53125,
+        "mask": "linear-gradient(to left, rgba(0, 0, 0, 0), rgb(0, 0, 0) 14.4px)",
+        "scrollLeft": 81,
+        "scrollWidth": 408,
+        "tableRight": 351
+      },
+      "console_logs": []
+    }
+  },
+  "chronology_lookup_actually_performed": "Desktop and mobile Matthew 13:24–30 composition row recovered the traditional alternatives and distinguished the critical comparison; mobile Mark 11:24 row recovered its tentative shortly-after-A.D.-70 proposal beneath the matching occurrence/place cell. All eleven rows and three headers retain their source values.",
+  "external_link_limits": "HEAD requests resolved eleven of fourteen links with HTTP 200; USCCB Matthew, Mark and Colossians returned 403 to HEAD. Web-tool GET also denied Matthew/Mark, but retrieved Colossians, confirming that a denied probe is not an invalid citation. No confirmed 404 or wrong destination found.",
+  "limitations": [
+    "Bounded preview of this page only; full-site build, installed route, catalog integration and global chrome links were outside this dispatch.",
+    "No independent full-PDF visual acceptance or full research re-review is claimed; primary argument loci were spot-checked.",
+    "The preview uses the current repository site.css identified in render-setup.json."
+  ]
+}

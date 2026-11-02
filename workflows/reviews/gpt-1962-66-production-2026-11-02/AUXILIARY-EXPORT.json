@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "policy": "auxiliary-operation-accounting-omission-v1",
+  "records": [
+    {
+      "path": "evidence/research-review-0000/checked-loci.md",
+      "original_sha256": "553493067995d758d82cee5f097990f12e178ce82dd457e3003331cfe91753ad",
+      "public_sha256": "b6ad883277afbc5041c98f983482517d4ac05f3befa21ee47d0734f9838ebb5d",
+      "transformation": "Omit transient tool operation handles/accounting; preserve scholarly findings, source loci, artifact identities and rendered checks."
+    },
+    {
+      "path": "evidence/study-review-0000/review-evidence.md",
+      "original_sha256": "28b0af17407b2f15ee78db360a3fe1af144076981d5d29b40528065ad0fb977e",
+      "public_sha256": "f38d2183382f7f82c79505fa50662707f837451df6b1a24dfafce40a195f8ad2",
+      "transformation": "Omit transient tool operation handles/accounting; preserve scholarly findings, source loci, artifact identities and rendered checks."
+    },
+    {
+      "path": "evidence/synthesis-review-0000/review-evidence.md",
+      "original_sha256": "ee2ffe0793cb5fe55e7fbf2d748f3b5dcf58b6b7beb30e84a706e975ddd6d0b1",
+      "public_sha256": "62fd548927ecb0c6d0ae239759991d1b2a31e5a2c421f4b25ce8c9383f87abbd",
+      "transformation": "Omit transient tool operation handles/accounting; preserve scholarly findings, source loci, artifact identities and rendered checks."
+    },
+    {
+      "path": "evidence/web-review-0000/review-evidence.json",
+      "original_sha256": "4929b23123db665fa1ee27b3515881d62eef3ca3a36704bd7daeaa0fb4858de8",
+      "public_sha256": "438421072687a96505f7cde95293496045eae1cfdb3fd7c2dc602f06efbdd8fa",
+      "transformation": "Omit transient tool operation handles/accounting; preserve scholarly findings, source loci, artifact identities and rendered checks."
+    }
+  ]
+}
