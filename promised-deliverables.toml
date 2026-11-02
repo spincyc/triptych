@@ -1,6 +1,36 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gpt-propers-main-source-reconciliation-2026-11-02"
+owner = "PROJECT-WORK.md"
+promise = "Reconcile feature/propers/codex with source-first main, preserve its removal of stored/published PDF corpora and the reviewed Sunday content and modular landing-table behavior, validate and independently review the integration, and push the assigned workspace branch."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "main-merged-without-history-rewrite"
+  criterion = "The pinned incoming main is an ancestor of the reconciled workspace branch through a normal merge; unrelated main work and the existing feature history are preserved."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "proper-and-evidence-source-first"
+  criterion = "Proper 66 declares all three output roles in the current source schema, preserves its accepted prose, source identities and immutable historical audit, adopts exact-artifact delivery, and introduces no stored PDF or normal site PDF publishing/build requirement."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "landing-behavior-retained"
+  criterion = "All current landing pages retain consistent compact tables, sticky headings and navigation-position behavior with readable mobile/keyboard presentation; the component remains opt-in and existing app interfaces retain main's behavior."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "reviewed-validated-branch-push"
+  criterion = "The reconciled current source/publication and site checks and affected regressions pass or have an exact inherited-failure comparison, final independent integration/disclosure review passes, and the workspace commit is pushed and the remote ref verified."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "gpt-resumed-fifth-and-catalogue-2026-11-02"
 owner = "PROJECT-WORK.md"
 promise = "Complete the GPT 1962 proper-study workflow for Sunday 8 November 2026 with three independently reviewed PDFs and a canonical web edition; apply consistent compact tables, sticky headings and position preservation across landing pages through modular opt-in design without changing the apps; validate, commit and push the integrated work on feature/propers/codex."

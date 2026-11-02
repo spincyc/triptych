@@ -7,6 +7,31 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-11-02.
 
+## Sunday and catalogue reconciliation with source-first main, 2026-11-02
+
+<!-- promised-deliverable: gpt-propers-main-source-reconciliation-2026-11-02 -->
+
+**In progress.** The maintainer requested reconciliation with current `main`,
+which no longer stores or publishes a PDF corpus. The incoming main snapshot
+is `84c2f7e041af77230095987ae7eb86b0f4d2f92e`; this workspace starts from
+`a98aa06a7e9c743a78d1b914811c04b5d051fe45` on `feature/propers/codex`.
+Use a history-preserving merge on that assigned branch. Preserve main's
+unrelated work, source-first publication manifests, exact-artifact delivery,
+optional selected print exports and PDF-free normal site build.
+
+The new proper 66 must adopt that model without losing its accepted full,
+concise or homily source, canonical web content, exact source identities or
+immutable version-15 audit. Historical PDF hashes and inspections remain facts
+about their old renders, not current download promises. Retain the compact,
+sticky, position-preserving opt-in table component across all current landing
+pages and preserve existing app interfaces. Validate the reconciled sources
+and generated site, independently review the outgoing change, and commit and
+push the workspace branch. Main publication and deployment are separate from
+this branch reconciliation.
+
+Evidence and final outcomes belong in
+`workflows/reviews/gpt-1962-66-main-reconciliation-2026-11-02/RECORD.md`.
+
 ## GPT resumed Fifth Sunday and web catalogue, 2026-11-02
 
 <!-- promised-deliverable: gpt-resumed-fifth-and-catalogue-2026-11-02 -->
