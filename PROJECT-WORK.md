@@ -11,8 +11,8 @@ Last reconciled: 2026-11-02.
 
 <!-- promised-deliverable: gpt-resumed-fifth-and-catalogue-2026-11-02 -->
 
-**Candidate: accepted, installed and independently verified; workspace-branch
-publication pending.** The maintainer requested completion of the GPT 1962
+**Complete: accepted, installed, independently verified and pushed to
+`feature/propers/codex`.** The maintainer requested completion of the GPT 1962
 proper-study workflow for the upcoming Sunday, 8 November 2026, and a denser
 web catalogue with column headings that remain visible during page scrolling
 and reading-position preservation when navigating between proper studies.
@@ -171,7 +171,13 @@ the code review is `archive-code-review.json` beside it. Final independent
 integration and public-disclosure review returns PASS with no open findings
 for the frozen 188-file snapshot. Its exact report is `final-review.json`
 beside those records; accepted source, UI, archive and release-binding bytes
-remain unchanged. Workspace-branch publication remains pending.
+remain unchanged. The validated source change is committed and pushed as
+`4d22915b8486a6762ccc1b2efaa40959f1bb9330`; an independent remote-ref read
+confirms that exact commit on `refs/heads/feature/propers/codex` at
+`2026-11-02T21:29:45Z`. The outgoing range contains only this intended task.
+The review report's permitted reconciliation covers its exact promotion and
+truthful metadata bookkeeping; the accepted publication, UI, archive and
+release bindings remain byte-identical to the reviewed snapshot.
 Post-archive inventory reconciliation accounts for exactly 26 native packets
 and their record; only proper 66 gains the repository-internal stratum. Prior
 source paths and judgments are unchanged, all 97 leaf files remain identical,
@@ -181,9 +187,10 @@ Colossians's qualitative authorship and location alternatives introduce no
 uncatalogued date. Global chronology acceptance remains outside these two
 bounded source reviews.
 
-The workspace target is `feature/propers/codex`; validated work will be
-committed and pushed there. Main integration and live deployment are separate
-states and are not promised by this work unit.
+The workspace target remains `feature/propers/codex`. The existing deliverable
+is complete; a metadata-only follow-up records the verified source commit and
+closes the ledger. Main integration and live deployment are separate states
+and are not promised by this work unit.
 
 ## Four Last Things PDF layout, 2026-10-26
 

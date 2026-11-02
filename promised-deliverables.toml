@@ -4,7 +4,7 @@ schema_version = 1
 id = "gpt-resumed-fifth-and-catalogue-2026-11-02"
 owner = "PROJECT-WORK.md"
 promise = "Complete the GPT 1962 proper-study workflow for Sunday 8 November 2026 with three independently reviewed PDFs and a canonical web edition; apply consistent compact tables, sticky headings and position preservation across landing pages through modular opt-in design without changing the apps; validate, commit and push the integrated work on feature/propers/codex."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "dated-identity-and-native-acceptance"
@@ -51,8 +51,8 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "validated-workspace-publication"
   criterion = "The integrated requested change passes the affected checks, records inherited failures and material limitations accurately, receives final independent review, and is committed and pushed to feature/propers/codex without changing the workspace branch."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/gpt-1962-66-production-2026-11-02/final-review.json", "workflows/reviews/gpt-1962-66-production-2026-11-02/final-validation.json"]
 
 [[deliverables]]
 id = "four-last-things-pdf-layout-2026-10-26"

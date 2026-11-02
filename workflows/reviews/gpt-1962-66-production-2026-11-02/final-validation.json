@@ -103,7 +103,16 @@
     "The homily timing is a word-count estimate, not a timed human rehearsal.",
     "A verified local GitHub Pages artifact is not a live deployment. Main integration and live deployment are outside the workspace-branch promise."
   ],
-  "remaining": [
-    "Workspace-branch commit, push and remote verification"
-  ]
+  "workspace_publication": {
+    "source_commit": "4d22915b8486a6762ccc1b2efaa40959f1bb9330",
+    "remote": "origin",
+    "ref": "refs/heads/feature/propers/codex",
+    "push_exit_code": 0,
+    "remote_head_verified": true,
+    "verified_utc": "2026-11-02T21:29:45Z",
+    "outgoing_commits": 1,
+    "newly_reachable_objects": 353,
+    "disclosure_reconciliation": "The committed tree differs from the independently reviewed tree only by the exact final-review report and the inspected truthful verdict updates to PROJECT-WORK.md and this validation record. All newly reachable objects are intended for public disclosure. The following metadata-only completion record is within the final review's explicit reconciliation boundary."
+  },
+  "remaining": []
 }
