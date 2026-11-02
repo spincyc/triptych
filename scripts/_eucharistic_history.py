@@ -18,6 +18,8 @@ import tempfile
 import tomllib
 from urllib.parse import quote, urlsplit
 
+from _source_delivery_policy import external_source_identity
+
 SCHEMA = "triptych-eucharistic-history/v1"
 CORPUS_SCHEMA = "triptych-eucharistic-corpus/v1"
 COMPARISON_SCHEMA = "triptych-eucharistic-witness-comparison/v1"
@@ -57,9 +59,14 @@ def inside(root: Path, value: str | Path) -> Path:
 
 def fingerprint(root: Path, path: Path) -> dict:
     try:
+        external = external_source_identity(root, path.relative_to(root).as_posix())
+        if external is not None:
+            return external
         payload = path.read_bytes()
     except OSError as error:
         raise HistoryError(f"cannot read {path.relative_to(root)}: {error.strerror}") from error
+    except ValueError as error:
+        raise HistoryError(f"cannot identify {path.relative_to(root)}: {error}") from error
     return {"path": path.relative_to(root).as_posix(), "sha256": digest(payload), "byte_size": len(payload)}
 
 

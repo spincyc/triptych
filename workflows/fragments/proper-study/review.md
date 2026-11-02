@@ -39,7 +39,9 @@ dispositions in the production audit; the engine retains your exact result.
 
 `REVIEW_INPUTS` is the engine's immutable evidence seal for this dispatch. Do
 not supply `review_inputs` in your result; the engine owns that field. Any
-changed reviewed bytes require a new dispatch and independent review. Mutable
-artifact receipts cannot renew an earlier acceptance. Research review also
+changed reviewed input closure requires a new dispatch and independent review.
+Source/evidence and exact-print-artifact review have separate scopes under
+`guidance/document-schemas.md`; a print-template change does not restamp research.
+Mutable artifact receipts cannot renew an earlier acceptance. Research review also
 checks `research/review-dependencies.toml` for complete same-family external
 owners; missing controlling evidence is a research-owned blocking finding.

@@ -1,0 +1,134 @@
+schema_version = 1
+record_type = "source-document-family-registry"
+description = "Coverage and executable source checks over existing neutral schemas; no source record, evidence state, or immutable fingerprint changes."
+
+[[families]]
+id = "bible-edition"
+schema_ids = ["source-library/1", "source-library/2", "bible-book-index-row-v1"]
+owner = "scripts/_bible_editions.py"
+paths = ["src/sources/works/*/*/editions/*/artifacts/book-index-*/book-index.tsv"]
+required_fields = ["source_id", "artifacts", "numbering", "psalter", "psalm_titles", "publishable"]
+minimum_members = 1
+cardinality = "Every publishable registered edition; unique strictly ordered book ordinals and unique printed book/chapter/verse addresses; historical chapter gaps remain gaps."
+validator = ["tools/typeset-bible", "check", "--json"]
+row_schema = "src/common/document-schemas/bible-book-index.schema.json"
+
+[[families]]
+id = "reading-plan"
+schema_ids = ["triptych-reading-plan/v1"]
+owner = "tools/reading-plan"
+paths = ["src/sources/reading-plans/*.yaml"]
+required_fields = ["schema", "title", "canon", "numbering", "tiers", "omissions", "precedents", "periods"]
+minimum_members = 1
+cardinality = "Nonempty ordered readings; cumulative declared tiers; no repeated canonical book/chapter/verse cell across or within readings."
+validator = ["tools/tpt", "reading-plan", "check", "--json"]
+
+[[families]]
+id = "reading-plan-volume"
+schema_ids = ["triptych-reading-plan/v1", "source-library/1", "source-library/2"]
+owner = "tools/typeset-bible"
+paths = ["src/sources/reading-plans/*.yaml"]
+required_fields = ["plan", "tier", "bible"]
+minimum_members = 1
+cardinality = "Exactly the plan's tier by issued-edition product; unresolved edition readings remain explicit refusals."
+validator = ["tools/typeset-bible", "check", "--plan", "narrative-spine", "--json"]
+
+[[families]]
+id = "papal-selection"
+schema_ids = ["triptych-papal-typeset/v1", "triptych-papal-source-plan/v1"]
+owner = "scripts/_typeset_papal.py"
+paths = ["src/sources/papal-documents/*manifest.json", "src/sources/papal-documents/*withdrawals.json"]
+required_fields = ["id", "title", "pope", "language", "source_url", "text_path", "sha256", "artifact_id", "rights_status", "rights_basis"]
+minimum_members = 1
+cardinality = "Unique document/language per manifest; bounded selections require a registered hash-bound segment; historical withdrawn manifests are records, not current admissions."
+validator = ["tools/tpt", "typeset-papal", "check", "--manifest", "src/sources/papal-documents/typeset-manifest.json", "--json"]
+
+[[families]]
+id = "papal-reader"
+schema_ids = ["triptych-papal-release/v1", "triptych-papal-typeset-receipt/v1", "triptych-papal-visual-review/v1"]
+owner = "scripts/_print_catalog.py"
+paths = ["src/web/data/encyclicals/index.json"]
+required_fields = ["release_id", "language", "extent"]
+minimum_members = 1
+cardinality = "Every browser-admitted reader, exactly once, matching current bounded source, receipt and all-page review pins; no admission of the entire release set."
+validator = ["python3", "-B", "-m", "unittest", "tools.tests.test_print_catalog"]
+
+[[families]]
+id = "source-record"
+schema_ids = ["source-library/1", "source-library/2"]
+owner = "tools/source-library"
+paths = ["src/sources/works/*/*/work.toml"]
+required_fields = ["schema", "record_type", "id"]
+minimum_members = 1
+cardinality = "Existing work/edition/artifact/segment/passage/corpus and binding ownership; the source-library validator owns the complete graph."
+validator = ["tools/source-library", "check"]
+
+[[families]]
+id = "source-reader-projection"
+schema_ids = ["triptych-source-reader/v1", "triptych-source-reader-projection-receipt/v1"]
+owner = "tools/source-reader"
+paths = ["src/web/data/structure/sources/index.json"]
+required_fields = ["schema", "counted", "works"]
+minimum_members = 1
+cardinality = "Projection identity and counts only here; the hash-bound receipt owns freshness, not a heavy replay or a new completeness claim."
+validator = ["tools/source-reader", "structure", "--check-receipt"]
+
+[[families]]
+id = "calendar-masses"
+schema_ids = ["triptych-calendar-masses/v1"]
+owner = "tools/check-calendar-masses"
+paths = ["src/sources/calendars/*/propers.yaml"]
+required_fields = ["schema", "calendar", "edition", "sections"]
+minimum_members = 1
+cardinality = "Each declared calendar's ordered masses, inherited formularies and typed absences; no generic recurrence rules are invented here."
+validator = ["tools/check-calendar-masses"]
+
+[[families]]
+id = "calendar-rubrics"
+schema_ids = ["triptych-calendar-rubrics/v1"]
+owner = "tools/calendar-rubrics"
+paths = ["src/sources/calendars/*/rubrics.yaml"]
+required_fields = ["schema", "calendar", "code", "precedence", "overrides"]
+minimum_members = 1
+cardinality = "Existing rubrical precedence, overrides and source rules remain edition-specific."
+validator = ["tools/calendar-rubrics", "check"]
+
+[[families]]
+id = "mass-ordinary-source"
+schema_ids = ["triptych-ordo-missae/v1"]
+owner = "tools/mass-ordinary"
+paths = ["src/sources/inventories/*-ordo-missae-v1.toml"]
+required_fields = ["schema", "calendar", "title", "advisory", "derived_from", "sections"]
+minimum_members = 1
+cardinality = "Existing ordered sections, execution variants, witness rights and typed absences."
+validator = ["tools/mass-ordinary", "check"]
+
+[[families]]
+id = "catena-source"
+schema_ids = ["triptych-commentary-fragment-loci/v1"]
+owner = "scripts/_catena.py"
+paths = ["src/sources/commentary/fragment-loci.yaml"]
+required_fields = ["schema", "fragments"]
+minimum_members = 1
+cardinality = "Each bounded commentary fragment keeps its actual scriptural extent, source controller and attribution relationships."
+validator = ["tools/catena", "check"]
+
+[[families]]
+id = "act-history-source"
+schema_ids = ["acts_schema/1"]
+owner = "tools/act-history"
+paths = ["src/sources/inventories/*acts-v1.toml"]
+required_fields = ["acts_schema", "slice", "lines", "acts"]
+minimum_members = 1
+cardinality = "The existing act schema owns lines, acts, relations and inherited history, with its projection receipt checked separately."
+validator = ["tools/act-history", "check"]
+
+[[families]]
+id = "scripture-chronology-source"
+schema_ids = ["triptych-chronology-events/v1", "triptych-chronology-composition/v1", "triptych-chronology-bindings/v1", "triptych-chronology-profiles/v1", "triptych-chronology-gaps/v1"]
+owner = "tools/scripture-chronology"
+paths = ["src/sources/chronology/*.yaml"]
+required_fields = ["schema"]
+minimum_members = 5
+cardinality = "Existing distinct event, composition, binding, profile and gap schemas, checked by their owning resolver."
+validator = ["tools/scripture-chronology", "check"]

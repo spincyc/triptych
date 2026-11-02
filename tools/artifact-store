@@ -1,0 +1,78 @@
+#!/usr/bin/env python3
+"""Preserve and hydrate exact historical binary evidence."""
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+from _artifact_store import main
+from _tooling import Example
+
+EXAMPLES = {
+    "inventory": (
+        Example(
+            "tools/artifact-store inventory --declared --summary",
+            (
+                "artifact-store: 5540 artifacts, 4592746083 bytes; 0 archives; ok",
+            ),
+            "Report the exact delivery inventory without opening binary payloads.",
+        ),
+        Example(
+            "tools/artifact-store inventory --declared --summary --json",
+            (
+                "{\"artifacts\":5540,\"bytes\":4592746083,\"kinds\":{\"historical-publication\":4837,\"source-evidence\":703},\"status\":\"ok\"}",
+            ),
+            "The same inventory as a JSON summary.",
+        ),
+    ),
+    "pack": (
+        Example(
+            "tools/artifact-store pack --release ../invalid",
+            (
+                "artifact-store: release must be a safe slug and archive limit between 10240 and 512000000",
+            ),
+            "Unsafe release names are rejected before any archive or index is written.",
+        ),
+        Example(
+            "tools/artifact-store pack --release ../invalid --json",
+            (
+                "{\"error\": \"release must be a safe slug and archive limit between 10240 and 512000000\", \"status\": \"error\"}",
+            ),
+            "The same input refusal as JSON; preservation never uploads archives.",
+        ),
+    ),
+    "check": (
+        Example(
+            "tools/artifact-store check",
+            (
+                "artifact-store: 5540 artifacts, 4592746083 bytes; 10 archives; ok",
+            ),
+            "Validate the delivery index without fetching or requiring absent payloads.",
+        ),
+        Example(
+            "tools/artifact-store check --json",
+            (
+                "{\"archive_bytes\":4599439360,\"archives\":10,\"artifacts\":5540,\"bytes\":4592746083,\"kinds\":{\"historical-publication\":4837,\"source-evidence\":703},\"status\":\"ok\"}",
+            ),
+            "The same metadata gate as JSON.",
+        ),
+    ),
+    "hydrate": (
+        Example(
+            "tools/artifact-store hydrate undeclared-example.pdf",
+            (
+                "artifact-store: paths not declared in the delivery index: ['undeclared-example.pdf']",
+            ),
+            "Undeclared paths are rejected before network access or cache mutation.",
+        ),
+        Example(
+            "tools/artifact-store hydrate undeclared-example.pdf --json",
+            (
+                "{\"error\": \"paths not declared in the delivery index: ['undeclared-example.pdf']\", \"status\": \"error\"}",
+            ),
+            "The same refusal as JSON. Supply --archive-dir for offline hydration or explicitly --fetch.",
+        ),
+    ),
+}
+
+if __name__ == "__main__":
+    raise SystemExit(main(examples=EXAMPLES))

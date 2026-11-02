@@ -1,0 +1,77 @@
+schema_version = 1
+id = "claude/articles/faith/council-missal-and-crisis"
+kind = "article-faith"
+profile = "guidance/articles.md"
+source_format = "latex"
+entrypoint = "main.tex"
+
+[[outputs]]
+id = "claude/articles/faith/council-missal-and-crisis"
+role = "canonical"
+entrypoint = "main.tex"
+derivation = "authored"
+
+[[structure]]
+role = "body"
+source = "main.tex"
+outputs = ["canonical"]
+
+[[structure]]
+role = "generation"
+source = "generation-metadata.tex"
+
+[[structure]]
+role = "web-declaration"
+source = "web-edition.toml"
+
+[[structure]]
+role = "scope"
+source = "research/scope.md"
+
+[[structure]]
+role = "source-audit"
+source = "research/source-audit.md"
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[[structure]]
+role = "argument"
+source = "sections/00-the-coincidence.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/10-what-the-council-was-called-to-do.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/20-what-the-constitution-says.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/30-from-constitution-to-missal.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/40-the-crisis-measured.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/50-the-hermeneutical-fork.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/60-the-critique-and-its-limits.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/70-the-discipline-of-memory.tex"
+
+[[structure]]
+role = "scope-appendix"
+source = "sections/90-scope-method-qualifications.tex"
+
+[[structure]]
+role = "references"
+source = "sections/99-references.tex"

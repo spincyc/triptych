@@ -12,6 +12,14 @@ two-document membership. The edition, identity, occurrence,
 branch, source-owner, language, and rights rules below still apply; schema-1
 guides retain the older presentation.
 
+The per-leaf `publication.toml` follows
+[document schemas](../document-schemas.md) and declares the actual component or
+legacy contract without converting it. Existing TeX, source owners, and typed
+records remain canonical. Physical-page and PDF requirements below govern
+[optional print exports](../../docs/printing.md); source/HTML publication uses
+the declared source and evidence review closure. PDF labels below name print
+variants, not required site artifacts.
+
 Apply these priorities in order:
 
 1. **Identify the instance.** Fix the edition, language, territory, calendar, date when needed, formula key or other governing identity, source owner, cycle, form, ritual context, and branch universe before drafting.
@@ -40,9 +48,9 @@ Use `temporal` for `PC-S` and `PC-T` leaves and `general-calendar` for `PC-R` le
 
 An edition record may add only a directly collated, expressly documented edition delta. If an `ABC` target proves materially cycle-dependent, or another approved adaptation changes the target shape, stop publication until the edition record lists the exact replacement keys, slugs, positions, and adjusted counts. An unresolved edition expansion contributes no invented key or count.
 
-The shared owner keeps the reusable edition-specific Missal or Ritual Mass audit, provenance, rights status, and any lawful fragment. The leaf keeps the formula composition, Lectionary and branch audit, research, generation metadata, and PDF. It references or imports exactly one canonical formulary owner, names that owner in the manifest and in its own audit, and never becomes a second owner: it must not duplicate protected owner wording, and it must not restate the owner's edition evidence, locators, checksums, variation audit, element boundaries, or analytic summaries in its own words. The stable registry fixes the owner path for every parent and makes the Ordinary Time owner computable from the parent number; create the owner before the leaf that consumes it, and let all three cycle leaves under one parent share it.
+The shared owner keeps the reusable edition-specific Missal or Ritual Mass audit, provenance, rights status, and any lawful fragment. The leaf keeps the formula composition, Lectionary and branch audit, research, generation metadata, and declared output entrypoints. It references or imports exactly one canonical formulary owner, names that owner in the manifest and in its own audit, and never becomes a second owner: it must not duplicate protected owner wording, and it must not restate the owner's edition evidence, locators, checksums, variation audit, element boundaries, or analytic summaries in its own words. The stable registry fixes the owner path for every parent and makes the Ordinary Time owner computable from the parent number; create the owner before the leaf that consumes it, and let all three cycle leaves under one parent share it.
 
-Every external owner, shared fragment, and edition registry record that controls a build is an explicit dependency; rebuild and re-review every consumer after it changes. Declare each edge in the Makefile beside the collection's existing shared edges, following the established `SACRAMENT_SHARED` and `POSTCONCILIAR_US_FORMAT` pattern: collection-wide shared material is declared once against the collection's build PDFs, while a per-parent or per-week formulary owner is declared as a prerequisite of each consuming leaf's PDF target. An undeclared owner is a build defect even where the leaf reads correctly.
+Every external owner, shared fragment, and edition registry record that controls an output is an explicit source dependency. Declare it in the publication source graph and preserve the corresponding print-build dependency. A source change requires validation and review of every affected consumer; a format-only change follows the separate print-template review scope. An undeclared owner is a dependency defect even where the leaf reads correctly.
 
 ### Commons recovery evidence
 
@@ -103,8 +111,8 @@ The owner's `propers/verified.md` verifies the reusable formulary, rubrics, elem
 The component architecture here supersedes the older two-leaf packaging
 language below while existing pilots are migrated. New and substantially
 revised guides use one canonical leaf and provider-neutral
-`proper-components.toml`. The bare ID produces the complete research PDF and
-sole full HTML edition. A mechanical `-synthesis` PDF companion uses the same
+`proper-components.toml`. The bare ID produces the complete research source output and
+sole full HTML edition. A mechanical `-synthesis` companion uses the same
 source and owns no prose, audit record, or web declaration.
 
 The manifest assigns stable lowercase kebab-case keys to every textual unit
@@ -141,7 +149,7 @@ Mark the brief synthesis with
 N+1, and N+2. Page breaks without that validation do not meet the exact
 two-page requirement.
 
-The rights position for these installed PDFs is narrower than it is for the
+The rights position for optional print-export PDFs is narrower than it is for the
 site's live display. The ICEL English of the Roman Missal is under copyright;
 ICEL's standing permission is limited to a qualifying no-fee noncommercial
 Internet site and expressly grants no license for another form of publication.
@@ -366,12 +374,46 @@ For each new or substantially revised guide:
 4. classify relationships and claims;
 5. draft detailed commentary before compressing the synthesis and four senses;
 6. assemble the page-2 date/location sheet and terminal apparatus and refresh structured metadata; and
-7. build, inspect every page and branch table, and install only the reviewed PDF.
+7. validate the declared source and evidence closure, review the canonical HTML
+   output and branch tables, and publish only reviewed source/web outputs. For a
+   requested print export, build and inspect every page and apply its physical gates.
 
-A guide is profile-final only when its registry identity, slug, path, owner, edition disposition, and occurrence are resolved; its shared owner exists at the registry-fixed path, alone carries the formulary evidence, and is declared as an explicit build edge, while the leaf restates none of it; its cycle letter and any weekday numeral were resolved independently under [calendar computation](calendar-computation.md) and confirmed against a dated official witness; its owner and leaf audits are complete; all authorized branches and textual units are accounted for; its claims and relationships are classified; its passage-by-passage matrix documents bounded searches of the major relevant Greek and Latin patristic and later saintly corpora, checked loci, witness roles, and negative results; its detailed commentary proves breadth and depth for every appointed passage; its notable-and-quotable section has three to five source- and locus-identified, non-obvious cultural, humorous, ironic, idiomatic, literary, political, institutional, visual, scientific, commercial, or comparable reuses of wording from the scriptural propers, with every verbal relation, contextual turn, branch, right, payoff, limit, and material negative result audited and no patristic excerpt or bare title, motto, artwork, or musical setting used as padding; its interpretive section contains four to six non-recapitulatory, multi-element proposals, each stating its connecting mechanism, its fruit, what the ordinary element-by-element reading misses, and its strongest material limit, and its research scope records each proposal's anchors, mechanism, nearest located precedent or analogue, search boundary, and controlling limit without claiming universal novelty; page 2 contains only the complete one-page date/location sheet, pages 3--4 contain the thematic movement, the edition's next reader-order position begins on page 5, and every later boundary conforms; work-wide qualifications appear only in the terminal scope appendix; rights and source records conform; every shared dependency is explicit and rebuilt; and build, metadata, log, and visual checks pass.
+A guide's source edition is profile-final only when its registry identity,
+slug, path, owner, edition disposition, and occurrence are resolved; its shared
+owner exists at the registry-fixed path, alone carries the formulary evidence,
+and is an explicit dependency, while the leaf restates none of it; its cycle
+letter and any weekday numeral were resolved independently under
+[calendar computation](calendar-computation.md) and confirmed against a dated
+official witness; its owner and leaf audits are complete; all authorized branches
+and textual units are accounted for; its claims and relationships are classified;
+and its passage-by-passage matrix documents bounded searches of the major relevant
+Greek and Latin patristic and later saintly corpora, checked loci, witness roles,
+and negative results. Its detailed commentary must prove breadth and depth for
+every appointed passage. Under the older presentation governed here, its
+notable-and-quotable section has three to five source- and locus-identified,
+non-obvious cultural, humorous, ironic, idiomatic, literary, political,
+institutional, visual, scientific, commercial, or comparable reuses of wording
+from the scriptural propers, with every verbal relation, contextual turn, branch,
+right, payoff, limit, and material negative result audited and no patristic
+excerpt or bare title, motto, artwork, or musical setting used as padding. Its
+interpretive section contains four to six non-recapitulatory, multi-element
+proposals, each stating its connecting mechanism, fruit, what the ordinary
+element-by-element reading misses, and strongest material limit; its research
+scope records each proposal's anchors, mechanism, nearest located precedent or
+analogue, search boundary, and controlling limit without claiming universal
+novelty. Work-wide qualifications appear only in the terminal scope appendix;
+rights and source records conform; every shared dependency is explicit and its
+affected closure validated; and source, schema, metadata, and web-review checks
+pass. Schema 2 substitutes the three-document profile's content contract.
+
+For a print edition to pass, page 2 contains only the complete one-page
+date/location sheet, pages 3--4 contain the thematic movement, the edition's next
+reader-order position begins on page 5, and every later boundary conforms.
+Build, log, PDF, metadata, and full-page visual checks must pass for that exact
+export under its declared contract.
 
 Do not call an edition-locale collection complete until every stable-registry target has a sourced disposition, all edition splits and conditional targets are evaluated, all weekday fallbacks are evaluated, and the replacement and local-overlay matrix is resolved. Absence in one civil year is an occurrence result, not a target disposition.
 
-Exact-snapshot release approval authorizes only the named installed PDF hash. It does not make a guide profile-final, certify missing collation or review, or authorize a changed build. Keep any accepted limitation in the terminal scope appendix, catalog, and tracked records.
+Exact-snapshot source/HTML release approval authorizes only its named source and output identity. A separate print review covers only its exact exported artifact. Neither makes a guide profile-final, certifies missing collation or review, or authorizes changed inputs. Keep any accepted limitation in the terminal scope appendix, catalog, and tracked records.
 
 The structural schema is grounded in the Holy See's [General Instruction of the Roman Missal](https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html), the approved [General Introduction to the Lectionary](https://www.liturgyoffice.org.uk/Resources/GIRM/Documents/Lectionary.pdf), the official [Roman Missal, Third Edition contents](https://www.liturgyoffice.org.uk/Missal/Information/RM3-contents.pdf), the bishops' [Missal Antiphonary](https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf), official matrices for special forms, and the approved initiation rite. Exact editions, later decrees, territorial adaptations, and the competent calendar control each leaf.

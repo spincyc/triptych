@@ -8,6 +8,11 @@
   "identity_claim": "same-prayer-witnesses",
   "inputs": [
     {
+      "byte_size": 2986929,
+      "path": "src/sources/artifact-delivery.json",
+      "sha256": "0b50982b48413fb3520a1ca62363fd67dc58f640ea813d29c95087fe1a965b2e"
+    },
+    {
       "byte_size": 190717,
       "path": "src/sources/inventories/catholic-eucharistic-history-v1.toml",
       "sha256": "e9a98cc82601fbfb459467654727c245cf6756252b7e77215270617d4084af4c"
@@ -4817,14 +4822,19 @@
       "sha256": "e34f2917225dc5fd3440197a86b18c72532c267bb1659567af5f0388f2510fa7"
     },
     {
+      "byte_size": 29538,
+      "path": "scripts/_artifact_store.py",
+      "sha256": "b5b8aaa921dacc51ae5a2062d1519520dc5836d574fb38ac7d81a70d0e130c28"
+    },
+    {
       "byte_size": 142215,
       "path": "scripts/_calendars.py",
       "sha256": "54f37042b07ae107a9bea59fe6080d5699f70290335ae7ddee453752f35eb7d4"
     },
     {
-      "byte_size": 69378,
+      "byte_size": 69710,
       "path": "scripts/_eucharistic_history.py",
-      "sha256": "023a27a9b281841eb4219052a15083fa5d061b1784062119c02b66e7796a18cb"
+      "sha256": "eedce62fc34d4fdc2a50feec4439ff18463285013f4b56e7bff19a111cb37fb3"
     },
     {
       "byte_size": 24489,
@@ -4832,9 +4842,9 @@
       "sha256": "2d7d31f31b319c0d9320f3b686fff4fab9b1dde4129592b475290fb2b741eab7"
     },
     {
-      "byte_size": 115189,
+      "byte_size": 116745,
       "path": "scripts/_eucharistic_texts.py",
-      "sha256": "3a400e0a7edcafbab5ea2d89403fccde74621127259d4ba89825c8379b273ed6"
+      "sha256": "d728a0955bc16045475594a8711f830e17b0755aa4054b286d4142fdc5a61c20"
     },
     {
       "byte_size": 54756,
@@ -4842,9 +4852,14 @@
       "sha256": "852acb6a88084aba5729e5f60e807ca4e10f9c4436f5db2b23a9fdd3fbe2da1a"
     },
     {
-      "byte_size": 34326,
+      "byte_size": 3736,
+      "path": "scripts/_source_delivery_policy.py",
+      "sha256": "6b2027085308de89e0aae1cc5be07f407c3e6e76c1ef482736c8e98dc1a2aa75"
+    },
+    {
+      "byte_size": 34499,
       "path": "scripts/_tooling.py",
-      "sha256": "f42654633791efe86a5222e7d2c1e80a75bfbcec94f2d34c4d06ad57e186af60"
+      "sha256": "7e6a0f5077cc2eda65de8e930a21716685fd8db7b81d74682240c9c9ab1af072"
     },
     {
       "byte_size": 255863,
@@ -4852,9 +4867,9 @@
       "sha256": "2fc6aee41059ed53eeead87e80ed5305b3ca89940f40d0e7381fa54b96667e80"
     },
     {
-      "byte_size": 137621,
+      "byte_size": 150668,
       "path": "tools/source-library",
-      "sha256": "7386322dbb40ef6e7bd7a11524a9a2990ac1788efe4a51561a772e5d5de02747"
+      "sha256": "fc4d59e693378aa42d6d6a16878b98cfce839e0411a5396b5a58002f5035eaee"
     }
   ],
   "unified_diff": "--- left/wilson-1915-gregorian-canon-prayers\n+++ right/warner-1915-stowe-mass-prayers\n@@ -1,2 +1 @@\n-Quam oblationem tu deus in omnibus .\n-quaesumus benedictam adscriptam ratam rationabilem acceptabilemque facere digneris Ut nobis corpus et sanguis fiat dilectissimi filii tui domini dei nostri iesu christi.\n+Quam oblationem té deus in omnibus quesumus benedictam + ascriptam ratam rationabilem acceptabilemque facere dignareque nobis corpus et sanguis fiat dilectissimi fili tui domini nostri iesu christi\n"

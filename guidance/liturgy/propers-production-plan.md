@@ -267,9 +267,11 @@ so they are not made again:
 Registry counts are counts of **targets**. A target is one canonical leaf and
 the derived companions its manifest authorizes — one
 identity, one owner, one research trail, one set of source bindings. A target is
-not finished when only the canonical PDF exists, and companions are never
+not finished when only the canonical source output exists, and companions are never
 additional targets. Schema 2 requires both `-synthesis` and `-homily` under the
 three-document contract; schema 1 retains its existing synthesis companion.
+Optional print exports do not create additional targets or gate ordinary
+source/HTML publication.
 
 The English requirement is retrospective. Every proper published before it was
 authored under the previous rule, which printed the appointed Latin in full and

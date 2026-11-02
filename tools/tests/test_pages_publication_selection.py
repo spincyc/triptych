@@ -1,335 +1,220 @@
-"""Execute Pages' actual plan and install scripts against an isolated corpus.
+"""Run Pages' source commands with real Make and isolated boundary doubles.
 
-Real release selection and GNU make; fake typesetting and PDF bytes. Held
-targets deliberately fail. Neither branch may reach them, even from cache.
+Every source gate is observable, can fail, and accepts only its source
+invocation. The owning suites validate tool behavior and release selection;
+this suite never repeats their full corpus builds.
 """
-
 from __future__ import annotations
 
+from collections import Counter
 import json
 import os
 from pathlib import Path
+import shutil
 import subprocess
+import sys
 import tempfile
 import unittest
 
 import yaml
 
-
 ROOT = Path(__file__).resolve().parents[2]
-WORKFLOW = yaml.safe_load((ROOT / ".github/workflows/pages.yml").read_text())
-STEPS = {step["name"]: step for step in WORKFLOW["jobs"]["deploy"]["steps"]}
-PLAN = "Plan the typesetting against the PDF cache"
-COLD = "Prepare the container build script"
-WARM = "Install the restored corpus without the typesetting toolchain"
-STORE = "Record the typeset PDFs in the store"
-PROVIDERS = ("claude", "gpt")
-SELECTED = (
-    "legacy-release", "legacy-review", "overridden-alpha",
-    "study", "study-homily", "study-synthesis",
-)
-HELD = ("held", "held-homily", "held-synthesis", "overridden-held")
+
+# Independent coverage contract: changing the gate requires a coverage decision.
+SOURCE_COMMANDS = {
+    ("scripts/_act_history_projection_receipt.py", "check"),
+    ("tools/tpt", "document-schema", "check", "--include-sources"),
+    ("tools/tpt", "artifact-store", "check"),
+    ("tools/tpt", "document-library", "check"),
+    ("tools/tpt", "document-library", "structure", "--check"),
+    ("tools/tpt", "source-library", "validate"),
+    ("tools/tpt", "source-reader", "structure", "--check-receipt"),
+    ("tools/tpt", "calendar-days", "check"),
+    ("tools/tpt", "check-calendar-masses"),
+    ("tools/tpt", "mass-propers", "structure", "--check"),
+    ("tools/tpt", "calendar-rubrics", "check"),
+    ("tools/tpt", "mass-ordinary", "check"),
+}
+RIGHTS_TESTS = {
+    "test_hash_only_registry_is_complete_and_well_formed",
+    "test_allowlist_exactly_matches_tracked_curriculum_sources",
+    "test_unavailable_dispositions_cover_affected_stable_ids",
+    "test_scanner_is_location_and_surface_sensitive",
+    "test_tex_control_words_cannot_hide_a_window",
+}
 
 
-class PagesPublicationSelectionTests(unittest.TestCase):
+class DeploymentFixture:
+    """No real print program, package install, cache restore or network runs."""
+
     def setUp(self):
-        scratch = ROOT / ".scratch/recovery-pages"
+        scratch = ROOT / ".scratch/deployment-tests"
         scratch.mkdir(parents=True, exist_ok=True)
-        temporary = tempfile.TemporaryDirectory(prefix="selection-", dir=scratch)
+        temporary = tempfile.TemporaryDirectory(prefix="source-pages-", dir=scratch)
         self.addCleanup(temporary.cleanup)
         self.root = Path(temporary.name)
-        self.runner = self.root / "runner"
-        self.plan = self.runner / "triptych-plan"
-        self.store = self.runner / "triptych-pdf-store"
+        self.write("Makefile", (ROOT / "Makefile").read_text(encoding="utf-8"))
+        self.write("src/gpt/study/main.tex", "Canonical source, with no installed PDF.\n")
+        self.write("src/gpt/held/main.tex", "Held canonical source.\n")
+        self.write("src/common/preamble.tex", "% fixture\n")
         self.bin = self.root / "bin"
-        self.runner.mkdir()
-        self.bin.mkdir()
-        self.write("tools/public-alpha", (ROOT / "tools/public-alpha").read_text())
-        (self.root / "scripts").symlink_to(ROOT / "scripts", target_is_directory=True)
-        self.manifest = {
-            "schema_version": 2, "provider": "gpt",
-            "providers": ["gpt", "claude"], "publications": [],
-        }
-        for provider in PROVIDERS:
-            for leaf in ("study", "held"):
-                for entry in ("main", "synthesis", "homily"):
-                    self.write(f"src/{provider}/{leaf}/{entry}.tex", f"{leaf} {entry}\n")
-                self.write(f"src/{provider}/{leaf}/proper-components.toml", f"""
-schema = 2
-record_type = "proper-components"
-document = "{leaf}"
-appointed_text_completeness = "complete"
-[outputs]
-research = "{leaf}"
-synthesis = "{leaf}-synthesis"
-homily = "{leaf}-homily"
-web = "{leaf}"
-canonical_label = "Full PDF"
-synthesis_label = "Synthesis PDF"
-homily_label = "Homily PDF"
-""")
-                for document in (leaf, f"{leaf}-synthesis", f"{leaf}-homily"):
-                    self.record(provider, document, "alpha" if leaf == "study" else "hold")
-            for document, status in (
-                ("legacy-review", "review"), ("legacy-release", "release"),
-                ("overridden-held", "release"), ("overridden-alpha", "hold"),
-            ):
-                self.write(f"src/{provider}/{document}/main.tex", document + "\n")
-                self.manifest["publications"].append({
-                    "id": document if provider == "gpt" else f"{provider}:{document}",
-                    "status": status,
-                })
-            self.record(provider, "overridden-held", "hold")
-            self.record(provider, "overridden-alpha", "alpha")
-        self.write_manifest()
-        self.write("Makefile", """
-PROVIDER ?= gpt
-PDFLATEX ?= pdflatex
-DOCUMENTS := """ + " ".join(reversed(SELECTED + HELD)) + """
-.PHONY: list install FORCE
-list:
-\t@printf '%s\\n' $(DOCUMENTS)
-install: $(addprefix pdf/$(PROVIDER)/,$(addsuffix .pdf,$(DOCUMENTS)))
-\t@printf 'install %s: %s\\n' '$(PROVIDER)' '$(DOCUMENTS)' >> install.log
-pdf/$(PROVIDER)/%.pdf: build/$(PROVIDER)/%.pdf FORCE
-\t@test "$$(cat '$<')" = 'validated $(PROVIDER) $*' || { echo 'metadata validation failed' >&2; exit 1; }
-\t@mkdir -p '$(@D)'
-\t@cp '$<' '$@'
-build/$(PROVIDER)/%.pdf:
-\t@case '$*' in held*|overridden-held) echo 'held target reached' >&2; exit 1;; esac
-\t@$(PDFLATEX) '$*'
-\t@mkdir -p '$(@D)'
-\t@printf 'validated %s %s\\n' '$(PROVIDER)' '$*' > '$@'
-""" + "\n".join(
-            f"build/$(PROVIDER)/{document}.pdf: src/$(PROVIDER)/{owner}/{entry}.tex"
-            for document, owner, entry in (
-                [(doc, doc, "main") for doc in
-                 ("study", "held", "legacy-release", "legacy-review",
-                  "overridden-held", "overridden-alpha")]
-                + [(f"{leaf}-{mode}", leaf, mode)
-                   for leaf in ("study", "held") for mode in ("synthesis", "homily")]
-            )
-        ) + "\n")
-        for tool in ("pdflatex", "pacman"):
-            script = self.write(f"bin/{tool}", "#!/bin/sh\n"
-                                f"printf '%s\\n' '{tool}' >> toolchain.log\n")
-            script.chmod(0o755)
-        self.env = {
-            **os.environ, **WORKFLOW["env"],
-            "PATH": f"{self.bin}{os.pathsep}{os.environ['PATH']}",
-            "GITHUB_WORKSPACE": str(self.root), "RUNNER_TEMP": str(self.runner),
-            "GITHUB_OUTPUT": str(self.runner / "outputs"),
-            "PYTHONDONTWRITEBYTECODE": "1",
-        }
-        # Do not let a parent make/test runner inject goals or overrides.
-        for name in ("MAKEFLAGS", "MFLAGS", "MAKELEVEL"):
+        self.log = self.root / "commands.jsonl"
+        self.env = {**os.environ, "PATH": f"{self.bin}{os.pathsep}{os.environ['PATH']}",
+                    "GITHUB_WORKSPACE": str(self.root), "PYTHONDONTWRITEBYTECODE": "1",
+                    "DEPLOYMENT_TEST_LOG": str(self.log), "DEPLOYMENT_TEST_ROOT": str(self.root),
+                    "DEPLOYMENT_TEST_SOURCE_COMMANDS": json.dumps(sorted(SOURCE_COMMANDS)),
+                    "DEPLOYMENT_TEST_RIGHTS": json.dumps(sorted(RIGHTS_TESTS))}
+        for name in ("MAKEFLAGS", "MFLAGS", "MAKELEVEL", "MAKEOVERRIDES"):
             self.env.pop(name, None)
+        python = self.write("bin/python", f"#!{sys.executable}\n" + r'''
+import json
+import os
+from pathlib import Path
+import sys
 
-    def write(self, relative, text):
+args = sys.argv[1:]
+root = Path(os.environ["DEPLOYMENT_TEST_ROOT"])
+with open(os.environ["DEPLOYMENT_TEST_LOG"], "a", encoding="utf-8") as log:
+    log.write(json.dumps(args) + "\n")
+allowed = {tuple(command) for command in json.loads(os.environ["DEPLOYMENT_TEST_SOURCE_COMMANDS"])}
+if tuple(args) in allowed:
+    if " ".join(args) == os.environ.get("DEPLOYMENT_TEST_FAIL"):
+        raise SystemExit("deliberate source gate failure")
+elif args[:3] == ["-m", "unittest", "-v"]:
+    actual = {name.rsplit(".", 1)[-1] for name in args[3:]}
+    if actual != set(json.loads(os.environ["DEPLOYMENT_TEST_RIGHTS"])):
+        raise SystemExit("deployment must run exactly the source-only rights cases")
+elif args[:3] == ["-m", "pip", "install"]:
+    if "-r" not in args or any("tex" in part.lower() for part in args):
+        raise SystemExit("unexpected deployment dependency install")
+elif args[:2] == ["tools/tpt", "check-proper-components"] and args[-1] in {"--list-synthesis", "--list-homily"}:
+    pass  # Make's parse-time discovery, not PDF compilation.
+elif args == ["tools/tpt", "public-alpha", "build"]:
+    target = root / "build/public-alpha/site/index.html"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text("<html><body>source fixture</body></html>\n")
+elif args == ["tools/tpt", "public-alpha", "verify", "--deployment-target", "github-pages"]:
+    if not (root / "build/public-alpha/site/index.html").is_file():
+        raise SystemExit("verification ran before the source artifact existed")
+else:
+    raise SystemExit("unexpected or print-dependent deployment command: " + repr(args))
+''')
+        python.chmod(0o755)
+        (self.bin / "python3").symlink_to(python.name)
+        for name in ("pdflatex", "xelatex", "lualatex", "pdfinfo", "pdftotext",
+                     "pdftoppm", "pacman", "apt-get", "docker", "curl", "wget", "gh"):
+            tool = self.write(f"bin/{name}", "#!/bin/sh\n"
+                              f"echo 'forbidden deployment executable: {name}' >&2\nexit 99\n")
+            tool.chmod(0o755)
+
+    def write(self, relative, content):
         path = self.root / relative
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(text, encoding="utf-8")
+        path.write_text(content, encoding="utf-8")
         return path
 
-    def record(self, provider, document, status):
-        return self.write(f"release/publications/{provider}/{document}.json", json.dumps({
-            "schema_version": 1, "id": document, "status": status,
-            "catalog": "library/test.md",
-            "authorization": None if status == "hold" else "standing",
-        }))
+    def commands(self):
+        return [tuple(json.loads(line)) for line in self.log.read_text().splitlines()] if self.log.exists() else []
 
-    def write_manifest(self):
-        self.write("release/public-alpha.json", json.dumps(self.manifest))
+    def shell(self, script, *, env=None):
+        return subprocess.run(["bash", "-euo", "pipefail", "-c", script], cwd=self.root,
+                              env=env or self.env, capture_output=True, text=True, timeout=30)
 
-    def run_shell(self, script, *, env=None, success=True):
-        result = subprocess.run(
-            ["bash", "-euo", "pipefail", "-c", script],
-            cwd=self.root, env=env or self.env, capture_output=True, text=True,
-        )
-        if success:
-            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-        else:
-            self.assertNotEqual(result.returncode, 0, result.stdout + result.stderr)
+    def pages(self):
+        return yaml.safe_load((ROOT / ".github/workflows/pages.yml").read_text(encoding="utf-8"))
+
+    def run_pages_commands(self, *, env=None):
+        for step in self.pages()["jobs"]["deploy"]["steps"]:
+            if "run" in step:
+                result = self.shell(step["run"], env=env)
+                if result.returncode:
+                    return result
         return result
 
-    def step(self, name, **kwargs):
-        return self.run_shell(STEPS[name]["run"], **kwargs)
 
-    def plan_run(self, **kwargs):
-        (self.runner / "outputs").write_text("")
-        return self.step(PLAN, **kwargs)
+class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
+    def test_tracked_pdf_blocks_source_publication(self):
+        subprocess.run(["git", "init", "-q", "-b", "feature/no-pdfs"], cwd=self.root,
+                       check=True, capture_output=True)
+        self.write("unexpected.PdF", "%PDF-fixture\n")
+        subprocess.run(["git", "add", "--force", "unexpected.PdF"], cwd=self.root,
+                       check=True, capture_output=True)
+        result = self.shell("make")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Tracked PDFs must be preserved outside Git", result.stderr)
+        self.assertFalse((self.root / "build/public-alpha/site/index.html").exists())
 
-    def outputs(self):
-        return dict(line.split("=", 1) for line in
-                    (self.runner / "outputs").read_text().splitlines())
+    def test_tracked_archives_block_source_publication(self):
+        subprocess.run(["git", "init", "-q", "-b", "feature/no-pdfs"], cwd=self.root,
+                       check=True, capture_output=True)
+        for name in ("hidden.ZiP", "hidden.ZiP.PaRt-001"):
+            with self.subTest(name=name):
+                self.write(name, "binary archive fixture\n")
+                subprocess.run(["git", "add", "--force", name], cwd=self.root,
+                               check=True, capture_output=True)
+                result = self.shell("make")
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn("Tracked binary archives must be preserved outside Git", result.stderr)
+                self.assertFalse((self.root / "build/public-alpha/site/index.html").exists())
+                subprocess.run(["git", "rm", "--force", name], cwd=self.root,
+                               check=True, capture_output=True)
 
-    def keys(self):
-        return json.loads((self.plan / "keys.json").read_text())
+    def test_plain_make_defaults_to_the_source_site_without_typesetting(self):
+        result = self.shell("make")
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertTrue((self.root / "build/public-alpha/site/index.html").is_file())
+        self.assertEqual(list(self.root.rglob("*.pdf")), [])
+        for command in SOURCE_COMMANDS:
+            with self.subTest(command=command):
+                self.assertEqual(self.commands().count(command), 1)
 
-    def seed_cache(self):
-        self.plan_run()
-        for provider, documents in self.keys().items():
-            for document, key in documents.items():
-                (self.store / f"{key}.pdf").write_text(f"validated {provider} {document}\n")
-        self.plan_run()
-        self.assertEqual(self.outputs()["typesetting"], "none")
+    def test_actual_pages_commands_run_each_source_gate_once_without_pdf_outputs(self):
+        self.assertFalse((self.root / "pdf").exists())
+        result = self.run_pages_commands()
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        commands = self.commands()
+        for command in SOURCE_COMMANDS:
+            with self.subTest(command=command):
+                self.assertEqual(Counter(commands)[command], 1)
+        rights = [command for command in commands if command[:3] == ("-m", "unittest", "-v")]
+        self.assertEqual(len(rights), 1)
+        build = ("tools/tpt", "public-alpha", "build")
+        verify = ("tools/tpt", "public-alpha", "verify", "--deployment-target", "github-pages")
+        self.assertEqual(commands.count(build), 1)
+        self.assertEqual(commands.count(verify), 1)
+        for command in SOURCE_COMMANDS:
+            self.assertLess(commands.index(command), commands.index(build))
+        self.assertLess(commands.index(rights[0]), commands.index(build))
+        self.assertLess(commands.index(build), commands.index(verify))
+        self.assertFalse((self.root / "pdf").exists())
+        self.assertEqual(list(self.root.rglob("*.pdf")), [])
 
-    def cold_install(self, **kwargs):
-        self.step(COLD)
-        env = {
-            **self.env, "TRIPTYCH_BAKED": "1",
-            "TRIPTYCH_PROVIDERS": (self.plan / "providers.txt").read_text().strip(),
-            "TRIPTYCH_MAKE_FLAGS": (self.plan / "make-flags.txt").read_text().strip(),
-            "TRIPTYCH_PLAN": str(self.plan),
-        }
-        return self.run_shell(
-            'bash "$RUNNER_TEMP/triptych-toolchain/build.sh"', env=env, **kwargs
-        )
+    def test_each_new_source_gate_failure_prevents_artifact_construction(self):
+        for gate in (
+            "scripts/_act_history_projection_receipt.py check",
+            "tools/tpt document-schema check --include-sources", "tools/tpt artifact-store check",
+            "tools/tpt source-library validate",
+            "tools/tpt source-reader structure --check-receipt",
+        ):
+            with self.subTest(gate=gate):
+                self.log.unlink(missing_ok=True)
+                shutil.rmtree(self.root / "build", ignore_errors=True)
+                result = self.run_pages_commands(env={**self.env, "DEPLOYMENT_TEST_FAIL": gate})
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn("deliberate source gate failure", result.stderr)
+                self.assertNotIn(("tools/tpt", "public-alpha", "build"), self.commands())
+                self.assertFalse((self.root / "build/public-alpha/site").exists())
 
-    def assert_selection(self):
-        self.assertEqual((self.plan / "providers.txt").read_text(), "claude gpt\n")
-        self.assertEqual(set(self.keys()), set(PROVIDERS))
-        for provider in PROVIDERS:
-            self.assertEqual(
-                (self.plan / f"documents-{provider}.txt").read_text(),
-                " ".join(SELECTED) + "\n",
-            )
-            self.assertEqual(set(self.keys()[provider]), set(SELECTED))
-
-    def assert_installed(self):
-        actual = {
-            path.relative_to(self.root / "pdf").with_suffix("").as_posix()
-            for path in (self.root / "pdf").rglob("*.pdf")
-        }
-        self.assertEqual(actual, {f"{p}/{d}" for p in PROVIDERS for d in SELECTED})
-        self.assertEqual(set((self.root / "install.log").read_text().splitlines()), {
-            f"install {p}: {' '.join(SELECTED)}" for p in PROVIDERS
-        })
-
-    def test_cold_cache_installs_only_included_outputs_for_both_providers(self):
-        self.plan_run()
-        self.assert_selection()
-        self.assertEqual(self.outputs()["documents_to_build"], "12")
-        self.assertEqual(self.outputs()["typesetting"], "required")
-        self.cold_install()
-        self.assert_installed()
-        self.step(STORE)
-        self.assertEqual(len(list(self.store.glob("*.pdf"))), 12)
-
-    def test_full_hit_installs_same_selection_without_typesetting(self):
-        self.seed_cache()
-        self.assert_selection()
-        self.assertEqual(self.outputs()["cache_hits"], "12")
-        self.step(WARM)
-        self.assert_installed()
-        self.assertFalse((self.root / "toolchain.log").exists())
-
-    def test_mixed_hit_preserves_the_selection_in_container_branch(self):
-        self.seed_cache()
-        (self.store / f"{self.keys()['gpt']['study-homily']}.pdf").unlink()
-        self.plan_run()
-        self.assertEqual(self.outputs()["documents_to_build"], "1")
-        self.assertEqual(self.outputs()["cache_hits"], "11")
-        self.cold_install()
-        self.assert_installed()
-
-    def test_held_cache_entry_is_neither_restored_nor_retained(self):
-        self.seed_cache()
-        retired = self.store / ("0" * 64 + ".pdf")
-        retired.write_text("old held artifact")
-        self.plan_run()
-        self.step(WARM)
-        self.step(STORE)
-        self.assert_installed()
-        self.assertFalse(retired.exists())
-        self.assertFalse((self.root / "build/claude/held-synthesis.pdf").exists())
-
-    def test_cache_hit_is_still_validated_before_install(self):
-        self.seed_cache()
-        (self.root / "build/gpt/study.pdf").write_text("invalid metadata")
-        result = self.step(WARM, success=False)
-        self.assertIn("metadata validation failed", result.stderr)
-        self.assertFalse((self.root / "pdf/gpt/study.pdf").exists())
-
-    def test_missing_approved_output_fails_cache_only_install(self):
-        self.seed_cache()
-        (self.root / "build/gpt/study-homily.pdf").unlink()
-        result = self.step(WARM, success=False)
-        self.assertIn("The cache plan and the build graph disagree", result.stderr)
-
-    def test_missing_document_plan_fails_both_branches(self):
-        self.seed_cache()
-        (self.plan / "documents-claude.txt").unlink()
-        self.step(WARM, success=False)
-        self.cold_install(success=False)
-        self.assertFalse((self.root / "install.log").exists())
-
-    def test_hold_only_provider_has_an_explicit_empty_selection(self):
-        for document in SELECTED + HELD:
-            self.record("gpt", document, "hold")
-        self.plan_run()
-        self.assertEqual((self.plan / "documents-gpt.txt").read_text(), "\n")
-        self.cold_install()
-        self.assertFalse((self.root / "pdf/gpt").exists())
-        self.step(STORE)
-        self.plan_run()
-        self.assertEqual(self.outputs()["typesetting"], "none")
-        self.step(WARM)
-        self.assertFalse((self.root / "pdf/gpt").exists())
-
-    def test_missing_inventory_is_not_treated_as_hold(self):
-        (self.root / "release/publications/claude/study-homily.json").unlink()
-        result = self.plan_run(success=False)
-        self.assertIn("manifest/source mismatch", result.stderr)
-        self.assertIn("study-homily", result.stderr)
-        self.assertFalse((self.plan / "keys.json").exists())
-
-    def test_inventory_without_a_source_fails_even_when_held(self):
-        self.record("gpt", "missing-source", "hold")
-        result = self.plan_run(success=False)
-        self.assertIn("manifest/source mismatch", result.stderr)
-        self.assertIn("missing-source", result.stderr)
-
-    def test_unknown_legacy_status_is_not_silently_excluded(self):
-        self.manifest["publications"][0]["status"] = "unknown"
-        self.write_manifest()
-        result = self.plan_run(success=False)
-        self.assertIn("invalid publication status", result.stderr)
-
-    def test_missing_legacy_status_is_not_silently_excluded(self):
-        self.manifest["publications"][0].pop("status")
-        self.write_manifest()
-        result = self.plan_run(success=False)
-        self.assertIn("missing publication status", result.stderr)
-
-    def test_unknown_local_status_is_rejected_by_the_owner(self):
-        self.record("claude", "held", "unknown")
-        result = self.plan_run(success=False)
-        self.assertIn("invalid status", result.stderr)
-
-    def test_undeclared_source_provider_is_rejected(self):
-        self.write("src/other/extra/main.tex", "extra\n")
-        result = self.plan_run(success=False)
-        self.assertIn("undeclared source providers", result.stderr)
-
-    def test_make_must_account_for_companions_even_when_held(self):
-        path = self.root / "Makefile"
-        path.write_text(path.read_text().replace("held-homily ", "", 1))
-        result = self.plan_run(success=False)
-        self.assertIn("make/source mismatch", result.stderr)
-
-    def test_local_make_install_default_still_includes_held_sources(self):
-        result = self.run_shell("make install PROVIDER=gpt", success=False)
-        self.assertIn("held target reached", result.stderr)
-
-    def test_container_mounts_the_same_plan_read_only(self):
-        run = STEPS["Typeset the outstanding PDFs in the pinned container"]["run"]
-        self.assertIn(
-            '--volume "${RUNNER_TEMP}/triptych-plan:/triptych-plan:ro"', run
-        )
-        self.assertIn('--env "TRIPTYCH_PLAN=/triptych-plan"', run)
-        self.assertEqual(STEPS[WARM]["if"], "steps.plan.outputs.typesetting == 'none'")
-        self.assertEqual(STEPS[COLD]["if"], "steps.plan.outputs.typesetting != 'none'")
+    def test_pages_never_restores_print_artifacts_or_installs_a_print_toolchain(self):
+        steps = self.pages()["jobs"]["deploy"]["steps"]
+        actions = [step["uses"].partition("@")[0] for step in steps if "uses" in step]
+        self.assertEqual(actions, ["actions/checkout", "actions/setup-python", "actions/configure-pages",
+                                   "actions/upload-pages-artifact", "actions/deploy-pages"])
+        upload = next(step for step in steps if step.get("uses", "").startswith("actions/upload-pages-artifact@"))
+        self.assertEqual(upload["with"]["path"], "build/public-alpha/site")
+        self.assertTrue(upload["with"]["include-hidden-files"])
+        checkout = next(step for step in steps if step.get("uses", "").startswith("actions/checkout@"))
+        self.assertFalse(checkout["with"]["persist-credentials"])
 
 
 if __name__ == "__main__":

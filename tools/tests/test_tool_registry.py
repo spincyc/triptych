@@ -446,6 +446,7 @@ class ReachTests(unittest.TestCase):
         """
         text = (TOOLS / name).read_text(encoding="utf-8", errors="replace")
         implementation = {
+            "artifact-store": "_artifact_store.py",
             "bullarium": "_bullarium.py",
             "history-browser-acceptance": "_history_browser_acceptance.py",
             "papal-acta": "_papal_acta.py",
@@ -510,7 +511,7 @@ class ReachTests(unittest.TestCase):
         declared = self.declarations()
         network = sorted(n for n, r in declared.items() if r == "network")
         self.assertEqual(network, [
-            "bullarium", "knox-bible", "papal-acta", "papal-documents", "papal-sources",
+            "artifact-store", "bullarium", "knox-bible", "papal-acta", "papal-documents", "papal-sources",
         ], "the network reach story has changed")
         self.assertEqual(sorted(n for n, r in declared.items() if r == "model"), ["harvest"])
         listing = subprocess.run(

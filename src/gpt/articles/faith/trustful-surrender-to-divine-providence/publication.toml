@@ -1,0 +1,81 @@
+schema_version = 1
+id = "gpt/articles/faith/trustful-surrender-to-divine-providence"
+kind = "article-faith"
+profile = "guidance/articles.md"
+source_format = "latex"
+entrypoint = "main.tex"
+
+[[outputs]]
+id = "gpt/articles/faith/trustful-surrender-to-divine-providence"
+role = "canonical"
+entrypoint = "main.tex"
+derivation = "authored"
+
+[[structure]]
+role = "body"
+source = "main.tex"
+outputs = ["canonical"]
+
+[[structure]]
+role = "generation"
+source = "generation-metadata.tex"
+
+[[structure]]
+role = "web-declaration"
+source = "web-edition.toml"
+
+[[structure]]
+role = "scope"
+source = "research/scope.md"
+
+[[structure]]
+role = "source-audit"
+source = "research/source-audit.md"
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[[structure]]
+role = "argument"
+source = "sections/00-question-thesis.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/10-providence.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/20-causal-order.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/30-freedom.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/40-agency-culpability.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/50-evil-suffering.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/60-patristic-witness.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/70-augustine-love.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/90-practice.tex"
+
+[[structure]]
+role = "references"
+source = "sections/99-references.tex"
+
+[[structure]]
+role = "scope-appendix"
+source = "sections/00-question-thesis.tex"

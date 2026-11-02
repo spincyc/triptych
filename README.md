@@ -4,7 +4,7 @@
 
 ## Library
 
-Choose a section, open a PDF, and read. New here? Start with
+Choose a section, open a reader, and read. New here? Start with
 [About](ABOUT.md). To see the whole corpus at once — every document, with its
 authors, its extent, and when it was last revised — open
 [Every Document](texts/).
@@ -39,3 +39,7 @@ authors, its extent, and when it was last revised — open
 [The Bibles](docs/bibles.md) · [The Mass](docs/the-mass.md) ·
 [Reading and Commentary](docs/reading-and-commentary.md) ·
 [Papal Documents](docs/papal-documents.md)
+
+The repository keeps the plaintext, structured data, sources, and tools behind
+these readers. For browser printing or a single optional print edition, see
+[Printing](docs/printing.md).

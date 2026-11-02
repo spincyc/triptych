@@ -1,0 +1,109 @@
+schema_version = 1
+id = "gpt/curriculums/ecclesiastical-latin/01-foundations/05-perfect-passive-and-deponents"
+kind = "curriculum-packet"
+profile = "guidance/curriculums/ecclesiastical-latin.md"
+source_format = "latex"
+entrypoint = "main.tex"
+
+[[outputs]]
+id = "gpt/curriculums/ecclesiastical-latin/01-foundations/05-perfect-passive-and-deponents"
+role = "canonical"
+entrypoint = "main.tex"
+derivation = "authored"
+
+[[structure]]
+role = "body"
+source = "main.tex"
+outputs = ["canonical"]
+
+[[structure]]
+role = "generation"
+source = "generation-metadata.tex"
+
+[[structure]]
+role = "web-declaration"
+source = "web-edition.toml"
+
+[[structure]]
+role = "scope"
+data = "src/gpt/curriculums/ecclesiastical-latin/research/scope.md"
+
+[[structure]]
+role = "module-map"
+source = "research/module-map.md"
+
+[[structure]]
+role = "module-selection"
+source = "module-data.tex"
+
+[[structure]]
+role = "curriculum-map"
+data = "src/gpt/curriculums/ecclesiastical-latin/research/curriculum-map.md"
+
+[[structure]]
+role = "passage-inventory"
+data = "src/gpt/curriculums/ecclesiastical-latin/research/passage-inventory.md"
+
+[[structure]]
+role = "vocabulary-map"
+data = "src/gpt/curriculums/ecclesiastical-latin/research/vocabulary-map.md"
+
+[[structure]]
+role = "answer-key-audit"
+data = "src/gpt/curriculums/ecclesiastical-latin/research/answer-key-audit.md"
+
+[[structure]]
+role = "source-audit"
+data = "src/gpt/curriculums/ecclesiastical-latin/research/source-audit.md"
+
+[[structure]]
+role = "edition-manifest"
+data = "src/gpt/curriculums/ecclesiastical-latin/research/edition-manifest.md"
+
+[[structure]]
+role = "references"
+data = "src/gpt/curriculums/ecclesiastical-latin/shared/content/shared/sources.tex"
+
+[[structure]]
+role = "scope-appendix"
+data = "src/gpt/curriculums/ecclesiastical-latin/shared/module-scope.tex"
+
+[[structure]]
+role = "teaching"
+data = "src/gpt/curriculums/ecclesiastical-latin/shared/content/volume1/all.tex"
+
+[[structure]]
+role = "practice"
+data = "src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume1/all.tex"
+
+[[structure]]
+role = "answers"
+data = "src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume1/all.tex"
+
+[[structure]]
+role = "memory-work"
+data = "src/gpt/curriculums/ecclesiastical-latin/shared/memory/sets.tex"
+
+[[structure]]
+role = "vocabulary"
+data = "src/gpt/curriculums/ecclesiastical-latin/shared/memory/lexemes.tex"
+
+[[structure]]
+role = "grammar-memory"
+data = "src/gpt/curriculums/ecclesiastical-latin/shared/memory/grammar-facts.tex"
+
+[[structure]]
+role = "reading-and-composition"
+data = "src/gpt/curriculums/ecclesiastical-latin/shared/content/packet-practice.tex"
+
+[[structure]]
+role = "answers"
+data = "src/gpt/curriculums/ecclesiastical-latin/shared/content/packet-practice.tex"
+
+[[structure]]
+role = "reading-and-composition"
+data = "src/gpt/curriculums/ecclesiastical-latin/shared/content/readers/all.tex"
+
+[[structure]]
+role = "answers"
+data = "src/gpt/curriculums/ecclesiastical-latin/shared/content/readers/all.tex"

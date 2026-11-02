@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:triptych:bible-book-index-row:v1",
+  "title": "Existing Bible book-index TSV row",
+  "description": "The existing TSV vocabulary, decoded as string-valued JSON. Optional historical columns remain optional; this changes no artifact or source-library schema.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["ordinal", "token", "file", "testament", "douay_title", "modern_name", "missal_latin_abbreviation", "alternate_names"],
+  "properties": {
+    "ordinal": {"type": "string", "pattern": "^[1-9][0-9]*$"},
+    "token": {"type": "string", "pattern": "^[A-Za-z0-9]+$"},
+    "file": {"type": "string", "pattern": "^[A-Za-z0-9._-]+\\.tsv$"},
+    "testament": {"type": "string", "enum": ["old", "new", "apocrypha", "septuagint"]},
+    "douay_title": {"type": "string"},
+    "modern_name": {"type": "string", "minLength": 1},
+    "missal_latin_abbreviation": {"type": "string"},
+    "alternate_names": {"type": "string"},
+    "edition_title": {"type": "string"},
+    "kjv_title": {"type": "string"},
+    "chapters": {"type": "string", "pattern": "^([1-9][0-9]*)?$"},
+    "verses": {"type": "string", "pattern": "^([1-9][0-9]*)?$"},
+    "note": {"type": "string"}
+  }
+}

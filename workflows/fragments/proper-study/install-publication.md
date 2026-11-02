@@ -1,57 +1,50 @@
-# Install and wire the reviewed three-document family
+# Publish the reviewed source and web family
 
-Install the three accepted PDFs with `make install-doc DOC=<id>
-PROVIDER={provider}`, for the bare ID, `-synthesis`, and `-homily`. Run the
-normal Make recipes with their declared dependencies and checks, including on
-reentry. Do not suppress them with `-o`, `-t`, or dependency/timestamp changes;
-do not alter accepted sources or their generation timestamp to avoid a rebuild.
-
-Confirm the artifact snapshot is current before installation and retain the
-three accepted PDF SHA-256 values. Make may retypeset unchanged inputs. After
-building and installing, compare each build PDF and installed PDF against its
-accepted SHA-256; a rebuild is acceptable only when those bytes are identical.
-If any hash differs, the installation contract is unfulfilled: stop and return
-BLOCKED with the exact expected and actual hashes. Do not claim a reviewed
-installation, refresh a receipt to conceal the difference, or suppress checks.
-Report the artifact defect to the coordinator for repair and a new artifact
-review before acceptance; this linear stage's BLOCKED result does not route
-that repair automatically. Byte-identical normal-Make rebuilds may complete
-this stage normally when its remaining work is done.
+Validate `publication.toml`, all three declared output entrypoints, the exact
+source/evidence review closure, and current source identities before publishing.
+Follow `guidance/document-schemas.md`; do not create or install PDFs to satisfy
+this source/HTML stage. No generated PDF belongs in Git or the ordinary site
+artifact. A changed source or evidence closure returns to its actual review
+owner; a receipt cannot renew acceptance.
 
 Install the reviewed canonical Markdown from
 `build/web/{provider}/{proper}.md` to `web/{provider}/{proper}.md`, byte for
-byte, and stage that Markdown so the publication gate can prove it is tracked.
-Do not create a separate companion web authority.
+byte, and include that Markdown with the canonical source changes for the
+publication gate. Do not create a separate companion web authority. Confirm
+that its exact conversion identity still matches the independent web review.
 
-Create one per-publication release record for each PDF using
-`make add-publication ID=<id> CATALOG=<catalog> PROVIDER={provider} STATUS=alpha`.
-The catalog is `library/traditional-latin-mass.md` for 1962 and
-`library/novus-ordo-liturgy.md` for postconciliar. Read and preserve a correct
-existing record rather than overwriting it blindly. All three records must
-name the exact IDs and catalog and the standing authorization.
+Create or confirm one per-publication release record for each declared source
+output using the repository's release tooling. The catalog is
+`library/traditional-latin-mass.md` for 1962 and
+`library/novus-ordo-liturgy.md` for postconciliar. Read and preserve correct
+existing records. All three records must name the exact IDs, owning catalog,
+and applicable standing authorization; generated print hashes are separate.
 
-Wire the existing Sunday's row to all three PDFs and the canonical web page,
-in the output-label order the schema-2 manifest declares. Change only this
-provider's entries in the correct cycle cell; preserve other providers and
-cycles. Add exactly one canonical publication marker using the primary-provider
-rule in `release/public-alpha.json`. Do not create extra rows for companions.
+Wire the existing Sunday's row to the canonical reader and any actually
+available reader-facing formats in the manifest's declared order. Keep source
+and review apparatus in its owning records. Change only this provider's entries
+in the correct cycle cell; preserve other providers and cycles. Add exactly one
+canonical publication marker using the primary-provider rule in
+`release/public-alpha.json`. Do not create extra rows for companions or links
+to absent PDFs.
 
 Refresh the deterministic document catalog and source/release inventories with
 their owning tools. Serialize shared catalog and release-manifest writes with
 the coordinator when other productions are active. Follow the repository's
 scoped release-refresh rule; do not adopt unrelated concurrent changes.
-Record completed reviews and installation facts in the production audit using
-the actual engine results and receipts, never invented acceptance.
+Record completed source and web reviews and publication facts in the production
+audit using actual engine results and receipts, never invented acceptance.
 
-The terminal program gate decides acceptance: installed/build byte identity,
-current artifact and web receipts, source/metadata contracts, exact release
-records, catalog links, release bindings, document catalog, and web freshness.
-The public-alpha check is scoped to this canonical owner's three outputs;
-unrelated absent PDFs are not evidence of failure of these outputs or a global
-deployment approval. Source/release/authorization checks remain global. The
-engine checks its immutable accepted review seals before these terminal checks
-and routes stale evidence to its actual author; refreshing a receipt cannot
-renew acceptance. On a failed publication gate sent here, repair wiring only. A stale reviewed source or
-artifact is not repaired by changing a receipt or claiming the old review;
-report the defect so production can return to its proper review boundary.
-Return concrete installed paths and records, or BLOCKED with the real obstacle.
+The terminal gate checks current source/schema/metadata contracts, independent
+source and web review identities, exact release records, catalog links, release
+bindings, document catalog, and web freshness. Source/release/authorization
+checks remain global; this family's acceptance does not approve an unrelated
+publication or deployment. On a failed gate sent here, repair wiring only.
+Report stale reviewed inputs so production returns to their proper boundary.
+
+If the packet also requests print export, use the separate printing workflow in
+`docs/printing.md`. Only selected outputs are exported. A print review covers
+exact bytes after real full-page inspection and all applicable profile gates;
+source or HTML acceptance alone does not supply that review. Return concrete
+source/web paths and records, any separate print receipt, or BLOCKED with the
+real obstacle.

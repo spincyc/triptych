@@ -51,6 +51,16 @@
   const READABLE = 'browser';
   const DOWNLOAD = 'pdf';
 
+  function readerTarget(edition) {
+    if (edition.available && !edition.available.reader) return null;
+    return (edition.targets || {}).reader || edition.web || null;
+  }
+
+  function printTarget(edition) {
+    if (edition.available && !edition.available.print) return null;
+    return (edition.targets || {}).print || null;
+  }
+
   /** A document's name, or its path and the reason there is none. */
   function nameOf(work, edition) {
     if (edition.title) return { text: edition.title, unrecorded: false, reason: null };
@@ -160,8 +170,9 @@
   function matches(work, edition, state) {
     if (state.edition && edition.provider !== state.edition) return false;
     if (state.author && (edition.models || []).indexOf(state.author) === -1) return false;
-    if (state.reading === READABLE && !edition.web) return false;
-    if (state.reading === DOWNLOAD && edition.web) return false;
+    if (state.reading === READABLE && !readerTarget(edition)) return false;
+    // `pdf` remains a supported arrival hash for the old non-reader facet.
+    if (state.reading === DOWNLOAD && readerTarget(edition)) return false;
     if (state.find && haystack(work, edition).indexOf(state.find) === -1) return false;
     return true;
   }
@@ -246,6 +257,8 @@
     DOWNLOAD: DOWNLOAD,
     nameOf: nameOf,
     pagesOf: pagesOf,
+    readerTarget: readerTarget,
+    printTarget: printTarget,
     compareVersions: compareVersions,
     driftOf: driftOf,
     matches: matches,

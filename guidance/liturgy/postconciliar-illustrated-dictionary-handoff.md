@@ -20,6 +20,12 @@ explanation of the Order of Mass may also require
 [ordinary-expositions.md](ordinary-expositions.md), but that profile does not
 by itself govern the visual dictionary.
 
+Publication manifests and source/print review scopes follow
+[document schemas](../document-schemas.md) and
+[printing](../../docs/printing.md). Keep canonical object and artwork records;
+normal publication validates sources and eligible HTML. Physical page and PDF
+checks below apply to selected print exports.
+
 Nothing in this handoff authorizes research acquisition, tracked third-party
 images, source migration, content drafting, image generation, a PDF install,
 catalog changes, commits, integration, a push, or deployment. Each remains a
@@ -242,7 +248,8 @@ Give every approved asset a stable figure ID and record:
 - edition-specific claims encoded by placement or dress;
 - permitted consumers and crops;
 - accuracy-validation state; and
-- the exact source and PDF versions in which the asset was validated.
+- the exact source/output versions in which the asset was validated, with
+  separate identities for any reviewed print exports.
 
 Keep generated lettering, labels, arrows, color names, minister names, and
 movement paths out of raster artwork. Add them as typeset overlays so they
@@ -427,10 +434,11 @@ Gate: approve the artwork grammar before producing the full asset set.
 1. Draft plates from the canonical inventory.
 2. Keep ordinary captions concise and move global apparatus to the end.
 3. Add indexed endnotes and cross-references.
-4. Build enough passes to settle references and indexes.
+4. Validate source roles, dependencies, references, indexes, and actual output.
 
-Gate: content, source, rights, image-accuracy, log, and every-page visual review
-must pass before installing a PDF.
+Gate: content, source, rights, image-accuracy, schema, and output review must
+pass before publication. A requested PDF additionally requires settled print
+builds, log checks, and every-page visual review of the exact export.
 
 ### Phase 5: alpha validation
 
@@ -444,7 +452,7 @@ must pass before installing a PDF.
 5. Put the actual scope and one short work-wide reliance boundary in the
    terminal scope-and-qualifications appendix. Keep internal release state out
    of reader-facing pages and prose. Keep immediate safety notices beside the
-   affected object or action, then record the exact installed artifact
+   affected object or action, then record the exact source/output
    identity.
 
 Gate: alpha eligibility requires those six concerns and no external-review,
@@ -455,7 +463,8 @@ intended-reader, or physical-human-review process.
 1. Derive selections and audience wording from canonical records.
 2. Preserve every handling and status qualification needed by that audience.
 3. Reuse approved figures or declared crops without silently changing meaning.
-4. Rebuild and review each extraction as a separate publication.
+4. Validate and review each extraction as a separate source publication;
+   build and inspect selected print exports separately.
 
 Gate: compare every derived statement and plate against the comprehensive
 record; no independently drifting text or artwork.
@@ -468,9 +477,10 @@ record; no independently drifting text or artwork.
 2. Where a web edition is eligible, provide meaningful object-level alt text,
    reading order, captions, and textual equivalents without creating a second
    authoritative edition.
-3. Run source, metadata, build, log, link, catalog, and profile checks.
-4. Use repository review tooling, inspect every rendered page for basic visual
-   usability, and install only exact validated artifacts.
+3. Run source, schema, metadata, link, catalog, and profile checks.
+4. Inspect the actual output for basic visual usability and publish only
+   validated source/web outputs. Apply build, log, and full-page visual checks
+   to each requested print export, recording its exact artifact identity.
 
 Gate: published records deployment of the verified alpha artifact. It does not
 erase unresolved completeness, rights, edition-locale, or accessibility
@@ -514,9 +524,10 @@ should contain:
 - an artwork manifest with rights and accuracy review;
 - the comprehensive source leaf and any authorized derived leaves;
 - terminal indexes, notes, qualifications, rights notice, and metadata;
-- explicit build dependencies for shared records and artwork;
-- validated installed PDFs and, where eligible, validated web editions;
-- catalog entries only for publications actually installed and approved; and
+- explicit source dependencies for shared records and artwork, with matching
+  print-build edges where applicable;
+- validated publication manifests and, where eligible, reviewed web editions;
+- catalog entries only for publications actually validated and released; and
 - a remaining-gaps record that prevents “complete” from outrunning the checked
   corpus.
 

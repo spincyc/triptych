@@ -72,6 +72,15 @@
   const trackName = document.getElementById('track-name');
   const trackLede = document.getElementById('track-lede');
   const planLink = document.getElementById('plan-link');
+  let printReady = false;
+  const printing = T.bindPrint({
+    root: content,
+    host: document.querySelector('.page-header'),
+    label: 'Print selected view',
+    ready: () => printReady,
+    identity: () => document.title + (state.view === 'reading' && currentBible()
+      ? ' — ' + currentBible().label : '')
+  });
 
   /* ------------------------------------------------------------------------
    * Where we are
@@ -627,6 +636,8 @@
   }
 
   async function render(options) {
+    printReady = false;
+    printing.invalidate();
     const view = currentTrack();
     const bible = currentBible();
     const token = T.beginRender();
@@ -654,6 +665,7 @@
     }
 
     content.setAttribute('aria-busy', 'false');
+    printReady = !content.querySelector('.notice, .error, .placeholder');
     if (options && options.moveFocus) content.focus();
   }
 

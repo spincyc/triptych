@@ -1,39 +1,34 @@
-# Build all three artifacts for visual review
+# Validate source outputs and selected print exports
 
-Build the bare document, `{proper}-synthesis`, and `{proper}-homily` with
-`make doc DOC=<id> PROVIDER={provider}`. The Makefile owns fixed-point passes,
-declared dependencies and metadata validation. Inspect all three logs and
-extracted texts; resolve fatal errors, undefined references, overflow and
-unresolved layout warnings. Check PDF structure and font embedding. Verify
-the required 20–50-page study, 10–12-page concise work and settled physical-page
-markers for the concise opening: map and senses on 1, chronology on 2,
-themes on 3–4, commentary beginning on 5. No logical counter reset can supply
-missing physical pages. Keep the concise auxiliary and log evidence with the
-final PDFs for the artifact snapshot and gate. Do not
-change accepted prose or evidence here. Layout repairs may change presentation
-but must preserve all content and source roles. Any such source edit invalidates
-the affected content review: the following artifact gate checks the completed
-research, study, synthesis and homily seals and routes changed bytes to the
-earliest affected author, followed by fresh dependent reviews and a new build.
-Record the exact layout edits; never refresh a content seal or describe an old
-approval as current. Report semantic defects for
-the visual reviewer to send upstream.
+Validate the bare document, `{proper}-synthesis`, and `{proper}-homily` as the
+three declared outputs of one `publication.toml` owner:
 
-After the final builds, record the exact PDF and render-input snapshot:
+    tools/document-schema check --provider {provider} --document {proper} --phase content --run-gates
+    tools/document-schema identities --provider {provider} --document {proper}
 
-    python3 scripts/_proper_study.py snapshot --provider {provider} --document {proper}
+Check actual source entrypoints, ordered components, dependencies, chronology,
+metadata, and the upstream research, study, synthesis, and homily review closure.
+Do not change accepted prose or evidence here. Report a source, schema, or
+evidence defect to its earliest affected owner for fresh dependent review;
+never refresh a seal to conceal changed inputs. Record concrete validation
+results and source identities. The normal source/HTML run requires no TeX,
+Poppler, PDF, raster receipt, or installed PDF mirror.
 
-Generate bounded page rasters only with the repository helper:
+When the packet explicitly requests a print export, read `docs/printing.md` and
+use `tools/print-document` for only the selected outputs. Keep fixed-point build
+logs and exact exported bytes; reject fatal errors, undefined references,
+overflow, unresolved layout warnings, invalid PDF structure, and missing fonts.
+Apply every physical gate relevant to those outputs: the study's 20–50 pages,
+the concise work's 10–12 pages, and its settled physical opening markers (map
+and senses on 1, chronology on 2, themes on 3–4, commentary beginning on 5).
+Logical counter resets, padding, and unreadable type cannot meet those gates.
 
-    tools/tpt pdf-review --output build/tpt-runs/<run-id>/artifacts/build-artifacts-<iteration>/rasters build/{provider}/{proper}.pdf build/{provider}/{proper}-synthesis.pdf build/{provider}/{proper}-homily.pdf
-
-Use the actual run ID and this stage's iteration from the packet. The helper
-replaces its entire output directory: keep logs, author proofs and other review
-evidence outside this dedicated raster child. Record artifact paths, page counts,
-log/font/extraction results and remaining limitations in the production audit.
-The helper writes `research/artifacts.json`; it records real bytes and declared
-source inputs, never a claim of review. A fresh worker visually inspects every
-page after the upstream seals and artifact checks pass. Do not install PDFs yet.
-On reentry, update render finalization
-metadata after a layout change, rebuild every affected consumer, and replace
-the snapshot only before the new visual review. Return the concrete outputs.
+Prepare bounded page rasters only with `tools/tpt pdf-review`, using a dedicated
+replaceable `rasters` child beneath this stage and iteration's artifact area.
+Keep logs, proofs, and other evidence outside that child. Record actual artifact
+paths, hashes, page counts, log/font/extraction results, and limitations. A
+receipt identifies bytes; it does not claim visual inspection. A fresh reviewer
+must inspect every page of each selected export before it is called reviewed.
+A format-only change follows print-template review scope; it does not renew or
+invalidate unrelated source/evidence acceptance. Any changed PDF needs a new
+exact-artifact review. Do not track or install generated PDFs for site release.

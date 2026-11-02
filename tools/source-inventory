@@ -149,6 +149,7 @@ RELATIONSHIPS = {
 }
 FILE_KINDS = {
     "publication-main",
+    "publication-contract",
     "source-binding",
     "legacy-source-audit",
     "research-scope",
@@ -377,6 +378,8 @@ def _file_kind(relative: str) -> str:
     name = path.name.lower()
     if name == "main.tex":
         return "publication-main"
+    if name == "publication.toml":
+        return "publication-contract"
     if name == "source-bindings.toml":
         return "source-binding"
     if name.startswith("source-audit") and path.suffix == ".md":

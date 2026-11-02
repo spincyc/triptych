@@ -60,6 +60,10 @@
     return pages === null ? null : pages + (pages === 1 ? ' page' : ' pages');
   }
 
+  function printLabel(issue) {
+    return issue.print_mode === 'manual' ? 'Export instructions' : 'Print view';
+  }
+
   function day(stamp) {
     return String(stamp || '').slice(0, 10);
   }
@@ -159,7 +163,7 @@
 
     const meta = T.el('p', 'edition-meta');
     const measure = extent(edition);
-    meta.appendChild(pill(measure || 'extent unrecorded', measure ? '' : 'pill-absent'));
+    meta.appendChild(pill(measure || 'page extent unmeasured', measure ? '' : 'pill-absent'));
     if (edition.revised) meta.appendChild(pill('revised ' + day(edition.revised)));
     const drifted = driftPill(edition);
     if (drifted) meta.appendChild(drifted);
@@ -170,19 +174,21 @@
     row.appendChild(meta);
 
     const where = T.el('p', 'edition-links');
-    if (edition.web) {
-      where.appendChild(link('read', SITE + '/' + edition.web, 'Read here'));
+    const readerTarget = M.readerTarget(edition);
+    const printTarget = M.printTarget(edition);
+    if (readerTarget) {
+      where.appendChild(link('read', SITE + '/' + readerTarget, 'Read here'));
     }
-    if (edition.pdf) {
-      where.appendChild(link('download', SITE + '/' + edition.pdf, 'PDF'));
-    } else if (edition.pdf_absent) {
-      where.appendChild(T.el('span', 'absent', edition.pdf_absent));
+    if (printTarget) {
+      where.appendChild(link('print', SITE + '/' + printTarget, printLabel(edition)));
+    } else {
+      where.appendChild(T.el('span', 'absent', 'Print view unavailable'));
     }
     for (const issue of edition.also || []) {
-      if (!issue.pdf) continue;
-      const measured = typeof issue.pages === 'number' ? ', ' + issue.pages + 'pp' : '';
+      const target = M.printTarget(issue);
+      if (!target) continue;
       where.appendChild(
-        link('download', SITE + '/' + issue.pdf, T.titleCase(issue.kind) + ' PDF' + measured)
+        link('print', SITE + '/' + target, T.titleCase(issue.kind) + ' · ' + printLabel(issue))
       );
     }
     row.appendChild(where);
@@ -296,7 +302,7 @@
     if (edition.subject) detail.appendChild(line('Subject', edition.subject));
 
     const measure = extent(edition);
-    detail.appendChild(line('Extent', measure || 'not recorded'));
+    detail.appendChild(line('Extent', measure || 'page extent unmeasured'));
     detail.appendChild(line('Last revised', edition.revised || 'not recorded'));
     detail.appendChild(line('Section', work.section));
     if (work.catalog) detail.appendChild(line('Catalogued in', work.catalog));
@@ -305,7 +311,7 @@
     detail.appendChild(productionSection(edition));
 
     detail.appendChild(T.el('h3', 'record-heading', 'In the browser'));
-    if (edition.web) {
+    if (M.readerTarget(edition)) {
       detail.appendChild(
         line('Rendered', 'eligible, reviewed ' + day(edition.reviewed))
       );
@@ -324,17 +330,18 @@
     }
 
     detail.appendChild(T.el('h3', 'record-heading', 'Issues'));
-    detail.appendChild(issueLine('full', edition.pages, edition.pdf, edition.pdf_absent,
-      edition.status, edition.authorization, null));
+    detail.appendChild(issueLine('full', edition.pages, M.printTarget(edition), null,
+      edition.status, edition.authorization, null, edition));
     for (const issue of edition.also || []) {
       detail.appendChild(issueLine(
         issue.kind,
         issue.pages,
-        issue.pdf,
-        issue.pdf_absent,
+        M.printTarget(issue),
+        null,
         'status' in issue ? issue.status : edition.status,
         'authorization' in issue ? issue.authorization : edition.authorization,
-        issue.title || null
+        issue.title || null,
+        issue
       ));
     }
 
@@ -364,10 +371,10 @@
     T.statusLine('Showing the full record of ' + name.text + '.');
   }
 
-  function issueLine(kind, pages, pdf, absent, status, authorization, title) {
+  function issueLine(kind, pages, printTarget, absent, status, authorization, title, issue) {
     const node = T.el('p', 'record-line');
     node.appendChild(T.el('span', 'record-label', T.titleCase(kind)));
-    const measured = typeof pages === 'number' ? pages + 'pp' : 'extent unrecorded';
+    const measured = typeof pages === 'number' ? pages + 'pp' : 'page extent unmeasured';
     node.appendChild(document.createTextNode(
       measured + ' · ' + (status || 'no release status') +
       ' · ' + (authorization || 'no authorization recorded')
@@ -375,11 +382,13 @@
     if (title) {
       node.appendChild(T.el('span', 'record-aside', 'titled ' + title));
     }
-    if (pdf) {
+    if (printTarget) {
       node.appendChild(document.createTextNode(' '));
-      node.appendChild(link('download', SITE + '/' + pdf, pdf));
+      node.appendChild(link('print', SITE + '/' + printTarget, printLabel(issue)));
     } else if (absent) {
       node.appendChild(T.el('span', 'absent', absent));
+    } else {
+      node.appendChild(T.el('span', 'absent', 'Print view unavailable'));
     }
     return node;
   }
@@ -414,9 +423,11 @@
     // "of 178" appears only while the list is narrowed. Printing it against the
     // unnarrowed corpus would restate a total the next line already gives.
     const whole = (catalogue.counted || {}).documents || 0;
+    const unmeasured = rows.some((row) => row.editions.some((one) => M.pagesOf(one) === null));
     const summary =
       count(counted.works, 'work') + ' · ' + count(counted.documents, 'document') +
-      ' · ' + count(counted.pages, 'page') +
+      (counted.pages ? ' · ' + count(counted.pages, 'page') : '') +
+      (unmeasured ? ' · page extents unmeasured' : '') +
       (counted.documents === whole ? '' : ' of ' + whole);
     tally.textContent = summary +
       (counted.unrecorded ? ' · ' + count(counted.unrecorded, 'title') + ' unrecorded' : '');
@@ -489,7 +500,7 @@
     T.fillSelect(readingSelect, [
       { value: M.ANY, label: 'However held' },
       { value: M.READABLE, label: 'Readable here' },
-      { value: M.DOWNLOAD, label: 'PDF only' }
+      { value: M.DOWNLOAD, label: 'No reader edition' }
     ]);
     T.fillSelect(sortSelect, SORTS);
   }

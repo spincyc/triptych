@@ -69,7 +69,7 @@ GROUPS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
         "refuses a destination inside this checkout. harvest spends on a model "
         "in one verb, `ask`, and what comes back lands in a dated ledger that "
         "records which model said it and when.",
-        ("bullarium", "harvest", "knox-bible", "papal-acta", "papal-documents", "papal-sources"),
+        ("artifact-store", "bullarium", "harvest", "knox-bible", "papal-acta", "papal-documents", "papal-sources"),
     ),
     (
         "scripture",
@@ -144,8 +144,10 @@ GROUPS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
             "check-web-edition",
             "complete-missal",
             "document-library",
+            "document-schema",
             "history-browser-acceptance",
             "pdf-review",
+            "print-document",
             "proper-study-run-archive",
             "public-alpha",
             "release-bindings",
@@ -201,6 +203,9 @@ LOCAL = "local"
 NOTHING = "nothing"
 
 REACHES: dict[str, str] = {
+    "artifact-store": NETWORK,
+    "document-schema": NOTHING,
+    "print-document": NOTHING,
     "act-history": NOTHING,
     "artwork-library": NOTHING,
     "audit-latin-body-substitutions": NOTHING,

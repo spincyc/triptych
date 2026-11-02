@@ -1,0 +1,46 @@
+schema_version = 1
+id = "gpt/theology/sacraments-at-a-glance"
+kind = "sacraments-summary"
+profile = "guidance/theology/sacramental-reference.md"
+source_format = "latex"
+entrypoint = "main.tex"
+canonical_owner = "gpt/theology/sacraments"
+
+[[outputs]]
+id = "gpt/theology/sacraments-at-a-glance"
+role = "canonical"
+entrypoint = "main.tex"
+derivation = "projection"
+
+[[structure]]
+role = "body"
+source = "main.tex"
+outputs = ["canonical"]
+
+[[structure]]
+role = "generation"
+source = "generation-metadata.tex"
+
+[[structure]]
+role = "web-declaration"
+source = "web-edition.toml"
+
+[[structure]]
+role = "sacrament-matrix"
+data = "src/gpt/theology/sacraments/fragments/full-matrix.tex"
+
+[[structure]]
+role = "sacrament-lexicon"
+data = "src/gpt/theology/sacraments/fragments/lexicon.tex"
+
+[[structure]]
+role = "sacrament-summaries"
+data = "src/gpt/theology/sacraments/summaries/*.tex"
+
+[[structure]]
+role = "initiation-table"
+data = "src/gpt/theology/sacraments/sections/14-churches-initiation.tex"
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"

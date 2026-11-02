@@ -22,6 +22,20 @@ in force for schema-1 publications and the legacy `proper` and `proper-finish`
 workflows. A new contract does not silently invalidate previously reviewed
 documents or reopen the collection's production boundary.
 
+Each canonical leaf declares its type, source roles, ordered output entrypoints,
+and actual contract versions in `publication.toml` under
+[document schemas](../document-schemas.md). Existing TeX and typed records remain
+the lossless canonical sources; the publication manifest references
+`proper-components.toml` rather than replacing its semantics. Source migration
+does not promote schema-1 or pre-component leaves to schema 2, restamp research,
+or erase declared legacy order, authority, format, or chronology exceptions.
+
+The three reading experiences are source deliverables. Physical page counts,
+pagination, typography, auxiliary-file evidence, and PDF inspection below apply
+when a print edition is exported with `tools/print-document` under
+[printing](../../docs/printing.md). Ordinary source/HTML publication validates
+the source and evidence closure and reviewed web output without compiling PDFs.
+
 [Editorial](../editorial.md), [repository](../repository.md),
 [sources](../sources.md), and [calendar computation](calendar-computation.md)
 standards continue to govern. A homily is newly authorized authored preaching
@@ -54,9 +68,9 @@ reviews beneath the owning leaf. A postconciliar shared Missal formulary stays
 beneath that same postconciliar edition tree. The edition's formula-dispositions
 row names its exact canonical shared owner; the research dependency must equal
 that directory or descend from it. A provider-neutral or similarly named
-`propers/.../shared/` path does not satisfy this requirement. Build, installed
-PDF, and web paths mirror the respective canonical identity. There is no common
-Sunday leaf above these roots. Check indirect dependencies as well as direct
+`propers/.../shared/` path does not satisfy this requirement. Source, web, and
+optional print-export paths preserve the respective canonical identity. There is
+no common Sunday leaf above these roots. Check indirect dependencies as well as direct
 imports: this boundary covers every oration, chant, reading, and optional
 branch, not only the Gospel or the final document title.
 
@@ -73,8 +87,9 @@ prose components, and generation record. It produces:
 
 The companions are deliberately authored condensations and applications within
 the same owner, not independently researched leaves. Each has its own declared
-components and title, is separately built and reviewed, and receives its own
-release record. The canonical study supplies the sole web edition under the
+components and title, is separately source-validated and reviewed, and receives
+its own release record. A selected print export is separately built and reviewed.
+The canonical study supplies the sole web edition under the
 [web-edition profile](../web-editions.md), including its appointed-text anchors.
 Shared evidence and exact quotations have one owner; a prose passage belongs to the
 output whose reader it serves. Do not pad a short work with the full study's
@@ -504,7 +519,7 @@ or `:anagogical`, respectively; each complete marker includes that same prefix.
 Use `triptych:concise:commentary:start` at the beginning of the developed
 commentary. The component checker owns the exact marker validation.
 
-The artifact gates require inventory and overview on physical page 1,
+The print-export gates require inventory and overview on physical page 1,
 chronology on page 2, themes beginning on 3 and ending on 4, and commentary
 beginning on 5, together with the two PDF length ranges. They also require
 settled references. These checks prove placement and declared coverage; cold
@@ -644,16 +659,20 @@ they must not define, alias, redefine, or undefine shared format commands or
 either control sequence of a shared environment. Generated chronology helpers
 are the sole narrowly checked definition exception.
 
-Full-page inspection, log and extraction checks, embedded-font checks, metadata,
-substantive-text preservation and build/install byte identity remain mandatory.
+For every exported print edition, full-page inspection, log and extraction
+checks, embedded-font checks, metadata, substantive-text preservation, and exact
+identity of the reviewed artifact remain mandatory. A PDF is a disposable export,
+never a tracked publication input. Source/HTML publication does not require an
+export or a historical PDF's byte identity.
 Do not enlarge type, pad pages or suppress evidence to meet page targets.
 No ornamental image is required.
 
 `proper-study` runs source resolution, research and reusable source registration,
 cold research review,
 study authoring and cold review, concise authoring and cold review, homily
-authoring and cold review, build and cold visual review, then canonical web
-conversion, review, installation and publication gates. Each substantive
+authoring and cold review, source/schema validation, then canonical web
+conversion, review, installation and publication gates. A requested print export
+adds its selected build and cold full-page visual review. Each substantive
 deliverable receives a fresh reviewer with no authoring conversation history.
 Give the reviewer the task contract, artifact, evidence, and exact criteria,
 not the author's defense or a desired verdict. Review each output on its own
@@ -662,10 +681,12 @@ terms as well as against its upstream source.
 Findings identify a location, concrete defect, required result, and the owner
 that can fix it. Missing evidence returns to research; an invalid whole-proper
 argument returns to the study; compression returns to the concise document;
-oral clarity returns to the homily. An upstream change invalidates downstream
-judgments and requires their regeneration or explicit re-review. Changes to
-rendered content invalidate visual acceptance. Never edit an accepted run's
-state or submit a manufactured pass to advance it.
+oral clarity returns to the homily. An upstream source, schema, or evidence
+change invalidates the affected dependency closure and requires its regeneration
+or explicit re-review. A presentation-only change follows the separate
+print-template review scope; it does not restamp research acceptance. Changes to
+a print artifact invalidate that artifact's visual acceptance. Never edit an
+accepted run's state or submit a manufactured pass to advance it.
 
 Record substantial defects exposed by a real run and promote repeatable
 lessons into a gate, fragment, or this profile. Keep run-specific review
@@ -679,7 +700,7 @@ reused evidence; a rerun may reuse verified research, never an unearned verdict.
 
 Schema 2 declares `calendar = "roman-1962"` or `calendar = "postconciliar"`,
 matching the canonical document path, and rejects cross-family imports.
-It names exactly three PDF outputs, their local entrypoints, the
+It names exactly three authored outputs, their local entrypoints, the
 canonical web owner, stable element keys, and ordered components with mode
 membership. The homily component's `element_keys` declare the elements whose
 research informs the speech, which the checker requires to be all of them; they
@@ -726,8 +747,9 @@ locus where the prose relies on it, or by removing the locus from the entry.
 The concise References of the Claude Twenty-ninth Sunday listed four loci its
 prose never used, and the work-level test had passed them.
 
-The terminal program gate verifies all three installed PDFs, their exact
-reviewed artifacts and current sources, provenance, canonical web edition,
-correct family catalog, release records, and available publication checks.
-One beautiful document, three existing files, or a successful build is not the
-three-document deliverable.
+The terminal source-publication gate verifies all three declared source outputs,
+their current source/evidence review closure, provenance, canonical reviewed web
+edition, correct family catalog, release records, and available publication
+checks. Requested print exports additionally require exact-artifact inspection
+and the physical gates above. Three existing files or a successful build do not
+establish the three-document deliverable.

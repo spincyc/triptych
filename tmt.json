@@ -14,6 +14,17 @@
       "stage": "draft",
       "usage": "act-history {check,graph,structure,plate,commonality,emit,catalogue,corpus,compare} [--source PATH] [--out PATH] [--comparison ID] [--check] [--preview] [--json]"
     },
+    "artifact-store": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Preserve and hydrate exact binary artifacts from verified archives.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "artifact-store {inventory,pack,check,hydrate} [OPTIONS]"
+    },
     "artwork-library": {
       "idempotent": true,
       "json": false,
@@ -174,7 +185,10 @@
       "mutates": false,
       "origin": "local",
       "purpose": "Validate the tracked promised-deliverable ledger.",
-      "requires": [],
+      "requires": [
+        "artifact-store",
+        "public-alpha"
+      ],
       "stage": "draft",
       "usage": "check-promised-deliverables [--ledger PATH]"
     },
@@ -272,7 +286,21 @@
       "purpose": "Catalogue every document the corpus holds, with authorship and extent.",
       "requires": [],
       "stage": "draft",
-      "usage": "document-library {check,list,show,structure} [--provider NAME] [--author MODEL] [--section NAME] [--eligibility NAME] [--document ID] [--sort {leaf,title,pages,revised}] [--format {text,yaml,json}] [--out DIR] [--check] [--brief]"
+      "usage": "document-library {check,check-render,list,show,structure} [--provider NAME] [--author MODEL] [--section NAME] [--eligibility NAME] [--document ID] [--sort {leaf,title,pages,revised}] [--format {text,yaml,json}] [--out DIR] [--check] [--brief]"
+    },
+    "document-schema": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": false,
+      "origin": "local",
+      "purpose": "Validate typed publication manifests and source structure without PDFs.",
+      "requires": [
+        "check-generation-metadata",
+        "check-proper-components"
+      ],
+      "stage": "draft",
+      "usage": "document-schema {check,list,show,types,propose,identities} [OPTIONS]"
     },
     "harvest": {
       "idempotent": true,
@@ -482,6 +510,24 @@
       "stage": "draft",
       "usage": "pdf-review [--output DIR] [--changed-from REV] [PDF ...]"
     },
+    "print-document": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Generate a selected publication or source edition for printing on demand.",
+      "requires": [
+        "check-generation-metadata",
+        "check-pdf-anchors",
+        "check-proper-components",
+        "reading-plan",
+        "typeset-bible",
+        "typeset-papal"
+      ],
+      "stage": "draft",
+      "usage": "print-document {list,check,build} --document ID [--edition ROLE] [--out DIR] [--json]"
+    },
     "proper-chronology": {
       "idempotent": true,
       "json": true,
@@ -520,6 +566,9 @@
         "citations",
         "index-bible",
         "papal-documents",
+        "source-library",
+        "source-reader",
+        "typeset-bible",
         "web-edition"
       ],
       "stage": "draft",
@@ -628,6 +677,7 @@
       "origin": "local",
       "purpose": "Validate and query Triptych's provider-neutral reusable source library.",
       "requires": [
+        "artifact-store",
         "papal-documents"
       ],
       "stage": "draft",

@@ -1,0 +1,108 @@
+schema_version = 1
+id = "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c"
+kind = "proper-postconciliar"
+profile = "guidance/liturgy/postconciliar-propers.md"
+source_format = "latex"
+entrypoint = "main.tex"
+
+[contracts]
+appointed_text_completeness = "rights-limited"
+component_schema = 1
+
+[[outputs]]
+id = "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c"
+role = "canonical"
+entrypoint = "main.tex"
+derivation = "authored"
+
+[[outputs]]
+id = "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c-synthesis"
+role = "synthesis"
+entrypoint = "synthesis.tex"
+derivation = "projection"
+
+[[structure]]
+role = "body"
+source = "main.tex"
+outputs = ["canonical"]
+
+[[structure]]
+role = "generation"
+source = "generation-metadata.tex"
+
+[[structure]]
+role = "web-declaration"
+source = "web-edition.toml"
+
+[[structure]]
+role = "scope"
+source = "research/scope.md"
+
+[[structure]]
+role = "instance-manifest"
+source = "instance/manifest.md"
+
+[[structure]]
+role = "appointed-source"
+source = "propers/verified.md"
+
+[[structure]]
+role = "proper-components"
+source = "proper-components.toml"
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[[structure]]
+role = "front-matter"
+source = "main.tex"
+outputs = ["canonical", "synthesis"]
+key = "component-orientation"
+
+[[structure]]
+role = "brief-synthesis"
+source = "sections/20-brief-synthesis.tex"
+outputs = ["canonical", "synthesis"]
+key = "component-brief-synthesis"
+depends_on = ["component-orientation"]
+
+[[structure]]
+role = "proper-treatment"
+source = "sections/30-each-proper.tex"
+outputs = ["canonical"]
+key = "component-per-element-sweep"
+
+[[structure]]
+role = "appointed-text"
+source = "sections/05-appointed-text.tex"
+outputs = ["canonical"]
+key = "component-appointed-text"
+
+[[structure]]
+role = "source-grounded-synthesis"
+source = "sections/35-source-grounded-synthesis.tex"
+outputs = ["canonical", "synthesis"]
+key = "component-source-grounded-synthesis"
+depends_on = ["component-brief-synthesis"]
+
+[[structure]]
+role = "notable-quotable"
+source = "sections/40-interpretive-and-notable.tex"
+outputs = ["canonical", "synthesis"]
+key = "component-notable-and-quotable"
+depends_on = ["component-source-grounded-synthesis"]
+
+[[structure]]
+role = "exploratory-synthesis"
+source = "sections/40-interpretive-and-notable.tex"
+outputs = ["canonical", "synthesis"]
+key = "component-exploratory-synthesis"
+depends_on = ["component-notable-and-quotable"]
+
+[[structure]]
+role = "terminal-apparatus"
+source = "sections/90-apparatus.tex"
+outputs = ["canonical", "synthesis"]
+key = "component-terminal-apparatus"
+depends_on = ["component-exploratory-synthesis"]

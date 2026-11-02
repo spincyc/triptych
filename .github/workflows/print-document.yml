@@ -1,0 +1,191 @@
+name: Print one document
+
+on:
+  workflow_dispatch:
+    inputs:
+      document:
+        description: "One ID: publication:gpt/<leaf>, publication:claude/<leaf>, bible:<edition>, reading-plan:<volume>, or papal:<selection>/<lang>"
+        type: string
+        required: true
+      edition:
+        description: "Publication output (use main for Bibles, reading plans, and papal sources)"
+        type: choice
+        options: [main, research, synthesis, homily]
+        default: main
+        required: true
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      DOCUMENT: ${{ inputs.document }}
+      PRINT_EDITION: ${{ inputs.edition }}
+      PRINT_OUT: .scratch/print-document-ci
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Install source validation dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements-tools.txt
+
+      # The tool resolves exactly one catalogue identity and its allowed output.
+      # Passing operator input through the environment preserves it as data.
+      - name: Validate the single document selection
+        run: |
+          set -euo pipefail
+          mkdir -p "$PRINT_OUT"
+          python tools/tpt print-document check --document "$DOCUMENT" --edition "$PRINT_EDITION" --json > "$PRINT_OUT/selection.json"
+
+      - name: Read the shared immutable toolchain
+        id: toolchain
+        run: |
+          python - <<'PY'
+          import os
+          import re
+          import datetime
+          from pathlib import Path
+          import yaml
+
+          workflow = yaml.safe_load(Path(".github/workflows/pages.yml").read_text(encoding="utf-8"))
+          image = workflow["env"]["TEXLIVE_IMAGE"]
+          snapshot = workflow["env"]["ARCH_SNAPSHOT"]
+          if not isinstance(image, str) or not re.fullmatch(r"ghcr\.io/[a-z0-9._/-]+@sha256:[0-9a-f]{64}", image):
+              raise SystemExit("TEXLIVE_IMAGE must name the shared toolchain by immutable SHA-256 digest")
+          if not isinstance(snapshot, str) or not re.fullmatch(r"[0-9]{4}/[0-9]{2}/[0-9]{2}", snapshot):
+              raise SystemExit("ARCH_SNAPSHOT must name an immutable daily archive")
+          datetime.datetime.strptime(snapshot, "%Y/%m/%d")
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+              output.write(f"image={image}\n")
+              output.write(f"snapshot={snapshot}\n")
+          print(image)
+          PY
+
+      - name: Pull the pinned print toolchain
+        env:
+          PRINT_BASE: ${{ steps.toolchain.outputs.image }}
+          REGISTRY_USER: ${{ github.actor }}
+          REGISTRY_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          printf '%s' "$REGISTRY_TOKEN" | docker login ghcr.io --username "$REGISTRY_USER" --password-stdin
+          docker pull "$PRINT_BASE"
+
+      # The older shared image contains the fonts but lacks Latin Babel support.
+      # Resolve this small print-only layer from the same immutable archive.
+      # Network access ends before any selected document is compiled.
+      - name: Add and verify pinned print language support
+        env:
+          PRINT_BASE: ${{ steps.toolchain.outputs.image }}
+          ARCH_SNAPSHOT: ${{ steps.toolchain.outputs.snapshot }}
+          PRINT_IMAGE: triptych-print:${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          context="$RUNNER_TEMP/triptych-print-toolchain"
+          mkdir -p "$context"
+          cat > "$context/Dockerfile" <<'DOCKERFILE'
+          ARG PRINT_BASE
+          FROM ${PRINT_BASE}
+          ARG ARCH_SNAPSHOT
+          RUN printf 'Server=https://archive.archlinux.org/repos/%s/$repo/os/$arch\n' "$ARCH_SNAPSHOT" > /etc/pacman.d/mirrorlist \
+           && pacman -Sy --noconfirm --needed archlinux-keyring \
+           && pacman -Syu --noconfirm --needed texlive-langother texlive-xetex \
+           && fmtutil-sys --byfmt xelatex \
+           && fc-cache -f \
+           && command -v pdflatex xelatex pdfinfo pdftotext pdffonts \
+           && test -n "$(kpsewhich latin.ldf)" \
+           && test -n "$(kpsewhich hyph-la.tex)" \
+           && fc-match --format '%{family}\n' Junicode | grep -Fx Junicode \
+           && fc-match --format '%{family}\n' FreeSerif | grep -Fx FreeSerif \
+           && pdflatex --version | head -n 1 \
+           && xelatex --version | head -n 1 \
+           && pacman -Q texlive-bin texlive-langother texlive-xetex texlive-fontsextra \
+           && pacman -Scc --noconfirm
+          DOCKERFILE
+          docker build --build-arg "PRINT_BASE=$PRINT_BASE" \
+            --build-arg "ARCH_SNAPSHOT=$ARCH_SNAPSHOT" --tag "$PRINT_IMAGE" "$context"
+
+      # This route builds a single selected output into scratch, with no install
+      # target, corpus loop, network access, commit, or deployment permission.
+      - name: Build the selected PDF
+        env:
+          PRINT_IMAGE: triptych-print:${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          docker run --rm --network none \
+            --user "$(id -u):$(id -g)" \
+            --volume "$GITHUB_WORKSPACE:$GITHUB_WORKSPACE" \
+            --workdir "$GITHUB_WORKSPACE" \
+            --env DOCUMENT --env PRINT_EDITION --env PRINT_OUT \
+            --env PYTHONDONTWRITEBYTECODE=1 \
+            "$PRINT_IMAGE" \
+            python tools/tpt print-document build --document "$DOCUMENT" \
+              --edition "$PRINT_EDITION" --out "$PRINT_OUT" --json
+
+      - name: Confirm one PDF and its receipt
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+          import subprocess
+
+          destination = Path(os.environ["PRINT_OUT"])
+          pdfs = sorted(destination.glob("*.pdf"))
+          if len(pdfs) != 1:
+              raise SystemExit(f"Expected exactly one PDF, found {len(pdfs)}")
+          receipts = sorted(destination.glob("*.print.json"))
+          if len(receipts) != 1:
+              raise SystemExit(f"Expected exactly one print receipt, found {len(receipts)}")
+          receipt = receipts[0]
+          evidence = json.loads(receipt.read_text(encoding="utf-8"))
+          selection = json.loads((destination / "selection.json").read_text(encoding="utf-8"))
+          if evidence.get("status") != "built" or evidence.get("output_format") != "pdf":
+              raise SystemExit("The receipt does not attest a completed PDF build")
+          if evidence.get("document", {}).get("id") != selection["document"]["id"]:
+              raise SystemExit("The receipt names a different document from the validated selection")
+          if evidence.get("path_base") != "receipt-directory":
+              raise SystemExit("The saved receipt must use portable paths relative to its directory")
+          output_name = evidence.get("output")
+          if (not isinstance(output_name, str) or not output_name
+                  or output_name in {".", ".."} or "\\" in output_name
+                  or Path(output_name).name != output_name):
+              raise SystemExit("The receipt output must be a plain filename")
+          if evidence.get("receipt") != receipt.name:
+              raise SystemExit("The receipt does not name its own portable filename")
+          output = receipt.parent / output_name
+          if receipt.is_symlink() or output.is_symlink() or pdfs[0].is_symlink():
+              raise SystemExit("The generated PDF and receipt must not be symlinks")
+          if output.resolve() != pdfs[0].resolve():
+              raise SystemExit("The receipt names a different output PDF")
+          if evidence.get("output_sha256") != hashlib.sha256(pdfs[0].read_bytes()).hexdigest():
+              raise SystemExit("The generated PDF does not match its receipt hash")
+          if evidence.get("bytes") != pdfs[0].stat().st_size or not evidence["bytes"]:
+              raise SystemExit("The generated PDF does not match its receipt extent")
+          subprocess.run(["git", "diff", "--exit-code"], check=True)
+          print(f"Generated {pdfs[0].name} and {receipt.name}")
+          PY
+
+      - name: Upload the generated print copy
+        uses: actions/upload-artifact@v4
+        with:
+          name: print-document-${{ github.run_id }}
+          path: |
+            .scratch/print-document-ci/*.pdf
+            .scratch/print-document-ci/*.print.json
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14

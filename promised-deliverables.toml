@@ -4325,7 +4325,7 @@ state = "complete"
   status = "pass"
   check = "contains"
   path = "guidance/repository.md"
-  needle = "`review` includes an installed paper in the public alpha"
+  needle = "`review` includes an admitted edition in the public alpha"
   evidence = ["guidance/repository.md"]
 
   [[deliverables.requirements]]
@@ -4559,7 +4559,12 @@ state = "complete"
   criterion = "All three Full and Synthesis PDFs are built, gate-checked, visually inspected page by page, and installed from the reviewed builds, and each canonical web edition is generated, reviewed, and installed."
   status = "pass"
   evidence = [
-    "pdf/gpt/liturgy/roman-rite/1962/propers/temporal",
+    "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost-synthesis.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost-synthesis.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost-synthesis.pdf",
     "web/gpt/liturgy/roman-rite/1962/propers/temporal",
   ]
 

@@ -78,6 +78,11 @@ from pathlib import Path
 from typing import Any, Iterable
 
 ROOT = Path(__file__).resolve().parents[1]
+# Recording binds current Python source bytes. A fresh cache namespace prevents
+# an older same-size, same-mtime .pyc from executing in their place.
+if any(flag in sys.argv for flag in ("--record-receipt", "--check-receipt")):
+    sys.dont_write_bytecode = True
+    sys.pycache_prefix = str(ROOT / ".scratch/source-projection-receipt" / ("python-" + os.urandom(16).hex()))
 # Below this the derivation is cheap and the tree is a sandbox, not the corpus.
 CORPUS_CACHE_FLOOR = 1000
 # Shared CLI helpers live outside tools/ so that tmt's registry scan, which
@@ -969,6 +974,29 @@ def edition_payload(work: dict, edition: dict) -> dict:
 
 
 def run_structure(arguments: argparse.Namespace) -> dict:
+    check_receipt = getattr(arguments, "check_receipt", False)
+    record_receipt = getattr(arguments, "record_receipt", False)
+    if sum(bool(one) for one in (arguments.check, check_receipt, record_receipt)) > 1:
+        raise ReaderError("choose one of --check, --check-receipt or --record-receipt")
+    if check_receipt or record_receipt:
+        from _source_projection_receipt import (
+            RECEIPT_PATH, ReceiptError, check_receipt as check_proof,
+            record_receipt as record_proof,
+        )
+        out = Path(arguments.out)
+        out = out if out.is_absolute() else ROOT / out
+        if out != ROOT / DEFAULT_OUT:
+            raise ReaderError("projection receipts govern the tracked default output; omit --out")
+        try:
+            proof = (record_proof if record_receipt else check_proof)(
+                ROOT, out / STRUCTURE_RELATIVE, SCHEMA)
+        except ReceiptError as error:
+            raise ReaderError(str(error)) from error
+        return {**proof["counted"], "files": proof["outputs"]["count"],
+                "current": str(Path(arguments.out) / STRUCTURE_RELATIVE),
+                "receipt": RECEIPT_PATH, "receipt_recorded": record_receipt,
+                "editorial_approval": False, "status": "ok"}
+
     library = load(arguments)
     works = corpus(library)
     counted = tally(works)
@@ -1377,6 +1405,9 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
         print(f"  -> {payload['written']} ({payload['files']} files)")
     if payload.get("current"):
         print(f"  {payload['current']} is current ({payload['files']} files)")
+    if payload.get("receipt"):
+        action = "recorded" if payload.get("receipt_recorded") else "checked"
+        print(f"  mechanical projection receipt {action}; no editorial approval")
     return 0
 
 
@@ -1479,6 +1510,14 @@ def main(argv: list[str] | None = None) -> int:
         "--check",
         action="store_true",
         help="`structure`: prove the tracked projection matches the records, and write nothing",
+    )
+    shared.add_argument(
+        "--check-receipt", action="store_true",
+        help="`structure`: check governing input and complete output hashes without replay or artifact hydration",
+    )
+    shared.add_argument(
+        "--record-receipt", action="store_true",
+        help="`structure`: independently replay the full strict check, then record a mechanical projection receipt",
     )
     shared.add_argument(
         "--strict",

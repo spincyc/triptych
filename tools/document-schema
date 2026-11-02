@@ -1,0 +1,268 @@
+#!/usr/bin/env python3
+"""Validate versioned genre manifests without building or installing PDFs."""
+from __future__ import annotations
+
+import argparse
+import importlib
+import json
+import sys
+from collections import Counter
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.dont_write_bytecode = True
+sys.path.insert(0, str(ROOT / "scripts"))
+import _document_schema as schema  # noqa: E402
+from _tooling import Example, with_examples  # noqa: E402
+
+
+# Captured from read-only invocations; replayed by scripts/replay_examples.py.
+EXAMPLES = {
+    "check": (
+        Example(
+            "tools/document-schema check --provider gpt --document articles/faith/ontological-vertigo",
+            (
+                "1 documents, 1 outputs: 0 source schema errors.",
+                "Owning validators and source/render review remain separate; use --run-gates to run existing validators.",
+            ),
+        ),
+        Example(
+            "tools/document-schema check --provider claude --document articles/faith/ontological-vertigo",
+            (
+                "1 documents, 1 outputs: 0 source schema errors.",
+                "Owning validators and source/render review remain separate; use --run-gates to run existing validators.",
+            ),
+        ),
+    ),
+    "list": (
+        Example(
+            "tools/document-schema list --provider gpt --document articles/faith/ontological-vertigo",
+            (
+                "gpt/articles/faith/ontological-vertigo  article-faith  1 outputs  declared",
+            ),
+            "one canonical leaf and its output count",
+        ),
+        Example(
+            "tools/document-schema list --provider claude --document articles/faith/ontological-vertigo",
+            (
+                "claude/articles/faith/ontological-vertigo  article-faith  1 outputs  declared",
+            ),
+            "one canonical leaf and its output count",
+        ),
+    ),
+    "show": (
+        Example(
+            "tools/document-schema show --provider gpt --document articles/faith/ontological-vertigo --format toml",
+            (
+                "schema_version = 1",
+                "id = \"gpt/articles/faith/ontological-vertigo\"",
+                "kind = \"article-faith\"",
+                "profile = \"guidance/articles.md\"",
+                "source_format = \"latex\"",
+                "entrypoint = \"main.tex\"",
+                "... 71 more lines",
+            ),
+            "the canonical manifest in TOML",
+        ),
+        Example(
+            "tools/document-schema show --provider claude --document articles/faith/ontological-vertigo --format toml",
+            (
+                "schema_version = 1",
+                "id = \"claude/articles/faith/ontological-vertigo\"",
+                "kind = \"article-faith\"",
+                "profile = \"guidance/articles.md\"",
+                "source_format = \"latex\"",
+                "entrypoint = \"main.tex\"",
+                "... 75 more lines",
+            ),
+            "the canonical manifest in TOML",
+        ),
+    ),
+    "types": (
+        Example(
+            "tools/document-schema types",
+            (
+                "article-faith  guidance/articles.md",
+                "article-canon-law  guidance/articles.md",
+                "article-scripture  guidance/articles.md",
+                "biography  guidance/biographies.md",
+                "history-parish  guidance/history/historical-accounts.md",
+                "history-translation  guidance/history/historical-accounts.md",
+                "... 31 more lines",
+            ),
+            "every registered genre and its owning profile",
+        ),
+        Example(
+            "tools/document-schema types --json",
+            (
+                "{\"status\":\"ok\",\"types\":[{\"kind\":\"article-faith\",\"patterns\":[\"articles/faith/*\"],\"profile\":\"guidance/articles.md\",\"required_roles\":[\"scope\",\"source-audit\"],\"requ... [+15152 chars]",
+            ),
+            "the machine-readable genre registry",
+        ),
+    ),
+    "propose": (
+        Example(
+            "tools/document-schema propose --provider gpt --document articles/faith/ontological-vertigo",
+            (
+                "schema_version = 1",
+                "id = \"gpt/articles/faith/ontological-vertigo\"",
+                "kind = \"article-faith\"",
+                "profile = \"guidance/articles.md\"",
+                "source_format = \"latex\"",
+                "entrypoint = \"main.tex\"",
+                "... 27 more lines",
+            ),
+            "prints a declaration of existing sources; writes nothing",
+        ),
+        Example(
+            "tools/document-schema propose --provider claude --document articles/faith/ontological-vertigo",
+            (
+                "schema_version = 1",
+                "id = \"claude/articles/faith/ontological-vertigo\"",
+                "kind = \"article-faith\"",
+                "profile = \"guidance/articles.md\"",
+                "source_format = \"latex\"",
+                "entrypoint = \"main.tex\"",
+                "... 27 more lines",
+            ),
+            "prints a declaration of existing sources; writes nothing",
+        ),
+    ),
+    "identities": (
+        Example(
+            "tools/document-schema identities --provider gpt --document articles/faith/ontological-vertigo --json",
+            (
+                "{\"content\":{\"inputs\":[\"src/common/preamble.tex\",\"src/gpt/articles/faith/ontological-vertigo/generation-metadata.tex\",\"src/gpt/articles/faith/ontological-vertigo... [+10841 chars]",
+            ),
+            "source, evidence-metadata and render identities for one owner",
+        ),
+        Example(
+            "tools/document-schema identities --provider claude --document articles/faith/ontological-vertigo --json",
+            (
+                "{\"content\":{\"inputs\":[\"src/claude/articles/faith/ontological-vertigo/generation-metadata.tex\",\"src/claude/articles/faith/ontological-vertigo/main.tex\",\"src/clau... [+11947 chars]",
+            ),
+            "source, evidence-metadata and render identities for one owner",
+        ),
+    ),
+}
+
+
+def main(argv=None) -> int:
+    qualification = (
+        "Source checks prove manifest ownership and file closure. Content checks add "
+        "genre source contracts. Existing owning gates run only with --run-gates; "
+        "source fidelity, rights and rendered review are never inferred from a manifest.")
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("command", choices=("check", "list", "show", "types", "propose", "identities"))
+    parser.add_argument("--root", type=Path, default=ROOT)
+    parser.add_argument("--provider", choices=schema.PROVIDERS)
+    parser.add_argument("--document", help="provider-relative leaf, or provider-qualified id")
+    parser.add_argument("--phase", choices=("source", "content", "render"), default="source")
+    parser.add_argument("--run-gates", action="store_true", help="run the existing owning validators; never builds")
+    parser.add_argument("--allow-adapters", action="store_true", help="diagnosis only: permit missing publication.toml")
+    parser.add_argument("--include-sources", action="store_true",
+                        help="check: also validate declared provider-neutral source editions")
+    parser.add_argument("--format", choices=("text", "json", "toml"), default="text",
+                        help="TOML is available for show and propose")
+    parser.add_argument("--json", action="store_true")
+    with_examples(parser, tuple(example for examples in EXAMPLES.values() for example in examples))
+    parser.epilog = qualification + "\n\n" + parser.epilog
+    args = parser.parse_args(argv)
+    if args.format == "toml" and args.command not in {"show", "propose"}:
+        parser.error("--format toml is available only for show and propose")
+    if args.include_sources and args.command != "check":
+        parser.error("--include-sources applies only to check")
+    root = args.root.resolve()
+    try:
+        if args.command == "types":
+            result = {"v": 1, "status": "ok", "types": schema.registry(root)["types"]}
+        else:
+            records = schema.discover(root)
+            if args.provider:
+                records = [r for r in records if r["provider"] == args.provider]
+            if args.document:
+                records = [r for r in records if args.document in (r["id"], r["leaf"])]
+                if not records:
+                    raise schema.SchemaError(f"no document matches {args.document}")
+            if not records:
+                raise schema.SchemaError("no canonical publication sources discovered")
+            if args.command in {"show", "propose", "identities"} and len(records) != 1:
+                raise schema.SchemaError("select exactly one provider-qualified publication")
+            if args.command == "check":
+                reports = [schema.validate(root, r, phase=args.phase, run_gates=args.run_gates,
+                                           require_manifest=not args.allow_adapters) for r in records]
+                by_id = {r["id"]: r for r in records}
+                ownership = {}
+                global_errors = []
+                for record in records:
+                    for output in record.get("outputs", []):
+                        if output["id"] in ownership:
+                            global_errors.append(f"duplicate output identity: {output['id']}")
+                        ownership[output["id"]] = record["id"]
+                graph = {r["id"]: [r["canonical_owner"]] if r.get("canonical_owner") in by_id else [] for r in records}
+                schema._acyclic(graph, "canonical owner")
+                errors = sum(len(r["errors"]) for r in reports) + len(global_errors)
+                result = {"v": 1, "status": "error" if errors else "ok", "phase": args.phase,
+                          "documents": len(records), "outputs": len(ownership), "errors": errors,
+                          "global_errors": global_errors, "reports": reports,
+                          "kinds": dict(sorted(Counter(r.get("kind", "invalid") for r in records).items()))}
+                if args.include_sources:
+                    checker = importlib.import_module("document_schema_checks.source_editions")
+                    sources = checker.check_source_editions(root)
+                    source_errors = len(sources["errors"])
+                    if not sources["ok"] and not source_errors:
+                        sources["errors"].append("neutral source validator did not pass")
+                        source_errors = 1
+                    result.update(source_editions=sources, provider_errors=errors,
+                                  source_errors=source_errors, errors=errors + source_errors)
+                    if source_errors:
+                        result["status"] = "error"
+            elif args.command == "identities":
+                result = {"v": 1, "status": "ok", "id": records[0]["id"],
+                          **schema.identities(root, records[0])}
+            elif args.command == "propose":
+                data = schema.adapter_manifest(root, root / records[0]["source_dir"])
+                if args.format != "json" and not args.json:
+                    print(schema.dumps_manifest(data), end="")
+                    return 0
+                result = {"v": 1, "status": "ok", "manifest": data}
+            elif args.command == "show" and args.format == "toml" and not args.json:
+                print(schema.dumps_manifest(records[0]), end="")
+                return 0
+            else:
+                result = {"v": 1, "status": "ok", "documents": len(records),
+                          "outputs": sum(len(r.get("outputs", [])) for r in records), "records": records}
+        if args.json or args.format == "json":
+            print(json.dumps(result, ensure_ascii=False, sort_keys=True, separators=(",", ":")))
+        elif args.command == "types":
+            for item in result["types"]:
+                print(f"{item['kind']}  {item['profile']}")
+        elif args.command == "check":
+            print(f"{result['documents']} documents, {result['outputs']} outputs: {result['errors']} {args.phase} schema errors.")
+            for error in result["global_errors"]:
+                print(f"  {error}")
+            for report in result["reports"]:
+                for error in report["errors"]:
+                    print(f"  {report['id']}: {error}")
+            if "source_editions" in result:
+                sources = result["source_editions"]
+                print(f"Provider-neutral sources: {len(sources['families'])} families, {result['source_errors']} errors.")
+                for error in sources["errors"]:
+                    print(f"  source-editions: {error}")
+            print("Owning validators and source/render review remain separate; use --run-gates to run existing validators.")
+        elif args.command == "list":
+            for item in result["records"]:
+                print(f"{item['id']}  {item.get('kind', 'invalid')}  {len(item['outputs'])} outputs  {item['manifest_origin']}")
+        else:
+            print(json.dumps(result, ensure_ascii=False, sort_keys=True, indent=2))
+        return 2 if result["status"] == "error" else 0
+    except (schema.SchemaError, OSError, UnicodeError) as exc:
+        if args.json or args.format == "json":
+            print(json.dumps({"v": 1, "status": "error", "errors": [str(exc)]}, sort_keys=True))
+        else:
+            print(f"document-schema: {exc}", file=sys.stderr)
+        return 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -43,12 +43,12 @@
   const TEXT_FILTERS = [
     { value: '', label: 'Any, or none' },
     { value: 'en-complete', label: 'Complete English' },
-    { value: 'en', label: 'English PDF, any extent' },
+    { value: 'en', label: 'English source reader, any extent' },
     { value: 'en-external', label: 'English online, any extent' },
     { value: 'en-missing', label: 'English gaps' },
-    { value: 'la', label: 'Latin source PDF' },
-    { value: 'la-or-en', label: 'Latin or English source PDF' },
-    { value: 'none', label: 'No source PDF here' }
+    { value: 'la', label: 'Latin source reader' },
+    { value: 'la-or-en', label: 'Latin or English source reader' },
+    { value: 'none', label: 'No source reader here' }
   ];
 
   const SORTS = [

@@ -3,6 +3,10 @@
 This profile governs the canonical treatise at `src/<provider>/theology/sacraments/`,
 its mechanically derived at-a-glance companion, and their shared fragments.
 
+Declare each leaf's type, canonical imports, derivation, and ordered outputs in
+`publication.toml` under [document schemas](../document-schemas.md). One-page
+summaries and physical table fit remain [print-export gates](../../docs/printing.md).
+
 ## Governing priorities
 
 1. Keep one authoritative theological source in the treatise.
@@ -11,7 +15,7 @@ its mechanically derived at-a-glance companion, and their shared fragments.
 3. Preserve sacrament-specific distinctions beside the sacrament they govern.
 4. Put the work-wide corpus, metaphysical vocabulary, method, jurisdictions, and
    qualifications in terminal apparatus.
-5. Rebuild every consumer after a canonical fragment changes.
+5. Validate every affected consumer after a canonical fragment changes.
 
 ## Treatise and source ownership
 
@@ -50,5 +54,6 @@ catalog names the treatise and inherited provenance.
 
 After a shared change, validate the treatise, at-a-glance companion, and every
 ritual guide importing an affected summary. Confirm source identity, contents
-and appendix destinations, one-page summary boundaries, readable tables, one
-provenance display, and agreement between every summary and its full treatment.
+and appendix destinations, readable tables, one provenance display, and agreement
+between every summary and its full treatment. For a requested print export,
+also verify the one-page summary boundaries and inspect every exported page.

@@ -76,7 +76,7 @@ SCRATCH: dict[str, tuple[str, ...]] = {
     "calendar-rubrics": ("build/example-web",),
     "citations": ("build/example-cal",),
     "commentary-work-index": ("build/example-corpus.yaml",),
-    "document-library": ("build/example-catalogue",),
+    "document-library": (".scratch/document-catalog/example-catalogue",),
     "harvest": ("build/example-harvest", "build/example-discovery.yaml"),
     "index-bible": ("build/example-index", "build/example-bibles"),
     "mass-propers": ("build/example-propers",),
@@ -208,38 +208,6 @@ REQUIRES: dict[str, tuple[str, str]] = {
     "tools/pdf-review --output build/example-review build/core-last-20.pdf": (
         "path:build/core-last-20.pdf",
         "a built PDF; no target produces this one, so a fresh clone has no copy",
-    ),
-    # Reader-facing PDFs under pdf/<provider>/ stopped being tracked on
-    # 2026-09-04 and are built at deployment (guidance/repository.md). These
-    # three read the installed tree, so a clone that has not been built has
-    # nothing for them to report; `make check-installed` builds it first.
-    # These four read page counts out of the installed tree: `pages` comes from
-    # the built PDF and `unbuilt` from whether one exists. Their three siblings
-    # below were given this precondition when pdf/ stopped being tracked; these
-    # were missed, and diverge in any clone that has not been built.
-    "tools/document-library check": (
-        "path:pdf/claude",
-        "the installed tree; pdf/<provider>/ is built, not tracked",
-    ),
-    "tools/document-library check --provider claude": (
-        "path:pdf/claude",
-        "the installed tree; pdf/<provider>/ is built, not tracked",
-    ),
-    "tools/document-library structure --out build/example-catalogue": (
-        "path:pdf/claude",
-        "the installed tree; pdf/<provider>/ is built, not tracked",
-    ),
-    "tools/document-library structure --check": (
-        "path:pdf/claude",
-        "the installed tree; pdf/<provider>/ is built, not tracked",
-    ),
-    "tools/document-library list --section biographies --provider claude": (
-        "path:pdf/claude",
-        "the installed tree; pdf/<provider>/ is built, not tracked",
-    ),
-    "tools/document-library show --document articles/faith/ontological-vertigo --provider claude": (
-        "path:pdf/claude",
-        "the installed tree; pdf/<provider>/ is built, not tracked",
     ),
     "tools/lectern snapshot --surface day --date 2026-10-22 --size 120x36": (
         "pins:requirements-tui.txt",

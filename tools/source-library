@@ -27,6 +27,8 @@ import tomllib
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from _tooling import prune_cache, tree_fingerprint  # noqa: E402
+import _artifact_store  # noqa: E402
+from _source_delivery_policy import PROJECTION_RECEIPTS  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
     examples_live_on_the_verbs,
@@ -51,7 +53,7 @@ EXAMPLES = {
                 "  -h, --help  show this help message and exit",
                 "... 5 more lines",
             ),
-            "validate takes no arguments: it is the whole library or nothing",
+            "validation covers the whole library; --full-evidence also checks external witness bytes",
         ),
     ),
     "fingerprint": (
@@ -395,6 +397,7 @@ class Library:
     records: dict[str, Record] = dataclasses.field(default_factory=dict)
     bindings: list[Binding] = dataclasses.field(default_factory=list)
     payload_paths: set[Path] = dataclasses.field(default_factory=set)
+    external_payloads: dict[str, dict[str, Any]] = dataclasses.field(default_factory=dict)
     errors: list[str] = dataclasses.field(default_factory=list)
 
     def relative(self, path: Path) -> str:
@@ -1470,6 +1473,117 @@ def _validate_utf8(library: Library, manifest: Path, path: Path) -> None:
         library.error(manifest, f"indexable artifact is not readable UTF-8: {error}")
 
 
+def _delivery_mismatches(record: Record, entry: dict[str, Any]) -> list[str]:
+    """Delivery relocates exact bytes; it cannot change their source identity."""
+
+    return [
+        field
+        for field, expected in (
+            ("path", record.data.get("path")),
+            ("sha256", record.data.get("sha256")),
+            ("bytes", record.data.get("byte_size")),
+            ("media_type", record.data.get("media_type")),
+        )
+        if entry.get(field) != expected
+    ]
+
+
+def _validate_external_deliveries(library: Library) -> None:
+    """Validate physical locations beside, never inside, frozen source records."""
+
+    index_path = library.root / _artifact_store.INDEX_PATH
+    try:
+        entries = _artifact_store.load_index(library.root)["artifacts"]
+    except (ValueError, OSError) as error:
+        library.error(index_path, str(error))
+        return
+    declared = {
+        record.data["path"]: record
+        for record in library.records.values()
+        if record.record_type == "artifact" and _is_string(record.data.get("path"))
+    }
+    for entry in entries:
+        path = entry["path"]
+        if not path.startswith("src/sources/works/"):
+            continue
+        record = declared.get(path)
+        if record is None:
+            library.error(index_path, f"external source payload has no artifact owner: {path}")
+            continue
+        if record.data.get("storage") != "tracked":
+            library.error(record.path, "external delivery requires a tracked artifact")
+            continue
+        mismatches = _delivery_mismatches(record, entry)
+        if mismatches:
+            library.error(
+                record.path,
+                f"external delivery does not match artifact {', '.join(mismatches)}",
+            )
+            continue
+        if _is_searchable_media(record.data.get("media_type")) or record.data.get("indexable") is True:
+            library.error(record.path, "searchable text payload must remain in the checkout")
+            continue
+        library.external_payloads[path] = entry
+
+
+def artifact_path(
+    library: Library, artifact: Record | str, *, fetch: bool = False
+) -> Path:
+    """Resolve exact tracked bytes, optionally fetching their declared delivery.
+
+    The manifest path remains the artifact's identity and ownership path. The
+    returned path may instead be a verified hydration cache entry; it must not
+    be written back to a source record or fingerprint. No caller downloads bytes
+    unless it explicitly passes ``fetch=True``.
+    """
+
+    record = library.records[artifact] if isinstance(artifact, str) else artifact
+    if record.record_type != "artifact" or record.data.get("storage") != "tracked":
+        raise SourceLibraryQueryError("exact byte resolution requires a tracked artifact")
+    rights = record.data.get("rights_status")
+    if not _is_string(rights) or rights not in TRACKABLE_RIGHTS:
+        raise SourceLibraryQueryError("exact byte resolution requires affirmative distribution rights")
+    path_value = record.data.get("path")
+    if not _is_string(path_value):
+        raise SourceLibraryQueryError(f"tracked artifact has no path: {record.record_id}")
+    canonical = _safe_source_path(library, record.path, path_value)
+    if canonical is None:
+        raise SourceLibraryQueryError(f"unsafe artifact path: {record.record_id}")
+    entry = None
+    try:
+        entry = _artifact_store.known_external(library.root, path_value)
+        if entry is not None:
+            mismatches = _delivery_mismatches(record, entry)
+            if mismatches:
+                raise SourceLibraryQueryError(
+                    f"external delivery does not match artifact {', '.join(mismatches)}: {record.record_id}"
+                )
+            if _is_searchable_media(record.data.get("media_type")) or record.data.get("indexable") is True:
+                raise SourceLibraryQueryError("searchable text payload must remain in the checkout")
+            # The store verifies the bytes against the delivery identity we
+            # just matched to the source manifest. Do not hash a large witness
+            # twice merely to return its physical path.
+            return _artifact_store.resolve(library.root, path_value, fetch=fetch)
+        resolved = canonical
+        actual_hash, actual_size = _hash_and_size(resolved)
+    except FileNotFoundError as error:
+        if entry is None:
+            raise SourceLibraryQueryError(
+                f"tracked artifact file does not exist and has no external delivery: {path_value}"
+            ) from error
+        raise SourceLibraryQueryError(
+            f"exact artifact is not hydrated: {record.record_id}; "
+            f"run tools/artifact-store hydrate {path_value} --fetch to retrieve it"
+        ) from error
+    except (OSError, ValueError) as error:
+        if isinstance(error, SourceLibraryQueryError):
+            raise
+        raise SourceLibraryQueryError(f"cannot resolve exact artifact {record.record_id}: {error}") from error
+    if actual_hash != record.data.get("sha256") or actual_size != record.data.get("byte_size"):
+        raise SourceLibraryQueryError(f"exact artifact changed from its manifest: {record.record_id}")
+    return resolved
+
+
 def _validate_artifacts(library: Library) -> None:
     declared_paths: dict[Path, Record] = {}
     declared_hashes: dict[str, Record] = {}
@@ -1510,7 +1624,7 @@ def _validate_artifacts(library: Library) -> None:
             if data.get("encoding") != "utf-8":
                 library.error(record.path, 'indexable artifact encoding must be "utf-8"')
 
-        artifact_path = data.get("path")
+        path_value = data.get("path")
         if storage == "tracked":
             for field in ("path", "sha256", "byte_size"):
                 if field not in data:
@@ -1528,8 +1642,8 @@ def _validate_artifacts(library: Library) -> None:
                 )
             if not _is_iso_date(data.get("retrieved")):
                 library.error(record.path, "tracked artifact requires retrieved ISO date")
-            if _is_string(artifact_path):
-                resolved = _safe_source_path(library, record.path, artifact_path)
+            if _is_string(path_value):
+                resolved = _safe_source_path(library, record.path, path_value)
                 if resolved is not None:
                     prior_path = declared_paths.get(resolved)
                     if prior_path is not None:
@@ -1540,20 +1654,27 @@ def _validate_artifacts(library: Library) -> None:
                     else:
                         declared_paths[resolved] = record
                         library.payload_paths.add(resolved)
-                    if not resolved.is_file():
-                        library.error(record.path, f"tracked artifact file does not exist: {artifact_path}")
-                    else:
+                    external = library.external_payloads.get(path_value)
+                    payload_path = resolved
+                    if external is not None:
+                        # Exact delivery metadata was checked against this
+                        # manifest. Ordinary graph queries do not hydrate or
+                        # read binary witnesses, including locally held ones.
+                        pass
+                    elif not resolved.is_file():
+                        library.error(record.path, f"tracked artifact file does not exist: {path_value}")
+                    if external is None and payload_path.is_file():
                         try:
-                            actual_hash, actual_size = _hash_and_size(resolved)
+                            actual_hash, actual_size = _hash_and_size(payload_path)
                         except OSError as error:
                             library.error(record.path, f"cannot read tracked artifact: {error}")
                         else:
                             if _is_string(sha256) and SHA256_PATTERN.fullmatch(sha256) and actual_hash != sha256:
-                                library.error(record.path, f"sha256 mismatch for {artifact_path}: {actual_hash}")
+                                library.error(record.path, f"sha256 mismatch for {path_value}: {actual_hash}")
                             if isinstance(data.get("byte_size"), int) and not isinstance(data.get("byte_size"), bool) and actual_size != data["byte_size"]:
-                                library.error(record.path, f"byte_size mismatch for {artifact_path}: {actual_size}")
+                                library.error(record.path, f"byte_size mismatch for {path_value}: {actual_size}")
                             if data.get("indexable") is True:
-                                _validate_utf8(library, record.path, resolved)
+                                _validate_utf8(library, record.path, payload_path)
                 if _is_string(sha256) and SHA256_PATTERN.fullmatch(sha256):
                     prior_hash = declared_hashes.get(sha256)
                     if prior_hash is not None:
@@ -1563,7 +1684,7 @@ def _validate_artifacts(library: Library) -> None:
                         )
                     else:
                         declared_hashes[sha256] = record
-        elif artifact_path is not None:
+        elif path_value is not None:
             library.error(record.path, f"{storage or 'non-tracked'} artifact must not declare a tracked path")
         if storage == "remote" and not _is_string(data.get("source_url")):
             library.error(record.path, "remote artifact requires source_url")
@@ -1588,7 +1709,32 @@ def _validate_artifacts(library: Library) -> None:
                 library.error(entry, "artifact payload is not declared by its local artifact manifest")
 
 
-def _validate_support_artifact_references(library: Library) -> None:
+def _validate_external_witness_bytes(library: Library, *, fetch: bool) -> None:
+    """Audit exact witnesses explicitly, batching archive reads when fetching."""
+
+    if fetch and library.external_payloads:
+        try:
+            _artifact_store.hydrate(library.root, sorted(library.external_payloads), fetch=True)
+        except (OSError, ValueError) as error:
+            library.error(library.root / _artifact_store.INDEX_PATH, str(error))
+            return
+    for record in sorted(library.records.values(), key=lambda item: item.record_id):
+        path_value = record.data.get("path")
+        if (
+            record.record_type != "artifact"
+            or not _is_string(path_value)
+            or path_value not in library.external_payloads
+        ):
+            continue
+        try:
+            artifact_path(library, record)
+        except SourceLibraryQueryError as error:
+            library.error(record.path, str(error))
+
+
+def _validate_support_artifact_references(
+    library: Library, *, check_external_bytes: bool = False
+) -> None:
     """Prove that first-class companion mappings occur in exact parent bytes."""
 
     for record in sorted(library.records.values(), key=lambda item: item.record_id):
@@ -1601,7 +1747,16 @@ def _validate_support_artifact_references(library: Library) -> None:
         path_value = record.data.get("path")
         if not _is_string(path_value):
             continue
-        payload_path = _safe_source_path(library, record.path, path_value)
+        if path_value in library.external_payloads:
+            if not check_external_bytes:
+                continue
+            try:
+                payload_path = artifact_path(library, record)
+            except SourceLibraryQueryError:
+                # The exact-byte validation already reports this failure.
+                continue
+        else:
+            payload_path = _safe_source_path(library, record.path, path_value)
         if payload_path is None or not payload_path.is_file():
             continue
         try:
@@ -2130,6 +2285,79 @@ def _owned_papal_inventory(library: Library, entry: Path, relative: Path) -> boo
     return True
 
 
+def _owned_projection_receipt(library: Library, entry: Path, relative: Path) -> bool:
+    """Admit the named mechanical receipt; its owning tool proves freshness."""
+
+    contract = PROJECTION_RECEIPTS.get(relative.as_posix())
+    if contract is None:
+        return False
+    source_receipt = contract["summary_field"] == "counted"
+
+    def unique_pairs(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError(f"duplicate JSON key {key!r}")
+            result[key] = value
+        return result
+
+    try:
+        data = json.loads(entry.read_text(encoding="utf-8"), object_pairs_hook=unique_pairs)
+    except (OSError, ValueError) as error:
+        library.error(entry, f"owned projection receipt must be valid JSON: {error}")
+        return True
+    fields = {"schema", "proof", "editorial_approval", "inputs", "outputs"}
+    fields |= {"projection_schema", "counted"} if source_receipt else {"generator", "summary"}
+    if (
+        not isinstance(data, dict) or set(data) != fields
+        or any(data.get(key) != value for key, value in contract.items() if key != "summary_field")
+        or data.get("editorial_approval") is not False
+    ):
+        library.error(entry, "expected mechanical projection receipt ownership envelope")
+        return True
+    inputs, outputs = data["inputs"], data["outputs"]
+    if (
+        not isinstance(inputs, dict)
+        or set(inputs) != {"count", "path_set_sha256", "sha256", "external_count"}
+        or not _is_positive_int(inputs.get("count"))
+        or type(inputs.get("external_count")) is not int or inputs["external_count"] < 0
+        or any(not isinstance(inputs.get(key), str) or not SHA256_PATTERN.fullmatch(inputs[key])
+               for key in ("path_set_sha256", "sha256"))
+    ):
+        library.error(entry, "projection receipt requires exact input closure hashes and counts")
+    if (
+        not isinstance(outputs, dict) or set(outputs) != {"count", "sha256", "files"}
+        or not _is_positive_int(outputs.get("count"))
+        or not isinstance(outputs.get("sha256"), str) or not SHA256_PATTERN.fullmatch(outputs["sha256"])
+        or not isinstance(outputs.get("files"), dict)
+        or len(outputs["files"]) != outputs["count"]
+        or any(not _is_safe_embedded_reference(path) or not isinstance(digest, str)
+               or not SHA256_PATTERN.fullmatch(digest) for path, digest in outputs["files"].items())
+    ):
+        library.error(entry, "projection receipt requires exact output paths, hashes, and count")
+    if source_receipt:
+        counted = data["counted"]
+        if (
+            not isinstance(counted, dict)
+            or set(counted) != {"works", "editions", "artifacts", "passages", "readable"}
+            or any(type(value) is not int or value < 0 for value in counted.values())
+        ):
+            library.error(entry, "projection receipt requires nonnegative mechanical source counts")
+    else:
+        summary = data["summary"]
+        if (
+            not isinstance(summary, dict)
+            or set(summary) != {"files", "slices", "stations", "lines", "default"}
+            or any(type(summary.get(key)) is not int or summary[key] < 0
+                   for key in ("files", "stations", "lines"))
+            or not isinstance(outputs, dict) or summary["files"] != outputs.get("count")
+            or not _is_string_list(summary.get("slices"))
+            or not _is_string(summary.get("default"))
+        ):
+            library.error(entry, "projection receipt requires a bounded mechanical history summary")
+    return True
+
+
 def _validate_source_tree(library: Library) -> None:
     """Reject files that evade a manifest, schema, or inventory owner."""
 
@@ -2153,11 +2381,13 @@ def _validate_source_tree(library: Library) -> None:
         if not entry.is_file():
             continue
         relative = entry.relative_to(library.source_root)
-        if relative == Path("README.md") or entry in manifest_paths:
+        if relative in {Path("README.md"), Path("artifact-delivery.json")} or entry in manifest_paths:
             continue
         if relative.parts[0] == "schema" and entry.suffix in {".json", ".md", ".toml"}:
             continue
         if relative.parts[0] == "inventories" and entry.suffix in {".md", ".toml"}:
+            continue
+        if _owned_projection_receipt(library, entry, relative):
             continue
         if _owned_history_inventory(library, entry, relative):
             continue
@@ -2531,7 +2761,7 @@ def _preflight_tree(library: Library, root: Path, label: str) -> bool:
 
 
 LIBRARY_CACHE_DIR = ROOT / "build" / "source-library"
-LIBRARY_CACHE_VERSION = "3"
+LIBRARY_CACHE_VERSION = "4"
 # A sandbox library is a handful of manifests; the real one is over 22,000
 # files. Below this the load is already cheap and the entry would never be read
 # twice, so the suite's throwaway trees leave nothing behind.
@@ -2585,6 +2815,7 @@ def _library_as_json(library: Library) -> dict[str, Any]:
             for binding in library.bindings
         ],
         "payload_paths": sorted(str(path) for path in library.payload_paths),
+        "external_payloads": library.external_payloads,
         "errors": list(library.errors),
     }
 
@@ -2616,6 +2847,7 @@ def _library_from_json(held: dict[str, Any]) -> Library:
             for row in held["bindings"]
         ],
         payload_paths={Path(path) for path in held["payload_paths"]},
+        external_payloads=held["external_payloads"],
         errors=list(held["errors"]),
     )
 
@@ -2624,6 +2856,8 @@ def load_library(
     root: Path = ROOT,
     *,
     check_binding_fingerprints: bool = True,
+    check_external_bytes: bool = False,
+    fetch: bool = False,
 ) -> Library:
     """Load and validate the source graph rooted at *root*.
 
@@ -2648,10 +2882,19 @@ def load_library(
     For example, `.scratch/source-library` keeps workspace transients in scratch.
     An empty override retains the default. `TRIPTYCH_LIBRARY_CACHE=0` disables
     caching even when a directory override is set.
+
+    Ordinary validation reads retained text and checks exact external delivery
+    declarations without reading binary witnesses. ``check_external_bytes``
+    additionally resolves and hashes those witnesses, bypassing this cache.
+    Only ``fetch=True`` permits retrieving a missing declared witness.
     """
 
+    if fetch and not check_external_bytes:
+        raise ValueError("fetch requires check_external_bytes=True")
     root = root.resolve()
-    entry = _library_cache_entry(root, check_binding_fingerprints)
+    # Hydration lives outside the source tree's stat cache. An evidence audit
+    # always reads the current exact bytes and cannot reuse metadata results.
+    entry = None if check_external_bytes else _library_cache_entry(root, check_binding_fingerprints)
     if entry is not None:
         try:
             return _library_from_json(
@@ -2678,6 +2921,7 @@ def load_library(
     _load_source_records(library)
     _load_bindings(library)
     _validate_relationships(library)
+    _validate_external_deliveries(library)
     _validate_artifacts(library)
     _validate_support_artifact_references(library)
     _validate_passage_locators(library)
@@ -2689,6 +2933,12 @@ def load_library(
     _validate_cycles(library)
     if check_binding_fingerprints:
         _validate_binding_fingerprints(library)
+    # A malformed graph or rights record never starts a network operation.
+    # An offline full audit can still report byte failures alongside metadata
+    # failures because it has no external side effect.
+    if check_external_bytes and (not fetch or not library.errors):
+        _validate_external_witness_bytes(library, fetch=fetch)
+        _validate_support_artifact_references(library, check_external_bytes=True)
     library.errors.sort()
 
     if entry is not None:
@@ -2947,14 +3197,23 @@ def _validated_library(args: argparse.Namespace) -> Library | None:
 
 
 def command_validate(args: argparse.Namespace) -> int:
-    library = load_library(Path(args.root))
+    if args.fetch and not args.full_evidence:
+        print("source-library error: --fetch requires --full-evidence", file=sys.stderr)
+        return 1
+    library = load_library(
+        Path(args.root), check_external_bytes=args.full_evidence, fetch=args.fetch
+    )
     if library.errors:
         return _print_errors(library)
     counts = defaultdict(int)
     for record in library.records.values():
         counts[record.record_type] += 1
     summary = " ".join(f"{kind}={counts[kind]}" for kind in sorted(RECORD_TYPES))
-    print(f"source-library valid: {summary} bindings={len(library.bindings)}")
+    external_summary = ""
+    if library.external_payloads:
+        mode = "bytes-verified" if args.full_evidence else "metadata-only"
+        external_summary = f" external-witnesses={len(library.external_payloads)}:{mode}"
+    print(f"source-library valid: {summary} bindings={len(library.bindings)}{external_summary}")
     return 0
 
 
@@ -3037,6 +3296,14 @@ def build_parser() -> argparse.ArgumentParser:
         EXAMPLES["validate"],
     )
     validate.set_defaults(function=command_validate)
+    validate.add_argument(
+        "--full-evidence", action="store_true",
+        help="also validate exact external witness bytes; requires local hydration unless --fetch is set",
+    )
+    validate.add_argument(
+        "--fetch", action="store_true",
+        help="explicitly retrieve missing declared witnesses during --full-evidence validation",
+    )
 
     fingerprint = with_examples(
         subparsers.add_parser(

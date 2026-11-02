@@ -1,0 +1,121 @@
+schema_version = 1
+id = "gpt/history/traditional-priestly-institutes/03-icksp"
+kind = "history-account"
+profile = "guidance/history/historical-accounts.md"
+source_format = "latex"
+entrypoint = "main.tex"
+
+[[outputs]]
+id = "gpt/history/traditional-priestly-institutes/03-icksp"
+role = "canonical"
+entrypoint = "main.tex"
+derivation = "authored"
+
+[[structure]]
+role = "body"
+source = "main.tex"
+outputs = ["canonical"]
+
+[[structure]]
+role = "generation"
+source = "generation-metadata.tex"
+
+[[structure]]
+role = "web-declaration"
+source = "web-edition.toml"
+
+[[structure]]
+role = "scope"
+source = "research/scope.md"
+
+[[structure]]
+role = "source-audit"
+source = "research/source-audit.md"
+
+[[structure]]
+role = "evidence-map"
+source = "research/evidence-map.md"
+
+[[structure]]
+role = "historical-account"
+source = "sections/00-object-method.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/10-roman-formation.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/20-opus-moissac.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/30-mouila-foundation.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/40-gricigliano-formation.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/50-canonical-anatomy.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/60-canonial-spirituality.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/70-institutional-family.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/80-expansion-apostolates.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/90-pontifical-right.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/100-visitation-constitutions.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/110-government-scale.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/120-summorum-transfer.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/130-traditionis-custodes.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/140-local-variation.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/150-papal-audience.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/160-scrutiny-oversight.tex"
+
+[[structure]]
+role = "historical-account"
+source = "sections/170-synthesis-claim-audit.tex"
+
+[[structure]]
+role = "scope-appendix"
+source = "sections/175-scope-evidence-limits.tex"
+
+[[structure]]
+role = "timeline"
+source = "sections/180-timeline.tex"
+
+[[structure]]
+role = "references"
+source = "sections/190-references.tex"

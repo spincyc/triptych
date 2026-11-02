@@ -3102,6 +3102,89 @@ window.Triptych = (function () {
     return node;
   }
 
+  /** Prepare the complete route selection before opening browser print.
+   * beforeprint itself cannot await a lazy source request. */
+  function bindPrint(options) {
+    const root = options.root;
+    root.classList.add('browser-print-content');
+    const actions = el('div', 'browser-print-actions');
+    const button = el('button', null, options.label || 'Print this selection');
+    button.type = 'button';
+    const status = el('p', 'browser-print-status');
+    status.setAttribute('role', 'status');
+    actions.appendChild(button);
+    actions.appendChild(status);
+    (options.host || root.parentNode).appendChild(actions);
+    const identity = el('p', 'browser-print-identity');
+    const refusal = el('p', 'browser-print-refusal',
+      'This selection is not ready to print. Use the page’s Print button to load and check the complete selection.');
+    root.parentNode.insertBefore(identity, root);
+    root.parentNode.insertBefore(refusal, root);
+    document.body.classList.add('browser-print-enabled');
+    let prepared = false;
+    let revision = 0;
+    let disclosed = null;
+
+    function ready() {
+      return root.isConnected && !root.hidden &&
+        root.getAttribute('aria-busy') !== 'true' &&
+        (options.ready ? options.ready() : prepared);
+    }
+
+    function restore() {
+      if (disclosed) {
+        for (const [details, wasOpen] of disclosed) details.open = wasOpen;
+        disclosed = null;
+      }
+      document.body.classList.remove('browser-print-blocked');
+    }
+
+    window.addEventListener('beforeprint', function () {
+      restore();
+      document.body.classList.toggle('browser-print-blocked', !ready());
+      if (!ready()) return;
+      identity.textContent = (options.identity ? options.identity() : document.title) +
+        ' — Flowed browser copy. ' + window.location.href;
+      disclosed = Array.from(root.querySelectorAll('details'))
+        .filter((details) => !details.closest('[hidden]'))
+        .map((details) => [details, details.open]);
+      for (const [details] of disclosed) details.open = true;
+    });
+    window.addEventListener('afterprint', restore);
+    if (window.matchMedia) {
+      const media = window.matchMedia('print');
+      const changed = function (event) { if (!event.matches) restore(); };
+      if (media.addEventListener) media.addEventListener('change', changed);
+      else if (media.addListener) media.addListener(changed);
+    }
+
+    button.addEventListener('click', async function () {
+      const selected = revision;
+      const address = window.location.href;
+      button.disabled = true;
+      status.textContent = 'Preparing the complete selection…';
+      try {
+        const result = options.prepare ? await options.prepare() : true;
+        if (selected !== revision || address !== window.location.href) {
+          throw new Error('The selection changed. Print the current selection again.');
+        }
+        prepared = result !== false;
+        if (!prepared || !ready()) throw new Error('The complete selection could not be loaded.');
+        status.textContent = '';
+        window.print();
+      } catch (error) {
+        prepared = false;
+        status.textContent = 'Print unavailable: ' + (error.message || error);
+      } finally {
+        button.disabled = false;
+      }
+    });
+    return {
+      invalidate: function () { revision += 1; prepared = false; status.textContent = ''; },
+      button: button
+    };
+  }
+
   /* ------------------------------------------------------------------------
    * What the pages may use
    * --------------------------------------------------------------------- */
@@ -3190,6 +3273,7 @@ window.Triptych = (function () {
     documentRegion: documentRegion,
     titleCase: titleCase,
     fillSelect: fillSelect,
+    bindPrint: bindPrint,
 
     // act-keyed records, shared by every page that draws one
     stationKind: stationKind,

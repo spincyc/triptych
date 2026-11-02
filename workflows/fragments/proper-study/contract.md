@@ -1,8 +1,9 @@
 # Three documents, one proper
 
 Read `guidance/liturgy/propers-three-documents.md` completely. It owns this
-workflow's deliverable: a 20–50-page expansive study, a 10–12-page concise
-study with the restored four-page opening, and a standalone homily. Each
+workflow's deliverable: an expansive study, a concise study with the established
+opening semantic blocks, and a standalone homily. Print exports retain the
+20–50-page study, 10–12-page concise study, and restored four-page opening. Each
 interpretation carries its own literal, allegorical, moral, and anagogical
 senses, and no global four-senses table substitutes for them. The older
 two-document contract's mandatory cultural gallery and exploratory-proposal
@@ -20,6 +21,14 @@ homily from one canonical research owner. The three entrypoints are `main.tex`,
 `synthesis.tex`, and `homily.tex`; outputs are the bare ID, `-synthesis`, and
 `-homily`. `proper-components.toml` uses schema 2. The sole web edition belongs
 to the canonical study. No second research owner or companion leaf is created.
+
+Read `guidance/document-schemas.md`. Declare this leaf's actual source type,
+roles, three ordered outputs, and contract versions in `publication.toml`.
+Existing TeX and typed records remain lossless canonical sources. The normal
+deliverable is reviewed sources and the canonical HTML edition. PDF export is
+selected on demand through `tools/print-document` under `docs/printing.md`;
+physical-page checks and exact-PDF full-page review apply to each such export.
+Do not add generated PDFs to Git or require them for source/HTML publication.
 
 Apply the three-document profile's appointed-text publication mode. A 1962
 reference-only study requires the production plan's separate exact-provider,
@@ -42,8 +51,8 @@ mechanics and reusable patristic or biblical sources do not merge the two
 liturgical objects. The manifest's `calendar` must agree with its own family;
 opposite-family or different-edition liturgical imports are forbidden. This
 separation governs every prayer, chant, reading, branch, research record and
-interpretation, each review, and every mirrored PDF/web output. There is no
-shared Sunday or combined proper layer.
+interpretation, each review, and every source, web, or optional print output.
+There is no shared Sunday or combined proper layer.
 
 `ARGS.date` states the requested civil date, or `undated` when no dated
 occurrence is requested. `ARGS.audience` names the homily audience. The optional
@@ -61,12 +70,12 @@ is insufficient. Never attribute an
 editorial whole-Mass construction to a Father who only comments on one verse.
 Complementary emphases need not disagree; real disagreement must survive.
 
-The concise study places the complete proper inventory and exactly four
+The concise study's print profile places the complete proper inventory and exactly four
 overview sense rows on physical page 1; Scriptural Date and Location alone on
 page 2; and The Propers: Themes and Movement on pages 3–4. Developed commentary
 begins on page 5 and interleaves alternatives at their points of comparison.
 Follow the presentation contract and canonical chronology requirements in the
-owning profile; count terminal apparatus within the page limits. The new
+owning profile; a print export counts terminal apparatus within the page limits. The new
 chronology presentation is `orientation-v2`: generated passage/subject/date
 rows with concise sourced place descriptions and complete evidence retained in
 the historical appendix. It replaces the legacy exhaustive dossier display.
@@ -98,7 +107,9 @@ Author stages may repair only their declared owner. An upstream defect found
 while deriving or building is reported for the following reviewer; never
 silently revise an already reviewed upstream document. Research, study,
 synthesis, homily, artifact, and publication defects have separate repair
-targets. Reentering an upstream owner reruns every dependent document and review.
+targets. Reentering an upstream source or evidence owner revalidates the affected
+dependency closure and its reviews. A print-template change follows its separate
+review scope and does not force every PDF to be regenerated.
 Where the packet carries blocking findings, return one honest
 `finding_dispositions` entry per forwarded finding.
 

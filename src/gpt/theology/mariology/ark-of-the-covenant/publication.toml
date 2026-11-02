@@ -1,0 +1,117 @@
+schema_version = 1
+id = "gpt/theology/mariology/ark-of-the-covenant"
+kind = "marian-monograph"
+profile = "guidance/theology/mariology.md"
+source_format = "latex"
+entrypoint = "main.tex"
+
+[[outputs]]
+id = "gpt/theology/mariology/ark-of-the-covenant"
+role = "canonical"
+entrypoint = "main.tex"
+derivation = "authored"
+
+[[structure]]
+role = "body"
+source = "main.tex"
+outputs = ["canonical"]
+
+[[structure]]
+role = "generation"
+source = "generation-metadata.tex"
+
+[[structure]]
+role = "web-declaration"
+source = "web-edition.toml"
+
+[[structure]]
+role = "scope"
+source = "research/scope.md"
+
+[[structure]]
+role = "source-audit"
+source = "research/source-audit.md"
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[[structure]]
+role = "exposition"
+source = "sections/00-prologue.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/10-fashioned-for-presence.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/20-ark-goes-before.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/30-glory-in-captivity.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/40-fear-blessing-dance.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/45-rest-hiddenness.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/50-overshadowing-hill-country.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/55-map.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/55-map-text-equivalent.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/57-ark-and-sanctuaries.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/57-ark-and-sanctuaries-text-equivalent.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/60-scripture-recognizes-scripture.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/70-choir-of-witnesses.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/75-virginal-marriage.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/80-four-dogmas.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/90-where-glory-dwells.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/95-study-guide.tex"
+
+[[structure]]
+role = "synopsis"
+source = "sections/96-synopsis.tex"
+
+[[structure]]
+role = "references"
+source = "sections/99-references.tex"
+
+[[structure]]
+role = "scope-appendix"
+source = "main.tex"

@@ -1071,3 +1071,32 @@ review-edition, or study-edition marking.
 **Verdict: pass for the exact seven-PDF set identified here.** Earlier
 release-label descriptions and earlier hashes remain historical checkpoints,
 not descriptions of the final reader presentation.
+
+
+## Source-schema actor repairs — 2026-11-02
+
+The typed source audit found that SO-006 and SO-069 in
+`shared/solemn-ceremony.tex` omitted the actor argument of the five-argument
+`actionrowid` command. Both now use the existing ceremonial inventory's exact
+actor, `All lay servers`; the other wording and order are unchanged. Only the
+full Solemn Mass guide imports this file. Its source revision is
+`2026-11-02T17:50:42Z`; the paired cards were neither changed nor reviewed anew.
+
+The selected on-demand export produced 30 Letter pages, 2,706,455 bytes,
+SHA-256 `9c12ff26afebba361bf89b2b04f651afd22de6886d5fc3c03b0b19c4c31a3f0e`.
+The owning reference, metadata, anchor and declared-input checks passed. Both
+contact sheets and all 30 full-size page rasters were inspected. The restored
+actors appear on physical pages 10 and 18. No clipping, missing art or text,
+broken glyph, accidental blank page or terminal-colophon overflow was observed.
+
+This is a scoped repair verification with layout qualifications. Existing
+scene and response/gloss continuations span pages 3–4 and 24–25. A local
+page reservation keeps the Scope heading with its opening paragraph on page
+30. Pages 1–28 have identical raster hashes to the preceding actor-repair
+export; changed pages 29–30 and their contact sheet were inspected again.
+Complete extracted wording is unchanged after whitespace and folio
+normalization. All 12 embedded fonts remain subset and Unicode mapped.
+The already disposed terminal Underfull box diagnostic remains. No general layout,
+physical-use, independent ceremonial or ecclesiastical approval is inferred.
+The PDF remains a generated export rather than a tracked source or site
+publication prerequisite.

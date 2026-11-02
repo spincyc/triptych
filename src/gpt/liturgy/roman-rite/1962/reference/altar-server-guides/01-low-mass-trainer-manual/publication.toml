@@ -1,0 +1,73 @@
+schema_version = 1
+id = "gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual"
+kind = "server-trainer"
+profile = "guidance/liturgy/roman-1962-server-training.md"
+source_format = "latex"
+entrypoint = "main.tex"
+
+[[outputs]]
+id = "gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual"
+role = "canonical"
+entrypoint = "main.tex"
+derivation = "authored"
+
+[[structure]]
+role = "body"
+source = "main.tex"
+outputs = ["canonical"]
+
+[[structure]]
+role = "generation"
+source = "generation-metadata.tex"
+
+[[structure]]
+role = "web-declaration"
+source = "web-edition.toml"
+
+[[structure]]
+role = "scope"
+data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/scope.md"
+
+[[structure]]
+role = "guide-map"
+source = "research/guide-map.md"
+
+[[structure]]
+role = "response-inventory"
+data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/response-inventory.md"
+
+[[structure]]
+role = "ceremonial-inventory"
+data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/ceremonial-inventory.md"
+
+[[structure]]
+role = "pronunciation-audit"
+data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/pronunciation-audit.md"
+
+[[structure]]
+role = "source-audit"
+data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/source-audit.md"
+
+[[structure]]
+role = "edition-manifest"
+data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/edition-manifest.md"
+
+[[structure]]
+role = "flash-card-manifest"
+data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/flash-card-manifest.md"
+
+[[structure]]
+role = "artwork-manifest"
+data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/artwork-manifest.md"
+
+[[structure]]
+role = "responses"
+data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/response-reference.tex"
+
+[[structure]]
+role = "ceremonial-route"
+data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/low-mass-ceremony.tex"
+
+[[structure]]
+role = "ceremonial-diagrams"
+data = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/low-mass-diagrams.tex"

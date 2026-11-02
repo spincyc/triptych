@@ -180,9 +180,9 @@ PLAN_ROOT = ROOT / "src" / "sources" / "reading-plans"
 # Every id here must be publishable, which `entry` enforces by name.
 PLAN_EDITIONS = ("douay-rheims", "king-james-version")
 
-# Where a rendered edition may be written. `build/` is the only tree in this
-# repository that holds reproducible artifacts; `pdf/`, `web/` and `src/` hold
-# reviewed or authoritative ones, and a whole-bible render is neither.
+# Where a rendered edition may be written. `build/` and `.scratch/` hold
+# reproducible or transient artifacts; `pdf/`, `web/` and `src/` hold reviewed
+# or authoritative ones, and a whole-bible render is neither.
 WRITABLE_ROOT = ROOT / "build"
 
 # Headings for the divisions a book index declares. The value is the edition's
@@ -1799,9 +1799,10 @@ def render_tex(
 def destination(out: Path) -> Path:
     """Refuse an output directory that would put a build artifact in a source tree."""
     resolved = out.resolve()
-    if resolved.is_relative_to(ROOT) and not resolved.is_relative_to(WRITABLE_ROOT):
+    allowed = (WRITABLE_ROOT, ROOT / ".scratch")
+    if resolved.is_relative_to(ROOT) and not any(resolved.is_relative_to(path) for path in allowed):
         raise ValueError(
-            f"{resolved} is inside this repository but not under {WRITABLE_ROOT}; "
+            f"{resolved} is inside this repository but not under build/ or .scratch/; "
             "a rendered bible is a build artifact"
         )
     return resolved

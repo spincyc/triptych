@@ -24,7 +24,7 @@
   const T = window.Triptych;
   const M = window.EncyclicalsModel;
   const CATALOGUE = 'encyclicals/index.json';
-  /* The page sits one directory below the site root, and the PDFs hang off it. */
+  /* The page sits one directory below the site root. */
   const SITE = '..';
 
   const table = document.getElementById('enc-table');
@@ -140,13 +140,15 @@
   function readerItem(row, reader) {
     const item = T.el('li', 'enc-reader');
     item.setAttribute('data-extent', reader.extent);
-    const link = T.el('a', 'enc-pdf');
-    link.href = SITE + '/' + reader.pdf;
-    link.type = 'application/pdf';
-    link.hreflang = reader.language;
+    const hasReader = typeof reader.reader === 'string' && Boolean(reader.reader.trim());
+    const link = T.el(hasReader ? 'a' : 'span', 'enc-reader-link');
+    if (hasReader) {
+      link.href = SITE + '/' + reader.reader;
+      link.hreflang = reader.language;
+    }
     link.appendChild(T.el('span', 'visually-hidden', labelOf(reader.language) + ' reading edition of ' + row.title + ', '));
     link.appendChild(document.createTextNode(
-      'Source PDF, ' + reader.pages + (reader.pages === 1 ? ' page' : ' pp')));
+      hasReader ? 'Read source · Print' : 'Source reader unavailable'));
     item.appendChild(link);
     if (reader.extent !== 'complete') {
       /* In words, not only a colour: a fragment or a damaged printing is a
@@ -243,7 +245,7 @@
     title.appendChild(T.el('span', 'enc-incipit', row.title));
     if (row.subject) title.appendChild(T.el('span', 'enc-subject', row.subject));
     if (!(row.readers || []).length) {
-      title.appendChild(T.el('span', 'enc-source-absence', 'No source PDF here: ' + row.no_local_text_reason));
+      title.appendChild(T.el('span', 'enc-source-absence', 'No source reader here: ' + row.no_local_text_reason));
     }
     tr.appendChild(title);
 
@@ -312,7 +314,7 @@
     const all = M.tally(catalogue.encyclicals || []);
     const range = all.first !== null ? ', ' + all.first + '–' + all.last : '';
     let text = count(whole.encyclicals || 0, 'encyclical') + range + ' · ' +
-      count(whole.with_local_text || 0, 'with a source PDF here', 'with a source PDF here') + ' · ' +
+      count(whole.with_local_text || 0, 'with a source reader here', 'with a source reader here') + ' · ' +
       columns.map(function (column) {
         return (all.byLanguage[column.code] || 0) + ' ' + column.label;
       }).join(', ') + ' source reading editions';
@@ -327,7 +329,7 @@
     const all = M.tally(catalogue.encyclicals || []);
     const english = all.english;
     englishTally.textContent = english.complete + ' of ' + all.encyclicals + ' have complete English: ' +
-      english.source_complete + ' with a source PDF, ' +
+      english.source_complete + ' with a source reader, ' +
       english.external_complete + ' online (these groups can overlap). ' +
       english.incomplete_only + ' have only partial or unreviewed English; ' +
       english.unavailable + ' have no English text recorded.';

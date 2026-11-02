@@ -1,9 +1,5 @@
-/* The catena page — a chapter, and every fragment held on it, oldest
- * first. NOT THIS FILE'S, AND MUST NOT BECOME IT: what belongs to a
- * chapter (`catena-model.js`), numbering (refusals arrive as data), rights
- * and confidence filtering (the generator's guards). The book file is a
- * SPINE: a fragment's text is its own file, fetched when opened, so
- * unfetched text is beyond find-in-page and the page says so. */
+/* Chapter and chronological commentary. The model owns membership and
+ * numbering; the generator owns rights. Fragment prose is fetched on demand. */
 
 'use strict';
 
@@ -57,6 +53,25 @@
   // before the model sees it. `M.paragraphPath` says why it must be.
   const ABSENT = { absent: true };
   const seen = (file) => (file === ABSENT ? undefined : file);
+  const printLoaders = new WeakMap();
+  let printableChapter = false;
+  const printing = T.bindPrint({
+    root: reading,
+    host: document.querySelector('.page-header'),
+    label: 'Print chapter and selected commentary',
+    identity: () => reference.textContent + ' — ' +
+      bibleSelect.selectedOptions[0].textContent + ' — ' +
+      voiceSelect.selectedOptions[0].textContent + (hiddenAuthors.size
+        ? ' — Excluding authors: ' + [...hiddenAuthors].sort().join(', ') : ''),
+    prepare: async () => {
+      if (!printableChapter) return false;
+      // Fetch only this voice and visible author set.
+      const selected = Array.from(reading.querySelectorAll('.fragment-body'))
+        .filter((details) => !details.closest('[hidden]'));
+      const results = await Promise.all(selected.map((details) => printLoaders.get(details)()));
+      return results.every(Boolean);
+    }
+  });
 
   /* --------------------------------------------------------------- data */
 
@@ -90,25 +105,19 @@
     return one;
   }
 
-  // The spine for one chapter: nothing held means NO FILE, no request.
-  // A 404 on a LISTED chapter is a broken record, not emptiness — marked,
-  // and so is an index this page cannot read.
+  // Listed-but-missing chapters are broken records; unlisted ones cost no fetch.
   function chapterFile(token, chapter) {
     const path = M.chapterPath(index, token, chapter);
     if (!path) return Promise.resolve(path === null ? gone('the index record') : null);
-    // A 200 carrying a document that is not a spine is not an empty
-    // chapter; `M.spineUnreadable` says what that cost and why.
+    // Malformed spines cannot imply emptiness.
     return cached(chapterFiles, path, gone(path))
       .then((file) => (M.spineUnreadable(file) ? gone(path) : file));
   }
 
-  // Where this edition opens a paragraph. The layer is the EDITION's —
-  // a chapter that runs on has no file, so the 404 is the answer. An
-  // unstatable path is not requested.
+  // Paragraphs belong to the edition; a 404 means this chapter runs on.
   function chapterParagraphs(bible, token, chapter) {
     const path = M.paragraphPath(paragraphs, bible.id, bag(canonEntry(token)).path, chapter);
-    // `null` is the layer ROOT unreadable, not the 404 that means this
-    // chapter runs on; `M.paragraphPath` says why neither may decide the page.
+    // An unreadable root cannot establish paragraph boundaries.
     return path === null ? Promise.resolve({ unfetched: true })
       : path ? cached(paragraphFiles, path, ABSENT)
         .then(seen, () => ({ unfetched: true }))
@@ -219,8 +228,7 @@
    * Rule 6: a fragment shown under a chapter it only reaches into still
    * says where it runs. */
 
-  // A licence travels ABOVE the words, so a copied selection carries the
-  // condition; nothing is invented for a bare `licensed`.
+  // Licences travel above the quoted words.
   function licence(note) {
     const block = T.el('p', 'fragment-acknowledgement');
     block.appendChild(T.el('strong', null, 'Licence: '));
@@ -236,14 +244,12 @@
     const details = T.el('details', 'fragment-body');
 
     const head = T.el('summary', 'fragment-head');
-    // EVERY FIELD HERE IS ALREADY TYPED: `M.chapterFragments` projects, and
-    // carries no field this function does not render.
+    // M.chapterFragments projects the typed fields rendered here.
     head.appendChild(T.el('span', 'fragment-author', fragment.author));
     head.appendChild(T.el('span', 'fragment-work', fragment.work));
     const date = fragment.date || M.compositionDateLabel(fragment);
     if (date) head.appendChild(T.el('span', 'fragment-date', date));
-    // The language, and WHOSE it is; an unestablished voice says only it.
-    // Derived beside the other typed prose, so the two cannot drift.
+    // Voice and language are distinct model fields.
     const code = fragment.language;
     const named = M.languageChip(fragment);
     if (named) head.appendChild(T.el('span', 'fragment-language', named));
@@ -289,15 +295,16 @@
     acknowledge(fragment.acknowledgement, fragment.acknowledgement_broken);
 
     let asked = false;
-    details.addEventListener('toggle', () => {
-      if (!details.open || asked) return;
+    let pending = null;
+    let printComplete = false;
+    function ensureText() {
+      if (asked) return pending || Promise.resolve(printComplete);
       asked = true;
-      // THE REFUSAL IS TERMINAL, consumed before the sink: no path —
-      // carried, cached or late — may answer a claim the page declined.
+      // Refusals are terminal, including for printing.
       if (fragment.text_refused) {
         text.className = 'fragment-text missing';
         text.textContent = fragment.text_note;
-        return;
+        return Promise.resolve(false);
       }
       // APPLIED, THEN RECORDED: only a write read back is a body, and
       // `M.bodyApplied` says why an unconfirmed one leaves no entry.
@@ -305,16 +312,19 @@
         let said = null;
         try { said = write(); } catch (problem) { said = null; }
         if (said === text.textContent) M.bodyApplied(fragment, completed, true);
+        return said === text.textContent;
       };
-      fragmentText(fragment).then(
+      pending = fragmentText(fragment).then(
         (completed) => {
           // Containment first, then the ROW'S OWN TRANSPORT: a completion
           // for a rebuilt page mutates nothing here.
-          if (!reading.contains(details) || !M.bodyAsked(fragment, completed)) return;
+          if (!reading.contains(details) || !M.bodyAsked(fragment, completed)) return false;
           const body = completed.content;
-          wrote(completed, () => {
+          let complete = false;
+          const applied = wrote(completed, () => {
             if (body.present) acknowledge(body.acknowledgement, body.acknowledgement_broken);
             const say = M.bodySaying(body);
+            complete = !say.missing;
             text.className = say.missing ? 'fragment-text missing' : 'fragment-text';
             text.textContent = say.said;
             if (!say.missing) {
@@ -327,10 +337,12 @@
             }
             return say.said;
           });
+          printComplete = complete && applied;
+          return printComplete;
         },
         (failed) => {
           // A reported failure is a body applied, and owned as one.
-          if (!reading.contains(details) || !M.bodyAsked(fragment, failed)) return;
+          if (!reading.contains(details) || !M.bodyAsked(fragment, failed)) return false;
           asked = false;
           const error = failed.error;
           wrote(failed, () => {
@@ -339,9 +351,13 @@
             text.textContent = said;
             return said;
           });
+          return false;
         }
       );
-    });
+      return pending;
+    }
+    printLoaders.set(details, ensureText);
+    details.addEventListener('toggle', () => { if (details.open) ensureText(); });
 
     // Provenance, whether or not the text loads: every fact the spine carries.
     const source = T.el('p', 'fragment-source');
@@ -529,6 +545,7 @@
         box.type = 'checkbox';
         box.checked = !hiddenAuthors.has(name);
         box.addEventListener('change', () => {
+          printing.invalidate();
           if (box.checked) hiddenAuthors.delete(name);
           else hiddenAuthors.add(name);
           applyFilter();
@@ -632,6 +649,8 @@
   }
 
   function renderInvalid(bad) {
+    printableChapter = false;
+    printing.invalidate();
     T.beginRender();
     showingError = true;
     const refocus = focusKeeper();
@@ -663,6 +682,8 @@
   /* ----------------------------------------------------------- assembly */
 
   async function render() {
+    printableChapter = false;
+    printing.invalidate();
     const wasArrival = arrival;
     arrival = false;
     // A reader action supersedes a parked arrival — and its deep-linked
@@ -686,9 +707,7 @@
     // '' where the canon states no testament; an `else` printed "New".
     referenceBook.textContent = book.testamentName;
 
-    // ONE FUNNEL after the address is claimed: outside it, a throw in the tail
-    // stranded `aria-busy`, focus, the tally and the route. The keeper is taken
-    // BEFORE the work, or it reads an emptied page and sees no loss.
+    // One failure funnel; capture focus before replacing the page.
     const refocus = focusKeeper();
     let file, scripture;
     try {
@@ -702,9 +721,7 @@
       // and the PROJECTION says which: read raw, it was asked twice.
       const unfetched = M.chapterUnfetched(file);
 
-      // ONE typed truth beside the chapter: every tally, empty, blocked
-      // and voice claim derives from these counts — held-but-unrenderable
-      // is HELD, never "nothing".
+      // Counts preserve held-but-unrenderable as held.
       const blocked = M.chapterBlocked(file);
       const leads = M.chapterLeads(file);
       const total = M.chapterTally(file);
@@ -738,6 +755,11 @@
         reading.appendChild(column);
       }
       reading.setAttribute('aria-busy', 'false');
+      printableChapter = !unfetched && !blocked.length && scripture.ok &&
+        scripture.parts.every((part) => {
+          const checked = M.chapterReading(part.verses, part.marks);
+          return !checked.versesUnread && checked.lines.length > 0;
+        });
       refocus();
 
       // The tally states the corpus, never the filter, and the announcement
@@ -903,6 +925,8 @@
   // A TERMINAL STATE IS A TRANSACTION: this left the tally standing and
   // invalidated nothing, so a render in flight repainted over the failure.
   function startFailed(message) {
+    printableChapter = false;
+    printing.invalidate();
     T.beginRender();
     const refocus = focusKeeper();
     reference.textContent = 'Unavailable';

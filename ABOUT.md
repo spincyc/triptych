@@ -8,9 +8,10 @@ Tradition, the Magisterium, the Church's liturgical books, canon law, or
 competent advice. Polished prose is not proof: follow the citations and check
 important claims against the authorities themselves.
 
-Every publication is issued in parallel AI editions, one by GPT and one by
-Claude. Each catalog row links every available edition, so the two can be read
-against each other.
+Publications retain separate GPT and Claude editions where available. Each
+catalog row links the available editions, so the two can be read against each
+other. Read online, print the browser page, or make a selected print edition
+using [Printing](docs/printing.md).
 
 If something is wrong, unclear, incomplete, or unbalanced, send a short note.
 A useful note can be one sentence. See [How to Contribute](CONTRIBUTING.md).
@@ -36,7 +37,12 @@ goes as deep as the evidence allows.
 
 Everything here is built in the open at
 [github.com/spincyc/triptych](https://github.com/spincyc/triptych) — the sources,
-the tools that typeset them, and the checks that gate a release. Corrections and
+the tools that render them, and the checks that gate a release. Canonical
+plaintext and structured data stay in the repository; optional PDFs are made
+on demand. Exact binary source evidence is kept separately with recorded
+hashes and rights, and can be opened offline after the relevant verified pack
+has been obtained. A checkout alone does not contain every scan or other
+binary witness. Corrections and
 questions are welcome as an
 [issue](https://github.com/spincyc/triptych/issues) or by writing to
 <71109625+spincyc@users.noreply.github.com>.

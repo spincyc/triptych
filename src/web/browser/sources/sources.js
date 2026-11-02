@@ -58,6 +58,19 @@
   let state = M.blank();
   // The edition currently open, its fetched payload, and where in it we are.
   let open = null;
+  let printReady = false;
+  const printing = T.bindPrint({
+    root: elements.reader,
+    host: document.querySelector('.page-header'),
+    label: 'Print selected passage',
+    ready: function () { return printReady && Boolean(open); },
+    identity: function () {
+      const passage = open.payload.passages[open.at];
+      return titleOf(open.payload.work) + ' — ' +
+        (open.payload.edition.title || open.edition.id) + ' — ' +
+        (passage.locus || passage.id);
+    }
+  });
 
   /* ---------------------------------------------------------------------
    * Labels. Every one of them says what the record says, or says nothing.
@@ -231,6 +244,8 @@
    * ------------------------------------------------------------------ */
 
   async function openEdition(work, edition, wantedPassage, canonicalize) {
+    printReady = false;
+    printing.invalidate();
     const token = T.beginRender();
     const path = M.editionPath(spine, work, edition);
     if (!path) {
@@ -292,6 +307,8 @@
   }
 
   function showFinder() {
+    printReady = false;
+    printing.invalidate();
     open = null;
     elements.reader.hidden = true;
     elements.controls.hidden = false;
@@ -446,6 +463,8 @@
   }
 
   async function renderPassage() {
+    printReady = false;
+    printing.invalidate();
     const body = document.getElementById('passage-body');
     if (!body) return;
     const passage = (open.payload.passages || [])[open.at];
@@ -531,6 +550,8 @@
       prose.appendChild(block);
     }
     body.appendChild(prose);
+    // A successful transport with no body is not a complete printable passage.
+    printReady = typeof text.text === 'string' && Boolean(text.text.trim());
 
     body.appendChild(renderProvenance(passage));
     if (passage.notes) body.appendChild(T.el('p', 'passage-notes', passage.notes));

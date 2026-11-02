@@ -1,0 +1,93 @@
+schema_version = 1
+id = "gpt/liturgy/roman-rite/1962/reference/liturgical-calendar"
+kind = "calendar-reference"
+profile = "guidance/liturgy/roman-calendar-references.md"
+source_format = "latex"
+entrypoint = "main.tex"
+
+[[outputs]]
+id = "gpt/liturgy/roman-rite/1962/reference/liturgical-calendar"
+role = "canonical"
+entrypoint = "main.tex"
+derivation = "authored"
+
+[[structure]]
+role = "body"
+source = "main.tex"
+outputs = ["canonical"]
+
+[[structure]]
+role = "generation"
+source = "generation-metadata.tex"
+
+[[structure]]
+role = "web-declaration"
+source = "web-edition.toml"
+
+[[structure]]
+role = "scope"
+source = "research/scope.md"
+
+[[structure]]
+role = "edition-manifest"
+source = "research/edition-manifest.md"
+
+[[structure]]
+role = "source-audit"
+source = "research/source-audit.md"
+
+[[structure]]
+role = "evidence-map"
+source = "research/evidence-map.md"
+
+[[structure]]
+role = "calendar-inventory"
+source = "research/calendar-inventory.md"
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[[structure]]
+role = "scope-appendix"
+source = "sections/00-scope-method.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/10-construction-history.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/30-how-calendar-works.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/40-temporale.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/50-sanctorale-jan-jun.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/60-sanctorale-jul-dec.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/70-united-states.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/80-cum-sanctissima.tex"
+
+[[structure]]
+role = "exposition"
+source = "sections/90-use-boundaries.tex"
+
+[[structure]]
+role = "timeline"
+source = "sections/20-substantive-timeline.tex"
+
+[[structure]]
+role = "references"
+source = "sections/99-references.tex"

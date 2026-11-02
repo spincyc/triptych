@@ -105,6 +105,14 @@ class PublicAlphaTest(unittest.TestCase):
         self.write("scripts/_markdown_render.py", b"test renderer\n")
         self.write("release/rights/approval.md", b"stale approval record\n")
         self.write("src/gpt/work/main.tex", b"source\n")
+        self.write(
+            "src/common/document-schemas/registry.toml",
+            b'schema_version = 1\nrecord_type = "document-schema-registry"\n'
+            b'manifest_name = "publication.toml"\ndescription = "Test document kinds"\n'
+            b'[[types]]\nkind = "fixture"\npatterns = ["*"]\n'
+            b'profile = "guidance/editorial.md"\nrequired_roles = []\nrequirements = []\n',
+        )
+        self.ensure_source_manifests()
         self.write("pdf/gpt/work.pdf", b"current pdf bytes\n")
         self.write("LICENSES/MIT.txt", b"test license\n")
         self.manifest = self.make_manifest()
@@ -114,6 +122,17 @@ class PublicAlphaTest(unittest.TestCase):
         path = self.root / relative
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(data)
+        if (re.fullmatch(r"src/(gpt|claude)/.+/main\.tex", relative)
+                and (self.root / "src/common/document-schemas/registry.toml").is_file()):
+            self.ensure_source_manifests()
+
+    def ensure_source_manifests(self) -> None:
+        from _document_schema import adapter_manifest, dumps_manifest
+        for provider in ("gpt", "claude"):
+            for main in (self.root / "src" / provider).rglob("main.tex"):
+                path = main.parent / "publication.toml"
+                if not path.exists():
+                    path.write_text(dumps_manifest(adapter_manifest(self.root, main.parent)))
 
     def make_propers_read_fixture(
         self, *, rights: str = "public-domain", current_appointments: bool = False,
@@ -632,8 +651,7 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertEqual(scope, {("gpt", leaf) for leaf in ("proper", "proper-synthesis", "proper-homily")})
         publications = self.tool.validate_manifest(self.manifest, installed_scope=scope)
         self.assertEqual(len(publications), 4)
-        with self.assertRaisesRegex(self.tool.ReleaseError, "work: release entries require an installed PDF"):
-            self.tool.validate_manifest(self.manifest)
+        self.assertEqual(len(self.tool.validate_manifest(self.manifest)), 4)
 
     def test_selected_proper_rejects_each_missing_target_pdf(self) -> None:
         scope = self.prepare_scoped_proper()
@@ -641,8 +659,8 @@ class PublicAlphaTest(unittest.TestCase):
             path = self.root / "pdf" / provider / f"{leaf}.pdf"
             contents = path.read_bytes()
             path.unlink()
-            with self.subTest(leaf=leaf), self.assertRaisesRegex(self.tool.ReleaseError, f"{leaf}: release entries require an installed PDF"):
-                self.tool.validate_manifest(self.manifest, installed_scope=scope)
+            with self.subTest(leaf=leaf):
+                self.assertIn((provider, leaf), self.tool.validate_manifest(self.manifest, installed_scope=scope))
             path.write_bytes(contents)
 
     def test_selected_proper_still_checks_global_source_inventory(self) -> None:
@@ -771,6 +789,9 @@ class PublicAlphaTest(unittest.TestCase):
         else:
             gates = []
             approval = None
+            if link_catalog is None:
+                catalog_path = self.root / "library/test.md"
+                self.write("library/test.md", catalog_path.read_bytes() + f"\n<!-- triptych-publication-id: claude:{leaf} -->\n".encode())
         self.manifest["publications"].append(
             {
                 "id": f"claude:{leaf}",
@@ -781,8 +802,10 @@ class PublicAlphaTest(unittest.TestCase):
             }
         )
 
+
     def authorize_current_inputs(self) -> None:
         """Make the synthetic authorization exactly match the fixture files."""
+        self.ensure_source_manifests()
         authorization = self.manifest["authorizations"]["test-authorization"]
         authorization["site_sources"] = {
             source_path: digest((self.root / source_path).read_bytes())
@@ -795,6 +818,8 @@ class PublicAlphaTest(unittest.TestCase):
             provider, leaf = self.publication_provider_and_leaf(publication["id"])
             pdf_path = self.root / "pdf" / provider / f"{leaf}.pdf"
             if not pdf_path.is_file():
+                if publication["status"] == "review":
+                    publication["review_distribution"] = {"authorization": "test-authorization"}
                 continue
             pdf_hash = digest(pdf_path.read_bytes())
             if publication["status"] == "release":
@@ -858,22 +883,15 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertFalse(inventory["approval_conferred"])
         self.assertIn("NOT AN APPROVAL OR AUTHORIZATION", inventory["notice"])
         self.assertIn("do not attest rights", inventory["notice"])
-        self.assertEqual(
-            inventory["pdfs"],
-            [
-                {
-                    "id": "work",
-                    "path": "pdf/gpt/work.pdf",
-                    "sha256": digest(b"current pdf bytes\n"),
-                }
-            ],
-        )
+        self.assertEqual([entry["id"] for entry in inventory["publications"]], ["work"])
+        self.assertEqual(inventory["publications"][0]["source"], "src/gpt/work/main.tex")
+        self.assertEqual(inventory["publications"][0]["manifest"], "src/gpt/work/publication.toml")
         self.assertEqual(
             [entry["path"] for entry in inventory["site_sources"]],
-            sorted(self.tool.SITE_SOURCE_PATHS),
+            sorted(self.tool.site_source_paths(self.manifest)),
         )
         self.assertNotEqual(
-            inventory["pdfs"][0]["sha256"],
+            inventory["publications"][0]["content"]["sha256"],
             self.manifest["publications"][0]["approval"]["pdf_sha256"],
         )
 
@@ -895,7 +913,7 @@ class PublicAlphaTest(unittest.TestCase):
         inventory = self.tool.prepare_candidate_inventory(self.manifest)
 
         self.assertEqual(publications[("gpt", "held-work")]["status"], "hold")
-        self.assertEqual([entry["id"] for entry in inventory["pdfs"]], ["work"])
+        self.assertEqual([entry["id"] for entry in inventory["publications"]], ["work"])
 
     def test_source_only_hold_catalog_entry_is_filtered_from_every_build(self) -> None:
         self.add_unapproved_publication("held-work", "hold")
@@ -1103,43 +1121,27 @@ class PublicAlphaTest(unittest.TestCase):
             "library/ecclesiastical-latin.html",
         )
 
-    def test_unmanifested_installed_pdf_is_rejected(self) -> None:
+    def test_unmanifested_installed_pdf_is_never_a_publication_input(self) -> None:
         self.authorize_current_inputs()
         self.write("pdf/gpt/unmanifested.pdf", b"unmanifested pdf bytes\n")
 
-        with self.assertRaises(self.tool.ReleaseError) as failure:
-            self.tool.validate_manifest(self.manifest)
+        publications = self.tool.validate_manifest(self.manifest)
+        output = self.tool.build_site(self.manifest, publications, preview=False)
+        self.assertFalse(list(output.rglob("*.pdf")))
 
-        self.assertIn(
-            "manifest/PDF mismatch: unmanifested=['unmanifested']",
-            str(failure.exception),
-        )
-
-    def test_release_entry_requires_installed_pdf(self) -> None:
+    def test_release_entry_requires_no_installed_pdf(self) -> None:
         self.authorize_current_inputs()
         (self.root / "pdf/gpt/work.pdf").unlink()
 
-        with self.assertRaises(self.tool.ReleaseError) as failure:
-            self.tool.validate_manifest(self.manifest)
+        self.assertIn(("gpt", "work"), self.tool.validate_manifest(self.manifest))
 
-        self.assertIn(
-            "work: release entries require an installed PDF",
-            str(failure.exception),
-        )
-
-    def test_review_entry_requires_installed_pdf(self) -> None:
-        self.add_unapproved_publication("review-work", "review")
+    def test_review_entry_requires_no_installed_pdf(self) -> None:
+        self.add_unapproved_publication("review-work", "review", link_catalog="library/test.md")
         self.authorize_current_inputs()
 
-        with self.assertRaises(self.tool.ReleaseError) as failure:
-            self.tool.validate_manifest(self.manifest)
+        self.assertIn(("gpt", "review-work"), self.tool.validate_manifest(self.manifest))
 
-        self.assertIn(
-            "review-work: review entries require an installed PDF",
-            str(failure.exception),
-        )
-
-    def test_source_only_hold_rejects_catalog_pdf_link(self) -> None:
+    def test_held_legacy_catalog_ownership_is_filtered_from_the_public_site(self) -> None:
         self.add_unapproved_publication(
             "held-work",
             "hold",
@@ -1147,13 +1149,11 @@ class PublicAlphaTest(unittest.TestCase):
         )
         self.authorize_current_inputs()
 
-        with self.assertRaises(self.tool.ReleaseError) as failure:
-            self.tool.validate_manifest(self.manifest)
-
-        self.assertIn(
-            "held-work: source-only hold entries require zero catalog PDF links, found 1",
-            str(failure.exception),
-        )
+        publications = self.tool.validate_manifest(self.manifest)
+        included = self.tool.included_publications(publications, False)
+        self.assertNotIn(("gpt", "held-work"), included)
+        catalog = self.tool.render_source_page("library/test.md", "library/test.html", set(included), False, {})
+        self.assertNotIn("held-work", catalog)
 
     def test_source_only_hold_requires_existing_catalog(self) -> None:
         self.add_unapproved_publication(
@@ -1179,7 +1179,7 @@ class PublicAlphaTest(unittest.TestCase):
             self.tool.validate_manifest(self.manifest)
 
         self.assertIn(
-            "held-work: expected one catalog link, found 0",
+            "held-work: source-only hold entries require exactly one marked catalog identity, found 0",
             str(failure.exception),
         )
 
@@ -1512,15 +1512,13 @@ class PublicAlphaTest(unittest.TestCase):
         workflow = (REPOSITORY_ROOT / ".github/workflows/pages.yml").read_text(
             encoding="utf-8"
         )
-        self.assertIn("run: make check-deployment-sources", workflow)
+        makefile = (REPOSITORY_ROOT / "Makefile").read_text(encoding="utf-8")
+        self.assertIn("public-site: check-deployment-sources", makefile)
         self.assertIn(
             "python tools/tpt public-alpha verify --deployment-target github-pages",
             workflow,
         )
-        self.assertLess(
-            workflow.index("run: make check-deployment-sources"),
-            workflow.index("run: make public-site"),
-        )
+        self.assertLess(workflow.index("run: make public-site"), workflow.index("--deployment-target github-pages"))
         self.assertLess(
             workflow.index("--deployment-target github-pages"),
             workflow.index("actions/upload-pages-artifact"),
@@ -1735,12 +1733,11 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertEqual(review_entry["authorization"], "test-authorization")
         self.assertEqual(review_entry["status"], "alpha")
         self.assertNotIn("gates", review_entry)
-        self.assertEqual(
-            review_entry["pdf_sha256"], digest(b"review pdf bytes\n")
-        )
-        self.assertTrue((output / "pdf/gpt/review-work.pdf").is_file())
+        self.assertIn("source_identity", review_entry)
+        self.assertFalse((output / "pdf/gpt/review-work.pdf").exists())
+        self.assertTrue((output / review_entry["reader"]).is_file())
         catalog = (output / "library/test.html").read_text(encoding="utf-8")
-        self.assertIn(f'href="../{review_entry["public_pdf"]}"', catalog)
+        self.assertIn(f'href="../{review_entry["reader"]}"', catalog)
 
     def test_alpha_catalog_link_may_use_terse_reader_label(self) -> None:
         self.add_unapproved_publication(
@@ -2339,7 +2336,7 @@ class PublicAlphaTest(unittest.TestCase):
         catalog_path = output / "library/test.html"
         catalog_path.write_text(
             catalog_path.read_text(encoding="utf-8").replace(
-                f'href="../{self.tool.public_pdf_path("gpt", "work")}"',
+                'href="../web/gpt/work.html"',
                 'href="../nonexistent.html"',
             ),
             encoding="utf-8",
@@ -2349,7 +2346,7 @@ class PublicAlphaTest(unittest.TestCase):
             self.tool.verify_output(self.manifest, publications, output, preview=False)
 
         self.assertIn(
-            "work: copied PDF is not reachable from library/test.html",
+            "work: publication is not reachable from library/test.html",
             str(failure.exception),
         )
 
@@ -2385,8 +2382,8 @@ class PublicAlphaTest(unittest.TestCase):
             entries["review-work"]["authorization"], "test-authorization"
         )
         self.assertEqual(
-            entries["review-work"]["pdf_sha256"],
-            digest(b"publication pdf bytes\n"),
+            entries["review-work"]["reader"],
+            "web/gpt/review-work.html",
         )
         self.assertNotIn("held-work", entries)
 
@@ -2457,10 +2454,8 @@ class PublicAlphaTest(unittest.TestCase):
 
         self.assertIn("release/publications/gpt/work.json", publications[("gpt", "work")]["_alpha_record"])
         self.assertEqual("alpha", artifact["publications"][0]["status"])
-        self.assertEqual(
-            digest(b"new independently published bytes\n"),
-            artifact["publications"][0]["pdf_sha256"],
-        )
+        self.assertIn("source_identity", artifact["publications"][0])
+        self.assertNotIn("pdf_sha256", artifact["publications"][0])
 
     def test_url_path_segment_passes_but_a_local_home_path_fails(self) -> None:
         self.authorize_current_inputs()
@@ -3361,10 +3356,10 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertEqual(set(included), {("gpt", "work"), ("claude", "work")})
 
         artifact = self.tool.artifact_manifest_data(self.manifest, included, False)
-        entries = {entry["id"]: entry["pdf"] for entry in artifact["publications"]}
+        entries = {entry["id"]: entry["reader"] for entry in artifact["publications"]}
         self.assertEqual(
             entries,
-            {"work": "pdf/gpt/work.pdf", "claude:work": "pdf/claude/work.pdf"},
+            {"work": "web/gpt/work.html", "claude:work": "web/claude/work.html"},
         )
         expected_files = self.tool.expected_artifact_files(
             self.manifest,
@@ -3372,10 +3367,11 @@ class PublicAlphaTest(unittest.TestCase):
             False,
             self.tool.artifact_authorization(self.manifest, included),
         )
-        self.assertIn("pdf/gpt/work.pdf", expected_files)
-        self.assertIn("pdf/claude/work.pdf", expected_files)
+        self.assertIn("web/gpt/work.html", expected_files)
+        self.assertIn("web/claude/work.html", expected_files)
+        self.assertFalse(any(path.endswith(".pdf") for path in expected_files))
 
-    def test_provider_pdfs_open_independently_in_a_filename_only_cache(self) -> None:
+    def test_provider_readers_keep_distinct_routes_and_identities(self) -> None:
         self.write("library/test.md", self.mixed_provider_catalog().encode())
         self.add_claude_publication("work", "release")
         self.authorize_current_inputs()
@@ -3384,22 +3380,12 @@ class PublicAlphaTest(unittest.TestCase):
         self.tool.verify_output(self.manifest, publications, output, preview=False)
         artifact = json.loads((output / "PUBLICATION-MANIFEST.json").read_text())
         links = self.tool.parsed_html(output / "library/test.html").links
-        cached: dict[str, bytes] = {}
-        # Firefox iOS DefaultTemporaryDocument.queryTempFile reuses an existing
-        # temporary filename without checking sourceURL. Exercise both orders.
-        for entries in (artifact["publications"], artifact["publications"][::-1]):
-            cached.clear()
-            for entry in entries:
-                canonical = entry["pdf"]
-                alias = entry["public_pdf"]
-                expected = (self.root / canonical).read_bytes()
-                self.assertEqual((output / canonical).read_bytes(), expected)
-                self.assertEqual((output / alias).read_bytes(), expected)
-                self.assertIn("../" + alias, links)
-                self.assertNotIn("../" + canonical, links)
-                actual = cached.setdefault(Path(alias).name, (output / alias).read_bytes())
-                self.assertEqual(actual, expected)
-            self.assertEqual(len(cached), 2)
+        readers = {entry["reader"] for entry in artifact["publications"]}
+        self.assertEqual(readers, {"web/gpt/work.html", "web/claude/work.html"})
+        for reader in readers:
+            self.assertTrue((output / reader).is_file())
+            self.assertIn("../" + reader, links)
+        self.assertFalse(list(output.rglob("*.pdf")))
 
     def test_public_pdf_filename_distinguishes_path_and_survives_revision(self) -> None:
         paths = [("gpt", "faith/work"), ("gpt", "law/work"), ("claude", "faith/work")]
@@ -3412,15 +3398,16 @@ class PublicAlphaTest(unittest.TestCase):
         self.write("pdf/gpt/faith/work.pdf", b"revised bytes\n")
         self.assertEqual(previous, self.tool.public_pdf_path("gpt", "faith/work"))
 
-    def test_pdf_revision_refreshes_both_copies_without_breaking_public_link(self) -> None:
+    def test_old_local_pdf_bytes_do_not_change_source_first_publication(self) -> None:
         publications, output = self.build_verified_artifact()
-        alias = self.tool.public_pdf_path("gpt", "work")
+        reader = output / "web/gpt/work.html"
+        original = reader.read_bytes()
         self.write("pdf/gpt/work.pdf", b"new revision\n")
         output = self.tool.build_site(self.manifest, publications, preview=False)
         self.tool.verify_output(self.manifest, publications, output, preview=False)
-        self.assertEqual((output / alias).read_bytes(), b"new revision\n")
-        self.assertEqual((output / "pdf/gpt/work.pdf").read_bytes(), b"new revision\n")
-        self.assertIn("../" + alias, self.tool.parsed_html(output / "library/test.html").links)
+        self.assertEqual(reader.read_bytes(), original)
+        self.assertFalse(list(output.rglob("*.pdf")))
+        self.assertIn("../web/gpt/work.html", self.tool.parsed_html(output / "library/test.html").links)
 
     def test_public_pdf_basename_collision_is_refused(self) -> None:
         with mock.patch.object(
@@ -3436,7 +3423,7 @@ class PublicAlphaTest(unittest.TestCase):
                 "web/gpt/work.md", "web/gpt/work.html", "../../pdf/gpt/work.pdf?download=1#page=3",
                 {("gpt", "work")},
             ),
-            "../../" + alias + "?download=1#page=3",
+            "work.html?download=1#page=3",
         )
         html_text = (
             '<a href="../pdf/gpt/work.pdf?x=1&amp;y=2#page=3">PDF</a>'
@@ -3450,7 +3437,7 @@ class PublicAlphaTest(unittest.TestCase):
 
     def test_browser_catalogue_projects_full_and_companion_pdfs_only(self) -> None:
         self.write("pdf/gpt/work-synthesis.pdf", b"companion bytes\n")
-        aliases = self.tool.public_pdf_aliases([("gpt", "work"), ("gpt", "work-synthesis")])
+        aliases = self.tool.publication_routes([("gpt", "work"), ("gpt", "work-synthesis")])
         corpus = {"works": [{"leaf": "work", "editions": [{
             "provider": "gpt", "pdf": "pdf/gpt/work.pdf", "web": "web/gpt/work.html",
             "also": [{"kind": "synthesis", "pdf": "pdf/gpt/work-synthesis.pdf"},
@@ -3463,18 +3450,18 @@ class PublicAlphaTest(unittest.TestCase):
             "browse/structure/documents/corpus.json", self.root / relative, aliases
         ))
         edition = projected["works"][0]["editions"][0]
-        self.assertEqual(edition["pdf"], aliases["pdf/gpt/work.pdf"])
-        self.assertEqual(edition["also"][0]["pdf"], aliases["pdf/gpt/work-synthesis.pdf"])
+        self.assertNotIn("pdf", edition)
+        self.assertEqual(edition["targets"]["print"], "print/gpt/work.html")
+        self.assertEqual(edition["also"][0]["targets"]["print"], "print/gpt/work-synthesis.html")
         self.assertEqual(edition["also"][1], corpus["works"][0]["editions"][0]["also"][1])
         self.assertEqual(edition["web"], "web/gpt/work.html")
         self.assertEqual((self.root / relative).read_bytes(), original)
 
     def test_verifier_rejects_changed_alias_even_with_fresh_checksums(self) -> None:
         publications, output = self.build_verified_artifact()
-        alias = self.tool.public_pdf_path("gpt", "work")
-        (output / alias).write_bytes(b"wrong PDF\n")
+        (output / "web/gpt/work.html").write_text("wrong source reader\n")
         self.tool.write_checksums(output)
-        with self.assertRaisesRegex(self.tool.ReleaseError, "public PDF does not match"):
+        with self.assertRaisesRegex(self.tool.ReleaseError, "print landing does not match"):
             self.tool.verify_output(self.manifest, publications, output, preview=False)
 
     def test_verifier_rejects_old_pdf_link_outside_owning_catalogue(self) -> None:
@@ -3488,7 +3475,8 @@ class PublicAlphaTest(unittest.TestCase):
     def test_reading_plan_pdfs_keep_old_routes_and_get_public_aliases(self) -> None:
         canonical = "pdf/reading-plans/narrative-spine-story-douay-rheims.pdf"
         self.write(canonical, b"track bytes\n")
-        with mock.patch.object(self.tool, "offered_bible_ids", return_value={"douay-rheims"}):
+        reader = "reading-plans/narrative-spine-story-douay-rheims.html"
+        with mock.patch.object(self.tool, "offered_bible_ids", return_value={"douay-rheims"}), mock.patch.object(self.tool, "source_reader_routes", return_value={canonical: reader}):
             aliases = self.tool.public_pdf_aliases({("gpt", "work")})
             self.assertIn(canonical, aliases)
             self.assertNotEqual(Path(canonical).name, Path(aliases[canonical]).name)
@@ -3496,7 +3484,7 @@ class PublicAlphaTest(unittest.TestCase):
                 self.tool.source_to_output(
                     "README.md", "index.html", canonical + "#page=4", {("gpt", "work")}
                 ),
-                aliases[canonical] + "#page=4",
+                reader + "#page=4",
             )
             self.assertIn(
                 '../' + aliases[canonical],
@@ -3530,11 +3518,11 @@ class PublicAlphaTest(unittest.TestCase):
 
         gpt_pdf = (
             REPOSITORY_ROOT
-            / "pdf/gpt/theology/mariology/ark-of-the-covenant.pdf"
+            / "src/gpt/theology/mariology/ark-of-the-covenant/main.tex"
         )
         claude_pdf = (
             REPOSITORY_ROOT
-            / "pdf/claude/theology/mariology/ark-of-the-covenant.pdf"
+            / "src/claude/theology/mariology/ark-of-the-covenant/main.tex"
         )
         self.assertNotEqual(
             gpt_pdf.read_bytes(),
@@ -3681,7 +3669,31 @@ class PublicAlphaTest(unittest.TestCase):
             ],
         }
         self.write_json("src/web/data/encyclicals/index.json", catalogue)
-        return {"release": release, "catalogue": catalogue, "payloads": payloads}
+        texts = {}
+        for document in release["documents"]:
+            relative = f"src/sources/test-papal/{document['id']}-{document['language']}.txt"
+            self.write(relative, f"Received {document['language']} source words.\n".encode())
+            texts[document["pdf"]] = relative
+
+        # The public-generator tests exercise its admitted source-page contract.
+        # Exact source selection/rights/receipt validation is independently
+        # exercised against real records by test_print_catalog.py.
+        def source_pages():
+            current = json.loads((self.root / "src/web/data/encyclicals/index.json").read_text())
+            pages = {}
+            for row in current["encyclicals"]:
+                for reader in row["readers"]:
+                    legacy = reader["pdf"]
+                    relative = f"papal-documents/{Path(legacy).stem}.html"
+                    text = (self.root / texts[legacy]).read_text()
+                    pages[relative] = {
+                        "title": row["title"], "html": f"<h1>{html.escape(row['title'])}</h1><p>{html.escape(text)}</p>",
+                        "legacy_pdf": legacy,
+                        "source_paths": ["src/web/data/encyclicals/index.json", "release/papal-documents.json", texts[legacy]],
+                    }
+            return pages
+        self.tool.source_print_pages = source_pages
+        return {"release": release, "catalogue": catalogue, "payloads": payloads, "texts": texts}
 
     def rewrite_encyclicals(self, fixture: dict, change) -> None:
         catalogue = json.loads(json.dumps(fixture["catalogue"]))
@@ -3700,8 +3712,9 @@ class PublicAlphaTest(unittest.TestCase):
 
         self.assertEqual({self.PAPAL_LATIN, self.PAPAL_ENGLISH}, set(served))
         recognized = self.tool.site_source_paths()
-        self.assertIn(self.PAPAL_LATIN, recognized)
-        self.assertIn(self.PAPAL_ENGLISH, recognized)
+        self.assertNotIn(self.PAPAL_LATIN, recognized)
+        self.assertNotIn(self.PAPAL_ENGLISH, recognized)
+        self.assertIn("release/papal-documents.json", recognized)
         self.assertIn("src/web/data/encyclicals/index.json", recognized)
         self.assertIn("src/web/browser/encyclicals/index.html", recognized)
         # Installed and reviewed, but linked by nothing: never served, never bound.
@@ -3807,7 +3820,7 @@ class PublicAlphaTest(unittest.TestCase):
         }
         self.rewrite_papal_release(fixture, lambda release: release["obsolete"].append(history))
         self.assertEqual({self.PAPAL_LATIN, self.PAPAL_ENGLISH}, set(self.tool.papal_reader_pdfs()))
-        self.assertIn(self.PAPAL_LATIN, self.tool.site_source_paths())
+        self.assertNotIn(self.PAPAL_LATIN, self.tool.site_source_paths())
         self.write(self.PAPAL_LATIN, b"prior reviewed PDF")
         with self.assertRaisesRegex(self.tool.ReleaseError, "bytes on disk|SHA-256"):
             self.tool.papal_reader_pdfs()
@@ -3847,14 +3860,14 @@ class PublicAlphaTest(unittest.TestCase):
 
     def test_served_encyclicals_catalogue_links_only_public_aliases(self) -> None:
         fixture = self.make_encyclicals_fixture()
-        aliases = self.tool.public_pdf_aliases(())
+        aliases = self.tool.source_reader_routes()
         relative = "browse/encyclicals/index.json"
         source = self.root / "src/web/data/encyclicals/index.json"
         original = source.read_bytes()
 
         projected = json.loads(self.tool.projected_web_data(relative, source, aliases))
 
-        links = [reader["pdf"] for row in projected["encyclicals"] for reader in row["readers"]]
+        links = [reader["reader"] for row in projected["encyclicals"] for reader in row["readers"]]
         self.assertEqual([aliases[self.PAPAL_LATIN], aliases[self.PAPAL_ENGLISH]], links)
         # External English access stays metadata; it adds no PDF alias and its
         # route is preserved while only installed source-reader paths change.
@@ -3873,22 +3886,23 @@ class PublicAlphaTest(unittest.TestCase):
     def test_artifact_serves_linked_papal_readers_and_refuses_any_other(self) -> None:
         self.make_encyclicals_fixture()
         publications, output = self.build_verified_artifact()
-        aliases = self.tool.public_pdf_aliases(())
+        aliases = self.tool.source_reader_routes()
         papal = sorted(
             path.relative_to(output).as_posix()
-            for path in (output / "pdf/papal-documents").iterdir()
+            for path in (output / "papal-documents").iterdir()
         )
         self.assertEqual(
-            sorted([self.PAPAL_LATIN, self.PAPAL_ENGLISH,
-                    aliases[self.PAPAL_LATIN], aliases[self.PAPAL_ENGLISH]]),
+            sorted([aliases[self.PAPAL_LATIN], aliases[self.PAPAL_ENGLISH]]),
             papal,
         )
+        self.assertFalse(list(output.rglob("*.pdf")))
         served = json.loads((output / "browse/encyclicals/index.json").read_text())
         self.assertNotIn(self.PAPAL_LATIN, json.dumps(served))
         self.assertIn(aliases[self.PAPAL_LATIN], json.dumps(served))
 
         # An installed reader the catalogue does not link, planted in the artifact.
         planted = output / self.PAPAL_UNLINKED
+        planted.parent.mkdir(parents=True)
         planted.write_bytes((self.root / self.PAPAL_UNLINKED).read_bytes())
         self.tool.write_checksums(output)
         with self.assertRaisesRegex(self.tool.ReleaseError, "artifact PDF mismatch") as failure:
@@ -3896,14 +3910,11 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertIn(self.PAPAL_UNLINKED, str(failure.exception))
         planted.unlink()
 
-        for served_path, expected in (
-            (self.PAPAL_LATIN, "static file does not match its repository source"),
-            (aliases[self.PAPAL_LATIN], "public PDF does not match its canonical source"),
-        ):
+        for served_path, expected in ((aliases[self.PAPAL_LATIN], "source reader does not match its canonical text"),):
             with self.subTest(served=served_path):
                 artifact = output / served_path
                 approved = artifact.read_bytes()
-                artifact.write_bytes(b"%PDF-1.7 substituted\n")
+                artifact.write_bytes(b"<p>Substituted source words.</p>\n")
                 self.tool.write_checksums(output)
                 with self.assertRaisesRegex(self.tool.ReleaseError, expected):
                     self.tool.verify_output(self.manifest, publications, output, preview=False)
@@ -3922,7 +3933,7 @@ class PublicAlphaTest(unittest.TestCase):
         self.rewrite_encyclicals(fixture, unlink_english)
         errors = self.tool.site_source_binding_errors(self.manifest)
         self.assertTrue(
-            any(self.PAPAL_ENGLISH in error and "no longer reads it" in error for error in errors),
+            any(fixture["texts"][self.PAPAL_ENGLISH] in error and "no longer reads it" in error for error in errors),
             errors,
         )
 

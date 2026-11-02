@@ -8,9 +8,18 @@ Triptych is a source-first library of Catholic study documents. Apply these prio
 2. verify the evidence needed for each consequential claim and preserve disagreement or uncertainty;
 3. write the subject, argument, narrative, prayer, or usable guide before editorial apparatus;
 4. move work-wide bounds, methods, and qualifications to terminal appendices while keeping claim-local caveats beside their claims;
-5. audit rights, provenance, metadata, structure, and every rendered page before installation or release.
+5. audit rights, provenance, metadata, and semantic structure before source or web release; review the actual rendering when issuing a print edition.
 
 A genre profile may add stricter requirements but may not weaken this standard. Profiles are delta specifications: do not import another genre's template, repeat universal rules, or substitute layout conventions for source judgment. Define or revise a profile before multiplying a repeatable series for which none fits.
+
+`guidance/document-schemas.md` maps each genre to explicit source roles and
+declared editions in `publication.toml`. Those checks establish structure,
+not theological fidelity, evidence sufficiency, or visual approval. Source and
+evidence review identifies the exact canonical inputs. A print-template review
+and an inspection receipt identify separate facts about a particular rendering.
+Normal source/web release requires no generated PDF or comparison with old PDF
+bytes. A print request retains every exact pagination, duplex, paired-page,
+and physical-use rule in its profile.
 
 These publications aid study, prayerful understanding, and responsible research. They are not official liturgical books, critical editions, catechisms, magisterial acts, canonical opinions, or substitutes for competent pastoral or legal advice.
 
@@ -67,8 +76,8 @@ Three practical consequences, each of which has already decided a question here:
   choosing the side the writer finds congenial and omitting the other.
 
 Public-alpha publication has six concerns: source integrity, rights and lawful
-distribution, safety, reproducibility and artifact identity, mechanical
-validity, and basic visual usability. A publication that satisfies those
+distribution, safety, reproducibility and source/reader identity, mechanical
+validity, and basic visual usability on the released surface. A publication that satisfies those
 concerns may enter the alpha without a specialist, clerical, intended-reader,
 physical-use, or ecclesiastical review process. Do not create deferred gates,
 pending-review placeholders, or repeated qualifications for reviews that are
@@ -466,7 +475,7 @@ Liturgical claims identify the rite, use or form, typical edition, calendar, lan
 
 ## Rights, quotation, and received prayer
 
-Quote only what the argument requires. Record the known author, source, attribution, license, permission, public-domain basis, or legal exception at the nearest useful source record. Online availability, age, official status, and citation do not establish permission. Do not place complete scans, bulk OCR, or third-party corpora in publication leaves when a focused record and stable citation suffice. A lawful, reasonably sized source acquired for genuine repository-wide reuse may instead enter the provider-neutral source library under `guidance/sources.md`; acquisition alone does not justify quotation or publication use.
+Quote only what the argument requires. Record the known author, source, attribution, license, permission, public-domain basis, or legal exception at the nearest useful source record. Online availability, age, official status, and citation do not establish permission. Do not place complete scans, bulk OCR, or third-party corpora in publication leaves when a focused record and stable citation suffice. Reusable external evidence enters the provider-neutral source library under `guidance/sources.md`, with exact binary delivery separate from tracked textual sources; acquisition alone does not justify quotation or publication use.
 
 The repository license does not relicense Scripture, official or liturgical text, received prayers or hymns, third-party translations, quotations, images, fonts, or other external material. Put a local notice wherever excluded wording could reasonably be mistaken for project-owned expression.
 
@@ -501,7 +510,7 @@ staleness ledger, which asks a different question of different inputs under
 `guidance/staleness.md`. A document that records no origin makes no such
 comparison and is shown none.
 
-The timestamp is the whole-second UTC time when the publishable render source was finalized. Update every affected consumer when render-relevant source or an imported fragment changes. Never derive it from Git, file metadata, build time, environment, or a content hash. Preserve every exposed model qualifier and client/runtime fact verbatim in the tracked declarations; name unavailable components specifically and never guess them. Every provider's model disclosures meet the same standard: exact model identifiers, exposed qualifiers reproduced verbatim, and specific naming of unexposed components. Separate tracked contributions when model, qualifiers, or material runtime differ, keep contributions using the same model and qualifiers adjacent, and never repeat an exact contribution declaration.
+The timestamp is the whole-second UTC time when the publishable content revision was finalized. Update every affected consumer when authored wording, content-bearing shared material, scope, evidence, or qualifications change. Pure typesetting and template changes preserve that content revision when the content is unchanged; they invalidate the render identity and require the applicable print checks and inspection before the new rendering is called reviewed. Never derive it from Git, file metadata, build time, environment, or a content hash. Preserve every exposed model qualifier and client/runtime fact verbatim in the tracked declarations; name unavailable components specifically and never guess them. Every provider's model disclosures meet the same standard: exact model identifiers, exposed qualifiers reproduced verbatim, and specific naming of unexposed components. Separate tracked contributions when model, qualifiers, or material runtime differ, keep contributions using the same model and qualifiers adjacent, and never repeat an exact contribution declaration.
 
 The rendered publication displays the revision timestamp once, without a
 standalone `Generation Metadata` or `AI Generation Metadata` wrapper heading.
@@ -512,7 +521,21 @@ a chronological agent/runtime ledger in a PDF or web edition. Keep audit
 detail that is safe and necessary for reproducibility in the tracked
 declarations or owning research and production records.
 
-The metadata gate rejects missing, duplicate, noninitial, malformed, or non-UTC timestamps; a missing, duplicated, misplaced, or malformed generation-provenance record; a provenance field carried without the workflow it belongs to; exact duplicate contribution declarations; generic family-only model labels; missing exposed qualifiers in the tracked record; invalid inheritance; handwritten display substitutes; missing PDF title/subject; PDF dates inconsistent with the tracked revision; automatic creation dates or trailer IDs; a missing or duplicated visible revision timestamp; reader-visible model, qualifier, effort, or runtime metadata; and a generation-provenance workflow digest, run id, seed commit, or install commit reaching the rendered page. The workflow id and the workflow version are not scanned for: they are an ordinary word and a small integer, a match against extracted text would be an accident rather than a leak, and a gate that treated one as a leak rejected every propers document in the corpus.
+The source metadata gate rejects missing, duplicate, noninitial, malformed, or
+non-UTC timestamps; missing, duplicated, misplaced, or malformed provenance;
+provenance fields carried without their workflow; exact duplicate contributions;
+generic family-only model labels; missing exposed qualifiers; invalid
+inheritance; and handwritten display substitutes.
+
+The rendered metadata check applies to the surface actually produced. A PDF
+needs title/subject metadata and dates consistent with the tracked revision,
+without automatic creation dates or trailer IDs. Every reader surface displays
+the revision once and omits internal model, qualifier, effort, runtime,
+workflow digest, run, seed and install records. The workflow id and version
+are not scanned as bare strings: they are an ordinary word and a small
+integer, and matching them in extracted text previously rejected every proper
+document by accident. These render checks do not make a PDF a prerequisite of
+source or web release.
 
 ## Alpha publication gate
 
@@ -541,13 +564,20 @@ belongs only in the expressly exploratory component. “Authoritative
 synthesis” must not imply that project-created analysis has magisterial
 authority.
 
-Before installing a publication:
+Before releasing a source or web edition:
 
 - verify the reader-first order, terminal apparatus, every material claim and citation, source/proposal boundaries, and absence of unused references or padding;
-- confirm rights, attribution, edition, jurisdiction, as-of, review, and generation records describe the artifact;
-- compile enough passes to settle contents and references; reject fatal errors, undefined references, overflow, and unresolved layout warnings;
-- generate review rasters as `guidance/repository.md` requires and visually inspect every page;
-- check clipping, density, heading splits, tables, callouts, artificial whitespace, sparse spill pages, monochrome legibility, PDF structure, embedded fonts, metadata, and extracted text; confirm the final-page rights colophon is readable, unclipped, non-overlapping, and has not created a spill page; and
-- install only the reviewed PDF at its mirrored `pdf/` path, leaving intermediates under ignored `build/`.
+- confirm rights, attribution, edition, jurisdiction, as-of, review, and generation records describe the declared source and actual release surface;
+- validate the publication manifest, role coverage, entrypoints, dependency graph, and profile-specific source/content requirements; and
+- review an eligible web edition against its canonical source, including all material tables, apparatus, revision, and rights notices.
+
+When producing or revising a reviewed print edition, also compile enough
+passes to settle references and contents, inspect logs, and reject fatal
+errors, undefined references, overflow, and unresolved layout warnings. Apply
+the print-review contract in `guidance/repository.md`: inspect every page when
+the profile requires full-page review, check structure, fonts, metadata and
+text, and record the exact output and actual inspection extent. Confirm the
+final-page colophon is legible and has not created a spill page. Keep the PDF
+and review rasters under ignored output paths; no generated PDF enters Git.
 
 Profile-specific gates remain mandatory.

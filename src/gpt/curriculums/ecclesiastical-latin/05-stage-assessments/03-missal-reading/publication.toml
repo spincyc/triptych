@@ -1,0 +1,81 @@
+schema_version = 1
+id = "gpt/curriculums/ecclesiastical-latin/05-stage-assessments/03-missal-reading"
+kind = "curriculum-assessment"
+profile = "guidance/curriculums/ecclesiastical-latin.md"
+source_format = "latex"
+entrypoint = "main.tex"
+
+[[outputs]]
+id = "gpt/curriculums/ecclesiastical-latin/05-stage-assessments/03-missal-reading"
+role = "canonical"
+entrypoint = "main.tex"
+derivation = "authored"
+
+[[structure]]
+role = "body"
+source = "main.tex"
+outputs = ["canonical"]
+
+[[structure]]
+role = "generation"
+source = "generation-metadata.tex"
+
+[[structure]]
+role = "web-declaration"
+source = "web-edition.toml"
+
+[[structure]]
+role = "scope"
+data = "src/gpt/curriculums/ecclesiastical-latin/research/scope.md"
+
+[[structure]]
+role = "companion-map"
+source = "research/companion-map.md"
+
+[[structure]]
+role = "answer-key-audit"
+data = "src/gpt/curriculums/ecclesiastical-latin/research/answer-key-audit.md"
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[[structure]]
+role = "source-audit"
+data = "src/gpt/curriculums/ecclesiastical-latin/research/source-audit.md"
+
+[[structure]]
+role = "edition-manifest"
+data = "src/gpt/curriculums/ecclesiastical-latin/research/edition-manifest.md"
+
+[[structure]]
+role = "curriculum-map"
+data = "src/gpt/curriculums/ecclesiastical-latin/research/curriculum-map.md"
+
+[[structure]]
+role = "passage-inventory"
+data = "src/gpt/curriculums/ecclesiastical-latin/research/passage-inventory.md"
+
+[[structure]]
+role = "vocabulary-map"
+data = "src/gpt/curriculums/ecclesiastical-latin/research/vocabulary-map.md"
+
+[[structure]]
+role = "references"
+data = "src/gpt/curriculums/ecclesiastical-latin/shared/content/shared/sources.tex"
+
+[[structure]]
+role = "scope-appendix"
+data = "src/gpt/curriculums/ecclesiastical-latin/shared/companion-scope.tex"
+
+[[structure]]
+role = "assessment-selection"
+source = "main.tex"
+
+[[structure]]
+role = "practice"
+data = "src/gpt/curriculums/ecclesiastical-latin/shared/assessments/all.tex"
+
+[[structure]]
+role = "answers"
+data = "src/gpt/curriculums/ecclesiastical-latin/shared/assessments/all.tex"

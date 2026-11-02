@@ -1,0 +1,85 @@
+schema_version = 1
+id = "gpt/articles/faith/at-the-end-of-every-why"
+kind = "article-faith"
+profile = "guidance/articles.md"
+source_format = "latex"
+entrypoint = "main.tex"
+
+[[outputs]]
+id = "gpt/articles/faith/at-the-end-of-every-why"
+role = "canonical"
+entrypoint = "main.tex"
+derivation = "authored"
+
+[[structure]]
+role = "body"
+source = "main.tex"
+outputs = ["canonical"]
+
+[[structure]]
+role = "generation"
+source = "generation-metadata.tex"
+
+[[structure]]
+role = "web-declaration"
+source = "web-edition.toml"
+
+[[structure]]
+role = "scope"
+source = "research/scope.md"
+
+[[structure]]
+role = "source-audit"
+source = "research/source-audit.md"
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[[structure]]
+role = "argument"
+source = "sections/00-commanded-love.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/10-law-within.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/20-no-longer-servants.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/30-charity-forms-justice.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/32-when-presence-is-not-felt.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/34-asking-the-unchanging-god.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/36-the-hunger-of-charity.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/38-the-shape-of-the-cross.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/40-whole-not-equal.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/50-at-the-end.tex"
+
+[[structure]]
+role = "scope-appendix"
+source = "sections/90-scope-method-qualifications.tex"
+
+[[structure]]
+role = "references"
+source = "sections/99-references.tex"

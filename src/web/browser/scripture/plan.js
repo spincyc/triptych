@@ -24,6 +24,13 @@
 
   const content = document.getElementById('reading');
   const lede = document.getElementById('plan-lede');
+  let printReady = false;
+  T.bindPrint({
+    root: content,
+    host: document.querySelector('.page-header'),
+    label: 'Print plan overview',
+    ready: () => printReady
+  });
 
   const SEARCH = window.location.search;
 
@@ -241,6 +248,7 @@
     }
 
     render(loaded.plan);
+    printReady = true;
   }
 
   start();

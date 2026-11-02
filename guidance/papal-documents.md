@@ -83,7 +83,7 @@ Keep protected or unresolved bodies out of tracked inputs and public
 outputs. Their catalog entries retain factual identity, source links,
 language availability, and the specific reason no local text is offered.
 Do not substitute an AI translation. Acquisition, rights clearance, textual
-checking, PDF review, installation, and deployment remain separate facts.
+checking, source admission, print inspection, and deployment remain separate facts.
 
 ## Historical constituent reconstruction
 
@@ -120,7 +120,7 @@ Record a correction in a separately identified derivative with exact input
 hashes, retained source evidence, affected loci and a replayable transformation.
 Character-encoding repair does not establish word-level collation. Preserve
 the prior artifact and reviewed consumer pins; superseding an incomplete
-selection requires an explicit disposition before its PDF can be installed.
+selection requires an explicit disposition before its reader can be exposed.
 
 Reusable replay helpers are tracked software: pin their repository path and
 exact SHA-256 in transformation evidence and reuse that implementation. Do not
@@ -153,8 +153,9 @@ A fragment's extent statement from the earlier raw-OCR review identifies its
 raw OCR line numbers as such. Each volume must first pass an evidence
 gate of at least twelve native page images, at least half of them held out
 from the proposal's tuning, with the running-head rows of every page listed
-for a quick scan. Every page of every repaired PDF is still visually reviewed
-before installation.
+for a quick scan. Source admission records the exact corrected text and its
+evidence. If a repaired print edition is issued, every page receives the required visual
+review under its own rendering receipt.
 
 ## Mechanical reading edition
 
@@ -164,9 +165,10 @@ retained payloads under `src/sources/`; never create duplicate provider leaves
 to satisfy a publication catalog. Original exposition about an act belongs
 in the appropriate provider's publication and cites this source edition.
 
-Each rendered edition identifies its actual text language, set in two columns
-that continue in normal reading order. A historical witness that includes an
-act or annex in another language preserves that source order and identifies
+Each reader edition identifies its actual text language. Its optional print
+edition uses two columns that continue in normal reading order. A historical
+witness that includes an act or annex in another language preserves that source
+order and identifies
 the multilingual extent explicitly; a Latin collection title does not make
 every constituent Latin. Do not split, translate or relabel substantive source
 text merely to fit a single-language template. Two columns do not imply a
@@ -187,8 +189,9 @@ rights boundary remains a compact final-page colophon. The retained source
 wording is excluded from Triptych's project-content license.
 
 Generation records identify the canonical input artifact and hash, generator
-and version, transformation options, tracked render revision timestamp, and
-output hash. Record unknown facts as unknown. Identify mechanical typesetting
+and version, transformation options, and tracked source revision timestamp.
+A print receipt separately records the renderer/template and exact output
+hash. Record unknown facts as unknown. Identify mechanical typesetting
 and project-created apparatus without assigning papal wording to an AI
 provider. Source-library evidence states retain their existing meanings;
 rendering a source does not promote it to `verified`.
@@ -219,26 +222,27 @@ text-fidelity check permits an added visible hyphen only at a physical line or
 page ending between source letters. Every original source hyphen must still
 match; the check does not remove all hyphens from either text. Whitespace,
 soft-hyphen and Unicode compatibility normalization retain their previous
-declared meanings. Old frozen receipts and reviewed PDFs remain records of
-their original generator; a typography change requires new byte-bound review
-before replacing any installed reader.
+declared meanings. Old frozen receipts remain exact records of their original
+generator and
+reviewed PDF. A typography change requires a new print receipt and inspection
+when that print edition is issued; it does not rewrite historical source
+review or make PDF equality a normal source-release gate.
 
 ## Review and use in larger projects
 
-Before a PDF enters an installed/public destination:
+Before a source reader is admitted, confirm that its exact selected artifact
+has an affirmative basis for the actual release surface, account for every
+body block, number, signature and note, and inspect its beginning and ending
+boundaries. Mechanical extraction is not source collation. Compare the
+reader against the exact selected source, allowing only declared
+transformations. A source/schema PASS is not a claim of visual print review.
 
-1. Confirm that its exact input artifact has an affirmative distribution
-   basis and that excluded modern apparatus cannot enter the output.
-2. Compare extracted source and PDF text mechanically, allowing only declared
-   typesetting changes; account for every body block, number, signature, and
-   note. Inspect beginning and ending boundaries against the source.
-3. Compile sufficient passes, resolve references, inspect logs, and check PDF
-   structure, embedded fonts, metadata, and column reading order.
-4. Generate review rasters through the repository's PDF-review tool and
-   inspect every page. Record the exact reviewed PDF hash and review extent;
-   a successful build or contact-sheet generation is not visual review.
-5. Install only those reviewed bytes and expose a link only when the
-   installed artifact and the release surface exist.
+When issuing a reviewed print edition, additionally compare source and
+extracted PDF text, compile sufficient passes, inspect logs, structure,
+fonts, metadata, and column reading order, then inspect every page with the
+repository PDF-review tool. Record the exact output hash, renderer/template,
+input selection and actual review extent. A successful build or contact sheet
+is not inspection. Print output stays outside Git and normal deployment.
 
 A sparse final page can retain a genuine historical subscription, registration
 line or source note. Record that qualification without treating it as a layout
@@ -248,42 +252,36 @@ source-bearing final-page coverage.
 
 Presentation projects reuse the canonical source-library IDs and their own
 `research/source-bindings.toml`, pinning exact witnesses and loci. A slide,
-study, timeline, or bibliography may link an identified source or reviewed
-reading PDF, but must keep its own interpretation and source-sufficiency
+study, timeline, or bibliography may link an identified source or source
+reader, but must keep its own interpretation and source-sufficiency
 judgment. A catalog topic or proposed relation is a finding aid, not an
 independent textual authority. Modern or untranslated items remain useful
-metadata references without promising a locally available PDF.
+metadata references without promising a local text or historical PDF.
 
-## Installed source readers
+## Source readers and historical print receipts
 
-The 2026-10-25 request for individual papal reading PDFs requires a durable
-deliverable as well as reproducible build tools. Reviewed current readers
-therefore have a narrow tracked destination at `pdf/papal-documents/`, outside
-the AI-provider publication trees. This exception does not change the normal
-deployment-build policy for other PDFs. Generated standalone TeX and body
-fragments remain reproducible intermediates, derived from the canonical source
-artifacts and retained rendering selections.
+Canonical source text, reading selections, their rights basis, and the
+mechanical recipes are the durable deliverable. `release/papal-documents.json`
+and its hash-addressed inputs under `release/papal-documents/inputs/` preserve
+the historical installed-reader identities and inspection evidence; no
+historical PDF hash or review extent may be manufactured, refreshed to a new
+render, or treated as source verification. These records are not additional
+historical witnesses. Retain them without machine paths or runtime identifiers.
 
-`release/papal-documents.json` owns the installed set. It records the exact
-source identities, selections and rendering revisions, PDF paths, hashes,
-sizes and page counts, and full-page PASS evidence. Retain the frozen input
-manifests and receipts needed to interpret those pins under
-`release/papal-documents/inputs/`, deduplicated by their content hashes. These
-are release records, not additional historical witnesses or verified passages.
-Do not retain machine-specific paths or runtime identifiers in them.
+The source-first publication policy supersedes the former tracked
+`pdf/papal-documents/` exception. Historical PDF bytes use the exact-artifact
+delivery layer in `guidance/sources.md`; a download is offered only after its
+archive delivery is verified. Current source readers are exposed through the
+existing papal reader surface, and optional print output is generated explicitly
+with `tools/print-document`, as described in `docs/printing.md`. Neither the
+site build nor an ordinary source check typesets the collection or fetches its
+binary evidence.
 
-Installation selects only current, affirmatively distributable readers that
-pass source fidelity and hash-bound inspection of every page. Apply all source
-supersessions and withdrawals first. Pending, failed and rejected readers
-remain explicit delivery states without installed PDF links. Installation
-copies the reviewed bytes; it does not rerender, rewrite their provenance or
-promote a source's evidence state. File names derive their date prefix from
-the selected record, using `unknown-date` when unresolved, and preserve a
-collision-checked source identity and language.
-
-Validate the complete owned path set and every installed hash against the
-release record. An obsolete alias may be removed only when the previous release
-owns it and its bytes still match that release; preserve an unexpected file
-for investigation. Preserve prior releases in Git history. A changed current
-selection cannot leave a withdrawn PDF advertised as current. Installation and
-a feature-branch checkpoint do not themselves deploy a website.
+Apply source supersessions and withdrawals before choosing a current reader.
+Pending, failed and rejected selections retain explicit delivery states and
+no reader link that implies admission. A historical PDF URL may lead to an
+honest HTML reader or page explaining print options; it must not pretend to serve
+the old PDF. Preserve source identity and language when deriving routes, with
+`unknown-date` for an unresolved date. A changed current selection cannot
+leave a withdrawn source advertised as current. A source checkpoint does not
+itself deploy a website or publish an archive.

@@ -6,6 +6,11 @@ ninefold pious exercise, not automatically liturgy, an approved public text, a
 sacrament or sacramental, private revelation, or a mechanism that compels an
 outcome.
 
+Declare the guide or companion type, canonical prayer sources, derivation, and
+ordered outputs in `publication.toml` under
+[document schemas](../document-schemas.md). Received prayer remains exact;
+manifest validation does not establish collation or approval.
+
 ## Governing priorities
 
 1. Direct the devotion through Christ toward Scripture, liturgy, sacraments,
@@ -131,8 +136,9 @@ text and never abridges a prayer.
 Its metadata gives its own timestamp and one inherited declaration naming the
 full guide, with no duplicate model-provenance display. Its sole local audit,
 `research/derivation.md`, maps every rendered prayer and rubric to the canonical
-owner and records exact text comparison, dependencies, build, and review. The
-catalog links it to the full guide's controlling scope, inventory, and audit.
+owner and records exact text comparison, dependencies, source/output validation,
+and any completed print-export review. The catalog links it to the full guide's
+controlling scope, inventory, and audit.
 
 ## Profile gate
 

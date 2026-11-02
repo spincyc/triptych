@@ -69,3 +69,16 @@ Each ledger ID must have exactly one
 also records audit findings that are not yet sufficiently specified as user
 promises. Promote such a finding into the TOML ledger as soon as its promised
 outcome and completion criteria are known.
+
+
+## Historical print evidence after source-first migration
+
+A preserved PDF may retain its canonical logical path as evidence when an exact
+external delivery or archived-print declaration records its identity and size.
+Routine ledger validation checks that declaration without downloading a PDF.
+A historical `pdf_min_pages` result additionally requires a matching row in
+`release/print-archive-pages.json`, bound to the exact print archive manifest and
+PDF digest. Those page counts describe the archived rendering; they do not
+measure or approve a later source/template revision. Unknown or unreceipted
+paths and unmet minima remain errors. Current print acceptance uses a selected
+export and its own inspection record.

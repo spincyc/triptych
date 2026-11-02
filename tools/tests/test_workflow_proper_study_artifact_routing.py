@@ -18,11 +18,80 @@ DOCUMENT = 'liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentec
 CONTENT_REVIEWS = ['research-review', 'study-review', 'synthesis-review', 'homily-review']
 OWNERS = ['research', 'author-study', 'derive-synthesis', 'derive-homily']
 
+# Keep the v15 exact-artifact routing contract exercised after source-first v16.
+LEGACY_VISUAL_STAGE = json.loads(r'''
+{
+  "id": "visual-review",
+  "type": "evaluator",
+  "effort": "xhigh",
+  "execution": {
+    "mode": "single"
+  },
+  "fragments": [
+    "common/agent-brief.md",
+    "common/result-format.md",
+    "proper-study/contract.md",
+    "proper-study/review.md",
+    "proper-study/visual-review.md"
+  ],
+  "result_schema": "proper-study-visual-review.json",
+  "pass_transition": "generate-web",
+  "fail_transition": "build-artifacts",
+  "repair_routes": [
+    {
+      "repair_target": "research",
+      "transition": "research"
+    },
+    {
+      "repair_target": "study",
+      "transition": "author-study"
+    },
+    {
+      "repair_target": "synthesis",
+      "transition": "derive-synthesis"
+    },
+    {
+      "repair_target": "homily",
+      "transition": "derive-homily"
+    },
+    {
+      "repair_target": "artifacts",
+      "transition": "build-artifacts"
+    }
+  ],
+  "max_iterations": 4,
+  "max_total_iterations": 10,
+  "max_novel_iterations": 4,
+  "review_scope": true,
+  "records_standing_findings": true,
+  "review_input_command": "python3 scripts/_proper_study.py seal --provider {provider} --document {proper} --review visual",
+  "review_input_repair_target": "artifacts"
+}
+''')
+
+
+def legacy_workflow(workflow):
+    """Retain the v15 print path in fixtures without migrating saved runs."""
+    workflow['version'] = 15
+    index = next(i for i, stage in enumerate(workflow['stages'])
+                 if stage['id'] == 'generate-web')
+    workflow['stages'].insert(index, copy.deepcopy(LEGACY_VISUAL_STAGE))
+    artifact = artifact_stage(workflow)
+    artifact['pass_transition'] = 'visual-review'
+    artifact['checks'][0]['id'] = 'reviewed-artifact-snapshot'
+    for stage in workflow['stages']:
+        if 'review_input_command' in stage:
+            stage['review_input_command'] = stage['review_input_command'].removesuffix(' --mode source')
+        for check in stage.get('checks', []):
+            check.pop('repair_target', None)
+            check['command'] = check['command'].removesuffix(' --mode source')
+    return workflow
+
 
 class EngineFixture:
     """No production content, compilation, review, or acceptance is asserted."""
-    def __init__(self, case, mutate=None):
-        parent = ROOT / 'build/test-tmp'
+    def __init__(self, case, mutate=None, *, source_mode=False):
+        parent = ROOT / '.scratch/authoring-pipeline'
         parent.mkdir(parents=True, exist_ok=True)
         temporary = tempfile.TemporaryDirectory(prefix='artifact-routing-', dir=parent)
         case.addCleanup(temporary.cleanup)
@@ -30,6 +99,8 @@ class EngineFixture:
         shutil.copytree(ROOT / 'workflows', self.root / 'workflows')
         path = self.root / 'workflows/pipelines/proper-study.json'
         self.workflow = json.loads(path.read_text())
+        if not source_mode:
+            legacy_workflow(self.workflow)
         self.workflow['document_discovery'].pop('validator')
         # Hash actual fixture source bytes at dispatch and validation, without
         # substituting engine sealing, result validation, or routing methods.
@@ -99,7 +170,7 @@ def artifact_stage(workflow):
 
 class ScopeValidationTests(unittest.TestCase):
     def setUp(self):
-        temporary = tempfile.TemporaryDirectory()
+        temporary = tempfile.TemporaryDirectory(dir=ROOT / ".scratch/authoring-pipeline")
         self.addCleanup(temporary.cleanup)
         self.root = Path(temporary.name)
         shutil.copytree(ROOT / 'workflows', self.root / 'workflows')

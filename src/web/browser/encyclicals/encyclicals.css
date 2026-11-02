@@ -180,7 +180,7 @@
 
 /* A reading edition is a target, not a word in prose: big enough to hit on a
    phone without zooming. */
-.enc-pdf {
+.enc-reader-link {
   display: inline-flex;
   align-items: center;
   min-height: 1.75rem;
@@ -345,11 +345,11 @@
 
   .encyclicals-page .enc-table :is(.enc-year, .enc-pope)::before { display: none; }
 
-  .enc-pdf,
+  .enc-reader-link,
   .enc-online,
   .enc-vatican-link { min-height: 2.75rem; }
 
-  .enc-pdf { max-width: 100%; white-space: normal; }
+  .enc-reader-link { max-width: 100%; white-space: normal; }
 }
 
 @media (max-width: 24rem) {
@@ -369,9 +369,9 @@
   .enc-scroll { overflow: visible; }
 
   /* Reuse the labelled narrow rows instead of squeezing every language into
-     a paper-width table. The individual source PDFs remain the print editions. */
+     a paper-width table. Each source reading edition has its own print view. */
   .encyclicals-page .enc-table { font-size: 8pt; }
-  .enc-pdf,
+  .enc-reader-link,
   .enc-online,
   .enc-vatican-link { min-height: 0; }
 

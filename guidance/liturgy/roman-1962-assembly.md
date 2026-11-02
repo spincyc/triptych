@@ -7,6 +7,10 @@ rubricarum* as incorporated into the Missal, the general rubrics, *Ritus
 servandus*, and the edition's formularies. Present authorization to use the book
 is a separate, mutable question unless deliberately researched and dated.
 
+Declare the leaf's type, source roles, contract version, and ordered outputs in
+`publication.toml` under [document schemas](../document-schemas.md), retaining
+the five decisions and their checked rubric and case records.
+
 Every calendar arithmetic rule this profile relies on — movable anchors, the
 resumed-Sunday mechanism, and the fixed-date windows — is owned by
 `guidance/liturgy/calendar-computation.md`. Reference it; never restate it here.

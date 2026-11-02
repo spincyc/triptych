@@ -1,0 +1,85 @@
+schema_version = 1
+id = "claude/articles/faith/four-last-things-02-judgment"
+kind = "article-faith"
+profile = "guidance/articles.md"
+source_format = "latex"
+entrypoint = "main.tex"
+
+[[outputs]]
+id = "claude/articles/faith/four-last-things-02-judgment"
+role = "canonical"
+entrypoint = "main.tex"
+derivation = "authored"
+
+[[structure]]
+role = "body"
+source = "main.tex"
+outputs = ["canonical"]
+
+[[structure]]
+role = "generation"
+source = "generation-metadata.tex"
+
+[[structure]]
+role = "web-declaration"
+source = "web-edition.toml"
+
+[[structure]]
+role = "scope"
+source = "research/scope.md"
+
+[[structure]]
+role = "source-audit"
+source = "research/source-audit.md"
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[[structure]]
+role = "argument"
+source = "sections/00-the-son-of-man-in-his-majesty.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/10-at-the-evening-of-life.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/20-nonetheless-on-the-day-of-judgment.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/30-the-judge-who-was-judged.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/40-the-books-were-opened.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/50-a-mercy-shown-to-the-saved.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/60-remember-me-at-the-altar.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/70-the-fear-of-that-day.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/80-the-sequence-for-the-dead.tex"
+
+[[structure]]
+role = "argument"
+source = "sections/85-graded-teaching.tex"
+
+[[structure]]
+role = "scope-appendix"
+source = "sections/90-scope-method-qualifications.tex"
+
+[[structure]]
+role = "references"
+source = "sections/99-references.tex"

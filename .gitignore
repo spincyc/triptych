@@ -7,12 +7,22 @@ __pycache__/
 # believe it holds the lock. `tools/harvest` makes one beside its ledger.
 *.lock
 
-# Installed PDFs are built during deployment and are not tracked, so a local
-# `make install` must not fill `git status` with two hundred untracked files.
-# Reading-plan volumes and reviewed papal source readers are exceptions:
-# their release records bind the installed bytes by digest.
-/pdf/*
-!/pdf/reading-plans/
-!/pdf/papal-documents/
-/pdf/papal-documents/*
-!/pdf/papal-documents/*.pdf
+# Canonical publications are plaintext. PDFs are explicit on-demand exports.
+*.pdf
+*.zip
+*.zip.part-*
+.scratch/
+
+# Exact binary source evidence is delivered through artifact-delivery.json.
+# Product artwork and fonts outside the source artifact library stay tracked.
+/src/sources/works/**/*.djvu
+/src/sources/works/**/*.zip
+/src/sources/works/**/*.gz
+/src/sources/works/**/*.jpg
+/src/sources/works/**/*.jpeg
+/src/sources/works/**/*.png
+/src/sources/works/**/*.jp2
+/src/sources/works/**/*.epub
+/src/sources/works/**/*.tar
+/src/sources/works/**/*.traineddata
+/src/sources/works/**/*.iff

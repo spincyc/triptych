@@ -1,0 +1,97 @@
+schema_version = 1
+id = "gpt/biographies/saint-augustine-of-hippo"
+kind = "biography"
+profile = "guidance/biographies.md"
+source_format = "latex"
+entrypoint = "main.tex"
+
+[[outputs]]
+id = "gpt/biographies/saint-augustine-of-hippo"
+role = "canonical"
+entrypoint = "main.tex"
+derivation = "authored"
+
+[[structure]]
+role = "body"
+source = "main.tex"
+outputs = ["canonical"]
+
+[[structure]]
+role = "generation"
+source = "generation-metadata.tex"
+
+[[structure]]
+role = "web-declaration"
+source = "web-edition.toml"
+
+[[structure]]
+role = "scope"
+source = "research/scope.md"
+
+[[structure]]
+role = "source-audit"
+source = "research/source-audit.md"
+
+[[structure]]
+role = "chronology"
+source = "research/chronology.md"
+
+[[structure]]
+role = "tradition-audit"
+source = "research/tradition-audit.md"
+
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/00-opening.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/02-world-youth-and-search.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/03-milan-conversion-and-return.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/04-priest-and-bishop.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/05-controversies-and-hard-legacy.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/06-writings-and-thought.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/07-final-years-death-and-memory.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/08-tradition-under-review.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/09-synthesis.tex"
+
+[[structure]]
+role = "life-narrative"
+source = "sections/01-method-and-orientation.tex"
+
+[[structure]]
+role = "chronology-display"
+source = "sections/10-detailed-chronology.tex"
+
+[[structure]]
+role = "references"
+source = "sections/11-references.tex"
+
+[[structure]]
+role = "scope-appendix"
+source = "sections/01-method-and-orientation.tex"
