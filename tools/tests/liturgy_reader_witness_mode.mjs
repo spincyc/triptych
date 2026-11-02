@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { repositoryPath } from './_product_data.cjs';
 /* Partial Proper witness admission must preserve the selected Ordinary inputs. */
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -10,7 +11,7 @@ const ROOT = resolve(process.env.TRIPTYCH_REVIEW_ROOT || resolve(import.meta.dir
 const CANDIDATE = process.env.TRIPTYCH_WITNESS_MODULE_ROOT || ROOT;
 const require = createRequire(import.meta.url);
 const Adapters = require(resolve(CANDIDATE, 'src/web/browser/liturgy/reader-state-adapters.js'));
-const json = (path) => JSON.parse(readFileSync(resolve(ROOT, path), 'utf8'));
+const json = (path) => JSON.parse(readFileSync(repositoryPath(ROOT, path), 'utf8'));
 const structure = json('src/web/data/structure/propers/roman-1962.json');
 const ordinary = json('src/web/data/structure/ordinary/roman-1962.json');
 const key = 'commemoratione-omnium-fidelium-defunctorum';

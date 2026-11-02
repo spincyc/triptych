@@ -6,13 +6,17 @@ from pathlib import Path
 import tomllib
 import unittest
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 
 
 class HeldPrefaceExtents(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.file = json.loads((ROOT / 'src/web/data/structure/ordinary/roman-1962.json').read_text())
+        cls.file = json.loads((browser_data_root(ROOT) / 'structure/ordinary/roman-1962.json').read_text())
         cls.elements = {e['key']: e for s in cls.file['sections'] for e in s['elements']}
         cls.inventory = tomllib.loads((ROOT / 'src/sources/inventories/roman-1962-ordo-missae-v1.toml').read_text())
         cls.sources = {}
@@ -75,7 +79,7 @@ class HeldPrefaceExtents(unittest.TestCase):
     def test_nine_complete_historical_english_bodies_keep_their_source_extent_in_both_frames(self):
         self.assertEqual(len(self.complete_english), 9)
         for calendar in ('roman-1962', 'roman-pre-1955'):
-            document = json.loads((ROOT / f'src/web/data/structure/ordinary/{calendar}.json').read_text())
+            document = json.loads((browser_data_root(ROOT) / f'structure/ordinary/{calendar}.json').read_text())
             elements = {element['key']: element for section in document['sections']
                         for element in section['elements']}
             for key, source in self.complete_english.items():

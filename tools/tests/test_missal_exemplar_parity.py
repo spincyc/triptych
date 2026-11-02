@@ -16,6 +16,10 @@ import unittest
 from pathlib import Path
 
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 PROPER_NAMES = (
     "Introit", "Collect", "Lesson", "Alleluia", "Sequence", "Gospel",
@@ -110,8 +114,8 @@ class MissalExemplarParityTests(unittest.TestCase):
         cls.browser = json.loads(run(
             "node", "tools/tests/missal_exemplar_parity_browser.mjs",
         ))
-        cls.propers = json.loads((ROOT / "src/web/data/structure/propers/roman-1962.json").read_text())
-        cls.ordinary = json.loads((ROOT / "src/web/data/structure/ordinary/roman-1962.json").read_text())
+        cls.propers = json.loads((browser_data_root(ROOT) / 'structure/propers/roman-1962.json').read_text())
+        cls.ordinary = json.loads((browser_data_root(ROOT) / 'structure/ordinary/roman-1962.json').read_text())
         cls.mass = next(row for row in cls.propers["masses"] if row["key"] == "pentecost")
         cls.day = next(day for day in cls.cli_json["days"] if day["calendar"] == "roman-1962")
         cls.cli_mass = next(row for row in cls.day["masses"] if row["key"] == "pentecost")

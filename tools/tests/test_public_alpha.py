@@ -18,8 +18,10 @@ from unittest import mock
 
 try:
     from .test_public_alpha_quarantine import install_test_quarantine
+    from ._product_data import browser_data_root as prepared_browser_data_root, data_path as product_data_path
 except ImportError:
     from test_public_alpha_quarantine import install_test_quarantine
+    from _product_data import browser_data_root as prepared_browser_data_root, data_path as product_data_path
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
@@ -161,7 +163,7 @@ class PublicAlphaTest(unittest.TestCase):
             # Reuse generated source-owned facts and an anchored choice rather
             # than creating a second opinion about their semantic contract.
             generated = json.loads((
-                REPOSITORY_ROOT / prefix / "roman-1962.json"
+                product_data_path("structure/propers/roman-1962.json")
             ).read_bytes())
             masses[:] = [next(
                 mass for mass in generated["masses"]
@@ -2025,7 +2027,7 @@ class PublicAlphaTest(unittest.TestCase):
 
     def test_1962_read_split_accepts_current_generated_source(self) -> None:
         self.tool.validate_propers_read_payload_sources(
-            REPOSITORY_ROOT / "src/web/data"
+            prepared_browser_data_root()
         )
 
     def test_1962_read_split_binds_execution_source_coverage(self) -> None:
@@ -2033,7 +2035,7 @@ class PublicAlphaTest(unittest.TestCase):
         # per-file public gate validates its semantic and privacy contract.
         prefix = "src/web/data/structure/propers/"
         fixture = self.make_propers_read_fixture()
-        generated = json.loads((REPOSITORY_ROOT / prefix / "roman-1962.json").read_bytes())
+        generated = json.loads(product_data_path("structure/propers/roman-1962.json").read_bytes())
         coverage = generated["execution_source_coverage"]
         fixture["structure"]["execution_source_coverage"] = coverage
         fixture["catalog"]["structure"]["execution_source_coverage"] = json.loads(json.dumps(coverage))

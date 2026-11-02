@@ -10,6 +10,9 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 import _proper_latin as L
@@ -40,7 +43,7 @@ class QualifiedPublicProjectionTests(unittest.TestCase):
             key = L.LatinKey(*scope["key"])
             cls.private[scope["body_sha256"]] = L._decision(key, bodies[key], records[key]).projection(L.SURFACES)
         cls.payloads = {p.stem: json.loads(p.read_text()) for p in
-                        (ROOT / "src/web/data/structure/propers/mass/roman-1962").glob("*.json")}
+                        (browser_data_root(ROOT) / 'structure/propers/mass/roman-1962').glob("*.json")}
 
     def test_actual_Common_Damasus_and_all_reference_wrappers_pass_public_gate(self):
         common = damasus = references = private_refusals = 0
@@ -111,7 +114,7 @@ class QualifiedPublicProjectionTests(unittest.TestCase):
     def test_actual_Bonn_and_other_calendar_public_states_are_unchanged(self):
         bonn = 0
         for calendar in ("roman-pre-1955", "postconciliar"):
-            payload = json.loads((ROOT / "src/web/data/structure/propers" / (calendar + ".json")).read_text())
+            payload = json.loads((browser_data_root(ROOT) / 'structure/propers' / (calendar + ".json")).read_text())
             def visit(value):
                 nonlocal bonn
                 if isinstance(value, list):

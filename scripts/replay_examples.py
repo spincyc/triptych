@@ -72,16 +72,18 @@ SCRATCH: dict[str, tuple[str, ...]] = {
     # transcript and the strict read-only check immediately after it repeat.
     "act-history": (".scratch/history-engine-expansion/example-browser-data",),
     "artwork-library": ("build/example-art.png",),
-    "calendar-days": ("build/example-days",),
-    "calendar-rubrics": ("build/example-web",),
+    "calendar-days": (".scratch/example-days",),
+    "calendar-rubrics": (".scratch/example-web",),
     "citations": ("build/example-cal",),
     "commentary-work-index": ("build/example-corpus.yaml",),
     "document-library": (".scratch/document-catalog/example-catalogue",),
     "harvest": ("build/example-harvest", "build/example-discovery.yaml"),
-    "index-bible": ("build/example-index", "build/example-bibles"),
-    "mass-propers": ("build/example-propers",),
+    "index-bible": (".scratch/example-index", ".scratch/example-bibles"),
+    "mass-propers": (".scratch/example-propers",),
+    "mass-ordinary": (".scratch/example-ordinary",),
+    "source-reader": (".scratch/example-sources",),
     "pdf-review": ("build/example-review",),
-    "reading-plan": ("build/example-reading",),
+    "reading-plan": (".scratch/example-reading",),
     "render-sanctuary-dictionary": (
         "build/example-sanctuary",
         "build/example-empty-objects",
@@ -93,6 +95,13 @@ SCRATCH: dict[str, tuple[str, ...]] = {
 }
 
 PREPARE: dict[str, tuple[object, ...]] = {
+    "calendar-days": (
+        "tools/calendar-days structure --out .scratch/example-days --first 2026 --last 2026",
+    ),
+    "mass-ordinary": (
+        "tools/mass-propers structure --out .scratch/example-ordinary",
+        "tools/mass-ordinary structure --out .scratch/example-ordinary",
+    ),
     "artwork-library": (
         "tools/artwork-library normalize "
         "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/"
@@ -101,10 +110,15 @@ PREPARE: dict[str, tuple[object, ...]] = {
     # `check` reads the browser files `structure` writes, and the rubrics it
     # checks are keyed to the day files calendar-days writes beside them.
     "calendar-rubrics": (
-        "tools/calendar-days structure --out build/example-web",
-        "tools/calendar-rubrics structure --out build/example-web",
+        "tools/calendar-days structure --out .scratch/example-web",
+        "tools/calendar-rubrics structure --out .scratch/example-web",
     ),
     "citations": (("copy", "src/sources/calendars", "build/example-cal"),),
+    "index-bible": (
+        "tools/index-bible build --bible douay-rheims --bible-root .scratch/example-bibles",
+        "tools/index-bible build --bible clementine-vulgate --bible-root .scratch/example-bibles",
+        "tools/index-bible build --bible king-james-version --bible-root .scratch/example-bibles",
+    ),
     # Rebuilding the real ledger needs the table's reviewed identity decisions.
     # Seed the untracked target with that review before the example derives its
     # groups; an empty target can only rediscover the machine edges and must
@@ -145,8 +159,9 @@ PREPARE: dict[str, tuple[object, ...]] = {
 # checked. Every entry is printed on every run: an exemption nobody sees is the
 # failure this replay exists to end.
 EXEMPT: dict[str, str] = {
+    "tools/browser-products record":
+        "rewrites the tracked mechanical product descriptor after independent generation; refresh is explicit",
     "tools/history-browser-acceptance --url http://127.0.0.1:0/history/ "
-    "--catalogue src/web/data/structure/act-history/catalogue.json "
     "--plan .scratch/history-browser-example/plan.json "
     "--site .scratch/history-browser-example/site "
     "--out .scratch/history-browser-example/owned-server --json":
@@ -154,7 +169,6 @@ EXEMPT: dict[str, str] = {
         "requires a reviewed frozen plan and fresh built site, so replay must not turn "
         "the captured missing-plan rejection into an artifact-dependent acceptance run",
     "tools/history-browser-acceptance --url http://127.0.0.1:8000/history/ "
-    "--catalogue src/web/data/structure/act-history/catalogue.json "
     "--plan .scratch/history-browser-example/plan.json "
     "--out .scratch/history-browser-example/existing-server --json":
         "starts a browser against an existing loopback service and writes non-overwritable "
@@ -526,7 +540,7 @@ def tracked_differences(root: Path | None = None) -> set[str]:
 # Where the guard keeps the uncommitted bytes a changed path held before the
 # example that saw it change, one directory per replay. Ignored, like all of
 # build/, and never read back by anything here.
-PRE_IMAGES = "build/replay-examples/pre-images"
+PRE_IMAGES = ".scratch/replay-examples/pre-images"
 
 
 class TrackedGuard:
@@ -776,16 +790,14 @@ def recapture(names: list[str] | None = None, *, accept_failing: bool = False) -
             prepare(path.name)
             # One rewrite moves every later capture in the file, so each is
             # located again by position rather than written from a stale span.
-            pending = [
-                position
-                for position, one in enumerate(captures_of(path))
-                if replay_one(one).status == "diverged"
-            ]
-            for position in pending:
+            # A writer's second invocation can report a different result
+            # (for example, no changed files). Capture the sequential first
+            # pass once; only refresh spans after an earlier transcript moves.
+            observed = [replay_one(one) for one in captures_of(path)]
+            pending = [(position, result) for position, result in enumerate(observed)
+                       if result.status == "diverged"]
+            for position, result in pending:
                 capture = captures_of(path)[position]
-                result = replay_one(capture)
-                if result.status != "diverged":
-                    continue
                 fresh = recaptured(capture, list(result.actual))
                 if list(capture.output) == fresh:
                     print(f"  unfixable  {capture.label}")

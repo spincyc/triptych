@@ -100,11 +100,16 @@ Run the handoff check after writing the records:
 python3 scripts/_proper_study.py source-dispositions --mode source --provider {provider} --document {proper}
 ```
 
-After source-registration changes, run `tools/source-library validate`,
-`make source-projection` and `make check-sources`; regenerate the Catena
-structure and paragraphs when an edge or passage changes, using its owning
-guidance. The following preflight mechanically requires the source projection
-to be current. Return the actual registered source and admitted passage IDs,
+After source-registration changes, run `tools/source-library validate` and
+refresh the browser products under `guidance/web-data.md`. An intentional input
+change requires `tools/browser-products record`, followed by
+`tools/browser-products check`; the source and affected Catena/paragraph families
+are derived from their canonical inputs. Generated JSON stays outside Git in
+the descriptor-verified cache (`.scratch/browser-data` in a workspace), never
+as a tracked source projection. Run `make check-sources` for the full research
+audit. The following preflight mechanically requires the descriptor-bound source
+projection to be current; it does not grant source or publication approval.
+Return the actual registered source and admitted passage IDs,
 the retained deferred or rejected keys and missing criteria, and the checks
 performed. Missing research evidence goes back to research; do not invent it.
 

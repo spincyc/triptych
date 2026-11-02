@@ -1,4 +1,6 @@
 'use strict';
+const { repositoryPath } = require('./_product_data.cjs');
+
 // Fresh production structure on stdin. No duplicated resolver or source bodies.
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'../..');
@@ -6,7 +8,7 @@ const S=require(path.join(root,'src/web/browser/liturgy/ordinary-seating.js'));
 const A=require(path.join(root,'src/web/browser/liturgy/reader-state-adapters.js'));
 const C=require(path.join(root,'src/web/browser/liturgy/reader-state.js'));
 const source=JSON.parse(fs.readFileSync(0,'utf8'));
-const ordinary=JSON.parse(fs.readFileSync(path.join(root,'src/web/data/structure/ordinary/postconciliar.json')));
+const ordinary=JSON.parse(fs.readFileSync(repositoryPath(root, 'src/web/data/structure/ordinary/postconciliar.json')));
 const before=JSON.stringify(source),fact='easter-4-sunday-john-10-1-10-actually-read';
 const mass=source.masses.find(m=>m.key==='easter-4-monday');
 assert.equal(mass.proper_source_paths.length,1);

@@ -1,4 +1,6 @@
 'use strict';
+const { repositoryPath } = require('./_product_data.cjs');
+
 // In-memory production structure is mandatory on stdin. No OLM body fixture.
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'../..');
@@ -6,7 +8,7 @@ const S=require(path.join(root,'src/web/browser/liturgy/ordinary-seating.js'));
 const A=require(path.join(root,'src/web/browser/liturgy/reader-state-adapters.js'));
 const C=require(path.join(root,'src/web/browser/liturgy/reader-state.js'));
 const source=JSON.parse(fs.readFileSync(0,'utf8'));
-const ordinary=JSON.parse(fs.readFileSync(path.join(root,'src/web/data/structure/ordinary/postconciliar.json')));
+const ordinary=JSON.parse(fs.readFileSync(repositoryPath(root, 'src/web/data/structure/ordinary/postconciliar.json')));
 const before=JSON.stringify(source),preserved=new Set(['easter-6-wednesday','easter-6-saturday','easter-7-tuesday']);
 const days=['monday','tuesday','wednesday','thursday','friday','saturday'];
 let staticForms=0,adapterExecutions=0,heldAcclamationChecks=0,cliCases=0;

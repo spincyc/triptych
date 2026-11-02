@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { repositoryPath } from './_product_data.cjs';
 /* Same-language witness comparisons retain exact same-source Proper coordinates. */
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -15,7 +16,7 @@ const Adapters = require(resolve(MODULES, 'reader-state-adapters.js'));
 const Comparison = require(resolve(MODULES, 'reader-comparison.js'));
 const View = require(resolve(MODULES, 'reader-compare-view.js'));
 const PropersCompare = require(resolve(MODULES, 'propers-compare.js'));
-const json = (path) => JSON.parse(readFileSync(resolve(ROOT, path), 'utf8'));
+const json = (path) => JSON.parse(readFileSync(repositoryPath(ROOT, path), 'utf8'));
 const structure = json('src/web/data/structure/propers/roman-1962.json');
 const fixture = JSON.parse(readFileSync(resolve(CANDIDATE,
   'tools/tests/fixtures/liturgy-reader-comparison/v1/propers-roman-1962-allsouls-translation-witnesses.json'), 'utf8'));
@@ -53,7 +54,7 @@ function build(state = normalized.state) {
 
 test('explicit same-language witness identities and Latin-accompaniment state roundtrip without a date', () => {
   assert.equal(fixture.schema, 'triptych-liturgy-reader-comparison-fixture/v1');
-  fixture.basis.paths.forEach(path => assert.ok(readFileSync(resolve(ROOT, path)).length));
+  fixture.basis.paths.forEach(path => assert.ok(readFileSync(repositoryPath(ROOT, path)).length));
   assert.equal(normalized.ok, true, JSON.stringify(normalized.errors));
   assert.deepEqual(normalized.state.comparison, fixture.comparison);
   assert.equal(normalized.state.form, fixture.selection.form);

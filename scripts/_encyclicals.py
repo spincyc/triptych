@@ -6,7 +6,7 @@ every encyclical the project lists: one row each, with its pope, date, incipit,
 an AI-written one-line description, the installed two-column reading PDFs by
 language and the Vatican page. This module checks that file against its schema
 and against `release/papal-documents.json`, and writes the one data file the
-browser fetches, `src/web/data/encyclicals/index.json`.
+browser fetches, `/data/encyclicals/index.json`, in the selected working root.
 
 The v2 index also records existing external English translations in
 `english_routes`, independently of local source readers and their distribution
@@ -52,10 +52,12 @@ import sys
 from pathlib import Path
 from urllib.parse import urlsplit
 
+from _browser_products import ProductError, assert_working_output, committed_data_root, working_data_root
+
 ROOT = Path(__file__).resolve().parents[1]
 INDEX_RELATIVE = Path("src/sources/papal-documents/encyclicals-index.json")
 RELEASE_RELATIVE = Path("release/papal-documents.json")
-DATA_ROOT_RELATIVE = Path("src/web/data")
+DATA_ROOT_RELATIVE = Path("build/browser-data-work")
 OUTPUT_RELATIVE = Path("encyclicals/index.json")
 
 INDEX_SCHEMA = "triptych-encyclicals-index/v2"
@@ -581,7 +583,7 @@ def _paths(root: Path, index: Path | None, release: Path | None, out: Path | Non
     return (
         index if index is not None else root / INDEX_RELATIVE,
         release if release is not None else root / RELEASE_RELATIVE,
-        out if out is not None else root / DATA_ROOT_RELATIVE,
+        out if out is not None else working_data_root(root),
     )
 
 
@@ -594,7 +596,7 @@ def main(argv: list[str] | None = None) -> int:
     verbs = parser.add_subparsers(dest="verb", required=True)
     for name, text in (
         ("check", "validate the index against its schema and the papal release record"),
-        ("structure", "write src/web/data/encyclicals/index.json from the index"),
+        ("structure", "write encyclicals/index.json into the working output root"),
     ):
         verb = verbs.add_parser(name, help=text)
         verb.add_argument(
@@ -625,6 +627,8 @@ def main(argv: list[str] | None = None) -> int:
             count = len(json.loads(text)["encyclicals"])
             print(f"encyclicals check: {_shown(index_path, root)} is valid ({count} rows)")
             return 0
+        if args.check and args.out is None:
+            out_root = committed_data_root(root)
         target = output_path(out_root)
         if args.check:
             current = target.read_text(encoding="utf-8") if target.is_file() else None
@@ -638,11 +642,12 @@ def main(argv: list[str] | None = None) -> int:
                 return 1
             print(f"encyclicals structure: {_shown(target, root)} is current")
             return 0
+        assert_working_output(root, out_root)
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(text, encoding="utf-8")
         print(_shown(target, root))
         return 0
-    except EncyclicalsError as error:
+    except (EncyclicalsError, ProductError) as error:
         print(f"encyclicals: {error}", file=sys.stderr)
         return 2
 

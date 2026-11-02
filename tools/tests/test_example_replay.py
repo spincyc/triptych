@@ -81,6 +81,14 @@ class DeclarationTests(unittest.TestCase):
             sorted(replay.EXEMPT),
             sorted(
                 [
+                    "tools/browser-products record",
+                    "tools/history-browser-acceptance --url http://127.0.0.1:0/history/ "
+                    "--plan .scratch/history-browser-example/plan.json "
+                    "--site .scratch/history-browser-example/site "
+                    "--out .scratch/history-browser-example/owned-server --json",
+                    "tools/history-browser-acceptance --url http://127.0.0.1:8000/history/ "
+                    "--plan .scratch/history-browser-example/plan.json "
+                    "--out .scratch/history-browser-example/existing-server --json",
                     "tools/harvest ask --passage 'Psalms 24' --runs 1 --top 5"
                     " --out build/example-harvest",
                     "tools/harvest record --ledger build/example-harvest/ledger.yaml"
@@ -90,6 +98,8 @@ class DeclarationTests(unittest.TestCase):
                     " --results build/example-results.yaml --model claude-opus-5"
                     " --audited-on 2026-07-31 --format json",
                     "tools/knox-bible fetch --root build/knox",
+                    "tools/lectern open --surface day --date 2026-12-25",
+                    "tools/lectern open --surface catena --ref 'John 1'",
                     "tools/release-bindings refresh",
                     "tools/release-bindings migrate-publications",
                 ]
@@ -298,6 +308,33 @@ class MachineryTests(unittest.TestCase):
             "knox-bible",
         )
 
+    def test_recapture_uses_the_first_result_of_a_stateful_writer(self) -> None:
+        scratch = ROOT / ".scratch/example-recapture-tests"
+        scratch.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(dir=scratch) as directory:
+            folder = Path(directory)
+            tool = folder / "example"
+            tool.write_text('EXAMPLES = {\n    "": (\n        Example(\n            "fixture-writer",\n            (\n                "obsolete",\n            ),\n        ),\n    ),\n}\n')
+            state = {"written": False, "calls": 0}
+
+            def prepare(_name):
+                state["written"] = False
+
+            def run(_command):
+                state["calls"] += 1
+                result = "unchanged" if state["written"] else "created"
+                state["written"] = True
+                return [result], 0
+
+            with mock.patch.object(replay, "TOOLS", folder), \
+                    mock.patch.object(replay, "tool_paths", return_value=[tool]), \
+                    mock.patch.object(replay, "prepare", side_effect=prepare), \
+                    mock.patch.object(replay, "run", side_effect=run), \
+                    mock.patch("sys.stdout", new=io.StringIO()):
+                self.assertEqual(replay.recapture(["example"]), 1)
+            self.assertEqual(replay.captures_of(tool)[0].output, ("created",))
+            self.assertEqual(state["calls"], 2, "one actual invocation per pass")
+
     def test_recapture_keeps_the_elisions_it_was_given(self) -> None:
         one = capture("tools/example", ("kept", "cut a... [+1 chars]", "... 2 more lines"))
         self.assertEqual(
@@ -425,7 +462,7 @@ class GateTests(unittest.TestCase):
         text = (ROOT / "Makefile").read_text(encoding="utf-8")
         self.assertRegex(
             text,
-            r"\ncheck-calendar-days:\n(?:\t.*\\\n)*"
+            r"\ncheck-calendar-days: \| prepare-browser-data\n(?:\t.*\\\n)*"
             r"\t\t\$\(PYTHON\) tools/tpt calendar-days check; \\",
         )
 
@@ -434,22 +471,25 @@ class GateTests(unittest.TestCase):
         text = (ROOT / "Makefile").read_text(encoding="utf-8")
         heading = re.search(r"\ncheck-deployment-sources:([^\n]*)\n", text)
         self.assertIsNotNone(heading, "check-deployment-sources has no target")
-        self.assertIn("check-act-history-receipt", heading.group(1))
         reached = make_reached("check-deployment-sources", text)
-        required = {"check-act-history-receipt", "check-document-schemas",
-                    "check-artifact-delivery", "check-source-graph",
-                    "check-source-projection", "check-curriculum-source-rights",
+        required = {"prepare-browser-data", "deployment-source-gates",
+                    "check-document-schemas",
+                    "check-artifact-delivery", "check-snapshot-delivery",
+                    "check-papal-inputs", "check-source-graph",
+                    "check-curriculum-source-rights",
                     "check-document-catalogue"}
         self.assertEqual(required - reached.keys(), set())
         self.assertNotIn("check-act-history", reached)
         self.assertNotIn("check-source-evidence", reached)
         self.assertNotIn("check-curriculum-rights", reached)
+        self.assertNotIn("check-source-projection", reached)
+        self.assertNotIn("check-act-history-receipt", reached)
         body = "\n".join(recipe for _, recipe in sorted(reached.items()))
         for command in (
-            "scripts/_act_history_projection_receipt.py check",
+            "$(BROWSER_PRODUCTS_TOOL) build",
             "$(DOCUMENT_SCHEMA_TOOL) check", "$(ARTIFACT_STORE_TOOL) check",
+            "$(SNAPSHOT_STORE_TOOL) check", "scripts/_papal_input_receipt.py check",
             "$(SOURCE_LIBRARY_TOOL) validate",
-            "$(SOURCE_READER_TOOL) structure --check-receipt",
             *MISSAL_LAYER_CHECKS[2:],
         ):
             with self.subTest(command=command):
@@ -471,6 +511,8 @@ class GateTests(unittest.TestCase):
         self.assertFalse({"check-installed", "install", "install-all", "pdf", "all"} & reached.keys())
         research = "\n".join(make_reached("check-research-sources", text).values())
         for command in ("$(SOURCE_LIBRARY_TOOL) validate --full-evidence",
+                        "$(SOURCE_READER_TOOL) structure --check-receipt",
+                        "scripts/_act_history_projection_receipt.py check",
                         "$(SOURCE_READER_TOOL) check",
                         "$(SOURCE_READER_TOOL) structure --check",
                         "tools/tpt act-history structure --check"):

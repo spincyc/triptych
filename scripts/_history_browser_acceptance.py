@@ -17,6 +17,10 @@ import time
 import urllib.parse
 import urllib.request
 
+from _browser_products import verified_products
+import _artifact_store
+from _source_projection_receipt import read_file
+
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA = 'triptych-history-browser-plan/v1'
 
@@ -57,6 +61,39 @@ def local_url(value):
 def descriptors(stage):
     return stage.get('text_projections') or ([stage] if stage.get('text_binding') else [])
 
+def source_owner_pins(root, declarations, *, expected=None):
+    """Read canonical bytes or check exact archived declarations, without hydration."""
+    pins=[]
+    external=None
+    delivery_hash=None
+    for declaration in declarations:
+        relative=declaration['path']
+        path=_artifact_store._path(root,relative)
+        if path.exists():
+            raw=read_file(root,relative)
+            pin={'path':relative,'sha256':digest(raw),'byte_size':len(raw),'verification':'file-bytes'}
+        else:
+            if not relative.startswith('src/sources/works/') or path.suffix.lower() not in _artifact_store.BINARY_SUFFIXES:
+                raise ValueError('missing source owner is not a known external artifact: '+relative)
+            if external is None:
+                raw=read_file(root,_artifact_store.INDEX_PATH)
+                delivery=json.loads(raw,object_pairs_hook=_artifact_store._unique_keys)
+                _artifact_store.validate_delivery_index(delivery)
+                external={entry['path']:entry for entry in delivery['artifacts']}
+                delivery_hash=digest(raw)
+            entry=external.get(relative)
+            if entry is None or entry['kind']!='source-evidence':
+                raise ValueError('missing source owner is not a known external artifact: '+relative)
+            if entry['sha256']!=declaration['sha256'] or entry['bytes']!=declaration['byte_size']:
+                raise ValueError('external source owner identity differs from delivery declaration: '+relative)
+            pin={'path':relative,'sha256':entry['sha256'],'byte_size':entry['bytes'],
+                 'verification':'external-declaration','delivery_index':_artifact_store.INDEX_PATH,
+                 'delivery_index_sha256':delivery_hash,'witness_bytes_audited':False}
+        pins.append(pin)
+    if expected is not None and pins!=expected:
+        raise ValueError('source owner bytes or external delivery metadata changed during acceptance')
+    return pins
+
 def siblings_preserved(before, after, selected):
     def others(rows):
         return {row['binding']:(row['open'],row['units']) for row in rows if row['binding']!=selected}
@@ -79,8 +116,9 @@ def validate_plan(plan, catalogue, raw):
     return plan
 
 class Browser:
-    def __init__(self, root, out, url, site):
+    def __init__(self, root, out, url, site, *, data_root):
         self.root,self.out,self.url,self.site = root,out,url,site
+        self.data_root=data_root
         self.server=self.driver=self.session=self.fd=self.log=None
         self.checks,self.requests,self.resources=[],[],{}
     def save(self,name,value):
@@ -174,11 +212,11 @@ class Browser:
 def exercise(b,catalogue,raw,plan,source):
     history=catalogue['stage_history']
     b.check('fresh-served-catalogue',b.fetch('../browse/structure/act-history/catalogue.json')==raw)
-    pins=[]
-    for item in catalogue['inputs']:
-        data=inside(b.root,item['path']).read_bytes()
-        pins.append({'path':item['path'],'sha256':digest(data),'byte_size':len(data)})
-    b.check('fresh-source-owners',all(p['sha256']==r['sha256'] and p['byte_size']==r['byte_size'] for p,r in zip(pins,catalogue['inputs'])))
+    pins=source_owner_pins(b.root,catalogue['inputs'])
+    b.check('fresh-source-owners',all(p['sha256']==r['sha256'] and p['byte_size']==r['byte_size'] for p,r in zip(pins,catalogue['inputs'])),
+            {'file_bytes':sum(p['verification']=='file-bytes' for p in pins),
+             'external_declarations':sum(p['verification']=='external-declaration' for p in pins),
+             'external_witness_bytes_audited':False})
     runtime=[]
     for route,path in [('history.js','src/web/browser/history/history.js'),('history.css','src/web/browser/history/history.css'),('../shared/browser-core.js','src/web/browser/shared/browser-core.js'),('../shared/browser-core.css','src/web/browser/shared/browser-core.css'),('../assets/site.css','release/public-alpha/assets/site.css')]:
         data=inside(b.root,path).read_bytes()
@@ -243,7 +281,7 @@ def exercise(b,catalogue,raw,plan,source):
         b.check('native-order:'+binding,order==[d['text_binding'] for d in descriptors(stage)],order)
         data=b.fetch('../browse/structure/act-history/'+declaration['projection_path'])
         payload=json.loads(data)
-        b.check('native-source-served:'+binding,data==(b.root/'src/web/data/structure/act-history'/declaration['projection_path']).read_bytes())
+        b.check('native-source-served:'+binding,data==(b.data_root/'structure/act-history'/declaration['projection_path']).read_bytes())
         b.check('native-lazy:'+binding,b.js('return !document.querySelector(arguments[0]).open&&!document.querySelector(arguments[0]).querySelector(".native-text-body")',selector))
         b.check('native-not-prefetched:'+binding,b.js('return !performance.getEntriesByType("resource").some(e=>e.name.endsWith(arguments[0]))','/structure/act-history/'+declaration['projection_path']))
         sibling_script='return [...document.querySelectorAll("#timeline-detail .native-text-fold")].map(e=>({binding:e.dataset.textBinding,open:e.open,units:e.querySelectorAll(".native-text-body").length}))'
@@ -284,10 +322,10 @@ def exercise(b,catalogue,raw,plan,source):
         payload=json.loads(data)
         result=b.js('const e=document.querySelectorAll(arguments[0])[arguments[1]];return {words:[...e.querySelectorAll(".held-text")].map(n=>n.textContent),text:e.textContent,caveat:e.querySelector(".comparison-caveat").textContent}',selector,index)
         b.check('comparison:'+identifier,result['words']==[payload['left']['joined_source_text'],payload['right']['joined_source_text']] and result['caveat']==payload['apparatus_caveat'] and payload['unified_diff'] in result['text'])
-        b.check('comparison-source-served:'+identifier,data==(b.root/'src/web/data/structure/act-history'/row['projection_path']).read_bytes())
+        b.check('comparison-source-served:'+identifier,data==(b.data_root/'structure/act-history'/row['projection_path']).read_bytes())
         b.capture('comparison-'+identifier,selector,index)
     b.check('final-catalogue-stable',b.fetch('../browse/structure/act-history/catalogue.json')==raw and source.read_bytes()==raw)
-    b.check('final-owners-stable',all(digest(inside(b.root,p['path']).read_bytes())==p['sha256'] for p in pins))
+    b.check('final-owners-stable',source_owner_pins(b.root,catalogue['inputs'],expected=pins)==pins)
     log=b.call('POST','/log',{'type':'browser'})
     b.save('browser-log',log)
     b.check('no-console-errors',not [r for r in log if r['level']=='SEVERE' and 'favicon.ico' not in r['message']])
@@ -298,7 +336,7 @@ def main(argv=None, *, examples=()):
     from _tooling import with_examples
     parser=with_examples(argparse.ArgumentParser(description=__doc__), examples)
     parser.add_argument('--url',required=True,help='loopback URL ending /history/; port0 starts an owned --site server')
-    parser.add_argument('--catalogue',required=True,type=Path)
+    parser.add_argument('--catalogue',type=Path,help='optional frozen copy; must match the verified current catalogue')
     parser.add_argument('--out',required=True,type=Path,help='new or empty repository .scratch directory')
     parser.add_argument('--plan',required=True,type=Path,help='explicit identities and frozen catalogue SHA256')
     parser.add_argument('--root',type=Path,default=ROOT)
@@ -309,19 +347,26 @@ def main(argv=None, *, examples=()):
     try:
         root=args.root.resolve()
         local_url(args.url)
-        source=inside(root,args.catalogue)
-        raw=source.read_bytes()
-        catalogue=json.loads(raw)
-        plan=validate_plan(json.loads(inside(root,args.plan).read_text()),catalogue,raw)
-        out=owned_output(root,args.out)
-        site=inside(root,args.site).resolve() if args.site else None
-        if site and not (site/'history/index.html').is_file(): raise ValueError('preview history route is missing')
-        out.mkdir(parents=True,exist_ok=True)
-        browser=Browser(root,out,args.url,site)
-        browser.start()
-        exercise(browser,catalogue,raw,plan,source)
-        status=int(any(not r['pass'] for r in browser.checks))
-        result={'v':1,'status':'pass' if status==0 else 'fail','checks':len(browser.checks),'failures':sum(not r['pass'] for r in browser.checks),'exit_status':status,'catalogue_sha256':digest(raw),'qualitative_reader_judgment':'separate review required'}
+        requested_plan=json.loads(inside(root,args.plan).read_text())
+        with verified_products(root,product_ids=['act-history']) as products:
+            verified=products.data_root/'structure/act-history/catalogue.json'
+            source=inside(root,args.catalogue) if args.catalogue else verified
+            raw=source.read_bytes()
+            if raw!=verified.read_bytes(): raise ValueError('frozen catalogue does not match verified current browser products')
+            catalogue=json.loads(raw)
+            plan=validate_plan(requested_plan,catalogue,raw)
+            out=owned_output(root,args.out)
+            site=inside(root,args.site).resolve() if args.site else None
+            if site and not (site/'history/index.html').is_file(): raise ValueError('preview history route is missing')
+            out.mkdir(parents=True,exist_ok=True)
+            browser=Browser(root,out,args.url,site,data_root=products.data_root)
+            try:
+                browser.start()
+                exercise(browser,catalogue,raw,plan,source)
+                status=int(any(not r['pass'] for r in browser.checks))
+                result={'v':1,'status':'pass' if status==0 else 'fail','checks':len(browser.checks),'failures':sum(not r['pass'] for r in browser.checks),'exit_status':status,'catalogue_sha256':digest(raw),'qualitative_reader_judgment':'separate review required'}
+            finally:
+                browser.close()
         browser.save('summary',result)
         print(json.dumps(result,sort_keys=True,separators=(',',':')))
         return status
@@ -335,5 +380,3 @@ def main(argv=None, *, examples=()):
         if browser: browser.save('failure',result)
         print(json.dumps(result,sort_keys=True),file=sys.stderr)
         return 70
-    finally:
-        if browser: browser.close()

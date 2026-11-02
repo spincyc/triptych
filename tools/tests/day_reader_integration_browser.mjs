@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { browserDataRoot, repositoryPath } from './_product_data.cjs';
 
 /* Real-Chromium assertions and review captures for the W3 Day reader candidate. */
 
@@ -134,7 +135,7 @@ function staticServer() {
       }
       const file = resolve(ROOT, relative || 'README.md');
       if (file !== ROOT && !file.startsWith(ROOT + sep)) throw new Error('outside root');
-      let body = await readFile(file);
+      let body = await readFile(repositoryPath(ROOT, file));
       if (missingEnglish && relative.endsWith('/structure/propers/roman-1962.json')) {
         body = Buffer.from(JSON.stringify(withMissingEnglish(body.toString('utf8'))));
       }
@@ -1350,7 +1351,7 @@ async function c4Step2DialogueTurns(cdp, base) {
     const data = {};
     for (const calendar of Object.keys(spec)) {
       const file = JSON.parse(await readFile(
-        resolve(ROOT, 'src/web/data/structure/ordinary', calendar + '.json'), 'utf8'));
+        resolve(browserDataRoot(ROOT), 'structure/ordinary', calendar + '.json'), 'utf8'));
       data[calendar] = new Map(file.sections.flatMap((section) =>
         section.elements.map((element) => [element.key, element])));
     }
@@ -3460,7 +3461,7 @@ async function runAssertions(cdp, base) {
       for (const [state, lang, events] of cases) {
         const calendar = new URLSearchParams(state.slice(1)).get('missal');
         const file = JSON.parse(await readFile(
-          resolve(ROOT, 'src/web/data/structure/ordinary', calendar + '.json'), 'utf8'));
+          resolve(browserDataRoot(ROOT), 'structure/ordinary', calendar + '.json'), 'utf8'));
         const sourceElements = new Map(file.sections.flatMap(section =>
           section.elements.map(element => [element.key, element])));
         await navigateCandidate(cdp, base, state);

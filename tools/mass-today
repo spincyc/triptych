@@ -58,6 +58,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import _calendars  # noqa: E402
+from _browser_products import ProductError, verified_products  # noqa: E402
 from _ordinary_text import element_lines, wrap as wrap_lines  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
@@ -70,8 +71,6 @@ from _tooling import (  # noqa: E402
 
 TOOLS = ROOT / "tools"
 WIDTH = 88
-# The manifest `index-bible` writes, and the only list of what is indexed here.
-BIBLES = ROOT / "src" / "web" / "data" / "bibles.json"
 SEATING_MODEL = ROOT / "src" / "web" / "browser" / "liturgy" / "ordinary-seating.js"
 
 # The text every placeholder entry carries; matched on its opening rather than
@@ -328,16 +327,14 @@ def is_placeholder(proper: dict) -> bool:
 
 def indexed_bibles() -> list[dict]:
     """What the Bible index builder has actually indexed, from its manifest."""
-    if not BIBLES.is_file():
-        return []
     try:
-        return [
-            one
-            for one in (json.loads(BIBLES.read_text(encoding="utf-8")).get("bibles") or [])
-            if isinstance(one, dict)
-        ]
-    except json.JSONDecodeError:
-        return []
+        with verified_products(ROOT, product_ids=["bibles"]) as products:
+            manifest = json.loads((products.data_root / "bibles.json").read_text(encoding="utf-8"))
+            if not isinstance(manifest, dict) or not isinstance(manifest.get("bibles"), list):
+                raise ValueError("published Bible manifest is invalid")
+            return [one for one in manifest["bibles"] if isinstance(one, dict)]
+    except (ProductError, OSError, ValueError) as error:
+        raise Refused(f"published browser data is unavailable: {error}") from error
 
 
 def default_bible(lang: str) -> dict | None:

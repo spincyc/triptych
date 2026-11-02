@@ -4,8 +4,8 @@
 A reader for the same structure the browser pages read, laid out as a
 dashboard: eight surfaces, one per page of the site, each reached by its digit.
 
-This tool derives nothing. Every view is read from `src/web/data/` or asked
-of the browser's own models and renderers, run under node in one process set
+This tool derives nothing. Every view is read from verified browser products
+or asked of the browser's own models and renderers, run under node in one process set
 up as a page's realm (`scripts/lectern/bridge.js`), so what a reader sees here
 and what the site renders cannot disagree about anything but layout.
 
@@ -40,6 +40,7 @@ from _tooling import (  # noqa: E402
 )
 
 from lectern import SURFACES  # noqa: E402
+from lectern.repo import Refused as ReaderRefused  # noqa: E402
 THEMES = ("triptych", "triptych-vellum", "triptych-compline")
 DEPENDENCY = ("the reader needs Textual: pacman -S python-textual, or pip install -r requirements-tui.txt, "
               "which also brings the Markdown pin a web edition is set with")
@@ -144,32 +145,40 @@ def open_reader(arguments: argparse.Namespace) -> int:
     if not sys.stdout.isatty():
         raise InputRefused("open needs a terminal; use `lectern snapshot` to render without one")
     from lectern.app import TriptychApp
+    from lectern import bridge
 
     # A drawn reader cannot be ASCII; asked for plain, it takes the monochrome
     # palette, which keeps only the hues that mark a warning or a season.
     style = getattr(arguments, "style_resolved", None)
     theme = "triptych-compline" if style and style.plain else arguments.theme
-    TriptychApp(start=arguments.surface, intent=_intent(arguments), theme=theme).run()
+    try:
+        TriptychApp(start=arguments.surface, intent=_intent(arguments), theme=theme).run()
+    finally:
+        bridge.BRIDGE_PROCESS.close()
     return 0
 
 
 def snapshot(arguments: argparse.Namespace) -> str:
     from lectern.snapshot import render
+    from lectern import bridge
 
     keys = [key for key in (arguments.keys or "").split(",") if key]
     style = getattr(arguments, "style_resolved", None)
     plain = bool(style and style.plain)
     if plain and arguments.format == "svg":
         raise InputRefused("an SVG drawing is not plain text; drop --plain or ask for --format text")
-    return render(
-        surface=arguments.surface,
-        intent=_intent(arguments),
-        size=arguments.size,
-        keys=keys,
-        form=arguments.format,
-        theme="triptych-compline" if plain else arguments.theme,
-        plain=plain,
-    )
+    try:
+        return render(
+            surface=arguments.surface,
+            intent=_intent(arguments),
+            size=arguments.size,
+            keys=keys,
+            form=arguments.format,
+            theme="triptych-compline" if plain else arguments.theme,
+            plain=plain,
+        )
+    finally:
+        bridge.BRIDGE_PROCESS.close()
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -213,7 +222,7 @@ def main(argv: list[str] | None = None) -> int:
         argv=argv,
         default_verb="open",
         dependency_message=DEPENDENCY,
-        mapped_errors={InputRefused: ("input", 2)},
+        mapped_errors={InputRefused: ("input", 2), ReaderRefused: ("input", 2)},
     )
 
 

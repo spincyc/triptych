@@ -12,6 +12,10 @@ import unittest
 from pathlib import Path
 
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 LITURGY = ROOT / "src/web/browser/liturgy"
 HTML = LITURGY / "day-reader.html"
@@ -458,12 +462,14 @@ class DayReaderIntegrationTests(unittest.TestCase):
 
     def test_held_weekday_readings_have_a_scoped_heading_without_settling_orations(self) -> None:
         script = r"""
+const productFixturePath = file => require(require('path').join(root, 'tools/tests/_product_data.cjs')).repositoryPath(root, file);
+
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const root=process.argv[1],source=fs.readFileSync(process.argv[2],'utf8');
 const begin=source.indexOf('  function resultHeading('),end=source.indexOf('  function commitResultDocuments(',begin);
 assert(begin>=0&&end>begin,'readable-course heading owner is present');
 const heading=eval('('+source.slice(begin,end).trim()+')');
-const read=relative=>JSON.parse(fs.readFileSync(path.join(root,relative),'utf8'));
+const read=relative=>JSON.parse(fs.readFileSync(productFixturePath(path.join(root,relative)),'utf8'));
 const C=require(path.join(root,'src/web/browser/liturgy/reader-state.js'));
 const A=require(path.join(root,'src/web/browser/liturgy/reader-state-adapters.js'));
 const M=require(path.join(root,'src/web/browser/liturgy/assembly-model.js'));
@@ -589,7 +595,7 @@ console.log(JSON.stringify({cases,negatives,settled}));
 
     def test_candidate_does_not_leak_fixture_or_discovery_records(self) -> None:
         sentinels = ("synthetic-cycle-order", "candidate-contract-only")
-        for path in (ROOT / "src/web/data").rglob("*.json"):
+        for path in (browser_data_root(ROOT)).rglob("*.json"):
             payload = text(path)
             for sentinel in sentinels:
                 self.assertNotIn(sentinel, payload, path.as_posix())

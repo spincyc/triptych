@@ -38,6 +38,8 @@ ROOT = Path(__file__).resolve().parents[1]
 # requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from _browser_products import ProductError, assert_working_output, committed_data_root, working_data_root  # noqa: E402
+
 from _corpus import (  # noqa: E402
     FULL,
     PRODUCTION_FIELDS,
@@ -252,15 +254,15 @@ EXAMPLES = {
             "tools/document-library structure --out .scratch/document-catalog/example-catalogue",
             (
                 "154 works, 216 documents, 280 issues, page extents unmeasured.",
-                "  -> .scratch/document-catalog/example-catalogue/structure/documents/corpus.json",
+                "  -> <repo>/.scratch/document-catalog/example-catalogue/structure/documents/corpus.json",
             ),
-            "WRITES. --out here is untracked; the default writes the tracked src/web/data",
+            "WRITES. --out here is untracked; the default writes the mutable browser-data working tree",
         ),
         Example(
-            "tools/document-library structure --check",
+            "tools/document-library structure --check --out .scratch/document-catalog/example-catalogue",
             (
                 "154 works, 216 documents, 280 issues, page extents unmeasured.",
-                "  src/web/data/structure/documents/corpus.json is current",
+                "  .scratch/document-catalog/example-catalogue/structure/documents/corpus.json is current",
             ),
             "writes nothing; refuses when the tracked catalogue has drifted from the sources",
         ),
@@ -278,7 +280,7 @@ EXAMPLES = {
 # has ever been bumped for an addition.
 SCHEMA = "triptych-document-catalogue/v1"
 STRUCTURE_RELATIVE = Path("structure") / "documents" / "corpus.json"
-DEFAULT_OUT = "src/web/data"
+DEFAULT_OUT = str(working_data_root(ROOT))
 # The page's own derivation — what a choice selects, what a document is called,
 # and in what order. It exists once, in the browser, because the browser is
 # what performs it; re-deriving it here in Python would be the second copy this
@@ -1035,7 +1037,10 @@ def _serialise(payload: dict) -> str:
 def run_structure(arguments: argparse.Namespace) -> dict:
     rows, by_key = selected(arguments)
     built = catalogue(rows, by_key)
-    target = Path(arguments.out) / STRUCTURE_RELATIVE
+    out = (committed_data_root(ROOT) if arguments.check and arguments.out is None else working_data_root(ROOT) if arguments.out is None else Path(arguments.out))
+    if not arguments.check:
+        out = assert_working_output(ROOT, out)
+    target = out / STRUCTURE_RELATIVE
     serialised = _serialise(built)
     if arguments.check:
         if not target.is_file():
@@ -1213,7 +1218,7 @@ def main(argv: list[str] | None = None) -> int:
     shared.add_argument(
         "--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)"
     )
-    shared.add_argument("--out", default=DEFAULT_OUT, help="where `structure` writes")
+    shared.add_argument("--out", default=None, help="where `structure` writes")
     shared.add_argument("--pdf", help="`check-render`: one explicit local rendering to inspect")
     shared.add_argument("--issue", choices=("full", "synthesis", "homily"), default="full",
                         help="`check-render`: output owned by the selected document")
@@ -1279,7 +1284,7 @@ def main(argv: list[str] | None = None) -> int:
         argv=argv,
         default_verb="check",
         dependency_message="install PyYAML (requirements-tools.txt) for --format yaml",
-        mapped_errors={CorpusError: ("input", 2)},
+        mapped_errors={CorpusError: ("input", 2), ProductError: ("input", 2)},
     )
 
 

@@ -13,8 +13,12 @@ from pathlib import Path
 from unittest import mock
 
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
-PROPERS = ROOT / "src/web/data/structure/propers"
+PROPERS = browser_data_root(ROOT) / 'structure/propers'
 
 
 def load_generator():

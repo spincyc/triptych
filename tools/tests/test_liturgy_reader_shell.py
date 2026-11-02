@@ -10,6 +10,10 @@ import unittest
 from pathlib import Path
 
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 PROTOTYPE = ROOT / "src/web/browser/liturgy/prototypes/reader-shell"
 HTML = PROTOTYPE / "index.html"
@@ -88,7 +92,7 @@ class ReaderShellPrototypeTest(unittest.TestCase):
         self.assertIn("Contract.validateFixture", self.js)
         self.assertIn("fixtureIdentity", self.js)
         self.assertIn("Synthetic non-public M1", self.js)
-        for path in (ROOT / "src/web/data").rglob("*.json"):
+        for path in (browser_data_root(ROOT)).rglob("*.json"):
             public_data = path.read_text(encoding="utf-8", errors="ignore")
             self.assertNotIn("compare-propers-synthetic-correspondence", public_data, path)
             self.assertNotIn("choice-synthetic-coequal", public_data, path)

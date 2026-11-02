@@ -49,8 +49,10 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from tools.tests._product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
-DATA = ROOT / "src/web/data"
+DATA = browser_data_root(ROOT)
 ACTS = DATA / "structure/act-history"
 SOURCES = DATA / "structure/sources"
 
@@ -83,12 +85,14 @@ HARNESS = r"""
 
 import { spawn } from 'node:child_process';
 import { createServer } from 'node:http';
+import { createRequire } from 'node:module';
 import { mkdtemp, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { extname, join, resolve, sep } from 'node:path';
 import process from 'node:process';
 
 const ROOT = resolve(process.argv[2]);
+const { repositoryPath } = createRequire(import.meta.url)(ROOT + '/tools/tests/_product_data.cjs');
 const PLAN = JSON.parse(process.argv[3]);
 const CHROME = process.argv[4];
 const sleep = (ms) => new Promise((accept) => setTimeout(accept, ms));
@@ -111,7 +115,7 @@ function staticServer(delays) {
       const file = resolve(ROOT, relative);
       if (file !== ROOT && !file.startsWith(ROOT + sep)) throw new Error('outside root');
       const body = Object.hasOwn(PLAN.responses || {}, relative)
-        ? PLAN.responses[relative] : await readFile(file);
+        ? PLAN.responses[relative] : await readFile(repositoryPath(ROOT, file));
       for (const rule of delays) {
         if (relative.includes(rule.match)) await sleep(rule.ms);
       }

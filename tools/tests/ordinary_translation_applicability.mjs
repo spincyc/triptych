@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { repositoryPath } from './_product_data.cjs';
 /* A held day-form witness needs an appointed formulary before execution. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -11,8 +12,8 @@ const CODE = process.env.TRIPTYCH_ORDINARY_MODULE_ROOT || ROOT;
 const A = require(path.join(CODE, 'src/web/browser/liturgy/reader-state-adapters.js'));
 const C = require(path.join(ROOT, 'src/web/browser/liturgy/reader-state.js'));
 const ordinary = JSON.parse(fs.readFileSync(process.env.TRIPTYCH_ORDINARY_DATA ||
-  path.join(ROOT, 'src/web/data/structure/ordinary/roman-1962.json'), 'utf8'));
-const structure = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/web/data/structure/propers/roman-1962.json'), 'utf8'));
+  repositoryPath(ROOT, 'src/web/data/structure/ordinary/roman-1962.json'), 'utf8'));
+const structure = JSON.parse(fs.readFileSync(repositoryPath(ROOT, 'src/web/data/structure/propers/roman-1962.json'), 'utf8'));
 const head = ordinary.sections.flatMap(s => s.elements).find(e => e.key === 'canon/communicantes-pascha');
 const source = head.translations.find(t => t.lang === 'en');
 const continuation = ordinary.sections.flatMap(s => s.elements)

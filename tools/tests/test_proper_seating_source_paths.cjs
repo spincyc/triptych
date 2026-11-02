@@ -1,4 +1,6 @@
 'use strict';
+const { repositoryPath } = require('./_product_data.cjs');
+
 // The static gate validates every original candidate and every authored tuple;
 // it does not choose a calendar course or an actual-use path.
 const assert = require('node:assert/strict');
@@ -6,9 +8,9 @@ const fs = require('node:fs');
 const path = require('node:path');
 const root = path.resolve(__dirname, '../..');
 const S = require(path.join(root, 'src/web/browser/liturgy/ordinary-seating.js'));
-const structurePath = process.env.TRIPTYCH_SOURCE_PATH_STRUCTURE || path.join(root, 'src/web/data/structure/propers/postconciliar.json');
+const structurePath = process.env.TRIPTYCH_SOURCE_PATH_STRUCTURE || repositoryPath(root, 'src/web/data/structure/propers/postconciliar.json');
 const structure = JSON.parse(fs.readFileSync(structurePath));
-const ordinary = JSON.parse(fs.readFileSync(path.join(root, 'src/web/data/structure/ordinary/postconciliar.json')));
+const ordinary = JSON.parse(fs.readFileSync(repositoryPath(root, 'src/web/data/structure/ordinary/postconciliar.json')));
 const copy = (value) => JSON.parse(JSON.stringify(value));
 const masses = structure.masses.filter((mass) => (mass.proper_source_paths || []).length);
 const records = [];

@@ -17,6 +17,10 @@ import tempfile
 import unittest
 from urllib.parse import quote
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 NODE = shutil.which("node")
 PAGE = ROOT / "src/web/browser/history/index.html"
@@ -210,7 +214,7 @@ console.log(JSON.stringify({
 @unittest.skipIf(NODE is None, "node is unavailable")
 class RoutePanelControllerTests(unittest.TestCase):
     def drive(self, expanded=False):
-        spine = json.loads((ROOT / "src/web/data/structure/act-history/latin-missal.json").read_text())
+        spine = json.loads((browser_data_root(ROOT) / 'structure/act-history/latin-missal.json').read_text())
         request = {"script": str(SCRIPT), "spine": spine, "expanded": expanded}
         run = subprocess.run([NODE, "-e", MAP_HARNESS], input=json.dumps(request), text=True,
                              capture_output=True, cwd=ROOT, timeout=20)
@@ -576,8 +580,8 @@ class TimelineControllerTests(unittest.TestCase):
                 self.assertTrue(any(e["attrs"].get("aria-busy")=="false" for e in shown["elements"]))
 
     def test_retained_1657_canon_links_every_unit_to_its_exact_source_passage(self):
-        payload = json.loads((ROOT / "src/web/data/structure/act-history/native-texts/cistercian-1657-canon.json").read_text())
-        history = json.loads((ROOT / "src/web/data/structure/act-history/catalogue.json").read_text())["stage_history"]
+        payload = json.loads((browser_data_root(ROOT) / 'structure/act-history/native-texts/cistercian-1657-canon.json').read_text())
+        history = json.loads((browser_data_root(ROOT) / 'structure/act-history/catalogue.json').read_text())["stage_history"]
         path = "structure/act-history/native-texts/cistercian-1657-canon.json"
         for mobile in (False, True):
             with self.subTest(mobile=mobile):
@@ -592,7 +596,7 @@ class TimelineControllerTests(unittest.TestCase):
                     self.assertIn(unit["source_locator"], shown["text"])
                     # The existing destination identifies the very same text artifact,
                     # rather than a title-matched edition or an invented provider URL.
-                    source = json.loads((ROOT / "src/web/data/structure/sources/text" / (unit["source_id"] + ".json")).read_text())
+                    source = json.loads((browser_data_root(ROOT) / 'structure/sources/text' / (unit["source_id"] + ".json")).read_text())
                     self.assertEqual(unit["text_edition_id"], source["edition_id"])
                     self.assertEqual(unit["source_artifact_id"], source["artifact_id"])
 
@@ -969,7 +973,7 @@ class TimelineControllerTests(unittest.TestCase):
         self.assertIn("C001 · pp. 2–3"," ".join(node["changeLines"]))
 
     def test_projected_stage_comparisons_load_actual_source_payloads_only_when_opened(self):
-        path=ROOT / "src/web/data/structure/act-history/catalogue.json"
+        path=browser_data_root(ROOT) / 'structure/act-history/catalogue.json'
         data=json.loads(path.read_text())
         history=data.get("stage_history")
         if not history:
@@ -1261,7 +1265,7 @@ class CatalogueControllerTests(unittest.TestCase):
                 self.assertEqual(got["overview-connections"]["text"], "")
 
     def test_generated_catalogue_obeys_the_browser_contract_when_present(self):
-        path = ROOT / "src/web/data/structure/act-history/catalogue.json"
+        path = browser_data_root(ROOT) / 'structure/act-history/catalogue.json'
         if not path.exists():
             self.skipTest("catalogue projection has not been generated")
         data = json.loads(path.read_text())
@@ -1320,7 +1324,7 @@ class CatalogueControllerTests(unittest.TestCase):
         self.assertNotIn("img", got["catalogue-comparison-list"]["tags"])
 
     def test_generated_comparisons_match_declared_members_and_display_exact_bodies(self):
-        path = ROOT / "src/web/data/structure/act-history/catalogue.json"
+        path = browser_data_root(ROOT) / 'structure/act-history/catalogue.json'
         if not path.exists():
             self.skipTest("catalogue projection has not been generated")
         data = json.loads(path.read_text())
@@ -1343,7 +1347,7 @@ class CatalogueBrowserTests(unittest.TestCase):
     def test_narrow_keyboard_selection_and_forced_colors(self):
         from tools.tests import test_browser_truthfulness as browser
 
-        self.assertTrue((ROOT / "src/web/data/structure/act-history/catalogue.json").exists(),
+        self.assertTrue((browser_data_root(ROOT) / 'structure/act-history/catalogue.json').exists(),
                         "generate the catalogue before running real-browser acceptance")
         marker = "      } else {\n        throw new Error('unknown act: ' + act.do);"
         self.assertEqual(browser.HARNESS.count(marker), 1)
@@ -1408,7 +1412,7 @@ class CatalogueBrowserTests(unittest.TestCase):
         self.assertEqual(got["returned"]["focus"], "catalogue-title")
         self.assertTrue(got["returned"]["forced"])
         self.assertFalse(got["returned"]["overflow"])
-        catalogue_path = ROOT / "src/web/data/structure/act-history/catalogue.json"
+        catalogue_path = browser_data_root(ROOT) / 'structure/act-history/catalogue.json'
         declaration = json.loads(catalogue_path.read_text())["comparisons"][0]
         payload = json.loads((catalogue_path.parent / declaration["projection_path"]).read_text())
         self.assertEqual(got["comparison"]["texts"], [payload["left"]["joined_source_text"], payload["right"]["joined_source_text"]])

@@ -18,6 +18,8 @@ reader needs; without it they are skipped by name, never passed silently.
 from __future__ import annotations
 
 import argparse
+from contextlib import contextmanager
+from contextvars import ContextVar
 import importlib.metadata
 import importlib.util
 import datetime as dt
@@ -27,20 +29,24 @@ import os
 import shutil
 import subprocess
 import sys
+import tempfile
 import threading
 import unittest
 import warnings
 from pathlib import Path
 from types import SimpleNamespace
-from unittest.mock import AsyncMock, patch
+from unittest.mock import AsyncMock, Mock, patch
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from lectern import bridge, refs, webedition  # noqa: E402
 from lectern.repo import Refused  # noqa: E402
+from _product_data import data_path
 
-STRUCTURE = ROOT / "src" / "web" / "data" / "structure"
+
+def structure_path(relative):
+    return data_path("structure/" + relative)
 
 NODE = shutil.which("node")
 TEXTUAL = importlib.util.find_spec("textual") is not None
@@ -95,7 +101,7 @@ class SurfaceMetadataTests(unittest.TestCase):
 class CatenaAdapterTests(unittest.TestCase):
     def test_the_chain_is_the_spines_own_order(self) -> None:
         view = bridge.call("catena", "view", "Gen", 1, "", "")
-        spine = json.loads((STRUCTURE / "catena" / "01-gen" / "001.json").read_text(encoding="utf-8"))
+        spine = json.loads(structure_path("catena/01-gen/001.json").read_text(encoding="utf-8"))
         self.assertEqual(
             [row["id"] for row in view["chain"]["fragments"]],
             [row["id"] for row in spine["fragments"]],
@@ -177,11 +183,15 @@ class LiturgyAdapterTests(unittest.TestCase):
         self.assertEqual((opening["defaultBible"], opening["defaultOrations"]), ("douay-rheims", "la"))
 
     def test_a_missing_translation_is_said_at_the_text_and_the_latin_kept(self) -> None:
-        # Pentecost II remains an explicit English gap with held target Latin.
-        view = bridge.call("liturgy", "day", "roman-1962", "2026-06-07", {"orations": "en"})
+        # Lasance supplies this Mass's Secret and Postcommunion, while its
+        # Collect is absent. The project study English must not fill that gap.
+        view = bridge.call("liturgy", "day", "roman-1962", "2026-06-07", {
+            "orations": "en",
+            "witness": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+        })
         collect = next(event for event in view["rows"][0]["events"] if event.get("slot") == "Collect")
         said = [" ".join(run["text"] for run in block["runs"]) for block in collect["blocks"]]
-        self.assertTrue(any("English translation unavailable" in line for line in said), said)
+        self.assertTrue(any("No English text is available from the selected witness" in line for line in said), said)
         self.assertTrue(any("The Latin original is shown." in line for line in said), said)
         self.assertTrue(any("Sancti nominis tui" in line for line in said), said)
 
@@ -237,7 +247,7 @@ class PortedPageLogicTests(unittest.TestCase):
 
     def test_the_catalogue_shows_every_record_unfiltered(self) -> None:
         view = bridge.call("history", "catalogue", {})
-        catalogue = json.loads((STRUCTURE / "act-history" / "catalogue.json").read_text())
+        catalogue = json.loads(structure_path("act-history/catalogue.json").read_text())
         expected = {row["id"] for row in catalogue["entries"]}
         shown = [row["id"] for section in view["sections"] for row in section["rows"]]
         self.assertCountEqual(shown, expected)
@@ -254,6 +264,12 @@ class PortedPageLogicTests(unittest.TestCase):
 
 @unittest.skipUnless(NODE, "node is not installed; the reader's derivations run the browser's models under node")
 class BridgeTests(unittest.TestCase):
+    def test_direct_bridge_start_requires_a_verified_snapshot(self) -> None:
+        done = subprocess.run([NODE, str(bridge.BRIDGE)], input="", capture_output=True,
+                              text=True, cwd=ROOT, timeout=10)
+        self.assertNotEqual(done.returncode, 0)
+        self.assertIn("a verified browser-product snapshot is required", done.stderr)
+
     def test_an_adapter_name_cannot_reach_another_file(self) -> None:
         with self.assertRaises(Refused):
             bridge.call("../bridge", "view")
@@ -335,7 +351,7 @@ class TextsAdapterTests(unittest.TestCase):
         found = bridge.call("texts", "find", {"edition": "claude", "reading": "browser", "find": "origen"})
         # 216 since the All Saints studies (a141a9185, 215) and the Claude
         # All Saints documents (04561be42, 216).
-        self.assertEqual(found["tally"], "1 work · 1 document · 18 pages of 216")
+        self.assertEqual(found["tally"], "1 work · 1 document · 0 pages of 216")
 
 
 @unittest.skipUnless(NODE, "node is not installed; the reader's derivations run the browser's models under node")
@@ -450,7 +466,7 @@ class DrawingTests(unittest.TestCase):
         "catena": "▸ Basil of Caesarea",
         "scripture": "The Full Account",
         "texts": "154 works",  # 154 since the All Saints studies (a141a9185)
-        "sources": f"{json.loads((STRUCTURE / 'sources' / 'index.json').read_text())['counted']['works']:,} works",
+        "sources": lambda: f"{json.loads(structure_path('sources/index.json').read_text())['counted']['works']:,} works",
         "history": "How the Missal Changed",
         "law": "The Code, Canon by Canon",
     }
@@ -463,7 +479,8 @@ class DrawingTests(unittest.TestCase):
                 drawn = self.snapshot("--surface", kind.surface_id(), "--date", "2026-10-22", "--ref", "Gen 1")
                 self.assertNotIn("could not be opened", drawn)
                 self.assertNotIn("Traceback", drawn)
-                self.assertIn(self.LANDMARKS[kind.surface_id()], drawn)
+                expected = self.LANDMARKS[kind.surface_id()]
+                self.assertIn(expected() if callable(expected) else expected, drawn)
 
     def test_a_drawing_depends_on_its_arguments_and_not_the_clock(self) -> None:
         first = self.snapshot("--surface", "day", "--date", "2026-10-22")
@@ -815,7 +832,8 @@ class SnapshotCLIRegressionTests(unittest.TestCase):
             self.assertEqual(_lectern_tool().main(["snapshot"]), 70)
         self.assertEqual(out.getvalue(), "")
         self.assertEqual(err.getvalue(), "lectern: snapshot did not settle\n")
-        close.assert_called_once_with()
+        close.assert_any_call()
+        self.assertIsNone(bridge.BRIDGE_PROCESS.process)
         self.assertFalse(app.is_running)
         if process is not None:
             self.assertIsNotNone(process.poll())
@@ -1003,6 +1021,186 @@ class SnapshotBusyBridgeTests(unittest.TestCase):
 
 @unittest.skipUnless(NODE, "node is required to verify bridge restart against the real model")
 class BridgeLifetimeTests(unittest.TestCase):
+    def test_process_exit_verifies_before_private_cleanup_including_restart(self) -> None:
+        scratch = ROOT / ".scratch/next-product-consumers"
+        scratch.mkdir(parents=True, exist_ok=True)
+        program = r'''
+import atexit,json,subprocess,sys,tempfile
+from contextlib import contextmanager
+from pathlib import Path
+from types import SimpleNamespace
+sys.path.insert(0,str(Path(sys.argv[1])/"scripts"))
+from lectern import bridge
+from lectern.repo import Refused
+work=Path(sys.argv[2])
+children=[]
+def emergency_reap():
+    for process in children:
+        if process.poll() is None: process.kill()
+        process.wait(timeout=5)
+atexit.register(emergency_reap)
+@contextmanager
+def products(root):
+    temporary=tempfile.TemporaryDirectory(dir=work,prefix="private-")
+    private=Path(temporary.name)
+    payload=private/"control.json"
+    payload.write_bytes(b'{"control":"exact"}')
+    # Model a new snapshot registering its own cleanup on every acquisition.
+    # The bridge must move its verifier ahead of it after every restart.
+    cleanup=temporary.cleanup
+    atexit.register(cleanup)
+    try:
+        yield SimpleNamespace(data_root=private)
+        assert payload.read_bytes()==b'{"control":"exact"}', "snapshot removed before verification"
+        assert children[-1].poll() is not None, "live child lost its snapshot"
+        with (work/"verified.jsonl").open("a") as stream:
+            stream.write(json.dumps({"path":str(private),"child_exit":children[-1].returncode})+"\n")
+    finally:
+        atexit.unregister(cleanup)
+        temporary.cleanup()
+bridge.verified_products=products
+client=bridge.Bridge()
+for attempt in range(int(sys.argv[3])):
+    try:
+        client.call("page-slice","unexported")
+    except Refused as error:
+        assert "has no unexported" in str(error), str(error)
+    else:
+        raise AssertionError("the real Node protocol did not refuse an unexported function")
+    children.append(client.process)
+    if attempt+1<int(sys.argv[3]): client.close()
+'''
+        for count in (1, 2):
+            with self.subTest(starts=count), tempfile.TemporaryDirectory(dir=scratch) as temporary:
+                directory = Path(temporary)
+                done = subprocess.run([sys.executable, "-B", "-c", program, str(ROOT), str(directory), str(count)],
+                                      capture_output=True, text=True, cwd=ROOT, timeout=30)
+                self.assertEqual(done.returncode, 0, done.stderr)
+                self.assertEqual(done.stderr, "")
+                verified = [json.loads(line) for line in (directory / "verified.jsonl").read_text().splitlines()]
+                self.assertEqual(len(verified), count)
+                self.assertTrue(all(row["child_exit"] is not None for row in verified))
+                self.assertFalse(list(directory.glob("private-*")))
+
+    def test_unconfirmed_teardown_keeps_the_child_snapshot_owned(self) -> None:
+        client = bridge.Bridge()
+        child = Mock()
+        child.poll.return_value = None
+        child.wait.side_effect = subprocess.TimeoutExpired("bridge", 5)
+        context, manager = Mock(), SimpleNamespace(__exit__=Mock())
+        client.process = child
+        client._products[child] = (context, manager)
+        with self.assertRaises(subprocess.TimeoutExpired):
+            client.close()
+        self.assertIs(client.process, child)
+        self.assertIn(child, client._products)
+        context.run.assert_not_called()
+        child.poll.return_value = -9
+        child.wait.side_effect = None
+        client.close()
+        self.assertIsNone(client.process)
+        self.assertFalse(client._products)
+        context.run.assert_called_once_with(manager.__exit__, None, None, None)
+
+    def test_verified_snapshot_lives_until_child_disposal_across_threads(self) -> None:
+        client = bridge.Bridge()
+        child = _pipe_child("import sys; sys.stdin.read()")
+        marker = ContextVar("lectern-test-snapshot", default=False)
+        outer = ContextVar("lectern-test-outer-snapshot", default="independent")
+        outer_token = outer.set("borrowed")
+        events = []
+
+        @contextmanager
+        def products(root):
+            self.assertEqual(root, ROOT)
+            self.assertEqual(outer.get(), "independent")
+            token = marker.set(True)
+            events.append("enter")
+            try:
+                yield SimpleNamespace(data_root=ROOT / ".scratch/next-product-consumers/private-data")
+            finally:
+                self.assertTrue(marker.get())
+                self.assertIsNotNone(child.poll())
+                marker.reset(token)
+                events.append("exit")
+
+        errors = []
+        def close():
+            try:
+                client.close()
+            except BaseException as error:
+                errors.append(error)
+
+        try:
+            with (patch.object(bridge, "verified_products", products),
+                  patch.object(bridge.subprocess, "Popen", return_value=child) as start):
+                client.process = client._start()
+                self.assertEqual(start.call_args.args[0][-1], str(ROOT / ".scratch/next-product-consumers/private-data"))
+                self.assertEqual(events, ["enter"])
+                self.assertFalse(marker.get())
+                closer = threading.Thread(target=close)
+                closer.start()
+                closer.join(timeout=5)
+                self.assertFalse(closer.is_alive())
+            self.assertEqual(errors, [])
+            self.assertEqual(events, ["enter", "exit"])
+            self.assertFalse(client._products)
+        finally:
+            outer.reset(outer_token)
+            client.close()
+            if child.poll() is None:
+                child.kill()
+            child.wait(timeout=5)
+
+    def test_unverified_products_refuse_before_a_child_is_started(self) -> None:
+        client = bridge.Bridge()
+        with (patch.object(bridge, "verified_products", side_effect=bridge.ProductError("missing descriptor")),
+              patch.object(bridge.subprocess, "Popen") as start,
+              self.assertRaisesRegex(Refused, "missing descriptor")):
+            client._start()
+        start.assert_not_called()
+        self.assertFalse(client._products)
+
+    def test_spawn_failure_releases_the_verified_snapshot(self) -> None:
+        client = bridge.Bridge()
+        events = []
+        @contextmanager
+        def products(root):
+            events.append("enter")
+            try:
+                yield SimpleNamespace(data_root=ROOT / ".scratch/next-product-consumers/private-data")
+            finally:
+                events.append("exit")
+        with (patch.object(bridge, "verified_products", products),
+              patch.object(bridge.subprocess, "Popen", side_effect=OSError("cannot spawn")),
+              self.assertRaisesRegex(OSError, "cannot spawn")):
+            client._start()
+        self.assertEqual(events, ["enter", "exit"])
+        self.assertFalse(client._products)
+
+    def test_final_product_failure_is_reported_after_the_child_is_reaped(self) -> None:
+        client = bridge.Bridge()
+        child = _pipe_child("import sys; sys.stdin.read()")
+        @contextmanager
+        def products(root):
+            yield SimpleNamespace(data_root=ROOT / ".scratch/next-product-consumers/private-data")
+            raise bridge.ProductError("rights inputs changed")
+        try:
+            with (patch.object(bridge, "verified_products", products),
+                  patch.object(bridge.subprocess, "Popen", return_value=child)):
+                client.process = client._start()
+            with self.assertRaisesRegex(Refused, "rights inputs changed"):
+                client.close()
+            self.assertIsNotNone(child.poll())
+            self.assertTrue(child.stdin.closed and child.stdout.closed)
+            self.assertIsNone(client.process)
+            self.assertFalse(client._products)
+        finally:
+            client.close()
+            if child.poll() is None:
+                child.kill()
+            child.wait(timeout=5)
+
     def test_protocol_refusals_preserve_ids_disposal_and_normal_restart(self) -> None:
         for mode, message in (("json", "not JSON"), ("id", "out of turn"),
                               ("refusal", "controlled refusal")):

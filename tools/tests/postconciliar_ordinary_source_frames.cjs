@@ -3,6 +3,8 @@
  * This probe makes no Chromium or visual-layout acceptance claim.
  */
 'use strict';
+const { repositoryPath } = require('./_product_data.cjs');
+
 
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
@@ -15,8 +17,7 @@ const A = require(path.join(root, 'src/web/browser/liturgy/reader-state-adapters
 const C = require(path.join(root, 'src/web/browser/liturgy/reader-state.js'));
 const S = require(path.join(root, 'src/web/browser/liturgy/ordinary-seating.js'));
 const dom = require(path.join(root, 'scripts/lectern/dom.js'));
-const structure = JSON.parse(fs.readFileSync(path.join(root,
-  'src/web/data/structure/propers/postconciliar.json'), 'utf8'));
+const structure = JSON.parse(fs.readFileSync(repositoryPath(root, 'src/web/data/structure/propers/postconciliar.json'), 'utf8'));
 const mass = structure.masses.find(row => row.key === 'most-holy-name-jesus');
 assert(mass, 'the real source-held Mass used for seating must exist');
 const form = mass.forms ? mass.forms.find(row => row.id === 'main') ||

@@ -13,6 +13,9 @@ import unittest
 from pathlib import Path
 
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE_READER = ROOT / "tools" / "source-reader"
 ARTIFACT_ROOT = (
@@ -24,14 +27,10 @@ MISSAL_ROOT = ROOT / "src/sources/works/catholic-church/missale-romanum/editions
 ANTIPHONARY_ROOT = MISSAL_ROOT / "2010-english-icel-antiphonary"
 CBCEW_ROOT = MISSAL_ROOT / "2011-english-cbcew-excerpts"
 ANTIPHONARY_PROJECTION = (
-    ROOT
-    / "src/web/data/structure/sources/editions/catholic-church/missale-romanum"
-    / "2010-2010-english-icel-antiphonary.json"
+    browser_data_root(ROOT) / 'structure/sources/editions/catholic-church/missale-romanum/2010-2010-english-icel-antiphonary.json'
 )
 CBCEW_PROJECTION = (
-    ROOT
-    / "src/web/data/structure/sources/editions/catholic-church/missale-romanum"
-    / "2011-2011-english-cbcew-excerpts.json"
+    browser_data_root(ROOT) / 'structure/sources/editions/catholic-church/missale-romanum/2011-2011-english-cbcew-excerpts.json'
 )
 TRANSLATION_LEDGER = (
     ROOT / "src/sources/inventories/postconciliar-proper-translations-v1.toml"

@@ -923,6 +923,11 @@ def main(argv=None, examples=None):
     prepare_install.add_argument("--review", action="append", type=Path, default=[])
     prepare_install.add_argument("--out", type=Path, default=ROOT / ".scratch/papal-install/prepared.json")
     prepare_install.add_argument("--json", action="store_true")
+    stage_inputs = verbs.add_parser("stage-inputs", description="Stage only exact input snapshots from a revalidated proposal; preserve installed PDFs and release",
+                                   formatter_class=argparse.RawDescriptionHelpFormatter)
+    with_examples(stage_inputs, examples.get("stage-inputs", ()))
+    stage_inputs.add_argument("--prepared", type=Path, required=True)
+    stage_inputs.add_argument("--json", action="store_true")
     install = verbs.add_parser("install", description="Install a reviewed preparation after revalidating its exact current inputs",
                                formatter_class=argparse.RawDescriptionHelpFormatter)
     with_examples(install, examples.get("install", ()))
@@ -935,8 +940,8 @@ def main(argv=None, examples=None):
     check_install.add_argument("--json", action="store_true")
     args = parser.parse_args(argv)
     try:
-        if args.verb in {"prepare-install", "install", "check-install"}:
-            from _papal_install import prepare_install, install_prepared, check_install, RELEASE
+        if args.verb in {"prepare-install", "stage-inputs", "install", "check-install"}:
+            from _papal_install import prepare_install, stage_prepared_inputs, install_prepared, check_install, RELEASE
             from _papal_collection import PapalCollectionError
             try:
                 if args.verb == "prepare-install":
@@ -944,6 +949,8 @@ def main(argv=None, examples=None):
                     payload = {"schema": prepared["schema"], "summary": prepared["summary"],
                                "prepared": os.path.relpath(args.out.resolve(), ROOT),
                                "sha256": hashlib.sha256(args.out.read_bytes()).hexdigest()}
+                elif args.verb == "stage-inputs":
+                    payload = stage_prepared_inputs(args.prepared)
                 elif args.verb == "install":
                     released = install_prepared(args.prepared)
                     payload = {"schema": released["schema"], "summary": released["summary"],
@@ -988,6 +995,8 @@ def main(argv=None, examples=None):
             print(f"collected: {summary['documents']} source editions; {summary['compiled']} compiled PDFs; {summary['layout_reviewed']} layout reviewed")
         elif args.verb == "plan":
             print(f"planned: {payload['summary']['selected']} current source editions; {payload['summary']['excluded']} obsolete selections excluded")
+        elif args.verb == "stage-inputs":
+            print(f"staged: {payload['staged']} exact input snapshots; {payload['already_present']} already present; PDFs and release unchanged")
         elif args.verb in {"prepare-install", "install"}:
             print(f"{'prepared' if args.verb == 'prepare-install' else 'installed'}: {payload['summary']['ready']} reviewed PDFs; {payload['summary']['current']} current source editions")
         elif args.verb == "check-install":

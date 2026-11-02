@@ -12,6 +12,9 @@ import unittest
 
 import yaml
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(os.environ.get("TRIPTYCH_RG110_TEST_REPOSITORY", Path(__file__).resolve().parents[2]))
 SOURCE = Path(os.environ.get("TRIPTYCH_RG110_TEST_SOURCE", ROOT / "src/sources/calendars/roman-1962/rubrics.yaml"))
 MODEL = Path(os.environ.get("TRIPTYCH_RG110_TEST_MODEL", ROOT / "src/web/browser/liturgy/assembly-model.js"))
@@ -59,7 +62,7 @@ class Rg110Diagnostic(unittest.TestCase):
                 "pairs": pairs,
             }
         cls.masses = tool.load_masses(ROOT / "src/sources/calendars", "roman-1962")
-        cls.rubrics = json.loads((ROOT / "src/web/data/structure/rubrics/roman-1962.json").read_text())
+        cls.rubrics = json.loads((browser_data_root(ROOT) / 'structure/rubrics/roman-1962.json').read_text())
         cls.rubrics["commemoration"] = copy.deepcopy(cls.source["commemoration"])
         cls.dates = ["2027-02-22", "2028-02-22", "2060-02-22", "2027-01-25", "2026-06-30",
                      "2026-02-22", "2026-01-25", "2030-06-30", "2026-06-29", "2027-02-23"]
@@ -70,7 +73,7 @@ class Rg110Diagnostic(unittest.TestCase):
 
     @classmethod
     def case(cls, date, identifier=None):
-        year = json.loads((ROOT / f"src/web/data/structure/calendar/roman-1962/{date[:4]}.json").read_text())
+        year = json.loads((browser_data_root(ROOT) / f"structure/calendar/roman-1962/{date[:4]}.json").read_text())
         return {"id": identifier or date, "date": date, "year": year, "rubrics": copy.deepcopy(cls.rubrics)}
 
     def branch(self, date):
@@ -170,6 +173,8 @@ class Rg110Diagnostic(unittest.TestCase):
 
     def test_reader_requires_explicit_raw_selection_and_preserves_each_prayer_body(self):
         harness = r"""
+const productFixturePath = file => require(require('path').join(process.argv[1], 'tools/tests/_product_data.cjs')).repositoryPath(process.argv[1], file);
+
 const fs = require('fs');
 const crypto = require('crypto');
 const A = require(process.argv[1] + '/src/web/browser/liturgy/reader-state-adapters.js');
@@ -177,7 +182,7 @@ let raw = '';
 process.stdin.on('data', one => raw += one);
 process.stdin.on('end', () => {
   const derived = JSON.parse(raw);
-  const structure = JSON.parse(fs.readFileSync(process.argv[1] + '/src/web/data/structure/propers/roman-1962.json'));
+  const structure = JSON.parse(fs.readFileSync(productFixturePath(process.argv[1] + '/src/web/data/structure/propers/roman-1962.json')));
   const fixture = JSON.parse(fs.readFileSync(process.argv[1] + '/tools/tests/fixtures/liturgy-reader-state/v1/day-roman-1962-2026-08-02.json'));
   const request = fixture.requested;
   request.civilDate = derived.date;

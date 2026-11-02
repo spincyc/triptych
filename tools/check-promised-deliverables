@@ -17,6 +17,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from _tooling import Example, with_examples  # noqa: E402
 import _artifact_store  # noqa: E402
+import _browser_products  # noqa: E402
 
 # Captured transcripts, never composed; see scripts/_tooling.py.
 EXAMPLES = {
@@ -24,13 +25,13 @@ EXAMPLES = {
         Example(
             "tools/check-promised-deliverables",
             (
-                "Promised-deliverable ledger valid: 85 tracked, 69 complete.",
+                "Promised-deliverable ledger valid: 102 tracked, 80 complete. Historical archived-PDF page checks: 3; no current render measured.",
             ),
         ),
         Example(
             "tools/check-promised-deliverables --ledger promised-deliverables.toml",
             (
-                "Promised-deliverable ledger valid: 85 tracked, 69 complete.",
+                "Promised-deliverable ledger valid: 102 tracked, 80 complete. Historical archived-PDF page checks: 3; no current render measured.",
             ),
             "the same ledger named explicitly; --ledger is how a candidate file is checked before it replaces the tracked one",
         ),
@@ -47,6 +48,21 @@ CHECKS = {"path_exists", "contains", "pdf_min_pages"}
 PRINT_ARCHIVE = Path("release/print-archive.json")
 PRINT_PAGES = Path("release/print-archive-pages.json")
 PRINT_PAGE_METHOD = "Page counts measured from each exact archived PDF with pdfinfo; historical render facts only."
+BROWSER_DATA = Path("src/web/data")
+
+
+def evidence_path(path: Path, products: _browser_products.VerifiedProducts | None) -> Path:
+    """Resolve logical generated evidence only through the held exact inventory."""
+    if products is None or not path.is_relative_to(BROWSER_DATA):
+        return ROOT / path
+    relative = path.relative_to(BROWSER_DATA).as_posix()
+    if relative in products.files:
+        return products.files[relative]
+    if products.files and (
+        relative == "." or any(name.startswith(relative + "/") for name in products.files)
+    ):
+        return products.data_root / path.relative_to(BROWSER_DATA)
+    raise ValueError(f"browser product evidence is not declared: {path}")
 
 
 def relative_path(value: object, label: str, errors: list[str]) -> Path | None:
@@ -154,6 +170,24 @@ def external_pdf_evidence() -> tuple[set[str], dict[str, int]]:
 
 
 def validate(ledger: Path, required: set[str]) -> list[str]:
+    """Hold verified products throughout every evidence and completion check."""
+    module = ROOT / "scripts/_browser_products.py"
+    descriptor = ROOT / _browser_products.MANIFEST_RELATIVE
+    declared = any(path.exists() or path.is_symlink() for path in (module, descriptor))
+    if not declared:
+        return _validate(ledger, required, None)
+    if not module.is_file() or module.is_symlink():
+        return ["browser products: require a regular scripts/_browser_products.py"]
+    try:
+        with _browser_products.verified_products(ROOT) as products:
+            return _validate(ledger, required, products)
+    except (OSError, ValueError) as exc:
+        return [f"browser products: {exc}; prepare the verified cache with tools/browser-products build"]
+
+
+def _validate(
+    ledger: Path, required: set[str], products: _browser_products.VerifiedProducts | None
+) -> list[str]:
     errors: list[str] = []
     try:
         external_pdfs, historical_pages = external_pdf_evidence()
@@ -238,7 +272,12 @@ def validate(ledger: Path, required: set[str]) -> list[str]:
             if status != "pass":
                 continue
             for path in evidence_paths:
-                if not (ROOT / path).exists() and path.as_posix() not in external_pdfs:
+                try:
+                    exists = evidence_path(path, products).exists()
+                except ValueError as exc:
+                    errors.append(f"{label}: missing evidence {path}: {exc}")
+                    continue
+                if not exists and path.as_posix() not in external_pdfs:
                     errors.append(f"{label}: missing evidence {path}")
             try:
                 if check == "contains":
@@ -248,7 +287,7 @@ def validate(ledger: Path, required: set[str]) -> list[str]:
                         errors.append(f"{label}: contains requires retained text evidence")
                     elif path is not None and (
                         not isinstance(needle, str)
-                        or needle not in (ROOT / path).read_text(encoding="utf-8")
+                        or needle not in evidence_path(path, products).read_text(encoding="utf-8")
                     ):
                         errors.append(f"{label}: required literal is absent from {path}")
                 elif check == "pdf_min_pages":

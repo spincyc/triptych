@@ -20,6 +20,7 @@ import re
 import tomllib
 
 import _typeset_papal as papal
+from _papal_input_receipt import InputRecords
 
 
 class PrintCatalogError(ValueError):
@@ -52,8 +53,11 @@ class _Records:
 
     def __init__(self, root):
         self.root, self.payloads, self.documents = root, {}, {}
+        self.snapshots = InputRecords(root)
 
     def read(self, value, pin=None):
+        _require(not str(value).startswith("release/papal-documents/inputs/"),
+                 "historical snapshots require explicit header/row extraction access")
         path = _path(self.root, value)
         if value not in self.payloads:
             try:
@@ -104,8 +108,8 @@ def _review(records, released):
     """Check retained all-page review evidence without touching its PDF output."""
     review_ref = released["review"]
     _require(review_ref.get("status") == "PASS", "papal reader lacks release PASS evidence")
-    audit = records.ref(review_ref["audit"])
-    review = audit["documents"][review_ref["audit"]["row_index"]]
+    audit = records.snapshots.header(review_ref["audit"])
+    review = records.snapshots.row(review_ref["audit"], review_ref["audit"]["row_index"])
     _require(_identity(review) == _identity(released) and review.get("status") == "PASS"
              and review.get("pdf_sha256") == released["pdf_sha256"]
              and review.get("pages") == released["pages"], "papal review identity disagrees")
@@ -144,7 +148,7 @@ def _review(records, released):
 
 
 def _current_plan(records, release, wanted):
-    plan = records.ref(release["source_plan"])
+    plan = records.snapshots.header(release["source_plan"])
     provenance = plan.get("selection_plan", {})
     _require(provenance.get("schema") == "triptych-papal-source-plan/v1",
              "papal release requires a frozen source-selection plan")
@@ -166,7 +170,7 @@ def _current_plan(records, release, wanted):
         for item in data.get("supersessions", []):
             _require(_identity(item.get("prior", {})) not in wanted,
                      "papal reader has a source supersession outside its frozen release")
-    return plan
+    return plan, records.snapshots.plan_rows(release["source_plan"])
 
 
 def _paragraphs(text):
@@ -204,17 +208,29 @@ def _papal_body(document, reader):
     return "\n".join(lines)
 
 
-def _papal_pages(root):
+def _papal_pages(root, *, data_root=None, data_source_paths=()):
     records = _Records(root)
     index_path, release_path = "src/web/data/encyclicals/index.json", "release/papal-documents.json"
-    if not (root / index_path).exists():
+    generated_index = (Path(data_root) / "encyclicals/index.json") if data_root is not None else root / index_path
+    if data_root is not None:
+        _require(generated_index.is_file(), "verified browser products omit the declared encyclicals index")
+        _require(bool(data_source_paths), "verified browser products require canonical source input declarations")
+        for value in data_source_paths:
+            _path(root, value)
+            _require(not value.startswith(("build/", ".scratch/")),
+                     "browser product inputs must name canonical source declarations")
+    if not generated_index.exists():
+        _require(not (root / "src/sources/papal-documents/encyclicals-index.json").exists(),
+                 "declared encyclicals require a verified browser-product data root")
         return {}  # This artifact declares no papal reader admissions.
-    index, release = records.json(index_path), records.json(release_path)
+    index = json.loads(generated_index.read_bytes()) if data_root is not None else records.json(index_path)
+    release = records.json(release_path)
     readers = [reader for act in index["encyclicals"] for reader in act["readers"]]
     _require(len(readers) == index["counts"]["readers"], "papal browser reader count disagrees")
     wanted = {(row["release_id"], row["language"]) for row in readers}
     _require(len(wanted) == len(readers), "duplicate papal browser reader")
-    current = _indexed(_current_plan(records, release, wanted)["documents"], "source plan")
+    plan_header, plan_rows = _current_plan(records, release, wanted)
+    current = _indexed(plan_rows, "source plan")
     installed = _indexed(release["documents"], "release")
     pages = {}
     for reader in readers:
@@ -225,13 +241,13 @@ def _papal_pages(root):
                  and reader["pages"] == row["pages"], "papal browser/release identity disagrees")
         _require(reader["extent"] in {"complete", "fragment", "damaged"}, "unknown papal source extent")
         source = row["source"]
-        manifest = records.ref(row["manifest"])
-        frozen = manifest["documents"][row["manifest"]["row_index"]]
+        manifest = records.snapshots.header(row["manifest"])
+        frozen = records.snapshots.row(row["manifest"], row["manifest"]["row_index"])
         _require(_canonical(_normalized(frozen, manifest)) == _canonical(source)
                  and _canonical(_normalized(current[key], {"revision": source["revision"]})) == _canonical(source),
                  "papal release source bounds disagree with frozen/current selection")
-        receipt = records.ref(row["receipt"])
-        rendered = receipt["documents"][row["receipt"]["row_index"]]
+        receipt = records.snapshots.header(row["receipt"])
+        rendered = records.snapshots.row(row["receipt"], row["receipt"]["row_index"])
         _require(_identity(rendered) == key and rendered.get("status") == "compiled"
                  and rendered.get("pdf_sha256") == row["pdf_sha256"]
                  and rendered.get("pages") == row["pages"]
@@ -254,13 +270,15 @@ def _papal_pages(root):
         route = f"papal-documents/{relative_pdf.stem}.html"
         source_paths = {"scripts/_print_catalog.py", "scripts/_typeset_papal.py",
             "src/sources/inventories/papal-documents-rights-v1.toml", "LICENSE", "THIRD_PARTY.md",
-            index_path, release_path, source["text_path"],
+            release_path, source["text_path"],
             str(PurePosixPath(source["text_path"]).parent / "artifact.toml"),
-            release["source_plan"]["path"], row["manifest"]["path"], row["receipt"]["path"],
-            row["review"]["audit"]["path"]}
+            }
+        source_paths.update(data_source_paths if data_root is not None else (index_path,))
+        source_paths.update(records.snapshots.inputs_for(
+            release["source_plan"], row["manifest"], row["receipt"], row["review"]["audit"]))
         source_paths.update(item["path"] for item in row["review"]["reports"].values())
         source_paths.update(item["path"] for item in
-            records.ref(release["source_plan"])["selection_plan"]["inputs"])
+            plan_header["selection_plan"]["inputs"])
         if source.get("segment_path"):
             source_paths.add(source["segment_path"])
             source_paths.add(str(PurePosixPath(source["segment_path"]).parents[1] / "edition.toml"))
@@ -451,14 +469,14 @@ def _reading_plan_pages(root):
     return pages
 
 
-def source_pages(root):
+def source_pages(root, *, data_root=None, data_source_paths=()):
     """Every admitted source reader and issued reading-plan track, or an error.
 
     No PDF needs to exist.  A missing, changed, withdrawn or unbound source is
     a build failure, never an empty reader or a silently shortened catalogue.
     """
     root = Path(root).resolve()
-    return {**_papal_pages(root), **_reading_plan_pages(root)}
+    return {**_papal_pages(root, data_root=data_root, data_source_paths=data_source_paths), **_reading_plan_pages(root)}
 
 
 def legacy_pdf_routes(root):

@@ -262,11 +262,92 @@ metadata references without promising a local text or historical PDF.
 
 Canonical source text, reading selections, their rights basis, and the
 mechanical recipes are the durable deliverable. `release/papal-documents.json`
-and its hash-addressed inputs under `release/papal-documents/inputs/` preserve
-the historical installed-reader identities and inspection evidence; no
-historical PDF hash or review extent may be manufactured, refreshed to a new
+preserves the historical installed-reader identities and inspection evidence;
+its frozen input snapshots use the separate exact delivery contract below.
+No historical PDF hash or review extent may be manufactured, refreshed to a new
 render, or treated as source verification. These records are not additional
 historical witnesses. Retain them without machine paths or runtime identifiers.
+
+### Frozen input snapshots and compact records
+
+`release/papal-documents/input-delivery.json` describes the exact historical
+JSON and JSONL snapshots formerly under `release/papal-documents/inputs/`.
+`tools/snapshot-store` preserves their whole-file hashes, sizes, archive/member
+identities and delivery routes separately from source-library artifacts. It
+covers unreferenced snapshots as well as current release inputs. Those bytes
+are preserved evidence, not a disposable browser cache; physical relocation
+does not alter the raw release JSON, source pins or historical review facts.
+
+Routine checks use `release/papal-documents/input-records.json` and its shards
+under `release/papal-documents/input-records/`. The mechanical extraction binds
+the exact release identity and original whole-file hashes/sizes, retains complete
+headers and complete required rows at their unchanged original row indices,
+and records the original document counts. A selected row never becomes a
+renumbered or padded replacement `documents` array. The extraction is marked
+`editorial_approval = false`; it attests exact historical records, not new
+research, source verification, permission, or page inspection.
+
+`python3 scripts/_papal_input_receipt.py check` checks the current plan and the
+release's semantic, revision, PASS, page-report and reuse relationships against
+those attested records. It neither opens raw snapshots/PDFs nor fetches them.
+`record` independently verifies exact originals before writing the index and
+shards; a detached row plus a whole-file hash alone is not extraction proof.
+
+Full original-byte verification is explicit:
+
+```sh
+tools/snapshot-store check --archives --archive-dir .scratch/papal-input-packs
+tools/snapshot-store hydrate --all --archive-dir .scratch/papal-input-packs
+python3 scripts/_papal_input_receipt.py audit
+```
+
+The audit verifies every declared original byte stream and compares extracted
+headers/rows with their controlling originals. Missing originals may be obtained
+from registered delivery routes only through explicit `audit --fetch` or
+`snapshot-store hydrate --fetch`. A normal build or metadata check does not require that
+archive. Before deleting a snapshot, verify exact complete pack coverage and
+the extraction contract. Advertise an archive route only after delivery is
+verified. No original-byte audit renews the historical editorial or visual PASS.
+
+### Explicit input staging for reviewed print maintenance
+
+A new optional reviewed print installation follows this order:
+
+1. Run `typeset-papal prepare-install` and inspect its scratch proposal.
+   The proposal must bind the current source plan, exact rendered bytes and
+   complete page-review evidence.
+2. Run `tools/typeset-papal stage-inputs --prepared
+   .scratch/papal-install/prepared.json`. Staging regenerates and compares the
+   proposal, repeating the source, PDF-fidelity and review checks. It writes
+   only the proposal's exact hash-addressed JSON/JSONL input snapshots under
+   ignored `release/papal-documents/inputs/`. Installed PDFs, the release
+   record, reports, delivery declarations and extraction records stay unchanged.
+   Existing matching snapshots are preserved; collisions, symlinks or changed
+   inputs are refused, and a staging failure rolls back its new snapshots.
+3. Inventory and pack those inputs while retaining every previously declared
+   historical snapshot, including unreferenced ones. Previously externalized
+   originals must be available in the verified local cache for repacking;
+   restore them explicitly when needed. Verify the complete offline pack,
+   publish it through the separately authorized archive workflow, and verify
+   each published archive against its recorded hash and size at its registered
+   delivery URL. Update `input-delivery.json` before installation. Packing and
+   staging do not upload anything.
+4. Run `typeset-papal install --prepared` with the inspected proposal.
+   Installation revalidates the proposal and refuses undeclared input references
+   before changing installed bytes. It does not accept an unregistered raw
+   snapshot as delivery evidence.
+5. Run `python3 scripts/_papal_input_receipt.py record`, then `audit` and
+   `check`, and the explicit `typeset-papal check-install --plan` byte check.
+   Refresh the governed browser products and release bindings, then run the
+   owning publication gates before publishing a source checkpoint.
+
+Routine metadata checks intentionally fail between declaration, installation
+and extraction updates. Keep publication closed until the new extraction binds
+the exact new release and the final gates pass. Staging, archive declaration
+and newly rendered bytes confer no source admission, visual PASS or publication
+approval. Old snapshots and review facts remain preserved throughout.
+
+### Current reader delivery
 
 The source-first publication policy supersedes the former tracked
 `pdf/papal-documents/` exception. Historical PDF bytes use the exact-artifact

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from contextlib import contextmanager
 import hashlib
 import importlib.machinery
 import importlib.util
@@ -10,9 +11,11 @@ import json
 import os
 from pathlib import Path
 import py_compile
+import shutil
 import subprocess
 import sys
 import tempfile
+from types import SimpleNamespace
 import unittest
 from unittest import mock
 
@@ -29,7 +32,7 @@ loader.exec_module(reader)
 
 class ProjectionReceiptTests(unittest.TestCase):
     def setUp(self):
-        scratch = ROOT / ".scratch/source-projection-receipt"
+        scratch = ROOT / ".scratch/next-source-receipt"
         scratch.mkdir(parents=True, exist_ok=True)
         self.temporary = tempfile.TemporaryDirectory(dir=scratch, prefix="test-")
         self.addCleanup(self.temporary.cleanup)
@@ -47,9 +50,9 @@ class ProjectionReceiptTests(unittest.TestCase):
             "src/web/browser/sources/reader-model.js": "browser schema\n",
         }.items():
             self.write(name, value)
-        self.target = self.root / "src/web/data/structure/sources"
-        self.write("src/web/data/structure/sources/index.json", '{"schema":"fixture"}\n')
-        self.write("src/web/data/structure/sources/text/passage.example.json", '{"text":"Held wording"}\n')
+        self.target = self.root / ".scratch/committed-products/structure/sources"
+        self.write(".scratch/committed-products/structure/sources/index.json", '{"schema":"fixture"}\n')
+        self.write(".scratch/committed-products/structure/sources/text/passage.example.json", '{"text":"Held wording"}\n')
         (self.root / "src/sources/inventories").mkdir(parents=True)
         subprocess.run(["git", "-C", str(self.root), "add", "."], check=True)
 
@@ -71,15 +74,166 @@ class ProjectionReceiptTests(unittest.TestCase):
     def check(self):
         return proof.check_receipt(self.root, self.target, reader.SCHEMA)
 
+    @contextmanager
+    def verified(self, root, *, cache_root=None, product_ids=None):
+        self.assertEqual(root, self.root)
+        self.assertEqual(product_ids, ["sources"])
+        self.verified_live = True
+        try:
+            yield SimpleNamespace(data_root=self.target.parent.parent, products_identity="a" * 64)
+        finally:
+            self.verified_live = False
+
+    def arguments(self, **values):
+        return argparse.Namespace(**{"out": None, "cache_root": None, "check": False,
+                                     "check_receipt": False, "record_receipt": False, **values})
+
     def test_fast_check_never_loads_graph_or_launches_full_replay(self):
         self.make_receipt()
-        arguments = argparse.Namespace(out=reader.DEFAULT_OUT, check=False,
-                                       check_receipt=True, record_receipt=False)
-        with mock.patch.object(reader, "ROOT", self.root), mock.patch.object(reader, "load", side_effect=AssertionError("graph loaded")), mock.patch.object(proof, "record_receipt", side_effect=AssertionError("full replay")):
+        arguments = self.arguments(check_receipt=True, cache_root=".scratch/selected-cache")
+        with mock.patch.object(reader, "ROOT", self.root), mock.patch.object(reader, "load", side_effect=AssertionError("graph loaded")), mock.patch.object(proof, "record_receipt", side_effect=AssertionError("full replay")), mock.patch("_browser_products.verified_products", side_effect=self.verified) as held:
             answer = reader.run_structure(arguments)
+        held.assert_called_once_with(self.root, cache_root=".scratch/selected-cache", product_ids=["sources"])
         self.assertEqual(answer["status"], "ok")
         self.assertEqual(answer["files"], 2)
+        self.assertEqual(answer["current"], "structure/sources")
+        self.assertEqual(answer["products_identity"], "a" * 64)
         self.assertFalse(answer["editorial_approval"])
+
+    def test_record_cli_holds_verified_selected_family_for_the_full_operation(self):
+        candidate = self.make_receipt()
+
+        def record(root, target, schema, *, write):
+            self.assertTrue(self.verified_live)
+            self.assertEqual((root, target, schema), (self.root, self.target, reader.SCHEMA))
+            self.assertFalse(write)
+            return candidate
+
+        def commit(root, value):
+            self.assertFalse(self.verified_live)
+            self.assertEqual((root, value), (self.root, candidate))
+
+        with mock.patch.object(reader, "ROOT", self.root), mock.patch("_browser_products.verified_products", side_effect=self.verified), mock.patch.object(proof, "record_receipt", side_effect=record), mock.patch.object(proof, "write_receipt", side_effect=commit) as written:
+            answer = reader.run_structure(self.arguments(record_receipt=True))
+        written.assert_called_once()
+        self.assertFalse(self.verified_live)
+        self.assertTrue(answer["receipt_recorded"])
+
+    def test_bad_committed_cache_never_falls_back_to_working_or_legacy_data(self):
+        from _browser_products import ProductError
+        self.make_receipt()
+        with mock.patch.object(reader, "ROOT", self.root), mock.patch("_browser_products.verified_products", side_effect=ProductError("committed cache is corrupt")), mock.patch.object(proof, "check_receipt", side_effect=AssertionError("unverified fallback")), self.assertRaisesRegex(reader.ReaderError, "committed cache is corrupt"):
+            reader.run_structure(self.arguments(check_receipt=True))
+
+    def test_receipt_check_uses_a_real_committed_family_without_old_snapshot(self):
+        import _browser_products as products
+        self.make_receipt()
+        shutil.rmtree(self.target.parent.parent)
+        (self.root / "release").mkdir()
+        cache = self.root / ".scratch/sealed-cache"
+        recipes = [{"id": "sources", "version": 1, "output_prefixes": ["structure/sources"],
+                    "argv": ["tools/source-reader", "structure", "--strict"],
+                    "input_trees": ["src/sources", "src/gpt"], "input_files": [], "exclude_paths": []}]
+
+        def generate(root, out, product_ids=None):
+            self.assertEqual(product_ids, ["sources"])
+            for name, body in (("index.json", '{"schema":"fixture"}\n'),
+                               ("text/passage.example.json", '{"text":"Held wording"}\n')):
+                target = out / "structure/sources" / name
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_text(body)
+
+        with mock.patch.object(products, "_recipes", return_value=recipes), mock.patch.object(products, "_generate", side_effect=generate):
+            manifest = products.record(self.root, cache_root=cache)
+            with mock.patch.object(reader, "ROOT", self.root), mock.patch.object(reader, "load", side_effect=AssertionError("graph loaded")), mock.patch.object(products, "_generate", side_effect=AssertionError("implicit generation")):
+                answer = reader.run_structure(self.arguments(check_receipt=True, cache_root=str(cache)))
+        self.assertEqual(answer["status"], "ok")
+        self.assertEqual(answer["products_identity"], products.products_identity(manifest))
+        self.assertFalse(self.target.exists())
+        self.assertFalse((self.root / "src/web/data").exists())
+
+    def test_verification_failure_on_context_exit_prevents_success(self):
+        from _browser_products import ProductError
+        self.make_receipt()
+
+        @contextmanager
+        def changed(*args, **kwargs):
+            with self.verified(*args, **kwargs) as held:
+                yield held
+            raise ProductError("cache changed during receipt check")
+
+        with mock.patch.object(reader, "ROOT", self.root), mock.patch("_browser_products.verified_products", side_effect=changed), self.assertRaisesRegex(reader.ReaderError, "cache changed"):
+            reader.run_structure(self.arguments(check_receipt=True))
+
+    def test_failed_product_context_never_commits_a_prepared_receipt(self):
+        from _browser_products import ProductError
+        candidate = self.make_receipt()
+        prior = (self.root / proof.RECEIPT_PATH).read_bytes()
+
+        @contextmanager
+        def changed(*args, **kwargs):
+            with self.verified(*args, **kwargs) as held:
+                yield held
+            raise ProductError("descriptor changed before commit")
+
+        with mock.patch.object(reader, "ROOT", self.root), mock.patch("_browser_products.verified_products", side_effect=changed), mock.patch.object(proof, "record_receipt", return_value=candidate), mock.patch.object(proof, "write_receipt") as written, self.assertRaisesRegex(reader.ReaderError, "descriptor changed before commit"):
+            reader.run_structure(self.arguments(record_receipt=True))
+        written.assert_not_called()
+        self.assertEqual((self.root / proof.RECEIPT_PATH).read_bytes(), prior)
+
+    def test_receipt_flags_reject_an_arbitrary_working_output(self):
+        for flag in ("check_receipt", "record_receipt"):
+            with self.subTest(flag=flag), self.assertRaisesRegex(reader.ReaderError, "use --cache-root"):
+                reader.run_structure(self.arguments(out="unverified-output", **{flag: True}))
+
+    def test_output_and_receipt_options_keep_their_values_before_the_verb(self):
+        def parse(**values):
+            return values["parser"].parse_args(values["argv"])
+
+        with mock.patch.object(reader, "run_verb_cli", side_effect=parse):
+            selected = reader.main(["--cache-root", "chosen-cache", "--check-receipt", "structure"])
+            output = reader.main(["--out", "chosen-output", "structure"])
+        self.assertEqual(selected.cache_root, "chosen-cache")
+        self.assertTrue(selected.check_receipt)
+        self.assertEqual(output.out, "chosen-output")
+
+    def test_cold_producer_needs_no_descriptor_or_previous_projection(self):
+        target = self.root / ".scratch/new-working-data"
+        with mock.patch.object(reader, "ROOT", self.root), mock.patch.object(reader, "load", return_value=object()), mock.patch.object(reader, "corpus", return_value=[]), mock.patch("_browser_products.load_manifest", side_effect=AssertionError("old descriptor required")):
+            answer = reader.run_structure(self.arguments(out=str(target)))
+            checked = reader.run_structure(self.arguments(out=str(target), check=True))
+        self.assertEqual(answer["status"], "ok")
+        self.assertEqual(checked["status"], "ok")
+        self.assertEqual(answer["files"], 1)
+        self.assertTrue((target / "structure/sources/index.json").is_file())
+        self.assertFalse((self.root / "src/web/data").exists())
+
+    def test_default_producer_uses_the_shared_unsealed_working_root(self):
+        selected = self.root / ".scratch/selected-cache"
+        with mock.patch.dict(os.environ, {"TRIPTYCH_BROWSER_DATA_ROOT": str(selected)}), mock.patch.object(reader, "ROOT", self.root), mock.patch.object(reader, "load", return_value=object()), mock.patch.object(reader, "corpus", return_value=[]):
+            reader.run_structure(self.arguments())
+        self.assertTrue((selected.with_name("selected-cache-work") / "structure/sources/index.json").is_file())
+        self.assertFalse(selected.exists())
+
+    def test_ordinary_producer_cannot_modify_sealed_cache(self):
+        selected = self.root / ".scratch/selected-cache"
+        with mock.patch.dict(os.environ, {"TRIPTYCH_BROWSER_DATA_ROOT": str(selected)}), mock.patch.object(reader, "ROOT", self.root), mock.patch.object(reader, "load", side_effect=AssertionError("generator should not run")), self.assertRaisesRegex(reader.ReaderError, "outside the sealed"):
+            reader.run_structure(self.arguments(out=str(selected / "key/data")))
+        self.assertFalse(selected.exists())
+
+    def test_old_sealed_cache_stays_protected_after_environment_change(self):
+        original = self.root / ".scratch/old-cache"
+        self.write(".scratch/old-cache/.browser-products-cache-v1", "")
+        with mock.patch.dict(os.environ, {"TRIPTYCH_BROWSER_DATA_ROOT": str(self.root / ".scratch/new-cache")}), mock.patch.object(reader, "ROOT", self.root), self.assertRaisesRegex(reader.ReaderError, "outside the sealed"):
+            reader.run_structure(self.arguments(out=str(original / "key/data")))
+
+    def test_product_descriptors_and_old_generated_snapshots_are_not_inputs(self):
+        before = proof.input_identity(self.root)
+        self.write("release/browser-products.json", '{"mechanical":"descriptor"}')
+        self.write("src/web/data/structure/sources/old.json", '{"old":"snapshot"}')
+        self.assertEqual(before, proof.input_identity(self.root))
+        (self.root / "src/web/data/structure/sources/old.json").unlink()
+        self.assertEqual(before, proof.input_identity(self.root))
 
     def test_same_size_source_edit_with_restored_mtime_is_stale(self):
         self.make_receipt()
@@ -351,6 +505,7 @@ class ProjectionReceiptTests(unittest.TestCase):
             self.assertIn("--check", command)
             self.assertIn("--strict", command)
             self.assertNotIn("--check-receipt", command)
+            self.assertEqual(Path(command[command.index("--out") + 1]), self.target.parent.parent)
             self.assertIn("-B", command)
             self.assertIn("-X", command)
             self.assertTrue(any(value.startswith("pycache_prefix=") for value in command))
@@ -376,6 +531,13 @@ class ProjectionReceiptTests(unittest.TestCase):
         with self.replay():
             recorded = proof.record_receipt(self.root, self.target, reader.SCHEMA)
         self.assertEqual(recorded, self.check())
+
+    def test_prepared_proof_does_not_write_until_its_owner_commits(self):
+        with self.replay():
+            candidate = proof.record_receipt(self.root, self.target, reader.SCHEMA, write=False)
+        self.assertFalse((self.root / proof.RECEIPT_PATH).exists())
+        proof.write_receipt(self.root, candidate)
+        self.assertEqual(candidate, self.check())
 
     def test_record_refuses_source_mutation_during_full_check(self):
         with self.replay(mutation=lambda: self.write(self.source, "changed during replay")), self.assertRaisesRegex(proof.ReceiptError, "changed during replay"):

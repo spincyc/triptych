@@ -25,6 +25,9 @@ from pathlib import Path
 
 import yaml
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 CALENDARS = ROOT / "src" / "sources" / "calendars"
 PLACEHOLDER_TEXT = (
@@ -523,7 +526,7 @@ class PostconciliarContentIntegrityTest(unittest.TestCase):
             public_status, {"state": "partial", "scope": "missal-formulary"}
         )
         structure = json.loads(
-            (ROOT / "src/web/data/structure/propers/postconciliar.json").read_text()
+            (browser_data_root(ROOT) / 'structure/propers/postconciliar.json').read_text()
         )
         # Use this Mass's actual public reading events, with the source-owned
         # status projected by the same function used by calendar_structure.

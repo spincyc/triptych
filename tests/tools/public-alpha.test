@@ -136,58 +136,66 @@ def write(path, payload):
     path.write_text(json.dumps(payload) + "\n", encoding="utf-8")
 
 
-# The real repository: every edition the data root carries is an edition
-# bibles.json offers. Knox is retrieved outside the tree precisely because it
-# may not be republished, and so is offered by no manifest.
-offered = set(tool.offered_bible_ids())
-assert offered, "the repository manifest offers no editions"
-assert "knox" not in offered, offered
-assert tool.data_root_edition_ids(tool.web_data_files()) == offered
-real_copied_inputs = {
-    path.relative_to(tool.ROOT).as_posix()
-    for path in tool.web_data_files().values()
-}
-real_bound_inputs = tool.site_source_paths()
-assert real_copied_inputs <= real_bound_inputs, sorted(
-    real_copied_inputs - real_bound_inputs
-)
+# The real repository uses prepared products with a private snapshot held for
+# this entire read. Only offered Bible editions may reach logical data routes.
+with tool.held_repository_inputs():
+    products = tool.held_browser_products()
+    assert products is not None, "the repository declares no browser products"
+    offered = set(tool.offered_bible_ids())
+    assert offered, "the repository manifest offers no editions"
+    assert "knox" not in offered, offered
+    real_files = tool.web_data_files()
+    assert tool.data_root_edition_ids(real_files) == offered
 
-# Exercise the approval inventory itself, not only its path classifier: every
-# copied browser/data input must reach the exact-byte site-source closure.
-real_structure_prefix = tool.WEB_DATA_ROOT_RELATIVE / "structure"
-real_structure_expected = {
-    path.relative_to(tool.ROOT).as_posix()
-    for path in (tool.ROOT / real_structure_prefix).rglob("*.json")
-    if path.is_file() and not path.is_symlink()
-}
-real_structure_bound = {
-    relative
-    for relative in tool.site_source_paths()
-    if relative.startswith(real_structure_prefix.as_posix() + "/")
-}
-assert real_structure_bound == real_structure_expected, (
-    sorted(real_structure_bound - real_structure_expected),
-    sorted(real_structure_expected - real_structure_bound),
-)
-real_browser_expected = {
-    path.relative_to(tool.ROOT).as_posix()
-    for directory in tool.WEB_BROWSER_DIRECTORIES
-    for path in (tool.ROOT / tool.WEB_BROWSER_ROOT_RELATIVE / directory).glob("*")
-    if path.is_file() and not path.is_symlink() and path.suffix in (".html", ".css", ".js")
-}
-real_browser_expected |= {
-    "src/web/browser/shared/fonts/OFL-Junicode.txt",
-    "src/web/browser/shared/fonts/triptych-punctus-elevatus.woff2",
-}
-real_browser_bound = {
-    relative
-    for relative in tool.site_source_paths()
-    if relative.startswith(tool.WEB_BROWSER_ROOT_RELATIVE.as_posix() + "/")
-}
-assert real_browser_bound == real_browser_expected, (
-    sorted(real_browser_bound - real_browser_expected),
-    sorted(real_browser_expected - real_browser_bound),
-)
+    # Original browser assets and separately owned Bible fragments bind raw
+    # source bytes. Product bytes bind through the exact descriptor inventory
+    # and freshly checked canonical input identities, never physical cache paths.
+    product_paths = set(products.files.values())
+    real_copied_inputs = {
+        path.relative_to(tool.ROOT).as_posix()
+        for path in real_files.values() if path not in product_paths
+    }
+    real_bound_inputs = tool.site_source_paths()
+    assert real_copied_inputs <= real_bound_inputs, sorted(
+        real_copied_inputs - real_bound_inputs
+    )
+    assert tool.BROWSER_PRODUCTS_RELATIVE.as_posix() in real_bound_inputs
+    product_bindings = set(products.source_paths) - products.projected_source_paths
+    assert product_bindings <= real_bound_inputs, sorted(product_bindings - real_bound_inputs)
+    assert not any(path.startswith(("build/", ".scratch/", "src/web/data/"))
+                   for path in real_bound_inputs), "product payloads became source authority"
+
+    # Every product structure file must reach its unchanged logical route.
+    real_structure_prefix = (tool.SITE_DATA_ROOT / "structure").as_posix() + "/"
+    real_structure_expected = {
+        (tool.SITE_DATA_ROOT / relative).as_posix()
+        for relative in products.files if relative.startswith("structure/")
+    }
+    real_structure_copied = {
+        relative for relative in real_files if relative.startswith(real_structure_prefix)
+    }
+    assert real_structure_copied == real_structure_expected, (
+        sorted(real_structure_copied - real_structure_expected),
+        sorted(real_structure_expected - real_structure_copied),
+    )
+    real_browser_expected = {
+        path.relative_to(tool.ROOT).as_posix()
+        for directory in tool.WEB_BROWSER_DIRECTORIES
+        for path in (tool.ROOT / tool.WEB_BROWSER_ROOT_RELATIVE / directory).glob("*")
+        if path.is_file() and not path.is_symlink() and path.suffix in (".html", ".css", ".js")
+    }
+    real_browser_expected |= {
+        "src/web/browser/shared/fonts/OFL-Junicode.txt",
+        "src/web/browser/shared/fonts/triptych-punctus-elevatus.woff2",
+    }
+    real_browser_bound = {
+        relative for relative in real_bound_inputs
+        if relative.startswith(tool.WEB_BROWSER_ROOT_RELATIVE.as_posix() + "/")
+    }
+    assert real_browser_bound == real_browser_expected, (
+        sorted(real_browser_bound - real_browser_expected),
+        sorted(real_browser_expected - real_browser_bound),
+    )
 
 # A sandbox holding one offered edition and one that is on disk only.
 tool.ROOT = sandbox

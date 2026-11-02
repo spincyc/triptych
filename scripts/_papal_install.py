@@ -16,6 +16,8 @@ import tempfile
 from urllib.parse import unquote
 
 import _papal_collection as collection
+import _snapshot_store
+from _papal_input_receipt import InputRecords
 
 ROOT = Path(__file__).resolve().parents[1]
 PREPARED_SCHEMA = "triptych-papal-install-plan/v1"
@@ -80,7 +82,9 @@ def _fresh_plan(path):
                              cwd=ROOT, env=environment, capture_output=True, text=True)
         _require(run.returncode == 0, "cannot regenerate the current source plan: " + run.stderr.strip())
         fresh, fresh_sha, _ = collection._manifest(target)
-    supplied, supplied_sha, _ = collection._manifest(Path(path).resolve())
+    supplied, supplied_sha = fresh, fresh_sha
+    if path is not None:
+        supplied, supplied_sha, _ = collection._manifest(Path(path).resolve())
     _require(supplied_sha == fresh_sha, "source plan is stale; regenerate papal-plan before installing")
     provenance = supplied.get("selection_plan")
     _require(isinstance(provenance, dict) and provenance.get("schema") == collection.PLAN_SCHEMA,
@@ -355,14 +359,74 @@ def _owned_files(release):
     return owned
 
 
-def install_prepared(prepared):
+def _revalidated_preparation(prepared):
     path = Path(prepared).resolve()
-    proposal, _ = collection._json(path)
+    proposal, digest = collection._json(path)
     _require(proposal.get("schema") == PREPARED_SCHEMA, "incorrect prepared installation schema")
-    # Re-run the real source, receipt, PDF and review gates immediately before copy.
+    # Both staging and installation rerun the source, receipt, PDF and review
+    # gates. A previously prepared descriptor alone never authorizes new bytes.
     reviews = {_safe(row["path"]) for row in proposal["review_inputs"]}
     current = _prepare_data(_safe(proposal["plan"]["path"]), _safe(proposal["batch_pairs"]["path"]), sorted(reviews))
     _require(_canonical(current) == _canonical(proposal), "prepared installation changed; prepare and review it again")
+    return proposal, digest
+
+
+def _staged_input(ref):
+    """Verify an explicitly staged local snapshot, without declaring delivery."""
+    _require(collection._digest(ref.get("sha256")) and type(ref.get("bytes")) is int and ref["bytes"] > 0,
+             "invalid staged input pins")
+    path = _safe(ref["path"])
+    _require(path.parent == _safe(_snapshot_store.PREFIX.rstrip("/"))
+             and path.suffix in {".json", ".jsonl"} and path.stem == ref["sha256"],
+             "staged input must have its exact hash-addressed snapshot path")
+    _require(path.is_file() and collection._sha(path) == ref["sha256"] and path.stat().st_size == ref["bytes"],
+             "staged input hash/size mismatch; preserved")
+    return path
+
+
+def stage_prepared_inputs(prepared):
+    """Stage only exact input snapshots; keep installed PDFs/release unchanged.
+
+    Publication remains blocked until a verified delivery declaration and a
+    new release extraction have been recorded through their separate workflows.
+    """
+    proposal, prepared_sha = _revalidated_preparation(prepared)
+    snapshots = [row for row in proposal["archives"] if row["path"].startswith(_snapshot_store.PREFIX)]
+    operations = []
+    for ref in snapshots:
+        target = _safe(ref["path"])
+        _require(target.parent == _safe(_snapshot_store.PREFIX.rstrip("/"))
+                 and target.stem == ref["sha256"] and target.suffix in {".json", ".jsonl"},
+                 "prepared input has an unexpected snapshot path")
+        if target.exists():
+            _staged_input(ref)
+            continue
+        payload = _safe(ref["source"]).read_bytes()
+        _require(hashlib.sha256(payload).hexdigest() == ref["sha256"] and len(payload) == ref["bytes"],
+                 "prepared input changed while staging")
+        operations.append((target, payload))
+    def verify():
+        for ref in snapshots:
+            _staged_input(ref)
+    _transaction(operations, verify)
+    return {"schema": "triptych-papal-staged-inputs/v1", "status": "staged-exact-inputs",
+            "editorial_approval": False, "prepared_sha256": prepared_sha,
+            "inputs": len(snapshots), "staged": len(operations), "already_present": len(snapshots) - len(operations)}
+
+
+def install_prepared(prepared):
+    proposal, _ = _revalidated_preparation(prepared)
+    if _safe(_snapshot_store.INDEX_PATH).exists():
+        for ref in proposal["archives"]:
+            if ref["path"].startswith(_snapshot_store.PREFIX):
+                try:
+                    _snapshot_store.validate_ref(ROOT, ref, require_bytes=False)
+                except _snapshot_store.SnapshotStoreError as error:
+                    raise PapalInstallError(
+                        "prepared frozen inputs are not declared for exact delivery; run "
+                        "typeset-papal stage-inputs, then inventory, verify and publish "
+                        "the snapshot pack and delivery index before installation"
+                    ) from error
     old_release = _owned_release()
     owned = _owned_files(old_release)
     targets = {row["pdf"]: row for row in proposal["documents"]}
@@ -414,25 +478,47 @@ def _archived(ref):
     _require(collection._digest(ref.get("sha256")) and type(ref.get("bytes")) is int and ref["bytes"] > 0,
              "invalid durable evidence pins")
     path = _safe(ref["path"])
+    if ref["path"].startswith(_snapshot_store.PREFIX):
+        _snapshot_store.validate_ref(ROOT, ref, require_bytes=True)
+        return _snapshot_store.resolve(ROOT, ref["path"], fetch=False)
     _require(path.is_relative_to(_safe(ARCHIVE_ROOT.as_posix())) and path.is_file(), "missing durable release evidence")
     _require(collection._sha(path) == ref["sha256"] and path.stat().st_size == ref["bytes"], "durable release evidence hash/size mismatch")
     return path
 
 
-def check_install(plan):
+def check_install(plan, *, require_bytes=True):
     current, current_sha = _fresh_plan(plan)
     release = _owned_release()
     _require(release is not None, "no installed papal release")
-    owned = _owned_files(release)
+    records = InputRecords(ROOT)
+    _require(require_bytes or records.index is not None,
+             "metadata release validation requires recorded original header/row extracts")
+    if require_bytes:
+        owned = _owned_files(release)
+        if records.index is not None:
+            records.audit_originals(fetch=False)
+    else:
+        owned = {}
+        for row in release["documents"]:
+            _require(row["pdf"] not in owned and row["pdf"] == _filename(row["source"]),
+                     "duplicate released identity or unexpected historical filename")
+            owned[row["pdf"]] = row
     for ref in release["evidence"]:
-        _archived(ref)
-    frozen_plan, _ = collection._json(_archived(release["source_plan"]))
+        if require_bytes or not ref["path"].startswith(_snapshot_store.PREFIX):
+            _archived(ref)
+        else:
+            records.validate_ref(ref)
+    frozen_plan = records.header(release["source_plan"])
     for item in frozen_plan["selection_plan"]["inputs"]:
-        retained = _safe((ARCHIVE_ROOT / "inputs" / (item["sha256"] + ".json")).as_posix())
-        _require(retained.is_file() and collection._sha(retained) == item["sha256"],
-                 "retained source plan is missing an exact original input")
+        if require_bytes:
+            matched = next((ref for ref in release["evidence"] if ref.get("sha256") == item["sha256"]), None)
+            _require(matched is not None, "retained source plan is missing an exact original input")
+            _archived(matched)
+        else:
+            _require(records.index is not None and any(ref["sha256"] == item["sha256"]
+                     for ref in records.index["originals"].values()), "retained source plan input identity is missing")
     active = {collection._identity(row): _normalized(row, current) for row in current["documents"]}
-    frozen = {collection._identity(row): _normalized(row, frozen_plan) for row in frozen_plan["documents"]}
+    frozen = {collection._identity(row): _normalized(row, frozen_plan) for row in records.plan_rows(release["source_plan"])}
     identities = set()
     for row in owned.values():
         key = collection._identity(row)
@@ -442,11 +528,12 @@ def check_install(plan):
         identities.add(key)
         _require(key in active and _canonical(active[key]) == _canonical(row["source"]), "installed PDF is no longer a current source selection")
         _require(key in frozen and _canonical(frozen[key]) == _canonical(row["source"]), "installed PDF is absent from its retained source plan")
-        manifest, _ = collection._json(_archived(row["manifest"]))
-        source = manifest["documents"][row["manifest"]["row_index"]]
+        manifest = records.header(row["manifest"])
+        source = records.row(row["manifest"], row["manifest"]["row_index"])
         _require(_canonical(_normalized(source, manifest)) == _canonical(row["source"]), "retained frozen manifest selection disagrees")
-        receipt, receipt_sha = collection._json(_archived(row["receipt"]))
-        item = receipt["documents"][row["receipt"]["row_index"]]
+        receipt = records.header(row["receipt"])
+        receipt_sha = row["receipt"]["sha256"]
+        item = records.row(row["receipt"], row["receipt"]["row_index"])
         _require(collection._identity(item) == key and item.get("status") == "compiled"
                  and item.get("pdf_sha256") == row["pdf_sha256"] and item.get("pages") == row["pages"]
                  and item.get("render_revision", receipt["revision"]) == row["render_revision"]
@@ -458,8 +545,8 @@ def check_install(plan):
         for output, original in (("artifact_id", "artifact_id"), ("source_sha256", "sha256"),
                                  ("segment_id", "segment_id"), ("physical_line_ranges", "physical_line_ranges")):
             _require(item.get(output) == source.get(original), "retained receipt source identity disagrees")
-        audit, _ = collection._json(_archived(row["review"]["audit"]))
-        review = audit["documents"][row["review"]["audit"]["row_index"]]
+        audit = records.header(row["review"]["audit"])
+        review = records.row(row["review"]["audit"], row["review"]["audit"]["row_index"])
         _require(row["review"]["current_receipt_sha256"] == receipt_sha
                  and row["review"]["original_receipt_sha256"] == review.get("receipt_sha256", audit["frozen_receipt_sha256"]),
                  "release review receipt provenance disagrees")
@@ -468,9 +555,10 @@ def check_install(plan):
         fake = {"id": key[0], "language": key[1], "pdf_sha256": row["pdf_sha256"], "pages": row["pages"],
                 "status": "compiled", "receipt_sha256": receipt_sha, "files": {}}
         _validate_pass(fake, audit, review, row["review"]["reports"])
-        pdf = _safe(row["pdf"])
-        _require(pdf.stat().st_size == row["bytes"], "installed PDF byte count mismatch")
-        _source_check(row["source"], pdf, row["pages"])
+        if require_bytes:
+            pdf = _safe(row["pdf"])
+            _require(pdf.stat().st_size == row["bytes"], "installed PDF byte count mismatch")
+            _source_check(row["source"], pdf, row["pages"])
     known_states = {collection._identity(row): row for row in release["delivery_states"]}
     uninstalled = []
     for key, source in active.items():
@@ -485,3 +573,8 @@ def check_install(plan):
     return {"schema": RELEASE_SCHEMA, "status": "valid", "installed": len(owned), "current": len(active),
             "not_installed": len(active) - len(owned), "source_plan_sha256": current_sha,
             "release_plan_is_current": current_sha == release["source_plan"]["sha256"], "uninstalled": uninstalled}
+
+
+def check_release_metadata(plan=None):
+    """Validate all release selections/reviews, asserting no PDF/original replay."""
+    return dict(check_install(plan, require_bytes=False), verification="mechanically-attested-release-metadata")

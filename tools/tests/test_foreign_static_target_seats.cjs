@@ -1,11 +1,13 @@
 'use strict';
+const { repositoryPath } = require('./_product_data.cjs');
+
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const root = process.env.TRIPTYCH_REVIEW_ROOT || path.resolve(__dirname, '../..');
 const S = require(process.env.TRIPTYCH_FOREIGN_STATIC_SEATING || path.join(root, 'src/web/browser/liturgy/ordinary-seating.js'));
-const ordinary = JSON.parse(fs.readFileSync(path.join(root, 'src/web/data/structure/ordinary/roman-pre-1955.json')));
-const file = JSON.parse(fs.readFileSync(path.join(root, 'src/web/data/structure/propers/roman-pre-1955.json')));
+const ordinary = JSON.parse(fs.readFileSync(repositoryPath(root, 'src/web/data/structure/ordinary/roman-pre-1955.json')));
+const file = JSON.parse(fs.readFileSync(repositoryPath(root, 'src/web/data/structure/propers/roman-pre-1955.json')));
 const mass = file.masses.find((one) => one.key === 'commune-plurimorum-martyrum-1');
 const ctx = {calendar: ordinary.calendar, mass: mass.key, form_id: 'main', full: true,
   facts: file.proper_appointment_facts || {}};

@@ -53,6 +53,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from _browser_products import ProductError, assert_working_output, committed_data_root, working_data_root  # noqa: E402
+
 import _calendars  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
@@ -66,20 +68,20 @@ from _tooling import (  # noqa: E402
 EXAMPLES = {
     "check": (
         Example(
-            "tools/calendar-rubrics check --out build/example-web",
+            "tools/calendar-rubrics check --out .scratch/example-web",
             (
                 "postconciliar: 612 masses classified over 13 bases and 13 rows, 11 implied-day rules, 4 question... [+11 chars]",
                 "roman-1962: 461 masses classified over 28 bases and 28 rows, 9 implied-day rules, 5 questions le... [+7 chars]",
                 "roman-pre-1955: 459 masses classified over 33 bases and 25 rows, 9 implied-day rules, 6 questions left open",
                 "solved cases: 45 of 45 verified against the browser's model",
-                "  asserting 6 of 20 fields the model returns; no case asserts absent, candidates, ceilings, choice, choiceRequired, conditions, extras, folded, option, remarks, season, sungDiffers, unsettled, winnerRule",
+                "  asserting 6 of 21 fields the model returns; no case asserts absent, candidates, ceilings, choice, choiceRequired, conditions, extras, folded, option, oration_execution, remarks, season, sungDiffers, unsettled, winnerRule",
             ),
             "check compares --out's already-written browser files against the sources, so it reports a stale --out as a failure; this one was pointed at a freshly written untracked copy. A missing node or model is a failure here, never a skip",
         ),
         Example(
-            "tools/calendar-rubrics check --out build/example-web --json",
+            "tools/calendar-rubrics check --out .scratch/example-web --json",
             (
-                "{\"calendars\":[{\"bases\":13,\"calendar\":\"postconciliar\",\"implied_rules\":11,\"masses_classified\":612,... [+550 chars]",
+                "{\"calendars\":[{\"bases\":13,\"calendar\":\"postconciliar\",\"implied_rules\":11,\"masses_classified\":612,... [+570 chars]",
             ),
         ),
     ),
@@ -104,7 +106,7 @@ EXAMPLES = {
     ),
     "day": (
         Example(
-            "tools/calendar-rubrics day --date 2026-04-05 --calendar roman-1962",
+            "tools/calendar-rubrics day --date 2026-04-05 --calendar roman-1962 --out .scratch/example-web",
             (
                 "roman-1962 \u2014 paschaltide",
                 "  said         Easter Sunday",
@@ -113,38 +115,38 @@ EXAMPLES = {
             "read-only; runs assembly-model.js under node, which is the same derivation the page runs and the solved cases hold",
         ),
         Example(
-            "tools/calendar-rubrics day --date 2026-12-19 --calendar roman-1962 --json",
+            "tools/calendar-rubrics day --date 2026-12-19 --calendar roman-1962 --out .scratch/example-web --json",
             (
-                "{\"date\":\"2026-12-19\",\"days\":[{\"advisory\":\"A finding aid for how a day is put together, and nev... [+5780 chars]",
+                "{\"date\":\"2026-12-19\",\"days\":[{\"advisory\":\"A finding aid for how a day is put together, and nev... [+6600 chars]",
             ),
             "the machine form carries every field the model returns, of which the text form prints six",
         ),
     ),
     "structure": (
         Example(
-            "tools/calendar-rubrics check --out build/example-web",
+            "tools/calendar-rubrics check --out .scratch/example-web",
             (
                 "postconciliar: 612 masses classified over 13 bases and 13 rows, 11 implied-day rules, 4 question... [+11 chars]",
                 "roman-1962: 461 masses classified over 28 bases and 28 rows, 9 implied-day rules, 5 questions le... [+7 chars]",
                 "roman-pre-1955: 459 masses classified over 33 bases and 25 rows, 9 implied-day rules, 6 questions left open",
                 "solved cases: 45 of 45 verified against the browser's model",
-                "  asserting 6 of 20 fields the model returns; no case asserts absent, candidates, ceilings, choice, choiceRequired, conditions, extras, folded, option, remarks, season, sungDiffers, unsettled, winnerRule",
+                "  asserting 6 of 21 fields the model returns; no case asserts absent, candidates, ceilings, choice, choiceRequired, conditions, extras, folded, option, oration_execution, remarks, season, sungDiffers, unsettled, winnerRule",
             ),
             "read-only first: `check` validates the sources and reports whether --out is already current",
         ),
         Example(
-            "tools/calendar-rubrics structure --out build/example-web",
+            "tools/calendar-rubrics structure --out .scratch/example-web",
             (
                 "wrote 4 files",
-                "  -> build/example-web/structure/rubrics/index.json",
+                "  -> <repo>/.scratch/example-web/structure/rubrics/index.json",
             ),
-            "WRITES the browser's rubrics files. --out here is untracked; the default writes tracked src/web/data",
+            "WRITES the browser's rubrics files. --out here is untracked; the default writes the mutable browser-data working tree",
         ),
     ),
 }
 
 DEFAULT_ROOT = ROOT / "src" / "sources" / "calendars"
-DEFAULT_DATA = ROOT / "src" / "web" / "data"
+DEFAULT_DATA = working_data_root(ROOT)
 MODEL = ROOT / "src" / "web" / "browser" / "liturgy" / "assembly-model.js"
 SCHEMA = "triptych-calendar-rubrics/v1"
 SOURCE_NAME = "rubrics.yaml"
@@ -1383,7 +1385,7 @@ def run_structure(arguments: argparse.Namespace) -> dict:
     built, problems, _ = build(Path(arguments.root), arguments.calendar)
     if problems:
         raise SourceError("; ".join(problems[:4]) + (f" (and {len(problems) - 4} more)" if len(problems) > 4 else ""))
-    out = Path(arguments.out)
+    out = assert_working_output(ROOT, working_data_root(ROOT) if arguments.out is None else Path(arguments.out))
     base = out / "structure" / "rubrics"
     index = base / "index.json"
     refuse_symlink_output(out, base)
@@ -1416,7 +1418,7 @@ def run_structure(arguments: argparse.Namespace) -> dict:
 
 def run_check(arguments: argparse.Namespace) -> dict:
     root = Path(arguments.root)
-    data = Path(arguments.out)
+    data = (committed_data_root(ROOT) if arguments.out is None else Path(arguments.out))
     built, problems, sources = build(root, arguments.calendar)
 
     # The written layer must be what the source would write now, or a page is
@@ -1584,7 +1586,7 @@ def run_day(arguments: argparse.Namespace) -> dict:
     under node — the same file, through the same harness the solved cases use —
     so the terminal and the page agree by construction and not by coincidence.
     """
-    data = Path(arguments.out)
+    data = committed_data_root(ROOT) if arguments.out is None else Path(arguments.out)
     problems: list[str] = []
     # Read from the emitted layer, not rebuilt from the YAML sources. `build`
     # parses both calendars' mass indexes — a megabyte of YAML — to answer one
@@ -1719,7 +1721,7 @@ def main(argv: list[str] | None = None) -> int:
             help="calendar directory"
         )
         shared.add_argument(
-            "--out", default=argparse.SUPPRESS if verb else str(DEFAULT_DATA),
+            "--out", default=argparse.SUPPRESS if verb else None,
             help="the browser's data root"
         )
         shared.add_argument("--calendar", default=missing, help="limit to one calendar")
@@ -1778,7 +1780,7 @@ def main(argv: list[str] | None = None) -> int:
         argv=argv,
         default_verb="check",
         dependency_message="install PyYAML (requirements-tools.txt)",
-        mapped_errors={SourceError: ("input", 2), ValueError: ("input", 2)},
+        mapped_errors={ProductError: ("input", 2), SourceError: ("input", 2), ValueError: ("input", 2)},
     )
 
 

@@ -36,6 +36,9 @@ from importlib.util import module_from_spec, spec_from_loader
 from pathlib import Path
 from unittest.mock import patch
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
@@ -810,7 +813,7 @@ class ResolveAppointedPassages(unittest.TestCase):
         }
 
         browser = json.loads(
-            (ROOT / "src/web/data/structure/propers/roman-1962.json").read_text(
+            (browser_data_root(ROOT) / 'structure/propers/roman-1962.json').read_text(
                 encoding="utf-8"
             )
         )
@@ -1399,7 +1402,7 @@ class ResolveAppointedPassages(unittest.TestCase):
         merge and stays unresolved, naming the bound.
         """
         payload = json.loads(
-            (ROOT / "src/web/data/structure/propers/postconciliar.json").read_text(
+            (browser_data_root(ROOT) / 'structure/propers/postconciliar.json').read_text(
                 encoding="utf-8"
             )
         )
@@ -1487,7 +1490,7 @@ class ResolveAppointedPassages(unittest.TestCase):
                 for value in node:
                     yield from citations(value, where)
 
-        tree = ROOT / "src/web/data/structure/propers"
+        tree = browser_data_root(ROOT) / 'structure/propers'
         expected = {"postconciliar", "roman-1962", "roman-pre-1955"}
         index = json.loads((tree / "index.json").read_text(encoding="utf-8"))
         self.assertEqual({row["id"] for row in index["missals"]}, expected)

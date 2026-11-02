@@ -1,12 +1,14 @@
 'use strict';
+const { repositoryPath } = require('./_product_data.cjs');
+
 // stdin is the fresh canonical projection from the paired Python test.
 // No tracked generated fixture, source words, or URL actual-use attestation.
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const S = require(path.resolve(__dirname, '../../src/web/browser/liturgy/ordinary-seating.js'));
-const ordinary = JSON.parse(fs.readFileSync(path.resolve(__dirname,
-  '../../src/web/data/structure/ordinary/postconciliar.json'), 'utf8'));
+const ordinary = JSON.parse(fs.readFileSync(repositoryPath(path.resolve(__dirname, '../..'),
+  'src/web/data/structure/ordinary/postconciliar.json'), 'utf8'));
 const source = JSON.parse(fs.readFileSync(0, 'utf8'));
 const before = JSON.stringify(source);
 const masses = Object.fromEntries(source.masses.map((mass) => [mass.key, mass]));

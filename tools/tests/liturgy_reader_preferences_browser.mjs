@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { repositoryPath } from './_product_data.cjs';
 
 /* Source-served, real-browser checks for the shared reader preference boundary. */
 
@@ -39,7 +40,7 @@ function server() {
       }
       const file = resolve(ROOT, relative || 'README.md');
       if (!file.startsWith(ROOT + sep)) throw new Error('outside root');
-      const body = await readFile(file);
+      const body = await readFile(repositoryPath(ROOT, file));
       response.writeHead(200, { 'content-type': mime(file), 'cache-control': 'no-store' });
       response.end(body);
     } catch (_error) {

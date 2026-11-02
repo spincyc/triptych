@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { repositoryPath } from './_product_data.cjs';
 
 /* Source-served native clipboard and accessibility checks for divided Ordinary rows. */
 import assert from 'node:assert/strict';
@@ -47,7 +48,7 @@ async function source(path) {
   }
   const file = resolve(ROOT, path);
   if (!file.startsWith(ROOT + sep)) throw new Error('outside root');
-  return readFile(file);
+  return readFile(repositoryPath(ROOT, file));
 }
 function server() {
   return createServer(async (request, response) => {

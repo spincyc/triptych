@@ -39,6 +39,22 @@ EXAMPLES = {
             ),
             'Inspect required receipt pairs and review inputs; preparation writes only its scratch proposal.'),
     ),
+    'stage-inputs': (
+        Example(
+            'tools/typeset-papal prepare-install --help',
+            (
+                "usage: typeset-papal prepare-install [-h] --plan PLAN",
+                "... 18 more lines",
+            ),
+            'Inspect the preparation required before staging any exact input snapshots.'),
+        Example(
+            'tools/typeset-papal stage-inputs --help',
+            (
+                "usage: typeset-papal stage-inputs [-h] --prepared PREPARED [--json]",
+                "... 13 more lines",
+            ),
+            'Inspect explicit input-only staging; this help command writes nothing.'),
+    ),
     'install': (
         Example(
             'tools/typeset-papal prepare-install --help',

@@ -211,8 +211,10 @@ for (const rows of reversed([historical, study])) {
 
     def test_current_joseph_preface_selects_exact_source_in_both_readers(self):
         self.run_case(r"""
-const parsed = JSON.parse(fs.readFileSync(process.env.TRIPTYCH_ORDINARY_DATA ||
-  path.join(root, 'src/web/data/structure/ordinary/roman-1962.json'), 'utf8'));
+const productFixturePath = file => require(require('path').join(root, 'tools/tests/_product_data.cjs')).repositoryPath(root, file);
+
+const parsed = JSON.parse(fs.readFileSync(productFixturePath(process.env.TRIPTYCH_ORDINARY_DATA ||
+  path.join(root, 'src/web/data/structure/ordinary/roman-1962.json')), 'utf8'));
 const ordinary = parsed.ordinary ? parsed.ordinary[0] : parsed;
 const preface = ordinary.sections.flatMap(section => section.elements || [])
   .find(row => row.key === 'praefatio/praefatio-sancto-ioseph');
@@ -228,8 +230,8 @@ assert.equal(marchSource.rights, 'public-domain');
 assert.equal(maySource.rights, 'project-created');
 assert.deepEqual(marchSource.applicability.formularies, [march]);
 assert.deepEqual(maySource.applicability.formularies, [may]);
-const structure = JSON.parse(fs.readFileSync(path.join(root,
-  'src/web/data/structure/propers/roman-1962.json'), 'utf8'));
+const structure = JSON.parse(fs.readFileSync(productFixturePath(path.join(root,
+  'src/web/data/structure/propers/roman-1962.json')), 'utf8'));
 function adapt(formulary, frame = ordinary) {
   const request = {schema: 'triptych-liturgy-reader-state/v1', entrance: 'propers', civilDate: null,
     edition: {id: calendar}, formulary: {id: formulary},

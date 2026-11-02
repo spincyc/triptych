@@ -1,9 +1,14 @@
 # lectern — the terminal reader
 
-`tools/lectern` reads what the site publishes, in a terminal: the same files
-under `src/web/data/`, the same derivations, a different screen. It is a
+`tools/lectern` reads what the site publishes, in a terminal: the same verified
+browser products, the same derivations, a different screen. It is a
 consumer of the published structure exactly as a browser page is, and it holds
 itself to the page's rules.
+
+Prepare the current products with `tools/browser-products build`. The bridge
+holds a private verified snapshot for its entire Node process lifetime. Missing,
+stale or corrupt products are refused; the reader never substitutes an unsealed
+working tree or the former `src/web/data/` directory.
 
 ## The one rule
 

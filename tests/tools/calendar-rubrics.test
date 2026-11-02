@@ -113,8 +113,9 @@ expect_bad_override mixed-action "unknown fields"
 expect_bad_override empty "must be a nonempty string"
 expect_bad_override wrong-type "must be a nonempty string"
 
+data_root="$(python3 "$repo/tools/tests/_product_data.py" "$repo")"
 mkdir -p "$sandbox/data/structure"
-ln -s "$repo/src/web/data/structure/calendar" "$sandbox/data/structure/calendar"
+ln -s "$data_root/structure/calendar" "$sandbox/data/structure/calendar"
 run_tool structure --out "$sandbox/data" >/dev/null
 root="$sandbox/data/structure/rubrics"
 
@@ -254,7 +255,7 @@ partial="$sandbox/partial-data/structure"
 mkdir -p "$partial/calendar"
 ln -s "$root" "$partial/rubrics"
 for calendar in postconciliar roman-1962; do
-	ln -s "$repo/src/web/data/structure/calendar/$calendar" "$partial/calendar/$calendar"
+	ln -s "$data_root/structure/calendar/$calendar" "$partial/calendar/$calendar"
 done
 status=0
 run_tool day --date 2026-04-05 --out "$sandbox/partial-data" >"$sandbox/partial.out" 2>"$sandbox/partial.err" || status=$?
@@ -270,7 +271,7 @@ fi
 model_partial="$sandbox/model-partial-data/structure"
 mkdir -p "$model_partial/calendar" "$model_partial/rubrics"
 for calendar in postconciliar roman-1962 roman-pre-1955; do
-	ln -s "$repo/src/web/data/structure/calendar/$calendar" "$model_partial/calendar/$calendar"
+	ln -s "$data_root/structure/calendar/$calendar" "$model_partial/calendar/$calendar"
 done
 for calendar in postconciliar roman-1962; do
 	ln -s "$root/$calendar.json" "$model_partial/rubrics/$calendar.json"

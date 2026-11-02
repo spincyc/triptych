@@ -1,4 +1,6 @@
 'use strict';
+const { repositoryPath } = require('./_product_data.cjs');
+
 // Synthetic contract fixtures plus held source-body equality controls.
 // No Missal wording is copied into this test.
 const assert = require('assert');
@@ -245,7 +247,7 @@ test('mixed held bodies and translation witnesses retain their own availability 
   assert.equal(absent.scriptureComponents.references[0], 'Psalms 109:4');
 });
 test('real held Virgin IV mixed body retains the exact Latin and checked English witnesses', () => {
-  const held = JSON.parse(fs.readFileSync(path.join(root, 'src/web/data/structure/propers/roman-1962.json'), 'utf8'));
+  const held = JSON.parse(fs.readFileSync(repositoryPath(root, 'src/web/data/structure/propers/roman-1962.json'), 'utf8'));
   const mass = held.masses.find((one) => one.key === 'commune-virginum-4');
   assert(mass, 'the actual Common Virgin IV is held');
   const proper = mass.propers.find((one) => one.name === 'Alleluia (Tempore paschali)');

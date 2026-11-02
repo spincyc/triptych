@@ -17,15 +17,21 @@ import subprocess
 import unittest
 from pathlib import Path
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 
 NODE = r"""
+const productFixturePath = file => require(require('path').join(process.cwd(), 'tools/tests/_product_data.cjs')).repositoryPath(process.cwd(), file);
+
 const fs = require('fs');
 const root = process.cwd() + '/src/web/browser/liturgy/';
 const C = require(root + 'reader-state.js');
 const A = require(root + 'reader-state-adapters.js');
 const M = require(root + 'assembly-model.js');
-const read = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
+const read = (p) => JSON.parse(fs.readFileSync(productFixturePath(p), 'utf8'));
 const input = JSON.parse(fs.readFileSync(0, 'utf8'));
 function request(entrance, calendar, date, form, choices) {
   const held = {
@@ -276,7 +282,7 @@ class OrdinaryAppointments(unittest.TestCase):
     def test_proper_canon_forms_hold_their_bodies_across_their_spans(self) -> None:
         """C3, 2026-10-19: the proper bodies, never the common forms."""
         structure = json.loads(
-            (ROOT / "src/web/data/structure/ordinary/roman-1962.json").read_text(encoding="utf-8")
+            (browser_data_root(ROOT) / 'structure/ordinary/roman-1962.json').read_text(encoding="utf-8")
         )
         by_key = {
             element["key"]: element
@@ -330,7 +336,7 @@ class OrdinaryAppointments(unittest.TestCase):
     def test_1962_holy_spirit_preface_is_whole_with_its_conditional_words(self) -> None:
         """C3, 2026-10-19: the opening up to the junction, then the clause."""
         structure = json.loads(
-            (ROOT / "src/web/data/structure/ordinary/roman-1962.json").read_text(encoding="utf-8")
+            (browser_data_root(ROOT) / 'structure/ordinary/roman-1962.json').read_text(encoding="utf-8")
         )
         by_key = {
             element["key"]: element
@@ -415,7 +421,7 @@ class OrdinaryAppointments(unittest.TestCase):
         # In the served frame only the continuation carries them, and only its
         # provenance cites the basis.
         structure = json.loads(
-            (ROOT / "src/web/data/structure/ordinary/roman-1962.json").read_text(encoding="utf-8")
+            (browser_data_root(ROOT) / 'structure/ordinary/roman-1962.json').read_text(encoding="utf-8")
         )
         carriers, citers = set(), set()
         for section in structure["sections"]:

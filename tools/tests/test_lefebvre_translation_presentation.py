@@ -10,6 +10,8 @@ ROOT = Path(__file__).resolve().parents[2]
 BROWSER_CORE = ROOT / "src/web/browser/shared/browser-core.js"
 
 CONTRACT = r"""
+const productFixturePath = file => require(require('path').join(root, 'tools/tests/_product_data.cjs')).repositoryPath(root, file);
+
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
@@ -22,8 +24,8 @@ Object.assign(globalThis, {document: dom.document, window: globalThis,
 vm.runInThisContext(fs.readFileSync(code, 'utf8'));
 const T = globalThis.Triptych;
 const witness = 'edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925';
-const structure = JSON.parse(fs.readFileSync(path.join(root,
-  'src/web/data/structure/propers/roman-1962.json'), 'utf8'));
+const structure = JSON.parse(fs.readFileSync(productFixturePath(path.join(root,
+  'src/web/data/structure/propers/roman-1962.json')), 'utf8'));
 const proper = (key, role) => structure.masses.find(m => m.key === key).propers.find(p => p.name === role);
 const flat = node => dom.read(node).map(b => b.runs.map(r => r.text).join('')).join('\n');
 

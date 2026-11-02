@@ -6,6 +6,9 @@ import os
 import sys
 import unittest
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(os.environ.get('TRIPTYCH_REVIEW_ROOT', Path(__file__).resolve().parents[2]))
 CODE = Path(os.environ.get('TRIPTYCH_ORDINARY_MODULE_ROOT', ROOT))
 sys.path.insert(0, str(ROOT / 'scripts'))
@@ -17,8 +20,8 @@ spec.loader.exec_module(text)
 class OrdinaryTranslationApplicability(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        ordinary = json.loads(Path(os.environ.get('TRIPTYCH_ORDINARY_DATA', ROOT /
-            'src/web/data/structure/ordinary/roman-1962.json')).read_text())
+        data = Path(os.environ['TRIPTYCH_ORDINARY_DATA']) if os.environ.get('TRIPTYCH_ORDINARY_DATA') else browser_data_root(ROOT) / 'structure/ordinary/roman-1962.json'
+        ordinary = json.loads(data.read_text())
         cls.head = next(e for s in ordinary['sections'] for e in s['elements']
                         if e['key'] == 'canon/communicantes-pascha')
         cls.words = next(t['text'] for t in cls.head['translations'] if t['lang'] == 'en')

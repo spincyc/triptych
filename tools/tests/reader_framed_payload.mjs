@@ -1,3 +1,4 @@
+import { repositoryPath } from './_product_data.cjs';
 /* Exact source, semantic, coverage and Ordinary parity for bounded 1962 framed payloads. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -7,7 +8,7 @@ import {createRequire} from 'node:module';
 const require=createRequire(import.meta.url);
 const root=resolve(process.env.TRIPTYCH_REVIEW_ROOT || resolve(import.meta.dirname,'../..'));
 const modules=resolve(process.env.TRIPTYCH_FRAMED_PAYLOAD_MODULE_ROOT || root,'src/web/browser/liturgy');
-const json=p=>JSON.parse(fs.readFileSync(root+'/src/web/data/'+p));
+const json=p=>JSON.parse(fs.readFileSync(repositoryPath(root, 'src/web/data/'+p)));
 const State=require(root+'/src/web/browser/liturgy/reader-state.js');
 const A=require(root+'/src/web/browser/liturgy/reader-state-adapters.js');
 const Model=require(root+'/src/web/browser/liturgy/assembly-model.js');

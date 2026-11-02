@@ -12,6 +12,9 @@ import sys
 import tomllib
 import unittest
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(os.environ.get("TRIPTYCH_REVIEW_ROOT", Path(__file__).resolve().parents[2]))
 DATA_ROOT = Path(os.environ.get("TRIPTYCH_ALTERNATIVE_SEAT_ROOT", ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -33,9 +36,9 @@ class NormalAlternativeSeats(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         source = tomllib.loads((DATA_ROOT / "src/sources/inventories/postconciliar-ordo-missae-v1.toml").read_text())
-        cls.ordinary = json.loads((ROOT / "src/web/data/structure/ordinary/postconciliar.json").read_text())
+        cls.ordinary = json.loads((browser_data_root(ROOT) / 'structure/ordinary/postconciliar.json').read_text())
         cls.ordinary["slots"] = O.slot_table(source, cls.ordinary["sections"], "postconciliar")
-        cls.propers = json.loads((ROOT / "src/web/data/structure/propers/postconciliar.json").read_text())
+        cls.propers = json.loads((browser_data_root(ROOT) / 'structure/propers/postconciliar.json').read_text())
         cls.index = {mass["key"]: mass for mass in cls.propers["masses"]}
 
     @classmethod

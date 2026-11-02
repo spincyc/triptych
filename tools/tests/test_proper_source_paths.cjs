@@ -1,4 +1,6 @@
 'use strict';
+const { repositoryPath } = require('./_product_data.cjs');
+
 // Exact source tuples are exercised from the canonical producer projection.
 // A scratch projection can be supplied while the source owner's patch awaits
 // integration. No fixture here invents a reading, source condition or course.
@@ -9,9 +11,9 @@ const root = path.resolve(__dirname, '../..');
 const S = require(path.join(root, 'src/web/browser/liturgy/ordinary-seating.js'));
 const A = require(path.join(root, 'src/web/browser/liturgy/reader-state-adapters.js'));
 const C = require(path.join(root, 'src/web/browser/liturgy/reader-state.js'));
-const structurePath = process.env.TRIPTYCH_SOURCE_PATH_STRUCTURE || path.join(root, 'src/web/data/structure/propers/postconciliar.json');
+const structurePath = process.env.TRIPTYCH_SOURCE_PATH_STRUCTURE || repositoryPath(root, 'src/web/data/structure/propers/postconciliar.json');
 const structure = JSON.parse(fs.readFileSync(structurePath));
-const ordinary = JSON.parse(fs.readFileSync(path.join(root, 'src/web/data/structure/ordinary/postconciliar.json')));
+const ordinary = JSON.parse(fs.readFileSync(repositoryPath(root, 'src/web/data/structure/ordinary/postconciliar.json')));
 const copy = (one) => JSON.parse(JSON.stringify(one));
 const sameCoordinate = (left, right) => left && right && ['mass','form_id','proper','occurrence'].every((key) => left[key] === right[key]);
 const relationMasses = structure.masses.filter((mass) => (mass.proper_source_paths || []).length);

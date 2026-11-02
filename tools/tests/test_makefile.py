@@ -18,7 +18,9 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 
 class MakefileBuildGraphTests(unittest.TestCase):
     def setUp(self) -> None:
-        self.temporary_directory = tempfile.TemporaryDirectory()
+        scratch = REPOSITORY_ROOT / ".scratch/next-product-ci"
+        scratch.mkdir(parents=True, exist_ok=True)
+        self.temporary_directory = tempfile.TemporaryDirectory(prefix="makefile-", dir=scratch)
         self.root = Path(self.temporary_directory.name)
         shutil.copy2(REPOSITORY_ROOT / "Makefile", self.root / "Makefile")
         shutil.copy2(
@@ -189,6 +191,8 @@ with open(os.environ["MAKE_TEST_SOURCE_READER_LOG"], "a", encoding="utf-8") as l
             "act-history",
             "document-schema",
             "artifact-store",
+            "browser-products",
+            "snapshot-store",
             "document-library",
             "calendar-days",
             "check-calendar-masses",
@@ -201,6 +205,9 @@ with open(os.environ["MAKE_TEST_SOURCE_READER_LOG"], "a", encoding="utf-8") as l
             fake.write_text("#!/bin/sh\nexit 0\n", encoding="utf-8")
             fake.chmod(0o755)
         (scripts / "_act_history_projection_receipt.py").write_text(
+            "import sys\nassert sys.argv[1:] == ['check']\n", encoding="utf-8"
+        )
+        (scripts / "_papal_input_receipt.py").write_text(
             "import sys\nassert sys.argv[1:] == ['check']\n", encoding="utf-8"
         )
 

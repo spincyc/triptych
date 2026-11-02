@@ -23,8 +23,11 @@ from pathlib import Path
 import yaml
 
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
-STRUCTURE = ROOT / "src/web/data/structure/propers/roman-1962.json"
+STRUCTURE = browser_data_root(ROOT) / 'structure/propers/roman-1962.json'
 CALENDAR = ROOT / "src/sources/calendars/roman-1962/propers.yaml"
 OVERLAY = ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml"
 

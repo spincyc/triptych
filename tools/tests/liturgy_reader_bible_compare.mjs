@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { repositoryPath } from './_product_data.cjs';
 /* Explicit public Bible editions over one unchanged source formulary. */
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -17,7 +18,7 @@ const Comparison = require(modulePath('reader-comparison.js'));
 const PropersCompare = require(modulePath('propers-compare.js'));
 const View = require(modulePath('reader-compare-view.js'));
 const Actions = require(modulePath('reader-share-print.js'));
-const read = path => JSON.parse(readFileSync(resolve(ROOT, path), 'utf8'));
+const read = path => JSON.parse(readFileSync(repositoryPath(ROOT, path), 'utf8'));
 const bibles = read('src/web/data/bibles.json').bibles;
 const structure = read('src/web/data/structure/propers/roman-1962.json');
 const context = Adapters.validationContext({ entrance:'propers', bibles:{ bibles },

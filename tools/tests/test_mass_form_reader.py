@@ -13,6 +13,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 
 NODE = r"""
+const productFixturePath = file => require(require('path').join(process.cwd(), 'tools/tests/_product_data.cjs')).repositoryPath(process.cwd(), file);
+
 const fs = require('fs');
 const C = require('./src/web/browser/liturgy/reader-state.js');
 const A = require('./src/web/browser/liturgy/reader-state-adapters.js');
@@ -62,7 +64,7 @@ function adapt(key, ids, selected, ordinary) {
   const heldMass = mass(key, ids);
   const heldRequest = request(key, selected, ordinary);
   const ordinaryFile = ordinary
-    ? JSON.parse(fs.readFileSync('src/web/data/structure/ordinary/roman-1962.json', 'utf8'))
+    ? JSON.parse(fs.readFileSync(productFixturePath('src/web/data/structure/ordinary/roman-1962.json'), 'utf8'))
     : null;
   if (ordinaryFile) ordinaryFile.calendar = 'synthetic-edition';
   return A.adaptDay({
@@ -101,10 +103,10 @@ function projection(result) {
 let output;
 if (input.op === 'appointment-boundary') {
   const Seating = require('./src/web/browser/liturgy/ordinary-seating.js');
-  const structure = JSON.parse(fs.readFileSync(
-    'src/web/data/structure/propers/roman-1962.json', 'utf8'));
-  const ordinary = JSON.parse(fs.readFileSync(
-    'src/web/data/structure/ordinary/roman-1962.json', 'utf8'));
+  const structure = JSON.parse(fs.readFileSync(productFixturePath(
+    'src/web/data/structure/propers/roman-1962.json'), 'utf8'));
+  const ordinary = JSON.parse(fs.readFileSync(productFixturePath(
+    'src/web/data/structure/ordinary/roman-1962.json'), 'utf8'));
   const heldMass = structure.masses.find((one) => one.key === 'commune-summorum-pontificum');
   const conditional = heldMass.propers.find((proper) =>
     proper.ordinary_disposition && proper.ordinary_disposition.kind === 'conditional');
@@ -244,7 +246,7 @@ const Seating = require('./src/web/browser/liturgy/ordinary-seating.js');
 
 const calendars = (process.env.TRIPTYCH_SEATING_CALENDARS ||
   'roman-1962,roman-pre-1955,postconciliar').split(',').filter(Boolean);
-const structureRoot = process.env.TRIPTYCH_STRUCTURE_ROOT || 'src/web/data';
+const structureRoot = process.env.TRIPTYCH_STRUCTURE_ROOT || require('./tools/tests/_product_data.cjs').browserDataRoot(process.cwd());
 const failures = [];
 const report = {calendars: {}, failures};
 

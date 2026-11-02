@@ -4,7 +4,7 @@
 from __future__ import annotations
 
 import argparse
-from contextlib import contextmanager
+from contextlib import contextmanager, nullcontext
 import hashlib
 import html
 from html.parser import HTMLParser
@@ -34,6 +34,7 @@ from _corpus import (  # noqa: E402
     eligible_document_ids as corpus_eligible_document_ids,
 )
 from _scanning import markers_for, present  # noqa: E402
+from _browser_products import MANIFEST_RELATIVE as BROWSER_PRODUCTS_MANIFEST_RELATIVE  # noqa: E402
 from _markdown_render import (  # noqa: E402
     MARKDOWN_EXTENSIONS, MarkdownRenderError, render_markdown,
     require_locked_markdown_dependency as require_markdown_lock,
@@ -148,6 +149,7 @@ PICTORIAL_GALLERY_ASSET_ROOT = PurePosixPath("assets/pictorial-gallery")
 # <edition>/chapters/<BookToken>/<n>.json against one configurable root, so the
 # artifact carries a single data directory and the page needs no other setting.
 WEB_DATA_ROOT_RELATIVE = PurePosixPath("src/web/data")
+BROWSER_PRODUCTS_RELATIVE = PurePosixPath(BROWSER_PRODUCTS_MANIFEST_RELATIVE)
 WEB_BROWSER_ROOT_RELATIVE = PurePosixPath("src/web/browser")
 BIBLE_SOURCE_ROOT_RELATIVE = PurePosixPath("src/sources/bibles")
 POSTCONCILIAR_TRANSLATIONS_RELATIVE = PurePosixPath(
@@ -914,11 +916,19 @@ def publication_print_path(provider: str, leaf: str) -> str:
 
 def source_print_pages() -> dict[str, dict]:
     """Public-domain source readers assembled from their structured text."""
+    if browser_products_declared() and not _HELD_SOURCE_INVENTORIES:
+        with held_repository_inputs():
+            return source_print_pages()
     def derive():
         if not web_data_manifest_path().is_file():
             return {}
         from _print_catalog import source_pages
-        pages = source_pages(ROOT)
+        products = held_browser_products()
+        pages = source_pages(
+            ROOT,
+            data_root=products.data_root,
+            data_source_paths=[BROWSER_PRODUCTS_RELATIVE.as_posix()],
+        ) if products is not None else source_pages(ROOT)
         for relative, page in pages.items():
             path = PurePosixPath(relative)
             if path.is_absolute() or ".." in path.parts or path.suffix != ".html":
@@ -1242,7 +1252,11 @@ def load_json_file(path: Path, label: str) -> object:
 
 
 def web_data_manifest_path() -> Path:
-    return ROOT / WEB_DATA_ROOT_RELATIVE / "bibles.json"
+    products = held_browser_products()
+    path = browser_data_root() / "bibles.json"
+    if products is not None and ("bibles.json" not in products.files or not path.is_file()):
+        raise ReleaseError("declared browser products are missing bibles.json")
+    return path
 
 
 def parse_bible_manifest(path: Path, label: str) -> dict[str, str]:
@@ -1279,6 +1293,9 @@ def parse_bible_manifest(path: Path, label: str) -> dict[str, str]:
 
 def offered_bible_ids() -> list[str]:
     """Return the published editions the repository's manifest offers."""
+    if browser_products_declared() and not _HELD_SOURCE_INVENTORIES:
+        with held_repository_inputs():
+            return offered_bible_ids()
     return sorted(
         parse_bible_manifest(
             web_data_manifest_path(),
@@ -1342,7 +1359,12 @@ def reading_plan_pdfs() -> dict[str, Path]:
 
 
 def encyclicals_catalogue_path() -> Path:
-    return ROOT / WEB_DATA_ROOT_RELATIVE / ENCYCLICALS_DATA_RELATIVE
+    products = held_browser_products()
+    relative = ENCYCLICALS_DATA_RELATIVE.as_posix()
+    path = browser_data_root() / ENCYCLICALS_DATA_RELATIVE
+    if products is not None and (relative not in products.files or not path.is_file()):
+        raise ReleaseError(f"declared browser products are missing {relative}")
+    return path
 
 
 def _papal_release_documents(errors: list[str]) -> tuple[dict, set[str]]:
@@ -1564,10 +1586,10 @@ def rewrite_pdf_hrefs(
 def projected_document_catalogue(
     relative: str, source: Path, aliases: dict[str, str]
 ) -> str | None:
-    """Project public PDF routes without changing the canonical source catalogue."""
+    """Project public PDF routes without changing the derived catalogue input."""
     if relative != (SITE_DATA_ROOT / "structure/documents/corpus.json").as_posix():
         return None
-    corpus = load_json_file(source, source.relative_to(ROOT).as_posix())
+    corpus = load_json_file(source, relative)
     for work in corpus.get("works", []):
         for edition in work.get("editions", []):
             for issue in [edition, *edition.get("also", [])]:
@@ -1584,14 +1606,14 @@ def projected_encyclicals_catalogue(
 ) -> str | None:
     """Point the served catalogue's reader links at their public aliases.
 
-    The tracked file keeps the canonical release paths, because those are what
+    The derived product keeps the canonical release paths, because those are what
     `release/papal-documents.json` owns and what `papal_reader_pdfs` compares.
     A reader with no alias was not admitted, and the served copy is refused
     rather than left naming a path the artifact may not carry.
     """
     if relative != (SITE_DATA_ROOT / ENCYCLICALS_DATA_RELATIVE).as_posix():
         return None
-    catalogue = load_json_file(source, source.relative_to(ROOT).as_posix())
+    catalogue = load_json_file(source, relative)
     for row in catalogue.get("encyclicals", []):
         for reader in row.get("readers", []):
             canonical = reader.get("pdf")
@@ -1625,6 +1647,9 @@ def web_browser_pages() -> dict[str, Path]:
     followed a link from the library arrived somewhere that did not look like
     the same site, and no robots metadata reached them either.
     """
+    if browser_products_declared() and not _HELD_SOURCE_INVENTORIES:
+        with held_repository_inputs():
+            return web_browser_pages()
     if not web_data_manifest_path().is_file():
         return {}
     pages: dict[str, Path] = {}
@@ -1973,22 +1998,29 @@ def _address(trail: tuple) -> str:
     )
 
 
-def validate_liturgical_public_data(path: Path) -> None:
+def validate_liturgical_public_data(
+    path: Path, *, logical_relative: str | None = None,
+) -> None:
     """Refuse quarantined wording and restricted witnesses in public JSON.
 
-    Generators own the positive inclusion rules.  This release gate is the
-    independent negative rule: even a stale or hand-edited structure file may
-    not be copied merely because it already sits under ``src/web/data``.
+    Generators own the positive inclusion rules. This release gate independently
+    refuses protected or quarantined content even in a hash-valid product.
     """
-    data_root = ROOT / WEB_DATA_ROOT_RELATIVE
-    try:
-        relative = path.relative_to(data_root)
-    except ValueError:
-        return
+    if logical_relative is None:
+        try:
+            relative = path.relative_to(ROOT / WEB_DATA_ROOT_RELATIVE)
+        except ValueError:
+            return
+    else:
+        relative = PurePosixPath(logical_relative)
+        if (not logical_relative or relative.is_absolute()
+                or any(part in {"", ".", ".."} for part in logical_relative.split("/"))
+                or "\\" in logical_relative):
+            raise ReleaseError(f"unsafe browser product path: {logical_relative!r}")
     if path.suffix != ".json":
         return
     parts = relative.parts
-    label = (WEB_DATA_ROOT_RELATIVE / relative).as_posix()
+    label = (SITE_DATA_ROOT / relative).as_posix()
     try:
         text = path.read_text(encoding="utf-8")
         payload = json.loads(text)
@@ -2661,13 +2693,9 @@ def validate_propers_read_payload_sources(data_root: Path) -> None:
 
 
 def is_bound_web_data_source(path: Path) -> bool:
-    """Whether this generated-data input belongs to the approval closure.
-
-    Every JSON file copied from ``src/web/data`` is authoritative served
-    content, not a disposable cache. New structure families are therefore
-    included without another allowlist update. Offered Bible fragments live
-    under ``src/sources/bibles`` and join the closure from ``web_data_files``.
-    """
+    """Recognize source files in a legacy fixture, never cached products."""
+    if browser_products_declared():
+        return False
     try:
         relative = path.relative_to(ROOT / WEB_DATA_ROOT_RELATIVE)
     except ValueError:
@@ -2675,44 +2703,95 @@ def is_bound_web_data_source(path: Path) -> bool:
     return path.suffix == ".json"
 
 
+def browser_products_declared() -> bool:
+    """A product declaration cannot disappear with an empty physical cache.
+
+    Small imported-tool fixtures may omit the browser-product machinery and
+    retain their synthetic legacy data tree. A real checkout carries the
+    owning module, so removing its manifest fails in the product loader.
+    """
+    return ((ROOT / BROWSER_PRODUCTS_RELATIVE).exists()
+            or (ROOT / "scripts/_browser_products.py").is_file())
+
+
+def held_browser_products():
+    if not browser_products_declared():
+        return None
+    from _browser_products import ProductError, require_products
+    try:
+        return require_products(ROOT)
+    except ProductError as exc:
+        raise ReleaseError(f"browser products: {exc}") from exc
+
+
+def browser_data_root() -> Path:
+    products = held_browser_products()
+    return products.data_root if products is not None else ROOT / WEB_DATA_ROOT_RELATIVE
+
+
+def prepare_browser_products() -> None:
+    """Only a build may regenerate absent, exact-current products offline."""
+    if not browser_products_declared():
+        return
+    from _browser_products import ProductError, build
+    try:
+        build(ROOT)
+    except ProductError as exc:
+        raise ReleaseError(f"browser products: {exc}") from exc
+
+
+def browser_product_source_paths(products, manifest: dict) -> set[str]:
+    """Bind canonical inputs while the descriptor binds derived output bytes.
+
+    Self-binding authorization files have typed policy projections in the
+    product identity. Recording their raw hashes in their own inventory would
+    introduce a cycle; current policy is independently checked by the loader.
+    """
+    projected = {"release/public-alpha.json", *getattr(products, "projected_source_paths", ())}
+    for authorization in manifest.get("authorizations", {}).values():
+        if isinstance(authorization, dict) and isinstance(authorization.get("rights_record"), str):
+            projected.add(authorization["rights_record"])
+    recognized = set(products.source_paths) - projected
+    recognized.add(BROWSER_PRODUCTS_RELATIVE.as_posix())
+    for relative in recognized:
+        safe_relative_path(relative, "browser product canonical input")
+        if relative.startswith(("build/", ".scratch/", "src/web/data/")):
+            raise ReleaseError(f"generated browser product is not a canonical input: {relative}")
+    return recognized
+
+
 @contextmanager
 def held_repository_inputs():
-    """Hold `web_data_files` for the length of exactly one command.
-
-    The map is a pure function of the repository tree, and building it walks,
-    reads, parses and rights-scans every one of the 12,050 generated JSON
-    files. One verification asks three separate questions that each need it ---
-    the approved site-source inventory, the expected artifact file set, and the
-    copied-byte parity check --- so the whole scan ran three times over an
-    unchanging tree, which was 10.7 of a verification's 22.6 seconds.
-
-    Scoped to one command rather than cached in the module: `main` enters it
-    around a single build or verification, and it is released when that
-    finishes. Nothing is remembered between commands, and a caller outside a
-    command --- a test, another tool --- computes the map afresh every time.
-
-    What this drops is a repeat of the same scan over the same bytes, not a
-    check. The scan is not a defence against the repository changing under a
-    running command: the artifact is verified from an immutable descriptor-held
-    snapshot, while every repository-side hash, render and byte-parity
-    comparison already reads its source exactly once.
-    """
-    _HELD_WEB_DATA_FILES.append({})
-    _HELD_SOURCE_INVENTORIES.append({})
+    """Hold verified products and inventories for exactly one operation."""
+    context = nullcontext()
+    product_error = ()
+    if browser_products_declared():
+        from _browser_products import ProductError, verified_products
+        product_error = ProductError
+        context = verified_products(ROOT)
     try:
-        yield
-    finally:
-        _HELD_SOURCE_INVENTORIES.pop()
-        _HELD_WEB_DATA_FILES.pop()
+        with context:
+            _HELD_WEB_DATA_FILES.append({})
+            _HELD_SOURCE_INVENTORIES.append({})
+            try:
+                yield
+            finally:
+                _HELD_SOURCE_INVENTORIES.pop()
+                _HELD_WEB_DATA_FILES.pop()
+    except ValueError as exc:
+        # ProductError inherits ValueError; avoid changing other validation
+        # exceptions raised by a caller inside this operation.
+        if isinstance(exc, product_error):
+            raise ReleaseError(f"browser products: {exc}") from exc
+        raise
 
 
 def web_data_files() -> dict[str, Path]:
-    """Map every copied artifact data-root path to the repository file it copies.
+    """Map logical artifact routes to held, validated data and browser assets.
 
-    One map, so build and verify cannot disagree about what the data root holds.
-    Absent when the repository carries no generated data root, exactly as the
-    pictorial gallery is absent without its manifest. The pages themselves are
-    not here: they are rendered, and `web_browser_pages` maps those.
+    Product paths live only while `held_repository_inputs` is active. Build and
+    independent verification open separate product snapshots and compare the
+    same exact logical inventory. Missing declared products always fail.
     """
     if not _HELD_WEB_DATA_FILES:
         return _scan_web_data_files()
@@ -2772,17 +2851,21 @@ def _scan_web_data_files() -> dict[str, Path]:
                 continue
             files[f"{directory}/{page.name}"] = page
     files.update(browser_font_files())
-    data_root = ROOT / WEB_DATA_ROOT_RELATIVE
-    for path in sorted(data_root.rglob("*")):
-        if path.is_symlink() or not path.is_file():
+    products = held_browser_products()
+    data_root = browser_data_root()
+    inputs = (sorted(products.files.items()) if products is not None else
+              [(path.relative_to(data_root).as_posix(), path) for path in sorted(data_root.rglob("*"))])
+    for relative, path in inputs:
+        if path.is_dir() and not path.is_symlink():
             continue
+        if path.is_symlink() or not path.is_file():
+            raise ReleaseError(f"missing or unsafe browser product: {relative}")
         if path.suffix != ".json":
             raise ReleaseError(
                 "the generated data root must hold JSON only: "
-                f"{path.relative_to(ROOT).as_posix()}"
+                f"{relative}"
             )
-        validate_liturgical_public_data(path)
-        relative = path.relative_to(data_root).as_posix()
+        validate_liturgical_public_data(path, logical_relative=relative)
         files[(SITE_DATA_ROOT / relative).as_posix()] = path
     validate_propers_read_payload_sources(data_root)
 
@@ -2875,20 +2958,17 @@ def structure_loci(
 def site_source_paths(manifest: dict | None = None) -> set[str]:
     """Every repository input the artifact's approval binds.
 
-    The reading pages and their machinery are here for the same reason the prose
-    pages are: a reader reaches them, and the approval is a statement about what
-    a reader may reach. `bibles.json` is here because it is the single decision
-    about which scripture editions the site may serve, so an edition added or a
-    publishable flag flipped moves the authorization. Every generated liturgy
-    structure and source-browser projection is here too: those JSON bytes are
-    the exact calendar, proper, rubric, Ordinary and source-graph content the
-    artifact serves, so binding only its generator would not catch a stale or
-    hand-edited result.
+    Canonical sources, publication declarations and browser machinery remain
+    source inputs. Generated browser payloads are delivery products: their
+    descriptor commits the exact output inventory and full canonical input,
+    rights, schema, generator and membership identities. The product store
+    rechecks those commitments before these paths are recognized, so binding
+    the descriptor never substitutes a cache-success claim for currentness.
+    Its proof is mechanical and grants no source or publication approval.
 
-    Every copied JSON byte is bound, including offered Bible fragments. The
-    manifest remains the inclusion decision and prevents an unoffered edition
-    from being copied, while the exact per-file hashes prevent a fragment or a
-    newly introduced structure family from changing after authorization.
+    Cache paths never enter this inventory. Offered Bible fragments outside
+    the moved product tree still bind their exact repository bytes, and only
+    the generated bibles.json inclusion decision may admit an edition.
     """
     # Release bookkeeping imports this function directly, outside `main`.
     # Give that one closure derivation the same bounded inventory lifetime.
@@ -2902,10 +2982,12 @@ def site_source_paths(manifest: dict | None = None) -> set[str]:
         path.relative_to(ROOT).as_posix()
         for path in web_browser_pages().values()
     }
-    browser.update(
-        path.relative_to(ROOT).as_posix()
-        for path in web_data_files().values()
-    )
+    products = held_browser_products()
+    product_files = set(products.files.values()) if products is not None else set()
+    browser.update(path.relative_to(ROOT).as_posix()
+                   for path in web_data_files().values() if path not in product_files)
+    if products is not None:
+        browser.update(browser_product_source_paths(products, manifest))
     publication_inputs = set()
     for provider, leaf in included:
         identity = publication_source_identity(provider, leaf)
@@ -3416,6 +3498,12 @@ def validate_manifest(
     remain global. A selected scope may identify a proper's output family;
     site builds and deployment verification always use the whole set.
     """
+    if browser_products_declared() and not _HELD_SOURCE_INVENTORIES:
+        with held_repository_inputs():
+            return validate_manifest(
+                manifest, require_active_release, current_time,
+                verify_approval_bindings, installed_scope,
+            )
     errors: list[str] = []
     try:
         primary, providers = declared_providers(manifest)
@@ -3782,7 +3870,7 @@ def artifact_manifest_data(
             publication_entries[-1]["archived_pdf"] = {
                 key: archived[key] for key in ("url", "sha256", "bytes", "snapshot", "pages") if key in archived
             }
-    return {
+    result = {
         "schema_version": 3,
         "publication_model": "source-first",
         "release_id": manifest["release_id"],
@@ -3792,6 +3880,14 @@ def artifact_manifest_data(
         "authorization": artifact_authorization(manifest, included),
         "publications": publication_entries,
     }
+    products = held_browser_products()
+    if products is not None:
+        result["browser_products"] = {
+            "manifest": BROWSER_PRODUCTS_RELATIVE.as_posix(),
+            "identity": products.products_identity,
+            "editorial_approval": False,
+        }
+    return result
 
 
 def expected_artifact_files(
@@ -5077,7 +5173,7 @@ def verify_catalog_reachability(
 def verify_web_data(
     output: Path, pdf_aliases: dict[str, str] | None = None
 ) -> list[str]:
-    """Confirm copied browser machinery and data match their repository bytes."""
+    """Compare copied machinery and data with independently validated inputs."""
     expected = web_data_files()
     if not expected:
         return []
@@ -5792,6 +5888,9 @@ def verify_output(
     preview: bool,
 ) -> None:
     """Verify the fixed artifact while holding every parent directory open."""
+    if browser_products_declared() and not _HELD_SOURCE_INVENTORIES:
+        with held_repository_inputs():
+            return verify_output(manifest, publications, output, preview)
     expected = OUTPUT_ROOT / ("preview" if preview else "site")
     if output != expected:
         raise ReleaseError(f"refusing unsafe verification path: {output} is not {expected}")
@@ -6265,6 +6364,10 @@ def build_site(
     manifest: dict, publications: dict[tuple[str, str], dict], preview: bool
 ) -> Path:
     """Build privately, then atomically replace the fixed artifact directory."""
+    if browser_products_declared() and not _HELD_SOURCE_INVENTORIES:
+        prepare_browser_products()
+        with held_repository_inputs():
+            return build_site(manifest, publications, preview)
     target = "preview" if preview else "site"
     with _public_alpha_parent(create=True) as parent_fd:
         current = _entry_stat(parent_fd, target)
@@ -6391,22 +6494,23 @@ def main() -> int:
     with_examples(parser, tuple(e for verb in EXAMPLES for e in EXAMPLES[verb]))
     args = parser.parse_args()
     try:
+        if args.provider or args.document:
+            if args.command != "check" or args.preview or not (args.provider and args.document):
+                raise ReleaseError("--provider and --document must be supplied together, only with check")
+        if args.deployment_target and (args.command != "verify" or args.preview):
+            raise ReleaseError("--deployment-target is valid only for public artifact verification")
+        if args.preview and args.command in {"check", "prepare"}:
+            raise ReleaseError(f"--preview is not meaningful with {args.command}")
+        if args.command == "build":
+            prepare_browser_products()
         # One command, one scan of the copied browser/data inputs, released
         # when this command ends. See `held_repository_inputs`.
         with held_repository_inputs():
             manifest = load_manifest()
             installed_scope = None
             if args.provider or args.document:
-                if args.command != "check" or args.preview or not (args.provider and args.document):
-                    raise ReleaseError("--provider and --document must be supplied together, only with check")
                 installed_scope = selected_proper_scope(args.provider, args.document)
-            if args.deployment_target and (args.command != "verify" or args.preview):
-                raise ReleaseError(
-                    "--deployment-target is valid only for public artifact verification"
-                )
             if args.command == "prepare":
-                if args.preview:
-                    raise ReleaseError("--preview is not meaningful with prepare")
                 inventory = prepare_candidate_inventory(manifest)
                 print(
                     json.dumps(inventory, indent=2, sort_keys=True, ensure_ascii=False)
@@ -6417,8 +6521,6 @@ def main() -> int:
                 installed_scope=installed_scope,
             )
             if args.command == "check":
-                if args.preview:
-                    raise ReleaseError("--preview is not meaningful with check")
                 if installed_scope is None:
                     print_policy_summary(manifest, publications)
                 else:

@@ -15,6 +15,8 @@ ADAPTERS = ROOT / "src/web/browser/liturgy/reader-state-adapters.js"
 
 
 NODE_BRIDGE = r"""
+const productFixturePath = file => require(require('path').join(process.cwd(), 'tools/tests/_product_data.cjs')).repositoryPath(process.cwd(), file);
+
 'use strict';
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
@@ -23,7 +25,7 @@ const input = JSON.parse(fs.readFileSync(0, 'utf8'));
 const C = require(path.resolve('src/web/browser/liturgy/reader-state.js'));
 const A = require(input.adapters);
 const M = require(path.resolve('src/web/browser/liturgy/assembly-model.js'));
-const read = name => JSON.parse(fs.readFileSync('src/web/data/' + name, 'utf8'));
+const read = name => JSON.parse(fs.readFileSync(productFixturePath('src/web/data/' + name), 'utf8'));
 const structure = read('structure/propers/postconciliar.json');
 const rubrics = read('structure/rubrics/postconciliar.json');
 const bibles = read('bibles.json');

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { repositoryPath } from './_product_data.cjs';
 /* Recorded lectionary-cycle selections over a single edition-qualified formulary. */
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -12,7 +13,7 @@ const State = require(resolve(MODULES, 'reader-state.js'));
 const Comparison = require(resolve(MODULES, 'reader-comparison.js'));
 const PropersCompare = require(resolve(MODULES, 'propers-compare.js'));
 const Adapters = require(resolve(ROOT, 'src/web/browser/liturgy/reader-state-adapters.js'));
-const json = (path) => JSON.parse(readFileSync(resolve(ROOT, path), 'utf8'));
+const json = (path) => JSON.parse(readFileSync(repositoryPath(ROOT, path), 'utf8'));
 const structure = json('src/web/data/structure/propers/postconciliar.json');
 const bibles = json('src/web/data/bibles.json');
 const context = Adapters.validationContext({ entrance: 'propers', bibles,

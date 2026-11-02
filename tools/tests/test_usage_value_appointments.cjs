@@ -1,8 +1,10 @@
 'use strict';
+const { repositoryPath } = require('./_product_data.cjs');
+
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const root=path.resolve(__dirname,'../..'),mod=path.join(root,'src/web/browser/liturgy');
 const S=require(path.join(mod,'ordinary-seating.js')),A=require(path.join(mod,'reader-state-adapters.js')),C=require(path.join(mod,'reader-state.js')),Model=require(path.join(mod,'assembly-model.js'));
-const year=JSON.parse(fs.readFileSync(path.join(root,'src/web/data/structure/calendar/roman-1962/2026.json'))),rubrics=JSON.parse(fs.readFileSync(path.join(root,'src/web/data/structure/rubrics/roman-1962.json')));
+const year=JSON.parse(fs.readFileSync(repositoryPath(root, 'src/web/data/structure/calendar/roman-1962/2026.json'))),rubrics=JSON.parse(fs.readFileSync(repositoryPath(root, 'src/web/data/structure/rubrics/roman-1962.json')));
 const copy=(one)=>JSON.parse(JSON.stringify(one));const checks=[];function test(name,run){run();checks.push(name);}
 const borrowed=['2026-12-01','2026-12-05','2026-12-09','2026-12-10','2026-12-12','2026-12-14','2026-12-15','2026-12-17','2026-12-22','2026-12-23'];
 const own=['2026-11-29','2026-12-06','2026-12-13','2026-12-20'];

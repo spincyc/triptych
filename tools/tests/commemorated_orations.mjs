@@ -1,3 +1,4 @@
+import { repositoryPath } from './_product_data.cjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -7,7 +8,7 @@ const require=createRequire(import.meta.url);
 const M=require(root+'/src/web/browser/liturgy/assembly-model.js');
 const A=require(root+'/src/web/browser/liturgy/reader-state-adapters.js');
 const S=require(root+'/src/web/browser/liturgy/ordinary-seating.js');
-const load=relative=>JSON.parse(fs.readFileSync(root+'/'+relative,'utf8'));
+const load=relative=>JSON.parse(fs.readFileSync(repositoryPath(root, relative),'utf8'));
 const structure=load('src/web/data/structure/propers/roman-1962.json');
 const rubrics=load('src/web/data/structure/rubrics/roman-1962.json');
 const ordinary=load('src/web/data/structure/ordinary/roman-1962.json');

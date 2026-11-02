@@ -1,6 +1,8 @@
 """Durable releases keep exact reviewed bytes and refuse stale withdrawals."""
 import copy
+from contextlib import redirect_stdout
 import hashlib
+import io
 import json
 from pathlib import Path
 import sys
@@ -12,6 +14,8 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 import _papal_collection as collection
 import _papal_install as installer
+import _papal_input_receipt as input_receipt
+import _snapshot_store as snapshot_store
 
 
 class InstallTests(unittest.TestCase):
@@ -116,6 +120,22 @@ class InstallTests(unittest.TestCase):
         pairs = json.loads(self.pairs_path.read_text())
         pairs["batches"][0]["receipt_sha256"] = collection._sha(self.receipt_path)
         self.write(self.pairs_path, pairs)
+
+    def pack_snapshot_inputs(self, tag):
+        """Real exact-byte packing; only the fixture's absent Git identity is synthetic."""
+        def git_query(command, **kwargs):
+            if command[:3] == ["git", "ls-files", "-z"]:
+                return b""
+            if command == ["git", "rev-parse", "HEAD"]:
+                return "1" * 40 + "\n"
+            raise AssertionError(command)
+        out = self.root / ".scratch" / tag
+        with patch.object(snapshot_store.subprocess, "check_output", side_effect=git_query):
+            index = snapshot_store.pack(self.root, out, release=tag)
+        with redirect_stdout(io.StringIO()):
+            self.assertEqual(0, snapshot_store.main([
+                "check", "--root", str(self.root), "--archives", "--archive-dir", str(out), "--json"]))
+        return index
 
     def test_installs_only_exact_pass_bytes_and_survives_build_cleanup(self):
         self.fixtures(("PASS", "PENDING", "CHANGES_REQUIRED"))
@@ -375,6 +395,118 @@ class InstallTests(unittest.TestCase):
             with self.assertRaisesRegex(installer.PapalInstallError, "stale"):
                 installer._fresh_plan(self.plan_path)
         self.patches[-1].start()
+
+    def test_new_reviewed_hash_is_staged_declared_installed_then_extracted(self):
+        self.fixtures()
+        first = self.install()
+        old_index = self.pack_snapshot_inputs("old-v1")
+        input_receipt.record(self.root, scratch=self.root / ".scratch/record")
+        old_metadata = (self.root / input_receipt.INDEX).read_bytes()
+        before = self.installed_snapshot()
+        self.replace_built_pdfs()
+        proposal = self.prepare()
+        known = {entry["path"] for entry in old_index["artifacts"]}
+        fresh = [row for row in proposal["archives"]
+                 if row["path"].startswith(snapshot_store.PREFIX) and row["path"] not in known]
+        self.assertEqual(2, len(fresh))
+        self.assertNotEqual(first["documents"][0]["pdf_sha256"], proposal["documents"][0]["pdf_sha256"])
+        with self.assertRaisesRegex(installer.PapalInstallError, "stage-inputs"):
+            installer.install_prepared(self.prepared_path)
+        self.assertEqual(before, self.installed_snapshot())
+        staged = installer.stage_prepared_inputs(self.prepared_path)
+        self.assertEqual(2, staged["staged"])
+        self.assertFalse(staged["editorial_approval"])
+        self.assertEqual(before[installer.RELEASE.as_posix()], (self.root / installer.RELEASE).read_bytes())
+        self.assertEqual(old_metadata, (self.root / input_receipt.INDEX).read_bytes())
+        for row in first["documents"]:
+            self.assertEqual(before[row["pdf"]], (self.root / row["pdf"]).read_bytes())
+        self.assertTrue(snapshot_store.validate_index(self.root))
+        with self.assertRaises(snapshot_store.SnapshotStoreError):
+            installer._archived(fresh[0])
+        before_declaration = self.installed_snapshot()
+        with self.assertRaisesRegex(installer.PapalInstallError, "stage-inputs"):
+            installer.install_prepared(self.prepared_path)
+        self.assertEqual(before_declaration, self.installed_snapshot())
+        declared = self.pack_snapshot_inputs("next-v1")
+        self.assertTrue(known < {entry["path"] for entry in declared["artifacts"]})
+        self.assertEqual([], snapshot_store.validate_index(self.root, local_bytes=True))
+        updated = installer.install_prepared(self.prepared_path)
+        self.assertNotEqual(first["documents"][0]["pdf_sha256"], updated["documents"][0]["pdf_sha256"])
+        with self.assertRaisesRegex(input_receipt.InputReceiptError, "different release"):
+            installer.check_release_metadata(self.plan_path)
+        input_receipt.record(self.root, scratch=self.root / ".scratch/record")
+        self.assertEqual(len(declared["artifacts"]), input_receipt.InputRecords(self.root).audit_originals()["originals"])
+        self.assertEqual(1, installer.check_release_metadata(self.plan_path)["installed"])
+        self.assertEqual(1, installer.check_install(self.plan_path)["installed"])
+
+    def test_staging_only_materializes_exact_inputs_and_is_idempotent(self):
+        self.fixtures()
+        proposal = self.prepare()
+        expected = {row["path"]: row for row in proposal["archives"] if row["path"].startswith(snapshot_store.PREFIX)}
+        staged = installer.stage_prepared_inputs(self.prepared_path)
+        self.assertEqual(len(expected), staged["staged"])
+        self.assertFalse((self.root / installer.RELEASE).exists())
+        self.assertFalse((self.root / installer.PDF_ROOT).exists())
+        self.assertFalse((self.root / installer.ARCHIVE_ROOT / "reports").exists())
+        stamps = {}
+        for logical, row in expected.items():
+            path = self.root / logical
+            raw = path.read_bytes()
+            self.assertEqual(hashlib.sha256(raw).hexdigest(), row["sha256"])
+            self.assertEqual(len(raw), row["bytes"])
+            stamps[logical] = path.stat().st_mtime_ns
+        self.assertEqual(0, installer.stage_prepared_inputs(self.prepared_path)["staged"])
+        self.assertEqual(stamps, {logical: (self.root / logical).stat().st_mtime_ns for logical in expected})
+
+    def test_staging_refuses_stale_or_altered_proposal_before_writes(self):
+        self.fixtures()
+        proposal = self.prepare()
+        proposal["documents"][0]["pages"] = 1
+        self.write(self.prepared_path, proposal)
+        with self.assertRaisesRegex(installer.PapalInstallError, "changed"):
+            installer.stage_prepared_inputs(self.prepared_path)
+        self.assertFalse((self.root / installer.ARCHIVE_ROOT).exists())
+        self.prepare()
+        self.live_plan = dict(self.live_plan, documents=[])
+        with self.assertRaisesRegex(installer.PapalInstallError, "stale"):
+            installer.stage_prepared_inputs(self.prepared_path)
+        self.assertFalse((self.root / installer.ARCHIVE_ROOT).exists())
+
+    def test_staging_preserves_collision_and_symlink_targets(self):
+        self.fixtures()
+        proposal = self.prepare()
+        row = next(row for row in proposal["archives"] if row["path"].startswith(snapshot_store.PREFIX))
+        target = self.root / row["path"]
+        target.parent.mkdir(parents=True)
+        target.write_bytes(b"unrelated user material")
+        before = self.installed_snapshot()
+        with self.assertRaisesRegex(installer.PapalInstallError, "hash/size"):
+            installer.stage_prepared_inputs(self.prepared_path)
+        self.assertEqual(before, self.installed_snapshot())
+        target.unlink()
+        unrelated = self.root / ".scratch/unrelated.json"
+        unrelated.write_bytes(b"preserve this unrelated file")
+        target.symlink_to(unrelated)
+        with self.assertRaisesRegex(installer.PapalInstallError, "symlink"):
+            installer.stage_prepared_inputs(self.prepared_path)
+        self.assertTrue(target.is_symlink())
+        self.assertEqual(b"preserve this unrelated file", unrelated.read_bytes())
+
+    def test_staging_failure_rolls_back_all_new_inputs(self):
+        self.fixtures()
+        self.prepare()
+        before = self.installed_snapshot()
+        original = installer._atomic
+        writes = []
+        def fail_second(path, raw):
+            original(path, raw)
+            writes.append(path)
+            if len(writes) == 2:
+                raise OSError("injected second staged input failure")
+        with patch.object(installer, "_atomic", side_effect=fail_second):
+            with self.assertRaisesRegex(OSError, "second staged input"):
+                installer.stage_prepared_inputs(self.prepared_path)
+        self.assertEqual(before, self.installed_snapshot())
 
 
 if __name__ == "__main__":

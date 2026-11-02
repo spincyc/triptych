@@ -8,6 +8,10 @@ import unittest
 from pathlib import Path
 
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 LITURGY = ROOT / "src/web/browser/liturgy"
 HTML = LITURGY / "propers-reader.html"
@@ -449,7 +453,7 @@ class PropersReaderIntegrationTests(unittest.TestCase):
             self.assertIn("data-reader-shell", text(page))
             self.assertIn("data-reader-locus", text(page))
             self.assertNotIn("reader-visual-reset", text(page))
-        for path in (ROOT / "src/web/data").rglob("*.json"):
+        for path in (browser_data_root(ROOT)).rglob("*.json"):
             payload = text(path)
             self.assertNotIn("synthetic-cycle-order", payload, path.as_posix())
             self.assertNotIn("candidate-contract-only", payload, path.as_posix())
@@ -464,7 +468,7 @@ class PropersReaderIntegrationTests(unittest.TestCase):
 
     def test_candidate_and_contract_fixtures_do_not_leak_into_generated_data(self) -> None:
         sentinels = ("synthetic-cycle-order", "candidate-contract-only")
-        for path in (ROOT / "src/web/data").rglob("*.json"):
+        for path in (browser_data_root(ROOT)).rglob("*.json"):
             payload = text(path)
             for sentinel in sentinels:
                 self.assertNotIn(sentinel, payload, path.as_posix())

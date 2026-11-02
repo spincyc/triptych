@@ -21,9 +21,13 @@ import unittest
 from pathlib import Path
 
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 REPOSITORY = Path(__file__).resolve().parents[2]
 MODEL = REPOSITORY / "src/web/browser/encyclicals/encyclicals-model.js"
-TRACKED_CATALOGUE = REPOSITORY / "src/web/data/encyclicals/index.json"
+TRACKED_CATALOGUE = browser_data_root(REPOSITORY) / 'encyclicals/index.json'
 NODE = shutil.which("node")
 
 
@@ -488,11 +492,11 @@ class EncyclicalsBrowserTest(unittest.TestCase):
         by_id = {row["id"]: row for row in report["initial"]["rows"]}
         self.assertIn("Fragment", by_id[rows[0]["id"]]["text"])
         self.assertIn("Complete English not recorded", by_id[rows[0]["id"]]["text"])
-        self.assertIn("Source PDF", by_id[rows[1]["id"]]["text"])
-        self.assertTrue(all(path.startswith("../pdf/papal-documents/") for path in by_id[rows[1]["id"]]["pdfs"]))
+        self.assertIn("Source reader unavailable", by_id[rows[1]["id"]]["text"])
+        self.assertEqual([], by_id[rows[1]["id"]]["pdfs"])
         self.assertEqual([], by_id[rows[2]["id"]]["pdfs"])
         self.assertEqual([fixture.route()["url"]], by_id[rows[2]["id"]]["online"])
-        self.assertIn("No source PDF here", by_id[rows[2]["id"]]["text"])
+        self.assertIn("No source reader here", by_id[rows[2]["id"]]["text"])
         self.assertIn("No English text recorded", by_id[rows[3]["id"]]["text"])
         self.assertIn("2 of 4 have complete English", report["initial"]["english"])
         self.assertLessEqual(report["initial"]["document"], report["initial"]["viewport"])

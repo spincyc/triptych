@@ -47,6 +47,27 @@
       "stage": "draft",
       "usage": "audit-latin-body-substitutions [--calendar roman-1962]"
     },
+    "browser-products": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Build and verify browser data from canonical sources with content-based caching.",
+      "requires": [
+        "act-history",
+        "calendar-days",
+        "calendar-rubrics",
+        "document-library",
+        "index-bible",
+        "mass-ordinary",
+        "mass-propers",
+        "reading-plan",
+        "source-reader"
+      ],
+      "stage": "draft",
+      "usage": "browser-products {key,check,build,record,prune} [--root DIR] [--cache-root DIR] [--json]"
+    },
     "bullarium": {
       "idempotent": true,
       "json": true,
@@ -187,6 +208,7 @@
       "purpose": "Validate the tracked promised-deliverable ledger.",
       "requires": [
         "artifact-store",
+        "browser-products",
         "public-alpha"
       ],
       "stage": "draft",
@@ -325,10 +347,11 @@
       "origin": "local",
       "purpose": "Run scoped, source-pinned Chromium checks of the liturgical chronology reader.",
       "requires": [
-        "act-history"
+        "act-history",
+        "artifact-store"
       ],
       "stage": "draft",
-      "usage": "tools/history-browser-acceptance --url URL --catalogue PATH --out SCRATCH --plan JSON [--root DIR] [--site DIR]"
+      "usage": "tools/history-browser-acceptance --url URL --out SCRATCH --plan JSON [--catalogue PATH] [--root DIR] [--site DIR]"
     },
     "index-bible": {
       "idempotent": true,
@@ -633,6 +656,17 @@
       "stage": "draft",
       "usage": "scripture-chronology {validate,query,coverage,build,check} [--profile PROFILE] [--universe distinct-content|addresses] [--require-date] [--json]"
     },
+    "snapshot-store": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Preserve and hydrate exact frozen papal release input snapshots.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "snapshot-store {inventory,pack,check,hydrate} [OPTIONS]"
+    },
     "source-family-migration": {
       "idempotent": true,
       "json": false,
@@ -694,7 +728,7 @@
         "source-library"
       ],
       "stage": "draft",
-      "usage": "source-reader {check,list,show,structure} [--author A] [--language L] [--rights R] [--out DIR] [--check] [--json]"
+      "usage": "source-reader {check,list,show,structure} [--author A] [--language L] [--rights R] [--out DIR] [--check] [--record-receipt | --check-receipt] [--cache-root DIR] [--json]"
     },
     "tpt": {
       "idempotent": true,
@@ -732,7 +766,7 @@
         "source-library"
       ],
       "stage": "draft",
-      "usage": "typeset-papal {check,render,plan,collect,prepare-install,install,check-install} [OPTIONS]"
+      "usage": "typeset-papal {check,render,plan,collect,prepare-install,stage-inputs,install,check-install} [OPTIONS]"
     },
     "web-edition": {
       "idempotent": true,

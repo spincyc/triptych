@@ -1,0 +1,78 @@
+#!/usr/bin/env python3
+"""Preserve and hydrate exact frozen papal release input snapshots."""
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+from _snapshot_store import main
+from _tooling import Example
+
+EXAMPLES = {
+    "inventory": (
+        Example(
+            "tools/snapshot-store inventory --declared --summary",
+            (
+                "snapshot-store: 372 snapshots, 685669809 bytes; 0 archives; ok",
+            ),
+            "Report frozen input declarations without reading payloads.",
+        ),
+        Example(
+            "tools/snapshot-store inventory --declared --summary --json",
+            (
+                "{\"bytes\":685669809,\"snapshots\":372,\"status\":\"ok\"}",
+            ),
+            "The same metadata inventory as JSON.",
+        ),
+    ),
+    "pack": (
+        Example(
+            "tools/snapshot-store pack --release ../invalid",
+            (
+                "snapshot-store: release must be a safe slug and archive limit between 10240 and 512000000",
+            ),
+            "An unsafe release name is refused before writing any archive or index.",
+        ),
+        Example(
+            "tools/snapshot-store pack --release ../invalid --json",
+            (
+                "{\"error\": \"release must be a safe slug and archive limit between 10240 and 512000000\", \"status\": \"error\"}",
+            ),
+            "The same input refusal as JSON; packing never uploads anything.",
+        ),
+    ),
+    "check": (
+        Example(
+            "tools/snapshot-store check",
+            (
+                "snapshot-store: 372 snapshots, 685669809 bytes; 2 archives; ok",
+            ),
+            "Check delivery and release-reference metadata without hydration or network access.",
+        ),
+        Example(
+            "tools/snapshot-store check --json",
+            (
+                "{\"archive_bytes\":685957120,\"archives\":2,\"bytes\":685669809,\"snapshots\":372,\"status\":\"ok\"}",
+            ),
+            "The same metadata gate as JSON.",
+        ),
+    ),
+    "hydrate": (
+        Example(
+            "tools/snapshot-store hydrate --all undeclared-example.json",
+            (
+                "snapshot-store: select explicit snapshot paths or --all",
+            ),
+            "Conflicting all-files and explicit-path selections are refused before cache mutation.",
+        ),
+        Example(
+            "tools/snapshot-store hydrate --all undeclared-example.json --json",
+            (
+                "{\"error\": \"select explicit snapshot paths or --all\", \"status\": \"error\"}",
+            ),
+            "The same refusal as JSON; use --archive-dir for offline hydration or explicitly --fetch.",
+        ),
+    ),
+}
+
+if __name__ == "__main__":
+    raise SystemExit(main(examples=EXAMPLES))

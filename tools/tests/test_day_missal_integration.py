@@ -10,6 +10,10 @@ import unittest
 from pathlib import Path
 
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 LITURGY = ROOT / "src/web/browser/liturgy"
 HTML = LITURGY / "day-reader.html"
@@ -87,8 +91,8 @@ class DayMissalIntegrationTests(unittest.TestCase):
         self.assertNotIn(".sort()[0]", source)
 
     def test_real_edition_structures_remain_distinct_and_source_default_is_explicit(self) -> None:
-        roman = json.loads((ROOT / "src/web/data/structure/ordinary/roman-1962.json").read_text())
-        post = json.loads((ROOT / "src/web/data/structure/ordinary/postconciliar.json").read_text())
+        roman = json.loads((browser_data_root(ROOT) / 'structure/ordinary/roman-1962.json').read_text())
+        post = json.loads((browser_data_root(ROOT) / 'structure/ordinary/postconciliar.json').read_text())
         roman_elements = sum(len(section["elements"]) for section in roman["sections"])
         post_elements = sum(len(section["elements"]) for section in post["sections"])
         # 2026-10-19 (C3): the Holy Spirit Preface's opening and the
@@ -183,7 +187,7 @@ class DayMissalIntegrationTests(unittest.TestCase):
         public_renderer = text(PUBLIC_RENDERER)
         self.assertIn("window.TriptychOrdinaryRenderer", public_renderer)
         self.assertIn("renderSemanticFrame", public_renderer)
-        for path in (ROOT / "src/web/data").rglob("*.json"):
+        for path in (browser_data_root(ROOT)).rglob("*.json"):
             payload = text(path)
             self.assertNotIn("synthetic-cycle-order", payload, path.as_posix())
             self.assertNotIn("candidate-contract-only", payload, path.as_posix())

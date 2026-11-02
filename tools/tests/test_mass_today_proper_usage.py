@@ -76,10 +76,12 @@ class ProperUsageBridgeTests(unittest.TestCase):
         cls.load_payloads([*CASES, "pentecost-2"])
         dates = [date for sunday, ferias in CASES.values() for date in [sunday, *ferias]] + ["2026-06-08"]
         harness = r"""
+const productFixturePath = file => require(require('path').join(root, 'tools/tests/_product_data.cjs')).repositoryPath(root, file);
+
 const fs=require('node:fs'),path=require('node:path'),root=process.argv[1];
 const M=require(path.join(root,'src/web/browser/liturgy/assembly-model.js'));
-const year=JSON.parse(fs.readFileSync(path.join(root,'src/web/data/structure/calendar/roman-1962/2026.json')));
-const rubrics=JSON.parse(fs.readFileSync(path.join(root,'src/web/data/structure/rubrics/roman-1962.json')));
+const year=JSON.parse(fs.readFileSync(productFixturePath(path.join(root,'src/web/data/structure/calendar/roman-1962/2026.json'))));
+const rubrics=JSON.parse(fs.readFileSync(productFixturePath(path.join(root,'src/web/data/structure/rubrics/roman-1962.json'))));
 let raw='';process.stdin.on('data',x=>raw+=x);process.stdin.on('end',()=>
  process.stdout.write(JSON.stringify(Object.fromEntries(JSON.parse(raw).map(date=>[date,M.derive({date,year,rubrics})])))));
 """

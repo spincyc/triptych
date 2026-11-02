@@ -2,7 +2,58 @@
 
 The published pages are assemblers. The repository carries structured data; a
 page fetches the structure it needs, fetches only the fragments that structure
-names, and puts them together in the browser.
+names, and puts them together in the browser. Canonical TSV, TOML, YAML and TeX
+remain tracked sources; the generated browser products formerly under
+`src/web/data/` are reproducible outputs outside Git.
+
+## Generated products and canonical inputs
+
+`release/browser-products.json` records each generated family's canonical input
+identity, recipe, complete output membership, hashes and byte counts, together
+with an aggregate identity. `tools/browser-products` validates and reproduces
+that descriptor through `scripts/_browser_products.py`. It is a mechanical
+record with `editorial_approval = false`, never source evidence or a substitute
+for rights, source review, or publication authorization.
+
+The default sealed cache is `build/browser-data`; workspace sessions set
+`TRIPTYCH_BROWSER_DATA_ROOT=.scratch/browser-data`. Mutable producer output
+defaults to the sibling `build/browser-data-work`, or `.scratch/browser-data-work`
+under that setting. Explicit `--out` selects an unsealed working destination;
+producers must never write into a sealed cache entry. The descriptor-relative
+paths such as `structure/propers/roman-1962.json` remain the logical publication
+paths regardless of where the cache lives.
+
+Warm checks hash current canonical inputs and every expected output, including
+exact family and aggregate membership. An exact cache miss may rebuild offline
+from canonical sources and compare with the committed expected bytes. Missing
+data must trigger that rebuild or an explicit failure, never a smaller library,
+empty catalog, or fewer print editions. A stale descriptor or corrupt entry
+fails closed; a build must not adopt new output hashes to make itself pass.
+
+Family identities include content, generators/options, locks, rights and
+publication decisions, and their dependency membership. Shared or uncertain
+policy ownership is conservative. Neither Git state, timestamps, mtimes, a
+cache pathname nor a restored cache supplies trust. The resulting descriptor
+and mechanical receipt hashes are excluded from their own input identities.
+Only complete verified families are promoted; publication consumes a verified
+snapshot for its whole operation. Current rights/withheld-text filters,
+publishable-edition and hold/withdrawal membership checks, and reader/print
+completeness checks remain independent mandatory gates.
+
+The complete browser descriptor is the normal deployment proof for generated
+source and act-history projections. Its input closure is a conservative
+superset of their earlier receipts, and its cold path runs the same strict
+producers in two fresh passes. Exact SHA-256, size and membership comparisons,
+fresh inputs before and after generation, current code without inherited
+bytecode, and the publisher's held private snapshot establish mechanical reuse.
+The older source/act receipt checks remain explicit standalone audits and part
+of `make check-research-sources`; normal deployment does not require them as
+additional warm-cache gates. No mechanical proof confers publication authority.
+
+This storage change does not move `src/sources/bibles/<edition>/chapters/`.
+Those fragments retain their existing owner and checks. It also does not move
+source artifacts, reinterpret their rights, or turn generated JSON into a new
+canonical authoring format.
 
 Pre-rendering is the thing to avoid, and it is worth being explicit about why.
 A propers browser offers a mass and a translation. Rendering those combinations
@@ -753,26 +804,41 @@ which `guidance/editorial.md` forbids in an apparatus a reader cannot argue with
 
 ## Assembling the site
 
-Ten of the pieces are generated straight into the data root, one per directory
-under `structure/` plus the bible manifest:
+`scripts/_browser_product_recipes.py` owns the twelve offline producer families
+and their exact logical output prefixes. The families are `bibles`, `encyclicals`, `act-history`,
+`calendar`, `catena`, `documents`, `ordinary`, `paragraphs`, `propers`, `readings`,
+`rubrics`, and `sources`. Each output path has one producer. A new directory or
+family requires a recorded recipe and complete descriptor membership; it cannot
+enter publication merely because a directory walk finds it.
+
+For a workspace:
 
 ```sh
-tools/tpt mass-propers  structure --out src/web/data  # structure/propers/*.json
-tools/tpt reading-plan  structure --out src/web/data  # structure/readings/*.json
-tools/tpt calendar-days structure --out src/web/data  # structure/calendar/**/*.json
-tools/tpt calendar-rubrics structure --out src/web/data  # structure/rubrics/*.json
-tools/tpt mass-ordinary structure --out src/web/data  # structure/ordinary/*.json
-tools/tpt act-history   structure                     # structure/act-history/*.json
-tools/tpt index-bible   manifest  --out src/web/data  # bibles.json
-make document-catalogue                               # structure/documents/*.json
-make source-projection                                # structure/sources/*.json
-python3 scripts/_catena.py structure                  # structure/catena/**/*.json
-python3 scripts/_catena.py paragraphs                 # structure/paragraphs/**
+export TRIPTYCH_BROWSER_DATA_ROOT=.scratch/browser-data
+tools/browser-products key
+tools/browser-products build
+tools/browser-products check
+make public-site
 ```
 
-Check the directory listing against this block rather than the reverse: each
-name under `src/web/data/structure/` has exactly one writer, and a directory
-with no line here is a writer nobody recorded.
+`key` reports the current descriptor identity without generation. `build`
+verifies warm families and rebuilds only genuine exact misses from canonical
+inputs, offline. `check` checks existing cache bytes without generation or
+network. A cache restored from CI is only a candidate until these checks pass.
+
+After an intentional source or generator change, review its effects and run
+`tools/browser-products record`. It compares independent cold builds for changed
+families before updating the mechanical descriptor; unchanged families may reuse
+only their exact prior proof after fresh input and byte checks. Recording is
+explicit and grants no editorial or publication approval. A separately requested
+source or act-history receipt audit runs after this product state is frozen;
+renewing those audit receipts is not a normal deployment prerequisite.
+
+For isolated producer work, use an unsealed destination, for example
+`tools/mass-propers structure --out .scratch/browser-data-work`. Such output is
+not a published cache entry. Public assembly uses the verified products and
+preserves the same logical data routes; it does not copy an arbitrary working
+tree or fetch binary evidence to fill a miss.
 
 The act-history catalogue keeps a stage's legacy single `text_binding`,
 `text_projection_path` and `text_binding_sha256` unchanged. A stage with authored
@@ -810,6 +876,23 @@ artifact, so the browser reaches the whole root through one `?data=` setting.
 it carries an edition the served `bibles.json` does not offer, or if a chapter
 the structure files cite has no fragment beside it in the edition's own
 numbering.
+
+### Initial cold-product reconciliation — 2026-11-02
+
+The first complete cold derivation exposed sixteen stale fields in the prior
+reading-plan projection. Fourteen refusal messages now distinguish an absent
+exact selection from a claim that the edition does not carry the text. The
+World English Esther selection remains refused and reports the first existing
+alias refusal. Judith 15:14 is now explicitly refused for King James, Revised
+Version and World English: their retained chapter 15 ends at verse 13, and the
+available alias tables supply no mapping for 15:14. This prevents a silently
+partial reading. It does not assert that the wording is absent elsewhere or
+invent a replacement address. Canonical texts, citations, ranges, reading
+membership and alias tables were unchanged; the current mechanical output was
+adopted after the retained chapter bounds and aliases were independently
+checked. Establishing a new mapping or correcting an appointed citation still
+requires its own source review. The predecessor projection remains in commit
+`84c2f7e041af77230095987ae7eb86b0f4d2f92e`.
 
 ## Rights
 

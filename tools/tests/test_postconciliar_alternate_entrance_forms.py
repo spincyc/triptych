@@ -8,6 +8,9 @@ import sys
 import unittest
 import yaml
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _product_data import browser_data_root
+
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE = ROOT / 'src/sources/calendars/postconciliar/propers.yaml'
 CALENDARS = ROOT / 'src/sources/calendars'
@@ -36,7 +39,7 @@ class AlternateEntranceFormsTests(unittest.TestCase):
         cls.check = tool('check-calendar-masses')
         cls.canon = tool('citations')
         cls.ordinary = tool('mass-ordinary')
-        cls.frame = json.loads((ROOT / 'src/web/data/structure/ordinary/postconciliar.json').read_text())
+        cls.frame = json.loads((browser_data_root(ROOT) / 'structure/ordinary/postconciliar.json').read_text())
         cls.overlay, cls.absences, cls.stale, cls.witnesses = cls.propers.translation_overlay('postconciliar', CALENDARS)
 
     def holder(self, key, form):

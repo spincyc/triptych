@@ -186,7 +186,7 @@ obtaining those schemes' lists.
 | A psalm resolves to real, wrong verses | Vulgate reference read as Hebrew | `structure` resolves both systems ahead of the browser; a failure carries `unresolved` and *no* loci |
 | A reading shown one or two verses off, or from the wrong part of a book, in one edition | an edition that leaves psalm titles unnumbered, or whose own `verse-aliases.tsv` departs from its numbering (the Clementine's Psalm 15:11, the King James's Susanna), read with the addressing's loci | since 2026-10-01 `structure` writes every addressing and each offered edition's departures (`edition_loci`, `refused`), as `mass-propers` does — `guidance/web-data.md` §3 |
 | A psalm reading split at a false seam | the psalter concordance's inscription boundary | asserted in `tests/tools/reading-plan.test` |
-| Stale browser JSON | `src/web/data/structure/readings/narrative-spine.json` not regenerated after a plan edit | none — regenerate after every edit |
+| Stale browser JSON | generated reading products no longer match the plan, converter or edition inputs | complete browser-product descriptor checks current inputs and exact output membership/hashes; review the change and explicitly refresh the descriptor |
 
 `structure` refuses to write anything if `check` would fail, and creates no
 output directory on refusal. Rely on that; do not pre-clean.
@@ -194,13 +194,25 @@ output directory on refusal. Rely on that; do not pre-clean.
 ### Verification
 
 ```sh
-tools/tpt reading-plan check                                  # exit 0
-tools/tpt reading-plan structure --out src/web/data           # regenerate browser JSON
-sh tests/tools/reading-plan.test                              # prints "ok"
+tools/tpt reading-plan check                                       # exit 0
+tools/tpt reading-plan structure --out .scratch/reading-plan-work   # inspect unsealed output
+sh tests/tools/reading-plan.test                                   # prints "ok"
 ```
 
-`reading-plan` is **not** in `make check`. Run `sh tests/tools/reading-plan.test`
-explicitly after any edit to the plan or the tool.
+After reviewing an intentional plan or generator change, refresh and check the
+complete generated product set:
+
+```sh
+tools/tpt browser-products record --cache-root .scratch/browser-data
+tools/tpt browser-products check --cache-root .scratch/browser-data
+```
+
+`guidance/web-data.md` owns this outside-Git cache and its descriptor at
+`release/browser-products.json`. The producer's unsealed `--out` is for
+inspection and never updates that descriptor or publishes its bytes. Normal
+checks authenticate the complete descriptor; run `sh tests/tools/reading-plan.test`
+explicitly after any edit to the plan or tool. Neither mechanical check grants
+source, rights or publication approval.
 
 ---
 
